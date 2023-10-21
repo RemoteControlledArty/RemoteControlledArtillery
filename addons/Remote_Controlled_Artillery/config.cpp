@@ -3,7 +3,7 @@ class CfgPatches
 	class RC_Artillery
 	{
 		name="!Remote Controlled - Artillery, ATGM, AA!";
-		author="Ascent";
+		author="Ascent, Fluffy";
 
 		units[]=
 		{
