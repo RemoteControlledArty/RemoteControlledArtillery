@@ -1,3 +1,3 @@
-name="!Remote Controlled - Artillery, ATGM, AA!";
+name="Remote Controlled - Artillery, ATGM, AA";
 picture = "RCpic.paa";
 author = "Ascent, Fluffy";
