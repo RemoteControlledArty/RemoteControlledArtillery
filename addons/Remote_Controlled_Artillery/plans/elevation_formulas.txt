@@ -5,8 +5,8 @@
 
 Low Trajectory:
 
-HE = higher elevation
 LE = lower elevation 
+HE = higher elevation
 RD = range difference
 
 THED = tables higher elevation difference
@@ -16,21 +16,23 @@ ED = elevation difference
 HE - (0.RD * (HE - LE)) - (-TLED - ((-THED - -TLED ) * 0.RD) * 0.ELD)
 665 - (0.31 * (665 - 699)) - (-36 + (-41 - -36) * 0.31) * 0.52)  =  695  =  perfect hit
 
-For formula simplyfy website:
-https://www.symbolab.com/solver/equation-calculator/simplify%20A-%5Cleft(%5Cleft(%5Cfrac%7BC%7D%7B100%7D%5Cright)%5Ccdot%20%20%5Cleft(A-B%5Cright)%5Cright)-%5Cleft(-E-%5Cleft(%5Cleft(-D--E%5Cright)%5Ccdot%20%5Cleft(%5Cfrac%7BF%7D%7B100%7D%5Cright)%5Cright)%5Ccdot%20%5Cleft(%5Cfrac%7BG%7D%7B100%7D%5Cright)%5Cright)?or=input
 
-A = higher elevation
-B = lower elevation 
+For formula simplyfy website:
+https://www.symbolab.com/solver/equation-calculator/simplify%20B-%5Cleft(%5Cleft(%5Cfrac%7BC%7D%7B100%7D%5Cright)%5Ccdot%5Cleft(B-A%5Cright)%5Cright)-%5Cleft(-E-%5Cleft(%5Cleft(-D--E%5Cright)%5Ccdot%5Cleft(%5Cfrac%7BC%7D%7B100%7D%5Cright)%5Cright)%5Ccdot%5Cleft(%5Cfrac%7BF%7D%7B100%7D%5Cright)%5Cright)?or=input
+
+A = lower elevation 
+B = higher elevation
 C = range difference
 
 D = tables higher elevation difference
 E = tables lower elevation difference
 F = elevation difference
 
-A - ((F/100) * (A - B)) - (-E - ((-D - -E) * (C/100)) * (F/100))
-
-A-\left(\left(\frac{C}{100}\right)\cdot \:\left(A-B\right)\right)-\left(-E-\left(\left(-D--E\right)\cdot \left(\frac{F}{100}\right)\right)\cdot \left(\frac{G}{100}\right)\right)
+B - ((F/100) * (B - A)) - (-E - ((-D - -E) * (C/100)) * (F/100))
+simplify\:B-\left(\left(\frac{C}{100}\right)\cdot \left(B-A\right)\right)-\left(-E-\left(\left(-D--E\right)\cdot \left(\frac{C}{100}\right)\right)\cdot \left(\frac{F}{100}\right)\right)
 
 simplyfied:
+B - C*(B-A)/100 + E + (-D+E)*C*F/10000
 
-A - C*(A-B)/100 + E + (-D+E)*C*F/10000
+6803m example:
+477 - 3*(477-467)/100 + -20 + (--20+-20)*3*24/10000 = 456.7 = was accurate
