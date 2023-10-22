@@ -27,10 +27,10 @@ D = tables higher elevation difference
 E = tables lower elevation difference
 F = elevation difference
 
-A - ((F/100) * (A - B)) - (-E - ((-D - -E) * (F/100)) * (G/100))
+A - ((F/100) * (A - B)) - (-E - ((-D - -E) * (C/100)) * (F/100))
 
 A-\left(\left(\frac{C}{100}\right)\cdot \:\left(A-B\right)\right)-\left(-E-\left(\left(-D--E\right)\cdot \left(\frac{F}{100}\right)\right)\cdot \left(\frac{G}{100}\right)\right)
 
 simplyfied:
 
-A - C*(A-B)/100 + E + (-D+E)*F*G/10000
+A - C*(A-B)/100 + E + (-D+E)*C*F/10000
