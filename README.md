@@ -38,21 +38,21 @@ Bonus Content:
 
 ### Highly recommended mod in combination:
 
-[Simple Grid Designators](https://steamcommunity.com/sharedfiles/filedetails/?id=2538444208), 
+[Simple Grid Designators](https://steamcommunity.com/sharedfiles/filedetails/?id=2538444208)  
 Allows you to set map markers of your current laser designated point, with an 6 or 8 digit grit and elevation, which allows for better coordination when people call in fire support.
 
-[Simple Map Tools](https://steamcommunity.com/sharedfiles/filedetails/?id=2013446344),
+[Simple Map Tools](https://steamcommunity.com/sharedfiles/filedetails/?id=2013446344)  
 If you want to play with disabled artillery computer, this mod is very usefull to get the numbers between gun and target.
 
 ### From the Authors
 
 #### Ascent
-Have fun with the mod and make sure to send me footage of your unit using it! :D
+Have fun with the mod and make sure to send me footage of your unit using it! :D  
 Took me a lot of effort to make this mod (6000 lines of code and LOTS of testing), so please respect that work.
 
 #### Fluffy
 I really hope you enjoy all the Tweaks to the UI nice and to fix the Driver Seat and Commander Seat nonsense.
 
 #### Final Notes
-![https://www.bohemia.net/community/licenses/arma-public-license-nd](https://data.bistudio.com/images/license/APL-ND.png),
+![https://www.bohemia.net/community/licenses/arma-public-license-nd](https://data.bistudio.com/images/license/APL-ND.png)  
 **REUPLOADING IS NOT ALLOWED**, If you want something changed or Added comment on the Steam workshop Page.
