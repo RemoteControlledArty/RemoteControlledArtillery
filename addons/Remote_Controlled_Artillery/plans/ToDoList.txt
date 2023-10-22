@@ -1,0 +1,30 @@
+/*
+	to do / done list
+*/
+
+
+to do - bugfixes:
+
+
+
+done - bugfixes:
+
+
+
+to do - features:
+
+
+
+done - features:
+
+
+
+to do - quality of life:
+
+
+
+done - quality of life:
+
+
+
+ideas - future:
