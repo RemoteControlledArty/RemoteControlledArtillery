@@ -3,6 +3,8 @@
 	trying to find the best formulas for required gun elevation.
 */
 
+ALL OF THIS IS PURE SPECULATION and in testing!!!
+
 Low Trajectory:
 
 LE = lower elevation 
