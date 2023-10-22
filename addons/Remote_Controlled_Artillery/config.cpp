@@ -976,7 +976,6 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\configs\baseClasses.hpp"
-	#include "\Remote_Controlled_Artillery\configs\crew.hpp"
 	
 	#include "\Remote_Controlled_Artillery\configs\B_ImprovedDesignators.hpp"
 	#include "\Remote_Controlled_Artillery\configs\O_ImprovedDesignators.hpp"
