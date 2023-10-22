@@ -1,30 +1,41 @@
 /*
-	to do / done list
+	TO DO / DONE LIST
 */
 
 
-to do - bugfixes:
+TO DO - BUGFIXES:
+
+-MRL keybinds (4 is charge)
+-heavy AA commander seat not locked
+-target range cut of when 5 digits
+-howitzer commander seat not locked
+-remove hasdriver on MRL (not steerable), instead add lockdriver
+
+DONE - BUGFIXES:
+
+-remove human crew hpp and hpp include in config
+
+
+TO DO - FEATURES:
+
+-explain target marker referencing to current subscribers
+
+DONE - FEATURES:
+
+-howitzer can drive in gunner seat
+-added target marker referencing, calculation and display
+
+TO DO - QUALITY OF LIFE:
+
+-if vehicle speed = 0 then turn off engine true
+-giving UAV_crew map to use while being in arty
+
+DONE - QUALITY OF LIFE:
 
 
 
-done - bugfixes:
 
 
+IDEAS - FUTURE:
 
-to do - features:
-
-
-
-done - features:
-
-
-
-to do - quality of life:
-
-
-
-done - quality of life:
-
-
-
-ideas - future:
+-when i actually have time write down all ace arty tables, and make optional elevation recommendation display for low/high trajectory
