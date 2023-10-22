@@ -6,14 +6,14 @@
 TO DO - BUGFIXES:
 
 -MRL keybinds (4 is charge)
--heavy AA commander seat not locked
 -target range cut of when 5 digits
--howitzer commander seat not locked
--remove hasdriver on MRL (not steerable), instead add lockdriver
 
 DONE - BUGFIXES:
 
 -remove human crew hpp and hpp include in config
+-hasdriver=-1 removed from all vics
+-added lockdriver/commander to likely all vics
+-all vehicles now steerable again
 
 
 TO DO - FEATURES:
