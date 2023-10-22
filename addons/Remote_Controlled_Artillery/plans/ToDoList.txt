@@ -18,13 +18,12 @@ DONE - BUGFIXES:
 
 TO DO - FEATURES:
 
--add config reference "lockdriverseat=1;" "lockcommanderseat=1;"
-
 -explain target marker referencing to current subscribers
 -Ascent: create all 4 formulas (and decide on two) for accurate required elevation
 
 DONE - FEATURES:
 
+-RCdisableseats= 1 for loacking commander seat  2 for locking driver and commander seat
 -isRCarty=1;  as mod friendly check if display should appear
 -howitzer can drive in gunner seat
 -added target marker referencing, calculation and display
@@ -46,5 +45,6 @@ IDEAS - FUTURE:
 -investigate what makes 230mm clusters deploy or fail when shot without computer
 
 -vanilla asset overwrite for gamemodes without zeus etc
+-switch driver and commander of radar
 
 -when i actually have time write down all ace arty tables, and make optional elevation recommendation display for low/high trajectory
