@@ -32,7 +32,7 @@ DONE - FEATURES:
 TO DO - QUALITY OF LIFE:
 
 -if vehicle speed = 0 then turn off engine true
--giving UAV_crew map to use while being in arty
+-cannot open map with: mortar, MRL, static AA / AT / ATGM, laser des
 
 DONE - QUALITY OF LIFE:
 
