@@ -996,7 +996,8 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
-		isRCArty=1;
+		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -1010,7 +1011,6 @@ class CfgVehicles
 		scopeCurator=2;
 		side=1;
 		forceInGarage=1;
-		hasDriver=-1;
 
 		vehicleClass="Autonomous";
 		isUav=1;
@@ -1215,8 +1215,8 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
-		isRCArty=1;
-		hasDriver=-1;
+		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -1383,8 +1383,8 @@ class CfgVehicles
 		class showCamonetHull;
 		class Turrets;
 		class MainTurret;
-		isRCArty=1;
-		hasDriver=-1;
+		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -1627,7 +1627,8 @@ class CfgVehicles
 		class Components;
 		class Turrets;
 		class MainTurret;
-		isRCArty=1;
+		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -1882,7 +1883,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
-		hasDriver=-1;
+		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -2217,6 +2218,8 @@ class CfgVehicles
 		class showSLATHull;
 		class Turrets;
 		class MainTurret;
+		forceHideDriver=1;
+		RCDisableSeats=3; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 		
@@ -2323,6 +2326,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		hasDriver=-1;
+		forceHideDriver=1;
 		scope=0;
 		scopeCurator=0;
 	};
@@ -2578,7 +2582,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class assembleInfo;
-		isRCArty=1;
+		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		scope=0;
 		scopeCurator=0;
 	};
