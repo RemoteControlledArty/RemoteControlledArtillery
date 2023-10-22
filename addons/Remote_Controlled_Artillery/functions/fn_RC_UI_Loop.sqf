@@ -41,6 +41,30 @@ RC_Artillery_UI = [] spawn {
 		// See if the vehicle has the isRCArty property
 		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
 
+		// If seats have been disabled in the Config we handle that here
+		_disableSeats = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCDisableSeats");
+		// If we have the Property Defined
+		if (_disableSeats != 0) then {
+			switch (_disableSeats) do {
+				// Locks only the Driver Seat
+				case 1: {
+					if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]}
+				};
+				// Locks both the Driver seat and Commander
+				case 2: {
+					if !(lockedDriver _uav) then {_uav lockDriver true};
+					if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]}
+				};
+				// Specific Case for if the Commander seat is at [0] instead of [0,0]
+				case 3: {
+					if !(lockedDriver _uav) then {_uav lockDriver true};
+					if !(_uav lockedTurret [0]) then {_uav lockTurret [[0], true]}
+				};
+				default {hint "Something Went Wrong!"};
+			};
+		};
+
+
 		// If it's of Artillery or Mortar Type do da thing
 		if (_isRCArty && _inDrone) then {
 			
