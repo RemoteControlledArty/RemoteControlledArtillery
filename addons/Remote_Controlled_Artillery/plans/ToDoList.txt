@@ -18,6 +18,8 @@ DONE - BUGFIXES:
 
 TO DO - FEATURES:
 
+-add config reference "lockdriverseat=1;" "lockcommanderseat=1;"
+
 -explain target marker referencing to current subscribers
 -Ascent: create all 4 formulas (and decide on two) for accurate required elevation
 
