@@ -996,6 +996,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
+		// I did a Thing
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 		scope=0;
@@ -1883,6 +1884,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
+		hasDriver=-1;
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
