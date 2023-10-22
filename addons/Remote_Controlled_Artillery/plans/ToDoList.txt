@@ -19,6 +19,7 @@ DONE - BUGFIXES:
 TO DO - FEATURES:
 
 -explain target marker referencing to current subscribers
+-Ascent: create all 4 formulas (and decide on two) for accurate required elevation
 
 DONE - FEATURES:
 
@@ -40,4 +41,5 @@ IDEAS - FUTURE:
 
 -add display for aligning MRL vehicle to target, or fix azimuth being off
 -investigate what makes 230mm clusters deploy or fail when shot without computer
+
 -when i actually have time write down all ace arty tables, and make optional elevation recommendation display for low/high trajectory
