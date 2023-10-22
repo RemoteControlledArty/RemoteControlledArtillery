@@ -25,7 +25,7 @@ class RC_Artillery {
         fadeIn = "false";
         fadeOut = "false";
 		
-		//sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25));
+		//sizeEx = 0.7 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25));
 		
 				controls[]=
 		{
@@ -49,7 +49,7 @@ class RC_Artillery {
 			y = 0.0599647 * safezoneH + safezoneY;
 			w = 0.0247512 * safezoneW;
 			h = 0.0330027 * safezoneH;
-			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+			sizeEx = 0.7 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
 		class RscText_1002: RscText
 		{
@@ -59,7 +59,7 @@ class RC_Artillery {
 			y = 0.0599647 * safezoneH + safezoneY;
 			w = 0.0371267 * safezoneW;
 			h = 0.0330027 * safezoneH;
-			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+			sizeEx = 0.7 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
 		class RscText_1003: RscText
 		{
@@ -69,7 +69,7 @@ class RC_Artillery {
 			y = 0.0599647 * safezoneH + safezoneY;
 			w = 0.0309389 * safezoneW;
 			h = 0.0330027 * safezoneH;
-			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+			sizeEx = 0.7 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
 		class RscText_1000: RscText
 		{
@@ -79,7 +79,7 @@ class RC_Artillery {
 			y = 0.0819664 * safezoneH + safezoneY;
 			w = 0.0371219 * safezoneW;
 			h = 0.0330027 * safezoneH;
-			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+			sizeEx = 0.7 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
 		class RscText_1004: RscText
 		{
@@ -89,7 +89,7 @@ class RC_Artillery {
 			y = 0.103968 * safezoneH + safezoneY;
 			w = 0.0247479 * safezoneW;
 			h = 0.0330027 * safezoneH;
-			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+			sizeEx = 0.7 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
 		class RscText_1005: RscText
 		{
@@ -99,7 +99,7 @@ class RC_Artillery {
 			y = 0.0819664 * safezoneH + safezoneY;
 			w = 0.0371267 * safezoneW;
 			h = 0.0330027 * safezoneH;
-			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+			sizeEx = 0.7 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
 		class RscText_1006: RscText
 		{
@@ -109,7 +109,7 @@ class RC_Artillery {
 			y = 0.0819664 * safezoneH + safezoneY;
 			w = 0.0339389 * safezoneW;
 			h = 0.0330027 * safezoneH;
-			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+			sizeEx = 0.7 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
