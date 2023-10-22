@@ -17,6 +17,7 @@ DONE - BUGFIXES:
 TO DO - FEATURES:
 
 -magazine shell count attributes code?
+-only disable driver = 4, for modularity
 
 -explain target marker referencing to current subscribers
 -Ascent: create all 4 formulas (and decide on two) for accurate required elevation

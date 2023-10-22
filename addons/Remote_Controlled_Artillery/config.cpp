@@ -2005,6 +2005,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
+		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -2112,6 +2113,7 @@ class CfgVehicles
 		class showSLATHull;
 		class Turrets;
 		class MainTurret;
+		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -2323,7 +2325,7 @@ class CfgVehicles
 		class showSLATHull;
 		class Turrets;
 		class MainTurret;
-		fRC_Static_ArtyorceHideDriver=1;
+		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
