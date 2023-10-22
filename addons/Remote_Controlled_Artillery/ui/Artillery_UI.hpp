@@ -77,7 +77,7 @@ class RC_Artillery {
 			text = "DIST: 0000"; //--- ToDo: Localize;
 			x = 0.871219 * safezoneW + safezoneX;
 			y = 0.0819664 * safezoneH + safezoneY;
-			w = 0.0401219 * safezoneW;
+			w = 0.0801219 * safezoneW;
 			h = 0.0330027 * safezoneH;
 			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
