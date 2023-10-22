@@ -1205,7 +1205,6 @@ class CfgVehicles
 		side=2;
 	};
 
-
 	class O_MBT_02_arty_F;
 	class RC_Howitzer_base_HEX_O: O_MBT_02_arty_F
 	{
@@ -1884,7 +1883,6 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
-		hasDriver=-1;
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
@@ -2007,7 +2005,6 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
-		hasDriver=-1;
 		scope=0;
 		scopeCurator=0;
 	};
@@ -2115,7 +2112,6 @@ class CfgVehicles
 		class showSLATHull;
 		class Turrets;
 		class MainTurret;
-		hasDriver=-1;
 		scope=0;
 		scopeCurator=0;
 	};
@@ -2327,8 +2323,7 @@ class CfgVehicles
 		class showSLATHull;
 		class Turrets;
 		class MainTurret;
-		hasDriver=-1;
-		forceHideDriver=1;
+		fRC_Static_ArtyorceHideDriver=1;
 		scope=0;
 		scopeCurator=0;
 	};
@@ -2508,6 +2503,7 @@ class CfgVehicles
 	{
 		class Turrets;
 		class MainTurret;
+		isRCArty=1;
 		scope=0;
 		scopeCurator=0;
 	};
