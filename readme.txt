@@ -16,6 +16,26 @@ You can also use similar structure as my mod to make other assets remote control
 Make sure to send me the link so i can also have fun with it. ;D
 
 
+NEW FEATURES:
+-Cycle through targets marked as "arty1", "arty2", "arty3" until 99 on the map, it will calculate elevation difference, range, and required azimuth, required gun elevation can be looked up on ace artillery tables.
+-Howitzer gunner can now drive, to dodge counter artillery :D
+
+Coming quality of life features:
+-accurate gun elevation formulas for high and low trajectory (check the steampage/ mod readme for it soon again)
+-youtube video explaining how to use the new displays
+-map being available in more vehicles
+-turn off motor when vehicle holds
+
+Bug fixes:
+-fixed Nyx and AA crew being actual UAV_crew instead of humans
+-fixed major bug that required respawn, by removed "go to driver/commander seat" options from all vehicles
+
+Current Quirks:
+- change ammo types per mousewheel menu, not in the artillery computer
+- generating the ace rangetable requires having been close to it once
+- disabling artillery computer in options after having already used it, requires mission restart (not a big deal, decide beforehand)
+
+
 How to add/remove artillery ammunition, rightclick unit, open unit attributes, copy&paste in those bits, X stands for the amount you want:
 Mortar:
 this removeMagazineTurret["RC_12Rnd_82mm_Mo_shells", [0]] 
