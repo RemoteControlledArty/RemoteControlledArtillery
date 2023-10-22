@@ -35,7 +35,7 @@
     "Scroll Forward through Possible Targets",
     {true call RC_fnc_scrollSolutions},
     "",
-	[4, [false, false, false]]
+	[5, [false, false, false]]
 ] call CBA_fnc_addKeybind;
 
 [

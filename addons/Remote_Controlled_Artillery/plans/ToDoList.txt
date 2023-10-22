@@ -5,8 +5,7 @@
 
 TO DO - BUGFIXES:
 
--MRL keybinds (4 is charge)
--target range cut of when 5 digits
+-MRL keybinds (4 is charge) change to 3 and 5
 
 DONE - BUGFIXES:
 
@@ -14,6 +13,7 @@ DONE - BUGFIXES:
 -hasdriver=-1 removed from all vics
 -added lockdriver/commander to likely all vics
 -all vehicles now steerable again
+-target range cut of when 5 digits
 
 
 TO DO - FEATURES:
