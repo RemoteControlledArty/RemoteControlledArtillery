@@ -25,6 +25,7 @@ TO DO - FEATURES:
 
 DONE - FEATURES:
 
+-isRCarty=1;  as mod friendly check if display should appear
 -howitzer can drive in gunner seat
 -added target marker referencing, calculation and display
 
