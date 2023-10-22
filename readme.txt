@@ -19,6 +19,7 @@ Make sure to send me the link so i can also have fun with it. ;D
 NEW FEATURES:
 -Cycle through targets marked as "arty1", "arty2", "arty3" until 99 on the map, it will calculate elevation difference, range, and required azimuth, required gun elevation can be looked up on ace artillery tables.
 -Howitzer gunner can now drive, to dodge counter artillery :D
+-made more mod friendly
 
 Coming quality of life features:
 -accurate gun elevation formulas for high and low trajectory (check the steampage/ mod readme for it soon again)
