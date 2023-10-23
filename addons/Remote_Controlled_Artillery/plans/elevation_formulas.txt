@@ -3,38 +3,5 @@
 	trying to find the best formulas for required gun elevation.
 */
 
-ALL OF THIS IS PURE SPECULATION and in testing!!!
-
-Low Trajectory:
-
-LE = lower elevation 
-HE = higher elevation
-RD = range difference
-
-THED = tables higher elevation difference
-TLED = tables lower elevation difference
-ED = elevation difference
-
-HE - (0.RD * (HE - LE)) - (-TLED - ((-THED - -TLED ) * 0.RD) * 0.ELD)
-665 - (0.31 * (665 - 699)) - (-36 + (-41 - -36) * 0.31) * 0.52)  =  695  =  perfect hit
-
-
-For formula simplyfy website:
-https://www.symbolab.com/solver/equation-calculator/simplify%20B-%5Cleft(%5Cleft(%5Cfrac%7BC%7D%7B100%7D%5Cright)%5Ccdot%5Cleft(B-A%5Cright)%5Cright)-%5Cleft(-E-%5Cleft(%5Cleft(-D--E%5Cright)%5Ccdot%5Cleft(%5Cfrac%7BC%7D%7B100%7D%5Cright)%5Cright)%5Ccdot%5Cleft(%5Cfrac%7BF%7D%7B100%7D%5Cright)%5Cright)?or=input
-
-A = lower elevation 
-B = higher elevation
-C = range difference
-
-D = tables higher elevation difference
-E = tables lower elevation difference
-F = elevation difference
-
-B - ((F/100) * (B - A)) - (-E - ((-D - -E) * (C/100)) * (F/100))
-simplify\:B-\left(\left(\frac{C}{100}\right)\cdot \left(B-A\right)\right)-\left(-E-\left(\left(-D--E\right)\cdot \left(\frac{C}{100}\right)\right)\cdot \left(\frac{F}{100}\right)\right)
-
-simplyfied:
-B - C*(B-A)/100 + E + (-D+E)*C*F/10000
-
-6803m example:
-477 - 3*(477-467)/100 + -20 + (--20+-20)*3*24/10000 = 456.7 = was accurate
+Made this, to me most logical formula, but its off with large elevation differences (might be a limit of the ace artillery table limited data):
+https://www.desmos.com/calculator/ttpx55cygj?lang=de
