@@ -407,6 +407,7 @@ class CfgWeapons
 	class launch_Vorona_base_F;
 	class RC_ATGM: launch_Vorona_base_F
 	{
+		scope=2;
 		magazines[]=
 		{
 			"RC_1Rnd_ATGM",
