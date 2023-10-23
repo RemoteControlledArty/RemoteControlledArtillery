@@ -237,9 +237,12 @@ class Extended_PostInit_EventHandlers
      UgvConnectionAfterDeathFix_Post_Init="UgvConnectionAfterDeathFix_Post_Init_Var=[] execVM ""\Remote_Controlled_Artillery\UgvConnectionAfterDeathFix.sqf""";
 };
 
-class CfgFunctions {
-	class RC {
-		class RC_Artillery {
+class CfgFunctions
+{
+	class RC
+	{
+		class RC_Artillery
+		{
 			file="\Remote_Controlled_Artillery\functions";
       		class InitCBASettings {preInit=1};
       		class RC_UI_Loop {postInit=1};
