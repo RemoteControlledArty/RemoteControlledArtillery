@@ -5,6 +5,8 @@
 
 TO DO - BUGFIXES:
 
+-figure out why MRL and sometimes Howitzer shoots left/right if not aligned...
+
 DONE - BUGFIXES:
 
 -remove human crew hpp and hpp include in config
@@ -20,7 +22,6 @@ TO DO - FEATURES:
 -only disable driver = 4, for modularity
 
 -explain target marker referencing to current subscribers
--Ascent: create all 4 formulas (and decide on two) for accurate required elevation
 
 DONE - FEATURES:
 
@@ -34,10 +35,14 @@ TO DO - QUALITY OF LIFE:
 -if vehicle speed = 0 then turn off engine true
 -cannot open map with: mortar, MRL, static AA / AT / ATGM, laser des
 
+-if turret azimuth matches target azimuth, turn green
+-if charge is correct for target distance, turn green
+
+-improve turret elevation formula, that accounts for elevation difference better
+
 DONE - QUALITY OF LIFE:
 
-
-
+-create basic turret elevation formula https://www.desmos.com/calculator/fsya2kyque?lang=de
 
 
 IDEAS - FUTURE:
@@ -49,3 +54,4 @@ IDEAS - FUTURE:
 -switch driver and commander of radar
 
 -when i actually have time write down all ace arty tables, and make optional elevation recommendation display for low/high trajectory
+*edit, other solution necessary, like reverse engineering vanilla artillery computer formula, and display converted result to align oneself
