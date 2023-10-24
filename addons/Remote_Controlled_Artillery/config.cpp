@@ -1456,7 +1456,8 @@ class CfgVehicles
 					"RC_2Rnd_155mm_Mo_Cluster",
 					"RC_12Rnd_155mm_Mo_smoke",
 					"RC_4Rnd_155mm_Mo_LG",
-					"RC_8Rnd_155mm_Mo_AT_mine"
+					"RC_8Rnd_155mm_Mo_AT_mine",
+					"RC_12Rnd_155mm_Mo_Illum"
 				};
 			};
 		};
@@ -1485,7 +1486,8 @@ class CfgVehicles
 					"RC_2Rnd_155mm_Mo_Cluster",
 					"RC_12Rnd_155mm_Mo_smoke",
 					"RC_4Rnd_155mm_Mo_LG",
-					"RC_8Rnd_155mm_Mo_AT_mine"
+					"RC_8Rnd_155mm_Mo_AT_mine",
+					"RC_12Rnd_155mm_Mo_Illum"
 				};
 			};
 		};

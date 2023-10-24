@@ -1253,10 +1253,6 @@ class RC_9Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
 {
 	count=9;
 };
-class RC_9Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
-{
-	count=9;
-};
 class RC_10Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
 {
 	count=10;
@@ -1292,10 +1288,6 @@ class RC_17Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
 class RC_18Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
 {
 	count=18;
-};
-class RC_19Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
-{
-	count=19;
 };
 class RC_19Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
 {
