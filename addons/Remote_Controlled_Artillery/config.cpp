@@ -436,7 +436,7 @@ class CfgWeapons
 	class RC_ATGM: launch_Vorona_base_F
 	{
 		scope=2;
-		magazineReloadTime=6;
+		ReloadTime=6;
 		autoReload=1;	
 		magazines[]=
 		{
