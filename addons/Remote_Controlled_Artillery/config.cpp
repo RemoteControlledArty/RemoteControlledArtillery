@@ -115,19 +115,12 @@ class CfgPatches
 			RC_MLRS_HE_A_I,
 			RC_MLRS_HE_WD_I,
 
-			RC_MLRS_CL_A,
-			RC_MLRS_CL_WD,
-			RC_MLRS_CL_A_O,
-			RC_MLRS_CL_WD_O,
-			RC_MLRS_CL_A_I,
-			RC_MLRS_CL_WD_I,
-
-			RC_MLRS_HECL_A,
-			RC_MLRS_HECL_WD,
-			RC_MLRS_HECL_A_O,
-			RC_MLRS_HECL_WD_O,
-			RC_MLRS_HECL_A_I,
-			RC_MLRS_HECL_WD_I,
+			RC_MLRS_HE_CL_LG_A,
+			RC_MLRS_HE_CL_LG_WD,
+			RC_MLRS_HE_CL_LG_A_O,
+			RC_MLRS_HE_CL_LG_WD_O,
+			RC_MLRS_HE_CL_LG_A_I,
+			RC_MLRS_HE_CL_LG_WD_I,
 
 
 			RC_MRL_HE_DIG,
@@ -137,19 +130,12 @@ class CfgPatches
 			RC_MRL_HE_DIG_I,
 			RC_MRL_HE_WD_I,
 
-			RC_MRL_CL_DIG,
-			RC_MRL_CL_WD,
-			RC_MRL_CL_HEX_O,
-			RC_MRL_CL_WD_O,
-			RC_MRL_CL_DIG_I,
-			RC_MRL_CL_WD_I,
-
-			RC_MRL_HECL_DIG,
-			RC_MRL_HECL_WD,
-			RC_MRL_HECL_HEX_O,
-			RC_MRL_HECL_WD_O,
-			RC_MRL_HECL_DIG_I,
-			RC_MRL_HECL_WD_I,
+			RC_MRL_HE_CL_LG_DIG,
+			RC_MRL_HE_CL_LG_WD,
+			RC_MRL_HE_CL_LG_HEX_O,
+			RC_MRL_HE_CL_LG_WD_O,
+			RC_MRL_HE_CL_LG_DIG_I,
+			RC_MRL_HE_CL_LG_WD_I,
 
 
 			RC_AA_A,
@@ -1587,48 +1573,6 @@ class CfgVehicles
 			"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
 		};
 	};
-	class RC_MLRS_CL_A: RC_MLRS_HE_A
-	{
-		displayName="RC MLRS-CL (non adjustable)";
-
-		class Turrets: Turrets
-		{
-			class MainTurret: MainTurret
-			{
-				gunnerForceOptics=1;
-				stabilizedInAxes=3;
-				weapons[]=
-				{
-					"rockets_230mm_GAT"
-				};
-				magazines[]=
-				{
-					"12Rnd_230mm_rockets_cluster"
-				};
-			};
-		};
-	};
-	class RC_MLRS_CL_WD: RC_MLRS_HE_WD
-	{
-		displayName="RC MLRS-CL (non adjustable)";
-
-		class Turrets: Turrets
-		{
-			class MainTurret: MainTurret
-			{
-				gunnerForceOptics=1;
-				stabilizedInAxes=3;
-				weapons[]=
-				{
-					"rockets_230mm_GAT"
-				};
-				magazines[]=
-				{
-					"12Rnd_230mm_rockets_cluster"
-				};
-			};
-		};
-	};
 	class RC_MLRS_HE_A_O: RC_MLRS_HE_A
 	{
 		faction="RemoteControlled_NA_O";
@@ -1636,18 +1580,6 @@ class CfgVehicles
 		side=0;
 	};
 	class RC_MLRS_HE_WD_O: RC_MLRS_HE_WD
-	{
-		faction="RemoteControlled_NA_O";
-		crew="O_UAV_AI";
-		side=0;
-	};
-	class RC_MLRS_CL_A_O: RC_MLRS_CL_A
-	{
-		faction="RemoteControlled_NA_O";
-		crew="O_UAV_AI";
-		side=0;
-	};
-	class RC_MLRS_CL_WD_O: RC_MLRS_CL_WD
 	{
 		faction="RemoteControlled_NA_O";
 		crew="O_UAV_AI";
@@ -1665,21 +1597,9 @@ class CfgVehicles
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MLRS_CL_A_I: RC_MLRS_CL_A
+	class RC_MLRS_HE_CL_LG_A: RC_MLRS_HE_A
 	{
-		faction="RemoteControlled_NA_I";
-		crew="I_UAV_AI";
-		side=2;
-	};
-	class RC_MLRS_CL_WD_I: RC_MLRS_CL_WD
-	{
-		faction="RemoteControlled_NA_I";
-		crew="I_UAV_AI";
-		side=2;
-	};
-	class RC_MLRS_HECL_A: RC_MLRS_HE_A
-	{
-		displayName="RC MLRS-HE&CL";
+		displayName="RC MLRS-HE/CL/LG";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1696,14 +1616,15 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_6Rnd_230mm_rockets",
-					"RC_6Rnd_230mm_rockets_cluster"
+					"RC_3Rnd_230mm_rockets_cluster",
+					"RC_3Rnd_230mm_rockets_LG"
 				};
 			};
 		};
 	};
-	class RC_MLRS_HECL_WD: RC_MLRS_HE_WD
+	class RC_MLRS_HE_CL_LG_WD: RC_MLRS_HE_WD
 	{
-		displayName="RC MLRS-HE&CL";
+		displayName="RC MLRS-HE/CL/LG";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1720,30 +1641,31 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_6Rnd_230mm_rockets",
-					"RC_6Rnd_230mm_rockets_cluster"
+					"RC_3Rnd_230mm_rockets_cluster",
+					"RC_3Rnd_230mm_rockets_LG"
 				};
 			};
 		};
 	};
-	class RC_MLRS_HECL_A_O: RC_MLRS_HECL_A
+	class RC_MLRS_HE_CL_LG_A_O: RC_MLRS_HE_CL_LG_A
 	{
 		faction="RemoteControlled_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MLRS_HECL_WD_O: RC_MLRS_HECL_WD
+	class RC_MLRS_HE_CL_LG_WD_O: RC_MLRS_HE_CL_LG_WD
 	{
 		faction="RemoteControlled_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MLRS_HECL_WD_I: RC_MLRS_HECL_WD
+	class RC_MLRS_HE_CL_LG_WD_I: RC_MLRS_HE_CL_LG_WD
 	{
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MLRS_HECL_A_I: RC_MLRS_HECL_A
+	class RC_MLRS_HE_CL_LG_A_I: RC_MLRS_HE_CL_LG_A
 	{
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
@@ -1814,77 +1736,13 @@ class CfgVehicles
 			"\A3\soft_f_Enoch\Truck_02\Data\truck_02_chassis_EAF_CO.paa"
 		};
 	};
-	class RC_MRL_CL_DIG: RC_MRL_HE_DIG
-	{
-		displayName="RC MRL-CL (non adjustable)";
-
-		class Turrets: Turrets
-		{
-			class MainTurret: MainTurret
-			{
-				gunnerForceOptics=1;
-				lockWhenVehicleSpeed=-1;
-				stabilizedInAxes=3;
-
-				weapons[]=
-				{
-					"rockets_230mm_GAT"
-				};
-				magazines[]=
-				{
-					"12Rnd_230mm_rockets_cluster"
-				};
-			};
-		};
-	};
-	class RC_MRL_CL_WD: RC_MRL_HE_WD
-	{
-		displayName="RC MRL-CL (non adjustable)";
-
-		class Turrets: Turrets
-		{
-			class MainTurret: MainTurret
-			{
-				gunnerForceOptics=1;
-				lockWhenVehicleSpeed=-1;
-				stabilizedInAxes=3;
-				weapons[]=
-				{
-					"rockets_230mm_GAT"
-				};
-				magazines[]=
-				{
-					"12Rnd_230mm_rockets_cluster"
-				};
-			};
-		};
-	};
 	class RC_MRL_HE_WD_O: RC_MRL_HE_WD
 	{
 		faction="RemoteControlled_NA_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MRL_CL_WD_O: RC_MRL_CL_WD
-	{
-		faction="RemoteControlled_NA_O";
-		crew="O_UAV_AI";
-		side=0;
-	};
 	class RC_MRL_HE_HEX_O: RC_MRL_HE_DIG
-	{
-		faction="RemoteControlled_NA_O";
-		crew="O_UAV_AI";
-		side=0;
-
-		hiddenSelectionsTextures[]=
-		{
-			"\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa",
-			"\a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
-			"\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
-		};
-	};
-	class RC_MRL_CL_HEX_O: RC_MRL_CL_DIG
 	{
 		faction="RemoteControlled_NA_O";
 		crew="O_UAV_AI";
@@ -1909,21 +1767,9 @@ class CfgVehicles
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MRL_CL_DIG_I: RC_MRL_CL_DIG
+	class RC_MRL_HE_CL_LG_DIG: RC_MRL_HE_DIG
 	{
-		faction="RemoteControlled_NA_I";
-		crew="I_UAV_AI";
-		side=2;
-	};
-	class RC_MRL_CL_WD_I: RC_MRL_CL_WD
-	{
-		faction="RemoteControlled_NA_I";
-		crew="I_UAV_AI";
-		side=2;
-	};
-	class RC_MRL_HECL_DIG: RC_MRL_HE_DIG
-	{
-		displayName="RC MRL-HE&CL";
+		displayName="RC MRL-HE/CL/LG";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1941,14 +1787,15 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_6Rnd_230mm_rockets",
-					"RC_6Rnd_230mm_rockets_cluster"
+					"RC_3Rnd_230mm_rockets_cluster",
+					"RC_3Rnd_230mm_rockets_LG"
 				};
 			};
 		};
 	};
-	class RC_MRL_HECL_WD: RC_MRL_HE_WD
+	class RC_MRL_HE_CL_LG_WD: RC_MRL_HE_WD
 	{
-		displayName="RC MRL-HE&CL";
+		displayName="RC MRL-HE/CL/LG";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1966,18 +1813,19 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_6Rnd_230mm_rockets",
-					"RC_6Rnd_230mm_rockets_cluster"
+					"RC_3Rnd_230mm_rockets_cluster",
+					"RC_3Rnd_230mm_rockets_LG"
 				};
 			};
 		};
 	};
-	class RC_MRL_HECL_WD_O: RC_MRL_HECL_WD
+	class RC_MRL_HE_CL_LG_WD_O: RC_MRL_HE_CL_LG_WD
 	{
 		faction="RemoteControlled_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MRL_HECL_HEX_O: RC_MRL_HECL_DIG
+	class RC_MRL_HE_CL_LG_HEX_O: RC_MRL_HE_CL_LG_DIG
 	{
 		faction="RemoteControlled_O";
 		crew="O_UAV_AI";
@@ -1990,13 +1838,13 @@ class CfgVehicles
 			"\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
 		};
 	};
-	class RC_MRL_HECL_DIG_I: RC_MRL_HECL_DIG
+	class RC_MRL_HE_CL_LG_DIG_I: RC_MRL_HE_CL_LG_DIG
 	{
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MRL_HECL_WD_I: RC_MRL_HECL_WD
+	class RC_MRL_HE_CL_LG_WD_I: RC_MRL_HE_CL_LG_WD
 	{
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
