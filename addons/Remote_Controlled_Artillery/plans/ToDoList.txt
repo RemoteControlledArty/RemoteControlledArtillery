@@ -23,7 +23,9 @@ DONE - BUGFIXES:
 
 TO DO - FEATURES:
 
--magazine shell count attributes code?
+-HE airburst, 82mm, 120mm, 155mm, 227mm
+
+-magazine shell count attributes code? (Who wrote this, what is meant by it?)
 -only disable driver = 4, for modularity
 
 -explain target marker referencing to current subscribers
