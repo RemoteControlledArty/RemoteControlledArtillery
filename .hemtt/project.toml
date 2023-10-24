@@ -1,0 +1,10 @@
+name = "Simple Grid Designators"
+author = "Fluffy"
+prefix = "FF_SimpleGrid"
+mainprefix = "z"
+
+[version]
+major = 2 # Overrides path when set
+minor = 1
+patch = 2
+git_hash = 0
