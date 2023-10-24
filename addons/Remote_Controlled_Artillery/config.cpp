@@ -353,6 +353,45 @@ class CfgAmmo
 	{
 		hit=1000;
 	};
+
+
+	class F_40mm_White;
+	class RC_Mo_Illum: F_40mm_White
+	{
+		triggerTime=0;
+		model="\A3\Weapons_F\Ammo\UGL_Flare";
+		brightness=8000;
+		intensity=80000;
+		lightColor[]={100,100,100,100};
+		timeToLive=120;
+	};
+
+
+	class SubmunitionBase;
+	class Flare_155mm_AMOS_White: SubmunitionBase
+	{
+		submunitionAmmo[]=
+		{
+			"RC_Mo_Illum",
+			1
+		};
+		timeToLive=180;
+		hit=9;
+		indirectHit=0;
+		indirectHitRange=0;
+		explosive=0;
+		ExplosionEffects="";
+		CraterEffects="";
+		soundHit[]=
+		{
+			"",
+			0,
+			1
+		};
+		whistleDist=0;
+		aimAboveDefault=3;
+		aimAboveTarget[]={360,400,500,640,720,800,850};
+	};
 };
 
 class CfgMagazines
@@ -418,7 +457,6 @@ class CfgWeapons
 		};
 	};
 
-
 	/*
 	class missiles_titan_static;
 	class RC_missiles_titan_static: missiles_titan_static
@@ -436,7 +474,6 @@ class CfgWeapons
 	{
 		magazines[]=
 		{
-			"RC_0Rnd_82mm_Mo_shells",
 			"RC_1Rnd_82mm_Mo_shells",
 			"RC_2Rnd_82mm_Mo_shells",
 			"RC_3Rnd_82mm_Mo_shells",
@@ -478,7 +515,6 @@ class CfgWeapons
 			"RC_39Rnd_82mm_Mo_shells",
 			"RC_40Rnd_82mm_Mo_shells",
 
-			"RC_0Rnd_82mm_Mo_Flare_white",
 			"RC_1Rnd_82mm_Mo_Flare_white",
 			"RC_2Rnd_82mm_Mo_Flare_white",
 			"RC_3Rnd_82mm_Mo_Flare_white",
@@ -500,7 +536,6 @@ class CfgWeapons
 			"RC_19Rnd_82mm_Mo_Flare_white",
 			"RC_20Rnd_82mm_Mo_Flare_white",
 
-			"RC_0Rnd_82mm_Mo_Smoke_white",
 			"RC_1Rnd_82mm_Mo_Smoke_white",
 			"RC_2Rnd_82mm_Mo_Smoke_white",
 			"RC_3Rnd_82mm_Mo_Smoke_white",
@@ -522,7 +557,6 @@ class CfgWeapons
 			"RC_19Rnd_82mm_Mo_Smoke_white",
 			"RC_20Rnd_82mm_Mo_Smoke_white",
 
-			"RC_0Rnd_82mm_Mo_guided",
 			"RC_1Rnd_82mm_Mo_guided",
 			"RC_2Rnd_82mm_Mo_guided",
 			"RC_3Rnd_82mm_Mo_guided",
@@ -544,7 +578,6 @@ class CfgWeapons
 			"RC_19Rnd_82mm_Mo_guided",
 			"RC_20Rnd_82mm_Mo_guided",
 
-			"RC_0Rnd_82mm_Mo_LG",
 			"RC_1Rnd_82mm_Mo_LG",
 			"RC_2Rnd_82mm_Mo_LG",
 			"RC_3Rnd_82mm_Mo_LG",
@@ -574,7 +607,6 @@ class CfgWeapons
 	{
 		magazines[]=
 		{
-			"RC_0Rnd_230mm_rockets",
 			"RC_1Rnd_230mm_rockets",
 			"RC_2Rnd_230mm_rockets",
 			"RC_3Rnd_230mm_rockets",
@@ -588,7 +620,6 @@ class CfgWeapons
 			"RC_11Rnd_230mm_rockets",
 			"RC_12Rnd_230mm_rockets",
 
-			"RC_0Rnd_230mm_rockets_cluster",
 			"RC_1Rnd_230mm_rockets_cluster",
 			"RC_2Rnd_230mm_rockets_cluster",
 			"RC_3Rnd_230mm_rockets_cluster",
@@ -600,7 +631,34 @@ class CfgWeapons
 			"RC_9Rnd_230mm_rockets_cluster",
 			"RC_10Rnd_230mm_rockets_cluster",
 			"RC_11Rnd_230mm_rockets_cluster",
-			"RC_12Rnd_230mm_rockets_cluster"
+			"RC_12Rnd_230mm_rockets_cluster",
+
+			"RC_1Rnd_230mm_rockets_LG",
+			"RC_2Rnd_230mm_rockets_LG",
+			"RC_3Rnd_230mm_rockets_LG",
+			"RC_4Rnd_230mm_rockets_LG",
+			"RC_5Rnd_230mm_rockets_LG",
+			"RC_6Rnd_230mm_rockets_LG",
+			"RC_7Rnd_230mm_rockets_LG",
+			"RC_8Rnd_230mm_rockets_LG",
+			"RC_9Rnd_230mm_rockets_LG",
+			"RC_10Rnd_230mm_rockets_LG",
+			"RC_11Rnd_230mm_rockets_LG",
+			"RC_12Rnd_230mm_rockets_LG",
+
+			"RC_1Rnd_230mm_rockets_ATG",
+			"RC_2Rnd_230mm_rockets_ATG",
+			"RC_2Rnd_230mm_rockets_ATG",
+			"RC_3Rnd_230mm_rockets_ATG",
+			"RC_4Rnd_230mm_rockets_ATG",
+			"RC_5Rnd_230mm_rockets_ATG",
+			"RC_6Rnd_230mm_rockets_ATG",
+			"RC_7Rnd_230mm_rockets_ATG",
+			"RC_8Rnd_230mm_rockets_ATG",
+			"RC_9Rnd_230mm_rockets_ATG",
+			"RC_10Rnd_230mm_rockets_ATG",
+			"RC_11Rnd_230mm_rockets_ATG",
+			"RC_12Rnd_230mm_rockets_ATG"
 		};
 	};
 
@@ -613,7 +671,6 @@ class CfgWeapons
 
 		magazines[]=
 		{
-			"RC_0Rnd_155mm_Mo_shells",
 			"RC_1Rnd_155mm_Mo_shells",
 			"RC_2Rnd_155mm_Mo_shells",
 			"RC_3Rnd_155mm_Mo_shells",
@@ -655,7 +712,6 @@ class CfgWeapons
 			"RC_39Rnd_155mm_Mo_shells",
 			"RC_40Rnd_155mm_Mo_shells",
 
-			"RC_0Rnd_155mm_Mo_guided",
 			"RC_1Rnd_155mm_Mo_guided",
 			"RC_2Rnd_155mm_Mo_guided",
 			"RC_3Rnd_155mm_Mo_guided",
@@ -677,7 +733,6 @@ class CfgWeapons
 			"RC_19Rnd_155mm_Mo_guided",
 			"RC_20Rnd_155mm_Mo_guided",
 
-			"RC_0Rnd_155mm_Mo_mine",
 			"RC_1Rnd_155mm_Mo_mine",
 			"RC_2Rnd_155mm_Mo_mine",
 			"RC_3Rnd_155mm_Mo_mine",
@@ -699,7 +754,6 @@ class CfgWeapons
 			"RC_19Rnd_155mm_Mo_mine",
 			"RC_20Rnd_155mm_Mo_mine",
 
-			"RC_0Rnd_155mm_Mo_Cluster",
 			"RC_1Rnd_155mm_Mo_Cluster",
 			"RC_2Rnd_155mm_Mo_Cluster",
 			"RC_3Rnd_155mm_Mo_Cluster",
@@ -721,7 +775,6 @@ class CfgWeapons
 			"RC_19Rnd_155mm_Mo_Cluster",
 			"RC_20Rnd_155mm_Mo_Cluster",
 
-			"RC_0Rnd_155mm_Mo_smoke",
 			"RC_1Rnd_155mm_Mo_smoke",
 			"RC_2Rnd_155mm_Mo_smoke",
 			"RC_3Rnd_155mm_Mo_smoke",
@@ -743,7 +796,6 @@ class CfgWeapons
 			"RC_19Rnd_155mm_Mo_smoke",
 			"RC_20Rnd_155mm_Mo_smoke",
 
-			"RC_0Rnd_155mm_Mo_LG",
 			"RC_1Rnd_155mm_Mo_LG",
 			"RC_2Rnd_155mm_Mo_LG",
 			"RC_3Rnd_155mm_Mo_LG",
@@ -765,7 +817,6 @@ class CfgWeapons
 			"RC_19Rnd_155mm_Mo_LG",
 			"RC_20Rnd_155mm_Mo_LG",
 
-			"RC_0Rnd_155mm_Mo_AT_mine",
 			"RC_1Rnd_155mm_Mo_AT_mine",
 			"RC_2Rnd_155mm_Mo_AT_mine",
 			"RC_3Rnd_155mm_Mo_AT_mine",
@@ -785,7 +836,48 @@ class CfgWeapons
 			"RC_17Rnd_155mm_Mo_AT_mine",
 			"RC_18Rnd_155mm_Mo_AT_mine",
 			"RC_19Rnd_155mm_Mo_AT_mine",
-			"RC_20Rnd_155mm_Mo_AT_mine"
+			"RC_20Rnd_155mm_Mo_AT_mine",
+
+			"RC_1Rnd_155mm_Mo_Illum",
+			"RC_2Rnd_155mm_Mo_Illum",
+			"RC_3Rnd_155mm_Mo_Illum",
+			"RC_4Rnd_155mm_Mo_Illum",
+			"RC_5Rnd_155mm_Mo_Illum",
+			"RC_6Rnd_155mm_Mo_Illum",
+			"RC_7Rnd_155mm_Mo_Illum",
+			"RC_8Rnd_155mm_Mo_Illum",
+			"RC_9Rnd_155mm_Mo_Illum",
+			"RC_10Rnd_155mm_Mo_Illum",
+			"RC_11Rnd_155mm_Mo_Illum",
+			"RC_12Rnd_155mm_Mo_Illum",
+			"RC_13Rnd_155mm_Mo_Illum",
+			"RC_14Rnd_155mm_Mo_Illum",
+			"RC_15Rnd_155mm_Mo_Illum",
+			"RC_16Rnd_155mm_Mo_Illum",
+			"RC_17Rnd_155mm_Mo_Illum",
+			"RC_18Rnd_155mm_Mo_Illum",
+			"RC_19Rnd_155mm_Mo_Illum",
+			"RC_20Rnd_155mm_Mo_Illum",
+			"RC_21Rnd_155mm_Mo_Illum",
+			"RC_22Rnd_155mm_Mo_Illum",
+			"RC_23Rnd_155mm_Mo_Illum",
+			"RC_24Rnd_155mm_Mo_Illum",
+			"RC_25Rnd_155mm_Mo_Illum",
+			"RC_26Rnd_155mm_Mo_Illum",
+			"RC_27Rnd_155mm_Mo_Illum",
+			"RC_28Rnd_155mm_Mo_Illum",
+			"RC_29Rnd_155mm_Mo_Illum",
+			"RC_30Rnd_155mm_Mo_Illum",
+			"RC_31Rnd_155mm_Mo_Illum",
+			"RC_32Rnd_155mm_Mo_Illum",
+			"RC_33Rnd_155mm_Mo_Illum",
+			"RC_34Rnd_155mm_Mo_Illum",
+			"RC_35Rnd_155mm_Mo_Illum",
+			"RC_36Rnd_155mm_Mo_Illum",
+			"RC_37Rnd_155mm_Mo_Illum",
+			"RC_38Rnd_155mm_Mo_Illum",
+			"RC_39Rnd_155mm_Mo_Illum",
+			"RC_40Rnd_155mm_Mo_Illum"
 		};
 	};
 
@@ -798,7 +890,6 @@ class CfgWeapons
 
 		magazines[]=
 		{
-	    	"RC_ShipCannon_120mm_HE_shells_x0",
 			"RC_ShipCannon_120mm_HE_shells_x1",
 			"RC_ShipCannon_120mm_HE_shells_x2",
 			"RC_ShipCannon_120mm_HE_shells_x3",
@@ -840,7 +931,6 @@ class CfgWeapons
 			"RC_ShipCannon_120mm_HE_shells_x39",
 			"RC_ShipCannon_120mm_HE_shells_x40",
 
-			"RC_ShipCannon_120mm_HE_guided_shells_x0",
 			"RC_ShipCannon_120mm_HE_guided_shells_x1",
 			"RC_ShipCannon_120mm_HE_guided_shells_x2",
 			"RC_ShipCannon_120mm_HE_guided_shells_x3",
@@ -862,7 +952,6 @@ class CfgWeapons
 			"RC_ShipCannon_120mm_HE_guided_shells_x19",
 			"RC_ShipCannon_120mm_HE_guided_shells_x20",
 
-			"RC_ShipCannon_120mm_HE_LG_shells_x0",
 			"RC_ShipCannon_120mm_HE_LG_shells_x1",
 			"RC_ShipCannon_120mm_HE_LG_shells_x2",
 			"RC_ShipCannon_120mm_HE_LG_shells_x3",
@@ -884,7 +973,6 @@ class CfgWeapons
 			"RC_ShipCannon_120mm_HE_LG_shells_x19",
 			"RC_ShipCannon_120mm_HE_LG_shells_x20",
 
-			"RC_ShipCannon_120mm_HE_cluster_shells_x0",
 			"RC_ShipCannon_120mm_HE_cluster_shells_x1",
 			"RC_ShipCannon_120mm_HE_cluster_shells_x2",
 			"RC_ShipCannon_120mm_HE_cluster_shells_x3",
@@ -906,7 +994,6 @@ class CfgWeapons
 			"RC_ShipCannon_120mm_HE_cluster_shells_x19",
 			"RC_ShipCannon_120mm_HE_cluster_shells_x20",
 
-			"RC_ShipCannon_120mm_mine_shells_x0",
 			"RC_ShipCannon_120mm_mine_shells_x1",
 			"RC_ShipCannon_120mm_mine_shells_x2",
 			"RC_ShipCannon_120mm_mine_shells_x3",
@@ -928,7 +1015,6 @@ class CfgWeapons
 			"RC_ShipCannon_120mm_mine_shells_x19",
 			"RC_ShipCannon_120mm_mine_shells_x20",
 
-			"RC_ShipCannon_120mm_smoke_shells_x0",
 			"RC_ShipCannon_120mm_smoke_shells_x1",
 			"RC_ShipCannon_120mm_smoke_shells_x2",
 			"RC_ShipCannon_120mm_smoke_shells_x3",
@@ -950,7 +1036,6 @@ class CfgWeapons
 			"RC_ShipCannon_120mm_smoke_shells_x19",
 			"RC_ShipCannon_120mm_smoke_shells_x20",
 
-			"RC_ShipCannon_120mm_AT_mine_shells_x0",
 			"RC_ShipCannon_120mm_AT_mine_shells_x1",
 			"RC_ShipCannon_120mm_AT_mine_shells_x2",
 			"RC_ShipCannon_120mm_AT_mine_shells_x3",
@@ -970,7 +1055,48 @@ class CfgWeapons
 			"RC_ShipCannon_120mm_AT_mine_shells_x17",
 			"RC_ShipCannon_120mm_AT_mine_shells_x18",
 			"RC_ShipCannon_120mm_AT_mine_shells_x19",
-			"RC_ShipCannon_120mm_AT_mine_shells_x20"
+			"RC_ShipCannon_120mm_AT_mine_shells_x20",
+
+			"RC_ShipCannon_120mm_Illum_shells_x1",
+			"RC_ShipCannon_120mm_Illum_shells_x2",
+			"RC_ShipCannon_120mm_Illum_shells_x3",
+			"RC_ShipCannon_120mm_Illum_shells_x4",
+			"RC_ShipCannon_120mm_Illum_shells_x5",
+			"RC_ShipCannon_120mm_Illum_shells_x6",
+			"RC_ShipCannon_120mm_Illum_shells_x7",
+			"RC_ShipCannon_120mm_Illum_shells_x8",
+			"RC_ShipCannon_120mm_Illum_shells_x9",
+			"RC_ShipCannon_120mm_Illum_shells_x10",
+			"RC_ShipCannon_120mm_Illum_shells_x11",
+			"RC_ShipCannon_120mm_Illum_shells_x12",
+			"RC_ShipCannon_120mm_Illum_shells_x13",
+			"RC_ShipCannon_120mm_Illum_shells_x14",
+			"RC_ShipCannon_120mm_Illum_shells_x15",
+			"RC_ShipCannon_120mm_Illum_shells_x16",
+			"RC_ShipCannon_120mm_Illum_shells_x17",
+			"RC_ShipCannon_120mm_Illum_shells_x18",
+			"RC_ShipCannon_120mm_Illum_shells_x19",
+			"RC_ShipCannon_120mm_Illum_shells_x20",
+			"RC_ShipCannon_120mm_Illum_shells_x21",
+			"RC_ShipCannon_120mm_Illum_shells_x22",
+			"RC_ShipCannon_120mm_Illum_shells_x23",
+			"RC_ShipCannon_120mm_Illum_shells_x24",
+			"RC_ShipCannon_120mm_Illum_shells_x25",
+			"RC_ShipCannon_120mm_Illum_shells_x26",
+			"RC_ShipCannon_120mm_Illum_shells_x27",
+			"RC_ShipCannon_120mm_Illum_shells_x28",
+			"RC_ShipCannon_120mm_Illum_shells_x29",
+			"RC_ShipCannon_120mm_Illum_shells_x30",
+			"RC_ShipCannon_120mm_Illum_shells_x31",
+			"RC_ShipCannon_120mm_Illum_shells_x32",
+			"RC_ShipCannon_120mm_Illum_shells_x33",
+			"RC_ShipCannon_120mm_Illum_shells_x34",
+			"RC_ShipCannon_120mm_Illum_shells_x35",
+			"RC_ShipCannon_120mm_Illum_shells_x36",
+			"RC_ShipCannon_120mm_Illum_shells_x37",
+			"RC_ShipCannon_120mm_Illum_shells_x38",
+			"RC_ShipCannon_120mm_Illum_shells_x39",
+			"RC_ShipCannon_120mm_Illum_shells_x40"
 		};
 	};
 };
@@ -1146,7 +1272,8 @@ class CfgVehicles
 					"RC_2Rnd_155mm_Mo_Cluster",
 					"RC_12Rnd_155mm_Mo_smoke",
 					"RC_4Rnd_155mm_Mo_LG",
-					"RC_8Rnd_155mm_Mo_AT_mine"
+					"RC_8Rnd_155mm_Mo_AT_mine",
+					"RC_12Rnd_155mm_Mo_Illum"
 				};
 			};
 		};
@@ -1175,7 +1302,8 @@ class CfgVehicles
 					"RC_2Rnd_155mm_Mo_Cluster",
 					"RC_12Rnd_155mm_Mo_smoke",
 					"RC_4Rnd_155mm_Mo_LG",
-					"RC_8Rnd_155mm_Mo_AT_mine"
+					"RC_8Rnd_155mm_Mo_AT_mine",
+					"RC_12Rnd_155mm_Mo_Illum"
 				};
 			};
 		};
@@ -2560,7 +2688,8 @@ class CfgVehicles
 					"RC_ShipCannon_120mm_HE_cluster_shells_x2",
 					"RC_ShipCannon_120mm_mine_shells_x8",
 					"RC_ShipCannon_120mm_smoke_shells_x12",
-					"RC_ShipCannon_120mm_AT_mine_shells_x8"
+					"RC_ShipCannon_120mm_AT_mine_shells_x8",
+					"RC_ShipCannon_120mm_Illum_shells_x12"
 				};
 			};
 		};
