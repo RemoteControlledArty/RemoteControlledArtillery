@@ -36,11 +36,12 @@ DONE - FEATURES:
 -howitzer can drive in gunner seat
 -added target marker referencing, calculation and display
 
--added 230mm laser guided and AT guided rockets
--added laser guided to MLRS and MRL
+-added 230mm laser guided and AT guided rockets (unclear if they work)
 
 
 TO DO - QUALITY OF LIFE:
+
+-light off! esp Recon Nyx
 
 -if vehicle speed = 0 then turn off engine true
 -cannot open map with: mortar, MRL, static AA / AT / ATGM, laser des

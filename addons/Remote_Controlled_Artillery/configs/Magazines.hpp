@@ -878,81 +878,83 @@ class 2Rnd_155mm_Mo_Cluster;
 
 class RC_1Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
+	displayName="DPICM";
+	displayNameShort="DPICM";
 	count=1;
 };
-class RC_2Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_2Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=2;
 };
-class RC_3Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_3Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=3;
 };
-class RC_4Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_4Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=4;
 };
-class RC_5Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_5Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=5;
 };
-class RC_6Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_6Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=6;
 };
-class RC_7Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_7Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=7;
 };
-class RC_8Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_8Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=8;
 };
-class RC_9Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_9Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=9;
 };
-class RC_10Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_10Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=10;
 };
-class RC_11Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_11Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=11;
 };
-class RC_12Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_12Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=12;
 };
-class RC_13Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_13Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=13;
 };
-class RC_14Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_14Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=14;
 };
-class RC_15Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_15Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=15;
 };
-class RC_16Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_16Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=16;
 };
-class RC_17Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_17Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=17;
 };
-class RC_18Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_18Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=18;
 };
-class RC_19Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_19Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=19;
 };
-class RC_20Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+class RC_20Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 {
 	count=20;
 };
@@ -1437,49 +1439,51 @@ class 12Rnd_230mm_rockets_cluster;
 
 class RC_1Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
 {
+	displayName="DPICM";
+	displayNameShort="DPICM";
 	count=1;
 };
-class RC_2Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_2Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=2;
 };
-class RC_3Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_3Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=3;
 };
-class RC_4Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_4Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=4;
 };
-class RC_5Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_5Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=5;
 };
-class RC_6Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_6Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=6;
 };
-class RC_7Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_7Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=7;
 };
-class RC_8Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_8Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=8;
 };
-class RC_9Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_9Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=9;
 };
-class RC_10Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_10Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=10;
 };
-class RC_11Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_11Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=11;
 };
-class RC_12Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
+class RC_12Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 {
 	count=12;
 };
@@ -1933,81 +1937,83 @@ class magazine_ShipCannon_120mm_HE_cluster_shells_x2;
 
 class RC_ShipCannon_120mm_HE_cluster_shells_x1: magazine_ShipCannon_120mm_HE_cluster_shells_x2
 {
+	displayName="DPICM";
+	displayNameShort="DPICM";
 	count=1;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x2: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x2: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=2;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x3: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x3: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=3;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x4: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x4: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=4;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x5: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x5: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=5;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x6: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x6: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=6;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x7: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x7: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=7;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x8: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x8: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=8;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x9: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x9: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=9;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x10: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x10: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=10;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x11: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x11: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=11;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x12: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x12: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=12;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x13: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x13: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=14;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x14: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x14: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=14;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x15: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x15: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=15;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x16: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x16: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=16;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x17: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x17: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=17;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x18: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x18: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=18;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x19: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x19: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=19;
 };
-class RC_ShipCannon_120mm_HE_cluster_shells_x20: magazine_ShipCannon_120mm_HE_cluster_shells_x2
+class RC_ShipCannon_120mm_HE_cluster_shells_x20: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
 	count=20;
 };
