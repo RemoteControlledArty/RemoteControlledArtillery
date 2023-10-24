@@ -7,6 +7,7 @@ TO DO - BUGFIXES:
 
 -figure out why MRL and sometimes Howitzer shoots left/right if not aligned...
 
+
 DONE - BUGFIXES:
 
 -remove human crew hpp and hpp include in config
@@ -16,6 +17,10 @@ DONE - BUGFIXES:
 -target range cut of when 5 digits
 -target cycle keybinds (4 is MRS/MLRS charge) change to 3 and 5
 
+-fix RC_ATGM privated
+-fix loop when joining server
+
+
 TO DO - FEATURES:
 
 -magazine shell count attributes code?
@@ -23,12 +28,17 @@ TO DO - FEATURES:
 
 -explain target marker referencing to current subscribers
 
+
 DONE - FEATURES:
 
 -RCdisableseats= 1 for loacking commander seat  2 for locking driver and commander seat
 -isRCarty=1;  as mod friendly check if display should appear
 -howitzer can drive in gunner seat
 -added target marker referencing, calculation and display
+
+-added 230mm laser guided and AT guided rockets
+-added laser guided to MLRS and MRL
+
 
 TO DO - QUALITY OF LIFE:
 
@@ -39,6 +49,7 @@ TO DO - QUALITY OF LIFE:
 -if charge is correct for target distance, turn green
 
 -improve turret elevation formula, that accounts for elevation difference better
+
 
 DONE - QUALITY OF LIFE:
 
