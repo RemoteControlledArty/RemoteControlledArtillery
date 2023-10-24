@@ -1,10 +1,28 @@
-name = "Simple Grid Designators"
-author = "Fluffy"
-prefix = "FF_SimpleGrid"
+name = "Remote Controlled Artillery"
+author = "Ascent, Fluffy"
+prefix = "RCA"
 mainprefix = "z"
 
 [version]
-major = 2 # Overrides path when set
-minor = 1
-patch = 2
+major = 1 # Overrides path when set
+minor = 0
+patch = 0
 git_hash = 0
+
+[hemtt.launch]
+workshop = [
+	"450814997", # CBA_A3
+]
+
+[hemtt.release]
+sign = true
+archive = false
+
+[asc]
+enabled = false
+
+[files]
+include = [
+	"RCpic.paa",
+	"readme.txt"
+]

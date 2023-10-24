@@ -7,209 +7,209 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_Improved_FOV_Laser_Designator_Arid,
-			RC_Improved_FOV_Laser_Designator_Arid_O,
-			RC_Improved_FOV_Laser_Designator_Arid_I,
-			RC_Improved_FOV_Laser_Designator_Ti_Arid,
-			RC_Improved_FOV_Laser_Designator_Ti_Arid_O,
-			RC_Improved_FOV_Laser_Designator_Ti_Arid_I,
+			"RC_Improved_FOV_Laser_Designator_Arid",
+			"RC_Improved_FOV_Laser_Designator_Arid_O",
+			"RC_Improved_FOV_Laser_Designator_Arid_I",
+			"RC_Improved_FOV_Laser_Designator_Ti_Arid",
+			"RC_Improved_FOV_Laser_Designator_Ti_Arid_O",
+			"RC_Improved_FOV_Laser_Designator_Ti_Arid_I",
 
-			RC_Improved_FOV_Laser_Designator_Bag_Arid,
-			RC_Improved_FOV_Laser_Designator_Bag_Arid_O,
-			RC_Improved_FOV_Laser_Designator_Bag_Arid_I,
-			RC_Improved_FOV_Laser_Designator_Ti_Bag_Arid,
-			RC_Improved_FOV_Laser_Designator_Ti_Bag_Arid_O,
-			RC_Improved_FOV_Laser_Designator_Ti_Bag_Arid_I,
+			"RC_Improved_FOV_Laser_Designator_Bag_Arid",
+			"RC_Improved_FOV_Laser_Designator_Bag_Arid_O",
+			"RC_Improved_FOV_Laser_Designator_Bag_Arid_I",
+			"RC_Improved_FOV_Laser_Designator_Ti_Bag_Arid",
+			"RC_Improved_FOV_Laser_Designator_Ti_Bag_Arid_O",
+			"RC_Improved_FOV_Laser_Designator_Ti_Bag_Arid_I",
 
-			RC_Improved_FOV_Laser_Designator_Woodland,
-			RC_Improved_FOV_Laser_Designator_Woodland_O,
-			RC_Improved_FOV_Laser_Designator_Woodland_I,
-			RC_Improved_FOV_Laser_Designator_Ti_Woodland,
-			RC_Improved_FOV_Laser_Designator_Ti_Woodland_O,
-			RC_Improved_FOV_Laser_Designator_Ti_Woodland_I,
+			"RC_Improved_FOV_Laser_Designator_Woodland",
+			"RC_Improved_FOV_Laser_Designator_Woodland_O",
+			"RC_Improved_FOV_Laser_Designator_Woodland_I",
+			"RC_Improved_FOV_Laser_Designator_Ti_Woodland",
+			"RC_Improved_FOV_Laser_Designator_Ti_Woodland_O",
+			"RC_Improved_FOV_Laser_Designator_Ti_Woodland_I",
 
-			RC_Improved_FOV_Laser_Designator_Bag_Woodland,
-			RC_Improved_FOV_Laser_Designator_Bag_Woodland_O,
-			RC_Improved_FOV_Laser_Designator_Bag_Woodland_I,
-			RC_Improved_FOV_Laser_Designator_Ti_Bag_Woodland,
-			RC_Improved_FOV_Laser_Designator_Ti_Bag_Woodland_O,
-			RC_Improved_FOV_Laser_Designator_Ti_Bag_Woodland_I,
-
-
-			RC_Static_AA_Arid,
-			RC_Static_AA_Woodland,
-			RC_Static_AA_Arid_O,
-			RC_Static_AA_Woodland_O,
-			RC_Static_AA_Arid_I,
-			RC_Static_AA_Woodland_I,
-
-			RC_Static_AA_Arid_Bag,
-			RC_Static_AA_Woodland_Bag,
-			RC_Static_AA_Arid_Bag_O,
-			RC_Static_AA_Woodland_Bag_O,
-			RC_Static_AA_Arid_Bag_I,
-			RC_Static_AA_Woodland_Bag_I,
+			"RC_Improved_FOV_Laser_Designator_Bag_Woodland",
+			"RC_Improved_FOV_Laser_Designator_Bag_Woodland_O",
+			"RC_Improved_FOV_Laser_Designator_Bag_Woodland_I",
+			"RC_Improved_FOV_Laser_Designator_Ti_Bag_Woodland",
+			"RC_Improved_FOV_Laser_Designator_Ti_Bag_Woodland_O",
+			"RC_Improved_FOV_Laser_Designator_Ti_Bag_Woodland_I",
 
 
-			RC_Static_AT_Arid,
-			RC_Static_AT_Woodland,
-			RC_Static_AT_Arid_O,
-			RC_Static_AT_Woodland_O,
-			RC_Static_AT_Arid_I,
-			RC_Static_AT_Woodland_I,
+			"RC_Static_AA_Arid",
+			"RC_Static_AA_Woodland",
+			"RC_Static_AA_Arid_O",
+			"RC_Static_AA_Woodland_O",
+			"RC_Static_AA_Arid_I",
+			"RC_Static_AA_Woodland_I",
 
-			RC_Static_AT_Arid_Bag,
-			RC_Static_AT_Woodland_Bag,
-			RC_Static_AT_Arid_Bag_O,
-			RC_Static_AT_Woodland_Bag_O,
-			RC_Static_AT_Arid_Bag_I,
-			RC_Static_AT_Woodland_Bag_I,
-
-
-			RC_Static_ATGM_Arid,
-			RC_Static_ATGM_Woodland,
-			RC_Static_ATGM_Arid_O,
-			RC_Static_ATGM_Woodland_O,
-			RC_Static_ATGM_Arid_I,
-			RC_Static_ATGM_Woodland_I,
-
-			RC_Static_ATGM_Arid_Bag,
-			RC_Static_ATGM_Woodland_Bag,
-			RC_Static_ATGM_Arid_Bag_O,
-			RC_Static_ATGM_Woodland_Bag_O,
-			RC_Static_ATGM_Arid_Bag_I,
-			RC_Static_ATGM_Woodland_Bag_I,
+			"RC_Static_AA_Arid_Bag",
+			"RC_Static_AA_Woodland_Bag",
+			"RC_Static_AA_Arid_Bag_O",
+			"RC_Static_AA_Woodland_Bag_O",
+			"RC_Static_AA_Arid_Bag_I",
+			"RC_Static_AA_Woodland_Bag_I",
 
 
-			B_UAV_AI,
-			O_UAV_AI,
-			I_UAV_AI,
+			"RC_Static_AT_Arid",
+			"RC_Static_AT_Woodland",
+			"RC_Static_AT_Arid_O",
+			"RC_Static_AT_Woodland_O",
+			"RC_Static_AT_Arid_I",
+			"RC_Static_AT_Woodland_I",
+
+			"RC_Static_AT_Arid_Bag",
+			"RC_Static_AT_Woodland_Bag",
+			"RC_Static_AT_Arid_Bag_O",
+			"RC_Static_AT_Woodland_Bag_O",
+			"RC_Static_AT_Arid_Bag_I",
+			"RC_Static_AT_Woodland_Bag_I",
 
 
-			RC_Howitzer_NA_A,
-			RC_Howitzer_NA_WD,
-			RC_Howitzer_NA_A_O,
-			RC_Howitzer_NA_WD_O,
-			RC_Howitzer_NA_A_I,
-			RC_Howitzer_NA_WD_I,
+			"RC_Static_ATGM_Arid",
+			"RC_Static_ATGM_Woodland",
+			"RC_Static_ATGM_Arid_O",
+			"RC_Static_ATGM_Woodland_O",
+			"RC_Static_ATGM_Arid_I",
+			"RC_Static_ATGM_Woodland_I",
 
-			RC_Howitzer_A,
-			RC_Howitzer_WD,
-			RC_Howitzer_A_O,
-			RC_Howitzer_WD_O,
-			RC_Howitzer_A_I,
-			RC_Howitzer_WD_I,
-
-
-			RC_Howitzer_NA_HEX_A_O,
-			RC_Howitzer_NA_HEX_WD_O,
-
-			RC_Howitzer_HEX_A_O,
-			RC_Howitzer_HEX_WD_O,
+			"RC_Static_ATGM_Arid_Bag",
+			"RC_Static_ATGM_Woodland_Bag",
+			"RC_Static_ATGM_Arid_Bag_O",
+			"RC_Static_ATGM_Woodland_Bag_O",
+			"RC_Static_ATGM_Arid_Bag_I",
+			"RC_Static_ATGM_Woodland_Bag_I",
 
 
-			RC_MLRS_HE_A,
-			RC_MLRS_HE_WD,
-			RC_MLRS_HE_A_O,
-			RC_MLRS_HE_WD_O,
-			RC_MLRS_HE_A_I,
-			RC_MLRS_HE_WD_I,
-
-			RC_MLRS_CL_A,
-			RC_MLRS_CL_WD,
-			RC_MLRS_CL_A_O,
-			RC_MLRS_CL_WD_O,
-			RC_MLRS_CL_A_I,
-			RC_MLRS_CL_WD_I,
-
-			RC_MLRS_HECL_A,
-			RC_MLRS_HECL_WD,
-			RC_MLRS_HECL_A_O,
-			RC_MLRS_HECL_WD_O,
-			RC_MLRS_HECL_A_I,
-			RC_MLRS_HECL_WD_I,
+			"B_UAV_AI",
+			"O_UAV_AI",
+			"I_UAV_AI",
 
 
-			RC_MRL_HE_DIG,
-			RC_MRL_HE_WD,
-			RC_MRL_HE_HEX_O,
-			RC_MRL_HE_WD_O,
-			RC_MRL_HE_DIG_I,
-			RC_MRL_HE_WD_I,
+			"RC_Howitzer_NA_A",
+			"RC_Howitzer_NA_WD",
+			"RC_Howitzer_NA_A_O",
+			"RC_Howitzer_NA_WD_O",
+			"RC_Howitzer_NA_A_I",
+			"RC_Howitzer_NA_WD_I",
 
-			RC_MRL_CL_DIG,
-			RC_MRL_CL_WD,
-			RC_MRL_CL_HEX_O,
-			RC_MRL_CL_WD_O,
-			RC_MRL_CL_DIG_I,
-			RC_MRL_CL_WD_I,
-
-			RC_MRL_HECL_DIG,
-			RC_MRL_HECL_WD,
-			RC_MRL_HECL_HEX_O,
-			RC_MRL_HECL_WD_O,
-			RC_MRL_HECL_DIG_I,
-			RC_MRL_HECL_WD_I,
+			"RC_Howitzer_A",
+			"RC_Howitzer_WD",
+			"RC_Howitzer_A_O",
+			"RC_Howitzer_WD_O",
+			"RC_Howitzer_A_I",
+			"RC_Howitzer_WD_I",
 
 
-			RC_AA_A,
-			RC_AA_WD,
-			RC_AA_A_O,
-			RC_AA_WD_O,
-			RC_AA_HEX_A_O,
-			RC_AA_HEX_WD_O,
-			RC_AA_A_I,
-			RC_AA_WD_I,
+			"RC_Howitzer_NA_HEX_A_O",
+			"RC_Howitzer_NA_HEX_WD_O",
+
+			"RC_Howitzer_HEX_A_O",
+			"RC_Howitzer_HEX_WD_O",
 
 
-			RC_AA_small_WD,
-			RC_AA_small_WD_O,
-			RC_AA_small_DIG_I,
-			RC_AA_small_WD_I,
+			"RC_MLRS_HE_A",
+			"RC_MLRS_HE_WD",
+			"RC_MLRS_HE_A_O",
+			"RC_MLRS_HE_WD_O",
+			"RC_MLRS_HE_A_I",
+			"RC_MLRS_HE_WD_I",
 
-			RC_radar_small_WD,
-			RC_radar_small_WD_O,
-			RC_radar_small_DIG_I,
-			RC_radar_small_WD_I,
+			"RC_MLRS_CL_A",
+			"RC_MLRS_CL_WD",
+			"RC_MLRS_CL_A_O",
+			"RC_MLRS_CL_WD_O",
+			"RC_MLRS_CL_A_I",
+			"RC_MLRS_CL_WD_I",
 
-			RC_ATGM_small_WD,
-			RC_ATGM_small_WD_O,
-			RC_ATGM_small_DIG_I,
-			RC_ATGM_small_WD_I,
+			"RC_MLRS_HECL_A",
+			"RC_MLRS_HECL_WD",
+			"RC_MLRS_HECL_A_O",
+			"RC_MLRS_HECL_WD_O",
+			"RC_MLRS_HECL_A_I",
+			"RC_MLRS_HECL_WD_I",
 
 
-			RC_Mortar_NA,
-			RC_Mortar_NA_O,
-			RC_Mortar_NA_HEX_O,
-			RC_Mortar_NA_I,
+			"RC_MRL_HE_DIG",
+			"RC_MRL_HE_WD",
+			"RC_MRL_HE_HEX_O",
+			"RC_MRL_HE_WD_O",
+			"RC_MRL_HE_DIG_I",
+			"RC_MRL_HE_WD_I",
 
-			RC_Mortar,
-			RC_Mortar_O,
-			RC_Mortar_HEX_O,
-			RC_Mortar_I,
+			"RC_MRL_CL_DIG",
+			"RC_MRL_CL_WD",
+			"RC_MRL_CL_HEX_O",
+			"RC_MRL_CL_WD_O",
+			"RC_MRL_CL_DIG_I",
+			"RC_MRL_CL_WD_I",
 
-			RC_Mortar_Bag_NA,
-			RC_Mortar_Bag_NA_O,
-			RC_Mortar_Bag_NA_HEX_O,
-			RC_Mortar_Bag_NA_I,
+			"RC_MRL_HECL_DIG",
+			"RC_MRL_HECL_WD",
+			"RC_MRL_HECL_HEX_O",
+			"RC_MRL_HECL_WD_O",
+			"RC_MRL_HECL_DIG_I",
+			"RC_MRL_HECL_WD_I",
 
-			RC_Mortar_Bag,
-			RC_Mortar_Bag_O,
-			RC_Mortar_Bag_HEX_O,
-			RC_Mortar_Bag_I
+
+			"RC_AA_A",
+			"RC_AA_WD",
+			"RC_AA_A_O",
+			"RC_AA_WD_O",
+			"RC_AA_HEX_A_O",
+			"RC_AA_HEX_WD_O",
+			"RC_AA_A_I",
+			"RC_AA_WD_I",
+
+
+			"RC_AA_small_WD",
+			"RC_AA_small_WD_O",
+			"RC_AA_small_DIG_I",
+			"RC_AA_small_WD_I",
+
+			"RC_radar_small_WD",
+			"RC_radar_small_WD_O",
+			"RC_radar_small_DIG_I",
+			"RC_radar_small_WD_I",
+
+			"RC_ATGM_small_WD",
+			"RC_ATGM_small_WD_O",
+			"RC_ATGM_small_DIG_I",
+			"RC_ATGM_small_WD_I",
+
+
+			"RC_Mortar_NA",
+			"RC_Mortar_NA_O",
+			"RC_Mortar_NA_HEX_O",
+			"RC_Mortar_NA_I",
+
+			"RC_Mortar",
+			"RC_Mortar_O",
+			"RC_Mortar_HEX_O",
+			"RC_Mortar_I",
+
+			"RC_Mortar_Bag_NA",
+			"RC_Mortar_Bag_NA_O",
+			"RC_Mortar_Bag_NA_HEX_O",
+			"RC_Mortar_Bag_NA_I",
+
+			"RC_Mortar_Bag",
+			"RC_Mortar_Bag_O",
+			"RC_Mortar_Bag_HEX_O",
+			"RC_Mortar_Bag_I"
 		};
 
 		weapons[]=
 		{
-			Improved_FOV_Laserdesignator_Arid,
-			Improved_FOV_Laserdesignator_Woodland,
-			Improved_FOV_Laserdesignator_Ti_Arid,
-			Improved_FOV_Laserdesignator_Ti_Woodland,
-			RC_ATGM,
-			RC_ShipCannon_120mm,
-			RC_155mm_AMOS,
-			RC_rockets_230mm_GAT,
-			RC_mortar_82mm
+			"Improved_FOV_Laserdesignator_Arid",
+			"Improved_FOV_Laserdesignator_Woodland",
+			"Improved_FOV_Laserdesignator_Ti_Arid",
+			"Improved_FOV_Laserdesignator_Ti_Woodland",
+			"RC_ATGM",
+			"RC_ShipCannon_120mm",
+			"RC_155mm_AMOS",
+			"RC_rockets_230mm_GAT",
+			"RC_mortar_82mm"
 		};
 
 		magazines[]={};		//too many to list
@@ -231,7 +231,7 @@ class CfgPatches
 
 
 
-//fixes connection loss after respawn, will also be available as standalone in steam workshop
+//fixes connection loss after respawn", will also be available as standalone in steam workshop
 class Extended_PostInit_EventHandlers
 {
      UgvConnectionAfterDeathFix_Post_Init="UgvConnectionAfterDeathFix_Post_Init_Var=[] execVM ""\Remote_Controlled_Artillery\UgvConnectionAfterDeathFix.sqf""";
@@ -1002,7 +1002,7 @@ class CfgVehicles
 		class CommanderOptics;
 		// I did a Thing
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
+		RCDisableSeats=2; // 1 = Commander Seat", 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -1052,9 +1052,9 @@ class CfgVehicles
 		animationList[]=
 		{
 			"showCamonetTurret",
-			0,
+			0",
 			"showCamonetHull",
-			0,
+			0",
 			"showAmmobox",
 			0
 		};
@@ -1220,7 +1220,7 @@ class CfgVehicles
 		class MainTurret;
 		class CommanderOptics;
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
+		RCDisableSeats=2; // 1 = Commander Seat", 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -1270,9 +1270,9 @@ class CfgVehicles
 		animationList[]=
 		{
 			"showCamonetHull",
-			1,
+			1",
 			"showCamonetCannon",
-			1,
+			1",
 			"showCamonetTurret",
 			1
 		};
@@ -1388,7 +1388,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+		RCDisableSeats=2; // 1 = Commander Seat", 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -1434,7 +1434,7 @@ class CfgVehicles
 		animationList[]=
 		{
 			"showCamonetTurret",
-			0,
+			0",
 			"showCamonetHull",
 			0
 		};
@@ -1622,7 +1622,6 @@ class CfgVehicles
 		side=2;
 	};
 
-
 	// MRL
 	class I_Truck_02_MRL_F;
 	class RC_MRL_base: I_Truck_02_MRL_F
@@ -1632,7 +1631,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+		RCDisableSeats=2; // 1 = Commander Seat", 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -1887,7 +1886,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
-		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+		RCDisableSeats=2; // 1 = Commander Seat", 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -1933,7 +1932,7 @@ class CfgVehicles
 		animationList[]=
 		{
 			"showCamonetTurret",
-			0,
+			0",
 			"showCamonetHull",
 			0
 		};
@@ -2009,7 +2008,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
-		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+		RCDisableSeats=2; // 1 = Commander Seat", 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -2060,9 +2059,9 @@ class CfgVehicles
 		animationList[]=
 		{
 			"showCamonetTurret",
-			1,
+			1",
 			"showCamonetHull",
-			1,
+			1",
 			"showSLATHull",
 			1
 		};
@@ -2117,7 +2116,7 @@ class CfgVehicles
 		class showSLATHull;
 		class Turrets;
 		class MainTurret;
-		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+		RCDisableSeats=2; // 1 = Commander Seat", 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -2163,7 +2162,7 @@ class CfgVehicles
 		animationList[]=
 		{
 			"showCamonetHull",
-			1,
+			1",
 			"showSLATHull",
 			1
 		};
@@ -2223,7 +2222,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		forceHideDriver=1;
-		RCDisableSeats=3; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+		RCDisableSeats=3; // 1 = Commander Seat", 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 		
@@ -2279,7 +2278,7 @@ class CfgVehicles
 		animationList[]=
 		{
 			"showCamonetHull",
-			1,
+			1",
 			"showSLATHull",
 			1
 		};
@@ -2329,7 +2328,7 @@ class CfgVehicles
 		class showSLATHull;
 		class Turrets;
 		class MainTurret;
-		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+		RCDisableSeats=2; // 1 = Commander Seat", 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
@@ -2433,14 +2432,14 @@ class CfgVehicles
 				forceAnimate[]=
 				{
 					"showCamonetPlates1",
-					1,
+					1",
 					"showCamonetPlates2",
 					1
 				};
 				forceAnimate2[]=
 				{
 					"showCamonetPlates1",
-					0,
+					0",
 					"showCamonetPlates2",
 					0
 				};
