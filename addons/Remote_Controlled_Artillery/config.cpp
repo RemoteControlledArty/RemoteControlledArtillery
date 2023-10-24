@@ -436,6 +436,7 @@ class CfgWeapons
 	class RC_ATGM: launch_Vorona_base_F
 	{
 		scope=2;
+		magazineReloadTime=6;
 		autoReload=1;	
 		magazines[]=
 		{
@@ -1603,7 +1604,7 @@ class CfgVehicles
 	};
 	class RC_MLRS_HE_CL_A: RC_MLRS_HE_A
 	{
-		displayName="RC MLRS-HE/CL/LG";
+		displayName="RC MLRS-HE/CL";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1627,7 +1628,7 @@ class CfgVehicles
 	};
 	class RC_MLRS_HE_CL_WD: RC_MLRS_HE_WD
 	{
-		displayName="RC MLRS-HE/CL/LG";
+		displayName="RC MLRS-HE/CL";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1771,7 +1772,7 @@ class CfgVehicles
 	};
 	class RC_MRL_HE_CL_DIG: RC_MRL_HE_DIG
 	{
-		displayName="RC MRL-HE/CL/LG";
+		displayName="RC MRL-HE/CL";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1796,7 +1797,7 @@ class CfgVehicles
 	};
 	class RC_MRL_HE_CL_WD: RC_MRL_HE_WD
 	{
-		displayName="RC MRL-HE/CL/LG";
+		displayName="RC MRL-HE/CL";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
