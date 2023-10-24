@@ -115,12 +115,12 @@ class CfgPatches
 			RC_MLRS_HE_A_I,
 			RC_MLRS_HE_WD_I,
 
-			RC_MLRS_HE_CL_LG_A,
-			RC_MLRS_HE_CL_LG_WD,
-			RC_MLRS_HE_CL_LG_A_O,
-			RC_MLRS_HE_CL_LG_WD_O,
-			RC_MLRS_HE_CL_LG_A_I,
-			RC_MLRS_HE_CL_LG_WD_I,
+			RC_MLRS_HE_CL_A,
+			RC_MLRS_HE_CL_WD,
+			RC_MLRS_HE_CL_A_O,
+			RC_MLRS_HE_CL_WD_O,
+			RC_MLRS_HE_CL_A_I,
+			RC_MLRS_HE_CL_WD_I,
 
 
 			RC_MRL_HE_DIG,
@@ -130,12 +130,12 @@ class CfgPatches
 			RC_MRL_HE_DIG_I,
 			RC_MRL_HE_WD_I,
 
-			RC_MRL_HE_CL_LG_DIG,
-			RC_MRL_HE_CL_LG_WD,
-			RC_MRL_HE_CL_LG_HEX_O,
-			RC_MRL_HE_CL_LG_WD_O,
-			RC_MRL_HE_CL_LG_DIG_I,
-			RC_MRL_HE_CL_LG_WD_I,
+			RC_MRL_HE_CL_DIG,
+			RC_MRL_HE_CL_WD,
+			RC_MRL_HE_CL_HEX_O,
+			RC_MRL_HE_CL_WD_O,
+			RC_MRL_HE_CL_DIG_I,
+			RC_MRL_HE_CL_WD_I,
 
 
 			RC_AA_A,
@@ -436,6 +436,7 @@ class CfgWeapons
 	class RC_ATGM: launch_Vorona_base_F
 	{
 		scope=2;
+		autoReload=1;	
 		magazines[]=
 		{
 			"RC_1Rnd_ATGM",
@@ -591,6 +592,8 @@ class CfgWeapons
 	class rockets_230mm_GAT;
 	class RC_rockets_230mm_GAT: rockets_230mm_GAT
 	{
+		magazineReloadTime=20;
+
 		magazines[]=
 		{
 			"RC_1Rnd_230mm_rockets",
@@ -652,7 +655,6 @@ class CfgWeapons
 	class mortar_155mm_AMOS;
 	class RC_155mm_AMOS: mortar_155mm_AMOS
 	{
-		reloadTime=5;
 		magazineReloadTime=5;
 
 		magazines[]=
@@ -1599,7 +1601,7 @@ class CfgVehicles
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MLRS_HE_CL_LG_A: RC_MLRS_HE_A
+	class RC_MLRS_HE_CL_A: RC_MLRS_HE_A
 	{
 		displayName="RC MLRS-HE/CL/LG";
 		faction="RemoteControlled_B";
@@ -1618,13 +1620,12 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_6Rnd_230mm_rockets",
-					"RC_3Rnd_230mm_rockets_cluster",
-					"RC_3Rnd_230mm_rockets_LG"
+					"RC_6Rnd_230mm_rockets_cluster"
 				};
 			};
 		};
 	};
-	class RC_MLRS_HE_CL_LG_WD: RC_MLRS_HE_WD
+	class RC_MLRS_HE_CL_WD: RC_MLRS_HE_WD
 	{
 		displayName="RC MLRS-HE/CL/LG";
 		faction="RemoteControlled_B";
@@ -1643,31 +1644,30 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_6Rnd_230mm_rockets",
-					"RC_3Rnd_230mm_rockets_cluster",
-					"RC_3Rnd_230mm_rockets_LG"
+					"RC_6Rnd_230mm_rockets_cluster"
 				};
 			};
 		};
 	};
-	class RC_MLRS_HE_CL_LG_A_O: RC_MLRS_HE_CL_LG_A
+	class RC_MLRS_HE_CL_A_O: RC_MLRS_HE_CL_A
 	{
 		faction="RemoteControlled_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MLRS_HE_CL_LG_WD_O: RC_MLRS_HE_CL_LG_WD
+	class RC_MLRS_HE_CL_WD_O: RC_MLRS_HE_CL_WD
 	{
 		faction="RemoteControlled_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MLRS_HE_CL_LG_WD_I: RC_MLRS_HE_CL_LG_WD
+	class RC_MLRS_HE_CL_WD_I: RC_MLRS_HE_CL_WD
 	{
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MLRS_HE_CL_LG_A_I: RC_MLRS_HE_CL_LG_A
+	class RC_MLRS_HE_CL_A_I: RC_MLRS_HE_CL_A
 	{
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
@@ -1769,7 +1769,7 @@ class CfgVehicles
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MRL_HE_CL_LG_DIG: RC_MRL_HE_DIG
+	class RC_MRL_HE_CL_DIG: RC_MRL_HE_DIG
 	{
 		displayName="RC MRL-HE/CL/LG";
 		faction="RemoteControlled_B";
@@ -1789,13 +1789,12 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_6Rnd_230mm_rockets",
-					"RC_3Rnd_230mm_rockets_cluster",
-					"RC_3Rnd_230mm_rockets_LG"
+					"RC_6Rnd_230mm_rockets_cluster"
 				};
 			};
 		};
 	};
-	class RC_MRL_HE_CL_LG_WD: RC_MRL_HE_WD
+	class RC_MRL_HE_CL_WD: RC_MRL_HE_WD
 	{
 		displayName="RC MRL-HE/CL/LG";
 		faction="RemoteControlled_B";
@@ -1815,19 +1814,18 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_6Rnd_230mm_rockets",
-					"RC_3Rnd_230mm_rockets_cluster",
-					"RC_3Rnd_230mm_rockets_LG"
+					"RC_6Rnd_230mm_rockets_cluster"
 				};
 			};
 		};
 	};
-	class RC_MRL_HE_CL_LG_WD_O: RC_MRL_HE_CL_LG_WD
+	class RC_MRL_HE_CL_WD_O: RC_MRL_HE_CL_WD
 	{
 		faction="RemoteControlled_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MRL_HE_CL_LG_HEX_O: RC_MRL_HE_CL_LG_DIG
+	class RC_MRL_HE_CL_HEX_O: RC_MRL_HE_CL_DIG
 	{
 		faction="RemoteControlled_O";
 		crew="O_UAV_AI";
@@ -1840,13 +1838,13 @@ class CfgVehicles
 			"\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
 		};
 	};
-	class RC_MRL_HE_CL_LG_DIG_I: RC_MRL_HE_CL_LG_DIG
+	class RC_MRL_HE_CL_DIG_I: RC_MRL_HE_CL_DIG
 	{
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MRL_HE_CL_LG_WD_I: RC_MRL_HE_CL_LG_WD
+	class RC_MRL_HE_CL_WD_I: RC_MRL_HE_CL_WD
 	{
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
