@@ -9,18 +9,6 @@
 // Need to exit early if we aren't a client
 if !hasInterface exitWith {};
 
-// Wait til the Player's UI has loaded
-waitUntil {
-	sleep 1;
-	!isNull (findDisplay 46);
-};
-// Wait until there is Simulation Time
-waitUntil {time > 0};
-
-// Waituntil Player exists
-waitUntil {!isNull player};
-
-
 RC_Artillery_UI = [] spawn {
 	
 	while {true} do {
