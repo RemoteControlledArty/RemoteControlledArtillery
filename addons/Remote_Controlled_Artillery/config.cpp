@@ -377,6 +377,228 @@ class CfgAmmo
 		whistleDist=0;
 		aimAboveDefault=3;
 		aimAboveTarget[]={360,400,500,640,720,800,850};
+
+
+
+	//Airburst test section
+
+	/*
+	class RC_155mm_HE_Airburst: ammo_Penetrator_Base
+	{
+		caliber=66.666702;
+		warheadName="HE";
+		hit=340;
+		indirectHit=125;
+		indirectHitRange=30;
+		explosive=0.80000001;
+		ExplosionEffects="MortarExplosion";
+	};
+	*/
+
+	/*
+	class Sh_155mm_AMOS: ShellBase
+	{
+		hit=340;
+		indirectHit=125;
+		indirectHitRange=30;
+		warheadName="HE";
+		dangerRadiusHit=750;
+		suppressionRadiusHit=75;
+		typicalSpeed=800;
+		caliber=10;
+		deflecting=0;
+		explosive=0.80000001;
+		cost=300;
+		model="\A3\weapons_f\ammo\shell";
+		CraterEffects="ArtyShellCrater";
+		ExplosionEffects="MortarExplosion";
+		whistleDist=60;
+		artilleryLock=1;
+		thrust=0;
+		timeToLive=180;
+		airFriction=0;
+		sideairFriction=0;
+		soundHit1[]=
+		{
+			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
+			2.5118864,
+			1,
+			1900
+		};
+		soundHit2[]=
+		{
+			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
+			2.5118864,
+			1,
+			1900
+		};
+		soundHit3[]=
+		{
+			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_03",
+			2.5118864,
+			1,
+			1900
+		};
+		soundHit4[]=
+		{
+			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_04",
+			2.5118864,
+			1,
+			1900
+		};
+		multiSoundHit[]=
+		{
+			"soundHit1",
+			0.25,
+			"soundHit2",
+			0.25,
+			"soundHit3",
+			0.25,
+			"soundHit4",
+			0.25
+		};
+		class CamShakeExplode
+		{
+			power=31;
+			duration=2.4000001;
+			frequency=20;
+			distance=339.599;
+		};
+		class CamShakeHit
+		{
+			power=155;
+			duration=0.80000001;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=3.52844;
+			duration=2.4000001;
+			frequency=20;
+			distance=99.599197;
+		};
+		class CamShakePlayerFire
+		{
+			power=0.0099999998;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	*/
+
+	/*SUBMUNITION
+	class ammo_Penetrator_NLAW: ammo_Penetrator_Base
+	{
+		caliber=26.6667;
+		warheadName="AP";
+		typicalSpeed=1000;
+		hit=525;
+	};
+
+
+
+
+	class ammo_Penetrator_AGM_01: ammo_Penetrator_Base
+	{
+		caliber=66.666702;
+		warheadName="HE";
+		indirectHit=90;
+		indirectHitRange=10;
+		explosive=0.64999998;
+		hit=1650;
+	};
+
+	class Sh_120mm_HE: ShellBase
+	{
+		hit=250;
+		indirectHit=60;
+		indirectHitRange=6;
+		warheadName="HE";
+		dangerRadiusHit=160;
+		suppressionRadiusHit=32;
+		typicalSpeed=1400;
+		explosive=0.80000001;
+		cost=300;
+		airFriction=-0.000275;
+		caliber=10;
+		deflecting=4;
+		timeToLive=15;
+		whistleOnFire=1;
+		whistleDist=14;
+		model="\A3\Weapons_f\Data\bullettracer\shell_tracer_white";
+		tracerScale=1;
+		tracerStartTime=0.1;
+		tracerEndTime=3;
+		muzzleEffect="";
+		soundHit1[]=
+		{
+			"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_01",
+			1.7782794,
+			1,
+			1800
+		};
+		soundHit2[]=
+		{
+			"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_02",
+			1.7782794,
+			1,
+			1800
+		};
+		soundHit3[]=
+		{
+			"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_03",
+			1.7782794,
+			1,
+			1800
+		};
+		soundHit4[]=
+		{
+			"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_04",
+			1.7782794,
+			1,
+			1800
+		};
+		multiSoundHit[]=
+		{
+			"soundHit1",
+			0.25,
+			"soundHit2",
+			0.25,
+			"soundHit3",
+			0.25,
+			"soundHit4",
+			0.25
+		};
+		class CamShakeExplode
+		{
+			power=24;
+			duration=2.2;
+			frequency=20;
+			distance=143.636;
+		};
+		class CamShakeHit
+		{
+			power=120;
+			duration=0.60000002;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=3.3097501;
+			duration=2.2;
+			frequency=20;
+			distance=87.635597;
+		};
+		class CamShakePlayerFire
+		{
+			power=0.02;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};*/
 	};
 };
 
