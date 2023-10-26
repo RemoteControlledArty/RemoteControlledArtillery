@@ -384,7 +384,7 @@ class CfgAmmo
 	//reminder, change DPICM to submunitionConeType[] = {"poissondisc",  for more even submunition spead.
 	
 	class ammo_Penetrator_Base;
-	class RC_155mm_HE_Airburst_1_Submunition: ammo_Penetrator_Base
+	class Sh_155mm_AMOS_AB1_Sub: ammo_Penetrator_Base
 	{
 		caliber=10;
 		warheadName="HE";
@@ -396,22 +396,26 @@ class CfgAmmo
 	};
 
 	class Sh_155mm_AMOS_guided;
-	class RC_155mm_HE_Airburst_1: Sh_155mm_AMOS_guided
+	class Sh_155mm_AMOS_AB1: Sh_155mm_AMOS_guided
 	{
 		triggerDistance=200;
 		triggerTime=-1;
 		triggerSpeedCoef=1;
 
-		submunitionAmmo="RC_155mm_HE_Airburst_1_Submunition";
+		submunitionAmmo[]=
+		{
+			"Sh_155mm_AMOS_AB1_Sub",
+			1
+		};
 		autoSeekTarget=0;
 		muzzleEffect="";
 	};
 
 	class Sh_155mm_AMOS;
-	class RC_155mm_HE_Airburst_2: Sh_155mm_AMOS
+	class Sh_155mm_AMOS_AB2: Sh_155mm_AMOS
 	{
 		triggerDistance=20;
-		//triggerTime=;
+		//triggerTime=?;
 	};
 
 	/*
@@ -626,16 +630,16 @@ class CfgMagazines
 	#include "\Remote_Controlled_Artillery\configs\Magazines.hpp"
 
 	//Airburst test
-	class RC_20Rnd_155mm_Mo_Airburst_1: 4Rnd_155mm_Mo_guided
+	class RC_20Rnd_155mm_AB1: 4Rnd_155mm_Mo_guided
 	{
-		ammo="RC_155mm_HE_Airburst_1";
+		ammo="Sh_155mm_AMOS_AB1";
 		displayName="155mm HE Airburst1";
 		displayNameShort="155mm HE AB1";
 		count=20;
 	};
-	class RC_20Rnd_155mm_Mo_Airburst_2: 32Rnd_155mm_Mo_shells
+	class RC_20Rnd_155mm_AB2: 32Rnd_155mm_Mo_shells
 	{
-		ammo="RC_155mm_HE_Airburst_2";
+		ammo="Sh_155mm_AMOS_AB2";
 		displayName="155mm HE Airburst2";
 		displayNameShort="155mm HE AB2";
 		count=20;
@@ -1127,11 +1131,12 @@ class CfgWeapons
 		};
 	};
 
-	class RC_155mm_AMOS_AB: RC_155mm_AMOS
+	class RC_155mm_AMOS_AB: mortar_155mm_AMOS
 	{
 		magazines[]=
 		{
-			"RC_20Rnd_155mm_Mo_Airburst_2"
+			"RC_20Rnd_155mm_AB2",
+			"RC_20Rnd_155mm_AB1"
 		};
 	};
 
@@ -1592,9 +1597,11 @@ class CfgVehicles
 	};
 
 	//Airburst test
-	class RC_Howitzer_AB_A: RC_Howitzer_A
+	class RC_Howitzer_AB_A: RC_Howitzer_NA_A
 	{
 		displayName="RC Howitzer Airburst";
+		faction="RemoteControlled_B";
+		editorSubcategory="RC_Howitzer_subcat";
 
 		class Turrets: Turrets
 		{
@@ -1607,7 +1614,8 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_20Rnd_155mm_Mo_Airburst_2"
+					"RC_20Rnd_155mm_AB2",
+					"RC_20Rnd_155mm_AB1"
 				};
 			};
 		};
