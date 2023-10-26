@@ -555,24 +555,6 @@ class RC_20Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
 class 32Rnd_155mm_Mo_shells;
 
 
-//Airburst test
-class 2Rnd_155mm_Mo_guided;
-class RC_20Rnd_155mm_Mo_Airburst_1: 2Rnd_155mm_Mo_guided
-{
-	ammo="RC_155mm_HE_Airburst_one";
-	displayName="155mm HE Airburst1";
-	displayNameShort="155mm HE AB1";
-	count=20;
-};
-class RC_20Rnd_155mm_Mo_Airburst_2: 32Rnd_155mm_Mo_shells
-{
-	ammo="RC_155mm_HE_Airburst_two";
-	displayName="155mm HE Airburst2";
-	displayNameShort="155mm HE AB2";
-	count=20;
-};
-
-
 class RC_1Rnd_155mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
 	displayName="155mm HE";
