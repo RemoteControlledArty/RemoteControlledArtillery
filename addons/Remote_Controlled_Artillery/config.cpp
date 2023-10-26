@@ -381,11 +381,12 @@ class CfgAmmo
 
 
 	//Airburst test section
-
-	/*
-	class RC_155mm_HE_Airburst: ammo_Penetrator_Base
+	//reminder, change DPICM to submunitionConeType[] = {"poissondisc",  for more even submunition spead.
+	
+	class ammo_Penetrator_Base;
+	class RC_155mm_HE_Airburst_Submunition: ammo_Penetrator_Base
 	{
-		caliber=66.666702;
+		caliber=10;
 		warheadName="HE";
 		hit=340;
 		indirectHit=125;
@@ -393,7 +394,28 @@ class CfgAmmo
 		explosive=0.80000001;
 		ExplosionEffects="MortarExplosion";
 	};
-	*/
+
+	class Sh_155mm_AMOS_guided;
+	class RC_155mm_HE_Airburst_one: Sh_155mm_AMOS_guided
+	{
+		triggerDistance=200;
+		triggerTime=-1;
+		triggerSpeedCoef=1;
+
+		submunitionAmmo="RC_155mm_HE_Airburst_Submunition";
+		autoSeekTarget=0;
+		muzzleEffect="";
+	};
+
+	class Sh_155mm_AMOS;
+	class RC_155mm_HE_Airburst_two: Sh_155mm_AMOS
+	{
+		triggerDistance=20;
+	};
+
+		//triggerTime=-1;
+		//triggerSpeedCoef=1;
+		//muzzleEffect="";
 
 	/*
 	class Sh_155mm_AMOS: ShellBase
@@ -1092,6 +1114,14 @@ class CfgWeapons
 		};
 	};
 
+	class RC_155mm_AMOS_AB: RC_155mm_AMOS
+	{
+		magazines[]=
+		{
+			"RC_20Rnd_155mm_Mo_Airburst_2"
+		};
+	};
+
 	// ShipCannon / 120mm
 	class weapon_ShipCannon_120mm;
 	class RC_ShipCannon_120mm: weapon_ShipCannon_120mm
@@ -1546,6 +1576,28 @@ class CfgVehicles
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
 		side=2;
+	};
+
+	//Airburst test
+	class RC_Howitzer_AB_A: RC_Howitzer_A
+	{
+		displayName="RC Howitzer Airburst";
+
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				gunnerForceOptics=1;
+				weapons[]=
+				{
+					"RC_155mm_AMOS_AB"
+				};
+				magazines[]=
+				{
+					"RC_20Rnd_155mm_Mo_Airburst_2"
+				};
+			};
+		};
 	};
 
 	class O_MBT_02_arty_F;
