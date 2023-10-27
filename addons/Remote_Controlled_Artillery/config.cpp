@@ -394,14 +394,17 @@ class CfgAmmo
 		indirectHitRange=30;
 		explosive=0.80000001;
 		ExplosionEffects="MortarExplosion";
+
+		triggerTime=0.1;
+		triggerOnImpact=0;
 	};
 
 	class Sh_155mm_AMOS_guided;
 	class Sh_155mm_AMOS_AB1: Sh_155mm_AMOS_guided
 	{
-		triggerDistance=200;
-		triggerTime=-1;
-		triggerSpeedCoef=1;
+		triggerDistance=50;
+		triggerTime=0.1;
+		//triggerSpeedCoef=1;
 
 		submunitionAmmo[]=
 		{
@@ -409,7 +412,6 @@ class CfgAmmo
 			1
 		};
 		autoSeekTarget=0;
-		muzzleEffect="";
 	};
 
 	class Sh_155mm_AMOS;
@@ -419,6 +421,44 @@ class CfgAmmo
 		//triggerTime=?;
 	};
 
+	class Sh_155mm_AMOS_AB4_Sub: Sh_155mm_AMOS
+	{
+		explosionTime = 0.115;
+		explosive=1;
+		//triggerTime=0.1;
+		//triggerOnImpact=0;
+	};
+
+	class Sh_155mm_AMOS_AB4: Sh_155mm_AMOS_guided
+	{
+		triggerDistance=50;
+		deleteParentWhenTriggered=1;
+
+		//change submunition velocity and increase triggerdistance for reliability
+
+		//triggerTime=0.1;
+		//triggerSpeedCoef=1;
+
+		submunitionAmmo[]=
+		{
+			"Sh_155mm_AMOS_AB4_Sub",
+			1
+		};
+		autoSeekTarget=0;
+	};
+
+	/*
+	Only problem: I think a larger "triggerDistance=" for submunition is more reliable (currently sometimes works perfect, sometimes hits ground),
+	but then the distance it airbursts over the target per "explosiontime="  depends on current velocity.
+
+	As charge 2 is the highest i would still use with non laser guided shells, i used those values:
+	Charge 0,  50m - 153.9ms x 0.1s = 34.61m Airburst
+	Charge 1,  50m - 243ms x 0.1s = 25.7m Airburst
+	Charge 2,  50m - 388.8ms x 0.1s = 11.12m Airburst
+
+	*Edit, just had a great idea, i can just give the submunition a very slow or just always equal velocity, and then use the timer much better.
+	*/
+
 	class Cluster_155mm_AMOS;
 	class Sh_155mm_AMOS_AB3: Cluster_155mm_AMOS
 	{
@@ -426,15 +466,15 @@ class CfgAmmo
 		indirectHit=125;
 		indirectHitRange=30;
 
-		triggerDistance=40;
+		triggerDistance=50;
 		triggerOnImpact=0;
 		triggerSpeedCoef=100;
 		submunitionInitSpeed=1000;
-		submunitionConeAngle=27;
+		submunitionConeAngle=30;
 		submunitionConeType[]=
 		{
 			"poissondisc",
-			2000
+			4000
 		};
 		submunitionAmmo[]=
 		{
@@ -682,6 +722,13 @@ class CfgMagazines
 		ammo="Sh_155mm_AMOS_AB3";
 		displayName="155mm HE Airburst3";
 		displayNameShort="155mm HE AB3";
+		count=20;
+	};
+		class RC_20Rnd_155mm_AB4: 32Rnd_155mm_Mo_shells
+	{
+		ammo="Sh_155mm_AMOS_AB4";
+		displayName="155mm HE Airburst4";
+		displayNameShort="155mm HE AB4";
 		count=20;
 	};
 	class RC_20Rnd_155mm_DPICM2: 2Rnd_155mm_Mo_Cluster
@@ -1185,6 +1232,7 @@ class CfgWeapons
 			"RC_20Rnd_155mm_AB1",
 			"RC_20Rnd_155mm_AB2",
 			"RC_20Rnd_155mm_AB3",
+			"RC_20Rnd_155mm_AB4",
 			"RC_20Rnd_155mm_DPICM2"
 		};
 	};
@@ -1666,6 +1714,7 @@ class CfgVehicles
 					"RC_20Rnd_155mm_AB1",
 					"RC_20Rnd_155mm_AB2",
 					"RC_20Rnd_155mm_AB3",
+					"RC_20Rnd_155mm_AB4",
 					"RC_20Rnd_155mm_DPICM2"
 				};
 			};
