@@ -428,7 +428,7 @@ class CfgAmmo
 		submunitionConeType[]=
 		{
 			"poissondisc",
-			100
+			300
 		};
 		submunitionAmmo[]=
 		{
@@ -442,7 +442,7 @@ class CfgAmmo
 		submunitionConeType[]=
 		{
 			"poissondisc",
-			52
+			100
 		};
 	};
 
@@ -1178,6 +1178,7 @@ class CfgWeapons
 		{
 			"RC_20Rnd_155mm_AB1",
 			"RC_20Rnd_155mm_AB2",
+			"RC_20Rnd_155mm_AB3",
 			"RC_20Rnd_155mm_DPICM2"
 		};
 	};
@@ -1658,6 +1659,7 @@ class CfgVehicles
 				{
 					"RC_20Rnd_155mm_AB1",
 					"RC_20Rnd_155mm_AB2",
+					"RC_20Rnd_155mm_AB3",
 					"RC_20Rnd_155mm_DPICM2"
 				};
 			};
