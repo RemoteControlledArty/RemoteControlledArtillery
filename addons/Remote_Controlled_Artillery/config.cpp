@@ -377,6 +377,7 @@ class CfgAmmo
 		whistleDist=0;
 		aimAboveDefault=3;
 		aimAboveTarget[]={360,400,500,640,720,800,850};
+	};
 
 
 
@@ -414,8 +415,35 @@ class CfgAmmo
 	class Sh_155mm_AMOS;
 	class Sh_155mm_AMOS_AB2: Sh_155mm_AMOS
 	{
-		triggerDistance=20;
+		triggerDistance=50;
 		//triggerTime=?;
+	};
+
+	class Cluster_155mm_AMOS;
+	class Sh_155mm_AMOS_AB3: Cluster_155mm_AMOS
+	{
+		triggerDistance=50;
+		triggerSpeedCoef=10;
+		submunitionConeAngle=20;
+		submunitionConeType[]=
+		{
+			"poissondisc",
+			100
+		};
+		submunitionAmmo[]=
+		{
+			"B_127x108_Ball",
+			1
+		};
+	};
+
+	class Sh_155mm_AMOS_DPICM2: Cluster_155mm_AMOS
+	{
+		submunitionConeType[]=
+		{
+			"poissondisc",
+			52
+		};
 	};
 
 	/*
@@ -622,7 +650,6 @@ class CfgAmmo
 			distance=1;
 		};
 	};*/
-	};
 };
 
 class CfgMagazines
@@ -642,6 +669,20 @@ class CfgMagazines
 		ammo="Sh_155mm_AMOS_AB2";
 		displayName="155mm HE Airburst2";
 		displayNameShort="155mm HE AB2";
+		count=20;
+	};
+	class RC_20Rnd_155mm_AB3: 32Rnd_155mm_Mo_shells
+	{
+		ammo="Sh_155mm_AMOS_AB3";
+		displayName="155mm HE Airburst3";
+		displayNameShort="155mm HE AB3";
+		count=20;
+	};
+	class RC_20Rnd_155mm_DPICM2: 2Rnd_155mm_Mo_Cluster
+	{
+		ammo="Sh_155mm_AMOS_DPICM2";
+		displayName="155mm DPICM 2";
+		displayNameShort="155mm DPICM 2";
 		count=20;
 	};
 };
@@ -1135,8 +1176,9 @@ class CfgWeapons
 	{
 		magazines[]=
 		{
+			"RC_20Rnd_155mm_AB1",
 			"RC_20Rnd_155mm_AB2",
-			"RC_20Rnd_155mm_AB1"
+			"RC_20Rnd_155mm_DPICM2"
 		};
 	};
 
@@ -1614,8 +1656,9 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
+					"RC_20Rnd_155mm_AB1",
 					"RC_20Rnd_155mm_AB2",
-					"RC_20Rnd_155mm_AB1"
+					"RC_20Rnd_155mm_DPICM2"
 				};
 			};
 		};
