@@ -474,7 +474,7 @@ class CfgAmmo
 	//option A: explosionTime=1;  typicalSpeed=80;  submunitionInitSpeed=80;
 	//option B: explosionTime=0.1;  fuseDistance=80
 	//option C: triggerOnImpact=1;  submunitionInitialOffset[]={0,0,-0.2};
-	//option D: triggerDistance=100;  submunitionInitialOffset[]={0,0,80};
+	//option D: triggerDistance=100; explosionTime=0.01; submunitionInitialOffset[]={0,0,70};
 	class Sh_155mm_AMOS_AB5_Sub: Sh_155mm_AMOS
 	{
 		explosionTime=0.01;
