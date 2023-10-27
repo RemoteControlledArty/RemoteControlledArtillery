@@ -479,22 +479,26 @@ class CfgAmmo
 	{
 		explosionTime=0.01;
 		explosive=1;
-		CraterEffects="";
+		CraterEffects="GrenadeCrater";
 		//ExplosionEffects="ClusterExplosionEffects";
 		//typicalSpeed=75;
 		//fuseDistance=80;
 	};
 
 	class Cluster_155mm_AMOS;
-	class Sh_155mm_AMOS_LG;
+	class Sh_155mm_AMOS_LG;	//try what changes with cluster base
 	class Sh_155mm_AMOS_AB5: Sh_155mm_AMOS_LG
 	{
 		triggerDistance=100;
 		//triggerOnImpact=1
-		submunitionInitialOffset[]={0,0,70};
+		submunitionInitialOffset[]={0,0,73.2};	//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
 		submunitionDirectionType="SubmunitionModelDirection";
 
 		hit=0;
+		indirectHit=0;
+		indirectHitRange=0;
+		explosive=0;
+		ExplosionEffects="";
 		CraterEffects="";
 		//ExplosionEffects="ClusterExplosionEffects";
 		submunitionCount=1;
