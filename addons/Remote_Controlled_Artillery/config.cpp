@@ -422,13 +422,19 @@ class CfgAmmo
 	class Cluster_155mm_AMOS;
 	class Sh_155mm_AMOS_AB3: Cluster_155mm_AMOS
 	{
-		triggerDistance=50;
-		triggerSpeedCoef=10;
-		submunitionConeAngle=20;
+		hit=340;
+		indirectHit=125;
+		indirectHitRange=30;
+
+		triggerDistance=40;
+		triggerOnImpact=0;
+		triggerSpeedCoef=100;
+		submunitionInitSpeed=1000;
+		submunitionConeAngle=27;
 		submunitionConeType[]=
 		{
 			"poissondisc",
-			300
+			2000
 		};
 		submunitionAmmo[]=
 		{
