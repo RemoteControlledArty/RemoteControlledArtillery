@@ -425,6 +425,7 @@ class CfgAmmo
 	{
 		explosionTime = 0.115;
 		explosive=1;
+		CraterEffects="NoCrater";
 		//triggerTime=0.1;
 		//triggerOnImpact=0;
 	};
@@ -433,6 +434,7 @@ class CfgAmmo
 	{
 		triggerDistance=50;
 		deleteParentWhenTriggered=1;
+		CraterEffects="NoCrater";
 
 		//change submunition velocity and increase triggerdistance for reliability
 
