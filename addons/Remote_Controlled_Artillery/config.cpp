@@ -454,9 +454,9 @@ class CfgAmmo
 	but then the distance it airbursts over the target per "explosiontime="  depends on current velocity.
 
 	As charge 2 is the highest i would still use with non laser guided shells, i used those values:
-	Charge 0,  50m - 153.9ms x 0.1s = 34.61m Airburst
-	Charge 1,  50m - 243ms x 0.1s = 25.7m Airburst
-	Charge 2,  50m - 388.8ms x 0.1s = 11.12m Airburst
+	Charge 0,  50m - 153.9ms x 0.115s = 32.3m Airburst
+	Charge 1,  50m - 243ms x 0.115s = 22.1m Airburst
+	Charge 2,  50m - 388.8ms x 0.115s = 5.3m Airburst
 
 	*Edit, just had a great idea, i can just give the submunition a very slow or just always equal velocity, and then use the timer much better.
 	*/
