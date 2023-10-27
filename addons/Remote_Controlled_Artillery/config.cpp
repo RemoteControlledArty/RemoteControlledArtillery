@@ -423,18 +423,24 @@ class CfgAmmo
 
 	class Sh_155mm_AMOS_AB4_Sub: Sh_155mm_AMOS
 	{
-		explosionTime = 0.115;
+		explosionTime=1;
 		explosive=1;
-		CraterEffects="NoCrater";
+		//craterEffects="HeavyBombCrater";
+		CraterEffects="ClusterCraterEffects";
+		maxSpeed=75;
+		//CraterEffects="NoCrater";
 		//triggerTime=0.1;
 		//triggerOnImpact=0;
 	};
 
 	class Sh_155mm_AMOS_AB4: Sh_155mm_AMOS_guided
 	{
-		triggerDistance=50;
-		deleteParentWhenTriggered=1;
-		CraterEffects="NoCrater";
+		triggerDistance=100;
+		//deleteParentWhenTriggered=1;
+
+		//craterEffects="HeavyBombCrater";
+		CraterEffects="ClusterCraterEffects";
+		//CraterEffects="NoCrater";
 
 		//change submunition velocity and increase triggerdistance for reliability
 
