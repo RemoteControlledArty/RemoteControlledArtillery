@@ -379,10 +379,20 @@ class CfgAmmo
 		aimAboveTarget[]={360,400,500,640,720,800,850};
 	};
 
-
+	class Smoke_120mm_AMOS_White;
+	class RC_Smoke_120mm_AMOS_White: Smoke_120mm_AMOS_White
+	{
+		submunitionAmmo="SmokeShellArty";
+		submunitionConeType[]=
+		{
+			"poissondisc",
+			10
+		};
+		submunitionConeAngle=10;
+	};
 
 	//Airburst test section
-	//reminder, change DPICM to submunitionConeType[] = {"poissondisc",  for more even submunition spead.
+	//reminder, change DPICM and Mines to submunitionConeType[] = {"poissondisc",  for more even submunition spead.
 	
 	class ammo_Penetrator_Base;
 	class Sh_155mm_AMOS_AB1_Sub: ammo_Penetrator_Base
@@ -417,16 +427,18 @@ class CfgAmmo
 	class Sh_155mm_AMOS;
 	class Sh_155mm_AMOS_AB2: Sh_155mm_AMOS
 	{
-		triggerDistance=50;
+		triggerDistance=100;
+		CraterEffects="";
 		//triggerTime=?;
 	};
 
 	class Sh_155mm_AMOS_AB4_Sub: Sh_155mm_AMOS
 	{
+		triggerSpeedCoef=1;
 		explosionTime=0.115;	//0.115 for 50m
 		explosive=1;
-		//craterEffects="HeavyBombCrater";
-		CraterEffects="ClusterCraterEffects";
+		CraterEffects="";
+		ExplosionEffects="ClusterExplosionEffects";
 		//maxSpeed=75; didnt work...?
 
 		//CraterEffects="NoCrater";
@@ -436,12 +448,14 @@ class CfgAmmo
 
 	class Sh_155mm_AMOS_AB4: Sh_155mm_AMOS_guided
 	{
+		triggerSpeedCoef=1;
 		triggerDistance=50;
+		CraterEffects="";
+		ExplosionEffects="ClusterExplosionEffects";
+		deleteParentWhenTriggered=1;
 		//submunitionInitSpeed=75; doesnt work...
 		//deleteParentWhenTriggered=1;
 
-		//craterEffects="HeavyBombCrater";
-		CraterEffects="ClusterCraterEffects";
 		//CraterEffects="NoCrater";
 
 		//change submunition velocity and increase triggerdistance for reliability
@@ -457,6 +471,62 @@ class CfgAmmo
 		autoSeekTarget=0;
 	};
 
+	//option A: explosionTime=1;  typicalSpeed=80;  submunitionInitSpeed=80;
+	//option B: explosionTime=0.1;  fuseDistance=80
+	//option C: triggerOnImpact=1;  submunitionInitialOffset[]={0,0,-0.2};
+	//option D: triggerDistance=100;  submunitionInitialOffset[]={0,0,80};
+	class Sh_155mm_AMOS_AB5_Sub: Sh_155mm_AMOS
+	{
+		explosionTime=0.01;
+		explosive=1;
+		CraterEffects="";
+		//ExplosionEffects="ClusterExplosionEffects";
+		//typicalSpeed=75;
+		//fuseDistance=80;
+	};
+
+	class Cluster_155mm_AMOS;
+	class Sh_155mm_AMOS_LG;
+	class Sh_155mm_AMOS_AB5: Sh_155mm_AMOS_LG
+	{
+		triggerDistance=100;
+		//triggerOnImpact=1
+		submunitionInitialOffset[]={0,0,70};
+		submunitionDirectionType="SubmunitionModelDirection";
+
+		hit=0;
+		CraterEffects="";
+		//ExplosionEffects="ClusterExplosionEffects";
+		submunitionCount=1;
+		submunitionConeAngle=0;
+		//deleteParentWhenTriggered=1;
+
+		//submunitionParentSpeedCoef=0;
+		//submunitionInitSpeed=75;
+		//effectFly="ArtilleryTrails";
+		//triggerSpeedCoef=1;
+
+		/*
+		submunitionAmmo="ammo_Penetrator_120mm";
+		submunitionDirectionType="SubmunitionModelDirection";
+		submunitionInitSpeed=1000;
+		submunitionParentSpeedCoef=0;
+		submunitionInitialOffset[]={0,0,-0.2};
+		triggerOnImpact=1;
+		deleteParentWhenTriggered=0;
+		fuseDistance=20;
+		proximityExplosionDistance=5;
+		*/
+
+		//triggerSpeedCoef=1;
+
+		submunitionAmmo[]=
+		{
+			"Sh_155mm_AMOS_AB5_Sub",
+			1
+		};
+	};
+
 	/*
 	Only problem: I think a larger "triggerDistance=" for submunition is more reliable (currently sometimes works perfect, sometimes hits ground),
 	but then the distance it airbursts over the target per "explosiontime="  depends on current velocity.
@@ -468,23 +538,49 @@ class CfgAmmo
 
 	*Edit, just had a great idea, i can just give the submunition a very slow or just always equal velocity, and then use the timer much better.
 	*/
+	class B_127x99_SLAP_Tracer_Red;
+	class RC_Tungsten_Bearings: B_127x99_SLAP_Tracer_Red
+	{
+		typicalSpeed=1500;
+		indirectHit=10;
+		indirectHitRange=3;
+	};
 
-	class Cluster_155mm_AMOS;
+	class Sh_155mm_AMOS_Tungsten: Cluster_155mm_AMOS
+	{
+		triggerSpeedCoef=1;
+		triggerDistance=50;
+		//triggerOnImpact=0;
+		//triggerSpeedCoef=100;
+		submunitionInitSpeed=1500;
+		submunitionConeAngle=60;
+		submunitionConeType[]=
+		{
+			"poissondisc",
+			2000
+		};
+		submunitionAmmo[]=
+		{
+			"RC_Tungsten_Bearings",
+			1
+		};
+	};
+
 	class Sh_155mm_AMOS_AB3: Cluster_155mm_AMOS
 	{
 		hit=340;
 		indirectHit=125;
 		indirectHitRange=30;
 
-		triggerDistance=50;
+		triggerDistance=15;
 		triggerOnImpact=0;
-		triggerSpeedCoef=100;
-		submunitionInitSpeed=1000;
+		//triggerSpeedCoef=100;
+		submunitionInitSpeed=1500;
 		submunitionConeAngle=30;
 		submunitionConeType[]=
 		{
 			"poissondisc",
-			4000
+			3000
 		};
 		submunitionAmmo[]=
 		{
@@ -498,7 +594,7 @@ class CfgAmmo
 		submunitionConeType[]=
 		{
 			"poissondisc",
-			100
+			50
 		};
 	};
 
@@ -734,11 +830,25 @@ class CfgMagazines
 		displayNameShort="155mm HE AB3";
 		count=20;
 	};
-		class RC_20Rnd_155mm_AB4: 32Rnd_155mm_Mo_shells
+	class RC_20Rnd_155mm_AB4: 32Rnd_155mm_Mo_shells
 	{
 		ammo="Sh_155mm_AMOS_AB4";
 		displayName="155mm HE Airburst4";
 		displayNameShort="155mm HE AB4";
+		count=20;
+	};
+	class RC_20Rnd_155mm_AB5: 32Rnd_155mm_Mo_shells
+	{
+		ammo="Sh_155mm_AMOS_AB5";
+		displayName="155mm HE Airburst5";
+		displayNameShort="155mm HE AB5";
+		count=20;
+	};
+	class RC_20Rnd_155mm_Tungsten: 2Rnd_155mm_Mo_Cluster
+	{
+		ammo="Sh_155mm_AMOS_Tungsten";
+		displayName="155mm Tungsten";
+		displayNameShort="155mm Tungsten";
 		count=20;
 	};
 	class RC_20Rnd_155mm_DPICM2: 2Rnd_155mm_Mo_Cluster
@@ -1243,6 +1353,8 @@ class CfgWeapons
 			"RC_20Rnd_155mm_AB2",
 			"RC_20Rnd_155mm_AB3",
 			"RC_20Rnd_155mm_AB4",
+			"RC_20Rnd_155mm_AB5",
+			"RC_20Rnd_155mm_Tungsten",
 			"RC_20Rnd_155mm_DPICM2"
 		};
 	};
@@ -1725,6 +1837,8 @@ class CfgVehicles
 					"RC_20Rnd_155mm_AB2",
 					"RC_20Rnd_155mm_AB3",
 					"RC_20Rnd_155mm_AB4",
+					"RC_20Rnd_155mm_AB5",
+					"RC_20Rnd_155mm_Tungsten",
 					"RC_20Rnd_155mm_DPICM2"
 				};
 			};
