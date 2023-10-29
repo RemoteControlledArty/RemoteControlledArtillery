@@ -452,7 +452,7 @@ class CfgAmmo
 	class AT_Mine_155mm_AMOS_range;
 
 
-	class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
+	class RC_155mm_Smoke: Smoke_120mm_AMOS_White
 	{
 		triggerDistance=100;
 		submunitionConeAngle=10;
@@ -462,11 +462,6 @@ class CfgAmmo
 			"poissondisc",
 			10
 		};
-	};
-
-	class Sh_155mm_AMOS_AB1: Sh_155mm_AMOS
-	{
-		triggerDistance=100;	//doesnt work :(
 	};
 
 	class RC_155mm_Airburst_base: SubmunitionBase
@@ -500,83 +495,22 @@ class CfgAmmo
 		timeToLive=180;
 		sideairFriction=0;
 
-		cameraViewAvailable=1;
+		cameraViewAvailable=1;	//how does this work?
 	};
 
-	class Sh_155mm_AMOS_AB2_Sub: Sh_155mm_AMOS
-	{
-		//triggerSpeedCoef=1;
-		explosionTime=0.115;	//0.115 for 50m
-		explosive=1;
-		CraterEffects="";
-	};
-	class Sh_155mm_AMOS_AB2: RC_155mm_Airburst_base
-	{
-		triggerSpeedCoef=1;
-		triggerDistance=50;
-		submunitionAmmo="Sh_155mm_AMOS_AB2_Sub";
-
-		//deleteParentWhenTriggered=1;
-		ExplosionEffects="";
-		CraterEffects="";
-		explosive=0;
-		hit=0;
-		indirectHit=0;
-		indirectHitRange=0;
-	};
-
-	class Sh_155mm_AMOS_AB3_Sub: Sh_155mm_AMOS
-	{
-		explosionTime=1;
-		explosive=1;
-		typicalSpeed=73.2;
-		CraterEffects="";
-	};
-	class Sh_155mm_AMOS_AB3: RC_155mm_Airburst_base
-	{
-		triggerDistance=100;
-		submunitionInitSpeed=73.2;
-		submunitionParentSpeedCoef=0;
-		submunitionAmmo="Sh_155mm_AMOS_AB3_Sub";
-
-		//deleteParentWhenTriggered=1;
-		ExplosionEffects="";
-		CraterEffects="";
-		explosive=0;
-		hit=0;
-		indirectHit=0;
-		indirectHitRange=0;
-	};
-
-	class Sh_155mm_AMOS_AB4_Sub: Sh_155mm_AMOS
+	class RC_155mm_HEAB_sub: Sh_155mm_AMOS
 	{
 		explosionTime=0.01;
 		explosive=1;
 		CraterEffects="";
 	};
-	class Sh_155mm_AMOS_AB4: RC_155mm_Airburst_base
-	{
-		triggerDistance=100;
-		submunitionInitialOffset[]={0,0,73.2};	//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
-		submunitionDirectionType="SubmunitionModelDirection";	//seems to be wrong orientation, frags in there are any (dust further from the impact) seem to go forward not down
-		submunitionAmmo="Sh_155mm_AMOS_AB4_Sub";
-
-		//deleteParentWhenTriggered=1;
-		ExplosionEffects="";
-		CraterEffects="";
-		explosive=0;
-		hit=0;
-		indirectHit=0;
-		indirectHitRange=0;
-	};
-
-	class Sh_155mm_AMOS_AB5: RC_155mm_Airburst_base
+	class RC_155mm_HEAB: RC_155mm_Airburst_base
 	{
 		triggerDistance=-1;
 		triggerOnImpact=1;
 		submunitionInitialOffset[]={0,0,-26.8};	//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
-		submunitionDirectionType="SubmunitionModelDirection";	//seems to be wrong orientation, frags in there are any (dust further from the impact) seem to go forward not down
-		submunitionAmmo="Sh_155mm_AMOS_AB4_Sub";
+		submunitionDirectionType="SubmunitionModelDirection";
+		submunitionAmmo="RC_155mm_HEAB_sub";
 
 		//deleteParentWhenTriggered=1;
 		ExplosionEffects="";
@@ -587,69 +521,51 @@ class CfgAmmo
 		indirectHitRange=0;
 	};
 
-	//Tungsten Rain
-	class B_127x99_SLAP_Tracer_Red;
-	class RC_Tungsten_Bearings: B_127x99_SLAP_Tracer_Red
+	class RC_155mm_HEAB2: Sh_155mm_AMOS
 	{
-		//typicalSpeed=1500;
-		indirectHit=11.6;	//7.62x51 equivalent
-		indirectHitRange=5;
+		triggerDistance=100;	//doesnt work :(
 	};
 
-	class Sh_155mm_AMOS_Tungsten1: RC_155mm_Airburst_base
-	{
-		triggerDistance=15;
-		submunitionConeAngle=80; //100m wide area
-		submunitionConeType[]=
-		{
-			"poissondisc",
-			1000
-		};
-		submunitionInitSpeed=1500;
-		submunitionAmmo[]=
-		{
-			"RC_Tungsten_Bearings",
-			1
-		};
-
-		//deleteParentWhenTriggered=1;
-		CraterEffects="";
-		explosive=0;
-		hit=0;
-		indirectHit=0;
-		indirectHitRange=0;
-	};
-
-	class Sh_155mm_AMOS_Tungsten2: RC_155mm_Airburst_base
-	{
-		triggerDistance=100;
-		submunitionConeAngle=26.6;	//100m wide area
-		submunitionConeType[]=
-		{
-			"poissondisc",
-			1000
-		};
-		submunitionInitSpeed=1500;
-		submunitionAmmo[]=
-		{
-			"RC_Tungsten_Bearings",
-			1
-		};
-
-		//deleteParentWhenTriggered=1;
-		CraterEffects="";
-		explosive=0;
-		hit=0;
-		indirectHit=0;
-		indirectHitRange=0;
-	};
-
-	class Sh_155mm_AMOS_DPICM2: Cluster_155mm_AMOS
+	class RC_155mm_DPICM: Cluster_155mm_AMOS
 	{
 		submunitionConeType[]=
 		{
 			"poissondisc",	//even spread
 			35
+		};
+	};
+
+	class R_230mm_fly;
+	class RC_227mm_HEAB_sub: R_230mm_fly
+	{
+		explosionTime=0.01;
+		explosive=1;
+		CraterEffects="";
+	};
+	class RC_227mm_HEAB: SubmunitionBase
+	{
+		triggerDistance=-1;
+		triggerOnImpact=1;
+		submunitionInitialOffset[]={0,0,-26.8};	//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
+		submunitionDirectionType="SubmunitionModelDirection";
+		submunitionAmmo="RC_227mm_HEAB_sub";
+
+		artilleryLock=1;
+		cost=1000;
+		airFriction=0;
+		muzzleEffect="";
+		effectFly="Missile0";
+		model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
+		hit=0;
+	};
+
+	class R_230mm_Cluster;
+	class RC_227mm_DPICM: R_230mm_Cluster
+	{
+		submunitionConeType[]=
+		{
+			"poissondisc",
+			50
 		};
 	};
 };
@@ -659,61 +575,47 @@ class CfgMagazines
 	#include "\Remote_Controlled_Artillery\configs\Magazines.hpp"
 
 	//Airburst test
-	class RC_20Rnd_155mm_AB1: 4Rnd_155mm_Mo_guided
+	class RC_20Rnd_155mm_Smoke: 6Rnd_155mm_Mo_smoke
 	{
-		ammo="Sh_155mm_AMOS_AB1";
+		ammo="RC_155mm_Smoke";
 		displayName="155mm HE Airburst1";
 		displayNameShort="155mm HE AB1";
 		count=20;
 	};
-	class RC_20Rnd_155mm_AB2: 32Rnd_155mm_Mo_shells
+	class RC_20Rnd_155mm_HEAB: 32Rnd_155mm_Mo_shells
 	{
-		ammo="Sh_155mm_AMOS_AB2";
-		displayName="155mm HE Airburst2";
+		ammo="RC_155mm_HEAB";
+		displayName="155mm HE Airburst";
+		displayNameShort="155mm HE AB";
+		count=20;
+	};
+	class RC_20Rnd_155mm_HEAB2: 32Rnd_155mm_Mo_shells
+	{
+		ammo="Sh_155mm_HEAB2";
+		displayName="155mm HE Airburst 2";
 		displayNameShort="155mm HE AB2";
 		count=20;
 	};
-	class RC_20Rnd_155mm_AB3: 32Rnd_155mm_Mo_shells
+	class RC_20Rnd_155mm_DPICM: 2Rnd_155mm_Mo_Cluster
 	{
-		ammo="Sh_155mm_AMOS_AB3";
-		displayName="155mm HE Airburst3";
-		displayNameShort="155mm HE AB3";
+		ammo="RC_155mm_DPICM";
+		displayName="155mm DPICM";
+		displayNameShort="155mm DPICM";
 		count=20;
 	};
-	class RC_20Rnd_155mm_AB4: 32Rnd_155mm_Mo_shells
+	class RC_12Rnd_227mm_HEAB: 2Rnd_155mm_Mo_Cluster
 	{
-		ammo="Sh_155mm_AMOS_AB4";
-		displayName="155mm HE Airburst4";
-		displayNameShort="155mm HE AB4";
-		count=20;
+		ammo="RC_227mm_HEAB";
+		displayName="227mm HE Airburst";
+		displayNameShort="227mm HE AB";
+		count=12;
 	};
-	class RC_20Rnd_155mm_AB5: 32Rnd_155mm_Mo_shells
+	class RC_12Rnd_227mm_DPICM: 2Rnd_155mm_Mo_Cluster
 	{
-		ammo="Sh_155mm_AMOS_AB5";
-		displayName="155mm HE Airburst5";
-		displayNameShort="155mm HE AB5";
-		count=20;
-	};
-	class RC_20Rnd_155mm_Tungsten1: 32Rnd_155mm_Mo_shells
-	{
-		ammo="Sh_155mm_AMOS_Tungsten1";
-		displayName="155mm TungstenRain1";
-		displayNameShort="155mm TR1";
-		count=20;
-	};
-	class RC_20Rnd_155mm_Tungsten2: 2Rnd_155mm_Mo_Cluster
-	{
-		ammo="Sh_155mm_AMOS_Tungsten2";
-		displayName="155mm TungstenRain2";
-		displayNameShort="155mm TR2";
-		count=20;
-	};
-	class RC_20Rnd_155mm_DPICM2: 2Rnd_155mm_Mo_Cluster
-	{
-		ammo="Sh_155mm_AMOS_DPICM2";
-		displayName="155mm DPICM2";
-		displayNameShort="155mm DPICM2";
-		count=20;
+		ammo="RC_227mm_DPICM";
+		displayName="227mm DPICM";
+		displayNameShort="227mm DPICM";
+		count=12;
 	};
 };
 
@@ -1202,18 +1104,25 @@ class CfgWeapons
 		};
 	};
 
-	class RC_155mm_AMOS_AB: mortar_155mm_AMOS
+	class RC_155mm_HEAB_Cannon: mortar_155mm_AMOS
 	{
 		magazines[]=
 		{
-			"RC_20Rnd_155mm_AB1",
-			"RC_20Rnd_155mm_AB2",
-			"RC_20Rnd_155mm_AB3",
-			"RC_20Rnd_155mm_AB4",
-			"RC_20Rnd_155mm_AB5",
-			"RC_20Rnd_155mm_Tungsten1",
-			"RC_20Rnd_155mm_Tungsten2",
-			"RC_20Rnd_155mm_DPICM2"
+			"RC_20Rnd_155mm_HEAB",
+			"RC_20Rnd_155mm_HEAB2",
+			"RC_20Rnd_155mm_Smoke",
+			"RC_20Rnd_155mm_DPICM"
+		};
+	};
+
+	class RC_227mm_HEAB_Launcher: rockets_230mm_GAT
+	{
+		magazineReloadTime=1;
+
+		magazines[]=
+		{
+			"RC_12Rnd_227mm_HEAB",
+			"RC_12Rnd_227mm_DPICM"
 		};
 	};
 
@@ -1674,7 +1583,7 @@ class CfgVehicles
 	};
 
 	//Airburst test
-	class RC_Howitzer_AB_A: RC_Howitzer_NA_A
+	class RC_Howitzer_HEAB_A: RC_Howitzer_NA_A
 	{
 		displayName="RC Howitzer Airburst";
 		faction="RemoteControlled_B";
@@ -1687,18 +1596,14 @@ class CfgVehicles
 				gunnerForceOptics=1;
 				weapons[]=
 				{
-					"RC_155mm_AMOS_AB"
+					"RC_155mm_HEAB_Cannon"
 				};
 				magazines[]=
 				{
-					"RC_20Rnd_155mm_AB1",
-					"RC_20Rnd_155mm_AB2",
-					"RC_20Rnd_155mm_AB3",
-					"RC_20Rnd_155mm_AB4",
-					"RC_20Rnd_155mm_AB5",
-					"RC_20Rnd_155mm_Tungsten1",
-					"RC_20Rnd_155mm_Tungsten2",
-					"RC_20Rnd_155mm_DPICM2"
+					"RC_20Rnd_155mm_HEAB",
+					"RC_20Rnd_155mm_HEAB2",
+					"RC_20Rnd_155mm_Smoke",
+					"RC_20Rnd_155mm_DPICM"
 				};
 			};
 		};
@@ -2053,6 +1958,31 @@ class CfgVehicles
 		side=2;
 	};
 
+	//Airburst test
+	class RC_MLRS_HEAB_CL_A: RC_MLRS_HE_WD
+	{
+		displayName="RC MLRS-HEAB/CL";
+		faction="RemoteControlled_B";
+		editorSubcategory="RC_Rocket_subcat";
+
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				gunnerForceOptics=1;
+				stabilizedInAxes=3;
+				weapons[]=
+				{
+					"RC_227mm_HEAB_Launcher"
+				};
+				magazines[]=
+				{
+					"RC_12Rnd_227mm_HEAB",
+					"RC_12Rnd_227mm_DPICM"
+				};
+			};
+		};
+	};
 
 	// MRL
 	class I_Truck_02_MRL_F;
