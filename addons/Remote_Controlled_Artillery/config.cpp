@@ -498,7 +498,7 @@ class CfgAmmo
 		cameraViewAvailable=1;	//how does this work?
 	};
 
-	class RC_155mm_HEAB_sub: Sh_155mm_AMOS
+	class RC_155mm_HE_sub: Sh_155mm_AMOS
 	{
 		explosionTime=0.01;
 		explosive=1;
@@ -510,7 +510,7 @@ class CfgAmmo
 		triggerOnImpact=1;
 		submunitionInitialOffset[]={0,0,-26.8};	//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
 		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionAmmo="RC_155mm_HEAB_sub";
+		submunitionAmmo="RC_155mm_HE_sub";
 
 		//deleteParentWhenTriggered=1;
 		ExplosionEffects="";
@@ -526,6 +526,29 @@ class CfgAmmo
 		triggerDistance=100;	//doesnt work :(
 	};
 
+	//Bunker Buster
+	class M_Mo_82mm_AT_LG;
+	class RC_155mm_LGBB_subcarrier: M_Mo_82mm_AT_LG
+	{
+		triggerDistance=-1;
+		triggerOnImpact=1;
+		submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact
+		submunitionDirectionType="SubmunitionModelDirection";
+		submunitionAmmo="RC_155mm_HE_sub";
+
+		//deleteParentWhenTriggered=1;
+		ExplosionEffects="";
+		CraterEffects="";
+		explosive=0;
+		hit=0;
+		indirectHit=0;
+		indirectHitRange=0;
+	};
+	class RC_155mm_LGBB: Sh_155mm_AMOS_LG
+	{
+		submunitionAmmo="RC_155mm_LGBB_subcarrier";
+	};
+
 	class RC_155mm_DPICM: Cluster_155mm_AMOS
 	{
 		submunitionConeType[]=
@@ -536,7 +559,7 @@ class CfgAmmo
 	};
 
 	class R_230mm_fly;
-	class RC_227mm_HEAB_sub: R_230mm_fly
+	class RC_227mm_HE_sub: R_230mm_fly
 	{
 		explosionTime=0.01;
 		explosive=1;
@@ -548,7 +571,7 @@ class CfgAmmo
 		triggerOnImpact=1;
 		submunitionInitialOffset[]={0,0,-26.8};	//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
 		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionAmmo="RC_227mm_HEAB_sub";
+		submunitionAmmo="RC_227mm_HE_sub";
 
 		artilleryLock=1;
 		cost=1000;
@@ -591,9 +614,16 @@ class CfgMagazines
 	};
 	class RC_20Rnd_155mm_HEAB2: 32Rnd_155mm_Mo_shells
 	{
-		ammo="Sh_155mm_HEAB2";
+		ammo="RC_155mm_HEAB2";
 		displayName="155mm HE Airburst 2";
 		displayNameShort="155mm HE AB2";
+		count=20;
+	};
+	class RC_20Rnd_155mm_LGBB: 32Rnd_155mm_Mo_shells
+	{
+		ammo="RC_155mm_LGBB";
+		displayName="155mm LG Bunker Buster";
+		displayNameShort="155mm LG BB";
 		count=20;
 	};
 	class RC_20Rnd_155mm_DPICM: 2Rnd_155mm_Mo_Cluster
@@ -1110,6 +1140,7 @@ class CfgWeapons
 		{
 			"RC_20Rnd_155mm_HEAB",
 			"RC_20Rnd_155mm_HEAB2",
+			"RC_20Rnd_155mm_LGBB",
 			"RC_20Rnd_155mm_Smoke",
 			"RC_20Rnd_155mm_DPICM"
 		};
@@ -1602,6 +1633,7 @@ class CfgVehicles
 				{
 					"RC_20Rnd_155mm_HEAB",
 					"RC_20Rnd_155mm_HEAB2",
+					"RC_20Rnd_155mm_LGBB",
 					"RC_20Rnd_155mm_Smoke",
 					"RC_20Rnd_155mm_DPICM"
 				};
