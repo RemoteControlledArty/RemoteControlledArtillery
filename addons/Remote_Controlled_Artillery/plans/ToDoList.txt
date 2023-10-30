@@ -27,7 +27,6 @@ DONE - FEATURES:
 
 -added 230mm laser guided and AT guided rockets (unclear if they work)
 
-
 TO DO - QUALITY OF LIFE:
 
 -if vehicle speed = 0 then turn off engine true
@@ -35,6 +34,8 @@ TO DO - QUALITY OF LIFE:
 
 -if turret azimuth matches target azimuth, turn green
 -if charge is correct for target distance, turn green
+
+-turret zoom decrease for better driving
 
 
 DONE - QUALITY OF LIFE:

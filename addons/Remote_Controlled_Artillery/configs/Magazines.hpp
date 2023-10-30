@@ -557,8 +557,8 @@ class 32Rnd_155mm_Mo_shells;
 
 class RC_1Rnd_155mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
-	displayName="155mm HE";
-	displayNameShort="155mm HE";
+	displayName="HE";
+	displayNameShort="HE";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
@@ -724,8 +724,8 @@ class 4Rnd_155mm_Mo_guided;
 
 class RC_1Rnd_155mm_Mo_guided: 4Rnd_155mm_Mo_guided
 {
-	displayName="155mm AT Guided";
-	displayNameShort="155mm AT Guided";
+	displayName="AT Guided";
+	displayNameShort="AT Guided";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
@@ -807,8 +807,8 @@ class 6Rnd_155mm_Mo_mine;
 
 class RC_1Rnd_155mm_Mo_mine: 6Rnd_155mm_Mo_mine
 {
-	displayName="155mm AP Mines";
-	displayNameShort="155mm AP Mines";
+	displayName="AP Mines";
+	displayNameShort="AP Mines";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_mine: RC_1Rnd_155mm_Mo_mine
@@ -894,8 +894,8 @@ class 2Rnd_155mm_Mo_Cluster;
 
 class RC_1Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
-	displayName="155mm DPICM";
-	displayNameShort="155mm DPICM";
+	displayName="Cluster";
+	displayNameShort="Cluster";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
@@ -981,8 +981,8 @@ class 6Rnd_155mm_Mo_smoke;
 
 class RC_1Rnd_155mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 {
-	displayName="155mm Smoke";
-	displayNameShort="155mm Smoke";
+	displayName="Smoke";
+	displayNameShort="Smoke";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_smoke: RC_1Rnd_155mm_Mo_smoke
@@ -1068,8 +1068,8 @@ class 2Rnd_155mm_Mo_LG;
 
 class RC_1Rnd_155mm_Mo_LG: 2Rnd_155mm_Mo_LG
 {
-	displayName="155mm Laser Guided";
-	displayNameShort="155mm LG";
+	displayName="Laser Guided";
+	displayNameShort="LG";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
@@ -1155,8 +1155,8 @@ class 6Rnd_155mm_Mo_AT_mine;
 
 class RC_1Rnd_155mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 {
-	displayName="155mm AT Mines";
-	displayNameShort="155mm AT Mines";
+	displayName="AT Mines";
+	displayNameShort="AT Mines";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_AT_mine: RC_1Rnd_155mm_Mo_AT_mine
@@ -1239,8 +1239,8 @@ class RC_20Rnd_155mm_Mo_AT_mine: RC_1Rnd_155mm_Mo_AT_mine
 
 class RC_1Rnd_155mm_Mo_Illum: 32Rnd_155mm_Mo_shells
 {
-	displayName="155mm Illumination";
-	displayNameShort="155mm Illum";
+	displayName="Illumination";
+	displayNameShort="Illum";
 	//displayNameMFDFormat="IL";
 	ammo="Flare_155mm_AMOS_White";
 	count=1;
@@ -1408,8 +1408,8 @@ class 12Rnd_230mm_rockets;
 
 class RC_1Rnd_230mm_rockets: 12Rnd_230mm_rockets
 {
-	displayName="227mm HE";
-	displayNameShort="227mm HE";
+	displayName="HE";
+	displayNameShort="HE";
 	count=1;
 };
 class RC_2Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
@@ -1463,8 +1463,8 @@ class 12Rnd_230mm_rockets_cluster;
 
 class RC_1Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
 {
-	displayName="227mm DPICM";
-	displayNameShort="227mm DPICM";
+	displayName="Cluster";
+	displayNameShort="Cluster";
 	count=1;
 };
 class RC_2Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
@@ -1515,8 +1515,8 @@ class RC_12Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 
 class RC_1Rnd_230mm_rockets_LG: 12Rnd_230mm_rockets
 {
-	displayName="227mm Laser Guided";
-	displayNameShort="227mm LG";
+	displayName="Laser Guided";
+	displayNameShort="LG";
 	//displayNameMFDFormat="LG";
 	ammo="R_230mm_LG";
 	count=1;
@@ -1569,8 +1569,8 @@ class RC_12Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
 
 class RC_1Rnd_230mm_rockets_ATG: 12Rnd_230mm_rockets
 {
-	displayName="227mm AT Guided";
-	displayNameShort="227mm AT Guided";
+	displayName="AT Guided";
+	displayNameShort="AT Guided";
 	//displayNameMFDFormat="AT G";
 	ammo="M_Mo_230mm_guided";
 	count=1;
@@ -1626,8 +1626,8 @@ class magazine_ShipCannon_120mm_HE_shells_x32;
 
 class RC_ShipCannon_120mm_HE_shells_x1: magazine_ShipCannon_120mm_HE_shells_x32
 {
-	displayName="120mm HE";
-	displayNameShort="120mm HE";
+	displayName="HE";
+	displayNameShort="HE";
 	count=1;
 };
 class RC_ShipCannon_120mm_HE_shells_x2: RC_ShipCannon_120mm_HE_shells_x1
@@ -1793,8 +1793,8 @@ class magazine_ShipCannon_120mm_HE_guided_shells_x2;
 
 class RC_ShipCannon_120mm_HE_guided_shells_x1: magazine_ShipCannon_120mm_HE_guided_shells_x2
 {
-	displayName="120mm AT Guided";
-	displayNameShort="120mm AT Guided";
+	displayName="AT Guided";
+	displayNameShort="AT Guided";
 	count=1;
 };
 class RC_ShipCannon_120mm_HE_guided_shells_x2: RC_ShipCannon_120mm_HE_guided_shells_x1
@@ -1880,8 +1880,8 @@ class magazine_ShipCannon_120mm_HE_LG_shells_x2;
 
 class RC_ShipCannon_120mm_HE_LG_shells_x1: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
-	displayName="120mm Laser Guided";
-	displayNameShort="120mm LG";
+	displayName="Laser Guided";
+	displayNameShort="LG";
 	count=1;
 };
 class RC_ShipCannon_120mm_HE_LG_shells_x2: RC_ShipCannon_120mm_HE_LG_shells_x1
@@ -1967,8 +1967,8 @@ class magazine_ShipCannon_120mm_HE_cluster_shells_x2;
 
 class RC_ShipCannon_120mm_HE_cluster_shells_x1: magazine_ShipCannon_120mm_HE_cluster_shells_x2
 {
-	displayName="120mm DPICM";
-	displayNameShort="120mm DPICM";
+	displayName="Cluster";
+	displayNameShort="Cluster";
 	count=1;
 };
 class RC_ShipCannon_120mm_HE_cluster_shells_x2: RC_ShipCannon_120mm_HE_cluster_shells_x1
@@ -2054,8 +2054,8 @@ class magazine_ShipCannon_120mm_mine_shells_x6;
 
 class RC_ShipCannon_120mm_mine_shells_x1: magazine_ShipCannon_120mm_mine_shells_x6
 {
-	displayName="120mm AP Mines";
-	displayNameShort="120mm AP Mines";
+	displayName="AP Mines";
+	displayNameShort="AP Mines";
 	count=1;
 };
 class RC_ShipCannon_120mm_mine_shells_x2: RC_ShipCannon_120mm_mine_shells_x1
@@ -2141,8 +2141,8 @@ class magazine_ShipCannon_120mm_smoke_shells_x6;
 
 class RC_ShipCannon_120mm_smoke_shells_x1: magazine_ShipCannon_120mm_smoke_shells_x6
 {
-	displayName="120mm Smoke";
-	displayNameShort="120mm Smoke";
+	displayName="Smoke";
+	displayNameShort="Smoke";
 	count=1;
 };
 class RC_ShipCannon_120mm_smoke_shells_x2: RC_ShipCannon_120mm_smoke_shells_x1
@@ -2228,8 +2228,8 @@ class magazine_ShipCannon_120mm_AT_mine_shells_x6;
 
 class RC_ShipCannon_120mm_AT_mine_shells_x1: magazine_ShipCannon_120mm_AT_mine_shells_x6
 {
-	displayName="120mm AT Mines";
-	displayNameShort="120mm AT Mines";
+	displayName="AT Mines";
+	displayNameShort="AT Mines";
 	count=1;
 };
 class RC_ShipCannon_120mm_AT_mine_shells_x2: RC_ShipCannon_120mm_AT_mine_shells_x1
@@ -2312,8 +2312,8 @@ class RC_ShipCannon_120mm_AT_mine_shells_x20: RC_ShipCannon_120mm_AT_mine_shells
 
 class RC_ShipCannon_120mm_Illum_shells_x1: magazine_ShipCannon_120mm_HE_shells_x32
 {
-	displayName="120mm Illumination";
-	displayNameShort="120mm Illum";
+	displayName="Illumination";
+	displayNameShort="Illum";
 	//displayNameMFDFormat="IL";
 	ammo="Flare_155mm_AMOS_White";
 	count=1;

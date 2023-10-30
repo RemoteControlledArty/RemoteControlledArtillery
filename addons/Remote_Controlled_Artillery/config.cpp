@@ -380,7 +380,7 @@ class CfgAmmo
 	};
 
 	//new ammo tests
-	//reminder, change DPICM and Mines to submunitionConeType[] = {"poissondisc",  for more even submunition spead
+	//reminder, change Cluster and Mines to submunitionConeType[] = {"poissondisc",  for more even submunition spead
 
 	/*
 	AB4 only problem: I think a larger "triggerDistance=" for submunition is more reliable (currently sometimes works perfect, sometimes hits ground),
@@ -451,12 +451,63 @@ class CfgAmmo
 	class Smoke_120mm_AMOS_White;
 	class AT_Mine_155mm_AMOS_range;
 
+	//add 82mm mine
+	class RC_82mm_HEAB_base: SubmunitionBase
+	{
+		submunitionAmmo="RC_82mm_HE_sub";
+		submunitionCount=1;
+		submunitionConeAngle=0;
+		cost=200;
+		muzzleEffect="";
+		airFriction=0;
+		hit=165;
+		class CamShakeFire
+		{
+			power=3.0092199;
+			duration=1.8;
+			frequency=20;
+			distance=72.4431;
+		};
+		class CamShakePlayerFire
+		{
+			power=0.0099999998;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
+	class Sh_82mm_AMOS;
+	class RC_82mm_HE_sub: Sh_82mm_AMOS
+	{
+		explosionTime=0.01;
+		explosive=1;
+		CraterEffects="";
+	};
+	class ShellBase;
+	class RC_82mm_HEAB_high: RC_82mm_HEAB_base
+	{
+		triggerDistance=-1;
+		triggerOnImpact=1;
+		submunitionInitialOffset[]={0,0,-16.1};		//high airburst to ignore cover very well
+		submunitionDirectionType="SubmunitionModelDirection";
+		submunitionAmmo="RC_82mm_HE_sub";
+
+		//deleteParentWhenTriggered=1;
+		ExplosionEffects="";
+		CraterEffects="";
+		explosive=0;
+		hit=0;
+		indirectHit=0;
+		indirectHitRange=0;
+	};
+	class RC_82mm_HEAB_low: RC_82mm_HEAB_high
+	{
+		submunitionInitialOffset[]={0,0,-6};		//high airburst to ignore cover very well
+	};
 
 	class RC_155mm_Smoke: Smoke_120mm_AMOS_White
 	{
-		triggerDistance=100;
 		submunitionConeAngle=10;
-		submunitionAmmo="SmokeShellArty";
 		submunitionConeType[]=
 		{
 			"poissondisc",
@@ -464,7 +515,7 @@ class CfgAmmo
 		};
 	};
 
-	class RC_155mm_Airburst_base: SubmunitionBase
+	class RC_155mm_HEAB_base: SubmunitionBase
 	{
 		submunitionCount=1;
 		submunitionConeAngle=0;
@@ -504,11 +555,11 @@ class CfgAmmo
 		explosive=1;
 		CraterEffects="";
 	};
-	class RC_155mm_HEAB: RC_155mm_Airburst_base
+	class RC_155mm_HEAB_high: RC_155mm_HEAB_base
 	{
 		triggerDistance=-1;
 		triggerOnImpact=1;
-		submunitionInitialOffset[]={0,0,-26.8};	//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
+		submunitionInitialOffset[]={0,0,-26.8};		//high airburst to ignore cover very well
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionAmmo="RC_155mm_HE_sub";
 
@@ -520,11 +571,17 @@ class CfgAmmo
 		indirectHit=0;
 		indirectHitRange=0;
 	};
-
-	class RC_155mm_HEAB2: Sh_155mm_AMOS
+	class RC_155mm_HEAB_low: RC_155mm_HEAB_high
 	{
-		triggerDistance=100;	//doesnt work :(
+		submunitionInitialOffset[]={0,0,-6};	//low airburst to ignore atleast microterrain, and hit in windows
 	};
+
+	/*
+	class RC_155mm_HEAB_test: Sh_155mm_AMOS
+	{
+		triggerDistance=26.8;	//doesnt work
+	};
+	*/
 
 	//Bunker Buster
 	class M_Mo_82mm_AT_LG;
@@ -532,7 +589,7 @@ class CfgAmmo
 	{
 		triggerDistance=-1;
 		triggerOnImpact=1;
-		submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact
+		submunitionInitialOffset[]={0,0,1.5};	//3m infront of projecticle during impact
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionAmmo="RC_155mm_HE_sub";
 
@@ -549,7 +606,21 @@ class CfgAmmo
 		submunitionAmmo="RC_155mm_LGBB_subcarrier";
 	};
 
-	class RC_155mm_DPICM: Cluster_155mm_AMOS
+	class M_Mo_155mm_AT_LG;
+	class RC_155mm_AT_LG_sub: M_Mo_155mm_AT_LG
+	{
+		triggerDistance=-1;
+		triggerOnImpact=1;
+		submunitionInitialOffset[]={0,0,1.5};	//1.5m infront of projecticle during impact, acting as delayed fuse against bunkers
+		submunitionDirectionType="SubmunitionModelDirection";
+		submunitionAmmo="RC_155mm_HE_sub";
+	};
+	class RC_155mm_AT_LG: Sh_155mm_AMOS_LG
+	{
+		submunitionAmmo="RC_155mm_AT_LG_sub";
+	};
+
+	class RC_155mm_Cluster: Cluster_155mm_AMOS
 	{
 		submunitionConeType[]=
 		{
@@ -559,7 +630,7 @@ class CfgAmmo
 	};
 
 	class R_230mm_fly;
-	class RC_227mm_HE_sub: R_230mm_fly
+	class RC_227mm_HEAB_sub: R_230mm_fly
 	{
 		explosionTime=0.01;
 		explosive=1;
@@ -569,9 +640,9 @@ class CfgAmmo
 	{
 		triggerDistance=-1;
 		triggerOnImpact=1;
-		submunitionInitialOffset[]={0,0,-26.8};	//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
+		submunitionInitialOffset[]={0,0,-26.8};		//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
 		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionAmmo="RC_227mm_HE_sub";
+		submunitionAmmo="RC_227mm_HEAB_sub";
 
 		artilleryLock=1;
 		cost=1000;
@@ -583,7 +654,7 @@ class CfgAmmo
 	};
 
 	class R_230mm_Cluster;
-	class RC_227mm_DPICM: R_230mm_Cluster
+	class RC_227mm_Cluster: R_230mm_Cluster
 	{
 		submunitionConeType[]=
 		{
@@ -598,53 +669,76 @@ class CfgMagazines
 	#include "\Remote_Controlled_Artillery\configs\Magazines.hpp"
 
 	//Airburst test
+	class RC_20Rnd_82mm_HEAB_high: 8Rnd_82mm_Mo_shells
+	{
+		ammo="RC_82mm_HEAB_high";
+		displayName="HE Airburst high";
+		displayNameShort="HE Airburst high";
+		count=20;
+	};
+	class RC_20Rnd_82mm_HEAB_low: 8Rnd_82mm_Mo_shells
+	{
+		ammo="RC_82mm_HEAB_low";
+		displayName="HE Airburst low";
+		displayNameShort="HE Airburst low";
+		count=20;
+	};
+	class RC_20Rnd_155mm_HEAB_high: 32Rnd_155mm_Mo_shells
+	{
+		ammo="RC_155mm_HEAB_high";
+		displayName="HE Airburst high";
+		displayNameShort="HE Airburst high";
+		count=20;
+	};
+	class RC_20Rnd_155mm_HEAB_low: 32Rnd_155mm_Mo_shells
+	{
+		ammo="RC_155mm_HEAB_low";
+		displayName="HE Airburst low";
+		displayNameShort="HE Airburst low";
+		count=20;
+	};
+	/*
+	class RC_20Rnd_155mm_HEAB_test: 32Rnd_155mm_Mo_shells
+	{
+		ammo="RC_155mm_HEAB_test";
+		displayName="HE Airburst test";
+		displayNameShort="HE Airburst test";
+		count=20;
+	};
+	*/
+	class RC_20Rnd_155mm_LG: 32Rnd_155mm_Mo_shells
+	{
+		ammo="RC_155mm_AT_LG";
+		displayName="Laser Guided";
+		displayNameShort="Laser Guided";
+		count=20;
+	};
 	class RC_20Rnd_155mm_Smoke: 6Rnd_155mm_Mo_smoke
 	{
 		ammo="RC_155mm_Smoke";
-		displayName="155mm HE Airburst1";
-		displayNameShort="155mm HE AB1";
+		displayName="Smoke";
+		displayNameShort="Smoke";
 		count=20;
 	};
-	class RC_20Rnd_155mm_HEAB: 32Rnd_155mm_Mo_shells
+	class RC_20Rnd_155mm_Cluster: 2Rnd_155mm_Mo_Cluster
 	{
-		ammo="RC_155mm_HEAB";
-		displayName="155mm HE Airburst";
-		displayNameShort="155mm HE AB";
+		ammo="RC_155mm_Cluster";
+		displayName="Cluster";
+		displayNameShort="Cluster";
 		count=20;
 	};
-	class RC_20Rnd_155mm_HEAB2: 32Rnd_155mm_Mo_shells
-	{
-		ammo="RC_155mm_HEAB2";
-		displayName="155mm HE Airburst 2";
-		displayNameShort="155mm HE AB2";
-		count=20;
-	};
-	class RC_20Rnd_155mm_LGBB: 32Rnd_155mm_Mo_shells
-	{
-		ammo="RC_155mm_LGBB";
-		displayName="155mm LG Bunker Buster";
-		displayNameShort="155mm LG BB";
-		count=20;
-	};
-	class RC_20Rnd_155mm_DPICM: 2Rnd_155mm_Mo_Cluster
-	{
-		ammo="RC_155mm_DPICM";
-		displayName="155mm DPICM";
-		displayNameShort="155mm DPICM";
-		count=20;
-	};
-	class RC_12Rnd_227mm_HEAB: 2Rnd_155mm_Mo_Cluster
+	class RC_12Rnd_227mm_HEAB: 12Rnd_230mm_rockets
 	{
 		ammo="RC_227mm_HEAB";
-		displayName="227mm HE Airburst";
-		displayNameShort="227mm HE AB";
+		displayName="HE Airburst";
+		displayNameShort="HE Airburst";
 		count=12;
 	};
-	class RC_12Rnd_227mm_DPICM: 2Rnd_155mm_Mo_Cluster
+	class RC_12Rnd_227mm_Cluster: 12Rnd_230mm_rockets_cluster
 	{
-		ammo="RC_227mm_DPICM";
-		displayName="227mm DPICM";
-		displayNameShort="227mm DPICM";
+		ammo="RC_227mm_Cluster";
+		displayName="Cluster";
+		displayNameShort="Cluster";
 		count=12;
 	};
 };
@@ -700,7 +794,8 @@ class CfgWeapons
 	class RC_ATGM: launch_Vorona_base_F
 	{
 		scope=2;
-		ReloadTime=6;
+		reloadTime=6;
+		magazineReloadTime=6;
 		autoReload=1;	
 		magazines[]=
 		{
@@ -853,6 +948,15 @@ class CfgWeapons
 		};
 	};
 
+	class RC_mortar_82mm_HEAB: mortar_82mm
+	{
+		magazines[]=
+		{
+			"RC_20Rnd_82mm_HEAB_high",
+			"RC_20Rnd_82mm_HEAB_low"
+		};
+	};
+
 	// Rockets
 	class rockets_230mm_GAT;
 	class RC_rockets_230mm_GAT: rockets_230mm_GAT
@@ -918,9 +1022,39 @@ class CfgWeapons
 
 	// 155m
 	class mortar_155mm_AMOS;
-	class RC_155mm_AMOS: mortar_155mm_AMOS
+	class RC_155mm_AMOS_base: mortar_155mm_AMOS
 	{
-		magazineReloadTime=5;
+		class Single1;
+		class Single2;
+		class Single3;
+		class Single4;
+		class Single5;
+	};
+	class RC_155mm_AMOS: RC_155mm_AMOS_base
+	{
+		reloadTime=6;
+		magazineReloadTime=6;
+
+		class Single1: Single1
+		{
+			reloadTime=6;
+		};
+		class Single2: Single2
+		{
+			reloadTime=6;
+		};
+		class Single3: Single3
+		{
+			reloadTime=6;
+		};
+		class Single4: Single4
+		{
+			reloadTime=6;
+		};
+		class Single5: Single5
+		{
+			reloadTime=6;
+		};
 
 		magazines[]=
 		{
@@ -1134,15 +1268,39 @@ class CfgWeapons
 		};
 	};
 
-	class RC_155mm_HEAB_Cannon: mortar_155mm_AMOS
+	class RC_155mm_HEAB_Cannon: RC_155mm_AMOS_base
 	{
+		reloadTime=6;
+		magazineReloadTime=6;
+		
+		class Single1: Single1
+		{
+			reloadTime=6;
+		};
+		class Single2: Single2
+		{
+			reloadTime=6;
+		};
+		class Single3: Single3
+		{
+			reloadTime=6;
+		};
+		class Single4: Single4
+		{
+			reloadTime=6;
+		};
+		class Single5: Single5
+		{
+			reloadTime=6;
+		};
+
 		magazines[]=
 		{
-			"RC_20Rnd_155mm_HEAB",
-			"RC_20Rnd_155mm_HEAB2",
-			"RC_20Rnd_155mm_LGBB",
+			"RC_20Rnd_155mm_HEAB_high",
+			"RC_20Rnd_155mm_HEAB_low",
+			"RC_20Rnd_155mm_LG",
 			"RC_20Rnd_155mm_Smoke",
-			"RC_20Rnd_155mm_DPICM"
+			"RC_20Rnd_155mm_Cluster"
 		};
 	};
 
@@ -1153,7 +1311,7 @@ class CfgWeapons
 		magazines[]=
 		{
 			"RC_12Rnd_227mm_HEAB",
-			"RC_12Rnd_227mm_DPICM"
+			"RC_12Rnd_227mm_Cluster"
 		};
 	};
 
@@ -1402,6 +1560,8 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
+		class OpticsIn;
+		class Wide;
 		// I did a Thing
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
@@ -1631,11 +1791,26 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_20Rnd_155mm_HEAB",
-					"RC_20Rnd_155mm_HEAB2",
-					"RC_20Rnd_155mm_LGBB",
+					"RC_20Rnd_155mm_HEAB_high",
+					"RC_20Rnd_155mm_HEAB_low",
+					"RC_20Rnd_155mm_LG",
 					"RC_20Rnd_155mm_Smoke",
-					"RC_20Rnd_155mm_DPICM"
+					"RC_20Rnd_155mm_Cluster"
+				};
+
+				class OpticsIn: OpticsIn
+				{
+					class Wide: Wide
+					{
+						initFov=0.17399999;
+						minFov=0.0077777999;
+						maxFov=0.89999998;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG"
+						};
+					};
 				};
 			};
 		};
@@ -1821,6 +1996,8 @@ class CfgVehicles
 		class showCamonetHull;
 		class Turrets;
 		class MainTurret;
+		class OpticsIn;
+		class Wide;
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
@@ -2010,7 +2187,22 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_12Rnd_227mm_HEAB",
-					"RC_12Rnd_227mm_DPICM"
+					"RC_12Rnd_227mm_Cluster"
+				};
+
+				class OpticsIn: OpticsIn
+				{
+					class Wide: Wide
+					{
+						initFov=0.17399999;
+						minFov=0.0077777999;
+						maxFov=0.89999998;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG"
+						};
+					};
 				};
 			};
 		};
@@ -3064,6 +3256,31 @@ class CfgVehicles
 			dissasembleTo[]=
 			{
 				"RC_Mortar_Bag_I"
+			};
+		};
+	};
+
+	class RC_Mortar_HEAB: RC_Mortar_NA
+	{
+		displayName="RC Mortar Airburst";
+		faction="RemoteControlled_B";
+		editorSubcategory="RC_Mortar_subcat";
+
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				gunnerForceOptics=1;
+
+				weapons[]=
+				{
+					"RC_mortar_82mm_HEAB"
+				};
+				magazines[]=
+				{
+					"RC_20Rnd_82mm_HEAB_high",
+					"RC_20Rnd_82mm_HEAB_low"
+				};
 			};
 		};
 	};
