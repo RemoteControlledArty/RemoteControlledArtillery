@@ -108,34 +108,34 @@ class CfgPatches
 			RC_Howitzer_HEX_WD_O,
 
 
-			RC_MLRS_HE_A,
-			RC_MLRS_HE_WD,
-			RC_MLRS_HE_A_O,
-			RC_MLRS_HE_WD_O,
-			RC_MLRS_HE_A_I,
-			RC_MLRS_HE_WD_I,
+			RC_MLRS_NA_A,
+			RC_MLRS_NA_WD,
+			RC_MLRS_NA_A_O,
+			RC_MLRS_NA_WD_O,
+			RC_MLRS_NA_A_I,
+			RC_MLRS_NA_WD_I,
 
-			RC_MLRS_HE_CL_A,
-			RC_MLRS_HE_CL_WD,
-			RC_MLRS_HE_CL_A_O,
-			RC_MLRS_HE_CL_WD_O,
-			RC_MLRS_HE_CL_A_I,
-			RC_MLRS_HE_CL_WD_I,
+			RC_MLRS_A,
+			RC_MLRS_WD,
+			RC_MLRS_A_O,
+			RC_MLRS_WD_O,
+			RC_MLRS_A_I,
+			RC_MLRS_WD_I,
 
 
-			RC_MRL_HE_DIG,
-			RC_MRL_HE_WD,
-			RC_MRL_HE_HEX_O,
-			RC_MRL_HE_WD_O,
-			RC_MRL_HE_DIG_I,
-			RC_MRL_HE_WD_I,
+			RC_MRL_NA_DIG,
+			RC_MRL_NA_WD,
+			RC_MRL_NA_HEX_O,
+			RC_MRL_NA_WD_O,
+			RC_MRL_NA_DIG_I,
+			RC_MRL_NA_WD_I,
 
-			RC_MRL_HE_CL_DIG,
-			RC_MRL_HE_CL_WD,
-			RC_MRL_HE_CL_HEX_O,
-			RC_MRL_HE_CL_WD_O,
-			RC_MRL_HE_CL_DIG_I,
-			RC_MRL_HE_CL_WD_I,
+			RC_MRL_DIG,
+			RC_MRL_WD,
+			RC_MRL_HEX_O,
+			RC_MRL_WD_O,
+			RC_MRL_DIG_I,
+			RC_MRL_WD_I,
 
 
 			RC_AA_A,
@@ -334,413 +334,12 @@ class CfgEditorSubcategories
 
 class CfgAmmo
 {
-	class ammo_Penetrator_Vorona;
-	class RC_Penetrator_ATGM: ammo_Penetrator_Vorona
-	{
-		hit=1000;
-	};
-
-
-	class F_40mm_White;
-	class RC_Mo_Illum: F_40mm_White
-	{
-		triggerTime=0;
-		model="\A3\Weapons_F\Ammo\UGL_Flare";
-		brightness=8000;
-		intensity=80000;
-		lightColor[]={100,100,100,100};
-		timeToLive=120;
-	};
-
-
-	class SubmunitionBase;
-	class Flare_155mm_AMOS_White: SubmunitionBase
-	{
-		submunitionAmmo[]=
-		{
-			"RC_Mo_Illum",
-			1
-		};
-		timeToLive=180;
-		hit=9;
-		indirectHit=0;
-		indirectHitRange=0;
-		explosive=0;
-		ExplosionEffects="";
-		CraterEffects="";
-		soundHit[]=
-		{
-			"",
-			0,
-			1
-		};
-		whistleDist=0;
-		aimAboveDefault=3;
-		aimAboveTarget[]={360,400,500,640,720,800,850};
-	};
-
-	//new ammo tests
-	//reminder, change Cluster and Mines to submunitionConeType[] = {"poissondisc",  for more even submunition spead
-
-	/*
-	AB4 only problem: I think a larger "triggerDistance=" for submunition is more reliable (currently sometimes works perfect, sometimes hits ground),
-	but then the distance it airbursts over the target per "explosiontime="  depends on current velocity.
-
-	As charge 2 is the highest i would still use with non laser guided shells, i used those values:
-	Charge 0,  50m - 153.9ms x 0.115s = 32.3m Airburst
-	Charge 1,  50m - 243ms x 0.115s = 22.1m Airburst
-	Charge 2,  50m - 388.8ms x 0.115s = 5.3m Airburst
-
-	Submunition speed could be changed and by that airburst height eqalized.
-	*/
-
-
-	/*
-	List of usefull entries:
-		//submunitionInitSpeed=75; doesnt work...
-		//deleteParentWhenTriggered=1;
-		//CraterEffects="NoCrater";
-		//triggerTime=0.1;
-		//triggerSpeedCoef=1;
-		//triggerOnImpact=1
-		//triggerSpeedCoef=1;
-
-		//maxSpeed=75; didnt work...?
-
-		//CraterEffects="NoCrater";
-		//triggerTime=0.1;
-		//triggerOnImpact=0;
-
-		//ExplosionEffects="ClusterExplosionEffects";
-		//typicalSpeed=75;
-		//fuseDistance=80;
-
-
-
-		//deleteParentWhenTriggered=1;
-		//ExplosionEffects="ClusterExplosionEffects";
-
-		//submunitionParentSpeedCoef=0;
-		//submunitionInitSpeed=75;
-		//effectFly="ArtilleryTrails";
-		//triggerSpeedCoef=1;
-
-		submunitionAmmo="ammo_Penetrator_120mm";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitSpeed=1000;
-		submunitionParentSpeedCoef=0;
-		submunitionInitialOffset[]={0,0,-0.2};
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		fuseDistance=20;
-		proximityExplosionDistance=5;
-
-		//triggerSpeedCoef=1;
-	*/
-
-
-	//option A: explosionTime=1;  typicalSpeed=80;  submunitionInitSpeed=80;
-	//option B: explosionTime=0.1;  fuseDistance=80
-	//option C: triggerOnImpact=1;  submunitionInitialOffset[]={0,0,-0.2};
-	//option D: triggerDistance=100; explosionTime=0.01; submunitionInitialOffset[]={0,0,70};
-
-	class Sh_155mm_AMOS;
-	class Cluster_155mm_AMOS;
-	class Sh_155mm_AMOS_guided;
-	class Sh_155mm_AMOS_LG;
-	class Smoke_120mm_AMOS_White;
-	class AT_Mine_155mm_AMOS_range;
-
-	//add 82mm mine
-	class RC_82mm_HEAB_base: SubmunitionBase
-	{
-		submunitionAmmo="RC_82mm_HE_sub";
-		submunitionCount=1;
-		submunitionConeAngle=0;
-		cost=200;
-		muzzleEffect="";
-		airFriction=0;
-		hit=165;
-		class CamShakeFire
-		{
-			power=3.0092199;
-			duration=1.8;
-			frequency=20;
-			distance=72.4431;
-		};
-		class CamShakePlayerFire
-		{
-			power=0.0099999998;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class Sh_82mm_AMOS;
-	class RC_82mm_HE_sub: Sh_82mm_AMOS
-	{
-		explosionTime=0.01;
-		explosive=1;
-		CraterEffects="";
-	};
-	class ShellBase;
-	class RC_82mm_HEAB_high: RC_82mm_HEAB_base
-	{
-		triggerDistance=-1;
-		triggerOnImpact=1;
-		submunitionInitialOffset[]={0,0,-16.1};		//high airburst to ignore cover very well
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionAmmo="RC_82mm_HE_sub";
-
-		//deleteParentWhenTriggered=1;
-		ExplosionEffects="";
-		CraterEffects="";
-		explosive=0;
-		hit=0;
-		indirectHit=0;
-		indirectHitRange=0;
-	};
-	class RC_82mm_HEAB_low: RC_82mm_HEAB_high
-	{
-		submunitionInitialOffset[]={0,0,-6};		//high airburst to ignore cover very well
-	};
-
-	class RC_155mm_Smoke: Smoke_120mm_AMOS_White
-	{
-		submunitionConeAngle=10;
-		submunitionConeType[]=
-		{
-			"poissondisc",
-			10
-		};
-	};
-
-	class RC_155mm_HEAB_base: SubmunitionBase
-	{
-		submunitionCount=1;
-		submunitionConeAngle=0;
-		cost=300;
-		muzzleEffect="";
-		airFriction=0;
-		hit=0;
-
-		class CamShakeFire
-		{
-			power=3.0092199;
-			duration=1.8;
-			frequency=20;
-			distance=72.4431;
-		};
-		class CamShakePlayerFire
-		{
-			power=0.0099999998;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-
-		model="\A3\weapons_f\ammo\shell";
-		whistleDist=60;
-		artilleryLock=1;
-		thrust=0;
-		timeToLive=180;
-		sideairFriction=0;
-
-		cameraViewAvailable=1;	//how does this work?
-	};
-
-	class RC_155mm_HE_sub: Sh_155mm_AMOS
-	{
-		explosionTime=0.01;
-		explosive=1;
-		CraterEffects="";
-	};
-	class RC_155mm_HEAB_high: RC_155mm_HEAB_base
-	{
-		triggerDistance=-1;
-		triggerOnImpact=1;
-		submunitionInitialOffset[]={0,0,-26.8};		//high airburst to ignore cover very well
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionAmmo="RC_155mm_HE_sub";
-
-		//deleteParentWhenTriggered=1;
-		ExplosionEffects="";
-		CraterEffects="";
-		explosive=0;
-		hit=0;
-		indirectHit=0;
-		indirectHitRange=0;
-	};
-	class RC_155mm_HEAB_low: RC_155mm_HEAB_high
-	{
-		submunitionInitialOffset[]={0,0,-6};	//low airburst to ignore atleast microterrain, and hit in windows
-	};
-
-	/*
-	class RC_155mm_HEAB_test: Sh_155mm_AMOS
-	{
-		triggerDistance=26.8;	//doesnt work
-	};
-	*/
-
-	//Bunker Buster
-	class M_Mo_82mm_AT_LG;
-	class RC_155mm_LGBB_subcarrier: M_Mo_82mm_AT_LG
-	{
-		triggerDistance=-1;
-		triggerOnImpact=1;
-		submunitionInitialOffset[]={0,0,1.5};	//3m infront of projecticle during impact
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionAmmo="RC_155mm_HE_sub";
-
-		//deleteParentWhenTriggered=1;
-		ExplosionEffects="";
-		CraterEffects="";
-		explosive=0;
-		hit=0;
-		indirectHit=0;
-		indirectHitRange=0;
-	};
-	class RC_155mm_LGBB: Sh_155mm_AMOS_LG
-	{
-		submunitionAmmo="RC_155mm_LGBB_subcarrier";
-	};
-
-	class M_Mo_155mm_AT_LG;
-	class RC_155mm_AT_LG_sub: M_Mo_155mm_AT_LG
-	{
-		triggerDistance=-1;
-		triggerOnImpact=1;
-		submunitionInitialOffset[]={0,0,1.5};	//1.5m infront of projecticle during impact, acting as delayed fuse against bunkers
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionAmmo="RC_155mm_HE_sub";
-	};
-	class RC_155mm_AT_LG: Sh_155mm_AMOS_LG
-	{
-		submunitionAmmo="RC_155mm_AT_LG_sub";
-	};
-
-	class RC_155mm_Cluster: Cluster_155mm_AMOS
-	{
-		submunitionConeType[]=
-		{
-			"poissondisc",	//even spread
-			35
-		};
-	};
-
-	class R_230mm_fly;
-	class RC_227mm_HEAB_sub: R_230mm_fly
-	{
-		explosionTime=0.01;
-		explosive=1;
-		CraterEffects="";
-	};
-	class RC_227mm_HEAB: SubmunitionBase
-	{
-		triggerDistance=-1;
-		triggerOnImpact=1;
-		submunitionInitialOffset[]={0,0,-26.8};		//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionAmmo="RC_227mm_HEAB_sub";
-
-		artilleryLock=1;
-		cost=1000;
-		airFriction=0;
-		muzzleEffect="";
-		effectFly="Missile0";
-		model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
-		hit=0;
-	};
-
-	class R_230mm_Cluster;
-	class RC_227mm_Cluster: R_230mm_Cluster
-	{
-		submunitionConeType[]=
-		{
-			"poissondisc",
-			50
-		};
-	};
+	#include "\Remote_Controlled_Artillery\configs\Ammo.hpp"
 };
 
 class CfgMagazines
 {
 	#include "\Remote_Controlled_Artillery\configs\Magazines.hpp"
-
-	//Airburst test
-	class RC_20Rnd_82mm_HEAB_high: 8Rnd_82mm_Mo_shells
-	{
-		ammo="RC_82mm_HEAB_high";
-		displayName="HE Airburst high";
-		displayNameShort="HE Airburst high";
-		count=20;
-	};
-	class RC_20Rnd_82mm_HEAB_low: 8Rnd_82mm_Mo_shells
-	{
-		ammo="RC_82mm_HEAB_low";
-		displayName="HE Airburst low";
-		displayNameShort="HE Airburst low";
-		count=20;
-	};
-	class RC_20Rnd_155mm_HEAB_high: 32Rnd_155mm_Mo_shells
-	{
-		ammo="RC_155mm_HEAB_high";
-		displayName="HE Airburst high";
-		displayNameShort="HE Airburst high";
-		count=20;
-	};
-	class RC_20Rnd_155mm_HEAB_low: 32Rnd_155mm_Mo_shells
-	{
-		ammo="RC_155mm_HEAB_low";
-		displayName="HE Airburst low";
-		displayNameShort="HE Airburst low";
-		count=20;
-	};
-	/*
-	class RC_20Rnd_155mm_HEAB_test: 32Rnd_155mm_Mo_shells
-	{
-		ammo="RC_155mm_HEAB_test";
-		displayName="HE Airburst test";
-		displayNameShort="HE Airburst test";
-		count=20;
-	};
-	*/
-	class RC_20Rnd_155mm_LG: 32Rnd_155mm_Mo_shells
-	{
-		ammo="RC_155mm_AT_LG";
-		displayName="Laser Guided";
-		displayNameShort="Laser Guided";
-		count=20;
-	};
-	class RC_20Rnd_155mm_Smoke: 6Rnd_155mm_Mo_smoke
-	{
-		ammo="RC_155mm_Smoke";
-		displayName="Smoke";
-		displayNameShort="Smoke";
-		count=20;
-	};
-	class RC_20Rnd_155mm_Cluster: 2Rnd_155mm_Mo_Cluster
-	{
-		ammo="RC_155mm_Cluster";
-		displayName="Cluster";
-		displayNameShort="Cluster";
-		count=20;
-	};
-	class RC_12Rnd_227mm_HEAB: 12Rnd_230mm_rockets
-	{
-		ammo="RC_227mm_HEAB";
-		displayName="HE Airburst";
-		displayNameShort="HE Airburst";
-		count=12;
-	};
-	class RC_12Rnd_227mm_Cluster: 12Rnd_230mm_rockets_cluster
-	{
-		ammo="RC_227mm_Cluster";
-		displayName="Cluster";
-		displayNameShort="Cluster";
-		count=12;
-	};
 };
 
 class CfgWeapons
@@ -821,6 +420,9 @@ class CfgWeapons
 	{
 		magazines[]=
 		{
+			"RC_12Rnd_82mm_Mo_HEAB",
+			"RC_12Rnd_82mm_Mo_HEAB_low",
+
 			"RC_1Rnd_82mm_Mo_shells",
 			"RC_2Rnd_82mm_Mo_shells",
 			"RC_3Rnd_82mm_Mo_shells",
@@ -948,15 +550,6 @@ class CfgWeapons
 		};
 	};
 
-	class RC_mortar_82mm_HEAB: mortar_82mm
-	{
-		magazines[]=
-		{
-			"RC_20Rnd_82mm_HEAB_high",
-			"RC_20Rnd_82mm_HEAB_low"
-		};
-	};
-
 	// Rockets
 	class rockets_230mm_GAT;
 	class RC_rockets_230mm_GAT: rockets_230mm_GAT
@@ -965,6 +558,9 @@ class CfgWeapons
 
 		magazines[]=
 		{
+			"RC_12Rnd_230mm_rockets_HEAB",
+			"RC_12Rnd_230mm_rockets_cluster",
+
 			"RC_1Rnd_230mm_rockets",
 			"RC_2Rnd_230mm_rockets",
 			"RC_3Rnd_230mm_rockets",
@@ -1058,6 +654,10 @@ class CfgWeapons
 
 		magazines[]=
 		{
+			"RC_12Rnd_155mm_Mo_HEAB",
+			"RC_12Rnd_155mm_Mo_HEAB_low",
+			"RC_12Rnd_155mm_Mo_LGD",
+
 			"RC_1Rnd_155mm_Mo_shells",
 			"RC_2Rnd_155mm_Mo_shells",
 			"RC_3Rnd_155mm_Mo_shells",
@@ -1265,53 +865,6 @@ class CfgWeapons
 			"RC_38Rnd_155mm_Mo_Illum",
 			"RC_39Rnd_155mm_Mo_Illum",
 			"RC_40Rnd_155mm_Mo_Illum"
-		};
-	};
-
-	class RC_155mm_HEAB_Cannon: RC_155mm_AMOS_base
-	{
-		reloadTime=6;
-		magazineReloadTime=6;
-		
-		class Single1: Single1
-		{
-			reloadTime=6;
-		};
-		class Single2: Single2
-		{
-			reloadTime=6;
-		};
-		class Single3: Single3
-		{
-			reloadTime=6;
-		};
-		class Single4: Single4
-		{
-			reloadTime=6;
-		};
-		class Single5: Single5
-		{
-			reloadTime=6;
-		};
-
-		magazines[]=
-		{
-			"RC_20Rnd_155mm_HEAB_high",
-			"RC_20Rnd_155mm_HEAB_low",
-			"RC_20Rnd_155mm_LG",
-			"RC_20Rnd_155mm_Smoke",
-			"RC_20Rnd_155mm_Cluster"
-		};
-	};
-
-	class RC_227mm_HEAB_Launcher: rockets_230mm_GAT
-	{
-		magazineReloadTime=1;
-
-		magazines[]=
-		{
-			"RC_12Rnd_227mm_HEAB",
-			"RC_12Rnd_227mm_Cluster"
 		};
 	};
 
@@ -1702,7 +1255,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_155mm_Mo_shells",
+					"RC_12Rnd_155mm_Mo_HEAB",
 					"RC_4Rnd_155mm_Mo_guided",
 					"RC_8Rnd_155mm_Mo_mine",
 					"RC_2Rnd_155mm_Mo_Cluster",
@@ -1710,6 +1263,20 @@ class CfgVehicles
 					"RC_4Rnd_155mm_Mo_LG",
 					"RC_8Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
+				};
+				class OpticsIn: OpticsIn
+				{
+					class Wide: Wide
+					{
+						initFov=0.17399999;
+						minFov=0.0077777999;
+						maxFov=0.89999998;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG"
+						};
+					};
 				};
 			};
 		};
@@ -1732,7 +1299,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_155mm_Mo_shells",
+					"RC_12Rnd_155mm_Mo_HEAB",
 					"RC_4Rnd_155mm_Mo_guided",
 					"RC_8Rnd_155mm_Mo_mine",
 					"RC_2Rnd_155mm_Mo_Cluster",
@@ -1740,6 +1307,20 @@ class CfgVehicles
 					"RC_4Rnd_155mm_Mo_LG",
 					"RC_8Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
+				};
+				class OpticsIn: OpticsIn
+				{
+					class Wide: Wide
+					{
+						initFov=0.17399999;
+						minFov=0.0077777999;
+						maxFov=0.89999998;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG"
+						};
+					};
 				};
 			};
 		};
@@ -1773,48 +1354,7 @@ class CfgVehicles
 		side=2;
 	};
 
-	//Airburst test
-	class RC_Howitzer_HEAB_A: RC_Howitzer_NA_A
-	{
-		displayName="RC Howitzer Airburst";
-		faction="RemoteControlled_B";
-		editorSubcategory="RC_Howitzer_subcat";
 
-		class Turrets: Turrets
-		{
-			class MainTurret: MainTurret
-			{
-				gunnerForceOptics=1;
-				weapons[]=
-				{
-					"RC_155mm_HEAB_Cannon"
-				};
-				magazines[]=
-				{
-					"RC_20Rnd_155mm_HEAB_high",
-					"RC_20Rnd_155mm_HEAB_low",
-					"RC_20Rnd_155mm_LG",
-					"RC_20Rnd_155mm_Smoke",
-					"RC_20Rnd_155mm_Cluster"
-				};
-
-				class OpticsIn: OpticsIn
-				{
-					class Wide: Wide
-					{
-						initFov=0.17399999;
-						minFov=0.0077777999;
-						maxFov=0.89999998;
-						visionMode[]=
-						{
-							"Normal",
-							"NVG"
-						};
-					};
-				};
-			};
-		};
-	};
 
 	class O_MBT_02_arty_F;
 	class RC_Howitzer_base_HEX_O: O_MBT_02_arty_F
@@ -1826,6 +1366,8 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class CommanderOptics;
+		class OpticsIn;
+		class Wide;
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 		scope=0;
@@ -1952,6 +1494,20 @@ class CfgVehicles
 					"RC_8Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
 				};
+				class OpticsIn: OpticsIn
+				{
+					class Wide: Wide
+					{
+						initFov=0.17399999;
+						minFov=0.0077777999;
+						maxFov=0.89999998;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG"
+						};
+					};
+				};
 			};
 		};
 	};
@@ -1982,6 +1538,20 @@ class CfgVehicles
 					"RC_8Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
 				};
+				class OpticsIn: OpticsIn
+				{
+					class Wide: Wide
+					{
+						initFov=0.17399999;
+						minFov=0.0077777999;
+						maxFov=0.89999998;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG"
+						};
+					};
+				};
 			};
 		};
 	};
@@ -2003,7 +1573,7 @@ class CfgVehicles
 		scope=0;
 		scopeCurator=0;
 	};
-	class RC_MLRS_HE_A: RC_MLRS_base
+	class RC_MLRS_NA_A: RC_MLRS_base
 	{
 		displayName="RC MLRS-HE (non adjustable)";
 		faction="RemoteControlled_NA_B";
@@ -2059,7 +1629,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class RC_MLRS_HE_WD: RC_MLRS_HE_A
+	class RC_MLRS_NA_WD: RC_MLRS_NA_A
 	{
 		DLC="Expansion";
 		editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_mlrs_F.jpg";
@@ -2070,31 +1640,31 @@ class CfgVehicles
 			"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
 		};
 	};
-	class RC_MLRS_HE_A_O: RC_MLRS_HE_A
+	class RC_MLRS_NA_A_O: RC_MLRS_NA_A
 	{
 		faction="RemoteControlled_NA_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MLRS_HE_WD_O: RC_MLRS_HE_WD
+	class RC_MLRS_NA_WD_O: RC_MLRS_NA_WD
 	{
 		faction="RemoteControlled_NA_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MLRS_HE_A_I: RC_MLRS_HE_A
+	class RC_MLRS_NA_A_I: RC_MLRS_NA_A
 	{
 		faction="RemoteControlled_NA_I";
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MLRS_HE_WD_I: RC_MLRS_HE_WD
+	class RC_MLRS_NA_WD_I: RC_MLRS_NA_WD
 	{
 		faction="RemoteControlled_NA_I";
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MLRS_HE_CL_A: RC_MLRS_HE_A
+	class RC_MLRS_A: RC_MLRS_NA_A
 	{
 		displayName="RC MLRS-HE/CL";
 		faction="RemoteControlled_B";
@@ -2112,84 +1682,10 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
+					"RC_12Rnd_230mm_rockets_HEAB",
 					"RC_6Rnd_230mm_rockets",
 					"RC_6Rnd_230mm_rockets_cluster"
 				};
-			};
-		};
-	};
-	class RC_MLRS_HE_CL_WD: RC_MLRS_HE_WD
-	{
-		displayName="RC MLRS-HE/CL";
-		faction="RemoteControlled_B";
-		editorSubcategory="RC_Rocket_subcat";
-
-		class Turrets: Turrets
-		{
-			class MainTurret: MainTurret
-			{
-				gunnerForceOptics=1;
-				stabilizedInAxes=3;
-				weapons[]=
-				{
-					"RC_rockets_230mm_GAT"
-				};
-				magazines[]=
-				{
-					"RC_6Rnd_230mm_rockets",
-					"RC_6Rnd_230mm_rockets_cluster"
-				};
-			};
-		};
-	};
-	class RC_MLRS_HE_CL_A_O: RC_MLRS_HE_CL_A
-	{
-		faction="RemoteControlled_O";
-		crew="O_UAV_AI";
-		side=0;
-	};
-	class RC_MLRS_HE_CL_WD_O: RC_MLRS_HE_CL_WD
-	{
-		faction="RemoteControlled_O";
-		crew="O_UAV_AI";
-		side=0;
-	};
-	class RC_MLRS_HE_CL_WD_I: RC_MLRS_HE_CL_WD
-	{
-		faction="RemoteControlled_I";
-		crew="I_UAV_AI";
-		side=2;
-	};
-	class RC_MLRS_HE_CL_A_I: RC_MLRS_HE_CL_A
-	{
-		faction="RemoteControlled_I";
-		crew="I_UAV_AI";
-		side=2;
-	};
-
-	//Airburst test
-	class RC_MLRS_HEAB_CL_A: RC_MLRS_HE_WD
-	{
-		displayName="RC MLRS-HEAB/CL";
-		faction="RemoteControlled_B";
-		editorSubcategory="RC_Rocket_subcat";
-
-		class Turrets: Turrets
-		{
-			class MainTurret: MainTurret
-			{
-				gunnerForceOptics=1;
-				stabilizedInAxes=3;
-				weapons[]=
-				{
-					"RC_227mm_HEAB_Launcher"
-				};
-				magazines[]=
-				{
-					"RC_12Rnd_227mm_HEAB",
-					"RC_12Rnd_227mm_Cluster"
-				};
-
 				class OpticsIn: OpticsIn
 				{
 					class Wide: Wide
@@ -2207,6 +1703,69 @@ class CfgVehicles
 			};
 		};
 	};
+	class RC_MLRS_WD: RC_MLRS_NA_WD
+	{
+		displayName="RC MLRS-HE/CL";
+		faction="RemoteControlled_B";
+		editorSubcategory="RC_Rocket_subcat";
+
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				gunnerForceOptics=1;
+				stabilizedInAxes=3;
+				weapons[]=
+				{
+					"RC_rockets_230mm_GAT"
+				};
+				magazines[]=
+				{
+					"RC_12Rnd_230mm_rockets_HEAB",
+					"RC_6Rnd_230mm_rockets",
+					"RC_6Rnd_230mm_rockets_cluster"
+				};
+				class OpticsIn: OpticsIn
+				{
+					class Wide: Wide
+					{
+						initFov=0.17399999;
+						minFov=0.0077777999;
+						maxFov=0.89999998;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG"
+						};
+					};
+				};
+			};
+		};
+	};
+	class RC_MLRS_A_O: RC_MLRS_A
+	{
+		faction="RemoteControlled_O";
+		crew="O_UAV_AI";
+		side=0;
+	};
+	class RC_MLRS_WD_O: RC_MLRS_WD
+	{
+		faction="RemoteControlled_O";
+		crew="O_UAV_AI";
+		side=0;
+	};
+	class RC_MLRS_WD_I: RC_MLRS_WD
+	{
+		faction="RemoteControlled_I";
+		crew="I_UAV_AI";
+		side=2;
+	};
+	class RC_MLRS_A_I: RC_MLRS_A
+	{
+		faction="RemoteControlled_I";
+		crew="I_UAV_AI";
+		side=2;
+	};
 
 	// MRL
 	class I_Truck_02_MRL_F;
@@ -2216,12 +1775,14 @@ class CfgVehicles
 		class Components;
 		class Turrets;
 		class MainTurret;
+		class OpticsIn;
+		class Wide;
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
 	};
-	class RC_MRL_HE_DIG: RC_MRL_base
+	class RC_MRL_NA_DIG: RC_MRL_base
 	{
 		displayName="RC MRL-HE (non adjustable)";
 		faction="RemoteControlled_NA_B";
@@ -2259,7 +1820,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class RC_MRL_HE_WD: RC_MRL_HE_DIG
+	class RC_MRL_NA_WD: RC_MRL_NA_DIG
 	{
 		DLC="Enoch";
 		editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_Truck_02_MRL_F.jpg";
@@ -2271,13 +1832,13 @@ class CfgVehicles
 			"\A3\soft_f_Enoch\Truck_02\Data\truck_02_chassis_EAF_CO.paa"
 		};
 	};
-	class RC_MRL_HE_WD_O: RC_MRL_HE_WD
+	class RC_MRL_NA_WD_O: RC_MRL_NA_WD
 	{
 		faction="RemoteControlled_NA_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MRL_HE_HEX_O: RC_MRL_HE_DIG
+	class RC_MRL_NA_HEX_O: RC_MRL_NA_DIG
 	{
 		faction="RemoteControlled_NA_O";
 		crew="O_UAV_AI";
@@ -2290,19 +1851,19 @@ class CfgVehicles
 			"\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
 		};
 	};
-	class RC_MRL_HE_DIG_I: RC_MRL_HE_DIG
+	class RC_MRL_NA_DIG_I: RC_MRL_NA_DIG
 	{
 		faction="RemoteControlled_NA_I";
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MRL_HE_WD_I: RC_MRL_HE_WD
+	class RC_MRL_NA_WD_I: RC_MRL_NA_WD
 	{
 		faction="RemoteControlled_NA_I";
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MRL_HE_CL_DIG: RC_MRL_HE_DIG
+	class RC_MRL_DIG: RC_MRL_NA_DIG
 	{
 		displayName="RC MRL-HE/CL";
 		faction="RemoteControlled_B";
@@ -2321,13 +1882,28 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
+					"RC_12Rnd_230mm_rockets_HEAB",
 					"RC_6Rnd_230mm_rockets",
 					"RC_6Rnd_230mm_rockets_cluster"
+				};
+				class OpticsIn: OpticsIn
+				{
+					class Wide: Wide
+					{
+						initFov=0.17399999;
+						minFov=0.0077777999;
+						maxFov=0.89999998;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG"
+						};
+					};
 				};
 			};
 		};
 	};
-	class RC_MRL_HE_CL_WD: RC_MRL_HE_WD
+	class RC_MRL_WD: RC_MRL_NA_WD
 	{
 		displayName="RC MRL-HE/CL";
 		faction="RemoteControlled_B";
@@ -2346,19 +1922,34 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
+					"RC_12Rnd_230mm_rockets_HEAB",
 					"RC_6Rnd_230mm_rockets",
 					"RC_6Rnd_230mm_rockets_cluster"
+				};
+				class OpticsIn: OpticsIn
+				{
+					class Wide: Wide
+					{
+						initFov=0.17399999;
+						minFov=0.0077777999;
+						maxFov=0.89999998;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG"
+						};
+					};
 				};
 			};
 		};
 	};
-	class RC_MRL_HE_CL_WD_O: RC_MRL_HE_CL_WD
+	class RC_MRL_WD_O: RC_MRL_WD
 	{
 		faction="RemoteControlled_O";
 		crew="O_UAV_AI";
 		side=0;
 	};
-	class RC_MRL_HE_CL_HEX_O: RC_MRL_HE_CL_DIG
+	class RC_MRL_HEX_O: RC_MRL_DIG
 	{
 		faction="RemoteControlled_O";
 		crew="O_UAV_AI";
@@ -2371,13 +1962,13 @@ class CfgVehicles
 			"\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
 		};
 	};
-	class RC_MRL_HE_CL_DIG_I: RC_MRL_HE_CL_DIG
+	class RC_MRL_DIG_I: RC_MRL_DIG
 	{
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
 		side=2;
 	};
-	class RC_MRL_HE_CL_WD_I: RC_MRL_HE_CL_WD
+	class RC_MRL_WD_I: RC_MRL_WD
 	{
 		faction="RemoteControlled_I";
 		crew="I_UAV_AI";
@@ -3206,6 +2797,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
+					"RC_12Rnd_82mm_HEAB",
 					"RC_12Rnd_82mm_Mo_shells",
 					"RC_12Rnd_82mm_Mo_Flare_white",
 					"RC_12Rnd_82mm_Mo_Smoke_white",
@@ -3256,31 +2848,6 @@ class CfgVehicles
 			dissasembleTo[]=
 			{
 				"RC_Mortar_Bag_I"
-			};
-		};
-	};
-
-	class RC_Mortar_HEAB: RC_Mortar_NA
-	{
-		displayName="RC Mortar Airburst";
-		faction="RemoteControlled_B";
-		editorSubcategory="RC_Mortar_subcat";
-
-		class Turrets: Turrets
-		{
-			class MainTurret: MainTurret
-			{
-				gunnerForceOptics=1;
-
-				weapons[]=
-				{
-					"RC_mortar_82mm_HEAB"
-				};
-				magazines[]=
-				{
-					"RC_20Rnd_82mm_HEAB_high",
-					"RC_20Rnd_82mm_HEAB_low"
-				};
 			};
 		};
 	};

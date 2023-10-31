@@ -894,6 +894,7 @@ class 2Rnd_155mm_Mo_Cluster;
 
 class RC_1Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
+	ammo="RC_155mm_Cluster";
 	displayName="Cluster";
 	displayNameShort="Cluster";
 	count=1;
@@ -981,6 +982,7 @@ class 6Rnd_155mm_Mo_smoke;
 
 class RC_1Rnd_155mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 {
+	ammo="RC_155mm_Smoke";
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -1463,6 +1465,7 @@ class 12Rnd_230mm_rockets_cluster;
 
 class RC_1Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
 {
+	ammo="RC_230mm_Cluster";
 	displayName="Cluster";
 	displayNameShort="Cluster";
 	count=1;
@@ -2473,4 +2476,58 @@ class RC_ShipCannon_120mm_Illum_shells_x39: RC_ShipCannon_120mm_Illum_shells_x1
 class RC_ShipCannon_120mm_Illum_shells_x40: RC_ShipCannon_120mm_Illum_shells_x1
 {
 	count=40;
+};
+
+
+//Airburst test
+class RC_12Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
+{
+	ammo="RC_82mm_HEAB";
+	displayName="HE Airburst";
+	displayNameShort="HE Airburst";
+	count=12;
+};
+class RC_12Rnd_82mm_Mo_HEAB_low: 8Rnd_82mm_Mo_shells
+{
+	ammo="RC_82mm_HEAB_low";
+	displayName="HE Airburst low";
+	displayNameShort="HE Airburst low";
+	count=12;
+};
+/*
+class RC_20Rnd_155mm_HEAB_test: 32Rnd_155mm_Mo_shells
+{
+	ammo="RC_155mm_HEAB_test";
+	displayName="HE Airburst test";
+	displayNameShort="HE Airburst test";
+	count=20;
+};
+*/
+class RC_12Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
+{
+	ammo="RC_155mm_HEAB";
+	displayName="HE Airburst";
+	displayNameShort="HE Airburst";
+	count=12;
+};
+class RC_12Rnd_155mm_Mo_HEAB_low: 32Rnd_155mm_Mo_shells
+{
+	ammo="RC_155mm_HEAB_low";
+	displayName="HE Airburst low";
+	displayNameShort="HE Airburst low";
+	count=12;
+};
+class RC_12Rnd_155mm_Mo_LGD: 32Rnd_155mm_Mo_shells
+{
+	ammo="RC_155mm_LGD";
+	displayName="Laser Guided 1.5m Delayed";
+	displayNameShort="LG 1.5m Delayed";
+	count=12;
+};
+class RC_12Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
+{
+	ammo="RC_230mm_HEAB";
+	displayName="HE Airburst";
+	displayNameShort="HE Airburst";
+	count=12;
 };
