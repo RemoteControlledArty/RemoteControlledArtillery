@@ -293,8 +293,13 @@ class Sh_82mm_AMOS_guided: SubmunitionBase
 */
 
 
-
-
+/*
+class Smoke_82mm_AMOS_White: ShotDeployBase
+{
+	model="\A3\weapons_f\ammo\shell";
+	submunitionAmmo="SmokeShellArty";
+};
+*/
 
 
 
@@ -314,7 +319,7 @@ class Default;
 class RC_155mm_HEAB_shell_base: Default
 {
 	//CLASS shellcore
-	//simulation="shotShell";		//twice
+	simulation="shotShell";		//simulation="shotSubmunitions";
 	//simulationStep=0.050000001;
 	//timeToLive=20;
 	//cost=1000;
@@ -338,7 +343,7 @@ class RC_155mm_HEAB_shell_base: Default
 
 
 	//CLASS submunitioncore
-	simulation="shotSubmunitions";
+	//simulation="shotSubmunitions";	//simulation="shotShell";
 	simulationStep=0.050000001;
 	//timeToLive=180;
 	//cost=1000;
@@ -440,15 +445,15 @@ class RC_155mm_HEAB_shell_base: Default
 		
 	//CLASS 155mm
 	hit=340;
-	indirectHit=0;	//155mm default 125
-	indirectHitRange=0;	//155mm default 30
+	indirectHit=125;	//155mm default 125
+	indirectHitRange=30;	//155mm default 30
 	warheadName="HE";
-	dangerRadiusHit=0;	//155mm default 750
-	suppressionRadiusHit=0;	//155mm default 75
+	dangerRadiusHit=750;	//155mm default 750
+	suppressionRadiusHit=75;	//155mm default 75
 	typicalSpeed=800;
 	caliber=10;
 	deflecting=0;
-	explosive=0;	//155mm default 0.80000001
+	explosive=0.80000001;	//155mm default 0.80000001
 	cost=300;
 	model="\A3\weapons_f\ammo\shell";
 	CraterEffects="ArtyShellCrater";
@@ -459,7 +464,7 @@ class RC_155mm_HEAB_shell_base: Default
 	timeToLive=180;
 	airFriction=0;
 	sideairFriction=0;
-	/*
+	///*
 	soundHit1[]=
 	{
 		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
@@ -513,7 +518,7 @@ class RC_155mm_HEAB_shell_base: Default
 		frequency=20;
 		distance=1;
 	};
-	*/
+	//*/
 	class CamShakeFire
 	{
 		power=3.52844;
@@ -537,7 +542,7 @@ class RC_155mm_HEAB_shell_base: Default
 	autoSeekTarget=0;
 	//cost=200;
 	muzzleEffect="";
-	triggerDistance=300;
+	//triggerDistance=300;	//disabled with -1
 	//airFriction=0;
 	//hit=165;
 	/*
@@ -560,24 +565,355 @@ class RC_155mm_HEAB_shell_base: Default
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*
-class RC_155mm_HE_sub_base: Default
+class RC_Default
 {
-	//shellcore
+	access=3;
+	hit=0;
+	indirectHit=0;
+	indirectHitRange=1;
+	underwaterHitRangeCoef=1;
+	typicalSpeed=900;
+	explosionForceCoef=1;
+	isCraterOriented=0;
+	model="";
+	proxyShape="";
+	craterShape="";
+	simulation="";
+	weaponType="Default";
+	animated=0;
+	shadow=0;
+	cost=0;
+	maxSpeed=0;
+	cartridge="";
+	simulationStep=0.050000001;
+	tracerColor[]={0.69999999,0.69999999,0.5,0.039999999};
+	tracerColorR[]={0.69999999,0.69999999,0.5,0.039999999};
+	soundFly[]=
+	{
+		"",
+		1,
+		1
+	};
+	soundEngine[]=
+	{
+		"",
+		1,
+		1
+	};
+	soundHit[]=
+	{
+		"",
+		1,
+		1
+	};
+	supersonicCrackNear[]=
+	{
+		"",
+		1,
+		1
+	};
+	supersonicCrackFar[]=
+	{
+		"",
+		1,
+		1
+	};
+	soundFall[]=
+	{
+		"",
+		1,
+		1
+	};
+	soundFakeFall[]=
+	{
+		"soundFall",
+		1
+	};
+	hitGroundSoft[]=
+	{
+		"soundHit",
+		1
+	};
+	hitGroundHard[]=
+	{
+		"soundHit",
+		1
+	};
+	hitMan[]=
+	{
+		"soundHit",
+		1
+	};
+	hitArmor[]=
+	{
+		"soundHit",
+		1
+	};
+	hitIron[]=
+	{
+		"soundHit",
+		1
+	};
+	hitBuilding[]=
+	{
+		"soundHit",
+		1
+	};
+	hitFoliage[]=
+	{
+		"soundHit",
+		1
+	};
+	hitWood[]=
+	{
+		"soundHit",
+		1
+	};
+	hitGlass[]=
+	{
+		"soundHit",
+		1
+	};
+	hitGlassArmored[]=
+	{
+		"soundHit",
+		1
+	};
+	hitConcrete[]=
+	{
+		"soundHit",
+		1
+	};
+	hitRubber[]=
+	{
+		"soundHit",
+		1
+	};
+	hitPlastic[]=
+	{
+		"soundHit",
+		1
+	};
+	hitDefault[]=
+	{
+		"soundHit",
+		1
+	};
+	hitMetal[]=
+	{
+		"soundHit",
+		1
+	};
+	hitMetalplate[]=
+	{
+		"soundHit",
+		1
+	};
+	hitTyre[]=
+	{
+		"soundHit",
+		1
+	};
+	hitWater[]=
+	{
+		"soundHit",
+		1
+	};
+	soundImpact[]=
+	{
+		"",
+		1,
+		1
+	};
+	impactGroundSoft[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactGroundHard[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactMan[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactIron[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactArmor[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactBuilding[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactFoliage[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactWood[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactGlass[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactGlassArmored[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactConcrete[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactRubber[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactPlastic[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactDefault[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactMetal[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactMetalplate[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactTyre[]=
+	{
+		"soundImpact",
+		1
+	};
+	impactWater[]=
+	{
+		"soundImpact",
+		1
+	};
+	grenadeFireSound[]={};
+	grenadeBurningSound[]={};
+	deflecting=0;
+	deflectionSlowDown=0.80000001;
+	explosive=1;
+	explosionEffects="ExplosionEffects";
+	craterEffects="ImpactEffectsMedium";
+	craterWaterEffects="ImpactEffectsWater";
+	effectsMissile="ExplosionEffects";
+	effectsMissileInit="";
+	effectsSmoke="SmokeShellWhite";
+	effectsFire="CannonFire";
+	effectFlare="FlareShell";
+	effectFly="";
+	mineJumpEffects="";
+	waterEffectOffset=0.44999999;
+	directionalExplosion=0;
+	explosionAngle=60;
+	explosionDir="explosionDir";
+	explosionPos="explosionPos";
+	explosionEffectsDir="explosionDir";
+	minimumSafeZone=0.1;
+	soundTrigger[]={};
+	soundActivation[]={};
+	soundDeactivation[]={};
+	explosionSoundEffect="";
+	timeToLive=10;
+	minTimeToLive=0;
+	irLock=0;
+	airLock=0;
+	laserLock=0;
+	nvLock=0;
+	artilleryLock=0;
+	hitOnWater=0;
+	lockSeekRadius=100;
+	manualControl=0;
+	maxControlRange=350;
+	maneuvrability=1;
+	trackLead=1;
+	trackOversteer=1;
+	missileLockCone=0;
+	weaponLockSystem=0;
+	cmImmunity=1;
+	lockType=0;
+	maverickweaponIndexOffset=0;
+	sideAirFriction=1;
+	artilleryDispersion=1;
+	artilleryCharge=1;
+	autoSeekTarget=0;
+	visibleFire=0;
+	audibleFire=0;
+	shootDistraction=-1;
+	visibleFireTime=0;
+	explosionTime=0;
+	fuseDistance=0;
+	initTime=0;
+	thrustTime=1.5;
+	thrust=210;
+	airFriction=-0.00050000002;
+	icon="";
+	submunitionAmmo="";
+	explosionType="explosive";
+	mineTrigger="RangeTrigger";
+	mineBoundingTime=3;
+	mineBoundingDist=3;
+	mineInconspicuousness=10;
+	mineFloating=-1;
+	mineDiveSpeed=1;
+	minePlaceDist=0.5;
+	class HitEffects
+	{
+		vehicle="ImpactMetal";
+		object="ImpactConcrete";
+	};
+	suppressionRadiusBulletClose=-1;
+	suppressionRadiusHit=-1;
+	dangerRadiusBulletClose=-1;
+	dangerRadiusHit=-1;
+	caliber=1;
+	whistleDist=0;
+	whistleOnFire=0;
+	class NVGMarkers
+	{
+	};
+	minDamageForCamShakeHit=0.55000001;
+	class EventHandlers
+	{
+	};
+};
+
+
+
+
+class RC_ShellCore: RC_Default
+{
 	simulation="shotShell";
 	simulationStep=0.050000001;
-	timeToLive=20;
-	cost=1000;
+	//timeToLive=20;
+	//cost=1000;
 	soundHit[]=
 	{
 		"",
@@ -590,13 +926,16 @@ class RC_155mm_HE_sub_base: Default
 		0.031622775,
 		4
 	};
-	indirectHitRange=8;
-	visibleFire=16;
-	audibleFire=16;
+	//indirectHitRange=8;
+	//visibleFire=16;
+	//audibleFire=16;
 	visibleFireTime=10;
-	deflecting=5;
+	//deflecting=5;
+};
 
-	//shellbase
+
+class RC_ShellBase: RC_ShellCore
+{
 	supersonicCrackNear[]=
 	{
 		"A3\Sounds_F\weapons\Explosion\supersonic_crack_close",
@@ -611,17 +950,17 @@ class RC_155mm_HE_sub_base: Default
 		1,
 		150
 	};
-	CraterEffects="HEShellCrater";
+	//CraterEffects="HEShellCrater";
 	CraterWaterEffects="ImpactEffectsWaterHE";
-	ExplosionEffects="HEShellExplosion";
+	//ExplosionEffects="HEShellExplosion";
 	visibleFire=64;
 	audibleFire=250;
-	dangerRadiusHit=-1;
-	suppressionRadiusHit=30;
-	timeToLive=360;
-	muzzleEffect="";
-	caliber=34;
-	deflecting=10;
+	//dangerRadiusHit=-1;
+	//suppressionRadiusHit=30;
+	//timeToLive=360;
+	//muzzleEffect="";
+	//caliber=34;
+	//deflecting=10;
 	deflectionDirDistribution=0.38999999;
 	penetrationDirDistribution=0.25999999;
 	whistleOnFire=2;
@@ -669,18 +1008,21 @@ class RC_155mm_HE_sub_base: Default
 		"soundFakeFall3",
 		0.25
 	};
+};
 
-	//155mm
+
+class RC_Sh_155mm_AMOS: RC_ShellBase
+{
 	hit=340;
-	indirectHit=125;
-	indirectHitRange=30;
+	indirectHit=125;	//155mm default 125
+	indirectHitRange=30;	//155mm default 30
 	warheadName="HE";
-	dangerRadiusHit=750;
-	suppressionRadiusHit=75;
+	dangerRadiusHit=750;	//155mm default 750
+	suppressionRadiusHit=75;	//155mm default 75
 	typicalSpeed=800;
 	caliber=10;
 	deflecting=0;
-	explosive=0.80000001;
+	explosive=0.80000001;	//155mm default 0.80000001
 	cost=300;
 	model="\A3\weapons_f\ammo\shell";
 	CraterEffects="ArtyShellCrater";
@@ -759,6 +1101,22 @@ class RC_155mm_HE_sub_base: Default
 		distance=1;
 	};
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+class RC_155mm_HE_sub_base: Default
+
 */
 
 
@@ -768,7 +1126,7 @@ class RC_155mm_HE_sub: Sh_155mm_AMOS
 	explosive=1;
 	CraterEffects="";
 };
-class RC_155mm_HEAB: RC_155mm_HEAB_shell_base
+class RC_155mm_HEAB: RC_Sh_155mm_AMOS	//RC_155mm_HEAB_shell_base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;

@@ -422,6 +422,7 @@ class CfgWeapons
 		{
 			"RC_12Rnd_82mm_Mo_HEAB",
 			"RC_12Rnd_82mm_Mo_HEAB_low",
+			"RC_12Rnd_82mm_Mo_Fire",
 
 			"RC_1Rnd_82mm_Mo_shells",
 			"RC_2Rnd_82mm_Mo_shells",
@@ -2798,6 +2799,7 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_12Rnd_82mm_HEAB",
+					"RC_12Rnd_82mm_Mo_Fire",
 					"RC_12Rnd_82mm_Mo_shells",
 					"RC_12Rnd_82mm_Mo_Flare_white",
 					"RC_12Rnd_82mm_Mo_Smoke_white",

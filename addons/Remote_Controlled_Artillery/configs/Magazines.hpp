@@ -2494,6 +2494,13 @@ class RC_12Rnd_82mm_Mo_HEAB_low: 8Rnd_82mm_Mo_shells
 	displayNameShort="HE Airburst low";
 	count=12;
 };
+class RC_12Rnd_82mm_Mo_Fire: 8Rnd_82mm_Mo_shells
+{
+	ammo="Fire_82mm_AMOS";
+	displayName="Fire";
+	displayNameShort="Fire";
+	count=12;
+};
 /*
 class RC_20Rnd_155mm_HEAB_test: 32Rnd_155mm_Mo_shells
 {
