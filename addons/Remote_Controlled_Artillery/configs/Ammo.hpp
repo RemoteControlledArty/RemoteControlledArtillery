@@ -171,7 +171,7 @@ class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 	submunitionConeType[]=
 	{
 		"poissondisc",
-		8
+		9
 	};
 	submunitionConeAngle=20;
 	triggerDistance=50;
