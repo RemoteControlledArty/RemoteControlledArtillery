@@ -15,17 +15,22 @@ DONE - BUGFIXES:
 
 TO DO - FEATURES:
 
--research practical HE airburst implementation (cfg or sqf), then add 82mm, 120mm, 155mm, 227mm
-
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
 -only disable driver = 4, for modularity
 
 -explain target marker referencing to current subscribers
 
+-required low&high turret elevation display + time to target
+
 
 DONE - FEATURES:
 
--added 230mm laser guided and AT guided rockets (unclear if they work)
+-added 82mm, 155mm, 227mm HE Airburst
+-added 82mm, 155mm Laser Guided 1.8m Delayed Fuse (for use against small bunkers/ hangars/ ammo storage halls) but only available per attributes edit for balancing reasons
+-improved spead of cluster and mines
+-buffed 82mm and 155mm smoke
+-added 82mm AP and AT mines
+
 
 TO DO - QUALITY OF LIFE:
 
@@ -35,18 +40,19 @@ TO DO - QUALITY OF LIFE:
 -if turret azimuth matches target azimuth, turn green
 -if charge is correct for target distance, turn green
 
--turret zoom decrease for better driving
+-if azimuth correct, turret elevation correct, and camera pointed in sky -> "ready to fire" 
 
 
 DONE - QUALITY OF LIFE:
 
--create turret elevation formula: https://github.com/RemoteControlledArty/RemoteControlledArtillery/wiki/Artillery-Required-Elevation-Calculator-(High&Low-Trajectory)
+-create turret elevation calculator: https://github.com/RemoteControlledArty/RemoteControlledArtillery/wiki/Artillery-Required-Elevation-Calculator-(High&Low-Trajectory)
+-lower FOV for driving now available
 
 
 IDEAS - FUTURE:
 
 -vanilla asset overwrite for gamemodes without zeus etc
--switch driver and commander of radar
+-switch driver and commander of recon radar
 
 
 

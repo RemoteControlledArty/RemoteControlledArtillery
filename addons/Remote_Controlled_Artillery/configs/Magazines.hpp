@@ -43,8 +43,8 @@ class 8Rnd_82mm_Mo_shells;
 
 class RC_1Rnd_82mm_Mo_shells: 8Rnd_82mm_Mo_shells
 {
-	displayName="82mm HE";
-	displayNameShort="82mm HE";
+	displayName="HE";
+	displayNameShort="HE";
 	count=1;
 };
 class RC_2Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
@@ -209,8 +209,8 @@ class 8Rnd_82mm_Mo_Flare_white;
 
 class RC_1Rnd_82mm_Mo_Flare_white: 8Rnd_82mm_Mo_Flare_white
 {
-	displayName="82mm Illumination";
-	displayNameShort="82mm Illum";
+	displayName="Illumination";
+	displayNameShort="Illum";
 	count=1;
 };
 class RC_2Rnd_82mm_Mo_Flare_white: RC_1Rnd_82mm_Mo_Flare_white
@@ -296,8 +296,9 @@ class 8Rnd_82mm_Mo_Smoke_white;
 
 class RC_1Rnd_82mm_Mo_Smoke_white: 8Rnd_82mm_Mo_Smoke_white
 {
-	displayName="82mm Smoke";
-	displayNameShort="82mm Smoke";
+	ammo="RC_Smoke_82mm_AMOS_White";
+	displayName="Smoke";
+	displayNameShort="Smoke";
 	count=1;
 };
 class RC_2Rnd_82mm_Mo_Smoke_white: RC_1Rnd_82mm_Mo_Smoke_white
@@ -383,8 +384,8 @@ class 8Rnd_82mm_Mo_guided;
 
 class RC_1Rnd_82mm_Mo_guided: 8Rnd_82mm_Mo_guided
 {
-	displayName="82mm AT Guided";
-	displayNameShort="82mm AT Guided";
+	displayName="AT Seeking";
+	displayNameShort="AT Seeking";
 	count=1;
 };
 class RC_2Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
@@ -470,8 +471,8 @@ class 8Rnd_82mm_Mo_LG;
 
 class RC_1Rnd_82mm_Mo_LG: 8Rnd_82mm_Mo_LG
 {
-	displayName="82mm Laser Guided";
-	displayNameShort="82mm LG";
+	displayName="Laser Guided";
+	displayNameShort="LG";
 	count=1;
 };
 class RC_2Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
@@ -724,8 +725,8 @@ class 4Rnd_155mm_Mo_guided;
 
 class RC_1Rnd_155mm_Mo_guided: 4Rnd_155mm_Mo_guided
 {
-	displayName="AT Guided";
-	displayNameShort="AT Guided";
+	displayName="AT Seeking";
+	displayNameShort="AT Seeking";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
@@ -807,6 +808,7 @@ class 6Rnd_155mm_Mo_mine;
 
 class RC_1Rnd_155mm_Mo_mine: 6Rnd_155mm_Mo_mine
 {
+	ammo="RC_Mine_155mm_AMOS_range";
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -894,7 +896,7 @@ class 2Rnd_155mm_Mo_Cluster;
 
 class RC_1Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
-	ammo="RC_155mm_Cluster";
+	ammo="RC_Cluster_155mm_AMOS";
 	displayName="Cluster";
 	displayNameShort="Cluster";
 	count=1;
@@ -982,7 +984,7 @@ class 6Rnd_155mm_Mo_smoke;
 
 class RC_1Rnd_155mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 {
-	ammo="RC_155mm_Smoke";
+	ammo="RC_Smoke_155mm_AMOS_White";
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -1157,6 +1159,7 @@ class 6Rnd_155mm_Mo_AT_mine;
 
 class RC_1Rnd_155mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 {
+	ammo="RC_AT_Mine_155mm_AMOS_range";
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -1465,7 +1468,7 @@ class 12Rnd_230mm_rockets_cluster;
 
 class RC_1Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
 {
-	ammo="RC_230mm_Cluster";
+	ammo="RC_R_230mm_Cluster";
 	displayName="Cluster";
 	displayNameShort="Cluster";
 	count=1;
@@ -1572,8 +1575,8 @@ class RC_12Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
 
 class RC_1Rnd_230mm_rockets_ATG: 12Rnd_230mm_rockets
 {
-	displayName="AT Guided";
-	displayNameShort="AT Guided";
+	displayName="AT Seeking";
+	displayNameShort="AT Seeking";
 	//displayNameMFDFormat="AT G";
 	ammo="M_Mo_230mm_guided";
 	count=1;
@@ -1796,8 +1799,8 @@ class magazine_ShipCannon_120mm_HE_guided_shells_x2;
 
 class RC_ShipCannon_120mm_HE_guided_shells_x1: magazine_ShipCannon_120mm_HE_guided_shells_x2
 {
-	displayName="AT Guided";
-	displayNameShort="AT Guided";
+	displayName="AT Seeking";
+	displayNameShort="AT Seeking";
 	count=1;
 };
 class RC_ShipCannon_120mm_HE_guided_shells_x2: RC_ShipCannon_120mm_HE_guided_shells_x1
@@ -2057,6 +2060,7 @@ class magazine_ShipCannon_120mm_mine_shells_x6;
 
 class RC_ShipCannon_120mm_mine_shells_x1: magazine_ShipCannon_120mm_mine_shells_x6
 {
+	ammo="RC_Mine_155mm_AMOS_range";
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -2144,6 +2148,7 @@ class magazine_ShipCannon_120mm_smoke_shells_x6;
 
 class RC_ShipCannon_120mm_smoke_shells_x1: magazine_ShipCannon_120mm_smoke_shells_x6
 {
+	ammo="RC_Smoke_120mm_AMOS_White";
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -2231,6 +2236,7 @@ class magazine_ShipCannon_120mm_AT_mine_shells_x6;
 
 class RC_ShipCannon_120mm_AT_mine_shells_x1: magazine_ShipCannon_120mm_AT_mine_shells_x6
 {
+	ammo="RC_AT_Mine_155mm_AMOS_range";
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -2482,18 +2488,40 @@ class RC_ShipCannon_120mm_Illum_shells_x40: RC_ShipCannon_120mm_Illum_shells_x1
 //Airburst test
 class RC_12Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
-	ammo="RC_82mm_HEAB";
+	ammo="RC_Sh_82mm_AMOS_HEAB";
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=12;
 };
 class RC_12Rnd_82mm_Mo_HEAB_low: 8Rnd_82mm_Mo_shells
 {
-	ammo="RC_82mm_HEAB_low";
+	ammo="RC_Sh_82mm_AMOS_HEAB_low";
 	displayName="HE Airburst low";
 	displayNameShort="HE Airburst low";
 	count=12;
 };
+class RC_8Rnd_82mm_Mo_mine: 8Rnd_82mm_Mo_shells
+{
+	ammo="RC_Mine_82mm_AMOS_range";
+	displayName="AP Mines";
+	displayNameShort="AP Mines";
+	count=8;
+};
+class RC_8Rnd_82mm_Mo_AT_mine: 8Rnd_82mm_Mo_shells
+{
+	ammo="RC_AT_Mine_82mm_AMOS_range";
+	displayName="AT Mines";
+	displayNameShort="AT Mines";
+	count=8;
+};
+class RC_12Rnd_82mm_Mo_LGDF: 8Rnd_82mm_Mo_LG
+{
+	ammo="RC_Sh_82mm_AMOS_LGDF";
+	displayName="LG 1.8m Delayed";
+	displayNameShort="LG 1.8m Delayed";
+	count=12;
+};
+/*
 class RC_12Rnd_82mm_Mo_Fire: 8Rnd_82mm_Mo_shells
 {
 	ammo="Fire_82mm_AMOS";
@@ -2501,6 +2529,7 @@ class RC_12Rnd_82mm_Mo_Fire: 8Rnd_82mm_Mo_shells
 	displayNameShort="Fire";
 	count=12;
 };
+*/
 /*
 class RC_20Rnd_155mm_HEAB_test: 32Rnd_155mm_Mo_shells
 {
@@ -2510,30 +2539,38 @@ class RC_20Rnd_155mm_HEAB_test: 32Rnd_155mm_Mo_shells
 	count=20;
 };
 */
+class RC_ShipCannon_120mm_HE_LGDF_shells_x12: magazine_ShipCannon_120mm_HE_LG_shells_x2
+{
+	ammo="RC_Sh_120mm_AMOS_LGDF";
+	displayName="LG 1.8m Delayed";
+	displayNameShort="LG 1.8m Delayed";
+	count=12;
+};
+
 class RC_12Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
-	ammo="RC_155mm_HEAB";
+	ammo="RC_Sh_155mm_AMOS_HEAB";
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=12;
 };
 class RC_12Rnd_155mm_Mo_HEAB_low: 32Rnd_155mm_Mo_shells
 {
-	ammo="RC_155mm_HEAB_low";
+	ammo="RC_Sh_155mm_AMOS_HEAB_low";
 	displayName="HE Airburst low";
 	displayNameShort="HE Airburst low";
 	count=12;
 };
-class RC_12Rnd_155mm_Mo_LGD: 32Rnd_155mm_Mo_shells
+class RC_12Rnd_155mm_Mo_LGDF: 32Rnd_155mm_Mo_shells
 {
-	ammo="RC_155mm_LGD";
-	displayName="Laser Guided 1.5m Delayed";
-	displayNameShort="LG 1.5m Delayed";
+	ammo="RC_Sh_155mm_AMOS_LGDF";
+	displayName="LG 1.8m Delayed";
+	displayNameShort="LG 1.8m Delayed";
 	count=12;
 };
 class RC_12Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
-	ammo="RC_230mm_HEAB";
+	ammo="RC_R_230mm_HEAB";
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=12;

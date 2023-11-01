@@ -420,9 +420,46 @@ class CfgWeapons
 	{
 		magazines[]=
 		{
+			"RC_1Rnd_82mm_Mo_HEAB",
+			"RC_2Rnd_82mm_Mo_HEAB",
+			"RC_3Rnd_82mm_Mo_HEAB",
+			"RC_4Rnd_82mm_Mo_HEAB",
+			"RC_5Rnd_82mm_Mo_HEAB",
+			"RC_6Rnd_82mm_Mo_HEAB",
+			"RC_7Rnd_82mm_Mo_HEAB",
+			"RC_8Rnd_82mm_Mo_HEAB",
+			"RC_9Rnd_82mm_Mo_HEAB",
+			"RC_10Rnd_82mm_Mo_HEAB",
+			"RC_11Rnd_82mm_Mo_HEAB",
 			"RC_12Rnd_82mm_Mo_HEAB",
-			"RC_12Rnd_82mm_Mo_HEAB_low",
-			"RC_12Rnd_82mm_Mo_Fire",
+			"RC_13Rnd_82mm_Mo_HEAB",
+			"RC_14Rnd_82mm_Mo_HEAB",
+			"RC_15Rnd_82mm_Mo_HEAB",
+			"RC_16Rnd_82mm_Mo_HEAB",
+			"RC_17Rnd_82mm_Mo_HEAB",
+			"RC_18Rnd_82mm_Mo_HEAB",
+			"RC_19Rnd_82mm_Mo_HEAB",
+			"RC_20Rnd_82mm_Mo_HEAB",
+			"RC_21Rnd_82mm_Mo_HEAB",
+			"RC_22Rnd_82mm_Mo_HEAB",
+			"RC_23Rnd_82mm_Mo_HEAB",
+			"RC_24Rnd_82mm_Mo_HEAB",
+			"RC_25Rnd_82mm_Mo_HEAB",
+			"RC_26Rnd_82mm_Mo_HEAB",
+			"RC_27Rnd_82mm_Mo_HEAB",
+			"RC_28Rnd_82mm_Mo_HEAB",
+			"RC_29Rnd_82mm_Mo_HEAB",
+			"RC_30Rnd_82mm_Mo_HEAB",
+			"RC_31Rnd_82mm_Mo_HEAB",
+			"RC_32Rnd_82mm_Mo_HEAB",
+			"RC_33Rnd_82mm_Mo_HEAB",
+			"RC_34Rnd_82mm_Mo_HEAB",
+			"RC_35Rnd_82mm_Mo_HEAB",
+			"RC_36Rnd_82mm_Mo_HEAB",
+			"RC_37Rnd_82mm_Mo_HEAB",
+			"RC_38Rnd_82mm_Mo_HEAB",
+			"RC_39Rnd_82mm_Mo_HEAB",
+			"RC_40Rnd_82mm_Mo_HEAB",
 
 			"RC_1Rnd_82mm_Mo_shells",
 			"RC_2Rnd_82mm_Mo_shells",
@@ -547,7 +584,90 @@ class CfgWeapons
 			"RC_17Rnd_82mm_Mo_LG",
 			"RC_18Rnd_82mm_Mo_LG",
 			"RC_19Rnd_82mm_Mo_LG",
-			"RC_20Rnd_82mm_Mo_LG"
+			"RC_20Rnd_82mm_Mo_LG",
+
+			"RC_1Rnd_82mm_Mo_HEAB_low",
+			"RC_2Rnd_82mm_Mo_HEAB_low",
+			"RC_3Rnd_82mm_Mo_HEAB_low",
+			"RC_4Rnd_82mm_Mo_HEAB_low",
+			"RC_5Rnd_82mm_Mo_HEAB_low",
+			"RC_6Rnd_82mm_Mo_HEAB_low",
+			"RC_7Rnd_82mm_Mo_HEAB_low",
+			"RC_8Rnd_82mm_Mo_HEAB_low",
+			"RC_9Rnd_82mm_Mo_HEAB_low",
+			"RC_10Rnd_82mm_Mo_HEAB_low",
+			"RC_11Rnd_82mm_Mo_HEAB_low",
+			"RC_12Rnd_82mm_Mo_HEAB_low",
+			"RC_13Rnd_82mm_Mo_HEAB_low",
+			"RC_14Rnd_82mm_Mo_HEAB_low",
+			"RC_15Rnd_82mm_Mo_HEAB_low",
+			"RC_16Rnd_82mm_Mo_HEAB_low",
+			"RC_17Rnd_82mm_Mo_HEAB_low",
+			"RC_18Rnd_82mm_Mo_HEAB_low",
+			"RC_19Rnd_82mm_Mo_HEAB_low",
+			"RC_20Rnd_82mm_Mo_HEAB_low",
+			"RC_21Rnd_82mm_Mo_HEAB_low",
+			"RC_22Rnd_82mm_Mo_HEAB_low",
+			"RC_23Rnd_82mm_Mo_HEAB_low",
+			"RC_24Rnd_82mm_Mo_HEAB_low",
+			"RC_25Rnd_82mm_Mo_HEAB_low",
+			"RC_26Rnd_82mm_Mo_HEAB_low",
+			"RC_27Rnd_82mm_Mo_HEAB_low",
+			"RC_28Rnd_82mm_Mo_HEAB_low",
+			"RC_29Rnd_82mm_Mo_HEAB_low",
+			"RC_30Rnd_82mm_Mo_HEAB_low",
+			"RC_31Rnd_82mm_Mo_HEAB_low",
+			"RC_32Rnd_82mm_Mo_HEAB_low",
+			"RC_33Rnd_82mm_Mo_HEAB_low",
+			"RC_34Rnd_82mm_Mo_HEAB_low",
+			"RC_35Rnd_82mm_Mo_HEAB_low",
+			"RC_36Rnd_82mm_Mo_HEAB_low",
+			"RC_37Rnd_82mm_Mo_HEAB_low",
+			"RC_38Rnd_82mm_Mo_HEAB_low",
+			"RC_39Rnd_82mm_Mo_HEAB_low",
+			"RC_40Rnd_82mm_Mo_HEAB_low",
+
+			"RC_1Rnd_82mm_Mo_mine",
+			"RC_2Rnd_82mm_Mo_mine",
+			"RC_3Rnd_82mm_Mo_mine",
+			"RC_4Rnd_82mm_Mo_mine",
+			"RC_5Rnd_82mm_Mo_mine",
+			"RC_6Rnd_82mm_Mo_mine",
+			"RC_7Rnd_82mm_Mo_mine",
+			"RC_8Rnd_82mm_Mo_mine",
+			"RC_9Rnd_82mm_Mo_mine",
+			"RC_10Rnd_82mm_Mo_mine",
+			"RC_11Rnd_82mm_Mo_mine",
+			"RC_12Rnd_82mm_Mo_mine",
+			"RC_13Rnd_82mm_Mo_mine",
+			"RC_14Rnd_82mm_Mo_mine",
+			"RC_15Rnd_82mm_Mo_mine",
+			"RC_16Rnd_82mm_Mo_mine",
+			"RC_17Rnd_82mm_Mo_mine",
+			"RC_18Rnd_82mm_Mo_mine",
+			"RC_19Rnd_82mm_Mo_mine",
+			"RC_20Rnd_82mm_Mo_mine",
+
+			"RC_1Rnd_82mm_Mo_AT_mine",
+			"RC_2Rnd_82mm_Mo_AT_mine",
+			"RC_3Rnd_82mm_Mo_AT_mine",
+			"RC_4Rnd_82mm_Mo_AT_mine",
+			"RC_5Rnd_82mm_Mo_AT_mine",
+			"RC_6Rnd_82mm_Mo_AT_mine",
+			"RC_7Rnd_82mm_Mo_AT_mine",
+			"RC_8Rnd_82mm_Mo_AT_mine",
+			"RC_9Rnd_82mm_Mo_AT_mine",
+			"RC_10Rnd_82mm_Mo_AT_mine",
+			"RC_11Rnd_82mm_Mo_AT_mine",
+			"RC_12Rnd_82mm_Mo_AT_mine",
+			"RC_13Rnd_82mm_Mo_AT_mine",
+			"RC_14Rnd_82mm_Mo_AT_mine",
+			"RC_15Rnd_82mm_Mo_AT_mine",
+			"RC_16Rnd_82mm_Mo_AT_mine",
+			"RC_17Rnd_82mm_Mo_AT_mine",
+			"RC_18Rnd_82mm_Mo_AT_mine",
+			"RC_19Rnd_82mm_Mo_AT_mine",
+			"RC_20Rnd_82mm_Mo_AT_mine"
 		};
 	};
 
@@ -559,8 +679,18 @@ class CfgWeapons
 
 		magazines[]=
 		{
+			"RC_1Rnd_230mm_rockets_HEAB",
+			"RC_2Rnd_230mm_rockets_HEAB",
+			"RC_3Rnd_230mm_rockets_HEAB",
+			"RC_4Rnd_230mm_rockets_HEAB",
+			"RC_5Rnd_230mm_rockets_HEAB",
+			"RC_6Rnd_230mm_rockets_HEAB",
+			"RC_7Rnd_230mm_rockets_HEAB",
+			"RC_8Rnd_230mm_rockets_HEAB",
+			"RC_9Rnd_230mm_rockets_HEAB",
+			"RC_10Rnd_230mm_rockets_HEAB",
+			"RC_11Rnd_230mm_rockets_HEAB",
 			"RC_12Rnd_230mm_rockets_HEAB",
-			"RC_12Rnd_230mm_rockets_cluster",
 
 			"RC_1Rnd_230mm_rockets",
 			"RC_2Rnd_230mm_rockets",
@@ -655,9 +785,46 @@ class CfgWeapons
 
 		magazines[]=
 		{
+			"RC_1Rnd_155mm_Mo_HEAB",
+			"RC_2Rnd_155mm_Mo_HEAB",
+			"RC_3Rnd_155mm_Mo_HEAB",
+			"RC_4Rnd_155mm_Mo_HEAB",
+			"RC_5Rnd_155mm_Mo_HEAB",
+			"RC_6Rnd_155mm_Mo_HEAB",
+			"RC_7Rnd_155mm_Mo_HEAB",
+			"RC_8Rnd_155mm_Mo_HEAB",
+			"RC_9Rnd_155mm_Mo_HEAB",
+			"RC_10Rnd_155mm_Mo_HEAB",
+			"RC_11Rnd_155mm_Mo_HEAB",
 			"RC_12Rnd_155mm_Mo_HEAB",
-			"RC_12Rnd_155mm_Mo_HEAB_low",
-			"RC_12Rnd_155mm_Mo_LGD",
+			"RC_13Rnd_155mm_Mo_HEAB",
+			"RC_14Rnd_155mm_Mo_HEAB",
+			"RC_15Rnd_155mm_Mo_HEAB",
+			"RC_16Rnd_155mm_Mo_HEAB",
+			"RC_17Rnd_155mm_Mo_HEAB",
+			"RC_18Rnd_155mm_Mo_HEAB",
+			"RC_19Rnd_155mm_Mo_HEAB",
+			"RC_20Rnd_155mm_Mo_HEAB",
+			"RC_21Rnd_155mm_Mo_HEAB",
+			"RC_22Rnd_155mm_Mo_HEAB",
+			"RC_23Rnd_155mm_Mo_HEAB",
+			"RC_24Rnd_155mm_Mo_HEAB",
+			"RC_25Rnd_155mm_Mo_HEAB",
+			"RC_26Rnd_155mm_Mo_HEAB",
+			"RC_27Rnd_155mm_Mo_HEAB",
+			"RC_28Rnd_155mm_Mo_HEAB",
+			"RC_29Rnd_155mm_Mo_HEAB",
+			"RC_30Rnd_155mm_Mo_HEAB",
+			"RC_31Rnd_155mm_Mo_HEAB",
+			"RC_32Rnd_155mm_Mo_HEAB",
+			"RC_33Rnd_155mm_Mo_HEAB",
+			"RC_34Rnd_155mm_Mo_HEAB",
+			"RC_35Rnd_155mm_Mo_HEAB",
+			"RC_36Rnd_155mm_Mo_HEAB",
+			"RC_37Rnd_155mm_Mo_HEAB",
+			"RC_38Rnd_155mm_Mo_HEAB",
+			"RC_39Rnd_155mm_Mo_HEAB",
+			"RC_40Rnd_155mm_Mo_HEAB",
 
 			"RC_1Rnd_155mm_Mo_shells",
 			"RC_2Rnd_155mm_Mo_shells",
@@ -865,7 +1032,69 @@ class CfgWeapons
 			"RC_37Rnd_155mm_Mo_Illum",
 			"RC_38Rnd_155mm_Mo_Illum",
 			"RC_39Rnd_155mm_Mo_Illum",
-			"RC_40Rnd_155mm_Mo_Illum"
+			"RC_40Rnd_155mm_Mo_Illum",
+
+			"RC_1Rnd_155mm_Mo_HEAB_low",
+			"RC_2Rnd_155mm_Mo_HEAB_low",
+			"RC_3Rnd_155mm_Mo_HEAB_low",
+			"RC_4Rnd_155mm_Mo_HEAB_low",
+			"RC_5Rnd_155mm_Mo_HEAB_low",
+			"RC_6Rnd_155mm_Mo_HEAB_low",
+			"RC_7Rnd_155mm_Mo_HEAB_low",
+			"RC_8Rnd_155mm_Mo_HEAB_low",
+			"RC_9Rnd_155mm_Mo_HEAB_low",
+			"RC_10Rnd_155mm_Mo_HEAB_low",
+			"RC_11Rnd_155mm_Mo_HEAB_low",
+			"RC_12Rnd_155mm_Mo_HEAB_low",
+			"RC_13Rnd_155mm_Mo_HEAB_low",
+			"RC_14Rnd_155mm_Mo_HEAB_low",
+			"RC_15Rnd_155mm_Mo_HEAB_low",
+			"RC_16Rnd_155mm_Mo_HEAB_low",
+			"RC_17Rnd_155mm_Mo_HEAB_low",
+			"RC_18Rnd_155mm_Mo_HEAB_low",
+			"RC_19Rnd_155mm_Mo_HEAB_low",
+			"RC_20Rnd_155mm_Mo_HEAB_low",
+			"RC_21Rnd_155mm_Mo_HEAB_low",
+			"RC_22Rnd_155mm_Mo_HEAB_low",
+			"RC_23Rnd_155mm_Mo_HEAB_low",
+			"RC_24Rnd_155mm_Mo_HEAB_low",
+			"RC_25Rnd_155mm_Mo_HEAB_low",
+			"RC_26Rnd_155mm_Mo_HEAB_low",
+			"RC_27Rnd_155mm_Mo_HEAB_low",
+			"RC_28Rnd_155mm_Mo_HEAB_low",
+			"RC_29Rnd_155mm_Mo_HEAB_low",
+			"RC_30Rnd_155mm_Mo_HEAB_low",
+			"RC_31Rnd_155mm_Mo_HEAB_low",
+			"RC_32Rnd_155mm_Mo_HEAB_low",
+			"RC_33Rnd_155mm_Mo_HEAB_low",
+			"RC_34Rnd_155mm_Mo_HEAB_low",
+			"RC_35Rnd_155mm_Mo_HEAB_low",
+			"RC_36Rnd_155mm_Mo_HEAB_low",
+			"RC_37Rnd_155mm_Mo_HEAB_low",
+			"RC_38Rnd_155mm_Mo_HEAB_low",
+			"RC_39Rnd_155mm_Mo_HEAB_low",
+			"RC_40Rnd_155mm_Mo_HEAB_low",
+
+			"RC_1Rnd_155mm_Mo_LGDF",
+			"RC_2Rnd_155mm_Mo_LGDF",
+			"RC_3Rnd_155mm_Mo_LGDF",
+			"RC_4Rnd_155mm_Mo_LGDF",
+			"RC_5Rnd_155mm_Mo_LGDF",
+			"RC_6Rnd_155mm_Mo_LGDF",
+			"RC_7Rnd_155mm_Mo_LGDF",
+			"RC_8Rnd_155mm_Mo_LGDF",
+			"RC_9Rnd_155mm_Mo_LGDF",
+			"RC_10Rnd_155mm_Mo_LGDF",
+			"RC_11Rnd_155mm_Mo_LGDF",
+			"RC_12Rnd_155mm_Mo_LGDF",
+			"RC_13Rnd_155mm_Mo_LGDF",
+			"RC_14Rnd_155mm_Mo_LGDF",
+			"RC_15Rnd_155mm_Mo_LGDF",
+			"RC_16Rnd_155mm_Mo_LGDF",
+			"RC_17Rnd_155mm_Mo_LGDF",
+			"RC_18Rnd_155mm_Mo_LGDF",
+			"RC_19Rnd_155mm_Mo_LGDF",
+			"RC_20Rnd_155mm_Mo_LGDF"
 		};
 	};
 
@@ -1270,7 +1499,7 @@ class CfgVehicles
 					class Wide: Wide
 					{
 						initFov=0.17399999;
-						minFov=0.0077777999;
+						minFov=0.01;
 						maxFov=0.89999998;
 						visionMode[]=
 						{
@@ -1314,7 +1543,7 @@ class CfgVehicles
 					class Wide: Wide
 					{
 						initFov=0.17399999;
-						minFov=0.0077777999;
+						minFov=0.01;
 						maxFov=0.89999998;
 						visionMode[]=
 						{
@@ -1486,7 +1715,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_155mm_Mo_shells",
+					"RC_12Rnd_155mm_Mo_HEAB",
 					"RC_4Rnd_155mm_Mo_guided",
 					"RC_8Rnd_155mm_Mo_mine",
 					"RC_2Rnd_155mm_Mo_Cluster",
@@ -1500,7 +1729,7 @@ class CfgVehicles
 					class Wide: Wide
 					{
 						initFov=0.17399999;
-						minFov=0.0077777999;
+						minFov=0.01;
 						maxFov=0.89999998;
 						visionMode[]=
 						{
@@ -1530,7 +1759,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_155mm_Mo_shells",
+					"RC_12Rnd_155mm_Mo_HEAB",
 					"RC_4Rnd_155mm_Mo_guided",
 					"RC_8Rnd_155mm_Mo_mine",
 					"RC_2Rnd_155mm_Mo_Cluster",
@@ -1544,7 +1773,7 @@ class CfgVehicles
 					class Wide: Wide
 					{
 						initFov=0.17399999;
-						minFov=0.0077777999;
+						minFov=0.01;
 						maxFov=0.89999998;
 						visionMode[]=
 						{
@@ -1576,7 +1805,7 @@ class CfgVehicles
 	};
 	class RC_MLRS_NA_A: RC_MLRS_base
 	{
-		displayName="RC MLRS-HE (non adjustable)";
+		displayName="RC MLRS (non adjustable)";
 		faction="RemoteControlled_NA_B";
 		editorSubcategory="RC_Rocket_NA_subcat";
 		author="Ascent";
@@ -1667,7 +1896,7 @@ class CfgVehicles
 	};
 	class RC_MLRS_A: RC_MLRS_NA_A
 	{
-		displayName="RC MLRS-HE/CL";
+		displayName="RC MLRS";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1683,8 +1912,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_230mm_rockets_HEAB",
-					"RC_6Rnd_230mm_rockets",
+					"RC_6Rnd_230mm_rockets_HEAB",
 					"RC_6Rnd_230mm_rockets_cluster"
 				};
 				class OpticsIn: OpticsIn
@@ -1692,7 +1920,7 @@ class CfgVehicles
 					class Wide: Wide
 					{
 						initFov=0.17399999;
-						minFov=0.0077777999;
+						minFov=0.01;
 						maxFov=0.89999998;
 						visionMode[]=
 						{
@@ -1706,7 +1934,7 @@ class CfgVehicles
 	};
 	class RC_MLRS_WD: RC_MLRS_NA_WD
 	{
-		displayName="RC MLRS-HE/CL";
+		displayName="RC MLRS";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1722,8 +1950,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_230mm_rockets_HEAB",
-					"RC_6Rnd_230mm_rockets",
+					"RC_6Rnd_230mm_rockets_HEAB",
 					"RC_6Rnd_230mm_rockets_cluster"
 				};
 				class OpticsIn: OpticsIn
@@ -1731,7 +1958,7 @@ class CfgVehicles
 					class Wide: Wide
 					{
 						initFov=0.17399999;
-						minFov=0.0077777999;
+						minFov=0.01;
 						maxFov=0.89999998;
 						visionMode[]=
 						{
@@ -1785,7 +2012,7 @@ class CfgVehicles
 	};
 	class RC_MRL_NA_DIG: RC_MRL_base
 	{
-		displayName="RC MRL-HE (non adjustable)";
+		displayName="RC MRL (non adjustable)";
 		faction="RemoteControlled_NA_B";
 		editorSubcategory="RC_Rocket_NA_subcat";
 		author="Ascent";
@@ -1866,7 +2093,7 @@ class CfgVehicles
 	};
 	class RC_MRL_DIG: RC_MRL_NA_DIG
 	{
-		displayName="RC MRL-HE/CL";
+		displayName="RC MRL";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1883,8 +2110,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_230mm_rockets_HEAB",
-					"RC_6Rnd_230mm_rockets",
+					"RC_6Rnd_230mm_rockets_HEAB",
 					"RC_6Rnd_230mm_rockets_cluster"
 				};
 				class OpticsIn: OpticsIn
@@ -1892,7 +2118,7 @@ class CfgVehicles
 					class Wide: Wide
 					{
 						initFov=0.17399999;
-						minFov=0.0077777999;
+						minFov=0.01;
 						maxFov=0.89999998;
 						visionMode[]=
 						{
@@ -1906,7 +2132,7 @@ class CfgVehicles
 	};
 	class RC_MRL_WD: RC_MRL_NA_WD
 	{
-		displayName="RC MRL-HE/CL";
+		displayName="RC MRL";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Rocket_subcat";
 
@@ -1923,8 +2149,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_230mm_rockets_HEAB",
-					"RC_6Rnd_230mm_rockets",
+					"RC_6Rnd_230mm_rockets_HEAB",
 					"RC_6Rnd_230mm_rockets_cluster"
 				};
 				class OpticsIn: OpticsIn
@@ -1932,7 +2157,7 @@ class CfgVehicles
 					class Wide: Wide
 					{
 						initFov=0.17399999;
-						minFov=0.0077777999;
+						minFov=0.01;
 						maxFov=0.89999998;
 						visionMode[]=
 						{
@@ -2218,6 +2443,7 @@ class CfgVehicles
 		class showSLATHull;
 		class Turrets;
 		class MainTurret;
+		class ViewOptics;
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
@@ -2275,6 +2501,13 @@ class CfgVehicles
 			{
 				gunnerForceOptics=1;
 				forceHideGunner=1;
+
+				class ViewOptics: ViewOptics
+				{
+					initFov=0.155;
+					minFov=0.0125;
+					maxFov=0.89999998;
+				};
 			};
 		};
 
@@ -2430,6 +2663,7 @@ class CfgVehicles
 		class showSLATHull;
 		class Turrets;
 		class MainTurret;
+		class ViewOptics;
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
@@ -2565,6 +2799,13 @@ class CfgVehicles
 			{
 				gunnerForceOptics=1;
 				forceHideGunner=1;
+
+				class ViewOptics: ViewOptics
+				{
+					initFov=0.155;
+					minFov=0.0125;
+					maxFov=0.89999998;
+				};
 			};
 		};
 
@@ -2688,6 +2929,7 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class assembleInfo;
+		class ViewOptics;
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		scope=0;
 		scopeCurator=0;
@@ -2798,13 +3040,19 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_82mm_HEAB",
-					"RC_12Rnd_82mm_Mo_Fire",
-					"RC_12Rnd_82mm_Mo_shells",
+					"RC_12Rnd_82mm_Mo_HEAB",
 					"RC_12Rnd_82mm_Mo_Flare_white",
 					"RC_12Rnd_82mm_Mo_Smoke_white",
 					"RC_4Rnd_82mm_Mo_guided",
-					"RC_4Rnd_82mm_Mo_LG"
+					"RC_4Rnd_82mm_Mo_LG",
+					"RC_8Rnd_82mm_Mo_mine",
+					"RC_8Rnd_82mm_Mo_AT_mine"
+				};
+				class ViewOptics: ViewOptics
+				{
+					initFov=0.17399999;
+					minFov=0.01;
+					maxFov=0.89999998;
 				};
 			};
 		};
