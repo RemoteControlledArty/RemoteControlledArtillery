@@ -549,6 +549,7 @@ class 8Rnd_82mm_Mo_guided;
 
 class RC_1Rnd_82mm_Mo_guided: 8Rnd_82mm_Mo_guided
 {
+	ammo="RC_Sh_82mm_AMOS_guided";
 	displayName="AT Seeking";
 	displayNameShort="AT Seeking";
 	count=1;
@@ -716,8 +717,9 @@ class 8Rnd_82mm_Mo_LG;
 
 class RC_1Rnd_82mm_Mo_LG: 8Rnd_82mm_Mo_LG
 {
+	ammo="RC_Sh_82mm_AMOS_LG";
 	displayName="Laser Guided";
-	displayNameShort="LG";
+	displayNameShort="Laser Guided";
 	count=1;
 };
 class RC_2Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
@@ -2546,7 +2548,7 @@ class 2Rnd_155mm_Mo_LG;
 class RC_1Rnd_155mm_Mo_LG: 2Rnd_155mm_Mo_LG
 {
 	displayName="Laser Guided";
-	displayNameShort="LG";
+	displayNameShort="Laser Guided";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
@@ -4147,7 +4149,7 @@ class magazine_ShipCannon_120mm_HE_LG_shells_x2;
 class RC_ShipCannon_120mm_HE_LG_shells_x1: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	displayName="Laser Guided";
-	displayNameShort="LG";
+	displayNameShort="Laser Guided";
 	count=1;
 };
 class RC_ShipCannon_120mm_HE_LG_shells_x2: RC_ShipCannon_120mm_HE_LG_shells_x1

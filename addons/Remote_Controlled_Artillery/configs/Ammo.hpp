@@ -63,8 +63,35 @@ class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 };
 
 
+class M_Mo_82mm_AT;
+class RC_M_Mo_82mm_AT: M_Mo_82mm_AT
+{
+	hit=500;
+	indirectHit=100;
+	indirectHitRange=4;
+};
+class Sh_82mm_AMOS_guided;
+class RC_Sh_82mm_AMOS_guided: Sh_82mm_AMOS_guided
+{
+	submunitionAmmo="RC_M_Mo_82mm_AT";
+};
+
+
 class M_Mo_82mm_AT_LG;
-class RC_M_Mo_82mm_AT_LGDF_submunition: M_Mo_82mm_AT_LG
+class RC_M_Mo_82mm_AT_LG: M_Mo_82mm_AT_LG
+{
+	hit=500;
+	indirectHit=100;
+	indirectHitRange=4;
+};
+class Sh_82mm_AMOS_LG;
+class RC_Sh_82mm_AMOS_LG: Sh_82mm_AMOS_LG
+{
+	submunitionAmmo="RC_M_Mo_82mm_AT_LG";
+};
+
+
+class RC_M_Mo_82mm_LGDF_submunition: M_Mo_82mm_AT_LG
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -75,10 +102,9 @@ class RC_M_Mo_82mm_AT_LGDF_submunition: M_Mo_82mm_AT_LG
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class Sh_82mm_AMOS_LG;
 class RC_Sh_82mm_AMOS_LGDF: Sh_82mm_AMOS_LG
 {
-	submunitionAmmo="RC_M_Mo_82mm_AT_LGDF_submunition";
+	submunitionAmmo="RC_M_Mo_82mm_LGDF_submunition";
 };
 
 
@@ -253,7 +279,7 @@ class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
 
 
 class M_Mo_155mm_AT_LG;
-class RC_M_Mo_155mm_AT_LGDF_submunition: M_Mo_155mm_AT_LG
+class RC_M_Mo_155mm_LGDF_submunition: M_Mo_155mm_AT_LG
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -267,7 +293,7 @@ class RC_M_Mo_155mm_AT_LGDF_submunition: M_Mo_155mm_AT_LG
 class Sh_155mm_AMOS_LG;
 class RC_Sh_155mm_AMOS_LGDF: Sh_155mm_AMOS_LG
 {
-	submunitionAmmo="RC_M_Mo_155mm_AT_LGDF_submunition";
+	submunitionAmmo="RC_M_Mo_155mm_LGDF_submunition";
 };
 
 

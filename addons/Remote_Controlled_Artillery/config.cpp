@@ -515,8 +515,8 @@ class CfgVehicles
 					"RC_12Rnd_155mm_Mo_HEAB",
 					"RC_12Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
-					"RC_3Rnd_155mm_Mo_LG",
-					"RC_3Rnd_155mm_Mo_guided",
+					"RC_4Rnd_155mm_Mo_LG",
+					"RC_4Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
 					"RC_9Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
@@ -559,8 +559,8 @@ class CfgVehicles
 					"RC_12Rnd_155mm_Mo_HEAB",
 					"RC_12Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
-					"RC_3Rnd_155mm_Mo_LG",
-					"RC_3Rnd_155mm_Mo_guided",
+					"RC_4Rnd_155mm_Mo_LG",
+					"RC_4Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
 					"RC_9Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
@@ -744,8 +744,8 @@ class CfgVehicles
 					"RC_12Rnd_155mm_Mo_HEAB",
 					"RC_12Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
-					"RC_3Rnd_155mm_Mo_LG",
-					"RC_3Rnd_155mm_Mo_guided",
+					"RC_4Rnd_155mm_Mo_LG",
+					"RC_4Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
 					"RC_9Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
@@ -788,8 +788,8 @@ class CfgVehicles
 					"RC_12Rnd_155mm_Mo_HEAB",
 					"RC_12Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
-					"RC_3Rnd_155mm_Mo_LG",
-					"RC_3Rnd_155mm_Mo_guided",
+					"RC_4Rnd_155mm_Mo_LG",
+					"RC_4Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
 					"RC_9Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
@@ -2090,8 +2090,8 @@ class CfgVehicles
 				{
 					"RC_12Rnd_82mm_Mo_HEAB",
 					"RC_12Rnd_82mm_Mo_Smoke_white",
-					"RC_3Rnd_82mm_Mo_LG",
-					"RC_3Rnd_82mm_Mo_guided",
+					"RC_4Rnd_82mm_Mo_LG",
+					"RC_4Rnd_82mm_Mo_guided",
 					"RC_6Rnd_82mm_Mo_mine",
 					"RC_9Rnd_82mm_Mo_AT_mine",
 					"RC_12Rnd_82mm_Mo_Flare_white"
