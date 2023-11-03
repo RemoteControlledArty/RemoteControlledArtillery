@@ -7,6 +7,7 @@ TO DO - BUGFIXES:
 
 -if does not camera points in sky (cannot find range), show red warning "raise camera", (accuracy will be way off and submunitions wont deploy otherwise )
 -light off! esp Recon Nyx
+-make MLRS/MRL rockets appear in launcher (if possible)
 
 
 DONE - BUGFIXES:
@@ -30,6 +31,7 @@ DONE - FEATURES:
 -improved spead of cluster and mines
 -buffed 82mm and 155mm smoke
 -added 82mm AP and AT mines
+-increased all magazine availability to 40
 
 
 TO DO - QUALITY OF LIFE:
@@ -53,6 +55,13 @@ IDEAS - FUTURE:
 
 -vanilla asset overwrite for gamemodes without zeus etc
 -switch driver and commander of recon radar
+
+
+
+
+
+
+
 
 
 

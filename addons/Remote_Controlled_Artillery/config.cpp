@@ -374,7 +374,6 @@ class CfgVehicles
 		class CommanderOptics;
 		class OpticsIn;
 		class Wide;
-		// I did a Thing
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 		scope=0;
@@ -404,7 +403,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		secondaryExplosion=-1;
 		crewCrashProtection=0.01;
 		armorStructural=100;
 
@@ -520,7 +518,7 @@ class CfgVehicles
 					"RC_3Rnd_155mm_Mo_LG",
 					"RC_3Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
-					"RC_6Rnd_155mm_Mo_AT_mine",
+					"RC_9Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
 				};
 				class OpticsIn: OpticsIn
@@ -564,7 +562,7 @@ class CfgVehicles
 					"RC_3Rnd_155mm_Mo_LG",
 					"RC_3Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
-					"RC_6Rnd_155mm_Mo_AT_mine",
+					"RC_9Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
 				};
 				class OpticsIn: OpticsIn
@@ -655,8 +653,7 @@ class CfgVehicles
 		ejectDeadGunner=0;
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
-		
-		secondaryExplosion=-1;
+
 		crewCrashProtection=0.01;
 		armorStructural=100;
 
@@ -750,7 +747,7 @@ class CfgVehicles
 					"RC_3Rnd_155mm_Mo_LG",
 					"RC_3Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
-					"RC_6Rnd_155mm_Mo_AT_mine",
+					"RC_9Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
 				};
 				class OpticsIn: OpticsIn
@@ -794,7 +791,7 @@ class CfgVehicles
 					"RC_3Rnd_155mm_Mo_LG",
 					"RC_3Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
-					"RC_6Rnd_155mm_Mo_AT_mine",
+					"RC_9Rnd_155mm_Mo_AT_mine",
 					"RC_12Rnd_155mm_Mo_Illum"
 				};
 				class OpticsIn: OpticsIn
@@ -856,8 +853,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		secondaryExplosion=-1;
-		crewCrashProtection=0.01;
 		armorStructural=100;
 
 		class AnimationSources: AnimationSources
@@ -1063,8 +1058,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		secondaryExplosion=-1;
-		crewCrashProtection=0.01;
 		armorStructural=100;
 
 		class Turrets: Turrets
@@ -1270,8 +1263,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		secondaryExplosion=-1;
-		crewCrashProtection=0.01;
 		armorStructural=100;
 
 		class AnimationSources: AnimationSources
@@ -1393,8 +1384,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		secondaryExplosion=-1;
-		crewCrashProtection=0.01;
 		armorStructural=100;
 
 		class AnimationSources: AnimationSources
@@ -1473,6 +1462,8 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class ViewOptics;
+		class HitPoints;
+		class HitEngine;
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
@@ -1501,9 +1492,17 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		secondaryExplosion=-1;
-		crewCrashProtection=0.01;
 		armorStructural=100;
+		redRpm=1100;
+		idleRpm=250;
+
+		class HitPoints: HitPoints
+		{
+			class HitEngine: HitEngine
+			{
+				armor=-60;
+			};
+		};
 
 		class AnimationSources: AnimationSources
 		{
@@ -1533,7 +1532,7 @@ class CfgVehicles
 
 				class ViewOptics: ViewOptics
 				{
-					initFov=0.155;
+					initFov=0.89999998;
 					minFov=0.0125;
 					maxFov=0.89999998;
 				};
@@ -1585,6 +1584,8 @@ class CfgVehicles
 		class showSLATHull;
 		class Turrets;
 		class MainTurret;
+		class HitPoints;
+		class HitEngine;
 		forceHideDriver=1;
 		RCDisableSeats=3; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
@@ -1615,9 +1616,17 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		secondaryExplosion=-1;
-		crewCrashProtection=0.01;
 		armorStructural=100;
+		redRpm=1100;
+		idleRpm=250;
+
+		class HitPoints: HitPoints
+		{
+			class HitEngine: HitEngine
+			{
+				armor=-60;
+			};
+		};
 
 		class Turrets : Turrets
 		{
@@ -1693,6 +1702,8 @@ class CfgVehicles
 		class Turrets;
 		class MainTurret;
 		class ViewOptics;
+		class HitPoints;
+		class HitEngine;
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
@@ -1721,9 +1732,17 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		secondaryExplosion=-1;
-		crewCrashProtection=0.01;
 		armorStructural=100;
+		redRpm=1100;
+		idleRpm=250;
+
+		class HitPoints: HitPoints
+		{
+			class HitEngine: HitEngine
+			{
+				armor=-60;
+			};
+		};
 
 		class AnimationSources: AnimationSources
 		{
@@ -1831,7 +1850,7 @@ class CfgVehicles
 
 				class ViewOptics: ViewOptics
 				{
-					initFov=0.155;
+					initFov=0.89999998;
 					minFov=0.0125;
 					maxFov=0.89999998;
 				};
@@ -1931,7 +1950,7 @@ class CfgVehicles
 					"RC_ShipCannon_120mm_HE_LG_shells_x3",
 					"RC_ShipCannon_120mm_HE_guided_shells_x3",
 					"RC_ShipCannon_120mm_mine_shells_x6",
-					"RC_ShipCannon_120mm_AT_mine_shells_x6",
+					"RC_ShipCannon_120mm_AT_mine_shells_x9",
 					"RC_ShipCannon_120mm_Illum_shells_x12"
 				};
 			};
@@ -2074,7 +2093,7 @@ class CfgVehicles
 					"RC_3Rnd_82mm_Mo_LG",
 					"RC_3Rnd_82mm_Mo_guided",
 					"RC_6Rnd_82mm_Mo_mine",
-					"RC_6Rnd_82mm_Mo_AT_mine",
+					"RC_9Rnd_82mm_Mo_AT_mine",
 					"RC_12Rnd_82mm_Mo_Flare_white"
 				};
 				class ViewOptics: ViewOptics

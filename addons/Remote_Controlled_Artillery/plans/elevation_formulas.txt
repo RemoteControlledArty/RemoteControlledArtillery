@@ -3,5 +3,4 @@
 	trying to find the best formulas for required gun elevation.
 */
 
-Made this, to me most logical formula, but its off with large elevation differences (might be a limit of the ace artillery table limited data):
-https://www.desmos.com/calculator/ttpx55cygj?lang=de
+https://github.com/RemoteControlledArty/RemoteControlledArtillery/wiki/Artillery-Required-Elevation-Calculator-(High&Low-Trajectory)

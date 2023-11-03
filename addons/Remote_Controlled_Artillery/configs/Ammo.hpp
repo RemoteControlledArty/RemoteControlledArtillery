@@ -1,3 +1,4 @@
+//ATGM
 class ammo_Penetrator_Vorona;
 class RC_Penetrator_ATGM: ammo_Penetrator_Vorona
 {
@@ -5,59 +6,7 @@ class RC_Penetrator_ATGM: ammo_Penetrator_Vorona
 };
 
 
-class F_40mm_White;
-class RC_Mo_Illum: F_40mm_White
-{
-	triggerTime=0;
-	model="\A3\Weapons_F\Ammo\UGL_Flare";
-	brightness=8000;
-	intensity=80000;
-	lightColor[]={100,100,100,100};
-	timeToLive=120;
-};
-
-
-class SubmunitionBase;
-class Flare_155mm_AMOS_White: SubmunitionBase
-{
-	submunitionAmmo[]=
-	{
-		"RC_Mo_Illum",
-		1
-	};
-	timeToLive=180;
-	hit=9;
-	indirectHit=0;
-	indirectHitRange=0;
-	explosive=0;
-	ExplosionEffects="";
-	CraterEffects="";
-	soundHit[]=
-	{
-		"",
-		0,
-		1
-	};
-	whistleDist=0;
-	aimAboveDefault=3;
-	aimAboveTarget[]={360,400,500,640,720,800,850};
-};
-
-//new ammo tests
-//reminder, change Cluster and Mines to submunitionConeType[] = {"poissondisc",  for more even submunition spead
-
-//option A: explosionTime=1;  typicalSpeed=80;  submunitionInitSpeed=80;
-//option B: explosionTime=0.1;  fuseDistance=80
-//option C: triggerOnImpact=1;  submunitionInitialOffset[]={0,0,-X};
-//option D: triggerDistance=100; explosionTime=0.01; submunitionInitialOffset[]={0,0,70};
-
-class Sh_155mm_AMOS;
-class Cluster_155mm_AMOS;
-class Sh_155mm_AMOS_guided;
-class Sh_155mm_AMOS_LG;
-class Smoke_120mm_AMOS_White;
-class ShellBase;
-
+//82mm
 class Sh_82mm_AMOS;
 class RC_Sh_82mm_AMOS_submunition: Sh_82mm_AMOS
 {
@@ -80,6 +29,8 @@ class RC_Sh_82mm_AMOS_HEAB_low: RC_Sh_82mm_AMOS_HEAB
 	submunitionInitialOffset[]={0,0,-6};		//low airburst to ignore atleast microterrain
 };
 
+
+class Smoke_120mm_AMOS_White;
 class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 {
 	model="\A3\weapons_f\ammo\shell";
@@ -111,6 +62,7 @@ class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 	};
 };
 
+
 class M_Mo_82mm_AT_LG;
 class RC_M_Mo_82mm_AT_LGDF_submunition: M_Mo_82mm_AT_LG
 {
@@ -129,12 +81,13 @@ class RC_Sh_82mm_AMOS_LGDF: Sh_82mm_AMOS_LG
 	submunitionAmmo="RC_M_Mo_82mm_AT_LGDF_submunition";
 };
 
+
 class Mo_ClassicMineRange;
 class RC_Mo_ClassicMineRange: Mo_ClassicMineRange
 {
 	submunitionAmmo="APERSBoundingMine_Range_Ammo";
 };
-
+class SubmunitionBase;
 class RC_Mine_82mm_AMOS_range: SubmunitionBase
 {
 	submunitionAmmo="RC_Mo_ClassicMineRange";
@@ -165,13 +118,14 @@ class RC_Mine_82mm_AMOS_range: SubmunitionBase
 	};
 };
 
+
 class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 {
 	submunitionAmmo="Mo_ATMineRange";
 	submunitionConeType[]=
 	{
 		"poissondisc",
-		9
+		6
 	};
 	submunitionConeAngle=20;
 	triggerDistance=50;
@@ -195,7 +149,44 @@ class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 	};
 };
 
+
 //155mm
+class F_40mm_White;
+class RC_Mo_Illum: F_40mm_White
+{
+	triggerTime=0;
+	model="\A3\Weapons_F\Ammo\UGL_Flare";
+	brightness=8000;
+	intensity=80000;
+	lightColor[]={100,100,100,100};
+	timeToLive=120;
+};
+class Flare_155mm_AMOS_White: SubmunitionBase
+{
+	submunitionAmmo[]=
+	{
+		"RC_Mo_Illum",
+		1
+	};
+	timeToLive=180;
+	hit=9;
+	indirectHit=0;
+	indirectHitRange=0;
+	explosive=0;
+	ExplosionEffects="";
+	CraterEffects="";
+	soundHit[]=
+	{
+		"",
+		0,
+		1
+	};
+	whistleDist=0;
+	aimAboveDefault=3;
+	aimAboveTarget[]={360,400,500,640,720,800,850};
+};
+
+
 class Mine_155mm_AMOS_range;
 class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 {
@@ -207,15 +198,17 @@ class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 	};
 };
 
+
 class AT_Mine_155mm_AMOS_range;
 class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
 {
 	submunitionConeType[]=
 	{
 		"poissondisccenter",
-		18
+		12
 	};
 };
+
 
 class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
 {
@@ -227,6 +220,16 @@ class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
 	};
 };
 
+
+/*
+class RC_155mm_HEAB_test: Sh_155mm_AMOS
+{
+	triggerDistance=26.8;	//doesnt work
+};
+*/
+
+
+class Sh_155mm_AMOS;
 class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 {
 	explosionTime=0.01;
@@ -248,12 +251,6 @@ class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
 	submunitionInitialOffset[]={0,0,-6};	//low airburst to ignore atleast microterrain
 };
 
-/*
-class RC_155mm_HEAB_test: Sh_155mm_AMOS
-{
-	triggerDistance=26.8;	//doesnt work
-};
-*/
 
 class M_Mo_155mm_AT_LG;
 class RC_M_Mo_155mm_AT_LGDF_submunition: M_Mo_155mm_AT_LG
@@ -267,11 +264,14 @@ class RC_M_Mo_155mm_AT_LGDF_submunition: M_Mo_155mm_AT_LG
 	indirectHit=0;
 	indirectHitRange=0;
 };
+class Sh_155mm_AMOS_LG;
 class RC_Sh_155mm_AMOS_LGDF: Sh_155mm_AMOS_LG
 {
 	submunitionAmmo="RC_M_Mo_155mm_AT_LGDF_submunition";
 };
 
+
+class Cluster_155mm_AMOS;
 class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 {
 	submunitionConeType[]=
@@ -280,6 +280,7 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 		35
 	};
 };
+
 
 //230mm
 class R_230mm_fly;
@@ -305,6 +306,7 @@ class RC_R_230mm_HEAB: SubmunitionBase
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	hit=0;
 };
+
 
 class R_230mm_Cluster;
 class RC_R_230mm_Cluster: R_230mm_Cluster

@@ -12,6 +12,7 @@ This mod has a LOT of content despite its very small file size!
 
 Major UPDATE out:
 - now ACE compatible! :D (but does not require it)
+- turret elevation calulator https://github.com/RemoteControlledArty/RemoteControlledArtillery/wiki/Artillery-Required-Elevation-Calculator-(High&Low-Trajectory)
 - now displays charge, azimuth, elevation
 - artillery computer can be disabled in options
 
@@ -36,6 +37,12 @@ Bonus Content:
 - Script to fix UAV's not being able to be connected to if the player previously accessing them Died.
 - Extra Remote Controlled Artillery variants that are compatible with Artillery ammunition mods (they are called "non adjustable" in the editor, as the shown code below cannot be used to set the exact amount, thats a custom feature of my mod).
 
+Quirks:
+- change ammo types per mousewheel menu, not in the artillery computer
+- generating the ace rangetable requires having been close to it once
+- disabling artillery computer in options after having already used it, requires mission restart (not a big deal, decide beforehand)
+- LOOK INTO SKY with the camera when shooting manually, do NOT look at terrain, accuracy will be off, and submunitions will not deploy or too early, not our fault, thats a basegame bug, but we will add an ingame reminder display
+
 ### Highly recommended mod in combination:
 
 [Simple Grid Designators](https://steamcommunity.com/sharedfiles/filedetails/?id=2538444208)  
@@ -55,4 +62,4 @@ I really hope you enjoy all the Tweaks to the UI nice and to fix the Driver Seat
 
 #### Final Notes
 ![https://www.bohemia.net/community/licenses/arma-public-license-nd](https://data.bistudio.com/images/license/APL-ND.png)  
-**REUPLOADING IS NOT ALLOWED**, If you want something changed or Added comment on the Steam workshop Page.
+**REUPLOADING IS NOT ALLOWED**, If you want something changed or added comment on the Steam workshop Page.
