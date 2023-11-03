@@ -66,7 +66,7 @@ class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 class M_Mo_82mm_AT;
 class RC_M_Mo_82mm_AT: M_Mo_82mm_AT
 {
-	hit=500;
+	hit=450;
 	indirectHit=100;
 	indirectHitRange=4;
 };
@@ -80,7 +80,7 @@ class RC_Sh_82mm_AMOS_guided: Sh_82mm_AMOS_guided
 class M_Mo_82mm_AT_LG;
 class RC_M_Mo_82mm_AT_LG: M_Mo_82mm_AT_LG
 {
-	hit=500;
+	hit=450;
 	indirectHit=100;
 	indirectHitRange=4;
 };
