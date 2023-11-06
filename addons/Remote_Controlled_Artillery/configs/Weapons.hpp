@@ -490,6 +490,50 @@ class RC_mortar_82mm: mortar_82mm
 };
 
 
+//extended range Mortar
+class RC_mortar_82mm_ER_base: RC_mortar_82mm
+{
+	class Single1;
+}
+class RC_mortar_82mm_ER: RC_mortar_82mm_ER_base
+{
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5"
+	};
+	class Single1: Single1
+	{
+		displayName="CH0, 0.5km";
+		artilleryDispersion=1.9;
+		artilleryCharge=0.34999999;
+	};
+	class Single2: Single1
+	{
+		displayName="CH1, 2km";
+		artilleryCharge=0.69999999;
+	};
+	class Single3: Single1
+	{
+		displayName="CH2, 4km";
+		artilleryCharge=1;
+	};
+	class Single4: Single1
+	{
+		displayName="CH3, 6km";
+		artilleryCharge=1.21;
+	};
+	class Single5: Single1
+	{
+		displayName="CH4, 8km";
+		artilleryCharge=1.4005;
+	};
+};
+
+
 // Rockets
 class rockets_230mm_GAT;
 class RC_rockets_230mm_GAT: rockets_230mm_GAT

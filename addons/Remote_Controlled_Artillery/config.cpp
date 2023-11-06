@@ -2249,4 +2249,30 @@ class CfgVehicles
 			assembleTo="RC_Mortar_I";
 		};
 	};
+
+
+
+	class RC_Mortar_ER: RC_Mortar
+	{
+		displayName="RC extended range Mortar";
+		
+		class assembleInfo: assembleInfo
+		{
+			dissasembleTo[]=
+			{
+				"RC_Mortar_Bag_ER"
+			};
+		};
+
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				weapons[]=
+				{
+					"RC_mortar_82mm_ER"
+				};
+			};
+		};
+	};
 };
