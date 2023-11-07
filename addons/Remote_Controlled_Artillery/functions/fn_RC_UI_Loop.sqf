@@ -196,9 +196,7 @@ RC_Artillery_UI = [] spawn {
 				} else {
 					_Difference = (_artyPos select 2) - ((AGLToASL _targetPos) select 2);
 				};
-				//_targetAzimuth = 17.7777778 * (_artyPos getDir _targetPos);
-				_targetVector = (_uav vectorModelToWorld _weaponDir) vectorFromTo (AGLtoASL _targetPos);
-				//_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);
+				_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);
 				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
 				if (_targetAzimuth < 0) then { _targetAzimuth = _targetAzimuth + 360; };
 
