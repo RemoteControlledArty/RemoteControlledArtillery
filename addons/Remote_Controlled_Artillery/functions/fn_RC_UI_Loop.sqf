@@ -97,20 +97,19 @@ RC_Artillery_UI = [] spawn {
 			// This is the Range Text
 			_rangeText = ctrlText (_RCA_CurrentArtyDisplay displayCtrl 173);
 			
-
 			_display = uiNamespace getVariable ["RC_Artillery", displayNull]; // Display
 			
-			// Black Magic
+			// Look Vector relative to the Camera
 			_lookVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL (positionCameraToWorld [0,0,1]));
-			// Black Magic 2
-			_weaponDir = _uav weaponDirection (currentWeapon _uav);
+			_weaponDir = _uav weaponDirection (currentWeapon _uav); // Weapon direction as a Relative Vector3
 			
 			_turret = (_uav unitTurret gunner _uav); // Current Turret of UAV Gunner
 			_currentFireMode = currentWeaponMode (gunner _uav); // Current Fire mode of the UAV Gunner
 			_weaponsTurret = _uav weaponsTurret _turret; // All of the Turrets Weapons
 			_weapon = _weaponsTurret param [0, ""]; // Weapon
+			_weaponConfig = configFile >> "CfgWeapons" >> _weapon; // Weapon Config
+			
 
-			// Black Magic 3
 			// Get all Firemodes of the UAV Weapon
 			_fireModes = getArray (configFile >> "CfgWeapons" >> _weapon >> "modes");
 			// Get all the Firemodes the Players can use
@@ -122,13 +121,12 @@ RC_Artillery_UI = [] spawn {
 			_fireModes = _fireModes apply {_x select 1};
 			// Find the Current charge
 			_realCharge = _fireModes find _currentFireMode;
-
 		
 			// Show all the controls
 			{
 				_ctrl = _display displayCtrl _x;
 				_ctrl ctrlShow true;	
-			} forEach [1001,1002,1003]; 
+			} forEach [1001,1002,1003,1004,1005,1006,1007,1008]; 
 
 			// Get Weapon Elevation
 			_realElevation = asin (_weaponDir select 2);
@@ -146,8 +144,12 @@ RC_Artillery_UI = [] spawn {
 				if (_realElevation > 90) then { _realElevation = 180 - _realElevation; };
 			};
 
-
-			_realAzimuth = 0; // Declare Variable
+			// Declare some Variables
+			_realAzimuth = 0;
+			_highAngleSol = 0;
+			_travelTimeHigh = 0;
+			_lowAngleSol = 0;
+			_travelTimeLow = 0;
 
 			// If we are looking into the Sky
 			if (_rangeText isEqualTo "--") then {
@@ -162,10 +164,18 @@ RC_Artillery_UI = [] spawn {
 			// Wrap around
 			if (_realAzimuth < 0) then { _realAzimuth = _realAzimuth + 360; };
 
+			// All the Different Controls
+			_ctrlCharge = _display displayCtrl 1001;
+			_ctrlAzimuth = _display displayCtrl 1002;
+			_ctrlElevation = _display displayCtrl 1003;
 			_ctrlDistance = _display displayCtrl 1004;
 			_ctrlTarget = _display displayCtrl 1005;
 			_ctrlTargetAzimuth = _display displayCtrl 1006;
 			_ctrlDifference = _display displayCtrl 1007;
+			_ctrlHighSol = _display displayCtrl 1008;
+			_ctrlLowSol = _display displayCtrl 1009;
+			_ctrlHighETA = _display displayCtrl 1010;
+			_ctrlLowETA = _display displayCtrl 1011;
 
 			if !(RC_Artillery_Markers isEqualTo []) then {
 
@@ -182,12 +192,13 @@ RC_Artillery_UI = [] spawn {
 				if (_targetExists == -1) then {
 					RC_Current_Index = 0;
 				};
+				
 
 
 				_targetPos = markerPos (RC_Current_Target select 1);
 				_artyPos = getPosASL _uav;
 
-				_targetDistance = _targetPos distance _artyPos;
+				_targetDistance = round(_targetPos distance _artyPos);
 				
 				_Difference = 0;
 
@@ -196,9 +207,30 @@ RC_Artillery_UI = [] spawn {
 				} else {
 					_Difference = (_artyPos select 2) - ((AGLToASL _targetPos) select 2);
 				};
+
 				_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);
 				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
 				if (_targetAzimuth < 0) then { _targetAzimuth = _targetAzimuth + 360; };
+
+				// Super Long Line to get the Velocity of the Round
+				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "initSpeed");
+
+				// High Angle
+				_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-9.80*(9.80*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(9.80*_targetDistance)));
+				_calcHigh = round (_calcHigh * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
+				systemChat format["Velocity: %1, Distance: %2", _roundVelocity, _targetDistance];
+				_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(9.8*((2*(_roundVelocity^2)*0)+(9.8*(_targetDistance^2))))))/(9.8*_targetDistance)))/pi/57.30;
+				//_highAngleSol = (3200*(atan((_roundVelocity^2+sqrt(_roundVelocity^4-9.8*(2*_roundVelocity^2*0+9.8*_targetDistance^2)))/(9.8*_targetDistance))))/pi;
+				_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/9.80); // Calculate the Travel Time in Seconds
+				
+				// Low Angle
+				_calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-9.80*(9.80*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(9.80*_targetDistance)));
+				_calcLow = round (_calcLow * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
+				//_lowAngleSol = (3200*(atan((_roundVelocity^2-sqrt(_roundVelocity^4-9.8*(2*_roundVelocity^2*0+9.8*_targetDistance^2)))/(9.8*_targetDistance))))/pi;
+				_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(9.8*((2*(_roundVelocity^2)*0)+(9.8*(_targetDistance^2))))))/(9.8*_targetDistance)))/pi/57.30;
+				_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/9.80); // Calculate the Travel Time in Seconds
+	
+				//hintsilent format["High: %1, ETA: %2\nLow: %3, ETA: %4", _highAngleSol, _travelTimeHigh, _lowAngleSol, _calcLow];
 
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
@@ -211,16 +243,20 @@ RC_Artillery_UI = [] spawn {
 				_ctrlTarget ctrlSetText "T: 0";
 				_ctrlTargetAzimuth ctrlSetText "T AZ: 0000";
 				_ctrlDifference ctrlSetText "DIF: 0000" ;
+				_ctrlHighSol ctrlSetText "H SOL: 0000";
+    			_ctrlLowSol ctrlSetText "L SOL: 0000";
+    			_ctrlHighETA ctrlSetText "H ETA: 000";
+    			_ctrlLowETA ctrlSetText "L ETA: 000";
 			};
-
-			_ctrlCharge = _display displayCtrl 1001;
-			_ctrlAzimuth = _display displayCtrl 1002;
-			_ctrlElevation = _display displayCtrl 1003;
-			
 
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [17.7777778 * _realAzimuth, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlElevation ctrlSetText Format ["EL: %1", [17.7777778 * _realElevation, 4, 0] call CBA_fnc_formatNumber];		
+			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [parseNumber str(_highAngleSol), 4, 0] call CBA_fnc_formatNumber];		
+			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [parseNumber str(_lowAngleSol), 4, 0] call CBA_fnc_formatNumber];		
+			_ctrlHighETA ctrlSetText Format ["H ETA: %1", [parseNumber str(_travelTimeHigh), 3, 0] call CBA_fnc_formatNumber];		
+			_ctrlLowETA ctrlSetText Format ["L ETA: %1", [parseNumber str(_travelTimeLow), 3, 0] call CBA_fnc_formatNumber];		
+
 		} else {
 			// UI Shouldn't be Shown so we cut it
 			"RC_Artillery" cutFadeOut 0;
