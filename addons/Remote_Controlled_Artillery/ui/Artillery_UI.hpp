@@ -32,10 +32,14 @@ class RC_Artillery {
 			RscText_1001,
 			RscText_1002,
 			RscText_1003,
-			RscText_1000,
 			RscText_1004,
 			RscText_1005,
-			RscText_1006
+			RscText_1006,
+			RscText_1007,
+			RscText_1008,
+			RscText_1009,
+			RscText_1010,
+			RscText_1011
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT START (by Fluffy, v1.063, #Huxaga)
@@ -71,7 +75,7 @@ class RC_Artillery {
 			h = 0.0330027 * safezoneH;
 			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
-		class RscText_1000: RscText
+		class RscText_1004: RscText
 		{
 			idc = 1004;
 			text = "DIST: 0000"; //--- ToDo: Localize;
@@ -81,7 +85,7 @@ class RC_Artillery {
 			h = 0.0330027 * safezoneH;
 			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
-		class RscText_1004: RscText
+		class RscText_1005: RscText
 		{
 			idc = 1005;
 			text = "T: 0"; //--- ToDo: Localize;
@@ -91,7 +95,7 @@ class RC_Artillery {
 			h = 0.0330027 * safezoneH;
 			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
-		class RscText_1005: RscText
+		class RscText_1006: RscText
 		{
 			idc = 1006;
 			text = "T AZ: 0000"; //--- ToDo: Localize;
@@ -101,13 +105,53 @@ class RC_Artillery {
 			h = 0.0330027 * safezoneH;
 			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
-		class RscText_1006: RscText
+		class RscText_1007: RscText
 		{
 			idc = 1007;
 			text = "DIF: 0000"; //--- ToDo: Localize;
 			x = 0.95165 * safezoneW + safezoneX;
 			y = 0.0819664 * safezoneH + safezoneY;
 			w = 0.0339389 * safezoneW;
+			h = 0.0330027 * safezoneH;
+			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+		};
+		class RscText_1008: RscText
+		{
+			idc = 1008;
+			text = "H SOL: 0000"; //--- ToDo: Localize;
+			x = 0.915154 * safezoneW + safezoneX;
+			y = 0.1039681 * safezoneH + safezoneY;
+			w = 0.0371267 * safezoneW;
+			h = 0.0330027 * safezoneH;
+			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+		};
+		class RscText_1009: RscText
+		{
+			idc = 1009;
+			text = "L SOL: 0000"; //--- ToDo: Localize;
+			x = 0.915154 * safezoneW + safezoneX;
+			y = 0.1259698 * safezoneH + safezoneY;
+			w = 0.0371267 * safezoneW;
+			h = 0.0330027 * safezoneH;
+			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+		};
+		class RscText_1010: RscText
+		{
+			idc = 1010;
+			text = "H ETA: 000"; //--- ToDo: Localize;
+			x = 0.95165 * safezoneW + safezoneX;
+			y = 0.1039681 * safezoneH + safezoneY;
+			w = 0.0371267 * safezoneW;
+			h = 0.0330027 * safezoneH;
+			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
+		};
+		class RscText_1011: RscText
+		{
+			idc = 1011;
+			text = "L ETA: 000"; //--- ToDo: Localize;
+			x = 0.95165 * safezoneW + safezoneX;
+			y = 0.1259698 * safezoneH + safezoneY;
+			w = 0.0371267 * safezoneW;
 			h = 0.0330027 * safezoneH;
 			sizeEx = 0.8 * (((((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))
 		};
