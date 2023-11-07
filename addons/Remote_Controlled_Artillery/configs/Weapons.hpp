@@ -524,7 +524,7 @@ class RC_mortar_82mm_ER: RC_mortar_82mm_ER_base
 	class Single4: Single1
 	{
 		displayName="CH3, 6km";
-		artilleryCharge=1.21;
+		artilleryCharge=1.2129;
 	};
 	class Single5: Single1
 	{

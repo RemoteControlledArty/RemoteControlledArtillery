@@ -2169,7 +2169,7 @@ class CfgVehicles
 	};
 	class RC_Mortar_Bag_NA: RC_Mortar_Bag_NA_base
 	{
-		displayName="RC Mortar Bag (non adjustable)";
+		displayName="RC Mortar Bag (Bluefor) (non adjustable)";
 		scope=2;
 		scopeCurator=2;
 
@@ -2184,16 +2184,18 @@ class CfgVehicles
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (non adjustable)";
+			displayName="RC Mortar (Bluefor) (non adjustable)";
 			assembleTo="RC_Mortar_NA";
 			base="";
 		};
 	};
 	class RC_Mortar_Bag_NA_O: RC_Mortar_Bag_NA
 	{
+		displayName="RC Mortar (Redfor) (non adjustable)";
+
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar";
+			displayName="RC Mortar (Redfor)";
 			assembleTo="RC_Mortar_NA_O";
 		};
 	};
@@ -2212,27 +2214,31 @@ class CfgVehicles
 	};	
 	class RC_Mortar_Bag_NA_I: RC_Mortar_Bag_NA
 	{
+		displayName="RC Mortar (Greenfor) (non adjustable)";
+
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar";
+			displayName="RC Mortar (Greenfor)";
 			assembleTo="RC_Mortar_NA_I";
 		};
 	};
 	class RC_Mortar_Bag: RC_Mortar_Bag_NA
 	{
-		displayName="RC Mortar Bag";
+		displayName="RC Mortar Bag (Bluefor)";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar";
+			displayName="RC Mortar (Bluefor)";
 			assembleTo="RC_Mortar";
 		};
 	};
 	class RC_Mortar_Bag_O: RC_Mortar_Bag
 	{
+		displayName="RC Mortar (Redfor)";
+
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar";
+			displayName="RC Mortar (Redfor)";
 			assembleTo="RC_Mortar_O";
 		};
 	};
@@ -2251,9 +2257,11 @@ class CfgVehicles
 	};	
 	class RC_Mortar_Bag_I: RC_Mortar_Bag
 	{
+		displayName="RC Mortar (Greenfor)";
+
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar";
+			displayName="RC Mortar (Greenfor)";
 			assembleTo="RC_Mortar_I";
 		};
 	};
@@ -2262,13 +2270,13 @@ class CfgVehicles
 
 	class RC_Mortar_ER: RC_Mortar
 	{
-		displayName="RC extended range Mortar";
+		displayName="RC Mortar (extended range)";
 		
 		class assembleInfo: assembleInfo
 		{
 			dissasembleTo[]=
 			{
-				"RC_Mortar_Bag_ER"
+				"RC_Mortar_ER_Bag"
 			};
 		};
 
@@ -2281,6 +2289,90 @@ class CfgVehicles
 					"RC_mortar_82mm_ER"
 				};
 			};
+		};
+	};
+	class RC_Mortar_ER_O: RC_Mortar_ER
+	{
+		faction="RemoteControlled_O";
+		crew="O_UAV_AI";
+		side=0;
+
+		class assembleInfo: assembleInfo
+		{
+			dissasembleTo[]=
+			{
+				"RC_Mortar_ER_Bag_O"
+			};
+		};
+	};
+	class RC_Mortar_ER_HEX_O: RC_Mortar_ER_O
+	{
+		class assembleInfo: assembleInfo
+		{
+			dissasembleTo[]=
+			{
+				"RC_Mortar_ER_Bag_HEX_O"
+			};
+		};
+
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Mortar_01_F.jpg";
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Static_f\Mortar_01\data\Mortar_01_OPFOR_CO.paa"
+		};
+	};
+	class RC_Mortar_ER_I: RC_Mortar_ER
+	{
+		faction="RemoteControlled_I";
+		crew="I_UAV_AI";
+		side=2;
+
+		class assembleInfo: assembleInfo
+		{
+			dissasembleTo[]=
+			{
+				"RC_Mortar_ER_Bag_I"
+			};
+		};
+	};
+
+
+
+	class RC_Mortar_ER_Bag: RC_Mortar_Bag
+	{
+		displayName="RC Mortar Bag (extended range)";
+
+		class assembleInfo: assembleInfo
+		{
+			displayName="RC Mortar (extended range)";
+			assembleTo="RC_Mortar_ER";
+		};
+	};
+	class RC_Mortar_ER_Bag_O: RC_Mortar_ER_Bag
+	{
+		class assembleInfo: assembleInfo
+		{
+			assembleTo="RC_Mortar_ER_O";
+		};
+	};
+	class RC_Mortar_ER_Bag_HEX_O: RC_Mortar_ER_Bag_O
+	{
+		picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_hex.paa";
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_Tortila_hex_co.paa"
+		};
+
+		class assembleInfo: assembleInfo
+		{
+			assembleTo="RC_Mortar_ER_HEX_O";
+		};
+	};	
+	class RC_Mortar_ER_Bag_I: RC_Mortar_ER_Bag
+	{
+		class assembleInfo: assembleInfo
+		{
+			assembleTo="RC_Mortar_ER_I";
 		};
 	};
 };

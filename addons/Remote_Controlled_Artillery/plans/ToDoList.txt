@@ -21,7 +21,10 @@ TO DO - FEATURES:
 
 -explain target marker referencing to current subscribers
 
--required low&high turret elevation display + time to target
+-if turret azimuth matches target azimuth, turn green
+-if charge is correct for target distance, turn green
+
+-if azimuth correct, turret elevation correct, and camera pointed in sky -> "ready to fire" 
 
 
 DONE - FEATURES:
@@ -32,22 +35,19 @@ DONE - FEATURES:
 -buffed 82mm and 155mm smoke
 -added 82mm AP and AT mines
 -40 magazines for all shells
+-required low&high turret elevation display + time to target
 
 
 TO DO - QUALITY OF LIFE:
 
--if vehicle speed = 0 then turn off engine true
 -cannot open map with: mortar, MRL, static AA / AT / ATGM, laser des
-
--if turret azimuth matches target azimuth, turn green
--if charge is correct for target distance, turn green
-
--if azimuth correct, turret elevation correct, and camera pointed in sky -> "ready to fire" 
+-if vehicle speed = 0 then turn off engine true
+-option for very slightly shorter map marker search
+-more bag renaming Blue/Red/Greenfor, so people dont think it just doesnt work
 
 
 DONE - QUALITY OF LIFE:
 
--create turret elevation calculator: https://github.com/RemoteControlledArty/RemoteControlledArtillery/wiki/Artillery-Required-Elevation-Calculator-(High&Low-Trajectory)
 -lower FOV for driving now available
 
 
