@@ -219,7 +219,7 @@ RC_Artillery_UI = [] spawn {
 				_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-9.80*(9.80*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(9.80*_targetDistance)));
 				_calcHigh = round (_calcHigh * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
 				systemChat format["Velocity: %1, Distance: %2", _roundVelocity, _targetDistance];
-				_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(9.8*((2*(_roundVelocity^2)*0)+(9.8*(_targetDistance^2))))))/(9.8*_targetDistance)))/pi/57.30;
+				_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(9.8*((2*(_roundVelocity^2)*_Difference)+(9.8*(_targetDistance^2))))))/(9.8*_targetDistance)))/pi/57.30;
 				//_highAngleSol = (3200*(atan((_roundVelocity^2+sqrt(_roundVelocity^4-9.8*(2*_roundVelocity^2*0+9.8*_targetDistance^2)))/(9.8*_targetDistance))))/pi;
 				_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/9.80); // Calculate the Travel Time in Seconds
 				
@@ -227,7 +227,7 @@ RC_Artillery_UI = [] spawn {
 				_calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-9.80*(9.80*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(9.80*_targetDistance)));
 				_calcLow = round (_calcLow * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
 				//_lowAngleSol = (3200*(atan((_roundVelocity^2-sqrt(_roundVelocity^4-9.8*(2*_roundVelocity^2*0+9.8*_targetDistance^2)))/(9.8*_targetDistance))))/pi;
-				_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(9.8*((2*(_roundVelocity^2)*0)+(9.8*(_targetDistance^2))))))/(9.8*_targetDistance)))/pi/57.30;
+				_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(9.8*((2*(_roundVelocity^2)*_Difference)+(9.8*(_targetDistance^2))))))/(9.8*_targetDistance)))/pi/57.30;
 				_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/9.80); // Calculate the Travel Time in Seconds
 	
 				//hintsilent format["High: %1, ETA: %2\nLow: %3, ETA: %4", _highAngleSol, _travelTimeHigh, _lowAngleSol, _calcLow];
