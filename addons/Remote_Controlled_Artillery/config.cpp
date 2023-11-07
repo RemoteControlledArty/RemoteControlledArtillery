@@ -246,6 +246,14 @@ class RscTitles
 	#include "\Remote_Controlled_Artillery\ui\Artillery_UI.hpp"	
 };
 
+// Optional Include for when ACE isn't Detected
+#if __has_include("\z\ace\addons\main\script_component.hpp")
+	// If ACE exists we do nothing since we can use their UI variable Instead
+#else
+	// If not then We want to include our own overwrite
+	#include "\Remote_Controlled_Artillery\ui\overwriteArtyUI.hpp"
+#endif
+
 class CfgFactionClasses
 {
 	class RemoteControlled_O
