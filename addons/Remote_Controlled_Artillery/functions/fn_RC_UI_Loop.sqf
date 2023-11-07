@@ -249,15 +249,13 @@ RC_Artillery_UI = [] spawn {
     			_ctrlLowETA ctrlSetText "L ETA: 000";
 			};
 
-			{ if (_x == 0) then {_x = 0} } forEach [_highAngleSol, _lowAngleSol, _travelTimeHigh, _travelTimeLow];
-
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [17.7777778 * _realAzimuth, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlElevation ctrlSetText Format ["EL: %1", [17.7777778 * _realElevation, 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlHighETA ctrlSetText Format ["H ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];		
-			_ctrlLowETA ctrlSetText Format ["L ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];		
+			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [parseNumber str(_highAngleSol), 4, 0] call CBA_fnc_formatNumber];		
+			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [parseNumber str(_lowAngleSol), 4, 0] call CBA_fnc_formatNumber];		
+			_ctrlHighETA ctrlSetText Format ["H ETA: %1", [parseNumber str(_travelTimeHigh), 3, 0] call CBA_fnc_formatNumber];		
+			_ctrlLowETA ctrlSetText Format ["L ETA: %1", [parseNumber str(_travelTimeLow), 3, 0] call CBA_fnc_formatNumber];		
 
 		} else {
 			// UI Shouldn't be Shown so we cut it
