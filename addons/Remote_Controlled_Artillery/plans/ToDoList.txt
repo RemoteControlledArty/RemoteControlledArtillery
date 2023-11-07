@@ -43,7 +43,8 @@ TO DO - QUALITY OF LIFE:
 -cannot open map with: mortar, MRL, static AA / AT / ATGM, laser des
 -if vehicle speed = 0 then turn off engine true
 -option for very slightly shorter map marker search
--more bag renaming Blue/Red/Greenfor, so people dont think it just doesnt work
+-more bag renaming Blue/Red/Greenfor or Blue/Op/Indfor, so people dont think it just doesnt work
+-peak ASL of trajectory
 
 
 DONE - QUALITY OF LIFE:
