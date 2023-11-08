@@ -1,7 +1,18 @@
 [
     "RC_Arty_Computer_On",
     "CHECKBOX",
-    ["Allow Artillery Computer", "When this is Ticked the Artillery Computer can be Used"],
+    ["Allow Artillery Computer", "When this is ticked the Artillery Computer can be Used"],
+    ["Remote Controlled Artillery"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_Solution_Calculator_On",
+    "CHECKBOX",
+    ["Allow EL Solution Calculator", "When this is ticked Elevation Solutions will be calculated and displayed."],
     ["Remote Controlled Artillery"],
     true,
     true,
@@ -12,7 +23,7 @@
 [
     "RC_Arty_EL_Diff",
     "CHECKBOX",
-    ["Elevation Difference Reference", "When Ticked the Elevation Difference shown is the Target Compared to the Artillery Piece."],
+    ["Elevation Difference Reference", "When ticked the Elevation Difference shown is the Target Compared to the Artillery Piece."],
     ["Remote Controlled Artillery"],
     true,
     true,

@@ -20,10 +20,6 @@ TO DO - FEATURES:
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
 -only disable driver = 4, for modularity
 
--explain target marker referencing to current subscribers
-
--if azimuth correct, turret elevation correct, and camera pointed in sky -> "ready to fire" 
-
 
 DONE - FEATURES:
 
@@ -37,13 +33,15 @@ DONE - FEATURES:
 -required low&high turret elevation display + ETA
 -if turret azimuth matches target azimuth, turn green
 -if charge is correct for target distance, turn green
+-if azimuth correct, turret elevation correct "ready to fire"
+-warning if camera is pointed not at sky
+
+-explain target marker referencing to current subscribers
 
 
 TO DO - QUALITY OF LIFE:
 
 -cannot open map with: mortar, MRL, static AA / AT / ATGM, laser des
--if vehicle speed = 0 then turn off engine true
--option for very slightly shorter map marker search
 -more bag renaming Blue/Red/Greenfor or Blue/Op/Indfor, so people dont think it just doesnt work
 -peak ASL of trajectory
 
@@ -51,6 +49,8 @@ TO DO - QUALITY OF LIFE:
 DONE - QUALITY OF LIFE:
 
 -lower FOV for driving now available
+-option for very slightly shorter map marker search
+-if vehicle speed = 0 then turn off engine true
 
 
 IDEAS - FUTURE:
