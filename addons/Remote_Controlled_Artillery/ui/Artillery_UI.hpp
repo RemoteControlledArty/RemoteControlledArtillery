@@ -39,7 +39,9 @@ class RC_Artillery {
 			RscText_1008,
 			RscText_1009,
 			RscText_1010,
-			RscText_1011
+			RscText_1011,
+			RscText_1012,
+			RscText_1013
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT START (by Fluffy, v1.063, #Huxaga)
@@ -124,6 +126,26 @@ class RC_Artillery {
 			text = "ETA: 000"; //--- ToDo: Localize;
 			x = "0.915154 * safezoneW + safezoneX";
 			y = "0.1859345 * safezoneH + safezoneY";
+		};
+		class RscText_1012: RscText_1001
+		{
+			idc = 1012;
+			text = "READY"; //--- ToDo: Localize;
+			x = "0.871267 * safezoneW + safezoneX";
+			y = "0.1009294 * safezoneH + safezoneY";
+		};
+		class RscText_1013: RscStructuredText 
+		{
+			idc = 1013;
+			text = "RAISE CAMERA INTO SKY<br/>FOR SUBMUNITIONS TO WORK"; //--- ToDo: Localize;
+			x = "0.852267 * safezoneW + safezoneX";
+			y = "0.2149294 * safezoneH + safezoneY";
+			h = "0.0850027 * safezoneH";
+			w = "0.2001219 * safezoneW";
+			sizeEx = "0.55 * (0.0330027 * safezoneH)";
+			class Attributes {
+				align = "center";
+			};
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END

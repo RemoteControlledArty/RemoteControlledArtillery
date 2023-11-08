@@ -121,15 +121,10 @@ RC_Artillery_UI = [] spawn {
 			_fireModes = _fireModes apply {_x select 1};
 			// Find the Current charge
 			_realCharge = _fireModes find _currentFireMode;
-		
-			// Show all the controls
-			{
-				_ctrl = _display displayCtrl _x;
-				_ctrl ctrlShow true;	
-			} forEach [1001,1002,1003,1004,1005,1006,1007,1008]; 
 
 			// Get Weapon Elevation
-			_realElevation = asin (_weaponDir select 2);
+			_realElevationOriginal = asin (_weaponDir select 2);
+			_realElevation = (17.7777778 * _realElevationOriginal);
 			
 			// Some sort of Fix for Mortars having some weird Elevation numbers
 			// Dunno what it does, ask the ACE Team
@@ -140,8 +135,9 @@ RC_Artillery_UI = [] spawn {
 				if (isNil "_currentTraverseRad") then { _currentTraverseRad = _uav animationPhase _turretAnimBody; };
 				// Get turret roatation around it's z axis, then calc weapon elev in it's projection
 				private _turretRot = [vectorDir _uav, vectorUp _uav, deg _currentTraverseRad] call CBA_fnc_vectRotate3D;
-				_realElevation = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
-				if (_realElevation > 90) then { _realElevation = 180 - _realElevation; };
+				_realElevationOriginal = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
+				if (_realElevationOriginal > 90) then { _realElevationOriginal = 180 - _realElevationOriginal; };
+				_realElevation = (17.7777778 * _realElevationOriginal);
 			};
 
 			// Declare some Variables
@@ -150,19 +146,6 @@ RC_Artillery_UI = [] spawn {
 			_travelTimeHigh = 0;
 			_lowAngleSol = 0;
 			_travelTimeLow = 0;
-
-			// If we are looking into the Sky
-			if (_rangeText isEqualTo "--") then {
-				// Use the Weapon Dir
-				_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
-			} else {
-				// Else use the Look Vector
-				_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
-			};
-			// Thank the ACE Team for the Above!
-
-			// Wrap around
-			if (_realAzimuth < 0) then { _realAzimuth = _realAzimuth + 360; };
 
 			// All the Different Controls
 			_ctrlCharge = _display displayCtrl 1001;
@@ -176,7 +159,26 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowSol = _display displayCtrl 1009;
 			_ctrlHighETA = _display displayCtrl 1010;
 			_ctrlLowETA = _display displayCtrl 1011;
+			_ctrlMessage = _display displayCtrl 1012;
+			_ctrlTerrainWarning = _display displayCtrl 1013;
 
+			// If we are looking into the Sky
+			if (_rangeText isEqualTo "--") then {
+				// Use the Weapon Dir
+				_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
+				_ctrlTerrainWarning ctrlSetTextColor [1,0,0,0];
+			} else {
+				// Else use the Look Vector
+				_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
+				_ctrlTerrainWarning ctrlSetTextColor [1,0,0,1];
+			};
+			// Thank the ACE Team for the Above!
+
+			// Wrap around
+			if (_realAzimuth < 0) then { _realAzimuth = _realAzimuth + 360; };
+			_realAzimuth = (17.7777778 * _realAzimuth);
+			
+			// If we actually have Target Markers
 			if !(RC_Artillery_Markers isEqualTo []) then {
 
 				if (isNil "RC_Current_Target" || RC_Current_Target isEqualTo []) then {
@@ -211,21 +213,20 @@ RC_Artillery_UI = [] spawn {
 				_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);
 				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
 				if (_targetAzimuth < 0) then { _targetAzimuth = _targetAzimuth + 360; };
+				_targetAzimuth = (17.7777778 * _targetAzimuth);
 
 				// Super Long Line to get the Velocity of the Round
 				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "initSpeed");
 
 				// High Angle
-				_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-9.80*(9.80*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(9.80*_targetDistance)));
+				_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-9.80*(9.80*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(9.80*_targetDistance)));
 				_calcHigh = round (_calcHigh * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
 				_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(9.8*((2*(_roundVelocity^2)*_Difference)+(9.8*(_targetDistance^2))))))/(9.8*_targetDistance)))/pi/57.30;
-				//_highAngleSol = (3200*(atan((_roundVelocity^2+sqrt(_roundVelocity^4-9.8*(2*_roundVelocity^2*0+9.8*_targetDistance^2)))/(9.8*_targetDistance))))/pi;
 				_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/9.80); // Calculate the Travel Time in Seconds
 				
 				// Low Angle
 				_calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-9.80*(9.80*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(9.80*_targetDistance)));
 				_calcLow = round (_calcLow * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
-				//_lowAngleSol = (3200*(atan((_roundVelocity^2-sqrt(_roundVelocity^4-9.8*(2*_roundVelocity^2*0+9.8*_targetDistance^2)))/(9.8*_targetDistance))))/pi;
 				_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(9.8*((2*(_roundVelocity^2)*_Difference)+(9.8*(_targetDistance^2))))))/(9.8*_targetDistance)))/pi/57.30;
 				_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/9.80); // Calculate the Travel Time in Seconds
 	
@@ -233,8 +234,60 @@ RC_Artillery_UI = [] spawn {
 
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
-				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [17.7777778 * _targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
+				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_Difference, 4, 0] call CBA_fnc_formatNumber];
+				
+				// Check if Artilery is Aligned properly for target and Alert Player via Green Text
+				
+				// Make the Azimuth Text Green if the Azimuth is aligned with the Target Azimuth
+				if ((_realAzimuth < (_targetAzimuth + 1)) and (_realAzimuth > (_targetAzimuth - 1))) then {
+					_ctrlAzimuth ctrlSetTextColor [0,1,0,1];
+				} else {
+					_ctrlAzimuth ctrlSetTextColor [1,1,1,1];
+				};
+				
+				switch (true) do {
+					// If Elevation is correct for Low solution turn the Elevation text Green
+					case((_realElevation < (_lowAngleSol + 1)) and (_realElevation > (_lowAngleSol - 1))): {
+						_ctrlElevation ctrlSetTextColor [0,1,0,1];
+					};
+					
+					// If Elevation is correct for High solution turn the Elevation text Green
+					case((_realElevation < (_highAngleSol + 1)) and (_realElevation > (_highAngleSol - 1))): {
+						_ctrlElevation ctrlSetTextColor [0,1,0,1];
+					};
+
+					// If neither then set it to White again
+					default {
+						_ctrlElevation ctrlSetTextColor [1,1,1,1];
+					};
+				};
+
+				// If both are Green we show ready to fire
+				if (((ctrlTextColor _ctrlElevation) isEqualTo [0,1,0,1]) and ((ctrlTextColor _ctrlAzimuth) isEqualTo [0,1,0,1])) then {
+					_ctrlMessage ctrlSetTextColor [0,1,0,1];
+					_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
+					_ctrlMessage ctrlSetText "READY TO FIRE";
+				} else {
+					_ctrlMessage ctrlSetTextColor [1,0,0,1];
+					_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
+					_ctrlMessage ctrlSetText "NOT ALIGNED";
+				};
+
+				
+				// Parse these back to Numbers incase they are NaN
+				_highAngleSol = parseNumber str(_highAngleSol);
+				_lowAngleSol = parseNumber str(_lowAngleSol);
+				_travelTimeHigh = parseNumber str(_travelTimeHigh);
+				_travelTimeLow = parseNumber str(_travelTimeLow);
+	
+				// If they were NaN then make them Zero
+				if (_highAngleSol < 0) then {
+					_highAngleSol = 0;
+					_lowAngleSol = 0;
+					_travelTimeHigh = 0;
+					_travelTimeLow = 0;
+				};
 			} else {
 
 				// If we don't have any Valid Targets
@@ -246,15 +299,17 @@ RC_Artillery_UI = [] spawn {
     			_ctrlLowSol ctrlSetText "L SOL: 0000";
     			_ctrlHighETA ctrlSetText "ETA: 000";
     			_ctrlLowETA ctrlSetText "ETA: 000";
+				
 			};
 
+
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
-			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [17.7777778 * _realAzimuth, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlElevation ctrlSetText Format ["EL: %1", [17.7777778 * _realElevation, 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [parseNumber str(_highAngleSol), 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [parseNumber str(_lowAngleSol), 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlHighETA ctrlSetText Format ["ETA: %1", [parseNumber str(_travelTimeHigh), 3, 0] call CBA_fnc_formatNumber];		
-			_ctrlLowETA ctrlSetText Format ["ETA: %1", [parseNumber str(_travelTimeLow), 3, 0] call CBA_fnc_formatNumber];		
+			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
+			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 0] call CBA_fnc_formatNumber];		
+			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];		
+			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];		
+			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];		
+			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];		
 
 		} else {
 			// UI Shouldn't be Shown so we cut it
