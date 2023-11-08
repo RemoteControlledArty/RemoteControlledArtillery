@@ -112,9 +112,9 @@ RC_Artillery_UI = [] spawn {
     			_lookingAtGround = !((terrainIntersectASL [_testSeekerPosASL, _testPoint]) || {lineIntersects [_testSeekerPosASL, _testPoint, _uav]});
 				
 				//if _lookingAtGround then {
-				//	_rangeText = "--";
+					_rangeText = "--";
 				//} else {
-					_rangeText = "0";
+				//	_rangeText = "0";
 				//};
 			};
 			
