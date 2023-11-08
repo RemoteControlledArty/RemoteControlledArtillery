@@ -49,10 +49,10 @@ class RC_Artillery {
 		{
 			idc = 1001;
 			text = "CH: 0"; //--- ToDo: Localize;
-			x = "0.871267 * safezoneW + safezoneX";
-			y = "0.0599647 * safezoneH + safezoneY";
-			w = "0.0801219 * safezoneW";
-			h = "0.0330027 * safezoneH";
+			x = "0.871267 * (((safezoneW / safezoneH) min 1.2) / 40)";
+			y = "0.0599647 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			w = "0.0801219 * (((safezoneW / safezoneH) min 1.2) / 40)";
+			h = "0.0330027 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			sizeEx = "0.8 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
 		class RscText_1002: RscText_1001

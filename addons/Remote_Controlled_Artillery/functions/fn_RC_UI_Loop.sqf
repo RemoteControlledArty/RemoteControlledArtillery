@@ -245,8 +245,8 @@ RC_Artillery_UI = [] spawn {
 				_ctrlDifference ctrlSetText "DIF: 0000" ;
 				_ctrlHighSol ctrlSetText "H SOL: 0000";
     			_ctrlLowSol ctrlSetText "L SOL: 0000";
-    			_ctrlHighETA ctrlSetText "H ETA: 000";
-    			_ctrlLowETA ctrlSetText "L ETA: 000";
+    			_ctrlHighETA ctrlSetText "ETA: 000";
+    			_ctrlLowETA ctrlSetText "ETA: 000";
 			};
 
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
@@ -254,8 +254,8 @@ RC_Artillery_UI = [] spawn {
 			_ctrlElevation ctrlSetText Format ["EL: %1", [17.7777778 * _realElevation, 4, 0] call CBA_fnc_formatNumber];		
 			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [parseNumber str(_highAngleSol), 4, 0] call CBA_fnc_formatNumber];		
 			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [parseNumber str(_lowAngleSol), 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlHighETA ctrlSetText Format ["H ETA: %1", [parseNumber str(_travelTimeHigh), 3, 0] call CBA_fnc_formatNumber];		
-			_ctrlLowETA ctrlSetText Format ["L ETA: %1", [parseNumber str(_travelTimeLow), 3, 0] call CBA_fnc_formatNumber];		
+			_ctrlHighETA ctrlSetText Format ["ETA: %1", [parseNumber str(_travelTimeHigh), 3, 0] call CBA_fnc_formatNumber];		
+			_ctrlLowETA ctrlSetText Format ["ETA: %1", [parseNumber str(_travelTimeLow), 3, 0] call CBA_fnc_formatNumber];		
 
 		} else {
 			// UI Shouldn't be Shown so we cut it
