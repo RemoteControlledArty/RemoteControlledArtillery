@@ -49,81 +49,81 @@ class RC_Artillery {
 		{
 			idc = 1001;
 			text = "CH: 0"; //--- ToDo: Localize;
-			x = 0.871267 * (safezoneW + safezoneX);
-			y = 0.0599647 * (safezoneH + safezoneY);
-			w = 0.0801219 * safezoneW;
-			h = 0.0330027 * safezoneH;
-			sizeEx = 0.8 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
+			x = "0.871267 * safezoneW + safezoneX";
+			y = "0.0599647 * safezoneH + safezoneY";
+			w = "0.0801219 * safezoneW";
+			h = "0.0330027 * safezoneH";
+			sizeEx = "0.8 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
 		class RscText_1002: RscText_1001
 		{
 			idc = 1002;
 			text = "AZ: 0000"; //--- ToDo: Localize;
-			x = 0.915206 * (safezoneW + safezoneX);
-			y = 0.0599647 * (safezoneH + safezoneY);
+			x = "0.915206 * safezoneW + safezoneX";
+			y = "0.0599647 * safezoneH + safezoneY";
 		};
 		class RscText_1003: RscText_1001
 		{
 			idc = 1003;
 			text = "EL: 0000"; //--- ToDo: Localize;
-			x = 0.951709 * (safezoneW + safezoneX);
-			y = 0.0599647 * (safezoneH + safezoneY);
+			x = "0.951709 * safezoneW + safezoneX";
+			y = "0.0599647 * safezoneH + safezoneY";
 		};
 		class RscText_1004: RscText_1001
 		{
 			idc = 1004;
 			text = "DIST: 0000"; //--- ToDo: Localize;
-			x = 0.871219 * (safezoneW + safezoneX);
-			y = 0.0819664 * (safezoneH + safezoneY);
+			x = "0.871219 * safezoneW + safezoneX";
+			y = "0.0819664 * safezoneH + safezoneY";
 		};
 		class RscText_1005: RscText_1001
 		{
 			idc = 1005;
 			text = "T: 0"; //--- ToDo: Localize;
-			x = 0.871219 * (safezoneW + safezoneX);
-			y = 0.103968 * (safezoneH + safezoneY);
+			x = "0.871219 * safezoneW + safezoneX";
+			y = "0.103968 * safezoneH + safezoneY";
 		};
 		class RscText_1006: RscText_1001
 		{
 			idc = 1006;
 			text = "T AZ: 0000"; //--- ToDo: Localize;
-			x = 0.915154 * (safezoneW + safezoneX);
-			y = 0.0819664 * (safezoneH + safezoneY);
+			x = "0.915154 * safezoneW + safezoneX";
+			y = "0.0819664 * safezoneH + safezoneY";
 		};
 		class RscText_1007: RscText_1001
 		{
 			idc = 1007;
 			text = "DIF: 0000"; //--- ToDo: Localize;
-			x = 0.95165 * (safezoneW + safezoneX);
-			y = 0.0819664 * (safezoneH + safezoneY);
+			x = "0.95165 * safezoneW + safezoneX";
+			y = "0.0819664 * safezoneH + safezoneY";
 		};
 		class RscText_1008: RscText_1001
 		{
 			idc = 1008;
 			text = "H SOL: 0000"; //--- ToDo: Localize;
-			x = 0.95165 * (safezoneW + safezoneX);
-			y = 0.1039681 * (safezoneH + safezoneY);
+			x = "0.95165 * safezoneW + safezoneX";
+			y = "0.1039681 * safezoneH + safezoneY";
 		};
 		class RscText_1009: RscText_1001
 		{
 			idc = 1009;
 			text = "L SOL: 0000"; //--- ToDo: Localize;
-			x = 0.95165 * (safezoneW + safezoneX);
-			y = 0.1259698 * (safezoneH + safezoneY);
+			x = "0.95165 * safezoneW + safezoneX";
+			y = "0.1259698 * safezoneH + safezoneY";
 		};
 		class RscText_1010: RscText_1001
 		{
 			idc = 1010;
 			text = "ETA: 000"; //--- ToDo: Localize;
-			x = 0.915154 * (safezoneW + safezoneX);
-			y = 0.1039681 * (safezoneH + safezoneY);
+			x = "0.915154 * safezoneW + safezoneX";
+			y = "0.1039681 * safezoneH + safezoneY";
 		};
 		class RscText_1011: RscText_1001
 		{
 			idc = 1011;
 			text = "ETA: 000"; //--- ToDo: Localize;
-			x = 0.915154 * (safezoneW + safezoneX);
-			y = 0.1259698 * (safezoneH + safezoneY);
+			x = "0.915154 * safezoneW + safezoneX";
+			y = "0.1259698 * safezoneH + safezoneY";
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
