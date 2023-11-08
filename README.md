@@ -41,7 +41,6 @@ Quirks:
 - change ammo types per mousewheel menu, not in the artillery computer
 - generating the ace rangetable requires having been close to it once
 - disabling artillery computer in options after having already used it, requires mission restart (not a big deal, decide beforehand)
-- LOOK INTO SKY with the camera when shooting manually, do NOT look at terrain, accuracy will be off, and submunitions will not deploy or too early, not our fault, thats a basegame bug, but we will add an ingame reminder display
 
 ### Highly recommended mod in combination:
 

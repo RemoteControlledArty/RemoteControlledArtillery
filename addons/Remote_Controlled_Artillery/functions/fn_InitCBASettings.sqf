@@ -42,20 +42,20 @@
 
 [
     "Remote Controlled Artillery",
-    "RC_Target_Scroll_Forwards",
+    "RC_Forward_Target_Scroll",
     "Scroll Forward through Possible Targets",
     {true call RC_fnc_scrollSolutions},
     "",
-	[5, [false, false, false]]
+	[8, [false, false, false]]
 ] call CBA_fnc_addKeybind;
 
 [
     "Remote Controlled Artillery",
-    "RC_Target_Scroll_Backwards",
+    "RC_Backward_Target_Scroll",
     "Scroll Backwards through Possible Targets",
     {false call RC_fnc_scrollSolutions},
     "",
-	[3, [false, false, false]]
+	[6, [false, false, false]]
 ] call CBA_fnc_addKeybind;
 
 [
