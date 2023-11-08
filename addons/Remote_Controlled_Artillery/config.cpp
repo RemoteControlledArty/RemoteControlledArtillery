@@ -520,14 +520,14 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_155mm_Mo_HEAB",
-					"RC_12Rnd_155mm_Mo_smoke",
+					"RC_16Rnd_155mm_Mo_HEAB",
+					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
 					"RC_4Rnd_155mm_Mo_LG",
 					"RC_4Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
-					"RC_9Rnd_155mm_Mo_AT_mine",
-					"RC_12Rnd_155mm_Mo_Illum"
+					"RC_8Rnd_155mm_Mo_AT_mine",
+					"RC_16Rnd_155mm_Mo_Illum"
 				};
 				class OpticsIn: OpticsIn
 				{
@@ -564,14 +564,14 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_155mm_Mo_HEAB",
-					"RC_12Rnd_155mm_Mo_smoke",
+					"RC_16Rnd_155mm_Mo_HEAB",
+					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
 					"RC_4Rnd_155mm_Mo_LG",
 					"RC_4Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
-					"RC_9Rnd_155mm_Mo_AT_mine",
-					"RC_12Rnd_155mm_Mo_Illum"
+					"RC_8Rnd_155mm_Mo_AT_mine",
+					"RC_16Rnd_155mm_Mo_Illum"
 				};
 				class OpticsIn: OpticsIn
 				{
@@ -749,14 +749,14 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_155mm_Mo_HEAB",
-					"RC_12Rnd_155mm_Mo_smoke",
+					"RC_16Rnd_155mm_Mo_HEAB",
+					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
 					"RC_4Rnd_155mm_Mo_LG",
 					"RC_4Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
-					"RC_9Rnd_155mm_Mo_AT_mine",
-					"RC_12Rnd_155mm_Mo_Illum"
+					"RC_8Rnd_155mm_Mo_AT_mine",
+					"RC_16Rnd_155mm_Mo_Illum"
 				};
 				class OpticsIn: OpticsIn
 				{
@@ -793,14 +793,14 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_155mm_Mo_HEAB",
-					"RC_12Rnd_155mm_Mo_smoke",
+					"RC_16Rnd_155mm_Mo_HEAB",
+					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
 					"RC_4Rnd_155mm_Mo_LG",
 					"RC_4Rnd_155mm_Mo_guided",
 					"RC_6Rnd_155mm_Mo_mine",
-					"RC_9Rnd_155mm_Mo_AT_mine",
-					"RC_12Rnd_155mm_Mo_Illum"
+					"RC_8Rnd_155mm_Mo_AT_mine",
+					"RC_16Rnd_155mm_Mo_Illum"
 				};
 				class OpticsIn: OpticsIn
 				{
@@ -1952,14 +1952,14 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_ShipCannon_120mm_HEAB_shells_x12",
-					"RC_ShipCannon_120mm_smoke_shells_x12",
+					"RC_ShipCannon_120mm_HEAB_shells_x16",
+					"RC_ShipCannon_120mm_smoke_shells_x16",
 					"RC_ShipCannon_120mm_HE_cluster_shells_x2",
-					"RC_ShipCannon_120mm_HE_LG_shells_x3",
-					"RC_ShipCannon_120mm_HE_guided_shells_x3",
+					"RC_ShipCannon_120mm_HE_LG_shells_x4",
+					"RC_ShipCannon_120mm_HE_guided_shells_x4",
 					"RC_ShipCannon_120mm_mine_shells_x6",
-					"RC_ShipCannon_120mm_AT_mine_shells_x9",
-					"RC_ShipCannon_120mm_Illum_shells_x12"
+					"RC_ShipCannon_120mm_AT_mine_shells_x8",
+					"RC_ShipCannon_120mm_Illum_shells_x16"
 				};
 			};
 		};
@@ -2096,13 +2096,13 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_12Rnd_82mm_Mo_HEAB",
-					"RC_12Rnd_82mm_Mo_Smoke_white",
+					"RC_16Rnd_82mm_Mo_HEAB",
+					"RC_16Rnd_82mm_Mo_Smoke_white",
 					"RC_4Rnd_82mm_Mo_LG",
 					"RC_4Rnd_82mm_Mo_guided",
 					"RC_6Rnd_82mm_Mo_mine",
-					"RC_9Rnd_82mm_Mo_AT_mine",
-					"RC_12Rnd_82mm_Mo_Flare_white"
+					"RC_8Rnd_82mm_Mo_AT_mine",
+					"RC_16Rnd_82mm_Mo_Flare_white"
 				};
 				class ViewOptics: ViewOptics
 				{
