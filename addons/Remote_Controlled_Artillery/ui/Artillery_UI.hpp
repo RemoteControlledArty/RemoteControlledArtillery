@@ -41,7 +41,8 @@ class RC_Artillery {
 			RscText_1010,
 			RscText_1011,
 			RscText_1012,
-			RscText_1013
+			RscText_1013,
+			RscText_1014
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT START (by Fluffy, v1.063, #Huxaga)
@@ -133,20 +134,29 @@ class RC_Artillery {
 			text = "READY"; //--- ToDo: Localize;
 			x = "0.871267 * safezoneW + safezoneX";
 			y = "0.1009294 * safezoneH + safezoneY";
+			w = "0.1801219 * safezoneW";
 		};
-		class RscText_1013: RscStructuredText 
+		class RscText_1013: RscText_1001 
 		{
 			idc = 1013;
-			text = "RAISE CAMERA INTO SKY<br/>FOR SUBMUNITIONS TO WORK"; //--- ToDo: Localize;
-			x = "0.852267 * safezoneW + safezoneX";
-			y = "0.2149294 * safezoneH + safezoneY";
+			text = "RAISE CAMERA INTO SKY"; //--- ToDo: Localize;
+			colorText[] = {1,0,0,1};
+			x = "0.891267 * safezoneW + safezoneX";
+			y = "0.1779294 * safezoneH + safezoneY";
 			h = "0.0850027 * safezoneH";
-			w = "0.2001219 * safezoneW";
-			sizeEx = "0.55 * (0.0330027 * safezoneH)";
-			class Attributes {
-				align = "center";
-			};
+			w = "0.3001219 * safezoneW";
 		};
+		class RscText_1014: RscText_1001 
+		{
+			idc = 1014;
+			text = "FOR SUBMUNITIONS TO WORK"; //--- ToDo: Localize;
+			colorText[] = {1,0,0,1};
+			x = "0.885267 * safezoneW + safezoneX";
+			y = "0.1939294 * safezoneH + safezoneY";
+			h = "0.0850027 * safezoneH";
+			w = "0.3001219 * safezoneW";
+		};
+;
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
 		////////////////////////////////////////////////////////
