@@ -320,7 +320,7 @@ RC_Artillery_UI = [] spawn {
 				// If we have no Targets
 				_ctrlMessage ctrlSetTextColor [1,0,0,1];
 				_ctrlMessage ctrlSetPositionX (0.868267 * safezoneW + safezoneX);
-				_ctrlMessage ctrlSetText format ["NO TARGET CREATE MAP MARKER: %1%2", RC_Marker_Prefix, "1-99"];
+				_ctrlMessage ctrlSetText format ["NO TARGET ADD MAP MARKER: %1%2", RC_Marker_Prefix, "1-99"];
 				
 			};
 
