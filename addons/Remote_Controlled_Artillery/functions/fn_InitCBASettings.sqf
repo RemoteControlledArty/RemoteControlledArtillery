@@ -25,13 +25,13 @@
     "SLIDER",
     ["Artillery Target Update Delay", "This number is how long it takes between Updating the possible Artillery Targets in Seconds."],
     ["Remote Controlled Artillery"],
-    [4, 15, 10, 0, false],
+    [4, 15, 4, 0, false],
     true
 ] call CBA_fnc_addSetting;
 
 [
     "Remote Controlled Artillery",
-    "RC_Target_Scroll_Forward",
+    "RC_Target_Scroll_Forwards",
     "Scroll Forward through Possible Targets",
     {true call RC_fnc_scrollSolutions},
     "",
@@ -40,7 +40,7 @@
 
 [
     "Remote Controlled Artillery",
-    "RC_Target_Scroll_Backward",
+    "RC_Target_Scroll_Backwards",
     "Scroll Backwards through Possible Targets",
     {false call RC_fnc_scrollSolutions},
     "",

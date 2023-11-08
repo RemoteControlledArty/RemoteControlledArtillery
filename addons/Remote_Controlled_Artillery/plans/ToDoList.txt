@@ -6,13 +6,13 @@
 TO DO - BUGFIXES:
 
 -if does not camera points in sky (cannot find range), show red warning "raise camera", (accuracy will be way off and submunitions wont deploy otherwise )
--light off! esp Recon Nyx
 -make MLRS/MRL rockets appear in launcher (if possible)
 
 
 DONE - BUGFIXES:
 
 -UI fixed on normal UI scale
+-lights off, can simply be done by user in the UAV terminal
 
 
 TO DO - FEATURES:
