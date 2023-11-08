@@ -25,9 +25,9 @@ class RC_Artillery {
         fadeIn = "false";
         fadeOut = "false";
 		
-		//sizeEx = 0.8 * safezoneH;;
+		//sizeEx = 0.8 * safezoneH
 		
-				controls[]=
+		controls[]=
 		{
 			RscText_1001,
 			RscText_1002,
@@ -49,11 +49,11 @@ class RC_Artillery {
 		{
 			idc = 1001;
 			text = "CH: 0"; //--- ToDo: Localize;
-			x = "0.871267 * (((safezoneW / safezoneH) min 1.2) / 40)";
-			y = "0.0599647 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			x = "0.871267 * safezoneW + safezoneX";
+			y = "0.0599647 * safezoneH + safezoneY";
 			w = "0.0801219 * safezoneW";
 			h = "0.0330027 * safezoneH";
-			sizeEx = "0.8 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			sizeEx = "0.6 * (0.0330027 * safezoneH)";
 		};
 		class RscText_1002: RscText_1001
 		{
