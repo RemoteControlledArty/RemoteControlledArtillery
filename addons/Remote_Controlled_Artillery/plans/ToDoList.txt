@@ -12,6 +12,7 @@ TO DO - BUGFIXES:
 
 DONE - BUGFIXES:
 
+-UI fixed on normal UI scale
 
 
 TO DO - FEATURES:
@@ -20,9 +21,6 @@ TO DO - FEATURES:
 -only disable driver = 4, for modularity
 
 -explain target marker referencing to current subscribers
-
--if turret azimuth matches target azimuth, turn green
--if charge is correct for target distance, turn green
 
 -if azimuth correct, turret elevation correct, and camera pointed in sky -> "ready to fire" 
 
@@ -35,7 +33,10 @@ DONE - FEATURES:
 -buffed 82mm and 155mm smoke
 -added 82mm AP and AT mines
 -40 magazines for all shells
--required low&high turret elevation display + time to target
+
+-required low&high turret elevation display + ETA
+-if turret azimuth matches target azimuth, turn green
+-if charge is correct for target distance, turn green
 
 
 TO DO - QUALITY OF LIFE:
