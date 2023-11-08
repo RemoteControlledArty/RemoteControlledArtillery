@@ -42,7 +42,7 @@
 
 [
     "Remote Controlled Artillery",
-    "RC_Scroll_Target_Forwards",
+    "RC_Scroll_Targets_Forwards",
     "Scroll Forward through Possible Targets",
     {true call RC_fnc_scrollSolutions},
     "",
@@ -51,7 +51,7 @@
 
 [
     "Remote Controlled Artillery",
-    "RC_Scroll_Target_Backwards",
+    "RC_Scroll_Targets_Backwards",
     "Scroll Backwards through Possible Targets",
     {false call RC_fnc_scrollSolutions},
     "",
