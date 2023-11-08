@@ -218,7 +218,6 @@ RC_Artillery_UI = [] spawn {
 				// High Angle
 				_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-9.80*(9.80*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(9.80*_targetDistance)));
 				_calcHigh = round (_calcHigh * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
-				systemChat format["Velocity: %1, Distance: %2", _roundVelocity, _targetDistance];
 				_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(9.8*((2*(_roundVelocity^2)*_Difference)+(9.8*(_targetDistance^2))))))/(9.8*_targetDistance)))/pi/57.30;
 				//_highAngleSol = (3200*(atan((_roundVelocity^2+sqrt(_roundVelocity^4-9.8*(2*_roundVelocity^2*0+9.8*_targetDistance^2)))/(9.8*_targetDistance))))/pi;
 				_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/9.80); // Calculate the Travel Time in Seconds
