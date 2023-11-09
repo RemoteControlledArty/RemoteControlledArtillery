@@ -13,6 +13,8 @@ class RC_Improved_FOV_Laser_Designator_Arid: RC_Improved_FOV_Laser_Designator_Ar
 	scope=2;
 	scopeCurator=2;
 
+	enableGPS=1;
+
 	threat[]={0.2,0.15,0.1};
 
 	class Turrets: Turrets
@@ -116,6 +118,8 @@ class RC_Improved_FOV_Laser_Designator_Woodland: RC_Improved_FOV_Laser_Designato
 
 	scope=2;
 	scopeCurator=2;
+
+	enableGPS=1;
 	
 	threat[]={0.2,0.15,0.1};
 

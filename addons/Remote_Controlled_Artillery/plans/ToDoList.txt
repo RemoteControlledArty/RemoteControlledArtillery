@@ -44,9 +44,26 @@ DONE - FEATURES:
 
 TO DO - QUALITY OF LIFE:
 
--cannot open map with: mortar, MRL, static AA / AT / ATGM, laser des
 -more bag renaming Blue/Red/Greenfor or Blue/Op/Indfor, so people dont think it just doesnt work
 -peak ASL of trajectory
+
+/* Static Howitzer Target Scanner
+		enableGPS=1;
+		artilleryScanner=1;
+		radartype=2;
+		radarTarget=1;
+		radarTargetSize=1.5;
+		visualTarget=1;
+		visualTargetSize=2;
+		irTargetSize=1;
+		reportRemoteTargets=0;	//if 1 it can send datalink info to other vics
+		receiveRemoteTargets=1;
+		reportOwnPosition=0;
+		lockDetectionSystem=0;
+		incomingMissileDetectionSystem=16;
+*/
+
+laserScanner = 1;	//Defines if the vehicle has a Laser Spot Tracker and is able to detect and lock laser targets (for example, CAS jets, gunships). 
 
 
 DONE - QUALITY OF LIFE:
@@ -54,6 +71,8 @@ DONE - QUALITY OF LIFE:
 -lower FOV for driving now available
 -option for very slightly shorter map marker search
 -if vehicle speed = 0 then turn off engine true
+
+-map now available for ALL assets :D
 
 
 IDEAS - FUTURE:

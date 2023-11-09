@@ -22,6 +22,8 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 	uavCameraGunnerDir="look";
 	crew="B_UAV_AI";
 
+	enableGPS=1;
+
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=

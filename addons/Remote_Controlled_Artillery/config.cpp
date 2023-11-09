@@ -1066,6 +1066,8 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
+		enableGPS=1;
+
 		armorStructural=100;
 
 		class Turrets: Turrets
@@ -2009,6 +2011,8 @@ class CfgVehicles
 		uavCameraGunnerDir="look";
 		crew="B_UAV_AI";
 		driverForceOptics=1;
+
+		enableGPS=1;
 
 		class assembleInfo: assembleInfo
 		{
