@@ -8,6 +8,9 @@ TO DO - BUGFIXES:
 -if does not camera points in sky (cannot find range), show red warning "raise camera", (accuracy will be way off and submunitions wont deploy otherwise )
 -make MLRS/MRL rockets appear in launcher (if possible)
 
+-REMOVE CBA Setting for EL Diff, as this could f up the formula
+-fix EL Diff mybe not getting calculated when being negative
+
 
 DONE - BUGFIXES:
 
