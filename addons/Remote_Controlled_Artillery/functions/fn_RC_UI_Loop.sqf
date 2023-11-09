@@ -111,11 +111,11 @@ RC_Artillery_UI = [] spawn {
 				private _testPoint = _testSeekerPosASL vectorAdd (_lookVector vectorMultiply viewDistance);
     			_lookingAtGround = !((terrainIntersectASL [_testSeekerPosASL, _testPoint]) || {lineIntersects [_testSeekerPosASL, _testPoint, _uav]});
 				
-				//if _lookingAtGround then {
+				if _lookingAtGround then {
 					_rangeText = "--";
-				//} else {
-				//	_rangeText = "0";
-				//};
+				} else {
+					_rangeText = "0";
+				};
 			};
 			
 			_display = uiNamespace getVariable ["RC_Artillery", displayNull]; // Display
