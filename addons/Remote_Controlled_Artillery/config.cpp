@@ -340,6 +340,19 @@ class CfgEditorSubcategories
 	};
 };
 
+
+class SensorTemplateDataLink;
+class SensorTemplateLaser;
+class DefaultVehicleSystemsDisplayManagerRight
+{
+	class components;
+};
+class VehicleSystemsTemplateRightGunner: DefaultVehicleSystemsDisplayManagerRight
+{
+	class components;
+};
+
+
 class CfgAmmo
 {
 	#include "\Remote_Controlled_Artillery\configs\Ammo.hpp"
@@ -382,6 +395,8 @@ class CfgVehicles
 		class CommanderOptics;
 		class OpticsIn;
 		class Wide;
+		class Components;
+
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 		scope=0;
@@ -410,6 +425,41 @@ class CfgVehicles
 		ejectDeadGunner=0;
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
+
+		radartype=2;
+		receiveRemoteTargets=1;
+		laserScanner=1;
+
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						animDirection="mainTurret";
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						class AirTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+				};
+			};
+		};
 
 		crewCrashProtection=0.01;
 		armorStructural=100;
@@ -455,6 +505,25 @@ class CfgVehicles
 						hasGunner=-1;
 						hasCommander=-1;
 						forceHideGunner=1;
+					};
+				};
+
+				//showAllTargets="2 + 4";
+
+				class Components: Components
+				{
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={16000,8000,4000,32000};
+								resource="RscCustomInfoSensors";
+							};
+						};
 					};
 				};
 			};
@@ -520,6 +589,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
+					"4Rnd_120mm_LG_cannon_missiles",
 					"RC_16Rnd_155mm_Mo_HEAB",
 					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",

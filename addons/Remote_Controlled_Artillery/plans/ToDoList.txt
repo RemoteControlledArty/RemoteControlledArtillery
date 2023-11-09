@@ -47,23 +47,14 @@ TO DO - QUALITY OF LIFE:
 -more bag renaming Blue/Red/Greenfor or Blue/Op/Indfor, so people dont think it just doesnt work
 -peak ASL of trajectory
 
-/* Static Howitzer Target Scanner
-		enableGPS=1;
-		artilleryScanner=1;
-		radartype=2;
-		radarTarget=1;
-		radarTargetSize=1.5;
-		visualTarget=1;
-		visualTargetSize=2;
-		irTargetSize=1;
-		reportRemoteTargets=0;	//if 1 it can send datalink info to other vics
-		receiveRemoteTargets=1;
-		reportOwnPosition=0;
-		lockDetectionSystem=0;
-		incomingMissileDetectionSystem=16;
-*/
+add:
+radartype=2;
+receiveRemoteTargets=1;		//receive Datalink targets
+laserScanner=1;		//Defines if the vehicle has a Laser Spot Tracker and is able to detect and lock laser targets (for example, CAS jets, gunships).
+showAllTargets="2 + 4";		//show targets on screen
 
-laserScanner = 1;	//Defines if the vehicle has a Laser Spot Tracker and is able to detect and lock laser targets (for example, CAS jets, gunships). 
+lockDetectionSystem=0; ?
+incomingMissileDetectionSystem = 16;
 
 
 DONE - QUALITY OF LIFE:

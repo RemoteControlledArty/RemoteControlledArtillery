@@ -649,6 +649,8 @@ class RC_155mm_AMOS: RC_155mm_AMOS_base
 
 	magazines[]=
 	{
+		"4Rnd_120mm_LG_cannon_missiles",
+
 		"RC_1Rnd_155mm_Mo_HEAB",
 		"RC_2Rnd_155mm_Mo_HEAB",
 		"RC_3Rnd_155mm_Mo_HEAB",
