@@ -343,6 +343,8 @@ class CfgEditorSubcategories
 
 class SensorTemplateDataLink;
 class SensorTemplateLaser;
+class SensorTemplateIR;
+class SensorTemplateMan;
 class DefaultVehicleSystemsDisplayManagerRight
 {
 	class components;
@@ -703,6 +705,8 @@ class CfgVehicles
 		class CommanderOptics;
 		class OpticsIn;
 		class Wide;
+		class Components;
+
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 		scope=0;
@@ -734,6 +738,41 @@ class CfgVehicles
 
 		crewCrashProtection=0.01;
 		armorStructural=100;
+
+		radartype=2;
+		receiveRemoteTargets=1;
+		laserScanner=1;
+
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						animDirection="mainTurret";
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						class AirTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+				};
+			};
+		};
 
 		class AnimationSources: AnimationSources
 		{
@@ -776,6 +815,22 @@ class CfgVehicles
 						hasGunner=-1;
 						hasCommander=-1;
 						forceHideGunner=1;
+					};
+				};
+				class Components: Components
+				{
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={16000,8000,4000,32000};
+								resource="RscCustomInfoSensors";
+							};
+						};
 					};
 				};
 			};
@@ -902,6 +957,8 @@ class CfgVehicles
 		class MainTurret;
 		class OpticsIn;
 		class Wide;
+		class Components;
+
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
@@ -933,6 +990,41 @@ class CfgVehicles
 
 		armorStructural=100;
 
+		radartype=2;
+		receiveRemoteTargets=1;
+		laserScanner=1;
+
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						animDirection="mainTurret";
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						class AirTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+				};
+			};
+		};
+
 		class AnimationSources: AnimationSources
 		{
 			class showCamonetTurret: showCamonetTurret
@@ -958,6 +1050,23 @@ class CfgVehicles
 			{
 				gunnerForceOptics=1;
 				stabilizedInAxes=3;
+
+				class Components: Components
+				{
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={16000,8000,4000,32000};
+								resource="RscCustomInfoSensors";
+							};
+						};
+					};
+				};
 			};
 		};
 	};
@@ -1102,11 +1211,12 @@ class CfgVehicles
 	class RC_MRL_base: I_Truck_02_MRL_F
 	{
 		class AnimationSources;
-		class Components;
 		class Turrets;
 		class MainTurret;
 		class OpticsIn;
 		class Wide;
+		class Components;
+
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
@@ -1136,9 +1246,43 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		enableGPS=1;
-
 		armorStructural=100;
+
+		enableGPS=1;
+		radartype=2;
+		receiveRemoteTargets=1;
+		laserScanner=1;
+
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						animDirection="mainTurret";
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						class AirTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+				};
+			};
+		};
 
 		class Turrets: Turrets
 		{
@@ -1147,6 +1291,23 @@ class CfgVehicles
 				lockWhenVehicleSpeed=-1;
 				gunnerForceOptics=1;
 				stabilizedInAxes=3;
+
+				class Components: Components
+				{
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={16000,8000,4000,32000};
+								resource="RscCustomInfoSensors";
+							};
+						};
+					};
+				};
 			};
 		};
 	};
@@ -1784,6 +1945,8 @@ class CfgVehicles
 		class ViewOptics;
 		class HitPoints;
 		class HitEngine;
+		class Components;
+
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
@@ -1815,6 +1978,72 @@ class CfgVehicles
 		armorStructural=100;
 		redRpm=1100;
 		idleRpm=250;
+
+		radartype=2;
+		receiveRemoteTargets=1;
+		reportRemoteTargets=1;
+		laserScanner=1;
+
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						animDirection="mainTurret";
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						class AirTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class ManSensorComponent: SensorTemplateMan
+					{
+						maxTrackableSpeed=15;
+						angleRangeHorizontal=51;
+						angleRangeVertical=37;
+						animDirection="mainGun";
+						aimDown=-0.5;
+					};
+					class IRSensorComponent: SensorTemplateIR
+					{
+						class AirTarget
+						{
+							minRange=10;
+							maxRange=3000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=10;
+							maxRange=3000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=35;
+						angleRangeHorizontal=51;
+						angleRangeVertical=37;
+						animDirection="mainGun";
+						aimDown=-0.5;
+					};
+				};
+			};
+		};
 
 		class HitPoints: HitPoints
 		{
@@ -1933,6 +2162,25 @@ class CfgVehicles
 					initFov=0.89999998;
 					minFov=0.0125;
 					maxFov=0.89999998;
+				};
+
+				//showAllTargets="2 + 4";
+
+				class Components: Components
+				{
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={16000,8000,4000,32000};
+								resource="RscCustomInfoSensors";
+							};
+						};
+					};
 				};
 			};
 		};
@@ -2058,6 +2306,8 @@ class CfgVehicles
 		class MainTurret;
 		class assembleInfo;
 		class ViewOptics;
+		class Components;
+
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		scope=0;
 		scopeCurator=0;
@@ -2083,6 +2333,40 @@ class CfgVehicles
 		driverForceOptics=1;
 
 		enableGPS=1;
+		radartype=2;
+		receiveRemoteTargets=1;
+		laserScanner=1;
+
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						animDirection="mainTurret";
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						class AirTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+				};
+			};
+		};
 
 		class assembleInfo: assembleInfo
 		{
@@ -2097,6 +2381,23 @@ class CfgVehicles
 			class MainTurret: MainTurret
 			{
 				gunnerForceOptics=1;
+
+				class Components: Components
+				{
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={16000,8000,4000,32000};
+								resource="RscCustomInfoSensors";
+							};
+						};
+					};
+				};
 			};
 		};
 	};
@@ -2243,7 +2544,7 @@ class CfgVehicles
 	};
 	class RC_Mortar_Bag_NA: RC_Mortar_Bag_NA_base
 	{
-		displayName="RC Mortar Bag (Bluefor) (non adjustable)";
+		displayName="RC Mortar Bag (non adjustable)";
 		scope=2;
 		scopeCurator=2;
 
@@ -2258,18 +2559,18 @@ class CfgVehicles
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Bluefor) (non adjustable)";
+			displayName="RC Mortar (non adjustable)";
 			assembleTo="RC_Mortar_NA";
 			base="";
 		};
 	};
 	class RC_Mortar_Bag_NA_O: RC_Mortar_Bag_NA
 	{
-		displayName="RC Mortar (Redfor) (non adjustable)";
+		displayName="RC Mortar (Opf) (non adjustable)";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Redfor)";
+			displayName="RC Mortar (Opf)";
 			assembleTo="RC_Mortar_NA_O";
 		};
 	};
@@ -2288,31 +2589,31 @@ class CfgVehicles
 	};	
 	class RC_Mortar_Bag_NA_I: RC_Mortar_Bag_NA
 	{
-		displayName="RC Mortar (Greenfor) (non adjustable)";
+		displayName="RC Mortar (Ind) (non adjustable)";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Greenfor)";
+			displayName="RC Mortar (Ind)";
 			assembleTo="RC_Mortar_NA_I";
 		};
 	};
 	class RC_Mortar_Bag: RC_Mortar_Bag_NA
 	{
-		displayName="RC Mortar Bag (Bluefor)";
+		displayName="RC Mortar Bag";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Bluefor)";
+			displayName="RC Mortar";
 			assembleTo="RC_Mortar";
 		};
 	};
 	class RC_Mortar_Bag_O: RC_Mortar_Bag
 	{
-		displayName="RC Mortar (Redfor)";
+		displayName="RC Mortar (Opf)";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Redfor)";
+			displayName="RC Mortar (Opf)";
 			assembleTo="RC_Mortar_O";
 		};
 	};
@@ -2331,11 +2632,11 @@ class CfgVehicles
 	};	
 	class RC_Mortar_Bag_I: RC_Mortar_Bag
 	{
-		displayName="RC Mortar (Greenfor)";
+		displayName="RC Mortar (Ind)";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Greenfor)";
+			displayName="RC Mortar (Ind)";
 			assembleTo="RC_Mortar_I";
 		};
 	};
@@ -2424,8 +2725,10 @@ class CfgVehicles
 	};
 	class RC_Mortar_ER_Bag_O: RC_Mortar_ER_Bag
 	{
+		displayName="RC Mortar (Opf) (extended range)";
 		class assembleInfo: assembleInfo
 		{
+			displayName="RC Mortar (Opf) (extended range)";
 			assembleTo="RC_Mortar_ER_O";
 		};
 	};
@@ -2444,9 +2747,106 @@ class CfgVehicles
 	};	
 	class RC_Mortar_ER_Bag_I: RC_Mortar_ER_Bag
 	{
+		displayName="RC Mortar (Ind) (extended range)";
 		class assembleInfo: assembleInfo
 		{
+			displayName="RC Mortar (Ind) (extended range)";
 			assembleTo="RC_Mortar_ER_I";
+		};
+	};
+
+
+
+	class RC_UAV: RC_UAV_base
+	{
+		displayName="RC AR-3";
+		faction="RemoteControlled_B";
+		editorSubcategory="RC_Spotting_subcat";
+
+		scope=2;
+		scopeCurator=2;
+
+		radartype=2;
+		receiveRemoteTargets=1;
+		reportRemoteTargets=1;
+		laserScanner=1;
+
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						animDirection="mainTurret";
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						class AirTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class IRSensorComponent: SensorTemplateIR
+					{
+						class AirTarget
+						{
+							minRange=10;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=10;
+							maxRange=4000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=35;
+						angleRangeHorizontal=51;
+						angleRangeVertical=37;
+						animDirection="mainGun";
+						aimDown=-0.5;
+					};
+				};
+			};
+		};
+
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				showAllTargets="2 + 4";
+
+				class Components: Components
+				{
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={16000,8000,4000,32000};
+								resource="RscCustomInfoSensors";
+							};
+						};
+					};
+				};
+			};
 		};
 	};
 };

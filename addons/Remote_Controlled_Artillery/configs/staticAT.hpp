@@ -23,6 +23,71 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 	crew="B_UAV_AI";
 
 	enableGPS=1;
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	laserScanner=1;
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					animDirection="mainTurret";
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					class AirTarget
+					{
+						minRange=32000;
+						maxRange=32000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=32000;
+						maxRange=32000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class ManSensorComponent: SensorTemplateMan
+				{
+					maxTrackableSpeed=15;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
+					animDirection="mainGun";
+					aimDown=-0.5;
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=10;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=1;
+					};
+					class GroundTarget
+					{
+						minRange=10;
+						maxRange=3000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=35;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
+					animDirection="mainGun";
+					aimDown=-0.5;
+				};
+			};
+		};
+	};
 
 	class assembleInfo: assembleInfo
 	{
@@ -56,9 +121,9 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 			};
 			class ViewOptics: ViewOptics
 			{
-				initFov=0.25;
+				initFov=0.5;
 				minFov=0.02;
-				maxFov=0.25;
+				maxFov=0.5;
 				visionMode[]=
 				{
 					"Normal",
@@ -66,6 +131,25 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 					"Ti"
 				};
 				thermalMode[]={0};
+			};
+
+			//showAllTargets="2 + 4";
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={16000,8000,4000,32000};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
 			};
 		};
 	};

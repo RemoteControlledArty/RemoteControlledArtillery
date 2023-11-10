@@ -7,6 +7,7 @@ class RC_Improved_FOV_Laser_Designator_Arid_base: B_Static_Designator_01_F
 	class MainTurret;
 	class viewOptics;
 	class assembleInfo;
+	class Components;
 	scope=0;
 	scopeCurator=0;
 };
@@ -28,6 +29,7 @@ class RC_Improved_FOV_Laser_Designator_Woodland_base: B_W_Static_Designator_01_F
 	class MainTurret;
 	class viewOptics;
 	class assembleInfo;
+	class Components;
 	scope=0;
 	scopeCurator=0;
 };
@@ -49,6 +51,7 @@ class RC_Static_AA_Arid_base: B_static_AA_F
 	class MainTurret;
 	class ViewOptics;
 	class assembleInfo;
+	class Components;
 	scope=0;
 	scopeCurator=0;
 };
@@ -70,6 +73,20 @@ class RC_Static_AT_Arid_base: B_static_AT_F
 	class MainTurret;
 	class ViewOptics;
 	class assembleInfo;
+	class Components;
+	scope=0;
+	scopeCurator=0;
+};
+
+//AR-2.5
+class B_UAV_01_F;
+class RC_UAV_base: B_UAV_01_F
+{
+	class Turrets;
+	class MainTurret;
+	class ViewOptics;
+	class assembleInfo;
+	class Components;
 	scope=0;
 	scopeCurator=0;
 };
