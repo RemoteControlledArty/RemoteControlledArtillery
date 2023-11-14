@@ -31,6 +31,10 @@ class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 				class LaserSensorComponent: SensorTemplateLaser
 				{
 					animDirection="mainTurret";
+					minRange=10;
+					maxRange=3500;
+					angleRangeHorizontal=360;
+					angleRangeVertical=180;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
@@ -54,13 +58,20 @@ class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 					class AirTarget
 					{
 						minRange=10;
-						maxRange=4000;
+						maxRange=3500;
 						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=-1;
+						maxRange=-1;
+						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
-					maxTrackableSpeed=35;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
 					animDirection="mainGun";
 					aimDown=-0.5;
 				};
@@ -124,7 +135,7 @@ class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={16000,8000,4000,32000};
+							range[]={3500,1750,875,437.5};
 							resource="RscCustomInfoSensors";
 						};
 					};

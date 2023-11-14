@@ -441,6 +441,10 @@ class CfgVehicles
 					class LaserSensorComponent: SensorTemplateLaser
 					{
 						animDirection="mainTurret";
+						minRange=10;
+						maxRange=16000;
+						angleRangeHorizontal=360;
+						angleRangeVertical=180;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -522,7 +526,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={16000,8000,4000,32000};
+								range[]={16000,8000,4000,2000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -752,6 +756,10 @@ class CfgVehicles
 					class LaserSensorComponent: SensorTemplateLaser
 					{
 						animDirection="mainTurret";
+						minRange=10;
+						maxRange=16000;
+						angleRangeHorizontal=360;
+						angleRangeVertical=180;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -827,7 +835,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={16000,8000,4000,32000};
+								range[]={16000,8000,4000,2000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -1003,6 +1011,10 @@ class CfgVehicles
 					class LaserSensorComponent: SensorTemplateLaser
 					{
 						animDirection="mainTurret";
+						minRange=10;
+						maxRange=32000;
+						angleRangeHorizontal=360;
+						angleRangeVertical=180;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -1061,7 +1073,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={16000,8000,4000,32000};
+								range[]={32000,16000,8000,4000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -1262,6 +1274,10 @@ class CfgVehicles
 					class LaserSensorComponent: SensorTemplateLaser
 					{
 						animDirection="mainTurret";
+						minRange=10;
+						maxRange=32000;
+						angleRangeHorizontal=360;
+						angleRangeVertical=180;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -1302,7 +1318,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={16000,8000,4000,32000};
+								range[]={32000,16000,8000,4000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -1705,6 +1721,7 @@ class CfgVehicles
 		class ViewOptics;
 		class HitPoints;
 		class HitEngine;
+		class Components;
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
 		scopeCurator=0;
@@ -1736,6 +1753,78 @@ class CfgVehicles
 		armorStructural=100;
 		redRpm=1100;
 		idleRpm=250;
+
+		radartype=2;
+		receiveRemoteTargets=1;
+		reportRemoteTargets=1;
+		laserScanner=1;
+
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						animDirection="mainTurret";
+						minRange=10;
+						maxRange=8000;
+						angleRangeHorizontal=360;
+						angleRangeVertical=180;
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						class AirTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class ManSensorComponent: SensorTemplateMan
+					{
+						minRange=10;
+						maxRange=1000;
+						maxTrackableSpeed=15;
+						angleRangeHorizontal=60;
+						angleRangeVertical=40;
+						animDirection="mainGun";
+						aimDown=-0.5;
+					};
+					class IRSensorComponent: SensorTemplateIR
+					{
+						class AirTarget
+						{
+							minRange=10;
+							maxRange=8000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=-1;
+							maxRange=-1;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=600;
+						angleRangeHorizontal=60;
+						angleRangeVertical=40;
+						animDirection="mainGun";
+						aimDown=-0.5;
+					};
+				};
+			};
+		};
 
 		class HitPoints: HitPoints
 		{
@@ -1776,6 +1865,25 @@ class CfgVehicles
 					initFov=0.89999998;
 					minFov=0.0125;
 					maxFov=0.89999998;
+				};
+
+				showAllTargets="2 + 4";
+
+				class Components: Components
+				{
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={8000,4000,2000,1000};
+								resource="RscCustomInfoSensors";
+							};
+						};
+					};
 				};
 			};
 		};
@@ -1827,6 +1935,7 @@ class CfgVehicles
 		class MainTurret;
 		class HitPoints;
 		class HitEngine;
+		class ViewOptics;
 		forceHideDriver=1;
 		RCDisableSeats=3; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
@@ -1875,6 +1984,12 @@ class CfgVehicles
 			{
 				gunnerForceOptics=1;
 				forceHideGunner=1;
+			};
+			class ViewOptics: ViewOptics
+			{
+				initFov=0.89999998;
+				minFov=0.0125;
+				maxFov=0.89999998;
 			};
 		};
 
@@ -1993,6 +2108,10 @@ class CfgVehicles
 					class LaserSensorComponent: SensorTemplateLaser
 					{
 						animDirection="mainTurret";
+						minRange=10;
+						maxRange=3500;
+						angleRangeHorizontal=360;
+						angleRangeVertical=180;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -2013,9 +2132,11 @@ class CfgVehicles
 					};
 					class ManSensorComponent: SensorTemplateMan
 					{
+						minRange=10;
+						maxRange=1000;
 						maxTrackableSpeed=15;
-						angleRangeHorizontal=51;
-						angleRangeVertical=37;
+						angleRangeHorizontal=60;
+						angleRangeVertical=40;
 						animDirection="mainGun";
 						aimDown=-0.5;
 					};
@@ -2024,20 +2145,20 @@ class CfgVehicles
 						class AirTarget
 						{
 							minRange=10;
-							maxRange=3000;
+							maxRange=3500;
 							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=1;
+							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
 							minRange=10;
-							maxRange=3000;
+							maxRange=3500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
-						maxTrackableSpeed=35;
-						angleRangeHorizontal=51;
-						angleRangeVertical=37;
+						maxTrackableSpeed=600;
+						angleRangeHorizontal=60;
+						angleRangeVertical=40;
 						animDirection="mainGun";
 						aimDown=-0.5;
 					};
@@ -2176,7 +2297,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={16000,8000,4000,32000};
+								range[]={3500,1750,875,437.5};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -2346,6 +2467,10 @@ class CfgVehicles
 					class LaserSensorComponent: SensorTemplateLaser
 					{
 						animDirection="mainTurret";
+						minRange=10;
+						maxRange=4000;
+						angleRangeHorizontal=360;
+						angleRangeVertical=180;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -2392,7 +2517,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={16000,8000,4000,32000};
+								range[]={4000,2000,1000,500};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -2655,6 +2780,41 @@ class CfgVehicles
 			};
 		};
 
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						animDirection="mainTurret";
+						minRange=10;
+						maxRange=8000;
+						angleRangeHorizontal=360;
+						angleRangeVertical=180;
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						class AirTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=32000;
+							maxRange=32000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+				};
+			};
+		};
+
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -2662,6 +2822,23 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RC_mortar_82mm_ER"
+				};
+
+				class Components: Components
+				{
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={8000,4000,2000,1000};
+								resource="RscCustomInfoSensors";
+							};
+						};
+					};
 				};
 			};
 		};
@@ -2780,6 +2957,10 @@ class CfgVehicles
 					class LaserSensorComponent: SensorTemplateLaser
 					{
 						animDirection="mainTurret";
+						minRange=10;
+						maxRange=4000;
+						angleRangeHorizontal=360;
+						angleRangeVertical=180;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -2798,6 +2979,16 @@ class CfgVehicles
 							viewDistanceLimitCoef=-1;
 						};
 					};
+					class ManSensorComponent: SensorTemplateMan
+					{
+						minRange=10;
+						maxRange=1000;
+						maxTrackableSpeed=15;
+						angleRangeHorizontal=60;
+						angleRangeVertical=40;
+						animDirection="mainGun";
+						aimDown=-0.5;
+					};
 					class IRSensorComponent: SensorTemplateIR
 					{
 						class AirTarget
@@ -2805,7 +2996,7 @@ class CfgVehicles
 							minRange=10;
 							maxRange=4000;
 							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=1;
+							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
@@ -2814,9 +3005,9 @@ class CfgVehicles
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
-						maxTrackableSpeed=35;
-						angleRangeHorizontal=51;
-						angleRangeVertical=37;
+						maxTrackableSpeed=600;
+						angleRangeHorizontal=60;
+						angleRangeVertical=40;
 						animDirection="mainGun";
 						aimDown=-0.5;
 					};
@@ -2840,7 +3031,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={16000,8000,4000,32000};
+								range[]={4000,2000,1000,500};
 								resource="RscCustomInfoSensors";
 							};
 						};

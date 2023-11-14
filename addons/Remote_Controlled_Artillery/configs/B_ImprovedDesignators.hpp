@@ -6,7 +6,7 @@
 // Arid
 class RC_Improved_FOV_Laser_Designator_Arid: RC_Improved_FOV_Laser_Designator_Arid_base
 {
-	displayname="RC Improved Laser Designator";
+	displayname="RC Laser Designator";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Spotting_subcat";
 
@@ -30,6 +30,10 @@ class RC_Improved_FOV_Laser_Designator_Arid: RC_Improved_FOV_Laser_Designator_Ar
 				class LaserSensorComponent: SensorTemplateLaser
 				{
 					animDirection="mainTurret";
+					minRange=10;
+					maxRange=4000;
+					angleRangeHorizontal=360;
+					angleRangeVertical=180;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
@@ -47,14 +51,6 @@ class RC_Improved_FOV_Laser_Designator_Arid: RC_Improved_FOV_Laser_Designator_Ar
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-				};
-				class ManSensorComponent: SensorTemplateMan
-				{
-					maxTrackableSpeed=15;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
-					animDirection="mainGun";
-					aimDown=-0.5;
 				};
 			};
 		};
@@ -80,8 +76,6 @@ class RC_Improved_FOV_Laser_Designator_Arid: RC_Improved_FOV_Laser_Designator_Ar
 				};
 			};
 
-			showAllTargets="2 + 4";
-
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -92,7 +86,7 @@ class RC_Improved_FOV_Laser_Designator_Arid: RC_Improved_FOV_Laser_Designator_Ar
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={16000,8000,4000,32000};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -130,6 +124,10 @@ class RC_Improved_FOV_Laser_Designator_Ti_Arid: RC_Improved_FOV_Laser_Designator
 				class LaserSensorComponent: SensorTemplateLaser
 				{
 					animDirection="mainTurret";
+					minRange=10;
+					maxRange=4000;
+					angleRangeHorizontal=360;
+					angleRangeVertical=180;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
@@ -150,9 +148,11 @@ class RC_Improved_FOV_Laser_Designator_Ti_Arid: RC_Improved_FOV_Laser_Designator
 				};
 				class ManSensorComponent: SensorTemplateMan
 				{
+					minRange=10;
+					maxRange=1000;
 					maxTrackableSpeed=15;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
 					animDirection="mainGun";
 					aimDown=-0.5;
 				};
@@ -161,20 +161,20 @@ class RC_Improved_FOV_Laser_Designator_Ti_Arid: RC_Improved_FOV_Laser_Designator
 					class AirTarget
 					{
 						minRange=10;
-						maxRange=3000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=1;
+						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
 						minRange=10;
-						maxRange=3000;
+						maxRange=4000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
-					maxTrackableSpeed=35;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
 					animDirection="mainGun";
 					aimDown=-0.5;
 				};
@@ -186,6 +186,8 @@ class RC_Improved_FOV_Laser_Designator_Ti_Arid: RC_Improved_FOV_Laser_Designator
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
+
 			class ViewOptics: viewOptics
 			{
 				initFov=0.25;
@@ -235,7 +237,7 @@ class RC_Improved_FOV_Laser_Designator_Ti_Bag_Arid: RC_Improved_FOV_Laser_Design
 // Woodland
 class RC_Improved_FOV_Laser_Designator_Woodland: RC_Improved_FOV_Laser_Designator_Woodland_base
 {
-	displayname="RC Improved Laser Designator";
+	displayname="RC Laser Designator";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Spotting_subcat";
 
@@ -259,6 +261,10 @@ class RC_Improved_FOV_Laser_Designator_Woodland: RC_Improved_FOV_Laser_Designato
 				class LaserSensorComponent: SensorTemplateLaser
 				{
 					animDirection="mainTurret";
+					minRange=10;
+					maxRange=4000;
+					angleRangeHorizontal=360;
+					angleRangeVertical=180;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
@@ -276,14 +282,6 @@ class RC_Improved_FOV_Laser_Designator_Woodland: RC_Improved_FOV_Laser_Designato
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-				};
-				class ManSensorComponent: SensorTemplateMan
-				{
-					maxTrackableSpeed=15;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
-					animDirection="mainGun";
-					aimDown=-0.5;
 				};
 			};
 		};
@@ -306,8 +304,6 @@ class RC_Improved_FOV_Laser_Designator_Woodland: RC_Improved_FOV_Laser_Designato
 				};
 			};
 
-			showAllTargets="2 + 4";
-
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -318,7 +314,7 @@ class RC_Improved_FOV_Laser_Designator_Woodland: RC_Improved_FOV_Laser_Designato
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={16000,8000,4000,32000};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -356,6 +352,10 @@ class RC_Improved_FOV_Laser_Designator_Ti_Woodland: RC_Improved_FOV_Laser_Design
 				class LaserSensorComponent: SensorTemplateLaser
 				{
 					animDirection="mainTurret";
+					minRange=10;
+					maxRange=4000;
+					angleRangeHorizontal=360;
+					angleRangeVertical=180;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
@@ -376,9 +376,11 @@ class RC_Improved_FOV_Laser_Designator_Ti_Woodland: RC_Improved_FOV_Laser_Design
 				};
 				class ManSensorComponent: SensorTemplateMan
 				{
+					minRange=10;
+					maxRange=1000;
 					maxTrackableSpeed=15;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
 					animDirection="mainGun";
 					aimDown=-0.5;
 				};
@@ -387,20 +389,20 @@ class RC_Improved_FOV_Laser_Designator_Ti_Woodland: RC_Improved_FOV_Laser_Design
 					class AirTarget
 					{
 						minRange=10;
-						maxRange=3000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=1;
+						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
 						minRange=10;
-						maxRange=3000;
+						maxRange=4000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
-					maxTrackableSpeed=35;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
 					animDirection="mainGun";
 					aimDown=-0.5;
 				};
@@ -412,6 +414,9 @@ class RC_Improved_FOV_Laser_Designator_Ti_Woodland: RC_Improved_FOV_Laser_Design
 	{
 		class MainTurret: MainTurret
 		{
+			
+			showAllTargets="2 + 4";
+
 			class ViewOptics: viewOptics
 			{
 				initFov=0.25;
