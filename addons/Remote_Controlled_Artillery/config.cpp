@@ -445,6 +445,8 @@ class CfgVehicles
 						maxRange=16000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=180;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -595,7 +597,6 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"4Rnd_120mm_LG_cannon_missiles",
 					"RC_16Rnd_155mm_Mo_HEAB",
 					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
@@ -760,6 +761,8 @@ class CfgVehicles
 						maxRange=16000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=180;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -1015,6 +1018,8 @@ class CfgVehicles
 						maxRange=32000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=180;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -1278,6 +1283,8 @@ class CfgVehicles
 						maxRange=32000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=180;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -2097,7 +2104,7 @@ class CfgVehicles
 		radartype=2;
 		receiveRemoteTargets=1;
 		reportRemoteTargets=1;
-		laserScanner=1;
+		//laserScanner=1;
 
 		class Components: Components
 		{
@@ -2105,6 +2112,7 @@ class CfgVehicles
 			{
 				class Components
 				{
+					/*
 					class LaserSensorComponent: SensorTemplateLaser
 					{
 						animDirection="mainTurret";
@@ -2113,6 +2121,7 @@ class CfgVehicles
 						angleRangeHorizontal=360;
 						angleRangeVertical=180;
 					};
+					*/
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
 						class AirTarget

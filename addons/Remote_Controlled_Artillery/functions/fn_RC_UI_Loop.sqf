@@ -345,6 +345,46 @@ RC_Artillery_UI = [] spawn {
 			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];		
 			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];		
 
+			/*
+			//Datalink Target Referencing Section, Author: Ascent
+			_uav = (getConnectedUAV player);
+			private _DatalinkTargets = getSensorTargets _uav;
+			_targetindex = _DatalinkTargets findif {(_x select 3) findif {_x isequalto "laser"} > -1};
+			_lasertarget = _DatalinkTargets select _targetindex;
+			_lasertargetPos = getpos (_lasertarget select 0);
+
+			_artyPos = getPosASL _uav;
+			_lasertargetDistance = round(_lasertargetPos distance _artyPos);
+			_lasertargetDifference = ((AGLToASL _lasertargetPos) select 2) - (_artyPos select 2);
+
+
+			_cursorTarget = cursorTarget;
+			_cursorTargetPos = getpos _cursorTarget;
+			_cursorTargetDistance = round(_cursorTargetPos distance _artyPos);
+			_cursorTargetDifference = ((AGLToASL _cursorTargetPos) select 2) - (_artyPos select 2);
+
+
+			//_DatalinkTargets
+			//_targetindex
+			//_lasertargetDistance
+			//_lasertargetDifference
+			//_cursorTargetPos
+			//_cursorTargetDistance
+			//_cursorTargetDifference
+
+			
+			//only direct laser of the vehicle
+			//_laserTarget = laserTarget _uav;
+			//_laserTargetPos = getpos _laserTarget;
+			//_laserTargetPos
+			
+
+			_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);
+			_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
+			if (_targetAzimuth < 0) then { _targetAzimuth = _targetAzimuth + 360; };
+			_targetAzimuth = (17.7777778 * _targetAzimuth);
+			*/
+
 		} else {
 			// UI Shouldn't be Shown so we cut it
 			"RC_Artillery" cutFadeOut 0;
