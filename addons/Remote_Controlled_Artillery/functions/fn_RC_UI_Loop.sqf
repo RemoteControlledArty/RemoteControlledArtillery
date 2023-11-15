@@ -348,14 +348,20 @@ RC_Artillery_UI = [] spawn {
 			/*
 			//Datalink Target Referencing Section, Author: Ascent
 			_uav = (getConnectedUAV player);
-			private _DatalinkTargets = getSensorTargets _uav;
-			_targetindex = _DatalinkTargets findif {(_x select 3) findif {_x isequalto "laser"} > -1};
-			_lasertarget = _DatalinkTargets select _targetindex;
-			_lasertargetPos = getpos (_lasertarget select 0);
-
 			_artyPos = getPosASL _uav;
-			_lasertargetDistance = round(_lasertargetPos distance _artyPos);
-			_lasertargetDifference = ((AGLToASL _lasertargetPos) select 2) - (_artyPos select 2);
+
+			_DatalinkTargets = getSensorTargets _uav;
+			_targetIndex = _DatalinkTargets findif {(_x select 3) findif {_x isequalto "laser"} > -1};
+			_laserTarget = _DatalinkTargets select _targetIndex;
+			_laserTargetPos = getpos (_laserTarget select 0);
+
+			_laserTargetDistance = round(_laserTargetPos distance _artyPos);
+			_laserTargetDifference = ((AGLToASL _laserTargetPos) select 2) - (_artyPos select 2);
+
+			_laserTargetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _laserTargetPos);
+			_laserTargetAzimuth = ((_laserTargetVector select 0) atan2 (_laserTargetVector select 1));
+			if (_laserTargetAzimuth < 0) then {_laserTargetAzimuth = _laserTargetAzimuth + 360;};
+			_laserTargetAzimuth = (17.7777778 * _laserTargetAzimuth);
 
 
 			_cursorTarget = cursorTarget;
@@ -363,26 +369,28 @@ RC_Artillery_UI = [] spawn {
 			_cursorTargetDistance = round(_cursorTargetPos distance _artyPos);
 			_cursorTargetDifference = ((AGLToASL _cursorTargetPos) select 2) - (_artyPos select 2);
 
+			_cursorTargetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _cursorTargetPos);
+			_cursorTargetAzimuth = ((_cursorTargetVector select 0) atan2 (_cursorTargetVector select 1));
+			if (_cursorTargetAzimuth < 0) then {_cursorTargetAzimuth = _cursorTargetAzimuth + 360;};
+			_cursorTargetAzimuth = (17.7777778 * _cursorTargetAzimuth);
+
 
 			//_DatalinkTargets
-			//_targetindex
-			//_lasertargetDistance
-			//_lasertargetDifference
+			//_targetIndex
+			//_laserTargetDistance
+			//_laserTargetDifference
+			//_laserTargetAzimuth
+
 			//_cursorTargetPos
 			//_cursorTargetDistance
 			//_cursorTargetDifference
+			//_cursorTargetAzimuth
 
-			
+
 			//only direct laser of the vehicle
 			//_laserTarget = laserTarget _uav;
 			//_laserTargetPos = getpos _laserTarget;
 			//_laserTargetPos
-			
-
-			_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);
-			_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
-			if (_targetAzimuth < 0) then { _targetAzimuth = _targetAzimuth + 360; };
-			_targetAzimuth = (17.7777778 * _targetAzimuth);
 			*/
 
 		} else {
