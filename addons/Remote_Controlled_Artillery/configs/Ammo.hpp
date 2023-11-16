@@ -341,7 +341,7 @@ class RC_R_230mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 	indirectHitRange=180;
 	//change to large explosion
 };
-class RC_R_230mm_HEAB_ATACMS: RC_R_230mm_HEAB
+class RC_R_604mm_ATACMS_HEAB: RC_R_230mm_HEAB
 {
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition_ATACMS";
 };
@@ -358,13 +358,13 @@ class RC_R_230mm_Cluster: R_230mm_Cluster
 };
 
 
-class RC_R_230mm_Cluster_ATACMS: R_230mm_Cluster
+class RC_R_604mm_ATACMS_DPICM: R_230mm_Cluster
 {
 	submunitionConeAngle=30;
 
 	submunitionConeType[]=
 	{
-		"poissondisccenter",
-		300
+		"poissondisccenter",	//test out non center spread
+		350
 	};
 };

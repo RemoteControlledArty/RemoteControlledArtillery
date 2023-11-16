@@ -3808,27 +3808,27 @@ class RC_12Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
 };
 
 
-class RC_1Rnd_230mm_rockets_ATACMS_HEAB: 12Rnd_230mm_rockets
+class RC_1Rnd_604mm_rockets_ATACMS_HEAB: 12Rnd_230mm_rockets
 {
-	displayName="ATACMS HEAB";
-	displayNameShort="ATACMS HEAB";
-	ammo="RC_R_230mm_HEAB_ATACMS";
+	displayName="ATACMS HE Airburst";
+	displayNameShort="ATACMS HE AB";
+	ammo="RC_R_604mm_ATACMS_HEAB";
 	count=1;
 };
-class RC_2Rnd_230mm_rockets_ATACMS_HEAB: RC_1Rnd_230mm_rockets_ATACMS_HEAB
+class RC_2Rnd_604mm_rockets_ATACMS_HEAB: RC_1Rnd_604mm_rockets_ATACMS_HEAB
 {
 	count=2;
 };
 
 
-class RC_1Rnd_230mm_rockets_ATACMS_DPICM: 12Rnd_230mm_rockets
+class RC_1Rnd_604mm_rockets_ATACMS_DPICM: 12Rnd_230mm_rockets
 {
 	displayName="ATACMS DPICM";
 	displayNameShort="ATACMS DPICM";
-	ammo="RC_R_230mm_Cluster_ATACMS";
+	ammo="RC_R_604mm_ATACMS_DPICM";
 	count=1;
 };
-class RC_2Rnd_230mm_rockets_ATACMS_DPICM: RC_1Rnd_230mm_rockets_ATACMS_DPICM
+class RC_2Rnd_604mm_rockets_ATACMS_DPICM: RC_1Rnd_604mm_rockets_ATACMS_DPICM
 {
 	count=2;
 };
