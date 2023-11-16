@@ -3808,6 +3808,32 @@ class RC_12Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
 };
 
 
+class RC_1Rnd_230mm_rockets_ATACMS_HEAB: 12Rnd_230mm_rockets
+{
+	displayName="ATACMS HEAB";
+	displayNameShort="ATACMS HEAB";
+	ammo="RC_R_230mm_HEAB_ATACMS";
+	count=1;
+};
+class RC_2Rnd_230mm_rockets_ATACMS_HEAB: RC_1Rnd_230mm_rockets_ATACMS_HEAB
+{
+	count=2;
+};
+
+
+class RC_1Rnd_230mm_rockets_ATACMS_DPICM: 12Rnd_230mm_rockets
+{
+	displayName="ATACMS DPICM";
+	displayNameShort="ATACMS DPICM";
+	ammo="RC_R_230mm_Cluster_ATACMS";
+	count=1;
+};
+class RC_2Rnd_230mm_rockets_ATACMS_DPICM: RC_1Rnd_230mm_rockets_ATACMS_DPICM
+{
+	count=2;
+};
+
+
 class magazine_ShipCannon_120mm_HE_shells_x32;
 
 

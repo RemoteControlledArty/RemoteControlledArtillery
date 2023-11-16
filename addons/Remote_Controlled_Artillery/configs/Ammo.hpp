@@ -264,8 +264,6 @@ class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 };
 class RC_Sh_155mm_AMOS_HEAB: Sh_155mm_AMOS
 {
-	laserLock=1;	//only for datalink panel laser referencing
-
 	triggerDistance=-1;
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,0,-26.8};		//high airburst to ignore cover very well
@@ -320,8 +318,6 @@ class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 };
 class RC_R_230mm_HEAB: SubmunitionBase
 {
-	laserLock=1;	//only for datalink panel laser referencing
-	
 	triggerDistance=-1;
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,0,-26.8};		//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
@@ -338,14 +334,37 @@ class RC_R_230mm_HEAB: SubmunitionBase
 };
 
 
+class RC_R_230mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
+{
+	hit=7200;
+	indirectHit=4800;
+	indirectHitRange=180;
+	//change to large explosion
+};
+class RC_R_230mm_HEAB_ATACMS: RC_R_230mm_HEAB
+{
+	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition_ATACMS";
+};
+
+
 class R_230mm_Cluster;
 class RC_R_230mm_Cluster: R_230mm_Cluster
 {
-	laserLock=1;	//only for datalink panel laser referencing
-
 	submunitionConeType[]=
 	{
 		"poissondisccenter",
 		50
+	};
+};
+
+
+class RC_R_230mm_Cluster_ATACMS: R_230mm_Cluster
+{
+	submunitionConeAngle=30;
+
+	submunitionConeType[]=
+	{
+		"poissondisccenter",
+		300
 	};
 };
