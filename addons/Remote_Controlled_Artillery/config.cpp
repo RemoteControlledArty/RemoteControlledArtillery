@@ -442,7 +442,7 @@ class CfgVehicles
 					{
 						animDirection="mainTurret";
 						minRange=10;
-						maxRange=16000;
+						maxRange=32000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=180;
 						objectDistanceLimitCoef=-1;
@@ -528,7 +528,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={16000,8000,4000,2000};
+								range[]={32000,16000,8000,4000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -758,7 +758,7 @@ class CfgVehicles
 					{
 						animDirection="mainTurret";
 						minRange=10;
-						maxRange=16000;
+						maxRange=32000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=180;
 						objectDistanceLimitCoef=-1;
@@ -838,7 +838,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={16000,8000,4000,2000};
+								range[]={32000,16000,8000,4000};
 								resource="RscCustomInfoSensors";
 							};
 						};

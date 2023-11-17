@@ -230,10 +230,13 @@ class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
 {
 	submunitionConeType[]=
 	{
-		"poissondisccenter",
-		12
+		"custom",{{-5,0},{-3,0},{-1,0},{1,0},{3,0},{5,0} , {0,-5},{0,-3},{0,-1},{0,1},{0,3},{0,5}}
+		//"poissondisccenter",
+		//12
 	};
 };
+
+//submunitionConeType[]={"custom",{{-5,0},{-3,0},{-1,0},{1,0},{3,0},{5,0} , {0,-5},{0,-3},{0,-1},{0,1},{0,3},{0,5}}};
 
 
 class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
@@ -306,6 +309,153 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 		35
 	};
 };
+
+//ATLG
+/*
+	class Sh_82mm_AMOS_guided: SubmunitionBase
+	{
+		submunitionAmmo="M_Mo_82mm_AT";
+		submunitionCount=1;
+		submunitionConeAngle=0;
+		laserLock=0;
+		autoSeekTarget=1;
+		cost=200;
+		muzzleEffect="";
+		triggerDistance=300;
+		airFriction=0;
+		hit=165;
+		class CamShakeFire
+		{
+			power=3.0092199;
+			duration=1.8;
+			frequency=20;
+			distance=72.4431;
+		};
+		class CamShakePlayerFire
+		{
+			power=0.0099999998;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
+
+	class Sh_82mm_AMOS_LG: Sh_82mm_AMOS_guided
+	{
+		submunitionAmmo="M_Mo_82mm_AT_LG";
+		cost=500;
+		laserLock=1;
+		irLock=0;
+		muzzleEffect="";
+	};
+
+	class M_Mo_120mm_AT: M_Mo_82mm_AT
+	{
+		hit=800;
+		indirectHit=50;
+		indirectHitRange=3;
+		EffectFly="ArtilleryTrails";
+		cameraViewAvailable=1;
+	};
+	class M_Mo_120mm_AT_LG: M_Mo_120mm_AT
+	{
+		weaponLockSystem=4;
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						class AirTarget
+						{
+							minRange=800;
+							maxRange=800;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=800;
+							maxRange=800;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						angleRangeHorizontal=40;
+						angleRangeVertical=40;
+					};
+				};
+			};
+		};
+	};
+
+	class M_Mo_155mm_AT: M_Mo_120mm_AT
+	{
+		hit=1200;
+		indirectHit=200;
+		indirectHitRange=4;
+	};
+	class M_Mo_155mm_AT_LG: M_Mo_120mm_AT_LG
+	{
+		hit=1200;
+		indirectHit=200;
+		indirectHitRange=4;
+	};
+
+
+	class Sh_82mm_AMOS_guided: SubmunitionBase
+	{
+		submunitionAmmo="M_Mo_82mm_AT";
+		submunitionCount=1;
+		submunitionConeAngle=0;
+		laserLock=0;
+		autoSeekTarget=1;
+		cost=200;
+		muzzleEffect="";
+		triggerDistance=300;
+		airFriction=0;
+		hit=165;
+		class CamShakeFire
+		{
+			power=3.0092199;
+			duration=1.8;
+			frequency=20;
+			distance=72.4431;
+		};
+		class CamShakePlayerFire
+		{
+			power=0.0099999998;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
+	class Sh_82mm_AMOS_LG: Sh_82mm_AMOS_guided
+	{
+		submunitionAmmo="M_Mo_82mm_AT_LG";
+		cost=500;
+		laserLock=1;
+		irLock=0;
+		muzzleEffect="";
+	};
+
+
+	class Sh_155mm_AMOS_guided: Sh_82mm_AMOS_guided
+	{
+		submunitionAmmo="M_Mo_155mm_AT";
+		muzzleEffect="";
+		triggerDistance=500;
+		hit=300;
+	};
+	class Sh_155mm_AMOS_LG: Sh_82mm_AMOS_LG
+	{
+		submunitionAmmo="M_Mo_155mm_AT_LG";
+		muzzleEffect="";
+		triggerDistance=500;
+		hit=300;
+	};
+*/
 
 
 //230mm
