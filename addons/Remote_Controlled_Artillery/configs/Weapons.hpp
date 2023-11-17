@@ -608,8 +608,8 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT
 		"RC_11Rnd_230mm_rockets_ATS",
 		"RC_12Rnd_230mm_rockets_ATS",
 
-		"RC_1Rnd_230mm_rockets_ATACMS_HEAB",
-		"RC_2Rnd_230mm_rockets_ATACMS_HEAB",
+		"RC_1Rnd_604mm_rockets_ATACMS_HEAB",
+		"RC_2Rnd_604mm_rockets_ATACMS_HEAB",
 
 		"RC_1Rnd_604mm_rockets_ATACMS_DPICM",
 		"RC_2Rnd_604mm_rockets_ATACMS_DPICM"

@@ -339,7 +339,16 @@ class RC_R_230mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 	hit=7200;
 	indirectHit=4800;
 	indirectHitRange=180;
-	//change to large explosion
+
+	craterEffects="HeavyBombCrater";
+	explosionEffects="HeavyBombExplosion";
+
+	soundSetExplosion[]=
+	{
+		"BombsHeavy_Exp_SoundSet",
+		"BombsHeavy_Tail_SoundSet",
+		"Explosion_Debris_SoundSet"
+	};
 };
 class RC_R_604mm_ATACMS_HEAB: RC_R_230mm_HEAB
 {
@@ -364,7 +373,7 @@ class RC_R_604mm_ATACMS_DPICM: R_230mm_Cluster
 
 	submunitionConeType[]=
 	{
-		"poissondisccenter",	//test out non center spread
+		"poissondisccenter",
 		350
 	};
 };
