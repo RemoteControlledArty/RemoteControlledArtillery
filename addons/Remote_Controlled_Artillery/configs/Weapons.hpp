@@ -631,6 +631,7 @@ class RC_155mm_AMOS: RC_155mm_AMOS_base
 {
 	reloadTime=6;
 	magazineReloadTime=6;
+	canLock=2;	//test out with =2 "Determines if the weapon can lock onto targets allowed by the ammunition it uses."
 
 	class Single1: Single1
 	{
@@ -640,18 +641,22 @@ class RC_155mm_AMOS: RC_155mm_AMOS_base
 	class Single2: Single2
 	{
 		reloadTime=6;
+		artilleryDispersion=2.5;
 	};
 	class Single3: Single3
 	{
 		reloadTime=6;
+		artilleryDispersion=2.5;
 	};
 	class Single4: Single4
 	{
 		reloadTime=6;
+		artilleryDispersion=2.5;
 	};
 	class Single5: Single5
 	{
 		reloadTime=6;
+		artilleryDispersion=2.5;
 	};
 
 	magazines[]=
@@ -778,6 +783,8 @@ class RC_155mm_AMOS: RC_155mm_AMOS_base
 		"RC_38Rnd_155mm_Mo_Cluster",
 		"RC_39Rnd_155mm_Mo_Cluster",
 		"RC_40Rnd_155mm_Mo_Cluster",
+
+		"RC_6Rnd_155mm_Mo_LG_HS",
 
 		"RC_1Rnd_155mm_Mo_LG",
 		"RC_2Rnd_155mm_Mo_LG",

@@ -34,6 +34,9 @@ TO DO - FEATURES:
 
 -155mm dispersion testing
 
+-update removemagazine list
+-test weapon canLock=2;
+
 
 DONE - FEATURES:
 

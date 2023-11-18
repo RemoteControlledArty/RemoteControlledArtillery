@@ -344,6 +344,7 @@ class CfgEditorSubcategories
 class SensorTemplateDataLink;
 class SensorTemplateLaser;
 class SensorTemplateIR;
+class SensorTemplateVisual;
 class SensorTemplateMan;
 class DefaultVehicleSystemsDisplayManagerRight
 {
@@ -597,6 +598,8 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
+					"RC_6Rnd_155mm_Mo_LG_HS",	//testing only
+
 					"RC_16Rnd_155mm_Mo_HEAB",
 					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
@@ -2952,6 +2955,18 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 
+		radarTargetSize=0.05;
+		visualTargetSize=0.05;
+
+		maxSpeed=200;
+		liftForceCoef=2;
+		cyclicAsideForceCoef=4;
+		cyclicForwardForceCoef=2.4;
+		backRotorForceCoef=10;
+		fuelCapacity=200;
+		mainRotorSpeed=-14;
+		backRotorSpeed=14;
+
 		radartype=2;
 		receiveRemoteTargets=1;
 		reportRemoteTargets=1;
@@ -3015,6 +3030,29 @@ class CfgVehicles
 							viewDistanceLimitCoef=1;
 						};
 						maxTrackableSpeed=600;
+						angleRangeHorizontal=60;
+						angleRangeVertical=40;
+						animDirection="mainGun";
+						aimDown=-0.5;
+					};
+					class VisualSensorComponent: SensorTemplateVisual
+					{
+						class AirTarget
+						{
+							minRange=2000;
+							maxRange=2000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=2000;
+							maxRange=2000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						maxTrackableSpeed=600;
+						nightRangeCoef=0.80000001;
 						angleRangeHorizontal=60;
 						angleRangeVertical=40;
 						animDirection="mainGun";

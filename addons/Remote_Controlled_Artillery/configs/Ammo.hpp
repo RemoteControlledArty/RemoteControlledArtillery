@@ -311,7 +311,54 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 };
 
 //ATLG
+
 /*
+	class M_Mo_82mm_AT: MissileBase
+	{
+		model="\A3\weapons_f\ammo\shell";
+		hit=160;
+		indirectHit=50;
+		indirectHitRange=8;
+		autoSeekTarget=1;
+		airLock=0;
+		maneuvrability=6;
+		simulationStep=0.0020000001;
+		fuseDistance=0;
+		airFriction=0.0099999998;
+		sideAirFriction=0.029999999;
+		weaponLockSystem=2;
+		missileLockCone=40;
+		missileKeepLockedCone=40;
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class IRSensorComponent: SensorTemplateIR
+					{
+						class AirTarget
+						{
+							minRange=500;
+							maxRange=800;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=1;
+						};
+						class GroundTarget
+						{
+							minRange=500;
+							maxRange=800;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+						angleRangeHorizontal=40;
+						angleRangeVertical=40;
+					};
+				};
+			};
+		};
+	};
+
 	class Sh_82mm_AMOS_guided: SubmunitionBase
 	{
 		submunitionAmmo="M_Mo_82mm_AT";
@@ -456,6 +503,167 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 		hit=300;
 	};
 */
+
+/*
+	class ammo_Penetrator_Vorona: ammo_Penetrator_Base
+	{
+		caliber=60;
+		warheadName="TandemHEAT";
+		hit=720;
+		typicalSpeed=2000;
+	};
+*/
+class MissileBase;
+class MissileBase_base: MissileBase
+{
+	class Components;
+};
+class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
+{
+	model="\A3\weapons_f\ammo\shell";
+	autoSeekTarget=1;
+
+	laserLock=1; //from main shell
+	irLock=1;
+
+	receiveRemoteTargets=1;
+
+	trackLead=1;
+	airLock=0;
+	maneuvrability=12;	//6
+	simulationStep=0.0020000001;
+	fuseDistance=0;
+	airFriction=0.0099999998;
+	sideAirFriction=0.029999999;
+	missileLockCone=40;
+	missileKeepLockedCone=40;
+
+	hit=1200;
+	indirectHit=1200;
+	indirectHitRange=4;
+	EffectFly="ArtilleryTrails";
+	cameraViewAvailable=1;
+
+	weaponLockSystem="1+2+4";	//visual, ir, laser
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					class AirTarget
+					{
+						minRange=32000;
+						maxRange=32000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=32000;
+						maxRange=32000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+	};
+};
+
+class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
+{
+	submunitionAmmo="RC_M_Mo_155mm_AT_MultiGuided";
+	submunitionCount=1;		//2
+	submunitionConeAngle=0;
+	triggerDistance=500;
+	laserLock=1;
+	irLock=1;
+	autoSeekTarget=1;
+
+	muzzleEffect="";
+	hit=300;
+	cost=500;
+	airFriction=0;
+
+	class CamShakeFire
+	{
+		power=3.0092199;
+		duration=1.8;
+		frequency=20;
+		distance=72.4431;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
 
 
 //230mm

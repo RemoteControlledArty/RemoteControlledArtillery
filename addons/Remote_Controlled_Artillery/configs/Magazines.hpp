@@ -6,6 +6,8 @@ class RC_1Rnd_ATGM: Vorona_HEAT
 
 	submunitionAmmo="RC_Penetrator_ATGM";
 	maxSpeed=280;
+
+	maxControlRange=4000;
 };
 
 
@@ -19,6 +21,8 @@ class RC_1Rnd_HEGM: Vorona_HE
 	indirectHit=90;
 	indirectHitRange=16;
 	maxSpeed=280;
+
+	maxControlRange=4000;
 };
 
 
@@ -2543,6 +2547,15 @@ class RC_40Rnd_155mm_Mo_smoke: RC_1Rnd_155mm_Mo_smoke
 
 
 class 2Rnd_155mm_Mo_LG;
+
+
+class RC_6Rnd_155mm_Mo_LG_HS: 2Rnd_155mm_Mo_LG
+{
+	ammo="RC_Sh_155mm_AMOS_AT_MultiGuided";
+	displayName="Multi Guided (L/H/V)";
+	displayNameShort="Multi Guided (L/H/V)";
+	count=10;
+};
 
 
 class RC_1Rnd_155mm_Mo_LG: 2Rnd_155mm_Mo_LG
