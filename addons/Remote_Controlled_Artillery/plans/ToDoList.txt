@@ -29,10 +29,10 @@ TO DO - FEATURES:
 -unifying LG&AT -> Laser Guided / AT seeking  "LG+ATS", per submunition  weaponLockSystem = "1+2+4"; (1 for visual),  ammo  laserLock=1; irLock=1;
 
 -more but finer 155mm charges, to have more angle variety
-
 -edit turret of hand held designator
-
 -renaming assets for clarity
+
+-155mm dispersion testing
 
 
 DONE - FEATURES:

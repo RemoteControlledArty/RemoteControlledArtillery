@@ -635,6 +635,7 @@ class RC_155mm_AMOS: RC_155mm_AMOS_base
 	class Single1: Single1
 	{
 		reloadTime=6;
+		artilleryDispersion=2.5;	//default 3.2, mortar 1.9;
 	};
 	class Single2: Single2
 	{

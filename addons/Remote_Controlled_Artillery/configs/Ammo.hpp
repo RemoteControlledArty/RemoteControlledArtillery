@@ -306,7 +306,7 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 	submunitionConeType[]=
 	{
 		"poissondisc",	//even spread
-		35
+		50
 	};
 };
 
@@ -512,7 +512,7 @@ class RC_R_230mm_Cluster: R_230mm_Cluster
 	submunitionConeType[]=
 	{
 		"poissondisccenter",
-		50
+		80
 	};
 };
 
