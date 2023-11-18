@@ -451,6 +451,7 @@ class CfgVehicles
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
+						typeRecognitionDistance=32000;
 						class AirTarget
 						{
 							minRange=32000;

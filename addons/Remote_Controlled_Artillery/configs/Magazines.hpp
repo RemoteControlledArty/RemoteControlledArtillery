@@ -2552,8 +2552,8 @@ class 2Rnd_155mm_Mo_LG;
 class RC_6Rnd_155mm_Mo_LG_HS: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_AT_MultiGuided";
-	displayName="Multi Guided (L/H/V)";
-	displayNameShort="Multi Guided (L/H/V)";
+	displayName="Laser/IR/Vis Guided";
+	displayNameShort="L/IR/V Guided";
 	count=10;
 };
 
