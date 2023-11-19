@@ -528,7 +528,7 @@ class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
 {
 	model="\A3\weapons_f\ammo\shell";
 	autoSeekTarget=1;
-	//proximityExplosionDistance=10; 	//might prevent overfly miss
+	proximityExplosionDistance=1; 	//might prevent overshot miss
 
 	//lockSeekRadius=32000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
 	trackLead=1;
