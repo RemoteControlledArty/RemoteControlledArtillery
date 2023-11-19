@@ -513,6 +513,12 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 		typicalSpeed=2000;
 	};
 */
+
+/*class default
+	directionalExplosion=0;
+	explosionAngle=60;
+*/
+
 class MissileBase;
 class MissileBase_base: MissileBase
 {
@@ -522,14 +528,18 @@ class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
 {
 	model="\A3\weapons_f\ammo\shell";
 	autoSeekTarget=1;
+	//proximityExplosionDistance=10; 	//might prevent overfly miss
 
+	//lockSeekRadius=32000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
+	trackLead=1;
+	airLock=0;
 	laserLock=1; //from main shell
 	irLock=1;
+	canLock=2; //always locks
+	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
 
 	receiveRemoteTargets=1;
 
-	trackLead=1;
-	airLock=0;
 	maneuvrability=12;	//6
 	simulationStep=0.0020000001;
 	fuseDistance=0;
@@ -540,7 +550,7 @@ class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
 
 	hit=1200;
 	indirectHit=1200;
-	indirectHitRange=4;
+	indirectHitRange=5;
 	EffectFly="ArtilleryTrails";
 	cameraViewAvailable=1;
 

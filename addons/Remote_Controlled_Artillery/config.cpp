@@ -2961,8 +2961,8 @@ class CfgVehicles
 
 		maxSpeed=200;
 		liftForceCoef=2;
-		cyclicAsideForceCoef=4;
-		cyclicForwardForceCoef=2.4;
+		cyclicAsideForceCoef=2;
+		cyclicForwardForceCoef=1.2;
 		backRotorForceCoef=10;
 		fuelCapacity=200;
 		mainRotorSpeed=-14;
@@ -3043,7 +3043,7 @@ class CfgVehicles
 							minRange=2000;
 							maxRange=2000;
 							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=1;
+							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
