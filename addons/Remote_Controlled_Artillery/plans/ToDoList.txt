@@ -30,6 +30,7 @@ TO DO - FEATURES:
 
 -more but finer 155mm charges, to have more angle variety
 -edit turret of hand held designator
+-add datalink designator
 -renaming assets for clarity
 
 -155mm dispersion testing

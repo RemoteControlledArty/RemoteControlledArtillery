@@ -43,6 +43,99 @@ class Improved_FOV_Laserdesignator_Ti_Woodland: Improved_FOV_Laserdesignator_Ti_
 	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";
 };
 
+//doesnt work yet
+class Components;
+class Datalink_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
+{
+	displayName="Datalink Laser Designator (whTi)";
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					animDirection="mainTurret";
+					minRange=10;
+					maxRange=4000;
+					angleRangeHorizontal=360;
+					angleRangeVertical=180;
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					class AirTarget
+					{
+						minRange=32000;
+						maxRange=32000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=32000;
+						maxRange=32000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=10;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=10;
+						maxRange=4000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
+					animDirection="mainGun";
+					aimDown=-0.5;
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=2000;
+						maxRange=2000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=2000;
+						maxRange=2000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
+					animDirection="mainGun";
+					aimDown=-0.5;
+				};
+			};
+		};
+	};
+};
+class Datalink_Laserdesignator_Ti_Woodland: Improved_FOV_Laserdesignator_Ti_Arid
+{
+	model="\A3\Weapons_F\Binocular\laserdesignator_01_khk_f.p3d";
+	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";
+};
+
 
 class launch_Vorona_base_F;
 class RC_ATGM: launch_Vorona_base_F
