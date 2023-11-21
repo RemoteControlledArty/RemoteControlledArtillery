@@ -3718,7 +3718,7 @@ class RC_1Rnd_230mm_rockets_LG: 12Rnd_230mm_rockets
 	displayName="Laser Guided";
 	displayNameShort="LG";
 	//displayNameMFDFormat="LG";
-	ammo="R_230mm_LG";
+	ammo="RC_R_230mm_LG";
 	count=1;
 };
 class RC_2Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG

@@ -28,7 +28,7 @@ TO DO - FEATURES:
 -fix 155mm and 227mm AT and LG accuracy, maybe per maneuvrability/ sideairfriction/ trackLead/trackOversteer, on increase indirecthit
 -unifying LG&AT -> Laser Guided / AT seeking  "LG+ATS", per submunition  weaponLockSystem = "1+2+4"; (1 for visual),  ammo  laserLock=1; irLock=1;
 
--more but finer 155mm charges, to have more angle variety
+-more but finer 155mm charges, to have more angle variety, adding ms into charge name!
 -edit turret of hand held designator
 -add datalink designator
 -renaming assets for clarity

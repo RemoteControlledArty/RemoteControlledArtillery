@@ -631,7 +631,7 @@ class RC_mortar_82mm_ER: RC_mortar_82mm_ER_base
 class rockets_230mm_GAT;
 class RC_rockets_230mm_GAT: rockets_230mm_GAT
 {
-	magazineReloadTime=20;
+	magazineReloadTime=1;
 
 	magazines[]=
 	{

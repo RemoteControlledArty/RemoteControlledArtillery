@@ -745,3 +745,19 @@ class RC_R_604mm_ATACMS_DPICM: R_230mm_Cluster
 		350
 	};
 };
+
+
+class R_230mm_LG;
+class RC_R_230mm_LG: R_230mm_LG
+{
+	submunitionAmmo="M_Mo_230mm_AT_LG";
+	muzzleEffect="";
+	triggerDistance=500;
+
+	laserLock=1;
+	irLock=0;
+
+	submunitionCount=1;
+	submunitionConeAngle=0;
+	autoSeekTarget=1;
+};
