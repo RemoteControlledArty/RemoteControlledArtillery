@@ -269,7 +269,7 @@ class RC_Sh_155mm_AMOS_HEAB: Sh_155mm_AMOS
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,0,-26.8};		//high airburst to ignore cover very well
+	submunitionInitialOffset[]={0,0,-20};		//20m high airburst to ignore cover very well
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 	indirectHit=0;
@@ -688,7 +688,7 @@ class RC_R_230mm_HEAB: SubmunitionBase
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,0,-26.8};		//30m indirecthitrange with 27.8m high airburst = 27.8m area covered, lower airburst would cover slightly larger area, but ignore cover less, esp in towns
+	submunitionInitialOffset[]={0,0,-20};		//20m high airburst to ignore cover very well
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 

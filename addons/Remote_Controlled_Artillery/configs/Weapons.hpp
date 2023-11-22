@@ -745,42 +745,42 @@ class RC_155mm_AMOS: RC_155mm_AMOS_base
 	class Single1: Single1
 	{
 		displayName="CH0"
-		artilleryCharge=0.095
+		artilleryCharge=0.1
 		reloadTime=6;
 		artilleryDispersion=2.5;	//default 3.2, mortar 1.9;
 	};
 	class Single2: Single1
 	{
 		displayName="CH1"
-		artilleryCharge=0.19;
+		artilleryCharge=0.2;
 		reloadTime=6;
 		artilleryDispersion=2.5;	//default 3.2, mortar 1.9;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2"
-		artilleryCharge=0.245;
+		artilleryCharge=0.3;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3"
-		artilleryCharge=0.30000001;
+		artilleryCharge=0.4;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4"
-		artilleryCharge=0.39;
+		artilleryCharge=0.5;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single6: Single1
 	{
 		displayName="CH5"
-		artilleryCharge=0.47999999;
+		artilleryCharge=0.6;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
@@ -788,6 +788,27 @@ class RC_155mm_AMOS: RC_155mm_AMOS_base
 	{
 		displayName="CH6"
 		artilleryCharge=0.7;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single8: Single1
+	{
+		displayName="CH7"
+		artilleryCharge=0.8;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single9: Single1
+	{
+		displayName="CH8"
+		artilleryCharge=0.9;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single10: Single1
+	{
+		displayName="CH9"
+		artilleryCharge=1;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};

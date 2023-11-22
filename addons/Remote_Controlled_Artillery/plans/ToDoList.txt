@@ -13,6 +13,8 @@ TO DO - BUGFIXES:
 
 -Motor off during 0 speed cfg value
 
+-low angle ETA is broke, and changes with turret EL
+
 
 DONE - BUGFIXES:
 
@@ -43,11 +45,12 @@ TO DO - FEATURES:
 
 -assault pack for AR-3
 
--UIC Unmanned Infantery Carrier
+-RC Infantry Carrier
 -Rooikat with automated driver and commander, gunner has highest commanding
 
 -more but finer 155mm charges, to have more angle variety, adding ms into charge name!
 -32km & 64km variants
+-change all magazines ms
 
 -add new assets to cfg patches list
 
