@@ -30,7 +30,7 @@ RC_Artillery_UI = [] spawn {
 		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
 
 		// Special Case for the MRL Because it's Dogshit
-		if !(_uavClass isKindOf "RC_MRL_base") then {
+		if (!(_uavClass isKindOf "RC_MRL_base") && !(_uavClass isKindOf "RC_Infantry_Carrier_base")) then {
 			if (((speed _uav <= 0.25) and (speed _uav >= -0.25)) and (_uavClass isKindof "Tank" || _uavClass isKindof "Car")) then {_uav engineOn false};
 		};
 

@@ -377,9 +377,7 @@ class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\configs\baseClasses.hpp"
 	
-	#include "\Remote_Controlled_Artillery\configs\B_ImprovedDesignators.hpp"
-	#include "\Remote_Controlled_Artillery\configs\O_ImprovedDesignators.hpp"
-	#include "\Remote_Controlled_Artillery\configs\I_ImprovedDesignators.hpp"
+	#include "\Remote_Controlled_Artillery\configs\ImprovedDesignators.hpp"
 	#include "\Remote_Controlled_Artillery\configs\staticAA.hpp"
 	#include "\Remote_Controlled_Artillery\configs\staticAT.hpp"
 	#include "\Remote_Controlled_Artillery\configs\staticATGM.hpp"
@@ -2626,7 +2624,7 @@ class CfgVehicles
 	};
 	class RC_Mortar: RC_Mortar_NA
 	{
-		displayName="RC Mortar";
+		displayName="RC Mortar 4km";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Mortar_subcat";
 
@@ -2723,11 +2721,11 @@ class CfgVehicles
 	};
 	class RC_Mortar_Bag_NA: RC_Mortar_Bag_NA_base
 	{
-		displayName="RC Mortar Bag (non adjustable)";
+		displayName="RC Mortar (non adjustable)";
 		scope=2;
 		scopeCurator=2;
 
-		mass=560;
+		mass=540;
 
 		model="\A3\Weapons_F\Ammoboxes\Bags\Backpack_Tortila.p3d";
 		picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_cbr.paa";
@@ -2738,18 +2736,18 @@ class CfgVehicles
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (non adjustable)";
+			displayName="RC Mortar";
 			assembleTo="RC_Mortar_NA";
 			base="";
 		};
 	};
 	class RC_Mortar_Bag_NA_O: RC_Mortar_Bag_NA
 	{
-		displayName="RC Mortar (Opf) (non adjustable)";
+		displayName="RC Mortar [Opf] (non adjustable)";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Opf)";
+			displayName="RC Mortar [Opf]";
 			assembleTo="RC_Mortar_NA_O";
 		};
 	};
@@ -2768,31 +2766,31 @@ class CfgVehicles
 	};	
 	class RC_Mortar_Bag_NA_I: RC_Mortar_Bag_NA
 	{
-		displayName="RC Mortar (Ind) (non adjustable)";
+		displayName="RC Mortar [Ind] (non adjustable)";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Ind)";
+			displayName="RC Mortar [Ind]";
 			assembleTo="RC_Mortar_NA_I";
 		};
 	};
 	class RC_Mortar_Bag: RC_Mortar_Bag_NA
 	{
-		displayName="RC Mortar Bag";
+		displayName="RC Mortar 4km";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar";
+			displayName="RC Mortar 4km";
 			assembleTo="RC_Mortar";
 		};
 	};
 	class RC_Mortar_Bag_O: RC_Mortar_Bag
 	{
-		displayName="RC Mortar (Opf)";
+		displayName="RC Mortar 4km [Opf]";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Opf)";
+			displayName="RC Mortar 4km [Opf]";
 			assembleTo="RC_Mortar_O";
 		};
 	};
@@ -2811,11 +2809,11 @@ class CfgVehicles
 	};	
 	class RC_Mortar_Bag_I: RC_Mortar_Bag
 	{
-		displayName="RC Mortar (Ind)";
+		displayName="RC Mortar 4km [Ind]";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Ind)";
+			displayName="RC Mortar 4km [Ind]";
 			assembleTo="RC_Mortar_I";
 		};
 	};
@@ -2824,7 +2822,7 @@ class CfgVehicles
 
 	class RC_Mortar_ER: RC_Mortar
 	{
-		displayName="RC Mortar (extended range)";
+		displayName="RC Mortar 8km";
 		
 		class assembleInfo: assembleInfo
 		{
@@ -2946,20 +2944,20 @@ class CfgVehicles
 
 	class RC_Mortar_ER_Bag: RC_Mortar_Bag
 	{
-		displayName="RC Mortar Bag (extended range)";
+		displayName="RC Mortar 8km";
 
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (extended range)";
+			displayName="RC Mortar 8km";
 			assembleTo="RC_Mortar_ER";
 		};
 	};
 	class RC_Mortar_ER_Bag_O: RC_Mortar_ER_Bag
 	{
-		displayName="RC Mortar (Opf) (extended range)";
+		displayName="RC Mortar 8km [Opf]";
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Opf) (extended range)";
+			displayName="RC Mortar 8km [Opf]";
 			assembleTo="RC_Mortar_ER_O";
 		};
 	};
@@ -2978,10 +2976,10 @@ class CfgVehicles
 	};	
 	class RC_Mortar_ER_Bag_I: RC_Mortar_ER_Bag
 	{
-		displayName="RC Mortar (Ind) (extended range)";
+		displayName="RC Mortar 8km [Ind]";
 		class assembleInfo: assembleInfo
 		{
-			displayName="RC Mortar (Ind) (extended range)";
+			displayName="RC Mortar 8km [Ind]";
 			assembleTo="RC_Mortar_ER_I";
 		};
 	};
@@ -3128,5 +3126,72 @@ class CfgVehicles
 				};
 			};
 		};
+	};
+
+	class B_APC_Wheeled_01_cannon_F;
+	class RC_Infantry_Carrier_base: B_APC_Wheeled_01_cannon_F
+	{
+		class Turrets;
+		class MainTurret;
+		class CommanderOptics;
+	};
+	class RC_Infantry_Carrier: RC_Infantry_Carrier_base
+	{
+		class EventHandlers
+		{
+			init="if (local (_this select 0)) then {{(_this select 0) animate [_x, 1]} forEach ['HideHull','HideTurret']}";
+		};
+
+		displayName="RC Infantery Carrier";
+		faction="RemoteControlled_B";
+		editorSubcategory="RC_Howitzer_subcat";
+		author="Ascent";
+		scope=2;
+		scopeCurator=2;
+		side=1;
+		forceInGarage=1;
+		
+		vehicleClass="Autonomous";
+		isUav=1;
+		textPlural="UGVs";
+		textSingular="UGV";
+		uavCameraGunnerPos="PiP0_pos";
+		uavCameraGunnerDir="PiP0_dir";
+		crew="B_UAV_AI";
+		driverForceOptics=1;
+		
+		ejectDeadGunner=0;
+		ejectDeadDriver=0;
+		ejectDeadCommander=0;
+
+		crewCrashProtection=0.01;
+		armorStructural=100;
+		hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
+
+		radartype=2;
+		receiveRemoteTargets=1;
+		laserScanner=1;
+
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				gunnerForceOptics=1;
+				forceHideGunner=1;
+				hasGunner=-1;
+				
+				class Turrets: Turrets
+				{
+					class CommanderOptics : CommanderOptics
+					{
+						hasGunner=-1;
+						hasCommander=-1;
+						forceHideGunner=1;
+					};
+				};
+			};
+		};
+
+		//add hitpoints and datalink
 	};
 };

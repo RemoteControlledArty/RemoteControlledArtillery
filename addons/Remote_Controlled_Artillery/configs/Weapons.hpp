@@ -726,28 +726,68 @@ class RC_155mm_AMOS: RC_155mm_AMOS_base
 	magazineReloadTime=6;
 	canLock=2;	//test out with =2 "Determines if the weapon can lock onto targets allowed by the ammunition it uses."
 
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5",
+		"Single6",
+		"Single7",
+		"Burst1",
+		"Burst2",
+		"Burst3",
+		"Burst4",
+		"Burst5"
+	};
+
 	class Single1: Single1
 	{
+		displayName="CH0"
+		artilleryCharge=0.095
 		reloadTime=6;
 		artilleryDispersion=2.5;	//default 3.2, mortar 1.9;
 	};
-	class Single2: Single2
+	class Single2: Single1
 	{
+		displayName="CH1"
+		artilleryCharge=0.19;
+		reloadTime=6;
+		artilleryDispersion=2.5;	//default 3.2, mortar 1.9;
+	};
+	class Single3: Single1
+	{
+		displayName="CH2"
+		artilleryCharge=0.245;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
-	class Single3: Single3
+	class Single4: Single1
 	{
+		displayName="CH3"
+		artilleryCharge=0.30000001;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
-	class Single4: Single4
+	class Single5: Single1
 	{
+		displayName="CH4"
+		artilleryCharge=0.39;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
-	class Single5: Single5
+	class Single6: Single1
 	{
+		displayName="CH5"
+		artilleryCharge=0.47999999;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single7: Single1
+	{
+		displayName="CH6"
+		artilleryCharge=0.7;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};

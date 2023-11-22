@@ -1,7 +1,7 @@
 
 // Improved Designator
 class B_Static_Designator_01_F;
-class RC_Improved_FOV_Laser_Designator_Arid_base: B_Static_Designator_01_F
+class RC_Improved_FOV_Designator_Arid_base: B_Static_Designator_01_F
 {
 	class Turrets;
 	class MainTurret;
@@ -14,7 +14,7 @@ class RC_Improved_FOV_Laser_Designator_Arid_base: B_Static_Designator_01_F
 
 // Designator Bag
 class B_Static_Designator_01_weapon_F;
-class RC_Improved_FOV_Laser_Designator_Bag_Arid_base: B_Static_Designator_01_weapon_F
+class RC_Improved_FOV_Designator_Bag_Arid_base: B_Static_Designator_01_weapon_F
 {
 	class assembleInfo;
 	scope=0;
@@ -23,7 +23,7 @@ class RC_Improved_FOV_Laser_Designator_Bag_Arid_base: B_Static_Designator_01_wea
 
 // Improved Designator Woodland
 class B_W_Static_Designator_01_F;
-class RC_Improved_FOV_Laser_Designator_Woodland_base: B_W_Static_Designator_01_F
+class RC_Improved_FOV_Designator_Woodland_base: B_W_Static_Designator_01_F
 {
 	class Turrets;
 	class MainTurret;
@@ -36,7 +36,7 @@ class RC_Improved_FOV_Laser_Designator_Woodland_base: B_W_Static_Designator_01_F
 
 // Designator Bag Woodland
 class B_W_Static_Designator_01_weapon_F;
-class RC_Improved_FOV_Laser_Designator_Bag_Woodland_base: B_W_Static_Designator_01_weapon_F
+class RC_Improved_FOV_Designator_Bag_Woodland_base: B_W_Static_Designator_01_weapon_F
 {
 	class assembleInfo;
 	scope=0;
