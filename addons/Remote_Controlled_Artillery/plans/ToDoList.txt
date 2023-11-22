@@ -19,6 +19,7 @@ DONE - BUGFIXES:
 -UI fixed on normal UI scale
 -lights off, can simply be done by user in the UAV terminal
 -Olive Backpack picture background fix
+-armor value fixes
 
 
 TO DO - FEATURES:

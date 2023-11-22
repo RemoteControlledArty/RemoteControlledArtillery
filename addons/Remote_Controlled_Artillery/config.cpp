@@ -470,7 +470,7 @@ class CfgVehicles
 		};
 
 		crewCrashProtection=0.01;
-		armorStructural=100;
+		armorStructural=8;
 
 		class AnimationSources: AnimationSources
 		{
@@ -744,7 +744,7 @@ class CfgVehicles
 		ejectDeadCommander=0;
 
 		crewCrashProtection=0.01;
-		armorStructural=100;
+		armorStructural=9;
 
 		radartype=2;
 		receiveRemoteTargets=1;
@@ -1001,7 +1001,7 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=100;
+		armorStructural=14;
 
 		radartype=2;
 		receiveRemoteTargets=1;
@@ -1265,7 +1265,7 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=100;
+		armorStructural=8;
 
 		enableGPS=1;
 		radartype=2;
@@ -1529,7 +1529,7 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=100;
+		armorStructural=12;
 
 		class AnimationSources: AnimationSources
 		{
@@ -1650,7 +1650,7 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=100;
+		armorStructural=12;
 
 		class AnimationSources: AnimationSources
 		{
@@ -1759,7 +1759,7 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=100;
+		armorStructural=10;
 		redRpm=1100;
 		idleRpm=250;
 
@@ -1975,7 +1975,7 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=100;
+		armorStructural=10;
 		redRpm=1100;
 		idleRpm=250;
 
@@ -2099,7 +2099,7 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=100;
+		armorStructural=10;
 		redRpm=1100;
 		idleRpm=250;
 
@@ -2415,7 +2415,7 @@ class CfgVehicles
 		side=1;
 		forceInGarage=1;
 
-		armorStructural=100;
+		armorStructural=8;
 	};
 	class RC_Static_NA_Arty_O: RC_Static_NA_Arty
 	{
@@ -3159,13 +3159,15 @@ class CfgVehicles
 		uavCameraGunnerDir="PiP0_dir";
 		crew="B_UAV_AI";
 		driverForceOptics=1;
+
+		hasTerminal=1;
 		
 		ejectDeadGunner=0;
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
 		crewCrashProtection=0.01;
-		armorStructural=100;
+		armorStructural=10;
 		hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 
 		radartype=2;
