@@ -3150,7 +3150,7 @@ class CfgVehicles
 		class AnimationSources;
 		class showCamonetHull;
 		class showSLATHull;
-		class RCWSOptics;
+		class ViewOptics;
 		class Components;
 
 		scope=0;
@@ -3227,7 +3227,7 @@ class CfgVehicles
 
 				class OpticsIn{};	//removes staged zoom, makes it fluid instead
 
-				class ViewOptics: RCWSOptics
+				class ViewOptics: ViewOptics
 				{
 					visionMode[]=
 					{
