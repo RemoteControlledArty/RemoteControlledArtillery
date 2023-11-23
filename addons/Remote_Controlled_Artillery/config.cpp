@@ -320,6 +320,10 @@ class CfgEditorSubcategories
 	{ 
 		displayname="ATGM's";
 	};
+	class RC_Transport_subcat
+	{ 
+		displayname="Transport";
+	};
 	class RC_Spotting_subcat
 	{ 
 		displayname="Spotting";
@@ -3107,7 +3111,7 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
-				showAllTargets="2 + 4";
+				//showAllTargets="2 + 4";
 
 				class Components: Components
 				{
@@ -3155,18 +3159,18 @@ class CfgVehicles
 
 		scope=0;
 		scopeCurator=0;
-		RCDisableSeats=1; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
+		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	};
 	class RC_Infantry_Carrier: RC_Infantry_Carrier_base
 	{
 		class EventHandlers
 		{
-			init="if (local (_this select 0)) then {{(_this select 0) animate [_x, 1]} forEach ['HideHull','HideTurret']}";
+			init="(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this}";
 		};
 
 		displayName="RC Infantry Carrier";
 		faction="RemoteControlled_B";
-		editorSubcategory="RC_Howitzer_subcat";
+		editorSubcategory="RC_Transport_subcat";
 		author="Ascent";
 		scope=2;
 		scopeCurator=2;
@@ -3177,8 +3181,11 @@ class CfgVehicles
 		isUav=1;
 		textPlural="UGVs";
 		textSingular="UGV";
+		uavCameraDriverPos="PiP0_pos";
+		uavCameraDriverDir="PiP0_dir";
 		uavCameraGunnerPos="PiP0_pos";
 		uavCameraGunnerDir="PiP0_dir";
+		//driver="B_UAV_AI";
 		crew="B_UAV_AI";
 		driverForceOptics=1;
 		commanding=2;
@@ -3197,6 +3204,7 @@ class CfgVehicles
 		normalSpeedForwardCoef=0.64;
 		peakTorque=5650;	//4237.5;
 		fuelCapacity=50;
+		maximumLoad=4000;
 		
 		ejectDeadGunner=0;
 		ejectDeadDriver=0;
@@ -3212,6 +3220,12 @@ class CfgVehicles
 		receiveRemoteTargets=1;
 		reportRemoteTargets=1;
 		laserScanner=1;
+
+		//smokeLauncherOnTurret=1;
+		smokeLauncherGrenadeCount=8;
+		smokeLauncherVelocity=14;
+		smokeLauncherOnTurret=0;
+		smokeLauncherAngle=120;
 
 		class Turrets: Turrets
 		{
@@ -3248,7 +3262,7 @@ class CfgVehicles
 				{
 					"SmokeLauncherMag"
 				};
-				soundServo[]={};
+				//soundServo[]={};
 				
 				class Turrets: Turrets
 				{
@@ -3464,25 +3478,98 @@ class CfgVehicles
 			};
 		};
 
-	/*
-		animationList[]=
-		{
-			"showBags",
-			0,
-			"showCamonetHull",
-			0,
-			"showCamonetCannon",
-			0,
-			"showCamonetTurret",
-			0,
-			"showSLATHull",
-			1,
-			"showSLATTurret",
-			0
-		};
-	*/
-
-		//add hitpoints and datalink
+		//add datalink
 		//fix smoke launcher
+		//Items
+		class TransportMagazines
+		{
+			class _xx_HandGrenade
+			{
+				magazine="HandGrenade";
+				count=20;
+			};
+			class _xx_SmokeShell
+			{
+				magazine="SmokeShell";
+				count=10;
+			};
+			class _xx_MRAWS_HEAT_F
+			{
+				magazine="MRAWS_HEAT_F";
+				count=5;
+			};
+			class _xx_MRAWS_HE_F
+			{
+				magazine="MRAWS_HE_F";
+				count=5;
+			};
+			class _xx_1Rnd_Smoke_Grenade_shell
+			{
+				magazine="1Rnd_Smoke_Grenade_shell";
+				count=10;
+			};
+			class _xx_Laserbatteries
+			{
+				magazine="Laserbatteries";
+				count=2;
+			};
+		};
+		class TransportItems
+		{
+			class _xx_B_UavTerminal
+			{
+				name="B_UavTerminal";
+				count=2;
+			};
+			class _xx_Toolkit
+			{
+				name="Toolkit";
+				count=2;
+			};
+			class _xx_Medikit
+			{
+				name="Medikit";
+				count=6;
+			};
+			class _xx_MineDetector
+			{
+				name="MineDetector";
+				count=2;
+			};
+		};
+		class TransportWeapons
+		{
+			class _xx_launch_NLAW_F
+			{
+				weapon="launch_NLAW_F";
+				count=2;
+			};
+			class _xx_Improved_FOV_Laserdesignator_Arid
+			{
+				weapon="Improved_FOV_Laserdesignator_Arid";
+				count=1;
+			};
+			class _xx_Rangefinder
+			{
+				weapon="Rangefinder";
+				count=1;
+			};
+		};
+		class TransportBackpacks
+		{
+			class _xx_B_Carryall_oli
+			{
+				backpack="B_Carryall_oli";
+				count=1;
+			};
+			class _xx_B_Carryall_cbr
+			{
+				backpack="B_Carryall_cbr";
+				count=1;
+			};
+		};
 	};
 };
+
+//B_UavTerminal -> O
+//Merkava with 6 passengers, AI Driver, eighter manual driver with control over driver, or empty commander with uav control over gunner with control over driver, retrivable by terminal
