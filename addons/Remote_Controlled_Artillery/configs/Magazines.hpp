@@ -3061,7 +3061,6 @@ class RC_1Rnd_155mm_Mo_HEAB_low: 32Rnd_155mm_Mo_shells
 	displayName="HE Airburst low";
 	displayNameShort="HE Airburst low";
 	count=1;
-	initSpeed=560;
 };
 class RC_2Rnd_155mm_Mo_HEAB_low: RC_1Rnd_155mm_Mo_HEAB_low
 {

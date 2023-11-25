@@ -644,6 +644,20 @@ class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
 	};
 };
 
+/*
+class RC_M_Mo_155mm_LGDF_submunition: M_Mo_155mm_AT_LG
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,1.8};	//1.8m infront of projecticle during impact, acting as delayed fuse against bunkers
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
+	CraterEffects="";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+*/
+
 class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
 {
 	submunitionAmmo="RC_M_Mo_155mm_AT_MultiGuided";

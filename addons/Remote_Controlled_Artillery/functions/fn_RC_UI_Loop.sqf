@@ -241,6 +241,9 @@ RC_Artillery_UI = [] spawn {
 				
 				// If we have Solution Calculator Turned on do da Math
 				if (RC_Solution_Calculator_On) then {
+
+					//change to 9.8066 Gravity
+
 					// High Angle
 					_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-9.81*(9.81*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(9.81*_targetDistance)));
 					_calcHigh = round (_calcHigh * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places

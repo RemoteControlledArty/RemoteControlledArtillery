@@ -11,9 +11,11 @@ TO DO - BUGFIXES:
 -REMOVE CBA Setting for EL Diff, as this could f up the formula
 -fix EL Diff mybe not getting calculated when being negative
 
--Motor off during 0 speed cfg value
+-Motor off during 0 speed cfg value, or increased sleep
 
 -low angle ETA is broke, and changes with turret EL
+
+-change to 9.8066 Gravity
 
 
 DONE - BUGFIXES:
@@ -45,8 +47,7 @@ TO DO - FEATURES:
 
 -assault pack for AR-3
 
--RC Infantry Carrier
--Rooikat with automated driver and commander, gunner has highest commanding
+-fix RC IC seats
 
 -more but finer 155mm charges, to have more angle variety, adding ms into charge name!
 -32km & 64km variants
@@ -79,6 +80,8 @@ DONE - FEATURES:
 -added Datalink selected target position finder
 -added AR-3
 -added 604mm ATACMS
+
+-RC Infantry Carrier
 
 
 TO DO - QUALITY OF LIFE:

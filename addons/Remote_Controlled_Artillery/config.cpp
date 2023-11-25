@@ -3159,14 +3159,16 @@ class CfgVehicles
 
 		scope=0;
 		scopeCurator=0;
-		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
+		//RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	};
 	class RC_Infantry_Carrier: RC_Infantry_Carrier_base
 	{
 		class EventHandlers
 		{
-			init="(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this}";
+			init="(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this};";
 		};
+
+		//_this lockDriver true; _this lockTurret [[0,0], true];
 
 		displayName="RC Infantry Carrier";
 		faction="RemoteControlled_B";
@@ -3187,6 +3189,7 @@ class CfgVehicles
 		uavCameraGunnerDir="PiP0_dir";
 		//driver="B_UAV_AI";
 		crew="B_UAV_AI";
+		forceHideDriver=1;
 		driverForceOptics=1;
 		commanding=2;
 
