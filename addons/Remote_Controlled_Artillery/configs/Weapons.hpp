@@ -1242,7 +1242,7 @@ class RC_155mm_AMOS_30km: RC_155mm_AMOS_Ammo
 	};
 	class Single6: Single1
 	{
-		displayName="CH5 2280-6660m"
+		displayName="CH5 Direct"
 		artilleryCharge=0.66963;
 		reloadTime=6;
 		artilleryDispersion=2.5;
@@ -1352,7 +1352,7 @@ class RC_155mm_AMOS_60km: RC_155mm_AMOS_base
 	};
 	class Single12: Single1
 	{
-		displayName="CH11 20510-60000m"
+		displayName="CH11 Direct"
 		artilleryCharge=0.947;
 		reloadTime=6;
 		artilleryDispersion=2.5;
