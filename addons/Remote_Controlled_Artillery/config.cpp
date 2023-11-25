@@ -603,6 +603,7 @@ class CfgVehicles
 				magazines[]=
 				{
 					"RC_6Rnd_155mm_Mo_LG_HS",	//testing only
+					"RC_16Rnd_155mm_Mo_shells",
 
 					"RC_16Rnd_155mm_Mo_HEAB",
 					"RC_16Rnd_155mm_Mo_smoke",

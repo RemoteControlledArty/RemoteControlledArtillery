@@ -2216,7 +2216,7 @@ class 2Rnd_155mm_Mo_Cluster;
 class RC_1Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
 	ammo="RC_Cluster_155mm_AMOS";
-	displayName="Cluster";
+	displayName="Cluster (7% UXO)";
 	displayNameShort="Cluster";
 	count=1;
 };
@@ -3611,7 +3611,7 @@ class 12Rnd_230mm_rockets_cluster;
 class RC_1Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
 {
 	ammo="RC_R_230mm_Cluster";
-	displayName="Cluster";
+	displayName="Cluster (7% UXO)";
 	displayNameShort="Cluster";
 	count=1;
 };
@@ -4355,7 +4355,7 @@ class magazine_ShipCannon_120mm_HE_cluster_shells_x2;
 class RC_ShipCannon_120mm_HE_cluster_shells_x1: magazine_ShipCannon_120mm_HE_cluster_shells_x2
 {
 	ammo="RC_Cluster_155mm_AMOS";
-	displayName="Cluster";
+	displayName="Cluster (7% UXO)";
 	displayNameShort="Cluster";
 	count=1;
 };

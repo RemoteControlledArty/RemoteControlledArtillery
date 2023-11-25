@@ -231,6 +231,8 @@ RC_Artillery_UI = [] spawn {
 				if (_targetAzimuth < 0) then { _targetAzimuth = _targetAzimuth + 360; };
 				_targetAzimuth = (17.7777778 * _targetAzimuth);
 
+				_gravity=9.8066;
+
 				// Super Long Line to get the Velocity of the Round
 				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "initSpeed");
 
@@ -242,19 +244,17 @@ RC_Artillery_UI = [] spawn {
 				// If we have Solution Calculator Turned on do da Math
 				if (RC_Solution_Calculator_On) then {
 
-					//change to 9.8066 Gravity
-
 					// High Angle
-					_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-9.81*(9.81*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(9.81*_targetDistance)));
+					_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_targetDistance)));
 					_calcHigh = round (_calcHigh * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
-					_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(9.81*((2*(_roundVelocity^2)*_Difference)+(9.81*(_targetDistance^2))))))/(9.81*_targetDistance)))/pi/57.30;
-					_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/9.81); // Calculate the Travel Time in Seconds
+					_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
+					_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/_gravity); // Calculate the Travel Time in Seconds
 					
 					// Low Angle
-					_calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-9.81*(9.81*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(9.81*_targetDistance)));
+					_calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(_gravity*_targetDistance)));
 					_calcLow = round (_calcLow * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
-					_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(9.81*((2*(_roundVelocity^2)*_Difference)+(9.81*(_targetDistance^2))))))/(9.81*_targetDistance)))/pi/57.30;
-					_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/9.81); // Calculate the Travel Time in Seconds
+					_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
+					_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/_gravity); // Calculate the Travel Time in Seconds
 					
 					switch (true) do {
 						// If Elevation is correct for Low solution turn the Elevation text Green

@@ -15,8 +15,6 @@ TO DO - BUGFIXES:
 
 -low angle ETA is broke, and changes with turret EL
 
--change to 9.8066 Gravity
-
 
 DONE - BUGFIXES:
 
@@ -24,6 +22,7 @@ DONE - BUGFIXES:
 -lights off, can simply be done by user in the UAV terminal
 -Olive Backpack picture background fix
 -armor value fixes
+-changed to 9.8066 Gravity
 
 
 TO DO - FEATURES:

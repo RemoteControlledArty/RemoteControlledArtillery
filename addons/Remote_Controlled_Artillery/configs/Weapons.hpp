@@ -748,70 +748,84 @@ class RC_155mm_AMOS: RC_155mm_AMOS_base
 
 	class Single1: Single1
 	{
-		displayName="CH0  150-430m"
+		displayName="CH0 150-430m"
 		artilleryCharge=0.096
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single2: Single1
 	{
-		displayName="CH1  250-740m"
-		artilleryCharge=0.1238;
+		displayName="CH1 250-740m"
+		artilleryCharge=0.11821;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single3: Single1
 	{
-		displayName="CH2  440-1280m"
-		artilleryCharge=0.15965;
+		displayName="CH2 440-1280m"
+		artilleryCharge=0.14555;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single4: Single1
 	{
-		displayName="CH3  760-2220m"
-		artilleryCharge=0.20589;
+		displayName="CH3 760-2220m"
+		artilleryCharge=0.17922;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single5: Single1
 	{
-		displayName="CH4  1320-3850m"
-		artilleryCharge=0.26551;
+		displayName="CH4 1320-3850m"
+		artilleryCharge=0.22068;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single6: Single1
 	{
-		displayName="CH5  2280-6660m"
-		artilleryCharge=0.3424;
+		displayName="CH5 2280-6660m"
+		artilleryCharge=0.27172;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single7: Single1
 	{
-		displayName="CH6  3450-11540m"
-		artilleryCharge=0.44156;
+		displayName="CH6 3450-11540m"
+		artilleryCharge=0.33458;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single8: Single1
 	{
-		displayName="CH7  6840-19990m"
-		artilleryCharge=0.56943;
+		displayName="CH7 6840-19990m"
+		artilleryCharge=0.41197;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single9: Single1
 	{
-		displayName="CH8  11840-34620m"
-		artilleryCharge=0.73434;
+		displayName="CH8 11840-34620m"
+		artilleryCharge=0.50727;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single10: Single1
 	{
-		displayName="CH9  20510-60000m"
+		displayName="CH9 20510-60000m"
+		artilleryCharge=0.62461;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single11: Single1
+	{
+		displayName="CH10 20510-60000m"
+		artilleryCharge=0.7691;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single12: Single1
+	{
+		displayName="CH11 20510-60000m"
 		artilleryCharge=0.947;
 		reloadTime=6;
 		artilleryDispersion=2.5;
