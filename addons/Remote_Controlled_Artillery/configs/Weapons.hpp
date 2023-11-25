@@ -168,6 +168,8 @@ class RC_missiles_titan_static: missiles_titan_static
 class mortar_82mm;
 class RC_mortar_82mm: mortar_82mm
 {
+	ballisticsComputer=8;
+	
 	magazines[]=
 	{
 		"RC_1Rnd_82mm_Mo_HEAB",
@@ -632,6 +634,7 @@ class rockets_230mm_GAT;
 class RC_rockets_230mm_GAT: rockets_230mm_GAT
 {
 	magazineReloadTime=1;
+	ballisticsComputer=8;
 
 	magazines[]=
 	{
@@ -1180,7 +1183,7 @@ class RC_155mm_AMOS_Ammo: RC_155mm_AMOS_base
 };
 
 
-class RC_155mm_AMOS_30km: RC_155mm_AMOS_Ammo
+class RC_155mm_AMOS: RC_155mm_AMOS_Ammo
 {
 	reloadTime=6;
 	magazineReloadTime=6;
@@ -1195,76 +1198,11 @@ class RC_155mm_AMOS_30km: RC_155mm_AMOS_Ammo
 		"Single4",
 		"Single5",
 		"Single6",
-
-		"Burst1",
-		"Burst2",
-		"Burst3",
-		"Burst4",
-		"Burst5"
-	};
-
-
-	//unify them into 67km variant, as 10 are required to get to 30km with 350MIL
-	class Single1: Single1
-	{
-		displayName="CH0 150-430m"
-		artilleryCharge=0.096
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single2: Single1
-	{
-		displayName="CH1 250-740m"
-		artilleryCharge=0.11821;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single3: Single1
-	{
-		displayName="CH2 440-1280m"
-		artilleryCharge=0.14555;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single4: Single1
-	{
-		displayName="CH3 760-2220m"
-		artilleryCharge=0.17922;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single5: Single1
-	{
-		displayName="CH4 1320-3850m"
-		artilleryCharge=0.22068;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single6: Single1
-	{
-		displayName="CH5 Direct"
-		artilleryCharge=0.66963;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-};
-
-class RC_155mm_AMOS_60km: RC_155mm_AMOS_base
-{
-	modes[]=
-	{
-		"Single1",
-		"Single2",
-		"Single3",
-		"Single4",
-		"Single5",
-		"Single6",
 		"Single7",
 		"Single8",
 		"Single9",
 		"Single10",
 		"Single11",
-		"Single12",
 
 		"Burst1",
 		"Burst2",
@@ -1283,77 +1221,70 @@ class RC_155mm_AMOS_60km: RC_155mm_AMOS_base
 	class Single2: Single1
 	{
 		displayName="CH1 250-740m"
-		artilleryCharge=0.11821;
+		artilleryCharge=0.1246;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2 440-1280m"
-		artilleryCharge=0.14555;
+		artilleryCharge=0.1616;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3 760-2220m"
-		artilleryCharge=0.17922;
+		artilleryCharge=0.2097;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4 1320-3850m"
-		artilleryCharge=0.22068;
+		artilleryCharge=0.272;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single6: Single1
 	{
 		displayName="CH5 2280-6660m"
-		artilleryCharge=0.27172;
+		artilleryCharge=0.3529;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single7: Single1
 	{
 		displayName="CH6 3450-11540m"
-		artilleryCharge=0.33458;
+		artilleryCharge=0.4579;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single8: Single1
 	{
 		displayName="CH7 6840-19990m"
-		artilleryCharge=0.41197;
+		artilleryCharge=0.5941;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single9: Single1
 	{
 		displayName="CH8 11840-34620m"
-		artilleryCharge=0.50727;
+		artilleryCharge=0.5941;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single10: Single1
 	{
 		displayName="CH9 20510-60000m"
-		artilleryCharge=0.62461;
+		artilleryCharge=0.7708;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single11: Single1
 	{
 		displayName="CH10 20510-60000m"
-		artilleryCharge=0.7691;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single12: Single1
-	{
-		displayName="CH11 Direct"
-		artilleryCharge=0.947;
+		artilleryCharge=1;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
@@ -1366,6 +1297,7 @@ class RC_ShipCannon_120mm: weapon_ShipCannon_120mm
 {
 	reloadTime=5;
 	magazineReloadTime=5;
+	ballisticsComputer=8;
 
 	magazines[]=
 	{

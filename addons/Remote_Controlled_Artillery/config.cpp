@@ -598,7 +598,7 @@ class CfgVehicles
 				gunnerForceOptics=1;
 				weapons[]=
 				{
-					"RC_155mm_AMOS_30km"
+					"RC_155mm_AMOS"
 				};
 				magazines[]=
 				{
@@ -645,7 +645,7 @@ class CfgVehicles
 
 				weapons[]=
 				{
-					"RC_155mm_AMOS_60km"
+					"RC_155mm_AMOS"
 				};
 				magazines[]=
 				{
@@ -889,7 +889,7 @@ class CfgVehicles
 
 				weapons[]=
 				{
-					"RC_155mm_AMOS_30km"
+					"RC_155mm_AMOS"
 				};
 				magazines[]=
 				{
@@ -933,7 +933,7 @@ class CfgVehicles
 
 				weapons[]=
 				{
-					"RC_155mm_AMOS_30km"
+					"RC_155mm_AMOS"
 				};
 				magazines[]=
 				{
