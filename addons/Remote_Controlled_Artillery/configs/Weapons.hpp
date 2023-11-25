@@ -720,117 +720,8 @@ class RC_155mm_AMOS_base: mortar_155mm_AMOS
 	class Single4;
 	class Single5;
 };
-class RC_155mm_AMOS: RC_155mm_AMOS_base
+class RC_155mm_AMOS_Ammo: RC_155mm_AMOS_base
 {
-	reloadTime=6;
-	magazineReloadTime=6;
-	canLock=2;	//test out with =2 "Determines if the weapon can lock onto targets allowed by the ammunition it uses."
-
-	modes[]=
-	{
-		"Single1",
-		"Single2",
-		"Single3",
-		"Single4",
-		"Single5",
-		"Single6",
-		"Single7",
-		"Single8",
-		"Single9",
-		"Single10",
-
-		"Burst1",
-		"Burst2",
-		"Burst3",
-		"Burst4",
-		"Burst5"
-	};
-
-	class Single1: Single1
-	{
-		displayName="CH0 150-430m"
-		artilleryCharge=0.096
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single2: Single1
-	{
-		displayName="CH1 250-740m"
-		artilleryCharge=0.11821;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single3: Single1
-	{
-		displayName="CH2 440-1280m"
-		artilleryCharge=0.14555;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single4: Single1
-	{
-		displayName="CH3 760-2220m"
-		artilleryCharge=0.17922;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single5: Single1
-	{
-		displayName="CH4 1320-3850m"
-		artilleryCharge=0.22068;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single6: Single1
-	{
-		displayName="CH5 2280-6660m"
-		artilleryCharge=0.27172;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single7: Single1
-	{
-		displayName="CH6 3450-11540m"
-		artilleryCharge=0.33458;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single8: Single1
-	{
-		displayName="CH7 6840-19990m"
-		artilleryCharge=0.41197;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single9: Single1
-	{
-		displayName="CH8 11840-34620m"
-		artilleryCharge=0.50727;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single10: Single1
-	{
-		displayName="CH9 20510-60000m"
-		artilleryCharge=0.62461;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single11: Single1
-	{
-		displayName="CH10 20510-60000m"
-		artilleryCharge=0.7691;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single12: Single1
-	{
-		displayName="CH11 20510-60000m"
-		artilleryCharge=0.947;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-
 	magazines[]=
 	{
 		"RC_1Rnd_155mm_Mo_HEAB",
@@ -1285,6 +1176,186 @@ class RC_155mm_AMOS: RC_155mm_AMOS_base
 		"RC_38Rnd_155mm_Mo_LGDF",
 		"RC_39Rnd_155mm_Mo_LGDF",
 		"RC_40Rnd_155mm_Mo_LGDF"
+	};
+};
+
+
+class RC_155mm_AMOS_30km: RC_155mm_AMOS_Ammo
+{
+	reloadTime=6;
+	magazineReloadTime=6;
+	canLock=2;	//test out with =2 "Determines if the weapon can lock onto targets allowed by the ammunition it uses."
+	ballisticsComputer=8;
+
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5",
+		"Single6",
+
+		"Burst1",
+		"Burst2",
+		"Burst3",
+		"Burst4",
+		"Burst5"
+	};
+
+
+	//unify them into 67km variant, as 10 are required to get to 30km with 350MIL
+	class Single1: Single1
+	{
+		displayName="CH0 150-430m"
+		artilleryCharge=0.096
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single2: Single1
+	{
+		displayName="CH1 250-740m"
+		artilleryCharge=0.11821;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single3: Single1
+	{
+		displayName="CH2 440-1280m"
+		artilleryCharge=0.14555;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single4: Single1
+	{
+		displayName="CH3 760-2220m"
+		artilleryCharge=0.17922;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single5: Single1
+	{
+		displayName="CH4 1320-3850m"
+		artilleryCharge=0.22068;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single6: Single1
+	{
+		displayName="CH5 2280-6660m"
+		artilleryCharge=0.66963;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+};
+
+class RC_155mm_AMOS_60km: RC_155mm_AMOS_base
+{
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5",
+		"Single6",
+		"Single7",
+		"Single8",
+		"Single9",
+		"Single10",
+		"Single11",
+		"Single12",
+
+		"Burst1",
+		"Burst2",
+		"Burst3",
+		"Burst4",
+		"Burst5"
+	};
+
+	class Single1: Single1
+	{
+		displayName="CH0 150-430m"
+		artilleryCharge=0.096
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single2: Single1
+	{
+		displayName="CH1 250-740m"
+		artilleryCharge=0.11821;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single3: Single1
+	{
+		displayName="CH2 440-1280m"
+		artilleryCharge=0.14555;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single4: Single1
+	{
+		displayName="CH3 760-2220m"
+		artilleryCharge=0.17922;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single5: Single1
+	{
+		displayName="CH4 1320-3850m"
+		artilleryCharge=0.22068;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single6: Single1
+	{
+		displayName="CH5 2280-6660m"
+		artilleryCharge=0.27172;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single7: Single1
+	{
+		displayName="CH6 3450-11540m"
+		artilleryCharge=0.33458;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single8: Single1
+	{
+		displayName="CH7 6840-19990m"
+		artilleryCharge=0.41197;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single9: Single1
+	{
+		displayName="CH8 11840-34620m"
+		artilleryCharge=0.50727;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single10: Single1
+	{
+		displayName="CH9 20510-60000m"
+		artilleryCharge=0.62461;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single11: Single1
+	{
+		displayName="CH10 20510-60000m"
+		artilleryCharge=0.7691;
+		reloadTime=6;
+		artilleryDispersion=2.5;
+	};
+	class Single12: Single1
+	{
+		displayName="CH11 20510-60000m"
+		artilleryCharge=0.947;
+		reloadTime=6;
+		artilleryDispersion=2.5;
 	};
 };
 
