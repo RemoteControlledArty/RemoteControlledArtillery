@@ -32,15 +32,7 @@ TO DO - FEATURES:
 
 -further improved mine spread to maximize covered area to mine amount ratio
 
--fix 155mm and 227mm AT and LG accuracy, maybe per maneuvrability/ sideairfriction/ trackLead/trackOversteer, on increase indirecthit
--unifying LG&AT -> Laser Guided / AT seeking  "LG+ATS", per submunition  weaponLockSystem = "1+2+4"; (1 for visual),  ammo  laserLock=1; irLock=1;
-
--edit turret of hand held designator
--add datalink designator
--renaming assets for clarity
-
--155mm dispersion testing
-
+-add datalink designator?
 -update removemagazine list
 -test weapon canLock=2;
 
@@ -48,11 +40,11 @@ TO DO - FEATURES:
 
 -fix RC IC seats
 
--more but finer 155mm charges, to have more angle variety, adding ms into charge name!
--32km & 64km variants
--change all magazines ms
+-30km & 67km datalink variants
 
 -add new assets to cfg patches list
+
+-renaming remaining assets for clarity
 
 
 DONE - FEATURES:
@@ -72,7 +64,9 @@ DONE - FEATURES:
 
 -explain target marker referencing to current subscribers
 
--naming improvements
+(new)
+
+-Artillery naming improvements
 
 -added Datalink panel
 -added Datalink laser position finder
@@ -80,22 +74,19 @@ DONE - FEATURES:
 -added AR-3
 -added 604mm ATACMS
 
--RC Infantry Carrier
+-added L/IR/Vis 155mm Guided
+
+-added RC Infantry Carrier
+
+-renaming some assets for clarity
+
+-155mm dispersion fixed
+-more but finer 155mm charges, to have more angle variety, and enough airburst even with low angle solution
 
 
 TO DO - QUALITY OF LIFE:
 
--more bag renaming Blue/Red/Greenfor or Blue/Op/Indfor, so people dont think it just doesnt work
--peak ASL of trajectory
-
-add:
-radartype=2;
-receiveRemoteTargets=1;		//receive Datalink targets
-laserScanner=1;		//Defines if the vehicle has a Laser Spot Tracker and is able to detect and lock laser targets (for example, CAS jets, gunships).
-showAllTargets="2 + 4";		//show targets on screen
-
-lockDetectionSystem=0; ?
-incomingMissileDetectionSystem = 16;
+-peak ASL of trajectory (likely not needed anymore with new charge system)
 
 
 DONE - QUALITY OF LIFE:

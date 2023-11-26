@@ -1201,8 +1201,6 @@ class RC_155mm_AMOS: RC_155mm_AMOS_Ammo
 		"Single7",
 		"Single8",
 		"Single9",
-		"Single10",
-		"Single11",
 
 		"Burst1",
 		"Burst2",
@@ -1213,77 +1211,63 @@ class RC_155mm_AMOS: RC_155mm_AMOS_Ammo
 
 	class Single1: Single1
 	{
-		displayName="CH0 150-430m"
-		artilleryCharge=0.096
+		displayName="CH0"
+		artilleryCharge=0.1479;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single2: Single1
 	{
-		displayName="CH1 250-740m"
-		artilleryCharge=0.1246;
+		displayName="CH1"
+		artilleryCharge=0.1878;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single3: Single1
 	{
-		displayName="CH2 440-1280m"
-		artilleryCharge=0.1616;
+		displayName="CH2"
+		artilleryCharge=0.2385;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single4: Single1
 	{
-		displayName="CH3 760-2220m"
-		artilleryCharge=0.2097;
+		displayName="CH3"
+		artilleryCharge=0.3029;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single5: Single1
 	{
-		displayName="CH4 1320-3850m"
-		artilleryCharge=0.272;
+		displayName="CH4"
+		artilleryCharge=0.3846;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single6: Single1
 	{
-		displayName="CH5 2280-6660m"
-		artilleryCharge=0.3529;
+		displayName="CH5"
+		artilleryCharge=0.4884;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single7: Single1
 	{
-		displayName="CH6 3450-11540m"
-		artilleryCharge=0.4579;
+		displayName="CH6"
+		artilleryCharge=0.6201;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single8: Single1
 	{
-		displayName="CH7 6840-19990m"
-		artilleryCharge=0.5941;
+		displayName="CH7"
+		artilleryCharge=0.7875;
 		reloadTime=6;
 		artilleryDispersion=2.5;
 	};
 	class Single9: Single1
 	{
-		displayName="CH8 11840-34620m"
-		artilleryCharge=0.5941;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single10: Single1
-	{
-		displayName="CH9 20510-60000m"
-		artilleryCharge=0.7708;
-		reloadTime=6;
-		artilleryDispersion=2.5;
-	};
-	class Single11: Single1
-	{
-		displayName="CH10 20510-60000m"
+		displayName="CH8 direct"
 		artilleryCharge=1;
 		reloadTime=6;
 		artilleryDispersion=2.5;
