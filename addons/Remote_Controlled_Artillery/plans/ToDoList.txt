@@ -46,6 +46,8 @@ TO DO - FEATURES:
 
 -renaming remaining assets for clarity
 
+-attemt slight forward offset for airburst, so it has better low angle airburst, but not large high angle impact difference
+
 
 DONE - FEATURES:
 
