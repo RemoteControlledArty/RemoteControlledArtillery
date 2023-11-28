@@ -233,6 +233,7 @@ class CfgFunctions
       		class InitCBASettings {preInit=1};
       		class RC_UI_Loop {postInit=1};
 			class RC_MarkerLoop {postInit=1};
+			class RC_EngineOff {postInit=1};
 			class scrollSolutions {};
 		};
 	};
@@ -444,17 +445,34 @@ class CfgVehicles
 				{
 					class LaserSensorComponent: SensorTemplateLaser
 					{
-						animDirection="mainTurret";
-						minRange=10;
-						maxRange=32000;
+						//animDirection="mainTurret";
 						angleRangeHorizontal=360;
-						angleRangeVertical=180;
+						angleRangeVertical=360;
+						minRange=30000;
+						maxRange=30000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
+
+						class AirTarget
+						{
+							minRange=30000;
+							maxRange=30000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=30000;
+							maxRange=30000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
 						typeRecognitionDistance=32000;
+						//maxRange=30000;
+						
 						class AirTarget
 						{
 							minRange=32000;
@@ -533,7 +551,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={32000,16000,8000,4000};
+								range[]={30000,15000,7500,3750};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -602,17 +620,17 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
-					"RC_6Rnd_155mm_Mo_LG_HS",	//testing only
-					"RC_16Rnd_155mm_Mo_shells",
-
 					"RC_16Rnd_155mm_Mo_HEAB",
 					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
-					"RC_4Rnd_155mm_Mo_LG",
-					"RC_4Rnd_155mm_Mo_guided",
+					"RC_6Rnd_155mm_Mo_MultiGuided",
 					"RC_6Rnd_155mm_Mo_mine",
 					"RC_8Rnd_155mm_Mo_AT_mine",
-					"RC_16Rnd_155mm_Mo_Illum"
+					"RC_16Rnd_155mm_Mo_Illum",
+
+					"RC_16Rnd_155mm_Mo_shells", 	//testing only
+					"RC_4Rnd_155mm_Mo_LG",
+					"RC_4Rnd_155mm_Mo_guided",
 				};
 				class OpticsIn: OpticsIn
 				{
@@ -766,9 +784,9 @@ class CfgVehicles
 					{
 						animDirection="mainTurret";
 						minRange=10;
-						maxRange=32000;
+						maxRange=30000;
 						angleRangeHorizontal=360;
-						angleRangeVertical=180;
+						angleRangeVertical=360;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -846,7 +864,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={32000,16000,8000,4000};
+								range[]={30000,15000,7500,3750};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -1023,9 +1041,9 @@ class CfgVehicles
 					{
 						animDirection="mainTurret";
 						minRange=10;
-						maxRange=32000;
+						maxRange=30000;
 						angleRangeHorizontal=360;
-						angleRangeVertical=180;
+						angleRangeVertical=360;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -1086,7 +1104,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={32000,16000,8000,4000};
+								range[]={30000,15000,7500,3750};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -1244,6 +1262,7 @@ class CfgVehicles
 
 		isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 		RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+		RCEngineOffDelay=1; //1 = give it longer delay to turn off engine, required for slow accelerating vehicles
 		scope=0;
 		scopeCurator=0;
 	};
@@ -1288,9 +1307,9 @@ class CfgVehicles
 					{
 						animDirection="mainTurret";
 						minRange=10;
-						maxRange=32000;
+						maxRange=30000;
 						angleRangeHorizontal=360;
-						angleRangeVertical=180;
+						angleRangeVertical=360;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -1333,7 +1352,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={32000,16000,8000,4000};
+								range[]={30000,15000,7500,3750};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -1786,7 +1805,7 @@ class CfgVehicles
 						minRange=10;
 						maxRange=8000;
 						angleRangeHorizontal=360;
-						angleRangeVertical=180;
+						angleRangeVertical=360;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -2127,7 +2146,7 @@ class CfgVehicles
 						minRange=10;
 						maxRange=3500;
 						angleRangeHorizontal=360;
-						angleRangeVertical=180;
+						angleRangeVertical=360;
 					};
 					*/
 					class DataLinkSensorComponent: SensorTemplateDataLink
@@ -2528,7 +2547,7 @@ class CfgVehicles
 						minRange=10;
 						maxRange=4000;
 						angleRangeHorizontal=360;
-						angleRangeVertical=180;
+						angleRangeVertical=360;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -2850,7 +2869,7 @@ class CfgVehicles
 						minRange=10;
 						maxRange=8000;
 						angleRangeHorizontal=360;
-						angleRangeVertical=180;
+						angleRangeVertical=360;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -3030,7 +3049,7 @@ class CfgVehicles
 						minRange=10;
 						maxRange=4000;
 						angleRangeHorizontal=360;
-						angleRangeVertical=180;
+						angleRangeVertical=360;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
@@ -3310,7 +3329,7 @@ class CfgVehicles
 						minRange=10;
 						maxRange=3000;
 						angleRangeHorizontal=360;
-						angleRangeVertical=180;
+						angleRangeVertical=360;
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{

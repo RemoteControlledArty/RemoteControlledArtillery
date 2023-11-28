@@ -34,7 +34,7 @@ class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 					minRange=10;
 					maxRange=3500;
 					angleRangeHorizontal=360;
-					angleRangeVertical=180;
+					angleRangeVertical=360;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{

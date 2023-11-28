@@ -43,6 +43,7 @@ class Improved_FOV_Laserdesignator_Ti_Woodland: Improved_FOV_Laserdesignator_Ti_
 	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";
 };
 
+/*
 //doesnt work yet
 class Components;
 class Datalink_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
@@ -135,6 +136,7 @@ class Datalink_Laserdesignator_Ti_Woodland: Improved_FOV_Laserdesignator_Ti_Arid
 	model="\A3\Weapons_F\Binocular\laserdesignator_01_khk_f.p3d";
 	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";
 };
+*/
 
 
 class launch_Vorona_base_F;
@@ -850,7 +852,46 @@ class RC_155mm_AMOS_Ammo: RC_155mm_AMOS_base
 		"RC_39Rnd_155mm_Mo_Cluster",
 		"RC_40Rnd_155mm_Mo_Cluster",
 
-		"RC_6Rnd_155mm_Mo_LG_HS",
+		"RC_1Rnd_155mm_Mo_MultiGuided",
+		"RC_2Rnd_155mm_Mo_MultiGuided",
+		"RC_3Rnd_155mm_Mo_MultiGuided",
+		"RC_4Rnd_155mm_Mo_MultiGuided",
+		"RC_5Rnd_155mm_Mo_MultiGuided",
+		"RC_6Rnd_155mm_Mo_MultiGuided",
+		"RC_7Rnd_155mm_Mo_MultiGuided",
+		"RC_8Rnd_155mm_Mo_MultiGuided",
+		"RC_9Rnd_155mm_Mo_MultiGuided",
+		"RC_10Rnd_155mm_Mo_MultiGuided",
+		"RC_11Rnd_155mm_Mo_MultiGuided",
+		"RC_12Rnd_155mm_Mo_MultiGuided",
+		"RC_13Rnd_155mm_Mo_MultiGuided",
+		"RC_14Rnd_155mm_Mo_MultiGuided",
+		"RC_15Rnd_155mm_Mo_MultiGuided",
+		"RC_16Rnd_155mm_Mo_MultiGuided",
+		"RC_17Rnd_155mm_Mo_MultiGuided",
+		"RC_18Rnd_155mm_Mo_MultiGuided",
+		"RC_19Rnd_155mm_Mo_MultiGuided",
+		"RC_20Rnd_155mm_Mo_MultiGuided",
+		"RC_21Rnd_155mm_Mo_MultiGuided",
+		"RC_22Rnd_155mm_Mo_MultiGuided",
+		"RC_23Rnd_155mm_Mo_MultiGuided",
+		"RC_24Rnd_155mm_Mo_MultiGuided",
+		"RC_25Rnd_155mm_Mo_MultiGuided",
+		"RC_26Rnd_155mm_Mo_MultiGuided",
+		"RC_27Rnd_155mm_Mo_MultiGuided",
+		"RC_28Rnd_155mm_Mo_MultiGuided",
+		"RC_29Rnd_155mm_Mo_MultiGuided",
+		"RC_30Rnd_155mm_Mo_MultiGuided",
+		"RC_31Rnd_155mm_Mo_MultiGuided",
+		"RC_32Rnd_155mm_Mo_MultiGuided",
+		"RC_33Rnd_155mm_Mo_MultiGuided",
+		"RC_34Rnd_155mm_Mo_MultiGuided",
+		"RC_35Rnd_155mm_Mo_MultiGuided",
+		"RC_36Rnd_155mm_Mo_MultiGuided",
+		"RC_37Rnd_155mm_Mo_MultiGuided",
+		"RC_38Rnd_155mm_Mo_MultiGuided",
+		"RC_39Rnd_155mm_Mo_MultiGuided",
+		"RC_40Rnd_155mm_Mo_MultiGuided",
 
 		"RC_1Rnd_155mm_Mo_LG",
 		"RC_2Rnd_155mm_Mo_LG",

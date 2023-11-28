@@ -11,9 +11,9 @@ TO DO - BUGFIXES:
 -REMOVE CBA Setting for EL Diff, as this could f up the formula
 -fix EL Diff mybe not getting calculated when being negative
 
--Motor off during 0 speed cfg value, or increased sleep
-
 -low angle ETA is broke, and changes with turret EL
+
+-does it still need include check for ace hpp?
 
 
 DONE - BUGFIXES:
@@ -23,6 +23,7 @@ DONE - BUGFIXES:
 -Olive Backpack picture background fix
 -armor value fixes
 -changed to 9.8066 Gravity
+-engine turnoff check now 1s sleep, to be universal without having to add exceptions
 
 
 TO DO - FEATURES:

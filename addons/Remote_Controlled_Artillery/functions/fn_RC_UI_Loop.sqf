@@ -29,10 +29,12 @@ RC_Artillery_UI = [] spawn {
 		// See if the vehicle has the isRCArty property
 		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
 
+		/* remove later
 		// Special Case for the MRL Because it's Dogshit
 		if (!(_uavClass isKindOf "RC_MRL_base") && !(_uavClass isKindOf "RC_Infantry_Carrier_base")) then {
 			if (((speed _uav <= 0.25) and (speed _uav >= -0.25)) and (_uavClass isKindof "Tank" || _uavClass isKindof "Car")) then {_uav engineOn false};
 		};
+		*/
 
 		// If seats have been disabled in the Config we handle that here
 		_disableSeats = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCDisableSeats");
