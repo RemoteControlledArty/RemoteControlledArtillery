@@ -23,7 +23,7 @@ DONE - BUGFIXES:
 -Olive Backpack picture background fix
 -armor value fixes
 -changed to 9.8066 Gravity
--engine turnoff check now 1s sleep, to be universal without having to add exceptions
+-engine turnoff delay exeptions now per cfg value
 
 
 TO DO - FEATURES:
@@ -41,13 +41,15 @@ TO DO - FEATURES:
 
 -fix RC IC seats
 
--30km & 67km datalink variants
-
 -add new assets to cfg patches list
 
 -renaming remaining assets for clarity
 
 -attemt slight forward offset for airburst, so it has better low angle airburst, but not large high angle impact difference
+
+-hide seats for RC IC
+
+-find out sensor "minrange"?
 
 
 DONE - FEATURES:
@@ -85,6 +87,8 @@ DONE - FEATURES:
 
 -155mm dispersion fixed
 -more but finer 155mm charges, to have more angle variety, and enough airburst even with low angle solution
+
+-added optional 67km datalink range (max firing range)
 
 
 TO DO - QUALITY OF LIFE:

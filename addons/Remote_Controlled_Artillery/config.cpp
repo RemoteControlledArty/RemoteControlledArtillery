@@ -551,7 +551,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={30000,15000,7500,3750};
+								range[]={32000,16000,8000,67000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -864,7 +864,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={30000,15000,7500,3750};
+								range[]={32000,16000,8000,67000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -1104,7 +1104,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={30000,15000,7500,3750};
+								range[]={32000,16000,8000,67000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -1352,7 +1352,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={30000,15000,7500,3750};
+								range[]={32000,16000,8000,67000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -3180,6 +3180,7 @@ class CfgVehicles
 		scope=0;
 		scopeCurator=0;
 		//RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
+		RCEngineOffDelay=1; //1 = give it longer delay to turn off engine, required for slow accelerating vehicles
 	};
 	class RC_Infantry_Carrier: RC_Infantry_Carrier_base
 	{
@@ -3235,7 +3236,7 @@ class CfgVehicles
 
 		crewCrashProtection=0.01;
 		armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45
-		armorStructural=1000;	//prevents instant explosion
+		armorStructural=1000;	//prevents instant explosion, does not make it stronger
 		hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 		threat[]={0.30000001,0.30000001,0.30000001};
 
@@ -3291,10 +3292,16 @@ class CfgVehicles
 				{
 					class CommanderOptics : CommanderOptics
 					{
+						gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
+						turretInfoType="";
+						gunnerForceOptics=1;
+
 						commanding=1;
+
 						hasGunner=-1;
 						hasCommander=-1;
 						forceHideGunner=1;
+						forceHideCommander=1;
 					};
 				};
 

@@ -30,11 +30,22 @@ class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					animDirection="mainTurret";
-					minRange=10;
-					maxRange=3500;
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
+					class AirTarget
+					{
+						minRange=3500;
+						maxRange=3500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3500;
+						maxRange=3500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
