@@ -77,16 +77,3 @@ class RC_Static_AT_Arid_base: B_static_AT_F
 	scope=0;
 	scopeCurator=0;
 };
-
-//AR-2.5
-class B_UAV_01_F;
-class RC_UAV_base: B_UAV_01_F
-{
-	class Turrets;
-	class MainTurret;
-	class ViewOptics;
-	class assembleInfo;
-	class Components;
-	scope=0;
-	scopeCurator=0;
-};

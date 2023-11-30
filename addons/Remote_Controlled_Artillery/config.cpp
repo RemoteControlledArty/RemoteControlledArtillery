@@ -435,6 +435,7 @@ class CfgVehicles
 
 		radartype=2;
 		receiveRemoteTargets=1;
+		reportRemoteTargets=1;
 		laserScanner=1;
 
 		class Components: Components
@@ -445,45 +446,39 @@ class CfgVehicles
 				{
 					class LaserSensorComponent: SensorTemplateLaser
 					{
-						//animDirection="mainTurret";
 						angleRangeHorizontal=360;
 						angleRangeVertical=360;
-						minRange=30000;
-						maxRange=30000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
 
 						class AirTarget
 						{
-							minRange=30000;
-							maxRange=30000;
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=30000;
-							maxRange=30000;
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
-						typeRecognitionDistance=32000;
-						//maxRange=30000;
-						
+						typeRecognitionDistance=67000;
+
 						class AirTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -772,6 +767,7 @@ class CfgVehicles
 
 		radartype=2;
 		receiveRemoteTargets=1;
+		reportRemoteTargets=1;
 		laserScanner=1;
 
 		class Components: Components
@@ -782,27 +778,39 @@ class CfgVehicles
 				{
 					class LaserSensorComponent: SensorTemplateLaser
 					{
-						animDirection="mainTurret";
-						minRange=10;
-						maxRange=30000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=360;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
+
 						class AirTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						typeRecognitionDistance=67000;
+
+						class AirTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1029,6 +1037,7 @@ class CfgVehicles
 
 		radartype=2;
 		receiveRemoteTargets=1;
+		reportRemoteTargets=1;
 		laserScanner=1;
 
 		class Components: Components
@@ -1039,27 +1048,39 @@ class CfgVehicles
 				{
 					class LaserSensorComponent: SensorTemplateLaser
 					{
-						animDirection="mainTurret";
-						minRange=10;
-						maxRange=30000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=360;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
+
 						class AirTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						typeRecognitionDistance=67000;
+
+						class AirTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1295,6 +1316,7 @@ class CfgVehicles
 		enableGPS=1;
 		radartype=2;
 		receiveRemoteTargets=1;
+		reportRemoteTargets=1;
 		laserScanner=1;
 
 		class Components: Components
@@ -1305,27 +1327,39 @@ class CfgVehicles
 				{
 					class LaserSensorComponent: SensorTemplateLaser
 					{
-						animDirection="mainTurret";
-						minRange=10;
-						maxRange=30000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=360;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
+
 						class AirTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						typeRecognitionDistance=67000;
+
+						class AirTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1801,44 +1835,50 @@ class CfgVehicles
 				{
 					class LaserSensorComponent: SensorTemplateLaser
 					{
-						animDirection="mainTurret";
-						minRange=10;
-						maxRange=8000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=360;
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
+
 						class AirTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=8000;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=8000;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 					};
-					class ManSensorComponent: SensorTemplateMan
+					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
-						minRange=10;
-						maxRange=1000;
-						maxTrackableSpeed=15;
-						angleRangeHorizontal=60;
-						angleRangeVertical=40;
-						animDirection="mainGun";
-						aimDown=-0.5;
+						typeRecognitionDistance=8000;
+
+						class AirTarget
+						{
+							minRange=8000;
+							maxRange=8000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=-1;
+							maxRange=-1;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
 					};
 					class IRSensorComponent: SensorTemplateIR
 					{
+						typeRecognitionDistance=3000;
+
 						class AirTarget
 						{
-							minRange=10;
+							minRange=8000;
 							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
@@ -1854,7 +1894,7 @@ class CfgVehicles
 						angleRangeHorizontal=60;
 						angleRangeVertical=40;
 						animDirection="mainGun";
-						aimDown=-0.5;
+						//aimDown=-0.5;
 					};
 				};
 			};
@@ -2139,64 +2179,48 @@ class CfgVehicles
 			{
 				class Components
 				{
-					/*
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-						animDirection="mainTurret";
-						minRange=10;
-						maxRange=3500;
-						angleRangeHorizontal=360;
-						angleRangeVertical=360;
-					};
-					*/
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
+						typeRecognitionDistance=3500;
+
 						class AirTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=3500;
+							maxRange=3500;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=3500;
+							maxRange=3500;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
-					};
-					class ManSensorComponent: SensorTemplateMan
-					{
-						minRange=10;
-						maxRange=1000;
-						maxTrackableSpeed=15;
-						angleRangeHorizontal=60;
-						angleRangeVertical=40;
-						animDirection="mainGun";
-						aimDown=-0.5;
 					};
 					class IRSensorComponent: SensorTemplateIR
 					{
+						typeRecognitionDistance=1750;
+
 						class AirTarget
 						{
-							minRange=10;
+							minRange=3500;
 							maxRange=3500;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=10;
+							minRange=3500;
 							maxRange=3500;
-							objectDistanceLimitCoef=1;
-							viewDistanceLimitCoef=1;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
 						};
 						maxTrackableSpeed=600;
 						angleRangeHorizontal=60;
 						angleRangeVertical=40;
 						animDirection="mainGun";
-						aimDown=-0.5;
+						//aimDown=-0.5;
 					};
 				};
 			};
@@ -2533,6 +2557,7 @@ class CfgVehicles
 		enableGPS=1;
 		radartype=2;
 		receiveRemoteTargets=1;
+		reportRemoteTargets=1;
 		laserScanner=1;
 
 		class Components: Components
@@ -2543,25 +2568,39 @@ class CfgVehicles
 				{
 					class LaserSensorComponent: SensorTemplateLaser
 					{
-						animDirection="mainTurret";
-						minRange=10;
-						maxRange=4000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=360;
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
+
 						class AirTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=4000;
+							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=4000;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						typeRecognitionDistance=4000;
+
+						class AirTarget
+						{
+							minRange=4000;
+							maxRange=4000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=4000;
+							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -2865,25 +2904,39 @@ class CfgVehicles
 				{
 					class LaserSensorComponent: SensorTemplateLaser
 					{
-						animDirection="mainTurret";
-						minRange=10;
-						maxRange=8000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=360;
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
+
 						class AirTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=8000;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=8000;
+							maxRange=8000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						typeRecognitionDistance=8000;
+
+						class AirTarget
+						{
+							minRange=8000;
+							maxRange=8000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=8000;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -3010,10 +3063,21 @@ class CfgVehicles
 	};
 
 
-
-	class RC_UAV: RC_UAV_base
+	//AR-3
+	class B_UAV_01_F;
+	class RC_UAV_base: B_UAV_01_F
 	{
-		displayName="RC AR-3";
+		class Turrets;
+		class MainTurret;
+		class ViewOptics;
+		class assembleInfo;
+		class Components;
+		scope=0;
+		scopeCurator=0;
+	};
+	class RC_UAV_AR4: RC_UAV_base
+	{
+		displayName="RC AR-4";
 		faction="RemoteControlled_B";
 		editorSubcategory="RC_Spotting_subcat";
 
@@ -3045,33 +3109,62 @@ class CfgVehicles
 				{
 					class LaserSensorComponent: SensorTemplateLaser
 					{
-						animDirection="mainTurret";
-						minRange=10;
-						maxRange=4000;
 						angleRangeHorizontal=360;
 						angleRangeVertical=360;
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
+
 						class AirTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=32000;
-							maxRange=32000;
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						typeRecognitionDistance=67000;
+
+						class AirTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=67000;
+							maxRange=67000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 					};
 					class ManSensorComponent: SensorTemplateMan
 					{
-						minRange=10;
-						maxRange=1000;
+						typeRecognitionDistance=500;
+
+						class AirTarget
+						{
+							minRange=1000;
+							maxRange=1000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=1000;
+							maxRange=1000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+
 						maxTrackableSpeed=15;
 						angleRangeHorizontal=60;
 						angleRangeVertical=40;
@@ -3080,20 +3173,23 @@ class CfgVehicles
 					};
 					class IRSensorComponent: SensorTemplateIR
 					{
+						typeRecognitionDistance=2000;
+
 						class AirTarget
 						{
-							minRange=10;
-							maxRange=4000;
+							minRange=3000;
+							maxRange=3000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=10;
-							maxRange=4000;
+							minRange=3000;
+							maxRange=3000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
+
 						maxTrackableSpeed=600;
 						angleRangeHorizontal=60;
 						angleRangeVertical=40;
@@ -3102,20 +3198,23 @@ class CfgVehicles
 					};
 					class VisualSensorComponent: SensorTemplateVisual
 					{
+						typeRecognitionDistance=1000;
+
 						class AirTarget
 						{
-							minRange=2000;
-							maxRange=2000;
+							minRange=1500;
+							maxRange=1500;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=2000;
-							maxRange=2000;
+							minRange=1500;
+							maxRange=1500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
+
 						maxTrackableSpeed=600;
 						nightRangeCoef=0.80000001;
 						angleRangeHorizontal=60;
@@ -3131,8 +3230,6 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
-				//showAllTargets="2 + 4";
-
 				class Components: Components
 				{
 					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -3143,15 +3240,194 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={4000,2000,1000,500};
+								range[]={3000,1500,750,375};
 								resource="RscCustomInfoSensors";
 							};
 						};
 					};
 				};
+
+				showAllTargets="2 + 4";
+
+				isCopilot=1; //0
+				commanding=2; //-1
+
+				class OpticsIn
+				{
+					class Wide
+					{
+						opticsDisplayName="W";
+						initAngleX=0;
+						minAngleX=-30;
+						maxAngleX=30;
+						initAngleY=0;
+						minAngleY=-100;
+						maxAngleY=100;
+						initFov=0.5;
+						minFov=0.01;
+						maxFov=1.0;
+						directionStabilized=1;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG",
+							"Ti"
+						};
+						thermalMode[]={0,1};
+						gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+					};
+					/*
+					class Medium: Wide
+					{
+						opticsDisplayName="M";
+						initFov=0.1;
+						minFov=0.1;
+						maxFov=0.1;
+						gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_medium_F.p3d";
+					};
+					class Narrow: Wide
+					{
+						opticsDisplayName="N";
+						initFov=0.0286;
+						minFov=0.0286;
+						maxFov=0.0286;
+						gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+					};
+					*/
+				};
+				class OpticsOut
+				{
+					class Monocular
+					{
+						initAngleX=0;
+						minAngleX=-30;
+						maxAngleX=30;
+						initAngleY=0;
+						minAngleY=-100;
+						maxAngleY=100;
+						initFov=1.1;
+						minFov=0.01;
+						maxFov=1.0;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG",
+							"Ti"
+						};
+						thermalMode[]={0,1};
+						gunnerOpticsModel="";
+						gunnerOpticsEffect[]={};
+					};
+				};
 			};
 		};
 	};
+	
+	class RC_UAV_AR3: RC_UAV_AR4
+	{
+		displayName="RC AR-3";
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						angleRangeHorizontal=360;
+						angleRangeVertical=360;
+
+						class AirTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						typeRecognitionDistance=67000;
+
+						class AirTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class IRSensorComponent: SensorTemplateIR
+					{
+						typeRecognitionDistance=2000;
+
+						class AirTarget
+						{
+							minRange=3000;
+							maxRange=3000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=3000;
+							maxRange=3000;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+
+						maxTrackableSpeed=600;
+						angleRangeHorizontal=60;
+						angleRangeVertical=40;
+						animDirection="mainGun";
+						aimDown=-0.5;
+					};
+					class VisualSensorComponent: SensorTemplateVisual
+					{
+						typeRecognitionDistance=1000;
+
+						class AirTarget
+						{
+							minRange=1500;
+							maxRange=1500;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=1500;
+							maxRange=1500;
+							objectDistanceLimitCoef=1;
+							viewDistanceLimitCoef=1;
+						};
+
+						maxTrackableSpeed=600;
+						nightRangeCoef=0.80000001;
+						angleRangeHorizontal=60;
+						angleRangeVertical=40;
+						animDirection="mainGun";
+						aimDown=-0.5;
+					};
+				};
+			};
+		};
+	};
+
+	
 
 	class B_APC_Wheeled_01_cannon_F;
 	class RC_Infantry_Carrier_base: B_APC_Wheeled_01_cannon_F
@@ -3259,7 +3535,6 @@ class CfgVehicles
 				gunnerForceOptics=1;
 				forceHideGunner=1;
 				//hasGunner=-1;
-
 				gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
 				turretInfoType="";
 
@@ -3286,7 +3561,6 @@ class CfgVehicles
 				{
 					"SmokeLauncherMag"
 				};
-				//soundServo[]={};
 				
 				class Turrets: Turrets
 				{
@@ -3485,7 +3759,6 @@ class CfgVehicles
 			};
 		};
 
-
 		class AnimationSources: AnimationSources
 		{
 			class showCamonetHull
@@ -3508,8 +3781,6 @@ class CfgVehicles
 			};
 		};
 
-		//add datalink
-		//fix smoke launcher
 		//Items
 		class TransportMagazines
 		{

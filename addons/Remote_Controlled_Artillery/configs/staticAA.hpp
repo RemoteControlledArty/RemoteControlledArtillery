@@ -32,6 +32,7 @@ class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 				{
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
+
 					class AirTarget
 					{
 						minRange=3500;
@@ -49,26 +50,11 @@ class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
+					typeRecognitionDistance=3500;
+
 					class AirTarget
 					{
-						minRange=32000;
-						maxRange=32000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=32000;
-						maxRange=32000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class IRSensorComponent: SensorTemplateIR
-				{
-					class AirTarget
-					{
-						minRange=10;
+						minRange=3500;
 						maxRange=3500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
@@ -77,14 +63,34 @@ class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 					{
 						minRange=-1;
 						maxRange=-1;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
 					};
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=2000;
+
+					class AirTarget
+					{
+						minRange=3500;
+						maxRange=3500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=-1;
+						maxRange=-1;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=60;
 					angleRangeVertical=40;
 					animDirection="mainGun";
-					aimDown=-0.5;
+					//aimDown=-0.5;
 				};
 			};
 		};
