@@ -2714,6 +2714,7 @@ class CfgVehicles
 				{
 					"RC_16Rnd_82mm_Mo_HEAB",
 					"RC_16Rnd_82mm_Mo_Smoke_white",
+					"RC_6Rnd_82mm_Mo_MultiGuided",
 					"RC_4Rnd_82mm_Mo_LG",
 					"RC_4Rnd_82mm_Mo_guided",
 					"RC_6Rnd_82mm_Mo_mine",
@@ -3063,7 +3064,7 @@ class CfgVehicles
 	};
 
 
-	//AR-3
+	//AR-4
 	class B_UAV_01_F;
 	class RC_UAV_base: B_UAV_01_F
 	{
@@ -3323,6 +3324,8 @@ class CfgVehicles
 		};
 	};
 	
+
+	//AR-3
 	class RC_UAV_AR3: RC_UAV_AR4
 	{
 		displayName="RC AR-3";

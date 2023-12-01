@@ -31,28 +31,32 @@ DONE - BUGFIXES:
 
 TO DO - FEATURES:
 
+-attemt to create O mine pattern
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
 -only disable driver = 4, for modularity
-
--further improved mine spread to maximize covered area to mine amount ratio
 
 -add datalink designator?
 -update removemagazine list
 -test weapon canLock=2;
 
--assault pack for AR-3
-
--fix RC IC seats
-
--add new assets to cfg patches list
-
 -renaming remaining assets for clarity
-
 -attemt slight forward offset for airburst, so it has better low angle airburst, but not large high angle impact difference
-
--hide seats for RC IC
-
 -display peak ASL
+-markers being "gps" artillery targets lockable on panel, for guided shells
+
+
+next:
+-hide seats for RC IC
+-attemt to add commander seat to RC IC
+-assault pack for AR-3	//would add a bit much backpacks
+-add new assets to cfg patches list
+-add 82mm multi quited
+-try making 227mm multi guided
+-fix radar turrets viewoptics maxhorrotspeed
+-find out why 227mm HEAB has no recoil
+-edit 120mm cannon charges
+-normal spread for mines for now
+-reload time etc edits without charges
 
 
 DONE - FEATURES:
@@ -94,9 +98,13 @@ DONE - FEATURES:
 -added optional 67km datalink range (max firing range)
 
 -added peak ASL calculation
+-shortend map marker search time (as its only running during active remote control)
+-fixed all sensor configs
 
 
 TO DO - QUALITY OF LIFE:
+
+-
 
 
 DONE - QUALITY OF LIFE:

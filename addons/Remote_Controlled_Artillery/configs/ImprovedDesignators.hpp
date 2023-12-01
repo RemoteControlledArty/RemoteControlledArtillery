@@ -29,28 +29,68 @@ class RC_Improved_FOV_Designator_Arid: RC_Improved_FOV_Designator_Arid_base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					animDirection="mainTurret";
-					minRange=10;
-					maxRange=4000;
 					angleRangeHorizontal=360;
-					angleRangeVertical=180;
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
+					angleRangeVertical=360;
+
 					class AirTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=67000;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=1000;
+
+					class AirTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
+					animDirection="mainGun";
+					//aimDown=-0.5;
 				};
 			};
 		};
@@ -75,6 +115,8 @@ class RC_Improved_FOV_Designator_Arid: RC_Improved_FOV_Designator_Arid_base
 					"NVG"
 				};
 			};
+
+			showAllTargets="2 + 4";
 
 			class Components: Components
 			{
@@ -123,54 +165,111 @@ class RC_Improved_FOV_Designator_Ti_Arid: RC_Improved_FOV_Designator_Arid
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					animDirection="mainTurret";
-					minRange=10;
-					maxRange=4000;
 					angleRangeHorizontal=360;
-					angleRangeVertical=180;
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
+					angleRangeVertical=360;
+
 					class AirTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=67000;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=1000;
+
+					class AirTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
+					animDirection="mainGun";
+					//aimDown=-0.5;
+				};
 				class ManSensorComponent: SensorTemplateMan
 				{
-					minRange=10;
-					maxRange=1000;
+					typeRecognitionDistance=500;
+
+					class AirTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+
 					maxTrackableSpeed=15;
 					angleRangeHorizontal=60;
 					angleRangeVertical=40;
 					animDirection="mainGun";
-					aimDown=-0.5;
+					//aimDown=-0.5;
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
+					typeRecognitionDistance=1000;
+
 					class AirTarget
 					{
-						minRange=10;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=10;
-						maxRange=4000;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
 					};
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=60;
@@ -186,8 +285,6 @@ class RC_Improved_FOV_Designator_Ti_Arid: RC_Improved_FOV_Designator_Arid
 	{
 		class MainTurret: MainTurret
 		{
-			showAllTargets="2 + 4";
-
 			class ViewOptics: viewOptics
 			{
 				initFov=0.25;
@@ -260,28 +357,68 @@ class RC_Improved_FOV_Designator_Woodland: RC_Improved_FOV_Designator_Woodland_b
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					animDirection="mainTurret";
-					minRange=10;
-					maxRange=4000;
 					angleRangeHorizontal=360;
-					angleRangeVertical=180;
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
+					angleRangeVertical=360;
+
 					class AirTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=67000;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=1000;
+
+					class AirTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
+					animDirection="mainGun";
+					//aimDown=-0.5;
 				};
 			};
 		};
@@ -303,6 +440,8 @@ class RC_Improved_FOV_Designator_Woodland: RC_Improved_FOV_Designator_Woodland_b
 					"NVG"
 				};
 			};
+
+			showAllTargets="2 + 4";
 
 			class Components: Components
 			{
@@ -351,54 +490,113 @@ class RC_Improved_FOV_Designator_Ti_Woodland: RC_Improved_FOV_Designator_Woodlan
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					animDirection="mainTurret";
-					minRange=10;
-					maxRange=4000;
 					angleRangeHorizontal=360;
-					angleRangeVertical=180;
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
+					angleRangeVertical=360;
+
 					class AirTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=67000;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=1000;
+
+					class AirTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
+					animDirection="mainGun";
+					//aimDown=-0.5;
+				};
+				/*
 				class ManSensorComponent: SensorTemplateMan
 				{
-					minRange=10;
-					maxRange=1000;
+					typeRecognitionDistance=500;
+
+					class AirTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+
 					maxTrackableSpeed=15;
 					angleRangeHorizontal=60;
 					angleRangeVertical=40;
 					animDirection="mainGun";
-					aimDown=-0.5;
+					//aimDown=-0.5;
 				};
+				*/
 				class IRSensorComponent: SensorTemplateIR
 				{
+					typeRecognitionDistance=1000;
+
 					class AirTarget
 					{
-						minRange=10;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=10;
-						maxRange=4000;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
 					};
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=60;
@@ -414,9 +612,6 @@ class RC_Improved_FOV_Designator_Ti_Woodland: RC_Improved_FOV_Designator_Woodlan
 	{
 		class MainTurret: MainTurret
 		{
-			
-			showAllTargets="2 + 4";
-
 			class ViewOptics: viewOptics
 			{
 				initFov=0.25;

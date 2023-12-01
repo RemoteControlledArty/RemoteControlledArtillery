@@ -254,7 +254,7 @@ RC_Artillery_UI = [] spawn {
 					_calcHigh = round (_calcHigh * (10^2)) / (10^2); //fix to 2 decimal places
 					_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
 					_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/_gravity); // Calculate the Travel Time in Seconds
-					_peakASLHigh = (_roundVelocity**2*sin**2(_calcHigh*0.0174533))/(2*_gravity)
+					//_peakASLHigh = (_roundVelocity**2*(sin(_calcHigh*0.0174533))*(sin(_calcHigh*0.0174533)))/(2*_gravity)
 					//private _tof = round ((2*_finalVel*sin(_elev))/GRAVITY);
 					
 					// Low Angle
@@ -263,7 +263,8 @@ RC_Artillery_UI = [] spawn {
 					_calcLow = round (_calcLow * (10^2)) / (10^2); //fix to 2 decimal places
 					_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
 					_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/_gravity); // Calculate the Travel Time in Seconds
-					_peakASLLow = (_roundVelocity**2*sin**2(_calcLow*0.0174533))/(2*_gravity)
+					//_peakASLLow = (_roundVelocity**2*(sin**2)*(_calcLow*0.0174533))/(2*_gravity)
+					//_peakASLLow = (_roundVelocity**2*(sin(_calcLow*0.0174533))*(sin(_calcLow*0.0174533)))/(2*_gravity)
 					
 					switch (true) do {
 						// If Elevation is correct for Low solution turn the Elevation text Green

@@ -719,6 +719,171 @@ class RC_40Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
 class 8Rnd_82mm_Mo_LG;
 
 
+class RC_1Rnd_82mm_Mo_MultiGuided: 8Rnd_82mm_Mo_LG
+{
+	ammo="RC_Sh_82mm_AMOS_AT_MultiGuided";
+	displayName="Laser/IR/Vis Guided";
+	displayNameShort="L/IR/V Guided";
+	count=1;
+};
+class RC_2Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=2;
+};
+class RC_3Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=3;
+};
+class RC_4Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=4;
+};
+class RC_5Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=5;
+};
+class RC_6Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=6;
+};
+class RC_7Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=7;
+};
+class RC_8Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=8;
+};
+class RC_9Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=9;
+};
+class RC_10Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=10;
+};
+class RC_11Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=11;
+};
+class RC_12Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=12;
+};
+class RC_13Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=13;
+};
+class RC_14Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=14;
+};
+class RC_15Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=15;
+};
+class RC_16Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=16;
+};
+class RC_17Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=17;
+};
+class RC_18Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=18;
+};
+class RC_19Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=19;
+};
+class RC_20Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=20;
+};
+class RC_21Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=21;
+};
+class RC_22Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=22;
+};
+class RC_23Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=23;
+};
+class RC_24Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=24;
+};
+class RC_25Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=25;
+};
+class RC_26Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=26;
+};
+class RC_27Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=27;
+};
+class RC_28Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=28;
+};
+class RC_29Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=29;
+};
+class RC_30Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=30;
+};
+class RC_31Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=31;
+};
+class RC_32Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=32;
+};
+class RC_33Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=33;
+};
+class RC_34Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=34;
+};
+class RC_35Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=35;
+};
+class RC_36Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=36;
+};
+class RC_37Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=37;
+};
+class RC_38Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=38;
+};
+class RC_39Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=39;
+};
+class RC_40Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
+{
+	count=40;
+};
+
+
 class RC_1Rnd_82mm_Mo_LG: 8Rnd_82mm_Mo_LG
 {
 	ammo="RC_Sh_82mm_AMOS_LG";

@@ -176,6 +176,177 @@ class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 };
 
 
+class MissileBase;
+class MissileBase_base: MissileBase
+{
+	class Components;
+};
+class RC_M_Mo_82mm_AT_MultiGuided: MissileBase_base
+{
+	model="\A3\weapons_f\ammo\shell";
+	autoSeekTarget=1;
+	proximityExplosionDistance=1; 	//might prevent overshot miss
+
+	//lockSeekRadius=32000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
+	trackLead=1;
+	airLock=0;
+	laserLock=1; //from main shell
+	irLock=1;
+	canLock=2; //always locks
+	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
+
+	receiveRemoteTargets=1;
+
+	maneuvrability=12;	//6
+	simulationStep=0.0020000001;
+	fuseDistance=0;
+	airFriction=0.0099999998;
+	sideAirFriction=0.029999999;
+	missileLockCone=40;
+	missileKeepLockedCone=40;
+
+	hit=400;
+	indirectHit=400;
+	indirectHitRange=5;
+	EffectFly="ArtilleryTrails";
+	cameraViewAvailable=1;
+
+	weaponLockSystem="1+2+4";	//visual, ir, laser
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+	};
+};
+
+/*
+class RC_M_Mo_155mm_LGDF_submunition: M_Mo_155mm_AT_LG
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,1.8};	//1.8m infront of projecticle during impact, acting as delayed fuse against bunkers
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
+	CraterEffects="";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+*/
+
+class RC_Sh_82mm_AMOS_AT_MultiGuided: SubmunitionBase
+{
+	submunitionAmmo="RC_M_Mo_155mm_AT_MultiGuided";
+	submunitionCount=1;		//2
+	submunitionConeAngle=0;
+	triggerDistance=500;
+	laserLock=1;
+	irLock=1;
+	autoSeekTarget=1;
+
+	muzzleEffect="";
+	hit=165;
+	cost=500;
+	airFriction=0;
+
+	class CamShakeFire
+	{
+		power=3.0092199;
+		duration=1.8;
+		frequency=20;
+		distance=72.4431;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
 //155mm
 class F_40mm_White;
 class RC_Mo_Illum: F_40mm_White
@@ -519,11 +690,6 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 	explosionAngle=60;
 */
 
-class MissileBase;
-class MissileBase_base: MissileBase
-{
-	class Components;
-};
 class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
 {
 	model="\A3\weapons_f\ammo\shell";
@@ -626,15 +792,15 @@ class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
 				{
 					class AirTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=67000;
+						maxRange=67000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=67000;
+						maxRange=67000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -664,9 +830,26 @@ class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
 	submunitionCount=1;		//2
 	submunitionConeAngle=0;
 	triggerDistance=500;
+
 	laserLock=1;
 	irLock=1;
 	autoSeekTarget=1;
+	
+	//testing
+	/*
+	receiveRemoteTargets=1;
+	lockSeekRadius=67000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
+	autoSeekTarget=1;
+	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
+	canLock=2; //always locks
+
+	proximityExplosionDistance=1; 	//might prevent overshot miss
+	trackLead=1;
+	laserLock=1; //from main shell
+	irLock=1;
+	airLock=1;	//TEST
+	*/
+	//
 
 	muzzleEffect="";
 	hit=300;
