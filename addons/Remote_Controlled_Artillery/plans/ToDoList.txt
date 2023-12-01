@@ -23,7 +23,10 @@ DONE - BUGFIXES:
 -Olive Backpack picture background fix
 -armor value fixes
 -changed to 9.8066 Gravity
--engine turnoff delay exeptions now per cfg value
+-engine turnoff delay exceptions now per cfg value
+
+-fixed distance calculation
+-fixed time of flight calculation
 
 
 TO DO - FEATURES:
@@ -49,7 +52,7 @@ TO DO - FEATURES:
 
 -hide seats for RC IC
 
--find out sensor "minrange"?
+-display peak ASL
 
 
 DONE - FEATURES:
@@ -90,10 +93,10 @@ DONE - FEATURES:
 
 -added optional 67km datalink range (max firing range)
 
+-added peak ASL calculation
+
 
 TO DO - QUALITY OF LIFE:
-
--peak ASL of trajectory (likely not needed anymore with new charge system)
 
 
 DONE - QUALITY OF LIFE:

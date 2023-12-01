@@ -254,10 +254,8 @@ RC_Artillery_UI = [] spawn {
 					_calcHigh = round (_calcHigh * (10^2)) / (10^2); //fix to 2 decimal places
 					_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
 					_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/_gravity); // Calculate the Travel Time in Seconds
+					_peakASLHigh = (_roundVelocity**2*sin**2(_calcHigh*0.0174533))/(2*_gravity)
 					//private _tof = round ((2*_finalVel*sin(_elev))/GRAVITY);
-					
-					//"If the projectile's position (x,y) and launch angle (θ) are known, the maximum height can be found by solving for h in the following equation"
-					//_peakASLHigh = ((x tan _calcHigh)**2)/(4(x tan _calcHigh - y));
 					
 					// Low Angle
 					//"original" missing? _calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(_gravity*_targetDistance)));
@@ -265,8 +263,7 @@ RC_Artillery_UI = [] spawn {
 					_calcLow = round (_calcLow * (10^2)) / (10^2); //fix to 2 decimal places
 					_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
 					_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/_gravity); // Calculate the Travel Time in Seconds
-
-					//_peakASLLow = ((x tan _calcHigh)**2)/(4(x tan _calcHigh - y));
+					_peakASLLow = (_roundVelocity**2*sin**2(_calcLow*0.0174533))/(2*_gravity)
 					
 					switch (true) do {
 						// If Elevation is correct for Low solution turn the Elevation text Green
