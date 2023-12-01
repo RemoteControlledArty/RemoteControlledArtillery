@@ -101,6 +101,8 @@ DONE - FEATURES:
 -shortend map marker search time (as its only running during active remote control)
 -fixed all sensor configs
 
+-added L/IR/Vis 82mm Guided
+
 
 TO DO - QUALITY OF LIFE:
 
