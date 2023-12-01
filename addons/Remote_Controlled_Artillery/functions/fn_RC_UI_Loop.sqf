@@ -233,7 +233,7 @@ RC_Artillery_UI = [] spawn {
 				if (_targetAzimuth < 0) then { _targetAzimuth = _targetAzimuth + 360; };
 				_targetAzimuth = (17.7777778 * _targetAzimuth);
 
-				//_targetAzimuth = round((_artyPos getDir _targetPos)*17.777778); //TEST OUT (adapted code)
+				//_targetAzimuth = round((_artyPos getDir _targetPos)*17.777778); //test, is inaccurate
 
 				_gravity=9.8066;
 
@@ -249,21 +249,24 @@ RC_Artillery_UI = [] spawn {
 				if (RC_Solution_Calculator_On) then {
 
 					// High Angle
-
-					//(atan((_finalVel^2+sqrt(_finalVel^4-GRAVITY*(GRAVITY*(_distance^2)+2*_zDiff*_finalVel^2)))/(GRAVITY*_distance))); this works decent whats diffrent?
-
+					//(atan((_finalVel^2+sqrt(_finalVel^4-GRAVITY*(GRAVITY*(_distance^2)+2*_zDiff*_finalVel^2)))/(GRAVITY*_distance)));
 					_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_targetDistance)));
-					_calcHigh = round (_calcHigh * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
+					_calcHigh = round (_calcHigh * (10^2)) / (10^2); //fix to 2 decimal places
 					_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
 					_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/_gravity); // Calculate the Travel Time in Seconds
-
 					//private _tof = round ((2*_finalVel*sin(_elev))/GRAVITY);
 					
+					//"If the projectile's position (x,y) and launch angle (θ) are known, the maximum height can be found by solving for h in the following equation"
+					//_peakASLHigh = ((x tan _calcHigh)**2)/(4(x tan _calcHigh - y));
+					
 					// Low Angle
-					_calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(_gravity*_targetDistance)));
-					_calcLow = round (_calcLow * (10 ^ 2)) / (10 ^2); //fix to 2 decimal places
+					//"original" missing? _calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(_gravity*_targetDistance)));
+					_calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_targetDistance)));
+					_calcLow = round (_calcLow * (10^2)) / (10^2); //fix to 2 decimal places
 					_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
 					_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/_gravity); // Calculate the Travel Time in Seconds
+
+					//_peakASLLow = ((x tan _calcHigh)**2)/(4(x tan _calcHigh - y));
 					
 					switch (true) do {
 						// If Elevation is correct for Low solution turn the Elevation text Green
