@@ -958,3 +958,344 @@ class RC_R_230mm_LG: R_230mm_LG
 	submunitionConeAngle=0;
 	autoSeekTarget=1;
 };
+
+/*
+class R_230mm_fly: ShellBase
+{
+	artilleryLock=1;
+	model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
+	hit=1200;
+	indirectHit=800;
+	indirectHitRange=30;
+	warheadName="HE";
+	cost=1000;
+	audibleFire=64;
+	dangerRadiusHit=1250;
+	suppressionRadiusHit=120;
+	deflecting=0;
+	airFriction=0;
+	muzzleEffect="";
+	effectFly="ArtilleryTrails";
+	class CamShakeExplode
+	{
+		power=46;
+		duration=3;
+		frequency=20;
+		distance=361.32599;
+	};
+	class CamShakeHit
+	{
+		power=230;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.89432;
+		duration=3;
+		frequency=20;
+		distance=121.326;
+	};
+	class CamShakePlayerFire
+	{
+		power=5;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.34,
+		"soundHit2",
+		0.33000001,
+		"soundHit3",
+		0.33000001
+	};
+};
+
+
+class R_230mm_HE: SubmunitionBase
+{
+	artilleryLock=1;
+	submunitionAmmo="R_230mm_fly";
+	triggerDistance=500;
+	cost=1000;
+	airFriction=0;
+	muzzleEffect="";
+	effectFly="Missile0";
+	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
+	hit=300;
+	class CamShakeExplode
+	{
+		power=46;
+		duration=3;
+		frequency=20;
+		distance=361.32599;
+	};
+	class CamShakeHit
+	{
+		power=230;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.89432;
+		duration=3;
+		frequency=20;
+		distance=121.326;
+	};
+	class CamShakePlayerFire
+	{
+		power=5;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+	soundFly[]=
+	{
+		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
+		0.56234133,
+		1.9,
+		500
+	};
+};
+
+
+class RC_M_Mo_230mm_MultiGuided: MissileBase_base
+{
+	model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
+	hit=1200;
+	indirectHit=800;
+	indirectHitRange=30;
+	warheadName="HE";
+	audibleFire=64;
+	dangerRadiusHit=1250;
+	suppressionRadiusHit=120;
+
+	autoSeekTarget=1;
+	proximityExplosionDistance=1; 	//might prevent overshot miss
+
+	//lockSeekRadius=32000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
+	trackLead=1;
+	airLock=0;
+	laserLock=1; //from main shell
+	irLock=1;
+	canLock=2; //always locks
+	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
+
+	receiveRemoteTargets=1;
+
+	maneuvrability=12;	//6
+	simulationStep=0.0020000001;
+	fuseDistance=0;
+	airFriction=0.0099999998;
+	sideAirFriction=0.029999999;
+	missileLockCone=40;
+	missileKeepLockedCone=40;
+
+	EffectFly="ArtilleryTrails";
+	cameraViewAvailable=1;
+
+	weaponLockSystem="1+2+4";	//visual, ir, laser
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+	};
+	class CamShakeExplode
+	{
+		power=46;
+		duration=3;
+		frequency=20;
+		distance=361.32599;
+	};
+	class CamShakeHit
+	{
+		power=230;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.89432;
+		duration=3;
+		frequency=20;
+		distance=121.326;
+	};
+	class CamShakePlayerFire
+	{
+		power=5;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.34,
+		"soundHit2",
+		0.33000001,
+		"soundHit3",
+		0.33000001
+	};
+};
+
+
+class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
+{
+	submunitionAmmo="RC_M_Mo_155mm_AT_MultiGuided";
+	submunitionCount=1;		//2
+	submunitionConeAngle=0;
+	triggerDistance=500;
+
+	laserLock=1;
+	irLock=1;
+	autoSeekTarget=1;
+
+	muzzleEffect="";
+	hit=300;
+	cost=500;
+	airFriction=0;
+
+	class CamShakeFire
+	{
+		power=3.0092199;
+		duration=1.8;
+		frequency=20;
+		distance=72.4431;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+*/

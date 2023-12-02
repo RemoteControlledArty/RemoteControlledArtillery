@@ -1270,7 +1270,8 @@ class RC_155mm_AMOS: RC_155mm_AMOS_Ammo
 	reloadTime=6;
 	magazineReloadTime=6;
 	canLock=2;	//test out with =2 "Determines if the weapon can lock onto targets allowed by the ammunition it uses."
-	ballisticsComputer=8;
+	ballisticsComputer=8;	//direct fire reticle for highest charge
+	//elevationMode=2;	//test
 
 	modes[]=
 	{

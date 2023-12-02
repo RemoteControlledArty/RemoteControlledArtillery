@@ -106,7 +106,10 @@ DONE - FEATURES:
 
 TO DO - QUALITY OF LIFE:
 
--
+-https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
+-azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
+-or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
+-maybe turret elevation lock?
 
 
 DONE - QUALITY OF LIFE:
@@ -122,6 +125,9 @@ IDEAS - FUTURE:
 
 -vanilla asset overwrite for gamemodes without zeus etc
 -switch driver and commander of recon radar
+-counterbattery radar
+-3R MRSI display
+-3R automated MRSI
 
 
 

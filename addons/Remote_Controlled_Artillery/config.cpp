@@ -522,6 +522,8 @@ class CfgVehicles
 				commanding=2;
 				gunnerForceOptics=1;
 				forceHideGunner=1;
+				//elevationMode=2;	//test
+				//elevationAnimSourceSpeed = 1.0f;
 				
 				class Turrets: Turrets
 				{
