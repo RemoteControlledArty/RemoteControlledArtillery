@@ -170,7 +170,9 @@ class RC_missiles_titan_static: missiles_titan_static
 class mortar_82mm;
 class RC_mortar_82mm: mortar_82mm
 {
-	ballisticsComputer=8;
+	ballisticsComputer=8;	//direct fire reticle for highest charge
+	canLock=2;	//test out with =2 "Determines if the weapon can lock onto targets allowed by the ammunition it uses."
+	weaponLockDelay=0;
 	
 	magazines[]=
 	{
@@ -678,9 +680,8 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT
 {
 	magazineReloadTime=1;
 	ballisticsComputer=8;
-
 	canLock=2;	//arty has 0 but can lock
-	weaponLockDelay=0.01;	//was 3
+	weaponLockDelay=0;
 
 	magazines[]=
 	{
@@ -1286,6 +1287,7 @@ class RC_155mm_AMOS: RC_155mm_AMOS_Ammo
 	reloadTime=6;
 	magazineReloadTime=6;
 	canLock=2;	//test out with =2 "Determines if the weapon can lock onto targets allowed by the ammunition it uses."
+	weaponLockDelay=0;
 	ballisticsComputer=8;	//direct fire reticle for highest charge
 	//elevationMode=2;	//test
 
@@ -1381,6 +1383,8 @@ class RC_ShipCannon_120mm: weapon_ShipCannon_120mm
 	reloadTime=5;
 	magazineReloadTime=5;
 	ballisticsComputer=8;
+	canLock=2;
+	weaponLockDelay=0;
 
 	magazines[]=
 	{

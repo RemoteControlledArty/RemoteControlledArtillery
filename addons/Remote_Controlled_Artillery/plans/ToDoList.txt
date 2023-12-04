@@ -78,30 +78,21 @@ DONE - FEATURES:
 
 (new)
 
--Artillery naming improvements
-
+-ammunition naming improvements
 -added Datalink panel
 -added Datalink laser position finder
 -added Datalink selected target position finder
--added AR-3
+-added AR-3 & 4
 -added 604mm ATACMS
-
--added L/IR/Vis 155mm Guided
-
 -added RC Infantry Carrier
-
--renaming some assets for clarity
-
+-renamed assets for clarity
 -155mm dispersion fixed
 -more but finer 155mm charges, to have more angle variety, and enough airburst even with low angle solution
-
 -added optional 67km datalink range (max firing range)
-
 -added peak ASL calculation
--shortend map marker search time (as its only running during active remote control)
+-shortend map marker search time (as its only running during active remote control, and improves quality of life)
 -fixed all sensor configs
-
--added L/IR/Vis 82mm Guided
+-added 82mm/155mm/227mm Laser/IR/Vis Guided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and hot (per IR) or cold (per Visual) vehicles.)
 
 
 TO DO - QUALITY OF LIFE:

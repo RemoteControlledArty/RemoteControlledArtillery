@@ -4036,9 +4036,9 @@ class RC_12Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
 
 class RC_1Rnd_230mm_rockets_MultiGuided: 12Rnd_230mm_rockets
 {
-	displayName="L/IR/Vis Guided";
-	displayNameShort="L/IR/V Guided";
 	ammo="RC_R_230mm_MultiGuided";
+	displayName="Laser/IR/Vis Guided";
+	displayNameShort="L/IR/V Guided";
 	count=1;
 };
 class RC_2Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided

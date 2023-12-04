@@ -192,7 +192,7 @@ class RC_M_Mo_82mm_AT_MultiGuided: MissileBase_base
 	airLock=0;
 	laserLock=1; //from main shell
 	irLock=1;
-	canLock=2; //always locks
+	canLock=2; //able to lock
 	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
 
 	receiveRemoteTargets=1;
@@ -701,9 +701,8 @@ class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
 	airLock=0;
 	laserLock=1; //from main shell
 	irLock=1;
-	canLock=2; //always locks
+	canLock=2; //able to lock
 	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
-
 	receiveRemoteTargets=1;
 
 	maneuvrability=12;	//6
@@ -834,6 +833,11 @@ class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
 	laserLock=1;
 	irLock=1;
 	autoSeekTarget=1;
+
+	receiveRemoteTargets=1;
+	canLock=2;
+	lockAcquire=1;
+
 	//artilleryLock=1;
 	
 	//testing
@@ -842,7 +846,7 @@ class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
 	lockSeekRadius=67000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
 	autoSeekTarget=1;
 	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
-	canLock=2; //always locks
+	canLock=2; //able to lock
 
 	proximityExplosionDistance=1; 	//might prevent overshot miss
 	trackLead=1;
@@ -1058,7 +1062,7 @@ class RC_M_Mo_230mm_MultiGuided: MissileBase_base
 	airLock=0;
 	laserLock=1; //from main shell
 	irLock=1;
-	canLock=2; //always locks
+	canLock=2; //able to lock
 	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
 
 	receiveRemoteTargets=1;
@@ -1326,8 +1330,9 @@ class RC_Sh_230mm_AMOS_AT_MultiGuided: SubmunitionBase
 
 class RC_R_230mm_fly_MultiGuided: MissileBase_base
 {
-	model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
-	//model="\A3\weapons_f\ammo\shell";
+	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";		//guiding unfortunately doesnt work with this model
+	model="\A3\weapons_f\ammo\shell";
+	EffectFly="ArtilleryTrails";
 	autoSeekTarget=1;
 	proximityExplosionDistance=1; 	//might prevent overshot miss
 
@@ -1336,7 +1341,7 @@ class RC_R_230mm_fly_MultiGuided: MissileBase_base
 	airLock=0;
 	laserLock=1; //from main shell
 	irLock=1;
-	canLock=2; //always locks
+	canLock=2; //able to lock
 	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
 
 	receiveRemoteTargets=1;
@@ -1352,7 +1357,6 @@ class RC_R_230mm_fly_MultiGuided: MissileBase_base
 	hit=1200;
 	indirectHit=1200;
 	indirectHitRange=5;
-	EffectFly="ArtilleryTrails";
 	cameraViewAvailable=1;
 
 	weaponLockSystem="1+2+4";	//visual, ir, laser
@@ -1459,6 +1463,10 @@ class RC_R_230mm_MultiGuided: SubmunitionBase
 	laserLock=1;
 	irLock=1;
 	autoSeekTarget=1;
+	
+	canLock=2;
+	lockAcquire=1;
+	receiveRemoteTargets=1;
 	//artilleryLock=1;
 
 	muzzleEffect="";
