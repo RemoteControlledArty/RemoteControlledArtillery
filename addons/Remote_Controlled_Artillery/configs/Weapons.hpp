@@ -679,6 +679,9 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT
 	magazineReloadTime=1;
 	ballisticsComputer=8;
 
+	canLock=2;	//arty has 0 but can lock
+	weaponLockDelay=0.01;	//was 3
+
 	magazines[]=
 	{
 		"RC_1Rnd_230mm_rockets_HEAB",
@@ -719,6 +722,19 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT
 		"RC_10Rnd_230mm_rockets",
 		"RC_11Rnd_230mm_rockets",
 		"RC_12Rnd_230mm_rockets",
+
+		"RC_1Rnd_230mm_rockets_MultiGuided",
+		"RC_2Rnd_230mm_rockets_MultiGuided",
+		"RC_3Rnd_230mm_rockets_MultiGuided",
+		"RC_4Rnd_230mm_rockets_MultiGuided",
+		"RC_5Rnd_230mm_rockets_MultiGuided",
+		"RC_6Rnd_230mm_rockets_MultiGuided",
+		"RC_7Rnd_230mm_rockets_MultiGuided",
+		"RC_8Rnd_230mm_rockets_MultiGuided",
+		"RC_9Rnd_230mm_rockets_MultiGuided",
+		"RC_10Rnd_230mm_rockets_MultiGuided",
+		"RC_11Rnd_230mm_rockets_MultiGuided",
+		"RC_12Rnd_230mm_rockets_MultiGuided",
 
 		"RC_1Rnd_230mm_rockets_LG",
 		"RC_2Rnd_230mm_rockets_LG",

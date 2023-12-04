@@ -4034,6 +4034,59 @@ class RC_12Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
 };
 
 
+class RC_1Rnd_230mm_rockets_MultiGuided: 12Rnd_230mm_rockets
+{
+	displayName="L/IR/Vis Guided";
+	displayNameShort="L/IR/V Guided";
+	ammo="RC_R_230mm_MultiGuided";
+	count=1;
+};
+class RC_2Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=2;
+};
+class RC_3Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=3;
+};
+class RC_4Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=4;
+};
+class RC_5Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=5;
+};
+class RC_6Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=6;
+};
+class RC_7Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=7;
+};
+class RC_8Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=8;
+};
+class RC_9Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=9;
+};
+class RC_10Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=10;
+};
+class RC_11Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=11;
+};
+class RC_12Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	count=12;
+};
+
+
 class RC_1Rnd_230mm_rockets_LG: 12Rnd_230mm_rockets
 {
 	displayName="Laser Guided";

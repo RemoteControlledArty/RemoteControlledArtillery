@@ -1189,6 +1189,7 @@ class CfgVehicles
 				};
 				magazines[]=
 				{
+					"RC_6Rnd_230mm_rockets_MultiGuided",
 					"RC_6Rnd_230mm_rockets_HEAB",
 					"RC_6Rnd_230mm_rockets_cluster"
 				};
