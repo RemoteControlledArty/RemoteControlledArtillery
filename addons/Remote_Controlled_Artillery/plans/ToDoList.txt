@@ -48,15 +48,15 @@ TO DO - FEATURES:
 next:
 -hide seats for RC IC
 -attemt to add commander seat to RC IC
--assault pack for AR-3	//would add a bit much backpacks
+-assault pack for AR-3&4	//would add a bit much backpacks
 -add new assets to cfg patches list
 -add 82mm multi quited
--try making 227mm multi guided
 -fix radar turrets viewoptics maxhorrotspeed
 -find out why 227mm HEAB has no recoil
 -edit 120mm cannon charges
 -normal spread for mines for now
 -reload time etc edits without charges
+-decrease sensor angles
 
 
 DONE - FEATURES:

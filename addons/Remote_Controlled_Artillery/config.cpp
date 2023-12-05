@@ -192,10 +192,19 @@ class CfgPatches
 			Improved_FOV_Laserdesignator_Ti_Arid,
 			Improved_FOV_Laserdesignator_Ti_Woodland,
 			RC_ATGM,
-			RC_ShipCannon_120mm,
-			RC_155mm_AMOS,
+			RC_ShipCannon_120mm_V1,
+			RC_ShipCannon_120mm_V2,
+			RC_ShipCannon_120mm_V3,
+			RC_ShipCannon_120mm_V4,
+			RC_155mm_AMOS_V1,
+			RC_155mm_AMOS_V2,
+			RC_155mm_AMOS_V3,
+			RC_155mm_AMOS_V4,
 			RC_rockets_230mm_GAT,
-			RC_mortar_82mm
+			RC_mortar_82mm_V1,
+			RC_mortar_82mm_V2,
+			RC_mortar_82mm_V3,
+			RC_mortar_82mm_V4,
 		};
 
 		magazines[]={};		//too many to list
@@ -613,7 +622,7 @@ class CfgVehicles
 				gunnerForceOptics=1;
 				weapons[]=
 				{
-					"RC_155mm_AMOS"
+					"RC_155mm_AMOS_V4"
 				};
 				magazines[]=
 				{
@@ -660,7 +669,7 @@ class CfgVehicles
 
 				weapons[]=
 				{
-					"RC_155mm_AMOS"
+					"RC_155mm_AMOS_V4"
 				};
 				magazines[]=
 				{
@@ -917,7 +926,7 @@ class CfgVehicles
 
 				weapons[]=
 				{
-					"RC_155mm_AMOS"
+					"RC_155mm_AMOS_V4"
 				};
 				magazines[]=
 				{
@@ -961,7 +970,7 @@ class CfgVehicles
 
 				weapons[]=
 				{
-					"RC_155mm_AMOS"
+					"RC_155mm_AMOS_V4"
 				};
 				magazines[]=
 				{
@@ -2493,7 +2502,7 @@ class CfgVehicles
 			{
 				weapons[]=
 				{
-					"RC_ShipCannon_120mm"
+					"RC_ShipCannon_120mm_V4"
 				};
 				magazines[]=
 				{
@@ -2711,7 +2720,7 @@ class CfgVehicles
 
 				weapons[]=
 				{
-					"RC_mortar_82mm"
+					"RC_mortar_82mm_V3"
 				};
 				magazines[]=
 				{
@@ -2955,7 +2964,7 @@ class CfgVehicles
 			{
 				weapons[]=
 				{
-					"RC_mortar_82mm_ER"
+					"RC_mortar_82mm_V4"
 				};
 
 				class Components: Components
