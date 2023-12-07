@@ -207,7 +207,7 @@ class RC_M_Mo_82mm_AT_MultiGuided: MissileBase_base
 
 	hit=400;
 	indirectHit=400;
-	indirectHitRange=5;
+	indirectHitRange=4;
 	EffectFly="ArtilleryTrails";
 	cameraViewAvailable=1;
 
@@ -301,43 +301,17 @@ class RC_M_Mo_82mm_AT_MultiGuided: MissileBase_base
 	};
 };
 
-/*
-class RC_M_Mo_155mm_LGDF_submunition: M_Mo_155mm_AT_LG
-{
-	triggerDistance=-1;
-	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,0,1.8};	//1.8m infront of projecticle during impact, acting as delayed fuse against bunkers
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
-	CraterEffects="";
-	indirectHit=0;
-	indirectHitRange=0;
-};
-*/
 
 class RC_Sh_82mm_AMOS_AT_MultiGuided_submunition: Sh_82mm_AMOS
 {
 	hit=0;
 	indirectHit=400;
-	indirectHitRange=5;
+	indirectHitRange=4;
 
 	explosionTime=0.01;
 	explosive=1;
 	CraterEffects="";
 };
-class RC_M_Mo_82mm_AT_MultiGuided: RC_M_Mo_82mm_AT_MultiGuided
-{
-	triggerDistance=-1;
-	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,0,5};
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionAmmo="RC_Sh_82mm_AMOS_AT_MultiGuided_submunition";
-	CraterEffects="";
-	indirectHit=0;
-	indirectHitRange=0;
-};
-
-
 class RC_Sh_82mm_AMOS_AT_MultiGuided: SubmunitionBase
 {
 	submunitionAmmo="RC_M_Mo_155mm_AT_MultiGuided";
@@ -711,6 +685,8 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 	explosionAngle=60;
 */
 
+//outdated, inaccurate, hard to balance
+/*
 class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
 {
 	model="\A3\weapons_f\ammo\shell";
@@ -736,7 +712,7 @@ class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
 
 	hit=1200;
 	indirectHit=1200;
-	indirectHitRange=5;
+	indirectHitRange=4;
 	EffectFly="ArtilleryTrails";
 	cameraViewAvailable=1;
 
@@ -830,19 +806,6 @@ class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
 	};
 };
 
-/*
-class RC_M_Mo_155mm_LGDF_submunition: M_Mo_155mm_AT_LG
-{
-	triggerDistance=-1;
-	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,0,1.8};	//1.8m infront of projecticle during impact, acting as delayed fuse against bunkers
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
-	CraterEffects="";
-	indirectHit=0;
-	indirectHitRange=0;
-};
-*/
 
 class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
 {
@@ -862,20 +825,10 @@ class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
 	//artilleryLock=1;
 	
 	//testing
-	/*
-	receiveRemoteTargets=1;
-	lockSeekRadius=67000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
-	autoSeekTarget=1;
-	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
-	canLock=2; //able to lock
+	//lockSeekRadius=67000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
+	//lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
+	//canLock=2; //able to lock
 
-	proximityExplosionDistance=1; 	//might prevent overshot miss
-	trackLead=1;
-	laserLock=1; //from main shell
-	irLock=1;
-	airLock=1;	//TEST
-	*/
-	//
 
 	muzzleEffect="";
 	hit=300;
@@ -897,6 +850,272 @@ class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
 		distance=1;
 	};
 };
+*/
+
+
+class RC_MT_MultiGuided_Submunition_base: MissileBase
+{
+	class Components;
+};
+class RC_155mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
+{
+	laserLock=1;
+	irLock=1;
+	autoSeekTarget=1;
+	receiveRemoteTargets=1;
+	cameraViewAvailable=1;
+
+	/*
+	autoSeekTarget=1;
+	receiveRemoteTargets=1;
+	canLock=2;	//cfgweapons only?
+	lockAcquire=1;	//cfgweapons only?
+
+	lockSeekRadius=100;	//higher doesnt result in unlocked manual fire locking //Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled.
+	*/
+
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	explosive=1;
+	cost=500;
+	aiAmmoUsageFlags="128 + 512";
+	explosionSoundEffect="DefaultExplosion";
+	effectsMissileInit="";
+	muzzleEffect="";
+	simulationStep=0.0020000001;
+	trackOversteer=1.5;
+	trackLead=1;	//0.89999998
+	maneuvrability=20;
+	airFriction=0.085000001;
+	sideAirFriction=1;
+	fuseDistance=50;
+	effectsMissile="missile2";
+	whistleDist=4;
+	airLock=1;
+	lockType=0;
+	missileKeepLockedCone=160;
+	//manualControl=1;
+	//missileManualControlCone=45;
+
+	submunitionAmmo="ammo_Penetrator_Titan_AT_long";
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	warheadName="TandemHEAT";
+
+	hit=150;
+	indirectHit=60;
+	indirectHitRange=10;
+
+	timeToLive=35;
+	initTime=0.15000001;
+	thrustTime=8;
+	thrust=35;
+	maxSpeed=180;
+	typicalSpeed=1660;
+	missileLockCone=12;
+	missileLockMaxDistance=5000;
+	missileLockMinDistance=200;
+	missileLockMaxSpeed=35;
+	maxControlRange=5000;
+	weaponLockSystem="1 + 2 + 4 + 16";
+	cmImmunity=0.9;
+
+	soundFly[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Fly_Titan",
+		0.63095737,
+		1.5,
+		300
+	};
+	class CamShakeExplode
+	{
+		power=11;
+		duration=1.4;
+		frequency=20;
+		distance=91.329597;
+	};
+	class CamShakeHit
+	{
+		power=110;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=2.78316;
+		duration=1.6;
+		frequency=20;
+		distance=61.967701;
+	};
+	class CamShakePlayerFire
+	{
+		power=3;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+	};
+};
+
+//AT Airburst Test
+/*
+class RC_Sh_155mm_AMOS_AT_submunition: Sh_155mm_AMOS
+{
+	explosionTime=0.01;
+	explosive=1;
+	indirectHit=1200;
+	indirectHitRange=4;
+	CraterEffects="";	//removes ground impact animation
+};
+class RC_Sh_155mm_AMOS_AT_MultiGuided_2_submunition: RC_M_Mo_155mm_AT_MultiGuided
+{
+	proximityExplosionDistance=-1;
+
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,-3.5};
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_155mm_AMOS_AT_submunition";
+	CraterEffects="";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+*/
+class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
+{
+	submunitionAmmo="RC_155mm_MT_MultiGuided_Submunition";
+	submunitionCount=1;		//2
+	submunitionConeAngle=0;
+	triggerDistance=500;
+
+	laserLock=1;
+	irLock=1;
+	autoSeekTarget=1;
+	cameraViewAvailable=1;
+
+	receiveRemoteTargets=1;
+	canLock=2;
+	lockAcquire=1;
+
+	//artilleryLock=1;
+	
+	//testing
+	//lockSeekRadius=67000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
+	//lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
+	//canLock=2; //able to lock
+
+	muzzleEffect="";
+	hit=300;
+	cost=500;
+	airFriction=0;
+
+	class CamShakeFire
+	{
+		power=3.0092199;
+		duration=1.8;
+		frequency=20;
+		distance=72.4431;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
 
 
 //230mm

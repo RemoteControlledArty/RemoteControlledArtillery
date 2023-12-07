@@ -365,6 +365,10 @@ class DefaultVehicleSystemsDisplayManagerRight
 {
 	class components;
 };
+class DefaultVehicleSystemsDisplayManagerLeft
+{
+	class components;
+};
 class VehicleSystemsTemplateRightGunner: DefaultVehicleSystemsDisplayManagerRight
 {
 	class components;
@@ -497,7 +501,6 @@ class CfgVehicles
 		};
 
 		crewCrashProtection=0.01;
-		armorStructural=8;
 
 		class AnimationSources: AnimationSources
 		{
@@ -552,6 +555,7 @@ class CfgVehicles
 					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 					{
 						defaultDisplay="SensorDisplay";
+
 						class Components
 						{
 							class SensorDisplay
@@ -560,6 +564,13 @@ class CfgVehicles
 								range[]={32000,16000,8000,67000};
 								resource="RscCustomInfoSensors";
 							};
+							/*
+							class VehicleMissileDisplay
+							{
+								componentType="TransportFeedDisplayComponent";
+								source="Missile";
+							};
+							*/
 						};
 					};
 				};
@@ -774,7 +785,6 @@ class CfgVehicles
 		ejectDeadCommander=0;
 
 		crewCrashProtection=0.01;
-		armorStructural=9;
 
 		radartype=2;
 		receiveRemoteTargets=1;
@@ -1043,8 +1053,6 @@ class CfgVehicles
 		ejectDeadGunner=0;
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
-
-		armorStructural=14;
 
 		radartype=2;
 		receiveRemoteTargets=1;
@@ -1323,8 +1331,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=8;
-
 		enableGPS=1;
 		radartype=2;
 		receiveRemoteTargets=1;
@@ -1600,8 +1606,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=12;
-
 		class AnimationSources: AnimationSources
 		{
 			class showCamonetTurret: showCamonetTurret
@@ -1721,8 +1725,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=12;
-
 		class AnimationSources: AnimationSources
 		{
 			class showCamonetTurret: showCamonetTurret
@@ -1830,7 +1832,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=10;
 		redRpm=1100;
 		idleRpm=250;
 
@@ -2052,7 +2053,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=10;
 		redRpm=1100;
 		idleRpm=250;
 
@@ -2176,7 +2176,6 @@ class CfgVehicles
 		ejectDeadDriver=0;
 		ejectDeadCommander=0;
 
-		armorStructural=10;
 		redRpm=1100;
 		idleRpm=250;
 
@@ -2475,8 +2474,6 @@ class CfgVehicles
 		scopeCurator=2;
 		side=1;
 		forceInGarage=1;
-
-		armorStructural=8;
 	};
 	class RC_Static_NA_Arty_O: RC_Static_NA_Arty
 	{
