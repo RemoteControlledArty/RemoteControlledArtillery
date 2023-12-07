@@ -315,12 +315,35 @@ class RC_M_Mo_155mm_LGDF_submunition: M_Mo_155mm_AT_LG
 };
 */
 
+class RC_Sh_82mm_AMOS_AT_MultiGuided_submunition: Sh_82mm_AMOS
+{
+	hit=0;
+	indirectHit=400;
+	indirectHitRange=5;
+
+	explosionTime=0.01;
+	explosive=1;
+	CraterEffects="";
+};
+class RC_M_Mo_82mm_AT_MultiGuided: RC_M_Mo_82mm_AT_MultiGuided
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,5};
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_82mm_AMOS_AT_MultiGuided_submunition";
+	CraterEffects="";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+
+
 class RC_Sh_82mm_AMOS_AT_MultiGuided: SubmunitionBase
 {
 	submunitionAmmo="RC_M_Mo_155mm_AT_MultiGuided";
 	submunitionCount=1;		//2
 	submunitionConeAngle=0;
-	triggerDistance=500;
+	triggerDistance=300;
 	laserLock=1;
 	irLock=1;
 	autoSeekTarget=1;
@@ -401,13 +424,11 @@ class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
 {
 	submunitionConeType[]=
 	{
-		"custom",{{-5,0},{-3,0},{-1,0},{1,0},{3,0},{5,0} , {0,-5},{0,-3},{0,-1},{0,1},{0,3},{0,5}}
-		//"poissondisccenter",
-		//12
+		//"custom",{{-5,0},{-3,0},{-1,0},{1,0},{3,0},{5,0} , {0,-5},{0,-3},{0,-1},{0,1},{0,3},{0,5}}
+		"poissondisccenter",
+		12
 	};
 };
-
-//submunitionConeType[]={"custom",{{-5,0},{-3,0},{-1,0},{1,0},{3,0},{5,0} , {0,-5},{0,-3},{0,-1},{0,1},{0,3},{0,5}}};
 
 
 class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White

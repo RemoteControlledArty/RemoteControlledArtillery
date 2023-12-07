@@ -192,6 +192,10 @@ class CfgPatches
 			Improved_FOV_Laserdesignator_Ti_Arid,
 			Improved_FOV_Laserdesignator_Ti_Woodland,
 			RC_ATGM,
+			RC_mortar_82mm_V1,
+			RC_mortar_82mm_V2,
+			RC_mortar_82mm_V3,
+			RC_mortar_82mm_V4,
 			RC_ShipCannon_120mm_V1,
 			RC_ShipCannon_120mm_V2,
 			RC_ShipCannon_120mm_V3,
@@ -200,11 +204,7 @@ class CfgPatches
 			RC_155mm_AMOS_V2,
 			RC_155mm_AMOS_V3,
 			RC_155mm_AMOS_V4,
-			RC_rockets_230mm_GAT,
-			RC_mortar_82mm_V1,
-			RC_mortar_82mm_V2,
-			RC_mortar_82mm_V3,
-			RC_mortar_82mm_V4,
+			RC_rockets_230mm_GAT
 		};
 
 		magazines[]={};		//too many to list

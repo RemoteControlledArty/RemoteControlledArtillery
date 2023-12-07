@@ -168,7 +168,7 @@ class RC_missiles_titan_static: missiles_titan_static
 
 // 82mm Mortar 4km
 class mortar_82mm;
-class mortar_82mm_base: mortar_82mm;
+class mortar_82mm_base: mortar_82mm
 {
 	class Single1;
 	class Single2;
@@ -709,7 +709,7 @@ class RC_ShipCannon_120mm_base: weapon_ShipCannon_120mm
 	class Single4;
 	class Single5;
 };
-class RC_ShipCannon_120mm_V1: weapon_ShipCannon_120mm
+class RC_ShipCannon_120mm_V1: RC_ShipCannon_120mm_base
 {
 	magazines[]=
 	{
