@@ -47,6 +47,7 @@ TO DO - FEATURES:
 -add low trajectory TOP DOWN formula & display for guided (low firing solution + ? meter height)
 -get missle feed panel to connect to missle
 -fix laser scanner reliability
+-datalink target speed
 
 
 next:
@@ -62,7 +63,9 @@ next:
 -reload time etc edits without charges
 -decrease sensor angles
 
--add 82mm and 227mm updated multi guided
+-aiAmmoUsageFlags https://community.bistudio.com/wiki/CfgAmmo_Config_Reference#aiAmmoUsageFlags
+-fix Static AT laser engaging
+-enable Static AT NLOS
 
 
 DONE - FEATURES:
@@ -99,6 +102,8 @@ DONE - FEATURES:
 -shortend map marker search time (as its only running during active remote control, and improves quality of life)
 -fixed all sensor configs
 -added 82mm/155mm/227mm Laser/IR/Vis Guided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and hot (per IR) or cold (per Visual) vehicles.)
+-reworked 82mm/155mm/227mm Laser/IR/Vis Guided, to be more accurate and Multi Target
+-reworked Static AT & ATGM, changed ammo from 4 HEAT & 2 HE to new 4 MT (MultiTarget) rounds, Static AT now has more locking options and also SACLOS
 
 
 TO DO - QUALITY OF LIFE:

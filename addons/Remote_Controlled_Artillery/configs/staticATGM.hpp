@@ -7,11 +7,11 @@
 // Arid
 class RC_Static_ATGM_Arid: RC_Static_AT_Arid
 {
-	displayname="RC Static ATGM 2km";
+	displayname="RC Static ATGM 3km";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km";
+		displayName="RC Static ATGM 3km";
 		dissasembleTo[]=
 		{
 			"RC_Static_ATGM_Arid_Bag"
@@ -28,22 +28,20 @@ class RC_Static_ATGM_Arid: RC_Static_AT_Arid
 			};
 			magazines[]=
 			{
-				"RC_1Rnd_ATGM",
-				"RC_1Rnd_ATGM",
-				"RC_1Rnd_ATGM",
-				"RC_1Rnd_ATGM",
-				"RC_1Rnd_HEGM",
-				"RC_1Rnd_HEGM"
+				"RC_1Rnd_ATGM_MT",
+				"RC_1Rnd_ATGM_MT",
+				"RC_1Rnd_ATGM_MT",
+				"RC_1Rnd_ATGM_MT"
 			};
 		};
 	};
 };
 class RC_Static_ATGM_Arid_Bag: RC_Static_AA_Arid_Bag
 {
-	displayName="RC Static ATGM 2km";
+	displayName="RC Static ATGM 3km";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km";
+		displayName="RC Static ATGM 3km";
 		assembleTo="RC_Static_ATGM_Arid";
 	};
 };
@@ -70,10 +68,10 @@ class RC_Static_ATGM_Woodland: RC_Static_ATGM_Arid
 };
 class RC_Static_ATGM_Woodland_Bag: RC_Static_AA_Woodland_Bag
 {
-	displayName="RC Static ATGM 2km";
+	displayName="RC Static ATGM 3km";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km";
+		displayName="RC Static ATGM 3km";
 		assembleTo="RC_Static_ATGM_Woodland";
 	};
 };
@@ -88,7 +86,7 @@ class RC_Static_ATGM_Arid_O: RC_Static_ATGM_Arid
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km [Opf]";
+		displayName="RC Static ATGM 3km [Opf]";
 		dissasembleTo[]=
 		{
 			"RC_Static_ATGM_Arid_Bag_O"
@@ -97,10 +95,10 @@ class RC_Static_ATGM_Arid_O: RC_Static_ATGM_Arid
 };
 class RC_Static_ATGM_Arid_Bag_O: RC_Static_ATGM_Arid_Bag
 {
-	displayName="RC Static ATGM 2km [Opf]";
+	displayName="RC Static ATGM 3km [Opf]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km [Opf]";
+		displayName="RC Static ATGM 3km [Opf]";
 		assembleTo="RC_Static_AT_Arid_O";
 	};
 };
@@ -114,7 +112,7 @@ class RC_Static_ATGM_Woodland_O: RC_Static_ATGM_Woodland
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km [Opf]";
+		displayName="RC Static ATGM 3km [Opf]";
 		dissasembleTo[]=
 		{
 			"RC_Static_ATGM_Woodland_Bag_O"
@@ -123,10 +121,10 @@ class RC_Static_ATGM_Woodland_O: RC_Static_ATGM_Woodland
 };
 class RC_Static_ATGM_Woodland_Bag_O: RC_Static_ATGM_Woodland_Bag
 {
-	displayName="RC Static ATGM 2km [Opf]";
+	displayName="RC Static ATGM 3km [Opf]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km [Opf]";
+		displayName="RC Static ATGM 3km [Opf]";
 		assembleTo="RC_Static_ATGM_Woodland_O";
 	};
 };
@@ -141,7 +139,7 @@ class RC_Static_ATGM_Arid_I: RC_Static_ATGM_Arid
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km [Ind]";
+		displayName="RC Static ATGM 3km [Ind]";
 		dissasembleTo[]=
 		{
 			"RC_Static_ATGM_Arid_Bag_I"
@@ -150,10 +148,10 @@ class RC_Static_ATGM_Arid_I: RC_Static_ATGM_Arid
 };
 class RC_Static_ATGM_Arid_Bag_I: RC_Static_ATGM_Arid_Bag
 {
-	displayName="RC Static ATGM 2km [Ind]";
+	displayName="RC Static ATGM 3km [Ind]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km [Ind]";
+		displayName="RC Static ATGM 3km [Ind]";
 		assembleTo="RC_Static_ATGM_Arid_I";
 	};
 };
@@ -167,7 +165,7 @@ class RC_Static_ATGM_Woodland_I: RC_Static_ATGM_Woodland
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km [Ind]";
+		displayName="RC Static ATGM 3km [Ind]";
 		dissasembleTo[]=
 		{
 			"RC_Static_ATGM_Woodland_Bag_I"
@@ -176,10 +174,10 @@ class RC_Static_ATGM_Woodland_I: RC_Static_ATGM_Woodland
 };
 class RC_Static_ATGM_Woodland_Bag_I: RC_Static_ATGM_Woodland_Bag
 {
-	displayName="RC Static ATGM 2km [Ind]";
+	displayName="RC Static ATGM 3km [Ind]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static ATGM 2km [Ind]";
+		displayName="RC Static ATGM 3km [Ind]";
 		assembleTo="RC_Static_ATGM_Woodland_I";
 	};
 };

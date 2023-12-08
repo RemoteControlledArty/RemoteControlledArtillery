@@ -7,7 +7,7 @@
 // Arid
 class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 {
-	displayname="RC Static AT 2km";
+	displayname="RC Static AT 3km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
 	scope=2;
@@ -26,7 +26,7 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	laserScanner=1;
+	//laserScanner=1;
 
 	class Components: Components
 	{
@@ -34,60 +34,59 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 		{
 			class Components
 			{
+				/*
 				class LaserSensorComponent: SensorTemplateLaser
 				{
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
-
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				*/
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=2000;
-
+					typeRecognitionDistance=3000;
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=2000;
-
+					typeRecognitionDistance=1500;
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -98,13 +97,35 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 					animDirection="mainGun";
 					//aimDown=-0.5;
 				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=500;
+					class AirTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=60;
+					angleRangeVertical=40;
+					animDirection="mainGun";
+				};
 			};
 		};
 	};
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km";
+		displayName="RC Static AT 3km";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_Arid_Bag"
@@ -122,16 +143,14 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 
 			weapons[]=
 			{
-				"missiles_titan_static"
+				"RC_missiles_titan_static"
 			};
 			magazines[]=
 			{
-				"1Rnd_GAT_missiles",
-				"1Rnd_GAT_missiles",
-				"1Rnd_GAT_missiles",
-				"1Rnd_GAT_missiles",
-				"1Rnd_GAT_missiles",
-				"1Rnd_GAT_missiles"
+				"RC_1Rnd_MT_missiles",
+				"RC_1Rnd_MT_missiles",
+				"RC_1Rnd_MT_missiles",
+				"RC_1Rnd_MT_missiles"
 			};
 			class ViewOptics: ViewOptics
 			{
@@ -159,7 +178,7 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={2000,1000,500,250};
+							range[]={3000,1500,750,375};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -170,11 +189,11 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 };
 class RC_Static_AT_Arid_Bag: RC_Static_AA_Arid_Bag
 {
-	displayName="RC Static AT 2km";
+	displayName="RC Static AT 3km";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km";
+		displayName="RC Static AT 3km";
 		assembleTo="RC_Static_AT_Arid";
 	};
 };
@@ -201,11 +220,11 @@ class RC_Static_AT_Woodland: RC_Static_AT_Arid
 };
 class RC_Static_AT_Woodland_Bag: RC_Static_AA_Woodland_Bag
 {
-	displayName="RC Static AT 2km";
+	displayName="RC Static AT 3km";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km";
+		displayName="RC Static AT 3km";
 		assembleTo="RC_Static_AT_Woodland";
 	};
 };
@@ -221,7 +240,7 @@ class RC_Static_AT_Arid_O: RC_Static_AT_Arid
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km [Opf]";
+		displayName="RC Static AT 3km [Opf]";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_Arid_Bag_O"
@@ -230,10 +249,10 @@ class RC_Static_AT_Arid_O: RC_Static_AT_Arid
 };
 class RC_Static_AT_Arid_Bag_O: RC_Static_AT_Arid_Bag
 {
-	displayName="RC Static AT 2km [Opf]";
+	displayName="RC Static AT 3km [Opf]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km [Opf]";
+		displayName="RC Static AT 3km [Opf]";
 		assembleTo="RC_Static_AT_Arid_O";
 	};
 };
@@ -247,7 +266,7 @@ class RC_Static_AT_Woodland_O: RC_Static_AT_Woodland
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km [Opf]";
+		displayName="RC Static AT 3km [Opf]";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_Woodland_Bag_O"
@@ -256,10 +275,10 @@ class RC_Static_AT_Woodland_O: RC_Static_AT_Woodland
 };
 class RC_Static_AT_Woodland_Bag_O: RC_Static_AT_Woodland_Bag
 {
-	displayName="RC Static AT 2km [Opf]";
+	displayName="RC Static AT 3km [Opf]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km [Opf]";
+		displayName="RC Static AT 3km [Opf]";
 		assembleTo="RC_Static_AT_Woodland_O";
 	};
 };
@@ -275,7 +294,7 @@ class RC_Static_AT_Arid_I: RC_Static_AT_Arid
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km [Ind]";
+		displayName="RC Static AT 3km [Ind]";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_Arid_Bag_I"
@@ -284,10 +303,10 @@ class RC_Static_AT_Arid_I: RC_Static_AT_Arid
 };
 class RC_Static_AT_Arid_Bag_I: RC_Static_AT_Arid_Bag
 {
-	displayName="RC Static AT 2km [Ind]";
+	displayName="RC Static AT 3km [Ind]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km [Ind]";
+		displayName="RC Static AT 3km [Ind]";
 		assembleTo="RC_Static_AT_Arid_I";
 	};
 };
@@ -301,7 +320,7 @@ class RC_Static_AT_Woodland_I: RC_Static_AT_Woodland
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km [Ind]";
+		displayName="RC Static AT 3km [Ind]";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_Woodland_Bag_I"
@@ -310,10 +329,10 @@ class RC_Static_AT_Woodland_I: RC_Static_AT_Woodland
 };
 class RC_Static_AT_Woodland_Bag_I: RC_Static_AT_Woodland_Bag
 {
-	displayName="RC Static AT 2km [Ind]";
+	displayName="RC Static AT 3km [Ind]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 2km [Ind]";
+		displayName="RC Static AT 3km [Ind]";
 		assembleTo="RC_Static_AT_Woodland_I";
 	};
 };

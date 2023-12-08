@@ -143,27 +143,27 @@ class launch_Vorona_base_F;
 class RC_ATGM: launch_Vorona_base_F
 {
 	scope=1;
-	reloadTime=6;
-	magazineReloadTime=6;
+	reloadTime=7;
+	magazineReloadTime=7;
 	autoReload=1;	
 	magazines[]=
 	{
-		"RC_1Rnd_ATGM",
-		"RC_1Rnd_HEGM"
+		"RC_1Rnd_ATGM_MT"
 	};
 };
 
 
-/*
 class missiles_titan_static;
 class RC_missiles_titan_static: missiles_titan_static
 {
+	scope=1;
+	reloadTime=7;
+	magazineReloadTime=7;
 	magazines[]=
 	{
-		"RC_1Rnd_GAP_missiles",
+		"RC_1Rnd_MT_missiles",
 	};
 };
-*/
 
 
 // 82mm Mortar 4km
