@@ -561,7 +561,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={32000,16000,8000,67000};
+								range[]={30000,15000,7500,3750,67000};
 								resource="RscCustomInfoSensors";
 							};
 							/*
@@ -643,11 +643,7 @@ class CfgVehicles
 					"RC_6Rnd_155mm_Mo_MultiGuided",
 					"RC_6Rnd_155mm_Mo_mine",
 					"RC_8Rnd_155mm_Mo_AT_mine",
-					"RC_16Rnd_155mm_Mo_Illum",
-
-					"RC_16Rnd_155mm_Mo_shells", 	//testing only
-					"RC_4Rnd_155mm_Mo_LG",
-					"RC_4Rnd_155mm_Mo_guided",
+					"RC_16Rnd_155mm_Mo_Illum"
 				};
 				class OpticsIn: OpticsIn
 				{
@@ -687,8 +683,7 @@ class CfgVehicles
 					"RC_16Rnd_155mm_Mo_HEAB",
 					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
-					"RC_4Rnd_155mm_Mo_LG",
-					"RC_4Rnd_155mm_Mo_guided",
+					"RC_6Rnd_155mm_Mo_MultiGuided",
 					"RC_6Rnd_155mm_Mo_mine",
 					"RC_8Rnd_155mm_Mo_AT_mine",
 					"RC_16Rnd_155mm_Mo_Illum"
@@ -893,7 +888,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={32000,16000,8000,67000};
+								range[]={30000,15000,7500,3750,67000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -943,8 +938,7 @@ class CfgVehicles
 					"RC_16Rnd_155mm_Mo_HEAB",
 					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
-					"RC_4Rnd_155mm_Mo_LG",
-					"RC_4Rnd_155mm_Mo_guided",
+					"RC_6Rnd_155mm_Mo_MultiGuided",
 					"RC_6Rnd_155mm_Mo_mine",
 					"RC_8Rnd_155mm_Mo_AT_mine",
 					"RC_16Rnd_155mm_Mo_Illum"
@@ -987,8 +981,7 @@ class CfgVehicles
 					"RC_16Rnd_155mm_Mo_HEAB",
 					"RC_16Rnd_155mm_Mo_smoke",
 					"RC_2Rnd_155mm_Mo_Cluster",
-					"RC_4Rnd_155mm_Mo_LG",
-					"RC_4Rnd_155mm_Mo_guided",
+					"RC_6Rnd_155mm_Mo_MultiGuided",
 					"RC_6Rnd_155mm_Mo_mine",
 					"RC_8Rnd_155mm_Mo_AT_mine",
 					"RC_16Rnd_155mm_Mo_Illum"
@@ -1144,7 +1137,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={32000,16000,8000,67000};
+								range[]={30000,15000,7500,3750,67000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -1405,7 +1398,7 @@ class CfgVehicles
 							class SensorDisplay
 							{
 								componentType="SensorsDisplayComponent";
-								range[]={32000,16000,8000,67000};
+								range[]={30000,15000,7500,3750,67000};
 								resource="RscCustomInfoSensors";
 							};
 						};
@@ -2463,6 +2456,7 @@ class CfgVehicles
 	{
 		class Turrets;
 		class MainTurret;
+		class Components;
 		isRCArty=1;
 		scope=0;
 		scopeCurator=0;
@@ -2477,6 +2471,55 @@ class CfgVehicles
 		scopeCurator=2;
 		side=1;
 		forceInGarage=1;
+
+		class Components: Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						angleRangeHorizontal=360;
+						angleRangeVertical=360;
+
+						class AirTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+						typeRecognitionDistance=67000;
+
+						class AirTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=67000;
+							maxRange=67000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+					};
+				};
+			};
+		};
 	};
 	class RC_Static_NA_Arty_O: RC_Static_NA_Arty
 	{
@@ -2509,11 +2552,35 @@ class CfgVehicles
 					"RC_ShipCannon_120mm_HEAB_shells_x16",
 					"RC_ShipCannon_120mm_smoke_shells_x16",
 					"RC_ShipCannon_120mm_HE_cluster_shells_x2",
-					"RC_ShipCannon_120mm_HE_LG_shells_x4",
-					"RC_ShipCannon_120mm_HE_guided_shells_x4",
+					"RC_ShipCannon_120mm_MT_MultiGuided_shells_x6",	
 					"RC_ShipCannon_120mm_mine_shells_x6",
 					"RC_ShipCannon_120mm_AT_mine_shells_x8",
 					"RC_ShipCannon_120mm_Illum_shells_x16"
+				};
+
+				class Components: Components
+				{
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={30000,15000,7500,3750,67000};
+								resource="RscCustomInfoSensors";
+							};
+							/*
+							class VehicleMissileDisplay
+							{
+								componentType="TransportFeedDisplayComponent";
+								source="Missile";
+							};
+							*/
+						};
+					};
 				};
 			};
 		};
@@ -2727,8 +2794,6 @@ class CfgVehicles
 					"RC_16Rnd_82mm_Mo_HEAB",
 					"RC_16Rnd_82mm_Mo_Smoke_white",
 					"RC_6Rnd_82mm_Mo_MultiGuided",
-					"RC_4Rnd_82mm_Mo_LG",
-					"RC_4Rnd_82mm_Mo_guided",
 					"RC_6Rnd_82mm_Mo_mine",
 					"RC_8Rnd_82mm_Mo_AT_mine",
 					"RC_16Rnd_82mm_Mo_Flare_white"

@@ -10,9 +10,6 @@ TO DO - BUGFIXES:
 
 -REMOVE CBA Setting for EL Diff, as this could f up the formula
 -fix EL Diff mybe not getting calculated when being negative
-
--low angle ETA is broke, and changes with turret EL
-
 -does it still need include check for ace hpp?
 
 
@@ -58,14 +55,13 @@ next:
 -add 82mm multi quited
 -fix radar turrets viewoptics maxhorrotspeed
 -find out why 227mm HEAB has no recoil
--edit 120mm cannon charges
 -normal spread for mines for now
--reload time etc edits without charges
 -decrease sensor angles
 
 -aiAmmoUsageFlags https://community.bistudio.com/wiki/CfgAmmo_Config_Reference#aiAmmoUsageFlags
 -fix Static AT laser engaging
 -enable Static AT NLOS
+-120mm ammo scaling
 
 
 DONE - FEATURES:
@@ -104,6 +100,9 @@ DONE - FEATURES:
 -added 82mm/155mm/227mm Laser/IR/Vis Guided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and hot (per IR) or cold (per Visual) vehicles.)
 -reworked 82mm/155mm/227mm Laser/IR/Vis Guided, to be more accurate and Multi Target
 -reworked Static AT & ATGM, changed ammo from 4 HEAT & 2 HE to new 4 MT (MultiTarget) rounds, Static AT now has more locking options and also SACLOS
+-reworked 120mm charges
+-multi guided successfully tested to include gps when using artillery computer
+-artillery weapon edits in steps, so different versions can be chosen V1 until V4
 
 
 TO DO - QUALITY OF LIFE:
@@ -130,6 +129,7 @@ IDEAS - FUTURE:
 -counterbattery radar
 -3R MRSI display
 -3R automated MRSI
+-make multiguided misslecam panel work
 -parachute cam round for spotting (or simply additional rhs comp mod for hunt ir)
 
 
