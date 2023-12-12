@@ -7,7 +7,7 @@
 // Arid
 class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 {
-	displayname="RC Static AT 3km";
+	displayname="RC ATGM 3km lock";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
 	scope=2;
@@ -125,7 +125,7 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km";
+		displayName="RC ATGM 3km lock";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_Arid_Bag"
@@ -182,6 +182,11 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 							resource="RscCustomInfoSensors";
 						};
 					};
+					class VehicleMissileDisplay
+					{
+						componentType="TransportFeedDisplayComponent";
+						source="Missile";
+					};
 				};
 			};
 		};
@@ -189,11 +194,11 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 };
 class RC_Static_AT_Arid_Bag: RC_Static_AA_Arid_Bag
 {
-	displayName="RC Static AT 3km";
+	displayName="RC ATGM 3km lock";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km";
+		displayName="RC ATGM 3km lock";
 		assembleTo="RC_Static_AT_Arid";
 	};
 };
@@ -220,11 +225,11 @@ class RC_Static_AT_Woodland: RC_Static_AT_Arid
 };
 class RC_Static_AT_Woodland_Bag: RC_Static_AA_Woodland_Bag
 {
-	displayName="RC Static AT 3km";
+	displayName="RC ATGM 3km lock";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km";
+		displayName="RC ATGM 3km lock";
 		assembleTo="RC_Static_AT_Woodland";
 	};
 };

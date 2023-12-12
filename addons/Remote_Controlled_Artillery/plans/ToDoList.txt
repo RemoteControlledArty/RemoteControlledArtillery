@@ -5,12 +5,10 @@
 
 TO DO - BUGFIXES:
 
--if does not camera points in sky (cannot find range), show red warning "raise camera", (accuracy will be way off and submunitions wont deploy otherwise )
 -make MLRS/MRL rockets appear in launcher (if possible)
-
--REMOVE CBA Setting for EL Diff, as this could f up the formula
--fix EL Diff mybe not getting calculated when being negative
 -does it still need include check for ace hpp?
+-if arty is destroyed, ui stays...?
+-RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, no with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 
 
 DONE - BUGFIXES:
@@ -21,6 +19,7 @@ DONE - BUGFIXES:
 -armor value fixes
 -changed to 9.8066 Gravity
 -engine turnoff delay exceptions now per cfg value
+-if does not camera points in sky (cannot find range), show red warning "raise camera", (accuracy will be way off and submunitions wont deploy otherwise)
 
 -fixed distance calculation
 -fixed time of flight calculation
@@ -28,40 +27,26 @@ DONE - BUGFIXES:
 
 TO DO - FEATURES:
 
--attemt to create O mine pattern
--magazine shell count attributes code? (Who wrote this, what is meant by it?)
--only disable driver = 4, for modularity
-
--add datalink designator?
+documentation:
 -update removemagazine list
--test weapon canLock=2;
-
--renaming remaining assets for clarity
--attemt slight forward offset for airburst, so it has better low angle airburst, but not large high angle impact difference
--display peak ASL
--markers being "gps" artillery targets lockable on panel, for guided shells
-
--add low trajectory TOP DOWN formula & display for guided (low firing solution + ? meter height)
--get missle feed panel to connect to missle
--fix laser scanner reliability
--datalink target speed
-
-
-next:
--hide seats for RC IC
--attemt to add commander seat to RC IC
--assault pack for AR-3&4	//would add a bit much backpacks
 -add new assets to cfg patches list
--add 82mm multi quited
--fix radar turrets viewoptics maxhorrotspeed
+
+arty:
+-add datalink & laser firing solution display
+-add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
+-datalink selected target speed display near firing solution, to decide if it makes sence to fire
+-fix arty laser spot tracker/ find way to actually include datalink in designator
 -find out why 227mm HEAB has no recoil
--normal spread for mines for now
+
+general:
+-assault pack for AR-3&4	//would add a bit much backpacks
+-fix radar turrets viewoptics maxhorrotspeed
 -decrease sensor angles
 
--aiAmmoUsageFlags https://community.bistudio.com/wiki/CfgAmmo_Config_Reference#aiAmmoUsageFlags
+RC IC:
+-hide seats for RC IC
+-attemt to add commander seat to RC IC
 -fix Static AT laser engaging
--enable Static AT NLOS
--120mm ammo scaling
 
 
 DONE - FEATURES:
@@ -97,20 +82,31 @@ DONE - FEATURES:
 -added peak ASL calculation
 -shortend map marker search time (as its only running during active remote control, and improves quality of life)
 -fixed all sensor configs
--added 82mm/155mm/227mm Laser/IR/Vis Guided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and hot (per IR) or cold (per Visual) vehicles.)
--reworked 82mm/155mm/227mm Laser/IR/Vis Guided, to be more accurate and Multi Target
+-added 82mm/120/155mm/227mm Laser/IR/Vis Guided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and hot (per IR) or cold (per Visual) vehicles.)
+-reworked 82mm/120/155mm/227mm Laser/IR/Vis Guided, to be more accurate and Multi Target
 -reworked Static AT & ATGM, changed ammo from 4 HEAT & 2 HE to new 4 MT (MultiTarget) rounds, Static AT now has more locking options and also SACLOS
 -reworked 120mm charges
--multi guided successfully tested to include gps when using artillery computer
+-multi guided successfully tested to include gps guidance, but so far only when using artillery computer
 -artillery weapon edits in steps, so different versions can be chosen V1 until V4
+-split shown ELDiff, and ElDiff for used calculation, to not cause errors
+-enabled NLOS for locking ATGM
 
 
 TO DO - QUALITY OF LIFE:
 
+-only disable driver = 4, for modularity
 -https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
 -azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
 -or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
 -maybe turret elevation lock?
+
+-markers showing up on datalink panel, to be lockable for gps guidance?
+-get missle feed panel to connect to missle
+
+-attemt to create O mine pattern
+-magazine shell count attributes code? (Who wrote this, what is meant by it?)
+-attemt slight forward offset for airburst, so it has better low angle airburst, but not large high angle impact difference
+-aiAmmoUsageFlags https://community.bistudio.com/wiki/CfgAmmo_Config_Reference#aiAmmoUsageFlags
 
 
 DONE - QUALITY OF LIFE:

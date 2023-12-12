@@ -1,7 +1,20 @@
 class Laserdesignator;
-// Arid
-class Improved_FOV_Laserdesignator_Arid: Laserdesignator
+class Laserdesignator_base: Laserdesignator
 {
+	class Components;
+	scope=0;
+	scopeCurator=0;
+	scopeArsenal=0;
+};
+
+
+// Arid
+class Improved_FOV_Laserdesignator_Arid: Laserdesignator_base
+{
+	scope=2;
+	scopeCurator=2;
+	scopeArsenal=2;
+
 	author="Ascent";
 	displayName="Improved Laser Designator";
 	magazines[]=
@@ -43,9 +56,8 @@ class Improved_FOV_Laserdesignator_Ti_Woodland: Improved_FOV_Laserdesignator_Ti_
 	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";
 };
 
+
 /*
-//doesnt work yet
-class Components;
 class Datalink_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
 {
 	displayName="Datalink Laser Designator (whTi)";
@@ -58,46 +70,62 @@ class Datalink_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					animDirection="mainTurret";
-					minRange=10;
-					maxRange=4000;
 					angleRangeHorizontal=360;
-					angleRangeVertical=180;
+					angleRangeVertical=360;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
+					typeRecognitionDistance=67000;
+
 					class AirTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=67000;
+						maxRange=67000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=67000;
+						maxRange=67000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
-
 				class IRSensorComponent: SensorTemplateIR
 				{
+					typeRecognitionDistance=2000;
+
 					class AirTarget
 					{
-						minRange=10;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=10;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
+
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=60;
 					angleRangeVertical=40;
@@ -106,20 +134,23 @@ class Datalink_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
+					typeRecognitionDistance=1000;
+
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=1500;
+						maxRange=1500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=1500;
+						maxRange=1500;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
+
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=60;
@@ -127,11 +158,52 @@ class Datalink_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
 					animDirection="mainGun";
 					aimDown=-0.5;
 				};
+
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={4000,2000,1000,500};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+			};
+		};
+	};
+
+	class Turrets
+	{
+		class MainTurret
+		{
+			showAllTargets="2 + 4";
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={4000,2000,1000,500};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
 			};
 		};
 	};
 };
-class Datalink_Laserdesignator_Ti_Woodland: Improved_FOV_Laserdesignator_Ti_Arid
+class Datalink_Laserdesignator_Ti_Woodland: Datalink_Laserdesignator_Ti_Arid
 {
 	model="\A3\Weapons_F\Binocular\laserdesignator_01_khk_f.p3d";
 	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";
@@ -143,6 +215,8 @@ class launch_Vorona_base_F;
 class RC_ATGM: launch_Vorona_base_F
 {
 	scope=1;
+	displayName="SACLOS ATGM";
+	displayNameShort="SACLOS ATGM";
 	reloadTime=7;
 	magazineReloadTime=7;
 	autoReload=1;	
@@ -157,6 +231,8 @@ class missiles_titan_static;
 class RC_missiles_titan_static: missiles_titan_static
 {
 	scope=1;
+	displayName="ATGM";
+	displayNameShort="ATGM";
 	reloadTime=7;
 	magazineReloadTime=7;
 	magazines[]=
@@ -635,7 +711,7 @@ class RC_mortar_82mm_V2: RC_mortar_82mm_V1
 	reloadTime=3;
 	magazineReloadTime=3;
 	//ballisticsComputer=8;	//direct fire reticle for highest charge
-	canLock=2;	//test out with =2 "Determines if the weapon can lock onto targets allowed by the ammunition it uses."
+	canLock=2;
 	weaponLockDelay=0;
 	//elevationMode=2;
 };
@@ -1855,9 +1931,9 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 {
 	reloadTime=6;
 	magazineReloadTime=6;
-	canLock=2;	//test out with =2 "Determines if the weapon can lock onto targets allowed by the ammunition it uses."
-	weaponLockDelay=0;
 	ballisticsComputer=8;	//direct fire reticle for highest charge
+	canLock=2;
+	weaponLockDelay=0;
 	//elevationMode=2;
 
 	class Single1: Single1
@@ -1995,8 +2071,9 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT
 {
 	magazineReloadTime=1;
 	ballisticsComputer=8;
-	canLock=2;	//arty has 0 but can lock
+	canLock=2;
 	weaponLockDelay=0;
+	//elevationMode=2;
 
 	magazines[]=
 	{

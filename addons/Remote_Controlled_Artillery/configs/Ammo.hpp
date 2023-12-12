@@ -32,12 +32,13 @@ class RC_M_MT: RC_M_MT_base
 	indirectHitRange=10;
 	maxControlRange=3000;
 	cmImmunity=0.8;
-	missileLockCone=45;
+	missileLockCone=180;	//for NLOS targeting, being able to shoot missle straight up, over barriers being in the way
 	missileLockMaxDistance=3000;
 	initTime=0.01;
 	//laserLock=0;
 	//laserLock=1;
 	weaponLockSystem="1 + 2 + 16";
+	cameraViewAvailable=1;
 
 	class Components: Components
 	{
@@ -245,7 +246,7 @@ class RC_Mine_82mm_AMOS_range: SubmunitionBase
 	submunitionConeType[]=
 	{
 		"poissondisc",
-		12
+		8
 	};
 	submunitionConeAngle=20;
 	triggerDistance=50;
@@ -276,7 +277,7 @@ class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 	submunitionConeType[]=
 	{
 		"poissondisc",
-		6
+		4
 	};
 	submunitionConeAngle=20;
 	triggerDistance=50;
@@ -299,176 +300,6 @@ class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 		distance=1;
 	};
 };
-
-
-/*
-class MissileBase_base: MissileBase
-{
-	class Components;
-};
-class RC_M_Mo_82mm_AT_MultiGuided: MissileBase_base
-{
-	model="\A3\weapons_f\ammo\shell";
-	autoSeekTarget=1;
-	proximityExplosionDistance=1; 	//might prevent overshot miss
-
-	//lockSeekRadius=32000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
-	trackLead=1;
-	airLock=0;
-	laserLock=1; //from main shell
-	irLock=1;
-	canLock=2; //able to lock
-	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
-
-	receiveRemoteTargets=1;
-
-	maneuvrability=12;	//6
-	simulationStep=0.0020000001;
-	fuseDistance=0;
-	airFriction=0.0099999998;
-	sideAirFriction=0.029999999;
-	missileLockCone=40;
-	missileKeepLockedCone=40;
-
-	hit=400;
-	indirectHit=400;
-	indirectHitRange=4;
-	EffectFly="ArtilleryTrails";
-	cameraViewAvailable=1;
-
-	weaponLockSystem="1+2+4";	//visual, ir, laser
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-
-				class IRSensorComponent: SensorTemplateIR
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					class AirTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
-};
-*/
-
-/*
-class RC_Sh_82mm_AMOS_AT_MultiGuided_submunition: Sh_82mm_AMOS
-{
-	hit=0;
-	indirectHit=400;
-	indirectHitRange=4;
-
-	explosionTime=0.01;
-	explosive=1;
-	CraterEffects="";
-};
-class RC_Sh_82mm_AMOS_AT_MultiGuided: SubmunitionBase
-{
-	submunitionAmmo="RC_M_Mo_155mm_AT_MultiGuided";
-	submunitionCount=1;		//2
-	submunitionConeAngle=0;
-	triggerDistance=300;
-	laserLock=1;
-	irLock=1;
-	autoSeekTarget=1;
-
-	muzzleEffect="";
-	hit=165;
-	cost=500;
-	airFriction=0;
-
-	class CamShakeFire
-	{
-		power=3.0092199;
-		duration=1.8;
-		frequency=20;
-		distance=72.4431;
-	};
-	class CamShakePlayerFire
-	{
-		power=0.0099999998;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
-};
-*/
 
 
 class ammo_Penetrator_82mm_MT: ammo_Penetrator_Base
@@ -700,6 +531,20 @@ class RC_Sh_82mm_AMOS_MT_MultiGuided: SubmunitionBase
 	cost=500;
 	airFriction=0;
 
+	class CamShakeExplode
+	{
+		power=16.4;
+		duration=1.8;
+		frequency=20;
+		distance=216.44299;
+	};
+	class CamShakeHit
+	{
+		power=82;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
 	class CamShakeFire
 	{
 		power=3.0092199;
@@ -745,12 +590,26 @@ class RC_Sh_120mm_AMOS_MT_MultiGuided: RC_Sh_82mm_AMOS_MT_MultiGuided
 	hit=300;
 	cost=700;
 
+	class CamShakeExplode
+	{
+		power=31;
+		duration=2.4000001;
+		frequency=20;
+		distance=339.599;
+	};
+	class CamShakeHit
+	{
+		power=155;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
 	class CamShakeFire
 	{
-		power=3.0092199;
-		duration=1.8;
+		power=3.52844;
+		duration=2.4000001;
 		frequency=20;
-		distance=72.4431;
+		distance=99.599197;
 	};
 	class CamShakePlayerFire
 	{
@@ -894,408 +753,6 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 	};
 };
 
-//ATLG
-
-/*
-	class M_Mo_82mm_AT: MissileBase
-	{
-		model="\A3\weapons_f\ammo\shell";
-		hit=160;
-		indirectHit=50;
-		indirectHitRange=8;
-		autoSeekTarget=1;
-		airLock=0;
-		maneuvrability=6;
-		simulationStep=0.0020000001;
-		fuseDistance=0;
-		airFriction=0.0099999998;
-		sideAirFriction=0.029999999;
-		weaponLockSystem=2;
-		missileLockCone=40;
-		missileKeepLockedCone=40;
-		class Components: Components
-		{
-			class SensorsManagerComponent
-			{
-				class Components
-				{
-					class IRSensorComponent: SensorTemplateIR
-					{
-						class AirTarget
-						{
-							minRange=500;
-							maxRange=800;
-							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=1;
-						};
-						class GroundTarget
-						{
-							minRange=500;
-							maxRange=800;
-							objectDistanceLimitCoef=1;
-							viewDistanceLimitCoef=1;
-						};
-						angleRangeHorizontal=40;
-						angleRangeVertical=40;
-					};
-				};
-			};
-		};
-	};
-
-	class Sh_82mm_AMOS_guided: SubmunitionBase
-	{
-		submunitionAmmo="M_Mo_82mm_AT";
-		submunitionCount=1;
-		submunitionConeAngle=0;
-		laserLock=0;
-		autoSeekTarget=1;
-		cost=200;
-		muzzleEffect="";
-		triggerDistance=300;
-		airFriction=0;
-		hit=165;
-		class CamShakeFire
-		{
-			power=3.0092199;
-			duration=1.8;
-			frequency=20;
-			distance=72.4431;
-		};
-		class CamShakePlayerFire
-		{
-			power=0.0099999998;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-	};
-
-	class Sh_82mm_AMOS_LG: Sh_82mm_AMOS_guided
-	{
-		submunitionAmmo="M_Mo_82mm_AT_LG";
-		cost=500;
-		laserLock=1;
-		irLock=0;
-		muzzleEffect="";
-	};
-
-	class M_Mo_120mm_AT: M_Mo_82mm_AT
-	{
-		hit=800;
-		indirectHit=50;
-		indirectHitRange=3;
-		EffectFly="ArtilleryTrails";
-		cameraViewAvailable=1;
-	};
-	class M_Mo_120mm_AT_LG: M_Mo_120mm_AT
-	{
-		weaponLockSystem=4;
-		class Components: Components
-		{
-			class SensorsManagerComponent
-			{
-				class Components
-				{
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-						class AirTarget
-						{
-							minRange=800;
-							maxRange=800;
-							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=-1;
-						};
-						class GroundTarget
-						{
-							minRange=800;
-							maxRange=800;
-							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=-1;
-						};
-						angleRangeHorizontal=40;
-						angleRangeVertical=40;
-					};
-				};
-			};
-		};
-	};
-
-	class M_Mo_155mm_AT: M_Mo_120mm_AT
-	{
-		hit=1200;
-		indirectHit=200;
-		indirectHitRange=4;
-	};
-	class M_Mo_155mm_AT_LG: M_Mo_120mm_AT_LG
-	{
-		hit=1200;
-		indirectHit=200;
-		indirectHitRange=4;
-	};
-
-
-	class Sh_82mm_AMOS_guided: SubmunitionBase
-	{
-		submunitionAmmo="M_Mo_82mm_AT";
-		submunitionCount=1;
-		submunitionConeAngle=0;
-		laserLock=0;
-		autoSeekTarget=1;
-		cost=200;
-		muzzleEffect="";
-		triggerDistance=300;
-		airFriction=0;
-		hit=165;
-		class CamShakeFire
-		{
-			power=3.0092199;
-			duration=1.8;
-			frequency=20;
-			distance=72.4431;
-		};
-		class CamShakePlayerFire
-		{
-			power=0.0099999998;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class Sh_82mm_AMOS_LG: Sh_82mm_AMOS_guided
-	{
-		submunitionAmmo="M_Mo_82mm_AT_LG";
-		cost=500;
-		laserLock=1;
-		irLock=0;
-		muzzleEffect="";
-	};
-
-
-	class Sh_155mm_AMOS_guided: Sh_82mm_AMOS_guided
-	{
-		submunitionAmmo="M_Mo_155mm_AT";
-		muzzleEffect="";
-		triggerDistance=500;
-		hit=300;
-	};
-	class Sh_155mm_AMOS_LG: Sh_82mm_AMOS_LG
-	{
-		submunitionAmmo="M_Mo_155mm_AT_LG";
-		muzzleEffect="";
-		triggerDistance=500;
-		hit=300;
-	};
-*/
-
-/*
-	class ammo_Penetrator_Vorona: ammo_Penetrator_Base
-	{
-		caliber=60;
-		warheadName="TandemHEAT";
-		hit=720;
-		typicalSpeed=2000;
-	};
-*/
-
-/*class default
-	directionalExplosion=0;
-	explosionAngle=60;
-*/
-
-//outdated, inaccurate, hard to balance
-/*
-class RC_M_Mo_155mm_AT_MultiGuided: MissileBase_base
-{
-	model="\A3\weapons_f\ammo\shell";
-	autoSeekTarget=1;
-	proximityExplosionDistance=1; 	//might prevent overshot miss
-
-	//lockSeekRadius=32000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
-	trackLead=1;
-	airLock=0;
-	laserLock=1; //from main shell
-	irLock=1;
-	canLock=2; //able to lock
-	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
-	receiveRemoteTargets=1;
-
-	maneuvrability=12;	//6
-	simulationStep=0.0020000001;
-	fuseDistance=0;
-	airFriction=0.0099999998;
-	sideAirFriction=0.029999999;
-	missileLockCone=40;
-	missileKeepLockedCone=40;
-
-	hit=1200;
-	indirectHit=1200;
-	indirectHitRange=4;
-	EffectFly="ArtilleryTrails";
-	cameraViewAvailable=1;
-
-	weaponLockSystem="1+2+4";	//visual, ir, laser
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-
-				class IRSensorComponent: SensorTemplateIR
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					class AirTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
-};
-
-
-class RC_Sh_155mm_AMOS_AT_MultiGuided: SubmunitionBase
-{
-	submunitionAmmo="RC_M_Mo_155mm_AT_MultiGuided";
-	submunitionCount=1;		//2
-	submunitionConeAngle=0;
-	triggerDistance=500;
-
-	laserLock=1;
-	irLock=1;
-	autoSeekTarget=1;
-
-	receiveRemoteTargets=1;
-	canLock=2;
-	lockAcquire=1;
-
-	//artilleryLock=1;
-	
-	//testing
-	//lockSeekRadius=67000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
-	//lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
-	//canLock=2; //able to lock
-
-
-	muzzleEffect="";
-	hit=300;
-	cost=500;
-	airFriction=0;
-
-	class CamShakeFire
-	{
-		power=3.0092199;
-		duration=1.8;
-		frequency=20;
-		distance=72.4431;
-	};
-	class CamShakePlayerFire
-	{
-		power=0.0099999998;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
-};
-*/
-
-
-//AT Airburst Test
-/*
-class RC_Sh_155mm_AMOS_AT_submunition: Sh_155mm_AMOS
-{
-	explosionTime=0.01;
-	explosive=1;
-	indirectHit=1200;
-	indirectHitRange=4;
-	CraterEffects="";	//removes ground impact animation
-};
-class RC_Sh_155mm_AMOS_AT_MultiGuided_2_submunition: RC_M_Mo_155mm_AT_MultiGuided
-{
-	proximityExplosionDistance=-1;
-
-	triggerDistance=-1;
-	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,0,-3.5};
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionAmmo="RC_Sh_155mm_AMOS_AT_submunition";
-	CraterEffects="";
-	indirectHit=0;
-	indirectHitRange=0;
-};
-*/
-
 
 class ammo_Penetrator_155mm_MT: ammo_Penetrator_Base
 {
@@ -1324,12 +781,26 @@ class RC_Sh_155mm_AMOS_MT_MultiGuided: RC_Sh_82mm_AMOS_MT_MultiGuided
 	hit=300;
 	cost=700;
 
+	class CamShakeExplode
+	{
+		power=31;
+		duration=2.4000001;
+		frequency=20;
+		distance=339.599;
+	};
+	class CamShakeHit
+	{
+		power=155;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
 	class CamShakeFire
 	{
-		power=3.0092199;
-		duration=1.8;
+		power=3.52844;
+		duration=2.4000001;
 		frequency=20;
-		distance=72.4431;
+		distance=99.599197;
 	};
 	class CamShakePlayerFire
 	{
@@ -1412,553 +883,6 @@ class RC_R_604mm_ATACMS_DPICM: R_230mm_Cluster
 };
 
 
-/*
-class R_230mm_LG;
-class RC_R_230mm_LG: R_230mm_LG
-{
-	submunitionAmmo="M_Mo_230mm_AT_LG";
-	muzzleEffect="";
-	triggerDistance=500;
-
-	laserLock=1;
-	irLock=0;
-
-	submunitionCount=1;
-	submunitionConeAngle=0;
-	autoSeekTarget=1;
-};
-*/
-
-/*
-class R_230mm_fly: ShellBase
-{
-	artilleryLock=1;
-	model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
-	hit=1200;
-	indirectHit=800;
-	indirectHitRange=30;
-	warheadName="HE";
-	cost=1000;
-	audibleFire=64;
-	dangerRadiusHit=1250;
-	suppressionRadiusHit=120;
-	deflecting=0;
-	airFriction=0;
-	muzzleEffect="";
-	effectFly="ArtilleryTrails";
-	class CamShakeExplode
-	{
-		power=46;
-		duration=3;
-		frequency=20;
-		distance=361.32599;
-	};
-	class CamShakeHit
-	{
-		power=230;
-		duration=0.80000001;
-		frequency=20;
-		distance=1;
-	};
-	class CamShakeFire
-	{
-		power=3.89432;
-		duration=3;
-		frequency=20;
-		distance=121.326;
-	};
-	class CamShakePlayerFire
-	{
-		power=5;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
-	soundHit1[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
-		2.5118864,
-		1,
-		1900
-	};
-	soundHit2[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
-		2.5118864,
-		1,
-		1900
-	};
-	soundHit3[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
-		2.5118864,
-		1,
-		1900
-	};
-	multiSoundHit[]=
-	{
-		"soundHit1",
-		0.34,
-		"soundHit2",
-		0.33000001,
-		"soundHit3",
-		0.33000001
-	};
-};
-*/
-
-/*
-class RC_M_Mo_230mm_MultiGuided: MissileBase_base
-{
-	model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
-	hit=1200;
-	indirectHit=800;
-	indirectHitRange=30;
-	//warheadName="HE";
-	//audibleFire=64;
-	//dangerRadiusHit=1250;
-	//suppressionRadiusHit=120;
-
-	autoSeekTarget=1;
-	proximityExplosionDistance=1; 	//might prevent overshot miss
-
-	//lockSeekRadius=32000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
-	trackLead=1;
-	airLock=0;
-	laserLock=1; //from main shell
-	irLock=1;
-	canLock=2; //able to lock
-	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
-
-	receiveRemoteTargets=1;
-
-	maneuvrability=12;	//6
-	simulationStep=0.0020000001;
-	fuseDistance=0;
-	airFriction=0.0099999998;
-	sideAirFriction=0.029999999;
-	missileLockCone=40;
-	missileKeepLockedCone=40;
-
-	EffectFly="ArtilleryTrails";
-	cameraViewAvailable=1;
-
-	weaponLockSystem="1+2+4";	//visual, ir, laser
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-				class IRSensorComponent: SensorTemplateIR
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					class AirTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
-	class CamShakeExplode
-	{
-		power=46;
-		duration=3;
-		frequency=20;
-		distance=361.32599;
-	};
-	class CamShakeHit
-	{
-		power=230;
-		duration=0.80000001;
-		frequency=20;
-		distance=1;
-	};
-	class CamShakeFire
-	{
-		power=3.89432;
-		duration=3;
-		frequency=20;
-		distance=121.326;
-	};
-	class CamShakePlayerFire
-	{
-		power=5;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
-	soundHit1[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
-		2.5118864,
-		1,
-		1900
-	};
-	soundHit2[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
-		2.5118864,
-		1,
-		1900
-	};
-	soundHit3[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
-		2.5118864,
-		1,
-		1900
-	};
-	multiSoundHit[]=
-	{
-		"soundHit1",
-		0.34,
-		"soundHit2",
-		0.33000001,
-		"soundHit3",
-		0.33000001
-	};
-};
-*/
-
-/*
-class R_230mm_HE: SubmunitionBase
-{
-	artilleryLock=1;
-	submunitionAmmo="R_230mm_fly";
-	triggerDistance=500;
-	cost=1000;
-	airFriction=0;
-	muzzleEffect="";
-	effectFly="Missile0";
-	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
-	hit=300;
-	class CamShakeExplode
-	{
-		power=46;
-		duration=3;
-		frequency=20;
-		distance=361.32599;
-	};
-	class CamShakeHit
-	{
-		power=230;
-		duration=0.80000001;
-		frequency=20;
-		distance=1;
-	};
-	class CamShakeFire
-	{
-		power=3.89432;
-		duration=3;
-		frequency=20;
-		distance=121.326;
-	};
-	class CamShakePlayerFire
-	{
-		power=5;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
-	soundFly[]=
-	{
-		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
-		0.56234133,
-		1.9,
-		500
-	};
-};
-*/
-
-/*
-class RC_Sh_230mm_AMOS_AT_MultiGuided: SubmunitionBase
-{
-	submunitionAmmo="RC_M_Mo_230mm_AT_MultiGuided";
-	submunitionCount=1;		//2
-	submunitionConeAngle=0;
-	triggerDistance=500;
-
-	//artilleryLock=1;
-	laserLock=1;
-	irLock=1;
-	autoSeekTarget=1;
-
-	muzzleEffect="";
-	hit=300;
-	cost=1000;
-	airFriction=0;
-
-	class CamShakeExplode
-	{
-		power=46;
-		duration=3;
-		frequency=20;
-		distance=361.32599;
-	};
-	class CamShakeHit
-	{
-		power=230;
-		duration=0.80000001;
-		frequency=20;
-		distance=1;
-	};
-	class CamShakeFire
-	{
-		power=3.89432;
-		duration=3;
-		frequency=20;
-		distance=121.326;
-	};
-	class CamShakePlayerFire
-	{
-		power=5;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
-	soundFly[]=
-	{
-		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
-		0.56234133,
-		1.9,
-		500
-	};
-};
-*/
-
-
-/*
-class RC_R_230mm_fly_MultiGuided: MissileBase_base
-{
-	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";		//guiding unfortunately doesnt work with this model
-	model="\A3\weapons_f\ammo\shell";
-	EffectFly="ArtilleryTrails";
-	autoSeekTarget=1;
-	proximityExplosionDistance=1; 	//might prevent overshot miss
-
-	//lockSeekRadius=32000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
-	trackLead=1;
-	airLock=0;
-	laserLock=1; //from main shell
-	irLock=1;
-	canLock=2; //able to lock
-	lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
-
-	receiveRemoteTargets=1;
-
-	maneuvrability=12;	//6
-	simulationStep=0.0020000001;
-	fuseDistance=0;
-	airFriction=0.0099999998;
-	sideAirFriction=0.029999999;
-	missileLockCone=40;
-	missileKeepLockedCone=40;
-
-	hit=1200;
-	indirectHit=1200;
-	indirectHitRange=5;
-	cameraViewAvailable=1;
-
-	weaponLockSystem="1+2+4";	//visual, ir, laser
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-
-				class IRSensorComponent: SensorTemplateIR
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					class AirTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=800;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					class AirTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
-};
-class RC_R_230mm_MultiGuided: SubmunitionBase
-{
-	effectFly="Missile0";
-	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
-
-	submunitionAmmo="RC_R_230mm_fly_MultiGuided";
-	submunitionCount=1;		//2
-	submunitionConeAngle=0;
-	triggerDistance=500;
-
-	laserLock=1;
-	irLock=1;
-	autoSeekTarget=1;
-	
-	canLock=2;
-	lockAcquire=1;
-	receiveRemoteTargets=1;
-	//artilleryLock=1;
-
-	muzzleEffect="";
-	hit=300;
-	cost=500;
-	airFriction=0;
-
-	class CamShakeFire
-	{
-		power=3.0092199;
-		duration=1.8;
-		frequency=20;
-		distance=72.4431;
-	};
-	class CamShakePlayerFire
-	{
-		power=0.0099999998;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
-};
-*/
-
-
 class ammo_Penetrator_230mm_MT: ammo_Penetrator_Base
 {
 	caliber=106.1;
@@ -1986,18 +910,39 @@ class RC_R_230mm_MT_MultiGuided: RC_Sh_155mm_AMOS_MT_MultiGuided
 	hit=300;
 	cost=1000;
 
+	class CamShakeExplode
+	{
+		power=46;
+		duration=3;
+		frequency=20;
+		distance=361.32599;
+	};
+	class CamShakeHit
+	{
+		power=230;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
 	class CamShakeFire
 	{
-		power=3.0092199;
-		duration=1.8;
+		power=3.89432;
+		duration=3;
 		frequency=20;
-		distance=72.4431;
+		distance=121.326;
 	};
 	class CamShakePlayerFire
 	{
-		power=0.0099999998;
+		power=5;
 		duration=0.1;
 		frequency=20;
 		distance=1;
+	};
+	soundFly[]=
+	{
+		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
+		0.56234133,
+		1.9,
+		500
 	};
 };

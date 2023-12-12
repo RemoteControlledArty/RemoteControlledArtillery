@@ -395,7 +395,6 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\configs\baseClasses.hpp"
-	
 	#include "\Remote_Controlled_Artillery\configs\ImprovedDesignators.hpp"
 	#include "\Remote_Controlled_Artillery\configs\staticAA.hpp"
 	#include "\Remote_Controlled_Artillery\configs\staticAT.hpp"
@@ -2018,7 +2017,7 @@ class CfgVehicles
 		class MainTurret;
 		class HitPoints;
 		class HitEngine;
-		class ViewOptics;
+		//class ViewOptics;
 		forceHideDriver=1;
 		RCDisableSeats=3; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 		scope=0;
@@ -2052,6 +2051,13 @@ class CfgVehicles
 		redRpm=1100;
 		idleRpm=250;
 
+		/*
+		class EventHandlers
+		{
+			init="(_this select 0) spawn {if (local _this) then {_this setVehicleRadar 1};};";
+		};
+		*/
+
 		class HitPoints: HitPoints
 		{
 			class HitEngine: HitEngine
@@ -2060,19 +2066,22 @@ class CfgVehicles
 			};
 		};
 
-		class Turrets : Turrets
+		class Turrets: Turrets
 		{
-			class MainTurret : MainTurret
+			class MainTurret: MainTurret
 			{
 				gunnerForceOptics=1;
 				forceHideGunner=1;
 			};
+			/*
+			//caused bug
 			class ViewOptics: ViewOptics
 			{
 				initFov=0.89999998;
 				minFov=0.0125;
 				maxFov=0.89999998;
 			};
+			*/
 		};
 
 		class AnimationSources: AnimationSources

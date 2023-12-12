@@ -29,13 +29,6 @@ RC_Artillery_UI = [] spawn {
 		// See if the vehicle has the isRCArty property
 		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
 
-		/* remove later
-		// Special Case for the MRL Because it's Dogshit
-		if (!(_uavClass isKindOf "RC_MRL_base") && !(_uavClass isKindOf "RC_Infantry_Carrier_base")) then {
-			if (((speed _uav <= 0.25) and (speed _uav >= -0.25)) and (_uavClass isKindof "Tank" || _uavClass isKindof "Car")) then {_uav engineOn false};
-		};
-		*/
-
 		// If seats have been disabled in the Config we handle that here
 		_disableSeats = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCDisableSeats");
 		// If we have the Property Defined
@@ -212,21 +205,23 @@ RC_Artillery_UI = [] spawn {
 				if (_targetExists == -1) then {
 					RC_Current_Index = 0;
 				};
-				
-
 
 				_targetPos = markerPos (RC_Current_Target select 1);
 				_artyPos = getPosASL _uav;
 
 				_targetDistance = round(_targetPos distance2d _artyPos);
-				
-				_Difference = 0;
 
+				//how ElDiff is shown based on cba settings
+				_shownDifference = 0;
 				if RC_Arty_EL_Diff then {
-					_Difference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);
+					_shownDifference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);
 				} else {
-					_Difference = (_artyPos select 2) - ((AGLToASL _targetPos) select 2);
+					_shownDifference = (_artyPos select 2) - ((AGLToASL _targetPos) select 2);
 				};
+
+				//ElDiff for formula
+				_Difference = 0;
+				_Difference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);
 
 				_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);
 				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
@@ -243,7 +238,7 @@ RC_Artillery_UI = [] spawn {
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
-				_ctrlDifference ctrlSetText Format ["DIF: %1", [_Difference, 4, 0] call CBA_fnc_formatNumber];
+				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 				
 				// If we have Solution Calculator Turned on do da Math
 				if (RC_Solution_Calculator_On) then {
@@ -386,6 +381,8 @@ RC_Artillery_UI = [] spawn {
 			_cursorTargetAzimuth = ((_cursorTargetVector select 0) atan2 (_cursorTargetVector select 1));
 			if (_cursorTargetAzimuth < 0) then {_cursorTargetAzimuth = _cursorTargetAzimuth + 360;};
 			_cursorTargetAzimuth = (17.7777778 * _cursorTargetAzimuth);
+
+			_cursorTargetSpeed = speed _cursorTarget
 
 
 			//_DatalinkTargets
