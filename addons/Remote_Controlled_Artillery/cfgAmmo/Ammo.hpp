@@ -35,8 +35,7 @@ class RC_M_MT: RC_M_MT_base
 	missileLockCone=180;	//for NLOS targeting, being able to shoot missle straight up, over barriers being in the way
 	missileLockMaxDistance=3000;
 	initTime=0.01;
-	//laserLock=0;
-	//laserLock=1;
+	laserLock=1;
 	weaponLockSystem="1 + 2 + 16";
 	cameraViewAvailable=1;
 
@@ -133,6 +132,7 @@ class RC_M_MT: RC_M_MT_base
 
 
 //82mm
+class SubmunitionBase;
 class Sh_82mm_AMOS;
 class RC_Sh_82mm_AMOS_submunition: Sh_82mm_AMOS
 {
@@ -153,6 +153,22 @@ class RC_Sh_82mm_AMOS_HEAB: Sh_82mm_AMOS
 class RC_Sh_82mm_AMOS_HEAB_low: RC_Sh_82mm_AMOS_HEAB
 {
 	submunitionInitialOffset[]={0,0,-6};		//low airburst to ignore atleast microterrain
+};
+
+
+class RC_Sh_82mm_AMOS_HEAB2: SubmunitionBase
+{
+	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
+	submunitionCount=1;
+	submunitionConeAngle=0;
+	triggerDistance=18;
+
+	artilleryLock=1;
+
+	muzzleEffect="";
+	hit=165;
+	cost=500;
+	airFriction=0;
 };
 
 
@@ -239,14 +255,13 @@ class RC_Mo_ClassicMineRange: Mo_ClassicMineRange
 {
 	submunitionAmmo="APERSBoundingMine_Range_Ammo";
 };
-class SubmunitionBase;
 class RC_Mine_82mm_AMOS_range: SubmunitionBase
 {
 	submunitionAmmo="RC_Mo_ClassicMineRange";
 	submunitionConeType[]=
 	{
 		"poissondisc",
-		8
+		10
 	};
 	submunitionConeAngle=20;
 	triggerDistance=50;
@@ -277,9 +292,9 @@ class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 	submunitionConeType[]=
 	{
 		"poissondisc",
-		4
+		5
 	};
-	submunitionConeAngle=20;
+	submunitionConeAngle=10;
 	triggerDistance=50;
 	cost=200;
 	airFriction=0;
@@ -664,7 +679,7 @@ class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 	submunitionAmmo="RC_Mo_ClassicMineRange";
 	submunitionConeType[]=
 	{
-		"poissondisccenter",
+		"poissondisc",
 		24
 	};
 };
@@ -673,10 +688,11 @@ class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 class AT_Mine_155mm_AMOS_range;
 class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
 {
+	submunitionConeAngle=15;
 	submunitionConeType[]=
 	{
 		//"custom",{{-5,0},{-3,0},{-1,0},{1,0},{3,0},{5,0} , {0,-5},{0,-3},{0,-1},{0,1},{0,3},{0,5}}
-		"poissondisccenter",
+		"poissondisc",
 		12
 	};
 };
@@ -691,14 +707,6 @@ class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
 		10
 	};
 };
-
-
-/*
-class RC_155mm_HEAB_test: Sh_155mm_AMOS
-{
-	triggerDistance=26.8;	//doesnt work
-};
-*/
 
 
 class Sh_155mm_AMOS;
@@ -721,6 +729,176 @@ class RC_Sh_155mm_AMOS_HEAB: Sh_155mm_AMOS
 class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
 {
 	submunitionInitialOffset[]={0,0,-6};	//low airburst to ignore atleast microterrain
+};
+
+
+class RC_Sh_155mm_AMOS_HEAB2: SubmunitionBase
+{
+	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
+	submunitionCount=1;
+	submunitionConeAngle=0;
+	triggerDistance=20;
+
+	supersonicCrackNear[]=
+	{
+		"A3\Sounds_F\weapons\Explosion\supersonic_crack_close",
+		0.31622776,
+		1,
+		50
+	};
+	supersonicCrackFar[]=
+	{
+		"A3\Sounds_F\weapons\Explosion\supersonic_crack_50meters",
+		0.22387211,
+		1,
+		150
+	};
+	CraterEffects="HEShellCrater";
+	CraterWaterEffects="ImpactEffectsWaterHE";
+	ExplosionEffects="HEShellExplosion";
+	visibleFire=64;
+	audibleFire=250;
+	dangerRadiusHit=-1;
+	suppressionRadiusHit=30;
+	timeToLive=360;
+	muzzleEffect="";
+	caliber=34;
+	deflecting=10;
+	deflectionDirDistribution=0.38999999;
+	penetrationDirDistribution=0.25999999;
+	whistleOnFire=2;
+	aiAmmoUsageFlags="64 + 128 + 256";
+	class HitEffects
+	{
+		hitWater="ImpactEffectsWaterRocket";
+	};
+	soundFakeFall0[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_01",
+		3.1622777,
+		1,
+		1000
+	};
+	soundFakeFall1[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_02",
+		3.1622777,
+		1,
+		1000
+	};
+	soundFakeFall2[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_03",
+		3.1622777,
+		1,
+		1000
+	};
+	soundFakeFall3[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_04",
+		3.1622777,
+		1,
+		1000
+	};
+	soundFakeFall[]=
+	{
+		"soundFakeFall0",
+		0.25,
+		"soundFakeFall1",
+		0.25,
+		"soundFakeFall2",
+		0.25,
+		"soundFakeFall3",
+		0.25
+	};
+
+	hit=340;
+	indirectHit=125;
+	indirectHitRange=30;
+	warheadName="HE";
+	dangerRadiusHit=750;
+	suppressionRadiusHit=75;
+	typicalSpeed=800;
+	caliber=10;
+	deflecting=0;
+	explosive=1;
+	cost=300;
+	model="\A3\weapons_f\ammo\shell";
+	CraterEffects="ArtyShellCrater";
+	ExplosionEffects="MortarExplosion";
+	whistleDist=60;
+	artilleryLock=1;
+	thrust=0;
+	timeToLive=180;
+	airFriction=0;
+	sideairFriction=0;
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_03",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_04",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
+	class CamShakeExplode
+	{
+		power=31;
+		duration=2.4000001;
+		frequency=20;
+		distance=339.599;
+	};
+	class CamShakeHit
+	{
+		power=155;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.52844;
+		duration=2.4000001;
+		frequency=20;
+		distance=99.599197;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
 };
 
 

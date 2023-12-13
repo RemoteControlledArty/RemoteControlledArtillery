@@ -685,8 +685,8 @@ class 8Rnd_82mm_Mo_LG;
 class RC_1Rnd_82mm_Mo_MultiGuided: 8Rnd_82mm_Mo_LG
 {
 	ammo="RC_Sh_82mm_AMOS_MT_MultiGuided";
-	displayName="Laser/IR/Vis Guided";
-	displayNameShort="L/IR/V Guided";
+	displayName="MT MultiGuided";
+	displayNameShort="MT MultiGuided";
 	count=1;
 };
 class RC_2Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
@@ -2006,8 +2006,8 @@ class magazine_ShipCannon_120mm_HE_LG_shells_x2;
 class RC_ShipCannon_120mm_MT_MultiGuided_shells_x1: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_MT_MultiGuided";
-	displayName="Laser/IR/Vis Guided";
-	displayNameShort="L/IR/V Guided";
+	displayName="MT MultiGuided";
+	displayNameShort="MT MultiGuided";
 	count=1;
 };
 class RC_ShipCannon_120mm_MT_MultiGuided_shells_x2: RC_ShipCannon_120mm_MT_MultiGuided_shells_x1
@@ -3824,7 +3824,7 @@ class RC_ShipCannon_120mm_HE_LGDF_shells_x40: RC_ShipCannon_120mm_HE_LGDF_shells
 class 32Rnd_155mm_Mo_shells;
 class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
-	ammo="RC_Sh_155mm_AMOS_HEAB";
+	ammo="RC_Sh_155mm_AMOS_HEAB2";
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -4650,8 +4650,8 @@ class 2Rnd_155mm_Mo_LG;
 class RC_1Rnd_155mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_MT_MultiGuided";
-	displayName="Laser/IR/Vis Guided";
-	displayNameShort="L/IR/V Guided";
+	displayName="MT MultiGuided";
+	displayNameShort="MT MultiGuided";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_MultiGuided: RC_1Rnd_155mm_Mo_MultiGuided
@@ -5964,8 +5964,8 @@ class RC_12Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
 class RC_1Rnd_230mm_rockets_MultiGuided: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_MT_MultiGuided";
-	displayName="Laser/IR/Vis Guided";
-	displayNameShort="L/IR/V Guided";
+	displayName="MT MultiGuided";
+	displayNameShort="MT MultiGuided";
 	count=1;
 };
 class RC_2Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided

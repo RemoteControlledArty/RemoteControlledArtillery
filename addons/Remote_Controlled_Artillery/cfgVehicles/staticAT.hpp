@@ -37,7 +37,7 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	//laserScanner=1;
+	laserScanner=1;
 
 	class Components: Components
 	{
@@ -45,7 +45,6 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 		{
 			class Components
 			{
-				/*
 				class LaserSensorComponent: SensorTemplateLaser
 				{
 					angleRangeHorizontal=360;
@@ -65,7 +64,6 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-				*/
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
 					typeRecognitionDistance=3000;
@@ -101,12 +99,10 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=60;
 					angleRangeVertical=40;
 					animDirection="mainGun";
-					//aimDown=-0.5;
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{

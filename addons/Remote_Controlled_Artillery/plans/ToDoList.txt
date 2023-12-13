@@ -22,6 +22,7 @@ DONE - BUGFIXES:
 -changed to 9.8066 Gravity
 -engine turnoff delay exceptions now per cfg value
 -if does not camera points in sky (cannot find range), show red warning "raise camera", (accuracy will be way off and submunitions wont deploy otherwise)
+-fix radar turrets viewoptics maxhorrotspeed
 
 -fixed distance calculation
 -fixed time of flight calculation
@@ -39,38 +40,36 @@ arty:
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
 -fix arty laser spot tracker/ find way to actually include datalink in designator
 -find out why 227mm HEAB has no recoil
+-try reliability of "true" airburst (instead of current reliable -20m after impact)
+-configure new "true" airburst shells correctly
 
 general:
 -change uav connection script location
 -assault pack for AR-3&4	//would add a bit much backpacks
--fix radar turrets viewoptics maxhorrotspeed
 -decrease sensor angles
+-fix Static AT laser engaging
 
 RC IC:
 -hide seats for RC IC
 -attemt to add commander seat to RC IC
--fix Static AT laser engaging
 
 
 DONE - FEATURES:
 
--added 82mm, 155mm, 227mm HE Airburst
--added 82mm, 155mm Laser Guided 1.8m Delayed Fuse (for use against small bunkers/ hangars/ ammo storage halls) but only available per attributes edit for balancing reasons
+-added 82mm, 120mm, 155mm, 227mm HE Airburst
+-added 82mm, 120mm, 155mm Laser Guided 1.8m Delayed Fuse (for use against small bunkers/ hangars/ ammo storage halls) but only available per attributes edit for balancing reasons
 -improved spead of cluster and mines
--buffed 82mm and 155mm smoke
+-buffed smoke of 82mm, 120mm, 155mm
 -added 82mm AP and AT mines
 -40 magazines for all shells
-
 -required low&high turret elevation display + ETA
 -if turret azimuth matches target azimuth, turn green
 -if charge is correct for target distance, turn green
 -if azimuth correct, turret elevation correct "ready to fire"
 -warning if camera is pointed not at sky
-
 -explain target marker referencing to current subscribers
 
 (new)
-
 -ammunition naming improvements
 -added Datalink panel
 -added Datalink laser position finder
@@ -93,6 +92,7 @@ DONE - FEATURES:
 -artillery weapon edits in steps, so different versions can be chosen V1 until V4
 -split shown ELDiff, and ElDiff for used calculation, to not cause errors
 -enabled NLOS for locking ATGM
+-tweaked AT mine spread
 
 
 TO DO - QUALITY OF LIFE:
