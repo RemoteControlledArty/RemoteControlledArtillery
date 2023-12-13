@@ -3,8 +3,19 @@
 	Weapon -> Bag
 */
 
+// Static AT Arid
 // Blufor
-// Arid
+class B_static_AT_F;
+class RC_Static_AT_Arid_base: B_static_AT_F
+{
+	class Turrets;
+	class MainTurret;
+	class ViewOptics;
+	class assembleInfo;
+	class Components;
+	scope=0;
+	scopeCurator=0;
+};
 class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 {
 	displayname="RC ATGM 3km lock";

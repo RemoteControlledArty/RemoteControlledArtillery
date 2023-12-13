@@ -1,4 +1,16 @@
+// Static AA
 // Blufor
+class B_static_AA_F;
+class RC_Static_AA_Arid_base: B_static_AA_F
+{
+	class Turrets;
+	class MainTurret;
+	class ViewOptics;
+	class assembleInfo;
+	class Components;
+	scope=0;
+	scopeCurator=0;
+};
 class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 {
 	displayname="RC Static AA 3.5km";
@@ -180,6 +192,16 @@ class RC_Static_AA_Woodland: RC_Static_AA_Arid
 		"\a3\weapons_f_exp\launchers\titan\data\launch_b_titan_tna_f_01_co.paa",
 		"\a3\weapons_f_exp\launchers\titan\data\launch_b_titan_tna_f_02_co.paa"
 	};
+};
+
+
+// Static AA Bag
+class B_AA_01_weapon_F;
+class RC_Static_AA_Arid_Bag_base: B_AA_01_weapon_F
+{
+	class assembleInfo;
+	scope=0;
+	scopeCurator=0;
 };
 class RC_Static_AA_Arid_Bag: RC_Static_AA_Arid_Bag_base
 {

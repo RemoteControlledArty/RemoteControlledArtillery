@@ -6,9 +6,11 @@
 TO DO - BUGFIXES:
 
 -make MLRS/MRL rockets appear in launcher (if possible)
+-RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, no with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
+-RC IC if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged
+
 -does it still need include check for ace hpp?
 -if arty is destroyed, ui stays...?
--RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, no with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 
 
 DONE - BUGFIXES:
@@ -39,6 +41,7 @@ arty:
 -find out why 227mm HEAB has no recoil
 
 general:
+-change uav connection script location
 -assault pack for AR-3&4	//would add a bit much backpacks
 -fix radar turrets viewoptics maxhorrotspeed
 -decrease sensor angles
@@ -116,6 +119,7 @@ DONE - QUALITY OF LIFE:
 -if vehicle speed = 0 then turn off engine true
 
 -map now available for ALL assets :D
+-significant mod folder and hpp restructure
 
 
 IDEAS - FUTURE:

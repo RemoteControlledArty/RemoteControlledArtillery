@@ -3,7 +3,18 @@
 	Normal -> Thermal -> Normal Bag -> Thermal Bag
 */
 
-// Arid
+// Designator Arid
+class B_Static_Designator_01_F;
+class RC_Improved_FOV_Designator_Arid_base: B_Static_Designator_01_F
+{
+	class Turrets;
+	class MainTurret;
+	class viewOptics;
+	class assembleInfo;
+	class Components;
+	scope=0;
+	scopeCurator=0;
+};
 class RC_Improved_FOV_Designator_Arid: RC_Improved_FOV_Designator_Arid_base
 {
 	displayname="RC Improved Designator";
@@ -302,6 +313,16 @@ class RC_Improved_FOV_Designator_Ti_Arid: RC_Improved_FOV_Designator_Arid
 		};
 	};
 };
+
+
+// Designator Bag Arid
+class B_Static_Designator_01_weapon_F;
+class RC_Improved_FOV_Designator_Bag_Arid_base: B_Static_Designator_01_weapon_F
+{
+	class assembleInfo;
+	scope=0;
+	scopeCurator=0;
+};
 class RC_Improved_FOV_Designator_Bag_Arid: RC_Improved_FOV_Designator_Bag_Arid_base
 {
 	displayname="RC Improved Designator";
@@ -331,7 +352,19 @@ class RC_Improved_FOV_Designator_Ti_Bag_Arid: RC_Improved_FOV_Designator_Bag_Ari
 	};
 };
 
-// Woodland
+
+// Designator Woodland
+class B_W_Static_Designator_01_F;
+class RC_Improved_FOV_Designator_Woodland_base: B_W_Static_Designator_01_F
+{
+	class Turrets;
+	class MainTurret;
+	class viewOptics;
+	class assembleInfo;
+	class Components;
+	scope=0;
+	scopeCurator=0;
+};
 class RC_Improved_FOV_Designator_Woodland: RC_Improved_FOV_Designator_Woodland_base
 {
 	displayname="RC Improved Designator";
@@ -628,6 +661,16 @@ class RC_Improved_FOV_Designator_Ti_Woodland: RC_Improved_FOV_Designator_Woodlan
 			};
 		};
 	};
+};
+
+
+// Designator Bag Woodland
+class B_W_Static_Designator_01_weapon_F;
+class RC_Improved_FOV_Designator_Bag_Woodland_base: B_W_Static_Designator_01_weapon_F
+{
+	class assembleInfo;
+	scope=0;
+	scopeCurator=0;
 };
 class RC_Improved_FOV_Designator_Bag_Woodland: RC_Improved_FOV_Designator_Bag_Woodland_base
 {
