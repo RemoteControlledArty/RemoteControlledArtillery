@@ -21,7 +21,7 @@ class RC_1Rnd_MT_missiles: 1Rnd_GAT_missiles
 class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
-	ammo="RC_Sh_82mm_AMOS_HEAB";
+	ammo="RC_Sh_82mm_AMOS_HEAB2";
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;

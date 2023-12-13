@@ -40,8 +40,8 @@ arty:
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
 -fix arty laser spot tracker/ find way to actually include datalink in designator
 -find out why 227mm HEAB has no recoil
--try reliability of "true" airburst (instead of current reliable -20m after impact)
--configure new "true" airburst shells correctly
+
+-Mortar should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
 
 general:
 -change uav connection script location
@@ -93,6 +93,8 @@ DONE - FEATURES:
 -split shown ELDiff, and ElDiff for used calculation, to not cause errors
 -enabled NLOS for locking ATGM
 -tweaked AT mine spread
+-reworked 120mm, 155mm, 227mm Airburst, to truly explode before impact (instead of being reset 20meters after impact)
+-decided to not use reworked Airburst for 82mm as it can cause fatal explosion when camera is obstructed and not able to point in sky
 
 
 TO DO - QUALITY OF LIFE:

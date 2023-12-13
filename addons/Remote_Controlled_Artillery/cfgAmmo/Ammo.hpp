@@ -136,7 +136,7 @@ class SubmunitionBase;
 class Sh_82mm_AMOS;
 class RC_Sh_82mm_AMOS_submunition: Sh_82mm_AMOS
 {
-	explosionTime=0.01;
+	explosionTime=0.001;
 	explosive=1;
 	CraterEffects="";
 };
@@ -156,19 +156,203 @@ class RC_Sh_82mm_AMOS_HEAB_low: RC_Sh_82mm_AMOS_HEAB
 };
 
 
-class RC_Sh_82mm_AMOS_HEAB2: SubmunitionBase
+class Default;
+class RC_HEAB_Base: Default
+{
+	//shell/submunition core
+	simulation="shotSubmunitions";
+	simulationStep=0.050000001;
+	soundHit[]=
+	{
+		"",
+		316.22775,
+		1
+	};
+	soundFly[]=
+	{
+		"",
+		0.031622775,
+		4
+	};
+	hitOnWater=1;
+	//visibleFire=16;
+	//audibleFire=16;
+	visibleFireTime=10;
+
+
+	//shell/submunition base
+	supersonicCrackNear[]=
+	{
+		"A3\Sounds_F\weapons\Explosion\supersonic_crack_close",
+		0.31622776,
+		1,
+		50
+	};
+	supersonicCrackFar[]=
+	{
+		"A3\Sounds_F\weapons\Explosion\supersonic_crack_50meters",
+		0.22387211,
+		1,
+		150
+	};
+	CraterEffects="HEShellCrater";
+	CraterWaterEffects="ImpactEffectsWaterHE";
+	ExplosionEffects="HEShellExplosion";
+	visibleFire=64;
+	audibleFire=250;
+	muzzleEffect="";
+	deflectionDirDistribution=0.38999999;
+	penetrationDirDistribution=0.25999999;
+	whistleOnFire=2;
+	aiAmmoUsageFlags="64 + 128";
+	class HitEffects
+	{
+		hitWater="ImpactEffectsWaterRocket";
+	};
+	soundFakeFall0[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_01",
+		3.1622777,
+		1,
+		1000
+	};
+	soundFakeFall1[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_02",
+		3.1622777,
+		1,
+		1000
+	};
+	soundFakeFall2[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_03",
+		3.1622777,
+		1,
+		1000
+	};
+	soundFakeFall3[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_04",
+		3.1622777,
+		1,
+		1000
+	};
+	soundFakeFall[]=
+	{
+		"soundFakeFall0",
+		0.25,
+		"soundFakeFall1",
+		0.25,
+		"soundFakeFall2",
+		0.25,
+		"soundFakeFall3",
+		0.25
+	};
+};
+
+class RC_HEAB_Shell_Base: RC_HEAB_Base
+{
+	warheadName="HE";
+	dangerRadiusHit=750;
+	suppressionRadiusHit=75;
+	typicalSpeed=800;
+	caliber=10;
+	deflecting=0;
+	explosive=0.80000001;
+	model="\A3\weapons_f\ammo\shell";
+	CraterEffects="ArtyShellCrater";
+	ExplosionEffects="MortarExplosion";
+	whistleDist=60;
+	artilleryLock=1;
+	thrust=0;
+	timeToLive=180;
+	airFriction=0;
+	sideairFriction=0;
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_03",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_04",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
+};
+
+
+class RC_82mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
+{
+	hit=165;
+	indirectHit=52;
+	indirectHitRange=18;
+	cost=200;
+	class CamShakeExplode
+	{
+		power=16.4;
+		duration=1.8;
+		frequency=20;
+		distance=216.44299;
+	};
+	class CamShakeHit
+	{
+		power=82;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.0092199;
+		duration=1.8;
+		frequency=20;
+		distance=72.4431;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
+class RC_Sh_82mm_AMOS_HEAB2: RC_82mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
-	triggerDistance=18;
-
-	artilleryLock=1;
-
-	muzzleEffect="";
-	hit=165;
-	cost=500;
-	airFriction=0;
+	triggerDistance=16;
 };
 
 
@@ -712,7 +896,7 @@ class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
 class Sh_155mm_AMOS;
 class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 {
-	explosionTime=0.01;
+	explosionTime=0.001;
 	explosive=1;
 	CraterEffects="";	//removes ground impact animation
 };
@@ -732,6 +916,53 @@ class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
 };
 
 
+class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
+{
+	hit=340;
+	indirectHit=125;
+	indirectHitRange=30;
+	cost=300;
+	class CamShakeExplode
+	{
+		power=31;
+		duration=2.4000001;
+		frequency=20;
+		distance=339.599;
+	};
+	class CamShakeHit
+	{
+		power=155;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.52844;
+		duration=2.4000001;
+		frequency=20;
+		distance=99.599197;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
+class RC_Sh_155mm_AMOS_HEAB2: RC_82mm_HEAB_Shell_Base
+{
+	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
+	submunitionCount=1;
+	submunitionConeAngle=0;
+	triggerDistance=16;
+};
+
+
+/*
 class RC_Sh_155mm_AMOS_HEAB2: SubmunitionBase
 {
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
@@ -900,6 +1131,7 @@ class RC_Sh_155mm_AMOS_HEAB2: SubmunitionBase
 		distance=1;
 	};
 };
+*/
 
 
 class M_Mo_155mm_AT_LG;
@@ -994,7 +1226,7 @@ class RC_Sh_155mm_AMOS_MT_MultiGuided: RC_Sh_82mm_AMOS_MT_MultiGuided
 class R_230mm_fly;
 class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 {
-	explosionTime=0.01;
+	explosionTime=0.001;
 	explosive=1;
 	CraterEffects="";
 };
@@ -1013,6 +1245,239 @@ class RC_R_230mm_HEAB: SubmunitionBase
 	effectFly="Missile0";
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	hit=0;
+};
+
+
+class RC_HEAB_Shell_Base: RC_HEAB_Base
+{
+	warheadName="HE";
+	dangerRadiusHit=750;
+	suppressionRadiusHit=75;
+	typicalSpeed=800;
+	caliber=10;
+	deflecting=0;
+	explosive=0.80000001;
+	model="\A3\weapons_f\ammo\shell";
+	CraterEffects="ArtyShellCrater";
+	ExplosionEffects="MortarExplosion";
+	whistleDist=60;
+	artilleryLock=1;
+	thrust=0;
+	timeToLive=180;
+	airFriction=0;
+	sideairFriction=0;
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_03",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_04",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
+};
+
+
+	class R_230mm_fly: ShellBase
+	{
+		//artilleryLock=1;
+		model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
+		hit=1200;
+		indirectHit=800;
+		indirectHitRange=30;
+		warheadName="HE";
+		cost=1000;
+		audibleFire=64;
+		dangerRadiusHit=1250;
+		suppressionRadiusHit=120;
+		//deflecting=0;
+		//airFriction=0;
+		muzzleEffect="";
+		effectFly="ArtilleryTrails";
+		/*
+		class CamShakeExplode
+		{
+			power=46;
+			duration=3;
+			frequency=20;
+			distance=361.32599;
+		};
+		class CamShakeHit
+		{
+			power=230;
+			duration=0.80000001;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=3.89432;
+			duration=3;
+			frequency=20;
+			distance=121.326;
+		};
+		class CamShakePlayerFire
+		{
+			power=5;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+		*/
+		soundHit1[]=
+		{
+			"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+			2.5118864,
+			1,
+			1900
+		};
+		soundHit2[]=
+		{
+			"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+			2.5118864,
+			1,
+			1900
+		};
+		soundHit3[]=
+		{
+			"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+			2.5118864,
+			1,
+			1900
+		};
+		multiSoundHit[]=
+		{
+			"soundHit1",
+			0.34,
+			"soundHit2",
+			0.33000001,
+			"soundHit3",
+			0.33000001
+		};
+	};
+
+	class R_230mm_HE: SubmunitionBase
+	{
+		//artilleryLock=1;
+		submunitionAmmo="R_230mm_fly";
+		triggerDistance=500;
+		cost=1000;
+		//airFriction=0;
+		muzzleEffect="";
+		effectFly="Missile0";
+		model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
+		//hit=300;
+		class CamShakeExplode
+		{
+			power=46;
+			duration=3;
+			frequency=20;
+			distance=361.32599;
+		};
+		class CamShakeHit
+		{
+			power=230;
+			duration=0.80000001;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=3.89432;
+			duration=3;
+			frequency=20;
+			distance=121.326;
+		};
+		class CamShakePlayerFire
+		{
+			power=5;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+		soundFly[]=
+		{
+			"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
+			0.56234133,
+			1.9,
+			500
+		};
+	};
+
+
+class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Shell_Base
+{
+	hit=165;
+	indirectHit=52;
+	indirectHitRange=18;
+	cost=200;
+	class CamShakeExplode
+	{
+		power=16.4;
+		duration=1.8;
+		frequency=20;
+		distance=216.44299;
+	};
+	class CamShakeHit
+	{
+		power=82;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.0092199;
+		duration=1.8;
+		frequency=20;
+		distance=72.4431;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
+class RC_Sh_82mm_AMOS_HEAB2: RC_82mm_HEAB_Shell_Base
+{
+	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
+	submunitionCount=1;
+	submunitionConeAngle=0;
+	triggerDistance=20;
 };
 
 
