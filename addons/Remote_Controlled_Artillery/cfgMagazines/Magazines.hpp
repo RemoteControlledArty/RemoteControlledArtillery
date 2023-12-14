@@ -5804,7 +5804,7 @@ class RC_40Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
 class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
-	ammo="RC_R_230mm_HEAB";
+	ammo="RC_R_230mm_HEAB2";
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;

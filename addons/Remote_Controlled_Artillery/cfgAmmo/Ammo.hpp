@@ -39,6 +39,10 @@ class RC_M_MT: RC_M_MT_base
 	weaponLockSystem="1 + 2 + 16";
 	cameraViewAvailable=1;
 
+	//test (likely cfgvic only...)
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -517,17 +521,13 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
 	laserLock=1;
 	irLock=1;
 	autoSeekTarget=1;
-	receiveRemoteTargets=1;
 	cameraViewAvailable=1;
 
-	/*
-	autoSeekTarget=1;
+	//test (likely cfgvic only...)
 	receiveRemoteTargets=1;
-	canLock=2;	//cfgweapons only?
-	lockAcquire=1;	//cfgweapons only?
-
-	lockSeekRadius=100;	//higher doesnt result in unlocked manual fire locking //Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled.
-	*/
+	reportRemoteTargets=1;	//would allow for sensor-recon shots, to then datalink lock with second shot
+	laserScanner=1;
+	//lockSeekRadius=100;	//higher doesnt result in unlocked manual fire locking //Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled.
 
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
 	explosive=1;
@@ -711,19 +711,18 @@ class RC_Sh_82mm_AMOS_MT_MultiGuided: SubmunitionBase
 
 	laserLock=1;
 	irLock=1;
+	canLock=2;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
+	canLock=2;	//supposedly only cfg weapons not ammo
 
+	//test (likely cfgvic only...)
 	receiveRemoteTargets=1;
-	canLock=2;
-	lockAcquire=1;
+	reportRemoteTargets=1;	//allows for sensor-recon shots, to then datalink lock with second shot
 
+	//lockAcquire=1;	//likely cfgvic only
 	//artilleryLock=1;
-	
-	//testing
 	//lockSeekRadius=67000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
-	//lockAcquire=1;	//automatic acquisition of the closest target in missileLockCone
-	//canLock=2; //able to lock
 
 	muzzleEffect="";
 	hit=165;
@@ -1248,48 +1247,52 @@ class RC_R_230mm_HEAB: SubmunitionBase
 };
 
 
-class RC_HEAB_Shell_Base: RC_HEAB_Base
+class RC_HEAB_Rocket_Base: RC_HEAB_Base
 {
-	warheadName="HE";
-	dangerRadiusHit=750;
-	suppressionRadiusHit=75;
-	typicalSpeed=800;
-	caliber=10;
-	deflecting=0;
-	explosive=0.80000001;
-	model="\A3\weapons_f\ammo\shell";
-	CraterEffects="ArtyShellCrater";
-	ExplosionEffects="MortarExplosion";
-	whistleDist=60;
-	artilleryLock=1;
-	thrust=0;
-	timeToLive=180;
+	//typicalSpeed=800;
+	//caliber=10;
+	//explosive=0.80000001;
+	
+	//CraterEffects="ArtyShellCrater";
+	//ExplosionEffects="MortarExplosion";
+	//whistleDist=60;
+	
+	//thrust=0;
+	caliber=34;
+	timeToLive=360;
 	airFriction=0;
 	sideairFriction=0;
+
+
+	artilleryLock=1;
+	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
+	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
+	//effectFly="ArtilleryTrails";
+	effectFly="Missile0";
+	warheadName="HE";
+	audibleFire=64;
+	dangerRadiusHit=1250;
+	suppressionRadiusHit=120;
+	deflecting=0;
+
+
 	soundHit1[]=
 	{
-		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
 		2.5118864,
 		1,
 		1900
 	};
 	soundHit2[]=
 	{
-		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
 		2.5118864,
 		1,
 		1900
 	};
 	soundHit3[]=
 	{
-		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_03",
-		2.5118864,
-		1,
-		1900
-	};
-	soundHit4[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_04",
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
 		2.5118864,
 		1,
 		1900
@@ -1297,174 +1300,51 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 	multiSoundHit[]=
 	{
 		"soundHit1",
-		0.25,
+		0.34,
 		"soundHit2",
-		0.25,
+		0.33000001,
 		"soundHit3",
-		0.25,
-		"soundHit4",
-		0.25
+		0.33000001
+	};
+	soundFly[]=
+	{
+		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
+		0.56234133,
+		1.9,
+		500
 	};
 };
 
-
-	class R_230mm_fly: ShellBase
-	{
-		//artilleryLock=1;
-		model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
-		hit=1200;
-		indirectHit=800;
-		indirectHitRange=30;
-		warheadName="HE";
-		cost=1000;
-		audibleFire=64;
-		dangerRadiusHit=1250;
-		suppressionRadiusHit=120;
-		//deflecting=0;
-		//airFriction=0;
-		muzzleEffect="";
-		effectFly="ArtilleryTrails";
-		/*
-		class CamShakeExplode
-		{
-			power=46;
-			duration=3;
-			frequency=20;
-			distance=361.32599;
-		};
-		class CamShakeHit
-		{
-			power=230;
-			duration=0.80000001;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=3.89432;
-			duration=3;
-			frequency=20;
-			distance=121.326;
-		};
-		class CamShakePlayerFire
-		{
-			power=5;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-		*/
-		soundHit1[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
-			2.5118864,
-			1,
-			1900
-		};
-		soundHit2[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
-			2.5118864,
-			1,
-			1900
-		};
-		soundHit3[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
-			2.5118864,
-			1,
-			1900
-		};
-		multiSoundHit[]=
-		{
-			"soundHit1",
-			0.34,
-			"soundHit2",
-			0.33000001,
-			"soundHit3",
-			0.33000001
-		};
-	};
-
-	class R_230mm_HE: SubmunitionBase
-	{
-		//artilleryLock=1;
-		submunitionAmmo="R_230mm_fly";
-		triggerDistance=500;
-		cost=1000;
-		//airFriction=0;
-		muzzleEffect="";
-		effectFly="Missile0";
-		model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
-		//hit=300;
-		class CamShakeExplode
-		{
-			power=46;
-			duration=3;
-			frequency=20;
-			distance=361.32599;
-		};
-		class CamShakeHit
-		{
-			power=230;
-			duration=0.80000001;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=3.89432;
-			duration=3;
-			frequency=20;
-			distance=121.326;
-		};
-		class CamShakePlayerFire
-		{
-			power=5;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
-			0.56234133,
-			1.9,
-			500
-		};
-	};
-
-
-class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Shell_Base
+class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 {
-	hit=165;
-	indirectHit=52;
-	indirectHitRange=18;
-	cost=200;
+	hit=1200;
+	indirectHit=800;
+	indirectHitRange=30;
+	cost=1000;
 	class CamShakeExplode
 	{
-		power=16.4;
-		duration=1.8;
+		power=46;
+		duration=3;
 		frequency=20;
-		distance=216.44299;
+		distance=361.32599;
 	};
 	class CamShakeHit
 	{
-		power=82;
-		duration=0.60000002;
+		power=230;
+		duration=0.80000001;
 		frequency=20;
 		distance=1;
 	};
 	class CamShakeFire
 	{
-		power=3.0092199;
-		duration=1.8;
+		power=3.89432;
+		duration=3;
 		frequency=20;
-		distance=72.4431;
+		distance=121.326;
 	};
 	class CamShakePlayerFire
 	{
-		power=0.0099999998;
+		power=5;
 		duration=0.1;
 		frequency=20;
 		distance=1;
@@ -1472,7 +1352,7 @@ class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Shell_Base
 };
 
 
-class RC_Sh_82mm_AMOS_HEAB2: RC_82mm_HEAB_Shell_Base
+class RC_R_230mm_HEAB2: RC_230mm_HEAB_Rocket_Base
 {
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 	submunitionCount=1;

@@ -125,15 +125,20 @@ DONE - QUALITY OF LIFE:
 -significant mod folder and hpp restructure
 
 
-IDEAS - FUTURE:
+IDEAS - FAR FUTURE:
 
 -vanilla asset overwrite for gamemodes without zeus etc
 -switch driver and commander of recon radar
--counterbattery radar
 -3R MRSI display
 -3R automated MRSI
--make multiguided misslecam panel work
 -parachute cam round for spotting (or simply additional rhs comp mod for hunt ir)
+
+-turret elevationmode=3 (switchable between manual and automatic), changing script to low trajectory, and point of aim height instead ground height
+-IFV with 50mm programmable Airburst, including lower charges for NLOS fire using datalink
+
+-getting misslecam panel to work with multiguided
+-counterbattery radar, reporting targets to datalink network, with cba settings on detection speed and range
+-RC respawn truck
 
 
 

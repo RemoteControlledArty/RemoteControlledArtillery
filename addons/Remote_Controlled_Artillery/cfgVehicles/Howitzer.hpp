@@ -131,7 +131,7 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			//elevationMode=2;	//test
+			//elevationMode=2;
 			//elevationAnimSourceSpeed = 1.0f;
 			
 			class Turrets: Turrets

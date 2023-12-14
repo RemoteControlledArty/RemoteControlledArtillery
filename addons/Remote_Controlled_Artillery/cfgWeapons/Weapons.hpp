@@ -710,10 +710,9 @@ class RC_mortar_82mm_V2: RC_mortar_82mm_V1
 {
 	reloadTime=3;
 	magazineReloadTime=3;
-	//ballisticsComputer=8;	//direct fire reticle for highest charge
+	//ballisticsComputer=8;		//direct fire reticle for highest charge
 	canLock=2;
 	weaponLockDelay=0;
-	//elevationMode=2;
 };
 class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 {
@@ -1286,10 +1285,9 @@ class RC_ShipCannon_120mm_V2: RC_ShipCannon_120mm_V1
 {
 	reloadTime=6;
 	magazineReloadTime=6;
-	ballisticsComputer=8;
+	ballisticsComputer=8;	//direct fire reticle for highest charge
 	canLock=2;
 	weaponLockDelay=0;
-	//elevationMode=2;
 
 	class Single1: Single1
 	{
@@ -1931,10 +1929,9 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 {
 	reloadTime=6;
 	magazineReloadTime=6;
-	ballisticsComputer=8;	//direct fire reticle for highest charge
+	ballisticsComputer=8;		//direct fire reticle for highest charge
 	canLock=2;
 	weaponLockDelay=0;
-	//elevationMode=2;
 
 	class Single1: Single1
 	{
@@ -2073,7 +2070,6 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT
 	ballisticsComputer=8;
 	canLock=2;
 	weaponLockDelay=0;
-	//elevationMode=2;
 
 	magazines[]=
 	{
