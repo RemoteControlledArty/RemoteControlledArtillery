@@ -42,6 +42,7 @@ arty:
 -find out why 227mm HEAB has no recoil
 
 -Mortar should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
+-direct fire firing solution (camera viewpoint)
 
 general:
 -change uav connection script location
