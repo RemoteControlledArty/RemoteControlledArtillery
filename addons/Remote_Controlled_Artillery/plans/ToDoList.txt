@@ -38,15 +38,20 @@ arty:
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
--fix arty laser spot tracker/ find way to actually include datalink in designator
 -find out why 227mm HEAB has no recoil
 
 -Mortar should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
 -direct fire firing solution (camera viewpoint)
+-recon radar mortar carrier
+
+laser designator:
+_target = laserTarget player;
+hint format ["%1", _target];
+blufor reportRemoteTarget [_target, 5];
 
 general:
 -change uav connection script location
--assault pack for AR-3&4	//would add a bit much backpacks
+-assault pack for AR-3&4
 -decrease sensor angles
 -fix Static AT laser engaging
 
@@ -82,10 +87,10 @@ DONE - FEATURES:
 -155mm dispersion fixed
 -more but finer 155mm charges, to have more angle variety, and enough airburst even with low angle solution
 -added optional 67km datalink range (max firing range)
--added peak ASL calculation
+-added peak ASL calculation formula
 -shortend map marker search time (as its only running during active remote control, and improves quality of life)
 -fixed all sensor configs
--added 82mm/120/155mm/227mm Laser/IR/Vis Guided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and hot (per IR) or cold (per Visual) vehicles.)
+-added 82mm/120/155mm/227mm MultiGuided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and hot (per IR) or cold (per Visual) vehicles.)
 -reworked 82mm/120/155mm/227mm Laser/IR/Vis Guided, to be more accurate and Multi Target
 -reworked Static AT & ATGM, changed ammo from 4 HEAT & 2 HE to new 4 MT (MultiTarget) rounds, Static AT now has more locking options and also SACLOS
 -reworked 120mm charges
@@ -111,7 +116,6 @@ TO DO - QUALITY OF LIFE:
 
 -attemt to create O mine pattern
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
--attemt slight forward offset for airburst, so it has better low angle airburst, but not large high angle impact difference
 -aiAmmoUsageFlags https://community.bistudio.com/wiki/CfgAmmo_Config_Reference#aiAmmoUsageFlags
 
 

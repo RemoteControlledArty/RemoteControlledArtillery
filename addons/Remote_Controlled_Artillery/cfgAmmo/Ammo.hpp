@@ -144,7 +144,7 @@ class RC_Sh_82mm_AMOS_submunition: Sh_82mm_AMOS
 	explosive=1;
 	CraterEffects="";
 };
-class RC_Sh_82mm_AMOS_HEAB: Sh_82mm_AMOS
+class RC_Sh_82mm_AMOS_HEAB_backup: Sh_82mm_AMOS
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -154,7 +154,7 @@ class RC_Sh_82mm_AMOS_HEAB: Sh_82mm_AMOS
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_Sh_82mm_AMOS_HEAB_low: RC_Sh_82mm_AMOS_HEAB
+class RC_Sh_82mm_AMOS_HEAB_low_backup: RC_Sh_82mm_AMOS_HEAB_backup
 {
 	submunitionInitialOffset[]={0,0,-6};		//low airburst to ignore atleast microterrain
 };
@@ -351,7 +351,7 @@ class RC_82mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 };
 
 
-class RC_Sh_82mm_AMOS_HEAB2: RC_82mm_HEAB_Shell_Base
+class RC_Sh_82mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 	submunitionCount=1;
@@ -711,7 +711,7 @@ class RC_Sh_82mm_AMOS_MT_MultiGuided: SubmunitionBase
 
 	laserLock=1;
 	irLock=1;
-	canLock=2;
+	airLock=1;	//test
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
 	canLock=2;	//supposedly only cfg weapons not ammo
@@ -899,7 +899,7 @@ class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 	explosive=1;
 	CraterEffects="";	//removes ground impact animation
 };
-class RC_Sh_155mm_AMOS_HEAB: Sh_155mm_AMOS
+class RC_Sh_155mm_AMOS_HEAB_backup: Sh_155mm_AMOS
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -909,7 +909,7 @@ class RC_Sh_155mm_AMOS_HEAB: Sh_155mm_AMOS
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
+class RC_Sh_155mm_AMOS_HEAB_low_backup: RC_Sh_155mm_AMOS_HEABbackup
 {
 	submunitionInitialOffset[]={0,0,-6};	//low airburst to ignore atleast microterrain
 };
@@ -950,187 +950,17 @@ class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 		distance=1;
 	};
 };
-
-
-class RC_Sh_155mm_AMOS_HEAB2: RC_82mm_HEAB_Shell_Base
+class RC_Sh_155mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
-	triggerDistance=16;
-};
-
-
-/*
-class RC_Sh_155mm_AMOS_HEAB2: SubmunitionBase
-{
-	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
-	submunitionCount=1;
-	submunitionConeAngle=0;
 	triggerDistance=20;
-
-	supersonicCrackNear[]=
-	{
-		"A3\Sounds_F\weapons\Explosion\supersonic_crack_close",
-		0.31622776,
-		1,
-		50
-	};
-	supersonicCrackFar[]=
-	{
-		"A3\Sounds_F\weapons\Explosion\supersonic_crack_50meters",
-		0.22387211,
-		1,
-		150
-	};
-	CraterEffects="HEShellCrater";
-	CraterWaterEffects="ImpactEffectsWaterHE";
-	ExplosionEffects="HEShellExplosion";
-	visibleFire=64;
-	audibleFire=250;
-	dangerRadiusHit=-1;
-	suppressionRadiusHit=30;
-	timeToLive=360;
-	muzzleEffect="";
-	caliber=34;
-	deflecting=10;
-	deflectionDirDistribution=0.38999999;
-	penetrationDirDistribution=0.25999999;
-	whistleOnFire=2;
-	aiAmmoUsageFlags="64 + 128 + 256";
-	class HitEffects
-	{
-		hitWater="ImpactEffectsWaterRocket";
-	};
-	soundFakeFall0[]=
-	{
-		"a3\Sounds_F\weapons\falling_bomb\fall_01",
-		3.1622777,
-		1,
-		1000
-	};
-	soundFakeFall1[]=
-	{
-		"a3\Sounds_F\weapons\falling_bomb\fall_02",
-		3.1622777,
-		1,
-		1000
-	};
-	soundFakeFall2[]=
-	{
-		"a3\Sounds_F\weapons\falling_bomb\fall_03",
-		3.1622777,
-		1,
-		1000
-	};
-	soundFakeFall3[]=
-	{
-		"a3\Sounds_F\weapons\falling_bomb\fall_04",
-		3.1622777,
-		1,
-		1000
-	};
-	soundFakeFall[]=
-	{
-		"soundFakeFall0",
-		0.25,
-		"soundFakeFall1",
-		0.25,
-		"soundFakeFall2",
-		0.25,
-		"soundFakeFall3",
-		0.25
-	};
-
-	hit=340;
-	indirectHit=125;
-	indirectHitRange=30;
-	warheadName="HE";
-	dangerRadiusHit=750;
-	suppressionRadiusHit=75;
-	typicalSpeed=800;
-	caliber=10;
-	deflecting=0;
-	explosive=1;
-	cost=300;
-	model="\A3\weapons_f\ammo\shell";
-	CraterEffects="ArtyShellCrater";
-	ExplosionEffects="MortarExplosion";
-	whistleDist=60;
-	artilleryLock=1;
-	thrust=0;
-	timeToLive=180;
-	airFriction=0;
-	sideairFriction=0;
-	soundHit1[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
-		2.5118864,
-		1,
-		1900
-	};
-	soundHit2[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
-		2.5118864,
-		1,
-		1900
-	};
-	soundHit3[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_03",
-		2.5118864,
-		1,
-		1900
-	};
-	soundHit4[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_04",
-		2.5118864,
-		1,
-		1900
-	};
-	multiSoundHit[]=
-	{
-		"soundHit1",
-		0.25,
-		"soundHit2",
-		0.25,
-		"soundHit3",
-		0.25,
-		"soundHit4",
-		0.25
-	};
-	class CamShakeExplode
-	{
-		power=31;
-		duration=2.4000001;
-		frequency=20;
-		distance=339.599;
-	};
-	class CamShakeHit
-	{
-		power=155;
-		duration=0.80000001;
-		frequency=20;
-		distance=1;
-	};
-	class CamShakeFire
-	{
-		power=3.52844;
-		duration=2.4000001;
-		frequency=20;
-		distance=99.599197;
-	};
-	class CamShakePlayerFire
-	{
-		power=0.0099999998;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
 };
-*/
+class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
+{
+	triggerDistance=6;
+};
 
 
 class M_Mo_155mm_AT_LG;
