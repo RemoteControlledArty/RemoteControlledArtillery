@@ -254,6 +254,7 @@ class RC_HEAB_Base: Default
 	};
 };
 
+
 class RC_HEAB_Shell_Base: RC_HEAB_Base
 {
 	warheadName="HE";
@@ -349,14 +350,21 @@ class RC_82mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 		distance=1;
 	};
 };
-
-
 class RC_Sh_82mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
 	triggerDistance=16;
+	//fuseDistance=30; doesnt work
+};
+class RC_Sh_82mm_AMOS_HEAB_low: RC_Sh_82mm_AMOS_HEAB
+{
+	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
+	submunitionCount=1;
+	submunitionConeAngle=0;
+	triggerDistance=6;
+	//fuseDistance=30;
 };
 
 
@@ -909,7 +917,7 @@ class RC_Sh_155mm_AMOS_HEAB_backup: Sh_155mm_AMOS
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_Sh_155mm_AMOS_HEAB_low_backup: RC_Sh_155mm_AMOS_HEABbackup
+class RC_Sh_155mm_AMOS_HEAB_low_backup: RC_Sh_155mm_AMOS_HEAB_backup
 {
 	submunitionInitialOffset[]={0,0,-6};	//low airburst to ignore atleast microterrain
 };

@@ -21,7 +21,7 @@ class RC_1Rnd_MT_missiles: 1Rnd_GAT_missiles
 class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
-	ammo="RC_Sh_82mm_AMOS_HEAB2";
+	ammo="RC_Sh_82mm_AMOS_HEAB_backup";
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -1014,7 +1014,7 @@ class RC_40Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
 
 class RC_1Rnd_82mm_Mo_HEAB_low: 8Rnd_82mm_Mo_shells
 {
-	ammo="RC_Sh_82mm_AMOS_HEAB_low";
+	ammo="RC_Sh_82mm_AMOS_HEAB_low_backup";
 	displayName="HE Airburst low";
 	displayNameShort="HE Airburst low";
 	count=1;
@@ -3824,7 +3824,7 @@ class RC_ShipCannon_120mm_HE_LGDF_shells_x40: RC_ShipCannon_120mm_HE_LGDF_shells
 class 32Rnd_155mm_Mo_shells;
 class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
-	ammo="RC_Sh_155mm_AMOS_HEAB2";
+	ammo="RC_Sh_155mm_AMOS_HEAB";
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -5804,7 +5804,7 @@ class RC_40Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
 class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
-	ammo="RC_R_230mm_HEAB2";
+	ammo="RC_R_230mm_HEAB";
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;

@@ -43,6 +43,8 @@ arty:
 -Mortar should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
 -direct fire firing solution (camera viewpoint)
 -recon radar mortar carrier
+-fuse distance for airburst to not destroy asset with false pointed camera	/ or disable laser of camera / or blocking fire
+-add max spread display
 
 laser designator:
 _target = laserTarget player;
@@ -64,7 +66,7 @@ DONE - FEATURES:
 
 -added 82mm, 120mm, 155mm, 227mm HE Airburst
 -added 82mm, 120mm, 155mm Laser Guided 1.8m Delayed Fuse (for use against small bunkers/ hangars/ ammo storage halls) but only available per attributes edit for balancing reasons
--improved spead of cluster and mines
+-improved spread of cluster and mines
 -buffed smoke of 82mm, 120mm, 155mm
 -added 82mm AP and AT mines
 -40 magazines for all shells
@@ -101,6 +103,7 @@ DONE - FEATURES:
 -tweaked AT mine spread
 -reworked 120mm, 155mm, 227mm Airburst, to truly explode before impact (instead of being reset 20meters after impact)
 -decided to not use reworked Airburst for 82mm as it can cause fatal explosion when camera is obstructed and not able to point in sky
+-minor change to howitzer max gun elevation for it be able to shoot closer during compound defense
 
 
 TO DO - QUALITY OF LIFE:

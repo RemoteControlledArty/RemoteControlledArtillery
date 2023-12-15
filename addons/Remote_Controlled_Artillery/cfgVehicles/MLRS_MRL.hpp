@@ -130,7 +130,7 @@ class RC_MLRS_NA_A: RC_MLRS_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,15000,7500,3750,67000};
+							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -393,7 +393,7 @@ class RC_MRL_NA_DIG: RC_MRL_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,15000,7500,3750,67000};
+							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
 					};

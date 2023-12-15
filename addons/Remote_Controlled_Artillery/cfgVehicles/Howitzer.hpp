@@ -131,8 +131,16 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			//elevationMode=2;
+			//elevationMode=2;	//has 3 by default, what button to change
 			//elevationAnimSourceSpeed = 1.0f;
+
+			maxElev=86;	//allows 200m close (compound defense) use
+			/*
+			minElev=-5;
+			initElev=10;
+			maxHorizontalRotSpeed=0.77999997;
+			maxVerticalRotSpeed=0.25999999;
+			*/
 			
 			class Turrets: Turrets
 			{
@@ -158,7 +166,7 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,15000,7500,3750,67000};
+							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
 						/*
@@ -238,8 +246,8 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 				"RC_16Rnd_155mm_Mo_smoke",
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
-				"RC_6Rnd_155mm_Mo_mine",
 				"RC_8Rnd_155mm_Mo_AT_mine",
+				"RC_6Rnd_155mm_Mo_mine",
 				"RC_16Rnd_155mm_Mo_Illum"
 			};
 			class OpticsIn: OpticsIn
@@ -281,8 +289,8 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 				"RC_16Rnd_155mm_Mo_smoke",
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
-				"RC_6Rnd_155mm_Mo_mine",
 				"RC_8Rnd_155mm_Mo_AT_mine",
+				"RC_6Rnd_155mm_Mo_mine",
 				"RC_16Rnd_155mm_Mo_Illum"
 			};
 			class OpticsIn: OpticsIn
@@ -465,6 +473,7 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
+			maxElev=86;	//allows 200m close (compound defense) use
 			
 			class Turrets: Turrets
 			{
@@ -486,7 +495,7 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,15000,7500,3750,67000};
+							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -537,8 +546,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 				"RC_16Rnd_155mm_Mo_smoke",
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
-				"RC_6Rnd_155mm_Mo_mine",
 				"RC_8Rnd_155mm_Mo_AT_mine",
+				"RC_6Rnd_155mm_Mo_mine",
 				"RC_16Rnd_155mm_Mo_Illum"
 			};
 			class OpticsIn: OpticsIn
@@ -580,8 +589,8 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 				"RC_16Rnd_155mm_Mo_smoke",
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
-				"RC_6Rnd_155mm_Mo_mine",
 				"RC_8Rnd_155mm_Mo_AT_mine",
+				"RC_6Rnd_155mm_Mo_mine",
 				"RC_16Rnd_155mm_Mo_Illum"
 			};
 			class OpticsIn: OpticsIn
@@ -722,7 +731,7 @@ class RC_Static_Arty: RC_Static_NA_Arty
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,15000,7500,3750,67000};
+							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
 						/*
