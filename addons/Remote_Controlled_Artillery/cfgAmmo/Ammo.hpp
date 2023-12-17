@@ -135,6 +135,102 @@ class RC_M_MT: RC_M_MT_base
 };
 
 
+class MissileBase;
+/*
+//im gonna work on this later
+class ammo_Missile_CannonLaunchedBase: MissileBase
+{
+	class Components;
+};
+class M_125mm_cannon_ATGM: ammo_Missile_CannonLaunchedBase
+{
+	model="\A3\Weapons_F_Tank\Launchers\Vorona\Vorona_missile_heat_fly";
+	submunitionAmmo="ammo_Penetrator_125mm_missile";
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	warheadName="TandemHEAT";
+	hit=150;
+	indirectHit=20;
+	timeToLive=20;
+	thrustTime=5;
+	thrust=60;
+	maxSpeed=350;
+};
+class M_120mm_cannon_ATGM: ammo_Missile_CannonLaunchedBase
+{
+	model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";
+	warheadName="TandemHEAT";
+	submunitionAmmo="ammo_Penetrator_120mm_missile";
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	hit=150;
+};
+class M_120mm_cannon_ATGM_LG: M_120mm_cannon_ATGM
+{
+	thrustTime=6;
+	thrust=40;
+	lockType=0;
+	autoSeekTarget=1;
+	lockSeekRadius=100;
+	manualControl=0;
+	missileLockCone=180;
+	missileKeepLockedCone=180;
+	missileLockMaxDistance=8000;
+	missileLockMinDistance=100;
+	missileLockMaxSpeed=35;
+	weaponLockSystem="4 + 16";
+	flightProfiles[]=
+	{
+		"TopDown"
+	};
+	class TopDown
+	{
+		ascendHeight=250;
+		descendDistance=400;
+		minDistance=400;
+		ascendAngle=25;
+	};
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					maxTrackableSpeed=35;
+					angleRangeHorizontal=40;
+					angleRangeVertical=25;
+				};
+			};
+		};
+	};
+};
+*/
+
+
 //82mm
 class SubmunitionBase;
 class Sh_82mm_AMOS;
@@ -519,7 +615,6 @@ class ammo_Penetrator_82mm_MT: ammo_Penetrator_Base
 	warheadName="TandemHEAT";
 	hit=454.1;
 };
-class MissileBase;
 class RC_MT_MultiGuided_Submunition_base: MissileBase
 {
 	class Components;
@@ -1067,7 +1162,7 @@ class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 	explosive=1;
 	CraterEffects="";
 };
-class RC_R_230mm_HEAB: SubmunitionBase
+class RC_R_230mm_HEAB_backup: SubmunitionBase
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -1082,6 +1177,10 @@ class RC_R_230mm_HEAB: SubmunitionBase
 	effectFly="Missile0";
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	hit=0;
+};
+class RC_R_230mm_HEAB_backup_low: SubmunitionBase
+{
+	submunitionInitialOffset[]={0,0,-6};		//6m low airburst to atleast ignore microterrain
 };
 
 
@@ -1152,7 +1251,6 @@ class RC_HEAB_Rocket_Base: RC_HEAB_Base
 		500
 	};
 };
-
 class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 {
 	hit=1200;
@@ -1188,14 +1286,16 @@ class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 		distance=1;
 	};
 };
-
-
-class RC_R_230mm_HEAB2: RC_230mm_HEAB_Rocket_Base
+class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
 {
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
 	triggerDistance=20;
+};
+class RC_R_230mm_HEAB_low: RC_230mm_HEAB_Rocket_Base
+{
+	triggerDistance=6;
 };
 
 
@@ -1215,9 +1315,19 @@ class RC_R_230mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 		"Explosion_Debris_SoundSet"
 	};
 };
-class RC_R_604mm_ATACMS_HEAB: RC_R_230mm_HEAB
+class RC_604mm_HEAB_Rocket_Base: RC_230mm_HEAB_Rocket_Base
+{
+	hit=7200;
+	indirectHit=4800;
+	indirectHitRange=180;
+	cost=6000;
+}
+class RC_R_604mm_ATACMS_HEAB: RC_604mm_HEAB_Rocket_Base
 {
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition_ATACMS";
+	submunitionCount=1;
+	submunitionConeAngle=0;
+	triggerDistance=30;		//test different heights
 };
 
 

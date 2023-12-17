@@ -5855,6 +5855,165 @@ class RC_12Rnd_230mm_rockets_HEAB: RC_1Rnd_230mm_rockets_HEAB
 };
 
 
+class RC_1Rnd_230mm_rockets_HEAB_low: 12Rnd_230mm_rockets
+{
+	ammo="RC_R_230mm_HEAB_low";
+	displayName="HE Airburst low";
+	displayNameShort="HE Airburst";
+	count=1;
+};
+class RC_2Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=2;
+};
+class RC_3Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=3;
+};
+class RC_4Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=4;
+};
+class RC_5Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=5;
+};
+class RC_6Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=6;
+};
+class RC_7Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=7;
+};
+class RC_8Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=8;
+};
+class RC_9Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=9;
+};
+class RC_10Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=10;
+};
+class RC_11Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=11;
+};
+class RC_12Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
+{
+	count=12;
+};
+
+
+class RC_1Rnd_230mm_rockets_HEAB_backup: 12Rnd_230mm_rockets
+{
+	ammo="RC_R_230mm_HEAB_backup";
+	displayName="HE Airburst";
+	displayNameShort="HE Airburst";
+	count=1;
+};
+class RC_2Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=2;
+};
+class RC_3Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=3;
+};
+class RC_4Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=4;
+};
+class RC_5Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=5;
+};
+class RC_6Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=6;
+};
+class RC_7Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=7;
+};
+class RC_8Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=8;
+};
+class RC_9Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=9;
+};
+class RC_10Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=10;
+};
+class RC_11Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=11;
+};
+class RC_12Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
+{
+	count=12;
+};
+
+
+class RC_1Rnd_230mm_rockets_HEAB_low_backup: 12Rnd_230mm_rockets
+{
+	ammo="RC_R_230mm_HEAB_low_backup";
+	displayName="HE Airburst low";
+	displayNameShort="HE Airburst";
+	count=1;
+};
+class RC_2Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=2;
+};
+class RC_3Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=3;
+};
+class RC_4Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=4;
+};
+class RC_5Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=5;
+};
+class RC_6Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=6;
+};
+class RC_7Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=7;
+};
+class RC_8Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=8;
+};
+class RC_9Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=9;
+};
+class RC_10Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=10;
+};
+class RC_11Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=11;
+};
+class RC_12Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
+{
+	count=12;
+};
+
+
 class 12Rnd_230mm_rockets_cluster;
 class RC_1Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
 {
