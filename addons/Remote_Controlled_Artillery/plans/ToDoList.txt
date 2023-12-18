@@ -138,6 +138,7 @@ DONE - FEATURES:
 -reworked 120mm, 155mm, 227mm Airburst, to truly explode before impact (instead of being reset 20meters after impact)
 -decided to not use reworked Airburst for 82mm as it can cause fatal explosion when camera is obstructed and not able to point in sky
 -minor change to howitzer max gun elevation for it be able to shoot closer during compound defense
+-added RC RespawnTruck & correct driver camera screen with filter
 
 
 DONE - QUALITY OF LIFE:

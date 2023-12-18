@@ -26,7 +26,7 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 	textSingular="UGV";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
-	driverOpticsModel="\A3\weapons_f\reticle\Optics_Commander_02_F";
+	driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 	memoryPointDriverOptics="driverview";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
@@ -51,6 +51,7 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 	smokeLauncherOnTurret=0;
 	smokeLauncherAngle=120;
 
+	enableGPS=1;
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
