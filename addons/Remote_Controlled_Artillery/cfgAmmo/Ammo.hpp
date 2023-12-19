@@ -511,37 +511,6 @@ class RC_Sh_82mm_AMOS_guided: Sh_82mm_AMOS_guided
 };
 
 
-class M_Mo_82mm_AT_LG;
-class RC_M_Mo_82mm_AT_LG: M_Mo_82mm_AT_LG
-{
-	hit=450;
-	indirectHit=100;
-	indirectHitRange=4;
-};
-class Sh_82mm_AMOS_LG;
-class RC_Sh_82mm_AMOS_LG: Sh_82mm_AMOS_LG
-{
-	submunitionAmmo="RC_M_Mo_82mm_AT_LG";
-};
-
-
-class RC_M_Mo_82mm_LGDF_submunition: M_Mo_82mm_AT_LG
-{
-	triggerDistance=-1;
-	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,0,1.8};	//1.8m infront of projecticle during impact, acting as delayed fuse against bunkers
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
-	CraterEffects="";
-	indirectHit=0;
-	indirectHitRange=0;
-};
-class RC_Sh_82mm_AMOS_LGDF: Sh_82mm_AMOS_LG
-{
-	submunitionAmmo="RC_M_Mo_82mm_LGDF_submunition";
-};
-
-
 class Mo_ClassicMineRange;
 class RC_Mo_ClassicMineRange: Mo_ClassicMineRange
 {
@@ -863,6 +832,58 @@ class RC_Sh_82mm_AMOS_MT_MultiGuided: SubmunitionBase
 };
 
 
+class RC_Sh_82mm_AMOS_delayed_submunition: RC_Sh_82mm_AMOS_submunition
+{
+	explosionTime=0.2;
+};
+class RC_M_Mo_82mm_LG_DelayedFuse_Submunition: RC_82mm_MT_MultiGuided_Submunition
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact, acting as delayed fuse against bunkers
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_82mm_AMOS_delayed_submunition";
+	CraterEffects="";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+class RC_Sh_82mm_AMOS_LG_DelayedFuse: RC_Sh_82mm_AMOS_MT_MultiGuided
+{
+	submunitionAmmo="RC_M_Mo_82mm_LG_DelayedFuse_Submunition";
+};
+
+
+class M_Mo_82mm_AT_LG;
+class RC_M_Mo_82mm_AT_LG: M_Mo_82mm_AT_LG
+{
+	hit=450;
+	indirectHit=100;
+	indirectHitRange=4;
+};
+class Sh_82mm_AMOS_LG;
+class RC_Sh_82mm_AMOS_LG: Sh_82mm_AMOS_LG
+{
+	submunitionAmmo="RC_M_Mo_82mm_AT_LG";
+};
+
+
+class RC_M_Mo_82mm_LG_DelayedFuse_submunition_backup: M_Mo_82mm_AT_LG
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact, acting as delayed fuse against bunkers
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
+	CraterEffects="";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+class RC_Sh_82mm_AMOS_LG_DelayedFuse_backup: Sh_82mm_AMOS_LG
+{
+	submunitionAmmo="RC_M_Mo_82mm_LG_DelayedFuse_submunition_backup";
+};
+
+
 //120mm
 class ammo_Penetrator_120mm_MT: ammo_Penetrator_Base
 {
@@ -1066,25 +1087,6 @@ class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
 };
 
 
-class M_Mo_155mm_AT_LG;
-class RC_M_Mo_155mm_LGDF_submunition: M_Mo_155mm_AT_LG
-{
-	triggerDistance=-1;
-	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,0,1.8};	//1.8m infront of projecticle during impact, acting as delayed fuse against bunkers
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
-	CraterEffects="";
-	indirectHit=0;
-	indirectHitRange=0;
-};
-class Sh_155mm_AMOS_LG;
-class RC_Sh_155mm_AMOS_LGDF: Sh_155mm_AMOS_LG
-{
-	submunitionAmmo="RC_M_Mo_155mm_LGDF_submunition";
-};
-
-
 class Cluster_155mm_AMOS;
 class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 {
@@ -1151,6 +1153,46 @@ class RC_Sh_155mm_AMOS_MT_MultiGuided: RC_Sh_82mm_AMOS_MT_MultiGuided
 		frequency=20;
 		distance=1;
 	};
+};
+
+
+class RC_Sh_155mm_AMOS_delayed_submunition: RC_Sh_155mm_AMOS_submunition
+{
+	explosionTime=0.2;
+};
+class RC_M_Mo_155mm_LG_DelayedFuse_submunition: RC_155mm_MT_MultiGuided_Submunition
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact, acting as delayed fuse against bunkers
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_155mm_AMOS_delayed_submunition";
+	CraterEffects="";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+class RC_Sh_155mm_AMOS_LG_DelayedFuse: RC_Sh_155mm_AMOS_MT_MultiGuided
+{
+	submunitionAmmo="RC_M_Mo_155mm_LG_DelayedFuse_submunition";
+};
+
+
+class M_Mo_155mm_AT_LG;
+class RC_M_Mo_155mm_LG_DelayedFuse_submunition_backup: M_Mo_155mm_AT_LG
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact, acting as delayed fuse against bunkers
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
+	CraterEffects="";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+class Sh_155mm_AMOS_LG;
+class RC_Sh_155mm_AMOS_LG_DelayedFuse_backup: Sh_155mm_AMOS_LG
+{
+	submunitionAmmo="RC_M_Mo_155mm_LG_DelayedFuse_submunition_backup";
 };
 
 
@@ -1416,4 +1458,25 @@ class RC_R_230mm_MT_MultiGuided: RC_Sh_155mm_AMOS_MT_MultiGuided
 		1.9,
 		500
 	};
+};
+
+
+class RC_R_230mm_fly_HEAB_delayed_submunition: RC_R_230mm_fly_HEAB_submunition
+{
+	explosionTime=0.2;
+};
+class RC_230mm_LG_DelayedFuse_submunition: RC_230mm_MT_MultiGuided_Submunition
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact, acting as delayed fuse against bunkers
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_R_230mm_fly_HEAB_delayed_submunition";
+	CraterEffects="";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+class RC_230mm_LG_DelayedFuse: RC_R_230mm_MT_MultiGuided
+{
+	submunitionAmmo="RC_M_Mo_155mm_LG_DelayedFuse_submunition";
 };

@@ -34,7 +34,6 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
 	crewCrashProtection=0.01;
 
 	weapons[]=

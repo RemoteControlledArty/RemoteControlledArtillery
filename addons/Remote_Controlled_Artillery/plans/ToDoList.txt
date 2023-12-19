@@ -28,6 +28,8 @@ arty:
 -recon radar mortar carrier
 -fuse distance for airburst to not destroy asset with false pointed camera	/ or disable laser of camera / or blocking fire
 -maybe add max spread display
+-rework LGDF
+-try out normal models for guided
 
 laser designator:
 _target = laserTarget player;
@@ -36,14 +38,19 @@ blufor reportRemoteTarget [_target, 5];
 
 general:
 -change uav connection script location
--assault pack for AR-3&4
+-add assault packs for AR-1/3/4
 -decrease sensor angles
--fix Static AT laser engaging
+-fix Static AT laser engaging (how!?)
 
 RC IC:
 -hide seats for RC IC
 -attemt to add commander seat to RC IC
 -RC IC if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged
+
+RC Respawn Truck (not priority, can be post update):
+-add more versions
+-lock seats
+-add respawn script
 
 
 TO DO - QUALITY OF LIFE:
@@ -71,12 +78,12 @@ IDEAS - FAR FUTURE:
 -parachute cam round for spotting (or simply additional rhs comp mod for hunt ir)
 
 -turret elevationmode=3 (switchable between manual and automatic), changing script to low trajectory, and point of aim height instead ground height
--IFV with 50mm programmable Airburst, including lower charge rounds for NLOS fire using datalink
+-more detailed 120mm damage difference
 
 -getting misslecam panel to work with multiguided
 -counterbattery radar, reporting targets to datalink network, with cba settings on detection speed and range
--RC respawn truck
--RC HIMARS (to bring back aweness post update)
+-RC respawn truck script
+-RC RHS (HIMARS, M109 etc) to bring back aweness post update
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -139,6 +146,7 @@ DONE - FEATURES:
 -decided to not use reworked Airburst for 82mm as it can cause fatal explosion when camera is obstructed and not able to point in sky
 -minor change to howitzer max gun elevation for it be able to shoot closer during compound defense
 -added RC RespawnTruck & correct driver camera screen with filter
+-reworked Laser Guided 2m Delayed Fuse
 
 
 DONE - QUALITY OF LIFE:

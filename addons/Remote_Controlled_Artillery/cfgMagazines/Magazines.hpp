@@ -1671,166 +1671,166 @@ class RC_40Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
 };
 
 
-class RC_1Rnd_82mm_Mo_LGDF: 8Rnd_82mm_Mo_LG
+class RC_1Rnd_82mm_Mo_LG_DelayedFuse: 8Rnd_82mm_Mo_LG
 {
-	ammo="RC_Sh_82mm_AMOS_LGDF";
-	displayName="LG 1.8m Delayed";
-	displayNameShort="LG 1.8m Delayed";
+	ammo="RC_Sh_82mm_AMOS_LG_DelayedFuse";
+	displayName="LG 2m Delayed";
+	displayNameShort="LG 2m Delayed";
 	count=1;
 };
-class RC_2Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_2Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=2;
 };
-class RC_3Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_3Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=3;
 };
-class RC_4Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_4Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=4;
 };
-class RC_5Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_5Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=5;
 };
-class RC_6Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_6Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=6;
 };
-class RC_7Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_7Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=7;
 };
-class RC_8Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_8Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=8;
 };
-class RC_9Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_9Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=9;
 };
-class RC_10Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_10Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=10;
 };
-class RC_11Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_11Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=11;
 };
-class RC_12Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_12Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=12;
 };
-class RC_13Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_13Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=13;
 };
-class RC_14Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_14Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=14;
 };
-class RC_15Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_15Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=15;
 };
-class RC_16Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_16Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=16;
 };
-class RC_17Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_17Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=17;
 };
-class RC_18Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_18Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=18;
 };
-class RC_19Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_19Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=19;
 };
-class RC_20Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_20Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=20;
 };
-class RC_21Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_21Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=21;
 };
-class RC_22Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_22Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=22;
 };
-class RC_23Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_23Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=23;
 };
-class RC_24Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_24Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=24;
 };
-class RC_25Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_25Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=25;
 };
-class RC_26Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_26Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=26;
 };
-class RC_27Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_27Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=27;
 };
-class RC_28Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_28Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=28;
 };
-class RC_29Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_29Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=29;
 };
-class RC_30Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_30Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=30;
 };
-class RC_31Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_31Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=31;
 };
-class RC_32Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_32Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=32;
 };
-class RC_33Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_33Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=33;
 };
-class RC_34Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_34Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=34;
 };
-class RC_35Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_35Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=35;
 };
-class RC_36Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_36Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=36;
 };
-class RC_37Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_37Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=37;
 };
-class RC_38Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_38Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=38;
 };
-class RC_39Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_39Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=39;
 };
-class RC_40Rnd_82mm_Mo_LGDF: RC_1Rnd_82mm_Mo_LGDF
+class RC_40Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	count=40;
 };
@@ -3655,166 +3655,166 @@ class RC_ShipCannon_120mm_HE_shells_x40: RC_ShipCannon_120mm_HE_shells_x1
 };
 
 
-class RC_ShipCannon_120mm_HE_LGDF_shells_x1: magazine_ShipCannon_120mm_HE_LG_shells_x2
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
-	ammo="RC_Sh_120mm_AMOS_LGDF";
-	displayName="LG 1.8m Delayed";
-	displayNameShort="LG 1.8m Delayed";
+	ammo="RC_Sh_120mm_AMOS_LG_DelayedFuse";
+	displayName="LG 2m Delayed";
+	displayNameShort="LG 2m Delayed";
 	count=1;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x2: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x2: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=2;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x3: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x3: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=3;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x4: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x4: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=4;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x5: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x5: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=5;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x6: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x6: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=6;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x7: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x7: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=7;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x8: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x8: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=8;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x9: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x9: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=9;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x10: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x10: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=10;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x11: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x11: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=11;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x12: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x12: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=12;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x13: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x13: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=14;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x14: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x14: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=14;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x15: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x15: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=15;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x16: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x16: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=16;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x17: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x17: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=17;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x18: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x18: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=18;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x19: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x19: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=19;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x20: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x20: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=20;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x21: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x21: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=21;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x22: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x22: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=22;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x23: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x23: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=23;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x24: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x24: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=24;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x25: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x25: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=25;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x26: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x26: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=26;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x27: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x27: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=27;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x28: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x28: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=28;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x29: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x29: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=29;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x30: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x30: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=30;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x31: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x31: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=31;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x32: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x32: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=32;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x33: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x33: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=33;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x34: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x34: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=34;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x35: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x35: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=35;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x36: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x36: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=36;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x37: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x37: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=37;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x38: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x38: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=38;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x39: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x39: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=39;
 };
-class RC_ShipCannon_120mm_HE_LGDF_shells_x40: RC_ShipCannon_120mm_HE_LGDF_shells_x1
+class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x40: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=40;
 };
@@ -5636,166 +5636,166 @@ class RC_40Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
 };
 
 
-class RC_1Rnd_155mm_Mo_LGDF: 2Rnd_155mm_Mo_LG
+class RC_1Rnd_155mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
 {
-	ammo="RC_Sh_155mm_AMOS_LGDF";
-	displayName="LG 1.8m Delayed";
-	displayNameShort="LG 1.8m Delayed";
+	ammo="RC_Sh_155mm_AMOS_LG_DelayedFuse";
+	displayName="LG 2m Delayed";
+	displayNameShort="LG 2m Delayed";
 	count=1;
 };
-class RC_2Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_2Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=2;
 };
-class RC_3Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_3Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=3;
 };
-class RC_4Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_4Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=4;
 };
-class RC_5Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_5Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=5;
 };
-class RC_6Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_6Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=6;
 };
-class RC_7Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_7Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=7;
 };
-class RC_8Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_8Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=8;
 };
-class RC_9Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_9Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=9;
 };
-class RC_10Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_10Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=10;
 };
-class RC_11Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_11Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=11;
 };
-class RC_12Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_12Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=12;
 };
-class RC_13Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_13Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=13;
 };
-class RC_14Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_14Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=14;
 };
-class RC_15Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_15Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=15;
 };
-class RC_16Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_16Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=16;
 };
-class RC_17Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_17Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=17;
 };
-class RC_18Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_18Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=18;
 };
-class RC_19Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_19Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=19;
 };
-class RC_20Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_20Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=20;
 };
-class RC_21Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_21Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=21;
 };
-class RC_22Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_22Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=22;
 };
-class RC_23Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_23Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=23;
 };
-class RC_24Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_24Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=24;
 };
-class RC_25Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_25Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=25;
 };
-class RC_26Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_26Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=26;
 };
-class RC_27Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_27Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=27;
 };
-class RC_28Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_28Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=28;
 };
-class RC_29Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_29Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=29;
 };
-class RC_30Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_30Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=30;
 };
-class RC_31Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_31Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=31;
 };
-class RC_32Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_32Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=32;
 };
-class RC_33Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_33Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=33;
 };
-class RC_34Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_34Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=34;
 };
-class RC_35Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_35Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=35;
 };
-class RC_36Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_36Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=36;
 };
-class RC_37Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_37Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=37;
 };
-class RC_38Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_38Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=38;
 };
-class RC_39Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_39Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=39;
 };
-class RC_40Rnd_155mm_Mo_LGDF: RC_1Rnd_155mm_Mo_LGDF
+class RC_40Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 {
 	count=40;
 };
@@ -6173,115 +6173,57 @@ class RC_12Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
 };
 
 
-//ammo found in vanilla code, but non functional
-/*
-class RC_1Rnd_230mm_rockets_LG: 12Rnd_230mm_rockets
+class RC_1Rnd_230mm_rockets_LG_DelayedFuse: 12Rnd_230mm_rockets
 {
-	displayName="Laser Guided";
-	displayNameShort="LG";
-	//displayNameMFDFormat="LG";
-	ammo="RC_R_230mm_LG";
+	ammo="RC_230mm_LG_DelayedFuse";
+	displayName="LG 2m Delayed";
+	displayNameShort="LG 2m Delayed";
 	count=1;
 };
-class RC_2Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_2Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=2;
 };
-class RC_3Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_3Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=3;
 };
-class RC_4Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_4Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=4;
 };
-class RC_5Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_5Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=5;
 };
-class RC_6Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_6Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=6;
 };
-class RC_7Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_7Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=7;
 };
-class RC_8Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_8Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=8;
 };
-class RC_9Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_9Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=9;
 };
-class RC_10Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_10Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=10;
 };
-class RC_11Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_11Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=11;
 };
-class RC_12Rnd_230mm_rockets_LG: RC_1Rnd_230mm_rockets_LG
+class RC_12Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFuse
 {
 	count=12;
 };
-
-
-class RC_1Rnd_230mm_rockets_ATS: 12Rnd_230mm_rockets
-{
-	displayName="AT Seeking";
-	displayNameShort="AT Seeking";
-	//displayNameMFDFormat="AT S";
-	ammo="M_Mo_230mm_guided";
-	count=1;
-};
-class RC_2Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=2;
-};
-class RC_3Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=3;
-};
-class RC_4Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=4;
-};
-class RC_5Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=5;
-};
-class RC_6Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=6;
-};
-class RC_7Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=7;
-};
-class RC_8Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=8;
-};
-class RC_9Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=9;
-};
-class RC_10Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=10;
-};
-class RC_11Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=11;
-};
-class RC_12Rnd_230mm_rockets_ATS: RC_1Rnd_230mm_rockets_ATS
-{
-	count=12;
-};
-*/
 
 
 // 604mm MLRS/MRL Rockets
