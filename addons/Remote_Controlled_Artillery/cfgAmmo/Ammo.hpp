@@ -601,7 +601,11 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
 	laserScanner=1;
 	//lockSeekRadius=100;	//higher doesnt result in unlocked manual fire locking //Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled.
 
-	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	model="\A3\weapons_f\ammo\shell";
+	//effectFly="ArtilleryTrails";
+	effectFly="Missile0";
+	effectsMissile="missile2";
 	explosive=1;
 	cost=500;
 	aiAmmoUsageFlags="128 + 512";
@@ -615,7 +619,6 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
 	airFriction=0.085000001;
 	sideAirFriction=1;
 	fuseDistance=50;
-	effectsMissile="missile2";
 	whistleDist=4;
 	airLock=1;
 	lockType=0;
@@ -893,7 +896,8 @@ class ammo_Penetrator_120mm_MT: ammo_Penetrator_Base
 };
 class RC_120mm_MT_MultiGuided_Submunition: RC_82mm_MT_MultiGuided_Submunition
 {
-	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	model="\A3\weapons_f\ammo\shell";
 	cost=700;
 	fuseDistance=50;	//edit?
 	lockType=0;	//add to shell?
@@ -1106,7 +1110,8 @@ class ammo_Penetrator_155mm_MT: ammo_Penetrator_Base
 };
 class RC_155mm_MT_MultiGuided_Submunition: RC_82mm_MT_MultiGuided_Submunition
 {
-	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	model="\A3\weapons_f\ammo\shell";
 	cost=700;
 	fuseDistance=50;	//edit?
 	lockType=0;	//add to shell?
@@ -1404,7 +1409,11 @@ class ammo_Penetrator_230mm_MT: ammo_Penetrator_Base
 };
 class RC_230mm_MT_MultiGuided_Submunition: RC_155mm_MT_MultiGuided_Submunition
 {
-	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
+	effectFly="Missile0";
+	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
+	//effectFly="ArtilleryTrails";
 	cost=700;
 	fuseDistance=50;	//edit?
 	lockType=0;	//add to shell?

@@ -10,6 +10,8 @@ TO DO - BUGFIXES:
 -does it still need include check for ace hpp?
 -if arty is destroyed, ui stays...?
 
+-HOTFIX
+
 
 TO DO - FEATURES:
 
@@ -29,7 +31,7 @@ arty:
 -fuse distance for airburst to not destroy asset with false pointed camera	/ or disable laser of camera / or blocking fire
 -maybe add max spread display
 -rework LGDF
--try out normal models for guided
+-fix models for guided, try out tank shell model, and fix trails
 
 laser designator:
 _target = laserTarget player;
