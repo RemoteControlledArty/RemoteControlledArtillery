@@ -5801,6 +5801,7 @@ class RC_40Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 };
 
 
+//230mm
 class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
