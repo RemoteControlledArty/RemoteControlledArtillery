@@ -73,6 +73,8 @@ TO DO - QUALITY OF LIFE:
 
 IDEAS - FAR FUTURE:
 
+-video partially at night for rocket and explosion effects
+
 -vanilla asset overwrite for gamemodes without zeus etc
 -switch driver and commander of recon radar
 -3R MRSI display
