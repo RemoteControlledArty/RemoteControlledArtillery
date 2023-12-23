@@ -9,6 +9,7 @@ TO DO - BUGFIXES:
 -RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, no with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 -does it still need include check for ace hpp?
 -if arty is destroyed, ui stays...?
+-turn off motor should ONLY be activated for this mods assets per config value, as for example vanilla UGV is now broken!
 
 -HOTFIX
 
@@ -151,7 +152,7 @@ DONE - FEATURES:
 -minor change to howitzer max gun elevation for it be able to shoot closer during compound defense
 -added RC RespawnTruck & correct driver camera screen with filter
 -reworked Laser Guided 2m Delayed Fuse
-
+-added nightvision to RC RespawnTruck driver camera
 
 DONE - QUALITY OF LIFE:
 

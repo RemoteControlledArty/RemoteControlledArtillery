@@ -4,6 +4,7 @@ class B_Truck_01_medical_F;
 class RC_RespawnTruck_base: B_Truck_01_medical_F
 {
 	class Components;
+	class ViewOptics;
 	//RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	scope=0;
 	scopeCurator=0;
@@ -35,6 +36,15 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
+
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+	};
 
 	weapons[]=
 	{
