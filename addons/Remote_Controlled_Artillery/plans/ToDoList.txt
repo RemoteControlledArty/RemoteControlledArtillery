@@ -29,7 +29,7 @@ arty:
 -Mortar should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
 -direct fire firing solution (camera viewpoint)
 -recon radar mortar carrier
--fuse distance for airburst to not destroy asset with false pointed camera	/ or disable laser of camera / or blocking fire
+-fuse distance for airburst to not destroy asset with false pointed camera	/ or disable laser of camera / or blocking fire if rangefinder <X meters
 -maybe add max spread display
 -rework LGDF
 -fix models for guided, try out tank shell model, and fix trails
