@@ -49,6 +49,7 @@ RC IC:
 -hide seats for RC IC
 -attemt to add commander seat to RC IC
 -RC IC if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged
+-fix driver view
 
 RC Respawn Truck (not priority, can be post update):
 -add more versions
@@ -58,6 +59,7 @@ RC Respawn Truck (not priority, can be post update):
 
 TO DO - QUALITY OF LIFE:
 
+-yellow 10m radius for Azimuth&GunEL, for fire adjustments
 -only disable driver = 4, for modularity
 -https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
 -azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
@@ -153,6 +155,8 @@ DONE - FEATURES:
 -added RC RespawnTruck & correct driver camera screen with filter
 -reworked Laser Guided 2m Delayed Fuse
 -added nightvision to RC RespawnTruck driver camera
+-done lots of testing and decided on MT MultiGuided visual model
+
 
 DONE - QUALITY OF LIFE:
 

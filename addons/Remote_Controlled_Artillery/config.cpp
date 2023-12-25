@@ -214,6 +214,7 @@ class CfgPatches
 			"A3_Armor_F",
 			"A3_Armor_F_Beta",
 			"A3_Armor_F_Tank",
+			"A3_Weapons_F_Tank",
 			"A3_Static_F",
 			"A3_Static_F_Destroyer",
 			"A3_Weapons_F",

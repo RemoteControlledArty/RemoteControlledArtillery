@@ -58,6 +58,9 @@ class RC_Infantry_Carrier: RC_Infantry_Carrier_base
 	forceHideDriver=1;
 	driverForceOptics=1;
 	commanding=2;
+	//memoryPointDriverOptics="gunnerview";		//bugs on the left
+	driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
+	//memoryPointGunnerOptics="gunnerview";
 
 	weapons[]=
 	{
@@ -104,7 +107,9 @@ class RC_Infantry_Carrier: RC_Infantry_Carrier_base
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			//hasGunner=-1;
-			gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
+			//memoryPointGunnerOptics="commanderview";
+			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
+			//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
 			turretInfoType="";
 
 			class OpticsIn{};	//removes staged zoom, makes it fluid instead
