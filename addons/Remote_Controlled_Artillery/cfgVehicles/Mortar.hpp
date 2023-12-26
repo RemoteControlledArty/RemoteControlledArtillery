@@ -99,8 +99,6 @@ class RC_Mortar_NA: RC_Mortar_NA_base
 		class MainTurret: MainTurret
 		{
 			gunnerForceOptics=1;
-			minelev=-90;
-			maxelev=45;
 
 			class Components: Components
 			{
