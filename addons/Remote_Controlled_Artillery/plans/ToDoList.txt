@@ -21,24 +21,20 @@ documentation:
 -add new assets to cfg patches list
 
 arty:
+-report arty map markers to datalink, to lock for gps guidance
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
 -fuse distance for airburst to not destroy asset with false pointed camera	/ or disable laser of camera / or blocking fire if rangefinder <X meters
 -Mortar maybe should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
 
--maybe add max spread display
 -recon radar mortar carrier composition
 -find out why 227mm backup HEAB has no recoil
-
-laser designator:
-_target = laserTarget player;
-hint format ["%1", _target];
-blufor reportRemoteTarget [_target, 5];
+-double check LaserDatalink code
 
 general:
 -change uav connection script location
--add assault packs for AR-1/3/4
+-add assault packs for AR-1/3
 -decrease sensor angles
 -fix Static AT laser engaging (how!?)
 
@@ -50,37 +46,40 @@ RC IC:
 
 RC Respawn Truck (not priority, can be post update):
 -add more versions
+-edit hitpoints
 -lock seats
 -add respawn script
 
 
 TO DO - QUALITY OF LIFE:
 
--yellow 10m radius for Azimuth&GunEL, for fire adjustments
--direct fire firing solution (camera viewpoint)
 -only disable driver = 4, for modularity
--https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
--azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
--or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
--maybe turret elevation lock?
+-turret azimuth lock hotkey, for when changing EL on uneven ground throws it off
 
 -markers showing up on datalink panel, to be lockable for gps guidance?
 -get missle feed panel to connect to missle
 
--attemt to create O mine pattern
+-attemt to create O mine pattern, for max area denial, AP/AT do not explode each other if 2m apart
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
 -aiAmmoUsageFlags https://community.bistudio.com/wiki/CfgAmmo_Config_Reference#aiAmmoUsageFlags
 
 
 IDEAS - FAR FUTURE:
 
+-direct fire firing solution (camera viewpoint)
+-yellow 10m radius for Azimuth&GunEL, for fire adjustments
+-maybe add max spread display
+
 -video partially at night for rocket and explosion effects
 
+-https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
+-azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
+-or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
 -vanilla asset overwrite for gamemodes without zeus etc
 -switch driver and commander of recon radar
 -3R MRSI display
 -3R automated MRSI
--parachute cam round for spotting (or simply additional rhs comp mod for hunt ir)
+-parachute cam round for spotting (or simply additional rhs comp mod for hunt ir, maybe with datalink/laser)
 
 -turret elevationmode=3 (switchable between manual and automatic), changing script to low trajectory, and point of aim height instead ground height
 -more detailed 120mm damage difference
@@ -154,6 +153,13 @@ DONE - FEATURES:
 -reworked Laser Guided 2m Delayed Fuse
 -added nightvision to RC RespawnTruck driver camera
 -done lots of testing and decided on MT MultiGuided visual model
+-added LaserDatalink so that handheld LaserDesignators enable reliable use with Artillery, and decreases reliance of UAV's with Datalink
+-testing showed that locking MultiGuided to laser target, firing manual, deactivating laser, has 3 practical results:
+	if nothing else is close it switches to gps guidance,
+	or if enemy vehicle targets are close it locks on them,
+	which is extremly usefull if the ForwardObserver is suppressed and cannot maintain the lase,
+	if the laser is reactivated, it relocks if it is close enough to the original point
+
 
 
 DONE - QUALITY OF LIFE:

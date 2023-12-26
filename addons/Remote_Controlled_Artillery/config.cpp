@@ -245,6 +245,7 @@ class CfgFunctions
       		class RC_UI_Loop {postInit=1};
 			class RC_MarkerLoop {postInit=1};
 			class RC_EngineOff {postInit=1};
+			class RC_LaserDatalink {postInit=1};
 			class scrollSolutions {};
 		};
 	};
@@ -339,6 +340,10 @@ class CfgEditorSubcategories
 	{ 
 		displayname="Transport";
 	};
+	class RC_Respawn_subcat
+	{ 
+		displayname="Respawn";
+	};
 
 
 	class RC_Mortar_NA_subcat
@@ -398,7 +403,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Recon.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"		//doesnt work atm
+	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAT.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
