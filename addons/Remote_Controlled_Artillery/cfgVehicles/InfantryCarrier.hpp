@@ -60,7 +60,7 @@ class RC_Infantry_Carrier: RC_Infantry_Carrier_base
 	commanding=2;
 	//memoryPointDriverOptics="gunnerview";		//bugs on the left
 	driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
-	//memoryPointGunnerOptics="gunnerview";
+	memoryPointDriverOptics="commanderview";
 
 	weapons[]=
 	{
