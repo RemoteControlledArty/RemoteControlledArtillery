@@ -24,15 +24,12 @@ arty:
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
--find out why 227mm HEAB has no recoil
-
--Mortar should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
--direct fire firing solution (camera viewpoint)
--recon radar mortar carrier
 -fuse distance for airburst to not destroy asset with false pointed camera	/ or disable laser of camera / or blocking fire if rangefinder <X meters
+-Mortar maybe should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
+
 -maybe add max spread display
--rework LGDF
--fix models for guided, try out tank shell model, and fix trails
+-recon radar mortar carrier composition
+-find out why 227mm backup HEAB has no recoil
 
 laser designator:
 _target = laserTarget player;
@@ -60,6 +57,7 @@ RC Respawn Truck (not priority, can be post update):
 TO DO - QUALITY OF LIFE:
 
 -yellow 10m radius for Azimuth&GunEL, for fire adjustments
+-direct fire firing solution (camera viewpoint)
 -only disable driver = 4, for modularity
 -https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
 -azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
