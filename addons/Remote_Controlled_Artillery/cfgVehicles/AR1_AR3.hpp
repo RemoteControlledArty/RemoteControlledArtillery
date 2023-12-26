@@ -10,9 +10,9 @@ class RC_UAV_base: B_UAV_01_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_UAV_AR4: RC_UAV_base
+class RC_UAV_AR1: RC_UAV_base
 {
-	displayName="RC AR-4";
+	displayName="RC AR-1";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Spotting_subcat";
 
@@ -83,29 +83,31 @@ class RC_UAV_AR4: RC_UAV_base
 				};
 				class ManSensorComponent: SensorTemplateMan
 				{
-					typeRecognitionDistance=500;
+					typeRecognitionDistance=300;
 
 					class AirTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=1500;
+						maxRange=1500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=1500;
+						maxRange=1500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 
 					maxTrackableSpeed=15;
-					angleRangeHorizontal=60;
-					angleRangeVertical=40;
+					angleRangeHorizontal=1;
+					angleRangeVertical=1;
 					animDirection="mainGun";
-					aimDown=-0.5;
+					//aimDown=-0.5;
+					aimDown=0;
 				};
+				/*
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=2000;
@@ -126,36 +128,39 @@ class RC_UAV_AR4: RC_UAV_base
 					};
 
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=60;
-					angleRangeVertical=40;
+					angleRangeHorizontal=3;
+					angleRangeVertical=3;
 					animDirection="mainGun";
-					aimDown=-0.5;
+					//aimDown=-0.5;
+					aimDown=0;
 				};
+				*/
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=1000;
+					typeRecognitionDistance=2000;
 
 					class AirTarget
 					{
-						minRange=1500;
-						maxRange=1500;
+						minRange=2000;
+						maxRange=2000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1500;
-						maxRange=1500;
+						minRange=2000;
+						maxRange=2000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=60;
-					angleRangeVertical=40;
+					angleRangeHorizontal=3;
+					angleRangeVertical=3;
 					animDirection="mainGun";
-					aimDown=-0.5;
+					//aimDown=-0.5;
+					aimDown=0;
 				};
 			};
 		};
@@ -260,7 +265,7 @@ class RC_UAV_AR4: RC_UAV_base
 
 
 //AR-3
-class RC_UAV_AR3: RC_UAV_AR4
+class RC_UAV_AR3: RC_UAV_AR1
 {
 	displayName="RC AR-3";
 	class Components: Components
