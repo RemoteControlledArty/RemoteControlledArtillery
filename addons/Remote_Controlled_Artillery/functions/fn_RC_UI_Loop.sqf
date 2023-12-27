@@ -403,6 +403,17 @@ RC_Artillery_UI = [] spawn {
 			//_laserTargetPos
 			*/
 
+
+			//automated firing, too easy and only high angle, but interesting option, only works when not controlling, so it would work with laser or locket target of UAV
+			/*
+			Howitzer doArtilleryFire [getpos man, currentMagazine Howitzer, 1];
+			Howitzer doArtilleryFire [getpos vehicle, currentMagazine Howitzer, 1];
+			Howitzer doArtilleryFire [vehicle, currentMagazine Howitzer, 1];
+			Howitzer doArtilleryFire [getpos laserTarget player, currentMagazine Howitzer, 1];
+			Howitzer doArtilleryFire [laserTarget player, currentMagazine Howitzer, 1];
+			Howitzer doArtilleryFire [getpos cursorTarget, currentMagazine Howitzer, 1];	//UAV integrated targeting
+
+			*/
 		} else {
 			// UI Shouldn't be Shown so we cut it
 			"RC_Artillery" cutFadeOut 0;

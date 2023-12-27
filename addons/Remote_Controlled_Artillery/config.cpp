@@ -344,6 +344,10 @@ class CfgEditorSubcategories
 	{ 
 		displayname="Respawn";
 	};
+	class RC_Targets_subcat
+	{ 
+		displayname="Target's";
+	};
 
 
 	class RC_Mortar_NA_subcat
@@ -407,4 +411,5 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAT.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Targets.hpp"
 };

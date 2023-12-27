@@ -259,6 +259,7 @@ class RC_Sh_82mm_AMOS_HEAB_low_backup: RC_Sh_82mm_AMOS_HEAB_backup
 class Default;
 class RC_HEAB_Base: Default
 {
+	artilleryLock=1;
 	//shell/submunition core
 	simulation="shotSubmunitions";
 	simulationStep=0.050000001;
@@ -364,7 +365,6 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 	CraterEffects="ArtyShellCrater";
 	ExplosionEffects="MortarExplosion";
 	whistleDist=60;
-	artilleryLock=1;
 	thrust=0;
 	timeToLive=180;
 	airFriction=0;
@@ -592,6 +592,7 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
 {
 	laserLock=1;
 	irLock=1;
+	artilleryLock=1;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
 
@@ -794,7 +795,7 @@ class RC_Sh_82mm_AMOS_MT_MultiGuided: SubmunitionBase
 	reportRemoteTargets=1;	//allows for sensor-recon shots, to then datalink lock with second shot
 
 	//lockAcquire=1;	//likely cfgvic only
-	//artilleryLock=1;
+	artilleryLock=1;
 	//lockSeekRadius=67000;	//default 100, but that might be manual fire problem "Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled."
 
 	muzzleEffect="";
@@ -1241,8 +1242,6 @@ class RC_HEAB_Rocket_Base: RC_HEAB_Base
 	airFriction=0;
 	sideairFriction=0;
 
-
-	artilleryLock=1;
 	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	//effectFly="ArtilleryTrails";

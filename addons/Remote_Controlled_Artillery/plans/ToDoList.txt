@@ -22,6 +22,7 @@ documentation:
 
 arty:
 -report arty map markers to datalink, to lock for gps guidance
+-prepare datalink & laser firing solution FORMULA
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
