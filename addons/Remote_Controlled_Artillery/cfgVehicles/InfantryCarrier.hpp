@@ -25,7 +25,7 @@ class RC_Infantry_Carrier_base: B_APC_Wheeled_01_cannon_F
 	scope=0;
 	scopeCurator=0;
 	//RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
-	RCEngineOffDelay=1; //1 = give it longer delay to turn off engine, required for slow accelerating vehicles
+	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_Infantry_Carrier: RC_Infantry_Carrier_base
 {

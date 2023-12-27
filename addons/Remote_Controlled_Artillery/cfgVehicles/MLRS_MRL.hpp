@@ -10,11 +10,11 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 	class OpticsIn;
 	class Wide;
 	class Components;
-
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 	scope=0;
 	scopeCurator=0;
+	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_MLRS_NA_A: RC_MLRS_base
 {
@@ -290,11 +290,11 @@ class RC_MRL_base: I_Truck_02_MRL_F
 	class Wide;
 	class Components;
 
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
-	RCEngineOffDelay=1; //1 = give it longer delay to turn off engine, required for slow accelerating vehicles
 	scope=0;
 	scopeCurator=0;
+	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_MRL_NA_DIG: RC_MRL_base
 {

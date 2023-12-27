@@ -13,11 +13,11 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	class OpticsIn;
 	class Wide;
 	class Components;
-
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	scope=0;
 	scopeCurator=0;
+	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
+	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_Howitzer_NA_A: RC_Howitzer_base
 {
@@ -355,11 +355,11 @@ class RC_Howitzer_base_HEX_O: O_MBT_02_arty_F
 	class OpticsIn;
 	class Wide;
 	class Components;
-
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	scope=0;
 	scopeCurator=0;
+	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
+	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 {
@@ -619,9 +619,9 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 	class Turrets;
 	class MainTurret;
 	class Components;
-	isRCArty=1;
 	scope=0;
 	scopeCurator=0;
+	isRCArty=1;
 };
 class RC_Static_NA_Arty: RC_Static_Arty_base
 {

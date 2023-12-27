@@ -9,9 +9,10 @@ class RC_AA_base: B_APC_Tracked_01_AA_F
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
-	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 	scope=0;
 	scopeCurator=0;
+	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_AA_A: RC_AA_base
 {
@@ -127,9 +128,10 @@ class RC_AA_base_HEX_O: O_APC_Tracked_02_AA_F
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
-	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 	scope=0;
 	scopeCurator=0;
+	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_AA_HEX_A: RC_AA_base_HEX_O
 {

@@ -5,11 +5,11 @@
 
 TO DO - BUGFIXES:
 
--make MLRS/MRL rockets appear in launcher (if possible)
--RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, no with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
+-RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 -does it still need include check for ace hpp?
 -if arty is destroyed, ui stays...?
 -turn off motor should ONLY be activated for this mods assets per config value, as for example vanilla UGV is now broken!
+-crl+h cuts connection and destroys UV?
 
 -HOTFIX
 
@@ -72,6 +72,7 @@ IDEAS - FAR FUTURE:
 
 -video partially at night for rocket and explosion effects
 
+-make MLRS/MRL rockets appear in launcher (if possible)
 -https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
 -azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
 -or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
