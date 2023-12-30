@@ -33,6 +33,7 @@ arty:
 -find out why 227mm backup HEAB has no recoil
 -double check LaserDatalink code
 -finetune lock values
+*NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
 
 general:
 -change uav connection script location

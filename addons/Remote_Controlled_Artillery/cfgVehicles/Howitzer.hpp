@@ -759,3 +759,170 @@ class RC_Static_Arty_I: RC_Static_Arty
 	crew="I_UAV_AI";
 	side=2;
 };
+
+
+//Rooikat ID-FS test
+class B_AFV_Wheeled_01_up_cannon_F;
+class RC_wheeled_Howitzer_Base: B_AFV_Wheeled_01_up_cannon_F
+{
+	class Turrets;
+	class MainTurret;
+	class CommanderOptics;
+	class Components;
+	class AnimationSources;
+	class showCamonetTurret;
+	class showCamonetCannon;
+	class showCamonetHull;
+	class showSLATHull;
+	scope=0;
+	scopeCurator=0;
+	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+};
+class RC_wheeled_Howitzer: RC_wheeled_Howitzer_Base
+{
+	displayName="RC wheeled Howitzer";
+	faction="RemoteControlled_B";
+	editorSubcategory="RC_Howitzer_subcat";
+	author="Ascent";
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	vehicleClass="Autonomous";
+	isUav=1;
+	textPlural="UGVs";
+	textSingular="UGV";
+	uavCameraGunnerPos="PiP0_pos";
+	uavCameraGunnerDir="PiP0_dir";
+	crew="B_UAV_AI";
+	driverForceOptics=1;
+	forceHideDriver=1;
+	ejectDeadGunner=0;
+	ejectDeadDriver=0;
+	ejectDeadCommander=0;
+
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	laserScanner=1;
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=67000;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class showCamonetTurret: showCamonetTurret
+		{
+			initPhase=1;
+		};
+		class showCamonetCannon: showCamonetCannon
+		{
+			initPhase=1;
+		};
+		class showCamonetHull: showCamonetHull
+		{
+			initPhase=1;
+		};
+		class showSLATHull: showSLATHull
+		{
+			initPhase=1;
+		};
+	};
+	animationList[]=
+	{
+		"showCamonetHull",
+		0,
+		"showCamonetCannon",
+		0,
+		"showCamonetTurret",
+		0,
+		"showSLATHull",
+		0
+	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			//maxElev=45;	//unfortunately doesnt work, due to gun having internal animation
+			commanding=2;
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+			
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					commanding=1;
+					hasGunner=-1;
+					hasCommander=-1;
+					forceHideGunner=1;
+				};
+			};
+
+			weapons[]=
+			{
+				"RC_ShipCannon_120mm_V4",
+				"MMG_02_coax"
+			};
+			magazines[]=
+			{
+				"RC_ShipCannon_120mm_HEAB_shells_x16",
+				"RC_ShipCannon_120mm_smoke_shells_x16",
+				"RC_ShipCannon_120mm_HE_cluster_shells_x2",
+				"RC_ShipCannon_120mm_MT_MultiGuided_shells_x6",	
+				"RC_ShipCannon_120mm_mine_shells_x6",
+				"RC_ShipCannon_120mm_AT_mine_shells_x8",
+				"RC_ShipCannon_120mm_Illum_shells_x16",
+				"200Rnd_338_Mag"
+			};
+		};
+	};
+};
