@@ -596,10 +596,10 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
 
-	missileLockCone=180;	//12
-	missileKeepLockedCone=180;	//160
-	lockSeekRadius=500;
-	missileLockMaxDistance=5000;
+	missileLockCone=360;	//12
+	missileKeepLockedCone=360;	//160
+	lockSeekRadius=2000;		//100
+	missileLockMaxDistance=10000;	//5000
 	missileLockMinDistance=10;
 	missileLockMaxSpeed=150;	//35
 	//maxControlRange=500;
@@ -625,7 +625,7 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
 	maneuvrability=20;
 	airFriction=0.085000001;
 	sideAirFriction=1;
-	fuseDistance=50;
+	fuseDistance=50;	//maybe shorter
 	whistleDist=4;
 	airLock=1;
 	lockType=0;
@@ -647,9 +647,9 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
 
 	timeToLive=35;
 	initTime=0.15000001;
-	thrustTime=8;
-	thrust=35;
-	maxSpeed=180;
+	thrustTime=8;	//edit
+	thrust=35;	//edit
+	maxSpeed=180;	//maybe higher
 	typicalSpeed=1660;
 	weaponLockSystem="1 + 2 + 4 + 16";
 	cmImmunity=0.9;

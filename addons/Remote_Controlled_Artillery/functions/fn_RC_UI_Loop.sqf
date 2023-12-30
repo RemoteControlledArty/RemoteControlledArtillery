@@ -142,11 +142,11 @@ RC_Artillery_UI = [] spawn {
 				private _turretCfg = [_uavClass, _turret] call CBA_fnc_getTurret;
     			private _turretAnimBody = getText (_turretCfg >> "animationSourceBody");
 				private _currentTraverseRad = _uav animationSourcePhase _turretAnimBody;
-				if (isNil "_currentTraverseRad") then { _currentTraverseRad = _uav animationPhase _turretAnimBody; };
+				if (isNil "_currentTraverseRad") then {_currentTraverseRad = _uav animationPhase _turretAnimBody;};
 				// Get turret roatation around it's z axis, then calc weapon elev in it's projection
 				private _turretRot = [vectorDir _uav, vectorUp _uav, deg _currentTraverseRad] call CBA_fnc_vectRotate3D;
 				_realElevationOriginal = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
-				if (_realElevationOriginal > 90) then { _realElevationOriginal = 180 - _realElevationOriginal; };
+				if (_realElevationOriginal > 90) then {_realElevationOriginal = 180 - _realElevationOriginal;};
 				_realElevation = (17.7777778 * _realElevationOriginal);
 			};
 
@@ -186,7 +186,7 @@ RC_Artillery_UI = [] spawn {
 			// Thank the ACE Team for the Above!
 
 			// Wrap around
-			if (_realAzimuth < 0) then { _realAzimuth = _realAzimuth + 360; };
+			if (_realAzimuth < 0) then {_realAzimuth = _realAzimuth + 360;};
 			_realAzimuth = (17.7777778 * _realAzimuth);
 			
 			// If we actually have Target Markers
@@ -208,7 +208,6 @@ RC_Artillery_UI = [] spawn {
 
 				_targetPos = markerPos (RC_Current_Target select 1);
 				_artyPos = getPosASL _uav;
-
 				_targetDistance = round(_targetPos distance2d _artyPos);
 
 				//how ElDiff is shown based on cba settings
@@ -220,7 +219,6 @@ RC_Artillery_UI = [] spawn {
 				};
 
 				//ElDiff for formula
-				/*
 				_Difference = 0;
 				_Difference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);
 
@@ -228,23 +226,6 @@ RC_Artillery_UI = [] spawn {
 				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
 				if (_targetAzimuth < 0) then { _targetAzimuth = _targetAzimuth + 360; };
 				_targetAzimuth = (17.7777778 * _targetAzimuth);
-				*/
-
-				//TEST
-				_cursorTarget = cursorTarget;
-				_cursorTargetPos = getpos _cursorTarget;
-				_cursorTargetDistance = round(_cursorTargetPos distance _artyPos);
-				_cursorTargetDifference = ((AGLToASL _cursorTargetPos) select 2) - (_artyPos select 2);
-				_Difference = 0;
-				_Difference = ((AGLToASL _cursorTargetPos) select 2) - (_artyPos select 2);
-
-				_cursorTargetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _cursorTargetPos);
-				_cursorTargetAzimuth = ((_cursorTargetVector select 0) atan2 (_cursorTargetVector select 1));
-				if (_cursorTargetAzimuth < 0) then {_cursorTargetAzimuth = _cursorTargetAzimuth + 360;};
-				_targetAzimuth = (17.7777778 * _cursorTargetAzimuth);
-				//TEST
-
-				//_targetAzimuth = round((_artyPos getDir _targetPos)*17.777778); //test, is inaccurate
 
 				_gravity=9.8066;
 
@@ -259,37 +240,23 @@ RC_Artillery_UI = [] spawn {
 				// If we have Solution Calculator Turned on do da Math
 				if (RC_Solution_Calculator_On) then {
 					
-					// High Angle
-					_cursorCalcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_cursorTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_cursorTargetDistance)));
-					_cursorCalcHigh = round (_cursorCalcHigh * (10^2)) / (10^2); //fix to 2 decimal places
-					_HighAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_cursorTargetDifference)+(_gravity*(_cursorTargetDistance^2))))))/(_gravity*_cursorTargetDistance)))/pi/57.30;
-					_TravelTimeHigh = round(((2*_roundVelocity)*(SIN(_cursorCalcHigh)))/_gravity); // Calculate the Travel Time in Seconds
-					
-					// Low Angle
-					_cursorCalcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_cursorTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_cursorTargetDistance)));
-					_cursorCalcLow = round (_cursorCalcLow * (10^2)) / (10^2); //fix to 2 decimal places
-					_LowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_cursorTargetDifference)+(_gravity*(_cursorTargetDistance^2))))))/(_gravity*_cursorTargetDistance)))/pi/57.30;
-					_TravelTimeLow = round(((2*_roundVelocity)*(SIN(_cursorCalcLow)))/_gravity); // Calculate the Travel Time in Seconds
-
-					/*
-					// High Angle
+					// Marker High Angle
 					//(atan((_finalVel^2+sqrt(_finalVel^4-GRAVITY*(GRAVITY*(_distance^2)+2*_zDiff*_finalVel^2)))/(GRAVITY*_distance)));
 					_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_targetDistance)));
-					_calcHigh = round (_calcHigh * (10^2)) / (10^2); //fix to 2 decimal places
+					_calcHigh = round (_calcHigh * (10^2)) / (10^2);
 					_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
-					_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/_gravity); // Calculate the Travel Time in Seconds
+					_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/_gravity);
 					//_peakASLHigh = (_roundVelocity**2*(sin(_calcHigh*0.0174533))*(sin(_calcHigh*0.0174533)))/(2*_gravity)
 					//private _tof = round ((2*_finalVel*sin(_elev))/GRAVITY);
 					
-					// Low Angle
+					// Marker Low Angle
 					//"original" missing? _calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(_gravity*_targetDistance)));
 					_calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_targetDistance)));
-					_calcLow = round (_calcLow * (10^2)) / (10^2); //fix to 2 decimal places
+					_calcLow = round (_calcLow * (10^2)) / (10^2);
 					_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
-					_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/_gravity); // Calculate the Travel Time in Seconds
+					_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/_gravity);
 					//_peakASLLow = (_roundVelocity**2*(sin**2)*(_calcLow*0.0174533))/(2*_gravity)
 					//_peakASLLow = (_roundVelocity**2*(sin(_calcLow*0.0174533))*(sin(_calcLow*0.0174533)))/(2*_gravity)
-					*/
 
 					switch (true) do {
 						// If Elevation is correct for Low solution turn the Elevation text Green
@@ -344,7 +311,6 @@ RC_Artillery_UI = [] spawn {
 					_travelTimeLow = 0;
 				};
 			} else {
-
 				// If we don't have any Valid Targets
 				_ctrlDistance ctrlSetText "DIST: 0000";
 				_ctrlTarget ctrlSetText "T: 0";
@@ -359,7 +325,6 @@ RC_Artillery_UI = [] spawn {
 				_ctrlMessage ctrlSetTextColor [1,0,0,1];
 				_ctrlMessage ctrlSetPositionX (0.868267 * safezoneW + safezoneX);
 				_ctrlMessage ctrlSetText format ["NO TARGET ADD MAP MARKER: %1%2", RC_Marker_Prefix, "1-99"];
-				
 			};
 
 			// If we have the Solution Calculating turned off we hide the UI
@@ -383,63 +348,64 @@ RC_Artillery_UI = [] spawn {
 			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];		
 			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];		
 
+
+			//prepared formulas
+
+				/*
+				// laser datalink target
+				_DatalinkTargets = getSensorTargets _uav;
+				_targetIndex = _DatalinkTargets findif {(_x select 3) findif {_x isequalto "laser"} > -1};	//how to find specific, like closest laser?
+				_laserTarget = _DatalinkTargets select _targetIndex;
+				_laserTargetPos = getpos (_laserTarget select 0);
+				_laserTargetDistance = round(_laserTargetPos distance _artyPos);
+				_laserTargetDifference = ((AGLToASL _laserTargetPos) select 2) - (_artyPos select 2);
+				_laserTargetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _laserTargetPos);
+				_laserTargetAzimuth = ((_laserTargetVector select 0) atan2 (_laserTargetVector select 1));
+				if (_laserTargetAzimuth < 0) then {_laserTargetAzimuth = _laserTargetAzimuth + 360;};
+				_laserTargetAzimuth = (17.7777778 * _laserTargetAzimuth);
+
+				// Laser High Angle
+				_laserCalcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_laserTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_laserTargetDistance)));
+				_laserCalcHigh = round (_laserCalcHigh * (10^2)) / (10^2); //fix to 2 decimal places
+				_laserHighAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_laserTargetDifference)+(_gravity*(_laserTargetDistance^2))))))/(_gravity*_laserTargetDistance)))/pi/57.30;
+				_laserTravelTimeHigh = round(((2*_roundVelocity)*(SIN(_laserCalcHigh)))/_gravity); // Calculate the Travel Time in Seconds
+				
+				// Laser Low Angle
+				_laserCalcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_laserTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_laserTargetDistance)));
+				_laserCalcLow = round (_laserCalcLow * (10^2)) / (10^2);
+				_laserLowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_laserTargetDifference)+(_gravity*(_laserTargetDistance^2))))))/(_gravity*_laserTargetDistance)))/pi/57.30;
+				_laserTravelTimeLow = round(((2*_roundVelocity)*(SIN(_laserCalcLow)))/_gravity);
+
+
+				// selected datalink target
+				_selectedTarget = cursorTarget;
+				_selectedTargetPos = getpos _selectedTarget;
+				_selectedTargetDistance = round(_selectedTargetPos distance _artyPos);
+				_selectedTargetDifference = ((AGLToASL _selectedTargetPos) select 2) - (_artyPos select 2);
+				_selectedDifference = 0;
+				_selectedDifference = ((AGLToASL _selectedTargetPos) select 2) - (_artyPos select 2);
+				_selectedTargetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _selectedTargetPos);
+				_selectedTargetAzimuth = ((_selectedTargetVector select 0) atan2 (_selectedTargetVector select 1));
+				if (_selectedTargetAzimuth < 0) then {_selectedTargetAzimuth = _selectedTargetAzimuth + 360;};
+				_selectedtargetAzimuth = (17.7777778 * _selectedTargetAzimuth);
+				//_targetAzimuth = round((_artyPos getDir _targetPos)*17.777778); 	//test, is inaccurate
+
+				// selected High Angle
+				_selectedCalcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_selectedTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_selectedTargetDistance)));
+				_selectedCalcHigh = round (_selectedCalcHigh * (10^2)) / (10^2);
+				_curserHighAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_selectedTargetDifference)+(_gravity*(_selectedTargetDistance^2))))))/(_gravity*_selectedTargetDistance)))/pi/57.30;
+				_curserTravelTimeHigh = round(((2*_roundVelocity)*(SIN(_selectedCalcHigh)))/_gravity);
+				
+				// selected Low Angle
+				_selectedCalcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_selectedTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_selectedTargetDistance)));
+				_selectedCalcLow = round (_selectedCalcLow * (10^2)) / (10^2);
+				_curserLowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_selectedTargetDifference)+(_gravity*(_selectedTargetDistance^2))))))/(_gravity*_selectedTargetDistance)))/pi/57.30;
+				_curserTravelTimeLow = round(((2*_roundVelocity)*(SIN(_selectedCalcLow)))/_gravity);
+				*/
+
 			/*
-			//Datalink Target Referencing Section, Author: Ascent
 			_uav = (getConnectedUAV player);
 			_artyPos = getPosASL _uav;
-
-			_DatalinkTargets = getSensorTargets _uav;
-			_targetIndex = _DatalinkTargets findif {(_x select 3) findif {_x isequalto "laser"} > -1};
-			_laserTarget = _DatalinkTargets select _targetIndex;
-			_laserTargetPos = getpos (_laserTarget select 0);
-
-			_laserTargetDistance = round(_laserTargetPos distance _artyPos);
-			_laserTargetDifference = ((AGLToASL _laserTargetPos) select 2) - (_artyPos select 2);
-
-			_laserTargetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _laserTargetPos);
-			_laserTargetAzimuth = ((_laserTargetVector select 0) atan2 (_laserTargetVector select 1));
-			if (_laserTargetAzimuth < 0) then {_laserTargetAzimuth = _laserTargetAzimuth + 360;};
-			_laserTargetAzimuth = (17.7777778 * _laserTargetAzimuth);
-
-
-
-			_cursorTarget = cursorTarget;
-			_cursorTargetPos = getpos _cursorTarget;
-			_cursorTargetDistance = round(_cursorTargetPos distance _artyPos);
-			_cursorTargetDifference = ((AGLToASL _cursorTargetPos) select 2) - (_artyPos select 2);
-
-			_cursorTargetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _cursorTargetPos);
-			_cursorTargetAzimuth = ((_cursorTargetVector select 0) atan2 (_cursorTargetVector select 1));
-			if (_cursorTargetAzimuth < 0) then {_cursorTargetAzimuth = _cursorTargetAzimuth + 360;};
-			_cursorTargetAzimuth = (17.7777778 * _cursorTargetAzimuth);
-
-			_cursorTargetSpeed = speed _cursorTarget
-
-			// High Angle
-			_cursorCalcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_cursorTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_cursorTargetDistance)));
-			_cursorCalcHigh = round (_cursorCalcHigh * (10^2)) / (10^2); //fix to 2 decimal places
-			_cursorHighAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_cursorTargetDistance^2))))))/(_gravity*_cursorTargetDistance)))/pi/57.30;
-			_cursorTravelTimeHigh = round(((2*_roundVelocity)*(SIN(_cursorCalcHigh)))/_gravity); // Calculate the Travel Time in Seconds
-			
-			// Low Angle
-			_cursorCalcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_cursorTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_cursorTargetDistance)));
-			_cursorCalcLow = round (_cursorCalcLow * (10^2)) / (10^2); //fix to 2 decimal places
-			_cursorLowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_cursorTargetDistance^2))))))/(_gravity*_cursorTargetDistance)))/pi/57.30;
-			_cursorTravelTimeLow = round(((2*_roundVelocity)*(SIN(_cursorCalcLow)))/_gravity); // Calculate the Travel Time in Seconds
-
-
-
-			//_DatalinkTargets
-			//_targetIndex
-			//_laserTargetDistance
-			//_laserTargetDifference
-			//_laserTargetAzimuth
-
-			//_cursorTargetPos
-			//_cursorTargetDistance
-			//_cursorTargetDifference
-			//_cursorTargetAzimuth
-
 
 			//only direct laser of the vehicle
 			//_laserTarget = laserTarget _uav;
@@ -455,7 +421,6 @@ RC_Artillery_UI = [] spawn {
 			Howitzer doArtilleryFire [getpos laserTarget player, currentMagazine Howitzer, 1];
 			Howitzer doArtilleryFire [laserTarget player, currentMagazine Howitzer, 1];
 			Howitzer doArtilleryFire [getpos cursorTarget, currentMagazine Howitzer, 1];	//UAV integrated targeting
-
 			*/
 		} else {
 			// UI Shouldn't be Shown so we cut it
