@@ -592,15 +592,23 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
 {
 	laserLock=1;
 	irLock=1;
-	artilleryLock=1;
+	//artilleryLock=1; seems to prevent laser and vehicle locking, so unusable for guided
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
+
+	missileLockCone=180;	//12
+	missileKeepLockedCone=180;	//160
+	lockSeekRadius=500;
+	missileLockMaxDistance=5000;
+	missileLockMinDistance=10;
+	missileLockMaxSpeed=150;	//35
+	//maxControlRange=500;
+	maxControlRange=5000;
 
 	//test (likely cfgvic only...)
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;	//would allow for sensor-recon shots, to then datalink lock with second shot
 	laserScanner=1;
-	//lockSeekRadius=100;	//higher doesnt result in unlocked manual fire locking //Specifies the maximum distance from the initial target position where the missile will search for suitable targets if it has autoSeekTarget enabled.
 
 	model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";
 	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
@@ -621,7 +629,6 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
 	whistleDist=4;
 	airLock=1;
 	lockType=0;
-	missileKeepLockedCone=160;
 	//manualControl=1;
 	//missileManualControlCone=45;
 
@@ -644,11 +651,6 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_base
 	thrust=35;
 	maxSpeed=180;
 	typicalSpeed=1660;
-	missileLockCone=12;
-	missileLockMaxDistance=5000;
-	missileLockMinDistance=200;
-	missileLockMaxSpeed=35;
-	maxControlRange=5000;
 	weaponLockSystem="1 + 2 + 4 + 16";
 	cmImmunity=0.9;
 

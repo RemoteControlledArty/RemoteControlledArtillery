@@ -32,6 +32,7 @@ arty:
 -recon radar mortar carrier composition
 -find out why 227mm backup HEAB has no recoil
 -double check LaserDatalink code
+-finetune lock values
 
 general:
 -change uav connection script location

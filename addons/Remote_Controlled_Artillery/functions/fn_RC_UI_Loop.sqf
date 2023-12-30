@@ -220,6 +220,7 @@ RC_Artillery_UI = [] spawn {
 				};
 
 				//ElDiff for formula
+				/*
 				_Difference = 0;
 				_Difference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);
 
@@ -227,6 +228,21 @@ RC_Artillery_UI = [] spawn {
 				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
 				if (_targetAzimuth < 0) then { _targetAzimuth = _targetAzimuth + 360; };
 				_targetAzimuth = (17.7777778 * _targetAzimuth);
+				*/
+
+				//TEST
+				_cursorTarget = cursorTarget;
+				_cursorTargetPos = getpos _cursorTarget;
+				_cursorTargetDistance = round(_cursorTargetPos distance _artyPos);
+				_cursorTargetDifference = ((AGLToASL _cursorTargetPos) select 2) - (_artyPos select 2);
+				_Difference = 0;
+				_Difference = ((AGLToASL _cursorTargetPos) select 2) - (_artyPos select 2);
+
+				_cursorTargetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _cursorTargetPos);
+				_cursorTargetAzimuth = ((_cursorTargetVector select 0) atan2 (_cursorTargetVector select 1));
+				if (_cursorTargetAzimuth < 0) then {_cursorTargetAzimuth = _cursorTargetAzimuth + 360;};
+				_targetAzimuth = (17.7777778 * _cursorTargetAzimuth);
+				//TEST
 
 				//_targetAzimuth = round((_artyPos getDir _targetPos)*17.777778); //test, is inaccurate
 
@@ -239,10 +255,23 @@ RC_Artillery_UI = [] spawn {
 				_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
-				
+
 				// If we have Solution Calculator Turned on do da Math
 				if (RC_Solution_Calculator_On) then {
+					
+					// High Angle
+					_cursorCalcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_cursorTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_cursorTargetDistance)));
+					_cursorCalcHigh = round (_cursorCalcHigh * (10^2)) / (10^2); //fix to 2 decimal places
+					_HighAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_cursorTargetDifference)+(_gravity*(_cursorTargetDistance^2))))))/(_gravity*_cursorTargetDistance)))/pi/57.30;
+					_TravelTimeHigh = round(((2*_roundVelocity)*(SIN(_cursorCalcHigh)))/_gravity); // Calculate the Travel Time in Seconds
+					
+					// Low Angle
+					_cursorCalcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_cursorTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_cursorTargetDistance)));
+					_cursorCalcLow = round (_cursorCalcLow * (10^2)) / (10^2); //fix to 2 decimal places
+					_LowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_cursorTargetDifference)+(_gravity*(_cursorTargetDistance^2))))))/(_gravity*_cursorTargetDistance)))/pi/57.30;
+					_TravelTimeLow = round(((2*_roundVelocity)*(SIN(_cursorCalcLow)))/_gravity); // Calculate the Travel Time in Seconds
 
+					/*
 					// High Angle
 					//(atan((_finalVel^2+sqrt(_finalVel^4-GRAVITY*(GRAVITY*(_distance^2)+2*_zDiff*_finalVel^2)))/(GRAVITY*_distance)));
 					_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_targetDistance)));
@@ -260,7 +289,8 @@ RC_Artillery_UI = [] spawn {
 					_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/_gravity); // Calculate the Travel Time in Seconds
 					//_peakASLLow = (_roundVelocity**2*(sin**2)*(_calcLow*0.0174533))/(2*_gravity)
 					//_peakASLLow = (_roundVelocity**2*(sin(_calcLow*0.0174533))*(sin(_calcLow*0.0174533)))/(2*_gravity)
-					
+					*/
+
 					switch (true) do {
 						// If Elevation is correct for Low solution turn the Elevation text Green
 						case((_realElevation < (_lowAngleSol + 1)) and (_realElevation > (_lowAngleSol - 1))): {
@@ -372,6 +402,7 @@ RC_Artillery_UI = [] spawn {
 			_laserTargetAzimuth = (17.7777778 * _laserTargetAzimuth);
 
 
+
 			_cursorTarget = cursorTarget;
 			_cursorTargetPos = getpos _cursorTarget;
 			_cursorTargetDistance = round(_cursorTargetPos distance _artyPos);
@@ -383,6 +414,19 @@ RC_Artillery_UI = [] spawn {
 			_cursorTargetAzimuth = (17.7777778 * _cursorTargetAzimuth);
 
 			_cursorTargetSpeed = speed _cursorTarget
+
+			// High Angle
+			_cursorCalcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_cursorTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_cursorTargetDistance)));
+			_cursorCalcHigh = round (_cursorCalcHigh * (10^2)) / (10^2); //fix to 2 decimal places
+			_cursorHighAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_cursorTargetDistance^2))))))/(_gravity*_cursorTargetDistance)))/pi/57.30;
+			_cursorTravelTimeHigh = round(((2*_roundVelocity)*(SIN(_cursorCalcHigh)))/_gravity); // Calculate the Travel Time in Seconds
+			
+			// Low Angle
+			_cursorCalcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_cursorTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_cursorTargetDistance)));
+			_cursorCalcLow = round (_cursorCalcLow * (10^2)) / (10^2); //fix to 2 decimal places
+			_cursorLowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_cursorTargetDistance^2))))))/(_gravity*_cursorTargetDistance)))/pi/57.30;
+			_cursorTravelTimeLow = round(((2*_roundVelocity)*(SIN(_cursorCalcLow)))/_gravity); // Calculate the Travel Time in Seconds
+
 
 
 			//_DatalinkTargets
@@ -402,7 +446,6 @@ RC_Artillery_UI = [] spawn {
 			//_laserTargetPos = getpos _laserTarget;
 			//_laserTargetPos
 			*/
-
 
 			//automated firing, too easy and only high angle, but interesting option, only works when not controlling, so it would work with laser or locket target of UAV
 			/*
