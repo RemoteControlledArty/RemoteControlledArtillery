@@ -590,14 +590,15 @@ class RC_MT_MultiGuided_Submunition_Base: RC_MT_MultiGuided_Submunition_MissleBa
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
 
-	missileLockCone=360;	//12
-	missileKeepLockedCone=360;	//160
-	lockSeekRadius=2000;		//100
-	missileLockMaxDistance=10000;	//5000
-	missileLockMinDistance=10;
+	missileLockCone=180;	//12
+	missileKeepLockedCone=180;	//160
+	lockSeekRadius=800;		//100
+	missileLockMaxDistance=2000;	//5000
+	missileLockMinDistance=1;
 	missileLockMaxSpeed=150;	//35
-	//maxControlRange=500;
-	maxControlRange=5000;
+	maxControlRange=800;	//500
+	fuseDistance=30;	//50
+	timeToLive=10;	//35
 
 	//test (likely cfgvic only...)
 	receiveRemoteTargets=1;
@@ -618,9 +619,7 @@ class RC_MT_MultiGuided_Submunition_Base: RC_MT_MultiGuided_Submunition_MissleBa
 	maneuvrability=20;
 	airFriction=0.085000001;
 	sideAirFriction=1;
-	fuseDistance=50;	//maybe shorter
 	whistleDist=4;
-	airLock=1;
 	lockType=0;	//add to shell?
 	//manualControl=1;
 	//missileManualControlCone=45;
@@ -634,10 +633,9 @@ class RC_MT_MultiGuided_Submunition_Base: RC_MT_MultiGuided_Submunition_MissleBa
 	warheadName="TandemHEAT";
 	hit=0;	//submunition penetrator contains real hit value
 
-	timeToLive=35;
 	initTime=0.15000001;
-	thrustTime=8;	//edit
-	thrust=35;	//edit
+	thrustTime=8;	//8
+	thrust=35;	//35
 	maxSpeed=180;	//maybe higher
 	typicalSpeed=1660;
 	weaponLockSystem="1 + 2 + 4 + 16";
@@ -661,55 +659,53 @@ class RC_MT_MultiGuided_Submunition_Base: RC_MT_MultiGuided_Submunition_MissleBa
 				{
 					class AirTarget
 					{
-						minRange=800;
-						maxRange=800;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=800;
-						maxRange=800;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
-
 				class IRSensorComponent: SensorTemplateIR
 				{
 					class AirTarget
 					{
-						minRange=800;
-						maxRange=800;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=800;
-						maxRange=800;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
-
 				class VisualSensorComponent: SensorTemplateVisual
 				{
 					class AirTarget
 					{
-						minRange=800;
-						maxRange=800;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=800;
-						maxRange=800;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -717,7 +713,6 @@ class RC_MT_MultiGuided_Submunition_Base: RC_MT_MultiGuided_Submunition_MissleBa
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
-
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
 					class AirTarget
@@ -746,7 +741,6 @@ class RC_Sh_AMOS_MT_MultiGuided_Base: SubmunitionBase
 
 	laserLock=1;
 	irLock=1;
-	airLock=1;	//test
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
 	canLock=2;	//supposedly only cfg weapons not ammo
@@ -1177,7 +1171,7 @@ class RC_155mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
 class RC_Sh_155mm_AMOS_MT_MultiGuided: RC_Sh_AMOS_MT_MultiGuided_Base
 {
 	submunitionAmmo="RC_155mm_MT_MultiGuided_Submunition";
-	triggerDistance=500;
+	triggerDistance=800;	//500
 	hit=300;
 	cost=700;
 
