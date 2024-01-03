@@ -27,6 +27,7 @@ arty:
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
 -fuse distance for airburst to not destroy asset with false pointed camera	/ or disable laser of camera / or blocking fire if rangefinder <X meters
+-camera likely somehow creates artillery targets
 -Mortar maybe should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
 
 -recon radar mortar carrier composition
@@ -36,6 +37,7 @@ arty:
 -change deflection values *done with smokes
 
 -somehow true airburst work reliable with computer (50/50)
+-figure out and test "aimabove" HEAB
 
 -make list of high/low trajectory ammo, lile illum only is over target with high trajectory
 -improve low trajectory airburst somehow

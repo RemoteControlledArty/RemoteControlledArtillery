@@ -278,7 +278,7 @@ class RC_Sh_82mm_AMOS_HEAB_low_backup: RC_Sh_82mm_AMOS_HEAB_backup
 class Default;
 class RC_HEAB_Base: Default
 {
-	artilleryLock=1;
+	artilleryLock=1;	//might make it not airburst if too far from selected target in vanilla computer
 	//shell/submunition core
 	simulation="shotSubmunitions";
 	simulationStep=0.050000001;
@@ -1185,12 +1185,18 @@ class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 		distance=1;
 	};
 };
-class RC_Sh_155mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
+class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
 	triggerDistance=20;
+	//artilleryLock=0;	//0 somehow make it shoot full charge... wtf
+
+	//aimAboveDefault=3;	//what the heck is it for, maybe position in the array? TEST by having large array difference
+	//aimAboveTarget[]={20,20,20,20,20,20,20};	//actually fixes viewpoint non AB issue (except for too close), seems to only be triggerable when past half the trajectory, aka descending, which can also be an issue	
+	//gets triggered too early if target is on a downwards slope/behind a hill, to the descending round gets triggered 20m above ground not target
+	//with lower airburst this would be much rarer, maybe 10m is worth it, as that improves low trajectory airburst anyways
 };
 class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
 {
