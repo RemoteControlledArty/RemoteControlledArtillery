@@ -2221,7 +2221,7 @@ class RC_ShipCannon_120mm_HE_guided_shells_x12: RC_ShipCannon_120mm_HE_guided_sh
 };
 class RC_ShipCannon_120mm_HE_guided_shells_x13: RC_ShipCannon_120mm_HE_guided_shells_x1
 {
-	count=14;
+	count=13;
 };
 class RC_ShipCannon_120mm_HE_guided_shells_x14: RC_ShipCannon_120mm_HE_guided_shells_x1
 {
@@ -2385,7 +2385,7 @@ class RC_ShipCannon_120mm_HE_LG_shells_x12: RC_ShipCannon_120mm_HE_LG_shells_x1
 };
 class RC_ShipCannon_120mm_HE_LG_shells_x13: RC_ShipCannon_120mm_HE_LG_shells_x1
 {
-	count=14;
+	count=13;
 };
 class RC_ShipCannon_120mm_HE_LG_shells_x14: RC_ShipCannon_120mm_HE_LG_shells_x1
 {
@@ -2551,7 +2551,7 @@ class RC_ShipCannon_120mm_HE_cluster_shells_x12: RC_ShipCannon_120mm_HE_cluster_
 };
 class RC_ShipCannon_120mm_HE_cluster_shells_x13: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
-	count=14;
+	count=13;
 };
 class RC_ShipCannon_120mm_HE_cluster_shells_x14: RC_ShipCannon_120mm_HE_cluster_shells_x1
 {
@@ -2717,7 +2717,7 @@ class RC_ShipCannon_120mm_mine_shells_x12: RC_ShipCannon_120mm_mine_shells_x1
 };
 class RC_ShipCannon_120mm_mine_shells_x13: RC_ShipCannon_120mm_mine_shells_x1
 {
-	count=14;
+	count=13;
 };
 class RC_ShipCannon_120mm_mine_shells_x14: RC_ShipCannon_120mm_mine_shells_x1
 {
@@ -2883,7 +2883,7 @@ class RC_ShipCannon_120mm_smoke_shells_x12: RC_ShipCannon_120mm_smoke_shells_x1
 };
 class RC_ShipCannon_120mm_smoke_shells_x13: RC_ShipCannon_120mm_smoke_shells_x1
 {
-	count=14;
+	count=13;
 };
 class RC_ShipCannon_120mm_smoke_shells_x14: RC_ShipCannon_120mm_smoke_shells_x1
 {
@@ -3049,7 +3049,7 @@ class RC_ShipCannon_120mm_AT_mine_shells_x12: RC_ShipCannon_120mm_AT_mine_shells
 };
 class RC_ShipCannon_120mm_AT_mine_shells_x13: RC_ShipCannon_120mm_AT_mine_shells_x1
 {
-	count=14;
+	count=13;
 };
 class RC_ShipCannon_120mm_AT_mine_shells_x14: RC_ShipCannon_120mm_AT_mine_shells_x1
 {
@@ -3657,7 +3657,7 @@ class RC_ShipCannon_120mm_HE_shells_x40: RC_ShipCannon_120mm_HE_shells_x1
 
 class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
-	ammo="RC_Sh_120mm_AMOS_LG_DelayedFuse";
+	ammo="RC_Sh_155mm_AMOS_LG_DelayedFuse";
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -3708,7 +3708,7 @@ class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x12: RC_ShipCannon_120mm_HE_L
 };
 class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x13: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
-	count=14;
+	count=13;
 };
 class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x14: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
@@ -3817,6 +3817,208 @@ class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x39: RC_ShipCannon_120mm_HE_L
 class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x40: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
 {
 	count=40;
+};
+
+
+//120mm NLOS FSV
+class RC_FSV_120mm_HEAB_x1: RC_ShipCannon_120mm_HEAB_shells_x1
+{
+	ammo="RC_Sh_120mm_AMOS_HEAB_backup";
+	initSpeed=310;
+};
+class RC_FSV_120mm_HEAB_x2: RC_FSV_120mm_HEAB_x1
+{
+	count=2;
+};
+class RC_FSV_120mm_HEAB_x3: RC_FSV_120mm_HEAB_x1
+{
+	count=3;
+};
+class RC_FSV_120mm_HEAB_x4: RC_FSV_120mm_HEAB_x1
+{
+	count=4;
+};
+class RC_FSV_120mm_HEAB_x5: RC_FSV_120mm_HEAB_x1
+{
+	count=5;
+};
+class RC_FSV_120mm_HEAB_x6: RC_FSV_120mm_HEAB_x1
+{
+	count=6;
+};
+class RC_FSV_120mm_HEAB_x7: RC_FSV_120mm_HEAB_x1
+{
+	count=7;
+};
+class RC_FSV_120mm_HEAB_x8: RC_FSV_120mm_HEAB_x1
+{
+	count=8;
+};
+class RC_FSV_120mm_HEAB_x9: RC_FSV_120mm_HEAB_x1
+{
+	count=9;
+};
+class RC_FSV_120mm_HEAB_x10: RC_FSV_120mm_HEAB_x1
+{
+	count=10;
+};
+class RC_FSV_120mm_HEAB_x11: RC_FSV_120mm_HEAB_x1
+{
+	count=11;
+};
+class RC_FSV_120mm_HEAB_x12: RC_FSV_120mm_HEAB_x1
+{
+	count=12;
+};
+
+
+class RC_FSV_120mm_MT_MultiGuided_x1: RC_ShipCannon_120mm_MT_MultiGuided_shells_x1
+{
+	initSpeed=310;
+};
+class RC_FSV_120mm_MT_MultiGuided_x2: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=2;
+};
+class RC_FSV_120mm_MT_MultiGuided_x3: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=3;
+};
+class RC_FSV_120mm_MT_MultiGuided_x4: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=4;
+};
+class RC_FSV_120mm_MT_MultiGuided_x5: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=5;
+};
+class RC_FSV_120mm_MT_MultiGuided_x6: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=6;
+};
+class RC_FSV_120mm_MT_MultiGuided_x7: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=7;
+};
+class RC_FSV_120mm_MT_MultiGuided_x8: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=8;
+};
+class RC_FSV_120mm_MT_MultiGuided_x9: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=9;
+};
+class RC_FSV_120mm_MT_MultiGuided_x10: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=10;
+};
+class RC_FSV_120mm_MT_MultiGuided_x11: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=11;
+};
+class RC_FSV_120mm_MT_MultiGuided_x12: RC_FSV_120mm_MT_MultiGuided_x1
+{
+	count=12;
+};
+
+
+class RC_FSV_120mm_smoke_x1: RC_ShipCannon_120mm_smoke_shells_x1
+{
+	initSpeed=310;
+};
+class RC_FSV_120mm_smoke_x2: RC_FSV_120mm_smoke_x1
+{
+	count=2;
+};
+class RC_FSV_120mm_smoke_x3: RC_FSV_120mm_smoke_x1
+{
+	count=3;
+};
+class RC_FSV_120mm_smoke_x4: RC_FSV_120mm_smoke_x1
+{
+	count=4;
+};
+class RC_FSV_120mm_smoke_x5: RC_FSV_120mm_smoke_x1
+{
+	count=5;
+};
+class RC_FSV_120mm_smoke_x6: RC_FSV_120mm_smoke_x1
+{
+	count=6;
+};
+class RC_FSV_120mm_smoke_x7: RC_FSV_120mm_smoke_x1
+{
+	count=7;
+};
+class RC_FSV_120mm_smoke_x8: RC_FSV_120mm_smoke_x1
+{
+	count=8;
+};
+class RC_FSV_120mm_smoke_x9: RC_FSV_120mm_smoke_x1
+{
+	count=9;
+};
+class RC_FSV_120mm_smoke_x10: RC_FSV_120mm_smoke_x1
+{
+	count=10;
+};
+class RC_FSV_120mm_smoke_x11: RC_FSV_120mm_smoke_x1
+{
+	count=11;
+};
+class RC_FSV_120mm_smoke_x12: RC_FSV_120mm_smoke_x1
+{
+	count=12;
+};
+
+
+class RC_FSV_120mm_HE_LG_DelayedFuse_x1: RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x1
+{
+	initSpeed=310;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x2: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=2;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x3: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=3;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x4: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=4;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x5: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=5;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x6: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=6;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x7: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=7;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x8: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=8;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x9: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=9;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x10: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=10;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x11: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=11;
+};
+class RC_FSV_120mm_HE_LG_DelayedFuse_x12: RC_FSV_120mm_HE_LG_DelayedFuse_x1
+{
+	count=12;
 };
 
 

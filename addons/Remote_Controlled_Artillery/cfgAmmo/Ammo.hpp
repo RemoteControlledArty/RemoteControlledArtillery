@@ -463,12 +463,19 @@ class RC_Sh_82mm_AMOS_HEAB_low: RC_Sh_82mm_AMOS_HEAB
 	//fuseDistance=30;
 };
 
+class SmokeShellArty;
+class RC_SmokeShellArty: SmokeShellArty
+{
+	deflecting=0;
+	explosionTime=0.2;
+	timeToLive=120;
+};
 
 class Smoke_120mm_AMOS_White;
 class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 {
-	model="\A3\weapons_f\ammo\shell";
-	submunitionAmmo="SmokeShellArty";
+	model="\A3\weapons_f\ammo\shell";	//model="\A3\Weapons_F\Ammo\shell.p3d";
+	submunitionAmmo="RC_SmokeShellArty";
 	submunitionConeType[]=
 	{
 		"poissondisc",
@@ -971,6 +978,25 @@ class RC_Sh_120mm_AMOS_MT_MultiGuided: RC_Sh_AMOS_MT_MultiGuided_Base
 };
 
 
+class Sh_155mm_AMOS;
+class RC_Sh_120mm_AMOS_submunition: Sh_155mm_AMOS
+{
+	explosionTime=0.001;
+	explosive=1;
+	CraterEffects="";	//removes ground impact animation
+};
+class RC_Sh_120mm_AMOS_HEAB_backup: Sh_155mm_AMOS
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,5,0};		//offset airburst to ignore cover
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+
+
 //155mm
 class F_40mm_White;
 class RC_Mo_Illum: F_40mm_White
@@ -1014,8 +1040,9 @@ class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 	submunitionAmmo="RC_Mo_ClassicMineRange";
 	submunitionConeType[]=
 	{
-		"poissondisc",
-		24
+		"custom", {{0.9511,0.309},{0.809,0.5878},{0.5878,0.809},{0.309,0.9511},{0,1}  ,  {-0.9511,0.309},{-0.809,0.5878},{-0.5878,0.809},{-0.309,0.9511},{-1,0}  ,  {0.9511,-0.309},{0.809,-0.5878},{0.5878,-0.809},{0.309,-0.9511},{0,-1}  ,  {-0.9511,-0.309},{-0.809,-0.5878},{-0.5878,-0.809},{-0.309,-0.9511},{1,0}};
+		//"poissondisc",
+		//24
 	};
 };
 
@@ -1023,18 +1050,22 @@ class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 class AT_Mine_155mm_AMOS_range;
 class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
 {
-	submunitionConeAngle=15;
+	submunitionConeAngle=8;	//15
 	submunitionConeType[]=
 	{
-		//"custom",{{-5,0},{-3,0},{-1,0},{1,0},{3,0},{5,0} , {0,-5},{0,-3},{0,-1},{0,1},{0,3},{0,5}}
-		"poissondisc",
-		12
+		"custom", {{0.9511,0.309},{0.809,0.5878},{0.5878,0.809},{0.309,0.9511},{0,1}  ,  {-0.9511,0.309},{-0.809,0.5878},{-0.5878,0.809},{-0.309,0.9511},{-1,0}  ,  {0.9511,-0.309},{0.809,-0.5878},{0.5878,-0.809},{0.309,-0.9511},{0,-1}  ,  {-0.9511,-0.309},{-0.809,-0.5878},{-0.5878,-0.809},{-0.309,-0.9511},{1,0}};
+		//cross		"custom", {{-0.25,0},{-0.5,0},{-0.75,0},{-1,0} , {0.25,0},{0.5,0},{0.75,0},{1,0} , {0,-0.25},{0,-0.5},{0,-0.75},{0,-1} , {0,0.25},{0,0.5},{0,0.75},{0,1}};
+		//O12		"custom", {{1,4},{3,3},{4,1} , {1,-4},{3,-3},{4,-1} , {-1,-4},{-3,-3},{-4,-1} , {-1,4},{-3,3},{-4,1}};
+		//failed MultiPentaGramAttemt "custom", {{0.9511,0.309},{-0.809,0.5878},{-0.809,0.5878},{0.309,-0.9511},{1,0}  ,  {1.822,0.618},{-1.618,1.1756},{-1.618,1.1756},{0.618,-1.9022},{2,0}  ,  {2.8533,-0.927},{2.427,-1.7634},{1.7634,-2.427},{0.927,-2.8533},{0,-3}  ,  {-3.8044,-1.236},{-3.236,-2.3512},{-2.3512,-3.236},{-1.236,-3.8044},{4,0}};
+		//"poissondisc",	//"custom",{{-5,0},{-3,0},{-1,0},{1,0},{3,0},{5,0} , {0,-5},{0,-3},{0,-1},{0,1},{0,3},{0,5}};
+		//12
 	};
 };
 
 
 class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
 {
+	submunitionAmmo="RC_SmokeShellArty";
 	submunitionConeAngle=10;
 	submunitionConeType[]=
 	{
@@ -1044,7 +1075,6 @@ class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
 };
 
 
-class Sh_155mm_AMOS;
 class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 {
 	explosionTime=0.001;

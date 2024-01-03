@@ -1418,6 +1418,105 @@ class RC_ShipCannon_120mm_V4: RC_ShipCannon_120mm_V3
 };
 
 
+//120mm NLOS FSV, roughly 4km indirect range with its cannon elevation
+class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
+{
+		magazines[]=
+	{
+		"RC_FSV_120mm_HEAB_x1",
+		"RC_FSV_120mm_HEAB_x2",
+		"RC_FSV_120mm_HEAB_x3",
+		"RC_FSV_120mm_HEAB_x4",
+		"RC_FSV_120mm_HEAB_x5",
+		"RC_FSV_120mm_HEAB_x6",
+		"RC_FSV_120mm_HEAB_x7",
+		"RC_FSV_120mm_HEAB_x8",
+		"RC_FSV_120mm_HEAB_x9",
+		"RC_FSV_120mm_HEAB_x10",
+		"RC_FSV_120mm_HEAB_x11",
+		"RC_FSV_120mm_HEAB_x12",
+
+		"RC_FSV_120mm_smoke_x1",
+		"RC_FSV_120mm_smoke_x2",
+		"RC_FSV_120mm_smoke_x3",
+		"RC_FSV_120mm_smoke_x4",
+		"RC_FSV_120mm_smoke_x5",
+		"RC_FSV_120mm_smoke_x6",
+		"RC_FSV_120mm_smoke_x7",
+		"RC_FSV_120mm_smoke_x8",
+		"RC_FSV_120mm_smoke_x9",
+		"RC_FSV_120mm_smoke_x10",
+		"RC_FSV_120mm_smoke_x11",
+		"RC_FSV_120mm_smoke_x12",
+
+		"RC_FSV_120mm_MT_MultiGuided_x1",
+		"RC_FSV_120mm_MT_MultiGuided_x2",
+		"RC_FSV_120mm_MT_MultiGuided_x3",
+		"RC_FSV_120mm_MT_MultiGuided_x4",
+		"RC_FSV_120mm_MT_MultiGuided_x5",
+		"RC_FSV_120mm_MT_MultiGuided_x6",
+		"RC_FSV_120mm_MT_MultiGuided_x7",
+		"RC_FSV_120mm_MT_MultiGuided_x8",
+		"RC_FSV_120mm_MT_MultiGuided_x9",
+		"RC_FSV_120mm_MT_MultiGuided_x10",
+		"RC_FSV_120mm_MT_MultiGuided_x11",
+		"RC_FSV_120mm_MT_MultiGuided_x12",
+
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x1",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x2",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x3",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x4",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x5",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x6",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x7",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x8",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x9",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x10",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x11",
+		"RC_FSV_120mm_HE_LG_DelayedFuse_x12"
+	};
+
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+
+		"Burst1",
+		"Burst2",
+		"Burst3",
+		"Burst4"
+	};
+
+	class Single1: Single1
+	{
+		displayName="CH0"
+		artilleryCharge=0.3845;
+	};
+	class Single2: Single1
+	{
+		displayName="CH1"
+		artilleryCharge=0.4883;
+	};
+	class Single3: Single1
+	{
+		displayName="CH2"
+		artilleryCharge=0.6201;
+	};
+	class Single4: Single1
+	{
+		displayName="CH3"
+		artilleryCharge=0.7875;
+	};
+	class Single5: Single1
+	{
+		displayName="CH4"
+		artilleryCharge=1;
+	};
+};
+
+
 // 155m Howitzer
 class mortar_155mm_AMOS;
 class RC_155mm_AMOS_base: mortar_155mm_AMOS

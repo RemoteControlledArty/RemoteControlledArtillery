@@ -33,6 +33,10 @@ arty:
 -find out why 227mm backup HEAB has no recoil
 -double check LaserDatalink code
 -finetune lock values
+-change deflection values
+
+-make list of high/low trajectory ammo, lile illum only is over target with high trajectory
+-improve low trajectory airburst somehow
 *NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
 
 general:
@@ -46,6 +50,8 @@ RC IC:
 -attemt to add commander seat to RC IC
 -RC IC if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged
 -fix driver view
+-fix or remove datalink panel
+-weaker steering
 
 RC Respawn Truck (not priority, can be post update):
 -add more versions

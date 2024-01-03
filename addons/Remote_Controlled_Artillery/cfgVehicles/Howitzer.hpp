@@ -761,7 +761,7 @@ class RC_Static_Arty_I: RC_Static_Arty
 };
 
 
-//Rooikat ID-FS test
+//NLOS FSV
 class B_AFV_Wheeled_01_up_cannon_F;
 class RC_wheeled_Howitzer_Base: B_AFV_Wheeled_01_up_cannon_F
 {
@@ -780,7 +780,12 @@ class RC_wheeled_Howitzer_Base: B_AFV_Wheeled_01_up_cannon_F
 };
 class RC_wheeled_Howitzer: RC_wheeled_Howitzer_Base
 {
-	displayName="RC wheeled Howitzer";
+	class EventHandlers
+	{
+		init="waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this};";
+	};
+
+	displayName="NLOS FSV";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
 	author="Ascent";
@@ -909,18 +914,20 @@ class RC_wheeled_Howitzer: RC_wheeled_Howitzer_Base
 
 			weapons[]=
 			{
-				"RC_ShipCannon_120mm_V4",
+				"RC_FSV_120mm_V5",
+				"cannon_120mm",
 				"MMG_02_coax"
 			};
 			magazines[]=
 			{
-				"RC_ShipCannon_120mm_HEAB_shells_x16",
-				"RC_ShipCannon_120mm_smoke_shells_x16",
-				"RC_ShipCannon_120mm_HE_cluster_shells_x2",
-				"RC_ShipCannon_120mm_MT_MultiGuided_shells_x6",	
-				"RC_ShipCannon_120mm_mine_shells_x6",
-				"RC_ShipCannon_120mm_AT_mine_shells_x8",
-				"RC_ShipCannon_120mm_Illum_shells_x16",
+				"RC_FSV_120mm_HEAB_x12",
+				"RC_FSV_120mm_MT_MultiGuided_x6",
+				"RC_FSV_120mm_smoke_x8",
+				"12Rnd_120mm_APFSDS_shells_Tracer_Red",
+				"8Rnd_120mm_HE_shells_Tracer_Red",
+				"8Rnd_120mm_HEAT_MP_T_Red",
+				"200Rnd_338_Mag",
+				"200Rnd_338_Mag",
 				"200Rnd_338_Mag"
 			};
 		};
