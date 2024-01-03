@@ -1197,6 +1197,7 @@ class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 	//aimAboveTarget[]={20,20,20,20,20,20,20};	//actually fixes viewpoint non AB issue (except for too close), seems to only be triggerable when past half the trajectory, aka descending, which can also be an issue	
 	//gets triggered too early if target is on a downwards slope/behind a hill, to the descending round gets triggered 20m above ground not target
 	//with lower airburst this would be much rarer, maybe 10m is worth it, as that improves low trajectory airburst anyways
+	//maybe the point where its allowed to airburst in its trajectory can be edited
 };
 class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
 {
