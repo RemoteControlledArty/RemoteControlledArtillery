@@ -6003,6 +6003,27 @@ class RC_40Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 };
 
 
+//HEAB backup, different airburst mechanism, less fancy, more reliable
+class RC_20Rnd_155mm_Mo_HEAB_backup1: RC_1Rnd_155mm_Mo_HEAB
+{
+	ammo="RC_Sh_155mm_AMOS_HEAB_backup1";
+	displayName="HEAB 1";
+	displayNameShort="HEAB 1";
+};
+class RC_20Rnd_155mm_Mo_HEAB_backup2: RC_1Rnd_155mm_Mo_HEAB
+{
+	ammo="RC_Sh_155mm_AMOS_HEAB_backup2";
+	displayName="HEAB 2";
+	displayNameShort="HEAB 2";
+};
+class RC_20Rnd_155mm_Mo_HEAB_backup3: RC_1Rnd_155mm_Mo_HEAB
+{
+	ammo="RC_Sh_155mm_AMOS_HEAB_backup3";
+	displayName="HEAB 3";
+	displayNameShort="HEAB 3";
+};
+
+
 //230mm
 class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets

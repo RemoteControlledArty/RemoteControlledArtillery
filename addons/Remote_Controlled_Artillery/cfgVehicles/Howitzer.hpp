@@ -285,6 +285,10 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 			};
 			magazines[]=
 			{
+				"RC_20Rnd_155mm_Mo_HEAB_backup1",
+				"RC_20Rnd_155mm_Mo_HEAB_backup2",
+				"RC_20Rnd_155mm_Mo_HEAB_backup3",
+
 				"RC_16Rnd_155mm_Mo_HEAB",
 				"RC_16Rnd_155mm_Mo_smoke",
 				"RC_2Rnd_155mm_Mo_Cluster",

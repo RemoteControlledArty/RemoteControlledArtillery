@@ -136,6 +136,25 @@ class RC_M_MT: RC_M_MT_Base
 
 
 class MissileBase;
+
+class ammo_Penetrator_120mm;
+class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
+{
+	warheadName="TandemHEAT";
+};
+class Sh_120mm_HEAT_MP;
+class RC_Sh_120mm_MT_T_Green: Sh_120mm_HEAT_MP
+{
+	hit=95;
+	warheadName="HE";
+	submunitionAmmo="RC_ammo_Penetrator_120mm";
+	indirectHit=52;
+	indirectHitRange=18;
+	//dangerRadiusHit=160;
+	//suppressionRadiusHit=32;
+	//deflecting=8;
+	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";
+};
 /*
 //im gonna work on this later
 class ammo_Missile_CannonLaunchedBase: MissileBase
@@ -517,12 +536,28 @@ class RC_Sh_82mm_AMOS_guided: Sh_82mm_AMOS_guided
 	submunitionAmmo="RC_M_Mo_82mm_AT";
 };
 
-
+/* //makes game close when going close to mine...
+class RangeTriggerBounding;
+class RC_RangeTriggerBounding: RangeTriggerBounding
+{
+	mineTriggerRange=6;
+	mineTriggerActivationRange=10;
+	restrictZoneRadius=10;
+};
+*/
+class APERSBoundingMine_Range_Ammo;
+class RC_APERSBoundingMine_Range_Ammo: APERSBoundingMine_Range_Ammo
+{
+	mineBoundingDist=3;
+	//mineTrigger="RC_RangeTriggerBounding";
+};
 class Mo_ClassicMineRange;
 class RC_Mo_ClassicMineRange: Mo_ClassicMineRange
 {
-	submunitionAmmo="APERSBoundingMine_Range_Ammo";
+	submunitionAmmo="RC_APERSBoundingMine_Range_Ammo";
 };
+
+
 class RC_Mine_82mm_AMOS_range: SubmunitionBase
 {
 	submunitionAmmo="RC_Mo_ClassicMineRange";
@@ -1038,9 +1073,12 @@ class Mine_155mm_AMOS_range;
 class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 {
 	submunitionAmmo="RC_Mo_ClassicMineRange";
+	submunitionConeAngle=12;
 	submunitionConeType[]=
 	{
-		"custom", {{0.9511,0.309},{0.809,0.5878},{0.5878,0.809},{0.309,0.9511},{0,1}  ,  {-0.9511,0.309},{-0.809,0.5878},{-0.5878,0.809},{-0.309,0.9511},{-1,0}  ,  {0.9511,-0.309},{0.809,-0.5878},{0.5878,-0.809},{0.309,-0.9511},{0,-1}  ,  {-0.9511,-0.309},{-0.809,-0.5878},{-0.5878,-0.809},{-0.309,-0.9511},{1,0}};
+		//"custom", {{0,0.5774},{0.5,-0.2887},{-0.5,-0.2887}  ,  {0,1.1547},{1,-0.5774},{-1,-0.5774}  ,  {0,1.7321},{1.5,-0.866},{-1.5,-0.866}  ,  {0,2.3094},{2,-1.1547},{-2,-1.1547}  ,  {0,2.8868},{2.5,-1.4434},{-2.5,-1.4434}  ,  {0,3.4641},{3,-1.7321},{-3,-1.7321}};
+		//"custom", {{0.9511,0.309},{0.809,0.5878},{0.5878,0.809},{0.309,0.9511},{0,1}  ,  {-0.9511,0.309},{-0.809,0.5878},{-0.5878,0.809},{-0.309,0.9511},{-1,0}  ,  {0.9511,-0.309},{0.809,-0.5878},{0.5878,-0.809},{0.309,-0.9511},{0,-1}  ,  {-0.9511,-0.309},{-0.809,-0.5878},{-0.5878,-0.809},{-0.309,-0.9511},{1,0}};
+		"custom", {{0.95,0.31},{0.81,0.59},{0.59,0.81},{0.31,0.95},{0,1}  ,  {-0.95,0.31},{-0.81,0.59},{-0.59,0.81},{-0.31,0.95},{-1,0}  ,  {0.95,-0.31},{0.81,-0.59},{0.59,-0.81},{0.31,-0.95},{0,-1}  ,  {-0.95,-0.31},{-0.81,-0.59},{-0.59,-0.81},{-0.31,-0.95},{1,0}};
 		//"poissondisc",
 		//24
 	};
@@ -1050,7 +1088,7 @@ class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 class AT_Mine_155mm_AMOS_range;
 class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
 {
-	submunitionConeAngle=8;	//15
+	submunitionConeAngle=12;	//15
 	submunitionConeType[]=
 	{
 		"custom", {{0.9511,0.309},{0.809,0.5878},{0.5878,0.809},{0.309,0.9511},{0,1}  ,  {-0.9511,0.309},{-0.809,0.5878},{-0.5878,0.809},{-0.309,0.9511},{-1,0}  ,  {0.9511,-0.309},{0.809,-0.5878},{0.5878,-0.809},{0.309,-0.9511},{0,-1}  ,  {-0.9511,-0.309},{-0.809,-0.5878},{-0.5878,-0.809},{-0.309,-0.9511},{1,0}};
@@ -1059,6 +1097,8 @@ class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
 		//failed MultiPentaGramAttemt "custom", {{0.9511,0.309},{-0.809,0.5878},{-0.809,0.5878},{0.309,-0.9511},{1,0}  ,  {1.822,0.618},{-1.618,1.1756},{-1.618,1.1756},{0.618,-1.9022},{2,0}  ,  {2.8533,-0.927},{2.427,-1.7634},{1.7634,-2.427},{0.927,-2.8533},{0,-3}  ,  {-3.8044,-1.236},{-3.236,-2.3512},{-2.3512,-3.236},{-1.236,-3.8044},{4,0}};
 		//"poissondisc",	//"custom",{{-5,0},{-3,0},{-1,0},{1,0},{3,0},{5,0} , {0,-5},{0,-3},{0,-1},{0,1},{0,3},{0,5}};
 		//12
+		//submunitionConeAngle=4;
+		//Triangle18 "custom", {{0,0.5774},{0.5,-0.2887},{-0.5,-0.2887}  ,  {0,1.1547},{1,-0.5774},{-1,-0.5774}  ,  {0,1.7321},{1.5,-0.866},{-1.5,-0.866}  ,  {0,2.3094},{2,-1.1547},{-2,-1.1547}  ,  {0,2.8868},{2.5,-1.4434},{-2.5,-1.4434}  ,  {0,3.4641},{3,-1.7321},{-3,-1.7321}};
 	};
 };
 
@@ -1096,6 +1136,19 @@ class RC_Sh_155mm_AMOS_HEAB_low_backup: RC_Sh_155mm_AMOS_HEAB_backup
 	submunitionInitialOffset[]={0,0,-6};	//low airburst to ignore atleast microterrain
 };
 
+//test
+class RC_Sh_155mm_AMOS_HEAB_backup1: RC_Sh_155mm_AMOS_HEAB_backup
+{
+	submunitionInitialOffset[]={0,0,-20};		//20m high airburst to ignore cover very well
+};
+class RC_Sh_155mm_AMOS_HEAB_backup2: RC_Sh_155mm_AMOS_HEAB_backup
+{
+	submunitionInitialOffset[]={0,20,-20};		//20m high airburst to ignore cover very well
+};
+class RC_Sh_155mm_AMOS_HEAB_backup3: RC_Sh_155mm_AMOS_HEAB_backup
+{
+	submunitionInitialOffset[]={0,20,0};		//20m high airburst to ignore cover very well
+};
 
 class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 {
@@ -1134,7 +1187,7 @@ class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 };
 class RC_Sh_155mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 {
-	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
+	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
 	triggerDistance=20;

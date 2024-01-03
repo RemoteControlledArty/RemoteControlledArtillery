@@ -33,11 +33,14 @@ arty:
 -find out why 227mm backup HEAB has no recoil
 -double check LaserDatalink code
 -finetune lock values
--change deflection values
+-change deflection values *done with smokes
+
+-somehow true airburst work reliable with computer (50/50)
 
 -make list of high/low trajectory ammo, lile illum only is over target with high trajectory
 -improve low trajectory airburst somehow
 *NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
+*AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
 
 general:
 -change uav connection script location
@@ -59,6 +62,10 @@ RC Respawn Truck (not priority, can be post update):
 -lock seats
 -add respawn script
 
+NLOS FSV:
+-impact identicator is off
+-add RC_Sh_120mm_HEAT_MT_T_Green
+
 
 TO DO - QUALITY OF LIFE:
 
@@ -77,7 +84,7 @@ IDEAS - FAR FUTURE:
 
 -direct fire firing solution (camera viewpoint)
 -yellow 10m radius for Azimuth&GunEL, for fire adjustments
--maybe add max spread display
+-maybe add max spread display / hit propability display (HEAB = 30m radius, inaccuracy at marked distance = ? radius, = ? hit probability)
 
 -video partially at night for rocket and explosion effects
 
