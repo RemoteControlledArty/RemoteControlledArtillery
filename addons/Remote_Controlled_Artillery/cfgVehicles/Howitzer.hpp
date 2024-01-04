@@ -922,7 +922,7 @@ class RC_NLOS_FSV: RC_NLOS_FSV_Base
 			{
 				"RC_FSV_120mm_HEAB_x12",
 				"RC_FSV_120mm_MT_MultiGuided_x6",
-				"RC_FSV_120mm_smoke_x8",
+				"RC_FSV_120mm_smoke_x12",
 				"12Rnd_120mm_APFSDS_shells_Tracer_Green",
 				"12Rnd_120mm_MT_T_Green",
 				"200Rnd_338_Mag",

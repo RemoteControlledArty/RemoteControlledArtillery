@@ -65,6 +65,7 @@ NLOS FSV:
 -impact identicator is off
 -widen FOV
 -fix wheel stats
+-fix HE overshoot
 
 AR-short:
 -script for grain based on distance, and making sure effect is reset when leaving uav 
