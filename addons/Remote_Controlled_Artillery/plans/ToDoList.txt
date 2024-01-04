@@ -11,8 +11,8 @@ TO DO - BUGFIXES:
 -turn off motor should ONLY be activated for this mods assets per config value, as for example vanilla UGV is now broken!
 -crl+h cuts connection and destroys UV?
 -ar2 problems on server, is it due to some of the scripts, or a server issue?
-
--HOTFIX
+-turret is locked unable to adjust up/down, when scope of player is adjustable...
+-HEAB with aimabovetarget explodes too early with negative gun elevation, or low charge direct fire... *maybe swap to normal HE magazines per script when turret has negative elevation
 
 
 TO DO - FEATURES:
@@ -20,6 +20,7 @@ TO DO - FEATURES:
 documentation:
 -update removemagazine list
 -add new assets to cfg patches list
+-add incomingMissileDetectionSystem = 16;
 
 arty:
 -report arty map markers to datalink, to lock for gps guidance
@@ -32,23 +33,18 @@ arty:
 -Mortar maybe should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
 
 -recon radar mortar carrier composition
--find out why 227mm backup HEAB has no recoil
 -double check LaserDatalink code
 -finetune lock values
--change deflection values *done with smokes
+-check and change deflection values if needed *done with smokes
 
--somehow true airburst work reliable with computer (50/50)
--figure out and test "aimabove" HEAB
-
--make list of high/low trajectory ammo, lile illum only is over target with high trajectory
--improve low trajectory airburst somehow
+-using multiguided without selecting target and looking at terrain, can cause automatic targeting of friendly UV's?
+-multiguided 227mm at low trajectory overshot despite locked?
 *NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
-*AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
+*NOTE to self, AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
 
 general:
 -change uav connection script location
--add assault packs for AR-1/3
--decrease sensor angles
+-maybe decrease sensor angles
 -fix Static AT laser engaging (how!?)
 
 RC IC:
@@ -67,7 +63,12 @@ RC Respawn Truck (not priority, can be post update):
 
 NLOS FSV:
 -impact identicator is off
--add RC_Sh_120mm_HEAT_MT_T_Green
+-widen FOV
+-fix wheel stats
+
+AR-short:
+-script for grain based on distance, and making sure effect is reset when leaving uav 
+-add assault packs for AR-1/3
 
 
 TO DO - QUALITY OF LIFE:
@@ -95,7 +96,7 @@ IDEAS - FAR FUTURE:
 -https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
 -azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
 -or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
--vanilla asset overwrite for gamemodes without zeus etc
+-vanilla asset overwrite for gamemodes without zeus etc *maybe by second pbo and config, class RC_Howitzer; class vanilla_Howitzer: vanilla_Howitzer  but likely doesnt work
 -switch driver and commander of recon radar
 -3R MRSI display
 -3R automated MRSI

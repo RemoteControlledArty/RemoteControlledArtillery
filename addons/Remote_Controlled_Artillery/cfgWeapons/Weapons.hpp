@@ -1421,7 +1421,9 @@ class RC_ShipCannon_120mm_V4: RC_ShipCannon_120mm_V3
 //120mm NLOS FSV, roughly 4km indirect range with its cannon elevation
 class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
 {
-		magazines[]=
+	displayName="NLOS 120mm";
+
+	magazines[]=
 	{
 		"RC_FSV_120mm_HEAB_x1",
 		"RC_FSV_120mm_HEAB_x2",
@@ -1481,12 +1483,7 @@ class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
 		"Single1",
 		"Single2",
 		"Single3",
-		"Single4",
-
-		"Burst1",
-		"Burst2",
-		"Burst3",
-		"Burst4"
+		"Single4"
 	};
 
 	class Single1: Single1
@@ -1517,6 +1514,22 @@ class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
 };
 
 
+//120mm LOS Cannon, of NLOS FSV
+class cannon_120mm;
+class RC_cannon_120mm: cannon_120mm
+{
+	displayName="LOS 120mm";
+	magazines[]=
+	{
+		"12Rnd_120mm_APFSDS_shells",
+		"12Rnd_120mm_APFSDS_shells_Tracer_Green",
+		"12Rnd_120mm_MT_T_Green",
+		"4Rnd_120mm_cannon_missiles",
+		"4Rnd_120mm_LG_cannon_missiles"
+	};
+};
+
+
 // 155m Howitzer
 class mortar_155mm_AMOS;
 class RC_155mm_AMOS_base: mortar_155mm_AMOS
@@ -1529,6 +1542,8 @@ class RC_155mm_AMOS_base: mortar_155mm_AMOS
 };
 class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 {
+	cursor="EmptyCursor";	//fixes submunition bugging during manual fire when looking at terrain
+
 	magazines[]=
 	{
 		"RC_1Rnd_155mm_Mo_HEAB",

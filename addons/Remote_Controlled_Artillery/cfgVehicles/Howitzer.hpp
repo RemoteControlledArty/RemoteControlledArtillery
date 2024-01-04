@@ -242,13 +242,13 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 			};
 			magazines[]=
 			{
-				"RC_16Rnd_155mm_Mo_HEAB",
-				"RC_16Rnd_155mm_Mo_smoke",
-				"RC_2Rnd_155mm_Mo_Cluster",
+				"RC_12Rnd_155mm_Mo_HEAB",
+				"RC_12Rnd_155mm_Mo_smoke",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
+				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
-				"RC_16Rnd_155mm_Mo_Illum"
+				"RC_12Rnd_155mm_Mo_Illum"
 			};
 			class OpticsIn: OpticsIn
 			{
@@ -285,17 +285,13 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 			};
 			magazines[]=
 			{
-				"RC_20Rnd_155mm_Mo_HEAB_backup1",
-				"RC_20Rnd_155mm_Mo_HEAB_backup2",
-				"RC_20Rnd_155mm_Mo_HEAB_backup3",
-
-				"RC_16Rnd_155mm_Mo_HEAB",
-				"RC_16Rnd_155mm_Mo_smoke",
-				"RC_2Rnd_155mm_Mo_Cluster",
+				"RC_12Rnd_155mm_Mo_HEAB",
+				"RC_12Rnd_155mm_Mo_smoke",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
+				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
-				"RC_16Rnd_155mm_Mo_Illum"
+				"RC_12Rnd_155mm_Mo_Illum"
 			};
 			class OpticsIn: OpticsIn
 			{
@@ -589,13 +585,13 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 			};
 			magazines[]=
 			{
-				"RC_16Rnd_155mm_Mo_HEAB",
-				"RC_16Rnd_155mm_Mo_smoke",
-				"RC_2Rnd_155mm_Mo_Cluster",
+				"RC_12Rnd_155mm_Mo_HEAB",
+				"RC_12Rnd_155mm_Mo_smoke",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
+				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
-				"RC_16Rnd_155mm_Mo_Illum"
+				"RC_12Rnd_155mm_Mo_Illum"
 			};
 			class OpticsIn: OpticsIn
 			{
@@ -715,13 +711,13 @@ class RC_Static_Arty: RC_Static_NA_Arty
 			};
 			magazines[]=
 			{
-				"RC_ShipCannon_120mm_HEAB_shells_x16",
-				"RC_ShipCannon_120mm_smoke_shells_x16",
+				"RC_ShipCannon_120mm_HEAB_shells_x12",
+				"RC_ShipCannon_120mm_smoke_shells_x12",
+				"RC_ShipCannon_120mm_MT_MultiGuided_shells_x6",
 				"RC_ShipCannon_120mm_HE_cluster_shells_x2",
-				"RC_ShipCannon_120mm_MT_MultiGuided_shells_x6",	
 				"RC_ShipCannon_120mm_mine_shells_x6",
 				"RC_ShipCannon_120mm_AT_mine_shells_x8",
-				"RC_ShipCannon_120mm_Illum_shells_x16"
+				"RC_ShipCannon_120mm_Illum_shells_x12"
 			};
 
 			class Components: Components
@@ -767,7 +763,7 @@ class RC_Static_Arty_I: RC_Static_Arty
 
 //NLOS FSV
 class B_AFV_Wheeled_01_up_cannon_F;
-class RC_wheeled_Howitzer_Base: B_AFV_Wheeled_01_up_cannon_F
+class RC_NLOS_FSV_Base: B_AFV_Wheeled_01_up_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -782,14 +778,14 @@ class RC_wheeled_Howitzer_Base: B_AFV_Wheeled_01_up_cannon_F
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 };
-class RC_wheeled_Howitzer: RC_wheeled_Howitzer_Base
+class RC_NLOS_FSV: RC_NLOS_FSV_Base
 {
 	class EventHandlers
 	{
 		init="waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this};";
 	};
 
-	displayName="NLOS FSV";
+	displayName="N/LOS FSV";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
 	author="Ascent";
@@ -919,7 +915,7 @@ class RC_wheeled_Howitzer: RC_wheeled_Howitzer_Base
 			weapons[]=
 			{
 				"RC_FSV_120mm_V5",
-				"cannon_120mm",
+				"RC_cannon_120mm",
 				"MMG_02_coax"
 			};
 			magazines[]=
@@ -927,9 +923,8 @@ class RC_wheeled_Howitzer: RC_wheeled_Howitzer_Base
 				"RC_FSV_120mm_HEAB_x12",
 				"RC_FSV_120mm_MT_MultiGuided_x6",
 				"RC_FSV_120mm_smoke_x8",
-				"12Rnd_120mm_APFSDS_shells_Tracer_Red",
-				"8Rnd_120mm_HE_shells_Tracer_Red",
-				"8Rnd_120mm_HEAT_MP_T_Red",
+				"12Rnd_120mm_APFSDS_shells_Tracer_Green",
+				"12Rnd_120mm_MT_T_Green",
 				"200Rnd_338_Mag",
 				"200Rnd_338_Mag",
 				"200Rnd_338_Mag"

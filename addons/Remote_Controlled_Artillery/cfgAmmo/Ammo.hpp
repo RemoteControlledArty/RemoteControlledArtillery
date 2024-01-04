@@ -136,25 +136,6 @@ class RC_M_MT: RC_M_MT_Base
 
 
 class MissileBase;
-
-class ammo_Penetrator_120mm;
-class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
-{
-	warheadName="TandemHEAT";
-};
-class Sh_120mm_HEAT_MP;
-class RC_Sh_120mm_MT_T_Green: Sh_120mm_HEAT_MP
-{
-	hit=95;
-	warheadName="HE";
-	submunitionAmmo="RC_ammo_Penetrator_120mm";
-	indirectHit=52;
-	indirectHitRange=18;
-	//dangerRadiusHit=160;
-	//suppressionRadiusHit=32;
-	//deflecting=8;
-	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";
-};
 /*
 //im gonna work on this later
 class ammo_Missile_CannonLaunchedBase: MissileBase
@@ -470,8 +451,10 @@ class RC_Sh_82mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
-	triggerDistance=16;
-	//fuseDistance=30; doesnt work
+
+	//triggerDistance=15; outdated airburst attemt
+	aimAboveDefault=2;
+	aimAboveTarget[]={15,15,15};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
 class RC_Sh_82mm_AMOS_HEAB_low: RC_Sh_82mm_AMOS_HEAB
 {
@@ -479,7 +462,8 @@ class RC_Sh_82mm_AMOS_HEAB_low: RC_Sh_82mm_AMOS_HEAB
 	submunitionCount=1;
 	submunitionConeAngle=0;
 	triggerDistance=6;
-	//fuseDistance=30;
+
+	imAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain
 };
 
 class SmokeShellArty;
@@ -1020,15 +1004,36 @@ class RC_Sh_120mm_AMOS_submunition: Sh_155mm_AMOS
 	explosive=1;
 	CraterEffects="";	//removes ground impact animation
 };
-class RC_Sh_120mm_AMOS_HEAB_backup: Sh_155mm_AMOS
+class RC_Sh_120mm_AMOS_HE_FSV: Sh_155mm_AMOS
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,5,0};		//offset airburst to ignore cover
+	submunitionInitialOffset[]={0,4,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 	indirectHit=0;
 	indirectHitRange=0;
+};
+
+
+//120mm LOS, of N/LOS FSV
+class ammo_Penetrator_120mm;
+class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
+{
+	warheadName="TandemHEAT";
+};
+class Sh_120mm_HEAT_MP;
+class RC_Sh_120mm_MT_T_Green: Sh_120mm_HEAT_MP
+{
+	hit=95;
+	warheadName="HE";
+	submunitionAmmo="RC_ammo_Penetrator_120mm";
+	indirectHit=52;
+	indirectHitRange=18;
+	//dangerRadiusHit=160;
+	//suppressionRadiusHit=32;
+	//deflecting=8;
+	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";
 };
 
 
@@ -1064,8 +1069,10 @@ class Flare_155mm_AMOS_White: SubmunitionBase
 		1
 	};
 	whistleDist=0;
-	aimAboveDefault=3;
-	aimAboveTarget[]={360,400,500,640,720,800,850};
+	aimAboveDefault=2;
+	aimAboveTarget[]={500,500,500};		//triggers when past half the trajectory aka descending while at this height above ground
+	//aimAboveDefault=3;
+	//aimAboveTarget[]={360,400,500,640,720,800,850};
 };
 
 
@@ -1190,18 +1197,15 @@ class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
-	triggerDistance=20;
-	//artilleryLock=0;	//0 somehow make it shoot full charge... wtf
+	//artilleryLock=0;	//0 somehow makes it shoot full charge... wtf
 
-	//aimAboveDefault=3;	//what the heck is it for, maybe position in the array? TEST by having large array difference
-	//aimAboveTarget[]={20,20,20,20,20,20,20};	//actually fixes viewpoint non AB issue (except for too close), seems to only be triggerable when past half the trajectory, aka descending, which can also be an issue	
-	//gets triggered too early if target is on a downwards slope/behind a hill, to the descending round gets triggered 20m above ground not target
-	//with lower airburst this would be much rarer, maybe 10m is worth it, as that improves low trajectory airburst anyways
-	//maybe the point where its allowed to airburst in its trajectory can be edited
+	//triggerDistance=20; outdated airburst attemt
+	aimAboveDefault=2;
+	aimAboveTarget[]={20,20,20};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
 class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
 {
-	triggerDistance=6;
+	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain
 };
 
 
@@ -1261,7 +1265,7 @@ class RC_155mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
 class RC_Sh_155mm_AMOS_MT_MultiGuided: RC_Sh_AMOS_MT_MultiGuided_Base
 {
 	submunitionAmmo="RC_155mm_MT_MultiGuided_Submunition";
-	triggerDistance=800;	//500
+	triggerDistance=800;
 	hit=300;
 	cost=700;
 
@@ -1471,11 +1475,12 @@ class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
-	triggerDistance=20;
+	aimAboveDefault=2;
+	aimAboveTarget[]={20,20,20};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
-class RC_R_230mm_HEAB_low: RC_230mm_HEAB_Rocket_Base
+class RC_R_230mm_HEAB_low: RC_R_230mm_HEAB
 {
-	triggerDistance=6;
+	aimAboveTarget[]={6,6,6};	//to atleast ignore microterrain
 };
 
 
@@ -1507,7 +1512,7 @@ class RC_R_604mm_ATACMS_HEAB: RC_604mm_HEAB_Rocket_Base
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition_ATACMS";
 	submunitionCount=1;
 	submunitionConeAngle=0;
-	triggerDistance=30;		//test different heights
+	aimAboveTarget[]={30,30,30};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
 
 
@@ -1592,7 +1597,7 @@ class RC_230mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
 class RC_R_230mm_MT_MultiGuided: RC_Sh_AMOS_MT_MultiGuided_Base
 {
 	submunitionAmmo="RC_230mm_MT_MultiGuided_Submunition";
-	triggerDistance=500;
+	triggerDistance=800;
 	hit=300;
 	cost=1000;
 

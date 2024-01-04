@@ -2,6 +2,8 @@
 class ArtilleryTarget;
 class RC_ArtilleryTarget: ArtilleryTarget
 {
+	isimulation="laserTarget"; 		//test
+
 	scope=2;
 	scopeCurator=2;
 	irTarget=1;
@@ -12,6 +14,8 @@ class RC_ArtilleryTarget: ArtilleryTarget
 class ArtilleryTargetW;
 class RC_ArtilleryTargetW: ArtilleryTargetW
 {
+	isimulation="laserTarget"; 		//test
+
 	scope=2;
 	scopeCurator=2;
 	irTarget=1;
@@ -22,6 +26,8 @@ class RC_ArtilleryTargetW: ArtilleryTargetW
 class ArtilleryTargetE;
 class RC_ArtilleryTargetE: ArtilleryTargetE
 {
+	isimulation="laserTarget"; 		//test
+	
 	scope=2;
 	scopeCurator=2;
 	irTarget=1;

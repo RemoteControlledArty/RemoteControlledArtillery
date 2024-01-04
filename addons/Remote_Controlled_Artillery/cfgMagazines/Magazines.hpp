@@ -22,6 +22,7 @@ class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_HEAB_backup";
+	RC_AimAboveHeight=15;
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -1015,6 +1016,7 @@ class RC_40Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
 class RC_1Rnd_82mm_Mo_HEAB_low: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_HEAB_low_backup";
+	RC_AimAboveHeight=6;
 	displayName="HE Airburst low";
 	displayNameShort="HE Airburst low";
 	count=1;
@@ -1840,6 +1842,7 @@ class magazine_ShipCannon_120mm_HE_shells_x32;
 class RC_ShipCannon_120mm_HEAB_shells_x1: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB";
+	RC_AimAboveHeight=20;
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -3164,6 +3167,7 @@ class RC_ShipCannon_120mm_AT_mine_shells_x40: RC_ShipCannon_120mm_AT_mine_shells
 class RC_ShipCannon_120mm_Illum_shells_x1: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="Flare_155mm_AMOS_White";
+	RC_AimAboveHeight=500;
 	displayName="Illumination";
 	displayNameShort="Illum";
 	count=1;
@@ -3329,6 +3333,7 @@ class RC_ShipCannon_120mm_Illum_shells_x40: RC_ShipCannon_120mm_Illum_shells_x1
 class RC_ShipCannon_120mm_HEAB_low_shells_x1: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB_low";
+	RC_AimAboveHeight=6;
 	displayName="HE Airburst low";
 	displayNameShort="HE Airburst low";
 	count=1;
@@ -3821,10 +3826,13 @@ class RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x40: RC_ShipCannon_120mm_HE_L
 
 
 //120mm NLOS FSV
-class RC_FSV_120mm_HEAB_x1: RC_ShipCannon_120mm_HEAB_shells_x1
+class RC_FSV_120mm_HEAB_x1: magazine_ShipCannon_120mm_HE_shells_x32
 {
-	ammo="RC_Sh_120mm_AMOS_HEAB_backup";
 	initSpeed=310;
+	ammo="RC_Sh_120mm_AMOS_HE_FSV";
+	displayName="HE";
+	displayNameShort="HE";
+	count=1;
 };
 class RC_FSV_120mm_HEAB_x2: RC_FSV_120mm_HEAB_x1
 {
@@ -4022,11 +4030,23 @@ class RC_FSV_120mm_HE_LG_DelayedFuse_x12: RC_FSV_120mm_HE_LG_DelayedFuse_x1
 };
 
 
+// 120mm LOS Section
+class 8Rnd_120mm_HEAT_MP_T_Green;
+class 12Rnd_120mm_MT_T_Green: 8Rnd_120mm_HEAT_MP_T_Green
+{
+	ammo="RC_Sh_120mm_MT_T_Green";
+	displayName="MT-T";
+	displayNameShort="MT-T";
+	count=12;
+};
+
+
 // 155mm Section
 class 32Rnd_155mm_Mo_shells;
 class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB";
+	RC_AimAboveHeight=20;
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -5512,6 +5532,7 @@ class RC_40Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
 class RC_1Rnd_155mm_Mo_HEAB_low: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB_low";
+	RC_AimAboveHeight=6;
 	displayName="HE Airburst low";
 	displayNameShort="HE Airburst low";
 	count=1;
@@ -6003,32 +6024,12 @@ class RC_40Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 };
 
 
-//HEAB backup, different airburst mechanism, less fancy, more reliable
-class RC_20Rnd_155mm_Mo_HEAB_backup1: RC_1Rnd_155mm_Mo_HEAB
-{
-	ammo="RC_Sh_155mm_AMOS_HEAB_backup1";
-	displayName="HEAB 1";
-	displayNameShort="HEAB 1";
-};
-class RC_20Rnd_155mm_Mo_HEAB_backup2: RC_1Rnd_155mm_Mo_HEAB
-{
-	ammo="RC_Sh_155mm_AMOS_HEAB_backup2";
-	displayName="HEAB 2";
-	displayNameShort="HEAB 2";
-};
-class RC_20Rnd_155mm_Mo_HEAB_backup3: RC_1Rnd_155mm_Mo_HEAB
-{
-	ammo="RC_Sh_155mm_AMOS_HEAB_backup3";
-	displayName="HEAB 3";
-	displayNameShort="HEAB 3";
-};
-
-
 //230mm
 class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_HEAB";
+	RC_AimAboveHeight=20;
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -6082,6 +6083,7 @@ class RC_12Rnd_230mm_rockets_HEAB: RC_1Rnd_230mm_rockets_HEAB
 class RC_1Rnd_230mm_rockets_HEAB_low: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_HEAB_low";
+	RC_AimAboveHeight=6;
 	displayName="HE Airburst low";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -6127,112 +6129,6 @@ class RC_11Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
 	count=11;
 };
 class RC_12Rnd_230mm_rockets_HEAB_low: RC_1Rnd_230mm_rockets_HEAB_low
-{
-	count=12;
-};
-
-
-class RC_1Rnd_230mm_rockets_HEAB_backup: 12Rnd_230mm_rockets
-{
-	ammo="RC_R_230mm_HEAB_backup";
-	displayName="HE Airburst";
-	displayNameShort="HE Airburst";
-	count=1;
-};
-class RC_2Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=2;
-};
-class RC_3Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=3;
-};
-class RC_4Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=4;
-};
-class RC_5Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=5;
-};
-class RC_6Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=6;
-};
-class RC_7Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=7;
-};
-class RC_8Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=8;
-};
-class RC_9Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=9;
-};
-class RC_10Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=10;
-};
-class RC_11Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=11;
-};
-class RC_12Rnd_230mm_rockets_HEAB_backup: RC_1Rnd_230mm_rockets_HEAB_backup
-{
-	count=12;
-};
-
-
-class RC_1Rnd_230mm_rockets_HEAB_low_backup: 12Rnd_230mm_rockets
-{
-	ammo="RC_R_230mm_HEAB_low_backup";
-	displayName="HE Airburst low";
-	displayNameShort="HE Airburst";
-	count=1;
-};
-class RC_2Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
-{
-	count=2;
-};
-class RC_3Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
-{
-	count=3;
-};
-class RC_4Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
-{
-	count=4;
-};
-class RC_5Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
-{
-	count=5;
-};
-class RC_6Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
-{
-	count=6;
-};
-class RC_7Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
-{
-	count=7;
-};
-class RC_8Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
-{
-	count=8;
-};
-class RC_9Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
-{
-	count=9;
-};
-class RC_10Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
-{
-	count=10;
-};
-class RC_11Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
-{
-	count=11;
-};
-class RC_12Rnd_230mm_rockets_HEAB_low_backup: RC_1Rnd_230mm_rockets_HEAB_low_backup
 {
 	count=12;
 };
@@ -6454,6 +6350,7 @@ class RC_12Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFus
 class RC_1Rnd_604mm_rockets_ATACMS_HEAB: 12Rnd_230mm_rockets
 {
 	displayName="ATACMS HE Airburst";
+	RC_AimAboveHeight=30;
 	displayNameShort="ATACMS HE AB";
 	ammo="RC_R_604mm_ATACMS_HEAB";
 	count=1;

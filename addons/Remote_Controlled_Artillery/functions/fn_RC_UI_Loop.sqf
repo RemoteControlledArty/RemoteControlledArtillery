@@ -219,8 +219,11 @@ RC_Artillery_UI = [] spawn {
 				};
 
 				//ElDiff for formula
+				_aimAboveHeight = 0;
+				_aimAboveHeight = (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AimAboveHeight"))/2;	//for airburst and illum point of aim adjust (needs to be halved as it otherwise overshoots)
 				_Difference = 0;
-				_Difference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);
+				_Difference = ((AGLToASL _targetPos) select 2) + _aimAboveHeight - (_artyPos select 2);
+				//_Difference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);		//outdated
 
 				_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);
 				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
