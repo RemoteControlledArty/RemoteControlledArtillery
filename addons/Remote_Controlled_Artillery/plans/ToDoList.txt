@@ -38,7 +38,7 @@ arty:
 -check and change deflection values if needed *done with smokes
 
 -using multiguided without selecting target and looking at terrain, can cause automatic targeting of friendly UV's?
--multiguided 227mm at low trajectory overshot despite locked?
+-make aimabove division based on angle
 *NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
 *NOTE to self, AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
 

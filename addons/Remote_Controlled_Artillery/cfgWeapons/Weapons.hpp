@@ -1542,8 +1542,6 @@ class RC_155mm_AMOS_base: mortar_155mm_AMOS
 };
 class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 {
-	cursor="EmptyCursor";	//fixes submunition bugging during manual fire when looking at terrain
-
 	magazines[]=
 	{
 		"RC_1Rnd_155mm_Mo_HEAB",
