@@ -10,6 +10,7 @@ TO DO - BUGFIXES:
 -if arty is destroyed, ui stays...?
 -turn off motor should ONLY be activated for this mods assets per config value, as for example vanilla UGV is now broken!
 -crl+h cuts connection and destroys UV?
+-ar2 problems on server, is it due to some of the scripts, or a server issue?
 
 -HOTFIX
 
