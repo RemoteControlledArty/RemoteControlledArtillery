@@ -39,6 +39,8 @@ arty:
 
 -using multiguided without selecting target and looking at terrain, can cause automatic targeting of friendly UV's?
 -make aimabove division based on angle
+-correct "hit=" as it defines recoil
+-227mm larger explosion
 *NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
 *NOTE to self, AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
 

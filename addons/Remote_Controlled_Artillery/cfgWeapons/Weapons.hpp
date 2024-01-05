@@ -2034,11 +2034,7 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 		"RC_37Rnd_155mm_Mo_LG_DelayedFuse",
 		"RC_38Rnd_155mm_Mo_LG_DelayedFuse",
 		"RC_39Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_40Rnd_155mm_Mo_LG_DelayedFuse",
-
-		"RC_20Rnd_155mm_Mo_HEAB_backup1",
-		"RC_20Rnd_155mm_Mo_HEAB_backup2",
-		"RC_20Rnd_155mm_Mo_HEAB_backup3"
+		"RC_40Rnd_155mm_Mo_LG_DelayedFuse"
 	};
 };
 class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1

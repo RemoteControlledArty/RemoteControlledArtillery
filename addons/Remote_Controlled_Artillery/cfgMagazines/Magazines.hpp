@@ -21,7 +21,7 @@ class RC_1Rnd_MT_missiles: 1Rnd_GAT_missiles
 class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
-	ammo="RC_Sh_82mm_AMOS_HEAB_backup";
+	ammo="RC_Sh_82mm_AMOS_HEAB";
 	RC_AimAboveHeight=15;
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
@@ -1015,7 +1015,7 @@ class RC_40Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
 
 class RC_1Rnd_82mm_Mo_HEAB_low: 8Rnd_82mm_Mo_shells
 {
-	ammo="RC_Sh_82mm_AMOS_HEAB_low_backup";
+	ammo="RC_Sh_82mm_AMOS_HEAB_low";
 	RC_AimAboveHeight=6;
 	displayName="HE Airburst low";
 	displayNameShort="HE Airburst low";
