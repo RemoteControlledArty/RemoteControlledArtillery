@@ -192,8 +192,8 @@ class RC_Mortar: RC_Mortar_NA
 				"RC_16Rnd_82mm_Mo_HEAB",
 				"RC_16Rnd_82mm_Mo_Smoke_white",
 				"RC_6Rnd_82mm_Mo_MultiGuided",
-				"RC_6Rnd_82mm_Mo_mine",
 				"RC_8Rnd_82mm_Mo_AT_mine",
+				"RC_6Rnd_82mm_Mo_mine",
 				"RC_16Rnd_82mm_Mo_Flare_white"
 			};
 			class ViewOptics: ViewOptics

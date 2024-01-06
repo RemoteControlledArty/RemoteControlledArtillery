@@ -22,7 +22,7 @@ class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_HEAB";
-	RC_AimAboveHeight=15;
+	RC_AimAboveHeight=12.8;
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -1841,8 +1841,8 @@ class RC_40Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 class magazine_ShipCannon_120mm_HE_shells_x32;
 class RC_ShipCannon_120mm_HEAB_shells_x1: magazine_ShipCannon_120mm_HE_shells_x32
 {
-	ammo="RC_Sh_155mm_AMOS_HEAB";
-	RC_AimAboveHeight=20;
+	ammo="RC_Sh_120mm_AMOS_HEAB";
+	RC_AimAboveHeight=17.1;
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -4046,7 +4046,7 @@ class 32Rnd_155mm_Mo_shells;
 class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB";
-	RC_AimAboveHeight=20;
+	RC_AimAboveHeight=21.3;
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -6029,7 +6029,7 @@ class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_HEAB";
-	RC_AimAboveHeight=20;
+	RC_AimAboveHeight=21.3;
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;

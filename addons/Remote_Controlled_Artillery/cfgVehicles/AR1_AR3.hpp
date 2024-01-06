@@ -81,86 +81,56 @@ class RC_UAV_AR1: RC_UAV_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-				class ManSensorComponent: SensorTemplateMan
-				{
-					typeRecognitionDistance=300;
-
-					class AirTarget
-					{
-						minRange=1500;
-						maxRange=1500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=1500;
-						maxRange=1500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-
-					maxTrackableSpeed=15;
-					angleRangeHorizontal=1;
-					angleRangeVertical=1;
-					animDirection="mainGun";
-					//aimDown=-0.5;
-					aimDown=0;
-				};
-				/*
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=2000;
+					typeRecognitionDistance=1000;
 
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=3;
-					angleRangeVertical=3;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
 					animDirection="mainGun";
-					//aimDown=-0.5;
-					aimDown=0;
+					aimDown=-0.5;
 				};
-				*/
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=2000;
+					typeRecognitionDistance=750;
 
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=750;
+						maxRange=750;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=750;
+						maxRange=750;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=3;
-					angleRangeVertical=3;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
 					animDirection="mainGun";
-					//aimDown=-0.5;
-					aimDown=0;
+					aimDown=-0.5;
 				};
 			};
 		};
@@ -180,14 +150,14 @@ class RC_UAV_AR1: RC_UAV_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={2000,1000,500,250};
 							resource="RscCustomInfoSensors";
 						};
 					};
 				};
 			};
 
-			showAllTargets="2 + 4";
+			//showAllTargets="2 + 4";
 
 			isCopilot=1; //0
 			commanding=2; //-1
@@ -216,24 +186,6 @@ class RC_UAV_AR1: RC_UAV_base
 					thermalMode[]={0,1};
 					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
 				};
-				/*
-				class Medium: Wide
-				{
-					opticsDisplayName="M";
-					initFov=0.1;
-					minFov=0.1;
-					maxFov=0.1;
-					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_medium_F.p3d";
-				};
-				class Narrow: Wide
-				{
-					opticsDisplayName="N";
-					initFov=0.0286;
-					minFov=0.0286;
-					maxFov=0.0286;
-					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
-				};
-				*/
 			};
 			class OpticsOut
 			{
@@ -331,10 +283,9 @@ class RC_UAV_AR3: RC_UAV_AR1
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
-
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=60;
-					angleRangeVertical=40;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
 					animDirection="mainGun";
 					aimDown=-0.5;
 				};
@@ -356,11 +307,10 @@ class RC_UAV_AR3: RC_UAV_AR1
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
-
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=60;
-					angleRangeVertical=40;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
 					animDirection="mainGun";
 					aimDown=-0.5;
 				};

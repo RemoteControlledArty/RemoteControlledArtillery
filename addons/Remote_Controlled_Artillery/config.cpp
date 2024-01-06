@@ -371,6 +371,7 @@ class SensorTemplateIR;
 class SensorTemplateNV;
 class SensorTemplateVisual;
 class SensorTemplateMan;
+class SensorTemplateActiveRadar;
 class DefaultVehicleSystemsDisplayManagerRight
 {
 	class components;
@@ -383,6 +384,7 @@ class VehicleSystemsTemplateRightGunner: DefaultVehicleSystemsDisplayManagerRigh
 {
 	class components;
 };
+class RCWSOptics;
 
 
 class CfgAmmo
