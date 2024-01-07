@@ -1201,7 +1201,7 @@ class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 };
 class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
 {
-	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain
+	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain, and able to take out MG/GMG bunkers with overhead protection, lower than 6m bugs
 };
 
 

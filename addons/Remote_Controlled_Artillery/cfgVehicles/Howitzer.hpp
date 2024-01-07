@@ -542,6 +542,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 			};
 			magazines[]=
 			{
+				"RC_12Rnd_155mm_Mo_shells",
 				"RC_16Rnd_155mm_Mo_HEAB",
 				"RC_16Rnd_155mm_Mo_smoke",
 				"RC_2Rnd_155mm_Mo_Cluster",
@@ -585,6 +586,7 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 			};
 			magazines[]=
 			{
+				"RC_12Rnd_155mm_Mo_shells",
 				"RC_12Rnd_155mm_Mo_HEAB",
 				"RC_12Rnd_155mm_Mo_smoke",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
@@ -986,7 +988,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			armorComponent="wheel_1_1_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=3;
 			passThrough=0;
 		};
 		class HitLF2Wheel: HitLF2Wheel
@@ -996,7 +998,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			armorComponent="wheel_1_2_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=3;
 			passThrough=0;
 		};
 		class HitLMWheel: HitLMWheel
@@ -1006,7 +1008,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			armorComponent="wheel_1_3_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=3;
 			passThrough=0;
 		};
 		class HitLBWheel: HitLBWheel
@@ -1016,7 +1018,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			armorComponent="wheel_1_4_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=3;
 			passThrough=0;
 		};
 		class HitRFWheel: HitRFWheel
@@ -1026,7 +1028,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			armorComponent="wheel_2_1_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=3;
 			passThrough=0;
 		};
 		class HitRF2Wheel: HitRF2Wheel
@@ -1036,7 +1038,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			armorComponent="wheel_2_2_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=3;
 			passThrough=0;
 		};
 		class HitRMWheel: HitRMWheel
@@ -1046,7 +1048,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			armorComponent="wheel_2_3_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=3;
 			passThrough=0;
 		};
 		class HitRBWheel: HitRBWheel
@@ -1056,11 +1058,24 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			armorComponent="wheel_2_4_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=3;
 			passThrough=0;
 		};
 	};
 };
+class RC_NLOS_FSV_A_O: RC_NLOS_FSV_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_NLOS_FSV_A_I: RC_NLOS_FSV_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
 
 class RC_NLOS_FSV_WD: RC_NLOS_FSV_A
 {
@@ -1082,4 +1097,16 @@ class RC_NLOS_FSV_WD: RC_NLOS_FSV_A
 		"Sand",
 		0
 	};
+};
+class RC_NLOS_FSV_WD_O: RC_NLOS_FSV_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_NLOS_FSV_WD_I: RC_NLOS_FSV_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
 };

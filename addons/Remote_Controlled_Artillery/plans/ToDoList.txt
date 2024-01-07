@@ -24,25 +24,20 @@ documentation:
 
 arty:
 -report arty map markers to datalink, to lock for gps guidance
--prepare datalink & laser firing solution FORMULA
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
--fuse distance for airburst to not destroy asset with false pointed camera	/ or disable laser of camera / or blocking fire if rangefinder <X meters
--camera likely somehow creates artillery targets
--Mortar maybe should keep "false" airburst, as it could explode otherwise, while Howitzer and MLRS/MRL can move and avoid obstructions and can use "true" airburst
 
 -recon radar mortar carrier composition
 -double check LaserDatalink code
--finetune lock values
--check and change deflection values if needed *done with smokes
 
 -using multiguided without selecting target and looking at terrain, can cause automatic targeting of friendly UV's?
--make aimabove division based on angle
--correct "hit=" as it defines recoil
--227mm larger explosion
+-why the slight overshoot habit of the calculator? its about 1 to 2 MIL too high for low trajectory, maybe due to extra height of barrel vs ground? thats why aimabove/2 is needed rn
+-remove non airburst HE after trajectory testing
+
 *NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
 *NOTE to self, AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
+*NOTE to self, wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
 
 general:
 -change uav connection script location
@@ -66,12 +61,11 @@ RC Respawn Truck (not priority, can be post update):
 NLOS FSV:
 -impact identicator is off
 -widen FOV
--fix wheel stats
--fix HE overshoot
+-remove gunner&commander
+-find a way to lock seats depending on current seat
 
 AR-short:
 -script for grain based on distance, and making sure effect is reset when leaving uav 
--add assault packs for AR-1/3
 
 
 TO DO - QUALITY OF LIFE:
@@ -82,7 +76,6 @@ TO DO - QUALITY OF LIFE:
 -markers showing up on datalink panel, to be lockable for gps guidance?
 -get missle feed panel to connect to missle
 
--attemt to create O mine pattern, for max area denial, AP/AT do not explode each other if 2m apart
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
 -aiAmmoUsageFlags https://community.bistudio.com/wiki/CfgAmmo_Config_Reference#aiAmmoUsageFlags
 
@@ -180,10 +173,14 @@ DONE - FEATURES:
 -added LaserDatalink so that handheld LaserDesignators enable reliable use with Artillery, and decreases reliance of UAV's with Datalink
 -testing showed that locking MultiGuided to laser target, firing manual, deactivating laser, has 3 practical results:
 	if nothing else is close it switches to gps guidance,
-	or if enemy vehicle targets are close it locks on them,
+	or if enemy vehicles are close it locks on them,
 	which is extremly usefull if the ForwardObserver is suppressed and cannot maintain the lase,
 	if the laser is reactivated, it relocks if it is close enough to the original point
-
+-improved 227mm explosion effect
+-added N/LOS FSV
+-fixed Airburst
+-added AR1/AR3 backpacks
+-improved mine spread
 
 
 DONE - QUALITY OF LIFE:
