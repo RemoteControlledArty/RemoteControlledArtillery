@@ -33,6 +33,14 @@ arty:
 
 -using multiguided without selecting target and looking at terrain, can cause automatic targeting of friendly UV's?
 -why the slight overshoot habit of the calculator? its about 1 to 2 MIL too high for low trajectory, maybe due to extra height of barrel vs ground? thats why aimabove/2 is needed rn
+-how to get position of muzzle? 	gunBeg="Usti hlavne";	gunEnd="Konec hlavne";	https://forums.bohemia.net/forums/topic/220406-universal-way-to-get-any-turrets-direction/
+_uav = (getConnectedUAV player);
+//_uav selectionPosition ["Konec hlavne", "Memory", "FirstPoint"];
+//_uav selectionPosition ["Usti hlavne", "Memory", "FirstPoint"];
+//_uav selectionPosition ["Konec hlavne", "Memory", "AveragePoint"];
+//_uav selectionPosition ["Konec hlavne", "Memory", "BoundingBox"];
+
+
 -remove non airburst HE after trajectory testing
 
 *NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
@@ -195,7 +203,7 @@ DONE - QUALITY OF LIFE:
 ---------------------------------------------------------------------------------------------------------
 
 
-Previous Update Update:
+Previous Update:
 
 TO DO - BUGFIXES:
 
