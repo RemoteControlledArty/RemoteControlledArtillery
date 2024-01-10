@@ -242,6 +242,8 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 			};
 			magazines[]=
 			{
+				"RC_12Rnd_155mm_Mo_shells",
+				"RC_12Rnd_155mm_Mo_HEAB_low",
 				"RC_12Rnd_155mm_Mo_HEAB",
 				"RC_12Rnd_155mm_Mo_smoke",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
@@ -285,6 +287,8 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 			};
 			magazines[]=
 			{
+				"RC_12Rnd_155mm_Mo_shells",
+				"RC_12Rnd_155mm_Mo_HEAB_low",
 				"RC_12Rnd_155mm_Mo_HEAB",
 				"RC_12Rnd_155mm_Mo_smoke",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
@@ -542,7 +546,6 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_155mm_Mo_shells",
 				"RC_16Rnd_155mm_Mo_HEAB",
 				"RC_16Rnd_155mm_Mo_smoke",
 				"RC_2Rnd_155mm_Mo_Cluster",
@@ -586,7 +589,6 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_155mm_Mo_shells",
 				"RC_12Rnd_155mm_Mo_HEAB",
 				"RC_12Rnd_155mm_Mo_smoke",
 				"RC_6Rnd_155mm_Mo_MultiGuided",

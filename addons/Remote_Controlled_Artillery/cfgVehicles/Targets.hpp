@@ -67,6 +67,81 @@ class RC_LockableMarkerTarget: All
 	armor=500;
 };
 
+
+class O_TargetSoldier;
+class RC_O_InvisibleDatalinkTarget: O_TargetSoldier
+{
+	scope=2;
+	scopeCurator=2;
+	scopeArsenal=0;
+
+	irTarget=1;
+	//laserTarget=1;
+	nvTarget=1;
+
+	author="Ascent";
+	displayName="GPS Marker";
+	crewVulnerable=0;
+	type=1;
+
+	//destrType="DestructNo";
+
+	threat[]={0.0,0.0,0.0};
+
+	class HitPoints
+	{
+	};
+};
+class B_TargetSoldier;
+class RC_B_InvisibleDatalinkTarget: B_TargetSoldier
+{
+	scope=2;
+	scopeCurator=2;
+	scopeArsenal=0;
+
+	irTarget=1;
+	//laserTarget=1;
+	nvTarget=1;
+
+	author="Ascent";
+	displayName="GPS Marker";
+	crewVulnerable=0;
+	type=1;
+
+	//destrType="DestructNo";
+
+	threat[]={0.0,0.0,0.0};
+
+	class HitPoints
+	{
+	};
+};
+class I_TargetSoldier;
+class RC_I_InvisibleDatalinkTarget: I_TargetSoldier
+{
+	scope=2;
+	scopeCurator=2;
+	scopeArsenal=0;
+
+	irTarget=1;
+	//laserTarget=1;
+	nvTarget=1;
+
+	author="Ascent";
+	displayName="GPS Marker";
+	crewVulnerable=0;
+	type=1;
+
+	//destrType="DestructNo";
+
+	threat[]={0.0,0.0,0.0};
+
+	class HitPoints
+	{
+	};
+};
+
+
 /*
 class LaserTarget: All
 {

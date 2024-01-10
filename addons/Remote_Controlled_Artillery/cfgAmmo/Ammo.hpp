@@ -393,6 +393,7 @@ class RC_MT_MultiGuided_Submunition_Base: RC_MT_MultiGuided_Submunition_MissleBa
 {
 	laserLock=1;
 	irLock=1;
+	nvLock=1;
 	//artilleryLock=1; seems to prevent laser and vehicle locking, so unusable for guided
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
@@ -549,6 +550,7 @@ class RC_Sh_AMOS_MT_MultiGuided_Base: SubmunitionBase
 
 	laserLock=1;
 	irLock=1;
+	nvLock=1;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
 	canLock=2;	//supposedly only cfg weapons not ammo
