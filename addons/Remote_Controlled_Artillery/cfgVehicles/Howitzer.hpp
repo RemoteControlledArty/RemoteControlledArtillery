@@ -636,7 +636,7 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 	isRCArty=1;
 
 	RC_BarrelAGL=3.5;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelLenght=3;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 };
 class RC_Static_NA_Arty: RC_Static_Arty_base
