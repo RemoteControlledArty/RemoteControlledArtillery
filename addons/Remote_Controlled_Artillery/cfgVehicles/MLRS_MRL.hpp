@@ -299,7 +299,7 @@ class RC_MRL_base: I_Truck_02_MRL_F
 	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 
-	RC_BarrelStartHeight=2;
+	RC_BarrelAGL=1.7;
 	RC_BarrelLenght=3.5;
 };
 class RC_MRL_NA_DIG: RC_MRL_base

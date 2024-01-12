@@ -614,18 +614,13 @@ class RC_Sh_82mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
-
-	//triggerDistance=15; outdated airburst attemt
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=0;
 	aimAboveDefault=2;
 	aimAboveTarget[]={12.8,12.8,12.8};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
 class RC_Sh_82mm_AMOS_HEAB_low: RC_Sh_82mm_AMOS_HEAB
 {
-	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
-	submunitionCount=1;
-	submunitionConeAngle=0;
-	triggerDistance=6;
-
 	imAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain
 };
 
@@ -934,9 +929,8 @@ class RC_Sh_120mm_AMOS_HEAB: RC_120mm_HEAB_Shell_Base
 	submunitionAmmo="RC_Sh_120mm_AMOS_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
-	//artilleryLock=0;	//0 somehow makes it shoot full charge... wtf
-
-	//triggerDistance=20; outdated airburst attemt
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=0;
 	aimAboveDefault=2;
 	aimAboveTarget[]={17.1,17.1,17.1};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
@@ -1195,9 +1189,8 @@ class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
-	//artilleryLock=0;	//0 somehow makes it shoot full charge... wtf
-
-	//triggerDistance=20; outdated airburst attemt
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=0;
 	aimAboveDefault=2;
 	aimAboveTarget[]={21.3,21.3,21.3};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
@@ -1327,7 +1320,8 @@ class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 {
 	explosionTime=0.001;
 	explosive=1;
-	CraterEffects="";
+	//CraterEffects="";
+	craterEffects="HeavyBombCrater";
 	explosionEffects="HeavyBombExplosion";
 	soundSetExplosion[]=
 	{
@@ -1341,16 +1335,13 @@ class RC_HEAB_Rocket_Base: RC_HEAB_Base
 	//typicalSpeed=800;
 	//caliber=10;
 	//explosive=0.80000001;
-	
 	//CraterEffects="ArtyShellCrater";
 	//ExplosionEffects="MortarExplosion";
 	//whistleDist=60;
-	
 	//thrust=0;
 	caliber=34;
 	airFriction=0;
 	sideairFriction=0;
-
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
 	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
@@ -1360,7 +1351,6 @@ class RC_HEAB_Rocket_Base: RC_HEAB_Base
 	dangerRadiusHit=1250;
 	suppressionRadiusHit=120;
 	deflecting=0;
-
 	soundHit1[]=
 	{
 		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
@@ -1401,6 +1391,7 @@ class RC_HEAB_Rocket_Base: RC_HEAB_Base
 };
 class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 {
+	craterEffects="HeavyBombCrater";
 	explosionEffects="HeavyBombExplosion";
 	soundSetExplosion[]=
 	{
@@ -1408,7 +1399,6 @@ class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 		"BombsHeavy_Tail_SoundSet",
 		"Explosion_Debris_SoundSet"
 	};
-
 	hit=300;	//defines recoil, needs to be this low, indirecthit defines damage
 	indirectHit=800;
 	indirectHitRange=30;
@@ -1447,6 +1437,8 @@ class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 	submunitionCount=1;
 	submunitionConeAngle=0;
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=0;
 	aimAboveDefault=2;
 	aimAboveTarget[]={21.3,21.3,21.3};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
@@ -1479,7 +1471,7 @@ class RC_230mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
 	effectFly="Missile0";
 	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
 	//effectFly="ArtilleryTrails";
-
+	craterEffects="HeavyBombCrater";
 	explosionEffects="HeavyBombExplosion";
 	soundSetExplosion[]=
 	{
@@ -1487,7 +1479,6 @@ class RC_230mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
 		"BombsHeavy_Tail_SoundSet",
 		"Explosion_Debris_SoundSet"
 	};
-
 	submunitionAmmo="ammo_Penetrator_230mm_MT";
 	indirectHit=400;
 	indirectHitRange=15;
@@ -1534,6 +1525,7 @@ class RC_R_230mm_MT_MultiGuided: RC_Sh_AMOS_MT_MultiGuided_Base
 	submunitionAmmo="RC_230mm_MT_MultiGuided_Submunition";
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
+	craterEffects="HeavyBombCrater";
 	explosionEffects="HeavyBombExplosion";
 	soundSetExplosion[]=
 	{
@@ -1609,7 +1601,6 @@ class RC_R_230mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 {
 	indirectHit=3200;
 	indirectHitRange=120;
-
 	craterEffects="HeavyBombCrater";
 	explosionEffects="HeavyBombExplosion";
 	soundSetExplosion[]=

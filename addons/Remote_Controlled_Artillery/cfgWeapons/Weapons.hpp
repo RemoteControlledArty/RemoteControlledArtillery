@@ -1283,31 +1283,31 @@ class RC_ShipCannon_120mm_V1: RC_ShipCannon_120mm_base
 };
 class RC_ShipCannon_120mm_V2: RC_ShipCannon_120mm_V1
 {
-	reloadTime=6;
-	magazineReloadTime=6;
+	reloadTime=5;
+	magazineReloadTime=5;
 	ballisticsComputer=8;	//direct fire reticle for highest charge
 	canLock=2;
 	weaponLockDelay=0;
 
 	class Single1: Single1
 	{
-		reloadTime=6;
+		reloadTime=5;
 	};
 	class Single2: Single2
 	{
-		reloadTime=6;
+		reloadTime=5;
 	};
 	class Single3: Single3
 	{
-		reloadTime=6;
+		reloadTime=5;
 	};
 	class Single4: Single4
 	{
-		reloadTime=6;
+		reloadTime=5;
 	};
 	class Single5: Single5
 	{
-		reloadTime=6;
+		reloadTime=5;
 	};
 };
 class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
@@ -2049,31 +2049,31 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 };
 class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 {
-	reloadTime=6;
-	magazineReloadTime=6;
+	reloadTime=5;
+	magazineReloadTime=5;
 	ballisticsComputer=8;		//direct fire reticle for highest charge
 	canLock=2;
 	weaponLockDelay=0;
 
 	class Single1: Single1
 	{
-		reloadTime=6;
+		reloadTime=5;
 	};
 	class Single2: Single2
 	{
-		reloadTime=6;
+		reloadTime=5;
 	};
 	class Single3: Single3
 	{
-		reloadTime=6;
+		reloadTime=5;
 	};
 	class Single4: Single4
 	{
-		reloadTime=6;
+		reloadTime=5;
 	};
 	class Single5: Single5
 	{
-		reloadTime=6;
+		reloadTime=5;
 	};
 };
 class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2

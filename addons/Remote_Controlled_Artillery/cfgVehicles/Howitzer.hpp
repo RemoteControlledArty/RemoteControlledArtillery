@@ -20,7 +20,7 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelLenght=6;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 };
 class RC_Howitzer_NA_A: RC_Howitzer_base
@@ -370,7 +370,7 @@ class RC_Howitzer_base_HEX_O: O_MBT_02_arty_F
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelLenght=6;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 };
 class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
