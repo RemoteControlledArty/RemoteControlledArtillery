@@ -18,6 +18,10 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+
+	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=6;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 };
 class RC_Howitzer_NA_A: RC_Howitzer_base
 {
@@ -364,6 +368,10 @@ class RC_Howitzer_base_HEX_O: O_MBT_02_arty_F
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+
+	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=6;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 };
 class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 {
@@ -626,6 +634,10 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1;
+
+	RC_BarrelAGL=3.5;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=3;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 };
 class RC_Static_NA_Arty: RC_Static_Arty_base
 {
@@ -793,6 +805,10 @@ class RC_NLOS_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+
+	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=4;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 };
 class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 {

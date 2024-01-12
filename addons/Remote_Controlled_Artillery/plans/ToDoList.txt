@@ -23,7 +23,7 @@ documentation:
 -add incomingMissileDetectionSystem = 16;
 
 arty:
--report arty map markers to datalink, to lock for gps guidance, maybe if "gps" is written in the marker name?
+-report arty map markers to datalink, to lock for gps guidance, maybe if "gps" is written in the marker name? RC_O_InvisibleDatalinkTarget works
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire

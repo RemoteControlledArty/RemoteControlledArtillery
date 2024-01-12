@@ -1511,6 +1511,16 @@ class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
 		displayName="CH4"
 		artilleryCharge=1;
 	};
+
+	class GunParticles
+	{
+		class FirstEffect
+		{
+			effectName="CannonFired";
+			positionName="Usti hlavne";
+			directionName="Konec hlavne";
+		};
+	};
 };
 
 

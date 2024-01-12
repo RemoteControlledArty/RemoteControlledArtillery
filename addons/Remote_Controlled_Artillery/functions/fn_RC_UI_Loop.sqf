@@ -206,9 +206,25 @@ RC_Artillery_UI = [] spawn {
 					RC_Current_Index = 0;
 				};
 
+				//ElDiff for formula
+				_aimAboveHeight = 0;
+				_aimAboveHeight = getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AimAboveHeight");	//for airburst and illum point of aim adjust
+				
+				_BarrelAGL = 0;
+				_BarrelLenght = 0;
+				_WeaponDirection = 0;
+				_muzzleHeight = 0;
+				_BarrelAGL = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelStartHeight");
+				_BarrelLenght = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelLenght");
+				_WeaponDirection = ((_uav weaponDirection currentWeapon _uav) select 2);
+				_muzzleHeightEstimate = _BarrelLenght * (sin (_WeaponDirection*90)) + _BarrelAGL;
+
+				//Target/UV Pos
 				_targetPos = markerPos (RC_Current_Target select 1);
 				_artyPos = getPosASL _uav;
-				_targetDistance = round(_targetPos distance2d _artyPos);
+				_muzzleFromCenterEstimate = 0;
+				if ((getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends"))==1) then {_muzzleFromCenterEstimate = _BarrelLenght * (cos (_WeaponDirection*90));};
+				_targetDistance = (round(_targetPos distance2d _artyPos))-_muzzleFromCenterEstimate;
 
 				//how ElDiff is shown based on cba settings
 				_shownDifference = 0;
@@ -218,11 +234,8 @@ RC_Artillery_UI = [] spawn {
 					_shownDifference = (_artyPos select 2) - ((AGLToASL _targetPos) select 2);
 				};
 
-				//ElDiff for formula
-				_aimAboveHeight = 0;
-				_aimAboveHeight = (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AimAboveHeight"))/2;	//for airburst and illum point of aim adjust (needs to be halved as it otherwise overshoots)
 				_Difference = 0;
-				_Difference = ((AGLToASL _targetPos) select 2) + _aimAboveHeight - (_artyPos select 2);
+				_Difference = ((AGLToASL _targetPos) select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
 				//_Difference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);		//outdated
 
 				_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);

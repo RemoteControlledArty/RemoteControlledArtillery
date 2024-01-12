@@ -10,6 +10,9 @@ class RC_Mortar_NA_base: B_Mortar_01_F
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	scope=0;
 	scopeCurator=0;
+
+	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 };
 class RC_Mortar_NA: RC_Mortar_NA_base
 {
