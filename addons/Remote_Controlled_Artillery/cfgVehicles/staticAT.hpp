@@ -6,7 +6,7 @@
 // Static AT Arid
 // Blufor
 class B_static_AT_F;
-class RC_Static_AT_Arid_base: B_static_AT_F
+class RC_Static_AT_A_base: B_static_AT_F
 {
 	class Turrets;
 	class MainTurret;
@@ -16,7 +16,7 @@ class RC_Static_AT_Arid_base: B_static_AT_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Static_AT_Arid: RC_Static_AT_Arid_base
+class RC_Static_AT_A: RC_Static_AT_A_base
 {
 	displayname="RC ATGM 3km lock";
 	faction="RemoteControlled_B";
@@ -37,7 +37,7 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	laserScanner=1;
+	laserScanner=0;
 
 	class Components: Components
 	{
@@ -45,6 +45,7 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 		{
 			class Components
 			{
+				/*
 				class LaserSensorComponent: SensorTemplateLaser
 				{
 					angleRangeHorizontal=360;
@@ -64,6 +65,7 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				*/
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
 					typeRecognitionDistance=3000;
@@ -135,7 +137,7 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 		displayName="RC ATGM 3km lock";
 		dissasembleTo[]=
 		{
-			"RC_Static_AT_Arid_Bag"
+			"RC_Static_AT_A_Bag"
 		};
 	};
 
@@ -199,19 +201,19 @@ class RC_Static_AT_Arid: RC_Static_AT_Arid_base
 		};
 	};
 };
-class RC_Static_AT_Arid_Bag: RC_Static_AA_Arid_Bag
+class RC_Static_AT_A_Bag: RC_Static_AA_A_Bag
 {
 	displayName="RC ATGM 3km lock";
 
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 3km lock";
-		assembleTo="RC_Static_AT_Arid";
+		assembleTo="RC_Static_AT_A";
 	};
 };
 
 // Woodland
-class RC_Static_AT_Woodland: RC_Static_AT_Arid
+class RC_Static_AT_WD: RC_Static_AT_A
 {
 	DLC="Expansion";
 
@@ -219,7 +221,7 @@ class RC_Static_AT_Woodland: RC_Static_AT_Arid
 	{
 		dissasembleTo[]=
 		{
-			"RC_Static_AT_Woodland_Bag"
+			"RC_Static_AT_WD_Bag"
 		};
 	};
 
@@ -230,21 +232,21 @@ class RC_Static_AT_Woodland: RC_Static_AT_Arid
 		"\a3\weapons_f_beta\launchers\titan\data\tubem_INDP_co.paa"
 	};
 };
-class RC_Static_AT_Woodland_Bag: RC_Static_AA_Woodland_Bag
+class RC_Static_AT_WD_Bag: RC_Static_AA_WD_Bag
 {
 	displayName="RC ATGM 3km lock";
 
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 3km lock";
-		assembleTo="RC_Static_AT_Woodland";
+		assembleTo="RC_Static_AT_WD";
 	};
 };
 
 
 // Opfor
 // Arid
-class RC_Static_AT_Arid_O: RC_Static_AT_Arid
+class RC_Static_AT_A_O: RC_Static_AT_A
 {
 	faction="RemoteControlled_O";
 	side=0;
@@ -255,22 +257,22 @@ class RC_Static_AT_Arid_O: RC_Static_AT_Arid
 		displayName="RC Static AT 3km [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Static_AT_Arid_Bag_O"
+			"RC_Static_AT_A_Bag_O"
 		};
 	};
 };
-class RC_Static_AT_Arid_Bag_O: RC_Static_AT_Arid_Bag
+class RC_Static_AT_A_Bag_O: RC_Static_AT_A_Bag
 {
 	displayName="RC Static AT 3km [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Static AT 3km [Opf]";
-		assembleTo="RC_Static_AT_Arid_O";
+		assembleTo="RC_Static_AT_A_O";
 	};
 };
 
 // Woodland
-class RC_Static_AT_Woodland_O: RC_Static_AT_Woodland
+class RC_Static_AT_WD_O: RC_Static_AT_WD
 {
 	faction="RemoteControlled_O";
 	side=0;
@@ -281,24 +283,24 @@ class RC_Static_AT_Woodland_O: RC_Static_AT_Woodland
 		displayName="RC Static AT 3km [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Static_AT_Woodland_Bag_O"
+			"RC_Static_AT_WD_Bag_O"
 		};
 	};
 };
-class RC_Static_AT_Woodland_Bag_O: RC_Static_AT_Woodland_Bag
+class RC_Static_AT_WD_Bag_O: RC_Static_AT_WD_Bag
 {
 	displayName="RC Static AT 3km [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Static AT 3km [Opf]";
-		assembleTo="RC_Static_AT_Woodland_O";
+		assembleTo="RC_Static_AT_WD_O";
 	};
 };
 
 
 // Independent / Ind
 // Arid
-class RC_Static_AT_Arid_I: RC_Static_AT_Arid
+class RC_Static_AT_A_I: RC_Static_AT_A
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -309,22 +311,22 @@ class RC_Static_AT_Arid_I: RC_Static_AT_Arid
 		displayName="RC Static AT 3km [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Static_AT_Arid_Bag_I"
+			"RC_Static_AT_A_Bag_I"
 		};
 	};
 };
-class RC_Static_AT_Arid_Bag_I: RC_Static_AT_Arid_Bag
+class RC_Static_AT_A_Bag_I: RC_Static_AT_A_Bag
 {
 	displayName="RC Static AT 3km [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Static AT 3km [Ind]";
-		assembleTo="RC_Static_AT_Arid_I";
+		assembleTo="RC_Static_AT_A_I";
 	};
 };
 
 // Woodland
-class RC_Static_AT_Woodland_I: RC_Static_AT_Woodland
+class RC_Static_AT_WD_I: RC_Static_AT_WD
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -335,16 +337,16 @@ class RC_Static_AT_Woodland_I: RC_Static_AT_Woodland
 		displayName="RC Static AT 3km [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Static_AT_Woodland_Bag_I"
+			"RC_Static_AT_WD_Bag_I"
 		};
 	};
 };
-class RC_Static_AT_Woodland_Bag_I: RC_Static_AT_Woodland_Bag
+class RC_Static_AT_WD_Bag_I: RC_Static_AT_WD_Bag
 {
 	displayName="RC Static AT 3km [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Static AT 3km [Ind]";
-		assembleTo="RC_Static_AT_Woodland_I";
+		assembleTo="RC_Static_AT_WD_I";
 	};
 };

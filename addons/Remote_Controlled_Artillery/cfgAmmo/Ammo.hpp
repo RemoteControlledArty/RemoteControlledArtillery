@@ -1,15 +1,15 @@
 //ATGM
 class ammo_Penetrator_Base;
-class RC_ammo_Penetrator_MT: ammo_Penetrator_Base
+class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
 {
 	caliber=60;
 	warheadName="TandemHEAT";
 	hit=780;
 };
 class M_Vorona_HEAT;
-class RC_M_ATGM_MT: M_Vorona_HEAT
+class RC_M_ATGM_MP: M_Vorona_HEAT
 {
-	submunitionAmmo="RC_ammo_Penetrator_MT";
+	submunitionAmmo="RC_ammo_Penetrator_MP";
 	indirectHit=40;
 	indirectHitRange=10;
 	maxControlRange=3000;
@@ -20,28 +20,28 @@ class RC_M_ATGM_MT: M_Vorona_HEAT
 
 //ATGM
 class M_Titan_AT_long;
-class RC_M_MT_Base: M_Titan_AT_long
+class RC_M_MP_Base: M_Titan_AT_long
 {
 	class Components;
 };
-class RC_M_MT: RC_M_MT_Base
+class RC_M_MP: RC_M_MP_Base
 {
-	submunitionAmmo="RC_ammo_Penetrator_MT";
+	submunitionAmmo="RC_ammo_Penetrator_MP";
 	hit=150;
 	indirectHit=40;
 	indirectHitRange=10;
 	maxControlRange=3000;
-	cmImmunity=0.8;
+	cmImmunity=0.85;
 	missileLockCone=180;	//for NLOS targeting, being able to shoot missle straight up, over barriers being in the way
 	missileLockMaxDistance=3000;
 	initTime=0.01;
-	laserLock=1;
+	laserLock=0;
 	weaponLockSystem="1 + 2 + 16";
 	cameraViewAvailable=1;
 
 	//test (likely cfgvic only...)
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
+	//receiveRemoteTargets=1;
+	//reportRemoteTargets=1;
 
 	class Components: Components
 	{
@@ -235,7 +235,12 @@ class M_120mm_cannon_ATGM_LG: M_120mm_cannon_ATGM
 class Default;
 class RC_HEAB_Base: Default
 {
-	artilleryLock=1;	//might make it not airburst if too far from selected target in vanilla computer
+	submunitionCount=1;
+	submunitionConeAngle=0;
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=0;
+
+	artilleryLock=1;	//might make it not airburst if too far from selected target in vanilla computer, and too short deploy distance is set, but 0 seems to make it shoot full charge
 	timeToLive=360;
 	//shell/submunition core
 	simulation="shotSubmunitions";
@@ -256,7 +261,6 @@ class RC_HEAB_Base: Default
 	//visibleFire=16;
 	//audibleFire=16;
 	visibleFireTime=10;
-
 
 	//shell/submunition base
 	supersonicCrackNear[]=
@@ -385,11 +389,11 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 };
 
 
-class RC_MT_MultiGuided_Submunition_MissleBase: MissileBase
+class RC_MP_MultiGuided_Submunition_MissleBase: MissileBase
 {
 	class Components;
 };
-class RC_MT_MultiGuided_Submunition_Base: RC_MT_MultiGuided_Submunition_MissleBase
+class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBase
 {
 	laserLock=1;
 	irLock=1;
@@ -543,11 +547,12 @@ class RC_MT_MultiGuided_Submunition_Base: RC_MT_MultiGuided_Submunition_MissleBa
 	};
 };
 class SubmunitionBase;
-class RC_Sh_AMOS_MT_MultiGuided_Base: SubmunitionBase
+class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 {
 	submunitionCount=1;		//2
 	submunitionConeAngle=0;
 
+	aiAmmoUsageFlags="128 + 512";
 	laserLock=1;
 	irLock=1;
 	nvLock=1;
@@ -612,10 +617,6 @@ class RC_82mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 class RC_Sh_82mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
-	submunitionCount=1;
-	submunitionConeAngle=0;
-	submunitionParentSpeedCoef=0;
-	submunitionInitSpeed=0;
 	aimAboveDefault=2;
 	aimAboveTarget[]={12.8,12.8,12.8};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
@@ -635,6 +636,7 @@ class RC_SmokeShellArty: SmokeShellArty
 class Smoke_120mm_AMOS_White;
 class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 {
+	aiAmmoUsageFlags=4;
 	model="\A3\weapons_f\ammo\shell";	//model="\A3\Weapons_F\Ammo\shell.p3d";
 	submunitionAmmo="RC_SmokeShellArty";
 	submunitionConeType[]=
@@ -675,6 +677,7 @@ class RC_M_Mo_82mm_AT: M_Mo_82mm_AT
 class Sh_82mm_AMOS_guided;
 class RC_Sh_82mm_AMOS_guided: Sh_82mm_AMOS_guided
 {
+	aiAmmoUsageFlags="128 + 512";
 	submunitionAmmo="RC_M_Mo_82mm_AT";
 };
 
@@ -703,6 +706,7 @@ class RC_Mo_ClassicMineRange: Mo_ClassicMineRange
 
 class RC_Mine_82mm_AMOS_range: SubmunitionBase
 {
+	aiAmmoUsageFlags=16;
 	submunitionAmmo="RC_Mo_ClassicMineRange";
 	submunitionConeType[]=
 	{
@@ -733,6 +737,7 @@ class RC_Mine_82mm_AMOS_range: SubmunitionBase
 
 class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 {
+	aiAmmoUsageFlags=16;
 	submunitionAmmo="Mo_ATMineRange";
 	submunitionConeType[]=
 	{
@@ -761,15 +766,15 @@ class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 };
 
 
-class ammo_Penetrator_82mm_MT: ammo_Penetrator_Base
+class ammo_Penetrator_82mm_MP: ammo_Penetrator_Base
 {
 	caliber=37.8;
 	warheadName="TandemHEAT";
 	hit=454.1;
 };
-class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
+class RC_82mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
-	submunitionAmmo="ammo_Penetrator_82mm_MT";
+	submunitionAmmo="ammo_Penetrator_82mm_MP";
 	indirectHit=26;
 	indirectHitRange=9;
 	cost=500;
@@ -803,9 +808,9 @@ class RC_82mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
 		distance=1;
 	};
 };
-class RC_Sh_82mm_AMOS_MT_MultiGuided: RC_Sh_AMOS_MT_MultiGuided_Base
+class RC_Sh_82mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
-	submunitionAmmo="RC_82mm_MT_MultiGuided_Submunition";
+	submunitionAmmo="RC_82mm_MP_MultiGuided_Submunition";
 	triggerDistance=300;	//edit?
 	hit=165;
 	indirectHit=26;
@@ -847,7 +852,7 @@ class RC_Sh_82mm_AMOS_delayed_submunition: RC_Sh_82mm_AMOS_submunition
 {
 	explosionTime=0.2;
 };
-class RC_M_Mo_82mm_LG_DelayedFuse_Submunition: RC_82mm_MT_MultiGuided_Submunition
+class RC_M_Mo_82mm_LG_DelayedFuse_Submunition: RC_82mm_MP_MultiGuided_Submunition
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -858,7 +863,7 @@ class RC_M_Mo_82mm_LG_DelayedFuse_Submunition: RC_82mm_MT_MultiGuided_Submunitio
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_Sh_82mm_AMOS_LG_DelayedFuse: RC_Sh_82mm_AMOS_MT_MultiGuided
+class RC_Sh_82mm_AMOS_LG_DelayedFuse: RC_Sh_82mm_AMOS_MP_MultiGuided
 {
 	submunitionAmmo="RC_M_Mo_82mm_LG_DelayedFuse_Submunition";
 };
@@ -927,10 +932,6 @@ class RC_120mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 class RC_Sh_120mm_AMOS_HEAB: RC_120mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_120mm_AMOS_submunition";
-	submunitionCount=1;
-	submunitionConeAngle=0;
-	submunitionParentSpeedCoef=0;
-	submunitionInitSpeed=0;
 	aimAboveDefault=2;
 	aimAboveTarget[]={17.1,17.1,17.1};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
@@ -940,15 +941,15 @@ class RC_Sh_120mm_AMOS_HEAB_low: RC_Sh_120mm_AMOS_HEAB
 };
 
 
-class ammo_Penetrator_120mm_MT: ammo_Penetrator_Base
+class ammo_Penetrator_120mm_MP: ammo_Penetrator_Base
 {
 	caliber=55.4;
 	warheadName="TandemHEAT";
 	hit=664.6;
 };
-class RC_120mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
+class RC_120mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
-	submunitionAmmo="ammo_Penetrator_120mm_MT";
+	submunitionAmmo="ammo_Penetrator_120mm_MP";
 	indirectHit=44.25;
 	indirectHitRange=12;
 	cost=700;
@@ -982,9 +983,9 @@ class RC_120mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
 		distance=1;
 	};
 };
-class RC_Sh_120mm_AMOS_MT_MultiGuided: RC_Sh_AMOS_MT_MultiGuided_Base
+class RC_Sh_120mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
-	submunitionAmmo="RC_120mm_MT_MultiGuided_Submunition";
+	submunitionAmmo="RC_120mm_MP_MultiGuided_Submunition";
 	triggerDistance=500;
 	hit=252.5;
 	indirectHit=44.25;
@@ -1025,6 +1026,7 @@ class RC_Sh_120mm_AMOS_MT_MultiGuided: RC_Sh_AMOS_MT_MultiGuided_Base
 //120mm NLOS, of N/LOS FSV
 class RC_Sh_120mm_AMOS_HE_FSV: Sh_155mm_AMOS
 {
+	aiAmmoUsageFlags="64 + 128";
 	triggerDistance=-1;
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,4,0};
@@ -1044,8 +1046,9 @@ class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
 	warheadName="TandemHEAT";
 };
 class Sh_120mm_HEAT_MP;
-class RC_Sh_120mm_MT_T_Green: Sh_120mm_HEAT_MP
+class RC_Sh_120mm_MP_T_Green: Sh_120mm_HEAT_MP
 {
+	aiAmmoUsageFlags="64 + 128 + 512";
 	hit=95;
 	warheadName="HE";
 	submunitionAmmo="RC_ammo_Penetrator_120mm";
@@ -1071,6 +1074,7 @@ class RC_Mo_Illum: F_40mm_White
 };
 class Flare_155mm_AMOS_White: SubmunitionBase
 {
+	aiAmmoUsageFlags=1;
 	submunitionAmmo[]=
 	{
 		"RC_Mo_Illum",
@@ -1100,6 +1104,7 @@ class Flare_155mm_AMOS_White: SubmunitionBase
 class Mine_155mm_AMOS_range;
 class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 {
+	aiAmmoUsageFlags=16;
 	submunitionAmmo="RC_Mo_ClassicMineRange";
 	submunitionConeAngle=12;
 	submunitionConeType[]=
@@ -1116,6 +1121,7 @@ class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 class AT_Mine_155mm_AMOS_range;
 class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
 {
+	aiAmmoUsageFlags=16;
 	submunitionConeAngle=12;	//15
 	submunitionConeType[]=
 	{
@@ -1133,6 +1139,7 @@ class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
 
 class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
 {
+	aiAmmoUsageFlags=4;
 	submunitionAmmo="RC_SmokeShellArty";
 	submunitionConeAngle=10;
 	submunitionConeType[]=
@@ -1187,10 +1194,6 @@ class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
-	submunitionCount=1;
-	submunitionConeAngle=0;
-	submunitionParentSpeedCoef=0;
-	submunitionInitSpeed=0;
 	aimAboveDefault=2;
 	aimAboveTarget[]={21.3,21.3,21.3};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
@@ -1203,6 +1206,7 @@ class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
 class Cluster_155mm_AMOS;
 class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 {
+	aiAmmoUsageFlags="64 + 128";
 	submunitionConeType[]=
 	{
 		"poissondisc",	//even spread
@@ -1211,15 +1215,15 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 };
 
 
-class ammo_Penetrator_155mm_MT: ammo_Penetrator_Base
+class ammo_Penetrator_155mm_MP: ammo_Penetrator_Base
 {
 	caliber=71.5;
 	warheadName="TandemHEAT";
 	hit=858.5;
 };
-class RC_155mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
+class RC_155mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
-	submunitionAmmo="ammo_Penetrator_155mm_MT";
+	submunitionAmmo="ammo_Penetrator_155mm_MP";
 	indirectHit=62.5;
 	indirectHitRange=15;
 	cost=700;
@@ -1253,9 +1257,9 @@ class RC_155mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
 		distance=1;
 	};
 };
-class RC_Sh_155mm_AMOS_MT_MultiGuided: RC_Sh_AMOS_MT_MultiGuided_Base
+class RC_Sh_155mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
-	submunitionAmmo="RC_155mm_MT_MultiGuided_Submunition";
+	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
 	triggerDistance=800;
 	hit=340;
 	indirectHit=62.5;
@@ -1297,7 +1301,7 @@ class RC_Sh_155mm_AMOS_delayed_submunition: RC_Sh_155mm_AMOS_submunition
 {
 	explosionTime=0.2;
 };
-class RC_M_Mo_155mm_LG_DelayedFuse_submunition: RC_155mm_MT_MultiGuided_Submunition
+class RC_M_Mo_155mm_LG_DelayedFuse_submunition: RC_155mm_MP_MultiGuided_Submunition
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -1308,7 +1312,7 @@ class RC_M_Mo_155mm_LG_DelayedFuse_submunition: RC_155mm_MT_MultiGuided_Submunit
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_Sh_155mm_AMOS_LG_DelayedFuse: RC_Sh_155mm_AMOS_MT_MultiGuided
+class RC_Sh_155mm_AMOS_LG_DelayedFuse: RC_Sh_155mm_AMOS_MP_MultiGuided
 {
 	submunitionAmmo="RC_M_Mo_155mm_LG_DelayedFuse_submunition";
 };
@@ -1435,10 +1439,6 @@ class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
 {
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
-	submunitionCount=1;
-	submunitionConeAngle=0;
-	submunitionParentSpeedCoef=0;
-	submunitionInitSpeed=0;
 	aimAboveDefault=2;
 	aimAboveTarget[]={21.3,21.3,21.3};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
@@ -1451,6 +1451,7 @@ class RC_R_230mm_HEAB_low: RC_R_230mm_HEAB
 class R_230mm_Cluster;
 class RC_R_230mm_Cluster: R_230mm_Cluster
 {
+	aiAmmoUsageFlags="64 + 128";
 	submunitionConeType[]=
 	{
 		"poissondisccenter",
@@ -1459,13 +1460,13 @@ class RC_R_230mm_Cluster: R_230mm_Cluster
 };
 
 
-class ammo_Penetrator_230mm_MT: ammo_Penetrator_Base
+class ammo_Penetrator_230mm_MP: ammo_Penetrator_Base
 {
 	caliber=106.1;
 	warheadName="TandemHEAT";
 	hit=1273.8;
 };
-class RC_230mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
+class RC_230mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
@@ -1479,7 +1480,7 @@ class RC_230mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
 		"BombsHeavy_Tail_SoundSet",
 		"Explosion_Debris_SoundSet"
 	};
-	submunitionAmmo="ammo_Penetrator_230mm_MT";
+	submunitionAmmo="ammo_Penetrator_230mm_MP";
 	indirectHit=400;
 	indirectHitRange=15;
 	cost=1000;
@@ -1520,9 +1521,9 @@ class RC_230mm_MT_MultiGuided_Submunition: RC_MT_MultiGuided_Submunition_Base
 		500
 	};
 };
-class RC_R_230mm_MT_MultiGuided: RC_Sh_AMOS_MT_MultiGuided_Base
+class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
-	submunitionAmmo="RC_230mm_MT_MultiGuided_Submunition";
+	submunitionAmmo="RC_230mm_MP_MultiGuided_Submunition";
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
 	craterEffects="HeavyBombCrater";
@@ -1579,7 +1580,7 @@ class RC_R_230mm_fly_HEAB_delayed_submunition: RC_R_230mm_fly_HEAB_submunition
 {
 	explosionTime=0.2;
 };
-class RC_230mm_LG_DelayedFuse_submunition: RC_230mm_MT_MultiGuided_Submunition
+class RC_230mm_LG_DelayedFuse_submunition: RC_230mm_MP_MultiGuided_Submunition
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -1590,14 +1591,14 @@ class RC_230mm_LG_DelayedFuse_submunition: RC_230mm_MT_MultiGuided_Submunition
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_230mm_LG_DelayedFuse: RC_R_230mm_MT_MultiGuided
+class RC_230mm_LG_DelayedFuse: RC_R_230mm_MP_MultiGuided
 {
 	submunitionAmmo="RC_M_Mo_155mm_LG_DelayedFuse_submunition";
 };
 
 
 // 604mm ATACMS
-class RC_R_230mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
+class RC_R_604mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 {
 	indirectHit=3200;
 	indirectHitRange=120;
@@ -1612,15 +1613,14 @@ class RC_R_230mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 };
 class RC_604mm_HEAB_Rocket_Base: RC_230mm_HEAB_Rocket_Base
 {
-	indirectHit=2400;
-	indirectHitRange=90;
+	indirectHit=3200;
+	indirectHitRange=120;
 	cost=3000;
 }
 class RC_R_604mm_ATACMS_HEAB: RC_604mm_HEAB_Rocket_Base
 {
-	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition_ATACMS";
-	submunitionCount=1;
-	submunitionConeAngle=0;
+	submunitionAmmo="RC_R_604mm_fly_HEAB_submunition_ATACMS";
+	aimAboveDefault=2;
 	aimAboveTarget[]={30,30,30};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
 

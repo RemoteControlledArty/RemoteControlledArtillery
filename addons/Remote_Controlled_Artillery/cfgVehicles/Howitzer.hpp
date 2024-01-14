@@ -242,7 +242,8 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 			gunnerForceOptics=1;
 			weapons[]=
 			{
-				"RC_155mm_AMOS_V4"
+				"RC_155mm_AMOS_V4",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
@@ -254,7 +255,8 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
-				"RC_12Rnd_155mm_Mo_Illum"
+				"RC_12Rnd_155mm_Mo_Illum",
+				"SmokeLauncherMag"
 			};
 			class OpticsIn: OpticsIn
 			{
@@ -287,7 +289,8 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 
 			weapons[]=
 			{
-				"RC_155mm_AMOS_V4"
+				"RC_155mm_AMOS_V4",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
@@ -299,7 +302,8 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
-				"RC_12Rnd_155mm_Mo_Illum"
+				"RC_12Rnd_155mm_Mo_Illum",
+				"SmokeLauncherMag"
 			};
 			class OpticsIn: OpticsIn
 			{
@@ -550,7 +554,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 
 			weapons[]=
 			{
-				"RC_155mm_AMOS_V4"
+				"RC_155mm_AMOS_V4",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
@@ -560,7 +565,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 				"RC_6Rnd_155mm_Mo_MultiGuided",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
-				"RC_16Rnd_155mm_Mo_Illum"
+				"RC_16Rnd_155mm_Mo_Illum",
+				"SmokeLauncherMag"
 			};
 			class OpticsIn: OpticsIn
 			{
@@ -593,7 +599,8 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 
 			weapons[]=
 			{
-				"RC_155mm_AMOS_V4"
+				"RC_155mm_AMOS_V4",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
@@ -603,7 +610,8 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
-				"RC_12Rnd_155mm_Mo_Illum"
+				"RC_12Rnd_155mm_Mo_Illum",
+				"SmokeLauncherMag"
 			};
 			class OpticsIn: OpticsIn
 			{

@@ -1,4 +1,5 @@
 // targets for reporting created markers into datalink for selecting
+/*
 class ArtilleryTarget;
 class RC_ArtilleryTarget: ArtilleryTarget
 {
@@ -34,6 +35,7 @@ class RC_ArtilleryTargetE: ArtilleryTargetE
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Targets_subcat";
 };
+*/
 
 class All;
 class RC_LockableMarkerTarget: All
@@ -67,10 +69,12 @@ class RC_LockableMarkerTarget: All
 	armor=500;
 };
 
-
 class O_TargetSoldier;
 class RC_O_InvisibleDatalinkTarget: O_TargetSoldier
 {
+	author="Ascent";
+	displayName="GPS Marker";
+
 	scope=2;
 	scopeCurator=2;
 	scopeArsenal=0;
@@ -78,16 +82,11 @@ class RC_O_InvisibleDatalinkTarget: O_TargetSoldier
 	irTarget=1;
 	//laserTarget=1;
 	nvTarget=1;
-
-	author="Ascent";
-	displayName="GPS Marker";
 	crewVulnerable=0;
 	type=1;
 
 	//destrType="DestructNo";
-
 	threat[]={0.0,0.0,0.0};
-
 	class HitPoints
 	{
 	};
@@ -95,6 +94,9 @@ class RC_O_InvisibleDatalinkTarget: O_TargetSoldier
 class B_TargetSoldier;
 class RC_B_InvisibleDatalinkTarget: B_TargetSoldier
 {
+	author="Ascent";
+	displayName="GPS Marker";
+
 	scope=2;
 	scopeCurator=2;
 	scopeArsenal=0;
@@ -103,15 +105,11 @@ class RC_B_InvisibleDatalinkTarget: B_TargetSoldier
 	//laserTarget=1;
 	nvTarget=1;
 
-	author="Ascent";
-	displayName="GPS Marker";
 	crewVulnerable=0;
 	type=1;
 
 	//destrType="DestructNo";
-
 	threat[]={0.0,0.0,0.0};
-
 	class HitPoints
 	{
 	};
@@ -119,6 +117,9 @@ class RC_B_InvisibleDatalinkTarget: B_TargetSoldier
 class I_TargetSoldier;
 class RC_I_InvisibleDatalinkTarget: I_TargetSoldier
 {
+	author="Ascent";
+	displayName="GPS Marker";
+
 	scope=2;
 	scopeCurator=2;
 	scopeArsenal=0;
@@ -127,15 +128,11 @@ class RC_I_InvisibleDatalinkTarget: I_TargetSoldier
 	//laserTarget=1;
 	nvTarget=1;
 
-	author="Ascent";
-	displayName="GPS Marker";
 	crewVulnerable=0;
 	type=1;
 
 	//destrType="DestructNo";
-
 	threat[]={0.0,0.0,0.0};
-
 	class HitPoints
 	{
 	};

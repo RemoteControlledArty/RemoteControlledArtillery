@@ -5,7 +5,7 @@
 
 // Blufor
 // Arid
-class RC_Static_ATGM_Arid: RC_Static_AT_Arid
+class RC_Static_ATGM_A: RC_Static_AT_A
 {
 	displayname="RC ATGM 3km manual";
 
@@ -14,7 +14,7 @@ class RC_Static_ATGM_Arid: RC_Static_AT_Arid
 		displayName="RC ATGM 3km manual";
 		dissasembleTo[]=
 		{
-			"RC_Static_ATGM_Arid_Bag"
+			"RC_Static_ATGM_A_Bag"
 		};
 	};
 
@@ -36,18 +36,18 @@ class RC_Static_ATGM_Arid: RC_Static_AT_Arid
 		};
 	};
 };
-class RC_Static_ATGM_Arid_Bag: RC_Static_AA_Arid_Bag
+class RC_Static_ATGM_A_Bag: RC_Static_AA_A_Bag
 {
 	displayName="RC ATGM 3km manual";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 3km manual";
-		assembleTo="RC_Static_ATGM_Arid";
+		assembleTo="RC_Static_ATGM_A";
 	};
 };
 
 // Woodland
-class RC_Static_ATGM_Woodland: RC_Static_ATGM_Arid
+class RC_Static_ATGM_WD: RC_Static_ATGM_A
 {
 	DLC="Expansion";
 
@@ -55,7 +55,7 @@ class RC_Static_ATGM_Woodland: RC_Static_ATGM_Arid
 	{
 		dissasembleTo[]=
 		{
-			"RC_Static_ATGM_Woodland_Bag"
+			"RC_Static_ATGM_WD_Bag"
 		};
 	};
 
@@ -66,19 +66,19 @@ class RC_Static_ATGM_Woodland: RC_Static_ATGM_Arid
 		"\a3\weapons_f_beta\launchers\titan\data\tubem_INDP_co.paa"
 	};
 };
-class RC_Static_ATGM_Woodland_Bag: RC_Static_AA_Woodland_Bag
+class RC_Static_ATGM_WD_Bag: RC_Static_AA_WD_Bag
 {
 	displayName="RC ATGM 3km manual";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 3km manual";
-		assembleTo="RC_Static_ATGM_Woodland";
+		assembleTo="RC_Static_ATGM_WD";
 	};
 };
 
 // Opfor
 // Arid
-class RC_Static_ATGM_Arid_O: RC_Static_ATGM_Arid
+class RC_Static_ATGM_A_O: RC_Static_ATGM_A
 {
 	faction="RemoteControlled_O";
 	side=0;
@@ -89,22 +89,22 @@ class RC_Static_ATGM_Arid_O: RC_Static_ATGM_Arid
 		displayName="RC ATGM 3km manual [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Static_ATGM_Arid_Bag_O"
+			"RC_Static_ATGM_A_Bag_O"
 		};
 	};
 };
-class RC_Static_ATGM_Arid_Bag_O: RC_Static_ATGM_Arid_Bag
+class RC_Static_ATGM_A_Bag_O: RC_Static_ATGM_A_Bag
 {
 	displayName="RC ATGM 3km manual [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 3km manual [Opf]";
-		assembleTo="RC_Static_AT_Arid_O";
+		assembleTo="RC_Static_AT_A_O";
 	};
 };
 
 // Woodland
-class RC_Static_ATGM_Woodland_O: RC_Static_ATGM_Woodland
+class RC_Static_ATGM_WD_O: RC_Static_ATGM_WD
 {
 	faction="RemoteControlled_O";
 	side=0;
@@ -115,23 +115,23 @@ class RC_Static_ATGM_Woodland_O: RC_Static_ATGM_Woodland
 		displayName="RC ATGM 3km manual [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Static_ATGM_Woodland_Bag_O"
+			"RC_Static_ATGM_WD_Bag_O"
 		};
 	};
 };
-class RC_Static_ATGM_Woodland_Bag_O: RC_Static_ATGM_Woodland_Bag
+class RC_Static_ATGM_WD_Bag_O: RC_Static_ATGM_WD_Bag
 {
 	displayName="RC ATGM 3km manual [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 3km manual [Opf]";
-		assembleTo="RC_Static_ATGM_Woodland_O";
+		assembleTo="RC_Static_ATGM_WD_O";
 	};
 };
 
 // Independent / Indi
 // Arid
-class RC_Static_ATGM_Arid_I: RC_Static_ATGM_Arid
+class RC_Static_ATGM_A_I: RC_Static_ATGM_A
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -142,22 +142,22 @@ class RC_Static_ATGM_Arid_I: RC_Static_ATGM_Arid
 		displayName="RC ATGM 3km manual [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Static_ATGM_Arid_Bag_I"
+			"RC_Static_ATGM_A_Bag_I"
 		};
 	};
 };
-class RC_Static_ATGM_Arid_Bag_I: RC_Static_ATGM_Arid_Bag
+class RC_Static_ATGM_A_Bag_I: RC_Static_ATGM_A_Bag
 {
 	displayName="RC ATGM 3km manual [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 3km manual [Ind]";
-		assembleTo="RC_Static_ATGM_Arid_I";
+		assembleTo="RC_Static_ATGM_A_I";
 	};
 };
 
 // Woodland
-class RC_Static_ATGM_Woodland_I: RC_Static_ATGM_Woodland
+class RC_Static_ATGM_WD_I: RC_Static_ATGM_WD
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -168,16 +168,16 @@ class RC_Static_ATGM_Woodland_I: RC_Static_ATGM_Woodland
 		displayName="RC ATGM 3km manual [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Static_ATGM_Woodland_Bag_I"
+			"RC_Static_ATGM_WD_Bag_I"
 		};
 	};
 };
-class RC_Static_ATGM_Woodland_Bag_I: RC_Static_ATGM_Woodland_Bag
+class RC_Static_ATGM_WD_Bag_I: RC_Static_ATGM_WD_Bag
 {
 	displayName="RC ATGM 3km manual [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 3km manual [Ind]";
-		assembleTo="RC_Static_ATGM_Woodland_I";
+		assembleTo="RC_Static_ATGM_WD_I";
 	};
 };

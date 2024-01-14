@@ -35,7 +35,6 @@ class CfgPatches
 			RC_Improved_FOV_Designator_Ti_Bag_Woodland_O,
 			RC_Improved_FOV_Designator_Ti_Bag_Woodland_I,
 
-
 			RC_Static_AA_Arid,
 			RC_Static_AA_Woodland,
 			RC_Static_AA_Arid_O,
@@ -49,7 +48,6 @@ class CfgPatches
 			RC_Static_AA_Woodland_Bag_O,
 			RC_Static_AA_Arid_Bag_I,
 			RC_Static_AA_Woodland_Bag_I,
-
 
 			RC_Static_AT_Arid,
 			RC_Static_AT_Woodland,
@@ -65,7 +63,6 @@ class CfgPatches
 			RC_Static_AT_Arid_Bag_I,
 			RC_Static_AT_Woodland_Bag_I,
 
-
 			RC_Static_ATGM_Arid,
 			RC_Static_ATGM_Woodland,
 			RC_Static_ATGM_Arid_O,
@@ -79,12 +76,6 @@ class CfgPatches
 			RC_Static_ATGM_Woodland_Bag_O,
 			RC_Static_ATGM_Arid_Bag_I,
 			RC_Static_ATGM_Woodland_Bag_I,
-
-
-			B_UAV_AI,
-			O_UAV_AI,
-			I_UAV_AI,
-
 
 			RC_Howitzer_NA_A,
 			RC_Howitzer_NA_WD,
@@ -100,12 +91,21 @@ class CfgPatches
 			RC_Howitzer_A_I,
 			RC_Howitzer_WD_I,
 
-
 			RC_Howitzer_NA_HEX_A_O,
 			RC_Howitzer_NA_HEX_WD_O,
 
 			RC_Howitzer_HEX_A_O,
 			RC_Howitzer_HEX_WD_O,
+
+			RC_Static_NA_Arty,
+			RC_Static_NA_Arty_O,
+			RC_Static_NA_Arty_I,
+			RC_Static_Arty,
+			RC_Static_Arty_O,
+			RC_Static_Arty_I,
+
+			RC_NLOS_FSV_A,
+			RC_NLOS_FSV_WD,
 
 
 			RC_MLRS_NA_A,
@@ -122,7 +122,6 @@ class CfgPatches
 			RC_MLRS_A_I,
 			RC_MLRS_WD_I,
 
-
 			RC_MRL_NA_DIG,
 			RC_MRL_NA_WD,
 			RC_MRL_NA_HEX_O,
@@ -137,7 +136,6 @@ class CfgPatches
 			RC_MRL_DIG_I,
 			RC_MRL_WD_I,
 
-
 			RC_AA_A,
 			RC_AA_WD,
 			RC_AA_A_O,
@@ -146,7 +144,6 @@ class CfgPatches
 			RC_AA_HEX_WD_O,
 			RC_AA_A_I,
 			RC_AA_WD_I,
-
 
 			RC_AA_small_WD,
 			RC_AA_small_WD_O,
@@ -162,7 +159,6 @@ class CfgPatches
 			RC_ATGM_small_WD_O,
 			RC_ATGM_small_DIG_I,
 			RC_ATGM_small_WD_I,
-
 
 			RC_Mortar_NA,
 			RC_Mortar_NA_O,
@@ -182,7 +178,20 @@ class CfgPatches
 			RC_Mortar_Bag,
 			RC_Mortar_Bag_O,
 			RC_Mortar_Bag_HEX_O,
-			RC_Mortar_Bag_I
+			RC_Mortar_Bag_I,
+
+			RC_UAV_AR1,
+			RC_UAV_AR3,
+
+			RC_Infantry_Carrier_A,
+			RC_Infantry_Carrier_WD,
+
+			RC_RespawnTruck_A,
+			RC_RespawnTruck_WD,
+
+			RC_B_InvisibleDatalinkTarget,
+			RC_I_InvisibleDatalinkTarget,
+			RC_O_InvisibleDatalinkTarget
 		};
 
 		weapons[]=

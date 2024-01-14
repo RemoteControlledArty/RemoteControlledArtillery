@@ -1,5 +1,5 @@
 class B_APC_Wheeled_01_cannon_F;
-class RC_Infantry_Carrier_base: B_APC_Wheeled_01_cannon_F
+class RC_Infantry_Carrier_A_base: B_APC_Wheeled_01_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -27,7 +27,7 @@ class RC_Infantry_Carrier_base: B_APC_Wheeled_01_cannon_F
 	//RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_Infantry_Carrier: RC_Infantry_Carrier_base
+class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 {
 	class EventHandlers
 	{
@@ -444,3 +444,16 @@ class RC_Infantry_Carrier: RC_Infantry_Carrier_base
 		};
 	};
 };
+
+
+/*
+class B_T_APC_Wheeled_01_cannon_F;
+class RC_Infantry_Carrier_WD_base: B_T_APC_Wheeled_01_cannon_F
+{
+
+};
+class RC_Infantry_Carrier_WD: RC_Infantry_Carrier_A_base
+{
+
+};
+*/

@@ -415,7 +415,7 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	//laserScanner=1;
+	//laserScanner=0;
 
 	class Components: Components
 	{

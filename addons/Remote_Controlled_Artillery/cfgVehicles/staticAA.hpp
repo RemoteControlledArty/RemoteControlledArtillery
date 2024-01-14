@@ -1,7 +1,7 @@
 // Static AA
 // Blufor
 class B_static_AA_F;
-class RC_Static_AA_Arid_base: B_static_AA_F
+class RC_Static_AA_A_base: B_static_AA_F
 {
 	class Turrets;
 	class MainTurret;
@@ -11,7 +11,7 @@ class RC_Static_AA_Arid_base: B_static_AA_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Static_AA_Arid: RC_Static_AA_Arid_base
+class RC_Static_AA_A: RC_Static_AA_A_base
 {
 	displayname="RC Static AA 3.5km";
 	faction="RemoteControlled_B";
@@ -113,7 +113,7 @@ class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 		displayName="RC Static AA 3.5km";
 		dissasembleTo[]=
 		{
-			"RC_Static_AA_Arid_Bag"
+			"RC_Static_AA_A_Bag"
 		};
 	};
 
@@ -174,7 +174,7 @@ class RC_Static_AA_Arid: RC_Static_AA_Arid_base
 		};
 	};
 };
-class RC_Static_AA_Woodland: RC_Static_AA_Arid
+class RC_Static_AA_WD: RC_Static_AA_A
 {
 	DLC="Expansion";
 
@@ -182,7 +182,7 @@ class RC_Static_AA_Woodland: RC_Static_AA_Arid
 	{
 		dissasembleTo[]=
 		{
-			"RC_Static_AA_Woodland_Bag"
+			"RC_Static_AA_WD_Bag"
 		};
 	};
 
@@ -197,13 +197,13 @@ class RC_Static_AA_Woodland: RC_Static_AA_Arid
 
 // Static AA Bag
 class B_AA_01_weapon_F;
-class RC_Static_AA_Arid_Bag_base: B_AA_01_weapon_F
+class RC_Static_AA_A_Bag_base: B_AA_01_weapon_F
 {
 	class assembleInfo;
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Static_AA_Arid_Bag: RC_Static_AA_Arid_Bag_base
+class RC_Static_AA_A_Bag: RC_Static_AA_A_Bag_base
 {
 	displayName="RC Static AA 3.5km";
 	scope=2;
@@ -221,11 +221,11 @@ class RC_Static_AA_Arid_Bag: RC_Static_AA_Arid_Bag_base
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Static AA 3.5km";
-		assembleTo="RC_Static_AA_Arid";
+		assembleTo="RC_Static_AA_A";
 		base="";
 	};
 };
-class RC_Static_AA_Woodland_Bag: RC_Static_AA_Arid_Bag
+class RC_Static_AA_WD_Bag: RC_Static_AA_A_Bag
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -235,12 +235,12 @@ class RC_Static_AA_Woodland_Bag: RC_Static_AA_Arid_Bag
 
 	class assembleInfo: assembleInfo
 	{
-		assembleTo="RC_Static_AA_Woodland";
+		assembleTo="RC_Static_AA_WD";
 	};
 };
 
 // Independent / Indi
-class RC_Static_AA_Arid_I: RC_Static_AA_Arid
+class RC_Static_AA_A_I: RC_Static_AA_A
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -251,11 +251,11 @@ class RC_Static_AA_Arid_I: RC_Static_AA_Arid
 		displayName="RC Static AA 3.5km [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Static_AA_Arid_Bag_I"
+			"RC_Static_AA_A_Bag_I"
 		};
 	};
 };
-class RC_Static_AA_Woodland_I: RC_Static_AA_Woodland
+class RC_Static_AA_WD_I: RC_Static_AA_WD
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -266,32 +266,32 @@ class RC_Static_AA_Woodland_I: RC_Static_AA_Woodland
 		displayName="RC Static AA 3.5km [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Static_AA_Woodland_Bag_I"
+			"RC_Static_AA_WD_Bag_I"
 		};
 	};
 };
-class RC_Static_AA_Arid_Bag_I: RC_Static_AA_Arid_Bag
+class RC_Static_AA_A_Bag_I: RC_Static_AA_A_Bag
 {
 	displayName="RC Static AA 3.5km [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Static AA 3.5km [Ind]";
-		assembleTo="RC_Static_AA_Arid_I";
+		assembleTo="RC_Static_AA_A_I";
 	};
 };
-class RC_Static_AA_Woodland_Bag_I: RC_Static_AA_Woodland_Bag
+class RC_Static_AA_WD_Bag_I: RC_Static_AA_WD_Bag
 {
 	displayName="RC Static AA 3.5km [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Static AA 3.5km [Ind]";
-		assembleTo="RC_Static_AA_Woodland_I";
+		assembleTo="RC_Static_AA_WD_I";
 	};
 };
 
 
 // Opfor
-class RC_Static_AA_Arid_O: RC_Static_AA_Arid
+class RC_Static_AA_A_O: RC_Static_AA_A
 {
 	faction="RemoteControlled_O";
 	side=0;
@@ -302,11 +302,11 @@ class RC_Static_AA_Arid_O: RC_Static_AA_Arid
 		displayName="RC Static AA 3.5km [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Static_AA_Arid_Bag_O"
+			"RC_Static_AA_A_Bag_O"
 		};
 	};
 };
-class RC_Static_AA_Woodland_O: RC_Static_AA_Woodland
+class RC_Static_AA_WD_O: RC_Static_AA_WD
 {
 	faction="RemoteControlled_O";
 	side=0;
@@ -317,25 +317,25 @@ class RC_Static_AA_Woodland_O: RC_Static_AA_Woodland
 		displayName="RC Static AA 3.5km [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Static_AA_Woodland_Bag_O"
+			"RC_Static_AA_WD_Bag_O"
 		};
 	};
 };
-class RC_Static_AA_Arid_Bag_O: RC_Static_AA_Arid_Bag
+class RC_Static_AA_A_Bag_O: RC_Static_AA_A_Bag
 {
 	displayName="RC Static AA 3.5km [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Static AA 3.5km [Opf]";
-		assembleTo="RC_Static_AA_Arid_O";
+		assembleTo="RC_Static_AA_A_O";
 	};
 };
-class RC_Static_AA_Woodland_Bag_O: RC_Static_AA_Woodland_Bag
+class RC_Static_AA_WD_Bag_O: RC_Static_AA_WD_Bag
 {
 	displayName="RC Static AA 3.5km [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Static AA 3.5km [Opf]";
-		assembleTo="RC_Static_AA_Woodland_O";
+		assembleTo="RC_Static_AA_WD_O";
 	};
 };

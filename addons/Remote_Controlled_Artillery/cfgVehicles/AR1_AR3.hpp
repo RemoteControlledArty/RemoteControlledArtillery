@@ -200,6 +200,8 @@ class RC_UAV_AR1: RC_UAV_base
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets=4;
+
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight

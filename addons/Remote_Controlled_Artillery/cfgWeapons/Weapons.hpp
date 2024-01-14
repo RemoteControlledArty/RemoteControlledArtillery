@@ -710,7 +710,6 @@ class RC_mortar_82mm_V2: RC_mortar_82mm_V1
 {
 	reloadTime=3;
 	magazineReloadTime=3;
-	//ballisticsComputer=8;		//direct fire reticle for highest charge
 	canLock=2;
 	weaponLockDelay=0;
 };
@@ -1283,31 +1282,31 @@ class RC_ShipCannon_120mm_V1: RC_ShipCannon_120mm_base
 };
 class RC_ShipCannon_120mm_V2: RC_ShipCannon_120mm_V1
 {
-	reloadTime=5;
-	magazineReloadTime=5;
+	reloadTime=6;
+	magazineReloadTime=6;
 	ballisticsComputer=8;	//direct fire reticle for highest charge
 	canLock=2;
 	weaponLockDelay=0;
 
 	class Single1: Single1
 	{
-		reloadTime=5;
+		reloadTime=6;
 	};
 	class Single2: Single2
 	{
-		reloadTime=5;
+		reloadTime=6;
 	};
 	class Single3: Single3
 	{
-		reloadTime=5;
+		reloadTime=6;
 	};
 	class Single4: Single4
 	{
-		reloadTime=5;
+		reloadTime=6;
 	};
 	class Single5: Single5
 	{
-		reloadTime=5;
+		reloadTime=6;
 	};
 };
 class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
@@ -1422,6 +1421,7 @@ class RC_ShipCannon_120mm_V4: RC_ShipCannon_120mm_V3
 class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
 {
 	displayName="NLOS 120mm";
+	ballisticsComputer=0;	//direct fire reticle for highest charge
 
 	magazines[]=
 	{
@@ -2049,31 +2049,31 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 };
 class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 {
-	reloadTime=5;
-	magazineReloadTime=5;
+	reloadTime=6;
+	magazineReloadTime=6;
 	ballisticsComputer=8;		//direct fire reticle for highest charge
 	canLock=2;
 	weaponLockDelay=0;
 
 	class Single1: Single1
 	{
-		reloadTime=5;
+		reloadTime=6;
 	};
 	class Single2: Single2
 	{
-		reloadTime=5;
+		reloadTime=6;
 	};
 	class Single3: Single3
 	{
-		reloadTime=5;
+		reloadTime=6;
 	};
 	class Single4: Single4
 	{
-		reloadTime=5;
+		reloadTime=6;
 	};
 	class Single5: Single5
 	{
-		reloadTime=5;
+		reloadTime=6;
 	};
 };
 class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2

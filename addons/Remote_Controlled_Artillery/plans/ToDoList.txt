@@ -21,17 +21,27 @@ documentation:
 -update removemagazine list
 -add new assets to cfg patches list
 -add incomingMissileDetectionSystem = 16;
+-add showAllTargets = 4; //LockLaser, show only targets from laser spot tracker (laserScanner); since Arma 3 1.60
 
 arty:
--report arty map markers to datalink, to lock for gps guidance, maybe if "gps" is written in the marker name? RC_O_InvisibleDatalinkTarget works
+-test passive radar against AA
+-recon radar mortar carrier composition
+-double check LaserDatalink code
+-using multiguided without selecting target and looking at terrain, can cause automatic targeting of friendly UV's?
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
+-remove non airburst HE after trajectory testing
+-low/high trajectory list:
+	low: HEAB, Guided, Illum
+	low top down: Guided
+	high: Cluster, Smoke, Mines, Illum
 
--recon radar mortar carrier composition
--double check LaserDatalink code
+-report arty map markers to datalink, to lock for gps guidance, maybe if "gps" is written in the marker name? RC_O_InvisibleDatalinkTarget works
+_laser = laserTarget player;
+_targetSolider = "RC_I_InvisibleDatalinkTarget" createVehicle getpos _laser;
+side player reportRemoteTarget [_targetSolider, 40];
 
--using multiguided without selecting target and looking at terrain, can cause automatic targeting of friendly UV's?
 -why the slight overshoot habit of the calculator? its about 1 to 2 MIL too high for low trajectory, maybe due to extra height of barrel vs ground? thats why aimabove/2 is needed rn
 -how to get position of muzzle? 	gunBeg="Usti hlavne";	gunEnd="Konec hlavne";	https://forums.bohemia.net/forums/topic/220406-universal-way-to-get-any-turrets-direction/
 _uav = (getConnectedUAV player);
@@ -40,25 +50,21 @@ _uav = (getConnectedUAV player);
 //_uav selectionPosition ["Konec hlavne", "Memory", "AveragePoint"];
 //_uav selectionPosition ["Konec hlavne", "Memory", "BoundingBox"];
 
-
--remove non airburst HE after trajectory testing
-
 *NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
 *NOTE to self, AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
 *NOTE to self, wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
 
 general:
 -change uav connection script location
--maybe decrease sensor angles
 -fix Static AT laser engaging (how!?)
 
 RC IC:
 -hide seats for RC IC
 -attemt to add commander seat to RC IC
--RC IC if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged
--fix driver view
+-if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged
+-improve driver view (to camera if possible)
 -fix or remove datalink panel
--weaker steering
+-decrease oversteering
 
 RC Respawn Truck (not priority, can be post update):
 -add more versions
@@ -67,25 +73,62 @@ RC Respawn Truck (not priority, can be post update):
 -add respawn script
 
 NLOS FSV:
--impact identicator is off
--widen FOV
--remove gunner&commander
+-remove gunner&commander script
 -find a way to lock seats depending on current seat
+-update NLOS sounds
 
 AR-short:
--script for grain based on distance, and making sure effect is reset when leaving uav 
+-making sure effect is reset when leaving uav
+-remove thermal from AR1 or try to change ppeffect priority
+
+_uav = getConnectedUAV player;
+_viewPos = screenToWorld [0.5, 0.5];
+_uavPos = getpos _uav;
+_distance = _viewPos distance _uavPos;
+hintSilent format ["distance: %1", _distance];
+
+KK_fnc_trueZoom = {(([0.5,0.5] distance2D  worldToScreen positionCameraToWorld [0,3,4]) * (getResolution select 5) / 2)};
+
+while {true} do
+{ 
+	_uavPos = getpos (getConnectedUAV player);
+	_playerPos = getpos player;
+	_viewPos = screenToWorld [0.5, 0.5];
+	
+	//_playerDistance = _uavPos distance _playerPos;
+	//_viewDistance = _uavPos distance _viewPos;
+	_viewDistance = _playerPos distance _viewPos;  
+	
+	_zoomBlur = (round (call KK_fnc_trueZoom * 10) / 10)*0.04;
+	//_connection = 1+(_distance * 0.0008)^5;
+	//_connectionBlur = 1;
+	_viewBlur = 1;
+	//if (_playerDistance >= 1000) then {_connectionBlur = 1+((_playerDistance-1000) * 0.005)^4};
+	if (_viewDistance >= 1000) then {_viewBlur = 1+((_viewDistance-1000) * 0.0035)^4};
+	//_finalBlur = 1;
+	_finalBlur = 0.1 * _viewBlur * _zoomBlur;
+	//hintSilent format ["distance: %1", _distance];
+	hintSilent format ["blur: %1", _finalBlur];
+	
+	
+	_blur = ppEffectCreate ["dynamicBlur", 401];
+	_blur ppEffectEnable true;
+	_blur ppEffectAdjust [_finalBlur];
+	_blur ppEffectCommit 0;
+};
+
 
 
 TO DO - QUALITY OF LIFE:
 
 -only disable driver = 4, for modularity
--turret azimuth lock hotkey, for when changing EL on uneven ground throws it off
+-maybe turret azimuth lock hotkey, for when changing EL on uneven ground throws it off
 
--markers showing up on datalink panel, to be lockable for gps guidance?
 -get missle feed panel to connect to missle
 
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
--aiAmmoUsageFlags https://community.bistudio.com/wiki/CfgAmmo_Config_Reference#aiAmmoUsageFlags
+
+
 
 
 IDEAS - FAR FUTURE:
@@ -147,7 +190,6 @@ DONE - FEATURES:
 -if charge is correct for target distance, turn green
 -if azimuth correct, turret elevation correct "ready to fire"
 -warning if camera is pointed not at sky
--explain target marker referencing to current subscribers
 
 (new)
 -ammunition naming improvements
@@ -174,7 +216,6 @@ DONE - FEATURES:
 -enabled NLOS for locking ATGM
 -tweaked AT mine spread
 -reworked 120mm, 155mm, 227mm Airburst, to truly explode before impact (instead of being reset 20meters after impact)
--decided to not use reworked Airburst for 82mm as it can cause fatal explosion when camera is obstructed and not able to point in sky
 -minor change to howitzer max gun elevation for it be able to shoot closer during compound defense
 -added RC RespawnTruck & correct driver camera screen with filter
 -reworked Laser Guided 2m Delayed Fuse
@@ -191,6 +232,9 @@ DONE - FEATURES:
 -fixed Airburst
 -added AR1/AR3 backpacks
 -improved mine spread
+-improved the FOV of N/LOS FSV, and improved its muzzle smoke effect
+-added muzzle height estimation formula in the script
+-added ammo usage flags for ai
 
 
 DONE - QUALITY OF LIFE:

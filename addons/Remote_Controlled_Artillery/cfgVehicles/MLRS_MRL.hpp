@@ -191,13 +191,15 @@ class RC_MLRS_A: RC_MLRS_NA_A
 			stabilizedInAxes=3;
 			weapons[]=
 			{
-				"RC_rockets_230mm_GAT"
+				"RC_rockets_230mm_GAT",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
 				"RC_6Rnd_230mm_rockets_HEAB",
 				"RC_4Rnd_230mm_rockets_MultiGuided",
-				"RC_2Rnd_230mm_rockets_cluster"
+				"RC_2Rnd_230mm_rockets_cluster",
+				"SmokeLauncherMag"
 			};
 			class OpticsIn: OpticsIn
 			{
@@ -230,13 +232,15 @@ class RC_MLRS_WD: RC_MLRS_NA_WD
 			stabilizedInAxes=3;
 			weapons[]=
 			{
-				"RC_rockets_230mm_GAT"
+				"RC_rockets_230mm_GAT",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
 				"RC_6Rnd_230mm_rockets_HEAB",
 				"RC_4Rnd_230mm_rockets_MultiGuided",
-				"RC_2Rnd_230mm_rockets_cluster"
+				"RC_2Rnd_230mm_rockets_cluster",
+				"SmokeLauncherMag"
 			};
 			class OpticsIn: OpticsIn
 			{
@@ -466,13 +470,15 @@ class RC_MRL_DIG: RC_MRL_NA_DIG
 
 			weapons[]=
 			{
-				"RC_rockets_230mm_GAT"
+				"RC_rockets_230mm_GAT",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
 				"RC_6Rnd_230mm_rockets_HEAB",
 				"RC_4Rnd_230mm_rockets_MultiGuided",
-				"RC_2Rnd_230mm_rockets_cluster"
+				"RC_2Rnd_230mm_rockets_cluster",
+				"SmokeLauncherMag"
 			};
 			class OpticsIn: OpticsIn
 			{
@@ -506,13 +512,15 @@ class RC_MRL_WD: RC_MRL_NA_WD
 
 			weapons[]=
 			{
-				"RC_rockets_230mm_GAT"
+				"RC_rockets_230mm_GAT",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
 				"RC_6Rnd_230mm_rockets_HEAB",
 				"RC_4Rnd_230mm_rockets_MultiGuided",
-				"RC_2Rnd_230mm_rockets_cluster"
+				"RC_2Rnd_230mm_rockets_cluster",
+				"SmokeLauncherMag"
 			};
 			class OpticsIn: OpticsIn
 			{
