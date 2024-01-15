@@ -243,6 +243,8 @@ DONE - FEATURES:
 -added ammo usage flags for ai
 -fixed sound and effects for new artillery ammunition
 -added ground dust effect for airburst
+-added LOS FSV
+-added Datalink Guided Missles for LOS FSV
 
 
 DONE - QUALITY OF LIFE:
