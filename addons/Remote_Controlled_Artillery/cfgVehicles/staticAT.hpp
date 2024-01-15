@@ -156,10 +156,10 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 			};
 			magazines[]=
 			{
-				"RC_1Rnd_MT_missiles",
-				"RC_1Rnd_MT_missiles",
-				"RC_1Rnd_MT_missiles",
-				"RC_1Rnd_MT_missiles"
+				"RC_1Rnd_MP_missiles",
+				"RC_1Rnd_MP_missiles",
+				"RC_1Rnd_MP_missiles",
+				"RC_1Rnd_MP_missiles"
 			};
 			class ViewOptics: ViewOptics
 			{

@@ -57,6 +57,7 @@ class Improved_FOV_Laserdesignator_Ti_Woodland: Improved_FOV_Laserdesignator_Ti_
 };
 
 
+//attemted Datalink Designator, but this likely has to be done per script instead, as sensor components are likely only for cfgvehicles not cfgweapons
 /*
 class Datalink_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
 {
@@ -222,7 +223,7 @@ class RC_ATGM: launch_Vorona_base_F
 	autoReload=1;	
 	magazines[]=
 	{
-		"RC_1Rnd_ATGM_MT"
+		"RC_1Rnd_ATGM_MP"
 	};
 };
 
@@ -237,7 +238,7 @@ class RC_missiles_titan_static: missiles_titan_static
 	magazineReloadTime=7;
 	magazines[]=
 	{
-		"RC_1Rnd_MT_missiles",
+		"RC_1Rnd_MP_missiles",
 	};
 };
 
@@ -377,6 +378,7 @@ class RC_mortar_82mm_V1: mortar_82mm_base
 		"RC_39Rnd_82mm_Mo_MultiGuided",
 		"RC_40Rnd_82mm_Mo_MultiGuided",
 
+		/*
 		"RC_1Rnd_82mm_Mo_LG",
 		"RC_2Rnd_82mm_Mo_LG",
 		"RC_3Rnd_82mm_Mo_LG",
@@ -417,7 +419,9 @@ class RC_mortar_82mm_V1: mortar_82mm_base
 		"RC_38Rnd_82mm_Mo_LG",
 		"RC_39Rnd_82mm_Mo_LG",
 		"RC_40Rnd_82mm_Mo_LG",
+		*/
 
+		/*
 		"RC_1Rnd_82mm_Mo_guided",
 		"RC_2Rnd_82mm_Mo_guided",
 		"RC_3Rnd_82mm_Mo_guided",
@@ -458,6 +462,7 @@ class RC_mortar_82mm_V1: mortar_82mm_base
 		"RC_38Rnd_82mm_Mo_guided",
 		"RC_39Rnd_82mm_Mo_guided",
 		"RC_40Rnd_82mm_Mo_guided",
+		*/
 
 		"RC_1Rnd_82mm_Mo_mine",
 		"RC_2Rnd_82mm_Mo_mine",
@@ -582,6 +587,47 @@ class RC_mortar_82mm_V1: mortar_82mm_base
 		"RC_39Rnd_82mm_Mo_Flare_white",
 		"RC_40Rnd_82mm_Mo_Flare_white",
 
+		"RC_1Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_2Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_3Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_4Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_5Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_6Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_7Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_8Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_9Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_10Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_11Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_12Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_13Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_14Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_15Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_16Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_17Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_18Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_19Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_20Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_21Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_22Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_23Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_24Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_25Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_26Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_27Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_28Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_29Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_30Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_31Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_32Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_33Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_34Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_35Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_36Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_37Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_38Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_39Rnd_82mm_Mo_LG_DelayedFuse",
+		"RC_40Rnd_82mm_Mo_LG_DelayedFuse",
+
 		"RC_1Rnd_82mm_Mo_HEAB_low",
 		"RC_2Rnd_82mm_Mo_HEAB_low",
 		"RC_3Rnd_82mm_Mo_HEAB_low",
@@ -662,48 +708,7 @@ class RC_mortar_82mm_V1: mortar_82mm_base
 		"RC_37Rnd_82mm_Mo_shells",
 		"RC_38Rnd_82mm_Mo_shells",
 		"RC_39Rnd_82mm_Mo_shells",
-		"RC_40Rnd_82mm_Mo_shells",
-
-		"RC_1Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_2Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_3Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_4Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_5Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_6Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_7Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_8Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_9Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_10Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_11Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_12Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_13Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_14Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_15Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_16Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_17Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_18Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_19Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_20Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_21Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_22Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_23Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_24Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_25Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_26Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_27Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_28Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_29Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_30Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_31Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_32Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_33Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_34Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_35Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_36Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_37Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_38Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_39Rnd_82mm_Mo_LG_DelayedFuse",
-		"RC_40Rnd_82mm_Mo_LG_DelayedFuse"
+		"RC_40Rnd_82mm_Mo_shells"
 	};
 };
 class RC_mortar_82mm_V2: RC_mortar_82mm_V1
@@ -910,47 +915,48 @@ class RC_ShipCannon_120mm_V1: RC_ShipCannon_120mm_base
 		"RC_ShipCannon_120mm_HE_cluster_shells_x39",
 		"RC_ShipCannon_120mm_HE_cluster_shells_x40",
 
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x1",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x2",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x3",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x4",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x5",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x6",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x7",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x8",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x9",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x10",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x11",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x12",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x13",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x14",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x15",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x16",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x17",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x18",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x19",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x20",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x21",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x22",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x23",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x24",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x25",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x26",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x27",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x28",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x29",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x30",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x31",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x32",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x33",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x34",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x35",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x36",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x37",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x38",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x39",
-		"RC_ShipCannon_120mm_MT_MultiGuided_shells_x40",
+		"RC_ShipCannon_120mm_Multiguided_shells_x1",
+		"RC_ShipCannon_120mm_Multiguided_shells_x2",
+		"RC_ShipCannon_120mm_Multiguided_shells_x3",
+		"RC_ShipCannon_120mm_Multiguided_shells_x4",
+		"RC_ShipCannon_120mm_Multiguided_shells_x5",
+		"RC_ShipCannon_120mm_Multiguided_shells_x6",
+		"RC_ShipCannon_120mm_Multiguided_shells_x7",
+		"RC_ShipCannon_120mm_Multiguided_shells_x8",
+		"RC_ShipCannon_120mm_Multiguided_shells_x9",
+		"RC_ShipCannon_120mm_Multiguided_shells_x10",
+		"RC_ShipCannon_120mm_Multiguided_shells_x11",
+		"RC_ShipCannon_120mm_Multiguided_shells_x12",
+		"RC_ShipCannon_120mm_Multiguided_shells_x13",
+		"RC_ShipCannon_120mm_Multiguided_shells_x14",
+		"RC_ShipCannon_120mm_Multiguided_shells_x15",
+		"RC_ShipCannon_120mm_Multiguided_shells_x16",
+		"RC_ShipCannon_120mm_Multiguided_shells_x17",
+		"RC_ShipCannon_120mm_Multiguided_shells_x18",
+		"RC_ShipCannon_120mm_Multiguided_shells_x19",
+		"RC_ShipCannon_120mm_Multiguided_shells_x20",
+		"RC_ShipCannon_120mm_Multiguided_shells_x21",
+		"RC_ShipCannon_120mm_Multiguided_shells_x22",
+		"RC_ShipCannon_120mm_Multiguided_shells_x23",
+		"RC_ShipCannon_120mm_Multiguided_shells_x24",
+		"RC_ShipCannon_120mm_Multiguided_shells_x25",
+		"RC_ShipCannon_120mm_Multiguided_shells_x26",
+		"RC_ShipCannon_120mm_Multiguided_shells_x27",
+		"RC_ShipCannon_120mm_Multiguided_shells_x28",
+		"RC_ShipCannon_120mm_Multiguided_shells_x29",
+		"RC_ShipCannon_120mm_Multiguided_shells_x30",
+		"RC_ShipCannon_120mm_Multiguided_shells_x31",
+		"RC_ShipCannon_120mm_Multiguided_shells_x32",
+		"RC_ShipCannon_120mm_Multiguided_shells_x33",
+		"RC_ShipCannon_120mm_Multiguided_shells_x34",
+		"RC_ShipCannon_120mm_Multiguided_shells_x35",
+		"RC_ShipCannon_120mm_Multiguided_shells_x36",
+		"RC_ShipCannon_120mm_Multiguided_shells_x37",
+		"RC_ShipCannon_120mm_Multiguided_shells_x38",
+		"RC_ShipCannon_120mm_Multiguided_shells_x39",
+		"RC_ShipCannon_120mm_Multiguided_shells_x40",
 
+		/*
 		"RC_ShipCannon_120mm_HE_LG_shells_x1",
 		"RC_ShipCannon_120mm_HE_LG_shells_x2",
 		"RC_ShipCannon_120mm_HE_LG_shells_x3",
@@ -991,7 +997,9 @@ class RC_ShipCannon_120mm_V1: RC_ShipCannon_120mm_base
 		"RC_ShipCannon_120mm_HE_LG_shells_x38",
 		"RC_ShipCannon_120mm_HE_LG_shells_x39",
 		"RC_ShipCannon_120mm_HE_LG_shells_x40",
+		*/
 
+		/*
 		"RC_ShipCannon_120mm_HE_guided_shells_x1",
 		"RC_ShipCannon_120mm_HE_guided_shells_x2",
 		"RC_ShipCannon_120mm_HE_guided_shells_x3",
@@ -1032,6 +1040,7 @@ class RC_ShipCannon_120mm_V1: RC_ShipCannon_120mm_base
 		"RC_ShipCannon_120mm_HE_guided_shells_x38",
 		"RC_ShipCannon_120mm_HE_guided_shells_x39",
 		"RC_ShipCannon_120mm_HE_guided_shells_x40",
+		*/
 
 		"RC_ShipCannon_120mm_mine_shells_x1",
 		"RC_ShipCannon_120mm_mine_shells_x2",
@@ -1115,88 +1124,6 @@ class RC_ShipCannon_120mm_V1: RC_ShipCannon_120mm_base
 		"RC_ShipCannon_120mm_AT_mine_shells_x39",
 		"RC_ShipCannon_120mm_AT_mine_shells_x40",
 
-		"RC_ShipCannon_120mm_HEAB_low_shells_x1",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x2",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x3",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x4",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x5",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x6",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x7",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x8",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x9",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x10",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x11",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x12",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x13",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x14",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x15",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x16",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x17",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x18",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x19",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x20",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x21",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x22",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x23",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x24",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x25",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x26",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x27",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x28",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x29",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x30",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x31",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x32",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x33",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x34",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x35",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x36",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x37",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x38",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x39",
-		"RC_ShipCannon_120mm_HEAB_low_shells_x40",
-
-		"RC_ShipCannon_120mm_HE_shells_x1",
-		"RC_ShipCannon_120mm_HE_shells_x2",
-		"RC_ShipCannon_120mm_HE_shells_x3",
-		"RC_ShipCannon_120mm_HE_shells_x4",
-		"RC_ShipCannon_120mm_HE_shells_x5",
-		"RC_ShipCannon_120mm_HE_shells_x6",
-		"RC_ShipCannon_120mm_HE_shells_x7",
-		"RC_ShipCannon_120mm_HE_shells_x8",
-		"RC_ShipCannon_120mm_HE_shells_x9",
-		"RC_ShipCannon_120mm_HE_shells_x10",
-		"RC_ShipCannon_120mm_HE_shells_x11",
-		"RC_ShipCannon_120mm_HE_shells_x12",
-		"RC_ShipCannon_120mm_HE_shells_x13",
-		"RC_ShipCannon_120mm_HE_shells_x14",
-		"RC_ShipCannon_120mm_HE_shells_x15",
-		"RC_ShipCannon_120mm_HE_shells_x16",
-		"RC_ShipCannon_120mm_HE_shells_x17",
-		"RC_ShipCannon_120mm_HE_shells_x18",
-		"RC_ShipCannon_120mm_HE_shells_x19",
-		"RC_ShipCannon_120mm_HE_shells_x20",
-		"RC_ShipCannon_120mm_HE_shells_x21",
-		"RC_ShipCannon_120mm_HE_shells_x22",
-		"RC_ShipCannon_120mm_HE_shells_x23",
-		"RC_ShipCannon_120mm_HE_shells_x24",
-		"RC_ShipCannon_120mm_HE_shells_x25",
-		"RC_ShipCannon_120mm_HE_shells_x26",
-		"RC_ShipCannon_120mm_HE_shells_x27",
-		"RC_ShipCannon_120mm_HE_shells_x28",
-		"RC_ShipCannon_120mm_HE_shells_x29",
-		"RC_ShipCannon_120mm_HE_shells_x30",
-		"RC_ShipCannon_120mm_HE_shells_x31",
-		"RC_ShipCannon_120mm_HE_shells_x32",
-		"RC_ShipCannon_120mm_HE_shells_x33",
-		"RC_ShipCannon_120mm_HE_shells_x34",
-		"RC_ShipCannon_120mm_HE_shells_x35",
-		"RC_ShipCannon_120mm_HE_shells_x36",
-		"RC_ShipCannon_120mm_HE_shells_x37",
-		"RC_ShipCannon_120mm_HE_shells_x38",
-		"RC_ShipCannon_120mm_HE_shells_x39",
-		"RC_ShipCannon_120mm_HE_shells_x40",
-
 		"RC_ShipCannon_120mm_Illum_shells_x1",
 		"RC_ShipCannon_120mm_Illum_shells_x2",
 		"RC_ShipCannon_120mm_Illum_shells_x3",
@@ -1277,7 +1204,89 @@ class RC_ShipCannon_120mm_V1: RC_ShipCannon_120mm_base
 		"RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x37",
 		"RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x38",
 		"RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x39",
-		"RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x40"
+		"RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x40",
+
+		"RC_ShipCannon_120mm_HEAB_low_shells_x1",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x2",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x3",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x4",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x5",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x6",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x7",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x8",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x9",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x10",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x11",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x12",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x13",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x14",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x15",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x16",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x17",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x18",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x19",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x20",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x21",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x22",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x23",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x24",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x25",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x26",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x27",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x28",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x29",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x30",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x31",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x32",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x33",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x34",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x35",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x36",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x37",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x38",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x39",
+		"RC_ShipCannon_120mm_HEAB_low_shells_x40",
+
+		"RC_ShipCannon_120mm_HE_shells_x1",
+		"RC_ShipCannon_120mm_HE_shells_x2",
+		"RC_ShipCannon_120mm_HE_shells_x3",
+		"RC_ShipCannon_120mm_HE_shells_x4",
+		"RC_ShipCannon_120mm_HE_shells_x5",
+		"RC_ShipCannon_120mm_HE_shells_x6",
+		"RC_ShipCannon_120mm_HE_shells_x7",
+		"RC_ShipCannon_120mm_HE_shells_x8",
+		"RC_ShipCannon_120mm_HE_shells_x9",
+		"RC_ShipCannon_120mm_HE_shells_x10",
+		"RC_ShipCannon_120mm_HE_shells_x11",
+		"RC_ShipCannon_120mm_HE_shells_x12",
+		"RC_ShipCannon_120mm_HE_shells_x13",
+		"RC_ShipCannon_120mm_HE_shells_x14",
+		"RC_ShipCannon_120mm_HE_shells_x15",
+		"RC_ShipCannon_120mm_HE_shells_x16",
+		"RC_ShipCannon_120mm_HE_shells_x17",
+		"RC_ShipCannon_120mm_HE_shells_x18",
+		"RC_ShipCannon_120mm_HE_shells_x19",
+		"RC_ShipCannon_120mm_HE_shells_x20",
+		"RC_ShipCannon_120mm_HE_shells_x21",
+		"RC_ShipCannon_120mm_HE_shells_x22",
+		"RC_ShipCannon_120mm_HE_shells_x23",
+		"RC_ShipCannon_120mm_HE_shells_x24",
+		"RC_ShipCannon_120mm_HE_shells_x25",
+		"RC_ShipCannon_120mm_HE_shells_x26",
+		"RC_ShipCannon_120mm_HE_shells_x27",
+		"RC_ShipCannon_120mm_HE_shells_x28",
+		"RC_ShipCannon_120mm_HE_shells_x29",
+		"RC_ShipCannon_120mm_HE_shells_x30",
+		"RC_ShipCannon_120mm_HE_shells_x31",
+		"RC_ShipCannon_120mm_HE_shells_x32",
+		"RC_ShipCannon_120mm_HE_shells_x33",
+		"RC_ShipCannon_120mm_HE_shells_x34",
+		"RC_ShipCannon_120mm_HE_shells_x35",
+		"RC_ShipCannon_120mm_HE_shells_x36",
+		"RC_ShipCannon_120mm_HE_shells_x37",
+		"RC_ShipCannon_120mm_HE_shells_x38",
+		"RC_ShipCannon_120mm_HE_shells_x39",
+		"RC_ShipCannon_120mm_HE_shells_x40"
 	};
 };
 class RC_ShipCannon_120mm_V2: RC_ShipCannon_120mm_V1
@@ -1451,18 +1460,18 @@ class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
 		"RC_FSV_120mm_smoke_x11",
 		"RC_FSV_120mm_smoke_x12",
 
-		"RC_FSV_120mm_MT_MultiGuided_x1",
-		"RC_FSV_120mm_MT_MultiGuided_x2",
-		"RC_FSV_120mm_MT_MultiGuided_x3",
-		"RC_FSV_120mm_MT_MultiGuided_x4",
-		"RC_FSV_120mm_MT_MultiGuided_x5",
-		"RC_FSV_120mm_MT_MultiGuided_x6",
-		"RC_FSV_120mm_MT_MultiGuided_x7",
-		"RC_FSV_120mm_MT_MultiGuided_x8",
-		"RC_FSV_120mm_MT_MultiGuided_x9",
-		"RC_FSV_120mm_MT_MultiGuided_x10",
-		"RC_FSV_120mm_MT_MultiGuided_x11",
-		"RC_FSV_120mm_MT_MultiGuided_x12",
+		"RC_FSV_120mm_Multiguided_x1",
+		"RC_FSV_120mm_Multiguided_x2",
+		"RC_FSV_120mm_Multiguided_x3",
+		"RC_FSV_120mm_Multiguided_x4",
+		"RC_FSV_120mm_Multiguided_x5",
+		"RC_FSV_120mm_Multiguided_x6",
+		"RC_FSV_120mm_Multiguided_x7",
+		"RC_FSV_120mm_Multiguided_x8",
+		"RC_FSV_120mm_Multiguided_x9",
+		"RC_FSV_120mm_Multiguided_x10",
+		"RC_FSV_120mm_Multiguided_x11",
+		"RC_FSV_120mm_Multiguided_x12",
 
 		"RC_FSV_120mm_HE_LG_DelayedFuse_x1",
 		"RC_FSV_120mm_HE_LG_DelayedFuse_x2",
@@ -1488,6 +1497,27 @@ class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
 
 	class Single1: Single1
 	{
+		/*
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\slammer_120mm_distant",
+				3.1622777,
+				1,
+				1500
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
+		};
+		*/
 		displayName="CH0"
 		artilleryCharge=0.3845;
 	};
@@ -1521,6 +1551,22 @@ class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
 			directionName="Konec hlavne";
 		};
 	};
+	/*
+	reloadSound[]=
+	{
+		"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\Cannon_120mm_Reload_01",
+		2.5118864,
+		1,
+		10
+	};
+	reloadMagazineSound[]=
+	{
+		"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\Cannon_120mm_Reload_01",
+		2.5118864,
+		1,
+		10
+	};
+	*/
 };
 
 
@@ -1533,9 +1579,9 @@ class RC_cannon_120mm: cannon_120mm
 	{
 		"12Rnd_120mm_APFSDS_shells",
 		"12Rnd_120mm_APFSDS_shells_Tracer_Green",
-		"12Rnd_120mm_MT_T_Green",
-		"4Rnd_120mm_cannon_missiles",
-		"4Rnd_120mm_LG_cannon_missiles"
+		"12Rnd_120mm_MP_T_Green",
+		"16Rnd_120mm_MP_T_Green",
+		"3Rnd_120mm_LG_cannon_missiles"
 	};
 };
 
@@ -1718,6 +1764,7 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 		"RC_39Rnd_155mm_Mo_MultiGuided",
 		"RC_40Rnd_155mm_Mo_MultiGuided",
 
+		/*
 		"RC_1Rnd_155mm_Mo_LG",
 		"RC_2Rnd_155mm_Mo_LG",
 		"RC_3Rnd_155mm_Mo_LG",
@@ -1758,7 +1805,9 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 		"RC_38Rnd_155mm_Mo_LG",
 		"RC_39Rnd_155mm_Mo_LG",
 		"RC_40Rnd_155mm_Mo_LG",
+		*/
 
+		/*
 		"RC_1Rnd_155mm_Mo_guided",
 		"RC_2Rnd_155mm_Mo_guided",
 		"RC_3Rnd_155mm_Mo_guided",
@@ -1799,6 +1848,7 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 		"RC_38Rnd_155mm_Mo_guided",
 		"RC_39Rnd_155mm_Mo_guided",
 		"RC_40Rnd_155mm_Mo_guided",
+		*/
 
 		"RC_1Rnd_155mm_Mo_mine",
 		"RC_2Rnd_155mm_Mo_mine",
@@ -1923,6 +1973,47 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 		"RC_39Rnd_155mm_Mo_Illum",
 		"RC_40Rnd_155mm_Mo_Illum",
 
+		"RC_1Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_2Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_3Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_4Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_5Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_6Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_7Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_8Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_9Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_10Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_11Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_12Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_13Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_14Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_15Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_16Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_17Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_18Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_19Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_20Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_21Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_22Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_23Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_24Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_25Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_26Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_27Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_28Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_29Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_30Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_31Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_32Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_33Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_34Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_35Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_36Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_37Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_38Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_39Rnd_155mm_Mo_LG_DelayedFuse",
+		"RC_40Rnd_155mm_Mo_LG_DelayedFuse",
+
 		"RC_1Rnd_155mm_Mo_HEAB_low",
 		"RC_2Rnd_155mm_Mo_HEAB_low",
 		"RC_3Rnd_155mm_Mo_HEAB_low",
@@ -2003,48 +2094,7 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 		"RC_37Rnd_155mm_Mo_shells",
 		"RC_38Rnd_155mm_Mo_shells",
 		"RC_39Rnd_155mm_Mo_shells",
-		"RC_40Rnd_155mm_Mo_shells",
-
-		"RC_1Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_2Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_3Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_4Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_5Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_6Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_7Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_8Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_9Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_10Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_11Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_12Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_13Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_14Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_15Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_16Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_17Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_18Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_19Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_20Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_21Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_22Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_23Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_24Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_25Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_26Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_27Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_28Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_29Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_30Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_31Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_32Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_33Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_34Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_35Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_36Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_37Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_38Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_39Rnd_155mm_Mo_LG_DelayedFuse",
-		"RC_40Rnd_155mm_Mo_LG_DelayedFuse"
+		"RC_40Rnd_155mm_Mo_shells"
 	};
 };
 class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
@@ -2221,19 +2271,6 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT
 		"RC_11Rnd_230mm_rockets_cluster",
 		"RC_12Rnd_230mm_rockets_cluster",
 
-		"RC_1Rnd_230mm_rockets",
-		"RC_2Rnd_230mm_rockets",
-		"RC_3Rnd_230mm_rockets",
-		"RC_4Rnd_230mm_rockets",
-		"RC_5Rnd_230mm_rockets",
-		"RC_6Rnd_230mm_rockets",
-		"RC_7Rnd_230mm_rockets",
-		"RC_8Rnd_230mm_rockets",
-		"RC_9Rnd_230mm_rockets",
-		"RC_10Rnd_230mm_rockets",
-		"RC_11Rnd_230mm_rockets",
-		"RC_12Rnd_230mm_rockets",
-
 		"RC_1Rnd_230mm_rockets_MultiGuided",
 		"RC_2Rnd_230mm_rockets_MultiGuided",
 		"RC_3Rnd_230mm_rockets_MultiGuided",
@@ -2264,6 +2301,19 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT
 		"RC_2Rnd_604mm_rockets_ATACMS_HEAB",
 
 		"RC_1Rnd_604mm_rockets_ATACMS_DPICM",
-		"RC_2Rnd_604mm_rockets_ATACMS_DPICM"
+		"RC_2Rnd_604mm_rockets_ATACMS_DPICM",
+
+		"RC_1Rnd_230mm_rockets",
+		"RC_2Rnd_230mm_rockets",
+		"RC_3Rnd_230mm_rockets",
+		"RC_4Rnd_230mm_rockets",
+		"RC_5Rnd_230mm_rockets",
+		"RC_6Rnd_230mm_rockets",
+		"RC_7Rnd_230mm_rockets",
+		"RC_8Rnd_230mm_rockets",
+		"RC_9Rnd_230mm_rockets",
+		"RC_10Rnd_230mm_rockets",
+		"RC_11Rnd_230mm_rockets",
+		"RC_12Rnd_230mm_rockets"
 	};
 };

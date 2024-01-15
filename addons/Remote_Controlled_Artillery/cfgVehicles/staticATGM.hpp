@@ -28,10 +28,10 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 			};
 			magazines[]=
 			{
-				"RC_1Rnd_ATGM_MT",
-				"RC_1Rnd_ATGM_MT",
-				"RC_1Rnd_ATGM_MT",
-				"RC_1Rnd_ATGM_MT"
+				"RC_1Rnd_ATGM_MP",
+				"RC_1Rnd_ATGM_MP",
+				"RC_1Rnd_ATGM_MP",
+				"RC_1Rnd_ATGM_MP"
 			};
 		};
 	};

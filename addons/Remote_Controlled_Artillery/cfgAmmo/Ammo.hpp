@@ -231,6 +231,96 @@ class M_120mm_cannon_ATGM_LG: M_120mm_cannon_ATGM
 */
 
 
+class M_120mm_cannon_ATGM_LG;
+class RC_M_120mm_cannon_ATGM_DLG_Base: M_120mm_cannon_ATGM_LG
+{
+	class Components;
+};
+class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
+{
+	weaponLockSystem="2 + 4 + 16";
+	flightProfiles[]=
+	{
+		"TopDown"
+	};
+	class TopDown
+	{
+		ascendHeight=500;	//250
+		descendDistance=400;	//400
+		minDistance=400;	//400
+		ascendAngle=45;	//25
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					maxTrackableSpeed=35;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=1500;
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=3000;
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+	};
+};
+
+
 //groundwork
 class Default;
 class RC_HEAB_Base: Default
@@ -277,7 +367,8 @@ class RC_HEAB_Base: Default
 		1,
 		150
 	};
-	CraterEffects="HEShellCrater";
+	//CraterEffects="HEShellCrater";	//dirt thrown up doesnt fit as its airburst
+	craterEffects="AAMissileCrater";	//dust on ground effect like caused by airburst
 	CraterWaterEffects="ImpactEffectsWaterHE";
 	ExplosionEffects="HEShellExplosion";
 	visibleFire=64;
@@ -341,7 +432,6 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 	deflecting=0;
 	explosive=0.80000001;
 	model="\A3\weapons_f\ammo\shell";
-	CraterEffects="ArtyShellCrater";
 	ExplosionEffects="MortarExplosion";
 	whistleDist=60;
 	thrust=0;
@@ -423,6 +513,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 	explosive=1;
 	aiAmmoUsageFlags="128 + 512";
 	explosionSoundEffect="DefaultExplosion";
+	//ExplosionEffects="MortarExplosion";
+	craterEffects="AAMissileCrater";
 	effectsMissileInit="";
 	muzzleEffect="";
 	simulationStep=0.0020000001;
@@ -459,6 +551,46 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 		0.63095737,
 		1.5,
 		300
+	};
+
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_03",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_04",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
 	};
 
 	class Components: Components
@@ -549,7 +681,7 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 class SubmunitionBase;
 class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 {
-	submunitionCount=1;		//2
+	submunitionCount=1;
 	submunitionConeAngle=0;
 
 	aiAmmoUsageFlags="128 + 512";
@@ -559,7 +691,6 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
 	canLock=2;	//supposedly only cfg weapons not ammo
-
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;	//would allows for sensor-recon shots, to then datalink lock with second shot, doesnt work yet, maybe cfgvic only
 
@@ -568,6 +699,48 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 
 	muzzleEffect="";
 	airFriction=0;
+	//ExplosionEffects="MortarExplosion";
+	craterEffects="AAMissileCrater";
+
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_03",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_04",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
 };
 
 
@@ -577,7 +750,7 @@ class RC_Sh_82mm_AMOS_submunition: Sh_82mm_AMOS
 {
 	explosionTime=0.001;
 	explosive=1;
-	CraterEffects="";
+	craterEffects="AAMissileCrater";
 };
 class RC_82mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 {
@@ -859,7 +1032,6 @@ class RC_M_Mo_82mm_LG_DelayedFuse_Submunition: RC_82mm_MP_MultiGuided_Submunitio
 	submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact, acting as delayed fuse against bunkers
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_82mm_AMOS_delayed_submunition";
-	CraterEffects="";
 	indirectHit=0;
 	indirectHitRange=0;
 };
@@ -892,7 +1064,7 @@ class RC_Sh_120mm_AMOS_submunition: Sh_155mm_AMOS
 	cost=250;
 	explosionTime=0.001;
 	explosive=1;
-	CraterEffects="";	//removes ground impact animation
+	craterEffects="AAMissileCrater";
 };
 class RC_120mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 {
@@ -1050,7 +1222,8 @@ class RC_Sh_120mm_MP_T_Green: Sh_120mm_HEAT_MP
 {
 	aiAmmoUsageFlags="64 + 128 + 512";
 	hit=95;
-	warheadName="HE";
+	warheadName="TandemHEAT";
+	//warheadName="HE";
 	submunitionAmmo="RC_ammo_Penetrator_120mm";
 	indirectHit=50;
 	indirectHitRange=10;
@@ -1058,6 +1231,7 @@ class RC_Sh_120mm_MP_T_Green: Sh_120mm_HEAT_MP
 	//suppressionRadiusHit=32;
 	//deflecting=8;
 	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";
+	craterEffects="AAMissileCrater";
 };
 
 
@@ -1096,8 +1270,6 @@ class Flare_155mm_AMOS_White: SubmunitionBase
 	whistleDist=0;
 	aimAboveDefault=2;
 	aimAboveTarget[]={500,500,500};		//triggers when past half the trajectory aka descending while at this height above ground
-	//aimAboveDefault=3;
-	//aimAboveTarget[]={360,400,500,640,720,800,850};
 };
 
 
@@ -1109,11 +1281,7 @@ class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
 	submunitionConeAngle=12;
 	submunitionConeType[]=
 	{
-		//"custom", {{0,0.5774},{0.5,-0.2887},{-0.5,-0.2887}  ,  {0,1.1547},{1,-0.5774},{-1,-0.5774}  ,  {0,1.7321},{1.5,-0.866},{-1.5,-0.866}  ,  {0,2.3094},{2,-1.1547},{-2,-1.1547}  ,  {0,2.8868},{2.5,-1.4434},{-2.5,-1.4434}  ,  {0,3.4641},{3,-1.7321},{-3,-1.7321}};
-		//"custom", {{0.9511,0.309},{0.809,0.5878},{0.5878,0.809},{0.309,0.9511},{0,1}  ,  {-0.9511,0.309},{-0.809,0.5878},{-0.5878,0.809},{-0.309,0.9511},{-1,0}  ,  {0.9511,-0.309},{0.809,-0.5878},{0.5878,-0.809},{0.309,-0.9511},{0,-1}  ,  {-0.9511,-0.309},{-0.809,-0.5878},{-0.5878,-0.809},{-0.309,-0.9511},{1,0}};
 		"custom", {{0.95,0.31},{0.81,0.59},{0.59,0.81},{0.31,0.95},{0,1}  ,  {-0.95,0.31},{-0.81,0.59},{-0.59,0.81},{-0.31,0.95},{-1,0}  ,  {0.95,-0.31},{0.81,-0.59},{0.59,-0.81},{0.31,-0.95},{0,-1}  ,  {-0.95,-0.31},{-0.81,-0.59},{-0.59,-0.81},{-0.31,-0.95},{1,0}};
-		//"poissondisc",
-		//24
 	};
 };
 
@@ -1122,17 +1290,10 @@ class AT_Mine_155mm_AMOS_range;
 class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
 {
 	aiAmmoUsageFlags=16;
-	submunitionConeAngle=12;	//15
+	submunitionConeAngle=12;
 	submunitionConeType[]=
 	{
 		"custom", {{0.9511,0.309},{0.809,0.5878},{0.5878,0.809},{0.309,0.9511},{0,1}  ,  {-0.9511,0.309},{-0.809,0.5878},{-0.5878,0.809},{-0.309,0.9511},{-1,0}  ,  {0.9511,-0.309},{0.809,-0.5878},{0.5878,-0.809},{0.309,-0.9511},{0,-1}  ,  {-0.9511,-0.309},{-0.809,-0.5878},{-0.5878,-0.809},{-0.309,-0.9511},{1,0}};
-		//cross		"custom", {{-0.25,0},{-0.5,0},{-0.75,0},{-1,0} , {0.25,0},{0.5,0},{0.75,0},{1,0} , {0,-0.25},{0,-0.5},{0,-0.75},{0,-1} , {0,0.25},{0,0.5},{0,0.75},{0,1}};
-		//O12		"custom", {{1,4},{3,3},{4,1} , {1,-4},{3,-3},{4,-1} , {-1,-4},{-3,-3},{-4,-1} , {-1,4},{-3,3},{-4,1}};
-		//failed MultiPentaGramAttemt "custom", {{0.9511,0.309},{-0.809,0.5878},{-0.809,0.5878},{0.309,-0.9511},{1,0}  ,  {1.822,0.618},{-1.618,1.1756},{-1.618,1.1756},{0.618,-1.9022},{2,0}  ,  {2.8533,-0.927},{2.427,-1.7634},{1.7634,-2.427},{0.927,-2.8533},{0,-3}  ,  {-3.8044,-1.236},{-3.236,-2.3512},{-2.3512,-3.236},{-1.236,-3.8044},{4,0}};
-		//"poissondisc",	//"custom",{{-5,0},{-3,0},{-1,0},{1,0},{3,0},{5,0} , {0,-5},{0,-3},{0,-1},{0,1},{0,3},{0,5}};
-		//12
-		//submunitionConeAngle=4;
-		//Triangle18 "custom", {{0,0.5774},{0.5,-0.2887},{-0.5,-0.2887}  ,  {0,1.1547},{1,-0.5774},{-1,-0.5774}  ,  {0,1.7321},{1.5,-0.866},{-1.5,-0.866}  ,  {0,2.3094},{2,-1.1547},{-2,-1.1547}  ,  {0,2.8868},{2.5,-1.4434},{-2.5,-1.4434}  ,  {0,3.4641},{3,-1.7321},{-3,-1.7321}};
 	};
 };
 
@@ -1154,7 +1315,7 @@ class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 {
 	explosionTime=0.001;
 	explosive=1;
-	CraterEffects="";	//removes ground impact animation
+	craterEffects="AAMissileCrater";
 };
 class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 {
@@ -1308,7 +1469,6 @@ class RC_M_Mo_155mm_LG_DelayedFuse_submunition: RC_155mm_MP_MultiGuided_Submunit
 	submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact, acting as delayed fuse against bunkers
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_155mm_AMOS_delayed_submunition";
-	CraterEffects="";
 	indirectHit=0;
 	indirectHitRange=0;
 };
@@ -1324,23 +1484,13 @@ class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 {
 	explosionTime=0.001;
 	explosive=1;
-	//CraterEffects="";
 	craterEffects="HeavyBombCrater";
 	explosionEffects="HeavyBombExplosion";
-	soundSetExplosion[]=
-	{
-		"BombsHeavy_Exp_SoundSet",
-		"BombsHeavy_Tail_SoundSet",
-		"Explosion_Debris_SoundSet"
-	};
 };
 class RC_HEAB_Rocket_Base: RC_HEAB_Base
 {
 	//typicalSpeed=800;
-	//caliber=10;
 	//explosive=0.80000001;
-	//CraterEffects="ArtyShellCrater";
-	//ExplosionEffects="MortarExplosion";
 	//whistleDist=60;
 	//thrust=0;
 	caliber=34;
@@ -1395,14 +1545,17 @@ class RC_HEAB_Rocket_Base: RC_HEAB_Base
 };
 class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 {
+	//craterEffects="BombCrater";
 	craterEffects="HeavyBombCrater";
 	explosionEffects="HeavyBombExplosion";
+	/*
 	soundSetExplosion[]=
 	{
 		"BombsHeavy_Exp_SoundSet",
 		"BombsHeavy_Tail_SoundSet",
 		"Explosion_Debris_SoundSet"
 	};
+	*/
 	hit=300;	//defines recoil, needs to be this low, indirecthit defines damage
 	indirectHit=800;
 	indirectHitRange=30;
@@ -1434,6 +1587,43 @@ class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 		duration=0.1;
 		frequency=20;
 		distance=1;
+	};
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.34,
+		"soundHit2",
+		0.33000001,
+		"soundHit3",
+		0.33000001
+	};
+	soundFly[]=
+	{
+		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
+		0.56234133,
+		1.9,
+		500
 	};
 };
 class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
@@ -1472,14 +1662,8 @@ class RC_230mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 	effectFly="Missile0";
 	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
 	//effectFly="ArtilleryTrails";
-	craterEffects="HeavyBombCrater";
+	craterEffects="BombCrater";
 	explosionEffects="HeavyBombExplosion";
-	soundSetExplosion[]=
-	{
-		"BombsHeavy_Exp_SoundSet",
-		"BombsHeavy_Tail_SoundSet",
-		"Explosion_Debris_SoundSet"
-	};
 	submunitionAmmo="ammo_Penetrator_230mm_MP";
 	indirectHit=400;
 	indirectHitRange=15;
@@ -1513,6 +1697,36 @@ class RC_230mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 		frequency=20;
 		distance=1;
 	};
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.34,
+		"soundHit2",
+		0.33000001,
+		"soundHit3",
+		0.33000001
+	};
 	soundFly[]=
 	{
 		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
@@ -1526,14 +1740,8 @@ class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	submunitionAmmo="RC_230mm_MP_MultiGuided_Submunition";
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
-	craterEffects="HeavyBombCrater";
+	craterEffects="BombCrater";
 	explosionEffects="HeavyBombExplosion";
-	soundSetExplosion[]=
-	{
-		"BombsHeavy_Exp_SoundSet",
-		"BombsHeavy_Tail_SoundSet",
-		"Explosion_Debris_SoundSet"
-	};
 	triggerDistance=800;
 	hit=300;
 	cost=1000;
@@ -1565,6 +1773,36 @@ class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 		duration=0.1;
 		frequency=20;
 		distance=1;
+	};
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.34,
+		"soundHit2",
+		0.33000001,
+		"soundHit3",
+		0.33000001
 	};
 	soundFly[]=
 	{

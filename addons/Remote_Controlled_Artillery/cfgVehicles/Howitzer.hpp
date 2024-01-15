@@ -737,7 +737,7 @@ class RC_Static_Arty: RC_Static_NA_Arty
 			{
 				"RC_ShipCannon_120mm_HEAB_shells_x12",
 				"RC_ShipCannon_120mm_smoke_shells_x12",
-				"RC_ShipCannon_120mm_MT_MultiGuided_shells_x6",
+				"RC_ShipCannon_120mm_Multiguided_shells_x6",
 				"RC_ShipCannon_120mm_HE_cluster_shells_x2",
 				"RC_ShipCannon_120mm_AT_mine_shells_x8",
 				"RC_ShipCannon_120mm_mine_shells_x6",
@@ -822,7 +822,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this};";
+		init="(_this select 0) spawn {if (local _this) then waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this};";
 	};
 
 	displayName="N/LOS FSV";
@@ -901,27 +901,6 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 		};
 	};
 
-	/*
-	class AnimationSources: AnimationSources
-	{
-		class showCamonetTurret: showCamonetTurret
-		{
-			initPhase=1;
-		};
-		class showCamonetCannon: showCamonetCannon
-		{
-			initPhase=1;
-		};
-		class showCamonetHull: showCamonetHull
-		{
-			initPhase=1;
-		};
-		class showSLATHull: showSLATHull
-		{
-			initPhase=1;
-		};
-	};
-	*/
 	animationList[]=
 	{
 		"showCamonetHull",
@@ -964,10 +943,10 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			magazines[]=
 			{
 				"RC_FSV_120mm_HEAB_x12",
-				"RC_FSV_120mm_MT_MultiGuided_x6",
+				"RC_FSV_120mm_Multiguided_x6",
 				"RC_FSV_120mm_smoke_x12",
 				"12Rnd_120mm_APFSDS_shells_Tracer_Green",
-				"12Rnd_120mm_MT_T_Green",
+				"12Rnd_120mm_MP_T_Green",
 				"200Rnd_762x51_Belt_Green",
 				"200Rnd_762x51_Belt_Green",
 				"200Rnd_762x51_Belt_Green",
@@ -1131,6 +1110,86 @@ class RC_NLOS_FSV_WD_O: RC_NLOS_FSV_WD
 	side=0;
 };
 class RC_NLOS_FSV_WD_I: RC_NLOS_FSV_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_LOS_FSV_A: RC_NLOS_FSV_A
+{
+	isRCArty=0;
+	displayName="LOS FSV";
+	faction="RemoteControlled_B";
+	editorSubcategory="RC_Howitzer_subcat";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_cannon_120mm",
+				"LMG_coax",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"12Rnd_120mm_APFSDS_shells_Tracer_Green",
+				"16Rnd_120mm_MP_T_Green",
+				"3Rnd_120mm_DLG_cannon_missiles",
+				"200Rnd_762x51_Belt_Green",
+				"200Rnd_762x51_Belt_Green",
+				"200Rnd_762x51_Belt_Green",
+				"200Rnd_762x51_Belt_Green",
+				"SmokeLauncherMag"
+			};
+		};
+	};
+};
+class RC_LOS_FSV_A_O: RC_LOS_FSV_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_LOS_FSV_A_I: RC_LOS_FSV_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_LOS_FSV_WD: RC_LOS_FSV_A
+{
+	editorPreview="\A3\EditorPreviews_F_Tank\Data\CfgVehicles\B_T_AFV_Wheeled_01_up_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_EXT1_green_CO.paa",
+		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_EXT2_green_CO.paa",
+		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_wheel_green_CO.paa",
+		"A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_CO.paa",
+		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_commander_tow_CO.paa",
+		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+		"A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_CO.paa"
+	};
+	textureList[]=
+	{
+		"Green",
+		1,
+		"Sand",
+		0
+	};
+};
+class RC_LOS_FSV_WD_O: RC_LOS_FSV_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_LOS_FSV_WD_I: RC_LOS_FSV_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

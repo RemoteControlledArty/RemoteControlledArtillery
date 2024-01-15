@@ -22,8 +22,11 @@ documentation:
 -add new assets to cfg patches list
 -add incomingMissileDetectionSystem = 16;
 -add showAllTargets = 4; //LockLaser, show only targets from laser spot tracker (laserScanner); since Arma 3 1.60
+-FSV category and hpp
 
 arty:
+-reduce AI Burst amound
+
 -test passive radar against AA
 -recon radar mortar carrier composition
 -double check LaserDatalink code
@@ -31,13 +34,15 @@ arty:
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
+-increase precision of 227mm guided when engaging laser
+-warheadName HE/TandemHEAT ?
 -remove non airburst HE after trajectory testing
 -low/high trajectory list:
 	low: HEAB, Guided, Illum
 	low top down: Guided
-	high: Cluster, Smoke, Mines, Illum
+	high: Cluster, Smoke, AT/AP Mines, Illum
 
--report arty map markers to datalink, to lock for gps guidance, maybe if "gps" is written in the marker name? RC_O_InvisibleDatalinkTarget works
+-report arty map markers to datalink, to lock for gps guidance, maybe if "gps" is written in the marker name? RC_O_InvisibleDatalinkTarget works, maybe add eventhandler for datalink reporting to it
 _laser = laserTarget player;
 _targetSolider = "RC_I_InvisibleDatalinkTarget" createVehicle getpos _laser;
 side player reportRemoteTarget [_targetSolider, 40];
@@ -133,6 +138,7 @@ TO DO - QUALITY OF LIFE:
 
 IDEAS - FAR FUTURE:
 
+-AR-0.5 and AL-7 for pvp, with 1.5 zoom to force low flying, shortrange sensors, no thermal, but laser designator
 -RC Marid with upgraded engines 7.62x51 and smoke GL
 
 -direct fire firing solution (camera viewpoint)
@@ -235,6 +241,8 @@ DONE - FEATURES:
 -improved the FOV of N/LOS FSV, and improved its muzzle smoke effect
 -added muzzle height estimation formula in the script
 -added ammo usage flags for ai
+-fixed sound and effects for new artillery ammunition
+-added ground dust effect for airburst
 
 
 DONE - QUALITY OF LIFE:

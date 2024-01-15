@@ -183,6 +183,9 @@ class CfgPatches
 			RC_UAV_AR1,
 			RC_UAV_AR3,
 
+			RC_UAV_AR1_Bag,
+			RC_UAV_AR3_Bag,
+
 			RC_Infantry_Carrier_A,
 			RC_Infantry_Carrier_WD,
 
@@ -200,19 +203,26 @@ class CfgPatches
 			Improved_FOV_Laserdesignator_Woodland,
 			Improved_FOV_Laserdesignator_Ti_Arid,
 			Improved_FOV_Laserdesignator_Ti_Woodland,
+
 			RC_ATGM,
+
 			RC_mortar_82mm_V1,
 			RC_mortar_82mm_V2,
 			RC_mortar_82mm_V3,
 			RC_mortar_82mm_V4,
+
 			RC_ShipCannon_120mm_V1,
 			RC_ShipCannon_120mm_V2,
 			RC_ShipCannon_120mm_V3,
 			RC_ShipCannon_120mm_V4,
+
+			RC_FSV_120mm_V5,
+
 			RC_155mm_AMOS_V1,
 			RC_155mm_AMOS_V2,
 			RC_155mm_AMOS_V3,
 			RC_155mm_AMOS_V4,
+			
 			RC_rockets_230mm_GAT
 		};
 
@@ -223,12 +233,12 @@ class CfgPatches
 			"A3_Armor_F",
 			"A3_Armor_F_Beta",
 			"A3_Armor_F_Tank",
-			"A3_Weapons_F_Tank",
 			"A3_Static_F",
 			"A3_Static_F_Destroyer",
 			"A3_Weapons_F",
 			"A3_Weapons_F_Destroyer",
 			"A3_Weapons_F_Exp",
+			"A3_Weapons_F_Tank",
 			"cba_main"
 		};
 	};

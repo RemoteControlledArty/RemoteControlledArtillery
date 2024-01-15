@@ -2006,166 +2006,166 @@ class RC_ShipCannon_120mm_HEAB_shells_x40: RC_ShipCannon_120mm_HEAB_shells_x1
 
 
 class magazine_ShipCannon_120mm_HE_LG_shells_x2;
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x1: magazine_ShipCannon_120mm_HE_LG_shells_x2
+class RC_ShipCannon_120mm_Multiguided_shells_x1: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_MP_MultiGuided";
 	displayName="MP MultiGuided";
 	displayNameShort="MP MultiGuided";
 	count=1;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x2: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x2: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=2;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x3: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x3: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=3;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x4: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x4: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=4;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x5: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x5: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=5;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x6: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x6: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=6;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x7: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x7: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=7;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x8: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x8: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=8;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x9: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x9: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=9;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x10: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x10: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=10;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x11: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x11: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=11;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x12: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x12: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=12;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x13: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x13: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=13;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x14: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x14: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=14;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x15: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x15: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=15;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x16: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x16: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=16;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x17: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x17: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=17;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x18: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x18: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=18;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x19: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x19: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=19;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x20: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x20: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=20;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x21: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x21: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=21;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x22: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x22: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=22;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x23: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x23: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=23;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x24: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x24: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=24;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x25: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x25: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=25;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x26: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x26: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=26;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x27: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x27: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=27;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x28: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x28: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=28;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x29: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x29: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=29;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x30: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x30: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=30;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x31: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x31: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=31;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x32: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x32: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=32;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x33: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x33: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=33;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x34: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x34: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=34;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x35: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x35: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=35;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x36: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x36: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=36;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x37: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x37: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=37;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x38: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x38: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=38;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x39: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x39: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=39;
 };
-class RC_ShipCannon_120mm_MP_MultiGuided_shells_x40: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_ShipCannon_120mm_Multiguided_shells_x40: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	count=40;
 };
@@ -3880,51 +3880,51 @@ class RC_FSV_120mm_HEAB_x12: RC_FSV_120mm_HEAB_x1
 };
 
 
-class RC_FSV_120mm_MP_MultiGuided_x1: RC_ShipCannon_120mm_MP_MultiGuided_shells_x1
+class RC_FSV_120mm_Multiguided_x1: RC_ShipCannon_120mm_Multiguided_shells_x1
 {
 	initSpeed=310;
 };
-class RC_FSV_120mm_MP_MultiGuided_x2: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x2: RC_FSV_120mm_Multiguided_x1
 {
 	count=2;
 };
-class RC_FSV_120mm_MP_MultiGuided_x3: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x3: RC_FSV_120mm_Multiguided_x1
 {
 	count=3;
 };
-class RC_FSV_120mm_MP_MultiGuided_x4: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x4: RC_FSV_120mm_Multiguided_x1
 {
 	count=4;
 };
-class RC_FSV_120mm_MP_MultiGuided_x5: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x5: RC_FSV_120mm_Multiguided_x1
 {
 	count=5;
 };
-class RC_FSV_120mm_MP_MultiGuided_x6: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x6: RC_FSV_120mm_Multiguided_x1
 {
 	count=6;
 };
-class RC_FSV_120mm_MP_MultiGuided_x7: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x7: RC_FSV_120mm_Multiguided_x1
 {
 	count=7;
 };
-class RC_FSV_120mm_MP_MultiGuided_x8: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x8: RC_FSV_120mm_Multiguided_x1
 {
 	count=8;
 };
-class RC_FSV_120mm_MP_MultiGuided_x9: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x9: RC_FSV_120mm_Multiguided_x1
 {
 	count=9;
 };
-class RC_FSV_120mm_MP_MultiGuided_x10: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x10: RC_FSV_120mm_Multiguided_x1
 {
 	count=10;
 };
-class RC_FSV_120mm_MP_MultiGuided_x11: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x11: RC_FSV_120mm_Multiguided_x1
 {
 	count=11;
 };
-class RC_FSV_120mm_MP_MultiGuided_x12: RC_FSV_120mm_MP_MultiGuided_x1
+class RC_FSV_120mm_Multiguided_x12: RC_FSV_120mm_Multiguided_x1
 {
 	count=12;
 };
@@ -4038,6 +4038,20 @@ class 12Rnd_120mm_MP_T_Green: 8Rnd_120mm_HEAT_MP_T_Green
 	displayName="MP-T";
 	displayNameShort="MP-T";
 	count=12;
+};
+class 16Rnd_120mm_MP_T_Green: 12Rnd_120mm_MP_T_Green
+{
+	count=16;
+};
+
+
+class 4Rnd_120mm_LG_cannon_missiles;
+class 3Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
+{
+	displayName="Datalink Guided";
+	displayNameShort="DL Guided";
+	ammo="RC_M_120mm_cannon_ATGM_DLG";
+	count=3;
 };
 
 
