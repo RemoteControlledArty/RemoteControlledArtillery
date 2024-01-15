@@ -1581,7 +1581,7 @@ class RC_cannon_120mm: cannon_120mm
 		"12Rnd_120mm_APFSDS_shells_Tracer_Green",
 		"12Rnd_120mm_MP_T_Green",
 		"16Rnd_120mm_MP_T_Green",
-		"3Rnd_120mm_LG_cannon_missiles"
+		"3Rnd_120mm_DLG_cannon_missiles"
 	};
 };
 
