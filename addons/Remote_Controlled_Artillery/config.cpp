@@ -410,6 +410,126 @@ class CfgAmmo
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmo\Ammo.hpp"
 };
+class CfgCloudlets
+{
+	#include "\Remote_Controlled_Artillery\effects\cfgCloudlets.hpp"
+};
+class CfgLights
+{
+	#include "\Remote_Controlled_Artillery\effects\cfgLights.hpp"
+};
+class RC_ArtyShellCrater
+{
+	class MissileCircleDust
+	{
+		simulation="particles";
+		type="RC_CircleDustBig";
+		enabled="distToWater interpolate [0.0,0.01,-1,1]";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.25;
+	};
+};
+class RC_82mmAirburstCrater
+{
+	class MissileCircleDust
+	{
+		simulation="particles";
+		type="RC_155mmCircleDust";
+		enabled="distToWater interpolate [0.05,0.06,-1,1]";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;	//0.2
+	};
+	class CircleDust
+	{
+		simulation="particles";
+		type="RC_155mmCircleDust";
+		enabled="distToWater interpolate [0.05,0.06,-1,1]";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;	//0.2
+	};
+};
+class RC_120mmAirburstCrater
+{
+	class MissileCircleDust
+	{
+		simulation="particles";
+		type="RC_155mmCircleDust";
+		enabled="distToWater interpolate [0.05,0.06,-1,1]";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;	//0.2
+	};
+	class CircleDust
+	{
+		simulation="particles";
+		type="RC_155mmCircleDust";
+		enabled="distToWater interpolate [0.05,0.06,-1,1]";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;	//0.2
+	};
+};
+class RC_155mmAirburstCrater
+{
+	class MissileCircleDust
+	{
+		simulation="particles";
+		type="RC_155mmCircleDust";
+		enabled="distToWater interpolate [0.05,0.06,-1,1]";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;	//0.2
+	};
+	class CircleDust
+	{
+		simulation="particles";
+		type="RC_155mmCircleDust";
+		enabled="distToWater interpolate [0.05,0.06,-1,1]";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;	//0.2
+	};
+};
+class RC_MortarExplosion
+{
+	class Light1
+	{
+		simulation="light";
+		type="GrenadeExploLight";
+		position[]={0,0,0};
+		intensity=0.0099999998;
+		interval=1;
+		lifeTime=1;
+	};
+	class MortarExp1
+	{
+		simulation="particles";
+		type="MortarExp";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.5;
+	};
+	class MortarSmoke1
+	{
+		simulation="particles";
+		type="CloudBigDark";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+	};
+};
 class CfgMagazines
 {
 	#include "\Remote_Controlled_Artillery\cfgMagazines\Magazines.hpp"
@@ -422,6 +542,7 @@ class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AR1_AR3.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\InfantryCarrier.hpp"

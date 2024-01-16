@@ -238,6 +238,16 @@ class RC_M_120mm_cannon_ATGM_DLG_Base: M_120mm_cannon_ATGM_LG
 };
 class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 {
+	explosive=0.8;
+	indirectHit=44.25;
+	indirectHitRange=12;
+
+	laserLock=1;
+	irLock=1;
+	nvLock=1;
+	airLock=1;
+	trackLead=1;
+	craterEffects="AAMissileCrater";
 	weaponLockSystem="2 + 4 + 16";
 	flightProfiles[]=
 	{
@@ -1064,7 +1074,7 @@ class RC_Sh_120mm_AMOS_submunition: Sh_155mm_AMOS
 	cost=250;
 	explosionTime=0.001;
 	explosive=1;
-	craterEffects="AAMissileCrater";
+	craterEffects="RC_ArtyShellCrater";
 };
 class RC_120mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 {
@@ -1221,12 +1231,13 @@ class Sh_120mm_HEAT_MP;
 class RC_Sh_120mm_MP_T_Green: Sh_120mm_HEAT_MP
 {
 	aiAmmoUsageFlags="64 + 128 + 512";
-	hit=95;
 	warheadName="TandemHEAT";
 	//warheadName="HE";
 	submunitionAmmo="RC_ammo_Penetrator_120mm";
+	hit=95;
 	indirectHit=50;
 	indirectHitRange=10;
+	deflecting=4;
 	//dangerRadiusHit=160;
 	//suppressionRadiusHit=32;
 	//deflecting=8;
@@ -1315,7 +1326,7 @@ class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 {
 	explosionTime=0.001;
 	explosive=1;
-	craterEffects="AAMissileCrater";
+	craterEffects="RC_155mmAirburstCrater";
 };
 class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 {
