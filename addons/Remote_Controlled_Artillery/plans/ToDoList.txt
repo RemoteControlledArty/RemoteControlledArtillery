@@ -81,6 +81,7 @@ NLOS FSV:
 -remove gunner&commander script
 -find a way to lock seats depending on current seat
 -update NLOS sounds
+-top town only for DLG, and better against countermeasures
 
 AR-short:
 -making sure effect is reset when leaving uav
