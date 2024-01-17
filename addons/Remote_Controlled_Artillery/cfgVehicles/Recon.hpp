@@ -47,6 +47,7 @@ class RC_AA_small_WD: RC_AA_small_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	incomingMissileDetectionSystem=16;
 
 	class Components: Components
 	{
@@ -244,7 +245,6 @@ class RC_AA_small_WD_I: RC_AA_small_WD
 };
 
 
-/*
 class I_LT_01_scout_F;
 class RC_radar_small_base: I_LT_01_scout_F
 {
@@ -266,8 +266,8 @@ class RC_radar_small_base: I_LT_01_scout_F
 class RC_radar_small_WD: RC_radar_small_base
 {
 	displayName="RC Recon Radar";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_AntiAir_subcat";
+	//faction="RemoteControlled_B";		//radar activation has to be fixed first
+	//editorSubcategory="RC_AntiAir_subcat";	//radar activation has to be fixed first
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;
@@ -365,7 +365,6 @@ class RC_radar_small_WD_I: RC_radar_small_WD
 	crew="I_UAV_AI";
 	side=2;
 };
-*/
 
 
 class I_LT_01_AT_F;
@@ -415,6 +414,7 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
+	incomingMissileDetectionSystem=16;
 	//laserScanner=0;
 
 	class Components: Components

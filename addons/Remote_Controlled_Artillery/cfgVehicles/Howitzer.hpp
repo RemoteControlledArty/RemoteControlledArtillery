@@ -51,6 +51,7 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	incomingMissileDetectionSystem=16;
 
 	class Components: Components
 	{
@@ -407,6 +408,7 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	incomingMissileDetectionSystem=16;
 
 	class Components: Components
 	{
@@ -657,6 +659,7 @@ class RC_Static_NA_Arty: RC_Static_Arty_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+	incomingMissileDetectionSystem=16;
 
 	class Components: Components
 	{
@@ -737,7 +740,7 @@ class RC_Static_Arty: RC_Static_NA_Arty
 			{
 				"RC_ShipCannon_120mm_HEAB_shells_x12",
 				"RC_ShipCannon_120mm_smoke_shells_x12",
-				"RC_ShipCannon_120mm_Multiguided_shells_x6",
+				"RC_ShipCannon_120mm_MultiGuided_shells_x6",
 				"RC_ShipCannon_120mm_HE_cluster_shells_x2",
 				"RC_ShipCannon_120mm_AT_mine_shells_x8",
 				"RC_ShipCannon_120mm_mine_shells_x6",

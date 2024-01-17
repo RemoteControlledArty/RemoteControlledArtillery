@@ -1,6 +1,0 @@
-/*
-	Math Section,
-	trying to find the best formulas for required gun elevation.
-*/
-
-https://github.com/RemoteControlledArty/RemoteControlledArtillery/wiki/Artillery-Required-Elevation-Calculator-(High&Low-Trajectory)

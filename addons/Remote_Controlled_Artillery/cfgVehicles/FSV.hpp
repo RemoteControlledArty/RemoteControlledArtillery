@@ -33,7 +33,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 
 	displayName="N/LOS FSV";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Howitzer_subcat";
+	editorSubcategory="RC_FSV_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;
@@ -57,6 +57,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	incomingMissileDetectionSystem=16;
 
 	class Components: Components
 	{
@@ -149,7 +150,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			magazines[]=
 			{
 				"RC_FSV_120mm_HEAB_x12",
-				"RC_FSV_120mm_Multiguided_x6",
+				"RC_FSV_120mm_MultiGuided_x6",
 				"RC_FSV_120mm_smoke_x12",
 				"12Rnd_120mm_APFSDS_shells_Tracer_Green",
 				"12Rnd_120mm_MP_T_Green",
@@ -327,8 +328,6 @@ class RC_LOS_FSV_A: RC_NLOS_FSV_A
 {
 	isRCArty=0;
 	displayName="FSV";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_Howitzer_subcat";
 
 	class Turrets: Turrets
 	{

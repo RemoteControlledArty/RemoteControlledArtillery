@@ -112,8 +112,35 @@ class CircleDustMed: Default
 */
 
 class CircleDustMed;
+class RC_82mmCircleDust: CircleDustMed
+{
+	circleRadius=12.7;
+	//circleRadius[]={12.7,8.5,4.2};	//doesnt work
+	lifeTime=20;	//3.5
+};
+
+class RC_105mmCircleDust: CircleDustMed
+{
+	circleRadius=15.3;
+	lifeTime=20;	//3.5
+};
+
+class RC_120mmCircleDust: CircleDustMed
+{
+	circleRadius=17;
+	lifeTime=20;	//3.5
+};
+
 class RC_155mmCircleDust: CircleDustMed
 {
-	circleRadius=21.1;		//1.3	//indirecthitradius*1.407 (for optimal airburstheight indirecthitradius*0.712)
-	//lifeTime=60;	//7 //3.5
+	circleRadius=21.2;
+	//size[]={6,11};	//size[]={6,11};
+	lifeTime=20;	//3.5
+};
+
+class RC_230mmCircleDust: CircleDustMed
+{
+	circleRadius=42.4;
+	size[]={12,22};	//size[]={6,11};
+	lifeTime=30;	//3.5
 };

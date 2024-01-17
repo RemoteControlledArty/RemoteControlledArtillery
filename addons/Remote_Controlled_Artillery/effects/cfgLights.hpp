@@ -23,7 +23,7 @@ class GrenadeExploLight
 */
 
 class GrenadeExploLight;
-class GrenadeExploLight: GrenadeExploLight
+class RC_GrenadeExploLight: GrenadeExploLight
 {
 	diffuse[]={1,0.60000002,0.40000001};
 	color[]={1,0.60000002,0.40000001};

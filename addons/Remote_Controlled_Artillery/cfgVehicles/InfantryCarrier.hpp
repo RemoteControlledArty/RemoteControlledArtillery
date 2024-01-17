@@ -92,6 +92,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	incomingMissileDetectionSystem=16;
 
 	//smokeLauncherOnTurret=1;
 	smokeLauncherGrenadeCount=8;

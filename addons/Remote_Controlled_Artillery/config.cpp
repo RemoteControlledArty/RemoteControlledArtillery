@@ -245,14 +245,6 @@ class CfgPatches
 };
 
 
-
-//fixes connection loss after respawn, will also be available as standalone in steam workshop
-class Extended_PostInit_EventHandlers
-{
-     UgvConnectionAfterDeathFix_Post_Init="UgvConnectionAfterDeathFix_Post_Init_Var=[] execVM ""\Remote_Controlled_Artillery\UgvConnectionAfterDeathFix.sqf""";
-};
-
-
 class CfgFunctions
 {
 	class RC
@@ -264,6 +256,7 @@ class CfgFunctions
       		class RC_UI_Loop {postInit=1};
 			class RC_MarkerLoop {postInit=1};
 			class RC_EngineOff {postInit=1};
+			class RC_UAVConnectionFix {postInit=1};
 			class RC_LaserDatalink {postInit=1};
 			class scrollSolutions {};
 		};
@@ -359,14 +352,20 @@ class CfgEditorSubcategories
 	{ 
 		displayname="Transport";
 	};
+	class RC_FSV_subcat
+	{ 
+		displayname="FSV's";
+	};
 	class RC_Respawn_subcat
 	{ 
 		displayname="Respawn";
 	};
+	/*
 	class RC_Targets_subcat
 	{ 
 		displayname="Target's";
 	};
+	*/
 
 
 	class RC_Mortar_NA_subcat
@@ -406,10 +405,6 @@ class VehicleSystemsTemplateRightGunner: DefaultVehicleSystemsDisplayManagerRigh
 class RCWSOptics;
 
 
-class CfgAmmo
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmo\Ammo.hpp"
-};
 class CfgCloudlets
 {
 	#include "\Remote_Controlled_Artillery\effects\cfgCloudlets.hpp"
@@ -418,117 +413,10 @@ class CfgLights
 {
 	#include "\Remote_Controlled_Artillery\effects\cfgLights.hpp"
 };
-class RC_ArtyShellCrater
+#include "\Remote_Controlled_Artillery\effects\effects.hpp"
+class CfgAmmo
 {
-	class MissileCircleDust
-	{
-		simulation="particles";
-		type="RC_CircleDustBig";
-		enabled="distToWater interpolate [0.0,0.01,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.25;
-	};
-};
-class RC_82mmAirburstCrater
-{
-	class MissileCircleDust
-	{
-		simulation="particles";
-		type="RC_155mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;	//0.2
-	};
-	class CircleDust
-	{
-		simulation="particles";
-		type="RC_155mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;	//0.2
-	};
-};
-class RC_120mmAirburstCrater
-{
-	class MissileCircleDust
-	{
-		simulation="particles";
-		type="RC_155mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;	//0.2
-	};
-	class CircleDust
-	{
-		simulation="particles";
-		type="RC_155mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;	//0.2
-	};
-};
-class RC_155mmAirburstCrater
-{
-	class MissileCircleDust
-	{
-		simulation="particles";
-		type="RC_155mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;	//0.2
-	};
-	class CircleDust
-	{
-		simulation="particles";
-		type="RC_155mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;	//0.2
-	};
-};
-class RC_MortarExplosion
-{
-	class Light1
-	{
-		simulation="light";
-		type="GrenadeExploLight";
-		position[]={0,0,0};
-		intensity=0.0099999998;
-		interval=1;
-		lifeTime=1;
-	};
-	class MortarExp1
-	{
-		simulation="particles";
-		type="MortarExp";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.5;
-	};
-	class MortarSmoke1
-	{
-		simulation="particles";
-		type="CloudBigDark";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=1;
-	};
+	#include "\Remote_Controlled_Artillery\cfgAmmo\Ammo.hpp"
 };
 class CfgMagazines
 {

@@ -5,40 +5,40 @@
 
 TO DO - BUGFIXES:
 
--RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 -does it still need include check for ace hpp?
 -if arty is destroyed, ui stays...?
--turn off motor should ONLY be activated for this mods assets per config value, as for example vanilla UGV is now broken!
 -crl+h cuts connection and destroys UV?
 -ar2 problems on server, is it due to some of the scripts, or a server issue?
 -turret is locked unable to adjust up/down, when scope of player is adjustable...
 -HEAB with aimabovetarget explodes too early with negative gun elevation, or low charge direct fire... *maybe swap to normal HE magazines per script when turret has negative elevation
+-RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 
 
 TO DO - FEATURES:
 
 documentation:
--update removemagazine list
 -add new assets to cfg patches list
--add incomingMissileDetectionSystem = 16;
 -add showAllTargets = 4; //LockLaser, show only targets from laser spot tracker (laserScanner); since Arma 3 1.60
--FSV category and hpp
 
 arty:
--reduce AI Burst amound
-
--test passive radar against AA
--recon radar mortar carrier composition
 -double check LaserDatalink code
 -using multiguided without selecting target and looking at terrain, can cause automatic targeting of friendly UV's?
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
+
+-improve 227mm explosion effect
+-edit 	aiRateOfFire=1;   aiRateOfFireDistance=10;
 -increase precision of 227mm guided when engaging laser
 -warheadName HE/TandemHEAT ?
+-recon radar mortar carrier composition, needs:
+	-low angle mortar without disassemle/backpack/arsenal
+	-script to hide legs
+	*addweapon sadly wont work on uneven surface as projectile leaves barrel aligned
+
 -remove non airburst HE after trajectory testing
 -low/high trajectory list:
-	low: HEAB, Guided, Illum
+	low: HEAB, Guided
 	low top down: Guided
 	high: Cluster, Smoke, AT/AP Mines, Illum
 
@@ -47,7 +47,6 @@ _laser = laserTarget player;
 _targetSolider = "RC_I_InvisibleDatalinkTarget" createVehicle getpos _laser;
 side player reportRemoteTarget [_targetSolider, 40];
 
--why the slight overshoot habit of the calculator? its about 1 to 2 MIL too high for low trajectory, maybe due to extra height of barrel vs ground? thats why aimabove/2 is needed rn
 -how to get position of muzzle? 	gunBeg="Usti hlavne";	gunEnd="Konec hlavne";	https://forums.bohemia.net/forums/topic/220406-universal-way-to-get-any-turrets-direction/
 _uav = (getConnectedUAV player);
 //_uav selectionPosition ["Konec hlavne", "Memory", "FirstPoint"];
@@ -60,7 +59,6 @@ _uav = (getConnectedUAV player);
 *NOTE to self, wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
 
 general:
--change uav connection script location
 -fix Static AT laser engaging (how!?)
 
 RC IC:
@@ -81,7 +79,7 @@ NLOS FSV:
 -remove gunner&commander script
 -find a way to lock seats depending on current seat
 -update NLOS sounds
--top town only for DLG, and better against countermeasures
+-top town only for DLG
 
 AR-short:
 -making sure effect is reset when leaving uav
@@ -127,6 +125,7 @@ while {true} do
 
 TO DO - QUALITY OF LIFE:
 
+-test uav connection fix in editor with its new location
 -only disable driver = 4, for modularity
 -maybe turret azimuth lock hotkey, for when changing EL on uneven ground throws it off
 
@@ -139,8 +138,12 @@ TO DO - QUALITY OF LIFE:
 
 IDEAS - FAR FUTURE:
 
+-disconnect uav/ugv from terminal script when vanilla incapacitated / ace unconcious
+
 -AR-0.5 and AL-7 for pvp, with 1.5 zoom to force low flying, shortrange sensors, no thermal, but laser designator
 -RC Marid with upgraded engines 7.62x51 and smoke GL
+
+-test passive radar shells against active radar AA
 
 -direct fire firing solution (camera viewpoint)
 -yellow 10m radius for Azimuth&GunEL, for fire adjustments
@@ -182,6 +185,9 @@ DONE - BUGFIXES:
 -fix radar turrets viewoptics maxhorrotspeed
 -fixed distance calculation
 -fixed time of flight calculation
+-engine turnoff now per cfg value, so it doesnt affect other ugv's
+-found cause for sicnificant over/under-shoot, for low trajectory 0.X MIL are indeed needed, otherwise it will show the same solution despite different distance
+-greatly improved accuracy by preventing sicnificant over/under-shoot
 
 
 DONE - FEATURES:
@@ -234,18 +240,24 @@ DONE - FEATURES:
 	or if enemy vehicles are close it locks on them,
 	which is extremly usefull if the ForwardObserver is suppressed and cannot maintain the lase,
 	if the laser is reactivated, it relocks if it is close enough to the original point
--improved 227mm explosion effect
+-improved 227mm explosion and dust effect
 -added N/LOS FSV
 -fixed Airburst
 -added AR1/AR3 backpacks
 -improved mine spread
 -improved the FOV of N/LOS FSV, and improved its muzzle smoke effect
--added muzzle height estimation formula in the script
+-added muzzle position estimation formula in the script
 -added ammo usage flags for ai
 -fixed sound and effects for new artillery ammunition
 -added ground dust effect for airburst
 -added LOS FSV
 -added Datalink Guided Missles for LOS FSV
+-added FSV hpp and subcategory
+-individualized ground dust radius of airburst for calibers, and increased dust time
+-added 105mm for later use (no suited platform yet found)
+-updated remove/addmagazine list, and included as txt
+-added missle approach warning systems
+-changed uav connection script location
 
 
 DONE - QUALITY OF LIFE:

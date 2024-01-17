@@ -214,7 +214,7 @@ RC_Artillery_UI = [] spawn {
 				_BarrelLenght = 0;
 				_WeaponDirection = 0;
 				_muzzleHeight = 0;
-				_BarrelAGL = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelStartHeight");
+				_BarrelAGL = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelAGL");
 				_BarrelLenght = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelLenght");
 				_WeaponDirection = ((_uav weaponDirection currentWeapon _uav) select 2);
 				_muzzleHeightEstimate = _BarrelLenght * (sin (_WeaponDirection*90)) + _BarrelAGL;
@@ -248,10 +248,10 @@ RC_Artillery_UI = [] spawn {
 				// Super Long Line to get the Velocity of the Round
 				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "initSpeed");
 
-				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
+				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 1] call CBA_fnc_formatNumber];
 				_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
-				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
-				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
+				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 1] call CBA_fnc_formatNumber];
+				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 1] call CBA_fnc_formatNumber];
 
 				// If we have Solution Calculator Turned on do da Math
 				if (RC_Solution_Calculator_On) then {
@@ -276,12 +276,12 @@ RC_Artillery_UI = [] spawn {
 
 					switch (true) do {
 						// If Elevation is correct for Low solution turn the Elevation text Green
-						case((_realElevation < (_lowAngleSol + 1)) and (_realElevation > (_lowAngleSol - 1))): {
+						case((_realElevation < (_lowAngleSol + 0.5)) and (_realElevation > (_lowAngleSol - 0.5))): {
 							_ctrlElevation ctrlSetTextColor [0,1,0,1];
 						};
 						
 						// If Elevation is correct for High solution turn the Elevation text Green
-						case((_realElevation < (_highAngleSol + 1)) and (_realElevation > (_highAngleSol - 1))): {
+						case((_realElevation < (_highAngleSol + 0.5)) and (_realElevation > (_highAngleSol - 0.5))): {
 							_ctrlElevation ctrlSetTextColor [0,1,0,1];
 						};
 
@@ -296,7 +296,7 @@ RC_Artillery_UI = [] spawn {
 				};
 				
 				// Make the Azimuth Text Green if the Azimuth is aligned with the Target Azimuth
-				if ((_realAzimuth < (_targetAzimuth + 1)) and (_realAzimuth > (_targetAzimuth - 1))) then {
+				if ((_realAzimuth < (_targetAzimuth + 0.5)) and (_realAzimuth > (_targetAzimuth - 0.5))) then {
 					_ctrlAzimuth ctrlSetTextColor [0,1,0,1];
 				} else {
 					_ctrlAzimuth ctrlSetTextColor [1,1,1,1];
@@ -357,10 +357,10 @@ RC_Artillery_UI = [] spawn {
 			};
 
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
-			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];		
+			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 1] call CBA_fnc_formatNumber];
+			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 1] call CBA_fnc_formatNumber];		
+			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [_highAngleSol, 4, 1] call CBA_fnc_formatNumber];		
+			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [_lowAngleSol, 4, 1] call CBA_fnc_formatNumber];		
 			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];		
 			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];		
 

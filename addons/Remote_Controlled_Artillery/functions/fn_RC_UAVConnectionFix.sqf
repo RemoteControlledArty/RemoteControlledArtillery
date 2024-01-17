@@ -1,3 +1,5 @@
+//disconnects uav after player death, to make it available again and not blocked
+
 addMissionEventHandler
 ["entityRespawned",
 {

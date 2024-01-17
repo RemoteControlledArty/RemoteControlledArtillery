@@ -720,6 +720,12 @@ class RC_mortar_82mm_V2: RC_mortar_82mm_V1
 };
 class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 {
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3"
+	};
 	class Single1: Single1
 	{
 		displayName="CH0, 0.5km";
@@ -1330,13 +1336,7 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 		"Single6",
 		"Single7",
 		"Single8",
-		"Single9",
-
-		"Burst1",
-		"Burst2",
-		"Burst3",
-		"Burst4",
-		"Burst5"
+		"Single9"
 	};
 
 	class Single1: Single1
@@ -2138,13 +2138,7 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Single6",
 		"Single7",
 		"Single8",
-		"Single9",
-
-		"Burst1",
-		"Burst2",
-		"Burst3",
-		"Burst4",
-		"Burst5"
+		"Single9"
 	};
 
 	class Single1: Single1

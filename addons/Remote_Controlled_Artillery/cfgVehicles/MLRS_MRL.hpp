@@ -47,6 +47,7 @@ class RC_MLRS_NA_A: RC_MLRS_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	incomingMissileDetectionSystem=16;
 
 	class Components: Components
 	{
@@ -335,6 +336,7 @@ class RC_MRL_NA_DIG: RC_MRL_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	incomingMissileDetectionSystem=16;
 
 	class Components: Components
 	{

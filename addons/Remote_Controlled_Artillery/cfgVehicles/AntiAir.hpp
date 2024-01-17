@@ -38,6 +38,10 @@ class RC_AA_A: RC_AA_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	incomingMissileDetectionSystem=16;
+
 	class AnimationSources: AnimationSources
 	{
 		class showCamonetTurret: showCamonetTurret
@@ -157,6 +161,8 @@ class RC_AA_HEX_A: RC_AA_base_HEX_O
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
+
+	incomingMissileDetectionSystem=16;
 
 	class AnimationSources: AnimationSources
 	{
