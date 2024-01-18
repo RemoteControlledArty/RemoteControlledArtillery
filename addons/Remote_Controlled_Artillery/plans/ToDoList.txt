@@ -187,7 +187,7 @@ DONE - BUGFIXES:
 -fixed time of flight calculation
 -engine turnoff now per cfg value, so it doesnt affect other ugv's
 -found cause for sicnificant over/under-shoot, for low trajectory 0.X MIL are indeed needed, otherwise it will show the same solution despite different distance
--greatly improved accuracy by preventing sicnificant over/under-shoot
+-0.X MIL dont have to be shown on screen, but green highlight could be limited to +-0.25 instead of 1
 
 
 DONE - FEATURES:
