@@ -27,10 +27,11 @@ arty:
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
 
--improve 227mm explosion effect
+-improve 230mm explosion effect
 -edit 	aiRateOfFire=1;   aiRateOfFireDistance=10;
--increase precision of 227mm guided when engaging laser
+-increase precision of 230mm guided when engaging laser
 -warheadName HE/TandemHEAT ?
+-make sure blastcore etc doesnt remove ground dust animation
 -recon radar mortar carrier composition, needs:
 	-low angle mortar without disassemle/backpack/arsenal
 	-script to hide legs
@@ -192,7 +193,7 @@ DONE - BUGFIXES:
 
 DONE - FEATURES:
 
--added 82mm, 120mm, 155mm, 227mm HE Airburst
+-added 82mm, 120mm, 155mm, 230mm HE Airburst
 -added 82mm, 120mm, 155mm Laser Guided 1.8m Delayed Fuse (for use against small bunkers/ hangars/ ammo storage halls) but only available per attributes edit for balancing reasons
 -improved spread of cluster and mines
 -buffed smoke of 82mm, 120mm, 155mm
@@ -209,7 +210,7 @@ DONE - FEATURES:
 -added Datalink panel
 -added Datalink laser position finder
 -added Datalink selected target position finder
--added AR-3 & 4
+-added AR-1 & 3
 -added 604mm ATACMS
 -added RC Infantry Carrier
 -renamed assets for clarity
@@ -219,8 +220,8 @@ DONE - FEATURES:
 -added peak ASL calculation formula
 -shortend map marker search time (as its only running during active remote control, and improves quality of life)
 -fixed all sensor configs
--added 82mm/120/155mm/227mm MultiGuided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and hot (per IR) or cold (per Visual) vehicles.)
--reworked 82mm/120/155mm/227mm MultiGuided, to be more accurate and be Multi Target
+-added 82mm/120/155mm/230mm MultiGuided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and hot (per IR) or cold (per Visual) vehicles.)
+-reworked 82mm/120/155mm/230mm MultiGuided, to be more accurate and be Multi Target
 -reworked Static AT & ATGM, changed ammo from 4 HEAT & 2 HE to new 4 MT (MultiTarget) rounds, Static AT now has more locking options and also SACLOS
 -reworked 120mm charges
 -multi guided successfully tested to include gps guidance, but so far only when using artillery computer
@@ -228,7 +229,7 @@ DONE - FEATURES:
 -split shown ELDiff, and ElDiff for used calculation, to not cause errors
 -enabled NLOS for locking ATGM
 -tweaked AT mine spread
--reworked 120mm, 155mm, 227mm Airburst, to truly explode before impact (instead of being reset 20meters after impact)
+-reworked 120mm, 155mm, 230mm Airburst, to truly explode before impact (instead of being reset 20meters after impact)
 -minor change to howitzer max gun elevation for it be able to shoot closer during compound defense
 -added RC RespawnTruck & correct driver camera screen with filter
 -reworked Laser Guided 2m Delayed Fuse
@@ -240,7 +241,7 @@ DONE - FEATURES:
 	or if enemy vehicles are close it locks on them,
 	which is extremly usefull if the ForwardObserver is suppressed and cannot maintain the lase,
 	if the laser is reactivated, it relocks if it is close enough to the original point
--improved 227mm explosion and dust effect
+-improved 230mm explosion and dust effect
 -added N/LOS FSV
 -fixed Airburst
 -added AR1/AR3 backpacks
@@ -294,7 +295,7 @@ DONE - BUGFIXES:
 
 TO DO - FEATURES:
 
--HE airburst, 82mm, 120mm, 155mm, 227mm
+-HE airburst, 82mm, 120mm, 155mm, 230mm
 
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
 -only disable driver = 4, for modularity

@@ -133,6 +133,30 @@ class RC_230mmAirburstDust
 	};
 };
 
+class RC_604mmAirburstDust
+{
+	class MissileCircleDust
+	{
+		simulation="particles";
+		type="RC_604mmCircleDust";
+		enabled="distToWater interpolate [0.05,0.06,-1,1]";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;	//0.2
+	};
+	class CircleDust
+	{
+		simulation="particles";
+		type="RC_604mmCircleDust";
+		enabled="distToWater interpolate [0.05,0.06,-1,1]";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;	//0.2
+	};
+};
+
 //explosioneffects
 class RC_MortarExplosion
 {

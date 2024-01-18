@@ -380,7 +380,7 @@ class RC_HEAB_Base: Default
 	//CraterEffects="HEShellCrater";	//dirt thrown up doesnt fit as its airburst
 	craterEffects="AAMissileCrater";	//dust on ground effect like caused by airburst
 	CraterWaterEffects="ImpactEffectsWaterHE";
-	ExplosionEffects="HEShellExplosion";
+	ExplosionEffects="MortarExplosion";
 	visibleFire=64;
 	audibleFire=250;
 	muzzleEffect="";
@@ -1654,8 +1654,8 @@ class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 {
 	explosionTime=0.001;
 	explosive=1;
+	explosionEffects="MortarExplosion";
 	craterEffects="RC_230mmAirburstDust";
-	explosionEffects="HeavyBombExplosion";
 };
 class RC_HEAB_Rocket_Base: RC_HEAB_Base
 {
@@ -1717,7 +1717,7 @@ class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 {
 	//craterEffects="BombCrater";
 	craterEffects="RC_230mmAirburstDust";
-	explosionEffects="HeavyBombExplosion";
+	//explosionEffects="HeavyBombExplosion";
 	/*
 	soundSetExplosion[]=
 	{
@@ -1832,8 +1832,9 @@ class RC_230mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 	effectFly="Missile0";
 	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
 	//effectFly="ArtilleryTrails";
+	explosionEffects="HEShellExplosion";
+	//explosionEffects="HeavyBombExplosion";
 	craterEffects="BombCrater";
-	explosionEffects="HeavyBombExplosion";
 	submunitionAmmo="ammo_Penetrator_230mm_MP";
 	indirectHit=400;
 	indirectHitRange=15;
@@ -1910,8 +1911,9 @@ class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	submunitionAmmo="RC_230mm_MP_MultiGuided_Submunition";
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
+	explosionEffects="HEShellExplosion";
+	//explosionEffects="HeavyBombExplosion";
 	craterEffects="BombCrater";
-	explosionEffects="HeavyBombExplosion";
 	triggerDistance=800;
 	hit=300;
 	cost=1000;
@@ -2010,7 +2012,7 @@ class RC_R_604mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 {
 	indirectHit=3200;
 	indirectHitRange=120;
-	craterEffects="HeavyBombCrater";
+	craterEffects="RC_604mmAirburstDust";
 	explosionEffects="HeavyBombExplosion";
 	soundSetExplosion[]=
 	{

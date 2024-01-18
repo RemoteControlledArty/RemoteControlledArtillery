@@ -115,32 +115,42 @@ class CircleDustMed;
 class RC_82mmCircleDust: CircleDustMed
 {
 	circleRadius=12.7;
+	//size[]={6,11};
 	//circleRadius[]={12.7,8.5,4.2};	//doesnt work
-	lifeTime=20;	//3.5
+	lifeTime=20;
 };
 
 class RC_105mmCircleDust: CircleDustMed
 {
 	circleRadius=15.3;
-	lifeTime=20;	//3.5
+	size[]={6.9,12.7};
+	lifeTime=20;
 };
 
 class RC_120mmCircleDust: CircleDustMed
 {
 	circleRadius=17;
-	lifeTime=20;	//3.5
+	size[]={8.1,14.9};
+	lifeTime=20;
 };
 
 class RC_155mmCircleDust: CircleDustMed
 {
 	circleRadius=21.2;
-	//size[]={6,11};	//size[]={6,11};
-	lifeTime=20;	//3.5
+	size[]={9,16.5};
+	lifeTime=20;
 };
 
 class RC_230mmCircleDust: CircleDustMed
 {
-	circleRadius=42.4;
-	size[]={12,22};	//size[]={6,11};
-	lifeTime=30;	//3.5
+	circleRadius=31.8;
+	size[]={12,22};
+	lifeTime=30;
+};
+
+class RC_604mmCircleDust: CircleDustMed
+{
+	circleRadius=174.3;
+	size[]={24,44};
+	lifeTime=40;
 };
