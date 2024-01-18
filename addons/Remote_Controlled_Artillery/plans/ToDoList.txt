@@ -27,7 +27,6 @@ arty:
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
 
--improve 230mm explosion effect
 -edit 	aiRateOfFire=1;   aiRateOfFireDistance=10;
 -increase precision of 230mm guided when engaging laser
 -warheadName HE/TandemHEAT ?
@@ -76,11 +75,13 @@ RC Respawn Truck (not priority, can be post update):
 -lock seats
 -add respawn script
 
-NLOS FSV:
+FSV/MBT:
 -remove gunner&commander script
 -find a way to lock seats depending on current seat
 -update NLOS sounds
 -top town only for DLG
+-commander FOV
+-find suitable optic
 
 AR-short:
 -making sure effect is reset when leaving uav
@@ -241,7 +242,6 @@ DONE - FEATURES:
 	or if enemy vehicles are close it locks on them,
 	which is extremly usefull if the ForwardObserver is suppressed and cannot maintain the lase,
 	if the laser is reactivated, it relocks if it is close enough to the original point
--improved 230mm explosion and dust effect
 -added N/LOS FSV
 -fixed Airburst
 -added AR1/AR3 backpacks
@@ -254,7 +254,7 @@ DONE - FEATURES:
 -added LOS FSV
 -added Datalink Guided Missles for LOS FSV
 -added FSV hpp and subcategory
--individualized ground dust radius of airburst for calibers, and increased dust time
+-individualized ground dust radius and amount of airburst for calibers, and increased dust time
 -added 105mm for later use (no suited platform yet found)
 -updated remove/addmagazine list, and included as txt
 -added missle approach warning systems

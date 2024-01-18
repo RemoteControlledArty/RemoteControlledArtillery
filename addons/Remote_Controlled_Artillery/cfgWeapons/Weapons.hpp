@@ -1575,12 +1575,16 @@ class cannon_120mm;
 class RC_cannon_120mm: cannon_120mm
 {
 	displayName="LOS 120mm";
+	reloadTime=5;
+	magazineReloadTime=5;
 	magazines[]=
 	{
 		"12Rnd_120mm_APFSDS_shells",
 		"12Rnd_120mm_APFSDS_shells_Tracer_Green",
+		"20Rnd_120mm_APFSDS_shells_Tracer_Green",
 		"12Rnd_120mm_MP_T_Green",
 		"16Rnd_120mm_MP_T_Green",
+		"20Rnd_120mm_MP_T_Green",
 		"3Rnd_120mm_DLG_cannon_missiles"
 	};
 };

@@ -4044,6 +4044,10 @@ class 16Rnd_120mm_MP_T_Green: 12Rnd_120mm_MP_T_Green
 {
 	count=16;
 };
+class 20Rnd_120mm_MP_T_Green: 12Rnd_120mm_MP_T_Green
+{
+	count=20;
+};
 
 
 class 4Rnd_120mm_LG_cannon_missiles;

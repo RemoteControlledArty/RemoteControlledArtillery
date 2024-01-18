@@ -403,6 +403,8 @@ class VehicleSystemsTemplateRightGunner: DefaultVehicleSystemsDisplayManagerRigh
 	class components;
 };
 class RCWSOptics;
+class Optics_Armored;
+class Optics_Gunner_MBT_01;
 
 
 class CfgCloudlets
