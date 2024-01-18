@@ -259,6 +259,7 @@ DONE - FEATURES:
 -updated remove/addmagazine list, and included as txt
 -added missle approach warning systems
 -changed uav connection script location
+-added MBT 2+6
 
 
 DONE - QUALITY OF LIFE:
