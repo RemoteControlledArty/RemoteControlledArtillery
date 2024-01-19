@@ -21,6 +21,16 @@ class RC_Infantry_Carrier_A_base: B_APC_Wheeled_01_cannon_F
 	class showSLATHull;
 	class ViewOptics;
 	class Components;
+	
+	class Wheels;
+	class L1;
+	class L2;
+	class L3;
+	class L4;
+	class R1;
+	class R2;
+	class R3;
+	class R4;
 
 	scope=0;
 	scopeCurator=0;
@@ -31,7 +41,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 {
 	class EventHandlers
 	{
-		init="(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this};";
+		init="(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
 	};
 
 	//_this lockDriver true; _this lockTurret [[0,0], true];
@@ -49,8 +59,8 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	//driver="B_UAV_AI";
@@ -58,9 +68,45 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	forceHideDriver=1;
 	driverForceOptics=1;
 	commanding=2;
-	//driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
-	//memoryPointDriverOptics="gunnerview";		//bugs on the left
-	//memoryPointDriverOptics="commanderview";	//bugs on the left
+
+	/*
+	memoryPointDriverOptics="gunnerview";
+	driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
+	class OpticsIn
+	{
+		class Wide: RCWSOptics
+		{
+			initAngleX=0;
+			minAngleX=-30;
+			maxAngleX=30;
+			initAngleY=0;
+			minAngleY=-100;
+			maxAngleY=100;
+
+			initFov=1;
+			minFov=0.125;
+			maxFov=1;
+			visionMode[]=
+			{
+				"Normal",
+				"NVG"
+			};
+			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
+			gunnerOpticsEffect[]={};
+		};
+	};
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+		initFov=1;	//0.8
+		minFov=0.125;
+		maxFov=1;	//0.8
+	};
+	*/
 
 	weapons[]=
 	{
@@ -104,7 +150,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	{
 		class MainTurret: MainTurret
 		{
-			commanding=3;
+			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			//hasGunner=-1;
@@ -122,9 +168,9 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 					"Normal",
 					"NVG"
 				};
-				initFov=0.8;
+				initFov=1;	//0.8
 				minFov=0.125;
-				maxFov=0.8;
+				maxFov=1;	//0.8
 			};
 
 			weapons[]=
@@ -141,16 +187,73 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
+					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 					turretInfoType="";
 					gunnerForceOptics=1;
+					commanding=3;
 
-					commanding=1;
+					weapons[]=
+					{
+						"TruckHorn",
+						"SmokeLauncher"
+					};
+					magazines[]=
+					{
+						"SmokeLauncherMag"
+					};
 
-					hasGunner=-1;
-					hasCommander=-1;
-					forceHideGunner=1;
-					forceHideCommander=1;
+					class OpticsIn
+					{
+						class Wide: RCWSOptics
+						{
+							initAngleX=0;
+							minAngleX=-30;
+							maxAngleX=30;
+							initAngleY=0;
+							minAngleY=-100;
+							maxAngleY=100;
+
+							initFov=1;
+							minFov=0.125;
+							maxFov=1;
+							visionMode[]=
+							{
+								"Normal",
+								"NVG"
+							};
+							gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
+							gunnerOpticsEffect[]={};
+						};
+					};
+
+					class ViewOptics: ViewOptics
+					{
+						visionMode[]=
+						{
+							"Normal",
+							"NVG"
+						};
+						initFov=1;	//0.8
+						minFov=0.125;
+						maxFov=1;	//0.8
+					};
+
+					class Components: Components
+					{
+						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+						{
+							defaultDisplay="SensorDisplay";
+							class Components
+							{
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={3000,1500,750,375};
+									resource="RscCustomInfoSensors";
+								};
+							};
+						};
+					};
 				};
 			};
 
@@ -356,6 +459,50 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 		};
 	};
 
+	class Wheels: Wheels
+	{
+		class L1: L1
+		{
+			latStiffX=25;
+			latStiffY=90;
+		};
+		class L2: L2
+		{
+			latStiffX=25;
+			latStiffY=90;
+		};
+		class L3: L3
+		{
+			latStiffX=25;
+			latStiffY=90;
+		};
+		class L4: L4
+		{
+			latStiffX=25;
+			latStiffY=90;
+		};
+		class R1: R1
+		{
+			latStiffX=25;
+			latStiffY=90;
+		};
+		class R2: R2
+		{
+			latStiffX=25;
+			latStiffY=90;
+		};
+		class R3: R3
+		{
+			latStiffX=25;
+			latStiffY=90;
+		};
+		class R4: R4
+		{
+			latStiffX=25;
+			latStiffY=90;
+		};
+	};
+
 	//Items
 	class TransportMagazines
 	{
@@ -445,16 +592,259 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 		};
 	};
 };
-
-
-/*
-class B_T_APC_Wheeled_01_cannon_F;
-class RC_Infantry_Carrier_WD_base: B_T_APC_Wheeled_01_cannon_F
+class RC_Infantry_Carrier_A_O: RC_Infantry_Carrier_A
 {
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
 
+	class TransportMagazines
+	{
+		class _xx_HandGrenade
+		{
+			magazine="HandGrenade";
+			count=20;
+		};
+		class _xx_SmokeShell
+		{
+			magazine="SmokeShell";
+			count=10;
+		};
+		class _xx_RPG32_F
+		{
+			magazine="RPG32_F";
+			count=5;
+		};
+		class _xx_RPG32_HE_F
+		{
+			magazine="RPG32_HE_F";
+			count=5;
+		};
+		class _xx_1Rnd_Smoke_Grenade_shell
+		{
+			magazine="1Rnd_Smoke_Grenade_shell";
+			count=10;
+		};
+		class _xx_Laserbatteries
+		{
+			magazine="Laserbatteries";
+			count=2;
+		};
+	};
+	class TransportItems
+	{
+		class _xx_B_UavTerminal
+		{
+			name="B_UavTerminal";
+			count=2;
+		};
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=6;
+		};
+		class _xx_MineDetector
+		{
+			name="MineDetector";
+			count=2;
+		};
+	};
+	class TransportWeapons
+	{
+		class _xx_launch_launch_RPG32_green_F
+		{
+			weapon="launch_RPG32_green_F";
+			count=1;
+		};
+		class _xx_Improved_FOV_Laserdesignator_Arid
+		{
+			weapon="Improved_FOV_Laserdesignator_Arid";
+			count=1;
+		};
+		class _xx_Rangefinder
+		{
+			weapon="Rangefinder";
+			count=1;
+		};
+	};
 };
-class RC_Infantry_Carrier_WD: RC_Infantry_Carrier_A_base
+class RC_Infantry_Carrier_A_I: RC_Infantry_Carrier_A
 {
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
 
+	class TransportItems
+	{
+		class _xx_I_UavTerminal
+		{
+			name="I_UavTerminal";
+			count=2;
+		};
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=6;
+		};
+		class _xx_MineDetector
+		{
+			name="MineDetector";
+			count=2;
+		};
+	};
 };
-*/
+
+
+class RC_Infantry_Carrier_WD: RC_Infantry_Carrier_A
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
+		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+		"a3\Armor_F\Data\cage_olive_CO.paa"
+	};
+
+	class TransportWeapons
+	{
+		class _xx_launch_NLAW_F
+		{
+			weapon="launch_NLAW_F";
+			count=2;
+		};
+		class _xx_Improved_FOV_Laserdesignator_Woodland
+		{
+			weapon="Improved_FOV_Laserdesignator_Woodland";
+			count=1;
+		};
+		class _xx_Rangefinder
+		{
+			weapon="Rangefinder";
+			count=1;
+		};
+	};
+};
+class RC_Infantry_Carrier_WD_O: RC_Infantry_Carrier_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	class TransportMagazines
+	{
+		class _xx_HandGrenade
+		{
+			magazine="HandGrenade";
+			count=20;
+		};
+		class _xx_SmokeShell
+		{
+			magazine="SmokeShell";
+			count=10;
+		};
+		class _xx_RPG32_F
+		{
+			magazine="RPG32_F";
+			count=5;
+		};
+		class _xx_RPG32_HE_F
+		{
+			magazine="RPG32_HE_F";
+			count=5;
+		};
+		class _xx_1Rnd_Smoke_Grenade_shell
+		{
+			magazine="1Rnd_Smoke_Grenade_shell";
+			count=10;
+		};
+		class _xx_Laserbatteries
+		{
+			magazine="Laserbatteries";
+			count=2;
+		};
+	};
+	class TransportItems
+	{
+		class _xx_B_UavTerminal
+		{
+			name="B_UavTerminal";
+			count=2;
+		};
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=6;
+		};
+		class _xx_MineDetector
+		{
+			name="MineDetector";
+			count=2;
+		};
+	};
+	class TransportWeapons
+	{
+		class _xx_launch_launch_RPG32_green_F
+		{
+			weapon="launch_RPG32_green_F";
+			count=1;
+		};
+		class _xx_Improved_FOV_Laserdesignator_Woodland
+		{
+			weapon="Improved_FOV_Laserdesignator_Woodland";
+			count=1;
+		};
+		class _xx_Rangefinder
+		{
+			weapon="Rangefinder";
+			count=1;
+		};
+	};
+};
+class RC_Infantry_Carrier_WD_I: RC_Infantry_Carrier_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	class TransportItems
+	{
+		class _xx_I_UavTerminal
+		{
+			name="I_UavTerminal";
+			count=2;
+		};
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=6;
+		};
+		class _xx_MineDetector
+		{
+			name="MineDetector";
+			count=2;
+		};
+	};
+};

@@ -1574,7 +1574,7 @@ class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
 class cannon_120mm;
 class RC_cannon_120mm: cannon_120mm
 {
-	displayName="LOS 120mm";
+	displayName="120mm";
 	reloadTime=5;
 	magazineReloadTime=5;
 	magazines[]=

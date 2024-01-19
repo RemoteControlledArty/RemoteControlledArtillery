@@ -12,6 +12,7 @@ TO DO - BUGFIXES:
 -turret is locked unable to adjust up/down, when scope of player is adjustable...
 -HEAB with aimabovetarget explodes too early with negative gun elevation, or low charge direct fire... *maybe swap to normal HE magazines per script when turret has negative elevation
 -RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
+-enable artillery overlay in non UGV gunner seat of N/LOS FSV
 
 
 TO DO - FEATURES:
@@ -37,10 +38,6 @@ arty:
 	*addweapon sadly wont work on uneven surface as projectile leaves barrel aligned
 
 -remove non airburst HE after trajectory testing
--low/high trajectory list:
-	low: HEAB, Guided
-	low top down: Guided
-	high: Cluster, Smoke, AT/AP Mines, Illum
 
 -report arty map markers to datalink, to lock for gps guidance, maybe if "gps" is written in the marker name? RC_O_InvisibleDatalinkTarget works, maybe add eventhandler for datalink reporting to it
 _laser = laserTarget player;
@@ -63,11 +60,10 @@ general:
 
 RC IC:
 -hide seats for RC IC
--attemt to add commander seat to RC IC
 -if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged
--improve driver view (to camera if possible)
 -fix or remove datalink panel
--decrease oversteering
+-fix smokelauncher
+-test wheel side friction
 
 RC Respawn Truck (not priority, can be post update):
 -add more versions
@@ -76,12 +72,8 @@ RC Respawn Truck (not priority, can be post update):
 -add respawn script
 
 FSV/MBT:
--remove gunner&commander script
 -find a way to lock seats depending on current seat
 -update NLOS sounds
--top town only for DLG
--commander FOV
--find suitable optic
 
 AR-short:
 -making sure effect is reset when leaving uav
@@ -139,6 +131,8 @@ TO DO - QUALITY OF LIFE:
 
 
 IDEAS - FAR FUTURE:
+
+-sensor ammo, like attaching hidden vehicle with 360deg sensor, deploy xmeter over target, then limited lifetime
 
 -disconnect uav/ugv from terminal script when vanilla incapacitated / ace unconcious
 
@@ -260,6 +254,15 @@ DONE - FEATURES:
 -added missle approach warning systems
 -changed uav connection script location
 -added MBT 2+6
+-added wide gunner FOV and fluid zoom to MBT
+-added script to remove FSV & MBT script to remove gunner and commander, also to turn of engine when standing still (despite not being ugv gunner/commander)
+-added wide commander FOV and fluid zoom for FSV & MBT
+-added RC IC commander seat and improved RC driving by using gunner seat and its better camera position
+
+-low/high trajectory list:
+	low: HEAB, Guided
+	low top down: Guided
+	high: Cluster, Smoke, AT/AP Mines, Illum
 
 
 DONE - QUALITY OF LIFE:

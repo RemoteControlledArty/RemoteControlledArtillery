@@ -14,7 +14,7 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 {
 	displayName="RC Medical Truck";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Transport_subcat";
+	editorSubcategory="RC_Respawn_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;

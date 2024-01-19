@@ -19,7 +19,7 @@ class RC_NLOS_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=4;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -29,7 +29,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {if (local _this) then waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this};";
+		init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 2; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 
 	displayName="N/LOS FSV";
@@ -53,6 +53,7 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
+	crewCrashProtection=0.01;
 
 	radartype=2;
 	receiveRemoteTargets=1;
@@ -127,19 +128,6 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 		{
 			//maxElev=45;	//unfortunately doesnt work, due to gun having internal animation
 			commanding=2;
-			gunnerForceOptics=1;
-			forceHideGunner=1;
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					commanding=1;
-					hasGunner=-1;
-					hasCommander=-1;
-					forceHideGunner=1;
-				};
-			};
 
 			weapons[]=
 			{
@@ -185,6 +173,106 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 					thermalMode[]={0,1};
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
+				};
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={3000,1500,750,375};
+							resource="RscCustomInfoSensors";
+						};
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+						};
+					};
+				};
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					commanding=1;
+
+					class OpticsIn
+					{
+						class Wide: RCWSOptics
+						{
+							initAngleX=0;
+							minAngleX=-30;
+							maxAngleX=30;
+							initAngleY=0;
+							minAngleY=-100;
+							maxAngleY=100;
+
+							initFov=1.0;
+							minFov=0.025;
+							maxFov=1.0;
+							visionMode[]=
+							{
+								"Normal",
+								"NVG",
+								"TI"
+							};
+							thermalMode[]={0,1};
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_m_F.p3d";
+							gunnerOpticsEffect[]={};
+						};
+					};
+					/*
+					class ViewOptics: ViewOptics
+					{
+						initAngleX=0;
+						minAngleX=-30;
+						maxAngleX=30;
+						initAngleY=0;
+						minAngleY=-100;
+						maxAngleY=100;
+						initFov=1.0;
+						minFov=0.025;
+						maxFov=1.0;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG",
+							"TI"
+						};
+						thermalMode[]={0,1};
+					};
+					*/
+					class Components: Components
+					{
+						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+						{
+							defaultDisplay="SensorDisplay";
+
+							class Components
+							{
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={3000,1500,750,375};
+									resource="RscCustomInfoSensors";
+								};
+								class VehicleMissileDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="Missile";
+								};
+							};
+						};
+					};
 				};
 			};
 		};
@@ -410,6 +498,7 @@ class RC_MBT6_A_Base: B_MBT_01_TUSK_F
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
+	class ViewOptics;
 	class Components;
 	class EventHandlers;
 	class AnimationSources;
@@ -419,13 +508,13 @@ class RC_MBT6_A_Base: B_MBT_01_TUSK_F
 	class Wide;
 	scope=0;
 	scopeCurator=0;
-	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_MBT6_A: RC_MBT6_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {if (local _this) then waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this};";
+		init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 
 	displayName="MBT 2+6";
@@ -449,6 +538,10 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
+
+	maxSpeed=70;
+	enginePower=1538;
+	peakTorque=6250;
 
 	radartype=2;
 	receiveRemoteTargets=1;
@@ -523,16 +616,12 @@ class RC_MBT6_A: RC_MBT6_A_Base
 		{
 			commanding=2;
 			gunnerForceOptics=1;
-			forceHideGunner=1;
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
 					commanding=1;
-					hasGunner=-1;
-					hasCommander=-1;
-					forceHideGunner=1;
 
 					weapons[]=
 					{
@@ -550,6 +639,31 @@ class RC_MBT6_A: RC_MBT6_A_Base
 						"SmokeLauncherMag"
 					};
 
+					class OpticsIn
+					{
+						class Wide: RCWSOptics
+						{
+							initAngleX=0;
+							minAngleX=-30;
+							maxAngleX=30;
+							initAngleY=0;
+							minAngleY=-100;
+							maxAngleY=100;
+
+							initFov=1.0;
+							minFov=0.025;
+							maxFov=1.0;
+							visionMode[]=
+							{
+								"Normal",
+								"NVG",
+								"TI"
+							};
+							thermalMode[]={0,1};
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_m_F.p3d";
+							gunnerOpticsEffect[]={};
+						};
+					};
 					/*
 					class ViewOptics: ViewOptics
 					{
@@ -559,29 +673,40 @@ class RC_MBT6_A: RC_MBT6_A_Base
 						initAngleY=0;
 						minAngleY=-100;
 						maxAngleY=100;
-						initFov=0.31;
-						minFov=0.034000002;
-						maxFov=0.31;
+						initFov=1.0;
+						minFov=0.025;
+						maxFov=1.0;
 						visionMode[]=
 						{
 							"Normal",
+							"NVG",
 							"TI"
 						};
-						thermalMode[]={2,3};
-					};
-					class OpticsIn: Optics_Commander_01
-					{
-						class Wide: Wide
-						{
-						};
-						class Medium: Medium
-						{
-						};
-						class Narrow: Narrow
-						{
-						};
+						thermalMode[]={0,1};
 					};
 					*/
+					class Components: Components
+					{
+						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+						{
+							defaultDisplay="SensorDisplay";
+
+							class Components
+							{
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={3000,1500,750,375};
+									resource="RscCustomInfoSensors";
+								};
+								class VehicleMissileDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="Missile";
+								};
+							};
+						};
+					};
 				};
 			};
 
@@ -604,10 +729,12 @@ class RC_MBT6_A: RC_MBT6_A_Base
 				"200Rnd_762x51_Belt_Green",
 				"SmokeLauncherMag"
 			};
-		
-			class OpticsIn: OpticsIn
+
+			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+
+			class OpticsIn
 			{
-				class Wide: Wide
+				class Wide: RCWSOptics
 				{
 					initAngleX=0;
 					minAngleX=-30;
@@ -626,7 +753,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 						"TI"
 					};
 					thermalMode[]={0,1};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_01_w_F.p3d";
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
 			};
@@ -642,7 +769,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,2000,1000,500,250};
+							range[]={3000,1500,750,375};
 							resource="RscCustomInfoSensors";
 						};
 						class VehicleMissileDisplay
@@ -750,7 +877,7 @@ class RC_MBT6_A_O: RC_MBT6_A
 	crew="O_UAV_AI";
 	side=0;
 
-		class TransportMagazines
+	class TransportMagazines
 	{
 		class _xx_HandGrenade
 		{
