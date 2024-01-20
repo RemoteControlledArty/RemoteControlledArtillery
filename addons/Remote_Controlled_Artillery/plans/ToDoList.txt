@@ -297,6 +297,7 @@ DONE - FEATURES:
 -added AR-1&3 for all sides with correct textures
 -added Grenade Dropping UAV
 -updated vehicle inventory, remove 6.5mm rifles and magazines, added toolkits etc
+-added mine detectors to frontline personel carring vehicles
 
 -low/high trajectory list:
 	low: HEAB, Guided
