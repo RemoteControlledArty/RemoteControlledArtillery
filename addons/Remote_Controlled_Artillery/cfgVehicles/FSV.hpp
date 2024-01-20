@@ -195,6 +195,12 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 						};
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
 					};
 				};
 			};
@@ -269,6 +275,12 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 								{
 									componentType="TransportFeedDisplayComponent";
 									source="Missile";
+								};
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
 								};
 							};
 						};
@@ -362,6 +374,31 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			explosionShielding=3;
 			passThrough=0;
 		};
+	};
+	
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+	};
+	class TransportWeapons
+	{
 	};
 };
 class RC_NLOS_FSV_A_O: RC_NLOS_FSV_A
@@ -615,7 +652,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 		class MainTurret: MainTurret
 		{
 			commanding=2;
-			gunnerForceOptics=1;
+			//gunnerForceOptics=1;
 			
 			class Turrets: Turrets
 			{
@@ -704,6 +741,12 @@ class RC_MBT6_A: RC_MBT6_A_Base
 									componentType="TransportFeedDisplayComponent";
 									source="Missile";
 								};
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
+								};
 							};
 						};
 					};
@@ -777,6 +820,12 @@ class RC_MBT6_A: RC_MBT6_A_Base
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 						};
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
 					};
 				};
 			};
@@ -831,7 +880,12 @@ class RC_MBT6_A: RC_MBT6_A_Base
 		class _xx_Medikit
 		{
 			name="Medikit";
-			count=6;
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
 		};
 		class _xx_MineDetector
 		{
@@ -925,7 +979,12 @@ class RC_MBT6_A_O: RC_MBT6_A
 		class _xx_Medikit
 		{
 			name="Medikit";
-			count=6;
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
 		};
 		class _xx_MineDetector
 		{
@@ -973,7 +1032,12 @@ class RC_MBT6_A_I: RC_MBT6_A
 		class _xx_Medikit
 		{
 			name="Medikit";
-			count=6;
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
 		};
 		class _xx_MineDetector
 		{
@@ -1068,7 +1132,12 @@ class RC_MBT6_WD_O: RC_MBT6_WD
 		class _xx_Medikit
 		{
 			name="Medikit";
-			count=6;
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
 		};
 		class _xx_MineDetector
 		{
@@ -1116,7 +1185,12 @@ class RC_MBT6_WD_I: RC_MBT6_WD
 		class _xx_Medikit
 		{
 			name="Medikit";
-			count=6;
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
 		};
 		class _xx_MineDetector
 		{

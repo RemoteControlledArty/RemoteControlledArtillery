@@ -209,6 +209,31 @@ class RC_AA_small_WD: RC_AA_small_base
 		};
 	};
 
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+	};
+	class TransportWeapons
+	{
+	};
+
 	hiddenSelectionsTextures[]=
 	{
 		"A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
@@ -329,6 +354,31 @@ class RC_radar_small_WD: RC_radar_small_base
 		1,
 		"showSLATHull",
 		1
+	};
+
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+	};
+	class TransportWeapons
+	{
 	};
 
 	hiddenSelectionsTextures[]=
@@ -631,6 +681,31 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 				};
 			};
 		};
+	};
+
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+	};
+	class TransportWeapons
+	{
 	};
 
 	hiddenSelectionsTextures[]=

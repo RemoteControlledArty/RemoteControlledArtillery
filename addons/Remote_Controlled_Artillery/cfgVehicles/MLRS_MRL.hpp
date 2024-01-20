@@ -142,6 +142,31 @@ class RC_MLRS_NA_A: RC_MLRS_base
 			};
 		};
 	};
+
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+	};
+	class TransportWeapons
+	{
+	};
 };
 class RC_MLRS_NA_WD: RC_MLRS_NA_A
 {
@@ -412,6 +437,31 @@ class RC_MRL_NA_DIG: RC_MRL_base
 				};
 			};
 		};
+	};
+
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+	};
+	class TransportWeapons
+	{
 	};
 };
 class RC_MRL_NA_WD: RC_MRL_NA_DIG

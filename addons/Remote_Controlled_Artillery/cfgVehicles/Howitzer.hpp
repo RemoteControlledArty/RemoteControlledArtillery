@@ -186,6 +186,36 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 			};
 		};
 	};
+
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+		class _xx_MineDetector
+		{
+			name="MineDetector";
+			count=1;
+		};
+	};
+	class TransportWeapons
+	{
+	};
 };
 class RC_Howitzer_NA_WD: RC_Howitzer_NA_A
 {
@@ -521,6 +551,31 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 			};
 		};
 	};
+
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+	};
+	class TransportWeapons
+	{
+	};
 };
 class RC_Howitzer_NA_HEX_WD_O: RC_Howitzer_NA_HEX_A_O
 {
@@ -708,6 +763,31 @@ class RC_Static_NA_Arty: RC_Static_Arty_base
 				};
 			};
 		};
+	};
+
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+	};
+	class TransportWeapons
+	{
 	};
 };
 class RC_Static_NA_Arty_O: RC_Static_NA_Arty

@@ -251,6 +251,12 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 									range[]={3000,1500,750,375};
 									resource="RscCustomInfoSensors";
 								};
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
+								};
 							};
 						};
 					};
@@ -269,6 +275,12 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 							componentType="SensorsDisplayComponent";
 							range[]={3000,1500,750,375};
 							resource="RscCustomInfoSensors";
+						};
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
 						};
 					};
 				};
@@ -552,7 +564,12 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 		class _xx_Medikit
 		{
 			name="Medikit";
-			count=6;
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
 		};
 		class _xx_MineDetector
 		{
@@ -646,7 +663,12 @@ class RC_Infantry_Carrier_A_O: RC_Infantry_Carrier_A
 		class _xx_Medikit
 		{
 			name="Medikit";
-			count=6;
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
 		};
 		class _xx_MineDetector
 		{
@@ -694,7 +716,12 @@ class RC_Infantry_Carrier_A_I: RC_Infantry_Carrier_A
 		class _xx_Medikit
 		{
 			name="Medikit";
-			count=6;
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
 		};
 		class _xx_MineDetector
 		{
@@ -791,7 +818,12 @@ class RC_Infantry_Carrier_WD_O: RC_Infantry_Carrier_WD
 		class _xx_Medikit
 		{
 			name="Medikit";
-			count=6;
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
 		};
 		class _xx_MineDetector
 		{
@@ -839,7 +871,12 @@ class RC_Infantry_Carrier_WD_I: RC_Infantry_Carrier_WD
 		class _xx_Medikit
 		{
 			name="Medikit";
-			count=6;
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
 		};
 		class _xx_MineDetector
 		{

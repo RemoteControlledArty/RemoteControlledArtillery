@@ -104,10 +104,6 @@ class CfgPatches
 			RC_Static_Arty_O,
 			RC_Static_Arty_I,
 
-			RC_NLOS_FSV_A,
-			RC_NLOS_FSV_WD,
-
-
 			RC_MLRS_NA_A,
 			RC_MLRS_NA_WD,
 			RC_MLRS_NA_A_O,

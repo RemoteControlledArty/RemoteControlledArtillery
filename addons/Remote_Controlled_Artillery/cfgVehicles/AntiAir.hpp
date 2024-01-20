@@ -81,6 +81,31 @@ class RC_AA_A: RC_AA_base
 			};
 		};
 	};
+
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+	};
+	class TransportWeapons
+	{
+	};
 };
 class RC_AA_WD: RC_AA_A
 {
@@ -208,6 +233,30 @@ class RC_AA_HEX_A: RC_AA_base_HEX_O
 				};
 			};
 		};
+	};
+	class TransportMagazines
+	{
+	};
+	class TransportItems
+	{
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+	};
+	class TransportWeapons
+	{
 	};
 };
 class RC_AA_HEX_WD: RC_AA_HEX_A
