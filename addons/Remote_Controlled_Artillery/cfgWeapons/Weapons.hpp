@@ -1,3 +1,4 @@
+// Improved Laser Designators
 class Laserdesignator;
 class Laserdesignator_base: Laserdesignator
 {
@@ -8,8 +9,7 @@ class Laserdesignator_base: Laserdesignator
 };
 
 
-// Arid
-class Improved_FOV_Laserdesignator_Arid: Laserdesignator_base
+class Improved_FOV_Laserdesignator_A: Laserdesignator_base
 {
 	scope=2;
 	scopeCurator=2;
@@ -31,15 +31,15 @@ class Improved_FOV_Laserdesignator_Arid: Laserdesignator_base
 	opticsZoomMax=0.25;
 	opticsZoomInit=0.25;
 };
-class Improved_FOV_Laserdesignator_Woodland: Improved_FOV_Laserdesignator_Arid
+class Improved_FOV_Laserdesignator_WD: Improved_FOV_Laserdesignator_A
 {
 	model="\A3\Weapons_F\Binocular\laserdesignator_01_khk_f.p3d";
 	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";
 };
 
 
-// Thermal / Ti
-class Improved_FOV_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
+// Thermal Versions
+class Improved_FOV_Laserdesignator_Ti_A: Improved_FOV_Laserdesignator_A
 {
 	displayName="Improved Laser Designator (whTi)";
 	visionMode[]=
@@ -50,7 +50,7 @@ class Improved_FOV_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
 	};
 	thermalMode[]={0};
 };
-class Improved_FOV_Laserdesignator_Ti_Woodland: Improved_FOV_Laserdesignator_Ti_Arid
+class Improved_FOV_Laserdesignator_Ti_WD: Improved_FOV_Laserdesignator_Ti_A
 {
 	model="\A3\Weapons_F\Binocular\laserdesignator_01_khk_f.p3d";
 	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";
@@ -59,7 +59,7 @@ class Improved_FOV_Laserdesignator_Ti_Woodland: Improved_FOV_Laserdesignator_Ti_
 
 //attemted Datalink Designator, but this likely has to be done per script instead, as sensor components are likely only for cfgvehicles not cfgweapons
 /*
-class Datalink_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
+class Datalink_Laserdesignator_Ti_A: Improved_FOV_Laserdesignator_A
 {
 	displayName="Datalink Laser Designator (whTi)";
 
@@ -204,7 +204,7 @@ class Datalink_Laserdesignator_Ti_Arid: Improved_FOV_Laserdesignator_Arid
 		};
 	};
 };
-class Datalink_Laserdesignator_Ti_Woodland: Datalink_Laserdesignator_Ti_Arid
+class Datalink_Laserdesignator_Ti_WD: Datalink_Laserdesignator_Ti_A
 {
 	model="\A3\Weapons_F\Binocular\laserdesignator_01_khk_f.p3d";
 	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";

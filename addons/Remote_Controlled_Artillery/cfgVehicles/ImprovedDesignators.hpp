@@ -5,7 +5,7 @@
 
 // Designator Arid
 class B_Static_Designator_01_F;
-class RC_Improved_FOV_Designator_Arid_base: B_Static_Designator_01_F
+class RC_Improved_FOV_Designator_A_base: B_Static_Designator_01_F
 {
 	class Turrets;
 	class MainTurret;
@@ -15,7 +15,7 @@ class RC_Improved_FOV_Designator_Arid_base: B_Static_Designator_01_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Improved_FOV_Designator_Arid: RC_Improved_FOV_Designator_Arid_base
+class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
 {
 	displayname="RC Improved Designator";
 	faction="RemoteControlled_B";
@@ -152,11 +152,11 @@ class RC_Improved_FOV_Designator_Arid: RC_Improved_FOV_Designator_Arid_base
 	{
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Bag_Arid"
+			"RC_Improved_FOV_Designator_Bag_A"
 		};
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Arid: RC_Improved_FOV_Designator_Arid
+class RC_Improved_FOV_Designator_Ti_A: RC_Improved_FOV_Designator_A
 {
 	displayname="RC Improved Designator whTi";
 
@@ -164,7 +164,7 @@ class RC_Improved_FOV_Designator_Ti_Arid: RC_Improved_FOV_Designator_Arid
 	{
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Ti_Bag_Arid"
+			"RC_Improved_FOV_Designator_Ti_Bag_A"
 		};
 	};
 
@@ -317,13 +317,13 @@ class RC_Improved_FOV_Designator_Ti_Arid: RC_Improved_FOV_Designator_Arid
 
 // Designator Bag Arid
 class B_Static_Designator_01_weapon_F;
-class RC_Improved_FOV_Designator_Bag_Arid_base: B_Static_Designator_01_weapon_F
+class RC_Improved_FOV_Designator_Bag_A_base: B_Static_Designator_01_weapon_F
 {
 	class assembleInfo;
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Improved_FOV_Designator_Bag_Arid: RC_Improved_FOV_Designator_Bag_Arid_base
+class RC_Improved_FOV_Designator_Bag_A: RC_Improved_FOV_Designator_Bag_A_base
 {
 	displayname="RC Improved Designator";
 	scope=2;
@@ -338,24 +338,24 @@ class RC_Improved_FOV_Designator_Bag_Arid: RC_Improved_FOV_Designator_Bag_Arid_b
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator";
-		assembleTo="RC_Improved_FOV_Designator_Arid";
+		assembleTo="RC_Improved_FOV_Designator_A";
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Bag_Arid: RC_Improved_FOV_Designator_Bag_Arid
+class RC_Improved_FOV_Designator_Ti_Bag_A: RC_Improved_FOV_Designator_Bag_A
 {
 	displayname="RC Improved Designator whTi";
 
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator whTi";
-		assembleTo="RC_Improved_FOV_Designator_Ti_Arid";
+		assembleTo="RC_Improved_FOV_Designator_Ti_A";
 	};
 };
 
 
 // Designator Woodland
 class B_W_Static_Designator_01_F;
-class RC_Improved_FOV_Designator_Woodland_base: B_W_Static_Designator_01_F
+class RC_Improved_FOV_Designator_WD_base: B_W_Static_Designator_01_F
 {
 	class Turrets;
 	class MainTurret;
@@ -365,7 +365,7 @@ class RC_Improved_FOV_Designator_Woodland_base: B_W_Static_Designator_01_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Improved_FOV_Designator_Woodland: RC_Improved_FOV_Designator_Woodland_base
+class RC_Improved_FOV_Designator_WD: RC_Improved_FOV_Designator_WD_base
 {
 	displayname="RC Improved Designator";
 	faction="RemoteControlled_B";
@@ -499,11 +499,11 @@ class RC_Improved_FOV_Designator_Woodland: RC_Improved_FOV_Designator_Woodland_b
 	{
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Bag_Woodland"
+			"RC_Improved_FOV_Designator_Bag_WD"
 		};
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Woodland: RC_Improved_FOV_Designator_Woodland
+class RC_Improved_FOV_Designator_Ti_WD: RC_Improved_FOV_Designator_WD
 {
 	displayname="RC Improved Designator whTi";
 
@@ -511,7 +511,7 @@ class RC_Improved_FOV_Designator_Ti_Woodland: RC_Improved_FOV_Designator_Woodlan
 	{
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Ti_Bag_Woodland"
+			"RC_Improved_FOV_Designator_Ti_Bag_WD"
 		};
 	};
 
@@ -666,13 +666,13 @@ class RC_Improved_FOV_Designator_Ti_Woodland: RC_Improved_FOV_Designator_Woodlan
 
 // Designator Bag Woodland
 class B_W_Static_Designator_01_weapon_F;
-class RC_Improved_FOV_Designator_Bag_Woodland_base: B_W_Static_Designator_01_weapon_F
+class RC_Improved_FOV_Designator_Bag_WD_base: B_W_Static_Designator_01_weapon_F
 {
 	class assembleInfo;
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Improved_FOV_Designator_Bag_Woodland: RC_Improved_FOV_Designator_Bag_Woodland_base
+class RC_Improved_FOV_Designator_Bag_WD: RC_Improved_FOV_Designator_Bag_WD_base
 {
 	displayname="RC Improved Designator";
 	scope=2;
@@ -687,17 +687,17 @@ class RC_Improved_FOV_Designator_Bag_Woodland: RC_Improved_FOV_Designator_Bag_Wo
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator";
-		assembleTo="RC_Improved_FOV_Designator_Woodland";
+		assembleTo="RC_Improved_FOV_Designator_WD";
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Bag_Woodland: RC_Improved_FOV_Designator_Bag_Woodland
+class RC_Improved_FOV_Designator_Ti_Bag_WD: RC_Improved_FOV_Designator_Bag_WD
 {
 	displayname="RC Improved Designator whTi";
 
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator whTi";
-		assembleTo="RC_Improved_FOV_Designator_Ti_Woodland";
+		assembleTo="RC_Improved_FOV_Designator_Ti_WD";
 	};
 };
 
@@ -705,7 +705,7 @@ class RC_Improved_FOV_Designator_Ti_Bag_Woodland: RC_Improved_FOV_Designator_Bag
 
 //Opfor
 // Arid
-class RC_Improved_FOV_Designator_Arid_O: RC_Improved_FOV_Designator_Arid
+class RC_Improved_FOV_Designator_A_O: RC_Improved_FOV_Designator_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -716,11 +716,11 @@ class RC_Improved_FOV_Designator_Arid_O: RC_Improved_FOV_Designator_Arid
 		displayName="RC Improved Designator whTi [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Bag_Arid_O"
+			"RC_Improved_FOV_Designator_Bag_A_O"
 		};
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Arid_O: RC_Improved_FOV_Designator_Ti_Arid
+class RC_Improved_FOV_Designator_Ti_A_O: RC_Improved_FOV_Designator_Ti_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -731,31 +731,31 @@ class RC_Improved_FOV_Designator_Ti_Arid_O: RC_Improved_FOV_Designator_Ti_Arid
 		displayName="RC Improved Designator whTi [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Ti_Bag_Arid_O"
+			"RC_Improved_FOV_Designator_Ti_Bag_A_O"
 		};
 	};
 };
-class RC_Improved_FOV_Designator_Bag_Arid_O: RC_Improved_FOV_Designator_Bag_Arid
+class RC_Improved_FOV_Designator_Bag_A_O: RC_Improved_FOV_Designator_Bag_A
 {
 	displayName="RC Improved Designator whTi [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator whTi [Opf]";
-		assembleTo="RC_Improved_FOV_Designator_Arid_O";
+		assembleTo="RC_Improved_FOV_Designator_A_O";
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Bag_Arid_O: RC_Improved_FOV_Designator_Ti_Bag_Arid
+class RC_Improved_FOV_Designator_Ti_Bag_A_O: RC_Improved_FOV_Designator_Ti_Bag_A
 {
 	displayName="RC Improved Designator whTi [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator whTi [Opf]";
-		assembleTo="RC_Improved_FOV_Designator_Ti_Arid_O";
+		assembleTo="RC_Improved_FOV_Designator_Ti_A_O";
 	};
 };
 
 // Woodland
-class RC_Improved_FOV_Designator_Woodland_O: RC_Improved_FOV_Designator_Woodland
+class RC_Improved_FOV_Designator_WD_O: RC_Improved_FOV_Designator_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -766,11 +766,11 @@ class RC_Improved_FOV_Designator_Woodland_O: RC_Improved_FOV_Designator_Woodland
 		displayName="RC Improved Designator [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Bag_Woodland_O"
+			"RC_Improved_FOV_Designator_Bag_WD_O"
 		};
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Woodland_O: RC_Improved_FOV_Designator_Ti_Woodland
+class RC_Improved_FOV_Designator_Ti_WD_O: RC_Improved_FOV_Designator_Ti_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -785,22 +785,22 @@ class RC_Improved_FOV_Designator_Ti_Woodland_O: RC_Improved_FOV_Designator_Ti_Wo
 		};
 	};
 };
-class RC_Improved_FOV_Designator_Bag_Woodland_O: RC_Improved_FOV_Designator_Bag_Woodland
+class RC_Improved_FOV_Designator_Bag_WD_O: RC_Improved_FOV_Designator_Bag_WD
 {
 	displayName="RC Improved Designator [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator [Opf]";
-		assembleTo="RC_Improved_FOV_Designator_Woodland_O";
+		assembleTo="RC_Improved_FOV_Designator_WD_O";
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Bag_Woodland_O: RC_Improved_FOV_Designator_Ti_Bag_Woodland
+class RC_Improved_FOV_Designator_Ti_Bag_WD_O: RC_Improved_FOV_Designator_Ti_Bag_WD
 {
 	displayName="RC Improved Designator whTi [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator whTi [Opf]";
-		assembleTo="RC_Improved_FOV_Designator_Woodland_O";
+		assembleTo="RC_Improved_FOV_Designator_WD_O";
 	};
 };
 
@@ -808,7 +808,7 @@ class RC_Improved_FOV_Designator_Ti_Bag_Woodland_O: RC_Improved_FOV_Designator_T
 
 //Independant
 // Arid
-class RC_Improved_FOV_Designator_Arid_I: RC_Improved_FOV_Designator_Arid
+class RC_Improved_FOV_Designator_A_I: RC_Improved_FOV_Designator_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -819,11 +819,11 @@ class RC_Improved_FOV_Designator_Arid_I: RC_Improved_FOV_Designator_Arid
 		displayName="RC Improved Designator [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Bag_Arid_I"
+			"RC_Improved_FOV_Designator_Bag_A_I"
 		};
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Arid_I: RC_Improved_FOV_Designator_Ti_Arid
+class RC_Improved_FOV_Designator_Ti_A_I: RC_Improved_FOV_Designator_Ti_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -834,31 +834,31 @@ class RC_Improved_FOV_Designator_Ti_Arid_I: RC_Improved_FOV_Designator_Ti_Arid
 		displayName="RC Improved Designator whTi [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Ti_Bag_Arid_I"
+			"RC_Improved_FOV_Designator_Ti_Bag_A_I"
 		};
 	};
 };
-class RC_Improved_FOV_Designator_Bag_Arid_I: RC_Improved_FOV_Designator_Bag_Arid
+class RC_Improved_FOV_Designator_Bag_A_I: RC_Improved_FOV_Designator_Bag_A
 {
 	displayName="RC Improved Designator [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator [Ind]";
-		assembleTo="RC_Improved_FOV_Designator_Arid_I";
+		assembleTo="RC_Improved_FOV_Designator_A_I";
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Bag_Arid_I: RC_Improved_FOV_Designator_Ti_Bag_Arid
+class RC_Improved_FOV_Designator_Ti_Bag_A_I: RC_Improved_FOV_Designator_Ti_Bag_A
 {
 	displayName="RC Improved Designator whTi [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator whTi [Ind]";
-		assembleTo="RC_Improved_FOV_Designator_Ti_Arid_I";
+		assembleTo="RC_Improved_FOV_Designator_Ti_A_I";
 	};
 };
 
 // Woodland
-class RC_Improved_FOV_Designator_Woodland_I: RC_Improved_FOV_Designator_Woodland
+class RC_Improved_FOV_Designator_WD_I: RC_Improved_FOV_Designator_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -869,11 +869,11 @@ class RC_Improved_FOV_Designator_Woodland_I: RC_Improved_FOV_Designator_Woodland
 		displayName="RC Improved Designator [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Bag_Woodland_I"
+			"RC_Improved_FOV_Designator_Bag_WD_I"
 		};
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Woodland_I: RC_Improved_FOV_Designator_Ti_Woodland
+class RC_Improved_FOV_Designator_Ti_WD_I: RC_Improved_FOV_Designator_Ti_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -884,26 +884,26 @@ class RC_Improved_FOV_Designator_Ti_Woodland_I: RC_Improved_FOV_Designator_Ti_Wo
 		displayName="RC Improved Designator whTi [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Ti_Bag_Woodland_I"
+			"RC_Improved_FOV_Designator_Ti_Bag_WD_I"
 		};
 	};
 };
-class RC_Improved_FOV_Designator_Bag_Woodland_I: RC_Improved_FOV_Designator_Bag_Woodland
+class RC_Improved_FOV_Designator_Bag_WD_I: RC_Improved_FOV_Designator_Bag_WD
 {
 	displayName="RC Improved Designator [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator [Ind]";
-		assembleTo="RC_Improved_FOV_Designator_Woodland_I";
+		assembleTo="RC_Improved_FOV_Designator_WD_I";
 	};
 };
-class RC_Improved_FOV_Designator_Ti_Bag_Woodland_I: RC_Improved_FOV_Designator_Ti_Bag_Woodland
+class RC_Improved_FOV_Designator_Ti_Bag_WD_I: RC_Improved_FOV_Designator_Ti_Bag_WD
 {
 	displayName="RC Improved Designator whTi [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator whTi [Ind]";
-		assembleTo="RC_Improved_FOV_Designator_Woodland_I";
+		assembleTo="RC_Improved_FOV_Designator_WD_I";
 	};
 };
 

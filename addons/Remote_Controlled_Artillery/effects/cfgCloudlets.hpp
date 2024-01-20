@@ -46,26 +46,7 @@ class CircleDustBig
 	randomDirectionPeriodVar=0;
 	randomDirectionIntensityVar=0;
 };
-*/
 
-class CircleDustBig;
-class RC_CircleDustBig: CircleDustBig
-{
-	circleRadius=10;	//4
-	circleVelocity[]={1,0,1};
-	particleShape="\A3\data_f\ParticleEffects\Universal\Universal";
-	particleType="Billboard";
-	timerPeriod=1;
-	lifeTime=15;	//6
-	weight=0.052999999;
-	volume=0.039999999;
-	lifeTimeVar=1;
-	positionVar[]={10,1,10};
-	rotationVelocityVar=20;
-	sizeVar=0.30000001;
-};
-
-/*
 class CircleDustMed: Default
 {
 	interval=0.001;
@@ -153,4 +134,66 @@ class RC_604mmCircleDust: CircleDustMed
 	circleRadius=174.3;
 	size[]={24,44};
 	lifeTime=40;
+};
+
+/*
+class MortarExp: Default
+{
+	interval=0.02;
+	circleRadius=0;
+	circleVelocity[]={0,0,0};
+	particleShape="\A3\data_f\ParticleEffects\Universal\Universal";
+	particleFSNtieth=16;
+	particleFSIndex=0;
+	particleFSFrameCount=32;
+	particleFSLoop=0;
+	angleVar=1;
+	animationName="";
+	particleType="Billboard";
+	timerPeriod=1;
+	lifeTime=2;
+	moveVelocity[]={0,1,0};
+	rotationVelocity=0;
+	weight=10;
+	volume=7.9000001;
+	rubbing=0.1;
+	size[]=
+	{
+		"0.05 * intensity + 3",
+		"0.05 * intensity + 2"
+	};
+	color[]=
+	{
+		{1,1,1,-20},
+		{1,1,1,-15}
+	};
+	animationSpeed[]={1};
+	randomDirectionPeriod=0.2;
+	randomDirectionIntensity=0.2;
+	onTimerScript="";
+	beforeDestroyScript="";
+	lifeTimeVar=0;
+	positionVar[]={2.5,0.1,2.5};
+	MoveVelocityVar[]={0.2,0.5,0.2};
+	rotationVelocityVar=90;
+	sizeVar=0.5;
+	colorVar[]={0,0,0,0};
+	randomDirectionPeriodVar=0;
+	randomDirectionIntensityVar=0;
+};
+*/
+
+class MortarExp;
+class RC_MortarExp: MortarExp
+{
+	lifeTime=3;
+	weight=10;
+	volume=7.9000001;
+	rubbing=0.1;
+	size[]=
+	{
+		"0.1 * intensity + 3",
+		"0.1 * intensity + 2"
+	};
+	sizeVar=0.5;
 };

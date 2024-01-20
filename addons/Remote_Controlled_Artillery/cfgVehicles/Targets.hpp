@@ -70,7 +70,7 @@ class RC_LockableMarkerTarget: All
 };
 
 class O_TargetSoldier;
-class RC_O_InvisibleDatalinkTarget: O_TargetSoldier
+class RC_InvisibleDatalinkTarget_O: O_TargetSoldier
 {
 	author="Ascent";
 	displayName="GPS Marker";
@@ -92,7 +92,7 @@ class RC_O_InvisibleDatalinkTarget: O_TargetSoldier
 	};
 };
 class B_TargetSoldier;
-class RC_B_InvisibleDatalinkTarget: B_TargetSoldier
+class RC_InvisibleDatalinkTarget_B: B_TargetSoldier
 {
 	author="Ascent";
 	displayName="GPS Marker";
@@ -115,7 +115,7 @@ class RC_B_InvisibleDatalinkTarget: B_TargetSoldier
 	};
 };
 class I_TargetSoldier;
-class RC_I_InvisibleDatalinkTarget: I_TargetSoldier
+class RC_InvisibleDatalinkTarget_I: I_TargetSoldier
 {
 	author="Ascent";
 	displayName="GPS Marker";

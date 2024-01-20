@@ -28,6 +28,7 @@ arty:
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
 
+-remove IR lock as it could lock onto player attached strobes?
 -edit 	aiRateOfFire=1;   aiRateOfFireDistance=10;
 -increase precision of 230mm guided when engaging laser
 -warheadName HE/TandemHEAT ?
@@ -57,6 +58,7 @@ _uav = (getConnectedUAV player);
 
 general:
 -fix Static AT laser engaging (how!?)
+-lock up if inheriting structure is correct
 
 RC IC:
 -hide seats for RC IC
@@ -77,6 +79,7 @@ FSV/MBT:
 
 AR-short:
 -making sure effect is reset when leaving uav
+-limit range of grenade dropping uav to 3km from user
 -remove thermal from AR1 or try to change ppeffect priority
 
 _uav = getConnectedUAV player;
@@ -258,6 +261,8 @@ DONE - FEATURES:
 -added script to remove FSV & MBT script to remove gunner and commander, also to turn of engine when standing still (despite not being ugv gunner/commander)
 -added wide commander FOV and fluid zoom for FSV & MBT
 -added RC IC commander seat and improved RC driving by using gunner seat and its better camera position
+-added AR-1&3 for all sides with correct textures
+-added Grenade Dropping UAV
 
 -low/high trajectory list:
 	low: HEAB, Guided

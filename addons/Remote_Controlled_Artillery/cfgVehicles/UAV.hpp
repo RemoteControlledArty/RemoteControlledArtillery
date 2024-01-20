@@ -1,4 +1,4 @@
-//AR-4
+//AR-1
 class B_UAV_01_F;
 class RC_UAV_base: B_UAV_01_F
 {
@@ -165,7 +165,7 @@ class RC_UAV_AR1: RC_UAV_base
 		initAngleY=0;
 		minAngleY=0;
 		maxAngleY=0;
-		minFov=0.25;
+		minFov=0.025;
 		maxFov=1.25;
 		initFov=0.75;
 		visionMode[]=
@@ -184,7 +184,7 @@ class RC_UAV_AR1: RC_UAV_base
 		initAngleY=0;
 		minAngleY=0;
 		maxAngleY=0;
-		minFov=0.25;
+		minFov=0.025;
 		maxFov=1.25;
 		initFov=0.75;
 		visionMode[]=
@@ -201,6 +201,8 @@ class RC_UAV_AR1: RC_UAV_base
 		class MainTurret: MainTurret
 		{
 			showAllTargets=4;
+			//isCopilot=1; //0
+			commanding=3; //-1
 
 			class Components: Components
 			{
@@ -212,17 +214,12 @@ class RC_UAV_AR1: RC_UAV_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={1000,500,250,2000};
+							range[]={2000,1000,500,250};
 							resource="RscCustomInfoSensors";
 						};
 					};
 				};
 			};
-
-			//showAllTargets="2 + 4";
-
-			isCopilot=1; //0
-			commanding=2; //-1
 
 			class OpticsIn
 			{
@@ -235,8 +232,8 @@ class RC_UAV_AR1: RC_UAV_base
 					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
-					initFov=0.5;
-					minFov=0.01;
+					initFov=1.0;
+					minFov=0.025;
 					maxFov=1.0;
 					directionStabilized=1;
 					visionMode[]=
@@ -259,8 +256,8 @@ class RC_UAV_AR1: RC_UAV_base
 					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
-					initFov=1.1;
-					minFov=0.01;
+					initFov=1.0;
+					minFov=0.025;
 					maxFov=1.0;
 					visionMode[]=
 					{
@@ -273,6 +270,54 @@ class RC_UAV_AR1: RC_UAV_base
 					gunnerOpticsEffect[]={};
 				};
 			};
+		};
+	};
+};
+class RC_UAV_AR1_O: RC_UAV_AR1
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_UAV_01_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Drones_F\Air_F_Gamma\UAV_01\Data\UAV_01_OPFOR_CO.paa"
+	};
+	textureList[]=
+	{
+		"Opfor",
+		1
+	};
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_UAV_AR1_Bag_O"
+		};
+	};
+};
+class RC_UAV_AR1_I: RC_UAV_AR1
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_UAV_01_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Drones_F\Air_F_Gamma\UAV_01\Data\UAV_01_INDP_CO.paa"
+	};
+	textureList[]=
+	{
+		"Indep",
+		1
+	};
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_UAV_AR1_Bag_I"
 		};
 	};
 };
@@ -427,14 +472,64 @@ class RC_UAV_AR3: RC_UAV_AR1
 		};
 	};
 };
+class RC_UAV_AR3_O: RC_UAV_AR3
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_UAV_01_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Drones_F\Air_F_Gamma\UAV_01\Data\UAV_01_OPFOR_CO.paa"
+	};
+	textureList[]=
+	{
+		"Opfor",
+		1
+	};
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_UAV_AR3_Bag_O"
+		};
+	};
+};
+class RC_UAV_AR3_I: RC_UAV_AR3
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_UAV_01_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Drones_F\Air_F_Gamma\UAV_01\Data\UAV_01_INDP_CO.paa"
+	};
+	textureList[]=
+	{
+		"Indep",
+		1
+	};
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_UAV_AR3_Bag_I"
+		};
+	};
+};
 
 
 class Bag_Base;
-class Weapon_Bag_Base: Bag_Base
+class RC_Weapon_Bag_Base: Bag_Base
 {
 	class assembleInfo;
+	scope=0;
+	scopeCurator=0;
 };
-class RC_UAV_AR1_Bag: Weapon_Bag_Base
+class RC_UAV_AR1_Bag: RC_Weapon_Bag_Base
 {
 	mapSize=0.60000002;
 	_generalMacro="RC_UAV_AR1_Bag_Arid_Base";
@@ -443,7 +538,7 @@ class RC_UAV_AR1_Bag: Weapon_Bag_Base
 	displayName="RC AR-1";
 	editorCategory="EdCat_Equipment";
 	editorSubcategory="EdSubcat_Backpacks";
-	faction="BLU_F";
+	//faction="BLU_F";
 	picture="\A3\Weapons_F\ammoboxes\bags\data\ui\icon_B_C_Kitbag_rgr";
 	model="\A3\weapons_f\Ammoboxes\bags\Backpack_Fast";
 	hiddenSelectionsTextures[]=
@@ -459,53 +554,281 @@ class RC_UAV_AR1_Bag: Weapon_Bag_Base
 		assembleTo="RC_UAV_AR1";
 	};
 };
+class RC_UAV_AR1_Bag_O: RC_UAV_AR1_Bag
+{
+	displayName="RC AR-1 [Opf]";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC AR-1 [Opf]";
+		assembleTo="RC_UAV_AR1_O";
+	};
+};
+class RC_UAV_AR1_Bag_I: RC_UAV_AR1_Bag
+{
+	displayName="RC AR-1 [Ind]";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC AR-1 [Ind]";
+		assembleTo="RC_UAV_AR1_I";
+	};
+};
 
 
 class RC_UAV_AR3_Bag: RC_UAV_AR1_Bag
 {
 	displayName="RC AR-3";
-
 	class assembleInfo: assembleInfo
 	{
-		base="";
 		displayName="RC AR-3";
 		assembleTo="RC_UAV_AR3";
 	};
 };
-
-
-/*
-class O_UAV_01_backpack_F: B_UAV_01_backpack_F
+class RC_UAV_AR3_Bag_O: RC_UAV_AR3_Bag
 {
-	author="$STR_A3_Bohemia_Interactive";
-	_generalMacro="O_UAV_01_backpack_F";
-	displayName="$STR_A3_CFGVEHICLES_B_UAV_01_BACKPACK_F1";
-	faction="OPF_F";
-	picture="\A3\Drones_F\Weapons_F_Gamma\Ammoboxes\Bags\Data\UI\icon_B_C_UAV_cbr_ca";
+	displayName="RC AR-3 [Opf]";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC AR-3 [Opf]";
+		assembleTo="RC_UAV_AR3_O";
+	};
+};
+class RC_UAV_AR3_Bag_I: RC_UAV_AR1_Bag
+{
+	displayName="RC AR-3 [Ind]";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC AR-3 [Ind]";
+		assembleTo="RC_UAV_AR3_I";
+	};
+};
+
+
+class C_IDAP_UAV_06_antimine_F;
+class RC_GrenadeDropper_Base: C_IDAP_UAV_06_antimine_F
+{
+	class PilotCamera;
+	class OpticsIn;
+	class Wide;
+	class ViewPilot;
+	class ViewOptics;
+	class assembleInfo;
+	class Components;
+	scope=0;
+	scopeCurator=0;
+};
+class RC_GrenadeDropper: RC_GrenadeDropper_Base
+{
+	displayName="RC Grenade Dropper";
+	faction="RemoteControlled_B";
+	editorSubcategory="RC_Spotting_subcat";
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	crew="B_UAV_AI";
+	//crew="C_IDAP_UAV_AI_antimine_F";
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_GrenadeDropper_Bag"
+		};
+	};
+
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	laserScanner=1;
+
+	class PilotCamera: PilotCamera
+	{
+		//stabilizedInAxes=3;
+
+		class OpticsIn: OpticsIn
+		{
+			class Wide: Wide
+			{
+				initFov=1;
+				minFov=0.5;
+				maxFov=1;
+				directionStabilized=1;
+				//horizontallyStabilized=1;
+            	//stabilizedInAxes=3;
+				visionMode[]=
+				{
+					"Normal",
+					"NVG"
+				};
+			};
+		};
+		pilotOpticsShowCursor=1;
+		controllable=1;
+	};
+	class ViewPilot: ViewPilot
+	{
+		minFov=0.25;
+		maxFov=1.25;
+		initFov=0.75;
+	};
+	class Viewoptics: ViewOptics
+	{
+		minFov=1;
+		maxFov=0.5;
+		initFov=1;
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+	};
+
+	class Components: Components
+	{
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+			class components
+			{
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoAirborneMiniMap";
+				};
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={3000,1500,750,375};
+					resource="RscCustomInfoSensors";
+				};
+				class MineDetectorDisplay
+				{
+					componentType="MineDetectorDisplayComponent";
+					range=50;
+					resource="RscCustomInfoMineDetect";
+				};
+			};
+		};
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=3000;
+
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+	};
+};
+class RC_GrenadeDropper_O: RC_GrenadeDropper
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_GrenadeDropper_Bag_O"
+		};
+	};
+};
+class RC_GrenadeDropper_I: RC_GrenadeDropper
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_GrenadeDropper_Bag_I"
+		};
+	};
+};
+
+
+class RC_GrenadeDropper_Bag: RC_Weapon_Bag_Base
+{
+	mapSize=0.63999999;
+	displayName="RC Grenade Dropper";
+	scope=2;
+	scopeCurator=2;
+
+	DLC="Orange";
+	editorCategory="EdCat_Equipment";
+	editorSubcategory="EdSubcat_Backpacks";
+	maximumLoad=0;
+	mass=300;
+	picture="\A3\Weapons_F\ammoboxes\bags\data\ui\icon_B_C_Kitbag_rgr";
+	model="\A3\weapons_f\Ammoboxes\bags\Backpack_Fast";
 	hiddenSelectionsTextures[]=
 	{
-		"\A3\Drones_F\Weapons_F_Gamma\Ammoboxes\Bags\Data\UAV_backpack_cbr_co.paa"
+		"\A3\weapons_f\ammoboxes\bags\data\backpack_fast_rgr_co.paa"
 	};
 	class assembleInfo: assembleInfo
 	{
-		assembleTo="O_UAV_01_F";
-		displayName="$STR_A3_CFGVEHICLES_O_UAV_01";
+		base="";
+		displayName="RC Grenade Dropper";
+		assembleTo="RC_Grenade_Dropper";
 	};
 };
-class I_UAV_01_backpack_F: B_UAV_01_backpack_F
+class RC_GrenadeDropper_Bag_O: RC_GrenadeDropper_Bag
 {
-	author="$STR_A3_Bohemia_Interactive";
-	_generalMacro="I_UAV_01_backpack_F";
-	displayName="$STR_A3_CFGVEHICLES_B_UAV_01_BACKPACK_F2";
-	faction="IND_F";
-	picture="\A3\Drones_F\Weapons_F_Gamma\Ammoboxes\Bags\Data\UI\icon_B_C_UAV_oli_ca";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\Drones_F\Weapons_F_Gamma\Ammoboxes\Bags\Data\UAV_backpack_oli_co.paa"
-	};
+	displayName="RC Grenade Dropper [Opf]";
 	class assembleInfo: assembleInfo
 	{
-		assembleTo="I_UAV_01_F";
+		displayName="RC Grenade Dropper [Opf]";
+		assembleTo="RC_GrenadeDropper_O";
 	};
 };
-/*
+class RC_GrenadeDropper_Bag_I: RC_GrenadeDropper_Bag
+{
+	displayName="RC Grenade Dropper [Ind]";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC Grenade Dropper [Ind]";
+		assembleTo="RC_GrenadeDropper_I";
+	};
+};

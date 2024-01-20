@@ -168,9 +168,9 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 					"Normal",
 					"NVG"
 				};
-				initFov=1;	//0.8
+				initFov=1;
 				minFov=0.125;
-				maxFov=1;	//0.8
+				maxFov=1;
 			};
 
 			weapons[]=
@@ -567,9 +567,9 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 			weapon="launch_NLAW_F";
 			count=2;
 		};
-		class _xx_Improved_FOV_Laserdesignator_Arid
+		class _xx_Improved_FOV_Laserdesignator_A
 		{
-			weapon="Improved_FOV_Laserdesignator_Arid";
+			weapon="Improved_FOV_Laserdesignator_A";
 			count=1;
 		};
 		class _xx_Rangefinder
@@ -661,9 +661,9 @@ class RC_Infantry_Carrier_A_O: RC_Infantry_Carrier_A
 			weapon="launch_RPG32_green_F";
 			count=1;
 		};
-		class _xx_Improved_FOV_Laserdesignator_Arid
+		class _xx_Improved_FOV_Laserdesignator_A
 		{
-			weapon="Improved_FOV_Laserdesignator_Arid";
+			weapon="Improved_FOV_Laserdesignator_A";
 			count=1;
 		};
 		class _xx_Rangefinder
@@ -725,9 +725,9 @@ class RC_Infantry_Carrier_WD: RC_Infantry_Carrier_A
 			weapon="launch_NLAW_F";
 			count=2;
 		};
-		class _xx_Improved_FOV_Laserdesignator_Woodland
+		class _xx_Improved_FOV_Laserdesignator_WD
 		{
-			weapon="Improved_FOV_Laserdesignator_Woodland";
+			weapon="Improved_FOV_Laserdesignator_WD";
 			count=1;
 		};
 		class _xx_Rangefinder
@@ -806,9 +806,9 @@ class RC_Infantry_Carrier_WD_O: RC_Infantry_Carrier_WD
 			weapon="launch_RPG32_green_F";
 			count=1;
 		};
-		class _xx_Improved_FOV_Laserdesignator_Woodland
+		class _xx_Improved_FOV_Laserdesignator_WD
 		{
-			weapon="Improved_FOV_Laserdesignator_Woodland";
+			weapon="Improved_FOV_Laserdesignator_WD";
 			count=1;
 		};
 		class _xx_Rangefinder

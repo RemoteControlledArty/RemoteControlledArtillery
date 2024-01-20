@@ -28,9 +28,9 @@ class RC_GrenadeExploLight: GrenadeExploLight
 	diffuse[]={1,0.60000002,0.40000001};
 	color[]={1,0.60000002,0.40000001};
 	ambient[]={0,0,0,0};
-	brightness=10;
+	brightness=20;
 	size=1;
-	intensity=10000;
+	intensity=20000;
 	drawLight=0;
 	blinking=1;
 	class Attenuation

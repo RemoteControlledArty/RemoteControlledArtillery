@@ -7,75 +7,75 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_Improved_FOV_Designator_Arid,
-			RC_Improved_FOV_Designator_Arid_O,
-			RC_Improved_FOV_Designator_Arid_I,
-			RC_Improved_FOV_Designator_Ti_Arid,
-			RC_Improved_FOV_Designator_Ti_Arid_O,
-			RC_Improved_FOV_Designator_Ti_Arid_I,
+			RC_Improved_FOV_Designator_A,
+			RC_Improved_FOV_Designator_A_O,
+			RC_Improved_FOV_Designator_A_I,
+			RC_Improved_FOV_Designator_Ti_A,
+			RC_Improved_FOV_Designator_Ti_A_O,
+			RC_Improved_FOV_Designator_Ti_A_I,
 
-			RC_Improved_FOV_Designator_Bag_Arid,
-			RC_Improved_FOV_Designator_Bag_Arid_O,
-			RC_Improved_FOV_Designator_Bag_Arid_I,
-			RC_Improved_FOV_Designator_Ti_Bag_Arid,
-			RC_Improved_FOV_Designator_Ti_Bag_Arid_O,
-			RC_Improved_FOV_Designator_Ti_Bag_Arid_I,
+			RC_Improved_FOV_Designator_Bag_A,
+			RC_Improved_FOV_Designator_Bag_A_O,
+			RC_Improved_FOV_Designator_Bag_A_I,
+			RC_Improved_FOV_Designator_Ti_Bag_A,
+			RC_Improved_FOV_Designator_Ti_Bag_A_O,
+			RC_Improved_FOV_Designator_Ti_Bag_A_I,
 
-			RC_Improved_FOV_Designator_Woodland,
-			RC_Improved_FOV_Designator_Woodland_O,
-			RC_Improved_FOV_Designator_Woodland_I,
-			RC_Improved_FOV_Designator_Ti_Woodland,
-			RC_Improved_FOV_Designator_Ti_Woodland_O,
-			RC_Improved_FOV_Designator_Ti_Woodland_I,
+			RC_Improved_FOV_Designator_WD,
+			RC_Improved_FOV_Designator_WD_O,
+			RC_Improved_FOV_Designator_WD_I,
+			RC_Improved_FOV_Designator_Ti_WD,
+			RC_Improved_FOV_Designator_Ti_WD_O,
+			RC_Improved_FOV_Designator_Ti_WD_I,
 
-			RC_Improved_FOV_Designator_Bag_Woodland,
-			RC_Improved_FOV_Designator_Bag_Woodland_O,
-			RC_Improved_FOV_Designator_Bag_Woodland_I,
-			RC_Improved_FOV_Designator_Ti_Bag_Woodland,
-			RC_Improved_FOV_Designator_Ti_Bag_Woodland_O,
-			RC_Improved_FOV_Designator_Ti_Bag_Woodland_I,
+			RC_Improved_FOV_Designator_Bag_WD,
+			RC_Improved_FOV_Designator_Bag_WD_O,
+			RC_Improved_FOV_Designator_Bag_WD_I,
+			RC_Improved_FOV_Designator_Ti_Bag_WD,
+			RC_Improved_FOV_Designator_Ti_Bag_WD_O,
+			RC_Improved_FOV_Designator_Ti_Bag_WD_I,
 
-			RC_Static_AA_Arid,
-			RC_Static_AA_Woodland,
-			RC_Static_AA_Arid_O,
-			RC_Static_AA_Woodland_O,
-			RC_Static_AA_Arid_I,
-			RC_Static_AA_Woodland_I,
+			RC_Static_AA_A,
+			RC_Static_AA_WD,
+			RC_Static_AA_A_O,
+			RC_Static_AA_WD_O,
+			RC_Static_AA_A_I,
+			RC_Static_AA_WD_I,
 
-			RC_Static_AA_Arid_Bag,
-			RC_Static_AA_Woodland_Bag,
-			RC_Static_AA_Arid_Bag_O,
-			RC_Static_AA_Woodland_Bag_O,
-			RC_Static_AA_Arid_Bag_I,
-			RC_Static_AA_Woodland_Bag_I,
+			RC_Static_AA_A_Bag,
+			RC_Static_AA_WD_Bag,
+			RC_Static_AA_A_Bag_O,
+			RC_Static_AA_WD_Bag_O,
+			RC_Static_AA_A_Bag_I,
+			RC_Static_AA_WD_Bag_I,
 
-			RC_Static_AT_Arid,
-			RC_Static_AT_Woodland,
-			RC_Static_AT_Arid_O,
-			RC_Static_AT_Woodland_O,
-			RC_Static_AT_Arid_I,
-			RC_Static_AT_Woodland_I,
+			RC_Static_AT_A,
+			RC_Static_AT_WD,
+			RC_Static_AT_A_O,
+			RC_Static_AT_WD_O,
+			RC_Static_AT_A_I,
+			RC_Static_AT_WD_I,
 
-			RC_Static_AT_Arid_Bag,
-			RC_Static_AT_Woodland_Bag,
-			RC_Static_AT_Arid_Bag_O,
-			RC_Static_AT_Woodland_Bag_O,
-			RC_Static_AT_Arid_Bag_I,
-			RC_Static_AT_Woodland_Bag_I,
+			RC_Static_AT_A_Bag,
+			RC_Static_AT_WD_Bag,
+			RC_Static_AT_A_Bag_O,
+			RC_Static_AT_WD_Bag_O,
+			RC_Static_AT_A_Bag_I,
+			RC_Static_AT_WD_Bag_I,
 
-			RC_Static_ATGM_Arid,
-			RC_Static_ATGM_Woodland,
-			RC_Static_ATGM_Arid_O,
-			RC_Static_ATGM_Woodland_O,
-			RC_Static_ATGM_Arid_I,
-			RC_Static_ATGM_Woodland_I,
+			RC_Static_ATGM_A,
+			RC_Static_ATGM_WD,
+			RC_Static_ATGM_A_O,
+			RC_Static_ATGM_WD_O,
+			RC_Static_ATGM_A_I,
+			RC_Static_ATGM_WD_I,
 
-			RC_Static_ATGM_Arid_Bag,
-			RC_Static_ATGM_Woodland_Bag,
-			RC_Static_ATGM_Arid_Bag_O,
-			RC_Static_ATGM_Woodland_Bag_O,
-			RC_Static_ATGM_Arid_Bag_I,
-			RC_Static_ATGM_Woodland_Bag_I,
+			RC_Static_ATGM_A_Bag,
+			RC_Static_ATGM_WD_Bag,
+			RC_Static_ATGM_A_Bag_O,
+			RC_Static_ATGM_WD_Bag_O,
+			RC_Static_ATGM_A_Bag_I,
+			RC_Static_ATGM_WD_Bag_I,
 
 			RC_Howitzer_NA_A,
 			RC_Howitzer_NA_WD,
@@ -182,27 +182,68 @@ class CfgPatches
 
 			RC_UAV_AR1,
 			RC_UAV_AR3,
+			RC_UAV_AR1_O,
+			RC_UAV_AR3_O,
+			RC_UAV_AR1_I,
+			RC_UAV_AR3_I,
 
 			RC_UAV_AR1_Bag,
 			RC_UAV_AR3_Bag,
+			RC_UAV_AR1_Bag_O,
+			RC_UAV_AR3_Bag_O,
+			RC_UAV_AR1_Bag_I,
+			RC_UAV_AR3_Bag_I,
+
+			RC_GrenadeDropper,
+			RC_GrenadeDropper_O,
+			RC_GrenadeDropper_I,
+
+			RC_GrenadeDropper_Bag,
+			RC_GrenadeDropper_Bag_O,
+			RC_GrenadeDropper_Bag_I,
 
 			RC_Infantry_Carrier_A,
 			RC_Infantry_Carrier_WD,
+			RC_Infantry_Carrier_A_O,
+			RC_Infantry_Carrier_WD_O,
+			RC_Infantry_Carrier_A_I,
+			RC_Infantry_Carrier_WD_I,
 
 			RC_RespawnTruck_A,
 			RC_RespawnTruck_WD,
 
-			RC_B_InvisibleDatalinkTarget,
-			RC_I_InvisibleDatalinkTarget,
-			RC_O_InvisibleDatalinkTarget
+			RC_NLOS_FSV_A,
+			RC_NLOS_FSV_WD,
+			RC_NLOS_FSV_A_O,
+			RC_NLOS_FSV_WD_O,
+			RC_NLOS_FSV_A_I,
+			RC_NLOS_FSV_WD_I,
+
+			RC_FSV_A,
+			RC_FSV_WD,
+			RC_FSV_A_O,
+			RC_FSV_WD_O,
+			RC_FSV_A_I,
+			RC_FSV_WD_I,
+
+			RC_MBT6_A,
+			RC_MBT6_WD,
+			RC_MBT6_A_O,
+			RC_MBT6_WD_O,
+			RC_MBT6_A_I,
+			RC_MBT6_WD_I,
+
+			RC_InvisibleDatalinkTarget_B,
+			RC_InvisibleDatalinkTarget_I,
+			RC_InvisibleDatalinkTarget_O
 		};
 
 		weapons[]=
 		{
-			Improved_FOV_Laserdesignator_Arid,
-			Improved_FOV_Laserdesignator_Woodland,
-			Improved_FOV_Laserdesignator_Ti_Arid,
-			Improved_FOV_Laserdesignator_Ti_Woodland,
+			Improved_FOV_Laserdesignator_A,
+			Improved_FOV_Laserdesignator_WD,
+			Improved_FOV_Laserdesignator_Ti_A,
+			Improved_FOV_Laserdesignator_Ti_WD,
 
 			RC_ATGM,
 
@@ -431,7 +472,6 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\AR1_AR3.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
@@ -444,4 +484,5 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAT.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Targets.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\UAV.hpp"
 };

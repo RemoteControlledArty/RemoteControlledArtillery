@@ -413,7 +413,7 @@ class RC_NLOS_FSV_WD_I: RC_NLOS_FSV_WD
 };
 
 
-class RC_LOS_FSV_A: RC_NLOS_FSV_A
+class RC_FSV_A: RC_NLOS_FSV_A
 {
 	isRCArty=0;
 	displayName="FSV";
@@ -442,13 +442,13 @@ class RC_LOS_FSV_A: RC_NLOS_FSV_A
 		};
 	};
 };
-class RC_LOS_FSV_A_O: RC_LOS_FSV_A
+class RC_FSV_A_O: RC_FSV_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_LOS_FSV_A_I: RC_LOS_FSV_A
+class RC_FSV_A_I: RC_FSV_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -456,7 +456,7 @@ class RC_LOS_FSV_A_I: RC_LOS_FSV_A
 };
 
 
-class RC_LOS_FSV_WD: RC_LOS_FSV_A
+class RC_FSV_WD: RC_FSV_A
 {
 	editorPreview="\A3\EditorPreviews_F_Tank\Data\CfgVehicles\B_T_AFV_Wheeled_01_up_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
@@ -477,13 +477,13 @@ class RC_LOS_FSV_WD: RC_LOS_FSV_A
 		0
 	};
 };
-class RC_LOS_FSV_WD_O: RC_LOS_FSV_WD
+class RC_FSV_WD_O: RC_FSV_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_LOS_FSV_WD_I: RC_LOS_FSV_WD
+class RC_FSV_WD_I: RC_FSV_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -846,9 +846,9 @@ class RC_MBT6_A: RC_MBT6_A_Base
 			weapon="launch_NLAW_F";
 			count=2;
 		};
-		class _xx_Improved_FOV_Laserdesignator_Arid
+		class _xx_Improved_FOV_Laserdesignator_A
 		{
-			weapon="Improved_FOV_Laserdesignator_Arid";
+			weapon="Improved_FOV_Laserdesignator_A";
 			count=1;
 		};
 		class _xx_Rangefinder
@@ -940,9 +940,9 @@ class RC_MBT6_A_O: RC_MBT6_A
 			weapon="launch_RPG32_green_F";
 			count=1;
 		};
-		class _xx_Improved_FOV_Laserdesignator_Arid
+		class _xx_Improved_FOV_Laserdesignator_A
 		{
-			weapon="Improved_FOV_Laserdesignator_Arid";
+			weapon="Improved_FOV_Laserdesignator_A";
 			count=1;
 		};
 		class _xx_Rangefinder
@@ -1002,9 +1002,9 @@ class RC_MBT6_WD: RC_MBT6_A
 			weapon="launch_NLAW_F";
 			count=2;
 		};
-		class _xx_Improved_FOV_Laserdesignator_Woodland
+		class _xx_Improved_FOV_Laserdesignator_WD
 		{
-			weapon="Improved_FOV_Laserdesignator_Woodland";
+			weapon="Improved_FOV_Laserdesignator_WD";
 			count=1;
 		};
 		class _xx_Rangefinder
@@ -1083,9 +1083,9 @@ class RC_MBT6_WD_O: RC_MBT6_WD
 			weapon="launch_RPG32_green_F";
 			count=1;
 		};
-		class _xx_Improved_FOV_Laserdesignator_Woodland
+		class _xx_Improved_FOV_Laserdesignator_WD
 		{
-			weapon="Improved_FOV_Laserdesignator_Woodland";
+			weapon="Improved_FOV_Laserdesignator_WD";
 			count=1;
 		};
 		class _xx_Rangefinder
@@ -1131,9 +1131,9 @@ class RC_MBT6_WD_I: RC_MBT6_WD
 			weapon="launch_NLAW_F";
 			count=2;
 		};
-		class _xx_Improved_FOV_Laserdesignator_Woodland
+		class _xx_Improved_FOV_Laserdesignator_WD
 		{
-			weapon="Improved_FOV_Laserdesignator_Woodland";
+			weapon="Improved_FOV_Laserdesignator_WD";
 			count=1;
 		};
 		class _xx_Rangefinder

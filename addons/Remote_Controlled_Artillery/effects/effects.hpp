@@ -172,7 +172,7 @@ class RC_MortarExplosion
 	class MortarExp1
 	{
 		simulation="particles";
-		type="MortarExp";
+		type="RC_MortarExp";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
