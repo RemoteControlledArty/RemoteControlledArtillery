@@ -58,40 +58,9 @@ _uav = (getConnectedUAV player);
 
 general:
 -fix Static AT laser engaging (how!?)
--lock up if inheriting structure is correct
--mine detector in IC and MBT
-
--inventory
-
-	class TransportMagazines
-	{
-	};
-	class TransportItems
-	{
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=1;
-		};
-	};
-	class TransportWeapons
-	{
-	};
+-look up if inheriting structure is correct
+-display options except arty
+-vehicle mounted mortar, edit hitpoints, lower threat/cost
 
 RC IC:
 -hide seats for RC IC
@@ -99,6 +68,7 @@ RC IC:
 -fix or remove datalink panel
 -fix smokelauncher
 -test wheel side friction
+-later: how to add T14 like driver screen?
 
 RC Respawn Truck (not priority, can be post update):
 -add more versions

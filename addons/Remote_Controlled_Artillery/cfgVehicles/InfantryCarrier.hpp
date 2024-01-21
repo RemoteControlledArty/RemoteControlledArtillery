@@ -20,6 +20,7 @@ class RC_Infantry_Carrier_A_base: B_APC_Wheeled_01_cannon_F
 	class showCamonetHull;
 	class showSLATHull;
 	class ViewOptics;
+	class ViewPilot;
 	class Components;
 	
 	class Wheels;
@@ -41,7 +42,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 {
 	class EventHandlers
 	{
-		init="(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+		init="(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};(_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 
 	//_this lockDriver true; _this lockTurret [[0,0], true];
@@ -63,11 +64,54 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	//uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
-	//driver="B_UAV_AI";
 	crew="B_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
 	commanding=2;
+
+
+	//testing
+	/*
+	viewDriverInExternal=1;
+	viewDriverShadowAmb=0.5;
+	viewDriverShadowDiff=0.050000001;
+	LODDriverTurnedOut=0;
+	LODDriverTurnedin=1100;
+	LODDriverOpticsIn=1202;
+	driverOpticsModel="\A3\weapons_f\reticle\optics_empty";
+	driverInfoPanelCameraPos="driverview_old";
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+		initFov=0.44;
+		minFov=0.23;
+		maxFov=0.34999999;
+	};
+	class ViewPilot: ViewPilot
+	{
+		initAngleX=5;
+		initAngleY=0;
+		initFov=0.89999998;
+		minFov=0.25;
+		maxFov=1.25;
+		minAngleX=-65;
+		maxAngleX=85;
+		minAngleY=-150;
+		maxAngleY=150;
+		minMoveX=-0.075000003;
+		maxMoveX=0.075000003;
+		minMoveY=-0.075000003;
+		maxMoveY=0.075000003;
+		minMoveZ=-0.075000003;
+		maxMoveZ=0.1;
+	};
+	extCameraPosition[]={0,3,-9.25};
+	*/
+	//testing
 
 	/*
 	memoryPointDriverOptics="gunnerview";
@@ -153,10 +197,9 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			//hasGunner=-1;
-			//memoryPointGunnerOptics="commanderview";
-			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
-			//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+			//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
+			//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 			turretInfoType="";
 
 			class OpticsIn{};	//removes staged zoom, makes it fluid instead
@@ -187,7 +230,9 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+					//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
+					//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 					turretInfoType="";
 					gunnerForceOptics=1;
 					commanding=3;
@@ -221,7 +266,9 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 								"Normal",
 								"NVG"
 							};
-							gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+							//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
+							//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 							gunnerOpticsEffect[]={};
 						};
 					};
