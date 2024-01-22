@@ -293,8 +293,8 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 			{
 				class Wide: Wide
 				{
-					initFov=0.17399999;
-					minFov=0.01;
+					initFov=0.125;
+					minFov=0.0125;
 					maxFov=0.89999998;
 					visionMode[]=
 					{
@@ -340,8 +340,8 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 			{
 				class Wide: Wide
 				{
-					initFov=0.17399999;
-					minFov=0.01;
+					initFov=0.125;
+					minFov=0.0125;
 					maxFov=0.89999998;
 					visionMode[]=
 					{
@@ -629,8 +629,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 			{
 				class Wide: Wide
 				{
-					initFov=0.17399999;
-					minFov=0.01;
+					initFov=0.125;
+					minFov=0.0125;
 					maxFov=0.89999998;
 					visionMode[]=
 					{
@@ -674,8 +674,8 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 			{
 				class Wide: Wide
 				{
-					initFov=0.17399999;
-					minFov=0.01;
+					initFov=0.125;
+					minFov=0.0125;
 					maxFov=0.89999998;
 					visionMode[]=
 					{

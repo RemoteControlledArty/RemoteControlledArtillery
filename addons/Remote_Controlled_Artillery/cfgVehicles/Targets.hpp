@@ -81,7 +81,7 @@ class RC_InvisibleDatalinkTarget_O: O_TargetSoldier
 
 	irTarget=1;
 	//laserTarget=1;
-	nvTarget=1;
+	//nvTarget=1;	//makes marker stand out but requires NV lock ammo which could strike friendlies with strobes
 	crewVulnerable=0;
 	type=1;
 
@@ -103,7 +103,6 @@ class RC_InvisibleDatalinkTarget_B: B_TargetSoldier
 
 	irTarget=1;
 	//laserTarget=1;
-	nvTarget=1;
 
 	crewVulnerable=0;
 	type=1;
@@ -126,7 +125,6 @@ class RC_InvisibleDatalinkTarget_I: I_TargetSoldier
 
 	irTarget=1;
 	//laserTarget=1;
-	nvTarget=1;
 
 	crewVulnerable=0;
 	type=1;

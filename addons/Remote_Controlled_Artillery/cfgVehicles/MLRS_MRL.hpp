@@ -231,8 +231,8 @@ class RC_MLRS_A: RC_MLRS_NA_A
 			{
 				class Wide: Wide
 				{
-					initFov=0.17399999;
-					minFov=0.01;
+					initFov=0.125;
+					minFov=0.0125;
 					maxFov=0.89999998;
 					visionMode[]=
 					{
@@ -272,8 +272,8 @@ class RC_MLRS_WD: RC_MLRS_NA_WD
 			{
 				class Wide: Wide
 				{
-					initFov=0.17399999;
-					minFov=0.01;
+					initFov=0.125;
+					minFov=0.0125;
 					maxFov=0.89999998;
 					visionMode[]=
 					{
@@ -534,8 +534,8 @@ class RC_MRL_DIG: RC_MRL_NA_DIG
 			{
 				class Wide: Wide
 				{
-					initFov=0.17399999;
-					minFov=0.01;
+					initFov=0.125;
+					minFov=0.0125;
 					maxFov=0.89999998;
 					visionMode[]=
 					{
@@ -574,8 +574,8 @@ class RC_MRL_WD: RC_MRL_NA_WD
 			{
 				class Wide: Wide
 				{
-					initFov=0.17399999;
-					minFov=0.01;
+					initFov=0.125;
+					minFov=0.0125;
 					maxFov=0.89999998;
 					visionMode[]=
 					{

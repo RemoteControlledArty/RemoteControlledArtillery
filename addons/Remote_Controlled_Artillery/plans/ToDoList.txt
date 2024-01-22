@@ -11,25 +11,22 @@ TO DO - BUGFIXES:
 -ar2 problems on server, is it due to some of the scripts, or a server issue?
 -turret is locked unable to adjust up/down, when scope of player is adjustable...
 -HEAB with aimabovetarget explodes too early with negative gun elevation, or low charge direct fire... *maybe swap to normal HE magazines per script when turret has negative elevation
--RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 -enable artillery overlay in non UGV gunner seat of N/LOS FSV
+-RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 
 
 TO DO - FEATURES:
 
 documentation:
 -add new assets to cfg patches list
--add showAllTargets = 4; //LockLaser, show only targets from laser spot tracker (laserScanner); since Arma 3 1.60
 
 arty:
+-yellow aligned +-100 or 50 MIL
 -double check LaserDatalink code
--using multiguided without selecting target and looking at terrain, can cause automatic targeting of friendly UV's?
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
 
--remove IR lock as it could lock onto player attached strobes?
--edit 	aiRateOfFire=1;   aiRateOfFireDistance=10;
 -increase precision of 230mm guided when engaging laser
 -warheadName HE/TandemHEAT ?
 -make sure blastcore etc doesnt remove ground dust animation
@@ -59,26 +56,25 @@ _uav = (getConnectedUAV player);
 general:
 -fix Static AT laser engaging (how!?)
 -look up if inheriting structure is correct
--display options except arty
--vehicle mounted mortar, edit hitpoints, lower threat/cost
+-display options except arty (edit, what is meant?)
+-edit hitpoints of vehicle mortar
 
 RC IC:
 -hide seats for RC IC
--if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged
--fix or remove datalink panel
 -fix smokelauncher
--test wheel side friction
+-later: if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged (explosion timer shortend for now)
+-later: fix or remove datalink panel (removed for now)
 -later: how to add T14 like driver screen?
 
 RC Respawn Truck (not priority, can be post update):
 -add more versions
--edit hitpoints
+-edit hitpoints?
 -lock seats
 -add respawn script
 
 FSV/MBT:
 -find a way to lock seats depending on current seat
--update NLOS sounds
+-fix driver forceoptics not working
 
 AR-short:
 -making sure effect is reset when leaving uav
@@ -123,36 +119,30 @@ while {true} do
 
 
 
-TO DO - QUALITY OF LIFE:
+TO DO (later) - QUALITY OF LIFE:
 
--test uav connection fix in editor with its new location
 -only disable driver = 4, for modularity
 -maybe turret azimuth lock hotkey, for when changing EL on uneven ground throws it off
-
 -get missle feed panel to connect to missle
-
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
-
 
 
 
 IDEAS - FAR FUTURE:
 
 -sensor ammo, like attaching hidden vehicle with 360deg sensor, deploy xmeter over target, then limited lifetime
+-parachute cam round for spotting (or simply additional rhs comp mod for hunt ir, maybe with datalink/laser)
+-counterbattery radar, reporting targets to datalink network, with cba settings on detection speed and range
 
 -disconnect uav/ugv from terminal script when vanilla incapacitated / ace unconcious
 
--AR-0.5 and AL-7 for pvp, with 1.5 zoom to force low flying, shortrange sensors, no thermal, but laser designator
+-AR-0.5 pvp, with 1.5 zoom to force low flying, shortrange sensors, no thermal, but laser designator
 -RC Marid with upgraded engines 7.62x51 and smoke GL
-
 -test passive radar shells against active radar AA
-
 -direct fire firing solution (camera viewpoint)
 -yellow 10m radius for Azimuth&GunEL, for fire adjustments
 -maybe add max spread display / hit propability display (HEAB = 30m radius, inaccuracy at marked distance = ? radius, = ? hit probability)
-
 -video partially at night for rocket and explosion effects
-
 -make MLRS/MRL rockets appear in launcher (if possible)
 -https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
 -azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
@@ -160,16 +150,7 @@ IDEAS - FAR FUTURE:
 -vanilla asset overwrite for gamemodes without zeus etc *maybe by second pbo and config, class RC_Howitzer; class vanilla_Howitzer: vanilla_Howitzer  but likely doesnt work
 -switch driver and commander of recon radar
 -3R MRSI display
--3R automated MRSI
--parachute cam round for spotting (or simply additional rhs comp mod for hunt ir, maybe with datalink/laser)
-
 -turret elevationmode=3 (switchable between manual and automatic), changing script to low trajectory, and point of aim height instead ground height
--more detailed 120mm damage difference
-
--getting misslecam panel to work with multiguided
--counterbattery radar, reporting targets to datalink network, with cba settings on detection speed and range
--RC respawn truck script
--RC RHS (HIMARS, M109 etc) to bring back aweness post update
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -268,6 +249,8 @@ DONE - FEATURES:
 -added Grenade Dropping UAV
 -updated vehicle inventory, remove 6.5mm rifles and magazines, added toolkits etc
 -added mine detectors to frontline personel carring vehicles
+-reduced Mortar/Howiter AI firerate to 1 in 15sec to waste less ammo
+-added vehicle mortar, to attach onto vehicles as composition, with edited elevation to allow low trajectory fire shortening TOF
 
 -low/high trajectory list:
 	low: HEAB, Guided

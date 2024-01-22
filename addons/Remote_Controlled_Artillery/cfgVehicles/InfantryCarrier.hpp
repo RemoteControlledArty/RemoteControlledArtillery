@@ -69,8 +69,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	driverForceOptics=1;
 	commanding=2;
 
-
-	//testing
+	//driver screen testing
 	/*
 	viewDriverInExternal=1;
 	viewDriverShadowAmb=0.5;
@@ -111,7 +110,6 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	};
 	extCameraPosition[]={0,3,-9.25};
 	*/
-	//testing
 
 	/*
 	memoryPointDriverOptics="gunnerview";
@@ -175,7 +173,8 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	crewCrashProtection=0.01;
 	armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
+	hullExplosionDelay[]={30,40};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
+	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 	threat[]={0.30000001,0.30000001,0.30000001};
 
 	radartype=2;
@@ -285,6 +284,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 						maxFov=1;	//0.8
 					};
 
+					/*
 					class Components: Components
 					{
 						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -307,9 +307,11 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 							};
 						};
 					};
+					*/
 				};
 			};
 
+			/*
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -332,6 +334,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 					};
 				};
 			};
+			*/
 		};
 	};
 
@@ -343,73 +346,29 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					animDirection="mainTurret";
-					minRange=10;
+					minRange=3000;
 					maxRange=3000;
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
+					typeRecognitionDistance=3000;
+
 					class AirTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=32000;
-						maxRange=32000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-				};
-				class NVSensorComponent: SensorTemplateNV
-				{
-					class AirTarget
-					{
-						minRange=10;
-						maxRange=1000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=10;
-						maxRange=1000;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
-					};
-					maxTrackableSpeed=600;
-					angleRangeHorizontal=60;
-					angleRangeVertical=40;
-					animDirection="mainGun";
-					aimDown=-0.5;
-				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					class AirTarget
-					{
-						minRange=1000;
-						maxRange=1000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=1000;
-						maxRange=1000;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
-					};
-					maxTrackableSpeed=600;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=60;
-					angleRangeVertical=40;
-					animDirection="mainGun";
-					aimDown=-0.5;
 				};
 			};
 		};
@@ -440,58 +399,58 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 		};
 		class HitLFWheel: HitLFWheel
 		{
-			armor=-250;
+			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=1;
+			explosionShielding=2;
 			passThrough=0;
 		};
 		class HitLF2Wheel: HitLF2Wheel
 		{
-			armor=-250;
+			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=1;
+			explosionShielding=2;
 			passThrough=0;
 		};
 		class HitLMWheel: HitLMWheel
 		{
-			armor=-250;
+			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=1;
+			explosionShielding=2;
 			passThrough=0;
 		};
 		class HitLBWheel: HitLBWheel
 		{
-			armor=-250;
+			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=1;
+			explosionShielding=2;
 			passThrough=0;
 		};
 		class HitRFWheel: HitRFWheel
 		{
-			armor=-250;
+			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=1;
+			explosionShielding=2;
 			passThrough=0;
 		};
 		class HitRF2Wheel: HitRF2Wheel
 		{
-			armor=-250;
+			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=1;
+			explosionShielding=2;
 			passThrough=0;
 		};
 		class HitRMWheel: HitRMWheel
 		{
-			armor=-250;
+			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=1;
+			explosionShielding=2;
 			passThrough=0;
 		};
 		class HitRBWheel: HitRBWheel
 		{
-			armor=-250;
+			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=1;
+			explosionShielding=2;
 			passThrough=0;
 		};
 	};

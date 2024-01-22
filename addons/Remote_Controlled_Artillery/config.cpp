@@ -207,6 +207,17 @@ class CfgPatches
 
 			RC_RespawnTruck_A,
 			RC_RespawnTruck_WD,
+			RC_RespawnTruck_A_O,
+			RC_RespawnTruck_WD_O,
+			RC_RespawnTruck_A_I,
+			RC_RespawnTruck_WD_I,
+
+			RC_RepairTruck_A,
+			RC_RepairTruck_WD,
+			RC_RepairTruck_A_O,
+			RC_RepairTruck_WD_O,
+			RC_RepairTruck_A_I,
+			RC_RepairTruck_WD_I,
 
 			RC_NLOS_FSV_A,
 			RC_NLOS_FSV_WD,
@@ -397,6 +408,10 @@ class CfgEditorSubcategories
 	{ 
 		displayname="Respawn";
 	};
+	class RC_Repair_subcat
+	{ 
+		displayname="Repair";
+	};
 	/*
 	class RC_Targets_subcat
 	{ 
@@ -475,6 +490,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Recon.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first
 	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAT.hpp"

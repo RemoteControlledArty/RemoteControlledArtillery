@@ -6,6 +6,7 @@ class RC_Mortar_NA_base: B_Mortar_01_F
 	class assembleInfo;
 	class ViewOptics;
 	class Components;
+	class EventHandlers;
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	scope=0;
@@ -192,17 +193,17 @@ class RC_Mortar: RC_Mortar_NA
 			};
 			magazines[]=
 			{
-				"RC_16Rnd_82mm_Mo_HEAB",
-				"RC_16Rnd_82mm_Mo_Smoke_white",
+				"RC_12Rnd_82mm_Mo_HEAB",
+				"RC_12Rnd_82mm_Mo_Smoke_white",
 				"RC_6Rnd_82mm_Mo_MultiGuided",
 				"RC_8Rnd_82mm_Mo_AT_mine",
 				"RC_6Rnd_82mm_Mo_mine",
-				"RC_16Rnd_82mm_Mo_Flare_white"
+				"RC_12Rnd_82mm_Mo_Flare_white"
 			};
 			class ViewOptics: ViewOptics
 			{
-				initFov=0.17399999;
-				minFov=0.01;
+				initFov=0.125;
+				minFov=0.0125;
 				maxFov=0.89999998;
 			};
 		};
@@ -539,4 +540,56 @@ class RC_Mortar_ER_Bag_I: RC_Mortar_ER_Bag
 		displayName="RC Mortar 8km [Ind]";
 		assembleTo="RC_Mortar_ER_I";
 	};
+};
+
+
+//vehicle attached mortar, allowing for low trajectory, shortening TOF
+class RC_VehicleMortar: RC_Mortar
+{
+	/*
+	class EventHandlers: EventHandlers
+	{
+		init="insert script for mortar leg hiding";
+	};
+	*/
+	displayName="RC Vehicle Mortar 4km";
+	faction="RemoteControlled_NA_B";
+	editorSubcategory="RC_Mortar_subcat";
+
+	armor=1000;	//30
+	threat[]={0,0,0};
+	cost=0;	//200000
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]={};
+	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			minElev=-70;
+		};
+	};
+};
+class RC_VehicleMortar_O: RC_VehicleMortar
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_VehicleMortar_HEX_O: RC_VehicleMortar_O
+{
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Mortar_01_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"\A3\Static_f\Mortar_01\data\Mortar_01_OPFOR_CO.paa"
+	};
+};
+class RC_VehicleMortar_I: RC_VehicleMortar
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
 };

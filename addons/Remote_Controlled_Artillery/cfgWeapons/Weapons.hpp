@@ -250,6 +250,9 @@ class mortar_82mm_base: mortar_82mm
 	class Single1;
 	class Single2;
 	class Single3;
+	class Burst1;
+	class Burst2;
+	class Burst3;
 };
 class RC_mortar_82mm_V1: mortar_82mm_base
 {
@@ -724,7 +727,10 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 	{
 		"Single1",
 		"Single2",
-		"Single3"
+		"Single3",
+		"Burst1",
+		"Burst2",
+		"Burst3"
 	};
 	class Single1: Single1
 	{
@@ -742,6 +748,21 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 		displayName="CH2, 4km";
 		artilleryCharge=1;
 	};
+	class Burst1: Burst1
+	{
+		burst=1;	//4
+		reloadTime=15;
+	};
+	class Burst2: Burst2
+	{
+		burst=1;	//4
+		reloadTime=15;
+	};
+	class Burst3: Burst3
+	{
+		burst=1;	//4
+		reloadTime=15;
+	};
 };
 
 //82mm Mortar 8km
@@ -753,7 +774,10 @@ class RC_mortar_82mm_V4: RC_mortar_82mm_V3
 		"Single2",
 		"Single3",
 		"Single4",
-		"Single5"
+		"Single5",
+		"Burst1",
+		"Burst2",
+		"Burst3",
 	};
 	class Single1: Single1
 	{
@@ -793,6 +817,11 @@ class RC_ShipCannon_120mm_base: weapon_ShipCannon_120mm
 	class Single3;
 	class Single4;
 	class Single5;
+	class Burst1;
+	class Burst2;
+	class Burst3;
+	class Burst4;
+	class Burst5;
 };
 class RC_ShipCannon_120mm_V1: RC_ShipCannon_120mm_base
 {
@@ -1323,6 +1352,31 @@ class RC_ShipCannon_120mm_V2: RC_ShipCannon_120mm_V1
 	{
 		reloadTime=6;
 	};
+	class Burst1: Burst1
+	{
+		burst=1;
+		reloadTime=15;
+	};
+	class Burst2: Burst2
+	{
+		burst=1;
+		reloadTime=15;
+	};
+	class Burst3: Burst3
+	{
+		burst=1;
+		reloadTime=15;
+	};
+	class Burst4: Burst4
+	{
+		burst=1;
+		reloadTime=15;
+	};
+	class Burst5: Burst5
+	{
+		burst=1;
+		reloadTime=15;
+	};
 };
 class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 {
@@ -1336,7 +1390,12 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 		"Single6",
 		"Single7",
 		"Single8",
-		"Single9"
+		"Single9",
+		"Burst1",
+		"Burst2",
+		"Burst3",
+		"Burst4",
+		"Burst5"
 	};
 
 	class Single1: Single1
@@ -1599,6 +1658,11 @@ class RC_155mm_AMOS_base: mortar_155mm_AMOS
 	class Single3;
 	class Single4;
 	class Single5;
+	class Burst1;
+	class Burst2;
+	class Burst3;
+	class Burst4;
+	class Burst5;
 };
 class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 {
@@ -2129,6 +2193,31 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 	{
 		reloadTime=6;
 	};
+	class Burst1: Burst1
+	{
+		burst=1;
+		reloadTime=15;
+	};
+	class Burst2: Burst2
+	{
+		burst=1;
+		reloadTime=15;
+	};
+	class Burst3: Burst3
+	{
+		burst=1;
+		reloadTime=15;
+	};
+	class Burst4: Burst4
+	{
+		burst=1;
+		reloadTime=15;
+	};
+	class Burst5: Burst5
+	{
+		burst=1;
+		reloadTime=15;
+	};
 };
 class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 {
@@ -2142,7 +2231,12 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Single6",
 		"Single7",
 		"Single8",
-		"Single9"
+		"Single9",
+		"Burst1",
+		"Burst2",
+		"Burst3",
+		"Burst4",
+		"Burst5"
 	};
 
 	class Single1: Single1

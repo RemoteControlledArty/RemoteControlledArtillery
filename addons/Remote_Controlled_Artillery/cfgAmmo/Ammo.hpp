@@ -244,7 +244,6 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 
 	laserLock=1;
 	irLock=1;
-	nvLock=1;
 	airLock=1;
 	trackLead=1;
 	craterEffects="AAMissileCrater";
@@ -497,7 +496,6 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 {
 	laserLock=1;
 	irLock=1;
-	nvLock=1;
 	//artilleryLock=1; seems to prevent laser and vehicle locking, so unusable for guided
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
@@ -697,7 +695,6 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 	aiAmmoUsageFlags="128 + 512";
 	laserLock=1;
 	irLock=1;
-	nvLock=1;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
 	canLock=2;	//supposedly only cfg weapons not ammo

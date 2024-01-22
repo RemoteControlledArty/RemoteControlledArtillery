@@ -522,8 +522,8 @@ class RC_UAV_AR3_I: RC_UAV_AR3
 };
 
 
-class Bag_Base;
-class RC_Weapon_Bag_Base: Bag_Base
+class Weapon_Bag_Base;
+class RC_Weapon_Bag_Base: Weapon_Bag_Base
 {
 	class assembleInfo;
 	scope=0;

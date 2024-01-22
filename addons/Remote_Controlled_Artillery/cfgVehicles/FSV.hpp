@@ -45,8 +45,8 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
@@ -567,8 +567,8 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
