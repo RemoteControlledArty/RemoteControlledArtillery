@@ -53,7 +53,7 @@ RC_Artillery_UI = [] spawn {
 
 
 		// If it's of Artillery or Mortar Type do da thing
-		if (_isRCArty && _inDrone) then {
+		if (_isRCArty && _inDrone && alive _uav) then {
 			
 			RC_InUI = true; // We are in the UI now
 			
@@ -85,7 +85,7 @@ RC_Artillery_UI = [] spawn {
 			_RCAUI = uiNamespace getVariable ["RCA_ArtyUI", displayNull];
 
 			_RCA_CurrentArtyDisplay = displayNull;
-			// If our one is Null we  use theirs
+			// If our one is Null we use theirs
 			if (!isNull _RCAUI) then {
 				_RCA_CurrentArtyDisplay = _RCAUI;
 			} else {
