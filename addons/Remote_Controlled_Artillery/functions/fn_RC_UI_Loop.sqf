@@ -16,11 +16,6 @@ RC_Artillery_UI = [] spawn {
 
 		_uav = (getConnectedUAV player); // UAV
 
-		// If we don't have a UAV connected, Start at the top
-		if (_uav isEqualTo objNull) then {
-			continue;
-		};
-
 		// If the Player is currently controlling the UAV
 		_inDrone = ((UAVControl _uav) select 1) isEqualTo "GUNNER";
 		
