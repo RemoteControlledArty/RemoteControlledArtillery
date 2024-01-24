@@ -818,13 +818,13 @@ class RC_Static_Arty: RC_Static_NA_Arty
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_155mm_Mo_HEAB",
-				"RC_12Rnd_155mm_Mo_Smoke",
-				"RC_6Rnd_155mm_Mo_MultiGuided",
-				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_8Rnd_155mm_Mo_AT_Mine",
-				"RC_6Rnd_155mm_Mo_Mine",
-				"RC_12Rnd_155mm_Mo_Illum"
+				"RC_12Rnd_120mm_Mo_HEAB",
+				"RC_12Rnd_120mmm_Mo_Smoke",
+				"RC_6Rnd_120mmm_Mo_MultiGuided",
+				"RC_2Rnd_120mmm_Mo_Cluster",
+				"RC_8Rnd_120mmm_Mo_AT_Mine",
+				"RC_6Rnd_120mmm_Mo_Mine",
+				"RC_12Rnd_120mmm_Mo_Illum"
 			};
 
 			class Components: Components

@@ -5,13 +5,12 @@
 
 TO DO - BUGFIXES:
 
--does it still need include check for ace hpp?
--if arty is destroyed, ui stays...?
--crl+h cuts connection and destroys UV?
+-does it still need include check for ace hpp?	*according to Fluffy likely yes
+-REPORT BUG to ace team: crl+h cuts connection and destroys UV
 -ar2 problems on server, is it due to some of the scripts, or a server issue?
 -turret is locked unable to adjust up/down, when scope of player is adjustable...
 -HEAB with aimabovetarget explodes too early with negative gun elevation, or low charge direct fire... *maybe swap to normal HE or offset AB magazines per script when turret has negative elevation
--enable artillery overlay in non UGV gunner seat of N/LOS FSV
+-later: enable artillery overlay in non UGV gunner seat of N/LOS FSV
 -RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 
 
@@ -20,9 +19,10 @@ TO DO - FEATURES:
 documentation:
 -add new assets to cfg patches list
 
+*Fluffy says locking is global, meaning locking rc gunner/driver from going to commander/passenger... OOOF
+*Fluffy said respawn is global and it would create a respawn per player, i should look for a "serverinit", or test in on a server if thats somehow prevented
+
 arty:
--yellow aligned +-100 or 50 MIL
--double check LaserDatalink code
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
@@ -118,7 +118,7 @@ while {true} do
 
 TO DO (later) - QUALITY OF LIFE:
 
--only disable driver = 4, for modularity
+-only disable driver = 4, for modularity *
 -maybe turret azimuth lock hotkey, for when changing EL on uneven ground throws it off
 -get missle feed panel to connect to missle
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
@@ -250,6 +250,10 @@ DONE - FEATURES:
 -added vehicle mortar, to attach onto vehicles as composition, with edited elevation to allow low trajectory fire shortening TOF
 -added more version of respawn vehicles, and reduced threat/cost so it doesnt get engaged
 -simplified naming of 120mm magazines
+-aligned by +-50 MIL now show up as yellow, to align quicker and not accidently go past it
+-double checked LaserDatalink code
+-fixed Artillery UI staying when asset is destroyed
+-fixed respawn position script, but it might be global duplicating it per person
 
 -low/high trajectory list:
 	low: HEAB, Guided

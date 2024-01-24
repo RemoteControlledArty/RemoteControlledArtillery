@@ -15,7 +15,7 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="[west, _this] call BIS_fnc_addRespawnPosition;";
+		init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 
 	displayName="RC Medical Truck";
