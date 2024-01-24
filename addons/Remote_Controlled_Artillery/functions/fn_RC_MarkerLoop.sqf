@@ -2,14 +2,11 @@
 	Author: Fluffy
 */
 
-
-count (allUnits apply {typeof _x == "RC_InvisibleDatalinkTarget_B"})
-
 RC_Artillery_Markers = [];
 RC_Current_Target = [];
 RC_Current_Index = 0;
 RC_InUI = false;
-RC_GPS_ClassNames = ["RC_InvisibleDatalinkTarget_B", "RC_InvisibleDatalinkTarget_O", "RC_InvisibleDatalinkTarget_I"];
+//RC_GPS_ClassNames = ["RC_InvisibleDatalinkTarget_B", "RC_InvisibleDatalinkTarget_O", "RC_InvisibleDatalinkTarget_I"];
 
 if !hasInterface exitWith {};
 
@@ -20,7 +17,7 @@ RC_Marker_Loop = [] spawn {
 		
 		if (RC_InUI) then {
 			_markers = [];
-			_activeGPSMarkers = [];
+			//_activeGPSMarkers = [];
 			_side = side player;
 			{
 				private _result = (markerText _x) regexMatch (format [".*%1[0-9]{1,2}.*/i", RC_Marker_Prefix]);
