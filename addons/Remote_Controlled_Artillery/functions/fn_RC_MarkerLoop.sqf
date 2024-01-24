@@ -31,7 +31,7 @@ RC_Marker_Loop = [] spawn {
 
 				
 				// Find a Marker with the GPS Prefix
-				
+
 				private _gpsResult = (markerText _x) regexMatch (format [".*%1[0-9]{1,2}.*/i", RC_GPS_Prefix]);
 				if _gpsResult then {
 					_currentMarker = _x;
@@ -58,8 +58,9 @@ RC_Marker_Loop = [] spawn {
 								_watchedMarker = _thisArgs select 0;
 								_gpsTarget = _thisArgs select 1;
 
-								_gpsTarget setPos (markerPos _watchedMarker)
-
+								_pos AGLToASL (markerPos _watchedMarker);
+								_gpsTarget setPosASL [_pos select 0, _pos select 1, 1];
+							
 							}, [_watchedMarker, _gpsTarget]];
 
 							_deleteHandler = addMissionEventHandler ["MarkerDeleted", {
