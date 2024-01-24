@@ -3,6 +3,8 @@
 */
 
 
+count (allUnits apply {typeof _x == "RC_InvisibleDatalinkTarget_B"})
+
 RC_Artillery_Markers = [];
 RC_Current_Target = [];
 RC_Current_Index = 0;
@@ -35,7 +37,7 @@ RC_Marker_Loop = [] spawn {
 				private _gpsResult = (markerText _x) regexMatch (format [".*%1[0-9]{1,2}.*/i", RC_GPS_Prefix]);
 				if _gpsResult then {
 					_currentMarker = _x;
-					if (_activeGPSMarkers findIf {_x == _currentMarker} == -1) then {
+					if (_activeGPSMarkers findIf {_x isEqualTo _currentMarker} == -1) then {
 
 						// Find out which side the GPS Target should belong to
 						_gpsTargetClass = switch (_side) do {
@@ -69,7 +71,7 @@ RC_Marker_Loop = [] spawn {
 								_gpsTarget = _thisArgs select 1;
 								_moveHandler = _thisArgs select 2;
 
-								if _marker == _watchedMarker then {
+								if (_marker isEqualTo _watchedMarker) then {
 									deleteVehicle _gpsTarget;
 									removeMissionEventHandler ["MarkerUpdated", _moveHandler];
 									removeMissionEventHandler [_thisEventHandler, _moveHandler];
@@ -83,7 +85,7 @@ RC_Marker_Loop = [] spawn {
 							};
 						};
 
-					_activeGPSMarkers pushBack _x
+					_activeGPSMarkers pushBack _x;
 					};
 				};
 				
