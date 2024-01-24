@@ -42,6 +42,10 @@ RC_Artillery_UI = [] spawn {
 				case 3: {
 					if !(_uav lockedTurret [0]) then {_uav lockTurret [[0], true]};
 				};
+				// Lock just the Commander Seat
+				case 4: {
+					if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]};
+				};
 				default {hint "Something Went Wrong!"};
 			};
 		};
