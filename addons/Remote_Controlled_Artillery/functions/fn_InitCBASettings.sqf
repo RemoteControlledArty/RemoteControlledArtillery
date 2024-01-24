@@ -65,3 +65,12 @@
     "Remote Controlled Artillery",
     "Arty"
 ] call CBA_fnc_addSetting;
+
+[
+    "RC_GPS_Prefix",
+    "EDITBOX",
+    ["GPS Marker Prefix", "This is the Prefix (Case Insensitive) that the Target Markers need to have to be considered a valid Target."],
+    "Remote Controlled Artillery",
+    "Arty"
+] call CBA_fnc_addSetting;
+
