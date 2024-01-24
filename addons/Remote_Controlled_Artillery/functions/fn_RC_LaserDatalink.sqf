@@ -1,8 +1,8 @@
 /*
-	Author: Fluffy & Ascent
+	Author: Ascent
 
 	Description:
-	Turns off engines of UGV's when halting.
+	Shares even handheld Laser in Datalink.
 */
 
 // Need to exit early if we aren't a client
@@ -12,7 +12,7 @@ RC_LaserDatalink = [] spawn
 	while {true} do
 	{
 		_LaserSpot = laserTarget player;
-		side player reportRemoteTarget [_LaserSpot, 15];
+		side player reportRemoteTarget [_LaserSpot, 5];
 		sleep 1;
 	};
 };

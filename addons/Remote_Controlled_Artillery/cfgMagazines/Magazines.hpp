@@ -3498,7 +3498,7 @@ class RC_40Rnd_120mm_Mo_LG_DelayedFuse: RC_1Rnd_120mm_Mo_LG_DelayedFuse
 
 
 //120mm NLOS FSV
-class RC_1Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
+class RC_1Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_120mm_Mo_HEAB
 {
 	initSpeed=310;
 	ammo="RC_Sh_120mm_AMOS_HE_FSV";
