@@ -5,7 +5,7 @@
 
 TO DO - BUGFIXES:
 
--does it still need include check for ace hpp?	*according to Fluffy likely yes
+-does it still need include check for ace hpp?	*according to Fluffy likely yes, for the mortar
 -REPORT BUG to ace team: crl+h cuts connection and destroys UV
 -ar2 problems on server, is it due to some of the scripts, or a server issue?
 -turret is locked unable to adjust up/down, when scope of player is adjustable...
@@ -19,7 +19,7 @@ TO DO - FEATURES:
 documentation:
 -add new assets to cfg patches list
 
-*Fluffy says locking is global, meaning locking rc gunner/driver from going to commander/passenger... OOOF
+*Fluffy says locking is global, meaning locking rc gunner/driver from going to commander/passenger... OOOF *if in driver and currently controlling, lock other seats
 *Fluffy said respawn is global and it would create a respawn per player, i should look for a "serverinit", or test in on a server if thats somehow prevented
 
 arty:
