@@ -53,7 +53,7 @@ RC_Artillery_UI = [] spawn {
 
 
 		// If it's of Artillery or Mortar Type do da thing
-		if (_isRCArty && _inDrone && alive _uav) then {
+		if (_isRCArty && _inDrone && (alive _uav)) then {
 			
 			RC_InUI = true; // We are in the UI now
 			
