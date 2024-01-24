@@ -87,10 +87,10 @@ RC_Marker_Loop = [] spawn {
 							};
 						};
 
-					_activeGPSMarkers pushBack _x;
+						_activeGPSMarkers pushBack _x;
 					};
-				*/
 				};
+				*/
 			} forEach allMapMarkers;
 
 			_markers sort true;
