@@ -310,7 +310,7 @@ RC_Artillery_UI = [] spawn {
 				switch (true) do {
 						// If Azimuth is Correct turn it Green
 						case((_realAzimuth < (_targetAzimuth + 0.5)) and (_realAzimuth > (_targetAzimuth - 0.5))): {
-							_ctrlAzimuth ctrlSetTextColor [1,1,0,1];
+							_ctrlAzimuth ctrlSetTextColor [0,1,0,1];
 						};
 
 						// If Azimuth is Close turn it Yellow
