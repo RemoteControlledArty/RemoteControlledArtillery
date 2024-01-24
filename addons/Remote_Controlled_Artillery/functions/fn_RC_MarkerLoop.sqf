@@ -60,9 +60,10 @@ RC_Marker_Loop = [] spawn {
 								_watchedMarker = _thisArgs select 0;
 								_gpsTarget = _thisArgs select 1;
 
-								_pos = AGLToASL (markerPos _watchedMarker);
-								_gpsTarget setPosASL [_pos select 0, _pos select 1, 1];
-							
+								if (_marker isEqualTo _watchedMarker) then {
+									_pos = AGLToASL (markerPos _watchedMarker);
+									_gpsTarget setPosASL [_pos select 0, _pos select 1, 1];
+								}						
 							}, [_watchedMarker, _gpsTarget]];
 
 							_deleteHandler = addMissionEventHandler ["MarkerDeleted", {
