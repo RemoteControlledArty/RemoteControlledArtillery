@@ -22,7 +22,7 @@ RC_Artillery_UI = [] spawn {
 		};
 
 		// If the Player is currently controlling the UAV
-		_inDrone = ((UAVControl _uav) select 1) isEqualTo "GUNNER"; 
+		_inDrone = ((UAVControl _uav) select 1) isEqualTo "GUNNER";
 		
 		_uavClass = typeOf _uav; // UAV ClassName
 		
@@ -53,7 +53,7 @@ RC_Artillery_UI = [] spawn {
 
 
 		// If it's of Artillery or Mortar Type do da thing
-		if (_isRCArty && _inDrone && (alive _uav)) then {
+		if (_isRCArty && _inDrone && (_uav isNotEqualto objNull)) then {
 			
 			RC_InUI = true; // We are in the UI now
 			
