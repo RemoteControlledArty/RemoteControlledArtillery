@@ -285,6 +285,17 @@ RC_Artillery_UI = [] spawn {
 							_ctrlElevation ctrlSetTextColor [0,1,0,1];
 						};
 
+
+						// If Elevation is close to correct for High solution turn the Elevation text Yellow
+						case((_realElevation < (_highAngleSol + 100)) and (_realElevation > (_highAngleSol - 100))): {
+							_ctrlElevation ctrlSetTextColor [1,1,0,1];
+						};
+
+						// If Elevation is close to correct for Low solution turn the Elevation text Yellow
+						case((_realElevation < (_lowAngleSol + 100)) and (_realElevation > (_lowAngleSol - 100))): {
+							_ctrlElevation ctrlSetTextColor [1,1,0,1];
+						};
+
 						// If neither then set it to White again
 						default {
 							_ctrlElevation ctrlSetTextColor [1,1,1,1];
@@ -295,12 +306,23 @@ RC_Artillery_UI = [] spawn {
 					_ctrlMessage ctrlShow false;
 				};
 				
-				// Make the Azimuth Text Green if the Azimuth is aligned with the Target Azimuth
-				if ((_realAzimuth < (_targetAzimuth + 0.5)) and (_realAzimuth > (_targetAzimuth - 0.5))) then {
-					_ctrlAzimuth ctrlSetTextColor [0,1,0,1];
-				} else {
-					_ctrlAzimuth ctrlSetTextColor [1,1,1,1];
-				};
+
+				switch (true) do {
+						// If Azimuth is Correct turn it Green
+						case((_realAzimuth < (_targetAzimuth + 0.5)) and (_realAzimuth > (_targetAzimuth - 0.5))): {
+							_ctrlAzimuth ctrlSetTextColor [1,1,0,1];
+						};
+
+						// If Azimuth is Close turn it Yellow
+						case((_realAzimuth < (_targetAzimuth + 100)) and (_realAzimuth > (_targetAzimuth - 100))): {
+							_ctrlAzimuth ctrlSetTextColor [1,1,0,1];
+						};
+
+						// If neither then set it to White again
+						default {
+							_ctrlAzimuth ctrlSetTextColor [1,1,1,1];
+						};
+					};
 
 				// If both are Green we show ready to fire
 				if (((ctrlTextColor _ctrlElevation) isEqualTo [0,1,0,1]) and ((ctrlTextColor _ctrlAzimuth) isEqualTo [0,1,0,1])) then {
