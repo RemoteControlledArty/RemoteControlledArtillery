@@ -176,6 +176,21 @@ class CfgPatches
 			RC_Mortar_Bag_HEX_O,
 			RC_Mortar_Bag_I,
 
+			RC_Mortar_ER,
+			RC_Mortar_ER_O,
+			RC_Mortar_ER_HEX_O,
+			RC_Mortar_ER_I,
+
+			RC_Mortar_ER_Bag,
+			RC_Mortar_ER_Bag_O,
+			RC_Mortar_ER_Bag_HEX_O,
+			RC_Mortar_ER_Bag_I,
+
+			RC_VehicleMortar,
+			RC_VehicleMortar_O,
+			RC_VehicleMortar_HEX_O,
+			RC_VehicleMortar_I,
+
 			RC_UAV_AR1,
 			RC_UAV_AR3,
 			RC_UAV_AR1_O,
@@ -211,6 +226,18 @@ class CfgPatches
 			RC_RespawnTruck_WD_O,
 			RC_RespawnTruck_A_I,
 			RC_RespawnTruck_WD_I,
+
+			RC_RespawnTransporter_DIG,
+			RC_RespawnTransporter_WD,
+			RC_RespawnTransporter_DIG_O,
+			RC_RespawnTransporter_WD_O,
+			RC_RespawnTransporter_HEX_O,
+			RC_RespawnTransporter_DIG_I,
+			RC_RespawnTransporter_WD_I,
+
+			RC_RespawnVan_WD,
+			RC_RespawnVan_WD_O,
+			RC_RespawnVan_WD_I,
 
 			RC_RepairTruck_A,
 			RC_RepairTruck_WD,
@@ -253,6 +280,7 @@ class CfgPatches
 			Improved_FOV_Laserdesignator_Ti_WD,
 
 			RC_ATGM,
+			RC_missiles_titan_static,
 
 			RC_mortar_82mm_V1,
 			RC_mortar_82mm_V2,
@@ -265,6 +293,7 @@ class CfgPatches
 			RC_ShipCannon_120mm_V4,
 
 			RC_FSV_120mm_V5,
+			RC_cannon_120mm,
 
 			RC_155mm_AMOS_V1,
 			RC_155mm_AMOS_V2,

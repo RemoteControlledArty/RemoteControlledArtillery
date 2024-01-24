@@ -818,13 +818,13 @@ class RC_Static_Arty: RC_Static_NA_Arty
 			};
 			magazines[]=
 			{
-				"RC_ShipCannon_120mm_HEAB_shells_x12",
-				"RC_ShipCannon_120mm_smoke_shells_x12",
-				"RC_ShipCannon_120mm_MultiGuided_shells_x6",
-				"RC_ShipCannon_120mm_HE_cluster_shells_x2",
-				"RC_ShipCannon_120mm_AT_mine_shells_x8",
-				"RC_ShipCannon_120mm_mine_shells_x6",
-				"RC_ShipCannon_120mm_Illum_shells_x12"
+				"RC_12Rnd_155mm_Mo_HEAB",
+				"RC_12Rnd_155mm_Mo_Smoke",
+				"RC_6Rnd_155mm_Mo_MultiGuided",
+				"RC_2Rnd_155mm_Mo_Cluster",
+				"RC_8Rnd_155mm_Mo_AT_Mine",
+				"RC_6Rnd_155mm_Mo_Mine",
+				"RC_12Rnd_155mm_Mo_Illum"
 			};
 
 			class Components: Components

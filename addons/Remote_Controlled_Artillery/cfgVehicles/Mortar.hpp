@@ -553,7 +553,7 @@ class RC_VehicleMortar: RC_Mortar
 	};
 	*/
 	displayName="RC Vehicle Mortar 4km";
-	faction="RemoteControlled_NA_B";
+	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 
 	armor=1000;	//30

@@ -138,9 +138,9 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 			};
 			magazines[]=
 			{
-				"RC_FSV_120mm_HEAB_x12",
-				"RC_FSV_120mm_MultiGuided_x6",
-				"RC_FSV_120mm_smoke_x12",
+				"RC_12Rnd_FSV_120mm_Mo_HEAB",
+				"RC_12Rnd_FSV_120mm_Mo_MultiGuided",
+				"RC_12Rnd_FSV_120mm_Mo_Smoke",
 				"12Rnd_120mm_APFSDS_shells_Tracer_Green",
 				"12Rnd_120mm_MP_T_Green",
 				"200Rnd_762x51_Belt_Green",

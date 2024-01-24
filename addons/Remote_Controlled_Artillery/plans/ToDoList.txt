@@ -10,7 +10,7 @@ TO DO - BUGFIXES:
 -crl+h cuts connection and destroys UV?
 -ar2 problems on server, is it due to some of the scripts, or a server issue?
 -turret is locked unable to adjust up/down, when scope of player is adjustable...
--HEAB with aimabovetarget explodes too early with negative gun elevation, or low charge direct fire... *maybe swap to normal HE magazines per script when turret has negative elevation
+-HEAB with aimabovetarget explodes too early with negative gun elevation, or low charge direct fire... *maybe swap to normal HE or offset AB magazines per script when turret has negative elevation
 -enable artillery overlay in non UGV gunner seat of N/LOS FSV
 -RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 
@@ -26,15 +26,12 @@ arty:
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
+-hotkey to mark selected datalink target on map with time (and maybe speed)
 
 -increase precision of 230mm guided when engaging laser
 -warheadName HE/TandemHEAT ?
 -make sure blastcore etc doesnt remove ground dust animation
--recon radar mortar carrier composition, needs:
-	-low angle mortar without disassemle/backpack/arsenal
-	-script to hide legs
-	*addweapon sadly wont work on uneven surface as projectile leaves barrel aligned
-
+-recon radar+vehicle mortar composition (maybe hide legs)
 -remove non airburst HE after trajectory testing
 
 -report arty map markers to datalink, to lock for gps guidance, maybe if "gps" is written in the marker name? RC_O_InvisibleDatalinkTarget works, maybe add eventhandler for datalink reporting to it
@@ -67,10 +64,10 @@ RC IC:
 -later: how to add T14 like driver screen?
 
 RC Respawn Truck (not priority, can be post update):
--add more versions
--edit hitpoints?
+-fix camera
 -lock seats
--add respawn script
+-add working respawn script
+-later: edit hitpoints? *for now threat/cost reduced
 
 FSV/MBT:
 -find a way to lock seats depending on current seat
@@ -251,6 +248,8 @@ DONE - FEATURES:
 -added mine detectors to frontline personel carring vehicles
 -reduced Mortar/Howiter AI firerate to 1 in 15sec to waste less ammo
 -added vehicle mortar, to attach onto vehicles as composition, with edited elevation to allow low trajectory fire shortening TOF
+-added more version of respawn vehicles, and reduced threat/cost so it doesnt get engaged
+-simplified naming of 120mm magazines
 
 -low/high trajectory list:
 	low: HEAB, Guided
@@ -283,7 +282,7 @@ DONE - BUGFIXES:
 -hasdriver=-1 removed from all vics
 -added lockdriver/commander to likely all vics
 -all vehicles now steerable again
--target range cut of when 5 digits
+-target range cut off when 5 digits
 -target cycle keybinds (4 is MRS/MLRS charge) change to 3 and 5
 
 -fix RC_ATGM privated

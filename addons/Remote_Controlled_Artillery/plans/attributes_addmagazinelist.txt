@@ -23,56 +23,56 @@ this addMagazineTurret["RC_?Rnd_82mm_Mo_shells", [0]];
 
 
 //120mm RC Static Howitzer (max 40 shells):
-this removeMagazineTurret["RC_ShipCannon_120mm_HEAB_shells_x12", [0]];
-this removeMagazineTurret["RC_ShipCannon_120mm_smoke_shells_x12", [0]];
-this removeMagazineTurret["RC_ShipCannon_120mm_HE_cluster_shells_x2", [0]];
-this removeMagazineTurret["RC_ShipCannon_120mm_Multiguided_shells_x6", [0]];
-this removeMagazineTurret["RC_ShipCannon_120mm_AT_mine_shells_x8", [0]];
-this removeMagazineTurret["RC_ShipCannon_120mm_mine_shells_x6", [0]];
-this removeMagazineTurret["RC_ShipCannon_120mm_Illum_shells_x12", [0]];
+this removeMagazineTurret["RC_12Rnd_120mm_Mo_HEAB", [0]];
+this removeMagazineTurret["RC_12Rnd_120mm_Mo_Smoke", [0]];
+this removeMagazineTurret["RC_6Rnd_120mm_Mo_MultiGuided", [0]];
+this removeMagazineTurret["RC_2Rnd_120mm_Mo_Cluster", [0]];
+this removeMagazineTurret["RC_8Rnd_120mm_Mo_AT_Mine", [0]];
+this removeMagazineTurret["RC_6Rnd_120mm_Mo_Mine", [0]];
+this removeMagazineTurret["RC_12Rnd_120mm_Mo_Illum", [0]];
 
-this addMagazineTurret["RC_ShipCannon_120mm_HEAB_shells_x12", [0]];
-this addMagazineTurret["RC_ShipCannon_120mm_smoke_shells_x12", [0]];
-this addMagazineTurret["RC_ShipCannon_120mm_HE_cluster_shells_x2", [0]];
-this addMagazineTurret["RC_ShipCannon_120mm_Multiguided_shells_x6", [0]];
-this addMagazineTurret["RC_ShipCannon_120mm_AT_mine_shells_x8", [0]];
-this addMagazineTurret["RC_ShipCannon_120mm_mine_shells_x6", [0]];
-this addMagazineTurret["RC_ShipCannon_120mm_Illum_shells_x12", [0]];
+this addMagazineTurret["RC_?Rnd_120mm_Mo_HEAB", [0]];
+this addMagazineTurret["RC_?Rnd_120mm_Mo_Smoke", [0]];
+this addMagazineTurret["RC_?Rnd_120mm_Mo_MultiGuided", [0]];
+this addMagazineTurret["RC_?Rnd_120mm_Mo_Cluster", [0]];
+this addMagazineTurret["RC_?Rnd_120mm_Mo_AT_Mine", [0]];
+this addMagazineTurret["RC_?Rnd_120mm_Mo_Mine", [0]];
+this addMagazineTurret["RC_?Rnd_120mm_Mo_Illum", [0]];
 
 extra:
-this addMagazineTurret["RC_ShipCannon_120mm_HE_LG_DelayedFuse_shells_x?", [0]];
-this addMagazineTurret["RC_ShipCannon_120mm_HEAB_low_shells_x?", [0]];
-this addMagazineTurret["RC_ShipCannon_120mm_HE_shells_x?", [0]];
+this addMagazineTurret["RC_?Rnd_120mm_Mo_LG_DelayedFuse", [0]];
+this addMagazineTurret["RC_?Rnd_120mm_Mo_HEAB_low", [0]];
+this addMagazineTurret["RC_?Rnd_120mm_Mo_shells", [0]];
 
 
 //120mm N/LOS FSV (max 12 shells):
-this removeMagazineTurret["RC_FSV_120mm_HEAB_x12", [0]];
-this removeMagazineTurret["RC_FSV_120mm_smoke_x12", [0]];
-this removeMagazineTurret["RC_FSV_120mm_Multiguided_x1", [0]];
+this removeMagazineTurret["RC_12Rnd_FSV_120mm_Mo_HEAB", [0]];
+this removeMagazineTurret["RC_12Rnd_FSV_120mm_Mo_Smoke", [0]];
+this removeMagazineTurret["RC_6Rnd_FSV_120mm_Mo_MultiGuided", [0]];
 
-this removeMagazineTurret["RC_FSV_120mm_HEAB_x?", [0]];
-this removeMagazineTurret["RC_FSV_120mm_smoke_x?", [0]];
-this removeMagazineTurret["RC_FSV_120mm_Multiguided_x?", [0]];
+this removeMagazineTurret["RC_?Rnd_FSV_120mm_Mo_HEAB", [0]];
+this removeMagazineTurret["RC_?Rnd_FSV_120mm_Mo_Smoke", [0]];
+this removeMagazineTurret["RC_?Rnd_FSV_120mm_Mo_MultiGuided", [0]];
 
 extra:
-this addMagazineTurret["RC_FSV_120mm_HE_LG_DelayedFuse_x?", [0]];
+this addMagazineTurret["RC_?Rnd_FSV_120mm_Mo_LG_DelayedFuse", [0]];
 
 
 //155mm RC Howitzer (max 40 shells):
 this removeMagazineTurret["RC_12Rnd_155mm_Mo_HEAB", [0]];
 this removeMagazineTurret["RC_12Rnd_155mm_Mo_Smoke_white", [0]];
+this removeMagazineTurret["RC_6Rnd_155mm_Mo_MultiGuided", [0]];
 this removeMagazineTurret["RC_12Rnd_155mm_Mo_Cluster", [0]];
-this removeMagazineTurret["RC_4Rnd_155mm_Mo_MultiGuided", [0]];
 this removeMagazineTurret["RC_8Rnd_155mm_Mo_AT_mine", [0]];
 this removeMagazineTurret["RC_6Rnd_155mm_Mo_mine", [0]];
 this removeMagazineTurret["RC_12Rnd_155mm_Mo_Illum", [0]];
 
-this addMagazineTurret["RC_?Rnd_82mm_Mo_HEAB", [0]];
-this addMagazineTurret["RC_?Rnd_82mm_Mo_Smoke_white", [0]];
-this addMagazineTurret["RC_?Rnd_82mm_Mo_Cluster", [0]];
-this addMagazineTurret["RC_?Rnd_82mm_Mo_MultiGuided", [0]];
-this addMagazineTurret["RC_?Rnd_82mm_Mo_AT_mine", [0]];
-this addMagazineTurret["RC_?Rnd_82mm_Mo_mine", [0]];
+this addMagazineTurret["RC_?Rnd_155mm_Mo_HEAB", [0]];
+this addMagazineTurret["RC_?Rnd_155mm_Mo_Smoke_white", [0]];
+this addMagazineTurret["RC_?Rnd_155mm_Mo_MultiGuided", [0]];
+this addMagazineTurret["RC_?Rnd_155mm_Mo_Cluster", [0]];
+this addMagazineTurret["RC_?Rnd_155mm_Mo_AT_mine", [0]];
+this addMagazineTurret["RC_?Rnd_155mm_Mo_mine", [0]];
 this addMagazineTurret["RC_?Rnd_155mm_Mo_Illum", [0]];
 
 extra:
@@ -83,12 +83,12 @@ this addMagazineTurret["RC_?Rnd_155mm_Mo_shells", [0]];
 
 //230mm MLRS/MRL (max 12 rockets):
 this removeMagazineTurret["RC_6Rnd_230mm_rockets_HEAB", [0]];
-this removeMagazineTurret["RC_2Rnd_230mm_rockets_cluster", [0]];
 this removeMagazineTurret["RC_4Rnd_230mm_rockets_MultiGuided", [0]];
+this removeMagazineTurret["RC_2Rnd_230mm_rockets_cluster", [0]];
 
 this addMagazineTurret["RC_?Rnd_230mm_rockets_HEAB", [0]];
-this addMagazineTurret["RC_?Rnd_230mm_rockets_cluster", [0]];
 this addMagazineTurret["RC_?Rnd_230mm_rockets_MultiGuided", [0]];
+this addMagazineTurret["RC_?Rnd_230mm_rockets_cluster", [0]];
 
 extra (ATACMS max 2 rockets)
 this addMagazineTurret["RC_?Rnd_230mm_rockets_LG_DelayedFuse", [0]];
