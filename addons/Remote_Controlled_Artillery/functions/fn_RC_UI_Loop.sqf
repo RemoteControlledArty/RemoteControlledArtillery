@@ -134,6 +134,49 @@ RC_Artillery_UI = [] spawn {
 			// Get Weapon Elevation
 			_realElevationOriginal = asin (_weaponDir select 2);
 			_realElevation = (17.7777778 * _realElevationOriginal);
+  
+			//script to disable airburst when turret is too low for it, and reenable it when high enough
+			_currentweapon = currentWeapon _uav;
+			_currentmag = currentMagazine _uav;
+
+			if (_realElevation <= 100) then
+			{
+				if (_currentmag regexMatch ".*_HEAB.*") then
+				{
+					_changedcurrentmag = _currentmag regexReplace ["_HEAB", "_backupHEAB"];
+					_uav addMagazineTurret[_changedcurrentmag, [0]];
+					_uav removeMagazineTurret[_currentmag, [0]];
+					_uav loadMagazine [[0], _currentweapon, _changedcurrentmag];
+					//hintSilent format ["Mag: %1", _changedcurrentmag];
+				};
+				if (_currentmag regexMatch ".*_lowHEAB.*") then
+				{
+					_changedcurrentmag = _currentmag regexReplace ["_lowHEAB", "_backuplowHEAB"];
+					_uav addMagazineTurret[_changedcurrentmag, [0]];
+					_uav removeMagazineTurret[_currentmag, [0]];
+					_uav loadMagazine [[0], _currentweapon, _changedcurrentmag];
+					//hintSilent format ["Mag: %1", _changedcurrentmag];
+				};
+			}
+			else
+			{
+				if (_currentmag regexMatch ".*_backupHEAB.*") then
+				{
+					_changedcurrentmag = _currentmag regexReplace ["_backupHEAB", "_HEAB"];
+					_uav addMagazineTurret[_changedcurrentmag, [0]];
+					_uav removeMagazineTurret[_currentmag, [0]];
+					_uav loadMagazine [[0], _currentweapon, _changedcurrentmag];
+					//hintSilent format ["Mag: %1", _changedcurrentmag];
+				};
+				if (_currentmag regexMatch ".*_backuplowHEAB.*") then
+				{
+					_changedcurrentmag = _currentmag regexReplace ["_backuplowHEAB", "_lowHEAB"];
+					_uav addMagazineTurret[_changedcurrentmag, [0]];
+					_uav removeMagazineTurret[_currentmag, [0]];
+					_uav loadMagazine [[0], _currentweapon, _changedcurrentmag];
+					//hintSilent format ["Mag: %1", _changedcurrentmag];
+				};
+			};
 			
 			// Some sort of Fix for Mortars having some weird Elevation numbers
 			// Dunno what it does, ask the ACE Team

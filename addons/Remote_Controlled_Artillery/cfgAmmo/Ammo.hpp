@@ -377,7 +377,7 @@ class RC_HEAB_Base: Default
 		150
 	};
 	//CraterEffects="HEShellCrater";	//dirt thrown up doesnt fit as its airburst
-	craterEffects="AAMissileCrater";	//dust on ground effect like caused by airburst
+	craterEffects="RC_ArtyShellCrater";	//dust on ground effect like caused by airburst
 	CraterWaterEffects="ImpactEffectsWaterHE";
 	ExplosionEffects="MortarExplosion";
 	visibleFire=64;
@@ -800,9 +800,20 @@ class RC_Sh_82mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 	aimAboveDefault=2;
 	aimAboveTarget[]={12.7,12.7,12.7};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
-class RC_Sh_82mm_AMOS_HEAB_low: RC_Sh_82mm_AMOS_HEAB
+class RC_Sh_82mm_AMOS_lowHEAB: RC_Sh_82mm_AMOS_HEAB
 {
-	imAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain
+	imAboveTarget[]={8,8,8};	//low airburst to atleast ignore microterrain
+};
+
+
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_Sh_82mm_AMOS_backupHEAB: RC_82mm_HEAB_Shell_Base
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,5,0};
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 };
 
 
@@ -1114,9 +1125,20 @@ class RC_Sh_105mm_AMOS_HEAB: RC_105mm_HEAB_Shell_Base
 	aimAboveDefault=2;
 	aimAboveTarget[]={15.3,15.3,15.3};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
-class RC_Sh_105mm_AMOS_HEAB_low: RC_Sh_105mm_AMOS_HEAB
+class RC_Sh_105mm_AMOS_lowHEAB: RC_Sh_105mm_AMOS_HEAB
 {
-	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain
+	aimAboveTarget[]={8,8,8};	//low airburst to atleast ignore microterrain
+};
+
+
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_Sh_105mm_AMOS_backupHEAB: RC_105mm_HEAB_Shell_Base
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,5,0};
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_105mm_AMOS_submunition";
 };
 
 
@@ -1273,9 +1295,20 @@ class RC_Sh_120mm_AMOS_HEAB: RC_120mm_HEAB_Shell_Base
 	aimAboveDefault=2;
 	aimAboveTarget[]={17.5,17.5,17.5};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
-class RC_Sh_120mm_AMOS_HEAB_low: RC_Sh_120mm_AMOS_HEAB
+class RC_Sh_120mm_AMOS_lowHEAB: RC_Sh_120mm_AMOS_HEAB
 {
-	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain
+	aimAboveTarget[]={8,8,8};	//low airburst to atleast ignore microterrain
+};
+
+
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_Sh_120mm_AMOS_backupHEAB: RC_120mm_HEAB_Shell_Base
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,5,0};
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_120mm_AMOS_submunition";
 };
 
 
@@ -1358,6 +1391,25 @@ class RC_Sh_120mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 		frequency=20;
 		distance=1;
 	};
+};
+
+class RC_Sh_120mm_AMOS_delayed_submunition: RC_Sh_120mm_AMOS_submunition
+{
+	explosionTime=0.2;
+};
+class RC_M_Mo_120mm_LG_DelayedFuse_submunition: RC_120mm_MP_MultiGuided_Submunition
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact, acting as delayed fuse against bunkers
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_120mm_AMOS_delayed_submunition";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+class RC_Sh_120mm_AMOS_LG_DelayedFuse: RC_Sh_120mm_AMOS_MP_MultiGuided
+{
+	submunitionAmmo="RC_M_Mo_120mm_LG_DelayedFuse_submunition";
 };
 
 
@@ -1451,9 +1503,21 @@ class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 	aimAboveDefault=2;
 	aimAboveTarget[]={21.2,21.2,21.2};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
-class RC_Sh_155mm_AMOS_HEAB_low: RC_Sh_155mm_AMOS_HEAB
+class RC_Sh_155mm_AMOS_lowHEAB: RC_Sh_155mm_AMOS_HEAB
 {
-	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain, and able to take out MG/GMG bunkers with overhead protection, lower than 6m bugs
+	aimAboveTarget[]={8,8,8};	//low airburst to atleast ignore microterrain, and able to take out MG/GMG bunkers with overhead protection, lower than 6m bugs
+};
+
+
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_Sh_155mm_AMOS_backupHEAB: RC_155mm_HEAB_Shell_Base
+{
+	aiAmmoUsageFlags="64 + 128";
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,5,0};
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 };
 
 
@@ -1800,9 +1864,20 @@ class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
 	aimAboveDefault=2;
 	aimAboveTarget[]={21.3,21.3,21.3};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
-class RC_R_230mm_HEAB_low: RC_R_230mm_HEAB
+class RC_R_230mm_lowHEAB: RC_R_230mm_HEAB
 {
-	aimAboveTarget[]={6,6,6};	//to atleast ignore microterrain
+	aimAboveTarget[]={8,8,8};	//to atleast ignore microterrain
+};
+
+
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_R_230mm_backupHEAB: RC_230mm_HEAB_Rocket_Base
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,5,0};
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 };
 
 
@@ -2021,6 +2096,7 @@ class RC_R_604mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 };
 class RC_604mm_HEAB_Rocket_Base: RC_230mm_HEAB_Rocket_Base
 {
+	aiAmmoUsageFlags="64 + 128 + 512";
 	indirectHit=3200;
 	indirectHitRange=120;
 	cost=3000;
@@ -2030,6 +2106,17 @@ class RC_R_604mm_ATACMS_HEAB: RC_604mm_HEAB_Rocket_Base
 	submunitionAmmo="RC_R_604mm_fly_HEAB_submunition_ATACMS";
 	aimAboveDefault=2;
 	aimAboveTarget[]={30,30,30};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
+};
+
+
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_R_604mm_backupHEAB: RC_604mm_HEAB_Rocket_Base
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,5,0};
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_R_604mm_fly_HEAB_submunition_ATACMS";
 };
 
 

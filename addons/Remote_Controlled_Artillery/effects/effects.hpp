@@ -1,15 +1,34 @@
 //cratereffects
 class RC_ArtyShellCrater
 {
+	class ShellStones
+	{
+		simulation="particles";
+		type="DirtBig";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.5;
+	};
 	class MissileCircleDust
 	{
 		simulation="particles";
-		type="RC_CircleDustBig";
+		type="CircleDustBig";
 		enabled="distToWater interpolate [0.0,0.01,-1,1]";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
 		lifeTime=0.25;
+	};
+	class CircleDust
+	{
+		simulation="particles";
+		type="RC_82mmCircleDust";
+		enabled="distToWater interpolate [0.05,0.06,-1,1]";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.2;	//0.2
 	};
 };
 

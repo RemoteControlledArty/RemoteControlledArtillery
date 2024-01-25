@@ -60,6 +60,8 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 	reportRemoteTargets=1;
 	laserScanner=1;
 	incomingMissileDetectionSystem=16;
+	mineDetectorRange=50;
+	canAccessMineDetector=1;
 
 	class Components: Components
 	{
@@ -585,6 +587,8 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	reportRemoteTargets=1;
 	laserScanner=1;
 	incomingMissileDetectionSystem=16;
+	mineDetectorRange=50;
+	canAccessMineDetector=1;
 
 	class Components: Components
 	{

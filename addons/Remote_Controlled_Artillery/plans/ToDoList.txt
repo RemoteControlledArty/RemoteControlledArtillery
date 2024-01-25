@@ -20,9 +20,18 @@ documentation:
 -add new assets to cfg patches list
 
 *Fluffy says locking is global, meaning locking rc gunner/driver from going to commander/passenger... OOOF *if in driver and currently controlling, lock other seats
+
+Rooicat eventhandler
+class EventHandlers: EventHandlers
+{
+	postinit="if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
+};
+
 *Fluffy said respawn is global and it would create a respawn per player, i should look for a "serverinit", or test in on a server if thats somehow prevented
 
 arty:
+*misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to to with cfgvehicles atleast to trigger
+
 -add datalink & laser firing solution display
 -add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
 -datalink selected target speed display near firing solution, to decide if it makes sence to fire
@@ -51,6 +60,7 @@ _uav = (getConnectedUAV player);
 *NOTE to self, wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
 
 general:
+-update right/left panel options, except for arty
 -fix Static AT laser engaging (how!?)
 -look up if inheriting structure is correct
 -display options except arty (edit, what is meant?)

@@ -174,13 +174,11 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
-						/*
 						class VehicleMissileDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 						};
-						*/
 					};
 				};
 			};
@@ -279,7 +277,7 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 			magazines[]=
 			{
 				"RC_12Rnd_155mm_Mo_shells",
-				"RC_12Rnd_155mm_Mo_HEAB_low",
+				"RC_12Rnd_155mm_Mo_lowHEAB",
 				"RC_12Rnd_155mm_Mo_HEAB",
 				"RC_12Rnd_155mm_Mo_smoke",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
@@ -326,7 +324,7 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 			magazines[]=
 			{
 				"RC_12Rnd_155mm_Mo_shells",
-				"RC_12Rnd_155mm_Mo_HEAB_low",
+				"RC_12Rnd_155mm_Mo_lowHEAB",
 				"RC_12Rnd_155mm_Mo_HEAB",
 				"RC_12Rnd_155mm_Mo_smoke",
 				"RC_6Rnd_155mm_Mo_MultiGuided",
@@ -841,13 +839,11 @@ class RC_Static_Arty: RC_Static_NA_Arty
 							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
-						/*
 						class VehicleMissileDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 						};
-						*/
 					};
 				};
 			};
