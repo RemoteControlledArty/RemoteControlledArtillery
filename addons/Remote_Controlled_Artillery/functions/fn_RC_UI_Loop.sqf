@@ -232,6 +232,7 @@ RC_Artillery_UI = [] spawn {
 			_realAzimuth = (17.7777778 * _realAzimuth);
 			
 			// If we actually have Target Markers
+			//if (cursorTarget isNotEqualto objNull) then {RC_Artillery_Markers=[0,0,0]};	//testing only
 			if !(RC_Artillery_Markers isEqualTo []) then {
 
 				if (isNil "RC_Current_Target" || RC_Current_Target isEqualTo []) then {
@@ -261,8 +262,16 @@ RC_Artillery_UI = [] spawn {
 				_WeaponDirection = ((_uav weaponDirection currentWeapon _uav) select 2);
 				_muzzleHeightEstimate = _BarrelLenght * (sin (_WeaponDirection*90)) + _BarrelAGL;
 
-				//Target/UV Pos
-				_targetPos = markerPos (RC_Current_Target select 1);
+
+				//find if datalink target is selected
+				_targetPos = [0,0,0];
+				_hasTargetSelected=false;
+				if (cursorTarget isNotEqualto objNull) then {_hasTargetSelected=true};
+
+				//Target Pos
+				if (_hasTargetSelected) then {_targetPos = getpos cursorTarget} else {_targetPos = markerPos (RC_Current_Target select 1)};
+
+				//UV Pos
 				_artyPos = getPosASL _uav;
 				_muzzleFromCenterEstimate = 0;
 				if ((getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends"))==1) then {_muzzleFromCenterEstimate = _BarrelLenght * (cos (_WeaponDirection*90));};
@@ -291,7 +300,8 @@ RC_Artillery_UI = [] spawn {
 				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "initSpeed");
 
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
-				_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
+				if (_hasTargetSelected) then {_ctrlTarget ctrlSetText "T: Datalink";} else {_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];};
+				//_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 

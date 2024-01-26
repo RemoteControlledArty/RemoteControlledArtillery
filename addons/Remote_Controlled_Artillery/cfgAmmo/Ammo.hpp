@@ -340,6 +340,8 @@ class RC_HEAB_Base: Default
 	submunitionInitSpeed=0;
 
 	artilleryLock=1;	//might make it not airburst if too far from selected target in vanilla computer, and too short deploy distance is set, but 0 seems to make it shoot full charge
+	laserLock=1;
+	irLock=1;
 	timeToLive=360;
 	//shell/submunition core
 	simulation="shotSubmunitions";
@@ -755,7 +757,7 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 class Sh_82mm_AMOS;
 class RC_Sh_82mm_AMOS_submunition: Sh_82mm_AMOS
 {
-	explosionTime=0.001;
+	explosionTime=0.0001;
 	explosive=1;
 	craterEffects="RC_82mmAirburstDust";
 };
@@ -1080,7 +1082,7 @@ class RC_Sh_105mm_AMOS_submunition: Sh_155mm_AMOS	//16km HE-RA range
 	indirectHit=75.6;
 	indirectHitRange=21.7;
 	cost=233;
-	explosionTime=0.001;
+	explosionTime=0.0001;
 	explosive=1;
 	craterEffects="RC_105mmAirburstDust";
 };
@@ -1250,7 +1252,7 @@ class RC_Sh_120mm_AMOS_submunition: Sh_155mm_AMOS
 	indirectHit=86.4;
 	indirectHitRange=24.8;
 	cost=266;
-	explosionTime=0.001;
+	explosionTime=0.0001;
 	explosive=1;
 	craterEffects="RC_120mmAirburstDust";
 };
@@ -1457,7 +1459,7 @@ class RC_Sh_120mm_MP_T_Green: Sh_120mm_HEAT_MP
 //155mm
 class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 {
-	explosionTime=0.001;
+	explosionTime=0.0001;
 	explosive=1;
 	//explosionEffects="RC_MortarExplosion";	//not ready yet
 	craterEffects="RC_155mmAirburstDust";
@@ -1714,7 +1716,7 @@ class RC_Sh_155mm_AMOS_LG_DelayedFuse: RC_Sh_155mm_AMOS_MP_MultiGuided
 class R_230mm_fly;
 class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 {
-	explosionTime=0.001;
+	explosionTime=0.0001;
 	explosive=1;
 	explosionEffects="MortarExplosion";
 	craterEffects="RC_230mmAirburstDust";
@@ -1862,7 +1864,7 @@ class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
 {
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 	aimAboveDefault=2;
-	aimAboveTarget[]={21.3,21.3,21.3};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
+	aimAboveTarget[]={21.2,21.2,21.2};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
 };
 class RC_R_230mm_lowHEAB: RC_R_230mm_HEAB
 {
