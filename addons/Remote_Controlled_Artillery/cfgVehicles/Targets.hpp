@@ -136,13 +136,23 @@ class RC_InvisibleDatalinkTarget_I: I_TargetSoldier
 	};
 };
 
-class RC_ReportingInvisibleDatalinkTarget_O: RC_InvisibleDatalinkTarget_O
+class RC_ReportingInvisibleDatalinkTarget_O_Base: RC_InvisibleDatalinkTarget_O
 {
-	class EventHandlers	//later edit to inherit
+	class EventHandlers;
+};
+class RC_ReportingInvisibleDatalinkTarget_O: RC_ReportingInvisibleDatalinkTarget_O_Base
+{
+	class EventHandlers: EventHandlers
 	{
-		init="if !hasInterface exitWith {}; RC_ReportInvisibleDatalinkTarget = [] spawn {while {true} do {side player reportRemoteTarget [(_this select 0), 5]; sleep 1;};};";
+		init="(_this select 0) spawn {while {true} do {side player reportRemoteTarget [(_this select 0), 5]; sleep 1;};};";
 	};
 };
+//if !hasInterface exitWith {};
+
+/*
+_marker = _this setVehicleVarName "gps";
+hintSilent format ["varname: %1", vehicleVarName _marker];
+*/
 
 /*
 class LaserTarget: All
