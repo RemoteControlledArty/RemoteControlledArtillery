@@ -339,12 +339,12 @@ RC_Artillery_UI = [] spawn {
 
 
 						// If Elevation is close to correct for High solution turn the Elevation text Yellow
-						case((_realElevation < (_highAngleSol + 100)) and (_realElevation > (_highAngleSol - 100))): {
+						case((_realElevation < (_highAngleSol + 25)) and (_realElevation > (_highAngleSol - 25))): {
 							_ctrlElevation ctrlSetTextColor [1,1,0,1];
 						};
 
 						// If Elevation is close to correct for Low solution turn the Elevation text Yellow
-						case((_realElevation < (_lowAngleSol + 100)) and (_realElevation > (_lowAngleSol - 100))): {
+						case((_realElevation < (_lowAngleSol + 25)) and (_realElevation > (_lowAngleSol - 25))): {
 							_ctrlElevation ctrlSetTextColor [1,1,0,1];
 						};
 
@@ -366,7 +366,7 @@ RC_Artillery_UI = [] spawn {
 						};
 
 						// If Azimuth is Close turn it Yellow
-						case((_realAzimuth < (_targetAzimuth + 100)) and (_realAzimuth > (_targetAzimuth - 100))): {
+						case((_realAzimuth < (_targetAzimuth + 25)) and (_realAzimuth > (_targetAzimuth - 25))): {
 							_ctrlAzimuth ctrlSetTextColor [1,1,0,1];
 						};
 

@@ -688,7 +688,7 @@ class 8Rnd_82mm_Mo_LG;
 class RC_1Rnd_82mm_Mo_MultiGuided: 8Rnd_82mm_Mo_LG
 {
 	ammo="RC_Sh_82mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=100;
+	RC_AimAboveHeight=150;
 	displayName="MP MultiGuided";
 	displayNameShort="MP MultiGuided";
 	count=1;
@@ -2344,7 +2344,7 @@ class magazine_ShipCannon_120mm_HE_LG_shells_x2;
 class RC_1Rnd_120mm_Mo_MultiGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=300;
+	RC_AimAboveHeight=400;
 	displayName="MP MultiGuided";
 	displayNameShort="MP MultiGuided";
 	count=1;
@@ -5226,7 +5226,7 @@ class 2Rnd_155mm_Mo_LG;
 class RC_1Rnd_155mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=300;
+	RC_AimAboveHeight=400;
 	displayName="MP MultiGuided";
 	displayNameShort="MP MultiGuided";
 	count=1;
@@ -6823,7 +6823,7 @@ class RC_12Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 class RC_1Rnd_230mm_rockets_MultiGuided: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_MP_MultiGuided";
-	RC_AimAboveHeight=300;
+	RC_AimAboveHeight=400;
 	displayName="MP MultiGuided";
 	displayNameShort="MP MultiGuided";
 	count=1;

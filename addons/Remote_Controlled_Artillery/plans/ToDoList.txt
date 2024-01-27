@@ -12,6 +12,7 @@ TO DO - BUGFIXES:
 -HEAB with aimabovetarget explodes too early with negative gun elevation, or low charge direct fire... *maybe swap to normal HE or offset AB magazines per script when turret has negative elevation
 -later: enable artillery overlay in non UGV gunner seat of N/LOS FSV
 -RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
+-lockseats didnt work for FSV/MBT
 
 
 TO DO - FEATURES:
@@ -31,10 +32,6 @@ class EventHandlers: EventHandlers
 
 arty:
 *misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to to with cfgvehicles atleast to trigger
-
--add datalink & laser firing solution display
--add low trajectory TOP DOWN formula & display for when multiguided is used (low firing solution + 200meter height)
--datalink selected target speed display near firing solution, to decide if it makes sence to fire
 -hotkey to mark selected datalink target on map with time (and maybe speed)
 
 -increase precision of 230mm guided when engaging laser
@@ -264,12 +261,13 @@ DONE - FEATURES:
 -double checked LaserDatalink code
 -fixed Artillery UI staying when asset is destroyed
 -fixed respawn position script, but it might be global duplicating it per person
+-added new seatlock, case 4 locks only commander seat
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
 -changed magazine RC_AimAboveHeight to airburstheight -1m, as it doesnt make a difference with medium trajectory, but on high charge very flat trajectory it overshoots sicnificantly less, also prevents overshoot of on hilltop targets
 *note some overshoot on high charge is left likely due to decreased accuracy
--instead of seperate display, added RC_AimAboveHeight=300m for guided, to have diagonal toptown even on max charge with shortest TOF, to not get stuck in foliage/cover
+-instead of seperate display, added RC_AimAboveHeight=400m for guided, to have toptown effect even on max charge with shortest TOF, to not get stuck in foliage/cover
 
 -low/high trajectory list:
 	low: HEAB, Guided

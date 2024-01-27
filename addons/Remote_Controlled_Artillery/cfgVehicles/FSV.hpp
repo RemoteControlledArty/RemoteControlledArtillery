@@ -20,6 +20,7 @@ class RC_NLOS_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RCDisableSeats=1; //locks specific seat
 
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=4;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -547,6 +548,7 @@ class RC_MBT6_A_Base: B_MBT_01_TUSK_F
 	class Wide;
 	scope=0;
 	scopeCurator=0;
+	RCDisableSeats=1; //locks specific seat
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_MBT6_A: RC_MBT6_A_Base
