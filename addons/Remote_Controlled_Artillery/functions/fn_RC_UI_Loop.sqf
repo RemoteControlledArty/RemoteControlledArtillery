@@ -339,12 +339,12 @@ RC_Artillery_UI = [] spawn {
 
 
 						// If Elevation is close to correct for High solution turn the Elevation text Yellow
-						case((_realElevation < (_highAngleSol + 25)) and (_realElevation > (_highAngleSol - 25))): {
+						case((_realElevation < (_highAngleSol + 10)) and (_realElevation > (_highAngleSol - 10))): {
 							_ctrlElevation ctrlSetTextColor [1,1,0,1];
 						};
 
 						// If Elevation is close to correct for Low solution turn the Elevation text Yellow
-						case((_realElevation < (_lowAngleSol + 25)) and (_realElevation > (_lowAngleSol - 25))): {
+						case((_realElevation < (_lowAngleSol + 10)) and (_realElevation > (_lowAngleSol - 10))): {
 							_ctrlElevation ctrlSetTextColor [1,1,0,1];
 						};
 

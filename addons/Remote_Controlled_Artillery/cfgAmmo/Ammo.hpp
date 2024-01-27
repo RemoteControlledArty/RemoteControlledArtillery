@@ -528,17 +528,18 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 	effectsMissileInit="";
 	muzzleEffect="";
 	simulationStep=0.0020000001;
-	trackOversteer=1.5;
+	trackOversteer=1;	//1.5	//value is required to not absolutely miss with 230mm guided rocket
 	trackLead=1;	//0.89999998
-	maneuvrability=20;
+	maneuvrability=20;	//20	//value is required to not absolutely miss with 230mm guided rocket
 	airFriction=0.085000001;
-	sideAirFriction=1;
+	sideAirFriction=0.1;
 	whistleDist=4;
-	lockType=0;	//add to shell?
+	lockType=0;
 	//manualControl=1;
 	//missileManualControlCone=45;
 
 	submunitionDirectionType="SubmunitionModelDirection";
+	//submunitionDirectionType="SubmunitionTargetDirection";	//TEST OUT
 	submunitionInitSpeed=1000;
 	submunitionParentSpeedCoef=0;
 	submunitionInitialOffset[]={0,0,-0.2};
@@ -547,10 +548,10 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 	warheadName="TandemHEAT";
 	hit=0;	//submunition penetrator contains real hit value
 
-	initTime=0.15000001;
+	initTime=0.01; //0.15000001
 	thrustTime=8;	//8
-	thrust=35;	//35
-	maxSpeed=180;	//maybe higher
+	thrust=273;	//35
+	maxSpeed=273;	//maybe higher
 	typicalSpeed=1660;
 	weaponLockSystem="1 + 2 + 4 + 16";
 	cmImmunity=0.9;
@@ -693,6 +694,9 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 {
 	submunitionCount=1;
 	submunitionConeAngle=0;
+	submunitionDirectionType="SubmunitionTargetDirection";
+	//submunitionInitSpeed=0;
+	//submunitionParentSpeedCoef=0;
 
 	aiAmmoUsageFlags="128 + 512";
 	laserLock=1;
