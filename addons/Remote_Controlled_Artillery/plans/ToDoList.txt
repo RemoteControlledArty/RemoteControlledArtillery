@@ -57,6 +57,7 @@ _uav = (getConnectedUAV player);
 *NOTE to self, wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
 
 general:
+-decrease guided to 5 or 4?
 -proximityExplosionDistance= ;
 -update right/left panel options, except for arty
 -fix Static AT laser engaging (how!?)
