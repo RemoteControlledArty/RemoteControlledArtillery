@@ -267,7 +267,7 @@ DONE - FEATURES:
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
 -changed magazine RC_AimAboveHeight to airburstheight -1m, as it doesnt make a difference with medium trajectory, but on high charge very flat trajectory it overshoots sicnificantly less, also prevents overshoot of on hilltop targets
 *note some overshoot on high charge is left likely due to decreased accuracy
--instead of seperate display, added RC_AimAboveHeight=400m for guided, to have toptown effect even on max charge with shortest TOF, to not get stuck in foliage/cover
+-instead of seperate display, added RC_AimAboveHeight=400m for guided, to have toptown effect even on high charge for shorter TOF, to not get stuck in foliage/cover
 
 -low/high trajectory list:
 	low: HEAB, Guided
