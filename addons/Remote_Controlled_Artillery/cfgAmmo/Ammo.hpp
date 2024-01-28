@@ -528,11 +528,11 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 	effectsMissileInit="";
 	muzzleEffect="";
 	simulationStep=0.0020000001;
-	trackOversteer=1;	//1.5	//value is required to not absolutely miss with 230mm guided rocket
-	trackLead=1;	//0.89999998
-	maneuvrability=20;	//20	//value is required to not absolutely miss with 230mm guided rocket
-	airFriction=0.085000001;
-	sideAirFriction=0.1;
+	trackOversteer=1;	//1.5	//required to not completly miss
+	trackLead=0;	//0.89999998
+	maneuvrability=20;	//20	//required to not completly miss
+	airFriction=0.085000001;	//tanks atgm 0.2	//0.085000001
+	sideAirFriction=0.1; //tanks 0.001	//0.1
 	whistleDist=4;
 	lockType=0;
 	//manualControl=1;
@@ -550,8 +550,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 
 	initTime=0.01; //0.15000001
 	thrustTime=8;	//8
-	thrust=273;	//35
-	maxSpeed=273;	//maybe higher
+	thrust=300;	//35
+	maxSpeed=300;	//180
 	typicalSpeed=1660;
 	weaponLockSystem="1 + 2 + 4 + 16";
 	cmImmunity=0.9;
@@ -694,9 +694,9 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 {
 	submunitionCount=1;
 	submunitionConeAngle=0;
-	submunitionDirectionType="SubmunitionTargetDirection";
+	submunitionDirectionType="SubmunitionTargetDirection";	//required to not completly miss
 	//submunitionInitSpeed=0;
-	//submunitionParentSpeedCoef=0;
+	submunitionParentSpeedCoef=0.1;	//required to not completly miss
 
 	aiAmmoUsageFlags="128 + 512";
 	laserLock=1;
