@@ -54,7 +54,7 @@ class RC_UAV_AR1: RC_UAV_base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={1000,500,250,2000};
+					range[]={2000,1000,500,250};
 					resource="RscCustomInfoSensors";
 				};
 			};
@@ -104,54 +104,52 @@ class RC_UAV_AR1: RC_UAV_base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1000;
-
-					class AirTarget
-					{
-						minRange=1000;
-						maxRange=1000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=1000;
-						maxRange=1000;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
-					};
-
+					typeRecognitionDistance=1500;
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=51;
 					angleRangeVertical=37;
 					animDirection="mainGun";
 					aimDown=-0.5;
-				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					typeRecognitionDistance=750;
 
 					class AirTarget
 					{
-						minRange=750;
-						maxRange=750;
+						minRange=1500;
+						maxRange=1500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=750;
-						maxRange=750;
+						minRange=1500;
+						maxRange=1500;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
-
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=750;
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=51;
 					angleRangeVertical=37;
 					animDirection="mainGun";
 					aimDown=-0.5;
+
+					class AirTarget
+					{
+						minRange=750;
+						maxRange=750;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=750;
+						maxRange=750;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
 				};
 			};
 		};
@@ -202,7 +200,7 @@ class RC_UAV_AR1: RC_UAV_base
 		{
 			showAllTargets=4;
 			//isCopilot=1; //0
-			commanding=3; //-1
+			//commanding=3; //-1
 
 			class Components: Components
 			{
@@ -397,53 +395,70 @@ class RC_UAV_AR3: RC_UAV_AR1
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=2000;
-
-					class AirTarget
-					{
-						minRange=3000;
-						maxRange=3000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=3000;
-						maxRange=3000;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
-					};
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=51;
 					angleRangeVertical=37;
 					animDirection="mainGun";
 					aimDown=-0.5;
-				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					typeRecognitionDistance=1000;
 
 					class AirTarget
 					{
-						minRange=1500;
-						maxRange=1500;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1500;
-						maxRange=1500;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=1000;
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=51;
 					angleRangeVertical=37;
 					animDirection="mainGun";
 					aimDown=-0.5;
+
+					class AirTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
 				};
 			};
+		};
+	};
+
+	class ViewPilot: ViewPilot
+	{
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+	};
+	class Viewoptics: Viewoptics
+	{
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
 		};
 	};
 
@@ -466,6 +481,29 @@ class RC_UAV_AR3: RC_UAV_AR1
 							range[]={3000,2000,1000,500,250};
 							resource="RscCustomInfoSensors";
 						};
+					};
+				};
+			};
+
+			class OpticsIn
+			{
+				class Wide
+				{
+					visionMode[]=
+					{
+						"Normal",
+						"NVG"
+					};
+				};
+			};
+			class OpticsOut
+			{
+				class Monocular
+				{
+					visionMode[]=
+					{
+						"Normal",
+						"NVG"
 					};
 				};
 			};

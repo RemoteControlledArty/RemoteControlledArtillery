@@ -2,6 +2,10 @@
 	TO DO / DONE LIST
 */
 
+*NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
+*NOTE to self, AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
+*NOTE to self, wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
+
 
 TO DO - BUGFIXES:
 
@@ -9,7 +13,6 @@ TO DO - BUGFIXES:
 -REPORT BUG to ace team: crl+h cuts connection and destroys UV
 -ar2 problems on server, is it due to some of the scripts, or a server issue?
 -turret is locked unable to adjust up/down, when scope of player is adjustable...
--HEAB with aimabovetarget explodes too early with negative gun elevation, or low charge direct fire... *maybe swap to normal HE or offset AB magazines per script when turret has negative elevation
 -later: enable artillery overlay in non UGV gunner seat of N/LOS FSV
 -RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 -lockseats didnt work for FSV/MBT
@@ -31,10 +34,6 @@ class EventHandlers: EventHandlers
 *Fluffy said respawn is global and it would create a respawn per player, i should look for a "serverinit", or test in on a server if thats somehow prevented
 
 arty:
-*misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to to with cfgvehicles atleast to trigger
--hotkey to mark selected datalink target on map with time (and maybe speed)
-
--increase precision of 230mm guided when engaging laser
 -warheadName HE/TandemHEAT ?
 -make sure blastcore etc doesnt remove ground dust animation
 -recon radar+vehicle mortar composition (maybe hide legs)
@@ -45,25 +44,12 @@ _laser = laserTarget player;
 _targetSolider = "RC_I_InvisibleDatalinkTarget" createVehicle getpos _laser;
 side player reportRemoteTarget [_targetSolider, 40];
 
--how to get position of muzzle? 	gunBeg="Usti hlavne";	gunEnd="Konec hlavne";	https://forums.bohemia.net/forums/topic/220406-universal-way-to-get-any-turrets-direction/
-_uav = (getConnectedUAV player);
-//_uav selectionPosition ["Konec hlavne", "Memory", "FirstPoint"];
-//_uav selectionPosition ["Usti hlavne", "Memory", "FirstPoint"];
-//_uav selectionPosition ["Konec hlavne", "Memory", "AveragePoint"];
-//_uav selectionPosition ["Konec hlavne", "Memory", "BoundingBox"];
-
-*NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
-*NOTE to self, AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
-*NOTE to self, wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
-
 general:
--decrease guided to 5 or 4?
+-decrease guided to 5 or 4? *Cap said 4
 -proximityExplosionDistance= ;
 -update right/left panel options, except for arty
 -fix Static AT laser engaging (how!?)
--look up if inheriting structure is correct
 -display options except arty (edit, what is meant?)
--edit hitpoints of vehicle mortar
 
 RC IC:
 -hide seats for RC IC
@@ -73,7 +59,7 @@ RC IC:
 -later: how to add T14 like driver screen?
 
 RC Respawn Truck (not priority, can be post update):
--fix camera
+-fix camera on those who have problems
 -lock seats
 -add working respawn script
 -later: edit hitpoints? *for now threat/cost reduced
@@ -85,7 +71,6 @@ FSV/MBT:
 AR-short:
 -making sure effect is reset when leaving uav
 -limit range of grenade dropping uav to 3km from user
--remove thermal from AR1 or try to change ppeffect priority
 
 _uav = getConnectedUAV player;
 _viewPos = screenToWorld [0.5, 0.5];
@@ -133,6 +118,12 @@ TO DO (later) - QUALITY OF LIFE:
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
 
 
+Postponed:
+
+-look up if inheriting structure is fully correct
+-submunition alternative misslecam
+-misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to do with cfgvehicles atleast to trigger
+
 
 IDEAS - FAR FUTURE:
 
@@ -140,13 +131,15 @@ IDEAS - FAR FUTURE:
 -parachute cam round for spotting (or simply additional rhs comp mod for hunt ir, maybe with datalink/laser)
 -counterbattery radar, reporting targets to datalink network, with cba settings on detection speed and range
 
+-hotkey to mark selected datalink target on map with time (and maybe speed)
+
 -disconnect uav/ugv from terminal script when vanilla incapacitated / ace unconcious
 
 -AR-0.5 pvp, with 1.5 zoom to force low flying, shortrange sensors, no thermal, but laser designator
 -RC Marid with upgraded engines 7.62x51 and smoke GL
 -test passive radar shells against active radar AA
 -direct fire firing solution (camera viewpoint)
--yellow 10m radius for Azimuth&GunEL, for fire adjustments
+-colored xmeter radius for Azimuth&GunEL, for fire adjustments
 -maybe add max spread display / hit propability display (HEAB = 30m radius, inaccuracy at marked distance = ? radius, = ? hit probability)
 -video partially at night for rocket and explosion effects
 -make MLRS/MRL rockets appear in launcher (if possible)
@@ -255,7 +248,7 @@ DONE - FEATURES:
 -added Grenade Dropping UAV
 -updated vehicle inventory, remove 6.5mm rifles and magazines, added toolkits etc
 -added mine detectors to frontline personel carring vehicles
--reduced Mortar/Howiter AI firerate to 1 in 15sec to waste less ammo
+-reduced Mortar/Howitzer AI firerate to 1 in 15sec to waste less ammo
 -added vehicle mortar, to attach onto vehicles as composition, with edited elevation to allow low trajectory fire shortening TOF
 -added more version of respawn vehicles, and reduced threat/cost so it doesnt get engaged
 -simplified naming of 120mm magazines
@@ -264,17 +257,18 @@ DONE - FEATURES:
 -fixed Artillery UI staying when asset is destroyed
 -fixed respawn position script, but it might be global duplicating it per person
 -added new seatlock, case 4 locks only commander seat
+-removed Ti from AR-1 as it isnt effected by the ppeffects script
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
 -changed magazine RC_AimAboveHeight to airburstheight -1m, as it doesnt make a difference with medium trajectory, but on high charge very flat trajectory it overshoots sicnificantly less, also prevents overshoot of on hilltop targets
 *note some overshoot on high charge is left likely due to decreased accuracy
 -instead of seperate display, added RC_AimAboveHeight to 0.7*triggerdistance for guided, to have 45deg toptown effect even on high charge for shorter TOF, to not get stuck in foliage/cover
--found correct values to make guided shells accurate at high charge instead of completly overshoot
+-finally found correct values to make guided shells accurate at high charge instead of completly overshoot
+-added script that changes Airburst to Impact when turret elevation is too low for Airburst to work savely
 
 -low/high trajectory list:
-	low: HEAB, Guided
-	low top down: Guided
+	low: HEAB, Guided (Guided has integrated topdown)
 	high: Cluster, Smoke, AT/AP Mines, Illum
 
 

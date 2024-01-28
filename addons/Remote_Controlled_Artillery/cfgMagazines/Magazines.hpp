@@ -2012,7 +2012,6 @@ class RC_40Rnd_82mm_Mo_backupHEAB: RC_1Rnd_82mm_Mo_backupHEAB
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_82mm_Mo_backuplowHEAB: RC_1Rnd_82mm_Mo_backupHEAB
 {
-	ammo="RC_Sh_82mm_AMOS_backuplowHEAB";
 };
 class RC_2Rnd_82mm_Mo_backuplowHEAB: RC_1Rnd_82mm_Mo_backuplowHEAB
 {
@@ -4001,7 +4000,6 @@ class RC_40Rnd_120mm_Mo_backupHEAB: RC_1Rnd_120mm_Mo_backupHEAB
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backupHEAB
 {
-	ammo="RC_Sh_120mm_AMOS_backuplowHEAB";
 };
 class RC_2Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backuplowHEAB
 {
@@ -6550,7 +6548,7 @@ class RC_40Rnd_155mm_Mo_backupHEAB: RC_1Rnd_155mm_Mo_backupHEAB
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_155mm_Mo_backuplowHEAB: RC_1Rnd_155mm_Mo_backupHEAB
 {
-	ammo="RC_Sh_155mm_AMOS_backuplowHEAB";
+	ammo="RC_Sh_155mm_AMOS_backupHEAB";
 };
 class RC_2Rnd_155mm_Mo_backuplowHEAB: RC_1Rnd_155mm_Mo_backuplowHEAB
 {
@@ -7090,7 +7088,6 @@ class RC_12Rnd_230mm_rockets_backupHEAB: RC_1Rnd_230mm_rockets_backupHEAB
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_230mm_rockets_backuplowHEAB: RC_1Rnd_230mm_rockets_backupHEAB
 {
-	ammo="RC_R_230mm_backuplowHEAB";
 };
 class RC_2Rnd_230mm_rockets_backuplowHEAB: RC_1Rnd_230mm_rockets_backuplowHEAB
 {
