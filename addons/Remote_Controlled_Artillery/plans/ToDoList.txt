@@ -66,6 +66,7 @@ RC Respawn Truck (not priority, can be post update):
 -later: edit hitpoints? *for now threat/cost reduced
 
 FSV/MBT:
+//EDIT eventhandler, locking driver seat doesnt work
 -if rc driver then lock gunner/commander but UNLOCK if release, if gunner/commander then lock driver
 -fix driver forceoptics not working
 

@@ -71,7 +71,7 @@ class RC_LockableMarkerTarget: All
 };
 */
 
-class O_TargetSoldier
+class O_TargetSoldier;
 class RC_InvisibleDatalinkTarget_O_Base: O_TargetSoldier
 {
 	class Eventhandlers;
