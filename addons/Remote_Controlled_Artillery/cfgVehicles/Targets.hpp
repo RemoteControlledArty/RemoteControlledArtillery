@@ -37,6 +37,7 @@ class RC_ArtilleryTargetE: ArtilleryTargetE
 };
 */
 
+/*
 class All;
 class RC_LockableMarkerTarget: All
 {
@@ -68,10 +69,23 @@ class RC_LockableMarkerTarget: All
 	cost=9.9999999e+014;
 	armor=500;
 };
+*/
 
-class O_TargetSoldier;
-class RC_InvisibleDatalinkTarget_O: O_TargetSoldier
+class O_TargetSoldier
+class RC_InvisibleDatalinkTarget_O_Base: O_TargetSoldier
 {
+	class Eventhandlers;
+	scope=0;
+	scopeCurator=0;
+	scopeArsenal=0;
+};
+class RC_InvisibleDatalinkTarget_O: RC_InvisibleDatalinkTarget_O_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; this spawn {while {true} do {(side player) reportRemoteTarget [_this, 5]; sleep 4;};};";
+	};
+
 	author="Ascent";
 	displayName="GPS Marker";
 
@@ -81,7 +95,6 @@ class RC_InvisibleDatalinkTarget_O: O_TargetSoldier
 
 	irTarget=1;
 	//laserTarget=1;
-	//nvTarget=1;	//makes marker stand out but requires NV lock ammo which could strike friendlies with strobes
 	crewVulnerable=0;
 	type=1;
 
@@ -92,8 +105,20 @@ class RC_InvisibleDatalinkTarget_O: O_TargetSoldier
 	};
 };
 class B_TargetSoldier;
-class RC_InvisibleDatalinkTarget_B: B_TargetSoldier
+class RC_InvisibleDatalinkTarget_B_Base: B_TargetSoldier
 {
+	class Eventhandlers;
+	scope=0;
+	scopeCurator=0;
+	scopeArsenal=0;
+};
+class RC_InvisibleDatalinkTarget_B: RC_InvisibleDatalinkTarget_B_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; this spawn {while {true} do {(side player) reportRemoteTarget [_this, 5]; sleep 4;};};";
+	};
+
 	author="Ascent";
 	displayName="GPS Marker";
 
@@ -114,8 +139,20 @@ class RC_InvisibleDatalinkTarget_B: B_TargetSoldier
 	};
 };
 class I_TargetSoldier;
-class RC_InvisibleDatalinkTarget_I: I_TargetSoldier
+class RC_InvisibleDatalinkTarget_I_Base: I_TargetSoldier
 {
+	class Eventhandlers;
+	scope=0;
+	scopeCurator=0;
+	scopeArsenal=0;
+};
+class RC_InvisibleDatalinkTarget_I: RC_InvisibleDatalinkTarget_I_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; this spawn {while {true} do {(side player) reportRemoteTarget [_this, 5]; sleep 4;};};";
+	};
+
 	author="Ascent";
 	displayName="GPS Marker";
 
@@ -136,17 +173,6 @@ class RC_InvisibleDatalinkTarget_I: I_TargetSoldier
 	};
 };
 
-class RC_ReportingInvisibleDatalinkTarget_O_Base: RC_InvisibleDatalinkTarget_O
-{
-	class EventHandlers;
-};
-class RC_ReportingInvisibleDatalinkTarget_O: RC_ReportingInvisibleDatalinkTarget_O_Base
-{
-	class EventHandlers: EventHandlers
-	{
-		init="(_this select 0) spawn {while {true} do {side player reportRemoteTarget [(_this select 0), 5]; sleep 1;};};";
-	};
-};
 //if !hasInterface exitWith {};
 
 /*

@@ -276,11 +276,11 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_155mm_Mo_shells",
-				"RC_12Rnd_155mm_Mo_lowHEAB",
-				"RC_12Rnd_155mm_Mo_HEAB",
+				"RC_6Rnd_155mm_Mo_HEAB",
+				"RC_6Rnd_155mm_Mo_lowHEAB",
+				"RC_6Rnd_155mm_Mo_shells",
 				"RC_12Rnd_155mm_Mo_smoke",
-				"RC_6Rnd_155mm_Mo_MultiGuided",
+				"RC_4Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
@@ -323,11 +323,11 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_155mm_Mo_shells",
-				"RC_12Rnd_155mm_Mo_lowHEAB",
-				"RC_12Rnd_155mm_Mo_HEAB",
+				"RC_6Rnd_155mm_Mo_HEAB",
+				"RC_6Rnd_155mm_Mo_lowHEAB",
+				"RC_6Rnd_155mm_Mo_shells",
 				"RC_12Rnd_155mm_Mo_smoke",
-				"RC_6Rnd_155mm_Mo_MultiGuided",
+				"RC_4Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
@@ -614,13 +614,14 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 			};
 			magazines[]=
 			{
-				"RC_16Rnd_155mm_Mo_HEAB",
-				"RC_16Rnd_155mm_Mo_smoke",
+				"RC_6Rnd_155mm_Mo_HEAB",
+				"RC_6Rnd_155mm_Mo_lowHEAB",
+				"RC_12Rnd_155mm_Mo_smoke",
+				"RC_4Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_6Rnd_155mm_Mo_MultiGuided",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
-				"RC_16Rnd_155mm_Mo_Illum",
+				"RC_12Rnd_155mm_Mo_Illum",
 				"SmokeLauncherMag"
 			};
 			class OpticsIn: OpticsIn
@@ -659,9 +660,10 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_155mm_Mo_HEAB",
+				"RC_6Rnd_155mm_Mo_HEAB",
+				"RC_6Rnd_155mm_Mo_lowHEAB",
 				"RC_12Rnd_155mm_Mo_smoke",
-				"RC_6Rnd_155mm_Mo_MultiGuided",
+				"RC_4Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_8Rnd_155mm_Mo_AT_mine",
 				"RC_6Rnd_155mm_Mo_mine",
@@ -816,12 +818,13 @@ class RC_Static_Arty: RC_Static_NA_Arty
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_120mm_Mo_HEAB",
-				"RC_12Rnd_120mm_Mo_Smoke",
-				"RC_6Rnd_120mm_Mo_MultiGuided",
+				"RC_6Rnd_155mm_Mo_HEAB",
+				"RC_6Rnd_155mm_Mo_lowHEAB",
+				"RC_12Rnd_120mm_Mo_smoke",
+				"RC_4Rnd_120mm_Mo_MultiGuided",
 				"RC_2Rnd_120mm_Mo_Cluster",
-				"RC_8Rnd_120mm_Mo_AT_Mine",
-				"RC_6Rnd_120mm_Mo_Mine",
+				"RC_8Rnd_120mm_Mo_AT_mine",
+				"RC_6Rnd_120mm_Mo_mine",
 				"RC_12Rnd_120mm_Mo_Illum"
 			};
 

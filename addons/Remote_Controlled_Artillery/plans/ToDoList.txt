@@ -25,24 +25,25 @@ documentation:
 
 *Fluffy says locking is global, meaning locking rc gunner/driver from going to commander/passenger... OOOF *if in driver and currently controlling, lock other seats
 
+if (!isserver) exitwith {}; = server client only, not every player client
+
 Rooicat eventhandler
 class EventHandlers: EventHandlers
 {
 	postinit="if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
 };
 
-*Fluffy said respawn is global and it would create a respawn per player, i should look for a "serverinit", or test in on a server if thats somehow prevented
+*Fluffy said respawn is global and it would create a respawn per player, i should look for a "serverinit", or test on a server if thats somehow prevented
 
 arty:
+-test gps marker with vehicle
+this spawn {while {true} do {(side player) reportRemoteTarget [_this, 5]; sleep 1;};};
+
+-eta, test fired EH in loop
 -warheadName HE/TandemHEAT ?
 -make sure blastcore etc doesnt remove ground dust animation
 -recon radar+vehicle mortar composition (maybe hide legs)
 -remove non airburst HE after trajectory testing
-
--report arty map markers to datalink, to lock for gps guidance, maybe if "gps" is written in the marker name? RC_O_InvisibleDatalinkTarget works, maybe add eventhandler for datalink reporting to it
-_laser = laserTarget player;
-_targetSolider = "RC_I_InvisibleDatalinkTarget" createVehicle getpos _laser;
-side player reportRemoteTarget [_targetSolider, 40];
 
 general:
 -decrease guided to 5 or 4? *Cap said 4
@@ -65,7 +66,7 @@ RC Respawn Truck (not priority, can be post update):
 -later: edit hitpoints? *for now threat/cost reduced
 
 FSV/MBT:
--find a way to lock seats depending on current seat
+-if rc driver then lock gunner/commander but UNLOCK if release, if gunner/commander then lock driver
 -fix driver forceoptics not working
 
 AR-short:
@@ -258,6 +259,8 @@ DONE - FEATURES:
 -fixed respawn position script, but it might be global duplicating it per person
 -added new seatlock, case 4 locks only commander seat
 -removed Ti from AR-1 as it isnt effected by the ppeffects script
+-updated the seat UV lock script, to be usable for FSV/MBT, to unlock seats again when not in UV control
+-added if (!isserver) exitwith {}; to eventhandlers so its not executed multiple times
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
@@ -266,6 +269,8 @@ DONE - FEATURES:
 -instead of seperate display, added RC_AimAboveHeight to 0.7*triggerdistance for guided, to have 45deg toptown effect even on high charge for shorter TOF, to not get stuck in foliage/cover
 -finally found correct values to make guided shells accurate at high charge instead of completly overshoot
 -added script that changes Airburst to Impact when turret elevation is too low for Airburst to work savely
+-found a way to enable gps targeting! (slightly more work needed to integrate it)
+
 
 -low/high trajectory list:
 	low: HEAB, Guided (Guided has integrated topdown)

@@ -808,7 +808,7 @@ class RC_Sh_82mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 };
 class RC_Sh_82mm_AMOS_lowHEAB: RC_Sh_82mm_AMOS_HEAB
 {
-	imAboveTarget[]={8,8,8};	//low airburst to atleast ignore microterrain
+	imAboveTarget[]={6.35,6.35,6.35};	//low airburst to atleast ignore microterrain
 };
 
 
@@ -817,7 +817,7 @@ class RC_Sh_82mm_AMOS_backupHEAB: RC_82mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,5,0};
+	submunitionInitialOffset[]={0,6.35,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 };
@@ -1133,7 +1133,7 @@ class RC_Sh_105mm_AMOS_HEAB: RC_105mm_HEAB_Shell_Base
 };
 class RC_Sh_105mm_AMOS_lowHEAB: RC_Sh_105mm_AMOS_HEAB
 {
-	aimAboveTarget[]={8,8,8};	//low airburst to atleast ignore microterrain
+	aimAboveTarget[]={7.65,7.65,7.65};	//low airburst to atleast ignore microterrain
 };
 
 
@@ -1142,7 +1142,7 @@ class RC_Sh_105mm_AMOS_backupHEAB: RC_105mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,5,0};
+	submunitionInitialOffset[]={0,7.65,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_105mm_AMOS_submunition";
 };
@@ -1303,7 +1303,7 @@ class RC_Sh_120mm_AMOS_HEAB: RC_120mm_HEAB_Shell_Base
 };
 class RC_Sh_120mm_AMOS_lowHEAB: RC_Sh_120mm_AMOS_HEAB
 {
-	aimAboveTarget[]={8,8,8};	//low airburst to atleast ignore microterrain
+	aimAboveTarget[]={8.75,8.75,8.75};	//low airburst to atleast ignore microterrain
 };
 
 
@@ -1312,7 +1312,7 @@ class RC_Sh_120mm_AMOS_backupHEAB: RC_120mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,5,0};
+	submunitionInitialOffset[]={0,8.75,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_120mm_AMOS_submunition";
 };
@@ -1399,6 +1399,7 @@ class RC_Sh_120mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	};
 };
 
+
 class RC_Sh_120mm_AMOS_delayed_submunition: RC_Sh_120mm_AMOS_submunition
 {
 	explosionTime=0.2;
@@ -1416,6 +1417,18 @@ class RC_M_Mo_120mm_LG_DelayedFuse_submunition: RC_120mm_MP_MultiGuided_Submunit
 class RC_Sh_120mm_AMOS_LG_DelayedFuse: RC_Sh_120mm_AMOS_MP_MultiGuided
 {
 	submunitionAmmo="RC_M_Mo_120mm_LG_DelayedFuse_submunition";
+};
+
+
+class Cluster_155mm_AMOS;
+class RC_Cluster_120mm_AMOS: Cluster_155mm_AMOS
+{
+	aiAmmoUsageFlags="64 + 128";
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		35
+	};
 };
 
 
@@ -1511,7 +1524,7 @@ class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 };
 class RC_Sh_155mm_AMOS_lowHEAB: RC_Sh_155mm_AMOS_HEAB
 {
-	aimAboveTarget[]={8,8,8};	//low airburst to atleast ignore microterrain, and able to take out MG/GMG bunkers with overhead protection, lower than 6m bugs
+	aimAboveTarget[]={10.6,10.6,10.6};	//low airburst to atleast ignore microterrain, and able to take out MG/GMG bunkers with overhead protection, lower than 6m bugs
 };
 
 
@@ -1521,7 +1534,7 @@ class RC_Sh_155mm_AMOS_backupHEAB: RC_155mm_HEAB_Shell_Base
 	aiAmmoUsageFlags="64 + 128";
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,5,0};
+	submunitionInitialOffset[]={0,10.6,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 };
@@ -1602,7 +1615,6 @@ class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
 };
 
 
-class Cluster_155mm_AMOS;
 class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 {
 	aiAmmoUsageFlags="64 + 128";
@@ -1872,7 +1884,7 @@ class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
 };
 class RC_R_230mm_lowHEAB: RC_R_230mm_HEAB
 {
-	aimAboveTarget[]={8,8,8};	//to atleast ignore microterrain
+	aimAboveTarget[]={10.6,10.6,10.6};	//to atleast ignore microterrain
 };
 
 
@@ -1881,7 +1893,7 @@ class RC_R_230mm_backupHEAB: RC_230mm_HEAB_Rocket_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,5,0};
+	submunitionInitialOffset[]={0,10.6,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 };
@@ -2120,7 +2132,7 @@ class RC_R_604mm_backupHEAB: RC_604mm_HEAB_Rocket_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,5,0};
+	submunitionInitialOffset[]={0,15,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_R_604mm_fly_HEAB_submunition_ATACMS";
 };

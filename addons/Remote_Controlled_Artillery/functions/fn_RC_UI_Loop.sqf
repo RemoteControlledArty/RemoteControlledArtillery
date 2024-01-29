@@ -1,6 +1,6 @@
 /*
 	This Code is held together by Duct Tape and Hope
-	Author: Fluffy
+	Author: Fluffy, Ascent
 
 	Description:
 	Main Loop to Handle the Calculation and UI of RC Artillery Units
@@ -17,37 +17,54 @@ RC_Artillery_UI = [] spawn {
 		_uav = (getConnectedUAV player); // UAV
 
 		// If the Player is currently controlling the UAV
-		_inDrone = ((UAVControl _uav) select 1) isEqualTo "GUNNER";
+		_inDrone = ((UAVControl _uav) select 1) in ["DRIVER", "GUNNER", "COMMANDER"];
+		//_inDrone = ((UAVControl _uav) select 1) isEqualTo "GUNNER";
 		
 		_uavClass = typeOf _uav; // UAV ClassName
 		
 		// See if the vehicle has the isRCArty property
 		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
 
-		// If seats have been disabled in the Config we handle that here
-		_disableSeats = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCDisableSeats");
-		// If we have the Property Defined
-		if (_disableSeats != 0) then {
-			switch (_disableSeats) do {
-				// Locks only the Driver Seat
-				case 1: {
-					if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]}
+		if (_inDrone && (_uav isNotEqualto objNull)) then {
+			// If seats have been disabled in the Config we handle that here
+			_disableSeats = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCDisableSeats");
+			// If we have the Property Defined
+			if (_disableSeats != 0) then {
+				switch (_disableSeats) do {
+					// Locks only the Driver Seat
+					case 1: {
+						if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]}
+					};
+					// Locks both the Driver seat and Commander
+					case 2: {
+						if !(lockedDriver _uav) then {_uav lockDriver true};
+						if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]};
+					};
+					// Specific Case for if the Commander seat is at [0] instead of [0,0]
+					case 3: {
+						if !(_uav lockedTurret [0]) then {_uav lockTurret [[0], true]};
+					};
+					// Lock just the Commander Seat
+					case 4: {
+						if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]};
+					};
+					// Lock Gunner and Commander Seat
+					case 5: {
+						if !(_uav lockedTurret [0]) then {_uav lockTurret [[0], true]};
+						if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]};
+					};
+					//default {hint "Something Went Wrong!"};
 				};
-				// Locks both the Driver seat and Commander
-				case 2: {
-					if !(lockedDriver _uav) then {_uav lockDriver true};
-					if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]};
-				};
-				// Specific Case for if the Commander seat is at [0] instead of [0,0]
-				case 3: {
-					if !(_uav lockedTurret [0]) then {_uav lockTurret [[0], true]};
-				};
-				// Lock just the Commander Seat
-				case 4: {
-					if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]};
-				};
-				default {hint "Something Went Wrong!"};
 			};
+		}
+		//if not in drone, unlock seats again
+		else {
+			//_uav lockDriver false;
+			//_uav lockTurret [[0], false];
+			//_uav lockTurret [[0,0], false];
+			if (lockedDriver _uav) then {_uav lockDriver false};
+			if (_uav lockedTurret [0]) then {_uav lockTurret [[0], false]};
+			if (_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], false]};
 		};
 
 
@@ -233,20 +250,22 @@ RC_Artillery_UI = [] spawn {
 			
 			// If we actually have Target Markers
 			//if (cursorTarget isNotEqualto objNull) then {RC_Artillery_Markers=[0,0,0]};	//testing only
-			if !(RC_Artillery_Markers isEqualTo []) then {
 
-				if (isNil "RC_Current_Target" || RC_Current_Target isEqualTo []) then {
-					RC_Current_Target = RC_Artillery_Markers select 0;
-				};
-
-				// Try to see if the Current Target Exists
-				_targetExists = RC_Artillery_Markers findIf {
-					(_x select 0) == (RC_Current_Target select 0);
-				};
-
-				// If the Target can't be found we reset the current target
-				if (_targetExists == -1) then {
-					RC_Current_Index = 0;
+			if ((cursorTarget isNotEqualto objNull) or !(RC_Artillery_Markers isEqualTo [])) then
+			{
+				if !(RC_Artillery_Markers isEqualTo []) then
+				{
+					if (isNil "RC_Current_Target" || RC_Current_Target isEqualTo []) then {
+						RC_Current_Target = RC_Artillery_Markers select 0;
+					};
+					// Try to see if the Current Target Exists
+					_targetExists = RC_Artillery_Markers findIf {
+						(_x select 0) == (RC_Current_Target select 0);
+					};
+					// If the Target can't be found we reset the current target
+					if (_targetExists == -1) then {
+						RC_Current_Index = 0;
+					};
 				};
 
 				//ElDiff for formula
@@ -277,17 +296,17 @@ RC_Artillery_UI = [] spawn {
 				if ((getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends"))==1) then {_muzzleFromCenterEstimate = _BarrelLenght * (cos (_WeaponDirection*90));};
 				_targetDistance = round((_targetPos distance2d _artyPos)-_muzzleFromCenterEstimate);
 
-				//how ElDiff is shown based on cba settings
-				_shownDifference = 0;
-				if RC_Arty_EL_Diff then {
-					_shownDifference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);
-				} else {
-					_shownDifference = (_artyPos select 2) - ((AGLToASL _targetPos) select 2);
-				};
-
 				_Difference = 0;
 				_Difference = ((AGLToASL _targetPos) select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
 				//_Difference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);		//outdated
+
+				//how ElDiff is shown based on cba settings
+				_shownDifference = 0;
+				if RC_Arty_EL_Diff then {
+					_shownDifference = _Difference;
+				} else {
+					_shownDifference = -_Difference;
+				};
 
 				_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);
 				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));

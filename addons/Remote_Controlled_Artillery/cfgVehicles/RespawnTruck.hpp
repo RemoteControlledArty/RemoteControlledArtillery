@@ -15,7 +15,7 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 
 	displayName="RC Medical Truck";
@@ -136,7 +136,7 @@ class RC_RespawnTruck_A_O: RC_RespawnTruck_A
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 };
 class RC_RespawnTruck_A_I: RC_RespawnTruck_A
@@ -146,7 +146,7 @@ class RC_RespawnTruck_A_I: RC_RespawnTruck_A
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 };
 
@@ -175,7 +175,7 @@ class RC_RespawnTruck_WD_O: RC_RespawnTruck_WD
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 };
 class RC_RespawnTruck_WD_I: RC_RespawnTruck_WD
@@ -185,7 +185,7 @@ class RC_RespawnTruck_WD_I: RC_RespawnTruck_WD
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 };
 
@@ -205,7 +205,7 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 
 	displayName="RC Medical Transporter";
@@ -326,7 +326,7 @@ class RC_RespawnTransporter_DIG_O: RC_RespawnTransporter_DIG
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 };
 class RC_RespawnTransporter_DIG_I: RC_RespawnTransporter_DIG
@@ -336,7 +336,7 @@ class RC_RespawnTransporter_DIG_I: RC_RespawnTransporter_DIG
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 };
 
@@ -365,7 +365,7 @@ class RC_RespawnTransporter_WD_O: RC_RespawnTransporter_WD
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 };
 class RC_RespawnTransporter_WD_I: RC_RespawnTransporter_WD
@@ -375,7 +375,7 @@ class RC_RespawnTransporter_WD_I: RC_RespawnTransporter_WD
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 };
 
@@ -387,7 +387,7 @@ class RC_RespawnTransporter_HEX_O: RC_RespawnTransporter_DIG
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Truck_02_medical_F.jpg";
@@ -415,7 +415,7 @@ class RC_RespawnVan_WD: RC_RespawnVan_WD_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 
 	displayName="RC Medical Van";
@@ -537,7 +537,7 @@ class RC_RespawnVan_WD_O: RC_RespawnVan_WD
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 };
 class RC_RespawnVan_WD_I: RC_RespawnVan_WD
@@ -547,6 +547,6 @@ class RC_RespawnVan_WD_I: RC_RespawnVan_WD
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 };
