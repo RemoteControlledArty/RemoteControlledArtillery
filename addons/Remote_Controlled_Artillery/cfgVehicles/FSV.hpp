@@ -1,6 +1,6 @@
 //NLOS FSV
 class B_AFV_Wheeled_01_up_cannon_F;
-class RC_NLOS_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
+class RC_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -18,24 +18,19 @@ class RC_NLOS_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 	class HitRF2Wheel;
 	scope=0;
 	scopeCurator=0;
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	//RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RCDisableSeats=5; //locks specific seat
-
-	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelLenght=4;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 };
-class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
+class RC_FSV_A: RC_FSV_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; while {true} do {if (player in (crew _this) && !(driver _this == player)) then {_this lockDriver true;} else {_this lockDriver false;}; sleep 0.5;};}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 
-	displayName="N/LOS FSV";
+	displayName="FSV";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_FSV_subcat";
+	editorSubcategory="RC_Transport_FSV_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;
@@ -129,23 +124,19 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 	{
 		class MainTurret: MainTurret
 		{
-			//maxElev=45;	//unfortunately doesnt work, due to gun having internal animation
 			commanding=2;
 
 			weapons[]=
 			{
-				"RC_FSV_120mm_V5",
 				"RC_cannon_120mm",
 				"LMG_coax",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_FSV_120mm_Mo_HEAB",
-				"RC_12Rnd_FSV_120mm_Mo_MultiGuided",
-				"RC_12Rnd_FSV_120mm_Mo_Smoke",
 				"12Rnd_120mm_APFSDS_shells_Tracer_Green",
-				"12Rnd_120mm_MP_T_Green",
+				"16Rnd_120mm_MP_T_Green",
+				"3Rnd_120mm_DLG_cannon_missiles",
 				"200Rnd_762x51_Belt_Green",
 				"200Rnd_762x51_Belt_Green",
 				"200Rnd_762x51_Belt_Green",
@@ -404,84 +395,6 @@ class RC_NLOS_FSV_A: RC_NLOS_FSV_A_Base
 	{
 	};
 };
-class RC_NLOS_FSV_A_O: RC_NLOS_FSV_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-};
-class RC_NLOS_FSV_A_I: RC_NLOS_FSV_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-};
-
-
-class RC_NLOS_FSV_WD: RC_NLOS_FSV_A
-{
-	editorPreview="\A3\EditorPreviews_F_Tank\Data\CfgVehicles\B_T_AFV_Wheeled_01_up_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_EXT1_green_CO.paa",
-		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_EXT2_green_CO.paa",
-		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_wheel_green_CO.paa",
-		"A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_CO.paa",
-		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_commander_tow_CO.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-		"A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_CO.paa"
-	};
-	textureList[]=
-	{
-		"Green",
-		1,
-		"Sand",
-		0
-	};
-};
-class RC_NLOS_FSV_WD_O: RC_NLOS_FSV_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-};
-class RC_NLOS_FSV_WD_I: RC_NLOS_FSV_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-};
-
-
-class RC_FSV_A: RC_NLOS_FSV_A
-{
-	isRCArty=0;
-	displayName="FSV";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			weapons[]=
-			{
-				"RC_cannon_120mm",
-				"LMG_coax",
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"12Rnd_120mm_APFSDS_shells_Tracer_Green",
-				"16Rnd_120mm_MP_T_Green",
-				"3Rnd_120mm_DLG_cannon_missiles",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
 class RC_FSV_A_O: RC_FSV_A
 {
 	faction="RemoteControlled_O";
@@ -549,30 +462,41 @@ class RC_MBT6_A_Base: B_MBT_01_TUSK_F
 	scope=0;
 	scopeCurator=0;
 	RCDisableSeats=5; //locks specific seat
-	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	//RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_MBT6_A: RC_MBT6_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};}; (_this select 0) spawn {while {true} do {if (!isNull _this && player in (crew _this) && !(driver _this == player)) then {driver _this lockDriver true;} else {driver _this lockDriver false;};};};";
+		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; while {true} do {if (player in (crew _this) && !(driver _this == player)) then {_this lockDriver true;} else {_this lockDriver false;}; sleep 0.5;};}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 
+	//init="(_this select 0) spawn {waitUntil {!isNull driver _this}; while {true} do {if (player in (crew _this) && !(driver _this == player)) then {_this lockDriver true;} else {_this lockDriver false;}; sleep 0.5;};}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+
+	//(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};
+	//[this] spawn {_vic = (_this select 0); waitUntil {!isNull gunner _vic}; _this deleteVehicleCrew gunner _vic; waitUntil {!isNull commander _vic}; _vic deleteVehicleCrew commander _vic;};
+	//what is this for: (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;};
+	//if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};
+	//[this] spawn {while {alive (_this select 0)} do {_vic = (_this select 0); if (player in (crew _vic) && !(driver _vic == player)) then {_vic lockDriver true;}; sleep 0.5;};};
+	//[this] spawn {while {alive (_this select 0)} do {_vic = (_this select 0); if (player in (crew _vic) && !(driver _vic == player)) then {_vic lockDriver true;}; sleep 0.5;};};
+	//(_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};
+
 	/*
-	while { alive _this } do {
+	while {alive _this} do {
         if (player in (crew _this) && !(driver _this == player)) then {
-            driver _this lockDriver true;
+            _this lockDriver true;
         } else {
-            driver _this lockDriver false;
+            _this lockDriver false;
         };
-        sleep 1; // Adjust sleep duration as needed
+        sleep 1;
     };
 
-	[this] spawn {while {alive (_this select 0)} do { 
-        if (player in (crew (_this select 0)) && !(driver (_this select 0) == player)) then { 
-            driver (_this select 0) lockDriver true; 
+	[this] spawn {while {alive (_this select 0)} do {
+		_vic = (_this select 0); 
+        if (player in (crew _vic) && !(driver _vic == player)) then { 
+            _vic lockDriver true; 
         } else { 
-            driver (_this select 0) lockDriver false; 
+            _vic lockDriver false; 
         }; 
         sleep 1;
     };};
@@ -586,7 +510,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 
 	displayName="MBT 2+6";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_FSV_subcat";
+	editorSubcategory="RC_Transport_FSV_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;

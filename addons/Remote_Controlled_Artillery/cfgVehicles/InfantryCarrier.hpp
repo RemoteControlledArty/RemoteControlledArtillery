@@ -36,20 +36,46 @@ class RC_Infantry_Carrier_A_base: B_APC_Wheeled_01_cannon_F
 	scope=0;
 	scopeCurator=0;
 	//RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
-	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	//RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RCDisableSeats=4; //locks specific seat
+	RCReenableSeats=2	//re-unlocks commander seat, not gunner
 };
 class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 {
 	class EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};(_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		init="(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; while {true} do {if (player in (crew _this) && !(gunner _this == player)) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
+
+	/*
+	(_this select 0) spawn
+	{
+		if (local _this) then 
+		{
+			{ 
+				_this animate [_x, 1]
+			}
+			forEach ['HideHull','HideTurret']
+		};
+		waitUntil
+		{
+			!isNull commander _this
+		};
+		_this deleteVehicleCrew commander _this;
+	}; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};
+	*/
+
+	//(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};
+	//(_this select 0) spawn {{if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};
+
+	///generally lock driver
+	//if controlling gunner, lock commander
 
 	//_this lockDriver true; _this lockTurret [[0,0], true];
 
 	displayName="RC Infantry Carrier";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Transport_subcat";
+	editorSubcategory="RC_Transport_FSV_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;

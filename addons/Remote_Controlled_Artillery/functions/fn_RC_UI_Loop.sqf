@@ -10,7 +10,6 @@
 if !hasInterface exitWith {};
 RC_Artillery_UI = [] spawn {
 
-
 	while {true} do {
 		sleep 0.1;
 
@@ -18,12 +17,10 @@ RC_Artillery_UI = [] spawn {
 
 		// If the Player is currently controlling the UAV
 		_inDrone = ((UAVControl _uav) select 1) in ["DRIVER", "GUNNER", "COMMANDER"];
+		//_inDrone = isRemoteControlling player;
 		//_inDrone = ((UAVControl _uav) select 1) isEqualTo "GUNNER";
 		
 		_uavClass = typeOf _uav; // UAV ClassName
-		
-		// See if the vehicle has the isRCArty property
-		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
 
 		if (_inDrone && (_uav isNotEqualto objNull)) then {
 			// If seats have been disabled in the Config we handle that here
@@ -35,12 +32,12 @@ RC_Artillery_UI = [] spawn {
 					case 1: {
 						if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]}
 					};
-					// Locks both the Driver seat and Commander
+					// Locks both the Driver and Commander Seat
 					case 2: {
 						if !(lockedDriver _uav) then {_uav lockDriver true};
 						if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]};
 					};
-					// Specific Case for if the Commander seat is at [0] instead of [0,0]
+					// Locks Gunner seat, or if the Commander seat is at [0] instead of [0,0]
 					case 3: {
 						if !(_uav lockedTurret [0]) then {_uav lockTurret [[0], true]};
 					};
@@ -62,11 +59,28 @@ RC_Artillery_UI = [] spawn {
 			//_uav lockDriver false;
 			//_uav lockTurret [[0], false];
 			//_uav lockTurret [[0,0], false];
-			if (lockedDriver _uav) then {_uav lockDriver false};
-			if (_uav lockedTurret [0]) then {_uav lockTurret [[0], false]};
-			if (_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], false]};
+
+			//if (lockedDriver _uav) then {_uav lockDriver false};	//likely should be done in vehicle init
+			_reenableSeats = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCReenableSeats");
+			if (_reenableSeats != 0) then {
+				switch (_reenableSeats) do {
+					// reenables only the Driver Seat
+					case 1: {_uav lockTurret [[0], false];};
+					// reenables both the Driver and Commander Seat
+					case 2: {_uav lockTurret [[0,0], false];};
+					// reenables only the Gunner Seat
+					case 3: {_uav lockTurret [[0], false]; _uav lockTurret [[0,0], false];};
+				};
+			}
+			else {
+			//if (player in (crew _this) && !(gunner _this == player)) then {
+			_uav lockTurret [[0], false];
+			_uav lockTurret [[0,0], false];
+			};
 		};
 
+		// See if the vehicle has the isRCArty property
+		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
 
 		// If it's of Artillery or Mortar Type do da thing
 		if (_isRCArty && _inDrone && (_uav isNotEqualto objNull)) then {

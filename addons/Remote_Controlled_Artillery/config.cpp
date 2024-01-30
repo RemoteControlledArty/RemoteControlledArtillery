@@ -333,6 +333,7 @@ class CfgFunctions
       		class RC_UI_Loop {postInit=1};
 			class RC_MarkerLoop {postInit=1};
 			class RC_EngineOff {postInit=1};
+			class RC_UAVBlur {postInit=1};
 			class RC_UAVConnectionFix {postInit=1};
 			class RC_LaserDatalink {postInit=1};
 			class scrollSolutions {};
@@ -425,13 +426,9 @@ class CfgEditorSubcategories
 	{ 
 		displayname="Spotting";
 	};
-	class RC_Transport_subcat
+	class RC_Transport_FSV_subcat
 	{ 
-		displayname="Transport";
-	};
-	class RC_FSV_subcat
-	{ 
-		displayname="FSV's";
+		displayname="Transport & FSV's";
 	};
 	class RC_Respawn_subcat
 	{ 

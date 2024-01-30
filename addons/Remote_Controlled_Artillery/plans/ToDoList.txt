@@ -28,6 +28,8 @@ documentation:
 if (!isserver) exitwith {}; = server client only, not every player client
 *HOW does it affect "player side"...?
 
+*Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
+
 Rooicat eventhandler
 class EventHandlers: EventHandlers
 {
@@ -67,6 +69,7 @@ RC Respawn Truck (not priority, can be post update):
 -later: edit hitpoints? *for now threat/cost reduced
 
 FSV/MBT:
+-lockCargo if needed to prevent to go as driver to passenger
 //EDIT eventhandler, locking driver seat doesnt work
 -if rc driver then lock gunner/commander but UNLOCK if release, if gunner/commander then lock driver
 -fix driver forceoptics not working
@@ -115,7 +118,6 @@ while {true} do
 
 TO DO (later) - QUALITY OF LIFE:
 
--only disable driver = 4, for modularity *
 -maybe turret azimuth lock hotkey, for when changing EL on uneven ground throws it off
 -get missle feed panel to connect to missle
 -magazine shell count attributes code? (Who wrote this, what is meant by it?)
@@ -124,8 +126,9 @@ TO DO (later) - QUALITY OF LIFE:
 Postponed:
 
 -look up if inheriting structure is fully correct
--submunition alternative misslecam
--misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to do with cfgvehicles atleast to trigger
+-guided submunition alternative misslecam
+-vanilla misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to do with cfgvehicles atleast to trigger
+-more RC Infantry Carrier's / APC's / IVF's
 
 
 IDEAS - FAR FUTURE:
@@ -135,13 +138,11 @@ IDEAS - FAR FUTURE:
 -counterbattery radar, reporting targets to datalink network, with cba settings on detection speed and range
 
 -hotkey to mark selected datalink target on map with time (and maybe speed)
-
 -disconnect uav/ugv from terminal script when vanilla incapacitated / ace unconcious
 
 -AR-0.5 pvp, with 1.5 zoom to force low flying, shortrange sensors, no thermal, but laser designator
 -RC Marid with upgraded engines 7.62x51 and smoke GL
 -test passive radar shells against active radar AA
--direct fire firing solution (camera viewpoint)
 -colored xmeter radius for Azimuth&GunEL, for fire adjustments
 -maybe add max spread display / hit propability display (HEAB = 30m radius, inaccuracy at marked distance = ? radius, = ? hit probability)
 -video partially at night for rocket and explosion effects
@@ -199,7 +200,7 @@ DONE - FEATURES:
 -added RC Infantry Carrier
 -renamed assets for clarity
 -155mm dispersion fixed
--more but finer 155mm charges, to have more angle variety, and enough airburst even with low angle solution
+-more but finer 155mm charges, to have more angle variety
 -added optional 67km datalink range (max firing range)
 -added peak ASL calculation formula
 -shortend map marker search time (as its only running during active remote control, and improves quality of life)
@@ -263,6 +264,7 @@ DONE - FEATURES:
 -removed Ti from AR-1 as it isnt effected by the ppeffects script
 -updated the seat UV lock script, to be usable for FSV/MBT, to unlock seats again when not in UV control
 -added if (!isserver) exitwith {}; to eventhandlers so its not executed multiple times
+-added cfg value _reenableSeats for use in specific vehicles
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
@@ -272,6 +274,7 @@ DONE - FEATURES:
 -finally found correct values to make guided shells accurate at high charge instead of completly overshoot
 -added script that changes Airburst to Impact when turret elevation is too low for Airburst to work savely
 -found a way to enable gps targeting! (slightly more work needed to integrate it)
+-included aimaboveheight into shownELdifference, so with ace tables airburst is accurate, and guided includes topdown
 
 
 -low/high trajectory list:
