@@ -26,6 +26,7 @@ documentation:
 *Fluffy says locking is global, meaning locking rc gunner/driver from going to commander/passenger... OOOF *if in driver and currently controlling, lock other seats
 
 if (!isserver) exitwith {}; = server client only, not every player client
+*HOW does it affect "player side"...?
 
 Rooicat eventhandler
 class EventHandlers: EventHandlers

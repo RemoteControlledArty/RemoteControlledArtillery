@@ -555,8 +555,32 @@ class RC_MBT6_A: RC_MBT6_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};}; (_this select 0) spawn {while {true} do {if (!isNull _this && isPlayer (driver _this)) then {_inGunnerOrCommander = switch (gunner _this) do {case _x isEqualTo player: { true }; case _x isEqualTo (commander _this): { true };default { false };}; if (_inGunnerOrCommander) then {driver _this lockDriver true;} else {driver _this lockDriver false;};};};};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};}; (_this select 0) spawn {while {true} do {if (!isNull _this && player in (crew _this) && !(driver _this == player)) then {driver _this lockDriver true;} else {driver _this lockDriver false;};};};";
 	};
+
+	/*
+	while { alive _this } do {
+        if (player in (crew _this) && !(driver _this == player)) then {
+            driver _this lockDriver true;
+        } else {
+            driver _this lockDriver false;
+        };
+        sleep 1; // Adjust sleep duration as needed
+    };
+
+	[this] spawn {while {alive (_this select 0)} do { 
+        if (player in (crew (_this select 0)) && !(driver (_this select 0) == player)) then { 
+            driver (_this select 0) lockDriver true; 
+        } else { 
+            driver (_this select 0) lockDriver false; 
+        }; 
+        sleep 1;
+    };};
+	*/
+
+	//if (!isNull _vehicle && player in (crew _vehicle) && !(driver _vehicle == player)) then {driver _vehicle lockDriver true;} else {driver _vehicle lockDriver false;};
+	//(_this select 0) spawn {while {true} do {if (!isNull _this && isPlayer (driver _this)) then {_inGunnerOrCommander = switch (gunner _this) do {case _x isEqualTo player: { true }; case _x isEqualTo (commander _this): { true };default { false };}; if (_inGunnerOrCommander) then {driver _this lockDriver true;} else {driver _this lockDriver false;};};
+	//if (!isNull _this && isPlayer (driver _this)) then {_inDriverSeat = (driver _this) == player; _inGunnerOrCommander = player in (fullCrew _this) && !_inDriverSeat; if (_inGunnerOrCommander) then {driver _this lockDriver true;} else { driver _this lockDriver false;};};
 
 	//EDIT eventhandler, locking driver seat doesnt work
 
