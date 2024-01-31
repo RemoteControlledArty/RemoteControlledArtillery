@@ -5,17 +5,16 @@
 *NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
 *NOTE to self, AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
 *NOTE to self, wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
+*NOTE to self, gps marker lock, then remove is efficient NLOS fire & forget
 
 
 TO DO - BUGFIXES:
 
 -does it still need include check for ace hpp?	*according to Fluffy likely yes, for the mortar
 -REPORT BUG to ace team: crl+h cuts connection and destroys UV
--ar2 problems on server, is it due to some of the scripts, or a server issue?
 -turret is locked unable to adjust up/down, when scope of player is adjustable...
--later: enable artillery overlay in non UGV gunner seat of N/LOS FSV
--RC Recon RADAR activated by default to make it actually usefull (works when deleting commander and activating it manual, or human ai is in there, not with uav ai even with https://community.bistudio.com/wiki/setVehicleRadar)
 -lockseats didnt work for FSV/MBT
+-RADAR deactivates after releasing control even when not autonomous, maybe human crew and locking seats instead?
 
 
 TO DO - FEATURES:
@@ -39,6 +38,7 @@ class EventHandlers: EventHandlers
 *Fluffy said respawn is global and it would create a respawn per player, i should look for a "serverinit", or test on a server if thats somehow prevented
 
 arty:
+-vehicle mortar cannot target map marker due to looking close attached vic, maybe mousewheel menu for vicmortar to disable datalink targeting?
 -test gps marker with vehicle
 this spawn {while {true} do {(side player) reportRemoteTarget [_this, 5]; sleep 1;};};
 
@@ -266,7 +266,7 @@ DONE - FEATURES:
 -added if (!isserver) exitwith {}; to eventhandlers so its not executed multiple times
 -added cfg value _reenableSeats for use in specific vehicles
 -FSV/MBT/IC seat locking scripts finally work now, have to be optimized/bugtested still
--finally fixed Recon RADAR, given controllable driver sensor panel to activate active RADAR with ctrl+R
+-given controllable driver of Recon RADAR sensor panel to activate active RADAR with ctrl+R
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
@@ -277,6 +277,7 @@ DONE - FEATURES:
 -added script that changes Airburst to Impact when turret elevation is too low for Airburst to work savely
 -found a way to enable gps targeting! (slightly more work needed to integrate it)
 -included aimaboveheight into shownELdifference, so with ace tables airburst is accurate, and guided includes topdown
+-fixed HEAB by slightly decreasing simulationStep, to not overshoot at low trajectory, or hit ground at high trajectory
 
 
 -low/high trajectory list:

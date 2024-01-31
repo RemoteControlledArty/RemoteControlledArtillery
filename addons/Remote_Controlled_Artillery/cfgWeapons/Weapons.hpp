@@ -889,6 +889,48 @@ class RC_mortar_82mm_V4: RC_mortar_82mm_V3
 	};
 };
 
+//82mm Vehicle Mortar 6km
+class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
+{
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5",
+		"Burst1",
+		"Burst2",
+		"Burst3",
+	};
+	class Single1: Single1
+	{
+		displayName="CH0";
+		artilleryDispersion=1.9;
+		artilleryCharge=0.35;
+	};
+	class Single2: Single1
+	{
+		displayName="CH1";
+		artilleryCharge=0.478;
+	};
+	class Single3: Single1
+	{
+		displayName="CH2";
+		artilleryCharge=0.652;
+	};
+	class Single4: Single1
+	{
+		displayName="CH3";
+		artilleryCharge=0.889;
+	};
+	class Single5: Single1
+	{
+		displayName="CH4";
+		artilleryCharge=1.2129;
+	};
+};
+
 
 // 120mm ShipCannon
 class weapon_ShipCannon_120mm;

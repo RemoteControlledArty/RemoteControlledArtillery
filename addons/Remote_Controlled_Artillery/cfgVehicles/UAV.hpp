@@ -170,10 +170,8 @@ class RC_UAV_AR1: RC_UAV_base
 		visionMode[]=
 		{
 			"Normal",
-			"NVG",
-			"Ti"
+			"NVG"
 		};
-		thermalMode[]={0,1};
 	};
 	class Viewoptics: ViewOptics
 	{
@@ -189,10 +187,8 @@ class RC_UAV_AR1: RC_UAV_base
 		visionMode[]=
 		{
 			"Normal",
-			"NVG",
-			"Ti"
+			"NVG"
 		};
-		thermalMode[]={0,1};
 	};
 
 	class Turrets: Turrets
@@ -238,10 +234,8 @@ class RC_UAV_AR1: RC_UAV_base
 					visionMode[]=
 					{
 						"Normal",
-						"NVG",
-						"Ti"
+						"NVG"
 					};
-					thermalMode[]={0,1};
 					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
 				};
 			};
@@ -261,10 +255,8 @@ class RC_UAV_AR1: RC_UAV_base
 					visionMode[]=
 					{
 						"Normal",
-						"NVG",
-						"Ti"
+						"NVG"
 					};
-					thermalMode[]={0,1};
 					gunnerOpticsModel="";
 					gunnerOpticsEffect[]={};
 				};
@@ -452,16 +444,20 @@ class RC_UAV_AR3: RC_UAV_AR1
 		visionMode[]=
 		{
 			"Normal",
-			"NVG"
+			"NVG",
+			"Ti"
 		};
+		thermalMode[]={0};
 	};
 	class Viewoptics: Viewoptics
 	{
 		visionMode[]=
 		{
 			"Normal",
-			"NVG"
+			"NVG",
+			"Ti"
 		};
+		thermalMode[]={0};
 	};
 
 	class Turrets: Turrets
@@ -494,8 +490,10 @@ class RC_UAV_AR3: RC_UAV_AR1
 					visionMode[]=
 					{
 						"Normal",
-						"NVG"
+						"NVG",
+						"Ti"
 					};
+					thermalMode[]={0};
 				};
 			};
 			class OpticsOut: OpticsOut
@@ -505,8 +503,10 @@ class RC_UAV_AR3: RC_UAV_AR1
 					visionMode[]=
 					{
 						"Normal",
-						"NVG"
+						"NVG",
+						"Ti"
 					};
+					thermalMode[]={0};
 				};
 			};
 		};

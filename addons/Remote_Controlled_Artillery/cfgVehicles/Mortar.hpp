@@ -193,12 +193,12 @@ class RC_Mortar: RC_Mortar_NA
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_82mm_Mo_HEAB",
-				"RC_12Rnd_82mm_Mo_Smoke_white",
-				"RC_6Rnd_82mm_Mo_MultiGuided",
-				"RC_8Rnd_82mm_Mo_AT_mine",
-				"RC_6Rnd_82mm_Mo_mine",
-				"RC_12Rnd_82mm_Mo_Flare_white"
+				"RC_10Rnd_82mm_Mo_HEAB",
+				"RC_20Rnd_82mm_Mo_Smoke_white",
+				"RC_5Rnd_82mm_Mo_MultiGuided",
+				"RC_10Rnd_82mm_Mo_AT_mine",
+				"RC_5Rnd_82mm_Mo_mine",
+				"RC_10Rnd_82mm_Mo_Flare_white"
 			};
 			class ViewOptics: ViewOptics
 			{
@@ -552,7 +552,7 @@ class RC_VehicleMortar: RC_Mortar
 		init="insert script for mortar leg hiding";
 	};
 	*/
-	displayName="RC Vehicle Mortar 4km";
+	displayName="RC Vehicle Mortar 6km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 
@@ -570,6 +570,11 @@ class RC_VehicleMortar: RC_Mortar
 		class MainTurret: MainTurret
 		{
 			minElev=-70;
+
+			weapons[]=
+			{
+				"RC_vehiclemortar_82mm_V4"
+			};
 		};
 	};
 };

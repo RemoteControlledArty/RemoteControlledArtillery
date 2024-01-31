@@ -286,6 +286,7 @@ class CfgPatches
 			RC_mortar_82mm_V2,
 			RC_mortar_82mm_V3,
 			RC_mortar_82mm_V4,
+			RC_vehiclemortar_82mm_V4,
 
 			RC_ShipCannon_120mm_V1,
 			RC_ShipCannon_120mm_V2,

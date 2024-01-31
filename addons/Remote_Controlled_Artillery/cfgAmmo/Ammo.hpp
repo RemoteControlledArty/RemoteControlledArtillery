@@ -345,7 +345,7 @@ class RC_HEAB_Base: Default
 	timeToLive=360;
 	//shell/submunition core
 	simulation="shotSubmunitions";
-	simulationStep=0.050000001;
+	simulationStep=0.01;	//to make airburst work before hitting ground
 	soundHit[]=
 	{
 		"",
