@@ -818,8 +818,8 @@ class RC_Static_Arty: RC_Static_NA_Arty
 			};
 			magazines[]=
 			{
-				"RC_6Rnd_155mm_Mo_HEAB",
-				"RC_6Rnd_155mm_Mo_lowHEAB",
+				"RC_6Rnd_120mm_Mo_HEAB",
+				"RC_6Rnd_120mm_Mo_lowHEAB",
 				"RC_12Rnd_120mm_Mo_smoke",
 				"RC_4Rnd_120mm_Mo_MultiGuided",
 				"RC_2Rnd_120mm_Mo_Cluster",

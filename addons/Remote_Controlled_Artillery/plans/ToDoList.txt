@@ -265,6 +265,8 @@ DONE - FEATURES:
 -updated the seat UV lock script, to be usable for FSV/MBT, to unlock seats again when not in UV control
 -added if (!isserver) exitwith {}; to eventhandlers so its not executed multiple times
 -added cfg value _reenableSeats for use in specific vehicles
+-FSV/MBT/IC seat locking scripts finally work now, have to be optimized/bugtested still
+-finally fixed Recon RADAR, given controllable driver sensor panel to activate active RADAR with ctrl+R
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)

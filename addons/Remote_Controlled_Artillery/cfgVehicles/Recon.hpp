@@ -280,6 +280,10 @@ class RC_radar_small_base: I_LT_01_scout_F
 	class MainTurret;
 	class HitPoints;
 	class HitEngine;
+	class Components;
+	class SensorsManagerComponent;
+	class SensorTemplateDataLink;
+	//class EventHandlers;
 	//class ViewOptics;
 	scope=0;
 	scopeCurator=0;
@@ -290,9 +294,16 @@ class RC_radar_small_base: I_LT_01_scout_F
 };
 class RC_radar_small_WD: RC_radar_small_base
 {
+	/*
+	class EventHandlers
+	{
+		init="(_this select 0) spawn {};";
+	};
+	*/
+
 	displayName="RC Recon Radar";
-	//faction="RemoteControlled_B";		//radar activation has to be fixed first
-	//editorSubcategory="RC_AntiAir_subcat";	//radar activation has to be fixed first
+	faction="RemoteControlled_B";
+	editorSubcategory="RC_AntiAir_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;
@@ -315,10 +326,59 @@ class RC_radar_small_WD: RC_radar_small_base
 	redRpm=1100;
 	idleRpm=250;
 
-	//class EventHandlers
-	//{
-	//	init="(_this select 0) spawn {if (local _this) then {_this setVehicleRadar 1};};";
-	//};
+	class Components: Components
+	{
+		class SensorsManagerComponent: SensorsManagerComponent
+		{
+			class Components: Components
+			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=67000;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			class Components: components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={8000,4000,2000,1000};
+					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+			class Components: components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={8000,4000,2000,1000};
+					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+	};
 
 	class HitPoints: HitPoints
 	{

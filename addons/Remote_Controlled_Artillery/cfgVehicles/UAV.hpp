@@ -10,10 +10,11 @@ class RC_UAV_base: B_UAV_01_F
 	class Components;
 	scope=0;
 	scopeCurator=0;
+	RC_UAVBlur=1;
 };
 class RC_UAV_AR1: RC_UAV_base
 {
-	displayName="RC AR-1";
+	displayName="RC AR-1 shortrange";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Spotting_subcat";
 	scope=2;
@@ -200,7 +201,7 @@ class RC_UAV_AR1: RC_UAV_base
 		{
 			showAllTargets=4;
 			//isCopilot=1; //0
-			//commanding=3; //-1
+			commanding=1; //-1
 
 			class Components: Components
 			{
@@ -230,7 +231,7 @@ class RC_UAV_AR1: RC_UAV_base
 					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
-					initFov=1.0;
+					initFov=0.8;
 					minFov=0.025;
 					maxFov=1.0;
 					directionStabilized=1;
@@ -324,7 +325,8 @@ class RC_UAV_AR1_I: RC_UAV_AR1
 //AR-3
 class RC_UAV_AR3: RC_UAV_AR1
 {
-	displayName="RC AR-3";
+	displayName="RC AR-3 longrange";
+	RC_UAVBlur=0;
 
 	class assembleInfo: assembleInfo
 	{
@@ -485,9 +487,9 @@ class RC_UAV_AR3: RC_UAV_AR1
 				};
 			};
 
-			class OpticsIn
+			class OpticsIn: OpticsIn
 			{
-				class Wide
+				class Wide: Wide
 				{
 					visionMode[]=
 					{
@@ -496,9 +498,9 @@ class RC_UAV_AR3: RC_UAV_AR1
 					};
 				};
 			};
-			class OpticsOut
+			class OpticsOut: OpticsOut
 			{
-				class Monocular
+				class Monocular: Monocular
 				{
 					visionMode[]=
 					{
