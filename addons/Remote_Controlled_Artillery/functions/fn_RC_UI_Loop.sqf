@@ -364,21 +364,27 @@ RC_Artillery_UI = [] spawn {
 						case((_realElevation < (_lowAngleSol + 0.25)) and (_realElevation > (_lowAngleSol - 0.25))): {
 							_ctrlElevation ctrlSetTextColor [0,1,0,1];
 						};
-						
 						// If Elevation is correct for High solution turn the Elevation text Green
 						case((_realElevation < (_highAngleSol + 0.25)) and (_realElevation > (_highAngleSol - 0.25))): {
 							_ctrlElevation ctrlSetTextColor [0,1,0,1];
 						};
 
-
-						// If Elevation is close to correct for High solution turn the Elevation text Yellow
-						case((_realElevation < (_highAngleSol + 10)) and (_realElevation > (_highAngleSol - 10))): {
+						// If Elevation is almost Correct for High solution turn the Elevation text Yellow
+						case((_realElevation < (_highAngleSol + 2)) and (_realElevation > (_highAngleSol - 2))): {
+							_ctrlElevation ctrlSetTextColor [1,1,0,1];
+						};
+						// If Elevation is almost Correct for Low solution turn the Elevation text Yellow
+						case((_realElevation < (_lowAngleSol + 2)) and (_realElevation > (_lowAngleSol - 2))): {
 							_ctrlElevation ctrlSetTextColor [1,1,0,1];
 						};
 
-						// If Elevation is close to correct for Low solution turn the Elevation text Yellow
+						// If Elevation is close for High solution turn the Elevation text Orange
+						case((_realElevation < (_highAngleSol + 10)) and (_realElevation > (_highAngleSol - 10))): {
+							_ctrlElevation ctrlSetTextColor [0.73, 0.24, 0.11, 1];
+						};
+						// If Elevation is close for Low solution turn the Elevation text Orange
 						case((_realElevation < (_lowAngleSol + 10)) and (_realElevation > (_lowAngleSol - 10))): {
-							_ctrlElevation ctrlSetTextColor [1,1,0,1];
+							_ctrlElevation ctrlSetTextColor [0.73, 0.24, 0.11, 1];
 						};
 
 						// If neither then set it to White again
@@ -390,7 +396,6 @@ RC_Artillery_UI = [] spawn {
 					// Turn off Ready to Fire Message
 					_ctrlMessage ctrlShow false;
 				};
-				
 
 				switch (true) do {
 						// If Azimuth is Correct turn it Green
@@ -398,9 +403,14 @@ RC_Artillery_UI = [] spawn {
 							_ctrlAzimuth ctrlSetTextColor [0,1,0,1];
 						};
 
-						// If Azimuth is Close turn it Yellow
-						case((_realAzimuth < (_targetAzimuth + 25)) and (_realAzimuth > (_targetAzimuth - 25))): {
+						// If Azimuth is almost Correct turn it Yellow
+						case((_realAzimuth < (_targetAzimuth + 3)) and (_realAzimuth > (_targetAzimuth - 3))): {
 							_ctrlAzimuth ctrlSetTextColor [1,1,0,1];
+						};
+
+						// If Azimuth is Close turn it Orange
+						case((_realAzimuth < (_targetAzimuth + 25)) and (_realAzimuth > (_targetAzimuth - 25))): {
+							_ctrlAzimuth ctrlSetTextColor [0.73, 0.24, 0.11, 1];
 						};
 
 						// If neither then set it to White again
