@@ -22,7 +22,8 @@ class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_HEAB";
-	RC_AimAboveHeight=11.7;		//airburstheight -1m
+	RC_AimAboveHeight=12.7;		//airburstheight
+	//RC_AimAboveHeight=12.2;		//airburstheight -0.5m
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -188,7 +189,8 @@ class RC_40Rnd_82mm_Mo_HEAB: RC_1Rnd_82mm_Mo_HEAB
 class RC_1Rnd_82mm_Mo_lowHEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_lowHEAB";
-	RC_AimAboveHeight=5.35;		//airburstheight -1m
+	RC_AimAboveHeight=6.25;		//airburstheight
+	//RC_AimAboveHeight=5.75;		//airburstheight -0.5m
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -2176,7 +2178,8 @@ class magazine_ShipCannon_120mm_HE_shells_x32;
 class RC_1Rnd_120mm_Mo_HEAB: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_HEAB";
-	RC_AimAboveHeight=16.5;		//airburstheight -1m
+	RC_AimAboveHeight=17.5;		//airburstheight
+	//RC_AimAboveHeight=17;		//airburstheight -0.5m
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -2342,7 +2345,8 @@ class RC_40Rnd_120mm_Mo_HEAB: RC_1Rnd_120mm_Mo_HEAB
 class RC_1Rnd_120mm_Mo_lowHEAB: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_155mm_AMOS_lowHEAB";
-	RC_AimAboveHeight=7.75;
+	RC_AimAboveHeight=8.75;		//airburstheight
+	//RC_AimAboveHeight=8.25;		//airburstheight -0.5m
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -4398,7 +4402,8 @@ class 32Rnd_155mm_Mo_shells;
 class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB";
-	RC_AimAboveHeight=20.2;		//airburstheight -1m
+	RC_AimAboveHeight=21.2;		//airburstheight
+	//RC_AimAboveHeight=20.7;		//airburstheight -0.5m
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -4564,7 +4569,8 @@ class RC_40Rnd_155mm_Mo_HEAB: RC_1Rnd_155mm_Mo_HEAB
 class RC_1Rnd_155mm_Mo_lowHEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_lowHEAB";
-	RC_AimAboveHeight=9.6;		//airburstheight -1m
+	RC_AimAboveHeight=10.6;		//airburstheight
+	//RC_AimAboveHeight=10.1;		//airburstheight -0.5m
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -6713,7 +6719,8 @@ class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_HEAB";
-	RC_AimAboveHeight=20.2;		//airburstheight -1m
+	RC_AimAboveHeight=21.2;		//airburstheight
+	//RC_AimAboveHeight=20.7;		//airburstheight -0.5m
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -6767,7 +6774,8 @@ class RC_12Rnd_230mm_rockets_HEAB: RC_1Rnd_230mm_rockets_HEAB
 class RC_1Rnd_230mm_rockets_lowHEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_lowHEAB";
-	RC_AimAboveHeight=9.6;		//airburstheight -1m
+	RC_AimAboveHeight=10.6;		//airburstheight
+	//RC_AimAboveHeight=10.1;		//airburstheight -0.5m
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -7139,7 +7147,8 @@ class RC_12Rnd_230mm_rockets_backuplowHEAB: RC_1Rnd_230mm_rockets_backuplowHEAB
 class RC_1Rnd_604mm_rockets_ATACMS_HEAB: 12Rnd_230mm_rockets
 {
 	displayName="ATACMS HE Airburst";
-	RC_AimAboveHeight=29;		//airburstheight -1m
+	RC_AimAboveHeight=30;		//airburstheight
+	//RC_AimAboveHeight=29.5;		//airburstheight -0.5m
 	displayNameShort="ATACMS HE AB";
 	ammo="RC_R_604mm_ATACMS_HEAB";
 	count=1;

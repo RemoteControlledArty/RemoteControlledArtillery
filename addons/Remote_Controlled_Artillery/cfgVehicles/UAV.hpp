@@ -578,7 +578,6 @@ class RC_UAV_AR1_Bag: RC_Weapon_Bag_Base
 	displayName="RC AR-1";
 	editorCategory="EdCat_Equipment";
 	editorSubcategory="EdSubcat_Backpacks";
-	//faction="BLU_F";
 	picture="\A3\Weapons_F\ammoboxes\bags\data\ui\icon_B_C_Kitbag_rgr";
 	model="\A3\weapons_f\Ammoboxes\bags\Backpack_Fast";
 	hiddenSelectionsTextures[]=
@@ -655,6 +654,7 @@ class RC_GrenadeDropper_Base: C_IDAP_UAV_06_antimine_F
 	class Components;
 	scope=0;
 	scopeCurator=0;
+	RC_UAVBlur=1;
 };
 class RC_GrenadeDropper: RC_GrenadeDropper_Base
 {
@@ -665,7 +665,6 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 	scopeCurator=2;
 	side=1;
 	crew="B_UAV_AI";
-	//crew="C_IDAP_UAV_AI_antimine_F";
 
 	class assembleInfo: assembleInfo
 	{

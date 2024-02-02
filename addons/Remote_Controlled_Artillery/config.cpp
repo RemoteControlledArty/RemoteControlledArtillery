@@ -239,20 +239,6 @@ class CfgPatches
 			RC_RespawnVan_WD_O,
 			RC_RespawnVan_WD_I,
 
-			RC_RepairTruck_A,
-			RC_RepairTruck_WD,
-			RC_RepairTruck_A_O,
-			RC_RepairTruck_WD_O,
-			RC_RepairTruck_A_I,
-			RC_RepairTruck_WD_I,
-
-			RC_NLOS_FSV_A,
-			RC_NLOS_FSV_WD,
-			RC_NLOS_FSV_A_O,
-			RC_NLOS_FSV_WD_O,
-			RC_NLOS_FSV_A_I,
-			RC_NLOS_FSV_WD_I,
-
 			RC_FSV_A,
 			RC_FSV_WD,
 			RC_FSV_A_O,
@@ -511,6 +497,7 @@ class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\InfantryCarrier.hpp"

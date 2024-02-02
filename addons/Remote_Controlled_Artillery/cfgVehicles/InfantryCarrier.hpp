@@ -47,32 +47,6 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 		init="(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; while {true} do {if (player in (crew _this) && !(gunner _this == player)) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 
-	/*
-	(_this select 0) spawn
-	{
-		if (local _this) then 
-		{
-			{ 
-				_this animate [_x, 1]
-			}
-			forEach ['HideHull','HideTurret']
-		};
-		waitUntil
-		{
-			!isNull commander _this
-		};
-		_this deleteVehicleCrew commander _this;
-	}; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};
-	*/
-
-	//(_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};
-	//(_this select 0) spawn {{if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};
-
-	///generally lock driver
-	//if controlling gunner, lock commander
-
-	//_this lockDriver true; _this lockTurret [[0,0], true];
-
 	displayName="RC Infantry Carrier";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Transport_FSV_subcat";
@@ -176,6 +150,13 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	};
 	*/
 
+	/*
+	weapons[]=
+	{
+		"TruckHorn",
+		"SmokeLauncher"
+	};
+	*/
 	weapons[]=
 	{
 		"TruckHorn",
@@ -209,11 +190,13 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	laserScanner=1;
 	incomingMissileDetectionSystem=16;
 
-	//smokeLauncherOnTurret=1;
+	/*
+	//doesnt work yet
 	smokeLauncherGrenadeCount=8;
 	smokeLauncherVelocity=14;
-	smokeLauncherOnTurret=0;
+	smokeLauncherOnTurret=0;	//1
 	smokeLauncherAngle=120;
+	*/
 
 	class Turrets: Turrets
 	{
@@ -243,6 +226,11 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 
 			weapons[]=
 			{
+				"TruckHorn"
+			};
+			/*
+			weapons[]=
+			{
 				"TruckHorn",
 				"SmokeLauncher"
 			};
@@ -250,6 +238,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 			{
 				"SmokeLauncherMag"
 			};
+			*/
 			
 			class Turrets: Turrets
 			{
@@ -264,6 +253,15 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 
 					weapons[]=
 					{
+						"TruckHorn"
+					};
+					magazines[]=
+					{
+						"SmokeLauncherMag"
+					};
+					/*
+					weapons[]=
+					{
 						"TruckHorn",
 						"SmokeLauncher"
 					};
@@ -271,6 +269,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 					{
 						"SmokeLauncherMag"
 					};
+					*/
 
 					class OpticsIn
 					{

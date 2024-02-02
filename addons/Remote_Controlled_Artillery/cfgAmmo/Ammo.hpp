@@ -339,13 +339,14 @@ class RC_HEAB_Base: Default
 	submunitionParentSpeedCoef=0;
 	submunitionInitSpeed=0;
 
-	artilleryLock=1;	//might make it not airburst if too far from selected target in vanilla computer, and too short deploy distance is set, but 0 seems to make it shoot full charge
+	artilleryLock=1;
 	laserLock=1;
 	irLock=1;
 	timeToLive=360;
+	
 	//shell/submunition core
 	simulation="shotSubmunitions";
-	simulationStep=0.01;	//to make airburst work before hitting ground
+	simulationStep=0.005;	//to make airburst work before hitting ground
 	soundHit[]=
 	{
 		"",
@@ -817,7 +818,7 @@ class RC_Sh_82mm_AMOS_backupHEAB: RC_82mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,6.35,0};
+	submunitionInitialOffset[]={0,6,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 };
@@ -1142,7 +1143,7 @@ class RC_Sh_105mm_AMOS_backupHEAB: RC_105mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,7.65,0};
+	submunitionInitialOffset[]={0,6,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_105mm_AMOS_submunition";
 };
@@ -1312,7 +1313,7 @@ class RC_Sh_120mm_AMOS_backupHEAB: RC_120mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,8.75,0};
+	submunitionInitialOffset[]={0,6,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_120mm_AMOS_submunition";
 };
@@ -1534,7 +1535,7 @@ class RC_Sh_155mm_AMOS_backupHEAB: RC_155mm_HEAB_Shell_Base
 	aiAmmoUsageFlags="64 + 128";
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,10.6,0};
+	submunitionInitialOffset[]={0,6,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 };
@@ -1893,7 +1894,7 @@ class RC_R_230mm_backupHEAB: RC_230mm_HEAB_Rocket_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,10.6,0};
+	submunitionInitialOffset[]={0,6,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 };
@@ -2132,7 +2133,7 @@ class RC_R_604mm_backupHEAB: RC_604mm_HEAB_Rocket_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,15,0};
+	submunitionInitialOffset[]={0,6,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_R_604mm_fly_HEAB_submunition_ATACMS";
 };

@@ -138,11 +138,9 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 			forceHideGunner=1;
 			//elevationMode=2;	//has 3 by default, what button to change
 			//elevationAnimSourceSpeed = 1.0f;
-
 			maxElev=86;	//allows 200m close (compound defense) use
+			//initElev=20;
 			/*
-			minElev=-5;
-			initElev=10;
 			maxHorizontalRotSpeed=0.77999997;
 			maxVerticalRotSpeed=0.25999999;
 			*/
@@ -520,6 +518,7 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			maxElev=86;	//allows 200m close (compound defense) use
+			//initElev=20;
 			
 			class Turrets: Turrets
 			{

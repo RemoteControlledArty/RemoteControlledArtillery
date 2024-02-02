@@ -8,128 +8,68 @@
 *NOTE to self, gps marker lock, then remove is efficient NLOS fire & forget
 
 
+
+
 TO DO - BUGFIXES:
 
--does it still need include check for ace hpp?	*according to Fluffy likely yes, for the mortar
 -REPORT BUG to ace team: crl+h cuts connection and destroys UV
 -turret is locked unable to adjust up/down, when scope of player is adjustable...
--lockseats didnt work for FSV/MBT
--RADAR deactivates after releasing control even when not autonomous, maybe human crew and locking seats instead?
 
 
 TO DO - FEATURES:
 
-documentation:
--add new assets to cfg patches list
+General:
+-update right/left panel options, except for arty
+-copy experimental and remove files, clean files up
 
-*Fluffy says locking is global, meaning locking rc gunner/driver from going to commander/passenger... OOOF *if in driver and currently controlling, lock other seats
-
+EH:
 if (!isserver) exitwith {}; = server client only, not every player client
-*HOW does it affect "player side"...?
-
+*How does server side only affect "player side"?
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
-Rooicat eventhandler
-class EventHandlers: EventHandlers
-{
-	postinit="if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
-};
+Arty:
+-remove non airburst HE after trajectory testing
 
-*Fluffy said respawn is global and it would create a respawn per player, i should look for a "serverinit", or test on a server if thats somehow prevented
-
-arty:
--restore ready to fire message
+-fix HE/HEAB reseting change ammo amount
 -vehicle mortar cannot target map marker due to looking close attached vic, maybe mousewheel menu for vicmortar to disable datalink targeting?
 -test gps marker with vehicle
-this spawn {while {true} do {(side player) reportRemoteTarget [_this, 5]; sleep 1;};};
-
--eta, test fired EH in loop
 -warheadName HE/TandemHEAT ?
 -make sure blastcore etc doesnt remove ground dust animation
 -recon radar+vehicle mortar composition (maybe hide legs)
--remove non airburst HE after trajectory testing
-
-general:
--decrease guided to 5 or 4? *Cap said 4
--proximityExplosionDistance= ;
--update right/left panel options, except for arty
--fix Static AT laser engaging (how!?)
--display options except arty (edit, what is meant?)
 
 RC IC:
--hide seats for RC IC
 -fix smokelauncher
 -later: if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged (explosion timer shortend for now)
 -later: fix or remove datalink panel (removed for now)
 -later: how to add T14 like driver screen?
 
-RC Respawn Truck (not priority, can be post update):
+RC Respawn Truck:
 -fix camera on those who have problems
--lock seats
--add working respawn script
 -later: edit hitpoints? *for now threat/cost reduced
 
 FSV/MBT:
--lockCargo if needed to prevent to go as driver to passenger
-//EDIT eventhandler, locking driver seat doesnt work
--if rc driver then lock gunner/commander but UNLOCK if release, if gunner/commander then lock driver
 -fix driver forceoptics not working
 
-AR-short:
--making sure effect is reset when leaving uav
--limit range of grenade dropping uav to 3km from user
-
-_uav = getConnectedUAV player;
-_viewPos = screenToWorld [0.5, 0.5];
-_uavPos = getpos _uav;
-_distance = _viewPos distance _uavPos;
-hintSilent format ["distance: %1", _distance];
-
-KK_fnc_trueZoom = {(([0.5,0.5] distance2D  worldToScreen positionCameraToWorld [0,3,4]) * (getResolution select 5) / 2)};
-
-while {true} do
-{ 
-	_uavPos = getpos (getConnectedUAV player);
-	_playerPos = getpos player;
-	_viewPos = screenToWorld [0.5, 0.5];
-	
-	//_playerDistance = _uavPos distance _playerPos;
-	//_viewDistance = _uavPos distance _viewPos;
-	_viewDistance = _playerPos distance _viewPos;  
-	
-	_zoomBlur = (round (call KK_fnc_trueZoom * 10) / 10)*0.04;
-	//_connection = 1+(_distance * 0.0008)^5;
-	//_connectionBlur = 1;
-	_viewBlur = 1;
-	//if (_playerDistance >= 1000) then {_connectionBlur = 1+((_playerDistance-1000) * 0.005)^4};
-	if (_viewDistance >= 1000) then {_viewBlur = 1+((_viewDistance-1000) * 0.0035)^4};
-	//_finalBlur = 1;
-	_finalBlur = 0.1 * _viewBlur * _zoomBlur;
-	//hintSilent format ["distance: %1", _distance];
-	hintSilent format ["blur: %1", _finalBlur];
-	
-	
-	_blur = ppEffectCreate ["dynamicBlur", 401];
-	_blur ppEffectEnable true;
-	_blur ppEffectAdjust [_finalBlur];
-	_blur ppEffectCommit 0;
-};
 
 
 
-TO DO (later) - QUALITY OF LIFE:
 
--maybe turret azimuth lock hotkey, for when changing EL on uneven ground throws it off
--get missle feed panel to connect to missle
--magazine shell count attributes code? (Who wrote this, what is meant by it?)
+TO DO - QUALITY OF LIFE:
+
+-smaller magazine shell count selection in attributes
 
 
 Postponed:
 
+-RC IC smoke screen launcher
+-fix Static AT laser engaging (how?)
+-RADAR deactivates after releasing control even when not autonomous, maybe use human crew and locking seats instead?
 -look up if inheriting structure is fully correct
 -guided submunition alternative misslecam
--vanilla misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to do with cfgvehicles atleast to trigger
+-guided shell submunition camera (vanilla misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to do with cfgvehicles atleast to trigger)
 -more RC Infantry Carrier's / APC's / IVF's
+-ETA 5sec warning message
+-proximityExplosionDistance= ; ammo testing
 
 
 IDEAS - FAR FUTURE:
@@ -173,8 +113,7 @@ DONE - BUGFIXES:
 -fixed distance calculation
 -fixed time of flight calculation
 -engine turnoff now per cfg value, so it doesnt affect other ugv's
--found cause for sicnificant over/under-shoot, for low trajectory 0.X MIL are indeed needed, otherwise it will show the same solution despite different distance
--0.X MIL dont have to be shown on screen, but green highlight could be limited to +-0.25 instead of 1
+-found cause for sicnificant over/under-shoot, for low trajectory 0.X MIL are indeed needed, nut dont have to be shown on screen, changed green highlight to +-0.5 instead of 1, this solves it
 
 
 DONE - FEATURES:
@@ -257,7 +196,7 @@ DONE - FEATURES:
 -added vehicle mortar, to attach onto vehicles as composition, with edited elevation to allow low trajectory fire shortening TOF
 -added more version of respawn vehicles, and reduced threat/cost so it doesnt get engaged
 -simplified naming of 120mm magazines
--aligned by +-50 MIL now show up as yellow, to align quicker and not accidently go past it
+-aligned by +-MIL now show up colored orange/yellow/green, to align quicker and not accidently go past it
 -double checked LaserDatalink code
 -fixed Artillery UI staying when asset is destroyed
 -fixed respawn position script, but it might be global duplicating it per person
@@ -268,6 +207,7 @@ DONE - FEATURES:
 -added cfg value _reenableSeats for use in specific vehicles
 -FSV/MBT/IC seat locking scripts finally work now, have to be optimized/bugtested still
 -given controllable driver of Recon RADAR sensor panel to activate active RADAR with ctrl+R
+-made grenade dropping UAV "shortranged"
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
