@@ -369,17 +369,17 @@ RC_Artillery_UI = [] spawn {
 						};
 
 						case((_realElevation < (_lowAngleSol + 0.5)) and (_realElevation > (_lowAngleSol - 0.5))): {
-							_ctrlElevation ctrlSetTextColor [0.6,1,0.5,1];
+							_ctrlElevation ctrlSetTextColor [0.7,1,0.5,1];
 						};
 						case((_realElevation < (_highAngleSol + 0.5)) and (_realElevation > (_highAngleSol - 0.5))): {
-							_ctrlElevation ctrlSetTextColor [0.6,1,0.5,1];
+							_ctrlElevation ctrlSetTextColor [0.7,1,0.5,1];
 						};
 
 						case((_realElevation < (_lowAngleSol + 1)) and (_realElevation > (_lowAngleSol - 1))): {
-							_ctrlElevation ctrlSetTextColor [0.7,1,0.5,1];
+							_ctrlElevation ctrlSetTextColor [0.75,1,0.5,1];
 						};
 						case((_realElevation < (_highAngleSol + 1)) and (_realElevation > (_highAngleSol - 1))): {
-							_ctrlElevation ctrlSetTextColor [0.7,1,0.5,1];
+							_ctrlElevation ctrlSetTextColor [0.75,1,0.5,1];
 						};
 
 						case((_realElevation < (_lowAngleSol + 2)) and (_realElevation > (_lowAngleSol - 2))): {
@@ -389,11 +389,25 @@ RC_Artillery_UI = [] spawn {
 							_ctrlElevation ctrlSetTextColor [0.8,1,0.5,1];
 						};
 
+						case((_realElevation < (_lowAngleSol + 3)) and (_realElevation > (_lowAngleSol - 3))): {
+							_ctrlElevation ctrlSetTextColor [0.85,1,0.5,1];
+						};
+						case((_realElevation < (_highAngleSol + 3)) and (_realElevation > (_highAngleSol - 3))): {
+							_ctrlElevation ctrlSetTextColor [0.85,1,0.5,1];
+						};
+
 						case((_realElevation < (_lowAngleSol + 4)) and (_realElevation > (_lowAngleSol - 4))): {
 							_ctrlElevation ctrlSetTextColor [0.9,1,0.5,1];
 						};
 						case((_realElevation < (_highAngleSol + 4)) and (_realElevation > (_highAngleSol - 4))): {
 							_ctrlElevation ctrlSetTextColor [0.9,1,0.5,1];
+						};
+
+						case((_realElevation < (_lowAngleSol + 5)) and (_realElevation > (_lowAngleSol - 5))): {
+							_ctrlElevation ctrlSetTextColor [0.95,1,0.5,1];
+						};
+						case((_realElevation < (_highAngleSol + 5)) and (_realElevation > (_highAngleSol - 5))): {
+							_ctrlElevation ctrlSetTextColor [0.95,1,0.5,1];
 						};
 
 						case((_realElevation < (_highAngleSol + 6)) and (_realElevation > (_highAngleSol - 6))): {
@@ -404,17 +418,24 @@ RC_Artillery_UI = [] spawn {
 						};
 
 						case((_realElevation < (_highAngleSol + 8)) and (_realElevation > (_highAngleSol - 8))): {
-							_ctrlElevation ctrlSetTextColor [1,0.9,0.5,1];
+							_ctrlElevation ctrlSetTextColor [1,0.95,0.5,1];
 						};
 						case((_realElevation < (_lowAngleSol + 8)) and (_realElevation > (_lowAngleSol - 8))): {
+							_ctrlElevation ctrlSetTextColor [1,0.95,0.5,1];
+						};
+
+						case((_realElevation < (_highAngleSol + 9)) and (_realElevation > (_highAngleSol - 9))): {
+							_ctrlElevation ctrlSetTextColor [1,0.9,0.5,1];
+						};
+						case((_realElevation < (_lowAngleSol + 9)) and (_realElevation > (_lowAngleSol - 9))): {
 							_ctrlElevation ctrlSetTextColor [1,0.9,0.5,1];
 						};
 
 						case((_realElevation < (_highAngleSol + 10)) and (_realElevation > (_highAngleSol - 10))): {
-							_ctrlElevation ctrlSetTextColor [1,0.8,0.5,1];
+							_ctrlElevation ctrlSetTextColor [1,0.85,0.5,1];
 						};
 						case((_realElevation < (_lowAngleSol + 10)) and (_realElevation > (_lowAngleSol - 10))): {
-							_ctrlElevation ctrlSetTextColor [1,0.8,0.5,1];
+							_ctrlElevation ctrlSetTextColor [1,0.85,0.5,1];
 						};
 
 						// If neither then set it to White again

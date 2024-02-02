@@ -38,6 +38,7 @@ class EventHandlers: EventHandlers
 *Fluffy said respawn is global and it would create a respawn per player, i should look for a "serverinit", or test on a server if thats somehow prevented
 
 arty:
+-restore ready to fire message
 -vehicle mortar cannot target map marker due to looking close attached vic, maybe mousewheel menu for vicmortar to disable datalink targeting?
 -test gps marker with vehicle
 this spawn {while {true} do {(side player) reportRemoteTarget [_this, 5]; sleep 1;};};
