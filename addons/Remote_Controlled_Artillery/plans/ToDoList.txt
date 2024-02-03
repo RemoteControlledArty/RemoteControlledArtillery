@@ -208,6 +208,7 @@ DONE - FEATURES:
 -FSV/MBT/IC seat locking scripts finally work now, have to be optimized/bugtested still
 -given controllable driver of Recon RADAR sensor panel to activate active RADAR with ctrl+R
 -made grenade dropping UAV "shortranged"
+-enabled camera lock on target for static laser designator
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
