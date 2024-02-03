@@ -7,11 +7,9 @@ class RC_Mortar_NA_base: B_Mortar_01_F
 	class ViewOptics;
 	class Components;
 	class EventHandlers;
-
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	scope=0;
 	scopeCurator=0;
-
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 };
@@ -25,7 +23,6 @@ class RC_Mortar_NA: RC_Mortar_NA_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -34,7 +31,6 @@ class RC_Mortar_NA: RC_Mortar_NA_base
 	uavCameraGunnerDir="look";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
-
 	enableGPS=1;
 	radartype=2;
 	receiveRemoteTargets=1;
@@ -255,7 +251,6 @@ class RC_Mortar_I: RC_Mortar
 };
 
 
-
 class B_Mortar_01_weapon_F;
 class RC_Mortar_Bag_NA_base: B_Mortar_01_weapon_F
 {
@@ -361,7 +356,6 @@ class RC_Mortar_Bag_I: RC_Mortar_Bag
 		assembleTo="RC_Mortar_I";
 	};
 };
-
 
 
 class RC_Mortar_ER: RC_Mortar
@@ -499,7 +493,6 @@ class RC_Mortar_ER_I: RC_Mortar_ER
 };
 
 
-
 class RC_Mortar_ER_Bag: RC_Mortar_Bag
 {
 	displayName="RC Mortar 8km";
@@ -556,9 +549,9 @@ class RC_VehicleMortar: RC_Mortar
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 
-	armor=1000;	//30
+	armor=1000;
 	threat[]={0,0,0};
-	cost=0;	//200000
+	cost=0;
 
 	class assembleInfo: assembleInfo
 	{

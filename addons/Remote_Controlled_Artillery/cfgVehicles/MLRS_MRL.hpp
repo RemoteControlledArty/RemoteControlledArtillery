@@ -15,7 +15,6 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
-
 	RC_BarrelAGL=1.75;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 };
@@ -29,7 +28,6 @@ class RC_MLRS_NA_A: RC_MLRS_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
@@ -38,11 +36,9 @@ class RC_MLRS_NA_A: RC_MLRS_base
 	uavCameraGunnerDir="PiP1_dir";	
 	crew="B_UAV_AI";
 	driverForceOptics=1;
-
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
@@ -311,7 +307,6 @@ class RC_MLRS_A_I: RC_MLRS_A
 };
 
 
-
 // MRL
 class I_Truck_02_MRL_F;
 class RC_MRL_base: I_Truck_02_MRL_F
@@ -322,15 +317,13 @@ class RC_MRL_base: I_Truck_02_MRL_F
 	class OpticsIn;
 	class Wide;
 	class Components;
-
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
-
-	RC_BarrelAGL=1.65;
-	RC_BarrelLenght=3.5;
+	RC_BarrelAGL=1.65;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 };
 class RC_MRL_NA_DIG: RC_MRL_base
 {
@@ -342,7 +335,6 @@ class RC_MRL_NA_DIG: RC_MRL_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -351,11 +343,9 @@ class RC_MRL_NA_DIG: RC_MRL_base
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
-
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
 	enableGPS=1;
 	radartype=2;
 	receiveRemoteTargets=1;

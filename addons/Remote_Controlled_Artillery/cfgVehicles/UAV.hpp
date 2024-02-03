@@ -196,8 +196,8 @@ class RC_UAV_AR1: RC_UAV_base
 		class MainTurret: MainTurret
 		{
 			showAllTargets=4;
-			//isCopilot=1; //0
-			commanding=1; //-1
+			//isCopilot=1; //0		//doesnt work yet
+			//commanding=1; //-1	//doesnt work yet
 
 			class Components: Components
 			{

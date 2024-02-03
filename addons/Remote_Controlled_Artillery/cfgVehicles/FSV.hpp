@@ -18,8 +18,7 @@ class RC_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 	class HitRF2Wheel;
 	scope=0;
 	scopeCurator=0;
-	//RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
-	RCDisableSeats=5; //locks specific seat
+	RCDisableSeats=5; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
 };
 class RC_FSV_A: RC_FSV_A_Base
 {
@@ -36,7 +35,6 @@ class RC_FSV_A: RC_FSV_A_Base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
@@ -50,14 +48,13 @@ class RC_FSV_A: RC_FSV_A_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
 	incomingMissileDetectionSystem=16;
-	mineDetectorRange=50;
-	canAccessMineDetector=1;
+	mineDetectorRange=50;	//doesnt work yet
+	canAccessMineDetector=1;	//doesnt work yet
 
 	class Components: Components
 	{
@@ -407,8 +404,6 @@ class RC_FSV_A_I: RC_FSV_A
 	crew="I_UAV_AI";
 	side=2;
 };
-
-
 class RC_FSV_WD: RC_FSV_A
 {
 	editorPreview="\A3\EditorPreviews_F_Tank\Data\CfgVehicles\B_T_AFV_Wheeled_01_up_cannon_F.jpg";
@@ -461,8 +456,7 @@ class RC_MBT6_A_Base: B_MBT_01_TUSK_F
 	class Wide;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=5; //locks specific seat
-	//RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RCDisableSeats=5; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
 };
 class RC_MBT6_A: RC_MBT6_A_Base
 {
@@ -470,43 +464,6 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	{
 		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; while {true} do {if (player in (crew _this) && !(driver _this == player)) then {_this lockDriver true;} else {_this lockDriver false;}; sleep 0.5;};}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
-
-	//init="(_this select 0) spawn {waitUntil {!isNull driver _this}; while {true} do {if (player in (crew _this) && !(driver _this == player)) then {_this lockDriver true;} else {_this lockDriver false;}; sleep 0.5;};}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
-
-	//(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};
-	//[this] spawn {_vic = (_this select 0); waitUntil {!isNull gunner _vic}; _this deleteVehicleCrew gunner _vic; waitUntil {!isNull commander _vic}; _vic deleteVehicleCrew commander _vic;};
-	//what is this for: (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;};
-	//if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {if (_this isEqualTo objNull) then {continue;}; _speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};
-	//[this] spawn {while {alive (_this select 0)} do {_vic = (_this select 0); if (player in (crew _vic) && !(driver _vic == player)) then {_vic lockDriver true;}; sleep 0.5;};};
-	//[this] spawn {while {alive (_this select 0)} do {_vic = (_this select 0); if (player in (crew _vic) && !(driver _vic == player)) then {_vic lockDriver true;}; sleep 0.5;};};
-	//(_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};
-
-	/*
-	while {alive _this} do {
-        if (player in (crew _this) && !(driver _this == player)) then {
-            _this lockDriver true;
-        } else {
-            _this lockDriver false;
-        };
-        sleep 1;
-    };
-
-	[this] spawn {while {alive (_this select 0)} do {
-		_vic = (_this select 0); 
-        if (player in (crew _vic) && !(driver _vic == player)) then { 
-            _vic lockDriver true; 
-        } else { 
-            _vic lockDriver false; 
-        }; 
-        sleep 1;
-    };};
-	*/
-
-	//if (!isNull _vehicle && player in (crew _vehicle) && !(driver _vehicle == player)) then {driver _vehicle lockDriver true;} else {driver _vehicle lockDriver false;};
-	//(_this select 0) spawn {while {true} do {if (!isNull _this && isPlayer (driver _this)) then {_inGunnerOrCommander = switch (gunner _this) do {case _x isEqualTo player: { true }; case _x isEqualTo (commander _this): { true };default { false };}; if (_inGunnerOrCommander) then {driver _this lockDriver true;} else {driver _this lockDriver false;};};
-	//if (!isNull _this && isPlayer (driver _this)) then {_inDriverSeat = (driver _this) == player; _inGunnerOrCommander = player in (fullCrew _this) && !_inDriverSeat; if (_inGunnerOrCommander) then {driver _this lockDriver true;} else { driver _this lockDriver false;};};
-
-	//EDIT eventhandler, locking driver seat doesnt work
 
 	displayName="MBT 2+6";
 	faction="RemoteControlled_B";
@@ -516,7 +473,6 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
@@ -529,18 +485,16 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
-	maxSpeed=70;
-	enginePower=1538;
-	peakTorque=6250;
-
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
 	incomingMissileDetectionSystem=16;
-	mineDetectorRange=50;
-	canAccessMineDetector=1;
+	mineDetectorRange=50;	//doesnt work yet
+	canAccessMineDetector=1;	//doesnt work yet
+	maxSpeed=70;
+	enginePower=1538;
+	peakTorque=6250;
 
 	class Components: Components
 	{
@@ -608,7 +562,6 @@ class RC_MBT6_A: RC_MBT6_A_Base
 		class MainTurret: MainTurret
 		{
 			commanding=2;
-			//gunnerForceOptics=1;
 			
 			class Turrets: Turrets
 			{

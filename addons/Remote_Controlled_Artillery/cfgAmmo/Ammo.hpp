@@ -39,10 +39,6 @@ class RC_M_MP: RC_M_MP_Base
 	weaponLockSystem="1 + 2 + 16";
 	cameraViewAvailable=1;
 
-	//test (likely cfgvic only...)
-	//receiveRemoteTargets=1;
-	//reportRemoteTargets=1;
-
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -50,6 +46,7 @@ class RC_M_MP: RC_M_MP_Base
 			class Components
 			{
 				/*
+				//autonomous engages lasers spots without differentiating
 				class LaserSensorComponent: SensorTemplateLaser
 				{
 					class AirTarget
@@ -133,102 +130,6 @@ class RC_M_MP: RC_M_MP_Base
 		};
 	};
 };
-
-
-class MissileBase;
-/*
-//im gonna work on this later
-class ammo_Missile_CannonLaunchedBase: MissileBase
-{
-	class Components;
-};
-class M_125mm_cannon_ATGM: ammo_Missile_CannonLaunchedBase
-{
-	model="\A3\Weapons_F_Tank\Launchers\Vorona\Vorona_missile_heat_fly";
-	submunitionAmmo="ammo_Penetrator_125mm_missile";
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionInitSpeed=1000;
-	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-	triggerOnImpact=1;
-	deleteParentWhenTriggered=0;
-	warheadName="TandemHEAT";
-	hit=150;
-	indirectHit=20;
-	timeToLive=20;
-	thrustTime=5;
-	thrust=60;
-	maxSpeed=350;
-};
-class M_120mm_cannon_ATGM: ammo_Missile_CannonLaunchedBase
-{
-	model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";
-	warheadName="TandemHEAT";
-	submunitionAmmo="ammo_Penetrator_120mm_missile";
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionInitSpeed=1000;
-	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-	triggerOnImpact=1;
-	deleteParentWhenTriggered=0;
-	hit=150;
-};
-class M_120mm_cannon_ATGM_LG: M_120mm_cannon_ATGM
-{
-	thrustTime=6;
-	thrust=40;
-	lockType=0;
-	autoSeekTarget=1;
-	lockSeekRadius=100;
-	manualControl=0;
-	missileLockCone=180;
-	missileKeepLockedCone=180;
-	missileLockMaxDistance=8000;
-	missileLockMinDistance=100;
-	missileLockMaxSpeed=35;
-	weaponLockSystem="4 + 16";
-	flightProfiles[]=
-	{
-		"TopDown"
-	};
-	class TopDown
-	{
-		ascendHeight=250;
-		descendDistance=400;
-		minDistance=400;
-		ascendAngle=25;
-	};
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=8000;
-						maxRange=8000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=8000;
-						maxRange=8000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=35;
-					angleRangeHorizontal=40;
-					angleRangeVertical=25;
-				};
-			};
-		};
-	};
-};
-*/
 
 
 class M_120mm_cannon_ATGM_LG;
@@ -346,7 +247,7 @@ class RC_HEAB_Base: Default
 	
 	//shell/submunition core
 	simulation="shotSubmunitions";
-	simulationStep=0.005;	//to make airburst work before hitting ground
+	simulationStep=0.005;	//required to make airburst work before hitting ground
 	soundHit[]=
 	{
 		"",
@@ -379,7 +280,6 @@ class RC_HEAB_Base: Default
 		1,
 		150
 	};
-	//CraterEffects="HEShellCrater";	//dirt thrown up doesnt fit as its airburst
 	craterEffects="RC_ArtyShellCrater";	//dust on ground effect like caused by airburst
 	CraterWaterEffects="ImpactEffectsWaterHE";
 	ExplosionEffects="MortarExplosion";
@@ -489,8 +389,60 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 		0.25
 	};
 };
+class RC_HEAB_Rocket_Base: RC_HEAB_Base
+{
+	explosive=0.80000001;
+	caliber=34;
+	airFriction=0;
+	sideairFriction=0;
+	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
+	effectFly="Missile0";
+	warheadName="HE";
+	audibleFire=64;
+	dangerRadiusHit=1250;
+	suppressionRadiusHit=120;
+	deflecting=0;
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.34,
+		"soundHit2",
+		0.33000001,
+		"soundHit3",
+		0.33000001
+	};
+	soundFly[]=
+	{
+		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
+		0.56234133,
+		1.9,
+		500
+	};
+};
 
 
+class MissileBase;
 class RC_MP_MultiGuided_Submunition_MissleBase: MissileBase
 {
 	class Components;
@@ -499,61 +451,45 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 {
 	laserLock=1;
 	irLock=1;
-	//artilleryLock=1; seems to prevent laser and vehicle locking, so unusable for guided
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
-
-	missileLockCone=180;	//12
-	missileKeepLockedCone=180;	//160
-	lockSeekRadius=800;		//100
-	missileLockMaxDistance=2000;	//5000
+	missileLockCone=180;
+	missileKeepLockedCone=180;
+	lockSeekRadius=800;
+	missileLockMaxDistance=2000;
 	missileLockMinDistance=1;
-	missileLockMaxSpeed=150;	//35
-	maxControlRange=800;	//500
-	fuseDistance=30;	//50
-	timeToLive=10;	//35
-
-	//test (likely cfgvic only...)
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;	//would allow for sensor-recon shots, to then datalink lock with second shot
-	laserScanner=1;
-
+	missileLockMaxSpeed=150;
+	maxControlRange=800;
+	fuseDistance=30;
+	timeToLive=10;
 	model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";
-	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
-	//effectsMissile="missile2";
 	explosive=1;
 	aiAmmoUsageFlags="128 + 512";
 	explosionSoundEffect="DefaultExplosion";
-	//ExplosionEffects="MortarExplosion";
 	craterEffects="AAMissileCrater";
 	effectsMissileInit="";
 	muzzleEffect="";
 	simulationStep=0.0020000001;
-	trackOversteer=1;	//1.5	//required to not completly miss
-	trackLead=0;	//0.89999998
-	maneuvrability=20;	//20	//required to not completly miss
-	airFriction=0.085000001;	//tanks atgm 0.2	//0.085000001
-	sideAirFriction=0.1; //tanks 0.001	//0.1
+	trackOversteer=1;	//required to not completly miss
+	trackLead=1;
+	maneuvrability=20;	//required to not completly miss
+	airFriction=0.085000001;
+	sideAirFriction=0.1;
 	whistleDist=4;
 	lockType=0;
-	//manualControl=1;
-	//missileManualControlCone=45;
-
 	submunitionDirectionType="SubmunitionModelDirection";
-	//submunitionDirectionType="SubmunitionTargetDirection";	//TEST OUT
 	submunitionInitSpeed=1000;
 	submunitionParentSpeedCoef=0;
 	submunitionInitialOffset[]={0,0,-0.2};
 	triggerOnImpact=1;
 	deleteParentWhenTriggered=0;
 	warheadName="TandemHEAT";
-	hit=0;	//submunition penetrator contains real hit value
-
-	initTime=0.01; //0.15000001
-	thrustTime=8;	//8
-	thrust=300;	//35
-	maxSpeed=300;	//180
-	typicalSpeed=1660;
+	hit=165;	//submunition penetrator contains main hit value
+	initTime=0.01;
+	thrustTime=8;
+	thrust=300;
+	maxSpeed=300;
+	typicalSpeed=300;
 	weaponLockSystem="1 + 2 + 4 + 16";
 	cmImmunity=0.9;
 
@@ -564,7 +500,6 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 		1.5,
 		300
 	};
-
 	soundHit1[]=
 	{
 		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
@@ -696,26 +631,22 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 	submunitionCount=1;
 	submunitionConeAngle=0;
 	submunitionDirectionType="SubmunitionTargetDirection";	//required to not completly miss
-	//submunitionInitSpeed=0;
 	submunitionParentSpeedCoef=0.1;	//required to not completly miss
-
 	aiAmmoUsageFlags="128 + 512";
 	laserLock=1;
 	irLock=1;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
-	canLock=2;	//supposedly only cfg weapons not ammo
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;	//would allows for sensor-recon shots, to then datalink lock with second shot, doesnt work yet, maybe cfgvic only
-
-	//lockAcquire=1;	//likely cfgvic only
 	artilleryLock=1;
-
 	muzzleEffect="";
 	airFriction=0;
-	//ExplosionEffects="MortarExplosion";
 	craterEffects="AAMissileCrater";
 
+	canLock=2;	//supposedly only cfgweapons not ammo
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;	//would allows for sensor-recon shots, to then datalink lock with second shot, doesnt work yet, maybe cfgvic only
+	//lockAcquire=1;	//likely cfgvic only
+	
 	soundHit1[]=
 	{
 		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
@@ -805,11 +736,11 @@ class RC_Sh_82mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 	aimAboveDefault=2;
-	aimAboveTarget[]={12.7,12.7,12.7};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
+	aimAboveTarget[]={12.7,12.7,12.7};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 class RC_Sh_82mm_AMOS_lowHEAB: RC_Sh_82mm_AMOS_HEAB
 {
-	imAboveTarget[]={6.35,6.35,6.35};	//low airburst to atleast ignore microterrain
+	imAboveTarget[]={6.35,6.35,6.35};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -835,7 +766,7 @@ class Smoke_120mm_AMOS_White;
 class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 {
 	aiAmmoUsageFlags=4;
-	model="\A3\weapons_f\ammo\shell";	//model="\A3\Weapons_F\Ammo\shell.p3d";
+	model="\A3\weapons_f\ammo\shell";
 	submunitionAmmo="RC_SmokeShellArty";
 	submunitionConeType[]=
 	{
@@ -880,7 +811,8 @@ class RC_Sh_82mm_AMOS_guided: Sh_82mm_AMOS_guided
 };
 
 
-/* //makes game close when going close to mine...
+/*
+//makes game close when going close to mine... removed until fixed
 class RangeTriggerBounding;
 class RC_RangeTriggerBounding: RangeTriggerBounding
 {
@@ -1009,7 +941,7 @@ class RC_82mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 class RC_Sh_82mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
 	submunitionAmmo="RC_82mm_MP_MultiGuided_Submunition";
-	triggerDistance=300;	//edit?
+	triggerDistance=300;
 	hit=165;
 	indirectHit=26;
 	indirectHitRange=9;
@@ -1082,7 +1014,7 @@ class RC_Sh_82mm_AMOS_LG: Sh_82mm_AMOS_LG
 
 //105mm, yet to be introduced, no vehicle options yet
 class Sh_155mm_AMOS;
-class RC_Sh_105mm_AMOS_submunition: Sh_155mm_AMOS	//16km HE-RA range
+class RC_Sh_105mm_AMOS_submunition: Sh_155mm_AMOS	//could be given 16km HE-RA range
 {
 	indirectHit=75.6;
 	indirectHitRange=21.7;
@@ -1130,11 +1062,11 @@ class RC_Sh_105mm_AMOS_HEAB: RC_105mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_105mm_AMOS_submunition";
 	aimAboveDefault=2;
-	aimAboveTarget[]={15.3,15.3,15.3};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
+	aimAboveTarget[]={15.3,15.3,15.3};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 class RC_Sh_105mm_AMOS_lowHEAB: RC_Sh_105mm_AMOS_HEAB
 {
-	aimAboveTarget[]={7.65,7.65,7.65};	//low airburst to atleast ignore microterrain
+	aimAboveTarget[]={7.65,7.65,7.65};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -1300,11 +1232,11 @@ class RC_Sh_120mm_AMOS_HEAB: RC_120mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_120mm_AMOS_submunition";
 	aimAboveDefault=2;
-	aimAboveTarget[]={17.5,17.5,17.5};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
+	aimAboveTarget[]={17.5,17.5,17.5};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 class RC_Sh_120mm_AMOS_lowHEAB: RC_Sh_120mm_AMOS_HEAB
 {
-	aimAboveTarget[]={8.75,8.75,8.75};	//low airburst to atleast ignore microterrain
+	aimAboveTarget[]={8.75,8.75,8.75};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -1459,16 +1391,12 @@ class Sh_120mm_HEAT_MP;
 class RC_Sh_120mm_MP_T_Green: Sh_120mm_HEAT_MP
 {
 	aiAmmoUsageFlags="64 + 128 + 512";
-	warheadName="TandemHEAT";
-	//warheadName="HE";
+	warheadName="TandemHEAT";	//warheadName="HE";
 	submunitionAmmo="RC_ammo_Penetrator_120mm";
 	hit=95;
 	indirectHit=50;
 	indirectHitRange=10;
 	deflecting=4;
-	//dangerRadiusHit=160;
-	//suppressionRadiusHit=32;
-	//deflecting=8;
 	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";
 	craterEffects="AAMissileCrater";
 };
@@ -1521,11 +1449,11 @@ class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 	aimAboveDefault=2;
-	aimAboveTarget[]={21.2,21.2,21.2};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
+	aimAboveTarget[]={21.2,21.2,21.2};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 class RC_Sh_155mm_AMOS_lowHEAB: RC_Sh_155mm_AMOS_HEAB
 {
-	aimAboveTarget[]={10.6,10.6,10.6};	//low airburst to atleast ignore microterrain, and able to take out MG/GMG bunkers with overhead protection, lower than 6m bugs
+	aimAboveTarget[]={10.6,10.6,10.6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -1574,7 +1502,7 @@ class Flare_155mm_AMOS_White: SubmunitionBase
 	};
 	whistleDist=0;
 	aimAboveDefault=2;
-	aimAboveTarget[]={500,500,500};		//triggers when past half the trajectory aka descending while at this height above ground
+	aimAboveTarget[]={500,500,500};		//triggers when descending and at this height above ground
 };
 
 
@@ -1621,7 +1549,7 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 	aiAmmoUsageFlags="64 + 128";
 	submunitionConeType[]=
 	{
-		"poissondisc",	//even spread
+		"poissondisc",
 		50
 	};
 };
@@ -1738,75 +1666,9 @@ class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 	explosionEffects="MortarExplosion";
 	craterEffects="RC_230mmAirburstDust";
 };
-class RC_HEAB_Rocket_Base: RC_HEAB_Base
-{
-	//typicalSpeed=800;
-	//explosive=0.80000001;
-	//whistleDist=60;
-	//thrust=0;
-	caliber=34;
-	airFriction=0;
-	sideairFriction=0;
-	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
-	effectFly="Missile0";
-	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
-	//effectFly="ArtilleryTrails";
-	warheadName="HE";
-	audibleFire=64;
-	dangerRadiusHit=1250;
-	suppressionRadiusHit=120;
-	deflecting=0;
-	soundHit1[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
-		2.5118864,
-		1,
-		1900
-	};
-	soundHit2[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
-		2.5118864,
-		1,
-		1900
-	};
-	soundHit3[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
-		2.5118864,
-		1,
-		1900
-	};
-	multiSoundHit[]=
-	{
-		"soundHit1",
-		0.34,
-		"soundHit2",
-		0.33000001,
-		"soundHit3",
-		0.33000001
-	};
-	soundFly[]=
-	{
-		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
-		0.56234133,
-		1.9,
-		500
-	};
-};
 class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 {
-	//craterEffects="BombCrater";
 	craterEffects="RC_230mmAirburstDust";
-	//explosionEffects="HeavyBombExplosion";
-	/*
-	soundSetExplosion[]=
-	{
-		"BombsHeavy_Exp_SoundSet",
-		"BombsHeavy_Tail_SoundSet",
-		"Explosion_Debris_SoundSet"
-	};
-	*/
 	hit=300;	//defines recoil, needs to be this low, indirecthit defines damage
 	indirectHit=800;
 	indirectHitRange=30;
@@ -1881,11 +1743,11 @@ class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
 {
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 	aimAboveDefault=2;
-	aimAboveTarget[]={21.2,21.2,21.2};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
+	aimAboveTarget[]={21.2,21.2,21.2};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 class RC_R_230mm_lowHEAB: RC_R_230mm_HEAB
 {
-	aimAboveTarget[]={10.6,10.6,10.6};	//to atleast ignore microterrain
+	aimAboveTarget[]={10.6,10.6,10.6};	//to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -1922,10 +1784,7 @@ class RC_230mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
-	//model="\A3\Weapons_F\Ammo\Rocket_230mm_Fly_F";
-	//effectFly="ArtilleryTrails";
 	explosionEffects="HEShellExplosion";
-	//explosionEffects="HeavyBombExplosion";
 	craterEffects="BombCrater";
 	submunitionAmmo="ammo_Penetrator_230mm_MP";
 	indirectHit=400;
@@ -2004,7 +1863,6 @@ class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
 	explosionEffects="HEShellExplosion";
-	//explosionEffects="HeavyBombExplosion";
 	craterEffects="BombCrater";
 	triggerDistance=800;
 	hit=300;
@@ -2124,7 +1982,7 @@ class RC_R_604mm_ATACMS_HEAB: RC_604mm_HEAB_Rocket_Base
 {
 	submunitionAmmo="RC_R_604mm_fly_HEAB_submunition_ATACMS";
 	aimAboveDefault=2;
-	aimAboveTarget[]={30,30,30};	//high airburst to ignore cover, triggers when past half the trajectory aka descending while at this height above ground
+	aimAboveTarget[]={30,30,30};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 
 

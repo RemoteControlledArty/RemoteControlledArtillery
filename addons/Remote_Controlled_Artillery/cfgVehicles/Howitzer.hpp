@@ -1,5 +1,4 @@
-// Non Adjustable Howitzers
-// Blufor
+// non adjustable Howitzers, incompatible with new munition, but compatible with munition mods
 class B_MBT_01_arty_F;
 class RC_Howitzer_base: B_MBT_01_arty_F
 {
@@ -18,7 +17,6 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
-
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
@@ -33,7 +31,6 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
@@ -46,7 +43,6 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
@@ -136,14 +132,23 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			//elevationMode=2;	//has 3 by default, what button to change
-			//elevationAnimSourceSpeed = 1.0f;
-			maxElev=86;	//allows 200m close (compound defense) use
-			//initElev=20;
-			/*
-			maxHorizontalRotSpeed=0.77999997;
-			maxVerticalRotSpeed=0.25999999;
-			*/
+			maxElev=86;
+
+			class OpticsIn: OpticsIn
+			{
+				class Wide: Wide
+				{
+					initFov=0.125;
+					minFov=0.0125;
+					maxFov=0.89999998;
+
+					visionMode[]=
+					{
+						"Normal",
+						"NVG"
+					};
+				};
+			};
 			
 			class Turrets: Turrets
 			{
@@ -155,8 +160,6 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 					forceHideGunner=1;
 				};
 			};
-
-			//showAllTargets="2 + 4";
 
 			class Components: Components
 			{
@@ -172,11 +175,13 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
+						/*
 						class VehicleMissileDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 						};
+						*/
 					};
 				};
 			};
@@ -225,8 +230,6 @@ class RC_Howitzer_NA_WD: RC_Howitzer_NA_A
 		"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
 	};
 };
-
-// Opfor
 class RC_Howitzer_NA_A_O: RC_Howitzer_NA_A
 {
 	faction="RemoteControlled_NA_O";
@@ -239,8 +242,6 @@ class RC_Howitzer_NA_WD_O: RC_Howitzer_NA_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-
-// Independent
 class RC_Howitzer_NA_A_I: RC_Howitzer_NA_A
 {
 	faction="RemoteControlled_NA_I";
@@ -254,8 +255,7 @@ class RC_Howitzer_NA_WD_I: RC_Howitzer_NA_WD
 	side=2;
 };
 
-// normal adjustable Howitzers
-// Blufor
+//adjustable Howitzers with improved ammunition
 class RC_Howitzer_A: RC_Howitzer_NA_A
 {
 	displayName="RC Howitzer";
@@ -284,20 +284,6 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 				"RC_5Rnd_155mm_Mo_mine",
 				"RC_10Rnd_155mm_Mo_Illum",
 				"SmokeLauncherMag"
-			};
-			class OpticsIn: OpticsIn
-			{
-				class Wide: Wide
-				{
-					initFov=0.125;
-					minFov=0.0125;
-					maxFov=0.89999998;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-				};
 			};
 		};
 	};
@@ -349,8 +335,6 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 		};
 	};
 };
-
-// Opfor
 class RC_Howitzer_A_O: RC_Howitzer_A
 {
 	faction="RemoteControlled_O";
@@ -363,8 +347,6 @@ class RC_Howitzer_WD_O: RC_Howitzer_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-
-// Independent
 class RC_Howitzer_A_I: RC_Howitzer_A
 {
 	faction="RemoteControlled_I";
@@ -379,8 +361,7 @@ class RC_Howitzer_WD_I: RC_Howitzer_WD
 };
 
 
-
-//HEX Camo Howitzers (Opfor)
+//HEX Camo Howitzers (Opfor only)
 class O_MBT_02_arty_F;
 class RC_Howitzer_base_HEX_O: O_MBT_02_arty_F
 {
@@ -399,7 +380,6 @@ class RC_Howitzer_base_HEX_O: O_MBT_02_arty_F
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
-
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
@@ -414,7 +394,6 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 	scopeCurator=2;
 	side=0;
 	forceInGarage=1;
-	
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
@@ -423,13 +402,10 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 	uavCameraGunnerDir="PiP0_dir";
 	crew="O_UAV_AI";
 	driverForceOptics=1;
-	
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
 	crewCrashProtection=0.01;
-
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
@@ -517,8 +493,22 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			maxElev=86;	//allows 200m close (compound defense) use
-			//initElev=20;
+			maxElev=86;
+
+			class OpticsIn: OpticsIn
+			{
+				class Wide: Wide
+				{
+					initFov=0.125;
+					minFov=0.0125;
+					maxFov=0.89999998;
+					visionMode[]=
+					{
+						"Normal",
+						"NVG"
+					};
+				};
+			};
 			
 			class Turrets: Turrets
 			{
@@ -604,8 +594,6 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 	{
 		class MainTurret: MainTurret
 		{
-			gunnerForceOptics=1;
-
 			weapons[]=
 			{
 				"RC_155mm_AMOS_V4",
@@ -621,20 +609,6 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 				"RC_5Rnd_155mm_Mo_mine",
 				"RC_10Rnd_155mm_Mo_Illum",
 				"SmokeLauncherMag"
-			};
-			class OpticsIn: OpticsIn
-			{
-				class Wide: Wide
-				{
-					initFov=0.125;
-					minFov=0.0125;
-					maxFov=0.89999998;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-				};
 			};
 		};
 	};
@@ -649,8 +623,6 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 	{
 		class MainTurret: MainTurret
 		{
-			gunnerForceOptics=1;
-
 			weapons[]=
 			{
 				"RC_155mm_AMOS_V4",
@@ -666,20 +638,6 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 				"RC_5Rnd_155mm_Mo_mine",
 				"RC_10Rnd_155mm_Mo_Illum",
 				"SmokeLauncherMag"
-			};
-			class OpticsIn: OpticsIn
-			{
-				class Wide: Wide
-				{
-					initFov=0.125;
-					minFov=0.0125;
-					maxFov=0.89999998;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-				};
 			};
 		};
 	};
@@ -696,7 +654,6 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1;
-
 	RC_BarrelAGL=3.5;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
@@ -761,31 +718,6 @@ class RC_Static_NA_Arty: RC_Static_Arty_base
 			};
 		};
 	};
-
-	class TransportMagazines
-	{
-	};
-	class TransportItems
-	{
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-	};
-	class TransportWeapons
-	{
-	};
 };
 class RC_Static_NA_Arty_O: RC_Static_NA_Arty
 {
@@ -838,11 +770,13 @@ class RC_Static_Arty: RC_Static_NA_Arty
 							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
+						/*
 						class VehicleMissileDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 						};
+						*/
 					};
 				};
 			};
