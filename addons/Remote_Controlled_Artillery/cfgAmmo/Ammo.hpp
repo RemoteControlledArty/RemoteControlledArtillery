@@ -231,6 +231,69 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 };
 
 
+/*
+class BombDemine_01_SubAmmo_F;
+class RC_BombDemine_01_SubAmmo_F: BombDemine_01_SubAmmo_F
+{
+	simulation="shotShell";
+	model="\a3\Weapons_F_Orange\Ammo\BombDemine_01_ground_F";
+	hit=1;
+	indirectHit=35;
+	indirectHitRange=11;
+	explosionTime=1;	//0.01?
+	thrust=0;
+	thrustTime=0;
+	typicalSpeed=1;
+	craterShape="\a3\Data_f_orange\data\krater_maly";
+	effectsMissile="DeminingExplosiveTrials";
+	explosionEffects="DeminingExplosiveExplosion";
+	craterEffects="DeminingExplosiveCrater";
+	SoundSetExplosion[]=
+	{
+		"UAV_6_DemineDrone_Bomb_Exp_SoundSet",
+		"Shell30mm40mm_Tail_SoundSet",
+		"Explosion_Debris_SoundSet",
+		"UXO_Debris_Dust_Cloud_SoundSet"
+	};
+};
+class BombDemine_01_Ammo_F;
+class RC_BombDemine_01_Ammo_F: BombDemine_01_Ammo_F
+{
+	model="\a3\Weapons_F_Orange\Ammo\BombDemine_01_fly_F";
+	proxyShape="\a3\Weapons_F_Orange\Ammo\BombDemine_01_F";
+	simulation="shotMissile";
+	effectsMissile="DeminingExplosiveTrials";
+	explosionEffects="DeminingExplosiveExplosion";
+	craterEffects="DeminingExplosiveCrater";
+	thrustTime=10;
+	cost=10;
+	triggerDistance=1;	//2?
+	triggerSpeedCoef[]={0.1,0.1};
+	submunitionConeAngle=0;
+	submunitionConeType[]=
+	{
+		"custom",
+		
+		{
+			{0,0}
+		}
+	};
+	submunitionAmmo="RC_BombDemine_01_SubAmmo_F";
+	hit=1;
+	indirectHit=35;
+	indirectHitRange=11;
+	craterShape="\a3\Data_f_orange\data\krater_maly";
+	soundFly[]=
+	{
+		"A3\Sounds_F_Orange\Vehicles\Air\UAV_06\UAV_6_DemineDrone_Bomb_Whistle",
+		1,
+		1,
+		100
+	};
+};
+*/
+
+
 //groundwork
 class Default;
 class RC_HEAB_Base: Default
@@ -443,14 +506,13 @@ class RC_HEAB_Rocket_Base: RC_HEAB_Base
 
 
 class MissileBase;
-class RC_MP_MultiGuided_Submunition_MissleBase: MissileBase
+class RC_MP_Guided_Submunition_MissleBase: MissileBase
 {
 	class Components;
 };
-class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBase
+class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 {
 	laserLock=1;
-	irLock=1;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
 	missileLockCone=180;
@@ -565,8 +627,62 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
+				/*
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				*/
+			};
+		};
+	};
+};
+class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
+{
+	irLock=1;
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
 				class IRSensorComponent: SensorTemplateIR
 				{
+					typeRecognitionDistance=1000;
+
 					class AirTarget
 					{
 						minRange=1000;
@@ -586,6 +702,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
+					typeRecognitionDistance=1000;
+
 					class AirTarget
 					{
 						minRange=1000;
@@ -606,6 +724,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
+					typeRecognitionDistance=67000;
+
 					class AirTarget
 					{
 						minRange=67000;
@@ -626,7 +746,7 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_MultiGuided_Submunition_MissleBa
 	};
 };
 class SubmunitionBase;
-class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
+class RC_Sh_AMOS_MP_LaserGuided_Base: SubmunitionBase
 {
 	submunitionCount=1;
 	submunitionConeAngle=0;
@@ -634,17 +754,14 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 	submunitionParentSpeedCoef=0.1;	//required to not completly miss
 	aiAmmoUsageFlags="128 + 512";
 	laserLock=1;
-	irLock=1;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
 	artilleryLock=1;
 	muzzleEffect="";
 	airFriction=0;
 	craterEffects="AAMissileCrater";
-
 	canLock=2;	//supposedly only cfgweapons not ammo
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;	//would allows for sensor-recon shots, to then datalink lock with second shot, doesnt work yet, maybe cfgvic only
+	//receiveRemoteTargets=1;
 	//lockAcquire=1;	//likely cfgvic only
 	
 	soundHit1[]=
@@ -686,6 +803,12 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: SubmunitionBase
 		"soundHit4",
 		0.25
 	};
+};
+class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
+{
+	irLock=1;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;	//would allows for sensor-recon shots, to then datalink lock with second shot, doesnt work yet, maybe cfgvic only
 };
 
 
@@ -902,6 +1025,82 @@ class ammo_Penetrator_82mm_MP: ammo_Penetrator_Base
 	warheadName="TandemHEAT";
 	hit=454.1;
 };
+class RC_82mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
+{
+	submunitionAmmo="ammo_Penetrator_82mm_MP";
+	indirectHit=26;
+	indirectHitRange=9;
+	cost=500;
+
+	class CamShakeExplode
+	{
+		power=11;
+		duration=1.4;
+		frequency=20;
+		distance=91.329597;
+	};
+	class CamShakeHit
+	{
+		power=110;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=2.78316;
+		duration=1.6;
+		frequency=20;
+		distance=61.967701;
+	};
+	class CamShakePlayerFire
+	{
+		power=3;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+class RC_Sh_82mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
+{
+	submunitionAmmo="RC_82mm_MP_LaserGuided_Submunition";
+	triggerDistance=300;
+	hit=165;
+	indirectHit=26;
+	indirectHitRange=9;
+	cost=500;
+
+	class CamShakeExplode
+	{
+		power=16.4;
+		duration=1.8;
+		frequency=20;
+		distance=216.44299;
+	};
+	class CamShakeHit
+	{
+		power=82;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.0092199;
+		duration=1.8;
+		frequency=20;
+		distance=72.4431;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
 class RC_82mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_82mm_MP";
@@ -1087,6 +1286,82 @@ class ammo_Penetrator_105mm_MP: ammo_Penetrator_Base
 	warheadName="TandemHEAT";
 	hit=581.6;
 };
+class RC_105mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
+{
+	submunitionAmmo="ammo_Penetrator_105mm_MP";
+	indirectHit=37.8;
+	indirectHitRange=10.9;
+	cost=600;
+
+	class CamShakeExplode
+	{
+		power=31;
+		duration=2.4000001;
+		frequency=20;
+		distance=339.599;
+	};
+	class CamShakeHit
+	{
+		power=155;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.52844;
+		duration=2.4000001;
+		frequency=20;
+		distance=99.599197;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+class RC_Sh_105mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
+{
+	submunitionAmmo="RC_105mm_MP_LaserGuided_Submunition";
+	triggerDistance=800;
+	hit=207.3;
+	indirectHit=37.8;
+	indirectHitRange=10.9;
+	cost=600;
+
+	class CamShakeExplode
+	{
+		power=31;
+		duration=2.4000001;
+		frequency=20;
+		distance=339.599;
+	};
+	class CamShakeHit
+	{
+		power=155;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.52844;
+		duration=2.4000001;
+		frequency=20;
+		distance=99.599197;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
 class RC_105mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_105mm_MP";
@@ -1257,6 +1532,82 @@ class ammo_Penetrator_120mm_MP: ammo_Penetrator_Base
 	warheadName="TandemHEAT";
 	hit=664.6;
 };
+class RC_120mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
+{
+	submunitionAmmo="ammo_Penetrator_120mm_MP";
+	indirectHit=43.2;
+	indirectHitRange=12.4;
+	cost=700;
+
+	class CamShakeExplode
+	{
+		power=31;
+		duration=2.4000001;
+		frequency=20;
+		distance=339.599;
+	};
+	class CamShakeHit
+	{
+		power=155;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.52844;
+		duration=2.4000001;
+		frequency=20;
+		distance=99.599197;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+class RC_Sh_120mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
+{
+	submunitionAmmo="RC_120mm_MP_LaserGuided_Submunition";
+	triggerDistance=500;
+	hit=236.7;
+	indirectHit=43.2;
+	indirectHitRange=12.4;
+	cost=700;
+
+	class CamShakeExplode
+	{
+		power=31;
+		duration=2.4000001;
+		frequency=20;
+		distance=339.599;
+	};
+	class CamShakeHit
+	{
+		power=155;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.52844;
+		duration=2.4000001;
+		frequency=20;
+		distance=99.599197;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
 class RC_120mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_120mm_MP";
@@ -1561,6 +1912,82 @@ class ammo_Penetrator_155mm_MP: ammo_Penetrator_Base
 	warheadName="TandemHEAT";
 	hit=858.5;
 };
+class RC_155mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
+{
+	submunitionAmmo="ammo_Penetrator_155mm_MP";
+	indirectHit=62.5;
+	indirectHitRange=15;
+	cost=800;
+
+	class CamShakeExplode
+	{
+		power=31;
+		duration=2.4000001;
+		frequency=20;
+		distance=339.599;
+	};
+	class CamShakeHit
+	{
+		power=155;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.52844;
+		duration=2.4000001;
+		frequency=20;
+		distance=99.599197;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
+{
+	submunitionAmmo="RC_155mm_MP_LaserGuided_Submunition";
+	triggerDistance=800;
+	hit=340;
+	indirectHit=62.5;
+	indirectHitRange=15;
+	cost=800;
+
+	class CamShakeExplode
+	{
+		power=31;
+		duration=2.4000001;
+		frequency=20;
+		distance=339.599;
+	};
+	class CamShakeHit
+	{
+		power=155;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.52844;
+		duration=2.4000001;
+		frequency=20;
+		distance=99.599197;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
 class RC_155mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
@@ -1780,6 +2207,162 @@ class ammo_Penetrator_230mm_MP: ammo_Penetrator_Base
 	warheadName="TandemHEAT";
 	hit=1273.8;
 };
+class RC_230mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
+{
+	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
+	effectFly="Missile0";
+	explosionEffects="HEShellExplosion";
+	craterEffects="BombCrater";
+	submunitionAmmo="ammo_Penetrator_230mm_MP";
+	indirectHit=400;
+	indirectHitRange=15;
+	cost=1000;
+
+	class CamShakeExplode
+	{
+		power=46;
+		duration=3;
+		frequency=20;
+		distance=361.32599;
+	};
+	class CamShakeHit
+	{
+		power=230;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.89432;
+		duration=3;
+		frequency=20;
+		distance=121.326;
+	};
+	class CamShakePlayerFire
+	{
+		power=5;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.34,
+		"soundHit2",
+		0.33000001,
+		"soundHit3",
+		0.33000001
+	};
+	soundFly[]=
+	{
+		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
+		0.56234133,
+		1.9,
+		500
+	};
+};
+class RC_R_230mm_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
+{
+	submunitionAmmo="RC_230mm_MP_LaserGuided_Submunition";
+	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
+	effectFly="Missile0";
+	explosionEffects="HEShellExplosion";
+	craterEffects="BombCrater";
+	triggerDistance=800;
+	hit=300;
+	cost=1000;
+
+	class CamShakeExplode
+	{
+		power=46;
+		duration=3;
+		frequency=20;
+		distance=361.32599;
+	};
+	class CamShakeHit
+	{
+		power=230;
+		duration=0.80000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.89432;
+		duration=3;
+		frequency=20;
+		distance=121.326;
+	};
+	class CamShakePlayerFire
+	{
+		power=5;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.34,
+		"soundHit2",
+		0.33000001,
+		"soundHit3",
+		0.33000001
+	};
+	soundFly[]=
+	{
+		"A3\Sounds_F\weapons\Rockets\rocket_fly_1",
+		0.56234133,
+		1.9,
+		500
+	};
+};
+
+
 class RC_230mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";

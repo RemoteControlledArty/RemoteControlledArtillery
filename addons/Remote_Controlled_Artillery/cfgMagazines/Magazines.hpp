@@ -17,7 +17,27 @@ class RC_1Rnd_MP_missiles: 1Rnd_GAT_missiles
 };
 
 
-//82mm
+/*
+class PylonRack_4Rnd_BombDemine_01_F;
+class RC_PylonRack_4Rnd_BombDemine_01_F: PylonRack_4Rnd_BombDemine_01_F
+{
+	ammo="RC_BombDemine_01_Ammo_F";
+	displayName="$STR_A3_PylonRack_4Rnd_BombDemine_01_F0";
+	displayNameShort="$STR_A3_PylonRack_4Rnd_BombDemine_01_F0";
+	descriptionShort="$STR_A3_PylonRack_4Rnd_BombDemine_01_F1";
+	model="\a3\Weapons_F_Orange\DynamicLoadout\PylonRack_4x_BombDemine_01_F.p3d";
+	hardpoints[]=
+	{
+		"ANTIMINE_DRONE_PYLON"
+	};
+	pylonWeapon="RC_BombDemine_01_F";
+	mass=10;
+	initSpeed=0.1;
+};
+*/
+
+
+//82mm Section
 class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
@@ -684,181 +704,179 @@ class RC_40Rnd_82mm_Mo_Smoke_white: RC_1Rnd_82mm_Mo_Smoke_white
 };
 
 
-/*
-class 8Rnd_82mm_Mo_guided;
-class RC_1Rnd_82mm_Mo_guided: 8Rnd_82mm_Mo_guided
+class 8Rnd_82mm_Mo_LG;
+class RC_1Rnd_82mm_Mo_LaserGuided: 8Rnd_82mm_Mo_LG
 {
-	ammo="RC_Sh_82mm_AMOS_guided";
-	displayName="AT Seeking";
-	displayNameShort="AT Seeking";
+	ammo="RC_Sh_82mm_AMOS_MP_LaserGuided";
+	RC_AimAboveHeight=285;
+	displayName="MP Laser Guided";
+	displayNameShort="MP Laser Guided";
 	count=1;
 };
-class RC_2Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_2Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=2;
 };
-class RC_3Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_3Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=3;
 };
-class RC_4Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_4Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=4;
 };
-class RC_5Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_5Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=5;
 };
-class RC_6Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_6Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=6;
 };
-class RC_7Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_7Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=7;
 };
-class RC_8Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_8Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=8;
 };
-class RC_9Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_9Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=9;
 };
-class RC_10Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_10Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=10;
 };
-class RC_11Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_11Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=11;
 };
-class RC_12Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_12Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=12;
 };
-class RC_13Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_13Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=13;
 };
-class RC_14Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_14Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=14;
 };
-class RC_15Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_15Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=15;
 };
-class RC_16Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_16Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=16;
 };
-class RC_17Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_17Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=17;
 };
-class RC_18Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_18Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=18;
 };
-class RC_19Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_19Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=19;
 };
-class RC_20Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_20Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=20;
 };
-class RC_21Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_21Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=21;
 };
-class RC_22Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_22Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=22;
 };
-class RC_23Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_23Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=23;
 };
-class RC_24Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_24Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=24;
 };
-class RC_25Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_25Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=25;
 };
-class RC_26Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_26Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=26;
 };
-class RC_27Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_27Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=27;
 };
-class RC_28Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_28Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=28;
 };
-class RC_29Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_29Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=29;
 };
-class RC_30Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_30Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=30;
 };
-class RC_31Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_31Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=31;
 };
-class RC_32Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_32Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=32;
 };
-class RC_33Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_33Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=33;
 };
-class RC_34Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_34Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=34;
 };
-class RC_35Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_35Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=35;
 };
-class RC_36Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_36Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=36;
 };
-class RC_37Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_37Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=37;
 };
-class RC_38Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_38Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=38;
 };
-class RC_39Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_39Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=39;
 };
-class RC_40Rnd_82mm_Mo_guided: RC_1Rnd_82mm_Mo_guided
+class RC_40Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	count=40;
 };
-*/
 
 
-class 8Rnd_82mm_Mo_LG;
 class RC_1Rnd_82mm_Mo_MultiGuided: 8Rnd_82mm_Mo_LG
 {
 	ammo="RC_Sh_82mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=210;
-	displayName="MP MultiGuided";
-	displayNameShort="MP MultiGuided";
+	RC_AimAboveHeight=285;
+	displayName="MP Multiple Guided";
+	displayNameShort="MP Multiple Guided";
 	count=1;
 };
 class RC_2Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
@@ -1017,173 +1035,6 @@ class RC_40Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
 {
 	count=40;
 };
-
-
-/*
-class RC_1Rnd_82mm_Mo_LG: 8Rnd_82mm_Mo_LG
-{
-	ammo="RC_Sh_82mm_AMOS_LG";
-	displayName="Laser Guided";
-	displayNameShort="Laser Guided";
-	count=1;
-};
-class RC_2Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=2;
-};
-class RC_3Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=3;
-};
-class RC_4Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=4;
-};
-class RC_5Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=5;
-};
-class RC_6Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=6;
-};
-class RC_7Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=7;
-};
-class RC_8Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=8;
-};
-class RC_9Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=9;
-};
-class RC_10Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=10;
-};
-class RC_11Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=11;
-};
-class RC_12Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=12;
-};
-class RC_13Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=13;
-};
-class RC_14Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=14;
-};
-class RC_15Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=15;
-};
-class RC_16Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=16;
-};
-class RC_17Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=17;
-};
-class RC_18Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=18;
-};
-class RC_19Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=19;
-};
-class RC_20Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=20;
-};
-class RC_21Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=21;
-};
-class RC_22Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=22;
-};
-class RC_23Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=23;
-};
-class RC_24Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=24;
-};
-class RC_25Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=25;
-};
-class RC_26Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=26;
-};
-class RC_27Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=27;
-};
-class RC_28Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=28;
-};
-class RC_29Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=29;
-};
-class RC_30Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=30;
-};
-class RC_31Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=31;
-};
-class RC_32Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=32;
-};
-class RC_33Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=33;
-};
-class RC_34Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=34;
-};
-class RC_35Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=35;
-};
-class RC_36Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=36;
-};
-class RC_37Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=37;
-};
-class RC_38Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=38;
-};
-class RC_39Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=39;
-};
-class RC_40Rnd_82mm_Mo_LG: RC_1Rnd_82mm_Mo_LG
-{
-	count=40;
-};
-*/
 
 
 class RC_1Rnd_82mm_Mo_mine: 8Rnd_82mm_Mo_shells
@@ -1518,8 +1369,8 @@ class RC_40Rnd_82mm_Mo_AT_mine: RC_1Rnd_82mm_Mo_AT_mine
 
 class RC_1Rnd_82mm_Mo_shells: 8Rnd_82mm_Mo_shells
 {
-	displayName="HE Impact Fuse";
-	displayNameShort="HE Impact Fuse";
+	displayName="HE";
+	displayNameShort="HE";
 	count=1;
 };
 class RC_2Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
@@ -1683,6 +1534,7 @@ class RC_40Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
 class RC_1Rnd_82mm_Mo_LG_DelayedFuse: 8Rnd_82mm_Mo_LG
 {
 	ammo="RC_Sh_82mm_AMOS_LG_DelayedFuse";
+	RC_AimAboveHeight=210;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -1849,7 +1701,7 @@ class RC_40Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 class RC_1Rnd_82mm_Mo_backupHEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_backupHEAB";
-	displayName="HE Airburst";
+	displayName="HE AB [direct]";
 	displayNameShort="HE Airburst";
 	count=1;
 };
@@ -2014,6 +1866,8 @@ class RC_40Rnd_82mm_Mo_backupHEAB: RC_1Rnd_82mm_Mo_backupHEAB
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_82mm_Mo_backuplowHEAB: RC_1Rnd_82mm_Mo_backupHEAB
 {
+	displayName="HE lAB [direct]";
+	displayNameShort="HE lAB [direct]";
 };
 class RC_2Rnd_82mm_Mo_backuplowHEAB: RC_1Rnd_82mm_Mo_backuplowHEAB
 {
@@ -2168,6 +2022,2176 @@ class RC_39Rnd_82mm_Mo_backuplowHEAB: RC_1Rnd_82mm_Mo_backuplowHEAB
 	count=39;
 };
 class RC_40Rnd_82mm_Mo_backuplowHEAB: RC_1Rnd_82mm_Mo_backuplowHEAB
+{
+	count=40;
+};
+
+
+// 105mm Section
+class 32Rnd_155mm_Mo_shells;
+class RC_1Rnd_105mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
+{
+	initSpeed=400;
+	ammo="RC_Sh_105mm_AMOS_HEAB";
+	RC_AimAboveHeight=21.2;		//airburstheight
+	//RC_AimAboveHeight=20.7;		//airburstheight -0.5m
+	displayName="HE Airburst";
+	displayNameShort="HE Airburst";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
+{
+	count=40;
+};
+
+
+class RC_1Rnd_105mm_Mo_lowHEAB: 32Rnd_155mm_Mo_shells
+{
+	initSpeed=400;
+	ammo="RC_Sh_105mm_AMOS_lowHEAB";
+	RC_AimAboveHeight=10.6;		//airburstheight
+	//RC_AimAboveHeight=10.1;		//airburstheight -0.5m
+	displayName="HE low Airburst";
+	displayNameShort="HE low Airburst";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
+{
+	count=40;
+};
+
+
+class 6Rnd_155mm_Mo_mine;
+class RC_1Rnd_105mm_Mo_mine: 6Rnd_155mm_Mo_mine
+{
+	initSpeed=400;
+	ammo="RC_Mine_155mm_AMOS_range";
+	displayName="AP Mines";
+	displayNameShort="AP Mines";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
+{
+	count=40;
+};
+
+
+class 2Rnd_155mm_Mo_Cluster;
+class RC_1Rnd_105mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
+{
+	initSpeed=400;
+	ammo="RC_Cluster_105mm_AMOS";
+	displayName="Cluster (7% UXO)";
+	displayNameShort="Cluster";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
+{
+	count=40;
+};
+
+
+class 6Rnd_155mm_Mo_smoke;
+class RC_1Rnd_105mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
+{
+	initSpeed=400;
+	ammo="RC_Smoke_155mm_AMOS_White";
+	displayName="Smoke";
+	displayNameShort="Smoke";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
+{
+	count=40;
+};
+
+
+class 2Rnd_155mm_Mo_LG;
+class RC_1Rnd_105mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
+{
+	initSpeed=400;
+	ammo="RC_Sh_105mm_AMOS_MP_LaserGuided";
+	RC_AimAboveHeight=760;
+	displayName="MP Laser Guided";
+	displayNameShort="MP Laser Guided";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
+{
+	count=40;
+};
+
+
+class RC_1Rnd_105mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
+{
+	initSpeed=400;
+	ammo="RC_Sh_105mm_AMOS_MP_MultiGuided";
+	RC_AimAboveHeight=760;
+	displayName="MP Multiple Guided";
+	displayNameShort="MP Multiple Guided";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
+{
+	count=40;
+};
+
+
+class 6Rnd_155mm_Mo_AT_mine;
+class RC_1Rnd_105mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
+{
+	initSpeed=400;
+	ammo="RC_AT_Mine_155mm_AMOS_range";
+	displayName="AT Mines";
+	displayNameShort="AT Mines";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
+{
+	count=40;
+};
+
+
+class RC_1Rnd_105mm_Mo_Illum: 32Rnd_155mm_Mo_shells
+{
+	initSpeed=400;
+	displayName="Illumination";
+	displayNameShort="Illum";
+	ammo="Flare_155mm_AMOS_White";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
+{
+	count=40;
+};
+
+
+class RC_1Rnd_105mm_Mo_shells: 32Rnd_155mm_Mo_shells
+{
+	initSpeed=400;
+	displayName="HE";
+	displayNameShort="HE";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=40;
+};
+
+
+class RC_1Rnd_105mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
+{
+	initSpeed=400;
+	ammo="RC_Sh_105mm_AMOS_LG_DelayedFuse";
+	RC_AimAboveHeight=560;
+	displayName="LG 2m Delayed";
+	displayNameShort="LG 2m Delayed";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
+{
+	count=40;
+};
+
+
+//backup ammo used in script for when the barrel is pointed too low for airburst
+class RC_1Rnd_105mm_Mo_backupHEAB: 32Rnd_155mm_Mo_shells
+{
+	initSpeed=400;
+	ammo="RC_Sh_105mm_AMOS_backupHEAB";
+	displayName="HE AB [direct]";
+	displayNameShort="HE AB [direct]";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	count=40;
+};
+
+
+//backup ammo used in script for when the barrel is pointed too low for airburst
+class RC_1Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backupHEAB
+{
+	displayName="HE lAB [direct]";
+	displayNameShort="HE lAB [direct]";
+};
+class RC_2Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
 {
 	count=40;
 };
@@ -2344,7 +4368,7 @@ class RC_40Rnd_120mm_Mo_HEAB: RC_1Rnd_120mm_Mo_HEAB
 
 class RC_1Rnd_120mm_Mo_lowHEAB: magazine_ShipCannon_120mm_HE_shells_x32
 {
-	ammo="RC_Sh_155mm_AMOS_lowHEAB";
+	ammo="RC_Sh_120mm_AMOS_lowHEAB";
 	RC_AimAboveHeight=8.75;		//airburstheight
 	//RC_AimAboveHeight=8.25;		//airburstheight -0.5m
 	displayName="HE low Airburst";
@@ -2510,12 +4534,178 @@ class RC_40Rnd_120mm_Mo_lowHEAB: RC_1Rnd_120mm_Mo_lowHEAB
 
 
 class magazine_ShipCannon_120mm_HE_LG_shells_x2;
+class RC_1Rnd_120mm_Mo_LaserGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
+{
+	ammo="RC_Sh_120mm_AMOS_MP_LaserGuided";
+	RC_AimAboveHeight=760;
+	displayName="MP Laser Guided";
+	displayNameShort="MP Laser Guided";
+	count=1;
+};
+class RC_2Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=2;
+};
+class RC_3Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=3;
+};
+class RC_4Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=4;
+};
+class RC_5Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=5;
+};
+class RC_6Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=6;
+};
+class RC_7Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=7;
+};
+class RC_8Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=8;
+};
+class RC_9Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=9;
+};
+class RC_10Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=10;
+};
+class RC_11Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=11;
+};
+class RC_12Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=12;
+};
+class RC_13Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=13;
+};
+class RC_14Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=14;
+};
+class RC_15Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=15;
+};
+class RC_16Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=16;
+};
+class RC_17Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=17;
+};
+class RC_18Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=18;
+};
+class RC_19Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=19;
+};
+class RC_20Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=20;
+};
+class RC_21Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=21;
+};
+class RC_22Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=22;
+};
+class RC_23Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=23;
+};
+class RC_24Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=24;
+};
+class RC_25Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=25;
+};
+class RC_26Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=26;
+};
+class RC_27Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=27;
+};
+class RC_28Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=28;
+};
+class RC_29Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=29;
+};
+class RC_30Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=30;
+};
+class RC_31Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=31;
+};
+class RC_32Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=32;
+};
+class RC_33Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=33;
+};
+class RC_34Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=34;
+};
+class RC_35Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=35;
+};
+class RC_36Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=36;
+};
+class RC_37Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=37;
+};
+class RC_38Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=38;
+};
+class RC_39Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=39;
+};
+class RC_40Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
+{
+	count=40;
+};
+
+
 class RC_1Rnd_120mm_Mo_MultiGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=560;
-	displayName="MP MultiGuided";
-	displayNameShort="MP MultiGuided";
+	RC_AimAboveHeight=760;
+	displayName="MP Multiple Guided";
+	displayNameShort="MP Multiple Guided";
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_MultiGuided: RC_1Rnd_120mm_Mo_MultiGuided
@@ -3508,8 +5698,8 @@ class RC_40Rnd_120mm_Mo_Illum: RC_1Rnd_120mm_Mo_Illum
 
 class RC_1Rnd_120mm_Mo_shells: magazine_ShipCannon_120mm_HE_shells_x32
 {
-	displayName="HE Impact Fuse";
-	displayNameShort="HE Impact Fuse";
+	displayName="HE";
+	displayNameShort="HE";
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
@@ -3673,6 +5863,7 @@ class RC_40Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
 class RC_1Rnd_120mm_Mo_LG_DelayedFuse: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_LG_DelayedFuse";
+	RC_AimAboveHeight=560;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -3839,8 +6030,8 @@ class RC_40Rnd_120mm_Mo_LG_DelayedFuse: RC_1Rnd_120mm_Mo_LG_DelayedFuse
 class RC_1Rnd_120mm_Mo_backupHEAB: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_backupHEAB";
-	displayName="HE";
-	displayNameShort="HE";
+	displayName="HE AB [direct]";
+	displayNameShort="HE AB [direct]";
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_backupHEAB: RC_1Rnd_120mm_Mo_backupHEAB
@@ -4004,6 +6195,8 @@ class RC_40Rnd_120mm_Mo_backupHEAB: RC_1Rnd_120mm_Mo_backupHEAB
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backupHEAB
 {
+	displayName="HE lAB [direct]";
+	displayNameShort="HE lAB [direct]";
 };
 class RC_2Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backuplowHEAB
 {
@@ -4163,211 +6356,6 @@ class RC_40Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backuplowHEAB
 };
 
 
-//120mm NLOS FSV
-class RC_1Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_120mm_Mo_HEAB
-{
-	initSpeed=310;
-	ammo="RC_Sh_120mm_AMOS_HE_FSV";
-	displayName="HE";
-	displayNameShort="HE";
-	count=1;
-};
-class RC_2Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=2;
-};
-class RC_3Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=3;
-};
-class RC_4Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=4;
-};
-class RC_5Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=5;
-};
-class RC_6Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=6;
-};
-class RC_7Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=7;
-};
-class RC_8Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=8;
-};
-class RC_9Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=9;
-};
-class RC_10Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=10;
-};
-class RC_11Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=11;
-};
-class RC_12Rnd_FSV_120mm_Mo_HEAB: RC_1Rnd_FSV_120mm_Mo_HEAB
-{
-	count=12;
-};
-
-
-class RC_1Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_120mm_Mo_MultiGuided
-{
-	initSpeed=310;
-};
-class RC_2Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=2;
-};
-class RC_3Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=3;
-};
-class RC_4Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=4;
-};
-class RC_5Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=5;
-};
-class RC_6Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=6;
-};
-class RC_7Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=7;
-};
-class RC_8Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=8;
-};
-class RC_9Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=9;
-};
-class RC_10Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=10;
-};
-class RC_11Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=11;
-};
-class RC_12Rnd_FSV_120mm_Mo_MultiGuided: RC_1Rnd_FSV_120mm_Mo_MultiGuided
-{
-	count=12;
-};
-
-
-class RC_1Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_120mm_Mo_smoke
-{
-	initSpeed=310;
-};
-class RC_2Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=2;
-};
-class RC_3Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=3;
-};
-class RC_4Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=4;
-};
-class RC_5Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=5;
-};
-class RC_6Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=6;
-};
-class RC_7Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=7;
-};
-class RC_8Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=8;
-};
-class RC_9Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=9;
-};
-class RC_10Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=10;
-};
-class RC_11Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=11;
-};
-class RC_12Rnd_FSV_120mm_Mo_smoke: RC_1Rnd_FSV_120mm_Mo_smoke
-{
-	count=12;
-};
-
-
-class RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_120mm_Mo_LG_DelayedFuse
-{
-	initSpeed=310;
-};
-class RC_2Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=2;
-};
-class RC_3Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=3;
-};
-class RC_4Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=4;
-};
-class RC_5Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=5;
-};
-class RC_6Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=6;
-};
-class RC_7Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=7;
-};
-class RC_8Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=8;
-};
-class RC_9Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=9;
-};
-class RC_10Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=10;
-};
-class RC_11Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=11;
-};
-class RC_12Rnd_FSV_120mm_Mo_LG_DelayedFuse: RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse
-{
-	count=12;
-};
-
-
 // 120mm LOS Section
 class 8Rnd_120mm_HEAT_MP_T_Green;
 class 12Rnd_120mm_MP_T_Green: 8Rnd_120mm_HEAT_MP_T_Green
@@ -4398,7 +6386,6 @@ class 3Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 
 
 // 155mm Section
-class 32Rnd_155mm_Mo_shells;
 class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB";
@@ -4733,168 +6720,6 @@ class RC_40Rnd_155mm_Mo_lowHEAB: RC_1Rnd_155mm_Mo_lowHEAB
 };
 
 
-class 4Rnd_155mm_Mo_guided;
-class RC_1Rnd_155mm_Mo_guided: 4Rnd_155mm_Mo_guided
-{
-	displayName="AT Seeking";
-	displayNameShort="AT Seeking";
-	count=1;
-};
-class RC_2Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=2;
-};
-class RC_3Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=3;
-};
-class RC_4Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=4;
-};
-class RC_5Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=5;
-};
-class RC_6Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=6;
-};
-class RC_7Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=7;
-};
-class RC_8Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=8;
-};
-class RC_9Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=9;
-};
-class RC_10Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=10;
-};
-class RC_11Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=11;
-};
-class RC_12Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=12;
-};
-class RC_13Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=13;
-};
-class RC_15Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=15;
-};
-class RC_16Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=16;
-};
-class RC_17Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=17;
-};
-class RC_18Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=18;
-};
-class RC_19Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=19;
-};
-class RC_20Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=20;
-};
-class RC_21Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=21;
-};
-class RC_22Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=22;
-};
-class RC_23Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=23;
-};
-class RC_24Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=24;
-};
-class RC_25Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=25;
-};
-class RC_26Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=26;
-};
-class RC_27Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=27;
-};
-class RC_28Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=28;
-};
-class RC_29Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=29;
-};
-class RC_30Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=30;
-};
-class RC_31Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=31;
-};
-class RC_32Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=32;
-};
-class RC_33Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=33;
-};
-class RC_34Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=34;
-};
-class RC_35Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=35;
-};
-class RC_36Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=36;
-};
-class RC_37Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=37;
-};
-class RC_38Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=38;
-};
-class RC_39Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=39;
-};
-class RC_40Rnd_155mm_Mo_guided: RC_1Rnd_155mm_Mo_guided
-{
-	count=40;
-};
-
-
-class 6Rnd_155mm_Mo_mine;
 class RC_1Rnd_155mm_Mo_mine: 6Rnd_155mm_Mo_mine
 {
 	ammo="RC_Mine_155mm_AMOS_range";
@@ -5060,7 +6885,6 @@ class RC_40Rnd_155mm_Mo_mine: RC_1Rnd_155mm_Mo_mine
 };
 
 
-class 2Rnd_155mm_Mo_Cluster;
 class RC_1Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
 	ammo="RC_Cluster_155mm_AMOS";
@@ -5226,7 +7050,6 @@ class RC_40Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 };
 
 
-class 6Rnd_155mm_Mo_smoke;
 class RC_1Rnd_155mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 {
 	ammo="RC_Smoke_155mm_AMOS_White";
@@ -5392,13 +7215,178 @@ class RC_40Rnd_155mm_Mo_smoke: RC_1Rnd_155mm_Mo_smoke
 };
 
 
-class 2Rnd_155mm_Mo_LG;
+class RC_1Rnd_155mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
+{
+	ammo="RC_Sh_155mm_AMOS_MP_LaserGuided";
+	RC_AimAboveHeight=760;
+	displayName="MP Laser Guided";
+	displayNameShort="MP Laser Guided";
+	count=1;
+};
+class RC_2Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=2;
+};
+class RC_3Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=3;
+};
+class RC_4Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=4;
+};
+class RC_5Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=5;
+};
+class RC_6Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=6;
+};
+class RC_7Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=7;
+};
+class RC_8Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=8;
+};
+class RC_9Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=9;
+};
+class RC_10Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=10;
+};
+class RC_11Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=11;
+};
+class RC_12Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=12;
+};
+class RC_13Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=13;
+};
+class RC_14Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=14;
+};
+class RC_15Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=15;
+};
+class RC_16Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=16;
+};
+class RC_17Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=17;
+};
+class RC_18Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=18;
+};
+class RC_19Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=19;
+};
+class RC_20Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=20;
+};
+class RC_21Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=21;
+};
+class RC_22Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=22;
+};
+class RC_23Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=23;
+};
+class RC_24Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=24;
+};
+class RC_25Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=25;
+};
+class RC_26Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=26;
+};
+class RC_27Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=27;
+};
+class RC_28Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=28;
+};
+class RC_29Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=29;
+};
+class RC_30Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=30;
+};
+class RC_31Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=31;
+};
+class RC_32Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=32;
+};
+class RC_33Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=33;
+};
+class RC_34Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=34;
+};
+class RC_35Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=35;
+};
+class RC_36Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=36;
+};
+class RC_37Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=37;
+};
+class RC_38Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=38;
+};
+class RC_39Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=39;
+};
+class RC_40Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
+{
+	count=40;
+};
+
+
 class RC_1Rnd_155mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=560;
-	displayName="MP MultiGuided";
-	displayNameShort="MP MultiGuided";
+	RC_AimAboveHeight=760;
+	displayName="MP Multiple Guided";
+	displayNameShort="MP Multiple Guided";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_MultiGuided: RC_1Rnd_155mm_Mo_MultiGuided
@@ -5559,173 +7547,6 @@ class RC_40Rnd_155mm_Mo_MultiGuided: RC_1Rnd_155mm_Mo_MultiGuided
 };
 
 
-/*
-class RC_1Rnd_155mm_Mo_LG: 2Rnd_155mm_Mo_LG
-{
-	displayName="Laser Guided";
-	displayNameShort="Laser Guided";
-	count=1;
-};
-class RC_2Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=2;
-};
-class RC_3Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=3;
-};
-class RC_4Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=4;
-};
-class RC_5Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=5;
-};
-class RC_6Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=6;
-};
-class RC_7Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=7;
-};
-class RC_8Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=8;
-};
-class RC_9Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=9;
-};
-class RC_10Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=10;
-};
-class RC_11Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=11;
-};
-class RC_12Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=12;
-};
-class RC_13Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=13;
-};
-class RC_14Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=14;
-};
-class RC_15Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=15;
-};
-class RC_16Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=16;
-};
-class RC_17Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=17;
-};
-class RC_18Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=18;
-};
-class RC_19Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=19;
-};
-class RC_20Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=20;
-};
-class RC_21Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=21;
-};
-class RC_22Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=22;
-};
-class RC_23Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=23;
-};
-class RC_24Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=24;
-};
-class RC_25Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=25;
-};
-class RC_26Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=26;
-};
-class RC_27Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=27;
-};
-class RC_28Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=28;
-};
-class RC_29Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=29;
-};
-class RC_30Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=30;
-};
-class RC_31Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=31;
-};
-class RC_32Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=32;
-};
-class RC_33Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=33;
-};
-class RC_34Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=34;
-};
-class RC_35Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=35;
-};
-class RC_36Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=36;
-};
-class RC_37Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=37;
-};
-class RC_38Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=38;
-};
-class RC_39Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=39;
-};
-class RC_40Rnd_155mm_Mo_LG: RC_1Rnd_155mm_Mo_LG
-{
-	count=40;
-};
-*/
-
-
-class 6Rnd_155mm_Mo_AT_mine;
 class RC_1Rnd_155mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 {
 	ammo="RC_AT_Mine_155mm_AMOS_range";
@@ -6058,8 +7879,8 @@ class RC_40Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
 
 class RC_1Rnd_155mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
-	displayName="HE Impact Fuse";
-	displayNameShort="HE Impact Fuse";
+	displayName="HE";
+	displayNameShort="HE";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
@@ -6223,6 +8044,7 @@ class RC_40Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
 class RC_1Rnd_155mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_LG_DelayedFuse";
+	RC_AimAboveHeight=560;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -6389,8 +8211,8 @@ class RC_40Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 class RC_1Rnd_155mm_Mo_backupHEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_backupHEAB";
-	displayName="HE";
-	displayNameShort="HE";
+	displayName="HE AB [direct]";
+	displayNameShort="HE AB [direct]";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_backupHEAB: RC_1Rnd_155mm_Mo_backupHEAB
@@ -6554,7 +8376,8 @@ class RC_40Rnd_155mm_Mo_backupHEAB: RC_1Rnd_155mm_Mo_backupHEAB
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_155mm_Mo_backuplowHEAB: RC_1Rnd_155mm_Mo_backupHEAB
 {
-	ammo="RC_Sh_155mm_AMOS_backupHEAB";
+	displayName="HE lAB [direct]";
+	displayNameShort="HE lAB [direct]";
 };
 class RC_2Rnd_155mm_Mo_backuplowHEAB: RC_1Rnd_155mm_Mo_backuplowHEAB
 {
@@ -6714,7 +8537,7 @@ class RC_40Rnd_155mm_Mo_backuplowHEAB: RC_1Rnd_155mm_Mo_backuplowHEAB
 };
 
 
-//230mm
+//230mm Section
 class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
@@ -6880,12 +8703,66 @@ class RC_12Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 };
 
 
+class RC_1Rnd_230mm_rockets_LaserGuided: 12Rnd_230mm_rockets
+{
+	ammo="RC_R_230mm_MP_LaserGuided";
+	RC_AimAboveHeight=760;
+	displayName="MP Laser Guided";
+	displayNameShort="MP Laser Guided";
+	count=1;
+};
+class RC_2Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=2;
+};
+class RC_3Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=3;
+};
+class RC_4Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=4;
+};
+class RC_5Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=5;
+};
+class RC_6Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=6;
+};
+class RC_7Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=7;
+};
+class RC_8Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=8;
+};
+class RC_9Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=9;
+};
+class RC_10Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=10;
+};
+class RC_11Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=11;
+};
+class RC_12Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
+{
+	count=12;
+};
+
+
 class RC_1Rnd_230mm_rockets_MultiGuided: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_MP_MultiGuided";
-	RC_AimAboveHeight=560;
-	displayName="MP MultiGuided";
-	displayNameShort="MP MultiGuided";
+	RC_AimAboveHeight=760;
+	displayName="MP Multiple Guided";
+	displayNameShort="MP Multiple Guided";
 	count=1;
 };
 class RC_2Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
@@ -6936,8 +8813,8 @@ class RC_12Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
 
 class RC_1Rnd_230mm_rockets: 12Rnd_230mm_rockets
 {
-	displayName="HE Impact Fuse";
-	displayNameShort="HE Impact Fuse";
+	displayName="HE";
+	displayNameShort="HE";
 	count=1;
 };
 class RC_2Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
@@ -6989,6 +8866,7 @@ class RC_12Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
 class RC_1Rnd_230mm_rockets_LG_DelayedFuse: 12Rnd_230mm_rockets
 {
 	ammo="RC_230mm_LG_DelayedFuse";
+	RC_AimAboveHeight=560;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -7043,8 +8921,8 @@ class RC_12Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFus
 class RC_1Rnd_230mm_rockets_backupHEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_backupHEAB";
-	displayName="HE";
-	displayNameShort="HE";
+	displayName="HE AB [direct]";
+	displayNameShort="HE AB [direct]";
 	count=1;
 };
 class RC_2Rnd_230mm_rockets_backupHEAB: RC_1Rnd_230mm_rockets_backupHEAB
@@ -7096,6 +8974,8 @@ class RC_12Rnd_230mm_rockets_backupHEAB: RC_1Rnd_230mm_rockets_backupHEAB
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_230mm_rockets_backuplowHEAB: RC_1Rnd_230mm_rockets_backupHEAB
 {
+	displayName="HE lAB [direct]";
+	displayNameShort="HE lAB [direct]";
 };
 class RC_2Rnd_230mm_rockets_backuplowHEAB: RC_1Rnd_230mm_rockets_backuplowHEAB
 {
@@ -7162,8 +9042,8 @@ class RC_2Rnd_604mm_rockets_ATACMS_HEAB: RC_1Rnd_604mm_rockets_ATACMS_HEAB
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_604mm_rockets_ATACMS_backupHEAB: 12Rnd_230mm_rockets
 {
-	displayName="ATACMS HE";
-	displayNameShort="ATACMS HE";
+	displayName="ATACMS HE AB [direct]";
+	displayNameShort="ATACMS HE AB [direct]";
 	ammo="RC_R_604mm_ATACMS_backupHEAB";
 	count=1;
 };

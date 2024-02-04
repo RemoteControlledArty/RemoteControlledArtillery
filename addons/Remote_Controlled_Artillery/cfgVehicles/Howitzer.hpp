@@ -278,10 +278,11 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 				"RC_10Rnd_155mm_Mo_lowHEAB",
 				"RC_10Rnd_155mm_Mo_shells",
 				"RC_20Rnd_155mm_Mo_smoke",
-				"RC_5Rnd_155mm_Mo_MultiGuided",
+				"RC_3Rnd_155mm_Mo_LaserGuided",
+				"RC_3Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_10Rnd_155mm_Mo_AT_mine",
-				"RC_5Rnd_155mm_Mo_mine",
+				"RC_9Rnd_155mm_Mo_AT_mine",
+				"RC_6Rnd_155mm_Mo_mine",
 				"RC_10Rnd_155mm_Mo_Illum",
 				"SmokeLauncherMag"
 			};
@@ -311,10 +312,11 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 				"RC_10Rnd_155mm_Mo_lowHEAB",
 				"RC_10Rnd_155mm_Mo_shells",
 				"RC_20Rnd_155mm_Mo_smoke",
-				"RC_5Rnd_155mm_Mo_MultiGuided",
+				"RC_3Rnd_155mm_Mo_LaserGuided",
+				"RC_3Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_10Rnd_155mm_Mo_AT_mine",
-				"RC_5Rnd_155mm_Mo_mine",
+				"RC_9Rnd_155mm_Mo_AT_mine",
+				"RC_6Rnd_155mm_Mo_mine",
 				"RC_10Rnd_155mm_Mo_Illum",
 				"SmokeLauncherMag"
 			};
@@ -603,10 +605,11 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 			{
 				"RC_10Rnd_155mm_Mo_HEAB",
 				"RC_20Rnd_155mm_Mo_smoke",
-				"RC_5Rnd_155mm_Mo_MultiGuided",
+				"RC_3Rnd_155mm_Mo_MultiGuided",
+				"RC_3Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_10Rnd_155mm_Mo_AT_mine",
-				"RC_5Rnd_155mm_Mo_mine",
+				"RC_9Rnd_155mm_Mo_AT_mine",
+				"RC_6Rnd_155mm_Mo_mine",
 				"RC_10Rnd_155mm_Mo_Illum",
 				"SmokeLauncherMag"
 			};
@@ -632,10 +635,11 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 			{
 				"RC_10Rnd_155mm_Mo_HEAB",
 				"RC_20Rnd_155mm_Mo_smoke",
-				"RC_5Rnd_155mm_Mo_MultiGuided",
+				"RC_3Rnd_155mm_Mo_LaserGuided",
+				"RC_3Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_10Rnd_155mm_Mo_AT_mine",
-				"RC_5Rnd_155mm_Mo_mine",
+				"RC_9Rnd_155mm_Mo_AT_mine",
+				"RC_6Rnd_155mm_Mo_mine",
 				"RC_10Rnd_155mm_Mo_Illum",
 				"SmokeLauncherMag"
 			};
@@ -749,10 +753,11 @@ class RC_Static_Arty: RC_Static_NA_Arty
 			{
 				"RC_10Rnd_120mm_Mo_HEAB",
 				"RC_20Rnd_120mm_Mo_smoke",
-				"RC_5Rnd_120mm_Mo_MultiGuided",
+				"RC_3Rnd_120mm_Mo_LaserGuided",
+				"RC_3Rnd_120mm_Mo_MultiGuided",
 				"RC_2Rnd_120mm_Mo_Cluster",
-				"RC_10Rnd_120mm_Mo_AT_mine",
-				"RC_5Rnd_120mm_Mo_mine",
+				"RC_9Rnd_120mm_Mo_AT_mine",
+				"RC_6Rnd_120mm_Mo_mine",
 				"RC_10Rnd_120mm_Mo_Illum"
 			};
 

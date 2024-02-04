@@ -279,7 +279,6 @@ class CfgPatches
 			RC_ShipCannon_120mm_V3,
 			RC_ShipCannon_120mm_V4,
 
-			RC_FSV_120mm_V5,
 			RC_cannon_120mm,
 
 			RC_155mm_AMOS_V1,

@@ -652,6 +652,9 @@ class RC_GrenadeDropper_Base: C_IDAP_UAV_06_antimine_F
 	class ViewOptics;
 	class assembleInfo;
 	class Components;
+	//class TransportPylonsComponent;
+	//class pylons;
+	//class pylons1;
 	scope=0;
 	scopeCurator=0;
 	RC_UAVBlur=1;
@@ -665,6 +668,12 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 	scopeCurator=2;
 	side=1;
 	crew="B_UAV_AI";
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	laserScanner=1;
+	radarTargetSize=0.025;
+	visualTargetSize=0.025;
 
 	class assembleInfo: assembleInfo
 	{
@@ -674,25 +683,16 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 		};
 	};
 
-	radartype=2;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-
 	class PilotCamera: PilotCamera
 	{
-		//stabilizedInAxes=3;
-
 		class OpticsIn: OpticsIn
 		{
 			class Wide: Wide
 			{
 				initFov=1;
-				minFov=0.5;
+				minFov=0.45;
 				maxFov=1;
-				directionStabilized=1;
-				//horizontallyStabilized=1;
-            	//stabilizedInAxes=3;
+
 				visionMode[]=
 				{
 					"Normal",
@@ -705,15 +705,16 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 	};
 	class ViewPilot: ViewPilot
 	{
-		minFov=0.25;
-		maxFov=1.25;
-		initFov=0.75;
+		initFov=1;
+		minFov=0.45;
+		maxFov=1;
 	};
 	class Viewoptics: ViewOptics
 	{
-		minFov=1;
-		maxFov=0.5;
 		initFov=1;
+		minFov=0.45;
+		maxFov=1;
+
 		visionMode[]=
 		{
 			"Normal",
@@ -723,6 +724,22 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 
 	class Components: Components
 	{
+		/*
+		class TransportPylonsComponent: TransportPylonsComponent
+		{
+			class pylons: pylons
+			{
+				class pylons1: pylons1
+				{
+					hardpoints[]=
+					{
+						"ANTIMINE_DRONE_PYLON"
+					};
+					attachment="RC_PylonRack_4Rnd_BombDemine_01_F";
+				};
+			};
+		};
+		*/
 		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 		{
 			defaultDisplay="SensorDisplay";

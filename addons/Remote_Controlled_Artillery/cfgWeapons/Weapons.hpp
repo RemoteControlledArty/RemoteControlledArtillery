@@ -41,7 +41,7 @@ class Improved_FOV_Laserdesignator_WD: Improved_FOV_Laserdesignator_A
 // Thermal Versions
 class Improved_FOV_Laserdesignator_Ti_A: Improved_FOV_Laserdesignator_A
 {
-	displayName="Improved Laser Designator (whTi)";
+	displayName="Improved Laser Designator TI";
 	visionMode[]=
 	{
 		"Normal",
@@ -55,161 +55,6 @@ class Improved_FOV_Laserdesignator_Ti_WD: Improved_FOV_Laserdesignator_Ti_A
 	model="\A3\Weapons_F\Binocular\laserdesignator_01_khk_f.p3d";
 	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";
 };
-
-
-//attemted Datalink Designator, but this likely has to be done per script instead, as sensor components are likely only for cfgvehicles not cfgweapons
-/*
-class Datalink_Laserdesignator_Ti_A: Improved_FOV_Laserdesignator_A
-{
-	displayName="Datalink Laser Designator (whTi)";
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
-					class AirTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=67000;
-
-					class AirTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class IRSensorComponent: SensorTemplateIR
-				{
-					typeRecognitionDistance=2000;
-
-					class AirTarget
-					{
-						minRange=3000;
-						maxRange=3000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=3000;
-						maxRange=3000;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
-					};
-
-					maxTrackableSpeed=600;
-					angleRangeHorizontal=60;
-					angleRangeVertical=40;
-					animDirection="mainGun";
-					aimDown=-0.5;
-				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					typeRecognitionDistance=1000;
-
-					class AirTarget
-					{
-						minRange=1500;
-						maxRange=1500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=1500;
-						maxRange=1500;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
-					};
-
-					maxTrackableSpeed=600;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=60;
-					angleRangeVertical=40;
-					animDirection="mainGun";
-					aimDown=-0.5;
-				};
-
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-					};
-				};
-			};
-		};
-	};
-
-	class Turrets
-	{
-		class MainTurret
-		{
-			showAllTargets="2 + 4";
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-					};
-				};
-			};
-		};
-	};
-};
-class Datalink_Laserdesignator_Ti_WD: Datalink_Laserdesignator_Ti_A
-{
-	model="\A3\Weapons_F\Binocular\laserdesignator_01_khk_f.p3d";
-	picture="\A3\Weapons_F_Exp\Binocular\Data\UI\icon_Laserdesignator_01_khk_x_ca.paa";
-};
-*/
 
 
 class launch_Vorona_base_F;
@@ -241,6 +86,77 @@ class RC_missiles_titan_static: missiles_titan_static
 		"RC_1Rnd_MP_missiles",
 	};
 };
+
+
+/*
+class BombDemine_01_F;
+class RC_BombDemine_01_F: BombDemine_01_F
+{
+	displayName="$STR_A3_CfgWeapons_BombDemine_01_F0";
+	magazines[]=
+	{
+		"RC_PylonRack_4Rnd_BombDemine_01_F",
+		"PylonRack_4Rnd_BombDemine_01_Dummy_F"
+	};
+	autoFire=0;
+	reloadTime=0;
+	cursorAim="";
+	sounds[]=
+	{
+		"Bomb_Demine_Release"
+	};
+	class Bomb_Demine_Release
+	{
+		Bomb_Demine_Release_01[]=
+		{
+			"A3\Sounds_F_Orange\Vehicles\Air\UAV_06\UAV_6_DemineDrone_Bomb_Release_01",
+			3.9810717,
+			1,
+			20
+		};
+		Bomb_Demine_Release_02[]=
+		{
+			"A3\Sounds_F_Orange\Vehicles\Air\UAV_06\UAV_6_DemineDrone_Bomb_Release_02",
+			3.9810717,
+			1,
+			20
+		};
+		Bomb_Demine_Release_03[]=
+		{
+			"A3\Sounds_F_Orange\Vehicles\Air\UAV_06\UAV_6_DemineDrone_Bomb_Release_03",
+			3.9810717,
+			1,
+			20
+		};
+		Bomb_Demine_Release_04[]=
+		{
+			"A3\Sounds_F_Orange\Vehicles\Air\UAV_06\UAV_6_DemineDrone_Bomb_Release_04",
+			3.9810717,
+			1,
+			20
+		};
+		soundBegin[]=
+		{
+			"Bomb_Demine_Release_01",
+			0.25,
+			"Bomb_Demine_Release_02",
+			0.25,
+			"Bomb_Demine_Release_03",
+			0.25,
+			"Bomb_Demine_Release_04",
+			0.25
+		};
+	};
+	modes[]=
+	{
+		"this"
+	};
+	class EventHandlers
+	{
+		fired="_this call bis_fnc_firedBombDemine;";
+	};
+};
+*/
 
 
 // 82mm Mortar 4km
@@ -381,6 +297,47 @@ class RC_mortar_82mm_V1: mortar_82mm_base
 		"RC_39Rnd_82mm_Mo_Smoke_white",
 		"RC_40Rnd_82mm_Mo_Smoke_white",
 
+		"RC_1Rnd_82mm_Mo_LaserGuided",
+		"RC_2Rnd_82mm_Mo_LaserGuided",
+		"RC_3Rnd_82mm_Mo_LaserGuided",
+		"RC_4Rnd_82mm_Mo_LaserGuided",
+		"RC_5Rnd_82mm_Mo_LaserGuided",
+		"RC_6Rnd_82mm_Mo_LaserGuided",
+		"RC_7Rnd_82mm_Mo_LaserGuided",
+		"RC_8Rnd_82mm_Mo_LaserGuided",
+		"RC_9Rnd_82mm_Mo_LaserGuided",
+		"RC_10Rnd_82mm_Mo_LaserGuided",
+		"RC_11Rnd_82mm_Mo_LaserGuided",
+		"RC_12Rnd_82mm_Mo_LaserGuided",
+		"RC_13Rnd_82mm_Mo_LaserGuided",
+		"RC_14Rnd_82mm_Mo_LaserGuided",
+		"RC_15Rnd_82mm_Mo_LaserGuided",
+		"RC_16Rnd_82mm_Mo_LaserGuided",
+		"RC_17Rnd_82mm_Mo_LaserGuided",
+		"RC_18Rnd_82mm_Mo_LaserGuided",
+		"RC_19Rnd_82mm_Mo_LaserGuided",
+		"RC_20Rnd_82mm_Mo_LaserGuided",
+		"RC_21Rnd_82mm_Mo_LaserGuided",
+		"RC_22Rnd_82mm_Mo_LaserGuided",
+		"RC_23Rnd_82mm_Mo_LaserGuided",
+		"RC_24Rnd_82mm_Mo_LaserGuided",
+		"RC_25Rnd_82mm_Mo_LaserGuided",
+		"RC_26Rnd_82mm_Mo_LaserGuided",
+		"RC_27Rnd_82mm_Mo_LaserGuided",
+		"RC_28Rnd_82mm_Mo_LaserGuided",
+		"RC_29Rnd_82mm_Mo_LaserGuided",
+		"RC_30Rnd_82mm_Mo_LaserGuided",
+		"RC_31Rnd_82mm_Mo_LaserGuided",
+		"RC_32Rnd_82mm_Mo_LaserGuided",
+		"RC_33Rnd_82mm_Mo_LaserGuided",
+		"RC_34Rnd_82mm_Mo_LaserGuided",
+		"RC_35Rnd_82mm_Mo_LaserGuided",
+		"RC_36Rnd_82mm_Mo_LaserGuided",
+		"RC_37Rnd_82mm_Mo_LaserGuided",
+		"RC_38Rnd_82mm_Mo_LaserGuided",
+		"RC_39Rnd_82mm_Mo_LaserGuided",
+		"RC_40Rnd_82mm_Mo_LaserGuided",
+
 		"RC_1Rnd_82mm_Mo_MultiGuided",
 		"RC_2Rnd_82mm_Mo_MultiGuided",
 		"RC_3Rnd_82mm_Mo_MultiGuided",
@@ -421,92 +378,6 @@ class RC_mortar_82mm_V1: mortar_82mm_base
 		"RC_38Rnd_82mm_Mo_MultiGuided",
 		"RC_39Rnd_82mm_Mo_MultiGuided",
 		"RC_40Rnd_82mm_Mo_MultiGuided",
-
-		/*
-		"RC_1Rnd_82mm_Mo_LG",
-		"RC_2Rnd_82mm_Mo_LG",
-		"RC_3Rnd_82mm_Mo_LG",
-		"RC_4Rnd_82mm_Mo_LG",
-		"RC_5Rnd_82mm_Mo_LG",
-		"RC_6Rnd_82mm_Mo_LG",
-		"RC_7Rnd_82mm_Mo_LG",
-		"RC_8Rnd_82mm_Mo_LG",
-		"RC_9Rnd_82mm_Mo_LG",
-		"RC_10Rnd_82mm_Mo_LG",
-		"RC_11Rnd_82mm_Mo_LG",
-		"RC_12Rnd_82mm_Mo_LG",
-		"RC_13Rnd_82mm_Mo_LG",
-		"RC_14Rnd_82mm_Mo_LG",
-		"RC_15Rnd_82mm_Mo_LG",
-		"RC_16Rnd_82mm_Mo_LG",
-		"RC_17Rnd_82mm_Mo_LG",
-		"RC_18Rnd_82mm_Mo_LG",
-		"RC_19Rnd_82mm_Mo_LG",
-		"RC_20Rnd_82mm_Mo_LG",
-		"RC_21Rnd_82mm_Mo_LG",
-		"RC_22Rnd_82mm_Mo_LG",
-		"RC_23Rnd_82mm_Mo_LG",
-		"RC_24Rnd_82mm_Mo_LG",
-		"RC_25Rnd_82mm_Mo_LG",
-		"RC_26Rnd_82mm_Mo_LG",
-		"RC_27Rnd_82mm_Mo_LG",
-		"RC_28Rnd_82mm_Mo_LG",
-		"RC_29Rnd_82mm_Mo_LG",
-		"RC_30Rnd_82mm_Mo_LG",
-		"RC_31Rnd_82mm_Mo_LG",
-		"RC_32Rnd_82mm_Mo_LG",
-		"RC_33Rnd_82mm_Mo_LG",
-		"RC_34Rnd_82mm_Mo_LG",
-		"RC_35Rnd_82mm_Mo_LG",
-		"RC_36Rnd_82mm_Mo_LG",
-		"RC_37Rnd_82mm_Mo_LG",
-		"RC_38Rnd_82mm_Mo_LG",
-		"RC_39Rnd_82mm_Mo_LG",
-		"RC_40Rnd_82mm_Mo_LG",
-		*/
-
-		/*
-		"RC_1Rnd_82mm_Mo_guided",
-		"RC_2Rnd_82mm_Mo_guided",
-		"RC_3Rnd_82mm_Mo_guided",
-		"RC_4Rnd_82mm_Mo_guided",
-		"RC_5Rnd_82mm_Mo_guided",
-		"RC_6Rnd_82mm_Mo_guided",
-		"RC_7Rnd_82mm_Mo_guided",
-		"RC_8Rnd_82mm_Mo_guided",
-		"RC_9Rnd_82mm_Mo_guided",
-		"RC_10Rnd_82mm_Mo_guided",
-		"RC_11Rnd_82mm_Mo_guided",
-		"RC_12Rnd_82mm_Mo_guided",
-		"RC_13Rnd_82mm_Mo_guided",
-		"RC_14Rnd_82mm_Mo_guided",
-		"RC_15Rnd_82mm_Mo_guided",
-		"RC_16Rnd_82mm_Mo_guided",
-		"RC_17Rnd_82mm_Mo_guided",
-		"RC_18Rnd_82mm_Mo_guided",
-		"RC_19Rnd_82mm_Mo_guided",
-		"RC_20Rnd_82mm_Mo_guided",
-		"RC_21Rnd_82mm_Mo_guided",
-		"RC_22Rnd_82mm_Mo_guided",
-		"RC_23Rnd_82mm_Mo_guided",
-		"RC_24Rnd_82mm_Mo_guided",
-		"RC_25Rnd_82mm_Mo_guided",
-		"RC_26Rnd_82mm_Mo_guided",
-		"RC_27Rnd_82mm_Mo_guided",
-		"RC_28Rnd_82mm_Mo_guided",
-		"RC_29Rnd_82mm_Mo_guided",
-		"RC_30Rnd_82mm_Mo_guided",
-		"RC_31Rnd_82mm_Mo_guided",
-		"RC_32Rnd_82mm_Mo_guided",
-		"RC_33Rnd_82mm_Mo_guided",
-		"RC_34Rnd_82mm_Mo_guided",
-		"RC_35Rnd_82mm_Mo_guided",
-		"RC_36Rnd_82mm_Mo_guided",
-		"RC_37Rnd_82mm_Mo_guided",
-		"RC_38Rnd_82mm_Mo_guided",
-		"RC_39Rnd_82mm_Mo_guided",
-		"RC_40Rnd_82mm_Mo_guided",
-		*/
 
 		"RC_1Rnd_82mm_Mo_mine",
 		"RC_2Rnd_82mm_Mo_mine",
@@ -1115,6 +986,47 @@ class RC_ShipCannon_120mm_V1: RC_ShipCannon_120mm_base
 		"RC_39Rnd_120mm_Mo_Cluster",
 		"RC_40Rnd_120mm_Mo_Cluster",
 
+		"RC_1Rnd_120mm_Mo_LaserGuided",
+		"RC_2Rnd_120mm_Mo_LaserGuided",
+		"RC_3Rnd_120mm_Mo_LaserGuided",
+		"RC_4Rnd_120mm_Mo_LaserGuided",
+		"RC_5Rnd_120mm_Mo_LaserGuided",
+		"RC_6Rnd_120mm_Mo_LaserGuided",
+		"RC_7Rnd_120mm_Mo_LaserGuided",
+		"RC_8Rnd_120mm_Mo_LaserGuided",
+		"RC_9Rnd_120mm_Mo_LaserGuided",
+		"RC_10Rnd_120mm_Mo_LaserGuided",
+		"RC_11Rnd_120mm_Mo_LaserGuided",
+		"RC_12Rnd_120mm_Mo_LaserGuided",
+		"RC_13Rnd_120mm_Mo_LaserGuided",
+		"RC_14Rnd_120mm_Mo_LaserGuided",
+		"RC_15Rnd_120mm_Mo_LaserGuided",
+		"RC_16Rnd_120mm_Mo_LaserGuided",
+		"RC_17Rnd_120mm_Mo_LaserGuided",
+		"RC_18Rnd_120mm_Mo_LaserGuided",
+		"RC_19Rnd_120mm_Mo_LaserGuided",
+		"RC_20Rnd_120mm_Mo_LaserGuided",
+		"RC_21Rnd_120mm_Mo_LaserGuided",
+		"RC_22Rnd_120mm_Mo_LaserGuided",
+		"RC_23Rnd_120mm_Mo_LaserGuided",
+		"RC_24Rnd_120mm_Mo_LaserGuided",
+		"RC_25Rnd_120mm_Mo_LaserGuided",
+		"RC_26Rnd_120mm_Mo_LaserGuided",
+		"RC_27Rnd_120mm_Mo_LaserGuided",
+		"RC_28Rnd_120mm_Mo_LaserGuided",
+		"RC_29Rnd_120mm_Mo_LaserGuided",
+		"RC_30Rnd_120mm_Mo_LaserGuided",
+		"RC_31Rnd_120mm_Mo_LaserGuided",
+		"RC_32Rnd_120mm_Mo_LaserGuided",
+		"RC_33Rnd_120mm_Mo_LaserGuided",
+		"RC_34Rnd_120mm_Mo_LaserGuided",
+		"RC_35Rnd_120mm_Mo_LaserGuided",
+		"RC_36Rnd_120mm_Mo_LaserGuided",
+		"RC_37Rnd_120mm_Mo_LaserGuided",
+		"RC_38Rnd_120mm_Mo_LaserGuided",
+		"RC_39Rnd_120mm_Mo_LaserGuided",
+		"RC_40Rnd_120mm_Mo_LaserGuided",
+
 		"RC_1Rnd_120mm_Mo_MultiGuided",
 		"RC_2Rnd_120mm_Mo_MultiGuided",
 		"RC_3Rnd_120mm_Mo_MultiGuided",
@@ -1605,150 +1517,6 @@ class RC_ShipCannon_120mm_V4: RC_ShipCannon_120mm_V3
 };
 
 
-//120mm NLOS FSV, roughly 4km indirect range with its cannon elevation
-class RC_FSV_120mm_V5: RC_ShipCannon_120mm_V4
-{
-	displayName="NLOS 120mm";
-	ballisticsComputer=0;	//direct fire reticle for highest charge
-
-	magazines[]=
-	{
-		"RC_1Rnd_FSV_120mm_Mo_HEAB",
-		"RC_2Rnd_FSV_120mm_Mo_HEAB",
-		"RC_3Rnd_FSV_120mm_Mo_HEAB",
-		"RC_4Rnd_FSV_120mm_Mo_HEAB",
-		"RC_5Rnd_FSV_120mm_Mo_HEAB",
-		"RC_6Rnd_FSV_120mm_Mo_HEAB",
-		"RC_7Rnd_FSV_120mm_Mo_HEAB",
-		"RC_8Rnd_FSV_120mm_Mo_HEAB",
-		"RC_9Rnd_FSV_120mm_Mo_HEAB",
-		"RC_10Rnd_FSV_120mm_Mo_HEAB",
-		"RC_11Rnd_FSV_120mm_Mo_HEAB",
-		"RC_12Rnd_FSV_120mm_Mo_HEAB",
-
-		"RC_1Rnd_FSV_120mm_Mo_smoke",
-		"RC_2Rnd_FSV_120mm_Mo_smoke",
-		"RC_3Rnd_FSV_120mm_Mo_smoke",
-		"RC_4Rnd_FSV_120mm_Mo_smoke",
-		"RC_5Rnd_FSV_120mm_Mo_smoke",
-		"RC_6Rnd_FSV_120mm_Mo_smoke",
-		"RC_7Rnd_FSV_120mm_Mo_smoke",
-		"RC_8Rnd_FSV_120mm_Mo_smoke",
-		"RC_9Rnd_FSV_120mm_Mo_smoke",
-		"RC_10Rnd_FSV_120mm_Mo_smoke",
-		"RC_11Rnd_FSV_120mm_Mo_smoke",
-		"RC_12Rnd_FSV_120mm_Mo_smoke",
-
-		"RC_1Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_2Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_3Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_4Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_5Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_6Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_7Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_8Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_9Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_10Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_11Rnd_FSV_120mm_Mo_MultiGuided",
-		"RC_12Rnd_FSV_120mm_Mo_MultiGuided",
-
-		"RC_1Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_2Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_3Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_4Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_5Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_6Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_7Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_8Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_9Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_10Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_11Rnd_FSV_120mm_Mo_LG_DelayedFuse",
-		"RC_12Rnd_FSV_120mm_Mo_LG_DelayedFuse"
-	};
-
-	modes[]=
-	{
-		"Single1",
-		"Single2",
-		"Single3",
-		"Single4"
-	};
-
-	class Single1: Single1
-	{
-		/*
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			begin1[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\slammer_120mm_distant",
-				3.1622777,
-				1,
-				1500
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
-		*/
-		displayName="CH0"
-		artilleryCharge=0.3845;
-	};
-	class Single2: Single1
-	{
-		displayName="CH1"
-		artilleryCharge=0.4883;
-	};
-	class Single3: Single1
-	{
-		displayName="CH2"
-		artilleryCharge=0.6201;
-	};
-	class Single4: Single1
-	{
-		displayName="CH3"
-		artilleryCharge=0.7875;
-	};
-	class Single5: Single1
-	{
-		displayName="CH4"
-		artilleryCharge=1;
-	};
-
-	class GunParticles
-	{
-		class FirstEffect
-		{
-			effectName="CannonFired";
-			positionName="Usti hlavne";
-			directionName="Konec hlavne";
-		};
-	};
-	/*
-	reloadSound[]=
-	{
-		"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\Cannon_120mm_Reload_01",
-		2.5118864,
-		1,
-		10
-	};
-	reloadMagazineSound[]=
-	{
-		"A3\Sounds_F\arsenal\weapons_vehicles\cannon_120mm\Cannon_120mm_Reload_01",
-		2.5118864,
-		1,
-		10
-	};
-	*/
-};
-
-
 //120mm LOS Cannon, of NLOS FSV
 class cannon_120mm;
 class RC_cannon_120mm: cannon_120mm
@@ -1952,6 +1720,47 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 		"RC_39Rnd_155mm_Mo_Cluster",
 		"RC_40Rnd_155mm_Mo_Cluster",
 
+		"RC_1Rnd_155mm_Mo_LaserGuided",
+		"RC_2Rnd_155mm_Mo_LaserGuided",
+		"RC_3Rnd_155mm_Mo_LaserGuided",
+		"RC_4Rnd_155mm_Mo_LaserGuided",
+		"RC_5Rnd_155mm_Mo_LaserGuided",
+		"RC_6Rnd_155mm_Mo_LaserGuided",
+		"RC_7Rnd_155mm_Mo_LaserGuided",
+		"RC_8Rnd_155mm_Mo_LaserGuided",
+		"RC_9Rnd_155mm_Mo_LaserGuided",
+		"RC_10Rnd_155mm_Mo_LaserGuided",
+		"RC_11Rnd_155mm_Mo_LaserGuided",
+		"RC_12Rnd_155mm_Mo_LaserGuided",
+		"RC_13Rnd_155mm_Mo_LaserGuided",
+		"RC_14Rnd_155mm_Mo_LaserGuided",
+		"RC_15Rnd_155mm_Mo_LaserGuided",
+		"RC_16Rnd_155mm_Mo_LaserGuided",
+		"RC_17Rnd_155mm_Mo_LaserGuided",
+		"RC_18Rnd_155mm_Mo_LaserGuided",
+		"RC_19Rnd_155mm_Mo_LaserGuided",
+		"RC_20Rnd_155mm_Mo_LaserGuided",
+		"RC_21Rnd_155mm_Mo_LaserGuided",
+		"RC_22Rnd_155mm_Mo_LaserGuided",
+		"RC_23Rnd_155mm_Mo_LaserGuided",
+		"RC_24Rnd_155mm_Mo_LaserGuided",
+		"RC_25Rnd_155mm_Mo_LaserGuided",
+		"RC_26Rnd_155mm_Mo_LaserGuided",
+		"RC_27Rnd_155mm_Mo_LaserGuided",
+		"RC_28Rnd_155mm_Mo_LaserGuided",
+		"RC_29Rnd_155mm_Mo_LaserGuided",
+		"RC_30Rnd_155mm_Mo_LaserGuided",
+		"RC_31Rnd_155mm_Mo_LaserGuided",
+		"RC_32Rnd_155mm_Mo_LaserGuided",
+		"RC_33Rnd_155mm_Mo_LaserGuided",
+		"RC_34Rnd_155mm_Mo_LaserGuided",
+		"RC_35Rnd_155mm_Mo_LaserGuided",
+		"RC_36Rnd_155mm_Mo_LaserGuided",
+		"RC_37Rnd_155mm_Mo_LaserGuided",
+		"RC_38Rnd_155mm_Mo_LaserGuided",
+		"RC_39Rnd_155mm_Mo_LaserGuided",
+		"RC_40Rnd_155mm_Mo_LaserGuided",
+
 		"RC_1Rnd_155mm_Mo_MultiGuided",
 		"RC_2Rnd_155mm_Mo_MultiGuided",
 		"RC_3Rnd_155mm_Mo_MultiGuided",
@@ -1992,92 +1801,6 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 		"RC_38Rnd_155mm_Mo_MultiGuided",
 		"RC_39Rnd_155mm_Mo_MultiGuided",
 		"RC_40Rnd_155mm_Mo_MultiGuided",
-
-		/*
-		"RC_1Rnd_155mm_Mo_LG",
-		"RC_2Rnd_155mm_Mo_LG",
-		"RC_3Rnd_155mm_Mo_LG",
-		"RC_4Rnd_155mm_Mo_LG",
-		"RC_5Rnd_155mm_Mo_LG",
-		"RC_6Rnd_155mm_Mo_LG",
-		"RC_7Rnd_155mm_Mo_LG",
-		"RC_8Rnd_155mm_Mo_LG",
-		"RC_9Rnd_155mm_Mo_LG",
-		"RC_10Rnd_155mm_Mo_LG",
-		"RC_11Rnd_155mm_Mo_LG",
-		"RC_12Rnd_155mm_Mo_LG",
-		"RC_13Rnd_155mm_Mo_LG",
-		"RC_14Rnd_155mm_Mo_LG",
-		"RC_15Rnd_155mm_Mo_LG",
-		"RC_16Rnd_155mm_Mo_LG",
-		"RC_17Rnd_155mm_Mo_LG",
-		"RC_18Rnd_155mm_Mo_LG",
-		"RC_19Rnd_155mm_Mo_LG",
-		"RC_20Rnd_155mm_Mo_LG",
-		"RC_21Rnd_155mm_Mo_LG",
-		"RC_22Rnd_155mm_Mo_LG",
-		"RC_23Rnd_155mm_Mo_LG",
-		"RC_24Rnd_155mm_Mo_LG",
-		"RC_25Rnd_155mm_Mo_LG",
-		"RC_26Rnd_155mm_Mo_LG",
-		"RC_27Rnd_155mm_Mo_LG",
-		"RC_28Rnd_155mm_Mo_LG",
-		"RC_29Rnd_155mm_Mo_LG",
-		"RC_30Rnd_155mm_Mo_LG",
-		"RC_31Rnd_155mm_Mo_LG",
-		"RC_32Rnd_155mm_Mo_LG",
-		"RC_33Rnd_155mm_Mo_LG",
-		"RC_34Rnd_155mm_Mo_LG",
-		"RC_35Rnd_155mm_Mo_LG",
-		"RC_36Rnd_155mm_Mo_LG",
-		"RC_37Rnd_155mm_Mo_LG",
-		"RC_38Rnd_155mm_Mo_LG",
-		"RC_39Rnd_155mm_Mo_LG",
-		"RC_40Rnd_155mm_Mo_LG",
-		*/
-
-		/*
-		"RC_1Rnd_155mm_Mo_guided",
-		"RC_2Rnd_155mm_Mo_guided",
-		"RC_3Rnd_155mm_Mo_guided",
-		"RC_4Rnd_155mm_Mo_guided",
-		"RC_5Rnd_155mm_Mo_guided",
-		"RC_6Rnd_155mm_Mo_guided",
-		"RC_7Rnd_155mm_Mo_guided",
-		"RC_8Rnd_155mm_Mo_guided",
-		"RC_9Rnd_155mm_Mo_guided",
-		"RC_10Rnd_155mm_Mo_guided",
-		"RC_11Rnd_155mm_Mo_guided",
-		"RC_12Rnd_155mm_Mo_guided",
-		"RC_13Rnd_155mm_Mo_guided",
-		"RC_14Rnd_155mm_Mo_guided",
-		"RC_15Rnd_155mm_Mo_guided",
-		"RC_16Rnd_155mm_Mo_guided",
-		"RC_17Rnd_155mm_Mo_guided",
-		"RC_18Rnd_155mm_Mo_guided",
-		"RC_19Rnd_155mm_Mo_guided",
-		"RC_20Rnd_155mm_Mo_guided",
-		"RC_21Rnd_155mm_Mo_guided",
-		"RC_22Rnd_155mm_Mo_guided",
-		"RC_23Rnd_155mm_Mo_guided",
-		"RC_24Rnd_155mm_Mo_guided",
-		"RC_25Rnd_155mm_Mo_guided",
-		"RC_26Rnd_155mm_Mo_guided",
-		"RC_27Rnd_155mm_Mo_guided",
-		"RC_28Rnd_155mm_Mo_guided",
-		"RC_29Rnd_155mm_Mo_guided",
-		"RC_30Rnd_155mm_Mo_guided",
-		"RC_31Rnd_155mm_Mo_guided",
-		"RC_32Rnd_155mm_Mo_guided",
-		"RC_33Rnd_155mm_Mo_guided",
-		"RC_34Rnd_155mm_Mo_guided",
-		"RC_35Rnd_155mm_Mo_guided",
-		"RC_36Rnd_155mm_Mo_guided",
-		"RC_37Rnd_155mm_Mo_guided",
-		"RC_38Rnd_155mm_Mo_guided",
-		"RC_39Rnd_155mm_Mo_guided",
-		"RC_40Rnd_155mm_Mo_guided",
-		*/
 
 		"RC_1Rnd_155mm_Mo_mine",
 		"RC_2Rnd_155mm_Mo_mine",
@@ -2577,6 +2300,19 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT
 		"RC_10Rnd_230mm_rockets_cluster",
 		"RC_11Rnd_230mm_rockets_cluster",
 		"RC_12Rnd_230mm_rockets_cluster",
+
+		"RC_1Rnd_230mm_rockets_LaserGuided",
+		"RC_2Rnd_230mm_rockets_LaserGuided",
+		"RC_3Rnd_230mm_rockets_LaserGuided",
+		"RC_4Rnd_230mm_rockets_LaserGuided",
+		"RC_5Rnd_230mm_rockets_LaserGuided",
+		"RC_6Rnd_230mm_rockets_LaserGuided",
+		"RC_7Rnd_230mm_rockets_LaserGuided",
+		"RC_8Rnd_230mm_rockets_LaserGuided",
+		"RC_9Rnd_230mm_rockets_LaserGuided",
+		"RC_10Rnd_230mm_rockets_LaserGuided",
+		"RC_11Rnd_230mm_rockets_LaserGuided",
+		"RC_12Rnd_230mm_rockets_LaserGuided",
 
 		"RC_1Rnd_230mm_rockets_MultiGuided",
 		"RC_2Rnd_230mm_rockets_MultiGuided",

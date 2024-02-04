@@ -300,7 +300,6 @@ class RC_radar_small_WD: RC_radar_small_base
 		init="(_this select 0) spawn {};";
 	};
 	*/
-
 	displayName="RC Recon Radar";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
@@ -309,7 +308,6 @@ class RC_radar_small_WD: RC_radar_small_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -318,11 +316,9 @@ class RC_radar_small_WD: RC_radar_small_base
 	uavCameraDriverDir="PiP0_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
-
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
 	redRpm=1100;
 	idleRpm=250;
 
@@ -504,7 +500,6 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -513,14 +508,11 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
-
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
 	redRpm=1100;
 	idleRpm=250;
-
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
@@ -554,19 +546,19 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=2000;
 
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
@@ -577,19 +569,19 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=750;
+					typeRecognitionDistance=1000;
 
 					class AirTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=1500;
+						maxRange=1500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=1500;
+						maxRange=1500;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
@@ -722,8 +714,6 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 				maxFov=0.89999998;
 			};
 
-			//showAllTargets="2 + 4";
-
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -814,6 +804,11 @@ class RC_ATGM_small_S_WD: RC_ATGM_small_WD
 		class MainTurret: MainTurret
 		{
 			stabilizedInAxes=3;
+
+			class ViewOptics: ViewOptics
+			{
+				directionStabilized=1;
+			};
 		};
 	};
 };
