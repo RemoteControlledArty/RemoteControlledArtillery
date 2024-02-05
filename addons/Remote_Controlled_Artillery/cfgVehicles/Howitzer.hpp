@@ -132,7 +132,7 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			maxElev=86;
+			maxElev=87.02;
 
 			class OpticsIn: OpticsIn
 			{
@@ -274,9 +274,9 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 			};
 			magazines[]=
 			{
-				"RC_10Rnd_155mm_Mo_HEAB",
-				"RC_10Rnd_155mm_Mo_lowHEAB",
-				"RC_10Rnd_155mm_Mo_shells",
+				"RC_12Rnd_155mm_Mo_HEAB",
+				"RC_12Rnd_155mm_Mo_lowHEAB",
+				"RC_12Rnd_155mm_Mo_shells",
 				"RC_20Rnd_155mm_Mo_smoke",
 				"RC_3Rnd_155mm_Mo_LaserGuided",
 				"RC_3Rnd_155mm_Mo_MultiGuided",
@@ -308,9 +308,9 @@ class RC_Howitzer_WD: RC_Howitzer_NA_WD
 			};
 			magazines[]=
 			{
-				"RC_10Rnd_155mm_Mo_HEAB",
-				"RC_10Rnd_155mm_Mo_lowHEAB",
-				"RC_10Rnd_155mm_Mo_shells",
+				"RC_12Rnd_155mm_Mo_HEAB",
+				"RC_12Rnd_155mm_Mo_lowHEAB",
+				"RC_12Rnd_155mm_Mo_shells",
 				"RC_20Rnd_155mm_Mo_smoke",
 				"RC_3Rnd_155mm_Mo_LaserGuided",
 				"RC_3Rnd_155mm_Mo_MultiGuided",
@@ -495,7 +495,7 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			maxElev=86;
+			maxElev=87.02;
 
 			class OpticsIn: OpticsIn
 			{
@@ -603,7 +603,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
 			};
 			magazines[]=
 			{
-				"RC_10Rnd_155mm_Mo_HEAB",
+				"RC_12Rnd_155mm_Mo_HEAB",
 				"RC_20Rnd_155mm_Mo_smoke",
 				"RC_3Rnd_155mm_Mo_MultiGuided",
 				"RC_3Rnd_155mm_Mo_MultiGuided",
@@ -633,7 +633,7 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
 			};
 			magazines[]=
 			{
-				"RC_10Rnd_155mm_Mo_HEAB",
+				"RC_12Rnd_155mm_Mo_HEAB",
 				"RC_20Rnd_155mm_Mo_smoke",
 				"RC_3Rnd_155mm_Mo_LaserGuided",
 				"RC_3Rnd_155mm_Mo_MultiGuided",
@@ -745,13 +745,15 @@ class RC_Static_Arty: RC_Static_NA_Arty
 	{
 		class MainTurret: MainTurret
 		{
+			maxelev=87.02;
+
 			weapons[]=
 			{
 				"RC_ShipCannon_120mm_V4"
 			};
 			magazines[]=
 			{
-				"RC_10Rnd_120mm_Mo_HEAB",
+				"RC_12Rnd_120mm_Mo_HEAB",
 				"RC_20Rnd_120mm_Mo_smoke",
 				"RC_3Rnd_120mm_Mo_LaserGuided",
 				"RC_3Rnd_120mm_Mo_MultiGuided",

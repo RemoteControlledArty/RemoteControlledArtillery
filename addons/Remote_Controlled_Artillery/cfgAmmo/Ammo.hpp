@@ -894,7 +894,7 @@ class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 	submunitionConeType[]=
 	{
 		"poissondisc",
-		3
+		4
 	};
 	submunitionConeAngle=10;
 	triggerDistance=50;
@@ -1462,10 +1462,49 @@ class Cluster_155mm_AMOS;
 class RC_Cluster_105mm_AMOS: Cluster_155mm_AMOS
 {
 	aiAmmoUsageFlags="64 + 128";
+	submunitionConeAngle=15.25;
 	submunitionConeType[]=
 	{
 		"poissondisc",
 		32
+	};
+};
+
+
+class Mine_155mm_AMOS_range;
+class RC_Mine_105mm_AMOS_range: Mine_155mm_AMOS_range
+{
+	aiAmmoUsageFlags=16;
+	submunitionAmmo="RC_Mo_ClassicMineRange";
+	submunitionConeAngle=8.74;
+	submunitionConeType[]=
+	{
+		"custom", {{1,0} , {0.866,0.5},{0.5,0.866}, {0,1} , {-0.866,0.5},{-0.5,0.866} , {-1,0} , {-0.866,-0.5},{-0.5,-0.866} , {0,-1} , {0.866,-0.5},{0.5,-0.866}};
+	};
+};
+
+
+class AT_Mine_155mm_AMOS_range;
+class RC_AT_Mine_105mm_AMOS_range: AT_Mine_155mm_AMOS_range
+{
+	aiAmmoUsageFlags=16;
+	submunitionConeAngle=8.74;
+	submunitionConeType[]=
+	{
+		"custom", {{1,0} , {0.866,0.5},{0.5,0.866}, {0,1} , {-0.866,0.5},{-0.5,0.866} , {-1,0} , {-0.866,-0.5},{-0.5,-0.866} , {0,-1} , {0.866,-0.5},{0.5,-0.866}};
+	};
+};
+
+
+class RC_Smoke_105mm_AMOS_White: Smoke_120mm_AMOS_White
+{
+	aiAmmoUsageFlags=4;
+	submunitionAmmo="RC_SmokeShellArty";
+	submunitionConeAngle=10;
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		8
 	};
 };
 
@@ -1719,6 +1758,7 @@ class RC_Sh_120mm_AMOS_LG_DelayedFuse: RC_Sh_120mm_AMOS_MP_MultiGuided
 class RC_Cluster_120mm_AMOS: Cluster_155mm_AMOS
 {
 	aiAmmoUsageFlags="64 + 128";
+	submunitionConeAngle=16.6;
 	submunitionConeType[]=
 	{
 		"poissondisc",
@@ -1727,23 +1767,38 @@ class RC_Cluster_120mm_AMOS: Cluster_155mm_AMOS
 };
 
 
-//120mm NLOS, of N/LOS FSV
-class RC_Sh_120mm_AMOS_HE_FSV: Sh_155mm_AMOS
+class RC_Mine_120mm_AMOS_range: RC_Mine_105mm_AMOS_range
 {
-	aiAmmoUsageFlags="64 + 128";
-	triggerDistance=-1;
-	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,4,0};
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionAmmo="RC_Sh_120mm_AMOS_submunition";
-	hit=236.7;
-	indirectHit=0;
-	indirectHitRange=0;
-	cost=266;
+	submunitionConeAngle=10.2;
+	submunitionConeType[]=
+	{
+		"custom", {{1,0} , {0.901,0.4339},{0.6235,0.7818}, {0.2225,0.9749} , {-0.2225,0.9749},{-0.6235,0.7818},{-0.901,0.4339} , {-1,0} , {-0.901,-0.4339},{-0.6235,-0.7818},{-0.2225,-0.9749} , {0.2225,-0.9749},{0.6235,-0.7818},{0.901,-0.4339}};
+	};
 };
 
 
-//120mm LOS, of N/LOS FSV
+class RC_AT_Mine_120mm_AMOS_range: RC_AT_Mine_105mm_AMOS_range
+{
+	submunitionConeAngle=10.2;
+	submunitionConeType[]=
+	{
+		"custom", {{1,0} , {0.901,0.4339},{0.6235,0.7818}, {0.2225,0.9749} , {-0.2225,0.9749},{-0.6235,0.7818},{-0.901,0.4339} , {-1,0} , {-0.901,-0.4339},{-0.6235,-0.7818},{-0.2225,-0.9749} , {0.2225,-0.9749},{0.6235,-0.7818},{0.901,-0.4339}};
+	};
+};
+
+
+class RC_Smoke_120mm_AMOS_White: RC_Smoke_105mm_AMOS_White
+{
+	submunitionConeAngle=10;
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		10
+	};
+};
+
+
+//120mm of FSV/MBT
 class ammo_Penetrator_120mm;
 class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
 {
@@ -1868,40 +1923,33 @@ class Flare_155mm_AMOS_White: SubmunitionBase
 };
 
 
-class Mine_155mm_AMOS_range;
-class RC_Mine_155mm_AMOS_range: Mine_155mm_AMOS_range
+class RC_Mine_155mm_AMOS_range: RC_Mine_105mm_AMOS_range
 {
-	aiAmmoUsageFlags=16;
-	submunitionAmmo="RC_Mo_ClassicMineRange";
-	submunitionConeAngle=12;
+	submunitionConeAngle=13.07;
 	submunitionConeType[]=
 	{
-		"custom", {{0.95,0.31},{0.81,0.59},{0.59,0.81},{0.31,0.95},{0,1}  ,  {-0.95,0.31},{-0.81,0.59},{-0.59,0.81},{-0.31,0.95},{-1,0}  ,  {0.95,-0.31},{0.81,-0.59},{0.59,-0.81},{0.31,-0.95},{0,-1}  ,  {-0.95,-0.31},{-0.81,-0.59},{-0.59,-0.81},{-0.31,-0.95},{1,0}};
+		"custom", {{1,0} , {0.9397,0.342},{0.766,0.6428},{0.5,0.866},{0.1736,0.9848} , {-0.9397,0.342},{-0.766,0.6428},{-0.5,0.866},{-0.1736,0.9848} , {-1,0} , {-0.9397,-0.342},{-0.766,-0.6428},{-0.5,-0.866},{-0.1736,-0.9848} , {0.9397,-0.342},{0.766,-0.6428},{0.5,-0.866},{0.1736,-0.9848}};
 	};
 };
 
 
-class AT_Mine_155mm_AMOS_range;
-class RC_AT_Mine_155mm_AMOS_range: AT_Mine_155mm_AMOS_range
+class RC_AT_Mine_155mm_AMOS_range: RC_AT_Mine_105mm_AMOS_range
 {
-	aiAmmoUsageFlags=16;
-	submunitionConeAngle=12;
+	submunitionConeAngle=13.07;
 	submunitionConeType[]=
 	{
-		"custom", {{0.9511,0.309},{0.809,0.5878},{0.5878,0.809},{0.309,0.9511},{0,1}  ,  {-0.9511,0.309},{-0.809,0.5878},{-0.5878,0.809},{-0.309,0.9511},{-1,0}  ,  {0.9511,-0.309},{0.809,-0.5878},{0.5878,-0.809},{0.309,-0.9511},{0,-1}  ,  {-0.9511,-0.309},{-0.809,-0.5878},{-0.5878,-0.809},{-0.309,-0.9511},{1,0}};
+		"custom", {{1,0} , {0.9397,0.342},{0.766,0.6428},{0.5,0.866},{0.1736,0.9848} , {-0.9397,0.342},{-0.766,0.6428},{-0.5,0.866},{-0.1736,0.9848} , {-1,0} , {-0.9397,-0.342},{-0.766,-0.6428},{-0.5,-0.866},{-0.1736,-0.9848} , {0.9397,-0.342},{0.766,-0.6428},{0.5,-0.866},{0.1736,-0.9848}};
 	};
 };
 
 
-class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
+class RC_Smoke_155mm_AMOS_White: RC_Smoke_105mm_AMOS_White
 {
-	aiAmmoUsageFlags=4;
-	submunitionAmmo="RC_SmokeShellArty";
 	submunitionConeAngle=10;
 	submunitionConeType[]=
 	{
 		"poissondisc",
-		10
+		12
 	};
 };
 
@@ -1909,6 +1957,7 @@ class RC_Smoke_155mm_AMOS_White: Smoke_120mm_AMOS_White
 class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 {
 	aiAmmoUsageFlags="64 + 128";
+	submunitionConeAngle=19;
 	submunitionConeType[]=
 	{
 		"poissondisc",

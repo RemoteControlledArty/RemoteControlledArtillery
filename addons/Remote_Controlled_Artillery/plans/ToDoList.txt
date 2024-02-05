@@ -28,6 +28,7 @@ if (!isserver) exitwith {}; = server client only, not every player client
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
+-decide on guided name, and amount, LG is useless on flat/urban maps, 4-5 MG might be ok, and 10 AB
 -remove non airburst HE after trajectory testing
 
 -fix HE/HEAB reseting change ammo amount
@@ -106,7 +107,7 @@ DONE - BUGFIXES:
 -lights off, can simply be done by user in the UAV terminal
 -Olive Backpack picture background fix
 -armor value fixes
--changed to 9.8066 Gravity
+-changed to 9.807 Gravity
 -engine turnoff delay exceptions now per cfg value
 -if does not camera points in sky (cannot find range), show red warning "raise camera", (accuracy will be way off and submunitions wont deploy otherwise)
 -fix radar turrets viewoptics maxhorrotspeed

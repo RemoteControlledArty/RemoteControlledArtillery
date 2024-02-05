@@ -1534,7 +1534,7 @@ class RC_40Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
 class RC_1Rnd_82mm_Mo_LG_DelayedFuse: 8Rnd_82mm_Mo_LG
 {
 	ammo="RC_Sh_82mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=210;
+	RC_AimAboveHeight=285;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -2033,8 +2033,8 @@ class RC_1Rnd_105mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_HEAB";
-	RC_AimAboveHeight=21.2;		//airburstheight
-	//RC_AimAboveHeight=20.7;		//airburstheight -0.5m
+	RC_AimAboveHeight=15.3;		//airburstheight
+	//RC_AimAboveHeight=14.8;		//airburstheight -0.5m
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -2201,8 +2201,8 @@ class RC_1Rnd_105mm_Mo_lowHEAB: 32Rnd_155mm_Mo_shells
 {
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_lowHEAB";
-	RC_AimAboveHeight=10.6;		//airburstheight
-	//RC_AimAboveHeight=10.1;		//airburstheight -0.5m
+	RC_AimAboveHeight=7.65;		//airburstheight
+	//RC_AimAboveHeight=7.15;		//airburstheight -0.5m
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -2369,7 +2369,7 @@ class 6Rnd_155mm_Mo_mine;
 class RC_1Rnd_105mm_Mo_mine: 6Rnd_155mm_Mo_mine
 {
 	initSpeed=400;
-	ammo="RC_Mine_155mm_AMOS_range";
+	ammo="RC_Mine_105mm_AMOS_range";
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -3205,7 +3205,7 @@ class 6Rnd_155mm_Mo_AT_mine;
 class RC_1Rnd_105mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 {
 	initSpeed=400;
-	ammo="RC_AT_Mine_155mm_AMOS_range";
+	ammo="RC_AT_Mine_105mm_AMOS_range";
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -3703,7 +3703,7 @@ class RC_1Rnd_105mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
 {
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=560;
+	RC_AimAboveHeight=760;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -5035,7 +5035,7 @@ class RC_40Rnd_120mm_Mo_Cluster: RC_1Rnd_120mm_Mo_Cluster
 class magazine_ShipCannon_120mm_mine_shells_x6;
 class RC_1Rnd_120mm_Mo_mine: magazine_ShipCannon_120mm_mine_shells_x6
 {
-	ammo="RC_Mine_155mm_AMOS_range";
+	ammo="RC_Mine_120mm_AMOS_range";
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -5367,7 +5367,7 @@ class RC_40Rnd_120mm_Mo_smoke: RC_1Rnd_120mm_Mo_smoke
 class magazine_ShipCannon_120mm_AT_mine_shells_x6;
 class RC_1Rnd_120mm_Mo_AT_mine: magazine_ShipCannon_120mm_AT_mine_shells_x6
 {
-	ammo="RC_AT_Mine_155mm_AMOS_range";
+	ammo="RC_AT_Mine_120mm_AMOS_range";
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -5863,7 +5863,7 @@ class RC_40Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
 class RC_1Rnd_120mm_Mo_LG_DelayedFuse: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=560;
+	RC_AimAboveHeight=760;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -8044,7 +8044,7 @@ class RC_40Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
 class RC_1Rnd_155mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=560;
+	RC_AimAboveHeight=760;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -8866,7 +8866,7 @@ class RC_12Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
 class RC_1Rnd_230mm_rockets_LG_DelayedFuse: 12Rnd_230mm_rockets
 {
 	ammo="RC_230mm_LG_DelayedFuse";
-	RC_AimAboveHeight=560;
+	RC_AimAboveHeight=760;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;

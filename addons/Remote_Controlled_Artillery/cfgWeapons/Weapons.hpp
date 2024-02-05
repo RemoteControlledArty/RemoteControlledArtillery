@@ -701,19 +701,20 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 		displayName="CH2, 4km";
 		artilleryCharge=1;
 	};
+	//used by ai, rof decreased
 	class Burst1: Burst1
 	{
-		burst=1;	//4
+		burst=1;
 		reloadTime=15;
 	};
 	class Burst2: Burst2
 	{
-		burst=1;	//4
+		burst=1;
 		reloadTime=15;
 	};
 	class Burst3: Burst3
 	{
-		burst=1;	//4
+		burst=1;
 		reloadTime=15;
 	};
 };
@@ -1384,6 +1385,7 @@ class RC_ShipCannon_120mm_V2: RC_ShipCannon_120mm_V1
 	{
 		reloadTime=6;
 	};
+	//used by ai, rof decreased
 	class Burst1: Burst1
 	{
 		burst=1;
@@ -1422,7 +1424,6 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 		"Single6",
 		"Single7",
 		"Single8",
-		"Single9",
 		"Burst1",
 		"Burst2",
 		"Burst3",
@@ -1433,46 +1434,41 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 	class Single1: Single1
 	{
 		displayName="CH0"
-		artilleryCharge=0.1479;
+		artilleryCharge=0.19;
 	};
 	class Single2: Single1
 	{
 		displayName="CH1"
-		artilleryCharge=0.1878;
+		artilleryCharge=0.241;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2"
-		artilleryCharge=0.2385;
+		artilleryCharge=0.305;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3"
-		artilleryCharge=0.3029;
+		artilleryCharge=0.387;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4"
-		artilleryCharge=0.3846;
+		artilleryCharge=0.491;
 	};
 	class Single6: Single1
 	{
 		displayName="CH5"
-		artilleryCharge=0.4884;
+		artilleryCharge=0.622;
 	};
 	class Single7: Single1
 	{
 		displayName="CH6"
-		artilleryCharge=0.6201;
+		artilleryCharge=0.789;
 	};
 	class Single8: Single1
 	{
-		displayName="CH7"
-		artilleryCharge=0.7875;
-	};
-	class Single9: Single1
-	{
-		displayName="CH8 direct"
+		displayName="CH7 direct"
 		artilleryCharge=1;
 	};
 };
@@ -1510,14 +1506,10 @@ class RC_ShipCannon_120mm_V4: RC_ShipCannon_120mm_V3
 	{
 		artilleryDispersion=2;
 	};
-	class Single9: Single9
-	{
-		artilleryDispersion=2;
-	};
 };
 
 
-//120mm LOS Cannon, of NLOS FSV
+//120mm Cannon
 class cannon_120mm;
 class RC_cannon_120mm: cannon_120mm
 {
@@ -2118,6 +2110,7 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 	{
 		reloadTime=6;
 	};
+	//used by ai, rof decreased
 	class Burst1: Burst1
 	{
 		burst=1;
@@ -2156,7 +2149,6 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Single6",
 		"Single7",
 		"Single8",
-		"Single9",
 		"Burst1",
 		"Burst2",
 		"Burst3",
@@ -2167,46 +2159,41 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 	class Single1: Single1
 	{
 		displayName="CH0"
-		artilleryCharge=0.1479;
+		artilleryCharge=0.19;
 	};
 	class Single2: Single1
 	{
 		displayName="CH1"
-		artilleryCharge=0.1878;
+		artilleryCharge=0.241;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2"
-		artilleryCharge=0.2385;
+		artilleryCharge=0.305;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3"
-		artilleryCharge=0.3029;
+		artilleryCharge=0.387;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4"
-		artilleryCharge=0.3846;
+		artilleryCharge=0.491;
 	};
 	class Single6: Single1
 	{
 		displayName="CH5"
-		artilleryCharge=0.4884;
+		artilleryCharge=0.622;
 	};
 	class Single7: Single1
 	{
 		displayName="CH6"
-		artilleryCharge=0.6201;
+		artilleryCharge=0.789;
 	};
 	class Single8: Single1
 	{
-		displayName="CH7"
-		artilleryCharge=0.7875;
-	};
-	class Single9: Single1
-	{
-		displayName="CH8 direct"
+		displayName="CH7 direct"
 		artilleryCharge=1;
 	};
 };
@@ -2241,10 +2228,6 @@ class RC_155mm_AMOS_V4: RC_155mm_AMOS_V3
 		artilleryDispersion=2;
 	};
 	class Single8: Single8
-	{
-		artilleryDispersion=2;
-	};
-	class Single9: Single9
 	{
 		artilleryDispersion=2;
 	};

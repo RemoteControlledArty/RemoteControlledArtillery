@@ -170,7 +170,7 @@ RC_Artillery_UI = [] spawn {
 			_currentweapon = currentWeapon _uav;
 			_currentmag = currentMagazine _uav;
 
-			if (_realElevation <= 100) then
+			if (_realElevation <= 50) then
 			{
 				if (_currentmag regexMatch ".*_HEAB.*") then
 				{
@@ -327,7 +327,7 @@ RC_Artillery_UI = [] spawn {
 				if (_targetAzimuth < 0) then { _targetAzimuth = _targetAzimuth + 360; };
 				_targetAzimuth = (17.7777778 * _targetAzimuth);
 
-				_gravity=9.8066;
+				_gravity=9.807;
 
 				// Super Long Line to get the Velocity of the Round
 				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "initSpeed");

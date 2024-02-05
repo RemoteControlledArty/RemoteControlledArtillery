@@ -219,7 +219,8 @@ class RC_MLRS_A: RC_MLRS_NA_A
 			magazines[]=
 			{
 				"RC_6Rnd_230mm_rockets_HEAB",
-				"RC_4Rnd_230mm_rockets_MultiGuided",
+				"RC_2Rnd_230mm_rockets_LaserGuided",
+				"RC_2Rnd_230mm_rockets_MultiGuided",
 				"RC_2Rnd_230mm_rockets_cluster",
 				"SmokeLauncherMag"
 			};
@@ -260,7 +261,8 @@ class RC_MLRS_WD: RC_MLRS_NA_WD
 			magazines[]=
 			{
 				"RC_6Rnd_230mm_rockets_HEAB",
-				"RC_4Rnd_230mm_rockets_MultiGuided",
+				"RC_2Rnd_230mm_rockets_LaserGuided",
+				"RC_2Rnd_230mm_rockets_MultiGuided",
 				"RC_2Rnd_230mm_rockets_cluster",
 				"SmokeLauncherMag"
 			};
@@ -517,7 +519,8 @@ class RC_MRL_DIG: RC_MRL_NA_DIG
 			magazines[]=
 			{
 				"RC_6Rnd_230mm_rockets_HEAB",
-				"RC_4Rnd_230mm_rockets_MultiGuided",
+				"RC_2Rnd_230mm_rockets_LaserGuided",
+				"RC_2Rnd_230mm_rockets_MultiGuided",
 				"RC_2Rnd_230mm_rockets_cluster"
 			};
 			class OpticsIn: OpticsIn
@@ -557,7 +560,8 @@ class RC_MRL_WD: RC_MRL_NA_WD
 			magazines[]=
 			{
 				"RC_6Rnd_230mm_rockets_HEAB",
-				"RC_4Rnd_230mm_rockets_MultiGuided",
+				"RC_2Rnd_230mm_rockets_LaserGuided",
+				"RC_2Rnd_230mm_rockets_MultiGuided",
 				"RC_2Rnd_230mm_rockets_cluster"
 			};
 			class OpticsIn: OpticsIn
