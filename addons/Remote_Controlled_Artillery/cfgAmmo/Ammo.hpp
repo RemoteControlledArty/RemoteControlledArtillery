@@ -1458,6 +1458,18 @@ class RC_Sh_105mm_AMOS_LG_DelayedFuse: RC_Sh_105mm_AMOS_MP_MultiGuided
 };
 
 
+class Cluster_155mm_AMOS;
+class RC_Cluster_105mm_AMOS: Cluster_155mm_AMOS
+{
+	aiAmmoUsageFlags="64 + 128";
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		32
+	};
+};
+
+
 //120mm
 class RC_Sh_120mm_AMOS_submunition: Sh_155mm_AMOS
 {
@@ -1704,14 +1716,13 @@ class RC_Sh_120mm_AMOS_LG_DelayedFuse: RC_Sh_120mm_AMOS_MP_MultiGuided
 };
 
 
-class Cluster_155mm_AMOS;
 class RC_Cluster_120mm_AMOS: Cluster_155mm_AMOS
 {
 	aiAmmoUsageFlags="64 + 128";
 	submunitionConeType[]=
 	{
 		"poissondisc",
-		35
+		38
 	};
 };
 
