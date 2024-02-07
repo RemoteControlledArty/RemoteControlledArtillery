@@ -12,7 +12,6 @@ $[
 ]
 */
 
-
 /*
 	Author: Fluffy
 */
@@ -42,7 +41,9 @@ class RC_Artillery {
 			RscText_1011,
 			RscText_1012,
 			RscText_1013,
-			RscText_1014
+			RscText_1014,
+			RscText_1015,
+			RscText_1016
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT START (by Fluffy, v1.063, #Huxaga)
@@ -156,9 +157,27 @@ class RC_Artillery {
 			h = "0.0850027 * safezoneH";
 			w = "0.3001219 * safezoneW";
 		};
-;
+		class RscText_1015: RscText_1001 
+		{
+			idc = 1015;
+			text = "LOCK TARGET ON DATALINK"; //--- ToDo: Localize;
+			colorText[] = {1,0,0,1};
+			x = "0.885267 * safezoneW + safezoneX";
+			y = "0.1779294 * safezoneH + safezoneY";
+			h = "0.0850027 * safezoneH";
+			w = "0.3001219 * safezoneW";
+		};
+		class RscText_1016: RscText_1001 
+		{
+			idc = 1016;
+			text = "TO ACTIVATE GUIDAINCE"; //--- ToDo: Localize;
+			colorText[] = {1,0,0,1};
+			x = "0.891267 * safezoneW + safezoneX";
+			y = "0.1939294 * safezoneH + safezoneY";
+			h = "0.0850027 * safezoneH";
+			w = "0.3001219 * safezoneW";
+		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
 		////////////////////////////////////////////////////////
-
 };

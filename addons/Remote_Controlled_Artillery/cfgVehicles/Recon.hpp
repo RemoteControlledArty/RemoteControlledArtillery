@@ -26,7 +26,6 @@ class RC_AA_small_WD: RC_AA_small_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -35,14 +34,11 @@ class RC_AA_small_WD: RC_AA_small_base
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
-
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
 	redRpm=1100;
 	idleRpm=250;
-
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
@@ -284,7 +280,6 @@ class RC_radar_small_base: I_LT_01_scout_F
 	class SensorsManagerComponent;
 	class SensorTemplateDataLink;
 	//class EventHandlers;
-	//class ViewOptics;
 	scope=0;
 	scopeCurator=0;
 	forceHideDriver=1;
@@ -295,6 +290,7 @@ class RC_radar_small_base: I_LT_01_scout_F
 class RC_radar_small_WD: RC_radar_small_base
 {
 	/*
+	//for later use
 	class EventHandlers
 	{
 		init="(_this select 0) spawn {};";

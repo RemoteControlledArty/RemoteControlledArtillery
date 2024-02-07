@@ -7,6 +7,8 @@ class RC_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 	class CommanderOptics;
 	class Components;
 	class EventHandlers;
+	class ViewOptics;
+	class ViewPilot;
 	class HitPoints;
 	class HitLFWheel;
 	class HitLBWheel;
@@ -24,8 +26,10 @@ class RC_FSV_A: RC_FSV_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; while {true} do {if (player in (crew _this) && !(driver _this == player)) then {_this lockDriver true;} else {_this lockDriver false;}; sleep 0.5;};}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
+	//for later use, rn bugs driver view
+	//init="(_this select 0) spawn {waitUntil {!isNull driver _this}; while {true} do {if (player in (crew _this) && !(driver _this == player)) then {_this lockDriver true;} else {_this lockDriver false;}; sleep 0.5;};}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 
 	displayName="FSV";
 	faction="RemoteControlled_B";
@@ -39,11 +43,11 @@ class RC_FSV_A: RC_FSV_A_Base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
+	//hideProxyInCombat=1;	//for later use
+	//canHideDriver=1;	//for later use
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -53,8 +57,8 @@ class RC_FSV_A: RC_FSV_A_Base
 	reportRemoteTargets=1;
 	laserScanner=1;
 	incomingMissileDetectionSystem=16;
-	mineDetectorRange=50;	//doesnt work yet
-	canAccessMineDetector=1;	//doesnt work yet
+	//mineDetectorRange=50;	//doesnt work yet
+	//canAccessMineDetector=1;	//doesnt work yet
 
 	class Components: Components
 	{
@@ -126,7 +130,7 @@ class RC_FSV_A: RC_FSV_A_Base
 			weapons[]=
 			{
 				"RC_cannon_120mm",
-				"LMG_coax",
+				"RC_MMG_338_FSV_coax",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -134,10 +138,11 @@ class RC_FSV_A: RC_FSV_A_Base
 				"12Rnd_120mm_APFSDS_shells_Tracer_Green",
 				"16Rnd_120mm_MP_T_Green",
 				"3Rnd_120mm_DLG_cannon_missiles",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
+				"RC_200Rnd_338_T_Mag",
+				"RC_200Rnd_338_T_Mag",
+				"RC_200Rnd_338_T_Mag",
+				"RC_200Rnd_338_T_Mag",
+				"RC_200Rnd_338_T_Mag",
 				"SmokeLauncherMag"
 			};
 		
@@ -153,7 +158,7 @@ class RC_FSV_A: RC_FSV_A_Base
 					maxAngleY=100;
 
 					initFov=1.0;
-					minFov=0.025;
+					minFov=0.0166;
 					maxFov=1.0;
 					visionMode[]=
 					{
@@ -186,12 +191,14 @@ class RC_FSV_A: RC_FSV_A_Base
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 						};
+						/*
 						class MineDetectorDisplay
 						{
 							componentType="MineDetectorDisplayComponent";
 							range=50;
 							resource="RscCustomInfoMineDetect";
 						};
+						*/
 					};
 				};
 			};
@@ -201,6 +208,23 @@ class RC_FSV_A: RC_FSV_A_Base
 				class CommanderOptics: CommanderOptics
 				{
 					commanding=1;
+
+					weapons[]=
+					{
+						"RC_MMG_338_FSV",
+						"Laserdesignator_mounted",
+						"SmokeLauncher"
+					};
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_Mag",
+						"RC_200Rnd_338_T_Mag",
+						"RC_200Rnd_338_T_Mag",
+						"RC_200Rnd_338_T_Mag",
+						"RC_200Rnd_338_T_Mag",
+						"Laserbatteries",
+						"SmokeLauncherMag"
+					};
 
 					class OpticsIn
 					{
@@ -214,7 +238,7 @@ class RC_FSV_A: RC_FSV_A_Base
 							maxAngleY=100;
 
 							initFov=1.0;
-							minFov=0.025;
+							minFov=0.0166;
 							maxFov=1.0;
 							visionMode[]=
 							{
@@ -267,12 +291,14 @@ class RC_FSV_A: RC_FSV_A_Base
 									componentType="TransportFeedDisplayComponent";
 									source="Missile";
 								};
+								/*
 								class MineDetectorDisplay
 								{
 									componentType="MineDetectorDisplayComponent";
 									range=50;
 									resource="RscCustomInfoMineDetect";
 								};
+								*/
 							};
 						};
 					};
@@ -462,10 +488,10 @@ class RC_MBT6_A: RC_MBT6_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; while {true} do {if (player in (crew _this) && !(driver _this == player)) then {_this lockDriver true;} else {_this lockDriver false;}; sleep 0.5;};}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 1; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 
-	displayName="MBT 2+6";
+	displayName="MBT [6 Inf]";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Transport_FSV_subcat";
 	author="Ascent";
@@ -477,8 +503,6 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
@@ -490,8 +514,8 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	reportRemoteTargets=1;
 	laserScanner=1;
 	incomingMissileDetectionSystem=16;
-	mineDetectorRange=50;	//doesnt work yet
-	canAccessMineDetector=1;	//doesnt work yet
+	//mineDetectorRange=50;	//doesnt work yet
+	//canAccessMineDetector=1;	//doesnt work yet
 	maxSpeed=70;
 	enginePower=1538;
 	peakTorque=6250;
@@ -571,16 +595,17 @@ class RC_MBT6_A: RC_MBT6_A_Base
 
 					weapons[]=
 					{
-						"HMG_127_MBT",
+						"RC_MMG_338_MBT",
 						"Laserdesignator_mounted",
 						"SmokeLauncher"
 					};
 					magazines[]=
 					{
-						"200Rnd_127x99_mag_Tracer_Green",
-						"200Rnd_127x99_mag_Tracer_Green",
-						"200Rnd_127x99_mag_Tracer_Green",
-						"200Rnd_127x99_mag_Tracer_Green",
+						"RC_200Rnd_338_T_Mag",
+						"RC_200Rnd_338_T_Mag",
+						"RC_200Rnd_338_T_Mag",
+						"RC_200Rnd_338_T_Mag",
+						"RC_200Rnd_338_T_Mag",
 						"Laserbatteries",
 						"SmokeLauncherMag"
 					};
@@ -597,7 +622,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 							maxAngleY=100;
 
 							initFov=1.0;
-							minFov=0.025;
+							minFov=0.0166;
 							maxFov=1.0;
 							visionMode[]=
 							{
@@ -620,7 +645,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 						minAngleY=-100;
 						maxAngleY=100;
 						initFov=1.0;
-						minFov=0.025;
+						minFov=0.0166;
 						maxFov=1.0;
 						visionMode[]=
 						{
@@ -650,12 +675,14 @@ class RC_MBT6_A: RC_MBT6_A_Base
 									componentType="TransportFeedDisplayComponent";
 									source="Missile";
 								};
+								/*
 								class MineDetectorDisplay
 								{
 									componentType="MineDetectorDisplayComponent";
 									range=50;
 									resource="RscCustomInfoMineDetect";
 								};
+								*/
 							};
 						};
 					};
@@ -665,7 +692,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 			weapons[]=
 			{
 				"RC_cannon_120mm",
-				"LMG_coax",
+				"RC_MMG_338_MBT_coax",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -673,12 +700,11 @@ class RC_MBT6_A: RC_MBT6_A_Base
 				"20Rnd_120mm_APFSDS_shells_Tracer_Green",
 				"20Rnd_120mm_MP_T_Green",
 				"3Rnd_120mm_DLG_cannon_missiles",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
-				"200Rnd_762x51_Belt_Green",
+				"RC_200Rnd_338_T_Mag",
+				"RC_200Rnd_338_T_Mag",
+				"RC_200Rnd_338_T_Mag",
+				"RC_200Rnd_338_T_Mag",
+				"RC_200Rnd_338_T_Mag",
 				"SmokeLauncherMag"
 			};
 
@@ -696,7 +722,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 					maxAngleY=100;
 
 					initFov=1.0;
-					minFov=0.025;
+					minFov=0.0166;
 					maxFov=1.0;
 					visionMode[]=
 					{
@@ -729,12 +755,14 @@ class RC_MBT6_A: RC_MBT6_A_Base
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 						};
+						/*
 						class MineDetectorDisplay
 						{
 							componentType="MineDetectorDisplayComponent";
 							range=50;
 							resource="RscCustomInfoMineDetect";
 						};
+						*/
 					};
 				};
 			};

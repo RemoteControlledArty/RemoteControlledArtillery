@@ -83,7 +83,59 @@ class RC_missiles_titan_static: missiles_titan_static
 	magazineReloadTime=7;
 	magazines[]=
 	{
-		"RC_1Rnd_MP_missiles",
+		"RC_1Rnd_MP_missiles"
+	};
+};
+
+
+class HMG_127_AFV;
+class RC_MMG_338_FSV: HMG_127_AFV
+{
+	author="Ascent";
+	displayName=".338 NM";
+	maxZeroing=3000;
+	FCSZeroingDelay=0.75;
+
+	magazines[]=
+	{
+		"RC_200Rnd_338_T_Mag"
+	};
+};
+class RC_MMG_338_FSV_coax: RC_MMG_338_FSV
+{
+	class GunParticles
+	{
+		class effect1
+		{
+			positionName="muzzle_2_beg";
+			directionName="muzzle_2_end";
+			effectName="MachineGunCloud";
+		};
+	};
+};
+class HMG_127_MBT;
+class RC_MMG_338_MBT: HMG_127_MBT
+{
+	author="Ascent";
+	displayName=".338 NM";
+	maxZeroing=3000;
+	FCSZeroingDelay=0.75;
+
+	magazines[]=
+	{
+		"RC_200Rnd_338_T_Mag"
+	};
+};
+class RC_MMG_338_MBT_coax: RC_MMG_338_MBT
+{
+	class GunParticles
+	{
+		class effect1
+		{
+			positionName="usti hlavne3";
+			directionName="konec hlavne3";
+			effectName="MachineGunCloud";
+		};
 	};
 };
 

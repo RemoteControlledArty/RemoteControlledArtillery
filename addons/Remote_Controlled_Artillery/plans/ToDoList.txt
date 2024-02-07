@@ -12,15 +12,13 @@
 
 TO DO - BUGFIXES:
 
--REPORT BUG to ace team: crl+h cuts connection and destroys UV
--turret is locked unable to adjust up/down, when scope of player is adjustable...
-
+-report bug to ace team: turret is locked unable to adjust up/down, when scope of player is adjustable, despite being in remote control
+-report bug to ace team: crl+h cuts connection and destroys UV
 
 TO DO - FEATURES:
 
 General:
 -update right/left panel options, except for arty
--copy experimental and remove files, clean files up
 
 EH:
 if (!isserver) exitwith {}; = server client only, not every player client
@@ -28,7 +26,6 @@ if (!isserver) exitwith {}; = server client only, not every player client
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
--decide on guided name, and amount, LG is useless on flat/urban maps, 4-5 MG might be ok, and 10 AB
 -remove non airburst HE after trajectory testing
 
 -fix HE/HEAB reseting change ammo amount
@@ -38,20 +35,6 @@ Arty:
 -make sure blastcore etc doesnt remove ground dust animation
 -recon radar+vehicle mortar composition (maybe hide legs)
 
-RC IC:
--fix smokelauncher
--later: if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged (explosion timer shortend for now)
--later: fix or remove datalink panel (removed for now)
--later: how to add T14 like driver screen?
-
-RC Respawn Truck:
--fix camera on those who have problems
--later: edit hitpoints? *for now threat/cost reduced
-
-FSV/MBT:
--fix driver forceoptics not working
-
-
 
 
 
@@ -59,10 +42,17 @@ TO DO - QUALITY OF LIFE:
 
 -smaller magazine shell count selection in attributes
 
+POSTPONED:
 
-Postponed:
+-RC IC fix smokelauncher
+-RC IC if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged (explosion timer shortend for now)
+-RC IC fix and readd datalink panel (removed for now)
+-RC IC add different driver screen (T14 like)
 
--RC IC smoke screen launcher
+-RC Res make driver camera available for Transporter&Van, after having found a fix
+-RC Res edit hitpoints (for now threat/cost is reduced)
+-RC Res for the repair version, vehicle (thislist select 0) setfuel 1; vehicle (thislist select 0) setdamage 0; https://community.bistudio.com/wiki/createTrigger
+
 -fix Static AT laser engaging (how?)
 -RADAR deactivates after releasing control even when not autonomous, maybe use human crew and locking seats instead?
 -look up if inheriting structure is fully correct
@@ -71,7 +61,6 @@ Postponed:
 -more RC Infantry Carrier's / APC's / IVF's
 -ETA 5sec warning message
 -proximityExplosionDistance= ; ammo testing
-
 
 IDEAS - FAR FUTURE:
 
@@ -184,7 +173,7 @@ DONE - FEATURES:
 -updated remove/addmagazine list, and included as txt
 -added missle approach warning systems
 -changed uav connection script location
--added MBT 2+6
+-added MBT
 -added wide gunner FOV and fluid zoom to MBT
 -added script to remove FSV & MBT script to remove gunner and commander, also to turn of engine when standing still (despite not being ugv gunner/commander)
 -added wide commander FOV and fluid zoom for FSV & MBT
@@ -210,6 +199,9 @@ DONE - FEATURES:
 -given controllable driver of Recon RADAR sensor panel to activate active RADAR with ctrl+R
 -made grenade dropping UAV "shortranged"
 -enabled camera lock on target for static laser designator
+-for now locked FSV/MBT driver seat, as it had a buggy view when remote controlling, will attemt to fix later
+-equalized FSV/MBT gunnercoax/commander MG to .338 NM
+-guided round rename to be more neutral
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
@@ -221,6 +213,7 @@ DONE - FEATURES:
 -found a way to enable gps targeting! (slightly more work needed to integrate it)
 -included aimaboveheight into shownELdifference, so with ace tables airburst is accurate, and guided includes topdown
 -fixed HEAB by slightly decreasing simulationStep, to not overshoot at low trajectory, or hit ground at high trajectory
+-added guided round lock requirement for guidance warning when no target is selected
 
 
 -low/high trajectory list:

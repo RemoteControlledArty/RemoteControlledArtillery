@@ -1,5 +1,4 @@
 // Respawn Trucks
-// Blufor
 class B_Truck_01_medical_F;
 class RC_RespawnTruck_base: B_Truck_01_medical_F
 {
@@ -25,7 +24,6 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
@@ -42,18 +40,16 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-
+	enableGPS=1;
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
 	threat[]={0,0,0};
 	cost=0;
-
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"Normal",
-			"NVG"
-		};
-	};
+	smokeLauncherGrenadeCount=8;
+	smokeLauncherVelocity=14;
+	smokeLauncherOnTurret=0;
+	smokeLauncherAngle=120;
 
 	weapons[]=
 	{
@@ -64,15 +60,15 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 	{
 		"SmokeLauncherMag"
 	};
-	smokeLauncherGrenadeCount=8;
-	smokeLauncherVelocity=14;
-	smokeLauncherOnTurret=0;
-	smokeLauncherAngle=120;
 
-	enableGPS=1;
-	radartype=2;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+	};
 
 	class Components: Components
 	{
@@ -204,7 +200,7 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; [west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [west, (_this select 0)] call BIS_fnc_addRespawnPosition; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 	};
 
 	displayName="RC Medical Transporter";
@@ -215,13 +211,12 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
 	driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 	//driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 	memoryPointDriverOptics="driverview";
@@ -232,18 +227,16 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-
+	enableGPS=1;
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
 	threat[]={0,0,0};
 	cost=0;
-
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"Normal",
-			"NVG"
-		};
-	};
+	smokeLauncherGrenadeCount=8;
+	smokeLauncherVelocity=14;
+	smokeLauncherOnTurret=0;
+	smokeLauncherAngle=120;
 
 	weapons[]=
 	{
@@ -254,15 +247,15 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 	{
 		"SmokeLauncherMag"	//fix smoke launcher
 	};
-	smokeLauncherGrenadeCount=8;
-	smokeLauncherVelocity=14;
-	smokeLauncherOnTurret=0;
-	smokeLauncherAngle=120;
 
-	enableGPS=1;
-	radartype=2;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+	};
 
 	class Components: Components
 	{
@@ -325,7 +318,7 @@ class RC_RespawnTransporter_DIG_O: RC_RespawnTransporter_DIG
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 	};
 };
 class RC_RespawnTransporter_DIG_I: RC_RespawnTransporter_DIG
@@ -335,7 +328,7 @@ class RC_RespawnTransporter_DIG_I: RC_RespawnTransporter_DIG
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 	};
 };
 
@@ -364,7 +357,7 @@ class RC_RespawnTransporter_WD_O: RC_RespawnTransporter_WD
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 	};
 };
 class RC_RespawnTransporter_WD_I: RC_RespawnTransporter_WD
@@ -374,7 +367,7 @@ class RC_RespawnTransporter_WD_I: RC_RespawnTransporter_WD
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 	};
 };
 
@@ -386,7 +379,7 @@ class RC_RespawnTransporter_HEX_O: RC_RespawnTransporter_DIG
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 	};
 
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Truck_02_medical_F.jpg";
@@ -414,7 +407,7 @@ class RC_RespawnVan_WD: RC_RespawnVan_WD_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; [west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [west, (_this select 0)] call BIS_fnc_addRespawnPosition; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 	};
 
 	displayName="RC Medical Van";
@@ -425,13 +418,12 @@ class RC_RespawnVan_WD: RC_RespawnVan_WD_Base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
 	driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 	//driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 	memoryPointDriverOptics="driverview";
@@ -442,19 +434,16 @@ class RC_RespawnVan_WD: RC_RespawnVan_WD_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-
 	threat[]={0,0,0};
 	cost=0;
-
-	//extCameraPosition[]={0,2,-7};
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"Normal",
-			"NVG"
-		};
-	};
+	enableGPS=1;
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	smokeLauncherGrenadeCount=8;
+	smokeLauncherVelocity=14;
+	smokeLauncherOnTurret=0;
+	smokeLauncherAngle=120;
 
 	weapons[]=
 	{
@@ -465,15 +454,15 @@ class RC_RespawnVan_WD: RC_RespawnVan_WD_Base
 	{
 		"SmokeLauncherMag"	//fix smoke launcher
 	};
-	smokeLauncherGrenadeCount=8;
-	smokeLauncherVelocity=14;
-	smokeLauncherOnTurret=0;
-	smokeLauncherAngle=120;
 
-	enableGPS=1;
-	radartype=2;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+	};
 
 	class Components: Components
 	{
@@ -536,7 +525,7 @@ class RC_RespawnVan_WD_O: RC_RespawnVan_WD
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [east, (_this select 0)] call BIS_fnc_addRespawnPosition; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 	};
 };
 class RC_RespawnVan_WD_I: RC_RespawnVan_WD
@@ -546,6 +535,6 @@ class RC_RespawnVan_WD_I: RC_RespawnVan_WD
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		init="if (!isserver) exitwith {}; [resistance, (_this select 0)] call BIS_fnc_addRespawnPosition; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 	};
 };

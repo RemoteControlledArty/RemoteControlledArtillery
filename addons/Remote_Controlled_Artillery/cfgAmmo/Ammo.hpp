@@ -232,6 +232,7 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 
 
 /*
+//for later use
 class BombDemine_01_SubAmmo_F;
 class RC_BombDemine_01_SubAmmo_F: BombDemine_01_SubAmmo_F
 {
@@ -294,6 +295,46 @@ class RC_BombDemine_01_Ammo_F: BombDemine_01_Ammo_F
 */
 
 
+class BulletBase;
+class RC_B_338_T: BulletBase
+{
+	hit=16;
+	indirectHit=0;
+	indirectHitRange=0;
+	cartridge="FxCartridge_338_Ball";
+	audibleFire=80;
+	visibleFireTime=3;
+	dangerRadiusBulletClose=10;
+	dangerRadiusHit=14;
+	suppressionRadiusBulletClose=8;
+	suppressionRadiusHit=10;
+	cost=6;
+	airLock=1;
+	caliber=2;
+	typicalSpeed=890;
+	timeToLive=10;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+	tracerScale=1.2;
+	tracerStartTime=0.05;
+	tracerEndTime=3;
+	airFriction=-0.00060999999;
+	class CamShakeExplode
+	{
+		power=3.1622801;
+		duration=0.60000002;
+		frequency=20;
+		distance=9.4868298;
+	};
+	class CamShakeHit
+	{
+		power=10;
+		duration=0.40000001;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
 //groundwork
 class Default;
 class RC_HEAB_Base: Default
@@ -302,7 +343,6 @@ class RC_HEAB_Base: Default
 	submunitionConeAngle=0;
 	submunitionParentSpeedCoef=0;
 	submunitionInitSpeed=0;
-
 	artilleryLock=1;
 	laserLock=1;
 	irLock=1;

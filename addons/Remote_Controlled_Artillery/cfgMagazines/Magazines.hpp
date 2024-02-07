@@ -37,6 +37,23 @@ class RC_PylonRack_4Rnd_BombDemine_01_F: PylonRack_4Rnd_BombDemine_01_F
 */
 
 
+class VehicleMagazine;
+class RC_200Rnd_338_T_Mag: VehicleMagazine
+{
+	author="Ascent";
+	scope=2;
+	count=200;
+	ammo="RC_B_338_T";
+	initSpeed=915;
+	maxLeadSpeed=36.111099;
+	tracersEvery=1;	//4
+	nameSound="mgun";
+	displayName=".338 NM";
+	descriptionShort=".338NM";
+	muzzleImpulseFactor[]={0.050000001,0.050000001};
+};
+
+
 //82mm Section
 class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
@@ -709,6 +726,7 @@ class RC_1Rnd_82mm_Mo_LaserGuided: 8Rnd_82mm_Mo_LG
 {
 	ammo="RC_Sh_82mm_AMOS_MP_LaserGuided";
 	RC_AimAboveHeight=285;
+	RC_RequiresLock=1;
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
@@ -875,8 +893,9 @@ class RC_1Rnd_82mm_Mo_MultiGuided: 8Rnd_82mm_Mo_LG
 {
 	ammo="RC_Sh_82mm_AMOS_MP_MultiGuided";
 	RC_AimAboveHeight=285;
-	displayName="MP Multiple Guided";
-	displayNameShort="MP Multiple Guided";
+	RC_RequiresLock=1;
+	displayName="MP Guided";
+	displayNameShort="MP Guided";
 	count=1;
 };
 class RC_2Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
@@ -2872,6 +2891,7 @@ class RC_1Rnd_105mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_MP_LaserGuided";
 	RC_AimAboveHeight=760;
+	RC_RequiresLock=1;
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
@@ -3039,8 +3059,9 @@ class RC_1Rnd_105mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_MP_MultiGuided";
 	RC_AimAboveHeight=760;
-	displayName="MP Multiple Guided";
-	displayNameShort="MP Multiple Guided";
+	RC_RequiresLock=1;
+	displayName="MP Guided";
+	displayNameShort="MP Guided";
 	count=1;
 };
 class RC_2Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
@@ -4538,6 +4559,7 @@ class RC_1Rnd_120mm_Mo_LaserGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_MP_LaserGuided";
 	RC_AimAboveHeight=760;
+	RC_RequiresLock=1;
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
@@ -4704,8 +4726,9 @@ class RC_1Rnd_120mm_Mo_MultiGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_MP_MultiGuided";
 	RC_AimAboveHeight=760;
-	displayName="MP Multiple Guided";
-	displayNameShort="MP Multiple Guided";
+	RC_RequiresLock=1;
+	displayName="MP Guided";
+	displayNameShort="MP Guided";
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_MultiGuided: RC_1Rnd_120mm_Mo_MultiGuided
@@ -7219,6 +7242,7 @@ class RC_1Rnd_155mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_MP_LaserGuided";
 	RC_AimAboveHeight=760;
+	RC_RequiresLock=1;
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
@@ -7385,8 +7409,9 @@ class RC_1Rnd_155mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_MP_MultiGuided";
 	RC_AimAboveHeight=760;
-	displayName="MP Multiple Guided";
-	displayNameShort="MP Multiple Guided";
+	RC_RequiresLock=1;
+	displayName="MP Guided";
+	displayNameShort="MP Guided";
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_MultiGuided: RC_1Rnd_155mm_Mo_MultiGuided
@@ -8707,6 +8732,7 @@ class RC_1Rnd_230mm_rockets_LaserGuided: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_MP_LaserGuided";
 	RC_AimAboveHeight=760;
+	RC_RequiresLock=1;
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
@@ -8761,8 +8787,9 @@ class RC_1Rnd_230mm_rockets_MultiGuided: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_MP_MultiGuided";
 	RC_AimAboveHeight=760;
-	displayName="MP Multiple Guided";
-	displayNameShort="MP Multiple Guided";
+	RC_RequiresLock=1;
+	displayName="MP Guided";
+	displayNameShort="MP Guided";
 	count=1;
 };
 class RC_2Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided

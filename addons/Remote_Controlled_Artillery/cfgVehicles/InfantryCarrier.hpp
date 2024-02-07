@@ -22,7 +22,6 @@ class RC_Infantry_Carrier_A_base: B_APC_Wheeled_01_cannon_F
 	class ViewOptics;
 	class ViewPilot;
 	class Components;
-	
 	class Wheels;
 	class L1;
 	class L2;
@@ -32,13 +31,10 @@ class RC_Infantry_Carrier_A_base: B_APC_Wheeled_01_cannon_F
 	class R2;
 	class R3;
 	class R4;
-
 	scope=0;
 	scopeCurator=0;
-	//RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
-	//RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RCDisableSeats=4; //locks specific seat
-	RCReenableSeats=2	//re-unlocks commander seat, not gunner
+	RCReenableSeats=2	//re-unlocks commander seat, not gunner, required for this vehicle
 };
 class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 {
@@ -55,108 +51,42 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-	
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="B_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
 	commanding=2;
-
-	//driver screen testing
+	ejectDeadGunner=0;
+	ejectDeadDriver=0;
+	ejectDeadCommander=0;
+	crewCrashProtection=0.01;
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	laserScanner=1;
+	incomingMissileDetectionSystem=16;
+	maxSpeed=120;
+	normalSpeedForwardCoef=0.64;
+	peakTorque=5650;
+	fuelCapacity=50;
+	maximumLoad=4000;
+	armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45
+	armorStructural=1000;	//prevents instant explosion, does not make it stronger
+	hullExplosionDelay[]={30,40};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
+	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
+	threat[]={0.30000001,0.30000001,0.30000001};
 	/*
-	viewDriverInExternal=1;
-	viewDriverShadowAmb=0.5;
-	viewDriverShadowDiff=0.050000001;
-	LODDriverTurnedOut=0;
-	LODDriverTurnedin=1100;
-	LODDriverOpticsIn=1202;
-	driverOpticsModel="\A3\weapons_f\reticle\optics_empty";
-	driverInfoPanelCameraPos="driverview_old";
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"Normal",
-			"NVG"
-		};
-		initFov=0.44;
-		minFov=0.23;
-		maxFov=0.34999999;
-	};
-	class ViewPilot: ViewPilot
-	{
-		initAngleX=5;
-		initAngleY=0;
-		initFov=0.89999998;
-		minFov=0.25;
-		maxFov=1.25;
-		minAngleX=-65;
-		maxAngleX=85;
-		minAngleY=-150;
-		maxAngleY=150;
-		minMoveX=-0.075000003;
-		maxMoveX=0.075000003;
-		minMoveY=-0.075000003;
-		maxMoveY=0.075000003;
-		minMoveZ=-0.075000003;
-		maxMoveZ=0.1;
-	};
-	extCameraPosition[]={0,3,-9.25};
-	*/
+	//doesnt work yet
+	smokeLauncherGrenadeCount=8;
+	smokeLauncherVelocity=14;
+	smokeLauncherOnTurret=0;	//1
+	smokeLauncherAngle=120;
 
-	/*
-	memoryPointDriverOptics="gunnerview";
-	driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
-	class OpticsIn
-	{
-		class Wide: RCWSOptics
-		{
-			initAngleX=0;
-			minAngleX=-30;
-			maxAngleX=30;
-			initAngleY=0;
-			minAngleY=-100;
-			maxAngleY=100;
-
-			initFov=1;
-			minFov=0.125;
-			maxFov=1;
-			visionMode[]=
-			{
-				"Normal",
-				"NVG"
-			};
-			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
-			gunnerOpticsEffect[]={};
-		};
-	};
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"Normal",
-			"NVG"
-		};
-		initFov=1;	//0.8
-		minFov=0.125;
-		maxFov=1;	//0.8
-	};
-	*/
-
-	/*
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	*/
 	weapons[]=
 	{
 		"TruckHorn",
@@ -164,38 +94,8 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 	};
 	magazines[]=
 	{
-		"SmokeLauncherMag"	//fix smoke launcher
+		"SmokeLauncherMag"
 	};
-
-	maxSpeed=120;
-	normalSpeedForwardCoef=0.64;
-	peakTorque=5650;	//4237.5;
-	fuelCapacity=50;
-	maximumLoad=4000;
-	
-	ejectDeadGunner=0;
-	ejectDeadDriver=0;
-	ejectDeadCommander=0;
-
-	crewCrashProtection=0.01;
-	armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45
-	armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	hullExplosionDelay[]={30,40};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
-	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
-	threat[]={0.30000001,0.30000001,0.30000001};
-
-	radartype=2;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	incomingMissileDetectionSystem=16;
-
-	/*
-	//doesnt work yet
-	smokeLauncherGrenadeCount=8;
-	smokeLauncherVelocity=14;
-	smokeLauncherOnTurret=0;	//1
-	smokeLauncherAngle=120;
 	*/
 
 	class Turrets: Turrets
@@ -206,7 +106,6 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
 			//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 			turretInfoType="";
 
@@ -229,6 +128,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 				"TruckHorn"
 			};
 			/*
+			//doesnt work yet
 			weapons[]=
 			{
 				"TruckHorn",
@@ -260,6 +160,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 						"SmokeLauncherMag"
 					};
 					/*
+					//doesnt work yet
 					weapons[]=
 					{
 						"TruckHorn",
@@ -291,7 +192,6 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 								"NVG"
 							};
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
 							//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 							gunnerOpticsEffect[]={};
 						};
@@ -304,12 +204,13 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 							"Normal",
 							"NVG"
 						};
-						initFov=1;	//0.8
+						initFov=1;
 						minFov=0.125;
-						maxFov=1;	//0.8
+						maxFov=1;
 					};
 
 					/*
+					//doesnt work yet
 					class Components: Components
 					{
 						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -337,6 +238,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 			};
 
 			/*
+			//doesnt work yet
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight

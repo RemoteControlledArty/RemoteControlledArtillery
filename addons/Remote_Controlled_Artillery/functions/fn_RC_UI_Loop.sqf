@@ -244,19 +244,37 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowETA = _display displayCtrl 1011;
 			_ctrlMessage = _display displayCtrl 1012;
 
-			// If we are looking into the Sky
-			if (_rangeText isEqualTo "--") then {
-				// Use the Weapon Dir
-				_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
-				// Hide Submunition Warning
+			// checks if shell requires lock before firing
+			_requiresLock=getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock");
+			
+			if ((_requiresLock == 1) && (cursorTarget isEqualto objNull)) then {
+				// warning message that guided shell requires lock before firing
+				{(_display displayCtrl _x) ctrlShow true} forEach [1015,1016];
 				{(_display displayCtrl _x) ctrlShow false} forEach [1013,1014];
+				// If we are looking into the Sky
+				if (_rangeText isEqualTo "--") then {
+					// Use the Weapon Dir
+					_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
+				} else {
+					// Else use the Look Vector
+					_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
+				};
 			} else {
-				// Else use the Look Vector
-				_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
-				// Show Submunition Warning
-				{(_display displayCtrl _x) ctrlShow true} forEach [1013,1014];
+				{(_display displayCtrl _x) ctrlShow false} forEach [1015,1016];
+				// If we are looking into the Sky
+				if (_rangeText isEqualTo "--") then {
+					// Use the Weapon Dir
+					_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
+					// Hide Submunition Warning
+					{(_display displayCtrl _x) ctrlShow false} forEach [1013,1014];
+				} else {
+					// Else use the Look Vector
+					_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
+					// Show Submunition Warning Message when looking at Terrain
+					if (_requiresLock == 1) then {{(_display displayCtrl _x) ctrlShow false} forEach [1013,1014];} else {{(_display displayCtrl _x) ctrlShow true} forEach [1013,1014];};
+				};
+				// Thank the ACE Team for the Above!
 			};
-			// Thank the ACE Team for the Above!
 
 			// Wrap around
 			if (_realAzimuth < 0) then {_realAzimuth = _realAzimuth + 360;};
@@ -427,7 +445,7 @@ RC_Artillery_UI = [] spawn {
 				if (((ctrlTextColor _ctrlElevation) isEqualTo [0,1,0,1]) and ((ctrlTextColor _ctrlAzimuth) isEqualTo [0,1,0,1])) then {
 					_ctrlMessage ctrlSetTextColor [0.5,1,0.5,1];
 					_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
-					_ctrlMessage ctrlSetText "READY TO FIRE";
+					_ctrlMessage ctrlSetText "ALIGNED";
 				} else {
 					_ctrlMessage ctrlSetTextColor [1,0,0,1];
 					_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
@@ -494,86 +512,11 @@ RC_Artillery_UI = [] spawn {
 
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];		
-			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];		
-			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];		
-
-
-			//prepared formulas
-
-				/*
-				// laser datalink target
-				_DatalinkTargets = getSensorTargets _uav;
-				_targetIndex = _DatalinkTargets findif {(_x select 3) findif {_x isequalto "laser"} > -1};	//how to find specific, like closest laser?
-				_laserTarget = _DatalinkTargets select _targetIndex;
-				_laserTargetPos = getpos (_laserTarget select 0);
-				_laserTargetDistance = round(_laserTargetPos distance _artyPos);
-				_laserTargetDifference = ((AGLToASL _laserTargetPos) select 2) - (_artyPos select 2);
-				_laserTargetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _laserTargetPos);
-				_laserTargetAzimuth = ((_laserTargetVector select 0) atan2 (_laserTargetVector select 1));
-				if (_laserTargetAzimuth < 0) then {_laserTargetAzimuth = _laserTargetAzimuth + 360;};
-				_laserTargetAzimuth = (17.7777778 * _laserTargetAzimuth);
-
-				// Laser High Angle
-				_laserCalcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_laserTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_laserTargetDistance)));
-				_laserCalcHigh = round (_laserCalcHigh * (10^2)) / (10^2); //fix to 2 decimal places
-				_laserHighAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_laserTargetDifference)+(_gravity*(_laserTargetDistance^2))))))/(_gravity*_laserTargetDistance)))/pi/57.30;
-				_laserTravelTimeHigh = round(((2*_roundVelocity)*(SIN(_laserCalcHigh)))/_gravity); // Calculate the Travel Time in Seconds
-				
-				// Laser Low Angle
-				_laserCalcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_laserTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_laserTargetDistance)));
-				_laserCalcLow = round (_laserCalcLow * (10^2)) / (10^2);
-				_laserLowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_laserTargetDifference)+(_gravity*(_laserTargetDistance^2))))))/(_gravity*_laserTargetDistance)))/pi/57.30;
-				_laserTravelTimeLow = round(((2*_roundVelocity)*(SIN(_laserCalcLow)))/_gravity);
-
-
-				// selected datalink target
-				_selectedTarget = cursorTarget;
-				_selectedTargetPos = getpos _selectedTarget;
-				_selectedTargetDistance = round(_selectedTargetPos distance _artyPos);
-				_selectedTargetDifference = ((AGLToASL _selectedTargetPos) select 2) - (_artyPos select 2);
-				_selectedDifference = 0;
-				_selectedDifference = ((AGLToASL _selectedTargetPos) select 2) - (_artyPos select 2);
-				_selectedTargetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _selectedTargetPos);
-				_selectedTargetAzimuth = ((_selectedTargetVector select 0) atan2 (_selectedTargetVector select 1));
-				if (_selectedTargetAzimuth < 0) then {_selectedTargetAzimuth = _selectedTargetAzimuth + 360;};
-				_selectedtargetAzimuth = (17.7777778 * _selectedTargetAzimuth);
-				//_targetAzimuth = round((_artyPos getDir _targetPos)*17.777778); 	//test, is inaccurate
-
-				// selected High Angle
-				_selectedCalcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_selectedTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_selectedTargetDistance)));
-				_selectedCalcHigh = round (_selectedCalcHigh * (10^2)) / (10^2);
-				_curserHighAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_selectedTargetDifference)+(_gravity*(_selectedTargetDistance^2))))))/(_gravity*_selectedTargetDistance)))/pi/57.30;
-				_curserTravelTimeHigh = round(((2*_roundVelocity)*(SIN(_selectedCalcHigh)))/_gravity);
-				
-				// selected Low Angle
-				_selectedCalcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_selectedTargetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_selectedTargetDistance)));
-				_selectedCalcLow = round (_selectedCalcLow * (10^2)) / (10^2);
-				_curserLowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_selectedTargetDifference)+(_gravity*(_selectedTargetDistance^2))))))/(_gravity*_selectedTargetDistance)))/pi/57.30;
-				_curserTravelTimeLow = round(((2*_roundVelocity)*(SIN(_selectedCalcLow)))/_gravity);
-				*/
-
-			/*
-			_uav = (getConnectedUAV player);
-			_artyPos = getPosASL _uav;
-
-			//only direct laser of the vehicle
-			//_laserTarget = laserTarget _uav;
-			//_laserTargetPos = getpos _laserTarget;
-			//_laserTargetPos
-			*/
-
-			//automated firing, too easy and only high angle, but interesting option, only works when not controlling, so it would work with laser or locket target of UAV
-			/*
-			Howitzer doArtilleryFire [getpos man, currentMagazine Howitzer, 1];
-			Howitzer doArtilleryFire [getpos vehicle, currentMagazine Howitzer, 1];
-			Howitzer doArtilleryFire [vehicle, currentMagazine Howitzer, 1];
-			Howitzer doArtilleryFire [getpos laserTarget player, currentMagazine Howitzer, 1];
-			Howitzer doArtilleryFire [laserTarget player, currentMagazine Howitzer, 1];
-			Howitzer doArtilleryFire [getpos cursorTarget, currentMagazine Howitzer, 1];	//UAV integrated targeting
-			*/
+			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 0] call CBA_fnc_formatNumber];
+			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];
+			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
+			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
+			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
 		} else {
 			// UI Shouldn't be Shown so we cut it
 			"RC_Artillery" cutFadeOut 0;

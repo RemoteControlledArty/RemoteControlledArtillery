@@ -1,22 +1,22 @@
 // Repair Trucks
-//B_APC_Tracked_01_CRV_F
-
 class B_Truck_01_Repair_F;
 class RC_RepairTruck_base: B_Truck_01_Repair_F
 {
 	class Components;
 	class ViewOptics;
-	//RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0], 3 = Commander when the Seat is at [0] instead of the normal [0,0]
 	scope=0;
 	scopeCurator=0;
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_RepairTruck_A: RC_RepairTruck_base
 {
+	/*
 	class EventHandlers: EventHandlers
 	{
 		init="insert repair script, as due to ace it doesnt work by default";
 	};
+	*/
+	//also work on B_APC_Tracked_01_CRV_F
 
 	displayName="RC Repair Truck";
 	faction="RemoteControlled_B";
@@ -26,7 +26,6 @@ class RC_RepairTruck_A: RC_RepairTruck_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
@@ -43,6 +42,24 @@ class RC_RepairTruck_A: RC_RepairTruck_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
+	enableGPS=1;
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	smokeLauncherGrenadeCount=8;
+	smokeLauncherVelocity=14;
+	smokeLauncherOnTurret=0;
+	smokeLauncherAngle=120;
+
+	weapons[]=
+	{
+		"TruckHorn",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"SmokeLauncherMag"
+	};
 
 	class ViewOptics: ViewOptics
 	{
@@ -52,25 +69,6 @@ class RC_RepairTruck_A: RC_RepairTruck_base
 			"NVG"
 		};
 	};
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag"	//fix smoke launcher
-	};
-	smokeLauncherGrenadeCount=8;
-	smokeLauncherVelocity=14;
-	smokeLauncherOnTurret=0;
-	smokeLauncherAngle=120;
-
-	enableGPS=1;
-	radartype=2;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
 
 	class Components: Components
 	{
