@@ -171,7 +171,7 @@ class RC_Improved_FOV_Designator_A_I: RC_Improved_FOV_Designator_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
-	side=0;
+	side=2;
 
 	class assembleInfo: assembleInfo
 	{
@@ -262,7 +262,7 @@ class RC_Improved_FOV_Designator_WD_I: RC_Improved_FOV_Designator_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
-	side=0;
+	side=2;
 
 	class assembleInfo: assembleInfo
 	{
@@ -485,7 +485,7 @@ class RC_Improved_FOV_Designator_Ti_A_I: RC_Improved_FOV_Designator_Ti_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
-	side=0;
+	side=2;
 
 	class assembleInfo: assembleInfo
 	{
@@ -568,7 +568,7 @@ class RC_Improved_FOV_Designator_Ti_WD_I: RC_Improved_FOV_Designator_Ti_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
-	side=0;
+	side=2;
 
 	class assembleInfo: assembleInfo
 	{

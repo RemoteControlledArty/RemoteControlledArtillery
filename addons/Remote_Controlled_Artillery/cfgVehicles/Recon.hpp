@@ -13,7 +13,7 @@ class RC_AA_small_base: I_LT_01_AA_F
 	class Components;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+	RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_AA_small_WD: RC_AA_small_base
@@ -283,7 +283,7 @@ class RC_radar_small_base: I_LT_01_scout_F
 	scope=0;
 	scopeCurator=0;
 	forceHideDriver=1;
-	RCDisableSeats=3; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+	RCDisableSeats=3; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	
 };
@@ -483,7 +483,7 @@ class RC_ATGM_small_base: I_LT_01_AT_F
 	class Components;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=2; // 1 = Commander Seat, 2 = Commander and Driver Seat, 3 = Commander seat when it's at [0] instead of [0,0]
+	RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_ATGM_small_WD: RC_ATGM_small_base

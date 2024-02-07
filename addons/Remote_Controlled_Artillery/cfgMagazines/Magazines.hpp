@@ -1,19 +1,19 @@
 //RC ATGM
 class Vorona_HEAT;
-class RC_1Rnd_ATGM_MP: Vorona_HEAT
+class RC_1Rnd_ATGM_MP_SACLOS: Vorona_HEAT
 {
 	displayName="MP 3km SACLOS";
 	displayNameShort="MP 3km";
-	ammo="RC_M_ATGM_MP";
+	ammo="RC_M_ATGM_MP_SACLOS";
 };
 
 
 class 1Rnd_GAT_missiles;
-class RC_1Rnd_MP_missiles: 1Rnd_GAT_missiles
+class RC_1Rnd_ATGM_MP_Lock: 1Rnd_GAT_missiles
 {
 	displayName="MP 3km	Guided";
 	displayNameShort="MP 3km";
-	ammo="RC_M_MP";
+	ammo="RC_M_ATGM_MP_Lock";
 };
 
 
@@ -44,7 +44,7 @@ class RC_200Rnd_338_T_Mag: VehicleMagazine
 	scope=2;
 	count=200;
 	ammo="RC_B_338_T";
-	initSpeed=915;
+	initSpeed=1000;
 	maxLeadSpeed=36.111099;
 	tracersEvery=1;	//4
 	nameSound="mgun";
@@ -559,6 +559,7 @@ class 8Rnd_82mm_Mo_Smoke_white;
 class RC_1Rnd_82mm_Mo_Smoke_white: 8Rnd_82mm_Mo_Smoke_white
 {
 	ammo="RC_Smoke_82mm_AMOS_White";
+	RC_TerrainWarning=1;
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -1059,6 +1060,7 @@ class RC_40Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
 class RC_1Rnd_82mm_Mo_mine: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Mine_82mm_AMOS_range";
+	RC_TerrainWarning=1;
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -1224,6 +1226,7 @@ class RC_40Rnd_82mm_Mo_mine: RC_1Rnd_82mm_Mo_mine
 class RC_1Rnd_82mm_Mo_AT_mine: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_AT_Mine_82mm_AMOS_range";
+	RC_TerrainWarning=1;
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -1388,6 +1391,7 @@ class RC_40Rnd_82mm_Mo_AT_mine: RC_1Rnd_82mm_Mo_AT_mine
 
 class RC_1Rnd_82mm_Mo_shells: 8Rnd_82mm_Mo_shells
 {
+	ammo="RC_Sh_82mm_AMOS";
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -1554,6 +1558,7 @@ class RC_1Rnd_82mm_Mo_LG_DelayedFuse: 8Rnd_82mm_Mo_LG
 {
 	ammo="RC_Sh_82mm_AMOS_LG_DelayedFuse";
 	RC_AimAboveHeight=285;
+	RC_RequiresLock=1;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -2389,6 +2394,7 @@ class RC_1Rnd_105mm_Mo_mine: 6Rnd_155mm_Mo_mine
 {
 	initSpeed=400;
 	ammo="RC_Mine_105mm_AMOS_range";
+	RC_TerrainWarning=1;
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -2556,6 +2562,7 @@ class RC_1Rnd_105mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
 	initSpeed=400;
 	ammo="RC_Cluster_105mm_AMOS";
+	RC_TerrainWarning=1;
 	displayName="Cluster (7% UXO)";
 	displayNameShort="Cluster";
 	count=1;
@@ -2723,6 +2730,7 @@ class RC_1Rnd_105mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 {
 	initSpeed=400;
 	ammo="RC_Smoke_155mm_AMOS_White";
+	RC_TerrainWarning=1;
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -2890,7 +2898,7 @@ class RC_1Rnd_105mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 {
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_MP_LaserGuided";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
 	RC_RequiresLock=1;
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
@@ -3058,7 +3066,7 @@ class RC_1Rnd_105mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
 {
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
 	RC_RequiresLock=1;
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
@@ -3227,6 +3235,7 @@ class RC_1Rnd_105mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 {
 	initSpeed=400;
 	ammo="RC_AT_Mine_105mm_AMOS_range";
+	RC_TerrainWarning=1;
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -3558,6 +3567,7 @@ class RC_40Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
 class RC_1Rnd_105mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
 	initSpeed=400;
+	ammo="RC_Sh_105mm_AMOS";
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -3724,7 +3734,8 @@ class RC_1Rnd_105mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
 {
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
+	RC_RequiresLock=1;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -4558,7 +4569,7 @@ class magazine_ShipCannon_120mm_HE_LG_shells_x2;
 class RC_1Rnd_120mm_Mo_LaserGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_MP_LaserGuided";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
 	RC_RequiresLock=1;
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
@@ -4725,7 +4736,7 @@ class RC_40Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
 class RC_1Rnd_120mm_Mo_MultiGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
 	RC_RequiresLock=1;
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
@@ -4893,6 +4904,7 @@ class magazine_ShipCannon_120mm_HE_cluster_shells_x2;
 class RC_1Rnd_120mm_Mo_Cluster: magazine_ShipCannon_120mm_HE_cluster_shells_x2
 {
 	ammo="RC_Cluster_120mm_AMOS";
+	RC_TerrainWarning=1;
 	displayName="Cluster (7% UXO)";
 	displayNameShort="Cluster";
 	count=1;
@@ -5059,6 +5071,7 @@ class magazine_ShipCannon_120mm_mine_shells_x6;
 class RC_1Rnd_120mm_Mo_mine: magazine_ShipCannon_120mm_mine_shells_x6
 {
 	ammo="RC_Mine_120mm_AMOS_range";
+	RC_TerrainWarning=1;
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -5225,6 +5238,7 @@ class magazine_ShipCannon_120mm_smoke_shells_x6;
 class RC_1Rnd_120mm_Mo_smoke: magazine_ShipCannon_120mm_smoke_shells_x6
 {
 	ammo="RC_Smoke_155mm_AMOS_White";
+	RC_TerrainWarning=1;
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -5391,6 +5405,7 @@ class magazine_ShipCannon_120mm_AT_mine_shells_x6;
 class RC_1Rnd_120mm_Mo_AT_mine: magazine_ShipCannon_120mm_AT_mine_shells_x6
 {
 	ammo="RC_AT_Mine_120mm_AMOS_range";
+	RC_TerrainWarning=1;
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -5721,6 +5736,7 @@ class RC_40Rnd_120mm_Mo_Illum: RC_1Rnd_120mm_Mo_Illum
 
 class RC_1Rnd_120mm_Mo_shells: magazine_ShipCannon_120mm_HE_shells_x32
 {
+	ammo="RC_Sh_120mm_AMOS";
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -5886,7 +5902,8 @@ class RC_40Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
 class RC_1Rnd_120mm_Mo_LG_DelayedFuse: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
+	RC_RequiresLock=1;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -6746,6 +6763,7 @@ class RC_40Rnd_155mm_Mo_lowHEAB: RC_1Rnd_155mm_Mo_lowHEAB
 class RC_1Rnd_155mm_Mo_mine: 6Rnd_155mm_Mo_mine
 {
 	ammo="RC_Mine_155mm_AMOS_range";
+	RC_TerrainWarning=1;
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -6911,6 +6929,7 @@ class RC_40Rnd_155mm_Mo_mine: RC_1Rnd_155mm_Mo_mine
 class RC_1Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
 	ammo="RC_Cluster_155mm_AMOS";
+	RC_TerrainWarning=1;
 	displayName="Cluster (7% UXO)";
 	displayNameShort="Cluster";
 	count=1;
@@ -7076,6 +7095,7 @@ class RC_40Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
 class RC_1Rnd_155mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 {
 	ammo="RC_Smoke_155mm_AMOS_White";
+	RC_TerrainWarning=1;
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -7241,7 +7261,7 @@ class RC_40Rnd_155mm_Mo_smoke: RC_1Rnd_155mm_Mo_smoke
 class RC_1Rnd_155mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_MP_LaserGuided";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
 	RC_RequiresLock=1;
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
@@ -7408,7 +7428,7 @@ class RC_40Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
 class RC_1Rnd_155mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
 	RC_RequiresLock=1;
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
@@ -7575,6 +7595,7 @@ class RC_40Rnd_155mm_Mo_MultiGuided: RC_1Rnd_155mm_Mo_MultiGuided
 class RC_1Rnd_155mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 {
 	ammo="RC_AT_Mine_155mm_AMOS_range";
+	RC_TerrainWarning=1;
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -7904,6 +7925,7 @@ class RC_40Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
 
 class RC_1Rnd_155mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
+	ammo="RC_Sh_105mm_AMOS";
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -8069,7 +8091,8 @@ class RC_40Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
 class RC_1Rnd_155mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
+	RC_RequiresLock=1;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -8678,6 +8701,7 @@ class 12Rnd_230mm_rockets_cluster;
 class RC_1Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
 {
 	ammo="RC_R_230mm_Cluster";
+	RC_TerrainWarning=1;
 	displayName="Cluster (7% UXO)";
 	displayNameShort="Cluster";
 	count=1;
@@ -8731,7 +8755,7 @@ class RC_12Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 class RC_1Rnd_230mm_rockets_LaserGuided: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_MP_LaserGuided";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
 	RC_RequiresLock=1;
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
@@ -8786,7 +8810,7 @@ class RC_12Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
 class RC_1Rnd_230mm_rockets_MultiGuided: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_MP_MultiGuided";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
 	RC_RequiresLock=1;
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
@@ -8840,6 +8864,7 @@ class RC_12Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
 
 class RC_1Rnd_230mm_rockets: 12Rnd_230mm_rockets
 {
+	ammo="RC_R_230mm_fly";
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -8893,7 +8918,8 @@ class RC_12Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
 class RC_1Rnd_230mm_rockets_LG_DelayedFuse: 12Rnd_230mm_rockets
 {
 	ammo="RC_230mm_LG_DelayedFuse";
-	RC_AimAboveHeight=760;
+	RC_AimAboveHeight=475;
+	RC_RequiresLock=1;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -9083,6 +9109,7 @@ class RC_2Rnd_604mm_rockets_ATACMS_backupHEAB: RC_1Rnd_604mm_rockets_ATACMS_back
 class RC_1Rnd_604mm_rockets_ATACMS_DPICM: 12Rnd_230mm_rockets
 {
 	displayName="ATACMS DPICM";
+	RC_TerrainWarning=1;
 	displayNameShort="ATACMS DPICM";
 	ammo="RC_R_604mm_ATACMS_DPICM";
 	count=1;

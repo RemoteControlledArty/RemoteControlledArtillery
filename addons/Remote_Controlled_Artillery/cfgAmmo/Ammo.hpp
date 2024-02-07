@@ -1,3 +1,44 @@
+//.338 NM Tracer for Vehicle MMG
+class BulletBase;
+class RC_B_338_T: BulletBase
+{
+	hit=16;
+	indirectHit=0;
+	indirectHitRange=0;
+	cartridge="FxCartridge_338_Ball";
+	audibleFire=80;
+	visibleFireTime=3;
+	dangerRadiusBulletClose=10;
+	dangerRadiusHit=14;
+	suppressionRadiusBulletClose=8;
+	suppressionRadiusHit=10;
+	cost=6;
+	airLock=1;
+	caliber=2;
+	typicalSpeed=890;
+	timeToLive=10;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+	tracerScale=1.2;
+	tracerStartTime=0.05;
+	tracerEndTime=3;
+	airFriction=-0.00060999999;
+	class CamShakeExplode
+	{
+		power=3.1622801;
+		duration=0.60000002;
+		frequency=20;
+		distance=9.4868298;
+	};
+	class CamShakeHit
+	{
+		power=10;
+		duration=0.40000001;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
 //ATGM
 class ammo_Penetrator_Base;
 class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
@@ -7,7 +48,7 @@ class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
 	hit=780;
 };
 class M_Vorona_HEAT;
-class RC_M_ATGM_MP: M_Vorona_HEAT
+class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 {
 	submunitionAmmo="RC_ammo_Penetrator_MP";
 	indirectHit=40;
@@ -15,16 +56,17 @@ class RC_M_ATGM_MP: M_Vorona_HEAT
 	maxControlRange=3000;
 	trackOversteer=0.5;
 	fuseDistance=20;
+	cameraViewAvailable=1;
 };
 
 
 //ATGM
 class M_Titan_AT_long;
-class RC_M_MP_Base: M_Titan_AT_long
+class RC_M_ATGM_MP_Lock_Base: M_Titan_AT_long
 {
 	class Components;
 };
-class RC_M_MP: RC_M_MP_Base
+class RC_M_ATGM_MP_Lock: RC_M_ATGM_MP_Lock_Base
 {
 	submunitionAmmo="RC_ammo_Penetrator_MP";
 	hit=150;
@@ -32,7 +74,7 @@ class RC_M_MP: RC_M_MP_Base
 	indirectHitRange=10;
 	maxControlRange=3000;
 	cmImmunity=0.85;
-	missileLockCone=180;	//for NLOS targeting, being able to shoot missle straight up, over barriers being in the way
+	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
 	missileLockMaxDistance=3000;
 	initTime=0.01;
 	laserLock=0;
@@ -295,46 +337,6 @@ class RC_BombDemine_01_Ammo_F: BombDemine_01_Ammo_F
 */
 
 
-class BulletBase;
-class RC_B_338_T: BulletBase
-{
-	hit=16;
-	indirectHit=0;
-	indirectHitRange=0;
-	cartridge="FxCartridge_338_Ball";
-	audibleFire=80;
-	visibleFireTime=3;
-	dangerRadiusBulletClose=10;
-	dangerRadiusHit=14;
-	suppressionRadiusBulletClose=8;
-	suppressionRadiusHit=10;
-	cost=6;
-	airLock=1;
-	caliber=2;
-	typicalSpeed=890;
-	timeToLive=10;
-	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
-	tracerScale=1.2;
-	tracerStartTime=0.05;
-	tracerEndTime=3;
-	airFriction=-0.00060999999;
-	class CamShakeExplode
-	{
-		power=3.1622801;
-		duration=0.60000002;
-		frequency=20;
-		distance=9.4868298;
-	};
-	class CamShakeHit
-	{
-		power=10;
-		duration=0.40000001;
-		frequency=20;
-		distance=1;
-	};
-};
-
-
 //groundwork
 class Default;
 class RC_HEAB_Base: Default
@@ -344,9 +346,9 @@ class RC_HEAB_Base: Default
 	submunitionParentSpeedCoef=0;
 	submunitionInitSpeed=0;
 	artilleryLock=1;
-	laserLock=1;
-	irLock=1;
-	timeToLive=360;
+	laserLock=1;	//only for firing solution calculator
+	irLock=1;	//only for firing solution calculator
+	timeToLive=180;	//max TOF for 810ms seems 160-170sec
 	
 	//shell/submunition core
 	simulation="shotSubmunitions";
@@ -693,6 +695,7 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 {
 	irLock=1;
+	airLock=1;
 
 	class Components: Components
 	{
@@ -702,13 +705,6 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					class AirTarget
-					{
-						minRange=1000;
-						maxRange=1000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
 					class GroundTarget
 					{
 						minRange=1000;
@@ -740,21 +736,22 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
+				/*
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=1000;
+					typeRecognitionDistance=10;
 
 					class AirTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=10;
+						maxRange=10;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=10;
+						maxRange=10;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -762,6 +759,7 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
+				*/
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
 					typeRecognitionDistance=67000;
@@ -793,6 +791,7 @@ class RC_Sh_AMOS_MP_LaserGuided_Base: SubmunitionBase
 	submunitionDirectionType="SubmunitionTargetDirection";	//required to not completly miss
 	submunitionParentSpeedCoef=0.1;	//required to not completly miss
 	aiAmmoUsageFlags="128 + 512";
+	timeToLive=180;	//max TOF for 810ms seems 160-170sec
 	laserLock=1;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
@@ -854,6 +853,13 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
 
 //82mm
 class Sh_82mm_AMOS;
+class RC_Sh_82mm_AMOS: Sh_82mm_AMOS
+{
+	laserLock=1;
+	irLock=1;
+}
+
+
 class RC_Sh_82mm_AMOS_submunition: Sh_82mm_AMOS
 {
 	explosionTime=0.0001;
@@ -1253,6 +1259,16 @@ class RC_Sh_82mm_AMOS_LG: Sh_82mm_AMOS_LG
 
 //105mm, yet to be introduced, no vehicle options yet
 class Sh_155mm_AMOS;
+class RC_Sh_105mm_AMOS: Sh_155mm_AMOS
+{
+	laserLock=1;
+	irLock=1;
+	indirectHit=75.6;
+	indirectHitRange=21.7;
+	cost=233;
+}
+
+
 class RC_Sh_105mm_AMOS_submunition: Sh_155mm_AMOS	//could be given 16km HE-RA range
 {
 	indirectHit=75.6;
@@ -1365,7 +1381,7 @@ class RC_105mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 class RC_Sh_105mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
 	submunitionAmmo="RC_105mm_MP_LaserGuided_Submunition";
-	triggerDistance=800;
+	triggerDistance=500;
 	hit=207.3;
 	indirectHit=37.8;
 	indirectHitRange=10.9;
@@ -1441,7 +1457,7 @@ class RC_105mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 class RC_Sh_105mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
 	submunitionAmmo="RC_105mm_MP_MultiGuided_Submunition";
-	triggerDistance=800;
+	triggerDistance=500;
 	hit=207.3;
 	indirectHit=37.8;
 	indirectHitRange=10.9;
@@ -1550,6 +1566,16 @@ class RC_Smoke_105mm_AMOS_White: Smoke_120mm_AMOS_White
 
 
 //120mm
+class RC_Sh_120mm_AMOS: Sh_155mm_AMOS
+{
+	laserLock=1;
+	irLock=1;
+	indirectHit=86.4;
+	indirectHitRange=24.8;
+	cost=266;
+}
+
+
 class RC_Sh_120mm_AMOS_submunition: Sh_155mm_AMOS
 {
 	indirectHit=86.4;
@@ -1860,6 +1886,13 @@ class RC_Sh_120mm_MP_T_Green: Sh_120mm_HEAT_MP
 
 
 //155mm
+class RC_Sh_155mm_AMOS: Sh_155mm_AMOS
+{
+	laserLock=1;
+	irLock=1;
+}
+
+
 class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 {
 	explosionTime=0.0001;
@@ -2051,7 +2084,7 @@ class RC_155mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
 	submunitionAmmo="RC_155mm_MP_LaserGuided_Submunition";
-	triggerDistance=800;
+	triggerDistance=500;
 	hit=340;
 	indirectHit=62.5;
 	indirectHitRange=15;
@@ -2127,7 +2160,7 @@ class RC_155mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 class RC_Sh_155mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
 	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
-	triggerDistance=800;
+	triggerDistance=500;
 	hit=340;
 	indirectHit=62.5;
 	indirectHitRange=15;
@@ -2186,6 +2219,14 @@ class RC_Sh_155mm_AMOS_LG_DelayedFuse: RC_Sh_155mm_AMOS_MP_MultiGuided
 
 //230mm
 class R_230mm_fly;
+class RC_R_230mm_fly: R_230mm_fly
+{
+	laserLock=1;
+	irLock=1;
+	cost=1000;
+}
+
+
 class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 {
 	explosionTime=0.0001;
@@ -2391,7 +2432,7 @@ class RC_R_230mm_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	effectFly="Missile0";
 	explosionEffects="HEShellExplosion";
 	craterEffects="BombCrater";
-	triggerDistance=800;
+	triggerDistance=500;
 	hit=300;
 	cost=1000;
 
@@ -2547,7 +2588,7 @@ class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	effectFly="Missile0";
 	explosionEffects="HEShellExplosion";
 	craterEffects="BombCrater";
-	triggerDistance=800;
+	triggerDistance=500;
 	hit=300;
 	cost=1000;
 

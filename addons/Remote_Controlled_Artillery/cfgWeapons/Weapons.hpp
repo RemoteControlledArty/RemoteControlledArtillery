@@ -58,7 +58,7 @@ class Improved_FOV_Laserdesignator_Ti_WD: Improved_FOV_Laserdesignator_Ti_A
 
 
 class launch_Vorona_base_F;
-class RC_ATGM: launch_Vorona_base_F
+class RC_ATGM_SACLOS: launch_Vorona_base_F
 {
 	scope=1;
 	displayName="SACLOS ATGM";
@@ -68,13 +68,13 @@ class RC_ATGM: launch_Vorona_base_F
 	autoReload=1;	
 	magazines[]=
 	{
-		"RC_1Rnd_ATGM_MP"
+		"RC_1Rnd_ATGM_MP_SACLOS"
 	};
 };
 
 
 class missiles_titan_static;
-class RC_missiles_titan_static: missiles_titan_static
+class RC_ATGM_Lock: missiles_titan_static
 {
 	scope=1;
 	displayName="ATGM";
@@ -83,7 +83,7 @@ class RC_missiles_titan_static: missiles_titan_static
 	magazineReloadTime=7;
 	magazines[]=
 	{
-		"RC_1Rnd_MP_missiles"
+		"RC_1Rnd_ATGM_MP_Lock"
 	};
 };
 

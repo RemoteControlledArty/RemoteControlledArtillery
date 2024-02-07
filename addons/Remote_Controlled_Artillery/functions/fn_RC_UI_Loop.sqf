@@ -14,68 +14,73 @@ RC_Artillery_UI = [] spawn {
 		sleep 0.1;
 
 		_uav = (getConnectedUAV player); // UAV
-
-		// If the Player is currently controlling the UAV
-		_inDrone = ((UAVControl _uav) select 1) in ["DRIVER", "GUNNER", "COMMANDER"];
-		//_inDrone = isRemoteControlling player;
-		//_inDrone = ((UAVControl _uav) select 1) isEqualTo "GUNNER";
-		
 		_uavClass = typeOf _uav; // UAV ClassName
+		_inDrone = ((UAVControl _uav) select 1) in ["DRIVER", "GUNNER", "COMMANDER"];	// If the Player is currently controlling the UAV
+		//_inDrone = ((UAVControl _uav) select 1) isEqualTo ["DRIVER", "GUNNER"];
+		//_inDrone = isRemoteControlling player;
 
-		if (_inDrone && (_uav isNotEqualto objNull)) then {
-			// If seats have been disabled in the Config we handle that here
-			_disableSeats = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCDisableSeats");
-			// If we have the Property Defined
-			if (_disableSeats != 0) then {
-				switch (_disableSeats) do {
-					// Locks only the Driver Seat
-					case 1: {
-						if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]}
-					};
-					// Locks both the Driver and Commander Seat
-					case 2: {
-						if !(lockedDriver _uav) then {_uav lockDriver true};
-						if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]};
-					};
-					// Locks Gunner seat, or if the Commander seat is at [0] instead of [0,0]
-					case 3: {
-						if !(_uav lockedTurret [0]) then {_uav lockTurret [[0], true]};
-					};
-					// Lock just the Commander Seat
-					case 4: {
-						if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]};
-					};
-					// Lock Gunner and Commander Seat
-					case 5: {
-						if !(_uav lockedTurret [0]) then {_uav lockTurret [[0], true]};
-						if !(_uav lockedTurret [0,0]) then {_uav lockTurret [[0,0], true]};
-					};
-					//default {hint "Something Went Wrong!"};
-				};
-			};
-		}
-		//if not in drone, unlock seats again
-		else {
-			//_uav lockDriver false;
-			//_uav lockTurret [[0], false];
-			//_uav lockTurret [[0,0], false];
+		// If seats have been disabled in the Config we handle that here
+		_disableSeats = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCDisableSeats");
+		_reenableSeats = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCReenableSeats");
 
-			//if (lockedDriver _uav) then {_uav lockDriver false};	//likely should be done in vehicle init
-			_reenableSeats = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCReenableSeats");
+		if (_disableSeats != 0) then {
 			if (_reenableSeats != 0) then {
-				switch (_reenableSeats) do {
-					// reenables only the Driver Seat
-					case 1: {_uav lockTurret [[0], false];};
-					// reenables both the Driver and Commander Seat
-					case 2: {_uav lockTurret [[0,0], false];};
-					// reenables only the Gunner Seat
-					case 3: {_uav lockTurret [[0], false]; _uav lockTurret [[0,0], false];};
+				if (isRemoteControlling player) then {
+					switch (_disableSeats) do {
+						// Locks Driver Seat
+						case 1: {_uav lockDriver true;};
+						// Locks Gunner Seat, or if the Commander seat is at [0] instead of [0,0]
+						case 2: {_uav lockTurret [[0], true];};
+						// Locks Commander Seat
+						case 3: {_uav lockTurret [[0,0], true];};
+						// Locks Driver and Gunner Seat, or if the Commander seat is at [0] instead of [0,0]
+						case 4: {_uav lockDriver true; _uav lockTurret [[0], true];};
+						// Locks Driver and Commander Seat
+						case 5: {_uav lockDriver true; _uav lockTurret [[0,0], true];};
+						// Locks Gunner and Commander Seat
+						case 6: {_uav lockTurret [[0], true]; _uav lockTurret [[0,0], true];};
+						// Locks Driver, Gunner and Commander Seat
+						case 7: {_uav lockDriver true; _uav lockTurret [[0], true]; _uav lockTurret [[0,0], true];};
+						//default {hint "Something Went Wrong!"};
+					}
+				}
+				else {
+					switch (_reenableSeats) do {
+						// reenables Driver Seat
+						case 1: {_uav lockDriver true;};
+						// reenables Gunner Seat
+						case 2: {_uav lockTurret [[0], false];};
+						// reenables Commander Seat
+						case 3: {_uav lockTurret [[0,0], false];};
+						// reenables Driver and Gunner Seat
+						case 4: {_uav lockDriver true; _uav lockTurret [[0], false];};
+						// reenables Driver and Commander Seat
+						case 5: {_uav lockDriver true; _uav lockTurret [[0,0], false];};
+						// reenables Gunner and Commander Seat
+						case 6: {_uav lockTurret [[0], false]; _uav lockTurret [[0,0], false];};
+						// reenables Driver, Gunner and Commander Seat
+						case 7: {_uav lockDriver true; _uav lockTurret [[0], false]; _uav lockTurret [[0,0], false];};
+					};
 				};
 			}
 			else {
-			//if (player in (crew _this) && !(gunner _this == player)) then {
-			_uav lockTurret [[0], false];
-			_uav lockTurret [[0,0], false];
+				switch (_disableSeats) do {
+					// Locks Driver Seat
+					case 1: {_uav lockDriver true;};
+					// Locks Gunner Seat, or if the Commander seat is at [0] instead of [0,0]
+					case 2: {_uav lockTurret [[0], true];};
+					// Locks Commander Seat
+					case 3: {_uav lockTurret [[0,0], true];};
+					// Locks Driver and Gunner Seat, or if the Commander seat is at [0] instead of [0,0]
+					case 4: {_uav lockDriver true; _uav lockTurret [[0], true];};
+					// Locks Driver and Commander Seat
+					case 5: {_uav lockDriver true; _uav lockTurret [[0,0], true];};
+					// Locks Gunner and Commander Seat
+					case 6: {_uav lockTurret [[0], true]; _uav lockTurret [[0,0], true];};
+					// Locks Driver, Gunner and Commander Seat
+					case 7: {_uav lockDriver true; _uav lockTurret [[0], true]; _uav lockTurret [[0,0], true];};
+					//default {hint "Something Went Wrong!"};
+				};
 			};
 		};
 
@@ -88,25 +93,16 @@ RC_Artillery_UI = [] spawn {
 			RC_InUI = true; // We are in the UI now
 			
 			// If our UAV is Autonomous we want to make it not
-			if (isAutonomous _uav) then {
-				// We need to remote exec it since setAutonomous is of Local Effect so it needs to be
-				// where the UAV is Local
-				[_uav, false] remoteExec ["setAutonomous", _uav];
-			};
+			// We need to remote exec it since setAutonomous is of Local Effect so it needs to be
+			// where the UAV is Local
+			if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
 
 			// CBA Option for Allowing the Artillery Computer in RC Artillery UAVs
-			if (!RC_Arty_Computer_On) then {
-				// Remote Execute this to make it Multiplayer Compatible
-				[false] remoteExec ["enableEngineArtillery", _uav];
-			} else {
-				// Remote Execute this to make it Multiplayer Compatible
-				[true] remoteExec ["enableEngineArtillery", _uav];
-			};
+			// Remote Execute this to make it Multiplayer Compatible
+			if (!RC_Arty_Computer_On) then {[false] remoteExec ["enableEngineArtillery", _uav];} else {[true] remoteExec ["enableEngineArtillery", _uav];};
 			
 			// Check if the Display for the UI Exists if not Create it
-			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then {
-				"RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false];
-			};
+			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then {"RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false];};
 			
 			disableSerialization;
 
@@ -116,11 +112,7 @@ RC_Artillery_UI = [] spawn {
 
 			_RCA_CurrentArtyDisplay = displayNull;
 			// If our one is Null we use theirs
-			if (!isNull _RCAUI) then {
-				_RCA_CurrentArtyDisplay = _RCAUI;
-			} else {
-				_RCA_CurrentArtyDisplay = _AceUI;
-			};
+			if (!isNull _RCAUI) then {_RCA_CurrentArtyDisplay = _RCAUI;} else {_RCA_CurrentArtyDisplay = _AceUI;};
 
 			// This is the Range Text
 			_rangeText = ctrlText (_RCA_CurrentArtyDisplay displayCtrl 173);
@@ -245,45 +237,39 @@ RC_Artillery_UI = [] spawn {
 			_ctrlMessage = _display displayCtrl 1012;
 
 			// checks if shell requires lock before firing
-			_requiresLock=getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock");
-			
-			if ((_requiresLock == 1) && (cursorTarget isEqualto objNull)) then {
-				// warning message that guided shell requires lock before firing
-				{(_display displayCtrl _x) ctrlShow true} forEach [1015,1016];
+			_requiresLock=(getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1;
+			_terrainWarning=(getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_TerrainWarning"))==1;
+			//UV Pos
+			_artyPos = getPosASL _uav;
+			//checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
+			_selectedTargetDistance=1;
+			if (cursorTarget isNotEqualto objNull) then {_selectedTargetDistance=(getpos cursorTarget) distance2d _artyPos};
+			_noTargetOrTargetTooClose=false;
+			if ((cursorTarget isEqualto objNull) or (_selectedTargetDistance <=10)) then {_noTargetOrTargetTooClose=true;};
+
+			// If we are looking into the Sky
+			if (_rangeText isEqualTo "--") then {
+				// Use the Weapon Dir
+				_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
+				// Hide Submunition Warning when looking at the Sky
 				{(_display displayCtrl _x) ctrlShow false} forEach [1013,1014];
-				// If we are looking into the Sky
-				if (_rangeText isEqualTo "--") then {
-					// Use the Weapon Dir
-					_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
-				} else {
-					// Else use the Look Vector
-					_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
-				};
+				// Show Lock Requirement Warning when having no Target selected
+				if (_requiresLock && _noTargetOrTargetTooClose) then {{(_display displayCtrl _x) ctrlShow true} forEach [1015,1016];} else {{(_display displayCtrl _x) ctrlShow false} forEach [1015,1016];};
 			} else {
-				{(_display displayCtrl _x) ctrlShow false} forEach [1015,1016];
-				// If we are looking into the Sky
-				if (_rangeText isEqualTo "--") then {
-					// Use the Weapon Dir
-					_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
-					// Hide Submunition Warning
-					{(_display displayCtrl _x) ctrlShow false} forEach [1013,1014];
-				} else {
-					// Else use the Look Vector
-					_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
-					// Show Submunition Warning Message when looking at Terrain
-					if (_requiresLock == 1) then {{(_display displayCtrl _x) ctrlShow false} forEach [1013,1014];} else {{(_display displayCtrl _x) ctrlShow true} forEach [1013,1014];};
-				};
-				// Thank the ACE Team for the Above!
+				// Else use the Look Vector
+				_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
+				// Show Submunition Warning when looking at Terrain
+				if (_terrainWarning) then {{(_display displayCtrl _x) ctrlShow true} forEach [1013,1014];} else {{(_display displayCtrl _x) ctrlShow false} forEach [1013,1014];};
+				// Show Lock Requirement Warning when having no Target selected
+				if (_requiresLock && _noTargetOrTargetTooClose) then {{(_display displayCtrl _x) ctrlShow true} forEach [1015,1016];} else {{(_display displayCtrl _x) ctrlShow false} forEach [1015,1016];};
 			};
 
 			// Wrap around
 			if (_realAzimuth < 0) then {_realAzimuth = _realAzimuth + 360;};
 			_realAzimuth = (17.7777778 * _realAzimuth);
 			
-			// If we actually have Target Markers
-			//if (cursorTarget isNotEqualto objNull) then {RC_Artillery_Markers=[0,0,0]};	//testing only
-
-			if ((cursorTarget isNotEqualto objNull) or !(RC_Artillery_Markers isEqualTo [])) then
+			// If we actually have a Target (thats not too close)
+			if (((cursorTarget isNotEqualto objNull) && (_selectedTargetDistance >= 10)) or !(RC_Artillery_Markers isEqualTo [])) then
 			{
 				if !(RC_Artillery_Markers isEqualTo []) then
 				{
@@ -313,20 +299,20 @@ RC_Artillery_UI = [] spawn {
 				_WeaponDirection = ((_uav weaponDirection currentWeapon _uav) select 2);
 				_muzzleHeightEstimate = _BarrelLenght * (sin (_WeaponDirection*90)) + _BarrelAGL;
 
-
 				//find if datalink target is selected
 				_targetPos = [0,0,0];
 				_hasTargetSelected=false;
 				if (cursorTarget isNotEqualto objNull) then {_hasTargetSelected=true};
 
-				//Target Pos
-				if (_hasTargetSelected) then {_targetPos = getpos cursorTarget} else {_targetPos = markerPos (RC_Current_Target select 1)};
-
 				//UV Pos
 				_artyPos = getPosASL _uav;
+				//Target Pos
+				if (_hasTargetSelected && !(_noTargetOrTargetTooClose)) then {_targetPos = getpos cursorTarget} else {_targetPos = markerPos (RC_Current_Target select 1)};
+				//Barrel End to Target Distance
 				_muzzleFromCenterEstimate = 0;
 				if ((getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends"))==1) then {_muzzleFromCenterEstimate = _BarrelLenght * (cos (_WeaponDirection*90));};
 				_targetDistance = round((_targetPos distance2d _artyPos)-_muzzleFromCenterEstimate);
+				if (_targetDistance <= 1) then {_targetDistance=1};	//to prevent zero devider error
 
 				_Difference = 0;
 				_Difference = ((AGLToASL _targetPos) select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
@@ -334,11 +320,7 @@ RC_Artillery_UI = [] spawn {
 
 				//how ElDiff is shown based on cba settings
 				_shownDifference = 0;
-				if RC_Arty_EL_Diff then {
-					_shownDifference = _Difference;
-				} else {
-					_shownDifference = -_Difference;
-				};
+				if RC_Arty_EL_Diff then {_shownDifference = _Difference;} else {_shownDifference = -_Difference;};
 
 				_targetVector = (AGLtoASL (positionCameraToWorld [0,0,0])) vectorFromTo (AGLtoASL _targetPos);
 				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
@@ -347,12 +329,11 @@ RC_Artillery_UI = [] spawn {
 
 				_gravity=9.807;
 
-				// Super Long Line to get the Velocity of the Round
+				// Velocity of the Round
 				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "initSpeed");
 
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
-				if (_hasTargetSelected) then {_ctrlTarget ctrlSetText "T: Datalink";} else {_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];};
-				//_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
+				if (_hasTargetSelected && (_selectedTargetDistance >= 10)) then {_ctrlTarget ctrlSetText "T: Datalink";} else {_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];};
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 
@@ -360,57 +341,54 @@ RC_Artillery_UI = [] spawn {
 				if (RC_Solution_Calculator_On) then {
 					
 					// Marker High Angle
-					//(atan((_finalVel^2+sqrt(_finalVel^4-GRAVITY*(GRAVITY*(_distance^2)+2*_zDiff*_finalVel^2)))/(GRAVITY*_distance)));
 					_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_targetDistance)));
 					_calcHigh = round (_calcHigh * (10^2)) / (10^2);
 					_highAngleSol = (3200*atan(((_roundVelocity^2)+sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
 					_travelTimeHigh = round(((2*_roundVelocity)*(SIN(_calcHigh)))/_gravity);
-					//_peakASLHigh = (_roundVelocity**2*(sin(_calcHigh*0.0174533))*(sin(_calcHigh*0.0174533)))/(2*_gravity)
-					//private _tof = round ((2*_finalVel*sin(_elev))/GRAVITY);
+					//_peakASLHigh = (_roundVelocity**2*(sin(_calcHigh*0.0174533))*(sin(_calcHigh*0.0174533)))/(2*_gravity);
 					
 					// Marker Low Angle
-					//"original" missing? _calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevation*(_roundVelocity^2))))/(_gravity*_targetDistance)));
 					_calcLow = (atan((_roundVelocity^2-SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_targetDistance)));
 					_calcLow = round (_calcLow * (10^2)) / (10^2);
 					_lowAngleSol = (3200*atan(((_roundVelocity^2)-sqrt((_roundVelocity^4)-(_gravity*((2*(_roundVelocity^2)*_Difference)+(_gravity*(_targetDistance^2))))))/(_gravity*_targetDistance)))/pi/57.30;
 					_travelTimeLow = round(((2*_roundVelocity)*(SIN(_calcLow)))/_gravity);
-					//_peakASLLow = (_roundVelocity**2*(sin**2)*(_calcLow*0.0174533))/(2*_gravity)
-					//_peakASLLow = (_roundVelocity**2*(sin(_calcLow*0.0174533))*(sin(_calcLow*0.0174533)))/(2*_gravity)
+					//_peakASLLow = (_roundVelocity**2*(sin**2)*(_calcLow*0.0174533))/(2*_gravity);
+					//_peakASLLow = (_roundVelocity**2*(sin(_calcLow*0.0174533))*(sin(_calcLow*0.0174533)))/(2*_gravity);
 
 					switch (true) do {
 						// If Elevation is close/correct change the Elevation text color
 						case((_realElevation < (_lowAngleSol + 0.25)) and (_realElevation > (_lowAngleSol - 0.25))): {_ctrlElevation ctrlSetTextColor [0,1,0,1];};
 						case((_realElevation < (_highAngleSol + 0.25)) and (_realElevation > (_highAngleSol - 0.25))): {_ctrlElevation ctrlSetTextColor [0,1,0,1];};
 						
-						case((_realElevation < (_lowAngleSol + 0.5)) and (_realElevation > (_lowAngleSol - 0.5))): {_ctrlElevation ctrlSetTextColor [0.7,1,0.5,1];};
-						case((_realElevation < (_highAngleSol + 0.5)) and (_realElevation > (_highAngleSol - 0.5))): {_ctrlElevation ctrlSetTextColor [0.7,1,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 0.5)) and (_realElevation > (_lowAngleSol - 0.5))): {_ctrlElevation ctrlSetTextColor [0.75,1,0.5,1];};
+						case((_realElevation < (_highAngleSol + 0.5)) and (_realElevation > (_highAngleSol - 0.5))): {_ctrlElevation ctrlSetTextColor [0.75,1,0.5,1];};
 						
-						case((_realElevation < (_lowAngleSol + 1)) and (_realElevation > (_lowAngleSol - 1))): {_ctrlElevation ctrlSetTextColor [0.75,1,0.5,1];};
-						case((_realElevation < (_highAngleSol + 1)) and (_realElevation > (_highAngleSol - 1))): {_ctrlElevation ctrlSetTextColor [0.75,1,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 1)) and (_realElevation > (_lowAngleSol - 1))): {_ctrlElevation ctrlSetTextColor [0.8,1,0.5,1];};
+						case((_realElevation < (_highAngleSol + 1)) and (_realElevation > (_highAngleSol - 1))): {_ctrlElevation ctrlSetTextColor [0.8,1,0.5,1];};
 
-						case((_realElevation < (_lowAngleSol + 2)) and (_realElevation > (_lowAngleSol - 2))): {_ctrlElevation ctrlSetTextColor [0.8,1,0.5,1];};
-						case((_realElevation < (_highAngleSol + 2)) and (_realElevation > (_highAngleSol - 2))): {_ctrlElevation ctrlSetTextColor [0.8,1,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 2)) and (_realElevation > (_lowAngleSol - 2))): {_ctrlElevation ctrlSetTextColor [0.85,1,0.5,1];};
+						case((_realElevation < (_highAngleSol + 2)) and (_realElevation > (_highAngleSol - 2))): {_ctrlElevation ctrlSetTextColor [0.85,1,0.5,1];};
 
-						case((_realElevation < (_lowAngleSol + 3)) and (_realElevation > (_lowAngleSol - 3))): {_ctrlElevation ctrlSetTextColor [0.85,1,0.5,1];};
-						case((_realElevation < (_highAngleSol + 3)) and (_realElevation > (_highAngleSol - 3))): {_ctrlElevation ctrlSetTextColor [0.85,1,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 3)) and (_realElevation > (_lowAngleSol - 3))): {_ctrlElevation ctrlSetTextColor [0.9,1,0.5,1];};
+						case((_realElevation < (_highAngleSol + 3)) and (_realElevation > (_highAngleSol - 3))): {_ctrlElevation ctrlSetTextColor [0.9,1,0.5,1];};
 
-						case((_realElevation < (_lowAngleSol + 4)) and (_realElevation > (_lowAngleSol - 4))): {_ctrlElevation ctrlSetTextColor [0.9,1,0.5,1];};
-						case((_realElevation < (_highAngleSol + 4)) and (_realElevation > (_highAngleSol - 4))): {_ctrlElevation ctrlSetTextColor [0.9,1,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 4)) and (_realElevation > (_lowAngleSol - 4))): {_ctrlElevation ctrlSetTextColor [0.95,1,0.5,1];};
+						case((_realElevation < (_highAngleSol + 4)) and (_realElevation > (_highAngleSol - 4))): {_ctrlElevation ctrlSetTextColor [0.95,1,0.5,1];};
 
-						case((_realElevation < (_lowAngleSol + 5)) and (_realElevation > (_lowAngleSol - 5))): {_ctrlElevation ctrlSetTextColor [0.95,1,0.5,1];};
-						case((_realElevation < (_highAngleSol + 5)) and (_realElevation > (_highAngleSol - 5))): {_ctrlElevation ctrlSetTextColor [0.95,1,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 5)) and (_realElevation > (_lowAngleSol - 5))): {_ctrlElevation ctrlSetTextColor [1,1,0.5,1];};
+						case((_realElevation < (_highAngleSol + 5)) and (_realElevation > (_highAngleSol - 5))): {_ctrlElevation ctrlSetTextColor [1,1,0.5,1];};
 
-						case((_realElevation < (_highAngleSol + 6)) and (_realElevation > (_highAngleSol - 6))): {_ctrlElevation ctrlSetTextColor [1,1,0.5,1];};
-						case((_realElevation < (_lowAngleSol + 6)) and (_realElevation > (_lowAngleSol - 6))): {_ctrlElevation ctrlSetTextColor [1,1,0.5,1];};
+						case((_realElevation < (_highAngleSol + 6)) and (_realElevation > (_highAngleSol - 6))): {_ctrlElevation ctrlSetTextColor [1,0.95,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 6)) and (_realElevation > (_lowAngleSol - 6))): {_ctrlElevation ctrlSetTextColor [1,0.95,0.5,1];};
 
-						case((_realElevation < (_highAngleSol + 8)) and (_realElevation > (_highAngleSol - 8))): {_ctrlElevation ctrlSetTextColor [1,0.95,0.5,1];};
-						case((_realElevation < (_lowAngleSol + 8)) and (_realElevation > (_lowAngleSol - 8))): {_ctrlElevation ctrlSetTextColor [1,0.95,0.5,1];};
+						case((_realElevation < (_highAngleSol + 8)) and (_realElevation > (_highAngleSol - 8))): {_ctrlElevation ctrlSetTextColor [1,0.9,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 8)) and (_realElevation > (_lowAngleSol - 8))): {_ctrlElevation ctrlSetTextColor [1,0.9,0.5,1];};
 
-						case((_realElevation < (_highAngleSol + 9)) and (_realElevation > (_highAngleSol - 9))): {_ctrlElevation ctrlSetTextColor [1,0.9,0.5,1];};
-						case((_realElevation < (_lowAngleSol + 9)) and (_realElevation > (_lowAngleSol - 9))): {_ctrlElevation ctrlSetTextColor [1,0.9,0.5,1];};
+						case((_realElevation < (_highAngleSol + 9)) and (_realElevation > (_highAngleSol - 9))): {_ctrlElevation ctrlSetTextColor [1,0.85,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 9)) and (_realElevation > (_lowAngleSol - 9))): {_ctrlElevation ctrlSetTextColor [1,0.85,0.5,1];};
 
-						case((_realElevation < (_highAngleSol + 10)) and (_realElevation > (_highAngleSol - 10))): {_ctrlElevation ctrlSetTextColor [1,0.85,0.5,1];};
-						case((_realElevation < (_lowAngleSol + 10)) and (_realElevation > (_lowAngleSol - 10))): {_ctrlElevation ctrlSetTextColor [1,0.85,0.5,1];};
+						case((_realElevation < (_highAngleSol + 10)) and (_realElevation > (_highAngleSol - 10))): {_ctrlElevation ctrlSetTextColor [1,0.8,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 10)) and (_realElevation > (_lowAngleSol - 10))): {_ctrlElevation ctrlSetTextColor [1,0.8,0.5,1];};
 
 						// If neither then set it to White again
 						default {
@@ -425,16 +403,16 @@ RC_Artillery_UI = [] spawn {
 				switch (true) do {
 						// If Azimuth is close/correct change the Azimuth text color
 						case((_realAzimuth < (_targetAzimuth + 0.5)) and (_realAzimuth > (_targetAzimuth - 0.5))): {_ctrlAzimuth ctrlSetTextColor [0,1,0,1];};
-						case((_realAzimuth < (_targetAzimuth + 1)) and (_realAzimuth > (_targetAzimuth - 1))): {_ctrlAzimuth ctrlSetTextColor [0.7,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 2)) and (_realAzimuth > (_targetAzimuth - 2))): {_ctrlAzimuth ctrlSetTextColor [0.75,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 4)) and (_realAzimuth > (_targetAzimuth - 4))): {_ctrlAzimuth ctrlSetTextColor [0.8,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 6)) and (_realAzimuth > (_targetAzimuth - 6))): {_ctrlAzimuth ctrlSetTextColor [0.85,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 8)) and (_realAzimuth > (_targetAzimuth - 10))): {_ctrlAzimuth ctrlSetTextColor [0.9,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 10)) and (_realAzimuth > (_targetAzimuth - 10))): {_ctrlAzimuth ctrlSetTextColor [0.95,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 15)) and (_realAzimuth > (_targetAzimuth - 15))): {_ctrlAzimuth ctrlSetTextColor [1,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 20)) and (_realAzimuth > (_targetAzimuth - 20))): {_ctrlAzimuth ctrlSetTextColor [1,0.95,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 25)) and (_realAzimuth > (_targetAzimuth - 25))): {_ctrlAzimuth ctrlSetTextColor [1,0.9,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 30)) and (_realAzimuth > (_targetAzimuth - 30))): {_ctrlAzimuth ctrlSetTextColor [1,0.85,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 1)) and (_realAzimuth > (_targetAzimuth - 1))): {_ctrlAzimuth ctrlSetTextColor [0.75,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 2)) and (_realAzimuth > (_targetAzimuth - 2))): {_ctrlAzimuth ctrlSetTextColor [0.8,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 4)) and (_realAzimuth > (_targetAzimuth - 4))): {_ctrlAzimuth ctrlSetTextColor [0.85,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 6)) and (_realAzimuth > (_targetAzimuth - 6))): {_ctrlAzimuth ctrlSetTextColor [0.9,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 8)) and (_realAzimuth > (_targetAzimuth - 10))): {_ctrlAzimuth ctrlSetTextColor [0.95,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 10)) and (_realAzimuth > (_targetAzimuth - 10))): {_ctrlAzimuth ctrlSetTextColor [1,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 15)) and (_realAzimuth > (_targetAzimuth - 15))): {_ctrlAzimuth ctrlSetTextColor [1,0.95,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 20)) and (_realAzimuth > (_targetAzimuth - 20))): {_ctrlAzimuth ctrlSetTextColor [1,0.9,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 25)) and (_realAzimuth > (_targetAzimuth - 25))): {_ctrlAzimuth ctrlSetTextColor [1,0.85,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 30)) and (_realAzimuth > (_targetAzimuth - 30))): {_ctrlAzimuth ctrlSetTextColor [1,0.8,0.5,1];};
 						// If neither then set it to White again
 						default {
 							_ctrlAzimuth ctrlSetTextColor [1,1,1,1];
@@ -451,21 +429,6 @@ RC_Artillery_UI = [] spawn {
 					_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
 					_ctrlMessage ctrlSetText "NOT ALIGNED";
 				};
-				
-				/*
-				//doesnt work yet, it correctly calculated
-				_lowSolDiffN = _realElevation - _lowAngleSol;
-				_lowSolDiff = abs(_lowSolDiffN);
-				_lowSolPerc = (6400 - _lowSolDiff)/6400*100;
-				_azimuthDiffN = _realAzimuth - _targetAzimuth;
-				_azimuthDiff = abs(_azimuthDiffN);
-				_azimuthPerc = (6400 - _azimuthDiff)/6400*100;
-				_alignPerc=(_lowSolPerc + _azimuthPerc)/2;
-
-				_ctrlMessage ctrlSetTextColor [1,1,1,1];
-				_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
-				_ctrlMessage ctrlSetText Format ["T AZ: %1", [_alignPerc, 5, 3] call CBA_fnc_formatNumber];
-				*/
 				
 				// Parse these back to Numbers incase they are NaN
 				_highAngleSol = parseNumber str(_highAngleSol);

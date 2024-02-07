@@ -19,6 +19,7 @@ TO DO - FEATURES:
 
 General:
 -update right/left panel options, except for arty
+-improve .338 ballistics
 
 EH:
 if (!isserver) exitwith {}; = server client only, not every player client
@@ -26,6 +27,10 @@ if (!isserver) exitwith {}; = server client only, not every player client
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
+-if it has eyes on laser, it engages...? make ai that doesnt target laser?
+-howitzer left gps only, rest doesnt work
+-raise camera into sky cfg value, not required for HEAB/HE
+
 -remove non airburst HE after trajectory testing
 
 -fix HE/HEAB reseting change ammo amount
@@ -44,6 +49,7 @@ TO DO - QUALITY OF LIFE:
 
 POSTPONED:
 
+-Subcaliber Hypersonic 120mm guided in 155mm / 105mm guided in 120mm, for reduced TOF at extrem ranges
 -RC IC fix smokelauncher
 -RC IC if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged (explosion timer shortend for now)
 -RC IC fix and readd datalink panel (removed for now)
@@ -135,9 +141,9 @@ DONE - FEATURES:
 -added peak ASL calculation formula
 -shortend map marker search time (as its only running during active remote control, and improves quality of life)
 -fixed all sensor configs
--added 82mm/120/155mm/230mm MultiGuided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and hot (per IR) or cold (per Visual) vehicles.)
+-added 82mm/120/155mm/230mm MultiGuided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and vehicles with hot engine.)
 -reworked 82mm/120/155mm/230mm MultiGuided, to be more accurate and be Multi Target
--reworked Static AT & ATGM, changed ammo from 4 HEAT & 2 HE to new 4 MT (MultiTarget) rounds, Static AT now has more locking options and also SACLOS
+-reworked Static AT & ATGM, changed ammo from 4 HEAT & 2 HE to new 4 MP rounds, Static AT now has more locking options and also SACLOS
 -reworked 120mm charges
 -multi guided successfully tested to include gps guidance, but so far only when using artillery computer
 -artillery weapon edits in steps, so different versions can be chosen V1 until V4
@@ -149,7 +155,7 @@ DONE - FEATURES:
 -added RC RespawnTruck & correct driver camera screen with filter
 -reworked Laser Guided 2m Delayed Fuse
 -added nightvision to RC RespawnTruck driver camera
--done lots of testing and decided on MT MultiGuided visual model
+-done lots of testing and decided on MP MultiGuided visual model
 -added LaserDatalink so that handheld LaserDesignators enable reliable use with Artillery, and decreases reliance of UAV's with Datalink
 -testing showed that locking MultiGuided to laser target, firing manual, deactivating laser, has 3 practical results:
 	if nothing else is close it switches to gps guidance,
@@ -202,6 +208,8 @@ DONE - FEATURES:
 -for now locked FSV/MBT driver seat, as it had a buggy view when remote controlling, will attemt to fix later
 -equalized FSV/MBT gunnercoax/commander MG to .338 NM
 -guided round rename to be more neutral
+-fixed zero devider error in firing solution calculator by preventing _targetDistance to be <=0
+-improved vehicle seat locking script and added more options
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
@@ -213,7 +221,8 @@ DONE - FEATURES:
 -found a way to enable gps targeting! (slightly more work needed to integrate it)
 -included aimaboveheight into shownELdifference, so with ace tables airburst is accurate, and guided includes topdown
 -fixed HEAB by slightly decreasing simulationStep, to not overshoot at low trajectory, or hit ground at high trajectory
--added guided round lock requirement for guidance warning when no target is selected
+-added (cfgmag value) guided round lock requirement for guidance warning when no target is selected, also (cfgmag value) submunition warning when looking at terrain
+-for vehicle attached mortar, when target<=10m (like vehicle its attached to): shows map marker targets instead, shows requires lock message for guided shells
 
 
 -low/high trajectory list:

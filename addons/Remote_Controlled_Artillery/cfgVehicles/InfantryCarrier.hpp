@@ -33,8 +33,8 @@ class RC_Infantry_Carrier_A_base: B_APC_Wheeled_01_cannon_F
 	class R4;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=4; //locks specific seat
-	RCReenableSeats=2	//re-unlocks commander seat, not gunner, required for this vehicle
+	RCDisableSeats=3; // locks commander seats
+	RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 };
 class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 {

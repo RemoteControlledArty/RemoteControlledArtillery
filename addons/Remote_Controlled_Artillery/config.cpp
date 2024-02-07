@@ -447,6 +447,7 @@ class CfgEditorSubcategories
 };
 
 
+//later required sensors
 class SensorTemplateDataLink;
 class SensorTemplateLaser;
 class SensorTemplateIR;
@@ -454,11 +455,38 @@ class SensorTemplateNV;
 class SensorTemplateVisual;
 class SensorTemplateMan;
 class SensorTemplateActiveRadar;
+
+//later required optics
+class RCWSOptics;
+class Optics_Armored;
+class Optics_Gunner_MBT_01;
+
+//later required sensor panels
+class DefaultVehicleSystemsDisplayManagerLeft
+{
+	class components;
+};
 class DefaultVehicleSystemsDisplayManagerRight
 {
 	class components;
 };
-class DefaultVehicleSystemsDisplayManagerLeft
+class VehicleSystemsTemplateLeftDriver: DefaultVehicleSystemsDisplayManagerLeft
+{
+	class components;
+};
+class VehicleSystemsTemplateRightDriver: DefaultVehicleSystemsDisplayManagerRight
+{
+	class components;
+};
+class VehicleSystemsTemplateLeftCommander: DefaultVehicleSystemsDisplayManagerLeft
+{
+	class components;
+};
+class VehicleSystemsTemplateRightCommander: DefaultVehicleSystemsDisplayManagerRight
+{
+	class components;
+};
+class VehicleSystemsTemplateLeftGunner: DefaultVehicleSystemsDisplayManagerLeft
 {
 	class components;
 };
@@ -466,9 +494,6 @@ class VehicleSystemsTemplateRightGunner: DefaultVehicleSystemsDisplayManagerRigh
 {
 	class components;
 };
-class RCWSOptics;
-class Optics_Armored;
-class Optics_Gunner_MBT_01;
 
 
 class CfgCloudlets

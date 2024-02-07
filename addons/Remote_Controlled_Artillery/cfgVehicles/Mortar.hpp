@@ -65,19 +65,19 @@ class RC_Mortar_NA: RC_Mortar_NA_base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=4000;
+					typeRecognitionDistance=8000;
 
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -398,19 +398,19 @@ class RC_Mortar_ER: RC_Mortar
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=8000;
+					typeRecognitionDistance=12000;
 
 					class AirTarget
 					{
-						minRange=8000;
-						maxRange=8000;
+						minRange=12000;
+						maxRange=12000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=8000;
-						maxRange=8000;
+						minRange=12000;
+						maxRange=12000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -549,13 +549,62 @@ class RC_VehicleMortar: RC_Mortar
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 
-	armor=1000;
+	armor=200;
 	threat[]={0,0,0};
 	cost=0;
 
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]={};
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=10000;
+
+					class AirTarget
+					{
+						minRange=10000;
+						maxRange=10000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=10000;
+						maxRange=10000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
 	};
 
 	class Turrets: Turrets
@@ -567,6 +616,23 @@ class RC_VehicleMortar: RC_Mortar
 			weapons[]=
 			{
 				"RC_vehiclemortar_82mm_V4"
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={6000,3000,1500,750,375};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
 			};
 		};
 	};

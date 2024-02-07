@@ -152,14 +152,14 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 
 			weapons[]=
 			{
-				"RC_missiles_titan_static"
+				"RC_ATGM_MP_Lock"
 			};
 			magazines[]=
 			{
-				"RC_1Rnd_MP_missiles",
-				"RC_1Rnd_MP_missiles",
-				"RC_1Rnd_MP_missiles",
-				"RC_1Rnd_MP_missiles"
+				"RC_1Rnd_ATGM_MP_Lock",
+				"RC_1Rnd_ATGM_MP_Lock",
+				"RC_1Rnd_ATGM_MP_Lock",
+				"RC_1Rnd_ATGM_MP_Lock"
 			};
 			class ViewOptics: ViewOptics
 			{
@@ -174,9 +174,7 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 				};
 				thermalMode[]={0};
 			};
-
-			//showAllTargets="2 + 4";
-
+			
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
