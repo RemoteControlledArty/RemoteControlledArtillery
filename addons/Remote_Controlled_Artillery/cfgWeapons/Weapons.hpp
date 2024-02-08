@@ -89,7 +89,11 @@ class RC_ATGM_Lock: missiles_titan_static
 
 
 class HMG_127_AFV;
-class RC_MMG_338_FSV: HMG_127_AFV
+class RC_MMG_338_FSV_Base: HMG_127_AFV
+{
+	class manual;
+};
+class RC_MMG_338_FSV: RC_MMG_338_FSV_Base
 {
 	author="Ascent";
 	displayName=".338 NM";
@@ -99,6 +103,12 @@ class RC_MMG_338_FSV: HMG_127_AFV
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_Mag"
+	};
+
+	class manual: manual
+	{
+		displayName="12.7mm HMG";
+		dispersion=0.00102;	//0.0012
 	};
 };
 class RC_MMG_338_FSV_coax: RC_MMG_338_FSV
@@ -114,7 +124,11 @@ class RC_MMG_338_FSV_coax: RC_MMG_338_FSV
 	};
 };
 class HMG_127_MBT;
-class RC_MMG_338_MBT: HMG_127_MBT
+class RC_MMG_338_MBT_Base: HMG_127_MBT
+{
+	class manual;
+};
+class RC_MMG_338_MBT: RC_MMG_338_MBT_Base
 {
 	author="Ascent";
 	displayName=".338 NM";
@@ -124,6 +138,12 @@ class RC_MMG_338_MBT: HMG_127_MBT
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_Mag"
+	};
+
+	class manual: manual
+	{
+		displayName=".338 NM";
+		dispersion=0.00102;	//0.0012
 	};
 };
 class RC_MMG_338_MBT_coax: RC_MMG_338_MBT
