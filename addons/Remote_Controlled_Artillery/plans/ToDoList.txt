@@ -19,7 +19,6 @@ TO DO - FEATURES:
 
 General:
 -update right/left panel options, except for arty
--improve .338 ballistics
 
 EH:
 if (!isserver) exitwith {}; = server client only, not every player client
@@ -27,18 +26,34 @@ if (!isserver) exitwith {}; = server client only, not every player client
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
+-TB blast
 -if it has eyes on laser, it engages...? make ai that doesnt target laser?
--howitzer left gps only, rest doesnt work
--raise camera into sky cfg value, not required for HEAB/HE
+	*laserspot values:
+	type=1;
+	threat[]={0.5,0.5,0.1};
+	side=3;
+	cost=9.9999999e+014;
+	armor=500;
 
--remove non airburst HE after trajectory testing
+#define TEast 0
+#define TWest 1
+#define TGuerrila 2
+#define TCivilian 3
+#define TSideUnknown 4
+#define TEnemy 5
+#define TFriendly 6
+#define TLogic 7
 
--fix HE/HEAB reseting change ammo amount
--vehicle mortar cannot target map marker due to looking close attached vic, maybe mousewheel menu for vicmortar to disable datalink targeting?
+-marker moves when hit
+
 -test gps marker with vehicle
--warheadName HE/TandemHEAT ?
+-MP guided doesnt seem gps guided with vanilla computer
+
+-make sure gps marker is not targeted by any AI
 -make sure blastcore etc doesnt remove ground dust animation
 -recon radar+vehicle mortar composition (maybe hide legs)
+-warheadName HE/TandemHEAT ?
+-remove non airburst HE after trajectory testing
 
 
 
@@ -49,6 +64,7 @@ TO DO - QUALITY OF LIFE:
 
 POSTPONED:
 
+-guided with simulation shotmissle but with altered values, testing if it connects to misslefeed *it does on manned vic, somehow not on rc'ed... same on Static ATGM
 -Subcaliber Hypersonic 120mm guided in 155mm / 105mm guided in 120mm, for reduced TOF at extrem ranges
 -RC IC fix smokelauncher
 -RC IC if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged (explosion timer shortend for now)
@@ -210,6 +226,7 @@ DONE - FEATURES:
 -guided round rename to be more neutral
 -fixed zero devider error in firing solution calculator by preventing _targetDistance to be <=0
 -improved vehicle seat locking script and added more options
+-fixed datalink panels
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
@@ -218,7 +235,7 @@ DONE - FEATURES:
 -instead of seperate display, added RC_AimAboveHeight to 0.7*triggerdistance for guided, to have 45deg toptown effect even on high charge for shorter TOF, to not get stuck in foliage/cover
 -finally found correct values to make guided shells accurate at high charge instead of completly overshoot
 -added script that changes Airburst to Impact when turret elevation is too low for Airburst to work savely
--found a way to enable gps targeting! (slightly more work needed to integrate it)
+-found a way to enable gps targeting! (more work needed to integrate it)
 -included aimaboveheight into shownELdifference, so with ace tables airburst is accurate, and guided includes topdown
 -fixed HEAB by slightly decreasing simulationStep, to not overshoot at low trajectory, or hit ground at high trajectory
 -added (cfgmag value) guided round lock requirement for guidance warning when no target is selected, also (cfgmag value) submunition warning when looking at terrain

@@ -175,11 +175,29 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
 						/*
 						class VehicleMissileDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
+							resource="RscTransportCameraComponentMissile";
 						};
 						*/
 					};
@@ -525,6 +543,7 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
 					defaultDisplay="SensorDisplay";
+
 					class Components
 					{
 						class SensorDisplay
@@ -533,6 +552,31 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						/*
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+							resource="RscTransportCameraComponentMissile";
+						};
+						*/
 					};
 				};
 			};
@@ -771,11 +815,29 @@ class RC_Static_Arty: RC_Static_NA_Arty
 							range[]={30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
 						/*
 						class VehicleMissileDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
+							resource="RscTransportCameraComponentMissile";
 						};
 						*/
 					};

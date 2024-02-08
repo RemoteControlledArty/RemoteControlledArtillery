@@ -79,6 +79,49 @@ class RC_AA_A: RC_AA_base
 					forceHideGunner=1;
 				};
 			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={16000,8000,4000,2000};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplay";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
+				};
+			};
 		};
 	};
 
@@ -230,6 +273,49 @@ class RC_AA_HEX_A: RC_AA_base_HEX_O
 					hasGunner=-1;
 					hasCommander=-1;
 					forceHideGunner=1;
+				};
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={16000,8000,4000,2000};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplay";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
 				};
 			};
 		};

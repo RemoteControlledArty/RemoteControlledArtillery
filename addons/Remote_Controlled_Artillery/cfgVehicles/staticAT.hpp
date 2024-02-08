@@ -152,7 +152,7 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 
 			weapons[]=
 			{
-				"RC_ATGM_MP_Lock"
+				"RC_ATGM_Lock"
 			};
 			magazines[]=
 			{
@@ -180,6 +180,7 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
 					defaultDisplay="SensorDisplay";
+
 					class Components
 					{
 						class SensorDisplay
@@ -189,10 +190,30 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 							resource="RscCustomInfoSensors";
 						};
 					};
-					class VehicleMissileDisplay
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
 					{
-						componentType="TransportFeedDisplayComponent";
-						source="Missile";
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						/*
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+							resource="RscTransportCameraComponentMissile";
+						};
+						*/
 					};
 				};
 			};

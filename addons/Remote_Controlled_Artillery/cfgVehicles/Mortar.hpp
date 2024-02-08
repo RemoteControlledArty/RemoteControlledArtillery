@@ -105,6 +105,7 @@ class RC_Mortar_NA: RC_Mortar_NA_base
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
 					defaultDisplay="SensorDisplay";
+
 					class Components
 					{
 						class SensorDisplay
@@ -113,6 +114,31 @@ class RC_Mortar_NA: RC_Mortar_NA_base
 							range[]={4000,2000,1000,500,250};
 							resource="RscCustomInfoSensors";
 						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						/*
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+							resource="RscTransportCameraComponentMissile";
+						};
+						*/
 					};
 				};
 			};
@@ -433,6 +459,7 @@ class RC_Mortar_ER: RC_Mortar
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
 					defaultDisplay="SensorDisplay";
+
 					class Components
 					{
 						class SensorDisplay
@@ -441,6 +468,31 @@ class RC_Mortar_ER: RC_Mortar
 							range[]={8000,4000,2000,1000,500,250};
 							resource="RscCustomInfoSensors";
 						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						/*
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+							resource="RscTransportCameraComponentMissile";
+						};
+						*/
 					};
 				};
 			};
@@ -549,7 +601,7 @@ class RC_VehicleMortar: RC_Mortar
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 
-	armor=200;
+	armor=300;	//200 works
 	threat[]={0,0,0};
 	cost=0;
 
@@ -623,6 +675,7 @@ class RC_VehicleMortar: RC_Mortar
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
 					defaultDisplay="SensorDisplay";
+
 					class Components
 					{
 						class SensorDisplay
@@ -631,6 +684,31 @@ class RC_VehicleMortar: RC_Mortar
 							range[]={6000,3000,1500,750,375};
 							resource="RscCustomInfoSensors";
 						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						/*
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+							resource="RscTransportCameraComponentMissile";
+						};
+						*/
 					};
 				};
 			};

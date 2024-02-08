@@ -130,6 +130,7 @@ class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
 					defaultDisplay="SensorDisplay";
+
 					class Components
 					{
 						class SensorDisplay
@@ -137,6 +138,23 @@ class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
 							componentType="SensorsDisplayComponent";
 							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplay";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
 						};
 					};
 				};

@@ -265,8 +265,8 @@ class CfgPatches
 			Improved_FOV_Laserdesignator_Ti_A,
 			Improved_FOV_Laserdesignator_Ti_WD,
 
-			RC_ATGM,
-			RC_missiles_titan_static,
+			RC_ATGM_SACLOS,
+			RC_ATGM_Lock,
 
 			RC_mortar_82mm_V1,
 			RC_mortar_82mm_V2,
@@ -462,6 +462,9 @@ class Optics_Armored;
 class Optics_Gunner_MBT_01;
 
 //later required sensor panels
+class DefaultVehicleSystemsDisplayManagerLeft;
+class DefaultVehicleSystemsDisplayManagerRight;
+/*
 class DefaultVehicleSystemsDisplayManagerLeft
 {
 	class components;
@@ -470,30 +473,7 @@ class DefaultVehicleSystemsDisplayManagerRight
 {
 	class components;
 };
-class VehicleSystemsTemplateLeftDriver: DefaultVehicleSystemsDisplayManagerLeft
-{
-	class components;
-};
-class VehicleSystemsTemplateRightDriver: DefaultVehicleSystemsDisplayManagerRight
-{
-	class components;
-};
-class VehicleSystemsTemplateLeftCommander: DefaultVehicleSystemsDisplayManagerLeft
-{
-	class components;
-};
-class VehicleSystemsTemplateRightCommander: DefaultVehicleSystemsDisplayManagerRight
-{
-	class components;
-};
-class VehicleSystemsTemplateLeftGunner: DefaultVehicleSystemsDisplayManagerLeft
-{
-	class components;
-};
-class VehicleSystemsTemplateRightGunner: DefaultVehicleSystemsDisplayManagerRight
-{
-	class components;
-};
+*/
 
 
 class CfgCloudlets

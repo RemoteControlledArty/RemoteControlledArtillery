@@ -97,6 +97,37 @@ class RC_RepairTruck_A: RC_RepairTruck_base
 				};
 			};
 		};
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={2000,1000,500,250};
+					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="EmptyDisplay";
+
+			class Components
+			{
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+			};
+		};
 	};
 
 	class TransportMagazines

@@ -76,6 +76,7 @@ class RC_M_ATGM_MP_Lock: RC_M_ATGM_MP_Lock_Base
 	cmImmunity=0.85;
 	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
 	missileLockMaxDistance=3000;
+	fuseDistance=20;
 	initTime=0.01;
 	laserLock=0;
 	weaponLockSystem="1 + 2 + 16";
@@ -554,6 +555,7 @@ class RC_MP_Guided_Submunition_MissleBase: MissileBase
 };
 class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 {
+	//simulation="shotMissile";	//already inherited
 	laserLock=1;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
@@ -561,10 +563,10 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 	missileKeepLockedCone=180;
 	lockSeekRadius=800;
 	missileLockMaxDistance=2000;
-	missileLockMinDistance=1;
+	missileLockMinDistance=1;	//maybe edit
 	missileLockMaxSpeed=150;
 	maxControlRange=800;
-	fuseDistance=30;
+	fuseDistance=20;
 	timeToLive=10;
 	model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";
 	explosive=1;
@@ -579,7 +581,7 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 	maneuvrability=20;	//required to not completly miss
 	airFriction=0.085000001;
 	sideAirFriction=0.1;
-	whistleDist=4;
+	whistleDist=60;
 	lockType=0;
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionInitSpeed=1000;
@@ -594,7 +596,7 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 	thrust=300;
 	maxSpeed=300;
 	typicalSpeed=300;
-	weaponLockSystem="1 + 2 + 4 + 16";
+	weaponLockSystem="4 + 16";
 	cmImmunity=0.9;
 
 	soundFly[]=
@@ -696,6 +698,7 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 {
 	irLock=1;
 	airLock=1;
+	weaponLockSystem="2 + 4 + 16";
 
 	class Components: Components
 	{
@@ -793,9 +796,10 @@ class RC_Sh_AMOS_MP_LaserGuided_Base: SubmunitionBase
 	aiAmmoUsageFlags="128 + 512";
 	timeToLive=180;	//max TOF for 810ms seems 160-170sec
 	laserLock=1;
-	autoSeekTarget=1;
-	cameraViewAvailable=1;
 	artilleryLock=1;
+	autoSeekTarget=1;
+	//simulation="shotMissile"; makes misslecam connect, but not for guided submunition, and likely creates other issues, testing still needed
+	//cameraViewAvailable=1;	//likely should be submun only
 	muzzleEffect="";
 	airFriction=0;
 	craterEffects="AAMissileCrater";
@@ -918,7 +922,7 @@ class RC_Sh_82mm_AMOS_backupHEAB: RC_82mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,6,0};
+	submunitionInitialOffset[]={0,5,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
 };
@@ -1330,7 +1334,7 @@ class RC_Sh_105mm_AMOS_backupHEAB: RC_105mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,6,0};
+	submunitionInitialOffset[]={0,5,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_105mm_AMOS_submunition";
 };
@@ -1637,7 +1641,7 @@ class RC_Sh_120mm_AMOS_backupHEAB: RC_120mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,6,0};
+	submunitionInitialOffset[]={0,5,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_120mm_AMOS_submunition";
 };
@@ -1953,7 +1957,7 @@ class RC_Sh_155mm_AMOS_backupHEAB: RC_155mm_HEAB_Shell_Base
 	aiAmmoUsageFlags="64 + 128";
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,6,0};
+	submunitionInitialOffset[]={0,5,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 };
@@ -2324,7 +2328,7 @@ class RC_R_230mm_backupHEAB: RC_230mm_HEAB_Rocket_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,6,0};
+	submunitionInitialOffset[]={0,5,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 };
@@ -2715,7 +2719,7 @@ class RC_R_604mm_backupHEAB: RC_604mm_HEAB_Rocket_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,6,0};
+	submunitionInitialOffset[]={0,5,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_R_604mm_fly_HEAB_submunition_ATACMS";
 };

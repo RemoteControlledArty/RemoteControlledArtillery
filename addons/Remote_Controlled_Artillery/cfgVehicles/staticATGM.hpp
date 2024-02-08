@@ -24,7 +24,7 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 		{
 			weapons[]=
 			{
-				"RC_ATGM_MP_SACLOS"
+				"RC_ATGM_SACLOS"
 			};
 			magazines[]=
 			{

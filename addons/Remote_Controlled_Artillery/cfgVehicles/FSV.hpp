@@ -192,6 +192,79 @@ class RC_FSV_A: RC_FSV_A_Base
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleCommanderDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Commander";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="VehicleDriverDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={3000,1500,750,375};
+							resource="RscCustomInfoSensors";
+						};
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleCommanderDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Commander";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
 						/*
 						class MineDetectorDisplay
 						{
@@ -291,6 +364,79 @@ class RC_FSV_A: RC_FSV_A_Base
 								{
 									componentType="TransportFeedDisplayComponent";
 									source="Missile";
+								};
+								class VehicleDriverDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="Driver";
+								};
+								class VehicleGunnerDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="PrimaryGunner";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+								/*
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
+								};
+								*/
+							};
+						};
+						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+						{
+							defaultDisplay="VehicleDriverDisplay";
+
+							class Components
+							{
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={3000,1500,750,375};
+									resource="RscCustomInfoSensors";
+								};
+								class VehicleMissileDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="Missile";
+								};
+								class VehicleDriverDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="Driver";
+								};
+								class VehicleGunnerDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="PrimaryGunner";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
 								};
 								/*
 								class MineDetectorDisplay
@@ -666,6 +812,15 @@ class RC_MBT6_A: RC_MBT6_A_Base
 
 							class Components
 							{
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
@@ -676,6 +831,70 @@ class RC_MBT6_A: RC_MBT6_A_Base
 								{
 									componentType="TransportFeedDisplayComponent";
 									source="Missile";
+								};
+								class VehicleDriverDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="Driver";
+								};
+								class VehicleGunnerDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="PrimaryGunner";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								/*
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
+								};
+								*/
+							};
+						};
+						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+						{
+							defaultDisplay="VehicleDriverDisplay";
+
+							class Components
+							{
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={3000,1500,750,375};
+									resource="RscCustomInfoSensors";
+								};
+								class VehicleMissileDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="Missile";
+								};
+								class VehicleDriverDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="Driver";
+								};
+								class VehicleGunnerDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="PrimaryGunner";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
 								};
 								/*
 								class MineDetectorDisplay
@@ -746,6 +965,15 @@ class RC_MBT6_A: RC_MBT6_A_Base
 
 					class Components
 					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
@@ -756,6 +984,70 @@ class RC_MBT6_A: RC_MBT6_A_Base
 						{
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
+						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleCommanderDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Commander";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="VehicleDriverDisplay";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={3000,1500,750,375};
+							resource="RscCustomInfoSensors";
+						};
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleCommanderDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Commander";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
 						};
 						/*
 						class MineDetectorDisplay

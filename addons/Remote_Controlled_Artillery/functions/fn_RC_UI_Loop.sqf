@@ -159,45 +159,52 @@ RC_Artillery_UI = [] spawn {
 			_realElevation = (17.7777778 * _realElevationOriginal);
   
 			//script to disable airburst when turret is too low for it, and reenable it when high enough
-			_currentweapon = currentWeapon _uav;
-			_currentmag = currentMagazine _uav;
+			_currentMag = currentMagazine _uav;
 
 			if (_realElevation <= 50) then
 			{
-				if (_currentmag regexMatch ".*_HEAB.*") then
+				if (_currentMag regexMatch ".*_HEAB.*") then
 				{
-					_changedcurrentmag = _currentmag regexReplace ["_HEAB", "_backupHEAB"];
-					_uav addMagazineTurret[_changedcurrentmag, [0]];
-					_uav removeMagazineTurret[_currentmag, [0]];
-					_uav loadMagazine [[0], _currentweapon, _changedcurrentmag];
-					//hintSilent format ["Mag: %1", _changedcurrentmag];
+					_currentWeapon = currentWeapon _uav;
+					_currentAmmoCount = parseNumber (((((currentMagazineDetail _uav) splitString "(") select 1) splitString "/") select 0);
+					_replacementMag = _currentMag regexReplace ["_HEAB", "_backupHEAB"];
+					_uav addMagazineTurret [_replacementMag, [0]];
+					_uav loadMagazine [[0], _currentWeapon, _replacementMag];
+					_uav removeMagazineTurret [_currentMag, [0]];
+					_uav setAmmo [_currentWeapon, _currentAmmoCount];
 				};
-				if (_currentmag regexMatch ".*_lowHEAB.*") then
+				if (_currentMag regexMatch ".*_lowHEAB.*") then
 				{
-					_changedcurrentmag = _currentmag regexReplace ["_lowHEAB", "_backuplowHEAB"];
-					_uav addMagazineTurret[_changedcurrentmag, [0]];
-					_uav removeMagazineTurret[_currentmag, [0]];
-					_uav loadMagazine [[0], _currentweapon, _changedcurrentmag];
-					//hintSilent format ["Mag: %1", _changedcurrentmag];
+					_currentWeapon = currentWeapon _uav;
+					_currentAmmoCount = parseNumber (((((currentMagazineDetail _uav) splitString "(") select 1) splitString "/") select 0);
+					_replacementMag = _currentMag regexReplace ["_lowHEAB", "_backuplowHEAB"];
+					_uav addMagazineTurret [_replacementMag, [0]];
+					_uav loadMagazine [[0], _currentWeapon, _replacementMag];
+					_uav removeMagazineTurret [_currentMag, [0]];
+					_uav setAmmo [_currentWeapon, _currentAmmoCount];
 				};
 			}
 			else
 			{
-				if (_currentmag regexMatch ".*_backupHEAB.*") then
+				if (_currentMag regexMatch ".*_backupHEAB.*") then
 				{
-					_changedcurrentmag = _currentmag regexReplace ["_backupHEAB", "_HEAB"];
-					_uav addMagazineTurret[_changedcurrentmag, [0]];
-					_uav removeMagazineTurret[_currentmag, [0]];
-					_uav loadMagazine [[0], _currentweapon, _changedcurrentmag];
-					//hintSilent format ["Mag: %1", _changedcurrentmag];
+					_currentWeapon = currentWeapon _uav;
+					_currentAmmoCount = parseNumber (((((currentMagazineDetail _uav) splitString "(") select 1) splitString "/") select 0);
+					_replacementMag = _currentMag regexReplace ["_backupHEAB", "_HEAB"];
+					_uav addMagazineTurret [_replacementMag, [0]];
+					_uav loadMagazine [[0], _currentWeapon, _replacementMag];
+					_uav removeMagazineTurret [_currentMag, [0]];
+					_uav setAmmo [_currentWeapon, _currentAmmoCount];
 				};
-				if (_currentmag regexMatch ".*_backuplowHEAB.*") then
+				if (_currentMag regexMatch ".*_backuplowHEAB.*") then
 				{
-					_changedcurrentmag = _currentmag regexReplace ["_backuplowHEAB", "_lowHEAB"];
-					_uav addMagazineTurret[_changedcurrentmag, [0]];
-					_uav removeMagazineTurret[_currentmag, [0]];
-					_uav loadMagazine [[0], _currentweapon, _changedcurrentmag];
-					//hintSilent format ["Mag: %1", _changedcurrentmag];
+					_currentWeapon = currentWeapon _uav;
+					_currentAmmoCount = parseNumber (((((currentMagazineDetail _uav) splitString "(") select 1) splitString "/") select 0);
+					_replacementMag = _currentMag regexReplace ["_backuplowHEAB", "_lowHEAB"];
+					_uav addMagazineTurret [_replacementMag, [0]];
+					_uav loadMagazine [[0], _currentWeapon, _replacementMag];
+					_uav removeMagazineTurret [_currentMag, [0]];
+					_uav setAmmo [_currentWeapon, _currentAmmoCount];
 				};
 			};
 			

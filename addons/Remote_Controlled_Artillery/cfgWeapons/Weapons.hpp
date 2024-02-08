@@ -99,16 +99,14 @@ class RC_MMG_338_FSV: RC_MMG_338_FSV_Base
 	displayName=".338 NM";
 	maxZeroing=3000;
 	FCSZeroingDelay=0.75;
-
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_Mag"
 	};
-
 	class manual: manual
 	{
-		displayName="12.7mm HMG";
-		dispersion=0.00102;	//0.0012
+		displayName=".338 NM";
+		dispersion=0.001;
 	};
 };
 class RC_MMG_338_FSV_coax: RC_MMG_338_FSV
@@ -134,16 +132,14 @@ class RC_MMG_338_MBT: RC_MMG_338_MBT_Base
 	displayName=".338 NM";
 	maxZeroing=3000;
 	FCSZeroingDelay=0.75;
-
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_Mag"
 	};
-
 	class manual: manual
 	{
 		displayName=".338 NM";
-		dispersion=0.00102;	//0.0012
+		dispersion=0.001;
 	};
 };
 class RC_MMG_338_MBT_coax: RC_MMG_338_MBT

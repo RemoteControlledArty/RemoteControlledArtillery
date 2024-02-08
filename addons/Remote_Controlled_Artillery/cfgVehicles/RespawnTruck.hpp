@@ -97,6 +97,37 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 				};
 			};
 		};
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={2000,1000,500,250};
+					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="EmptyDisplay";
+
+			class Components
+			{
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+			};
+		};
 	};
 
 	class TransportMagazines
@@ -281,6 +312,37 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={2000,1000,500,250};
+					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="EmptyDisplay";
+
+			class Components
+			{
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
 				};
 			};
 		};
@@ -488,6 +550,37 @@ class RC_RespawnVan_WD: RC_RespawnVan_WD_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={2000,1000,500,250};
+					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="EmptyDisplay";
+
+			class Components
+			{
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
 				};
 			};
 		};

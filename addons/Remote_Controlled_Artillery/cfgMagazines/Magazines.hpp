@@ -2563,7 +2563,7 @@ class RC_1Rnd_105mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 	initSpeed=400;
 	ammo="RC_Cluster_105mm_AMOS";
 	RC_TerrainWarning=1;
-	displayName="Cluster (7% UXO)";
+	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
 	count=1;
 };
@@ -4905,7 +4905,7 @@ class RC_1Rnd_120mm_Mo_Cluster: magazine_ShipCannon_120mm_HE_cluster_shells_x2
 {
 	ammo="RC_Cluster_120mm_AMOS";
 	RC_TerrainWarning=1;
-	displayName="Cluster (7% UXO)";
+	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
 	count=1;
 };
@@ -6930,7 +6930,7 @@ class RC_1Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
 	ammo="RC_Cluster_155mm_AMOS";
 	RC_TerrainWarning=1;
-	displayName="Cluster (7% UXO)";
+	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
 	count=1;
 };
@@ -8702,7 +8702,7 @@ class RC_1Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
 {
 	ammo="RC_R_230mm_Cluster";
 	RC_TerrainWarning=1;
-	displayName="Cluster (7% UXO)";
+	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
 	count=1;
 };

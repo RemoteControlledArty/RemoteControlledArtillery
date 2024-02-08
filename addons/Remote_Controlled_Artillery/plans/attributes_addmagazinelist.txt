@@ -2,12 +2,12 @@
 //in editor doubleclick asset, or leftclick then attributes, paste this in, with ? replaced by your prefered number of rounds
 
 //82mm RC Mortar (max 40 shells):
-this removeMagazineTurret["RC_12Rnd_82mm_Mo_HEAB", [0]];
-this removeMagazineTurret["RC_12Rnd_82mm_Mo_Smoke_white", [0]];;
-this removeMagazineTurret["RC_4Rnd_82mm_Mo_MultiGuided", [0]];
-this removeMagazineTurret["RC_8Rnd_82mm_Mo_AT_mine", [0]];
+this removeMagazineTurret["RC_10Rnd_82mm_Mo_HEAB", [0]];
+this removeMagazineTurret["RC_20Rnd_82mm_Mo_Smoke_white", [0]];;
+this removeMagazineTurret["RC_5Rnd_82mm_Mo_MultiGuided", [0]];
+this removeMagazineTurret["RC_9Rnd_82mm_Mo_AT_mine", [0]];
 this removeMagazineTurret["RC_6Rnd_82mm_Mo_mine", [0]];
-this removeMagazineTurret["RC_12Rnd_82mm_Mo_Flare_white", [0]];
+this removeMagazineTurret["RC_10Rnd_82mm_Mo_Flare_white", [0]];
 
 this addMagazineTurret["RC_?Rnd_82mm_Mo_HEAB", [0]];
 this addMagazineTurret["RC_?Rnd_82mm_Mo_Smoke_white", [0]];
@@ -23,13 +23,13 @@ this addMagazineTurret["RC_?Rnd_82mm_Mo_shells", [0]];
 
 
 //120mm RC Static Howitzer (max 40 shells):
-this removeMagazineTurret["RC_12Rnd_120mm_Mo_HEAB", [0]];
-this removeMagazineTurret["RC_12Rnd_120mm_Mo_Smoke", [0]];
-this removeMagazineTurret["RC_6Rnd_120mm_Mo_MultiGuided", [0]];
+this removeMagazineTurret["RC_10Rnd_120mm_Mo_HEAB", [0]];
+this removeMagazineTurret["RC_20Rnd_120mm_Mo_Smoke", [0]];
+this removeMagazineTurret["RC_5Rnd_120mm_Mo_MultiGuided", [0]];
 this removeMagazineTurret["RC_2Rnd_120mm_Mo_Cluster", [0]];
-this removeMagazineTurret["RC_8Rnd_120mm_Mo_AT_Mine", [0]];
-this removeMagazineTurret["RC_6Rnd_120mm_Mo_Mine", [0]];
-this removeMagazineTurret["RC_12Rnd_120mm_Mo_Illum", [0]];
+this removeMagazineTurret["RC_9Rnd_120mm_Mo_AT_mine", [0]];
+this removeMagazineTurret["RC_6Rnd_120mm_Mo_mine", [0]];
+this removeMagazineTurret["RC_10Rnd_120mm_Mo_Illum", [0]];
 
 this addMagazineTurret["RC_?Rnd_120mm_Mo_HEAB", [0]];
 this addMagazineTurret["RC_?Rnd_120mm_Mo_Smoke", [0]];
@@ -44,28 +44,14 @@ this addMagazineTurret["RC_?Rnd_120mm_Mo_LG_DelayedFuse", [0]];
 this addMagazineTurret["RC_?Rnd_120mm_Mo_HEAB_low", [0]];
 this addMagazineTurret["RC_?Rnd_120mm_Mo_shells", [0]];
 
-
-//120mm N/LOS FSV (max 12 shells):
-this removeMagazineTurret["RC_12Rnd_FSV_120mm_Mo_HEAB", [0]];
-this removeMagazineTurret["RC_12Rnd_FSV_120mm_Mo_Smoke", [0]];
-this removeMagazineTurret["RC_6Rnd_FSV_120mm_Mo_MultiGuided", [0]];
-
-this removeMagazineTurret["RC_?Rnd_FSV_120mm_Mo_HEAB", [0]];
-this removeMagazineTurret["RC_?Rnd_FSV_120mm_Mo_Smoke", [0]];
-this removeMagazineTurret["RC_?Rnd_FSV_120mm_Mo_MultiGuided", [0]];
-
-extra:
-this addMagazineTurret["RC_?Rnd_FSV_120mm_Mo_LG_DelayedFuse", [0]];
-
-
 //155mm RC Howitzer (max 40 shells):
-this removeMagazineTurret["RC_12Rnd_155mm_Mo_HEAB", [0]];
-this removeMagazineTurret["RC_12Rnd_155mm_Mo_Smoke_white", [0]];
-this removeMagazineTurret["RC_6Rnd_155mm_Mo_MultiGuided", [0]];
-this removeMagazineTurret["RC_12Rnd_155mm_Mo_Cluster", [0]];
-this removeMagazineTurret["RC_8Rnd_155mm_Mo_AT_mine", [0]];
+this removeMagazineTurret["RC_10Rnd_155mm_Mo_HEAB", [0]];
+this removeMagazineTurret["RC_20Rnd_155mm_Mo_Smoke_white", [0]];
+this removeMagazineTurret["RC_5Rnd_155mm_Mo_MultiGuided", [0]];
+this removeMagazineTurret["RC_2Rnd_155mm_Mo_Cluster", [0]];
+this removeMagazineTurret["RC_9Rnd_155mm_Mo_AT_mine", [0]];
 this removeMagazineTurret["RC_6Rnd_155mm_Mo_mine", [0]];
-this removeMagazineTurret["RC_12Rnd_155mm_Mo_Illum", [0]];
+this removeMagazineTurret["RC_10Rnd_155mm_Mo_Illum", [0]];
 
 this addMagazineTurret["RC_?Rnd_155mm_Mo_HEAB", [0]];
 this addMagazineTurret["RC_?Rnd_155mm_Mo_Smoke_white", [0]];

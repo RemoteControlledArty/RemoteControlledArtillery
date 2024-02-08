@@ -214,6 +214,22 @@ class RC_UAV_AR1: RC_UAV_base
 						};
 					};
 				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplay";
+					class components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoAirborneMiniMap";
+						};
+					};
+				};
 			};
 
 			class OpticsIn
@@ -338,8 +354,24 @@ class RC_UAV_AR3: RC_UAV_AR1
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,2000,1000,500,250};
+					range[]={3000,1500,750,375};
 					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="EmptyDisplay";
+			class components
+			{
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoAirborneMiniMap";
 				};
 			};
 		};
@@ -476,8 +508,24 @@ class RC_UAV_AR3: RC_UAV_AR1
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,2000,1000,500,250};
+							range[]={3000,1500,750,375};
 							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplay";
+					class components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoAirborneMiniMap";
 						};
 					};
 				};
@@ -740,34 +788,6 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 			};
 		};
 		*/
-		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-		{
-			defaultDisplay="SensorDisplay";
-			class components
-			{
-				class EmptyDisplay
-				{
-					componentType="EmptyDisplayComponent";
-				};
-				class MinimapDisplay
-				{
-					componentType="MinimapDisplayComponent";
-					resource="RscCustomInfoAirborneMiniMap";
-				};
-				class SensorDisplay
-				{
-					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750,375};
-					resource="RscCustomInfoSensors";
-				};
-				class MineDetectorDisplay
-				{
-					componentType="MineDetectorDisplayComponent";
-					range=50;
-					resource="RscCustomInfoMineDetect";
-				};
-			};
-		};
 		class SensorsManagerComponent
 		{
 			class Components
@@ -810,6 +830,41 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+			class components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={3000,1500,750,375};
+					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="EmptyDisplay";
+			class components
+			{
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoAirborneMiniMap";
+				};
+				class MineDetectorDisplay
+				{
+					componentType="MineDetectorDisplayComponent";
+					range=50;
+					resource="RscCustomInfoMineDetect";
 				};
 			};
 		};

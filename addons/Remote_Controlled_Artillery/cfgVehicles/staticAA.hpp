@@ -160,14 +160,40 @@ class RC_Static_AA_A: RC_Static_AA_A_base
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
 					defaultDisplay="SensorDisplay";
+
 					class Components
 					{
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3500,1750,875,437.5};
+							range[]={3500,1750,875};
 							resource="RscCustomInfoSensors";
 						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						/*
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+							resource="RscTransportCameraComponentMissile";
+						};
+						*/
 					};
 				};
 			};

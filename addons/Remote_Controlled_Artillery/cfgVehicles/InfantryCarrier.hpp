@@ -216,6 +216,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 						{
 							defaultDisplay="SensorDisplay";
+
 							class Components
 							{
 								class SensorDisplay
@@ -224,11 +225,22 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 									range[]={3000,1500,750,375};
 									resource="RscCustomInfoSensors";
 								};
-								class MineDetectorDisplay
+							};
+						};
+						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+						{
+							defaultDisplay="EmptyDisplayComponent";
+
+							class Components
+							{
+								class EmptyDisplay
 								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
+									componentType="EmptyDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
 								};
 							};
 						};
@@ -244,6 +256,7 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
 					defaultDisplay="SensorDisplay";
+
 					class Components
 					{
 						class SensorDisplay
@@ -252,11 +265,22 @@ class RC_Infantry_Carrier_A: RC_Infantry_Carrier_A_base
 							range[]={3000,1500,750,375};
 							resource="RscCustomInfoSensors";
 						};
-						class MineDetectorDisplay
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
 						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
 						};
 					};
 				};
