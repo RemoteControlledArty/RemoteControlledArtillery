@@ -1915,7 +1915,7 @@ class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 {
 	explosionTime=0.0001;
 	explosive=1;
-	//explosionEffects="RC_MortarExplosion";	//not ready yet
+	explosionEffects="RC_MortarExplosion";	//not ready yet
 	craterEffects="RC_155mmAirburstDust";
 };
 class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base

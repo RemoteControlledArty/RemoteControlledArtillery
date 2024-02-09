@@ -206,4 +206,13 @@ class RC_MortarExplosion
 		interval=1;
 		lifeTime=1;
 	};
+	class ExplodeRefract
+	{
+		simulation="particles";
+		type="ExplodeRefract_VeryBig";
+		position[]={0,0,0};
+		intensity=1;
+		interval= 1;
+		lifeTime=1;
+	};
 };
