@@ -8255,6 +8255,172 @@ class RC_40Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 };
 
 
+//Subcaliber Hypervelocity MP Guided (105mm MP Guided in 155mm Sabot)
+class RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided
+{
+	initSpeed=1715;	//Mach 5
+	ammo="RC_Sh_105mm_AMOS_MP_MultiGuided_SubCalHyperVel";
+	displayName="SubCalHyperVel MP Guided";
+	displayNameShort="SCHV MP-G";
+};
+class RC_2Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=2;
+};
+class RC_3Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=3;
+};
+class RC_4Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=4;
+};
+class RC_5Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=5;
+};
+class RC_6Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=6;
+};
+class RC_7Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=7;
+};
+class RC_8Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=8;
+};
+class RC_9Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=9;
+};
+class RC_10Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=10;
+};
+class RC_11Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=11;
+};
+class RC_12Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=12;
+};
+class RC_13Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=13;
+};
+class RC_14Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=14;
+};
+class RC_15Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=15;
+};
+class RC_16Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=16;
+};
+class RC_17Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=17;
+};
+class RC_18Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=18;
+};
+class RC_19Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=19;
+};
+class RC_20Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=20;
+};
+class RC_21Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=21;
+};
+class RC_22Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=22;
+};
+class RC_23Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=23;
+};
+class RC_24Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=24;
+};
+class RC_25Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=25;
+};
+class RC_26Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=26;
+};
+class RC_27Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=27;
+};
+class RC_28Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=28;
+};
+class RC_29Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=29;
+};
+class RC_30Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=30;
+};
+class RC_31Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=31;
+};
+class RC_32Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=32;
+};
+class RC_33Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=33;
+};
+class RC_34Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=34;
+};
+class RC_35Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=35;
+};
+class RC_36Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=36;
+};
+class RC_37Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=37;
+};
+class RC_38Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=38;
+};
+class RC_39Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=39;
+};
+class RC_40Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+{
+	count=40;
+};
+
+
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_155mm_Mo_backupHEAB: 32Rnd_155mm_Mo_shells
 {

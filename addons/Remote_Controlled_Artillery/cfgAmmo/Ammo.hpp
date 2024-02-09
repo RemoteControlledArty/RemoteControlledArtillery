@@ -1498,6 +1498,20 @@ class RC_Sh_105mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 };
 
 
+//Subcaliber Hypervelocity Guided, 105mm to be used in 155mm Sabot to half time of flight and increase range (138km)
+class RC_105mm_MP_MultiGuided_SubCalHyperVel_Submunition: RC_105mm_MP_MultiGuided_Submunition
+{
+	//maybe add different velocity/steering
+	cost=1200;
+};
+class RC_Sh_105mm_AMOS_MP_MultiGuided_SubCalHyperVel: RC_Sh_105mm_AMOS_MP_MultiGuided
+{
+	submunitionAmmo="RC_105mm_MP_MultiGuided_SubCalHyperVel_Submunition";
+	timeToLive=360;
+	cost=1200;
+};
+
+
 class RC_Sh_105mm_AMOS_delayed_submunition: RC_Sh_105mm_AMOS_submunition
 {
 	explosionTime=0.2;
