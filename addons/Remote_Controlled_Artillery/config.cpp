@@ -464,16 +464,6 @@ class Optics_Gunner_MBT_01;
 //later required sensor panels
 class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
-/*
-class DefaultVehicleSystemsDisplayManagerLeft
-{
-	class components;
-};
-class DefaultVehicleSystemsDisplayManagerRight
-{
-	class components;
-};
-*/
 
 
 class CfgCloudlets

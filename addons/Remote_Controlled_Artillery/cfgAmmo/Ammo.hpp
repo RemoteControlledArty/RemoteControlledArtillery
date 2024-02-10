@@ -360,15 +360,16 @@ class RC_HEAB_Base: Default
 		316.22775,
 		1
 	};
+	//okish
 	soundFly[]=
 	{
-		"",
-		0.031622775,
-		4
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Fly_Titan",
+		0.63095737,
+		1.5,
+		300
 	};
 	hitOnWater=1;
 	//visibleFire=16;
-	//audibleFire=16;
 	visibleFireTime=10;
 
 	//shell/submunition base
@@ -394,7 +395,7 @@ class RC_HEAB_Base: Default
 	muzzleEffect="";
 	deflectionDirDistribution=0.38999999;
 	penetrationDirDistribution=0.25999999;
-	whistleOnFire=2;
+	whistleOnFire=1;
 	aiAmmoUsageFlags="64 + 128";
 	class HitEffects
 	{
@@ -450,7 +451,6 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 	deflecting=0;
 	explosive=0.80000001;
 	model="\A3\weapons_f\ammo\shell";
-	ExplosionEffects="MortarExplosion";
 	whistleDist=60;
 	thrust=0;
 	airFriction=0;
@@ -494,20 +494,32 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 		"soundHit4",
 		0.25
 	};
+
+	//testing
+	/*
+	soundFly[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_02",
+		3.1622777,
+		1,
+		1000
+	};
+	*/
 };
 class RC_HEAB_Rocket_Base: RC_HEAB_Base
 {
+	warheadName="HE";
 	explosive=0.80000001;
 	caliber=34;
 	airFriction=0;
 	sideairFriction=0;
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
-	warheadName="HE";
 	audibleFire=64;
 	dangerRadiusHit=1250;
 	suppressionRadiusHit=120;
 	deflecting=0;
+	thrust=0;
 	soundHit1[]=
 	{
 		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",

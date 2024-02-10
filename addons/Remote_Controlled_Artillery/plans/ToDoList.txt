@@ -15,10 +15,10 @@ TO DO - BUGFIXES:
 -report bug to ace team: turret is locked unable to adjust up/down, when scope of player is adjustable, despite being in remote control
 -report bug to ace team: crl+h cuts connection and destroys UV
 
+
 TO DO - FEATURES:
 
 General:
--update right/left panel options, except for arty
 
 EH:
 if (!isserver) exitwith {}; = server client only, not every player client
@@ -26,6 +26,7 @@ if (!isserver) exitwith {}; = server client only, not every player client
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
+-find shellfly sound (non existant in vanilla) check voronas sound
 -TB blast
 -if it has eyes on laser, it engages...? make ai that doesnt target laser?
 	*laserspot values:
@@ -45,12 +46,9 @@ Arty:
 #define TLogic 7
 
 -marker moves when hit
-
--test gps marker with vehicle
--MP guided doesnt seem gps guided with vanilla computer
-
--make sure gps marker is not targeted by any AI
 -make sure blastcore etc doesnt remove ground dust animation
+-MP guided doesnt seem gps guided with vanilla computer, but should work with additional gps marker
+
 -recon radar+vehicle mortar composition (maybe hide legs)
 -warheadName HE/TandemHEAT ?
 -remove non airburst HE after trajectory testing
@@ -226,7 +224,7 @@ DONE - FEATURES:
 -guided round rename to be more neutral
 -fixed zero devider error in firing solution calculator by preventing _targetDistance to be <=0
 -improved vehicle seat locking script and added more options
--fixed datalink panels
+-fixed all datalink panels
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
@@ -240,6 +238,7 @@ DONE - FEATURES:
 -fixed HEAB by slightly decreasing simulationStep, to not overshoot at low trajectory, or hit ground at high trajectory
 -added (cfgmag value) guided round lock requirement for guidance warning when no target is selected, also (cfgmag value) submunition warning when looking at terrain
 -for vehicle attached mortar, when target<=10m (like vehicle its attached to): shows map marker targets instead, shows requires lock message for guided shells
+-edited GPS Markers to not be attacked by AI
 
 
 -low/high trajectory list:
