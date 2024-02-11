@@ -360,7 +360,13 @@ class RC_HEAB_Base: Default
 		316.22775,
 		1
 	};
-	//okish
+	soundFly[]=
+	{
+		"",
+		0.031622775,
+		4
+	};
+	/*
 	soundFly[]=
 	{
 		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Fly_Titan",
@@ -368,6 +374,14 @@ class RC_HEAB_Base: Default
 		1.5,
 		300
 	};
+	soundFly[]=
+	{
+		"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
+		1,
+		1.1,
+		700
+	};
+	*/
 	hitOnWater=1;
 	//visibleFire=16;
 	visibleFireTime=10;
@@ -395,7 +409,7 @@ class RC_HEAB_Base: Default
 	muzzleEffect="";
 	deflectionDirDistribution=0.38999999;
 	penetrationDirDistribution=0.25999999;
-	whistleOnFire=1;
+	whistleOnFire=2;	//?
 	aiAmmoUsageFlags="64 + 128";
 	class HitEffects
 	{
@@ -451,7 +465,7 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 	deflecting=0;
 	explosive=0.80000001;
 	model="\A3\weapons_f\ammo\shell";
-	whistleDist=60;
+	whistleDist=30;	//umanle to get effect yet
 	thrust=0;
 	airFriction=0;
 	sideairFriction=0;
@@ -494,17 +508,13 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 		"soundHit4",
 		0.25
 	};
-
-	//testing
-	/*
 	soundFly[]=
 	{
-		"a3\Sounds_F\weapons\falling_bomb\fall_02",
-		3.1622777,
-		1,
-		1000
+		"a3\Sounds_F\weapons\falling_bomb\fall_01",
+		3.1622777,	//idk
+		1,	//idk
+		300	//idk
 	};
-	*/
 };
 class RC_HEAB_Rocket_Base: RC_HEAB_Base
 {
