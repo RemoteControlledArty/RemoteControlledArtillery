@@ -29,6 +29,7 @@ Arty:
 -find shellfly sound (non existant in vanilla) check voronas sound
 -TB blast/explosion/cloud/frag *gps has priority
 -155mm based HEAB_shellbase testing
+-different guided explosioneffect
 
 -if it has eyes on laser, it engages...? make ai that doesnt target laser? or just unable to fire
 	*laserspot values:
@@ -227,6 +228,7 @@ DONE - FEATURES:
 -fixed zero devider error in firing solution calculator by preventing _targetDistance to be <=0
 -improved vehicle seat locking script and added more options
 -fixed all datalink panels
+-added shell fall/passby sound, which suprisingly was not in vanilla
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)

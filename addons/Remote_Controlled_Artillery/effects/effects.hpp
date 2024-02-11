@@ -216,3 +216,76 @@ class RC_MortarExplosion
 		lifeTime=1;
 	};
 };
+
+/*
+class ATMissileExplosion
+{
+	class LightExp
+	{
+		simulation="light";
+		type="ExploLight";
+		position[]={0,1.5,0};
+		intensity=0.001;
+		interval=1;
+		lifeTime=0.25;
+	};
+	class Explosion1
+	{
+		simulation="particles";
+		type="ExplosionParticles";
+		position[]={0,0,0};
+		intensity=3;
+		interval=1;
+		lifeTime=0.25;
+	};
+	class SmallSmoke1
+	{
+		simulation="particles";
+		type="CloudMedDark";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+	};
+};
+*/
+
+class RC_GuidedExplosion
+{
+	class LightExp
+	{
+		simulation="light";
+		type="ExploLight";
+		position[]={0,1.5,0};
+		intensity=0.001;
+		interval=1;
+		lifeTime=0.25;
+	};
+	class Explosion1
+	{
+		simulation="particles";
+		type="ExplosionParticles";
+		position[]={0,0,0};
+		intensity=3;
+		interval=1;
+		lifeTime=0.25;
+	};
+	class SmallSmoke1
+	{
+		simulation="particles";
+		type="CloudMedDark";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+	};
+	class ExplodeRefract
+	{
+		simulation="particles";
+		type="ExplodeRefract_VeryBig";
+		position[]={0,0,0};
+		intensity=1;
+		interval= 1;
+		lifeTime=1;
+	};
+};

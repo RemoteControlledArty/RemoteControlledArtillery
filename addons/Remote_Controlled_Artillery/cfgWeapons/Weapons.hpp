@@ -1616,8 +1616,6 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 {
 	magazines[]=
 	{
-		"4Rnd_155mm_Mo_guided",
-
 		"RC_1Rnd_155mm_Mo_HEAB",
 		"RC_2Rnd_155mm_Mo_HEAB",
 		"RC_3Rnd_155mm_Mo_HEAB",
@@ -2348,6 +2346,52 @@ class RC_155mm_AMOS_V4: RC_155mm_AMOS_V3
 //105mm
 class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 {
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5",
+		"Single6",
+		"Burst1",
+		"Burst2",
+		"Burst3",
+		"Burst4",
+		"Burst5"
+	};
+
+	class Single1: Single1
+	{
+		displayName="CH0"
+		artilleryCharge=0.3;
+	};
+	class Single2: Single1
+	{
+		displayName="CH1"
+		artilleryCharge=0.382;
+	};
+	class Single3: Single1
+	{
+		displayName="CH2"
+		artilleryCharge=0.486;
+	};
+	class Single4: Single1
+	{
+		displayName="CH3"
+		artilleryCharge=0.618;
+	};
+	class Single5: Single1
+	{
+		displayName="CH4"
+		artilleryCharge=0.786;
+	};
+	class Single6: Single1
+	{
+		displayName="CH5 direct"
+		artilleryCharge=1;
+	};
+
 	magazines[]=
 	{
 		"RC_1Rnd_105mm_Mo_HEAB",

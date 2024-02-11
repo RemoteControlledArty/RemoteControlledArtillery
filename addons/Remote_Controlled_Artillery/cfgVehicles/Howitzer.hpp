@@ -292,8 +292,6 @@ class RC_Howitzer_A: RC_Howitzer_NA_A
 			};
 			magazines[]=
 			{
-				"4Rnd_155mm_Mo_guided",
-				
 				"RC_10Rnd_155mm_Mo_HEAB",
 				"RC_10Rnd_155mm_Mo_lowHEAB",
 				"RC_10Rnd_155mm_Mo_shells",
