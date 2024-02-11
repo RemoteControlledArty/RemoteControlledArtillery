@@ -366,22 +366,6 @@ class RC_HEAB_Base: Default
 		0.031622775,
 		4
 	};
-	/*
-	soundFly[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Fly_Titan",
-		0.63095737,
-		1.5,
-		300
-	};
-	soundFly[]=
-	{
-		"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-		1,
-		1.1,
-		700
-	};
-	*/
 	hitOnWater=1;
 	//visibleFire=16;
 	visibleFireTime=10;
@@ -465,7 +449,7 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 	deflecting=0;
 	explosive=0.80000001;
 	model="\A3\weapons_f\ammo\shell";
-	whistleDist=30;	//umanle to get effect yet
+	whistleDist=153.9;	//unclear effect
 	thrust=0;
 	airFriction=0;
 	sideairFriction=0;
@@ -511,11 +495,30 @@ class RC_HEAB_Shell_Base: RC_HEAB_Base
 	soundFly[]=
 	{
 		"a3\Sounds_F\weapons\falling_bomb\fall_01",
-		3.1622777,	//idk
-		1,	//idk
-		300	//idk
+		3.1622777,	//likely priority
+		1,	//likely playspeed
+		153.9	//hearable distance, should me min m/s of the shell (lowest charge)
 	};
 };
+class Sh_155mm_AMOS;
+//alternative base to make soundmods like jsrs work, might create problems with other artillery mods that sicnificantly change 155mm HE shell values
+//for now finetuned shell soundfly to create correct fall and passby sound instead
+/*
+class RC_HEAB_Shell_Base: Sh_155mm_AMOS
+{
+	simulation="shotSubmunitions";
+	simulationStep=0.005;	//required to make airburst work before hitting ground
+	submunitionCount=1;
+	submunitionConeAngle=0;
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=0;
+	artilleryLock=1;
+	laserLock=1;	//only for firing solution calculator
+	irLock=1;	//only for firing solution calculator
+	craterEffects="RC_ArtyShellCrater";	//dust on ground effect like caused by airburst
+	ExplosionEffects="MortarExplosion";
+};
+*/
 class RC_HEAB_Rocket_Base: RC_HEAB_Base
 {
 	warheadName="HE";
@@ -578,6 +581,7 @@ class RC_MP_Guided_Submunition_MissleBase: MissileBase
 class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 {
 	//simulation="shotMissile";	//already inherited
+	artilleryLock=1;
 	laserLock=1;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
@@ -718,10 +722,67 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 };
 class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 {
-	irLock=1;
-	airLock=1;
-	weaponLockSystem="2 + 4 + 16";
+	artilleryLock=0;
+	laserLock=0;
+	//irLock=1;
+	//airLock=1;
+	//weaponLockSystem="2 + 4 + 16";
+	weaponLockSystem=4;
 
+	timeToLive=20;
+	initTime=0.15000001;
+	thrustTime=2.5;
+	thrust=350;
+
+	manualControl=0;
+	maneuvrability=20;
+	maxSpeed=500;
+	simulationStep=0.0099999998;
+	airFriction=0.2;
+	sideAirFriction=0.001;
+	maxControlRange=4000;
+
+	model="\A3\weapons_f\ammo\shell";
+	autoSeekTarget=1;
+	airLock=0;
+	maneuvrability=6;
+	simulationStep=0.0020000001;
+	fuseDistance=0;
+	airFriction=0.0099999998;
+	sideAirFriction=0.029999999;
+	weaponLockSystem=2;
+	missileLockCone=40;
+	missileKeepLockedCone=40;
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=500;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=1;
+					};
+					class GroundTarget
+					{
+						minRange=500;
+						maxRange=800;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+			};
+		};
+	};
+	/*
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -761,6 +822,7 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
+				*/
 				/*
 				class VisualSensorComponent: SensorTemplateVisual
 				{
@@ -785,6 +847,7 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 					angleRangeVertical=40;
 				};
 				*/
+				/*
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
 					typeRecognitionDistance=67000;
@@ -807,6 +870,7 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 			};
 		};
 	};
+	*/
 };
 class SubmunitionBase;
 class RC_Sh_AMOS_MP_LaserGuided_Base: SubmunitionBase
@@ -881,8 +945,8 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
 class Sh_82mm_AMOS;
 class RC_Sh_82mm_AMOS: Sh_82mm_AMOS
 {
-	laserLock=1;
-	irLock=1;
+	laserLock=1;	//only for firing solution calculator
+	irLock=1;	//only for firing solution calculator
 }
 
 
@@ -898,6 +962,14 @@ class RC_82mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 	indirectHit=52;
 	indirectHitRange=18;
 	cost=200;
+	whistleDist=70;	//yet unclear
+	soundFly[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_01",
+		3.1622777,	//likely priority
+		1,	//likely playspeed
+		70	//hearable distance, should me min m/s of the shell (lowest charge)
+	};
 	class CamShakeExplode
 	{
 		power=16.4;
@@ -947,6 +1019,14 @@ class RC_Sh_82mm_AMOS_backupHEAB: RC_82mm_HEAB_Shell_Base
 	submunitionInitialOffset[]={0,5,0};
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
+	whistleDist=70;	//yet unclear
+	soundFly[]=
+	{
+		"a3\Sounds_F\weapons\falling_bomb\fall_01",
+		3.1622777,	//likely priority
+		1,	//likely playspeed
+		70	//hearable distance, should me min m/s of the shell (lowest charge)
+	};
 };
 
 
@@ -1284,11 +1364,10 @@ class RC_Sh_82mm_AMOS_LG: Sh_82mm_AMOS_LG
 
 
 //105mm, yet to be introduced, no vehicle options yet
-class Sh_155mm_AMOS;
 class RC_Sh_105mm_AMOS: Sh_155mm_AMOS
 {
-	laserLock=1;
-	irLock=1;
+	laserLock=1;	//only for firing solution calculator
+	irLock=1;	//only for firing solution calculator
 	indirectHit=75.6;
 	indirectHitRange=21.7;
 	cost=233;
@@ -1608,8 +1687,8 @@ class RC_Smoke_105mm_AMOS_White: Smoke_120mm_AMOS_White
 //120mm
 class RC_Sh_120mm_AMOS: Sh_155mm_AMOS
 {
-	laserLock=1;
-	irLock=1;
+	laserLock=1;	//only for firing solution calculator
+	irLock=1;	//only for firing solution calculator
 	indirectHit=86.4;
 	indirectHitRange=24.8;
 	cost=266;
@@ -1928,8 +2007,8 @@ class RC_Sh_120mm_MP_T_Green: Sh_120mm_HEAT_MP
 //155mm
 class RC_Sh_155mm_AMOS: Sh_155mm_AMOS
 {
-	laserLock=1;
-	irLock=1;
+	laserLock=1;	//only for firing solution calculator
+	irLock=1;	//only for firing solution calculator
 }
 
 
@@ -2261,8 +2340,8 @@ class RC_Sh_155mm_AMOS_LG_DelayedFuse: RC_Sh_155mm_AMOS_MP_MultiGuided
 class R_230mm_fly;
 class RC_R_230mm_fly: R_230mm_fly
 {
-	laserLock=1;
-	irLock=1;
+	laserLock=1;	//only for firing solution calculator
+	irLock=1;	//only for firing solution calculator
 	cost=1000;
 }
 

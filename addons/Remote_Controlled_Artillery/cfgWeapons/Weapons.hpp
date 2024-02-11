@@ -1616,6 +1616,8 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 {
 	magazines[]=
 	{
+		"4Rnd_155mm_Mo_guided",
+
 		"RC_1Rnd_155mm_Mo_HEAB",
 		"RC_2Rnd_155mm_Mo_HEAB",
 		"RC_3Rnd_155mm_Mo_HEAB",

@@ -46,6 +46,10 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 	reportRemoteTargets=1;
 	threat[]={0,0,0};
 	cost=0;
+	typicalCargo[]=
+	{
+		""
+	};
 	smokeLauncherGrenadeCount=8;
 	smokeLauncherVelocity=14;
 	smokeLauncherOnTurret=0;
@@ -264,6 +268,10 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 	reportRemoteTargets=1;
 	threat[]={0,0,0};
 	cost=0;
+	typicalCargo[]=
+	{
+		""
+	};
 	smokeLauncherGrenadeCount=8;
 	smokeLauncherVelocity=14;
 	smokeLauncherOnTurret=0;
@@ -496,12 +504,16 @@ class RC_RespawnVan_WD: RC_RespawnVan_WD_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-	threat[]={0,0,0};
-	cost=0;
 	enableGPS=1;
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
+	threat[]={0,0,0};
+	cost=0;
+	typicalCargo[]=
+	{
+		""
+	};
 	smokeLauncherGrenadeCount=8;
 	smokeLauncherVelocity=14;
 	smokeLauncherOnTurret=0;
