@@ -94,80 +94,41 @@ class CircleDustMed: Default
 
 
 class Default;
-class ExplodeRefract_Large: Default
+class ShellShockwave: Default
 {
-	angleVar=1;
-	animationName="";
-	animationSpeed[] = {1};
 	beforeDestroyScript="";
 	circleRadius=0;
 	circleVelocity[] = {0,0,0};
-	colorVar[] = {0,0,0,0};
-	color[]=
-	{
-		{1,1,1,0.08},
-		{0.5,0.5,0.5,0.1},
-		{0.3,0.3,0.3,0.02},
-		{0.2,0.2,0.2,0}
-	};
-	interval= 30;
-	lifeTime=0.4;
-	lifeTimeVar=0;
-	MoveVelocityVar[] = {0.2,0.5,0.2};
-	moveVelocity[] = {0,0,0};
-	onTimerScript="";
-	particleFSFrameCount=1;
-	particleFSIndex=0;
-	particleFSLoop=0;
-	particleFSNtieth=1;
-	particleShape="\A3\data_f\ParticleEffects\Universal\Smoke";
-	particleType="Billboard";
-	positionVar[] = {0.4,0.1,0.4};
 	randomDirectionIntensity=0.2;
 	randomDirectionIntensityVar=0;
 	randomDirectionPeriod=0.2;
 	randomDirectionPeriodVar=0;
-	rotationVelocity=0;
-	rotationVelocityVar=90;
-	rubbing=0.1;
-	sizeVar=0.5;
-	Size[] = {1,8,20,35,50,70,100};
-	timerPeriod=1;
+	colorVar[] = {0,0,0,0};
+	color[]= {{1,1,1,0.04},{0.5,0.5,0.5,0.1},{0.3,0.3,0.3,0.04},{0.2,0.2,0.2,0}};
+	MoveVelocityVar[] = {0.2,0.5,0.2};
+	moveVelocity[] = {0,0,0};
+	interval= 30;
+	onTimerScript="";
 	volume=7.9000001;
 	weight=10;
-};
-class ExplodeRefract_Med: ExplodeRefract_Large
-{
-	Size[] = {1,8,20,35,50,70};
-	color[]=
-	{
-		{1,1,1,0.04},
-		{0.5,0.5,0.5,0.08},
-		{0.3,0.3,0.3,0.02},
-		{0.2,0.2,0.2,0}
-	};
-};
-class ExplodeRefract_Small: ExplodeRefract_Large
-{
-	Size[] = {1,8,20,35};
-	color[]=
-	{
-		{1,1,1,0.04},
-		{0.5,0.5,0.5,0.08},
-		{0.3,0.3,0.3,0.02},
-		{0.2,0.2,0.2,0}
-	};
-};
-class ExplodeRefract_VeryBig: ExplodeRefract_Large
-{
+	rotationVelocity=0;
+	rotationVelocityVar=90;
+	particleShape="\A3\data_f\ParticleEffects\Universal\Smoke";
+	particleType="Billboard";
+	particleFSLoop=0;
+	particleFSNtieth=1;
+	particleFSFrameCount=1;
+	particleFSIndex=0;
+	angleVar=1;
+	lifeTime=0.4;
+	lifeTimeVar=0;
+	positionVar[] = {0.4,0.1,0.4};
+	animationName="";
+	animationSpeed[] = {1};
+	sizeVar=0.5;
 	Size[] = {1,8,20,35,50,70,100,120};
-	color[]=
-	{
-		{1,1,1,0.04},
-		{0.5,0.5,0.5,0.1},
-		{0.3,0.3,0.3,0.04},
-		{0.2,0.2,0.2,0}
-	};
+	timerPeriod=1;
+	rubbing=0.1;
 };
 
 
@@ -175,8 +136,6 @@ class CircleDustMed;
 class RC_82mmCircleDust: CircleDustMed
 {
 	circleRadius=12.7;
-	//size[]={6,11};
-	//circleRadius[]={12.7,8.5,4.2};	//doesnt work
 	lifeTime=20;
 };
 
@@ -262,6 +221,7 @@ class MortarExp: Default
 };
 */
 
+/*
 class MortarExp;
 class RC_MortarExp: MortarExp
 {
@@ -276,3 +236,4 @@ class RC_MortarExp: MortarExp
 	};
 	sizeVar=0.5;
 };
+*/

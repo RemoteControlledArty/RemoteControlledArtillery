@@ -22,6 +22,7 @@ class GrenadeExploLight
 };
 */
 
+/*
 class GrenadeExploLight;
 class RC_GrenadeExploLight: GrenadeExploLight
 {
@@ -44,3 +45,4 @@ class RC_GrenadeExploLight: GrenadeExploLight
 	};
 	position[]={0,3.5,0};
 };
+*/

@@ -28,7 +28,7 @@ class RC_ArtyShellCrater
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 };
 
@@ -42,7 +42,7 @@ class RC_82mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 	class CircleDust
 	{
@@ -52,7 +52,7 @@ class RC_82mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 };
 
@@ -66,7 +66,7 @@ class RC_105mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 	class CircleDust
 	{
@@ -76,7 +76,7 @@ class RC_105mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 };
 
@@ -90,7 +90,7 @@ class RC_120mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 	class CircleDust
 	{
@@ -100,7 +100,7 @@ class RC_120mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 };
 
@@ -114,7 +114,7 @@ class RC_155mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 	class CircleDust
 	{
@@ -124,7 +124,7 @@ class RC_155mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 };
 
@@ -138,7 +138,7 @@ class RC_230mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 	class CircleDust
 	{
@@ -148,7 +148,7 @@ class RC_230mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 };
 
@@ -162,7 +162,7 @@ class RC_604mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 	class CircleDust
 	{
@@ -172,7 +172,7 @@ class RC_604mmAirburstDust
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
-		lifeTime=0.2;	//0.2
+		lifeTime=0.2;
 	};
 };
 
@@ -191,7 +191,7 @@ class RC_MortarExplosion
 	class MortarExp1
 	{
 		simulation="particles";
-		type="RC_MortarExp";
+		type="MortarExp";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -206,49 +206,16 @@ class RC_MortarExplosion
 		interval=1;
 		lifeTime=1;
 	};
-	class ExplodeRefract
+	class Shockwave
 	{
 		simulation="particles";
-		type="ExplodeRefract_VeryBig";
+		type="ShellShockwave";
 		position[]={0,0,0};
 		intensity=1;
 		interval= 1;
 		lifeTime=1;
 	};
 };
-
-/*
-class ATMissileExplosion
-{
-	class LightExp
-	{
-		simulation="light";
-		type="ExploLight";
-		position[]={0,1.5,0};
-		intensity=0.001;
-		interval=1;
-		lifeTime=0.25;
-	};
-	class Explosion1
-	{
-		simulation="particles";
-		type="ExplosionParticles";
-		position[]={0,0,0};
-		intensity=3;
-		interval=1;
-		lifeTime=0.25;
-	};
-	class SmallSmoke1
-	{
-		simulation="particles";
-		type="CloudMedDark";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=1;
-	};
-};
-*/
 
 class RC_GuidedExplosion
 {
@@ -279,10 +246,24 @@ class RC_GuidedExplosion
 		interval=1;
 		lifeTime=1;
 	};
-	class ExplodeRefract
+	class Shockwave
 	{
 		simulation="particles";
-		type="ExplodeRefract_VeryBig";
+		type="ShellShockwave";
+		position[]={0,0,0};
+		intensity=1;
+		interval= 1;
+		lifeTime=1;
+	};
+};
+
+class HeavyBombExplosion;
+class RC_HeavyBombExplosion: HeavyBombExplosion
+{
+	class Shockwave
+	{
+		simulation="particles";
+		type="ShellShockwave";
 		position[]={0,0,0};
 		intensity=1;
 		interval= 1;

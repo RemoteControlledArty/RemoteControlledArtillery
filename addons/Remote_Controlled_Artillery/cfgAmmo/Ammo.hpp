@@ -387,7 +387,6 @@ class RC_HEAB_Base: Default
 	};
 	craterEffects="RC_ArtyShellCrater";	//dust on ground effect like caused by airburst
 	CraterWaterEffects="ImpactEffectsWaterHE";
-	//ExplosionEffects="MortarExplosion";
 	explosionEffects="RC_MortarExplosion";
 	visibleFire=64;
 	audibleFire=250;
@@ -517,7 +516,7 @@ class RC_HEAB_Shell_Base: Sh_155mm_AMOS
 	laserLock=1;	//only for firing solution calculator
 	irLock=1;	//only for firing solution calculator
 	craterEffects="RC_ArtyShellCrater";	//dust on ground effect like caused by airburst
-	ExplosionEffects="MortarExplosion";
+	ExplosionEffects="RC_MortarExplosion";
 };
 */
 class RC_HEAB_Rocket_Base: RC_HEAB_Base
@@ -1277,7 +1276,7 @@ class RC_Sh_82mm_AMOS_delayed_submunition: RC_Sh_82mm_AMOS_submunition
 {
 	explosionTime=0.2;
 };
-class RC_M_Mo_82mm_LG_DelayedFuse_Submunition: RC_82mm_MP_MultiGuided_Submunition
+class RC_M_Mo_82mm_LG_DelayedFuse_Submunition: RC_82mm_MP_LaserGuided_Submunition
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -1287,7 +1286,7 @@ class RC_M_Mo_82mm_LG_DelayedFuse_Submunition: RC_82mm_MP_MultiGuided_Submunitio
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_Sh_82mm_AMOS_LG_DelayedFuse: RC_Sh_82mm_AMOS_MP_MultiGuided
+class RC_Sh_82mm_AMOS_LG_DelayedFuse: RC_Sh_82mm_AMOS_MP_LaserGuided
 {
 	submunitionAmmo="RC_M_Mo_82mm_LG_DelayedFuse_Submunition";
 };
@@ -1561,15 +1560,15 @@ class RC_Sh_105mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 };
 
 
-//Subcaliber Hypervelocity Guided, 105mm to be used in 155mm Sabot to half time of flight and increase range (138km)
-class RC_105mm_MP_MultiGuided_SubCalHyperVel_Submunition: RC_105mm_MP_MultiGuided_Submunition
+//Subcaliber Hypersonic Guided, 105mm to be used in 155mm Sabot to half time of flight and increase range (138km)
+class RC_105mm_MP_MultiGuided_SubCalHypersonic_Submunition: RC_105mm_MP_MultiGuided_Submunition
 {
 	//maybe add different velocity/steering
 	cost=1200;
 };
-class RC_Sh_105mm_AMOS_MP_MultiGuided_SubCalHyperVel: RC_Sh_105mm_AMOS_MP_MultiGuided
+class RC_Sh_105mm_AMOS_MP_MultiGuided_SubCalHypersonic: RC_Sh_105mm_AMOS_MP_MultiGuided
 {
-	submunitionAmmo="RC_105mm_MP_MultiGuided_SubCalHyperVel_Submunition";
+	submunitionAmmo="RC_105mm_MP_MultiGuided_SubCalHypersonic_Submunition";
 	timeToLive=360;
 	cost=1200;
 };
@@ -1579,7 +1578,7 @@ class RC_Sh_105mm_AMOS_delayed_submunition: RC_Sh_105mm_AMOS_submunition
 {
 	explosionTime=0.2;
 };
-class RC_M_Mo_105mm_LG_DelayedFuse_submunition: RC_105mm_MP_MultiGuided_Submunition
+class RC_M_Mo_105mm_LG_DelayedFuse_submunition: RC_105mm_MP_LaserGuided_Submunition
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -1589,7 +1588,7 @@ class RC_M_Mo_105mm_LG_DelayedFuse_submunition: RC_105mm_MP_MultiGuided_Submunit
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_Sh_105mm_AMOS_LG_DelayedFuse: RC_Sh_105mm_AMOS_MP_MultiGuided
+class RC_Sh_105mm_AMOS_LG_DelayedFuse: RC_Sh_105mm_AMOS_MP_LaserGuided
 {
 	submunitionAmmo="RC_M_Mo_105mm_LG_DelayedFuse_submunition";
 };
@@ -1598,6 +1597,9 @@ class RC_Sh_105mm_AMOS_LG_DelayedFuse: RC_Sh_105mm_AMOS_MP_MultiGuided
 class Cluster_155mm_AMOS;
 class RC_Cluster_105mm_AMOS: Cluster_155mm_AMOS
 {
+	hit=207.3;
+	indirectHit=75.6;
+	indirectHitRange=21.7;
 	aiAmmoUsageFlags="64 + 128";
 	submunitionConeAngle=15.25;
 	submunitionConeType[]=
@@ -1888,7 +1890,7 @@ class RC_Sh_120mm_AMOS_delayed_submunition: RC_Sh_120mm_AMOS_submunition
 {
 	explosionTime=0.2;
 };
-class RC_M_Mo_120mm_LG_DelayedFuse_submunition: RC_120mm_MP_MultiGuided_Submunition
+class RC_M_Mo_120mm_LG_DelayedFuse_submunition: RC_120mm_MP_LaserGuided_Submunition
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -1898,7 +1900,7 @@ class RC_M_Mo_120mm_LG_DelayedFuse_submunition: RC_120mm_MP_MultiGuided_Submunit
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_Sh_120mm_AMOS_LG_DelayedFuse: RC_Sh_120mm_AMOS_MP_MultiGuided
+class RC_Sh_120mm_AMOS_LG_DelayedFuse: RC_Sh_120mm_AMOS_MP_LaserGuided
 {
 	submunitionAmmo="RC_M_Mo_120mm_LG_DelayedFuse_submunition";
 };
@@ -1906,6 +1908,9 @@ class RC_Sh_120mm_AMOS_LG_DelayedFuse: RC_Sh_120mm_AMOS_MP_MultiGuided
 
 class RC_Cluster_120mm_AMOS: Cluster_155mm_AMOS
 {
+	hit=236.7;
+	indirectHit=86.4;
+	indirectHitRange=24.8;
 	aiAmmoUsageFlags="64 + 128";
 	submunitionConeAngle=16.6;
 	submunitionConeType[]=
@@ -2113,6 +2118,8 @@ class RC_Smoke_155mm_AMOS_White: RC_Smoke_105mm_AMOS_White
 
 class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 {
+	indirectHit=125;
+	indirectHitRange=30;
 	aiAmmoUsageFlags="64 + 128";
 	submunitionConeAngle=19;
 	submunitionConeType[]=
@@ -2285,7 +2292,7 @@ class RC_Sh_155mm_AMOS_delayed_submunition: RC_Sh_155mm_AMOS_submunition
 {
 	explosionTime=0.2;
 };
-class RC_M_Mo_155mm_LG_DelayedFuse_submunition: RC_155mm_MP_MultiGuided_Submunition
+class RC_M_Mo_155mm_LG_DelayedFuse_submunition: RC_155mm_MP_LaserGuided_Submunition
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -2295,7 +2302,7 @@ class RC_M_Mo_155mm_LG_DelayedFuse_submunition: RC_155mm_MP_MultiGuided_Submunit
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_Sh_155mm_AMOS_LG_DelayedFuse: RC_Sh_155mm_AMOS_MP_MultiGuided
+class RC_Sh_155mm_AMOS_LG_DelayedFuse: RC_Sh_155mm_AMOS_MP_LaserGuided
 {
 	submunitionAmmo="RC_M_Mo_155mm_LG_DelayedFuse_submunition";
 };
@@ -2418,6 +2425,8 @@ class RC_R_230mm_backupHEAB: RC_230mm_HEAB_Rocket_Base
 class R_230mm_Cluster;
 class RC_R_230mm_Cluster: R_230mm_Cluster
 {
+	indirectHit=800;
+	indirectHitRange=30;
 	aiAmmoUsageFlags="64 + 128";
 	submunitionConeType[]=
 	{
@@ -2519,6 +2528,8 @@ class RC_R_230mm_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	craterEffects="BombCrater";
 	triggerDistance=500;
 	hit=300;
+	indirectHit=400;
+	indirectHitRange=15;
 	cost=1000;
 
 	class CamShakeExplode
@@ -2593,7 +2604,7 @@ class RC_230mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
-	explosionEffects="HEShellExplosion";
+	//explosionEffects="HEShellExplosion";
 	craterEffects="BombCrater";
 	submunitionAmmo="ammo_Penetrator_230mm_MP";
 	indirectHit=400;
@@ -2675,6 +2686,8 @@ class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	craterEffects="BombCrater";
 	triggerDistance=500;
 	hit=300;
+	indirectHit=400;
+	indirectHitRange=15;
 	cost=1000;
 
 	class CamShakeExplode
@@ -2749,7 +2762,7 @@ class RC_R_230mm_fly_HEAB_delayed_submunition: RC_R_230mm_fly_HEAB_submunition
 {
 	explosionTime=0.2;
 };
-class RC_230mm_LG_DelayedFuse_submunition: RC_230mm_MP_MultiGuided_Submunition
+class RC_230mm_LG_DelayedFuse_submunition: RC_230mm_MP_LaserGuided_Submunition
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -2760,9 +2773,24 @@ class RC_230mm_LG_DelayedFuse_submunition: RC_230mm_MP_MultiGuided_Submunition
 	indirectHit=0;
 	indirectHitRange=0;
 };
-class RC_230mm_LG_DelayedFuse: RC_R_230mm_MP_MultiGuided
+class RC_230mm_LG_DelayedFuse: RC_R_230mm_MP_LaserGuided
 {
 	submunitionAmmo="RC_M_Mo_155mm_LG_DelayedFuse_submunition";
+};
+
+
+//Hypersonic Guided, to half time of flight and increase range (138km), but as tradeoff has smaller warhead
+class RC_230mm_MP_MultiGuided_Hypersonic_Submunition: RC_230mm_MP_MultiGuided_Submunition
+{
+	submunitionAmmo="ammo_Penetrator_155mm_MP";
+	indirectHit=200;
+	cost=2000;
+};
+class RC_R_230mm_MP_MultiGuided_Hypersonic: RC_R_230mm_MP_MultiGuided
+{
+	submunitionAmmo="RC_230mm_MP_MultiGuided_Hypersonic_Submunition";
+	timeToLive=360;
+	cost=2000;
 };
 
 
@@ -2772,7 +2800,7 @@ class RC_R_604mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 	indirectHit=3200;
 	indirectHitRange=120;
 	craterEffects="RC_604mmAirburstDust";
-	explosionEffects="HeavyBombExplosion";
+	explosionEffects="RC_HeavyBombExplosion";
 	soundSetExplosion[]=
 	{
 		"BombsHeavy_Exp_SoundSet",
@@ -2786,6 +2814,13 @@ class RC_604mm_HEAB_Rocket_Base: RC_230mm_HEAB_Rocket_Base
 	indirectHit=3200;
 	indirectHitRange=120;
 	cost=3000;
+	explosionEffects="RC_HeavyBombExplosion";
+	soundSetExplosion[]=
+	{
+		"BombsHeavy_Exp_SoundSet",
+		"BombsHeavy_Tail_SoundSet",
+		"Explosion_Debris_SoundSet"
+	};
 }
 class RC_R_604mm_ATACMS_HEAB: RC_604mm_HEAB_Rocket_Base
 {
@@ -2808,6 +2843,8 @@ class RC_R_604mm_backupHEAB: RC_604mm_HEAB_Rocket_Base
 
 class RC_R_604mm_ATACMS_DPICM: R_230mm_Cluster
 {
+	indirectHit=3200;
+	indirectHitRange=120;
 	submunitionConeAngle=25;
 	submunitionConeType[]=
 	{

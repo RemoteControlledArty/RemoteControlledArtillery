@@ -264,12 +264,13 @@ class RC_InvisibleDatalinkTarget_O: RC_InvisibleDatalinkTarget_O_Base
 		"a3\structures_f\training\data\target_figure_co.paa"
 	};
 
-	//targetable, not engaged by ai
+	//targetable, but not engaged by ai
 	alwaysTarget=0;	//1
 	cost=0;	//200000
 	type=1;	//0 soft, 1 armored, 2 air
 	side=5;	//5 enemy, 3 civ	//if report to datalink in script, based on which side made the marker, then one cfgvic marker would be enough
-	vehicleClass="Training";
+	//vehicleClass="Training";
+	vehicleClass="Objects";
 	crew="";
 	typicalCargo[]=
 	{

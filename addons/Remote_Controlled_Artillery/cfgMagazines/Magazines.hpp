@@ -60,7 +60,6 @@ class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_HEAB";
 	RC_AimAboveHeight=12.7;		//airburstheight
-	//RC_AimAboveHeight=12.2;		//airburstheight -0.5m
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -227,7 +226,6 @@ class RC_1Rnd_82mm_Mo_lowHEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_lowHEAB";
 	RC_AimAboveHeight=6.25;		//airburstheight
-	//RC_AimAboveHeight=5.75;		//airburstheight -0.5m
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -890,14 +888,11 @@ class RC_40Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 };
 
 
-class RC_1Rnd_82mm_Mo_MultiGuided: 8Rnd_82mm_Mo_LG
+class RC_1Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	ammo="RC_Sh_82mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=285;
-	RC_RequiresLock=1;
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
-	count=1;
 };
 class RC_2Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
 {
@@ -1554,14 +1549,11 @@ class RC_40Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
 };
 
 
-class RC_1Rnd_82mm_Mo_LG_DelayedFuse: 8Rnd_82mm_Mo_LG
+class RC_1Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	ammo="RC_Sh_82mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=285;
-	RC_RequiresLock=1;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
-	count=1;
 };
 class RC_2Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
@@ -2058,7 +2050,6 @@ class RC_1Rnd_105mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_HEAB";
 	RC_AimAboveHeight=15.3;		//airburstheight
-	//RC_AimAboveHeight=14.8;		//airburstheight -0.5m
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -2226,7 +2217,6 @@ class RC_1Rnd_105mm_Mo_lowHEAB: 32Rnd_155mm_Mo_shells
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_lowHEAB";
 	RC_AimAboveHeight=7.65;		//airburstheight
-	//RC_AimAboveHeight=7.15;		//airburstheight -0.5m
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -3062,15 +3052,11 @@ class RC_40Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
 };
 
 
-class RC_1Rnd_105mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
+class RC_1Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_LaserGuided
 {
-	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=475;
-	RC_RequiresLock=1;
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
-	count=1;
 };
 class RC_2Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
 {
@@ -3730,15 +3716,11 @@ class RC_40Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
 };
 
 
-class RC_1Rnd_105mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
+class RC_1Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LaserGuided
 {
-	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=475;
-	RC_RequiresLock=1;
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
-	count=1;
 };
 class RC_2Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
 {
@@ -4235,7 +4217,6 @@ class RC_1Rnd_120mm_Mo_HEAB: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_HEAB";
 	RC_AimAboveHeight=17.5;		//airburstheight
-	//RC_AimAboveHeight=17;		//airburstheight -0.5m
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -4402,7 +4383,6 @@ class RC_1Rnd_120mm_Mo_lowHEAB: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_lowHEAB";
 	RC_AimAboveHeight=8.75;		//airburstheight
-	//RC_AimAboveHeight=8.25;		//airburstheight -0.5m
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -6430,7 +6410,6 @@ class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB";
 	RC_AimAboveHeight=21.2;		//airburstheight
-	//RC_AimAboveHeight=20.7;		//airburstheight -0.5m
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -6597,7 +6576,6 @@ class RC_1Rnd_155mm_Mo_lowHEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_lowHEAB";
 	RC_AimAboveHeight=10.6;		//airburstheight
-	//RC_AimAboveHeight=10.1;		//airburstheight -0.5m
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -8255,167 +8233,167 @@ class RC_40Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 };
 
 
-//Subcaliber Hypervelocity MP Guided (105mm MP Guided in 155mm Sabot)
-class RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided
+//Subcaliber Hypersonic MP Guided (105mm MP Guided in 155mm Sabot), to half time of flight and increase range (138km), but as tradeoff has smaller warhead
+class RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided
 {
 	initSpeed=1715;	//Mach 5
-	ammo="RC_Sh_105mm_AMOS_MP_MultiGuided_SubCalHyperVel";
-	displayName="SubCalHyperVel MP Guided";
-	displayNameShort="SCHV MP-G";
+	ammo="RC_Sh_105mm_AMOS_MP_MultiGuided_SubCalHypersonic";
+	displayName="Subcaliber Hypersonic MP Guided";
+	displayNameShort="SC HS MP-G";
 };
-class RC_2Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_2Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=2;
 };
-class RC_3Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_3Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=3;
 };
-class RC_4Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_4Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=4;
 };
-class RC_5Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_5Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=5;
 };
-class RC_6Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_6Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=6;
 };
-class RC_7Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_7Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=7;
 };
-class RC_8Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_8Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=8;
 };
-class RC_9Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_9Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=9;
 };
-class RC_10Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_10Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=10;
 };
-class RC_11Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_11Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=11;
 };
-class RC_12Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_12Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=12;
 };
-class RC_13Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_13Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=13;
 };
-class RC_14Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_14Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=14;
 };
-class RC_15Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_15Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=15;
 };
-class RC_16Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_16Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=16;
 };
-class RC_17Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_17Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=17;
 };
-class RC_18Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_18Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=18;
 };
-class RC_19Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_19Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=19;
 };
-class RC_20Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_20Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=20;
 };
-class RC_21Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_21Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=21;
 };
-class RC_22Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_22Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=22;
 };
-class RC_23Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_23Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=23;
 };
-class RC_24Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_24Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=24;
 };
-class RC_25Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_25Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=25;
 };
-class RC_26Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_26Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=26;
 };
-class RC_27Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_27Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=27;
 };
-class RC_28Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_28Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=28;
 };
-class RC_29Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_29Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=29;
 };
-class RC_30Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_30Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=30;
 };
-class RC_31Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_31Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=31;
 };
-class RC_32Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_32Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=32;
 };
-class RC_33Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_33Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=33;
 };
-class RC_34Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_34Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=34;
 };
-class RC_35Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_35Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=35;
 };
-class RC_36Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_36Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=36;
 };
-class RC_37Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_37Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=37;
 };
-class RC_38Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_38Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=38;
 };
-class RC_39Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_39Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=39;
 };
-class RC_40Rnd_155mm_Mo_MultiGuided_SubCalHyperVel: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel
+class RC_40Rnd_155mm_Mo_MultiGuided_SubCalHypersonic: RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic
 {
 	count=40;
 };
@@ -8757,7 +8735,6 @@ class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_HEAB";
 	RC_AimAboveHeight=21.2;		//airburstheight
-	//RC_AimAboveHeight=20.7;		//airburstheight -0.5m
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -8812,7 +8789,6 @@ class RC_1Rnd_230mm_rockets_lowHEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_lowHEAB";
 	RC_AimAboveHeight=10.6;		//airburstheight
-	//RC_AimAboveHeight=10.1;		//airburstheight -0.5m
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -9136,6 +9112,60 @@ class RC_12Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFus
 };
 
 
+//Hypersonic Guided, to half time of flight and increase range (138km), but as tradeoff has smaller warhead
+class RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided
+{
+	initSpeed=1715;	//Mach 5
+	ammo="RC_R_230mm_MP_MultiGuided_Hypersonic";
+	displayName="Hypersonic MP Guided";
+	displayNameShort="HS MP-G";
+};
+class RC_2Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=2;
+};
+class RC_3Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=3;
+};
+class RC_4Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=4;
+};
+class RC_5Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=5;
+};
+class RC_6Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=6;
+};
+class RC_7Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=7;
+};
+class RC_8Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=8;
+};
+class RC_9Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=9;
+};
+class RC_10Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=10;
+};
+class RC_11Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=11;
+};
+class RC_12Rnd_230mm_rockets_MultiGuided_Hypersonic: RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic
+{
+	count=12;
+};
+
+
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_230mm_rockets_backupHEAB: 12Rnd_230mm_rockets
 {
@@ -9247,7 +9277,6 @@ class RC_1Rnd_604mm_rockets_ATACMS_HEAB: 12Rnd_230mm_rockets
 {
 	displayName="ATACMS HE Airburst";
 	RC_AimAboveHeight=30;		//airburstheight
-	//RC_AimAboveHeight=29.5;		//airburstheight -0.5m
 	displayNameShort="ATACMS HE AB";
 	ammo="RC_R_604mm_ATACMS_HEAB";
 	count=1;

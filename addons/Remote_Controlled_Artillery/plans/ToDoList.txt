@@ -28,8 +28,7 @@ if (!isserver) exitwith {}; = server client only, not every player client
 Arty:
 -find shellfly sound (non existant in vanilla) check voronas sound
 -TB blast/explosion/cloud/frag *gps has priority
--155mm based HEAB_shellbase testing
--different guided explosioneffect
+-indirecthit values for guided nonsubmun
 
 -if it has eyes on laser, it engages...? make ai that doesnt target laser? or just unable to fire
 	*laserspot values:
@@ -76,7 +75,7 @@ POSTPONED:
 -RC Res edit hitpoints (for now threat/cost is reduced)
 -RC Res for the repair version, vehicle (thislist select 0) setfuel 1; vehicle (thislist select 0) setdamage 0; https://community.bistudio.com/wiki/createTrigger
 
--fix Static AT laser engaging (how?)
+-fix Static AT self engaging laser spots (how?)
 -RADAR deactivates after releasing control even when not autonomous, maybe use human crew and locking seats instead?
 -look up if inheriting structure is fully correct
 -guided submunition alternative misslecam

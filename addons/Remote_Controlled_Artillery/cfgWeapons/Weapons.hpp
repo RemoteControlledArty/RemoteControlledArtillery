@@ -748,11 +748,20 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 	{
 		"Single1",
 		"Single2",
+		"Single3"
+	};
+	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
+	/*
+	modes[]=
+	{
+		"Single1",
+		"Single2",
 		"Single3",
 		"Burst1",
 		"Burst2",
 		"Burst3"
 	};
+	*/
 	class Single1: Single1
 	{
 		displayName="CH0, 0.5km";
@@ -796,11 +805,22 @@ class RC_mortar_82mm_V4: RC_mortar_82mm_V3
 		"Single2",
 		"Single3",
 		"Single4",
+		"Single5"
+	};
+	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
+	/*
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
 		"Single5",
 		"Burst1",
 		"Burst2",
 		"Burst3",
 	};
+	*/
 	class Single1: Single1
 	{
 		displayName="CH0, 0.5km";
@@ -838,11 +858,22 @@ class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 		"Single2",
 		"Single3",
 		"Single4",
+		"Single5"
+	};
+	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
+	/*
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
 		"Single5",
 		"Burst1",
 		"Burst2",
 		"Burst3",
 	};
+	*/
 	class Single1: Single1
 	{
 		displayName="CH0";
@@ -1491,6 +1522,19 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 		"Single5",
 		"Single6",
 		"Single7",
+		"Single8"
+	};
+	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
+	/*
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5",
+		"Single6",
+		"Single7",
 		"Single8",
 		"Burst1",
 		"Burst2",
@@ -1498,7 +1542,7 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 		"Burst4",
 		"Burst5"
 	};
-
+	*/
 	class Single1: Single1
 	{
 		displayName="CH0"
@@ -2026,46 +2070,46 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 		"RC_39Rnd_155mm_Mo_LG_DelayedFuse",
 		"RC_40Rnd_155mm_Mo_LG_DelayedFuse",
 
-		"RC_1Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_2Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_3Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_4Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_5Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_6Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_7Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_8Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_9Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_10Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_11Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_12Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_13Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_14Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_15Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_16Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_17Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_18Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_19Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_20Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_21Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_22Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_23Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_24Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_25Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_26Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_27Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_28Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_29Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_30Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_31Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_32Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_33Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_34Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_35Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_36Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_37Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_38Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_39Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
-		"RC_40Rnd_155mm_Mo_MultiGuided_SubCalHyperVel",
+		"RC_1Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_2Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_3Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_4Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_5Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_6Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_7Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_8Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_9Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_10Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_11Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_12Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_13Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_14Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_15Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_16Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_17Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_18Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_19Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_20Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_21Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_22Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_23Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_24Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_25Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_26Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_27Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_28Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_29Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_30Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_31Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_32Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_33Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_34Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_35Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_36Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_37Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_38Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_39Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
+		"RC_40Rnd_155mm_Mo_MultiGuided_SubCalHypersonic",
 
 		"RC_1Rnd_155mm_Mo_shells",
 		"RC_2Rnd_155mm_Mo_shells",
@@ -2257,6 +2301,19 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Single5",
 		"Single6",
 		"Single7",
+		"Single8"
+	};
+	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
+	/*
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5",
+		"Single6",
+		"Single7",
 		"Single8",
 		"Burst1",
 		"Burst2",
@@ -2264,7 +2321,7 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Burst4",
 		"Burst5"
 	};
-
+	*/
 	class Single1: Single1
 	{
 		displayName="CH0"
@@ -2353,6 +2410,17 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 		"Single3",
 		"Single4",
 		"Single5",
+		"Single6"
+	};
+	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
+	/*
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5",
 		"Single6",
 		"Burst1",
 		"Burst2",
@@ -2360,7 +2428,7 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 		"Burst4",
 		"Burst5"
 	};
-
+	*/
 	class Single1: Single1
 	{
 		displayName="CH0"
@@ -2391,7 +2459,6 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 		displayName="CH5 direct"
 		artilleryCharge=1;
 	};
-
 	magazines[]=
 	{
 		"RC_1Rnd_105mm_Mo_HEAB",
@@ -2932,13 +2999,128 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 
 // 230mm MLRS/MRL Rockets/Missles
 class rockets_230mm_GAT;
-class RC_rockets_230mm_GAT: rockets_230mm_GAT
+class rockets_230mm_GAT_Base: rockets_230mm_GAT
+{
+	class Mode_1;
+	class Mode_2;
+	class Mode_3;
+	class Mode_4;
+	class Mode_5;
+	class Mode_6;
+	class Mode_7;
+	class Mode_8;
+	class Mode_9;
+	class Mode_10;
+	class Mode_11;
+	class Mode_12;
+	class Mode_13;
+	class Mode_14;
+	class Mode_15;
+	class Mode_16;
+};
+class RC_rockets_230mm_GAT: rockets_230mm_GAT_Base
 {
 	magazineReloadTime=1;
 	ballisticsComputer=8;
 	canLock=2;
 	weaponLockDelay=0;
 
+	class Mode_1: Mode_1
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_2: Mode_2
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_3: Mode_3
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_4: Mode_4
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_5: Mode_5
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_6: Mode_6
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_7: Mode_7
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_8: Mode_8
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_9: Mode_9
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_10: Mode_10
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_11: Mode_11
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_12: Mode_12
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_13: Mode_13
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_14: Mode_14
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_15: Mode_15
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
+	class Mode_16: Mode_16
+	{
+		minRangeProbab=0.0099999998;
+		midRangeProbab=0.0099999998;
+		maxRangeProbab=0.0099999998;
+	};
 	magazines[]=
 	{
 		"RC_1Rnd_230mm_rockets_HEAB",
@@ -3018,6 +3200,19 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT
 		"RC_10Rnd_230mm_rockets_LG_DelayedFuse",
 		"RC_11Rnd_230mm_rockets_LG_DelayedFuse",
 		"RC_12Rnd_230mm_rockets_LG_DelayedFuse",
+
+		"RC_1Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_2Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_3Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_4Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_5Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_6Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_7Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_8Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_9Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_10Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_11Rnd_230mm_rockets_MultiGuided_Hypersonic",
+		"RC_12Rnd_230mm_rockets_MultiGuided_Hypersonic",
 
 		"RC_1Rnd_604mm_rockets_ATACMS_HEAB",
 		"RC_2Rnd_604mm_rockets_ATACMS_HEAB",
