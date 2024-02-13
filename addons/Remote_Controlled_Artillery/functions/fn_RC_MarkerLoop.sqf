@@ -50,25 +50,23 @@ RC_Marker_Loop = [] spawn {
 						gpsTarget = "RC_GPSDatalinkTarget" createVehicleLocal (markerPos _x);
 
 						// Spawn a little script to handle the GPS target					
-						[_x ,gpsTarget, _side] spawn {
+						[_x, _side] spawn {
 
-							params ["_watchedMarker", "gpsTarget", "_side"];
+							params ["_watchedMarker", "_side"];
 
 							_moveHandler = addMissionEventHandler ["MarkerUpdated", {
 								params ["_marker", "_local"];
 								_watchedMarker = _thisArgs select 0;
-								gpsTarget = _thisArgs select 1;
 
 								if (_marker isEqualTo _watchedMarker) then {
 									_pos = AGLToASL (markerPos _watchedMarker);
 									gpsTarget setPosASL [_pos select 0, _pos select 1, 1];
 								}						
-							}, [_watchedMarker, gpsTarget]];
+							}, [_watchedMarker]];
 
 							_deleteHandler = addMissionEventHandler ["MarkerDeleted", {
 								params ["_marker", "_local", "_deleter"];
 								_watchedMarker = _thisArgs select 0;
-								gpsTarget = _thisArgs select 1;
 								_moveHandler = _thisArgs select 2;
 
 								if (_marker isEqualTo _watchedMarker) then {
@@ -76,7 +74,7 @@ RC_Marker_Loop = [] spawn {
 									removeMissionEventHandler ["MarkerUpdated", _moveHandler];
 									removeMissionEventHandler ["MarkerDeleted", _thisEventHandler];
 								}
-							}, [_watchedMarker, gpsTarget, _moveHandler]];
+							}, [_watchedMarker, _moveHandler]];
 
 							// While the GPS target is alive we Report to Datalink
 							while {alive gpsTarget} do {
