@@ -47,7 +47,8 @@ RC_Marker_Loop = [] spawn {
 						
 						// Create Target
 						//gpsTarget = _gpsTargetClass createVehicleLocal (markerPos _x);
-						gpsTarget = "RC_GPSDatalinkTarget" createVehicleLocal (markerPos _x);
+						//gpsTarget = "RC_GPSDatalinkTarget" createVehicleLocal (markerPos _x); //"CAN_COLLIDE"
+						gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _x), [], 0, "CAN_COLLIDE"];
 
 						// Spawn a little script to handle the GPS target					
 						[_x, _side] spawn {
@@ -67,7 +68,7 @@ RC_Marker_Loop = [] spawn {
 							_deleteHandler = addMissionEventHandler ["MarkerDeleted", {
 								params ["_marker", "_local", "_deleter"];
 								_watchedMarker = _thisArgs select 0;
-								_moveHandler = _thisArgs select 2;
+								_moveHandler = _thisArgs select 1;	//2 before
 
 								if (_marker isEqualTo _watchedMarker) then {
 									deleteVehicle gpsTarget;
