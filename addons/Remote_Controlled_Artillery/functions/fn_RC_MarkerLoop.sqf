@@ -37,7 +37,7 @@ RC_Marker_Loop = [] spawn {
 						
 						/*
 						// Find out which side the GPS Target should belong to
-						_gpsTargetClass = switch (_side) do {
+						gpsTargetClass = switch (_side) do {
 							case west: {RC_GPS_ClassNames select 0};
 							case east: {RC_GPS_ClassNames select 1};
 							case independent: {RC_GPS_ClassNames select 2};
@@ -46,41 +46,41 @@ RC_Marker_Loop = [] spawn {
 						*/
 						
 						// Create Target
-						//_gpsTarget = _gpsTargetClass createVehicleLocal (markerPos _x);
-						_gpsTarget = "RC_GPSDatalinkTarget" createVehicleLocal (markerPos _x);
+						//gpsTarget = gpsTargetClass createVehicleLocal (markerPos _x);
+						gpsTarget = "RC_GPSDatalinkTarget" createVehicleLocal (markerPos _x);
 
 						// Spawn a little script to handle the GPS target					
-						[_x ,_gpsTarget, _side] spawn {
+						[_x ,gpsTarget, _side] spawn {
 
-							params ["_watchedMarker", "_gpsTarget", "_side"];
+							params ["_watchedMarker", "gpsTarget", "_side"];
 
 							_moveHandler = addMissionEventHandler ["MarkerUpdated", {
 								params ["_marker", "_local"];
 								_watchedMarker = _thisArgs select 0;
-								_gpsTarget = _thisArgs select 1;
+								gpsTarget = _thisArgs select 1;
 
 								if (_marker isEqualTo _watchedMarker) then {
 									_pos = AGLToASL (markerPos _watchedMarker);
-									_gpsTarget setPosASL [_pos select 0, _pos select 1, 1];
+									gpsTarget setPosASL [_pos select 0, _pos select 1, 1];
 								}						
-							}, [_watchedMarker, _gpsTarget]];
+							}, [_watchedMarker, gpsTarget]];
 
 							_deleteHandler = addMissionEventHandler ["MarkerDeleted", {
 								params ["_marker", "_local", "_deleter"];
 								_watchedMarker = _thisArgs select 0;
-								_gpsTarget = _thisArgs select 1;
+								gpsTarget = _thisArgs select 1;
 								_moveHandler = _thisArgs select 2;
 
 								if (_marker isEqualTo _watchedMarker) then {
-									deleteVehicle _gpsTarget;
+									deleteVehicle gpsTarget;
 									removeMissionEventHandler ["MarkerUpdated", _moveHandler];
 									removeMissionEventHandler ["MarkerDeleted", _thisEventHandler];
 								}
-							}, [_watchedMarker, _gpsTarget, _moveHandler]];
+							}, [_watchedMarker, gpsTarget, _moveHandler]];
 
 							// While the GPS target is alive we Report to Datalink
-							while {alive _gpsTarget} do {
-								_side reportRemoteTarget [_gpsTarget, 5];
+							while {alive gpsTarget} do {
+								_side reportRemoteTarget [gpsTarget, 5];
 								sleep 1;
 							};
 						};
