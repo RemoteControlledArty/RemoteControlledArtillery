@@ -37,7 +37,7 @@ RC_Marker_Loop = [] spawn {
 						
 						/*
 						// Find out which side the GPS Target should belong to
-						gpsTargetClass = switch (_side) do {
+						_gpsTargetClass = switch (_side) do {
 							case west: {RC_GPS_ClassNames select 0};
 							case east: {RC_GPS_ClassNames select 1};
 							case independent: {RC_GPS_ClassNames select 2};
@@ -46,7 +46,7 @@ RC_Marker_Loop = [] spawn {
 						*/
 						
 						// Create Target
-						//gpsTarget = gpsTargetClass createVehicleLocal (markerPos _x);
+						//gpsTarget = _gpsTargetClass createVehicleLocal (markerPos _x);
 						gpsTarget = "RC_GPSDatalinkTarget" createVehicleLocal (markerPos _x);
 
 						// Spawn a little script to handle the GPS target					
