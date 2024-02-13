@@ -2,6 +2,7 @@
 	Author: Fluffy
 */
 
+activeGPSMarkers = [];
 RC_Artillery_Markers = [];
 RC_Current_Target = [];
 RC_Current_Index = 0;
@@ -17,7 +18,6 @@ RC_Marker_Loop = [] spawn {
 		
 		if (RC_InUI) then {
 			_markers = [];
-			_activeGPSMarkers = [];
 			_side = side player;
 			{
 				private _result = (markerText _x) regexMatch (format [".*%1[0-9]{1,2}.*/i", RC_Marker_Prefix]);
@@ -28,14 +28,12 @@ RC_Marker_Loop = [] spawn {
 					_markers pushBackUnique [_result, _x];
 				};
 
-
 				// Find a Marker with the GPS Prefix
-
 				private _gpsResult = (markerText _x) regexMatch (format [".*%1[0-9]{1,2}.*/i", RC_GPS_Prefix]);
 				///*
 				if _gpsResult then {
 					_currentMarker = _x;
-					if (_activeGPSMarkers findIf {_x isEqualTo _currentMarker} == -1) then {
+					if (activeGPSMarkers findIf {_x isEqualTo _currentMarker} == -1) then {
 						
 						/*
 						// Find out which side the GPS Target should belong to
@@ -87,7 +85,7 @@ RC_Marker_Loop = [] spawn {
 							};
 						};
 
-						_activeGPSMarkers pushBack _x;
+						activeGPSMarkers pushBack _x;
 					};
 				};
 				//*/
