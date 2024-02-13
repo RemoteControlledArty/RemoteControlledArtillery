@@ -580,7 +580,6 @@ class RC_MP_Guided_Submunition_MissleBase: MissileBase
 };
 class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 {
-	//simulation="shotMissile";	//already inherited
 	artilleryLock=0;	//1 would make submunition unable to hit vanilla firing computer gps point
 	laserLock=1;
 	autoSeekTarget=1;

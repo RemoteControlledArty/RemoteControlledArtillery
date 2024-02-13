@@ -19,6 +19,7 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 General:
+-effects backup and cleanup
 
 EH:
 if (!isserver) exitwith {}; = server client only, not every player client
@@ -26,18 +27,18 @@ if (!isserver) exitwith {}; = server client only, not every player client
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
--find shellfly sound (non existant in vanilla) check voronas sound
--TB blast/explosion/cloud/frag *gps has priority
--indirecthit values for guided nonsubmun
+-decide on datalink share time and update time
 
--if it has eyes on laser, it engages...? make ai that doesnt target laser? or just unable to fire
-	*laserspot values:
-	type=1;
-	threat[]={0.5,0.5,0.1};
-	side=3;
-	cost=9.9999999e+014;
-	armor=500;
+(lock lost after x seconds with lasersim, not with artysim)
+-doesnt get moved with marker, but gets duplicated
+-when deleting error removemissioneventhandler, error type string expected number, but luckly gets deleted including duplicates, and not other numbered ones
+-inaccurate guidance, maybe gets placed false?
+-is it still placed with increased height?
 
+-same indirecthit but smaller radius might be more suitable for near misses or gps guidance, test lethal distance for inf
+*similar would go for low airburst against vics/houses
+
+-marker moves when hit
 #define TEast 0
 #define TWest 1
 #define TGuerrila 2
@@ -46,10 +47,6 @@ Arty:
 #define TEnemy 5
 #define TFriendly 6
 #define TLogic 7
-
--marker moves when hit
--make sure blastcore etc doesnt remove ground dust animation
--MP guided doesnt seem gps guided with vanilla computer, but should work with additional gps marker
 
 -recon radar+vehicle mortar composition (maybe hide legs)
 -warheadName HE/TandemHEAT ?
@@ -64,6 +61,7 @@ TO DO - QUALITY OF LIFE:
 
 POSTPONED:
 
+-fancier explosion&smoke effect of airburst
 -guided with simulation shotmissle but with altered values, testing if it connects to misslefeed *it does on manned vic, somehow not on rc'ed... same on Static ATGM
 -Subcaliber Hypersonic 120mm guided in 155mm / 105mm guided in 120mm, for reduced TOF at extrem ranges
 -RC IC fix smokelauncher
@@ -83,6 +81,7 @@ POSTPONED:
 -more RC Infantry Carrier's / APC's / IVF's
 -ETA 5sec warning message
 -proximityExplosionDistance= ; ammo testing
+-seek after blind fire for guided (by cfg value in guided mag, script automatically locking target at arty1 pos, and removing target when round is fired, like 1r less in mag or mag changes)
 
 IDEAS - FAR FUTURE:
 
@@ -228,6 +227,7 @@ DONE - FEATURES:
 -improved vehicle seat locking script and added more options
 -fixed all datalink panels
 -added shell fall/passby sound, which suprisingly was not in vanilla
+-bugfixed alignment color staying when no target available
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
@@ -240,8 +240,9 @@ DONE - FEATURES:
 -included aimaboveheight into shownELdifference, so with ace tables airburst is accurate, and guided includes topdown
 -fixed HEAB by slightly decreasing simulationStep, to not overshoot at low trajectory, or hit ground at high trajectory
 -added (cfgmag value) guided round lock requirement for guidance warning when no target is selected, also (cfgmag value) submunition warning when looking at terrain
--for vehicle attached mortar, when target<=10m (like vehicle its attached to): shows map marker targets instead, shows requires lock message for guided shells
+-for vehicle attached mortar/ or close object blocking viewpoint, when target<=20m (like vehicle its attached to): shows map marker targets instead, shows requires lock message for guided shells
 -edited GPS Markers to not be attacked by AI
+-MP Guided now also compatible with gps guidance using vanilla artillery computer
 
 
 -low/high trajectory list:

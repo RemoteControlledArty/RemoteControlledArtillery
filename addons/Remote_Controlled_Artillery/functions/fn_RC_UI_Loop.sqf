@@ -252,7 +252,7 @@ RC_Artillery_UI = [] spawn {
 			_selectedTargetDistance=1;
 			if (cursorTarget isNotEqualto objNull) then {_selectedTargetDistance=(getpos cursorTarget) distance2d _artyPos};
 			_noTargetOrTargetTooClose=false;
-			if ((cursorTarget isEqualto objNull) or (_selectedTargetDistance <=10)) then {_noTargetOrTargetTooClose=true;};
+			if ((cursorTarget isEqualto objNull) or (_selectedTargetDistance <=20)) then {_noTargetOrTargetTooClose=true;};
 
 			// If we are looking into the Sky
 			if (_rangeText isEqualTo "--") then {
@@ -276,7 +276,7 @@ RC_Artillery_UI = [] spawn {
 			_realAzimuth = (17.7777778 * _realAzimuth);
 			
 			// If we actually have a Target (thats not too close)
-			if (((cursorTarget isNotEqualto objNull) && (_selectedTargetDistance >= 10)) or !(RC_Artillery_Markers isEqualTo [])) then
+			if (((cursorTarget isNotEqualto objNull) && (_selectedTargetDistance >= 20)) or !(RC_Artillery_Markers isEqualTo [])) then
 			{
 				if !(RC_Artillery_Markers isEqualTo []) then
 				{
@@ -340,7 +340,7 @@ RC_Artillery_UI = [] spawn {
 				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "initSpeed");
 
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
-				if (_hasTargetSelected && (_selectedTargetDistance >= 10)) then {_ctrlTarget ctrlSetText "T: Datalink";} else {_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];};
+				if (_hasTargetSelected && (_selectedTargetDistance >= 20)) then {_ctrlTarget ctrlSetText "T: Datalink";} else {_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];};
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 
@@ -452,6 +452,9 @@ RC_Artillery_UI = [] spawn {
 				};
 			} else {
 				// If we don't have any Valid Targets
+				_ctrlAzimuth ctrlSetTextColor [1,1,1,1];
+				_ctrlElevation ctrlSetTextColor [1,1,1,1];
+
 				_ctrlDistance ctrlSetText "DIST: 0000";
 				_ctrlTarget ctrlSetText "T: 0";
 				_ctrlTargetAzimuth ctrlSetText "T AZ: 0000";

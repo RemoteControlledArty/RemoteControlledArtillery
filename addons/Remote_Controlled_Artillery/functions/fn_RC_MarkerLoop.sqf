@@ -6,7 +6,7 @@ RC_Artillery_Markers = [];
 RC_Current_Target = [];
 RC_Current_Index = 0;
 RC_InUI = false;
-RC_GPS_ClassNames = ["RC_InvisibleDatalinkTarget_B", "RC_InvisibleDatalinkTarget_O", "RC_InvisibleDatalinkTarget_I"];
+//RC_GPS_ClassNames = ["RC_InvisibleDatalinkTarget_B", "RC_InvisibleDatalinkTarget_O", "RC_InvisibleDatalinkTarget_I"];
 
 if !hasInterface exitWith {};
 
@@ -36,7 +36,8 @@ RC_Marker_Loop = [] spawn {
 				if _gpsResult then {
 					_currentMarker = _x;
 					if (_activeGPSMarkers findIf {_x isEqualTo _currentMarker} == -1) then {
-
+						
+						/*
 						// Find out which side the GPS Target should belong to
 						_gpsTargetClass = switch (_side) do {
 							case west: {RC_GPS_ClassNames select 0};
@@ -44,9 +45,11 @@ RC_Marker_Loop = [] spawn {
 							case independent: {RC_GPS_ClassNames select 2};
 							default {systemChat "Player Side undetermined"};
 						};
+						*/
 						
 						// Create Target
-						_gpsTarget = _gpsTargetClass createVehicleLocal (markerPos _x);
+						//_gpsTarget = _gpsTargetClass createVehicleLocal (markerPos _x);
+						_gpsTarget = "RC_GPSDatalinkTarget" createVehicleLocal (markerPos _x);
 
 						// Spawn a little script to handle the GPS target					
 						[_x ,_gpsTarget, _side] spawn {
