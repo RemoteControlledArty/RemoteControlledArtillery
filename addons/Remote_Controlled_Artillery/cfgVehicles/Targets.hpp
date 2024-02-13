@@ -366,7 +366,6 @@ class B_TargetSoldier: TargetSoldierBase
 };
 */
 
-/*
 class TargetSoldierBase;
 class RC_GPSDatalinkTarget_Base: TargetSoldierBase
 {
@@ -427,8 +426,8 @@ class RC_GPSDatalinkTarget: RC_GPSDatalinkTarget_Base
 		""
 	};
 };
-*/
 
+/*
 class All;
 class RC_GPSDatalinkTarget_Base: All
 {
@@ -485,6 +484,7 @@ class RC_GPSDatalinkTarget: RC_GPSDatalinkTarget_Base
 	cost=0;	//9.9999999e+014
 	armor=500;
 };
+*/
 
 /*
 class LaserTarget: All
@@ -580,88 +580,3 @@ class ArtilleryTarget: All
 	scope=1;
 };
 */
-
-class O_TargetSoldier;
-class RC_InvisibleDatalinkTarget_O_Base: O_TargetSoldier
-{
-	class Eventhandlers;
-	scope=0;
-	scopeCurator=0;
-	scopeArsenal=0;
-};
-class RC_InvisibleDatalinkTarget_O: RC_InvisibleDatalinkTarget_O_Base
-{
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {while {true} do {(side player) reportRemoteTarget [_this, 5]; sleep 4;};};";
-	};
-
-	author="Ascent";
-	displayName="GPS Marker";
-	scope=2;
-	scopeCurator=2;
-	irTarget=1;
-	crewVulnerable=0;
-	type=1;
-	threat[]={0.0,0.0,0.0};
-	destrType="DestructNo";
-	class HitPoints
-	{
-	};
-};
-class B_TargetSoldier;
-class RC_InvisibleDatalinkTarget_B_Base: B_TargetSoldier
-{
-	class Eventhandlers;
-	scope=0;
-	scopeCurator=0;
-	scopeArsenal=0;
-};
-class RC_InvisibleDatalinkTarget_B: RC_InvisibleDatalinkTarget_B_Base
-{
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {while {true} do {(side player) reportRemoteTarget [_this, 5]; sleep 4;};};";
-	};
-
-	author="Ascent";
-	displayName="GPS Marker";
-	scope=2;
-	scopeCurator=2;
-	irTarget=1;
-	crewVulnerable=0;
-	type=1;
-	threat[]={0.0,0.0,0.0};
-	destrType="DestructNo";
-	class HitPoints
-	{
-	};
-};
-class I_TargetSoldier;
-class RC_InvisibleDatalinkTarget_I_Base: I_TargetSoldier
-{
-	class Eventhandlers;
-	scope=0;
-	scopeCurator=0;
-	scopeArsenal=0;
-};
-class RC_InvisibleDatalinkTarget_I: RC_InvisibleDatalinkTarget_I_Base
-{
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {while {true} do {(side player) reportRemoteTarget [_this, 5]; sleep 4;};};";
-	};
-
-	author="Ascent";
-	displayName="GPS Marker";
-	scope=2;
-	scopeCurator=2;
-	irTarget=1;
-	crewVulnerable=0;
-	type=1;
-	threat[]={0.0,0.0,0.0};
-	destrType="DestructNo";
-	class HitPoints
-	{
-	};
-};

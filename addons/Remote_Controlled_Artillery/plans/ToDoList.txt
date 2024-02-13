@@ -27,8 +27,6 @@ if (!isserver) exitwith {}; = server client only, not every player client
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
--MLRS overshoots?
-
 -decide on datalink share time and update time
 
 (lock lost after x seconds with lasersim, not with artysim)
@@ -36,6 +34,7 @@ Arty:
 -when deleting error removemissioneventhandler, error type string expected number, but luckly gets deleted including duplicates, and not other numbered ones
 -inaccurate guidance, maybe gets placed false?
 -is it still placed with increased height?
+*keeps spawning when in rcUI, and also over time more inaccurate, first one luckly is 100% accurate
 
 -same indirecthit but smaller radius might be more suitable for near misses or gps guidance, test lethal distance for inf
 *similar would go for low airburst against vics/houses

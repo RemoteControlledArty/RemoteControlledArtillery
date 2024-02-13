@@ -2409,8 +2409,7 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 		"Single2",
 		"Single3",
 		"Single4",
-		"Single5",
-		"Single6"
+		"Single5"
 	};
 	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
 	/*
@@ -2437,26 +2436,21 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 	class Single2: Single1
 	{
 		displayName="CH1"
-		artilleryCharge=0.382;
+		artilleryCharge=0.405;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2"
-		artilleryCharge=0.486;
+		artilleryCharge=0.55;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3"
-		artilleryCharge=0.618;
+		artilleryCharge=0.74;
 	};
 	class Single5: Single1
 	{
-		displayName="CH4"
-		artilleryCharge=0.786;
-	};
-	class Single6: Single1
-	{
-		displayName="CH5 direct"
+		displayName="CH4 direct"
 		artilleryCharge=1;
 	};
 	magazines[]=
