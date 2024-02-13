@@ -27,6 +27,8 @@ if (!isserver) exitwith {}; = server client only, not every player client
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
+-MLRS overshoots?
+
 -decide on datalink share time and update time
 
 (lock lost after x seconds with lasersim, not with artysim)
@@ -37,6 +39,9 @@ Arty:
 
 -same indirecthit but smaller radius might be more suitable for near misses or gps guidance, test lethal distance for inf
 *similar would go for low airburst against vics/houses
+- +50% dmg and -20% radius and 20% lower airburst
+
+-lock with "R" in guided message100% aligned mode (+-0.1) for ERL with HE
 
 -marker moves when hit
 #define TEast 0
@@ -82,6 +87,8 @@ POSTPONED:
 -ETA 5sec warning message
 -proximityExplosionDistance= ; ammo testing
 -seek after blind fire for guided (by cfg value in guided mag, script automatically locking target at arty1 pos, and removing target when round is fired, like 1r less in mag or mag changes)
+-mousewheel menu to cycle different fuzed HE (AB, Impact, Delayed) mags
+
 
 IDEAS - FAR FUTURE:
 
