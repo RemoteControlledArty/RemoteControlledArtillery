@@ -74,7 +74,7 @@ RC_Marker_Loop = [] spawn {
 								if (_marker isEqualTo _watchedMarker) then {
 									deleteVehicle _gpsTarget;
 									removeMissionEventHandler ["MarkerUpdated", _moveHandler];
-									removeMissionEventHandler [_thisEventHandler, _moveHandler];
+									removeMissionEventHandler ["MarkerDeleted", _thisEventHandler];
 								}
 							}, [_watchedMarker, _gpsTarget, _moveHandler]];
 
