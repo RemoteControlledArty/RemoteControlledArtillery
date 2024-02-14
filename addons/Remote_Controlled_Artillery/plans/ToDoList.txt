@@ -27,7 +27,7 @@ if (!isserver) exitwith {}; = server client only, not every player client
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
--decide on datalink share time and update time
+-found major bug, arty1 marker changing distance when edited to for example arty1 HE
 
 -when 2 markers are placed, one vanquishes after a moment
 -moving deletes them, and may creates problem when actually deleting another
@@ -35,8 +35,6 @@ Arty:
 
 -attemt guided low airburst (1.5m) and submunoffset of heat +1.3m
 *HEAT flyeffect short atgm trail?
-
--lock with "R" in guided message100% aligned mode (+-0.1) for ERL with HE
 
 -marker moves when hit
 #define TEast 0
