@@ -6409,7 +6409,8 @@ class 3Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB";
-	RC_AimAboveHeight=21.2;		//airburstheight
+	RC_AimAboveHeight=17;		//airburstheight
+	//RC_AimAboveHeight=21.2;		//airburstheight
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;

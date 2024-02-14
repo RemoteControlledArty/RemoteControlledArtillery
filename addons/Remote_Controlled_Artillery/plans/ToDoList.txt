@@ -31,12 +31,10 @@ Arty:
 
 -when 2 markers are placed, one vanquishes after a moment
 -moving deletes them, and may creates problem when actually deleting another
-
--same indirecthit but smaller radius might be more suitable for near misses or gps guidance, test lethal distance for inf
-*similar would go for low airburst against vics/houses
-- +50% dmg and -20% radius and 20% lower airburst
+-got deleted after a while?
 
 -attemt guided low airburst (1.5m) and submunoffset of heat +1.3m
+*HEAT flyeffect short atgm trail?
 
 -lock with "R" in guided message100% aligned mode (+-0.1) for ERL with HE
 

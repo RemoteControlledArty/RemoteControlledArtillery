@@ -465,20 +465,14 @@ class RC_GPSDatalinkTarget: RC_GPSDatalinkTarget_Base
 	model="laserTgt.p3d";
 	//model="";
 	picture="pictureLaserTarget";
-	weapons[]=
-	{
-		"FakeWeapon"
-	};
-	magazines[]=
-	{
-		"FakeWeapon"
-	};
+	weapons[]={"FakeWeapon"};
+	magazines[]={"FakeWeapon"};
 	type=1;	//0 soft, 1 armored, 2 air
 	threat[]={0,0,0};	//{0.5,0.5,0.1}
 	maxSpeed=0;
 	//simulation="laserTarget";
 	//simulation="nvmarker";
-	simulation="artillerymarker";	//idk
+	simulation="artillerymarker";	//idk kinda works
 	laserTarget=0;	//makes it displayed like laser on DL
 	nvTarget=0;	//1 even with ir 1 makes it unlockable
 	irTarget=1;	//test 1

@@ -1122,8 +1122,8 @@ class ammo_Penetrator_82mm_MP: ammo_Penetrator_Base
 class RC_82mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_82mm_MP";
-	indirectHit=26;
-	indirectHitRange=9;
+	indirectHit=52;
+	indirectHitRange=9;	//halved
 	cost=500;
 
 	class CamShakeExplode
@@ -1160,8 +1160,8 @@ class RC_Sh_82mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	submunitionAmmo="RC_82mm_MP_LaserGuided_Submunition";
 	triggerDistance=300;
 	hit=165;
-	indirectHit=26;
-	indirectHitRange=9;
+	indirectHit=52;
+	indirectHitRange=9;	//halved
 	cost=500;
 
 	class CamShakeExplode
@@ -1198,8 +1198,8 @@ class RC_Sh_82mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 class RC_82mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_82mm_MP";
-	indirectHit=26;
-	indirectHitRange=9;
+	indirectHit=52;
+	indirectHitRange=9;	//halved
 	cost=500;
 
 	class CamShakeExplode
@@ -1236,8 +1236,8 @@ class RC_Sh_82mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	submunitionAmmo="RC_82mm_MP_MultiGuided_Submunition";
 	triggerDistance=300;
 	hit=165;
-	indirectHit=26;
-	indirectHitRange=9;
+	indirectHit=52;
+	indirectHitRange=9;	//halved
 	cost=500;
 
 	class CamShakeExplode
@@ -1410,8 +1410,8 @@ class ammo_Penetrator_105mm_MP: ammo_Penetrator_Base
 class RC_105mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_105mm_MP";
-	indirectHit=37.8;
-	indirectHitRange=10.9;
+	indirectHit=75.6;
+	indirectHitRange=10.9;	//halved
 	cost=600;
 
 	class CamShakeExplode
@@ -1448,8 +1448,8 @@ class RC_Sh_105mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	submunitionAmmo="RC_105mm_MP_LaserGuided_Submunition";
 	triggerDistance=500;
 	hit=207.3;
-	indirectHit=37.8;
-	indirectHitRange=10.9;
+	indirectHit=75.6;
+	indirectHitRange=10.9;	//halved
 	cost=600;
 
 	class CamShakeExplode
@@ -1486,8 +1486,8 @@ class RC_Sh_105mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 class RC_105mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_105mm_MP";
-	indirectHit=37.8;
-	indirectHitRange=10.9;
+	indirectHit=75.6;
+	indirectHitRange=10.9;		//halved
 	cost=600;
 
 	class CamShakeExplode
@@ -1524,7 +1524,7 @@ class RC_Sh_105mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	submunitionAmmo="RC_105mm_MP_MultiGuided_Submunition";
 	triggerDistance=500;
 	hit=207.3;
-	indirectHit=37.8;
+	indirectHit=75.6;
 	indirectHitRange=10.9;
 	cost=600;
 
@@ -1736,7 +1736,7 @@ class ammo_Penetrator_120mm_MP: ammo_Penetrator_Base
 class RC_120mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_120mm_MP";
-	indirectHit=43.2;
+	indirectHit=86.4;
 	indirectHitRange=12.4;
 	cost=700;
 
@@ -1774,7 +1774,7 @@ class RC_Sh_120mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	submunitionAmmo="RC_120mm_MP_LaserGuided_Submunition";
 	triggerDistance=500;
 	hit=236.7;
-	indirectHit=43.2;
+	indirectHit=86.4;
 	indirectHitRange=12.4;
 	cost=700;
 
@@ -1812,7 +1812,7 @@ class RC_Sh_120mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 class RC_120mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_120mm_MP";
-	indirectHit=43.2;
+	indirectHit=86.4;
 	indirectHitRange=12.4;
 	cost=700;
 
@@ -1850,7 +1850,7 @@ class RC_Sh_120mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	submunitionAmmo="RC_120mm_MP_MultiGuided_Submunition";
 	triggerDistance=500;
 	hit=236.7;
-	indirectHit=43.2;
+	indirectHit=86.4;
 	indirectHitRange=12.4;
 	cost=700;
 
@@ -2138,7 +2138,7 @@ class ammo_Penetrator_155mm_MP: ammo_Penetrator_Base
 class RC_155mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
-	indirectHit=62.5;
+	indirectHit=125;
 	indirectHitRange=15;
 	cost=800;
 
@@ -2176,7 +2176,7 @@ class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	submunitionAmmo="RC_155mm_MP_LaserGuided_Submunition";
 	triggerDistance=500;
 	hit=340;
-	indirectHit=62.5;
+	indirectHit=125;
 	indirectHitRange=15;
 	cost=800;
 
@@ -2214,7 +2214,7 @@ class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 class RC_155mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
-	indirectHit=62.5;
+	indirectHit=125;
 	indirectHitRange=15;
 	cost=800;
 
@@ -2252,7 +2252,7 @@ class RC_Sh_155mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
 	triggerDistance=500;
 	hit=340;
-	indirectHit=62.5;
+	indirectHit=125;
 	indirectHitRange=15;
 	cost=800;
 
@@ -2448,7 +2448,7 @@ class RC_230mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 	explosionEffects="HEShellExplosion";
 	craterEffects="BombCrater";
 	submunitionAmmo="ammo_Penetrator_230mm_MP";
-	indirectHit=400;
+	indirectHit=800;
 	indirectHitRange=15;
 	cost=1000;
 
@@ -2527,7 +2527,7 @@ class RC_R_230mm_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	craterEffects="BombCrater";
 	triggerDistance=500;
 	hit=300;
-	indirectHit=400;
+	indirectHit=800;
 	indirectHitRange=15;
 	cost=1000;
 
@@ -2606,7 +2606,7 @@ class RC_230mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 	//explosionEffects="HEShellExplosion";
 	craterEffects="BombCrater";
 	submunitionAmmo="ammo_Penetrator_230mm_MP";
-	indirectHit=400;
+	indirectHit=800;
 	indirectHitRange=15;
 	cost=1000;
 
@@ -2685,7 +2685,7 @@ class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	craterEffects="BombCrater";
 	triggerDistance=500;
 	hit=300;
-	indirectHit=400;
+	indirectHit=800;
 	indirectHitRange=15;
 	cost=1000;
 
@@ -2782,7 +2782,7 @@ class RC_230mm_LG_DelayedFuse: RC_R_230mm_MP_LaserGuided
 class RC_230mm_MP_MultiGuided_Hypersonic_Submunition: RC_230mm_MP_MultiGuided_Submunition
 {
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
-	indirectHit=200;
+	indirectHit=400;
 	cost=2000;
 };
 class RC_R_230mm_MP_MultiGuided_Hypersonic: RC_R_230mm_MP_MultiGuided

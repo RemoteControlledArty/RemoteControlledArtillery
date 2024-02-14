@@ -364,8 +364,11 @@ RC_Artillery_UI = [] spawn {
 
 					switch (true) do {
 						// If Elevation is close/correct change the Elevation text color
-						case((_realElevation < (_lowAngleSol + 0.25)) and (_realElevation > (_lowAngleSol - 0.25))): {_ctrlElevation ctrlSetTextColor [0,1,0,1];};
-						case((_realElevation < (_highAngleSol + 0.25)) and (_realElevation > (_highAngleSol - 0.25))): {_ctrlElevation ctrlSetTextColor [0,1,0,1];};
+						case((_realElevation < (_lowAngleSol + 0.1)) and (_realElevation > (_lowAngleSol - 0.1))): {_ctrlElevation ctrlSetTextColor [0,1,0,1];};
+						case((_realElevation < (_highAngleSol + 0.1)) and (_realElevation > (_highAngleSol - 0.1))): {_ctrlElevation ctrlSetTextColor [0,1,0,1];};
+
+						case((_realElevation < (_lowAngleSol + 0.25)) and (_realElevation > (_lowAngleSol - 0.25))): {_ctrlElevation ctrlSetTextColor [0,0.9,0,0.9];};
+						case((_realElevation < (_highAngleSol + 0.25)) and (_realElevation > (_highAngleSol - 0.25))): {_ctrlElevation ctrlSetTextColor [0,0.9,0,0.9];};
 						
 						case((_realElevation < (_lowAngleSol + 0.5)) and (_realElevation > (_lowAngleSol - 0.5))): {_ctrlElevation ctrlSetTextColor [0.75,1,0.5,1];};
 						case((_realElevation < (_highAngleSol + 0.5)) and (_realElevation > (_highAngleSol - 0.5))): {_ctrlElevation ctrlSetTextColor [0.75,1,0.5,1];};
@@ -409,7 +412,8 @@ RC_Artillery_UI = [] spawn {
 
 				switch (true) do {
 						// If Azimuth is close/correct change the Azimuth text color
-						case((_realAzimuth < (_targetAzimuth + 0.5)) and (_realAzimuth > (_targetAzimuth - 0.5))): {_ctrlAzimuth ctrlSetTextColor [0,1,0,1];};
+						case((_realAzimuth < (_targetAzimuth + 0.1)) and (_realAzimuth > (_targetAzimuth - 0.1))): {_ctrlAzimuth ctrlSetTextColor [0,1,0,1];};
+						case((_realAzimuth < (_targetAzimuth + 0.5)) and (_realAzimuth > (_targetAzimuth - 0.5))): {_ctrlAzimuth ctrlSetTextColor [0,0.9,0,0.9];};
 						case((_realAzimuth < (_targetAzimuth + 1)) and (_realAzimuth > (_targetAzimuth - 1))): {_ctrlAzimuth ctrlSetTextColor [0.75,1,0.5,1];};
 						case((_realAzimuth < (_targetAzimuth + 2)) and (_realAzimuth > (_targetAzimuth - 2))): {_ctrlAzimuth ctrlSetTextColor [0.8,1,0.5,1];};
 						case((_realAzimuth < (_targetAzimuth + 4)) and (_realAzimuth > (_targetAzimuth - 4))): {_ctrlAzimuth ctrlSetTextColor [0.85,1,0.5,1];};
@@ -430,12 +434,39 @@ RC_Artillery_UI = [] spawn {
 				if (((ctrlTextColor _ctrlElevation) isEqualTo [0,1,0,1]) and ((ctrlTextColor _ctrlAzimuth) isEqualTo [0,1,0,1])) then {
 					_ctrlMessage ctrlSetTextColor [0.5,1,0.5,1];
 					_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
+					_ctrlMessage ctrlSetText "100% ALIGNED";
+				} else {
+					if (((ctrlTextColor _ctrlElevation) isEqualTo [0,0.9,0,0.9]) and ((ctrlTextColor _ctrlAzimuth) isEqualTo [0,0.9,0,0.9])) then {
+					_ctrlMessage ctrlSetTextColor [0.5,1,0.5,1];
+					_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
+					_ctrlMessage ctrlSetText "ALIGNED";
+					} else {
+						
+						_ctrlMessage ctrlSetTextColor [1,0,0,1];
+						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
+						_ctrlMessage ctrlSetText "NOT ALIGNED";
+					};
+				};
+
+				/*
+				switch (true) do {
+					case(((ctrlTextColor _ctrlElevation) isEqualTo [0,1,0,1]) and ((ctrlTextColor _ctrlAzimuth) isEqualTo [0,1,0,1])): {
+						_ctrlAzimuth ctrlSetTextColor [0,1,0,1];
+						_ctrlMessage ctrlSetTextColor [0.5,1,0.5,1];
+						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
+						_ctrlMessage ctrlSetText "ALIGNED";
+						
+						};
+					(((ctrlTextColor _ctrlElevation) isEqualTo [0,1,0,1]) and ((ctrlTextColor _ctrlAzimuth) isEqualTo [0,1,0,1])) then {
+					_ctrlMessage ctrlSetTextColor [0.5,1,0.5,1];
+					_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
 					_ctrlMessage ctrlSetText "ALIGNED";
 				} else {
 					_ctrlMessage ctrlSetTextColor [1,0,0,1];
 					_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
 					_ctrlMessage ctrlSetText "NOT ALIGNED";
 				};
+				*/
 				
 				// Parse these back to Numbers incase they are NaN
 				_highAngleSol = parseNumber str(_highAngleSol);
