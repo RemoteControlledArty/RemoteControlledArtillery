@@ -35,19 +35,7 @@ RC_Marker_Loop = [] spawn {
 					_currentMarker = _x;
 					if (activeGPSMarkers findIf {_x isEqualTo _currentMarker} == -1) then {
 						
-						/*
-						// Find out which side the GPS Target should belong to
-						_gpsTargetClass = switch (_side) do {
-							case west: {RC_GPS_ClassNames select 0};
-							case east: {RC_GPS_ClassNames select 1};
-							case independent: {RC_GPS_ClassNames select 2};
-							default {systemChat "Player Side undetermined"};
-						};
-						*/
-						
 						// Create Target
-						//gpsTarget = _gpsTargetClass createVehicleLocal (markerPos _x);
-						//gpsTarget = "RC_GPSDatalinkTarget" createVehicleLocal (markerPos _x); //"CAN_COLLIDE"
 						gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _x), [], 0, "CAN_COLLIDE"];
 
 						// Spawn a little script to handle the GPS target					
