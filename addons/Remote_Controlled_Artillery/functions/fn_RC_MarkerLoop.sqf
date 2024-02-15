@@ -36,6 +36,7 @@ RC_Marker_Loop = [] spawn {
 					if (activeGPSMarkers findIf {_x isEqualTo _currentMarker} == -1) then {
 						
 						// Create Target
+						//gpsTarget = createVehicle ["RC_GPSDatalinkTarget", (markerPos _x), [], 0, "CAN_COLLIDE"];
 						gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _x), [], 0, "CAN_COLLIDE"];
 
 						// Spawn a little script to handle the GPS target					
