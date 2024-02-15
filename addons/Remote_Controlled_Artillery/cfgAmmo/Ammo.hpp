@@ -572,6 +572,166 @@ class RC_HEAB_Rocket_Base: RC_HEAB_Base
 	};
 };
 
+class ShellBase;
+class Sh_120mm_HEAT_MP: ShellBase
+{
+	hit=340;
+	indirectHit=125;
+	indirectHitRange=30;
+	warheadName="HE";
+	dangerRadiusHit=750;
+	suppressionRadiusHit=75;
+	typicalSpeed=800;
+	caliber=10;
+	deflecting=0;
+	explosive=0.80000001;
+	cost=300;
+	model="\A3\weapons_f\ammo\shell";
+	CraterEffects="ArtyShellCrater";
+	ExplosionEffects="MortarExplosion";
+	whistleDist=60;
+	artilleryLock=1;
+	thrust=0;
+	timeToLive=180;
+	airFriction=0;
+	sideairFriction=0;
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_03",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_04",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
+
+
+	warheadName="HE";
+	submunitionAmmo="ammo_Penetrator_120mm";
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	indirectHit=30;
+	indirectHitRange=3.5;
+	dangerRadiusHit=160;
+	suppressionRadiusHit=32;
+	typicalSpeed=1400;
+	explosive=1;
+	cost=500;
+	airFriction=-0.000275;
+	deflecting=8;
+	timeToLive=15;
+	whistleOnFire=1;
+	whistleDist=14;
+	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_white";
+	tracerScale=1;
+	tracerStartTime=0.1;
+	tracerEndTime=3;
+	muzzleEffect="";
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_01",
+		1.7782794,
+		1,
+		1800
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_02",
+		1.7782794,
+		1,
+		1800
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_03",
+		1.7782794,
+		1,
+		1800
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_04",
+		1.7782794,
+		1,
+		1800
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
+	class CamShakeExplode
+	{
+		power=16.4;
+		duration=1.8;
+		frequency=20;
+		distance=216.44299;
+	};
+	class CamShakeHit
+	{
+		power=82;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=3.0092199;
+		duration=1.8;
+		frequency=20;
+		distance=72.4431;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+	CraterEffects="ATRocketCrater";
+	explosionEffects="ATRocketExplosion";
+	explosionSoundEffect="DefaultExplosion";
+};
 
 class MissileBase;
 class RC_MP_Guided_Submunition_MissleBase: MissileBase
@@ -1122,8 +1282,9 @@ class ammo_Penetrator_82mm_MP: ammo_Penetrator_Base
 class RC_82mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_82mm_MP";
+	//craterEffects="RC_82mmGuidedDust";
 	indirectHit=52;
-	indirectHitRange=9;	//halved
+	indirectHitRange=9;
 	cost=500;
 
 	class CamShakeExplode
@@ -1161,7 +1322,7 @@ class RC_Sh_82mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	triggerDistance=300;
 	hit=165;
 	indirectHit=52;
-	indirectHitRange=9;	//halved
+	indirectHitRange=9;
 	cost=500;
 
 	class CamShakeExplode
@@ -1198,8 +1359,9 @@ class RC_Sh_82mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 class RC_82mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_82mm_MP";
+	//craterEffects="RC_82mmGuidedDust";
 	indirectHit=52;
-	indirectHitRange=9;	//halved
+	indirectHitRange=9;
 	cost=500;
 
 	class CamShakeExplode
@@ -1237,7 +1399,7 @@ class RC_Sh_82mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	triggerDistance=300;
 	hit=165;
 	indirectHit=52;
-	indirectHitRange=9;	//halved
+	indirectHitRange=9;
 	cost=500;
 
 	class CamShakeExplode
@@ -1410,8 +1572,9 @@ class ammo_Penetrator_105mm_MP: ammo_Penetrator_Base
 class RC_105mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_105mm_MP";
+	//craterEffects="RC_105mmGuidedDust";
 	indirectHit=75.6;
-	indirectHitRange=10.9;	//halved
+	indirectHitRange=10.9;
 	cost=600;
 
 	class CamShakeExplode
@@ -1449,7 +1612,7 @@ class RC_Sh_105mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	triggerDistance=500;
 	hit=207.3;
 	indirectHit=75.6;
-	indirectHitRange=10.9;	//halved
+	indirectHitRange=10.9;
 	cost=600;
 
 	class CamShakeExplode
@@ -1486,8 +1649,9 @@ class RC_Sh_105mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 class RC_105mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_105mm_MP";
+	//craterEffects="RC_105mmGuidedDust";
 	indirectHit=75.6;
-	indirectHitRange=10.9;		//halved
+	indirectHitRange=10.9;
 	cost=600;
 
 	class CamShakeExplode
@@ -1736,6 +1900,7 @@ class ammo_Penetrator_120mm_MP: ammo_Penetrator_Base
 class RC_120mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_120mm_MP";
+	//craterEffects="RC_120mmGuidedDust";
 	indirectHit=86.4;
 	indirectHitRange=12.4;
 	cost=700;
@@ -1812,6 +1977,7 @@ class RC_Sh_120mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 class RC_120mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_120mm_MP";
+	//craterEffects="RC_120mmGuidedDust";
 	indirectHit=86.4;
 	indirectHitRange=12.4;
 	cost=700;
@@ -2138,6 +2304,7 @@ class ammo_Penetrator_155mm_MP: ammo_Penetrator_Base
 class RC_155mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
+	//craterEffects="RC_155mmGuidedDust";
 	indirectHit=125;
 	indirectHitRange=15;
 	cost=800;
@@ -2214,6 +2381,7 @@ class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 class RC_155mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
+	//craterEffects="RC_155mmGuidedDust";
 	indirectHit=125;
 	indirectHitRange=15;
 	cost=800;

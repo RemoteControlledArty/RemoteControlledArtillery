@@ -1,4 +1,14 @@
 //cratereffects
+class RC_CircleDust_Base
+{
+	simulation="particles";
+	enabled="distToWater interpolate [0.05,0.06,-1,1]";
+	position[]={0,0,0};
+	intensity=1;
+	interval=1;
+	lifeTime=0.2;
+};
+
 class RC_ArtyShellCrater
 {
 	class ShellStones
@@ -34,145 +44,86 @@ class RC_ArtyShellCrater
 
 class RC_82mmAirburstDust
 {
-	class MissileCircleDust
+	class RC_CircleDust: RC_CircleDust_Base
 	{
-		simulation="particles";
 		type="RC_82mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
 	};
-	class CircleDust
+};
+
+class RC_82mmGuidedDust
+{
+	class RC_CircleDust: RC_CircleDust_Base
 	{
-		simulation="particles";
-		type="RC_82mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
+		type="RC_82mmGuidedCircleDust";
 	};
 };
 
 class RC_105mmAirburstDust
 {
-	class MissileCircleDust
+	class RC_CircleDust: RC_CircleDust_Base
 	{
-		simulation="particles";
-		type="RC_82mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
-	};
-	class CircleDust
-	{
-		simulation="particles";
 		type="RC_105mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
+	};
+};
+
+class RC_105mmGuidedDust
+{
+	class RC_CircleDust: RC_CircleDust_Base
+	{
+		type="RC_105mmGuidedCircleDust";
 	};
 };
 
 class RC_120mmAirburstDust
 {
-	class MissileCircleDust
+	class RC_CircleDust: RC_CircleDust_Base
 	{
-		simulation="particles";
 		type="RC_120mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
 	};
-	class CircleDust
+};
+class RC_120mmGuidedDust
+{
+	class RC_CircleDust: RC_CircleDust_Base
 	{
-		simulation="particles";
-		type="RC_120mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
+		type="RC_120mmGuidedDust";
 	};
 };
 
 class RC_155mmAirburstDust
 {
-	class MissileCircleDust
+	class RC_CircleDust: RC_CircleDust_Base
 	{
-		simulation="particles";
 		type="RC_155mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
 	};
-	class CircleDust
+};
+class RC_155mmGuidedDust
+{
+	class RC_CircleDust: RC_CircleDust_Base
 	{
-		simulation="particles";
-		type="RC_155mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
+		type="RC_155mmGuidedCircleDust";
 	};
 };
 
 class RC_230mmAirburstDust
 {
-	class MissileCircleDust
+	class RC_CircleDust: RC_CircleDust_Base
 	{
-		simulation="particles";
-		type="RC_230mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
+		type="RC_105mmCircleDust";
 	};
-	class CircleDust
+};
+class RC_230mmGuidedDust
+{
+	class RC_CircleDust: RC_CircleDust_Base
 	{
-		simulation="particles";
-		type="RC_230mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
+		type="RC_230mmGuidedCircleDust";
 	};
 };
 
 class RC_604mmAirburstDust
 {
-	class MissileCircleDust
+	class RC_CircleDust: RC_CircleDust_Base
 	{
-		simulation="particles";
-		type="RC_604mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
-	};
-	class CircleDust
-	{
-		simulation="particles";
-		type="RC_604mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
+		type="RC_230mmCircleDust";
 	};
 };
 

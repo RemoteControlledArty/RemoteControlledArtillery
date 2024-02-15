@@ -180,11 +180,21 @@ class RC_82mmCircleDust: RC_CircleDustMed
 	circleRadius=12.7;
 	lifeTime=20;
 };
+class RC_82mmGuidedCircleDust: RC_CircleDustMed
+{
+	circleRadius=9;
+	lifeTime=20;
+};
 
 class RC_105mmCircleDust: RC_CircleDustMed
 {
 	circleRadius=15.3;
 	size[]={6.9,12.7};
+	lifeTime=20;
+};
+class RC_105mmGuidedCircleDust: RC_CircleDustMed
+{
+	circleRadius=10.9;
 	lifeTime=20;
 };
 
@@ -194,11 +204,21 @@ class RC_120mmCircleDust: RC_CircleDustMed
 	size[]={8.1,14.9};
 	lifeTime=20;
 };
+class RC_120mmGuidedCircleDust: RC_CircleDustMed
+{
+	circleRadius=12.4;
+	lifeTime=20;
+};
 
 class RC_155mmCircleDust: RC_CircleDustMed
 {
 	circleRadius=21.2;
 	size[]={9,16.5};
+	lifeTime=20;
+};
+class RC_155mmGuidedCircleDust: RC_CircleDustMed
+{
+	circleRadius=15;
 	lifeTime=20;
 };
 
@@ -207,6 +227,11 @@ class RC_230mmCircleDust: RC_CircleDustMed
 	circleRadius=31.8;
 	size[]={12,22};
 	lifeTime=30;
+};
+class RC_230mmGuidedCircleDust: RC_CircleDustMed
+{
+	circleRadius=15;
+	lifeTime=20;
 };
 
 class RC_604mmCircleDust: RC_CircleDustMed

@@ -33,6 +33,11 @@ Arty:
 -moving deletes them, and may creates problem when actually deleting another
 -got deleted after a while?
 
+-edit shellbase warhead and implement for guided AB and delayed
+-delayed as multi, for ir gps?
+-atmisslecrater test with blastcore
+-multiple dust rings?
+
 -attemt guided low airburst (1.5m) and submunoffset of heat +1.3m
 *HEAT flyeffect short atgm trail?
 
@@ -61,16 +66,13 @@ POSTPONED:
 
 -fancier explosion&smoke effect of airburst
 -guided with simulation shotmissle but with altered values, testing if it connects to misslefeed *it does on manned vic, somehow not on rc'ed... same on Static ATGM
--Subcaliber Hypersonic 120mm guided in 155mm / 105mm guided in 120mm, for reduced TOF at extrem ranges
+-1.5m Airburst for MP Guided
 -RC IC fix smokelauncher
 -RC IC if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged (explosion timer shortend for now)
 -RC IC fix and readd datalink panel (removed for now)
 -RC IC add different driver screen (T14 like)
-
--RC Res make driver camera available for Transporter&Van, after having found a fix
--RC Res edit hitpoints (for now threat/cost is reduced)
--RC Res for the repair version, vehicle (thislist select 0) setfuel 1; vehicle (thislist select 0) setdamage 0; https://community.bistudio.com/wiki/createTrigger
-
+-RC Medical, make driver camera available for Transporter&Van, after having found a fix
+-RC Repair, vehicle (thislist select 0) setfuel 1; vehicle (thislist select 0) setdamage 0; https://community.bistudio.com/wiki/createTrigger
 -fix Static AT self engaging laser spots (how?)
 -RADAR deactivates after releasing control even when not autonomous, maybe use human crew and locking seats instead?
 -look up if inheriting structure is fully correct
