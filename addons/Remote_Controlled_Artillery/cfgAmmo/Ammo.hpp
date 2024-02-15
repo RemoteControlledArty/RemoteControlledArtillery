@@ -572,27 +572,37 @@ class RC_HEAB_Rocket_Base: RC_HEAB_Base
 	};
 };
 
+/*
 class ShellBase;
-class Sh_120mm_HEAT_MP: ShellBase
+class RC_MP_Warhead_Base: ShellBase
 {
-	hit=340;
-	indirectHit=125;
-	indirectHitRange=30;
 	warheadName="HE";
-	dangerRadiusHit=750;
-	suppressionRadiusHit=75;
-	typicalSpeed=800;
-	caliber=10;
+	//submunitionDirectionType="SubmunitionModelDirection";
+	submunitionDirectionType="SubmunitionTargetDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,9.8};
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	
+	indirectHit=125;
+	indirectHitRange=15;
+	//typicalSpeed=1400;
+	explosive=1;
+	muzzleEffect="";
+	
+	explosionEffects="RC_GuidedExplosion";
+	craterEffects="AAMissileCrater";
+	explosionSoundEffect="DefaultExplosion";
+
+	dangerRadiusHit=350;
+	suppressionRadiusHit=37.5;
+	//caliber=10;
 	deflecting=0;
-	explosive=0.80000001;
-	cost=300;
-	model="\A3\weapons_f\ammo\shell";
-	CraterEffects="ArtyShellCrater";
-	ExplosionEffects="MortarExplosion";
-	whistleDist=60;
+	model="";
 	artilleryLock=1;
 	thrust=0;
-	timeToLive=180;
+	timeToLive=1;
 	airFriction=0;
 	sideairFriction=0;
 	soundHit1[]=
@@ -634,92 +644,26 @@ class Sh_120mm_HEAT_MP: ShellBase
 		"soundHit4",
 		0.25
 	};
-
-
-	warheadName="HE";
-	submunitionAmmo="ammo_Penetrator_120mm";
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionInitSpeed=1000;
-	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-	triggerOnImpact=1;
-	deleteParentWhenTriggered=0;
-	indirectHit=30;
-	indirectHitRange=3.5;
-	dangerRadiusHit=160;
-	suppressionRadiusHit=32;
-	typicalSpeed=1400;
-	explosive=1;
-	cost=500;
-	airFriction=-0.000275;
-	deflecting=8;
-	timeToLive=15;
-	whistleOnFire=1;
-	whistleDist=14;
-	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_white";
-	tracerScale=1;
-	tracerStartTime=0.1;
-	tracerEndTime=3;
-	muzzleEffect="";
-	soundHit1[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_01",
-		1.7782794,
-		1,
-		1800
-	};
-	soundHit2[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_02",
-		1.7782794,
-		1,
-		1800
-	};
-	soundHit3[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_03",
-		1.7782794,
-		1,
-		1800
-	};
-	soundHit4[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\shells\Tank_shell_explosion_04",
-		1.7782794,
-		1,
-		1800
-	};
-	multiSoundHit[]=
-	{
-		"soundHit1",
-		0.25,
-		"soundHit2",
-		0.25,
-		"soundHit3",
-		0.25,
-		"soundHit4",
-		0.25
-	};
 	class CamShakeExplode
 	{
-		power=16.4;
-		duration=1.8;
+		power=31;
+		duration=2.4000001;
 		frequency=20;
-		distance=216.44299;
+		distance=339.599;
 	};
 	class CamShakeHit
 	{
-		power=82;
-		duration=0.60000002;
+		power=155;
+		duration=0.80000001;
 		frequency=20;
 		distance=1;
 	};
 	class CamShakeFire
 	{
-		power=3.0092199;
-		duration=1.8;
+		power=3.52844;
+		duration=2.4000001;
 		frequency=20;
-		distance=72.4431;
+		distance=99.599197;
 	};
 	class CamShakePlayerFire
 	{
@@ -728,10 +672,8 @@ class Sh_120mm_HEAT_MP: ShellBase
 		frequency=20;
 		distance=1;
 	};
-	CraterEffects="ATRocketCrater";
-	explosionEffects="ATRocketExplosion";
-	explosionSoundEffect="DefaultExplosion";
 };
+*/
 
 class MissileBase;
 class RC_MP_Guided_Submunition_MissleBase: MissileBase
@@ -2377,9 +2319,24 @@ class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	};
 };
 
+/*
+class RC_155mm_MP_Warhead: RC_MP_Warhead_Base
+{
+	submunitionAmmo="ammo_Penetrator_155mm_MP";
+	explosionTime=0.0001;
+};
+*/
 
 class RC_155mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
+	//submunitionAmmo="RC_155mm_MP_Warhead";
+	//submunitionInitialOffset[]={0,0,-10};
+	//submunitionDirectionType="SubmunitionTargetDirection";
+	//triggerdistance=10;
+	//triggerOnImpact=-1;
+	//proximityExplosionDistance=10;
+	//triggerDistance=10;
+
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
 	//craterEffects="RC_155mmGuidedDust";
 	indirectHit=125;
