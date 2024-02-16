@@ -28,7 +28,8 @@ RC_Marker_Loop = [] spawn {
 				};
 
 				// Find a Marker with the GPS Prefix
-				private _gpsResult = (markerText _x) regexMatch (format [".*%1[0-9]{1,2}.*/i", RC_GPS_Prefix]);
+				//private _gpsResult = (markerText _x) regexMatch (format [".*%1[0-9]{1,2}.*/i", RC_GPS_Prefix]);
+				private _gpsResult = (markerText _x) regexMatch (format [RC_GPS_Prefix]);
 				if _gpsResult then {
 					_currentMarker = _x;
 					if (activeGPSMarkers findIf {_x isEqualTo _currentMarker} == -1) then {

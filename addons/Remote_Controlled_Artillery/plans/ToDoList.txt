@@ -15,6 +15,9 @@ TO DO - BUGFIXES:
 -report bug to ace team: turret is locked unable to adjust up/down, when scope of player is adjustable, despite being in remote control
 -report bug to ace team: crl+h cuts connection and destroys UV
 
+-changing arty marker name changes distance (like arty1 to arty1 smoke), same when deleting marker on the map, and replacing it, while moving them doesnt seem to have that effect
+-only 1 gps marker active at a time (newest one), moving them deactives it
+
 
 TO DO - FEATURES:
 
@@ -27,16 +30,13 @@ if (!isserver) exitwith {}; = server client only, not every player client
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
--found major bug, arty1 marker changing distance when edited to for example arty1 HE
+*quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 
--when 2 markers are placed, one vanquishes after a moment
--moving deletes them, and may creates problem when actually deleting another
--got deleted after a while?
-
--edit shellbase warhead and implement for guided AB and delayed
 -delayed as multi, for ir gps?
 -atmisslecrater test with blastcore
 -multiple dust rings?
+
+R to lock T to release
 
 -attemt guided low airburst (1.5m) and submunoffset of heat +1.3m
 *HEAT flyeffect short atgm trail?

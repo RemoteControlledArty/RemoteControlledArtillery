@@ -2924,7 +2924,7 @@ class RC_R_604mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 	indirectHit=3200;
 	indirectHitRange=120;
 	craterEffects="RC_604mmAirburstDust";
-	explosionEffects="RC_HeavyBombExplosion";
+	explosionEffects="HeavyBombExplosion";
 	soundSetExplosion[]=
 	{
 		"BombsHeavy_Exp_SoundSet",
