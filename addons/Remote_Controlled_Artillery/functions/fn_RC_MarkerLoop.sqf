@@ -1,5 +1,8 @@
 /*
-	Author: Fluffy
+	Author: Fluffy, to a small degree Ascent
+	Currect Bugs (fix postponed for next updates):
+	-editing arty marker name bugs distance, fix is to press cycle markers
+	-only one GPS target active at a time, and moving marker deactivates it
 */
 
 activeGPSMarkers = [];

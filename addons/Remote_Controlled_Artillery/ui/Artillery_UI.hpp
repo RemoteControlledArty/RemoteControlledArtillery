@@ -160,7 +160,7 @@ class RC_Artillery {
 		class RscText_1015: RscText_1001 
 		{
 			idc = 1015;
-			text = "LOCK TARGET ON DATALINK"; //--- ToDo: Localize;
+			text = "LOCK TARGET ON DATALINK (R)"; //--- ToDo: Localize;
 			colorText[] = {1,0,0,1};
 			x = "0.885267 * safezoneW + safezoneX";
 			y = "0.1779294 * safezoneH + safezoneY";
@@ -173,6 +173,26 @@ class RC_Artillery {
 			text = "TO ACTIVATE GUIDAINCE"; //--- ToDo: Localize;
 			colorText[] = {1,0,0,1};
 			x = "0.891267 * safezoneW + safezoneX";
+			y = "0.1939294 * safezoneH + safezoneY";
+			h = "0.0850027 * safezoneH";
+			w = "0.3001219 * safezoneW";
+		};
+		class RscText_1017: RscText_1001 
+		{
+			idc = 1017;
+			text = "RELEASE (T)"; //--- ToDo: Localize;
+			colorText[] = {1,0,0,1};
+			x = "0.885267 * safezoneW + safezoneX";
+			y = "0.1779294 * safezoneH + safezoneY";
+			h = "0.0850027 * safezoneH";
+			w = "0.3001219 * safezoneW";
+		};
+		class RscText_1018: RscText_1001 
+		{
+			idc = 1018;
+			text = "CYCLE MARKERS: 3/5"; //--- ToDo: Localize;
+			colorText[] = {1,0,0,1};
+			x = "0.885267 * safezoneW + safezoneX";
 			y = "0.1939294 * safezoneH + safezoneY";
 			h = "0.0850027 * safezoneH";
 			w = "0.3001219 * safezoneW";

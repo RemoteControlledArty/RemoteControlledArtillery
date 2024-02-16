@@ -22,7 +22,7 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 General:
--effects backup and cleanup
+-requiredaddons list
 
 EH:
 if (!isserver) exitwith {}; = server client only, not every player client
@@ -31,28 +31,12 @@ if (!isserver) exitwith {}; = server client only, not every player client
 
 Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
+ReconMortar "In your mod or script, add an initialization script to the "base" vehicle, so whenever one of them is created, it creates the turret and attaches it."
 
--delayed as multi, for ir gps?
--atmisslecrater test with blastcore
--multiple dust rings?
+-try lower case text
+-"release T"
+-"cycle markers: 5/7"
 
-R to lock T to release
-
--attemt guided low airburst (1.5m) and submunoffset of heat +1.3m
-*HEAT flyeffect short atgm trail?
-
--marker moves when hit
-#define TEast 0
-#define TWest 1
-#define TGuerrila 2
-#define TCivilian 3
-#define TSideUnknown 4
-#define TEnemy 5
-#define TFriendly 6
-#define TLogic 7
-
--recon radar+vehicle mortar composition (maybe hide legs)
--warheadName HE/TandemHEAT ?
 -remove non airburst HE after trajectory testing
 
 

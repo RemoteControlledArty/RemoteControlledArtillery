@@ -262,6 +262,7 @@ RC_Artillery_UI = [] spawn {
 				{(_display displayCtrl _x) ctrlShow false} forEach [1013,1014];
 				// Show Lock Requirement Warning when having no Target selected
 				if (_requiresLock && _noTargetOrTargetTooClose) then {{(_display displayCtrl _x) ctrlShow true} forEach [1015,1016];} else {{(_display displayCtrl _x) ctrlShow false} forEach [1015,1016];};
+				if (cursorTarget isNotEqualto objNull) then {{(_display displayCtrl _x) ctrlShow true} forEach [1016,1017];};
 			} else {
 				// Else use the Look Vector
 				_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
@@ -269,6 +270,7 @@ RC_Artillery_UI = [] spawn {
 				if (_terrainWarning) then {{(_display displayCtrl _x) ctrlShow true} forEach [1013,1014];} else {{(_display displayCtrl _x) ctrlShow false} forEach [1013,1014];};
 				// Show Lock Requirement Warning when having no Target selected
 				if (_requiresLock && _noTargetOrTargetTooClose) then {{(_display displayCtrl _x) ctrlShow true} forEach [1015,1016];} else {{(_display displayCtrl _x) ctrlShow false} forEach [1015,1016];};
+				if (cursorTarget isNotEqualto objNull) then {{(_display displayCtrl _x) ctrlShow true} forEach [1016,1017];};
 			};
 
 			// Wrap around
@@ -467,7 +469,8 @@ RC_Artillery_UI = [] spawn {
 				// If we have no Targets
 				_ctrlMessage ctrlSetTextColor [1,0,0,1];
 				_ctrlMessage ctrlSetPositionX (0.868267 * safezoneW + safezoneX);
-				_ctrlMessage ctrlSetText format ["NO TARGET ADD MAP MARKER: %1%2", RC_Marker_Prefix, "1-99"];
+				//_ctrlMessage ctrlSetText format ["NO TARGET ADD MAP MARKER: %1%2", RC_Marker_Prefix, "1-99"];
+				_ctrlMessage ctrlSetText format ["ADD MAP MARKER: %1%2", RC_Marker_Prefix, "1-99 OR", RC_GPS_Prefix];
 			};
 
 			// If we have the Solution Calculating turned off we hide the UI

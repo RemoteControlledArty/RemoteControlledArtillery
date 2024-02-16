@@ -717,7 +717,8 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 	submunitionInitialOffset[]={0,0,-0.2};
 	triggerOnImpact=1;
 	deleteParentWhenTriggered=0;
-	warheadName="TandemHEAT";
+	//warheadName="TandemHEAT";
+	warheadName="HE";
 	hit=165;	//submunition penetrator contains main hit value
 	initTime=0.01;
 	thrustTime=8;

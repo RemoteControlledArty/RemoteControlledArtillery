@@ -253,9 +253,7 @@ class CfgPatches
 			RC_MBT6_A_I,
 			RC_MBT6_WD_I,
 
-			RC_InvisibleDatalinkTarget_B,
-			RC_InvisibleDatalinkTarget_I,
-			RC_InvisibleDatalinkTarget_O
+			RC_GPSDatalinkTarget
 		};
 
 		weapons[]=
@@ -264,6 +262,11 @@ class CfgPatches
 			Improved_FOV_Laserdesignator_WD,
 			Improved_FOV_Laserdesignator_Ti_A,
 			Improved_FOV_Laserdesignator_Ti_WD,
+
+			RC_MMG_338_FSV,
+			RC_MMG_338_FSV_coax,
+			RC_MMG_338_MBT,
+			RC_MMG_338_MBT_coax,
 
 			RC_ATGM_SACLOS,
 			RC_ATGM_Lock,
@@ -274,11 +277,12 @@ class CfgPatches
 			RC_mortar_82mm_V4,
 			RC_vehiclemortar_82mm_V4,
 
+			RC_105mm_AMOS_V4,
+
 			RC_ShipCannon_120mm_V1,
 			RC_ShipCannon_120mm_V2,
 			RC_ShipCannon_120mm_V3,
 			RC_ShipCannon_120mm_V4,
-
 			RC_cannon_120mm,
 
 			RC_155mm_AMOS_V1,
@@ -293,15 +297,8 @@ class CfgPatches
 
 		requiredAddons[]=
 		{
-			"A3_Armor_F",
-			"A3_Armor_F_Beta",
-			"A3_Armor_F_Tank",
-			"A3_Static_F",
-			"A3_Static_F_Destroyer",
 			"A3_Weapons_F",
-			"A3_Weapons_F_Destroyer",
-			"A3_Weapons_F_Exp",
-			"A3_Weapons_F_Tank",
+			"A3_Data_F_Enoch_Loadorder",
 			"cba_main"
 		};
 	};
@@ -388,62 +385,20 @@ class CfgFactionClasses
 
 class CfgEditorSubcategories
 {
-	class RC_AntiAir_subcat
-	{ 
-		displayname="Anti-Air";
-	};
-	class RC_ATGM_subcat
-	{ 
-		displayname="ATGM's";
-	};
-	class RC_Howitzer_subcat
-	{ 
-		displayname="Howitzer's";
-	};
-	class RC_Mortar_subcat
-	{ 
-		displayname="Mortar's";
-	};
-	class RC_Rocket_subcat
-	{ 
-		displayname="Rocket System's";
-	};
-	class RC_Spotting_subcat
-	{ 
-		displayname="Spotting";
-	};
-	class RC_Transport_FSV_subcat
-	{ 
-		displayname="Transport & FSV's";
-	};
-	class RC_Respawn_subcat
-	{ 
-		displayname="Respawn";
-	};
-	class RC_Repair_subcat
-	{ 
-		displayname="Repair";
-	};
-	/*
-	class RC_Targets_subcat
-	{ 
-		displayname="Target's";
-	};
-	*/
+	class RC_AntiAir_subcat {displayname="Anti-Air";};
+	class RC_ATGM_subcat {displayname="ATGM's";};
+	class RC_Howitzer_subcat {displayname="Howitzer's";};
+	class RC_Mortar_subcat {displayname="Mortar's";};
+	class RC_Rocket_subcat {displayname="Rocket System's";};
+	class RC_Spotting_subcat {displayname="Spotting";};
+	class RC_Transport_FSV_subcat {displayname="Transport & FSV's";};
+	class RC_Respawn_subcat {displayname="Respawn";};
+	class RC_Repair_subcat {displayname="Repair";};
+	/*class RC_Targets_subcat {displayname="Target's";};*/
 
-
-	class RC_Mortar_NA_subcat
-	{ 
-		displayname="non adjustable Mortar's";
-	};
-	class RC_Howitzer_NA_subcat
-	{ 
-		displayname="non adjustable Howitzer's";
-	};
-	class RC_Rocket_NA_subcat
-	{ 
-		displayname="non adjustable Rocket System's";
-	};
+	class RC_Mortar_NA_subcat {displayname="non adjustable Mortar's";};
+	class RC_Howitzer_NA_subcat {displayname="non adjustable Howitzer's";};
+	class RC_Rocket_NA_subcat {displayname="non adjustable Rocket System's";};
 };
 
 
@@ -470,10 +425,12 @@ class CfgCloudlets
 {
 	#include "\Remote_Controlled_Artillery\effects\cfgCloudlets.hpp"
 };
+/*
 class CfgLights
 {
 	#include "\Remote_Controlled_Artillery\effects\cfgLights.hpp"
 };
+*/
 #include "\Remote_Controlled_Artillery\effects\effects.hpp"
 class CfgAmmo
 {
