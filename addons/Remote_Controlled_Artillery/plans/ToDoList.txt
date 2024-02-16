@@ -22,7 +22,6 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 General:
--requiredaddons list
 
 EH:
 if (!isserver) exitwith {}; = server client only, not every player client
@@ -38,17 +37,16 @@ ReconMortar "In your mod or script, add an initialization script to the "base" v
 -"cycle markers: 5/7"
 
 -remove non airburst HE after trajectory testing
-
-
+-RC XIAN reskin? / Blackfish
 
 
 TO DO - QUALITY OF LIFE:
 
--smaller magazine shell count selection in attributes
+
 
 POSTPONED:
 
--fancier explosion&smoke effect of airburst
+-smaller magazine shell count selection in attributes
 -guided with simulation shotmissle but with altered values, testing if it connects to misslefeed *it does on manned vic, somehow not on rc'ed... same on Static ATGM
 -1.5m Airburst for MP Guided
 -RC IC fix smokelauncher
