@@ -32,12 +32,14 @@ Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 ReconMortar "In your mod or script, add an initialization script to the "base" vehicle, so whenever one of them is created, it creates the turret and attaches it."
 
++1m HE, as sniping with it is fun, and HEAB really op
+
 -try lower case text
 -"release T"
 -"cycle markers: 5/7"
 
 -remove non airburst HE after trajectory testing
--RC XIAN reskin? / Blackfish
+
 
 
 TO DO - QUALITY OF LIFE:
