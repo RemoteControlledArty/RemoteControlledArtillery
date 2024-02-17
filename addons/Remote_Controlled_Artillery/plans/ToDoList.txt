@@ -37,9 +37,11 @@ ReconMortar "In your mod or script, add an initialization script to the "base" v
 
 +1m HE, as sniping with it is fun, and HEAB really op
 
+_list = actionKeysNames "ReloadMagazine";
+_list2 = ((_list splitString " ") select 0);
+hintSilent format ["Object: %1", _list2];
+
 -simulationfreq decrease for impact fuze
--GREYED OUT hotkeys
--try lower case text
 -"release T"
 -"cycle markers: 5/7"
 

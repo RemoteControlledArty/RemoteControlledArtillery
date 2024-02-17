@@ -243,15 +243,7 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowETA = _display displayCtrl 1011;
 			_ctrlMessage = _display displayCtrl 1012;
 
-			_ctrlSelect = _display displayCtrl 1017;
-			_ctrlUnselect = _display displayCtrl 1018;
-			_ctrlCycle = _display displayCtrl 1019;
-
-			//{(_display displayCtrl _x) ctrlShow true} forEach [1017,1018,1019];
 			if (true) then {{(_display displayCtrl _x) ctrlShow true} forEach [1017,1018,1019,1020,1021,1022];};
-			//_ctrlSelect ctrlSetTextColor [1,0,0,1];
-			//_ctrlSelect ctrlSetPositionX (0.868267 * safezoneW + safezoneX);
-			//_ctrlSelect ctrlSetText "select R";
 
 			// checks if shell requires lock before firing
 			_requiresLock=(getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1;
@@ -377,8 +369,8 @@ RC_Artillery_UI = [] spawn {
 						case((_realElevation < (_lowAngleSol + 0.25)) and (_realElevation > (_lowAngleSol - 0.25))): {_ctrlElevation ctrlSetTextColor [0,1,0,1];};
 						case((_realElevation < (_highAngleSol + 0.25)) and (_realElevation > (_highAngleSol - 0.25))): {_ctrlElevation ctrlSetTextColor [0,1,0,1];};
 
-						case((_realElevation < (_lowAngleSol + 0.5)) and (_realElevation > (_lowAngleSol - 0.5))): {_ctrlElevation ctrlSetTextColor [0.75,1,0.5,1];};
-						case((_realElevation < (_highAngleSol + 0.5)) and (_realElevation > (_highAngleSol - 0.5))): {_ctrlElevation ctrlSetTextColor [0.75,1,0.5,1];};
+						case((_realElevation < (_lowAngleSol + 0.5)) and (_realElevation > (_lowAngleSol - 0.5))): {_ctrlElevation ctrlSetTextColor [0.725,1,0.5,1];};
+						case((_realElevation < (_highAngleSol + 0.5)) and (_realElevation > (_highAngleSol - 0.5))): {_ctrlElevation ctrlSetTextColor [0.725,1,0.5,1];};
 						
 						case((_realElevation < (_lowAngleSol + 1)) and (_realElevation > (_lowAngleSol - 1))): {_ctrlElevation ctrlSetTextColor [0.8,1,0.5,1];};
 						case((_realElevation < (_highAngleSol + 1)) and (_realElevation > (_highAngleSol - 1))): {_ctrlElevation ctrlSetTextColor [0.8,1,0.5,1];};
@@ -420,16 +412,16 @@ RC_Artillery_UI = [] spawn {
 				switch (true) do {
 						// If Azimuth is close/correct change the Azimuth text color
 						case((_realAzimuth < (_targetAzimuth + 0.5)) and (_realAzimuth > (_targetAzimuth - 0.5))): {_ctrlAzimuth ctrlSetTextColor [0,1,0,1];};
-						case((_realAzimuth < (_targetAzimuth + 1)) and (_realAzimuth > (_targetAzimuth - 1))): {_ctrlAzimuth ctrlSetTextColor [0.75,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 1)) and (_realAzimuth > (_targetAzimuth - 1))): {_ctrlAzimuth ctrlSetTextColor [0.725,1,0.5,1];};
 						case((_realAzimuth < (_targetAzimuth + 2)) and (_realAzimuth > (_targetAzimuth - 2))): {_ctrlAzimuth ctrlSetTextColor [0.8,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 4)) and (_realAzimuth > (_targetAzimuth - 4))): {_ctrlAzimuth ctrlSetTextColor [0.85,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 6)) and (_realAzimuth > (_targetAzimuth - 6))): {_ctrlAzimuth ctrlSetTextColor [0.9,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 8)) and (_realAzimuth > (_targetAzimuth - 10))): {_ctrlAzimuth ctrlSetTextColor [0.95,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 10)) and (_realAzimuth > (_targetAzimuth - 10))): {_ctrlAzimuth ctrlSetTextColor [1,1,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 15)) and (_realAzimuth > (_targetAzimuth - 15))): {_ctrlAzimuth ctrlSetTextColor [1,0.95,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 20)) and (_realAzimuth > (_targetAzimuth - 20))): {_ctrlAzimuth ctrlSetTextColor [1,0.9,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 25)) and (_realAzimuth > (_targetAzimuth - 25))): {_ctrlAzimuth ctrlSetTextColor [1,0.85,0.5,1];};
-						case((_realAzimuth < (_targetAzimuth + 30)) and (_realAzimuth > (_targetAzimuth - 30))): {_ctrlAzimuth ctrlSetTextColor [1,0.8,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 3)) and (_realAzimuth > (_targetAzimuth - 3))): {_ctrlAzimuth ctrlSetTextColor [0.85,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 4)) and (_realAzimuth > (_targetAzimuth - 4))): {_ctrlAzimuth ctrlSetTextColor [0.9,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 5)) and (_realAzimuth > (_targetAzimuth - 5))): {_ctrlAzimuth ctrlSetTextColor [0.95,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 6)) and (_realAzimuth > (_targetAzimuth - 6))): {_ctrlAzimuth ctrlSetTextColor [1,1,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 9)) and (_realAzimuth > (_targetAzimuth - 9))): {_ctrlAzimuth ctrlSetTextColor [1,0.95,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 11)) and (_realAzimuth > (_targetAzimuth - 11))): {_ctrlAzimuth ctrlSetTextColor [1,0.9,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 15)) and (_realAzimuth > (_targetAzimuth - 15))): {_ctrlAzimuth ctrlSetTextColor [1,0.85,0.5,1];};
+						case((_realAzimuth < (_targetAzimuth + 20)) and (_realAzimuth > (_targetAzimuth - 20))): {_ctrlAzimuth ctrlSetTextColor [1,0.8,0.5,1];};
 						// If neither then set it to White again
 						default {
 							_ctrlAzimuth ctrlSetTextColor [1,1,1,1];

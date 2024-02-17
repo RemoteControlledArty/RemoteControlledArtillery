@@ -186,8 +186,8 @@ class RC_Artillery {
 	class RscText_1017: RscText_1001 
 	{
 		idc = 1017;
-		text = "select: R / aim at"; //--- ToDo: Localize;
-		colorText[] = {1,1,1,1};
+		text = "select target: R / aim at"; //--- ToDo: Localize;
+		colorText[] = {0.5,0.5,0.5,0.5};
 		x = "0.897267 * safezoneW + safezoneX";
 		y = "0.2259294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -196,8 +196,8 @@ class RC_Artillery {
 	class RscText_1018: RscText_1001 
 	{
 		idc = 1018;
-		text = "unselect: T"; //--- ToDo: Localize;
-		colorText[] = {1,1,1,1};
+		text = "unselect target: T"; //--- ToDo: Localize;
+		colorText[] = {0.5,0.5,0.5,0.5};
 		x = "0.897267 * safezoneW + safezoneX";
 		y = "0.2419294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -207,7 +207,7 @@ class RC_Artillery {
 	{
 		idc = 1019;
 		text = "cycle markers: 3/5"; //--- ToDo: Localize;
-		colorText[] = {1,1,1,1};
+		colorText[] = {0.5,0.5,0.5,0.5};
 		x = "0.897267 * safezoneW + safezoneX";
 		y = "0.2579294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -216,8 +216,8 @@ class RC_Artillery {
 	class RscText_1020: RscText_1001 
 	{
 		idc = 1020;
-		text = "charge: F"; //--- ToDo: Localize;
-		colorText[] = {1,1,1,1};
+		text = "cycle charges: F"; //--- ToDo: Localize;
+		colorText[] = {0.5,0.5,0.5,0.5};
 		x = "0.897267 * safezoneW + safezoneX";
 		y = "0.2739294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -226,8 +226,8 @@ class RC_Artillery {
 	class RscText_1021: RscText_1001 
 	{
 		idc = 1021;
-		text = "up/down: page up/down"; //--- ToDo: Localize;
-		colorText[] = {1,1,1,1};
+		text = "elevation: page up/down"; //--- ToDo: Localize;
+		colorText[] = {0.5,0.5,0.5,0.5};
 		x = "0.897267 * safezoneW + safezoneX";
 		y = "0.2899294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -236,8 +236,8 @@ class RC_Artillery {
 	class RscText_1022: RscText_1001 
 	{
 		idc = 1022;
-		text = "slow up/down: rightctrl"; //--- ToDo: Localize;
-		colorText[] = {1,1,1,1};
+		text = "slow elevation: leftshift"; //--- ToDo: Localize;
+		colorText[] = {0.5,0.5,0.5,0.5};
 		x = "0.897267 * safezoneW + safezoneX";
 		y = "0.3059294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
