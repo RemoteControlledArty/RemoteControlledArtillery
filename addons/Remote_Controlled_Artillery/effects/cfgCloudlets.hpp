@@ -1,4 +1,142 @@
 class Default;
+class RC_MortarExp: Default
+{
+	interval=0.02;
+	circleRadius=0;
+	circleVelocity[]={0,0,0};
+	particleShape="\A3\data_f\ParticleEffects\Universal\Universal";
+	particleFSNtieth=16;
+	particleFSIndex=0;
+	particleFSFrameCount=32;
+	particleFSLoop=0;
+	angleVar=1;
+	animationName="";
+	particleType="Billboard";
+	timerPeriod=1;
+	lifeTime=2;
+	moveVelocity[]={0,1,0};
+	rotationVelocity=0;
+	weight=10;
+	volume=7.9000001;
+	rubbing=0.1;
+	size[]=
+	{
+		"0.05 * intensity + 3",
+		"0.05 * intensity + 2"
+	};
+	color[]=
+	{
+		{1,1,1,-20},
+		{1,1,1,-15}
+	};
+	animationSpeed[]={1};
+	randomDirectionPeriod=0.2;
+	randomDirectionIntensity=0.2;
+	onTimerScript="";
+	beforeDestroyScript="";
+	lifeTimeVar=0;
+	positionVar[]={2.5,0.1,2.5};
+	MoveVelocityVar[]={0.2,0.5,0.2};
+	rotationVelocityVar=90;
+	sizeVar=0.5;
+	colorVar[]={0,0,0,0};
+	randomDirectionPeriodVar=0;
+	randomDirectionIntensityVar=0;
+};
+
+class RC_CloudMedDark: Default
+{
+	interval="0.02 * interval + 0.01";
+	circleRadius=0;
+	circleVelocity[]={0,0,0};
+	particleShape="\A3\data_f\ParticleEffects\Universal\Universal";
+	particleFSNtieth=16;
+	particleFSIndex=7;
+	particleFSFrameCount=48;
+	particleFSLoop=1;
+	angleVar=1;
+	animationName="";
+	particleType="Billboard";
+	timerPeriod=1;
+	lifeTime=8;
+	moveVelocity[]={0,3,0};
+	rotationVelocity=0;
+	weight=0.052000001;
+	volume=0.039999999;
+	rubbing=0.0099999998;
+	size[]=
+	{
+		"0.0125 * intensity + 6",
+		"0.0125 * intensity + 9",
+		"0.0125 * intensity + 13",
+		"0.015 * intensity + 18"
+	};
+	color[]=
+	{
+		{0.2,0.2,0.2,0.60000002},
+		{0.40000001,0.40000001,0.40000001,0.40000001},
+		{0.60000002,0.60000002,0.60000002,0.2},
+		{0.69999999,0.69999999,0.69999999,0.079999998},
+		{1,1,1,0.0099999998}
+	};
+	animationSpeed[]={1.5,0.5,0.30000001,0.25,0.25};
+	randomDirectionPeriod=0.2;
+	randomDirectionIntensity=0.2;
+	onTimerScript="";
+	beforeDestroyScript="";
+	lifeTimeVar=2;
+	positionVar[]={2.5,3,2.5};
+	MoveVelocityVar[]={1.5,3,1.5};
+	rotationVelocityVar=20;
+	sizeVar=0;
+	colorVar[]={0,0,0,0};
+	randomDirectionPeriodVar=0;
+	randomDirectionIntensityVar=0;
+};
+
+class RC_CloudBigDark: Default
+{
+	interval=0.0020000001;
+	circleRadius=0;
+	circleVelocity[]={0,0,0};
+	particleShape="\A3\data_f\ParticleEffects\Universal\Universal";
+	particleFSNtieth=16;
+	particleFSIndex=7;
+	particleFSFrameCount=48;
+	particleFSLoop=1;
+	angleVar=1;
+	animationName="";
+	particleType="Billboard";
+	timerPeriod=1;
+	lifeTime=8;
+	moveVelocity[]={0,4,0};
+	rotationVelocity=0;
+	weight=1.275;
+	volume=1;
+	rubbing=0.25;
+	size[]={4,7,10,12};
+	color[]=
+	{
+		{0.44999999,0.44999999,0.44999999,0.69999999},
+		{0.5,0.5,0.5,0.5},
+		{0.60000002,0.60000002,0.60000002,0.25},
+		{0.64999998,0.64999998,0.64999998,0.0099999998}
+	};
+	animationSpeed[]={0.5,0.30000001,0.25,0.2,0.18000001};
+	randomDirectionPeriod=0.2;
+	randomDirectionIntensity=0.050000001;
+	onTimerScript="";
+	beforeDestroyScript="";
+	lifeTimeVar=3;
+	positionVar[]={2,12,2};
+	MoveVelocityVar[]={1.5,5,1.5};
+	rotationVelocityVar=10;
+	sizeVar=0.5;
+	colorVar[]={0,0,0,0};
+	randomDirectionPeriodVar=0;
+	randomDirectionIntensityVar=0;
+};
+
 class ShellSparks1: Default
 {
 	particleShape="\A3\data_f\ParticleEffects\Universal\Smoke";

@@ -56,6 +56,171 @@ class RC_200Rnd_338_T_Mag: VehicleMagazine
 
 //82mm Section
 class 8Rnd_82mm_Mo_shells;
+class RC_1Rnd_82mm_Mo_shells: 8Rnd_82mm_Mo_shells
+{
+	ammo="RC_Sh_82mm_AMOS_HE";
+	displayName="HE";
+	displayNameShort="HE";
+	count=1;
+};
+class RC_2Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=2;
+};
+class RC_3Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=3;
+};
+class RC_4Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=4;
+};
+class RC_5Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=5;
+};
+class RC_6Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=6;
+};
+class RC_7Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=7;
+};
+class RC_8Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=8;
+};
+class RC_9Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=9;
+};
+class RC_10Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=10;
+};
+class RC_11Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=11;
+};
+class RC_12Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=12;
+};
+class RC_13Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=13;
+};
+class RC_14Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=14;
+};
+class RC_15Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=15;
+};
+class RC_16Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=16;
+};
+class RC_17Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=17;
+};
+class RC_18Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=18;
+};
+class RC_19Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=19;
+};
+class RC_20Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=20;
+};
+class RC_21Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=21;
+};
+class RC_22Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=22;
+};
+class RC_23Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=23;
+};
+class RC_24Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=24;
+};
+class RC_25Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=25;
+};
+class RC_26Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=26;
+};
+class RC_27Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=27;
+};
+class RC_28Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=28;
+};
+class RC_29Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=29;
+};
+class RC_30Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=30;
+};
+class RC_31Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=31;
+};
+class RC_32Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=32;
+};
+class RC_33Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=33;
+};
+class RC_34Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=34;
+};
+class RC_35Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=35;
+};
+class RC_36Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=36;
+};
+class RC_37Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=37;
+};
+class RC_38Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=38;
+};
+class RC_39Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=39;
+};
+class RC_40Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	count=40;
+};
+
+
 class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_HEAB";
@@ -1384,171 +1549,6 @@ class RC_40Rnd_82mm_Mo_AT_mine: RC_1Rnd_82mm_Mo_AT_mine
 };
 
 
-class RC_1Rnd_82mm_Mo_shells: 8Rnd_82mm_Mo_shells
-{
-	ammo="RC_Sh_82mm_AMOS";
-	displayName="HE";
-	displayNameShort="HE";
-	count=1;
-};
-class RC_2Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=2;
-};
-class RC_3Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=3;
-};
-class RC_4Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=4;
-};
-class RC_5Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=5;
-};
-class RC_6Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=6;
-};
-class RC_7Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=7;
-};
-class RC_8Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=8;
-};
-class RC_9Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=9;
-};
-class RC_10Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=10;
-};
-class RC_11Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=11;
-};
-class RC_12Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=12;
-};
-class RC_13Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=13;
-};
-class RC_14Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=14;
-};
-class RC_15Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=15;
-};
-class RC_16Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=16;
-};
-class RC_17Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=17;
-};
-class RC_18Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=18;
-};
-class RC_19Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=19;
-};
-class RC_20Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=20;
-};
-class RC_21Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=21;
-};
-class RC_22Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=22;
-};
-class RC_23Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=23;
-};
-class RC_24Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=24;
-};
-class RC_25Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=25;
-};
-class RC_26Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=26;
-};
-class RC_27Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=27;
-};
-class RC_28Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=28;
-};
-class RC_29Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=29;
-};
-class RC_30Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=30;
-};
-class RC_31Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=31;
-};
-class RC_32Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=32;
-};
-class RC_33Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=33;
-};
-class RC_34Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=34;
-};
-class RC_35Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=35;
-};
-class RC_36Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=36;
-};
-class RC_37Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=37;
-};
-class RC_38Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=38;
-};
-class RC_39Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=39;
-};
-class RC_40Rnd_82mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
-{
-	count=40;
-};
-
-
 class RC_1Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	ammo="RC_Sh_82mm_AMOS_LG_DelayedFuse";
@@ -2045,6 +2045,172 @@ class RC_40Rnd_82mm_Mo_backuplowHEAB: RC_1Rnd_82mm_Mo_backuplowHEAB
 
 // 105mm Section
 class 32Rnd_155mm_Mo_shells;
+class RC_1Rnd_105mm_Mo_shells: 32Rnd_155mm_Mo_shells
+{
+	initSpeed=400;
+	ammo="RC_Sh_105mm_AMOS_HE";
+	displayName="HE";
+	displayNameShort="HE";
+	count=1;
+};
+class RC_2Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=2;
+};
+class RC_3Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=3;
+};
+class RC_4Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=4;
+};
+class RC_5Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=5;
+};
+class RC_6Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=6;
+};
+class RC_7Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=7;
+};
+class RC_8Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=8;
+};
+class RC_9Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=9;
+};
+class RC_10Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=10;
+};
+class RC_11Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=11;
+};
+class RC_12Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=12;
+};
+class RC_13Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=13;
+};
+class RC_14Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=14;
+};
+class RC_15Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=15;
+};
+class RC_16Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=16;
+};
+class RC_17Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=17;
+};
+class RC_18Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=18;
+};
+class RC_19Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=19;
+};
+class RC_20Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=20;
+};
+class RC_21Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=21;
+};
+class RC_22Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=22;
+};
+class RC_23Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=23;
+};
+class RC_24Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=24;
+};
+class RC_25Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=25;
+};
+class RC_26Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=26;
+};
+class RC_27Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=27;
+};
+class RC_28Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=28;
+};
+class RC_29Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=29;
+};
+class RC_30Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=30;
+};
+class RC_31Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=31;
+};
+class RC_32Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=32;
+};
+class RC_33Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=33;
+};
+class RC_34Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=34;
+};
+class RC_35Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=35;
+};
+class RC_36Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=36;
+};
+class RC_37Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=37;
+};
+class RC_38Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=38;
+};
+class RC_39Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=39;
+};
+class RC_40Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
+{
+	count=40;
+};
+
+
 class RC_1Rnd_105mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
 	initSpeed=400;
@@ -3550,172 +3716,6 @@ class RC_40Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
 };
 
 
-class RC_1Rnd_105mm_Mo_shells: 32Rnd_155mm_Mo_shells
-{
-	initSpeed=400;
-	ammo="RC_Sh_105mm_AMOS";
-	displayName="HE";
-	displayNameShort="HE";
-	count=1;
-};
-class RC_2Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=2;
-};
-class RC_3Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=3;
-};
-class RC_4Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=4;
-};
-class RC_5Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=5;
-};
-class RC_6Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=6;
-};
-class RC_7Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=7;
-};
-class RC_8Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=8;
-};
-class RC_9Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=9;
-};
-class RC_10Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=10;
-};
-class RC_11Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=11;
-};
-class RC_12Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=12;
-};
-class RC_13Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=13;
-};
-class RC_14Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=14;
-};
-class RC_15Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=15;
-};
-class RC_16Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=16;
-};
-class RC_17Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=17;
-};
-class RC_18Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=18;
-};
-class RC_19Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=19;
-};
-class RC_20Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=20;
-};
-class RC_21Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=21;
-};
-class RC_22Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=22;
-};
-class RC_23Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=23;
-};
-class RC_24Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=24;
-};
-class RC_25Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=25;
-};
-class RC_26Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=26;
-};
-class RC_27Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=27;
-};
-class RC_28Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=28;
-};
-class RC_29Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=29;
-};
-class RC_30Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=30;
-};
-class RC_31Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=31;
-};
-class RC_32Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=32;
-};
-class RC_33Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=33;
-};
-class RC_34Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=34;
-};
-class RC_35Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=35;
-};
-class RC_36Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=36;
-};
-class RC_37Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=37;
-};
-class RC_38Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=38;
-};
-class RC_39Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=39;
-};
-class RC_40Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
-{
-	count=40;
-};
-
-
 class RC_1Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LaserGuided
 {
 	ammo="RC_Sh_105mm_AMOS_LG_DelayedFuse";
@@ -4213,6 +4213,171 @@ class RC_40Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
 
 // 120mm
 class magazine_ShipCannon_120mm_HE_shells_x32;
+class RC_1Rnd_120mm_Mo_shells: magazine_ShipCannon_120mm_HE_shells_x32
+{
+	ammo="RC_Sh_120mm_AMOS_HE";
+	displayName="HE";
+	displayNameShort="HE";
+	count=1;
+};
+class RC_2Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=2;
+};
+class RC_3Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=3;
+};
+class RC_4Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=4;
+};
+class RC_5Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=5;
+};
+class RC_6Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=6;
+};
+class RC_7Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=7;
+};
+class RC_8Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=8;
+};
+class RC_9Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=9;
+};
+class RC_10Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=10;
+};
+class RC_11Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=11;
+};
+class RC_12Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=12;
+};
+class RC_13Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=13;
+};
+class RC_14Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=14;
+};
+class RC_15Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=15;
+};
+class RC_16Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=16;
+};
+class RC_17Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=17;
+};
+class RC_18Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=18;
+};
+class RC_19Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=19;
+};
+class RC_20Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=20;
+};
+class RC_21Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=21;
+};
+class RC_22Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=22;
+};
+class RC_23Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=23;
+};
+class RC_24Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=24;
+};
+class RC_25Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=25;
+};
+class RC_26Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=26;
+};
+class RC_27Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=27;
+};
+class RC_28Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=28;
+};
+class RC_29Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=29;
+};
+class RC_30Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=30;
+};
+class RC_31Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=31;
+};
+class RC_32Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=32;
+};
+class RC_33Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=33;
+};
+class RC_34Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=34;
+};
+class RC_35Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=35;
+};
+class RC_36Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=36;
+};
+class RC_37Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=37;
+};
+class RC_38Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=38;
+};
+class RC_39Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=39;
+};
+class RC_40Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
+{
+	count=40;
+};
+
+
 class RC_1Rnd_120mm_Mo_HEAB: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_HEAB";
@@ -5714,171 +5879,6 @@ class RC_40Rnd_120mm_Mo_Illum: RC_1Rnd_120mm_Mo_Illum
 };
 
 
-class RC_1Rnd_120mm_Mo_shells: magazine_ShipCannon_120mm_HE_shells_x32
-{
-	ammo="RC_Sh_120mm_AMOS";
-	displayName="HE";
-	displayNameShort="HE";
-	count=1;
-};
-class RC_2Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=2;
-};
-class RC_3Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=3;
-};
-class RC_4Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=4;
-};
-class RC_5Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=5;
-};
-class RC_6Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=6;
-};
-class RC_7Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=7;
-};
-class RC_8Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=8;
-};
-class RC_9Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=9;
-};
-class RC_10Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=10;
-};
-class RC_11Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=11;
-};
-class RC_12Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=12;
-};
-class RC_13Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=13;
-};
-class RC_14Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=14;
-};
-class RC_15Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=15;
-};
-class RC_16Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=16;
-};
-class RC_17Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=17;
-};
-class RC_18Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=18;
-};
-class RC_19Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=19;
-};
-class RC_20Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=20;
-};
-class RC_21Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=21;
-};
-class RC_22Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=22;
-};
-class RC_23Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=23;
-};
-class RC_24Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=24;
-};
-class RC_25Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=25;
-};
-class RC_26Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=26;
-};
-class RC_27Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=27;
-};
-class RC_28Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=28;
-};
-class RC_29Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=29;
-};
-class RC_30Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=30;
-};
-class RC_31Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=31;
-};
-class RC_32Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=32;
-};
-class RC_33Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=33;
-};
-class RC_34Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=34;
-};
-class RC_35Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=35;
-};
-class RC_36Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=36;
-};
-class RC_37Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=37;
-};
-class RC_38Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=38;
-};
-class RC_39Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=39;
-};
-class RC_40Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
-{
-	count=40;
-};
-
-
 class RC_1Rnd_120mm_Mo_LG_DelayedFuse: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_LG_DelayedFuse";
@@ -6406,6 +6406,171 @@ class 3Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 
 
 // 155mm Section
+class RC_1Rnd_155mm_Mo_shells: 32Rnd_155mm_Mo_shells
+{
+	ammo="RC_Sh_155mm_AMOS_HE";
+	displayName="HE";
+	displayNameShort="HE";
+	count=1;
+};
+class RC_2Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=2;
+};
+class RC_3Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=3;
+};
+class RC_4Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=4;
+};
+class RC_5Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=5;
+};
+class RC_6Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=6;
+};
+class RC_7Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=7;
+};
+class RC_8Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=8;
+};
+class RC_9Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=9;
+};
+class RC_10Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=10;
+};
+class RC_11Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=11;
+};
+class RC_12Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=12;
+};
+class RC_13Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=13;
+};
+class RC_14Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=14;
+};
+class RC_15Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=15;
+};
+class RC_16Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=16;
+};
+class RC_17Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=17;
+};
+class RC_18Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=18;
+};
+class RC_19Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=19;
+};
+class RC_20Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=20;
+};
+class RC_21Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=21;
+};
+class RC_22Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=22;
+};
+class RC_23Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=23;
+};
+class RC_24Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=24;
+};
+class RC_25Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=25;
+};
+class RC_26Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=26;
+};
+class RC_27Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=27;
+};
+class RC_28Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=28;
+};
+class RC_29Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=29;
+};
+class RC_30Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=30;
+};
+class RC_31Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=31;
+};
+class RC_32Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=32;
+};
+class RC_33Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=33;
+};
+class RC_34Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=34;
+};
+class RC_35Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=35;
+};
+class RC_36Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=36;
+};
+class RC_37Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=37;
+};
+class RC_38Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=38;
+};
+class RC_39Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=39;
+};
+class RC_40Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
+{
+	count=40;
+};
+
+
 class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB";
@@ -7901,171 +8066,6 @@ class RC_40Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
 };
 
 
-class RC_1Rnd_155mm_Mo_shells: 32Rnd_155mm_Mo_shells
-{
-	ammo="RC_Sh_105mm_AMOS";
-	displayName="HE";
-	displayNameShort="HE";
-	count=1;
-};
-class RC_2Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=2;
-};
-class RC_3Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=3;
-};
-class RC_4Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=4;
-};
-class RC_5Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=5;
-};
-class RC_6Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=6;
-};
-class RC_7Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=7;
-};
-class RC_8Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=8;
-};
-class RC_9Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=9;
-};
-class RC_10Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=10;
-};
-class RC_11Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=11;
-};
-class RC_12Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=12;
-};
-class RC_13Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=13;
-};
-class RC_14Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=14;
-};
-class RC_15Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=15;
-};
-class RC_16Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=16;
-};
-class RC_17Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=17;
-};
-class RC_18Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=18;
-};
-class RC_19Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=19;
-};
-class RC_20Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=20;
-};
-class RC_21Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=21;
-};
-class RC_22Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=22;
-};
-class RC_23Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=23;
-};
-class RC_24Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=24;
-};
-class RC_25Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=25;
-};
-class RC_26Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=26;
-};
-class RC_27Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=27;
-};
-class RC_28Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=28;
-};
-class RC_29Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=29;
-};
-class RC_30Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=30;
-};
-class RC_31Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=31;
-};
-class RC_32Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=32;
-};
-class RC_33Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=33;
-};
-class RC_34Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=34;
-};
-class RC_35Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=35;
-};
-class RC_36Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=36;
-};
-class RC_37Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=37;
-};
-class RC_38Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=38;
-};
-class RC_39Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=39;
-};
-class RC_40Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
-{
-	count=40;
-};
-
-
 class RC_1Rnd_155mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_LG_DelayedFuse";
@@ -8731,6 +8731,59 @@ class RC_40Rnd_155mm_Mo_backuplowHEAB: RC_1Rnd_155mm_Mo_backuplowHEAB
 
 //230mm Section
 class 12Rnd_230mm_rockets;
+class RC_1Rnd_230mm_rockets: 12Rnd_230mm_rockets
+{
+	ammo="RC_R_230mm_HE";
+	displayName="HE";
+	displayNameShort="HE";
+	count=1;
+};
+class RC_2Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=2;
+};
+class RC_3Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=3;
+};
+class RC_4Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=4;
+};
+class RC_5Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=5;
+};
+class RC_6Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=6;
+};
+class RC_7Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=7;
+};
+class RC_8Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=8;
+};
+class RC_9Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=9;
+};
+class RC_10Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=10;
+};
+class RC_11Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=11;
+};
+class RC_12Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
+{
+	count=12;
+};
+
+
 class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_HEAB";
@@ -8999,59 +9052,6 @@ class RC_11Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
 	count=11;
 };
 class RC_12Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
-{
-	count=12;
-};
-
-
-class RC_1Rnd_230mm_rockets: 12Rnd_230mm_rockets
-{
-	ammo="RC_R_230mm_fly";
-	displayName="HE";
-	displayNameShort="HE";
-	count=1;
-};
-class RC_2Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
-{
-	count=2;
-};
-class RC_3Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
-{
-	count=3;
-};
-class RC_4Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
-{
-	count=4;
-};
-class RC_5Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
-{
-	count=5;
-};
-class RC_6Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
-{
-	count=6;
-};
-class RC_7Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
-{
-	count=7;
-};
-class RC_8Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
-{
-	count=8;
-};
-class RC_9Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
-{
-	count=9;
-};
-class RC_10Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
-{
-	count=10;
-};
-class RC_11Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
-{
-	count=11;
-};
-class RC_12Rnd_230mm_rockets: RC_1Rnd_230mm_rockets
 {
 	count=12;
 };

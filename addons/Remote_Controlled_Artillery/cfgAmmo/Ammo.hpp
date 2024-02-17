@@ -346,6 +346,7 @@ class RC_HEAB_Base: Default
 	submunitionConeAngle=0;
 	submunitionParentSpeedCoef=0;
 	submunitionInitSpeed=0;
+	submunitionDirectionType="SubmunitionModelDirection";	//new, test it
 	artilleryLock=1;
 	laserLock=1;	//only for firing solution calculator
 	irLock=1;	//only for firing solution calculator
@@ -385,7 +386,7 @@ class RC_HEAB_Base: Default
 		1,
 		150
 	};
-	craterEffects="RC_ArtyShellCrater";	//dust on ground effect like caused by airburst
+	craterEffects="ArtyShellCrater";
 	CraterWaterEffects="ImpactEffectsWaterHE";
 	explosionEffects="RC_MortarExplosion";
 	visibleFire=64;
@@ -986,12 +987,14 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
 
 //82mm
 class Sh_82mm_AMOS;
+/*
 class RC_Sh_82mm_AMOS: Sh_82mm_AMOS
 {
 	laserLock=1;	//only for firing solution calculator
 	irLock=1;	//only for firing solution calculator
 	explosionEffects="RC_MortarExplosion";
 }
+*/
 
 
 class RC_Sh_82mm_AMOS_submunition: Sh_82mm_AMOS
@@ -1056,22 +1059,23 @@ class RC_Sh_82mm_AMOS_lowHEAB: RC_Sh_82mm_AMOS_HEAB
 };
 
 
-//used in script as replacement when turret elevation is too low for Airburst
-class RC_Sh_82mm_AMOS_backupHEAB: RC_82mm_HEAB_Shell_Base
+//impact quick fuze
+class RC_Sh_82mm_AMOS_HE_submunition: RC_Sh_82mm_AMOS_submunition
+{
+	craterEffects="ArtyShellCrater";
+};
+class RC_Sh_82mm_AMOS_HE: RC_82mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0.8,-0.4};
+	submunitionAmmo="RC_Sh_82mm_AMOS_HE_submunition";
+};
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_Sh_82mm_AMOS_backupHEAB: RC_Sh_82mm_AMOS_HE
+{
 	submunitionInitialOffset[]={0,5,0};
-	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
-	whistleDist=70;	//yet unclear
-	soundFly[]=
-	{
-		"a3\Sounds_F\weapons\falling_bomb\fall_01",
-		3.1622777,	//likely priority
-		1,	//likely playspeed
-		70	//hearable distance, should me min m/s of the shell (lowest charge)
-	};
 };
 
 
@@ -1411,6 +1415,7 @@ class RC_Sh_82mm_AMOS_LG: Sh_82mm_AMOS_LG
 
 
 //105mm, yet to be introduced, no vehicle options yet
+/*
 class RC_Sh_105mm_AMOS: Sh_155mm_AMOS
 {
 	laserLock=1;	//only for firing solution calculator
@@ -1420,6 +1425,7 @@ class RC_Sh_105mm_AMOS: Sh_155mm_AMOS
 	cost=233;
 	explosionEffects="RC_MortarExplosion";
 }
+*/
 
 
 class RC_Sh_105mm_AMOS_submunition: Sh_155mm_AMOS	//could be given 16km HE-RA range
@@ -1487,22 +1493,23 @@ class RC_Sh_105mm_AMOS_lowHEAB: RC_Sh_105mm_AMOS_HEAB
 };
 
 
-//used in script as replacement when turret elevation is too low for Airburst
-class RC_Sh_105mm_AMOS_backupHEAB: RC_105mm_HEAB_Shell_Base
+//impact quick fuze
+class RC_Sh_105mm_AMOS_HE_submunition: RC_Sh_105mm_AMOS_submunition
+{
+	craterEffects="ArtyShellCrater";
+};
+class RC_Sh_105mm_AMOS_HE: RC_105mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0.8,-0.4};
+	submunitionAmmo="RC_Sh_105mm_AMOS_HE_submunition";
+};
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_Sh_105mm_AMOS_backupHEAB: RC_Sh_105mm_AMOS_HE
+{
 	submunitionInitialOffset[]={0,5,0};
-	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_105mm_AMOS_submunition";
-	whistleDist=120;	//yet unclear
-	soundFly[]=
-	{
-		"a3\Sounds_F\weapons\falling_bomb\fall_01",
-		3.1622777,	//likely priority
-		1,	//likely playspeed
-		120	//hearable distance, should me min m/s of the shell (lowest charge)
-	};
 };
 
 
@@ -1755,6 +1762,7 @@ class RC_Smoke_105mm_AMOS_White: Smoke_120mm_AMOS_White
 
 
 //120mm
+/*
 class RC_Sh_120mm_AMOS: Sh_155mm_AMOS
 {
 	laserLock=1;	//only for firing solution calculator
@@ -1764,6 +1772,7 @@ class RC_Sh_120mm_AMOS: Sh_155mm_AMOS
 	cost=266;
 	explosionEffects="RC_MortarExplosion";
 }
+*/
 
 
 class RC_Sh_120mm_AMOS_submunition: Sh_155mm_AMOS
@@ -1823,13 +1832,22 @@ class RC_Sh_120mm_AMOS_lowHEAB: RC_Sh_120mm_AMOS_HEAB
 };
 
 
-//used in script as replacement when turret elevation is too low for Airburst
-class RC_Sh_120mm_AMOS_backupHEAB: RC_120mm_HEAB_Shell_Base
+//impact quick fuze
+class RC_Sh_120mm_AMOS_HE_submunition: RC_Sh_120mm_AMOS_submunition
+{
+	craterEffects="ArtyShellCrater";
+};
+class RC_Sh_120mm_AMOS_HE: RC_120mm_HEAB_Shell_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0.8,-0.4};
+	submunitionAmmo="RC_Sh_120mm_AMOS_HE_submunition";
+};
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_Sh_120mm_AMOS_backupHEAB: RC_Sh_120mm_AMOS_HE
+{
 	submunitionInitialOffset[]={0,5,0};
-	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_120mm_AMOS_submunition";
 };
 
@@ -2082,12 +2100,14 @@ class RC_Sh_120mm_MP_T_Green: Sh_120mm_HEAT_MP
 
 
 //155mm
+/*
 class RC_Sh_155mm_AMOS: Sh_155mm_AMOS
 {
 	laserLock=1;	//only for firing solution calculator
 	irLock=1;	//only for firing solution calculator
 	explosionEffects="RC_MortarExplosion";
 }
+*/
 
 
 class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
@@ -2143,15 +2163,22 @@ class RC_Sh_155mm_AMOS_lowHEAB: RC_Sh_155mm_AMOS_HEAB
 	aimAboveTarget[]={10.6,10.6,10.6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
-
-//used in script as replacement when turret elevation is too low for Airburst
-class RC_Sh_155mm_AMOS_backupHEAB: RC_155mm_HEAB_Shell_Base
+//impact quick fuze
+class RC_Sh_155mm_AMOS_HE_submunition: RC_Sh_155mm_AMOS_submunition
 {
-	aiAmmoUsageFlags="64 + 128";
+	craterEffects="ArtyShellCrater";
+};
+class RC_Sh_155mm_AMOS_HE: RC_155mm_HEAB_Shell_Base
+{
 	triggerDistance=-1;
 	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0.8,-0.4};
+	submunitionAmmo="RC_Sh_155mm_AMOS_HE_submunition";
+};
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_Sh_155mm_AMOS_backupHEAB: RC_Sh_155mm_AMOS_HE
+{
 	submunitionInitialOffset[]={0,5,0};
-	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
 };
 
@@ -2435,6 +2462,7 @@ class RC_Sh_155mm_AMOS_LG_DelayedFuse: RC_Sh_155mm_AMOS_MP_LaserGuided
 
 //230mm
 class R_230mm_fly;
+/*
 class RC_R_230mm_fly: R_230mm_fly
 {
 	laserLock=1;	//only for firing solution calculator
@@ -2442,6 +2470,7 @@ class RC_R_230mm_fly: R_230mm_fly
 	cost=1000;
 	explosionEffects="RC_MortarExplosion";
 }
+*/
 
 
 class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
@@ -2535,14 +2564,22 @@ class RC_R_230mm_lowHEAB: RC_R_230mm_HEAB
 	aimAboveTarget[]={10.6,10.6,10.6};	//to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
-
-//used in script as replacement when turret elevation is too low for Airburst
-class RC_R_230mm_backupHEAB: RC_230mm_HEAB_Rocket_Base
+//impact quick fuze
+class RC_R_230mm_fly_HE_submunition: RC_R_230mm_fly_HEAB_submunition
+{
+	craterEffects="ArtyShellCrater";
+};
+class RC_R_230mm_HE: RC_230mm_HEAB_Rocket_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,1.75,-0.875};	//test for visual quality
+	submunitionAmmo="RC_R_230mm_fly_HE_submunition";
+};
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_R_230mm_backupHEAB: RC_R_230mm_HE
+{
 	submunitionInitialOffset[]={0,5,0};
-	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
 };
 
@@ -2961,7 +2998,6 @@ class RC_R_604mm_backupHEAB: RC_604mm_HEAB_Rocket_Base
 	triggerDistance=-1;
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,5,0};
-	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionAmmo="RC_R_604mm_fly_HEAB_submunition_ATACMS";
 };
 
