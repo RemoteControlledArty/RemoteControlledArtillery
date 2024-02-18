@@ -245,7 +245,7 @@ RC_Artillery_UI = [] spawn {
 
 			_ctrlSelect = _display displayCtrl 1017;
 			_ctrlUnselect = _display displayCtrl 1018;
-			_ctrlUnselect = _display displayCtrl 1019;
+			_ctrlCycle = _display displayCtrl 1019;
 
 			//_ctrlMessage ctrlSetTextColor [0,1,0,1];
 			//_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
