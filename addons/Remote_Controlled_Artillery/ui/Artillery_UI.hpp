@@ -186,7 +186,7 @@ class RC_Artillery {
 	class RscText_1017: RscText_1001 
 	{
 		idc = 1017;
-		text = "select target: R / aim at"; //--- ToDo: Localize;
+		text = "select target:"; //--- ToDo: Localize;
 		colorText[] = {0.5,0.5,0.5,0.5};
 		x = "0.897267 * safezoneW + safezoneX";
 		y = "0.2259294 * safezoneH + safezoneY";
@@ -196,7 +196,7 @@ class RC_Artillery {
 	class RscText_1018: RscText_1001 
 	{
 		idc = 1018;
-		text = "unselect target: T"; //--- ToDo: Localize;
+		//text = "unselect target:"; //--- ToDo: Localize;
 		colorText[] = {0.5,0.5,0.5,0.5};
 		x = "0.897267 * safezoneW + safezoneX";
 		y = "0.2419294 * safezoneH + safezoneY";

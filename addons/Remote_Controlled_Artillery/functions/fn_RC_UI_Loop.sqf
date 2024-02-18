@@ -243,7 +243,22 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowETA = _display displayCtrl 1011;
 			_ctrlMessage = _display displayCtrl 1012;
 
-			if (true) then {{(_display displayCtrl _x) ctrlShow true} forEach [1017,1018,1019,1020,1021,1022];};
+			_ctrlSelect = _display displayCtrl 1017;
+			_ctrlUnselect = _display displayCtrl 1018;
+			_ctrlUnselect = _display displayCtrl 1019;
+
+			//_ctrlMessage ctrlSetTextColor [0,1,0,1];
+			//_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
+			//_ctrlMessage ctrlSetText "ALIGNED";
+			_ctrlSelect ctrlSetText format ["select target: %1%2", (((actionKeysNames "vehLockTargets") splitString "or") select 0)];
+			_ctrlUnselect ctrlSetText format ["unselect target: %1%2", (((actionKeysNames "lockTarget") splitString "or") select 0)];
+			_ctrlCycle ctrlSetText format ["cycle markers: %1%2", (((actionKeysNames "lockTarget") splitString "or") select 0)];
+			//if (true) then {{(_display displayCtrl _x) ctrlShow true} forEach [1017,1018,1019,1020,1021,1022];};
+			/*
+			_ctrlSelect ctrlSetText "select: R";
+			_ctrlUnselect ctrlSetText "unselect: T";
+			_ctrlCycle ctrlSetText "cycle markers: 3/5";
+			*/
 
 			// checks if shell requires lock before firing
 			_requiresLock=(getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1;
@@ -325,7 +340,6 @@ RC_Artillery_UI = [] spawn {
 
 				_Difference = 0;
 				_Difference = ((AGLToASL _targetPos) select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
-				//_Difference = ((AGLToASL _targetPos) select 2) - (_artyPos select 2);		//outdated
 
 				//how ElDiff is shown based on cba settings
 				_shownDifference = 0;
@@ -465,12 +479,6 @@ RC_Artillery_UI = [] spawn {
     			_ctrlLowSol ctrlSetText "L SOL: 0000";
     			_ctrlHighETA ctrlSetText "ETA: 000";
     			_ctrlLowETA ctrlSetText "ETA: 000";
-
-				/*
-				_ctrlSelect ctrlSetText "select: R";
-				_ctrlUnselect ctrlSetText "unselect: T";
-				_ctrlCycle ctrlSetText "cycle markers: 3/5";
-				*/
 				
 				// If we have no Targets
 				_ctrlMessage ctrlSetTextColor [1,0,0,1];

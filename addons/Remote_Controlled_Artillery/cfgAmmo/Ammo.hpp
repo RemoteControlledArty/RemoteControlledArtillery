@@ -1066,6 +1066,7 @@ class RC_Sh_82mm_AMOS_HE_submunition: RC_Sh_82mm_AMOS_submunition
 };
 class RC_Sh_82mm_AMOS_HE: RC_82mm_HEAB_Shell_Base
 {
+	simulationStep=0.050000001;
 	triggerDistance=-1;
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,0.8,-0.4};
@@ -1500,6 +1501,7 @@ class RC_Sh_105mm_AMOS_HE_submunition: RC_Sh_105mm_AMOS_submunition
 };
 class RC_Sh_105mm_AMOS_HE: RC_105mm_HEAB_Shell_Base
 {
+	simulationStep=0.050000001;
 	triggerDistance=-1;
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,0.8,-0.4};
@@ -1839,6 +1841,7 @@ class RC_Sh_120mm_AMOS_HE_submunition: RC_Sh_120mm_AMOS_submunition
 };
 class RC_Sh_120mm_AMOS_HE: RC_120mm_HEAB_Shell_Base
 {
+	simulationStep=0.050000001;
 	triggerDistance=-1;
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,0.8,-0.4};
@@ -2170,6 +2173,7 @@ class RC_Sh_155mm_AMOS_HE_submunition: RC_Sh_155mm_AMOS_submunition
 };
 class RC_Sh_155mm_AMOS_HE: RC_155mm_HEAB_Shell_Base
 {
+	simulationStep=0.050000001;
 	triggerDistance=-1;
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,0.8,-0.4};
@@ -2571,6 +2575,7 @@ class RC_R_230mm_fly_HE_submunition: RC_R_230mm_fly_HEAB_submunition
 };
 class RC_R_230mm_HE: RC_230mm_HEAB_Rocket_Base
 {
+	simulationStep=0.050000001;
 	triggerDistance=-1;
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,1.75,-0.875};	//test for visual quality
