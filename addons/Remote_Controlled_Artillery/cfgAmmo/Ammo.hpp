@@ -1055,7 +1055,7 @@ class RC_Sh_82mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 };
 class RC_Sh_82mm_AMOS_lowHEAB: RC_Sh_82mm_AMOS_HEAB
 {
-	imAboveTarget[]={6.35,6.35,6.35};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
+	imAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -1490,7 +1490,7 @@ class RC_Sh_105mm_AMOS_HEAB: RC_105mm_HEAB_Shell_Base
 };
 class RC_Sh_105mm_AMOS_lowHEAB: RC_Sh_105mm_AMOS_HEAB
 {
-	aimAboveTarget[]={7.65,7.65,7.65};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
+	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -1830,7 +1830,7 @@ class RC_Sh_120mm_AMOS_HEAB: RC_120mm_HEAB_Shell_Base
 };
 class RC_Sh_120mm_AMOS_lowHEAB: RC_Sh_120mm_AMOS_HEAB
 {
-	aimAboveTarget[]={8.75,8.75,8.75};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
+	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -2163,7 +2163,7 @@ class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 };
 class RC_Sh_155mm_AMOS_lowHEAB: RC_Sh_155mm_AMOS_HEAB
 {
-	aimAboveTarget[]={10.6,10.6,10.6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
+	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 //impact quick fuze
@@ -2565,7 +2565,7 @@ class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
 };
 class RC_R_230mm_lowHEAB: RC_R_230mm_HEAB
 {
-	aimAboveTarget[]={10.6,10.6,10.6};	//to atleast ignore microterrain, triggers when descending and this height above ground
+	aimAboveTarget[]={6,6,6};	//to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 //impact quick fuze

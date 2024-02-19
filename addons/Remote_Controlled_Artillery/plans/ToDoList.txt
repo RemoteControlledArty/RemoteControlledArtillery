@@ -41,10 +41,12 @@ _list = actionKeysNames "ReloadMagazine";
 _list2 = ((_list splitString " ") select 0);
 hintSilent format ["Object: %1", _list2];
 
+-block fire for too low angle with airburst
 -remove LOW airburst
 -how to get CBA hotkey?
 -simulationfreq decrease for impact fuze
 -how to better split string at "
+-splits string at o nor or
 
 -remove non airburst HE after trajectory testing
 
