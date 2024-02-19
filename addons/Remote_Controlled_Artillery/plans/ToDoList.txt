@@ -46,7 +46,7 @@ hintSilent format ["Object: %1", _list2];
 -how to get CBA hotkey?
 -simulationfreq decrease for impact fuze
 -how to better split string at "
--splits string at o nor or
+-splits string at o nor or, better search needed
 
 -remove non airburst HE after trajectory testing
 

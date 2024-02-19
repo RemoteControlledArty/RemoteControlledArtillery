@@ -243,7 +243,7 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowETA = _display displayCtrl 1011;
 			_ctrlMessage = _display displayCtrl 1012;
 
-			if true then
+			if (true) then {
 			_ctrlKeySelect = _display displayCtrl 1017;
 			_ctrlKeyUnselect = _display displayCtrl 1018;
 			_ctrlKeyMarkersF = _display displayCtrl 1019;
@@ -259,18 +259,18 @@ RC_Artillery_UI = [] spawn {
 
 			_MarkersF = ["RC_Artillery", "RC_Scroll_Targets_Forwards"] call CBA_fnc_getKeybind;
 			if (!isNil "_MarkersF") then {_KeyMarkersF = entry select 8;};
-			_ctrlKeyMarkersF ctrlSetText format ["cycle markers ->: %1%2", (((_KeyMarkersF) splitString "or") select 0)];
+			_ctrlKeyMarkersF ctrlSetText format ["cycle markers ->: %1%2", (((_KeyMarkersF) splitString " or") select 0)];
 			_MarkersB = ["RC_Artillery", "RC_Scroll_Targets_Backwards"] call CBA_fnc_getKeybind;
 			if (!isNil "_MarkersB") then {_KeyMarkersB = entry select 8;};
-			_ctrlKeyMarkersB ctrlSetText format ["cycle markers <-: %1%2", (((_KeyMarkersB) splitString "or") select 0)];
-
+			_ctrlKeyMarkersB ctrlSetText format ["cycle markers <-: %1%2", (((_KeyMarkersB) splitString " or") select 0)];
 			
-			_ctrlKeySelect ctrlSetText format ["select target: %1%2", (((actionKeysNames "vehLockTargets") splitString "or") select 0)];
-			_ctrlKeyUnselect ctrlSetText format ["unselect target: %1%2", (((actionKeysNames "lockTarget") splitString "or") select 0)];
-			_ctrlKeyFiremodes ctrlSetText format ["cycle charges: %1%2", (((actionKeysNames "nextWeapon") splitString "or") select 0)];
-			_ctrlKeyElUp ctrlSetText format ["elevation up: %1%2", (((actionKeysNames "gunElevUp") splitString "or") select 0)];
-			_ctrlKeyElDown ctrlSetText format ["elevation down: %1%2", (((actionKeysNames "gunElevDown") splitString "or") select 0)];
-			_ctrlKeyElSlow ctrlSetText format ["slow elevation: %1%2", (((actionKeysNames "gunElevSlow") splitString "or") select 0)];
+			_ctrlKeySelect ctrlSetText format ["select target: %1%2", (((actionKeysNames "vehLockTargets") splitString " or") select 0)];
+			_ctrlKeyUnselect ctrlSetText format ["unselect target: %1%2", (((actionKeysNames "lockTarget") splitString " or") select 0)];
+			_ctrlKeyFiremodes ctrlSetText format ["cycle charges: %1%2", (((actionKeysNames "nextWeapon") splitString " or") select 0)];
+			_ctrlKeyElUp ctrlSetText format ["elevation up: %1%2", (((actionKeysNames "gunElevUp") splitString " or") select 0)];
+			_ctrlKeyElDown ctrlSetText format ["elevation down: %1%2", (((actionKeysNames "gunElevDown") splitString " or") select 0)];
+			_ctrlKeyElSlow ctrlSetText format ["slow elevation: %1%2", (((actionKeysNames "gunElevSlow") splitString " or") select 0)];
+			};
 			//if (true) then {{(_display displayCtrl _x) ctrlShow true} forEach [1017,1018,1019,1020,1021,1022];};
 			/*
 			_ctrlSelect ctrlSetText "select: R";
