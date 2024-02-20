@@ -74,6 +74,8 @@
     "GPS"
 ] call CBA_fnc_addSetting;
 
+//doesnt work with current UI setup
+/*
 [
     "RC_Show_Keybinds",
     "CHECKBOX",
@@ -84,4 +86,5 @@
     {},
     true
 ] call CBA_fnc_addSetting;
+*/
 

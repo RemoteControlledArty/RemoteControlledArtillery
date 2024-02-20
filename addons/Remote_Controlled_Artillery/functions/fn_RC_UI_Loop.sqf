@@ -243,32 +243,33 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowETA = _display displayCtrl 1011;
 			_ctrlMessage = _display displayCtrl 1012;
 
-			if (RC_Show_Keybinds) then {
-				_ctrlKeyMarkersF = _display displayCtrl 1017;
-				_ctrlKeyMarkersB = _display displayCtrl 1018;
-				_ctrlKeySelect = _display displayCtrl 1019;
-				_ctrlKeyUnselect = _display displayCtrl 1020;
-				_ctrlKeyFiremodes = _display displayCtrl 1021;
-				_ctrlKeyElUp = _display displayCtrl 1022;
-				_ctrlKeyElDown = _display displayCtrl 1023;
-				_ctrlKeyElSlow = _display displayCtrl 1024;
+			//Keybind Display
+			//if (RC_Show_Keybinds) then {
+			_ctrlKeySelect = _display displayCtrl 1017;
+			_ctrlKeyUnselect = _display displayCtrl 1018;
+			_ctrlKeyMarkersF = _display displayCtrl 1019;
+			_ctrlKeyMarkersB = _display displayCtrl 1020;
+			_ctrlKeyCharges = _display displayCtrl 1021;
+			_ctrlKeyElUp = _display displayCtrl 1022;
+			_ctrlKeyElDown = _display displayCtrl 1023;
+			_ctrlKeyElSlow = _display displayCtrl 1024;
 
-				//if (!isNil "_MarkersF") then {_KeyMarkersF = entry select 8;};
-				_ArrayMarkersF = ["Remote Controlled Artillery", "RC_Scroll_Targets_Forwards"] call CBA_fnc_getKeybind;
-				_KeyMarkersF = (((_ArrayMarkersF select 8) select 0) select 0) call BIS_fnc_keyCode;
-				_ctrlKeyMarkersF ctrlSetText format ["cycle markers ->: %1%2", _KeyMarkersF];
+			_ctrlKeySelect ctrlSetText format ["select target: %1%2", ((actionKeysNamesArray "vehLockTargets") select 0), " / aim at"];
+			_ctrlKeyUnselect ctrlSetText format ["unselect target: %1%2", ((actionKeysNamesArray "lockTarget") select 0)];
 
-				_ArrayMarkersB = ["Remote Controlled Artillery", "RC_Scroll_Targets_Backwards"] call CBA_fnc_getKeybind;
-				_KeyMarkersB = (((_ArrayMarkersB select 8) select 0) select 0) call BIS_fnc_keyCode;
-				_ctrlKeyMarkersB ctrlSetText format ["cycle markers <-: %1%2", _KeyMarkersB];
-				
-				_ctrlKeySelect ctrlSetText format ["select target: %1%2", ((actionKeysNamesArray "vehLockTargets") select 0)];
-				_ctrlKeyUnselect ctrlSetText format ["unselect target: %1%2", ((actionKeysNamesArray "lockTarget") select 0)];
-				_ctrlKeyFiremodes ctrlSetText format ["cycle charges: %1%2", ((actionKeysNamesArray "nextWeapon") select 0)];
-				_ctrlKeyElUp ctrlSetText format ["elevation up: %1%2", ((actionKeysNamesArray "gunElevUp") select 0)];
-				_ctrlKeyElDown ctrlSetText format ["elevation down: %1%2", ((actionKeysNamesArray "gunElevDown") select 0)];
-				_ctrlKeyElSlow ctrlSetText format ["slow elevation: %1%2", ((actionKeysNamesArray "gunElevSlow") select 0)];
-			};
+			_ArrayMarkersF = ["Remote Controlled Artillery", "RC_Scroll_Targets_Forwards"] call CBA_fnc_getKeybind;
+			_KeyMarkersF = (((_ArrayMarkersF select 8) select 0) select 0) call BIS_fnc_keyCode;
+			if (!isNil "_KeyMarkersF") then {_ctrlKeyMarkersF ctrlSetText format ["cycle markers ->: %1%2", _KeyMarkersF];};
+
+			_ArrayMarkersB = ["Remote Controlled Artillery", "RC_Scroll_Targets_Backwards"] call CBA_fnc_getKeybind;
+			_KeyMarkersB = (((_ArrayMarkersB select 8) select 0) select 0) call BIS_fnc_keyCode;
+			if (!isNil "_KeyMarkersB") then {_ctrlKeyMarkersB ctrlSetText format ["cycle markers <-: %1%2", _KeyMarkersB];};
+
+			_ctrlKeyCharges ctrlSetText format ["cycle charges: %1%2", ((actionKeysNamesArray "nextWeapon") select 0)];
+			_ctrlKeyElUp ctrlSetText format ["elevation up: %1%2", ((actionKeysNamesArray "gunElevUp") select 0)];
+			_ctrlKeyElDown ctrlSetText format ["elevation down: %1%2", ((actionKeysNamesArray "gunElevDown") select 0)];
+			_ctrlKeyElSlow ctrlSetText format ["slow elevation: %1%2", ((actionKeysNamesArray "gunElevSlow") select 0)];
+			//};
 
 			// checks if shell requires lock before firing
 			_requiresLock=(getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1;

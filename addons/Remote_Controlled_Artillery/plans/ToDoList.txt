@@ -32,12 +32,10 @@ Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 ReconMortar "In your mod or script, add an initialization script to the "base" vehicle, so whenever one of them is created, it creates the turret and attaches it."
 
--test 230mm offset visual
--check for if hotkey unbound errors
 -block fire for too low angle with airburst
--check if display hiding even works, ifnot remove setting
+-test 230mm offset visual
 -test with vanilla hotkey, esp 3&5
--AR-2 bugs in SP?
+-test elevation of 120mm
 
 
 
@@ -215,6 +213,7 @@ DONE - FEATURES:
 -bugfixed alignment color staying when no target available
 -bugfixed gps targets from infinite spawning
 -bugfixed gps target inaccurate positioning
+-added very faint controls display
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)

@@ -216,7 +216,7 @@ class RC_Mortar: RC_Mortar_NA
 			magazines[]=
 			{
 				"RC_10Rnd_82mm_Mo_shells",
-				"RC_5Rnd_82mm_Mo_HEAB",
+				"RC_4Rnd_82mm_Mo_HEAB",
 				"RC_15Rnd_82mm_Mo_Smoke_white",
 				"RC_5Rnd_82mm_Mo_MultiGuided",
 				"RC_9Rnd_82mm_Mo_AT_mine",
