@@ -243,40 +243,32 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowETA = _display displayCtrl 1011;
 			_ctrlMessage = _display displayCtrl 1012;
 
-			if (true) then {
-			_ctrlKeySelect = _display displayCtrl 1017;
-			_ctrlKeyUnselect = _display displayCtrl 1018;
-			_ctrlKeyMarkersF = _display displayCtrl 1019;
-			_ctrlKeyMarkersB = _display displayCtrl 1020;
-			_ctrlKeyFiremodes = _display displayCtrl 1021;
-			_ctrlKeyElUp = _display displayCtrl 1022;
-			_ctrlKeyElDown = _display displayCtrl 1023;
-			_ctrlKeyElSlow = _display displayCtrl 1024;
+			if (RC_Show_Keybinds) then {
+				_ctrlKeyMarkersF = _display displayCtrl 1017;
+				_ctrlKeyMarkersB = _display displayCtrl 1018;
+				_ctrlKeySelect = _display displayCtrl 1019;
+				_ctrlKeyUnselect = _display displayCtrl 1020;
+				_ctrlKeyFiremodes = _display displayCtrl 1021;
+				_ctrlKeyElUp = _display displayCtrl 1022;
+				_ctrlKeyElDown = _display displayCtrl 1023;
+				_ctrlKeyElSlow = _display displayCtrl 1024;
 
-			//_ctrlMessage ctrlSetTextColor [0,1,0,1];
-			//_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
-			//_ctrlMessage ctrlSetText "ALIGNED";
+				//if (!isNil "_MarkersF") then {_KeyMarkersF = entry select 8;};
+				_ArrayMarkersF = ["Remote Controlled Artillery", "RC_Scroll_Targets_Forwards"] call CBA_fnc_getKeybind;
+				_KeyMarkersF = (((_ArrayMarkersF select 8) select 0) select 0) call BIS_fnc_keyCode;
+				_ctrlKeyMarkersF ctrlSetText format ["cycle markers ->: %1%2", _KeyMarkersF];
 
-			_MarkersF = ["RC_Artillery", "RC_Scroll_Targets_Forwards"] call CBA_fnc_getKeybind;
-			if (!isNil "_MarkersF") then {_KeyMarkersF = entry select 8;};
-			_ctrlKeyMarkersF ctrlSetText format ["cycle markers ->: %1%2", (((_KeyMarkersF) splitString " or") select 0)];
-			_MarkersB = ["RC_Artillery", "RC_Scroll_Targets_Backwards"] call CBA_fnc_getKeybind;
-			if (!isNil "_MarkersB") then {_KeyMarkersB = entry select 8;};
-			_ctrlKeyMarkersB ctrlSetText format ["cycle markers <-: %1%2", (((_KeyMarkersB) splitString " or") select 0)];
-			
-			_ctrlKeySelect ctrlSetText format ["select target: %1%2", (((actionKeysNames "vehLockTargets") splitString " or") select 0)];
-			_ctrlKeyUnselect ctrlSetText format ["unselect target: %1%2", (((actionKeysNames "lockTarget") splitString " or") select 0)];
-			_ctrlKeyFiremodes ctrlSetText format ["cycle charges: %1%2", (((actionKeysNames "nextWeapon") splitString " or") select 0)];
-			_ctrlKeyElUp ctrlSetText format ["elevation up: %1%2", (((actionKeysNames "gunElevUp") splitString " or") select 0)];
-			_ctrlKeyElDown ctrlSetText format ["elevation down: %1%2", (((actionKeysNames "gunElevDown") splitString " or") select 0)];
-			_ctrlKeyElSlow ctrlSetText format ["slow elevation: %1%2", (((actionKeysNames "gunElevSlow") splitString " or") select 0)];
+				_ArrayMarkersB = ["Remote Controlled Artillery", "RC_Scroll_Targets_Backwards"] call CBA_fnc_getKeybind;
+				_KeyMarkersB = (((_ArrayMarkersB select 8) select 0) select 0) call BIS_fnc_keyCode;
+				_ctrlKeyMarkersB ctrlSetText format ["cycle markers <-: %1%2", _KeyMarkersB];
+				
+				_ctrlKeySelect ctrlSetText format ["select target: %1%2", ((actionKeysNamesArray "vehLockTargets") select 0)];
+				_ctrlKeyUnselect ctrlSetText format ["unselect target: %1%2", ((actionKeysNamesArray "lockTarget") select 0)];
+				_ctrlKeyFiremodes ctrlSetText format ["cycle charges: %1%2", ((actionKeysNamesArray "nextWeapon") select 0)];
+				_ctrlKeyElUp ctrlSetText format ["elevation up: %1%2", ((actionKeysNamesArray "gunElevUp") select 0)];
+				_ctrlKeyElDown ctrlSetText format ["elevation down: %1%2", ((actionKeysNamesArray "gunElevDown") select 0)];
+				_ctrlKeyElSlow ctrlSetText format ["slow elevation: %1%2", ((actionKeysNamesArray "gunElevSlow") select 0)];
 			};
-			//if (true) then {{(_display displayCtrl _x) ctrlShow true} forEach [1017,1018,1019,1020,1021,1022];};
-			/*
-			_ctrlSelect ctrlSetText "select: R";
-			_ctrlUnselect ctrlSetText "unselect: T";
-			_ctrlCycle ctrlSetText "cycle markers: 3/5";
-			*/
 
 			// checks if shell requires lock before firing
 			_requiresLock=(getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1;
@@ -443,7 +435,7 @@ RC_Artillery_UI = [] spawn {
 
 				switch (true) do {
 						// If Azimuth is close/correct change the Azimuth text color
-						case((_realAzimuth < (_targetAzimuth + 0.5)) and (_realAzimuth > (_targetAzimuth - 0.5))): {_ctrlAzimuth ctrlSetTextColor [0,1,0,1];};
+						case((_realAzimuth < (_targetAzimuth + 0.25)) and (_realAzimuth > (_targetAzimuth - 0.5))): {_ctrlAzimuth ctrlSetTextColor [0,1,0,1];};
 						case((_realAzimuth < (_targetAzimuth + 1)) and (_realAzimuth > (_targetAzimuth - 1))): {_ctrlAzimuth ctrlSetTextColor [0.725,1,0.5,1];};
 						case((_realAzimuth < (_targetAzimuth + 2)) and (_realAzimuth > (_targetAzimuth - 2))): {_ctrlAzimuth ctrlSetTextColor [0.8,1,0.5,1];};
 						case((_realAzimuth < (_targetAzimuth + 3)) and (_realAzimuth > (_targetAzimuth - 3))): {_ctrlAzimuth ctrlSetTextColor [0.85,1,0.5,1];};

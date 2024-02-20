@@ -31,22 +31,12 @@ if (!isserver) exitwith {}; = server client only, not every player client
 Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 ReconMortar "In your mod or script, add an initialization script to the "base" vehicle, so whenever one of them is created, it creates the turret and attaches it."
+
 -test 230mm offset visual
--test if submundir creates problems with expangle
--look up why podnos has fall, new soundfile?
-
-+1m HE, as sniping with it is fun, and HEAB really op
-
-_list = actionKeysNames "ReloadMagazine";
-_list2 = ((_list splitString " ") select 0);
-hintSilent format ["Object: %1", _list2];
-
+-check for if hotkey unbound errors
 -block fire for too low angle with airburst
--remove LOW airburst
--how to get CBA hotkey?
--simulationfreq decrease for impact fuze
--how to better split string at "
--splits string at o nor or, better search needed
+-check if display hiding even works, ifnot remove setting
+-test with vanilla hotkey, esp 3&5
 
 -remove non airburst HE after trajectory testing
 

@@ -25,7 +25,6 @@ _markerCount = count RC_Artillery_Markers;
 if _direction then {
 	// Forward
 
-	
 	// If we are at the Final Target
 	if (RC_Current_Index >= (_markerCount - 1)) then {
 		RC_Current_Index = 0;
@@ -38,7 +37,6 @@ if _direction then {
 
 } else {
 	// Backward
-	
 
 	if (RC_Current_Index <= 0) then {
 		RC_Current_Index = (_markerCount - 1);

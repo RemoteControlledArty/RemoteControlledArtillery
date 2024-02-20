@@ -74,3 +74,14 @@
     "GPS"
 ] call CBA_fnc_addSetting;
 
+[
+    "RC_Show_Keybinds",
+    "CHECKBOX",
+    ["Show Keybinds Display", "shows the faint Display of Keybinds for Artillery Functions"],
+    ["Remote Controlled Artillery"],
+    true,
+    false,
+    {},
+    true
+] call CBA_fnc_addSetting;
+

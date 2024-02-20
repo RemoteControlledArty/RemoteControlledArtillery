@@ -185,85 +185,95 @@ class RC_Artillery {
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
+
+	//Keybinds Display, by Ascent
 	class RscText_1017: RscText_1001 
 	{
 		idc = 1017;
-		text = "select target:"; //--- ToDo: Localize;
-		colorText[] = {0.5,0.5,0.5,0.5};
-		x = "0.871267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
-		y = "0.2259294 * safezoneH + safezoneY";
+		text = "cycle markers ->:"; //--- ToDo: Localize;
+		colorText[] = {0.4,0.4,0.4,0.4};
+		x = "0.885267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
+		y = "0.2099294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
+		sizeEx = "0.45 * (0.0330027 * safezoneH)";
 	};
 	class RscText_1018: RscText_1001 
 	{
 		idc = 1018;
-		text = "unselect target:"; //--- ToDo: Localize;
-		colorText[] = {0.5,0.5,0.5,0.5};
-		x = "0.871267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
-		y = "0.2419294 * safezoneH + safezoneY";
+		text = "cycle markers <-:"; //--- ToDo: Localize;
+		colorText[] = {0.4,0.4,0.4,0.4};
+		x = "0.885267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
+		y = "0.2205961 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
+		sizeEx = "0.45 * (0.0330027 * safezoneH)";
 	};
 	class RscText_1019: RscText_1001 
 	{
 		idc = 1019;
-		text = "cycle markers:"; //--- ToDo: Localize;
-		colorText[] = {0.5,0.5,0.5,0.5};
-		x = "0.871267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
-		y = "0.2579294 * safezoneH + safezoneY";
+		text = "select target:"; //--- ToDo: Localize;
+		colorText[] = {0.4,0.4,0.4,0.4};
+		x = "0.885267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
+		y = "0.2339294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
+		sizeEx = "0.45 * (0.0330027 * safezoneH)";
 	};
 	class RscText_1020: RscText_1001 
 	{
 		idc = 1020;
-		text = "cycle markers:"; //--- ToDo: Localize;
-		colorText[] = {0.5,0.5,0.5,0.5};
-		x = "0.871267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
-		y = "0.2739294 * safezoneH + safezoneY";
+		text = "unselect target:"; //--- ToDo: Localize;
+		colorText[] = {0.4,0.4,0.4,0.4};
+		x = "0.885267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
+		y = "0.2472627  * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
+		sizeEx = "0.45 * (0.0330027 * safezoneH)";
 	};
 	class RscText_1021: RscText_1001 
 	{
 		idc = 1021;
 		text = "cycle charges:"; //--- ToDo: Localize;
-		colorText[] = {0.5,0.5,0.5,0.5};
-		x = "0.871267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
-		y = "0.2899294 * safezoneH + safezoneY";
+		colorText[] = {0.4,0.4,0.4,0.4};
+		x = "0.885267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
+		y = "0.2605961 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
+		sizeEx = "0.45 * (0.0330027 * safezoneH)";
 	};
 	class RscText_1022: RscText_1001 
 	{
 		idc = 1022;
 		text = "elevation up:"; //--- ToDo: Localize;
-		colorText[] = {0.5,0.5,0.5,0.5};
-		x = "0.871267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
-		y = "0.3059294 * safezoneH + safezoneY";
+		colorText[] = {0.4,0.4,0.4,0.4};
+		x = "0.885267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
+		y = "0.2739294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
+		sizeEx = "0.45 * (0.0330027 * safezoneH)";
 	};
 	class RscText_1023: RscText_1001 
 	{
 		idc = 1023;
 		text = "elevation down:"; //--- ToDo: Localize;
-		colorText[] = {0.5,0.5,0.5,0.5};
-		x = "0.871267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
-		y = "0.3219294 * safezoneH + safezoneY";
+		colorText[] = {0.4,0.4,0.4,0.4};
+		x = "0.885267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
+		y = "0.2872627 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
+		sizeEx = "0.45 * (0.0330027 * safezoneH)";
 	};
 	class RscText_1024: RscText_1001 
 	{
 		idc = 1024;
 		text = "slow elevation:"; //--- ToDo: Localize;
-		colorText[] = {0.5,0.5,0.5,0.5};
-		x = "0.871267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
-		y = "0.3379294 * safezoneH + safezoneY";
+		colorText[] = {0.4,0.4,0.4,0.4};
+		x = "0.885267 * safezoneW + safezoneX";	//"0.885267 * safezoneW + safezoneX";
+		y = "0.3005961 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
+		sizeEx = "0.45 * (0.0330027 * safezoneH)";
 	};
 	////////////////////////////////////////////////////////
 	// GUI EDITOR OUTPUT END
