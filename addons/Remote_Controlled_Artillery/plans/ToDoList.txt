@@ -37,8 +37,7 @@ ReconMortar "In your mod or script, add an initialization script to the "base" v
 -block fire for too low angle with airburst
 -check if display hiding even works, ifnot remove setting
 -test with vanilla hotkey, esp 3&5
-
--remove non airburst HE after trajectory testing
+-AR-2 bugs in SP?
 
 
 
@@ -58,7 +57,7 @@ POSTPONED:
 -RC Medical, make driver camera available for Transporter&Van, after having found a fix
 -RC Repair, vehicle (thislist select 0) setfuel 1; vehicle (thislist select 0) setdamage 0; https://community.bistudio.com/wiki/createTrigger
 -fix Static AT self engaging laser spots (how?)
--RADAR deactivates after releasing control even when not autonomous, maybe use human crew and locking seats instead?
+-RADAR staying on (deactivates after releasing control even when not autonomous, maybe use human crew and locking seats instead?)
 -look up if inheriting structure is fully correct
 -guided submunition alternative misslecam
 -guided shell submunition camera (vanilla misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to do with cfgvehicles atleast to trigger)
