@@ -60,6 +60,8 @@ class RC_FSV_A: RC_FSV_A_Base
 	incomingMissileDetectionSystem=16;
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherAngle=180;
 
 	class Components: Components
 	{
@@ -136,9 +138,9 @@ class RC_FSV_A: RC_FSV_A_Base
 			};
 			magazines[]=
 			{
-				"12Rnd_120mm_APFSDS_shells_Tracer_Green",
-				"16Rnd_120mm_MP_T_Green",
-				"3Rnd_120mm_DLG_cannon_missiles",
+				"RC_12Rnd_120mm_APFSDS_T",
+				"RC_16Rnd_120mm_MP_T",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
 				"RC_200Rnd_338_T_Mag",
 				"RC_200Rnd_338_T_Mag",
 				"RC_200Rnd_338_T_Mag",
@@ -158,13 +160,12 @@ class RC_FSV_A: RC_FSV_A_Base
 					minAngleY=-100;
 					maxAngleY=100;
 
-					initFov=1.0;
+					initFov=0.9;
 					minFov=0.0166;
-					maxFov=1.0;
+					maxFov=0.9;
 					visionMode[]=
 					{
 						"Normal",
-						"NVG",
 						"TI"
 					};
 					thermalMode[]={0,1};
@@ -311,13 +312,12 @@ class RC_FSV_A: RC_FSV_A_Base
 							minAngleY=-100;
 							maxAngleY=100;
 
-							initFov=1.0;
+							initFov=0.9;
 							minFov=0.0166;
-							maxFov=1.0;
+							maxFov=0.9;
 							visionMode[]=
 							{
 								"Normal",
-								"NVG",
 								"TI"
 							};
 							thermalMode[]={0,1};
@@ -334,13 +334,12 @@ class RC_FSV_A: RC_FSV_A_Base
 						initAngleY=0;
 						minAngleY=-100;
 						maxAngleY=100;
-						initFov=1.0;
-						minFov=0.025;
-						maxFov=1.0;
+						initFov=0.9;
+						minFov=0.0166;
+						maxFov=0.9;
 						visionMode[]=
 						{
 							"Normal",
-							"NVG",
 							"TI"
 						};
 						thermalMode[]={0,1};
@@ -667,6 +666,8 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	maxSpeed=70;
 	enginePower=1538;
 	peakTorque=6250;
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherAngle=180;
 
 	class Components: Components
 	{
@@ -769,13 +770,12 @@ class RC_MBT6_A: RC_MBT6_A_Base
 							minAngleY=-100;
 							maxAngleY=100;
 
-							initFov=1.0;
+							initFov=0.9;
 							minFov=0.0166;
-							maxFov=1.0;
+							maxFov=0.9;
 							visionMode[]=
 							{
 								"Normal",
-								"NVG",
 								"TI"
 							};
 							thermalMode[]={0,1};
@@ -792,13 +792,12 @@ class RC_MBT6_A: RC_MBT6_A_Base
 						initAngleY=0;
 						minAngleY=-100;
 						maxAngleY=100;
-						initFov=1.0;
+						initFov=0.9;
 						minFov=0.0166;
-						maxFov=1.0;
+						maxFov=0.9;
 						visionMode[]=
 						{
 							"Normal",
-							"NVG",
 							"TI"
 						};
 						thermalMode[]={0,1};
@@ -918,9 +917,9 @@ class RC_MBT6_A: RC_MBT6_A_Base
 			};
 			magazines[]=
 			{
-				"20Rnd_120mm_APFSDS_shells_Tracer_Green",
-				"20Rnd_120mm_MP_T_Green",
-				"3Rnd_120mm_DLG_cannon_missiles",
+				"RC_20Rnd_120mm_APFSDS_T",
+				"RC_20Rnd_120mm_MP_T",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
 				"RC_200Rnd_338_T_Mag",
 				"RC_200Rnd_338_T_Mag",
 				"RC_200Rnd_338_T_Mag",
@@ -942,13 +941,12 @@ class RC_MBT6_A: RC_MBT6_A_Base
 					minAngleY=-100;
 					maxAngleY=100;
 
-					initFov=1.0;
+					initFov=0.9;
 					minFov=0.0166;
-					maxFov=1.0;
+					maxFov=0.9;
 					visionMode[]=
 					{
 						"Normal",
-						"NVG",
 						"TI"
 					};
 					thermalMode[]={0,1};

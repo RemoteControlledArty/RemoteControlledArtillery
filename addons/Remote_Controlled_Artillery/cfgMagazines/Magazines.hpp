@@ -49,8 +49,72 @@ class RC_200Rnd_338_T_Mag: VehicleMagazine
 	tracersEvery=1;	//4
 	nameSound="mgun";
 	displayName=".338 NM";
-	descriptionShort=".338NM";
+	displayNameShort=".338 NM";
 	muzzleImpulseFactor[]={0.050000001,0.050000001};
+};
+
+
+//40mm Autocannon
+class 60Rnd_40mm_GPR_Tracer_Red_shells;
+class RC_50Rnd_40mm_MP_T: 60Rnd_40mm_GPR_Tracer_Red_shells
+{
+	author="Ascent";
+	ammo="RC_B_40mm_MP_T";
+	count=50;
+	displayName="40mm MP-T";
+	displayNameShort="40mm MP-T";
+};
+class 40Rnd_40mm_APFSDS_Tracer_Red_shells;
+class RC_50Rnd_40mm_APFSDS_T: 40Rnd_40mm_APFSDS_Tracer_Red_shells
+{
+	author="Ascent";
+	count=50;
+	displayName="40mm APFSDS-T";
+	displayNameShort="40mm APFSDS-T";
+};
+
+
+// 120mm direct fire
+class 8Rnd_120mm_HEAT_MP_T_Red;
+class RC_12Rnd_120mm_MP_T: 8Rnd_120mm_HEAT_MP_T_Red
+{
+	ammo="RC_Sh_120mm_MP_T";
+	displayName="MP-T";
+	displayNameShort="MP-T";
+	count=12;
+};
+class RC_16Rnd_120mm_MP_T: RC_12Rnd_120mm_MP_T
+{
+	count=16;
+};
+class RC_20Rnd_120mm_MP_T: RC_12Rnd_120mm_MP_T
+{
+	count=20;
+};
+
+
+class 24Rnd_120mm_APFSDS_shells;
+class RC_12Rnd_120mm_APFSDS_T: 24Rnd_120mm_APFSDS_shells
+{
+	count=12;
+};
+class RC_16Rnd_120mm_APFSDS_T: RC_12Rnd_120mm_APFSDS_T
+{
+	count=16;
+};
+class RC_20Rnd_120mm_APFSDS_T: RC_12Rnd_120mm_APFSDS_T
+{
+	count=20;
+};
+
+
+class 4Rnd_120mm_LG_cannon_missiles;
+class RC_3Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
+{
+	displayName="Datalink Guided";
+	displayNameShort="DL Guided";
+	ammo="RC_M_120mm_cannon_ATGM_DLG";
+	count=3;
 };
 
 
@@ -6373,35 +6437,6 @@ class RC_39Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backuplowHEAB
 class RC_40Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backuplowHEAB
 {
 	count=40;
-};
-
-
-// 120mm LOS Section
-class 8Rnd_120mm_HEAT_MP_T_Green;
-class 12Rnd_120mm_MP_T_Green: 8Rnd_120mm_HEAT_MP_T_Green
-{
-	ammo="RC_Sh_120mm_MP_T_Green";
-	displayName="MP-T";
-	displayNameShort="MP-T";
-	count=12;
-};
-class 16Rnd_120mm_MP_T_Green: 12Rnd_120mm_MP_T_Green
-{
-	count=16;
-};
-class 20Rnd_120mm_MP_T_Green: 12Rnd_120mm_MP_T_Green
-{
-	count=20;
-};
-
-
-class 4Rnd_120mm_LG_cannon_missiles;
-class 3Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
-{
-	displayName="Datalink Guided";
-	displayNameShort="DL Guided";
-	ammo="RC_M_120mm_cannon_ATGM_DLG";
-	count=3;
 };
 
 

@@ -88,6 +88,7 @@ class RC_ATGM_Lock: missiles_titan_static
 };
 
 
+//Vehicle MMG's
 class HMG_127_AFV;
 class RC_MMG_338_FSV_Base: HMG_127_AFV
 {
@@ -96,7 +97,7 @@ class RC_MMG_338_FSV_Base: HMG_127_AFV
 class RC_MMG_338_FSV: RC_MMG_338_FSV_Base
 {
 	author="Ascent";
-	displayName=".338 NM";
+	displayName="coaxial MMG";
 	maxZeroing=3000;
 	FCSZeroingDelay=0.75;
 	magazines[]=
@@ -129,7 +130,7 @@ class RC_MMG_338_MBT_Base: HMG_127_MBT
 class RC_MMG_338_MBT: RC_MMG_338_MBT_Base
 {
 	author="Ascent";
-	displayName=".338 NM";
+	displayName="coaxial MMG";
 	maxZeroing=3000;
 	FCSZeroingDelay=0.75;
 	magazines[]=
@@ -152,6 +153,76 @@ class RC_MMG_338_MBT_coax: RC_MMG_338_MBT
 			directionName="konec hlavne3";
 			effectName="MachineGunCloud";
 		};
+	};
+};
+class LMG_coax;
+class RC_MMG_338_IFV_Base: LMG_coax
+{
+	class manual;
+};
+class RC_MMG_338_IFV: RC_MMG_338_IFV_Base
+{
+	author="Ascent";
+	displayName="coaxial MMG";
+	maxZeroing=3000;
+	FCSZeroingDelay=0.75;
+	magazines[]=
+	{
+		"RC_200Rnd_338_T_Mag"
+	};
+	class manual: manual
+	{
+		displayName=".338 NM";
+		dispersion=0.001;
+	};
+};
+
+
+//40mm Autocannon
+class autocannon_40mm_CTWS;
+class RC_autocannon_40mm_CTWS_Base: autocannon_40mm_CTWS
+{
+	class HE;
+	class AP;
+};
+class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
+{
+	author="Ascent";
+	FCSZeroingDelay=0.75;
+
+	class HE: HE
+	{
+		magazines[]=
+		{
+			"RC_50Rnd_40mm_MP_T"
+		};
+	};
+	class AP: AP
+	{
+		magazines[]=
+		{
+			"RC_50Rnd_40mm_APFSDS_T"
+		};
+	};
+};
+
+
+//120mm direct fire
+class cannon_120mm;
+class RC_cannon_120mm: cannon_120mm
+{
+	displayName="120mm";
+	reloadTime=5;
+	magazineReloadTime=5;
+	magazines[]=
+	{
+		"RC_12Rnd_120mm_APFSDS_T",
+		"RC_16Rnd_120mm_APFSDS_T",
+		"RC_20Rnd_120mm_APFSDS_T",
+		"RC_12Rnd_120mm_MP_T",
+		"RC_16Rnd_120mm_MP_T",
+		"RC_20Rnd_120mm_MP_T",
+		"RC_3Rnd_120mm_DLG_cannon_missiles"
 	};
 };
 
@@ -1617,26 +1688,6 @@ class RC_ShipCannon_120mm_V4: RC_ShipCannon_120mm_V3
 	class Single8: Single8
 	{
 		artilleryDispersion=2;
-	};
-};
-
-
-//120mm Cannon
-class cannon_120mm;
-class RC_cannon_120mm: cannon_120mm
-{
-	displayName="120mm";
-	reloadTime=5;
-	magazineReloadTime=5;
-	magazines[]=
-	{
-		"12Rnd_120mm_APFSDS_shells",
-		"12Rnd_120mm_APFSDS_shells_Tracer_Green",
-		"20Rnd_120mm_APFSDS_shells_Tracer_Green",
-		"12Rnd_120mm_MP_T_Green",
-		"16Rnd_120mm_MP_T_Green",
-		"20Rnd_120mm_MP_T_Green",
-		"3Rnd_120mm_DLG_cannon_missiles"
 	};
 };
 

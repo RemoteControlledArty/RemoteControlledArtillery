@@ -30,12 +30,25 @@ if (!isserver) exitwith {}; = server client only, not every player client
 
 Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
-ReconMortar "In your mod or script, add an initialization script to the "base" vehicle, so whenever one of them is created, it creates the turret and attaches it."
 
--block fire for too low angle with airburst
+-ReconMortar "In your mod or script, add an initialization script to the "base" vehicle, so whenever one of them is created, it creates the turret and attaches it."
+*attach at specific model space
+*pos of mortar to modelspace of vehicle, worldtomodelvisual: https://community.bistudio.com/wiki/worldToModelVisual
+gpsTarget = createVehicleLocal ["RC_Mortar", (markerPos _x), [], 0, "CAN_COLLIDE"];
+
+object1 attachTo [object2, offset, memPoint, followBoneRotation]
+
+"RC_Mortar" createVehicle [0,0,0];
+
+Use the modelSpace position you get from worldToModelVisual as the offset parameter
+
+-isPlayer for eventhandlers
+
+-check if createvehiclelocal gps works for multiplayer
 -test 230mm offset visual
 -test with vanilla hotkey, esp 3&5
--test elevation of 120mm
+-Designator/UAV section
+-grenade dropper distance to
 
 
 
@@ -45,6 +58,7 @@ TO DO - QUALITY OF LIFE:
 
 POSTPONED:
 
+-disable turning out option of RC IC
 -smaller magazine shell count selection in attributes
 -guided with simulation shotmissle but with altered values, testing if it connects to misslefeed *it does on manned vic, somehow not on rc'ed... same on Static ATGM
 -1.5m Airburst for MP Guided
@@ -56,7 +70,6 @@ POSTPONED:
 -RC Repair, vehicle (thislist select 0) setfuel 1; vehicle (thislist select 0) setdamage 0; https://community.bistudio.com/wiki/createTrigger
 -fix Static AT self engaging laser spots (how?)
 -RADAR staying on (deactivates after releasing control even when not autonomous, maybe use human crew and locking seats instead?)
--look up if inheriting structure is fully correct
 -guided submunition alternative misslecam
 -guided shell submunition camera (vanilla misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to do with cfgvehicles atleast to trigger)
 -more RC Infantry Carrier's / APC's / IVF's
@@ -214,6 +227,8 @@ DONE - FEATURES:
 -bugfixed gps targets from infinite spawning
 -bugfixed gps target inaccurate positioning
 -added very faint controls display
+-added IFV with automated driver and improved FOV
+-added 40mm MP-T ammo
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)

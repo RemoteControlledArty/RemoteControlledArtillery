@@ -317,6 +317,7 @@ class CfgFunctions
 			class RC_MarkerLoop {postInit=1};
 			class RC_EngineOff {postInit=1};
 			class RC_UAVBlur {postInit=1};
+			class RC_LockSeats {postInit=1};
 			class RC_UAVConnectionFix {postInit=1};
 			class RC_LaserDatalink {postInit=1};
 			class scrollSolutions {};
@@ -391,7 +392,7 @@ class CfgEditorSubcategories
 	class RC_Mortar_subcat {displayname="Mortar's";};
 	class RC_Rocket_subcat {displayname="Rocket System's";};
 	class RC_Spotting_subcat {displayname="Spotting";};
-	class RC_Transport_FSV_subcat {displayname="Transport & FSV's";};
+	class RC_Transport_FSV_subcat {displayname="IC/IFV/FSV/MBT";};
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
 	/*class RC_Targets_subcat {displayname="Target's";};*/
@@ -447,11 +448,11 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV_MBT.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\IC_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\InfantryCarrier.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Recon.hpp"

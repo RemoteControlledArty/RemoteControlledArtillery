@@ -17,7 +17,7 @@ class RC_B_338_T: BulletBase
 	caliber=2;
 	typicalSpeed=890;
 	timeToLive=10;
-	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
 	tracerScale=1.2;
 	tracerStartTime=0.05;
 	tracerEndTime=3;
@@ -36,6 +36,39 @@ class RC_B_338_T: BulletBase
 		frequency=20;
 		distance=1;
 	};
+};
+
+
+class B_40mm_GPR_Tracer_Red;
+class RC_B_40mm_MP_T: B_40mm_GPR_Tracer_Red
+{
+	hit=110;
+	indirectHit=9;
+	indirectHitRange=5;
+	warheadName="HEAT";
+	explosive=0.60000002;
+	caliber=4.5999999;
+	deflecting=1;
+};
+
+
+//120mm of FSV/MBT
+class ammo_Penetrator_120mm;
+class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
+{
+	warheadName="TandemHEAT";
+};
+class Sh_120mm_HEAT_MP_T_Red;
+class RC_Sh_120mm_MP_T: Sh_120mm_HEAT_MP_T_Red
+{
+	aiAmmoUsageFlags="64 + 128 + 512";
+	warheadName="TandemHEAT";	//warheadName="HE";
+	submunitionAmmo="RC_ammo_Penetrator_120mm";
+	hit=95;
+	indirectHit=50;
+	indirectHitRange=10;
+	deflecting=4;
+	craterEffects="AAMissileCrater";
 };
 
 
@@ -2078,27 +2111,6 @@ class RC_Smoke_120mm_AMOS_White: RC_Smoke_105mm_AMOS_White
 		"poissondisc",
 		10
 	};
-};
-
-
-//120mm of FSV/MBT
-class ammo_Penetrator_120mm;
-class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
-{
-	warheadName="TandemHEAT";
-};
-class Sh_120mm_HEAT_MP;
-class RC_Sh_120mm_MP_T_Green: Sh_120mm_HEAT_MP
-{
-	aiAmmoUsageFlags="64 + 128 + 512";
-	warheadName="TandemHEAT";	//warheadName="HE";
-	submunitionAmmo="RC_ammo_Penetrator_120mm";
-	hit=95;
-	indirectHit=50;
-	indirectHitRange=10;
-	deflecting=4;
-	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";
-	craterEffects="AAMissileCrater";
 };
 
 
