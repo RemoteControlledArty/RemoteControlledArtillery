@@ -77,13 +77,6 @@ class CfgPatches
 			RC_Static_ATGM_A_Bag_I,
 			RC_Static_ATGM_WD_Bag_I,
 
-			RC_Howitzer_NA_A,
-			RC_Howitzer_NA_WD,
-			RC_Howitzer_NA_A_O,
-			RC_Howitzer_NA_WD_O,
-			RC_Howitzer_NA_A_I,
-			RC_Howitzer_NA_WD_I,
-
 			RC_Howitzer_A,
 			RC_Howitzer_WD,
 			RC_Howitzer_A_O,
@@ -91,25 +84,12 @@ class CfgPatches
 			RC_Howitzer_A_I,
 			RC_Howitzer_WD_I,
 
-			RC_Howitzer_NA_HEX_A_O,
-			RC_Howitzer_NA_HEX_WD_O,
-
 			RC_Howitzer_HEX_A_O,
 			RC_Howitzer_HEX_WD_O,
 
-			RC_Static_NA_Arty,
-			RC_Static_NA_Arty_O,
-			RC_Static_NA_Arty_I,
 			RC_Static_Arty,
 			RC_Static_Arty_O,
 			RC_Static_Arty_I,
-
-			RC_MLRS_NA_A,
-			RC_MLRS_NA_WD,
-			RC_MLRS_NA_A_O,
-			RC_MLRS_NA_WD_O,
-			RC_MLRS_NA_A_I,
-			RC_MLRS_NA_WD_I,
 
 			RC_MLRS_A,
 			RC_MLRS_WD,
@@ -117,13 +97,6 @@ class CfgPatches
 			RC_MLRS_WD_O,
 			RC_MLRS_A_I,
 			RC_MLRS_WD_I,
-
-			RC_MRL_NA_DIG,
-			RC_MRL_NA_WD,
-			RC_MRL_NA_HEX_O,
-			RC_MRL_NA_WD_O,
-			RC_MRL_NA_DIG_I,
-			RC_MRL_NA_WD_I,
 
 			RC_MRL_DIG,
 			RC_MRL_WD,
@@ -156,40 +129,25 @@ class CfgPatches
 			RC_ATGM_small_DIG_I,
 			RC_ATGM_small_WD_I,
 
-			RC_Mortar_NA,
-			RC_Mortar_NA_O,
-			RC_Mortar_NA_HEX_O,
-			RC_Mortar_NA_I,
-
 			RC_Mortar,
 			RC_Mortar_O,
 			RC_Mortar_HEX_O,
 			RC_Mortar_I,
-
-			RC_Mortar_Bag_NA,
-			RC_Mortar_Bag_NA_O,
-			RC_Mortar_Bag_NA_HEX_O,
-			RC_Mortar_Bag_NA_I,
 
 			RC_Mortar_Bag,
 			RC_Mortar_Bag_O,
 			RC_Mortar_Bag_HEX_O,
 			RC_Mortar_Bag_I,
 
-			RC_Mortar_ER,
-			RC_Mortar_ER_O,
-			RC_Mortar_ER_HEX_O,
-			RC_Mortar_ER_I,
-
-			RC_Mortar_ER_Bag,
-			RC_Mortar_ER_Bag_O,
-			RC_Mortar_ER_Bag_HEX_O,
-			RC_Mortar_ER_Bag_I,
-
 			RC_VehicleMortar,
 			RC_VehicleMortar_O,
 			RC_VehicleMortar_HEX_O,
 			RC_VehicleMortar_I,
+
+			RC_Mortar_Carrier_WD,
+			RC_Mortar_Carrier_WD_O,
+			RC_Mortar_Carrier_DIG_I,
+			RC_Mortar_Carrier_WD_I,
 
 			RC_UAV_AR1,
 			RC_UAV_AR3,
@@ -253,6 +211,13 @@ class CfgPatches
 			RC_MBT6_A_I,
 			RC_MBT6_WD_I,
 
+			RC_IFV_A,
+			RC_IFV_WD,
+			RC_IFV_A_O,
+			RC_IFV_WD_O,
+			RC_IFV_A_I,
+			RC_IFV_WD_I,
+
 			RC_GPSDatalinkTarget
 		};
 
@@ -267,6 +232,9 @@ class CfgPatches
 			RC_MMG_338_FSV_coax,
 			RC_MMG_338_MBT,
 			RC_MMG_338_MBT_coax,
+			RC_MMG_338_IFV,
+			RC_autocannon_40mm_CTWS,
+			RC_cannon_120mm,
 
 			RC_ATGM_SACLOS,
 			RC_ATGM_Lock,
@@ -274,7 +242,6 @@ class CfgPatches
 			RC_mortar_82mm_V1,
 			RC_mortar_82mm_V2,
 			RC_mortar_82mm_V3,
-			RC_mortar_82mm_V4,
 			RC_vehiclemortar_82mm_V4,
 
 			RC_105mm_AMOS_V4,
@@ -283,7 +250,6 @@ class CfgPatches
 			RC_ShipCannon_120mm_V2,
 			RC_ShipCannon_120mm_V3,
 			RC_ShipCannon_120mm_V4,
-			RC_cannon_120mm,
 
 			RC_155mm_AMOS_V1,
 			RC_155mm_AMOS_V2,
@@ -351,10 +317,6 @@ class CfgFactionClasses
 		icon="\a3\Data_f\cfgFactionClasses_OPF_ca.paa";
 		priority=0;
 	};
-	class RemoteControlled_NA_O: RemoteControlled_O
-	{
-		displayName="non adjustable Remote Controlled: Artillery";
-	};
 
 	class RemoteControlled_B
 	{
@@ -363,10 +325,6 @@ class CfgFactionClasses
 		flag="\a3\Data_f\Flags\flag_nato_co.paa";
 		icon="\a3\Data_f\cfgFactionClasses_BLU_ca.paa";
 		priority=0;
-	};
-	class RemoteControlled_NA_B: RemoteControlled_B
-	{
-		displayName="non adjustable Remote Controlled: Artillery";
 	};
 
 	class RemoteControlled_I
@@ -377,10 +335,6 @@ class CfgFactionClasses
 		icon="\a3\Data_f\cfgFactionClasses_IND_ca.paa";
 		priority=0;
 	};
-	class RemoteControlled_NA_I: RemoteControlled_I
-	{
-		displayName="non adjustable Remote Controlled: Artillery";
-	};
 };
 
 
@@ -388,18 +342,14 @@ class CfgEditorSubcategories
 {
 	class RC_AntiAir_subcat {displayname="Anti-Air";};
 	class RC_ATGM_subcat {displayname="ATGM's";};
-	class RC_Howitzer_subcat {displayname="Howitzer's";};
-	class RC_Mortar_subcat {displayname="Mortar's";};
-	class RC_Rocket_subcat {displayname="Rocket System's";};
-	class RC_Spotting_subcat {displayname="Spotting";};
-	class RC_Transport_FSV_subcat {displayname="IC/IFV/FSV/MBT";};
+	class RC_Designator_subcat {displayname="Designator's";};
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
-	/*class RC_Targets_subcat {displayname="Target's";};*/
-
-	class RC_Mortar_NA_subcat {displayname="non adjustable Mortar's";};
-	class RC_Howitzer_NA_subcat {displayname="non adjustable Howitzer's";};
-	class RC_Rocket_NA_subcat {displayname="non adjustable Rocket System's";};
+	class RC_Howitzer_subcat {displayname="Howitzer's";};
+	class RC_Transport_FSV_subcat {displayname="IC/IFV/FSV/MBT's";};
+	class RC_Mortar_subcat {displayname="Mortar's";};
+	class RC_Rocket_subcat {displayname="Rocket System's";};
+	class RC_UAV_subcat {displayname="UAV's";};
 };
 
 

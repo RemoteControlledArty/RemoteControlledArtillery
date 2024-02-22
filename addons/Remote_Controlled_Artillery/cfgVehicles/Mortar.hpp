@@ -1,5 +1,5 @@
 class B_Mortar_01_F;
-class RC_Mortar_NA_base: B_Mortar_01_F
+class RC_Mortar_base: B_Mortar_01_F
 {
 	class Turrets;
 	class MainTurret;
@@ -12,12 +12,13 @@ class RC_Mortar_NA_base: B_Mortar_01_F
 	scopeCurator=0;
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 };
-class RC_Mortar_NA: RC_Mortar_NA_base
+class RC_Mortar: RC_Mortar_base
 {
-	displayName="RC Mortar (non adjustable)";
-	faction="RemoteControlled_NA_B";
-	editorSubcategory="RC_Mortar_NA_subcat";
+	displayName="RC Mortar 4km";
+	faction="RemoteControlled_B";
+	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;
@@ -90,7 +91,7 @@ class RC_Mortar_NA: RC_Mortar_NA_base
 	{
 		dissasembleTo[]=
 		{
-			"RC_Mortar_Bag_NA"
+			"RC_Mortar_Bag"
 		};
 	};
 
@@ -99,6 +100,27 @@ class RC_Mortar_NA: RC_Mortar_NA_base
 		class MainTurret: MainTurret
 		{
 			gunnerForceOptics=1;
+
+			weapons[]=
+			{
+				"RC_mortar_82mm_V3"
+			};
+			magazines[]=
+			{
+				"RC_10Rnd_82mm_Mo_shells",
+				"RC_4Rnd_82mm_Mo_HEAB",
+				"RC_5Rnd_82mm_Mo_MultiGuided",
+				"RC_15Rnd_82mm_Mo_Smoke_white",
+				"RC_9Rnd_82mm_Mo_AT_mine",
+				"RC_6Rnd_82mm_Mo_mine",
+				"RC_10Rnd_82mm_Mo_Flare_white"
+			};
+			class ViewOptics: ViewOptics
+			{
+				initFov=0.125;
+				minFov=0.0125;
+				maxFov=0.89999998;
+			};
 
 			class Components: Components
 			{
@@ -141,93 +163,6 @@ class RC_Mortar_NA: RC_Mortar_NA_base
 						*/
 					};
 				};
-			};
-		};
-	};
-};
-class RC_Mortar_NA_O: RC_Mortar_NA
-{
-	faction="RemoteControlled_NA_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Mortar_Bag_NA_O"
-		};
-	};
-};
-class RC_Mortar_NA_HEX_O: RC_Mortar_NA_O
-{
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Mortar_Bag_NA_HEX_O"
-		};
-	};
-
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Mortar_01_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\Static_f\Mortar_01\data\Mortar_01_OPFOR_CO.paa"
-	};
-};
-class RC_Mortar_NA_I: RC_Mortar_NA
-{
-	faction="RemoteControlled_NA_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Mortar_Bag_NA_I"
-		};
-	};
-};
-class RC_Mortar: RC_Mortar_NA
-{
-	displayName="RC Mortar 4km";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_Mortar_subcat";
-
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Mortar_Bag"
-		};
-	};
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			gunnerForceOptics=1;
-
-			weapons[]=
-			{
-				"RC_mortar_82mm_V3"
-			};
-			magazines[]=
-			{
-				"RC_10Rnd_82mm_Mo_shells",
-				"RC_4Rnd_82mm_Mo_HEAB",
-				"RC_15Rnd_82mm_Mo_Smoke_white",
-				"RC_5Rnd_82mm_Mo_MultiGuided",
-				"RC_9Rnd_82mm_Mo_AT_mine",
-				"RC_6Rnd_82mm_Mo_mine",
-				"RC_10Rnd_82mm_Mo_Flare_white"
-			};
-			class ViewOptics: ViewOptics
-			{
-				initFov=0.125;
-				minFov=0.0125;
-				maxFov=0.89999998;
 			};
 		};
 	};
@@ -279,13 +214,13 @@ class RC_Mortar_I: RC_Mortar
 
 
 class B_Mortar_01_weapon_F;
-class RC_Mortar_Bag_NA_base: B_Mortar_01_weapon_F
+class RC_Mortar_Bag_base: B_Mortar_01_weapon_F
 {
 	class assembleInfo;
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Mortar_Bag_NA: RC_Mortar_Bag_NA_base
+class RC_Mortar_Bag: RC_Mortar_Bag_base
 {
 	displayName="RC Mortar (non adjustable)";
 	scope=2;
@@ -303,64 +238,21 @@ class RC_Mortar_Bag_NA: RC_Mortar_Bag_NA_base
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Mortar";
-		assembleTo="RC_Mortar_NA";
+		assembleTo="RC_Mortar";
 		base="";
 	};
 };
-class RC_Mortar_Bag_NA_O: RC_Mortar_Bag_NA
+class RC_Mortar_Bag_O: RC_Mortar_Bag
 {
 	displayName="RC Mortar [Opf] (non adjustable)";
 
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Mortar [Opf]";
-		assembleTo="RC_Mortar_NA_O";
-	};
-};
-class RC_Mortar_Bag_NA_HEX_O: RC_Mortar_Bag_NA_base
-{
-	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_hex.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_Tortila_hex_co.paa"
-	};
-
-	class assembleInfo: assembleInfo
-	{
-		assembleTo="RC_Mortar_NA_HEX_O";
-	};
-};	
-class RC_Mortar_Bag_NA_I: RC_Mortar_Bag_NA
-{
-	displayName="RC Mortar [Ind] (non adjustable)";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Mortar [Ind]";
-		assembleTo="RC_Mortar_NA_I";
-	};
-};
-class RC_Mortar_Bag: RC_Mortar_Bag_NA
-{
-	displayName="RC Mortar 4km";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Mortar 4km";
-		assembleTo="RC_Mortar";
-	};
-};
-class RC_Mortar_Bag_O: RC_Mortar_Bag
-{
-	displayName="RC Mortar 4km [Opf]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Mortar 4km [Opf]";
 		assembleTo="RC_Mortar_O";
 	};
 };
-class RC_Mortar_Bag_HEX_O: RC_Mortar_Bag_O
+class RC_Mortar_Bag_HEX_O: RC_Mortar_Bag_base
 {
 	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_hex.paa";
 	hiddenSelectionsTextures[]=
@@ -375,216 +267,12 @@ class RC_Mortar_Bag_HEX_O: RC_Mortar_Bag_O
 };	
 class RC_Mortar_Bag_I: RC_Mortar_Bag
 {
-	displayName="RC Mortar 4km [Ind]";
+	displayName="RC Mortar [Ind] (non adjustable)";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Mortar 4km [Ind]";
+		displayName="RC Mortar [Ind]";
 		assembleTo="RC_Mortar_I";
-	};
-};
-
-
-class RC_Mortar_ER: RC_Mortar
-{
-	displayName="RC Mortar 8km";
-	
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Mortar_ER_Bag"
-		};
-	};
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
-					class AirTarget
-					{
-						minRange=8000;
-						maxRange=8000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=8000;
-						maxRange=8000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=12000;
-
-					class AirTarget
-					{
-						minRange=12000;
-						maxRange=12000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=12000;
-						maxRange=12000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			weapons[]=
-			{
-				"RC_mortar_82mm_V4"
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={8000,4000,2000,1000,500,250};
-							resource="RscCustomInfoSensors";
-						};
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="EmptyDisplayComponent";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						/*
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-							resource="RscTransportCameraComponentMissile";
-						};
-						*/
-					};
-				};
-			};
-		};
-	};
-};
-class RC_Mortar_ER_O: RC_Mortar_ER
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Mortar_ER_Bag_O"
-		};
-	};
-};
-class RC_Mortar_ER_HEX_O: RC_Mortar_ER_O
-{
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Mortar_ER_Bag_HEX_O"
-		};
-	};
-
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Mortar_01_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\Static_f\Mortar_01\data\Mortar_01_OPFOR_CO.paa"
-	};
-};
-class RC_Mortar_ER_I: RC_Mortar_ER
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Mortar_ER_Bag_I"
-		};
-	};
-};
-
-
-class RC_Mortar_ER_Bag: RC_Mortar_Bag
-{
-	displayName="RC Mortar 8km";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Mortar 8km";
-		assembleTo="RC_Mortar_ER";
-	};
-};
-class RC_Mortar_ER_Bag_O: RC_Mortar_ER_Bag
-{
-	displayName="RC Mortar 8km [Opf]";
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Mortar 8km [Opf]";
-		assembleTo="RC_Mortar_ER_O";
-	};
-};
-class RC_Mortar_ER_Bag_HEX_O: RC_Mortar_ER_Bag_O
-{
-	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_hex.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_Tortila_hex_co.paa"
-	};
-
-	class assembleInfo: assembleInfo
-	{
-		assembleTo="RC_Mortar_ER_HEX_O";
-	};
-};	
-class RC_Mortar_ER_Bag_I: RC_Mortar_ER_Bag
-{
-	displayName="RC Mortar 8km [Ind]";
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Mortar 8km [Ind]";
-		assembleTo="RC_Mortar_ER_I";
 	};
 };
 

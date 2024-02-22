@@ -1,4 +1,3 @@
-// non adjustable Howitzers, incompatible with new munition, but compatible with munition mods
 class B_MBT_01_arty_F;
 class RC_Howitzer_base: B_MBT_01_arty_F
 {
@@ -21,11 +20,11 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 };
-class RC_Howitzer_NA_A: RC_Howitzer_base
+class RC_Howitzer_A: RC_Howitzer_base
 {
-	displayName="RC Howitzer (non adjustable)";
-	faction="RemoteControlled_NA_B";
-	editorSubcategory="RC_Howitzer_NA_subcat";
+	displayName="RC Howitzer";
+	faction="RemoteControlled_B";
+	editorSubcategory="RC_Howitzer_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;
@@ -134,6 +133,25 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 			forceHideGunner=1;
 			maxElev=87.02;
 
+			gunnerForceOptics=1;
+			weapons[]=
+			{
+				"RC_155mm_AMOS_V4",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_10Rnd_155mm_Mo_shells",
+				"RC_4Rnd_155mm_Mo_HEAB",
+				"RC_5Rnd_155mm_Mo_MultiGuided",
+				"RC_2Rnd_155mm_Mo_Cluster",
+				"RC_15Rnd_155mm_Mo_smoke",
+				"RC_9Rnd_155mm_Mo_AT_mine",
+				"RC_6Rnd_155mm_Mo_mine",
+				"RC_10Rnd_155mm_Mo_Illum",
+				"SmokeLauncherMag"
+			};
+
 			class OpticsIn: OpticsIn
 			{
 				class Wide: Wide
@@ -236,7 +254,7 @@ class RC_Howitzer_NA_A: RC_Howitzer_base
 	{
 	};
 };
-class RC_Howitzer_NA_WD: RC_Howitzer_NA_A
+class RC_Howitzer_WD: RC_Howitzer_A
 {
 	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_arty_F.jpg";
@@ -246,109 +264,6 @@ class RC_Howitzer_NA_WD: RC_Howitzer_NA_A
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_scorcher_olive_CO.paa",
 		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
 		"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
-	};
-};
-class RC_Howitzer_NA_A_O: RC_Howitzer_NA_A
-{
-	faction="RemoteControlled_NA_O";
-	crew="O_UAV_AI";
-	side=0;
-};
-class RC_Howitzer_NA_WD_O: RC_Howitzer_NA_WD
-{
-	faction="RemoteControlled_NA_O";
-	crew="O_UAV_AI";
-	side=0;
-};
-class RC_Howitzer_NA_A_I: RC_Howitzer_NA_A
-{
-	faction="RemoteControlled_NA_I";
-	crew="I_UAV_AI";
-	side=2;
-};
-class RC_Howitzer_NA_WD_I: RC_Howitzer_NA_WD
-{
-	faction="RemoteControlled_NA_I";
-	crew="I_UAV_AI";
-	side=2;
-};
-
-//adjustable Howitzers with improved ammunition
-class RC_Howitzer_A: RC_Howitzer_NA_A
-{
-	displayName="RC Howitzer";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_Howitzer_subcat";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			gunnerForceOptics=1;
-			weapons[]=
-			{
-				"RC_155mm_AMOS_V4",
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"RC_10Rnd_155mm_Mo_shells",
-				"RC_4Rnd_155mm_Mo_HEAB",
-				"RC_15Rnd_155mm_Mo_smoke",
-				"RC_5Rnd_155mm_Mo_MultiGuided",
-				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_9Rnd_155mm_Mo_AT_mine",
-				"RC_6Rnd_155mm_Mo_mine",
-				"RC_10Rnd_155mm_Mo_Illum",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-class RC_Howitzer_WD: RC_Howitzer_NA_WD
-{
-	displayName="RC Howitzer";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_Howitzer_subcat";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			gunnerForceOptics=1;
-
-			weapons[]=
-			{
-				"RC_155mm_AMOS_V4",
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"RC_10Rnd_155mm_Mo_shells",
-				"RC_4Rnd_155mm_Mo_HEAB",
-				"RC_15Rnd_155mm_Mo_smoke",
-				"RC_5Rnd_155mm_Mo_MultiGuided",
-				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_9Rnd_155mm_Mo_AT_mine",
-				"RC_6Rnd_155mm_Mo_mine",
-				"RC_10Rnd_155mm_Mo_Illum",
-				"SmokeLauncherMag"
-			};
-			class OpticsIn: OpticsIn
-			{
-				class Wide: Wide
-				{
-					initFov=0.125;
-					minFov=0.0125;
-					maxFov=0.89999998;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-				};
-			};
-		};
 	};
 };
 class RC_Howitzer_A_O: RC_Howitzer_A
@@ -379,7 +294,7 @@ class RC_Howitzer_WD_I: RC_Howitzer_WD
 
 //HEX Camo Howitzers (Opfor only)
 class O_MBT_02_arty_F;
-class RC_Howitzer_base_HEX_O: O_MBT_02_arty_F
+class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -400,11 +315,11 @@ class RC_Howitzer_base_HEX_O: O_MBT_02_arty_F
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 };
-class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
+class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 {
-	displayName="RC Howitzer (non adjustable)";
-	faction="RemoteControlled_NA_O";
-	editorSubcategory="RC_Howitzer_NA_subcat";
+	displayName="RC Howitzer";
+	faction="RemoteControlled_O";
+	editorSubcategory="RC_Howitzer_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;
@@ -511,6 +426,24 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 			forceHideGunner=1;
 			maxElev=87.02;
 
+			weapons[]=
+			{
+				"RC_155mm_AMOS_V4",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_10Rnd_155mm_Mo_shells",
+				"RC_4Rnd_155mm_Mo_HEAB",
+				"RC_5Rnd_155mm_Mo_MultiGuided",
+				"RC_2Rnd_155mm_Mo_Cluster",
+				"RC_15Rnd_155mm_Mo_smoke",
+				"RC_9Rnd_155mm_Mo_AT_mine",
+				"RC_6Rnd_155mm_Mo_mine",
+				"RC_10Rnd_155mm_Mo_Illum",
+				"SmokeLauncherMag"
+			};
+
 			class OpticsIn: OpticsIn
 			{
 				class Wide: Wide
@@ -606,10 +539,8 @@ class RC_Howitzer_NA_HEX_A_O: RC_Howitzer_base_HEX_O
 	{
 	};
 };
-class RC_Howitzer_NA_HEX_WD_O: RC_Howitzer_NA_HEX_A_O
+class RC_Howitzer_HEX_WD_O: RC_Howitzer_HEX_A_O
 {
-	displayName="RC Howitzer (non adjustable)";
-
 	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_MBT_02_arty_ghex_F.jpg";
 	textureList[]=
@@ -624,66 +555,6 @@ class RC_Howitzer_NA_HEX_WD_O: RC_Howitzer_NA_HEX_A_O
 		"a3\Armor_F_Exp\MBT_02\Data\MBT_02_ghex_CO.paa",
 		"a3\Data_F_Exp\Vehicles\Turret_ghex_CO.paa",
 		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa"
-	};
-};
-class RC_Howitzer_HEX_A_O: RC_Howitzer_NA_HEX_A_O
-{
-	faction="RemoteControlled_O";
-	displayName="RC Howitzer";
-	editorSubcategory="RC_Howitzer_subcat";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			weapons[]=
-			{
-				"RC_155mm_AMOS_V4",
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"RC_10Rnd_155mm_Mo_shells",
-				"RC_4Rnd_155mm_Mo_HEAB",
-				"RC_15Rnd_155mm_Mo_smoke",
-				"RC_5Rnd_155mm_Mo_MultiGuided",
-				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_9Rnd_155mm_Mo_AT_mine",
-				"RC_6Rnd_155mm_Mo_mine",
-				"RC_10Rnd_155mm_Mo_Illum",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-class RC_Howitzer_HEX_WD_O: RC_Howitzer_NA_HEX_WD_O
-{
-	faction="RemoteControlled_O";
-	displayName="RC Howitzer";
-	editorSubcategory="RC_Howitzer_subcat";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			weapons[]=
-			{
-				"RC_155mm_AMOS_V4",
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"RC_10Rnd_155mm_Mo_shells",
-				"RC_4Rnd_155mm_Mo_HEAB",
-				"RC_15Rnd_155mm_Mo_smoke",
-				"RC_5Rnd_155mm_Mo_MultiGuided",
-				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_9Rnd_155mm_Mo_AT_mine",
-				"RC_6Rnd_155mm_Mo_mine",
-				"RC_10Rnd_155mm_Mo_Illum",
-				"SmokeLauncherMag"
-			};
-		};
 	};
 };
 
@@ -701,84 +572,17 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 };
-class RC_Static_NA_Arty: RC_Static_Arty_base
+class RC_Static_Arty: RC_Static_Arty_base
 {
-	displayName="RC Static Howitzer (non adjustable)";
-	faction="RemoteControlled_NA_B";
-	editorSubcategory="RC_Howitzer_NA_subcat";
+	displayName="RC Static Howitzer";
+	faction="RemoteControlled_B";
+	editorSubcategory="RC_Howitzer_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
 	incomingMissileDetectionSystem=16;
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
-					class AirTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=67000;
-
-					class AirTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
-};
-class RC_Static_NA_Arty_O: RC_Static_NA_Arty
-{
-	faction="RemoteControlled_NA_O";
-	crew="O_UAV_AI";
-	side=0;
-};
-class RC_Static_NA_Arty_I: RC_Static_NA_Arty
-{
-	faction="RemoteControlled_NA_I";
-	crew="I_UAV_AI";
-	side=2;
-};
-class RC_Static_Arty: RC_Static_NA_Arty
-{
-	displayName="RC Static Howitzer";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_Howitzer_subcat";
 
 	class Turrets: Turrets
 	{
@@ -794,9 +598,9 @@ class RC_Static_Arty: RC_Static_NA_Arty
 			{
 				"RC_10Rnd_120mm_Mo_shells",
 				"RC_4Rnd_120mm_Mo_HEAB",
-				"RC_15Rnd_120mm_Mo_smoke",
 				"RC_5Rnd_120mm_Mo_MultiGuided",
 				"RC_2Rnd_120mm_Mo_Cluster",
+				"RC_15Rnd_120mm_Mo_smoke",
 				"RC_9Rnd_120mm_Mo_AT_mine",
 				"RC_6Rnd_120mm_Mo_mine",
 				"RC_10Rnd_120mm_Mo_Illum"
@@ -841,6 +645,55 @@ class RC_Static_Arty: RC_Static_NA_Arty
 							resource="RscTransportCameraComponentMissile";
 						};
 						*/
+					};
+				};
+			};
+		};
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=67000;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
 					};
 				};
 			};

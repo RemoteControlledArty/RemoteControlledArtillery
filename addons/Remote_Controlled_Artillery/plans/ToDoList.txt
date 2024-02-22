@@ -33,25 +33,16 @@ Arty:
 
 -leg hiding script
 
--recon radar camera bug, similarish to ar-2 bug
-
--ReconMortar "In your mod or script, add an initialization script to the "base" vehicle, so whenever one of them is created, it creates the turret and attaches it."
-*attach at specific model space
-*pos of mortar to modelspace of vehicle, worldtomodelvisual: https://community.bistudio.com/wiki/worldToModelVisual
-
-object1 attachTo [object2, offset, memPoint, followBoneRotation]
-
-"RC_Mortar" createVehicle [0,0,0];
-
-Use the modelSpace position you get from worldToModelVisual as the offset parameter
+-laser finder normal template not 67km
 
 -isPlayer for eventhandlers
 
 -check if createvehiclelocal gps works for multiplayer
 -test 230mm offset visual
 -test with vanilla hotkey, esp 3&5
--Designator/UAV section
 -grenade dropper distance to
+
+-remove all NA (MLRS MRL)
 
 
 

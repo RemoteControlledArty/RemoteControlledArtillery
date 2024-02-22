@@ -16,7 +16,7 @@ class RC_UAV_AR1: RC_UAV_base
 {
 	displayName="RC AR-1 shortrange";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Spotting_subcat";
+	editorSubcategory="RC_UAV_subcat";
 	scope=2;
 	scopeCurator=2;
 
@@ -467,6 +467,14 @@ class RC_UAV_AR3: RC_UAV_AR1
 						viewDistanceLimitCoef=1;
 					};
 				};
+				class ManSensorComponent: SensorTemplateMan
+				{
+					maxTrackableSpeed=15;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
+					animDirection="mainGun";
+					aimDown=-0.5;
+				};
 			};
 		};
 	};
@@ -705,13 +713,13 @@ class RC_GrenadeDropper_Base: C_IDAP_UAV_06_antimine_F
 	//class pylons1;
 	scope=0;
 	scopeCurator=0;
-	RC_UAVBlur=1;
+	RC_UAVBlur=2;
 };
 class RC_GrenadeDropper: RC_GrenadeDropper_Base
 {
 	displayName="RC Grenade Dropper";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Spotting_subcat";
+	editorSubcategory="RC_UAV_subcat";
 	scope=2;
 	scopeCurator=2;
 	side=1;

@@ -867,58 +867,6 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 	};
 };
 
-//82mm Mortar 8km
-class RC_mortar_82mm_V4: RC_mortar_82mm_V3
-{
-	modes[]=
-	{
-		"Single1",
-		"Single2",
-		"Single3",
-		"Single4",
-		"Single5"
-	};
-	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
-	/*
-	modes[]=
-	{
-		"Single1",
-		"Single2",
-		"Single3",
-		"Single4",
-		"Single5",
-		"Burst1",
-		"Burst2",
-		"Burst3",
-	};
-	*/
-	class Single1: Single1
-	{
-		displayName="CH0, 0.5km";
-		artilleryDispersion=1.9;
-		artilleryCharge=0.34999999;
-	};
-	class Single2: Single1
-	{
-		displayName="CH1, 2km";
-		artilleryCharge=0.69999999;
-	};
-	class Single3: Single1
-	{
-		displayName="CH2, 4km";
-		artilleryCharge=1;
-	};
-	class Single4: Single1
-	{
-		displayName="CH3, 6km";
-		artilleryCharge=1.2129;
-	};
-	class Single5: Single1
-	{
-		displayName="CH4, 8km";
-		artilleryCharge=1.4005;
-	};
-};
 
 //82mm Vehicle Mortar 6km
 class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
@@ -929,7 +877,10 @@ class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 		"Single2",
 		"Single3",
 		"Single4",
-		"Single5"
+		"Single5",
+		"Single6",
+		"Single7",
+		"Single8"
 	};
 	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
 	/*
@@ -940,6 +891,9 @@ class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 		"Single3",
 		"Single4",
 		"Single5",
+		"Single6",
+		"Single7",
+		"Single8",
 		"Burst1",
 		"Burst2",
 		"Burst3",
@@ -954,21 +908,36 @@ class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 	class Single2: Single1
 	{
 		displayName="CH1";
-		artilleryCharge=0.478;
+		artilleryCharge=0.418;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2";
-		artilleryCharge=0.652;
+		artilleryCharge=0.4992;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3";
-		artilleryCharge=0.889;
+		artilleryCharge=0.5962;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4";
+		artilleryCharge=0.712;
+	};
+	class Single6: Single1
+	{
+		displayName="CH5";
+		artilleryCharge=0.8504;
+	};
+	class Single7: Single1
+	{
+		displayName="CH6";
+		artilleryCharge=1.0156;
+	};
+	class Single8: Single1
+	{
+		displayName="CH7";
 		artilleryCharge=1.2129;
 	};
 };

@@ -19,7 +19,7 @@ class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
 {
 	displayname="RC Improved Designator";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Spotting_subcat";
+	editorSubcategory="RC_Designator_subcat";
 	scope=2;
 	scopeCurator=2;
 	enableGPS=1;
