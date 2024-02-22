@@ -40,9 +40,6 @@ Arty:
 -check if createvehiclelocal gps works for multiplayer
 -test 230mm offset visual
 -test with vanilla hotkey, esp 3&5
--grenade dropper distance to
-
--remove all NA (MLRS MRL)
 
 
 

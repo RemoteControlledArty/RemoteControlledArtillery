@@ -500,27 +500,35 @@ class RC_radar_small_WD_I: RC_radar_small_WD
 };
 
 
+//Recon RADAR with Vehicle Mortar attached, for low power but mobile indirect fire support
 class RC_Mortar_Carrier_WD: RC_radar_small_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 	};
-	//[-0.019043, 0.955566, -2.66086]
-	//[[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle;
-	//init="_attachedMortar = 'RC_VehicleMortar' createVehicle [0,0,0]; (_this select 0) spawn {_attachedMortar attachTo [_this, offset, memPoint, followBoneRotation]};";
 
 	displayName="RC Mortar Carrier";
 	editorSubcategory="RC_Mortar_subcat";
 };
 class RC_Mortar_Carrier_WD_O: RC_Mortar_Carrier_WD
 {
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
 class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD
 {
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
@@ -535,6 +543,11 @@ class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD
 };
 class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
 {
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
@@ -891,7 +904,7 @@ class RC_ATGM_small_WD_I: RC_ATGM_small_WD
 
 class RC_ATGM_small_S_WD: RC_ATGM_small_WD
 {
-	displayName="RC Recon stabilized ATGM 4.5km";
+	displayName="RC stabilized Recon ATGM 4.5km";
 
 	class Turrets: Turrets
 	{

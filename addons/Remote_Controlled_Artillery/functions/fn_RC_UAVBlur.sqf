@@ -25,12 +25,12 @@ RC_UAVBlur = [] spawn
 		if (_inDrone && (_uav isNotEqualto objNull)) then {
 			// Checks config if its meant to be a shortrange UAV, no entry means no Effect
 			if (_UAVBlur != 0) then {
-				_uavPos = getpos (getConnectedUAV player);
 				_playerPos = getpos player;
 				_viewPos = screenToWorld [0.5, 0.5];
+				_uavPos = getpos (getConnectedUAV player);
 				_Distance = 1;
-				if (_UAVBlur = 1) then {_Distance = _playerPos distance2d _viewPos;};
-				if (_UAVBlur = 2) then {_Distance = _playerPos distance2d _uavPos;};
+				if (_UAVBlur == 1) then {_Distance = _playerPos distance2d _viewPos;};
+				if (_UAVBlur == 2) then {_Distance = _playerPos distance2d _uavPos;};
 				_viewBlur = 1;
 				if (_Distance >= 1000) then {_viewBlur = 1+((_Distance-1000) * 0.003)^3};	//this seems perfect for limiting past 1500m unusable past 2000m
 				_finalBlur = 0.1 * _viewBlur;	//1500m _finalBlur should not be worse than 0.45 blur to be usefull

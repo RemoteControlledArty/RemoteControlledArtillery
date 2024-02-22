@@ -22,10 +22,10 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 };
 class RC_Howitzer_A: RC_Howitzer_base
 {
+	author="Ascent";
 	displayName="RC Howitzer";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
-	author="Ascent";
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -133,7 +133,6 @@ class RC_Howitzer_A: RC_Howitzer_base
 			forceHideGunner=1;
 			maxElev=87.02;
 
-			gunnerForceOptics=1;
 			weapons[]=
 			{
 				"RC_155mm_AMOS_V4",
@@ -141,7 +140,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 			};
 			magazines[]=
 			{
-				"RC_10Rnd_155mm_Mo_shells",
+				"RC_8Rnd_155mm_Mo_shells",
 				"RC_4Rnd_155mm_Mo_HEAB",
 				"RC_5Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
@@ -317,10 +316,10 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 };
 class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 {
+	author="Ascent";
 	displayName="RC Howitzer";
 	faction="RemoteControlled_O";
 	editorSubcategory="RC_Howitzer_subcat";
-	author="Ascent";
 	scope=2;
 	scopeCurator=2;
 	side=0;
@@ -433,7 +432,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			};
 			magazines[]=
 			{
-				"RC_10Rnd_155mm_Mo_shells",
+				"RC_8Rnd_155mm_Mo_shells",
 				"RC_4Rnd_155mm_Mo_HEAB",
 				"RC_5Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
@@ -574,10 +573,10 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 };
 class RC_Static_Arty: RC_Static_Arty_base
 {
+	author="Ascent";
 	displayName="RC Static Howitzer";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
-	author="Ascent";
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -596,7 +595,7 @@ class RC_Static_Arty: RC_Static_Arty_base
 			};
 			magazines[]=
 			{
-				"RC_10Rnd_120mm_Mo_shells",
+				"RC_8Rnd_120mm_Mo_shells",
 				"RC_4Rnd_120mm_Mo_HEAB",
 				"RC_5Rnd_120mm_Mo_MultiGuided",
 				"RC_2Rnd_120mm_Mo_Cluster",
