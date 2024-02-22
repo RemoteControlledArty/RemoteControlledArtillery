@@ -304,7 +304,7 @@ class RC_radar_small_base: I_LT_01_scout_F
 	class Components;
 	class SensorsManagerComponent;
 	class SensorTemplateDataLink;
-	//class EventHandlers;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 	forceHideDriver=1;
@@ -497,6 +497,18 @@ class RC_radar_small_WD_I: RC_radar_small_WD
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+};
+
+class RC_Mortar_Carrier_WD: RC_radar_small_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		init="(_this select 0) spawn {('RC_VehicleMortar' createVehicle [0,0,0]) attachTo [_this]};";
+	};
+	//init="_attachedMortar = 'RC_VehicleMortar' createVehicle [0,0,0]; (_this select 0) spawn {_attachedMortar attachTo [_this, offset, memPoint, followBoneRotation]};";
+
+	displayName="RC Mortar Carrier";
+	editorSubcategory="RC_Mortar_subcat";
 };
 
 

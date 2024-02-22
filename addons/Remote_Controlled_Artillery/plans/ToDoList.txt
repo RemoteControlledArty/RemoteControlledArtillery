@@ -31,10 +31,13 @@ if (!isserver) exitwith {}; = server client only, not every player client
 Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 
+-leg hiding script
+
+-recon radar camera bug, similarish to ar-2 bug
+
 -ReconMortar "In your mod or script, add an initialization script to the "base" vehicle, so whenever one of them is created, it creates the turret and attaches it."
 *attach at specific model space
 *pos of mortar to modelspace of vehicle, worldtomodelvisual: https://community.bistudio.com/wiki/worldToModelVisual
-gpsTarget = createVehicleLocal ["RC_Mortar", (markerPos _x), [], 0, "CAN_COLLIDE"];
 
 object1 attachTo [object2, offset, memPoint, followBoneRotation]
 
