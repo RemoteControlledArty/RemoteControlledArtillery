@@ -33,6 +33,8 @@ Arty:
 
 -leg hiding script
 
+-IFV -> Gorgon like hitpoints
+
 -laser finder normal template not 67km
 
 -isPlayer for eventhandlers
