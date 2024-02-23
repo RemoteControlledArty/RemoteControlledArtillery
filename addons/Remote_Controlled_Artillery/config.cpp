@@ -171,13 +171,6 @@ class CfgPatches
 			RC_GrenadeDropper_Bag_O,
 			RC_GrenadeDropper_Bag_I,
 
-			RC_Infantry_Carrier_A,
-			RC_Infantry_Carrier_WD,
-			RC_Infantry_Carrier_A_O,
-			RC_Infantry_Carrier_WD_O,
-			RC_Infantry_Carrier_A_I,
-			RC_Infantry_Carrier_WD_I,
-
 			RC_RespawnTruck_A,
 			RC_RespawnTruck_WD,
 			RC_RespawnTruck_A_O,
@@ -197,12 +190,33 @@ class CfgPatches
 			RC_RespawnVan_WD_O,
 			RC_RespawnVan_WD_I,
 
-			RC_FSV_A,
-			RC_FSV_WD,
-			RC_FSV_A_O,
-			RC_FSV_WD_O,
-			RC_FSV_A_I,
-			RC_FSV_WD_I,
+			RC_Infantry_Carrier_1_A,
+			RC_Infantry_Carrier_1_WD,
+			RC_Infantry_Carrier_1_A_O,
+			RC_Infantry_Carrier_1_WD_O,
+			RC_Infantry_Carrier_1_A_I,
+			RC_Infantry_Carrier_1_WD_I,
+
+			RC_Infantry_Carrier_2_A,
+			RC_Infantry_Carrier_2_WD,
+			RC_Infantry_Carrier_2_A_O,
+			RC_Infantry_Carrier_2_WD_O,
+			RC_Infantry_Carrier_2_A_I,
+			RC_Infantry_Carrier_2_WD_I,
+
+			RC_FSV_1_A,
+			RC_FSV_1_WD,
+			RC_FSV_1_A_O,
+			RC_FSV_1_WD_O,
+			RC_FSV_1_A_I,
+			RC_FSV_1_WD_I,
+
+			RC_FSV_2_A,
+			RC_FSV_2_WD,
+			RC_FSV_2_A_O,
+			RC_FSV_2_WD_O,
+			RC_FSV_2_A_I,
+			RC_FSV_2_WD_I,
 
 			RC_MBT6_A,
 			RC_MBT6_WD,
@@ -232,12 +246,15 @@ class CfgPatches
 			RC_MMG_338_FSV_coax,
 			RC_MMG_338_MBT,
 			RC_MMG_338_MBT_coax,
-			RC_MMG_338_IFV,
+			RC_MMG_338_IFV_1,
+			RC_MMG_338_IFV_2,
+			RC_autocannon_30mm_CTWS,
 			RC_autocannon_40mm_CTWS,
 			RC_cannon_120mm,
 
 			RC_ATGM_SACLOS,
 			RC_ATGM_Lock,
+			RC_IFV_Missle_Launcher,
 
 			RC_mortar_82mm_V1,
 			RC_mortar_82mm_V2,
@@ -409,7 +426,6 @@ class CfgVehicles
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first
 	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAT.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Targets.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UAV.hpp"

@@ -66,20 +66,20 @@ class RC_UAV_AR1: RC_UAV_base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
+					animDirection="mainGun";
+					aimDown=-0.5;
 
 					class AirTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -381,20 +381,20 @@ class RC_UAV_AR3: RC_UAV_AR1
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
+					animDirection="mainGun";
+					aimDown=-0.5;
 
 					class AirTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -802,9 +802,6 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
 					class AirTarget
 					{
 						minRange=3000;

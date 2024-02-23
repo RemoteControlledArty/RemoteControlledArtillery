@@ -42,20 +42,17 @@ class RC_Static_AA_A: RC_Static_AA_A_base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
 					class AirTarget
 					{
-						minRange=3500;
-						maxRange=3500;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3500;
-						maxRange=3500;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};

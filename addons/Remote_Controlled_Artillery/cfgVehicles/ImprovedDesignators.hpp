@@ -37,20 +37,17 @@ class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -350,20 +347,17 @@ class RC_Improved_FOV_Designator_Ti_A: RC_Improved_FOV_Designator_A
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};

@@ -39,6 +39,15 @@ class RC_B_338_T: BulletBase
 };
 
 
+class B_30mm_MP_Tracer_Red;
+class RC_B_30mm_MP_T: B_30mm_MP_Tracer_Red
+{
+	indirectHit=6.75;
+	indirectHitRange=3.75;
+	deflecting=1;
+};
+
+
 class B_40mm_GPR_Tracer_Red;
 class RC_B_40mm_MP_T: B_40mm_GPR_Tracer_Red
 {
@@ -52,27 +61,6 @@ class RC_B_40mm_MP_T: B_40mm_GPR_Tracer_Red
 };
 
 
-//120mm of FSV/MBT
-class ammo_Penetrator_120mm;
-class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
-{
-	warheadName="TandemHEAT";
-};
-class Sh_120mm_HEAT_MP_T_Red;
-class RC_Sh_120mm_MP_T: Sh_120mm_HEAT_MP_T_Red
-{
-	aiAmmoUsageFlags="64 + 128 + 512";
-	warheadName="TandemHEAT";	//warheadName="HE";
-	submunitionAmmo="RC_ammo_Penetrator_120mm";
-	hit=95;
-	indirectHit=50;
-	indirectHitRange=10;
-	deflecting=4;
-	craterEffects="AAMissileCrater";
-};
-
-
-//ATGM
 class ammo_Penetrator_Base;
 class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
 {
@@ -80,6 +68,165 @@ class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
 	warheadName="TandemHEAT";
 	hit=780;
 };
+class M_Titan_AT_long;
+class M_Titan_AT_long_Base: M_Titan_AT_long
+{
+	class Components;
+};
+class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
+{
+	submunitionAmmo="RC_ammo_Penetrator_MP";
+	indirectHit=40;
+	indirectHitRange=10;
+	maxControlRange=3000;
+	cmImmunity=0.85;
+	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
+	missileLockMaxDistance=3000;
+	fuseDistance=20;
+	thrust=70;
+	maxSpeed=250;
+	initTime=0.01;
+	cameraViewAvailable=1;
+	weaponLockSystem="2 + 4 + 16";
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	trackLead=1;
+	craterEffects="AAMissileCrater";
+
+	flightProfiles[]=
+	{
+		"TopDown",
+		"Direct"
+	};
+	class TopDown
+	{
+		ascendHeight=400;	//200
+		descendDistance=240;	//240
+		minDistance=240;	//240
+		ascendAngle=45;	//30
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					maxTrackableSpeed=35;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=1500;
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=3000;
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+	};
+};
+
+
+class M_Titan_AA_long;
+class RC_IFV_AA_Base: M_Titan_AA_long
+{
+	class Components;
+};
+class RC_IFV_AA: RC_IFV_AA_Base
+{
+	indirectHitRange=10;
+	weaponLockSystem="2 + 4 + 16";
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	trackLead=1;
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=4500;
+						maxRange=4500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=500;
+						maxRange=3500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=2250;
+					maxTrackableSpeed=500;
+					angleRangeHorizontal=40;
+					angleRangeVertical=25;
+					groundNoiseDistanceCoef=0.2;
+					maxGroundNoiseDistance=50;
+				};
+			};
+		};
+	};
+};
+
+
+//ATGM
 class M_Vorona_HEAT;
 class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 {
@@ -94,15 +241,9 @@ class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 
 
 //ATGM
-class M_Titan_AT_long;
-class RC_M_ATGM_MP_Lock_Base: M_Titan_AT_long
-{
-	class Components;
-};
-class RC_M_ATGM_MP_Lock: RC_M_ATGM_MP_Lock_Base
+class RC_M_ATGM_MP_Lock: M_Titan_AT_long_Base
 {
 	submunitionAmmo="RC_ammo_Penetrator_MP";
-	hit=150;
 	indirectHit=40;
 	indirectHitRange=10;
 	maxControlRange=3000;
@@ -114,6 +255,22 @@ class RC_M_ATGM_MP_Lock: RC_M_ATGM_MP_Lock_Base
 	laserLock=0;
 	weaponLockSystem="1 + 2 + 16";
 	cameraViewAvailable=1;
+
+	flightProfiles[]=
+	{
+		"TopDown",
+		"Direct"
+	};
+	class Direct
+	{
+	};
+	class TopDown
+	{
+		ascendHeight=400;	//200
+		descendDistance=240;	//240
+		minDistance=240;	//240
+		ascendAngle=45;	//30
+	};
 
 	class Components: Components
 	{
@@ -304,6 +461,26 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 			};
 		};
 	};
+};
+
+
+//120mm of FSV/MBT
+class ammo_Penetrator_120mm;
+class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
+{
+	warheadName="TandemHEAT";
+};
+class Sh_120mm_HEAT_MP_T_Red;
+class RC_Sh_120mm_MP_T: Sh_120mm_HEAT_MP_T_Red
+{
+	aiAmmoUsageFlags="64 + 128 + 512";
+	warheadName="TandemHEAT";	//warheadName="HE";
+	submunitionAmmo="RC_ammo_Penetrator_120mm";
+	hit=95;
+	indirectHit=50;
+	indirectHitRange=10;
+	deflecting=4;
+	craterEffects="AAMissileCrater";
 };
 
 
@@ -2590,7 +2767,7 @@ class RC_R_230mm_HE: RC_230mm_HEAB_Rocket_Base
 	simulationStep=0.050000001;
 	triggerDistance=-1;
 	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,1.75,-0.875};	//test for visual quality
+	submunitionInitialOffset[]={0,1.75,-0.875};
 	submunitionAmmo="RC_R_230mm_fly_HE_submunition";
 };
 //used in script as replacement when turret elevation is too low for Airburst

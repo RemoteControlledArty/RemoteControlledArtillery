@@ -63,6 +63,8 @@ class RC_ATGM_SACLOS: launch_Vorona_base_F
 	scope=1;
 	displayName="SACLOS ATGM";
 	displayNameShort="SACLOS ATGM";
+	canLock=2;
+	weaponLockSystem="1 + 4 + 16";
 	reloadTime=7;
 	magazineReloadTime=7;
 	autoReload=1;	
@@ -71,19 +73,33 @@ class RC_ATGM_SACLOS: launch_Vorona_base_F
 		"RC_1Rnd_ATGM_MP_SACLOS"
 	};
 };
-
-
 class missiles_titan_static;
 class RC_ATGM_Lock: missiles_titan_static
 {
 	scope=1;
 	displayName="ATGM";
 	displayNameShort="ATGM";
+	canLock=2;
+	weaponLockSystem="1 + 4 + 16";
 	reloadTime=7;
 	magazineReloadTime=7;
 	magazines[]=
 	{
 		"RC_1Rnd_ATGM_MP_Lock"
+	};
+};
+class missiles_titan;
+class RC_IFV_Missle_Launcher: missiles_titan
+{
+	scope=1;
+	canLock=2;
+	weaponLockSystem="2 + 4 + 16";
+	displayName="NLOS ML";
+	displayNameShort="NLOS ML";
+	magazines[]=
+	{
+		"RC_2Rnd_IFV_MP_NLOS",
+		"RC_2Rnd_IFV_AA"
 	};
 };
 
@@ -156,11 +172,32 @@ class RC_MMG_338_MBT_coax: RC_MMG_338_MBT
 	};
 };
 class LMG_coax;
-class RC_MMG_338_IFV_Base: LMG_coax
+class RC_MMG_338_IFV_2_Base: LMG_coax
 {
 	class manual;
 };
-class RC_MMG_338_IFV: RC_MMG_338_IFV_Base
+class RC_MMG_338_IFV_2: RC_MMG_338_IFV_2_Base
+{
+	author="Ascent";
+	displayName="coaxial MMG";
+	maxZeroing=3000;
+	FCSZeroingDelay=0.75;
+	magazines[]=
+	{
+		"RC_200Rnd_338_T_Mag"
+	};
+	class manual: manual
+	{
+		displayName=".338 NM";
+		dispersion=0.001;
+	};
+};
+class LMG_coax_ext;
+class RC_MMG_338_IFV_1_Base: LMG_coax_ext
+{
+	class manual;
+};
+class RC_MMG_338_IFV_1: RC_MMG_338_IFV_1_Base
 {
 	author="Ascent";
 	displayName="coaxial MMG";
@@ -178,7 +215,35 @@ class RC_MMG_338_IFV: RC_MMG_338_IFV_Base
 };
 
 
-//40mm Autocannon
+//Autocannons
+class autocannon_30mm_CTWS;
+class RC_autocannon_30mm_CTWS_Base: autocannon_30mm_CTWS
+{
+	class HE;
+	class AP;
+};
+class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
+{
+	author="Ascent";
+	FCSZeroingDelay=0.75;
+
+	class HE: HE
+	{
+		magazines[]=
+		{
+			"RC_100Rnd_30mm_MP_T"
+		};
+	};
+	class AP: AP
+	{
+		magazines[]=
+		{
+			"RC_100Rnd_30mm_APFSDS_T"
+		};
+	};
+};
+
+
 class autocannon_40mm_CTWS;
 class RC_autocannon_40mm_CTWS_Base: autocannon_40mm_CTWS
 {

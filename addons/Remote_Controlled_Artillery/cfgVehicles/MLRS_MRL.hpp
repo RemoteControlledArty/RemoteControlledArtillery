@@ -53,20 +53,17 @@ class RC_MLRS_A: RC_MLRS_base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
 					class AirTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -307,20 +304,17 @@ class RC_MRL_DIG: RC_MRL_base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
 					class AirTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};

@@ -46,39 +46,36 @@ class RC_Mortar: RC_Mortar_base
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=8000;
+					typeRecognitionDistance=5000;
 
 					class AirTarget
 					{
-						minRange=8000;
-						maxRange=8000;
+						minRange=5000;
+						maxRange=5000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=8000;
-						maxRange=8000;
+						minRange=5000;
+						maxRange=5000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -307,39 +304,36 @@ class RC_VehicleMortar: RC_Mortar
 			{
 				class LaserSensorComponent: SensorTemplateLaser
 				{
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-
 					class AirTarget
 					{
-						minRange=6000;
-						maxRange=6000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=6000;
-						maxRange=6000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=10000;
+					typeRecognitionDistance=7000;
 
 					class AirTarget
 					{
-						minRange=10000;
-						maxRange=10000;
+						minRange=7000;
+						maxRange=7000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=10000;
-						maxRange=10000;
+						minRange=7000;
+						maxRange=7000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};

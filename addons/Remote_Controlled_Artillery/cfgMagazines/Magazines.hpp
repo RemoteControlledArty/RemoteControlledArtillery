@@ -54,7 +54,26 @@ class RC_200Rnd_338_T_Mag: VehicleMagazine
 };
 
 
-//40mm Autocannon
+//Autocannons
+class 140Rnd_30mm_MP_shells_Tracer_Red;
+class RC_100Rnd_30mm_MP_T: 140Rnd_30mm_MP_shells_Tracer_Red
+{
+	author="Ascent";
+	ammo="RC_B_30mm_MP_T";
+	count=100;
+	displayName="30mm MP-T";
+	displayNameShort="30mm MP-T";
+};
+class 60Rnd_30mm_APFSDS_shells_Tracer_Red;
+class RC_100Rnd_30mm_APFSDS_T: 60Rnd_30mm_APFSDS_shells_Tracer_Red
+{
+	author="Ascent";
+	count=100;
+	displayName="30mm APFSDS-T";
+	displayNameShort="30mm APFSDS-T";
+};
+
+
 class 60Rnd_40mm_GPR_Tracer_Red_shells;
 class RC_50Rnd_40mm_MP_T: 60Rnd_40mm_GPR_Tracer_Red_shells
 {
@@ -71,6 +90,23 @@ class RC_50Rnd_40mm_APFSDS_T: 40Rnd_40mm_APFSDS_Tracer_Red_shells
 	count=50;
 	displayName="40mm APFSDS-T";
 	displayNameShort="40mm APFSDS-T";
+};
+
+
+class 2Rnd_GAT_missiles;
+class RC_2Rnd_IFV_MP_NLOS: 2Rnd_GAT_missiles
+{
+	displayName="MP 3km NLOS";
+	displayNameShort="MP 3km NLOS";
+	ammo="RC_IFV_MP_NLOS";
+};
+class 4Rnd_Titan_long_missiles;
+class RC_2Rnd_IFV_AA: 4Rnd_Titan_long_missiles
+{
+	count=2;
+	displayName="AA 4.5km";
+	displayNameShort="AA 4.5km";
+	ammo="RC_IFV_MP_NLOS";
 };
 
 
