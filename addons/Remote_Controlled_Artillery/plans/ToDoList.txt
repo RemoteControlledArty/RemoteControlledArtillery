@@ -2,10 +2,8 @@
 	TO DO / DONE LIST
 */
 
-*NOTE to self, marker moving with ctrl+lmb is extremly practical for correcting fire and aiming multiple smokes!
-*NOTE to self, AT mines should be deployed about 20m after a unifying crossroad, not on it, due to inaccuracy
 *NOTE to self, wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
-*NOTE to self, gps marker lock, then remove is efficient NLOS fire & forget
+*NOTE to self, gps marker lock, fire, then remove gps marker is efficient NLOS fire & forget
 
 
 
@@ -30,9 +28,23 @@ if (!isserver) exitwith {}; = server client only, not every player client
 
 Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
+-test accuracy with wind
+
+"ace_artillerytables_showGunLaying") == 2 = active using ace with mortar, not howitzer/MLRS/MLR
+
+degree is same with vicmortar and normal mortar in full el spectrum using:
+_realElevationOriginal = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
+hintSilent format ["EL1, %1!", _realElevationOriginal];
+if (_realElevationOriginal > 90) then {_realElevationOriginal = 180 - _realElevationOriginal;};
+sleep 0.5;
+hintSilent format ["EL2, %1!", _realElevationOriginal];
+
+shooting with EL of artycomputer without ace misses short...?
+
 
 -mortar accuracy without ace
 -ace tables el diff -+?
+-rename 230mm launcher weapon name
 
 -ace scope zeroing hint
 -3&5 seem fine, but el bounding for some keyboards needs to be in video
@@ -49,7 +61,7 @@ TO DO - QUALITY OF LIFE:
 
 POSTPONED:
 
--adding missle launcher FSV 40mm
+-adding missle launcher to FSV 40mm
 -disable turning out option of RC IC
 -smaller magazine shell count selection in attributes
 -guided with simulation shotmissle but with altered values, testing if it connects to misslefeed *it does on manned vic, somehow not on rc'ed... same on Static ATGM
