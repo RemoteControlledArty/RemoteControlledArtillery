@@ -190,8 +190,8 @@ class RC_Artillery {
 	class RscText_1017: RscText_1001 
 	{
 		idc = 1017;
-		text = "select target:"; //--- ToDo: Localize;
-		colorText[] = {0.3,0.3,0.3,0.3};
+		text = "select DL target:"; //--- ToDo: Localize;
+		colorText[] = {0.35,0.35,0.35,0.35};
 		x = "0.891267 * safezoneW + safezoneX";
 		y = "0.2099294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -200,8 +200,8 @@ class RC_Artillery {
 	class RscText_1018: RscText_1001 
 	{
 		idc = 1018;
-		text = "unselect target:"; //--- ToDo: Localize;
-		colorText[] = {0.3,0.3,0.3,0.3};
+		text = "unselect DL target:"; //--- ToDo: Localize;
+		colorText[] = {0.35,0.35,0.35,0.35};
 		x = "0.891267 * safezoneW + safezoneX";
 		y = "0.2259294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -211,7 +211,7 @@ class RC_Artillery {
 	{
 		idc = 1019;
 		text = "cycle markers ->:"; //--- ToDo: Localize;
-		colorText[] = {0.3,0.3,0.3,0.3};
+		colorText[] = {0.35,0.35,0.35,0.35};
 		x = "0.891267 * safezoneW + safezoneX";
 		y = "0.2419294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -221,7 +221,7 @@ class RC_Artillery {
 	{
 		idc = 1020;
 		text = "cycle markers <-:"; //--- ToDo: Localize;
-		colorText[] = {0.3,0.3,0.3,0.3};
+		colorText[] = {0.35,0.35,0.35,0.35};
 		x = "0.891267 * safezoneW + safezoneX";
 		y = "0.2579294  * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -231,7 +231,7 @@ class RC_Artillery {
 	{
 		idc = 1021;
 		text = "cycle charges:"; //--- ToDo: Localize;
-		colorText[] = {0.3,0.3,0.3,0.3};
+		colorText[] = {0.35,0.35,0.35,0.35};
 		x = "0.891267 * safezoneW + safezoneX";
 		y = "0.2739294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -241,7 +241,7 @@ class RC_Artillery {
 	{
 		idc = 1022;
 		text = "elevation up:"; //--- ToDo: Localize;
-		colorText[] = {0.3,0.3,0.3,0.3};
+		colorText[] = {0.35,0.35,0.35,0.35};
 		x = "0.891267 * safezoneW + safezoneX";
 		y = "0.2899294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -251,7 +251,7 @@ class RC_Artillery {
 	{
 		idc = 1023;
 		text = "elevation down:"; //--- ToDo: Localize;
-		colorText[] = {0.3,0.3,0.3,0.3};
+		colorText[] = {0.35,0.35,0.35,0.35};
 		x = "0.891267 * safezoneW + safezoneX";
 		y = "0.3059294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
@@ -261,7 +261,7 @@ class RC_Artillery {
 	{
 		idc = 1024;
 		text = "slow elevation:"; //--- ToDo: Localize;
-		colorText[] = {0.3,0.3,0.3,0.3};
+		colorText[] = {0.35,0.35,0.35,0.35};
 		x = "0.891267 * safezoneW + safezoneX";
 		y = "0.3219294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";

@@ -34,7 +34,7 @@ RC_Artillery_UI = [] spawn {
 
 			// CBA Option for Allowing the Artillery Computer in RC Artillery UAVs
 			// Remote Execute this to make it Multiplayer Compatible
-			if (!RC_Arty_Computer_On) then {[false] remoteExec ["enableEngineArtillery", _uav];} else {[true] remoteExec ["enableEngineArtillery", _uav];};
+			if (!RC_Allow_Vanilla_Arty_Computer) then {[false] remoteExec ["enableEngineArtillery", _uav];} else {[true] remoteExec ["enableEngineArtillery", _uav];};
 			
 			// Check if the Display for the UI Exists if not Create it
 			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then {"RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false];};
@@ -145,17 +145,17 @@ RC_Artillery_UI = [] spawn {
 			
 			// Some sort of Fix for Mortars having some weird Elevation numbers
 			// Dunno what it does, ask the ACE Team
-			if (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "ace_artillerytables_showGunLaying") == 2) then {
-				private _turretCfg = [_uavClass, _turret] call CBA_fnc_getTurret;
-    			private _turretAnimBody = getText (_turretCfg >> "animationSourceBody");
-				private _currentTraverseRad = _uav animationSourcePhase _turretAnimBody;
-				if (isNil "_currentTraverseRad") then {_currentTraverseRad = _uav animationPhase _turretAnimBody;};
-				// Get turret roatation around it's z axis, then calc weapon elev in it's projection
-				private _turretRot = [vectorDir _uav, vectorUp _uav, deg _currentTraverseRad] call CBA_fnc_vectRotate3D;
-				_realElevationOriginal = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
-				if (_realElevationOriginal > 90) then {_realElevationOriginal = 180 - _realElevationOriginal;};
-				_realElevation = (17.7777778 * _realElevationOriginal);
-			};
+			//if (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "ace_artillerytables_showGunLaying") == 2) then {
+			private _turretCfg = [_uavClass, _turret] call CBA_fnc_getTurret;
+			private _turretAnimBody = getText (_turretCfg >> "animationSourceBody");
+			private _currentTraverseRad = _uav animationSourcePhase _turretAnimBody;
+			if (isNil "_currentTraverseRad") then {_currentTraverseRad = _uav animationPhase _turretAnimBody;};
+			// Get turret roatation around it's z axis, then calc weapon elev in it's projection
+			private _turretRot = [vectorDir _uav, vectorUp _uav, deg _currentTraverseRad] call CBA_fnc_vectRotate3D;
+			_realElevationOriginal = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
+			if (_realElevationOriginal > 90) then {_realElevationOriginal = 180 - _realElevationOriginal;};
+			_realElevation = (17.7777778 * _realElevationOriginal);
+			//};
 
 			// Declare some Variables
 			_realAzimuth = 0;
@@ -189,8 +189,8 @@ RC_Artillery_UI = [] spawn {
 			_ctrlKeyElDown = _display displayCtrl 1023;
 			_ctrlKeyElSlow = _display displayCtrl 1024;
 
-			_ctrlKeySelect ctrlSetText format ["select target: %1%2", ((actionKeysNamesArray "vehLockTargets") select 0), " / aim at"];
-			_ctrlKeyUnselect ctrlSetText format ["unselect target: %1%2", ((actionKeysNamesArray "lockTarget") select 0)];
+			_ctrlKeySelect ctrlSetText format ["select DL target: %1%2", ((actionKeysNamesArray "vehLockTargets") select 0), " / aim at"];
+			_ctrlKeyUnselect ctrlSetText format ["unselect DL target: %1%2", ((actionKeysNamesArray "lockTarget") select 0)];
 
 			_ArrayMarkersF = ["Remote Controlled Artillery", "RC_Scroll_Targets_Forwards"] call CBA_fnc_getKeybind;
 			_KeyMarkersF = (((_ArrayMarkersF select 8) select 0) select 0) call BIS_fnc_keyCode;

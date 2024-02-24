@@ -9,49 +9,6 @@ class RC_CircleDust_Base
 	lifeTime=0.2;
 };
 
-/*
-class ArtyShellCrater
-class RC_ArtyShellCrater: ArtyShellCrater
-{
-
-};
-*/
-
-/*
-class RC_ArtyShellCrater
-{
-	class ShellStones
-	{
-		simulation="particles";
-		type="DirtBig";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.5;
-	};
-	class MissileCircleDust
-	{
-		simulation="particles";
-		type="CircleDustBig";
-		enabled="distToWater interpolate [0.0,0.01,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.25;
-	};
-	class CircleDust
-	{
-		simulation="particles";
-		type="RC_82mmCircleDust";
-		enabled="distToWater interpolate [0.05,0.06,-1,1]";
-		position[]={0,0,0};
-		intensity=1;
-		interval=1;
-		lifeTime=0.2;
-	};
-};
-*/
-
 class RC_82mmAirburstDust
 {
 	class RC_CircleDust: RC_CircleDust_Base
@@ -183,16 +140,6 @@ class RC_MortarExplosion
 		intensity=1;
 		lifeTime=0.4;
 	};
-	/*
-	class ShellSparks3: ShellSparks1
-	{
-		type="ShellSparks1";
-	};
-	class ShellSparks4: ShellSparks2
-	{
-		type="ShellSparks2";
-	};
-	*/
 	class ShellShockwave1
 	{
 		simulation="particles";

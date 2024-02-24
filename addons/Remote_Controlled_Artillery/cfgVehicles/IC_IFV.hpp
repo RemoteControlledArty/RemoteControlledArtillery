@@ -1,5 +1,5 @@
 class B_APC_Wheeled_01_cannon_F;
-class RC_IC_IFV_2_A_Base: B_APC_Wheeled_01_cannon_F
+class RC_ICV_IFV_2_A_Base: B_APC_Wheeled_01_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -37,7 +37,7 @@ class RC_IC_IFV_2_A_Base: B_APC_Wheeled_01_cannon_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_IC_IFV_2_A: RC_IC_IFV_2_A_Base
+class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 {
 	author="Ascent";
 	faction="RemoteControlled_B";
@@ -416,18 +416,19 @@ class RC_IC_IFV_2_A: RC_IC_IFV_2_A_Base
 };
 
 
-class RC_Infantry_Carrier_2_A: RC_IC_IFV_2_A
+class RC_ICV_2_A: RC_ICV_IFV_2_A
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {while {true} do {if (player in _this && !(gunner _this == player)) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
+	//init="if (!isserver) exitwith {}; (_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {while {true} do {if (player in _this && !(gunner _this == player)) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
 	RCDisableSeats=3; // locks commander seats
 	RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 
-	displayName="RC Infantry Carrier II";
+	displayName="RC ICV II";
 	scope=2;
 	scopeCurator=2;
 	uavCameraGunnerPos="PiP0_pos";
@@ -579,83 +580,177 @@ class RC_Infantry_Carrier_2_A: RC_IC_IFV_2_A
 						maxFov=1;
 					};
 
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="MinimapDisplayComponent";
+
+						class Components
+						{
+							class EmptyDisplay
+							{
+								componentType="EmptyDisplayComponent";
+							};
+							class MinimapDisplay
+							{
+								componentType="MinimapDisplayComponent";
+								resource="RscCustomInfoMiniMap";
+							};
+							class UAVFeedDisplay
+							{
+								componentType="UAVFeedDisplayComponent";
+							};
+							class CrewDisplay
+							{
+								componentType="CrewDisplayComponent";
+							};
+							/*
+							//doesnt work yet
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={3000,1500,750,375};
+								resource="RscCustomInfoSensors";
+							};
+							*/
+							/*
+							class MineDetectorDisplay
+							{
+								componentType="MineDetectorDisplayComponent";
+								range=50;
+								resource="RscCustomInfoMineDetect";
+							};
+							*/
+						};
+					};
+					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+					{
+						defaultDisplay="EmptyDisplayComponent";
+
+						class Components
+						{
+							class EmptyDisplay
+							{
+								componentType="EmptyDisplayComponent";
+							};
+							class MinimapDisplay
+							{
+								componentType="MinimapDisplayComponent";
+								resource="RscCustomInfoMiniMap";
+							};
+							class UAVFeedDisplay
+							{
+								componentType="UAVFeedDisplayComponent";
+							};
+							class CrewDisplay
+							{
+								componentType="CrewDisplayComponent";
+							};
+							/*
+							//doesnt work yet
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={3000,1500,750,375};
+								resource="RscCustomInfoSensors";
+							};
+							*/
+							/*
+							class MineDetectorDisplay
+							{
+								componentType="MineDetectorDisplayComponent";
+								range=50;
+								resource="RscCustomInfoMineDetect";
+							};
+							*/
+						};
+					};
+				};
+			};
+
+			class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+			{
+				defaultDisplay="MinimapDisplayComponent";
+
+				class Components
+				{
+					class EmptyDisplay
+					{
+						componentType="EmptyDisplayComponent";
+					};
+					class MinimapDisplay
+					{
+						componentType="MinimapDisplayComponent";
+						resource="RscCustomInfoMiniMap";
+					};
+					class UAVFeedDisplay
+					{
+						componentType="UAVFeedDisplayComponent";
+					};
+					class CrewDisplay
+					{
+						componentType="CrewDisplayComponent";
+					};
 					/*
 					//doesnt work yet
-					class Components: Components
+					class SensorDisplay
 					{
-						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-						{
-							defaultDisplay="SensorDisplay";
-
-							class Components
-							{
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
-									resource="RscCustomInfoSensors";
-								};
-							};
-						};
-						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-						{
-							defaultDisplay="EmptyDisplayComponent";
-
-							class Components
-							{
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-							};
-						};
+						componentType="SensorsDisplayComponent";
+						range[]={3000,1500,750,375};
+						resource="RscCustomInfoSensors";
+					};
+					*/
+					/*
+					class MineDetectorDisplay
+					{
+						componentType="MineDetectorDisplayComponent";
+						range=50;
+						resource="RscCustomInfoMineDetect";
 					};
 					*/
 				};
 			};
-
-			/*
-			//doesnt work yet
-			class Components: Components
+			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
+				defaultDisplay="EmptyDisplayComponent";
 
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
-							resource="RscCustomInfoSensors";
-						};
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				class Components
 				{
-					defaultDisplay="EmptyDisplayComponent";
-
-					class Components
+					class EmptyDisplay
 					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
+						componentType="EmptyDisplayComponent";
 					};
+					class MinimapDisplay
+					{
+						componentType="MinimapDisplayComponent";
+						resource="RscCustomInfoMiniMap";
+					};
+					class UAVFeedDisplay
+					{
+						componentType="UAVFeedDisplayComponent";
+					};
+					class CrewDisplay
+					{
+						componentType="CrewDisplayComponent";
+					};
+					/*
+					//doesnt work yet
+					class SensorDisplay
+					{
+						componentType="SensorsDisplayComponent";
+						range[]={3000,1500,750,375};
+						resource="RscCustomInfoSensors";
+					};
+					*/
+					/*
+					class MineDetectorDisplay
+					{
+						componentType="MineDetectorDisplayComponent";
+						range=50;
+						resource="RscCustomInfoMineDetect";
+					};
+					*/
 				};
 			};
-			*/
 		};
 	};
 
@@ -681,7 +776,7 @@ class RC_Infantry_Carrier_2_A: RC_IC_IFV_2_A
 		};
 	};
 };
-class RC_Infantry_Carrier_2_A_O: RC_Infantry_Carrier_2_A
+class RC_ICV_2_A_O: RC_ICV_2_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -767,7 +862,7 @@ class RC_Infantry_Carrier_2_A_O: RC_Infantry_Carrier_2_A
 		};
 	};
 };
-class RC_Infantry_Carrier_2_A_I: RC_Infantry_Carrier_2_A
+class RC_ICV_2_A_I: RC_ICV_2_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -804,7 +899,7 @@ class RC_Infantry_Carrier_2_A_I: RC_Infantry_Carrier_2_A
 };
 
 
-class RC_Infantry_Carrier_2_WD: RC_Infantry_Carrier_2_A
+class RC_ICV_2_WD: RC_ICV_2_A
 {
 	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
@@ -836,7 +931,7 @@ class RC_Infantry_Carrier_2_WD: RC_Infantry_Carrier_2_A
 		};
 	};
 };
-class RC_Infantry_Carrier_2_WD_O: RC_Infantry_Carrier_2_WD
+class RC_ICV_2_WD_O: RC_ICV_2_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -922,7 +1017,7 @@ class RC_Infantry_Carrier_2_WD_O: RC_Infantry_Carrier_2_WD
 		};
 	};
 };
-class RC_Infantry_Carrier_2_WD_I: RC_Infantry_Carrier_2_WD
+class RC_ICV_2_WD_I: RC_ICV_2_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -959,7 +1054,7 @@ class RC_Infantry_Carrier_2_WD_I: RC_Infantry_Carrier_2_WD
 };
 
 
-class RC_IFV_2_A: RC_IC_IFV_2_A
+class RC_IFV_2_A: RC_ICV_IFV_2_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -1658,7 +1753,7 @@ class RC_IFV_2_WD_I: RC_IFV_2_WD
 
 
 class B_APC_Wheeled_03_cannon_F;
-class RC_IC_IFV_1_A_Base: B_APC_Wheeled_03_cannon_F
+class RC_ICV_IFV_1_A_Base: B_APC_Wheeled_03_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -1698,7 +1793,7 @@ class RC_IC_IFV_1_A_Base: B_APC_Wheeled_03_cannon_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_IC_IFV_1_A: RC_IC_IFV_1_A_Base
+class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 {
 	author="Ascent";
 	faction="RemoteControlled_B";
@@ -2110,18 +2205,19 @@ class RC_IC_IFV_1_A: RC_IC_IFV_1_A_Base
 };
 
 
-class RC_Infantry_Carrier_1_A: RC_IC_IFV_1_A
+class RC_ICV_1_A: RC_ICV_IFV_1_A
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {while {true} do {if (player in _this && !(gunner _this == player)) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
+	//init="if (!isserver) exitwith {}; (_this select 0) spawn {if (local _this) then {{ _this animate [_x, 1]} forEach ['HideHull','HideTurret']}; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; _this lockDriver true;}; (_this select 0) spawn {while {true} do {if (player in _this && !(gunner _this == player)) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
 	RCDisableSeats=3; // locks commander seats
 	RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 
-	displayName="RC Infantry Carrier I";
+	displayName="RC ICV I";
 	scope=2;
 	scopeCurator=2;
 	uavCameraGunnerPos="PiP0_pos";
@@ -2253,87 +2349,181 @@ class RC_Infantry_Carrier_1_A: RC_IC_IFV_1_A
 						maxFov=1;
 					};
 
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="MinimapDisplayComponent";
+
+						class Components
+						{
+							class EmptyDisplay
+							{
+								componentType="EmptyDisplayComponent";
+							};
+							class MinimapDisplay
+							{
+								componentType="MinimapDisplayComponent";
+								resource="RscCustomInfoMiniMap";
+							};
+							class UAVFeedDisplay
+							{
+								componentType="UAVFeedDisplayComponent";
+							};
+							class CrewDisplay
+							{
+								componentType="CrewDisplayComponent";
+							};
+							/*
+							//doesnt work yet
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={3000,1500,750,375};
+								resource="RscCustomInfoSensors";
+							};
+							*/
+							/*
+							class MineDetectorDisplay
+							{
+								componentType="MineDetectorDisplayComponent";
+								range=50;
+								resource="RscCustomInfoMineDetect";
+							};
+							*/
+						};
+					};
+					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+					{
+						defaultDisplay="EmptyDisplayComponent";
+
+						class Components
+						{
+							class EmptyDisplay
+							{
+								componentType="EmptyDisplayComponent";
+							};
+							class MinimapDisplay
+							{
+								componentType="MinimapDisplayComponent";
+								resource="RscCustomInfoMiniMap";
+							};
+							class UAVFeedDisplay
+							{
+								componentType="UAVFeedDisplayComponent";
+							};
+							class CrewDisplay
+							{
+								componentType="CrewDisplayComponent";
+							};
+							/*
+							//doesnt work yet
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={3000,1500,750,375};
+								resource="RscCustomInfoSensors";
+							};
+							*/
+							/*
+							class MineDetectorDisplay
+							{
+								componentType="MineDetectorDisplayComponent";
+								range=50;
+								resource="RscCustomInfoMineDetect";
+							};
+							*/
+						};
+					};
+				};
+			};
+
+			class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+			{
+				defaultDisplay="MinimapDisplayComponent";
+
+				class Components
+				{
+					class EmptyDisplay
+					{
+						componentType="EmptyDisplayComponent";
+					};
+					class MinimapDisplay
+					{
+						componentType="MinimapDisplayComponent";
+						resource="RscCustomInfoMiniMap";
+					};
+					class UAVFeedDisplay
+					{
+						componentType="UAVFeedDisplayComponent";
+					};
+					class CrewDisplay
+					{
+						componentType="CrewDisplayComponent";
+					};
 					/*
 					//doesnt work yet
-					class Components: Components
+					class SensorDisplay
 					{
-						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-						{
-							defaultDisplay="SensorDisplay";
-
-							class Components
-							{
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
-									resource="RscCustomInfoSensors";
-								};
-							};
-						};
-						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-						{
-							defaultDisplay="EmptyDisplayComponent";
-
-							class Components
-							{
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-							};
-						};
+						componentType="SensorsDisplayComponent";
+						range[]={3000,1500,750,375};
+						resource="RscCustomInfoSensors";
+					};
+					*/
+					/*
+					class MineDetectorDisplay
+					{
+						componentType="MineDetectorDisplayComponent";
+						range=50;
+						resource="RscCustomInfoMineDetect";
 					};
 					*/
 				};
 			};
-
-			/*
-			//doesnt work yet
-			class Components: Components
+			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
+				defaultDisplay="EmptyDisplayComponent";
 
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
-							resource="RscCustomInfoSensors";
-						};
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				class Components
 				{
-					defaultDisplay="EmptyDisplayComponent";
-
-					class Components
+					class EmptyDisplay
 					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
+						componentType="EmptyDisplayComponent";
 					};
+					class MinimapDisplay
+					{
+						componentType="MinimapDisplayComponent";
+						resource="RscCustomInfoMiniMap";
+					};
+					class UAVFeedDisplay
+					{
+						componentType="UAVFeedDisplayComponent";
+					};
+					class CrewDisplay
+					{
+						componentType="CrewDisplayComponent";
+					};
+					/*
+					//doesnt work yet
+					class SensorDisplay
+					{
+						componentType="SensorsDisplayComponent";
+						range[]={3000,1500,750,375};
+						resource="RscCustomInfoSensors";
+					};
+					*/
+					/*
+					class MineDetectorDisplay
+					{
+						componentType="MineDetectorDisplayComponent";
+						range=50;
+						resource="RscCustomInfoMineDetect";
+					};
+					*/
 				};
 			};
-			*/
 		};
 	};
 };
-class RC_Infantry_Carrier_1_A_O: RC_Infantry_Carrier_1_A
+class RC_ICV_1_A_O: RC_ICV_1_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -2419,7 +2609,7 @@ class RC_Infantry_Carrier_1_A_O: RC_Infantry_Carrier_1_A
 		};
 	};
 };
-class RC_Infantry_Carrier_1_A_I: RC_Infantry_Carrier_1_A
+class RC_ICV_1_A_I: RC_ICV_1_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -2456,7 +2646,7 @@ class RC_Infantry_Carrier_1_A_I: RC_Infantry_Carrier_1_A
 };
 
 
-class RC_Infantry_Carrier_1_WD: RC_Infantry_Carrier_1_A
+class RC_ICV_1_WD: RC_ICV_1_A
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -2496,7 +2686,7 @@ class RC_Infantry_Carrier_1_WD: RC_Infantry_Carrier_1_A
 		};
 	};
 };
-class RC_Infantry_Carrier_1_WD_O: RC_Infantry_Carrier_1_WD
+class RC_ICV_1_WD_O: RC_ICV_1_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -2582,7 +2772,7 @@ class RC_Infantry_Carrier_1_WD_O: RC_Infantry_Carrier_1_WD
 		};
 	};
 };
-class RC_Infantry_Carrier_1_WD_I: RC_Infantry_Carrier_1_WD
+class RC_ICV_1_WD_I: RC_ICV_1_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -2617,9 +2807,28 @@ class RC_Infantry_Carrier_1_WD_I: RC_Infantry_Carrier_1_WD
 		};
 	};
 };
+class RC_ICV_1_DIG_I: RC_ICV_1_WD_I
+{
+	DLC="";
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+	textureList[]=
+	{
+		"Indep",
+		1
+	};
+};
 
 
-class RC_IFV_1_A: RC_IC_IFV_1_A
+class RC_IFV_1_A: RC_ICV_IFV_1_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -3242,5 +3451,24 @@ class RC_IFV_1_WD_I: RC_IFV_1_WD
 			name="MineDetector";
 			count=2;
 		};
+	};
+};
+class RC_IFV_1_DIG_I: RC_IFV_1_WD_I
+{
+	DLC="";
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+	textureList[]=
+	{
+		"Indep",
+		1
 	};
 };

@@ -1,9 +1,9 @@
 [
-    "RC_Arty_Computer_On",
+    "RC_Allow_Vanilla_Arty_Computer",
     "CHECKBOX",
-    ["Allow Artillery Computer", "When this is ticked the Artillery Computer can be Used"],
+    ["Allow Vanilla Arty Computer", "When this is ticked the vanilla Artillery Computer can be used"],
     ["Remote Controlled Artillery"],
-    true,
+    false,
     true,
     {},
     true
@@ -36,7 +36,7 @@
     "SLIDER",
     ["Artillery Target Update Delay", "This number is how long it takes between Updating the possible Artillery Targets in Seconds."],
     ["Remote Controlled Artillery"],
-    [2, 10, 2, 0, false],
+    [1.5, 5, 1.5, 0, false],
     true
 ] call CBA_fnc_addSetting;
 

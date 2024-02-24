@@ -416,6 +416,7 @@ class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV_MBT.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\IC_IFV.hpp"
@@ -427,6 +428,5 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\Targets.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UAV.hpp"
 };
