@@ -28,28 +28,11 @@ if (!isserver) exitwith {}; = server client only, not every player client
 
 Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
--test accuracy with wind
 
-"ace_artillerytables_showGunLaying") == 2 = active using ace with mortar, not howitzer/MLRS/MLR
-
-degree is same with vicmortar and normal mortar in full el spectrum using:
-_realElevationOriginal = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
-hintSilent format ["EL1, %1!", _realElevationOriginal];
-if (_realElevationOriginal > 90) then {_realElevationOriginal = 180 - _realElevationOriginal;};
-sleep 0.5;
-hintSilent format ["EL2, %1!", _realElevationOriginal];
-
-shooting with EL of artycomputer without ace misses short...?
-
-
--mortar accuracy without ace
--ace tables el diff -+?
--rename 230mm launcher weapon name
-
--ace scope zeroing hint
--3&5 seem fine, but el bounding for some keyboards needs to be in video
 -modify effects
+-ace scope zeroing hint
 
+-3&5 seem fine, but el bounding for some keyboards needs to be in video
 -new screenshots for steam
 
 -check if createvehiclelocal gps works for multiplayer
@@ -233,6 +216,7 @@ DONE - FEATURES:
 -added IFV with automated driver and improved FOV
 -added 40mm MP-T ammo
 -added datalink guided NLOS AT/AA Missiles for IFV's
+-found out that without ace Mortars dont shoot correctly without vanilla artillery computer, added script that when its disabled and ace is not installed, its still available for mortars
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)

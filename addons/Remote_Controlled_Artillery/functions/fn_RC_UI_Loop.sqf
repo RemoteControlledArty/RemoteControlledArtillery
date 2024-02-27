@@ -31,10 +31,6 @@ RC_Artillery_UI = [] spawn {
 			// We need to remote exec it since setAutonomous is of Local Effect so it needs to be
 			// where the UAV is Local
 			if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
-
-			// CBA Option for Allowing the Artillery Computer in RC Artillery UAVs
-			// Remote Execute this to make it Multiplayer Compatible
-			if (!RC_Allow_Vanilla_Arty_Computer) then {[false] remoteExec ["enableEngineArtillery", _uav];} else {[true] remoteExec ["enableEngineArtillery", _uav];};
 			
 			// Check if the Display for the UI Exists if not Create it
 			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then {"RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false];};
@@ -44,6 +40,16 @@ RC_Artillery_UI = [] spawn {
 			// Get the UI so we can see if it has Distance or not
 			_AceUI = uiNamespace getVariable ["ACE_dlgArtillery", displayNull];
 			_RCAUI = uiNamespace getVariable ["RCA_ArtyUI", displayNull];
+
+			// CBA Option for Allowing the Artillery Computer in RC Artillery UGVs, without ACE its stays on for Mortars (as they dont work manually without ACE atm)
+			// Remote Execute this to make it Multiplayer Compatible
+			if (!RC_Allow_Vanilla_Arty_Computer) then {
+				_isMortar = false;
+				if (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCisMortar") == 1) then {_isMortar = true;};
+				if (isNull _AceUI && _isMortar) then {[true] remoteExec ["enableEngineArtillery", _uav];} else {[false] remoteExec ["enableEngineArtillery", _uav]};
+			} else {
+				[true] remoteExec ["enableEngineArtillery", _uav];
+			};
 
 			_RCA_CurrentArtyDisplay = displayNull;
 			// If our one is Null we use theirs
@@ -103,10 +109,7 @@ RC_Artillery_UI = [] spawn {
 				// Get turret roatation around it's z axis, then calc weapon elev in it's projection
 				private _turretRot = [vectorDir _uav, vectorUp _uav, deg _currentTraverseRad] call CBA_fnc_vectRotate3D;
 				_realElevationOriginal = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
-				hintSilent format ["EL1, %1!", _realElevationOriginal];
 				if (_realElevationOriginal > 90) then {_realElevationOriginal = 180 - _realElevationOriginal;};
-				sleep 0.5;
-				hintSilent format ["EL2, %1!", _realElevationOriginal];
 				_realElevation = (17.7777778 * _realElevationOriginal);
 			};
 

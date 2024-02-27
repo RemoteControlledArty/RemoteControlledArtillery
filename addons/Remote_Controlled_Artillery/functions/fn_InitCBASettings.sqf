@@ -1,7 +1,7 @@
 [
     "RC_Allow_Vanilla_Arty_Computer",
     "CHECKBOX",
-    ["Allow Vanilla Arty Computer", "When this is ticked the vanilla Artillery Computer can be used"],
+    ["Allow Vanilla Arty Computer", "When this is ticked the vanilla Artillery Computer can be used, without ACE it cannot be disabled for Mortars."],
     ["Remote Controlled Artillery"],
     false,
     true,
