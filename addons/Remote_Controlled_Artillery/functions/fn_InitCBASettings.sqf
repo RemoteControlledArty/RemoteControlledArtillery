@@ -36,7 +36,7 @@
     "SLIDER",
     ["artillery target update delay", "This number is how long it takes between Updating the possible Artillery Targets in Seconds."],
     ["Remote Controlled Artillery"],
-    [1.5, 5, 1.5, 0, false],
+    [1, 5, 1, 0, false],
     true
 ] call CBA_fnc_addSetting;
 

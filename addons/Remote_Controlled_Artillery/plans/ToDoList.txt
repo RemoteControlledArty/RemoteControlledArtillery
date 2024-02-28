@@ -41,25 +41,23 @@ TO DO - QUALITY OF LIFE:
 
 POSTPONED:
 
--adding missle launcher to FSV 40mm
+-adding missile launcher to FSV 40mm
 -disable turning out option of RC IC
 -smaller magazine shell count selection in attributes
 -guided with simulation shotmissle but with altered values, testing if it connects to misslefeed *it does on manned vic, somehow not on rc'ed... same on Static ATGM
 -1.5m Airburst for MP Guided
--RC IC fix smokelauncher
--RC IC if hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged (explosion timer shortend for now)
--RC IC fix and readd datalink panel (removed for now)
--RC Medical, make driver camera available for Transporter&Van, after having found a fix
--RC Repair, vehicle (thislist select 0) setfuel 1; vehicle (thislist select 0) setdamage 0; https://community.bistudio.com/wiki/createTrigger
+-fix RC ICV2 smokelauncher
+-if RC ICV/IFV hull and engine is red then remove AI until repaired, so it doesnt keep getting engaged (explosion timer shortend for now)
+-if possible fix and readd RC ICV datalink panel (removed for now)
+-make RC Medical driver camera available for Transporter&Van, after having found a fix
+-add RC Repair, needs repair script first, vehicle (thislist select 0) setfuel 1; vehicle (thislist select 0) setdamage 0; https://community.bistudio.com/wiki/createTrigger
 -fix Static AT self engaging laser spots (how?)
--RADAR staying on (deactivates after releasing control even when not autonomous, maybe use human crew and locking seats instead?)
--guided submunition alternative misslecam
--guided shell submunition camera (vanilla misslecam activates for N/LOS FSV guided, but doesnt follow it, seems to have something to do with cfgvehicles atleast to trigger)
+-RADAR staying on (deactivates after releasing control even when not autonomous, maybe human crew and locked seats instead?)
+-guided submunition alternative scripted misslecam
 -more RC Infantry Carrier's / APC's / IVF's
 -ETA 5sec warning message
 -proximityExplosionDistance= ; ammo testing
--seek after blind fire for guided (by cfg value in guided mag, script automatically locking target at arty1 pos, and removing target when round is fired, like 1r less in mag or mag changes)
--mousewheel menu to cycle different fuzed HE (AB, Impact, Delayed) mags
+-seek after unlocked fire for guided (by cfg value in guided mag, script automatically locking target at arty1 pos, and removing target when round is fired, like 1r less in mag or mag changes)
 
 
 IDEAS - FAR FUTURE:
@@ -74,8 +72,6 @@ IDEAS - FAR FUTURE:
 -AR-0.5 pvp, with 1.5 zoom to force low flying, shortrange sensors, no thermal, but laser designator
 -RC Marid with upgraded engines 7.62x51 and smoke GL
 -test passive radar shells against active radar AA
--colored xmeter radius for Azimuth&GunEL, for fire adjustments
--maybe add max spread display / hit propability display (HEAB = 30m radius, inaccuracy at marked distance = ? radius, = ? hit probability)
 -video partially at night for rocket and explosion effects
 -make MLRS/MRL rockets appear in launcher (if possible)
 -https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
@@ -83,8 +79,6 @@ IDEAS - FAR FUTURE:
 -or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
 -vanilla asset overwrite for gamemodes without zeus etc *maybe by second pbo and config, class RC_Howitzer; class vanilla_Howitzer: vanilla_Howitzer  but likely doesnt work
 -switch driver and commander of recon radar
--3R MRSI display
--turret elevationmode=3 (switchable between manual and automatic), changing script to low trajectory, and point of aim height instead ground height
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -104,74 +98,63 @@ DONE - BUGFIXES:
 -fixed time of flight calculation
 -engine turnoff now per cfg value, so it doesnt affect other ugv's
 -found cause for sicnificant over/under-shoot, for low trajectory 0.X MIL are indeed needed, nut dont have to be shown on screen, changed green highlight to +-0.5 instead of 1, this solves it
-
+-many many more
 
 DONE - FEATURES:
 
--added 82mm, 120mm, 155mm, 230mm HE Airburst
--added 82mm, 120mm, 155mm Laser Guided 1.8m Delayed Fuse (for use against small bunkers/ hangars/ ammo storage halls) but only available per attributes edit for balancing reasons
+-added 82mm, 105mm, 120mm, 155mm, 230mm HE Airburst
+-added 82mm, 105mm, 120mm, 155mm Laser Guided 2m Delayed Fuse (for use against small bunkers/ hangars/ ammo storage halls) but only available per attributes edit for balancing reasons
 -improved spread of cluster and mines
--buffed smoke of 82mm, 120mm, 155mm
+-buffed smoke of 82mm, 105mm, 120mm, 155mm
 -added 82mm AP and AT mines
 -40 magazines for all shells
--required low&high turret elevation display + ETA
+-display for high/low firing solution calculator + ETA
 -if turret azimuth matches target azimuth, turn green
 -if charge is correct for target distance, turn green
--if azimuth correct, turret elevation correct "ready to fire"
--warning if camera is pointed not at sky
-
-(new)
+-if azimuth correct, turret elevation correct "aligned"
+-warning if camera is pointed not at sky, or guided isnt locked on
 -ammunition naming improvements
 -added Datalink panel
 -added Datalink laser position finder
 -added Datalink selected target position finder
 -added AR-1 & 3
 -added 604mm ATACMS
--added RC Infantry Carrier
+-added RC ICV
 -renamed assets for clarity
--155mm dispersion fixed
--more but finer 155mm charges, to have more angle variety
--added optional 67km datalink range (max firing range)
--added peak ASL calculation formula
+-more but finer 105mm/120mm/155mm charges, to have more angle variety
+-added optional 67km datalink range (max firing range), default display is 30km
 -shortend map marker search time (as its only running during active remote control, and improves quality of life)
 -fixed all sensor configs
--added 82mm/120/155mm/230mm MultiGuided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and vehicles with hot engine.)
--reworked 82mm/120/155mm/230mm MultiGuided, to be more accurate and be Multi Target
--reworked Static AT & ATGM, changed ammo from 4 HEAT & 2 HE to new 4 MP rounds, Static AT now has more locking options and also SACLOS
--reworked 120mm charges
--multi guided successfully tested to include gps guidance, but so far only when using artillery computer
+-added 82mm/105mm/120mm/155mm/230mm MultiGuided (Can in manual fire lock laser and vehicles on Datalink panel. Or in artillery computer fire find laser spots, and vehicles with hot engine.)
+-reworked 82mm/105mm/120mm/155mm/230mm MultiGuided, to be more accurate and be Multi Purpose (HEAT + frag sleeve)
+-reworked Static AT & ATGM, changed ammo from 4 HEAT & 2 HE to 4 new MP rounds, Static AT now has more locking options and also SACLOS
 -artillery weapon edits in steps, so different versions can be chosen V1 until V4
 -split shown ELDiff, and ElDiff for used calculation, to not cause errors
--enabled NLOS for locking ATGM
--tweaked AT mine spread
--reworked 120mm, 155mm, 230mm Airburst, to truly explode before impact (instead of being reset 20meters after impact)
+-enabled NLOS targeting for locking ATGM
+-tweaked mine spread
+-reworked 82mm/105mm/120mm/155mm/230mm Airburst, to truly explode before impact (instead of being reset 20meters after impact)
 -minor change to howitzer max gun elevation for it be able to shoot closer during compound defense
--added RC RespawnTruck & correct driver camera screen with filter
+-added RC Respawn Vehicles & for the Truck a correct driver camera screen with filter
 -reworked Laser Guided 2m Delayed Fuse
 -added nightvision to RC RespawnTruck driver camera
--done lots of testing and decided on MP MultiGuided visual model
 -added LaserDatalink so that handheld LaserDesignators enable reliable use with Artillery, and decreases reliance of UAV's with Datalink
 -testing showed that locking MultiGuided to laser target, firing manual, deactivating laser, has 3 practical results:
 	if nothing else is close it switches to gps guidance,
 	or if enemy vehicles are close it locks on them,
-	which is extremly usefull if the ForwardObserver is suppressed and cannot maintain the lase,
+	which is extremly usefull if the Forward Observer is suppressed and cannot maintain the lase,
 	if the laser is reactivated, it relocks if it is close enough to the original point
--added N/LOS FSV
--fixed Airburst
 -added AR1/AR3 backpacks
--improved mine spread
--improved the FOV of N/LOS FSV, and improved its muzzle smoke effect
--added muzzle position estimation formula in the script
+-added important muzzle position estimation formula in the script, for improved accuracy
 -added ammo usage flags for ai
 -fixed sound and effects for new artillery ammunition
 -added ground dust effect for airburst
--added LOS FSV
--added Datalink Guided Missles for LOS FSV
+-added FSV with improved FOV
+-added Datalink Guided Missles for FSV
 -added FSV hpp and subcategory
 -individualized ground dust radius and amount of airburst for calibers, and increased dust time
 -added 105mm for later use (no suited platform yet found)
 -updated remove/addmagazine list, and included as txt
--added missle approach warning systems
+-added missile approach warning systems
 -changed uav connection script location
 -added MBT
 -added wide gunner FOV and fluid zoom to MBT
@@ -181,29 +164,24 @@ DONE - FEATURES:
 -added AR-1&3 for all sides with correct textures
 -added Grenade Dropping UAV
 -updated vehicle inventory, remove 6.5mm rifles and magazines, added toolkits etc
--added mine detectors to frontline personel carring vehicles
--reduced Mortar/Howitzer AI firerate to 1 in 15sec to waste less ammo
 -added vehicle mortar, to attach onto vehicles as composition, with edited elevation to allow low trajectory fire shortening TOF
 -added more version of respawn vehicles, and reduced threat/cost so it doesnt get engaged
 -simplified naming of 120mm magazines
 -aligned by +-MIL now show up colored orange/yellow/green, to align quicker and not accidently go past it
--double checked LaserDatalink code
 -fixed Artillery UI staying when asset is destroyed
--fixed respawn position script, but it might be global duplicating it per person
--added new seatlock, case 4 locks only commander seat
 -removed Ti from AR-1 as it isnt effected by the ppeffects script
--updated the seat UV lock script, to be usable for FSV/MBT, to unlock seats again when not in UV control
--added if (!isserver) exitwith {}; to eventhandlers so its not executed multiple times
+-updated the seat lock script, to be usable for FSV/MBT, to unlock seats again when not in UV control
+-added if (!isserver) exitwith {}; to eventhandlers so its not executed multiple times, but server only
 -added cfg value _reenableSeats for use in specific vehicles
 -FSV/MBT/IC seat locking scripts finally work now, have to be optimized/bugtested still
--given controllable driver of Recon RADAR sensor panel to activate active RADAR with ctrl+R
+-given controllable driver of Recon RADAR sensor panel to activate active RADAR with ctrl+R (as the RADAR Vehicle doesnt fully work atm)
 -made grenade dropping UAV "shortranged"
 -enabled camera lock on target for static laser designator
 -for now locked FSV/MBT driver seat, as it had a buggy view when remote controlling, will attemt to fix later
 -equalized FSV/MBT gunnercoax/commander MG to .338 NM
 -guided round rename to be more neutral
 -fixed zero devider error in firing solution calculator by preventing _targetDistance to be <=0
--improved vehicle seat locking script and added more options
+-improved vehicle seat locking script and added more options, gave it own hpp
 -fixed all datalink panels
 -added shell fall/passby sound, which suprisingly was not in vanilla
 -bugfixed alignment color staying when no target available
@@ -217,18 +195,16 @@ DONE - FEATURES:
 -added disableable warning that activates when ace is installed which informs that ace adjustable scopes block elevation with overlapping hotkeys
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
--added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)
--changed magazine RC_AimAboveHeight to airburstheight -1m, as it doesnt make a difference with medium trajectory, but on high charge very flat trajectory it overshoots sicnificantly less, also prevents overshoot of on hilltop targets
-*note some overshoot on high charge is left likely due to decreased accuracy
--instead of seperate display, added RC_AimAboveHeight to 0.7*triggerdistance for guided, to have 45deg toptown effect even on high charge for shorter TOF, to not get stuck in foliage/cover
+-added laserLock/irLock to HE/HEAB, so it can select laser and vehicles on datalink for a firing solution *does not make it guided (not suited to other rounds with distancetotarget=x, except for guided)
+-instead of seperate display, added RC_AimAboveHeight close to triggerdistance for guided, to have toptown effect even on high charge for shorter TOF, to not get stuck in foliage/cover/hills
 -finally found correct values to make guided shells accurate at high charge instead of completly overshoot
 -added script that changes Airburst to Impact when turret elevation is too low for Airburst to work savely
--found a way to enable gps targeting! (more work needed to integrate it)
+-finally added working gps targeting
 -included aimaboveheight into shownELdifference, so with ace tables airburst is accurate, and guided includes topdown
 -fixed HEAB by slightly decreasing simulationStep, to not overshoot at low trajectory, or hit ground at high trajectory
 -added (cfgmag value) guided round lock requirement for guidance warning when no target is selected, also (cfgmag value) submunition warning when looking at terrain
 -for vehicle attached mortar/ or close object blocking viewpoint, when target<=20m (like vehicle its attached to): shows map marker targets instead, shows requires lock message for guided shells
--edited GPS Markers to not be attacked by AI
+-improved GPS Markers to not be noticed/attacked by AI
 -MP Guided now also compatible with gps guidance using vanilla artillery computer
 
 
@@ -239,9 +215,9 @@ DONE - FEATURES:
 
 DONE - QUALITY OF LIFE:
 
--lower FOV for better driving now available
--option for shorter map marker search
--if vehicle speed = 0 then engine is turned off
+-lower FOV of many Vehicles for better driving now available
+-shortend default map marker search time
+-if vehicle speed = 0 then engine is turned off, your ears will thank
 -map now available for all assets!
 -significant mod folder and hpp restructure
 
