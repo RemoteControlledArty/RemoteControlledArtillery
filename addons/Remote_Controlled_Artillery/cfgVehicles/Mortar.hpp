@@ -105,7 +105,7 @@ class RC_Mortar: RC_Mortar_base
 			};
 			magazines[]=
 			{
-				"RC_8Rnd_82mm_Mo_shells",
+				"RC_10Rnd_82mm_Mo_shells",
 				"RC_4Rnd_82mm_Mo_HEAB",
 				"RC_5Rnd_82mm_Mo_MultiGuided",
 				"RC_15Rnd_82mm_Mo_Smoke_white",
@@ -277,6 +277,7 @@ class RC_Mortar_Bag_I: RC_Mortar_Bag
 class RC_VehicleMortar: RC_Mortar
 {
 	/*
+	//didnt found a fitting script yet, as its a single texture
 	class EventHandlers: EventHandlers
 	{
 		init="insert script for mortar leg hiding";
@@ -286,9 +287,10 @@ class RC_VehicleMortar: RC_Mortar
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 
-	armor=300;	//200 works
+	armor=200;
 	threat[]={0,0,0};
 	cost=0;
+	typicalCargo[]={""};
 
 	class assembleInfo: assembleInfo
 	{
@@ -350,6 +352,16 @@ class RC_VehicleMortar: RC_Mortar
 			weapons[]=
 			{
 				"RC_vehiclemortar_82mm_V4"
+			};
+			magazines[]=
+			{
+				"RC_10Rnd_82mm_Mo_shells",
+				"RC_4Rnd_82mm_Mo_HEAB",
+				"RC_5Rnd_82mm_Mo_MultiGuided",
+				"RC_15Rnd_82mm_Mo_Smoke_white",
+				"RC_9Rnd_82mm_Mo_AT_mine",
+				"RC_9Rnd_82mm_Mo_mine",
+				"RC_6Rnd_82mm_Mo_Flare_white"
 			};
 
 			class Components: Components

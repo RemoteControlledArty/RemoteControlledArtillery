@@ -1,5 +1,5 @@
 /*
-	Author: Ascent
+	Author: Fluffy & Ascent
 
 	Description:
 	Locks Seats for specific Vehicles.

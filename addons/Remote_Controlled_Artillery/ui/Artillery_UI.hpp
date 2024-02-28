@@ -51,7 +51,10 @@ class RC_Artillery {
 		RscText_1021,
 		RscText_1022,
 		RscText_1023,
-		RscText_1024
+		RscText_1024,
+		RscText_1025,
+		RscText_1026,
+		RscText_1027
 	};
 	////////////////////////////////////////////////////////
 	// GUI EDITOR OUTPUT START (by Fluffy, v1.063, #Huxaga)
@@ -264,6 +267,38 @@ class RC_Artillery {
 		colorText[] = {0.35,0.35,0.35,0.35};
 		x = "0.891267 * safezoneW + safezoneX";
 		y = "0.3219294 * safezoneH + safezoneY";
+		h = "0.0850027 * safezoneH";
+		w = "0.3001219 * safezoneW";
+	};
+
+	//warning for ace scopes bug preventing gun elevation, by Ascent
+	class RscText_1025: RscText_1001 
+	{
+		idc = 1025;
+		text = "Warning: Ace adjustable scopes prevent"; //--- ToDo: Localize;
+		colorText[] = {0.5,0,0,0.5};
+		x = "0.871267 * safezoneW + safezoneX";
+		y = "0.3539294 * safezoneH + safezoneY";
+		h = "0.0850027 * safezoneH";
+		w = "0.3001219 * safezoneW";
+	};
+	class RscText_1026: RscText_1001 
+	{
+		idc = 1026;
+		text = "gun elevation if the keybinds overlap!"; //--- ToDo: Localize;
+		colorText[] = {0.5,0,0,0.5};
+		x = "0.876267 * safezoneW + safezoneX";
+		y = "0.3699294 * safezoneH + safezoneY";
+		h = "0.0850027 * safezoneH";
+		w = "0.3001219 * safezoneW";
+	};
+	class RscText_1027: RscText_1001 
+	{
+		idc = 1027;
+		text = "Disable this warning in addon settings."; //--- ToDo: Localize;
+		colorText[] = {0.5,0,0,0.5};
+		x = "0.876267 * safezoneW + safezoneX";
+		y = "0.3859294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};

@@ -38,7 +38,7 @@ class Improved_FOV_Laserdesignator_WD: Improved_FOV_Laserdesignator_A
 };
 
 
-// Thermal Versions
+// Thermal Improved Laser Designators
 class Improved_FOV_Laserdesignator_Ti_A: Improved_FOV_Laserdesignator_A
 {
 	displayName="Improved Laser Designator TI";
@@ -293,6 +293,7 @@ class RC_cannon_120mm: cannon_120mm
 
 
 /*
+//for later use
 class BombDemine_01_F;
 class RC_BombDemine_01_F: BombDemine_01_F
 {

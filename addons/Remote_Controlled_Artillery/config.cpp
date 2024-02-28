@@ -190,19 +190,19 @@ class CfgPatches
 			RC_RespawnVan_WD_O,
 			RC_RespawnVan_WD_I,
 
-			RC_Infantry_Carrier_1_A,
-			RC_Infantry_Carrier_1_WD,
-			RC_Infantry_Carrier_1_A_O,
-			RC_Infantry_Carrier_1_WD_O,
-			RC_Infantry_Carrier_1_A_I,
-			RC_Infantry_Carrier_1_WD_I,
+			RC_ICV_1_A,
+			RC_ICV_1_WD,
+			RC_ICV_1_A_O,
+			RC_ICV_1_WD_O,
+			RC_ICV_1_A_I,
+			RC_ICV_1_WD_I,
 
-			RC_Infantry_Carrier_2_A,
-			RC_Infantry_Carrier_2_WD,
-			RC_Infantry_Carrier_2_A_O,
-			RC_Infantry_Carrier_2_WD_O,
-			RC_Infantry_Carrier_2_A_I,
-			RC_Infantry_Carrier_2_WD_I,
+			RC_ICV_2_A,
+			RC_ICV_2_WD,
+			RC_ICV_2_A_O,
+			RC_ICV_2_WD_O,
+			RC_ICV_2_A_I,
+			RC_ICV_2_WD_I,
 
 			RC_FSV_1_A,
 			RC_FSV_1_WD,
@@ -225,12 +225,19 @@ class CfgPatches
 			RC_MBT6_A_I,
 			RC_MBT6_WD_I,
 
-			RC_IFV_A,
-			RC_IFV_WD,
-			RC_IFV_A_O,
-			RC_IFV_WD_O,
-			RC_IFV_A_I,
-			RC_IFV_WD_I,
+			RC_IFV_1_A,
+			RC_IFV_1_WD,
+			RC_IFV_1_A_O,
+			RC_IFV_1_WD_O,
+			RC_IFV_1_A_I,
+			RC_IFV_1_WD_I,
+
+			RC_IFV_2_A,
+			RC_IFV_2_WD,
+			RC_IFV_2_A_O,
+			RC_IFV_2_WD_O,
+			RC_IFV_2_A_I,
+			RC_IFV_2_WD_I,
 
 			RC_GPSDatalinkTarget
 		};
@@ -393,12 +400,6 @@ class CfgCloudlets
 {
 	#include "\Remote_Controlled_Artillery\effects\cfgCloudlets.hpp"
 };
-/*
-class CfgLights
-{
-	#include "\Remote_Controlled_Artillery\effects\cfgLights.hpp"
-};
-*/
 #include "\Remote_Controlled_Artillery\effects\effects.hpp"
 class CfgAmmo
 {

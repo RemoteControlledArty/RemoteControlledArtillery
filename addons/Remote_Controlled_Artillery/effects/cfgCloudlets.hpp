@@ -160,15 +160,11 @@ class ShellSparks1: Default
 	volume=0.5;
 	emissiveColor[]={{10000,6000,1600,0.5}};
 	colorVar[]={0.05,0.05,0.05,0};
-	color[]=
-	{
-		{0.8,0.6,0.16,-1},
-		{0.8,0.6,0.16,0}
-	};
+	color[]={{0.8,0.6,0.16,-1},{0.8,0.6,0.16,0}};
 	rotationVelocity = 1;
 	randomDirectionPeriod=0.2;
 	randomDirectionIntensity=0.2;
-	lifeTime=6;
+	lifeTime=8;
 	lifeTimeVar=2;
 };
 class ShellSparks2: ShellSparks1
@@ -318,7 +314,7 @@ class ShellShockwave: Default
 	particleFSFrameCount=1;
 	particleFSIndex=0;
 	angleVar=1;
-	lifeTime=0.4;
+	lifeTime=0.5;
 	lifeTimeVar=0;
 	positionVar[]={0.4,0.1,0.4};
 	animationName="";

@@ -2,10 +2,10 @@
 	TO DO / DONE LIST
 */
 
-*NOTE to self, wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
-*NOTE to self, gps marker lock, fire, then remove gps marker is efficient NLOS fire & forget
 
-
+NOTES TO SELF:
+-wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
+-gps marker lock, fire, then remove gps marker is efficient NLOS fire & forget
 
 
 TO DO - BUGFIXES:
@@ -23,17 +23,14 @@ General:
 
 EH:
 if (!isserver) exitwith {}; = server client only, not every player client
-*How does server side only affect "player side"?
 *Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
 
 Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 
 -modify effects
--ace scope zeroing hint
-
--3&5 seem fine, but el bounding for some keyboards needs to be in video
 -new screenshots for steam
+-edit this list and readme
 
 -check if createvehiclelocal gps works for multiplayer
 
@@ -217,6 +214,7 @@ DONE - FEATURES:
 -added 40mm MP-T ammo
 -added datalink guided NLOS AT/AA Missiles for IFV's
 -found out that without ace Mortars dont shoot correctly without vanilla artillery computer, added script that when its disabled and ace is not installed, its still available for mortars
+-added disableable warning that activates when ace is installed which informs that ace adjustable scopes block elevation with overlapping hotkeys
 
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserlock to HEAB, so it can select laser (and vehicles) on datalink for a firing solution (not suited to other rounds with distancetotarget=x, except for guided)

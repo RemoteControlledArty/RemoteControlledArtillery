@@ -46,8 +46,6 @@ class RC_B_30mm_MP_T: B_30mm_MP_Tracer_Red
 	indirectHitRange=3.75;
 	deflecting=1;
 };
-
-
 class B_40mm_GPR_Tracer_Red;
 class RC_B_40mm_MP_T: B_40mm_GPR_Tracer_Red
 {
@@ -129,7 +127,6 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					maxTrackableSpeed=35;
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
 				};
@@ -150,6 +147,27 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=400;
+					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
@@ -216,9 +234,67 @@ class RC_IFV_AA: RC_IFV_AA_Base
 					typeRecognitionDistance=2250;
 					maxTrackableSpeed=500;
 					angleRangeHorizontal=40;
-					angleRangeVertical=25;
+					angleRangeVertical=40;
 					groundNoiseDistanceCoef=0.2;
 					maxGroundNoiseDistance=50;
+				};
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=400;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=40;
+					angleRangeVertical=40;
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=3000;
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
 				};
 			};
 		};
@@ -556,7 +632,7 @@ class RC_HEAB_Base: Default
 	submunitionConeAngle=0;
 	submunitionParentSpeedCoef=0;
 	submunitionInitSpeed=0;
-	submunitionDirectionType="SubmunitionModelDirection";	//new, test it
+	submunitionDirectionType="SubmunitionModelDirection";
 	artilleryLock=1;
 	laserLock=1;	//only for firing solution calculator
 	irLock=1;	//only for firing solution calculator
@@ -784,6 +860,7 @@ class RC_HEAB_Rocket_Base: RC_HEAB_Base
 };
 
 /*
+//postponed
 class ShellBase;
 class RC_MP_Warhead_Base: ShellBase
 {
@@ -1140,7 +1217,7 @@ class RC_Sh_AMOS_MP_LaserGuided_Base: SubmunitionBase
 	artilleryLock=1;
 	autoSeekTarget=1;
 	//simulation="shotMissile"; makes misslecam connect, but not for guided submunition, and likely creates other issues, testing still needed
-	//cameraViewAvailable=1;	//likely should be submun only
+	//cameraViewAvailable=1;	//should be submun only
 	muzzleEffect="";
 	airFriction=0;
 	explosionEffects="RC_GuidedExplosion";
@@ -1205,8 +1282,6 @@ class RC_Sh_82mm_AMOS: Sh_82mm_AMOS
 	explosionEffects="RC_MortarExplosion";
 }
 */
-
-
 class RC_Sh_82mm_AMOS_submunition: Sh_82mm_AMOS
 {
 	explosionTime=0.0001;
@@ -1637,8 +1712,6 @@ class RC_Sh_105mm_AMOS: Sh_155mm_AMOS
 	explosionEffects="RC_MortarExplosion";
 }
 */
-
-
 class RC_Sh_105mm_AMOS_submunition: Sh_155mm_AMOS	//could be given 16km HE-RA range
 {
 	indirectHit=75.6;
@@ -1985,8 +2058,6 @@ class RC_Sh_120mm_AMOS: Sh_155mm_AMOS
 	explosionEffects="RC_MortarExplosion";
 }
 */
-
-
 class RC_Sh_120mm_AMOS_submunition: Sh_155mm_AMOS
 {
 	indirectHit=86.4;
@@ -2300,8 +2371,6 @@ class RC_Sh_155mm_AMOS: Sh_155mm_AMOS
 	explosionEffects="RC_MortarExplosion";
 }
 */
-
-
 class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 {
 	explosionTime=0.0001;
@@ -2540,24 +2609,9 @@ class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	};
 };
 
-/*
-class RC_155mm_MP_Warhead: RC_MP_Warhead_Base
-{
-	submunitionAmmo="ammo_Penetrator_155mm_MP";
-	explosionTime=0.0001;
-};
-*/
 
 class RC_155mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
-	//submunitionAmmo="RC_155mm_MP_Warhead";
-	//submunitionInitialOffset[]={0,0,-10};
-	//submunitionDirectionType="SubmunitionTargetDirection";
-	//triggerdistance=10;
-	//triggerOnImpact=-1;
-	//proximityExplosionDistance=10;
-	//triggerDistance=10;
-
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
 	//craterEffects="RC_155mmGuidedDust";
 	indirectHit=125;
@@ -2664,8 +2718,6 @@ class RC_R_230mm_fly: R_230mm_fly
 	explosionEffects="RC_MortarExplosion";
 }
 */
-
-
 class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 {
 	explosionTime=0.0001;

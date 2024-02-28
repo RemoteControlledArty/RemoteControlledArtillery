@@ -6,8 +6,6 @@ class RC_1Rnd_ATGM_MP_SACLOS: Vorona_HEAT
 	displayNameShort="MP 3km";
 	ammo="RC_M_ATGM_MP_SACLOS";
 };
-
-
 class 1Rnd_GAT_missiles;
 class RC_1Rnd_ATGM_MP_Lock: 1Rnd_GAT_missiles
 {
@@ -18,6 +16,7 @@ class RC_1Rnd_ATGM_MP_Lock: 1Rnd_GAT_missiles
 
 
 /*
+//for later use
 class PylonRack_4Rnd_BombDemine_01_F;
 class RC_PylonRack_4Rnd_BombDemine_01_F: PylonRack_4Rnd_BombDemine_01_F
 {
@@ -37,6 +36,7 @@ class RC_PylonRack_4Rnd_BombDemine_01_F: PylonRack_4Rnd_BombDemine_01_F
 */
 
 
+//.338NM Vehicle MMG Belts
 class VehicleMagazine;
 class RC_200Rnd_338_T_Mag: VehicleMagazine
 {
