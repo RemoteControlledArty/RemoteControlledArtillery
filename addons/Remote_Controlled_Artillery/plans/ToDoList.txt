@@ -28,11 +28,9 @@ if (!isserver) exitwith {}; = server client only, not every player client
 Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 
--modify effects
 -new screenshots for steam
--edit this list and readme
 
--check if createvehiclelocal gps works for multiplayer
+-check after upload if createvehiclelocal gps works for multiplayer
 
 
 TO DO - QUALITY OF LIFE:
