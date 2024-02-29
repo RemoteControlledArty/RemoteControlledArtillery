@@ -53,7 +53,7 @@ RC_Artillery_UI = [] spawn {
 
 			_RCA_CurrentArtyDisplay = displayNull;
 			// If our one is Null we use theirs
-			if (!isNull _RCAUI) then {_RCA_CurrentArtyDisplay = _RCAUI;} else {_RCA_CurrentArtyDisplay = _AceUI;};
+			if (isNull _RCAUI) then {_RCA_CurrentArtyDisplay = _AceUI} else {_RCA_CurrentArtyDisplay = _RCAUI};
 
 			// This is the Range Text
 			_rangeText = ctrlText (_RCA_CurrentArtyDisplay displayCtrl 173);
