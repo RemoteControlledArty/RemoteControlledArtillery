@@ -1958,20 +1958,6 @@ class RC_Sh_105mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 };
 
 
-//Subcaliber Hypersonic Guided, 105mm to be used in 155mm Sabot to half time of flight and increase range (138km)
-class RC_105mm_MP_MultiGuided_SubCalHypersonic_Submunition: RC_105mm_MP_MultiGuided_Submunition
-{
-	//maybe add different velocity/steering
-	cost=1200;
-};
-class RC_Sh_105mm_AMOS_MP_MultiGuided_SubCalHypersonic: RC_Sh_105mm_AMOS_MP_MultiGuided
-{
-	submunitionAmmo="RC_105mm_MP_MultiGuided_SubCalHypersonic_Submunition";
-	timeToLive=360;
-	cost=1200;
-};
-
-
 class RC_Sh_105mm_AMOS_delayed_submunition: RC_Sh_105mm_AMOS_submunition
 {
 	explosionTime=0.2;
@@ -3184,21 +3170,6 @@ class RC_230mm_LG_DelayedFuse_submunition: RC_230mm_MP_LaserGuided_Submunition
 class RC_230mm_LG_DelayedFuse: RC_R_230mm_MP_LaserGuided
 {
 	submunitionAmmo="RC_M_Mo_155mm_LG_DelayedFuse_submunition";
-};
-
-
-//Hypersonic Guided, to half time of flight and increase range (138km), but as tradeoff has smaller warhead
-class RC_230mm_MP_MultiGuided_Hypersonic_Submunition: RC_230mm_MP_MultiGuided_Submunition
-{
-	submunitionAmmo="ammo_Penetrator_155mm_MP";
-	indirectHit=400;
-	cost=2000;
-};
-class RC_R_230mm_MP_MultiGuided_Hypersonic: RC_R_230mm_MP_MultiGuided
-{
-	submunitionAmmo="RC_230mm_MP_MultiGuided_Hypersonic_Submunition";
-	timeToLive=360;
-	cost=2000;
 };
 
 

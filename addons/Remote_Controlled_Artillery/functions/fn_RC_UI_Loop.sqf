@@ -46,7 +46,7 @@ RC_Artillery_UI = [] spawn {
 			if (!RC_Allow_Vanilla_Arty_Computer) then {
 				_isMortar = false;
 				if (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCisMortar") == 1) then {_isMortar = true;};
-				if (isNull _AceUI && _isMortar) then {[true] remoteExec ["enableEngineArtillery", _uav];} else {[false] remoteExec ["enableEngineArtillery", _uav]};
+				if (!(isClass(configFile >> "CfgPatches" >> "ace_main")) && _isMortar) then {hint format ["Hello, %1!", name player]; [true] remoteExec ["enableEngineArtillery", _uav];} else {[false] remoteExec ["enableEngineArtillery", _uav]};
 			} else {
 				[true] remoteExec ["enableEngineArtillery", _uav];
 			};
@@ -213,9 +213,12 @@ RC_Artillery_UI = [] spawn {
 			//};
 
 			//if ace installed, warning that ace adjustable scopes prevent gun elevation when hotkeys overlap
-			if !(isNull _AceUI) then {
+			if ((isClass(configFile >> "CfgPatches" >> "ace_main"))) then
+			{
 				if (RC_ace_hotkey_warning) then {
-					{{(_display displayCtrl _x) ctrlShow true} forEach [1025,1026,1027];} else {{(_display displayCtrl _x) ctrlShow false} forEach [1025,1026,1027];};
+					{(_display displayCtrl _x) ctrlShow true} forEach [1025,1026,1027];
+				} else {
+					{(_display displayCtrl _x) ctrlShow false} forEach [1025,1026,1027];
 				};
 			};
 
@@ -320,7 +323,8 @@ RC_Artillery_UI = [] spawn {
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 
 				// If we have Solution Calculator Turned on do da Math
-				if (RC_Solution_Calculator_On) then {
+				//if (RC_Solution_Calculator_On) then {
+				if (true) then {
 					
 					// Marker High Angle
 					_calcHigh = (atan((_roundVelocity^2+SQRT(_roundVelocity^4-_gravity*(_gravity*(_targetDistance^2)+2*_realElevationOriginal*(_roundVelocity^2))))/(_gravity*_targetDistance)));
@@ -448,7 +452,8 @@ RC_Artillery_UI = [] spawn {
 			};
 
 			// If we have the Solution Calculating turned off we hide the UI
-			if !(RC_Solution_Calculator_On) then {
+			//if !(RC_Solution_Calculator_On) then {
+			if !(true) then {
 				_ctrlHighSol ctrlShow false;
             	_ctrlLowSol ctrlShow false;
             	_ctrlHighETA ctrlShow false;

@@ -20,6 +20,8 @@
     true
 ] call CBA_fnc_addSetting;
 
+/*
+//ace tables show false data currently, so for now this setting is removed and on by default
 [
     "RC_Solution_Calculator_On",
     "CHECKBOX",
@@ -30,6 +32,7 @@
     {},
     true
 ] call CBA_fnc_addSetting;
+*/
 
 [
     "RC_Arty_EL_Diff",

@@ -132,8 +132,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 
 			weapons[]=
 			{
-				"RC_155mm_AMOS_V4",
-				"SmokeLauncher"
+				"RC_155mm_AMOS_V4"
 			};
 			magazines[]=
 			{
@@ -144,8 +143,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 				"RC_15Rnd_155mm_Mo_smoke",
 				"RC_9Rnd_155mm_Mo_AT_mine",
 				"RC_9Rnd_155mm_Mo_mine",
-				"RC_6Rnd_155mm_Mo_Illum",
-				"SmokeLauncherMag"
+				"RC_6Rnd_155mm_Mo_Illum"
 			};
 
 			class OpticsIn: OpticsIn
@@ -421,8 +419,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 
 			weapons[]=
 			{
-				"RC_155mm_AMOS_V4",
-				"SmokeLauncher"
+				"RC_155mm_AMOS_V4"
 			};
 			magazines[]=
 			{
@@ -433,8 +430,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 				"RC_15Rnd_155mm_Mo_smoke",
 				"RC_9Rnd_155mm_Mo_AT_mine",
 				"RC_9Rnd_155mm_Mo_mine",
-				"RC_6Rnd_155mm_Mo_Illum",
-				"SmokeLauncherMag"
+				"RC_6Rnd_155mm_Mo_Illum"
 			};
 
 			class OpticsIn: OpticsIn
