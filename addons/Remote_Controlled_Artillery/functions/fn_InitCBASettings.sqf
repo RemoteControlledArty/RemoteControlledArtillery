@@ -1,4 +1,15 @@
 [
+    "RC_ace_hotkey_warning",
+    "CHECKBOX",
+    ["ace hotkey warning", "Remember! If ace scope adjustments hotkey overlaps, it prevents artillery gun elevation, when using a zeroable scope."],
+    ["Remote Controlled Artillery"],
+    true,
+    false,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
+[
     "RC_Allow_Vanilla_Arty_Computer",
     "CHECKBOX",
     ["allow vanilla arty computer", "When this is ticked the vanilla Artillery Computer can be used, without ACE it cannot be disabled for Mortars. Vanilla computer has high trajectory only, so worse TOF."],
@@ -23,7 +34,7 @@
 [
     "RC_Arty_EL_Diff",
     "CHECKBOX",
-    ["elevation difference reference", "When ticked the Elevation Difference shown is the Target Compared to the Artillery Piece."],
+    ["elevation difference reference", "When ticked the Elevation Difference shown is the Target Compared to the Artillery Piece, if unticked the other way."],
     ["Remote Controlled Artillery"],
     true,
     true,
@@ -72,17 +83,6 @@
     ["GPS marker prefix", "This is the Prefix (Case Insensitive) that the Target Markers need to have to be considered a valid Target."],
     "Remote Controlled Artillery",
     "GPS"
-] call CBA_fnc_addSetting;
-
-[
-    "RC_ace_hotkey_warning",
-    "CHECKBOX",
-    ["disable ace hotkey warning", "If ace scope adjustments hotkey overlaps, it prevents artillery gun elevation, when using a zeroable scope."],
-    ["Remote Controlled Artillery"],
-    true,
-    false,
-    {},
-    false
 ] call CBA_fnc_addSetting;
 
 //doesnt work with current UI setup

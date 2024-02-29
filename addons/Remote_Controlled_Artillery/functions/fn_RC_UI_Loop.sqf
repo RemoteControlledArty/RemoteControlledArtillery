@@ -213,9 +213,9 @@ RC_Artillery_UI = [] spawn {
 			//};
 
 			//if ace installed, warning that ace adjustable scopes prevent gun elevation when hotkeys overlap
-			if (isNull _AceUI) then {
+			if !(isNull _AceUI) then {
 				if (RC_ace_hotkey_warning) then {
-					{{{(_display displayCtrl _x) ctrlShow true} forEach [1025,1026,1027];} else {{(_display displayCtrl _x) ctrlShow false} forEach [1025,1026,1027];};};
+					{{(_display displayCtrl _x) ctrlShow true} forEach [1025,1026,1027];} else {{(_display displayCtrl _x) ctrlShow false} forEach [1025,1026,1027];};
 				};
 			};
 

@@ -29,6 +29,7 @@ Arty:
 *quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 
 -new screenshots for steam
+-defunct disable warning
 
 -check after upload if createvehiclelocal gps works for multiplayer
 
