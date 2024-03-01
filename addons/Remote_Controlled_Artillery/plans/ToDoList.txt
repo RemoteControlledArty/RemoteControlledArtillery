@@ -11,7 +11,7 @@ NOTES TO SELF:
 TO DO - BUGFIXES:
 
 -report bug to ace team: turret is locked unable to adjust up/down, when scope of player is adjustable, despite being in remote control
--report bug to ace team: crl+h cuts connection and destroys UV
+-report bug to ace team: crl+h cuts connection and destroys UV *only with my hotkeys
 
 -changing arty marker name changes distance (like arty1 to arty1 smoke), same when deleting marker on the map, and replacing it, while moving them doesnt seem to have that effect
 -only 1 gps marker active at a time (newest one), moving them deactives it
