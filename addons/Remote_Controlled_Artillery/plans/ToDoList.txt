@@ -19,23 +19,12 @@ TO DO - BUGFIXES:
 
 TO DO - FEATURES:
 
-General:
-
-EH:
-if (!isserver) exitwith {}; = server client only, not every player client
-*Alternative to EH would be check for player vehicle 0.5s sleep, check config, then activate lock script
-
 Arty:
-*quirks: renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
-
--new screenshots for steam
--defunct disable warning
-
+-renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 -check after upload if createvehiclelocal gps works for multiplayer
 
 
 TO DO - QUALITY OF LIFE:
-
 
 
 POSTPONED:
