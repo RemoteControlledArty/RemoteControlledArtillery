@@ -11,8 +11,6 @@ RC_EngineOff = [] spawn
 {
 	while {true} do
 	{
-		sleep 0.2;
-
 		_uav = (getConnectedUAV player);
 
 		// If we don't have a UAV connected, Start at the top
@@ -28,7 +26,7 @@ RC_EngineOff = [] spawn
 		_speedCheck1 = false;
 		_speedCheck2 = false;
 		if ((speed _uav <= 0.1) and (speed _uav >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false};
-		sleep 0.2;
+		sleep 1;
 		if (_EngineOff == 2) then {sleep 2};
 		if ((speed _uav <= 0.1) and (speed _uav >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false};
 		if ((_speedCheck1) and (_speedCheck2) and ((_EngineOff == 1) or (_EngineOff == 2))) then {_uav engineOn false};
