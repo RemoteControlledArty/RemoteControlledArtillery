@@ -16,6 +16,8 @@ TO DO - BUGFIXES:
 -changing arty marker name changes distance (like arty1 to arty1 smoke), same when deleting marker on the map, and replacing it, while moving them doesnt seem to have that effect
 -only 1 gps marker active at a time (newest one), moving them deactives it
 
+-artillery gun laying resetting in multiplayer
+
 
 TO DO - FEATURES:
 
@@ -87,6 +89,8 @@ DONE - BUGFIXES:
 -engine turnoff now per cfg value, so it doesnt affect other ugv's
 -found cause for sicnificant over/under-shoot, for low trajectory 0.X MIL are indeed needed, nut dont have to be shown on screen, changed green highlight to +-0.5 instead of 1, this solves it
 -many many more
+-fixed engine off being too fast for multiplayer
+-fixed respawn truck script
 
 DONE - FEATURES:
 
