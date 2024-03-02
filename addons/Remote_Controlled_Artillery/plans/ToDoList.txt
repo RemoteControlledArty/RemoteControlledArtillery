@@ -29,7 +29,10 @@ Arty:
 -check after upload if createvehiclelocal gps works for multiplayer
 
 -make delayed fuze also ir capable
+
+FSV/IFV:
 -check ICV engine off on server
+-x2 SACLOS only missles, vorona or edited titan
 
 
 TO DO - QUALITY OF LIFE:
