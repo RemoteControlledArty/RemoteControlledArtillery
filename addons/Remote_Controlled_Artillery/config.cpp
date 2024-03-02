@@ -129,6 +129,11 @@ class CfgPatches
 			RC_ATGM_small_DIG_I,
 			RC_ATGM_small_WD_I,
 
+			RC_ATGM_small_S_WD,
+			RC_ATGM_small_S_WD_O,
+			RC_ATGM_small_S_DIG_I,
+			RC_ATGM_small_S_WD_I,
+
 			RC_Mortar,
 			RC_Mortar_O,
 			RC_Mortar_HEX_O,

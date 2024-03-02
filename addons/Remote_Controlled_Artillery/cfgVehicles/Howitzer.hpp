@@ -137,7 +137,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 			magazines[]=
 			{
 				"RC_15Rnd_155mm_Mo_shells",
-				"RC_5Rnd_155mm_Mo_HEAB",
+				"RC_4Rnd_155mm_Mo_HEAB",
 				"RC_5Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_20Rnd_155mm_Mo_smoke",
@@ -424,7 +424,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			magazines[]=
 			{
 				"RC_15Rnd_155mm_Mo_shells",
-				"RC_5Rnd_155mm_Mo_HEAB",
+				"RC_4Rnd_155mm_Mo_HEAB",
 				"RC_5Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_20Rnd_155mm_Mo_smoke",
@@ -586,7 +586,7 @@ class RC_Static_Arty: RC_Static_Arty_base
 			magazines[]=
 			{
 				"RC_15Rnd_120mm_Mo_shells",
-				"RC_5Rnd_120mm_Mo_HEAB",
+				"RC_4Rnd_120mm_Mo_HEAB",
 				"RC_5Rnd_120mm_Mo_MultiGuided",
 				"RC_2Rnd_120mm_Mo_Cluster",
 				"RC_20Rnd_120mm_Mo_smoke",

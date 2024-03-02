@@ -16,7 +16,10 @@ TO DO - BUGFIXES:
 -changing arty marker name changes distance (like arty1 to arty1 smoke), same when deleting marker on the map, and replacing it, while moving them doesnt seem to have that effect
 -only 1 gps marker active at a time (newest one), moving them deactives it
 
--artillery gun laying resetting in multiplayer
+-artillery gun laying resetting in multiplayer, but not always..?
+-find seat locking fix for recon radar, test case 6
+-uav laser spot not updating on moving target, for some players, for me it did
+*it reverted to a laser that was old by another player before releasing the drone and the other taking over, that was also visible for other player, and didnt dissapear when deleting the uav
 
 
 TO DO - FEATURES:
@@ -24,6 +27,9 @@ TO DO - FEATURES:
 Arty:
 -renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 -check after upload if createvehiclelocal gps works for multiplayer
+
+-make delayed fuze also ir capable
+-check ICV engine off on server
 
 
 TO DO - QUALITY OF LIFE:

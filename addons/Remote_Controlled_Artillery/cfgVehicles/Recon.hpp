@@ -308,7 +308,7 @@ class RC_radar_small_base: I_LT_01_scout_F
 	scope=0;
 	scopeCurator=0;
 	forceHideDriver=1;
-	RCDisableSeats=3; // locks driver seat
+	RCDisableSeats=6; // locks gunner and commander seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	
 };
