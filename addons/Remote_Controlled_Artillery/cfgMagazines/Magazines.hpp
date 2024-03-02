@@ -159,6 +159,7 @@ class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_shells: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_HE";
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -325,6 +326,7 @@ class RC_1Rnd_82mm_Mo_HEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_HEAB";
 	RC_AimAboveHeight=12.7;		//airburstheight
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -491,6 +493,7 @@ class RC_1Rnd_82mm_Mo_lowHEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_lowHEAB";
 	RC_AimAboveHeight=6;		//airburstheight
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -656,6 +659,7 @@ class RC_40Rnd_82mm_Mo_lowHEAB: RC_1Rnd_82mm_Mo_lowHEAB
 class 8Rnd_82mm_Mo_Flare_white;
 class RC_1Rnd_82mm_Mo_Flare_white: 8Rnd_82mm_Mo_Flare_white
 {
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="Illumination";
 	displayNameShort="Illum";
 	count=1;
@@ -823,6 +827,7 @@ class RC_1Rnd_82mm_Mo_Smoke_white: 8Rnd_82mm_Mo_Smoke_white
 {
 	ammo="RC_Smoke_82mm_AMOS_White";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -991,6 +996,7 @@ class RC_1Rnd_82mm_Mo_LaserGuided: 8Rnd_82mm_Mo_LG
 	ammo="RC_Sh_82mm_AMOS_MP_LaserGuided";
 	RC_AimAboveHeight=270;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
@@ -1156,6 +1162,7 @@ class RC_40Rnd_82mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 class RC_1Rnd_82mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	ammo="RC_Sh_82mm_AMOS_MP_MultiGuided";
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
 };
@@ -1321,6 +1328,7 @@ class RC_1Rnd_82mm_Mo_mine: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Mine_82mm_AMOS_range";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -1487,6 +1495,7 @@ class RC_1Rnd_82mm_Mo_AT_mine: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_AT_Mine_82mm_AMOS_range";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -1652,6 +1661,7 @@ class RC_40Rnd_82mm_Mo_AT_mine: RC_1Rnd_82mm_Mo_AT_mine
 class RC_1Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	ammo="RC_Sh_82mm_AMOS_LG_DelayedFuse";
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 };
@@ -1817,6 +1827,7 @@ class RC_40Rnd_82mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 class RC_1Rnd_82mm_Mo_backupHEAB: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_backupHEAB";
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="HE AB [direct]";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -2149,6 +2160,7 @@ class RC_1Rnd_105mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_HE";
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -2316,6 +2328,7 @@ class RC_1Rnd_105mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_HEAB";
 	RC_AimAboveHeight=15.3;		//airburstheight
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -2483,6 +2496,7 @@ class RC_1Rnd_105mm_Mo_lowHEAB: 32Rnd_155mm_Mo_shells
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_lowHEAB";
 	RC_AimAboveHeight=6;		//airburstheight
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -2651,6 +2665,7 @@ class RC_1Rnd_105mm_Mo_mine: 6Rnd_155mm_Mo_mine
 	initSpeed=400;
 	ammo="RC_Mine_105mm_AMOS_range";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -2819,6 +2834,7 @@ class RC_1Rnd_105mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 	initSpeed=400;
 	ammo="RC_Cluster_105mm_AMOS";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
 	count=1;
@@ -2987,6 +3003,7 @@ class RC_1Rnd_105mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 	initSpeed=400;
 	ammo="RC_Smoke_155mm_AMOS_White";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -3156,6 +3173,7 @@ class RC_1Rnd_105mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 	ammo="RC_Sh_105mm_AMOS_MP_LaserGuided";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
@@ -3321,6 +3339,7 @@ class RC_40Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
 class RC_1Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_LaserGuided
 {
 	ammo="RC_Sh_105mm_AMOS_MP_MultiGuided";
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
 };
@@ -3488,6 +3507,7 @@ class RC_1Rnd_105mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 	initSpeed=400;
 	ammo="RC_AT_Mine_105mm_AMOS_range";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -3653,6 +3673,7 @@ class RC_40Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
 class RC_1Rnd_105mm_Mo_Illum: 32Rnd_155mm_Mo_shells
 {
 	initSpeed=400;
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="Illumination";
 	displayNameShort="Illum";
 	ammo="Flare_155mm_AMOS_White";
@@ -3819,6 +3840,7 @@ class RC_40Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
 class RC_1Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LaserGuided
 {
 	ammo="RC_Sh_105mm_AMOS_LG_DelayedFuse";
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 };
@@ -3985,6 +4007,7 @@ class RC_1Rnd_105mm_Mo_backupHEAB: 32Rnd_155mm_Mo_shells
 {
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_backupHEAB";
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE AB [direct]";
 	displayNameShort="HE AB [direct]";
 	count=1;
@@ -4316,6 +4339,7 @@ class magazine_ShipCannon_120mm_HE_shells_x32;
 class RC_1Rnd_120mm_Mo_shells: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_HE";
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -4482,6 +4506,7 @@ class RC_1Rnd_120mm_Mo_HEAB: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_HEAB";
 	RC_AimAboveHeight=17.5;		//airburstheight
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -4648,6 +4673,7 @@ class RC_1Rnd_120mm_Mo_lowHEAB: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_lowHEAB";
 	RC_AimAboveHeight=6;		//airburstheight
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -4816,6 +4842,7 @@ class RC_1Rnd_120mm_Mo_LaserGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 	ammo="RC_Sh_120mm_AMOS_MP_LaserGuided";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
@@ -4983,6 +5010,7 @@ class RC_1Rnd_120mm_Mo_MultiGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 	ammo="RC_Sh_120mm_AMOS_MP_MultiGuided";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
 	count=1;
@@ -5150,6 +5178,7 @@ class RC_1Rnd_120mm_Mo_Cluster: magazine_ShipCannon_120mm_HE_cluster_shells_x2
 {
 	ammo="RC_Cluster_120mm_AMOS";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
 	count=1;
@@ -5317,6 +5346,7 @@ class RC_1Rnd_120mm_Mo_mine: magazine_ShipCannon_120mm_mine_shells_x6
 {
 	ammo="RC_Mine_120mm_AMOS_range";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -5484,6 +5514,7 @@ class RC_1Rnd_120mm_Mo_smoke: magazine_ShipCannon_120mm_smoke_shells_x6
 {
 	ammo="RC_Smoke_155mm_AMOS_White";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -5651,6 +5682,7 @@ class RC_1Rnd_120mm_Mo_AT_mine: magazine_ShipCannon_120mm_AT_mine_shells_x6
 {
 	ammo="RC_AT_Mine_120mm_AMOS_range";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -5817,6 +5849,7 @@ class RC_1Rnd_120mm_Mo_Illum: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="Flare_155mm_AMOS_White";
 	RC_AimAboveHeight=500;
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="Illumination";
 	displayNameShort="Illum";
 	count=1;
@@ -5984,6 +6017,7 @@ class RC_1Rnd_120mm_Mo_LG_DelayedFuse: magazine_ShipCannon_120mm_HE_LG_shells_x2
 	ammo="RC_Sh_120mm_AMOS_LG_DelayedFuse";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -6150,6 +6184,7 @@ class RC_40Rnd_120mm_Mo_LG_DelayedFuse: RC_1Rnd_120mm_Mo_LG_DelayedFuse
 class RC_1Rnd_120mm_Mo_backupHEAB: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_backupHEAB";
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE AB [direct]";
 	displayNameShort="HE AB [direct]";
 	count=1;
@@ -6480,6 +6515,7 @@ class RC_40Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backuplowHEAB
 class RC_1Rnd_155mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HE";
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -6646,6 +6682,7 @@ class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HEAB";
 	RC_AimAboveHeight=21.2;		//airburstheight
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -6812,6 +6849,7 @@ class RC_1Rnd_155mm_Mo_lowHEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_lowHEAB";
 	RC_AimAboveHeight=6;		//airburstheight
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -6978,6 +7016,7 @@ class RC_1Rnd_155mm_Mo_mine: 6Rnd_155mm_Mo_mine
 {
 	ammo="RC_Mine_155mm_AMOS_range";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
@@ -7144,6 +7183,7 @@ class RC_1Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
 	ammo="RC_Cluster_155mm_AMOS";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
 	count=1;
@@ -7310,6 +7350,7 @@ class RC_1Rnd_155mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 {
 	ammo="RC_Smoke_155mm_AMOS_White";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
@@ -7477,6 +7518,7 @@ class RC_1Rnd_155mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 	ammo="RC_Sh_155mm_AMOS_MP_LaserGuided";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
@@ -7644,6 +7686,7 @@ class RC_1Rnd_155mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
 	ammo="RC_Sh_155mm_AMOS_MP_MultiGuided";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
 	count=1;
@@ -7810,6 +7853,7 @@ class RC_1Rnd_155mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 {
 	ammo="RC_AT_Mine_155mm_AMOS_range";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
@@ -7974,6 +8018,7 @@ class RC_40Rnd_155mm_Mo_AT_mine: RC_1Rnd_155mm_Mo_AT_mine
 
 class RC_1Rnd_155mm_Mo_Illum: 32Rnd_155mm_Mo_shells
 {
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="Illumination";
 	displayNameShort="Illum";
 	ammo="Flare_155mm_AMOS_White";
@@ -8142,6 +8187,7 @@ class RC_1Rnd_155mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
 	ammo="RC_Sh_155mm_AMOS_LG_DelayedFuse";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -8308,6 +8354,7 @@ class RC_40Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
 class RC_1Rnd_155mm_Mo_backupHEAB: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_backupHEAB";
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE AB [direct]";
 	displayNameShort="HE AB [direct]";
 	count=1;
@@ -8639,6 +8686,7 @@ class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_HE";
+	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -8693,6 +8741,7 @@ class RC_1Rnd_230mm_rockets_HEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_HEAB";
 	RC_AimAboveHeight=21.2;		//airburstheight
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
 	count=1;
@@ -8747,6 +8796,7 @@ class RC_1Rnd_230mm_rockets_lowHEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_lowHEAB";
 	RC_AimAboveHeight=6;		//airburstheight
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
 	count=1;
@@ -8802,6 +8852,7 @@ class RC_1Rnd_230mm_rockets_cluster: 12Rnd_230mm_rockets_cluster
 {
 	ammo="RC_R_230mm_Cluster";
 	RC_TerrainWarning=1;
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
 	count=1;
@@ -8857,6 +8908,7 @@ class RC_1Rnd_230mm_rockets_LaserGuided: 12Rnd_230mm_rockets
 	ammo="RC_R_230mm_MP_LaserGuided";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
@@ -8912,6 +8964,7 @@ class RC_1Rnd_230mm_rockets_MultiGuided: 12Rnd_230mm_rockets
 	ammo="RC_R_230mm_MP_MultiGuided";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
 	count=1;
@@ -8967,6 +9020,7 @@ class RC_1Rnd_230mm_rockets_LG_DelayedFuse: 12Rnd_230mm_rockets
 	ammo="RC_230mm_LG_DelayedFuse";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
 	count=1;
@@ -9021,6 +9075,7 @@ class RC_12Rnd_230mm_rockets_LG_DelayedFuse: RC_1Rnd_230mm_rockets_LG_DelayedFus
 class RC_1Rnd_230mm_rockets_backupHEAB: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_backupHEAB";
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE AB [direct]";
 	displayNameShort="HE AB [direct]";
 	count=1;
@@ -9128,6 +9183,7 @@ class RC_1Rnd_604mm_rockets_ATACMS_HEAB: 12Rnd_230mm_rockets
 {
 	displayName="ATACMS HE Airburst";
 	RC_AimAboveHeight=30;		//airburstheight
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayNameShort="ATACMS HE AB";
 	ammo="RC_R_604mm_ATACMS_HEAB";
 	count=1;
@@ -9141,6 +9197,7 @@ class RC_2Rnd_604mm_rockets_ATACMS_HEAB: RC_1Rnd_604mm_rockets_ATACMS_HEAB
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_604mm_rockets_ATACMS_backupHEAB: 12Rnd_230mm_rockets
 {
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="ATACMS HE AB [direct]";
 	displayNameShort="ATACMS HE AB [direct]";
 	ammo="RC_R_604mm_ATACMS_backupHEAB";
@@ -9154,6 +9211,7 @@ class RC_2Rnd_604mm_rockets_ATACMS_backupHEAB: RC_1Rnd_604mm_rockets_ATACMS_back
 
 class RC_1Rnd_604mm_rockets_ATACMS_DPICM: 12Rnd_230mm_rockets
 {
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="ATACMS DPICM";
 	RC_TerrainWarning=1;
 	displayNameShort="ATACMS DPICM";

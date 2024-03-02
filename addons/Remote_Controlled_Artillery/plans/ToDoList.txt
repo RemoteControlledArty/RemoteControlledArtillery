@@ -26,7 +26,7 @@ TO DO - FEATURES:
 
 Arty:
 -renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
--check after upload if createvehiclelocal gps works for multiplayer
+-comment for round, below Target 01
 
 -make delayed fuze also ir capable
 
@@ -207,6 +207,7 @@ DONE - FEATURES:
 -for vehicle attached mortar/ or close object blocking viewpoint, when target<=20m (like vehicle its attached to): shows map marker targets instead, shows requires lock message for guided shells
 -improved GPS Markers to not be noticed/attacked by AI
 -MP Guided now also compatible with gps guidance using vanilla artillery computer
+-now greys out the firing solution & ETA for unsuited low or high trajectory depending on shell
 
 
 -low/high trajectory list:

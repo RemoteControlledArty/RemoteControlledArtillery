@@ -54,7 +54,8 @@ class RC_Artillery {
 		RscText_1024,
 		RscText_1025,
 		RscText_1026,
-		RscText_1027
+		RscText_1027,
+		RscText_1028
 	};
 	////////////////////////////////////////////////////////
 	// GUI EDITOR OUTPUT START (by Fluffy, v1.063, #Huxaga)
@@ -115,14 +116,14 @@ class RC_Artillery {
 	class RscText_1008: RscText_1001
 	{
 		idc = 1008;
-		text = "H SOL: 0000"; //--- ToDo: Localize;
+		text = "H EL: 0000"; //--- ToDo: Localize;
 		x = "0.95165 * safezoneW + safezoneX";
 		y = "0.1639327 * safezoneH + safezoneY";
 	};
 	class RscText_1009: RscText_1001
 	{
 		idc = 1009;
-		text = "L SOL: 0000"; //--- ToDo: Localize;
+		text = "L EL: 0000"; //--- ToDo: Localize;
 		x = "0.95165 * safezoneW + safezoneX";
 		y = "0.1859345 * safezoneH + safezoneY";
 	};
@@ -154,7 +155,7 @@ class RC_Artillery {
 		text = "RAISE CAMERA INTO SKY"; //--- ToDo: Localize;
 		colorText[] = {1,0,0,1};
 		x = "0.891267 * safezoneW + safezoneX";
-		y = "0.1779294 * safezoneH + safezoneY";
+		y = "0.1819294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -164,7 +165,7 @@ class RC_Artillery {
 		text = "FOR SUBMUNITIONS TO WORK"; //--- ToDo: Localize;
 		colorText[] = {1,0,0,1};
 		x = "0.885267 * safezoneW + safezoneX";
-		y = "0.1939294 * safezoneH + safezoneY";
+		y = "0.1979294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -174,7 +175,7 @@ class RC_Artillery {
 		text = "SELECT TARGET ON DATALINK"; //--- ToDo: Localize;
 		colorText[] = {1,0,0,1};
 		x = "0.885267 * safezoneW + safezoneX";
-		y = "0.1779294 * safezoneH + safezoneY";
+		y = "0.1819294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -184,7 +185,7 @@ class RC_Artillery {
 		text = "TO ACTIVATE GUIDAINCE"; //--- ToDo: Localize;
 		colorText[] = {1,0,0,1};
 		x = "0.891267 * safezoneW + safezoneX";
-		y = "0.1939294 * safezoneH + safezoneY";
+		y = "0.1979294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -194,9 +195,9 @@ class RC_Artillery {
 	{
 		idc = 1017;
 		text = "select DL target:"; //--- ToDo: Localize;
-		colorText[] = {0.45,0.45,0.45,0.45};
+		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
-		y = "0.2099294 * safezoneH + safezoneY";
+		y = "0.2179294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -204,9 +205,9 @@ class RC_Artillery {
 	{
 		idc = 1018;
 		text = "unselect DL target:"; //--- ToDo: Localize;
-		colorText[] = {0.45,0.45,0.45,0.45};
+		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
-		y = "0.2259294 * safezoneH + safezoneY";
+		y = "0.2339294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -214,9 +215,9 @@ class RC_Artillery {
 	{
 		idc = 1019;
 		text = "cycle markers ->:"; //--- ToDo: Localize;
-		colorText[] = {0.45,0.45,0.45,0.45};
+		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
-		y = "0.2419294 * safezoneH + safezoneY";
+		y = "0.2499294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -224,9 +225,9 @@ class RC_Artillery {
 	{
 		idc = 1020;
 		text = "cycle markers <-:"; //--- ToDo: Localize;
-		colorText[] = {0.45,0.45,0.45,0.45};
+		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
-		y = "0.2579294  * safezoneH + safezoneY";
+		y = "0.2659294  * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -234,9 +235,9 @@ class RC_Artillery {
 	{
 		idc = 1021;
 		text = "cycle charges:"; //--- ToDo: Localize;
-		colorText[] = {0.45,0.45,0.45,0.45};
+		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
-		y = "0.2739294 * safezoneH + safezoneY";
+		y = "0.2819294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -244,9 +245,9 @@ class RC_Artillery {
 	{
 		idc = 1022;
 		text = "elevation up:"; //--- ToDo: Localize;
-		colorText[] = {0.45,0.45,0.45,0.45};
+		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
-		y = "0.2899294 * safezoneH + safezoneY";
+		y = "0.2979294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -254,9 +255,9 @@ class RC_Artillery {
 	{
 		idc = 1023;
 		text = "elevation down:"; //--- ToDo: Localize;
-		colorText[] = {0.45,0.45,0.45,0.45};
+		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
-		y = "0.3059294 * safezoneH + safezoneY";
+		y = "0.3139294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
@@ -264,41 +265,51 @@ class RC_Artillery {
 	{
 		idc = 1024;
 		text = "slow elevation:"; //--- ToDo: Localize;
-		colorText[] = {0.45,0.45,0.45,0.45};
+		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
-		y = "0.3219294 * safezoneH + safezoneY";
+		y = "0.3299294 * safezoneH + safezoneY";
+		h = "0.0850027 * safezoneH";
+		w = "0.3001219 * safezoneW";
+	};
+	class RscText_1025: RscText_1001 
+	{
+		idc = 1025;
+		text = "slow azimuth: zoom in"; //--- ToDo: Localize;
+		colorText[] = {0.4,0.4,0.4,0.4};
+		x = "0.891267 * safezoneW + safezoneX";
+		y = "0.3459294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
 
 	//warning for ace scopes bug preventing gun elevation, by Ascent
-	class RscText_1025: RscText_1001 
-	{
-		idc = 1025;
-		text = "Warning: Ace adjustable scopes prevent"; //--- ToDo: Localize;
-		colorText[] = {0.5,0,0,0.5};
-		x = "0.871267 * safezoneW + safezoneX";
-		y = "0.3539294 * safezoneH + safezoneY";
-		h = "0.0850027 * safezoneH";
-		w = "0.3001219 * safezoneW";
-	};
 	class RscText_1026: RscText_1001 
 	{
 		idc = 1026;
-		text = "gun elevation if the keybinds overlap!"; //--- ToDo: Localize;
+		text = "Warning: Ace adjustable scopes prevent"; //--- ToDo: Localize;
 		colorText[] = {0.5,0,0,0.5};
-		x = "0.876267 * safezoneW + safezoneX";
-		y = "0.3699294 * safezoneH + safezoneY";
+		x = "0.871267 * safezoneW + safezoneX";
+		y = "0.3659294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};
 	class RscText_1027: RscText_1001 
 	{
 		idc = 1027;
+		text = "gun elevation if the keybinds overlap!"; //--- ToDo: Localize;
+		colorText[] = {0.5,0,0,0.5};
+		x = "0.876267 * safezoneW + safezoneX";
+		y = "0.3819294 * safezoneH + safezoneY";
+		h = "0.0850027 * safezoneH";
+		w = "0.3001219 * safezoneW";
+	};
+	class RscText_1028: RscText_1001 
+	{
+		idc = 1028;
 		text = "Disable this warning in addon settings."; //--- ToDo: Localize;
 		colorText[] = {0.5,0,0,0.5};
 		x = "0.876267 * safezoneW + safezoneX";
-		y = "0.3859294 * safezoneH + safezoneY";
+		y = "0.3979294 * safezoneH + safezoneY";
 		h = "0.0850027 * safezoneH";
 		w = "0.3001219 * safezoneW";
 	};

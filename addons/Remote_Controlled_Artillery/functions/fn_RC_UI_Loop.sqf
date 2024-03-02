@@ -194,6 +194,7 @@ RC_Artillery_UI = [] spawn {
 			_ctrlKeyElUp = _display displayCtrl 1022;
 			_ctrlKeyElDown = _display displayCtrl 1023;
 			_ctrlKeyElSlow = _display displayCtrl 1024;
+			_ctrlAzSlow = _display displayCtrl 1025;
 
 			_ctrlKeySelect ctrlSetText format ["select DL target: %1%2", ((actionKeysNamesArray "vehLockTargets") select 0), " / aim at"];
 			_ctrlKeyUnselect ctrlSetText format ["unselect DL target: %1%2", ((actionKeysNamesArray "lockTarget") select 0)];
@@ -210,15 +211,16 @@ RC_Artillery_UI = [] spawn {
 			_ctrlKeyElUp ctrlSetText format ["elevation up: %1%2", ((actionKeysNamesArray "gunElevUp") select 0)];
 			_ctrlKeyElDown ctrlSetText format ["elevation down: %1%2", ((actionKeysNamesArray "gunElevDown") select 0)];
 			_ctrlKeyElSlow ctrlSetText format ["slow elevation: %1%2", ((actionKeysNamesArray "gunElevSlow") select 0)];
+			_ctrlAzSlow ctrlSetText format ["slow azimuth: zoom in %1%2"];
 			//};
 
 			//if ace installed, warning that ace adjustable scopes prevent gun elevation when hotkeys overlap
 			if ((isClass(configFile >> "CfgPatches" >> "ace_main"))) then
 			{
 				if (RC_ace_hotkey_warning) then {
-					{(_display displayCtrl _x) ctrlShow true} forEach [1025,1026,1027];
+					{(_display displayCtrl _x) ctrlShow true} forEach [1026,1027,1028];
 				} else {
-					{(_display displayCtrl _x) ctrlShow false} forEach [1025,1026,1027];
+					{(_display displayCtrl _x) ctrlShow false} forEach [1026,1027,1028];
 				};
 			};
 
@@ -452,8 +454,8 @@ RC_Artillery_UI = [] spawn {
 			};
 
 			// If we have the Solution Calculating turned off we hide the UI
-			//if !(RC_Solution_Calculator_On) then {
-			if !(true) then {
+			/*
+			if !(RC_Solution_Calculator_On) then {
 				_ctrlHighSol ctrlShow false;
             	_ctrlLowSol ctrlShow false;
             	_ctrlHighETA ctrlShow false;
@@ -464,12 +466,26 @@ RC_Artillery_UI = [] spawn {
             	_ctrlHighETA ctrlShow true;
             	_ctrlLowETA ctrlShow true;
 			};
+			*/
+
+			_ctrlHighSol ctrlShow true;
+			_ctrlLowSol ctrlShow true;
+			_ctrlHighETA ctrlShow true;
+			_ctrlLowETA ctrlShow true;
+
+			//advised trajectory for ammunition, 1=low, 2=high, 3=both
+			_advisedTrajectory = getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AdvisedTrajectory");
+			switch (_advisedTrajectory) do {
+				case 1: {_ctrlLowSol ctrlSetTextColor [1,1,1,1]; _ctrlLowETA ctrlSetTextColor [1,1,1,1]; _ctrlHighSol ctrlSetTextColor [0.5,0.5,0.5,0.5]; _ctrlHighETA ctrlSetTextColor [0.5,0.5,0.5,0.5];};
+				case 2: {_ctrlHighSol ctrlSetTextColor [1,1,1,1]; _ctrlHighETA ctrlSetTextColor [1,1,1,1]; _ctrlLowSol ctrlSetTextColor [0.5,0.5,0.5,0.5]; _ctrlLowETA ctrlSetTextColor [0.5,0.5,0.5,0.5];};
+				case 3: {_ctrlLowSol ctrlSetTextColor [1,1,1,1]; _ctrlLowETA ctrlSetTextColor [1,1,1,1]; _ctrlHighSol ctrlSetTextColor [1,1,1,1]; _ctrlHighETA ctrlSetTextColor [1,1,1,1];};
+			};
 
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlHighSol ctrlSetText Format ["H SOL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlLowSol ctrlSetText Format ["L SOL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
+			_ctrlHighSol ctrlSetText Format ["H EL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];
+			_ctrlLowSol ctrlSetText Format ["L EL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
 			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
 		} else {
