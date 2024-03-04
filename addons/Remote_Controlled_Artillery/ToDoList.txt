@@ -47,6 +47,7 @@ FSV/IFV:
 -check ICV engine off on server
 -additional x2 SACLOS only missles, vorona or edited titan
 -add digital
+-maybe make gps target available for NLOS missles?
 
 
 TO DO - QUALITY OF LIFE:
