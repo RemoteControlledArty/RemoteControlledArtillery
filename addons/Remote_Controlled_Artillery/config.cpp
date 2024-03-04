@@ -375,7 +375,7 @@ class CfgEditorSubcategories
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
 	class RC_Howitzer_subcat {displayname="Howitzer's";};
-	class RC_Transport_FSV_subcat {displayname="IC/IFV/FSV/MBT's";};
+	class RC_Transport_FSV_subcat {displayname="ICV/IFV/FSV/MBT's";};
 	class RC_Mortar_subcat {displayname="Mortar's";};
 	class RC_Rocket_subcat {displayname="Rocket System's";};
 	class RC_UAV_subcat {displayname="UAV's";};
