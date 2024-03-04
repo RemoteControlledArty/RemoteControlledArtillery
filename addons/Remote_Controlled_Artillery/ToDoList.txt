@@ -107,6 +107,7 @@ DONE - BUGFIXES:
 -locking seats fix for IFV/FSV/MBT
 -laser datalink share fixed to now be to other players
 -fixed disallow vanilla artillery computer setting
+-fixed ATACMS not being available
 
 DONE - FEATURES:
 
