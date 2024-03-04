@@ -16,6 +16,8 @@ TO DO - BUGFIXES:
 -changing arty marker name changes distance (like arty1 to arty1 smoke), same when deleting marker on the map, and replacing it, while moving them doesnt seem to have that effect
 -only 1 gps marker active at a time (newest one), moving them deactives it
 
+-gun laying resetting despite autonomous being off (maybe not global?)
+
 -artillery gun laying resetting in multiplayer, but not always..?
 -find seat locking fix for recon radar, test case 6
 -uav laser spot not updating on moving target, for some players, for me it did
@@ -27,6 +29,8 @@ TO DO - FEATURES:
 Arty:
 -renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 -comment for round, below Target 01
+
+-autonomous off JIP global execute
 
 -make delayed fuze also ir capable
 
@@ -100,6 +104,9 @@ DONE - BUGFIXES:
 -many many more
 -fixed engine off being too fast for multiplayer
 -fixed respawn truck script
+-locking seats fix for IFV/FSV/MBT
+-laser datalink share fixed to now be to other players
+-fixed disallow vanilla artillery computer setting
 
 DONE - FEATURES:
 

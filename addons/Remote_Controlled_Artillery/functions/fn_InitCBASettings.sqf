@@ -12,7 +12,7 @@
 [
     "RC_Allow_Vanilla_Arty_Computer",
     "CHECKBOX",
-    ["allow vanilla arty computer", "When this is ticked the vanilla Artillery Computer can be used, without ACE it cannot be disabled for Mortars. Vanilla computer has high trajectory only, so worse TOF."],
+    ["allow lame vanilla arty computer", "When this is ticked the vanilla Artillery Computer can be used, without ACE it cannot be disabled for Mortars. Vanilla computer has high trajectory only, so worse TOF and accuracy."],
     ["Remote Controlled Artillery"],
     false,
     true,

@@ -46,7 +46,7 @@ RC_Artillery_UI = [] spawn {
 			if (!RC_Allow_Vanilla_Arty_Computer) then {
 				_isMortar = false;
 				if (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCisMortar") == 1) then {_isMortar = true;};
-				if (!(isClass(configFile >> "CfgPatches" >> "ace_main")) && _isMortar) then {hint format ["Hello, %1!", name player]; [true] remoteExec ["enableEngineArtillery", _uav];} else {[false] remoteExec ["enableEngineArtillery", _uav]};
+				if (!(isClass(configFile >> "CfgPatches" >> "ace_main")) && _isMortar) then {[true] remoteExec ["enableEngineArtillery", _uav];} else {[false] remoteExec ["enableEngineArtillery", _uav]};
 			} else {
 				[true] remoteExec ["enableEngineArtillery", _uav];
 			};
