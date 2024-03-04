@@ -30,7 +30,7 @@ Arty:
 -renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
 -comment for round, below Target 01
 
--autonomous off JIP global execute
+-autonomous off JIP global execute?
 
 -make delayed fuze also ir capable
 
