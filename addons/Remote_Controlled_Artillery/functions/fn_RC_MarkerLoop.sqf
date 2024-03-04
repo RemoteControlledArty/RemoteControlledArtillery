@@ -1,88 +1,73 @@
 /*
-	Author: Fluffy, to a small degree Ascent
-	Currect Bugs (fix postponed for next updates):
-	-editing arty marker name bugs distance, fix is to press cycle markers
-	-only one GPS target active at a time, and moving marker deactivates it
+	Author: Fluffy, Ascent, Eric
 */
+
+if (!isServer) exitWith { };
 
 activeGPSMarkers = [];
 RC_Artillery_Markers = [];
-RC_Current_Target = [];
-RC_Current_Index = 0;
-RC_InUI = false;
-//RC_GPS_Prefix = "GPS";
 
-if !hasInterface exitWith {};
+addMissionEventHandler ["MarkerCreated", {
+	params ["_marker", "_channelNumber", "_owner", "_local"];
 
-RC_Marker_Loop = [] spawn {
+	/* Check if Marker starts with RC_Marker_Prefix or RC_GPS_Prefix */
+	private _markerText = markerText _marker;
+	private _isArtyMarker = (_markerText select [0, count RC_Marker_Prefix - 1]) isEqualTo RC_Marker_Prefix;
+	private _isGPSMarker = { (_markerText select [0, count RC_GPS_Prefix - 1]) isEqualTo RC_GPS_Prefix };
+	if (!_isArtyMarker && { !(call _isGPSMarker) }) exitWith { };
 
-	while {true} do {
-		sleep RC_Update_Number;
-		
-		if (RC_InUI) then {
-			_markers = [];
-			_side = side player;
-			{
-				private _result = (markerText _x) regexMatch (format [".*%1[0-9]{1,2}.*/i", RC_Marker_Prefix]);
-				if _result then {
-					_result = (markerText _x) regexFind ["[0-9]{1,2}", 0];
-					_result = _result select 0 select 0 select 0;
-					_result = parseNumber _result;
-					_markers pushBackUnique [_result, _x];
-				};
+	if (_isArtyMarker) exitWith {
+		_targetIndex = _markerText regexFind ["[0-9]{1,2}", 0]; // Regexes can be exploited by a bad actor to cause lag. Consider another solution
+		_targetIndex = _targetIndex select 0 select 0 select 0; // ??
+		_targetIndex = parseNumber _targetIndex;
 
-				// Find a Marker with the GPS Prefix
-				//private _gpsResult = (markerText _x) regexMatch (format [".*%1[0-9]{1,2}.*/i", RC_GPS_Prefix]);
-				private _gpsResult = (markerText _x) regexMatch (format [RC_GPS_Prefix]);
-				if _gpsResult then {
-					_currentMarker = _x;
-					if (activeGPSMarkers findIf {_x isEqualTo _currentMarker} == -1) then {
-						
-						// Create Target
-						//gpsTarget = createVehicle ["RC_GPSDatalinkTarget", (markerPos _x), [], 0, "CAN_COLLIDE"];
-						gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _x), [], 0, "CAN_COLLIDE"];
-
-						// Spawn a little script to handle the GPS target					
-						[_x, _side] spawn {
-
-							params ["_watchedMarker", "_side"];
-
-							_moveHandler = addMissionEventHandler ["MarkerUpdated", {
-								params ["_marker", "_local"];
-								_watchedMarker = _thisArgs select 0;
-
-								if (_marker isEqualTo _watchedMarker) then {
-									_pos = AGLToASL (markerPos _watchedMarker);
-									gpsTarget setPosASL [_pos select 0, _pos select 1, 1];
-								}						
-							}, [_watchedMarker]];
-
-							_deleteHandler = addMissionEventHandler ["MarkerDeleted", {
-								params ["_marker", "_local", "_deleter"];
-								_watchedMarker = _thisArgs select 0;
-								_moveHandler = _thisArgs select 1;	//2 before
-
-								if (_marker isEqualTo _watchedMarker) then {
-									deleteVehicle gpsTarget;
-									removeMissionEventHandler ["MarkerUpdated", _moveHandler];
-									removeMissionEventHandler ["MarkerDeleted", _thisEventHandler];
-								}
-							}, [_watchedMarker, _moveHandler]];
-
-							// While the GPS target is alive we Report to Datalink
-							while {alive gpsTarget} do {
-								_side reportRemoteTarget [gpsTarget, 5];
-								sleep 1;
-							};
-						};
-
-						activeGPSMarkers pushBack _x;
-					};
-				};
-			} forEach allMapMarkers;
-
-			_markers sort true;
-			RC_Artillery_Markers = _markers;
-		};
+		RC_Artillery_Markers pushBackUnique [_targetIndex, _marker];
+		RC_Artillery_Markers sort true;
+		publicVariable "RC_Artillery_Markers";
 	};
-};
+
+	if (_isGPSMarker) exitWith {
+		_gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _x), [], 0, "CAN_COLLIDE"];
+
+		_side = side player;
+		[{
+			params ["_args", "_thisHandler"];
+			_args params ["_gpsTarget", "_side"]
+
+			if (!alive _gpsTarget) exitWith { [_thisHandler] call CBA_fnc_removePerFrameHandler };
+
+			_side reportRemoteTarget [gpsTarget, 5];
+		}, 1, [_gpsTarget, _side]] call CBA_fnc_addPerFrameHandler;
+
+		activeGPSMarkers pushBackUnique [_marker, _gpsTarget];
+		publicVariable "activeGPSMarkers";
+	};
+
+}];
+
+addMissionEventHandler ["MarkerDeleted", {
+	params ["_marker", "_local", "_deleter"];
+
+	private _markerIndex = activeGPSMarkers find _marker;
+	if (_markerIndex > -1) exitWith {
+		deleteVehicle ((activeGPSMarkers select _markerIndex) select 2);
+		activeGPSMarkers deleteAt _markerIndex;
+		publicVariable "activeGPSMarkers";
+	};
+
+	_markerIndex = RC_Artillery_Markers find _marker;
+	if (_markerIndex > -1) exitWith {
+		_markerIndex deleteAt _markerIndex;
+		publicVariable "RC_Artillery_Markers";
+	};
+}];
+
+addMissionEventHandler ["MarkerUpdated", {
+	params ["_marker", "_local"];
+
+	private _markerIndex = activeGPSMarkers find _marker;
+	if (_markerIndex isNotEqualTo -1) exitWith { };
+
+	(activeGPSMarkers select _markerIndex) setPosATL (markerPos _marker);
+	publicVariable "activeGPSMarkers";
+}];
