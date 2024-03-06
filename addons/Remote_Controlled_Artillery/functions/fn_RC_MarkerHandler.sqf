@@ -33,12 +33,11 @@ addMissionEventHandler ["MarkerCreated", {
 			_args params ["_marker", "_side"];
 
 			private _markerIndex = activeGPSMarkers findIf { (_x select 0) isEqualTo _marker };
-			if (_markerIndex isEqualTo -1) exitWith { };
+			if (_markerIndex isEqualTo -1) exitWith { [_thisHandler] call CBA_fnc_removePerFrameHandler };
 
 			(activeGPSMarkers select _markerIndex) params ["", "_gpsTarget"];
-			if (isNull _gpsTarget || { !alive _gpsTarget }) exitWith { [_thisHandler] call CBA_fnc_removePerFrameHandler };
 
-			_side reportRemoteTarget [_gpsTarget, 5];
+			_side reportRemoteTarget [_gpsTarget, 1];
 		}, 1, [_marker, _side]] call CBA_fnc_addPerFrameHandler;
 
 		activeGPSMarkers pushBackUnique [_marker, _gpsTarget];
