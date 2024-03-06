@@ -56,7 +56,7 @@ addMissionEventHandler ["MarkerDeleted", {
 
 	_markerIndex = RC_Artillery_Markers findIf { (_x select 1) isEqualTo _marker };
 	if (_markerIndex > -1) exitWith {
-		_markerIndex deleteAt _markerIndex;
+		RC_Artillery_Markers deleteAt _markerIndex;
 		publicVariable "RC_Artillery_Markers";
 	};
 }];
@@ -68,6 +68,14 @@ addMissionEventHandler ["MarkerUpdated", {
 	if (_markerIndex isEqualTo -1) exitWith { };
 
 	(activeGPSMarkers select _markerIndex) params ["", "_gpsTarget"];
+	deleteVehicle _gpsTarget;
+
+	// Moving the position of existing target does not work ???
+	// Workaround is to re-create the gps target
+	_gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _marker), [], 0, "CAN_COLLIDE"];
 	_gpsTarget setPosATL (markerPos _marker);
-	publicVariable "activeGPSMarkers";
+
+	(activeGPSMarkers select _markerIndex) set [1, _gpsTarget];
+
+	systemChat format ["Updated position to %1 from %2", str markerPos _marker, str _marker];
 }];
