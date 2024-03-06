@@ -3283,6 +3283,9 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT_Base
 		"RC_9Rnd_230mm_rockets_backuplowHEAB",
 		"RC_10Rnd_230mm_rockets_backuplowHEAB",
 		"RC_11Rnd_230mm_rockets_backuplowHEAB",
-		"RC_12Rnd_230mm_rockets_backuplowHEAB"
+		"RC_12Rnd_230mm_rockets_backuplowHEAB",
+
+		"RC_1Rnd_604mm_rockets_ATACMS_backupHEAB",
+		"RC_2Rnd_604mm_rockets_ATACMS_backupHEAB"
 	};
 };

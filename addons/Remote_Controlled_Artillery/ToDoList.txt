@@ -24,19 +24,30 @@ TO DO - BUGFIXES:
 *it reverted to a laser that was old by another player before releasing the drone and the other taking over, that was also visible for other player, and didnt dissapear when deleting the uav
 -artillery computer was available during op with massive lag, maybe because the op was older it had different settings still?
 
+-medical truck respawn script not working in multiplayer (cfgVehicles, RespawnTruck.hpp)
+
+
+-ICV etc do ONLY react to drive commands when being the person who placed it?
+-Remove ICV II "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
+-attemt to (unclear if possible) giving working waypoints to ICV/IFV even when sitting in vehicle (those waypoints bug, and have different extra markings)
+
+
 TO DO - FEATURES:
 
 Arty:
--renaming markers requires cycling once, only one gps marker usable at a time (latest marker is active), moved gps markers deactivate,
--comment for round, below Target 01
+-Counter Artillery Radar -> brainstorm on options: map markers for shot locations / share source vehicle in datalink but delayed for balancing, and how its even technically possible for different mods
+-comment for round like "smoke", for example below T: 01 UI, for better coordination and less required radio chatter
+-peak ASL formula and display infront of ETA, optimal but a bit much UI would be also be ASL at 25% of distance, to estimate if rounds will collide with hills close to gun/target
 
--autonomous off JIP global execute
+-autonomous off JIP global execute?
 
--make delayed fuze also ir capable
+-make delayed fuze also ir capable for gps targets  *might require sicnificant change of the round as people might use it against vehicles, but its currently not HEAT
 
 FSV/IFV:
 -check ICV engine off on server
--x2 SACLOS only missles, vorona or edited titan
+-additional x2 SACLOS only missles, vorona or edited titan
+-add digital
+-maybe make gps target available for NLOS missles?
 
 
 TO DO - QUALITY OF LIFE:
@@ -107,6 +118,8 @@ DONE - BUGFIXES:
 -locking seats fix for IFV/FSV/MBT
 -laser datalink share fixed to now be to other players
 -fixed disallow vanilla artillery computer setting
+-fixed ATACMS not being available
+-fixed Recon RADAR seat locking
 
 DONE - FEATURES:
 

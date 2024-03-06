@@ -201,6 +201,7 @@ class CfgPatches
 			RC_ICV_1_WD_O,
 			RC_ICV_1_A_I,
 			RC_ICV_1_WD_I,
+			RC_ICV_1_DIG_I,
 
 			RC_ICV_2_A,
 			RC_ICV_2_WD,
@@ -208,20 +209,14 @@ class CfgPatches
 			RC_ICV_2_WD_O,
 			RC_ICV_2_A_I,
 			RC_ICV_2_WD_I,
+			RC_ICV_2_DIG_I,
 
-			RC_FSV_1_A,
-			RC_FSV_1_WD,
-			RC_FSV_1_A_O,
-			RC_FSV_1_WD_O,
-			RC_FSV_1_A_I,
-			RC_FSV_1_WD_I,
-
-			RC_FSV_2_A,
-			RC_FSV_2_WD,
-			RC_FSV_2_A_O,
-			RC_FSV_2_WD_O,
-			RC_FSV_2_A_I,
-			RC_FSV_2_WD_I,
+			RC_FSV_A,
+			RC_FSV_WD,
+			RC_FSV_A_O,
+			RC_FSV_WD_O,
+			RC_FSV_A_I,
+			RC_FSV_WD_I,
 
 			RC_MBT6_A,
 			RC_MBT6_WD,
@@ -376,7 +371,7 @@ class CfgEditorSubcategories
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
 	class RC_Howitzer_subcat {displayname="Howitzer's";};
-	class RC_Transport_FSV_subcat {displayname="IC/IFV/FSV/MBT's";};
+	class RC_Transport_FSV_subcat {displayname="ICV/IFV/FSV/MBT's";};
 	class RC_Mortar_subcat {displayname="Mortar's";};
 	class RC_Rocket_subcat {displayname="Rocket System's";};
 	class RC_UAV_subcat {displayname="UAV's";};
