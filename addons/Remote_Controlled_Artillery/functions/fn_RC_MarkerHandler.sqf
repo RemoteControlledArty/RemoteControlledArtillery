@@ -4,9 +4,6 @@
 
 if (!isServer) exitWith { };
 
-activeGPSMarkers = [];
-RC_Artillery_Markers = [];
-
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
 
