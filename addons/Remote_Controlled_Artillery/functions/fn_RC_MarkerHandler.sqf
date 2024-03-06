@@ -27,18 +27,21 @@ addMissionEventHandler ["MarkerCreated", {
 		_gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _marker), [], 0, "CAN_COLLIDE"];
 		_gpsTarget setPosATL (markerPos _marker);
 
-		_markerIndex = activeGPSMarkers pushBackUnique [_marker, _gpsTarget];
 		_side = side player;
 		[{
 			params ["_args", "_thisHandler"];
-			_args params ["_markerIndex", "_side"];
-			(activeGPSMarkers select _markerIndex) params ["", "_gpsTarget"];
+			_args params ["_marker", "_side"];
 
+			private _markerIndex = activeGPSMarkers findIf { (_x select 0) isEqualTo _marker };
+			if (_markerIndex isEqualTo -1) exitWith { };
+
+			(activeGPSMarkers select _markerIndex) params ["", "_gpsTarget"];
 			if (isNull _gpsTarget || { !alive _gpsTarget }) exitWith { [_thisHandler] call CBA_fnc_removePerFrameHandler };
 
 			_side reportRemoteTarget [_gpsTarget, 5];
-		}, 1, [_markerIndex, _side]] call CBA_fnc_addPerFrameHandler;
+		}, 1, [_marker, _side]] call CBA_fnc_addPerFrameHandler;
 
+		activeGPSMarkers pushBackUnique [_marker, _gpsTarget];
 		publicVariable "activeGPSMarkers";
 	};
 }];
