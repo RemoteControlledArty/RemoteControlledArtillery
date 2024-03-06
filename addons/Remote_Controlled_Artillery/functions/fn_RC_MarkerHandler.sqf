@@ -37,7 +37,7 @@ addMissionEventHandler ["MarkerCreated", {
 
 			(activeGPSMarkers select _markerIndex) params ["", "_gpsTarget"];
 
-			_side reportRemoteTarget [_gpsTarget, 1];
+			_side reportRemoteTarget [_gpsTarget, 2];
 		}, 1, [_marker, _side]] call CBA_fnc_addPerFrameHandler;
 
 		activeGPSMarkers pushBackUnique [_marker, _gpsTarget];
