@@ -76,6 +76,4 @@ addMissionEventHandler ["MarkerUpdated", {
 	_gpsTarget setPosATL (markerPos _marker);
 
 	(activeGPSMarkers select _markerIndex) set [1, _gpsTarget];
-
-	systemChat format ["Updated position to %1 from %2", str markerPos _marker, str _marker];
 }];
