@@ -27,6 +27,8 @@ class RC_ICV_IFV_1_A_Base: B_APC_Wheeled_03_cannon_F
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
+
+	RC_NeedsLocality=1; //still in testing
 };
 class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 {
@@ -1689,6 +1691,8 @@ class RC_ICV_IFV_2_A_Base: B_APC_Wheeled_01_cannon_F
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
+
+	RC_NeedsLocality=1; //still in testing
 };
 class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 {
