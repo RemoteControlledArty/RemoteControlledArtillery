@@ -302,15 +302,16 @@ class CfgFunctions
 		class RC_Artillery
 		{
 			file="\Remote_Controlled_Artillery\functions";
-      		class preInit { preInit = 1 };
-      		class InitCBASettings { preInit = 1 };
-			class RC_MarkerHandler { postInit = 1 };
-      		class RC_UI_Loop { postInit = 1 };
-			class RC_EngineOff { postInit = 1 };
-			class RC_UAVBlur { postInit = 1 };
-			class RC_LockSeats { postInit = 1 };
-			class RC_UAVConnectionFix { postInit = 1 };
-			class RC_LaserDatalink { postInit = 1 };
+      		class preInit {preInit=1};
+      		class InitCBASettings {preInit=1};
+			class RC_MarkerHandler {postInit=1};
+			class RC_LocalityHandler {postInit=1};
+      		class RC_UI_Loop {postInit=1};
+			class RC_EngineOff {postInit=1};
+			class RC_UAVBlur {postInit=1};
+			class RC_LockSeats {postInit=1};
+			class RC_UAVConnectionFix {postInit=1};
+			class RC_LaserDatalink {postInit=1};
 			class scrollSolutions {};
 		};
 	};
