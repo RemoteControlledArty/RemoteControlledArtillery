@@ -9,8 +9,8 @@ addMissionEventHandler ["MarkerCreated", {
 
 	/* Check if Marker starts with RC_Marker_Prefix or RC_GPS_Prefix */
 	private _markerText = markerText _marker;
-	private _isArtyMarker = (_markerText select [0, count RC_Marker_Prefix]) isEqualTo RC_Marker_Prefix;
-	private _isGPSMarker = (_markerText select [0, count RC_GPS_Prefix]) isEqualTo RC_GPS_Prefix;
+	private _isArtyMarker = (toLower (_markerText select [0, count RC_Marker_Prefix])) isEqualTo (toLower RC_Marker_Prefix);
+	private _isGPSMarker = (toLower (_markerText select [0, count RC_GPS_Prefix])) isEqualTo (toLower RC_GPS_Prefix);
 	if (!_isArtyMarker && { !_isGPSMarker }) exitWith { };
 
 	if (_isArtyMarker) exitWith {
@@ -37,7 +37,7 @@ addMissionEventHandler ["MarkerCreated", {
 
 			(activeGPSMarkers select _markerIndex) params ["", "_gpsTarget"];
 
-			_side reportRemoteTarget [_gpsTarget, 2];
+			_side reportRemoteTarget [_gpsTarget, 1];
 		}, 1, [_marker, _side]] call CBA_fnc_addPerFrameHandler;
 
 		activeGPSMarkers pushBackUnique [_marker, _gpsTarget];
@@ -52,7 +52,7 @@ addMissionEventHandler ["MarkerDeleted", {
 	if (_markerIndex > -1) exitWith {
 		(activeGPSMarkers select _markerIndex) params ["", "_gpsTarget"];
 		deleteVehicle _gpsTarget;
-		
+
 		activeGPSMarkers deleteAt _markerIndex;
 		publicVariable "activeGPSMarkers";
 	};
