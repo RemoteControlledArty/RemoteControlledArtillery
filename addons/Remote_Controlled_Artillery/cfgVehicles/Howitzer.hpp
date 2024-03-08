@@ -19,6 +19,7 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_Howitzer_A: RC_Howitzer_base
 {
@@ -308,6 +309,7 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 {
