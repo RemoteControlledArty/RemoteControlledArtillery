@@ -13,13 +13,11 @@ TO DO - BUGFIXES:
 -report bug to ace team: turret is locked unable to adjust up/down, when scope of player is adjustable, despite being in remote control
 -report bug to ace team: crl+h cuts connection and destroys UV *only with my hotkeys
 
--changing arty marker name or moving it changes distance (like arty1 to arty1 smoke), same when deleting marker on the map, and replacing it
--only 1 gps marker active at a time (newest one), moving them deactives it, also deactivates after a few minutes
+-gps target gone after ~3minutes
 
 -gun laying resetting despite autonomous being off (maybe not global?)
 
 -artillery gun laying resetting in multiplayer, but not always..?
--find seat locking fix for recon radar, test case 6
 -uav laser spot not updating on moving target, for some players, for me it did
 *it reverted to a laser that was old by another player before releasing the drone and the other taking over, that was also visible for other player, and didnt dissapear when deleting the uav
 -artillery computer was available during op with massive lag, maybe because the op was older it had different settings still?
@@ -30,6 +28,8 @@ TO DO - BUGFIXES:
 -ICV etc do ONLY react to drive commands when being the person who placed it?
 -Remove ICV II "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
 -attemt to (unclear if possible) giving working waypoints to ICV/IFV even when sitting in vehicle (those waypoints bug, and have different extra markings)
+
+-IFV AA missile not locking in multiplayer
 
 
 TO DO - FEATURES:
@@ -46,8 +46,7 @@ Arty:
 FSV/IFV:
 -check ICV engine off on server
 -additional x2 SACLOS only missles, vorona or edited titan
--add digital
--maybe make gps target available for NLOS missles?
+-maybe make gps target available for NLOS missles? *might have happend with new marker EH update
 
 
 TO DO - QUALITY OF LIFE:
@@ -120,6 +119,9 @@ DONE - BUGFIXES:
 -fixed disallow vanilla artillery computer setting
 -fixed ATACMS not being available
 -fixed Recon RADAR seat locking
+-arty markers now editable and movable
+-multiple gps markers now usable, and movable
+
 
 DONE - FEATURES:
 
