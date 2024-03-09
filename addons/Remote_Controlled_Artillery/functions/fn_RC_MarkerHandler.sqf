@@ -2,7 +2,7 @@
 	Author: Fluffy, Ascent, Eric
 */
 
-if (!isServer) exitWith { };
+if (!hasInterface) exitWith { };
 
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
@@ -20,11 +20,10 @@ addMissionEventHandler ["MarkerCreated", {
 
 		RC_Artillery_Markers pushBackUnique [_targetIndex, _marker];
 		RC_Artillery_Markers sort true;
-		publicVariable "RC_Artillery_Markers";
 	};
 
 	if (_isGPSMarker) exitWith {
-		_gpsTarget = createVehicle ["RC_GPSDatalinkTarget", (markerPos _marker), [], 0, "CAN_COLLIDE"];
+		_gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _marker), [], 0, "CAN_COLLIDE"];
 		_gpsTarget setPosATL (markerPos _marker);
 
 		_side = side player;
@@ -41,7 +40,6 @@ addMissionEventHandler ["MarkerCreated", {
 		}, 1, [_marker, _side]] call CBA_fnc_addPerFrameHandler;
 
 		activeGPSMarkers pushBackUnique [_marker, _gpsTarget];
-		publicVariable "activeGPSMarkers";
 	};
 }];
 
@@ -54,13 +52,11 @@ addMissionEventHandler ["MarkerDeleted", {
 		deleteVehicle _gpsTarget;
 
 		activeGPSMarkers deleteAt _markerIndex;
-		publicVariable "activeGPSMarkers";
 	};
 
 	_markerIndex = RC_Artillery_Markers findIf { (_x select 1) isEqualTo _marker };
 	if (_markerIndex > -1) exitWith {
 		RC_Artillery_Markers deleteAt _markerIndex;
-		publicVariable "RC_Artillery_Markers";
 	};
 }];
 
@@ -75,7 +71,7 @@ addMissionEventHandler ["MarkerUpdated", {
 
 	// Moving the position of existing target does not work ???
 	// Workaround is to re-create the gps target
-	_gpsTarget = createVehicle ["RC_GPSDatalinkTarget", (markerPos _marker), [], 0, "CAN_COLLIDE"];
+	_gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _marker), [], 0, "CAN_COLLIDE"];
 	_gpsTarget setPosATL (markerPos _marker);
 
 	(activeGPSMarkers select _markerIndex) set [1, _gpsTarget];
