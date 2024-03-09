@@ -2,7 +2,7 @@ class CfgPatches
 {
 	class RC_Artillery
 	{
-		name="!Remote Controlled - Artillery, ATGM, AA!";
+		name="!Remote Controlled Artillery Dev!";
 		author="Ascent, Fluffy, Eric";
 
 		units[]=
@@ -301,13 +301,13 @@ class CfgFunctions
 	{
 		class RC_Artillery
 		{
-			file="\Remote_Controlled_Artillery\functions";
+			file="\Remote_Controlled_Artillery_Dev\functions";
       		class preInit {preInit=1};
       		class InitCBASettings {preInit=1};
 			class RC_MarkerHandler {postInit=1};
 			//class RC_LocalityHandler {postInit=1};
       		class RC_UI_Loop {postInit=1};
-			class RC_EngineOff {postInit=1};
+			//class RC_EngineOff {postInit=1};
 			class RC_UAVBlur {postInit=1};
 			class RC_LockSeats {postInit=1};
 			class RC_UAVConnectionFix {postInit=1};
@@ -318,18 +318,18 @@ class CfgFunctions
 };
 
 
-#include "\Remote_Controlled_Artillery\ui\baseClasses.hpp"
+#include "\Remote_Controlled_Artillery_Dev\ui\baseClasses.hpp"
 class RscTitles
 {
 	// Simple Grid
-	#include "\Remote_Controlled_Artillery\ui\Artillery_UI.hpp"	
+	#include "\Remote_Controlled_Artillery_Dev\ui\Artillery_UI.hpp"	
 };
 // Optional Include for when ACE isn't Detected
 #if __has_include("\z\ace\addons\main\script_component.hpp")
 	// If ACE exists we do nothing since we can use their UI variable Instead
 #else
 	// If not then We want to include our own overwrite
-	#include "\Remote_Controlled_Artillery\ui\overwriteArtyUI.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\ui\overwriteArtyUI.hpp"
 #endif
 
 
@@ -400,36 +400,36 @@ class DefaultVehicleSystemsDisplayManagerRight;
 
 class CfgCloudlets
 {
-	#include "\Remote_Controlled_Artillery\effects\cfgCloudlets.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\effects\cfgCloudlets.hpp"
 };
-#include "\Remote_Controlled_Artillery\effects\effects.hpp"
+#include "\Remote_Controlled_Artillery_Dev\effects\effects.hpp"
 class CfgAmmo
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmo\Ammo.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgAmmo\Ammo.hpp"
 };
 class CfgMagazines
 {
-	#include "\Remote_Controlled_Artillery\cfgMagazines\Magazines.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgMagazines\Magazines.hpp"
 };
 class CfgWeapons
 {
-	#include "\Remote_Controlled_Artillery\cfgWeapons\Weapons.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgWeapons\Weapons.hpp"
 };
 class CfgVehicles
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV_MBT.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
-	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\IC_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\Recon.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first
-	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\UAV.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\AntiAir.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\FSV_MBT.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\GPSTarget.hpp"
+	//#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\Howitzer.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\IC_IFV.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\ImprovedDesignators.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\MLRS_MRL.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\Mortar.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\Recon.hpp"
+	//#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\RepairTruck.hpp"	//needs repair script first
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\RespawnTruck.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\staticAA.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\staticATGM.hpp"
+	#include "\Remote_Controlled_Artillery_Dev\cfgVehicles\UAV.hpp"
 };
