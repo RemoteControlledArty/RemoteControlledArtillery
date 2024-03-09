@@ -2,7 +2,7 @@
 	Author: Fluffy, Ascent, Eric
 */
 
-if (!isServer) exitWith { };
+if (!hasInterface) exitWith { };
 
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
@@ -24,7 +24,7 @@ addMissionEventHandler ["MarkerCreated", {
 	};
 
 	if (_isGPSMarker) exitWith {
-		_gpsTarget = createVehicle ["RC_GPSDatalinkTarget", (markerPos _marker), [], 0, "CAN_COLLIDE"];
+		_gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _marker), [], 0, "CAN_COLLIDE"];
 		_gpsTarget setPosATL (markerPos _marker);
 
 		_side = side player;
@@ -75,7 +75,7 @@ addMissionEventHandler ["MarkerUpdated", {
 
 	// Moving the position of existing target does not work ???
 	// Workaround is to re-create the gps target
-	_gpsTarget = createVehicle ["RC_GPSDatalinkTarget", (markerPos _marker), [], 0, "CAN_COLLIDE"];
+	_gpsTarget = createVehicleLocal ["RC_GPSDatalinkTarget", (markerPos _marker), [], 0, "CAN_COLLIDE"];
 	_gpsTarget setPosATL (markerPos _marker);
 
 	(activeGPSMarkers select _markerIndex) set [1, _gpsTarget];

@@ -12,7 +12,7 @@ RC_LaserDatalink = [] spawn
 	private _oldPos = getPosASLVisual laserTarget player;
 	while {true} do
 	{
-		waitUntil {sleep 1; (laserTarget player) != isNull && getPosASLVisual (laserTarget player) isNotEqualTo _oldPos};
+		waitUntil {sleep 1; !isNull (laserTarget player) && getPosASLVisual (laserTarget player) isNotEqualTo _oldPos};
 		_laserSpot = laserTarget player;
 		_playerSide = side player;
 		[[_playerSide],[_laserSpot, 5]] remoteExec ["reportRemoteTarget", 0, true];
