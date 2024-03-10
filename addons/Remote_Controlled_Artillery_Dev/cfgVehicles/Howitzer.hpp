@@ -38,6 +38,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="B_UAV_AI";
+	commanding=-1;
 	driverForceOptics=1;
 	forceHideDriver=1;
 	ejectDeadGunner=0;
@@ -126,7 +127,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 	{
 		class MainTurret: MainTurret
 		{
-			commanding=2;
+			commanding=1;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			maxElev=87.02;
@@ -167,7 +168,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					commanding=1;
+					commanding=-1;
 					hasGunner=-1;
 					hasCommander=-1;
 					forceHideGunner=1;
@@ -328,6 +329,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="O_UAV_AI";
+	commanding=-1;
 	driverForceOptics=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -454,7 +456,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					commanding=1;
+					commanding=-1;
 					hasGunner=-1;
 					hasCommander=-1;
 					forceHideGunner=1;

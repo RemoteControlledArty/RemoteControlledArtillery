@@ -45,7 +45,7 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	crew="B_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
-	commanding=2;
+	commanding=-1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -431,7 +431,7 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 	{
 		class MainTurret: MainTurret
 		{
-			commanding=2;
+			commanding=-1;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
@@ -490,7 +490,7 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 					turretInfoType="";
 					gunnerForceOptics=1;
-					commanding=3;
+					commanding=1;
 
 					weapons[]=
 					{
@@ -1034,6 +1034,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
+	commanding=-1;
 	
 	weapons[]=
 	{
@@ -1049,7 +1050,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 	{
 		class MainTurret: MainTurret
 		{
-			commanding=3;
+			commanding=2;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 			weapons[]=
@@ -1108,7 +1109,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					commanding=2;
+					commanding=1;
 
 					weapons[]=
 					{

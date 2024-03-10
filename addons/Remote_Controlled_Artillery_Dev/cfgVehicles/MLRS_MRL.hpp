@@ -36,6 +36,7 @@ class RC_MLRS_A: RC_MLRS_base
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";	
 	crew="B_UAV_AI";
+	commanding=-1;
 	driverForceOptics=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -115,6 +116,7 @@ class RC_MLRS_A: RC_MLRS_base
 	{
 		class MainTurret: MainTurret
 		{
+			commanding=1;
 			gunnerForceOptics=1;
 			stabilizedInAxes=3;
 			weapons[]=
@@ -285,6 +287,7 @@ class RC_MRL_DIG: RC_MRL_base
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
+	commanding=1;
 	driverForceOptics=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -346,6 +349,7 @@ class RC_MRL_DIG: RC_MRL_base
 	{
 		class MainTurret: MainTurret
 		{
+			commanding=2;
 			lockWhenVehicleSpeed=-1;
 			gunnerForceOptics=1;
 			stabilizedInAxes=3;
