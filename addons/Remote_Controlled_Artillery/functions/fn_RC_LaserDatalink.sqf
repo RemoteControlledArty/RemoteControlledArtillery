@@ -9,20 +9,27 @@
 if !hasInterface exitWith {};
 RC_LaserDatalink = [] spawn
 {
-	private _oldPos = getPosASLVisual laserTarget player;
 	while {true} do
 	{
-		waitUntil {sleep 1; !isNull (laserTarget player) && getPosASLVisual (laserTarget player) isNotEqualTo _oldPos};
 		_laserSpot = laserTarget player;
-		_playerSide = side player;
-		[[_playerSide],[_laserSpot, 5]] remoteExec ["reportRemoteTarget", 0, true];
-		_oldPos = getPosASLVisual _laserSpot;
-		sleep 1;
+		if (!isNull _laserSpot) then {[(side player),[_laserSpot, 5]] remoteExec ["reportRemoteTarget", 0, true];};
+		sleep 2;
 	};
 };
 
 /*
 //old versions
+
+private _oldPos = getPosASLVisual laserTarget player;
+while {true} do
+{
+	waitUntil {sleep 1; !isNull (laserTarget player) && getPosASLVisual (laserTarget player) isNotEqualTo _oldPos};
+	_laserSpot = laserTarget player;
+	_playerSide = side player;
+	[_playerSide,[_laserSpot, 5]] remoteExec ["reportRemoteTarget", 0, true];
+	_oldPos = getPosASLVisual _laserSpot;
+	sleep 1;
+};
 
 while {true} do
 {
