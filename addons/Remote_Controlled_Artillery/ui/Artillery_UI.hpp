@@ -1,4 +1,3 @@
-#include "..\script_component.hpp"
 /* #Huxaga
 $[
 	1.063,
@@ -64,7 +63,7 @@ class RC_Artillery {
 
 	class RscText_1001: RscText
 	{
-		idc = IDC_CHARGE;
+		idc = 1001;
 		text = "CH: 0"; //--- ToDo: Localize;
 		x = "0.871267 * safezoneW + safezoneX";
 		y = "0.1199294 * safezoneH + safezoneY";
@@ -74,77 +73,77 @@ class RC_Artillery {
 	};
 	class RscText_1002: RscText_1001
 	{
-		idc = IDC_AZIMUTH;
+		idc = 1002;
 		text = "AZ: 0000"; //--- ToDo: Localize;
 		x = "0.915206 * safezoneW + safezoneX";
 		y = "0.1199294 * safezoneH + safezoneY";
 	};
 	class RscText_1003: RscText_1001
 	{
-		idc = IDC_ELEVATION;
+		idc = 1003;
 		text = "EL: 0000"; //--- ToDo: Localize;
 		x = "0.951709 * safezoneW + safezoneX";
 		y = "0.1199294 * safezoneH + safezoneY";
 	};
 	class RscText_1004: RscText_1001
 	{
-		idc = IDC_DISTANCE;
+		idc = 1004;
 		text = "DIST: 0000"; //--- ToDo: Localize;
 		x = "0.871219 * safezoneW + safezoneX";
 		y = "0.1419311 * safezoneH + safezoneY";
 	};
 	class RscText_1005: RscText_1001
 	{
-		idc = IDC_TARGET;
+		idc = 1005;
 		text = "T: 0"; //--- ToDo: Localize;
 		x = "0.871219 * safezoneW + safezoneX";
 		y = "0.1639327 * safezoneH + safezoneY";
 	};
 	class RscText_1006: RscText_1001
 	{
-		idc = IDC_TARGET_AZIMUTH;
+		idc = 1006;
 		text = "T AZ: 0000"; //--- ToDo: Localize;
 		x = "0.915154 * safezoneW + safezoneX";
 		y = "0.1419311 * safezoneH + safezoneY";
 	};
 	class RscText_1007: RscText_1001
 	{
-		idc = IDC_DIFFERENCE;
+		idc = 1007;
 		text = "DIF: 0000"; //--- ToDo: Localize;
 		x = "0.95165 * safezoneW + safezoneX";
 		y = "0.1419311 * safezoneH + safezoneY";
 	};
 	class RscText_1008: RscText_1001
 	{
-		idc = IDC_HIGHSOL;
+		idc = 1008;
 		text = "H EL: 0000"; //--- ToDo: Localize;
 		x = "0.95165 * safezoneW + safezoneX";
 		y = "0.1639327 * safezoneH + safezoneY";
 	};
 	class RscText_1009: RscText_1001
 	{
-		idc = IDC_LOWSOL;
+		idc = 1009;
 		text = "L EL: 0000"; //--- ToDo: Localize;
 		x = "0.95165 * safezoneW + safezoneX";
 		y = "0.1859345 * safezoneH + safezoneY";
 	};
 	class RscText_1010: RscText_1001
 	{
-		idc = IDC_HIGHETA;
+		idc = 1010;
 		text = "ETA: 000"; //--- ToDo: Localize;
 		x = "0.915154 * safezoneW + safezoneX";
 		y = "0.1639327 * safezoneH + safezoneY";
 	};
 	class RscText_1011: RscText_1001
 	{
-		idc = IDC_LOWETA;
+		idc = 1011;
 		text = "ETA: 000"; //--- ToDo: Localize;
 		x = "0.915154 * safezoneW + safezoneX";
 		y = "0.1859345 * safezoneH + safezoneY";
 	};
 	class RscText_1012: RscText_1001
 	{
-		idc = IDC_MESSAGE;
+		idc = 1012;
 		text = "READY"; //--- ToDo: Localize;
 		x = "0.871267 * safezoneW + safezoneX";
 		y = "0.1009294 * safezoneH + safezoneY";
@@ -194,7 +193,7 @@ class RC_Artillery {
 	//Keybinds Display, by Ascent
 	class RscText_1017: RscText_1001 
 	{
-		idc = IDC_KEY_SELECT;
+		idc = 1017;
 		text = "select DL target:"; //--- ToDo: Localize;
 		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
@@ -204,7 +203,7 @@ class RC_Artillery {
 	};
 	class RscText_1018: RscText_1001 
 	{
-		idc = IDC_KEY_UNSELECT;
+		idc = 1018;
 		text = "unselect DL target:"; //--- ToDo: Localize;
 		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
@@ -214,7 +213,7 @@ class RC_Artillery {
 	};
 	class RscText_1019: RscText_1001 
 	{
-		idc = IDC_KEY_MARKERSF;
+		idc = 1019;
 		text = "cycle markers ->:"; //--- ToDo: Localize;
 		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
@@ -224,7 +223,7 @@ class RC_Artillery {
 	};
 	class RscText_1020: RscText_1001 
 	{
-		idc = IDC_KEY_MARKERSB;
+		idc = 1020;
 		text = "cycle markers <-:"; //--- ToDo: Localize;
 		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
@@ -234,7 +233,7 @@ class RC_Artillery {
 	};
 	class RscText_1021: RscText_1001 
 	{
-		idc = IDC_KEY_CHARGES;
+		idc = 1021;
 		text = "cycle charges:"; //--- ToDo: Localize;
 		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
@@ -244,7 +243,7 @@ class RC_Artillery {
 	};
 	class RscText_1022: RscText_1001 
 	{
-		idc = IDC_KEY_ELUP;
+		idc = 1022;
 		text = "elevation up:"; //--- ToDo: Localize;
 		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
@@ -254,7 +253,7 @@ class RC_Artillery {
 	};
 	class RscText_1023: RscText_1001 
 	{
-		idc = IDC_KEY_ELDOWN;
+		idc = 1023;
 		text = "elevation down:"; //--- ToDo: Localize;
 		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
@@ -264,7 +263,7 @@ class RC_Artillery {
 	};
 	class RscText_1024: RscText_1001 
 	{
-		idc = IDC_KEY_ELSLOW;
+		idc = 1024;
 		text = "slow elevation:"; //--- ToDo: Localize;
 		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
@@ -274,7 +273,7 @@ class RC_Artillery {
 	};
 	class RscText_1025: RscText_1001 
 	{
-		idc = IDC_KEY_AZSLOW;
+		idc = 1025;
 		text = "slow azimuth: zoom in"; //--- ToDo: Localize;
 		colorText[] = {0.4,0.4,0.4,0.4};
 		x = "0.891267 * safezoneW + safezoneX";
