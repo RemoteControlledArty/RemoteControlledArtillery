@@ -1021,7 +1021,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
 	};
 
 	RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
@@ -2030,7 +2030,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; _this lockDriver true; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};};";
+		init="(_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};};";
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
@@ -2667,7 +2667,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
 	};
 	/*
 	//Missile launcher on top, memoryppoint unclear, and rotate with boolean not working
