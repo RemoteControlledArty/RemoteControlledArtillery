@@ -2,6 +2,7 @@
 class BulletBase;
 class RC_B_338_T: BulletBase
 {
+	laserLock=1;
 	hit=16;
 	indirectHit=0;
 	indirectHitRange=0;
@@ -42,6 +43,7 @@ class RC_B_338_T: BulletBase
 class B_30mm_MP_Tracer_Red;
 class RC_B_30mm_MP_T: B_30mm_MP_Tracer_Red
 {
+	laserLock=1;
 	indirectHit=6.75;
 	indirectHitRange=3.75;
 	deflecting=1;
@@ -49,6 +51,7 @@ class RC_B_30mm_MP_T: B_30mm_MP_Tracer_Red
 class B_40mm_GPR_Tracer_Red;
 class RC_B_40mm_MP_T: B_40mm_GPR_Tracer_Red
 {
+	laserLock=1;
 	hit=110;
 	indirectHit=9;
 	indirectHitRange=5;
@@ -549,6 +552,7 @@ class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
 class Sh_120mm_HEAT_MP_T_Red;
 class RC_Sh_120mm_MP_T: Sh_120mm_HEAT_MP_T_Red
 {
+	laserLock=1;
 	aiAmmoUsageFlags="64 + 128 + 512";
 	warheadName="TandemHEAT";	//warheadName="HE";
 	submunitionAmmo="RC_ammo_Penetrator_120mm";

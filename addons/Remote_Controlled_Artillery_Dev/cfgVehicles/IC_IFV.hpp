@@ -45,6 +45,7 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	crew="B_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
+	//hasDriver=-1;
 	commanding=-1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -431,6 +432,7 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			commanding=-1;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -1027,6 +1029,21 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 	RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
 	RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 
+	//driverAction="";
+	//driverInAction="";
+
+	//driverGetInAction="";
+	//driverGetOutAction="";
+	//gunnerAction="";
+	//gunnerInAction="";
+	//gunnerGetInAction="";
+	//gunnerGetOutAction="";
+	//personTurretAction="";
+	//getInAction="";
+	//getOutAction="";
+	driverCompartments = "Compartment1";
+	//proxyindex = 3;
+
 	displayName="IFV 30mm";
 	scope=2;
 	scopeCurator=2;
@@ -1034,7 +1051,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
-	commanding=-1;
+	commanding=4;
 	
 	weapons[]=
 	{
@@ -1050,7 +1067,17 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 	{
 		class MainTurret: MainTurret
 		{
-			commanding=2;
+			//gunnerAction="";
+			//gunnerInAction="";
+			//gunnerGetInAction="";
+			//gunnerGetOutAction="";
+			//personTurretAction="";
+
+			gunnerCompartments= "Compartment2";
+			//proxyindex = 2;
+
+			showAllTargets="2 + 4";
+			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 			weapons[]=
@@ -2067,6 +2094,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -2702,6 +2730,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			commanding=3;
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
