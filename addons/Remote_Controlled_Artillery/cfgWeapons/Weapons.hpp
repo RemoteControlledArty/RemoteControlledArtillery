@@ -100,7 +100,8 @@ class RC_IFV_Missle_Launcher: missiles_titan
 	{
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_AA",
-		"4Rnd_Titan_long_missiles"
+		"4Rnd_Titan_long_missiles",
+		"4Rnd_GAA_missiles"
 	};
 };
 
