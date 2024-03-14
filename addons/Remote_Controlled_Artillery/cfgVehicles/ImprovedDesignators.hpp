@@ -104,7 +104,7 @@ class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
 	{
 		class MainTurret: MainTurret
 		{
-			showAllTargets=4;
+			showAllTargets="2 + 4";
 
 			class ViewOptics: viewOptics
 			{

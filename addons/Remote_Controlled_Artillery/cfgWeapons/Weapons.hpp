@@ -114,6 +114,7 @@ class RC_MMG_338_FSV: RC_MMG_338_FSV_Base
 {
 	author="Ascent";
 	displayName="coaxial MMG";
+	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.75;
 	magazines[]=
@@ -147,6 +148,7 @@ class RC_MMG_338_MBT: RC_MMG_338_MBT_Base
 {
 	author="Ascent";
 	displayName="coaxial MMG";
+	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.75;
 	magazines[]=
@@ -180,6 +182,7 @@ class RC_MMG_338_IFV_2: RC_MMG_338_IFV_2_Base
 {
 	author="Ascent";
 	displayName="coaxial MMG";
+	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.75;
 	magazines[]=
@@ -201,6 +204,7 @@ class RC_MMG_338_IFV_1: RC_MMG_338_IFV_1_Base
 {
 	author="Ascent";
 	displayName="coaxial MMG";
+	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.75;
 	magazines[]=
@@ -225,6 +229,7 @@ class RC_autocannon_30mm_CTWS_Base: autocannon_30mm_CTWS
 class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 {
 	author="Ascent";
+	canLock=2;
 	FCSZeroingDelay=0.75;
 
 	class HE: HE
@@ -253,6 +258,7 @@ class RC_autocannon_40mm_CTWS_Base: autocannon_40mm_CTWS
 class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 {
 	author="Ascent";
+	canLock=2;
 	FCSZeroingDelay=0.75;
 
 	class HE: HE
@@ -277,6 +283,7 @@ class cannon_120mm;
 class RC_cannon_120mm: cannon_120mm
 {
 	displayName="120mm";
+	canLock=2;
 	reloadTime=5;
 	magazineReloadTime=5;
 	magazines[]=

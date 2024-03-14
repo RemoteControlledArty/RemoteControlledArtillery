@@ -28,7 +28,7 @@ class RC_FSV_A: RC_FSV_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 	//for later use, rn bugs driver view
 	//init="(_this select 0) spawn {waitUntil {!isNull driver _this}; while {true} do {if (player in (crew _this) && !(driver _this == player)) then {_this lockDriver true;} else {_this lockDriver false;}; sleep 0.5;};}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
@@ -48,6 +48,7 @@ class RC_FSV_A: RC_FSV_A_Base
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
+	driverCompartments="Compartment2";
 	//hideProxyInCombat=1;	//for later use
 	//canHideDriver=1;	//for later use
 	ejectDeadGunner=0;
@@ -126,6 +127,7 @@ class RC_FSV_A: RC_FSV_A_Base
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			commanding=2;
 
 			weapons[]=
@@ -280,6 +282,7 @@ class RC_FSV_A: RC_FSV_A_Base
 			{
 				class CommanderOptics: CommanderOptics
 				{
+					showAllTargets="2 + 4";
 					commanding=1;
 
 					weapons[]=
@@ -634,8 +637,9 @@ class RC_MBT6_A: RC_MBT6_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
+	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 
 	displayName="MBT [6 Inf]";
 	faction="RemoteControlled_B";
@@ -652,6 +656,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
+	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -730,12 +735,14 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			commanding=2;
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
+					showAllTargets="2 + 4";
 					commanding=1;
 
 					weapons[]=

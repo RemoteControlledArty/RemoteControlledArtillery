@@ -138,6 +138,7 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			gunnerForceOptics=1;
 
 			minTurn=-180;

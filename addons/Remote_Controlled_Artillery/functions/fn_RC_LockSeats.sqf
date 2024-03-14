@@ -6,6 +6,8 @@
 */
 
 // Need to exit early if we aren't a client
+
+/*
 if !hasInterface exitWith {};
 RC_LockSeats = [] spawn
 {
@@ -82,3 +84,4 @@ RC_LockSeats = [] spawn
 		};
 	};
 };
+*/

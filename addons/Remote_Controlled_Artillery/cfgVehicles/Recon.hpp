@@ -34,6 +34,7 @@ class RC_AA_small_WD: RC_AA_small_base
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -174,6 +175,7 @@ class RC_AA_small_WD: RC_AA_small_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 
@@ -337,6 +339,7 @@ class RC_radar_small_WD: RC_radar_small_base
 	uavCameraDriverDir="PiP0_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -415,6 +418,8 @@ class RC_radar_small_WD: RC_radar_small_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
+			showAllTargets="2 + 4";
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 		};
@@ -589,6 +594,7 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -785,6 +791,8 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
+			showAllTargets="2 + 4";
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 

@@ -97,6 +97,7 @@ class RC_Mortar: RC_Mortar_base
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			gunnerForceOptics=1;
 
 			weapons[]=

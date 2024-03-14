@@ -24,7 +24,6 @@ class RC_AA_A: RC_AA_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -33,11 +32,10 @@ class RC_AA_A: RC_AA_base
 	uavCameraGunnerDir="PiP0_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
-
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	incomingMissileDetectionSystem=16;
@@ -65,6 +63,8 @@ class RC_AA_A: RC_AA_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
+			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -73,6 +73,8 @@ class RC_AA_A: RC_AA_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					gunnerCompartments="Compartment3";
+					showAllTargets="2 + 4";
 					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;
@@ -215,8 +217,6 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	scopeCurator=2;
 	side=0;
 	forceInGarage=1;
-
-
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -225,7 +225,7 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	uavCameraGunnerDir="PiP1_dir";
 	crew="O_UAV_AI";
 	driverForceOptics=1;
-
+	driverCompartments = "Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -261,6 +261,8 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
+			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -269,6 +271,8 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					gunnerCompartments="Compartment3";
+					showAllTargets="2 + 4";
 					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;

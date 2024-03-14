@@ -68,6 +68,7 @@ class 60Rnd_30mm_APFSDS_shells_Tracer_Red;
 class RC_100Rnd_30mm_APFSDS_T: 60Rnd_30mm_APFSDS_shells_Tracer_Red
 {
 	author="Ascent";
+	ammo="RC_B_30mm_APFSDS_T";
 	count=100;
 	displayName="30mm APFSDS-T";
 	displayNameShort="30mm APFSDS-T";
@@ -87,6 +88,7 @@ class 40Rnd_40mm_APFSDS_Tracer_Red_shells;
 class RC_50Rnd_40mm_APFSDS_T: 40Rnd_40mm_APFSDS_Tracer_Red_shells
 {
 	author="Ascent";
+	ammo="RC_B_40mm_APFSDS_T";
 	count=50;
 	displayName="40mm APFSDS-T";
 	displayNameShort="40mm APFSDS-T";
@@ -129,9 +131,10 @@ class RC_20Rnd_120mm_MP_T: RC_12Rnd_120mm_MP_T
 };
 
 
-class 24Rnd_120mm_APFSDS_shells;
-class RC_12Rnd_120mm_APFSDS_T: 24Rnd_120mm_APFSDS_shells
+class 20Rnd_120mm_APFSDS_shells_Tracer_Red;
+class RC_12Rnd_120mm_APFSDS_T: 20Rnd_120mm_APFSDS_shells_Tracer_Red
 {
+	ammo="RC_Sh_120mm_APFSDS_T";
 	count=12;
 };
 class RC_16Rnd_120mm_APFSDS_T: RC_12Rnd_120mm_APFSDS_T
