@@ -39,6 +39,8 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	side=1;
 	forceInGarage=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
@@ -411,8 +413,8 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 	displayName="RC ICV I";
 	scope=2;
 	scopeCurator=2;
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
 	maximumLoad=4000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
@@ -1132,6 +1134,8 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 					{
 						class Wide: RCWSOptics
 						{
+							//directionStabilized=1;	//unfortunately causes spinning camera bug
+
 							initAngleX=0;
 							minAngleX=-30;
 							maxAngleX=30;
@@ -1709,6 +1713,8 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 	side=1;
 	forceInGarage=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
@@ -2047,8 +2053,8 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 	displayName="RC ICV II";
 	scope=2;
 	scopeCurator=2;
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
 	maximumLoad=4000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
@@ -2717,10 +2723,11 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 		{
 			showAllTargets="2 + 4";
 			commanding=3;
+			minElev=-10.6;
+			maxElev=40;
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 			//turretInfoType="";
-			//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 			weapons[]=
 			{
@@ -2798,6 +2805,8 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 					{
 						class Wide: RCWSOptics
 						{
+							//directionStabilized=1;	//unfortunately causes spinning camera bug
+
 							initAngleX=0;
 							minAngleX=-30;
 							maxAngleX=30;

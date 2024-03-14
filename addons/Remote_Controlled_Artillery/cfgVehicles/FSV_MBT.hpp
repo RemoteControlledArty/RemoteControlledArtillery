@@ -42,6 +42,8 @@ class RC_FSV_A: RC_FSV_A_Base
 	side=1;
 	forceInGarage=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
@@ -650,6 +652,8 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	side=1;
 	forceInGarage=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";

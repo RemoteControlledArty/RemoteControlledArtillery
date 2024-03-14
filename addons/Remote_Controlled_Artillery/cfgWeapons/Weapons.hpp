@@ -99,7 +99,8 @@ class RC_IFV_Missle_Launcher: missiles_titan
 	magazines[]=
 	{
 		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_AA"
+		"RC_2Rnd_IFV_AA",
+		"4Rnd_Titan_long_missiles"
 	};
 };
 

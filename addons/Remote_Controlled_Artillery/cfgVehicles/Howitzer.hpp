@@ -35,8 +35,10 @@ class RC_Howitzer_A: RC_Howitzer_base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
@@ -330,8 +332,10 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
 	crew="O_UAV_AI";
 	driverForceOptics=1;
 	driverCompartments="Compartment1";

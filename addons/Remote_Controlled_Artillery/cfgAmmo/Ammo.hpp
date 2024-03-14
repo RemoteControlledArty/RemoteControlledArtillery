@@ -47,7 +47,7 @@ class RC_B_30mm_MP_T: B_30mm_MP_Tracer_Red
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	indirectHit=6.75;
+	indirectHit=5;
 	indirectHitRange=4.5;
 	deflecting=1;
 };
@@ -65,7 +65,7 @@ class RC_B_40mm_MP_T: B_40mm_GPR_Tracer_Red
 	irLock=1;
 	airLock=1;
 	hit=110;
-	indirectHit=9;
+	indirectHit=8;
 	indirectHitRange=6;
 	warheadName="HEAT";
 	explosive=0.60000002;

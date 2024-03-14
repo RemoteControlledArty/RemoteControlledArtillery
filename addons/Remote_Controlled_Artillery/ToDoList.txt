@@ -24,8 +24,6 @@ TO DO - BUGFIXES:
 
 -medical truck respawn script not working in multiplayer (cfgVehicles, RespawnTruck.hpp)
 
-
--ICV etc do ONLY react to drive commands when being the person who placed it?
 -Remove ICV II "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
 -attemt to (unclear if possible) giving working waypoints to ICV/IFV even when sitting in vehicle (those waypoints bug, and have different extra markings)
 
@@ -35,14 +33,9 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 generally:
--compartment all assets
-driverCompartments="Compartment1";
-gunnerCompartments="Compartment2";
-gunnerCompartments="Compartment3";
-
+-update list & readme
+-IFV II 30mm + ATGM
 -fix driverview on FSV/MBT & Trucks
-
--driver terminal access pip
 
 Arty:
 -Counter Artillery Radar -> brainstorm on options: map markers for shot locations / share source vehicle in datalink but delayed for balancing, and how its even technically possible for different mods
@@ -245,8 +238,12 @@ DONE - FEATURES:
 -improved GPS Markers to not be noticed/attacked by AI
 -MP Guided now also compatible with gps guidance using vanilla artillery computer
 -now greys out the firing solution & ETA for unsuited low or high trajectory depending on shell
+
+new:
 -added found target highlighting to most assets
 -added select datalink target (highlighting) ability to most weapons, to improve coordination/awareness
+-added semi manned Recon ATGM & Mortar Carrier
+
 
 
 -low/high trajectory list:

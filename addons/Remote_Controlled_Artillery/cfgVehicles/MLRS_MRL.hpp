@@ -33,6 +33,8 @@ class RC_MLRS_A: RC_MLRS_base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";	
 	crew="B_UAV_AI";
@@ -284,6 +286,8 @@ class RC_MRL_DIG: RC_MRL_base
 	textSingular="UGV";
 	isUav=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
