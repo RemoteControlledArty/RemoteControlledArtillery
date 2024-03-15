@@ -1082,9 +1082,9 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 				"RC_200Rnd_338_T_Mag",
 				"RC_200Rnd_338_T_Mag",
 				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_MP_NLOS",
 				"RC_2Rnd_IFV_AA",
-				"M_Titan_AA_long",
-				"4Rnd_GAA_missiles",
+				"RC_2Rnd_IFV_AA",
 				"SmokeLauncherMag"
 			};
 
@@ -2753,6 +2753,9 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 			{
 				"RC_autocannon_40mm_CTWS",
 				"RC_MMG_338_IFV_2",
+				/*
+				"RC_IFV_Missle_Launcher",
+				*/
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -2771,6 +2774,12 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 				"RC_200Rnd_338_T_Mag",
 				"RC_200Rnd_338_T_Mag",
 				"RC_200Rnd_338_T_Mag",
+				/*
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_AA",
+				"RC_2Rnd_IFV_AA",
+				*/
 				"SmokeLauncherMag"
 			};
 

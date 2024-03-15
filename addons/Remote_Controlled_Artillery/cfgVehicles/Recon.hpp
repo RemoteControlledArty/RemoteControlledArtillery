@@ -319,7 +319,7 @@ class RC_radar_small_base: I_LT_01_scout_F
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	
 };
-class RC_radar_small_WD: RC_radar_small_base
+class RC_radar_small_WD_base: RC_radar_small_base
 {
 	/*
 	//for later use
@@ -332,10 +332,6 @@ class RC_radar_small_WD: RC_radar_small_base
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
 	author="Ascent";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -430,8 +426,6 @@ class RC_radar_small_WD: RC_radar_small_base
 			gunnerCompartments="Compartment2";
 			showAllTargets="2 + 4";
 			stabilizedInAxes=3;
-			gunnerForceOptics=1;
-			forceHideGunner=1;
 
 			class ViewOptics: ViewOptics
 			{
@@ -502,6 +496,22 @@ class RC_radar_small_WD: RC_radar_small_base
 		"A3\armor_f\data\cage_olive_co.paa"
 	};
 };
+class RC_radar_small_WD: RC_radar_small_WD_base
+{
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+	
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+		};
+	};
+};
 class RC_radar_small_WD_O: RC_radar_small_WD
 {
 	faction="RemoteControlled_O";
@@ -552,25 +562,6 @@ class RC_Mortar_Carrier_WD_O: RC_Mortar_Carrier_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD
-{
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
-	};
-
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	hiddenSelectionsTextures[]=
-	{
-		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-		"A3\armor_f_tank\lt_01\data\lt_01_radar_co.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-		"A3\armor_f\data\cage_aaf_co.paa"
-	};
-};
 class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
 {
 	class EventHandlers: EventHandlers
@@ -582,10 +573,20 @@ class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
 	crew="I_UAV_AI";
 	side=2;
 };
+class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_radar_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+};
 
 
 //semi manned version
-class RC_Mortar_Carrier_Manned_WD: RC_Mortar_Carrier_WD
+class RC_Mortar_Carrier_Manned_WD: RC_radar_small_WD_base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -593,62 +594,44 @@ class RC_Mortar_Carrier_Manned_WD: RC_Mortar_Carrier_WD
 	};
 
 	displayName="Mortar Carrier";
+	editorSubcategory="RC_Mortar_subcat";
 
-	/*
-	class MainTurret: MainTurret
-	{
-		dontCreateAI=0;	//doesnt work
-		gunnerForceOptics=0;
-	};
-	*/
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
 };
-class RC_Mortar_Carrier_Manned_WD_O: RC_Mortar_Carrier_WD_O
+class RC_Mortar_Carrier_Manned_WD_O: RC_Mortar_Carrier_Manned_WD
 {
 	class EventHandlers: EventHandlers
 	{
 		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
 	};
 
-	displayName="Mortar Carrier";
-
-	/*
-	class MainTurret: MainTurret
-	{
-		gunnerForceOptics=0;
-	};
-	*/
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
 };
-class RC_Mortar_Carrier_Manned_DIG_I: RC_Mortar_Carrier_DIG_I
+class RC_Mortar_Carrier_Manned_WD_I: RC_Mortar_Carrier_Manned_WD
 {
 	class EventHandlers: EventHandlers
 	{
 		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
 	};
 
-	displayName="Mortar Carrier";
-
-	/*
-	class MainTurret: MainTurret
-	{
-		gunnerForceOptics=0;
-	};
-	*/
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
 };
-class RC_Mortar_Carrier_Manned_WD_I: RC_Mortar_Carrier_WD_I
+class RC_Mortar_Carrier_Manned_DIG_I: RC_Mortar_Carrier_Manned_WD_I
 {
-	class EventHandlers: EventHandlers
+	hiddenSelectionsTextures[]=
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_radar_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
 	};
-
-	displayName="Mortar Carrier";
-
-	/*
-	class MainTurret: MainTurret
-	{
-		gunnerForceOptics=0;
-	};
-	*/
 };
 
 
@@ -671,7 +654,7 @@ class RC_ATGM_small_base: I_LT_01_AT_F
 	RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_ATGM_small_WD: RC_ATGM_small_base
+class RC_ATGM_small_WD_base: RC_ATGM_small_base
 {
 	displayName="RC Recon ATGM 4.5km";
 	faction="RemoteControlled_B";
@@ -892,8 +875,6 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 			gunnerCompartments="Compartment2";
 			showAllTargets="2 + 4";
 			stabilizedInAxes=3;
-			gunnerForceOptics=1;
-			forceHideGunner=1;
 
 			class ViewOptics: ViewOptics
 			{
@@ -981,6 +962,22 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 		"A3\armor_f\data\cage_olive_co.paa"
 	};
 };
+class RC_ATGM_small_WD: RC_ATGM_small_WD_base
+{
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+		};
+	};
+};
 class RC_ATGM_small_WD_O: RC_ATGM_small_WD
 {
 	faction="RemoteControlled_O";
@@ -1010,7 +1007,7 @@ class RC_ATGM_small_WD_I: RC_ATGM_small_WD
 
 
 //semi manned version
-class RC_ATGM_small_Manned_WD: RC_ATGM_small_WD
+class RC_ATGM_small_Manned_WD: RC_ATGM_small_WD_base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -1019,14 +1016,10 @@ class RC_ATGM_small_Manned_WD: RC_ATGM_small_WD
 
 	displayName="Recon ATGM 4.5km";
 
-	//driverAction=""; //doesnt work...
-	//delete TurnOut; //wierdly didnt work
-	/*
-	class MainTurret: MainTurret
-	{
-		gunnerForceOptics=0;
-	};
-	*/
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
 };
 class RC_ATGM_small_Manned_WD_O: RC_ATGM_small_Manned_WD
 {

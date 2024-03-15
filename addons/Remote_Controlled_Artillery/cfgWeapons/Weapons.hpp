@@ -96,12 +96,11 @@ class RC_IFV_Missle_Launcher: missiles_titan
 	weaponLockSystem="2 + 4 + 16";
 	displayName="NLOS ML";
 	displayNameShort="NLOS ML";
+	magazineReloadTime=20;
 	magazines[]=
 	{
 		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_AA",
-		"4Rnd_Titan_long_missiles",
-		"4Rnd_GAA_missiles"
+		"RC_2Rnd_IFV_AA"
 	};
 };
 

@@ -34,6 +34,12 @@ TO DO - FEATURES:
 
 generally:
 -mp commanding values
+-maybe requires swapping commander/gunner
+
+-test cargoIsCoDriver[]={0,0};
+	cargoCanControlUAV=0;
+
+	Added: A new DriverOpticsIn parameter for vehicle drivers (similar to turret OpticsIn, but it uses OpticsModel instead gunnerOpticsModel for the optics model)
 
 -stabilization impacts aiming?
 -update list & readme
