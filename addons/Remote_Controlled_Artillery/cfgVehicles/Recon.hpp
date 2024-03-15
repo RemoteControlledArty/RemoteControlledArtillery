@@ -180,9 +180,11 @@ class RC_AA_small_WD: RC_AA_small_base
 			gunnerCompartments="Compartment2";
 			gunnerForceOptics=1;
 			forceHideGunner=1;
+			stabilizedInAxes=3;
 
 			class ViewOptics: ViewOptics
 			{
+				//directionStabilized=1;	//sadly creates aiming problems
 				initFov=0.89999998;
 				minFov=0.0125;
 				maxFov=0.89999998;
@@ -303,6 +305,7 @@ class RC_radar_small_base: I_LT_01_scout_F
 	class showSLATHull;
 	class Turrets;
 	class MainTurret;
+	class ViewOptics;
 	class HitPoints;
 	class HitEngine;
 	class Components;
@@ -339,6 +342,8 @@ class RC_radar_small_WD: RC_radar_small_base
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	driverCompartments="Compartment1";
@@ -420,10 +425,28 @@ class RC_radar_small_WD: RC_radar_small_base
 	{
 		class MainTurret: MainTurret
 		{
+			primaryGunner=1;
+			primaryObserver=0;
 			gunnerCompartments="Compartment2";
 			showAllTargets="2 + 4";
+			stabilizedInAxes=3;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
+
+			class ViewOptics: ViewOptics
+			{
+				directionStabilized=1;
+				initFov=0.89999998;
+				minFov=0.0125;
+				maxFov=0.89999998;
+				visionMode[]=
+				{
+					"Normal",
+					"NVG",
+					"Ti"
+				};
+				thermalMode[]={0,1};
+			};
 		};
 	};
 
@@ -566,37 +589,66 @@ class RC_Mortar_Carrier_Manned_WD: RC_Mortar_Carrier_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
 	};
 
 	displayName="Mortar Carrier";
+
+	/*
+	class MainTurret: MainTurret
+	{
+		dontCreateAI=0;	//doesnt work
+		gunnerForceOptics=0;
+	};
+	*/
 };
 class RC_Mortar_Carrier_Manned_WD_O: RC_Mortar_Carrier_WD_O
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
 	};
 
 	displayName="Mortar Carrier";
+
+	/*
+	class MainTurret: MainTurret
+	{
+		gunnerForceOptics=0;
+	};
+	*/
 };
 class RC_Mortar_Carrier_Manned_DIG_I: RC_Mortar_Carrier_DIG_I
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
 	};
 
 	displayName="Mortar Carrier";
+
+	/*
+	class MainTurret: MainTurret
+	{
+		gunnerForceOptics=0;
+	};
+	*/
 };
 class RC_Mortar_Carrier_Manned_WD_I: RC_Mortar_Carrier_WD_I
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
 	};
 
 	displayName="Mortar Carrier";
+
+	/*
+	class MainTurret: MainTurret
+	{
+		gunnerForceOptics=0;
+	};
+	*/
 };
 
 
@@ -606,6 +658,7 @@ class RC_ATGM_small_base: I_LT_01_AT_F
 	class AnimationSources;
 	class showCamonetHull;
 	class showSLATHull;
+	class TurnOut;
 	class Turrets;
 	class MainTurret;
 	class ViewOptics;
@@ -638,6 +691,7 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
+	forceHideDriver=1;
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -837,11 +891,13 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 		{
 			gunnerCompartments="Compartment2";
 			showAllTargets="2 + 4";
+			stabilizedInAxes=3;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 
 			class ViewOptics: ViewOptics
 			{
+				//directionStabilized=1;	//sadly creates aiming problems
 				initFov=0.89999998;
 				minFov=0.0125;
 				maxFov=0.89999998;
@@ -953,69 +1009,32 @@ class RC_ATGM_small_WD_I: RC_ATGM_small_WD
 };
 
 
-
-class RC_ATGM_small_S_WD: RC_ATGM_small_WD
-{
-	displayName="RC stabilized Recon ATGM 4.5km";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			stabilizedInAxes=3;
-
-			class ViewOptics: ViewOptics
-			{
-				directionStabilized=1;
-			};
-		};
-	};
-};
-class RC_ATGM_small_S_WD_O: RC_ATGM_small_S_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-};
-class RC_ATGM_small_S_DIG_I: RC_ATGM_small_S_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	hiddenSelectionsTextures[]=
-	{
-	"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-	"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
-	"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-	"A3\armor_f\data\cage_aaf_co.paa"
-	};
-};
-class RC_ATGM_small_S_WD_I: RC_ATGM_small_S_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-};
-
-
 //semi manned version
-class RC_ATGM_small_S_Manned_WD: RC_ATGM_small_WD
+class RC_ATGM_small_Manned_WD: RC_ATGM_small_WD
 {
 	class EventHandlers: EventHandlers
 	{
 		init="if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
 	};
 
-	displayName="stabilized Recon ATGM 4.5km";
+	displayName="Recon ATGM 4.5km";
+
+	//driverAction=""; //doesnt work...
+	//delete TurnOut; //wierdly didnt work
+	/*
+	class MainTurret: MainTurret
+	{
+		gunnerForceOptics=0;
+	};
+	*/
 };
-class RC_ATGM_small_S_Manned_WD_O: RC_ATGM_small_S_WD
+class RC_ATGM_small_Manned_WD_O: RC_ATGM_small_Manned_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_ATGM_small_S_Manned_DIG_I: RC_ATGM_small_S_WD
+class RC_ATGM_small_Manned_DIG_I: RC_ATGM_small_Manned_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -1029,7 +1048,7 @@ class RC_ATGM_small_S_Manned_DIG_I: RC_ATGM_small_S_WD
 	"A3\armor_f\data\cage_aaf_co.paa"
 	};
 };
-class RC_ATGM_small_S_Manned_WD_I: RC_ATGM_small_S_WD
+class RC_ATGM_small_Manned_WD_I: RC_ATGM_small_Manned_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

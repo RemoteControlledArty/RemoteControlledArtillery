@@ -48,7 +48,7 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	forceHideDriver=1;
 	driverForceOptics=1;
 	driverCompartments="Compartment2";
-	commanding=2;
+	commanding=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -1158,6 +1158,24 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 							gunnerOpticsEffect[]={};
 						};
 					};
+
+					/*
+					//no stabilization effect
+					class ViewOptics: ViewOptics
+					{
+						directionStabilized=1;
+						
+						initFov=0.9;
+						minFov=0.0166;
+						maxFov=0.9;
+						visionMode[]=
+						{
+							"Normal",
+							"TI"
+						};
+						thermalMode[]={0,1};
+					};
+					*/
 
 					class Components: Components
 					{
@@ -2831,6 +2849,24 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 							gunnerOpticsEffect[]={};
 						};
 					};
+
+					/*
+					//no stabilization effect
+					class ViewOptics: ViewOptics
+					{
+						directionStabilized=1;
+						
+						initFov=0.9;
+						minFov=0.0166;
+						maxFov=0.9;
+						visionMode[]=
+						{
+							"Normal",
+							"TI"
+						};
+						thermalMode[]={0,1};
+					};
+					*/
 
 					class Components: Components
 					{

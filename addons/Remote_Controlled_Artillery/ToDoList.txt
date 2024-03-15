@@ -33,9 +33,12 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 generally:
+-stabilization impacts aiming?
 -update list & readme
 -IFV II 30mm + ATGM
 -fix driverview on FSV/MBT & Trucks
+-recon radar/mc internal view (LOD testing?)
+-soon with arma update connectionfix wont be needed anymore
 
 Arty:
 -Counter Artillery Radar -> brainstorm on options: map markers for shot locations / share source vehicle in datalink but delayed for balancing, and how its even technically possible for different mods
