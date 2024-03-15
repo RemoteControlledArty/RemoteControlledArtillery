@@ -33,19 +33,19 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 generally:
+-update list & readme
+
 -mp commanding values
 -maybe requires swapping commander/gunner
 
 -test cargoIsCoDriver[]={0,0};
 	cargoCanControlUAV=0;
-
+	lockDetectionSystem
 	Added: A new DriverOpticsIn parameter for vehicle drivers (similar to turret OpticsIn, but it uses OpticsModel instead gunnerOpticsModel for the optics model)
 
 -stabilization impacts aiming?
--update list & readme
 -IFV II 30mm + ATGM
--fix driverview on FSV/MBT & Trucks
--recon radar/mc internal view (LOD testing?)
+-fix driverview on IFV/FSV/MBT & Trucks
 -soon with arma update connectionfix wont be needed anymore
 
 Arty:
