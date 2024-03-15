@@ -33,6 +33,8 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 generally:
+-mp commanding values
+
 -stabilization impacts aiming?
 -update list & readme
 -IFV II 30mm + ATGM
