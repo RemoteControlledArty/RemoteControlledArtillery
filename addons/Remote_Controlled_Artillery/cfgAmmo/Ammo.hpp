@@ -98,10 +98,10 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 	submunitionAmmo="RC_ammo_Penetrator_MP";
 	indirectHit=40;
 	indirectHitRange=10;
-	maxControlRange=3000;
-	cmImmunity=0.85;
+	maxControlRange=4000;
+	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
-	missileLockMaxDistance=3000;
+	missileLockMaxDistance=4000;
 	fuseDistance=20;
 	thrust=70;
 	maxSpeed=250;
@@ -137,15 +137,15 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -154,18 +154,18 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=2000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -195,18 +195,18 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -248,8 +248,8 @@ class RC_IFV_AA: RC_IFV_AA_Base
 					};
 					class GroundTarget
 					{
-						minRange=500;
-						maxRange=3500;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -264,15 +264,15 @@ class RC_IFV_AA: RC_IFV_AA_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -302,18 +302,18 @@ class RC_IFV_AA: RC_IFV_AA_Base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};

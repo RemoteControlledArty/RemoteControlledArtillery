@@ -94,9 +94,11 @@ class RC_IFV_Missle_Launcher: missiles_titan
 	scope=1;
 	canLock=2;
 	weaponLockSystem="2 + 4 + 16";
+	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	displayName="NLOS ML";
 	displayNameShort="NLOS ML";
 	magazineReloadTime=20;
+	cmImmunity=0.67;
 	magazines[]=
 	{
 		"RC_2Rnd_IFV_MP_NLOS",
@@ -232,6 +234,7 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.75;
+	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 
 	class HE: HE
 	{
@@ -261,6 +264,7 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.75;
+	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 
 	class HE: HE
 	{
@@ -287,6 +291,7 @@ class RC_cannon_120mm: cannon_120mm
 	canLock=2;
 	reloadTime=5;
 	magazineReloadTime=5;
+	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	magazines[]=
 	{
 		"RC_12Rnd_120mm_APFSDS_T",

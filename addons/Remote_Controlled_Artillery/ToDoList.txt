@@ -27,13 +27,12 @@ TO DO - BUGFIXES:
 -Remove ICV II "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
 -attemt to (unclear if possible) giving working waypoints to ICV/IFV even when sitting in vehicle (those waypoints bug, and have different extra markings)
 
--IFV AA missile not locking in multiplayer
-
 
 TO DO - FEATURES:
 
 generally:
 -update list & readme
+-engineoff script doesnt need to be in init if person is connected to uav, with soon arma update it also wouldnt block taking controls for gaining locality, for example when the other is uncon
 
 -mp commanding values
 -maybe requires swapping commander/gunner
@@ -137,6 +136,7 @@ DONE - BUGFIXES:
 -multiple gps markers now usable, and movable
 -fixed gps marker for multiplayer
 -fixed datalink laser designator for multiplayer
+-IFV AA Missles now lock in multiplayer if at correct distance, and not flared
 
 new:
 -fixed multiplayer issue of gunner being unable to drive, now the driver seat is not locked anymore,
