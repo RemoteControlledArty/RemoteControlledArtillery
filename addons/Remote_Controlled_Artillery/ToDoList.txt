@@ -35,6 +35,8 @@ generally:
 -engineoff script doesnt need to be in init if person is connected to uav, with soon arma update it also wouldnt block taking controls for gaining locality, for example when the other is uncon
 -doublecheck "min/max" range exact function on sensors
 
+-set ejectdeadcrew to true?
+
 -mp commanding values
 -maybe requires swapping commander/gunner
 
