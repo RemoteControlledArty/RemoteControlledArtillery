@@ -37,7 +37,8 @@ generally:
 
 -set ejectdeadcrew to true?
 
--mp commanding values
+-mp commanding values *also test cargo effect
+
 -maybe requires swapping commander/gunner
 
 -test cargoIsCoDriver[]={0,0};
