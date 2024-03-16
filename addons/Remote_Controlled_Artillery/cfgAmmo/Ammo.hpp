@@ -169,6 +169,7 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+					maxTrackableSpeed=100;
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
@@ -188,6 +189,7 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+					maxTrackableSpeed=100;
 					typeRecognitionDistance=400;
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=40;
@@ -230,6 +232,7 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	irLock=1;
 	airLock=1;
 	trackLead=1;
+	cameraViewAvailable=1;
 
 	class Components: Components
 	{
