@@ -675,7 +675,10 @@ class RC_ATGM_small_WD_base: RC_ATGM_small_base
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
-	//hideProxyInCombat=0;
+	/*
+	hideProxyInCombat=0;
+	driverAction="Driver_LT_01_AT_F_in";
+	*/
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
