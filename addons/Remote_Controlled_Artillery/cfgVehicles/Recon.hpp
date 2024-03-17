@@ -550,7 +550,7 @@ class RC_Mortar_Carrier_WD: RC_radar_small_WD
 	displayName="RC Mortar Carrier";
 	editorSubcategory="RC_Mortar_subcat";
 };
-class RC_Mortar_Carrier_WD_O: RC_radar_small_WD
+class RC_Mortar_Carrier_WD_O: RC_Mortar_Carrier_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -561,7 +561,7 @@ class RC_Mortar_Carrier_WD_O: RC_radar_small_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_Mortar_Carrier_WD_I: RC_radar_small_WD
+class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -659,10 +659,6 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
 	author="Ascent";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
 	driverForceOptics=1;
 	forceHideDriver=1;
 	driverCompartments="Compartment1";

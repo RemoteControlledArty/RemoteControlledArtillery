@@ -407,8 +407,8 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	RCDisableSeats=3; // locks commander seats
-	RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
+	//RCDisableSeats=3; // locks commander seats
+	//RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 
 	displayName="RC ICV I";
 	scope=2;
@@ -1031,8 +1031,8 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 		init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 
-	RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
+	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
+	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 
 	displayName="IFV 30mm";
 	scope=2;
@@ -2067,8 +2067,8 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	RCDisableSeats=3; // locks commander seats
-	RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
+	//RCDisableSeats=3; // locks commander seats
+	//RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 
 	displayName="RC ICV II";
 	scope=2;
@@ -2716,8 +2716,8 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	};
 	*/
 
-	RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
+	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
+	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 
 	displayName="IFV 40mm";
 	scope=2;

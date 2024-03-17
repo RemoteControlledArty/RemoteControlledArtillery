@@ -223,13 +223,6 @@ class CfgPatches
 			RC_FSV_A_I,
 			RC_FSV_WD_I,
 
-			RC_MBT6_A,
-			RC_MBT6_WD,
-			RC_MBT6_A_O,
-			RC_MBT6_WD_O,
-			RC_MBT6_A_I,
-			RC_MBT6_WD_I,
-
 			RC_MBT6_A_Driverless,
 			RC_MBT6_WD_Driverless,
 			RC_MBT6_A_Driverless_O,

@@ -1159,6 +1159,7 @@ class RC_MBT6_A_Driverless: RC_MBT6_A_Base
 
 	displayName="MBT [6 Inf]";
 	crew="";
+	hasDriver=-1;
 };
 class RC_MBT6_A_Driverless_O: RC_MBT6_A_Driverless
 {
@@ -1311,7 +1312,7 @@ class RC_MBT6_WD_Driverless: RC_MBT6_A_Driverless
 		};
 	};
 };
-class RC_MBT6_WD_Driverless_O: RC_MBT6_Driverless_WD
+class RC_MBT6_WD_Driverless_O: RC_MBT6_WD_Driverless
 {
 	faction="RemoteControlled_O";
 	side=0;
@@ -1450,6 +1451,7 @@ class RC_MBT6_WD_Driverless_I: RC_MBT6_WD_Driverless
 };
 
 
+/*
 class RC_MBT6_A: RC_MBT6_A_Base
 {
 	class EventHandlers: EventHandlers
@@ -1763,3 +1765,4 @@ class RC_MBT6_WD_I: RC_MBT6_WD
 		};
 	};
 };
+*/
