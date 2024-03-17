@@ -592,14 +592,6 @@ class RC_Sh_120mm_APFSDS_T: Sh_120mm_APFSDS_Tracer_Red
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	aiAmmoUsageFlags="64 + 128 + 512";
-	warheadName="TandemHEAT";	//warheadName="HE";
-	submunitionAmmo="RC_ammo_Penetrator_120mm";
-	hit=95;
-	indirectHit=50;
-	indirectHitRange=10;
-	deflecting=4;
-	craterEffects="AAMissileCrater";
 };
 
 

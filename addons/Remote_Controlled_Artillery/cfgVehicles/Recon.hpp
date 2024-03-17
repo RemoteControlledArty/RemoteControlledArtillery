@@ -1,6 +1,6 @@
 //Nyx / Wiesel
 class I_LT_01_AA_F;
-class RC_AA_small_base: I_LT_01_AA_F
+class RC_AA_small_Base: I_LT_01_AA_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -16,7 +16,7 @@ class RC_AA_small_base: I_LT_01_AA_F
 	//RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_AA_small_WD: RC_AA_small_base
+class RC_AA_small_WD: RC_AA_small_Base
 {
 	displayName="RC Recon Anti-Air";
 	faction="RemoteControlled_B";
@@ -298,7 +298,7 @@ class RC_AA_small_WD_I: RC_AA_small_WD
 
 
 class I_LT_01_scout_F;
-class RC_radar_small_base: I_LT_01_scout_F
+class RC_radar_small_Base: I_LT_01_scout_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -319,7 +319,7 @@ class RC_radar_small_base: I_LT_01_scout_F
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	
 };
-class RC_radar_small_WD_base: RC_radar_small_base
+class RC_radar_small_WD_Base: RC_radar_small_Base
 {
 	/*
 	//for later use
@@ -328,19 +328,9 @@ class RC_radar_small_WD_base: RC_radar_small_base
 		init="(_this select 0) spawn {};";
 	};
 	*/
-	displayName="RC Recon Radar";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
 	author="Ascent";
-	textPlural="UGVs";
-	textSingular="UGV";
-	isUav=1;
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP1_pos";
-	uavCameraGunnerDir="PiP1_dir";
-	crew="B_UAV_AI";
 	driverForceOptics=1;
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
@@ -496,12 +486,25 @@ class RC_radar_small_WD_base: RC_radar_small_base
 		"A3\armor_f\data\cage_olive_co.paa"
 	};
 };
-class RC_radar_small_WD: RC_radar_small_WD_base
+
+
+class RC_radar_small_WD: RC_radar_small_WD_Base
 {
 	scope=2;
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+
+	displayName="RC Recon Radar";
+	isUav=1;
+	vehicleClass="Autonomous";
+	textPlural="UGVs";
+	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
+	crew="B_UAV_AI";
 	
 	class Turrets: Turrets
 	{
@@ -518,12 +521,14 @@ class RC_radar_small_WD_O: RC_radar_small_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_radar_small_DIG_I: RC_radar_small_WD
+class RC_radar_small_WD_I: RC_radar_small_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
+};
+class RC_radar_small_DIG_I: RC_radar_small_WD_I
+{
 	hiddenSelectionsTextures[]=
 	{
 		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
@@ -531,12 +536,6 @@ class RC_radar_small_DIG_I: RC_radar_small_WD
 		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
 		"A3\armor_f\data\cage_aaf_co.paa"
 	};
-};
-class RC_radar_small_WD_I: RC_radar_small_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
 };
 
 
@@ -551,7 +550,7 @@ class RC_Mortar_Carrier_WD: RC_radar_small_WD
 	displayName="RC Mortar Carrier";
 	editorSubcategory="RC_Mortar_subcat";
 };
-class RC_Mortar_Carrier_WD_O: RC_Mortar_Carrier_WD
+class RC_Mortar_Carrier_WD_O: RC_radar_small_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -562,7 +561,7 @@ class RC_Mortar_Carrier_WD_O: RC_Mortar_Carrier_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
+class RC_Mortar_Carrier_WD_I: RC_radar_small_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -586,7 +585,7 @@ class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
 
 
 //semi manned version
-class RC_Mortar_Carrier_Manned_WD: RC_radar_small_WD_base
+class RC_Mortar_Carrier_Manned_WD: RC_radar_small_WD_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -595,6 +594,8 @@ class RC_Mortar_Carrier_Manned_WD: RC_radar_small_WD_base
 
 	displayName="Mortar Carrier";
 	editorSubcategory="RC_Mortar_subcat";
+	crew="";
+	hasDriver=-1;
 
 	scope=2;
 	scopeCurator=2;
@@ -609,7 +610,6 @@ class RC_Mortar_Carrier_Manned_WD_O: RC_Mortar_Carrier_Manned_WD
 	};
 
 	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
 	side=0;
 };
 class RC_Mortar_Carrier_Manned_WD_I: RC_Mortar_Carrier_Manned_WD
@@ -620,7 +620,6 @@ class RC_Mortar_Carrier_Manned_WD_I: RC_Mortar_Carrier_Manned_WD
 	};
 
 	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
 	side=2;
 };
 class RC_Mortar_Carrier_Manned_DIG_I: RC_Mortar_Carrier_Manned_WD_I
@@ -636,7 +635,7 @@ class RC_Mortar_Carrier_Manned_DIG_I: RC_Mortar_Carrier_Manned_WD_I
 
 
 class I_LT_01_AT_F;
-class RC_ATGM_small_base: I_LT_01_AT_F
+class RC_ATGM_small_Base: I_LT_01_AT_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -648,13 +647,13 @@ class RC_ATGM_small_base: I_LT_01_AT_F
 	class HitPoints;
 	class HitEngine;
 	class Components;
-	class EventHandlers;
+	//class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 	//RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_ATGM_small_WD_base: RC_ATGM_small_base
+class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 {
 	displayName="RC Recon ATGM 4.5km";
 	faction="RemoteControlled_B";
@@ -664,15 +663,6 @@ class RC_ATGM_small_WD_base: RC_ATGM_small_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	isUav=1;
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP1_pos";
-	uavCameraGunnerDir="PiP1_dir";
-	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
 	driverCompartments="Compartment1";
@@ -962,12 +952,24 @@ class RC_ATGM_small_WD_base: RC_ATGM_small_base
 		"A3\armor_f\data\cage_olive_co.paa"
 	};
 };
-class RC_ATGM_small_WD: RC_ATGM_small_WD_base
+
+
+class RC_ATGM_small_WD: RC_ATGM_small_WD_Base
 {
 	scope=2;
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+
+	isUav=1;
+	vehicleClass="Autonomous";
+	textPlural="UGVs";
+	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
+	crew="B_UAV_AI";
 
 	class Turrets: Turrets
 	{
@@ -984,53 +986,44 @@ class RC_ATGM_small_WD_O: RC_ATGM_small_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_ATGM_small_DIG_I: RC_ATGM_small_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	hiddenSelectionsTextures[]=
-	{
-	"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-	"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
-	"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-	"A3\armor_f\data\cage_aaf_co.paa"
-	};
-};
 class RC_ATGM_small_WD_I: RC_ATGM_small_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 };
+class RC_ATGM_small_DIG_I: RC_ATGM_small_WD_I
+{
+	hiddenSelectionsTextures[]=
+	{
+	"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+	"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
+	"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+	"A3\armor_f\data\cage_aaf_co.paa"
+	};
+};
 
 
 //semi manned version
-class RC_ATGM_small_Manned_WD: RC_ATGM_small_WD_base
+class RC_ATGM_small_WD_Driverless: RC_ATGM_small_WD_Base
 {
-	class EventHandlers: EventHandlers
-	{
-		init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
-	};
-
-	displayName="Recon ATGM 4.5km";
-
 	scope=2;
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+
+	displayName="Recon ATGM 4.5km";
+	crew="";
+	hasDriver=-1;
 };
-class RC_ATGM_small_Manned_WD_O: RC_ATGM_small_Manned_WD
+class RC_ATGM_small_WD_Driverless_O: RC_ATGM_small_WD_Driverless
 {
 	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
 	side=0;
 };
-class RC_ATGM_small_Manned_DIG_I: RC_ATGM_small_Manned_WD
+class RC_ATGM_small_DIG_Driverless_I: RC_ATGM_small_WD_Driverless
 {
 	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
 	side=2;
 
 	hiddenSelectionsTextures[]=
@@ -1041,9 +1034,8 @@ class RC_ATGM_small_Manned_DIG_I: RC_ATGM_small_Manned_WD
 	"A3\armor_f\data\cage_aaf_co.paa"
 	};
 };
-class RC_ATGM_small_Manned_WD_I: RC_ATGM_small_Manned_WD
+class RC_ATGM_small_WD_Driverless_I: RC_ATGM_small_DIG_Driverless_I
 {
 	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
 	side=2;
 };
