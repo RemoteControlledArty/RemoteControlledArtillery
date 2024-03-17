@@ -39,6 +39,8 @@ ASAP:
 -correct quicklist & make video about gaining locality
 -fix for someone remotecontrolling gunner player, bugging them
 
+-test init="(_this select 0) spawn {while {true} do {setEffectiveCommander player;};};"
+-test init="(_this select 0) spawn {while {true} do {(group (driver _this)) setGroupOwner (owner (gunner _this)); _this setOwner (owner (gunner _this));};};"
 
 generally:
 -update list & readme
