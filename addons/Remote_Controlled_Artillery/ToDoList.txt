@@ -47,6 +47,7 @@ ASAP:
 
 	init="if (!isserver) exitwith {}; (_this select 0) spawn {while {true} do {setEffectiveCommander player; (group (driver _this)) setGroupOwner (owner (gunner _this)); _this setOwner (owner (gunner _this)); sleep 1;};};"
 	```
+	if(owner gunner _this != owner driver _this) then 
 
 generally:
 -update list & readme
