@@ -11,7 +11,7 @@ class RC_AA_base: B_APC_Tracked_01_AA_F
 	class CommanderOptics;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=5; // disables driver and commander seat
+	//RCDisableSeats=5; // disables driver and commander seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_AA_A: RC_AA_base
@@ -206,7 +206,7 @@ class RC_AA_base_HEX_O: O_APC_Tracked_02_AA_F
 	class CommanderOptics;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=5; // disables driver and commander seat
+	//RCDisableSeats=5; // disables driver and commander seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_AA_HEX_A_O: RC_AA_base_HEX_O

@@ -30,6 +30,16 @@ TO DO - BUGFIXES:
 
 TO DO - FEATURES:
 
+ASAP:
+-non UGV MBT
+-non UGV tracked IFV (Warrior with less shit hitpoints)
+-non UGV Wiesel ATGM / MortarCarrier
+-RC can remain gaining locality per drivercontrols, and maybe later per seteffectivecommander/owner change locality quicker *such could also be used for tracked semi manned vehicles
+
+-correct quicklist & make video about gaining locality
+-fix for someone remotecontrolling gunner player, bugging them
+
+
 generally:
 -update list & readme
 -engineoff script doesnt need to be in init if person is connected to uav, with soon arma update it also wouldnt block taking controls for gaining locality, for example when the other is uncon
@@ -37,9 +47,9 @@ generally:
 
 -set ejectdeadcrew to true?
 
--mp commanding values *also test cargo effect
-
--maybe requires swapping commander/gunner
+-*notetoself: emty uav/ugv, can be hacked, which spawns gunner, which then can bug my "go to commander"
+	partially manned like howitzer dont have that problem, but autonomous driving command to firing position is unavailable
+	= RC having driver and gaining locality by driver controls, while giving manned vehilces hasDriver-1; as on those movement order breaks anyways while in the vic
 
 -test cargoIsCoDriver[]={0,0};
 	cargoCanControlUAV=0;
@@ -52,6 +62,9 @@ generally:
 -soon with arma update connectionfix wont be needed anymore
 
 Arty:
+-test FCS without ace on uneven ground
+-adding FCS, and Airburst rounds, to a mods 60mm quick deployable Mortar
+
 -Counter Artillery Radar -> brainstorm on options: map markers for shot locations / share source vehicle in datalink but delayed for balancing, and how its even technically possible for different mods
 -comment for round like "smoke", for example below T: 01 UI, for better coordination and less required radio chatter
 -peak ASL formula and display infront of ETA, optimal but a bit much UI would be also be ASL at 25% of distance, to estimate if rounds will collide with hills close to gun/target

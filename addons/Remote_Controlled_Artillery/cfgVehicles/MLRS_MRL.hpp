@@ -13,7 +13,7 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=1; // locks driver seat
+	//RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=1.75;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -266,7 +266,7 @@ class RC_MRL_base: I_Truck_02_MRL_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=1; // locks driver seat
+	//RCDisableSeats=1; // locks driver seat
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=1.65;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy

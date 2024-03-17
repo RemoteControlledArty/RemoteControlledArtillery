@@ -467,6 +467,7 @@ class RC_UAV_AR3: RC_UAV_AR1
 						viewDistanceLimitCoef=1;
 					};
 				};
+				/*
 				class ManSensorComponent: SensorTemplateMan
 				{
 					maxTrackableSpeed=15;
@@ -475,6 +476,7 @@ class RC_UAV_AR3: RC_UAV_AR1
 					animDirection="mainGun";
 					aimDown=-0.5;
 				};
+				*/
 			};
 		};
 	};

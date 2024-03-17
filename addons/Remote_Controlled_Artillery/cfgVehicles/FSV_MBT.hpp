@@ -20,8 +20,8 @@ class RC_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 	class HitRF2Wheel;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
+	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
+	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_FSV_A: RC_FSV_A_Base
@@ -631,8 +631,8 @@ class RC_MBT6_A_Base: B_MBT_01_TUSK_F
 	class Wide;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
+	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
+	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_MBT6_A: RC_MBT6_A_Base

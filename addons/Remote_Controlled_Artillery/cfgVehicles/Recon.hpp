@@ -13,7 +13,7 @@ class RC_AA_small_base: I_LT_01_AA_F
 	class Components;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=1; // locks driver seat
+	//RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_AA_small_WD: RC_AA_small_base
@@ -315,7 +315,7 @@ class RC_radar_small_base: I_LT_01_scout_F
 	scope=0;
 	scopeCurator=0;
 	forceHideDriver=1;
-	RCDisableSeats=6; // locks gunner and commander seat
+	//RCDisableSeats=6; // locks gunner and commander seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	
 };
@@ -590,7 +590,7 @@ class RC_Mortar_Carrier_Manned_WD: RC_radar_small_WD_base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
+		init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;}; if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 	};
 
 	displayName="Mortar Carrier";
@@ -605,7 +605,7 @@ class RC_Mortar_Carrier_Manned_WD_O: RC_Mortar_Carrier_Manned_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
+		init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;}; if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 	};
 
 	faction="RemoteControlled_O";
@@ -616,7 +616,7 @@ class RC_Mortar_Carrier_Manned_WD_I: RC_Mortar_Carrier_Manned_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]]; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
+		init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;}; if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 	};
 
 	faction="RemoteControlled_I";
@@ -651,7 +651,7 @@ class RC_ATGM_small_base: I_LT_01_AT_F
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=1; // locks driver seat
+	//RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_ATGM_small_WD_base: RC_ATGM_small_base
@@ -675,10 +675,6 @@ class RC_ATGM_small_WD_base: RC_ATGM_small_base
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
-	/*
-	hideProxyInCombat=0;
-	driverAction="Driver_LT_01_AT_F_in";
-	*/
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -1015,7 +1011,7 @@ class RC_ATGM_small_Manned_WD: RC_ATGM_small_WD_base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
+		init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;};";
 	};
 
 	displayName="Recon ATGM 4.5km";
