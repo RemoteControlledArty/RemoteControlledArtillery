@@ -589,24 +589,24 @@ class RC_Mortar_Carrier_Manned_WD: RC_radar_small_WD_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;}; if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 	};
-
-	displayName="Mortar Carrier";
-	editorSubcategory="RC_Mortar_subcat";
-	crew="";
-	hasDriver=-1;
 
 	scope=2;
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+
+	displayName="Mortar Carrier";
+	editorSubcategory="RC_Mortar_subcat";
+	crew="";
+	hasDriver=-1;
 };
 class RC_Mortar_Carrier_Manned_WD_O: RC_Mortar_Carrier_Manned_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;}; if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 	};
 
 	faction="RemoteControlled_O";
@@ -616,7 +616,7 @@ class RC_Mortar_Carrier_Manned_WD_I: RC_Mortar_Carrier_Manned_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this;}; if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 	};
 
 	faction="RemoteControlled_I";
