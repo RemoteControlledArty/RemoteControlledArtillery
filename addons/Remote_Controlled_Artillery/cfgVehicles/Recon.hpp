@@ -601,6 +601,14 @@ class RC_Mortar_Carrier_Manned_WD: RC_radar_small_WD_Base
 	editorSubcategory="RC_Mortar_subcat";
 	crew="";
 	hasDriver=-1;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			forceHideGunner=1;
+		};
+	};
 };
 class RC_Mortar_Carrier_Manned_WD_O: RC_Mortar_Carrier_Manned_WD
 {
