@@ -585,7 +585,7 @@ class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
 
 
 //semi manned version
-class RC_Mortar_Carrier_Manned_WD: RC_radar_small_WD_Base
+class RC_Mortar_Carrier_WD_Driverless: RC_radar_small_WD_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -610,7 +610,7 @@ class RC_Mortar_Carrier_Manned_WD: RC_radar_small_WD_Base
 		};
 	};
 };
-class RC_Mortar_Carrier_Manned_WD_O: RC_Mortar_Carrier_Manned_WD
+class RC_Mortar_Carrier_WD_Driverless_O: RC_Mortar_Carrier_WD_Driverless
 {
 	class EventHandlers: EventHandlers
 	{
@@ -620,7 +620,7 @@ class RC_Mortar_Carrier_Manned_WD_O: RC_Mortar_Carrier_Manned_WD
 	faction="RemoteControlled_O";
 	side=0;
 };
-class RC_Mortar_Carrier_Manned_WD_I: RC_Mortar_Carrier_Manned_WD
+class RC_Mortar_Carrier_WD_Driverless_I: RC_Mortar_Carrier_WD_Driverless
 {
 	class EventHandlers: EventHandlers
 	{
@@ -630,7 +630,7 @@ class RC_Mortar_Carrier_Manned_WD_I: RC_Mortar_Carrier_Manned_WD
 	faction="RemoteControlled_I";
 	side=2;
 };
-class RC_Mortar_Carrier_Manned_DIG_I: RC_Mortar_Carrier_Manned_WD_I
+class RC_Mortar_Carrier_DIG_Driverless_I: RC_Mortar_Carrier_WD_Driverless_I
 {
 	hiddenSelectionsTextures[]=
 	{
