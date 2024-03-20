@@ -1057,6 +1057,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 	{
 		class MainTurret: MainTurret
 		{
+			//isCopilot=1; might allow for locality shift if set up correctly
 			showAllTargets="2 + 4";
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -2743,6 +2744,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	{
 		class MainTurret: MainTurret
 		{
+			//isCopilot=1; might allow for locality shift if set up correctly
 			showAllTargets="2 + 4";
 			commanding=3;
 			minElev=-10.6;
