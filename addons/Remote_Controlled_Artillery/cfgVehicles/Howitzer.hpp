@@ -50,6 +50,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -348,6 +349,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -588,6 +590,7 @@ class RC_Static_Arty: RC_Static_Arty_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Turrets: Turrets

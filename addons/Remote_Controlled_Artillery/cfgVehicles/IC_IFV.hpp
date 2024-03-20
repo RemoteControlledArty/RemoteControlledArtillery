@@ -57,6 +57,7 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
@@ -1751,6 +1752,7 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;

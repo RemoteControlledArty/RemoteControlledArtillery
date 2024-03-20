@@ -47,6 +47,7 @@ class RC_MLRS_A: RC_MLRS_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -301,6 +302,7 @@ class RC_MRL_DIG: RC_MRL_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components

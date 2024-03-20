@@ -46,6 +46,7 @@ class RC_AA_small_WD: RC_AA_small_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -331,13 +332,18 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
 	author="Ascent";
-	driverForceOptics=1;
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	redRpm=1100;
 	idleRpm=250;
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	laserScanner=1;
+	weaponLockSystem="4+8";
+	incomingMissileDetectionSystem=16;
 
 	class Components: Components
 	{
@@ -678,6 +684,7 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 	//laserScanner=0;
 
