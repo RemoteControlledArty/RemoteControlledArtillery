@@ -929,7 +929,7 @@ class RC_GrenadeDropper_Bag: RC_Weapon_Bag_Base
 	{
 		base="";
 		displayName="RC Grenade Dropper";
-		assembleTo="RC_Grenade_Dropper";
+		assembleTo="RC_GrenadeDropper";
 	};
 };
 class RC_GrenadeDropper_Bag_O: RC_GrenadeDropper_Bag
