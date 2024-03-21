@@ -2710,6 +2710,15 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	class EventHandlers: EventHandlers
 	{
 		init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		
+		/*
+		class RC_Artillery
+		{
+			getin="params ['_vehicle', '_role', '_unit', '_turret']; [if (isPlayer (gunner _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); _vehicle setOwner (owner (gunner _vehicle)); _vehicle setEffectiveCommander (gunner _vehicle);} else {if (isPlayer (commander _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); _vehicle setOwner (owner (commander _vehicle)); _vehicle setEffectiveCommander (commander _vehicle);}}] remoteExec ['spawn', 2];";
+			getout="params ['_vehicle', '_role', '_unit', '_turret']; [if (isPlayer (gunner _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); _vehicle setOwner (owner (gunner _vehicle)); _vehicle setEffectiveCommander (gunner _vehicle);} else {if (isPlayer (commander _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); _vehicle setOwner (owner (commander _vehicle)); _vehicle setEffectiveCommander (commander _vehicle);}}] remoteExec ['spawn', 2];";
+			seatswitched="params ['_vehicle', '_role', '_unit', '_turret']; [if (isPlayer (gunner _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); _vehicle setOwner (owner (gunner _vehicle)); _vehicle setEffectiveCommander (gunner _vehicle);} else {if (isPlayer (commander _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); _vehicle setOwner (owner (commander _vehicle)); _vehicle setEffectiveCommander (commander _vehicle);}}] remoteExec ['spawn', 2];";
+		};
+		*/
 	};
 	/*
 	//Missile launcher on top, memoryppoint unclear, and rotate with boolean not working

@@ -27,6 +27,8 @@ TO DO - BUGFIXES:
 -Remove ICV II "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
 -attemt to (unclear if possible) giving working waypoints to ICV/IFV even when sitting in vehicle (those waypoints bug, and have different extra markings)
 
+-artillery computer is supposedly disabled for all assets, not just of the mod
+
 
 TO DO - FEATURES:
 
@@ -38,16 +40,6 @@ ASAP:
 
 -correct quicklist & make video about gaining locality
 -fix for someone remotecontrolling gunner player, bugging them
-
--test:
-	```cpp
-	init="if (!isserver) exitwith {}; (_this select 0) spawn {while {true} do {setEffectiveCommander (gunner _this); sleep 1;};};"
-
-	init="if (!isserver) exitwith {}; (_this select 0) spawn {while {true} do {(group (driver _this)) setGroupOwner (owner (gunner _this)); _this setOwner (owner (gunner _this)); sleep 1;};};"
-
-	init="if (!isserver) exitwith {}; (_this select 0) spawn {while {true} do {setEffectiveCommander player; (group (driver _this)) setGroupOwner (owner (gunner _this)); _this setOwner (owner (gunner _this)); sleep 1;};};"
-	```
-	if(owner gunner _this != owner driver _this) then 
 
 generally:
 -update list & readme
@@ -71,6 +63,8 @@ generally:
 -soon with arma update connectionfix wont be needed anymore
 
 Arty:
+-minimum datalink distance 50m instead of 20m / or "object" recognition & display
+
 -test FCS without ace on uneven ground
 -adding FCS, and Airburst rounds, to a mods 60mm quick deployable Mortar
 
@@ -83,9 +77,9 @@ Arty:
 -make delayed fuze also ir capable for gps targets  *might require sicnificant change of the round as people might use it against vehicles, but its currently not HEAT
 
 FSV/IFV:
--check ICV engine off on server
+-check ICV engine off on server *needs remoteexecute?
 -additional x2 SACLOS only missles, vorona or edited titan
--maybe make gps target available for NLOS missles? *might have happend with new marker EH update
+-automatic switch to left missilecamera when missile is launched
 
 
 TO DO - QUALITY OF LIFE:
