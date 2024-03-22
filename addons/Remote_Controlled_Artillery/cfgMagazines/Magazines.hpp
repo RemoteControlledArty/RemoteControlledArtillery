@@ -73,6 +73,16 @@ class RC_100Rnd_30mm_APFSDS_T: 60Rnd_30mm_APFSDS_shells_Tracer_Red
 	displayName="30mm APFSDS-T";
 	displayNameShort="30mm APFSDS-T";
 };
+/*
+class RC_100Rnd_40mm_Smoke: 140Rnd_30mm_MP_shells_Tracer_Red
+{
+	author="Ascent";
+	ammo="RC_B_AC_Smoke";
+	count=100;
+	displayName="30mm Smoke";
+	displayNameShort="30mm Smoke";
+};
+*/
 
 
 class 60Rnd_40mm_GPR_Tracer_Red_shells;
@@ -93,6 +103,16 @@ class RC_50Rnd_40mm_APFSDS_T: 40Rnd_40mm_APFSDS_Tracer_Red_shells
 	displayName="40mm APFSDS-T";
 	displayNameShort="40mm APFSDS-T";
 };
+/*
+class RC_50Rnd_40mm_Smoke: 60Rnd_40mm_GPR_Tracer_Red_shells
+{
+	author="Ascent";
+	ammo="RC_B_AC_Smoke";
+	count=50;
+	displayName="40mm Smoke";
+	displayNameShort="40mm Smoke";
+};
+*/
 
 
 class 2Rnd_GAT_missiles;

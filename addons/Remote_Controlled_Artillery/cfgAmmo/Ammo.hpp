@@ -81,6 +81,17 @@ class RC_B_40mm_APFSDS_T: B_40mm_APFSDS_Tracer_Red
 };
 
 
+/*
+class G_40mm_Smoke;
+class RC_B_AC_Smoke: G_40mm_Smoke
+{
+	deflecting=0;
+	explosionTime=0.5;
+	timeToLive=120;
+};
+*/
+
+
 class ammo_Penetrator_Base;
 class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
 {

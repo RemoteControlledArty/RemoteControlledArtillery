@@ -41,7 +41,9 @@ ASAP:
 -correct quicklist & make video about gaining locality
 -fix for someone remotecontrolling gunner player, bugging them
 
+
 generally:
+-maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
 -update list & readme
 -engineoff script doesnt need to be in init if person is connected to uav, with soon arma update it also wouldnt block taking controls for gaining locality, for example when the other is uncon
 -doublecheck "min/max" range exact function on sensors
@@ -54,13 +56,13 @@ generally:
 
 -test cargoIsCoDriver[]={0,0};
 	cargoCanControlUAV=0;
-	lockDetectionSystem
 	Added: A new DriverOpticsIn parameter for vehicle drivers (similar to turret OpticsIn, but it uses OpticsModel instead gunnerOpticsModel for the optics model)
 
 -stabilization impacts aiming?
 -IFV II 30mm + ATGM
 -fix driverview on IFV/FSV/MBT & Trucks
 -soon with arma update connectionfix wont be needed anymore
+
 
 Arty:
 -minimum datalink distance 50m instead of 20m / or "object" recognition & display
@@ -76,7 +78,10 @@ Arty:
 
 -make delayed fuze also ir capable for gps targets  *might require sicnificant change of the round as people might use it against vehicles, but its currently not HEAT
 
+
 FSV/IFV:
+-smoke ammo, 40mm bulletbase change to shotshellbase with smoke submunition
+-more RC ICV's / APC's / IVF's / MBT's
 -check ICV engine off on server *needs remoteexecute?
 -additional x2 SACLOS only missles, vorona or edited titan
 -automatic switch to left missilecamera when missile is launched
@@ -100,7 +105,6 @@ POSTPONED:
 -fix Static AT self engaging laser spots (how?)
 -RADAR staying on (deactivates after releasing control even when not autonomous, maybe human crew and locked seats instead?)
 -guided submunition alternative scripted misslecam
--more RC Infantry Carrier's / APC's / IVF's
 -ETA 5sec warning message
 -proximityExplosionDistance= ; ammo testing
 -seek after unlocked fire for guided (by cfg value in guided mag, script automatically locking target at arty1 pos, and removing target when round is fired, like 1r less in mag or mag changes)
@@ -161,6 +165,7 @@ DONE - BUGFIXES:
 new:
 -fixed multiplayer issue of gunner being unable to drive, now the driver seat is not locked anymore,
 	if the driver is shortly controlled by terminal until reacting to WASD, one can then driver from the gunner seat
+-ICV hideturret before !local check
 
 
 DONE - FEATURES:

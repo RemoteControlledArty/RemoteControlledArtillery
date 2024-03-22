@@ -241,6 +241,7 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 		magazines[]=
 		{
 			"RC_100Rnd_30mm_MP_T"
+			//"RC_100Rnd_30mm_Smoke"
 		};
 	};
 	class AP: AP
@@ -271,6 +272,7 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 		magazines[]=
 		{
 			"RC_50Rnd_40mm_MP_T"
+			//"RC_50Rnd_40mm_Smoke"
 		};
 	};
 	class AP: AP
