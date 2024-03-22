@@ -314,7 +314,6 @@ class CfgFunctions
       		class RC_UI_Loop {postInit=1};
 			class RC_EngineOff {postInit=1};
 			class RC_UAVBlur {postInit=1};
-			//class RC_LockSeats {postInit=1};
 			class RC_UAVConnectionFix {postInit=1};
 			class RC_LaserDatalink {postInit=1};
 			class scrollSolutions {};
