@@ -37,7 +37,7 @@ class RC_FSV_A: RC_FSV_A_Base
 
 	displayName="FSV";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Transport_FSV_subcat";
+	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
 	scope=2;
 	scopeCurator=2;
@@ -545,42 +545,23 @@ class RC_FSV_A: RC_FSV_A_Base
 		};
 	};
 	
-	class TransportMagazines
-	{
-	};
-	class TransportItems
-	{
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-	};
-	class TransportWeapons
-	{
-	};
+	#include "\Remote_Controlled_Artillery\includes\FSVitemsB.hpp"
 };
 class RC_FSV_A_O: RC_FSV_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+
+	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
 };
 class RC_FSV_A_I: RC_FSV_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+
+	#include "\Remote_Controlled_Artillery\includes\FSVitemsI.hpp"
 };
 class RC_FSV_WD: RC_FSV_A
 {
@@ -608,12 +589,16 @@ class RC_FSV_WD_O: RC_FSV_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+
+	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
 };
 class RC_FSV_WD_I: RC_FSV_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+
+	#include "\Remote_Controlled_Artillery\includes\FSVitemsI.hpp"
 };
 
 
@@ -641,7 +626,7 @@ class RC_MBT6_Base: B_MBT_01_TUSK_F
 class RC_MBT6_A_Base: RC_MBT6_Base
 {
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Transport_FSV_subcat";
+	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
 	driverForceOptics=1;
 	forceHideDriver=1;
@@ -1054,98 +1039,7 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 		};
 	};
 
-	class TransportMagazines
-	{
-		class _xx_HandGrenade
-		{
-			magazine="HandGrenade";
-			count=20;
-		};
-		class _xx_SmokeShell
-		{
-			magazine="SmokeShell";
-			count=10;
-		};
-		class _xx_MRAWS_HEAT_F
-		{
-			magazine="MRAWS_HEAT_F";
-			count=5;
-		};
-		class _xx_MRAWS_HE_F
-		{
-			magazine="MRAWS_HE_F";
-			count=5;
-		};
-		class _xx_1Rnd_Smoke_Grenade_shell
-		{
-			magazine="1Rnd_Smoke_Grenade_shell";
-			count=10;
-		};
-		class _xx_Laserbatteries
-		{
-			magazine="Laserbatteries";
-			count=2;
-		};
-	};
-	class TransportItems
-	{
-		class _xx_B_UavTerminal
-		{
-			name="B_UavTerminal";
-			count=2;
-		};
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=2;
-		};
-	};
-	class TransportWeapons
-	{
-		class _xx_launch_NLAW_F
-		{
-			weapon="launch_NLAW_F";
-			count=2;
-		};
-		class _xx_Improved_FOV_Laserdesignator_A
-		{
-			weapon="Improved_FOV_Laserdesignator_A";
-			count=1;
-		};
-		class _xx_Rangefinder
-		{
-			weapon="Rangefinder";
-			count=1;
-		};
-	};
-	class TransportBackpacks
-	{
-		class _xx_B_Carryall_oli
-		{
-			backpack="B_Carryall_oli";
-			count=1;
-		};
-		class _xx_B_Carryall_cbr
-		{
-			backpack="B_Carryall_cbr";
-			count=1;
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\IFVitemsB.hpp"
 };
 
 
@@ -1170,119 +1064,14 @@ class RC_MBT6_A_Driverless_O: RC_MBT6_A_Driverless
 	faction="RemoteControlled_O";
 	side=0;
 
-	class TransportMagazines
-	{
-		class _xx_HandGrenade
-		{
-			magazine="HandGrenade";
-			count=20;
-		};
-		class _xx_SmokeShell
-		{
-			magazine="SmokeShell";
-			count=10;
-		};
-		class _xx_RPG32_F
-		{
-			magazine="RPG32_F";
-			count=5;
-		};
-		class _xx_RPG32_HE_F
-		{
-			magazine="RPG32_HE_F";
-			count=5;
-		};
-		class _xx_1Rnd_Smoke_Grenade_shell
-		{
-			magazine="1Rnd_Smoke_Grenade_shell";
-			count=10;
-		};
-		class _xx_Laserbatteries
-		{
-			magazine="Laserbatteries";
-			count=2;
-		};
-	};
-	class TransportItems
-	{
-		class _xx_B_UavTerminal
-		{
-			name="B_UavTerminal";
-			count=2;
-		};
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=2;
-		};
-	};
-	class TransportWeapons
-	{
-		class _xx_launch_launch_RPG32_green_F
-		{
-			weapon="launch_RPG32_green_F";
-			count=1;
-		};
-		class _xx_Improved_FOV_Laserdesignator_A
-		{
-			weapon="Improved_FOV_Laserdesignator_A";
-			count=1;
-		};
-		class _xx_Rangefinder
-		{
-			weapon="Rangefinder";
-			count=1;
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
 class RC_MBT6_A_Driverless_I: RC_MBT6_A_Driverless
 {
 	faction="RemoteControlled_I";
 	side=2;
 
-	class TransportItems
-	{
-		class _xx_I_UavTerminal
-		{
-			name="I_UavTerminal";
-			count=2;
-		};
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=2;
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
 };
 
 
@@ -1297,161 +1086,20 @@ class RC_MBT6_WD_Driverless: RC_MBT6_A_Driverless
 		"A3\Armor_F_Exp\MBT_01\data\mbt_addons_olive_CO.paa",
 		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
 	};
-	class TransportWeapons
-	{
-		class _xx_launch_NLAW_F
-		{
-			weapon="launch_NLAW_F";
-			count=2;
-		};
-		class _xx_Improved_FOV_Laserdesignator_WD
-		{
-			weapon="Improved_FOV_Laserdesignator_WD";
-			count=1;
-		};
-		class _xx_Rangefinder
-		{
-			weapon="Rangefinder";
-			count=1;
-		};
-	};
 };
 class RC_MBT6_WD_Driverless_O: RC_MBT6_WD_Driverless
 {
 	faction="RemoteControlled_O";
 	side=0;
 
-	class TransportMagazines
-	{
-		class _xx_HandGrenade
-		{
-			magazine="HandGrenade";
-			count=20;
-		};
-		class _xx_SmokeShell
-		{
-			magazine="SmokeShell";
-			count=10;
-		};
-		class _xx_RPG32_F
-		{
-			magazine="RPG32_F";
-			count=5;
-		};
-		class _xx_RPG32_HE_F
-		{
-			magazine="RPG32_HE_F";
-			count=5;
-		};
-		class _xx_1Rnd_Smoke_Grenade_shell
-		{
-			magazine="1Rnd_Smoke_Grenade_shell";
-			count=10;
-		};
-		class _xx_Laserbatteries
-		{
-			magazine="Laserbatteries";
-			count=2;
-		};
-	};
-	class TransportItems
-	{
-		class _xx_B_UavTerminal
-		{
-			name="B_UavTerminal";
-			count=2;
-		};
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=2;
-		};
-	};
-	class TransportWeapons
-	{
-		class _xx_launch_launch_RPG32_green_F
-		{
-			weapon="launch_RPG32_green_F";
-			count=1;
-		};
-		class _xx_Improved_FOV_Laserdesignator_WD
-		{
-			weapon="Improved_FOV_Laserdesignator_WD";
-			count=1;
-		};
-		class _xx_Rangefinder
-		{
-			weapon="Rangefinder";
-			count=1;
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
 class RC_MBT6_WD_Driverless_I: RC_MBT6_WD_Driverless
 {
 	faction="RemoteControlled_I";
 	side=2;
 
-	class TransportItems
-	{
-		class _xx_I_UavTerminal
-		{
-			name="I_UavTerminal";
-			count=2;
-		};
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=2;
-		};
-	};
-	class TransportWeapons
-	{
-		class _xx_launch_NLAW_F
-		{
-			weapon="launch_NLAW_F";
-			count=2;
-		};
-		class _xx_Improved_FOV_Laserdesignator_WD
-		{
-			weapon="Improved_FOV_Laserdesignator_WD";
-			count=1;
-		};
-		class _xx_Rangefinder
-		{
-			weapon="Rangefinder";
-			count=1;
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
 };
 
 
@@ -1483,85 +1131,7 @@ class RC_MBT6_A_O: RC_MBT6_A
 	crew="O_UAV_AI";
 	side=0;
 
-	class TransportMagazines
-	{
-		class _xx_HandGrenade
-		{
-			magazine="HandGrenade";
-			count=20;
-		};
-		class _xx_SmokeShell
-		{
-			magazine="SmokeShell";
-			count=10;
-		};
-		class _xx_RPG32_F
-		{
-			magazine="RPG32_F";
-			count=5;
-		};
-		class _xx_RPG32_HE_F
-		{
-			magazine="RPG32_HE_F";
-			count=5;
-		};
-		class _xx_1Rnd_Smoke_Grenade_shell
-		{
-			magazine="1Rnd_Smoke_Grenade_shell";
-			count=10;
-		};
-		class _xx_Laserbatteries
-		{
-			magazine="Laserbatteries";
-			count=2;
-		};
-	};
-	class TransportItems
-	{
-		class _xx_B_UavTerminal
-		{
-			name="B_UavTerminal";
-			count=2;
-		};
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=2;
-		};
-	};
-	class TransportWeapons
-	{
-		class _xx_launch_launch_RPG32_green_F
-		{
-			weapon="launch_RPG32_green_F";
-			count=1;
-		};
-		class _xx_Improved_FOV_Laserdesignator_A
-		{
-			weapon="Improved_FOV_Laserdesignator_A";
-			count=1;
-		};
-		class _xx_Rangefinder
-		{
-			weapon="Rangefinder";
-			count=1;
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
 class RC_MBT6_A_I: RC_MBT6_A
 {
@@ -1569,34 +1139,7 @@ class RC_MBT6_A_I: RC_MBT6_A
 	crew="I_UAV_AI";
 	side=2;
 
-	class TransportItems
-	{
-		class _xx_I_UavTerminal
-		{
-			name="I_UavTerminal";
-			count=2;
-		};
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=2;
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
 };
 
 
@@ -1611,24 +1154,6 @@ class RC_MBT6_WD: RC_MBT6_A
 		"A3\Armor_F_Exp\MBT_01\data\mbt_addons_olive_CO.paa",
 		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
 	};
-	class TransportWeapons
-	{
-		class _xx_launch_NLAW_F
-		{
-			weapon="launch_NLAW_F";
-			count=2;
-		};
-		class _xx_Improved_FOV_Laserdesignator_WD
-		{
-			weapon="Improved_FOV_Laserdesignator_WD";
-			count=1;
-		};
-		class _xx_Rangefinder
-		{
-			weapon="Rangefinder";
-			count=1;
-		};
-	};
 };
 class RC_MBT6_WD_O: RC_MBT6_WD
 {
@@ -1636,85 +1161,7 @@ class RC_MBT6_WD_O: RC_MBT6_WD
 	crew="O_UAV_AI";
 	side=0;
 
-	class TransportMagazines
-	{
-		class _xx_HandGrenade
-		{
-			magazine="HandGrenade";
-			count=20;
-		};
-		class _xx_SmokeShell
-		{
-			magazine="SmokeShell";
-			count=10;
-		};
-		class _xx_RPG32_F
-		{
-			magazine="RPG32_F";
-			count=5;
-		};
-		class _xx_RPG32_HE_F
-		{
-			magazine="RPG32_HE_F";
-			count=5;
-		};
-		class _xx_1Rnd_Smoke_Grenade_shell
-		{
-			magazine="1Rnd_Smoke_Grenade_shell";
-			count=10;
-		};
-		class _xx_Laserbatteries
-		{
-			magazine="Laserbatteries";
-			count=2;
-		};
-	};
-	class TransportItems
-	{
-		class _xx_B_UavTerminal
-		{
-			name="B_UavTerminal";
-			count=2;
-		};
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=2;
-		};
-	};
-	class TransportWeapons
-	{
-		class _xx_launch_launch_RPG32_green_F
-		{
-			weapon="launch_RPG32_green_F";
-			count=1;
-		};
-		class _xx_Improved_FOV_Laserdesignator_WD
-		{
-			weapon="Improved_FOV_Laserdesignator_WD";
-			count=1;
-		};
-		class _xx_Rangefinder
-		{
-			weapon="Rangefinder";
-			count=1;
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
 class RC_MBT6_WD_I: RC_MBT6_WD
 {
@@ -1722,51 +1169,6 @@ class RC_MBT6_WD_I: RC_MBT6_WD
 	crew="I_UAV_AI";
 	side=2;
 
-	class TransportItems
-	{
-		class _xx_I_UavTerminal
-		{
-			name="I_UavTerminal";
-			count=2;
-		};
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=2;
-		};
-	};
-	class TransportWeapons
-	{
-		class _xx_launch_NLAW_F
-		{
-			weapon="launch_NLAW_F";
-			count=2;
-		};
-		class _xx_Improved_FOV_Laserdesignator_WD
-		{
-			weapon="Improved_FOV_Laserdesignator_WD";
-			count=1;
-		};
-		class _xx_Rangefinder
-		{
-			weapon="Rangefinder";
-			count=1;
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
 };
 */
