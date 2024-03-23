@@ -63,7 +63,7 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	peakTorque=5650;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	hullExplosionDelay[]={40,45};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
+	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 
 	DLC="Tacops";
@@ -458,88 +458,81 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 						maxFov=1;
 					};
 
-					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					class Components: Components
 					{
-						defaultDisplay="MinimapDisplayComponent";
-
-						class Components
+						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 						{
-							class EmptyDisplay
+							defaultDisplay="MinimapDisplayComponent";
+
+							class Components
 							{
-								componentType="EmptyDisplayComponent";
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								/*
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={3000,1500,750,375};
+									resource="RscCustomInfoSensors";
+								};
+								*/
+								/*
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
+								};
+								*/
 							};
-							class MinimapDisplay
-							{
-								componentType="MinimapDisplayComponent";
-								resource="RscCustomInfoMiniMap";
-							};
-							class UAVFeedDisplay
-							{
-								componentType="UAVFeedDisplayComponent";
-							};
-							class CrewDisplay
-							{
-								componentType="CrewDisplayComponent";
-							};
-							/*
-							//doesnt work yet
-							class SensorDisplay
-							{
-								componentType="SensorsDisplayComponent";
-								range[]={3000,1500,750,375};
-								resource="RscCustomInfoSensors";
-							};
-							*/
-							/*
-							class MineDetectorDisplay
-							{
-								componentType="MineDetectorDisplayComponent";
-								range=50;
-								resource="RscCustomInfoMineDetect";
-							};
-							*/
 						};
-					};
-					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-					{
-						defaultDisplay="EmptyDisplayComponent";
-
-						class Components
+						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 						{
-							class EmptyDisplay
+							defaultDisplay="EmptyDisplayComponent";
+
+							class Components
 							{
-								componentType="EmptyDisplayComponent";
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								/*
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={3000,1500,750,375};
+									resource="RscCustomInfoSensors";
+								};
+								*/
+								/*
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
+								};
+								*/
 							};
-							class MinimapDisplay
-							{
-								componentType="MinimapDisplayComponent";
-								resource="RscCustomInfoMiniMap";
-							};
-							class UAVFeedDisplay
-							{
-								componentType="UAVFeedDisplayComponent";
-							};
-							class CrewDisplay
-							{
-								componentType="CrewDisplayComponent";
-							};
-							/*
-							//doesnt work yet
-							class SensorDisplay
-							{
-								componentType="SensorsDisplayComponent";
-								range[]={3000,1500,750,375};
-								resource="RscCustomInfoSensors";
-							};
-							*/
-							/*
-							class MineDetectorDisplay
-							{
-								componentType="MineDetectorDisplayComponent";
-								range=50;
-								resource="RscCustomInfoMineDetect";
-							};
-							*/
 						};
 					};
 				};

@@ -63,8 +63,20 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	peakTorque=5650;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	hullExplosionDelay[]={40,45};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
+	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
+
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherAngle=180;
+	weapons[]=
+	{
+		"TruckHorn",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"SmokeLauncherMag"
+	};
 
 	DLC="Tacops";
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_APC_Wheeled_03_cannon_F.jpg";
@@ -331,19 +343,6 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 	maximumLoad=4000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherAngle=180;
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag"
-	};
-
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -400,6 +399,84 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 			magazines[]=
 			{
 				"SmokeLauncherMag"
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="MinimapDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						/*
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={3000,1500,750,375};
+							resource="RscCustomInfoSensors";
+						};
+						*/
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						/*
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={3000,1500,750,375};
+							resource="RscCustomInfoSensors";
+						};
+						*/
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
+				};
 			};
 			
 			class Turrets: Turrets
@@ -458,175 +535,79 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 						maxFov=1;
 					};
 
-					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					class Components: Components
 					{
-						defaultDisplay="MinimapDisplayComponent";
-
-						class Components
+						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 						{
-							class EmptyDisplay
+							defaultDisplay="SensorsDisplayComponent";
+
+							class Components
 							{
-								componentType="EmptyDisplayComponent";
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={3000,1500,750,375};
+									resource="RscCustomInfoSensors";
+								};
+								/*
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
+								};
+								*/
 							};
-							class MinimapDisplay
+						};
+						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+						{
+							defaultDisplay="EmptyDisplayComponent";
+
+							class Components
 							{
-								componentType="MinimapDisplayComponent";
-								resource="RscCustomInfoMiniMap";
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={3000,1500,750,375};
+									resource="RscCustomInfoSensors";
+								};
+								/*
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
+								};
+								*/
 							};
-							class UAVFeedDisplay
-							{
-								componentType="UAVFeedDisplayComponent";
-							};
-							class CrewDisplay
-							{
-								componentType="CrewDisplayComponent";
-							};
-							/*
-							//doesnt work yet
-							class SensorDisplay
-							{
-								componentType="SensorsDisplayComponent";
-								range[]={3000,1500,750,375};
-								resource="RscCustomInfoSensors";
-							};
-							*/
-							/*
-							class MineDetectorDisplay
-							{
-								componentType="MineDetectorDisplayComponent";
-								range=50;
-								resource="RscCustomInfoMineDetect";
-							};
-							*/
 						};
 					};
-					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-					{
-						defaultDisplay="EmptyDisplayComponent";
-
-						class Components
-						{
-							class EmptyDisplay
-							{
-								componentType="EmptyDisplayComponent";
-							};
-							class MinimapDisplay
-							{
-								componentType="MinimapDisplayComponent";
-								resource="RscCustomInfoMiniMap";
-							};
-							class UAVFeedDisplay
-							{
-								componentType="UAVFeedDisplayComponent";
-							};
-							class CrewDisplay
-							{
-								componentType="CrewDisplayComponent";
-							};
-							/*
-							//doesnt work yet
-							class SensorDisplay
-							{
-								componentType="SensorsDisplayComponent";
-								range[]={3000,1500,750,375};
-								resource="RscCustomInfoSensors";
-							};
-							*/
-							/*
-							class MineDetectorDisplay
-							{
-								componentType="MineDetectorDisplayComponent";
-								range=50;
-								resource="RscCustomInfoMineDetect";
-							};
-							*/
-						};
-					};
-				};
-			};
-
-			class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-			{
-				defaultDisplay="MinimapDisplayComponent";
-
-				class Components
-				{
-					class EmptyDisplay
-					{
-						componentType="EmptyDisplayComponent";
-					};
-					class MinimapDisplay
-					{
-						componentType="MinimapDisplayComponent";
-						resource="RscCustomInfoMiniMap";
-					};
-					class UAVFeedDisplay
-					{
-						componentType="UAVFeedDisplayComponent";
-					};
-					class CrewDisplay
-					{
-						componentType="CrewDisplayComponent";
-					};
-					/*
-					//doesnt work yet
-					class SensorDisplay
-					{
-						componentType="SensorsDisplayComponent";
-						range[]={3000,1500,750,375};
-						resource="RscCustomInfoSensors";
-					};
-					*/
-					/*
-					class MineDetectorDisplay
-					{
-						componentType="MineDetectorDisplayComponent";
-						range=50;
-						resource="RscCustomInfoMineDetect";
-					};
-					*/
-				};
-			};
-			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-			{
-				defaultDisplay="EmptyDisplayComponent";
-
-				class Components
-				{
-					class EmptyDisplay
-					{
-						componentType="EmptyDisplayComponent";
-					};
-					class MinimapDisplay
-					{
-						componentType="MinimapDisplayComponent";
-						resource="RscCustomInfoMiniMap";
-					};
-					class UAVFeedDisplay
-					{
-						componentType="UAVFeedDisplayComponent";
-					};
-					class CrewDisplay
-					{
-						componentType="CrewDisplayComponent";
-					};
-					/*
-					//doesnt work yet
-					class SensorDisplay
-					{
-						componentType="SensorsDisplayComponent";
-						range[]={3000,1500,750,375};
-						resource="RscCustomInfoSensors";
-					};
-					*/
-					/*
-					class MineDetectorDisplay
-					{
-						componentType="MineDetectorDisplayComponent";
-						range=50;
-						resource="RscCustomInfoMineDetect";
-					};
-					*/
 				};
 			};
 		};
@@ -727,19 +708,6 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 	scope=2;
 	scopeCurator=2;
 	maximumLoad=3000;
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherVelocity=14;
-	smokeLauncherAngle=180;
-	
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag"
-	};
 
 	class Turrets: Turrets
 	{
@@ -762,7 +730,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 				"RC_100Rnd_30mm_MP_T",
 				"RC_100Rnd_30mm_MP_T",
 				"RC_100Rnd_30mm_MP_T",
-				"RC_100Rnd_40mm_Smoke",
+				//"RC_100Rnd_40mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T",
 				"RC_100Rnd_30mm_APFSDS_T",
 				"RC_100Rnd_30mm_APFSDS_T",

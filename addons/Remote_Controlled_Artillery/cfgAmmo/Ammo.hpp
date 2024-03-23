@@ -79,8 +79,6 @@ class RC_B_40mm_APFSDS_T: B_40mm_APFSDS_Tracer_Red
 	irLock=1;
 	airLock=1;
 };
-
-
 /*
 class G_40mm_Smoke;
 class RC_B_AC_Smoke: G_40mm_Smoke
@@ -90,6 +88,26 @@ class RC_B_AC_Smoke: G_40mm_Smoke
 	timeToLive=120;
 };
 */
+
+
+class B_127x99_Ball_Tracer_Red;
+class RC_B_127x99_Ball_Tracer_Red: B_127x99_Ball_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+
+
+class G_40mm_HEDP;
+class RC_G_40mm_HEDP: G_40mm_HEDP
+{
+	indirectHit=8;
+	indirectHitRange=6;
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
 
 
 class ammo_Penetrator_Base;

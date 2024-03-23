@@ -285,6 +285,37 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 };
 
 
+class HMG_127_APC;
+class RC_HMG_127_APC: HMG_127_APC
+{
+	author="Ascent";
+	canLock=2;
+	FCSZeroingDelay=0.75;
+
+	magazines[]=
+	{
+		"RC_200Rnd_127x99_mag_Tracer_Red",
+		"RC_100Rnd_127x99_mag_Tracer_Red"
+	};
+};
+
+
+class GMG_40mm;
+class RC_GMG_40mm: GMG_40mm
+{
+	author="Ascent";
+	canLock=2;
+	FCSZeroingDelay=0.75;
+
+	magazines[]=
+	{
+		"RC_100Rnd_40mm_G_belt",
+		"RC_75Rnd_40mm_G_belt",
+		"RC_50Rnd_40mm_G_belt"
+	};
+};
+
+
 //120mm direct fire
 class cannon_120mm;
 class RC_cannon_120mm: cannon_120mm

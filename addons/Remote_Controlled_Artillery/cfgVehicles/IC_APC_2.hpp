@@ -62,7 +62,7 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 	peakTorque=5650;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	hullExplosionDelay[]={40,45};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
+	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 
 	class HitPoints: HitPoints

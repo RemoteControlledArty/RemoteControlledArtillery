@@ -115,6 +115,38 @@ class RC_50Rnd_40mm_Smoke: 60Rnd_40mm_GPR_Tracer_Red_shells
 */
 
 
+class 200Rnd_127x99_mag_Tracer_Red;
+class RC_200Rnd_127x99_mag_Tracer_Red: 200Rnd_127x99_mag_Tracer_Red
+{
+	author="Ascent";
+	ammo="RC_B_127x99_Ball_Tracer_Red";
+	count=200;
+};
+class RC_100Rnd_127x99_mag_Tracer_Red: RC_200Rnd_127x99_mag_Tracer_Red
+{
+	count=100;
+};
+
+
+class 96Rnd_40mm_G_belt;
+class RC_50Rnd_40mm_G_belt: 96Rnd_40mm_G_belt
+{
+	author="Ascent";
+	ammo="RC_G_40mm_HEDP";
+	displayName="40mm HEDP";
+	displayNameShort="40mm HEDP";
+	count=50;
+};
+class RC_75Rnd_40mm_G_belt: RC_50Rnd_40mm_G_belt
+{
+	count=75;
+};
+class RC_100Rnd_40mm_G_belt: RC_50Rnd_40mm_G_belt
+{
+	count=100;
+};
+
+
 class 2Rnd_GAT_missiles;
 class RC_2Rnd_IFV_MP_NLOS: 2Rnd_GAT_missiles
 {
