@@ -80,6 +80,7 @@ Arty:
 
 
 FSV/IFV:
+-invert locality script for ICV's
 -smoke ammo, 40mm bulletbase change to shotshellbase with smoke submunition
 -more RC ICV's / APC's / IVF's / MBT's
 -check ICV engine off on server *needs remoteexecute?
