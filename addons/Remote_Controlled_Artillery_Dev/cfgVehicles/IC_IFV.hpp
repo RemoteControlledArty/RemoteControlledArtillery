@@ -39,14 +39,16 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	side=1;
 	forceInGarage=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
 	crew="B_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
-	//hasDriver=-1;
-	commanding=-1;
+	driverCompartments="Compartment2";
+	commanding=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -55,6 +57,7 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
@@ -400,18 +403,23 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; _this lockDriver true; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};};";
+		class RC_Artillery
+		{
+			init="(_this select 0) spawn {{_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			#include "\Remote_Controlled_Artillery_Dev\includes\RC_GunnerIsDriverEH.hpp"
+		};
 	};
+	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	RCDisableSeats=3; // locks commander seats
-	RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
+	//RCDisableSeats=3; // locks commander seats
+	//RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 
 	displayName="RC ICV I";
 	scope=2;
 	scopeCurator=2;
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
 	maximumLoad=4000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
@@ -433,7 +441,8 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 		class MainTurret: MainTurret
 		{
 			showAllTargets="2 + 4";
-			commanding=-1;
+			gunnerCompartments="Compartment3";
+			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
@@ -489,10 +498,11 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					showAllTargets="2 + 4";
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 					turretInfoType="";
 					gunnerForceOptics=1;
-					commanding=1;
+					commanding=3;
 
 					weapons[]=
 					{
@@ -1023,26 +1033,14 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+		class RC_Artillery
+		{
+			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		};
 	};
 
-	RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
-
-	//driverAction="";
-	//driverInAction="";
-
-	//driverGetInAction="";
-	//driverGetOutAction="";
-	//gunnerAction="";
-	//gunnerInAction="";
-	//gunnerGetInAction="";
-	//gunnerGetOutAction="";
-	//personTurretAction="";
-	//getInAction="";
-	//getOutAction="";
-	driverCompartments = "Compartment1";
-	//proxyindex = 3;
+	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
+	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 
 	displayName="IFV 30mm";
 	scope=2;
@@ -1051,7 +1049,6 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
-	commanding=4;
 	
 	weapons[]=
 	{
@@ -1067,15 +1064,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 	{
 		class MainTurret: MainTurret
 		{
-			//gunnerAction="";
-			//gunnerInAction="";
-			//gunnerGetInAction="";
-			//gunnerGetOutAction="";
-			//personTurretAction="";
-
-			gunnerCompartments= "Compartment2";
-			//proxyindex = 2;
-
+			//isCopilot=1; might allow for locality shift if set up correctly
 			showAllTargets="2 + 4";
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -1092,6 +1081,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 				"RC_100Rnd_30mm_MP_T",
 				"RC_100Rnd_30mm_MP_T",
 				"RC_100Rnd_30mm_MP_T",
+				"RC_100Rnd_40mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T",
 				"RC_100Rnd_30mm_APFSDS_T",
 				"RC_100Rnd_30mm_APFSDS_T",
@@ -1102,6 +1092,8 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 				"RC_200Rnd_338_T_Mag",
 				"RC_200Rnd_338_T_Mag",
 				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_AA",
 				"RC_2Rnd_IFV_AA",
 				"SmokeLauncherMag"
 			};
@@ -1136,7 +1128,8 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					commanding=1;
+					showAllTargets="2 + 4";
+					commanding=2;
 
 					weapons[]=
 					{
@@ -1153,6 +1146,8 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 					{
 						class Wide: RCWSOptics
 						{
+							//directionStabilized=1;	//unfortunately causes spinning camera bug
+
 							initAngleX=0;
 							minAngleX=-30;
 							maxAngleX=30;
@@ -1173,6 +1168,24 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 							gunnerOpticsEffect[]={};
 						};
 					};
+
+					/*
+					//no stabilization effect
+					class ViewOptics: ViewOptics
+					{
+						directionStabilized=1;
+						
+						initFov=0.9;
+						minFov=0.0166;
+						maxFov=0.9;
+						visionMode[]=
+						{
+							"Normal",
+							"TI"
+						};
+						thermalMode[]={0,1};
+					};
+					*/
 
 					class Components: Components
 					{
@@ -1730,12 +1743,15 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 	side=1;
 	forceInGarage=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
 	crew="B_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
+	driverCompartments="Compartment2";
 	commanding=2;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -1745,6 +1761,7 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
@@ -2057,18 +2074,22 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; waitUntil {!isNull driver _this}; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};};";
+		class RC_Artillery
+		{
+			init="(_this select 0) spawn {{_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			#include "\Remote_Controlled_Artillery_Dev\includes\RC_GunnerIsDriverEH.hpp"
+		};
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	RCDisableSeats=3; // locks commander seats
-	RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
+	//RCDisableSeats=3; // locks commander seats
+	//RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 
 	displayName="RC ICV II";
 	scope=2;
 	scopeCurator=2;
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
 	maximumLoad=4000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
@@ -2095,6 +2116,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 		class MainTurret: MainTurret
 		{
 			showAllTargets="2 + 4";
+			gunnerCompartments="Compartment3";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -2158,6 +2180,10 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					showAllTargets="2 + 4";
+					//personTurretAction="";	//no effect
+					//forceHideGunner=1;	//makes view bug
+					//forceHideCommander=1;	//makes view bug
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 					turretInfoType="";
 					gunnerForceOptics=1;
@@ -2694,8 +2720,11 @@ class RC_ICV_2_WD_I: RC_ICV_2_WD
 class RC_IFV_2_A: RC_ICV_IFV_2_A
 {
 	class EventHandlers: EventHandlers
-	{
-		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+	{	
+		class RC_Artillery
+		{
+			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+		};
 	};
 	/*
 	//Missile launcher on top, memoryppoint unclear, and rotate with boolean not working
@@ -2705,8 +2734,8 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	};
 	*/
 
-	RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
+	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
+	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 
 	displayName="IFV 40mm";
 	scope=2;
@@ -2730,17 +2759,20 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	{
 		class MainTurret: MainTurret
 		{
+			//isCopilot=1; might allow for locality shift if set up correctly
 			showAllTargets="2 + 4";
 			commanding=3;
+			minElev=-10.6;
+			maxElev=40;
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 			//turretInfoType="";
-			//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 			weapons[]=
 			{
 				"RC_autocannon_40mm_CTWS",
 				"RC_MMG_338_IFV_2",
+				//"RC_IFV_Missle_Launcher",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -2749,6 +2781,8 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 				"RC_50Rnd_40mm_MP_T",
 				"RC_50Rnd_40mm_MP_T",
 				"RC_50Rnd_40mm_MP_T",
+				"RC_50Rnd_40mm_Smoke",
+				"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T",
 				"RC_50Rnd_40mm_APFSDS_T",
 				"RC_50Rnd_40mm_APFSDS_T",
@@ -2759,6 +2793,12 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 				"RC_200Rnd_338_T_Mag",
 				"RC_200Rnd_338_T_Mag",
 				"RC_200Rnd_338_T_Mag",
+				/*
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_AA",
+				"RC_2Rnd_IFV_AA",
+				*/
 				"SmokeLauncherMag"
 			};
 
@@ -2791,6 +2831,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					showAllTargets="2 + 4";
 					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 					//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
 					//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
@@ -2812,6 +2853,8 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 					{
 						class Wide: RCWSOptics
 						{
+							//directionStabilized=1;	//unfortunately causes spinning camera bug
+
 							initAngleX=0;
 							minAngleX=-30;
 							maxAngleX=30;
@@ -2834,6 +2877,24 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 							gunnerOpticsEffect[]={};
 						};
 					};
+
+					/*
+					//no stabilization effect
+					class ViewOptics: ViewOptics
+					{
+						directionStabilized=1;
+						
+						initFov=0.9;
+						minFov=0.0166;
+						maxFov=0.9;
+						visionMode[]=
+						{
+							"Normal",
+							"TI"
+						};
+						thermalMode[]={0,1};
+					};
+					*/
 
 					class Components: Components
 					{
@@ -3387,4 +3448,36 @@ class RC_IFV_2_WD_I: RC_IFV_2_WD
 			count=2;
 		};
 	};
+};
+
+class RC_IFV_1_A_Dev: RC_IFV_1_A
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			getin="params ['_vehicle']; [if (isPlayer (gunner _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); _vehicle setOwner (owner (gunner _vehicle)); _vehicle setEffectiveCommander (gunner _vehicle);} else {if (isPlayer (commander _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); _vehicle setOwner (owner (commander _vehicle)); _vehicle setEffectiveCommander (commander _vehicle);}}] remoteExec ['spawn', 2];";
+			getout="params ['_vehicle']; [if (isPlayer (gunner _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); _vehicle setOwner (owner (gunner _vehicle)); _vehicle setEffectiveCommander (gunner _vehicle);} else {if (isPlayer (commander _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); _vehicle setOwner (owner (commander _vehicle)); _vehicle setEffectiveCommander (commander _vehicle);}}] remoteExec ['spawn', 2];";
+			seatswitched="params ['_vehicle']; [if (isPlayer (gunner _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); _vehicle setOwner (owner (gunner _vehicle)); _vehicle setEffectiveCommander (gunner _vehicle);} else {if (isPlayer (commander _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); _vehicle setOwner (owner (commander _vehicle)); _vehicle setEffectiveCommander (commander _vehicle);}}] remoteExec ['spawn', 2];";
+		};
+	};
+
+	displayName="IFV 30mm Fixed";
+};
+
+class RC_IFV_2_A_Dev: RC_IFV_2_A
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			getin="params ['_vehicle']; [if (isPlayer (gunner _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); _vehicle setOwner (owner (gunner _vehicle)); _vehicle setEffectiveCommander (gunner _vehicle);} else {if (isPlayer (commander _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); _vehicle setOwner (owner (commander _vehicle)); _vehicle setEffectiveCommander (commander _vehicle);}}] remoteExec ['spawn', 2];";
+			getout="params ['_vehicle']; [if (isPlayer (gunner _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); _vehicle setOwner (owner (gunner _vehicle)); _vehicle setEffectiveCommander (gunner _vehicle);} else {if (isPlayer (commander _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); _vehicle setOwner (owner (commander _vehicle)); _vehicle setEffectiveCommander (commander _vehicle);}}] remoteExec ['spawn', 2];";
+			seatswitched="params ['_vehicle']; [if (isPlayer (gunner _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); _vehicle setOwner (owner (gunner _vehicle)); _vehicle setEffectiveCommander (gunner _vehicle);} else {if (isPlayer (commander _vehicle)) then {(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); _vehicle setOwner (owner (commander _vehicle)); _vehicle setEffectiveCommander (commander _vehicle);}}] remoteExec ['spawn', 2];";
+		};
+	};
+
+	displayName="IFV 40mm Fixed";
 };

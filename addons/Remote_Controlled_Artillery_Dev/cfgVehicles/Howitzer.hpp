@@ -14,7 +14,7 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=5; // locks driver and commander seats
+	//RCDisableSeats=5; // locks driver and commander seats
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -35,29 +35,14 @@ class RC_Howitzer_A: RC_Howitzer_base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="B_UAV_AI";
-	
-	//hasDriver=-1;
-	//driverAction="";
-	//driverInAction="";
-
-	//driverGetInAction="";
-	//driverGetOutAction="";
-	//gunnerAction="";
-	//gunnerInAction="";
-	//gunnerGetInAction="";
-	//gunnerGetOutAction="";
-	//personTurretAction="";
-	//getInAction="";
-	//getOutAction="";
-	driverCompartments = "Compartment1";
-	//proxyindex = 3;
-
-	commanding=4;
 	driverForceOptics=1;
 	forceHideDriver=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -65,6 +50,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -144,17 +130,9 @@ class RC_Howitzer_A: RC_Howitzer_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
 			showAllTargets="2 + 4";
-			//gunnerAction="";
-			//gunnerInAction="";
-			//gunnerGetInAction="";
-			//gunnerGetOutAction="";
-			//personTurretAction="";
-
-			gunnerCompartments= "Compartment2";
-			//proxyindex = 2;
-
-			commanding=3;
+			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			maxElev=87.02;
@@ -195,13 +173,9 @@ class RC_Howitzer_A: RC_Howitzer_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					gunnerAction="";
-					gunnerInAction="";
-					gunnerGetInAction="";
-					gunnerGetOutAction="";
-					personTurretAction="";
-
-					commanding=-1;
+					gunnerCompartments="Compartment3";
+					showAllTargets="2 + 4";
+					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;
 					forceHideGunner=1;
@@ -338,7 +312,7 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=5; // locks driver and commander seats
+	//RCDisableSeats=5; // locks driver and commander seats
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -359,11 +333,14 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="O_UAV_AI";
-	commanding=-1;
 	driverForceOptics=1;
+	forceHideDriver=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -372,6 +349,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -449,6 +427,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
 			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
@@ -490,7 +469,9 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					commanding=-1;
+					gunnerCompartments="Compartment3";
+					showAllTargets="2 + 4";
+					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;
 					forceHideGunner=1;
@@ -609,12 +590,14 @@ class RC_Static_Arty: RC_Static_Arty_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			maxelev=87.02;
 
 			weapons[]=

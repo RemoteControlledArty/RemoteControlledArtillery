@@ -30,12 +30,12 @@ RC_Artillery_UI = [] spawn {
 			// If our UAV is Autonomous we want to make it not
 			// We need to remote exec it since setAutonomous is of Local Effect so it needs to be
 			// where the UAV is Local
-			//if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
+			if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
 			
 			// Check if the Display for the UI Exists if not Create it
 			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then {"RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false];};
 			
-			disableSerialization;
+			disableSerialization;	//could this cause problems?
 
 			// Get the UI so we can see if it has Distance or not
 			_AceUI = uiNamespace getVariable ["ACE_dlgArtillery", displayNull];

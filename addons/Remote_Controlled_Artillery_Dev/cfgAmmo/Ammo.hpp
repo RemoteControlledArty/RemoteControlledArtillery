@@ -3,6 +3,8 @@ class BulletBase;
 class RC_B_338_T: BulletBase
 {
 	laserLock=1;
+	irLock=1;
+	airLock=1;
 	hit=16;
 	indirectHit=0;
 	indirectHitRange=0;
@@ -14,7 +16,6 @@ class RC_B_338_T: BulletBase
 	suppressionRadiusBulletClose=8;
 	suppressionRadiusHit=10;
 	cost=6;
-	airLock=1;
 	caliber=2;
 	typicalSpeed=890;
 	timeToLive=10;
@@ -44,22 +45,51 @@ class B_30mm_MP_Tracer_Red;
 class RC_B_30mm_MP_T: B_30mm_MP_Tracer_Red
 {
 	laserLock=1;
-	indirectHit=6.75;
-	indirectHitRange=3.75;
+	irLock=1;
+	airLock=1;
+	indirectHit=5;
+	indirectHitRange=4.5;
 	deflecting=1;
+};
+class B_30mm_APFSDS_Tracer_Red;
+class RC_B_30mm_APFSDS_T: B_30mm_APFSDS_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
 };
 class B_40mm_GPR_Tracer_Red;
 class RC_B_40mm_MP_T: B_40mm_GPR_Tracer_Red
 {
 	laserLock=1;
+	irLock=1;
+	airLock=1;
 	hit=110;
-	indirectHit=9;
-	indirectHitRange=5;
+	indirectHit=8;
+	indirectHitRange=6;
 	warheadName="HEAT";
 	explosive=0.60000002;
 	caliber=4.5999999;
 	deflecting=1;
 };
+class B_40mm_APFSDS_Tracer_Red;
+class RC_B_40mm_APFSDS_T: B_40mm_APFSDS_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+
+
+/*
+class G_40mm_Smoke;
+class RC_B_AC_Smoke: G_40mm_Smoke
+{
+	deflecting=0;
+	explosionTime=0.5;
+	timeToLive=120;
+};
+*/
 
 
 class ammo_Penetrator_Base;
@@ -79,10 +109,10 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 	submunitionAmmo="RC_ammo_Penetrator_MP";
 	indirectHit=40;
 	indirectHitRange=10;
-	maxControlRange=3000;
-	cmImmunity=0.85;
+	maxControlRange=4000;
+	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
-	missileLockMaxDistance=3000;
+	missileLockMaxDistance=4000;
 	fuseDistance=20;
 	thrust=70;
 	maxSpeed=250;
@@ -118,15 +148,15 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -135,21 +165,22 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=2000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+					maxTrackableSpeed=100;
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
@@ -169,6 +200,7 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+					maxTrackableSpeed=100;
 					typeRecognitionDistance=400;
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=40;
@@ -176,18 +208,18 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -211,6 +243,7 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	irLock=1;
 	airLock=1;
 	trackLead=1;
+	cameraViewAvailable=1;
 
 	class Components: Components
 	{
@@ -229,8 +262,8 @@ class RC_IFV_AA: RC_IFV_AA_Base
 					};
 					class GroundTarget
 					{
-						minRange=500;
-						maxRange=3500;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -245,15 +278,15 @@ class RC_IFV_AA: RC_IFV_AA_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -283,18 +316,18 @@ class RC_IFV_AA: RC_IFV_AA_Base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -553,6 +586,8 @@ class Sh_120mm_HEAT_MP_T_Red;
 class RC_Sh_120mm_MP_T: Sh_120mm_HEAT_MP_T_Red
 {
 	laserLock=1;
+	irLock=1;
+	airLock=1;
 	aiAmmoUsageFlags="64 + 128 + 512";
 	warheadName="TandemHEAT";	//warheadName="HE";
 	submunitionAmmo="RC_ammo_Penetrator_120mm";
@@ -561,6 +596,13 @@ class RC_Sh_120mm_MP_T: Sh_120mm_HEAT_MP_T_Red
 	indirectHitRange=10;
 	deflecting=4;
 	craterEffects="AAMissileCrater";
+};
+class Sh_120mm_APFSDS_Tracer_Red;
+class RC_Sh_120mm_APFSDS_T: Sh_120mm_APFSDS_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
 };
 
 

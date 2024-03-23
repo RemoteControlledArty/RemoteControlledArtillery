@@ -129,10 +129,10 @@ class CfgPatches
 			RC_ATGM_small_DIG_I,
 			RC_ATGM_small_WD_I,
 
-			RC_ATGM_small_S_WD,
-			RC_ATGM_small_S_WD_O,
-			RC_ATGM_small_S_DIG_I,
-			RC_ATGM_small_S_WD_I,
+			RC_ATGM_small_WD_Driverless,
+			RC_ATGM_small_WD_Driverless_O,
+			RC_ATGM_small_DIG_Driverless_I,
+			RC_ATGM_small_WD_Driverless_I,
 
 			RC_Mortar,
 			RC_Mortar_O,
@@ -153,6 +153,11 @@ class CfgPatches
 			RC_Mortar_Carrier_WD_O,
 			RC_Mortar_Carrier_DIG_I,
 			RC_Mortar_Carrier_WD_I,
+
+			RC_Mortar_Carrier_WD_Driverless,
+			RC_Mortar_Carrier_WD_Driverless_O,
+			RC_Mortar_Carrier_DIG_Driverless_I,
+			RC_Mortar_Carrier_WD_Driverless_I,
 
 			RC_UAV_AR1,
 			RC_UAV_AR3,
@@ -218,12 +223,12 @@ class CfgPatches
 			RC_FSV_A_I,
 			RC_FSV_WD_I,
 
-			RC_MBT6_A,
-			RC_MBT6_WD,
-			RC_MBT6_A_O,
-			RC_MBT6_WD_O,
-			RC_MBT6_A_I,
-			RC_MBT6_WD_I,
+			RC_MBT6_A_Driverless,
+			RC_MBT6_WD_Driverless,
+			RC_MBT6_A_Driverless_O,
+			RC_MBT6_WD_Driverless_O,
+			RC_MBT6_A_Driverless_I,
+			RC_MBT6_WD_Driverless_I,
 
 			RC_IFV_1_A,
 			RC_IFV_1_WD,
@@ -238,6 +243,9 @@ class CfgPatches
 			RC_IFV_2_WD_O,
 			RC_IFV_2_A_I,
 			RC_IFV_2_WD_I,
+
+			RC_IFV_1_A_Dev,
+			RC_IFV_2_A_Dev,
 
 			RC_GPSDatalinkTarget
 		};
@@ -307,9 +315,8 @@ class CfgFunctions
 			class RC_MarkerHandler {postInit=1};
 			//class RC_LocalityHandler {postInit=1};
       		class RC_UI_Loop {postInit=1};
-			//class RC_EngineOff {postInit=1};
+			class RC_EngineOff {postInit=1};
 			class RC_UAVBlur {postInit=1};
-			//class RC_LockSeats {postInit=1};
 			class RC_UAVConnectionFix {postInit=1};
 			class RC_LaserDatalink {postInit=1};
 			class scrollSolutions {};
@@ -372,6 +379,7 @@ class CfgEditorSubcategories
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
 	class RC_Howitzer_subcat {displayname="Howitzer's";};
+	class RC_Testing_subcat {displayname="IFV Testing";};
 	class RC_Transport_FSV_subcat {displayname="ICV/IFV/FSV/MBT's";};
 	class RC_Mortar_subcat {displayname="Mortar's";};
 	class RC_Rocket_subcat {displayname="Rocket System's";};

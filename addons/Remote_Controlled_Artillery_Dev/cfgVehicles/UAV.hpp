@@ -467,6 +467,7 @@ class RC_UAV_AR3: RC_UAV_AR1
 						viewDistanceLimitCoef=1;
 					};
 				};
+				/*
 				class ManSensorComponent: SensorTemplateMan
 				{
 					maxTrackableSpeed=15;
@@ -475,6 +476,7 @@ class RC_UAV_AR3: RC_UAV_AR1
 					animDirection="mainGun";
 					aimDown=-0.5;
 				};
+				*/
 			};
 		};
 	};
@@ -927,7 +929,7 @@ class RC_GrenadeDropper_Bag: RC_Weapon_Bag_Base
 	{
 		base="";
 		displayName="RC Grenade Dropper";
-		assembleTo="RC_Grenade_Dropper";
+		assembleTo="RC_GrenadeDropper";
 	};
 };
 class RC_GrenadeDropper_Bag_O: RC_GrenadeDropper_Bag

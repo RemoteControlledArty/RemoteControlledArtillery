@@ -20,19 +20,21 @@ class RC_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 	class HitRF2Wheel;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
-	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
+	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
+	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_FSV_A: RC_FSV_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
+		class RC_Artillery
+		{
+			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			#include "\Remote_Controlled_Artillery_Dev\includes\RC_GunnerIsDriverEH.hpp"
+		};
 	};
-	//for later use, rn bugs driver view
-	//init="(_this select 0) spawn {waitUntil {!isNull driver _this}; while {true} do {if (player in (crew _this) && !(driver _this == player)) then {_this lockDriver true;} else {_this lockDriver false;}; sleep 0.5;};}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-
+	
 	displayName="FSV";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Transport_FSV_subcat";
@@ -42,12 +44,15 @@ class RC_FSV_A: RC_FSV_A_Base
 	side=1;
 	forceInGarage=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
+	driverCompartments="Compartment2";
 	//hideProxyInCombat=1;	//for later use
 	//canHideDriver=1;	//for later use
 	ejectDeadGunner=0;
@@ -58,6 +63,7 @@ class RC_FSV_A: RC_FSV_A_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
@@ -126,6 +132,7 @@ class RC_FSV_A: RC_FSV_A_Base
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			commanding=2;
 
 			weapons[]=
@@ -280,6 +287,7 @@ class RC_FSV_A: RC_FSV_A_Base
 			{
 				class CommanderOptics: CommanderOptics
 				{
+					showAllTargets="2 + 4";
 					commanding=1;
 
 					weapons[]=
@@ -611,7 +619,7 @@ class RC_FSV_WD_I: RC_FSV_WD
 
 //MBT+6Inf
 class B_MBT_01_TUSK_F;
-class RC_MBT6_A_Base: B_MBT_01_TUSK_F
+class RC_MBT6_Base: B_MBT_01_TUSK_F
 {
 	class Turrets;
 	class MainTurret;
@@ -626,32 +634,18 @@ class RC_MBT6_A_Base: B_MBT_01_TUSK_F
 	class Wide;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
-	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
+	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
+	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_MBT6_A: RC_MBT6_A_Base
+class RC_MBT6_A_Base: RC_MBT6_Base
 {
-	class EventHandlers: EventHandlers
-	{
-		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
-	};
-
-	displayName="MBT [6 Inf]";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Transport_FSV_subcat";
 	author="Ascent";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-	vehicleClass="Autonomous";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
+	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -659,6 +653,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
@@ -730,12 +725,14 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			commanding=2;
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
+					showAllTargets="2 + 4";
 					commanding=1;
 
 					weapons[]=
@@ -1150,6 +1147,336 @@ class RC_MBT6_A: RC_MBT6_A_Base
 		};
 	};
 };
+
+
+class RC_MBT6_A_Driverless: RC_MBT6_A_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+	};
+
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	displayName="MBT [6 Inf]";
+	crew="";
+	hasDriver=-1;
+};
+class RC_MBT6_A_Driverless_O: RC_MBT6_A_Driverless
+{
+	faction="RemoteControlled_O";
+	side=0;
+
+	class TransportMagazines
+	{
+		class _xx_HandGrenade
+		{
+			magazine="HandGrenade";
+			count=20;
+		};
+		class _xx_SmokeShell
+		{
+			magazine="SmokeShell";
+			count=10;
+		};
+		class _xx_RPG32_F
+		{
+			magazine="RPG32_F";
+			count=5;
+		};
+		class _xx_RPG32_HE_F
+		{
+			magazine="RPG32_HE_F";
+			count=5;
+		};
+		class _xx_1Rnd_Smoke_Grenade_shell
+		{
+			magazine="1Rnd_Smoke_Grenade_shell";
+			count=10;
+		};
+		class _xx_Laserbatteries
+		{
+			magazine="Laserbatteries";
+			count=2;
+		};
+	};
+	class TransportItems
+	{
+		class _xx_B_UavTerminal
+		{
+			name="B_UavTerminal";
+			count=2;
+		};
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+		class _xx_MineDetector
+		{
+			name="MineDetector";
+			count=2;
+		};
+	};
+	class TransportWeapons
+	{
+		class _xx_launch_launch_RPG32_green_F
+		{
+			weapon="launch_RPG32_green_F";
+			count=1;
+		};
+		class _xx_Improved_FOV_Laserdesignator_A
+		{
+			weapon="Improved_FOV_Laserdesignator_A";
+			count=1;
+		};
+		class _xx_Rangefinder
+		{
+			weapon="Rangefinder";
+			count=1;
+		};
+	};
+};
+class RC_MBT6_A_Driverless_I: RC_MBT6_A_Driverless
+{
+	faction="RemoteControlled_I";
+	side=2;
+
+	class TransportItems
+	{
+		class _xx_I_UavTerminal
+		{
+			name="I_UavTerminal";
+			count=2;
+		};
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+		class _xx_MineDetector
+		{
+			name="MineDetector";
+			count=2;
+		};
+	};
+};
+
+
+class RC_MBT6_WD_Driverless: RC_MBT6_A_Driverless
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_TUSK_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
+		"A3\Armor_F_Exp\MBT_01\data\MBT_01_tow_olive_CO.paa",
+		"A3\Armor_F_Exp\MBT_01\data\mbt_addons_olive_CO.paa",
+		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+	};
+	class TransportWeapons
+	{
+		class _xx_launch_NLAW_F
+		{
+			weapon="launch_NLAW_F";
+			count=2;
+		};
+		class _xx_Improved_FOV_Laserdesignator_WD
+		{
+			weapon="Improved_FOV_Laserdesignator_WD";
+			count=1;
+		};
+		class _xx_Rangefinder
+		{
+			weapon="Rangefinder";
+			count=1;
+		};
+	};
+};
+class RC_MBT6_WD_Driverless_O: RC_MBT6_WD_Driverless
+{
+	faction="RemoteControlled_O";
+	side=0;
+
+	class TransportMagazines
+	{
+		class _xx_HandGrenade
+		{
+			magazine="HandGrenade";
+			count=20;
+		};
+		class _xx_SmokeShell
+		{
+			magazine="SmokeShell";
+			count=10;
+		};
+		class _xx_RPG32_F
+		{
+			magazine="RPG32_F";
+			count=5;
+		};
+		class _xx_RPG32_HE_F
+		{
+			magazine="RPG32_HE_F";
+			count=5;
+		};
+		class _xx_1Rnd_Smoke_Grenade_shell
+		{
+			magazine="1Rnd_Smoke_Grenade_shell";
+			count=10;
+		};
+		class _xx_Laserbatteries
+		{
+			magazine="Laserbatteries";
+			count=2;
+		};
+	};
+	class TransportItems
+	{
+		class _xx_B_UavTerminal
+		{
+			name="B_UavTerminal";
+			count=2;
+		};
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+		class _xx_MineDetector
+		{
+			name="MineDetector";
+			count=2;
+		};
+	};
+	class TransportWeapons
+	{
+		class _xx_launch_launch_RPG32_green_F
+		{
+			weapon="launch_RPG32_green_F";
+			count=1;
+		};
+		class _xx_Improved_FOV_Laserdesignator_WD
+		{
+			weapon="Improved_FOV_Laserdesignator_WD";
+			count=1;
+		};
+		class _xx_Rangefinder
+		{
+			weapon="Rangefinder";
+			count=1;
+		};
+	};
+};
+class RC_MBT6_WD_Driverless_I: RC_MBT6_WD_Driverless
+{
+	faction="RemoteControlled_I";
+	side=2;
+
+	class TransportItems
+	{
+		class _xx_I_UavTerminal
+		{
+			name="I_UavTerminal";
+			count=2;
+		};
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=5;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=5;
+		};
+		class _xx_MineDetector
+		{
+			name="MineDetector";
+			count=2;
+		};
+	};
+	class TransportWeapons
+	{
+		class _xx_launch_NLAW_F
+		{
+			weapon="launch_NLAW_F";
+			count=2;
+		};
+		class _xx_Improved_FOV_Laserdesignator_WD
+		{
+			weapon="Improved_FOV_Laserdesignator_WD";
+			count=1;
+		};
+		class _xx_Rangefinder
+		{
+			weapon="Rangefinder";
+			count=1;
+		};
+	};
+};
+
+
+/*
+class RC_MBT6_A: RC_MBT6_A_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+	};
+
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	displayName="MBT [6 Inf]";
+	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	isUav=1;
+	textPlural="UGVs";
+	textSingular="UGV";
+	crew="B_UAV_AI";
+};
 class RC_MBT6_A_O: RC_MBT6_A
 {
 	faction="RemoteControlled_O";
@@ -1442,3 +1769,4 @@ class RC_MBT6_WD_I: RC_MBT6_WD
 		};
 	};
 };
+*/

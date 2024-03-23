@@ -13,7 +13,7 @@ RC_UAVBlur = [] spawn
 {
 	while {true} do
 	{
-		sleep 0.1;
+		sleep 0.2;
 		_uav = (getConnectedUAV player);
 		_uavClass = typeOf _uav; // UAV ClassName
 		_UAVBlur = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_UAVBlur");

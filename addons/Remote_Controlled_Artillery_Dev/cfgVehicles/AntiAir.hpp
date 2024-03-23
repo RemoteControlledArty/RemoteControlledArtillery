@@ -11,7 +11,7 @@ class RC_AA_base: B_APC_Tracked_01_AA_F
 	class CommanderOptics;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=5; // disables driver and commander seat
+	//RCDisableSeats=5; // disables driver and commander seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_AA_A: RC_AA_base
@@ -24,22 +24,23 @@ class RC_AA_A: RC_AA_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
-
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class AnimationSources: AnimationSources
@@ -65,6 +66,8 @@ class RC_AA_A: RC_AA_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
+			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -73,6 +76,8 @@ class RC_AA_A: RC_AA_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					gunnerCompartments="Compartment3";
+					showAllTargets="2 + 4";
 					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;
@@ -202,7 +207,7 @@ class RC_AA_base_HEX_O: O_APC_Tracked_02_AA_F
 	class CommanderOptics;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=5; // disables driver and commander seat
+	//RCDisableSeats=5; // disables driver and commander seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_AA_HEX_A_O: RC_AA_base_HEX_O
@@ -215,21 +220,23 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	scopeCurator=2;
 	side=0;
 	forceInGarage=1;
-
-
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP1_pos";
+	uavCameraDriverDir="PiP1_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 	crew="O_UAV_AI";
 	driverForceOptics=1;
-
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	weaponLockSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class AnimationSources: AnimationSources
@@ -261,6 +268,8 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
+			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -269,6 +278,8 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					gunnerCompartments="Compartment3";
+					showAllTargets="2 + 4";
 					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;

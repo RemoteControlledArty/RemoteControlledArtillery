@@ -2,6 +2,7 @@
 	Author: Ascent, Eric, Fluffy
 */
 
+/*
 if (!isServer) exitWith { };
 
 addMissionEventHandler ["ControlsShifted", {
@@ -13,3 +14,4 @@ addMissionEventHandler ["ControlsShifted", {
 		(group (crew _vehicle)) setGroupOwner (clientOwner _newController);
 	};
 }];
+*/

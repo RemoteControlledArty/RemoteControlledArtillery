@@ -25,7 +25,7 @@ class RC_GPSDatalinkTarget: All
 	type=1;
 	threat[]={0,0,0};
 	maxSpeed=0;
-	simulation="artillerymarker";
+	simulation="artillerymarker";	//forgot why, but its one of the few/only things that worked
 	laserTarget=0;
 	nvTarget=0;
 	irTarget=1;
