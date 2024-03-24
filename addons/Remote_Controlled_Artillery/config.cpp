@@ -333,8 +333,10 @@ class CfgFunctions
 			file="\Remote_Controlled_Artillery\functions";
       		class preInit {preInit=1};
       		class InitCBASettings {preInit=1};
+			class addEhsIVC {};
+			class addEhsIFV {};
+
 			class RC_MarkerHandler {postInit=1};
-			//class RC_LocalityHandler {postInit=1};
       		class RC_UI_Loop {postInit=1};
 			class RC_EngineOff {postInit=1};
 			class RC_UAVBlur {postInit=1};
@@ -394,18 +396,19 @@ class CfgFactionClasses
 
 class CfgEditorSubcategories
 {
+	class RC_Howitzer_subcat {displayname="'indirect :  Howitzers";};
+	class RC_Mortar_subcat {displayname="'indirect :  Mortars";};
+	class RC_Rocket_subcat {displayname="'indirect :  Rocket Systems";};
+
 	class RC_AntiAir_subcat {displayname="Anti-Air";};
-	class RC_ATGM_subcat {displayname="ATGM's";};
-	class RC_Designator_subcat {displayname="Designator's";};
+	class RC_ATGM_subcat {displayname="ATGMs";};
+	class RC_Designator_subcat {displayname="Designators";};
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
-	class RC_Howitzer_subcat {displayname="Howitzer's";};
-	class RC_FSV_MBT_subcat {displayname="FSV/MBT";};
-	class RC_IFV_APC_subcat {displayname="IFV/APC";};
-	class RC_ICV_subcat {displayname="ICV";};
-	class RC_Mortar_subcat {displayname="Mortar's";};
-	class RC_Rocket_subcat {displayname="Rocket System's";};
-	class RC_UAV_subcat {displayname="UAV's";};
+	class RC_FSV_MBT_subcat {displayname="FSVs / MBTs";};
+	class RC_ICV_subcat {displayname="ICVs";};
+	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
+	class RC_UAV_subcat {displayname="UAVs";};
 };
 
 
@@ -448,7 +451,7 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV_MBT.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
@@ -459,6 +462,8 @@ class CfgVehicles
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\IC_IFV_4.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\IFV_3.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_1.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Recon.hpp"
