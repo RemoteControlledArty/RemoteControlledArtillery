@@ -30,6 +30,10 @@ TO DO - BUGFIXES:
 -artillery computer is supposedly disabled for all assets, not just of the mod
 
 
+-CHANGE UAV CHECK, cfg checks/create effect AFTER connected check, in both scripts.
+-maybe include blur in main loop to reduce checks
+
+
 TO DO - FEATURES:
 
 ASAP:
