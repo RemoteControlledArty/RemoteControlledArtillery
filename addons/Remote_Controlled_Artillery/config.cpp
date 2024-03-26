@@ -408,7 +408,7 @@ class CfgEditorSubcategories
 	class RC_FSV_MBT_subcat {displayname="FSVs / MBTs";};
 	class RC_ICV_subcat {displayname="ICVs";};
 	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
-	class RC_UAV_subcat {displayname="UAVs";};
+	class RC_UAV_Designator_subcat {displayname="UAVs / Designators";};
 };
 
 

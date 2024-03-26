@@ -219,7 +219,7 @@ class RC_Mortar_Bag_base: B_Mortar_01_weapon_F
 };
 class RC_Mortar_Bag: RC_Mortar_Bag_base
 {
-	displayName="RC Mortar (non adjustable)";
+	displayName="RC Mortar";
 	scope=2;
 	scopeCurator=2;
 
@@ -241,7 +241,7 @@ class RC_Mortar_Bag: RC_Mortar_Bag_base
 };
 class RC_Mortar_Bag_O: RC_Mortar_Bag
 {
-	displayName="RC Mortar [Opf] (non adjustable)";
+	displayName="RC Mortar [Opf]";
 
 	class assembleInfo: assembleInfo
 	{
@@ -264,7 +264,7 @@ class RC_Mortar_Bag_HEX_O: RC_Mortar_Bag_base
 };	
 class RC_Mortar_Bag_I: RC_Mortar_Bag
 {
-	displayName="RC Mortar [Ind] (non adjustable)";
+	displayName="RC Mortar [Ind]";
 
 	class assembleInfo: assembleInfo
 	{

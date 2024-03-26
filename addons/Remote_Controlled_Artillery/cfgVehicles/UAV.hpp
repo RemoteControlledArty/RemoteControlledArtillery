@@ -16,7 +16,7 @@ class RC_UAV_AR1: RC_UAV_base
 {
 	displayName="RC AR-1 shortrange";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_UAV_subcat";
+	editorSubcategory="RC_UAV_Designator_subcat";
 	scope=2;
 	scopeCurator=2;
 
@@ -721,7 +721,7 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 {
 	displayName="RC Grenade Dropper";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_UAV_subcat";
+	editorSubcategory="RC_UAV_Designator_subcat";
 	scope=2;
 	scopeCurator=2;
 	side=1;
