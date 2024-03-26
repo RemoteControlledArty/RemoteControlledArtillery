@@ -754,7 +754,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 			
 			getin=
 			"'GetIn' remoteExec ['systemChat',0]; \
-			params ['_vehicle'];
+			params ['_vehicle']; \
 			if (isPlayer (gunner _vehicle)) then { \
 				(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
 				_vehicle setOwner (owner (gunner _vehicle)); \
@@ -769,7 +769,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 
 			getout=
 			"'GetOut' remoteExec ['systemChat',0]; \
-			params ['_vehicle'];
+			params ['_vehicle']; \
 			if (isPlayer (gunner _vehicle)) then { \
 				(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
 				_vehicle setOwner (owner (gunner _vehicle)); \
@@ -784,7 +784,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 
 			seatswitched=
 			"'SeatSwitched' remoteExec ['systemChat',0]; \
-			params ['_vehicle'];
+			params ['_vehicle']; \
 			if (isPlayer (gunner _vehicle)) then { \
 				(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
 				_vehicle setOwner (owner (gunner _vehicle)); \

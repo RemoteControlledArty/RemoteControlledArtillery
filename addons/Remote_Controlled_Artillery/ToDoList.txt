@@ -37,13 +37,10 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 ASAP:
--non UGV MBT
+-maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
 -non UGV tracked IFV (Warrior with less shit hitpoints)
--non UGV Wiesel ATGM / MortarCarrier
--RC can remain gaining locality per drivercontrols, and maybe later per seteffectivecommander/owner change locality quicker *such could also be used for tracked semi manned vehicles
-
--correct quicklist & make video about gaining locality
 -fix for someone remotecontrolling gunner player, bugging them
+-video about vics
 
 
 generally:
