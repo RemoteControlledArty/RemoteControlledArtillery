@@ -38,8 +38,6 @@ TO DO - FEATURES:
 
 ASAP:
 
--FIX PIP of ICVIII for UAV terminal
-
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
 -non UGV tracked IFV (Warrior with less shit hitpoints)
 -fix for someone remotecontrolling gunner player, bugging them
