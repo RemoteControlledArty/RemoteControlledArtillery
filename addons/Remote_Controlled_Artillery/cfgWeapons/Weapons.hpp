@@ -1,4 +1,33 @@
-// Improved Laser Designators
+//Vehicle Smokelauncher
+class SmokeLauncher;
+class RC_SmokeLauncher: SmokeLauncher
+{
+	author="Ascent";
+	magazines[]=
+	{
+		"RC_SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
+	reloadTime=2;
+};
+
+
+//vehicle laser designator that can lock datalink targets 
+class Laserdesignator_mounted;
+class RC_Laserdesignator_mounted: Laserdesignator_mounted
+{
+	author="Ascent";
+	canLock=2;
+};
+class Laserdesignator_vehicle;
+class RC_Laserdesignator_vehicle: Laserdesignator_vehicle
+{
+	author="Ascent";
+	canLock=2;
+};
+
+
+//Improved Handheld Laser Designators
 class Laserdesignator;
 class Laserdesignator_base: Laserdesignator
 {

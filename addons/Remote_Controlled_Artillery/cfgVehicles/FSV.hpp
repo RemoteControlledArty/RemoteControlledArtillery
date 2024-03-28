@@ -63,7 +63,7 @@ class RC_FSV_A: RC_FSV_A_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	weaponLockSystem=4;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
@@ -293,7 +293,7 @@ class RC_FSV_A: RC_FSV_A_Base
 					weapons[]=
 					{
 						"RC_MMG_338_FSV",
-						"Laserdesignator_mounted",
+						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
 					magazines[]=

@@ -33,7 +33,7 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	weaponLockSystem=4;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
@@ -118,7 +118,7 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 					weapons[]=
 					{
 						"RC_MMG_338_MBT",
-						"Laserdesignator_mounted",
+						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
 					magazines[]=

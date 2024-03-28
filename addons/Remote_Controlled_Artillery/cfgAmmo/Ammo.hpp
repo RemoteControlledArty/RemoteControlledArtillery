@@ -1,3 +1,12 @@
+//Vehicle Smokelauncher
+class SmokeLauncherMag;
+class RC_SmokeLauncherMag: SmokeLauncherMag
+{
+	author="Ascent";
+	count=4;
+};
+	
+	
 //.338 NM Tracer for Vehicle MMG
 class BulletBase;
 class RC_B_338_T: BulletBase

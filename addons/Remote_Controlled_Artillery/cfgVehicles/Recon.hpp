@@ -46,7 +46,7 @@ class RC_AA_small_WD: RC_AA_small_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	weaponLockSystem=4;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -342,7 +342,7 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	weaponLockSystem="4+8";
+	lockDetectionSystem="4+8";
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -518,6 +518,19 @@ class RC_radar_small_WD: RC_radar_small_WD_Base
 		{
 			gunnerForceOptics=1;
 			forceHideGunner=1;
+
+			weapons[]=
+			{
+				"RC_Laserdesignator_vehicle",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"Laserbatteries",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
 		};
 	};
 };
@@ -684,7 +697,7 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	weaponLockSystem=4;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 	//laserScanner=0;
 

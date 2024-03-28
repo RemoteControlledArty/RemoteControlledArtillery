@@ -1,23 +1,12 @@
-class B_APC_Wheeled_03_cannon_F;
-class RC_ICV_IFV_1_A_Base: B_APC_Wheeled_03_cannon_F
+class O_APC_Tracked_02_cannon_F;
+class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
 {
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
 	class HitPoints;
-	/*
-	class HitHull;
-	class HitEngine;
-	class HitFuel;
-	*/
-	class HitLFWheel;
-	class HitLF2Wheel;
-	class HitLMWheel;
-	class HitLBWheel;
-	class HitRFWheel;
-	class HitRF2Wheel;
-	class HitRMWheel;
-	class HitRBWheel;
+	//class HitLTrack;
+	//class HitRTrack;
 	class AnimationSources;
 	class showCamonetHull;
 	class showSLATHull;
@@ -29,13 +18,13 @@ class RC_ICV_IFV_1_A_Base: B_APC_Wheeled_03_cannon_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
+class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 {
 	author="Ascent";
-	faction="RemoteControlled_B";
+	faction="RemoteControlled_O";
 	scope=0;
 	scopeCurator=0;
-	side=1;
+	side=0;
 	forceInGarage=1;
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
@@ -43,7 +32,7 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	crew="B_UAV_AI";
+	crew="O_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
 	driverCompartments="Compartment2";
@@ -56,7 +45,7 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	weaponLockSystem=4;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
@@ -65,123 +54,6 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
-
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherAngle=180;
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag"
-	};
-
-	DLC="Tacops";
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_APC_Wheeled_03_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_IG_02_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext2_IG_02_CO.paa",
-		"A3\Data_F_Tacops\data\RCWS30_IG_02_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_alpha_IG_02_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_FIA_desert_CO.paa",
-		"A3\armor_f\data\cage_sand_co.paa"
-	};
-	textureList[]=
-	{
-		"Guerilla_01",
-		0,
-		"Guerilla_02",
-		1,
-		"Guerilla_03",
-		0
-	};
-
-	class HitPoints: HitPoints
-	{
-		/*
-		class HitHull: HitHull
-		{
-			armor=-960;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.2;
-		};
-		class HitEngine: HitEngine
-		{
-			armor=360;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.5;
-		};
-		class HitFuel: HitFuel
-		{
-			armor=360;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.60000002;
-		};
-		*/
-
-		class HitLFWheel: HitLFWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitLF2Wheel: HitLF2Wheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitLMWheel: HitLMWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitLBWheel: HitLBWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRFWheel: HitRFWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRF2Wheel: HitRF2Wheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRMWheel: HitRMWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRBWheel: HitRBWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-	};
 
 	class Components: Components
 	{
@@ -301,6 +173,12 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 			source="user";
 			animPeriod=0.001;
 			initPhase=1;
+			forceAnimatePhase=1;
+			forceAnimate[]=
+			{
+				"showTracks",
+				1
+			};
 			mass=-50;
 		};
 		class showSLATHull
@@ -314,68 +192,18 @@ class RC_ICV_IFV_1_A: RC_ICV_IFV_1_A_Base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
 
 
-class RC_ICV_1_A: RC_ICV_IFV_1_A
+class RC_ICV_5_A: RC_ICV_IFV_5_A
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC
+		class RC_Artillery
 		{
-			init=
-			"(_this select 0) spawn {{_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; \
-			if (!local (_this select 0)) exitwith {}; \
-			(_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
-			
-			getin=
-			"'GetIn' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; [ \
-				if (isPlayer (commander _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-					_vehicle setOwner (owner (commander _vehicle)); \
-					_vehicle setEffectiveCommander (commander _vehicle); \
-				} else { \
-					if (isPlayer (gunner _vehicle)) then { \
-						(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-						_vehicle setOwner (owner (gunner _vehicle)); \
-						_vehicle setEffectiveCommander (gunner _vehicle); \
-					} \
-				} \
-			] remoteExec ['spawn', 2];";
-
-			getout=
-			"'GetOut' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; [ \
-				if (isPlayer (commander _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-					_vehicle setOwner (owner (commander _vehicle)); \
-					_vehicle setEffectiveCommander (commander _vehicle); \
-				} else { \
-					if (isPlayer (gunner _vehicle)) then { \
-						(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-						_vehicle setOwner (owner (gunner _vehicle)); \
-						_vehicle setEffectiveCommander (gunner _vehicle); \
-					} \
-				} \
-			] remoteExec ['spawn', 2];";
-
-			seatswitched=
-			"'SeatSwitched' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; [ \
-				if (isPlayer (commander _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-					_vehicle setOwner (owner (commander _vehicle)); \
-					_vehicle setEffectiveCommander (commander _vehicle); \
-				} else { \
-					if (isPlayer (gunner _vehicle)) then { \
-						(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-						_vehicle setOwner (owner (gunner _vehicle)); \
-						_vehicle setEffectiveCommander (gunner _vehicle); \
-					} \
-				} \
-			] remoteExec ['spawn', 2];";
+			init="(_this select 0) spawn {{_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			postInit ="(_this select 0) call RC_fnc_addEhsICV";
 		};
 	};
 	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
@@ -392,6 +220,19 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 	uavCameraGunnerDir="PiP1_dir";
 	maximumLoad=4000;
 	threat[]={0.30000001,0.30000001,0.30000001};
+
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherAngle=180;
+
+	weapons[]=
+	{
+		"TruckHorn",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"SmokeLauncherMag"
+	};
 
 	class Turrets: Turrets
 	{
@@ -449,84 +290,6 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 			magazines[]=
 			{
 				"SmokeLauncherMag"
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="MinimapDisplayComponent";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
-							resource="RscCustomInfoSensors";
-						};
-						*/
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="EmptyDisplayComponent";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
-							resource="RscCustomInfoSensors";
-						};
-						*/
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
 			};
 			
 			class Turrets: Turrets
@@ -589,7 +352,7 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 					{
 						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 						{
-							defaultDisplay="SensorsDisplayComponent";
+							defaultDisplay="MinimapDisplayComponent";
 
 							class Components
 							{
@@ -606,12 +369,14 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 								{
 									componentType="UAVFeedDisplayComponent";
 								};
+								/*
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
 									range[]={3000,1500,750,375};
 									resource="RscCustomInfoSensors";
 								};
+								*/
 								/*
 								class MineDetectorDisplay
 								{
@@ -641,12 +406,14 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 								{
 									componentType="UAVFeedDisplayComponent";
 								};
+								/*
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
 									range[]={3000,1500,750,375};
 									resource="RscCustomInfoSensors";
 								};
+								*/
 								/*
 								class MineDetectorDisplay
 								{
@@ -660,142 +427,123 @@ class RC_ICV_1_A: RC_ICV_IFV_1_A
 					};
 				};
 			};
+
+			class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+			{
+				defaultDisplay="MinimapDisplayComponent";
+
+				class Components
+				{
+					class EmptyDisplay
+					{
+						componentType="EmptyDisplayComponent";
+					};
+					class MinimapDisplay
+					{
+						componentType="MinimapDisplayComponent";
+						resource="RscCustomInfoMiniMap";
+					};
+					class UAVFeedDisplay
+					{
+						componentType="UAVFeedDisplayComponent";
+					};
+					class CrewDisplay
+					{
+						componentType="CrewDisplayComponent";
+					};
+					/*
+					//doesnt work yet
+					class SensorDisplay
+					{
+						componentType="SensorsDisplayComponent";
+						range[]={3000,1500,750,375};
+						resource="RscCustomInfoSensors";
+					};
+					*/
+					/*
+					class MineDetectorDisplay
+					{
+						componentType="MineDetectorDisplayComponent";
+						range=50;
+						resource="RscCustomInfoMineDetect";
+					};
+					*/
+				};
+			};
+			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+			{
+				defaultDisplay="EmptyDisplayComponent";
+
+				class Components
+				{
+					class EmptyDisplay
+					{
+						componentType="EmptyDisplayComponent";
+					};
+					class MinimapDisplay
+					{
+						componentType="MinimapDisplayComponent";
+						resource="RscCustomInfoMiniMap";
+					};
+					class UAVFeedDisplay
+					{
+						componentType="UAVFeedDisplayComponent";
+					};
+					class CrewDisplay
+					{
+						componentType="CrewDisplayComponent";
+					};
+					/*
+					//doesnt work yet
+					class SensorDisplay
+					{
+						componentType="SensorsDisplayComponent";
+						range[]={3000,1500,750,375};
+						resource="RscCustomInfoSensors";
+					};
+					*/
+					/*
+					class MineDetectorDisplay
+					{
+						componentType="MineDetectorDisplayComponent";
+						range=50;
+						resource="RscCustomInfoMineDetect";
+					};
+					*/
+				};
+			};
 		};
 	};
 };
-class RC_ICV_1_A_O: RC_ICV_1_A
+
+
+class RC_ICV_5_WD: RC_ICV_5_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
-};
-class RC_ICV_1_A_I: RC_ICV_1_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
-};
-
-
-class RC_ICV_1_WD: RC_ICV_1_A
-{
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext2_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\RCWS30_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_alpha_IG_01_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
-		"A3\armor_f\data\cage_G1_co.paa"
-	};
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_cannon_ghex_F.jpg";
 	textureList[]=
 	{
-		"Guerilla_01",
-		1,
-		"Guerilla_02",
-		0,
-		"Guerilla_03",
-		0
-	};
-};
-class RC_ICV_1_WD_O: RC_ICV_1_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
-};
-class RC_ICV_1_WD_I: RC_ICV_1_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
-};
-class RC_ICV_1_DIG_I: RC_ICV_1_WD_I
-{
-	DLC="";
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-		"A3\armor_f\data\cage_aaf_co.paa"
-	};
-	textureList[]=
-	{
-		"Indep",
+		"GreenHex",
 		1
 	};
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Exp\APC_Tracked_02\Data\APC_Tracked_02_ext_01_ghex_CO.paa",
+		"A3\Armor_F_Exp\APC_Tracked_02\Data\APC_Tracked_02_ext_02_ghex_CO.paa",
+		"A3\Armor_F_Exp\APC_Tracked_02\Data\RCWS30_ghex_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
+		"A3\armor_f\data\cage_csat_green_CO.paa"
+	};
 };
 
 
-class RC_IFV_1_A: RC_ICV_IFV_1_A
+class RC_IFV_5_A: RC_ICV_IFV_5_A
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC
+		class RC_Artillery
 		{
-			init=
-			"if (!local (_this select 0)) exitwith {}; \
-			(_this select 0) spawn { \
-				waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; \
-				waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; \
-			};";
-			
-			getin=
-			"'GetIn' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; \
-			if (isPlayer (gunner _vehicle)) then { \
-				(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-				_vehicle setOwner (owner (gunner _vehicle)); \
-				_vehicle setEffectiveCommander (gunner _vehicle); \
-			} else { \
-				if (isPlayer (commander _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-					_vehicle setOwner (owner (commander _vehicle)); \
-					_vehicle setEffectiveCommander (commander _vehicle); \
-				} \
-			}";
-
-			getout=
-			"'GetOut' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; \
-			if (isPlayer (gunner _vehicle)) then { \
-				(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-				_vehicle setOwner (owner (gunner _vehicle)); \
-				_vehicle setEffectiveCommander (gunner _vehicle); \
-			} else { \
-				if (isPlayer (commander _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-					_vehicle setOwner (owner (commander _vehicle)); \
-					_vehicle setEffectiveCommander (commander _vehicle); \
-				} \
-			}";
-
-			seatswitched=
-			"'SeatSwitched' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; \
-			if (isPlayer (gunner _vehicle)) then { \
-				(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-				_vehicle setOwner (owner (gunner _vehicle)); \
-				_vehicle setEffectiveCommander (gunner _vehicle); \
-			} else { \
-				if (isPlayer (commander _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-					_vehicle setOwner (owner (commander _vehicle)); \
-					_vehicle setEffectiveCommander (commander _vehicle); \
-				} \
-			}";
+			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			postInit ="(_this select 0) call RC_fnc_addEhsICV";
 		};
 	};
 
@@ -807,6 +555,19 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 	scope=2;
 	scopeCurator=2;
 	maximumLoad=3000;
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherVelocity=14;
+	smokeLauncherAngle=180;
+	
+	weapons[]=
+	{
+		"TruckHorn",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"SmokeLauncherMag"
+	};
 
 	class Turrets: Turrets
 	{
@@ -867,7 +628,8 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 					};
 					thermalMode[]={0,1};
 					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_APC_03_m_F.p3d";
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_02_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
 			};
@@ -881,7 +643,7 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 
 					weapons[]=
 					{
-						"Laserdesignator_mounted",
+						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
 					magazines[]=
@@ -912,7 +674,8 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 								"TI"
 							};
 							thermalMode[]={0,1};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_w_F.p3d";
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_w_F.p3d";
 							gunnerOpticsEffect[]={};
 						};
 					};
@@ -1147,77 +910,22 @@ class RC_IFV_1_A: RC_ICV_IFV_1_A
 		};
 	};
 };
-class RC_IFV_1_A_O: RC_IFV_1_A
+
+
+class RC_IFV_5_WD: RC_IFV_5_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
-};
-class RC_IFV_1_A_I: RC_IFV_1_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
-};
-
-
-class RC_IFV_1_WD: RC_IFV_1_A
-{
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext2_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\RCWS30_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_alpha_IG_01_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
-		"A3\armor_f\data\cage_G1_co.paa"
-	};
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_cannon_ghex_F.jpg";
 	textureList[]=
 	{
-		"Guerilla_01",
-		1,
-		"Guerilla_02",
-		0,
-		"Guerilla_03",
-		0
-	};
-};
-class RC_IFV_1_WD_O: RC_IFV_1_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
-};
-class RC_IFV_1_WD_I: RC_IFV_1_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
-};
-class RC_IFV_1_DIG_I: RC_IFV_1_WD_I
-{
-	DLC="";
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-		"A3\armor_f\data\cage_aaf_co.paa"
-	};
-	textureList[]=
-	{
-		"Indep",
+		"GreenHex",
 		1
+	};
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Exp\APC_Tracked_02\Data\APC_Tracked_02_ext_01_ghex_CO.paa",
+		"A3\Armor_F_Exp\APC_Tracked_02\Data\APC_Tracked_02_ext_02_ghex_CO.paa",
+		"A3\Armor_F_Exp\APC_Tracked_02\Data\RCWS30_ghex_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
+		"A3\armor_f\data\cage_csat_green_CO.paa"
 	};
 };

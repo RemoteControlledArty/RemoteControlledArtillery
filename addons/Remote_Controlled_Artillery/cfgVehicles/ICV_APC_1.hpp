@@ -36,7 +36,7 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	weaponLockSystem=4;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 	maxSpeed=70;
 	enginePower=1230;
@@ -368,7 +368,7 @@ class RC_ICV_3_A: RC_ICV_APC_1_A
 
 			weapons[]=
 			{
-				"Laserdesignator_mounted",
+				"RC_Laserdesignator_vehicle",
 				"TruckHorn",
 				"SmokeLauncher"
 			};
@@ -668,7 +668,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 
 			weapons[]=
 			{
-				"Laserdesignator_mounted",
+				"RC_Laserdesignator_vehicle",
 				"SmokeLauncher"
 			};
 			magazines[]=

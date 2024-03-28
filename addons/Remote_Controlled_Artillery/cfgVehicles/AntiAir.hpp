@@ -40,7 +40,7 @@ class RC_AA_A: RC_AA_base
 	ejectDeadCommander=0;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	weaponLockSystem=4;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class AnimationSources: AnimationSources
@@ -236,7 +236,7 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	ejectDeadCommander=0;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	weaponLockSystem=4;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class AnimationSources: AnimationSources
