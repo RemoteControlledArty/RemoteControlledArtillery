@@ -640,6 +640,8 @@ class RC_IFV_5_A: RC_ICV_IFV_5_A
 				{
 					showAllTargets="2 + 4";
 					commanding=2;
+					turretInfoType="RscOptics_MBT_03_gunner";
+					//turretInfoType="RscOptics_APC_Wheeled_03_commander";
 
 					weapons[]=
 					{
@@ -674,8 +676,9 @@ class RC_IFV_5_A: RC_ICV_IFV_5_A
 								"TI"
 							};
 							thermalMode[]={0,1};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_w_F.p3d";
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+							//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
 							gunnerOpticsEffect[]={};
 						};
 					};

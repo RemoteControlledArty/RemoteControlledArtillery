@@ -137,6 +137,7 @@ IDEAS - FAR FUTURE:
 -or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
 -vanilla asset overwrite for gamemodes without zeus etc *maybe by second pbo and config, class RC_Howitzer; class vanilla_Howitzer: vanilla_Howitzer  but likely doesnt work
 -switch driver and commander of recon radar
+-for later use, no crosshair limited FOV: gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 
 
 ---------------------------------------------------------------------------------------------------------

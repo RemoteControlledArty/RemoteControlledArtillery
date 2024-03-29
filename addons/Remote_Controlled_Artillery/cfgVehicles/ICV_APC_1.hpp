@@ -362,8 +362,10 @@ class RC_ICV_3_A: RC_ICV_APC_1_A
 		class CommanderOptics : CommanderOptics
 		{
 			showAllTargets="2 + 4";
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="";
+			//turretInfoType="RscOptics_MBT_03_gunner";
 			commanding=3;
 
 			weapons[]=

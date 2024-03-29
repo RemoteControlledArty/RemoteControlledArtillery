@@ -425,7 +425,6 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 							};
 							thermalMode[]={0,1};
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 							//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 							gunnerOpticsEffect[]={};
 						};
