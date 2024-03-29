@@ -1,5 +1,5 @@
-class I_E_APC_tracked_03_cannon_F;
-class RC_ICV_IFV_2_A_Base: I_E_APC_tracked_03_cannon_F
+class I_APC_tracked_03_cannon_F;
+class RC_ICV_IFV_6_DIG_Base: I_APC_tracked_03_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -20,7 +20,7 @@ class RC_ICV_IFV_2_A_Base: I_E_APC_tracked_03_cannon_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
+class RC_ICV_IFV_6_DIG: RC_ICV_IFV_6_DIG_Base
 {
 	author="Ascent";
 	faction="RemoteControlled_B";
@@ -49,10 +49,8 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
-	maxSpeed=120;
-	normalSpeedForwardCoef=0.64;
-	enginePower=506.25;	//485
-	peakTorque=5650;
+	enginePower=922.5;
+	peakTorque=4688.3;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
@@ -84,6 +82,7 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 		};
 		*/
 
+		/*
 		class HitHull: HitHull
 		{
 			armor=2;
@@ -92,63 +91,7 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 		{
 			armor=1.25;
 		};
-		
-		class HitLFWheel: HitLFWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitLF2Wheel: HitLF2Wheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitLMWheel: HitLMWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitLBWheel: HitLBWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRFWheel: HitRFWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRF2Wheel: HitRF2Wheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRMWheel: HitRMWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRBWheel: HitRBWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
+		*/
 	};
 	
 	class Components: Components
@@ -264,14 +207,14 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 };
 
 
-class RC_IFV_2_A: RC_ICV_IFV_2_A
+class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 {
 	class EventHandlers: EventHandlers
 	{	
 		class RC_Artillery
 		{
 			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-			postInit ="(_this select 0) call RC_fnc_addEhsIFV";
+			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_IFV.hpp"
 		};
 	};
 	/*
@@ -285,7 +228,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
 	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 
-	displayName="IFV 40mm";
+	displayName="IFV VI";
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -293,6 +236,19 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
+
+	textureList[]=
+	{
+		"Indep_01",
+		1
+	};
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_epb\apc_tracked_03\data\apc_tracked_03_ext_indp_co.paa",
+		"A3\armor_f_epb\apc_tracked_03\data\apc_tracked_03_ext2_indp_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Jungle_CO.paa",
+		"A3\armor_f\data\cage_G1_co.paa"
+	};
 	
 	weapons[]=
 	{
@@ -301,6 +257,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	};
 	magazines[]=
 	{
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 
@@ -308,50 +265,43 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	{
 		class MainTurret: MainTurret
 		{
-			//isCopilot=1; might allow for locality shift if set up correctly
+			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=3;
 			minElev=-10.6;
 			maxElev=40;
-			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
-			//turretInfoType="";
+			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 			weapons[]=
 			{
-				"RC_autocannon_40mm_CTWS",
-				"RC_MMG_338_IFV_2",
+				"RC_autocannon_30mm_CTWS",
+				"RC_MMG_338_IFV_1",
 				//"RC_IFV_Missle_Launcher",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_MP_T",
-				"RC_50Rnd_40mm_MP_T",
-				"RC_50Rnd_40mm_MP_T",
-				"RC_50Rnd_40mm_MP_T",
-				"RC_50Rnd_40mm_Smoke",
-				"RC_50Rnd_40mm_Smoke",
-				"RC_50Rnd_40mm_APFSDS_T",
-				"RC_50Rnd_40mm_APFSDS_T",
-				"RC_50Rnd_40mm_APFSDS_T",
-				"RC_50Rnd_40mm_APFSDS_T",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				/*
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				*/
+				"RC_100Rnd_30mm_GPR_T_R",
+				"RC_100Rnd_30mm_MP_T_R",
+				"RC_100Rnd_30mm_MP_T_R",
+				//"RC_100Rnd_30mm_Smoke",
+				"RC_100Rnd_30mm_APFSDS_T_R",
+				"RC_100Rnd_30mm_APFSDS_T_R",
+				"RC_100Rnd_30mm_APFSDS_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_AA",
+				//"RC_2Rnd_IFV_AA",
+				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
 
-			//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
 			class OpticsIn
 			{
 				class Wide: RCWSOptics
@@ -372,8 +322,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 						"TI"
 					};
 					thermalMode[]={0,1};
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_02_m_F.p3d";
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
 			};
@@ -382,11 +331,9 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					isCopilot=1; //allows to trigger EH that gives driving controls
 					showAllTargets="2 + 4";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-					//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
-					//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
-					//turretInfoType="";
+					turretInfoType="RscOptics_MBT_03_gunner";
 					commanding=2;
 
 					weapons[]=
@@ -397,7 +344,6 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 					magazines[]=
 					{
 						"Laserbatteries",
-						"SmokeLauncherMag",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -424,8 +370,8 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 								"TI"
 							};
 							thermalMode[]={0,1};
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 							gunnerOpticsEffect[]={};
 						};
 					};
@@ -725,7 +671,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 		};
 	};
 };
-class RC_IFV_2_A_O: RC_IFV_2_A
+class RC_IFV_6_DIG_O: RC_IFV_6_DIG
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -733,7 +679,7 @@ class RC_IFV_2_A_O: RC_IFV_2_A
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_IFV_2_A_I: RC_IFV_2_A
+class RC_IFV_6_DIG_I: RC_IFV_6_DIG
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -743,20 +689,24 @@ class RC_IFV_2_A_I: RC_IFV_2_A
 };
 
 
-class RC_IFV_2_WD: RC_IFV_2_A
+class RC_IFV_6_WD: RC_IFV_6_DIG
 {
 	DLC="Expansion";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
+	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_APC_tracked_03_cannon_F.jpg";
+	textureList[]=
+	{
+		"EAF_01",
+		1
+	};
 	hiddenSelectionsTextures[]=
 	{
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-		"a3\Armor_F\Data\cage_olive_CO.paa"
+		"A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
+		"A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext2_eaf_co.paa",
+		"A3\Armor_F_Enoch\apc_tracked_03\Data\camonet_EAF_green_CO.paa",
+		"A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
 	};
 };
-class RC_IFV_2_WD_O: RC_IFV_2_WD
+class RC_IFV_6_WD_O: RC_IFV_6_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -764,7 +714,7 @@ class RC_IFV_2_WD_O: RC_IFV_2_WD
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_IFV_2_WD_I: RC_IFV_2_WD
+class RC_IFV_6_WD_I: RC_IFV_6_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

@@ -38,12 +38,12 @@ class RC_PylonRack_4Rnd_BombDemine_01_F: PylonRack_4Rnd_BombDemine_01_F
 
 //.338NM Vehicle MMG Belts
 class VehicleMagazine;
-class RC_200Rnd_338_T_Mag: VehicleMagazine
+class RC_200Rnd_338_T_R: VehicleMagazine
 {
 	author="Ascent";
 	scope=2;
 	count=200;
-	ammo="RC_B_338_T";
+	ammo="RC_B_338_T_R";
 	initSpeed=1000;
 	maxLeadSpeed=36.111099;
 	tracersEvery=1;	//4
@@ -52,77 +52,31 @@ class RC_200Rnd_338_T_Mag: VehicleMagazine
 	displayNameShort=".338 NM";
 	muzzleImpulseFactor[]={0.050000001,0.050000001};
 };
-
-
-//Autocannons
-class 140Rnd_30mm_MP_shells_Tracer_Red;
-class RC_100Rnd_30mm_MP_T: 140Rnd_30mm_MP_shells_Tracer_Red
+class RC_200Rnd_338_T_G: RC_200Rnd_338_T_R
 {
-	author="Ascent";
-	ammo="RC_B_30mm_MP_T";
-	count=100;
-	displayName="30mm MP-T";
-	displayNameShort="30mm MP-T";
+	ammo="RC_B_338_T_G";
 };
-class 60Rnd_30mm_APFSDS_shells_Tracer_Red;
-class RC_100Rnd_30mm_APFSDS_T: 60Rnd_30mm_APFSDS_shells_Tracer_Red
-{
-	author="Ascent";
-	ammo="RC_B_30mm_APFSDS_T";
-	count=100;
-	displayName="30mm APFSDS-T";
-	displayNameShort="30mm APFSDS-T";
-};
-/*
-class RC_100Rnd_40mm_Smoke: 140Rnd_30mm_MP_shells_Tracer_Red
-{
-	author="Ascent";
-	ammo="RC_B_AC_Smoke";
-	count=100;
-	displayName="30mm Smoke";
-	displayNameShort="30mm Smoke";
-};
-*/
-
-
-class 60Rnd_40mm_GPR_Tracer_Red_shells;
-class RC_50Rnd_40mm_MP_T: 60Rnd_40mm_GPR_Tracer_Red_shells
-{
-	author="Ascent";
-	ammo="RC_B_40mm_MP_T";
-	count=50;
-	displayName="40mm MP-T";
-	displayNameShort="40mm MP-T";
-};
-class 40Rnd_40mm_APFSDS_Tracer_Red_shells;
-class RC_50Rnd_40mm_APFSDS_T: 40Rnd_40mm_APFSDS_Tracer_Red_shells
-{
-	author="Ascent";
-	ammo="RC_B_40mm_APFSDS_T";
-	count=50;
-	displayName="40mm APFSDS-T";
-	displayNameShort="40mm APFSDS-T";
-};
-/*
-class RC_50Rnd_40mm_Smoke: 60Rnd_40mm_GPR_Tracer_Red_shells
-{
-	author="Ascent";
-	ammo="RC_B_AC_Smoke";
-	count=50;
-	displayName="40mm Smoke";
-	displayNameShort="40mm Smoke";
-};
-*/
 
 
 class 200Rnd_127x99_mag_Tracer_Red;
-class RC_200Rnd_127x99_mag_Tracer_Red: 200Rnd_127x99_mag_Tracer_Red
+class RC_200Rnd_127x99_T_R: 200Rnd_127x99_mag_Tracer_Red
 {
 	author="Ascent";
-	ammo="RC_B_127x99_Ball_Tracer_Red";
+	ammo="RC_B_127x99_Ball_T_R";
 	count=200;
 };
-class RC_100Rnd_127x99_mag_Tracer_Red: RC_200Rnd_127x99_mag_Tracer_Red
+class RC_100Rnd_127x99_mag_Tracer_Red: RC_200Rnd_127x99_T_R
+{
+	count=100;
+};
+class 200Rnd_127x99_mag_Tracer_Green;
+class RC_200Rnd_127x99_T_G: 200Rnd_127x99_mag_Tracer_Green
+{
+	author="Ascent";
+	ammo="RC_B_127x99_Ball_T_G";
+	count=200;
+};
+class RC_100Rnd_127x99_T_G: RC_200Rnd_127x99_T_G
 {
 	count=100;
 };
@@ -145,6 +99,107 @@ class RC_100Rnd_40mm_G_belt: RC_50Rnd_40mm_G_belt
 {
 	count=100;
 };
+
+
+//Autocannons
+class 140Rnd_30mm_MP_shells_Tracer_Red;
+class RC_100Rnd_30mm_MP_T_R: 140Rnd_30mm_MP_shells_Tracer_Red
+{
+	author="Ascent";
+	ammo="RC_B_30mm_MP_T_R";
+	count=100;
+	displayName="30mm MP-T";
+	displayNameShort="30mm MP-T";
+};
+class RC_100Rnd_30mm_MP_T_G: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_MP_T_G";
+};
+class RC_100Rnd_30mm_GPR_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_GPR_T_R";
+	displayName="30mm GPR-T";
+	displayNameShort="30mm GPR-T";
+};
+class RC_100Rnd_30mm_GPR_T_G: RC_100Rnd_30mm_GPR_T_R
+{
+	ammo="RC_B_30mm_GPR_T_G";
+};
+
+
+class 60Rnd_30mm_APFSDS_shells_Tracer_Red;
+class RC_100Rnd_30mm_APFSDS_T_R: 60Rnd_30mm_APFSDS_shells_Tracer_Red
+{
+	author="Ascent";
+	ammo="RC_B_30mm_APFSDS_T_R";
+	count=100;
+	displayName="30mm APFSDS-T";
+	displayNameShort="30mm APFSDS-T";
+};
+class RC_100Rnd_30mm_APFSDS_T_G: RC_100Rnd_30mm_APFSDS_T_R
+{
+	ammo="RC_B_30mm_APFSDS_T_G";
+};
+/*
+class RC_100Rnd_40mm_Smoke: 140Rnd_30mm_MP_shells_Tracer_Red
+{
+	author="Ascent";
+	ammo="RC_B_AC_Smoke";
+	count=100;
+	displayName="30mm Smoke";
+	displayNameShort="30mm Smoke";
+};
+*/
+
+
+class 60Rnd_40mm_GPR_Tracer_Red_shells;
+class RC_50Rnd_40mm_GPR_T_R: 60Rnd_40mm_GPR_Tracer_Red_shells
+{
+	author="Ascent";
+	ammo="RC_B_40mm_GPR_T_R";
+	count=50;
+	displayName="40mm GPR-T";
+	displayNameShort="40mm GPR-T";
+};
+class RC_50Rnd_40mm_GPR_T_G: RC_50Rnd_40mm_GPR_T_R
+{
+	ammo="RC_B_40mm_GPR_T_G";
+};
+class RC_50Rnd_40mm_MP_T_R: RC_50Rnd_40mm_GPR_T_R
+{
+	ammo="RC_B_40mm_MP_T_R";
+	displayName="40mm MP-T";
+	displayNameShort="40mm MP-T";
+};
+class RC_50Rnd_40mm_MP_T_G: RC_50Rnd_40mm_MP_T_R
+{
+	ammo="RC_B_40mm_MP_T_G";
+};
+
+
+class 40Rnd_40mm_APFSDS_Tracer_Red_shells;
+class RC_50Rnd_40mm_APFSDS_T_R: 40Rnd_40mm_APFSDS_Tracer_Red_shells
+{
+	author="Ascent";
+	ammo="RC_B_40mm_APFSDS_T_R";
+	count=50;
+	displayName="40mm APFSDS-T";
+	displayNameShort="40mm APFSDS-T";
+};
+class RC_50Rnd_40mm_APFSDS_T_G: RC_50Rnd_40mm_APFSDS_T_R
+{
+	ammo="RC_B_40mm_APFSDS_T_G";
+};
+/*
+class RC_50Rnd_40mm_Smoke: 60Rnd_40mm_GPR_Tracer_Red_shells
+{
+	author="Ascent";
+	ammo="RC_B_AC_Smoke";
+	count=50;
+	displayName="40mm Smoke";
+	displayNameShort="40mm Smoke";
+};
+*/
 
 
 class 2Rnd_GAT_missiles;

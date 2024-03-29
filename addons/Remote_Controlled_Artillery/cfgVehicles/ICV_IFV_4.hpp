@@ -1,5 +1,5 @@
 class B_APC_Wheeled_01_cannon_F;
-class RC_ICV_IFV_2_A_Base: B_APC_Wheeled_01_cannon_F
+class RC_ICV_IFV_4_A_Base: B_APC_Wheeled_01_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -27,7 +27,7 @@ class RC_ICV_IFV_2_A_Base: B_APC_Wheeled_01_cannon_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
+class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 {
 	author="Ascent";
 	faction="RemoteControlled_B";
@@ -58,8 +58,8 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 	incomingMissileDetectionSystem=16;
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
-	enginePower=506.25;
-	peakTorque=5650;
+	enginePower=692.8;
+	peakTorque=3520.5;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
@@ -271,7 +271,7 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 };
 
 
-class RC_ICV_2_A: RC_ICV_IFV_2_A
+class RC_ICV_4_A: RC_ICV_IFV_4_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -282,53 +282,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 			if (!local (_this select 0)) exitwith {}; \
 			(_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
 			
-			getin=
-			"'GetIn' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; [ \
-				if (isPlayer (commander _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-					_vehicle setOwner (owner (commander _vehicle)); \
-					_vehicle setEffectiveCommander (commander _vehicle); \
-				} else { \
-					if (isPlayer (gunner _vehicle)) then { \
-						(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-						_vehicle setOwner (owner (gunner _vehicle)); \
-						_vehicle setEffectiveCommander (gunner _vehicle); \
-					} \
-				} \
-			] remoteExec ['spawn', 2];";
-
-			getout=
-			"'GetOut' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; [ \
-				if (isPlayer (commander _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-					_vehicle setOwner (owner (commander _vehicle)); \
-					_vehicle setEffectiveCommander (commander _vehicle); \
-				} else { \
-					if (isPlayer (gunner _vehicle)) then { \
-						(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-						_vehicle setOwner (owner (gunner _vehicle)); \
-						_vehicle setEffectiveCommander (gunner _vehicle); \
-					} \
-				} \
-			] remoteExec ['spawn', 2];";
-
-			seatswitched=
-			"'SeatSwitched' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; [ \
-				if (isPlayer (commander _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-					_vehicle setOwner (owner (commander _vehicle)); \
-					_vehicle setEffectiveCommander (commander _vehicle); \
-				} else { \
-					if (isPlayer (gunner _vehicle)) then { \
-						(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-						_vehicle setOwner (owner (gunner _vehicle)); \
-						_vehicle setEffectiveCommander (gunner _vehicle); \
-					} \
-				} \
-			] remoteExec ['spawn', 2];";
+			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_ICV.hpp"
 		};
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
@@ -336,7 +290,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 	//RCDisableSeats=3; // locks commander seats
 	//RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 
-	displayName="RC ICV II";
+	displayName="RC ICV IV";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -359,6 +313,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 	};
 	magazines[]=
 	{
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 	*/
@@ -367,6 +322,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 	{
 		class MainTurret: MainTurret
 		{
+			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment3";
 			commanding=2;
@@ -424,6 +380,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 			};
 			magazines[]=
 			{
+				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
 			*/
@@ -432,6 +389,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					isCopilot=1; //allows to trigger EH that gives driving controls
 					showAllTargets="2 + 4";
 					//personTurretAction="";	//no effect
 					//forceHideGunner=1;	//makes view bug
@@ -455,6 +413,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 					};
 					magazines[]=
 					{
+						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
 					*/
@@ -684,7 +643,7 @@ class RC_ICV_2_A: RC_ICV_IFV_2_A
 		};
 	};
 };
-class RC_ICV_2_A_O: RC_ICV_2_A
+class RC_ICV_4_A_O: RC_ICV_4_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -692,7 +651,7 @@ class RC_ICV_2_A_O: RC_ICV_2_A
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_ICV_2_A_I: RC_ICV_2_A
+class RC_ICV_4_A_I: RC_ICV_4_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -702,7 +661,7 @@ class RC_ICV_2_A_I: RC_ICV_2_A
 };
 
 
-class RC_ICV_2_WD: RC_ICV_2_A
+class RC_ICV_4_WD: RC_ICV_4_A
 {
 	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
@@ -715,7 +674,7 @@ class RC_ICV_2_WD: RC_ICV_2_A
 		"a3\Armor_F\Data\cage_olive_CO.paa"
 	};
 };
-class RC_ICV_2_WD_O: RC_ICV_2_WD
+class RC_ICV_4_WD_O: RC_ICV_4_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -723,7 +682,7 @@ class RC_ICV_2_WD_O: RC_ICV_2_WD
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_ICV_2_WD_I: RC_ICV_2_WD
+class RC_ICV_4_WD_I: RC_ICV_4_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -733,7 +692,7 @@ class RC_ICV_2_WD_I: RC_ICV_2_WD
 };
 
 
-class RC_IFV_2_A: RC_ICV_IFV_2_A
+class RC_IFV_4_A: RC_ICV_IFV_4_A
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -746,53 +705,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 				waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; \
 			};";
 			
-			getin=
-			"'GetIn' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; [ \
-				if (isPlayer (gunner _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-					_vehicle setOwner (owner (gunner _vehicle)); \
-					_vehicle setEffectiveCommander (gunner _vehicle); \
-				} else { \
-					if (isPlayer (commander _vehicle)) then { \
-						(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-						_vehicle setOwner (owner (commander _vehicle)); \
-						_vehicle setEffectiveCommander (commander _vehicle); \
-					} \
-				} \
-			] remoteExec ['spawn', 2];";
-
-			getout=
-			"'GetOut' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; [ \
-				if (isPlayer (gunner _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-					_vehicle setOwner (owner (gunner _vehicle)); \
-					_vehicle setEffectiveCommander (gunner _vehicle); \
-				} else { \
-					if (isPlayer (commander _vehicle)) then { \
-						(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-						_vehicle setOwner (owner (commander _vehicle)); \
-						_vehicle setEffectiveCommander (commander _vehicle); \
-					} \
-				} \
-			] remoteExec ['spawn', 2];";
-
-			seatswitched=
-			"'SeatSwitched' remoteExec ['systemChat',0]; \
-			params ['_vehicle']; [ \
-				if (isPlayer (gunner _vehicle)) then { \
-					(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-					_vehicle setOwner (owner (gunner _vehicle)); \
-					_vehicle setEffectiveCommander (gunner _vehicle); \
-				} else { \
-					if (isPlayer (commander _vehicle)) then { \
-						(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-						_vehicle setOwner (owner (commander _vehicle)); \
-						_vehicle setEffectiveCommander (commander _vehicle); \
-					} \
-				} \
-			] remoteExec ['spawn', 2];";
+			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_IFV.hpp"
 		};
 	};
 	/*
@@ -806,7 +719,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
 	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 
-	displayName="IFV 40mm";
+	displayName="IFV IV";
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -822,6 +735,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	};
 	magazines[]=
 	{
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 
@@ -829,14 +743,11 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 	{
 		class MainTurret: MainTurret
 		{
-			//isCopilot=1; might allow for locality shift if set up correctly
+			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=3;
 			minElev=-10.6;
 			maxElev=40;
-			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
-			//turretInfoType="";
 
 			weapons[]=
 			{
@@ -847,28 +758,27 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 			};
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_MP_T",
-				"RC_50Rnd_40mm_MP_T",
-				"RC_50Rnd_40mm_MP_T",
-				"RC_50Rnd_40mm_MP_T",
+				"RC_50Rnd_40mm_GPR_T_R",
+				"RC_50Rnd_40mm_GPR_T_R",
+				"RC_50Rnd_40mm_MP_T_R",
+				"RC_50Rnd_40mm_MP_T_R",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
-				"RC_50Rnd_40mm_APFSDS_T",
-				"RC_50Rnd_40mm_APFSDS_T",
-				"RC_50Rnd_40mm_APFSDS_T",
-				"RC_50Rnd_40mm_APFSDS_T",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				/*
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				*/
+				"RC_50Rnd_40mm_APFSDS_T_R",
+				"RC_50Rnd_40mm_APFSDS_T_R",
+				"RC_50Rnd_40mm_APFSDS_T_R",
+				"RC_50Rnd_40mm_APFSDS_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_AA",
+				//"RC_2Rnd_IFV_AA",
+				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
 
@@ -892,8 +802,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 						"TI"
 					};
 					thermalMode[]={0,1};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_m_F.p3d";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
 			};
@@ -902,10 +811,11 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					isCopilot=1; //allows to trigger EH that gives driving controls
 					showAllTargets="2 + 4";
 					commanding=2;
-					turretInfoType="RscOptics_APC_Wheeled_03_commander";
-					//turretInfoType="RscOptics_MBT_03_gunner";
+					turretInfoType="RscOptics_MBT_03_gunner";
+					//turretInfoType="RscOptics_APC_Wheeled_03_commander";	//green
 
 					weapons[]=
 					{
@@ -915,6 +825,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 					magazines[]=
 					{
 						"Laserbatteries",
+						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
 
@@ -940,8 +851,8 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 								"TI"
 							};
 							thermalMode[]={0,1};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_w_F.p3d";	//green
 							gunnerOpticsEffect[]={};
 						};
@@ -1242,7 +1153,7 @@ class RC_IFV_2_A: RC_ICV_IFV_2_A
 		};
 	};
 };
-class RC_IFV_2_A_O: RC_IFV_2_A
+class RC_IFV_4_A_O: RC_IFV_4_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -1250,7 +1161,7 @@ class RC_IFV_2_A_O: RC_IFV_2_A
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_IFV_2_A_I: RC_IFV_2_A
+class RC_IFV_4_A_I: RC_IFV_4_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -1260,7 +1171,7 @@ class RC_IFV_2_A_I: RC_IFV_2_A
 };
 
 
-class RC_IFV_2_WD: RC_IFV_2_A
+class RC_IFV_4_WD: RC_IFV_4_A
 {
 	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
@@ -1273,7 +1184,7 @@ class RC_IFV_2_WD: RC_IFV_2_A
 		"a3\Armor_F\Data\cage_olive_CO.paa"
 	};
 };
-class RC_IFV_2_WD_O: RC_IFV_2_WD
+class RC_IFV_4_WD_O: RC_IFV_4_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -1281,7 +1192,7 @@ class RC_IFV_2_WD_O: RC_IFV_2_WD
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_IFV_2_WD_I: RC_IFV_2_WD
+class RC_IFV_4_WD_I: RC_IFV_4_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

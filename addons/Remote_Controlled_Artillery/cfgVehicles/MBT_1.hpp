@@ -105,6 +105,7 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 	{
 		class MainTurret: MainTurret
 		{
+			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=2;
 			
@@ -112,6 +113,7 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 			{
 				class CommanderOptics: CommanderOptics
 				{
+					isCopilot=1; //allows to trigger EH that gives driving controls
 					showAllTargets="2 + 4";
 					commanding=1;
 
@@ -123,12 +125,13 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 					};
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_Mag",
-						"RC_200Rnd_338_T_Mag",
-						"RC_200Rnd_338_T_Mag",
-						"RC_200Rnd_338_T_Mag",
-						"RC_200Rnd_338_T_Mag",
+						"RC_200Rnd_338_T_R",
+						"RC_200Rnd_338_T_R",
+						"RC_200Rnd_338_T_R",
+						"RC_200Rnd_338_T_R",
+						"RC_200Rnd_338_T_R",
 						"Laserbatteries",
+						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
 
@@ -293,11 +296,12 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 				"RC_20Rnd_120mm_APFSDS_T",
 				"RC_20Rnd_120mm_MP_T",
 				"RC_3Rnd_120mm_DLG_cannon_missiles",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
-				"RC_200Rnd_338_T_Mag",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
 
@@ -445,7 +449,7 @@ class RC_MBT6_A_Driverless: RC_MBT6_A_Base
 		class RC_Artillery
 		{
 			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-			//postInit ="(_this select 0) call RC_fnc_addEhsIFV";
+			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -510,7 +514,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 		class RC_Artillery
 		{
 			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-			postInit ="(_this select 0) call RC_fnc_addEhsIFV";
+			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_IFV.hpp"
 		};
 	};
 

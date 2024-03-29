@@ -39,8 +39,8 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 	maxSpeed=70;
-	enginePower=1230;
-	peakTorque=5000;
+	enginePower=1059.9;
+	peakTorque=5386.3;
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
@@ -54,6 +54,7 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	};
 	magazines[]=
 	{
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 
@@ -215,14 +216,14 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 };
 
 
-class RC_ICV_3_A: RC_ICV_APC_1_A
+class RC_ICV_1_A: RC_ICV_APC_1_A
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
 			init="(_this select 0) spawn {{_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-			postInit ="(_this select 0) call fn_RC_addEhsICV";
+			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_ICV.hpp"
 		};
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
@@ -230,7 +231,7 @@ class RC_ICV_3_A: RC_ICV_APC_1_A
 	//RCDisableSeats=3; // locks commander seats
 	//RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 
-	displayName="RC ICV III";
+	displayName="RC ICV I";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -251,11 +252,13 @@ class RC_ICV_3_A: RC_ICV_APC_1_A
 	{
 		class MainTurret: MainTurret
 		{
+			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment3";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
+			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="";
 
@@ -278,6 +281,7 @@ class RC_ICV_3_A: RC_ICV_APC_1_A
 			};
 			magazines[]=
 			{
+				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
 
@@ -361,11 +365,11 @@ class RC_ICV_3_A: RC_ICV_APC_1_A
 		};
 		class CommanderOptics : CommanderOptics
 		{
+			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="";
-			//turretInfoType="RscOptics_MBT_03_gunner";
 			commanding=3;
 
 			weapons[]=
@@ -377,6 +381,7 @@ class RC_ICV_3_A: RC_ICV_APC_1_A
 			magazines[]=
 			{
 				"Laserbatteries",
+				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
 
@@ -468,7 +473,7 @@ class RC_ICV_3_A: RC_ICV_APC_1_A
 		};
 	};
 };
-class RC_ICV_3_A_O: RC_ICV_3_A
+class RC_ICV_1_A_O: RC_ICV_1_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -476,7 +481,7 @@ class RC_ICV_3_A_O: RC_ICV_3_A
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_ICV_3_A_I: RC_ICV_3_A
+class RC_ICV_1_A_I: RC_ICV_1_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -486,7 +491,7 @@ class RC_ICV_3_A_I: RC_ICV_3_A
 };
 
 
-class RC_ICV_3_WD: RC_ICV_3_A
+class RC_ICV_1_WD: RC_ICV_1_A
 {
 	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_rcws_F.jpg";
@@ -498,7 +503,7 @@ class RC_ICV_3_WD: RC_ICV_3_A
 		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
 	};
 };
-class RC_ICV_3_WD_O: RC_ICV_3_WD
+class RC_ICV_1_WD_O: RC_ICV_1_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -506,7 +511,7 @@ class RC_ICV_3_WD_O: RC_ICV_3_WD
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_ICV_3_WD_I: RC_ICV_3_WD
+class RC_ICV_1_WD_I: RC_ICV_1_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -527,7 +532,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 	{
 		class MainTurret: MainTurret
 		{
-			//isCopilot=1; might allow for locality shift if set up correctly
+			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=3;
 
@@ -544,11 +549,12 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 				"RC_50Rnd_40mm_G_belt",
 				"RC_50Rnd_40mm_G_belt",
 				"RC_50Rnd_40mm_G_belt",
-				"RC_200Rnd_127x99_mag_Tracer_Red",
-				"RC_200Rnd_127x99_mag_Tracer_Red",
-				"RC_200Rnd_127x99_mag_Tracer_Red",
-				"RC_200Rnd_127x99_mag_Tracer_Red",
-				"RC_200Rnd_127x99_mag_Tracer_Red",
+				"RC_200Rnd_127x99_T_R",
+				"RC_200Rnd_127x99_T_R",
+				"RC_200Rnd_127x99_T_R",
+				"RC_200Rnd_127x99_T_R",
+				"RC_200Rnd_127x99_T_R",
+				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
 
@@ -663,9 +669,11 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 		};
 		class CommanderOptics : CommanderOptics
 		{
+			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
+			turretInfoType="RscOptics_MBT_03_gunner";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			//turretInfoType="";
+			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			commanding=2;
 
 			weapons[]=
@@ -676,6 +684,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			magazines[]=
 			{
 				"Laserbatteries",
+				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
 
@@ -799,7 +808,7 @@ class RC_APC_1_A: RC_APC_1_A_Base
 		class RC_Artillery
 		{
 			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-			postInit ="(_this select 0) call RC_fn_addEhsIFV";
+			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -874,7 +883,7 @@ class RC_APC_1_A_Driverless: RC_APC_1_A_Base
 		class RC_Artillery
 		{
 			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-			//postInit ="(_this select 0) call RC_fnc_addEhsIFV";
+			//#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_IFV.hpp"
 		};
 	};
 

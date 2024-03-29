@@ -1,15 +1,6 @@
-//Vehicle Smokelauncher
-class SmokeLauncherMag;
-class RC_SmokeLauncherMag: SmokeLauncherMag
-{
-	author="Ascent";
-	count=4;
-};
-	
-	
 //.338 NM Tracer for Vehicle MMG
 class BulletBase;
-class RC_B_338_T: BulletBase
+class RC_B_338_T_R: BulletBase
 {
 	laserLock=1;
 	irLock=1;
@@ -48,59 +39,21 @@ class RC_B_338_T: BulletBase
 		distance=1;
 	};
 };
-
-
-class B_30mm_MP_Tracer_Red;
-class RC_B_30mm_MP_T: B_30mm_MP_Tracer_Red
+class RC_B_338_T_G: RC_B_338_T_R
 {
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-	indirectHit=5;
-	indirectHitRange=4.5;
-	deflecting=1;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
 };
-class B_30mm_APFSDS_Tracer_Red;
-class RC_B_30mm_APFSDS_T: B_30mm_APFSDS_Tracer_Red
-{
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-};
-class B_40mm_GPR_Tracer_Red;
-class RC_B_40mm_MP_T: B_40mm_GPR_Tracer_Red
-{
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-	hit=110;
-	indirectHit=8;
-	indirectHitRange=6;
-	warheadName="HEAT";
-	explosive=0.60000002;
-	caliber=4.5999999;
-	deflecting=1;
-};
-class B_40mm_APFSDS_Tracer_Red;
-class RC_B_40mm_APFSDS_T: B_40mm_APFSDS_Tracer_Red
-{
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-};
-/*
-class G_40mm_Smoke;
-class RC_B_AC_Smoke: G_40mm_Smoke
-{
-	deflecting=0;
-	explosionTime=0.5;
-	timeToLive=120;
-};
-*/
 
 
 class B_127x99_Ball_Tracer_Red;
-class RC_B_127x99_Ball_Tracer_Red: B_127x99_Ball_Tracer_Red
+class RC_B_127x99_Ball_T_R: B_127x99_Ball_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+class B_127x99_Ball_Tracer_Green;
+class RC_B_127x99_Ball_T_G: B_127x99_Ball_Tracer_Green
 {
 	laserLock=1;
 	irLock=1;
@@ -117,6 +70,120 @@ class RC_G_40mm_HEDP: G_40mm_HEDP
 	irLock=1;
 	airLock=1;
 };
+
+
+//MP
+class B_30mm_MP;
+class RC_B_30mm_MP: B_30mm_MP
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	indirectHit=6;
+	indirectHitRange=4;
+	deflecting=1;
+};
+class RC_B_30mm_MP_T_R: RC_B_30mm_MP
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+};
+class RC_B_30mm_MP_T_G: RC_B_30mm_MP
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_40mm_MP_T_R: RC_B_30mm_MP_T_R
+{
+	hit=110;
+	indirectHit=8;
+	indirectHitRange=5;
+	caliber=4.5999999;
+};
+class RC_B_40mm_MP_T_G: RC_B_30mm_MP_T_G
+{
+	hit=110;
+	indirectHit=8;
+	indirectHitRange=5;
+	caliber=4.5999999;
+};
+
+
+//GPR
+class B_40mm_GPR;
+class RC_B_40mm_GPR: B_40mm_GPR
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	indirectHit=8;
+	indirectHitRange=5;
+	caliber=4.5999999;
+	deflecting=1;
+};
+class RC_B_40mm_GPR_T_R: RC_B_40mm_GPR
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+};
+class RC_B_40mm_GPR_T_G: RC_B_40mm_GPR
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_30mm_GPR_T_R: RC_B_40mm_GPR_T_R
+{
+	hit=55;
+	indirectHit=6;
+	indirectHitRange=4;
+	caliber=4.4000001;
+};
+class RC_B_30mm_GPR_T_G: RC_B_40mm_GPR_T_G
+{
+	hit=55;
+	indirectHit=6;
+	indirectHitRange=4;
+	caliber=4.4000001;
+};
+
+
+class B_30mm_APFSDS_Tracer_Red;
+class RC_B_30mm_APFSDS_T_R: B_30mm_APFSDS_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+class B_30mm_APFSDS_Tracer_Green;
+class RC_B_30mm_APFSDS_T_G: B_30mm_APFSDS_Tracer_Green
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+
+
+class B_40mm_APFSDS_Tracer_Red;
+class RC_B_40mm_APFSDS_T_R: B_40mm_APFSDS_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+class B_40mm_APFSDS_Tracer_Green;
+class RC_B_40mm_APFSDS_T_G: B_40mm_APFSDS_Tracer_Green
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+
+
+/*
+class G_40mm_Smoke;
+class RC_B_AC_Smoke: G_40mm_Smoke
+{
+	deflecting=0;
+	explosionTime=0.5;
+	timeToLive=120;
+};
+*/
 
 
 class ammo_Penetrator_Base;

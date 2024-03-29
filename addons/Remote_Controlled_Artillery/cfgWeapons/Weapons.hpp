@@ -1,17 +1,3 @@
-//Vehicle Smokelauncher
-class SmokeLauncher;
-class RC_SmokeLauncher: SmokeLauncher
-{
-	author="Ascent";
-	magazines[]=
-	{
-		"RC_SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-	reloadTime=2;
-};
-
-
 //vehicle laser designator that can lock datalink targets 
 class Laserdesignator_mounted;
 class RC_Laserdesignator_mounted: Laserdesignator_mounted
@@ -151,7 +137,8 @@ class RC_MMG_338_FSV: RC_MMG_338_FSV_Base
 	FCSZeroingDelay=0.75;
 	magazines[]=
 	{
-		"RC_200Rnd_338_T_Mag"
+		"RC_200Rnd_338_T_R",
+		"RC_200Rnd_338_T_G"
 	};
 	class manual: manual
 	{
@@ -185,7 +172,8 @@ class RC_MMG_338_MBT: RC_MMG_338_MBT_Base
 	FCSZeroingDelay=0.75;
 	magazines[]=
 	{
-		"RC_200Rnd_338_T_Mag"
+		"RC_200Rnd_338_T_R",
+		"RC_200Rnd_338_T_G"
 	};
 	class manual: manual
 	{
@@ -219,7 +207,8 @@ class RC_MMG_338_IFV_2: RC_MMG_338_IFV_2_Base
 	FCSZeroingDelay=0.75;
 	magazines[]=
 	{
-		"RC_200Rnd_338_T_Mag"
+		"RC_200Rnd_338_T_R",
+		"RC_200Rnd_338_T_G"
 	};
 	class manual: manual
 	{
@@ -241,7 +230,8 @@ class RC_MMG_338_IFV_1: RC_MMG_338_IFV_1_Base
 	FCSZeroingDelay=0.75;
 	magazines[]=
 	{
-		"RC_200Rnd_338_T_Mag"
+		"RC_200Rnd_338_T_R",
+		"RC_200Rnd_338_T_G"
 	};
 	class manual: manual
 	{
@@ -269,7 +259,10 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	{
 		magazines[]=
 		{
-			"RC_100Rnd_30mm_MP_T"
+			"RC_100Rnd_30mm_MP_T_R",
+			"RC_100Rnd_30mm_MP_T_G",
+			"RC_100Rnd_30mm_GPR_T_R",
+			"RC_100Rnd_30mm_GPR_T_G"
 			//"RC_100Rnd_30mm_Smoke"
 		};
 	};
@@ -277,7 +270,8 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	{
 		magazines[]=
 		{
-			"RC_100Rnd_30mm_APFSDS_T"
+			"RC_100Rnd_30mm_APFSDS_T_R",
+			"RC_100Rnd_30mm_APFSDS_T_G"
 		};
 	};
 };
@@ -300,7 +294,10 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	{
 		magazines[]=
 		{
-			"RC_50Rnd_40mm_MP_T"
+			"RC_50Rnd_40mm_MP_T_R",
+			"RC_50Rnd_40mm_MP_T_G",
+			"RC_50Rnd_40mm_GPR_T_R",
+			"RC_50Rnd_40mm_GPR_T_G"
 			//"RC_50Rnd_40mm_Smoke"
 		};
 	};
@@ -308,7 +305,8 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	{
 		magazines[]=
 		{
-			"RC_50Rnd_40mm_APFSDS_T"
+			"RC_50Rnd_40mm_APFSDS_T_R",
+			"RC_50Rnd_40mm_APFSDS_T_G"
 		};
 	};
 };
@@ -323,8 +321,10 @@ class RC_HMG_127_APC: HMG_127_APC
 
 	magazines[]=
 	{
-		"RC_200Rnd_127x99_mag_Tracer_Red",
-		"RC_100Rnd_127x99_mag_Tracer_Red"
+		"RC_200Rnd_127x99_T_R",
+		"RC_100Rnd_127x99_T_R",
+		"RC_200Rnd_127x99_T_G",
+		"RC_100Rnd_127x99_T_G"
 	};
 };
 

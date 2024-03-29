@@ -37,9 +37,12 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 ASAP:
--smoke launcher mags all assets
--commander optics
--GPR 30/40mm, 1m DF
+-driverless "take controls" check
+-check if "release controls" triggers script and assigns someone else
+-test g/c "take controls" in mp
+-ICV gunner needs different EH, only shows take controls not release, test if take activates EH
+-"release controls to overwrite drive controls", "overwritten driver controls", vehicle player vehicleChat "vehicleChat";
+	*what if statement to check if EH client is in vehicle? to not trigger message multiple times
 
 
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
@@ -267,7 +270,6 @@ DONE - FEATURES:
 -bugfixed gps target inaccurate positioning
 -added very faint controls display
 -added IFV with automated driver and improved FOV
--added 40mm MP-T ammo
 -added datalink guided NLOS AT/AA Missiles for IFV's
 -found out that without ace Mortars dont shoot correctly without vanilla artillery computer, added script that when its disabled and ace is not installed, its still available for mortars
 -added disableable warning that activates when ace is installed which informs that ace adjustable scopes block elevation with overlapping hotkeys
@@ -291,6 +293,10 @@ new:
 -added semi manned Recon ATGM & Mortar Carrier
 -added Leopard MBT, Namer APC/ICV, Otokar ARMA 6x6 APC/ICV, BTR Kamysh IFV/ICV, Warrior IFV/ICV
 -added laser warning receivers
+-added 30/40mm MP
+-added 30/40mm gunnerOpticsModel
+-added red/green tracer variant
+-added "take control" allowing gunner/commander take driving controls (press both take controls then release controls to activate correctly)
 
 
 
