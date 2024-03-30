@@ -435,7 +435,7 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 					"NVG",
 					"Ti"
 				};
-				thermalMode[]={0,1};
+				thermalMode[]={0};
 			};
 		};
 	};

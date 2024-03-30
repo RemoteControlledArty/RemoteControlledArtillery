@@ -189,17 +189,17 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 			initPhase=1;
 			mass=-50;
 		};
-		animationList[]=
-		{
-			"showTracks",
-			0,
-			"showCamonetHull",
-			1,
-			"showBags",
-			0,
-			"showSLATHull",
-			1
-		};
+	};
+	animationList[]=
+	{
+		"showTracks",
+		0,
+		"showCamonetHull",
+		1,
+		"showBags",
+		0,
+		"showSLATHull",
+		1
 	};
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
@@ -551,7 +551,7 @@ class RC_ICV_5_WD: RC_ICV_5_A
 };
 
 
-class RC_IFV_5_A: RC_ICV_IFV_5_A
+class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -643,7 +643,7 @@ class RC_IFV_5_A: RC_ICV_IFV_5_A
 						"Normal",
 						"TI"
 					};
-					thermalMode[]={0,1};
+					thermalMode[]={0};
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_APC_03_m_F.p3d";
 					gunnerOpticsEffect[]={};
@@ -693,7 +693,7 @@ class RC_IFV_5_A: RC_ICV_IFV_5_A
 								"Normal",
 								"TI"
 							};
-							thermalMode[]={0,1};
+							thermalMode[]={0};
 							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 							//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
@@ -715,7 +715,7 @@ class RC_IFV_5_A: RC_ICV_IFV_5_A
 							"Normal",
 							"TI"
 						};
-						thermalMode[]={0,1};
+						thermalMode[]={0};
 					};
 					*/
 
@@ -933,7 +933,7 @@ class RC_IFV_5_A: RC_ICV_IFV_5_A
 };
 
 
-class RC_IFV_5_WD: RC_IFV_5_A
+class RC_IFV_5_WD_O: RC_IFV_5_A_O
 {
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_cannon_ghex_F.jpg";
 	textureList[]=

@@ -783,7 +783,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 						"Normal",
 						"TI"
 					};
-					thermalMode[]={0,1};
+					thermalMode[]={0};
 					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_APC_03_m_F.p3d";
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
@@ -832,7 +832,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 								"Normal",
 								"TI"
 							};
-							thermalMode[]={0,1};
+							thermalMode[]={0};
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 							gunnerOpticsEffect[]={};
@@ -853,7 +853,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 							"Normal",
 							"TI"
 						};
-						thermalMode[]={0,1};
+						thermalMode[]={0};
 					};
 					*/
 

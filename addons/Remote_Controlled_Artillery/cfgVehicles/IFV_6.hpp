@@ -268,7 +268,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=3;
-			minElev=-10.6;
+			//minElev=-10.6;
 			maxElev=40;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
@@ -321,7 +321,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 						"Normal",
 						"TI"
 					};
-					thermalMode[]={0,1};
+					thermalMode[]={0};
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
@@ -369,7 +369,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 								"Normal",
 								"TI"
 							};
-							thermalMode[]={0,1};
+							thermalMode[]={0};
 							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 							gunnerOpticsEffect[]={};
@@ -390,7 +390,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 							"Normal",
 							"TI"
 						};
-						thermalMode[]={0,1};
+						thermalMode[]={0};
 					};
 					*/
 

@@ -369,7 +369,8 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 			showAllTargets="2 + 4";
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			turretInfoType="";
+			turretInfoType="RscWeaponRangeFinder";
+			//turretInfoType="";
 			commanding=3;
 
 			weapons[]=
@@ -570,7 +571,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 					"NVG",
 					"TI"
 				};
-				thermalMode[]={0,1};
+				thermalMode[]={0};
 			};
 
 			class Components: Components
@@ -700,7 +701,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 					"NVG",
 					"TI"
 				};
-				thermalMode[]={0,1};
+				thermalMode[]={0};
 			};
 
 			class Components: Components
@@ -812,7 +813,7 @@ class RC_APC_1_A: RC_APC_1_A_Base
 		};
 	};
 
-	displayName="RC APC I";
+	displayName="APC I";
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -876,6 +877,7 @@ class RC_APC_1_WD_I: RC_APC_1_WD
 };
 
 
+/*
 class RC_APC_1_A_Driverless: RC_APC_1_A_Base
 {
 	class EventHandlers: EventHandlers
@@ -938,3 +940,4 @@ class RC_APC_1_WD_Driverless_I: RC_APC_1_WD_Driverless
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
 };
+*/

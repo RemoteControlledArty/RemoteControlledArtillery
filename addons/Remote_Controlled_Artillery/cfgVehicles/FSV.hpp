@@ -175,7 +175,7 @@ class RC_FSV_A: RC_FSV_A_Base
 						"Normal",
 						"TI"
 					};
-					thermalMode[]={0,1};
+					thermalMode[]={0};
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
@@ -292,6 +292,7 @@ class RC_FSV_A: RC_FSV_A_Base
 					isCopilot=1; //allows to trigger EH that gives driving controls
 					showAllTargets="2 + 4";
 					commanding=1;
+					turretInfoType="RscOptics_MBT_03_gunner";
 
 					weapons[]=
 					{
@@ -330,8 +331,9 @@ class RC_FSV_A: RC_FSV_A_Base
 								"Normal",
 								"TI"
 							};
-							thermalMode[]={0,1};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_m_F.p3d";
+							thermalMode[]={0};
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_m_F.p3d";
 							gunnerOpticsEffect[]={};
 						};
 					};
@@ -352,7 +354,7 @@ class RC_FSV_A: RC_FSV_A_Base
 							"Normal",
 							"TI"
 						};
-						thermalMode[]={0,1};
+						thermalMode[]={0};
 					};
 					*/
 					class Components: Components

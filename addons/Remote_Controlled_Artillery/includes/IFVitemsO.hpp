@@ -28,9 +28,9 @@ class TransportMagazines
 };
 class TransportItems
 {
-	class _xx_B_UavTerminal
+	class _xx_O_UavTerminal
 	{
-		name="B_UavTerminal";
+		name="O_UavTerminal";
 		count=2;
 	};
 	class _xx_Toolkit

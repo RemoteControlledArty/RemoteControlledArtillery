@@ -116,6 +116,7 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 					isCopilot=1; //allows to trigger EH that gives driving controls
 					showAllTargets="2 + 4";
 					commanding=1;
+					turretInfoType="RscOptics_MBT_03_gunner";
 
 					weapons[]=
 					{
@@ -154,8 +155,9 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 								"Normal",
 								"TI"
 							};
-							thermalMode[]={0,1};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_m_F.p3d";
+							thermalMode[]={0};
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_m_F.p3d";
 							gunnerOpticsEffect[]={};
 						};
 					};
@@ -176,7 +178,7 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 							"Normal",
 							"TI"
 						};
-						thermalMode[]={0,1};
+						thermalMode[]={0};
 					};
 					*/
 					class Components: Components
@@ -301,6 +303,7 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 				"RC_200Rnd_338_T_R",
 				"RC_200Rnd_338_T_R",
 				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -326,7 +329,7 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 						"Normal",
 						"TI"
 					};
-					thermalMode[]={0,1};
+					thermalMode[]={0};
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
@@ -458,7 +461,7 @@ class RC_MBT6_A_Driverless: RC_MBT6_A_Base
 	side=1;
 	forceInGarage=1;
 
-	displayName="MBT [6 Inf]";
+	displayName="DL MBT [6 Inf]";
 	crew="";
 	hasDriver=-1;
 };
@@ -506,7 +509,6 @@ class RC_MBT6_WD_Driverless_I: RC_MBT6_WD_Driverless
 };
 
 
-/*
 class RC_MBT6_A: RC_MBT6_A_Base
 {
 	class EventHandlers: EventHandlers
@@ -578,4 +580,3 @@ class RC_MBT6_WD_I: RC_MBT6_WD
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
 };
-*/

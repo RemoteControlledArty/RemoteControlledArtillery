@@ -223,6 +223,20 @@ class CfgPatches
 			RC_ICV_3_A_O,
 			RC_ICV_3_WD_O,
 
+			RC_ICV_4_A,
+			RC_ICV_4_WD,
+			RC_ICV_4_A_I,
+			RC_ICV_4_WD_I,
+			RC_ICV_4_A_O,
+			RC_ICV_4_WD_O,
+
+			RC_ICV_5_A,
+			RC_ICV_5_WD,
+			RC_ICV_5_A_I,
+			RC_ICV_5_WD_I,
+			RC_ICV_5_A_O,
+			RC_ICV_5_WD_O,
+
 			RC_APC_1_A,
 			RC_APC_1_WD,
 			RC_APC_1_A_O,
@@ -230,26 +244,33 @@ class CfgPatches
 			RC_APC_1_A_I,
 			RC_APC_1_WD_I,
 
-			RC_APC_1_A_Driverless,
-			RC_APC_1_WD_Driverless,
-			RC_APC_1_A_Driverless_O,
-			RC_APC_1_WD_Driverless_O,
-			RC_APC_1_A_Driverless_I,
-			RC_APC_1_WD_Driverless_I,
+			RC_APC_2_A_O,
+			RC_APC_2_WD_O,
 
-			RC_IFV_1_A,
-			RC_IFV_1_WD,
-			RC_IFV_1_A_O,
-			RC_IFV_1_WD_O,
-			RC_IFV_1_A_I,
-			RC_IFV_1_WD_I,
+			RC_IFV_3_A,
+			RC_IFV_3_WD,
+			RC_IFV_3_A_O,
+			RC_IFV_3_WD_O,
+			RC_IFV_3_A_I,
+			RC_IFV_3_WD_I,
+			RC_IFV_3_DIG_I,
 
-			RC_IFV_2_A,
-			RC_IFV_2_WD,
-			RC_IFV_2_A_O,
-			RC_IFV_2_WD_O,
-			RC_IFV_2_A_I,
-			RC_IFV_2_WD_I,
+			RC_IFV_4_A,
+			RC_IFV_4_WD,
+			RC_IFV_4_A_O,
+			RC_IFV_4_WD_O,
+			RC_IFV_4_A_I,
+			RC_IFV_4_WD_I,
+
+			RC_IFV_5_A_O,
+			RC_IFV_5_WD_O,
+
+			RC_IFV_6_DIG,
+			RC_IFV_6_WD,
+			RC_IFV_6_DIG_O,
+			RC_IFV_6_WD_O,
+			RC_IFV_6_DIG_I,
+			RC_IFV_6_WD_I,
 
 			RC_FSV_A,
 			RC_FSV_WD,
@@ -258,12 +279,33 @@ class CfgPatches
 			RC_FSV_A_I,
 			RC_FSV_WD_I,
 
+			RC_MBT6_A,
+			RC_MBT6_WD,
+			RC_MBT6_A_O,
+			RC_MBT6_WD_O,
+			RC_MBT6_A_I,
+			RC_MBT6_WD_I,
+
 			RC_MBT6_A_Driverless,
 			RC_MBT6_WD_Driverless,
 			RC_MBT6_A_Driverless_O,
 			RC_MBT6_WD_Driverless_O,
 			RC_MBT6_A_Driverless_I,
 			RC_MBT6_WD_Driverless_I,
+
+			RC_MBT_A,
+			RC_MBT_WD,
+			RC_MBT_A_O,
+			RC_MBT_WD_O,
+			RC_MBT_A_I,
+			RC_MBT_WD_I,
+
+			RC_MBT_A_Driverless,
+			RC_MBT_WD_Driverless,
+			RC_MBT_A_Driverless_O,
+			RC_MBT_WD_Driverless_O,
+			RC_MBT_A_Driverless_I,
+			RC_MBT_WD_Driverless_I,
 
 			RC_GPSDatalinkTarget
 		};
@@ -456,14 +498,14 @@ class CfgVehicles
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_1.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_2.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_IFV_3.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_IFV_4.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_IFV_5.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\IFV_6.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_1.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_1.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Recon.hpp"

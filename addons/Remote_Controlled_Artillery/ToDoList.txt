@@ -33,25 +33,28 @@ TO DO - BUGFIXES:
 -CHANGE UAV CHECK, cfg checks/create effect AFTER connected check, in both scripts.
 -maybe include blur in main loop to reduce checks
 
+-fix kamysh turnout
+
 
 TO DO - FEATURES:
 
 ASAP:
+-add turret to Marid
+-when someone took controls per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
+-test special marid, O_APC_Wheeled_02_rcws_F, not O_APC_Wheeled_02_rcws_v2_F
 -driverless "take controls" check
 -check if "release controls" triggers script and assigns someone else
 -test g/c "take controls" in mp
--ICV gunner needs different EH, only shows take controls not release, test if take activates EH
 -"release controls to overwrite drive controls", "overwritten driver controls", vehicle player vehicleChat "vehicleChat";
 	*what if statement to check if EH client is in vehicle? to not trigger message multiple times
 
-
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
--non UGV tracked IFV (Warrior with less shit hitpoints)
 -fix for someone remotecontrolling gunner player, bugging them
 -video about vics
 
 
 generally:
+-AR-1 script include for night use: https://community.bistudio.com/wiki/disableTIEquipment
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
 -hullexplosiondelay doesnt work for Namer?
 -update list & readme
