@@ -39,6 +39,8 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 ASAP:
+-MORTAR CARRIER MORTAR DOESNT spawn
+
 -add turret to Marid
 -when someone took controls per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
 -test special marid, O_APC_Wheeled_02_rcws_F, not O_APC_Wheeled_02_rcws_v2_F
