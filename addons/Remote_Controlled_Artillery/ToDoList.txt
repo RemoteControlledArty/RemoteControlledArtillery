@@ -33,15 +33,13 @@ TO DO - BUGFIXES:
 -CHANGE UAV CHECK, cfg checks/create effect AFTER connected check, in both scripts.
 -maybe include blur in main loop to reduce checks
 
--fix kamysh turnout
+-fix BM-2T (IFV V) turnout
 
 
 TO DO - FEATURES:
 
 ASAP:
--remove DL Mortar Carrier
-
--when someone took controls per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
+-when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
 -driverless "take controls" check
 -check if "release controls" triggers script and assigns someone else
 -test g/c "take controls" in mp
@@ -57,13 +55,13 @@ ASAP:
 
 
 generally:
+-update list & readme
+
 -AR-1 script include for night use: https://community.bistudio.com/wiki/disableTIEquipment
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
 -hullexplosiondelay doesnt work for Namer?
--update list & readme
 -engineoff script doesnt need to be in init if person is connected to uav, with soon arma update it also wouldnt block taking controls for gaining locality, for example when the other is uncon
 -doublecheck "min/max" range exact function on sensors
-
 -set ejectdeadcrew to true?
 
 -*notetoself: emty uav/ugv, can be hacked, which spawns gunner, which then can bug my "go to commander"
@@ -74,14 +72,15 @@ generally:
 	cargoCanControlUAV=0;
 	Added: A new DriverOpticsIn parameter for vehicle drivers (similar to turret OpticsIn, but it uses OpticsModel instead gunnerOpticsModel for the optics model)
 
--stabilization impacts aiming?
+-stabilization cfg value (camera lock) negatively impacts aiming?
 -IFV II 30mm + ATGM
 -fix driverview on IFV/FSV/MBT & Trucks
--soon with arma update connectionfix wont be needed anymore
+-soon with arma update connectionfix likely wont be needed anymore
 
 
 Arty:
 -minimum datalink distance 50m instead of 20m / or "object" recognition & display
+-autonomous off JIP global execute?
 
 -test FCS without ace on uneven ground
 -adding FCS, and Airburst rounds, to a mods 60mm quick deployable Mortar
@@ -90,17 +89,13 @@ Arty:
 -comment for round like "smoke", for example below T: 01 UI, for better coordination and less required radio chatter
 -peak ASL formula and display infront of ETA, optimal but a bit much UI would be also be ASL at 25% of distance, to estimate if rounds will collide with hills close to gun/target
 
--autonomous off JIP global execute?
-
 -make delayed fuze also ir capable for gps targets  *might require sicnificant change of the round as people might use it against vehicles, but its currently not HEAT
 
 
 FSV/IFV:
--invert locality script for ICV's
 -smoke ammo, 40mm bulletbase change to shotshellbase with smoke submunition
--more RC ICV's / APC's / IVF's / MBT's
 -check ICV engine off on server *needs remoteexecute?
--additional x2 SACLOS only missles, vorona or edited titan
+-SACLOS missle only versions?
 -automatic switch to left missilecamera when missile is launched
 
 
@@ -137,7 +132,6 @@ IDEAS - FAR FUTURE:
 -disconnect uav/ugv from terminal script when vanilla incapacitated / ace unconcious
 
 -AR-0.5 pvp, with 1.5 zoom to force low flying, shortrange sensors, no thermal, but laser designator
--RC Marid with upgraded engines 7.62x51 and smoke GL
 -test passive radar shells against active radar AA
 -video partially at night for rocket and explosion effects
 -make MLRS/MRL rockets appear in launcher (if possible)
