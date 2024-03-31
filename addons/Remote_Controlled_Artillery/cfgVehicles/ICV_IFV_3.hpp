@@ -321,7 +321,7 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 			if (!local (_this select 0)) exitwith {}; \
 			(_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
 			
-			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_ICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
 		};
 	};
 	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
@@ -702,7 +702,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 				waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; \
 			};";
 			
-			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
 

@@ -277,7 +277,7 @@ class RC_ICV_2_A_O: RC_ICV_IFV_2_A
 			if (!local (_this select 0)) exitwith {}; \
 			(_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
 			
-			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_ICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
 		};
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
@@ -627,7 +627,7 @@ class RC_IFV_2_A_O: RC_ICV_IFV_2_A
 				waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; \
 			};";
 			
-			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
 
