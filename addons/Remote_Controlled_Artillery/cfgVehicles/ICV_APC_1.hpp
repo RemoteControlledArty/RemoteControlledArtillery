@@ -79,34 +79,34 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -123,7 +123,7 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750,375};
+					range[]={4000,2000,1000,500};
 					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay
@@ -154,7 +154,7 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750,375};
+					range[]={4000,2000,1000,500};
 					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay
@@ -194,7 +194,7 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
 
 
@@ -204,14 +204,11 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	{
 		class RC_Artillery
 		{
-			init="(_this select 0) spawn {{_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			#include "\Remote_Controlled_Artillery\includes\initICV.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
 		};
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
-
-	//RCDisableSeats=3; // locks commander seats
-	//RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 
 	displayName="RC ICV I";
 	editorSubcategory="RC_ICV_subcat";
@@ -234,7 +231,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	{
 		class MainTurret: MainTurret
 		{
-			isCopilot=1; //allows to trigger EH that gives driving controls
+			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment3";
 			commanding=2;
@@ -292,7 +289,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						*/
@@ -329,7 +326,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						*/
@@ -347,7 +344,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 		};
 		class CommanderOptics : CommanderOptics
 		{
-			isCopilot=1; //allows to trigger EH that gives driving controls
+			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
@@ -404,7 +401,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						/*
@@ -439,7 +436,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						/*
@@ -462,7 +459,7 @@ class RC_ICV_1_A_O: RC_ICV_1_A
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_ICV_1_A_I: RC_ICV_1_A
 {
@@ -470,7 +467,7 @@ class RC_ICV_1_A_I: RC_ICV_1_A
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
@@ -492,7 +489,7 @@ class RC_ICV_1_WD_O: RC_ICV_1_WD
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_ICV_1_WD_I: RC_ICV_1_WD
 {
@@ -500,7 +497,7 @@ class RC_ICV_1_WD_I: RC_ICV_1_WD
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
@@ -515,7 +512,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 	{
 		class MainTurret: MainTurret
 		{
-			isCopilot=1; //allows to trigger EH that gives driving controls
+			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
@@ -569,7 +566,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						class VehicleDriverDisplay
@@ -614,7 +611,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						class VehicleDriverDisplay
@@ -654,7 +651,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 		};
 		class CommanderOptics : CommanderOptics
 		{
-			isCopilot=1; //allows to trigger EH that gives driving controls
+			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			turretInfoType="RscOptics_MBT_03_gunner";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
@@ -699,7 +696,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						class VehicleDriverDisplay
@@ -744,7 +741,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						class VehicleDriverDisplay
@@ -792,7 +789,7 @@ class RC_APC_1_A: RC_APC_1_A_Base
 	{
 		class RC_Artillery
 		{
-			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -819,7 +816,7 @@ class RC_APC_1_A_O: RC_APC_1_A
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_APC_1_A_I: RC_APC_1_A
 {
@@ -827,7 +824,7 @@ class RC_APC_1_A_I: RC_APC_1_A
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
@@ -849,7 +846,7 @@ class RC_APC_1_WD_O: RC_APC_1_WD
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_APC_1_WD_I: RC_APC_1_WD
 {
@@ -857,7 +854,7 @@ class RC_APC_1_WD_I: RC_APC_1_WD
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
@@ -868,7 +865,7 @@ class RC_APC_1_A_Driverless: RC_APC_1_A_Base
 	{
 		class RC_Artillery
 		{
-			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
 			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -887,14 +884,14 @@ class RC_APC_1_A_Driverless_O: RC_APC_1_A_Driverless
 	faction="RemoteControlled_O";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_APC_1_A_Driverless_I: RC_APC_1_A_Driverless
 {
 	faction="RemoteControlled_I";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
@@ -915,13 +912,13 @@ class RC_APC_1_WD_Driverless_O: RC_APC_1_WD_Driverless
 	faction="RemoteControlled_O";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_APC_1_WD_Driverless_I: RC_APC_1_WD_Driverless
 {
 	faction="RemoteControlled_I";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 */

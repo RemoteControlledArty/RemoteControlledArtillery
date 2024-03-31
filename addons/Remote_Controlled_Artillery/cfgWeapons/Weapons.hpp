@@ -134,7 +134,7 @@ class RC_MMG_338_FSV: RC_MMG_338_FSV_Base
 	displayName="coaxial MMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -171,7 +171,7 @@ class RC_MMG_338_MBT: RC_MMG_338_MBT_Base
 	displayName="coaxial MMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -208,7 +208,7 @@ class RC_MMG_338_coax: RC_MMG_338_coax_Base
 	displayName="coaxial MMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -225,7 +225,9 @@ class RC_MMG_93x64_coax: RC_MMG_338_coax
 	magazines[]=
 	{
 		"RC_200Rnd_93x64_T_G",
-		"RC_200Rnd_93x64_T_R"
+		"RC_200Rnd_93x64_T_R",
+		"RC_1000Rnd_93x64_T_G",
+		"RC_1000Rnd_93x64_T_R"
 	};
 	class manual: manual
 	{
@@ -245,7 +247,7 @@ class RC_MMG_338_coax_ext: RC_MMG_338_coax_ext_Base
 	displayName="coaxial MMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -282,7 +284,7 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 {
 	author="Ascent";
 	canLock=2;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 
 	class HE: HE
@@ -317,7 +319,7 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 {
 	author="Ascent";
 	canLock=2;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 
 	class HE: HE
@@ -347,7 +349,7 @@ class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
 {
 	author="Ascent";
 	canLock=2;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 
 	magazines[]=
 	{
@@ -360,11 +362,21 @@ class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
 
 
 class HMG_127_APC;
-class RC_HMG_127_APC: HMG_127_APC
+class HMG_127_APC_Base: HMG_127_APC
+{
+	class manual;
+};
+class RC_HMG_127_APC: HMG_127_APC_Base
 {
 	author="Ascent";
 	canLock=2;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
+	maxZeroing=3000;
+
+	class manual: manual
+	{
+		dispersion=0.001;
+	};
 
 	magazines[]=
 	{
@@ -375,13 +387,22 @@ class RC_HMG_127_APC: HMG_127_APC
 	};
 };
 
-
 class GMG_40mm;
-class RC_GMG_40mm: GMG_40mm
+class GMG_40mm_Base: GMG_40mm
+{
+	class manual;
+};
+class RC_GMG_40mm: GMG_40mm_Base
 {
 	author="Ascent";
 	canLock=2;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
+	maxZeroing=3000;
+
+	class manual: manual
+	{
+		dispersion=0.0025;
+	};
 
 	magazines[]=
 	{
@@ -400,7 +421,7 @@ class RC_cannon_120mm: cannon_120mm
 	canLock=2;
 	reloadTime=5;
 	magazineReloadTime=5;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	FCSMaxLeadSpeed=30;
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	magazines[]=

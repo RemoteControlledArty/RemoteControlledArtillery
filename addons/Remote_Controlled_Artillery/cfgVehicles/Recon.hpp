@@ -13,7 +13,6 @@ class RC_AA_small_Base: I_LT_01_AA_F
 	class Components;
 	scope=0;
 	scopeCurator=0;
-	//RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_AA_small_WD: RC_AA_small_Base
@@ -316,7 +315,6 @@ class RC_radar_small_Base: I_LT_01_scout_F
 	scope=0;
 	scopeCurator=0;
 	forceHideDriver=1;
-	//RCDisableSeats=6; // locks gunner and commander seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	
 };
@@ -370,6 +368,55 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				/*
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=2000;
+
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
+					animDirection="mainGun";
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=1000;
+
+					class AirTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
+					animDirection="mainGun";
+				};
+				*/
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -604,6 +651,7 @@ class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
 
 
 //semi manned version
+/*
 class RC_Mortar_Carrier_WD_Driverless: RC_radar_small_WD_Base
 {
 	class EventHandlers: EventHandlers
@@ -659,6 +707,7 @@ class RC_Mortar_Carrier_DIG_Driverless_I: RC_Mortar_Carrier_WD_Driverless_I
 		"A3\armor_f\data\cage_aaf_co.paa"
 	};
 };
+*/
 
 
 class I_LT_01_AT_F;
@@ -677,7 +726,6 @@ class RC_ATGM_small_Base: I_LT_01_AT_F
 	//class EventHandlers;
 	scope=0;
 	scopeCurator=0;
-	//RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_ATGM_small_WD_Base: RC_ATGM_small_Base

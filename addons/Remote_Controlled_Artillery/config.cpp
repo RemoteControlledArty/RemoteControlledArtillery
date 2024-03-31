@@ -2,7 +2,7 @@ class CfgPatches
 {
 	class RC_Artillery
 	{
-		name="!Remote Controlled - Artillery, ATGM, AA!";
+		name="!Remote Controlled Artillery Dev!";
 		author="Ascent, Fluffy, Eric";
 
 		units[]=
@@ -151,8 +151,8 @@ class CfgPatches
 
 			RC_Mortar_Carrier_WD,
 			RC_Mortar_Carrier_WD_O,
-			RC_Mortar_Carrier_DIG_I,
 			RC_Mortar_Carrier_WD_I,
+			RC_Mortar_Carrier_DIG_I,
 
 			RC_UAV_AR1,
 			RC_UAV_AR3,

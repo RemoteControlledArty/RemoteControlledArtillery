@@ -32,6 +32,6 @@ class RC_GPSDatalinkTarget: All
 	artilleryTarget=0;	//1 would make it unlockable on datalink panel by all rounds
 	destrType="DestructNo";
 	side=3;
-	cost=0;
+	//cost=0;
 	armor=500;
 };

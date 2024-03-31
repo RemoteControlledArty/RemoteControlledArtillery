@@ -16,8 +16,6 @@ class RC_MBT_2_Base: I_MBT_03_cannon_F
 	class Wide;
 	scope=0;
 	scopeCurator=0;
-	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_MBT_2_A_Base: RC_MBT_2_Base
@@ -41,7 +39,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 	//canAccessMineDetector=1;	//doesnt work yet
 	maxSpeed=70;
 	enginePower=1537.5;
-	peakTorque=6000;
+	peakTorque=6250;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 
@@ -63,34 +61,34 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=67000;
+					typeRecognitionDistance=4000;
 
 					class AirTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -103,7 +101,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 	{
 		class MainTurret: MainTurret
 		{
-			isCopilot=1; //allows to trigger EH that gives driving controls
+			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=2;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -158,7 +156,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					isCopilot=1; //allows to trigger EH that gives driving controls
+					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					commanding=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
@@ -246,7 +244,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
+									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
 								class VehicleMissileDisplay
@@ -296,7 +294,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
+									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
 								class VehicleMissileDisplay
@@ -352,7 +350,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						class VehicleMissileDisplay
@@ -402,7 +400,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						class VehicleMissileDisplay
@@ -458,7 +456,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
 };
 
 
@@ -469,8 +467,8 @@ class RC_MBT_2_A_Driverless: RC_MBT_2_A_Base
 	{
 		class RC_Artillery
 		{
-			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -488,14 +486,14 @@ class RC_MBT_2_A_Driverless_O: RC_MBT_2_A_Driverless
 	faction="RemoteControlled_O";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
 class RC_MBT_2_A_Driverless_I: RC_MBT_2_A_Driverless
 {
 	faction="RemoteControlled_I";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };
 
 
@@ -514,14 +512,14 @@ class RC_MBT_2_WD_Driverless_O: RC_MBT_2_WD_Driverless
 	faction="RemoteControlled_O";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
 class RC_MBT_2_WD_Driverless_I: RC_MBT_2_WD_Driverless
 {
 	faction="RemoteControlled_I";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };
 
 
@@ -532,7 +530,7 @@ class RC_MBT_2_A: RC_MBT_2_A_Base
 	{
 		class RC_Artillery
 		{
-			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -557,7 +555,7 @@ class RC_MBT_2_A_O: RC_MBT_2_A
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
 class RC_MBT_2_A_I: RC_MBT_2_A
 {
@@ -565,7 +563,7 @@ class RC_MBT_2_A_I: RC_MBT_2_A
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };
 
 
@@ -585,7 +583,7 @@ class RC_MBT_2_WD_O: RC_MBT_2_WD
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
 class RC_MBT_2_WD_I: RC_MBT_2_WD
 {
@@ -593,5 +591,5 @@ class RC_MBT_2_WD_I: RC_MBT_2_WD
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };

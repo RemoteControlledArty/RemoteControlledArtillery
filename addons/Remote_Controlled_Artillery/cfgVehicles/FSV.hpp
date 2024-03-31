@@ -20,8 +20,6 @@ class RC_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 	class HitRF2Wheel;
 	scope=0;
 	scopeCurator=0;
-	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_FSV_A: RC_FSV_A_Base
@@ -30,7 +28,7 @@ class RC_FSV_A: RC_FSV_A_Base
 	{
 		class RC_Artillery
 		{
-			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -80,34 +78,34 @@ class RC_FSV_A: RC_FSV_A_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=67000;
+					typeRecognitionDistance=4000;
 
 					class AirTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -132,7 +130,7 @@ class RC_FSV_A: RC_FSV_A_Base
 	{
 		class MainTurret: MainTurret
 		{
-			isCopilot=1; //allows to trigger EH that gives driving controls
+			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=2;
 
@@ -289,7 +287,7 @@ class RC_FSV_A: RC_FSV_A_Base
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					isCopilot=1; //allows to trigger EH that gives driving controls
+					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					commanding=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
@@ -551,7 +549,7 @@ class RC_FSV_A: RC_FSV_A_Base
 		};
 	};
 	
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
 };
 class RC_FSV_A_O: RC_FSV_A
 {
@@ -559,7 +557,7 @@ class RC_FSV_A_O: RC_FSV_A
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
 class RC_FSV_A_I: RC_FSV_A
 {
@@ -567,7 +565,7 @@ class RC_FSV_A_I: RC_FSV_A
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };
 class RC_FSV_WD: RC_FSV_A
 {
@@ -596,7 +594,7 @@ class RC_FSV_WD_O: RC_FSV_WD
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
 class RC_FSV_WD_I: RC_FSV_WD
 {
@@ -604,5 +602,5 @@ class RC_FSV_WD_I: RC_FSV_WD
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\FSVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };

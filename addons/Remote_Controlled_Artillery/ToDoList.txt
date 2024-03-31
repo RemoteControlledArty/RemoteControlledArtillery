@@ -24,16 +24,14 @@ TO DO - BUGFIXES:
 
 -medical truck respawn script not working in multiplayer (cfgVehicles, RespawnTruck.hpp)
 
--Remove ICV II "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
+-Remove ICV IV & V "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
 -attemt to (unclear if possible) giving working waypoints to ICV/IFV even when sitting in vehicle (those waypoints bug, and have different extra markings)
 
 -artillery computer is supposedly disabled for all assets, not just of the mod
 
 
--CHANGE UAV CHECK, cfg checks/create effect AFTER connected check, in both scripts.
+-CHANGE UAV CHECK, cfg checks/create effect AFTER connected check, in both scripts
 -maybe include blur in main loop to reduce checks
-
--fix BM-2T (IFV V) turnout
 
 
 TO DO - FEATURES:
@@ -50,7 +48,8 @@ ASAP:
 -fix for someone remotecontrolling gunner player, bugging them
 
 -next update:
--MORTAR CARRIER MORTAR DOESNT spawn
+-DL mortar carrier mortar doesnt spawn in MP
+-add sensor to mortar carrier camera
 -video about vics
 
 
@@ -298,6 +297,9 @@ new:
 -added 30/40mm gunnerOpticsModel
 -added red/green tracer variant
 -added "take control" allowing gunner/commander take driving controls (press both take controls then release controls to activate correctly)
+-improved file structure with includes
+-further improved file structure to streamline testing
+-increased MBT/FSV/IFV datalink panel from 3km to 4km
 
 
 

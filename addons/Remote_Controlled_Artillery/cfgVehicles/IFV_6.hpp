@@ -106,34 +106,34 @@ class RC_ICV_IFV_6_DIG: RC_ICV_IFV_6_DIG_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -150,7 +150,7 @@ class RC_ICV_IFV_6_DIG: RC_ICV_IFV_6_DIG_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750,375};
+					range[]={4000,2000,1000,500};
 					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay
@@ -181,7 +181,7 @@ class RC_ICV_IFV_6_DIG: RC_ICV_IFV_6_DIG_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750,375};
+					range[]={4000,2000,1000,500};
 					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay
@@ -205,7 +205,7 @@ class RC_ICV_IFV_6_DIG: RC_ICV_IFV_6_DIG_Base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
 
 
@@ -215,7 +215,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 	{	
 		class RC_Artillery
 		{
-			init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
+			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -226,9 +226,6 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; ('B_static_AA_F' createVehicle [0,0,0]) attachTo [_this, [1,1,1], 'mainTurret', true]}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 	*/
-
-	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 
 	displayName="IFV VI";
 	editorSubcategory="RC_IFV_APC_subcat";
@@ -267,7 +264,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 	{
 		class MainTurret: MainTurret
 		{
-			isCopilot=1; //allows to trigger EH that gives driving controls
+			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
 			//minElev=-10.6;
@@ -333,7 +330,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					isCopilot=1; //allows to trigger EH that gives driving controls
+					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					turretInfoType="RscOptics_MBT_03_gunner";
 					commanding=2;
@@ -407,7 +404,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
+									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
 								/*
@@ -459,7 +456,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
+									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
 								/*
@@ -526,7 +523,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						/*
@@ -578,7 +575,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						/*
@@ -642,7 +639,7 @@ class RC_IFV_6_DIG_O: RC_IFV_6_DIG
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_IFV_6_DIG_I: RC_IFV_6_DIG
 {
@@ -650,7 +647,7 @@ class RC_IFV_6_DIG_I: RC_IFV_6_DIG
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
@@ -677,7 +674,7 @@ class RC_IFV_6_WD_O: RC_IFV_6_WD
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_IFV_6_WD_I: RC_IFV_6_WD
 {
@@ -685,5 +682,5 @@ class RC_IFV_6_WD_I: RC_IFV_6_WD
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };

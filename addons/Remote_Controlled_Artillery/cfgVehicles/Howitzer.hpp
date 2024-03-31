@@ -14,7 +14,6 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	//RCDisableSeats=5; // locks driver and commander seats
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -312,7 +311,6 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	//RCDisableSeats=5; // locks driver and commander seats
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy

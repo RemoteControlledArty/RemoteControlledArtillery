@@ -1,0 +1,1 @@
+//isCopilot=1; //allows to trigger EH that gives driving controls

@@ -74,6 +74,14 @@ class RC_200Rnd_93x64_T_R: RC_200Rnd_93x64_T_G
 {
 	ammo="RC_B_93x64_T_R";
 };
+class RC_1000Rnd_93x64_T_G: RC_200Rnd_93x64_T_G
+{
+	count=1000;
+};
+class RC_1000Rnd_93x64_T_R: RC_200Rnd_93x64_T_R
+{
+	count=1000;
+};
 
 
 class 200Rnd_127x99_mag_Tracer_Red;

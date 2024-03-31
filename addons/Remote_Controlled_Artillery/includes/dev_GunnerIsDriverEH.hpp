@@ -1,5 +1,6 @@
 getin=
-"params ['_vehicle']; \
+"'GetIn' remoteExec ['systemChat',0]; \
+params ['_vehicle']; \
 if (isPlayer (gunner _vehicle)) then { \
 	(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
 	_vehicle setOwner (owner (gunner _vehicle)); \
@@ -13,7 +14,8 @@ if (isPlayer (gunner _vehicle)) then { \
 };";
 
 getout=
-"params ['_vehicle']; \
+"'GetOut' remoteExec ['systemChat',0]; \
+params ['_vehicle']; \
 if (isPlayer (gunner _vehicle)) then { \
 	(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
 	_vehicle setOwner (owner (gunner _vehicle)); \
@@ -27,7 +29,8 @@ if (isPlayer (gunner _vehicle)) then { \
 };";
 
 seatswitched=
-"params ['_vehicle']; \
+"'SeatSwitched' remoteExec ['systemChat',0]; \
+params ['_vehicle']; \
 if (isPlayer (gunner _vehicle)) then { \
 	(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
 	_vehicle setOwner (owner (gunner _vehicle)); \

@@ -60,8 +60,8 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 	incomingMissileDetectionSystem=16;
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
-	enginePower=692.8;
-	peakTorque=3520.5;
+	enginePower=593.8;
+	peakTorque=3017.6;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
@@ -170,34 +170,34 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -214,7 +214,7 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750,375};
+					range[]={4000,2000,1000,500};
 					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay
@@ -245,7 +245,7 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750,375};
+					range[]={4000,2000,1000,500};
 					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay
@@ -269,7 +269,7 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
 
 
@@ -277,20 +277,13 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC
+		class RC_Artillery
 		{
-			init=
-			"(_this select 0) spawn {{_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; \
-			if (!local (_this select 0)) exitwith {}; \
-			(_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
-			
+			#include "\Remote_Controlled_Artillery\includes\initICV.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
 		};
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
-
-	//RCDisableSeats=3; // locks commander seats
-	//RCReenableSeats=3;	//re-unlocks only commander seat, required for this vehicle
 
 	displayName="RC ICV IV";
 	editorSubcategory="RC_ICV_subcat";
@@ -324,7 +317,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 	{
 		class MainTurret: MainTurret
 		{
-			isCopilot=1; //allows to trigger EH that gives driving controls
+			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment3";
 			commanding=2;
@@ -391,7 +384,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					isCopilot=1; //allows to trigger EH that gives driving controls
+					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					//personTurretAction="";	//no effect
 					//forceHideGunner=1;	//makes view bug
@@ -481,7 +474,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
+									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
 								*/
@@ -518,7 +511,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
+									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
 								*/
@@ -564,7 +557,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 					class SensorDisplay
 					{
 						componentType="SensorsDisplayComponent";
-						range[]={3000,1500,750,375};
+						range[]={4000,2000,1000,500};
 						resource="RscCustomInfoSensors";
 					};
 					*/
@@ -606,7 +599,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 					class SensorDisplay
 					{
 						componentType="SensorsDisplayComponent";
-						range[]={3000,1500,750,375};
+						range[]={4000,2000,1000,500};
 						resource="RscCustomInfoSensors";
 					};
 					*/
@@ -641,7 +634,7 @@ class RC_ICV_4_A_O: RC_ICV_4_A
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_ICV_4_A_I: RC_ICV_4_A
 {
@@ -649,7 +642,7 @@ class RC_ICV_4_A_I: RC_ICV_4_A
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
@@ -672,7 +665,7 @@ class RC_ICV_4_WD_O: RC_ICV_4_WD
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_ICV_4_WD_I: RC_ICV_4_WD
 {
@@ -680,7 +673,7 @@ class RC_ICV_4_WD_I: RC_ICV_4_WD
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
@@ -688,15 +681,9 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 {
 	class EventHandlers: EventHandlers
 	{	
-		class RC
+		class RC_Artillery
 		{
-			init=
-			"if (!local (_this select 0)) exitwith {}; \
-			(_this select 0) spawn { \
-				waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; \
-				waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; \
-			};";
-			
+			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -707,9 +694,6 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; ('B_static_AA_F' createVehicle [0,0,0]) attachTo [_this, [1,1,1], 'mainTurret', true]}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	};
 	*/
-
-	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
-	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 
 	displayName="IFV IV";
 	editorSubcategory="RC_IFV_APC_subcat";
@@ -735,7 +719,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 	{
 		class MainTurret: MainTurret
 		{
-			isCopilot=1; //allows to trigger EH that gives driving controls
+			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
 			minElev=-10.6;
@@ -803,7 +787,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					isCopilot=1; //allows to trigger EH that gives driving controls
+					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
@@ -879,7 +863,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
+									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
 								/*
@@ -931,7 +915,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
+									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
 								/*
@@ -998,7 +982,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						/*
@@ -1050,7 +1034,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						/*
@@ -1118,7 +1102,7 @@ class RC_IFV_4_A_O: RC_IFV_4_A
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_IFV_4_A_I: RC_IFV_4_A
 {
@@ -1126,7 +1110,7 @@ class RC_IFV_4_A_I: RC_IFV_4_A
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
@@ -1149,7 +1133,7 @@ class RC_IFV_4_WD_O: RC_IFV_4_WD
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_IFV_4_WD_I: RC_IFV_4_WD
 {
@@ -1157,5 +1141,5 @@ class RC_IFV_4_WD_I: RC_IFV_4_WD
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\includes\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
