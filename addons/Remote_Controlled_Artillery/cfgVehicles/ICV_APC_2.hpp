@@ -5,8 +5,8 @@ class RC_ICV_IFV_2_A_Base: O_APC_Wheeled_02_rcws_F
 	class MainTurret;
 	class CommanderOptics;
 	class HitPoints;
-	class HitHull;
-	class HitEngine;
+	//class HitHull;
+	//class HitEngine;
 	//class HitFuel;
 	class HitLFWheel;
 	class HitLF2Wheel;
@@ -17,10 +17,7 @@ class RC_ICV_IFV_2_A_Base: O_APC_Wheeled_02_rcws_F
 	class HitRMWheel;
 	class HitRBWheel;
 	class AnimationSources;
-	class showCamonetHull;
-	class showSLATHull;
 	class ViewOptics;
-	class ViewPilot;
 	class Components;
 	class EventHandlers;
 	scope=0;
@@ -65,6 +62,8 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
+
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_APC_Wheeled_02_rcws_v2_F.jpg";
 
 	class HitPoints: HitPoints
 	{
@@ -232,6 +231,34 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 				};
 				*/
 			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class showCamonetHull
+		{
+			displayName="$STR_A3_animationsources_showcamonethull0";
+			author="$STR_A3_Bohemia_Interactive";
+			source="user";
+			animPeriod=0.001;
+			forceAnimatePhase=1;
+			forceAnimate[]=
+			{
+				"showCanisters",
+				1
+			};
+			initPhase=1;
+			mass=-50;
+		};
+		class showSLATHull
+		{
+			displayName="$STR_A3_animationsources_showslathull0";
+			author="$STR_A3_Bohemia_Interactive";
+			source="user";
+			animPeriod=0.001;
+			initPhase=1;
+			mass=-50;
 		};
 	};
 
@@ -433,7 +460,7 @@ class RC_ICV_2_A_O: RC_ICV_IFV_2_A
 			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			//personTurretAction="";	//no effect
-			//forceHideGunner=1;	//makes view bug
+			forceHideGunner=1;	//makes view bug
 			//forceHideCommander=1;	//makes view bug
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="RscWeaponRangeFinder";
@@ -444,7 +471,6 @@ class RC_ICV_2_A_O: RC_ICV_IFV_2_A
 			weapons[]=
 			{
 				"RC_Laserdesignator_vehicle",
-				"TruckHorn",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -494,7 +520,7 @@ class RC_ICV_2_A_O: RC_ICV_IFV_2_A
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
-					defaultDisplay="MinimapDisplayComponent";
+					defaultDisplay="SensorsDisplayComponent";
 
 					class Components
 					{
@@ -511,14 +537,12 @@ class RC_ICV_2_A_O: RC_ICV_IFV_2_A
 						{
 							componentType="UAVFeedDisplayComponent";
 						};
-						/*
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
 							range[]={3000,1500,750,375};
 							resource="RscCustomInfoSensors";
 						};
-						*/
 						/*
 						class MineDetectorDisplay
 						{
@@ -548,14 +572,12 @@ class RC_ICV_2_A_O: RC_ICV_IFV_2_A
 						{
 							componentType="UAVFeedDisplayComponent";
 						};
-						/*
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
 							range[]={3000,1500,750,375};
 							resource="RscCustomInfoSensors";
 						};
-						*/
 						/*
 						class MineDetectorDisplay
 						{
@@ -569,42 +591,25 @@ class RC_ICV_2_A_O: RC_ICV_IFV_2_A
 			};
 		};
 	};
-
-	class AnimationSources: AnimationSources
-	{
-		class showCamonetHull
-		{
-			displayName="$STR_A3_animationsources_showcamonethull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
-			initPhase=0;
-			mass=-50;
-		};
-		class showSLATHull
-		{
-			displayName="$STR_A3_animationsources_showslathull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
-			initPhase=1;
-			mass=-50;
-		};
-	};
 };
 
 
 class RC_ICV_2_WD_O: RC_ICV_2_A_O
 {
 	DLC="Expansion";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
+	textureList[]=
+	{
+		"GreenHex",
+		1
+	};
 	hiddenSelectionsTextures[]=
 	{
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-		"a3\Armor_F\Data\cage_olive_CO.paa"
+		"a3\Armor_F_Exp\APC_Wheeled_02\Data\APC_Wheeled_02_ext_01_ghex_CO.paa",
+		"a3\Armor_F_Exp\APC_Wheeled_02\Data\APC_Wheeled_02_ext_02_ghex_CO.paa",
+		"a3\Data_F_Exp\Vehicles\Turret_ghex_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
+		"A3\armor_f\data\cage_csat_green_CO.paa"
 	};
 };
 
@@ -625,13 +630,6 @@ class RC_IFV_2_A_O: RC_ICV_IFV_2_A
 			#include "\Remote_Controlled_Artillery\includes\takeDriverControlsEH_IFV.hpp"
 		};
 	};
-	/*
-	//Missile launcher on top, memoryppoint unclear, and rotate with boolean not working
-	class EventHandlers: EventHandlers
-	{
-		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; ('B_static_AA_F' createVehicle [0,0,0]) attachTo [_this, [1,1,1], 'mainTurret', true]}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-	};
-	*/
 
 	//RCDisableSeats=6; //locks gunner&commander seat while remote controlling driver (changing seats causes serve bugs)
 	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
@@ -647,7 +645,6 @@ class RC_IFV_2_A_O: RC_ICV_IFV_2_A
 	
 	weapons[]=
 	{
-		"TruckHorn",
 		"SmokeLauncher"
 	};
 	magazines[]=
@@ -656,60 +653,277 @@ class RC_IFV_2_A_O: RC_ICV_IFV_2_A
 		"SmokeLauncherMag"
 	};
 
-	class AnimationSources: AnimationSources
+	class Turrets: Turrets
 	{
-		class showCamonetHull
+		class MainTurret: MainTurret
 		{
-			displayName="$STR_A3_animationsources_showcamonethull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
-			initPhase=1;
-			mass=-50;
-		};
-		class showCamonetCannon
-		{
-			source="user";
-			animPeriod=0.001;
-			initPhase=1;
-		};
-		class showCamonetTurret
-		{
-			displayName="$STR_A3_animationsources_showcamonetturret0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
-			initPhase=1;
-			forceAnimatePhase=1;
-			forceAnimate[]=
+			isCopilot=1; //allows to trigger EH that gives driving controls
+			showAllTargets="2 + 4";
+			commanding=3;
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+			turretInfoType="RscOptics_MBT_03_gunner";
+
+			weapons[]=
 			{
-				"showCamonetCannon",
-				1
+				"RC_HMG_127_APC",
+				"RC_GMG_40mm",
+				"SmokeLauncher"
 			};
-			forceAnimate2[]=
+			magazines[]=
 			{
-				"showCamonetCannon",
-				0
+				"RC_50Rnd_40mm_G_belt",
+				"RC_50Rnd_40mm_G_belt",
+				"RC_50Rnd_40mm_G_belt",
+				"RC_50Rnd_40mm_G_belt",
+				"RC_50Rnd_40mm_G_belt",
+				"RC_200Rnd_127x99_SLAP_T_G",
+				"RC_200Rnd_127x99_SLAP_T_G",
+				"RC_200Rnd_127x99_SLAP_T_G",
+				"RC_200Rnd_127x99_SLAP_T_G",
+				"RC_200Rnd_127x99_SLAP_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
 			};
-			mass=-50;
+
+			class ViewOptics: RCWSOptics
+			{
+				initFov=0.9;
+				minFov=0.025;
+				maxFov=0.9;
+
+				visionMode[]=
+				{
+					"Normal",
+					"NVG",
+					"TI"
+				};
+				thermalMode[]={0};
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={3000,1500,750,375};
+							resource="RscCustomInfoSensors";
+						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleCommanderDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Commander";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="VehicleDriverDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={3000,1500,750,375};
+							resource="RscCustomInfoSensors";
+						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleCommanderDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Commander";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
+				};
+			};
 		};
-		class showSLATHull
+		class CommanderOptics : CommanderOptics
 		{
-			displayName="$STR_A3_animationsources_showslathull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
-			initPhase=1;
-			mass=-50;
-		};
-		class showSLATTurret
-		{
-			displayName="$STR_A3_animationsources_showslatturret0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
-			initPhase=1;
-			mass=-50;
+			isCopilot=1; //allows to trigger EH that gives driving controls
+			showAllTargets="2 + 4";
+			turretInfoType="RscOptics_MBT_03_gunner";
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+			commanding=2;
+			forceHideGunner=1;
+
+			weapons[]=
+			{
+				"RC_Laserdesignator_vehicle",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"Laserbatteries",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class ViewOptics: ViewOptics
+			{
+				//directionStabilized=1;
+				initFov=1;
+				minFov=0.025;
+				maxFov=1;
+				visionMode[]=
+				{
+					"Normal",
+					"NVG",
+					"TI"
+				};
+				thermalMode[]={0};
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={3000,1500,750,375};
+							resource="RscCustomInfoSensors";
+						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleCommanderDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Commander";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="VehicleDriverDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={3000,1500,750,375};
+							resource="RscCustomInfoSensors";
+						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleCommanderDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Commander";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
+				};
+			};
 		};
 	};
 };
@@ -718,13 +932,18 @@ class RC_IFV_2_A_O: RC_ICV_IFV_2_A
 class RC_IFV_2_WD_O: RC_IFV_2_A_O
 {
 	DLC="Expansion";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
+	textureList[]=
+	{
+		"GreenHex",
+		1
+	};
 	hiddenSelectionsTextures[]=
 	{
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-		"a3\Armor_F\Data\cage_olive_CO.paa"
+		"a3\Armor_F_Exp\APC_Wheeled_02\Data\APC_Wheeled_02_ext_01_ghex_CO.paa",
+		"a3\Armor_F_Exp\APC_Wheeled_02\Data\APC_Wheeled_02_ext_02_ghex_CO.paa",
+		"a3\Data_F_Exp\Vehicles\Turret_ghex_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
+		"A3\armor_f\data\cage_csat_green_CO.paa"
 	};
 };

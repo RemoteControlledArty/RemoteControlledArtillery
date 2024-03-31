@@ -1,5 +1,5 @@
 class B_MBT_01_TUSK_F;
-class RC_MBT6_Base: B_MBT_01_TUSK_F
+class RC_MBT_1_Base: B_MBT_01_TUSK_F
 {
 	class Turrets;
 	class MainTurret;
@@ -18,7 +18,7 @@ class RC_MBT6_Base: B_MBT_01_TUSK_F
 	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_MBT6_A_Base: RC_MBT6_Base
+class RC_MBT_1_A_Base: RC_MBT_1_Base
 {
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
@@ -108,6 +108,53 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=2;
+			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+
+			weapons[]=
+			{
+				"RC_cannon_120mm",
+				"RC_MMG_338_MBT_coax",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_R",
+				"RC_20Rnd_120mm_MP_T_R",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class OpticsIn
+			{
+				class Wide: RCWSOptics
+				{
+					initAngleX=0;
+					minAngleX=-30;
+					maxAngleX=30;
+					initAngleY=0;
+					minAngleY=-100;
+					maxAngleY=100;
+
+					initFov=0.9;
+					minFov=0.0166;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"Normal",
+						"TI"
+					};
+					thermalMode[]={0};
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					gunnerOpticsEffect[]={};
+				};
+			};
 			
 			class Turrets: Turrets
 			{
@@ -287,54 +334,6 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 				};
 			};
 
-			weapons[]=
-			{
-				"RC_cannon_120mm",
-				"RC_MMG_338_MBT_coax",
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"RC_20Rnd_120mm_APFSDS_T",
-				"RC_20Rnd_120mm_MP_T",
-				"RC_3Rnd_120mm_DLG_cannon_missiles",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-
-			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
-
-			class OpticsIn
-			{
-				class Wide: RCWSOptics
-				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
-
-					initFov=0.9;
-					minFov=0.0166;
-					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
-				};
-			};
-
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -445,7 +444,7 @@ class RC_MBT6_A_Base: RC_MBT6_Base
 };
 
 
-class RC_MBT6_A_Driverless: RC_MBT6_A_Base
+class RC_MBT_1_A_Driverless: RC_MBT_1_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -461,18 +460,18 @@ class RC_MBT6_A_Driverless: RC_MBT6_A_Base
 	side=1;
 	forceInGarage=1;
 
-	displayName="DL MBT [6 Inf]";
+	displayName="DL MBT I";
 	crew="";
 	hasDriver=-1;
 };
-class RC_MBT6_A_Driverless_O: RC_MBT6_A_Driverless
+class RC_MBT_1_A_Driverless_O: RC_MBT_1_A_Driverless
 {
 	faction="RemoteControlled_O";
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_MBT6_A_Driverless_I: RC_MBT6_A_Driverless
+class RC_MBT_1_A_Driverless_I: RC_MBT_1_A_Driverless
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -481,7 +480,7 @@ class RC_MBT6_A_Driverless_I: RC_MBT6_A_Driverless
 };
 
 
-class RC_MBT6_WD_Driverless: RC_MBT6_A_Driverless
+class RC_MBT_1_WD_Driverless: RC_MBT_1_A_Driverless
 {
 	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_TUSK_F.jpg";
@@ -493,14 +492,14 @@ class RC_MBT6_WD_Driverless: RC_MBT6_A_Driverless
 		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
 	};
 };
-class RC_MBT6_WD_Driverless_O: RC_MBT6_WD_Driverless
+class RC_MBT_1_WD_Driverless_O: RC_MBT_1_WD_Driverless
 {
 	faction="RemoteControlled_O";
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_MBT6_WD_Driverless_I: RC_MBT6_WD_Driverless
+class RC_MBT_1_WD_Driverless_I: RC_MBT_1_WD_Driverless
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -509,7 +508,7 @@ class RC_MBT6_WD_Driverless_I: RC_MBT6_WD_Driverless
 };
 
 
-class RC_MBT6_A: RC_MBT6_A_Base
+class RC_MBT_1_A: RC_MBT_1_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -525,7 +524,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	side=1;
 	forceInGarage=1;
 
-	displayName="MBT [6 Inf]";
+	displayName="MBT I";
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
@@ -534,7 +533,7 @@ class RC_MBT6_A: RC_MBT6_A_Base
 	textSingular="UGV";
 	crew="B_UAV_AI";
 };
-class RC_MBT6_A_O: RC_MBT6_A
+class RC_MBT_1_A_O: RC_MBT_1_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -542,7 +541,7 @@ class RC_MBT6_A_O: RC_MBT6_A
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_MBT6_A_I: RC_MBT6_A
+class RC_MBT_1_A_I: RC_MBT_1_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -552,7 +551,7 @@ class RC_MBT6_A_I: RC_MBT6_A
 };
 
 
-class RC_MBT6_WD: RC_MBT6_A
+class RC_MBT_1_WD: RC_MBT_1_A
 {
 	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_TUSK_F.jpg";
@@ -564,7 +563,7 @@ class RC_MBT6_WD: RC_MBT6_A
 		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
 	};
 };
-class RC_MBT6_WD_O: RC_MBT6_WD
+class RC_MBT_1_WD_O: RC_MBT_1_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -572,7 +571,7 @@ class RC_MBT6_WD_O: RC_MBT6_WD
 
 	#include "\Remote_Controlled_Artillery\includes\IFVitemsO.hpp"
 };
-class RC_MBT6_WD_I: RC_MBT6_WD
+class RC_MBT_1_WD_I: RC_MBT_1_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

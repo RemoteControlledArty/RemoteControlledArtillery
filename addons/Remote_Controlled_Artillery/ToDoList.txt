@@ -39,11 +39,9 @@ TO DO - BUGFIXES:
 TO DO - FEATURES:
 
 ASAP:
--MORTAR CARRIER MORTAR DOESNT spawn
+-remove DL Mortar Carrier
 
--add turret to Marid
 -when someone took controls per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
--test special marid, O_APC_Wheeled_02_rcws_F, not O_APC_Wheeled_02_rcws_v2_F
 -driverless "take controls" check
 -check if "release controls" triggers script and assigns someone else
 -test g/c "take controls" in mp
@@ -52,6 +50,9 @@ ASAP:
 
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
 -fix for someone remotecontrolling gunner player, bugging them
+
+-next update:
+-MORTAR CARRIER MORTAR DOESNT spawn
 -video about vics
 
 
@@ -296,9 +297,10 @@ new:
 -added found target highlighting to most assets
 -added select datalink target (highlighting) ability to most weapons, to improve coordination/awareness
 -added semi manned Recon ATGM & Mortar Carrier
--added Leopard MBT, Namer APC/ICV, Otokar ARMA 6x6 APC/ICV, BTR Kamysh IFV/ICV, Warrior IFV/ICV
+-added Leopard MBT, T-14 MBT, Namer APC/ICV, Otokar ARMA 6x6 APC/ICV, BM-2T Stalker IFV/ICV, Warrior IFV/ICV
 -added laser warning receivers
 -added 30/40mm MP
+-added 125mm MP & NLOS Datalink Guided
 -added 30/40mm gunnerOpticsModel
 -added red/green tracer variant
 -added "take control" allowing gunner/commander take driving controls (press both take controls then release controls to activate correctly)

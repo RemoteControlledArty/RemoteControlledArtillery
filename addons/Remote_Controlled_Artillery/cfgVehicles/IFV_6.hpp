@@ -11,9 +11,10 @@ class RC_ICV_IFV_6_DIG_Base: I_APC_tracked_03_cannon_F
 	//class HitRTrack;
 	class AnimationSources;
 	class showCamonetHull;
+	class showCamonetTurret;
 	class showSLATHull;
+	class showSLATTurret;
 	class ViewOptics;
-	class ViewPilot;
 	class Components;
 	class EventHandlers;
 	scope=0;
@@ -49,8 +50,9 @@ class RC_ICV_IFV_6_DIG: RC_ICV_IFV_6_DIG_Base
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
-	enginePower=922.5;
-	peakTorque=4688.3;
+	maxSpeed=80;
+	enginePower=768;
+	peakTorque=3906.9;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
@@ -275,7 +277,7 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 			weapons[]=
 			{
 				"RC_autocannon_30mm_CTWS",
-				"RC_MMG_338_IFV_1",
+				"RC_MMG_338_coax",
 				//"RC_IFV_Missle_Launcher",
 				"SmokeLauncher"
 			};
@@ -616,58 +618,21 @@ class RC_IFV_6_DIG: RC_ICV_IFV_6_DIG
 
 	class AnimationSources: AnimationSources
 	{
-		class showCamonetHull
+		class showCamonetHull: showCamonetHull
 		{
-			displayName="$STR_A3_animationsources_showcamonethull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
-			initPhase=1;
-			mass=-50;
-		};
-		class showCamonetCannon
-		{
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
 		};
-		class showCamonetTurret
+		class showCamonetTurret: showCamonetTurret
 		{
-			displayName="$STR_A3_animationsources_showcamonetturret0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
-			forceAnimatePhase=1;
-			forceAnimate[]=
-			{
-				"showCamonetCannon",
-				1
-			};
-			forceAnimate2[]=
-			{
-				"showCamonetCannon",
-				0
-			};
-			mass=-50;
 		};
-		class showSLATHull
+		class showSLATHull: showSLATHull
 		{
-			displayName="$STR_A3_animationsources_showslathull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
-			mass=-50;
 		};
-		class showSLATTurret
+		class showSLATTurret: showSLATTurret
 		{
-			displayName="$STR_A3_animationsources_showslatturret0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
-			mass=-50;
 		};
 	};
 };

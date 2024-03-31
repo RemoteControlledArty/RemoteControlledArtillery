@@ -45,19 +45,68 @@ class RC_B_338_T_G: RC_B_338_T_R
 };
 
 
-class B_127x99_Ball_Tracer_Red;
-class RC_B_127x99_Ball_T_R: B_127x99_Ball_Tracer_Red
+class RC_B_93x64_T_G: BulletBase
 {
 	laserLock=1;
 	irLock=1;
 	airLock=1;
+	hit=18;
+	indirectHit=0;
+	indirectHitRange=0;
+	cartridge="FxCartridge_93x64_Ball";
+	audibleFire=80;
+	visibleFireTime=3;
+	dangerRadiusBulletClose=10;
+	dangerRadiusHit=14;
+	suppressionRadiusBulletClose=8;
+	suppressionRadiusHit=10;
+	cost=6;
+	caliber=2.2;
+	typicalSpeed=785;
+	timeToLive=10;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+	tracerScale=1.2;
+	tracerStartTime=0.05;
+	tracerEndTime=3;
+	airFriction=-0.00075000001;
+	class CamShakeExplode
+	{
+		power=3.1622801;
+		duration=0.60000002;
+		frequency=20;
+		distance=9.4868298;
+	};
+	class CamShakeHit
+	{
+		power=10;
+		duration=0.40000001;
+		frequency=20;
+		distance=1;
+	};
 };
-class B_127x99_Ball_Tracer_Green;
-class RC_B_127x99_Ball_T_G: B_127x99_Ball_Tracer_Green
+class RC_B_93x64_T_R: RC_B_93x64_T_G
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+};
+
+
+class B_127x99_SLAP_Tracer_Red;
+class RC_B_127x99_SLAP_T_R: B_127x99_SLAP_Tracer_Red
 {
 	laserLock=1;
 	irLock=1;
 	airLock=1;
+	tracerStartTime=0.04;
+	tracerEndTime=3;
+};
+class B_127x99_SLAP_Tracer_Green;
+class RC_B_127x99_SLAP_T_G: B_127x99_SLAP_Tracer_Green
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerStartTime=0.04;
+	tracerEndTime=3;
 };
 
 
@@ -668,6 +717,10 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 		};
 	};
 };
+class RC_M_125mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
+{
+	submunitionAmmo="ammo_Penetrator_125mm_missile";
+};
 
 
 //120mm of FSV/MBT
@@ -677,7 +730,7 @@ class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
 	warheadName="TandemHEAT";
 };
 class Sh_120mm_HEAT_MP_T_Red;
-class RC_Sh_120mm_MP_T: Sh_120mm_HEAT_MP_T_Red
+class RC_Sh_120mm_MP_T_R: Sh_120mm_HEAT_MP_T_Red
 {
 	laserLock=1;
 	irLock=1;
@@ -691,12 +744,49 @@ class RC_Sh_120mm_MP_T: Sh_120mm_HEAT_MP_T_Red
 	deflecting=4;
 	craterEffects="AAMissileCrater";
 };
+class RC_Sh_120mm_MP_T_G: RC_Sh_120mm_MP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
 class Sh_120mm_APFSDS_Tracer_Red;
-class RC_Sh_120mm_APFSDS_T: Sh_120mm_APFSDS_Tracer_Red
+class RC_Sh_120mm_APFSDS_T_R: Sh_120mm_APFSDS_Tracer_Red
 {
 	laserLock=1;
 	irLock=1;
 	airLock=1;
+};
+class RC_Sh_120mm_APFSDS_T_G: RC_Sh_120mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+
+
+class Sh_125mm_HEAT_T_Red;
+class RC_Sh_125mm_MP_T_R: Sh_125mm_HEAT_T_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	aiAmmoUsageFlags="64 + 128 + 512";
+	indirectHit=50;
+	indirectHitRange=10;
+	deflecting=4;
+	craterEffects="AAMissileCrater";
+};
+class RC_Sh_125mm_MP_T_G: RC_Sh_125mm_MP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";
+};
+class Sh_125mm_APFSDS_T_Red;
+class RC_Sh_125mm_APFSDS_T_R: Sh_125mm_APFSDS_T_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+class RC_Sh_125mm_APFSDS_T_G: RC_Sh_125mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
 };
 
 

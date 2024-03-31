@@ -296,23 +296,13 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 
 	class AnimationSources: AnimationSources
 	{
-		class showCamonetHull
+		class showCamonetHull: showCamonetHull
 		{
-			displayName="$STR_A3_animationsources_showcamonethull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
-			mass=-50;
 		};
-		class showSLATHull
+		class showSLATHull: showSLATHull
 		{
-			displayName="$STR_A3_animationsources_showslathull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
-			mass=-50;
 		};
 	};
 
@@ -737,7 +727,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 			weapons[]=
 			{
 				"RC_autocannon_30mm_CTWS",
-				"RC_MMG_338_IFV_1",
+				"RC_MMG_338_coax_ext",
 				"RC_IFV_Missle_Launcher",
 				"SmokeLauncher"
 			};

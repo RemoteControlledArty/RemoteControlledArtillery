@@ -1,5 +1,5 @@
-class I_MBT_03_cannon_F;
-class RC_MBT_2_Base: I_MBT_03_cannon_F
+class O_MBT_04_command_F;
+class RC_MBT_3_Base: O_MBT_04_command_F
 {
 	class Turrets;
 	class MainTurret;
@@ -8,9 +8,8 @@ class RC_MBT_2_Base: I_MBT_03_cannon_F
 	class Components;
 	class EventHandlers;
 	class AnimationSources;
-	class showCamonetHull;
 	class showCamonetCannon;
-	class showCamonetCannon1;
+	class showCamonetHull;
 	class showCamonetTurret;
 	class OpticsIn;
 	class Wide;
@@ -20,7 +19,7 @@ class RC_MBT_2_Base: I_MBT_03_cannon_F
 	//RCReenableSeats=6;	//reunlocks gunner/commander seats when not remote controlling
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_MBT_2_A_Base: RC_MBT_2_Base
+class RC_MBT_3_G_Base: RC_MBT_3_Base
 {
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
@@ -47,10 +46,9 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 
 	hiddenSelectionsTextures[]=
 	{
-		"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
-		"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
-		"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
+		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_1_CO.paa",
+		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_2_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_Stripe_Desert_CO.paa"
 	};
 
 	class Components: Components
@@ -110,21 +108,21 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 
 			weapons[]=
 			{
-				"RC_cannon_120mm",
-				"RC_MMG_338_MBT_coax",
+				"RC_cannon_125mm_advanced",
+				"RC_MMG_93x64_coax",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_20Rnd_120mm_APFSDS_T_R",
-				"RC_20Rnd_120mm_MP_T_R",
-				"RC_3Rnd_120mm_DLG_cannon_missiles",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
+				"RC_20Rnd_125mm_APFSDS_T_G",
+				"RC_20Rnd_125mm_MP_T_G",
+				"RC_3Rnd_125mm_DLG_cannon_missiles",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -140,9 +138,9 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 					minAngleY=-100;
 					maxAngleY=100;
 
-					initFov=0.5;
+					initFov=0.9;
 					minFov=0.0166;
-					maxFov=0.5;
+					maxFov=0.9;
 					visionMode[]=
 					{
 						"Normal",
@@ -165,17 +163,17 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 
 					weapons[]=
 					{
-						"RC_MMG_338_MBT",
+						"RC_autocannon_30mm_RCWS",
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
+						"RC_60Rnd_30mm_MP_T_G",
+						"RC_60Rnd_30mm_MP_T_G",
+						"RC_60Rnd_30mm_MP_T_G",
+						"RC_60Rnd_30mm_GPR_T_G",
+						"RC_60Rnd_30mm_GPR_T_G",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -438,32 +436,12 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		};
 	};
 
-	class AnimationSources: AnimationSources
-	{
-		class showCamonetHull: showCamonetHull
-		{
-			initPhase=1;
-		};
-		class showCamonetCannon: showCamonetCannon
-		{
-			initPhase=1;
-		};
-		class showCamonetCannon1: showCamonetCannon1
-		{
-			initPhase=1;
-		};
-		class showCamonetTurret: showCamonetTurret
-		{
-			initPhase=1;
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes\FSVitemsB.hpp"
 };
 
 
 
-class RC_MBT_2_A_Driverless: RC_MBT_2_A_Base
+class RC_MBT_3_G_Driverless: RC_MBT_3_G_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -479,18 +457,18 @@ class RC_MBT_2_A_Driverless: RC_MBT_2_A_Base
 	side=1;
 	forceInGarage=1;
 
-	displayName="DL MBT II";
+	displayName="DL MBT III";
 	crew="";
 	hasDriver=-1;
 };
-class RC_MBT_2_A_Driverless_O: RC_MBT_2_A_Driverless
+class RC_MBT_3_G_Driverless_O: RC_MBT_3_G_Driverless
 {
 	faction="RemoteControlled_O";
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
 };
-class RC_MBT_2_A_Driverless_I: RC_MBT_2_A_Driverless
+class RC_MBT_3_G_Driverless_I: RC_MBT_3_G_Driverless
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -499,24 +477,40 @@ class RC_MBT_2_A_Driverless_I: RC_MBT_2_A_Driverless
 };
 
 
-class RC_MBT_2_WD_Driverless: RC_MBT_2_A_Driverless
+class RC_MBT_3_WD_Driverless: RC_MBT_3_G_Driverless
 {
+	editorPreview="\A3\EditorPreviews_F_Tank\Data\CfgVehicles\O_T_MBT_04_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
-		"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
-		"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
-		"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_1_CO.paa",
+		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_2_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_Stripe_Green_CO.paa"
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class showCamonetCannon: showCamonetCannon
+		{
+			initPhase=1;
+		};
+		class showCamonetHull: showCamonetHull
+		{
+			initPhase=1;
+		};
+		class showCamonetTurret: showCamonetTurret
+		{
+			initPhase=1;
+		};
 	};
 };
-class RC_MBT_2_WD_Driverless_O: RC_MBT_2_WD_Driverless
+class RC_MBT_3_WD_Driverless_O: RC_MBT_3_WD_Driverless
 {
 	faction="RemoteControlled_O";
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
 };
-class RC_MBT_2_WD_Driverless_I: RC_MBT_2_WD_Driverless
+class RC_MBT_3_WD_Driverless_I: RC_MBT_3_WD_Driverless
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -525,8 +519,7 @@ class RC_MBT_2_WD_Driverless_I: RC_MBT_2_WD_Driverless
 };
 
 
-
-class RC_MBT_2_A: RC_MBT_2_A_Base
+class RC_MBT_3_G: RC_MBT_3_G_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -542,7 +535,7 @@ class RC_MBT_2_A: RC_MBT_2_A_Base
 	side=1;
 	forceInGarage=1;
 
-	displayName="MBT II";
+	displayName="MBT III";
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
@@ -551,7 +544,7 @@ class RC_MBT_2_A: RC_MBT_2_A_Base
 	textSingular="UGV";
 	crew="B_UAV_AI";
 };
-class RC_MBT_2_A_O: RC_MBT_2_A
+class RC_MBT_3_G_O: RC_MBT_3_G
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -559,7 +552,7 @@ class RC_MBT_2_A_O: RC_MBT_2_A
 
 	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
 };
-class RC_MBT_2_A_I: RC_MBT_2_A
+class RC_MBT_3_G_I: RC_MBT_3_G
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -569,17 +562,33 @@ class RC_MBT_2_A_I: RC_MBT_2_A
 };
 
 
-class RC_MBT_2_WD: RC_MBT_2_A
+class RC_MBT_3_WD: RC_MBT_3_G
 {
+	editorPreview="\A3\EditorPreviews_F_Tank\Data\CfgVehicles\O_T_MBT_04_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
-		"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
-		"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
-		"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_1_CO.paa",
+		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_2_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_Stripe_Green_CO.paa"
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class showCamonetCannon: showCamonetCannon
+		{
+			initPhase=1;
+		};
+		class showCamonetHull: showCamonetHull
+		{
+			initPhase=1;
+		};
+		class showCamonetTurret: showCamonetTurret
+		{
+			initPhase=1;
+		};
 	};
 };
-class RC_MBT_2_WD_O: RC_MBT_2_WD
+class RC_MBT_3_WD_O: RC_MBT_3_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -587,7 +596,7 @@ class RC_MBT_2_WD_O: RC_MBT_2_WD
 
 	#include "\Remote_Controlled_Artillery\includes\FSVitemsO.hpp"
 };
-class RC_MBT_2_WD_I: RC_MBT_2_WD
+class RC_MBT_3_WD_I: RC_MBT_3_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

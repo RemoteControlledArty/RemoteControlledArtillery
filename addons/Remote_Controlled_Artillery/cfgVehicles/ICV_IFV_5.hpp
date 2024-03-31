@@ -47,8 +47,8 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
-	enginePower=767.1;
-	peakTorque=3898.3;
+	enginePower=639.2;
+	peakTorque=3248.6;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
@@ -165,29 +165,13 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 
 	class AnimationSources: AnimationSources
 	{
-		class showCamonetHull
+		class showCamonetHull: showCamonetHull
 		{
-			displayName="$STR_A3_animationsources_showcamonethull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
-			forceAnimatePhase=1;
-			forceAnimate[]=
-			{
-				"showTracks",
-				1
-			};
-			mass=-50;
 		};
-		class showSLATHull
+		class showSLATHull: showSLATHull
 		{
-			displayName="$STR_A3_animationsources_showslathull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
-			mass=-50;
 		};
 	};
 	animationList[]=
@@ -236,7 +220,6 @@ class RC_ICV_5_A: RC_ICV_IFV_5_A
 
 	weapons[]=
 	{
-		"TruckHorn",
 		"SmokeLauncher"
 	};
 	magazines[]=
@@ -296,7 +279,6 @@ class RC_ICV_5_A: RC_ICV_IFV_5_A
 
 			weapons[]=
 			{
-				"TruckHorn",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -314,11 +296,11 @@ class RC_ICV_5_A: RC_ICV_IFV_5_A
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 					turretInfoType="";
 					gunnerForceOptics=1;
+					forceHideGunner=1;
 					commanding=3;
 
 					weapons[]=
 					{
-						"TruckHorn",
 						"SmokeLauncher"
 					};
 					magazines[]=
@@ -576,7 +558,6 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 	
 	weapons[]=
 	{
-		"TruckHorn",
 		"SmokeLauncher"
 	};
 	magazines[]=
@@ -592,12 +573,13 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=3;
+			forceHideGunner=1;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 			weapons[]=
 			{
 				"RC_autocannon_30mm_CTWS",
-				"RC_MMG_338_IFV_1",
+				"RC_MMG_93x64_coax_ext",
 				"RC_IFV_Missle_Launcher",
 				"SmokeLauncher"
 			};
@@ -610,12 +592,12 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 				"RC_100Rnd_30mm_APFSDS_T_G",
 				"RC_100Rnd_30mm_APFSDS_T_G",
 				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
 				"RC_2Rnd_IFV_MP_NLOS",
 				"RC_2Rnd_IFV_MP_NLOS",
 				"RC_2Rnd_IFV_AA",
@@ -657,6 +639,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 					isCopilot=1; //allows to trigger EH that gives driving controls
 					showAllTargets="2 + 4";
 					commanding=2;
+					forceHideGunner=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
 					//turretInfoType="RscOptics_APC_Wheeled_03_commander";
 

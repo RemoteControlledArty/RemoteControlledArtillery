@@ -154,11 +154,6 @@ class CfgPatches
 			RC_Mortar_Carrier_DIG_I,
 			RC_Mortar_Carrier_WD_I,
 
-			RC_Mortar_Carrier_WD_Driverless,
-			RC_Mortar_Carrier_WD_Driverless_O,
-			RC_Mortar_Carrier_DIG_Driverless_I,
-			RC_Mortar_Carrier_WD_Driverless_I,
-
 			RC_UAV_AR1,
 			RC_UAV_AR3,
 			RC_UAV_AR1_O,
@@ -208,32 +203,24 @@ class CfgPatches
 			RC_ICV_1_WD_I,
 			RC_ICV_1_DIG_I,
 
-			RC_ICV_2_A,
-			RC_ICV_2_WD,
 			RC_ICV_2_A_O,
 			RC_ICV_2_WD_O,
-			RC_ICV_2_A_I,
-			RC_ICV_2_WD_I,
-			RC_ICV_2_DIG_I,
 
 			RC_ICV_3_A,
 			RC_ICV_3_WD,
-			RC_ICV_3_A_I,
-			RC_ICV_3_WD_I,
 			RC_ICV_3_A_O,
 			RC_ICV_3_WD_O,
+			RC_ICV_3_A_I,
+			RC_ICV_3_WD_I,
+			RC_ICV_3_DIG_I,
 
 			RC_ICV_4_A,
 			RC_ICV_4_WD,
-			RC_ICV_4_A_I,
-			RC_ICV_4_WD_I,
 			RC_ICV_4_A_O,
 			RC_ICV_4_WD_O,
+			RC_ICV_4_A_I,
+			RC_ICV_4_WD_I,
 
-			RC_ICV_5_A,
-			RC_ICV_5_WD,
-			RC_ICV_5_A_I,
-			RC_ICV_5_WD_I,
 			RC_ICV_5_A_O,
 			RC_ICV_5_WD_O,
 
@@ -279,33 +266,47 @@ class CfgPatches
 			RC_FSV_A_I,
 			RC_FSV_WD_I,
 
-			RC_MBT6_A,
-			RC_MBT6_WD,
-			RC_MBT6_A_O,
-			RC_MBT6_WD_O,
-			RC_MBT6_A_I,
-			RC_MBT6_WD_I,
+			RC_MBT_1_A,
+			RC_MBT_1_WD,
+			RC_MBT_1_A_O,
+			RC_MBT_1_WD_O,
+			RC_MBT_1_A_I,
+			RC_MBT_1_WD_I,
 
-			RC_MBT6_A_Driverless,
-			RC_MBT6_WD_Driverless,
-			RC_MBT6_A_Driverless_O,
-			RC_MBT6_WD_Driverless_O,
-			RC_MBT6_A_Driverless_I,
-			RC_MBT6_WD_Driverless_I,
+			RC_MBT_1_A_Driverless,
+			RC_MBT_1_WD_Driverless,
+			RC_MBT_1_A_Driverless_O,
+			RC_MBT_1_WD_Driverless_O,
+			RC_MBT_1_A_Driverless_I,
+			RC_MBT_1_WD_Driverless_I,
 
-			RC_MBT_A,
-			RC_MBT_WD,
-			RC_MBT_A_O,
-			RC_MBT_WD_O,
-			RC_MBT_A_I,
-			RC_MBT_WD_I,
+			RC_MBT_2_A,
+			RC_MBT_2_WD,
+			RC_MBT_2_A_O,
+			RC_MBT_2_WD_O,
+			RC_MBT_2_A_I,
+			RC_MBT_2_WD_I,
 
-			RC_MBT_A_Driverless,
-			RC_MBT_WD_Driverless,
-			RC_MBT_A_Driverless_O,
-			RC_MBT_WD_Driverless_O,
-			RC_MBT_A_Driverless_I,
-			RC_MBT_WD_Driverless_I,
+			RC_MBT_2_A_Driverless,
+			RC_MBT_2_WD_Driverless,
+			RC_MBT_2_A_Driverless_O,
+			RC_MBT_2_WD_Driverless_O,
+			RC_MBT_2_A_Driverless_I,
+			RC_MBT_2_WD_Driverless_I,
+
+			RC_MBT_3_G,
+			RC_MBT_3_WD,
+			RC_MBT_3_G_O,
+			RC_MBT_3_WD_O,
+			RC_MBT_3_G_I,
+			RC_MBT_3_WD_I,
+
+			RC_MBT_3_G_Driverless,
+			RC_MBT_3_WD_Driverless,
+			RC_MBT_3_G_Driverless_O,
+			RC_MBT_3_WD_Driverless_O,
+			RC_MBT_3_G_Driverless_I,
+			RC_MBT_3_WD_Driverless_I,
 
 			RC_GPSDatalinkTarget
 		};
@@ -322,13 +323,17 @@ class CfgPatches
 			RC_MMG_338_FSV_coax,
 			RC_MMG_338_MBT,
 			RC_MMG_338_MBT_coax,
-			RC_MMG_338_IFV_1,
-			RC_MMG_338_IFV_2,
+			RC_MMG_338_coax,
+			RC_MMG_338_coax_ext,
+			RC_MMG_93x64_coax,
+			RC_MMG_93x64_coax_ext,
 
 			RC_GMG_40mm,
 			RC_autocannon_30mm_CTWS,
 			RC_autocannon_40mm_CTWS,
+			RC_autocannon_30mm_RCWS,
 			RC_cannon_120mm,
+			RC_cannon_125mm_advanced,
 
 			RC_ATGM_SACLOS,
 			RC_ATGM_Lock,
@@ -447,7 +452,7 @@ class CfgEditorSubcategories
 	class RC_Designator_subcat {displayname="Designators";};
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
-	class RC_FSV_MBT_subcat {displayname="FSVs / MBTs";};
+	class RC_FSV_MBT_subcat {displayname="MBTs / FSV";};
 	class RC_ICV_subcat {displayname="ICVs";};
 	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
 	class RC_UAV_Designator_subcat {displayname="UAVs / Designators";};
@@ -506,6 +511,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_2.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_3.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Recon.hpp"

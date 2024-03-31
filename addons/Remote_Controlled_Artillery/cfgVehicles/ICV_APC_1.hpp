@@ -12,9 +12,9 @@ class RC_ICV_APC_1_Base: B_APC_Tracked_01_rcws_F
 	//class HitRTrack;
 	class AnimationSources;
 	class showCamonetHull;
-	class showSLATHull;
+	class showCamonetPlates1;
+	class showCamonetPlates2;
 	class ViewOptics;
-	class ViewPilot;
 	class Components;
 	class EventHandlers;
 	scope=0;
@@ -38,7 +38,7 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
-	maxSpeed=70;
+	maxSpeed=80;
 	enginePower=1059.9;
 	peakTorque=5386.3;
 	armorStructural=1000;	//prevents instant explosion, does not make it stronger
@@ -49,7 +49,6 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	smokeLauncherAngle=180;
 	weapons[]=
 	{
-		"TruckHorn",
 		"SmokeLauncher"
 	};
 	magazines[]=
@@ -181,33 +180,16 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 
 	class AnimationSources: AnimationSources
 	{
-		class showCamonetHull
+		class showCamonetHull: showCamonetHull
 		{
-			displayName="$STR_A3_animationsources_showcamonethull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
-			initPhase=1;
-			forceAnimatePhase=1;
-			forceAnimate[]=
-			{
-				"showCamonetPlates1",
-				1,
-				"showCamonetPlates2",
-				1
-			};
-			mass=-50;
-		};
-		class showCamonetPlates1
-		{
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
 		};
-		class showCamonetPlates2
+		class showCamonetPlates1: showCamonetPlates1
 		{
-			source="user";
-			animPeriod=0.001;
+			initPhase=1;
+		};
+		class showCamonetPlates2: showCamonetPlates2
+		{
 			initPhase=1;
 		};
 	};
@@ -536,6 +518,8 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=3;
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+			turretInfoType="RscOptics_MBT_03_gunner";
 
 			weapons[]=
 			{
@@ -550,11 +534,11 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 				"RC_50Rnd_40mm_G_belt",
 				"RC_50Rnd_40mm_G_belt",
 				"RC_50Rnd_40mm_G_belt",
-				"RC_200Rnd_127x99_T_R",
-				"RC_200Rnd_127x99_T_R",
-				"RC_200Rnd_127x99_T_R",
-				"RC_200Rnd_127x99_T_R",
-				"RC_200Rnd_127x99_T_R",
+				"RC_200Rnd_127x99_SLAP_T_R",
+				"RC_200Rnd_127x99_SLAP_T_R",
+				"RC_200Rnd_127x99_SLAP_T_R",
+				"RC_200Rnd_127x99_SLAP_T_R",
+				"RC_200Rnd_127x99_SLAP_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
