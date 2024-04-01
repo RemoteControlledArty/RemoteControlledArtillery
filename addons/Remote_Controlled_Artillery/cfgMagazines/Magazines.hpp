@@ -337,8 +337,8 @@ class RC_20Rnd_120mm_APFSDS_T_G: RC_10Rnd_120mm_APFSDS_T_G
 class 4Rnd_120mm_LG_cannon_missiles;
 class RC_3Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 {
-	displayName="Datalink Guided";
-	displayNameShort="DL Guided";
+	displayName="NLOS Datalink Guided";
+	displayNameShort="NLOS DL-G";
 	ammo="RC_M_120mm_cannon_ATGM_DLG";
 	count=3;
 };
