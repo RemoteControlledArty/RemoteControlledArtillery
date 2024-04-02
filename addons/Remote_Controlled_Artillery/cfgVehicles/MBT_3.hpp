@@ -440,7 +440,7 @@ class RC_MBT_3_G_Driverless: RC_MBT_3_G_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\initDL.hpp"
 			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
