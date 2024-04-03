@@ -234,7 +234,7 @@ class RC_ICV_5_A: RC_ICV_IFV_5_A
 			gunnerCompartments="Compartment3";
 			commanding=2;
 			gunnerForceOptics=1;
-			forceHideGunner=1;
+			//forceHideGunner=1;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="";
 
@@ -293,7 +293,7 @@ class RC_ICV_5_A: RC_ICV_IFV_5_A
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 					turretInfoType="";
 					gunnerForceOptics=1;
-					forceHideGunner=1;
+					//forceHideGunner=1;
 					commanding=3;
 
 					weapons[]=
@@ -567,7 +567,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
-			forceHideGunner=1;
+			//forceHideGunner=1;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 			weapons[]=
@@ -633,7 +633,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					commanding=2;
-					forceHideGunner=1;
+					//forceHideGunner=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
 					//turretInfoType="RscOptics_APC_Wheeled_03_commander";
 
