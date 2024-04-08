@@ -684,3 +684,97 @@ class RC_IFV_6_WD_I: RC_IFV_6_WD
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_IFV_6_ReTex_WD: RC_IFV_6_DIG
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
+	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_APC_tracked_03_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"warrior\data\warrior_ext_01_wd.paa",
+		"warrior\data\warrior_ext_02_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\armor_f\data\cage_g1_co.paa"
+	};
+};
+class RC_IFV_6_ReTex_WD_O: RC_IFV_6_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_IFV_6_ReTex_WD_I: RC_IFV_6_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
+class RC_IFV_6_ReTex_D: RC_IFV_6_DIG
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_IFV_APC_ReTex_D_subcat";
+	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_APC_tracked_03_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"warrior\data\warrior_ext_01_d.paa",
+		"warrior\data\warrior_ext_02_d.paa",
+		"warrior\data\camonet_desert_co.paa",
+		"warrior\data\cage_desert_co.paa"
+	};
+};
+class RC_IFV_6_ReTex_D_O: RC_IFV_6_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_IFV_6_ReTex_D_I: RC_IFV_6_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
+class RC_IFV_6_ReTex_A: RC_IFV_6_DIG
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_IFV_APC_ReTex_A_subcat";
+	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_APC_tracked_03_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"warrior\data\warrior_ext_01_d.paa",
+		"warrior\data\warrior_ext_02_d.paa",
+		"a3\armor_f\data\camonet_nato_desert_co.paa",
+		"a3\armor_f\data\cage_sand_co.paa"
+	};
+};
+class RC_IFV_6_ReTex_A_O: RC_IFV_6_ReTex_A
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_IFV_6_ReTex_A_I: RC_IFV_6_ReTex_A
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
