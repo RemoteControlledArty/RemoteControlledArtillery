@@ -756,8 +756,8 @@ class RC_IFV_6_ReTex_A: RC_IFV_6_DIG
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_APC_tracked_03_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
-		"warrior\data\warrior_ext_01_d.paa",
-		"warrior\data\warrior_ext_02_d.paa",
+		"warrior\data\warrior_ext_01_e.paa",
+		"warrior\data\warrior_ext_02_e.paa",
 		"a3\armor_f\data\camonet_nato_desert_co.paa",
 		"a3\armor_f\data\cage_sand_co.paa"
 	};
