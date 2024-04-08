@@ -1124,15 +1124,14 @@ class RC_IFV_3_ReTex_WD: RC_IFV_3_A
 {
 	faction="RemoteControlled_ReTex_B";
 	editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
 		"pandurii\data\pandur_01_ext_wd.paa",
 		"pandurii\data\pandur_02_ext_wd.paa",
 		"pandurii\data\pandur_turret_wd.paa",
 		"pandurii\data\pandur_03_ext_wd.paa",
-		"pandurii\data\camonet_desert_co.paa",
-		"pandurii\data\cage_desert_co.paa"
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\armor_f\data\cage_g1_co.paa"
 	};
 };
 class RC_IFV_3_ReTex_WD_O: RC_IFV_3_ReTex_WD
@@ -1163,8 +1162,8 @@ class RC_IFV_3_ReTex_D: RC_IFV_3_A
 		"pandurii\data\pandur_02_ext_d.paa",
 		"pandurii\data\pandur_turret_d.paa",
 		"pandurii\data\pandur_03_ext_d.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"a3\armor_f\data\cage_g1_co.paa"
+		"pandurii\data\camonet_desert_co.paa",
+		"pandurii\data\cage_desert_co.paa"
 	};
 };
 class RC_IFV_3_ReTex_D_O: RC_IFV_3_ReTex_D
