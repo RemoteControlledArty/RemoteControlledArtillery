@@ -484,25 +484,25 @@ class CfgEditorSubcategories
 	class RC_UAV_Designator_subcat {displayname="UAVs / Designators";};
 
 
-	class RC_Howitzer_ReTex_D_subcat {displayname="'[D] indirect : Howitzers";};
-	class RC_Howitzer_ReTex_WD_subcat {displayname="'[WD] indirect  :  Howitzers";};
-	class RC_Rocket_ReTex_D_subcat {displayname="'[D] indirect :  Rocket Systems";};
-	class RC_Rocket_ReTex_WD_subcat {displayname="'[WD] indirect :  Rocket Systems";};
-	class RC_Rocket_ReTex_A_subcat {displayname="'[A] indirect :  Rocket Systems";};
+	class RC_Howitzer_ReTex_D_subcat {displayname="'D - indirect : Howitzers";};
+	class RC_Howitzer_ReTex_WD_subcat {displayname="'WD - indirect  :  Howitzers";};
+	class RC_Rocket_ReTex_D_subcat {displayname="'D - indirect :  Rocket Systems";};
+	class RC_Rocket_ReTex_WD_subcat {displayname="'WD - indirect :  Rocket Systems";};
+	class RC_Rocket_ReTex_A_subcat {displayname="'A - indirect :  Rocket Systems";};
 
-	class RC_AntiAir_ReTex_D_subcat {displayname="[D] Anti-Air";};
-	class RC_AntiAir_ReTex_WD_subcat {displayname="[WD] Anti-Air";};
+	class RC_AntiAir_ReTex_D_subcat {displayname="D - Anti-Air";};
+	class RC_AntiAir_ReTex_WD_subcat {displayname="WD - Anti-Air";};
 	//class RC_Respawn_ReTex_subcat {displayname="Respawn";};
 	//class RC_Repair_ReTex_subcat {displayname="Repair";};
-	class RC_FSV_MBT_ReTex_D_subcat {displayname="[D] MBTs / FSV";};
-	class RC_FSV_MBT_ReTex_WD_subcat {displayname="[WD] MBTs / FSV";};
-	class RC_FSV_MBT_ReTex_A_subcat {displayname="[A] MBTs / FSV";};
-	class RC_ICV_ReTex_D_subcat {displayname="[D] ICVs";};
-	class RC_ICV_ReTex_WD_subcat {displayname="[WD] ICVs";};
-	class RC_ICV_ReTex_A_subcat {displayname="[A] ICVs";};
-	class RC_IFV_APC_ReTex_D_subcat {displayname="[D] IFVs / APCs";};
-	class RC_IFV_APC_ReTex_WD_subcat {displayname="[WD] IFVs / APCs";};
-	class RC_IFV_APC_ReTex_A_subcat {displayname="[A] IFVs / APCs";};
+	class RC_FSV_MBT_ReTex_D_subcat {displayname="D - MBTs / FSV";};
+	class RC_FSV_MBT_ReTex_WD_subcat {displayname="WD - MBTs / FSV";};
+	class RC_FSV_MBT_ReTex_A_subcat {displayname="A - MBTs / FSV";};
+	class RC_ICV_ReTex_D_subcat {displayname="D - ICVs";};
+	class RC_ICV_ReTex_WD_subcat {displayname="WD - ICVs";};
+	class RC_ICV_ReTex_A_subcat {displayname="A - ICVs";};
+	class RC_IFV_APC_ReTex_D_subcat {displayname="D - IFVs / APCs";};
+	class RC_IFV_APC_ReTex_WD_subcat {displayname="WD - IFVs / APCs";};
+	class RC_IFV_APC_ReTex_A_subcat {displayname="A - IFVs / APCs";};
 };
 
 

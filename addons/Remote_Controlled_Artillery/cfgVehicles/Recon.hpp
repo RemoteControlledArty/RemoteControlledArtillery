@@ -265,7 +265,8 @@ class RC_AA_small_WD: RC_AA_small_Base
 	{
 		"A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
 		"A3\armor_f_tank\lt_01\data\lt_01_at_olive_co.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		//"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
 		"A3\armor_f\data\cage_olive_co.paa"
 	};
 };
@@ -275,24 +276,20 @@ class RC_AA_small_WD_O: RC_AA_small_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_AA_small_DIG_I: RC_AA_small_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-};
 class RC_AA_small_WD_I: RC_AA_small_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
+};
+class RC_AA_small_DIG_I: RC_AA_small_WD_I
+{
 	hiddenSelectionsTextures[]=
 	{
-	"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-	"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
-	"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-	"A3\armor_f\data\cage_aaf_co.paa"
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
 	};
 };
 
@@ -535,7 +532,8 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 	{
 		"A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
 		"A3\armor_f_tank\lt_01\data\lt_01_radar_olive_co.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		//"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
 		"A3\armor_f\data\cage_olive_co.paa"
 	};
 };
@@ -1020,7 +1018,8 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 	{
 		"A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
 		"A3\armor_f_tank\lt_01\data\lt_01_at_olive_co.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		//"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
 		"A3\armor_f\data\cage_olive_co.paa"
 	};
 };
@@ -1068,10 +1067,10 @@ class RC_ATGM_small_DIG_I: RC_ATGM_small_WD_I
 {
 	hiddenSelectionsTextures[]=
 	{
-	"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-	"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
-	"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-	"A3\armor_f\data\cage_aaf_co.paa"
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
 	};
 };
 
@@ -1100,10 +1099,10 @@ class RC_ATGM_small_DIG_Driverless_I: RC_ATGM_small_WD_Driverless
 
 	hiddenSelectionsTextures[]=
 	{
-	"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-	"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
-	"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-	"A3\armor_f\data\cage_aaf_co.paa"
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
 	};
 };
 class RC_ATGM_small_WD_Driverless_I: RC_ATGM_small_DIG_Driverless_I

@@ -39,6 +39,9 @@ TO DO - FEATURES:
 CAR Script for Zeus:
 -EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided
 
+-aa dig check
+-recon animationlist check
+
 ASAP:
 -when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
 -driverless "take controls" check
@@ -303,6 +306,7 @@ new:
 -improved file structure with includes
 -further improved file structure to streamline testing
 -increased MBT/FSV/IFV datalink panel from 3km to 4km
+-new NEUTRAL camonets, in uniform olive/tan, making it more fitting for a larger variety of factions/units
 
 
 

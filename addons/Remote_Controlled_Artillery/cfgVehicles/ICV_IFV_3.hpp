@@ -80,8 +80,21 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 		"SmokeLauncherMag"
 	};
 
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_APC_Wheeled_03_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"a3\armor_f_gamma\apc_wheeled_03\data\apc_wheeled_03_ext_co.paa",
+		"a3\armor_f_gamma\apc_wheeled_03\data\apc_wheeled_03_ext2_co.paa",
+		"a3\armor_f_gamma\apc_wheeled_03\data\rcws30_co.paa",
+		"a3\armor_f_gamma\apc_wheeled_03\data\apc_wheeled_03_ext_alpha_co.paa",
+		"a3\armor_f\data\camonet_nato_desert_co.paa",
+		"a3\armor_f\data\cage_sand_co.paa"
+	};
+
+	/*
 	DLC="Tacops";
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_APC_Wheeled_03_cannon_F.jpg";
+
 	hiddenSelectionsTextures[]=
 	{
 		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_IG_02_CO.paa",
@@ -100,6 +113,7 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 		"Guerilla_03",
 		0
 	};
+	*/
 
 	class HitPoints: HitPoints
 	{
@@ -632,7 +646,8 @@ class RC_ICV_3_WD: RC_ICV_3_A
 		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext2_IG_01_CO.paa",
 		"A3\Data_F_Tacops\data\RCWS30_IG_01_CO.paa",
 		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_alpha_IG_01_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
+		//"A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
 		"A3\armor_f\data\cage_G1_co.paa"
 	};
 	textureList[]=
@@ -1069,7 +1084,8 @@ class RC_IFV_3_WD: RC_IFV_3_A
 		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext2_IG_01_CO.paa",
 		"A3\Data_F_Tacops\data\RCWS30_IG_01_CO.paa",
 		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_alpha_IG_01_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
+		//"A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
 		"A3\armor_f\data\cage_G1_co.paa"
 	};
 	textureList[]=
@@ -1175,38 +1191,6 @@ class RC_IFV_3_ReTex_D_O: RC_IFV_3_ReTex_D
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_IFV_3_ReTex_D_I: RC_IFV_3_ReTex_D
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
-class RC_IFV_3_ReTex_A: RC_IFV_3_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_A_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"a3\armor_f_gamma\apc_wheeled_03\data\apc_wheeled_03_ext_co.paa",
-		"a3\armor_f_gamma\apc_wheeled_03\data\apc_wheeled_03_ext2_co.paa",
-		"a3\armor_f_gamma\apc_wheeled_03\data\rcws30_co.paa",
-		"a3\armor_f_gamma\apc_wheeled_03\data\apc_wheeled_03_ext_alpha_co.paa",
-		"a3\armor_f\data\camonet_nato_desert_co.paa",
-		"a3\armor_f\data\cage_sand_co.paa"
-	};
-};
-class RC_IFV_3_ReTex_A_O: RC_IFV_3_ReTex_A
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_IFV_3_ReTex_A_I: RC_IFV_3_ReTex_A
 {
 	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";

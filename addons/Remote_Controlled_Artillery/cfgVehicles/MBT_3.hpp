@@ -477,7 +477,8 @@ class RC_MBT_3_WD_Driverless: RC_MBT_3_G_Driverless
 	{
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_1_CO.paa",
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_2_CO.paa",
-		"A3\Armor_F\Data\camonet_CSAT_Stripe_Green_CO.paa"
+		//"A3\Armor_F\Data\camonet_CSAT_Stripe_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 
 	class AnimationSources: AnimationSources
@@ -562,7 +563,8 @@ class RC_MBT_3_WD: RC_MBT_3_G
 	{
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_1_CO.paa",
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_2_CO.paa",
-		"A3\Armor_F\Data\camonet_CSAT_Stripe_Green_CO.paa"
+		//"A3\Armor_F\Data\camonet_CSAT_Stripe_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 
 	class AnimationSources: AnimationSources

@@ -577,7 +577,8 @@ class RC_FSV_WD: RC_FSV_A
 		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_wheel_green_CO.paa",
 		"A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_CO.paa",
 		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_commander_tow_CO.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
 		"A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_CO.paa"
 	};
 	textureList[]=

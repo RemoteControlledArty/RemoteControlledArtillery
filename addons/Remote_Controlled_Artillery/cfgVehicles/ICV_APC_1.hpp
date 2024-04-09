@@ -480,7 +480,8 @@ class RC_ICV_1_WD: RC_ICV_1_A
 		"A3\Armor_F_exp\APC_Tracked_01\Data\APC_Tracked_01_body_olive_CO.paa",
 		"A3\Armor_F_exp\APC_Tracked_01\Data\mbt_01_body_olive_co.paa",
 		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
 class RC_ICV_1_WD_O: RC_ICV_1_WD
@@ -837,7 +838,8 @@ class RC_APC_1_WD: RC_APC_1_A
 		"A3\Armor_F_exp\APC_Tracked_01\Data\APC_Tracked_01_body_olive_CO.paa",
 		"A3\Armor_F_exp\APC_Tracked_01\Data\mbt_01_body_olive_co.paa",
 		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
 class RC_APC_1_WD_O: RC_APC_1_WD
@@ -922,3 +924,65 @@ class RC_APC_1_WD_Driverless_I: RC_APC_1_WD_Driverless
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 */
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_APC_1_ReTex_WD: RC_APC_1_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_rcws_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"namer\data\namer_01_body_wd.paa",
+		"namer\data\mbt_01_body_wd.paa",
+		"namer\data\turret_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa"
+	};
+};
+class RC_APC_1_ReTex_WD_O: RC_APC_1_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_APC_1_ReTex_WD_I: RC_APC_1_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
+class RC_APC_1_ReTex_D: RC_APC_1_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_IFV_APC_ReTex_D_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"namer\data\namer_01_body_d.paa",
+		"namer\data\mbt_01_body_d.paa",
+		"namer\data\turret_d.paa",
+		"namer\data\camonet_desert_co.paa"
+	};
+};
+class RC_APC_1_ReTex_D_O: RC_APC_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_APC_1_ReTex_D_I: RC_APC_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};

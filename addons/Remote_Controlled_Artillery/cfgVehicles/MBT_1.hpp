@@ -487,7 +487,8 @@ class RC_MBT_1_WD_Driverless: RC_MBT_1_A_Driverless
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_tow_olive_CO.paa",
 		"A3\Armor_F_Exp\MBT_01\data\mbt_addons_olive_CO.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
 class RC_MBT_1_WD_Driverless_O: RC_MBT_1_WD_Driverless
@@ -558,7 +559,8 @@ class RC_MBT_1_WD: RC_MBT_1_A
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_tow_olive_CO.paa",
 		"A3\Armor_F_Exp\MBT_01\data\mbt_addons_olive_CO.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
 class RC_MBT_1_WD_O: RC_MBT_1_WD
@@ -576,4 +578,66 @@ class RC_MBT_1_WD_I: RC_MBT_1_WD
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_MBT_1_ReTex_WD: RC_MBT_1_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_FSV_MBT_ReTex_WD_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_TUSK_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"merkava\data\mbt_01_body_wd.paa",
+		"merkava\data\mbt_01_tow_wd.paa",
+		"merkava\data\mbt_addons_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa"
+	};
+};
+class RC_MBT_1_ReTex_WD_O: RC_MBT_1_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+};
+class RC_MBT_1_ReTex_WD_I: RC_MBT_1_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+};
+
+
+class RC_MBT_1_ReTex_D: RC_MBT_1_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_FSV_MBT_ReTex_D_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"merkava\data\mbt_01_body_d.paa",
+		"merkava\data\mbt_01_tow_d.paa",
+		"merkava\data\mbt_addons_d.paa",
+		"merkava\data\camonet_desert_co.paa"
+	};
+};
+class RC_MBT_1_ReTex_D_O: RC_MBT_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+};
+class RC_MBT_1_ReTex_D_I: RC_MBT_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };

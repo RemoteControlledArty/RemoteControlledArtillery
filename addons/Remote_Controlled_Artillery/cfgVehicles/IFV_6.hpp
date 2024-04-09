@@ -664,7 +664,8 @@ class RC_IFV_6_WD: RC_IFV_6_DIG
 	{
 		"A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
 		"A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext2_eaf_co.paa",
-		"A3\Armor_F_Enoch\apc_tracked_03\Data\camonet_EAF_green_CO.paa",
+		//"A3\Armor_F_Enoch\apc_tracked_03\Data\camonet_EAF_green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
 		"A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
 	};
 };

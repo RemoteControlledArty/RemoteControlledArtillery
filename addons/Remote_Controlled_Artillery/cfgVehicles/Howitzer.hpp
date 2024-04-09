@@ -4,7 +4,10 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	class AnimationSources;
 	class showCamonetTurret;
 	class showCamonetHull;
+	class showCamonetPlates1;
+	class showCamonetPlates2;
 	class showAmmobox;
+	class showCanisters;
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
@@ -102,6 +105,14 @@ class RC_Howitzer_A: RC_Howitzer_base
 
 	class AnimationSources: AnimationSources
 	{
+		class showCamonetPlates1: showCamonetPlates1
+		{
+			initPhase=1;
+		};
+		class showCamonetPlates2: showCamonetPlates2
+		{
+			initPhase=1;
+		};
 		class showCamonetTurret: showCamonetTurret
 		{
 			initPhase=1;
@@ -114,14 +125,21 @@ class RC_Howitzer_A: RC_Howitzer_base
 		{
 			initPhase=1;
 		};
+		class showCanisters: showCanisters
+		{
+			initPhase=1;
+		};
 	};
 	animationList[]=
 	{
+		
 		"showCamonetTurret",
 		0,
 		"showCamonetHull",
 		0,
-		"showAmmobox",
+		"showCamonetPlates1",
+		0,
+		"showCamonetPlates2",
 		0
 	};
 
@@ -265,7 +283,8 @@ class RC_Howitzer_WD: RC_Howitzer_A
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_scorcher_olive_CO.paa",
 		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
-		"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		//"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
 class RC_Howitzer_A_O: RC_Howitzer_A
@@ -302,6 +321,8 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 	class showCamonetHull;
 	class showCamonetTurret;
 	class showCamonetCannon;
+	class showAmmobox;
+	class showCanisters;
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
@@ -407,6 +428,14 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			initPhase=1;
 		};
 		class showCamonetCannon: showCamonetCannon
+		{
+			initPhase=1;
+		};
+		class showAmmobox: showAmmobox
+		{
+			initPhase=1;
+		};
+		class showCanisters:showCanisters
 		{
 			initPhase=1;
 		};
@@ -714,6 +743,60 @@ class RC_Static_Arty_O: RC_Static_Arty
 class RC_Static_Arty_I: RC_Static_Arty
 {
 	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_Howitzer_ReTex_WD: RC_Howitzer_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_AntiAir_ReTex_WD_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_AA_ghex_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"merkava\data\mbt_01_body_wd.paa",
+		"merkava\data\mbt_01_spg_body_wd.paa",
+		"merkava\data\turret_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa"
+	};
+};
+class RC_Howitzer_ReTex_WD_O: RC_Howitzer_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Howitzer_ReTex_WD_I: RC_Howitzer_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_Howitzer_ReTex_D: RC_Howitzer_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_AntiAir_ReTex_D_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"merkava\data\mbt_01_body_d.paa",
+		"merkava\data\mbt_01_spg_body_d.paa",
+		"merkava\data\turret_d.paa",
+		"merkava\data\camonet_desert_co.paa"
+	};
+};
+class RC_Howitzer_ReTex_D_O: RC_Howitzer_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Howitzer_ReTex_D_I: RC_Howitzer_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
 };

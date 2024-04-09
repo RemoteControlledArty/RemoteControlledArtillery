@@ -504,7 +504,8 @@ class RC_MBT_2_WD_Driverless: RC_MBT_2_A_Driverless
 		"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
 		"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
 		"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
 class RC_MBT_2_WD_Driverless_O: RC_MBT_2_WD_Driverless
@@ -574,7 +575,8 @@ class RC_MBT_2_WD: RC_MBT_2_A
 		"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
 		"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
 		"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
 class RC_MBT_2_WD_O: RC_MBT_2_WD
@@ -588,6 +590,98 @@ class RC_MBT_2_WD_O: RC_MBT_2_WD
 class RC_MBT_2_WD_I: RC_MBT_2_WD
 {
 	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_MBT_2_ReTex_WD: RC_MBT_2_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_FSV_MBT_ReTex_WD_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_AA_ghex_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"leopard2\data\leopard_ext01_wd.paa",
+		"leopard2\data\leopard_ext02_wd.paa",
+		"leopard2\data\leopard_rcws_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa"
+	};
+};
+class RC_MBT_2_ReTex_WD_O: RC_MBT_2_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+};
+class RC_MBT_2_ReTex_WD_I: RC_MBT_2_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+};
+
+
+class RC_MBT_2_ReTex_D: RC_MBT_2_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_FSV_MBT_ReTex_D_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"leopard2\data\leopard_ext01_d.paa",
+		"leopard2\data\leopard_ext02_d.paa",
+		"leopard2\data\leopard_rcws_d.paa",
+		"leopard2\data\camonet_desert_co.paa"
+	};
+};
+class RC_MBT_2_ReTex_D_O: RC_MBT_2_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+};
+class RC_MBT_2_ReTex_D_I: RC_MBT_2_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+};
+
+
+class RC_MBT_2_ReTex_A: RC_MBT_2_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_FSV_MBT_ReTex_D_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"leopard2\data\leopard_ext01_e.paa",
+		"leopard2\data\leopard_ext02_e.paa",
+		"leopard2\data\leopard_rcws_e.paa",
+		"leopard2\data\camonet_nato_desert_co.paa"
+	};
+};
+class RC_MBT_2_ReTex_A_O: RC_MBT_2_ReTex_A
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+};
+class RC_MBT_2_ReTex_A_I: RC_MBT_2_ReTex_A
+{
+	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
 

@@ -6,6 +6,8 @@ class RC_AA_base: B_APC_Tracked_01_AA_F
 	class Components;
 	class showCamonetTurret;
 	class showCamonetHull;
+	class showCamonetPlates1;
+	class showCamonetPlates2;
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
@@ -44,6 +46,14 @@ class RC_AA_A: RC_AA_base
 
 	class AnimationSources: AnimationSources
 	{
+		class showCamonetPlates1: showCamonetPlates1
+		{
+			initPhase=1;
+		};
+		class showCamonetPlates2: showCamonetPlates2
+		{
+			initPhase=1;
+		};
 		class showCamonetTurret: showCamonetTurret
 		{
 			initPhase=1;
@@ -163,7 +173,8 @@ class RC_AA_WD: RC_AA_A
 		"A3\Armor_F_exp\APC_Tracked_01\Data\apc_tracked_01_aa_body_olive_co.paa",
 		"A3\Armor_F_exp\APC_Tracked_01\Data\mbt_01_body_olive_co.paa",
 		"A3\Armor_F_exp\APC_Tracked_01\Data\apc_tracked_01_aa_tower_olive_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
 class RC_AA_A_O: RC_AA_A
@@ -371,4 +382,58 @@ class RC_AA_HEX_WD_O: RC_AA_HEX_A_O
 		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
 		"A3\armor_f\data\cage_csat_green_CO.paa"
 	};
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_AA_ReTex_WD: RC_AA_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_AntiAir_ReTex_WD_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_AA_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"namer\data\namer_01_aa_body_wd.paa",
+		"namer\data\mbt_01_body_wd.paa",
+		"namer\data\namer_01_aa_tower_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa"
+	};
+};
+class RC_AA_ReTex_WD_O: RC_AA_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_AA_ReTex_WD_I: RC_AA_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_AA_ReTex_D: RC_AA_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_AntiAir_ReTex_D_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"namer\data\namer_01_aa_body_d.paa",
+		"namer\data\mbt_01_body_d.paa",
+		"namer\data\namer_01_aa_tower_d.paa",
+		"namer\data\camonet_desert_co.paa"
+	};
+};
+class RC_AA_ReTex_D_O: RC_AA_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_AA_ReTex_D_I: RC_AA_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
 };

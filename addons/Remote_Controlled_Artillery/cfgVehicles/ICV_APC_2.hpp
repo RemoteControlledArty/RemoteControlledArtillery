@@ -1,5 +1,5 @@
 class O_APC_Wheeled_02_rcws_F;
-class RC_ICV_IFV_2_A_Base: O_APC_Wheeled_02_rcws_F
+class RC_ICV_APC_2_A_Base: O_APC_Wheeled_02_rcws_F
 {
 	class Turrets;
 	class MainTurret;
@@ -24,7 +24,7 @@ class RC_ICV_IFV_2_A_Base: O_APC_Wheeled_02_rcws_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
+class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 {
 	author="Ascent";
 	faction="RemoteControlled_O";
@@ -266,7 +266,7 @@ class RC_ICV_IFV_2_A: RC_ICV_IFV_2_A_Base
 };
 
 
-class RC_ICV_2_A_O: RC_ICV_IFV_2_A
+class RC_ICV_2_A_O: RC_ICV_APC_2_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -607,7 +607,7 @@ class RC_ICV_2_WD_O: RC_ICV_2_A_O
 };
 
 
-class RC_IFV_2_A_O: RC_ICV_IFV_2_A
+class RC_APC_2_A_O: RC_ICV_APC_2_A
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -913,7 +913,7 @@ class RC_IFV_2_A_O: RC_ICV_IFV_2_A
 };
 
 
-class RC_IFV_2_WD_O: RC_IFV_2_A_O
+class RC_APC_2_WD_O: RC_APC_2_A_O
 {
 	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
@@ -930,4 +930,68 @@ class RC_IFV_2_WD_O: RC_IFV_2_A_O
 		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
 		"A3\armor_f\data\cage_csat_green_CO.paa"
 	};
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_APC_2_ReTex_WD: RC_APC_2_A_O
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"arma\data\arma_01_ext_wd.paa",
+		"arma\data\arma_02_ext_wd.paa",
+		"arma\data\turret_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\armor_f\data\cage_g1_co.paa"
+	};
+};
+class RC_APC_2_ReTex_WD_O: RC_APC_2_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_APC_2_ReTex_WD_I: RC_APC_2_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
+class RC_APC_2_ReTex_D: RC_APC_2_A_O
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_IFV_APC_ReTex_D_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"arma\data\arma_01_ext_d.paa",
+		"arma\data\arma_02_ext_d.paa",
+		"arma\data\turret_d.paa",
+		"arma\data\camonet_desert_co.paa",
+		"arma\data\cage_desert_co.paa"
+	};
+};
+class RC_APC_2_ReTex_D_O: RC_APC_2_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_APC_2_ReTex_D_I: RC_APC_2_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
