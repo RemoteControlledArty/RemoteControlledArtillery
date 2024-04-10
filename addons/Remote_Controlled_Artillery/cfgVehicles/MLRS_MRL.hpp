@@ -514,7 +514,7 @@ class RC_MRL_WD_I: RC_MRL_WD
 class RC_MLRS_ReTex_WD: RC_MLRS_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
+	editorSubcategory="RC_Rocket_ReTex_WD_subcat";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_mlrs_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -540,7 +540,7 @@ class RC_MLRS_ReTex_WD_I: RC_MLRS_ReTex_WD
 class RC_MLRS_ReTex_D: RC_MLRS_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_D_subcat";
+	editorSubcategory="RC_Rocket_ReTex_D_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"merkava\data\mbt_01_body_d.paa",

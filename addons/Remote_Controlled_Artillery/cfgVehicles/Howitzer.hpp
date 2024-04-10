@@ -752,8 +752,8 @@ class RC_Static_Arty_I: RC_Static_Arty
 class RC_Howitzer_ReTex_WD: RC_Howitzer_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_AntiAir_ReTex_WD_subcat";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_AA_ghex_F.jpg";
+	editorSubcategory="RC_Howitzer_ReTex_WD_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_arty_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
 		"merkava\data\mbt_01_body_wd.paa",
@@ -779,7 +779,7 @@ class RC_Howitzer_ReTex_WD_I: RC_Howitzer_ReTex_WD
 class RC_Howitzer_ReTex_D: RC_Howitzer_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_AntiAir_ReTex_D_subcat";
+	editorSubcategory="RC_Howitzer_ReTex_D_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"merkava\data\mbt_01_body_d.paa",

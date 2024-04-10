@@ -602,7 +602,6 @@ class RC_MBT_2_ReTex_WD: RC_MBT_2_A
 {
 	faction="RemoteControlled_ReTex_B";
 	editorSubcategory="RC_FSV_MBT_ReTex_WD_subcat";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_AA_ghex_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
 		"leopard2\data\leopard_ext01_wd.paa",

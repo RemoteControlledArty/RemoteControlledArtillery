@@ -934,7 +934,7 @@ class RC_APC_2_WD_O: RC_APC_2_A_O
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
-class RC_APC_2_ReTex_WD: RC_APC_2_A_O
+class RC_APC_2_ReTex_WD_O: RC_APC_2_A_O
 {
 	faction="RemoteControlled_ReTex_B";
 	editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
@@ -948,25 +948,7 @@ class RC_APC_2_ReTex_WD: RC_APC_2_A_O
 		"a3\armor_f\data\cage_g1_co.paa"
 	};
 };
-class RC_APC_2_ReTex_WD_O: RC_APC_2_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_APC_2_ReTex_WD_I: RC_APC_2_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
-class RC_APC_2_ReTex_D: RC_APC_2_A_O
+class RC_APC_2_ReTex_D_O: RC_APC_2_A_O
 {
 	faction="RemoteControlled_ReTex_B";
 	editorSubcategory="RC_IFV_APC_ReTex_D_subcat";
@@ -978,20 +960,4 @@ class RC_APC_2_ReTex_D: RC_APC_2_A_O
 		"arma\data\camonet_desert_co.paa",
 		"arma\data\cage_desert_co.paa"
 	};
-};
-class RC_APC_2_ReTex_D_O: RC_APC_2_ReTex_D
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_APC_2_ReTex_D_I: RC_APC_2_ReTex_D
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
