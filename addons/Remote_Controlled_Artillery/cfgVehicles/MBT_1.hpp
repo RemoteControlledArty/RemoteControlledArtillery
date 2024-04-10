@@ -10,6 +10,8 @@ class RC_MBT_1_Base: B_MBT_01_TUSK_F
 	class AnimationSources;
 	class showCamonetTurret;
 	class showCamonetHull;
+	class showCamonetPlates1;
+	class showCamonetPlates2;
 	class OpticsIn;
 	class Wide;
 	scope=0;
@@ -89,6 +91,14 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 
 	class AnimationSources: AnimationSources
 	{
+		class showCamonetPlates1: showCamonetPlates1
+		{
+			initPhase=1;
+		};
+		class showCamonetPlates2: showCamonetPlates2
+		{
+			initPhase=1;
+		};
 		class showCamonetTurret: showCamonetTurret
 		{
 			initPhase=1;

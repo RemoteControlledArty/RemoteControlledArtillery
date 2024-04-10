@@ -39,7 +39,7 @@ TO DO - FEATURES:
 CAR Script for Zeus:
 -EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided
 
--aa dig check
+-enable camonet on olive IVC
 -recon animationlist check
 
 ASAP:

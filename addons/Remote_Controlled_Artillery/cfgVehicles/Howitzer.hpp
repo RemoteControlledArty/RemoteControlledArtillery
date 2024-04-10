@@ -757,7 +757,7 @@ class RC_Howitzer_ReTex_WD: RC_Howitzer_A
 	hiddenSelectionsTextures[]=
 	{
 		"merkava\data\mbt_01_body_wd.paa",
-		"merkava\data\mbt_01_spg_body_wd.paa",
+		"merkava\data\mbt_01_spg_wd.paa",
 		"merkava\data\turret_wd.paa",
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
@@ -783,7 +783,7 @@ class RC_Howitzer_ReTex_D: RC_Howitzer_A
 	hiddenSelectionsTextures[]=
 	{
 		"merkava\data\mbt_01_body_d.paa",
-		"merkava\data\mbt_01_spg_body_d.paa",
+		"merkava\data\mbt_01_spg_d.paa",
 		"merkava\data\turret_d.paa",
 		"merkava\data\camonet_desert_co.paa"
 	};

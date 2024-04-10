@@ -519,7 +519,7 @@ class RC_MLRS_ReTex_WD: RC_MLRS_A
 	hiddenSelectionsTextures[]=
 	{
 		"merkava\data\mbt_01_body_wd.paa",
-		"merkava\data\mbt_01_mlrs_body_wd.paa",
+		"merkava\data\mbt_01_mlrs_wd.paa",
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
@@ -544,7 +544,7 @@ class RC_MLRS_ReTex_D: RC_MLRS_A
 	hiddenSelectionsTextures[]=
 	{
 		"merkava\data\mbt_01_body_d.paa",
-		"merkava\data\mbt_01_mlrs_body_d.paa",
+		"merkava\data\mbt_01_mlrs_d.paa",
 		"merkava\data\camonet_desert_co.paa"
 	};
 };
@@ -572,7 +572,7 @@ class RC_MRL_ReTex_WD: RC_MRL_DIG
 	{
 		"iveco\data\iveco_front_wd.paa",
 		"a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
-		"iveco\data\iveco_02_mrl_wd.paa"
+		"iveco\data\truck_02_mrl_wd_co.paa"
 	};
 };
 class RC_MRL_ReTex_WD_O: RC_MRL_ReTex_WD
@@ -597,7 +597,7 @@ class RC_MRL_ReTex_D: RC_MRL_DIG
 	{
 		"iveco\data\iveco_front_d.paa",
 		"a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
-		"iveco\data\iveco_02_mrl_d.paa"
+		"iveco\data\truck_02_mrl_d_co.paa"
 	};
 };
 class RC_MRL_ReTex_D_O: RC_MRL_ReTex_D
@@ -622,7 +622,7 @@ class RC_MRL_ReTex_A: RC_MRL_DIG
 	{
 		"iveco\data\iveco_front_e.paa",
 		"a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
-		"iveco\data\iveco_02_mrl_e.paa"
+		"iveco\data\truck_02_mrl_e_co.paa"
 	};
 };
 class RC_MRL_ReTex_A_O: RC_MRL_ReTex_A
