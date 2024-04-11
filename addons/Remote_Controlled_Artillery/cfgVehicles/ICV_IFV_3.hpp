@@ -1139,7 +1139,7 @@ class RC_IFV_3_DIG_I: RC_IFV_3_WD_I
 class RC_IFV_3_ReTex_WD: RC_IFV_3_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"pandurii\data\pandur_01_ext_wd.paa",
@@ -1171,7 +1171,7 @@ class RC_IFV_3_ReTex_WD_I: RC_IFV_3_ReTex_WD
 class RC_IFV_3_ReTex_D: RC_IFV_3_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Desert_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"pandurii\data\pandur_01_ext_d.paa",

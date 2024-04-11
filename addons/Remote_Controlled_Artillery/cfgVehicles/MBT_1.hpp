@@ -595,7 +595,7 @@ class RC_MBT_1_WD_I: RC_MBT_1_WD
 class RC_MBT_1_ReTex_WD: RC_MBT_1_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_FSV_MBT_ReTex_WD_subcat";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_TUSK_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -626,7 +626,7 @@ class RC_MBT_1_ReTex_WD_I: RC_MBT_1_ReTex_WD
 class RC_MBT_1_ReTex_D: RC_MBT_1_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_FSV_MBT_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Desert_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"merkava\data\mbt_01_body_d.paa",

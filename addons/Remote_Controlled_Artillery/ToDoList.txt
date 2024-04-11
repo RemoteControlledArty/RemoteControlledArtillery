@@ -41,6 +41,8 @@ CAR Script for Zeus:
 
 -enable camonet on olive IVC
 -recon animationlist check
+-arma retexture not working atm
+-ICV's and Rooikat
 
 ASAP:
 -when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside

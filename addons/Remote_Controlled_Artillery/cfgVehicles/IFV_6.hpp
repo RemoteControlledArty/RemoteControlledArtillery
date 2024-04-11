@@ -691,7 +691,8 @@ class RC_IFV_6_WD_I: RC_IFV_6_WD
 class RC_IFV_6_ReTex_WD: RC_IFV_6_DIG
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
+	//editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_APC_tracked_03_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -722,7 +723,7 @@ class RC_IFV_6_ReTex_WD_I: RC_IFV_6_ReTex_WD
 class RC_IFV_6_ReTex_D: RC_IFV_6_DIG
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Desert_subcat";
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_APC_tracked_03_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -753,7 +754,7 @@ class RC_IFV_6_ReTex_D_I: RC_IFV_6_ReTex_D
 class RC_IFV_6_ReTex_A: RC_IFV_6_DIG
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_A_subcat";
+	editorSubcategory="RC_ReTex_Arid_subcat";
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_APC_tracked_03_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{

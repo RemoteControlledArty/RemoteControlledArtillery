@@ -67,6 +67,15 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 
+	hiddenSelectionsTextures[]=
+	{
+		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_base_co.paa",
+		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_adds_co.paa",
+		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_tows_co.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
+		"a3\Armor_F\Data\cage_sand_CO.paa"
+	};
+
 	class HitPoints: HitPoints
 	{
 		/*
@@ -620,7 +629,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 	{
 		class showCamonetHull: showCamonetHull
 		{
-			initPhase=0;
+			initPhase=1;
 		};
 		class showSLATHull: showSLATHull
 		{
@@ -1151,7 +1160,7 @@ class RC_IFV_4_WD_I: RC_IFV_4_WD
 class RC_IFV_4_ReTex_WD: RC_IFV_4_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -1183,7 +1192,7 @@ class RC_IFV_4_ReTex_WD_I: RC_IFV_4_ReTex_WD
 class RC_IFV_4_ReTex_D: RC_IFV_4_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Desert_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"patria\data\patria_01_ext_d.paa",

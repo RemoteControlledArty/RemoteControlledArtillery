@@ -389,7 +389,7 @@ class RC_AA_HEX_WD_O: RC_AA_HEX_A_O
 class RC_AA_ReTex_WD: RC_AA_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_AntiAir_ReTex_WD_subcat";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_AA_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -416,7 +416,7 @@ class RC_AA_ReTex_WD_I: RC_AA_ReTex_WD
 class RC_AA_ReTex_D: RC_AA_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_AntiAir_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Desert_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"namer\data\namer_01_aa_body_d.paa",

@@ -52,6 +52,13 @@ class RC_MLRS_A: RC_MLRS_base
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa",
+		"A3\armor_f_gamma\MBT_01\data\MBT_01_MLRS_co.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
+	};
+
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -514,7 +521,7 @@ class RC_MRL_WD_I: RC_MRL_WD
 class RC_MLRS_ReTex_WD: RC_MLRS_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_Rocket_ReTex_WD_subcat";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_mlrs_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -540,7 +547,7 @@ class RC_MLRS_ReTex_WD_I: RC_MLRS_ReTex_WD
 class RC_MLRS_ReTex_D: RC_MLRS_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_Rocket_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Desert_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"merkava\data\mbt_01_body_d.paa",
@@ -566,7 +573,7 @@ class RC_MLRS_ReTex_D_I: RC_MLRS_ReTex_D
 class RC_MRL_ReTex_WD: RC_MRL_DIG
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_Rocket_ReTex_WD_subcat";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_Truck_02_MRL_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -592,7 +599,7 @@ class RC_MRL_ReTex_WD_I: RC_MRL_ReTex_WD
 class RC_MRL_ReTex_D: RC_MRL_DIG
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_Rocket_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Desert_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"iveco\data\iveco_front_d.paa",
@@ -617,7 +624,7 @@ class RC_MRL_ReTex_D_I: RC_MRL_ReTex_D
 class RC_MRL_ReTex_A: RC_MRL_DIG
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_Rocket_ReTex_A_subcat";
+	editorSubcategory="RC_ReTex_Arid_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"iveco\data\iveco_front_e.paa",

@@ -2,6 +2,13 @@
 class B_AFV_Wheeled_01_up_cannon_F;
 class RC_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 {
+	/*
+	class AnimationSources;
+	class showCamonetHull;
+	class showCamonetCannon;
+	class showCamonetTurret;
+	class showSLATHull;
+	*/
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
@@ -68,6 +75,24 @@ class RC_FSV_A: RC_FSV_A_Base
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 
+	hiddenSelectionsTextures[]=
+	{
+		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_EXT1_CO.paa",
+		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_EXT2_CO.paa",
+		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_wheeled_01_wheel_CO.paa",
+		"A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_sand_CO.paa",
+		"a3\Armor_F_Tank\AFV_Wheeled_01\data\afv_commander_tow_sand_CO.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
+		"A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_sand_CO.paa"
+	};
+	textureList[]=
+	{
+		"Green",
+		0,
+		"Sand",
+		0
+	};
+
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -114,6 +139,27 @@ class RC_FSV_A: RC_FSV_A_Base
 		};
 	};
 
+	/*
+	class AnimationSources: AnimationSources
+	{
+		class showCamonetHull: showCamonetHull
+		{
+			initPhase=1;
+		};
+		class showCamonetCannon: showCamonetCannon
+		{
+			initPhase=1;
+		};
+		class showCamonetTurret: showCamonetTurret
+		{
+			initPhase=1;
+		};
+		class showSLATHull: showSLATHull
+		{
+			initPhase=1;
+		};
+	};
+	*/
 	animationList[]=
 	{
 		"showCamonetHull",
@@ -584,7 +630,7 @@ class RC_FSV_WD: RC_FSV_A
 	textureList[]=
 	{
 		"Green",
-		1,
+		0,
 		"Sand",
 		0
 	};

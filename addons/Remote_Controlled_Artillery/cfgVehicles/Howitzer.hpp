@@ -55,6 +55,14 @@ class RC_Howitzer_A: RC_Howitzer_base
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa",
+		"A3\armor_f_gamma\MBT_01\data\MBT_01_scorcher_co.paa",
+		"A3\Data_F\Vehicles\Turret_CO.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
+	};
+
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -752,7 +760,7 @@ class RC_Static_Arty_I: RC_Static_Arty
 class RC_Howitzer_ReTex_WD: RC_Howitzer_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_Howitzer_ReTex_WD_subcat";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_arty_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -779,7 +787,7 @@ class RC_Howitzer_ReTex_WD_I: RC_Howitzer_ReTex_WD
 class RC_Howitzer_ReTex_D: RC_Howitzer_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_Howitzer_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Desert_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"merkava\data\mbt_01_body_d.paa",

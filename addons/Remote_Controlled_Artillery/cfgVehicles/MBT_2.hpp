@@ -601,7 +601,7 @@ class RC_MBT_2_WD_I: RC_MBT_2_WD
 class RC_MBT_2_ReTex_WD: RC_MBT_2_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_FSV_MBT_ReTex_WD_subcat";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"leopard2\data\leopard_ext01_wd.paa",
@@ -631,7 +631,7 @@ class RC_MBT_2_ReTex_WD_I: RC_MBT_2_ReTex_WD
 class RC_MBT_2_ReTex_D: RC_MBT_2_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_FSV_MBT_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Desert_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"leopard2\data\leopard_ext01_d.paa",
@@ -661,7 +661,7 @@ class RC_MBT_2_ReTex_D_I: RC_MBT_2_ReTex_D
 class RC_MBT_2_ReTex_A: RC_MBT_2_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_FSV_MBT_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Arid_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"leopard2\data\leopard_ext01_e.paa",

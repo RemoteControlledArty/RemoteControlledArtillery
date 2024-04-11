@@ -930,7 +930,7 @@ class RC_APC_1_WD_Driverless_I: RC_APC_1_WD_Driverless
 class RC_APC_1_ReTex_WD: RC_APC_1_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_WD_subcat";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_rcws_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -961,7 +961,7 @@ class RC_APC_1_ReTex_WD_I: RC_APC_1_ReTex_WD
 class RC_APC_1_ReTex_D: RC_APC_1_A
 {
 	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_IFV_APC_ReTex_D_subcat";
+	editorSubcategory="RC_ReTex_Desert_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"namer\data\namer_01_body_d.paa",
