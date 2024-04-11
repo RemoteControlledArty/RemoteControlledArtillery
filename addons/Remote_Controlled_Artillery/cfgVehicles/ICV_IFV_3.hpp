@@ -87,33 +87,9 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 		"a3\armor_f_gamma\apc_wheeled_03\data\apc_wheeled_03_ext2_co.paa",
 		"a3\armor_f_gamma\apc_wheeled_03\data\rcws30_co.paa",
 		"a3\armor_f_gamma\apc_wheeled_03\data\apc_wheeled_03_ext_alpha_co.paa",
-		"a3\armor_f\data\camonet_nato_desert_co.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
 		"a3\armor_f\data\cage_sand_co.paa"
 	};
-
-	/*
-	DLC="Tacops";
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_APC_Wheeled_03_cannon_F.jpg";
-
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_IG_02_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext2_IG_02_CO.paa",
-		"A3\Data_F_Tacops\data\RCWS30_IG_02_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_alpha_IG_02_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_FIA_desert_CO.paa",
-		"A3\armor_f\data\cage_sand_co.paa"
-	};
-	textureList[]=
-	{
-		"Guerilla_01",
-		0,
-		"Guerilla_02",
-		1,
-		"Guerilla_03",
-		0
-	};
-	*/
 
 	class HitPoints: HitPoints
 	{

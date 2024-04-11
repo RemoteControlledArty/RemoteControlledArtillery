@@ -43,6 +43,14 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa",
+		"A3\armor_f_gamma\MBT_01\Data\MBT_01_tow_CO.paa",
+		"a3\armor_f_epc\mbt_01\data\mbt_addons_co.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
+	};
+
 	class Components: Components
 	{
 		class SensorsManagerComponent

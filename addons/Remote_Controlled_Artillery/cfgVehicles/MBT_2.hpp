@@ -48,7 +48,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
 		"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
 		"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
 	};
 
 	class Components: Components
@@ -667,7 +667,7 @@ class RC_MBT_2_ReTex_A: RC_MBT_2_A
 		"leopard2\data\leopard_ext01_e.paa",
 		"leopard2\data\leopard_ext02_e.paa",
 		"leopard2\data\leopard_rcws_e.paa",
-		"leopard2\data\camonet_nato_desert_co.paa"
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
 	};
 };
 class RC_MBT_2_ReTex_A_O: RC_MBT_2_ReTex_A

@@ -57,6 +57,14 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 		"SmokeLauncherMag"
 	};
 
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Beta\APC_Tracked_01\Data\APC_Tracked_01_body_CO.paa",
+		"A3\Armor_F_Beta\APC_Tracked_01\Data\mbt_01_body_co.paa",
+		"a3\data_f\vehicles\turret_co.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
+	};
+
 	/*
 	class HitPoints: HitPoints
 	{

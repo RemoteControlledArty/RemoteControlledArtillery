@@ -760,7 +760,7 @@ class RC_IFV_6_ReTex_A: RC_IFV_6_DIG
 	{
 		"warrior\data\warrior_ext_01_e.paa",
 		"warrior\data\warrior_ext_02_e.paa",
-		"a3\armor_f\data\camonet_nato_desert_co.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
 		"a3\armor_f\data\cage_sand_co.paa"
 	};
 };

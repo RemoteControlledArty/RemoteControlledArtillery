@@ -44,6 +44,14 @@ class RC_AA_A: RC_AA_base
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Beta\APC_Tracked_01\Data\apc_tracked_01_aa_body_co.paa",
+		"A3\Armor_F_Beta\APC_Tracked_01\Data\mbt_01_body_co.paa",
+		"A3\Armor_F_Beta\APC_Tracked_01\Data\apc_tracked_01_aa_tower_co.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
+	};
+
 	class AnimationSources: AnimationSources
 	{
 		class showCamonetPlates1: showCamonetPlates1
