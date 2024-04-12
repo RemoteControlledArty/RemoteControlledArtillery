@@ -934,6 +934,79 @@ class RC_APC_2_WD_O: RC_APC_2_A_O
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
+class RC_ICV_2_ReTex_WD_O: RC_ICV_2_A_O
+{
+	faction="RemoteControlled_ReTex_O";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"arma\data\arma_01_ext_wd.paa",
+		"arma\data\arma_02_ext_wd.paa",
+		"arma\data\turret_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\armor_f\data\cage_g1_co.paa"
+	};
+	textureList[]=
+	{
+		"Hex",
+		0
+	};
+};
+class RC_ICV_2_ReTex_WD: RC_ICV_2_ReTex_WD_O
+{
+	faction="RemoteControlled_ReTex_B";
+	crew="B_UAV_AI";
+	side=1;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
+class RC_ICV_2_ReTex_WD_I: RC_ICV_2_ReTex_WD_O
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
+class RC_ICV_2_ReTex_D_O: RC_ICV_2_A_O
+{
+	faction="RemoteControlled_ReTex_O";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"arma\data\arma_01_ext_d.paa",
+		"arma\data\arma_02_ext_d.paa",
+		"arma\data\turret_d.paa",
+		"arma\data\camonet_desert_co.paa",
+		"arma\data\cage_desert_co.paa"
+	};
+	textureList[]=
+	{
+		"Hex",
+		0
+	};
+};
+class RC_ICV_2_ReTex_D: RC_ICV_2_ReTex_D_O
+{
+	faction="RemoteControlled_ReTex_B";
+	crew="B_UAV_AI";
+	side=1;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
+class RC_ICV_2_ReTex_D_I: RC_ICV_2_ReTex_D_O
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
 class RC_APC_2_ReTex_WD_O: RC_APC_2_A_O
 {
 	faction="RemoteControlled_ReTex_O";

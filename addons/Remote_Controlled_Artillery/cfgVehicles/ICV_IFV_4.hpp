@@ -1157,6 +1157,69 @@ class RC_IFV_4_WD_I: RC_IFV_4_WD
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
+class RC_ICV_4_ReTex_WD: RC_ICV_4_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"patria\data\patria_01_ext_wd.paa",
+		"patria\data\patria_02_ext_wd.paa",
+		"patria\data\patria_turret_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\armor_f\data\cage_g1_co.paa"
+	};
+};
+class RC_ICV_4_ReTex_WD_O: RC_ICV_4_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_ICV_4_ReTex_WD_I: RC_ICV_4_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
+class RC_ICV_4_ReTex_D: RC_ICV_4_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"patria\data\patria_01_ext_d.paa",
+		"patria\data\patria_02_ext_d.paa",
+		"patria\data\patria_turret_d.paa",
+		"patria\data\camonet_desert_co.paa",
+		"patria\data\cage_desert_co.paa"
+	};
+};
+class RC_ICV_4_ReTex_D_O: RC_ICV_4_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_ICV_4_ReTex_D_I: RC_ICV_4_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
 class RC_IFV_4_ReTex_WD: RC_IFV_4_A
 {
 	faction="RemoteControlled_ReTex_B";
