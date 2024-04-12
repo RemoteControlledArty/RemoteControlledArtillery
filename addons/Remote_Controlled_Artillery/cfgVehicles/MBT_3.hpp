@@ -433,7 +433,8 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 };
 
 
-
+/*
+//removed as engine cant be turned off for repair
 class RC_MBT_3_G_Driverless: RC_MBT_3_G_Base
 {
 	class EventHandlers: EventHandlers
@@ -450,7 +451,7 @@ class RC_MBT_3_G_Driverless: RC_MBT_3_G_Base
 	side=1;
 	forceInGarage=1;
 
-	displayName="DL MBT III";
+	displayName="DL T-14";
 	crew="";
 	hasDriver=-1;
 };
@@ -511,6 +512,7 @@ class RC_MBT_3_WD_Driverless_I: RC_MBT_3_WD_Driverless
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };
+*/
 
 
 class RC_MBT_3_G: RC_MBT_3_G_Base
@@ -529,7 +531,7 @@ class RC_MBT_3_G: RC_MBT_3_G_Base
 	side=1;
 	forceInGarage=1;
 
-	displayName="MBT III";
+	displayName="T-14";
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";

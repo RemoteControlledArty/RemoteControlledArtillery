@@ -394,33 +394,6 @@ class RC_AA_HEX_WD_O: RC_AA_HEX_A_O
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
-class RC_AA_ReTex_WD: RC_AA_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Woodland_subcat";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_AA_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"namer\data\namer_01_aa_body_wd.paa",
-		"namer\data\mbt_01_body_wd.paa",
-		"namer\data\namer_01_aa_tower_wd.paa",
-		"a3\armor_f\data\camonet_green_co.paa"
-	};
-};
-class RC_AA_ReTex_WD_O: RC_AA_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-};
-class RC_AA_ReTex_WD_I: RC_AA_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-};
-
-
 class RC_AA_ReTex_D: RC_AA_A
 {
 	faction="RemoteControlled_ReTex_B";

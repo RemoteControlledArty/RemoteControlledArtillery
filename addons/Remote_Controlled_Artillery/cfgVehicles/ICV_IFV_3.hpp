@@ -313,7 +313,7 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	displayName="RC ICV III";
+	displayName="RC Pandur II";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -612,6 +612,24 @@ class RC_ICV_3_A_I: RC_ICV_3_A
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
+class RC_ICV_3_DIG_I: RC_ICV_3_A_I
+{
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+	textureList[]=
+	{
+		"Indep",
+		1
+	};
+};
 
 
 class RC_ICV_3_WD: RC_ICV_3_A
@@ -652,25 +670,6 @@ class RC_ICV_3_WD_I: RC_ICV_3_WD
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
-class RC_ICV_3_DIG_I: RC_ICV_3_WD_I
-{
-	DLC="";
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-		"A3\armor_f\data\cage_aaf_co.paa"
-	};
-	textureList[]=
-	{
-		"Indep",
-		1
-	};
-};
 
 
 class RC_IFV_3_A: RC_ICV_IFV_3_A
@@ -684,7 +683,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 		};
 	};
 
-	displayName="IFV III";
+	displayName="Pandur II";
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -1050,6 +1049,24 @@ class RC_IFV_3_A_I: RC_IFV_3_A
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
+class RC_IFV_3_DIG_I: RC_IFV_3_A_I
+{
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
+		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+	textureList[]=
+	{
+		"Indep",
+		1
+	};
+};
 
 
 class RC_IFV_3_WD: RC_IFV_3_A
@@ -1089,25 +1106,6 @@ class RC_IFV_3_WD_I: RC_IFV_3_WD
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-class RC_IFV_3_DIG_I: RC_IFV_3_WD_I
-{
-	DLC="";
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-		"A3\armor_f\data\cage_aaf_co.paa"
-	};
-	textureList[]=
-	{
-		"Indep",
-		1
-	};
 };
 
 

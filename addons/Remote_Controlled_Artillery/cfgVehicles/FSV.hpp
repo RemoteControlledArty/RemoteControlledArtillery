@@ -40,7 +40,7 @@ class RC_FSV_A: RC_FSV_A_Base
 		};
 	};
 
-	displayName="FSV";
+	displayName="Rooikat";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";

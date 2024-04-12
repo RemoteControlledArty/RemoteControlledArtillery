@@ -757,33 +757,6 @@ class RC_Static_Arty_I: RC_Static_Arty
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
-class RC_Howitzer_ReTex_WD: RC_Howitzer_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Woodland_subcat";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_arty_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"merkava\data\mbt_01_body_wd.paa",
-		"merkava\data\mbt_01_spg_wd.paa",
-		"merkava\data\turret_wd.paa",
-		"a3\armor_f\data\camonet_green_co.paa"
-	};
-};
-class RC_Howitzer_ReTex_WD_O: RC_Howitzer_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-};
-class RC_Howitzer_ReTex_WD_I: RC_Howitzer_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-};
-
-
 class RC_Howitzer_ReTex_D: RC_Howitzer_A
 {
 	faction="RemoteControlled_ReTex_B";

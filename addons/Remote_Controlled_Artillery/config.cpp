@@ -201,7 +201,6 @@ class CfgPatches
 			RC_ICV_1_WD_O,
 			RC_ICV_1_A_I,
 			RC_ICV_1_WD_I,
-			RC_ICV_1_DIG_I,
 
 			RC_ICV_2_A_O,
 			RC_ICV_2_WD_O,
@@ -252,12 +251,13 @@ class CfgPatches
 			RC_IFV_5_A_O,
 			RC_IFV_5_WD_O,
 
-			RC_IFV_6_DIG,
+			RC_IFV_6_A,
 			RC_IFV_6_WD,
-			RC_IFV_6_DIG_O,
+			RC_IFV_6_A_O,
 			RC_IFV_6_WD_O,
-			RC_IFV_6_DIG_I,
+			RC_IFV_6_A_I,
 			RC_IFV_6_WD_I,
+			RC_IFV_6_DIG_I,
 
 			RC_FSV_A,
 			RC_FSV_WD,
@@ -273,26 +273,12 @@ class CfgPatches
 			RC_MBT_1_A_I,
 			RC_MBT_1_WD_I,
 
-			RC_MBT_1_A_Driverless,
-			RC_MBT_1_WD_Driverless,
-			RC_MBT_1_A_Driverless_O,
-			RC_MBT_1_WD_Driverless_O,
-			RC_MBT_1_A_Driverless_I,
-			RC_MBT_1_WD_Driverless_I,
-
 			RC_MBT_2_A,
 			RC_MBT_2_WD,
 			RC_MBT_2_A_O,
 			RC_MBT_2_WD_O,
 			RC_MBT_2_A_I,
 			RC_MBT_2_WD_I,
-
-			RC_MBT_2_A_Driverless,
-			RC_MBT_2_WD_Driverless,
-			RC_MBT_2_A_Driverless_O,
-			RC_MBT_2_WD_Driverless_O,
-			RC_MBT_2_A_Driverless_I,
-			RC_MBT_2_WD_Driverless_I,
 
 			RC_MBT_3_G,
 			RC_MBT_3_WD,
@@ -301,14 +287,99 @@ class CfgPatches
 			RC_MBT_3_G_I,
 			RC_MBT_3_WD_I,
 
-			RC_MBT_3_G_Driverless,
-			RC_MBT_3_WD_Driverless,
-			RC_MBT_3_G_Driverless_O,
-			RC_MBT_3_WD_Driverless_O,
-			RC_MBT_3_G_Driverless_I,
-			RC_MBT_3_WD_Driverless_I,
+			RC_GPSDatalinkTarget,
 
-			RC_GPSDatalinkTarget
+
+			//optional retextures
+			RC_Howitzer_ReTex_D,
+			RC_Howitzer_ReTex_D_O,
+			RC_Howitzer_ReTex_D_I,
+
+			RC_MLRS_ReTex_D,
+			RC_MLRS_ReTex_D_O,
+			RC_MLRS_ReTex_D_I,
+
+			RC_MRL_ReTex_A,
+			RC_MRL_ReTex_D,
+			RC_MRL_ReTex_WD,
+			RC_MRL_ReTex_A_O,
+			RC_MRL_ReTex_D_O,
+			RC_MRL_ReTex_WD_O,
+			RC_MRL_ReTex_A_I,
+			RC_MRL_ReTex_D_I,
+			RC_MRL_ReTex_WD_I,
+
+			RC_AA_ReTex_D,
+			RC_AA_ReTex_D_O,
+			RC_AA_ReTex_D_I,
+
+			RC_ICV_1_ReTex_D,
+			RC_ICV_1_ReTex_D_O,
+			RC_ICV_1_ReTex_D_I,
+
+			RC_ICV_2_ReTex_D,
+			RC_ICV_2_ReTex_D_O,
+			RC_ICV_2_ReTex_D_I,
+			RC_ICV_2_ReTex_WD,
+			RC_ICV_2_ReTex_WD_O,
+			RC_ICV_2_ReTex_WD_I,
+
+			RC_ICV_3_ReTex_D,
+			RC_ICV_3_ReTex_WD,
+			RC_ICV_3_ReTex_D_O,
+			RC_ICV_3_ReTex_WD_O,
+			RC_ICV_3_ReTex_D_I,
+			RC_ICV_3_ReTex_WD_I,
+
+			RC_ICV_4_ReTex_D,
+			RC_ICV_4_ReTex_D_O,
+			RC_ICV_4_ReTex_D_I,
+
+			RC_APC_1_ReTex_D,
+			RC_APC_1_ReTex_D_O,
+			RC_APC_1_ReTex_D_I,
+
+			RC_APC_2_ReTex_D,
+			RC_APC_2_ReTex_D_O,
+			RC_APC_2_ReTex_D_I,
+			RC_APC_2_ReTex_WD,
+			RC_APC_2_ReTex_WD_O,
+			RC_APC_2_ReTex_WD_I,
+
+			RC_IFV_3_ReTex_D,
+			RC_IFV_3_ReTex_WD,
+			RC_IFV_3_ReTex_D_O,
+			RC_IFV_3_ReTex_WD_O,
+			RC_IFV_3_ReTex_D_I,
+			RC_IFV_3_ReTex_WD_I,
+
+			RC_IFV_4_ReTex_D,
+			RC_IFV_4_ReTex_D_O,
+			RC_IFV_4_ReTex_D_I,
+
+			RC_IFV_6_ReTex_A,
+			RC_IFV_6_ReTex_D,
+			RC_IFV_6_ReTex_WD,
+			RC_IFV_6_ReTex_A_O,
+			RC_IFV_6_ReTex_D_O,
+			RC_IFV_6_ReTex_WD_O,
+			RC_IFV_6_ReTex_A_I,
+			RC_IFV_6_ReTex_D_I,
+			RC_IFV_6_ReTex_WD_I,
+
+			RC_MBT_1_ReTex_D,
+			RC_MBT_1_ReTex_D_O,
+			RC_MBT_1_ReTex_D_I,
+
+			RC_MBT_2_ReTex_A,
+			RC_MBT_2_ReTex_D,
+			RC_MBT_2_ReTex_WD,
+			RC_MBT_2_ReTex_A_O,
+			RC_MBT_2_ReTex_D_O,
+			RC_MBT_2_ReTex_WD_O,
+			RC_MBT_2_ReTex_A_I,
+			RC_MBT_2_ReTex_D_I,
+			RC_MBT_2_ReTex_WD_I
 		};
 
 		weapons[]=
@@ -358,8 +429,6 @@ class CfgPatches
 			
 			RC_rockets_230mm_GAT
 		};
-
-		magazines[]={};		//too many to list
 
 		requiredAddons[]=
 		{
@@ -479,7 +548,7 @@ class CfgEditorSubcategories
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
 	class RC_FSV_MBT_subcat {displayname="MBTs / FSV";};
-	class RC_ICV_subcat {displayname="ICVs";};
+	class RC_ICV_subcat {displayname="ICVs (unarmed)";};
 	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
 	class RC_UAV_Designator_subcat {displayname="UAVs / Designators";};
 

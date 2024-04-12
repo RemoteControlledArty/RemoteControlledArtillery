@@ -460,7 +460,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 };
 
 
-
+/*
+//removed as engine cant be turned off for repair
 class RC_MBT_2_A_Driverless: RC_MBT_2_A_Base
 {
 	class EventHandlers: EventHandlers
@@ -477,7 +478,7 @@ class RC_MBT_2_A_Driverless: RC_MBT_2_A_Base
 	side=1;
 	forceInGarage=1;
 
-	displayName="DL MBT II";
+	displayName="DL Leopard 2";
 	crew="";
 	hasDriver=-1;
 };
@@ -522,6 +523,7 @@ class RC_MBT_2_WD_Driverless_I: RC_MBT_2_WD_Driverless
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };
+*/
 
 
 
@@ -541,7 +543,7 @@ class RC_MBT_2_A: RC_MBT_2_A_Base
 	side=1;
 	forceInGarage=1;
 
-	displayName="MBT II";
+	displayName="Leopard 2";
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";

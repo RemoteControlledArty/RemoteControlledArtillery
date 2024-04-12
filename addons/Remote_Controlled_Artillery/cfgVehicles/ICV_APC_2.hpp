@@ -278,7 +278,7 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	displayName="RC ICV II";
+	displayName="RC Otokar Arma";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -618,7 +618,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 		};
 	};
 
-	displayName="APC II";
+	displayName="Otokar Arma";
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;

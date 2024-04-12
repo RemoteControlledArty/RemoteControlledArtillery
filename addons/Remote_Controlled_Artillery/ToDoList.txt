@@ -38,13 +38,11 @@ TO DO - FEATURES:
 
 CAR Script for Zeus:
 -EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided
-
--enable camonet on olive IVC
 -recon animationlist check
--arma retexture not working atm
--ICV's and Rooikat
 
-ASAP:
+next:
+-getout & no players in vic = engineoff
+
 -when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
 -driverless "take controls" check
 -check if "release controls" triggers script and assigns someone else
@@ -55,8 +53,6 @@ ASAP:
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
 -fix for someone remotecontrolling gunner player, bugging them
 
--next update:
--DL mortar carrier mortar doesnt spawn in MP
 -add sensor to mortar carrier camera
 -video about vics
 

@@ -518,32 +518,6 @@ class RC_MRL_WD_I: RC_MRL_WD
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
-class RC_MLRS_ReTex_WD: RC_MLRS_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Woodland_subcat";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_mlrs_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"merkava\data\mbt_01_body_wd.paa",
-		"merkava\data\mbt_01_mlrs_wd.paa",
-		"a3\armor_f\data\camonet_green_co.paa"
-	};
-};
-class RC_MLRS_ReTex_WD_O: RC_MLRS_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-};
-class RC_MLRS_ReTex_WD_I: RC_MLRS_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-};
-
-
 class RC_MLRS_ReTex_D: RC_MLRS_A
 {
 	faction="RemoteControlled_ReTex_B";

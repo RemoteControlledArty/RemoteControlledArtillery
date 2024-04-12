@@ -2419,7 +2419,7 @@ class RC_1Rnd_105mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_HE";
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -4598,7 +4598,7 @@ class magazine_ShipCannon_120mm_HE_shells_x32;
 class RC_1Rnd_120mm_Mo_shells: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_HE";
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -6774,7 +6774,7 @@ class RC_40Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backuplowHEAB
 class RC_1Rnd_155mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HE";
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -8945,7 +8945,7 @@ class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_HE";
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
