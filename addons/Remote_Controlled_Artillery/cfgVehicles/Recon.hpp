@@ -1078,6 +1078,14 @@ class RC_ATGM_small_DIG_I: RC_ATGM_small_WD_I
 //semi manned version
 class RC_ATGM_small_WD_Driverless: RC_ATGM_small_WD_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes\initDL.hpp"
+		};
+	};
+
 	scope=2;
 	scopeCurator=2;
 	side=1;

@@ -138,7 +138,8 @@ class RC_MMG_338_FSV: RC_MMG_338_FSV_Base
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
-		"RC_200Rnd_338_T_G"
+		"RC_200Rnd_338_T_G",
+		"RC_200Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -175,7 +176,8 @@ class RC_MMG_338_MBT: RC_MMG_338_MBT_Base
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
-		"RC_200Rnd_338_T_G"
+		"RC_200Rnd_338_T_G",
+		"RC_200Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -212,7 +214,8 @@ class RC_MMG_338_coax: RC_MMG_338_coax_Base
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
-		"RC_200Rnd_338_T_G"
+		"RC_200Rnd_338_T_G",
+		"RC_200Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -226,8 +229,10 @@ class RC_MMG_93x64_coax: RC_MMG_338_coax
 	{
 		"RC_200Rnd_93x64_T_G",
 		"RC_200Rnd_93x64_T_R",
+		"RC_200Rnd_93x64_T_Y",
 		"RC_1000Rnd_93x64_T_G",
-		"RC_1000Rnd_93x64_T_R"
+		"RC_1000Rnd_93x64_T_R",
+		"RC_1000Rnd_93x64_T_Y"
 	};
 	class manual: manual
 	{
@@ -251,7 +256,8 @@ class RC_MMG_338_coax_ext: RC_MMG_338_coax_ext_Base
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
-		"RC_200Rnd_338_T_G"
+		"RC_200Rnd_338_T_G",
+		"RC_200Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -264,7 +270,8 @@ class RC_MMG_93x64_coax_ext: RC_MMG_338_coax_ext
 	magazines[]=
 	{
 		"RC_200Rnd_93x64_T_G",
-		"RC_200Rnd_93x64_T_R"
+		"RC_200Rnd_93x64_T_R",
+		"RC_200Rnd_93x64_T_Y"
 	};
 	class manual: manual
 	{
@@ -293,8 +300,10 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 		{
 			"RC_100Rnd_30mm_MP_T_R",
 			"RC_100Rnd_30mm_MP_T_G",
+			"RC_100Rnd_30mm_MP_T_Y",
 			"RC_100Rnd_30mm_GPR_T_R",
-			"RC_100Rnd_30mm_GPR_T_G"
+			"RC_100Rnd_30mm_GPR_T_G",
+			"RC_100Rnd_30mm_GPR_T_Y"
 			//"RC_100Rnd_30mm_Smoke"
 		};
 	};
@@ -303,7 +312,8 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 		magazines[]=
 		{
 			"RC_100Rnd_30mm_APFSDS_T_R",
-			"RC_100Rnd_30mm_APFSDS_T_G"
+			"RC_100Rnd_30mm_APFSDS_T_G",
+			"RC_100Rnd_30mm_APFSDS_T_Y"
 		};
 	};
 };
@@ -328,8 +338,10 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 		{
 			"RC_50Rnd_40mm_MP_T_R",
 			"RC_50Rnd_40mm_MP_T_G",
+			"RC_50Rnd_40mm_MP_T_Y",
 			"RC_50Rnd_40mm_GPR_T_R",
-			"RC_50Rnd_40mm_GPR_T_G"
+			"RC_50Rnd_40mm_GPR_T_G",
+			"RC_50Rnd_40mm_GPR_T_Y"
 			//"RC_50Rnd_40mm_Smoke"
 		};
 	};
@@ -338,7 +350,8 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 		magazines[]=
 		{
 			"RC_50Rnd_40mm_APFSDS_T_R",
-			"RC_50Rnd_40mm_APFSDS_T_G"
+			"RC_50Rnd_40mm_APFSDS_T_G",
+			"RC_50Rnd_40mm_APFSDS_T_Y"
 		};
 	};
 };
@@ -354,9 +367,11 @@ class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
 	magazines[]=
 	{
 		"RC_60Rnd_30mm_MP_T_G",
-		"RC_60Rnd_30mm_GPR_T_G",
 		"RC_60Rnd_30mm_MP_T_R",
-		"RC_60Rnd_30mm_GPR_T_R"
+		"RC_60Rnd_30mm_MP_T_Y",
+		"RC_60Rnd_30mm_GPR_T_G",
+		"RC_60Rnd_30mm_GPR_T_R",
+		"RC_60Rnd_30mm_GPR_T_Y"
 	};
 };
 
@@ -381,9 +396,11 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 	magazines[]=
 	{
 		"RC_200Rnd_127x99_SLAP_T_R",
-		"RC_100Rnd_127x99_SLAP_T_R",
 		"RC_200Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G"
+		"RC_200Rnd_127x99_SLAP_T_Y",
+		"RC_100Rnd_127x99_SLAP_T_R",
+		"RC_100Rnd_127x99_SLAP_T_G",
+		"RC_100Rnd_127x99_SLAP_T_Y"
 	};
 };
 
@@ -432,12 +449,18 @@ class RC_cannon_120mm: cannon_120mm
 		"RC_10Rnd_120mm_APFSDS_T_G",
 		"RC_15Rnd_120mm_APFSDS_T_G",
 		"RC_20Rnd_120mm_APFSDS_T_G",
+		"RC_10Rnd_120mm_APFSDS_T_Y",
+		"RC_15Rnd_120mm_APFSDS_T_Y",
+		"RC_20Rnd_120mm_APFSDS_T_Y",
 		"RC_10Rnd_120mm_MP_T_R",
 		"RC_15Rnd_120mm_MP_T_R",
 		"RC_20Rnd_120mm_MP_T_R",
 		"RC_10Rnd_120mm_MP_T_G",
 		"RC_15Rnd_120mm_MP_T_G",
 		"RC_20Rnd_120mm_MP_T_G",
+		"RC_10Rnd_120mm_MP_T_Y",
+		"RC_15Rnd_120mm_MP_T_Y",
+		"RC_20Rnd_120mm_MP_T_Y",
 		"RC_3Rnd_120mm_DLG_cannon_missiles"
 	};
 };
@@ -461,12 +484,18 @@ class RC_cannon_125mm_advanced: cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_APFSDS_T_G",
 		"RC_15Rnd_125mm_APFSDS_T_G",
 		"RC_20Rnd_125mm_APFSDS_T_G",
+		"RC_10Rnd_125mm_APFSDS_T_Y",
+		"RC_15Rnd_125mm_APFSDS_T_Y",
+		"RC_20Rnd_125mm_APFSDS_T_Y",
 		"RC_10Rnd_125mm_MP_T_R",
 		"RC_15Rnd_125mm_MP_T_R",
 		"RC_20Rnd_125mm_MP_T_R",
 		"RC_10Rnd_125mm_MP_T_G",
 		"RC_15Rnd_125mm_MP_T_G",
 		"RC_20Rnd_125mm_MP_T_G",
+		"RC_10Rnd_125mm_MP_T_Y",
+		"RC_15Rnd_125mm_MP_T_Y",
+		"RC_20Rnd_125mm_MP_T_Y",
 		"RC_3Rnd_125mm_DLG_cannon_missiles"
 	};
 

@@ -1113,6 +1113,38 @@ class RC_IFV_4_A_O: RC_IFV_4_A
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				//"RC_50Rnd_40mm_Smoke",
+				//"RC_50Rnd_40mm_Smoke",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_AA",
+				//"RC_2Rnd_IFV_AA",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+	};
 };
 class RC_IFV_4_A_I: RC_IFV_4_A
 {
@@ -1121,6 +1153,38 @@ class RC_IFV_4_A_I: RC_IFV_4_A
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				//"RC_50Rnd_40mm_Smoke",
+				//"RC_50Rnd_40mm_Smoke",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_AA",
+				//"RC_2Rnd_IFV_AA",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+	};
 };
 
 
@@ -1145,6 +1209,38 @@ class RC_IFV_4_WD_O: RC_IFV_4_WD
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				//"RC_50Rnd_40mm_Smoke",
+				//"RC_50Rnd_40mm_Smoke",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_AA",
+				//"RC_2Rnd_IFV_AA",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+	};
 };
 class RC_IFV_4_WD_I: RC_IFV_4_WD
 {
@@ -1153,6 +1249,38 @@ class RC_IFV_4_WD_I: RC_IFV_4_WD
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				//"RC_50Rnd_40mm_Smoke",
+				//"RC_50Rnd_40mm_Smoke",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_AA",
+				//"RC_2Rnd_IFV_AA",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+	};
 };
 
 
@@ -1208,6 +1336,38 @@ class RC_IFV_4_ReTex_D_O: RC_IFV_4_ReTex_D
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				//"RC_50Rnd_40mm_Smoke",
+				//"RC_50Rnd_40mm_Smoke",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_50Rnd_40mm_APFSDS_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_AA",
+				//"RC_2Rnd_IFV_AA",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+	};
 };
 class RC_IFV_4_ReTex_D_I: RC_IFV_4_ReTex_D
 {
@@ -1216,4 +1376,36 @@ class RC_IFV_4_ReTex_D_I: RC_IFV_4_ReTex_D
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				//"RC_50Rnd_40mm_Smoke",
+				//"RC_50Rnd_40mm_Smoke",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_50Rnd_40mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_MP_NLOS",
+				//"RC_2Rnd_IFV_AA",
+				//"RC_2Rnd_IFV_AA",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+	};
 };

@@ -112,10 +112,10 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 			};
 			magazines[]=
 			{
-				"RC_20Rnd_125mm_APFSDS_T_G",
-				"RC_20Rnd_125mm_MP_T_G",
+				"RC_20Rnd_125mm_APFSDS_T_R",
+				"RC_20Rnd_125mm_MP_T_R",
 				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_G",
+				"RC_1000Rnd_93x64_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -162,11 +162,11 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 					};
 					magazines[]=
 					{
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_GPR_T_G",
-						"RC_60Rnd_30mm_GPR_T_G",
+						"RC_60Rnd_30mm_MP_T_R",
+						"RC_60Rnd_30mm_MP_T_R",
+						"RC_60Rnd_30mm_MP_T_R",
+						"RC_60Rnd_30mm_GPR_T_R",
+						"RC_60Rnd_30mm_GPR_T_R",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -547,6 +547,40 @@ class RC_MBT_3_G_O: RC_MBT_3_G
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_125mm_APFSDS_T_G",
+				"RC_20Rnd_125mm_MP_T_G",
+				"RC_3Rnd_125mm_DLG_cannon_missiles",
+				"RC_1000Rnd_93x64_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+			
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_60Rnd_30mm_MP_T_G",
+						"RC_60Rnd_30mm_MP_T_G",
+						"RC_60Rnd_30mm_MP_T_G",
+						"RC_60Rnd_30mm_GPR_T_G",
+						"RC_60Rnd_30mm_GPR_T_G",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 class RC_MBT_3_G_I: RC_MBT_3_G
 {
@@ -555,6 +589,40 @@ class RC_MBT_3_G_I: RC_MBT_3_G
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_125mm_APFSDS_T_Y",
+				"RC_20Rnd_125mm_MP_T_Y",
+				"RC_3Rnd_125mm_DLG_cannon_missiles",
+				"RC_1000Rnd_93x64_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+			
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_60Rnd_30mm_MP_T_Y",
+						"RC_60Rnd_30mm_MP_T_Y",
+						"RC_60Rnd_30mm_MP_T_Y",
+						"RC_60Rnd_30mm_GPR_T_Y",
+						"RC_60Rnd_30mm_GPR_T_Y",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 
 
@@ -592,6 +660,40 @@ class RC_MBT_3_WD_O: RC_MBT_3_WD
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_125mm_APFSDS_T_G",
+				"RC_20Rnd_125mm_MP_T_G",
+				"RC_3Rnd_125mm_DLG_cannon_missiles",
+				"RC_1000Rnd_93x64_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+			
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_60Rnd_30mm_MP_T_G",
+						"RC_60Rnd_30mm_MP_T_G",
+						"RC_60Rnd_30mm_MP_T_G",
+						"RC_60Rnd_30mm_GPR_T_G",
+						"RC_60Rnd_30mm_GPR_T_G",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 class RC_MBT_3_WD_I: RC_MBT_3_WD
 {
@@ -600,4 +702,38 @@ class RC_MBT_3_WD_I: RC_MBT_3_WD
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_125mm_APFSDS_T_Y",
+				"RC_20Rnd_125mm_MP_T_Y",
+				"RC_3Rnd_125mm_DLG_cannon_missiles",
+				"RC_1000Rnd_93x64_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+			
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_60Rnd_30mm_MP_T_Y",
+						"RC_60Rnd_30mm_MP_T_Y",
+						"RC_60Rnd_30mm_MP_T_Y",
+						"RC_60Rnd_30mm_GPR_T_Y",
+						"RC_60Rnd_30mm_GPR_T_Y",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };

@@ -15,14 +15,14 @@ init=
 		} else { \
 			_speedCheck1 = false \
 		}; \
-		sleep 4; \
+		sleep 6; \
 		if ((speed _this <= 0.1) and (speed _this >= -0.1)) then { \
 			_speedCheck2 = true \
 		} else { \
 			_speedCheck2 = false \
 		}; \
 		if ((_speedCheck1) and (_speedCheck2)) then { \
-			_this engineOn false \
+			[_this engineOn false] remoteExec ['spawn', 2] \
 		}; \
 	}; \
 };";

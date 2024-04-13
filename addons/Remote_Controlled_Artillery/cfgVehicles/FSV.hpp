@@ -511,87 +511,56 @@ class RC_FSV_A: RC_FSV_A_Base
 
 	wheelDamageThreshold=0.18000001;
 	wheelDamageRadiusCoef=0.75;
+	
 	class HitPoints: HitPoints
 	{
 		class HitLFWheel: HitLFWheel
 		{
-			radius=0.33000001;
-			visual="wheel_1_1_hide";
-			armorComponent="wheel_1_1_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=3;
-			passThrough=0;
+			explosionShielding=2;
 		};
 		class HitLF2Wheel: HitLF2Wheel
 		{
-			radius=0.33000001;
-			visual="wheel_1_2_hide";
-			armorComponent="wheel_1_2_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=3;
-			passThrough=0;
+			explosionShielding=2;
 		};
 		class HitLMWheel: HitLMWheel
 		{
-			radius=0.33000001;
-			visual="wheel_1_3_hide";
-			armorComponent="wheel_1_3_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=3;
-			passThrough=0;
+			explosionShielding=2;
 		};
 		class HitLBWheel: HitLBWheel
 		{
-			radius=0.33000001;
-			visual="wheel_1_4_hide";
-			armorComponent="wheel_1_4_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=3;
-			passThrough=0;
+			explosionShielding=2;
 		};
 		class HitRFWheel: HitRFWheel
 		{
-			radius=0.33000001;
-			visual="wheel_2_1_hide";
-			armorComponent="wheel_2_1_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=3;
-			passThrough=0;
+			explosionShielding=2;
 		};
 		class HitRF2Wheel: HitRF2Wheel
 		{
-			radius=0.33000001;
-			visual="wheel_2_2_hide";
-			armorComponent="wheel_2_2_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=3;
-			passThrough=0;
+			explosionShielding=2;
 		};
 		class HitRMWheel: HitRMWheel
 		{
-			radius=0.33000001;
-			visual="wheel_2_3_hide";
-			armorComponent="wheel_2_3_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=3;
-			passThrough=0;
+			explosionShielding=2;
 		};
 		class HitRBWheel: HitRBWheel
 		{
-			radius=0.33000001;
-			visual="wheel_2_4_hide";
-			armorComponent="wheel_2_4_hide";
 			armor=-500;
 			minimalHit=-0.016000001;
-			explosionShielding=3;
-			passThrough=0;
+			explosionShielding=2;
 		};
 	};
 	
@@ -604,6 +573,44 @@ class RC_FSV_A_O: RC_FSV_A
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_15Rnd_120mm_APFSDS_T_G",
+				"RC_15Rnd_120mm_MP_T_G",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 class RC_FSV_A_I: RC_FSV_A
 {
@@ -612,7 +619,47 @@ class RC_FSV_A_I: RC_FSV_A
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_15Rnd_120mm_APFSDS_T_Y",
+				"RC_15Rnd_120mm_MP_T_Y",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
+
+
 class RC_FSV_WD: RC_FSV_A
 {
 	editorPreview="\A3\EditorPreviews_F_Tank\Data\CfgVehicles\B_T_AFV_Wheeled_01_up_cannon_F.jpg";
@@ -642,6 +689,44 @@ class RC_FSV_WD_O: RC_FSV_WD
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_15Rnd_120mm_APFSDS_T_G",
+				"RC_15Rnd_120mm_MP_T_G",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 class RC_FSV_WD_I: RC_FSV_WD
 {
@@ -650,4 +735,42 @@ class RC_FSV_WD_I: RC_FSV_WD
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_15Rnd_120mm_APFSDS_T_Y",
+				"RC_15Rnd_120mm_MP_T_Y",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };

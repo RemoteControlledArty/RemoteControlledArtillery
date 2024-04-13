@@ -122,7 +122,6 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 				"RC_200Rnd_338_T_R",
 				"RC_200Rnd_338_T_R",
 				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -559,6 +558,44 @@ class RC_MBT_2_A_O: RC_MBT_2_A
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_G",
+				"RC_20Rnd_120mm_MP_T_G",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 class RC_MBT_2_A_I: RC_MBT_2_A
 {
@@ -567,6 +604,44 @@ class RC_MBT_2_A_I: RC_MBT_2_A
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_Y",
+				"RC_20Rnd_120mm_MP_T_Y",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 
 
@@ -588,6 +663,44 @@ class RC_MBT_2_WD_O: RC_MBT_2_WD
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_G",
+				"RC_20Rnd_120mm_MP_T_G",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 class RC_MBT_2_WD_I: RC_MBT_2_WD
 {
@@ -596,6 +709,44 @@ class RC_MBT_2_WD_I: RC_MBT_2_WD
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_Y",
+				"RC_20Rnd_120mm_MP_T_Y",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 
 
@@ -619,6 +770,44 @@ class RC_MBT_2_ReTex_WD_O: RC_MBT_2_ReTex_WD
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_G",
+				"RC_20Rnd_120mm_MP_T_G",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 class RC_MBT_2_ReTex_WD_I: RC_MBT_2_ReTex_WD
 {
@@ -627,6 +816,44 @@ class RC_MBT_2_ReTex_WD_I: RC_MBT_2_ReTex_WD
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_Y",
+				"RC_20Rnd_120mm_MP_T_Y",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 
 
@@ -649,6 +876,44 @@ class RC_MBT_2_ReTex_D_O: RC_MBT_2_ReTex_D
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_G",
+				"RC_20Rnd_120mm_MP_T_G",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 class RC_MBT_2_ReTex_D_I: RC_MBT_2_ReTex_D
 {
@@ -657,6 +922,44 @@ class RC_MBT_2_ReTex_D_I: RC_MBT_2_ReTex_D
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_Y",
+				"RC_20Rnd_120mm_MP_T_Y",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 
 
@@ -679,6 +982,44 @@ class RC_MBT_2_ReTex_A_O: RC_MBT_2_ReTex_A
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_G",
+				"RC_20Rnd_120mm_MP_T_G",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"RC_200Rnd_338_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_338_T_G",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
 class RC_MBT_2_ReTex_A_I: RC_MBT_2_ReTex_A
 {
@@ -687,4 +1028,42 @@ class RC_MBT_2_ReTex_A_I: RC_MBT_2_ReTex_A
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_120mm_APFSDS_T_Y",
+				"RC_20Rnd_120mm_MP_T_Y",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					magazines[]=
+					{
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_338_T_Y",
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+				};
+			};
+		};
+	};
 };
