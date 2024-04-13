@@ -721,7 +721,7 @@ class RC_ATGM_small_Base: I_LT_01_AT_F
 	class HitPoints;
 	class HitEngine;
 	class Components;
-	//class EventHandlers;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
