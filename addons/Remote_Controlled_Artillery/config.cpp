@@ -129,10 +129,10 @@ class CfgPatches
 			RC_ATGM_small_DIG_I,
 			RC_ATGM_small_WD_I,
 
-			RC_ATGM_small_WD_Driverless,
-			RC_ATGM_small_WD_Driverless_O,
-			RC_ATGM_small_DIG_Driverless_I,
-			RC_ATGM_small_WD_Driverless_I,
+			RC_ATGM_small_WD_manned,
+			RC_ATGM_small_WD_manned_O,
+			RC_ATGM_small_WD_manned_I,
+			RC_ATGM_small_DIG_manned_I,
 
 			RC_Mortar,
 			RC_Mortar_O,

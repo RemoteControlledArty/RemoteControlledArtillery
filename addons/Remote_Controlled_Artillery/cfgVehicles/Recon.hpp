@@ -1076,6 +1076,61 @@ class RC_ATGM_small_DIG_I: RC_ATGM_small_WD_I
 
 
 //semi manned version
+class RC_ATGM_small_WD_manned: RC_ATGM_small_WD_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init=
+			"if (!local (_this select 0)) exitwith {}; \
+			(_this select 0) spawn { \
+				waitUntil {!isNull gunner _this}; \
+				_this deleteVehicleCrew gunner _this; \
+			};";
+		};
+	};
+
+	displayName="Recon ATGM 4.5km";
+
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	isUav=1;
+	vehicleClass="Autonomous";
+	textPlural="UGVs";
+	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	crew="B_UAV_AI";
+};
+class RC_ATGM_small_WD_manned_O: RC_ATGM_small_WD_manned
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_ATGM_small_WD_manned_I: RC_ATGM_small_WD_manned
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+class RC_ATGM_small_DIG_manned_I: RC_ATGM_small_WD_manned_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+};
+
+
+/*
 class RC_ATGM_small_WD_Driverless: RC_ATGM_small_WD_Base
 {
 	class EventHandlers: EventHandlers
@@ -1118,3 +1173,4 @@ class RC_ATGM_small_WD_Driverless_I: RC_ATGM_small_DIG_Driverless_I
 	faction="RemoteControlled_I";
 	side=2;
 };
+*/
