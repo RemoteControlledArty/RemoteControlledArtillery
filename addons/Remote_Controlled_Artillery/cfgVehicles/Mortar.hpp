@@ -356,7 +356,7 @@ class RC_VehicleMortar: RC_Mortar
 			};
 			magazines[]=
 			{
-				"RC_15Rnd_82mm_Mo_shells",
+				"RC_12Rnd_82mm_Mo_shells",
 				"RC_4Rnd_82mm_Mo_HEAB",
 				"RC_5Rnd_82mm_Mo_MultiGuided",
 				"RC_20Rnd_82mm_Mo_Smoke_white",
