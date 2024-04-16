@@ -71,23 +71,9 @@ RC_Artillery_UI = [] spawn {
 			};
 			
 			_display = uiNamespace getVariable ["RC_Artillery", displayNull]; // Display
-			_turret = _uav unitTurret gunner _uav; // Current Turret of UAV Gunner
-			_currentFireMode = currentWeaponMode (gunner _uav); // Current Fire mode of the UAV Gunner
-			_weaponsTurret = _uav weaponsTurret _turret; // All of the Turrets Weapons
-			_weapon = _weaponsTurret param [0, ""]; // Weapon
-			_weaponConfig = configFile >> "CfgWeapons" >> _weapon; // Weapon Config
 
-			// Get all Firemodes of the UAV Weapon
-			_fireModes = getArray (configFile >> "CfgWeapons" >> _weapon >> "modes");
-			// Get all the Firemodes the Players can use
-			_fireModes = (_fireModes apply { configFile >> "CfgWeapons" >> _weapon >> _x }) select { 1 == getNumber (_x >> "showToPlayer") };
-			// If the Firemodes have 'artilleryCharge' as a value
-			_fireModes = _fireModes apply { [getNumber (_x >> "artilleryCharge"), configName _x] };
-			_fireModes sort true; // Basic Sort in Ascending order
-			// Grab only the names of the Firemodes 
-			_fireModes = _fireModes apply { _x select 1 };
-			// Find the Current charge
-			_realCharge = _fireModes find _currentFireMode;
+			//weapon informations like charges and current charge
+			#include "functions\UILoop_includes\weapon_info.hpp"
 
 			// Get Weapon Elevation
 			_realElevationOriginal = asin (_weaponDir select 2);
@@ -107,108 +93,11 @@ RC_Artillery_UI = [] spawn {
 				_realElevation = (SLANT_ANGLE * _realElevationOriginal);
 			};
 
-			//script to disable airburst when turret is too low for it, and reenable it when high enough
-			_currentMag = currentMagazine _uav;
+			//changes magazine to backup airburst if EL is too low for conventional airburst
+			#include "functions\UILoop_includes\AB_magchange.hpp"
 
-			if (_realElevation <= 50) then
-			{
-				if (_currentMag regexMatch ".*_HEAB.*") then
-				{
-					_currentWeapon = currentWeapon _uav;
-					_currentAmmoCount = parseNumber (((((currentMagazineDetail _uav) splitString "(") select 1) splitString "/") select 0);
-					_replacementMag = _currentMag regexReplace ["_HEAB", "_backupHEAB"];
-					_uav addMagazineTurret [_replacementMag, [0]];
-					_uav loadMagazine [[0], _currentWeapon, _replacementMag];
-					_uav removeMagazineTurret [_currentMag, [0]];
-					_uav setAmmo [_currentWeapon, _currentAmmoCount];
-				};
-				if (_currentMag regexMatch ".*_lowHEAB.*") then
-				{
-					_currentWeapon = currentWeapon _uav;
-					_currentAmmoCount = parseNumber (((((currentMagazineDetail _uav) splitString "(") select 1) splitString "/") select 0);
-					_replacementMag = _currentMag regexReplace ["_lowHEAB", "_backuplowHEAB"];
-					_uav addMagazineTurret [_replacementMag, [0]];
-					_uav loadMagazine [[0], _currentWeapon, _replacementMag];
-					_uav removeMagazineTurret [_currentMag, [0]];
-					_uav setAmmo [_currentWeapon, _currentAmmoCount];
-				};
-			}
-			else
-			{
-				if (_currentMag regexMatch ".*_backupHEAB.*") then
-				{
-					_currentWeapon = currentWeapon _uav;
-					_currentAmmoCount = parseNumber (((((currentMagazineDetail _uav) splitString "(") select 1) splitString "/") select 0);
-					_replacementMag = _currentMag regexReplace ["_backupHEAB", "_HEAB"];
-					_uav addMagazineTurret [_replacementMag, [0]];
-					_uav loadMagazine [[0], _currentWeapon, _replacementMag];
-					_uav removeMagazineTurret [_currentMag, [0]];
-					_uav setAmmo [_currentWeapon, _currentAmmoCount];
-				};
-				if (_currentMag regexMatch ".*_backuplowHEAB.*") then
-				{
-					_currentWeapon = currentWeapon _uav;
-					_currentAmmoCount = parseNumber (((((currentMagazineDetail _uav) splitString "(") select 1) splitString "/") select 0);
-					_replacementMag = _currentMag regexReplace ["_backuplowHEAB", "_lowHEAB"];
-					_uav addMagazineTurret [_replacementMag, [0]];
-					_uav loadMagazine [[0], _currentWeapon, _replacementMag];
-					_uav removeMagazineTurret [_currentMag, [0]];
-					_uav setAmmo [_currentWeapon, _currentAmmoCount];
-				};
-			};
-
-			// All the Different Controls
-			_ctrlCharge = _display displayCtrl IDC_CHARGE;
-			_ctrlAzimuth = _display displayCtrl IDC_AZIMUTH;
-			_ctrlElevation = _display displayCtrl IDC_ELEVATION;
-			_ctrlDistance = _display displayCtrl IDC_DISTANCE;
-			_ctrlTarget = _display displayCtrl IDC_TARGET;
-			_ctrlTargetAzimuth = _display displayCtrl IDC_TARGET_AZIMUTH;
-			_ctrlDifference = _display displayCtrl IDC_DIFFERENCE;
-			_ctrlHighSol = _display displayCtrl IDC_HIGHSOL;
-			_ctrlLowSol = _display displayCtrl IDC_LOWSOL;
-			_ctrlHighETA = _display displayCtrl IDC_HIGHETA;
-			_ctrlLowETA = _display displayCtrl IDC_LOWETA;
-			_ctrlMessage = _display displayCtrl IDC_MESSAGE;
-
-			//Keybind Display
-			_ctrlKeySelect = _display displayCtrl IDC_KEY_SELECT;
-			_ctrlKeyUnselect = _display displayCtrl IDC_KEY_UNSELECT;
-			_ctrlKeyMarkersF = _display displayCtrl IDC_KEY_MARKERSF;
-			_ctrlKeyMarkersB = _display displayCtrl IDC_KEY_MARKERSB;
-			_ctrlKeyCharges = _display displayCtrl IDC_KEY_CHARGES;
-			_ctrlKeyElUp = _display displayCtrl IDC_KEY_ELUP;
-			_ctrlKeyElDown = _display displayCtrl IDC_KEY_ELDOWN;
-			_ctrlKeyElSlow = _display displayCtrl IDC_KEY_ELSLOW;
-			_ctrlAzSlow = _display displayCtrl IDC_KEY_AZSLOW;
-
-			_ctrlKeySelect ctrlSetText format ["select DL target: %1%2", ((actionKeysNamesArray "vehLockTargets") select 0), " / aim at"];
-			_ctrlKeyUnselect ctrlSetText format ["unselect DL target: %1%2", ((actionKeysNamesArray "lockTarget") select 0)];
-
-			_ArrayMarkersF = ["Remote Controlled Artillery", "RC_Scroll_Targets_Forwards"] call CBA_fnc_getKeybind;
-			_KeyMarkersF = (((_ArrayMarkersF select 8) select 0) select 0) call BIS_fnc_keyCode;
-			if (!isNil "_KeyMarkersF") then {_ctrlKeyMarkersF ctrlSetText format ["cycle markers ->: %1%2", _KeyMarkersF];};
-
-			_ArrayMarkersB = ["Remote Controlled Artillery", "RC_Scroll_Targets_Backwards"] call CBA_fnc_getKeybind;
-			_KeyMarkersB = (((_ArrayMarkersB select 8) select 0) select 0) call BIS_fnc_keyCode;
-			if (!isNil "_KeyMarkersB") then {_ctrlKeyMarkersB ctrlSetText format ["cycle markers <-: %1%2", _KeyMarkersB];};
-
-			_ctrlKeyCharges ctrlSetText format ["cycle charges: %1%2", ((actionKeysNamesArray "nextWeapon") select 0)];
-			_ctrlKeyElUp ctrlSetText format ["elevation up: %1%2", ((actionKeysNamesArray "gunElevUp") select 0)];
-			_ctrlKeyElDown ctrlSetText format ["elevation down: %1%2", ((actionKeysNamesArray "gunElevDown") select 0)];
-			_ctrlKeyElSlow ctrlSetText format ["slow elevation: %1%2", ((actionKeysNamesArray "gunElevSlow") select 0)];
-			_ctrlAzSlow ctrlSetText format ["slow azimuth: zoom in %1%2"];
-			//};
-
-			//if ace installed, warning that ace adjustable scopes prevent gun elevation when hotkeys overlap
-			if ((isClass(configFile >> "CfgPatches" >> "ace_main"))) then
-			{
-				if (RC_ace_hotkey_warning) then {
-					{(_display displayCtrl _x) ctrlShow true} forEach [1026,1027,1028];
-				} else {
-					{(_display displayCtrl _x) ctrlShow false} forEach [1026,1027,1028];
-				};
-			};
+			//ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
+			#include "functions\UILoop_includes\ctrl_display.hpp"
 
 			// checks if shell requires lock before firing
 			_requiresLock = (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1;
@@ -264,18 +153,8 @@ RC_Artillery_UI = [] spawn {
 					};
 				};
 
-				//ElDiff for formula
-				_aimAboveHeight = 0;
-				_aimAboveHeight = getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AimAboveHeight");	//for airburst and illum point of aim adjust
-				
-				_BarrelAGL = 0;
-				_BarrelLenght = 0;
-				_WeaponDirection = 0;
-				_muzzleHeight = 0;
-				_BarrelAGL = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelAGL");
-				_BarrelLenght = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelLenght");
-				_WeaponDirection = ((_uav weaponDirection currentWeapon _uav) select 2);
-				_muzzleHeightEstimate = _BarrelLenght * (sin (_WeaponDirection * 90)) + _BarrelAGL;
+				//ElDiff additions, like muzzle position, and rounds aim above value (airburst & topdown guided)
+				#include "functions\UILoop_includes\eldiff_additions.hpp"
 
 				//find if datalink target is selected
 				_targetPos = [0, 0, 0];
@@ -379,8 +258,8 @@ RC_Artillery_UI = [] spawn {
 				_ctrlTarget ctrlSetText "T: 0";
 				_ctrlTargetAzimuth ctrlSetText "T AZ: 0000";
 				_ctrlDifference ctrlSetText "DIF: 0000" ;
-				_ctrlHighSol ctrlSetText "H SOL: 0000";
-    			_ctrlLowSol ctrlSetText "L SOL: 0000";
+				_ctrlHighSol ctrlSetText "high EL: 0000";
+    			_ctrlLowSol ctrlSetText "low EL: 0000";
     			_ctrlHighETA ctrlSetText "ETA: 000";
     			_ctrlLowETA ctrlSetText "ETA: 000";
 				
@@ -394,30 +273,8 @@ RC_Artillery_UI = [] spawn {
 			_ctrlHighETA ctrlShow true;
 			_ctrlLowETA ctrlShow true;
 
-			//advised trajectory for ammunition, 1=low, 2=high, 3=both
-			_advisedTrajectory = getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AdvisedTrajectory");
-			switch (_advisedTrajectory) do {
-				case 1: {
-					_ctrlLowSol ctrlSetTextColor [1.0, 1.0, 1.0, 1.0]; 
-					_ctrlLowETA ctrlSetTextColor [1.0, 1.0, 1.0, 1.0]; 
-					_ctrlHighSol ctrlSetTextColor [0.5, 0.5, 0.5, 0.5]; 
-					_ctrlHighETA ctrlSetTextColor [0.5, 0.5, 0.5, 0.5];
-				};
-
-				case 2: {
-					_ctrlHighSol ctrlSetTextColor [1.0, 1.0, 1.0, 1.0];
-					_ctrlHighETA ctrlSetTextColor [1.0, 1.0, 1.0, 1.0];
-					_ctrlLowSol ctrlSetTextColor [0.5, 0.5, 0.5, 0.5];
-					_ctrlLowETA ctrlSetTextColor [0.5, 0.5, 0.5, 0.5];
-				};
-
-				case 3: {
-					_ctrlLowSol ctrlSetTextColor [1.0, 1.0, 1.0, 1.0]; 
-					_ctrlLowETA ctrlSetTextColor [1.0, 1.0, 1.0, 1.0]; 
-					_ctrlHighSol ctrlSetTextColor [1.0, 1.0, 1.0, 1.0]; 
-					_ctrlHighETA ctrlSetTextColor [1.0, 1.0, 1.0, 1.0];
-				};
-			};
+			//greys out not-advised trajectory for depending on round
+			#include "functions\UILoop_includes\ctrl_display.hpp"
 
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
