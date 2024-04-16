@@ -38,13 +38,13 @@ class RC_PylonRack_4Rnd_BombDemine_01_F: PylonRack_4Rnd_BombDemine_01_F
 
 //.338NM Vehicle MMG Belts
 class VehicleMagazine;
-class RC_200Rnd_338_T_Mag: VehicleMagazine
+class RC_200Rnd_338_T_R: VehicleMagazine
 {
 	author="Ascent";
 	scope=2;
 	count=200;
-	ammo="RC_B_338_T";
-	initSpeed=1000;
+	ammo="RC_B_338_T_R";
+	initSpeed=1006;
 	maxLeadSpeed=36.111099;
 	tracersEvery=1;	//4
 	nameSound="mgun";
@@ -52,45 +52,251 @@ class RC_200Rnd_338_T_Mag: VehicleMagazine
 	displayNameShort=".338 NM";
 	muzzleImpulseFactor[]={0.050000001,0.050000001};
 };
+class RC_200Rnd_338_T_G: RC_200Rnd_338_T_R
+{
+	ammo="RC_B_338_T_G";
+};
+class RC_200Rnd_338_T_Y: RC_200Rnd_338_T_R
+{
+	ammo="RC_B_338_T_Y";
+};
+
+
+class RC_200Rnd_93x64_T_G: VehicleMagazine
+{
+	author="Ascent";
+	scope=2;
+	count=200;
+	ammo="RC_B_93x64_T_G";
+	initSpeed=957;
+	maxLeadSpeed=36.111099;
+	tracersEvery=1;	//4
+	nameSound="mgun";
+	displayName="9.3mm";
+	displayNameShort="9.3mm";
+	muzzleImpulseFactor[]={0.050000001,0.050000001};
+};
+class RC_200Rnd_93x64_T_R: RC_200Rnd_93x64_T_G
+{
+	ammo="RC_B_93x64_T_R";
+};
+class RC_200Rnd_93x64_T_Y: RC_200Rnd_93x64_T_G
+{
+	ammo="RC_B_93x64_T_Y";
+};
+class RC_1000Rnd_93x64_T_G: RC_200Rnd_93x64_T_G
+{
+	count=1000;
+};
+class RC_1000Rnd_93x64_T_R: RC_200Rnd_93x64_T_R
+{
+	count=1000;
+};
+class RC_1000Rnd_93x64_T_Y: RC_200Rnd_93x64_T_Y
+{
+	count=1000;
+};
+
+
+class 200Rnd_127x99_mag_Tracer_Red;
+class RC_200Rnd_127x99_SLAP_T_R: 200Rnd_127x99_mag_Tracer_Red
+{
+	author="Ascent";
+	ammo="RC_B_127x99_SLAP_T_R";
+	count=200;
+	tracersEvery=1;	//4
+	initSpeed=1200;
+	displayName="12.7mm SLAP";
+	displayNameShort="12.7mm SLAP";
+};
+class RC_200Rnd_127x99_SLAP_T_G: RC_200Rnd_127x99_SLAP_T_R
+{
+	ammo="RC_B_127x99_SLAP_T_G";
+};
+class RC_200Rnd_127x99_SLAP_T_Y: RC_200Rnd_127x99_SLAP_T_R
+{
+	ammo="RC_B_127x99_SLAP_T_Y";
+};
+class RC_100Rnd_127x99_SLAP_T_R: RC_200Rnd_127x99_SLAP_T_R
+{
+	count=100;
+};
+class RC_100Rnd_127x99_SLAP_T_G: RC_200Rnd_127x99_SLAP_T_G
+{
+	count=100;
+};
+class RC_100Rnd_127x99_SLAP_T_Y: RC_200Rnd_127x99_SLAP_T_Y
+{
+	count=100;
+};
+
+
+class 96Rnd_40mm_G_belt;
+class RC_50Rnd_40mm_G_belt: 96Rnd_40mm_G_belt
+{
+	author="Ascent";
+	ammo="RC_G_40mm_HEDP";
+	displayName="40mm HEDP";
+	displayNameShort="40mm HEDP";
+	count=50;
+};
+class RC_75Rnd_40mm_G_belt: RC_50Rnd_40mm_G_belt
+{
+	count=75;
+};
+class RC_100Rnd_40mm_G_belt: RC_50Rnd_40mm_G_belt
+{
+	count=100;
+};
 
 
 //Autocannons
 class 140Rnd_30mm_MP_shells_Tracer_Red;
-class RC_100Rnd_30mm_MP_T: 140Rnd_30mm_MP_shells_Tracer_Red
+class RC_100Rnd_30mm_MP_T_R: 140Rnd_30mm_MP_shells_Tracer_Red
 {
 	author="Ascent";
-	ammo="RC_B_30mm_MP_T";
+	ammo="RC_B_30mm_MP_T_R";
 	count=100;
 	displayName="30mm MP-T";
 	displayNameShort="30mm MP-T";
 };
+class RC_100Rnd_30mm_MP_T_G: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_MP_T_G";
+};
+class RC_100Rnd_30mm_MP_T_Y: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_MP_T_Y";
+};
+class RC_100Rnd_30mm_GPR_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_GPR_T_R";
+	displayName="30mm GPR-T";
+	displayNameShort="30mm GPR-T";
+};
+class RC_100Rnd_30mm_GPR_T_G: RC_100Rnd_30mm_GPR_T_R
+{
+	ammo="RC_B_30mm_GPR_T_G";
+};
+class RC_100Rnd_30mm_GPR_T_Y: RC_100Rnd_30mm_GPR_T_R
+{
+	ammo="RC_B_30mm_GPR_T_Y";
+};
+class RC_60Rnd_30mm_MP_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	count=60;
+};
+class RC_60Rnd_30mm_MP_T_G: RC_100Rnd_30mm_MP_T_G
+{
+	count=60;
+};
+class RC_60Rnd_30mm_MP_T_Y: RC_100Rnd_30mm_MP_T_Y
+{
+	count=60;
+};
+class RC_60Rnd_30mm_GPR_T_R: RC_100Rnd_30mm_GPR_T_R
+{
+	count=60;
+};
+class RC_60Rnd_30mm_GPR_T_G: RC_100Rnd_30mm_GPR_T_G
+{
+	count=60;
+};
+class RC_60Rnd_30mm_GPR_T_Y: RC_100Rnd_30mm_GPR_T_Y
+{
+	count=60;
+};
+
+
 class 60Rnd_30mm_APFSDS_shells_Tracer_Red;
-class RC_100Rnd_30mm_APFSDS_T: 60Rnd_30mm_APFSDS_shells_Tracer_Red
+class RC_100Rnd_30mm_APFSDS_T_R: 60Rnd_30mm_APFSDS_shells_Tracer_Red
 {
 	author="Ascent";
+	ammo="RC_B_30mm_APFSDS_T_R";
 	count=100;
 	displayName="30mm APFSDS-T";
 	displayNameShort="30mm APFSDS-T";
 };
+class RC_100Rnd_30mm_APFSDS_T_G: RC_100Rnd_30mm_APFSDS_T_R
+{
+	ammo="RC_B_30mm_APFSDS_T_G";
+};
+class RC_100Rnd_30mm_APFSDS_T_Y: RC_100Rnd_30mm_APFSDS_T_R
+{
+	ammo="RC_B_30mm_APFSDS_T_Y";
+};
+/*
+class RC_100Rnd_40mm_Smoke: 140Rnd_30mm_MP_shells_Tracer_Red
+{
+	author="Ascent";
+	ammo="RC_B_AC_Smoke";
+	count=100;
+	displayName="30mm Smoke";
+	displayNameShort="30mm Smoke";
+};
+*/
 
 
 class 60Rnd_40mm_GPR_Tracer_Red_shells;
-class RC_50Rnd_40mm_MP_T: 60Rnd_40mm_GPR_Tracer_Red_shells
+class RC_50Rnd_40mm_GPR_T_R: 60Rnd_40mm_GPR_Tracer_Red_shells
 {
 	author="Ascent";
-	ammo="RC_B_40mm_MP_T";
+	ammo="RC_B_40mm_GPR_T_R";
 	count=50;
+	displayName="40mm GPR-T";
+	displayNameShort="40mm GPR-T";
+};
+class RC_50Rnd_40mm_GPR_T_G: RC_50Rnd_40mm_GPR_T_R
+{
+	ammo="RC_B_40mm_GPR_T_G";
+};
+class RC_50Rnd_40mm_GPR_T_Y: RC_50Rnd_40mm_GPR_T_R
+{
+	ammo="RC_B_40mm_GPR_T_Y";
+};
+class RC_50Rnd_40mm_MP_T_R: RC_50Rnd_40mm_GPR_T_R
+{
+	ammo="RC_B_40mm_MP_T_R";
 	displayName="40mm MP-T";
 	displayNameShort="40mm MP-T";
 };
+class RC_50Rnd_40mm_MP_T_G: RC_50Rnd_40mm_MP_T_R
+{
+	ammo="RC_B_40mm_MP_T_G";
+};
+class RC_50Rnd_40mm_MP_T_Y: RC_50Rnd_40mm_MP_T_R
+{
+	ammo="RC_B_40mm_MP_T_Y";
+};
+
+
 class 40Rnd_40mm_APFSDS_Tracer_Red_shells;
-class RC_50Rnd_40mm_APFSDS_T: 40Rnd_40mm_APFSDS_Tracer_Red_shells
+class RC_50Rnd_40mm_APFSDS_T_R: 40Rnd_40mm_APFSDS_Tracer_Red_shells
 {
 	author="Ascent";
+	ammo="RC_B_40mm_APFSDS_T_R";
 	count=50;
 	displayName="40mm APFSDS-T";
 	displayNameShort="40mm APFSDS-T";
 };
+class RC_50Rnd_40mm_APFSDS_T_G: RC_50Rnd_40mm_APFSDS_T_R
+{
+	ammo="RC_B_40mm_APFSDS_T_G";
+};
+class RC_50Rnd_40mm_APFSDS_T_Y: RC_50Rnd_40mm_APFSDS_T_R
+{
+	ammo="RC_B_40mm_APFSDS_T_Y";
+};
+/*
+class RC_50Rnd_40mm_Smoke: 60Rnd_40mm_GPR_Tracer_Red_shells
+{
+	author="Ascent";
+	ammo="RC_B_AC_Smoke";
+	count=50;
+	displayName="40mm Smoke";
+	displayNameShort="40mm Smoke";
+};
+*/
 
 
 class 2Rnd_GAT_missiles;
@@ -112,33 +318,82 @@ class RC_2Rnd_IFV_AA: 4Rnd_Titan_long_missiles
 
 // 120mm direct fire
 class 8Rnd_120mm_HEAT_MP_T_Red;
-class RC_12Rnd_120mm_MP_T: 8Rnd_120mm_HEAT_MP_T_Red
+class RC_10Rnd_120mm_MP_T_R: 8Rnd_120mm_HEAT_MP_T_Red
 {
-	ammo="RC_Sh_120mm_MP_T";
+	ammo="RC_Sh_120mm_MP_T_R";
 	displayName="MP-T";
 	displayNameShort="MP-T";
-	count=12;
+	count=10;
 };
-class RC_16Rnd_120mm_MP_T: RC_12Rnd_120mm_MP_T
+class RC_15Rnd_120mm_MP_T_R: RC_10Rnd_120mm_MP_T_R
 {
-	count=16;
+	count=15;
 };
-class RC_20Rnd_120mm_MP_T: RC_12Rnd_120mm_MP_T
+class RC_20Rnd_120mm_MP_T_R: RC_10Rnd_120mm_MP_T_R
+{
+	count=20;
+};
+class RC_10Rnd_120mm_MP_T_G: RC_10Rnd_120mm_MP_T_R
+{
+	ammo="RC_Sh_120mm_MP_T_G";
+};
+class RC_15Rnd_120mm_MP_T_G: RC_10Rnd_120mm_MP_T_G
+{
+	count=15;
+};
+class RC_20Rnd_120mm_MP_T_G: RC_10Rnd_120mm_MP_T_G
+{
+	count=20;
+};
+class RC_10Rnd_120mm_MP_T_Y: RC_10Rnd_120mm_MP_T_R
+{
+	ammo="RC_Sh_120mm_MP_T_Y";
+};
+class RC_15Rnd_120mm_MP_T_Y: RC_10Rnd_120mm_MP_T_Y
+{
+	count=15;
+};
+class RC_20Rnd_120mm_MP_T_Y: RC_10Rnd_120mm_MP_T_Y
 {
 	count=20;
 };
 
 
-class 24Rnd_120mm_APFSDS_shells;
-class RC_12Rnd_120mm_APFSDS_T: 24Rnd_120mm_APFSDS_shells
+class 20Rnd_120mm_APFSDS_shells_Tracer_Red;
+class RC_10Rnd_120mm_APFSDS_T_R: 20Rnd_120mm_APFSDS_shells_Tracer_Red
 {
-	count=12;
+	ammo="RC_Sh_120mm_APFSDS_T_R";
+	count=10;
 };
-class RC_16Rnd_120mm_APFSDS_T: RC_12Rnd_120mm_APFSDS_T
+class RC_15Rnd_120mm_APFSDS_T_R: RC_10Rnd_120mm_APFSDS_T_R
 {
-	count=16;
+	count=15;
 };
-class RC_20Rnd_120mm_APFSDS_T: RC_12Rnd_120mm_APFSDS_T
+class RC_20Rnd_120mm_APFSDS_T_R: RC_10Rnd_120mm_APFSDS_T_R
+{
+	count=20;
+};
+class RC_10Rnd_120mm_APFSDS_T_G: RC_10Rnd_120mm_APFSDS_T_R
+{
+	ammo="RC_Sh_120mm_APFSDS_T_G";
+};
+class RC_15Rnd_120mm_APFSDS_T_G: RC_10Rnd_120mm_APFSDS_T_G
+{
+	count=15;
+};
+class RC_20Rnd_120mm_APFSDS_T_G: RC_10Rnd_120mm_APFSDS_T_G
+{
+	count=20;
+};
+class RC_10Rnd_120mm_APFSDS_T_Y: RC_10Rnd_120mm_APFSDS_T_R
+{
+	ammo="RC_Sh_120mm_APFSDS_T_Y";
+};
+class RC_15Rnd_120mm_APFSDS_T_Y: RC_10Rnd_120mm_APFSDS_T_Y
+{
+	count=15;
+};
+class RC_20Rnd_120mm_APFSDS_T_Y: RC_10Rnd_120mm_APFSDS_T_Y
 {
 	count=20;
 };
@@ -147,14 +402,101 @@ class RC_20Rnd_120mm_APFSDS_T: RC_12Rnd_120mm_APFSDS_T
 class 4Rnd_120mm_LG_cannon_missiles;
 class RC_3Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 {
-	displayName="Datalink Guided";
-	displayNameShort="DL Guided";
+	displayName="NLOS Datalink Guided";
+	displayNameShort="NLOS DL-G";
 	ammo="RC_M_120mm_cannon_ATGM_DLG";
 	count=3;
 };
+class RC_3Rnd_125mm_DLG_cannon_missiles: RC_3Rnd_120mm_DLG_cannon_missiles
+{
+	ammo="RC_M_125mm_cannon_ATGM_DLG";
+};
 
 
-//82mm Section
+class 12Rnd_125mm_HEAT_T_Red;
+class RC_10Rnd_125mm_MP_T_R: 12Rnd_125mm_HEAT_T_Red
+{
+	ammo="RC_Sh_125mm_MP_T_R";
+	displayName="MP-T";
+	displayNameShort="MP-T";
+	count=10;
+};
+class RC_15Rnd_125mm_MP_T_R: RC_10Rnd_125mm_MP_T_R
+{
+	count=15;
+};
+class RC_20Rnd_125mm_MP_T_R: RC_10Rnd_125mm_MP_T_R
+{
+	count=20;
+};
+class RC_10Rnd_125mm_MP_T_G: RC_10Rnd_125mm_MP_T_R
+{
+	ammo="RC_Sh_125mm_MP_T_G";
+};
+class RC_15Rnd_125mm_MP_T_G: RC_10Rnd_125mm_MP_T_G
+{
+	count=15;
+};
+class RC_20Rnd_125mm_MP_T_G: RC_10Rnd_125mm_MP_T_G
+{
+	count=20;
+};
+class RC_10Rnd_125mm_MP_T_Y: RC_10Rnd_125mm_MP_T_R
+{
+	ammo="RC_Sh_125mm_MP_T_Y";
+};
+class RC_15Rnd_125mm_MP_T_Y: RC_10Rnd_125mm_MP_T_Y
+{
+	count=15;
+};
+class RC_20Rnd_125mm_MP_T_Y: RC_10Rnd_125mm_MP_T_Y
+{
+	count=20;
+};
+
+
+class 20Rnd_125mm_APFSDS_T_Red;
+class RC_10Rnd_125mm_APFSDS_T_R: 20Rnd_125mm_APFSDS_T_Red
+{
+	ammo="RC_Sh_125mm_APFSDS_T_R";
+	count=10;
+};
+class RC_15Rnd_125mm_APFSDS_T_R: RC_10Rnd_125mm_APFSDS_T_R
+{
+	count=15;
+};
+class RC_20Rnd_125mm_APFSDS_T_R: RC_10Rnd_125mm_APFSDS_T_R
+{
+	count=20;
+};
+class RC_10Rnd_125mm_APFSDS_T_G: RC_10Rnd_125mm_APFSDS_T_R
+{
+	ammo="RC_Sh_125mm_APFSDS_T_G";
+};
+class RC_15Rnd_125mm_APFSDS_T_G: RC_10Rnd_125mm_APFSDS_T_G
+{
+	count=15;
+};
+class RC_20Rnd_125mm_APFSDS_T_G: RC_10Rnd_125mm_APFSDS_T_G
+{
+	count=20;
+};
+class RC_10Rnd_125mm_APFSDS_T_Y: RC_10Rnd_125mm_APFSDS_T_R
+{
+	ammo="RC_Sh_125mm_APFSDS_T_Y";
+};
+class RC_15Rnd_125mm_APFSDS_T_Y: RC_10Rnd_125mm_APFSDS_T_Y
+{
+	count=15;
+};
+class RC_20Rnd_125mm_APFSDS_T_Y: RC_10Rnd_125mm_APFSDS_T_Y
+{
+	count=20;
+};
+
+
+//Artillery ammo below
+//82mm
 class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_shells: 8Rnd_82mm_Mo_shells
 {
@@ -2154,13 +2496,13 @@ class RC_40Rnd_82mm_Mo_backuplowHEAB: RC_1Rnd_82mm_Mo_backuplowHEAB
 };
 
 
-// 105mm Section
+// 105mm
 class 32Rnd_155mm_Mo_shells;
 class RC_1Rnd_105mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
 	initSpeed=400;
 	ammo="RC_Sh_105mm_AMOS_HE";
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -4339,7 +4681,7 @@ class magazine_ShipCannon_120mm_HE_shells_x32;
 class RC_1Rnd_120mm_Mo_shells: magazine_ShipCannon_120mm_HE_shells_x32
 {
 	ammo="RC_Sh_120mm_AMOS_HE";
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -6511,11 +6853,11 @@ class RC_40Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backuplowHEAB
 };
 
 
-// 155mm Section
+// 155mm
 class RC_1Rnd_155mm_Mo_shells: 32Rnd_155mm_Mo_shells
 {
 	ammo="RC_Sh_155mm_AMOS_HE";
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
@@ -8681,12 +9023,12 @@ class RC_40Rnd_155mm_Mo_backuplowHEAB: RC_1Rnd_155mm_Mo_backuplowHEAB
 };
 
 
-//230mm Section
+//230mm
 class 12Rnd_230mm_rockets;
 class RC_1Rnd_230mm_rockets: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_HE";
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;

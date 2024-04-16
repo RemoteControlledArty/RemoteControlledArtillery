@@ -5,6 +5,8 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 	class AnimationSources;
 	class showCamonetTurret;
 	class showCamonetHull;
+	class showCamonetPlates1;
+	class showCamonetPlates2;
 	class Turrets;
 	class MainTurret;
 	class OpticsIn;
@@ -13,7 +15,7 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=1; // locks driver seat
+	//RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=1.75;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -33,10 +35,13 @@ class RC_MLRS_A: RC_MLRS_base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";	
 	crew="B_UAV_AI";
 	driverForceOptics=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -44,7 +49,15 @@ class RC_MLRS_A: RC_MLRS_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa",
+		"A3\armor_f_gamma\MBT_01\data\MBT_01_MLRS_co.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
+	};
 
 	class Components: Components
 	{
@@ -94,6 +107,14 @@ class RC_MLRS_A: RC_MLRS_base
 
 	class AnimationSources: AnimationSources
 	{
+		class showCamonetPlates1: showCamonetPlates1
+		{
+			initPhase=1;
+		};
+		class showCamonetPlates2: showCamonetPlates2
+		{
+			initPhase=1;
+		};
 		class showCamonetTurret: showCamonetTurret
 		{
 			initPhase=1;
@@ -115,6 +136,7 @@ class RC_MLRS_A: RC_MLRS_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
 			gunnerForceOptics=1;
 			stabilizedInAxes=3;
 			weapons[]=
@@ -220,7 +242,8 @@ class RC_MLRS_WD: RC_MLRS_A
 	{
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_MLRS_olive_co.paa",
-		"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		//"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
 class RC_MLRS_A_O: RC_MLRS_A
@@ -262,7 +285,6 @@ class RC_MRL_base: I_Truck_02_MRL_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=1; // locks driver seat
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=1.65;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -282,10 +304,13 @@ class RC_MRL_DIG: RC_MRL_base
 	textSingular="UGV";
 	isUav=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -294,6 +319,7 @@ class RC_MRL_DIG: RC_MRL_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -346,6 +372,7 @@ class RC_MRL_DIG: RC_MRL_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
 			lockWhenVehicleSpeed=-1;
 			gunnerForceOptics=1;
 			stabilizedInAxes=3;
@@ -485,6 +512,109 @@ class RC_MRL_DIG_I: RC_MRL_DIG
 class RC_MRL_WD_I: RC_MRL_WD
 {
 	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_MLRS_ReTex_D: RC_MLRS_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"merkava\data\mbt_01_body_d.paa",
+		"merkava\data\mbt_01_mlrs_d.paa",
+		"merkava\data\camonet_desert_co.paa"
+	};
+};
+class RC_MLRS_ReTex_D_O: RC_MLRS_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_MLRS_ReTex_D_I: RC_MLRS_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_MRL_ReTex_WD: RC_MRL_DIG
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_Truck_02_MRL_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"iveco\data\iveco_front_wd.paa",
+		"a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
+		"iveco\data\truck_02_mrl_wd_co.paa"
+	};
+};
+class RC_MRL_ReTex_WD_O: RC_MRL_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_MRL_ReTex_WD_I: RC_MRL_ReTex_WD
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_MRL_ReTex_D: RC_MRL_DIG
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"iveco\data\iveco_front_d.paa",
+		"a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
+		"iveco\data\truck_02_mrl_d_co.paa"
+	};
+};
+class RC_MRL_ReTex_D_O: RC_MRL_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_MRL_ReTex_D_I: RC_MRL_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_MRL_ReTex_A: RC_MRL_DIG
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Arid_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"iveco\data\iveco_front_e.paa",
+		"a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
+		"iveco\data\truck_02_mrl_e_co.paa"
+	};
+};
+class RC_MRL_ReTex_A_O: RC_MRL_ReTex_A
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_MRL_ReTex_A_I: RC_MRL_ReTex_A
+{
+	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
 };

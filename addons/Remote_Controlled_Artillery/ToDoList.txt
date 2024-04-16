@@ -24,29 +24,82 @@ TO DO - BUGFIXES:
 
 -medical truck respawn script not working in multiplayer (cfgVehicles, RespawnTruck.hpp)
 
-
--ICV etc do ONLY react to drive commands when being the person who placed it?
--Remove ICV II "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
+-Remove ICV IV & V "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
 -attemt to (unclear if possible) giving working waypoints to ICV/IFV even when sitting in vehicle (those waypoints bug, and have different extra markings)
 
--IFV AA missile not locking in multiplayer
+-artillery computer is supposedly disabled for all assets, not just of the mod
+
+
+-CHANGE UAV CHECK, cfg checks/create effect AFTER connected check, in both scripts
+-maybe include blur in main loop to reduce checks
 
 
 TO DO - FEATURES:
 
+CAR Script for Zeus:
+-EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided
+-recon animationlist check
+
+next:
+-getout & no players in vic = engineoff
+
+-when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
+-driverless "take controls" check
+-check if "release controls" triggers script and assigns someone else
+-test g/c "take controls" in mp
+-"release controls to overwrite drive controls", "overwritten driver controls", vehicle player vehicleChat "vehicleChat";
+	*what if statement to check if EH client is in vehicle? to not trigger message multiple times
+
+-maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
+-fix for someone remotecontrolling gunner player, bugging them
+
+-add sensor to mortar carrier camera
+-video about vics
+
+
+generally:
+-update list & readme
+
+-AR-1 script include for night use: https://community.bistudio.com/wiki/disableTIEquipment
+-maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
+-hullexplosiondelay doesnt work for Namer?
+-engineoff script doesnt need to be in init if person is connected to uav, with soon arma update it also wouldnt block taking controls for gaining locality, for example when the other is uncon
+-doublecheck "min/max" range exact function on sensors
+-set ejectdeadcrew to true?
+
+-*notetoself: emty uav/ugv, can be hacked, which spawns gunner, which then can bug my "go to commander"
+	partially manned like howitzer dont have that problem, but autonomous driving command to firing position is unavailable
+	= RC having driver and gaining locality by driver controls, while giving manned vehilces hasDriver-1; as on those movement order breaks anyways while in the vic
+
+-test cargoIsCoDriver[]={0,0};
+	cargoCanControlUAV=0;
+	Added: A new DriverOpticsIn parameter for vehicle drivers (similar to turret OpticsIn, but it uses OpticsModel instead gunnerOpticsModel for the optics model)
+
+-stabilization cfg value (camera lock) negatively impacts aiming?
+-IFV II 30mm + ATGM
+-fix driverview on IFV/FSV/MBT & Trucks
+-soon with arma update connectionfix likely wont be needed anymore
+
+
 Arty:
+-minimum datalink distance 50m instead of 20m / or "object" recognition & display
+-autonomous off JIP global execute?
+
+-test FCS without ace on uneven ground
+-adding FCS, and Airburst rounds, to a mods 60mm quick deployable Mortar
+
 -Counter Artillery Radar -> brainstorm on options: map markers for shot locations / share source vehicle in datalink but delayed for balancing, and how its even technically possible for different mods
 -comment for round like "smoke", for example below T: 01 UI, for better coordination and less required radio chatter
 -peak ASL formula and display infront of ETA, optimal but a bit much UI would be also be ASL at 25% of distance, to estimate if rounds will collide with hills close to gun/target
 
--autonomous off JIP global execute?
-
 -make delayed fuze also ir capable for gps targets  *might require sicnificant change of the round as people might use it against vehicles, but its currently not HEAT
 
+
 FSV/IFV:
--check ICV engine off on server
--additional x2 SACLOS only missles, vorona or edited titan
--maybe make gps target available for NLOS missles? *might have happend with new marker EH update
+-smoke ammo, 40mm bulletbase change to shotshellbase with smoke submunition
+-check ICV engine off on server *needs remoteexecute?
+-SACLOS missle only versions?
+-automatic switch to left missilecamera when missile is launched
 
 
 TO DO - QUALITY OF LIFE:
@@ -67,7 +120,6 @@ POSTPONED:
 -fix Static AT self engaging laser spots (how?)
 -RADAR staying on (deactivates after releasing control even when not autonomous, maybe human crew and locked seats instead?)
 -guided submunition alternative scripted misslecam
--more RC Infantry Carrier's / APC's / IVF's
 -ETA 5sec warning message
 -proximityExplosionDistance= ; ammo testing
 -seek after unlocked fire for guided (by cfg value in guided mag, script automatically locking target at arty1 pos, and removing target when round is fired, like 1r less in mag or mag changes)
@@ -83,7 +135,6 @@ IDEAS - FAR FUTURE:
 -disconnect uav/ugv from terminal script when vanilla incapacitated / ace unconcious
 
 -AR-0.5 pvp, with 1.5 zoom to force low flying, shortrange sensors, no thermal, but laser designator
--RC Marid with upgraded engines 7.62x51 and smoke GL
 -test passive radar shells against active radar AA
 -video partially at night for rocket and explosion effects
 -make MLRS/MRL rockets appear in launcher (if possible)
@@ -92,6 +143,7 @@ IDEAS - FAR FUTURE:
 -or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
 -vanilla asset overwrite for gamemodes without zeus etc *maybe by second pbo and config, class RC_Howitzer; class vanilla_Howitzer: vanilla_Howitzer  but likely doesnt work
 -switch driver and commander of recon radar
+-for later use, no crosshair limited FOV: gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -119,8 +171,17 @@ DONE - BUGFIXES:
 -fixed disallow vanilla artillery computer setting
 -fixed ATACMS not being available
 -fixed Recon RADAR seat locking
--arty markers now editable and movable
+-arty markers now movable
 -multiple gps markers now usable, and movable
+-fixed gps marker for multiplayer
+-fixed datalink laser designator for multiplayer
+-IFV AA Missles now lock in multiplayer if at correct distance, and not flared
+
+new:
+-fixed multiplayer issue of gunner being unable to drive, now the driver seat is not locked anymore,
+	if the driver is shortly controlled by terminal until reacting to WASD, one can then driver from the gunner seat
+-ICV hideturret before !local check
+-fixed laser warning receivers
 
 
 DONE - FEATURES:
@@ -212,11 +273,9 @@ DONE - FEATURES:
 -bugfixed gps target inaccurate positioning
 -added very faint controls display
 -added IFV with automated driver and improved FOV
--added 40mm MP-T ammo
 -added datalink guided NLOS AT/AA Missiles for IFV's
 -found out that without ace Mortars dont shoot correctly without vanilla artillery computer, added script that when its disabled and ace is not installed, its still available for mortars
 -added disableable warning that activates when ace is installed which informs that ace adjustable scopes block elevation with overlapping hotkeys
-
 -MAJOR breakthrough: added datalink target firing solution, sideeffect is that it shows firing solution for line of sight if looking at an object
 -added laserLock/irLock to HE/HEAB, so it can select laser and vehicles on datalink for a firing solution *does not make it guided (not suited to other rounds with distancetotarget=x, except for guided)
 -instead of seperate display, added RC_AimAboveHeight close to triggerdistance for guided, to have toptown effect even on high charge for shorter TOF, to not get stuck in foliage/cover/hills
@@ -230,6 +289,23 @@ DONE - FEATURES:
 -improved GPS Markers to not be noticed/attacked by AI
 -MP Guided now also compatible with gps guidance using vanilla artillery computer
 -now greys out the firing solution & ETA for unsuited low or high trajectory depending on shell
+
+new:
+-added found target highlighting to most assets
+-added select datalink target (highlighting) ability to most weapons, to improve coordination/awareness
+-added semi manned Recon ATGM & Mortar Carrier
+-added Leopard MBT, T-14 MBT, Namer APC/ICV, Otokar ARMA 6x6 APC/ICV, BM-2T Stalker IFV/ICV, Warrior IFV/ICV
+-added laser warning receivers
+-added 30/40mm MP
+-added 125mm MP & NLOS Datalink Guided
+-added 30/40mm gunnerOpticsModel
+-added red/green tracer variant
+-added "take control" allowing gunner/commander take driving controls (press both take controls then release controls to activate correctly)
+-improved file structure with includes
+-further improved file structure to streamline testing
+-increased MBT/FSV/IFV datalink panel from 3km to 4km
+-new NEUTRAL camonets, in uniform olive/tan, making it more fitting for a larger variety of factions/units
+
 
 
 -low/high trajectory list:

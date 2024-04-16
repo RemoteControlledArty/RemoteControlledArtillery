@@ -1,6 +1,6 @@
 //Nyx / Wiesel
 class I_LT_01_AA_F;
-class RC_AA_small_base: I_LT_01_AA_F
+class RC_AA_small_Base: I_LT_01_AA_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -13,10 +13,9 @@ class RC_AA_small_base: I_LT_01_AA_F
 	class Components;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_AA_small_WD: RC_AA_small_base
+class RC_AA_small_WD: RC_AA_small_Base
 {
 	displayName="RC Recon Anti-Air";
 	faction="RemoteControlled_B";
@@ -30,10 +29,13 @@ class RC_AA_small_WD: RC_AA_small_base
 	textSingular="UGV";
 	isUav=1;
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -43,6 +45,7 @@ class RC_AA_small_WD: RC_AA_small_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -174,11 +177,14 @@ class RC_AA_small_WD: RC_AA_small_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
 			gunnerForceOptics=1;
 			forceHideGunner=1;
+			stabilizedInAxes=3;
 
 			class ViewOptics: ViewOptics
 			{
+				//directionStabilized=1;	//sadly creates aiming problems
 				initFov=0.89999998;
 				minFov=0.0125;
 				maxFov=0.89999998;
@@ -259,7 +265,8 @@ class RC_AA_small_WD: RC_AA_small_base
 	{
 		"A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
 		"A3\armor_f_tank\lt_01\data\lt_01_at_olive_co.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		//"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
 		"A3\armor_f\data\cage_olive_co.paa"
 	};
 };
@@ -269,36 +276,33 @@ class RC_AA_small_WD_O: RC_AA_small_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_AA_small_DIG_I: RC_AA_small_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-};
 class RC_AA_small_WD_I: RC_AA_small_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
+};
+class RC_AA_small_DIG_I: RC_AA_small_WD_I
+{
 	hiddenSelectionsTextures[]=
 	{
-	"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-	"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
-	"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-	"A3\armor_f\data\cage_aaf_co.paa"
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
 	};
 };
 
 
 class I_LT_01_scout_F;
-class RC_radar_small_base: I_LT_01_scout_F
+class RC_radar_small_Base: I_LT_01_scout_F
 {
 	class AnimationSources;
 	class showCamonetHull;
 	class showSLATHull;
 	class Turrets;
 	class MainTurret;
+	class ViewOptics;
 	class HitPoints;
 	class HitEngine;
 	class Components;
@@ -308,11 +312,10 @@ class RC_radar_small_base: I_LT_01_scout_F
 	scope=0;
 	scopeCurator=0;
 	forceHideDriver=1;
-	RCDisableSeats=6; // locks gunner and commander seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	
 };
-class RC_radar_small_WD: RC_radar_small_base
+class RC_radar_small_WD_Base: RC_radar_small_Base
 {
 	/*
 	//for later use
@@ -321,27 +324,21 @@ class RC_radar_small_WD: RC_radar_small_base
 		init="(_this select 0) spawn {};";
 	};
 	*/
-	displayName="RC Recon Radar";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
 	author="Ascent";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	isUav=1;
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	crew="B_UAV_AI";
-	driverForceOptics=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	redRpm=1100;
 	idleRpm=250;
+	radartype=2;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	laserScanner=1;
+	lockDetectionSystem="4+8";
+	incomingMissileDetectionSystem=16;
 
 	class Components: Components
 	{
@@ -368,6 +365,55 @@ class RC_radar_small_WD: RC_radar_small_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				/*
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=2000;
+
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
+					animDirection="mainGun";
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=1000;
+
+					class AirTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
+					animDirection="mainGun";
+				};
+				*/
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -415,8 +461,26 @@ class RC_radar_small_WD: RC_radar_small_base
 	{
 		class MainTurret: MainTurret
 		{
-			gunnerForceOptics=1;
-			forceHideGunner=1;
+			primaryGunner=1;
+			primaryObserver=0;
+			gunnerCompartments="Compartment2";
+			showAllTargets="2 + 4";
+			stabilizedInAxes=3;
+
+			class ViewOptics: ViewOptics
+			{
+				directionStabilized=1;
+				initFov=0.89999998;
+				minFov=0.0125;
+				maxFov=0.89999998;
+				visionMode[]=
+				{
+					"Normal",
+					"NVG",
+					"Ti"
+				};
+				thermalMode[]={0};
+			};
 		};
 	};
 
@@ -468,8 +532,51 @@ class RC_radar_small_WD: RC_radar_small_base
 	{
 		"A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
 		"A3\armor_f_tank\lt_01\data\lt_01_radar_olive_co.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		//"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
 		"A3\armor_f\data\cage_olive_co.paa"
+	};
+};
+
+
+class RC_radar_small_WD: RC_radar_small_WD_Base
+{
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	displayName="RC Recon Radar";
+	isUav=1;
+	vehicleClass="Autonomous";
+	textPlural="UGVs";
+	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
+	crew="B_UAV_AI";
+	
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+
+			weapons[]=
+			{
+				"RC_Laserdesignator_vehicle",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"Laserbatteries",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
 	};
 };
 class RC_radar_small_WD_O: RC_radar_small_WD
@@ -478,12 +585,14 @@ class RC_radar_small_WD_O: RC_radar_small_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_radar_small_DIG_I: RC_radar_small_WD
+class RC_radar_small_WD_I: RC_radar_small_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
+};
+class RC_radar_small_DIG_I: RC_radar_small_WD_I
+{
 	hiddenSelectionsTextures[]=
 	{
 		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
@@ -491,12 +600,6 @@ class RC_radar_small_DIG_I: RC_radar_small_WD
 		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
 		"A3\armor_f\data\cage_aaf_co.paa"
 	};
-};
-class RC_radar_small_WD_I: RC_radar_small_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
 };
 
 
@@ -522,25 +625,6 @@ class RC_Mortar_Carrier_WD_O: RC_Mortar_Carrier_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD
-{
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
-	};
-
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	hiddenSelectionsTextures[]=
-	{
-		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-		"A3\armor_f_tank\lt_01\data\lt_01_radar_co.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-		"A3\armor_f\data\cage_aaf_co.paa"
-	};
-};
 class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
 {
 	class EventHandlers: EventHandlers
@@ -552,43 +636,105 @@ class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
 	crew="I_UAV_AI";
 	side=2;
 };
+class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_radar_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+};
+
+
+//semi manned version
+/*
+class RC_Mortar_Carrier_WD_Driverless: RC_radar_small_WD_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	displayName="Mortar Carrier";
+	editorSubcategory="RC_Mortar_subcat";
+	crew="";
+	hasDriver=-1;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			forceHideGunner=1;
+		};
+	};
+};
+class RC_Mortar_Carrier_WD_Driverless_O: RC_Mortar_Carrier_WD_Driverless
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
+	faction="RemoteControlled_O";
+	side=0;
+};
+class RC_Mortar_Carrier_WD_Driverless_I: RC_Mortar_Carrier_WD_Driverless
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
+	faction="RemoteControlled_I";
+	side=2;
+};
+class RC_Mortar_Carrier_DIG_Driverless_I: RC_Mortar_Carrier_WD_Driverless_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_radar_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+};
+*/
 
 
 class I_LT_01_AT_F;
-class RC_ATGM_small_base: I_LT_01_AT_F
+class RC_ATGM_small_Base: I_LT_01_AT_F
 {
 	class AnimationSources;
 	class showCamonetHull;
 	class showSLATHull;
+	class TurnOut;
 	class Turrets;
 	class MainTurret;
 	class ViewOptics;
 	class HitPoints;
 	class HitEngine;
 	class Components;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
-	RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_ATGM_small_WD: RC_ATGM_small_base
+class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 {
 	displayName="RC Recon ATGM 4.5km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
 	author="Ascent";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	isUav=1;
-	vehicleClass="Autonomous";
-	uavCameraGunnerPos="PiP1_pos";
-	uavCameraGunnerDir="PiP1_dir";
-	crew="B_UAV_AI";
 	driverForceOptics=1;
+	forceHideDriver=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -597,6 +743,7 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 	//laserScanner=0;
 
@@ -785,11 +932,13 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 	{
 		class MainTurret: MainTurret
 		{
-			gunnerForceOptics=1;
-			forceHideGunner=1;
+			gunnerCompartments="Compartment2";
+			showAllTargets="2 + 4";
+			stabilizedInAxes=3;
 
 			class ViewOptics: ViewOptics
 			{
+				//directionStabilized=1;	//sadly creates aiming problems
 				initFov=0.89999998;
 				minFov=0.0125;
 				maxFov=0.89999998;
@@ -869,8 +1018,37 @@ class RC_ATGM_small_WD: RC_ATGM_small_base
 	{
 		"A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
 		"A3\armor_f_tank\lt_01\data\lt_01_at_olive_co.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		//"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
 		"A3\armor_f\data\cage_olive_co.paa"
+	};
+};
+
+
+class RC_ATGM_small_WD: RC_ATGM_small_WD_Base
+{
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	isUav=1;
+	vehicleClass="Autonomous";
+	textPlural="UGVs";
+	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
+	crew="B_UAV_AI";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+		};
 	};
 };
 class RC_ATGM_small_WD_O: RC_ATGM_small_WD
@@ -879,69 +1057,120 @@ class RC_ATGM_small_WD_O: RC_ATGM_small_WD
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_ATGM_small_DIG_I: RC_ATGM_small_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	hiddenSelectionsTextures[]=
-	{
-	"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-	"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
-	"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-	"A3\armor_f\data\cage_aaf_co.paa"
-	};
-};
 class RC_ATGM_small_WD_I: RC_ATGM_small_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 };
-
-
-
-class RC_ATGM_small_S_WD: RC_ATGM_small_WD
+class RC_ATGM_small_DIG_I: RC_ATGM_small_WD_I
 {
-	displayName="RC stabilized Recon ATGM 4.5km";
-
-	class Turrets: Turrets
+	hiddenSelectionsTextures[]=
 	{
-		class MainTurret: MainTurret
-		{
-			stabilizedInAxes=3;
-
-			class ViewOptics: ViewOptics
-			{
-				directionStabilized=1;
-			};
-		};
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
 	};
 };
-class RC_ATGM_small_S_WD_O: RC_ATGM_small_S_WD
+
+
+//semi manned version
+class RC_ATGM_small_WD_manned: RC_ATGM_small_WD_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init=
+			"if (!local (_this select 0)) exitwith {}; \
+			(_this select 0) spawn { \
+				waitUntil {!isNull gunner _this}; \
+				_this deleteVehicleCrew gunner _this; \
+			};";
+		};
+	};
+
+	displayName="Recon ATGM 4.5km";
+
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	isUav=1;
+	vehicleClass="Autonomous";
+	textPlural="UGVs";
+	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	crew="B_UAV_AI";
+};
+class RC_ATGM_small_WD_manned_O: RC_ATGM_small_WD_manned
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_ATGM_small_S_DIG_I: RC_ATGM_small_S_WD
+class RC_ATGM_small_WD_manned_I: RC_ATGM_small_WD_manned
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
+	side=2;
+};
+class RC_ATGM_small_DIG_manned_I: RC_ATGM_small_WD_manned_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+};
+
+
+/*
+class RC_ATGM_small_WD_Driverless: RC_ATGM_small_WD_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes\initDL.hpp"
+		};
+	};
+
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	displayName="Recon ATGM 4.5km";
+	crew="";
+	hasDriver=-1;
+};
+class RC_ATGM_small_WD_Driverless_O: RC_ATGM_small_WD_Driverless
+{
+	faction="RemoteControlled_O";
+	side=0;
+};
+class RC_ATGM_small_DIG_Driverless_I: RC_ATGM_small_WD_Driverless
+{
+	faction="RemoteControlled_I";
 	side=2;
 
 	hiddenSelectionsTextures[]=
 	{
-	"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-	"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
-	"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-	"A3\armor_f\data\cage_aaf_co.paa"
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_at_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
 	};
 };
-class RC_ATGM_small_S_WD_I: RC_ATGM_small_S_WD
+class RC_ATGM_small_WD_Driverless_I: RC_ATGM_small_DIG_Driverless_I
 {
 	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
 	side=2;
 };
+*/

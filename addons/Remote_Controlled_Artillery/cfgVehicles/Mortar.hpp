@@ -97,6 +97,7 @@ class RC_Mortar: RC_Mortar_base
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			gunnerForceOptics=1;
 
 			weapons[]=
@@ -106,9 +107,9 @@ class RC_Mortar: RC_Mortar_base
 			magazines[]=
 			{
 				"RC_10Rnd_82mm_Mo_shells",
-				"RC_5Rnd_82mm_Mo_HEAB",
+				"RC_4Rnd_82mm_Mo_HEAB",
 				"RC_5Rnd_82mm_Mo_MultiGuided",
-				"RC_15Rnd_82mm_Mo_Smoke_white",
+				"RC_12Rnd_82mm_Mo_Smoke_white",
 				"RC_6Rnd_82mm_Mo_Flare_white"
 			};
 			class ViewOptics: ViewOptics
@@ -218,7 +219,7 @@ class RC_Mortar_Bag_base: B_Mortar_01_weapon_F
 };
 class RC_Mortar_Bag: RC_Mortar_Bag_base
 {
-	displayName="RC Mortar (non adjustable)";
+	displayName="RC Mortar";
 	scope=2;
 	scopeCurator=2;
 
@@ -240,7 +241,7 @@ class RC_Mortar_Bag: RC_Mortar_Bag_base
 };
 class RC_Mortar_Bag_O: RC_Mortar_Bag
 {
-	displayName="RC Mortar [Opf] (non adjustable)";
+	displayName="RC Mortar [Opf]";
 
 	class assembleInfo: assembleInfo
 	{
@@ -263,7 +264,7 @@ class RC_Mortar_Bag_HEX_O: RC_Mortar_Bag_base
 };	
 class RC_Mortar_Bag_I: RC_Mortar_Bag
 {
-	displayName="RC Mortar [Ind] (non adjustable)";
+	displayName="RC Mortar [Ind]";
 
 	class assembleInfo: assembleInfo
 	{
@@ -355,10 +356,10 @@ class RC_VehicleMortar: RC_Mortar
 			};
 			magazines[]=
 			{
-				"RC_15Rnd_82mm_Mo_shells",
-				"RC_5Rnd_82mm_Mo_HEAB",
+				"RC_12Rnd_82mm_Mo_shells",
+				"RC_4Rnd_82mm_Mo_HEAB",
 				"RC_5Rnd_82mm_Mo_MultiGuided",
-				"RC_20Rnd_82mm_Mo_Smoke_white",
+				"RC_18Rnd_82mm_Mo_Smoke_white",
 				"RC_9Rnd_82mm_Mo_AT_mine",
 				"RC_9Rnd_82mm_Mo_mine",
 				"RC_6Rnd_82mm_Mo_Flare_white"

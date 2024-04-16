@@ -19,7 +19,7 @@ class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
 {
 	displayname="RC Improved Designator";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Designator_subcat";
+	editorSubcategory="RC_UAV_Designator_subcat";
 	scope=2;
 	scopeCurator=2;
 	enableGPS=1;
@@ -104,7 +104,7 @@ class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
 	{
 		class MainTurret: MainTurret
 		{
-			showAllTargets=4;
+			showAllTargets="2 + 4";
 
 			class ViewOptics: viewOptics
 			{

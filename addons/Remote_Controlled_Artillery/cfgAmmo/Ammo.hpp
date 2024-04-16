@@ -1,7 +1,10 @@
 //.338 NM Tracer for Vehicle MMG
 class BulletBase;
-class RC_B_338_T: BulletBase
+class RC_B_338_T_R: BulletBase
 {
+	laserLock=1;
+	irLock=1;
+	airLock=1;
 	hit=16;
 	indirectHit=0;
 	indirectHitRange=0;
@@ -13,7 +16,6 @@ class RC_B_338_T: BulletBase
 	suppressionRadiusBulletClose=8;
 	suppressionRadiusHit=10;
 	cost=6;
-	airLock=1;
 	caliber=2;
 	typicalSpeed=890;
 	timeToLive=10;
@@ -37,25 +39,294 @@ class RC_B_338_T: BulletBase
 		distance=1;
 	};
 };
-
-
-class B_30mm_MP_Tracer_Red;
-class RC_B_30mm_MP_T: B_30mm_MP_Tracer_Red
+class RC_B_338_T_G: RC_B_338_T_R
 {
-	indirectHit=6.75;
-	indirectHitRange=3.75;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_338_T_Y: RC_B_338_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+class RC_B_93x64_T_G: BulletBase
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	hit=18;
+	indirectHit=0;
+	indirectHitRange=0;
+	cartridge="FxCartridge_93x64_Ball";
+	audibleFire=80;
+	visibleFireTime=3;
+	dangerRadiusBulletClose=10;
+	dangerRadiusHit=14;
+	suppressionRadiusBulletClose=8;
+	suppressionRadiusHit=10;
+	cost=6;
+	caliber=2.2;
+	typicalSpeed=785;
+	timeToLive=10;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+	tracerScale=1.2;
+	tracerStartTime=0.05;
+	tracerEndTime=3;
+	airFriction=-0.00075000001;
+	class CamShakeExplode
+	{
+		power=3.1622801;
+		duration=0.60000002;
+		frequency=20;
+		distance=9.4868298;
+	};
+	class CamShakeHit
+	{
+		power=10;
+		duration=0.40000001;
+		frequency=20;
+		distance=1;
+	};
+};
+class RC_B_93x64_T_R: RC_B_93x64_T_G
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+};
+class RC_B_93x64_T_Y: RC_B_93x64_T_G
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+class B_127x99_SLAP_Tracer_Red;
+class RC_B_127x99_SLAP_T_R: B_127x99_SLAP_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerStartTime=0.04;
+	tracerEndTime=3;
+};
+class RC_B_127x99_SLAP_T_G: RC_B_127x99_SLAP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+};
+class RC_B_127x99_SLAP_T_Y: RC_B_127x99_SLAP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+class G_40mm_HEDP;
+class RC_G_40mm_HEDP: G_40mm_HEDP
+{
+	indirectHit=8;
+	indirectHitRange=6;
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+
+
+//MP
+class B_30mm_MP_Tracer_Red;
+class RC_B_30mm_MP_T_R: B_30mm_MP_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	indirectHit=6;
+	indirectHitRange=4;
 	deflecting=1;
 };
-class B_40mm_GPR_Tracer_Red;
-class RC_B_40mm_MP_T: B_40mm_GPR_Tracer_Red
+class RC_B_30mm_MP_T_G: RC_B_30mm_MP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_30mm_MP_T_Y: RC_B_30mm_MP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+class RC_B_40mm_MP_T_R: RC_B_30mm_MP_T_R
 {
 	hit=110;
-	indirectHit=9;
+	indirectHit=8;
 	indirectHitRange=5;
-	warheadName="HEAT";
-	explosive=0.60000002;
+	caliber=4.5999999;
+};
+class RC_B_40mm_MP_T_G: RC_B_40mm_MP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_40mm_MP_T_Y: RC_B_40mm_MP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+//GPR
+class B_40mm_GPR_Tracer_Red;
+class RC_B_40mm_GPR_T_R: B_40mm_GPR_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	indirectHit=8;
+	indirectHitRange=5;
 	caliber=4.5999999;
 	deflecting=1;
+};
+class RC_B_40mm_GPR_T_G: RC_B_40mm_GPR_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_40mm_GPR_T_Y: RC_B_40mm_GPR_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+class RC_B_30mm_GPR_T_R: RC_B_40mm_GPR_T_R
+{
+	hit=55;
+	indirectHit=6;
+	indirectHitRange=4;
+	caliber=4.4000001;
+};
+class RC_B_30mm_GPR_T_G: RC_B_30mm_GPR_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_30mm_GPR_T_Y: RC_B_30mm_GPR_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+class B_30mm_APFSDS_Tracer_Red;
+class RC_B_30mm_APFSDS_T_R: B_30mm_APFSDS_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+class RC_B_30mm_APFSDS_T_G: RC_B_30mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_30mm_APFSDS_T_Y: RC_B_30mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+class B_40mm_APFSDS_Tracer_Red;
+class RC_B_40mm_APFSDS_T_R: B_40mm_APFSDS_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+class RC_B_40mm_APFSDS_T_G: RC_B_40mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_40mm_APFSDS_T_Y: RC_B_40mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+/*
+class G_40mm_Smoke;
+class RC_B_AC_Smoke: G_40mm_Smoke
+{
+	deflecting=0;
+	explosionTime=0.5;
+	timeToLive=120;
+};
+*/
+
+
+//120mm of FSV/MBT
+class ammo_Penetrator_120mm;
+class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
+{
+	warheadName="TandemHEAT";
+};
+class Sh_120mm_HEAT_MP_T_Red;
+class RC_Sh_120mm_MP_T_R: Sh_120mm_HEAT_MP_T_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	aiAmmoUsageFlags="64 + 128 + 512";
+	//warheadName="TandemHEAT";		//submunition is TandemHEAT
+	warheadName="HE";
+	submunitionAmmo="RC_ammo_Penetrator_120mm";
+	hit=95;
+	indirectHit=50;
+	indirectHitRange=10;
+	deflecting=4;
+	craterEffects="AAMissileCrater";
+};
+class RC_Sh_120mm_MP_T_G: RC_Sh_120mm_MP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_Sh_120mm_MP_T_Y: RC_Sh_120mm_MP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+class Sh_120mm_APFSDS_Tracer_Red;
+class RC_Sh_120mm_APFSDS_T_R: Sh_120mm_APFSDS_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+class RC_Sh_120mm_APFSDS_T_G: RC_Sh_120mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_Sh_120mm_APFSDS_T_Y: RC_Sh_120mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+class Sh_125mm_HEAT_T_Red;
+class RC_Sh_125mm_MP_T_R: Sh_125mm_HEAT_T_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	aiAmmoUsageFlags="64 + 128 + 512";
+	indirectHit=50;
+	indirectHitRange=10;
+	deflecting=4;
+	craterEffects="AAMissileCrater";
+};
+class RC_Sh_125mm_MP_T_G: RC_Sh_125mm_MP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";
+};
+class RC_Sh_125mm_MP_T_Y: RC_Sh_125mm_MP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_yellow";
+};
+class Sh_125mm_APFSDS_T_Red;
+class RC_Sh_125mm_APFSDS_T_R: Sh_125mm_APFSDS_T_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+class RC_Sh_125mm_APFSDS_T_G: RC_Sh_125mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_Sh_125mm_APFSDS_T_Y: RC_Sh_125mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
 
 
@@ -76,10 +347,10 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 	submunitionAmmo="RC_ammo_Penetrator_MP";
 	indirectHit=40;
 	indirectHitRange=10;
-	maxControlRange=3000;
-	cmImmunity=0.85;
+	maxControlRange=4000;
+	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
-	missileLockMaxDistance=3000;
+	missileLockMaxDistance=4000;
 	fuseDistance=20;
 	thrust=70;
 	maxSpeed=250;
@@ -115,15 +386,15 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -132,21 +403,22 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=2000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+					maxTrackableSpeed=100;
 					angleRangeHorizontal=40;
 					angleRangeVertical=40;
 				};
@@ -166,6 +438,7 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+					maxTrackableSpeed=100;
 					typeRecognitionDistance=400;
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=40;
@@ -173,18 +446,18 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -208,6 +481,7 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	irLock=1;
 	airLock=1;
 	trackLead=1;
+	cameraViewAvailable=1;
 
 	class Components: Components
 	{
@@ -226,8 +500,8 @@ class RC_IFV_AA: RC_IFV_AA_Base
 					};
 					class GroundTarget
 					{
-						minRange=500;
-						maxRange=3500;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -242,15 +516,15 @@ class RC_IFV_AA: RC_IFV_AA_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -280,18 +554,18 @@ class RC_IFV_AA: RC_IFV_AA_Base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -538,25 +812,9 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 		};
 	};
 };
-
-
-//120mm of FSV/MBT
-class ammo_Penetrator_120mm;
-class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
+class RC_M_125mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
 {
-	warheadName="TandemHEAT";
-};
-class Sh_120mm_HEAT_MP_T_Red;
-class RC_Sh_120mm_MP_T: Sh_120mm_HEAT_MP_T_Red
-{
-	aiAmmoUsageFlags="64 + 128 + 512";
-	warheadName="TandemHEAT";	//warheadName="HE";
-	submunitionAmmo="RC_ammo_Penetrator_120mm";
-	hit=95;
-	indirectHit=50;
-	indirectHitRange=10;
-	deflecting=4;
-	craterEffects="AAMissileCrater";
+	submunitionAmmo="ammo_Penetrator_125mm_missile";
 };
 
 

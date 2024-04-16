@@ -4,7 +4,10 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	class AnimationSources;
 	class showCamonetTurret;
 	class showCamonetHull;
+	class showCamonetPlates1;
+	class showCamonetPlates2;
 	class showAmmobox;
+	class showCanisters;
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
@@ -14,7 +17,6 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=5; // locks driver and commander seats
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -35,11 +37,14 @@ class RC_Howitzer_A: RC_Howitzer_base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -47,7 +52,16 @@ class RC_Howitzer_A: RC_Howitzer_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa",
+		"A3\armor_f_gamma\MBT_01\data\MBT_01_scorcher_co.paa",
+		"A3\Data_F\Vehicles\Turret_CO.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
+	};
 
 	class Components: Components
 	{
@@ -99,6 +113,14 @@ class RC_Howitzer_A: RC_Howitzer_base
 
 	class AnimationSources: AnimationSources
 	{
+		class showCamonetPlates1: showCamonetPlates1
+		{
+			initPhase=1;
+		};
+		class showCamonetPlates2: showCamonetPlates2
+		{
+			initPhase=1;
+		};
 		class showCamonetTurret: showCamonetTurret
 		{
 			initPhase=1;
@@ -111,14 +133,21 @@ class RC_Howitzer_A: RC_Howitzer_base
 		{
 			initPhase=1;
 		};
+		class showCanisters: showCanisters
+		{
+			initPhase=1;
+		};
 	};
 	animationList[]=
 	{
+		
 		"showCamonetTurret",
 		0,
 		"showCamonetHull",
 		0,
-		"showAmmobox",
+		"showCamonetPlates1",
+		0,
+		"showCamonetPlates2",
 		0
 	};
 
@@ -126,6 +155,8 @@ class RC_Howitzer_A: RC_Howitzer_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
+			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -137,11 +168,11 @@ class RC_Howitzer_A: RC_Howitzer_base
 			};
 			magazines[]=
 			{
-				"RC_15Rnd_155mm_Mo_shells",
-				"RC_5Rnd_155mm_Mo_HEAB",
+				"RC_12Rnd_155mm_Mo_shells",
+				"RC_4Rnd_155mm_Mo_HEAB",
 				"RC_5Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_20Rnd_155mm_Mo_smoke",
+				"RC_18Rnd_155mm_Mo_smoke",
 				"RC_9Rnd_155mm_Mo_AT_mine",
 				"RC_9Rnd_155mm_Mo_mine",
 				"RC_6Rnd_155mm_Mo_Illum"
@@ -167,6 +198,8 @@ class RC_Howitzer_A: RC_Howitzer_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					gunnerCompartments="Compartment3";
+					showAllTargets="2 + 4";
 					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;
@@ -258,7 +291,8 @@ class RC_Howitzer_WD: RC_Howitzer_A
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
 		"A3\Armor_F_Exp\MBT_01\data\MBT_01_scorcher_olive_CO.paa",
 		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
-		"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		//"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
 class RC_Howitzer_A_O: RC_Howitzer_A
@@ -295,6 +329,8 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 	class showCamonetHull;
 	class showCamonetTurret;
 	class showCamonetCannon;
+	class showAmmobox;
+	class showCanisters;
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
@@ -304,7 +340,6 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RCDisableSeats=5; // locks driver and commander seats
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -325,10 +360,14 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="O_UAV_AI";
 	driverForceOptics=1;
+	forceHideDriver=1;
+	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -337,6 +376,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components
@@ -399,6 +439,14 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 		{
 			initPhase=1;
 		};
+		class showAmmobox: showAmmobox
+		{
+			initPhase=1;
+		};
+		class showCanisters:showCanisters
+		{
+			initPhase=1;
+		};
 	};
 	animationList[]=
 	{
@@ -414,6 +462,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	{
 		class MainTurret: MainTurret
 		{
+			gunnerCompartments="Compartment2";
+			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -425,11 +475,11 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			};
 			magazines[]=
 			{
-				"RC_15Rnd_155mm_Mo_shells",
-				"RC_5Rnd_155mm_Mo_HEAB",
+				"RC_12Rnd_155mm_Mo_shells",
+				"RC_4Rnd_155mm_Mo_HEAB",
 				"RC_5Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_20Rnd_155mm_Mo_smoke",
+				"RC_18Rnd_155mm_Mo_smoke",
 				"RC_9Rnd_155mm_Mo_AT_mine",
 				"RC_9Rnd_155mm_Mo_mine",
 				"RC_6Rnd_155mm_Mo_Illum"
@@ -454,6 +504,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					gunnerCompartments="Compartment3";
+					showAllTargets="2 + 4";
 					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;
@@ -573,12 +625,14 @@ class RC_Static_Arty: RC_Static_Arty_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
+			showAllTargets="2 + 4";
 			maxelev=87.02;
 
 			weapons[]=
@@ -587,11 +641,11 @@ class RC_Static_Arty: RC_Static_Arty_base
 			};
 			magazines[]=
 			{
-				"RC_15Rnd_120mm_Mo_shells",
-				"RC_5Rnd_120mm_Mo_HEAB",
+				"RC_12Rnd_120mm_Mo_shells",
+				"RC_4Rnd_120mm_Mo_HEAB",
 				"RC_5Rnd_120mm_Mo_MultiGuided",
 				"RC_2Rnd_120mm_Mo_Cluster",
-				"RC_20Rnd_120mm_Mo_smoke",
+				"RC_18Rnd_120mm_Mo_smoke",
 				"RC_9Rnd_120mm_Mo_AT_mine",
 				"RC_9Rnd_120mm_Mo_mine",
 				"RC_6Rnd_120mm_Mo_Illum"
@@ -697,6 +751,33 @@ class RC_Static_Arty_O: RC_Static_Arty
 class RC_Static_Arty_I: RC_Static_Arty
 {
 	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_Howitzer_ReTex_D: RC_Howitzer_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"merkava\data\mbt_01_body_d.paa",
+		"merkava\data\mbt_01_spg_d.paa",
+		"merkava\data\turret_d.paa",
+		"merkava\data\camonet_desert_co.paa"
+	};
+};
+class RC_Howitzer_ReTex_D_O: RC_Howitzer_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Howitzer_ReTex_D_I: RC_Howitzer_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
 };

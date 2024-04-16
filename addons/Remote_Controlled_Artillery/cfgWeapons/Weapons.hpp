@@ -1,4 +1,19 @@
-// Improved Laser Designators
+//vehicle laser designator that can lock datalink targets 
+class Laserdesignator_mounted;
+class RC_Laserdesignator_mounted: Laserdesignator_mounted
+{
+	author="Ascent";
+	canLock=2;
+};
+class Laserdesignator_vehicle;
+class RC_Laserdesignator_vehicle: Laserdesignator_vehicle
+{
+	author="Ascent";
+	canLock=2;
+};
+
+
+//Improved Handheld Laser Designators
 class Laserdesignator;
 class Laserdesignator_base: Laserdesignator
 {
@@ -94,8 +109,11 @@ class RC_IFV_Missle_Launcher: missiles_titan
 	scope=1;
 	canLock=2;
 	weaponLockSystem="2 + 4 + 16";
+	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	displayName="NLOS ML";
 	displayNameShort="NLOS ML";
+	magazineReloadTime=20;
+	cmImmunity=0.67;
 	magazines[]=
 	{
 		"RC_2Rnd_IFV_MP_NLOS",
@@ -114,11 +132,14 @@ class RC_MMG_338_FSV: RC_MMG_338_FSV_Base
 {
 	author="Ascent";
 	displayName="coaxial MMG";
+	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
-		"RC_200Rnd_338_T_Mag"
+		"RC_200Rnd_338_T_R",
+		"RC_200Rnd_338_T_G",
+		"RC_200Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -138,6 +159,8 @@ class RC_MMG_338_FSV_coax: RC_MMG_338_FSV
 		};
 	};
 };
+
+
 class HMG_127_MBT;
 class RC_MMG_338_MBT_Base: HMG_127_MBT
 {
@@ -147,11 +170,14 @@ class RC_MMG_338_MBT: RC_MMG_338_MBT_Base
 {
 	author="Ascent";
 	displayName="coaxial MMG";
+	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
-		"RC_200Rnd_338_T_Mag"
+		"RC_200Rnd_338_T_R",
+		"RC_200Rnd_338_T_G",
+		"RC_200Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -171,20 +197,25 @@ class RC_MMG_338_MBT_coax: RC_MMG_338_MBT
 		};
 	};
 };
+
+
 class LMG_coax;
-class RC_MMG_338_IFV_2_Base: LMG_coax
+class RC_MMG_338_coax_Base: LMG_coax
 {
 	class manual;
 };
-class RC_MMG_338_IFV_2: RC_MMG_338_IFV_2_Base
+class RC_MMG_338_coax: RC_MMG_338_coax_Base
 {
 	author="Ascent";
 	displayName="coaxial MMG";
+	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
-		"RC_200Rnd_338_T_Mag"
+		"RC_200Rnd_338_T_R",
+		"RC_200Rnd_338_T_G",
+		"RC_200Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -192,25 +223,59 @@ class RC_MMG_338_IFV_2: RC_MMG_338_IFV_2_Base
 		dispersion=0.001;
 	};
 };
+class RC_MMG_93x64_coax: RC_MMG_338_coax
+{
+	magazines[]=
+	{
+		"RC_200Rnd_93x64_T_G",
+		"RC_200Rnd_93x64_T_R",
+		"RC_200Rnd_93x64_T_Y",
+		"RC_1000Rnd_93x64_T_G",
+		"RC_1000Rnd_93x64_T_R",
+		"RC_1000Rnd_93x64_T_Y"
+	};
+	class manual: manual
+	{
+		displayName="9.3mm";
+	};
+};
+
+
 class LMG_coax_ext;
-class RC_MMG_338_IFV_1_Base: LMG_coax_ext
+class RC_MMG_338_coax_ext_Base: LMG_coax_ext
 {
 	class manual;
 };
-class RC_MMG_338_IFV_1: RC_MMG_338_IFV_1_Base
+class RC_MMG_338_coax_ext: RC_MMG_338_coax_ext_Base
 {
 	author="Ascent";
 	displayName="coaxial MMG";
+	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.75;
+	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
-		"RC_200Rnd_338_T_Mag"
+		"RC_200Rnd_338_T_R",
+		"RC_200Rnd_338_T_G",
+		"RC_200Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
 		displayName=".338 NM";
 		dispersion=0.001;
+	};
+};
+class RC_MMG_93x64_coax_ext: RC_MMG_338_coax_ext
+{
+	magazines[]=
+	{
+		"RC_200Rnd_93x64_T_G",
+		"RC_200Rnd_93x64_T_R",
+		"RC_200Rnd_93x64_T_Y"
+	};
+	class manual: manual
+	{
+		displayName="9.3mm";
 	};
 };
 
@@ -225,20 +290,30 @@ class RC_autocannon_30mm_CTWS_Base: autocannon_30mm_CTWS
 class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 {
 	author="Ascent";
-	FCSZeroingDelay=0.75;
+	canLock=2;
+	FCSZeroingDelay=0.5;
+	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 
 	class HE: HE
 	{
 		magazines[]=
 		{
-			"RC_100Rnd_30mm_MP_T"
+			"RC_100Rnd_30mm_MP_T_R",
+			"RC_100Rnd_30mm_MP_T_G",
+			"RC_100Rnd_30mm_MP_T_Y",
+			"RC_100Rnd_30mm_GPR_T_R",
+			"RC_100Rnd_30mm_GPR_T_G",
+			"RC_100Rnd_30mm_GPR_T_Y"
+			//"RC_100Rnd_30mm_Smoke"
 		};
 	};
 	class AP: AP
 	{
 		magazines[]=
 		{
-			"RC_100Rnd_30mm_APFSDS_T"
+			"RC_100Rnd_30mm_APFSDS_T_R",
+			"RC_100Rnd_30mm_APFSDS_T_G",
+			"RC_100Rnd_30mm_APFSDS_T_Y"
 		};
 	};
 };
@@ -253,21 +328,104 @@ class RC_autocannon_40mm_CTWS_Base: autocannon_40mm_CTWS
 class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 {
 	author="Ascent";
-	FCSZeroingDelay=0.75;
+	canLock=2;
+	FCSZeroingDelay=0.5;
+	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 
 	class HE: HE
 	{
 		magazines[]=
 		{
-			"RC_50Rnd_40mm_MP_T"
+			"RC_50Rnd_40mm_MP_T_R",
+			"RC_50Rnd_40mm_MP_T_G",
+			"RC_50Rnd_40mm_MP_T_Y",
+			"RC_50Rnd_40mm_GPR_T_R",
+			"RC_50Rnd_40mm_GPR_T_G",
+			"RC_50Rnd_40mm_GPR_T_Y"
+			//"RC_50Rnd_40mm_Smoke"
 		};
 	};
 	class AP: AP
 	{
 		magazines[]=
 		{
-			"RC_50Rnd_40mm_APFSDS_T"
+			"RC_50Rnd_40mm_APFSDS_T_R",
+			"RC_50Rnd_40mm_APFSDS_T_G",
+			"RC_50Rnd_40mm_APFSDS_T_Y"
 		};
+	};
+};
+
+
+class autocannon_30mm_RCWS;
+class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
+{
+	author="Ascent";
+	canLock=2;
+	FCSZeroingDelay=0.5;
+
+	magazines[]=
+	{
+		"RC_60Rnd_30mm_MP_T_G",
+		"RC_60Rnd_30mm_MP_T_R",
+		"RC_60Rnd_30mm_MP_T_Y",
+		"RC_60Rnd_30mm_GPR_T_G",
+		"RC_60Rnd_30mm_GPR_T_R",
+		"RC_60Rnd_30mm_GPR_T_Y"
+	};
+};
+
+
+class HMG_127_APC;
+class HMG_127_APC_Base: HMG_127_APC
+{
+	class manual;
+};
+class RC_HMG_127_APC: HMG_127_APC_Base
+{
+	author="Ascent";
+	canLock=2;
+	FCSZeroingDelay=0.5;
+	maxZeroing=3000;
+
+	class manual: manual
+	{
+		dispersion=0.001;
+	};
+
+	magazines[]=
+	{
+		"RC_200Rnd_127x99_SLAP_T_R",
+		"RC_200Rnd_127x99_SLAP_T_G",
+		"RC_200Rnd_127x99_SLAP_T_Y",
+		"RC_100Rnd_127x99_SLAP_T_R",
+		"RC_100Rnd_127x99_SLAP_T_G",
+		"RC_100Rnd_127x99_SLAP_T_Y"
+	};
+};
+
+class GMG_40mm;
+class GMG_40mm_Base: GMG_40mm
+{
+	class manual;
+};
+class RC_GMG_40mm: GMG_40mm_Base
+{
+	author="Ascent";
+	canLock=2;
+	FCSZeroingDelay=0.5;
+	maxZeroing=3000;
+
+	class manual: manual
+	{
+		dispersion=0.0025;
+	};
+
+	magazines[]=
+	{
+		"RC_100Rnd_40mm_G_belt",
+		"RC_75Rnd_40mm_G_belt",
+		"RC_50Rnd_40mm_G_belt"
 	};
 };
 
@@ -277,17 +435,90 @@ class cannon_120mm;
 class RC_cannon_120mm: cannon_120mm
 {
 	displayName="120mm";
+	canLock=2;
 	reloadTime=5;
 	magazineReloadTime=5;
+	FCSZeroingDelay=0.5;
+	FCSMaxLeadSpeed=30;
+	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	magazines[]=
 	{
-		"RC_12Rnd_120mm_APFSDS_T",
-		"RC_16Rnd_120mm_APFSDS_T",
-		"RC_20Rnd_120mm_APFSDS_T",
-		"RC_12Rnd_120mm_MP_T",
-		"RC_16Rnd_120mm_MP_T",
-		"RC_20Rnd_120mm_MP_T",
+		"RC_10Rnd_120mm_APFSDS_T_R",
+		"RC_15Rnd_120mm_APFSDS_T_R",
+		"RC_20Rnd_120mm_APFSDS_T_R",
+		"RC_10Rnd_120mm_APFSDS_T_G",
+		"RC_15Rnd_120mm_APFSDS_T_G",
+		"RC_20Rnd_120mm_APFSDS_T_G",
+		"RC_10Rnd_120mm_APFSDS_T_Y",
+		"RC_15Rnd_120mm_APFSDS_T_Y",
+		"RC_20Rnd_120mm_APFSDS_T_Y",
+		"RC_10Rnd_120mm_MP_T_R",
+		"RC_15Rnd_120mm_MP_T_R",
+		"RC_20Rnd_120mm_MP_T_R",
+		"RC_10Rnd_120mm_MP_T_G",
+		"RC_15Rnd_120mm_MP_T_G",
+		"RC_20Rnd_120mm_MP_T_G",
+		"RC_10Rnd_120mm_MP_T_Y",
+		"RC_15Rnd_120mm_MP_T_Y",
+		"RC_20Rnd_120mm_MP_T_Y",
 		"RC_3Rnd_120mm_DLG_cannon_missiles"
+	};
+};
+
+
+class cannon_125mm_advanced;
+class cannon_125mm_advanced_base: cannon_125mm_advanced
+{
+	class player;
+};
+class RC_cannon_125mm_advanced: cannon_125mm_advanced_base
+{
+	displayName="125mm";
+	canLock=2;
+	//showAimCursorInternal=1; //which effect? maybe coordination improving?
+	magazines[]=
+	{
+		"RC_10Rnd_125mm_APFSDS_T_R",
+		"RC_15Rnd_125mm_APFSDS_T_R",
+		"RC_20Rnd_125mm_APFSDS_T_R",
+		"RC_10Rnd_125mm_APFSDS_T_G",
+		"RC_15Rnd_125mm_APFSDS_T_G",
+		"RC_20Rnd_125mm_APFSDS_T_G",
+		"RC_10Rnd_125mm_APFSDS_T_Y",
+		"RC_15Rnd_125mm_APFSDS_T_Y",
+		"RC_20Rnd_125mm_APFSDS_T_Y",
+		"RC_10Rnd_125mm_MP_T_R",
+		"RC_15Rnd_125mm_MP_T_R",
+		"RC_20Rnd_125mm_MP_T_R",
+		"RC_10Rnd_125mm_MP_T_G",
+		"RC_15Rnd_125mm_MP_T_G",
+		"RC_20Rnd_125mm_MP_T_G",
+		"RC_10Rnd_125mm_MP_T_Y",
+		"RC_15Rnd_125mm_MP_T_Y",
+		"RC_20Rnd_125mm_MP_T_Y",
+		"RC_3Rnd_125mm_DLG_cannon_missiles"
+	};
+
+	class TopDown: player
+	{
+		textureType="topDown";
+		displayName="$STR_A3_FireMode_TopDown0";
+		minRange=150;
+		minRangeProbab=0.40000001;
+		midRange=400;
+		midRangeProbab=0.94999999;
+		maxRange=8000;
+		maxRangeProbab=0.94999999;
+	};
+
+	modes[]=
+	{
+		"player",
+		"topDown",
+		"close",
+		"short",
+		"medium",
+		"far"
 	};
 };
 

@@ -20,7 +20,6 @@ addMissionEventHandler ["MarkerCreated", {
 
 		RC_Artillery_Markers pushBackUnique [_targetIndex, _marker];
 		RC_Artillery_Markers sort true;
-		publicVariable "RC_Artillery_Markers";
 	};
 
 	if (_isGPSMarker) exitWith {
@@ -41,7 +40,6 @@ addMissionEventHandler ["MarkerCreated", {
 		}, 1, [_marker, _side]] call CBA_fnc_addPerFrameHandler;
 
 		activeGPSMarkers pushBackUnique [_marker, _gpsTarget];
-		publicVariable "activeGPSMarkers";
 	};
 }];
 
@@ -54,13 +52,11 @@ addMissionEventHandler ["MarkerDeleted", {
 		deleteVehicle _gpsTarget;
 
 		activeGPSMarkers deleteAt _markerIndex;
-		publicVariable "activeGPSMarkers";
 	};
 
 	_markerIndex = RC_Artillery_Markers findIf { (_x select 1) isEqualTo _marker };
 	if (_markerIndex > -1) exitWith {
 		RC_Artillery_Markers deleteAt _markerIndex;
-		publicVariable "RC_Artillery_Markers";
 	};
 }];
 

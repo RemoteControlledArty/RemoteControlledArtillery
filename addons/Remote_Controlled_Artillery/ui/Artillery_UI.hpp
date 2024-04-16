@@ -117,14 +117,16 @@ class RC_Artillery {
 	class RscText_1008: RscText_1001
 	{
 		idc = IDC_HIGHSOL;
-		text = "H EL: 0000"; //--- ToDo: Localize;
+		text = "high EL: 0000"; //--- ToDo: Localize;
+
 		x = "0.95165 * safezoneW + safezoneX";
 		y = "0.1639327 * safezoneH + safezoneY";
 	};
 	class RscText_1009: RscText_1001
 	{
 		idc = IDC_LOWSOL;
-		text = "L EL: 0000"; //--- ToDo: Localize;
+		text = "low EL: 0000"; //--- ToDo: Localize;
+
 		x = "0.95165 * safezoneW + safezoneX";
 		y = "0.1859345 * safezoneH + safezoneY";
 	};
