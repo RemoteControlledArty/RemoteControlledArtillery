@@ -94,7 +94,8 @@ RC_Artillery_UI = [] spawn {
 			_display = uiNamespace getVariable ["RC_Artillery", displayNull]; // Display
 
 			//weapon informations like charges and current charge
-			#include "functions\UILoop_includes\weapon_info.hpp"
+			//#include "functions\UILoop_includes\weapon_info.hpp"
+			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.hpp"
 
 			// Get Weapon Elevation
 			_realElevationOriginal = asin (_weaponDir select 2);
@@ -115,10 +116,12 @@ RC_Artillery_UI = [] spawn {
 			};
 
 			//changes magazine to backup airburst if EL is too low for conventional airburst
-			#include "functions\UILoop_includes\AB_magchange.hpp"
+			//#include "functions\UILoop_includes\AB_magchange.hpp"
+			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\AB_magchange.hpp"
 
 			//ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
-			#include "functions\UILoop_includes\ctrl_display.hpp"
+			//#include "functions\UILoop_includes\ctrl_display.hpp"
+			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.hpp"
 
 			// checks if shell requires lock before firing
 			_requiresLock = (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1;
@@ -175,7 +178,8 @@ RC_Artillery_UI = [] spawn {
 				};
 
 				//ElDiff additions, like muzzle position, and rounds aim above value (airburst & topdown guided)
-				#include "functions\UILoop_includes\eldiff_additions.hpp"
+				//#include "functions\UILoop_includes\eldiff_additions.hpp"
+				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\eldiff_additions.hpp"
 
 				//find if datalink target is selected
 				_targetPos = [0, 0, 0];
@@ -271,23 +275,9 @@ RC_Artillery_UI = [] spawn {
 					_travelTimeLow = 0;
 				};
 			} else {
-				// If we don't have any Valid Targets
-				_ctrlAzimuth ctrlSetTextColor [1, 1, 1, 1];
-				_ctrlElevation ctrlSetTextColor [1, 1, 1, 1];
-
-				_ctrlDistance ctrlSetText "DIST: 0000";
-				_ctrlTarget ctrlSetText "T: 0";
-				_ctrlTargetAzimuth ctrlSetText "T AZ: 0000";
-				_ctrlDifference ctrlSetText "DIF: 0000" ;
-				_ctrlHighSol ctrlSetText "high EL: 0000";
-    			_ctrlLowSol ctrlSetText "low EL: 0000";
-    			_ctrlHighETA ctrlSetText "ETA: 000";
-    			_ctrlLowETA ctrlSetText "ETA: 000";
-				
-				// If we have no Targets
-				_ctrlMessage ctrlSetTextColor [1, 0, 0, 1];
-				_ctrlMessage ctrlSetPositionX (0.868267 * safezoneW + safezoneX);
-				_ctrlMessage ctrlSetText format ["ADD MAP MARKER: %1%2", RC_Marker_Prefix, "1-99 / gps"];
+				//display if no target is available/selected
+				//#include "functions\UILoop_includes\notarget_display.hpp"
+				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\notarget_display.hpp"
 			};
 			_ctrlHighSol ctrlShow true;
 			_ctrlLowSol ctrlShow true;
@@ -295,7 +285,8 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowETA ctrlShow true;
 
 			//greys out not-advised trajectory for depending on round
-			#include "functions\UILoop_includes\ctrl_display.hpp"
+			//#include "functions\UILoop_includes\ctrl_display.hpp"
+			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.hpp"
 
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
