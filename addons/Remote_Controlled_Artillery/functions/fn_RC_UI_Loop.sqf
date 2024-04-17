@@ -20,14 +20,35 @@ RC_Artillery_UI = [] spawn {
 		// See if the vehicle has the isRCArty property
 		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
 
+
+		/*
+		//performance improvement, implement when the UI itself works again
+
+		if (isRemoteControlling player) then {
+			// If it's of Artillery or Mortar Type do da thing
+			if (_isRCArty) then {
+				// UAV ClassName
+				_uavClass = typeOf _uav;
+				// See if the vehicle has the isRCArty property
+				_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
+
+		if ({_inDrone && {(_uav isNotEqualto objNull)}}) then {
+			// If it's of Artillery or Mortar Type do da thing
+			if (_isRCArty) then {
+				// UAV ClassName
+				_uavClass = typeOf _uav;
+				// See if the vehicle has the isRCArty property
+				_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
+		*/
+
+
 		// If it's of Artillery or Mortar Type do da thing
 		if (_isRCArty && { _inDrone && { (_uav isNotEqualto objNull) } }) then {
 			
 			RC_InUI = true; // We are in the UI now
 			
 			// If our UAV is Autonomous we want to make it not
-			// We need to remote exec it since setAutonomous is of Local Effect so it needs to be
-			// where the UAV is Local
+			// We need to remote exec it since setAutonomous is of Local Effect so it needs to be where the UAV is Local
 			if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
 			
 			// Check if the Display for the UI Exists if not Create it
