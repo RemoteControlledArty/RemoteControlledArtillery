@@ -457,6 +457,8 @@ class CfgFunctions
 			class RC_UAVConnectionFix {postInit=1};
 			class RC_LaserDatalink {postInit=1};
 			class scrollSolutions {};
+
+			//class weapon_info {};
 		};
 	};
 };
