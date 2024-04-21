@@ -458,7 +458,15 @@ class CfgFunctions
 			class RC_LaserDatalink {postInit=1};
 			class scrollSolutions {};
 
-			//class weapon_info {};
+			/*
+			file="\Remote_Controlled_Artillery\functions\UILoop_includes";
+			class AB_magchange {};
+			class advised_trajectory {};
+			class ctrl_display {};
+			class eldiff_additions {};
+			class notarget_display {};
+			class weapon_info {};
+			*/
 		};
 	};
 };

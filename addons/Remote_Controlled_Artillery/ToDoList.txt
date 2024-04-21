@@ -41,6 +41,8 @@ CAR Script for Zeus:
 -recon animationlist check
 
 next:
+-limited distance non thermal FPV UAV
+
 -getout & no players in vic = engineoff
 
 -when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
