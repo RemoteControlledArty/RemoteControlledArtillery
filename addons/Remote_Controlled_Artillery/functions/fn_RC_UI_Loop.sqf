@@ -13,37 +13,22 @@ RC_Artillery_UI = [] spawn {
 	while { true } do {
 		sleep 0.1;
 
+		if !(isRemoteControlling player) then {
+			// UI Shouldn't be Shown so we cut it
+			"RC_Artillery" cutFadeOut 0;
+			RC_InUI = false;
+			continue;
+		};
+
 		_uav = getConnectedUAV player; // UAV
 		_uavClass = typeOf _uav; // UAV ClassName
-		_inDrone = ((UAVControl _uav) select 1) in ["DRIVER", "GUNNER", "COMMANDER"];	// If the Player is currently controlling the UAV
+		//_inDrone = ((UAVControl _uav) select 1) in ["DRIVER", "GUNNER", "COMMANDER"];	// If the Player is currently controlling the UAV
 		
 		// See if the vehicle has the isRCArty property
 		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
 
-
-		/*
-		//performance improvement, implement when the UI itself works again
-
-		if (isRemoteControlling player) then {
-			// If it's of Artillery or Mortar Type do da thing
-			if (_isRCArty) then {
-				// UAV ClassName
-				_uavClass = typeOf _uav;
-				// See if the vehicle has the isRCArty property
-				_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
-
-		if ({_inDrone && {(_uav isNotEqualto objNull)}}) then {
-			// If it's of Artillery or Mortar Type do da thing
-			if (_isRCArty) then {
-				// UAV ClassName
-				_uavClass = typeOf _uav;
-				// See if the vehicle has the isRCArty property
-				_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
-		*/
-
-
 		// If it's of Artillery or Mortar Type do da thing
-		if (_isRCArty && { _inDrone && { (_uav isNotEqualto objNull) } }) then {
+		if (_isRCArty) then {
 			
 			RC_InUI = true; // We are in the UI now
 			
@@ -123,6 +108,15 @@ RC_Artillery_UI = [] spawn {
 			//#include "functions\UILoop_includes\ctrl_display.sqf"
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
 
+			/*
+			//locality fix, put in custom cba server EH instead as it requires remotex, and also groupowner can only be checked on server
+			if ((!isnull (driver _vehicle)) && !(isplayer (driver _vehicle))) then {
+				(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle));
+				//_vehicle setOwner (owner (gunner _vehicle));
+				//_vehicle setEffectiveCommander (gunner _vehicle);
+			};
+			*/
+
 			// checks if shell requires lock before firing
 			_requiresLock = (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1;
 			_terrainWarning = (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_TerrainWarning"))==1;
@@ -131,7 +125,7 @@ RC_Artillery_UI = [] spawn {
 			//checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
 			_selectedTargetDistance = 1;
 			if (cursorTarget isNotEqualto objNull) then { _selectedTargetDistance=(getpos cursorTarget) distance2d _artyPos };
-			_noTargetOrTargetTooClose = (cursorTarget isEqualto objNull) || (_selectedTargetDistance <=20);
+			_noTargetOrTargetTooClose = (cursorTarget isEqualto objNull) || (_selectedTargetDistance <= MIN_SELECTED_TARGET_DISTANCE);
 
 			// If we are looking into the Sky
 			private "_realAzimuth";
@@ -162,7 +156,7 @@ RC_Artillery_UI = [] spawn {
 			private _travelTimeLow = 0;
 
 			// If we actually have a Target (thats not too close)
-			if (((cursorTarget isNotEqualto objNull) && { _selectedTargetDistance >= 20 }) || !(RC_Artillery_Markers isEqualTo [])) then {
+			if (((cursorTarget isNotEqualto objNull) && { _selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE }) || !(RC_Artillery_Markers isEqualTo [])) then {
 				if !(RC_Artillery_Markers isEqualTo []) then {
 					if (isNil "RC_Current_Target" || RC_Current_Target isEqualTo []) then {
 						RC_Current_Target = RC_Artillery_Markers select 0;
@@ -214,7 +208,7 @@ RC_Artillery_UI = [] spawn {
 				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "initSpeed");
 
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
-				if (_hasTargetSelected && (_selectedTargetDistance >= 20)) then {
+				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
 					_ctrlTarget ctrlSetText "T: Datalink";
 				} else {
 					_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
@@ -300,10 +294,6 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowSol ctrlSetText Format ["low EL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
 			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
-		} else {
-			// UI Shouldn't be Shown so we cut it
-			"RC_Artillery" cutFadeOut 0;
-			RC_InUI = false;
 		};
 	};
 };

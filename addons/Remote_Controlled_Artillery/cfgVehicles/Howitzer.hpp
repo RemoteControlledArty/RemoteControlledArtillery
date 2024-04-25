@@ -105,6 +105,8 @@ class RC_Howitzer_A: RC_Howitzer_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};
@@ -421,6 +423,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};
@@ -738,6 +742,8 @@ class RC_Static_Arty: RC_Static_Arty_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};

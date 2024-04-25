@@ -14,13 +14,20 @@ RC_UAVBlur = [] spawn
 	while {true} do
 	{
 		sleep 0.2;
+
+		_blur = ppEffectCreate ["dynamicBlur", 401];
+
+		if !(isRemoteControlling player) then {
+			_blur ppEffectEnable false;
+			continue;
+		};
+
 		_uav = (getConnectedUAV player);
 		_uavClass = typeOf _uav; // UAV ClassName
 		_UAVBlur = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_UAVBlur");
 
 		// If the Player is currently controlling the UAV
 		_inDrone = isRemoteControlling player;
-		_blur = ppEffectCreate ["dynamicBlur", 401];
 
 		if (_inDrone && (_uav isNotEqualto objNull)) then {
 			// Checks config if its meant to be a shortrange UAV, no entry means no Effect
@@ -41,9 +48,6 @@ RC_UAVBlur = [] spawn
 			else {
 				_blur ppEffectEnable false;
 			};
-		}
-		else {
-			_blur ppEffectEnable false;
 		};
 	};
 };

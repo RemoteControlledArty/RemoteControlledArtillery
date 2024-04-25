@@ -22,6 +22,7 @@
 #define IDC_KEY_ELSLOW 1024
 #define IDC_KEY_AZSLOW 1025
 
+#define MIN_SELECTED_TARGET_DISTANCE 50
 #define GRAVITY 9.807
 #define MAGIC_CONSTANT 57.30 // What is this constant?
 #define SLANT_ANGLE 17.7777778

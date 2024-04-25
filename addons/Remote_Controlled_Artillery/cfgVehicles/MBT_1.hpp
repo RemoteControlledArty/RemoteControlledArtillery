@@ -93,6 +93,8 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};

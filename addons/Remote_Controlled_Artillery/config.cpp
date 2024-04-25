@@ -456,6 +456,7 @@ class CfgFunctions
 			class RC_UAVBlur {postInit=1};
 			class RC_UAVConnectionFix {postInit=1};
 			class RC_LaserDatalink {postInit=1};
+			class RC_LocalityFix {postInit=1};
 			class scrollSolutions {};
 
 			/*
@@ -576,6 +577,7 @@ class SensorTemplateNV;
 class SensorTemplateVisual;
 class SensorTemplateMan;
 class SensorTemplateActiveRadar;
+class SensorTemplatePassiveRadar;
 
 //later required optics
 class RCWSOptics;

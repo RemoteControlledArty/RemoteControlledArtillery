@@ -95,6 +95,9 @@ class RC_AA_small_WD: RC_AA_small_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=6000;
@@ -365,6 +368,9 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+
 				/*
 				class IRSensorComponent: SensorTemplateIR
 				{
@@ -772,6 +778,9 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=2000;
@@ -833,99 +842,21 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 
 	class AnimationSources: AnimationSources
 	{
-		class HitSLAT_Left_1_src
+		class showCamonetHull: showCamonetHull
 		{
-			source="Hit";
-			hitpoint="HitSLAT_Left_1";
-			raw=1;
-		};
-		class HitSLAT_Left_2_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_Left_2";
-			raw=1;
-		};
-		class HitSLAT_Left_3_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_Left_3";
-			raw=1;
-		};
-		class HitSLAT_Right_1_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_Right_1";
-			raw=1;
-		};
-		class HitSLAT_Right_2_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_Right_2";
-			raw=1;
-		};
-		class HitSLAT_Right_3_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_Right_3";
-			raw=1;
-		};
-		class HitSLAT_back_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_back";
-			raw=1;
-		};
-		class HitSLAT_front_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_front";
-			raw=1;
-		};
-		class showCamonetPlates1
-		{
-			source="user";
-			animPeriod=0.001;
-			initPhase=0;
-		};
-		class showCamonetPlates2
-		{
-			source="user";
-			animPeriod=0.001;
-			initPhase=0;
-		};
-		class showCamonetHull
-		{
-			displayName="$STR_A3_animationsources_showcamonethull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
-			forceAnimatePhase=1;
-			forceAnimate[]=
-			{
-				"showCamonetPlates1",
-				1,
-				"showCamonetPlates2",
-				1
-			};
-			forceAnimate2[]=
-			{
-				"showCamonetPlates1",
-				0,
-				"showCamonetPlates2",
-				0
-			};
 			initPhase=1;
-			mass=-50;
 		};
-		class showSLATHull
+		class showSLATHull: showSLATHull
 		{
-			displayName="$STR_A3_animationsources_showslathull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
-			mass=-50;
 		};
+	};
+	animationList[]=
+	{
+		"showCamonetHull",
+		1,
+		"showSLATHull",
+		1
 	};
 
 	class Turrets: Turrets

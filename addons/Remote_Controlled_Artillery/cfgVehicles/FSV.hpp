@@ -135,6 +135,8 @@ class RC_FSV_A: RC_FSV_A_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};

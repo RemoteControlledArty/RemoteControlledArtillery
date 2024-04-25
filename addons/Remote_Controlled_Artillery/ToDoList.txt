@@ -40,6 +40,9 @@ CAR Script for Zeus:
 -EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided
 -recon animationlist check
 
+-locality fix server cba EH
+-player local fog AR-1 viewdistance limitation instead, then allows thermal
+
 next:
 -limited distance non thermal FPV UAV
 
@@ -307,6 +310,7 @@ new:
 -further improved file structure to streamline testing
 -increased MBT/FSV/IFV datalink panel from 3km to 4km
 -new NEUTRAL camonets, in uniform olive/tan, making it more fitting for a larger variety of factions/units
+-added radar warning receivers
 
 
 

@@ -101,6 +101,8 @@ class RC_MLRS_A: RC_MLRS_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};
@@ -364,6 +366,8 @@ class RC_MRL_DIG: RC_MRL_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};
