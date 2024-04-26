@@ -40,7 +40,10 @@ CAR Script for Zeus:
 -EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided
 -recon animationlist check
 
+-maybe one CONFIG CHECK to get an array that stores all ammo values, and one for vehicle values, to decrease check amounts
+-double check autonomous remote execute structure with Eric
 -locality fix server cba EH
+-slightly increase AR-1 range
 -player local fog AR-1 viewdistance limitation instead, then allows thermal
 
 next:

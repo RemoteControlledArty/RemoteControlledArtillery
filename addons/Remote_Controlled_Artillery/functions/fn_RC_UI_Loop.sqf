@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
 	This Code is held together by Duct Tape and Hope
-	Author: Fluffy, Ascent
+	Author: Fluffy, Ascent, Eric
 
 	Description:
 	Main Loop to Handle the Calculation and UI of RC Artillery Units
@@ -20,17 +20,18 @@ RC_Artillery_UI = [] spawn {
 			continue;
 		};
 
-		_uav = getConnectedUAV player; // UAV
-		_uavClass = typeOf _uav; // UAV ClassName
-		//_inDrone = ((UAVControl _uav) select 1) in ["DRIVER", "GUNNER", "COMMANDER"];	// If the Player is currently controlling the UAV
-		
+		// UAV
+		_uav = getConnectedUAV player;
+		// UAV ClassName
+		_uavClass = typeOf _uav;
 		// See if the vehicle has the isRCArty property
 		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
 
 		// If it's of Artillery or Mortar Type do da thing
 		if (_isRCArty) then {
 			
-			RC_InUI = true; // We are in the UI now
+			// We are in the UI now
+			RC_InUI = true;
 			
 			// If our UAV is Autonomous we want to make it not
 			// We need to remote exec it since setAutonomous is of Local Effect so it needs to be where the UAV is Local
@@ -39,7 +40,7 @@ RC_Artillery_UI = [] spawn {
 			// Check if the Display for the UI Exists if not Create it
 			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then { "RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false] };
 			
-			disableSerialization;	//could this cause problems?
+			disableSerialization;	//what effect does this have again, maybe change location futher down?
 
 			// Get the UI so we can see if it has Distance or not
 			_AceUI = uiNamespace getVariable ["ACE_dlgArtillery", displayNull];
@@ -76,7 +77,8 @@ RC_Artillery_UI = [] spawn {
 				};
 			};
 			
-			_display = uiNamespace getVariable ["RC_Artillery", displayNull]; // Display
+			// Display
+			_display = uiNamespace getVariable ["RC_Artillery", displayNull];
 
 			//weapon informations like charges and current charge
 			//#include "functions\UILoop_includes\weapon_info.sqf"
