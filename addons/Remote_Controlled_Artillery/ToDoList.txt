@@ -90,7 +90,7 @@ generally:
 
 
 Arty:
--minimum datalink distance 50m instead of 20m / or "object" recognition & display
+-test out SubmunitionTargetDirection for guided, with triggerDistance=; and proximityExplosionDistance=;
 -autonomous off JIP global execute?
 
 -test FCS without ace on uneven ground
