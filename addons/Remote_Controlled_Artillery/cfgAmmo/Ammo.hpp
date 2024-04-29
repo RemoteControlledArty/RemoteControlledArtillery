@@ -335,7 +335,7 @@ class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
 {
 	caliber=60;
 	warheadName="TandemHEAT";
-	hit=1000;
+	hit=800;
 };
 class M_Titan_AT_long;
 class M_Titan_AT_long_Base: M_Titan_AT_long
@@ -354,6 +354,7 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 	fuseDistance=20;
 	thrust=70;
 	maxSpeed=250;
+	//maneuvrability=20; //maybe edit?
 	initTime=0.01;
 	cameraViewAvailable=1;
 	weaponLockSystem="2 + 4 + 16";
@@ -365,14 +366,14 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 
 	flightProfiles[]=
 	{
-		"TopDown",
-		"Direct"
+		"Direct",
+		"TopDown"
 	};
 	class TopDown
 	{
 		ascendHeight=400;	//200
-		descendDistance=240;	//240
-		minDistance=240;	//240
+		descendDistance=400;	//240
+		minDistance=10;	//240
 		ascendAngle=45;	//30
 	};
 
@@ -483,6 +484,22 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	trackLead=1;
 	cameraViewAvailable=1;
 
+	flightProfiles[]=
+	{
+		"Direct",
+		"TopDown"
+	};
+	class Direct
+	{
+	};
+	class TopDown
+	{
+		ascendHeight=400;	//200
+		descendDistance=400;	//240
+		minDistance=100;	//240
+		ascendAngle=45;	//30
+	};
+
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -576,6 +593,379 @@ class RC_IFV_AA: RC_IFV_AA_Base
 };
 
 
+//true MP NLOS, with proximity burst
+/*
+class M_Titan_AT: MissileBase
+{
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	hit=95;
+	indirectHit=20;
+	indirectHitRange=3.3;
+	explosive=1;
+	warheadName="HE";
+	submunitionAmmo="ammo_Penetrator_Titan_AT";
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	cost=500;
+	aiAmmoUsageFlags="128 + 512";
+	explosionSoundEffect="DefaultExplosion";
+	effectsMissileInit="";
+	muzzleEffect="";
+	simulationStep=0.0020000001;
+	initTime=0.25;
+	trackOversteer=1.5;
+	trackLead=0.89999998;
+	timeToLive=22;
+	maneuvrability=20;
+	airFriction=0.085000001;
+	sideAirFriction=1;
+	maxSpeed=180;
+	typicalSpeed=160;
+	thrustTime=5;
+	thrust=45;
+	fuseDistance=50;
+	effectsMissile="missile2";
+	whistleDist=4;
+	airLock=1;
+	lockType=0;
+	missileLockCone=4.5;
+	missileKeepLockedCone=160;
+	missileLockMaxDistance=2000;
+	missileLockMinDistance=50;
+	missileLockMaxSpeed=35;
+	manualControl=1;
+	missileManualControlCone=45;
+	maxControlRange=2000;
+	weaponLockSystem="2 + 16";
+	cmImmunity=0.40000001;
+	flightProfiles[]=
+	{
+		"Direct",
+		"TopDown"
+	};
+	class Direct
+	{
+	};
+	class TopDown
+	{
+		ascendHeight=150;
+		descendDistance=180;
+		minDistance=180;
+		ascendAngle=30;
+	};
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=500;
+						maxRange=2000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=1;
+					};
+					class GroundTarget
+					{
+						minRange=500;
+						maxRange=2000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=35;
+					angleRangeHorizontal=3.7;
+					angleRangeVertical=2.3;
+					maxTrackableATL=50;
+				};
+			};
+		};
+	};
+	soundFly[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Fly_Titan",
+		0.63095737,
+		1.5,
+		300
+	};
+	class CamShakeExplode
+	{
+		power=11;
+		duration=1.4;
+		frequency=20;
+		distance=91.329597;
+	};
+	class CamShakeHit
+	{
+		power=110;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=2.78316;
+		duration=1.6;
+		frequency=20;
+		distance=61.967701;
+	};
+	class CamShakePlayerFire
+	{
+		power=3;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+class M_Titan_AT_long: M_Titan_AT
+{
+	submunitionAmmo="ammo_Penetrator_Titan_AT_long";
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	warheadName="TandemHEAT";
+	hit=150;
+	indirectHit=40;
+	indirectHitRange=4;
+	timeToLive=35;
+	initTime=0.15000001;
+	thrustTime=8;
+	thrust=35;
+	maxSpeed=180;
+	typicalSpeed=1660;
+	missileLockCone=12;
+	missileLockMaxDistance=5000;
+	missileLockMinDistance=200;
+	missileLockMaxSpeed=35;
+	maxControlRange=5000;
+	weaponLockSystem="2 + 16";
+	cmImmunity=0.5;
+	flightProfiles[]=
+	{
+		"Direct",
+		"TopDown"
+	};
+	class Direct
+	{
+	};
+	class TopDown
+	{
+		ascendHeight=200;
+		descendDistance=240;
+		minDistance=240;
+		ascendAngle=30;
+	};
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=500;
+						maxRange=5000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=1;
+					};
+					class GroundTarget
+					{
+						minRange=500;
+						maxRange=5000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=35;
+					angleRangeHorizontal=9.5;
+					angleRangeVertical=6;
+					maxTrackableATL=50;
+				};
+			};
+		};
+	};
+};
+
+class M_Titan_AA: MissileBase
+{
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_atl_fly.p3d";
+	hit=80;
+	indirectHit=60;
+	indirectHitRange=6;
+	warheadName="HE";
+	proximityExplosionDistance=10;
+	maneuvrability=15;
+	simulationStep=0.0020000001;
+	trackOversteer=1;
+	trackLead=0.94999999;
+	aiAmmoUsageFlags=256;
+	irLock=1;
+	cost=1000;
+	timeToLive=15;
+	airFriction=0.145;
+	sideAirFriction=0.1;
+	maxSpeed=850;
+	initTime=0.25;
+	thrustTime=2.25;
+	thrust=380;
+	fuseDistance=50;
+	CraterEffects="AAMissileCrater";
+	explosionEffects="AAMissileExplosion";
+	effectsMissileInit="";
+	effectsMissile="missile3";
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.34,
+		"soundHit2",
+		0.33000001,
+		"soundHit3",
+		0.33000001
+	};
+	airLock=2;
+	missileLockCone=4;
+	missileKeepLockedCone=75;
+	missileLockMaxDistance=3500;
+	missileLockMinDistance=100;
+	missileLockMaxSpeed=250;
+	weaponLockSystem="2 + 16";
+	cmImmunity=0.89999998;
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=500;
+						maxRange=3500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=1;
+					};
+					class GroundTarget
+					{
+						minRange=500;
+						maxRange=2500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=250;
+					angleRangeHorizontal=7;
+					angleRangeVertical=4.5;
+					groundNoiseDistanceCoef=0.2;
+					maxGroundNoiseDistance=50;
+				};
+			};
+		};
+	};
+	class CamShakeExplode
+	{
+		power=22;
+		duration=2;
+		frequency=20;
+		distance=147.905;
+	};
+	class CamShakeHit
+	{
+		power=110;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=2.78316;
+		duration=1.6;
+		frequency=20;
+		distance=61.967701;
+	};
+	class CamShakePlayerFire
+	{
+		power=3;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+class M_Titan_AA_long: M_Titan_AA
+{
+	model="\A3\Weapons_F_Beta\Launchers\Titan\titan_missile_atl_fly.p3d";
+	thrustTime=3;
+	missileLockCone=30;
+	missileKeepLockedCone=40;
+	missileLockMaxDistance=4500;
+	missileLockMaxSpeed=500;
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=500;
+						maxRange=4500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=1;
+					};
+					class GroundTarget
+					{
+						minRange=500;
+						maxRange=3500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=500;
+					angleRangeHorizontal=40;
+					angleRangeVertical=25;
+					groundNoiseDistanceCoef=0.2;
+					maxGroundNoiseDistance=50;
+				};
+			};
+		};
+	};
+};
+*/
+
+
 //ATGM
 class M_Vorona_HEAT;
 class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
@@ -618,7 +1008,7 @@ class RC_M_ATGM_MP_Lock: M_Titan_AT_long_Base
 	{
 		ascendHeight=400;	//200
 		descendDistance=240;	//240
-		minDistance=240;	//240
+		minDistance=100;	//240
 		ascendAngle=45;	//30
 	};
 

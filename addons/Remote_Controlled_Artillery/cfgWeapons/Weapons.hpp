@@ -112,12 +112,12 @@ class RC_IFV_Missle_Launcher: missiles_titan
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	displayName="NLOS ML";
 	displayNameShort="NLOS ML";
-	magazineReloadTime=20;
+	magazineReloadTime=6;
 	cmImmunity=0.67;
 	magazines[]=
 	{
-		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_AA"
+		"RC_1Rnd_IFV_MP_NLOS",
+		"RC_1Rnd_IFV_AA"
 	};
 };
 
@@ -414,7 +414,6 @@ class RC_GMG_40mm: GMG_40mm_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	maxZeroing=3000;
 
 	class manual: manual
 	{
