@@ -620,6 +620,7 @@ class M_Titan_AT: MissileBase
 	deleteParentWhenTriggered=0;
 
 	explosive=1;
+	
 	warheadName="HE";
 	warheadName="HE";	//aa
 	cost=500;
@@ -652,7 +653,9 @@ class M_Titan_AT: MissileBase
 	sideAirFriction=0.1;	//aa
 	maxSpeed=180;
 	maxSpeed=850;	//aa
+
 	typicalSpeed=160;
+
 	thrustTime=5;
 	thrustTime=2.25;	//aa
 	thrust=45;
@@ -662,10 +665,10 @@ class M_Titan_AT: MissileBase
 	effectsMissile="missile2";
 	effectsMissile="missile3";	//aa
 
-	whistleDist=4;
 	airLock=1;
 	airLock=2;	//aa
 	lockType=0;
+
 	missileLockCone=4.5;
 	missileLockCone=4;	//aa
 	missileKeepLockedCone=160;
@@ -676,13 +679,15 @@ class M_Titan_AT: MissileBase
 	missileLockMinDistance=100;	//aa
 	missileLockMaxSpeed=35;
 	missileLockMaxSpeed=250;	//aa
-	manualControl=1;
-	missileManualControlCone=45;
-	maxControlRange=2000;
 	weaponLockSystem="2 + 16";
 	weaponLockSystem="2 + 16";	//aa
 	cmImmunity=0.40000001;
 	cmImmunity=0.89999998;	//aa
+
+	whistleDist=4;
+	manualControl=1;
+	missileManualControlCone=45;
+	maxControlRange=2000;
 
 	flightProfiles[]=
 	{
