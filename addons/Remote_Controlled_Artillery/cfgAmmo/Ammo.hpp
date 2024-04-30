@@ -594,6 +594,300 @@ class RC_IFV_AA: RC_IFV_AA_Base
 
 
 //true MP NLOS, with proximity burst
+//*
+class M_Titan_AT: MissileBase
+{
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_atl_fly.p3d";	//aa
+
+	hit=95;
+	hit=80;	//aa
+	indirectHit=20;
+	indirectHit=60;	//aa
+	indirectHitRange=3.3;
+	indirectHitRange=6;	//aa
+
+	//aa
+	proximityExplosionDistance=10;
+	irLock=1;
+
+	submunitionAmmo="ammo_Penetrator_Titan_AT";
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+
+	explosive=1;
+	warheadName="HE";
+	warheadName="HE";	//aa
+	cost=500;
+	cost=1000;	//aa
+	aiAmmoUsageFlags="128 + 512";
+	aiAmmoUsageFlags=256;	//aa
+	CraterEffects="ATMissileCrater";
+	CraterEffects="AAMissileCrater";	//aa
+	explosionEffects="ATMissileExplosion";
+	explosionEffects="AAMissileExplosion";	//aa
+	explosionSoundEffect="DefaultExplosion";
+	effectsMissileInit="";
+	effectsMissileInit="";	//aa
+	muzzleEffect="";
+	simulationStep=0.0020000001;
+	simulationStep=0.0020000001;	//aa
+	initTime=0.25;
+	initTime=0.25;	//aa
+	trackOversteer=1.5;
+	trackOversteer=1;	//aa
+	trackLead=0.89999998;
+	trackLead=0.94999999;	//aa
+	timeToLive=22;
+	timeToLive=15;	//aa
+	maneuvrability=20;
+	maneuvrability=15;	//aa
+	airFriction=0.085000001;
+	airFriction=0.145;	//aa
+	sideAirFriction=1;
+	sideAirFriction=0.1;	//aa
+	maxSpeed=180;
+	maxSpeed=850;	//aa
+	typicalSpeed=160;
+	thrustTime=5;
+	thrustTime=2.25;	//aa
+	thrust=45;
+	thrust=380;	//aa
+	fuseDistance=50;
+	fuseDistance=50;	//aa
+	effectsMissile="missile2";
+	effectsMissile="missile3";	//aa
+
+	whistleDist=4;
+	airLock=1;
+	airLock=2;	//aa
+	lockType=0;
+	missileLockCone=4.5;
+	missileLockCone=4;	//aa
+	missileKeepLockedCone=160;
+	missileKeepLockedCone=75;	//aa
+	missileLockMaxDistance=2000;
+	missileLockMaxDistance=3500;	//aa
+	missileLockMinDistance=50;
+	missileLockMinDistance=100;	//aa
+	missileLockMaxSpeed=35;
+	missileLockMaxSpeed=250;	//aa
+	manualControl=1;
+	missileManualControlCone=45;
+	maxControlRange=2000;
+	weaponLockSystem="2 + 16";
+	weaponLockSystem="2 + 16";	//aa
+	cmImmunity=0.40000001;
+	cmImmunity=0.89999998;	//aa
+
+	flightProfiles[]=
+	{
+		"Direct",
+		"TopDown"
+	};
+	class Direct
+	{
+	};
+	class TopDown
+	{
+		ascendHeight=150;
+		descendDistance=180;
+		minDistance=180;
+		ascendAngle=30;
+	};
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=500;
+						maxRange=2000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=1;
+					};
+					class GroundTarget
+					{
+						minRange=500;
+						maxRange=2000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=35;
+					angleRangeHorizontal=3.7;
+					angleRangeVertical=2.3;
+					maxTrackableATL=50;
+				};
+			};
+		};
+	};
+	soundFly[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Fly_Titan",
+		0.63095737,
+		1.5,
+		300
+	};
+	class CamShakeExplode
+	{
+		power=11;
+		duration=1.4;
+		frequency=20;
+		distance=91.329597;
+	};
+	class CamShakeHit
+	{
+		power=110;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=2.78316;
+		duration=1.6;
+		frequency=20;
+		distance=61.967701;
+	};
+	class CamShakePlayerFire
+	{
+		power=3;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+class M_Titan_AA: MissileBase
+{
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_atl_fly.p3d";
+	warheadName="HE";
+	proximityExplosionDistance=10;
+	maneuvrability=15;
+	simulationStep=0.0020000001;
+	trackOversteer=1;
+	trackLead=0.94999999;
+	aiAmmoUsageFlags=256;
+	irLock=1;
+	cost=1000;
+	timeToLive=15;
+	airFriction=0.145;
+	sideAirFriction=0.1;
+	maxSpeed=850;
+	initTime=0.25;
+	thrustTime=2.25;
+	thrust=380;
+	fuseDistance=50;
+	CraterEffects="AAMissileCrater";
+	explosionEffects="AAMissileExplosion";
+	effectsMissileInit="";
+	effectsMissile="missile3";
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_01",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_02",
+		2.5118864,
+		1,
+		1900
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Explosion_titan_missile_03",
+		2.5118864,
+		1,
+		1900
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.34,
+		"soundHit2",
+		0.33000001,
+		"soundHit3",
+		0.33000001
+	};
+	airLock=2;
+	missileLockCone=4;
+	missileKeepLockedCone=75;
+	missileLockMaxDistance=3500;
+	missileLockMinDistance=100;
+	missileLockMaxSpeed=250;
+	weaponLockSystem="2 + 16";
+	cmImmunity=0.89999998;
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=500;
+						maxRange=3500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=1;
+					};
+					class GroundTarget
+					{
+						minRange=500;
+						maxRange=2500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=250;
+					angleRangeHorizontal=7;
+					angleRangeVertical=4.5;
+					groundNoiseDistanceCoef=0.2;
+					maxGroundNoiseDistance=50;
+				};
+			};
+		};
+	};
+	class CamShakeExplode
+	{
+		power=22;
+		duration=2;
+		frequency=20;
+		distance=147.905;
+	};
+	class CamShakeHit
+	{
+		power=110;
+		duration=0.60000002;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=2.78316;
+		duration=1.6;
+		frequency=20;
+		distance=61.967701;
+	};
+	class CamShakePlayerFire
+	{
+		power=3;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+//*/
 /*
 class M_Titan_AT: MissileBase
 {
