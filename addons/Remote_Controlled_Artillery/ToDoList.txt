@@ -36,7 +36,7 @@ TO DO - BUGFIXES:
 
 TO DO - FEATURES:
 
--true MP promimity burst NLOS missles for IFV, then proximity guided for arty
+-true MP promimity burst NLOS missles for IFV, then proximity guided for arty, change SIDEAIRFRICTION for arty guided
 -find solution for ace r reload update changing missle magazin when locking DL target
 
 CAR Script for Zeus:

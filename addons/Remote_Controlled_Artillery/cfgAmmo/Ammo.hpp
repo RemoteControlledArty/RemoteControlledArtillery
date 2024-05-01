@@ -595,99 +595,157 @@ class RC_IFV_AA: RC_IFV_AA_Base
 
 //true MP NLOS, with proximity burst
 //*
-class M_Titan_AT: MissileBase
+class MissileBase;
+class RC_MissileBase: MissileBase
 {
-	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	class Components;
+};
+class RC_IFV_MP_NLOS2: RC_MissileBase
+{
+	model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";
+	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";	//at
 	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_atl_fly.p3d";	//aa
+	cameraViewAvailable=1;
 
 	hit=95;
-	hit=80;	//aa
-	indirectHit=20;
-	indirectHit=60;	//aa
+	//hit=95;	//at
+	//hit=80;	//aa
+	indirectHit=40;
+	//indirectHit=20;	//at
+	//indirectHit=60;	//aa
 	indirectHitRange=3.3;
-	indirectHitRange=6;	//aa
+	//indirectHitRange=3.3;	//at
+	//indirectHitRange=6;	//aa
 
 	//aa
 	proximityExplosionDistance=10;
+	laserLock=1;
 	irLock=1;
+	airLock=1;
+	//airLock=2;	//aa
+	lockType=0;
 
-	submunitionAmmo="ammo_Penetrator_Titan_AT";
-	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_ammo_Penetrator_MP";
+	//submunitionAmmo="ammo_Penetrator_Titan_AT";	//at
+	submunitionDirectionType="SubmunitionTargetDirection";
+	//submunitionDirectionType="SubmunitionModelDirection";	//at
 	submunitionInitSpeed=1000;
 	submunitionParentSpeedCoef=0;
 	submunitionInitialOffset[]={0,0,-0.2};
 	triggerOnImpact=1;
 	deleteParentWhenTriggered=0;
 
+	/*
+	ATlong
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	warheadName="TandemHEAT";
+	hit=150;
+	indirectHit=40;
+	indirectHitRange=4;
+	timeToLive=35;
+	initTime=0.15000001;
+	thrustTime=8;
+	thrust=35;
+	maxSpeed=180;
+	typicalSpeed=1660;
+	missileLockCone=12;
+	missileLockMaxDistance=5000;
+	missileLockMinDistance=200;
+	missileLockMaxSpeed=35;
+	maxControlRange=5000;
+	weaponLockSystem="2 + 16";
+	cmImmunity=0.5;
+
+	AAlong
+	model="\A3\Weapons_F_Beta\Launchers\Titan\titan_missile_atl_fly.p3d";
+	thrustTime=3;
+	missileLockCone=30;
+	missileKeepLockedCone=40;
+	missileLockMaxDistance=4500;
+	missileLockMaxSpeed=500;
+	*/
+
 	explosive=1;
 	
 	warheadName="HE";
-	warheadName="HE";	//aa
-	cost=500;
+	//warheadName="HE";	//aa
+	//cost=500;
 	cost=1000;	//aa
-	aiAmmoUsageFlags="128 + 512";
-	aiAmmoUsageFlags=256;	//aa
-	CraterEffects="ATMissileCrater";
+	aiAmmoUsageFlags="128 + 256 + 512";
+	//aiAmmoUsageFlags="128 + 512";	//at
+	//aiAmmoUsageFlags=256;	//aa
+	//CraterEffects="ATMissileCrater";
 	CraterEffects="AAMissileCrater";	//aa
-	explosionEffects="ATMissileExplosion";
-	explosionEffects="AAMissileExplosion";	//aa
+	explosionEffects="RC_GuidedExplosion";
+	//explosionEffects="ATMissileExplosion";	//at
+	//explosionEffects="AAMissileExplosion";	//aa
 	explosionSoundEffect="DefaultExplosion";
 	effectsMissileInit="";
-	effectsMissileInit="";	//aa
+	//effectsMissileInit="";	//aa
 	muzzleEffect="";
 	simulationStep=0.0020000001;
-	simulationStep=0.0020000001;	//aa
-	initTime=0.25;
-	initTime=0.25;	//aa
-	trackOversteer=1.5;
+	//simulationStep=0.0020000001;	//aa
+	initTime=0.15000001;	//at long
+	//initTime=0.25;	//at
+	//initTime=0.25;	//aa
+	//trackOversteer=1.5;
 	trackOversteer=1;	//aa
-	trackLead=0.89999998;
-	trackLead=0.94999999;	//aa
+	trackLead=1;
+	//trackLead=0.89999998;	//at
+	//trackLead=0.94999999;	//aa
 	timeToLive=22;
-	timeToLive=15;	//aa
-	maneuvrability=20;
-	maneuvrability=15;	//aa
-	airFriction=0.085000001;
-	airFriction=0.145;	//aa
-	sideAirFriction=1;
-	sideAirFriction=0.1;	//aa
-	maxSpeed=180;
-	maxSpeed=850;	//aa
+	//timeToLive=15;	//aa
+	maneuvrability=30;
+	//maneuvrability=20;	//at
+	//maneuvrability=15;	//aa
+	airFriction=0.115;
+	//airFriction=0.085000001;	//at
+	//airFriction=0.145;	//aa
+	sideAirFriction=0.55;
+	//sideAirFriction=1;	//at
+	//sideAirFriction=0.1;	//aa
+	maxSpeed=515;
+	//maxSpeed=180;	//at
+	//maxSpeed=850;	//aa
 
-	typicalSpeed=160;
+	typicalSpeed=457;
+	//typicalSpeed=160;	//at
 
-	thrustTime=5;
-	thrustTime=2.25;	//aa
-	thrust=45;
+	thrustTime=3;	//aa long
+	//thrustTime=5;	//at
+	//thrustTime=2.25;	//aa
+	//thrust=45;
 	thrust=380;	//aa
-	fuseDistance=50;
-	fuseDistance=50;	//aa
+	fuseDistance=40;
+	//fuseDistance=50;	//at
+	//fuseDistance=50;	//aa
 	effectsMissile="missile2";
-	effectsMissile="missile3";	//aa
+	//effectsMissile="missile3";	//aa
 
-	airLock=1;
-	airLock=2;	//aa
-	lockType=0;
-
-	missileLockCone=4.5;
-	missileLockCone=4;	//aa
+	missileLockCone=30;	//aa long
+	//missileLockCone=4.5;	//at
+	//missileLockCone=4;	//aa
 	missileKeepLockedCone=160;
-	missileKeepLockedCone=75;	//aa
-	missileLockMaxDistance=2000;
-	missileLockMaxDistance=3500;	//aa
+	//missileKeepLockedCone=75;	//aa
+	missileLockMaxDistance=4000;
+	//missileLockMaxDistance=2000;
+	//missileLockMaxDistance=3500;	//aa
 	missileLockMinDistance=50;
-	missileLockMinDistance=100;	//aa
-	missileLockMaxSpeed=35;
-	missileLockMaxSpeed=250;	//aa
-	weaponLockSystem="2 + 16";
-	weaponLockSystem="2 + 16";	//aa
-	cmImmunity=0.40000001;
+	//missileLockMinDistance=100;	//aa
+	missileLockMaxSpeed=400;
+	//missileLockMaxSpeed=35;	//at
+	//missileLockMaxSpeed=250;	//aa
+	weaponLockSystem="2 + 4 + 16";
+	//weaponLockSystem="2 + 16";	//aa
+	//weaponLockSystem="2 + 16";	//aa
+	//cmImmunity=0.40000001;
 	cmImmunity=0.89999998;	//aa
 
 	whistleDist=4;
 	manualControl=1;
 	missileManualControlCone=45;
-	maxControlRange=2000;
+	maxControlRange=4000;
 
 	flightProfiles[]=
 	{
@@ -699,37 +757,63 @@ class M_Titan_AT: MissileBase
 	};
 	class TopDown
 	{
+		ascendHeight=300;
+		descendDistance=360;
+		minDistance=50;
+		ascendAngle=45;
+	};
+	/*
+	class TopDown
+	{
 		ascendHeight=150;
 		descendDistance=180;
 		minDistance=180;
 		ascendAngle=30;
 	};
+	*/
 	class Components: Components
 	{
 		class SensorsManagerComponent
 		{
 			class Components
 			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=4000;
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
 				class IRSensorComponent: SensorTemplateIR
 				{
 					class AirTarget
 					{
 						minRange=500;
-						maxRange=2000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=1;
 					};
 					class GroundTarget
 					{
 						minRange=500;
-						maxRange=2000;
+						maxRange=4000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
-					maxTrackableSpeed=35;
-					angleRangeHorizontal=3.7;
-					angleRangeVertical=2.3;
-					maxTrackableATL=50;
+					maxTrackableSpeed=400;
+					angleRangeHorizontal=40;
+					angleRangeVertical=25;
 				};
 			};
 		};
@@ -770,6 +854,7 @@ class M_Titan_AT: MissileBase
 		distance=1;
 	};
 };
+/*
 class M_Titan_AA: MissileBase
 {
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_atl_fly.p3d";
@@ -892,6 +977,8 @@ class M_Titan_AA: MissileBase
 		distance=1;
 	};
 };
+*/
+
 //*/
 /*
 class M_Titan_AT: MissileBase
@@ -1910,7 +1997,6 @@ class RC_MP_Warhead_Base: ShellBase
 };
 */
 
-class MissileBase;
 class RC_MP_Guided_Submunition_MissleBase: MissileBase
 {
 	class Components;

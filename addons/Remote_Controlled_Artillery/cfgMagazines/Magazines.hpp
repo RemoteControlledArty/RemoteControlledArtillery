@@ -305,7 +305,7 @@ class RC_1Rnd_IFV_MP_NLOS: 2Rnd_GAT_missiles
 	count=1;
 	displayName="MP 4km NLOS";
 	displayNameShort="MP 4km NLOS";
-	ammo="RC_IFV_MP_NLOS";
+	ammo="RC_IFV_MP_NLOS2";
 };
 class 4Rnd_Titan_long_missiles;
 class RC_1Rnd_IFV_AA: 4Rnd_Titan_long_missiles
