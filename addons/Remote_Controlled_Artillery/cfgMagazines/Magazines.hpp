@@ -300,17 +300,17 @@ class RC_50Rnd_40mm_Smoke: 60Rnd_40mm_GPR_Tracer_Red_shells
 
 
 class 2Rnd_GAT_missiles;
-class RC_1Rnd_IFV_MP_NLOS: 2Rnd_GAT_missiles
+class RC_2Rnd_IFV_MP_NLOS: 2Rnd_GAT_missiles
 {
-	count=1;
+	count=2;
 	displayName="MP 4km NLOS";
 	displayNameShort="MP 4km NLOS";
-	ammo="RC_IFV_MP_NLOS2";
+	ammo="RC_IFV_MP_NLOS";
 };
 class 4Rnd_Titan_long_missiles;
-class RC_1Rnd_IFV_AA: 4Rnd_Titan_long_missiles
+class RC_2Rnd_IFV_AA: 4Rnd_Titan_long_missiles
 {
-	count=1;
+	count=2;
 	displayName="AA 4.5km";
 	displayNameShort="AA 4.5km";
 	ammo="RC_IFV_AA";

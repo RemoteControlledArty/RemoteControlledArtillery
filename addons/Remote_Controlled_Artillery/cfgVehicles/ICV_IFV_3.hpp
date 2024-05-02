@@ -714,12 +714,10 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 				"RC_200Rnd_338_T_R",
 				"RC_200Rnd_338_T_R",
 				"RC_200Rnd_338_T_R",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_AA",
+				"RC_2Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

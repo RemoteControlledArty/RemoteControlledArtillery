@@ -112,12 +112,12 @@ class RC_IFV_Missle_Launcher: missiles_titan
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	displayName="NLOS ML";
 	displayNameShort="NLOS ML";
-	magazineReloadTime=6;
+	magazineReloadTime=15;
 	cmImmunity=0.67;
 	magazines[]=
 	{
-		"RC_1Rnd_IFV_MP_NLOS",
-		"RC_1Rnd_IFV_AA"
+		"RC_2Rnd_IFV_MP_NLOS",
+		"RC_2Rnd_IFV_AA"
 	};
 };
 

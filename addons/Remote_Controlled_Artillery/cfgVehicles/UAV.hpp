@@ -330,6 +330,42 @@ class RC_UAV_AR1_I: RC_UAV_AR1
 };
 
 
+class RC_UAV_AR1B: RC_UAV_AR1
+{
+	RC_UAVBlur=2;
+	displayName="RC AR-1B shortrange";
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_UAV_AR1B_Bag"
+		};
+	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			class OpticsIn: OpticsIn
+			{
+				class Wide: Wide
+				{
+					minFov=0.05;
+				};
+			};
+			class OpticsOut: OpticsOut
+			{
+				class Monocular: Monocular
+				{
+					minFov=0.05;
+				};
+			};
+		};
+	};
+};
+
+
 //AR-3
 class RC_UAV_AR3: RC_UAV_AR1
 {
