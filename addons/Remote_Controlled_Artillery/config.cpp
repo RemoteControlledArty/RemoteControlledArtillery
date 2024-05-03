@@ -456,7 +456,18 @@ class CfgFunctions
 			class RC_UAVBlur {postInit=1};
 			class RC_UAVConnectionFix {postInit=1};
 			class RC_LaserDatalink {postInit=1};
+			class RC_LocalityFix {postInit=1};
 			class scrollSolutions {};
+
+			/*
+			file="\Remote_Controlled_Artillery\functions\UILoop_includes";
+			class AB_magchange {};
+			class advised_trajectory {};
+			class ctrl_display {};
+			class eldiff_additions {};
+			class notarget_display {};
+			class weapon_info {};
+			*/
 		};
 	};
 };
@@ -566,6 +577,7 @@ class SensorTemplateNV;
 class SensorTemplateVisual;
 class SensorTemplateMan;
 class SensorTemplateActiveRadar;
+class SensorTemplatePassiveRadar;
 
 //later required optics
 class RCWSOptics;

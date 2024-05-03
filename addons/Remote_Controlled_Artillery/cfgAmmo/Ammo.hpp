@@ -335,7 +335,7 @@ class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
 {
 	caliber=60;
 	warheadName="TandemHEAT";
-	hit=780;
+	hit=1000;
 };
 class M_Titan_AT_long;
 class M_Titan_AT_long_Base: M_Titan_AT_long
@@ -345,7 +345,7 @@ class M_Titan_AT_long_Base: M_Titan_AT_long
 class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 {
 	submunitionAmmo="RC_ammo_Penetrator_MP";
-	indirectHit=40;
+	indirectHit=50;
 	indirectHitRange=10;
 	maxControlRange=4000;
 	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
@@ -418,9 +418,9 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					maxTrackableSpeed=100;
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					maxTrackableSpeed=120;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
@@ -438,11 +438,11 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					maxTrackableSpeed=100;
+					maxTrackableSpeed=120;
 					typeRecognitionDistance=400;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
@@ -507,8 +507,8 @@ class RC_IFV_AA: RC_IFV_AA_Base
 					};
 					typeRecognitionDistance=2250;
 					maxTrackableSpeed=500;
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
 					groundNoiseDistanceCoef=0.2;
 					maxGroundNoiseDistance=50;
 				};
@@ -528,8 +528,8 @@ class RC_IFV_AA: RC_IFV_AA_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
@@ -549,8 +549,8 @@ class RC_IFV_AA: RC_IFV_AA_Base
 					};
 					typeRecognitionDistance=400;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
@@ -738,7 +738,7 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 	};
 	class TopDown
 	{
-		ascendHeight=500;	//250
+		ascendHeight=400;	//250
 		descendDistance=400;	//400
 		minDistance=400;	//400
 		ascendAngle=45;	//25
@@ -754,56 +754,56 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					maxTrackableSpeed=35;
+					maxTrackableSpeed=120;
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=2000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -1234,7 +1234,7 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 	cameraViewAvailable=1;
 	missileLockCone=180;
 	missileKeepLockedCone=180;
-	lockSeekRadius=800;
+	lockSeekRadius=900;
 	missileLockMaxDistance=2000;
 	missileLockMinDistance=1;	//maybe edit
 	missileLockMaxSpeed=150;
@@ -1257,7 +1257,7 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 	sideAirFriction=0.1;
 	whistleDist=60;
 	lockType=0;
-	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionDirectionType="SubmunitionModelDirection";	//later test SubmunitionTargetDirection, with triggerDistance=; and proximityExplosionDistance=;
 	submunitionInitSpeed=1000;
 	submunitionParentSpeedCoef=0;
 	submunitionInitialOffset[]={0,0,-0.2};
@@ -1343,8 +1343,8 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					angleRangeHorizontal=90;
+					angleRangeVertical=90;
 				};
 				/*
 				class DataLinkSensorComponent: SensorTemplateDataLink
@@ -1391,8 +1391,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					angleRangeHorizontal=90;
+					angleRangeVertical=90;
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
@@ -1412,8 +1412,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					angleRangeHorizontal=90;
+					angleRangeVertical=90;
 				};
 				/*
 				class VisualSensorComponent: SensorTemplateVisual
@@ -1526,7 +1526,7 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
 {
 	irLock=1;
 	receiveRemoteTargets=1;
-	reportRemoteTargets=1;	//would allows for sensor-recon shots, to then datalink lock with second shot, doesnt work yet, maybe cfgvic only
+	reportRemoteTargets=1;	//would allow for sensor-recon shots, to then datalink lock with second shot, doesnt work yet, maybe cfgvic only
 };
 
 
@@ -1664,21 +1664,6 @@ class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 };
 
 
-class M_Mo_82mm_AT;
-class RC_M_Mo_82mm_AT: M_Mo_82mm_AT
-{
-	hit=450;
-	indirectHit=100;
-	indirectHitRange=4;
-};
-class Sh_82mm_AMOS_guided;
-class RC_Sh_82mm_AMOS_guided: Sh_82mm_AMOS_guided
-{
-	aiAmmoUsageFlags="128 + 512";
-	submunitionAmmo="RC_M_Mo_82mm_AT";
-};
-
-
 /*
 //makes game close when going close to mine... removed until fixed
 class RangeTriggerBounding;
@@ -1812,8 +1797,8 @@ class RC_Sh_82mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	submunitionAmmo="RC_82mm_MP_LaserGuided_Submunition";
 	triggerDistance=300;
 	hit=165;
-	indirectHit=52;
-	indirectHitRange=9;
+	indirectHit=104;
+	indirectHitRange=6;
 	cost=500;
 
 	class CamShakeExplode
@@ -1851,8 +1836,8 @@ class RC_82mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_82mm_MP";
 	//craterEffects="RC_82mmGuidedDust";
-	indirectHit=52;
-	indirectHitRange=9;
+	indirectHit=104;
+	indirectHitRange=6;
 	cost=500;
 
 	class CamShakeExplode
@@ -1889,8 +1874,8 @@ class RC_Sh_82mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	submunitionAmmo="RC_82mm_MP_MultiGuided_Submunition";
 	triggerDistance=300;
 	hit=165;
-	indirectHit=52;
-	indirectHitRange=9;
+	indirectHit=104;
+	indirectHitRange=6;
 	cost=500;
 
 	class CamShakeExplode
@@ -1941,20 +1926,6 @@ class RC_M_Mo_82mm_LG_DelayedFuse_Submunition: RC_82mm_MP_LaserGuided_Submunitio
 class RC_Sh_82mm_AMOS_LG_DelayedFuse: RC_Sh_82mm_AMOS_MP_LaserGuided
 {
 	submunitionAmmo="RC_M_Mo_82mm_LG_DelayedFuse_Submunition";
-};
-
-
-class M_Mo_82mm_AT_LG;
-class RC_M_Mo_82mm_AT_LG: M_Mo_82mm_AT_LG
-{
-	hit=450;
-	indirectHit=100;
-	indirectHitRange=4;
-};
-class Sh_82mm_AMOS_LG;
-class RC_Sh_82mm_AMOS_LG: Sh_82mm_AMOS_LG
-{
-	submunitionAmmo="RC_M_Mo_82mm_AT_LG";
 };
 
 
@@ -2066,8 +2037,8 @@ class RC_105mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_105mm_MP";
 	//craterEffects="RC_105mmGuidedDust";
-	indirectHit=75.6;
-	indirectHitRange=10.9;
+	indirectHit=151.2;
+	indirectHitRange=7.2;
 	cost=600;
 
 	class CamShakeExplode
@@ -2104,8 +2075,8 @@ class RC_Sh_105mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	submunitionAmmo="RC_105mm_MP_LaserGuided_Submunition";
 	triggerDistance=500;
 	hit=207.3;
-	indirectHit=75.6;
-	indirectHitRange=10.9;
+	indirectHit=151.2;
+	indirectHitRange=7.2;
 	cost=600;
 
 	class CamShakeExplode
@@ -2143,8 +2114,8 @@ class RC_105mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_105mm_MP";
 	//craterEffects="RC_105mmGuidedDust";
-	indirectHit=75.6;
-	indirectHitRange=10.9;
+	indirectHit=151.2;
+	indirectHitRange=7.2;
 	cost=600;
 
 	class CamShakeExplode
@@ -2181,8 +2152,8 @@ class RC_Sh_105mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	submunitionAmmo="RC_105mm_MP_MultiGuided_Submunition";
 	triggerDistance=500;
 	hit=207.3;
-	indirectHit=75.6;
-	indirectHitRange=10.9;
+	indirectHit=151.2;
+	indirectHitRange=7.2;
 	cost=600;
 
 	class CamShakeExplode
@@ -2390,8 +2361,8 @@ class RC_120mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_120mm_MP";
 	//craterEffects="RC_120mmGuidedDust";
-	indirectHit=86.4;
-	indirectHitRange=12.4;
+	indirectHit=172.8;
+	indirectHitRange=8.3;
 	cost=700;
 
 	class CamShakeExplode
@@ -2428,8 +2399,8 @@ class RC_Sh_120mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	submunitionAmmo="RC_120mm_MP_LaserGuided_Submunition";
 	triggerDistance=500;
 	hit=236.7;
-	indirectHit=86.4;
-	indirectHitRange=12.4;
+	indirectHit=172.8;
+	indirectHitRange=8.3;
 	cost=700;
 
 	class CamShakeExplode
@@ -2467,8 +2438,8 @@ class RC_120mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_120mm_MP";
 	//craterEffects="RC_120mmGuidedDust";
-	indirectHit=86.4;
-	indirectHitRange=12.4;
+	indirectHit=172.8;
+	indirectHitRange=8.3;
 	cost=700;
 
 	class CamShakeExplode
@@ -2505,8 +2476,8 @@ class RC_Sh_120mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	submunitionAmmo="RC_120mm_MP_MultiGuided_Submunition";
 	triggerDistance=500;
 	hit=236.7;
-	indirectHit=86.4;
-	indirectHitRange=12.4;
+	indirectHit=172.8;
+	indirectHitRange=8.3;
 	cost=700;
 
 	class CamShakeExplode
@@ -2781,8 +2752,8 @@ class RC_155mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
 	//craterEffects="RC_155mmGuidedDust";
-	indirectHit=125;
-	indirectHitRange=15;
+	indirectHit=250;
+	indirectHitRange=10;
 	cost=800;
 
 	class CamShakeExplode
@@ -2819,8 +2790,8 @@ class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 	submunitionAmmo="RC_155mm_MP_LaserGuided_Submunition";
 	triggerDistance=500;
 	hit=340;
-	indirectHit=125;
-	indirectHitRange=15;
+	indirectHit=250;
+	indirectHitRange=10;
 	cost=800;
 
 	class CamShakeExplode
@@ -2858,8 +2829,8 @@ class RC_155mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
 	//craterEffects="RC_155mmGuidedDust";
-	indirectHit=125;
-	indirectHitRange=15;
+	indirectHit=250;
+	indirectHitRange=10;
 	cost=800;
 
 	class CamShakeExplode
@@ -2896,8 +2867,8 @@ class RC_Sh_155mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
 	triggerDistance=500;
 	hit=340;
-	indirectHit=125;
-	indirectHitRange=15;
+	indirectHit=250;
+	indirectHitRange=10;
 	cost=800;
 
 	class CamShakeExplode

@@ -147,6 +147,8 @@ class RC_ICV_IFV_6_A: RC_ICV_IFV_6_A_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 
