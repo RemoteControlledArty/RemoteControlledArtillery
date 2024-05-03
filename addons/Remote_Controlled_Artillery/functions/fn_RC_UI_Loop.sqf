@@ -126,7 +126,7 @@ RC_Artillery_UI = [] spawn {
 			_artyPos = getPosASL _uav;
 			//checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
 			_selectedTargetDistance = 1;
-			if (cursorTarget isNotEqualto objNull) then { _selectedTargetDistance=(getpos cursorTarget) distance2d _artyPos };
+			if (cursorTarget isNotEqualto objNull) then { _selectedTargetDistance = (getpos cursorTarget) distance2d _artyPos };
 			_noTargetOrTargetTooClose = (cursorTarget isEqualto objNull) || (_selectedTargetDistance <= MIN_SELECTED_TARGET_DISTANCE);
 
 			// If we are looking into the Sky
