@@ -36,6 +36,9 @@ TO DO - BUGFIXES:
 
 TO DO - FEATURES:
 
+-doublecheck mortar guided accuary in MP
+-fix 120mm DL Guided accuracy for MBT (check in Dev sersion on server if current setting fixed it)
+
 -true MP promimity burst NLOS missles for IFV, then proximity guided for arty, change SIDEAIRFRICTION for arty guided
 -find solution for ace r reload update changing missle magazin when locking DL target
 
