@@ -332,7 +332,7 @@ class RC_UAV_AR1_I: RC_UAV_AR1
 
 class RC_FPV: RC_UAV_base
 {
-	displayName="RC FPV";
+	displayName="RC FPV 3-4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_UAV_Designator_subcat";
 	scope=2;
@@ -343,7 +343,7 @@ class RC_FPV: RC_UAV_base
 	{
 		class RC_Artillery
 		{
-			MPKilled="('ClaymoreDirectionalMine_Remote_Ammo_Scripted' createVehicle position _unit) setDamage 1;";
+			MPKilled="('ClaymoreDirectionalMine_Remote_Ammo_Scripted' createVehicle position _this) setDamage 1;";
 		};
 	};
 

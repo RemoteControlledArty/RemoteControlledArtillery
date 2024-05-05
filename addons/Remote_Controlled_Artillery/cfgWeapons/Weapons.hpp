@@ -104,7 +104,12 @@ class RC_ATGM_Lock: missiles_titan_static
 	};
 };
 class missiles_titan;
-class RC_IFV_Missle_Launcher: missiles_titan
+class RC_IFV_Missle_Launcher_Base: missiles_titan
+{
+	class Player;
+	class TopDown;
+};
+class RC_IFV_Missle_Launcher: RC_IFV_Missle_Launcher_Base
 {
 	scope=1;
 	canLock=2;
@@ -112,12 +117,30 @@ class RC_IFV_Missle_Launcher: missiles_titan
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	displayName="NLOS ML";
 	displayNameShort="NLOS ML";
-	magazineReloadTime=15;
+	reloadTime=10;
+	magazineReloadTime=10;
 	cmImmunity=0.67;
 	magazines[]=
 	{
+		"RC_4Rnd_IFV_MP_NLOS",
+		"RC_3Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_AA"
+		"RC_1Rnd_IFV_MP_NLOS",
+		"RC_4Rnd_IFV_AA",
+		"RC_3Rnd_IFV_AA",
+		"RC_2Rnd_IFV_AA",
+		"RC_1Rnd_IFV_AA",
+		"2Rnd_GAT_missiles"
+	};
+	class Player: Player
+	{
+		reloadTime=10;
+		magazineReloadTime=10;
+	};
+	class TopDown: TopDown
+	{
+		reloadTime=10;
+		magazineReloadTime=10;
 	};
 };
 

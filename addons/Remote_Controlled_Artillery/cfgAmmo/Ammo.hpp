@@ -484,22 +484,6 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	trackLead=1;
 	cameraViewAvailable=1;
 
-	flightProfiles[]=
-	{
-		"Direct",
-		"TopDown"
-	};
-	class Direct
-	{
-	};
-	class TopDown
-	{
-		ascendHeight=300;	//200
-		descendDistance=360;	//240
-		minDistance=50;	//240
-		ascendAngle=45;	//30
-	};
-
 	class Components: Components
 	{
 		class SensorsManagerComponent
