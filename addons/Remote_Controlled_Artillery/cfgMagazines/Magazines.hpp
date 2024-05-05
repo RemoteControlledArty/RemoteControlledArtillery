@@ -1,3 +1,13 @@
+
+class CA_Magazine;
+class RC_target_confirmer_mag: CA_Magazine
+{
+	author="Ascent";
+	scope=2;
+	ammo="RC_target_confirmer_ammo";
+	count=1;
+};
+
 //RC ATGM
 class Vorona_HEAT;
 class RC_1Rnd_ATGM_MP_SACLOS: Vorona_HEAT
@@ -425,16 +435,27 @@ class RC_20Rnd_120mm_APFSDS_T_Y: RC_10Rnd_120mm_APFSDS_T_Y
 
 
 class 4Rnd_120mm_LG_cannon_missiles;
-class RC_3Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
+class RC_4Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 {
-	displayName="NLOS Datalink Guided";
-	displayNameShort="NLOS DL-G";
+	displayName="4km NLOS ATGM";
+	displayNameShort="4km NLOS";
 	ammo="RC_M_120mm_cannon_ATGM_DLG";
-	count=3;
+	count=4;
 };
-class RC_3Rnd_125mm_DLG_cannon_missiles: RC_3Rnd_120mm_DLG_cannon_missiles
+class RC_3Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
 {
 	ammo="RC_M_125mm_cannon_ATGM_DLG";
+	count=3;
+};
+class RC_2Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
+{
+	ammo="RC_M_125mm_cannon_ATGM_DLG";
+	count=2;
+};
+class RC_1Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
+{
+	ammo="RC_M_125mm_cannon_ATGM_DLG";
+	count=1;
 };
 
 

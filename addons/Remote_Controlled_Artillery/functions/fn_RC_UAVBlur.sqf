@@ -37,7 +37,7 @@ RC_UAVBlur = [] spawn
 			_Distance = 1;
 			_viewBlur = 1;
 			_Distance = _playerPos distance2d (getpos (getConnectedUAV player));
-			if (_Distance >= _UAVBlurRange) then {_viewBlur = 1+((_Distance-_UAVBlurRange) * 0.005)^2};	//this seems perfect for limiting past 1500m unusable past 2000m
+			if (_Distance >= _UAVBlurRange) then {_viewBlur = 1+((_Distance-_UAVBlurRange) * 0.005)^2};
 			_finalBlur = 0.1 * _viewBlur;	//_finalBlur should not be worse than 0.45 blur to be usefull
 			_blur ppEffectEnable true;
 			_blur ppEffectAdjust [_finalBlur];

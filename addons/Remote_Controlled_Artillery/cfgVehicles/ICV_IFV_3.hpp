@@ -63,8 +63,8 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 	enginePower=553;
 	peakTorque=2810.4;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
-	armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
+	//armorStructural=1000;	//prevents instant explosion, does not make it stronger
+	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 
 	smokeLauncherGrenadeCount=12;
@@ -516,7 +516,7 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 					{
 						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 						{
-							defaultDisplay="SensorsDisplayComponent";
+							defaultDisplay="MinimapDisplayComponent";
 
 							class Components
 							{
@@ -533,13 +533,13 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 								{
 									componentType="UAVFeedDisplayComponent";
 								};
+								/*
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
 									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
-								/*
 								class MineDetectorDisplay
 								{
 									componentType="MineDetectorDisplayComponent";
@@ -568,13 +568,13 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 								{
 									componentType="UAVFeedDisplayComponent";
 								};
+								/*
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
 									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
-								/*
 								class MineDetectorDisplay
 								{
 									componentType="MineDetectorDisplayComponent";

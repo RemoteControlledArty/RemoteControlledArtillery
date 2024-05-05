@@ -1,3 +1,16 @@
+class Default;
+class RC_target_confirmer: Default
+{
+	scope=2;
+	displayName="explosive charge";
+	displayNameShort="explosive charge";
+	magazines[]=
+	{
+		"RC_target_confirmer_mag"
+	};
+	canLock=2;
+};
+
 //vehicle laser designator that can lock datalink targets 
 class Laserdesignator_mounted;
 class RC_Laserdesignator_mounted: Laserdesignator_mounted
@@ -11,7 +24,6 @@ class RC_Laserdesignator_vehicle: Laserdesignator_vehicle
 	author="Ascent";
 	canLock=2;
 };
-
 
 //Improved Handheld Laser Designators
 class Laserdesignator;
@@ -483,7 +495,10 @@ class RC_cannon_120mm: cannon_120mm
 		"RC_10Rnd_120mm_MP_T_Y",
 		"RC_15Rnd_120mm_MP_T_Y",
 		"RC_20Rnd_120mm_MP_T_Y",
-		"RC_3Rnd_120mm_DLG_cannon_missiles"
+		"RC_4Rnd_120mm_DLG_cannon_missiles",
+		"RC_3Rnd_120mm_DLG_cannon_missiles",
+		"RC_2Rnd_120mm_DLG_cannon_missiles",
+		"RC_1Rnd_120mm_DLG_cannon_missiles"
 	};
 };
 

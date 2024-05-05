@@ -41,8 +41,8 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	maxSpeed=80;
 	enginePower=1059.9;
 	peakTorque=5386.3;
-	armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
+	//armorStructural=1000;	//prevents instant explosion, does not make it stronger
+	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 
 	smokeLauncherGrenadeCount=12;

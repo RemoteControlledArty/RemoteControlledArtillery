@@ -12,6 +12,7 @@ TO DO - BUGFIXES:
 
 -report bug to ace team: turret is locked unable to adjust up/down, when scope of player is adjustable, despite being in remote control
 -report bug to ace team: crl+h cuts connection and destroys UV *only with my hotkeys
+-find solution for ace r reload
 
 -gps target gone after ~3minutes
 
@@ -36,25 +37,17 @@ TO DO - BUGFIXES:
 
 TO DO - FEATURES:
 
--doublecheck mortar guided accuary in MP
--fix 120mm DL Guided accuracy for MBT (check in Dev sersion on server if current setting fixed it)
-
--true MP promimity burst NLOS missles for IFV, then proximity guided for arty, change SIDEAIRFRICTION for arty guided
--find solution for ace r reload update changing missle magazin when locking DL target
+-doublecheck mortar laser guided accuary in MP
 
 CAR Script for Zeus:
 -EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided
--recon animationlist check
 
 -maybe one CONFIG CHECK to get an array that stores all ammo values, and one for vehicle values, to decrease check amounts
 -double check autonomous remote execute structure with Eric
 -locality fix server cba EH
--slightly increase AR-1 range
--player local fog AR-1 viewdistance limitation instead, then allows thermal
+-player local fog AR-1 viewdistance limitation instead, then allow thermal? or https://community.bistudio.com/wiki/disableTIEquipment
 
 next:
--limited distance non thermal FPV UAV
-
 -getout & no players in vic = engineoff
 
 -when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
@@ -68,15 +61,13 @@ next:
 -fix for someone remotecontrolling gunner player, bugging them
 
 -add sensor to mortar carrier camera
--video about vics
+-video about vics & fpv
 
 
 generally:
 -update list & readme
 
--AR-1 script include for night use: https://community.bistudio.com/wiki/disableTIEquipment
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
--hullexplosiondelay doesnt work for Namer?
 -engineoff script doesnt need to be in init if person is connected to uav, with soon arma update it also wouldnt block taking controls for gaining locality, for example when the other is uncon
 -doublecheck "min/max" range exact function on sensors
 -set ejectdeadcrew to true?
@@ -96,8 +87,8 @@ generally:
 
 
 Arty:
--fix autoseektarget friend/foe problem
--test out SubmunitionTargetDirection for guided, with triggerDistance=; and proximityExplosionDistance=; (also for NLOS)
+-fix autoseektarget friend/foe problem...
+-test out SubmunitionTargetDirection for guided, with triggerDistance=; and proximityExplosionDistance=;
 -autonomous off JIP global execute?
 
 -test FCS without ace on uneven ground
@@ -157,8 +148,6 @@ IDEAS - FAR FUTURE:
 -azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
 -or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
 -vanilla asset overwrite for gamemodes without zeus etc *maybe by second pbo and config, class RC_Howitzer; class vanilla_Howitzer: vanilla_Howitzer  but likely doesnt work
--switch driver and commander of recon radar
--for later use, no crosshair limited FOV: gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -190,7 +179,7 @@ DONE - BUGFIXES:
 -multiple gps markers now usable, and movable
 -fixed gps marker for multiplayer
 -fixed datalink laser designator for multiplayer
--IFV AA Missles now lock in multiplayer if at correct distance, and not flared
+-fixed IFV AA Missles
 
 new:
 -fixed multiplayer issue of gunner being unable to drive, now the driver seat is not locked anymore,
@@ -305,7 +294,6 @@ DONE - FEATURES:
 -MP Guided now also compatible with gps guidance using vanilla artillery computer
 -now greys out the firing solution & ETA for unsuited low or high trajectory depending on shell
 
-new:
 -added found target highlighting to most assets
 -added select datalink target (highlighting) ability to most weapons, to improve coordination/awareness
 -added semi manned Recon ATGM & Mortar Carrier
@@ -319,14 +307,12 @@ new:
 -improved file structure with includes
 -further improved file structure to streamline testing
 -increased MBT/FSV/IFV datalink panel from 3km to 4km
+
+new:
 -new NEUTRAL camonets, in uniform olive/tan, making it more fitting for a larger variety of factions/units
 -added radar warning receivers
-
-
-
--low/high trajectory list:
-	low: HE, HEAB, Guided (Guided has integrated topdown)
-	high: Cluster, Smoke, AT/AP Mines, Illum
+-added FPV UAV with explosive charge
+-script performance increases
 
 
 DONE - QUALITY OF LIFE:

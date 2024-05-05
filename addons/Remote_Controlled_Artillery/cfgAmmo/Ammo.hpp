@@ -1,3 +1,13 @@
+class Default;
+class RC_target_confirmer_ammo: Default
+{
+	author="Ascent";
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	nvLock=1;
+};
+
 //.338 NM Tracer for Vehicle MMG
 class BulletBase;
 class RC_B_338_T_R: BulletBase
@@ -345,8 +355,8 @@ class M_Titan_AT_long_Base: M_Titan_AT_long
 class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 {
 	submunitionAmmo="RC_ammo_Penetrator_MP";
-	indirectHit=50;
-	indirectHitRange=10;
+	indirectHit=250;
+	indirectHitRange=6;
 	maxControlRange=4000;
 	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
@@ -354,7 +364,7 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 	fuseDistance=20;
 	thrust=70;
 	maxSpeed=250;
-	maneuvrability=20; //maybe edit?
+	maneuvrability=25;
 	initTime=0.01;
 	cameraViewAvailable=1;
 	weaponLockSystem="2 + 4 + 16";
@@ -734,8 +744,8 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 	*/
 
 	explosive=0.8;
-	indirectHit=44.25;
-	indirectHitRange=12;
+	indirectHit=250;
+	indirectHitRange=6;
 
 	laserLock=1;
 	irLock=1;
@@ -743,6 +753,8 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 	trackLead=1;
 	craterEffects="AAMissileCrater";
 	weaponLockSystem="2 + 4 + 16";
+	missileLockMaxDistance=4000;
+	maneuvrability=4;
 	flightProfiles[]=
 	{
 		"TopDown"
@@ -750,8 +762,8 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 	class TopDown
 	{
 		ascendHeight=300;	//250
-		descendDistance=300;	//400
-		minDistance=300;	//400
+		descendDistance=480;	//400
+		minDistance=100;	//400
 		ascendAngle=45;	//25
 	};
 
@@ -894,7 +906,6 @@ class RC_BombDemine_01_Ammo_F: BombDemine_01_Ammo_F
 
 
 //groundwork
-class Default;
 class RC_HEAB_Base: Default
 {
 	submunitionCount=1;
