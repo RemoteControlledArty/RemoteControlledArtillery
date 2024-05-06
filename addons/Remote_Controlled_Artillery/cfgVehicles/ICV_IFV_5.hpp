@@ -47,6 +47,18 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 	enginePower=639.2;
 	peakTorque=3248.6;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly

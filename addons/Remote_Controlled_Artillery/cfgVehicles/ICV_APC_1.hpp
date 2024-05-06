@@ -38,6 +38,18 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 	maxSpeed=80;
 	enginePower=1059.9;
 	peakTorque=5386.3;

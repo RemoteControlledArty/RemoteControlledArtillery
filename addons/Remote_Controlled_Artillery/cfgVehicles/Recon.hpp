@@ -47,6 +47,18 @@ class RC_AA_small_WD: RC_AA_small_Base
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 
 	class Components: Components
 	{
@@ -342,6 +354,18 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 	laserScanner=1;
 	lockDetectionSystem="4+8";
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 
 	class Components: Components
 	{
@@ -751,6 +775,18 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 	reportRemoteTargets=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 	//laserScanner=0;
 
 	class Components: Components

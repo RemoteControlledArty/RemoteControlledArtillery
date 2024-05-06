@@ -81,7 +81,6 @@ RC_Artillery_UI = [] spawn {
 			_display = uiNamespace getVariable ["RC_Artillery", displayNull];
 
 			//weapon informations like charges and current charge
-			//#include "functions\UILoop_includes\weapon_info.sqf"
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"
 
 			// Get Weapon Elevation
@@ -103,11 +102,9 @@ RC_Artillery_UI = [] spawn {
 			};
 
 			//changes magazine to backup airburst if EL is too low for conventional airburst
-			//#include "functions\UILoop_includes\AB_magchange.sqf"
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\AB_magchange.sqf"
 
 			//ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
-			//#include "functions\UILoop_includes\ctrl_display.sqf"
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
 
 			/*
@@ -174,7 +171,6 @@ RC_Artillery_UI = [] spawn {
 				};
 
 				//ElDiff additions, like muzzle position, and rounds aim above value (airburst & topdown guided)
-				//#include "functions\UILoop_includes\eldiff_additions.sqf"
 				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\eldiff_additions.sqf"
 
 				//find if datalink target is selected
@@ -277,7 +273,6 @@ RC_Artillery_UI = [] spawn {
 				};
 			} else {
 				//display if no target is available/selected
-				//#include "functions\UILoop_includes\notarget_display.sqf"
 				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\notarget_display.sqf"
 			};
 			_ctrlHighSol ctrlShow true;
@@ -286,7 +281,6 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowETA ctrlShow true;
 
 			//greys out not-advised trajectory for depending on round
-			//#include "functions\UILoop_includes\ctrl_display.sqf"
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
 
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];

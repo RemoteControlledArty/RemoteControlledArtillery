@@ -955,7 +955,7 @@ class RC_GrenadeDropper_Base: C_IDAP_UAV_06_antimine_F
 };
 class RC_GrenadeDropper: RC_GrenadeDropper_Base
 {
-	displayName="RC Grenade Dropper";
+	displayName="RC Grenade Dropper 4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_UAV_Designator_subcat";
 	scope=2;

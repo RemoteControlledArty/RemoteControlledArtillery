@@ -35,6 +35,18 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
 	maxSpeed=70;

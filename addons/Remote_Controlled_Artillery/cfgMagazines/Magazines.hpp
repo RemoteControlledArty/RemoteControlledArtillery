@@ -313,8 +313,8 @@ class 2Rnd_GAT_missiles;
 class RC_4Rnd_IFV_MP_NLOS: 2Rnd_GAT_missiles
 {
 	count=4;
-	displayName="MP 4km NLOS";
-	displayNameShort="MP 4km NLOS";
+	displayName="4km NLOS ATGM";
+	displayNameShort="NLOS ATGM";
 	ammo="RC_IFV_MP_NLOS";
 };
 class RC_3Rnd_IFV_MP_NLOS: RC_4Rnd_IFV_MP_NLOS
@@ -397,6 +397,8 @@ class RC_20Rnd_120mm_MP_T_Y: RC_10Rnd_120mm_MP_T_Y
 class 20Rnd_120mm_APFSDS_shells_Tracer_Red;
 class RC_10Rnd_120mm_APFSDS_T_R: 20Rnd_120mm_APFSDS_shells_Tracer_Red
 {
+	displayName="APFSDS-T";
+	displayNameShort="APFSDS-T";
 	ammo="RC_Sh_120mm_APFSDS_T_R";
 	count=10;
 };
@@ -438,23 +440,36 @@ class 4Rnd_120mm_LG_cannon_missiles;
 class RC_4Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 {
 	displayName="4km NLOS ATGM";
-	displayNameShort="4km NLOS";
+	displayNameShort="NLOS ATGM";
 	ammo="RC_M_120mm_cannon_ATGM_DLG";
 	count=4;
 };
-class RC_3Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
+class RC_3Rnd_120mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
 {
-	ammo="RC_M_125mm_cannon_ATGM_DLG";
 	count=3;
 };
-class RC_2Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
+class RC_2Rnd_120mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
 {
-	ammo="RC_M_125mm_cannon_ATGM_DLG";
 	count=2;
 };
-class RC_1Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
+class RC_1Rnd_120mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
+{
+	count=1;
+};
+class RC_4Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
 {
 	ammo="RC_M_125mm_cannon_ATGM_DLG";
+};
+class RC_3Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_125mm_DLG_cannon_missiles
+{
+	count=3;
+};
+class RC_2Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_125mm_DLG_cannon_missiles
+{
+	count=2;
+};
+class RC_1Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_125mm_DLG_cannon_missiles
+{
 	count=1;
 };
 
@@ -504,6 +519,8 @@ class RC_20Rnd_125mm_MP_T_Y: RC_10Rnd_125mm_MP_T_Y
 class 20Rnd_125mm_APFSDS_T_Red;
 class RC_10Rnd_125mm_APFSDS_T_R: 20Rnd_125mm_APFSDS_T_Red
 {
+	displayName="APFSDS-T";
+	displayNameShort="APFSDS-T";
 	ammo="RC_Sh_125mm_APFSDS_T_R";
 	count=10;
 };

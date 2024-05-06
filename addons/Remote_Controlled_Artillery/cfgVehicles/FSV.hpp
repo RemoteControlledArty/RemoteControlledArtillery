@@ -70,6 +70,18 @@ class RC_FSV_A: RC_FSV_A_Base
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
 	smokeLauncherGrenadeCount=12;
@@ -238,7 +250,7 @@ class RC_FSV_A: RC_FSV_A_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						class VehicleMissileDisplay
@@ -288,7 +300,7 @@ class RC_FSV_A: RC_FSV_A_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 						class VehicleMissileDisplay
@@ -414,7 +426,7 @@ class RC_FSV_A: RC_FSV_A_Base
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
+									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
 								class VehicleMissileDisplay
@@ -464,7 +476,7 @@ class RC_FSV_A: RC_FSV_A_Base
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={3000,1500,750,375};
+									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
 								class VehicleMissileDisplay
