@@ -180,6 +180,7 @@ DONE - BUGFIXES:
 -fixed gps marker for multiplayer
 -fixed datalink laser designator for multiplayer
 -fixed IFV AA Missles
+-fixed bluefor/independent Otokar Arma Commander seat
 
 new:
 -fixed multiplayer issue of gunner being unable to drive, now the driver seat is not locked anymore,

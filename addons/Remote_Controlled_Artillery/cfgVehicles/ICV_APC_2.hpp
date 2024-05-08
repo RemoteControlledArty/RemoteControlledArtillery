@@ -1068,6 +1068,8 @@ class RC_APC_2_ReTex_WD: RC_APC_2_ReTex_WD_O
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 class RC_APC_2_ReTex_WD_I: RC_APC_2_ReTex_WD_O
@@ -1098,6 +1100,8 @@ class RC_APC_2_ReTex_WD_I: RC_APC_2_ReTex_WD_O
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 
@@ -1148,6 +1152,8 @@ class RC_APC_2_ReTex_D: RC_APC_2_ReTex_D_O
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 class RC_APC_2_ReTex_D_I: RC_APC_2_ReTex_D_O
@@ -1178,5 +1184,7 @@ class RC_APC_2_ReTex_D_I: RC_APC_2_ReTex_D_O
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };

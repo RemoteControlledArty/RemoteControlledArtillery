@@ -129,21 +129,18 @@ class RC_IFV_Missle_Launcher: RC_IFV_Missle_Launcher_Base
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	displayName="NLOS ML";
 	displayNameShort="NLOS ML";
-	reloadTime=10;
-	magazineReloadTime=10;
+	//reloadTime=10;
+	magazineReloadTime=15;
 	cmImmunity=0.67;
 	magazines[]=
 	{
-		"RC_4Rnd_IFV_MP_NLOS",
-		"RC_3Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_1Rnd_IFV_MP_NLOS",
-		"RC_4Rnd_IFV_AA",
-		"RC_3Rnd_IFV_AA",
 		"RC_2Rnd_IFV_AA",
 		"RC_1Rnd_IFV_AA",
 		"2Rnd_GAT_missiles"
 	};
+	/*
 	class Player: Player
 	{
 		reloadTime=10;
@@ -154,6 +151,7 @@ class RC_IFV_Missle_Launcher: RC_IFV_Missle_Launcher_Base
 		reloadTime=10;
 		magazineReloadTime=10;
 	};
+	*/
 };
 
 
