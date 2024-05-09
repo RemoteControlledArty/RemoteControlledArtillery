@@ -39,6 +39,7 @@ TO DO - FEATURES:
 
 -doublecheck mortar laser guided accuary in MP
 -"almost aligned message" and +-1 accuracy clearer color difference (for smokes etc)
+-earlier inittime for cannon launched NLOS ATGM
 
 CAR Script for Zeus:
 -EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided
