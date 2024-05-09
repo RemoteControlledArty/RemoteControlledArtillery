@@ -449,7 +449,7 @@ class RC_VehicleMortar_LC: RC_VehicleMortar
 			{
 				"RC_6Rnd_82mm_Mo_shells",
 				"RC_2Rnd_82mm_Mo_HEAB",
-				"RC_2Rnd_82mm_Mo_MultiGuided",
+				"RC_3Rnd_82mm_Mo_MultiGuided",
 				"RC_20Rnd_82mm_Mo_Smoke_white",
 				"RC_4Rnd_82mm_Mo_AT_mine",
 				"RC_4Rnd_82mm_Mo_mine",

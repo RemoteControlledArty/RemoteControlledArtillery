@@ -336,8 +336,7 @@ class RC_Howitzer_LC_A: RC_Howitzer_A
 			{
 				"RC_6Rnd_155mm_Mo_shells",
 				"RC_2Rnd_155mm_Mo_HEAB",
-				"RC_2Rnd_155mm_Mo_MultiGuided",
-				"RC_1Rnd_155mm_Mo_Cluster",
+				"RC_3Rnd_155mm_Mo_MultiGuided",
 				"RC_20Rnd_155mm_Mo_smoke",
 				"RC_4Rnd_155mm_Mo_AT_mine",
 				"RC_4Rnd_155mm_Mo_mine",
@@ -849,8 +848,7 @@ class RC_Static_Arty_LC: RC_Static_Arty
 			{
 				"RC_6Rnd_120mm_Mo_shells",
 				"RC_2Rnd_120mm_Mo_HEAB",
-				"RC_2Rnd_120mm_Mo_MultiGuided",
-				"RC_1Rnd_120mm_Mo_Cluster",
+				"RC_3Rnd_120mm_Mo_MultiGuided",
 				"RC_20Rnd_120mm_Mo_smoke",
 				"RC_4Rnd_120mm_Mo_AT_mine",
 				"RC_4Rnd_120mm_Mo_mine",
