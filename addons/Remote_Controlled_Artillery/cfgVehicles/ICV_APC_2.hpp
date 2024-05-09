@@ -201,6 +201,11 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 					componentType="MinimapDisplayComponent";
 					resource="RscCustomInfoMiniMap";
 				};
+				class VehicleDriverDisplay
+				{
+					componentType="TransportFeedDisplayComponent";
+					source="Driver";
+				};
 				class EmptyDisplay
 				{
 					componentType="EmptyDisplayComponent";
@@ -217,7 +222,7 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 		};
 		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 		{
-			defaultDisplay="EmptyDisplayComponent";
+			defaultDisplay="VehicleDriverDisplay";
 
 			class Components
 			{
@@ -231,6 +236,11 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 				{
 					componentType="MinimapDisplayComponent";
 					resource="RscCustomInfoMiniMap";
+				};
+				class VehicleDriverDisplay
+				{
+					componentType="TransportFeedDisplayComponent";
+					source="Driver";
 				};
 				class EmptyDisplay
 				{
