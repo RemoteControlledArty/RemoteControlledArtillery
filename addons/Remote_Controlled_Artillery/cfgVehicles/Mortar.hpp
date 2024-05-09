@@ -432,10 +432,11 @@ class RC_VehicleMortar_I: RC_VehicleMortar
 };
 
 
-/*
-class RC_VehicleMortar_RA: RC_VehicleMortar
+class RC_VehicleMortar_LC: RC_VehicleMortar
 {
-	displayName="RC Vehicle Mortar 6km (reduced ammo)";
+	displayName="RC Vehicle Mortar 6km LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -449,24 +450,23 @@ class RC_VehicleMortar_RA: RC_VehicleMortar
 				"RC_6Rnd_82mm_Mo_shells",
 				"RC_2Rnd_82mm_Mo_HEAB",
 				"RC_2Rnd_82mm_Mo_MultiGuided",
-				"RC_15Rnd_82mm_Mo_Smoke_white",
-				"RC_3Rnd_82mm_Mo_AT_mine",
-				"RC_3Rnd_82mm_Mo_mine",
+				"RC_20Rnd_82mm_Mo_Smoke_white",
+				"RC_4Rnd_82mm_Mo_AT_mine",
+				"RC_4Rnd_82mm_Mo_mine",
 				"RC_6Rnd_82mm_Mo_Flare_white"
 			};
 		};
 	};
 };
-class RC_VehicleMortar_RA: RC_VehicleMortar
+class RC_VehicleMortar_LC_O: RC_VehicleMortar_LC
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_VehicleMortar_RA: RC_VehicleMortar
+class RC_VehicleMortar_LC_I: RC_VehicleMortar_LC
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 };
-*/

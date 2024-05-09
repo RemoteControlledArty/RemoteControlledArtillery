@@ -323,6 +323,68 @@ class RC_Howitzer_WD_I: RC_Howitzer_WD
 };
 
 
+class RC_Howitzer_LC_A: RC_Howitzer_A
+{
+	displayName="RC Howitzer LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_6Rnd_155mm_Mo_shells",
+				"RC_2Rnd_155mm_Mo_HEAB",
+				"RC_2Rnd_155mm_Mo_MultiGuided",
+				"RC_1Rnd_155mm_Mo_Cluster",
+				"RC_20Rnd_155mm_Mo_smoke",
+				"RC_4Rnd_155mm_Mo_AT_mine",
+				"RC_4Rnd_155mm_Mo_mine",
+				"RC_6Rnd_155mm_Mo_Illum"
+			};
+		};
+	};
+};
+class RC_Howitzer_LC_WD: RC_Howitzer_LC_A
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_arty_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
+		"A3\Armor_F_Exp\MBT_01\data\MBT_01_scorcher_olive_CO.paa",
+		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
+		//"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
+	};
+};
+class RC_Howitzer_LC_A_O: RC_Howitzer_LC_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Howitzer_LC_WD_O: RC_Howitzer_LC_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Howitzer_LC_A_I: RC_Howitzer_LC_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+class RC_Howitzer_LC_WD_I: RC_Howitzer_LC_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
 //HEX Camo Howitzers (Opfor only)
 class O_MBT_02_arty_F;
 class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
@@ -767,6 +829,43 @@ class RC_Static_Arty_O: RC_Static_Arty
 	side=0;
 };
 class RC_Static_Arty_I: RC_Static_Arty
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_Static_Arty_LC: RC_Static_Arty
+{
+	displayName="RC Static Howitzer LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_6Rnd_120mm_Mo_shells",
+				"RC_2Rnd_120mm_Mo_HEAB",
+				"RC_2Rnd_120mm_Mo_MultiGuided",
+				"RC_1Rnd_120mm_Mo_Cluster",
+				"RC_20Rnd_120mm_Mo_smoke",
+				"RC_4Rnd_120mm_Mo_AT_mine",
+				"RC_4Rnd_120mm_Mo_mine",
+				"RC_6Rnd_120mm_Mo_Illum"
+			};
+		};
+	};
+};
+class RC_Static_Arty_LC_O: RC_Static_Arty_LC
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Static_Arty_LC_I: RC_Static_Arty_LC
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

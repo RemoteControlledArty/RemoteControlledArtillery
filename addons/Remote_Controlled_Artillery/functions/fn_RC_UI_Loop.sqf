@@ -281,7 +281,7 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowETA ctrlShow true;
 
 			//greys out not-advised trajectory for depending on round
-			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
+			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\advised_trajectory.sqf"
 
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];

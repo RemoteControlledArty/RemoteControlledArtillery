@@ -468,7 +468,7 @@ class CfgFunctions
 			class RC_UAVBlur {postInit=1};
 			class RC_UAVConnectionFix {postInit=1};
 			class RC_LaserDatalink {postInit=1};
-			class RC_LocalityFix {postInit=1};
+			//class RC_LocalityFix {postInit=1};
 			class scrollSolutions {};
 
 			/*
@@ -564,7 +564,7 @@ class CfgEditorSubcategories
 	class RC_Howitzer_subcat {displayname="'indirect :  Howitzers";};
 	class RC_Mortar_subcat {displayname="'indirect :  Mortars";};
 	class RC_Rocket_subcat {displayname="'indirect :  Rocket Systems";};
-	//class RC_ReducedAmmo_subcat {displayname="'reduced ammo :  Mortar's / Howitzer's";};
+	class RC_ReducedAmmo_subcat {displayname="'reduced ammo :  Mortar's / Howitzer's";};
 
 	class RC_AntiAir_subcat {displayname="Anti-Air";};
 	class RC_ATGM_subcat {displayname="ATGMs";};
