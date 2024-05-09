@@ -84,12 +84,23 @@ class CfgPatches
 			RC_Howitzer_A_I,
 			RC_Howitzer_WD_I,
 
+			RC_Howitzer_LC_A,
+			RC_Howitzer_LC_WD,
+			RC_Howitzer_LC_A_O,
+			RC_Howitzer_LC_WD_O,
+			RC_Howitzer_LC_A_I,
+			RC_Howitzer_LC_WD_I,
+
 			RC_Howitzer_HEX_A_O,
 			RC_Howitzer_HEX_WD_O,
 
 			RC_Static_Arty,
 			RC_Static_Arty_O,
 			RC_Static_Arty_I,
+
+			RC_Static_Arty_LC,
+			RC_Static_Arty_LC_O,
+			RC_Static_Arty_LC_I,
 
 			RC_MLRS_A,
 			RC_MLRS_WD,
@@ -149,10 +160,18 @@ class CfgPatches
 			RC_VehicleMortar_HEX_O,
 			RC_VehicleMortar_I,
 
+			RC_VehicleMortar_LC,
+			RC_VehicleMortar_LC_O,
+			RC_VehicleMortar_LC_I,
+
 			RC_Mortar_Carrier_WD,
 			RC_Mortar_Carrier_WD_O,
 			RC_Mortar_Carrier_WD_I,
 			RC_Mortar_Carrier_DIG_I,
+
+			RC_Mortar_Carrier_LC_WD,
+			RC_Mortar_Carrier_LC_WD_O,
+			RC_Mortar_Carrier_LC_WD_I,
 
 			RC_UAV_AR1,
 			RC_UAV_AR3,
