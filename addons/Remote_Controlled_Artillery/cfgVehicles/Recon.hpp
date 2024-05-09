@@ -678,6 +678,53 @@ class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
 };
 
 
+//version with less rounds for smaller ViewOptics
+/*
+class RC_Mortar_Carrier_WD: RC_radar_small_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
+	displayName="RC Mortar Carrier";
+	editorSubcategory="RC_Mortar_subcat";
+};
+class RC_Mortar_Carrier_WD_O: RC_Mortar_Carrier_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_radar_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+};
+*/
+
+
 //semi manned version
 /*
 class RC_Mortar_Carrier_WD_Driverless: RC_radar_small_WD_Base

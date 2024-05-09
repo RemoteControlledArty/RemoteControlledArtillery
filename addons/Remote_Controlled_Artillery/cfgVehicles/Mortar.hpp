@@ -376,7 +376,7 @@ class RC_VehicleMortar: RC_Mortar
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={6000,3000,1500,750,375};
+							range[]={6000,3000,1500,750};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -430,3 +430,43 @@ class RC_VehicleMortar_I: RC_VehicleMortar
 	crew="I_UAV_AI";
 	side=2;
 };
+
+
+/*
+class RC_VehicleMortar_RA: RC_VehicleMortar
+{
+	displayName="RC Vehicle Mortar 6km (reduced ammo)";
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_vehiclemortar_82mm_V4"
+			};
+			magazines[]=
+			{
+				"RC_6Rnd_82mm_Mo_shells",
+				"RC_2Rnd_82mm_Mo_HEAB",
+				"RC_2Rnd_82mm_Mo_MultiGuided",
+				"RC_15Rnd_82mm_Mo_Smoke_white",
+				"RC_3Rnd_82mm_Mo_AT_mine",
+				"RC_3Rnd_82mm_Mo_mine",
+				"RC_6Rnd_82mm_Mo_Flare_white"
+			};
+		};
+	};
+};
+class RC_VehicleMortar_RA: RC_VehicleMortar
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_VehicleMortar_RA: RC_VehicleMortar
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+*/

@@ -11,6 +11,7 @@ class RC_target_confirmer: Default
 	canLock=2;
 };
 
+
 //vehicle laser designator that can lock datalink targets 
 class Laserdesignator_mounted;
 class RC_Laserdesignator_mounted: Laserdesignator_mounted
@@ -25,6 +26,7 @@ class RC_Laserdesignator_vehicle: Laserdesignator_vehicle
 	canLock=2;
 };
 
+
 //Improved Handheld Laser Designators
 class Laserdesignator;
 class Laserdesignator_base: Laserdesignator
@@ -34,8 +36,6 @@ class Laserdesignator_base: Laserdesignator
 	scopeCurator=0;
 	scopeArsenal=0;
 };
-
-
 class Improved_FOV_Laserdesignator_A: Laserdesignator_base
 {
 	scope=2;
@@ -126,21 +126,23 @@ class RC_IFV_Missle_Launcher: RC_IFV_Missle_Launcher_Base
 	scope=1;
 	canLock=2;
 	weaponLockSystem="2 + 4 + 16";
-	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	displayName="NLOS ML";
 	displayNameShort="NLOS ML";
-	//reloadTime=10;
+	reloadTime=10;
 	magazineReloadTime=15;
 	cmImmunity=0.67;
 	magazines[]=
 	{
+		"RC_4Rnd_IFV_MP_NLOS",
+		"RC_3Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_1Rnd_IFV_MP_NLOS",
+		"RC_4Rnd_IFV_AA",
+		"RC_3Rnd_IFV_AA",
 		"RC_2Rnd_IFV_AA",
 		"RC_1Rnd_IFV_AA",
 		"2Rnd_GAT_missiles"
 	};
-	/*
 	class Player: Player
 	{
 		reloadTime=10;
@@ -151,7 +153,6 @@ class RC_IFV_Missle_Launcher: RC_IFV_Missle_Launcher_Base
 		reloadTime=10;
 		magazineReloadTime=10;
 	};
-	*/
 };
 
 
@@ -1168,7 +1169,7 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 	class Single1: Single1
 	{
 		displayName="CH0, 0.5km";
-		artilleryDispersion=1.9;
+		artilleryDispersion=1.25;
 		artilleryCharge=0.34999999;
 	};
 	class Single2: Single1

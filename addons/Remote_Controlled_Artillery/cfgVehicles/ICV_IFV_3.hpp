@@ -726,10 +726,8 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 				"RC_200Rnd_338_T_R",
 				"RC_200Rnd_338_T_R",
 				"RC_200Rnd_338_T_R",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
+				"RC_3Rnd_IFV_MP_NLOS",
+				"RC_3Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1066,10 +1064,8 @@ class RC_IFV_3_A_O: RC_IFV_3_A
 				"RC_200Rnd_338_T_G",
 				"RC_200Rnd_338_T_G",
 				"RC_200Rnd_338_T_G",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
+				"RC_3Rnd_IFV_MP_NLOS",
+				"RC_3Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1103,10 +1099,8 @@ class RC_IFV_3_A_I: RC_IFV_3_A
 				"RC_200Rnd_338_T_Y",
 				"RC_200Rnd_338_T_Y",
 				"RC_200Rnd_338_T_Y",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
+				"RC_3Rnd_IFV_MP_NLOS",
+				"RC_3Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1182,10 +1176,8 @@ class RC_IFV_3_WD_O: RC_IFV_3_WD
 				"RC_200Rnd_338_T_G",
 				"RC_200Rnd_338_T_G",
 				"RC_200Rnd_338_T_G",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
+				"RC_3Rnd_IFV_MP_NLOS",
+				"RC_3Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1219,10 +1211,8 @@ class RC_IFV_3_WD_I: RC_IFV_3_WD
 				"RC_200Rnd_338_T_Y",
 				"RC_200Rnd_338_T_Y",
 				"RC_200Rnd_338_T_Y",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
+				"RC_3Rnd_IFV_MP_NLOS",
+				"RC_3Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1337,10 +1327,8 @@ class RC_IFV_3_ReTex_WD_O: RC_IFV_3_ReTex_WD
 				"RC_200Rnd_338_T_G",
 				"RC_200Rnd_338_T_G",
 				"RC_200Rnd_338_T_G",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
+				"RC_3Rnd_IFV_MP_NLOS",
+				"RC_3Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1374,10 +1362,8 @@ class RC_IFV_3_ReTex_WD_I: RC_IFV_3_ReTex_WD
 				"RC_200Rnd_338_T_Y",
 				"RC_200Rnd_338_T_Y",
 				"RC_200Rnd_338_T_Y",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
+				"RC_3Rnd_IFV_MP_NLOS",
+				"RC_3Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1427,10 +1413,8 @@ class RC_IFV_3_ReTex_D_O: RC_IFV_3_ReTex_D
 				"RC_200Rnd_338_T_G",
 				"RC_200Rnd_338_T_G",
 				"RC_200Rnd_338_T_G",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
+				"RC_3Rnd_IFV_MP_NLOS",
+				"RC_3Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1464,10 +1448,8 @@ class RC_IFV_3_ReTex_D_I: RC_IFV_3_ReTex_D
 				"RC_200Rnd_338_T_Y",
 				"RC_200Rnd_338_T_Y",
 				"RC_200Rnd_338_T_Y",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_1Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_1Rnd_IFV_AA",
+				"RC_3Rnd_IFV_MP_NLOS",
+				"RC_3Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

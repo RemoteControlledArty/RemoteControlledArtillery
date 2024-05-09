@@ -176,6 +176,14 @@ class CfgPatches
 			RC_GrenadeDropper_Bag_O,
 			RC_GrenadeDropper_Bag_I,
 
+			RC_UAV_FPV,
+			RC_UAV_FPV_O,
+			RC_UAV_FPV_I,
+
+			RC_UAV_FPV_Bag,
+			RC_UAV_FPV_Bag_O,
+			RC_UAV_FPV_Bag_I,
+
 			RC_RespawnTruck_A,
 			RC_RespawnTruck_WD,
 			RC_RespawnTruck_A_O,
@@ -384,6 +392,10 @@ class CfgPatches
 
 		weapons[]=
 		{
+			RC_target_confirmer,
+			RC_Laserdesignator_mounted,
+			RC_Laserdesignator_vehicle,
+			
 			Improved_FOV_Laserdesignator_A,
 			Improved_FOV_Laserdesignator_WD,
 			Improved_FOV_Laserdesignator_Ti_A,
@@ -552,6 +564,7 @@ class CfgEditorSubcategories
 	class RC_Howitzer_subcat {displayname="'indirect :  Howitzers";};
 	class RC_Mortar_subcat {displayname="'indirect :  Mortars";};
 	class RC_Rocket_subcat {displayname="'indirect :  Rocket Systems";};
+	//class RC_ReducedAmmo_subcat {displayname="'reduced ammo :  Mortar's / Howitzer's";};
 
 	class RC_AntiAir_subcat {displayname="Anti-Air";};
 	class RC_ATGM_subcat {displayname="ATGMs";};
