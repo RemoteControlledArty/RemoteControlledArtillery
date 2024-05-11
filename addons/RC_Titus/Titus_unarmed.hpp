@@ -40,6 +40,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_base
 	crew="B_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
+	commanding=1;
 	//memoryPointDriverOptics="optika_velitel";
 	//driverCompartments="Compartment3";
 	//commanding=2;
@@ -50,6 +51,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_base
 
 	class EventHandlers: EventHandlers
 	{
+		/*
 		//init="(_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this;};";
 		#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
 
@@ -70,6 +72,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_base
 				_vehicle setEffectiveCommander (gunner _vehicle); \
 			} \
 		};";
+		*/
 	};
 
 	//uavCameraGunnerPos="PiP1_pos";
@@ -102,7 +105,10 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_base
 
 		class CargoTurret_01: CargoTurret_01 {};
 		class CargoTurret_02: CargoTurret_02 {};
-		class CargoTurret_03: CargoTurret_03 {};
+		class CargoTurret_03: CargoTurret_03
+		{
+			commanding=4;
+		};
 		
 		/*
 		//seem to be blocked?

@@ -42,7 +42,7 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	forceHideDriver=1;
 	driverForceOptics=1;
 	driverCompartments="Compartment2";
-	commanding=2;
+	commanding=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
