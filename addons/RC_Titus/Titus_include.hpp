@@ -1,6 +1,5 @@
 author="Ascent";
 faction="RemoteControlled_B";
-editorSubcategory="RC_Titus_subcat";
 side=0;
 vehicleClass="Autonomous";
 uavCameraDriverPos="PiP0_pos";
@@ -269,4 +268,4 @@ class HitPoints: HitPoints
 	};
 };
 
-#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"

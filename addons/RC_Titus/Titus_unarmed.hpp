@@ -33,14 +33,15 @@ class RC_Titus_unarmed_D_base: QIN_Titus_DES
 
 class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 {
+	#include "\RC_Titus\Titus_include.hpp"
+
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
 	};
 
-	#include "\RC_Titus\Titus_include.hpp"
-
 	displayName="RC Titus";
+	editorSubcategory="RC_Titus_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -58,16 +59,15 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 			primaryGunner=1;
 			primaryObserver=0;
 			gunnerForceOptics=1;
+			forceHideGunner=1;
+			commanding=4;
 
-			//forceHideGunner=1;	//makes view bug
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			//personTurretAction="";	//no effect
 			//forceHideCommander=1;	//makes view bug
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			//turretInfoType="RscWeaponRangeFinder";
 			//turretInfoType="";
-			//commanding=3;
-
 
 			gunnerAction="";
 			//canHideGunner=1;
@@ -181,7 +181,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 		class CargoTurret_02: CargoTurret_02 {};
 		class CargoTurret_03: CargoTurret_03
 		{
-			commanding=4;
+			commanding=3;
 			primaryGunner=0;
 			primaryObserver=1;
 
