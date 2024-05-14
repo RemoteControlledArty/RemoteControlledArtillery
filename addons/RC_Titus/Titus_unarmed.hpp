@@ -1,4 +1,3 @@
-class QIN_Titus_base;
 class QIN_Titus_DES;
 class RC_Titus_unarmed_D_base: QIN_Titus_DES
 {
@@ -287,7 +286,6 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 		*/
 	};
 };
-
 class RC_Titus_unarmed_WD: RC_Titus_unarmed_D
 {
 	editorPreview="qin_titus\data\preview\titus_unarmed_wdl.jpg";
@@ -302,7 +300,6 @@ class RC_Titus_unarmed_WD: RC_Titus_unarmed_D
 		"qin_titus\data\camonet_wdl_co.paa"
 	};
 };
-
 class RC_Titus_unarmed_A: RC_Titus_unarmed_D
 {
 	hiddenSelectionsTextures[]=
@@ -316,30 +313,3 @@ class RC_Titus_unarmed_A: RC_Titus_unarmed_D
 		"qin_titus\data\camonet_wdl2_co.paa"
 	};
 };
-
-/*
-class QIN_Titus_arx20_DES;
-class RC_Titus_armed_base: QIN_Titus_arx20_DES
-{
-	class ARX20Turret;
-};
-class RC_Titus_armed_D: RC_Titus_armed_base
-{
-	displayName="RC Titus 20mm";
-
-	class Turrets: Turrets
-	{
-		class CommanderTurret : CommanderTurret
-		{
-			primaryGunner=1;
-			primaryObserver=0;
-
-		};
-		class ARX20Turret: ARX20Turret
-		{
-			primaryGunner=0;
-			primaryObserver=1;
-		};
-	};
-};
-*/

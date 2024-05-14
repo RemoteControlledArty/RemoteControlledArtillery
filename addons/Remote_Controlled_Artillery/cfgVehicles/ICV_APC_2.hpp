@@ -509,7 +509,7 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 					maxAngleY=100;
 
 					initFov=1;
-					minFov=0.125;
+					minFov=0.025;
 					maxFov=1;
 					visionMode[]=
 					{
@@ -529,7 +529,7 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 					"NVG"
 				};
 				initFov=1;
-				minFov=0.125;
+				minFov=0.025;
 				maxFov=1;
 			};
 

@@ -91,31 +91,16 @@ class SensorTemplateNV;
 class SensorTemplateVisual;
 class SensorTemplateMan;
 class SensorTemplatePassiveRadar;
-
-//later required optics
-class RCWSOptics;
-
 //later required sensor panels
 class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
-/*
-class CfgAmmo
-{
-	#include "\RC_Titus\Ammo.hpp"
-};
-class CfgMagazines
-{
-	#include "\RC_Titus\Magazines.hpp"
-};
-class CfgWeapons
-{
-	#include "\RC_Titus\Weapons.hpp"
-};
-*/
+
+#include "\RC_Titus\cfgAmmoMagazinesWeapons.hpp"
+
 
 class CfgVehicles
 {
+	#include "\RC_Titus\Titus_armed.hpp"
 	#include "\RC_Titus\Titus_unarmed.hpp"
-	//#include "\RC_Titus\Titus_armed.hpp"
 };
