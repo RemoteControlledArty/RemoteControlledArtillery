@@ -12,7 +12,7 @@ class RC_target_confirmer: Default
 };
 
 
-//vehicle laser designator that can lock datalink targets 
+//vehicle laser designator that can lock datalink targets *needs modded mag, which sadly would likely break simple grid designator
 class Laserdesignator_mounted;
 class RC_Laserdesignator_mounted: Laserdesignator_mounted
 {

@@ -1,5 +1,5 @@
 class QIN_Titus_arx20_DES;
-class RC_Titus_armed_base: QIN_Titus_arx20_DES
+class RC_Titus_AC_base: QIN_Titus_arx20_DES
 {
 	class ARX20Turret;
 
@@ -31,7 +31,7 @@ class RC_Titus_armed_base: QIN_Titus_arx20_DES
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_Titus_armed_D: RC_Titus_armed_base
+class RC_Titus_AC_D: RC_Titus_AC_base
 {
 	#include "\RC_Titus\Titus_include.hpp"
 
@@ -123,15 +123,20 @@ class RC_Titus_armed_D: RC_Titus_armed_base
 
 			weapons[]=
 			{
-				"RC_QIN_M240C",
-				"RC_QIN_10M621_20mm",
+				"RC_QIN_20mm_AC",
+				"RC_QIN_338_MMG2",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_QIN_139Rnd_20mm_shells",
-				"RC_QIN_300Rnd_762x51_Belt",
-				"RC_QIN_300Rnd_762x51_Belt",
+				"RC_QIN_100Rnd_20mm_T_R",
+				"RC_QIN_100Rnd_20mm_T_R",
+				"RC_QIN_100Rnd_20mm_T_R",
+				"RC_QIN_150Rnd_338_T_R",
+				"RC_QIN_150Rnd_338_T_R",
+				"RC_QIN_150Rnd_338_T_R",
+				"RC_QIN_150Rnd_338_T_R",
+				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
 
@@ -151,9 +156,12 @@ class RC_Titus_armed_D: RC_Titus_armed_base
 			};
 			*/
 		};
+
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
 	};
 };
-class RC_Titus_armed_WD: RC_Titus_armed_D
+class RC_Titus_AC_WD: RC_Titus_AC_D
 {
 	editorPreview="qin_titus\data\preview\titus_arx20_wdl.jpg";
 	hiddenSelectionsTextures[]=
@@ -167,7 +175,62 @@ class RC_Titus_armed_WD: RC_Titus_armed_D
 		"qin_titus\data\camonet_wdl_co.paa"
 	};
 };
-class RC_Titus_armed_A: RC_Titus_armed_D
+class RC_Titus_AC_A: RC_Titus_AC_D
+{
+	hiddenSelectionsTextures[]=
+	{
+		"qin_titus\data\skins\wdl2\karoserie1_wdl2.paa",
+		"qin_titus\data\skins\wdl2\karoserie2_wdl2.paa",
+		"qin_titus\data\skins\wdl2\karoserie3_wdl2.paa",
+		"qin_titus\data\skins\wdl2\arx20_wdl2.paa",
+		"qin_titus\data\skins\wdl2\interier1_wdl2.paa",
+		"qin_titus\data\skins\wdl2\interier2_wdl2.paa",
+		"qin_titus\data\camonet_wdl2_co.paa"
+	};
+};
+
+
+class RC_Titus_MMG_D: RC_Titus_AC_D
+{
+	displayName="RC Titus MMG";
+
+	class Turrets: Turrets
+	{
+		class ARX20Turret: ARX20Turret
+		{
+			weapons[]=
+			{
+				"RC_QIN_338_MMG1",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_QIN_150Rnd_338_T_R",
+				"RC_QIN_150Rnd_338_T_R",
+				"RC_QIN_150Rnd_338_T_R",
+				"RC_QIN_150Rnd_338_T_R",
+				"RC_QIN_150Rnd_338_T_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+	};
+};
+class RC_Titus_MMG_WD: RC_Titus_MMG_D
+{
+	editorPreview="qin_titus\data\preview\titus_arx20_wdl.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"qin_titus\data\skins\wdl\karoserie1_wdl.paa",
+		"qin_titus\data\skins\wdl\karoserie2_wdl.paa",
+		"qin_titus\data\skins\wdl\karoserie3_wdl.paa",
+		"qin_titus\data\skins\wdl\arx20_wdl.paa",
+		"qin_titus\data\skins\wdl\interier1_wdl.paa",
+		"qin_titus\data\skins\wdl\interier2_wdl.paa",
+		"qin_titus\data\camonet_wdl_co.paa"
+	};
+};
+class RC_Titus_MMG_A: RC_Titus_MMG_D
 {
 	hiddenSelectionsTextures[]=
 	{
