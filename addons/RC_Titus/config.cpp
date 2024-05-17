@@ -2,7 +2,6 @@ class CfgPatches
 {
 	class RC_Titus
 	{
-		//skipWhenMissingDependencies=1;
 		name="Remote Controlled Titus";
 		author="Ascent";
 
@@ -18,12 +17,6 @@ class CfgPatches
 			RC_Titus_D_I,
 			RC_Titus_WD_I,
 
-			/*
-			RC_Titus_Ti_A,
-			RC_Titus_Ti_D,
-			RC_Titus_Ti_WD,
-			*/
-
 			RC_Titus_AC_A,
 			RC_Titus_AC_D,
 			RC_Titus_AC_WD,
@@ -34,15 +27,15 @@ class CfgPatches
 			RC_Titus_AC_D_I,
 			RC_Titus_AC_WD_I,
 
-			RC_Titus_HMG_A,
-			RC_Titus_HMG_D,
-			RC_Titus_HMG_WD,
-			RC_Titus_HMG_A_O,
-			RC_Titus_HMG_D_O,
-			RC_Titus_HMG_WD_O,
-			RC_Titus_HMG_A_I,
-			RC_Titus_HMG_D_I,
-			RC_Titus_HMG_WD_I
+			RC_Titus_MMG_A,
+			RC_Titus_MMG_D,
+			RC_Titus_MMG_WD,
+			RC_Titus_MMG_A_O,
+			RC_Titus_MMG_D_O,
+			RC_Titus_MMG_WD_O,
+			RC_Titus_MMG_A_I,
+			RC_Titus_MMG_D_I,
+			RC_Titus_MMG_WD_I
 		};
 
 		weapons[]=
@@ -53,27 +46,14 @@ class CfgPatches
 
 		requiredAddons[]=
 		{
-			"A3_Weapons_F",
-			"A3_Data_F_Enoch_Loadorder",
 			"cba_main",
-			"Remote_Controlled_Artillery",
+			"RC_Artillery",
 			"QIN_Titus"
 		};
+		
+		skipWhenMissingDependencies=1;
 	};
 };
-
-
-/*
-class CfgFunctions
-{
-	class RC
-	{
-		class RC_Titus
-		{
-		};
-	};
-};
-*/
 
 
 class CfgEditorSubcategories
@@ -86,10 +66,6 @@ class CfgEditorSubcategories
 //later required sensors
 class SensorTemplateDataLink;
 class SensorTemplateLaser;
-class SensorTemplateIR;
-class SensorTemplateNV;
-class SensorTemplateVisual;
-class SensorTemplateMan;
 class SensorTemplatePassiveRadar;
 //later required sensor panels
 class DefaultVehicleSystemsDisplayManagerLeft;

@@ -5,11 +5,9 @@ class RC_ICV_IFV_3_A_Base: B_APC_Wheeled_03_cannon_F
 	class MainTurret;
 	class CommanderOptics;
 	class HitPoints;
-	/*
-	class HitHull;
-	class HitEngine;
+	//class HitHull;
+	//class HitEngine;
 	class HitFuel;
-	*/
 	class HitLFWheel;
 	class HitLF2Wheel;
 	class HitLMWheel;
@@ -78,19 +76,8 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 	//armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
-
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_APC_Wheeled_03_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
@@ -105,30 +92,11 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 
 	class HitPoints: HitPoints
 	{
-		/*
-		class HitHull: HitHull
-		{
-			armor=-960;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.2;
-		};
-		class HitEngine: HitEngine
-		{
-			armor=360;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.5;
-		};
 		class HitFuel: HitFuel
 		{
-			armor=360;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.60000002;
+			passThrough=0.30000001;
 		};
-		*/
-
+		
 		class HitLFWheel: HitLFWheel
 		{
 			armor=-500;
@@ -849,10 +817,10 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 									componentType="TransportFeedDisplayComponent";
 									source="Driver";
 								};
-								class VehicleCommanderDisplay
+								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Commander";
+									source="PrimaryGunner";
 								};
 								class UAVFeedDisplay
 								{
@@ -899,10 +867,10 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 									componentType="TransportFeedDisplayComponent";
 									source="Driver";
 								};
-								class VehicleCommanderDisplay
+								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Commander";
+									source="PrimaryGunner";
 								};
 								class UAVFeedDisplay
 								{

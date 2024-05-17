@@ -269,21 +269,6 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 				};
 			};
 		};
-		
-		/*
-		//seem to be blocked?
-		class CargoTurret_03: CargoTurret_01
-		{
-			gunnerAction="vehicle_turnout_2";
-			memoryPointsGetInGunner="pos codriver";
-			memoryPointsGetInGunnerDir="pos codriver dir";
-			gunnerName="Co-Driver";
-			proxyIndex=11;
-			gunnerInAction="passenger_low01";
-			animationSourceHatch="hatch_4";
-			gunnerDoor="door_rf";
-		};
-		*/
 	};
 };
 class RC_Titus_unarmed_WD: RC_Titus_unarmed_D

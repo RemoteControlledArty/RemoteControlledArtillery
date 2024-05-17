@@ -5,9 +5,9 @@ class RC_ICV_IFV_6_A_Base: I_E_APC_tracked_03_cannon_F
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
-	class HitPoints;
-	class HitHull;
-	class HitEngine;
+	//class HitPoints;
+	//class HitHull;
+	//class HitEngine;
 	//class HitLTrack;
 	//class HitRTrack;
 	class AnimationSources;
@@ -77,44 +77,6 @@ class RC_ICV_IFV_6_A: RC_ICV_IFV_6_A_Base
 		"A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext2_eaf_co.paa",
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
 		"A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
-	};
-
-	class HitPoints: HitPoints
-	{
-		/*
-		class HitHull: HitHull
-		{
-			armor=-768;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.2;
-		};
-		class HitEngine: HitEngine
-		{
-			armor=-360;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.5;
-		};
-		class HitFuel: HitFuel
-		{
-			armor=-360;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.60000002;
-		};
-		*/
-
-		/*
-		class HitHull: HitHull
-		{
-			armor=2;
-		};
-		class HitEngine: HitEngine
-		{
-			armor=1.25;
-		};
-		*/
 	};
 	
 	class Components: Components
@@ -429,10 +391,10 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 									componentType="TransportFeedDisplayComponent";
 									source="Driver";
 								};
-								class VehicleCommanderDisplay
+								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Commander";
+									source="PrimaryGunner";
 								};
 								class UAVFeedDisplay
 								{
@@ -481,10 +443,10 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 									componentType="TransportFeedDisplayComponent";
 									source="Driver";
 								};
-								class VehicleCommanderDisplay
+								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Commander";
+									source="PrimaryGunner";
 								};
 								class UAVFeedDisplay
 								{

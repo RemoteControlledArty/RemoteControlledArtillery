@@ -119,11 +119,6 @@ class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayMa
 			componentType="MinimapDisplayComponent";
 			resource="RscCustomInfoMiniMap";
 		};
-		class VehicleDriverDisplay
-		{
-			componentType="TransportFeedDisplayComponent";
-			source="Driver";
-		};
 		class EmptyDisplay
 		{
 			componentType="EmptyDisplayComponent";
@@ -140,7 +135,7 @@ class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayMa
 };
 class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 {
-	defaultDisplay="VehicleDriverDisplay";
+	defaultDisplay="VehicleGunnerDisplay";
 
 	class Components
 	{
@@ -155,10 +150,10 @@ class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayMan
 			componentType="MinimapDisplayComponent";
 			resource="RscCustomInfoMiniMap";
 		};
-		class VehicleDriverDisplay
+		class VehicleGunnerDisplay
 		{
 			componentType="TransportFeedDisplayComponent";
-			source="Driver";
+			source="PrimaryGunner";
 		};
 		class EmptyDisplay
 		{

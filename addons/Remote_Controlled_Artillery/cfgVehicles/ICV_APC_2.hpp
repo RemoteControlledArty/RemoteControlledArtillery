@@ -5,9 +5,9 @@ class RC_ICV_APC_2_A_Base: O_APC_Wheeled_02_rcws_F
 	class MainTurret;
 	class CommanderOptics;
 	class HitPoints;
-	//class HitHull;
-	//class HitEngine;
-	//class HitFuel;
+	class HitHull;
+	class HitEngine;
+	class HitFuel;
 	class HitLFWheel;
 	class HitLF2Wheel;
 	class HitLMWheel;
@@ -69,16 +69,31 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	normalSpeedForwardCoef=0.64;
 	enginePower=475.3;
 	peakTorque=2415.4;
-	armor=400;
+	armor=375;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
 	//armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherAngle=180;
 
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_APC_Wheeled_02_rcws_v2_F.jpg";
 
 	class HitPoints: HitPoints
 	{
+		class HitHull: HitHull
+		{
+			armor=1.7;
+		};
+		class HitEngine: HitEngine
+		{
+			armor=0.925;
+		};
+		class HitFuel: HitFuel
+		{
+			armor=0.625;
+		};
+
 		class HitLFWheel: HitLFWheel
 		{
 			armor=-500;
@@ -858,10 +873,10 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 							componentType="TransportFeedDisplayComponent";
 							source="Driver";
 						};
-						class VehicleCommanderDisplay
+						class VehicleGunnerDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
-							source="Commander";
+							source="PrimaryGunner";
 						};
 						class UAVFeedDisplay
 						{
@@ -903,10 +918,10 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 							componentType="TransportFeedDisplayComponent";
 							source="Driver";
 						};
-						class VehicleCommanderDisplay
+						class VehicleGunnerDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
-							source="Commander";
+							source="PrimaryGunner";
 						};
 						class UAVFeedDisplay
 						{

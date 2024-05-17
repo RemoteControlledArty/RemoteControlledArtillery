@@ -4,7 +4,7 @@ class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
-	class HitPoints;
+	//class HitPoints;
 	//class HitLTrack;
 	//class HitRTrack;
 	class AnimationSources;
@@ -732,10 +732,10 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 									componentType="TransportFeedDisplayComponent";
 									source="Driver";
 								};
-								class VehicleCommanderDisplay
+								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Commander";
+									source="PrimaryGunner";
 								};
 								class UAVFeedDisplay
 								{
@@ -782,10 +782,10 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 									componentType="TransportFeedDisplayComponent";
 									source="Driver";
 								};
-								class VehicleCommanderDisplay
+								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Commander";
+									source="PrimaryGunner";
 								};
 								class UAVFeedDisplay
 								{

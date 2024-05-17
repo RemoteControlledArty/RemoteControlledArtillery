@@ -89,6 +89,8 @@ class CfgMagazines
 	class RC_QIN_100Rnd_20mm_T_R: 1000Rnd_20mm_shells
 	{
 		ammo="RC_QIN_20mm_T_R";
+		displayName="20mm HE";
+		displayNameShort="20mm HE";
 		tracersEvery=1;
 		count=100;
 	};
@@ -136,6 +138,8 @@ class CfgMagazines
 	class RC_QIN_150Rnd_338_T_R: 130Rnd_338_Mag
 	{
 		ammo="RC_QIN_338_T_R";
+		displayName=".338 NM";
+		displayNameShort=".338 NM";
 		tracersEvery=1;
 		count=150;
 	};
@@ -172,15 +176,25 @@ class CfgMagazines
 class CfgWeapons
 {
 	class QIN_10M621_20mm;
-	class RC_QIN_20mm_AC: QIN_10M621_20mm
+	class RC_QIN_20mm_AC_base: QIN_10M621_20mm
+	{
+		class manual;
+	};
+	class RC_QIN_20mm_AC: RC_QIN_20mm_AC_base
 	{
 		canLock=2;
 		displayName="20mm AC";
+
 		magazines[]=
 		{
 			"RC_QIN_100Rnd_20mm_T_R",
 			"RC_QIN_100Rnd_20mm_T_G",
 			"RC_QIN_100Rnd_20mm_T_Y"
+		};
+
+		class manual: manual
+		{
+			magazineReloadTime=10;
 		};
 	};
 
@@ -203,7 +217,9 @@ class CfgWeapons
 	class RC_QIN_338_MMG1: QIN_M240C
 	{
 		canLock=2;
-		displayName=".338NM MMG";
+		displayName=".338 NM MMG";
+		magazineReloadTime=10;
+
 		magazines[]=
 		{
 			"RC_QIN_150Rnd_338_T_R",
@@ -230,7 +246,7 @@ class CfgWeapons
 	class RC_QIN_338_MMG2: QIN_M240C
 	{
 		canLock=2;
-		displayName=".338NM MMG";
+		displayName=".338 NM MMG";
 		magazines[]=
 		{
 			"RC_QIN_150Rnd_338_T_R",

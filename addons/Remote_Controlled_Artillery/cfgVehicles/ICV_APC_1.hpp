@@ -4,9 +4,9 @@ class RC_ICV_APC_1_Base: B_APC_Tracked_01_rcws_F
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
-	class HitPoints;
-	class HitHull;
-	class HitEngine;
+	//class HitPoints;
+	//class HitHull;
+	//class HitEngine;
 	//class HitFuel;
 	//class HitLTrack;
 	//class HitRTrack;
@@ -57,18 +57,8 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	//armorStructural=1000;	//prevents instant explosion, does not make it stronger
 	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
-
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-	weapons[]=
-	{
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	hiddenSelectionsTextures[]=
 	{
@@ -77,18 +67,6 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 		"a3\data_f\vehicles\turret_co.paa",
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
 	};
-
-	/*
-	class HitPoints: HitPoints
-	{
-		class HitHull: HitHull
-		{
-		};
-		class HitEngine: HitEngine
-		{
-		};
-	};
-	*/
 	
 	class Components: Components
 	{
@@ -728,10 +706,10 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 							componentType="TransportFeedDisplayComponent";
 							source="Driver";
 						};
-						class VehicleCommanderDisplay
+						class VehicleGunnerDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
-							source="Commander";
+							source="PrimaryGunner";
 						};
 						class UAVFeedDisplay
 						{
@@ -773,10 +751,10 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 							componentType="TransportFeedDisplayComponent";
 							source="Driver";
 						};
-						class VehicleCommanderDisplay
+						class VehicleGunnerDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
-							source="Commander";
+							source="PrimaryGunner";
 						};
 						class UAVFeedDisplay
 						{

@@ -87,33 +87,9 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
 		"a3\Armor_F\Data\cage_sand_CO.paa"
 	};
-
+	
 	class HitPoints: HitPoints
 	{
-		/*
-		class HitHull: HitHull
-		{
-			armor=-768;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.2;
-		};
-		class HitEngine: HitEngine
-		{
-			armor=-360;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.5;
-		};
-		class HitFuel: HitFuel
-		{
-			armor=-360;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.60000002;
-		};
-		*/
-
 		class HitHull: HitHull
 		{
 			armor=2;
@@ -902,10 +878,10 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 									componentType="TransportFeedDisplayComponent";
 									source="Driver";
 								};
-								class VehicleCommanderDisplay
+								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Commander";
+									source="PrimaryGunner";
 								};
 								class UAVFeedDisplay
 								{
@@ -954,10 +930,10 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 									componentType="TransportFeedDisplayComponent";
 									source="Driver";
 								};
-								class VehicleCommanderDisplay
+								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Commander";
+									source="PrimaryGunner";
 								};
 								class UAVFeedDisplay
 								{
