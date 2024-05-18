@@ -79,6 +79,31 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_APC_Wheeled_02_rcws_v2_F.jpg";
 
+	driverAction="Driver_APC_Wheeled_02_rcws_F_out";
+	driverInAction="Driver_APC_Wheeled_02_rcws_F_in";
+	LODDriverTurnedOut=1201;
+	LODDriverTurnedin=1100;
+	LODDriverOpticsIn=1202;
+	viewDriverInExternal=1;
+	viewDriverShadowAmb=0.5;
+	viewDriverShadowDiff=0.050000001;
+	showNVGDriver=0;
+	showNVGCommander=0;
+	showNVGGunner=0;
+	driverOpticsModel="\A3\weapons_f\reticle\optics_empty";
+	
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+		initFov=0.40000001;
+		minFov=0.23;
+		maxFov=0.40000001;
+	};
+
 	class HitPoints: HitPoints
 	{
 		class HitHull: HitHull
@@ -275,6 +300,143 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="GMG_40mm";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="GMG_40mm";
+		};
+		class muzzle_hide1
+		{
+			source="reload";
+			weapon="HMG_127_APC";
+		};
+		class HideTurret
+		{
+			source="user";
+			initPhase=0;
+			animPeriod=0.001;
+		};
+		class Smoke_source
+		{
+			source="revolving";
+			weapon="SmokeLauncher";
+		};
+		class HitEngine_src
+		{
+			source="Hit";
+			hitpoint="HitEngine";
+			raw=1;
+		};
+		class HitFuel_src
+		{
+			source="Hit";
+			hitpoint="HitFuel";
+			raw=1;
+		};
+		class HitHull_src
+		{
+			source="Hit";
+			hitpoint="HitHull";
+			raw=1;
+		};
+		class HitMainGun_src
+		{
+			source="Hit";
+			hitpoint="HitGun";
+			raw=1;
+		};
+		class HitTurret_src
+		{
+			source="Hit";
+			hitpoint="HitTurret";
+			raw=1;
+		};
+		class HitComTurret_src
+		{
+			source="Hit";
+			hitpoint="HitComTurret";
+			raw=1;
+		};
+		class HitSLAT_Left_1_src
+		{
+			source="Hit";
+			hitpoint="HitSLAT_Left_1";
+			raw=1;
+		};
+		class HitSLAT_Left_2_src
+		{
+			source="Hit";
+			hitpoint="HitSLAT_Left_2";
+			raw=1;
+		};
+		class HitSLAT_Left_3_src
+		{
+			source="Hit";
+			hitpoint="HitSLAT_Left_3";
+			raw=1;
+		};
+		class HitSLAT_Right_1_src
+		{
+			source="Hit";
+			hitpoint="HitSLAT_Right_1";
+			raw=1;
+		};
+		class HitSLAT_Right_2_src
+		{
+			source="Hit";
+			hitpoint="HitSLAT_Right_2";
+			raw=1;
+		};
+		class HitSLAT_Right_3_src
+		{
+			source="Hit";
+			hitpoint="HitSLAT_Right_3";
+			raw=1;
+		};
+		class HitSLAT_back_src
+		{
+			source="Hit";
+			hitpoint="HitSLAT_back";
+			raw=1;
+		};
+		class HitSLAT_front_src
+		{
+			source="Hit";
+			hitpoint="HitSLAT_front";
+			raw=1;
+		};
+		class showBags
+		{
+			displayName="$STR_A3_animationsources_showbagshull0";
+			author="$STR_A3_Bohemia_Interactive";
+			source="user";
+			animPeriod=0.001;
+			initPhase=0;
+			mass=-50;
+		};
+		class showCanisters
+		{
+			displayName="$STR_A3_animationsources_showcanistershull0";
+			author="$STR_A3_Bohemia_Interactive";
+			source="user";
+			animPeriod=0.001;
+			initPhase=0;
+			mass=-50;
+		};
+		class showTools
+		{
+			displayName="$STR_A3_animationsources_showtoolshull0";
+			author="$STR_A3_Bohemia_Interactive";
+			source="user";
+			animPeriod=0.001;
+			initPhase=0;
+			mass=-50;
+		};
 		class showCamonetHull
 		{
 			displayName="$STR_A3_animationsources_showcamonethull0";

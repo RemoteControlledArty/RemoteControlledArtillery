@@ -1,0 +1,10 @@
+hiddenSelectionsTextures[]=
+{
+	"qin_titus\data\skins\wdl2\karoserie1_wdl2.paa",
+	"qin_titus\data\skins\wdl2\karoserie2_wdl2.paa",
+	"qin_titus\data\skins\wdl2\karoserie3_wdl2.paa",
+	"qin_titus\data\skins\wdl2\arx20_wdl2.paa",
+	"qin_titus\data\skins\wdl2\interier1_wdl2.paa",
+	"qin_titus\data\skins\wdl2\interier2_wdl2.paa",
+	"qin_titus\data\camonet_wdl2_co.paa"
+};

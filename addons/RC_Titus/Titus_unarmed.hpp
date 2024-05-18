@@ -59,21 +59,8 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 			primaryObserver=0;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			commanding=4;
-
-			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			//personTurretAction="";	//no effect
-			//forceHideCommander=1;	//makes view bug
-			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			//turretInfoType="RscWeaponRangeFinder";
-			//turretInfoType="";
-
-			gunnerAction="";
-			//canHideGunner=1;
-			//viewGunnerInExternal=1;
 			isPersonTurret=0;
-			//animationSourceHatch="hatch_3";
-			personTurretAction="";
+			commanding=4;
 
 			class ViewOptics: ViewOptics
 			{
@@ -271,30 +258,5 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 		};
 	};
 };
-class RC_Titus_unarmed_WD: RC_Titus_unarmed_D
-{
-	editorPreview="qin_titus\data\preview\titus_unarmed_wdl.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"qin_titus\data\skins\wdl\karoserie1_wdl.paa",
-		"qin_titus\data\skins\wdl\karoserie2_wdl.paa",
-		"qin_titus\data\skins\wdl\karoserie3_wdl.paa",
-		"qin_titus\data\skins\wdl\arx20_wdl.paa",
-		"qin_titus\data\skins\wdl\interier1_wdl.paa",
-		"qin_titus\data\skins\wdl\interier2_wdl.paa",
-		"qin_titus\data\camonet_wdl_co.paa"
-	};
-};
-class RC_Titus_unarmed_A: RC_Titus_unarmed_D
-{
-	hiddenSelectionsTextures[]=
-	{
-		"qin_titus\data\skins\wdl2\karoserie1_wdl2.paa",
-		"qin_titus\data\skins\wdl2\karoserie2_wdl2.paa",
-		"qin_titus\data\skins\wdl2\karoserie3_wdl2.paa",
-		"qin_titus\data\skins\wdl2\arx20_wdl2.paa",
-		"qin_titus\data\skins\wdl2\interier1_wdl2.paa",
-		"qin_titus\data\skins\wdl2\interier2_wdl2.paa",
-		"qin_titus\data\camonet_wdl2_co.paa"
-	};
-};
+
+#include "\RC_Titus\include_unarmed.hpp"

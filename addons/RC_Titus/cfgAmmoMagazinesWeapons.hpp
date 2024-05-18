@@ -185,6 +185,10 @@ class CfgWeapons
 		canLock=2;
 		displayName="20mm AC";
 
+		ballisticsComputer="2 + 16";
+		FCSMaxLeadSpeed=30.555599;
+		FCSZeroingDelay=1;
+
 		magazines[]=
 		{
 			"RC_QIN_100Rnd_20mm_T_R",

@@ -1,0 +1,11 @@
+editorPreview="qin_titus\data\preview\titus_unarmed_wdl.jpg";
+hiddenSelectionsTextures[]=
+{
+	"qin_titus\data\skins\wdl\karoserie1_wdl.paa",
+	"qin_titus\data\skins\wdl\karoserie2_wdl.paa",
+	"qin_titus\data\skins\wdl\karoserie3_wdl.paa",
+	"qin_titus\data\skins\wdl\arx20_wdl.paa",
+	"qin_titus\data\skins\wdl\interier1_wdl.paa",
+	"qin_titus\data\skins\wdl\interier2_wdl.paa",
+	"qin_titus\data\camonet_wdl_co.paa"
+};

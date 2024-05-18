@@ -38,10 +38,31 @@ class CfgPatches
 			RC_Titus_MMG_WD_I
 		};
 
+		ammo[]=
+		{
+			RC_QIN_20mm_T_R,
+			RC_QIN_20mm_T_G,
+			RC_QIN_20mm_T_Y,
+			RC_QIN_338_T_R,
+			RC_QIN_338_T_G,
+			RC_QIN_338_T_Y
+		};
+
+		magazines[]=
+		{
+			RC_QIN_100Rnd_20mm_T_R,
+			RC_QIN_100Rnd_20mm_T_G,
+			RC_QIN_100Rnd_20mm_T_Y,
+			RC_QIN_150Rnd_338_T_R,
+			RC_QIN_150Rnd_338_T_G,
+			RC_QIN_150Rnd_338_T_Y
+		};
+
 		weapons[]=
 		{
-			RC_Titus_AC,
-			RC_Titus_HMG
+			RC_QIN_20mm_AC,
+			RC_QIN_338_MMG1,
+			RC_QIN_338_MMG2
 		};
 
 		requiredAddons[]=
@@ -59,7 +80,6 @@ class CfgPatches
 class CfgEditorSubcategories
 {
 	class RC_Titus_subcat {displayname="Titus MRAP";};
-	//class RC_IMV_armed_subcat {displayname="IMV's (armed)";};
 };
 
 

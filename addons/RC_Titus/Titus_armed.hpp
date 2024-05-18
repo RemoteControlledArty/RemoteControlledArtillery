@@ -213,33 +213,6 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 		class CargoTurret_02: CargoTurret_02 {};
 	};
 };
-class RC_Titus_AC_WD: RC_Titus_AC_D
-{
-	editorPreview="qin_titus\data\preview\titus_arx20_wdl.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"qin_titus\data\skins\wdl\karoserie1_wdl.paa",
-		"qin_titus\data\skins\wdl\karoserie2_wdl.paa",
-		"qin_titus\data\skins\wdl\karoserie3_wdl.paa",
-		"qin_titus\data\skins\wdl\arx20_wdl.paa",
-		"qin_titus\data\skins\wdl\interier1_wdl.paa",
-		"qin_titus\data\skins\wdl\interier2_wdl.paa",
-		"qin_titus\data\camonet_wdl_co.paa"
-	};
-};
-class RC_Titus_AC_A: RC_Titus_AC_D
-{
-	hiddenSelectionsTextures[]=
-	{
-		"qin_titus\data\skins\wdl2\karoserie1_wdl2.paa",
-		"qin_titus\data\skins\wdl2\karoserie2_wdl2.paa",
-		"qin_titus\data\skins\wdl2\karoserie3_wdl2.paa",
-		"qin_titus\data\skins\wdl2\arx20_wdl2.paa",
-		"qin_titus\data\skins\wdl2\interier1_wdl2.paa",
-		"qin_titus\data\skins\wdl2\interier2_wdl2.paa",
-		"qin_titus\data\camonet_wdl2_co.paa"
-	};
-};
 
 
 class RC_Titus_MMG_D: RC_Titus_AC_D
@@ -271,8 +244,8 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 			primaryObserver=0;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			commanding=4;
 			isPersonTurret=0;
+			commanding=4;
 
 			class ViewOptics: ViewOptics
 			{
@@ -306,6 +279,7 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 			primaryGunner=0;
 			primaryObserver=1;
 			showAllTargets="2 + 4";
+			commanding=3;
 
 			class ViewOptics: ViewOptics
 			{
@@ -420,30 +394,5 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 		class CargoTurret_02: CargoTurret_02 {};
 	};
 };
-class RC_Titus_MMG_WD: RC_Titus_MMG_D
-{
-	editorPreview="qin_titus\data\preview\titus_arx20_wdl.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"qin_titus\data\skins\wdl\karoserie1_wdl.paa",
-		"qin_titus\data\skins\wdl\karoserie2_wdl.paa",
-		"qin_titus\data\skins\wdl\karoserie3_wdl.paa",
-		"qin_titus\data\skins\wdl\arx20_wdl.paa",
-		"qin_titus\data\skins\wdl\interier1_wdl.paa",
-		"qin_titus\data\skins\wdl\interier2_wdl.paa",
-		"qin_titus\data\camonet_wdl_co.paa"
-	};
-};
-class RC_Titus_MMG_A: RC_Titus_MMG_D
-{
-	hiddenSelectionsTextures[]=
-	{
-		"qin_titus\data\skins\wdl2\karoserie1_wdl2.paa",
-		"qin_titus\data\skins\wdl2\karoserie2_wdl2.paa",
-		"qin_titus\data\skins\wdl2\karoserie3_wdl2.paa",
-		"qin_titus\data\skins\wdl2\arx20_wdl2.paa",
-		"qin_titus\data\skins\wdl2\interier1_wdl2.paa",
-		"qin_titus\data\skins\wdl2\interier2_wdl2.paa",
-		"qin_titus\data\camonet_wdl2_co.paa"
-	};
-};
+
+#include "\RC_Titus\include_armed.hpp"
