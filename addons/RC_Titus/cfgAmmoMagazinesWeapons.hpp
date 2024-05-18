@@ -184,6 +184,7 @@ class CfgWeapons
 	{
 		canLock=2;
 		displayName="20mm AC";
+		magazineReloadTime=10;
 
 		ballisticsComputer="2 + 16";
 		FCSMaxLeadSpeed=30.555599;
