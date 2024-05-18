@@ -316,6 +316,7 @@ new:
 -added radar warning receivers
 -added FPV UAV with explosive charge
 -script performance increases
+-RC Titus MRAP if mod is installed
 
 
 DONE - QUALITY OF LIFE:
