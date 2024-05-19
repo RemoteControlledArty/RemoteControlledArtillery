@@ -718,7 +718,305 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 	};
 };
 
-class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
+class RC_M2A3_BUSKIII_IFV_D_test: RC_M2A3_BUSKIII_IFV_D_base
+{
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			showAllTargets="2 + 4";
+			commanding=3;
+			//minElev=-9;
+			//maxElev=57;
+			//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+
+			//allowTabLock=1;
+
+			class OpticsIn
+			{
+				class Wide
+				{
+					opticsDisplayName="60HZ";
+					initAngleX=0;
+					minAngleX=-30;
+					maxAngleX=30;
+					initAngleY=0;
+					minAngleY=-100;
+					maxAngleY=100;
+					initFov=0.9;
+					minFov=0.0166;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"Normal",
+						"Ti"
+					};
+					thermalMode[]={0};
+					gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
+					gunnerOpticsEffect[]={};
+					hitPoint="Hit_Optics_Gnr";
+				};
+			};
+
+			/*
+			weapons[]=
+			{
+				"RHS_weap_M242BC",
+				"rhs_weap_m240_bradley_coax",
+				"Rhs_weap_TOW_Launcher",
+				"rhs_weap_fcs_ammo",
+
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"rhs_mag_1100Rnd_762x51_M240",
+				"rhs_mag_1100Rnd_762x51_M240",
+				"rhs_mag_230Rnd_25mm_M242_HEI",
+				"rhs_mag_230Rnd_25mm_M242_HEI",
+				"rhs_mag_230Rnd_25mm_M242_HEI",
+				"rhs_mag_70Rnd_25mm_M242_APFSDS",
+				"rhs_mag_70Rnd_25mm_M242_APFSDS",
+				"rhs_mag_70Rnd_25mm_M242_APFSDS",
+				"rhs_mag_70Rnd_25mm_M242_APFSDS",
+				"rhs_mag_70Rnd_25mm_M242_APFSDS",
+				"rhs_mag_2Rnd_TOW2A",
+				"rhs_mag_2Rnd_TOW2A",
+				"rhs_mag_2Rnd_TOW2A",
+				"rhs_mag_2Rnd_TOW2BB",
+				"rhs_laserfcsmag",
+
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+			*/
+
+			/*
+			weapons[]=
+			{
+				"RC_RHS_weap_M242BC",
+				"RC_rhs_weap_m240_bradley_coax",
+				"RC_Rhs_weap_TOW_Launcher",
+				"RC_rhs_weap_fcs_ammo",
+
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_rhs_mag_1100Rnd_762x51_M240",
+				"RC_rhs_mag_1100Rnd_762x51_M240",
+				"RC_rhs_mag_230Rnd_25mm_M242_HEI",
+				"RC_rhs_mag_230Rnd_25mm_M242_HEI",
+				"RC_rhs_mag_230Rnd_25mm_M242_HEI",
+				"RC_rhs_mag_70Rnd_25mm_M242_APFSDS",
+				"RC_rhs_mag_70Rnd_25mm_M242_APFSDS",
+				"RC_rhs_mag_70Rnd_25mm_M242_APFSDS",
+				"RC_rhs_mag_70Rnd_25mm_M242_APFSDS",
+				"RC_rhs_mag_70Rnd_25mm_M242_APFSDS",
+				"RC_rhs_mag_2Rnd_TOW2A",
+				"RC_rhs_mag_2Rnd_TOW2A",
+				"RC_rhs_mag_2Rnd_TOW2A",
+				"RC_rhs_mag_2Rnd_TOW2BB",
+				"RC_rhs_laserfcsmag",
+
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+			*/
+			
+			/*
+			class OpticsIn
+			{
+				class Wide
+				{
+					opticsDisplayName="WIDE";
+					initAngleX=0;
+					minAngleX=-30;
+					maxAngleX=30;
+					initAngleY=0;
+					minAngleY=-100;
+					maxAngleY=100;
+					initFov=0.9;
+					minFov=0.0166;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"Normal",
+						"Ti"
+					};
+					thermalMode[]={0};
+					//thermalMode[]={4};
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_ISU";
+					gunnerOpticsEffect[]={};
+					hitPoint="Hit_Optics_Gnr";
+				};
+				//class Narrow: Wide
+				//{
+				//	opticsDisplayName="NARROW";
+				//	initFov=0.0583333;
+				//	minFov=0.0583333;
+				//	maxFov=0.0583333;
+				//};
+			};
+			*/
+
+			/*
+			class OpticsIn
+			{
+				class Wide: RCWSOptics
+				{
+					initAngleX=0;
+					minAngleX=-30;
+					maxAngleX=30;
+					initAngleY=0;
+					minAngleY=-100;
+					maxAngleY=100;
+
+					initFov=0.9;
+					minFov=0.0166;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"Normal",
+						"TI"
+					};
+					thermalMode[]={0};
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					gunnerOpticsEffect[]={};
+				};
+			};
+			*/
+			
+			class Turrets: Turrets
+			{
+				class CommanderOptics : CommanderOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+					showAllTargets="2 + 4";
+					//turretInfoType="RscOptics_MBT_03_gunner";
+					commanding=2;
+
+					/*
+					class ViewOptics
+					{
+						initAngleX=0;
+						minAngleX=-30;
+						maxAngleX=30;
+						initAngleY=0;
+						minAngleY=-100;
+						maxAngleY=100;
+						initFov=0.155;
+						minFov=0.067000002;
+						maxFov=0.155;
+					};
+					*/
+
+					/*
+					class OpticsIn
+					{
+						class VisionBlock
+						{
+							opticsDisplayName="periscope";
+							initAngleX=0;
+							minAngleX=-30;
+							maxAngleX=30;
+							initAngleY=0;
+							minAngleY=-100;
+							maxAngleY=100;
+							initfov=0.9;
+							minFov=0.0166;
+							maxFov=0.9;
+							visionMode[]=
+							{
+								"Normal",
+								"Ti"
+							};
+							thermalMode[]={0};
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_vision_block";
+							gunnerOpticsEffect[]={};
+							hitPoint="Hit_Optics_Cdr_Peri";
+						};
+						class Wide
+						{
+							camPos="gunnerview";
+							opticsDisplayName="WIDE";
+							initAngleX=0;
+							minAngleX=-30;
+							maxAngleX=30;
+							initAngleY=0;
+							minAngleY=-100;
+							maxAngleY=100;
+							initfov=0.9;
+							minFov=0.0166;
+							maxFov=0.9;
+							visionMode[]=
+							{
+								"Normal",
+								"Ti"
+							};
+							thermalMode[]={0};
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_ISU";
+							gunnerOpticsEffect[]={};
+							hitPoint="Hit_Optics_Gnr";
+						};
+					};
+					*/
+
+					/*
+					class OpticsIn
+					{
+						class Wide: RCWSOptics
+						{
+							//directionStabilized=1;	//unfortunately causes spinning camera bug
+
+							initAngleX=0;
+							minAngleX=-30;
+							maxAngleX=30;
+							initAngleY=0;
+							minAngleY=-100;
+							maxAngleY=100;
+
+							initFov=0.9;
+							minFov=0.0166;
+							maxFov=0.9;
+							visionMode[]=
+							{
+								"Normal",
+								"TI"
+							};
+							thermalMode[]={0};
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+							gunnerOpticsEffect[]={};
+						};
+					};
+					*/
+
+					/*
+					//no stabilization effect
+					class ViewOptics: ViewOptics
+					{
+						directionStabilized=1;
+						
+						initFov=0.9;
+						minFov=0.0166;
+						maxFov=0.9;
+						visionMode[]=
+						{
+							"Normal",
+							"TI"
+						};
+						thermalMode[]={0};
+					};
+					*/
+				};
+			};
+		};
+	};
+};
+
+class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D_test
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -787,7 +1085,7 @@ class RC_AMPV_BUSKIII_ICV_D_I: RC_AMPV_BUSKIII_ICV_D_B
 };
 */
 
-
+/*
 class RC_M2A3_BUSKIII_DL_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 {
 	class EventHandlers: EventHandlers
@@ -810,3 +1108,4 @@ class RC_M2A3_BUSKIII_DL_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 	crew="";
 	hasDriver=-1;
 };
+*/
