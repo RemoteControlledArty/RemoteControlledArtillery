@@ -115,6 +115,16 @@ class RC_Howitzer_A: RC_Howitzer_base
 
 	class AnimationSources: AnimationSources
 	{
+		class recoil_source
+		{
+			source="reload";
+			weapon="RC_155mm_AMOS_V4";
+		};
+		class muzzle_hide_arty
+		{
+			source="reload";
+			weapon="RC_155mm_AMOS_V4";
+		};
 		class showCamonetPlates1: showCamonetPlates1
 		{
 			initPhase=1;
@@ -504,6 +514,16 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 
 	class AnimationSources: AnimationSources
 	{
+		class recoil_source
+		{
+			source="reload";
+			weapon="RC_155mm_AMOS_V4";
+		};
+		class muzzle_hide_arty
+		{
+			source="reload";
+			weapon="RC_155mm_AMOS_V4";
+		};
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=1;
@@ -569,6 +589,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 					initFov=0.125;
 					minFov=0.0125;
 					maxFov=0.89999998;
+					
 					visionMode[]=
 					{
 						"Normal",
@@ -685,6 +706,7 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 	class Turrets;
 	class MainTurret;
 	class Components;
+	class AnimationSources;
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1;
@@ -704,6 +726,22 @@ class RC_Static_Arty: RC_Static_Arty_base
 	forceInGarage=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+
+	/*
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_ShipCannon_120mm_V4";
+		};
+		class muzzle_hide_cannon
+		{
+			source="reload";
+			weapon="RC_ShipCannon_120mm_V4";
+		};
+	};
+	*/
 
 	class Turrets: Turrets
 	{

@@ -49,6 +49,50 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_QIN_20mm_AC";
+		};
+		class muzzle2_rot
+		{
+			source="ammorandom";
+			weapon="RC_QIN_338_MMG2";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_QIN_20mm_AC";
+		};
+		class muzzle2_hide
+		{
+			source="reload";
+			weapon="RC_QIN_338_MMG2";
+		};
+		class Door_LF: Door_LF
+		{
+			animPeriod=0.5;
+		};
+		class Door_RF: Door_RF
+		{
+			animPeriod=0.5;
+		};
+		class Door_rear: Door_rear
+		{
+			animPeriod=0.8;
+		};
+		class comp_camonet: comp_camonet
+		{
+			initPhase=1;
+		};
+		class comp_klec: comp_klec
+		{
+			initPhase=1;
+		};
+	};
+
 	class Turrets: Turrets
 	{
 		class CommanderTurret: CommanderTurret
@@ -235,6 +279,20 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 	forceInGarage=1;
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_QIN_338_MMG1";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_QIN_338_MMG1";
+		};
+	};
 
 	class Turrets: Turrets
 	{

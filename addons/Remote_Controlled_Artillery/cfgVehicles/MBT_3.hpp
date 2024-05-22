@@ -653,6 +653,43 @@ class RC_MBT_3_WD: RC_MBT_3_G
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_cannon_125mm_advanced";
+		};
+		class muzzle_rot_coax
+		{
+			source="ammorandom";
+			weapon="RC_MMG_93x64_coax";
+		};
+		class muzzle_hide_coax
+		{
+			source="reload";
+			weapon="RC_MMG_93x64_coax";
+		};
+		class recoil_source
+		{
+			source="reload";
+			weapon="RC_cannon_125mm_advanced";
+		};
+		class zeroing_cannon
+		{
+			source="zeroing";
+			weapon="RC_cannon_125mm_advanced";
+		};
+		/*
+		class muzzle_rot_hmg
+		{
+			source="ammorandom";
+			weapon="HMG_127_APC";
+		};
+		*/
+		class com_gun_reload
+		{
+			source="reload";
+			weapon="RC_autocannon_30mm_RCWS";
+		};
 		class showCamonetCannon: showCamonetCannon
 		{
 			initPhase=1;

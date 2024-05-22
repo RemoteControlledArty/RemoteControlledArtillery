@@ -181,6 +181,26 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_GMG_40mm";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_GMG_40mm";
+		};
+		class revolving_hmg
+		{
+			source="revolving";
+			weapon="RC_HMG_127_APC";
+		};
+		class revolving_gmg
+		{
+			source="revolving";
+			weapon="RC_GMG_40mm";
+		};
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=1;

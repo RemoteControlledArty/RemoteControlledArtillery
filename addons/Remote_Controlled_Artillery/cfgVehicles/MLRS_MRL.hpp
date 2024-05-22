@@ -109,6 +109,16 @@ class RC_MLRS_A: RC_MLRS_base
 
 	class AnimationSources: AnimationSources
 	{
+		class Missiles_revolving
+		{
+			source="revolving";
+			weapon="RC_rockets_230mm_GAT";
+		};
+		class muzzle_hide_missiles
+		{
+			source="reload";
+			weapon="RC_rockets_230mm_GAT";
+		};
 		class showCamonetPlates1: showCamonetPlates1
 		{
 			initPhase=1;
@@ -369,6 +379,15 @@ class RC_MRL_DIG: RC_MRL_base
 
 				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class Missiles_revolving
+		{
+			source="revolving";
+			weapon="RC_rockets_230mm_GAT";
 		};
 	};
 

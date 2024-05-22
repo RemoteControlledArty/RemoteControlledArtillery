@@ -8,6 +8,7 @@ class RC_Static_AA_A_base: B_static_AA_F
 	class ViewOptics;
 	class assembleInfo;
 	class Components;
+	class AnimationSources;
 	scope=0;
 	scopeCurator=0;
 };
@@ -194,6 +195,35 @@ class RC_Static_AA_A: RC_Static_AA_A_base
 					};
 				};
 			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_source
+		{
+			source="reload";
+			weapon="missiles_titan_static";
+		};
+		class muzzle_source_rot
+		{
+			source="ammorandom";
+			weapon="missiles_titan_static";
+		};
+		class ReloadAnim
+		{
+			source="reload";
+			weapon="missiles_titan_static";
+		};
+		class ReloadMagazine
+		{
+			source="reloadmagazine";
+			weapon="missiles_titan_static";
+		};
+		class Revolving
+		{
+			source="revolving";
+			weapon="missiles_titan_static";
 		};
 	};
 };

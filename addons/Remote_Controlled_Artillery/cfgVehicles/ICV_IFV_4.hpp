@@ -617,6 +617,21 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_40mm_CTWS";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_autocannon_40mm_CTWS";
+		};
+		class revolving_cannon
+		{
+			source="revolving";
+			weapon="RC_autocannon_40mm_CTWS";
+		};
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=1;
@@ -770,7 +785,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 					maxAngleY=100;
 
 					initFov=0.9;
-					minFov=0.0166;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -819,7 +834,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 							maxAngleY=100;
 
 							initFov=0.9;
-							minFov=0.0166;
+							minFov=0.02;
 							maxFov=0.9;
 							visionMode[]=
 							{
@@ -841,7 +856,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 						directionStabilized=1;
 						
 						initFov=0.9;
-						minFov=0.0166;
+						minFov=0.02;
 						maxFov=0.9;
 						visionMode[]=
 						{

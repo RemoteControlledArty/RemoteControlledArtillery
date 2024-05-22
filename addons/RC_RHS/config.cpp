@@ -2,7 +2,6 @@ class CfgPatches
 {
 	class RC_RHS
 	{
-		//skipWhenMissingDependencies=1;
 		name="Remote Controlled RHS";
 		author="Ascent";
 
@@ -21,18 +20,19 @@ class CfgPatches
 
 		weapons[]=
 		{
-			RC_RHS_AC,
-			RC_RHS_MMG
+			RC_RHS_weap_m240_bradley_coax,
+			RC_RHS_weap_M242BC,
+			RC_RHS_weap_TOW_Launcher
 		};
 
 		requiredAddons[]=
 		{
-			"A3_Weapons_F",
-			"A3_Data_F_Enoch_Loadorder",
 			"cba_main",
-			"Remote_Controlled_Artillery",
+			"RC_Artillery",
 			"RHS_US_A2Port_Armor"
 		};
+
+		//skipWhenMissingDependencies=1;
 	};
 };
 
@@ -42,7 +42,7 @@ class CfgFunctions
 {
 	class RC
 	{
-		class RC_Titus
+		class RC_RHS
 		{
 		};
 	};
@@ -53,7 +53,7 @@ class CfgFunctions
 /*
 class CfgEditorSubcategories
 {
-	class RC_Bradley_subcat {displayname="Bradley";};
+	class RC_RHS_subcat {displayname="RHS";};
 };
 */
 
@@ -74,20 +74,19 @@ class RCWSOptics;
 class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
-/*
+
 class CfgAmmo
 {
-	#include "\RC_Titus\Ammo.hpp"
+	#include "\RC_RHS\cfgAmmo.hpp"
 };
 class CfgMagazines
 {
-	#include "\RC_Titus\Magazines.hpp"
+	#include "\RC_RHS\cfgMagazines.hpp"
 };
 class CfgWeapons
 {
-	#include "\RC_Titus\Weapons.hpp"
+	#include "\RC_RHS\cfgWeapons.hpp"
 };
-*/
 
 class CfgVehicles
 {

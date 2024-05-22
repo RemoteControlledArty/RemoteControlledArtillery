@@ -451,6 +451,31 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_cannon_120mm";
+		};
+		class muzzle_rot_coax
+		{
+			source="ammorandom";
+			weapon="RC_MMG_338_MBT_coax";
+		};
+		class muzzle_rot_hmg
+		{
+			source="ammorandom";
+			weapon="RC_MMG_338_MBT";
+		};
+		class muzzle_hide_coax
+		{
+			source="reload";
+			weapon="RC_MMG_338_MBT_coax";
+		};
+		class recoil_source
+		{
+			source="reload";
+			weapon="RC_cannon_120mm";
+		};
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=1;

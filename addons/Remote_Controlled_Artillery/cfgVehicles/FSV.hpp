@@ -2,8 +2,8 @@
 class B_AFV_Wheeled_01_up_cannon_F;
 class RC_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 {
-	/*
 	class AnimationSources;
+	/*
 	class showCamonetHull;
 	class showCamonetCannon;
 	class showCamonetTurret;
@@ -153,9 +153,29 @@ class RC_FSV_A: RC_FSV_A_Base
 		};
 	};
 
-	/*
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_hide_cannon
+		{
+			source="reload";
+			weapon="RC_cannon_120mm";
+		};
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_cannon_120mm";
+		};
+		class muzzle_rot_HMG
+		{
+			source="ammorandom";
+			weapon="RC_MMG_338_FSV_coax";
+		};
+		class cannon_120mm_revolving
+		{
+			source="revolving";
+			weapon="RC_cannon_120mm";
+		};
+		/*
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=1;
@@ -172,8 +192,9 @@ class RC_FSV_A: RC_FSV_A_Base
 		{
 			initPhase=1;
 		};
+		*/
 	};
-	*/
+
 	animationList[]=
 	{
 		"showCamonetHull",
@@ -226,7 +247,7 @@ class RC_FSV_A: RC_FSV_A_Base
 					maxAngleY=100;
 
 					initFov=0.9;
-					minFov=0.0166;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -382,7 +403,7 @@ class RC_FSV_A: RC_FSV_A_Base
 							maxAngleY=100;
 
 							initFov=0.9;
-							minFov=0.0166;
+							minFov=0.02;
 							maxFov=0.9;
 							visionMode[]=
 							{
@@ -405,7 +426,7 @@ class RC_FSV_A: RC_FSV_A_Base
 						minAngleY=-100;
 						maxAngleY=100;
 						initFov=0.9;
-						minFov=0.0166;
+						minFov=0.02;
 						maxFov=0.9;
 						visionMode[]=
 						{

@@ -326,7 +326,44 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	//showAimCursorInternal=1; //which effect? maybe coordination improving?
+
+	class HE: HE
+	{
+		magazines[]=
+		{
+			"RC_100Rnd_30mm_MP_T_R",
+			"RC_100Rnd_30mm_MP_T_G",
+			"RC_100Rnd_30mm_MP_T_Y",
+			"RC_100Rnd_30mm_GPR_T_R",
+			"RC_100Rnd_30mm_GPR_T_G",
+			"RC_100Rnd_30mm_GPR_T_Y"
+			//"RC_100Rnd_30mm_Smoke"
+		};
+	};
+	class AP: AP
+	{
+		magazines[]=
+		{
+			"RC_100Rnd_30mm_APFSDS_T_R",
+			"RC_100Rnd_30mm_APFSDS_T_G",
+			"RC_100Rnd_30mm_APFSDS_T_Y"
+		};
+	};
+};
+
+
+//Warrior AC
+class autocannon_30mm;
+class RC_autocannon_30mm_base: autocannon_30mm
+{
+	class HE;
+	class AP;
+};
+class RC_autocannon_30mm: RC_autocannon_30mm_base
+{
+	author="Ascent";
+	canLock=2;
+	FCSZeroingDelay=0.5;
 
 	class HE: HE
 	{
@@ -364,7 +401,6 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 
 	class HE: HE
 	{

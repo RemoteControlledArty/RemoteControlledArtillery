@@ -170,30 +170,6 @@ class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayMan
 	};
 };
 
-class AnimationSources: AnimationSources
-{
-	class Door_LF: Door_LF
-	{
-		animPeriod=0.5;
-	};
-	class Door_RF: Door_RF
-	{
-		animPeriod=0.5;
-	};
-	class Door_rear: Door_rear
-	{
-		animPeriod=0.8;
-	};
-	class comp_camonet: comp_camonet
-	{
-		initPhase=1;
-	};
-	class comp_klec: comp_klec
-	{
-		initPhase=1;
-	};
-};
-
 animationList[]=
 {
 	"comp_klec",

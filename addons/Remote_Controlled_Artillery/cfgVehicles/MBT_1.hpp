@@ -113,6 +113,41 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_cannon_120mm";
+		};
+		class recoil_source
+		{
+			source="reload";
+			weapon="RC_cannon_120mm";
+		};
+		class muzzle_hide_cannon
+		{
+			source="reload";
+			weapon="RC_cannon_120mm";
+		};
+		class muzzle_rot_coax
+		{
+			source="ammorandom";
+			weapon="RC_MMG_338_MBT_coax";
+		};
+		class muzzle_hide_coax
+		{
+			source="reload";
+			weapon="RC_MMG_338_MBT_coax";
+		};
+		class muzzle_rot_cmdr
+		{
+			source="ammorandom";
+			weapon="RC_MMG_338_MBT";
+		};
+		class commander_gun_recoil
+		{
+			source="reload";
+			weapon="RC_MMG_338_MBT";
+		};
 		class showCamonetPlates1: showCamonetPlates1
 		{
 			initPhase=1;

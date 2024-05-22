@@ -25,7 +25,7 @@ TO DO - BUGFIXES:
 
 -medical truck respawn script not working in multiplayer (cfgVehicles, RespawnTruck.hpp)
 
--Remove ICV IV & V "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
+-Remove ICV 4 "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
 -attemt to (unclear if possible) giving working waypoints to ICV/IFV even when sitting in vehicle (those waypoints bug, and have different extra markings)
 
 -artillery computer is supposedly disabled for all assets, not just of the mod
@@ -37,9 +37,15 @@ TO DO - BUGFIXES:
 
 TO DO - FEATURES:
 
+-when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
+-maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
+-fix for someone remotecontrolling gunner player, bugging them
+
+-add sensor to mortar carrier camera
+-video about vics & fpv
+
 -doublecheck mortar laser guided accuary in MP
 -"almost aligned message" and +-1 accuracy clearer color difference (for smokes etc)
--earlier inittime for cannon launched NLOS ATGM
 
 CAR Script for Zeus:
 -EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided
@@ -49,25 +55,8 @@ CAR Script for Zeus:
 -locality fix server cba EH
 -player local fog AR-1 viewdistance limitation instead, then allow thermal? or https://community.bistudio.com/wiki/disableTIEquipment
 
-next:
--getout & no players in vic = engineoff
-
--when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
--driverless "take controls" check
--check if "release controls" triggers script and assigns someone else
--test g/c "take controls" in mp
--"release controls to overwrite drive controls", "overwritten driver controls", vehicle player vehicleChat "vehicleChat";
-	*what if statement to check if EH client is in vehicle? to not trigger message multiple times
-
--maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
--fix for someone remotecontrolling gunner player, bugging them
-
--add sensor to mortar carrier camera
--video about vics & fpv
-
 
 generally:
--update list & readme
 
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
 -engineoff script doesnt need to be in init if person is connected to uav, with soon arma update it also wouldnt block taking controls for gaining locality, for example when the other is uncon
@@ -83,7 +72,7 @@ generally:
 	Added: A new DriverOpticsIn parameter for vehicle drivers (similar to turret OpticsIn, but it uses OpticsModel instead gunnerOpticsModel for the optics model)
 
 -stabilization cfg value (camera lock) negatively impacts aiming?
--IFV II 30mm + ATGM
+-IFV 3 30mm + ATGM
 -fix driverview on IFV/FSV/MBT & Trucks
 -soon with arma update connectionfix likely wont be needed anymore
 
@@ -181,14 +170,15 @@ DONE - BUGFIXES:
 -multiple gps markers now usable, and movable
 -fixed gps marker for multiplayer
 -fixed datalink laser designator for multiplayer
--fixed IFV AA Missles
--fixed bluefor/independent Otokar Arma Commander seat
 
 new:
 -fixed multiplayer issue of gunner being unable to drive, now the driver seat is not locked anymore,
 	if the driver is shortly controlled by terminal until reacting to WASD, one can then driver from the gunner seat
 -ICV hideturret before !local check
 -fixed laser warning receivers
+-fixed IFV AA Missles
+-fixed bluefor/independent Otokar Arma Commander seat
+-rockets in MLRS/MRL and animations like recoiling barrel are now visible
 
 
 DONE - FEATURES:
@@ -300,7 +290,7 @@ DONE - FEATURES:
 -added found target highlighting to most assets
 -added select datalink target (highlighting) ability to most weapons, to improve coordination/awareness
 -added semi manned Recon ATGM & Mortar Carrier
--added Leopard MBT, T-14 MBT, Namer APC/ICV, Otokar ARMA 6x6 APC/ICV, BM-2T Stalker IFV/ICV, Warrior IFV/ICV
+-added Leopard MBT, T-14 MBT, Namer APC/ICV, Otokar ARMA 6x6 APC/ICV, BM-2T Stalker IFV/ICV, Warrior IFV
 -added laser warning receivers
 -added 30/40mm MP
 -added 125mm MP & NLOS Datalink Guided

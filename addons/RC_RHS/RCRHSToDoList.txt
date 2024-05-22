@@ -1,1 +1,0 @@
-turrets seem to be falsely loaded, or there is ai (not detected by command)

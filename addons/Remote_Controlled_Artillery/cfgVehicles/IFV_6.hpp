@@ -245,7 +245,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 
 			weapons[]=
 			{
-				"RC_autocannon_30mm_CTWS",
+				"RC_autocannon_30mm",
 				"RC_MMG_338_coax",
 				//"RC_IFV_Missle_Launcher",
 				"SmokeLauncher"
@@ -285,7 +285,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 					maxAngleY=100;
 
 					initFov=0.9;
-					minFov=0.0166;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -333,7 +333,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 							maxAngleY=100;
 
 							initFov=0.9;
-							minFov=0.0166;
+							minFov=0.02;
 							maxFov=0.9;
 							visionMode[]=
 							{
@@ -354,7 +354,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 						directionStabilized=1;
 						
 						initFov=0.9;
-						minFov=0.0166;
+						minFov=0.02;
 						maxFov=0.9;
 						visionMode[]=
 						{
@@ -587,6 +587,21 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_30mm";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_autocannon_30mm";
+		};
+		class autocannon_30mm_revolving
+		{
+			source="revolving";
+			weapon="RC_autocannon_30mm";
+		};
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=1;

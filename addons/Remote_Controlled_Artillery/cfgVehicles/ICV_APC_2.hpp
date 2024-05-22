@@ -303,17 +303,17 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 		class muzzle_rot
 		{
 			source="ammorandom";
-			weapon="GMG_40mm";
+			weapon="RC_GMG_40mm";
 		};
 		class muzzle_hide
 		{
 			source="reload";
-			weapon="GMG_40mm";
+			weapon="RC_GMG_40mm";
 		};
 		class muzzle_hide1
 		{
 			source="reload";
-			weapon="HMG_127_APC";
+			weapon="RC_HMG_127_APC";
 		};
 		class HideTurret
 		{

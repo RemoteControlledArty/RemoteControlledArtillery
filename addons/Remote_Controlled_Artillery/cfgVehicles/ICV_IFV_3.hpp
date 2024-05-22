@@ -260,6 +260,30 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 
 	class AnimationSources: AnimationSources
 	{
+		class revolving_cannon
+		{
+			source="revolving";
+			weapon="RC_autocannon_30mm_CTWS";
+		};
+		class Missiles_revolving
+		{
+			source="revolving";
+			weapon="RC_IFV_Missle_Launcher";
+		};
+		class Missiles_reloadMagazine: Missiles_revolving
+		{
+			source="reloadMagazine";
+		};
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_30mm_CTWS";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_autocannon_30mm_CTWS";
+		};
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=1;
@@ -712,7 +736,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 					maxAngleY=100;
 
 					initFov=0.9;
-					minFov=0.0166;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -761,7 +785,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 							maxAngleY=100;
 
 							initFov=0.9;
-							minFov=0.0166;
+							minFov=0.02;
 							maxFov=0.9;
 							visionMode[]=
 							{
@@ -782,7 +806,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 						directionStabilized=1;
 						
 						initFov=0.9;
-						minFov=0.0166;
+						minFov=0.02;
 						maxFov=0.9;
 						visionMode[]=
 						{
