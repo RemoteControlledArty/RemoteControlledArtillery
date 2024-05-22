@@ -349,6 +349,45 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 					commanding=2;
 					allowTabLock=1;
 
+					class ViewOptics: ViewOptics
+					{
+						initFov=0.9;
+						minFov=0.02;
+						maxFov=0.9;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG",
+							"Ti"
+						};
+						thermalMode[]={0};
+					};
+					class OpticsIn
+					{
+						class Ultrawide
+						{
+							opticsDisplayName="60HZ";
+							initAngleX=0;
+							minAngleX=-30;
+							maxAngleX=30;
+							initAngleY=0;
+							minAngleY=-100;
+							maxAngleY=100;
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+							visionMode[]=
+							{
+								"Normal",
+								"Ti"
+							};
+							thermalMode[]={0};
+							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_1x";
+							gunnerOpticsEffect[]={};
+							hitPoint="Hit_Optics_Cdr_CIV";
+						};
+					};
+
 					weapons[]=
 					{
 						"RC_Laserdesignator_vehicle",

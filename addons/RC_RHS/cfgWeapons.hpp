@@ -2,6 +2,7 @@ class rhs_weap_m240_bradley_coax;
 class RC_RHS_weap_m240_bradley_coax: rhs_weap_m240_bradley_coax
 {
 	canLock=2;
+	minZeroing=30;
 	magazines[]=
 	{
 		"RC_RHS_mag_1100Rnd_762x51_T_R"
@@ -74,7 +75,7 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 			dispersion=0.0006;
 		};
 		FCSMaxLeadSpeed = 0;
-		minZeroing = 200;
+		minZeroing = 30;
 	};
 	class AP: AP
 	{
@@ -93,7 +94,7 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 			dispersion=0.0006;
 		};
 		FCSMaxLeadSpeed = 0;
-		minZeroing = 200;
+		minZeroing = 30;
 	};
 };
 
@@ -102,6 +103,7 @@ class Rhs_weap_TOW_Launcher;
 class RC_RHS_weap_TOW_Launcher: Rhs_weap_TOW_Launcher
 {
 	canLock=2;
+	autoReload=1;
 	magazines[]=
 	{
 		"RC_RHS_mag_2Rnd_TOW2A",
