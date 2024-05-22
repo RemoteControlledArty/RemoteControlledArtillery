@@ -152,7 +152,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 					maxAngleY=100;
 
 					initFov=0.4;
-					minFov=0.0166;
+					minFov=0.02;
 					maxFov=0.4;
 					visionMode[]=
 					{
@@ -204,7 +204,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 							maxAngleY=100;
 
 							initFov=0.9;
-							minFov=0.0166;
+							minFov=0.02;
 							maxFov=0.9;
 							visionMode[]=
 							{
@@ -227,7 +227,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 						minAngleY=-100;
 						maxAngleY=100;
 						initFov=0.9;
-						minFov=0.0166;
+						minFov=0.02;
 						maxFov=0.9;
 						visionMode[]=
 						{

@@ -200,9 +200,9 @@ class RC_AA_small_WD: RC_AA_small_Base
 			class ViewOptics: ViewOptics
 			{
 				//directionStabilized=1;	//sadly creates aiming problems
-				initFov=0.89999998;
-				minFov=0.0125;
-				maxFov=0.89999998;
+				initFov=0.9;
+				minFov=0.0166;
+				maxFov=0.9;
 			};
 
 			showAllTargets="2 + 4";
@@ -500,9 +500,9 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 			class ViewOptics: ViewOptics
 			{
 				directionStabilized=1;
-				initFov=0.89999998;
-				minFov=0.0125;
-				maxFov=0.89999998;
+				initFov=0.9;
+				minFov=0.0166;
+				maxFov=0.9;
 				visionMode[]=
 				{
 					"Normal",
@@ -941,9 +941,9 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 			class ViewOptics: ViewOptics
 			{
 				//directionStabilized=1;	//sadly creates aiming problems
-				initFov=0.89999998;
-				minFov=0.0125;
-				maxFov=0.89999998;
+				initFov=0.9;
+				minFov=0.0166;
+				maxFov=0.9;
 			};
 
 			class Components: Components

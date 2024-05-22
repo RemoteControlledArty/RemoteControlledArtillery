@@ -431,6 +431,7 @@ class CfgPatches
 			RC_MMG_93x64_coax_ext,
 
 			RC_GMG_40mm,
+			RC_autocannon_30mm,
 			RC_autocannon_30mm_CTWS,
 			RC_autocannon_40mm_CTWS,
 			RC_autocannon_30mm_RCWS,

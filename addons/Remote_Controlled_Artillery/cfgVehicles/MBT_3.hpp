@@ -146,7 +146,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 					maxAngleY=100;
 
 					initFov=0.9;
-					minFov=0.0166;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -198,7 +198,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 							maxAngleY=100;
 
 							initFov=0.9;
-							minFov=0.0166;
+							minFov=0.02;
 							maxFov=0.9;
 							visionMode[]=
 							{
@@ -221,7 +221,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 						minAngleY=-100;
 						maxAngleY=100;
 						initFov=0.9;
-						minFov=0.0166;
+						minFov=0.02;
 						maxFov=0.9;
 						visionMode[]=
 						{
