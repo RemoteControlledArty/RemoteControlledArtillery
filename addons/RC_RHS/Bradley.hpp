@@ -340,10 +340,12 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 				};
 			};
 			
+			//*
 			class Turrets: Turrets
 			{
 				class CommanderOptics : CommanderOptics
-				{
+				{};
+					/*
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					commanding=2;
@@ -442,14 +444,6 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 								{
 									componentType="EmptyDisplayComponent";
 								};
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
 							};
 						};
 						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -464,13 +458,11 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 									range[]={4000,2000,1000,500};
 									resource="RscCustomInfoSensors";
 								};
-								/*
 								class VehicleMissileDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
 									source="Missile";
 								};
-								*/
 								class VehicleDriverDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
@@ -494,19 +486,12 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 								{
 									componentType="EmptyDisplayComponent";
 								};
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
 							};
 						};
 					};
-				};
+				};*/
 			};
+			//*/
 
 			class Components: Components
 			{
@@ -550,14 +535,6 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 						{
 							componentType="UAVFeedDisplayComponent";
 						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -600,14 +577,6 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 						{
 							componentType="UAVFeedDisplayComponent";
 						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
 					};
 				};
 			};
