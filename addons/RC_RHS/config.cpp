@@ -91,5 +91,5 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\RC_RHS\Bradley.hpp"
-	//#include "\RC_RHS\Stryker.hpp"
+	#include "\RC_RHS\Stryker.hpp"
 };
