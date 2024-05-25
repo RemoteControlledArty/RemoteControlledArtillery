@@ -250,39 +250,6 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 			commanding=3;
 			allowTabLock=1;
 
-			/*
-			weapons[]=
-			{
-				"RHS_weap_M242BC",
-				"rhs_weap_m240_bradley_coax",
-				"Rhs_weap_TOW_Launcher",
-				"rhs_weap_fcs_ammo",
-
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"rhs_mag_1100Rnd_762x51_M240",
-				"rhs_mag_1100Rnd_762x51_M240",
-				"rhs_mag_230Rnd_25mm_M242_HEI",
-				"rhs_mag_230Rnd_25mm_M242_HEI",
-				"rhs_mag_230Rnd_25mm_M242_HEI",
-				"rhs_mag_70Rnd_25mm_M242_APFSDS",
-				"rhs_mag_70Rnd_25mm_M242_APFSDS",
-				"rhs_mag_70Rnd_25mm_M242_APFSDS",
-				"rhs_mag_70Rnd_25mm_M242_APFSDS",
-				"rhs_mag_70Rnd_25mm_M242_APFSDS",
-				"rhs_mag_2Rnd_TOW2A",
-				"rhs_mag_2Rnd_TOW2A",
-				"rhs_mag_2Rnd_TOW2A",
-				"rhs_mag_2Rnd_TOW2BB",
-				"rhs_laserfcsmag",
-
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-			*/
-
 			weapons[]=
 			{
 				"RC_RHS_weap_M242BC",
@@ -597,7 +564,7 @@ class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 	};
 
 	displayName="M2A3 Bradley";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_RHS_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -617,44 +584,6 @@ class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 
 
 /*
-class RC_AMPV_BUSKIII_ICV_D_B: RC_M2A3_BUSKIII_IFV_D
-{
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes\initICV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
-		};
-	};
-
-	displayName="AMPV";
-	editorSubcategory="RC_Stryker_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-	faction="RC_Stryker_B";
-	side=1;
-
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="B_UAV_AI";
-	forceHideDriver=1;
-	driverForceOptics=1;
-};
-*/
-/*
-class RC_AMPV_BUSKIII_ICV_D_I: RC_AMPV_BUSKIII_ICV_D_B
-{
-
-};
-*/
-
-/*
 class RC_M2A3_BUSKIII_DL_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 {
 	class EventHandlers: EventHandlers
@@ -667,7 +596,7 @@ class RC_M2A3_BUSKIII_DL_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 	};
 
 	displayName="DL M2A3 Bradley";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_RHS_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;

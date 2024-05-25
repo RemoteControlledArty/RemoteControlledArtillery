@@ -448,7 +448,7 @@ class RC_APC_Stryker_M1126_M2_WD_B: RC_APC_Stryker_M1126_M2_WD
 	};
 
 	displayName="M1126 Stryker";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_RHS_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -465,67 +465,3 @@ class RC_APC_Stryker_M1126_M2_WD_B: RC_APC_Stryker_M1126_M2_WD
 	forceHideDriver=1;
 	driverForceOptics=1;
 };
-
-
-/*
-class RC_AMPV_BUSKIII_ICV_D_B: RC_M2A3_BUSKIII_IFV_D
-{
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes\initICV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
-		};
-	};
-
-	displayName="AMPV";
-	editorSubcategory="RC_Stryker_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-	faction="RC_Stryker_B";
-	side=1;
-
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="B_UAV_AI";
-	forceHideDriver=1;
-	driverForceOptics=1;
-};
-*/
-/*
-class RC_AMPV_BUSKIII_ICV_D_I: RC_AMPV_BUSKIII_ICV_D_B
-{
-
-};
-*/
-
-/*
-class RC_M2A3_BUSKIII_DL_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
-{
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes\initDL.hpp"
-			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
-		};
-	};
-
-	displayName="DL M2A3 Bradley";
-	editorSubcategory="RC_IFV_APC_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
-
-	crew="";
-	hasDriver=-1;
-};
-*/

@@ -50,12 +50,10 @@ class CfgFunctions
 */
 
 
-/*
 class CfgEditorSubcategories
 {
 	class RC_RHS_subcat {displayname="RHS";};
 };
-*/
 
 
 //later required sensors
