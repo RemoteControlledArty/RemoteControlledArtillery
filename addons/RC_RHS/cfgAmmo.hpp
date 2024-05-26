@@ -1,3 +1,4 @@
+//7.62x51mm
 class rhs_ammo_762x51_M80A1EPR_Ball;
 class RC_RHS_ammo_M80A1EPR_T_R: rhs_ammo_762x51_M80A1EPR_Ball
 {
@@ -17,6 +18,7 @@ class RC_RHS_ammo_M80A1EPR_T_Y: RC_RHS_ammo_M80A1EPR_T_R
 */
 
 
+//25mm
 class RHS_ammo_M792_HEI;
 class RC_RHS_ammo_M792_HEI_T_R: RHS_ammo_M792_HEI
 {
@@ -35,7 +37,6 @@ class RC_RHS_ammo_M792_HEI_T_Y: RC_RHS_ammo_M792_HEI_T_R
 };
 */
 
-
 class RHS_ammo_M919_APFSDS;
 class RC_RHS_ammo_M919_APFSDS_T_R: RHS_ammo_M919_APFSDS
 {
@@ -52,6 +53,7 @@ class RC_RHS_ammo_M919_APFSDS_T_Y: RC_RHS_ammo_M919_APFSDS_T_R
 */
 
 
+//TOW's
 class rhs_ammo_TOW2A_AT;
 class RC_RHS_ammo_TOW2A_AT: rhs_ammo_TOW2A_AT
 {
@@ -60,9 +62,52 @@ class RC_RHS_ammo_TOW2A_AT: rhs_ammo_TOW2A_AT
 	airLock=1;
 };
 
-
 class rhs_ammo_TOW2_BB;
 class RC_RHS_ammo_TOW2_BB: rhs_ammo_TOW2_BB
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+
+
+//12.7x99mm
+class rhs_ammo_127x99_Ball;
+class RC_RHS_ammo_127x99_Ball: rhs_ammo_127x99_Ball
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+
+class rhs_ammo_127x99_Ball_Tracer_Red;
+class RC_RHS_ammo_127x99_Ball_T_R: rhs_ammo_127x99_Ball_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+
+class rhs_ammo_127x99_SLAP;
+class RC_RHS_ammo_127x99_SLAP: rhs_ammo_127x99_SLAP
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+
+class rhs_ammo_127x99_SLAP_Tracer_Red;
+class RC_RHS_mag_100rnd_127x99_SLAP_T_R: rhs_ammo_127x99_SLAP_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+
+
+//40mm
+class rhs_ammo_mk19m3_M430A1;
+class RC_RHS_ammo_mk19m3_M430A1: rhs_ammo_mk19m3_M430A1
 {
 	laserLock=1;
 	irLock=1;

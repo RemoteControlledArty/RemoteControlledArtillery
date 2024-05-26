@@ -1,3 +1,4 @@
+//7.62x51mm
 class rhs_mag_1100Rnd_762x51_M240;
 class RC_RHS_mag_1100Rnd_762x51_T_R: rhs_mag_1100Rnd_762x51_M240
 {
@@ -6,13 +7,13 @@ class RC_RHS_mag_1100Rnd_762x51_T_R: rhs_mag_1100Rnd_762x51_M240
 };
 
 
+//25mm
 class rhs_mag_230Rnd_25mm_M242_HEI;
 class RC_RHS_mag_230Rnd_25mm_HEI_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_ammo_M792_HEI_T_R";
 	tracersEvery=1;
 };
-
 
 class rhs_mag_70Rnd_25mm_M242_APFSDS;
 class RC_RHS_mag_70Rnd_25mm_APFSDS_T_R: rhs_mag_70Rnd_25mm_M242_APFSDS
@@ -22,12 +23,12 @@ class RC_RHS_mag_70Rnd_25mm_APFSDS_T_R: rhs_mag_70Rnd_25mm_M242_APFSDS
 };
 
 
+//TOW's
 class rhs_mag_2Rnd_TOW2A;
 class RC_RHS_mag_2Rnd_TOW2A: rhs_mag_2Rnd_TOW2A
 {
 	ammo="RC_RHS_ammo_TOW2A_AT";
 };
-
 
 class rhs_mag_2Rnd_TOW2BB;
 class RC_RHS_mag_2Rnd_TOW2BB: rhs_mag_2Rnd_TOW2BB
@@ -107,3 +108,39 @@ class rhs_mag_2Rnd_TOW2BB: rhs_mag_2Rnd_TOW
 	displaynameshort = "BGM-71H";
 };
 */
+
+
+//12.7x99mm
+class rhs_mag_200rnd_127x99_mag;
+class RC_RHS_mag_200rnd_127x99: rhs_mag_200rnd_127x99_mag
+{
+	ammo="RC_RHS_ammo_127x99_Ball";
+};
+
+class rhs_mag_200rnd_127x99_mag_Tracer_Red;
+class RC_RHS_mag_200rnd_127x99_T_R: rhs_mag_200rnd_127x99_mag_Tracer_Red
+{
+	ammo="RC_RHS_ammo_127x99_Ball_T_R";
+	tracersEvery=1;
+};
+
+class rhs_mag_200rnd_127x99_SLAP_mag;
+class RC_RHS_mag_200rnd_127x99_SLAP: rhs_mag_200rnd_127x99_SLAP_mag
+{
+	ammo="RC_RHS_ammo_127x99_SLAP";
+};
+
+class rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red;
+class RC_RHS_mag_200rnd_127x99_SLAP_T_R: rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red
+{
+	ammo="RC_RHS_mag_100rnd_127x99_SLAP_T_R";
+	tracersEvery=1;
+};
+
+
+//40mm
+class RHS_96Rnd_40mm_MK19_M430A1;
+class RC_RHS_96Rnd_40mm_MK19_M430A1: RHS_96Rnd_40mm_MK19_M430A1
+{
+	ammo="RC_RHS_ammo_mk19m3_M430A1";
+};

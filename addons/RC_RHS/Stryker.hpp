@@ -250,38 +250,19 @@ class RC_APC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD
 			commanding=3;
 			allowTabLock=1;
 
-			/*
 			weapons[]=
 			{
-				"RC_RHS_weap_M242BC",
-				"RC_RHS_weap_m240_bradley_coax",
-				"RC_RHS_weap_TOW_Launcher",
-				"rhs_weap_fcs_ammo",
-
-				"rhsusf_weap_M257_8"
+				"RC_RHS_M2_CROWS_M151",
+				"rhsusf_weap_M6"
 			};
 			magazines[]=
 			{
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_2Rnd_TOW2A",
-				"RC_RHS_mag_2Rnd_TOW2A",
-				"RC_RHS_mag_2Rnd_TOW2A",
-				"RC_RHS_mag_2Rnd_TOW2BB",
-				"rhs_laserfcsmag",
-
-				"rhsusf_mag_L8A3_8",
-				"rhsusf_mag_L8A3_8"
+				"RC_RHS_mag_200rnd_127x99",
+				"RC_RHS_mag_200rnd_127x99_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"rhsusf_mag_L8A3_16"
 			};
-			*/
 
 			class OpticsIn
 			{
@@ -301,53 +282,7 @@ class RC_APC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD
 					thermalMode[]={0};
 					hitpoint="Hit_Optic_CROWS_Day";
 				};
-				/*
-				class DaysightWFOV: ViewOptics
-				{
-					camPos="View_CROWS";
-					opticsDisplayName="WFOV1";
-					gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_ITAS_Day_WFOV.p3d";
-					initFov=0.9;
-					minFov=0.029;
-					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					hitpoint="Hit_Optic_MITAS_Day";
-				};
-				*/
 			};
-			
-			/*
-			class OpticsIn
-			{
-				class Wide
-				{
-					opticsDisplayName="60HZ";
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
-					initFov=0.9;
-					minFov=0.02;	//realistic 12x magnification
-					maxFov=0.9;		//larger FOV for improved usability on servers without third person
-					visionMode[]=
-					{
-						"Normal",
-						"Ti"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
-					gunnerOpticsEffect[]={};
-					hitPoint="Hit_Optics_Gnr";
-				};
-			};
-			*/
 
 			class Components: Components
 			{
@@ -452,7 +387,7 @@ class RC_APC_Stryker_M1126_M2_WD_B: RC_APC_Stryker_M1126_M2_WD
 		};
 	};
 
-	displayName="M1126 Stryker";
+	displayName="M1126 M2 Stryker";
 	editorSubcategory="RC_RHS_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -470,3 +405,31 @@ class RC_APC_Stryker_M1126_M2_WD_B: RC_APC_Stryker_M1126_M2_WD
 	forceHideDriver=1;
 	driverForceOptics=1;
 };
+
+
+//USE DIFFERENT MODEL
+/*
+class RC_APC_Stryker_M1126_MK19_WD_B: RC_APC_Stryker_M1126_M2_WD_B
+{
+	displayName="M1126 Mk19 Stryker";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_RHS_MK19_CROWS_M153",
+				"rhsusf_weap_M6"
+			};
+			magazines[]=
+			{
+				"RC_RHS_96Rnd_40mm_MK19_M430A1",
+				"RC_RHS_96Rnd_40mm_MK19_M430A1",
+				"RC_RHS_96Rnd_40mm_MK19_M430A1",
+				"rhsusf_mag_L8A3_16"
+			};
+		};
+	};
+};
+*/

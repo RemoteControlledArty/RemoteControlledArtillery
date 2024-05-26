@@ -129,35 +129,43 @@ class RC_rhs_weap_fcs_ammo: rhs_weap_fcs_ammo
 };
 */
 
+
 class RHS_M2_CROWS_M151;
 class RHS_M2_CROWS_M151_base: RHS_M2_CROWS_M151
 {
 	class manual;
 };
-class RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
+class RC_RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
 {
 	canLock=2;
 	magazines[] =
 	{
-		"rhs_mag_100rnd_127x99_mag",
-		"rhs_mag_100rnd_127x99_mag_Tracer_Red",
-		"rhs_mag_100rnd_127x99_mag_Tracer_Green",
-		"rhs_mag_100rnd_127x99_mag_Tracer_Yellow",
-		"rhs_mag_100rnd_127x99_SLAP_mag",
-		"rhs_mag_100rnd_127x99_SLAP_mag_Tracer_Red",
-		"rhs_mag_100rnd_127x99_SLAP_mag_Tracer_Green",
-		"rhs_mag_100rnd_127x99_SLAP_mag_Tracer_Yellow",
-		"rhs_mag_200rnd_127x99_mag",
-		"rhs_mag_200rnd_127x99_mag_Tracer_Red",
-		"rhs_mag_200rnd_127x99_SLAP_mag",
-		"rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red",
-		"rhs_mag_400rnd_127x99_mag",
-		"rhs_mag_400rnd_127x99_mag_Tracer_Red",
-		"rhs_mag_400rnd_127x99_SLAP_mag",
-		"rhs_mag_400rnd_127x99_SLAP_mag_Tracer_Red"
+		"RC_RHS_mag_200rnd_127x99",
+		"RC_RHS_mag_200rnd_127x99_T_R",
+		"RC_RHS_mag_200rnd_127x99_SLAP",
+		"RC_RHS_mag_200rnd_127x99_SLAP_T_R"
 	};
 	class manual: manual
 	{
 		dispersion=0.001;
+	};
+};
+
+
+class RHS_MK19_CROWS_M153;
+class RHS_MK19_CROWS_M153_base: RHS_MK19_CROWS_M153
+{
+	class manual;
+};
+class RC_RHS_MK19_CROWS_M153: RHS_MK19_CROWS_M153_base
+{
+	canLock=2;
+	magazines[] =
+	{
+		"RC_RHS_96Rnd_40mm_MK19_M430A1"
+	};
+	class manual: manual
+	{
+		dispersion=0.0025;
 	};
 };
