@@ -128,3 +128,36 @@ class RC_rhs_weap_fcs_ammo: rhs_weap_fcs_ammo
 	canLock=2;
 };
 */
+
+class RHS_M2_CROWS_M151;
+class RHS_M2_CROWS_M151_base: RHS_M2_CROWS_M151
+{
+	class manual;
+};
+class RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
+{
+	canLock=2;
+	magazines[] =
+	{
+		"rhs_mag_100rnd_127x99_mag",
+		"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+		"rhs_mag_100rnd_127x99_mag_Tracer_Green",
+		"rhs_mag_100rnd_127x99_mag_Tracer_Yellow",
+		"rhs_mag_100rnd_127x99_SLAP_mag",
+		"rhs_mag_100rnd_127x99_SLAP_mag_Tracer_Red",
+		"rhs_mag_100rnd_127x99_SLAP_mag_Tracer_Green",
+		"rhs_mag_100rnd_127x99_SLAP_mag_Tracer_Yellow",
+		"rhs_mag_200rnd_127x99_mag",
+		"rhs_mag_200rnd_127x99_mag_Tracer_Red",
+		"rhs_mag_200rnd_127x99_SLAP_mag",
+		"rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red",
+		"rhs_mag_400rnd_127x99_mag",
+		"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+		"rhs_mag_400rnd_127x99_SLAP_mag",
+		"rhs_mag_400rnd_127x99_SLAP_mag_Tracer_Red"
+	};
+	class manual: manual
+	{
+		dispersion=0.001;
+	};
+};

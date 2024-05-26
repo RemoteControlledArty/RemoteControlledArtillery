@@ -253,39 +253,6 @@ class RC_APC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD
 			/*
 			weapons[]=
 			{
-				"RHS_weap_M242BC",
-				"rhs_weap_m240_bradley_coax",
-				"Rhs_weap_TOW_Launcher",
-				"rhs_weap_fcs_ammo",
-
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"rhs_mag_1100Rnd_762x51_M240",
-				"rhs_mag_1100Rnd_762x51_M240",
-				"rhs_mag_230Rnd_25mm_M242_HEI",
-				"rhs_mag_230Rnd_25mm_M242_HEI",
-				"rhs_mag_230Rnd_25mm_M242_HEI",
-				"rhs_mag_70Rnd_25mm_M242_APFSDS",
-				"rhs_mag_70Rnd_25mm_M242_APFSDS",
-				"rhs_mag_70Rnd_25mm_M242_APFSDS",
-				"rhs_mag_70Rnd_25mm_M242_APFSDS",
-				"rhs_mag_70Rnd_25mm_M242_APFSDS",
-				"rhs_mag_2Rnd_TOW2A",
-				"rhs_mag_2Rnd_TOW2A",
-				"rhs_mag_2Rnd_TOW2A",
-				"rhs_mag_2Rnd_TOW2BB",
-				"rhs_laserfcsmag",
-
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-			*/
-
-			/*
-			weapons[]=
-			{
 				"RC_RHS_weap_M242BC",
 				"RC_RHS_weap_m240_bradley_coax",
 				"RC_RHS_weap_TOW_Launcher",
@@ -315,6 +282,44 @@ class RC_APC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD
 				"rhsusf_mag_L8A3_8"
 			};
 			*/
+
+			class OpticsIn
+			{
+				class DaysightWFOV: ViewOptics
+				{
+					camPos="View_CROWS";
+					//opticsDisplayName="1.0x";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CROWS_monitor";
+					initFov=0.9;
+					minFov=0.025;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"Normal",
+						"TI"
+					};
+					thermalMode[]={0};
+					hitpoint="Hit_Optic_CROWS_Day";
+				};
+				/*
+				class DaysightWFOV: ViewOptics
+				{
+					camPos="View_CROWS";
+					opticsDisplayName="WFOV1";
+					gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_ITAS_Day_WFOV.p3d";
+					initFov=0.9;
+					minFov=0.029;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"Normal",
+						"TI"
+					};
+					thermalMode[]={0};
+					hitpoint="Hit_Optic_MITAS_Day";
+				};
+				*/
+			};
 			
 			/*
 			class OpticsIn
