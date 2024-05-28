@@ -1,4 +1,3 @@
-author="Ascent";
 faction="RemoteControlled_B";
 vehicleClass="Autonomous";
 uavCameraDriverPos="PiP0_pos";

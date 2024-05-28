@@ -14,7 +14,6 @@ class RC_M2A3_BUSKIII_D_Base: RHS_M2A3_BUSKIII
 };
 class RC_M2A3_BUSKIII_IFV_D_base: RC_M2A3_BUSKIII_D_Base
 {
-	author="Ascent";
 	scope=0;
 	scopeCurator=0;
 	forceInGarage=1;

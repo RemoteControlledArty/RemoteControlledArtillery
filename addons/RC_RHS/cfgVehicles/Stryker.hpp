@@ -17,7 +17,6 @@ class RC_Stryker_M1126_M2_WD_Base: rhsusf_stryker_m1126_m2_wd
 };
 class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 {
-	author="Ascent";
 	scope=0;
 	scopeCurator=0;
 	forceInGarage=1;
@@ -430,7 +429,6 @@ class RC_Stryker_M1126_MK19_WD_Base: rhsusf_stryker_m1126_mk19_wd
 };
 class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 {
-	author="Ascent";
 	scope=0;
 	scopeCurator=0;
 	forceInGarage=1;
