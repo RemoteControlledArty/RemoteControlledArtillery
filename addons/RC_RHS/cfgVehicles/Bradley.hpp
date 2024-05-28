@@ -236,7 +236,7 @@ class RC_M2A3_BUSKIII_IFV_D_base: RC_M2A3_BUSKIII_D_Base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
 };
 
 class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base

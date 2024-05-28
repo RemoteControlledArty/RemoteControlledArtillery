@@ -20,6 +20,11 @@ class TransportMagazines
 		magazine="MRAWS_HE_F";
 		count=5;
 	};
+	class _xx_1Rnd_HE_Grenade_shell
+	{
+		magazine="1Rnd_HE_Grenade_shell";
+		count=20;
+	};
 	class _xx_1Rnd_Smoke_Grenade_shell
 	{
 		magazine="1Rnd_Smoke_Grenade_shell";

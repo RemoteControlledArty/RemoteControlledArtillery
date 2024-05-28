@@ -10,15 +10,15 @@ class TransportMagazines
 		magazine="SmokeShell";
 		count=10;
 	};
-	class _xx_RPG7_F
+	class _xx_MRAWS_HEAT_F
 	{
-		magazine="RPG7_F";
-		count=8;
+		magazine="MRAWS_HEAT_F";
+		count=5;
 	};
-	class _xx_1Rnd_HE_Grenade_shell
+	class _xx_MRAWS_HE_F
 	{
-		magazine="1Rnd_HE_Grenade_shell";
-		count=20;
+		magazine="MRAWS_HE_F";
+		count=5;
 	};
 	class _xx_1Rnd_Smoke_Grenade_shell
 	{
@@ -33,9 +33,9 @@ class TransportMagazines
 };
 class TransportItems
 {
-	class _xx_O_UavTerminal
+	class _xx_I_UavTerminal
 	{
-		name="O_UavTerminal";
+		name="I_UavTerminal";
 		count=2;
 	};
 	class _xx_Toolkit
@@ -61,10 +61,10 @@ class TransportItems
 };
 class TransportWeapons
 {
-	class _xx_launch_RPG7_F
+	class _xx_launch_NLAW_F
 	{
-		weapon="launch_RPG7_F";
-		count=1;
+		weapon="launch_NLAW_F";
+		count=2;
 	};
 	class _xx_Improved_FOV_Laserdesignator_A
 	{

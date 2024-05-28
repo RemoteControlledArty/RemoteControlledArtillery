@@ -12,10 +12,14 @@ class CfgPatches
 			RC_Bradley_WD,
 			RC_Bradley_WD_I,
 
-			RC_Bradley_V2_D,
-			RC_Bradley_V2_D_I,
-			RC_Bradley_V2_WD,
-			RC_Bradley_V2_WD_I
+			RC_APC_Stryker_M1126_M2_D,
+			RC_APC_Stryker_M1126_M2_D_I,
+			RC_APC_Stryker_M1126_M2_WD,
+			RC_APC_Stryker_M1126_M2_WD_I,
+			RC_APC_Stryker_M1126_MK19_D,
+			RC_APC_Stryker_M1126_MK19_D_I,
+			RC_APC_Stryker_M1126_MK19_WD,
+			RC_APC_Stryker_M1126_MK19_WD_I
 		};
 
 		weapons[]=
@@ -29,10 +33,11 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
-			"RHS_US_A2Port_Armor"
+			"RHS_US_A2Port_Armor",
+			"rhsusf_c_stryker"
 		};
 
-		//skipWhenMissingDependencies=1;
+		skipWhenMissingDependencies=1;
 	};
 };
 
@@ -75,19 +80,19 @@ class DefaultVehicleSystemsDisplayManagerRight;
 
 class CfgAmmo
 {
-	#include "\RC_RHS\cfgAmmo.hpp"
+	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 class CfgMagazines
 {
-	#include "\RC_RHS\cfgMagazines.hpp"
+	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
 class CfgWeapons
 {
-	#include "\RC_RHS\cfgWeapons.hpp"
+	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
 
 class CfgVehicles
 {
-	#include "\RC_RHS\Bradley.hpp"
-	#include "\RC_RHS\Stryker.hpp"
+	#include "\RC_RHS\cfgVehicles\Bradley.hpp"
+	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
 };

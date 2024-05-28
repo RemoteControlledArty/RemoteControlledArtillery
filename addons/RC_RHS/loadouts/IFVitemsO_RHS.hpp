@@ -15,11 +15,6 @@ class TransportMagazines
 		magazine="RPG7_F";
 		count=8;
 	};
-	class _xx_1Rnd_HE_Grenade_shell
-	{
-		magazine="1Rnd_HE_Grenade_shell";
-		count=20;
-	};
 	class _xx_1Rnd_Smoke_Grenade_shell
 	{
 		magazine="1Rnd_Smoke_Grenade_shell";
