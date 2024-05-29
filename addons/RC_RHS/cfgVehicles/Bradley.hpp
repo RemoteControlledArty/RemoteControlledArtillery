@@ -316,6 +316,11 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+					showAllTargets="2 + 4";
+					commanding=2;
+					allowTabLock=1;
+					
 					/*
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
@@ -389,19 +394,20 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 							initAngleY=0;
 							minAngleY=-100;
 							maxAngleY=100;
-							initFov=0.69999999;
-							minFov=0.69999999;
-							maxFov=0.69999999;
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
 							visionMode[]=
 							{
 								"Normal",
 								"Ti"
 							};
 							thermalMode[]={0};
-							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_1x";
+							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
 							gunnerOpticsEffect[]={};
 							hitPoint="Hit_Optics_Cdr_CIV";
 						};
+						/*
 						class Wide: Ultrawide
 						{
 							opticsDisplayName="60HZ";
@@ -432,10 +438,10 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 							minFov=0.0145833;
 							maxFov=0.0145833;
 						};
+						*/
 					};
 					//*/
 
-					/*
 					weapons[]=
 					{
 						"RC_Laserdesignator_vehicle",
@@ -472,10 +478,10 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 									componentType="TransportFeedDisplayComponent";
 									source="Driver";
 								};
-								class VehicleCommanderDisplay
+								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Commander";
+									source="Gunner";
 								};
 								class UAVFeedDisplay
 								{
@@ -514,10 +520,10 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 									componentType="TransportFeedDisplayComponent";
 									source="Driver";
 								};
-								class VehicleCommanderDisplay
+								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Commander";
+									source="Gunner";
 								};
 								class UAVFeedDisplay
 								{
@@ -535,7 +541,6 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 							};
 						};
 					};
-					*/
 				};
 			};
 			//*/

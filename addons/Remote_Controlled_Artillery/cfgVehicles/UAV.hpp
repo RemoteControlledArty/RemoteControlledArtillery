@@ -343,9 +343,9 @@ class RC_UAV_FPV: RC_UAV_base
 	fuelExplosionPower=100;
 	showAllTargets="2 + 4";
 
-	camouflage=0.125;
-	radarTargetSize=0.025;
-	visualTargetSize=0.025;
+	camouflage=0.05;
+	radarTargetSize=0.01;
+	visualTargetSize=0.01;
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
