@@ -58,7 +58,11 @@ class CfgFunctions
 class CfgEditorSubcategories
 {
 	class RC_RHS_subcat {displayname="RHS";};
+	class RC_RHS_D_subcat {displayname="RHS Desert";};
+	class RC_RHS_WD_subcat {displayname="RHS Woodland";};
 };
+
+//TARGET CONFIRMER FOR DRIVER, gunner camera panel for troop commander seat
 
 
 //later required sensors

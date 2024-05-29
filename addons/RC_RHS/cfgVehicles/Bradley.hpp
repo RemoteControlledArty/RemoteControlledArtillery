@@ -11,11 +11,10 @@ class RC_M2A3_BUSKIII_D_Base: RHS_M2A3_BUSKIII
 	class ViewOptics;
 	class AnimationSources;
 	class ramp;
+	class HatchC;
 };
 class RC_M2A3_BUSKIII_IFV_D_base: RC_M2A3_BUSKIII_D_Base
 {
-	scope=0;
-	scopeCurator=0;
 	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=2;
@@ -112,7 +111,14 @@ class RC_M2A3_BUSKIII_IFV_D_base: RC_M2A3_BUSKIII_D_Base
 		};
 		class ramp: ramp
 		{
-			animPeriod=1;
+			animPeriod=1.25;
+		};
+		class HatchC: HatchC
+		{
+			animPeriod=0.8;
+		};
+		class HatchG: HatchC
+		{
 		};
 		/*
 		class rear_hatch
@@ -306,11 +312,10 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 				};
 			};
 			
-			//*
 			class Turrets: Turrets
 			{
 				class CommanderOptics : CommanderOptics
-				{};
+				{
 					/*
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
@@ -355,7 +360,82 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 							hitPoint="Hit_Optics_Cdr_CIV";
 						};
 					};
+					*/
 
+					//*
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
+					gunnerOpticsEffect[]={};
+					class ViewOptics: ViewOptics
+					{
+						initFov=0.46599999;
+						minFov=0.015;
+						maxFov=0.46599999;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG",
+							"Ti"
+						};
+						thermalMode[]={0};
+					};
+					class OpticsIn
+					{
+						class Ultrawide
+						{
+							opticsDisplayName="60HZ";
+							initAngleX=0;
+							minAngleX=-30;
+							maxAngleX=30;
+							initAngleY=0;
+							minAngleY=-100;
+							maxAngleY=100;
+							initFov=0.69999999;
+							minFov=0.69999999;
+							maxFov=0.69999999;
+							visionMode[]=
+							{
+								"Normal",
+								"Ti"
+							};
+							thermalMode[]={0};
+							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_1x";
+							gunnerOpticsEffect[]={};
+							hitPoint="Hit_Optics_Cdr_CIV";
+						};
+						class Wide: Ultrawide
+						{
+							opticsDisplayName="60HZ";
+							initFov=0.175;
+							minFov=0.175;
+							maxFov=0.175;
+							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
+						};
+						class Narrow: Ultrawide
+						{
+							opticsDisplayName="60HZ";
+							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_12x";
+							initFov=0.0583333;
+							minFov=0.0583333;
+							maxFov=0.0583333;
+						};
+						class Narrow2x: Narrow
+						{
+							opticsDisplayName="60HZ 2X";
+							initFov=0.0291667;
+							minFov=0.0291667;
+							maxFov=0.0291667;
+						};
+						class Narrow4x: Narrow
+						{
+							opticsDisplayName="60HZ 4X";
+							initFov=0.0145833;
+							minFov=0.0145833;
+							maxFov=0.0145833;
+						};
+					};
+					//*/
+
+					/*
 					weapons[]=
 					{
 						"RC_Laserdesignator_vehicle",
@@ -455,7 +535,8 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 							};
 						};
 					};
-				};*/
+					*/
+				};
 			};
 			//*/
 

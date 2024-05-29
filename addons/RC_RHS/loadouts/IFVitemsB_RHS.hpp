@@ -79,7 +79,7 @@ class TransportWeapons
 	class _xx_rhs_weap_M136
 	{
 		weapon="rhs_weap_M136";
-		count=2;
+		count=3;
 	};
 	class _xx_rhs_weap_M320
 	{
