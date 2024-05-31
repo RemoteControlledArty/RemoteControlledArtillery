@@ -104,6 +104,13 @@ class RC_RHS_mag_100rnd_127x99_SLAP_T_R: rhs_ammo_127x99_SLAP_Tracer_Red
 	airLock=1;
 };
 
+class RC_RHS_ammo_127x99_Ball_T_R_nonlock: RC_RHS_ammo_127x99_Ball_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=0;
+};
+
 
 //40mm
 class rhs_ammo_mk19m3_M430A1;

@@ -121,6 +121,30 @@ class RC_RHS_weap_TOW_Launcher: Rhs_weap_TOW_Launcher
 };
 
 
+class RC_IFV_Missle_Launcher;
+class RC_Bradley_Missle_Launcher_Base: RC_IFV_Missle_Launcher
+{
+	class Player;
+	class TopDown;
+}
+class RC_Bradley_Missle_Launcher: RC_Bradley_Missle_Launcher_Base
+{
+	reloadTime=1;
+	magazineReloadTime=15;
+	
+	class Player: Player
+	{
+		reloadTime=1;
+		magazineReloadTime=15;
+	};
+	class TopDown: TopDown
+	{
+		reloadTime=1;
+		magazineReloadTime=15;
+	};
+};
+
+
 /*
 class rhs_weap_fcs_ammo;
 class RC_rhs_weap_fcs_ammo: rhs_weap_fcs_ammo
@@ -169,3 +193,16 @@ class RC_RHS_MK19_CROWS_M153: RHS_MK19_CROWS_M153_base
 		dispersion=0.0025;
 	};
 };
+
+
+/*
+class RHS_M2;
+class RC_RHS_M2_nonlock: RHS_M2
+{
+	canLock=0;
+	magazines[] =
+	{
+		"RC_RHS_mag_100rnd_127x99_T_R_nonlock"
+	};
+};
+*/

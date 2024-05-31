@@ -28,7 +28,7 @@ class TransportMagazines
 	class _xx_rhs_mag_M397_HET
 	{
 		magazine="rhs_mag_M397_HET";
-		count=20;
+		count=30;
 	};
 	class _xx_Laserbatteries
 	{

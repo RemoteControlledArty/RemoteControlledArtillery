@@ -137,6 +137,12 @@ class RC_RHS_mag_200rnd_127x99_SLAP_T_R: rhs_mag_200rnd_127x99_SLAP_mag_Tracer_R
 	tracersEvery=1;
 };
 
+class RC_RHS_mag_100rnd_127x99_T_R_nonlock: RC_RHS_mag_200rnd_127x99_T_R
+{
+	ammo="RC_RHS_ammo_127x99_Ball_T_R_nonlock";
+	count=100;
+};
+
 
 //40mm
 class RHS_96Rnd_40mm_MK19_M430A1;

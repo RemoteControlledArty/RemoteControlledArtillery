@@ -91,6 +91,32 @@ class RC_M2A3_BUSKIII_IFV_D_base: RC_M2A3_BUSKIII_D_Base
 		"SmokeLauncherMag"
 	};
 
+	class DriverOpticsIn
+	{
+		class DVE_Wide: ViewOptics
+		{
+			camPos="view_DVE";
+			opticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
+			visionMode[]=
+			{
+				"TI",
+				"Normal"
+			};
+			thermalMode[]={0};
+			initFov=1.07692;
+			minFov=1.07692;
+			maxFov=1.07692;
+			hitpoint="Hit_Optics_Dvr_DVE";
+		};
+		class DVS_Rear: DVE_Wide
+		{
+			camPos="view_rear";
+			camDir="view_rear_dir";
+			opticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE2_4x3";
+			hitpoint="Hit_Optics_Dvr_RearCam";
+		};
+	};
+
 	class AnimationSources: AnimationSources
 	{
 		class recoil_source
@@ -250,7 +276,9 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			//#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			isCopilot=1; //allows to trigger EH that gives driving controls
+
 			showAllTargets="2 + 4";
 			commanding=3;
 			allowTabLock=1;
@@ -316,17 +344,13 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+					//#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+					isCopilot=1; //allows to trigger EH that gives driving controls
 					showAllTargets="2 + 4";
 					commanding=2;
 					allowTabLock=1;
 					
 					/*
-					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-					showAllTargets="2 + 4";
-					commanding=2;
-					allowTabLock=1;
-
 					class ViewOptics: ViewOptics
 					{
 						initFov=0.9;
@@ -453,7 +477,7 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 						"rhsusf_mag_L8A3_8",
 						"rhsusf_mag_L8A3_8"
 					};
-
+					
 					class Components: Components
 					{
 						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -481,7 +505,7 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Gunner";
+									source="PrimaryGunner";
 								};
 								class UAVFeedDisplay
 								{
@@ -523,7 +547,7 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 								class VehicleGunnerDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
-									source="Gunner";
+									source="PrimaryGunner";
 								};
 								class UAVFeedDisplay
 								{
@@ -645,6 +669,8 @@ class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH_IFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEHRE_IFV_release.hpp"
 		};
 	};
 
@@ -667,6 +693,55 @@ class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 	driverForceOptics=1;
 };
 
+
+class RC_M2A3_BUSKIII_IFV_NLOS_D_B: RC_M2A3_BUSKIII_IFV_D_B
+{
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			//#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			isCopilot=1; //allows to trigger EH that gives driving controls
+
+			showAllTargets="2 + 4";
+			commanding=3;
+			allowTabLock=1;
+
+			weapons[]=
+			{
+				"RC_RHS_weap_M242BC",
+				"RC_RHS_weap_m240_bradley_coax",
+				"RC_Bradley_Missle_Launcher",
+				"rhs_weap_fcs_ammo",
+
+				"rhsusf_weap_M257_8"
+			};
+			magazines[]=
+			{
+				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
+				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
+				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
+				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+				"RC_RHS_mag_1100Rnd_762x51_T_R",
+				"RC_RHS_mag_1100Rnd_762x51_T_R",
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_AA",
+				"RC_2Rnd_IFV_AA",
+				"rhs_laserfcsmag",
+
+				"rhsusf_mag_L8A3_8",
+				"rhsusf_mag_L8A3_8"
+			};
+		};
+	};
+
+	displayName="M2A3 Bradley NLOS";
+};
 
 /*
 class RC_M2A3_BUSKIII_DL_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
