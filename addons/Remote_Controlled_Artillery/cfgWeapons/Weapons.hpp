@@ -128,30 +128,63 @@ class RC_IFV_Missle_Launcher: RC_IFV_Missle_Launcher_Base
 	weaponLockSystem="2 + 4 + 16";
 	displayName="NLOS ML";
 	displayNameShort="NLOS ML";
-	reloadTime=10;
-	magazineReloadTime=15;
+	magazineReloadTime=20;
 	cmImmunity=0.67;
 	magazines[]=
 	{
-		"RC_4Rnd_IFV_MP_NLOS",
-		"RC_3Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_1Rnd_IFV_MP_NLOS",
-		"RC_4Rnd_IFV_AA",
-		"RC_3Rnd_IFV_AA",
-		"RC_2Rnd_IFV_AA",
-		"RC_1Rnd_IFV_AA",
-		"2Rnd_GAT_missiles"
+		"2Rnd_GAT_missiles",
+		"RC_2Rnd_IFV_AA"
 	};
 	class Player: Player
 	{
-		reloadTime=10;
-		magazineReloadTime=10;
+		magazineReloadTime=20;
+
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\Titan",
+				1.4125376,
+				1,
+				1100
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
+			soundSetShot[]=
+			{
+				"Launcher_Vorona_Shot_SoundSet",
+				"Launcher_Vorona_Tail_SoundSet"
+			};
+		};
 	};
 	class TopDown: TopDown
 	{
-		reloadTime=10;
-		magazineReloadTime=10;
+		magazineReloadTime=20;
+
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\Titan",
+				1.4125376,
+				1,
+				1100
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
+			soundSetShot[]=
+			{
+				"Launcher_Vorona_Shot_SoundSet",
+				"Launcher_Vorona_Tail_SoundSet"
+			};
+		};
 	};
 };
 

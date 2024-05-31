@@ -493,6 +493,7 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	airLock=1;
 	trackLead=1;
 	cameraViewAvailable=1;
+	initTime=0.01;
 
 	class Components: Components
 	{

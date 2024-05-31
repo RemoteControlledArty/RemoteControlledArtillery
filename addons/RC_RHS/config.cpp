@@ -25,7 +25,7 @@ class CfgPatches
 			RC_Stryker_M1126_MK19_D,
 			RC_Stryker_M1126_MK19_D_I,
 			RC_Stryker_M1126_MK19_WD,
-			RC_Stryker_M1126_MK19_WD_I
+			RC_Stryker_M1126_MK19_WD_I,
 
 			RC_Stryker_M1127_M2_D,
 			RC_Stryker_M1127_M2_D_I,

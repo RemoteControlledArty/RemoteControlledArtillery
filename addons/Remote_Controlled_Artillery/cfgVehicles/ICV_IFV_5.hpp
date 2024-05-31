@@ -625,8 +625,10 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 				"RC_200Rnd_93x64_T_G",
 				"RC_200Rnd_93x64_T_G",
 				"RC_200Rnd_93x64_T_G",
-				"RC_3Rnd_IFV_MP_NLOS",
-				"RC_3Rnd_IFV_AA",
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_MP_NLOS",
+				"RC_2Rnd_IFV_AA",
+				"RC_2Rnd_IFV_AA",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

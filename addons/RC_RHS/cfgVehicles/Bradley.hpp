@@ -285,8 +285,8 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_base
 
 			weapons[]=
 			{
-				"RC_RHS_weap_M242BC",
 				"RC_RHS_weap_m240_bradley_coax",
+				"RC_RHS_weap_M242BC",
 				"RC_RHS_weap_TOW_Launcher",
 				"rhs_weap_fcs_ammo",
 
