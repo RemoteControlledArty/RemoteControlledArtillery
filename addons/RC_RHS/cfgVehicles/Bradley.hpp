@@ -665,6 +665,12 @@ class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 {
 	class EventHandlers: EventHandlers
 	{	
+		class RHSUSF_EventHandlers
+		{
+			postInit="_this call rhs_fnc_reapplyTextures";
+			getIn="_this call rhs_fnc_m2_doors";
+			getOut="_this call rhs_fnc_m2_doors";
+		};
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
@@ -709,8 +715,8 @@ class RC_M2A3_BUSKIII_IFV_NLOS_D_B: RC_M2A3_BUSKIII_IFV_D_B
 
 			weapons[]=
 			{
-				"RC_RHS_weap_M242BC",
 				"RC_RHS_weap_m240_bradley_coax",
+				"RC_RHS_weap_M242BC",
 				"RC_Bradley_Missle_Launcher",
 				"rhs_weap_fcs_ammo",
 
@@ -728,12 +734,13 @@ class RC_M2A3_BUSKIII_IFV_NLOS_D_B: RC_M2A3_BUSKIII_IFV_D_B
 				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
 				"RC_RHS_mag_1100Rnd_762x51_T_R",
 				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
+				"RC_2Rnd_TOW_MP_NLOS",
+				"RC_2Rnd_TOW_MP_NLOS",
+				"RC_2Rnd_TOW_AA",
+				"RC_2Rnd_TOW_AA",
 				"rhs_laserfcsmag",
 
+				"rhsusf_mag_L8A3_8",
 				"rhsusf_mag_L8A3_8",
 				"rhsusf_mag_L8A3_8"
 			};

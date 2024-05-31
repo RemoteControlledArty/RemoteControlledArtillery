@@ -130,17 +130,100 @@ class RC_Bradley_Missle_Launcher_Base: RC_IFV_Missle_Launcher
 class RC_Bradley_Missle_Launcher: RC_Bradley_Missle_Launcher_Base
 {
 	reloadTime=1;
-	magazineReloadTime=15;
+	magazineReloadTime=20;
+
+	magazines[]=
+	{
+		"RC_2Rnd_TOW_MP_NLOS",
+		"RC_2Rnd_TOW_AA"
+	};
+	
+	/*
+	sounds[]=
+	{
+		"StandardSound"
+	};
+	class StandardSound
+	{
+		begin1[]=
+		{
+			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\Titan",
+			1.4125376,
+			1,
+			1100
+		};
+		soundBegin[]=
+		{
+			"begin1",
+			1
+		};
+		soundSetShot[]=
+		{
+			"Launcher_Vorona_Shot_SoundSet",
+			"Launcher_Vorona_Tail_SoundSet"
+		};
+	};
+	*/
 	
 	class Player: Player
 	{
 		reloadTime=1;
-		magazineReloadTime=15;
+		magazineReloadTime=20;
+
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\Titan",
+				1.4125376,
+				1,
+				1100
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
+			soundSetShot[]=
+			{
+				"Launcher_Vorona_Shot_SoundSet",
+				"Launcher_Vorona_Tail_SoundSet"
+			};
+		};
 	};
 	class TopDown: TopDown
 	{
 		reloadTime=1;
-		magazineReloadTime=15;
+		magazineReloadTime=20;
+
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\Titan",
+				1.4125376,
+				1,
+				1100
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
+			soundSetShot[]=
+			{
+				"Launcher_Vorona_Shot_SoundSet",
+				"Launcher_Vorona_Tail_SoundSet"
+			};
+		};
 	};
 };
 

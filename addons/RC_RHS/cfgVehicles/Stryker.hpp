@@ -79,11 +79,12 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
 				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
 				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_T_R",
-				"RC_RHS_mag_200rnd_127x99_T_R",
-				"RC_RHS_mag_200rnd_127x99_T_R",
-				"RC_RHS_mag_200rnd_127x99_T_R",
-				"RC_RHS_mag_200rnd_127x99_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"rhsusf_mag_L8A3_16",
 				"rhsusf_mag_L8A3_16",
 				"rhsusf_mag_L8A3_16"
 			};
@@ -378,6 +379,7 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 				"RC_RHS_96Rnd_40mm_MK19_M430A1",
 				"RC_RHS_96Rnd_40mm_MK19_M430A1",
 				"RC_RHS_96Rnd_40mm_MK19_M430A1",
+				"rhsusf_mag_L8A3_16",
 				"rhsusf_mag_L8A3_16",
 				"rhsusf_mag_L8A3_16"
 			};
@@ -694,28 +696,6 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 		};
 
 		class Turret_Weapon: Turret_Weapon {};
-		
-		class Turret_LRAS: Turret_LRAS
-		{
-			class OpticsIn
-			{
-				class Wide: ViewOptics
-				{
-					opticsDisplayName="4";
-					initFov=0.9;
-					minFov=0.02;
-					maxFov=0.9;
-					visionMode[]=
-					{
-						"TI",
-						"Normal"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CITV_w";
-					hitpoint="Hit_Optic_LRAS3";
-				};
-			};
-		};
 
 		/*
 		class Turret_Weapon: Turret_Weapon
@@ -739,6 +719,29 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 			};
 		};
 		*/
+		
+		class Turret_LRAS: Turret_LRAS
+		{
+			class OpticsIn
+			{
+				class Wide: ViewOptics
+				{
+					opticsDisplayName="4";
+					initFov=0.9;
+					minFov=0.02;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"TI",
+						"Normal"
+					};
+					thermalMode[]={0};
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CITV_w";
+					hitpoint="Hit_Optic_LRAS3";
+				};
+			};
+		};
+
 		class CargoTurret_02: CargoTurret_02 {};
 		class CargoTurret_03: CargoTurret_03 {};
 	};

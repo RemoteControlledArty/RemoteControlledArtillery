@@ -12,21 +12,38 @@ class CfgPatches
 			RC_Bradley_WD,
 			RC_Bradley_WD_I,
 
-			RC_APC_Stryker_M1126_M2_D,
-			RC_APC_Stryker_M1126_M2_D_I,
-			RC_APC_Stryker_M1126_M2_WD,
-			RC_APC_Stryker_M1126_M2_WD_I,
-			RC_APC_Stryker_M1126_MK19_D,
-			RC_APC_Stryker_M1126_MK19_D_I,
-			RC_APC_Stryker_M1126_MK19_WD,
-			RC_APC_Stryker_M1126_MK19_WD_I
+			RC_Bradley_NLOS_D,
+			RC_Bradley_NLOS_D_I,
+			RC_Bradley_NLOS_WD,
+			RC_Bradley_NLOS_WD_I,
+
+			RC_Stryker_M1126_M2_D,
+			RC_Stryker_M1126_M2_D_I,
+			RC_Stryker_M1126_M2_WD,
+			RC_Stryker_M1126_M2_WD_I,
+
+			RC_Stryker_M1126_MK19_D,
+			RC_Stryker_M1126_MK19_D_I,
+			RC_Stryker_M1126_MK19_WD,
+			RC_Stryker_M1126_MK19_WD_I
+
+			RC_Stryker_M1127_M2_D,
+			RC_Stryker_M1127_M2_D_I,
+			RC_Stryker_M1127_M2_WD,
+			RC_Stryker_M1127_M2_WD_I
 		};
 
 		weapons[]=
 		{
 			RC_RHS_weap_m240_bradley_coax,
+
 			RC_RHS_weap_M242BC,
-			RC_RHS_weap_TOW_Launcher
+
+			RC_RHS_weap_TOW_Launcher,
+			RC_Bradley_Missle_Launcher,
+
+			RC_RHS_M2_CROWS_M151,
+			RC_RHS_MK19_CROWS_M153
 		};
 
 		requiredAddons[]=

@@ -36,6 +36,22 @@ class RC_RHS_mag_2Rnd_TOW2BB: rhs_mag_2Rnd_TOW2BB
 	ammo="RC_RHS_ammo_TOW2_BB";
 };
 
+class RC_2Rnd_IFV_MP_NLOS;
+class RC_2Rnd_TOW_MP_NLOS: RC_2Rnd_IFV_MP_NLOS
+{
+	ammo="RC_TOW_MP_NLOS";
+	displayName="TOW NLOS";
+	displayNameShort="TOW NLOS";
+};
+
+class RC_2Rnd_IFV_AA;
+class RC_2Rnd_TOW_AA: RC_2Rnd_IFV_AA
+{
+	ammo="RC_TOW_AA";
+	displayName="TOW AA";
+	displayNameShort="TOW AA";
+};
+
 
 /*
 //bradley
