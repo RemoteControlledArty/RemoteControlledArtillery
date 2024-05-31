@@ -681,7 +681,7 @@ class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 	};
 
 	displayName="M2A3 Bradley";
-	editorSubcategory="RC_RHS_subcat";
+	editorSubcategory="RC_RHS_D_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -700,19 +700,27 @@ class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 };
 
 
+class RC_M2A3_BUSKIII_IFV_WD_B: RC_M2A3_BUSKIII_IFV_D_B
+{
+	editorSubcategory="RC_RHS_WD_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_base_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_a3_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\BUSKIII_co.paa",
+		"\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
+	};
+};
+
+
 class RC_M2A3_BUSKIII_IFV_NLOS_D_B: RC_M2A3_BUSKIII_IFV_D_B
 {
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			//#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			isCopilot=1; //allows to trigger EH that gives driving controls
-
-			showAllTargets="2 + 4";
-			commanding=3;
-			allowTabLock=1;
-
 			weapons[]=
 			{
 				"RC_RHS_weap_m240_bradley_coax",
@@ -749,6 +757,22 @@ class RC_M2A3_BUSKIII_IFV_NLOS_D_B: RC_M2A3_BUSKIII_IFV_D_B
 
 	displayName="M2A3 Bradley NLOS";
 };
+
+
+class RC_M2A3_BUSKIII_IFV_NLOS_WD_B: RC_M2A3_BUSKIII_IFV_NLOS_D_B
+{
+	editorSubcategory="RC_RHS_WD_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\a3_buski_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa"
+	};
+};
+
 
 /*
 class RC_M2A3_BUSKIII_DL_IFV_D_B: RC_M2A3_BUSKIII_IFV_D

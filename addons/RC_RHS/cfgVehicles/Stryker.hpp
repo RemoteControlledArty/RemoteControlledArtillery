@@ -197,7 +197,7 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 	};
 
 	displayName="M1126 Stryker M2";
-	editorSubcategory="RC_RHS_subcat";
+	editorSubcategory="RC_RHS_WD_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -214,6 +214,29 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 	forceHideDriver=1;
 	driverForceOptics=1;
 	maximumLoad=3000;
+};
+
+
+class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
+{
+	editorSubcategory="RC_RHS_D_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1132_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_ca.paa",
+		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
+	};
 };
 
 
@@ -492,7 +515,7 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 	};
 
 	displayName="M1126 Stryker Mk19";
-	editorSubcategory="RC_RHS_subcat";
+	editorSubcategory="RC_RHS_WD_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -509,6 +532,29 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 	forceHideDriver=1;
 	driverForceOptics=1;
 	maximumLoad=3000;
+};
+
+
+class RC_Stryker_M1126_MK19_D_B: RC_Stryker_M1126_MK19_WD_B
+{
+	editorSubcategory="RC_RHS_D_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1132_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_ca.paa",
+		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
+	};
 };
 
 
@@ -761,7 +807,7 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD
 	};
 
 	displayName="M1127 Stryker M2";
-	editorSubcategory="RC_RHS_subcat";
+	editorSubcategory="RC_RHS_WD_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -778,4 +824,28 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD
 	forceHideDriver=1;
 	driverForceOptics=1;
 	maximumLoad=3000;
+};
+
+
+class RC_Stryker_M1127_M2_D_B: RC_Stryker_M1127_M2_WD_B
+{
+	editorSubcategory="RC_RHS_D_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_M1127_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_LRAS3_CO.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_ca.paa",
+		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_wd_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_od_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_od_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_od_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_od_co.paa"
+	};
 };
