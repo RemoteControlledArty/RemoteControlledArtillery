@@ -1,0 +1,1 @@
+_activeCoPilot action ['SuspendVehicleControl', _vehicle];

@@ -191,7 +191,7 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -220,7 +220,7 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
 {
 	editorSubcategory="RC_RHS_D_subcat";
-
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
 		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
@@ -506,10 +506,10 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 {
 	class EventHandlers: EventHandlers
-	{	
+	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -538,7 +538,7 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 class RC_Stryker_M1126_MK19_D_B: RC_Stryker_M1126_MK19_WD_B
 {
 	editorSubcategory="RC_RHS_D_subcat";
-
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
 		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
@@ -800,8 +800,7 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD
 	{	
 		class RC_Artillery
 		{
-			//make new script, deleting gunner only for all strykers
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -830,7 +829,7 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD
 class RC_Stryker_M1127_M2_D_B: RC_Stryker_M1127_M2_WD_B
 {
 	editorSubcategory="RC_RHS_D_subcat";
-
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1127_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
 		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_co.paa",

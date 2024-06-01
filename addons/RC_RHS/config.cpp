@@ -74,7 +74,6 @@ class CfgFunctions
 
 class CfgEditorSubcategories
 {
-	class RC_RHS_subcat {displayname="RHS";};
 	class RC_RHS_D_subcat {displayname="RHS Desert";};
 	class RC_RHS_WD_subcat {displayname="RHS Woodland";};
 };
@@ -114,6 +113,7 @@ class CfgWeapons
 
 class CfgVehicles
 {
+	#include "\RC_RHS\cfgVehicles\Abrams.hpp"
 	#include "\RC_RHS\cfgVehicles\Bradley.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
 };
