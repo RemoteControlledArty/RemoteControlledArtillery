@@ -11,7 +11,7 @@ class RC_UAV_base: B_UAV_01_F
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
-	RC_UAVBlurRange=800;
+	RC_UAVBlurRange=1500;
 };
 class RC_UAV_AR1: RC_UAV_base
 {
@@ -107,7 +107,7 @@ class RC_UAV_AR1: RC_UAV_base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1750;
+					typeRecognitionDistance=2000;
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=51;
 					angleRangeVertical=37;
@@ -116,22 +116,22 @@ class RC_UAV_AR1: RC_UAV_base
 
 					class AirTarget
 					{
-						minRange=1750;
-						maxRange=1750;
+						minRange=2000;
+						maxRange=2000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1750;
-						maxRange=1750;
+						minRange=2000;
+						maxRange=2000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=800;
+					typeRecognitionDistance=1000;
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=51;
@@ -141,15 +141,15 @@ class RC_UAV_AR1: RC_UAV_base
 
 					class AirTarget
 					{
-						minRange=800;
-						maxRange=800;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=800;
-						maxRange=800;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
