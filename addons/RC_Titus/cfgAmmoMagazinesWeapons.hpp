@@ -1,7 +1,7 @@
 class CfgAmmo
 {
 	class B_20mm_Tracer_Red;
-	class RC_QIN_20mm_T_R: B_20mm_Tracer_Red
+	class RC_QIN_20mm_HE_T_R: B_20mm_Tracer_Red
 	{
 		laserLock=1;
 		irLock=1;
@@ -11,11 +11,31 @@ class CfgAmmo
 		indirectHitRange=2;
 		deflecting=1;
 	};
-	class RC_QIN_20mm_T_G: RC_QIN_20mm_T_R
+	class RC_QIN_20mm_HE_T_G: RC_QIN_20mm_HE_T_R
 	{
 		model="\A3\Weapons_f\Data\bullettracer\tracer_green";
 	};
-	class RC_QIN_20mm_T_Y: RC_QIN_20mm_T_R
+	class RC_QIN_20mm_HE_T_Y: RC_QIN_20mm_HE_T_R
+	{
+		model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+	};
+
+
+	class B_20mm_AP;
+	class RC_QIN_20mm_AP_T_R: B_20mm_AP
+	{
+		laserLock=1;
+		irLock=1;
+		airLock=1;
+		tracerStartTime=0.05;
+		tracerEndTime=3;
+		model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+	};
+	class RC_QIN_20mm_AP_T_G: RC_QIN_20mm_AP_T_R
+	{
+		model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+	};
+	class RC_QIN_20mm_AP_T_Y: RC_QIN_20mm_AP_T_R
 	{
 		model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 	};
@@ -86,21 +106,38 @@ class CfgAmmo
 class CfgMagazines
 {
 	class 1000Rnd_20mm_shells;
-	class RC_QIN_100Rnd_20mm_T_R: 1000Rnd_20mm_shells
+	class RC_QIN_100Rnd_20mm_HE_T_R: 1000Rnd_20mm_shells
 	{
-		ammo="RC_QIN_20mm_T_R";
+		ammo="RC_QIN_20mm_HE_T_R";
 		displayName="20mm HE";
 		displayNameShort="20mm HE";
 		tracersEvery=1;
 		count=100;
 	};
-	class RC_QIN_100Rnd_20mm_T_G: RC_QIN_100Rnd_20mm_T_R
+	class RC_QIN_100Rnd_20mm_HE_T_G: RC_QIN_100Rnd_20mm_HE_T_R
 	{
-		ammo="RC_QIN_20mm_T_G";
+		ammo="RC_QIN_20mm_HE_T_G";
 	};
-	class RC_QIN_100Rnd_20mm_T_Y: RC_QIN_100Rnd_20mm_T_R
+	class RC_QIN_100Rnd_20mm_HE_T_Y: RC_QIN_100Rnd_20mm_HE_T_R
 	{
-		ammo="RC_QIN_20mm_T_Y";
+		ammo="RC_QIN_20mm_HE_T_Y";
+	};
+
+
+	class RC_QIN_100Rnd_20mm_AP_T_R: RC_QIN_100Rnd_20mm_HE_T_R
+	{
+		ammo="RC_QIN_20mm_AP_T_R";
+		displayName="20mm AP";
+		displayNameShort="20mm AP";
+		initSpeed=1100;
+	};
+	class RC_QIN_100Rnd_20mm_AP_T_G: RC_QIN_100Rnd_20mm_AP_T_R
+	{
+		ammo="RC_QIN_20mm_AP_T_G";
+	};
+	class RC_QIN_100Rnd_20mm_AP_T_Y: RC_QIN_100Rnd_20mm_AP_T_R
+	{
+		ammo="RC_QIN_20mm_AP_T_Y";
 	};
 
 
@@ -192,9 +229,12 @@ class CfgWeapons
 
 		magazines[]=
 		{
-			"RC_QIN_100Rnd_20mm_T_R",
-			"RC_QIN_100Rnd_20mm_T_G",
-			"RC_QIN_100Rnd_20mm_T_Y"
+			"RC_QIN_100Rnd_20mm_HE_T_R",
+			"RC_QIN_100Rnd_20mm_HE_T_G",
+			"RC_QIN_100Rnd_20mm_HE_T_Y",
+			"RC_QIN_100Rnd_20mm_AP_T_R",
+			"RC_QIN_100Rnd_20mm_AP_T_G",
+			"RC_QIN_100Rnd_20mm_AP_T_Y"
 		};
 
 		class manual: manual

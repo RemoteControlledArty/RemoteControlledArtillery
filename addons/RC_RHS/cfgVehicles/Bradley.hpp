@@ -13,7 +13,7 @@ class RC_M2A3_BUSKIII_D_Base: RHS_M2A3_BUSKIII
 	class ramp;
 	class HatchC;
 };
-class RC_M2A3_BUSKIII_IFV_D_Base: RC_M2A3_BUSKIII_D_Base
+class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_D_Base
 {
 	forceInGarage=1;
 	driverCompartments="Compartment2";
@@ -270,7 +270,7 @@ class RC_M2A3_BUSKIII_IFV_D_Base: RC_M2A3_BUSKIII_D_Base
 	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
 };
 
-class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_Base
+class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 {
 	class Turrets: Turrets
 	{
@@ -350,48 +350,6 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_Base
 					commanding=2;
 					allowTabLock=1;
 					
-					/*
-					class ViewOptics: ViewOptics
-					{
-						initFov=0.9;
-						minFov=0.02;
-						maxFov=0.9;
-						visionMode[]=
-						{
-							"Normal",
-							"NVG",
-							"Ti"
-						};
-						thermalMode[]={0};
-					};
-					class OpticsIn
-					{
-						class Ultrawide
-						{
-							opticsDisplayName="60HZ";
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"Ti"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_1x";
-							gunnerOpticsEffect[]={};
-							hitPoint="Hit_Optics_Cdr_CIV";
-						};
-					};
-					*/
-
-					//*
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
 					gunnerOpticsEffect[]={};
 					class ViewOptics: ViewOptics
@@ -431,40 +389,7 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_Base
 							gunnerOpticsEffect[]={};
 							hitPoint="Hit_Optics_Cdr_CIV";
 						};
-						/*
-						class Wide: Ultrawide
-						{
-							opticsDisplayName="60HZ";
-							initFov=0.175;
-							minFov=0.175;
-							maxFov=0.175;
-							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
-						};
-						class Narrow: Ultrawide
-						{
-							opticsDisplayName="60HZ";
-							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_12x";
-							initFov=0.0583333;
-							minFov=0.0583333;
-							maxFov=0.0583333;
-						};
-						class Narrow2x: Narrow
-						{
-							opticsDisplayName="60HZ 2X";
-							initFov=0.0291667;
-							minFov=0.0291667;
-							maxFov=0.0291667;
-						};
-						class Narrow4x: Narrow
-						{
-							opticsDisplayName="60HZ 4X";
-							initFov=0.0145833;
-							minFov=0.0145833;
-							maxFov=0.0145833;
-						};
-						*/
 					};
-					//*/
 
 					weapons[]=
 					{
@@ -567,7 +492,6 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_Base
 					};
 				};
 			};
-			//*/
 
 			class Components: Components
 			{
@@ -661,7 +585,7 @@ class RC_M2A3_BUSKIII_IFV_D: RC_M2A3_BUSKIII_IFV_D_Base
 };
 
 
-class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
+class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -698,9 +622,7 @@ class RC_M2A3_BUSKIII_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
 	forceHideDriver=1;
 	driverForceOptics=1;
 };
-
-
-class RC_M2A3_BUSKIII_IFV_WD_B: RC_M2A3_BUSKIII_IFV_D_B
+class RC_M2A3_BUSKIII_WD_B: RC_M2A3_BUSKIII_D_B
 {
 	editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A3_BUSKIII_wd.paa";
@@ -715,7 +637,23 @@ class RC_M2A3_BUSKIII_IFV_WD_B: RC_M2A3_BUSKIII_IFV_D_B
 };
 
 
-class RC_M2A3_BUSKIII_IFV_NLOS_D_B: RC_M2A3_BUSKIII_IFV_D_B
+class RC_M2A3_BUSKIII_D_I: RC_M2A3_BUSKIII_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+class RC_M2A3_BUSKIII_WD_I: RC_M2A3_BUSKIII_WD_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+
+
+class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 {
 	class Turrets: Turrets
 	{
@@ -757,25 +695,39 @@ class RC_M2A3_BUSKIII_IFV_NLOS_D_B: RC_M2A3_BUSKIII_IFV_D_B
 
 	displayName="M2A3 Bradley NLOS";
 };
-
-
-class RC_M2A3_BUSKIII_IFV_NLOS_WD_B: RC_M2A3_BUSKIII_IFV_NLOS_D_B
+class RC_M2A3_BUSKIII_NLOS_WD_B: RC_M2A3_BUSKIII_NLOS_D_B
 {
 	editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A3_BUSKIII_wd.paa";
 	hiddenSelectionsTextures[]=
 	{
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\a3_buski_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_base_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_a3_co.paa",
 		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa"
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\BUSKIII_co.paa",
+		"\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
 	};
 };
 
 
+class RC_M2A3_BUSKIII_NLOS_D_I: RC_M2A3_BUSKIII_NLOS_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+class RC_M2A3_BUSKIII_NLOS_WD_I: RC_M2A3_BUSKIII_NLOS_WD_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+
+
 /*
-class RC_M2A3_BUSKIII_DL_IFV_D_B: RC_M2A3_BUSKIII_IFV_D
+class RC_M2A3_BUSKIII_DL_D_B: RC_M2A3_BUSKIII_D
 {
 	class EventHandlers: EventHandlers
 	{

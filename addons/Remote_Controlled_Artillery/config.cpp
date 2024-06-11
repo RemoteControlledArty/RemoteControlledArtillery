@@ -490,7 +490,7 @@ class CfgFunctions
 			class RC_LaserDatalink {postInit=1};
 			//class RC_LocalityFix {postInit=1};
 			class scrollSolutions {};
-			class RC_TakeControl {};
+			//class RC_TakeControl {};
 
 			/*
 			file="\Remote_Controlled_Artillery\functions\UILoop_includes";

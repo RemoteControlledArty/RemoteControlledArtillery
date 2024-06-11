@@ -162,10 +162,12 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 			};
 			magazines[]=
 			{
-				"RC_QIN_100Rnd_20mm_T_R",
-				"RC_QIN_100Rnd_20mm_T_R",
-				"RC_QIN_100Rnd_20mm_T_R",
-				"RC_QIN_100Rnd_20mm_T_R",
+				"RC_QIN_100Rnd_20mm_HE_T_R",
+				"RC_QIN_100Rnd_20mm_HE_T_R",
+				"RC_QIN_100Rnd_20mm_HE_T_R",
+				"RC_QIN_100Rnd_20mm_HE_T_R",
+				"RC_QIN_100Rnd_20mm_AP_T_R",
+				"RC_QIN_100Rnd_20mm_AP_T_R",
 				"RC_QIN_150Rnd_338_T_R",
 				"RC_QIN_150Rnd_338_T_R",
 				"RC_QIN_150Rnd_338_T_R",

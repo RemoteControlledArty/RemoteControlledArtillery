@@ -78,10 +78,21 @@ class DriverOpticsIn
 	};
 };
 
+/*
 class UserActions: UserActions
 {
-	class AdjustMap {};
+	class AdjustMap
+	{
+		displayName="";
+		position="pos driver";
+		radius=20;
+		condition="player == driver this";
+		statement="";
+		onlyforplayer=1;
+	};
 };
+*/
+
 
 class Components: Components
 {

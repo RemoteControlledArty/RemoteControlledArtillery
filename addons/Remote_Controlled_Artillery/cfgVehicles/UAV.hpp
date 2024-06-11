@@ -340,12 +340,21 @@ class RC_UAV_FPV: RC_UAV_base
 	scope=2;
 	scopeCurator=2;
 	RC_UAVBlurRange=3000;
-	fuelExplosionPower=100;
+	fuelExplosionPower=50;
 	showAllTargets="2 + 4";
 
-	camouflage=0.05;
+	maxSpeed=200;
+	liftForceCoef=2;
+	cyclicAsideForceCoef=2;
+	cyclicForwardForceCoef=1.2;
+	backRotorForceCoef=10;
+	fuelCapacity=200;
+	mainRotorSpeed=-14;
+	backRotorSpeed=14;
+
+	camouflage=0.025;
 	radarTargetSize=0.01;
-	visualTargetSize=0.01;
+	visualTargetSize=0.005;
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;

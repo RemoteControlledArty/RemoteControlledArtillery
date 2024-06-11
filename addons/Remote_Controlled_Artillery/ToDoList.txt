@@ -179,6 +179,7 @@ new:
 -fixed IFV AA Missles
 -fixed bluefor/independent Otokar Arma Commander seat
 -rockets in MLRS/MRL and animations like recoiling barrel are now visible
+-fixed missle animations in IFV
 
 
 DONE - FEATURES:
@@ -307,6 +308,10 @@ new:
 -added FPV UAV with explosive charge
 -script performance increases
 -RC Titus MRAP if mod is installed
+-20mm AP now also available for Titus
+-rebalanced AR-1 connection distance to 1500m
+-rebalanced FPV explosion damage to 50%
+-increased FPV speed
 
 
 DONE - QUALITY OF LIFE:

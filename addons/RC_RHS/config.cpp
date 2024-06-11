@@ -7,29 +7,33 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_Bradley_D,
-			RC_Bradley_D_I,
-			RC_Bradley_WD,
-			RC_Bradley_WD_I,
+			RC_M2A3_BUSKIII_D_B,
+			RC_M2A3_BUSKIII_D_I,
+			RC_M2A3_BUSKIII_WD_B,
+			RC_M2A3_BUSKIII_WD_I,
 
-			RC_Bradley_NLOS_D,
-			RC_Bradley_NLOS_D_I,
-			RC_Bradley_NLOS_WD,
-			RC_Bradley_NLOS_WD_I,
+			RC_M2A3_BUSKIII_NLOS_D_B,
+			RC_M2A3_BUSKIII_NLOS_D_I,
+			RC_M2A3_BUSKIII_NLOS_WD_B,
+			RC_M2A3_BUSKIII_NLOS_WD_I,
 
-			RC_Stryker_M1126_M2_D,
+			RC_Stryker_M1126_M2_D_B,
 			RC_Stryker_M1126_M2_D_I,
-			RC_Stryker_M1126_M2_WD,
+			RC_Stryker_M1126_M2_WD_B,
 			RC_Stryker_M1126_M2_WD_I,
+			RC_Stryker_M1126_M2_A_B,
+			RC_Stryker_M1126_M2_A_I,
 
-			RC_Stryker_M1126_MK19_D,
+			RC_Stryker_M1126_MK19_D_B,
 			RC_Stryker_M1126_MK19_D_I,
-			RC_Stryker_M1126_MK19_WD,
+			RC_Stryker_M1126_MK19_WD_B,
 			RC_Stryker_M1126_MK19_WD_I,
+			RC_Stryker_M1126_MK19_A_B,
+			RC_Stryker_M1126_MK19_A_I,
 
-			RC_Stryker_M1127_M2_D,
+			RC_Stryker_M1127_M2_D_B,
 			RC_Stryker_M1127_M2_D_I,
-			RC_Stryker_M1127_M2_WD,
+			RC_Stryker_M1127_M2_WD_B,
 			RC_Stryker_M1127_M2_WD_I
 		};
 
@@ -74,6 +78,7 @@ class CfgFunctions
 
 class CfgEditorSubcategories
 {
+	class RC_RHS_A_subcat {displayname="RHS Arid";};
 	class RC_RHS_D_subcat {displayname="RHS Desert";};
 	class RC_RHS_WD_subcat {displayname="RHS Woodland";};
 };
@@ -113,7 +118,7 @@ class CfgWeapons
 
 class CfgVehicles
 {
-	#include "\RC_RHS\cfgVehicles\Abrams.hpp"
+	//#include "\RC_RHS\cfgVehicles\Abrams.hpp"
 	#include "\RC_RHS\cfgVehicles\Bradley.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
 };
