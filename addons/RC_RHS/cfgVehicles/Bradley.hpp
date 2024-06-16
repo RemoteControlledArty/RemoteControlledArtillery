@@ -1,5 +1,5 @@
 class RHS_M2A3_BUSKIII;
-class RC_M2A3_BUSKIII_D_Base: RHS_M2A3_BUSKIII
+class RC_M2A3_BUSKIII_Base: RHS_M2A3_BUSKIII
 {
 	scope=0;
 	scopeCurator=0;
@@ -13,7 +13,7 @@ class RC_M2A3_BUSKIII_D_Base: RHS_M2A3_BUSKIII
 	class ramp;
 	class HatchC;
 };
-class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_D_Base
+class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 {
 	forceInGarage=1;
 	driverCompartments="Compartment2";
