@@ -1,5 +1,5 @@
 class rhsusf_m1165a1_gmv_m2_m240_socom_d;
-class RC_HMMWV_M2_D_Base: rhsusf_m1165a1_gmv_m2_m240_socom_d
+class RC_HMMWV_M2_Base: rhsusf_m1165a1_gmv_m2_m240_socom_d
 {
 	scope=0;
 	scopeCurator=0;
@@ -13,17 +13,16 @@ class RC_HMMWV_M2_D_Base: rhsusf_m1165a1_gmv_m2_m240_socom_d
 	class ViewOptics;
 	//class AnimationSources;
 };
-class RC_HMMWV_M2_D: RC_HMMWV_M2_D_Base
+class RC_HMMWV_M2: RC_HMMWV_M2_Base
 {
 	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
 
 	forceInGarage=1;
-	driverCompartments="Compartment2";
+	driverCompartments="Compartment3";
 	commanding=2;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-	crewCrashProtection=0.01;
 
 	class DriverOpticsIn
 	{
@@ -56,6 +55,7 @@ class RC_HMMWV_M2_D: RC_HMMWV_M2_D_Base
 	};
 	*/
 
+	/*
 	class Turrets: Turrets
 	{
 		class CargoTurret_01: CargoTurret_01 {};
@@ -66,6 +66,7 @@ class RC_HMMWV_M2_D: RC_HMMWV_M2_D_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			isCopilot=1; //allows to trigger EH that gives driving controls
+			*/
 
 			/*
 			weapons[]=
@@ -75,12 +76,15 @@ class RC_HMMWV_M2_D: RC_HMMWV_M2_D_Base
 			{
 			};
 			*/
+
+			/*
 		};
 	};
+	*/
 };
 
 
-class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
+class RC_HMMWV_M2_D: RC_HMMWV_M2
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -108,8 +112,8 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 	crew="B_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
-	maximumLoad=3000;
 };
+/*
 class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
 {
 	editorSubcategory="RC_RHS_WD_subcat";
@@ -130,8 +134,10 @@ class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
 		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
 	};
 };
+*/
 
 
+/*
 class RC_Stryker_M1126_M2_WD_I: RC_Stryker_M1126_M2_WD_B
 {
 	faction="RemoteControlled_I";
@@ -153,3 +159,4 @@ class RC_Stryker_M1126_M2_A_I: RC_Stryker_M1126_M2_A_B
 	side=2;
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
+*/

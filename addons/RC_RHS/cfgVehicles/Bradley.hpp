@@ -40,9 +40,9 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 		0.39810717,
 		1
 	};
-	//maxSpeed=66;
-	//enginePower=447;
-	//peakTorque=1660;
+	maxSpeed=80;
+	enginePower=559;
+	peakTorque=2075;
 
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
 	//armorStructural=1000;	//280 //prevents instant explosion, does not make it stronger

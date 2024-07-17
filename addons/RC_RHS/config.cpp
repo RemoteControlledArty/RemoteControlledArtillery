@@ -120,5 +120,6 @@ class CfgVehicles
 {
 	//#include "\RC_RHS\cfgVehicles\Abrams.hpp"
 	#include "\RC_RHS\cfgVehicles\Bradley.hpp"
+	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
 };

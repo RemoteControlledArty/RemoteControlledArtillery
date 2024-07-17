@@ -25,6 +25,16 @@ class TransportMagazines
 		magazine="Laserbatteries";
 		count=2;
 	};
+	class _xx_30Rnd_545x39_Mag_Tracer_F
+	{
+		magazine="30Rnd_545x39_Mag_Tracer_F";
+		count=10;
+	};
+	class _xx_30Rnd_762x39_Mag_Tracer_F
+	{
+		magazine="30Rnd_762x39_Mag_Tracer_F";
+		count=10;
+	};
 };
 class TransportItems
 {

@@ -246,7 +246,7 @@ class RC_UAV_AR1: RC_UAV_base
 					minAngleY=-100;
 					maxAngleY=100;
 					initFov=0.8;
-					minFov=0.075;
+					minFov=0.05;
 					maxFov=1.0;
 					directionStabilized=1;
 					visionMode[]=
@@ -268,7 +268,7 @@ class RC_UAV_AR1: RC_UAV_base
 					minAngleY=-100;
 					maxAngleY=100;
 					initFov=1.0;
-					minFov=0.075;
+					minFov=0.05;
 					maxFov=1.0;
 					visionMode[]=
 					{
