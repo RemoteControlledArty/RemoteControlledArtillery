@@ -8,6 +8,11 @@ class CfgPatches
 		units[]=
 		{
 			RC_M2A3_BUSKIII_D_B,
+
+			RC_M2A3_BUSKIII_D_B_2,
+			RC_M2A3_BUSKIII_D_B_3,
+			RC_M2A3_BUSKIII_D_B_4,
+
 			RC_M2A3_BUSKIII_D_I,
 			RC_M2A3_BUSKIII_WD_B,
 			RC_M2A3_BUSKIII_WD_I,

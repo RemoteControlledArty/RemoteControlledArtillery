@@ -599,7 +599,7 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH1.hpp"
 			//#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH_IFV_release.hpp"
 		};
 	};
@@ -622,6 +622,112 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 	forceHideDriver=1;
 	driverForceOptics=1;
 };
+
+
+//test test section
+class RC_M2A3_BUSKIII_D_B_2: RC_M2A3_BUSKIII_D
+{
+	class EventHandlers: EventHandlers
+	{	
+		class RHSUSF_EventHandlers
+		{
+			postInit="_this call rhs_fnc_reapplyTextures";
+			getIn="_this call rhs_fnc_m2_doors";
+			getOut="_this call rhs_fnc_m2_doors";
+		};
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH2.hpp"
+			//#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH_IFV_release.hpp"
+		};
+	};
+
+	displayName="M2A3 Bradley 2";
+	editorSubcategory="RC_RHS_D_subcat";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	faction="RemoteControlled_B";
+	side=1;
+
+	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	isUav=1;
+	textPlural="UGVs";
+	textSingular="UGV";
+	crew="B_UAV_AI";
+	forceHideDriver=1;
+	driverForceOptics=1;
+};
+
+class RC_M2A3_BUSKIII_D_B_3: RC_M2A3_BUSKIII_D
+{
+	displayName="M2A3 Bradley 3";
+
+	class EventHandlers: EventHandlers
+	{	
+		class RHSUSF_EventHandlers
+		{
+			postInit="_this call rhs_fnc_reapplyTextures";
+			getIn="_this call rhs_fnc_m2_doors";
+			getOut="_this call rhs_fnc_m2_doors";
+		};
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH1.hpp"
+			//#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH_IFV_release.hpp"
+		};
+	};
+
+	editorSubcategory="RC_RHS_D_subcat";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	faction="RemoteControlled_B";
+	side=1;
+
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
+	crew="B_UAV_AI";
+	//forceHideDriver=1;
+	//driverForceOptics=1;
+};
+
+class RC_M2A3_BUSKIII_D_B_4: RC_M2A3_BUSKIII_D
+{
+	displayName="M2A3 Bradley 4";
+
+	editorSubcategory="RC_RHS_D_subcat";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	faction="RemoteControlled_B";
+	side=1;
+
+	crew="";
+	hasDriver=-1;
+
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
+	//crew="B_UAV_AI";
+	//forceHideDriver=1;
+	//driverForceOptics=1;
+};
+
+
 class RC_M2A3_BUSKIII_WD_B: RC_M2A3_BUSKIII_D_B
 {
 	editorSubcategory="RC_RHS_WD_subcat";
