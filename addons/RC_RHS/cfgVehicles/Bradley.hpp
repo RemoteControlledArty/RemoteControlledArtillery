@@ -704,6 +704,9 @@ class RC_M2A3_BUSKIII_D_B_3: RC_M2A3_BUSKIII_D
 
 class RC_M2A3_BUSKIII_D_B_4: RC_M2A3_BUSKIII_D
 {
+
+	//ALSO ADD and try SCRIPT TO localise to commander when seats changed
+
 	displayName="M2A3 Bradley 4";
 
 	editorSubcategory="RC_RHS_D_subcat";
