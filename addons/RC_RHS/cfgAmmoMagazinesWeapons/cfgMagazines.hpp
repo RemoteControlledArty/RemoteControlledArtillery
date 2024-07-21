@@ -5,6 +5,12 @@ class RC_RHS_mag_1100Rnd_762x51_T_R: rhs_mag_1100Rnd_762x51_M240
 	ammo="RC_RHS_ammo_M80A1EPR_T_R";
 	tracersEvery=1;
 };
+class RC_RHS_mag_1100Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_T_R
+{
+	ammo="RC_RHS_ammo_M61_AP_T_R";
+	displayname="7.62x51mm AP";
+	displaynameshort="M61 AP";
+};
 
 
 //25mm

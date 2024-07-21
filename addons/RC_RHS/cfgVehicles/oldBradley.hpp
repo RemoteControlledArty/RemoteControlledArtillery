@@ -1,5 +1,5 @@
-class RHS_M2A3_BUSKIII;
-class RC_M2A3_BUSKIII_Base: RHS_M2A3_BUSKIII
+class RHS_M2A2;
+class RC_M2A2_Base: RHS_M2A2
 {
 	scope=0;
 	scopeCurator=0;
@@ -13,7 +13,7 @@ class RC_M2A3_BUSKIII_Base: RHS_M2A3_BUSKIII
 	class ramp;
 	class HatchC;
 };
-class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
+class RC_M2A2_D_Base: RC_M2A2_Base
 {
 	forceInGarage=1;
 	driverCompartments="Compartment2";
@@ -43,39 +43,6 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 	maxSpeed=75;
 	enginePower=670;
 	peakTorque=2490;
-
-	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
-	//armorStructural=1000;	//280 //prevents instant explosion, does not make it stronger
-	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
-	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
-
-	//hullDamageCauseExplosion = 1; // vehicle will explode if HitHull is above 0.9
-	//fuelExplosionPower=0.1;
-	//secondaryExplosion=-1;
-
-	/*
-	//interesting values
-	unitInfoType="RscOptics_AV_driverNoWeapon";
-	memoryPointTaskMarker="TaskMarker_1_pos";
-	cargoCanControlUAV=0;
-	cargoIsCoDriver[]={0,0};
-	killFriendlyExpCoef=0.1;
-	transportSoldier=0;
-	showNVGCargo[]={1};
-	driverCompartments="Compartment3";
-	cargoCompartments[]=
-	{
-		"Compartment2"
-	};
-	cargoProxyIndexes[]={1};
-	getInProxyOrder[]={1};
-
-	unitInfoType="RscOptics_AV_driver";
-	//turret
-	isCopilot=0;
-	dontCreateAI=0;	//might be interesting to reduce script, or reduce commanding problems
-	turretInfoType="RscOptics_UGV_gunner";
-	*/
 
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
@@ -209,12 +176,6 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 
 			class Components
 			{
-				class SensorDisplay
-				{
-					componentType="SensorsDisplayComponent";
-					range[]={4000,2000,1000,500};
-					resource="RscCustomInfoSensors";
-				};
 				class MinimapDisplay
 				{
 					componentType="MinimapDisplayComponent";
@@ -240,12 +201,6 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 
 			class Components
 			{
-				class SensorDisplay
-				{
-					componentType="SensorsDisplayComponent";
-					range[]={4000,2000,1000,500};
-					resource="RscCustomInfoSensors";
-				};
 				class MinimapDisplay
 				{
 					componentType="MinimapDisplayComponent";
@@ -267,10 +222,10 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 		};
 	};
 
-	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
+	#include "\RC_RHS\loadouts\IFVitemsB_RHS_old.hpp"
 };
 
-class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
+class RC_M2A2_D: RC_M2A2_D_Base
 {
 	class Turrets: Turrets
 	{
@@ -279,7 +234,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 			//#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 
-			showAllTargets="2 + 4";
+			//showAllTargets="2 + 4";
 			commanding=3;
 			allowTabLock=1;
 
@@ -294,8 +249,8 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 			};
 			magazines[]=
 			{
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
+				"RC_RHS_mag_1100Rnd_762x51_M61_T_R",
+				"RC_RHS_mag_1100Rnd_762x51_M61_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
@@ -318,7 +273,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 			{
 				class Wide
 				{
-					opticsDisplayName="60HZ";
+					opticsDisplayName="WIDE";
 					initAngleX=0;
 					minAngleX=-30;
 					maxAngleX=30;
@@ -326,7 +281,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 					minAngleY=-100;
 					maxAngleY=100;
 					initFov=0.9;
-					minFov=0.02;	//realistic 12x magnification
+					minFov=0.025;
 					maxFov=0.9;		//larger FOV for improved usability on servers without third person
 					visionMode[]=
 					{
@@ -334,7 +289,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 						"Ti"
 					};
 					thermalMode[]={0};
-					gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_ISU";
 					gunnerOpticsEffect[]={};
 					hitPoint="Hit_Optics_Gnr";
 				};
@@ -342,55 +297,14 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 			
 			class Turrets: Turrets
 			{
-				class CommanderOptics : CommanderOptics
+				class CommanderOptics: CommanderOptics
 				{
 					//#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					//isCopilot=1; //allows to trigger EH that gives driving controls
-					showAllTargets="2 + 4";
+					//showAllTargets="2 + 4";
 					commanding=2;
 					allowTabLock=1;
 					
-					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
-					gunnerOpticsEffect[]={};
-					class ViewOptics: ViewOptics
-					{
-						initFov=0.46599999;
-						minFov=0.015;
-						maxFov=0.46599999;
-						visionMode[]=
-						{
-							"Normal",
-							"NVG",
-							"Ti"
-						};
-						thermalMode[]={0};
-					};
-					class OpticsIn
-					{
-						class Ultrawide
-						{
-							opticsDisplayName="60HZ";
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"Ti"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
-							gunnerOpticsEffect[]={};
-							hitPoint="Hit_Optics_Cdr_CIV";
-						};
-					};
-
 					weapons[]=
 					{
 						"RC_Laserdesignator_vehicle",
@@ -411,12 +325,6 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 
 							class Components
 							{
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
 								class VehicleMissileDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
@@ -453,12 +361,6 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 
 							class Components
 							{
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
 								class VehicleMissileDisplay
 								{
 									componentType="TransportFeedDisplayComponent";
@@ -510,12 +412,6 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
 						class VehicleMissileDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
@@ -552,12 +448,6 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
 						class VehicleMissileDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
@@ -585,7 +475,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 };
 
 
-class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
+class RC_M2A2_D_B: RC_M2A2_D
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -603,7 +493,7 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 		};
 	};
 
-	displayName="M2A3 Bradley";
+	displayName="M2A2 Bradley";
 	editorSubcategory="RC_RHS_D_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -617,173 +507,32 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 };
 
 
-class RC_M2A3_BUSKIII_RC_D_B: RC_M2A3_BUSKIII_D
-{
-	class EventHandlers: EventHandlers
-	{	
-		class RHSUSF_EventHandlers
-		{
-			postInit="_this call rhs_fnc_reapplyTextures";
-			getIn="_this call rhs_fnc_m2_doors";
-			getOut="_this call rhs_fnc_m2_doors";
-		};
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
-			//#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH1.hpp"
-		};
-	};
-
-	displayName="RC M2A3 Bradley";
-	editorSubcategory="RC_RHS_D_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
-
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="B_UAV_AI";
-	forceHideDriver=1;
-	driverForceOptics=1;
-};
-
-
-class RC_M2A3_BUSKIII_DL_D_B: RC_M2A3_BUSKIII_D
-{
-	class EventHandlers: EventHandlers
-	{	
-		class RHSUSF_EventHandlers
-		{
-			postInit="_this call rhs_fnc_reapplyTextures";
-			getIn="_this call rhs_fnc_m2_doors";
-			getOut="_this call rhs_fnc_m2_doors";
-		};
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
-		};
-	};
-
-	displayName="DL M2A3 Bradley";
-
-	editorSubcategory="RC_RHS_D_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
-
-	crew="";
-	hasDriver=-1;
-};
-
-
-class RC_M2A3_BUSKIII_WD_B: RC_M2A3_BUSKIII_D_B
+class RC_M2A2_WD_B: RC_M2A2_D_B
 {
 	editorSubcategory="RC_RHS_WD_subcat";
-	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A3_BUSKIII_wd.paa";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A2_wd.paa";
 	hiddenSelectionsTextures[]=
 	{
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_base_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_a3_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\a3_co.paa",
 		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\BUSKIII_co.paa",
-		"\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
+		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa"
 	};
 };
 
 
-class RC_M2A3_BUSKIII_D_I: RC_M2A3_BUSKIII_D_B
+class RC_M2A2_D_I: RC_M2A2_D_B
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS_old.hpp"
 };
-class RC_M2A3_BUSKIII_WD_I: RC_M2A3_BUSKIII_WD_B
+class RC_M2A2_WD_I: RC_M2A2_WD_B
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
-};
-
-
-class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
-{
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			weapons[]=
-			{
-				"RC_RHS_weap_m240_bradley_coax",
-				"RC_RHS_weap_M242BC",
-				"RC_Bradley_Missle_Launcher",
-				"rhs_weap_fcs_ammo",
-
-				"rhsusf_weap_M257_8"
-			};
-			magazines[]=
-			{
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_2Rnd_TOW_MP_NLOS",
-				"RC_2Rnd_TOW_MP_NLOS",
-				"RC_2Rnd_TOW_AA",
-				"RC_2Rnd_TOW_AA",
-				"rhs_laserfcsmag",
-
-				"rhsusf_mag_L8A3_8",
-				"rhsusf_mag_L8A3_8",
-				"rhsusf_mag_L8A3_8"
-			};
-		};
-	};
-
-	displayName="M2A3 Bradley NLOS";
-};
-class RC_M2A3_BUSKIII_NLOS_WD_B: RC_M2A3_BUSKIII_NLOS_D_B
-{
-	editorSubcategory="RC_RHS_WD_subcat";
-	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A3_BUSKIII_wd.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_base_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_a3_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\BUSKIII_co.paa",
-		"\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
-	};
-};
-
-
-class RC_M2A3_BUSKIII_NLOS_D_I: RC_M2A3_BUSKIII_NLOS_D_B
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
-};
-class RC_M2A3_BUSKIII_NLOS_WD_I: RC_M2A3_BUSKIII_NLOS_WD_B
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS_old.hpp"
 };

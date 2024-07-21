@@ -17,6 +17,18 @@ class RC_RHS_ammo_M80A1EPR_T_Y: RC_RHS_ammo_M80A1EPR_T_R
 	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
 */
+class rhs_ammo_762x51_M61_AP;
+class RC_RHS_ammo_M61_AP_T_R: rhs_ammo_762x51_M61_AP
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerStartTime=0.04;
+	tracerEndTime=3;
+
+	hit=14;			//giving it acceptable lethality
+	caliber=1.1;	//giving it acceptable lethality
+};
 
 
 //25mm

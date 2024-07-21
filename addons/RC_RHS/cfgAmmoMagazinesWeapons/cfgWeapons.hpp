@@ -9,7 +9,8 @@ class RC_RHS_weap_m240_bradley_coax: rhs_weap_m240_bradley_coax_base
 	minZeroing=10;
 	magazines[]=
 	{
-		"RC_RHS_mag_1100Rnd_762x51_T_R"
+		"RC_RHS_mag_1100Rnd_762x51_T_R",
+		"RC_RHS_mag_1100Rnd_762x51_M61_T_R"
 	};
 	class manual: manual
 	{

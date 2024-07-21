@@ -7,15 +7,18 @@ class CfgPatches
 
 		units[]=
 		{
+			RC_M2A2_D_B,
+			RC_M2A2_D_I,
+			RC_M2A2_WD_B,
+			RC_M2A2_WD_I,
+
 			RC_M2A3_BUSKIII_D_B,
-
-			RC_M2A3_BUSKIII_D_B_2,
-			RC_M2A3_BUSKIII_D_B_3,
-			RC_M2A3_BUSKIII_D_B_4,
-
 			RC_M2A3_BUSKIII_D_I,
 			RC_M2A3_BUSKIII_WD_B,
 			RC_M2A3_BUSKIII_WD_I,
+
+			RC_M2A3_BUSKIII_RC_D_B,
+			RC_M2A3_BUSKIII_DL_D_B,
 
 			RC_M2A3_BUSKIII_NLOS_D_B,
 			RC_M2A3_BUSKIII_NLOS_D_I,
@@ -125,6 +128,7 @@ class CfgVehicles
 {
 	//#include "\RC_RHS\cfgVehicles\Abrams.hpp"
 	#include "\RC_RHS\cfgVehicles\Bradley.hpp"
+	#include "\RC_RHS\cfgVehicles\oldBradley.hpp"
 	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
 };
