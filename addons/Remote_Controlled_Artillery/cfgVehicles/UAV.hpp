@@ -340,7 +340,7 @@ class RC_UAV_FPV: RC_UAV_base
 	scope=2;
 	scopeCurator=2;
 	RC_UAVBlurRange=3000;
-	fuelExplosionPower=50;
+	fuelExplosionPower=25;
 	showAllTargets="2 + 4";
 
 	maxSpeed=200;
