@@ -82,8 +82,8 @@ class RC_200Rnd_93x64_T_G: VehicleMagazine
 	maxLeadSpeed=36.111099;
 	tracersEvery=1;	//4
 	nameSound="mgun";
-	displayName="9.3mm";
-	displayNameShort="9.3mm";
+	displayName="9.3x64mm";
+	displayNameShort="9.3x64mm";
 	muzzleImpulseFactor[]={0.050000001,0.050000001};
 };
 class RC_200Rnd_93x64_T_R: RC_200Rnd_93x64_T_G
@@ -157,6 +157,43 @@ class RC_75Rnd_40mm_G_belt: RC_50Rnd_40mm_G_belt
 class RC_100Rnd_40mm_G_belt: RC_50Rnd_40mm_G_belt
 {
 	count=100;
+};
+
+
+class 1000Rnd_20mm_shells;
+class 100Rnd_20mm_HE_T_R: 1000Rnd_20mm_shells
+{
+	author="Ascent";
+	ammo="RC_20mm_HE_T_R";
+	displayName="20mm HE-T";
+	displayNameShort="20mm HE-T";
+	tracersEvery=1;
+	count=100;
+};
+class 100Rnd_20mm_HE_T_G: 100Rnd_20mm_HE_T_R
+{
+	ammo="RC_20mm_HE_T_G";
+};
+class 100Rnd_20mm_HE_T_Y: 100Rnd_20mm_HE_T_R
+{
+	ammo="RC_20mm_HE_T_Y";
+};
+
+
+class 100Rnd_20mm_AP_T_R: 100Rnd_20mm_HE_T_R
+{
+	ammo="RC_20mm_AP_T_R";
+	displayName="20mm AP-T";
+	displayNameShort="20mm AP-T";
+	initSpeed=1100;
+};
+class 100Rnd_20mm_AP_T_G: 100Rnd_20mm_AP_T_R
+{
+	ammo="RC_20mm_AP_T_G";
+};
+class 100Rnd_20mm_AP_T_Y: 100Rnd_20mm_AP_T_R
+{
+	ammo="RC_20mm_AP_T_Y";
 };
 
 

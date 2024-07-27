@@ -303,7 +303,7 @@ class RC_MMG_93x64_coax: RC_MMG_338_coax
 	};
 	class manual: manual
 	{
-		displayName="9.3mm";
+		displayName="9.3x64mm";
 	};
 };
 
@@ -342,7 +342,7 @@ class RC_MMG_93x64_coax_ext: RC_MMG_338_coax_ext
 	};
 	class manual: manual
 	{
-		displayName="9.3mm";
+		displayName="9.3x64mm";
 	};
 };
 
@@ -353,7 +353,63 @@ class RC_autocannon_30mm_CTWS_Base: autocannon_30mm_CTWS
 {
 	class HE;
 	class AP;
+	class player;
 };
+class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
+{
+	author="Ascent";
+	displayName="20mm AC";
+	canLock=2;
+	FCSZeroingDelay=0.5;
+	maxZeroing=3000;
+
+	class HE: HE
+	{
+		displayName="20mm AC";
+		magazineReloadTime=20;
+		maxZeroing=3000;
+
+		magazines[]=
+		{
+			"100Rnd_20mm_HE_T_R",
+			"100Rnd_20mm_HE_T_G",
+			"100Rnd_20mm_HE_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.175;
+		};
+	};
+	class AP: AP
+	{
+		displayName="20mm AC";
+		magazineReloadTime=20;
+		maxZeroing=3000;
+
+		magazines[]=
+		{
+			"100Rnd_20mm_AP_T_R",
+			"100Rnd_20mm_AP_T_G",
+			"100Rnd_20mm_AP_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.175;
+		};
+	};
+
+	class GunParticles
+	{
+		class Effect
+		{
+			effectName="AutoCannonFired";
+			positionName="Usti hlavne";
+			directionName="Konec hlavne";
+		};
+	};
+};
+
+
 class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 {
 	author="Ascent";
@@ -506,6 +562,31 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 		"RC_100Rnd_127x99_SLAP_T_Y"
 	};
 };
+class RC_MMG_338_APC: RC_HMG_127_APC
+{
+	displayName=".338 MMG";
+	maxZeroing=3000;
+
+	magazines[]=
+	{
+		"RC_200Rnd_338_T_R",
+		"RC_200Rnd_338_T_G",
+		"RC_200Rnd_338_T_Y"
+	};
+};
+class RC_MMG_93x64_APC: RC_HMG_127_APC
+{
+	displayName="9.3x64mm MMG";
+	maxZeroing=3000;
+
+	magazines[]=
+	{
+		"RC_200Rnd_93x64_T_R",
+		"RC_200Rnd_93x64_T_G",
+		"RC_200Rnd_93x64_T_Y"
+	};
+};
+
 
 class GMG_40mm;
 class GMG_40mm_Base: GMG_40mm

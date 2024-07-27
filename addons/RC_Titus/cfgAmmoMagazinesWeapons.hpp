@@ -7,7 +7,7 @@ class CfgAmmo
 		irLock=1;
 		airLock=1;
 		tracerStartTime=0.05;
-		tracerEndTime=3;
+		tracerEndTime=4;
 		indirectHitRange=2;
 		deflecting=1;
 	};
@@ -24,11 +24,13 @@ class CfgAmmo
 	class B_20mm_AP;
 	class RC_QIN_20mm_AP_T_R: B_20mm_AP
 	{
+		hit=70;
+		caliber=3.8;
 		laserLock=1;
 		irLock=1;
 		airLock=1;
 		tracerStartTime=0.05;
-		tracerEndTime=3;
+		tracerEndTime=4;
 		model="\A3\Weapons_f\Data\bullettracer\tracer_red";
 	};
 	class RC_QIN_20mm_AP_T_G: RC_QIN_20mm_AP_T_R
@@ -49,7 +51,7 @@ class CfgAmmo
 		irLock=1;
 		airLock=1;
 		tracerStartTime=0.05;
-		tracerEndTime=3;
+		tracerEndTime=4;
 	};
 	class RC_QIN_127x99_T_G: RC_QIN_127x99_T_R
 	{
@@ -69,7 +71,7 @@ class CfgAmmo
 		irLock=1;
 		airLock=1;
 		tracerStartTime=0.05;
-		tracerEndTime=3;
+		tracerEndTime=4;
 	};
 	class RC_QIN_338_T_G: RC_QIN_338_T_R
 	{
@@ -89,7 +91,7 @@ class CfgAmmo
 		irLock=1;
 		airLock=1;
 		tracerStartTime=0.05;
-		tracerEndTime=3;
+		tracerEndTime=4;
 	};
 	class RC_QIN_200Rnd_762x51_T_G: RC_QIN_200Rnd_762x51_T_R
 	{
@@ -109,8 +111,8 @@ class CfgMagazines
 	class RC_QIN_100Rnd_20mm_HE_T_R: 1000Rnd_20mm_shells
 	{
 		ammo="RC_QIN_20mm_HE_T_R";
-		displayName="20mm HE";
-		displayNameShort="20mm HE";
+		displayName="20mm HE-T";
+		displayNameShort="20mm HE-T";
 		tracersEvery=1;
 		count=100;
 	};
@@ -127,8 +129,8 @@ class CfgMagazines
 	class RC_QIN_100Rnd_20mm_AP_T_R: RC_QIN_100Rnd_20mm_HE_T_R
 	{
 		ammo="RC_QIN_20mm_AP_T_R";
-		displayName="20mm AP";
-		displayNameShort="20mm AP";
+		displayName="20mm AP-T";
+		displayNameShort="20mm AP-T";
 		initSpeed=1100;
 	};
 	class RC_QIN_100Rnd_20mm_AP_T_G: RC_QIN_100Rnd_20mm_AP_T_R

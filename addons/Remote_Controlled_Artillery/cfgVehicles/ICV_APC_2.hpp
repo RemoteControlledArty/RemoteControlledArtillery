@@ -808,6 +808,80 @@ class RC_ICV_2_WD_O: RC_ICV_2_A_O
 };
 
 
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_ICV_2_ReTex_WD_O: RC_ICV_2_A_O
+{
+	faction="RemoteControlled_ReTex_O";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"arma\data\arma_01_ext_wd.paa",
+		"arma\data\arma_02_ext_wd.paa",
+		"arma\data\turret_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\armor_f\data\cage_g1_co.paa"
+	};
+	textureList[]=
+	{
+		"Hex",
+		0
+	};
+};
+class RC_ICV_2_ReTex_WD: RC_ICV_2_ReTex_WD_O
+{
+	faction="RemoteControlled_ReTex_B";
+	crew="B_UAV_AI";
+	side=1;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
+class RC_ICV_2_ReTex_WD_I: RC_ICV_2_ReTex_WD_O
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
+class RC_ICV_2_ReTex_D_O: RC_ICV_2_A_O
+{
+	faction="RemoteControlled_ReTex_O";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"arma\data\arma_01_ext_d.paa",
+		"arma\data\arma_02_ext_d.paa",
+		"arma\data\turret_d.paa",
+		"arma\data\camonet_desert_co.paa",
+		"arma\data\cage_desert_co.paa"
+	};
+	textureList[]=
+	{
+		"Hex",
+		0
+	};
+};
+class RC_ICV_2_ReTex_D: RC_ICV_2_ReTex_D_O
+{
+	faction="RemoteControlled_ReTex_B";
+	crew="B_UAV_AI";
+	side=1;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
+class RC_ICV_2_ReTex_D_I: RC_ICV_2_ReTex_D_O
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
 class RC_APC_2_A_O: RC_ICV_APC_2_A
 {
 	class EventHandlers: EventHandlers
@@ -1135,79 +1209,6 @@ class RC_APC_2_WD_O: RC_APC_2_A_O
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
-class RC_ICV_2_ReTex_WD_O: RC_ICV_2_A_O
-{
-	faction="RemoteControlled_ReTex_O";
-	editorSubcategory="RC_ReTex_Woodland_subcat";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"arma\data\arma_01_ext_wd.paa",
-		"arma\data\arma_02_ext_wd.paa",
-		"arma\data\turret_wd.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"a3\armor_f\data\cage_g1_co.paa"
-	};
-	textureList[]=
-	{
-		"Hex",
-		0
-	};
-};
-class RC_ICV_2_ReTex_WD: RC_ICV_2_ReTex_WD_O
-{
-	faction="RemoteControlled_ReTex_B";
-	crew="B_UAV_AI";
-	side=1;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
-};
-class RC_ICV_2_ReTex_WD_I: RC_ICV_2_ReTex_WD_O
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
-class RC_ICV_2_ReTex_D_O: RC_ICV_2_A_O
-{
-	faction="RemoteControlled_ReTex_O";
-	editorSubcategory="RC_ReTex_Desert_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"arma\data\arma_01_ext_d.paa",
-		"arma\data\arma_02_ext_d.paa",
-		"arma\data\turret_d.paa",
-		"arma\data\camonet_desert_co.paa",
-		"arma\data\cage_desert_co.paa"
-	};
-	textureList[]=
-	{
-		"Hex",
-		0
-	};
-};
-class RC_ICV_2_ReTex_D: RC_ICV_2_ReTex_D_O
-{
-	faction="RemoteControlled_ReTex_B";
-	crew="B_UAV_AI";
-	side=1;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
-};
-class RC_ICV_2_ReTex_D_I: RC_ICV_2_ReTex_D_O
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
 class RC_APC_2_ReTex_WD_O: RC_APC_2_A_O
 {
 	faction="RemoteControlled_ReTex_O";
@@ -1367,6 +1368,277 @@ class RC_APC_2_ReTex_D_I: RC_APC_2_ReTex_D_O
 				"RC_200Rnd_127x99_SLAP_T_Y",
 				"RC_200Rnd_127x99_SLAP_T_Y",
 				"RC_200Rnd_127x99_SLAP_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+
+
+//20mm IFV variant
+class RC_IFV_2_A_O: RC_APC_2_A_O
+{
+	displayName="Otokar Arma 20mm AC";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_93x64_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_AP_T_G",
+				"100Rnd_20mm_AP_T_G",
+				"100Rnd_20mm_AP_T_G",
+				"100Rnd_20mm_AP_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+
+
+class RC_IFV_2_WD_O: RC_IFV_2_A_O
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
+	textureList[]=
+	{
+		"GreenHex",
+		1
+	};
+	hiddenSelectionsTextures[]=
+	{
+		"a3\Armor_F_Exp\APC_Wheeled_02\Data\APC_Wheeled_02_ext_01_ghex_CO.paa",
+		"a3\Armor_F_Exp\APC_Wheeled_02\Data\APC_Wheeled_02_ext_02_ghex_CO.paa",
+		"a3\Data_F_Exp\Vehicles\Turret_ghex_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
+		"A3\armor_f\data\cage_csat_green_CO.paa"
+	};
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_IFV_2_ReTex_WD_O: RC_IFV_2_A_O
+{
+	faction="RemoteControlled_ReTex_O";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"arma\data\arma_01_ext_wd.paa",
+		"arma\data\arma_02_ext_wd.paa",
+		"arma\data\turret_wd.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\armor_f\data\cage_g1_co.paa"
+	};
+	textureList[]=
+	{
+		"Hex",
+		0
+	};
+};
+class RC_IFV_2_ReTex_WD: RC_IFV_2_ReTex_WD_O
+{
+	faction="RemoteControlled_ReTex_B";
+	crew="B_UAV_AI";
+	side=1;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_338_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+class RC_IFV_2_ReTex_WD_I: RC_IFV_2_ReTex_WD_O
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_338_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_AP_T_Y",
+				"100Rnd_20mm_AP_T_Y",
+				"100Rnd_20mm_AP_T_Y",
+				"100Rnd_20mm_AP_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+
+
+class RC_IFV_2_ReTex_D_O: RC_IFV_2_A_O
+{
+	faction="RemoteControlled_ReTex_O";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"arma\data\arma_01_ext_d.paa",
+		"arma\data\arma_02_ext_d.paa",
+		"arma\data\turret_d.paa",
+		"arma\data\camonet_desert_co.paa",
+		"arma\data\cage_desert_co.paa"
+	};
+	textureList[]=
+	{
+		"Hex",
+		0
+	};
+};
+class RC_IFV_2_ReTex_D: RC_IFV_2_ReTex_D_O
+{
+	faction="RemoteControlled_ReTex_B";
+	crew="B_UAV_AI";
+	side=1;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_338_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+class RC_IFV_2_ReTex_D_I: RC_IFV_2_ReTex_D_O
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_338_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_AP_T_Y",
+				"100Rnd_20mm_AP_T_Y",
+				"100Rnd_20mm_AP_T_Y",
+				"100Rnd_20mm_AP_T_Y",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

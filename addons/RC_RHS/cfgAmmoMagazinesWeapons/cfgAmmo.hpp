@@ -6,7 +6,7 @@ class RC_RHS_ammo_M80A1EPR_T_R: rhs_ammo_762x51_M80A1EPR_Ball
 	irLock=1;
 	airLock=1;
 	tracerStartTime=0.04;
-	tracerEndTime=3;
+	tracerEndTime=4;
 
 	hit=14;			//giving it acceptable lethality
 	caliber=1.1;	//giving it acceptable lethality
@@ -24,7 +24,7 @@ class RC_RHS_ammo_M61_AP_T_R: rhs_ammo_762x51_M61_AP
 	irLock=1;
 	airLock=1;
 	tracerStartTime=0.04;
-	tracerEndTime=3;
+	tracerEndTime=4;
 
 	hit=14;			//giving it acceptable lethality
 	caliber=1.1;	//giving it acceptable lethality
@@ -39,7 +39,7 @@ class RC_RHS_ammo_M792_HEI_T_R: RHS_ammo_M792_HEI
 	irLock=1;
 	airLock=1;
 	tracerStartTime=0.045;
-	//tracerEndTime=3;
+	tracerEndTime=4;
 
 	deflecting=1;
 	indirectHitRange=4;
@@ -58,7 +58,7 @@ class RC_RHS_ammo_M919_APFSDS_T_R: RHS_ammo_M919_APFSDS
 	irLock=1;
 	airLock=1;
 	tracerStartTime=0.04;
-	tracerEndTime=3;
+	tracerEndTime=4;
 };
 /*
 class RC_RHS_ammo_M919_APFSDS_T_Y: RC_RHS_ammo_M919_APFSDS_T_R

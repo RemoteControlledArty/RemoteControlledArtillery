@@ -260,6 +260,16 @@ class CfgPatches
 			RC_APC_2_A_O,
 			RC_APC_2_WD_O,
 
+			RC_IFV_1_A,
+			RC_IFV_1_WD,
+			RC_IFV_1_A_O,
+			RC_IFV_1_WD_O,
+			RC_IFV_1_A_I,
+			RC_IFV_1_WD_I,
+
+			RC_IFV_2_A_O,
+			RC_IFV_2_WD_O,
+
 			RC_IFV_3_A,
 			RC_IFV_3_WD,
 			RC_IFV_3_A_O,
@@ -421,6 +431,8 @@ class CfgPatches
 			Improved_FOV_Laserdesignator_Ti_WD,
 
 			RC_HMG_127_APC,
+			RC_MMG_338_APC,
+			RC_MMG_93x64_APC,
 			RC_MMG_338_FSV,
 			RC_MMG_338_FSV_coax,
 			RC_MMG_338_MBT,
@@ -431,6 +443,7 @@ class CfgPatches
 			RC_MMG_93x64_coax_ext,
 
 			RC_GMG_40mm,
+			RC_autocannon_20mm_CTWS,
 			RC_autocannon_30mm,
 			RC_autocannon_30mm_CTWS,
 			RC_autocannon_40mm_CTWS,

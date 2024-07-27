@@ -32,7 +32,7 @@ class RC_B_338_T_R: BulletBase
 	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
 	tracerScale=1.2;
 	tracerStartTime=0.05;
-	tracerEndTime=3;
+	tracerEndTime=4;
 	airFriction=-0.00060999999;
 	class CamShakeExplode
 	{
@@ -81,7 +81,7 @@ class RC_B_93x64_T_G: BulletBase
 	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
 	tracerScale=1.2;
 	tracerStartTime=0.05;
-	tracerEndTime=3;
+	tracerEndTime=4;
 	airFriction=-0.00075000001;
 	class CamShakeExplode
 	{
@@ -115,7 +115,7 @@ class RC_B_127x99_SLAP_T_R: B_127x99_SLAP_Tracer_Red
 	irLock=1;
 	airLock=1;
 	tracerStartTime=0.04;
-	tracerEndTime=3;
+	tracerEndTime=4;
 };
 class RC_B_127x99_SLAP_T_G: RC_B_127x99_SLAP_T_R
 {
@@ -135,6 +135,50 @@ class RC_G_40mm_HEDP: G_40mm_HEDP
 	laserLock=1;
 	irLock=1;
 	airLock=1;
+	
+};
+
+
+class B_20mm_Tracer_Red;
+class RC_20mm_HE_T_R: B_20mm_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerStartTime=0.05;
+	tracerEndTime=4;
+	indirectHitRange=2;
+	deflecting=1;
+};
+class RC_20mm_HE_T_G: RC_20mm_HE_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_20mm_HE_T_Y: RC_20mm_HE_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+class B_20mm_AP;
+class RC_20mm_AP_T_R: B_20mm_AP
+{
+	hit=70;
+	caliber=3.8;
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerStartTime=0.05;
+	tracerEndTime=4;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+};
+class RC_20mm_AP_T_G: RC_20mm_AP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_20mm_AP_T_Y: RC_20mm_AP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
 
 

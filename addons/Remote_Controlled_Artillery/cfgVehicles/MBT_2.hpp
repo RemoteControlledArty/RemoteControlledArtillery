@@ -582,12 +582,12 @@ class RC_MBT_2_A: RC_MBT_2_A_Base
 	forceInGarage=1;
 
 	displayName="Leopard 2";
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
 	crew="B_UAV_AI";
 };
 class RC_MBT_2_A_O: RC_MBT_2_A

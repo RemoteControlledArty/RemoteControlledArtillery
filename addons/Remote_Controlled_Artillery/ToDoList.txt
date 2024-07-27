@@ -37,6 +37,8 @@ TO DO - BUGFIXES:
 
 TO DO - FEATURES:
 
+-renable semi-UGV terminal use by preventing taking control over gunner if gunner is player
+
 -when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
 -fix for someone remotecontrolling gunner player, bugging them
@@ -53,7 +55,6 @@ CAR Script for Zeus:
 -maybe one CONFIG CHECK to get an array that stores all ammo values, and one for vehicle values, to decrease check amounts
 -double check autonomous remote execute structure with Eric
 -locality fix server cba EH
--player local fog AR-1 viewdistance limitation instead, then allow thermal? or https://community.bistudio.com/wiki/disableTIEquipment
 
 
 generally:
