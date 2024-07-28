@@ -201,7 +201,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
 		};
 	};
 	/*

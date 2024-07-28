@@ -509,7 +509,7 @@ class RC_MBT_2_A_Driverless: RC_MBT_2_A_Base
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initDL.hpp"
-			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
 		};
 	};
 
@@ -574,7 +574,7 @@ class RC_MBT_2_A: RC_MBT_2_A_Base
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
 		};
 	};
 

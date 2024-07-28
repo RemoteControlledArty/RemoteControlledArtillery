@@ -889,7 +889,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
 		};
 	};
 

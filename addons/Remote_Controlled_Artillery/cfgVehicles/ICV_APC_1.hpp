@@ -843,7 +843,7 @@ class RC_APC_1_A: RC_APC_1_A_Base
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
 		};
 	};
 
@@ -1014,7 +1014,7 @@ class RC_APC_1_A_Driverless: RC_APC_1_A_Base
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
 		};
 	};
 

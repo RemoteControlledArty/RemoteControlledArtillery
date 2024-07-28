@@ -36,7 +36,7 @@ class RC_FSV_A: RC_FSV_A_Base
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
 		};
 	};
 
