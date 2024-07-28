@@ -32,15 +32,6 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	scopeCurator=0;
 	side=0;
 	forceInGarage=1;
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="O_UAV_AI";
-	forceHideDriver=1;
-	driverForceOptics=1;
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -483,8 +474,17 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
+
+	vehicleClass="Autonomous";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
+	isUav=1;
+	textPlural="UGVs";
+	textSingular="UGV";
+	crew="O_UAV_AI";
+	forceHideDriver=1;
+	driverForceOptics=1;
+
 	maximumLoad=4000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
@@ -889,7 +889,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -901,6 +901,16 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
+
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
+	crew="O_UAV_AI";
+	//driverForceOptics=1;
+	//forceHideDriver=1;
 	
 	weapons[]=
 	{

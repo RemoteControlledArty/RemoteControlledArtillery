@@ -236,6 +236,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
+
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
@@ -245,6 +246,9 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	textPlural="UGVs";
 	textSingular="UGV";
 	crew="B_UAV_AI";
+	forceHideDriver=1;
+	driverForceOptics=1;
+
 	maximumLoad=4000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
@@ -563,7 +567,6 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
@@ -703,7 +706,6 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 		};
 		class CommanderOptics : CommanderOptics
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgPrimaryGunner.hpp"
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			turretInfoType="RscOptics_MBT_03_gunner";
@@ -843,7 +845,7 @@ class RC_APC_1_A: RC_APC_1_A_Base
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -853,12 +855,12 @@ class RC_APC_1_A: RC_APC_1_A_Base
 	side=1;
 	forceInGarage=1;
 
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
 	crew="B_UAV_AI";
 };
 class RC_APC_1_A_O: RC_APC_1_A
@@ -1014,7 +1016,7 @@ class RC_APC_1_A_Driverless: RC_APC_1_A_Base
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
+			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
 

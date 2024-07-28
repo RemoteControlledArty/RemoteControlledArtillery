@@ -22,8 +22,6 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
-	driverForceOptics=1;
-	forceHideDriver=1;
 	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -113,7 +111,6 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=2;
@@ -164,7 +161,6 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes\cfgPrimaryGunner.hpp"
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					commanding=1;
@@ -458,7 +454,7 @@ class RC_MBT_3_G_Driverless: RC_MBT_3_G_Base
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initDL.hpp"
-			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
+			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -538,23 +534,25 @@ class RC_MBT_3_G: RC_MBT_3_G_Base
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
 
+	displayName="T-14";
 	scope=2;
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
 
-	displayName="T-14";
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
 	crew="B_UAV_AI";
+	//driverForceOptics=1;
+	//forceHideDriver=1;
 };
 class RC_MBT_3_G_O: RC_MBT_3_G
 {

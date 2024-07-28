@@ -1,6 +1,6 @@
 //NLOS FSV
 class B_AFV_Wheeled_01_up_cannon_F;
-class RC_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
+class RC_FSV_Base: B_AFV_Wheeled_01_up_cannon_F
 {
 	class AnimationSources;
 	/*
@@ -29,34 +29,11 @@ class RC_FSV_A_Base: B_AFV_Wheeled_01_up_cannon_F
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_FSV_A: RC_FSV_A_Base
+class RC_FSV_A_Base: RC_FSV_Base
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV_inverted.hpp"
-		};
-	};
-
-	displayName="Rooikat";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="B_UAV_AI";
-	driverForceOptics=1;
-	forceHideDriver=1;
 	driverCompartments="Compartment2";
 	//hideProxyInCombat=1;	//for later use
 	//canHideDriver=1;	//for later use
@@ -211,7 +188,6 @@ class RC_FSV_A: RC_FSV_A_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=2;
@@ -369,7 +345,6 @@ class RC_FSV_A: RC_FSV_A_Base
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes\cfgPrimaryGunner.hpp"
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					commanding=1;
@@ -602,6 +577,35 @@ class RC_FSV_A: RC_FSV_A_Base
 	};
 	
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
+};
+
+
+class RC_FSV_A: RC_FSV_A_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+		};
+	};
+
+	displayName="Rooikat";
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
+	crew="B_UAV_AI";
+	//driverForceOptics=1;
+	//forceHideDriver=1;
 };
 class RC_FSV_A_O: RC_FSV_A
 {
