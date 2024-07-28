@@ -257,15 +257,15 @@ class CfgPatches
 			RC_APC_1_A_I,
 			RC_APC_1_WD_I,
 
-			RC_APC_2_A_O,
-			RC_APC_2_WD_O,
-
 			RC_IFV_1_A,
 			RC_IFV_1_WD,
 			RC_IFV_1_A_O,
 			RC_IFV_1_WD_O,
 			RC_IFV_1_A_I,
 			RC_IFV_1_WD_I,
+
+			RC_APC_2_A_O,
+			RC_APC_2_WD_O,
 
 			RC_IFV_2_A_O,
 			RC_IFV_2_WD_O,
@@ -376,12 +376,23 @@ class CfgPatches
 			RC_APC_1_ReTex_D_O,
 			RC_APC_1_ReTex_D_I,
 
+			RC_IFV_1_ReTex_D,
+			RC_IFV_1_ReTex_D_O,
+			RC_IFV_1_ReTex_D_I,
+
 			RC_APC_2_ReTex_D,
 			RC_APC_2_ReTex_D_O,
 			RC_APC_2_ReTex_D_I,
 			RC_APC_2_ReTex_WD,
 			RC_APC_2_ReTex_WD_O,
 			RC_APC_2_ReTex_WD_I,
+
+			RC_IFV_2_ReTex_D,
+			RC_IFV_2_ReTex_D_O,
+			RC_IFV_2_ReTex_D_I,
+			RC_IFV_2_ReTex_WD,
+			RC_IFV_2_ReTex_WD_O,
+			RC_IFV_2_ReTex_WD_I,
 
 			RC_IFV_3_ReTex_D,
 			RC_IFV_3_ReTex_WD,

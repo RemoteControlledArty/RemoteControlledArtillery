@@ -377,7 +377,7 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 		};
 		class player: player
 		{
-			reloadTime=0.175;
+			reloadTime=0.2;
 		};
 	};
 	class AP: AP
@@ -390,11 +390,14 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 		{
 			"100Rnd_20mm_AP_T_R",
 			"100Rnd_20mm_AP_T_G",
-			"100Rnd_20mm_AP_T_Y"
+			"100Rnd_20mm_AP_T_Y",
+			"100Rnd_20mm_APFSDS_T_R",
+			"100Rnd_20mm_APFSDS_T_G",
+			"100Rnd_20mm_APFSDS_T_Y"
 		};
 		class player: player
 		{
-			reloadTime=0.175;
+			reloadTime=0.2;
 		};
 	};
 

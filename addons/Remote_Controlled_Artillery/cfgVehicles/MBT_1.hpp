@@ -170,6 +170,7 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 	{
 		class MainTurret: MainTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=2;
@@ -224,6 +225,7 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 			{
 				class CommanderOptics: CommanderOptics
 				{
+					#include "\Remote_Controlled_Artillery\includes\cfgPrimaryGunner.hpp"
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					commanding=1;

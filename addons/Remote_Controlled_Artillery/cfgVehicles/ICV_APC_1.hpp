@@ -523,6 +523,35 @@ class RC_ICV_1_WD_I: RC_ICV_1_WD
 };
 
 
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_ICV_1_ReTex_D: RC_ICV_1_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"namer\data\namer_01_body_d.paa",
+		"namer\data\mbt_01_body_d.paa",
+		"namer\data\turret_d.paa",
+		"namer\data\camonet_desert_co.paa"
+	};
+};
+class RC_ICV_1_ReTex_D_O: RC_ICV_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_ICV_1_ReTex_D_I: RC_ICV_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
 
 
 class RC_APC_1_A_Base: RC_ICV_APC_1_A
@@ -534,6 +563,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 	{
 		class MainTurret: MainTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
@@ -673,6 +703,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 		};
 		class CommanderOptics : CommanderOptics
 		{
+			#include "\Remote_Controlled_Artillery\includes\cfgPrimaryGunner.hpp"
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			turretInfoType="RscOptics_MBT_03_gunner";
@@ -825,8 +856,6 @@ class RC_APC_1_A: RC_APC_1_A_Base
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
@@ -860,6 +889,8 @@ class RC_APC_1_A_O: RC_APC_1_A
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 class RC_APC_1_A_I: RC_APC_1_A
@@ -890,6 +921,8 @@ class RC_APC_1_A_I: RC_APC_1_A
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 
@@ -935,6 +968,8 @@ class RC_APC_1_WD_O: RC_APC_1_WD
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 class RC_APC_1_WD_I: RC_APC_1_WD
@@ -965,6 +1000,8 @@ class RC_APC_1_WD_I: RC_APC_1_WD
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 
@@ -1036,36 +1073,6 @@ class RC_APC_1_WD_Driverless_I: RC_APC_1_WD_Driverless
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
-class RC_ICV_1_ReTex_D: RC_ICV_1_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Desert_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"namer\data\namer_01_body_d.paa",
-		"namer\data\mbt_01_body_d.paa",
-		"namer\data\turret_d.paa",
-		"namer\data\camonet_desert_co.paa"
-	};
-};
-class RC_ICV_1_ReTex_D_O: RC_ICV_1_ReTex_D
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_ICV_1_ReTex_D_I: RC_ICV_1_ReTex_D
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
 class RC_APC_1_ReTex_D: RC_APC_1_A
 {
 	faction="RemoteControlled_ReTex_B";
@@ -1106,6 +1113,8 @@ class RC_APC_1_ReTex_D_O: RC_APC_1_ReTex_D
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 class RC_APC_1_ReTex_D_I: RC_APC_1_ReTex_D
@@ -1136,5 +1145,330 @@ class RC_APC_1_ReTex_D_I: RC_APC_1_ReTex_D
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+
+
+//20mm IFV variant
+class RC_IFV_1_A: RC_APC_1_A
+{
+	displayName="Namer 20mm AC";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_338_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+class RC_IFV_1_A_O: RC_IFV_1_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_93x64_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+class RC_IFV_1_A_I: RC_IFV_1_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_338_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+
+
+class RC_IFV_1_WD: RC_IFV_1_A
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_rcws_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_exp\APC_Tracked_01\Data\APC_Tracked_01_body_olive_CO.paa",
+		"A3\Armor_F_exp\APC_Tracked_01\Data\mbt_01_body_olive_co.paa",
+		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
+	};
+};
+class RC_IFV_1_WD_O: RC_IFV_1_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_93x64_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+class RC_IFV_1_WD_I: RC_IFV_1_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_338_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_IFV_1_ReTex_D: RC_IFV_1_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"namer\data\namer_01_body_d.paa",
+		"namer\data\mbt_01_body_d.paa",
+		"namer\data\turret_d.paa",
+		"namer\data\camonet_desert_co.paa"
+	};
+};
+class RC_IFV_1_ReTex_D_O: RC_IFV_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_93x64_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+class RC_IFV_1_ReTex_D_I: RC_IFV_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_MMG_338_APC",
+				"RC_autocannon_20mm_CTWS",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };

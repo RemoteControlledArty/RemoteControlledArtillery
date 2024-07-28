@@ -916,6 +916,8 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 	{
 		class MainTurret: MainTurret
 		{
+			primaryGunner=0;
+			primaryObserver=1;
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
@@ -1055,6 +1057,8 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 		};
 		class CommanderOptics : CommanderOptics
 		{
+			primaryGunner=1;
+			primaryObserver=0;
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			turretInfoType="RscOptics_MBT_03_gunner";
@@ -1405,10 +1409,10 @@ class RC_IFV_2_A_O: RC_APC_2_A_O
 				"100Rnd_20mm_HE_T_G",
 				"100Rnd_20mm_HE_T_G",
 				"100Rnd_20mm_HE_T_G",
-				"100Rnd_20mm_AP_T_G",
-				"100Rnd_20mm_AP_T_G",
-				"100Rnd_20mm_AP_T_G",
-				"100Rnd_20mm_AP_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1489,10 +1493,10 @@ class RC_IFV_2_ReTex_WD: RC_IFV_2_ReTex_WD_O
 				"100Rnd_20mm_HE_T_R",
 				"100Rnd_20mm_HE_T_R",
 				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_AP_T_R",
-				"100Rnd_20mm_AP_T_R",
-				"100Rnd_20mm_AP_T_R",
-				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1531,10 +1535,10 @@ class RC_IFV_2_ReTex_WD_I: RC_IFV_2_ReTex_WD_O
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
-				"100Rnd_20mm_AP_T_Y",
-				"100Rnd_20mm_AP_T_Y",
-				"100Rnd_20mm_AP_T_Y",
-				"100Rnd_20mm_AP_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1593,10 +1597,10 @@ class RC_IFV_2_ReTex_D: RC_IFV_2_ReTex_D_O
 				"100Rnd_20mm_HE_T_R",
 				"100Rnd_20mm_HE_T_R",
 				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_AP_T_R",
-				"100Rnd_20mm_AP_T_R",
-				"100Rnd_20mm_AP_T_R",
-				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1635,10 +1639,10 @@ class RC_IFV_2_ReTex_D_I: RC_IFV_2_ReTex_D_O
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
-				"100Rnd_20mm_AP_T_Y",
-				"100Rnd_20mm_AP_T_Y",
-				"100Rnd_20mm_AP_T_Y",
-				"100Rnd_20mm_AP_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

@@ -182,6 +182,52 @@ class RC_20mm_AP_T_Y: RC_20mm_AP_T_R
 };
 
 
+class RC_20mm_APFSDS_T_R: RC_20mm_AP_T_R
+{
+	hit=90;
+	caliber=4.8;
+	deflecting=15;
+	airFriction=-9.9999997e-005;
+	typicalSpeed=1320;
+	cost=50;
+	tracerStartTime=0.04;
+
+	class HitEffects
+	{
+		hitMetal="ImpactMetalSabotSmall";
+		hitMetalPlate="ImpactMetalSabotSmall";
+		hitBuilding="ImpactConcreteSabotSmall";
+		hitConcrete="ImpactConcreteSabotSmall";
+		hitGroundSoft="ImpactEffectsGroundSabot";
+		hitGroundHard="ImpactEffectsGroundSabot";
+		Hit_Foliage_green="ImpactLeavesGreen";
+		Hit_Foliage_Dead="ImpactLeavesDead";
+		Hit_Foliage_Green_big="ImpactLeavesGreenBig";
+		Hit_Foliage_Palm="ImpactLeavesPalm";
+		Hit_Foliage_Pine="ImpactLeavesPine";
+		hitFoliage="ImpactLeaves";
+		hitGlass="ImpactGlass";
+		hitGlassArmored="ImpactGlassThin";
+		hitWood="ImpactWood";
+		hitHay="ImpactHay";
+		hitPlastic="ImpactPlastic";
+		hitRubber="ImpactRubber";
+		hitTyre="ImpactTyre";
+		hitMan="ImpactEffectsBlood";
+		hitWater="ImpactEffectsWater";
+		default_mat="ImpactEffectsGroundSabot";
+	};
+};
+class RC_20mm_APFSDS_T_G: RC_20mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_20mm_APFSDS_T_Y: RC_20mm_APFSDS_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
 //MP
 class B_30mm_MP_Tracer_Red;
 class RC_B_30mm_MP_T_R: B_30mm_MP_Tracer_Red

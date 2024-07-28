@@ -197,6 +197,23 @@ class 100Rnd_20mm_AP_T_Y: 100Rnd_20mm_AP_T_R
 };
 
 
+class 100Rnd_20mm_APFSDS_T_R: 100Rnd_20mm_AP_T_R
+{
+	ammo="RC_20mm_APFSDS_T_R";
+	displayName="20mm APFSDS-T";
+	displayNameShort="20mm APFSDS-T";
+	initSpeed=1430;
+};
+class 100Rnd_20mm_APFSDS_T_G: 100Rnd_20mm_APFSDS_T_R
+{
+	ammo="RC_20mm_APFSDS_T_G";
+};
+class 100Rnd_20mm_APFSDS_T_Y: 100Rnd_20mm_APFSDS_T_R
+{
+	ammo="RC_20mm_APFSDS_T_Y";
+};
+
+
 //Autocannons
 class 140Rnd_30mm_MP_shells_Tracer_Red;
 class RC_100Rnd_30mm_MP_T_R: 140Rnd_30mm_MP_shells_Tracer_Red

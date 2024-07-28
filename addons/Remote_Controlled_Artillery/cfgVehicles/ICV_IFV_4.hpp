@@ -734,6 +734,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 	{
 		class MainTurret: MainTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
@@ -802,6 +803,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					#include "\Remote_Controlled_Artillery\includes\cfgPrimaryGunner.hpp"
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 					showAllTargets="2 + 4";
 					commanding=2;
