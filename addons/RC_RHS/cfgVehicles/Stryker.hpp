@@ -192,43 +192,6 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 			};
 		};
 	};
-
-
-	class HitPoints: HitPoints
-	{
-		class HitLFWheel: HitLFWheel
-		{
-			armor=-300;
-		};
-		class HitLF2Wheel: HitLF2Wheel
-		{
-			armor=-300;
-		};
-		class HitLMWheel: HitLMWheel
-		{
-			armor=-300;
-		};
-		class HitLBWheel: HitLBWheel
-		{
-			armor=-300;
-		};
-		class HitRFWheel: HitRFWheel
-		{
-			armor=-300;
-		};
-		class HitRF2Wheel: HitRF2Wheel
-		{
-			armor=-300;
-		};
-		class HitRMWheel: HitRMWheel
-		{
-			armor=-300;
-		};
-		class HitRBWheel: HitRBWheel
-		{
-			armor=-300;
-		};
-	};
 };
 
 
@@ -597,42 +560,6 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 			};
 		};
 	};
-
-	class HitPoints: HitPoints
-	{
-		class HitLFWheel: HitLFWheel
-		{
-			armor=-300;
-		};
-		class HitLF2Wheel: HitLF2Wheel
-		{
-			armor=-300;
-		};
-		class HitLMWheel: HitLMWheel
-		{
-			armor=-300;
-		};
-		class HitLBWheel: HitLBWheel
-		{
-			armor=-300;
-		};
-		class HitRFWheel: HitRFWheel
-		{
-			armor=-300;
-		};
-		class HitRF2Wheel: HitRF2Wheel
-		{
-			armor=-300;
-		};
-		class HitRMWheel: HitRMWheel
-		{
-			armor=-300;
-		};
-		class HitRBWheel: HitRBWheel
-		{
-			armor=-300;
-		};
-	};
 };
 
 
@@ -973,42 +900,6 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 
 		class CargoTurret_02: CargoTurret_02 {};
 		class CargoTurret_03: CargoTurret_03 {};
-	};
-
-	class HitPoints: HitPoints
-	{
-		class HitLFWheel: HitLFWheel
-		{
-			armor=-300;
-		};
-		class HitLF2Wheel: HitLF2Wheel
-		{
-			armor=-300;
-		};
-		class HitLMWheel: HitLMWheel
-		{
-			armor=-300;
-		};
-		class HitLBWheel: HitLBWheel
-		{
-			armor=-300;
-		};
-		class HitRFWheel: HitRFWheel
-		{
-			armor=-300;
-		};
-		class HitRF2Wheel: HitRF2Wheel
-		{
-			armor=-300;
-		};
-		class HitRMWheel: HitRMWheel
-		{
-			armor=-300;
-		};
-		class HitRBWheel: HitRBWheel
-		{
-			armor=-300;
-		};
 	};
 };
 

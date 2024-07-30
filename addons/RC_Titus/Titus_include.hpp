@@ -179,62 +179,7 @@ animationList[]=
 
 class HitPoints: HitPoints
 {
-	class HitLFWheel: HitLFWheel
-	{
-		armor=-500;
-		minimalHit=-0.016000001;
-		explosionShielding=2;
-		passThrough=0;
-	};
-	class HitLF2Wheel: HitLF2Wheel
-	{
-		armor=-500;
-		minimalHit=-0.016000001;
-		explosionShielding=2;
-		passThrough=0;
-	};
-	class HitLMWheel: HitLMWheel
-	{
-		armor=-500;
-		minimalHit=-0.016000001;
-		explosionShielding=2;
-		passThrough=0;
-	};
-	class HitLBWheel: HitLBWheel
-	{
-		armor=-500;
-		minimalHit=-0.016000001;
-		explosionShielding=2;
-		passThrough=0;
-	};
-	class HitRFWheel: HitRFWheel
-	{
-		armor=-500;
-		minimalHit=-0.016000001;
-		explosionShielding=2;
-		passThrough=0;
-	};
-	class HitRF2Wheel: HitRF2Wheel
-	{
-		armor=-500;
-		minimalHit=-0.016000001;
-		explosionShielding=2;
-		passThrough=0;
-	};
-	class HitRMWheel: HitRMWheel
-	{
-		armor=-500;
-		minimalHit=-0.016000001;
-		explosionShielding=2;
-		passThrough=0;
-	};
-	class HitRBWheel: HitRBWheel
-	{
-		armor=-500;
-		minimalHit=-0.016000001;
-		explosionShielding=2;
-		passThrough=0;
-	};
+	#include "\Remote_Controlled_Artillery\includes\hitWheels.hpp"
 };
 
 #include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"

@@ -205,4 +205,9 @@ class Components: Components
 	};
 };
 
+class HitPoints: HitPoints
+{
+	#include "\Remote_Controlled_Artillery\includes\hitWheels.hpp"
+};
+
 #include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
