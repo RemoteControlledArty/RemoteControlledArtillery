@@ -90,51 +90,51 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 		
 		class HitLFWheel: HitLFWheel
 		{
-			armor=-1000;
-			minimalHit=-0.016000001;
-			explosionShielding=1;
+			armor=-300;
+			minimalHit=-0.1;
+			explosionShielding=0.2;
 		};
 		class HitLF2Wheel: HitLF2Wheel
 		{
-			armor=-1000;
-			minimalHit=-0.016000001;
-			explosionShielding=1;
+			armor=-300;
+			minimalHit=-0.1;
+			explosionShielding=0.2;
 		};
 		class HitLMWheel: HitLMWheel
 		{
-			armor=-1000;
-			minimalHit=-0.016000001;
-			explosionShielding=1;
+			armor=-300;
+			minimalHit=-0.1;
+			explosionShielding=0.2;
 		};
 		class HitLBWheel: HitLBWheel
 		{
-			armor=-1000;
-			minimalHit=-0.016000001;
-			explosionShielding=1;
+			armor=-300;
+			minimalHit=-0.1;
+			explosionShielding=0.2;
 		};
 		class HitRFWheel: HitRFWheel
 		{
-			armor=-1000;
-			minimalHit=-0.016000001;
-			explosionShielding=1;
+			armor=-300;
+			minimalHit=-0.1;
+			explosionShielding=0.2;
 		};
 		class HitRF2Wheel: HitRF2Wheel
 		{
-			armor=-1000;
-			minimalHit=-0.016000001;
-			explosionShielding=1;
+			armor=-300;
+			minimalHit=-0.1;
+			explosionShielding=0.2;
 		};
 		class HitRMWheel: HitRMWheel
 		{
-			armor=-1000;
-			minimalHit=-0.016000001;
-			explosionShielding=1;
+			armor=-300;
+			minimalHit=-0.1;
+			explosionShielding=0.2;
 		};
 		class HitRBWheel: HitRBWheel
 		{
-			armor=-1000;
-			minimalHit=-0.016000001;
-			explosionShielding=1;
+			armor=-300;
+			minimalHit=-0.1;
+			explosionShielding=0.2;
 		};
 	};
 

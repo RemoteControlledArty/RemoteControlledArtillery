@@ -15,73 +15,15 @@ class RC_Stryker_M1126_M2_WD_Base: rhsusf_stryker_m1126_m2_wd
 	class ramp;
 	class Hatch_Commander;
 	class UserActions;
-
-	/*
-	class HitLFWheel
-	{
-		armor=-180;
-		minimalHit=-0.1;
-		explosionShielding=0.2;
-		passThrough=0;
-		radius=0.2;
-	};
-	class HitLF2Wheel
-	{
-		armor=-180;
-		minimalHit=-0.1;
-		explosionShielding=0.2;
-		passThrough=0;
-		radius=0.2;
-	};
-	class HitLMWheel
-	{
-		armor=-180;
-		minimalHit=-0.1;
-		explosionShielding=0.2;
-		passThrough=0;
-		radius=0.2;
-	};
-	class HitLBWheel
-	{
-		armor=-180;
-		minimalHit=-0.1;
-		explosionShielding=0.2;
-		passThrough=0;
-		radius=0.2;
-	};
-	class HitRFWheel
-	{
-		armor=-180;
-		minimalHit=-0.1;
-		explosionShielding=0.2;
-		passThrough=0;
-		radius=0.2;
-	};
-	class HitRF2Wheel
-	{
-		armor=-180;
-		minimalHit=-0.1;
-		explosionShielding=0.2;
-		passThrough=0;
-		radius=0.2;
-	};
-	class HitRMWheel
-	{
-		armor=-180;
-		minimalHit=-0.1;
-		explosionShielding=0.2;
-		passThrough=0;
-		radius=0.2;
-	};
-	class HitRBWheel
-	{
-		armor=-180;
-		minimalHit=-0.1;
-		explosionShielding=0.2;
-		passThrough=0;
-		radius=0.2;
-	};
-	*/
+	class HitPoints;
+	class HitLFWheel;
+	class HitLF2Wheel;
+	class HitLMWheel;
+	class HitLBWheel;
+	class HitRFWheel;
+	class HitRF2Wheel;
+	class HitRMWheel;
+	class HitRBWheel;
 };
 class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 {
@@ -250,6 +192,43 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 			};
 		};
 	};
+
+
+	class HitPoints: HitPoints
+	{
+		class HitLFWheel: HitLFWheel
+		{
+			armor=-300;
+		};
+		class HitLF2Wheel: HitLF2Wheel
+		{
+			armor=-300;
+		};
+		class HitLMWheel: HitLMWheel
+		{
+			armor=-300;
+		};
+		class HitLBWheel: HitLBWheel
+		{
+			armor=-300;
+		};
+		class HitRFWheel: HitRFWheel
+		{
+			armor=-300;
+		};
+		class HitRF2Wheel: HitRF2Wheel
+		{
+			armor=-300;
+		};
+		class HitRMWheel: HitRMWheel
+		{
+			armor=-300;
+		};
+		class HitRBWheel: HitRBWheel
+		{
+			armor=-300;
+		};
+	};
 };
 
 
@@ -365,6 +344,15 @@ class RC_Stryker_M1126_MK19_WD_Base: rhsusf_stryker_m1126_mk19_wd
 	class ramp;
 	class Hatch_Commander;
 	class UserActions;
+	class HitPoints;
+	class HitLFWheel;
+	class HitLF2Wheel;
+	class HitLMWheel;
+	class HitLBWheel;
+	class HitRFWheel;
+	class HitRF2Wheel;
+	class HitRMWheel;
+	class HitRBWheel;
 };
 class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 {
@@ -609,6 +597,42 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 			};
 		};
 	};
+
+	class HitPoints: HitPoints
+	{
+		class HitLFWheel: HitLFWheel
+		{
+			armor=-300;
+		};
+		class HitLF2Wheel: HitLF2Wheel
+		{
+			armor=-300;
+		};
+		class HitLMWheel: HitLMWheel
+		{
+			armor=-300;
+		};
+		class HitLBWheel: HitLBWheel
+		{
+			armor=-300;
+		};
+		class HitRFWheel: HitRFWheel
+		{
+			armor=-300;
+		};
+		class HitRF2Wheel: HitRF2Wheel
+		{
+			armor=-300;
+		};
+		class HitRMWheel: HitRMWheel
+		{
+			armor=-300;
+		};
+		class HitRBWheel: HitRBWheel
+		{
+			armor=-300;
+		};
+	};
 };
 
 
@@ -772,8 +796,16 @@ class RC_Stryker_M1127_M2_WD_Base: rhsusf_stryker_m1127_m2_wd
 	class ramp;
 	class Hatch_Commander;
 	class UserActions;
+	class HitPoints;
+	class HitLFWheel;
+	class HitLF2Wheel;
+	class HitLMWheel;
+	class HitLBWheel;
+	class HitRFWheel;
+	class HitRF2Wheel;
+	class HitRMWheel;
+	class HitRBWheel;
 };
-
 class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 {
 	#include "\RC_RHS\cfgVehicles\StrykerBasics_Include.hpp"
@@ -941,6 +973,42 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 
 		class CargoTurret_02: CargoTurret_02 {};
 		class CargoTurret_03: CargoTurret_03 {};
+	};
+
+	class HitPoints: HitPoints
+	{
+		class HitLFWheel: HitLFWheel
+		{
+			armor=-300;
+		};
+		class HitLF2Wheel: HitLF2Wheel
+		{
+			armor=-300;
+		};
+		class HitLMWheel: HitLMWheel
+		{
+			armor=-300;
+		};
+		class HitLBWheel: HitLBWheel
+		{
+			armor=-300;
+		};
+		class HitRFWheel: HitRFWheel
+		{
+			armor=-300;
+		};
+		class HitRF2Wheel: HitRF2Wheel
+		{
+			armor=-300;
+		};
+		class HitRMWheel: HitRMWheel
+		{
+			armor=-300;
+		};
+		class HitRBWheel: HitRBWheel
+		{
+			armor=-300;
+		};
 	};
 };
 
