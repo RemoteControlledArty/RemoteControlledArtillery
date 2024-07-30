@@ -15,6 +15,73 @@ class RC_Stryker_M1126_M2_WD_Base: rhsusf_stryker_m1126_m2_wd
 	class ramp;
 	class Hatch_Commander;
 	class UserActions;
+
+	/*
+	class HitLFWheel
+	{
+		armor=-180;
+		minimalHit=-0.1;
+		explosionShielding=0.2;
+		passThrough=0;
+		radius=0.2;
+	};
+	class HitLF2Wheel
+	{
+		armor=-180;
+		minimalHit=-0.1;
+		explosionShielding=0.2;
+		passThrough=0;
+		radius=0.2;
+	};
+	class HitLMWheel
+	{
+		armor=-180;
+		minimalHit=-0.1;
+		explosionShielding=0.2;
+		passThrough=0;
+		radius=0.2;
+	};
+	class HitLBWheel
+	{
+		armor=-180;
+		minimalHit=-0.1;
+		explosionShielding=0.2;
+		passThrough=0;
+		radius=0.2;
+	};
+	class HitRFWheel
+	{
+		armor=-180;
+		minimalHit=-0.1;
+		explosionShielding=0.2;
+		passThrough=0;
+		radius=0.2;
+	};
+	class HitRF2Wheel
+	{
+		armor=-180;
+		minimalHit=-0.1;
+		explosionShielding=0.2;
+		passThrough=0;
+		radius=0.2;
+	};
+	class HitRMWheel
+	{
+		armor=-180;
+		minimalHit=-0.1;
+		explosionShielding=0.2;
+		passThrough=0;
+		radius=0.2;
+	};
+	class HitRBWheel
+	{
+		armor=-180;
+		minimalHit=-0.1;
+		explosionShielding=0.2;
+		passThrough=0;
+		radius=0.2;
+	};
+	*/
 };
 class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 {

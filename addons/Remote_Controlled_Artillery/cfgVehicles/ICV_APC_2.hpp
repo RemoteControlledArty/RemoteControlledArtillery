@@ -112,58 +112,58 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 
 		class HitLFWheel: HitLFWheel
 		{
-			armor=-500;
+			armor=-1000;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=1;
 			passThrough=0;
 		};
 		class HitLF2Wheel: HitLF2Wheel
 		{
-			armor=-500;
+			armor=-1000;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=1;
 			passThrough=0;
 		};
 		class HitLMWheel: HitLMWheel
 		{
-			armor=-500;
+			armor=-1000;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=1;
 			passThrough=0;
 		};
 		class HitLBWheel: HitLBWheel
 		{
-			armor=-500;
+			armor=-1000;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=1;
 			passThrough=0;
 		};
 		class HitRFWheel: HitRFWheel
 		{
-			armor=-500;
+			armor=-1000;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=1;
 			passThrough=0;
 		};
 		class HitRF2Wheel: HitRF2Wheel
 		{
-			armor=-500;
+			armor=-1000;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=1;
 			passThrough=0;
 		};
 		class HitRMWheel: HitRMWheel
 		{
-			armor=-500;
+			armor=-1000;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=1;
 			passThrough=0;
 		};
 		class HitRBWheel: HitRBWheel
 		{
-			armor=-500;
+			armor=-1000;
 			minimalHit=-0.016000001;
-			explosionShielding=2;
+			explosionShielding=1;
 			passThrough=0;
 		};
 	};
