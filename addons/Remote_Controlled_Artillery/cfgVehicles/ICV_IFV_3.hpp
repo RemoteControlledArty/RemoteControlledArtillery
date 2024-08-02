@@ -278,6 +278,7 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_gunner_fixated.hpp"
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment3";
 			commanding=2;
@@ -332,90 +333,13 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="MinimapDisplayComponent";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						*/
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="EmptyDisplayComponent";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						*/
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-			};
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_gunner_fixated.hpp"
 					showAllTargets="2 + 4";
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 					turretInfoType="";
@@ -467,80 +391,6 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 						initFov=1;
 						minFov=0.125;
 						maxFov=1;
-					};
-
-					class Components: Components
-					{
-						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-						{
-							defaultDisplay="MinimapDisplayComponent";
-
-							class Components
-							{
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								/*
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-						{
-							defaultDisplay="EmptyDisplayComponent";
-
-							class Components
-							{
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								/*
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
 					};
 				};
 			};
@@ -649,6 +499,16 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 	crew="B_UAV_AI";
 	//driverForceOptics=1;
 	//forceHideDriver=1;
+
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
 
 	class Turrets: Turrets
 	{

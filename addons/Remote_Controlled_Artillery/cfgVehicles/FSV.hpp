@@ -82,6 +82,16 @@ class RC_FSV_A_Base: RC_FSV_Base
 		0
 	};
 
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
+
 	class Components: Components
 	{
 		class SensorsManagerComponent

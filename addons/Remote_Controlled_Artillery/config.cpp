@@ -94,6 +94,9 @@ class CfgPatches
 			RC_Howitzer_HEX_A_O,
 			RC_Howitzer_HEX_WD_O,
 
+			RC_Howitzer_HEX_LC_A_O,
+			RC_Howitzer_HEX_LC_WD_O,
+
 			RC_Static_Arty,
 			RC_Static_Arty_O,
 			RC_Static_Arty_I,

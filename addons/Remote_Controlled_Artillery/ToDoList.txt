@@ -37,14 +37,11 @@ TO DO - BUGFIXES:
 
 TO DO - FEATURES:
 
--renable semi-UGV terminal use by preventing taking control over gunner if gunner is player
-
+-FIX MORTAR ACCURACY on uneven ground (AZ not changing with EL)
 -when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
--fix for someone remotecontrolling gunner player, bugging them
 
 -add sensor to mortar carrier camera
--video about vics & fpv
 
 -doublecheck mortar laser guided accuary in MP
 -"almost aligned message" and +-1 accuracy clearer color difference (for smokes etc)
@@ -105,6 +102,8 @@ TO DO - QUALITY OF LIFE:
 
 POSTPONED:
 
+-renable semi-UGV terminal use by preventing taking control over gunner if gunner is player
+-video about vics & fpv
 -adding missile launcher to FSV 40mm
 -disable turning out option of RC IC
 -smaller magazine shell count selection in attributes
@@ -181,6 +180,9 @@ new:
 -fixed bluefor/independent Otokar Arma Commander seat
 -rockets in MLRS/MRL and animations like recoiling barrel are now visible
 -fixed missle animations in IFV
+
+-fixed datalink panel closing for vehicle commander when opening map
+-fixed major bug of gunner being fubar after accidentally being controlled by terminal, with the tradeoff of "armed semi manned" vehicles for now not being interactable by terminal anymore
 
 
 DONE - FEATURES:
@@ -310,9 +312,12 @@ new:
 -script performance increases
 -RC Titus MRAP if mod is installed
 -20mm AP now also available for Titus
+-added LOW CAPACITY Mortars/Howitzers, with less ammo for better op balancing
 -rebalanced AR-1 connection distance to 1500m
 -rebalanced FPV explosion damage to 50%
 -increased FPV speed
+
+-added Otokar Arma 20mm Autocannon variant, which balancing wise sits in a nice spot for mechanized infantry ops, its not too strong or weak
 
 
 DONE - QUALITY OF LIFE:
@@ -322,6 +327,12 @@ DONE - QUALITY OF LIFE:
 -if vehicle speed = 0 then engine is turned off, your ears will thank
 -map now available for all assets!
 -significant mod folder and hpp restructure
+
+new:
+-compacting by more include files
+-driver panel now thermal by default to prevent "pink bug" when using A3TI
+-gunnerview panel now left panel default for commander
+-vehicle mortar now also has recommended trajectory highlighting
 
 
 ---------------------------------------------------------------------------------------------------------

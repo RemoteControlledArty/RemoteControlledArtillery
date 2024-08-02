@@ -53,6 +53,16 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
+
 	hiddenSelectionsTextures[]=
 	{
 		"A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa",

@@ -12,11 +12,6 @@ class Components: Components
 				range[]={4000,2000,1000,500};
 				resource="RscCustomInfoSensors";
 			};
-			class MinimapDisplay
-			{
-				componentType="MinimapDisplayComponent";
-				resource="RscCustomInfoMiniMap";
-			};
 			class VehicleDriverDisplay
 			{
 				componentType="TransportFeedDisplayComponent";
@@ -26,6 +21,11 @@ class Components: Components
 			{
 				componentType="TransportFeedDisplayComponent";
 				source="Commander";
+			};
+			class MinimapDisplay
+			{
+				componentType="MinimapDisplayComponent";
+				resource="RscCustomInfoMiniMap";
 			};
 			class UAVFeedDisplay
 			{
@@ -61,11 +61,6 @@ class Components: Components
 				range[]={4000,2000,1000,500};
 				resource="RscCustomInfoSensors";
 			};
-			class MinimapDisplay
-			{
-				componentType="MinimapDisplayComponent";
-				resource="RscCustomInfoMiniMap";
-			};
 			class VehicleDriverDisplay
 			{
 				componentType="TransportFeedDisplayComponent";
@@ -75,6 +70,11 @@ class Components: Components
 			{
 				componentType="TransportFeedDisplayComponent";
 				source="Commander";
+			};
+			class MinimapDisplay
+			{
+				componentType="MinimapDisplayComponent";
+				resource="RscCustomInfoMiniMap";
 			};
 			class UAVFeedDisplay
 			{

@@ -233,6 +233,16 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 		"SmokeLauncherMag"
 	};
 
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
+
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret

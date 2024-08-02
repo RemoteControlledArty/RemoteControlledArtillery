@@ -61,6 +61,16 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
 	};
 
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
+
 	class Components: Components
 	{
 		class SensorsManagerComponent

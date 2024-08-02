@@ -262,7 +262,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_gunner_fixated.hpp"
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment3";
 			commanding=2;
@@ -330,7 +330,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_gunner_fixated.hpp"
 					showAllTargets="2 + 4";
 					//personTurretAction="";	//no effect
 					//forceHideGunner=1;	//makes view bug
@@ -522,6 +522,16 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 	{
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
+	};
+
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
 	};
 
 	class Turrets: Turrets

@@ -106,9 +106,9 @@ class RC_Mortar: RC_Mortar_base
 			};
 			magazines[]=
 			{
-				"RC_10Rnd_82mm_Mo_shells",
-				"RC_4Rnd_82mm_Mo_HEAB",
-				"RC_5Rnd_82mm_Mo_MultiGuided",
+				"RC_8Rnd_82mm_Mo_shells",
+				"RC_3Rnd_82mm_Mo_HEAB",
+				"RC_4Rnd_82mm_Mo_MultiGuided",
 				"RC_12Rnd_82mm_Mo_Smoke_white",
 				"RC_6Rnd_82mm_Mo_Flare_white"
 			};
@@ -356,9 +356,9 @@ class RC_VehicleMortar: RC_Mortar
 			};
 			magazines[]=
 			{
-				"RC_15Rnd_82mm_Mo_shells",
-				"RC_4Rnd_82mm_Mo_HEAB",
-				"RC_5Rnd_82mm_Mo_MultiGuided",
+				"RC_15Rnd_82mm_vic_Mo_shells",
+				"RC_4Rnd_82mm_vic_Mo_HEAB",
+				"RC_5Rnd_82mm_vic_Mo_MultiGuided",
 				"RC_20Rnd_82mm_Mo_Smoke_white",
 				"RC_9Rnd_82mm_Mo_AT_mine",
 				"RC_9Rnd_82mm_Mo_mine",
@@ -447,9 +447,9 @@ class RC_VehicleMortar_LC: RC_VehicleMortar
 			};
 			magazines[]=
 			{
-				"RC_6Rnd_82mm_Mo_shells",
-				"RC_2Rnd_82mm_Mo_HEAB",
-				"RC_3Rnd_82mm_Mo_MultiGuided",
+				"RC_6Rnd_82mm_vic_Mo_shells",
+				"RC_3Rnd_82mm_vic_Mo_HEAB",
+				"RC_3Rnd_82mm_vic_Mo_MultiGuided",
 				"RC_20Rnd_82mm_Mo_Smoke_white",
 				"RC_4Rnd_82mm_Mo_AT_mine",
 				"RC_4Rnd_82mm_Mo_mine",

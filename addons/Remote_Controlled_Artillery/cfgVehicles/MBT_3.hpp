@@ -59,6 +59,16 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 		"A3\Armor_F\Data\camonet_CSAT_Stripe_Desert_CO.paa"
 	};
 
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
+
 	class Components: Components
 	{
 		class SensorsManagerComponent

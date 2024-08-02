@@ -20,12 +20,6 @@ class Components: Components
 				componentType="UAVFeedDisplayComponent";
 			};
 			/*
-			class SensorDisplay
-			{
-				componentType="SensorsDisplayComponent";
-				range[]={4000,2000,1000,500};
-				resource="RscCustomInfoSensors";
-			};
 			class MineDetectorDisplay
 			{
 				componentType="MineDetectorDisplayComponent";
@@ -55,12 +49,6 @@ class Components: Components
 				componentType="UAVFeedDisplayComponent";
 			};
 			/*
-			class SensorDisplay
-			{
-				componentType="SensorsDisplayComponent";
-				range[]={4000,2000,1000,500};
-				resource="RscCustomInfoSensors";
-			};
 			class MineDetectorDisplay
 			{
 				componentType="MineDetectorDisplayComponent";

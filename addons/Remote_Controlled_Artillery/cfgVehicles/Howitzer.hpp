@@ -345,7 +345,7 @@ class RC_Howitzer_LC_A: RC_Howitzer_A
 			magazines[]=
 			{
 				"RC_6Rnd_155mm_Mo_shells",
-				"RC_2Rnd_155mm_Mo_HEAB",
+				"RC_3Rnd_155mm_Mo_HEAB",
 				"RC_3Rnd_155mm_Mo_MultiGuided",
 				"RC_20Rnd_155mm_Mo_smoke",
 				"RC_4Rnd_155mm_Mo_AT_mine",
@@ -700,6 +700,48 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_HEX_A_O
 };
 
 
+class RC_Howitzer_HEX_LC_A_O: RC_Howitzer_HEX_A_O
+{
+	displayName="RC Howitzer LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_6Rnd_155mm_Mo_shells",
+				"RC_3Rnd_155mm_Mo_HEAB",
+				"RC_3Rnd_155mm_Mo_MultiGuided",
+				"RC_20Rnd_155mm_Mo_smoke",
+				"RC_4Rnd_155mm_Mo_AT_mine",
+				"RC_4Rnd_155mm_Mo_mine",
+				"RC_6Rnd_155mm_Mo_Illum"
+			};
+		};
+	};
+};
+class RC_Howitzer_HEX_LC_WD_O: RC_Howitzer_HEX_LC_A_O
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_MBT_02_arty_ghex_F.jpg";
+	textureList[]=
+	{
+		"GreenHex",
+		1
+	};
+	hiddenSelectionsTextures[]=
+	{
+		"a3\Armor_F_Exp\MBT_02\Data\MBT_02_body_ghex_CO.paa",
+		"a3\Armor_F_Exp\MBT_02\Data\MBT_02_scorcher_ghex_CO.paa",
+		"a3\Armor_F_Exp\MBT_02\Data\MBT_02_ghex_CO.paa",
+		"a3\Data_F_Exp\Vehicles\Turret_ghex_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa"
+	};
+};
+
+
 class B_Ship_Gun_01_F;
 class RC_Static_Arty_base: B_Ship_Gun_01_F
 {
@@ -885,7 +927,7 @@ class RC_Static_Arty_LC: RC_Static_Arty
 			magazines[]=
 			{
 				"RC_6Rnd_120mm_Mo_shells",
-				"RC_2Rnd_120mm_Mo_HEAB",
+				"RC_3Rnd_120mm_Mo_HEAB",
 				"RC_3Rnd_120mm_Mo_MultiGuided",
 				"RC_20Rnd_120mm_Mo_smoke",
 				"RC_4Rnd_120mm_Mo_AT_mine",
