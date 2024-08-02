@@ -116,12 +116,12 @@ class RC_ATGM_Lock: missiles_titan_static
 	};
 };
 class missiles_titan;
-class RC_IFV_Missle_Launcher_Base: missiles_titan
+class RC_IFV_Missile_Launcher_Base: missiles_titan
 {
 	class Player;
 	class TopDown;
 };
-class RC_IFV_Missle_Launcher: RC_IFV_Missle_Launcher_Base
+class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 {
 	scope=1;
 	canLock=2;
@@ -191,14 +191,32 @@ class RC_IFV_Missle_Launcher: RC_IFV_Missle_Launcher_Base
 
 //Vehicle MMG's
 class HMG_127_AFV;
-class RC_MMG_338_FSV_Base: HMG_127_AFV
+class RC_MG_FSV_Base: HMG_127_AFV
 {
 	class manual;
 };
-class RC_MMG_338_FSV: RC_MMG_338_FSV_Base
+class RC_HMG_127x99_FSV: RC_MG_FSV_Base
 {
 	author="Ascent";
-	displayName="coaxial MMG";
+	//displayName="MMG";
+	canLock=2;
+	maxZeroing=3000;
+	FCSZeroingDelay=0.5;
+	magazines[]=
+	{
+		"RC_200Rnd_127x99_T_R",
+		"RC_200Rnd_127x99_T_G",
+		"RC_200Rnd_127x99_T_Y"
+	};
+	class manual: manual
+	{
+		dispersion=0.001;
+	};
+};
+class RC_MMG_338_FSV: RC_MG_FSV_Base
+{
+	author="Ascent";
+	displayName="MMG";
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
@@ -216,6 +234,8 @@ class RC_MMG_338_FSV: RC_MMG_338_FSV_Base
 };
 class RC_MMG_338_FSV_coax: RC_MMG_338_FSV
 {
+	displayName="coaxial MMG";
+
 	class GunParticles
 	{
 		class effect1
@@ -229,14 +249,33 @@ class RC_MMG_338_FSV_coax: RC_MMG_338_FSV
 
 
 class HMG_127_MBT;
-class RC_MMG_338_MBT_Base: HMG_127_MBT
+class RC_MG_MBT_Base: HMG_127_MBT
 {
 	class manual;
 };
-class RC_MMG_338_MBT: RC_MMG_338_MBT_Base
+class RC_HMG_127x99_MBT: RC_MG_MBT_Base
 {
 	author="Ascent";
-	displayName="coaxial MMG";
+	//displayName="MMG";
+	canLock=2;
+	maxZeroing=3000;
+	FCSZeroingDelay=0.5;
+	magazines[]=
+	{
+		"RC_200Rnd_127x99_T_R",
+		"RC_200Rnd_127x99_T_G",
+		"RC_200Rnd_127x99_T_Y"
+	};
+	class manual: manual
+	{
+		//displayName=".338 NM";
+		dispersion=0.001;
+	};
+};
+class RC_MMG_338_MBT: RC_MG_MBT_Base
+{
+	author="Ascent";
+	displayName="MMG";
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
@@ -254,6 +293,8 @@ class RC_MMG_338_MBT: RC_MMG_338_MBT_Base
 };
 class RC_MMG_338_MBT_coax: RC_MMG_338_MBT
 {
+	displayName="coaxial MMG";
+
 	class GunParticles
 	{
 		class effect1
@@ -3456,7 +3497,7 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 };
 
 
-// 230mm MLRS/MRL Rockets/Missles
+// 230mm MLRS/MRL Rockets/Missiles
 class rockets_230mm_GAT;
 class rockets_230mm_GAT_Base: rockets_230mm_GAT
 {

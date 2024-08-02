@@ -797,8 +797,6 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
 	author="Ascent";
-	driverForceOptics=1;
-	forceHideDriver=1;
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -1043,6 +1041,8 @@ class RC_ATGM_small_WD: RC_ATGM_small_WD_Base
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
+	driverForceOptics=1;
+	forceHideDriver=1;
 
 	class Turrets: Turrets
 	{
@@ -1100,13 +1100,15 @@ class RC_ATGM_small_WD_manned: RC_ATGM_small_WD_Base
 	side=1;
 	forceInGarage=1;
 
-	isUav=1;
-	vehicleClass="Autonomous";
-	textPlural="UGVs";
-	textSingular="UGV";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//vehicleClass="Autonomous";
+	//textPlural="UGVs";
+	//textSingular="UGV";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
 	crew="B_UAV_AI";
+	//driverForceOptics=1;
+	//forceHideDriver=1;
 };
 class RC_ATGM_small_WD_manned_O: RC_ATGM_small_WD_manned
 {

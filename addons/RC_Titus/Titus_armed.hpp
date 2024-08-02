@@ -54,7 +54,7 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 		class muzzle_rot
 		{
 			source="ammorandom";
-			weapon="RC_QIN_20mm_AC";
+			weapon="RC_Titus_autocannon_20mm";
 		};
 		class muzzle2_rot
 		{
@@ -64,7 +64,7 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 		class muzzle_hide
 		{
 			source="reload";
-			weapon="RC_QIN_20mm_AC";
+			weapon="RC_Titus_autocannon_20mm";
 		};
 		class muzzle2_hide
 		{
@@ -156,24 +156,26 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 
 			weapons[]=
 			{
-				"RC_QIN_20mm_AC",
 				"RC_QIN_338_MMG2",
+				"RC_Titus_autocannon_20mm",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_QIN_100Rnd_20mm_HE_T_R",
-				"RC_QIN_100Rnd_20mm_HE_T_R",
-				"RC_QIN_100Rnd_20mm_HE_T_R",
-				"RC_QIN_100Rnd_20mm_HE_T_R",
-				"RC_QIN_100Rnd_20mm_AP_T_R",
-				"RC_QIN_100Rnd_20mm_AP_T_R",
 				"RC_QIN_150Rnd_338_T_R",
 				"RC_QIN_150Rnd_338_T_R",
 				"RC_QIN_150Rnd_338_T_R",
 				"RC_QIN_150Rnd_338_T_R",
 				"RC_QIN_150Rnd_338_T_R",
 				"RC_QIN_150Rnd_338_T_R",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_AP_T_G",
+				"100Rnd_20mm_AP_T_G",
+				"100Rnd_20mm_AP_T_G",
+				"100Rnd_20mm_AP_T_G",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -192,23 +194,20 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
-						class VehicleGunnerDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="PrimaryGunner";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
+						/*
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
-						class EmptyDisplay
+						*/
+						class UAVFeedDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="UAVFeedDisplayComponent";
+						};
+						class CrewDisplay
+						{
+							componentType="CrewDisplayComponent";
 						};
 						/*
 						class MineDetectorDisplay
@@ -218,11 +217,17 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 							resource="RscCustomInfoMineDetect";
 						};
 						*/
+						/*
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						*/
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					//defaultDisplay="EmptyDisplay";
 
 					class Components
 					{
@@ -232,18 +237,18 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
-						class EmptyDisplay
+						class UAVFeedDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="UAVFeedDisplayComponent";
+						};
+						class CrewDisplay
+						{
+							componentType="CrewDisplayComponent";
 						};
 						/*
 						class MineDetectorDisplay
@@ -253,6 +258,10 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 							resource="RscCustomInfoMineDetect";
 						};
 						*/
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
 					};
 				};
 			};
@@ -371,85 +380,6 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 				"RC_QIN_150Rnd_338_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleGunnerDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="PrimaryGunner";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="EmptyDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
 			};
 		};
 

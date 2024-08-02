@@ -40,9 +40,6 @@ class CfgPatches
 
 		ammo[]=
 		{
-			RC_QIN_20mm_T_R,
-			RC_QIN_20mm_T_G,
-			RC_QIN_20mm_T_Y,
 			RC_QIN_338_T_R,
 			RC_QIN_338_T_G,
 			RC_QIN_338_T_Y
@@ -50,9 +47,6 @@ class CfgPatches
 
 		magazines[]=
 		{
-			RC_QIN_100Rnd_20mm_T_R,
-			RC_QIN_100Rnd_20mm_T_G,
-			RC_QIN_100Rnd_20mm_T_Y,
 			RC_QIN_150Rnd_338_T_R,
 			RC_QIN_150Rnd_338_T_G,
 			RC_QIN_150Rnd_338_T_Y
@@ -60,7 +54,7 @@ class CfgPatches
 
 		weapons[]=
 		{
-			RC_QIN_20mm_AC,
+			RC_Titus_autocannon_20mm,
 			RC_QIN_338_MMG1,
 			RC_QIN_338_MMG2
 		};

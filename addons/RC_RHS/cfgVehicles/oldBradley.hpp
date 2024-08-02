@@ -399,7 +399,7 @@ class RC_M2A2_D: RC_M2A2_D_Base
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
-					defaultDisplay="SensorDisplay";
+					//defaultDisplay="SensorDisplay";
 
 					class Components
 					{
@@ -411,11 +411,6 @@ class RC_M2A2_D: RC_M2A2_D_Base
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
-						};
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
 						};
 						class VehicleDriverDisplay
 						{
@@ -447,11 +442,6 @@ class RC_M2A2_D: RC_M2A2_D_Base
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
-						};
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
 						};
 						class VehicleDriverDisplay
 						{

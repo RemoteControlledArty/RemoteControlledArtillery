@@ -152,6 +152,11 @@ class RC_FSV_A_Base: RC_FSV_Base
 			source="revolving";
 			weapon="RC_cannon_120mm";
 		};
+		class com_gun_reload
+		{
+			source="reload";
+			weapon="RC_HMG_127x99_FSV";
+		};
 		/*
 		class showCamonetHull: showCamonetHull
 		{
@@ -189,6 +194,7 @@ class RC_FSV_A_Base: RC_FSV_Base
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner_missile.hpp"
 			showAllTargets="2 + 4";
 			commanding=2;
 
@@ -237,132 +243,28 @@ class RC_FSV_A_Base: RC_FSV_Base
 				};
 			};
 
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-						};
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="VehicleDriverDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-						};
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-			};
-
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
 					showAllTargets="2 + 4";
 					commanding=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
 
 					weapons[]=
 					{
-						"RC_MMG_338_FSV",
+						"RC_HMG_127x99_FSV",
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
+						"RC_200Rnd_127x99_T_R",
+						"RC_200Rnd_127x99_T_R",
+						"RC_200Rnd_127x99_T_R",
+						"RC_200Rnd_127x99_T_R",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -413,109 +315,6 @@ class RC_FSV_A_Base: RC_FSV_Base
 						thermalMode[]={0};
 					};
 					*/
-					class Components: Components
-					{
-						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-						{
-							defaultDisplay="SensorDisplay";
-
-							class Components
-							{
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								class VehicleMissileDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Missile";
-								};
-								class VehicleDriverDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Driver";
-								};
-								class VehicleGunnerDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="PrimaryGunner";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-						{
-							defaultDisplay="VehicleDriverDisplay";
-
-							class Components
-							{
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								class VehicleMissileDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Missile";
-								};
-								class VehicleDriverDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Driver";
-								};
-								class VehicleGunnerDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="PrimaryGunner";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-					};
 				};
 			};
 		};
@@ -592,11 +391,10 @@ class RC_FSV_A_O: RC_FSV_A
 				{
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -638,11 +436,10 @@ class RC_FSV_A_I: RC_FSV_A
 				{
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -708,11 +505,10 @@ class RC_FSV_WD_O: RC_FSV_WD
 				{
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -754,11 +550,10 @@ class RC_FSV_WD_I: RC_FSV_WD
 				{
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"

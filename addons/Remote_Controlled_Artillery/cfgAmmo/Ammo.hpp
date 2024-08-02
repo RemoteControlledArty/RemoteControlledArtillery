@@ -8,46 +8,18 @@ class RC_target_confirmer_ammo: Default
 	nvLock=1;
 };
 
+
 //.338 NM Tracer for Vehicle MMG
-class BulletBase;
-class RC_B_338_T_R: BulletBase
+class B_338_NM_Ball;
+class RC_B_338_T_R: B_338_NM_Ball
 {
 	laserLock=1;
 	irLock=1;
 	airLock=1;
 	hit=16;
-	indirectHit=0;
-	indirectHitRange=0;
-	cartridge="FxCartridge_338_Ball";
-	audibleFire=80;
-	visibleFireTime=3;
-	dangerRadiusBulletClose=10;
-	dangerRadiusHit=14;
-	suppressionRadiusBulletClose=8;
-	suppressionRadiusHit=10;
-	cost=6;
-	caliber=2;
 	typicalSpeed=890;
-	timeToLive=10;
-	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
-	tracerScale=1.2;
 	tracerStartTime=0.05;
 	tracerEndTime=4;
-	airFriction=-0.00060999999;
-	class CamShakeExplode
-	{
-		power=3.1622801;
-		duration=0.60000002;
-		frequency=20;
-		distance=9.4868298;
-	};
-	class CamShakeHit
-	{
-		power=10;
-		duration=0.40000001;
-		frequency=20;
-		distance=1;
-	};
 };
 class RC_B_338_T_G: RC_B_338_T_R
 {
@@ -59,50 +31,39 @@ class RC_B_338_T_Y: RC_B_338_T_R
 };
 
 
-class RC_B_93x64_T_G: BulletBase
+class B_93x64_Ball;
+class RC_B_93x64_T_G: B_93x64_Ball
 {
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	hit=18;
-	indirectHit=0;
-	indirectHitRange=0;
-	cartridge="FxCartridge_93x64_Ball";
-	audibleFire=80;
-	visibleFireTime=3;
-	dangerRadiusBulletClose=10;
-	dangerRadiusHit=14;
-	suppressionRadiusBulletClose=8;
-	suppressionRadiusHit=10;
-	cost=6;
-	caliber=2.2;
-	typicalSpeed=785;
-	timeToLive=10;
-	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
-	tracerScale=1.2;
 	tracerStartTime=0.05;
 	tracerEndTime=4;
-	airFriction=-0.00075000001;
-	class CamShakeExplode
-	{
-		power=3.1622801;
-		duration=0.60000002;
-		frequency=20;
-		distance=9.4868298;
-	};
-	class CamShakeHit
-	{
-		power=10;
-		duration=0.40000001;
-		frequency=20;
-		distance=1;
-	};
 };
 class RC_B_93x64_T_R: RC_B_93x64_T_G
 {
 	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
 };
 class RC_B_93x64_T_Y: RC_B_93x64_T_G
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+class B_127x99_Ball_Tracer_Red;
+class RC_B_127x99_T_R: B_127x99_Ball_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerStartTime=0.05;
+	tracerEndTime=4;
+};
+class RC_B_127x99_T_G: RC_B_127x99_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_127x99_T_Y: RC_B_127x99_T_R
 {
 	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
@@ -119,7 +80,7 @@ class RC_B_127x99_SLAP_T_R: B_127x99_SLAP_Tracer_Red
 };
 class RC_B_127x99_SLAP_T_G: RC_B_127x99_SLAP_T_R
 {
-	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
 };
 class RC_B_127x99_SLAP_T_Y: RC_B_127x99_SLAP_T_R
 {

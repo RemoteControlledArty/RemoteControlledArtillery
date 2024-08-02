@@ -122,13 +122,13 @@ class RC_RHS_weap_TOW_Launcher: Rhs_weap_TOW_Launcher
 };
 
 
-class RC_IFV_Missle_Launcher;
-class RC_Bradley_Missle_Launcher_Base: RC_IFV_Missle_Launcher
+class RC_IFV_Missile_Launcher;
+class RC_Bradley_Missile_Launcher_Base: RC_IFV_Missile_Launcher
 {
 	class Player;
 	class TopDown;
 }
-class RC_Bradley_Missle_Launcher: RC_Bradley_Missle_Launcher_Base
+class RC_Bradley_Missile_Launcher: RC_Bradley_Missile_Launcher_Base
 {
 	displayName="BGM-71 TOW";
 	displayNameShort="BGM-71 TOW";

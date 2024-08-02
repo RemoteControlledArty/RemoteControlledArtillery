@@ -109,6 +109,37 @@ class RC_1000Rnd_93x64_T_Y: RC_200Rnd_93x64_T_Y
 
 
 class 200Rnd_127x99_mag_Tracer_Red;
+class RC_200Rnd_127x99_T_R: 200Rnd_127x99_mag_Tracer_Red
+{
+	author="Ascent";
+	ammo="RC_B_127x99_T_R";
+	count=200;
+	tracersEvery=1;	//4
+	displayName="12.7mm";
+	displayNameShort="12.7mm";
+};
+class RC_200Rnd_127x99_T_G: RC_200Rnd_127x99_T_R
+{
+	ammo="RC_B_127x99_T_G";
+};
+class RC_200Rnd_127x99_T_Y: RC_200Rnd_127x99_T_R
+{
+	ammo="RC_B_127x99_T_Y";
+};
+class RC_100Rnd_127x99_T_R: RC_200Rnd_127x99_T_R
+{
+	count=100;
+};
+class RC_100Rnd_127x99_T_G: RC_200Rnd_127x99_T_G
+{
+	count=100;
+};
+class RC_100Rnd_127x99_T_Y: RC_200Rnd_127x99_T_Y
+{
+	count=100;
+};
+
+
 class RC_200Rnd_127x99_SLAP_T_R: 200Rnd_127x99_mag_Tracer_Red
 {
 	author="Ascent";

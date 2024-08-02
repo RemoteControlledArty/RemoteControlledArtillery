@@ -52,7 +52,7 @@ class CfgPatches
 			RC_RHS_weap_M242BC,
 
 			RC_RHS_weap_TOW_Launcher,
-			RC_Bradley_Missle_Launcher,
+			RC_Bradley_Missile_Launcher,
 
 			RC_RHS_M2_CROWS_M151,
 			RC_RHS_MK19_CROWS_M153
@@ -90,8 +90,6 @@ class CfgEditorSubcategories
 	class RC_RHS_D_subcat {displayname="RHS Desert";};
 	class RC_RHS_WD_subcat {displayname="RHS Woodland";};
 };
-
-//TARGET CONFIRMER FOR DRIVER, gunner camera panel for troop commander seat
 
 
 //later required sensors
