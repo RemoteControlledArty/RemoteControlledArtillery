@@ -6432,6 +6432,7 @@ class RC_1Rnd_120mm_Mo_shells: magazine_ShipCannon_120mm_HE_shells_x32
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
@@ -6599,6 +6600,7 @@ class RC_1Rnd_120mm_Mo_HEAB: magazine_ShipCannon_120mm_HE_shells_x32
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_HEAB: RC_1Rnd_120mm_Mo_HEAB
@@ -6766,6 +6768,7 @@ class RC_1Rnd_120mm_Mo_lowHEAB: magazine_ShipCannon_120mm_HE_shells_x32
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_lowHEAB: RC_1Rnd_120mm_Mo_lowHEAB
@@ -6935,6 +6938,7 @@ class RC_1Rnd_120mm_Mo_LaserGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
@@ -7103,6 +7107,7 @@ class RC_1Rnd_120mm_Mo_MultiGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_MultiGuided: RC_1Rnd_120mm_Mo_MultiGuided
@@ -7271,6 +7276,7 @@ class RC_1Rnd_120mm_Mo_Cluster: magazine_ShipCannon_120mm_HE_cluster_shells_x2
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_Cluster: RC_1Rnd_120mm_Mo_Cluster
@@ -7439,6 +7445,7 @@ class RC_1Rnd_120mm_Mo_mine: magazine_ShipCannon_120mm_mine_shells_x6
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_mine: RC_1Rnd_120mm_Mo_mine
@@ -7607,6 +7614,7 @@ class RC_1Rnd_120mm_Mo_smoke: magazine_ShipCannon_120mm_smoke_shells_x6
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Smoke";
 	displayNameShort="Smoke";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_smoke: RC_1Rnd_120mm_Mo_smoke
@@ -7775,6 +7783,7 @@ class RC_1Rnd_120mm_Mo_AT_mine: magazine_ShipCannon_120mm_AT_mine_shells_x6
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_AT_mine: RC_1Rnd_120mm_Mo_AT_mine
@@ -7942,6 +7951,7 @@ class RC_1Rnd_120mm_Mo_Illum: magazine_ShipCannon_120mm_HE_shells_x32
 	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="Illumination";
 	displayNameShort="Illum";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_Illum: RC_1Rnd_120mm_Mo_Illum
@@ -8110,6 +8120,7 @@ class RC_1Rnd_120mm_Mo_LG_DelayedFuse: magazine_ShipCannon_120mm_HE_LG_shells_x2
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_LG_DelayedFuse: RC_1Rnd_120mm_Mo_LG_DelayedFuse
@@ -8277,6 +8288,7 @@ class RC_1Rnd_120mm_Mo_backupHEAB: magazine_ShipCannon_120mm_HE_shells_x32
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE AB [direct]";
 	displayNameShort="HE AB [direct]";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_120mm_Mo_backupHEAB: RC_1Rnd_120mm_Mo_backupHEAB
@@ -8608,6 +8620,7 @@ class RC_1Rnd_155mm_Mo_shells: 32Rnd_155mm_Mo_shells
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE";
 	displayNameShort="HE";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_shells: RC_1Rnd_155mm_Mo_shells
@@ -8775,6 +8788,7 @@ class RC_1Rnd_155mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE Airburst";
 	displayNameShort="HE Airburst";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_HEAB: RC_1Rnd_155mm_Mo_HEAB
@@ -8942,6 +8956,7 @@ class RC_1Rnd_155mm_Mo_lowHEAB: 32Rnd_155mm_Mo_shells
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE low Airburst";
 	displayNameShort="HE low Airburst";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_lowHEAB: RC_1Rnd_155mm_Mo_lowHEAB
@@ -9109,6 +9124,7 @@ class RC_1Rnd_155mm_Mo_mine: 6Rnd_155mm_Mo_mine
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_mine: RC_1Rnd_155mm_Mo_mine
@@ -9276,6 +9292,7 @@ class RC_1Rnd_155mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_Cluster: RC_1Rnd_155mm_Mo_Cluster
@@ -9443,6 +9460,7 @@ class RC_1Rnd_155mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="Smoke";
 	displayNameShort="Smoke";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_smoke: RC_1Rnd_155mm_Mo_smoke
@@ -9611,6 +9629,7 @@ class RC_1Rnd_155mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
@@ -9779,6 +9798,7 @@ class RC_1Rnd_155mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_MultiGuided: RC_1Rnd_155mm_Mo_MultiGuided
@@ -9946,6 +9966,7 @@ class RC_1Rnd_155mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_AT_mine: RC_1Rnd_155mm_Mo_AT_mine
@@ -10112,6 +10133,7 @@ class RC_1Rnd_155mm_Mo_Illum: 32Rnd_155mm_Mo_shells
 	displayName="Illumination";
 	displayNameShort="Illum";
 	ammo="Flare_155mm_AMOS_White";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
@@ -10280,6 +10302,7 @@ class RC_1Rnd_155mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_LG_DelayedFuse: RC_1Rnd_155mm_Mo_LG_DelayedFuse
@@ -10447,6 +10470,7 @@ class RC_1Rnd_155mm_Mo_backupHEAB: 32Rnd_155mm_Mo_shells
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE AB [direct]";
 	displayNameShort="HE AB [direct]";
+	initSpeed=700;
 	count=1;
 };
 class RC_2Rnd_155mm_Mo_backupHEAB: RC_1Rnd_155mm_Mo_backupHEAB

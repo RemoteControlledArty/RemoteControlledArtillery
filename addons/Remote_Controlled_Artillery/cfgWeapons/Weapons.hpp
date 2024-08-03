@@ -3323,6 +3323,8 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Burst5"
 	};
 	*/
+
+	/*
 	class Single1: Single1
 	{
 		displayName="CH0"
@@ -3357,6 +3359,48 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 	{
 		displayName="CH6"
 		artilleryCharge=0.789;
+	};
+	class Single8: Single1
+	{
+		displayName="CH7 direct"
+		artilleryCharge=1;
+	};
+	*/
+
+	class Single1: Single1
+	{
+		displayName="CH0"
+		artilleryCharge=0.206; //300m minrange 700ms high trajectory
+	};
+	class Single2: Single1
+	{
+		displayName="CH1"
+		artilleryCharge=0.258;
+	};
+	class Single3: Single1
+	{
+		displayName="CH2"
+		artilleryCharge=0.324;
+	};
+	class Single4: Single1
+	{
+		displayName="CH3"
+		artilleryCharge=0.405;
+	};
+	class Single5: Single1
+	{
+		displayName="CH4"
+		artilleryCharge=0.508;
+	};
+	class Single6: Single1
+	{
+		displayName="CH5"
+		artilleryCharge=0.637;
+	};
+	class Single7: Single1
+	{
+		displayName="CH6"
+		artilleryCharge=0.798;
 	};
 	class Single8: Single1
 	{
@@ -3410,7 +3454,10 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 		"Single2",
 		"Single3",
 		"Single4",
-		"Single5"
+		"Single5",
+		"Single6",
+		"Single7",
+		"Single8"
 	};
 	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
 	/*
@@ -3422,6 +3469,8 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 		"Single4",
 		"Single5",
 		"Single6",
+		"Single7",
+		"Single8"
 		"Burst1",
 		"Burst2",
 		"Burst3",
@@ -3429,31 +3478,48 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 		"Burst5"
 	};
 	*/
+
 	class Single1: Single1
 	{
 		displayName="CH0"
-		artilleryCharge=0.3;
+		artilleryCharge=0.342;	//200m minrange 400ms high trajectory
 	};
 	class Single2: Single1
 	{
 		displayName="CH1"
-		artilleryCharge=0.405;
+		artilleryCharge=0.399;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2"
-		artilleryCharge=0.55;
+		artilleryCharge=0.465;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3"
-		artilleryCharge=0.74;
+		artilleryCharge=0.542;
 	};
 	class Single5: Single1
 	{
-		displayName="CH4 direct"
+		displayName="CH4"
+		artilleryCharge=0.631;
+	};
+	class Single6: Single1
+	{
+		displayName="CH5"
+		artilleryCharge=0.736;
+	};
+	class Single7: Single1
+	{
+		displayName="CH6"
+		artilleryCharge=0.859;
+	};
+	class Single8: Single1
+	{
+		displayName="CH7 direct"
 		artilleryCharge=1;
 	};
+
 	magazines[]=
 	{
 		"RC_1Rnd_105mm_Mo_shells",

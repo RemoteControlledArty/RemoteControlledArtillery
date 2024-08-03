@@ -172,7 +172,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			maxElev=87.02;
+			maxElev=87;
 
 			weapons[]=
 			{
@@ -230,7 +230,8 @@ class RC_Howitzer_A: RC_Howitzer_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,20000,10000,5000,2500,67000};
+							//range[]={30000,20000,10000,5000,2500,67000};
+							range[]={30000,20000,10000,5000,2500,50000};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -564,7 +565,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			maxElev=87.02;
+			maxElev=87;
 
 			weapons[]=
 			{
@@ -621,7 +622,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,20000,10000,5000,2500,67000};
+							//range[]={30000,20000,10000,5000,2500,67000};
+							range[]={30000,20000,10000,5000,2500,50000};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -790,7 +792,7 @@ class RC_Static_Arty: RC_Static_Arty_base
 		class MainTurret: MainTurret
 		{
 			showAllTargets="2 + 4";
-			maxelev=87.02;
+			maxelev=87;
 
 			weapons[]=
 			{
@@ -819,7 +821,8 @@ class RC_Static_Arty: RC_Static_Arty_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,20000,10000,5000,2500,67000};
+							//range[]={30000,20000,10000,5000,2500,67000};
+							range[]={30000,20000,10000,5000,2500,50000};
 							resource="RscCustomInfoSensors";
 						};
 					};

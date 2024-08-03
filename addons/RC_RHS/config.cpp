@@ -42,7 +42,27 @@ class CfgPatches
 			RC_Stryker_M1127_M2_D_B,
 			RC_Stryker_M1127_M2_D_I,
 			RC_Stryker_M1127_M2_WD_B,
-			RC_Stryker_M1127_M2_WD_I
+			RC_Stryker_M1127_M2_WD_I,
+
+			RC_M119,
+			RC_M119_O,
+			RC_M119_I,
+
+			RC_FlatbedTruck,
+			RC_FlatbedTruck_O,
+			RC_FlatbedTruck_I,
+
+			RC_FlatbedTruck_LC,
+			RC_FlatbedTruck_LC_O,
+			RC_FlatbedTruck_LC_I,
+
+			RC_FlatbedTruck_manned,
+			RC_FlatbedTruck_manned_O,
+			RC_FlatbedTruck_manned_I,
+
+			RC_FlatbedTruck_manned_LC,
+			RC_FlatbedTruck_manned_LC_O,
+			RC_FlatbedTruck_manned_LC_I
 		};
 
 		weapons[]=
@@ -63,6 +83,7 @@ class CfgPatches
 			"cba_main",
 			"RC_Artillery",
 			"RHS_US_A2Port_Armor",
+			"rhsusf_c_statics",
 			"rhsusf_c_stryker"
 		};
 
@@ -126,6 +147,8 @@ class CfgVehicles
 {
 	//#include "\RC_RHS\cfgVehicles\Abrams.hpp"
 	#include "\RC_RHS\cfgVehicles\Bradley.hpp"
+	#include "\RC_RHS\cfgVehicles\FlatbedTruck.hpp"
+	#include "\RC_RHS\cfgVehicles\M119_105mm.hpp"
 	#include "\RC_RHS\cfgVehicles\oldBradley.hpp"
 	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
