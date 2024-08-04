@@ -200,7 +200,7 @@ class RC_M119_I: RC_M119
 
 class RC_M119_LC: RC_M119
 {
-	displayName="RC M119 105mm 16km";
+	displayName="RC M119 105mm 16km LowCap";
 	editorSubcategory="RC_ReducedAmmo_subcat";
 
 	class Turrets: Turrets
@@ -216,7 +216,7 @@ class RC_M119_LC: RC_M119
 				"RC_6Rnd_105mm_Mo_shells",
 				"RC_3Rnd_105mm_Mo_HEAB",
 				"RC_3Rnd_105mm_Mo_MultiGuided",
-				"RC_20Rnd_105mm_Mo_Smoke_white",
+				"RC_20Rnd_105mm_Mo_Smoke",
 				"RC_4Rnd_105mm_Mo_AT_mine",
 				"RC_4Rnd_105mm_Mo_mine",
 				"RC_6Rnd_105mm_Mo_Illum"

@@ -48,21 +48,30 @@ class CfgPatches
 			RC_M119_O,
 			RC_M119_I,
 
-			RC_FlatbedTruck,
-			RC_FlatbedTruck_O,
-			RC_FlatbedTruck_I,
+			RC_M119_LC,
+			RC_M119_LC_O,
+			RC_M11_LC_I,
 
-			RC_FlatbedTruck_LC,
-			RC_FlatbedTruck_LC_O,
-			RC_FlatbedTruck_LC_I,
+			RC_FlatbedTruck_A,
+			RC_FlatbedTruck_WD,
+			RC_FlatbedTruck_A_O,
+			RC_FlatbedTruck_WD_O,
+			RC_FlatbedTruck_A_I,
+			RC_FlatbedTruck_WD_I,
 
-			RC_FlatbedTruck_manned,
-			RC_FlatbedTruck_manned_O,
-			RC_FlatbedTruck_manned_I,
+			RC_FlatbedTruck_LC_A,
+			RC_FlatbedTruck_LC_WD,
+			RC_FlatbedTruck_LC_A_O,
+			RC_FlatbedTruck_LC_WD_O,
+			RC_FlatbedTruck_LC_A_I,
+			RC_FlatbedTruck_LC_WD_I,
 
-			RC_FlatbedTruck_manned_LC,
-			RC_FlatbedTruck_manned_LC_O,
-			RC_FlatbedTruck_manned_LC_I
+			RC_FlatbedTruck_manned_A,
+			RC_FlatbedTruck_manned_WD,
+			RC_FlatbedTruck_manned_A_O,
+			RC_FlatbedTruck_manned_WD_O,
+			RC_FlatbedTruck_manned_A_I,
+			RC_FlatbedTruck_manned_WD_I
 		};
 
 		weapons[]=
