@@ -3448,6 +3448,9 @@ class RC_155mm_AMOS_V4: RC_155mm_AMOS_V3
 //105mm
 class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 {
+	reloadTime=5;
+	magazineReloadTime=5;
+
 	modes[]=
 	{
 		"Single1",
@@ -3483,41 +3486,49 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 	{
 		displayName="CH0"
 		artilleryCharge=0.342;	//200m minrange 400ms high trajectory
+		reloadTime=5;
 	};
 	class Single2: Single1
 	{
 		displayName="CH1"
 		artilleryCharge=0.399;
+		reloadTime=5;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2"
 		artilleryCharge=0.465;
+		reloadTime=5;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3"
 		artilleryCharge=0.542;
+		reloadTime=5;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4"
 		artilleryCharge=0.631;
+		reloadTime=5;
 	};
 	class Single6: Single1
 	{
 		displayName="CH5"
 		artilleryCharge=0.736;
+		reloadTime=5;
 	};
 	class Single7: Single1
 	{
 		displayName="CH6"
 		artilleryCharge=0.859;
+		reloadTime=5;
 	};
 	class Single8: Single1
 	{
 		displayName="CH7 direct"
 		artilleryCharge=1;
+		reloadTime=5;
 	};
 
 	magazines[]=
