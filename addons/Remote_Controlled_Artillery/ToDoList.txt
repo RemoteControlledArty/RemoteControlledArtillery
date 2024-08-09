@@ -25,6 +25,7 @@ TO DO - BUGFIXES:
 -medical truck respawn script not working in multiplayer (cfgVehicles, RespawnTruck.hpp)
 
 -artillery computer is supposedly disabled for all assets after this mods artillery is used once, not just of the mod
+*+add option to keep it enabled on high angle only mortars
 
 -maybe include blur in main loop to reduce checks
 
