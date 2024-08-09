@@ -299,7 +299,6 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 				"RC_RHS_mag_1100Rnd_762x51_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
 				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
 				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
@@ -540,7 +539,6 @@ class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 			{
 				"RC_RHS_mag_1100Rnd_762x51_T_R",
 				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",

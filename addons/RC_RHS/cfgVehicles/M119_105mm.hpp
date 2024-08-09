@@ -30,8 +30,10 @@ class RC_M119: RC_M119_base
 	textSingular="UGV";
 	isUav=1;
 	vehicleClass="Autonomous";
-	uavCameraGunnerPos="eye";
-	uavCameraGunnerDir="look";
+	uavCameraGunnerPos="PiP0_pos";
+	uavCameraGunnerDir="PiP0_dir";
+	//uavCameraGunnerPos="eye";
+	//uavCameraGunnerDir="look";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	enableGPS=1;

@@ -41,13 +41,11 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 		#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
 	};
 
-	displayName="RC Titus 20mm";
+	displayName="Titus 20mm";
 	editorSubcategory="RC_Titus_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
-	uavCameraGunnerPos="PiP1_pos";
-	uavCameraGunnerDir="PiP1_dir";
 
 	class AnimationSources: AnimationSources
 	{
@@ -284,12 +282,15 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 	};
 
 	displayName="RC Titus MMG";
-	editorSubcategory="RC_Titus_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
+
+	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
+	isUav=1;
+	textPlural="UGVs";
+	textSingular="UGV";
 
 	class AnimationSources: AnimationSources
 	{

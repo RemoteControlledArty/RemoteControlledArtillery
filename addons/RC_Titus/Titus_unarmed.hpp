@@ -44,8 +44,16 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
+
+	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
+	isUav=1;
+	textPlural="UGVs";
+	textSingular="UGV";
+	
 	threat[]={0.30000001,0.30000001,0.30000001};
 
 	class AnimationSources: AnimationSources
