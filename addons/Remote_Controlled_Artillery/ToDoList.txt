@@ -35,6 +35,8 @@ TO DO - FEATURES:
 -post CB scripts, and add sound
 -MATV mounted mortar with AR-1, semi manned & manned wiesel, medical patria/otokar/pandur
 -"almost aligned message" and +-1 accuracy clearer color difference (for smokes etc)
+-seeking guided shot without initial target (maybe with "aimAboveTarget" value or "lockSeekDistanceFromParent"?)
+
 
 -Hashmap value list:
 Vehicles: isRCArty, RC_BarrelAGL, RC_BarrelLenght, RC_BarrelExtends, RCisMortar, RC_Local     *maybe rename isRCArty to RC_isIndirectFire or RC_hasIndirectFireFSC, rename RC_Local to RC_Localize

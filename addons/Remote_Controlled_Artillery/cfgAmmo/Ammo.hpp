@@ -2908,6 +2908,7 @@ class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 class RC_155mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
 	submunitionAmmo="ammo_Penetrator_155mm_MP";
+	//lockSeekDistanceFromParent=10;	//could allow lock after launch, but wasnt achivable in testing so far
 	//craterEffects="RC_155mmGuidedDust";
 	indirectHit=250;
 	indirectHitRange=10;
