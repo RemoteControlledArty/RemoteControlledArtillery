@@ -837,8 +837,8 @@ class RC_IFV_1_A: RC_APC_1_A
 		{
 			weapons[]=
 			{
-				"RC_MMG_338_APC",
 				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_338_APC",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -898,8 +898,8 @@ class RC_IFV_1_A_O: RC_IFV_1_A
 		{
 			weapons[]=
 			{
-				"RC_MMG_93x64_APC",
 				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_93x64_APC",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -949,8 +949,8 @@ class RC_IFV_1_A_I: RC_IFV_1_A
 		{
 			weapons[]=
 			{
-				"RC_MMG_338_APC",
 				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_338_APC",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -1006,8 +1006,8 @@ class RC_IFV_1_WD_O: RC_IFV_1_WD
 		{
 			weapons[]=
 			{
-				"RC_MMG_93x64_APC",
 				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_93x64_APC",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -1057,8 +1057,8 @@ class RC_IFV_1_WD_I: RC_IFV_1_WD
 		{
 			weapons[]=
 			{
-				"RC_MMG_338_APC",
 				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_338_APC",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -1114,8 +1114,8 @@ class RC_IFV_1_ReTex_D_O: RC_IFV_1_ReTex_D
 		{
 			weapons[]=
 			{
-				"RC_MMG_93x64_APC",
 				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_93x64_APC",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -1165,8 +1165,8 @@ class RC_IFV_1_ReTex_D_I: RC_IFV_1_ReTex_D
 		{
 			weapons[]=
 			{
-				"RC_MMG_338_APC",
 				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_338_APC",
 				"SmokeLauncher"
 			};
 			magazines[]=

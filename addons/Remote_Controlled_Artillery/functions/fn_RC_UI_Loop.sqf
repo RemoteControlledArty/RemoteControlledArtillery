@@ -188,7 +188,8 @@ RC_Artillery_UI = [] spawn {
 
 				//Barrel End to Target Distance
 				_muzzleFromCenterEstimate = 0;
-				if ((getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends")) isEqualTo 1) then { _muzzleFromCenterEstimate = _BarrelLenght * (cos (_WeaponDirection * 90)) };
+				_BarrelExtends = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends") == 1;
+				if (_BarrelExtends) then { _muzzleFromCenterEstimate = _BarrelLenght * (cos (_WeaponDirection * 90)) };
 				_targetDistance = (round ((_targetPos distance2d _artyPos) - _muzzleFromCenterEstimate)) max 1;
 
 				_Difference = 0;

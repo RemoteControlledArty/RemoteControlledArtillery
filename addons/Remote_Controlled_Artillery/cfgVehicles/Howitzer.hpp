@@ -48,6 +48,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
+	crewCrashProtection=0.01;
 	radartype=2;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
@@ -110,8 +111,6 @@ class RC_Howitzer_A: RC_Howitzer_base
 			};
 		};
 	};
-
-	crewCrashProtection=0.01;
 
 	class AnimationSources: AnimationSources
 	{

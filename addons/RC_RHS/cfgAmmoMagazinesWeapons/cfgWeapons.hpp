@@ -48,7 +48,7 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 	airateoffire=2;
 	airateoffiredistance=1000;
 	canlock=2;
-	FCSMaxLeadSpeed=0;
+	FCSMaxLeadSpeed=30.555599;
 
 	class GunParticles
 	{
@@ -84,7 +84,7 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 			textureType="fullAuto";
 			dispersion=0.0006;
 		};
-		FCSMaxLeadSpeed=0;
+		FCSMaxLeadSpeed=30.555599;
 		minZeroing=10;
 	};
 	class AP: AP
@@ -103,7 +103,7 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 			textureType="fullAuto";
 			dispersion=0.0006;
 		};
-		FCSMaxLeadSpeed=0;
+		FCSMaxLeadSpeed=30.555599;
 		minZeroing=10;
 	};
 };

@@ -1,4 +1,4 @@
-// Respawn Trucks
+//Flatbed Truck with 105mm M119
 class B_Truck_01_flatbed_F;
 class RC_FlatbedTruck_base: B_Truck_01_flatbed_F
 {
@@ -7,7 +7,6 @@ class RC_FlatbedTruck_base: B_Truck_01_flatbed_F
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
-	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_FlatbedTruck: RC_FlatbedTruck_base
 {
@@ -35,6 +34,22 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 	smokeLauncherOnTurret=0;
 	smokeLauncherAngle=120;
 
+	laserScanner=1;
+	lockDetectionSystem=4;
+	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
+
 	weapons[]=
 	{
 		"TruckHorn",
@@ -60,6 +75,23 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 		{
 			class Components
 			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
 					typeRecognitionDistance=16000;
@@ -79,6 +111,8 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight

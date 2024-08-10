@@ -32,6 +32,34 @@ TO DO - BUGFIXES:
 
 TO DO - FEATURES:
 
+-Hashmap value list:
+Vehicles: isRCArty, RC_BarrelAGL, RC_BarrelLenght, RC_BarrelExtends, RCisMortar, RC_Local     *maybe rename isRCArty to RC_isIndirectFire or RC_hasIndirectFireFSC, rename RC_Local to RC_Localize
+Magazines: RC_AdvisedTrajectory, RC_RequiresLock, RC_AimAboveHeight, RC_TerrainWarning
+
+_uav = getConnectedUAV player;
+_uavClass = typeOf _uav;
+
+createHashMapFromArray
+[
+	["_isRCArty", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1],
+
+	["_BarrelAGL", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelAGL")],
+	["_BarrelLenght", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelLenght")],
+	["_BarrelExtends", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends") == 1],
+
+	["_RCisMortar", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCisMortar")],
+	["_RC_Local", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_Local")],
+]
+
+createHashMapFromArray
+[
+	["_advisedTrajectory", getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AdvisedTrajectory")],
+	["_requiresLock", (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1],
+	["_terrainWarning", (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_TerrainWarning"))==1],
+	["_aimAboveHeight", getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AimAboveHeight")]
+]
+
+
 -FIX MORTAR ACCURACY on uneven ground (AZ not changing with EL)
 -when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH

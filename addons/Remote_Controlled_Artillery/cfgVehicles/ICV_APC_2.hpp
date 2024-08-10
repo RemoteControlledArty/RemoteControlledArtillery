@@ -1010,8 +1010,8 @@ class RC_IFV_2_A_O: RC_APC_2_A_O
 		{
 			weapons[]=
 			{
-				"RC_MMG_93x64_APC",
 				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_93x64_APC",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -1113,8 +1113,8 @@ class RC_IFV_2_ReTex_WD: RC_IFV_2_ReTex_WD_O
 		{
 			weapons[]=
 			{
-				"RC_MMG_338_APC",
 				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_338_APC",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -1220,8 +1220,8 @@ class RC_IFV_2_ReTex_D: RC_IFV_2_ReTex_D_O
 		{
 			weapons[]=
 			{
-				"RC_MMG_338_APC",
 				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_338_APC",
 				"SmokeLauncher"
 			};
 			magazines[]=

@@ -268,6 +268,7 @@ class RC_B_30mm_APFSDS_T_R: B_30mm_APFSDS_Tracer_Red
 	laserLock=1;
 	irLock=1;
 	airLock=1;
+	tracerEndTime=4;
 };
 class RC_B_30mm_APFSDS_T_G: RC_B_30mm_APFSDS_T_R
 {
@@ -285,6 +286,7 @@ class RC_B_40mm_APFSDS_T_R: B_40mm_APFSDS_Tracer_Red
 	laserLock=1;
 	irLock=1;
 	airLock=1;
+	tracerEndTime=4;
 };
 class RC_B_40mm_APFSDS_T_G: RC_B_40mm_APFSDS_T_R
 {
@@ -327,6 +329,7 @@ class RC_Sh_120mm_MP_T_R: Sh_120mm_HEAT_MP_T_Red
 	indirectHit=50;
 	indirectHitRange=10;
 	deflecting=4;
+	tracerEndTime=4;
 	craterEffects="AAMissileCrater";
 };
 class RC_Sh_120mm_MP_T_G: RC_Sh_120mm_MP_T_R
@@ -343,6 +346,7 @@ class RC_Sh_120mm_APFSDS_T_R: Sh_120mm_APFSDS_Tracer_Red
 	laserLock=1;
 	irLock=1;
 	airLock=1;
+	tracerEndTime=4;
 };
 class RC_Sh_120mm_APFSDS_T_G: RC_Sh_120mm_APFSDS_T_R
 {
@@ -364,6 +368,7 @@ class RC_Sh_125mm_MP_T_R: Sh_125mm_HEAT_T_Red
 	indirectHit=50;
 	indirectHitRange=10;
 	deflecting=4;
+	tracerEndTime=4;
 	craterEffects="AAMissileCrater";
 };
 class RC_Sh_125mm_MP_T_G: RC_Sh_125mm_MP_T_R
@@ -380,6 +385,7 @@ class RC_Sh_125mm_APFSDS_T_R: Sh_125mm_APFSDS_T_Red
 	laserLock=1;
 	irLock=1;
 	airLock=1;
+	tracerEndTime=4;
 };
 class RC_Sh_125mm_APFSDS_T_G: RC_Sh_125mm_APFSDS_T_R
 {

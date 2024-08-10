@@ -154,8 +154,8 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 
 			weapons[]=
 			{
-				"RC_QIN_338_MMG2",
 				"RC_Titus_autocannon_20mm",
+				"RC_QIN_338_MMG2",
 				"SmokeLauncher"
 			};
 			magazines[]=

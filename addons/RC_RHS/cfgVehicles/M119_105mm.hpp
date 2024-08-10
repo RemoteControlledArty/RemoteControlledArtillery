@@ -47,7 +47,8 @@ class RC_M119: RC_M119_base
 	{
 		class HitHull
 		{
-			armor=50;
+			armor=-500;
+			minimalHit=-0.1;
 			passThrough=1;
 			name="telo";
 		};
@@ -138,7 +139,7 @@ class RC_M119: RC_M119_base
 			{
 				initFov=0.125;
 				minFov=0.0125;
-				maxFov=0.89999998;
+				maxFov=1;
 			};
 
 			class Components: Components
