@@ -34,6 +34,7 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -231,7 +232,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	displayName="RC Namer";
+	displayName="RC Namer unarmed";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -843,12 +844,6 @@ class RC_IFV_1_A: RC_APC_1_A
 			};
 			magazines[]=
 			{
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
 				"100Rnd_20mm_HE_T_R",
 				"100Rnd_20mm_HE_T_R",
 				"100Rnd_20mm_HE_T_R",
@@ -857,6 +852,12 @@ class RC_IFV_1_A: RC_APC_1_A
 				"100Rnd_20mm_APFSDS_T_R",
 				"100Rnd_20mm_APFSDS_T_R",
 				"100Rnd_20mm_APFSDS_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -904,12 +905,6 @@ class RC_IFV_1_A_O: RC_IFV_1_A
 			};
 			magazines[]=
 			{
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
 				"100Rnd_20mm_HE_T_G",
 				"100Rnd_20mm_HE_T_G",
 				"100Rnd_20mm_HE_T_G",
@@ -918,6 +913,12 @@ class RC_IFV_1_A_O: RC_IFV_1_A
 				"100Rnd_20mm_APFSDS_T_G",
 				"100Rnd_20mm_APFSDS_T_G",
 				"100Rnd_20mm_APFSDS_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -955,12 +956,6 @@ class RC_IFV_1_A_I: RC_IFV_1_A
 			};
 			magazines[]=
 			{
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
@@ -969,6 +964,12 @@ class RC_IFV_1_A_I: RC_IFV_1_A
 				"100Rnd_20mm_APFSDS_T_Y",
 				"100Rnd_20mm_APFSDS_T_Y",
 				"100Rnd_20mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1012,12 +1013,6 @@ class RC_IFV_1_WD_O: RC_IFV_1_WD
 			};
 			magazines[]=
 			{
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
 				"100Rnd_20mm_HE_T_G",
 				"100Rnd_20mm_HE_T_G",
 				"100Rnd_20mm_HE_T_G",
@@ -1026,6 +1021,12 @@ class RC_IFV_1_WD_O: RC_IFV_1_WD
 				"100Rnd_20mm_APFSDS_T_G",
 				"100Rnd_20mm_APFSDS_T_G",
 				"100Rnd_20mm_APFSDS_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1063,12 +1064,6 @@ class RC_IFV_1_WD_I: RC_IFV_1_WD
 			};
 			magazines[]=
 			{
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
@@ -1077,6 +1072,12 @@ class RC_IFV_1_WD_I: RC_IFV_1_WD
 				"100Rnd_20mm_APFSDS_T_Y",
 				"100Rnd_20mm_APFSDS_T_Y",
 				"100Rnd_20mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1120,12 +1121,6 @@ class RC_IFV_1_ReTex_D_O: RC_IFV_1_ReTex_D
 			};
 			magazines[]=
 			{
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
 				"100Rnd_20mm_HE_T_G",
 				"100Rnd_20mm_HE_T_G",
 				"100Rnd_20mm_HE_T_G",
@@ -1134,6 +1129,12 @@ class RC_IFV_1_ReTex_D_O: RC_IFV_1_ReTex_D
 				"100Rnd_20mm_APFSDS_T_G",
 				"100Rnd_20mm_APFSDS_T_G",
 				"100Rnd_20mm_APFSDS_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1171,12 +1172,6 @@ class RC_IFV_1_ReTex_D_I: RC_IFV_1_ReTex_D
 			};
 			magazines[]=
 			{
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
@@ -1185,6 +1180,12 @@ class RC_IFV_1_ReTex_D_I: RC_IFV_1_ReTex_D
 				"100Rnd_20mm_APFSDS_T_Y",
 				"100Rnd_20mm_APFSDS_T_Y",
 				"100Rnd_20mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

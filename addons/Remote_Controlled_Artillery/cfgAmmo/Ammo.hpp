@@ -18,7 +18,7 @@ class RC_B_338_T_R: B_338_NM_Ball
 	airLock=1;
 	hit=16;
 	typicalSpeed=890;
-	tracerStartTime=0.05;
+	tracerStartTime=0.04;
 	tracerEndTime=4;
 };
 class RC_B_338_T_G: RC_B_338_T_R
@@ -37,7 +37,7 @@ class RC_B_93x64_T_G: B_93x64_Ball
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	tracerStartTime=0.05;
+	tracerStartTime=0.04;
 	tracerEndTime=4;
 };
 class RC_B_93x64_T_R: RC_B_93x64_T_G
@@ -56,7 +56,7 @@ class RC_B_127x99_T_R: B_127x99_Ball_Tracer_Red
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	tracerStartTime=0.05;
+	tracerStartTime=0.04;
 	tracerEndTime=4;
 };
 class RC_B_127x99_T_G: RC_B_127x99_T_R
@@ -129,7 +129,7 @@ class RC_20mm_AP_T_R: B_20mm_AP
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	tracerStartTime=0.05;
+	tracerStartTime=0.045;
 	tracerEndTime=4;
 	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
 };
@@ -549,6 +549,7 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	irLock=1;
 	airLock=1;
 	trackLead=1;
+	cmImmunity=0.92000002;
 	cameraViewAvailable=1;
 	initTime=0.01;
 

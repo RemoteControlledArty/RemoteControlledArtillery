@@ -31,6 +31,7 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=0;

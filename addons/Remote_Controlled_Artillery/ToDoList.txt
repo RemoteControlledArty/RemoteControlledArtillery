@@ -32,6 +32,10 @@ TO DO - BUGFIXES:
 
 TO DO - FEATURES:
 
+-post CB scripts, and add sound
+-MATV mounted mortar with AR-1, semi manned & manned wiesel, medical patria/otokar/pandur
+-"almost aligned message" and +-1 accuracy clearer color difference (for smokes etc)
+
 -Hashmap value list:
 Vehicles: isRCArty, RC_BarrelAGL, RC_BarrelLenght, RC_BarrelExtends, RCisMortar, RC_Local     *maybe rename isRCArty to RC_isIndirectFire or RC_hasIndirectFireFSC, rename RC_Local to RC_Localize
 Magazines: RC_AdvisedTrajectory, RC_RequiresLock, RC_AimAboveHeight, RC_TerrainWarning
@@ -39,6 +43,7 @@ Magazines: RC_AdvisedTrajectory, RC_RequiresLock, RC_AimAboveHeight, RC_TerrainW
 _uav = getConnectedUAV player;
 _uavClass = typeOf _uav;
 
+//Vehicle
 createHashMapFromArray
 [
 	["_isRCArty", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1],
@@ -51,6 +56,7 @@ createHashMapFromArray
 	["_RC_Local", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_Local")],
 ]
 
+//Magazine
 createHashMapFromArray
 [
 	["_advisedTrajectory", getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AdvisedTrajectory")],
@@ -67,7 +73,6 @@ createHashMapFromArray
 -add sensor to mortar carrier camera
 
 -doublecheck mortar laser guided accuary in MP
--"almost aligned message" and +-1 accuracy clearer color difference (for smokes etc)
 
 CAR Script for Zeus:
 -EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided

@@ -33,6 +33,7 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -227,7 +228,7 @@ class RC_ICV_5_A: RC_ICV_IFV_5_A
 	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	displayName="RC BM-2T";
+	displayName="RC BM-2T unarmed";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -472,9 +473,10 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 			};
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_MP_T_G",
 				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_GPR_T_G",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_G",
 				"RC_100Rnd_30mm_APFSDS_T_G",

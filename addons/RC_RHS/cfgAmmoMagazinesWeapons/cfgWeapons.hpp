@@ -6,7 +6,7 @@ class rhs_weap_m240_bradley_coax_base: rhs_weap_m240_bradley_coax
 class RC_RHS_weap_m240_bradley_coax: rhs_weap_m240_bradley_coax_base
 {
 	canLock=2;
-	minZeroing=10;
+	minZeroing=50;
 	magazines[]=
 	{
 		"RC_RHS_mag_1100Rnd_762x51_T_R",
@@ -85,7 +85,7 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 			dispersion=0.0006;
 		};
 		FCSMaxLeadSpeed=30.555599;
-		minZeroing=10;
+		minZeroing=50;
 	};
 	class AP: AP
 	{
@@ -104,7 +104,7 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 			dispersion=0.0006;
 		};
 		FCSMaxLeadSpeed=30.555599;
-		minZeroing=10;
+		minZeroing=50;
 	};
 };
 
@@ -158,7 +158,7 @@ class RHS_M2_CROWS_M151_base: RHS_M2_CROWS_M151
 class RC_RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
 {
 	canLock=2;
-	minZeroing=10;
+	minZeroing=50;
 	magazines[] =
 	{
 		"RC_RHS_mag_200rnd_127x99",
@@ -181,7 +181,7 @@ class RHS_MK19_CROWS_M153_base: RHS_MK19_CROWS_M153
 class RC_RHS_MK19_CROWS_M153: RHS_MK19_CROWS_M153_base
 {
 	canLock=2;
-	minZeroing=10;
+	minZeroing=50;
 	magazines[] =
 	{
 		"RC_RHS_96Rnd_40mm_MK19_M430A1"

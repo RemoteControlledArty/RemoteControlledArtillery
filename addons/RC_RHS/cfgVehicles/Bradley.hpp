@@ -23,6 +23,7 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -528,8 +529,8 @@ class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 
 			weapons[]=
 			{
-				"RC_RHS_weap_m240_bradley_coax",
 				"RC_RHS_weap_M242BC",
+				"RC_RHS_weap_m240_bradley_coax",
 				"RC_Bradley_Missile_Launcher",
 				"rhs_weap_fcs_ammo",
 
@@ -537,8 +538,6 @@ class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 			};
 			magazines[]=
 			{
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
@@ -546,6 +545,8 @@ class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
 				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
 				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+				"RC_RHS_mag_1100Rnd_762x51_T_R",
+				"RC_RHS_mag_1100Rnd_762x51_T_R",
 				"RC_2Rnd_TOW_MP_NLOS",
 				"RC_2Rnd_TOW_MP_NLOS",
 				"RC_2Rnd_TOW_AA",

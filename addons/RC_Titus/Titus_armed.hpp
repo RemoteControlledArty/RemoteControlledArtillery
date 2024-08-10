@@ -37,8 +37,8 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes\initICV.hpp"
-		#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
+		#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
+		#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 	};
 
 	displayName="Titus 20mm";
@@ -97,13 +97,6 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
-			gunnerCompartments="Compartment4";
-			primaryGunner=1;
-			primaryObserver=0;
-			gunnerForceOptics=1;
-			forceHideGunner=1;
-			commanding=4;
-			isPersonTurret=0;
 
 			class ViewOptics: ViewOptics
 			{
@@ -134,8 +127,6 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 		class ARX20Turret: ARX20Turret
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			primaryGunner=0;
-			primaryObserver=1;
 			showAllTargets="2 + 4";
 
 			class ViewOptics: ViewOptics
@@ -166,14 +157,14 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 				"RC_QIN_150Rnd_338_T_R",
 				"RC_QIN_150Rnd_338_T_R",
 				"RC_QIN_150Rnd_338_T_R",
-				"100Rnd_20mm_HE_T_G",
-				"100Rnd_20mm_HE_T_G",
-				"100Rnd_20mm_HE_T_G",
-				"100Rnd_20mm_HE_T_G",
-				"100Rnd_20mm_AP_T_G",
-				"100Rnd_20mm_AP_T_G",
-				"100Rnd_20mm_AP_T_G",
-				"100Rnd_20mm_AP_T_G",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_AP_T_R",
+				"100Rnd_20mm_AP_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

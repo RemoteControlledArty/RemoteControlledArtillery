@@ -35,6 +35,7 @@ class RC_Mortar: RC_Mortar_base
 	driverForceOptics=1;
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;

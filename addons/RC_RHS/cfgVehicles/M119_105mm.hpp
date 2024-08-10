@@ -21,7 +21,6 @@ class RC_M119: RC_M119_base
 	displayName="RC M119 105mm 16km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
-	author="Ascent";
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -30,30 +29,26 @@ class RC_M119: RC_M119_base
 	textSingular="UGV";
 	isUav=1;
 	vehicleClass="Autonomous";
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
-	//uavCameraGunnerPos="eye";
-	//uavCameraGunnerDir="look";
+	uavCameraGunnerPos="pos_cargo_dir";
+	uavCameraGunnerDir="pos_cargo";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
 
-	/*
 	class Hitpoints
 	{
 		class HitHull
 		{
-			armor=-500;
-			minimalHit=-0.1;
-			passThrough=1;
+			armor=1;
+			passThrough=0.25;
 			name="telo";
 		};
 	};
-	*/
 
 	class AnimationSources: AnimationSources
 	{

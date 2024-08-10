@@ -117,7 +117,7 @@ class RC_RHS_ammo_127x99_Ball_T_R: rhs_ammo_127x99_Ball_Tracer_Red
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	tracerStartTime=0.045;
+	tracerStartTime=0.04;
 };
 
 class rhs_ammo_127x99_SLAP;

@@ -44,6 +44,7 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -220,7 +221,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	displayName="RC Patria AMV";
+	displayName="RC Patria AMV unarmed";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -554,10 +555,12 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 			};
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_R",
-				"RC_50Rnd_40mm_GPR_T_R",
 				"RC_50Rnd_40mm_MP_T_R",
 				"RC_50Rnd_40mm_MP_T_R",
+				"RC_50Rnd_40mm_MP_T_R",
+				"RC_50Rnd_40mm_GPR_T_R",
+				"RC_50Rnd_40mm_GPR_T_R",
+				"RC_50Rnd_40mm_GPR_T_R",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_R",
@@ -715,10 +718,12 @@ class RC_IFV_4_A_O: RC_IFV_4_A
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_G",
-				"RC_50Rnd_40mm_GPR_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_G",
@@ -755,10 +760,12 @@ class RC_IFV_4_A_I: RC_IFV_4_A
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_Y",
-				"RC_50Rnd_40mm_GPR_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_Y",
@@ -811,10 +818,12 @@ class RC_IFV_4_WD_O: RC_IFV_4_WD
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_G",
-				"RC_50Rnd_40mm_GPR_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_G",
@@ -851,10 +860,12 @@ class RC_IFV_4_WD_I: RC_IFV_4_WD
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_Y",
-				"RC_50Rnd_40mm_GPR_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_Y",
@@ -938,10 +949,12 @@ class RC_IFV_4_ReTex_D_O: RC_IFV_4_ReTex_D
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_G",
-				"RC_50Rnd_40mm_GPR_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_G",
@@ -978,10 +991,12 @@ class RC_IFV_4_ReTex_D_I: RC_IFV_4_ReTex_D
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_Y",
-				"RC_50Rnd_40mm_GPR_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_Y",

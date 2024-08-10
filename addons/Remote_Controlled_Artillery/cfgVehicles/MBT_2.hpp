@@ -28,6 +28,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;

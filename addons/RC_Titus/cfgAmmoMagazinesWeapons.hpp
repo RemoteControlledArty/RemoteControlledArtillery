@@ -27,7 +27,7 @@ class CfgAmmo
 		laserLock=1;
 		irLock=1;
 		airLock=1;
-		tracerStartTime=0.05;
+		tracerStartTime=0.04;
 		tracerEndTime=4;
 	};
 	class RC_QIN_338_T_G: RC_QIN_338_T_R

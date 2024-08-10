@@ -39,6 +39,7 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -415,7 +416,7 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	displayName="RC Otokar Arma";
+	displayName="RC Otokar Arma unarmed";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -1016,12 +1017,6 @@ class RC_IFV_2_A_O: RC_APC_2_A_O
 			};
 			magazines[]=
 			{
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
 				"100Rnd_20mm_HE_T_G",
 				"100Rnd_20mm_HE_T_G",
 				"100Rnd_20mm_HE_T_G",
@@ -1030,6 +1025,12 @@ class RC_IFV_2_A_O: RC_APC_2_A_O
 				"100Rnd_20mm_APFSDS_T_G",
 				"100Rnd_20mm_APFSDS_T_G",
 				"100Rnd_20mm_APFSDS_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1119,12 +1120,6 @@ class RC_IFV_2_ReTex_WD: RC_IFV_2_ReTex_WD_O
 			};
 			magazines[]=
 			{
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
 				"100Rnd_20mm_HE_T_R",
 				"100Rnd_20mm_HE_T_R",
 				"100Rnd_20mm_HE_T_R",
@@ -1133,6 +1128,12 @@ class RC_IFV_2_ReTex_WD: RC_IFV_2_ReTex_WD_O
 				"100Rnd_20mm_APFSDS_T_R",
 				"100Rnd_20mm_APFSDS_T_R",
 				"100Rnd_20mm_APFSDS_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1164,12 +1165,6 @@ class RC_IFV_2_ReTex_WD_I: RC_IFV_2_ReTex_WD
 		{
 			magazines[]=
 			{
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
@@ -1178,6 +1173,12 @@ class RC_IFV_2_ReTex_WD_I: RC_IFV_2_ReTex_WD
 				"100Rnd_20mm_APFSDS_T_Y",
 				"100Rnd_20mm_APFSDS_T_Y",
 				"100Rnd_20mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1226,12 +1227,6 @@ class RC_IFV_2_ReTex_D: RC_IFV_2_ReTex_D_O
 			};
 			magazines[]=
 			{
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
 				"100Rnd_20mm_HE_T_R",
 				"100Rnd_20mm_HE_T_R",
 				"100Rnd_20mm_HE_T_R",
@@ -1240,6 +1235,12 @@ class RC_IFV_2_ReTex_D: RC_IFV_2_ReTex_D_O
 				"100Rnd_20mm_APFSDS_T_R",
 				"100Rnd_20mm_APFSDS_T_R",
 				"100Rnd_20mm_APFSDS_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -1271,12 +1272,6 @@ class RC_IFV_2_ReTex_D_I: RC_IFV_2_ReTex_D
 		{
 			magazines[]=
 			{
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
 				"100Rnd_20mm_HE_T_Y",
@@ -1285,6 +1280,12 @@ class RC_IFV_2_ReTex_D_I: RC_IFV_2_ReTex_D
 				"100Rnd_20mm_APFSDS_T_Y",
 				"100Rnd_20mm_APFSDS_T_Y",
 				"100Rnd_20mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

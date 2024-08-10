@@ -42,6 +42,7 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 	crewCrashProtection=0.01;
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	threat[]={0,0,0};
@@ -264,6 +265,7 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 	crewCrashProtection=0.01;
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	threat[]={0,0,0};
@@ -506,6 +508,7 @@ class RC_RespawnVan_WD: RC_RespawnVan_WD_Base
 	crewCrashProtection=0.01;
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	threat[]={0,0,0};

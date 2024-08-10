@@ -37,6 +37,7 @@ class RC_ICV_IFV_6_A: RC_ICV_IFV_6_A_Base
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -265,6 +266,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 			magazines[]=
 			{
 				"RC_100Rnd_30mm_GPR_T_R",
+				"RC_100Rnd_30mm_GPR_T_R",
 				"RC_100Rnd_30mm_MP_T_R",
 				"RC_100Rnd_30mm_MP_T_R",
 				//"RC_100Rnd_30mm_Smoke",
@@ -431,9 +433,10 @@ class RC_IFV_6_A_O: RC_IFV_6_A
 		{
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_MP_T_G",
 				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_GPR_T_G",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_G",
 				"RC_100Rnd_30mm_APFSDS_T_G",
@@ -468,9 +471,10 @@ class RC_IFV_6_A_I: RC_IFV_6_A
 		{
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_Y",
+				"RC_100Rnd_30mm_MP_T_Y",
 				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
+				"RC_100Rnd_30mm_GPR_T_Y",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_Y",
 				"RC_100Rnd_30mm_APFSDS_T_Y",
@@ -528,9 +532,10 @@ class RC_IFV_6_WD_O: RC_IFV_6_WD
 		{
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_MP_T_G",
 				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_GPR_T_G",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_G",
 				"RC_100Rnd_30mm_APFSDS_T_G",
@@ -565,9 +570,10 @@ class RC_IFV_6_WD_I: RC_IFV_6_WD
 		{
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_Y",
+				"RC_100Rnd_30mm_MP_T_Y",
 				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
+				"RC_100Rnd_30mm_GPR_T_Y",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_Y",
 				"RC_100Rnd_30mm_APFSDS_T_Y",
@@ -619,9 +625,10 @@ class RC_IFV_6_ReTex_WD_O: RC_IFV_6_ReTex_WD
 		{
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_MP_T_G",
 				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_GPR_T_G",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_G",
 				"RC_100Rnd_30mm_APFSDS_T_G",
@@ -656,9 +663,10 @@ class RC_IFV_6_ReTex_WD_I: RC_IFV_6_ReTex_WD
 		{
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_Y",
+				"RC_100Rnd_30mm_MP_T_Y",
 				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
+				"RC_100Rnd_30mm_GPR_T_Y",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_Y",
 				"RC_100Rnd_30mm_APFSDS_T_Y",
@@ -708,9 +716,10 @@ class RC_IFV_6_ReTex_D_O: RC_IFV_6_ReTex_D
 		{
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_MP_T_G",
 				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_GPR_T_G",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_G",
 				"RC_100Rnd_30mm_APFSDS_T_G",
@@ -745,9 +754,10 @@ class RC_IFV_6_ReTex_D_I: RC_IFV_6_ReTex_D
 		{
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_Y",
+				"RC_100Rnd_30mm_MP_T_Y",
 				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
+				"RC_100Rnd_30mm_GPR_T_Y",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_Y",
 				"RC_100Rnd_30mm_APFSDS_T_Y",
@@ -797,9 +807,10 @@ class RC_IFV_6_ReTex_A_O: RC_IFV_6_ReTex_A
 		{
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_MP_T_G",
 				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
+				"RC_100Rnd_30mm_GPR_T_G",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_G",
 				"RC_100Rnd_30mm_APFSDS_T_G",
@@ -834,9 +845,10 @@ class RC_IFV_6_ReTex_A_I: RC_IFV_6_ReTex_A
 		{
 			magazines[]=
 			{
+				"RC_100Rnd_30mm_MP_T_Y",
+				"RC_100Rnd_30mm_MP_T_Y",
 				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
+				"RC_100Rnd_30mm_GPR_T_Y",
 				//"RC_100Rnd_30mm_Smoke",
 				"RC_100Rnd_30mm_APFSDS_T_Y",
 				"RC_100Rnd_30mm_APFSDS_T_Y",

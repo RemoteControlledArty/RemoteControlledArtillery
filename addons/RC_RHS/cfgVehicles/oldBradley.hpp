@@ -23,6 +23,7 @@ class RC_M2A2_D_Base: RC_M2A2_Base
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -240,8 +241,8 @@ class RC_M2A2_D: RC_M2A2_D_Base
 
 			weapons[]=
 			{
-				"RC_RHS_weap_m240_bradley_coax",
 				"RC_RHS_weap_M242BC",
+				"RC_RHS_weap_m240_bradley_coax",
 				"RC_RHS_weap_TOW_Launcher",
 				"rhs_weap_fcs_ammo",
 
@@ -249,16 +250,15 @@ class RC_M2A2_D: RC_M2A2_D_Base
 			};
 			magazines[]=
 			{
+				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
+				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
+				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
 				"RC_RHS_mag_1100Rnd_762x51_M61_T_R",
 				"RC_RHS_mag_1100Rnd_762x51_M61_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
 				"RC_RHS_mag_2Rnd_TOW2A",
 				"RC_RHS_mag_2Rnd_TOW2A",
 				"RC_RHS_mag_2Rnd_TOW2A",

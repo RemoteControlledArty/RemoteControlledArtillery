@@ -45,6 +45,7 @@ class RC_MLRS_A: RC_MLRS_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -327,6 +328,7 @@ class RC_MRL_DIG: RC_MRL_base
 	ejectDeadCommander=0;
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;

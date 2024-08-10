@@ -21,6 +21,7 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 	crewCrashProtection=0.01;
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	threat[]={0,0,0};

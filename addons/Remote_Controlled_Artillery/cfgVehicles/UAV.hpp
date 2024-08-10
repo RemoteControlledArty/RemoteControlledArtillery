@@ -43,6 +43,7 @@ class RC_UAV_AR1: RC_UAV_base
 	backRotorSpeed=14;
 
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -356,6 +357,7 @@ class RC_UAV_FPV: RC_UAV_base
 	radarTargetSize=0.01;
 	visualTargetSize=0.005;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -972,6 +974,7 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 	side=1;
 	crew="B_UAV_AI";
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;

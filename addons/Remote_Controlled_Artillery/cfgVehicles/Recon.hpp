@@ -42,6 +42,7 @@ class RC_AA_small_WD: RC_AA_small_Base
 	redRpm=1100;
 	idleRpm=250;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -349,6 +350,7 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 	redRpm=1100;
 	idleRpm=250;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -804,6 +806,7 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 	redRpm=1100;
 	idleRpm=250;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	lockDetectionSystem=4;
