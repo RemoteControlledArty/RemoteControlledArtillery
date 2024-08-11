@@ -14,7 +14,7 @@ class RC_M119_base: RHS_M119_D
 	RC_BarrelAGL=0.8;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
-	//RCisMortar=1; //for Mortars only, which dont work correctly in manual fire atm without having ACE installed
+	//RC_isMortar=1; //for Mortars only, which dont work correctly in manual fire atm without having ACE installed
 };
 class RC_M119: RC_M119_base
 {

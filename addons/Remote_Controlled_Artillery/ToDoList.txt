@@ -16,122 +16,64 @@ TO DO - BUGFIXES:
 
 -gps target gone after ~3minutes
 
--gun laying resetting despite autonomous being off (maybe not global?)
-
--artillery gun laying resetting in multiplayer, but not always..?
--uav laser spot not updating on moving target, for some players, for me it did
-*it reverted to a laser that was old by another player before releasing the drone and the other taking over, that was also visible for other player, and didnt dissapear when deleting the uav
-
--medical truck respawn script not working in multiplayer (cfgVehicles, RespawnTruck.hpp)
-
+-gun laying resetting despite autonomous being off (maybe not global/JIP?)
 -artillery computer is supposedly disabled for all assets after this mods artillery is used once, not just of the mod
 *+add option to keep it enabled on high angle only mortars
 
--maybe include blur in main loop to reduce checks
+-medical truck respawn script not working in multiplayer (cfgVehicles, RespawnTruck.hpp)
+-soon with arma update connectionfix likely wont be needed anymore
 
 
 TO DO - FEATURES:
 
 -post CB scripts, and add sound
--MATV mounted mortar with AR-1, semi manned & manned wiesel, medical patria/otokar/pandur
+-medical patria/otokar/pandur
 -"almost aligned message" and +-1 accuracy clearer color difference (for smokes etc)
 -seeking guided shot without initial target (maybe with "aimAboveTarget" value or "lockSeekDistanceFromParent"?)
 
+-idea: CB radar that has init EH that spawns check for artillery assets of opposing sides (how to do this performance effective), and attaches EH fired to them?
+-2 variants, player (notification, rough mark, maybe DL) and AI (automatic return fire),  with cba settings
 
--Hashmap value list:
-Vehicles: isRCArty, RC_BarrelAGL, RC_BarrelLenght, RC_BarrelExtends, RCisMortar, RC_Local     *maybe rename isRCArty to RC_isIndirectFire or RC_hasIndirectFireFSC, rename RC_Local to RC_Localize
-Magazines: RC_AdvisedTrajectory, RC_RequiresLock, RC_AimAboveHeight, RC_TerrainWarning
-
-_uav = getConnectedUAV player;
-_uavClass = typeOf _uav;
-
-//Vehicle
-createHashMapFromArray
-[
-	["_isRCArty", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1],
-
-	["_BarrelAGL", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelAGL")],
-	["_BarrelLenght", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelLenght")],
-	["_BarrelExtends", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends") == 1],
-
-	["_RCisMortar", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCisMortar")],
-	["_RC_Local", getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_Local")],
-]
-
-//Magazine
-createHashMapFromArray
-[
-	["_advisedTrajectory", getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AdvisedTrajectory")],
-	["_requiresLock", (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1],
-	["_terrainWarning", (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_TerrainWarning"))==1],
-	["_aimAboveHeight", getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AimAboveHeight")]
-]
+-double check autonomous remote execute structure with Eric (JIP global execute?)
 
 
 -FIX MORTAR ACCURACY on uneven ground (AZ not changing with EL)
 -when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
--maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
-
 -add sensor to mortar carrier camera
-
--doublecheck mortar laser guided accuary in MP
-
-CAR Script for Zeus:
--EH fired, sleep ?sec, create mapmarker = player can place arty marker and shoot HE / place gps marker and shoot Guided
-
--maybe one CONFIG CHECK to get an array that stores all ammo values, and one for vehicle values, to decrease check amounts
--double check autonomous remote execute structure with Eric
--locality fix server cba EH
+-attemt to make locality fix per custom server cba EH
 
 
-generally:
+checks/testing:
 
 -maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
--engineoff script doesnt need to be in init if person is connected to uav, with soon arma update it also wouldnt block taking controls for gaining locality, for example when the other is uncon
+-doublecheck mortar laser guided accuary in MP
 -doublecheck "min/max" range exact function on sensors
 -set ejectdeadcrew to true?
-
--*notetoself: emty uav/ugv, can be hacked, which spawns gunner, which then can bug my "go to commander"
-	partially manned like howitzer dont have that problem, but autonomous driving command to firing position is unavailable
-	= RC having driver and gaining locality by driver controls, while giving manned vehilces hasDriver-1; as on those movement order breaks anyways while in the vic
-
--test cargoIsCoDriver[]={0,0};
-	cargoCanControlUAV=0;
-	Added: A new DriverOpticsIn parameter for vehicle drivers (similar to turret OpticsIn, but it uses OpticsModel instead gunnerOpticsModel for the optics model)
-
--stabilization cfg value (camera lock) negatively impacts aiming?
--IFV 3 30mm + ATGM
--fix driverview on IFV/FSV/MBT & Trucks
--soon with arma update connectionfix likely wont be needed anymore
-
+-test: cargoIsCoDriver[]={0,0}; cargoCanControlUAV=0;
+-fix driverview on medical Trucks  BI:"Added: A new DriverOpticsIn parameter for vehicle drivers (similar to turret OpticsIn, but it uses OpticsModel instead gunnerOpticsModel for the optics model)"
 
 Arty:
+-comment for round like "smoke", for example below T: 01 UI, for better coordination and less required radio chatter
 -fix autoseektarget friend/foe problem...
 -test out SubmunitionTargetDirection for guided, with triggerDistance=; and proximityExplosionDistance=;
--autonomous off JIP global execute?
-
 -test FCS without ace on uneven ground
 -adding FCS, and Airburst rounds, to a mods 60mm quick deployable Mortar
 
--Counter Artillery Radar -> brainstorm on options: map markers for shot locations / share source vehicle in datalink but delayed for balancing, and how its even technically possible for different mods
--comment for round like "smoke", for example below T: 01 UI, for better coordination and less required radio chatter
--peak ASL formula and display infront of ETA, optimal but a bit much UI would be also be ASL at 25% of distance, to estimate if rounds will collide with hills close to gun/target
-
--make delayed fuze also ir capable for gps targets  *might require sicnificant change of the round as people might use it against vehicles, but its currently not HEAT
-
-
-FSV/IFV:
+AFV:
+-variant of Patria AMV with 30mm + ATGM
 -smoke ammo, 40mm bulletbase change to shotshellbase with smoke submunition
--check ICV engine off on server *needs remoteexecute?
--SACLOS missle only versions?
 -automatic switch to left missilecamera when missile is launched
 
 
 TO DO - QUALITY OF LIFE:
 
+-hotkey to mark selected datalink target on map with time (and maybe speed)
+
 
 POSTPONED:
 
+-peak ASL formula and display infront of ETA, optimal but a bit much UI would be also be ASL at 25% of distance, to estimate if rounds will collide with hills close to gun/target
+-make delayed fuze also ir capable for gps targets  *might require sicnificant change of the round as people might use it against vehicles, but its currently not HEAT
 -renable semi-UGV terminal use by preventing taking control over gunner if gunner is player
 -video about vics & fpv
 -Remove ICV 4 "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
@@ -158,15 +100,12 @@ IDEAS - FAR FUTURE:
 
 -sensor ammo, like attaching hidden vehicle with 360deg sensor, deploy xmeter over target, then limited lifetime
 -parachute cam round for spotting (or simply additional rhs comp mod for hunt ir, maybe with datalink/laser)
--counterbattery radar, reporting targets to datalink network, with cba settings on detection speed and range
 
--hotkey to mark selected datalink target on map with time (and maybe speed)
 -disconnect uav/ugv from terminal script when vanilla incapacitated / ace unconcious
 
 -AR-0.5 pvp, with 1.5 zoom to force low flying, shortrange sensors, no thermal, but laser designator
 -test passive radar shells against active radar AA
 -video partially at night for rocket and explosion effects
--make MLRS/MRL rockets appear in launcher (if possible)
 -https://community.bistudio.com/wiki/lockCameraTo  /  https://community.bistudio.com/wiki/enableDirectionStabilization  /  https://community.bistudio.com/wiki/camSetTarget
 -azimuth camera lock (marker, laser, selected, off), as uneven surfaces make keeping azimuth aligned problematic
 -or atleast hotkey to swing to azimuth *cannot lock directly to direction of target to az changing with uneven ground
@@ -191,7 +130,6 @@ DONE - BUGFIXES:
 -engine turnoff now per cfg value, so it doesnt affect other ugv's
 -found cause for sicnificant over/under-shoot, for low trajectory 0.X MIL are indeed needed, nut dont have to be shown on screen, changed green highlight to +-0.5 instead of 1, this solves it
 -many many more
--fixed engine off being too fast for multiplayer
 -fixed respawn truck script
 -locking seats fix for IFV/FSV/MBT
 -laser datalink share fixed to now be to other players
@@ -215,6 +153,7 @@ new:
 
 -fixed datalink panel closing for vehicle commander when opening map
 -fixed major bug of gunner being fubar after accidentally being controlled by terminal, with the tradeoff of "armed semi manned" vehicles for now not being interactable by terminal anymore
+-tracer color fixes
 
 
 DONE - FEATURES:
@@ -350,6 +289,7 @@ new:
 -increased FPV speed
 
 -added Otokar Arma 20mm Autocannon variant, which balancing wise sits in a nice spot for mechanized infantry ops, its not too strong or weak
+-added Mortar MATV (manned) with x2 AR-1 backpacks in inventory, for driver=uv gunner + codriver=uav spotter  gameplay
 
 
 DONE - QUALITY OF LIFE:
@@ -364,6 +304,7 @@ new:
 -driver panel now thermal by default to prevent "pink bug" when using A3TI
 -gunnerview panel now left panel default for commander
 -vehicle mortar now also has recommended trajectory highlighting
+-MAJOR performance opimization, thanks to Eric teaching me HashMaps, MUCH less constant config checks now!
 
 
 ---------------------------------------------------------------------------------------------------------

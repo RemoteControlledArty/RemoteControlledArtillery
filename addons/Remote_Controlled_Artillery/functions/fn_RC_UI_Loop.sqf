@@ -9,6 +9,21 @@
 
 // Need to exit early if we aren't a client
 if (!hasInterface) exitWith {};
+
+//vehicle hashmaps
+//RC_localizeHash = createHashMap;	//not yet used
+RC_isRCArtyHash = createHashMap;
+RC_BarrelAGLHash = createHashMap;
+RC_BarrelLenghtHash = createHashMap;
+RC_BarrelExtendsHash = createHashMap;
+RC_isMortarHash = createHashMap;
+
+//magazine hashmaps
+RC_advisedTrajectoryHash = createHashMap;
+RC_requiresLockHash = createHashMap;
+RC_terrainWarningHash = createHashMap;
+RC_aimAboveHeightHash = createHashMap;
+
 RC_Artillery_UI = [] spawn {
 	while { true } do {
 		sleep 0.1;
@@ -25,7 +40,11 @@ RC_Artillery_UI = [] spawn {
 		// UAV ClassName
 		_uavClass = typeOf _uav;
 		// See if the vehicle has the isRCArty property
-		_isRCArty = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1);
+		private _isRCArty = RC_isRCArtyHash get _uavClass;
+		if (isNil "_isRCArty") then {
+			_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
+			RC_isRCArtyHash set [_uavClass, _isRCArty];
+		};
 
 		// If it's of Artillery or Mortar Type do da thing
 		if (_isRCArty) then {
@@ -48,7 +67,12 @@ RC_Artillery_UI = [] spawn {
 
 			// CBA Option for Allowing the Artillery Computer in RC Artillery UGVs, without ACE its stays on for Mortars (as they dont work manually without ACE atm)
 			// Remote Execute this to make it Multiplayer Compatible
-			_isMortar = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCisMortar") isEqualTo 1;
+			private _isMortar = RC_isMortarHash get _uavClass;
+			if (isNil "_isMortar") then {
+				_isMortar = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCisMortar") isEqualTo 1;
+				RC_isMortarHash set [_uavClass, _isMortar];
+			};
+			
 			_aceLoaded = isClass (configFile >> "CfgPatches" >> "ace_main");
 
 			[(!RC_Allow_Vanilla_Arty_Computer && { !_aceLoaded && { _isMortar } })] remoteExec ["enableEngineArtillery", _uav];
@@ -116,9 +140,20 @@ RC_Artillery_UI = [] spawn {
 			};
 			*/
 
-			// checks if shell requires lock before firing
-			_requiresLock = (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_RequiresLock"))==1;
-			_terrainWarning = (getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_TerrainWarning"))==1;
+			// checks if shell requires lock before firing to activate guidance
+			private _requiresLock = RC_RequiresLockHash get _currentMag;
+			if (isNil "_requiresLock") then {
+				_requiresLock = (getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_RequiresLock"))==1;
+				RC_RequiresLockHash set [_currentMag, _requiresLock];
+			};
+			
+			// checks if camera needs to be raised into sky to not deploy submunitions too early
+			private _terrainWarning = RC_TerrainWarningHash get _currentMag;
+			if (isNil "_terrainWarning") then {
+				_terrainWarning = (getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_TerrainWarning"))==1;
+				RC_TerrainWarningHash set [_currentMag, _terrainWarning];
+			};
+
 			//UV Pos
 			_artyPos = getPosASL _uav;
 			//checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
@@ -188,7 +223,13 @@ RC_Artillery_UI = [] spawn {
 
 				//Barrel End to Target Distance
 				_muzzleFromCenterEstimate = 0;
-				_BarrelExtends = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends") == 1;
+				
+				private _BarrelExtends = RC_BarrelExtendsHash get _uavClass;
+				if (isNil "_BarrelExtends") then {
+					_BarrelExtends = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends") == 1;
+					RC_BarrelExtendsHash set [_uavClass, _BarrelExtends];
+				};
+
 				if (_BarrelExtends) then { _muzzleFromCenterEstimate = _BarrelLenght * (cos (_WeaponDirection * 90)) };
 				_targetDistance = (round ((_targetPos distance2d _artyPos) - _muzzleFromCenterEstimate)) max 1;
 
@@ -204,7 +245,7 @@ RC_Artillery_UI = [] spawn {
 				_targetAzimuth = SLANT_ANGLE * _targetAzimuth;
 
 				// Velocity of the Round
-				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "initSpeed");
+				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
 
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {

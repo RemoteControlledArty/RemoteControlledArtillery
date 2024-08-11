@@ -3,8 +3,12 @@ class B_MRAP_01_F;
 class RC_MortarMATV_base: B_MRAP_01_F
 {
 	class Components;
-	class ViewOptics;
 	class EventHandlers;
+	class HitPoints;
+	class HitLFWheel;
+	class HitLF2Wheel;
+	class HitRFWheel;
+	class HitRF2Wheel;
 	scope=0;
 	scopeCurator=0;
 };
@@ -12,11 +16,11 @@ class RC_MortarMATV: RC_MortarMATV_base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
 	};
 
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Howitzer_subcat";
+	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
 	crewCrashProtection=0.01;
 	enableGPS=1;
@@ -61,14 +65,30 @@ class RC_MortarMATV: RC_MortarMATV_base
 		"SmokeLauncherMag"
 	};
 
-	class ViewOptics: ViewOptics
+	class HitPoints: HitPoints
 	{
-		visionMode[]=
+		class HitLFWheel: HitLFWheel
 		{
-			"Normal",
-			"NVG"
+			armor=-400;
+			explosionShielding=1;
+		};
+		class HitLF2Wheel: HitLF2Wheel
+		{
+			armor=-400;
+			explosionShielding=1;
+		};
+		class HitRFWheel: HitRFWheel
+		{
+			armor=-400;
+			explosionShielding=1;
+		};
+		class HitRF2Wheel: HitRF2Wheel
+		{
+			armor=-400;
+			explosionShielding=1;
 		};
 	};
+			
 
 	class Components: Components
 	{
@@ -95,25 +115,40 @@ class RC_MortarMATV: RC_MortarMATV_base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=16000;
+					typeRecognitionDistance=8000;
 
 					class AirTarget
 					{
-						minRange=16000;
-						maxRange=16000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=16000;
-						maxRange=16000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
-
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+				class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+				{
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -125,7 +160,7 @@ class RC_MortarMATV: RC_MortarMATV_base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={16000,8000,4000,2000,1000};
+					range[]={6000,4000,2000,1000};
 					resource="RscCustomInfoSensors";
 				};
 			};
@@ -155,9 +190,24 @@ class RC_MortarMATV: RC_MortarMATV_base
 
 	class TransportMagazines
 	{
+		class _xx_HandGrenade
+		{
+			magazine="HandGrenade";
+			count=6;
+		};
+		class _xx_Laserbatteries
+		{
+			magazine="Laserbatteries";
+			count=1;
+		};
 	};
 	class TransportItems
 	{
+		class _xx_B_UavTerminal
+		{
+			name="B_UavTerminal";
+			count=2;
+		};
 		class _xx_Toolkit
 		{
 			name="Toolkit";
@@ -176,177 +226,26 @@ class RC_MortarMATV: RC_MortarMATV_base
 	};
 	class TransportWeapons
 	{
+		class _xx_Improved_FOV_Laserdesignator_A
+		{
+			weapon="Improved_FOV_Laserdesignator_A";
+			count=1;
+		};
+	};
+	class TransportBackpacks
+	{
+		class _xx_RC_UAV_AR1_Bag
+		{
+			backpack="RC_UAV_AR1_Bag";
+			count=2;
+		};
 	};
 };
 
 
-class RC_FlatbedTruck_A: RC_FlatbedTruck
+class RC_MortarMATV_manned_A: RC_MortarMATV
 {
-	displayName="RC 105mm Truck";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
-	crew="B_UAV_AI";
-	vehicleClass="Autonomous";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-
-	driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-	//driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
-	memoryPointDriverOptics="driverview";
-	driverForceOptics=1;
-	forceHideDriver=1;
-	ejectDeadGunner=0;
-	ejectDeadDriver=0;
-	ejectDeadCommander=0;
-};
-class RC_FlatbedTruck_A_O: RC_FlatbedTruck_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-class RC_FlatbedTruck_A_I: RC_FlatbedTruck_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-
-
-class RC_FlatbedTruck_WD: RC_FlatbedTruck_A
-{
-	DLC="Enoch";
-	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\B_T_Truck_01_flatbed_F.jpg";
-	textureList[]=
-	{
-		"Olive",
-		1
-	};
-	hiddenSelectionsTextures[]=
-	{
-		"\a3\soft_f_Exp\truck_01\data\truck_01_ext_01_olive_co.paa",
-		"\a3\soft_f_Exp\truck_01\data\truck_01_ext_02_olive_co.paa",
-		"\a3\Soft_F_Enoch\Truck_01\Data\truck_01_ammo_pacific_co.paa",
-		"\a3\Soft_F_Enoch\Truck_01\Data\Truck_01_cargo_pacific_CO.paa"
-	};
-};
-class RC_FlatbedTruck_WD_O: RC_FlatbedTruck_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-	
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-class RC_FlatbedTruck_WD_I: RC_FlatbedTruck_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-
-
-class RC_FlatbedTruck_LC_A: RC_FlatbedTruck_A
-{
-	displayName="RC 105mm Truck LowCap";
-	editorSubcategory="RC_ReducedAmmo_subcat";
-
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-class RC_FlatbedTruck_LC_A_O: RC_FlatbedTruck_LC_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_O', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-class RC_FlatbedTruck_LC_A_I: RC_FlatbedTruck_LC_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_I', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-
-
-class RC_FlatbedTruck_LC_WD: RC_FlatbedTruck_LC_A
-{
-	DLC="Enoch";
-	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\B_T_Truck_01_flatbed_F.jpg";
-	textureList[]=
-	{
-		"Olive",
-		1
-	};
-	hiddenSelectionsTextures[]=
-	{
-		"\a3\soft_f_Exp\truck_01\data\truck_01_ext_01_olive_co.paa",
-		"\a3\soft_f_Exp\truck_01\data\truck_01_ext_02_olive_co.paa",
-		"\a3\Soft_F_Enoch\Truck_01\Data\truck_01_ammo_pacific_co.paa",
-		"\a3\Soft_F_Enoch\Truck_01\Data\Truck_01_cargo_pacific_CO.paa"
-	};
-};
-class RC_FlatbedTruck_LC_WD_O: RC_FlatbedTruck_LC_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-	
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_O', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-class RC_FlatbedTruck_LC_WD_I: RC_FlatbedTruck_LC_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_I', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-
-
-//manned variant, to allow both M119 gunner and AR-3 operator in truck front seats
-class RC_FlatbedTruck_manned_A: RC_FlatbedTruck
-{
-	displayName="105mm Truck";
+	displayName="Mortar MATV 6km";
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -354,32 +253,53 @@ class RC_FlatbedTruck_manned_A: RC_FlatbedTruck
 
 	crew="";
 };
-class RC_FlatbedTruck_manned_A_O: RC_FlatbedTruck_manned_A
-{
-	faction="RemoteControlled_O";
-	side=0;
-
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-class RC_FlatbedTruck_manned_A_I: RC_FlatbedTruck_manned_A
+class RC_MortarMATV_manned_A_I: RC_MortarMATV_manned_A
 {
 	faction="RemoteControlled_I";
 	side=2;
-
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
+	};
+
+	class TransportItems
+	{
+		class _xx_I_UavTerminal
+		{
+			name="I_UavTerminal";
+			count=2;
+		};
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=2;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=2;
+		};
+	};
+	class TransportBackpacks
+	{
+		class _xx_RC_UAV_AR1_Bag
+		{
+			backpack="RC_UAV_AR1_Bag_I";
+			count=2;
+		};
 	};
 };
 
 
-class RC_FlatbedTruck_manned_WD: RC_FlatbedTruck_manned_A
+class RC_MortarMATV_manned_WD: RC_MortarMATV_manned_A
 {
-	DLC="Enoch";
-	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\B_T_Truck_01_flatbed_F.jpg";
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MRAP_01_F.jpg";
 	textureList[]=
 	{
 		"Olive",
@@ -387,29 +307,49 @@ class RC_FlatbedTruck_manned_WD: RC_FlatbedTruck_manned_A
 	};
 	hiddenSelectionsTextures[]=
 	{
-		"\a3\soft_f_Exp\truck_01\data\truck_01_ext_01_olive_co.paa",
-		"\a3\soft_f_Exp\truck_01\data\truck_01_ext_02_olive_co.paa",
-		"\a3\Soft_F_Enoch\Truck_01\Data\truck_01_ammo_pacific_co.paa",
-		"\a3\Soft_F_Enoch\Truck_01\Data\Truck_01_cargo_pacific_CO.paa"
+		"\A3\soft_F_Exp\MRAP_01\data\MRAP_01_base_olive_CO.paa",
+		"\A3\soft_F_Exp\MRAP_01\data\MRAP_01_adds_olive_CO.paa",
+		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
 	};
 };
-class RC_FlatbedTruck_manned_WD_O: RC_FlatbedTruck_manned_WD
-{
-	faction="RemoteControlled_O";
-	side=0;
-	
-	class EventHandlers: EventHandlers
-	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
-	};
-};
-class RC_FlatbedTruck_manned_WD_I: RC_FlatbedTruck_manned_WD
+class RC_MortarMATV_manned_WD_I: RC_MortarMATV_manned_WD
 {
 	faction="RemoteControlled_I";
 	side=2;
-
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
+	};
+
+	class TransportItems
+	{
+		class _xx_I_UavTerminal
+		{
+			name="I_UavTerminal";
+			count=2;
+		};
+		class _xx_Toolkit
+		{
+			name="Toolkit";
+			count=2;
+		};
+		class _xx_Medikit
+		{
+			name="Medikit";
+			count=2;
+		};
+		class _xx_FirstAidKit
+		{
+			name="FirstAidKit";
+			count=2;
+		};
+	};
+	class TransportBackpacks
+	{
+		class _xx_RC_UAV_AR1_Bag
+		{
+			backpack="RC_UAV_AR1_Bag_I";
+			count=2;
+		};
 	};
 };

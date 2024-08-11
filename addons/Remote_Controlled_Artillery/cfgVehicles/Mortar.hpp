@@ -13,7 +13,7 @@ class RC_Mortar_base: B_Mortar_01_F
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
-	RCisMortar=1; //for Mortars only, which dont work correctly in manual fire atm without having ACE installed
+	RC_isMortar=1; //for Mortars only, which dont work correctly in manual fire atm without having ACE installed
 };
 class RC_Mortar: RC_Mortar_base
 {

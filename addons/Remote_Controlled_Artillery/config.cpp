@@ -681,6 +681,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_IFV_5.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\IFV_6.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\MortarMATV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_3.hpp"

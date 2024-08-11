@@ -1,5 +1,10 @@
 //advised trajectory for ammunition, 1=low, 2=high, 3=both
-_advisedTrajectory = getNumber (configFile >> "CfgMagazines" >> (currentMagazine _uav) >> "RC_AdvisedTrajectory");
+private _advisedTrajectory = RC_AdvisedTrajectoryHash get _currentMag;
+if (isNil "_advisedTrajectory") then {
+	_advisedTrajectory = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_AdvisedTrajectory");
+	RC_AdvisedTrajectoryHash set [_currentMag, _advisedTrajectory];
+};
+
 switch (_advisedTrajectory) do {
 	case 1: {
 		_ctrlLowSol ctrlSetTextColor [1.0, 1.0, 1.0, 1.0]; 
