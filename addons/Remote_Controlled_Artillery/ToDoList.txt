@@ -3,44 +3,41 @@
 */
 
 
-NOTES TO SELF:
--wood+too few sandbag roof of usual MG/GMG bunkers do luckly not protect against 155mm airburst
--gps marker lock, fire, then remove gps marker is efficient NLOS fire & forget
-
-
 TO DO - BUGFIXES:
 
+major:
+-arty marker distance becomes distance to likely 0,0,0 when renaming (fixed by manually pressing cycle markers, not caused by moving marker)
+-gun laying resetting despite autonomous being off (maybe not global/JIP?)
+-artillery computer is supposedly disabled for all assets after this mods artillery is used once, not just of the mod  *add option to keep it enabled on high angle only mortars
+
+minor:
+-gps target gone after ~3minutes
+-medical truck respawn script not working in multiplayer (cfgVehicles, RespawnTruck.hpp)
+
+notes:
 -report bug to ace team: turret is locked unable to adjust up/down, when scope of player is adjustable, despite being in remote control
 -report bug to ace team: crl+h cuts connection and destroys UV *only with my hotkeys
 -find solution for ace r reload
-
--gps target gone after ~3minutes
-
--gun laying resetting despite autonomous being off (maybe not global/JIP?)
--artillery computer is supposedly disabled for all assets after this mods artillery is used once, not just of the mod
-*+add option to keep it enabled on high angle only mortars
-
--medical truck respawn script not working in multiplayer (cfgVehicles, RespawnTruck.hpp)
 -soon with arma update connectionfix likely wont be needed anymore
 
 
 TO DO - FEATURES:
 
--post CB scripts, and add sound
--medical patria/otokar/pandur
 -"almost aligned message" and +-1 accuracy clearer color difference (for smokes etc)
--seeking guided shot without initial target (maybe with "aimAboveTarget" value or "lockSeekDistanceFromParent"?)
-
--idea: CB radar that has init EH that spawns check for artillery assets of opposing sides (how to do this performance effective), and attaches EH fired to them?
--2 variants, player (notification, rough mark, maybe DL) and AI (automatic return fire),  with cba settings
 
 -double check autonomous remote execute structure with Eric (JIP global execute?)
-
-
--FIX MORTAR ACCURACY on uneven ground (AZ not changing with EL)
--when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside
--add sensor to mortar carrier camera
 -attemt to make locality fix per custom server cba EH
+
+-idea: CounterBatteryRadar that has init EH that spawns check for artillery assets of opposing sides (how to do this performance effective), and attaches EH fired to them?
+-2 variants, player (notification, rough mark, maybe Datalink target) and AI (automatic return fire),  with cba settings
+
+-find solution for guided round that starts seeking without needing initial target lock (maybe with "aimAboveTarget" value or "lockSeekDistanceFromParent"?)
+
+-post CB scripts, and add sound
+-medical patria/otokar/pandur
+-FIX MORTAR ACCURACY on uneven ground (AZ not changing with EL)
+-when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside *needs testing
+-add sensor to mortar carrier camera
 
 
 checks/testing:
@@ -76,10 +73,8 @@ POSTPONED:
 -make delayed fuze also ir capable for gps targets  *might require sicnificant change of the round as people might use it against vehicles, but its currently not HEAT
 -renable semi-UGV terminal use by preventing taking control over gunner if gunner is player
 -video about vics & fpv
--Remove ICV 4 "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
+-remove -RC Patria AMV unarmed "turn out", as the commander seat is in the removed turret, the turnout is bugged, unclear how to remove turnout eighter by cfg/script
 -attemt to (unclear if possible) giving working waypoints to ICV/IFV even when sitting in vehicle (those waypoints bug, and have different extra markings)
--adding missile launcher to FSV 40mm
--disable turning out option of RC IC
 -smaller magazine shell count selection in attributes
 -guided with simulation shotmissle but with altered values, testing if it connects to misslefeed *it does on manned vic, somehow not on rc'ed... same on Static ATGM
 -1.5m Airburst for MP Guided
