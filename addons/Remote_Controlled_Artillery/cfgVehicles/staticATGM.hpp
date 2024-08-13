@@ -8,6 +8,7 @@ class RC_Static_AT_A_base: B_static_AT_F
 	class ViewOptics;
 	class assembleInfo;
 	class Components;
+	class AnimationSources;
 	scope=0;
 	scopeCurator=0;
 };
@@ -30,6 +31,7 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=0;
@@ -209,6 +211,35 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 					};
 				};
 			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_source
+		{
+			source="reload";
+			weapon="RC_ATGM_Lock";
+		};
+		class muzzle_source_rot
+		{
+			source="ammorandom";
+			weapon="RC_ATGM_Lock";
+		};
+		class ReloadAnim
+		{
+			source="reload";
+			weapon="RC_ATGM_Lock";
+		};
+		class ReloadMagazine
+		{
+			source="reloadmagazine";
+			weapon="RC_ATGM_Lock";
+		};
+		class Revolving
+		{
+			source="revolving";
+			weapon="RC_ATGM_Lock";
 		};
 	};
 };
@@ -436,6 +467,35 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 					};
 				};
 			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_source
+		{
+			source="reload";
+			weapon="RC_ATGM_SACLOS";
+		};
+		class muzzle_source_rot
+		{
+			source="ammorandom";
+			weapon="RC_ATGM_SACLOS";
+		};
+		class ReloadAnim
+		{
+			source="reload";
+			weapon="RC_ATGM_SACLOS";
+		};
+		class ReloadMagazine
+		{
+			source="reloadmagazine";
+			weapon="RC_ATGM_SACLOS";
+		};
+		class Revolving
+		{
+			source="revolving";
+			weapon="RC_ATGM_SACLOS";
 		};
 	};
 };

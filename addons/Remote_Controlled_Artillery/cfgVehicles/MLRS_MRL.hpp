@@ -15,7 +15,6 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	//RCDisableSeats=1; // locks driver seat
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=1.75;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -46,6 +45,7 @@ class RC_MLRS_A: RC_MLRS_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -101,12 +101,24 @@ class RC_MLRS_A: RC_MLRS_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};
 
 	class AnimationSources: AnimationSources
 	{
+		class Missiles_revolving
+		{
+			source="revolving";
+			weapon="RC_rockets_230mm_GAT";
+		};
+		class muzzle_hide_missiles
+		{
+			source="reload";
+			weapon="RC_rockets_230mm_GAT";
+		};
 		class showCamonetPlates1: showCamonetPlates1
 		{
 			initPhase=1;
@@ -316,6 +328,7 @@ class RC_MRL_DIG: RC_MRL_base
 	ejectDeadCommander=0;
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -364,7 +377,18 @@ class RC_MRL_DIG: RC_MRL_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class Missiles_revolving
+		{
+			source="revolving";
+			weapon="RC_rockets_230mm_GAT";
 		};
 	};
 

@@ -37,34 +37,38 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 	scopeCurator=0;
 	side=1;
 	forceInGarage=1;
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="B_UAV_AI";
-	forceHideDriver=1;
-	driverForceOptics=1;
 	driverCompartments="Compartment2";
-	commanding=2;
+	commanding=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
 	enginePower=593.8;
 	peakTorque=3017.6;
 	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
-	armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
+	//armorStructural=1000;	//prevents instant explosion, does not make it stronger
+	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 
 	hiddenSelectionsTextures[]=
@@ -75,33 +79,9 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
 		"a3\Armor_F\Data\cage_sand_CO.paa"
 	};
-
+	
 	class HitPoints: HitPoints
 	{
-		/*
-		class HitHull: HitHull
-		{
-			armor=-768;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.2;
-		};
-		class HitEngine: HitEngine
-		{
-			armor=-360;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.5;
-		};
-		class HitFuel: HitFuel
-		{
-			armor=-360;
-			passThrough=0;
-			minimalHit=0.1;
-			explosionShielding=0.60000002;
-		};
-		*/
-
 		class HitHull: HitHull
 		{
 			armor=2;
@@ -111,62 +91,7 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 			armor=1.25;
 		};
 		
-		class HitLFWheel: HitLFWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitLF2Wheel: HitLF2Wheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitLMWheel: HitLMWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitLBWheel: HitLBWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRFWheel: HitRFWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRF2Wheel: HitRF2Wheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRMWheel: HitRMWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
-		class HitRBWheel: HitRBWheel
-		{
-			armor=-500;
-			minimalHit=-0.016000001;
-			explosionShielding=2;
-			passThrough=0;
-		};
+		#include "\Remote_Controlled_Artillery\includes\hitWheels.hpp"
 	};
 	
 	class Components: Components
@@ -211,6 +136,8 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 
@@ -294,12 +221,21 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	displayName="RC Patria AMV";
+	displayName="RC Patria AMV unarmed";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
+
+	vehicleClass="Autonomous";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
+	isUav=1;
+	textPlural="UGVs";
+	textSingular="UGV";
+	crew="B_UAV_AI";
+	forceHideDriver=1;
+	driverForceOptics=1;
+
 	maximumLoad=4000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
@@ -327,6 +263,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_gunner_fixated.hpp"
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment3";
 			commanding=2;
@@ -394,6 +331,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_gunner_fixated.hpp"
 					showAllTargets="2 + 4";
 					//personTurretAction="";	//no effect
 					//forceHideGunner=1;	//makes view bug
@@ -457,169 +395,6 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 						minFov=0.125;
 						maxFov=1;
 					};
-
-					class Components: Components
-					{
-						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-						{
-							defaultDisplay="MinimapDisplayComponent";
-
-							class Components
-							{
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								/*
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								*/
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-						{
-							defaultDisplay="EmptyDisplayComponent";
-
-							class Components
-							{
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								/*
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								*/
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-					};
-				};
-			};
-
-			class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-			{
-				defaultDisplay="MinimapDisplayComponent";
-
-				class Components
-				{
-					class EmptyDisplay
-					{
-						componentType="EmptyDisplayComponent";
-					};
-					class MinimapDisplay
-					{
-						componentType="MinimapDisplayComponent";
-						resource="RscCustomInfoMiniMap";
-					};
-					class UAVFeedDisplay
-					{
-						componentType="UAVFeedDisplayComponent";
-					};
-					class CrewDisplay
-					{
-						componentType="CrewDisplayComponent";
-					};
-					/*
-					//doesnt work yet
-					class SensorDisplay
-					{
-						componentType="SensorsDisplayComponent";
-						range[]={4000,2000,1000,500};
-						resource="RscCustomInfoSensors";
-					};
-					*/
-					/*
-					class MineDetectorDisplay
-					{
-						componentType="MineDetectorDisplayComponent";
-						range=50;
-						resource="RscCustomInfoMineDetect";
-					};
-					*/
-				};
-			};
-			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-			{
-				defaultDisplay="EmptyDisplayComponent";
-
-				class Components
-				{
-					class EmptyDisplay
-					{
-						componentType="EmptyDisplayComponent";
-					};
-					class MinimapDisplay
-					{
-						componentType="MinimapDisplayComponent";
-						resource="RscCustomInfoMiniMap";
-					};
-					class UAVFeedDisplay
-					{
-						componentType="UAVFeedDisplayComponent";
-					};
-					class CrewDisplay
-					{
-						componentType="CrewDisplayComponent";
-					};
-					/*
-					//doesnt work yet
-					class SensorDisplay
-					{
-						componentType="SensorsDisplayComponent";
-						range[]={4000,2000,1000,500};
-						resource="RscCustomInfoSensors";
-					};
-					*/
-					/*
-					class MineDetectorDisplay
-					{
-						componentType="MineDetectorDisplayComponent";
-						range=50;
-						resource="RscCustomInfoMineDetect";
-					};
-					*/
 				};
 			};
 		};
@@ -627,6 +402,21 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_40mm_CTWS";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_autocannon_40mm_CTWS";
+		};
+		class revolving_cannon
+		{
+			source="revolving";
+			weapon="RC_autocannon_40mm_CTWS";
+		};
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=1;
@@ -713,6 +503,16 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
+
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
+	crew="B_UAV_AI";
+	//driverForceOptics=1;
+	//forceHideDriver=1;
 	
 	weapons[]=
 	{
@@ -725,11 +525,22 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 		"SmokeLauncherMag"
 	};
 
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
+
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
 			minElev=-10.6;
@@ -739,15 +550,17 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 			{
 				"RC_autocannon_40mm_CTWS",
 				"RC_MMG_338_coax",
-				//"RC_IFV_Missle_Launcher",
+				//"RC_IFV_Missile_Launcher",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_R",
-				"RC_50Rnd_40mm_GPR_T_R",
 				"RC_50Rnd_40mm_MP_T_R",
 				"RC_50Rnd_40mm_MP_T_R",
+				"RC_50Rnd_40mm_MP_T_R",
+				"RC_50Rnd_40mm_GPR_T_R",
+				"RC_50Rnd_40mm_GPR_T_R",
+				"RC_50Rnd_40mm_GPR_T_R",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_R",
@@ -780,7 +593,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 					maxAngleY=100;
 
 					initFov=0.9;
-					minFov=0.0166;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -798,6 +611,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
 					showAllTargets="2 + 4";
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
@@ -829,7 +643,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 							maxAngleY=100;
 
 							initFov=0.9;
-							minFov=0.0166;
+							minFov=0.02;
 							maxFov=0.9;
 							visionMode[]=
 							{
@@ -851,7 +665,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 						directionStabilized=1;
 						
 						initFov=0.9;
-						minFov=0.0166;
+						minFov=0.02;
 						maxFov=0.9;
 						visionMode[]=
 						{
@@ -861,222 +675,6 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 						thermalMode[]={0};
 					};
 					*/
-
-					class Components: Components
-					{
-						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-						{
-							defaultDisplay="SensorDisplay";
-
-							class Components
-							{
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								/*
-								class VehicleMissileDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Missile";
-								};
-								*/
-								class VehicleDriverDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Driver";
-								};
-								class VehicleCommanderDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Commander";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-						{
-							defaultDisplay="VehicleDriverDisplay";
-
-							class Components
-							{
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								/*
-								class VehicleMissileDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Missile";
-								};
-								*/
-								class VehicleDriverDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Driver";
-								};
-								class VehicleCommanderDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Commander";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-					};
-				};
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						/*
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-						};
-						*/
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="VehicleDriverDisplay";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						/*
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-						};
-						*/
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
 				};
 			};
 		};
@@ -1120,10 +718,12 @@ class RC_IFV_4_A_O: RC_IFV_4_A
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_G",
-				"RC_50Rnd_40mm_GPR_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_G",
@@ -1160,10 +760,12 @@ class RC_IFV_4_A_I: RC_IFV_4_A
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_Y",
-				"RC_50Rnd_40mm_GPR_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_Y",
@@ -1216,10 +818,12 @@ class RC_IFV_4_WD_O: RC_IFV_4_WD
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_G",
-				"RC_50Rnd_40mm_GPR_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_G",
@@ -1256,10 +860,12 @@ class RC_IFV_4_WD_I: RC_IFV_4_WD
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_Y",
-				"RC_50Rnd_40mm_GPR_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_Y",
@@ -1343,10 +949,12 @@ class RC_IFV_4_ReTex_D_O: RC_IFV_4_ReTex_D
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_G",
-				"RC_50Rnd_40mm_GPR_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
 				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_MP_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
+				"RC_50Rnd_40mm_GPR_T_G",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_G",
@@ -1383,10 +991,12 @@ class RC_IFV_4_ReTex_D_I: RC_IFV_4_ReTex_D
 		{
 			magazines[]=
 			{
-				"RC_50Rnd_40mm_GPR_T_Y",
-				"RC_50Rnd_40mm_GPR_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
 				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_MP_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
+				"RC_50Rnd_40mm_GPR_T_Y",
 				//"RC_50Rnd_40mm_Smoke",
 				//"RC_50Rnd_40mm_Smoke",
 				"RC_50Rnd_40mm_APFSDS_T_Y",

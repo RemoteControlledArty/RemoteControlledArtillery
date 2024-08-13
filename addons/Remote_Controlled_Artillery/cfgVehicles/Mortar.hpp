@@ -13,7 +13,7 @@ class RC_Mortar_base: B_Mortar_01_F
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
-	RCisMortar=1; //for Mortars only, which dont work correctly in manual fire atm without having ACE installed
+	RC_isMortar=1; //for Mortars only, which dont work correctly in manual fire atm without having ACE installed
 };
 class RC_Mortar: RC_Mortar_base
 {
@@ -35,6 +35,7 @@ class RC_Mortar: RC_Mortar_base
 	driverForceOptics=1;
 	enableGPS=1;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -106,9 +107,9 @@ class RC_Mortar: RC_Mortar_base
 			};
 			magazines[]=
 			{
-				"RC_10Rnd_82mm_Mo_shells",
-				"RC_4Rnd_82mm_Mo_HEAB",
-				"RC_5Rnd_82mm_Mo_MultiGuided",
+				"RC_8Rnd_82mm_Mo_shells",
+				"RC_3Rnd_82mm_Mo_HEAB",
+				"RC_4Rnd_82mm_Mo_MultiGuided",
 				"RC_12Rnd_82mm_Mo_Smoke_white",
 				"RC_6Rnd_82mm_Mo_Flare_white"
 			};
@@ -356,10 +357,10 @@ class RC_VehicleMortar: RC_Mortar
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_82mm_Mo_shells",
-				"RC_4Rnd_82mm_Mo_HEAB",
-				"RC_5Rnd_82mm_Mo_MultiGuided",
-				"RC_18Rnd_82mm_Mo_Smoke_white",
+				"RC_15Rnd_82mm_vic_Mo_shells",
+				"RC_4Rnd_82mm_vic_Mo_HEAB",
+				"RC_5Rnd_82mm_vic_Mo_MultiGuided",
+				"RC_20Rnd_82mm_Mo_Smoke_white",
 				"RC_9Rnd_82mm_Mo_AT_mine",
 				"RC_9Rnd_82mm_Mo_mine",
 				"RC_6Rnd_82mm_Mo_Flare_white"
@@ -376,7 +377,7 @@ class RC_VehicleMortar: RC_Mortar
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={6000,3000,1500,750,375};
+							range[]={6000,3000,1500,750};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -425,6 +426,46 @@ class RC_VehicleMortar_HEX_O: RC_VehicleMortar_O
 	};
 };
 class RC_VehicleMortar_I: RC_VehicleMortar
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_VehicleMortar_LC: RC_VehicleMortar
+{
+	displayName="RC Vehicle Mortar 6km LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_vehiclemortar_82mm_V4"
+			};
+			magazines[]=
+			{
+				"RC_6Rnd_82mm_vic_Mo_shells",
+				"RC_3Rnd_82mm_vic_Mo_HEAB",
+				"RC_3Rnd_82mm_vic_Mo_MultiGuided",
+				"RC_20Rnd_82mm_Mo_Smoke_white",
+				"RC_4Rnd_82mm_Mo_AT_mine",
+				"RC_4Rnd_82mm_Mo_mine",
+				"RC_6Rnd_82mm_Mo_Flare_white"
+			};
+		};
+	};
+};
+class RC_VehicleMortar_LC_O: RC_VehicleMortar_LC
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_VehicleMortar_LC_I: RC_VehicleMortar_LC
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

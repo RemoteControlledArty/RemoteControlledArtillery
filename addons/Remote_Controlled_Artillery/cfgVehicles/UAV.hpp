@@ -8,9 +8,10 @@ class RC_UAV_base: B_UAV_01_F
 	class ViewPilot;
 	class assembleInfo;
 	class Components;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
-	RC_UAVBlur=1;
+	RC_UAVBlurRange=1500;
 };
 class RC_UAV_AR1: RC_UAV_base
 {
@@ -28,6 +29,7 @@ class RC_UAV_AR1: RC_UAV_base
 		};
 	};
 
+	camouflage=0.25;
 	radarTargetSize=0.05;
 	visualTargetSize=0.05;
 
@@ -41,6 +43,7 @@ class RC_UAV_AR1: RC_UAV_base
 	backRotorSpeed=14;
 
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -55,7 +58,7 @@ class RC_UAV_AR1: RC_UAV_base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={2000,1000,500,250};
+					range[]={3000,1500,750};
 					resource="RscCustomInfoSensors";
 				};
 			};
@@ -105,7 +108,7 @@ class RC_UAV_AR1: RC_UAV_base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=2000;
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=51;
 					angleRangeVertical=37;
@@ -114,22 +117,22 @@ class RC_UAV_AR1: RC_UAV_base
 
 					class AirTarget
 					{
-						minRange=1500;
-						maxRange=1500;
+						minRange=2000;
+						maxRange=2000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1500;
-						maxRange=1500;
+						minRange=2000;
+						maxRange=2000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=750;
+					typeRecognitionDistance=1000;
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=51;
@@ -139,15 +142,15 @@ class RC_UAV_AR1: RC_UAV_base
 
 					class AirTarget
 					{
-						minRange=750;
-						maxRange=750;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=750;
-						maxRange=750;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
@@ -164,7 +167,7 @@ class RC_UAV_AR1: RC_UAV_base
 		initAngleY=0;
 		minAngleY=0;
 		maxAngleY=0;
-		minFov=0.025;
+		minFov=0.075;
 		maxFov=1.25;
 		initFov=0.75;
 		visionMode[]=
@@ -181,7 +184,7 @@ class RC_UAV_AR1: RC_UAV_base
 		initAngleY=0;
 		minAngleY=0;
 		maxAngleY=0;
-		minFov=0.025;
+		minFov=0.075;
 		maxFov=1.25;
 		initFov=0.75;
 		visionMode[]=
@@ -209,7 +212,7 @@ class RC_UAV_AR1: RC_UAV_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={2000,1000,500,250};
+							range[]={3000,1500,750};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -244,7 +247,7 @@ class RC_UAV_AR1: RC_UAV_base
 					minAngleY=-100;
 					maxAngleY=100;
 					initFov=0.8;
-					minFov=0.025;
+					minFov=0.05;
 					maxFov=1.0;
 					directionStabilized=1;
 					visionMode[]=
@@ -266,7 +269,7 @@ class RC_UAV_AR1: RC_UAV_base
 					minAngleY=-100;
 					maxAngleY=100;
 					initFov=1.0;
-					minFov=0.025;
+					minFov=0.05;
 					maxFov=1.0;
 					visionMode[]=
 					{
@@ -330,11 +333,218 @@ class RC_UAV_AR1_I: RC_UAV_AR1
 };
 
 
+class RC_UAV_FPV: RC_UAV_base
+{
+	displayName="RC FPV 4km";
+	faction="RemoteControlled_B";
+	editorSubcategory="RC_UAV_Designator_subcat";
+	scope=2;
+	scopeCurator=2;
+	RC_UAVBlurRange=3000;
+	fuelExplosionPower=25;
+	showAllTargets="2 + 4";
+
+	maxSpeed=200;
+	liftForceCoef=2;
+	cyclicAsideForceCoef=2;
+	cyclicForwardForceCoef=1.2;
+	backRotorForceCoef=10;
+	fuelCapacity=200;
+	mainRotorSpeed=-14;
+	backRotorSpeed=14;
+
+	camouflage=0.025;
+	radarTargetSize=0.01;
+	visualTargetSize=0.005;
+	radartype=2;
+	reportOwnPosition=1;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	laserScanner=1;
+
+	weapons[]=
+	{
+		"RC_target_confirmer"
+	};
+	magazines[]=
+	{
+		"RC_target_confirmer_mag"
+	};
+
+	class ViewPilot: ViewPilot
+	{
+		showAllTargets="2 + 4";
+
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+	};
+	class Viewoptics: ViewOptics
+	{
+		showAllTargets="2 + 4";
+
+		visionMode[]=
+		{
+			"Normal",
+			"NVG"
+		};
+	};
+
+	class Components: Components
+	{
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+			class components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={4000,2000,1000,500};
+					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					animDirection="mainGun";
+					aimDown=-0.5;
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=4000;
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=800;
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
+					animDirection="mainGun";
+					aimDown=-0.5;
+
+					class AirTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=800;
+						maxRange=800;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+				};
+			};
+		};
+	};
+
+	//no turret camera
+	class Turrets {};
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_UAV_FPV_Bag"
+		};
+	};
+};
+class RC_UAV_FPV_O: RC_UAV_FPV
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_UAV_01_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Drones_F\Air_F_Gamma\UAV_01\Data\UAV_01_OPFOR_CO.paa"
+	};
+	textureList[]=
+	{
+		"Opfor",
+		1
+	};
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_UAV_FPV_Bag_O"
+		};
+	};
+};
+class RC_UAV_FPV_I: RC_UAV_FPV
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_UAV_01_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Drones_F\Air_F_Gamma\UAV_01\Data\UAV_01_INDP_CO.paa"
+	};
+	textureList[]=
+	{
+		"Indep",
+		1
+	};
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_UAV_FPV_Bag_I"
+		};
+	};
+};
+
+
 //AR-3
 class RC_UAV_AR3: RC_UAV_AR1
 {
 	displayName="RC AR-3 longrange";
-	RC_UAVBlur=0;
+	RC_UAVBlurRange=0;	//no blur
 
 	class assembleInfo: assembleInfo
 	{
@@ -354,7 +564,7 @@ class RC_UAV_AR3: RC_UAV_AR1
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750,375};
+					range[]={3000,1500,750};
 					resource="RscCustomInfoSensors";
 				};
 			};
@@ -483,6 +693,8 @@ class RC_UAV_AR3: RC_UAV_AR1
 
 	class ViewPilot: ViewPilot
 	{
+		minFov=0.025;
+
 		visionMode[]=
 		{
 			"Normal",
@@ -493,6 +705,8 @@ class RC_UAV_AR3: RC_UAV_AR1
 	};
 	class Viewoptics: Viewoptics
 	{
+		minFov=0.025;
+
 		visionMode[]=
 		{
 			"Normal",
@@ -518,7 +732,7 @@ class RC_UAV_AR3: RC_UAV_AR1
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={3000,1500,750};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -545,6 +759,8 @@ class RC_UAV_AR3: RC_UAV_AR1
 			{
 				class Wide: Wide
 				{
+					minFov=0.025;
+
 					visionMode[]=
 					{
 						"Normal",
@@ -558,6 +774,8 @@ class RC_UAV_AR3: RC_UAV_AR1
 			{
 				class Monocular: Monocular
 				{
+					minFov=0.025;
+
 					visionMode[]=
 					{
 						"Normal",
@@ -671,6 +889,35 @@ class RC_UAV_AR1_Bag_I: RC_UAV_AR1_Bag
 };
 
 
+class RC_UAV_FPV_Bag: RC_UAV_AR1_Bag
+{
+	displayName="RC FPV";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC FPV";
+		assembleTo="RC_UAV_FPV";
+	};
+};
+class RC_UAV_FPV_Bag_O: RC_UAV_AR1_Bag
+{
+	displayName="RC FPV [Opf]";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC FPV [Opf]";
+		assembleTo="RC_UAV_FPV_O";
+	};
+};
+class RC_UAV_FPV_Bag_I: RC_UAV_AR1_Bag
+{
+	displayName="RC FPV [Ind]";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC FPV [Ind]";
+		assembleTo="RC_UAV_FPV_I";
+	};
+};
+
+
 class RC_UAV_AR3_Bag: RC_UAV_AR1_Bag
 {
 	displayName="RC AR-3";
@@ -715,11 +962,11 @@ class RC_GrenadeDropper_Base: C_IDAP_UAV_06_antimine_F
 	//class pylons1;
 	scope=0;
 	scopeCurator=0;
-	RC_UAVBlur=2;
+	RC_UAVBlurRange=3000;
 };
 class RC_GrenadeDropper: RC_GrenadeDropper_Base
 {
-	displayName="RC Grenade Dropper";
+	displayName="RC Grenade Dropper 4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_UAV_Designator_subcat";
 	scope=2;
@@ -727,9 +974,11 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 	side=1;
 	crew="B_UAV_AI";
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
+	camouflage=0.125;
 	radarTargetSize=0.025;
 	visualTargetSize=0.025;
 

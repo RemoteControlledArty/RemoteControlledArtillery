@@ -4,9 +4,9 @@ class RC_ICV_APC_1_Base: B_APC_Tracked_01_rcws_F
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
-	class HitPoints;
-	class HitHull;
-	class HitEngine;
+	//class HitPoints;
+	//class HitHull;
+	//class HitEngine;
 	//class HitFuel;
 	//class HitLTrack;
 	//class HitRTrack;
@@ -28,34 +28,38 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	forceHideDriver=1;
 	driverForceOptics=1;
 	driverCompartments="Compartment2";
+	commanding=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 	maxSpeed=80;
 	enginePower=1059.9;
 	peakTorque=5386.3;
-	armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
+	//armorStructural=1000;	//prevents instant explosion, does not make it stronger
+	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
 	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
-
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-	weapons[]=
-	{
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	hiddenSelectionsTextures[]=
 	{
@@ -64,18 +68,6 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 		"a3\data_f\vehicles\turret_co.paa",
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
 	};
-
-	/*
-	class HitPoints: HitPoints
-	{
-		class HitHull: HitHull
-		{
-		};
-		class HitEngine: HitEngine
-		{
-		};
-	};
-	*/
 	
 	class Components: Components
 	{
@@ -119,6 +111,8 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 
@@ -188,6 +182,26 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_GMG_40mm";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_GMG_40mm";
+		};
+		class revolving_hmg
+		{
+			source="revolving";
+			weapon="RC_HMG_127_APC";
+		};
+		class revolving_gmg
+		{
+			source="revolving";
+			weapon="RC_GMG_40mm";
+		};
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=1;
@@ -218,11 +232,12 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	displayName="RC Namer";
+	displayName="RC Namer unarmed";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
+
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
@@ -232,6 +247,9 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	textPlural="UGVs";
 	textSingular="UGV";
 	crew="B_UAV_AI";
+	forceHideDriver=1;
+	driverForceOptics=1;
+
 	maximumLoad=4000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
@@ -240,6 +258,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_gunner_fixated.hpp"
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment3";
 			commanding=2;
@@ -271,88 +290,11 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="MiniMapDisplayComponent";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						*/
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="EmptyDisplayComponent";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						*/
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-			};
 		};
 		class CommanderOptics : CommanderOptics
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_free.hpp"
 			showAllTargets="2 + 4";
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
@@ -382,80 +324,6 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 				{
 					"Normal",
 					"NVG"
-				};
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorsDisplayComponent";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="EmptyDisplayComponent";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
 				};
 			};
 		};
@@ -510,6 +378,35 @@ class RC_ICV_1_WD_I: RC_ICV_1_WD
 };
 
 
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_ICV_1_ReTex_D: RC_ICV_1_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"namer\data\namer_01_body_d.paa",
+		"namer\data\mbt_01_body_d.paa",
+		"namer\data\turret_d.paa",
+		"namer\data\camonet_desert_co.paa"
+	};
+};
+class RC_ICV_1_ReTex_D_O: RC_ICV_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_ICV_1_ReTex_D_I: RC_ICV_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
 
 
 class RC_APC_1_A_Base: RC_ICV_APC_1_A
@@ -517,11 +414,22 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 	editorSubcategory="RC_IFV_APC_subcat";
 	maximumLoad=3000;
 
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
+
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
@@ -563,104 +471,11 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 				};
 				thermalMode[]={0};
 			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="VehicleDriverDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-			};
 		};
 		class CommanderOptics : CommanderOptics
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
 			showAllTargets="2 + 4";
 			turretInfoType="RscOptics_MBT_03_gunner";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
@@ -688,104 +503,9 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 				visionMode[]=
 				{
 					"Normal",
-					"NVG",
 					"TI"
 				};
 				thermalMode[]={0};
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="VehicleDriverDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
 			};
 		};
 	};
@@ -809,14 +529,12 @@ class RC_APC_1_A: RC_APC_1_A_Base
 	side=1;
 	forceInGarage=1;
 
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
 	crew="B_UAV_AI";
 };
 class RC_APC_1_A_O: RC_APC_1_A
@@ -847,6 +565,8 @@ class RC_APC_1_A_O: RC_APC_1_A
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 class RC_APC_1_A_I: RC_APC_1_A
@@ -877,6 +597,8 @@ class RC_APC_1_A_I: RC_APC_1_A
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 
@@ -922,6 +644,8 @@ class RC_APC_1_WD_O: RC_APC_1_WD
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 class RC_APC_1_WD_I: RC_APC_1_WD
@@ -952,6 +676,8 @@ class RC_APC_1_WD_I: RC_APC_1_WD
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 
@@ -1023,36 +749,6 @@ class RC_APC_1_WD_Driverless_I: RC_APC_1_WD_Driverless
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
-class RC_ICV_1_ReTex_D: RC_ICV_1_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Desert_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"namer\data\namer_01_body_d.paa",
-		"namer\data\mbt_01_body_d.paa",
-		"namer\data\turret_d.paa",
-		"namer\data\camonet_desert_co.paa"
-	};
-};
-class RC_ICV_1_ReTex_D_O: RC_ICV_1_ReTex_D
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_ICV_1_ReTex_D_I: RC_ICV_1_ReTex_D
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
 class RC_APC_1_ReTex_D: RC_APC_1_A
 {
 	faction="RemoteControlled_ReTex_B";
@@ -1093,6 +789,8 @@ class RC_APC_1_ReTex_D_O: RC_APC_1_ReTex_D
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };
 class RC_APC_1_ReTex_D_I: RC_APC_1_ReTex_D
@@ -1123,5 +821,376 @@ class RC_APC_1_ReTex_D_I: RC_APC_1_ReTex_D
 				"SmokeLauncherMag"
 			};
 		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+
+
+//20mm IFV variant
+class RC_IFV_1_A: RC_APC_1_A
+{
+	displayName="Namer 20mm AC";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_338_APC",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_HE_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"100Rnd_20mm_APFSDS_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_20mm_CTWS";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_autocannon_20mm_CTWS";
+		};
+		class muzzle_hide1
+		{
+			source="reload";
+			weapon="RC_MMG_338_APC";
+		};
+	};
+};
+class RC_IFV_1_A_O: RC_IFV_1_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_93x64_APC",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_hide1
+		{
+			source="reload";
+			weapon="RC_MMG_93x64_APC";
+		};
+	};
+};
+class RC_IFV_1_A_I: RC_IFV_1_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_338_APC",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+
+
+class RC_IFV_1_WD: RC_IFV_1_A
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_rcws_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_exp\APC_Tracked_01\Data\APC_Tracked_01_body_olive_CO.paa",
+		"A3\Armor_F_exp\APC_Tracked_01\Data\mbt_01_body_olive_co.paa",
+		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
+	};
+};
+class RC_IFV_1_WD_O: RC_IFV_1_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_93x64_APC",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_hide1
+		{
+			source="reload";
+			weapon="RC_MMG_93x64_APC";
+		};
+	};
+};
+class RC_IFV_1_WD_I: RC_IFV_1_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_338_APC",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_IFV_1_ReTex_D: RC_IFV_1_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"namer\data\namer_01_body_d.paa",
+		"namer\data\mbt_01_body_d.paa",
+		"namer\data\turret_d.paa",
+		"namer\data\camonet_desert_co.paa"
+	};
+};
+class RC_IFV_1_ReTex_D_O: RC_IFV_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_93x64_APC",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_HE_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"100Rnd_20mm_APFSDS_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"RC_200Rnd_93x64_T_G",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_hide1
+		{
+			source="reload";
+			weapon="RC_MMG_93x64_APC";
+		};
+	};
+};
+class RC_IFV_1_ReTex_D_I: RC_IFV_1_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_autocannon_20mm_CTWS",
+				"RC_MMG_338_APC",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_HE_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"100Rnd_20mm_APFSDS_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"RC_200Rnd_338_T_Y",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+
+		class CommanderOptics: CommanderOptics {};
 	};
 };

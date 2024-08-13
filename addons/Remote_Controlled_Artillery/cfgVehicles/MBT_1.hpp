@@ -23,18 +23,29 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
-	driverForceOptics=1;
-	forceHideDriver=1;
 	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
 	maxSpeed=70;
@@ -42,6 +53,16 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 	peakTorque=6250;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
+
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
 
 	hiddenSelectionsTextures[]=
 	{
@@ -93,12 +114,49 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_cannon_120mm";
+		};
+		class recoil_source
+		{
+			source="reload";
+			weapon="RC_cannon_120mm";
+		};
+		class muzzle_hide_cannon
+		{
+			source="reload";
+			weapon="RC_cannon_120mm";
+		};
+		class muzzle_rot_coax
+		{
+			source="ammorandom";
+			weapon="RC_MMG_338_MBT_coax";
+		};
+		class muzzle_hide_coax
+		{
+			source="reload";
+			weapon="RC_MMG_338_MBT_coax";
+		};
+		class muzzle_rot_cmdr
+		{
+			source="ammorandom";
+			weapon="RC_HMG_127x99_MBT";
+		};
+		class commander_gun_recoil
+		{
+			source="reload";
+			weapon="RC_HMG_127x99_MBT";
+		};
 		class showCamonetPlates1: showCamonetPlates1
 		{
 			initPhase=1;
@@ -122,6 +180,7 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner_missile.hpp"
 			showAllTargets="2 + 4";
 			commanding=2;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -158,7 +217,7 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 					maxAngleY=100;
 
 					initFov=0.9;
-					minFov=0.0166;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -176,23 +235,23 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 				class CommanderOptics: CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
 					showAllTargets="2 + 4";
 					commanding=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
 
 					weapons[]=
 					{
-						"RC_MMG_338_MBT",
+						"RC_HMG_127x99_MBT",
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
-						"RC_200Rnd_338_T_R",
+						"RC_200Rnd_127x99_T_R",
+						"RC_200Rnd_127x99_T_R",
+						"RC_200Rnd_127x99_T_R",
+						"RC_200Rnd_127x99_T_R",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -210,7 +269,7 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 							maxAngleY=100;
 
 							initFov=0.9;
-							minFov=0.0166;
+							minFov=0.02;
 							maxFov=0.9;
 							visionMode[]=
 							{
@@ -233,7 +292,7 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 						minAngleY=-100;
 						maxAngleY=100;
 						initFov=0.9;
-						minFov=0.0166;
+						minFov=0.02;
 						maxFov=0.9;
 						visionMode[]=
 						{
@@ -243,213 +302,6 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 						thermalMode[]={0};
 					};
 					*/
-					class Components: Components
-					{
-						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-						{
-							defaultDisplay="SensorDisplay";
-
-							class Components
-							{
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								class VehicleMissileDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Missile";
-								};
-								class VehicleDriverDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Driver";
-								};
-								class VehicleGunnerDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="PrimaryGunner";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-						{
-							defaultDisplay="VehicleDriverDisplay";
-
-							class Components
-							{
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								class VehicleMissileDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Missile";
-								};
-								class VehicleDriverDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Driver";
-								};
-								class VehicleGunnerDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="PrimaryGunner";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-					};
-				};
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-						};
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="VehicleDriverDisplay";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-						};
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
 				};
 			};
 		};
@@ -538,19 +390,21 @@ class RC_MBT_1_A: RC_MBT_1_A_Base
 		};
 	};
 
+	displayName="Merkava";
 	scope=2;
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
 
-	displayName="Merkava";
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
 	crew="B_UAV_AI";
+	//driverForceOptics=1;
+	//forceHideDriver=1;
 };
 class RC_MBT_1_A_O: RC_MBT_1_A
 {
@@ -584,11 +438,10 @@ class RC_MBT_1_A_O: RC_MBT_1_A
 				{
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -630,11 +483,10 @@ class RC_MBT_1_A_I: RC_MBT_1_A
 				{
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -691,11 +543,10 @@ class RC_MBT_1_WD_O: RC_MBT_1_WD
 				{
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -737,11 +588,10 @@ class RC_MBT_1_WD_I: RC_MBT_1_WD
 				{
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -798,11 +648,10 @@ class RC_MBT_1_ReTex_D_O: RC_MBT_1_ReTex_D
 				{
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
-						"RC_200Rnd_338_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
+						"RC_200Rnd_127x99_T_G",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
@@ -844,11 +693,10 @@ class RC_MBT_1_ReTex_D_I: RC_MBT_1_ReTex_D
 				{
 					magazines[]=
 					{
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
-						"RC_200Rnd_338_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
+						"RC_200Rnd_127x99_T_Y",
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"

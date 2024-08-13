@@ -84,12 +84,26 @@ class CfgPatches
 			RC_Howitzer_A_I,
 			RC_Howitzer_WD_I,
 
+			RC_Howitzer_LC_A,
+			RC_Howitzer_LC_WD,
+			RC_Howitzer_LC_A_O,
+			RC_Howitzer_LC_WD_O,
+			RC_Howitzer_LC_A_I,
+			RC_Howitzer_LC_WD_I,
+
 			RC_Howitzer_HEX_A_O,
 			RC_Howitzer_HEX_WD_O,
+
+			RC_Howitzer_HEX_LC_A_O,
+			RC_Howitzer_HEX_LC_WD_O,
 
 			RC_Static_Arty,
 			RC_Static_Arty_O,
 			RC_Static_Arty_I,
+
+			RC_Static_Arty_LC,
+			RC_Static_Arty_LC_O,
+			RC_Static_Arty_LC_I,
 
 			RC_MLRS_A,
 			RC_MLRS_WD,
@@ -149,10 +163,18 @@ class CfgPatches
 			RC_VehicleMortar_HEX_O,
 			RC_VehicleMortar_I,
 
+			RC_VehicleMortar_LC,
+			RC_VehicleMortar_LC_O,
+			RC_VehicleMortar_LC_I,
+
 			RC_Mortar_Carrier_WD,
 			RC_Mortar_Carrier_WD_O,
 			RC_Mortar_Carrier_WD_I,
 			RC_Mortar_Carrier_DIG_I,
+
+			RC_Mortar_Carrier_LC_WD,
+			RC_Mortar_Carrier_LC_WD_O,
+			RC_Mortar_Carrier_LC_WD_I,
 
 			RC_UAV_AR1,
 			RC_UAV_AR3,
@@ -175,6 +197,14 @@ class CfgPatches
 			RC_GrenadeDropper_Bag,
 			RC_GrenadeDropper_Bag_O,
 			RC_GrenadeDropper_Bag_I,
+
+			RC_UAV_FPV,
+			RC_UAV_FPV_O,
+			RC_UAV_FPV_I,
+
+			RC_UAV_FPV_Bag,
+			RC_UAV_FPV_Bag_O,
+			RC_UAV_FPV_Bag_I,
 
 			RC_RespawnTruck_A,
 			RC_RespawnTruck_WD,
@@ -230,8 +260,18 @@ class CfgPatches
 			RC_APC_1_A_I,
 			RC_APC_1_WD_I,
 
+			RC_IFV_1_A,
+			RC_IFV_1_WD,
+			RC_IFV_1_A_O,
+			RC_IFV_1_WD_O,
+			RC_IFV_1_A_I,
+			RC_IFV_1_WD_I,
+
 			RC_APC_2_A_O,
 			RC_APC_2_WD_O,
+
+			RC_IFV_2_A_O,
+			RC_IFV_2_WD_O,
 
 			RC_IFV_3_A,
 			RC_IFV_3_WD,
@@ -339,12 +379,23 @@ class CfgPatches
 			RC_APC_1_ReTex_D_O,
 			RC_APC_1_ReTex_D_I,
 
+			RC_IFV_1_ReTex_D,
+			RC_IFV_1_ReTex_D_O,
+			RC_IFV_1_ReTex_D_I,
+
 			RC_APC_2_ReTex_D,
 			RC_APC_2_ReTex_D_O,
 			RC_APC_2_ReTex_D_I,
 			RC_APC_2_ReTex_WD,
 			RC_APC_2_ReTex_WD_O,
 			RC_APC_2_ReTex_WD_I,
+
+			RC_IFV_2_ReTex_D,
+			RC_IFV_2_ReTex_D_O,
+			RC_IFV_2_ReTex_D_I,
+			RC_IFV_2_ReTex_WD,
+			RC_IFV_2_ReTex_WD_O,
+			RC_IFV_2_ReTex_WD_I,
 
 			RC_IFV_3_ReTex_D,
 			RC_IFV_3_ReTex_WD,
@@ -384,12 +435,18 @@ class CfgPatches
 
 		weapons[]=
 		{
+			RC_target_confirmer,
+			RC_Laserdesignator_mounted,
+			RC_Laserdesignator_vehicle,
+			
 			Improved_FOV_Laserdesignator_A,
 			Improved_FOV_Laserdesignator_WD,
 			Improved_FOV_Laserdesignator_Ti_A,
 			Improved_FOV_Laserdesignator_Ti_WD,
 
 			RC_HMG_127_APC,
+			RC_MMG_338_APC,
+			RC_MMG_93x64_APC,
 			RC_MMG_338_FSV,
 			RC_MMG_338_FSV_coax,
 			RC_MMG_338_MBT,
@@ -400,6 +457,8 @@ class CfgPatches
 			RC_MMG_93x64_coax_ext,
 
 			RC_GMG_40mm,
+			RC_autocannon_20mm_CTWS,
+			RC_autocannon_30mm,
 			RC_autocannon_30mm_CTWS,
 			RC_autocannon_40mm_CTWS,
 			RC_autocannon_30mm_RCWS,
@@ -408,7 +467,7 @@ class CfgPatches
 
 			RC_ATGM_SACLOS,
 			RC_ATGM_Lock,
-			RC_IFV_Missle_Launcher,
+			RC_IFV_Missile_Launcher,
 
 			RC_mortar_82mm_V1,
 			RC_mortar_82mm_V2,
@@ -456,7 +515,19 @@ class CfgFunctions
 			class RC_UAVBlur {postInit=1};
 			class RC_UAVConnectionFix {postInit=1};
 			class RC_LaserDatalink {postInit=1};
+			//class RC_LocalityFix {postInit=1};
 			class scrollSolutions {};
+			//class RC_TakeControl {};
+
+			/*
+			file="\Remote_Controlled_Artillery\functions\UILoop_includes";
+			class AB_magchange {};
+			class advised_trajectory {};
+			class ctrl_display {};
+			class eldiff_additions {};
+			class notarget_display {};
+			class weapon_info {};
+			*/
 		};
 	};
 };
@@ -541,6 +612,7 @@ class CfgEditorSubcategories
 	class RC_Howitzer_subcat {displayname="'indirect :  Howitzers";};
 	class RC_Mortar_subcat {displayname="'indirect :  Mortars";};
 	class RC_Rocket_subcat {displayname="'indirect :  Rocket Systems";};
+	class RC_ReducedAmmo_subcat {displayname="'reduced ammo :  Mortar's / Howitzer's";};
 
 	class RC_AntiAir_subcat {displayname="Anti-Air";};
 	class RC_ATGM_subcat {displayname="ATGMs";};
@@ -566,6 +638,7 @@ class SensorTemplateNV;
 class SensorTemplateVisual;
 class SensorTemplateMan;
 class SensorTemplateActiveRadar;
+class SensorTemplatePassiveRadar;
 
 //later required optics
 class RCWSOptics;
@@ -608,6 +681,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_IFV_5.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\IFV_6.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\MortarMATV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_3.hpp"

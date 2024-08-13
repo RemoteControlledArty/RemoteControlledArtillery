@@ -22,18 +22,29 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
-	driverForceOptics=1;
-	forceHideDriver=1;
 	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
 	maxSpeed=70;
@@ -47,6 +58,16 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_1_CO.paa",
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_2_CO.paa",
 		"A3\Armor_F\Data\camonet_CSAT_Stripe_Desert_CO.paa"
+	};
+
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
 	};
 
 	class Components: Components
@@ -91,6 +112,8 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};
@@ -100,6 +123,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner_missile.hpp"
 			showAllTargets="2 + 4";
 			commanding=2;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -132,7 +156,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 					maxAngleY=100;
 
 					initFov=0.9;
-					minFov=0.0166;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -150,6 +174,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 				class CommanderOptics: CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
 					showAllTargets="2 + 4";
 					commanding=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
@@ -184,7 +209,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 							maxAngleY=100;
 
 							initFov=0.9;
-							minFov=0.0166;
+							minFov=0.02;
 							maxFov=0.9;
 							visionMode[]=
 							{
@@ -207,7 +232,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 						minAngleY=-100;
 						maxAngleY=100;
 						initFov=0.9;
-						minFov=0.0166;
+						minFov=0.02;
 						maxFov=0.9;
 						visionMode[]=
 						{
@@ -217,213 +242,6 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 						thermalMode[]={0};
 					};
 					*/
-					class Components: Components
-					{
-						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-						{
-							defaultDisplay="SensorDisplay";
-
-							class Components
-							{
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								class VehicleMissileDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Missile";
-								};
-								class VehicleDriverDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Driver";
-								};
-								class VehicleGunnerDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="PrimaryGunner";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-						{
-							defaultDisplay="VehicleDriverDisplay";
-
-							class Components
-							{
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={4000,2000,1000,500};
-									resource="RscCustomInfoSensors";
-								};
-								class VehicleMissileDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Missile";
-								};
-								class VehicleDriverDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="Driver";
-								};
-								class VehicleGunnerDisplay
-								{
-									componentType="TransportFeedDisplayComponent";
-									source="PrimaryGunner";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								/*
-								class MineDetectorDisplay
-								{
-									componentType="MineDetectorDisplayComponent";
-									range=50;
-									resource="RscCustomInfoMineDetect";
-								};
-								*/
-							};
-						};
-					};
-				};
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-						};
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="VehicleDriverDisplay";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
-							resource="RscCustomInfoSensors";
-						};
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-						};
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleCommanderDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Commander";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
 				};
 			};
 		};
@@ -526,19 +344,21 @@ class RC_MBT_3_G: RC_MBT_3_G_Base
 		};
 	};
 
+	displayName="T-14";
 	scope=2;
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
 
-	displayName="T-14";
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
+	//vehicleClass="Autonomous";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//textPlural="UGVs";
+	//textSingular="UGV";
 	crew="B_UAV_AI";
+	//driverForceOptics=1;
+	//forceHideDriver=1;
 };
 class RC_MBT_3_G_O: RC_MBT_3_G
 {
@@ -639,6 +459,43 @@ class RC_MBT_3_WD: RC_MBT_3_G
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_cannon_125mm_advanced";
+		};
+		class muzzle_rot_coax
+		{
+			source="ammorandom";
+			weapon="RC_MMG_93x64_coax";
+		};
+		class muzzle_hide_coax
+		{
+			source="reload";
+			weapon="RC_MMG_93x64_coax";
+		};
+		class recoil_source
+		{
+			source="reload";
+			weapon="RC_cannon_125mm_advanced";
+		};
+		class zeroing_cannon
+		{
+			source="zeroing";
+			weapon="RC_cannon_125mm_advanced";
+		};
+		/*
+		class muzzle_rot_hmg
+		{
+			source="ammorandom";
+			weapon="HMG_127_APC";
+		};
+		*/
+		class com_gun_reload
+		{
+			source="reload";
+			weapon="RC_autocannon_30mm_RCWS";
+		};
 		class showCamonetCannon: showCamonetCannon
 		{
 			initPhase=1;

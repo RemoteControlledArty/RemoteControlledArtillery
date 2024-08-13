@@ -42,11 +42,24 @@ class RC_AA_small_WD: RC_AA_small_Base
 	redRpm=1100;
 	idleRpm=250;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 
 	class Components: Components
 	{
@@ -95,6 +108,9 @@ class RC_AA_small_WD: RC_AA_small_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=6000;
@@ -185,9 +201,9 @@ class RC_AA_small_WD: RC_AA_small_Base
 			class ViewOptics: ViewOptics
 			{
 				//directionStabilized=1;	//sadly creates aiming problems
-				initFov=0.89999998;
-				minFov=0.0125;
-				maxFov=0.89999998;
+				initFov=0.9;
+				minFov=0.0166;
+				maxFov=0.9;
 			};
 
 			showAllTargets="2 + 4";
@@ -334,11 +350,24 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 	redRpm=1100;
 	idleRpm=250;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
 	lockDetectionSystem="4+8";
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 
 	class Components: Components
 	{
@@ -365,6 +394,9 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+
 				/*
 				class IRSensorComponent: SensorTemplateIR
 				{
@@ -470,9 +502,9 @@ class RC_radar_small_WD_Base: RC_radar_small_Base
 			class ViewOptics: ViewOptics
 			{
 				directionStabilized=1;
-				initFov=0.89999998;
-				minFov=0.0125;
-				maxFov=0.89999998;
+				initFov=0.9;
+				minFov=0.0166;
+				maxFov=0.9;
 				visionMode[]=
 				{
 					"Normal",
@@ -648,6 +680,41 @@ class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
 };
 
 
+//version with less rounds for smaller ops
+class RC_Mortar_Carrier_LC_WD: RC_radar_small_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
+	displayName="RC Mortar Carrier LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+};
+class RC_Mortar_Carrier_LC_WD_O: RC_Mortar_Carrier_LC_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Mortar_Carrier_LC_WD_I: RC_Mortar_Carrier_LC_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+	};
+
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
 //semi manned version
 /*
 class RC_Mortar_Carrier_WD_Driverless: RC_radar_small_WD_Base
@@ -732,8 +799,6 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
 	author="Ascent";
-	driverForceOptics=1;
-	forceHideDriver=1;
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -741,10 +806,23 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 	redRpm=1100;
 	idleRpm=250;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 	//laserScanner=0;
 
 	class Components: Components
@@ -772,6 +850,9 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=2000;
@@ -833,99 +914,21 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 
 	class AnimationSources: AnimationSources
 	{
-		class HitSLAT_Left_1_src
+		class showCamonetHull: showCamonetHull
 		{
-			source="Hit";
-			hitpoint="HitSLAT_Left_1";
-			raw=1;
-		};
-		class HitSLAT_Left_2_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_Left_2";
-			raw=1;
-		};
-		class HitSLAT_Left_3_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_Left_3";
-			raw=1;
-		};
-		class HitSLAT_Right_1_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_Right_1";
-			raw=1;
-		};
-		class HitSLAT_Right_2_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_Right_2";
-			raw=1;
-		};
-		class HitSLAT_Right_3_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_Right_3";
-			raw=1;
-		};
-		class HitSLAT_back_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_back";
-			raw=1;
-		};
-		class HitSLAT_front_src
-		{
-			source="Hit";
-			hitpoint="HitSLAT_front";
-			raw=1;
-		};
-		class showCamonetPlates1
-		{
-			source="user";
-			animPeriod=0.001;
-			initPhase=0;
-		};
-		class showCamonetPlates2
-		{
-			source="user";
-			animPeriod=0.001;
-			initPhase=0;
-		};
-		class showCamonetHull
-		{
-			displayName="$STR_A3_animationsources_showcamonethull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
-			forceAnimatePhase=1;
-			forceAnimate[]=
-			{
-				"showCamonetPlates1",
-				1,
-				"showCamonetPlates2",
-				1
-			};
-			forceAnimate2[]=
-			{
-				"showCamonetPlates1",
-				0,
-				"showCamonetPlates2",
-				0
-			};
 			initPhase=1;
-			mass=-50;
 		};
-		class showSLATHull
+		class showSLATHull: showSLATHull
 		{
-			displayName="$STR_A3_animationsources_showslathull0";
-			author="$STR_A3_Bohemia_Interactive";
-			source="user";
-			animPeriod=0.001;
 			initPhase=1;
-			mass=-50;
 		};
+	};
+	animationList[]=
+	{
+		"showCamonetHull",
+		1,
+		"showSLATHull",
+		1
 	};
 
 	class Turrets: Turrets
@@ -939,9 +942,9 @@ class RC_ATGM_small_WD_Base: RC_ATGM_small_Base
 			class ViewOptics: ViewOptics
 			{
 				//directionStabilized=1;	//sadly creates aiming problems
-				initFov=0.89999998;
-				minFov=0.0125;
-				maxFov=0.89999998;
+				initFov=0.9;
+				minFov=0.0166;
+				maxFov=0.9;
 			};
 
 			class Components: Components
@@ -1041,6 +1044,8 @@ class RC_ATGM_small_WD: RC_ATGM_small_WD_Base
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
+	driverForceOptics=1;
+	forceHideDriver=1;
 
 	class Turrets: Turrets
 	{
@@ -1098,13 +1103,15 @@ class RC_ATGM_small_WD_manned: RC_ATGM_small_WD_Base
 	side=1;
 	forceInGarage=1;
 
-	isUav=1;
-	vehicleClass="Autonomous";
-	textPlural="UGVs";
-	textSingular="UGV";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
+	//isUav=1;
+	//vehicleClass="Autonomous";
+	//textPlural="UGVs";
+	//textSingular="UGV";
+	//uavCameraDriverPos="PiP0_pos";
+	//uavCameraDriverDir="PiP0_dir";
 	crew="B_UAV_AI";
+	//driverForceOptics=1;
+	//forceHideDriver=1;
 };
 class RC_ATGM_small_WD_manned_O: RC_ATGM_small_WD_manned
 {

@@ -48,7 +48,9 @@ class RC_Howitzer_A: RC_Howitzer_base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
+	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
@@ -105,14 +107,24 @@ class RC_Howitzer_A: RC_Howitzer_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};
 
-	crewCrashProtection=0.01;
-
 	class AnimationSources: AnimationSources
 	{
+		class recoil_source
+		{
+			source="reload";
+			weapon="RC_155mm_AMOS_V4";
+		};
+		class muzzle_hide_arty
+		{
+			source="reload";
+			weapon="RC_155mm_AMOS_V4";
+		};
 		class showCamonetPlates1: showCamonetPlates1
 		{
 			initPhase=1;
@@ -160,7 +172,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			maxElev=87.02;
+			maxElev=87;
 
 			weapons[]=
 			{
@@ -168,11 +180,11 @@ class RC_Howitzer_A: RC_Howitzer_base
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_155mm_Mo_shells",
+				"RC_15Rnd_155mm_Mo_shells",
 				"RC_4Rnd_155mm_Mo_HEAB",
 				"RC_5Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_18Rnd_155mm_Mo_smoke",
+				"RC_20Rnd_155mm_Mo_smoke",
 				"RC_9Rnd_155mm_Mo_AT_mine",
 				"RC_9Rnd_155mm_Mo_mine",
 				"RC_6Rnd_155mm_Mo_Illum"
@@ -218,7 +230,8 @@ class RC_Howitzer_A: RC_Howitzer_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,20000,10000,5000,2500,67000};
+							//range[]={30000,20000,10000,5000,2500,67000};
+							range[]={30000,20000,10000,5000,2500,50000};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -321,6 +334,67 @@ class RC_Howitzer_WD_I: RC_Howitzer_WD
 };
 
 
+class RC_Howitzer_LC_A: RC_Howitzer_A
+{
+	displayName="RC Howitzer LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_6Rnd_155mm_Mo_shells",
+				"RC_3Rnd_155mm_Mo_HEAB",
+				"RC_3Rnd_155mm_Mo_MultiGuided",
+				"RC_20Rnd_155mm_Mo_smoke",
+				"RC_4Rnd_155mm_Mo_AT_mine",
+				"RC_4Rnd_155mm_Mo_mine",
+				"RC_6Rnd_155mm_Mo_Illum"
+			};
+		};
+	};
+};
+class RC_Howitzer_LC_WD: RC_Howitzer_LC_A
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_arty_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
+		"A3\Armor_F_Exp\MBT_01\data\MBT_01_scorcher_olive_CO.paa",
+		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
+		//"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
+	};
+};
+class RC_Howitzer_LC_A_O: RC_Howitzer_LC_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Howitzer_LC_WD_O: RC_Howitzer_LC_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Howitzer_LC_A_I: RC_Howitzer_LC_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+class RC_Howitzer_LC_WD_I: RC_Howitzer_LC_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
 //HEX Camo Howitzers (Opfor only)
 class O_MBT_02_arty_F;
 class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
@@ -373,11 +447,24 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 	radartype=2;
+	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
+	soundLocked[]=
+	{
+		"\A3\Sounds_F\weapons\Rockets\locked_1",
+		1,
+		1
+	};
+	soundIncommingMissile[]=
+	{
+		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
+		0.39810717,
+		1
+	};
 
 	class Components: Components
 	{
@@ -421,12 +508,24 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};
 
 	class AnimationSources: AnimationSources
 	{
+		class recoil_source
+		{
+			source="reload";
+			weapon="RC_155mm_AMOS_V4";
+		};
+		class muzzle_hide_arty
+		{
+			source="reload";
+			weapon="RC_155mm_AMOS_V4";
+		};
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=1;
@@ -467,7 +566,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			maxElev=87.02;
+			maxElev=87;
 
 			weapons[]=
 			{
@@ -475,11 +574,11 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_155mm_Mo_shells",
+				"RC_15Rnd_155mm_Mo_shells",
 				"RC_4Rnd_155mm_Mo_HEAB",
 				"RC_5Rnd_155mm_Mo_MultiGuided",
 				"RC_2Rnd_155mm_Mo_Cluster",
-				"RC_18Rnd_155mm_Mo_smoke",
+				"RC_20Rnd_155mm_Mo_smoke",
 				"RC_9Rnd_155mm_Mo_AT_mine",
 				"RC_9Rnd_155mm_Mo_mine",
 				"RC_6Rnd_155mm_Mo_Illum"
@@ -492,6 +591,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 					initFov=0.125;
 					minFov=0.0125;
 					maxFov=0.89999998;
+					
 					visionMode[]=
 					{
 						"Normal",
@@ -523,7 +623,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,20000,10000,5000,2500,67000};
+							//range[]={30000,20000,10000,5000,2500,67000};
+							range[]={30000,20000,10000,5000,2500,50000};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -602,12 +703,55 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_HEX_A_O
 };
 
 
+class RC_Howitzer_HEX_LC_A_O: RC_Howitzer_HEX_A_O
+{
+	displayName="RC Howitzer LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_6Rnd_155mm_Mo_shells",
+				"RC_3Rnd_155mm_Mo_HEAB",
+				"RC_3Rnd_155mm_Mo_MultiGuided",
+				"RC_20Rnd_155mm_Mo_smoke",
+				"RC_4Rnd_155mm_Mo_AT_mine",
+				"RC_4Rnd_155mm_Mo_mine",
+				"RC_6Rnd_155mm_Mo_Illum"
+			};
+		};
+	};
+};
+class RC_Howitzer_HEX_LC_WD_O: RC_Howitzer_HEX_LC_A_O
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_MBT_02_arty_ghex_F.jpg";
+	textureList[]=
+	{
+		"GreenHex",
+		1
+	};
+	hiddenSelectionsTextures[]=
+	{
+		"a3\Armor_F_Exp\MBT_02\Data\MBT_02_body_ghex_CO.paa",
+		"a3\Armor_F_Exp\MBT_02\Data\MBT_02_scorcher_ghex_CO.paa",
+		"a3\Armor_F_Exp\MBT_02\Data\MBT_02_ghex_CO.paa",
+		"a3\Data_F_Exp\Vehicles\Turret_ghex_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa"
+	};
+};
+
+
 class B_Ship_Gun_01_F;
 class RC_Static_Arty_base: B_Ship_Gun_01_F
 {
 	class Turrets;
 	class MainTurret;
 	class Components;
+	class AnimationSources;
 	scope=0;
 	scopeCurator=0;
 	isRCArty=1;
@@ -628,12 +772,28 @@ class RC_Static_Arty: RC_Static_Arty_base
 	lockDetectionSystem=4;
 	incomingMissileDetectionSystem=16;
 
+	/*
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_ShipCannon_120mm_V4";
+		};
+		class muzzle_hide_cannon
+		{
+			source="reload";
+			weapon="RC_ShipCannon_120mm_V4";
+		};
+	};
+	*/
+
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
 			showAllTargets="2 + 4";
-			maxelev=87.02;
+			maxelev=87;
 
 			weapons[]=
 			{
@@ -641,11 +801,11 @@ class RC_Static_Arty: RC_Static_Arty_base
 			};
 			magazines[]=
 			{
-				"RC_12Rnd_120mm_Mo_shells",
+				"RC_15Rnd_120mm_Mo_shells",
 				"RC_4Rnd_120mm_Mo_HEAB",
 				"RC_5Rnd_120mm_Mo_MultiGuided",
 				"RC_2Rnd_120mm_Mo_Cluster",
-				"RC_18Rnd_120mm_Mo_smoke",
+				"RC_20Rnd_120mm_Mo_smoke",
 				"RC_9Rnd_120mm_Mo_AT_mine",
 				"RC_9Rnd_120mm_Mo_mine",
 				"RC_6Rnd_120mm_Mo_Illum"
@@ -662,7 +822,8 @@ class RC_Static_Arty: RC_Static_Arty_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,20000,10000,5000,2500,67000};
+							//range[]={30000,20000,10000,5000,2500,67000};
+							range[]={30000,20000,10000,5000,2500,50000};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -738,6 +899,8 @@ class RC_Static_Arty: RC_Static_Arty_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+
+				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
 			};
 		};
 	};
@@ -749,6 +912,42 @@ class RC_Static_Arty_O: RC_Static_Arty
 	side=0;
 };
 class RC_Static_Arty_I: RC_Static_Arty
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_Static_Arty_LC: RC_Static_Arty
+{
+	displayName="RC Static Howitzer LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_6Rnd_120mm_Mo_shells",
+				"RC_3Rnd_120mm_Mo_HEAB",
+				"RC_3Rnd_120mm_Mo_MultiGuided",
+				"RC_20Rnd_120mm_Mo_smoke",
+				"RC_4Rnd_120mm_Mo_AT_mine",
+				"RC_4Rnd_120mm_Mo_mine",
+				"RC_6Rnd_120mm_Mo_Illum"
+			};
+		};
+	};
+};
+class RC_Static_Arty_LC_O: RC_Static_Arty_LC
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Static_Arty_LC_I: RC_Static_Arty_LC
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
