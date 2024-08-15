@@ -2,8 +2,8 @@
 	Author: Ascent
 
 	Description:
-	Limits the usable range to about 2000m from the operator of specific UAV's, to make them less OP in Zeus Missions, and easier to implement for Zeus.
-	RC_UAVBlur=800; means past 800m the connection becomes worse and blurry
+	Limits the usable range from the operator of specific UAV's, to make them less OP in Zeus Missions, and easier to implement for Zeus.
+	RC_UAVBlur=1500; means past 1500m the connection becomes worse and blurry
 
 	Currently unused alternative that is neat but unrealistic and plays wierd.
 	if (_UAVBlurRange == 1) then {
@@ -14,6 +14,9 @@
 
 // Need to exit early if we aren't a client
 if !hasInterface exitWith {};
+
+RC_UAVBlurRangeHash = createHashMap;
+
 RC_UAVBlur = [] spawn
 {
 	while {true} do
@@ -29,7 +32,12 @@ RC_UAVBlur = [] spawn
 
 		_uav = (getConnectedUAV player);
 		_uavClass = typeOf _uav; // UAV ClassName
-		_UAVBlurRange = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_UAVBlurRange");
+
+		private _UAVBlurRange = RC_UAVBlurRangeHash get _uavClass;
+		if (isNil "RC_UAVBlurRange") then {
+			_UAVBlurRange = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_UAVBlurRange");
+			RC_UAVBlurRangeHash set [_uavClass, _UAVBlurRange];
+		};
 
 		// Checks config if its meant to be a shortrange UAV, no entry means no Effect
 		if (_UAVBlurRange != 0) then {

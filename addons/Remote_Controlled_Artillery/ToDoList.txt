@@ -9,6 +9,7 @@ major:
 -arty marker distance becomes distance to likely 0,0,0 when renaming (fixed by manually pressing cycle markers, not caused by moving marker)
 -gun laying resetting despite autonomous being off (maybe not global/JIP?)
 -artillery computer is supposedly disabled for all assets after this mods artillery is used once, not just of the mod  *add option to keep it enabled on high angle only mortars
+-223mm self seeking inaccurate/not working if first target is lost
 
 minor:
 -gps target gone after ~3minutes
