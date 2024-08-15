@@ -26,6 +26,7 @@ class RC_Titus_AC_base: QIN_Titus_arx20_DES
 	class HitRF2Wheel;
 	class HitRMWheel;
 	class HitRBWheel;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -33,6 +34,7 @@ class RC_Titus_AC_base: QIN_Titus_arx20_DES
 };
 class RC_Titus_AC_D: RC_Titus_AC_base
 {
+	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
 	#include "\RC_Titus\Titus_include.hpp"
 
 	class EventHandlers: EventHandlers

@@ -13,6 +13,7 @@ class RC_FSV_Base: B_AFV_Wheeled_01_up_cannon_F
 	class MainTurret;
 	class CommanderOptics;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	class ViewOptics;
 	class ViewPilot;
@@ -31,6 +32,7 @@ class RC_FSV_Base: B_AFV_Wheeled_01_up_cannon_F
 };
 class RC_FSV_A_Base: RC_FSV_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";

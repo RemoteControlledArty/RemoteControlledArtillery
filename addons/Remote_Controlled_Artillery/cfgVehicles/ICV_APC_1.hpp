@@ -16,6 +16,7 @@ class RC_ICV_APC_1_Base: B_APC_Tracked_01_rcws_F
 	class showCamonetPlates2;
 	class ViewOptics;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -23,6 +24,7 @@ class RC_ICV_APC_1_Base: B_APC_Tracked_01_rcws_F
 };
 class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
 	author="Ascent";
 	faction="RemoteControlled_B";
 	forceHideDriver=1;

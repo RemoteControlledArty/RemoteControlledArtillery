@@ -6,6 +6,7 @@ class RC_MBT_2_Base: I_MBT_03_cannon_F
 	class CommanderOptics;
 	class ViewOptics;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	class AnimationSources;
 	class showCamonetHull;
@@ -20,6 +21,7 @@ class RC_MBT_2_Base: I_MBT_03_cannon_F
 };
 class RC_MBT_2_A_Base: RC_MBT_2_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";

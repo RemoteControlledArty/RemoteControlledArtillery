@@ -24,6 +24,7 @@ class RC_ICV_IFV_4_A_Base: B_APC_Wheeled_01_cannon_F
 	class showSLATTurret;
 	class ViewOptics;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -31,6 +32,7 @@ class RC_ICV_IFV_4_A_Base: B_APC_Wheeled_01_cannon_F
 };
 class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
 	author="Ascent";
 	faction="RemoteControlled_B";
 	scope=0;

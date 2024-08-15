@@ -6,6 +6,7 @@ class RC_MBT_1_Base: B_MBT_01_TUSK_F
 	class CommanderOptics;
 	class ViewOptics;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	class AnimationSources;
 	class showCamonetTurret;
@@ -20,6 +21,7 @@ class RC_MBT_1_Base: B_MBT_01_TUSK_F
 };
 class RC_MBT_1_A_Base: RC_MBT_1_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";

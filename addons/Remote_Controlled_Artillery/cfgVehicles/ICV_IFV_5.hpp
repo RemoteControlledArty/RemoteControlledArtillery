@@ -13,6 +13,7 @@ class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
 	class ViewOptics;
 	class ViewPilot;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -20,6 +21,7 @@ class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
 };
 class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
 	author="Ascent";
 	faction="RemoteControlled_O";
 	scope=0;

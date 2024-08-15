@@ -29,6 +29,8 @@ TO DO - FEATURES:
 -double check autonomous remote execute structure with Eric (JIP global execute?)
 -attemt to make locality fix per custom server cba EH
 
+-AFV commander take over controls script
+
 -idea: CounterBatteryRadar that has init EH that spawns check for artillery assets of opposing sides (how to do this performance effective), and attaches EH fired to them?
 -2 variants, player (notification, rough mark, maybe Datalink target) and AI (automatic return fire),  with cba settings
 

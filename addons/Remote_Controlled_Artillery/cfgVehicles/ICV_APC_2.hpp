@@ -19,6 +19,7 @@ class RC_ICV_APC_2_A_Base: O_APC_Wheeled_02_rcws_F
 	class AnimationSources;
 	class ViewOptics;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -26,6 +27,7 @@ class RC_ICV_APC_2_A_Base: O_APC_Wheeled_02_rcws_F
 };
 class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
 	author="Ascent";
 	faction="RemoteControlled_O";
 	scope=0;

@@ -22,6 +22,7 @@ class RC_ICV_IFV_3_A_Base: B_APC_Wheeled_03_cannon_F
 	class ViewOptics;
 	class ViewPilot;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -29,6 +30,7 @@ class RC_ICV_IFV_3_A_Base: B_APC_Wheeled_03_cannon_F
 };
 class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
 	author="Ascent";
 	faction="RemoteControlled_B";
 	scope=0;

@@ -4,6 +4,7 @@ class RC_M2A3_BUSKIII_Base: RHS_M2A3_BUSKIII
 	scope=0;
 	scopeCurator=0;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	class Turrets;
 	class MainTurret;
@@ -15,6 +16,7 @@ class RC_M2A3_BUSKIII_Base: RHS_M2A3_BUSKIII
 };
 class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
 	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=2;
