@@ -34,7 +34,7 @@ RC_UAVBlur = [] spawn
 		_uavClass = typeOf _uav; // UAV ClassName
 
 		private _UAVBlurRange = RC_UAVBlurRangeHash get _uavClass;
-		if (isNil "RC_UAVBlurRange") then {
+		if (isNil "_UAVBlurRange") then {
 			_UAVBlurRange = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_UAVBlurRange");
 			RC_UAVBlurRangeHash set [_uavClass, _UAVBlurRange];
 		};
