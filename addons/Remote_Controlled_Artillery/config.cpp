@@ -176,6 +176,13 @@ class CfgPatches
 			RC_Mortar_Carrier_LC_WD_O,
 			RC_Mortar_Carrier_LC_WD_I,
 
+			RC_MortarMATV_manned_A,
+			RC_MortarMATV_manned_WD,
+			RC_MortarMATV_manned_A_O,
+			RC_MortarMATV_manned_WD_O,
+			RC_MortarMATV_manned_A_I,
+			RC_MortarMATV_manned_WD_I,
+
 			RC_UAV_AR1,
 			RC_UAV_AR3,
 			RC_UAV_AR1_O,
