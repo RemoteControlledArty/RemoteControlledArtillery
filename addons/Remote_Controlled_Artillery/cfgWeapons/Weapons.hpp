@@ -447,7 +447,7 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 		};
 		class player: player
 		{
-			reloadTime=0.2;
+			reloadTime=0.25;
 		};
 	};
 	class AP: AP
@@ -501,7 +501,7 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 	class HE: HE
 	{
 		displayName="20mm AC";
-		magazineReloadTime=20;
+		magazineReloadTime=15;
 		maxZeroing=3000;
 
 		magazines[]=
@@ -518,7 +518,7 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 	class AP: AP
 	{
 		displayName="20mm AC";
-		magazineReloadTime=20;
+		magazineReloadTime=15;
 		maxZeroing=3000;
 
 		magazines[]=
@@ -532,7 +532,7 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 		};
 		class player: player
 		{
-			reloadTime=0.25;
+			reloadTime=0.2;
 		};
 	};
 };

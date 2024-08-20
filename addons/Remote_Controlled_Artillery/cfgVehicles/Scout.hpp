@@ -921,7 +921,6 @@ class RC_Scout_ATGM_WD_Base: RC_Scout_ATGM_Base
 				"RC_2Rnd_IFV_MP_NLOS",
 				"RC_2Rnd_IFV_MP_NLOS",
 				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
@@ -953,27 +952,25 @@ class RC_Scout_ATGM_WD_Base: RC_Scout_ATGM_Base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="VehicleMissileDisplay";
 
 					class Components
 					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						/*
 						class VehicleMissileDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 							resource="RscTransportCameraComponentMissile";
 						};
-						*/
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
 					};
 				};
 			};
@@ -1061,7 +1058,6 @@ class RC_Scout_ATGM_WD_O: RC_Scout_ATGM_WD
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_MP_NLOS",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
@@ -1081,7 +1077,6 @@ class RC_Scout_ATGM_WD_I: RC_Scout_ATGM_WD
 		"RC_100Rnd_127x99_SLAP_T_Y",
 		"RC_100Rnd_127x99_SLAP_T_Y",
 		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
@@ -1134,6 +1129,54 @@ class RC_Scout_ATGM_WD_manned: RC_Scout_ATGM_WD_Base
 	crew="B_UAV_AI";
 	//driverForceOptics=1;
 	//forceHideDriver=1;
+
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="VehicleDriverDisplay";
+
+					class Components
+					{
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+							resource="RscTransportCameraComponentMissile";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+					};
+				};
+			};
+		};
+	};
 };
 class RC_Scout_ATGM_WD_manned_O: RC_Scout_ATGM_WD_manned
 {
@@ -1149,7 +1192,6 @@ class RC_Scout_ATGM_WD_manned_O: RC_Scout_ATGM_WD_manned
 		"RC_100Rnd_127x99_SLAP_T_G",
 		"RC_100Rnd_127x99_SLAP_T_G",
 		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
@@ -1172,7 +1214,6 @@ class RC_Scout_ATGM_WD_manned_I: RC_Scout_ATGM_WD_manned
 		"RC_100Rnd_127x99_SLAP_T_Y",
 		"RC_100Rnd_127x99_SLAP_T_Y",
 		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"RC_2Rnd_IFV_MP_NLOS",
@@ -1431,14 +1472,6 @@ class RC_Scout_AC_WD_Base: RC_Scout_AC_Base
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
-						/*
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-							resource="RscTransportCameraComponentMissile";
-						};
-						*/
 					};
 				};
 			};
@@ -1603,6 +1636,48 @@ class RC_Scout_AC_WD_manned: RC_Scout_AC_WD_Base
 	crew="B_UAV_AI";
 	//driverForceOptics=1;
 	//forceHideDriver=1;
+
+	class ViewOptics: ViewOptics
+	{
+		visionMode[]=
+		{
+			"TI",
+			"NVG",
+			"Normal"
+		};
+	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="VehicleDriverDisplay";
+
+					class Components
+					{
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+					};
+				};
+			};
+		};
+	};
 };
 class RC_Scout_AC_WD_manned_O: RC_Scout_AC_WD_manned
 {
