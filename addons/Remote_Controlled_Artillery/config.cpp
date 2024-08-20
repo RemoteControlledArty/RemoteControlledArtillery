@@ -148,6 +148,11 @@ class CfgPatches
 			RC_Scout_ATGM_WD_manned_I,
 			RC_Scout_ATGM_DIG_manned_I,
 
+			RC_Scout_AC_WD,
+			RC_Scout_AC_WD_O,
+			RC_Scout_AC_WD_I,
+			RC_Scout_AC_DIG_I,
+
 			RC_Scout_AC_WD_manned,
 			RC_Scout_AC_WD_manned_O,
 			RC_Scout_AC_WD_manned_I,
