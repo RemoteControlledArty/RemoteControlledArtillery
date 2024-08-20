@@ -7,6 +7,9 @@
 
 // Need to exit early if we aren't a client
 if !hasInterface exitWith {};
+
+RCEngineOffHash = createHashMap;
+
 RC_EngineOff = [] spawn
 {
 	while {true} do
@@ -20,7 +23,11 @@ RC_EngineOff = [] spawn
 		_uavClass = typeOf _uav;
 
 		// checks config value
-		_EngineOff = (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCEngineOff"));
+		private _EngineOff = RCEngineOffHash get _uavClass;
+		if (isNil "_EngineOff") then {
+			_EngineOff = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCEngineOff");
+			RCEngineOffHash set [_uavClass, _EngineOff];
+		};
 		
 		// Turns off Engine when staying still
 		_speedCheck1 = false;

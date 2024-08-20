@@ -128,25 +128,30 @@ class CfgPatches
 			RC_AA_A_I,
 			RC_AA_WD_I,
 
-			RC_AA_small_WD,
-			RC_AA_small_WD_O,
-			RC_AA_small_DIG_I,
-			RC_AA_small_WD_I,
+			RC_Scout_AA_WD,
+			RC_Scout_AA_WD_O,
+			RC_Scout_AA_DIG_I,
+			RC_Scout_AA_WD_I,
 
-			RC_radar_small_WD,
-			RC_radar_small_WD_O,
-			RC_radar_small_DIG_I,
-			RC_radar_small_WD_I,
+			RC_Scout_Radar_WD,
+			RC_Scout_Radar_WD_O,
+			RC_Scout_Radar_DIG_I,
+			RC_Scout_Radar_WD_I,
 
-			RC_ATGM_small_WD,
-			RC_ATGM_small_WD_O,
-			RC_ATGM_small_DIG_I,
-			RC_ATGM_small_WD_I,
+			RC_Scout_ATGM_WD,
+			RC_Scout_ATGM_WD_O,
+			RC_Scout_ATGM_DIG_I,
+			RC_Scout_ATGM_WD_I,
 
-			RC_ATGM_small_WD_manned,
-			RC_ATGM_small_WD_manned_O,
-			RC_ATGM_small_WD_manned_I,
-			RC_ATGM_small_DIG_manned_I,
+			RC_Scout_ATGM_WD_manned,
+			RC_Scout_ATGM_WD_manned_O,
+			RC_Scout_ATGM_WD_manned_I,
+			RC_Scout_ATGM_DIG_manned_I,
+
+			RC_Scout_AC_WD_manned,
+			RC_Scout_AC_WD_manned_O,
+			RC_Scout_AC_WD_manned_I,
+			RC_Scout_AC_DIG_manned_I,
 
 			RC_Mortar,
 			RC_Mortar_O,
@@ -451,19 +456,25 @@ class CfgPatches
 			Improved_FOV_Laserdesignator_Ti_A,
 			Improved_FOV_Laserdesignator_Ti_WD,
 
-			RC_HMG_127_APC,
 			RC_MMG_338_APC,
-			RC_MMG_93x64_APC,
 			RC_MMG_338_FSV,
 			RC_MMG_338_FSV_coax,
 			RC_MMG_338_MBT,
 			RC_MMG_338_MBT_coax,
 			RC_MMG_338_coax,
 			RC_MMG_338_coax_ext,
+
+			RC_MMG_93x64_APC,
 			RC_MMG_93x64_coax,
 			RC_MMG_93x64_coax_ext,
 
+			RC_HMG_127x99,
+			RC_HMG_127_APC,
+			RC_HMG_127x99_FSV,
+			RC_HMG_127x99_MBT,
+
 			RC_GMG_40mm,
+			RC_autocannon_20mm,
 			RC_autocannon_20mm_CTWS,
 			RC_autocannon_30mm,
 			RC_autocannon_30mm_CTWS,
@@ -525,16 +536,6 @@ class CfgFunctions
 			//class RC_LocalityFix {postInit=1};
 			class scrollSolutions {};
 			//class RC_TakeControl {};
-
-			/*
-			file="\Remote_Controlled_Artillery\functions\UILoop_includes";
-			class AB_magchange {};
-			class advised_trajectory {};
-			class ctrl_display {};
-			class eldiff_additions {};
-			class notarget_display {};
-			class weapon_info {};
-			*/
 		};
 	};
 };
@@ -694,9 +695,9 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_3.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\Recon.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first
 	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Scout.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UAV.hpp"

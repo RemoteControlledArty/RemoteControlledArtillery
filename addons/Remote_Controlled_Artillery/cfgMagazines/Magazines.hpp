@@ -8,6 +8,7 @@ class RC_target_confirmer_mag: CA_Magazine
 	count=1;
 };
 
+
 //RC ATGM
 class Vorona_HEAT;
 class RC_1Rnd_ATGM_MP_SACLOS: Vorona_HEAT
@@ -209,6 +210,18 @@ class 100Rnd_20mm_HE_T_Y: 100Rnd_20mm_HE_T_R
 {
 	ammo="RC_20mm_HE_T_Y";
 };
+class 60Rnd_20mm_HE_T_R: 100Rnd_20mm_HE_T_R
+{
+	count=60;
+};
+class 60Rnd_20mm_HE_T_G: 100Rnd_20mm_HE_T_G
+{
+	count=60;
+};
+class 60Rnd_20mm_HE_T_Y: 100Rnd_20mm_HE_T_Y
+{
+	count=60;
+};
 
 
 class 100Rnd_20mm_AP_T_R: 100Rnd_20mm_HE_T_R
@@ -226,6 +239,18 @@ class 100Rnd_20mm_AP_T_Y: 100Rnd_20mm_AP_T_R
 {
 	ammo="RC_20mm_AP_T_Y";
 };
+class 60Rnd_20mm_AP_T_R: 100Rnd_20mm_AP_T_R
+{
+	count=60;
+};
+class 60Rnd_20mm_AP_T_G: 100Rnd_20mm_AP_T_G
+{
+	count=60;
+};
+class 60Rnd_20mm_AP_T_Y: 100Rnd_20mm_AP_T_Y
+{
+	count=60;
+};
 
 
 class 100Rnd_20mm_APFSDS_T_R: 100Rnd_20mm_AP_T_R
@@ -242,6 +267,18 @@ class 100Rnd_20mm_APFSDS_T_G: 100Rnd_20mm_APFSDS_T_R
 class 100Rnd_20mm_APFSDS_T_Y: 100Rnd_20mm_APFSDS_T_R
 {
 	ammo="RC_20mm_APFSDS_T_Y";
+};
+class 60Rnd_20mm_APFSDS_T_R: 100Rnd_20mm_APFSDS_T_R
+{
+	count=60;
+};
+class 60Rnd_20mm_APFSDS_T_G: 100Rnd_20mm_APFSDS_T_G
+{
+	count=60;
+};
+class 60Rnd_20mm_APFSDS_T_Y: 100Rnd_20mm_APFSDS_T_Y
+{
+	count=60;
 };
 
 

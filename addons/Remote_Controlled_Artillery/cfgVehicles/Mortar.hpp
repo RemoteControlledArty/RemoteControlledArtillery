@@ -131,7 +131,7 @@ class RC_Mortar: RC_Mortar_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500,250};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 					};

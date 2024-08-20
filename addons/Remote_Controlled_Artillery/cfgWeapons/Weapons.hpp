@@ -190,6 +190,35 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 
 
 //Vehicle MMG's
+class HMG_127;
+class RC_MG_Base: HMG_127
+{
+	class manual;
+};
+class RC_HMG_127x99: RC_MG_Base
+{
+	author="Ascent";
+	//displayName="HMG";
+	canLock=2;
+	maxZeroing=3000;
+	FCSZeroingDelay=0.5;
+	magazines[]=
+	{
+		"RC_100Rnd_127x99_SLAP_T_R",
+		"RC_100Rnd_127x99_SLAP_T_G",
+		"RC_100Rnd_127x99_SLAP_T_Y",
+		"RC_100Rnd_127x99_T_R",
+		"RC_100Rnd_127x99_T_G",
+		"RC_100Rnd_127x99_T_Y",
+	};
+	class manual: manual
+	{
+		//displayName="HMG";
+		dispersion=0.001;
+	};
+};
+
+
 class HMG_127_AFV;
 class RC_MG_FSV_Base: HMG_127_AFV
 {
@@ -449,6 +478,61 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 			effectName="AutoCannonFired";
 			positionName="Usti hlavne";
 			directionName="Konec hlavne";
+		};
+	};
+};
+
+
+class cannon_20mm;
+class RC_autocannon_20mm_Base: cannon_20mm
+{
+	class HE;
+	class AP;
+	class player;
+};
+class RC_autocannon_20mm: RC_autocannon_20mm_Base
+{
+	author="Ascent";
+	displayName="20mm AC";
+	canLock=2;
+	FCSZeroingDelay=0.5;
+	maxZeroing=3000;
+
+	class HE: HE
+	{
+		displayName="20mm AC";
+		magazineReloadTime=20;
+		maxZeroing=3000;
+
+		magazines[]=
+		{
+			"60Rnd_20mm_HE_T_R",
+			"60Rnd_20mm_HE_T_G",
+			"60Rnd_20mm_HE_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.25;
+		};
+	};
+	class AP: AP
+	{
+		displayName="20mm AC";
+		magazineReloadTime=20;
+		maxZeroing=3000;
+
+		magazines[]=
+		{
+			"60Rnd_20mm_AP_T_R",
+			"60Rnd_20mm_AP_T_G",
+			"60Rnd_20mm_AP_T_Y",
+			"60Rnd_20mm_APFSDS_T_R",
+			"60Rnd_20mm_APFSDS_T_G",
+			"60Rnd_20mm_APFSDS_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.25;
 		};
 	};
 };
