@@ -9,6 +9,7 @@ class RC_target_confirmer_ammo: Default
 };
 
 
+/*
 class Laserbeam;
 class RC_Laserbeam: Laserbeam
 {
@@ -18,6 +19,7 @@ class RC_Laserbeam: Laserbeam
 	airLock=1;
 	nvLock=1;
 };
+*/
 
 
 //.338 NM Tracer for Vehicle MMG

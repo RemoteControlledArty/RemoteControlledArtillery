@@ -194,7 +194,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 						"RC_60Rnd_30mm_MP_T_R",
 						"RC_60Rnd_30mm_GPR_T_R",
 						"RC_60Rnd_30mm_GPR_T_R",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -395,7 +395,7 @@ class RC_MBT_3_G_O: RC_MBT_3_G
 						"RC_60Rnd_30mm_MP_T_G",
 						"RC_60Rnd_30mm_GPR_T_G",
 						"RC_60Rnd_30mm_GPR_T_G",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -437,7 +437,7 @@ class RC_MBT_3_G_I: RC_MBT_3_G
 						"RC_60Rnd_30mm_MP_T_Y",
 						"RC_60Rnd_30mm_GPR_T_Y",
 						"RC_60Rnd_30mm_GPR_T_Y",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -545,7 +545,7 @@ class RC_MBT_3_WD_O: RC_MBT_3_WD
 						"RC_60Rnd_30mm_MP_T_G",
 						"RC_60Rnd_30mm_GPR_T_G",
 						"RC_60Rnd_30mm_GPR_T_G",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -587,7 +587,7 @@ class RC_MBT_3_WD_I: RC_MBT_3_WD
 						"RC_60Rnd_30mm_MP_T_Y",
 						"RC_60Rnd_30mm_GPR_T_Y",
 						"RC_60Rnd_30mm_GPR_T_Y",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};

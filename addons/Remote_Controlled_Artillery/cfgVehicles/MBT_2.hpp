@@ -199,7 +199,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 						"RC_200Rnd_127x99_T_R",
 						"RC_200Rnd_127x99_T_R",
 						"RC_200Rnd_127x99_T_R",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -433,7 +433,7 @@ class RC_MBT_2_A_O: RC_MBT_2_A
 						"RC_200Rnd_127x99_T_G",
 						"RC_200Rnd_127x99_T_G",
 						"RC_200Rnd_127x99_T_G",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -478,7 +478,7 @@ class RC_MBT_2_A_I: RC_MBT_2_A
 						"RC_200Rnd_127x99_T_Y",
 						"RC_200Rnd_127x99_T_Y",
 						"RC_200Rnd_127x99_T_Y",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -536,7 +536,7 @@ class RC_MBT_2_WD_O: RC_MBT_2_WD
 						"RC_200Rnd_127x99_T_G",
 						"RC_200Rnd_127x99_T_G",
 						"RC_200Rnd_127x99_T_G",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -581,7 +581,7 @@ class RC_MBT_2_WD_I: RC_MBT_2_WD
 						"RC_200Rnd_127x99_T_Y",
 						"RC_200Rnd_127x99_T_Y",
 						"RC_200Rnd_127x99_T_Y",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -641,7 +641,7 @@ class RC_MBT_2_ReTex_WD_O: RC_MBT_2_ReTex_WD
 						"RC_200Rnd_127x99_T_G",
 						"RC_200Rnd_127x99_T_G",
 						"RC_200Rnd_127x99_T_G",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -686,7 +686,7 @@ class RC_MBT_2_ReTex_WD_I: RC_MBT_2_ReTex_WD
 						"RC_200Rnd_127x99_T_Y",
 						"RC_200Rnd_127x99_T_Y",
 						"RC_200Rnd_127x99_T_Y",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -745,7 +745,7 @@ class RC_MBT_2_ReTex_D_O: RC_MBT_2_ReTex_D
 						"RC_200Rnd_127x99_T_G",
 						"RC_200Rnd_127x99_T_G",
 						"RC_200Rnd_127x99_T_G",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -790,7 +790,7 @@ class RC_MBT_2_ReTex_D_I: RC_MBT_2_ReTex_D
 						"RC_200Rnd_127x99_T_Y",
 						"RC_200Rnd_127x99_T_Y",
 						"RC_200Rnd_127x99_T_Y",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -849,7 +849,7 @@ class RC_MBT_2_ReTex_A_O: RC_MBT_2_ReTex_A
 						"RC_200Rnd_127x99_T_G",
 						"RC_200Rnd_127x99_T_G",
 						"RC_200Rnd_127x99_T_G",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -894,7 +894,7 @@ class RC_MBT_2_ReTex_A_I: RC_MBT_2_ReTex_A
 						"RC_200Rnd_127x99_T_Y",
 						"RC_200Rnd_127x99_T_Y",
 						"RC_200Rnd_127x99_T_Y",
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};

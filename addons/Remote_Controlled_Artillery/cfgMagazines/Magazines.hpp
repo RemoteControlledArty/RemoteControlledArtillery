@@ -8,12 +8,14 @@ class RC_target_confirmer_mag: CA_Magazine
 };
 
 
+/*
 class Laserbatteries;
 class RC_Laserbatteries: Laserbatteries
 {
 	author="Ascent";
 	ammo="RC_Laserbeam";
 };
+*/
 
 
 //RC ATGM

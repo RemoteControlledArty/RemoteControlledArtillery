@@ -619,7 +619,7 @@ class RC_Scout_Radar_WD: RC_Scout_Radar_WD_Base
 			};
 			magazines[]=
 			{
-				"RC_Laserbatteries",
+				"Laserbatteries",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"

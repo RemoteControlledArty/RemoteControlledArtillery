@@ -229,6 +229,8 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 	scopeCurator=2;
 
 	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 	isUav=1;
@@ -626,7 +628,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 					};
 					magazines[]=
 					{
-						"RC_Laserbatteries",
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
