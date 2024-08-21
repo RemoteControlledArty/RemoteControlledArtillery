@@ -7,7 +7,7 @@ class UserActions: UserActions
 		radius=15;
 		showwindow=0;
 		condition="player isEqualTo (commander this);";
-		statement="vehicle player vehicleChat 'commander took drive controls'; (group (driver this)) setGroupOwner (owner (commander this)); this setOwner (owner (commander this)); this setEffectiveCommander (commander this);";
+		statement="this vehicleChat 'commander took drive controls'; (group (driver this)) setGroupOwner (owner (commander this)); this setOwner (owner (commander this)); this setEffectiveCommander (commander this);";
 		onlyforplayer=1;
 		shortcut="";
 	};
@@ -18,7 +18,7 @@ class UserActions: UserActions
 		radius=15;
 		showwindow=0;
 		condition="player isEqualTo (gunner this);";
-		statement="vehicle player vehicleChat 'gunner took drive controls'; (group (driver this)) setGroupOwner (owner (gunner this)); this setOwner (owner (gunner this)); this setEffectiveCommander (gunner this);";
+		statement="this vehicleChat 'gunner took drive controls'; (group (driver this)) setGroupOwner (owner (gunner this)); this setOwner (owner (gunner this)); this setEffectiveCommander (gunner this);";
 		onlyforplayer=1;
 		shortcut="";
 	};

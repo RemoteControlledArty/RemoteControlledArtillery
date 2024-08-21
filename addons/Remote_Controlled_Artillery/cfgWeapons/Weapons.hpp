@@ -497,6 +497,7 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=3000;
+	FCSMaxLeadSpeed=30.555599;
 
 	class HE: HE
 	{

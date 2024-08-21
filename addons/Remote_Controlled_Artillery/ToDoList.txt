@@ -289,6 +289,7 @@ new:
 -added Otokar Arma 20mm Autocannon variant, which balancing wise sits in a nice spot for mechanized infantry ops, its not too strong or weak
 -added Mortar MATV (manned) with x2 AR-1 backpacks in inventory, for driver=uv gunner + codriver=uav spotter  gameplay
 -added 20mm AC Wiesel, also improved the ATGM variant
+-added ammo dependant RPM for 20mm, 240RPM for HE, 300RPM for AP
 
 
 DONE - QUALITY OF LIFE:
