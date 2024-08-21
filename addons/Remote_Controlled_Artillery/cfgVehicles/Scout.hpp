@@ -619,7 +619,7 @@ class RC_Scout_Radar_WD: RC_Scout_Radar_WD_Base
 			};
 			magazines[]=
 			{
-				"Laserbatteries",
+				"RC_Laserbatteries",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
@@ -952,16 +952,10 @@ class RC_Scout_ATGM_WD_Base: RC_Scout_ATGM_Base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="VehicleMissileDisplay";
+					defaultDisplay="EmptyDisplay";
 
 					class Components
 					{
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-							resource="RscTransportCameraComponentMissile";
-						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";

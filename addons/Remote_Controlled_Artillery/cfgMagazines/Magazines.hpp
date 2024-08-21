@@ -1,4 +1,3 @@
-
 class CA_Magazine;
 class RC_target_confirmer_mag: CA_Magazine
 {
@@ -6,6 +5,14 @@ class RC_target_confirmer_mag: CA_Magazine
 	scope=2;
 	ammo="RC_target_confirmer_ammo";
 	count=1;
+};
+
+
+class Laserbatteries;
+class RC_Laserbatteries: Laserbatteries
+{
+	author="Ascent";
+	ammo="RC_Laserbeam";
 };
 
 

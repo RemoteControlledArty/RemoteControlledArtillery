@@ -9,6 +9,17 @@ class RC_target_confirmer_ammo: Default
 };
 
 
+class Laserbeam;
+class RC_Laserbeam: Laserbeam
+{
+	author="Ascent";
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	nvLock=1;
+};
+
+
 //.338 NM Tracer for Vehicle MMG
 class B_338_NM_Ball;
 class RC_B_338_T_R: B_338_NM_Ball

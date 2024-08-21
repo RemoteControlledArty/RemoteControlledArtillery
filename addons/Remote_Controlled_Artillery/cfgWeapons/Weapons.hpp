@@ -18,12 +18,22 @@ class RC_Laserdesignator_mounted: Laserdesignator_mounted
 {
 	author="Ascent";
 	canLock=2;
+
+	magazines[]=
+	{
+		"RC_Laserbatteries"
+	};
 };
 class Laserdesignator_vehicle;
 class RC_Laserdesignator_vehicle: Laserdesignator_vehicle
 {
 	author="Ascent";
 	canLock=2;
+
+	magazines[]=
+	{
+		"RC_Laserbatteries"
+	};
 };
 
 

@@ -402,7 +402,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 					};
 					magazines[]=
 					{
-						"Laserbatteries",
+						"RC_Laserbatteries",
 						"rhsusf_mag_L8A3_8",
 						"rhsusf_mag_L8A3_8"
 					};

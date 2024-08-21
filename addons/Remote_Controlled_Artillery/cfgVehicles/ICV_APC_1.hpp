@@ -312,7 +312,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 			};
 			magazines[]=
 			{
-				"Laserbatteries",
+				"RC_Laserbatteries",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -491,7 +491,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			};
 			magazines[]=
 			{
-				"Laserbatteries",
+				"RC_Laserbatteries",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

@@ -597,7 +597,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 					};
 					magazines[]=
 					{
-						"Laserbatteries",
+						"RC_Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
