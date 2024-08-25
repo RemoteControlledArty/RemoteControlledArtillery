@@ -705,15 +705,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 	//driverForceOptics=1;
 	//forceHideDriver=1;
 
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"TI",
-			"NVG",
-			"Normal"
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
 	
 	weapons[]=
 	{

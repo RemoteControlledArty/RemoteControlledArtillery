@@ -22,6 +22,12 @@ class RC_MBT_2_Base: I_MBT_03_cannon_F
 class RC_MBT_2_A_Base: RC_MBT_2_Base
 {
 	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
@@ -29,32 +35,13 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem=4;
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
-	//mineDetectorRange=50;	//doesnt work yet
-	//canAccessMineDetector=1;	//doesnt work yet
 	maxSpeed=70;
 	enginePower=1537.5;
 	peakTorque=6250;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
+	//mineDetectorRange=50;	//doesnt work yet
+	//canAccessMineDetector=1;	//doesnt work yet
 
 	hiddenSelectionsTextures[]=
 	{
@@ -62,64 +49,6 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
 		"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
-	};
-
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"TI",
-			"NVG",
-			"Normal"
-		};
-	};
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=4000;
-
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
-			};
-		};
 	};
 
 	class Turrets: Turrets

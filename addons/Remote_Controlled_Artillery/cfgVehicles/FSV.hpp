@@ -33,6 +33,12 @@ class RC_FSV_Base: B_AFV_Wheeled_01_up_cannon_F
 class RC_FSV_A_Base: RC_FSV_Base
 {
 	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
@@ -43,29 +49,10 @@ class RC_FSV_A_Base: RC_FSV_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem=4;
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
-	//mineDetectorRange=50;	//doesnt work yet
-	//canAccessMineDetector=1;	//doesnt work yet
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
+	//mineDetectorRange=50;	//doesnt work yet
+	//canAccessMineDetector=1;	//doesnt work yet
 
 	hiddenSelectionsTextures[]=
 	{
@@ -83,16 +70,6 @@ class RC_FSV_A_Base: RC_FSV_Base
 		0,
 		"Sand",
 		0
-	};
-
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"TI",
-			"NVG",
-			"Normal"
-		};
 	};
 
 	class Components: Components

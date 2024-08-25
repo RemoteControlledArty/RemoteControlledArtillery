@@ -21,6 +21,12 @@ class RC_MBT_3_Base: O_MBT_04_command_F
 class RC_MBT_3_G_Base: RC_MBT_3_Base
 {
 	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
@@ -28,48 +34,19 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem=4;
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
-	//mineDetectorRange=50;	//doesnt work yet
-	//canAccessMineDetector=1;	//doesnt work yet
 	maxSpeed=70;
 	enginePower=1400;
 	peakTorque=6875;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
+	//mineDetectorRange=50;	//doesnt work yet
+	//canAccessMineDetector=1;	//doesnt work yet
 
 	hiddenSelectionsTextures[]=
 	{
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_1_CO.paa",
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_2_CO.paa",
 		"A3\Armor_F\Data\camonet_CSAT_Stripe_Desert_CO.paa"
-	};
-
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"TI",
-			"NVG",
-			"Normal"
-		};
 	};
 
 	class Components: Components

@@ -31,8 +31,10 @@ class RC_ICV_IFV_3_A_Base: B_APC_Wheeled_03_cannon_F
 class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 {
 	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
 	faction="RemoteControlled_B";
@@ -46,15 +48,10 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
 	enginePower=553;
 	peakTorque=2810.4;
-	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
-	//armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
-	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 
@@ -379,15 +376,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 	//driverForceOptics=1;
 	//forceHideDriver=1;
 
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"TI",
-			"NVG",
-			"Normal"
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{

@@ -22,6 +22,11 @@ class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
 class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 {
 	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	author="Ascent";
 	faction="RemoteControlled_O";
 	scope=0;
@@ -34,142 +39,8 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem=4;
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
 	enginePower=639.2;
 	peakTorque=3248.6;
-	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
-	//armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
-	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=4000;
-
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
-			};
-		};
-
-		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-		{
-			defaultDisplay="SensorDisplay";
-
-			class Components
-			{
-				class SensorDisplay
-				{
-					componentType="SensorsDisplayComponent";
-					range[]={4000,2000,1000,500};
-					resource="RscCustomInfoSensors";
-				};
-				class MinimapDisplay
-				{
-					componentType="MinimapDisplayComponent";
-					resource="RscCustomInfoMiniMap";
-				};
-				class EmptyDisplay
-				{
-					componentType="EmptyDisplayComponent";
-				};
-				/*
-				class MineDetectorDisplay
-				{
-					componentType="MineDetectorDisplayComponent";
-					range=50;
-					resource="RscCustomInfoMineDetect";
-				};
-				*/
-			};
-		};
-		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-		{
-			defaultDisplay="EmptyDisplayComponent";
-
-			class Components
-			{
-				class SensorDisplay
-				{
-					componentType="SensorsDisplayComponent";
-					range[]={4000,2000,1000,500};
-					resource="RscCustomInfoSensors";
-				};
-				class MinimapDisplay
-				{
-					componentType="MinimapDisplayComponent";
-					resource="RscCustomInfoMiniMap";
-				};
-				class EmptyDisplay
-				{
-					componentType="EmptyDisplayComponent";
-				};
-				/*
-				class MineDetectorDisplay
-				{
-					componentType="MineDetectorDisplayComponent";
-					range=50;
-					resource="RscCustomInfoMineDetect";
-				};
-				*/
-			};
-		};
-	};
 
 	class AnimationSources: AnimationSources
 	{
@@ -447,15 +318,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 		"SmokeLauncherMag"
 	};
 
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"TI",
-			"NVG",
-			"Normal"
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{
