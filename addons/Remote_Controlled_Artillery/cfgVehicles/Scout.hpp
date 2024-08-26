@@ -751,6 +751,10 @@ class RC_Scout_ATGM_Base: I_LT_01_AT_F
 };
 class RC_Scout_ATGM_WD_Base: RC_Scout_ATGM_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	displayName="RC Scout ATGM 4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
@@ -765,20 +769,6 @@ class RC_Scout_ATGM_WD_Base: RC_Scout_ATGM_Base
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	lockDetectionSystem=4;
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
 	//laserScanner=0;
 
 	class Components: Components
@@ -1098,17 +1088,12 @@ class RC_Scout_ATGM_WD_manned: RC_Scout_ATGM_WD_Base
 	{
 		class RC_Artillery
 		{
-			init=
-			"if (!local (_this select 0)) exitwith {}; \
-			(_this select 0) spawn { \
-				waitUntil {!isNull gunner _this}; \
-				_this deleteVehicleCrew gunner _this; \
-			};";
+			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
 
 	displayName="Scout ATGM 4km";
-
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -1124,15 +1109,7 @@ class RC_Scout_ATGM_WD_manned: RC_Scout_ATGM_WD_Base
 	//driverForceOptics=1;
 	//forceHideDriver=1;
 
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"TI",
-			"NVG",
-			"Normal"
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{
@@ -1248,6 +1225,10 @@ class RC_Scout_AC_Base: I_LT_01_cannon_F
 };
 class RC_Scout_AC_WD_Base: RC_Scout_AC_Base
 {
+	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	displayName="RC Scout 20mm AC";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
@@ -1262,20 +1243,6 @@ class RC_Scout_AC_WD_Base: RC_Scout_AC_Base
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	lockDetectionSystem=4;
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
 	//laserScanner=0;
 
 	class Components: Components
@@ -1605,17 +1572,12 @@ class RC_Scout_AC_WD_manned: RC_Scout_AC_WD_Base
 	{
 		class RC_Artillery
 		{
-			init=
-			"if (!local (_this select 0)) exitwith {}; \
-			(_this select 0) spawn { \
-				waitUntil {!isNull gunner _this}; \
-				_this deleteVehicleCrew gunner _this; \
-			};";
+			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
+			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
 		};
 	};
 
 	displayName="Scout 20mm AC";
-
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -1630,16 +1592,6 @@ class RC_Scout_AC_WD_manned: RC_Scout_AC_WD_Base
 	crew="B_UAV_AI";
 	//driverForceOptics=1;
 	//forceHideDriver=1;
-
-	class ViewOptics: ViewOptics
-	{
-		visionMode[]=
-		{
-			"TI",
-			"NVG",
-			"Normal"
-		};
-	};
 
 	class Turrets: Turrets
 	{

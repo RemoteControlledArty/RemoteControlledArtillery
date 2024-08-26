@@ -1,10 +1,3 @@
-radartype=2;
-reportOwnPosition=1;
-receiveRemoteTargets=1;
-reportRemoteTargets=1;
-laserScanner=1;
-lockDetectionSystem=4;
-
 incomingMissileDetectionSystem=16;
 soundLocked[]=
 {
