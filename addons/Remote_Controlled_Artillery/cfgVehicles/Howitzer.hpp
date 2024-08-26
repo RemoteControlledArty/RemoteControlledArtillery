@@ -108,7 +108,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 					};
 				};
 
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
 	};
@@ -509,7 +509,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 					};
 				};
 
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
 	};
@@ -900,7 +900,7 @@ class RC_Static_Arty: RC_Static_Arty_base
 					};
 				};
 
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
 	};

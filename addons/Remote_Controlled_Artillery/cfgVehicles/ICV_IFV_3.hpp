@@ -30,10 +30,10 @@ class RC_ICV_IFV_3_A_Base: B_APC_Wheeled_03_cannon_F
 };
 class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 {
-	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
-	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
-	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
@@ -73,7 +73,7 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 			passThrough=0.30000001;
 		};
 		
-		#include "\Remote_Controlled_Artillery\includes\hitWheels.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\hitWheels.hpp"
 	};
 
 	class AnimationSources: AnimationSources
@@ -122,8 +122,8 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initICV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
 	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
@@ -153,8 +153,8 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_gunner_fixated.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_gunner_fixated.hpp"
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment3";
 			commanding=2;
@@ -214,8 +214,8 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_gunner_fixated.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_gunner_fixated.hpp"
 					showAllTargets="2 + 4";
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 					turretInfoType="";
@@ -355,8 +355,8 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -376,14 +376,14 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 	//driverForceOptics=1;
 	//forceHideDriver=1;
 
-	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -449,8 +449,8 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					showAllTargets="2 + 4";
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";

@@ -32,11 +32,11 @@ class RC_FSV_Base: B_AFV_Wheeled_01_up_cannon_F
 };
 class RC_FSV_A_Base: RC_FSV_Base
 {
-	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
-	#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
-	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
-	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
 	faction="RemoteControlled_B";
@@ -135,8 +135,8 @@ class RC_FSV_A_Base: RC_FSV_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
 			showAllTargets="2 + 4";
 			commanding=2;
 
@@ -189,8 +189,8 @@ class RC_FSV_A_Base: RC_FSV_Base
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					showAllTargets="2 + 4";
 					commanding=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
@@ -267,7 +267,7 @@ class RC_FSV_A_Base: RC_FSV_Base
 	
 	class HitPoints: HitPoints
 	{
-		#include "\Remote_Controlled_Artillery\includes\hitWheels.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\hitWheels.hpp"
 	};
 	
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
@@ -280,8 +280,8 @@ class RC_FSV_A: RC_FSV_A_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 

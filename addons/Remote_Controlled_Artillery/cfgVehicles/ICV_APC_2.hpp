@@ -27,7 +27,12 @@ class RC_ICV_APC_2_A_Base: O_APC_Wheeled_02_rcws_F
 };
 class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 {
-	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	author="Ascent";
 	faction="RemoteControlled_O";
 	scope=0;
@@ -40,39 +45,14 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem=4;
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
 	enginePower=475.3;
 	peakTorque=2415.4;
 	armor=375;
-	//armor=110;	//makes 7.62x54/51 shoot, not or rarely 7.62x39/6.5/5.56/5.45, but difficult to set up all hitpoints correctly
-	//armorStructural=1000;	//prevents instant explosion, does not make it stronger
-	//hullExplosionDelay[]={15,20};		//placeholder until script is found to remove ugv ai to keep it from getting engaged during a longer time
-	//hullExplosionDelay[]={480,600};		//prevents instant explosions, makes it repairable within 480-600seconds
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_APC_Wheeled_02_rcws_v2_F.jpg";
-
+	
 	driverAction="Driver_APC_Wheeled_02_rcws_F_out";
 	driverInAction="Driver_APC_Wheeled_02_rcws_F_in";
 	LODDriverTurnedOut=1201;
@@ -85,6 +65,8 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	showNVGCommander=0;
 	showNVGGunner=0;
 	driverOpticsModel="\A3\weapons_f\reticle\optics_empty";
+
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_APC_Wheeled_02_rcws_v2_F.jpg";
 	
 	class ViewOptics: ViewOptics
 	{
@@ -113,130 +95,9 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 			armor=0.625;
 		};
 
-		#include "\Remote_Controlled_Artillery\includes\hitWheels.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\hitWheels.hpp"
 	};
 	
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=4000;
-
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
-			};
-		};
-
-		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-		{
-			defaultDisplay="SensorDisplay";
-
-			class Components
-			{
-				class SensorDisplay
-				{
-					componentType="SensorsDisplayComponent";
-					range[]={4000,2000,1000,500};
-					resource="RscCustomInfoSensors";
-				};
-				class MinimapDisplay
-				{
-					componentType="MinimapDisplayComponent";
-					resource="RscCustomInfoMiniMap";
-				};
-				class VehicleDriverDisplay
-				{
-					componentType="TransportFeedDisplayComponent";
-					source="Driver";
-				};
-				class EmptyDisplay
-				{
-					componentType="EmptyDisplayComponent";
-				};
-				/*
-				class MineDetectorDisplay
-				{
-					componentType="MineDetectorDisplayComponent";
-					range=50;
-					resource="RscCustomInfoMineDetect";
-				};
-				*/
-			};
-		};
-		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-		{
-			defaultDisplay="VehicleDriverDisplay";
-
-			class Components
-			{
-				class SensorDisplay
-				{
-					componentType="SensorsDisplayComponent";
-					range[]={4000,2000,1000,500};
-					resource="RscCustomInfoSensors";
-				};
-				class MinimapDisplay
-				{
-					componentType="MinimapDisplayComponent";
-					resource="RscCustomInfoMiniMap";
-				};
-				class VehicleDriverDisplay
-				{
-					componentType="TransportFeedDisplayComponent";
-					source="Driver";
-				};
-				class EmptyDisplay
-				{
-					componentType="EmptyDisplayComponent";
-				};
-				/*
-				class MineDetectorDisplay
-				{
-					componentType="MineDetectorDisplayComponent";
-					range=50;
-					resource="RscCustomInfoMineDetect";
-				};
-				*/
-			};
-		};
-	};
-
 	class AnimationSources: AnimationSources
 	{
 		class muzzle_rot
@@ -412,8 +273,8 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initICV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
@@ -457,8 +318,8 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_gunner_fixated.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_gunner_fixated.hpp"
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment3";
 			commanding=2;
@@ -517,8 +378,8 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 
 		class CommanderOptics : CommanderOptics
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_ICV_commander_free.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_free.hpp"
 			showAllTargets="2 + 4";
 			//personTurretAction="";	//no effect
 			forceHideGunner=1;	//makes view bug
@@ -681,8 +542,8 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -705,7 +566,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 	//driverForceOptics=1;
 	//forceHideDriver=1;
 
-	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	
 	weapons[]=
 	{
@@ -721,8 +582,8 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
@@ -767,8 +628,8 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 		};
 		class CommanderOptics : CommanderOptics
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 			showAllTargets="2 + 4";
 			turretInfoType="RscOptics_MBT_03_gunner";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
