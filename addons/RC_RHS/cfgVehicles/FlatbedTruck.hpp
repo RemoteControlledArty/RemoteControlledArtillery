@@ -113,7 +113,7 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 					};
 				};
 
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight

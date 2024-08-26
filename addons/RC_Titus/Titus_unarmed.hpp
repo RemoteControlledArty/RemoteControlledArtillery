@@ -36,7 +36,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 	};
 
 	displayName="RC Titus";
@@ -84,7 +84,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 	{
 		class CommanderTurret : CommanderTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment4";
 			primaryGunner=1;

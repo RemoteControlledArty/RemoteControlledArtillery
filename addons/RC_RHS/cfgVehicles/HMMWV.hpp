@@ -64,7 +64,7 @@ class RC_HMMWV_M2: RC_HMMWV_M2_Base
 
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			isCopilot=1; //allows to trigger EH that gives driving controls
 			*/
 
@@ -90,8 +90,8 @@ class RC_HMMWV_M2_D: RC_HMMWV_M2
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 

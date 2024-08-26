@@ -41,7 +41,7 @@ class Components: Components
 				};
 			};
 
-			#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 		};
 	};
 

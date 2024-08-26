@@ -25,10 +25,10 @@ class RC_ICV_IFV_6_A_Base: I_E_APC_tracked_03_cannon_F
 };
 class RC_ICV_IFV_6_A: RC_ICV_IFV_6_A_Base
 {
-	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
-	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
-	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
@@ -65,8 +65,8 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 	/*
@@ -107,14 +107,14 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 		"SmokeLauncherMag"
 	};
 
-	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
 			//minElev=-10.6;
@@ -181,8 +181,8 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					showAllTargets="2 + 4";
 					turretInfoType="RscOptics_MBT_03_gunner";
 					commanding=2;

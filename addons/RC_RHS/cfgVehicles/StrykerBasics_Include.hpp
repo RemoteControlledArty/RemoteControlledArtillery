@@ -1,7 +1,7 @@
-#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
-#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
-#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
-#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 lockDetectionSystem="2+4+8";
 
 forceInGarage=1;
@@ -73,7 +73,7 @@ class UserActions: UserActions
 
 class HitPoints: HitPoints
 {
-	#include "\Remote_Controlled_Artillery\includes\hitWheels.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\hitWheels.hpp"
 };
 
 #include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"

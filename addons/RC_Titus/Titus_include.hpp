@@ -91,7 +91,7 @@ class Components: Components
 				};
 			};
 
-			#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 		};
 	};
 };
@@ -174,7 +174,7 @@ animationList[]=
 
 class HitPoints: HitPoints
 {
-	#include "\Remote_Controlled_Artillery\includes\hitWheels.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\hitWheels.hpp"
 };
 
 #include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"

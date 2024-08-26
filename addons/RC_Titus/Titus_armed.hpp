@@ -34,13 +34,13 @@ class RC_Titus_AC_base: QIN_Titus_arx20_DES
 };
 class RC_Titus_AC_D: RC_Titus_AC_base
 {
-	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\RC_Titus\Titus_include.hpp"
 
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-		#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 	};
 
 	displayName="Titus 20mm";
@@ -97,7 +97,7 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 	{
 		class CommanderTurret: CommanderTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 
 			class ViewOptics: ViewOptics
@@ -128,7 +128,7 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 		};
 		class ARX20Turret: ARX20Turret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 
 			class ViewOptics: ViewOptics
@@ -270,8 +270,8 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes\initICV.hpp"
-		#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_ICV.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 	};
 
 	displayName="RC Titus MMG";
@@ -303,7 +303,7 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 	{
 		class CommanderTurret: CommanderTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment4";
 			primaryGunner=1;
@@ -341,7 +341,7 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 		};
 		class ARX20Turret: ARX20Turret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			primaryGunner=0;
 			primaryObserver=1;
 			showAllTargets="2 + 4";

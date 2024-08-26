@@ -16,11 +16,11 @@ class RC_M2A3_BUSKIII_Base: RHS_M2A3_BUSKIII
 };
 class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 {
-	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
-	#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
-	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
-	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
 	forceInGarage=1;
@@ -122,8 +122,8 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 	{
 		class MainTurret: MainTurret
 		{
-			//#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 
 			showAllTargets="2 + 4";
@@ -190,8 +190,8 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					//#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
+					//#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					//isCopilot=1; //allows to trigger EH that gives driving controls
 					showAllTargets="2 + 4";
 					commanding=2;
@@ -268,9 +268,9 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 		};
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
-			//#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH1.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\dev_takeDriverControlsEH1.hpp"
 		};
 	};
 
@@ -315,7 +315,7 @@ class RC_M2A3_BUSKIII_DL_D_B: RC_M2A3_BUSKIII_D
 		};
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -370,7 +370,7 @@ class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
 
 			weapons[]=
 			{

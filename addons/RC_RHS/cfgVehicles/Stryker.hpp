@@ -70,8 +70,8 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_APC_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=3;
@@ -130,9 +130,9 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH1.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\dev_takeDriverControlsEH1.hpp"
 		};
 	};
 
@@ -367,8 +367,8 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_APC_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=3;
@@ -427,9 +427,9 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH1.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\dev_takeDriverControlsEH1.hpp"
 		};
 	};
 
@@ -634,7 +634,7 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\panels_APC_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 		};
 
@@ -697,9 +697,9 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\dev_takeDriverControlsEH1.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\dev_takeDriverControlsEH1.hpp"
 		};
 	};
 

@@ -20,11 +20,11 @@ class RC_MBT_3_Base: O_MBT_04_command_F
 };
 class RC_MBT_3_G_Base: RC_MBT_3_Base
 {
-	#include "\Remote_Controlled_Artillery\includes\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
-	#include "\Remote_Controlled_Artillery\includes\DriverComponents4km.hpp"
-	#include "\Remote_Controlled_Artillery\includes\Systems.hpp"
-	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
 	faction="RemoteControlled_B";
@@ -53,8 +53,8 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes\panels_IFV_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
 			showAllTargets="2 + 4";
 			commanding=2;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -104,8 +104,8 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					showAllTargets="2 + 4";
 					commanding=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
@@ -190,8 +190,8 @@ class RC_MBT_3_G_Driverless: RC_MBT_3_G_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initDL.hpp"
-			//#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initDL.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -270,8 +270,8 @@ class RC_MBT_3_G: RC_MBT_3_G_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 

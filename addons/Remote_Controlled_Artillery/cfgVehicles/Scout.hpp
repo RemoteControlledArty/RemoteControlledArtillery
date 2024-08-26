@@ -109,7 +109,7 @@ class RC_Scout_AA_WD: RC_Scout_AA_Base
 					};
 				};
 
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 
 				class IRSensorComponent: SensorTemplateIR
 				{
@@ -751,8 +751,8 @@ class RC_Scout_ATGM_Base: I_LT_01_AT_F
 };
 class RC_Scout_ATGM_WD_Base: RC_Scout_ATGM_Base
 {
-	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
-	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
 	displayName="RC Scout ATGM 4km";
@@ -797,7 +797,7 @@ class RC_Scout_ATGM_WD_Base: RC_Scout_ATGM_Base
 					};
 				};
 				
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 
 				class IRSensorComponent: SensorTemplateIR
 				{
@@ -1088,8 +1088,8 @@ class RC_Scout_ATGM_WD_manned: RC_Scout_ATGM_WD_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
 		};
 	};
 
@@ -1109,7 +1109,7 @@ class RC_Scout_ATGM_WD_manned: RC_Scout_ATGM_WD_Base
 	//driverForceOptics=1;
 	//forceHideDriver=1;
 
-	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{
@@ -1225,8 +1225,8 @@ class RC_Scout_AC_Base: I_LT_01_cannon_F
 };
 class RC_Scout_AC_WD_Base: RC_Scout_AC_Base
 {
-	#include "\Remote_Controlled_Artillery\includes\DriverViewOptics.hpp"
-	#include "\Remote_Controlled_Artillery\includes\MissleApproachWarning.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
 	displayName="RC Scout 20mm AC";
@@ -1271,7 +1271,7 @@ class RC_Scout_AC_WD_Base: RC_Scout_AC_Base
 					};
 				};
 				
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 
 				class IRSensorComponent: SensorTemplateIR
 				{
@@ -1572,8 +1572,8 @@ class RC_Scout_AC_WD_manned: RC_Scout_AC_WD_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
 		};
 	};
 

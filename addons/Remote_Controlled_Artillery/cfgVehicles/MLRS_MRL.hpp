@@ -102,7 +102,7 @@ class RC_MLRS_A: RC_MLRS_base
 					};
 				};
 
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
 	};
@@ -378,7 +378,7 @@ class RC_MRL_DIG: RC_MRL_base
 					};
 				};
 
-				#include "\Remote_Controlled_Artillery\includes\passiveRadar.hpp"
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
 	};
