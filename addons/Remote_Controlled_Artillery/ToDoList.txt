@@ -154,6 +154,7 @@ new:
 -fixed datalink panel closing for vehicle commander when opening map
 -fixed major bug of gunner being fubar after accidentally being controlled by terminal, with the tradeoff of "armed semi manned" vehicles for now not being interactable by terminal anymore
 -tracer color fixes
+-fixed Wiesel II manned driverless versions for multiplayer use
 
 
 DONE - FEATURES:
@@ -292,6 +293,7 @@ new:
 -added Mortar MATV (manned) with x2 AR-1 backpacks in inventory, for driver=uv gunner + codriver=uav spotter  gameplay
 -added 20mm AC Wiesel, also improved the ATGM variant
 -added ammo dependant RPM for 20mm, 240RPM for HE, 300RPM for AP
+-added LOCK DETECTION SYSTEM for AFV's, additional to the already included missile approach warning
 
 
 DONE - QUALITY OF LIFE:
@@ -300,6 +302,7 @@ DONE - QUALITY OF LIFE:
 -shortend default map marker search time
 -map now available for all assets!
 -significant mod folder and hpp restructure
+-further compacting and restructure
 
 new:
 -compacting by more include files
