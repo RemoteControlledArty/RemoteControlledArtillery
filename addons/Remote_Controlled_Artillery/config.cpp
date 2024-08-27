@@ -128,35 +128,35 @@ class CfgPatches
 			RC_AA_A_I,
 			RC_AA_WD_I,
 
-			RC_Scout_AA_WD,
-			RC_Scout_AA_WD_O,
-			RC_Scout_AA_DIG_I,
-			RC_Scout_AA_WD_I,
+			RC_Wiesel_AA_WD,
+			RC_Wiesel_AA_WD_O,
+			RC_Wiesel_AA_DIG_I,
+			RC_Wiesel_AA_WD_I,
 
-			RC_Scout_Radar_WD,
-			RC_Scout_Radar_WD_O,
-			RC_Scout_Radar_DIG_I,
-			RC_Scout_Radar_WD_I,
+			RC_Wiesel_Radar_WD,
+			RC_Wiesel_Radar_WD_O,
+			RC_Wiesel_Radar_DIG_I,
+			RC_Wiesel_Radar_WD_I,
 
-			RC_Scout_ATGM_WD,
-			RC_Scout_ATGM_WD_O,
-			RC_Scout_ATGM_DIG_I,
-			RC_Scout_ATGM_WD_I,
+			RC_Wiesel_ATGM_WD,
+			RC_Wiesel_ATGM_WD_O,
+			RC_Wiesel_ATGM_DIG_I,
+			RC_Wiesel_ATGM_WD_I,
 
-			RC_Scout_ATGM_WD_manned,
-			RC_Scout_ATGM_WD_manned_O,
-			RC_Scout_ATGM_WD_manned_I,
-			RC_Scout_ATGM_DIG_manned_I,
+			RC_Wiesel_ATGM_WD_manned,
+			RC_Wiesel_ATGM_WD_manned_O,
+			RC_Wiesel_ATGM_WD_manned_I,
+			RC_Wiesel_ATGM_DIG_manned_I,
 
-			RC_Scout_AC_WD,
-			RC_Scout_AC_WD_O,
-			RC_Scout_AC_WD_I,
-			RC_Scout_AC_DIG_I,
+			RC_Wiesel_AC_WD,
+			RC_Wiesel_AC_WD_O,
+			RC_Wiesel_AC_WD_I,
+			RC_Wiesel_AC_DIG_I,
 
-			RC_Scout_AC_WD_manned,
-			RC_Scout_AC_WD_manned_O,
-			RC_Scout_AC_WD_manned_I,
-			RC_Scout_AC_DIG_manned_I,
+			RC_Wiesel_AC_WD_manned,
+			RC_Wiesel_AC_WD_manned_O,
+			RC_Wiesel_AC_WD_manned_I,
+			RC_Wiesel_AC_DIG_manned_I,
 
 			RC_Mortar,
 			RC_Mortar_O,
@@ -702,8 +702,8 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first
 	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\Scout.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UAV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Wiesel.hpp"
 };

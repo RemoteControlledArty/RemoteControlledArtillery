@@ -1,6 +1,6 @@
 //Nyx / Wiesel
 class I_LT_01_AA_F;
-class RC_Scout_AA_Base: I_LT_01_AA_F
+class RC_Wiesel_AA_Base: I_LT_01_AA_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -15,9 +15,9 @@ class RC_Scout_AA_Base: I_LT_01_AA_F
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_Scout_AA_WD: RC_Scout_AA_Base
+class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 {
-	displayName="RC Scout Anti-Air";
+	displayName="RC Wiesel II Anti-Air";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
 	author="Ascent";
@@ -286,19 +286,19 @@ class RC_Scout_AA_WD: RC_Scout_AA_Base
 		"A3\armor_f\data\cage_olive_co.paa"
 	};
 };
-class RC_Scout_AA_WD_O: RC_Scout_AA_WD
+class RC_Wiesel_AA_WD_O: RC_Wiesel_AA_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_Scout_AA_WD_I: RC_Scout_AA_WD
+class RC_Wiesel_AA_WD_I: RC_Wiesel_AA_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 };
-class RC_Scout_AA_DIG_I: RC_Scout_AA_WD_I
+class RC_Wiesel_AA_DIG_I: RC_Wiesel_AA_WD_I
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -310,8 +310,8 @@ class RC_Scout_AA_DIG_I: RC_Scout_AA_WD_I
 };
 
 
-class I_LT_01_scout_F;
-class RC_Scout_Radar_Base: I_LT_01_scout_F
+class I_LT_01_Wiesel_F;
+class RC_Wiesel_Radar_Base: I_LT_01_Wiesel_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -331,7 +331,7 @@ class RC_Scout_Radar_Base: I_LT_01_scout_F
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	
 };
-class RC_Scout_Radar_WD_Base: RC_Scout_Radar_Base
+class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 {
 	/*
 	//for later use
@@ -587,14 +587,14 @@ class RC_Scout_Radar_WD_Base: RC_Scout_Radar_Base
 };
 
 
-class RC_Scout_Radar_WD: RC_Scout_Radar_WD_Base
+class RC_Wiesel_Radar_WD: RC_Wiesel_Radar_WD_Base
 {
 	scope=2;
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
 
-	displayName="RC Scout Radar";
+	displayName="RC Wiesel II Radar";
 	isUav=1;
 	vehicleClass="Autonomous";
 	textPlural="UGVs";
@@ -627,19 +627,19 @@ class RC_Scout_Radar_WD: RC_Scout_Radar_WD_Base
 		};
 	};
 };
-class RC_Scout_Radar_WD_O: RC_Scout_Radar_WD
+class RC_Wiesel_Radar_WD_O: RC_Wiesel_Radar_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_Scout_Radar_WD_I: RC_Scout_Radar_WD
+class RC_Wiesel_Radar_WD_I: RC_Wiesel_Radar_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 };
-class RC_Scout_Radar_DIG_I: RC_Scout_Radar_WD_I
+class RC_Wiesel_Radar_DIG_I: RC_Wiesel_Radar_WD_I
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -651,8 +651,8 @@ class RC_Scout_Radar_DIG_I: RC_Scout_Radar_WD_I
 };
 
 
-//Scout RADAR with Vehicle Mortar attached, for low power but mobile indirect fire support
-class RC_Mortar_Carrier_WD: RC_Scout_Radar_WD
+//Wiesel RADAR with Vehicle Mortar attached, for low power but mobile indirect fire support
+class RC_Mortar_Carrier_WD: RC_Wiesel_Radar_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -697,7 +697,7 @@ class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
 
 
 //version with less rounds for smaller ops
-class RC_Mortar_Carrier_LC_WD: RC_Scout_Radar_WD
+class RC_Mortar_Carrier_LC_WD: RC_Wiesel_Radar_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -732,7 +732,7 @@ class RC_Mortar_Carrier_LC_WD_I: RC_Mortar_Carrier_LC_WD
 
 
 class I_LT_01_AT_F;
-class RC_Scout_ATGM_Base: I_LT_01_AT_F
+class RC_Wiesel_ATGM_Base: I_LT_01_AT_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -749,13 +749,13 @@ class RC_Scout_ATGM_Base: I_LT_01_AT_F
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_Scout_ATGM_WD_Base: RC_Scout_ATGM_Base
+class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	displayName="RC Scout ATGM 4km";
+	displayName="RC Wiesel II ATGM 4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
 	author="Ascent";
@@ -997,7 +997,7 @@ class RC_Scout_ATGM_WD_Base: RC_Scout_ATGM_Base
 };
 
 
-class RC_Scout_ATGM_WD: RC_Scout_ATGM_WD_Base
+class RC_Wiesel_ATGM_WD: RC_Wiesel_ATGM_WD_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -1025,7 +1025,7 @@ class RC_Scout_ATGM_WD: RC_Scout_ATGM_WD_Base
 		};
 	};
 };
-class RC_Scout_ATGM_WD_O: RC_Scout_ATGM_WD
+class RC_Wiesel_ATGM_WD_O: RC_Wiesel_ATGM_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -1047,7 +1047,7 @@ class RC_Scout_ATGM_WD_O: RC_Scout_ATGM_WD
 		"SmokeLauncherMag"
 	};
 };
-class RC_Scout_ATGM_WD_I: RC_Scout_ATGM_WD
+class RC_Wiesel_ATGM_WD_I: RC_Wiesel_ATGM_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -1069,7 +1069,7 @@ class RC_Scout_ATGM_WD_I: RC_Scout_ATGM_WD
 		"SmokeLauncherMag"
 	};
 };
-class RC_Scout_ATGM_DIG_I: RC_Scout_ATGM_WD_I
+class RC_Wiesel_ATGM_DIG_I: RC_Wiesel_ATGM_WD_I
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -1082,7 +1082,7 @@ class RC_Scout_ATGM_DIG_I: RC_Scout_ATGM_WD_I
 
 
 //semi manned version
-class RC_Scout_ATGM_WD_manned: RC_Scout_ATGM_WD_Base
+class RC_Wiesel_ATGM_WD_manned: RC_Wiesel_ATGM_WD_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -1093,7 +1093,7 @@ class RC_Scout_ATGM_WD_manned: RC_Scout_ATGM_WD_Base
 		};
 	};
 
-	displayName="Scout ATGM 4km";
+	displayName="Wiesel II ATGM 4km";
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -1149,7 +1149,7 @@ class RC_Scout_ATGM_WD_manned: RC_Scout_ATGM_WD_Base
 		};
 	};
 };
-class RC_Scout_ATGM_WD_manned_O: RC_Scout_ATGM_WD_manned
+class RC_Wiesel_ATGM_WD_manned_O: RC_Wiesel_ATGM_WD_manned
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -1171,7 +1171,7 @@ class RC_Scout_ATGM_WD_manned_O: RC_Scout_ATGM_WD_manned
 		"SmokeLauncherMag"
 	};
 };
-class RC_Scout_ATGM_WD_manned_I: RC_Scout_ATGM_WD_manned
+class RC_Wiesel_ATGM_WD_manned_I: RC_Wiesel_ATGM_WD_manned
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -1193,7 +1193,7 @@ class RC_Scout_ATGM_WD_manned_I: RC_Scout_ATGM_WD_manned
 		"SmokeLauncherMag"
 	};
 };
-class RC_Scout_ATGM_DIG_manned_I: RC_Scout_ATGM_WD_manned_I
+class RC_Wiesel_ATGM_DIG_manned_I: RC_Wiesel_ATGM_WD_manned_I
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -1206,7 +1206,7 @@ class RC_Scout_ATGM_DIG_manned_I: RC_Scout_ATGM_WD_manned_I
 
 
 class I_LT_01_cannon_F;
-class RC_Scout_AC_Base: I_LT_01_cannon_F
+class RC_Wiesel_AC_Base: I_LT_01_cannon_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -1223,13 +1223,13 @@ class RC_Scout_AC_Base: I_LT_01_cannon_F
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_Scout_AC_WD_Base: RC_Scout_AC_Base
+class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	displayName="RC Scout 20mm AC";
+	displayName="RC Wiesel II 20mm AC";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
@@ -1475,7 +1475,7 @@ class RC_Scout_AC_WD_Base: RC_Scout_AC_Base
 };
 
 
-class RC_Scout_AC_WD: RC_Scout_AC_WD_Base
+class RC_Wiesel_AC_WD: RC_Wiesel_AC_WD_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -1503,7 +1503,7 @@ class RC_Scout_AC_WD: RC_Scout_AC_WD_Base
 		};
 	};
 };
-class RC_Scout_AC_WD_O: RC_Scout_AC_WD
+class RC_Wiesel_AC_WD_O: RC_Wiesel_AC_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -1528,7 +1528,7 @@ class RC_Scout_AC_WD_O: RC_Scout_AC_WD
 		"SmokeLauncherMag"
 	};
 };
-class RC_Scout_AC_WD_I: RC_Scout_AC_WD
+class RC_Wiesel_AC_WD_I: RC_Wiesel_AC_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -1553,7 +1553,7 @@ class RC_Scout_AC_WD_I: RC_Scout_AC_WD
 		"SmokeLauncherMag"
 	};
 };
-class RC_Scout_AC_DIG_I: RC_Scout_AC_WD_I
+class RC_Wiesel_AC_DIG_I: RC_Wiesel_AC_WD_I
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -1566,7 +1566,7 @@ class RC_Scout_AC_DIG_I: RC_Scout_AC_WD_I
 
 
 //semi manned version
-class RC_Scout_AC_WD_manned: RC_Scout_AC_WD_Base
+class RC_Wiesel_AC_WD_manned: RC_Wiesel_AC_WD_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -1577,7 +1577,7 @@ class RC_Scout_AC_WD_manned: RC_Scout_AC_WD_Base
 		};
 	};
 
-	displayName="Scout 20mm AC";
+	displayName="Wiesel II 20mm AC";
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -1625,7 +1625,7 @@ class RC_Scout_AC_WD_manned: RC_Scout_AC_WD_Base
 		};
 	};
 };
-class RC_Scout_AC_WD_manned_O: RC_Scout_AC_WD_manned
+class RC_Wiesel_AC_WD_manned_O: RC_Wiesel_AC_WD_manned
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -1650,7 +1650,7 @@ class RC_Scout_AC_WD_manned_O: RC_Scout_AC_WD_manned
 		"SmokeLauncherMag"
 	};
 };
-class RC_Scout_AC_WD_manned_I: RC_Scout_AC_WD_manned
+class RC_Wiesel_AC_WD_manned_I: RC_Wiesel_AC_WD_manned
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -1675,7 +1675,7 @@ class RC_Scout_AC_WD_manned_I: RC_Scout_AC_WD_manned
 		"SmokeLauncherMag"
 	};
 };
-class RC_Scout_AC_DIG_manned_I: RC_Scout_AC_WD_manned_I
+class RC_Wiesel_AC_DIG_manned_I: RC_Wiesel_AC_WD_manned_I
 {
 	hiddenSelectionsTextures[]=
 	{
