@@ -1229,7 +1229,7 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	displayName="RC Wiesel II 20mm AC";
+	displayName="RC Wiesel II 20mm";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_FSV_MBT_subcat";
 	author="Ascent";
@@ -1577,7 +1577,7 @@ class RC_Wiesel_AC_WD_manned: RC_Wiesel_AC_WD_Base
 		};
 	};
 
-	displayName="Wiesel II 20mm AC";
+	displayName="Wiesel II 20mm";
 	scope=2;
 	scopeCurator=2;
 	side=1;

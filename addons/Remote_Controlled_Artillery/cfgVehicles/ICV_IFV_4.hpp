@@ -362,13 +362,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
-	/*
 	//Missile launcher on top, memoryppoint unclear, and rotate with boolean not working
-	class EventHandlers: EventHandlers
-	{
-		init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true; waitUntil {!isNull gunner _this}; _this deleteVehicleCrew gunner _this; waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; ('B_static_AA_F' createVehicle [0,0,0]) attachTo [_this, [1,1,1], 'mainTurret', true]}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-	};
-	*/
 
 	displayName="Patria AMV";
 	editorSubcategory="RC_IFV_APC_subcat";
