@@ -1,206 +1,73 @@
-class rhs_weap_m240_bradley_coax;
-class rhs_weap_m240_bradley_coax_base: rhs_weap_m240_bradley_coax
+//Autocannons
+class autocannon_30mm_lxWS;
+class RC_autocannon_30mm_lxWS_Base: autocannon_30mm_lxWS
 {
-	class manual;
+	class HE;
+	class AP;
+	class player;
 };
-class RC_RHS_weap_m240_bradley_coax: rhs_weap_m240_bradley_coax_base
+class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 {
 	canLock=2;
-	minZeroing=50;
-	magazines[]=
-	{
-		"RC_RHS_mag_1100Rnd_762x51_T_R",
-		"RC_RHS_mag_1100Rnd_762x51_M61_T_R"
-	};
-	class manual: manual
-	{
-		dispersion=0.001;
-	};
-};
-
-
-class autocannon_Base_F;
-class autocannon_30mm_CTWS: autocannon_Base_F
-{
-	class HE: autocannon_Base_F
-	{
-		class player;
-		class close;
-		class short;
-		class medium;
-		class far;
-	};
-	class AP: autocannon_Base_F
-	{
-		class player;
-		class close;
-		class short;
-		class medium;
-		class far;
-	};
-};
-class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
-{
-	displayName="25mm M242";
-
-	aiDispersioncoefX=4;
-	aiDispersioncoefY=6;
-	airateoffire=2;
-	airateoffiredistance=1000;
-	canlock=2;
-	FCSMaxLeadSpeed=30.555599;
-
-	class GunParticles
-	{
-		class Effect
-		{
-			effectName="AutoCannonFired";
-			positionName="Usti hlavne";
-			directionName="Konec hlavne";
-		};
-		class Shell
-		{
-			positionName="shell_eject_pos";
-			directionName="shell_eject_dir";
-			effectName="RHS_HeavyGunCartridge1";
-		};
-	};
-
-	muzzles[]={"HE","AP"};
+	FCSZeroingDelay=0.5;
+	name="30mm";
 
 	class HE: HE
 	{
-		// - M792 HEI-T
-		displayName="25mm M242 - HEI-T";
-		magazines[]={"RC_RHS_mag_230Rnd_25mm_HEI_T_R"};
-		magazineWell[]={RHS_AutoCannon_25mm_M242_HE};
-		canlock=2;
-		magazineReloadTime = 0.3;
-		modes[]={"player"};
-		//200rpm
+		magazines[]=
+		{
+			"RC_160Rnd_30mm_MP_T_R",
+			"RC_160Rnd_30mm_MP_T_G",
+			"RC_160Rnd_30mm_MP_T_Y",
+			"RC_160Rnd_30mm_GPR_T_R",
+			"RC_160Rnd_30mm_GPR_T_G",
+			"RC_160Rnd_30mm_GPR_T_Y"
+			//"RC_100Rnd_30mm_Smoke"
+		};
+
 		class player: player
 		{
-			reloadTime=__EVAL(60/200);
-			textureType="fullAuto";
-			dispersion=0.0006;
+			reloadTime=0.2;
 		};
-		FCSMaxLeadSpeed=30.555599;
-		minZeroing=50;
 	};
 	class AP: AP
 	{
-		// - M919 APFSDS-T
-		displayName="25mm M242 - APFSDS-T";
-		magazines[]={"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R"};
-		magazineWell[]={RHS_AutoCannon_25mm_M242_AP};
-		canlock=2;
-		magazineReloadTime = 0.3;
-		modes[]={"player"};
-		//200rpm
+		magazines[]=
+		{
+			"RC_160Rnd_30mm_APFSDS_T_R",
+			"RC_160Rnd_30mm_APFSDS_T_G",
+			"RC_160Rnd_30mm_APFSDS_T_Y"
+		};
+
 		class player: player
 		{
-			reloadTime=__EVAL(60/200);
-			textureType="fullAuto";
-			dispersion=0.0006;
+			reloadTime=0.3;
 		};
-		FCSMaxLeadSpeed=30.555599;
-		minZeroing=50;
 	};
 };
 
 
-class Rhs_weap_TOW_Launcher;
-class RC_RHS_weap_TOW_Launcher: Rhs_weap_TOW_Launcher
+class RC_MMG_93x64_coax_ext;
+class RC_MMG_93x64_coax_ext_lxWS: RC_MMG_93x64_coax_ext
 {
-	canLock=2;
-	autoReload=1;
 	magazines[]=
 	{
-		"RC_RHS_mag_2Rnd_TOW2A",
-		"RC_RHS_mag_2Rnd_TOW2BB"
+		"RC_1000Rnd_93x64_T_G",
+		"RC_1000Rnd_93x64_T_R",
+		"RC_1000Rnd_93x64_T_Y"
 	};
 };
 
 
-class RC_IFV_Missile_Launcher;
-class RC_Bradley_Missile_Launcher_Base: RC_IFV_Missile_Launcher
+/*
+class missles_Vorona_vehicles_lxWS;
+class RC_missles_Vorona_vehicles_lxWS_Base: missles_Vorona_vehicles_lxWS
 {
 	class Player;
 	class TopDown;
-}
-class RC_Bradley_Missile_Launcher: RC_Bradley_Missile_Launcher_Base
-{
-	displayName="BGM-71 TOW";
-	displayNameShort="BGM-71 TOW";
-
-	magazines[]=
-	{
-		"RC_2Rnd_TOW_MP_NLOS",
-		"RC_2Rnd_TOW_AA"
-	};
 };
-
-
-/*
-class rhs_weap_fcs_ammo;
-class RC_rhs_weap_fcs_ammo: rhs_weap_fcs_ammo
+class RC_missles_Vorona_vehicles_lxWS: RC_missles_Vorona_vehicles_lxWS_Base
 {
-	canLock=2;
-};
-*/
-
-
-class RHS_M2_CROWS_M151;
-class RHS_M2_CROWS_M151_base: RHS_M2_CROWS_M151
-{
-	class manual;
-};
-class RC_RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
-{
-	canLock=2;
-	minZeroing=50;
-	magazines[] =
-	{
-		"RC_RHS_mag_200rnd_127x99",
-		"RC_RHS_mag_200rnd_127x99_T_R",
-		"RC_RHS_mag_200rnd_127x99_SLAP",
-		"RC_RHS_mag_200rnd_127x99_SLAP_T_R"
-	};
-	class manual: manual
-	{
-		dispersion=0.001;
-	};
-};
-
-
-class RHS_MK19_CROWS_M153;
-class RHS_MK19_CROWS_M153_base: RHS_MK19_CROWS_M153
-{
-	class manual;
-};
-class RC_RHS_MK19_CROWS_M153: RHS_MK19_CROWS_M153_base
-{
-	canLock=2;
-	minZeroing=50;
-	magazines[] =
-	{
-		"RC_RHS_96Rnd_40mm_MK19_M430A1"
-	};
-	class manual: manual
-	{
-		dispersion=0.0025;
-	};
-};
-
-
-/*
-class RHS_M2;
-class RC_RHS_M2_nonlock: RHS_M2
-{
-	canLock=0;
-	magazines[] =
-	{
-		"RC_RHS_mag_100rnd_127x99_T_R_nonlock"
-	};
+	scope=2;
 };
 */

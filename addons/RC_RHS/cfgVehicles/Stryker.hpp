@@ -562,6 +562,19 @@ class RC_Stryker_M1126_MK19_A_I: RC_Stryker_M1126_MK19_A_B
 */
 
 
+/*
+	//testing alternatives to make M1127 driver view work
+
+	class B_UAV_AI;
+	class RC_B_UAV_AI_Model: B_UAV_AI
+	{
+		model="\A3\Characters_F\BLUFOR\b_soldier_01.p3d";
+		modelSides[]={3,1};
+		moves="CfgMovesMaleSdr";
+	};
+*/
+
+
 class rhsusf_stryker_m1127_m2_wd;
 class RC_Stryker_M1127_M2_WD_Base: rhsusf_stryker_m1127_m2_wd
 {
@@ -754,6 +767,73 @@ class RC_Stryker_M1127_M2_WD_I: RC_Stryker_M1127_M2_WD_B
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 class RC_Stryker_M1127_M2_D_I: RC_Stryker_M1127_M2_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
+class RC_Stryker_M1127_WD_B: RC_Stryker_M1127_M2_WD_B
+{
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\dev_takeDriverControlsEH1.hpp"
+		};
+	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+		};
+		class Turret_Weapon: Turret_Weapon {};
+		class Turret_LRAS: Turret_LRAS {};
+		class CargoTurret_02: CargoTurret_02 {};
+		class CargoTurret_03: CargoTurret_03 {};
+	};
+
+	displayName="RC M1127 Stryker";
+};
+class RC_Stryker_M1127_D_B: RC_Stryker_M1127_WD_B
+{
+	editorSubcategory="RC_RHS_D_subcat";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1127_m2_d.paa";
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_M1127_des_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_LRAS3_d_CO.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_ca.paa",
+		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
+	};
+};
+
+
+class RC_Stryker_M1127_WD_I: RC_Stryker_M1127_WD_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+class RC_Stryker_M1127_D_I: RC_Stryker_M1127_D_B
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

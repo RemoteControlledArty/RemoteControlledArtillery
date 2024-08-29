@@ -44,6 +44,11 @@ class CfgPatches
 			RC_Stryker_M1127_M2_WD_B,
 			RC_Stryker_M1127_M2_WD_I,
 
+			RC_Stryker_M1127_D_B,
+			RC_Stryker_M1127_D_I,
+			RC_Stryker_M1127_WD_B,
+			RC_Stryker_M1127_WD_I,
+
 			RC_M119,
 			RC_M119_O,
 			RC_M119_I,

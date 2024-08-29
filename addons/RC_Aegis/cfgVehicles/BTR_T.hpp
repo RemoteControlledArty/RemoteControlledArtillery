@@ -1,5 +1,5 @@
-class O_APC_Tracked_02_cannon_F;
-class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
+class Aegis_O_R_APC_Tracked_02_30mm_lxWS;
+class RC_ICV_IFV_8_A_Base: Aegis_O_R_APC_Tracked_02_30mm_lxWS
 {
 	class Turrets;
 	class MainTurret;
@@ -19,7 +19,7 @@ class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
+class RC_ICV_IFV_8_A: RC_ICV_IFV_8_A_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
@@ -42,34 +42,37 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	enginePower=639.2;
 	peakTorque=3248.6;
 
+	/*
+	hiddenSelectionsTextures[]=
+	{
+		"\A3_Aegis\Armor_F_Aegis\APC_Tracked_02\Data\APC_Tracked_02_ext_01_RUkhk_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Tracked_02\Data\APC_Tracked_02_ext_02_RUkhk_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Tracked_02\Data\apc_tracked_02_ext_03_RUkhk_co.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Tracked_02\Data\APC_Tracked_02_30mm_RUkhk_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\cage_RUkhk_CO.paa"
+	};
+	*/
+
 	class AnimationSources: AnimationSources
 	{
-		class muzzle_rot
+		class reload_cannon
 		{
-			source="ammorandom";
-			weapon="RC_autocannon_30mm_CTWS";
+			source="reload";
+			weapon="RC_autocannon_30mm_lxWS";
 		};
 		class muzzle_hide
 		{
 			source="reload";
-			weapon="RC_autocannon_30mm_CTWS";
-		};
-		class Missiles_revolving
-		{
-			source="revolving";
-			weapon="RC_IFV_Missile_Launcher";
-		};
-		class Missiles_reloadMagazine: Missiles_revolving
-		{
-			source="reloadMagazine";
+			weapon="RC_autocannon_30mm_lxWS";
 		};
 		class showCamonetHull: showCamonetHull
 		{
-			initPhase=1;
+			initPhase=0;
 		};
 		class showSLATHull: showSLATHull
 		{
-			initPhase=1;
+			initPhase=0;
 		};
 	};
 	animationList[]=
@@ -77,7 +80,7 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 		"showTracks",
 		0,
 		"showCamonetHull",
-		1,
+		0,
 		"showBags",
 		0,
 		"showSLATHull",
@@ -88,7 +91,7 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 };
 
 
-class RC_ICV_5_A: RC_ICV_IFV_5_A
+class RC_ICV_8_A: RC_ICV_IFV_8_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -259,7 +262,7 @@ class RC_ICV_5_A: RC_ICV_IFV_5_A
 };
 
 
-class RC_ICV_5_WD: RC_ICV_5_A
+class RC_ICV_8_WD: RC_ICV_8_A
 {
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_cannon_ghex_F.jpg";
 	textureList[]=
@@ -278,7 +281,7 @@ class RC_ICV_5_WD: RC_ICV_5_A
 };
 
 
-class RC_IFV_5_A_O: RC_ICV_IFV_5_A
+class RC_IFV_8_A_O: RC_ICV_IFV_8_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -289,7 +292,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 		};
 	};
 
-	displayName="BM-2T";
+	displayName="BM-2T Bumerang";
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -333,31 +336,19 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 
 			weapons[]=
 			{
-				"RC_autocannon_30mm_CTWS",
-				"RC_MMG_93x64_coax_ext",
-				"RC_IFV_Missile_Launcher",
+				"RC_autocannon_30mm_lxWS",
+				"RC_MMG_93x64_coax_ext_lxWS",
+				"missles_Vorona_vehicles_lxWS",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				//"RC_100Rnd_30mm_Smoke",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
+				"RC_160Rnd_30mm_MP_T_R",
+				"RC_160Rnd_30mm_GPR_T_R",
+				"RC_160Rnd_30mm_APFSDS_T_R",
+				"RC_160Rnd_30mm_APFSDS_T_R",
+				"RC_1000Rnd_93x64_T_G",
+				"4rnd_Vorona_HEAT_lxWS",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -465,7 +456,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 };
 
 
-class RC_IFV_5_WD_O: RC_IFV_5_A_O
+class RC_IFV_8_WD_O: RC_IFV_8_A_O
 {
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_cannon_ghex_F.jpg";
 	textureList[]=
