@@ -641,6 +641,11 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 		{
 			animPeriod=1.25;
 		};
+		/*
+		class Hatch_Driver
+		{
+		};
+		*/
 	};
 
 	class Turrets: Turrets
