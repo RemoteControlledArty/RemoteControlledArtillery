@@ -1,5 +1,5 @@
 class O_R_APC_Wheeled_04_cannon_F;
-class RC_ICV_IFV_7_A_Base: O_R_APC_Wheeled_04_cannon_F
+class RC_ICV_IFV_7_WD_Base: O_R_APC_Wheeled_04_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -28,7 +28,7 @@ class RC_ICV_IFV_7_A_Base: O_R_APC_Wheeled_04_cannon_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_7_A: RC_ICV_IFV_7_A_Base
+class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
@@ -50,8 +50,8 @@ class RC_ICV_IFV_7_A: RC_ICV_IFV_7_A_Base
 	crewCrashProtection=0.01;
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
-	enginePower=553;
-	peakTorque=2810.4;
+	enginePower=497.7;
+	peakTorque=2529.4;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 
@@ -91,7 +91,7 @@ class RC_ICV_IFV_7_A: RC_ICV_IFV_7_A_Base
 };
 
 
-class RC_ICV_7_A: RC_ICV_IFV_7_A
+class RC_ICV_7_WD: RC_ICV_IFV_7_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -101,8 +101,6 @@ class RC_ICV_7_A: RC_ICV_IFV_7_A
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
-	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
 	displayName="RC BTR-100 unarmed";
 	editorSubcategory="RC_ICV_subcat";
@@ -248,64 +246,6 @@ class RC_ICV_7_A: RC_ICV_IFV_7_A
 		};
 	};
 };
-class RC_ICV_7_A_O: RC_ICV_7_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_ICV_7_A_I: RC_ICV_7_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-class RC_ICV_7_DIG_I: RC_ICV_7_A_I
-{
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-		"A3\armor_f\data\cage_aaf_co.paa"
-	};
-	textureList[]=
-	{
-		"Indep",
-		1
-	};
-};
-
-
-class RC_ICV_7_WD: RC_ICV_7_A
-{
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext2_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\RCWS30_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_alpha_IG_01_CO.paa",
-		//"A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"A3\armor_f\data\cage_G1_co.paa"
-	};
-	textureList[]=
-	{
-		"Guerilla_01",
-		1,
-		"Guerilla_02",
-		0,
-		"Guerilla_03",
-		0
-	};
-};
 class RC_ICV_7_WD_O: RC_ICV_7_WD
 {
 	faction="RemoteControlled_O";
@@ -324,7 +264,7 @@ class RC_ICV_7_WD_I: RC_ICV_7_WD
 };
 
 
-class RC_IFV_7_A: RC_ICV_IFV_7_A
+class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -341,15 +281,7 @@ class RC_IFV_7_A: RC_ICV_IFV_7_A
 	scopeCurator=2;
 	maximumLoad=3000;
 
-	//vehicleClass="Autonomous";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
-	//isUav=1;
-	//textPlural="UGVs";
-	//textSingular="UGV";
 	crew="B_UAV_AI";
-	//driverForceOptics=1;
-	//forceHideDriver=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
@@ -358,7 +290,7 @@ class RC_IFV_7_A: RC_ICV_IFV_7_A
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -376,8 +308,9 @@ class RC_IFV_7_A: RC_ICV_IFV_7_A
 				"RC_160Rnd_30mm_GPR_T_R",
 				"RC_160Rnd_30mm_APFSDS_T_R",
 				"RC_160Rnd_30mm_APFSDS_T_R",
-				"RC_1000Rnd_93x64_T_G",
+				"RC_1000Rnd_93x64_T_R",
 				"4rnd_Vorona_HEAT_lxWS",
+				"4rnd_Vorona_HE_lxWS",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -480,124 +413,6 @@ class RC_IFV_7_A: RC_ICV_IFV_7_A
 		};
 	};
 };
-class RC_IFV_7_A_O: RC_IFV_7_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				//"RC_100Rnd_30mm_Smoke",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-class RC_IFV_7_A_I: RC_IFV_7_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				//"RC_100Rnd_30mm_Smoke",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-class RC_IFV_7_DIG_I: RC_IFV_7_A_I
-{
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-		"A3\armor_f\data\cage_aaf_co.paa"
-	};
-	textureList[]=
-	{
-		"Indep",
-		1
-	};
-};
-
-
-class RC_IFV_7_WD: RC_IFV_7_A
-{
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext2_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\RCWS30_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_alpha_IG_01_CO.paa",
-		//"A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"A3\armor_f\data\cage_G1_co.paa"
-	};
-	textureList[]=
-	{
-		"Guerilla_01",
-		1,
-		"Guerilla_02",
-		0,
-		"Guerilla_03",
-		0
-	};
-};
 class RC_IFV_7_WD_O: RC_IFV_7_WD
 {
 	faction="RemoteControlled_O";
@@ -612,24 +427,12 @@ class RC_IFV_7_WD_O: RC_IFV_7_WD
 		{
 			magazines[]=
 			{
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				//"RC_100Rnd_30mm_Smoke",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
+				"RC_160Rnd_30mm_MP_T_G",
+				"RC_160Rnd_30mm_GPR_T_G",
+				"RC_160Rnd_30mm_APFSDS_T_G",
+				"RC_160Rnd_30mm_APFSDS_T_G",
+				"RC_1000Rnd_93x64_T_G",
+				"4rnd_Vorona_HEAT_lxWS",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -650,273 +453,12 @@ class RC_IFV_7_WD_I: RC_IFV_7_WD
 		{
 			magazines[]=
 			{
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				//"RC_100Rnd_30mm_Smoke",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-
-
-//optional Phantom Hawk Retextures (found in steam workshop)
-class RC_ICV_7_ReTex_WD: RC_ICV_7_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Woodland_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"pandurii\data\pandur_01_ext_wd.paa",
-		"pandurii\data\pandur_02_ext_wd.paa",
-		"pandurii\data\pandur_turret_wd.paa",
-		"pandurii\data\pandur_03_ext_wd.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"a3\armor_f\data\cage_g1_co.paa"
-	};
-};
-class RC_ICV_7_ReTex_WD_O: RC_ICV_7_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_ICV_7_ReTex_WD_I: RC_ICV_7_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
-class RC_ICV_7_ReTex_D: RC_ICV_7_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Desert_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"pandurii\data\pandur_01_ext_d.paa",
-		"pandurii\data\pandur_02_ext_d.paa",
-		"pandurii\data\pandur_turret_d.paa",
-		"pandurii\data\pandur_03_ext_d.paa",
-		"pandurii\data\camonet_desert_co.paa",
-		"pandurii\data\cage_desert_co.paa"
-	};
-};
-class RC_ICV_7_ReTex_D_O: RC_ICV_7_ReTex_D
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_ICV_7_ReTex_D_I: RC_ICV_7_ReTex_D
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
-class RC_IFV_7_ReTex_WD: RC_IFV_7_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Woodland_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"pandurii\data\pandur_01_ext_wd.paa",
-		"pandurii\data\pandur_02_ext_wd.paa",
-		"pandurii\data\pandur_turret_wd.paa",
-		"pandurii\data\pandur_03_ext_wd.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"a3\armor_f\data\cage_g1_co.paa"
-	};
-};
-class RC_IFV_7_ReTex_WD_O: RC_IFV_7_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				//"RC_100Rnd_30mm_Smoke",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-class RC_IFV_7_ReTex_WD_I: RC_IFV_7_ReTex_WD
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				//"RC_100Rnd_30mm_Smoke",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-
-
-class RC_IFV_7_ReTex_D: RC_IFV_7_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Desert_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"pandurii\data\pandur_01_ext_d.paa",
-		"pandurii\data\pandur_02_ext_d.paa",
-		"pandurii\data\pandur_turret_d.paa",
-		"pandurii\data\pandur_03_ext_d.paa",
-		"pandurii\data\camonet_desert_co.paa",
-		"pandurii\data\cage_desert_co.paa"
-	};
-};
-class RC_IFV_7_ReTex_D_O: RC_IFV_7_ReTex_D
-{
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				//"RC_100Rnd_30mm_Smoke",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-class RC_IFV_7_ReTex_D_I: RC_IFV_7_ReTex_D
-{
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				//"RC_100Rnd_30mm_Smoke",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
+				"RC_160Rnd_30mm_MP_T_Y",
+				"RC_160Rnd_30mm_GPR_T_Y",
+				"RC_160Rnd_30mm_APFSDS_T_Y",
+				"RC_160Rnd_30mm_APFSDS_T_Y",
+				"RC_1000Rnd_93x64_T_Y",
+				"4rnd_Vorona_HEAT_lxWS",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

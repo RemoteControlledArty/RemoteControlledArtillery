@@ -1,5 +1,5 @@
 class Aegis_O_R_APC_Tracked_02_30mm_lxWS;
-class RC_ICV_IFV_8_A_Base: Aegis_O_R_APC_Tracked_02_30mm_lxWS
+class RC_ICV_IFV_8_WD_Base: Aegis_O_R_APC_Tracked_02_30mm_lxWS
 {
 	class Turrets;
 	class MainTurret;
@@ -19,7 +19,7 @@ class RC_ICV_IFV_8_A_Base: Aegis_O_R_APC_Tracked_02_30mm_lxWS
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_8_A: RC_ICV_IFV_8_A_Base
+class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
@@ -28,10 +28,10 @@ class RC_ICV_IFV_8_A: RC_ICV_IFV_8_A_Base
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
-	faction="RemoteControlled_O";
+	faction="RemoteControlled_B";
 	scope=0;
 	scopeCurator=0;
-	side=0;
+	side=1;
 	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=1;
@@ -39,8 +39,8 @@ class RC_ICV_IFV_8_A: RC_ICV_IFV_8_A_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-	enginePower=639.2;
-	peakTorque=3248.6;
+	enginePower=575.3;
+	peakTorque=2923.7;
 
 	/*
 	hiddenSelectionsTextures[]=
@@ -91,7 +91,7 @@ class RC_ICV_IFV_8_A: RC_ICV_IFV_8_A_Base
 };
 
 
-class RC_ICV_8_A: RC_ICV_IFV_8_A
+class RC_ICV_8_WD: RC_ICV_IFV_8_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -101,8 +101,6 @@ class RC_ICV_8_A: RC_ICV_IFV_8_A
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
-	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
 	displayName="RC BM-2T unarmed";
 	editorSubcategory="RC_ICV_subcat";
@@ -117,7 +115,7 @@ class RC_ICV_8_A: RC_ICV_IFV_8_A
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	crew="O_UAV_AI";
+	crew="B_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
 
@@ -260,28 +258,25 @@ class RC_ICV_8_A: RC_ICV_IFV_8_A
 		};
 	};
 };
-
-
-class RC_ICV_8_WD: RC_ICV_8_A
+class RC_ICV_8_WD_O: RC_ICV_8_WD
 {
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_cannon_ghex_F.jpg";
-	textureList[]=
-	{
-		"GreenHex",
-		1
-	};
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Armor_F_Exp\APC_Tracked_02\Data\APC_Tracked_02_ext_01_ghex_CO.paa",
-		"A3\Armor_F_Exp\APC_Tracked_02\Data\APC_Tracked_02_ext_02_ghex_CO.paa",
-		"A3\Armor_F_Exp\APC_Tracked_02\Data\RCWS30_ghex_CO.paa",
-		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
-		"A3\armor_f\data\cage_csat_green_CO.paa"
-	};
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_ICV_8_WD_I: RC_ICV_8_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
-class RC_IFV_8_A_O: RC_ICV_IFV_8_A
+class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -301,15 +296,7 @@ class RC_IFV_8_A_O: RC_ICV_IFV_8_A
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
 
-	//vehicleClass="Autonomous";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
-	//isUav=1;
-	//textPlural="UGVs";
-	//textSingular="UGV";
-	crew="O_UAV_AI";
-	//driverForceOptics=1;
-	//forceHideDriver=1;
+	crew="B_UAV_AI";
 	
 	weapons[]=
 	{
@@ -328,7 +315,7 @@ class RC_IFV_8_A_O: RC_ICV_IFV_8_A
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
 			//forceHideGunner=1;
@@ -338,7 +325,7 @@ class RC_IFV_8_A_O: RC_ICV_IFV_8_A
 			{
 				"RC_autocannon_30mm_lxWS",
 				"RC_MMG_93x64_coax_ext_lxWS",
-				"missles_Vorona_vehicles_lxWS",
+				"missiles_Vorona_vehicle_lxWS",
 				"SmokeLauncher"
 			};
 			magazines[]=
@@ -347,8 +334,9 @@ class RC_IFV_8_A_O: RC_ICV_IFV_8_A
 				"RC_160Rnd_30mm_GPR_T_R",
 				"RC_160Rnd_30mm_APFSDS_T_R",
 				"RC_160Rnd_30mm_APFSDS_T_R",
-				"RC_1000Rnd_93x64_T_G",
+				"RC_1000Rnd_93x64_T_R",
 				"4rnd_Vorona_HEAT_lxWS",
+				"4rnd_Vorona_HE_lxWS",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -454,22 +442,55 @@ class RC_IFV_8_A_O: RC_ICV_IFV_8_A
 		};
 	};
 };
-
-
-class RC_IFV_8_WD_O: RC_IFV_8_A_O
+class RC_IFV_8_WD_O: RC_IFV_8_WD
 {
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_cannon_ghex_F.jpg";
-	textureList[]=
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
 	{
-		"GreenHex",
-		1
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_160Rnd_30mm_MP_T_G",
+				"RC_160Rnd_30mm_GPR_T_G",
+				"RC_160Rnd_30mm_APFSDS_T_G",
+				"RC_160Rnd_30mm_APFSDS_T_G",
+				"RC_1000Rnd_93x64_T_G",
+				"4rnd_Vorona_HEAT_lxWS",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
 	};
-	hiddenSelectionsTextures[]=
+};
+class RC_IFV_8_WD_I: RC_IFV_8_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
 	{
-		"A3\Armor_F_Exp\APC_Tracked_02\Data\APC_Tracked_02_ext_01_ghex_CO.paa",
-		"A3\Armor_F_Exp\APC_Tracked_02\Data\APC_Tracked_02_ext_02_ghex_CO.paa",
-		"A3\Armor_F_Exp\APC_Tracked_02\Data\RCWS30_ghex_CO.paa",
-		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
-		"A3\armor_f\data\cage_csat_green_CO.paa"
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_160Rnd_30mm_MP_T_Y",
+				"RC_160Rnd_30mm_GPR_T_Y",
+				"RC_160Rnd_30mm_APFSDS_T_Y",
+				"RC_160Rnd_30mm_APFSDS_T_Y",
+				"RC_1000Rnd_93x64_T_Y",
+				"4rnd_Vorona_HEAT_lxWS",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
 	};
 };

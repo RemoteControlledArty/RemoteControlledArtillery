@@ -22,12 +22,11 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 			"RC_160Rnd_30mm_GPR_T_R",
 			"RC_160Rnd_30mm_GPR_T_G",
 			"RC_160Rnd_30mm_GPR_T_Y"
-			//"RC_100Rnd_30mm_Smoke"
 		};
 
 		class player: player
 		{
-			reloadTime=0.2;
+			reloadTime=0.15;
 		};
 	};
 	class AP: AP

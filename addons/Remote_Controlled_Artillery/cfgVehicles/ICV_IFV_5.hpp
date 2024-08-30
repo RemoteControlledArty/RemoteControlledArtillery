@@ -39,8 +39,8 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-	enginePower=639.2;
-	peakTorque=3248.6;
+	enginePower=575.3;
+	peakTorque=2923.7;
 
 	class AnimationSources: AnimationSources
 	{

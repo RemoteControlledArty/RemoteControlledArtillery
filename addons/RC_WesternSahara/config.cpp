@@ -1,47 +1,40 @@
 class CfgPatches
 {
-	class RC_Aegis
+	class RC_WesternSahara
 	{
-		name="Remote Controlled Aegis";
+		name="Remote Controlled Western Sahara";
 		author="Ascent";
 
 		units[]=
 		{
-			RC_ICV_7_WD,
-			RC_ICV_7_WD_O,
-			RC_ICV_7_WD_I,
-
-			RC_IFV_7_WD,
-			RC_IFV_7_WD_O,
-			RC_IFV_7_WD_I,
-
-			RC_ICV_8_WD,
-			RC_ICV_8_WD_O,
-			RC_ICV_8_WD_I,
-
-			RC_IFV_8_WD,
-			RC_IFV_8_WD_O,
-			RC_IFV_8_WD_I
+			RC_IFV_9_A,
+			RC_IFV_9_WD,
+			RC_IFV_9_A_O,
+			RC_IFV_9_WD_O,
+			RC_IFV_9_A_I,
+			RC_IFV_9_WD_I
 		};
 
 		//add low detectability datalinked AP-5
 
+		/*
 		weapons[]=
 		{
 			"RC_autocannon_30mm_lxWS"
 		};
+		*/
 
 		requiredAddons[]=
 		{
 			"cba_main",
 			"RC_Artillery",
-			"A3_Aegis_Armor_F_Aegis_APC_Tracked_02",
-			"A3_Aegis_Armor_F_Aegis_APC_Wheeled_04"
+			"Vehicles_F_lxWS_APC_Wheeled_01"
 		};
 
 		skipWhenMissingDependencies=1;
 	};
 };
+
 
 //later required sensors
 class SensorTemplateDataLink;
@@ -63,21 +56,20 @@ class DefaultVehicleSystemsDisplayManagerRight;
 /*
 class CfgAmmo
 {
-	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
+	#include "\RC_WesternSahara\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 */
 class CfgMagazines
 {
-	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+	#include "\RC_WesternSahara\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
 class CfgWeapons
 {
-	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
+	#include "\RC_WesternSahara\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
 
 
 class CfgVehicles
 {
-	#include "\RC_Aegis\cfgVehicles\BTR_100.hpp"
-	#include "\RC_Aegis\cfgVehicles\BTR_T.hpp"
+	#include "\RC_WesternSahara\cfgVehicles\Patria_AMV_ATGM.hpp"
 };
