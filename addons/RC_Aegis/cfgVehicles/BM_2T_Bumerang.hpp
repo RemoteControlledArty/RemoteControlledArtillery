@@ -367,7 +367,6 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 					};
 					thermalMode[]={0};
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_APC_03_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
 			};
@@ -382,7 +381,6 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 					commanding=2;
 					//forceHideGunner=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
-					//turretInfoType="RscOptics_APC_Wheeled_03_commander";
 
 					weapons[]=
 					{
@@ -400,8 +398,6 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 					{
 						class Wide: RCWSOptics
 						{
-							//directionStabilized=1;	//unfortunately causes spinning camera bug
-
 							initAngleX=0;
 							minAngleX=-30;
 							maxAngleX=30;
@@ -418,30 +414,10 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 								"TI"
 							};
 							thermalMode[]={0};
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
 							gunnerOpticsEffect[]={};
 						};
 					};
-
-					/*
-					//no stabilization effect
-					class ViewOptics: ViewOptics
-					{
-						directionStabilized=1;
-						
-						initFov=0.9;
-						minFov=0.02;
-						maxFov=0.9;
-						visionMode[]=
-						{
-							"Normal",
-							"TI"
-						};
-						thermalMode[]={0};
-					};
-					*/
 				};
 			};
 		};
