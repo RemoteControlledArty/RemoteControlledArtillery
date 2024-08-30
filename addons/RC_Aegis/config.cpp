@@ -79,5 +79,5 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\RC_Aegis\cfgVehicles\BTR_100.hpp"
-	#include "\RC_Aegis\cfgVehicles\BTR_T.hpp"
+	#include "\RC_Aegis\cfgVehicles\BM_2T_Bumerang.hpp"
 };

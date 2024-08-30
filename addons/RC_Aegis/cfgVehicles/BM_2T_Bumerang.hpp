@@ -56,6 +56,11 @@ class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_30mm_lxWS";
+		};
 		class reload_cannon
 		{
 			source="reload";
@@ -72,7 +77,7 @@ class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 		};
 		class showSLATHull: showSLATHull
 		{
-			initPhase=0;
+			initPhase=1;
 		};
 	};
 	animationList[]=

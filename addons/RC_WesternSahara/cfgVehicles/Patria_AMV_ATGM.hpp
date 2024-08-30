@@ -122,6 +122,21 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 		{
 			initPhase=1;
 		};
+
+		/*
+		//not needed on original
+		animationList[]=
+		{
+			"showTracks",
+			0,
+			"showCamonetHull",
+			1,
+			"showBags",
+			0,
+			"showSLATHull",
+			1
+		};
+		*/
 	};
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"

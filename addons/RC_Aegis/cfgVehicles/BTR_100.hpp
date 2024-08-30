@@ -17,8 +17,6 @@ class RC_ICV_IFV_7_WD_Base: O_R_APC_Wheeled_04_cannon_F
 	class HitRMWheel;
 	class HitRBWheel;
 	class AnimationSources;
-	class showCamonetHull;
-	class showSLATHull;
 	class ViewOptics;
 	class ViewPilot;
 	class Components;
@@ -76,14 +74,6 @@ class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 		{
 			source="reload";
 			weapon="RC_autocannon_30mm_lxWS";
-		};
-		class showCamonetHull: showCamonetHull
-		{
-			initPhase=1;
-		};
-		class showSLATHull: showSLATHull
-		{
-			initPhase=1;
 		};
 	};
 
@@ -335,7 +325,6 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 						"TI"
 					};
 					thermalMode[]={0};
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_APC_03_m_F.p3d";
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
@@ -367,8 +356,6 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 					{
 						class Wide: RCWSOptics
 						{
-							//directionStabilized=1;	//unfortunately causes spinning camera bug
-
 							initAngleX=0;
 							minAngleX=-30;
 							maxAngleX=30;
@@ -386,28 +373,9 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 							};
 							thermalMode[]={0};
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 							gunnerOpticsEffect[]={};
 						};
 					};
-
-					/*
-					//no stabilization effect
-					class ViewOptics: ViewOptics
-					{
-						directionStabilized=1;
-						
-						initFov=0.9;
-						minFov=0.02;
-						maxFov=0.9;
-						visionMode[]=
-						{
-							"Normal",
-							"TI"
-						};
-						thermalMode[]={0};
-					};
-					*/
 				};
 			};
 		};
