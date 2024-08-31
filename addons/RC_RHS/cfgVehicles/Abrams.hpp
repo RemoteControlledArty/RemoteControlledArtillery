@@ -10,8 +10,9 @@ class RC_M1A2_TUSKII_Base: rhsusf_m1a2sep1tuskiid_usarmy
 	class CommanderOptics;
 	class ViewOptics;
 	class AnimationSources;
-	class ramp;
-	class HatchC;
+	class Loader;
+	class CommanderMG;
+	class LoaderMG;
 };
 class RC_M1A2_TUSKII_D_Base: RC_M1A2_TUSKII_Base
 {
@@ -69,6 +70,7 @@ class RC_M1A2_TUSKII_D_Base: RC_M1A2_TUSKII_Base
 		};
 	};
 
+	/*
 	class AnimationSources: AnimationSources
 	{
 		class recoil_source
@@ -87,18 +89,8 @@ class RC_M1A2_TUSKII_D_Base: RC_M1A2_TUSKII_Base
 		{
 			weapon="RC_RHS_weap_m240_bradley_coax";
 		};
-		class ramp: ramp
-		{
-			animPeriod=1.25;
-		};
-		class HatchC: HatchC
-		{
-			animPeriod=0.8;
-		};
-		class HatchG: HatchC
-		{
-		};
 	};
+	*/
 
 	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
 };
@@ -189,8 +181,6 @@ class RC_M1A2_TUSKII_D: RC_M1A2_TUSKII_D_Base
 					};
 					thermalMode[]={0};
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
-					//gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A1_2";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 					hitpoint="Hit_Optic_GPS_TI";
 				};
@@ -291,6 +281,20 @@ class RC_M1A2_TUSKII_D: RC_M1A2_TUSKII_D_Base
 					weapons[]=
 					{
 						"RC_Laserdesignator_vehicle",
+						"rhsusf_weap_M250",
+						"rhsusf_weap_duke"
+					};
+					magazines[]=
+					{
+						"Laserbatteries",
+						"rhsusf_mag_L8A3_12",
+						"rhsusf_mag_duke"
+					};
+
+					/*
+					weapons[]=
+					{
+						"RC_Laserdesignator_vehicle",
 						"rhsusf_weap_M257_8"
 					};
 					magazines[]=
@@ -298,6 +302,17 @@ class RC_M1A2_TUSKII_D: RC_M1A2_TUSKII_D_Base
 						"Laserbatteries",
 						"rhsusf_mag_L8A3_8",
 						"rhsusf_mag_L8A3_8"
+					};
+					*/
+
+					class Loader: Loader
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
+					class LoaderMG: LoaderMG
+					{
 					};
 				};
 			};
