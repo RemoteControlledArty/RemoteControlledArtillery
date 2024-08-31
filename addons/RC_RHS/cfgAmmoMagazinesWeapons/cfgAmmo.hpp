@@ -1,3 +1,17 @@
+//120mm
+class RHS_ammo_M792_HEI;
+class RC_RHS_ammo_M792_HEI_T_R: RHS_ammo_M792_HEI
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerStartTime=0.045;
+	tracerEndTime=4;
+
+	deflecting=1;
+	indirectHitRange=4;
+};
+
 //7.62x51mm
 class rhs_ammo_762x51_M80A1EPR_Ball;
 class RC_RHS_ammo_M80A1EPR_T_R: rhs_ammo_762x51_M80A1EPR_Ball

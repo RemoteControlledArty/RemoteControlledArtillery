@@ -1,3 +1,61 @@
+class rhs_weap_m256;
+class rhs_weap_m256_base: rhs_weap_m256
+{
+	class player;
+};
+class RC_RHS_weap_m256: rhs_weap_m256_base
+{
+	canLock=2;
+	//minZeroing=50;
+	//ballisticsComputer="2 + 16";
+	//FCSMaxLeadSpeed=25;
+
+	reloadTime=6;
+	magazineReloadTime=6;
+
+	class player: player
+	{
+		reloadTime=6;
+	};
+
+	magazines[] = {
+		//SABOT
+		"rhs_mag_M829A4",
+		"rhs_mag_M829A3",
+		"rhs_mag_M829A2",
+		"rhs_mag_M829A1",
+		"rhs_mag_M829",
+		//HEAT
+		"rhs_mag_M830",
+		"rhs_mag_M830A1",
+		//HE
+		"rhs_mag_M1069",
+		"rhs_mag_M1147",
+		//Canister
+		"rhs_mag_M1028",
+		//Smoke/WP
+		"rhs_mag_M416",
+		"rhs_mag_M829A4_max",
+		"rhs_mag_M829A3_max",
+		"rhs_mag_M829A2_max",
+		"rhs_mag_M829A1_max",
+		"rhs_mag_M829_max",
+		"rhs_mag_M830_max",
+		"rhs_mag_M830A1_max",
+		"rhs_mag_M1069_max",
+		"rhs_mag_M1147_max",
+		"rhs_mag_M1028_max",
+		"rhs_mag_M416_max",
+
+		//Datalink Missle
+		"RC_4Rnd_120mm_DLG_cannon_missiles",
+		"RC_3Rnd_120mm_DLG_cannon_missiles",
+		"RC_2Rnd_120mm_DLG_cannon_missiles",
+		"RC_1Rnd_120mm_DLG_cannon_missiles"
+	};
+};
+
+
 class rhs_weap_m240_bradley_coax;
 class rhs_weap_m240_bradley_coax_base: rhs_weap_m240_bradley_coax
 {

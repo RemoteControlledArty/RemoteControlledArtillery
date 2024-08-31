@@ -1,3 +1,16 @@
+//120mm
+class rhs_mag_M829A3;
+class RC_RHS_mag_M829A3: rhs_mag_M829A3
+{
+	ammo="RC_RHS_ammo_M80A1EPR_T_R";
+};
+class rhs_mag_M830A1;
+class RC_RHS_mag_M830A1: rhs_mag_M830A1
+{
+	ammo="RC_RHS_ammo_M80A1EPR_T_R";
+};
+
+
 //7.62x51mm
 class rhs_mag_1100Rnd_762x51_M240;
 class RC_RHS_mag_1100Rnd_762x51_T_R: rhs_mag_1100Rnd_762x51_M240

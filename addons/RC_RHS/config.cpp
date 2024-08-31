@@ -7,6 +7,16 @@ class CfgPatches
 
 		units[]=
 		{
+			RC_M1A2_D_B,
+			RC_M1A2__WD_B,
+			RC_M1A2_D_I,
+			RC_M1A2_WD_I,
+
+			RC_M1A2_TUSKII_D_B,
+			RC_M1A2_TUSKII_WD_B,
+			RC_M1A2_TUSKII_D_I,
+			RC_M1A2_TUSKII_WD_I,
+
 			RC_M2A2_D_B,
 			RC_M2A2_D_I,
 			RC_M2A2_WD_B,
@@ -159,7 +169,7 @@ class CfgWeapons
 
 class CfgVehicles
 {
-	//#include "\RC_RHS\cfgVehicles\Abrams.hpp"
+	#include "\RC_RHS\cfgVehicles\Abrams.hpp"
 	#include "\RC_RHS\cfgVehicles\Bradley.hpp"
 	#include "\RC_RHS\cfgVehicles\FlatbedTruck.hpp"
 	#include "\RC_RHS\cfgVehicles\M119_105mm.hpp"
