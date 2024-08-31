@@ -522,9 +522,10 @@ class RC_MRL_HEX_O: RC_MRL_DIG
 
 	hiddenSelectionsTextures[]=
 	{
-		"\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa",
-		"\a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
-		"\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
+		"\A3\Soft_F_Beta\Truck_02\Data\Truck_02_kab_OPFOR_CO.paa",
+		"\A3\Soft_F_Beta\Truck_02\Data\Truck_02_int_CO.paa",
+		"\A3\Soft_F_Gamma\Truck_02\Data\Truck_02_MRL_OPFOR_CO.paa",
+		"\A3\Soft_F_Beta\Truck_02\Data\Truck_02_chassis_OPFOR_CO.paa"
 	};
 };
 class RC_MRL_DIG_I: RC_MRL_DIG
@@ -577,7 +578,8 @@ class RC_MRL_ReTex_WD: RC_MRL_DIG
 	{
 		"iveco\data\iveco_front_wd.paa",
 		"a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
-		"iveco\data\truck_02_mrl_wd_co.paa"
+		"iveco\data\truck_02_mrl_wd_co.paa",
+		"\A3\Soft_F_Beta\Truck_02\Data\Truck_02_chassis_CO.paa"
 	};
 };
 class RC_MRL_ReTex_WD_O: RC_MRL_ReTex_WD
@@ -602,7 +604,8 @@ class RC_MRL_ReTex_D: RC_MRL_DIG
 	{
 		"iveco\data\iveco_front_d.paa",
 		"a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
-		"iveco\data\truck_02_mrl_d_co.paa"
+		"iveco\data\truck_02_mrl_d_co.paa",
+		"\A3\Soft_F_Beta\Truck_02\Data\Truck_02_chassis_CO.paa"
 	};
 };
 class RC_MRL_ReTex_D_O: RC_MRL_ReTex_D
@@ -627,7 +630,8 @@ class RC_MRL_ReTex_A: RC_MRL_DIG
 	{
 		"iveco\data\iveco_front_e.paa",
 		"a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
-		"iveco\data\truck_02_mrl_e_co.paa"
+		"iveco\data\truck_02_mrl_e_co.paa",
+		"\A3\Soft_F_Beta\Truck_02\Data\Truck_02_chassis_CO.paa"
 	};
 };
 class RC_MRL_ReTex_A_O: RC_MRL_ReTex_A

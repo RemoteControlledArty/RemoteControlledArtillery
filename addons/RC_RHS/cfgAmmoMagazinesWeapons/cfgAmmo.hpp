@@ -1,6 +1,7 @@
 //120mm
-class RHS_ammo_M792_HEI;
-class RC_RHS_ammo_M792_HEI_T_R: RHS_ammo_M792_HEI
+/*
+class RHS_ammo_120;
+class RC_RHS_ammo_120: RHS_ammo_120
 {
 	laserLock=1;
 	irLock=1;
@@ -11,6 +12,8 @@ class RC_RHS_ammo_M792_HEI_T_R: RHS_ammo_M792_HEI
 	deflecting=1;
 	indirectHitRange=4;
 };
+*/
+
 
 //7.62x51mm
 class rhs_ammo_762x51_M80A1EPR_Ball;

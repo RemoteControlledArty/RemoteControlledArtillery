@@ -115,11 +115,12 @@ class RC_M1A2_TUSKII_D: RC_M1A2_TUSKII_D_Base
 			showAllTargets="2 + 4";
 			commanding=3;
 			allowTabLock=1;
-			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+			//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 			weapons[]=
 			{
 				"rhs_weap_m256",
+				"RHS_M2_Abrams_Gunner",
 				"rhs_weap_m240_abrams_coax",
 				"rhs_weap_fcs"
 			};
@@ -127,6 +128,7 @@ class RC_M1A2_TUSKII_D: RC_M1A2_TUSKII_D_Base
 			{
 				"rhs_mag_M829A3",
 				"rhs_mag_M830A1",
+				"rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red",
 				"rhs_mag_762x51_M240_1200",
 				"rhs_mag_762x51_M240_1200",
 				"rhs_mag_762x51_M240_1200",
@@ -139,6 +141,32 @@ class RC_M1A2_TUSKII_D: RC_M1A2_TUSKII_D_Base
 				"rhs_laserfcsmag",
 				"rhs_laserfcsmag"
 			};
+
+			/*
+			weapons[]=
+			{
+				"rhs_weap_m256",
+				"rhs_weap_m240_abrams_coax",
+				"rhs_weap_fcs"
+			};
+			magazines[]=
+			{
+				"rhs_mag_M829A3",
+				"rhs_mag_M830A1",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
+				"rhs_mag_762x51_M240_1200",
+				"rhs_mag_762x51_M240_1200",
+				"rhs_mag_762x51_M240_1200",
+				"rhs_mag_762x51_M240_1200",
+				"rhs_mag_762x51_M240_1200",
+				"rhs_mag_762x51_M240_1200",
+				"rhs_mag_762x51_M240_1200",
+				"rhs_mag_762x51_M240_1200",
+				"rhs_mag_762x51_M240_1200",
+				"rhs_laserfcsmag",
+				"rhs_laserfcsmag"
+			};
+			*/
 
 			class OpticsIn
 			{
@@ -160,8 +188,11 @@ class RC_M1A2_TUSKII_D: RC_M1A2_TUSKII_D_Base
 						"TI"
 					};
 					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
+					//gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A1_2";
+					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
+					hitpoint="Hit_Optic_GPS_TI";
 				};
 			};
 			
