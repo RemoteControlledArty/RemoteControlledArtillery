@@ -1,7 +1,26 @@
 //120mm
+class rhs_ammo_M829A4;
+class RC_RHS_ammo_M829A4: rhs_ammo_M829A4
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerStartTime=0.045;
+	tracerEndTime=4;
+};
 /*
-class RHS_ammo_120;
-class RC_RHS_ammo_120: RHS_ammo_120
+class rhs_ammo_M829A3;
+class RC_RHS_ammo_M829A3: rhs_ammo_M829A3
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerStartTime=0.045;
+	tracerEndTime=4;
+};
+*/
+class rhs_ammo_M830A1;
+class RC_RHS_ammo_M830A1: rhs_ammo_M830A1
 {
 	laserLock=1;
 	irLock=1;
@@ -9,10 +28,11 @@ class RC_RHS_ammo_120: RHS_ammo_120
 	tracerStartTime=0.045;
 	tracerEndTime=4;
 
-	deflecting=1;
-	indirectHitRange=4;
+	indirectHit=50;
+	indirectHitRange=10;
+	deflecting=4;
+	craterEffects="AAMissileCrater";
 };
-*/
 
 
 //7.62x51mm

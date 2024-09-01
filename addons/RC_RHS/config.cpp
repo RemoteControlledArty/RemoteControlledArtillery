@@ -7,15 +7,15 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_M1A2_D_B,
-			RC_M1A2__WD_B,
-			RC_M1A2_D_I,
-			RC_M1A2_WD_I,
+			RC_M1A2_SEPV2_D_B,
+			RC_M1A2_SEPV2_WD_B,
+			RC_M1A2_SEPV2_D_I,
+			RC_M1A2_SEPV2_WD_I,
 
-			RC_M1A2_TUSKII_D_B,
-			RC_M1A2_TUSKII_WD_B,
-			RC_M1A2_TUSKII_D_I,
-			RC_M1A2_TUSKII_WD_I,
+			RC_M1A2_SEPV2_NLOS_D_B,
+			RC_M1A2_SEPV2_NLOS_WD_B,
+			RC_M1A2_SEPV2_NLOS_D_I,
+			RC_M1A2_SEPV2_NLOS_WD_I,
 
 			RC_M2A2_D_B,
 			RC_M2A2_D_I,
@@ -91,9 +91,11 @@ class CfgPatches
 
 		weapons[]=
 		{
-			RC_RHS_weap_m240_bradley_coax,
+			RC_RHS_weap_m256,
+			RC_RHS_weap_m240_abrams_coax,
 
 			RC_RHS_weap_M242BC,
+			RC_RHS_weap_m240_bradley_coax,
 
 			RC_RHS_weap_TOW_Launcher,
 			RC_Bradley_Missile_Launcher,
@@ -107,6 +109,7 @@ class CfgPatches
 			"cba_main",
 			"RC_Artillery",
 			"RHS_US_A2Port_Armor",
+			"rhsusf_c_m1a2",
 			"rhsusf_c_statics",
 			"rhsusf_c_stryker"
 		};

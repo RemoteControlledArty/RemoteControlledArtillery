@@ -1,14 +1,65 @@
 //120mm
-class rhs_mag_M829A3;
-class RC_RHS_mag_M829A3: rhs_mag_M829A3
+class rhs_mag_M829A4;
+class RC_RHS_mag_M829A4_20Rnd: rhs_mag_M829A4
 {
-	ammo="RC_RHS_ammo_M80A1EPR_T_R";
+	displayNameShort="M829A4 AP";
+	ammo="RC_RHS_ammo_M829A4";
+	count=20;
+};
+class RC_RHS_mag_M829A4_15Rnd: RC_RHS_mag_M829A4_20Rnd
+{
+	count=15;
+};
+class RC_RHS_mag_M829A4_10Rnd: RC_RHS_mag_M829A4_20Rnd
+{
+	count=10;
 };
 class rhs_mag_M830A1;
-class RC_RHS_mag_M830A1: rhs_mag_M830A1
+class RC_RHS_mag_M830A1_20Rnd: rhs_mag_M830A1
 {
-	ammo="RC_RHS_ammo_M80A1EPR_T_R";
+	displayNameShort="M830A1 MP";
+	ammo="RC_RHS_ammo_M830A1";
+	count=20;
 };
+class RC_RHS_mag_M830A1_15Rnd: RC_RHS_mag_M830A1_20Rnd
+{
+	count=15;
+};
+class RC_RHS_mag_M830A1_10Rnd: RC_RHS_mag_M830A1_20Rnd
+{
+	count=10;
+};
+
+
+/*
+//SABOT
+"rhs_mag_M829A4",
+"rhs_mag_M829A3",
+"rhs_mag_M829A2",
+"rhs_mag_M829A1",
+"rhs_mag_M829",
+//HEAT
+"rhs_mag_M830",
+"rhs_mag_M830A1",
+//HE
+"rhs_mag_M1069",
+"rhs_mag_M1147",
+//Canister
+"rhs_mag_M1028",
+//Smoke/WP
+"rhs_mag_M416",
+"rhs_mag_M829A4_max",
+"rhs_mag_M829A3_max",
+"rhs_mag_M829A2_max",
+"rhs_mag_M829A1_max",
+"rhs_mag_M829_max",
+"rhs_mag_M830_max",
+"rhs_mag_M830A1_max",
+"rhs_mag_M1069_max",
+"rhs_mag_M1147_max",
+"rhs_mag_M1028_max",
+"rhs_mag_M416_max"
+*/
 
 
 //7.62x51mm
@@ -23,6 +74,14 @@ class RC_RHS_mag_1100Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_T_R
 	ammo="RC_RHS_ammo_M61_AP_T_R";
 	displayname="7.62x51mm AP";
 	displaynameshort="M61 AP";
+};
+class RC_RHS_mag_1200Rnd_762x51_T_R: RC_RHS_mag_1100Rnd_762x51_T_R
+{
+	count=1200;
+};
+class RC_RHS_mag_1200Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_M61_T_R
+{
+	count=1200;
 };
 
 
@@ -151,6 +210,11 @@ class RC_RHS_mag_200rnd_127x99: rhs_mag_200rnd_127x99_mag
 {
 	ammo="RC_RHS_ammo_127x99_Ball";
 };
+class RC_RHS_mag_400rnd_127x99: RC_RHS_mag_200rnd_127x99
+{
+	count=400;
+};
+
 
 class rhs_mag_200rnd_127x99_mag_Tracer_Red;
 class RC_RHS_mag_200rnd_127x99_T_R: rhs_mag_200rnd_127x99_mag_Tracer_Red
@@ -158,12 +222,22 @@ class RC_RHS_mag_200rnd_127x99_T_R: rhs_mag_200rnd_127x99_mag_Tracer_Red
 	ammo="RC_RHS_ammo_127x99_Ball_T_R";
 	tracersEvery=1;
 };
+class RC_RHS_mag_400rnd_127x99_T_R: RC_RHS_mag_200rnd_127x99_T_R
+{
+	count=400;
+};
+
 
 class rhs_mag_200rnd_127x99_SLAP_mag;
 class RC_RHS_mag_200rnd_127x99_SLAP: rhs_mag_200rnd_127x99_SLAP_mag
 {
 	ammo="RC_RHS_ammo_127x99_SLAP";
 };
+class RC_RHS_mag_400rnd_127x99_SLAP: RC_RHS_mag_200rnd_127x99_SLAP
+{
+	count=400;
+};
+
 
 class rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red;
 class RC_RHS_mag_200rnd_127x99_SLAP_T_R: rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red
@@ -171,6 +245,11 @@ class RC_RHS_mag_200rnd_127x99_SLAP_T_R: rhs_mag_200rnd_127x99_SLAP_mag_Tracer_R
 	ammo="RC_RHS_mag_100rnd_127x99_SLAP_T_R";
 	tracersEvery=1;
 };
+class RC_RHS_mag_400rnd_127x99_SLAP_T_R: RC_RHS_mag_200rnd_127x99_SLAP_T_R
+{
+	count=400;
+};
+
 
 class RC_RHS_mag_100rnd_127x99_T_R_nonlock: RC_RHS_mag_200rnd_127x99_T_R
 {

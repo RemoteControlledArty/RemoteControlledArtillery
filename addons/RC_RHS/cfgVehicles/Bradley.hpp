@@ -365,6 +365,8 @@ class RC_M2A3_BUSKIII_WD_I: RC_M2A3_BUSKIII_WD_B
 
 class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 {
+	displayName="M2A3 Bradley NLOS";
+	
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -403,8 +405,6 @@ class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 			};
 		};
 	};
-
-	displayName="M2A3 Bradley NLOS";
 };
 class RC_M2A3_BUSKIII_NLOS_WD_B: RC_M2A3_BUSKIII_NLOS_D_B
 {

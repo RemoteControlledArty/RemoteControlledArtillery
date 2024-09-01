@@ -155,6 +155,7 @@ new:
 -fixed major bug of gunner being fubar after accidentally being controlled by terminal, with the tradeoff of "armed semi manned" vehicles for now not being interactable by terminal anymore
 -tracer color fixes
 -fixed Wiesel II manned driverless versions for multiplayer use
+-fixed Pandur II not having missles due to a change of magazines
 
 
 DONE - FEATURES:

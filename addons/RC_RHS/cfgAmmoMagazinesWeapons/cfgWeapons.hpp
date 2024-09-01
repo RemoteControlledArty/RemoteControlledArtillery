@@ -18,16 +18,21 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 		reloadTime=6;
 	};
 
-	magazines[] = {
+	magazines[]=
+	{
 		//SABOT
-		"rhs_mag_M829A4",
+		"RC_RHS_mag_M829A4_20Rnd",
+		"RC_RHS_mag_M829A4_15Rnd",
+		"RC_RHS_mag_M829A4_10Rnd",
 		"rhs_mag_M829A3",
 		"rhs_mag_M829A2",
 		"rhs_mag_M829A1",
 		"rhs_mag_M829",
 		//HEAT
+		"RC_RHS_mag_M830A1_20Rnd",
+		"RC_RHS_mag_M830A1_15Rnd",
+		"RC_RHS_mag_M830A1_10Rnd",
 		"rhs_mag_M830",
-		"rhs_mag_M830A1",
 		//HE
 		"rhs_mag_M1069",
 		"rhs_mag_M1147",
@@ -52,6 +57,71 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 		"RC_3Rnd_120mm_DLG_cannon_missiles",
 		"RC_2Rnd_120mm_DLG_cannon_missiles",
 		"RC_1Rnd_120mm_DLG_cannon_missiles"
+	};
+};
+
+
+class rhs_M2_CROWS_M153_Abrams;
+class rhs_M2_CROWS_M153_Abrams_base: rhs_M2_CROWS_M153_Abrams
+{
+	class manual;
+};
+class RC_RHS_M2_CROWS_M153_Abrams: rhs_M2_CROWS_M153_Abrams_base
+{
+	canLock=2;
+	minZeroing=50;
+	maxZeroing=3000;
+	magazines[]=
+	{
+		"RC_RHS_mag_400rnd_127x99_SLAP_T_R",
+		"RC_RHS_mag_400rnd_127x99_T_R"
+	};
+	class manual: manual
+	{
+		dispersion=0.001;
+	};
+};
+
+
+class rhs_M2_Abrams_Gunner;
+class rhs_M2_Abrams_Gunner_base: rhs_M2_Abrams_Gunner
+{
+	class manual;
+};
+class RC_RHS_M2_Abrams_Gunner: rhs_M2_Abrams_Gunner_base
+{
+	canLock=2;
+	minZeroing=50;
+	maxZeroing=3000;
+	magazines[]=
+	{
+		"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+		"RC_RHS_mag_200rnd_127x99_T_R"
+	};
+	class manual: manual
+	{
+		dispersion=0.001;
+	};
+};
+
+
+class rhs_weap_m240_abrams_coax;
+class rhs_weap_m240_abrams_coax_base: rhs_weap_m240_abrams_coax
+{
+	class manual;
+};
+class RC_RHS_weap_m240_abrams_coax: rhs_weap_m240_abrams_coax_base
+{
+	canLock=2;
+	minZeroing=50;
+	magazines[]=
+	{
+		"RC_RHS_mag_1200Rnd_762x51_T_R",
+		"RC_RHS_mag_1200Rnd_762x51_M61_T_R"
+	};
+	class manual: manual
+	{
+		dispersion=0.001;
 	};
 };
 
@@ -217,6 +287,7 @@ class RC_RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
 {
 	canLock=2;
 	minZeroing=50;
+	maxZeroing=3000;
 	magazines[] =
 	{
 		"RC_RHS_mag_200rnd_127x99",
