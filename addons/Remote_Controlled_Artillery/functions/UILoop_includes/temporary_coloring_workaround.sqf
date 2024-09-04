@@ -41,7 +41,7 @@ switch (true) do {
 
 switch (true) do {
 	// If Azimuth is close/correct change the Azimuth text color
-	case((_realAzimuth < (_targetAzimuth + 0.25)) and (_realAzimuth > (_targetAzimuth - 0.5))): {_ctrlAzimuth ctrlSetTextColor [0,1,0,1];};
+	case((_realAzimuth < (_targetAzimuth + 0.25)) and (_realAzimuth > (_targetAzimuth - 0.25))): {_ctrlAzimuth ctrlSetTextColor [0,1,0,1];};
 	case((_realAzimuth < (_targetAzimuth + 1)) and (_realAzimuth > (_targetAzimuth - 1))): {_ctrlAzimuth ctrlSetTextColor [0.725,1,0.5,1];};
 	case((_realAzimuth < (_targetAzimuth + 2)) and (_realAzimuth > (_targetAzimuth - 2))): {_ctrlAzimuth ctrlSetTextColor [0.8,1,0.5,1];};
 	case((_realAzimuth < (_targetAzimuth + 3)) and (_realAzimuth > (_targetAzimuth - 3))): {_ctrlAzimuth ctrlSetTextColor [0.85,1,0.5,1];};

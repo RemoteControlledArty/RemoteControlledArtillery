@@ -8,11 +8,13 @@ class CfgPatches
 		units[]=
 		{
 			RC_IFV_9_A,
-			RC_IFV_9_WD,
 			RC_IFV_9_A_O,
-			RC_IFV_9_WD_O,
-			RC_IFV_9_A_I,
-			RC_IFV_9_WD_I
+			RC_IFV_9_A_I
+		};
+
+		weapons[]=
+		{
+			"RC_IFV_Missile_Launcher_lxWS"
 		};
 
 		requiredAddons[]=
