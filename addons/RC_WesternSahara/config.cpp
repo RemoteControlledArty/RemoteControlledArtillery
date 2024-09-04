@@ -15,15 +15,6 @@ class CfgPatches
 			RC_IFV_9_WD_I
 		};
 
-		//add low detectability datalinked AP-5
-
-		/*
-		weapons[]=
-		{
-			"RC_autocannon_30mm_lxWS"
-		};
-		*/
-
 		requiredAddons[]=
 		{
 			"cba_main",

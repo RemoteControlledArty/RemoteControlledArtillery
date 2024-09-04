@@ -55,16 +55,15 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 	enginePower=593.8;
 	peakTorque=3017.6;
 
-	/*
 	hiddenSelectionsTextures[]=
 	{
 		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_base_co.paa",
 		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_adds_co.paa",
 		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_tows_co.paa",
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
-		"a3\Armor_F\Data\cage_sand_CO.paa"
+		"a3\Armor_F\Data\cage_sand_CO.paa",
+		"lxws\vehicles_f_lxws\data\APC_Wheeled_01\APC_Wheeled_01_lxws_CO.paa"
 	};
-	*/
 	
 	class HitPoints: HitPoints
 	{
@@ -122,21 +121,22 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 		{
 			initPhase=1;
 		};
+	};
 
-		/*
-		//not needed on original
-		animationList[]=
-		{
-			"showTracks",
-			0,
-			"showCamonetHull",
-			1,
-			"showBags",
-			0,
-			"showSLATHull",
-			1
-		};
-		*/
+	animationList[] =
+	{
+		"showBags",
+		0,
+		"showCamonetHull",
+		1,
+		"showCamonetCannon",
+		1,
+		"showCamonetTurret",
+		1,
+		"showSLATHull",
+		1,
+		"showSLATTurret",
+		1
 	};
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
@@ -330,94 +330,6 @@ class RC_IFV_9_A_O: RC_IFV_9_A
 	};
 };
 class RC_IFV_9_A_I: RC_IFV_9_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_4Rnd_IFV_MP_NLOS",
-				"RC_4Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-
-
-class RC_IFV_9_WD: RC_IFV_9_A
-{
-	/*
-	DLC="Expansion";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
-		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"a3\Armor_F\Data\cage_olive_CO.paa"
-	};
-	*/
-};
-class RC_IFV_9_WD_O: RC_IFV_9_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_4Rnd_IFV_MP_NLOS",
-				"RC_4Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-class RC_IFV_9_WD_I: RC_IFV_9_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

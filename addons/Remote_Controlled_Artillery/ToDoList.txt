@@ -18,6 +18,7 @@ minor:
 notes:
 -report bug to ace team: turret is locked unable to adjust up/down, when scope of player is adjustable, despite being in remote control
 -report bug to ace team: crl+h cuts connection and destroys UV *only with my hotkeys
+-report bug to ace team: one of the left/right vehicle panels closes when opening map
 -find solution for ace r reload
 -soon with arma update connectionfix likely wont be needed anymore
 
@@ -295,6 +296,11 @@ new:
 -added 20mm AC Wiesel, also improved the ATGM variant
 -added ammo dependant RPM for 20mm, 240RPM for HE, 300RPM for AP
 -added LOCK DETECTION SYSTEM for AFV's, additional to the already included missile approach warning
+
+-added optional Aegis soft dependancy (to feature their vehicles)
+-added optional Western Sahara soft dependancy (to feature their vehicles)
+-added Western Sahara/Aegis BM-2R-Bumerang (olive version), for all factions
+-added Aegis BTR100, and RC BTR-100 unarmed (olive version), for all factions
 
 
 DONE - QUALITY OF LIFE:

@@ -10,13 +10,16 @@
 // Need to exit early if we aren't a client
 if (!hasInterface) exitWith {};
 
+//general hashmaps
+RC_isAceLoadedHash = createHashMap;
+
 //vehicle hashmaps
 //RC_localizeHash = createHashMap;	//not yet used
 RC_isRCArtyHash = createHashMap;
+RC_ArtyTypeHash = createHashMap;
 RC_BarrelAGLHash = createHashMap;
 RC_BarrelLenghtHash = createHashMap;
 RC_BarrelExtendsHash = createHashMap;
-RC_isMortarHash = createHashMap;
 
 //magazine hashmaps
 RC_advisedTrajectoryHash = createHashMap;
@@ -64,18 +67,42 @@ RC_Artillery_UI = [] spawn {
 			// Get the UI so we can see if it has Distance or not
 			_AceUI = uiNamespace getVariable ["ACE_dlgArtillery", displayNull];
 			_RCAUI = uiNamespace getVariable ["RCA_ArtyUI", displayNull];
-
+			
 			// CBA Option for Allowing the Artillery Computer in RC Artillery UGVs, without ACE its stays on for Mortars (as they dont work manually without ACE atm)
 			// Remote Execute this to make it Multiplayer Compatible
-			private _isMortar = RC_isMortarHash get _uavClass;
-			if (isNil "_isMortar") then {
-				_isMortar = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCisMortar") isEqualTo 1;
-				RC_isMortarHash set [_uavClass, _isMortar];
+			private _ArtyType = RC_ArtyTypeHash get _uavClass;
+			if (isNil "_ArtyType") then {
+				_ArtyType = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_ArtyType");
+				RC_ArtyTypeHash set [_uavClass, _ArtyType];
 			};
 			
-			_aceLoaded = isClass (configFile >> "CfgPatches" >> "ace_main");
+			private _isAceLoaded = RC_isAceLoadedHash get _uavClass;
+			if (isNil "_isAceLoaded") then {
+				_isAceLoaded = isClass (configFile >> "CfgPatches" >> "ace_main");
+				RC_isAceLoadedHash set [_uavClass, _isAceLoaded];
+			};
 
-			[(!RC_Allow_Vanilla_Arty_Computer && { !_aceLoaded && { _isMortar } })] remoteExec ["enableEngineArtillery", _uav];
+			if (_isAceLoaded) then {
+				switch (true) do {
+					case(_ArtyType == 1): {[RC_allowPortableMortarComputer] remoteExec ["enableEngineArtillery", _uav];};
+					case(_ArtyType == 2): {[RC_allowVehicleMortarComputer] remoteExec ["enableEngineArtillery", _uav];};
+					case(_ArtyType == 3): {[RC_allowHowitzerComputer] remoteExec ["enableEngineArtillery", _uav];};
+					case(_ArtyType == 4): {[RC_allowMLRSComputer] remoteExec ["enableEngineArtillery", _uav];};
+
+					default {[true] remoteExec ["enableEngineArtillery", _uav];};
+				};
+			} else {
+				switch (true) do {
+					case(_ArtyType == 1): {[true] remoteExec ["enableEngineArtillery", _uav];};
+					case(_ArtyType == 2): {[true] remoteExec ["enableEngineArtillery", _uav];};
+					case(_ArtyType == 3): {[RC_allowHowitzerComputer] remoteExec ["enableEngineArtillery", _uav];};
+					case(_ArtyType == 4): {[RC_allowMLRSComputer] remoteExec ["enableEngineArtillery", _uav];};
+
+					default {[true] remoteExec ["enableEngineArtillery", _uav];};
+				};
+			};
+
+
 
 			_RCA_CurrentArtyDisplay = displayNull;
 			// If our one is Null we use theirs
@@ -287,6 +314,36 @@ RC_Artillery_UI = [] spawn {
 					_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
 					_ctrlMessage ctrlSetText "NOT ALIGNED";
 				};
+				
+				/*
+				switch (true) do {
+					case((_realElevation < (_lowAngleSol + 0.25)) and (_realElevation > (_lowAngleSol - 0.25))): {
+						_ctrlMessage ctrlSetTextColor [0, 1, 0, 1];
+						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
+						_ctrlMessage ctrlSetText "ALIGNED";
+					};
+					case((_realElevation < (_highAngleSol + 0.25)) and (_realElevation > (_highAngleSol - 0.25))): {
+						_ctrlMessage ctrlSetTextColor [0, 1, 0, 1];
+						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
+						_ctrlMessage ctrlSetText "ALIGNED";
+					};
+					case((_realElevation < (_lowAngleSol + 0.5)) and (_realElevation > (_lowAngleSol - 0.5))): {
+						_ctrlMessage ctrlSetTextColor [1,1,0.5,1];
+						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
+						_ctrlMessage ctrlSetText "ALMOST ALIGNED";
+					};
+					case((_realElevation < (_highAngleSol + 0.5)) and (_realElevation > (_highAngleSol - 0.5))): {
+						_ctrlMessage ctrlSetTextColor [1,1,0.5,1];
+						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
+						_ctrlMessage ctrlSetText "ALMOST ALIGNED";
+					};
+					default {
+						_ctrlMessage ctrlSetTextColor [1, 0, 0, 1];
+						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
+						_ctrlMessage ctrlSetText "NOT ALIGNED";
+					};
+				};
+				*/
 				
 				// Parse these back to Numbers incase they are NaN
 				_highAngleSol = parseNumber str _highAngleSol;

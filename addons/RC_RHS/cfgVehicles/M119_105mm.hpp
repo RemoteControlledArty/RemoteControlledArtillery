@@ -8,13 +8,14 @@ class RC_M119_base: RHS_M119_D
 	class EventHandlers;
 	class Hitpoints;
 	class AnimationSources;
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	scope=0;
 	scopeCurator=0;
+
+	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=0.8;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
-	//RC_isMortar=1; //for Mortars only, which dont work correctly in manual fire atm without having ACE installed
 };
 class RC_M119: RC_M119_base
 {

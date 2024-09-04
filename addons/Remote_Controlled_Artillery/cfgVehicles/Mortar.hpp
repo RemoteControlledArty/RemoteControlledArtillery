@@ -7,13 +7,14 @@ class RC_Mortar_base: B_Mortar_01_F
 	class ViewOptics;
 	class Components;
 	class EventHandlers;
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	scope=0;
 	scopeCurator=0;
+
+	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
-	RC_isMortar=1; //for Mortars only, which dont work correctly in manual fire atm without having ACE installed
 };
 class RC_Mortar: RC_Mortar_base
 {
@@ -285,6 +286,8 @@ class RC_VehicleMortar: RC_Mortar
 		init="insert script for mortar leg hiding";
 	};
 	*/
+
+	RC_ArtyType=2; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	displayName="RC Vehicle Mortar 6km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";

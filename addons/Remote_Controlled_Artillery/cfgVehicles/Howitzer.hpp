@@ -16,7 +16,9 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	class Components;
 	scope=0;
 	scopeCurator=0;
+
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -413,7 +415,9 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 	class Components;
 	scope=0;
 	scopeCurator=0;
+
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -754,7 +758,9 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 	class AnimationSources;
 	scope=0;
 	scopeCurator=0;
+
 	isRCArty=1;
+	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=3.5;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy

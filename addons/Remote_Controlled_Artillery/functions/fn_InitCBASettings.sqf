@@ -9,10 +9,56 @@
     false
 ] call CBA_fnc_addSetting;
 
+/*
 [
     "RC_Allow_Vanilla_Arty_Computer",
     "CHECKBOX",
     ["allow lame vanilla arty computer", "When this is ticked the vanilla Artillery Computer can be used, without ACE it cannot be disabled for Mortars. Vanilla computer has high trajectory only, so worse TOF and accuracy."],
+    ["Remote Controlled Artillery"],
+    false,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+*/
+
+[
+    "RC_allowPortableMortarComputer",
+    "CHECKBOX",
+    ["allow lame vanilla arty computer for portable mortars", "When this is ticked the vanilla Artillery Computer can be used for portable mortars, without ACE it cannot be disabled for Mortars. Vanilla computer has high trajectory only, so worse TOF and accuracy."],
+    ["Remote Controlled Artillery"],
+    false,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_allowVehicleMortarComputer",
+    "CHECKBOX",
+    ["allow lame vanilla arty computer for vehicle mortars", "When this is ticked the vanilla Artillery Computer can be used for vehicle mortars, without ACE it cannot be disabled for Mortars. Vanilla computer has high trajectory only, so worse TOF and accuracy."],
+    ["Remote Controlled Artillery"],
+    false,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_allowHowitzerComputer",
+    "CHECKBOX",
+    ["allow lame vanilla arty computer for howitzers", "When this is ticked the vanilla Artillery Computer can be used for howitzers, without ACE it cannot be disabled for Mortars. Vanilla computer has high trajectory only, so worse TOF and accuracy."],
+    ["Remote Controlled Artillery"],
+    false,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_allowMLRSComputer",
+    "CHECKBOX",
+    ["allow lame vanilla arty computer for MLRS/MRL", "When this is ticked the vanilla Artillery Computer can be used for MLRS/MRL, without ACE it cannot be disabled for Mortars. Vanilla computer has high trajectory only, so worse TOF and accuracy."],
     ["Remote Controlled Artillery"],
     false,
     true,
@@ -37,7 +83,7 @@
 [
     "RC_Arty_EL_Diff",
     "CHECKBOX",
-    ["elevation difference reference", "When ticked the Elevation Difference shown is the Target Compared to the Artillery Piece, if unticked the other way."],
+    ["elevation difference reference", "When ticked the Elevation Difference shown is the Target compared to the Artillery Piece, if unticked the other way."],
     ["Remote Controlled Artillery"],
     true,
     true,

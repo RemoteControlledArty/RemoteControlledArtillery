@@ -21,7 +21,11 @@ class CfgPatches
 
 			RC_IFV_8_WD,
 			RC_IFV_8_WD_O,
-			RC_IFV_8_WD_I
+			RC_IFV_8_WD_I,
+
+			RC_IFV_9_WD,
+			RC_IFV_9_WD_O,
+			RC_IFV_9_WD_I
 		};
 
 		//add low detectability datalinked AP-5
@@ -35,6 +39,7 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
+			"A3_Aegis_Armor_F_Aegis_APC_Wheeled_01",
 			"A3_Aegis_Armor_F_Aegis_APC_Tracked_02",
 			"A3_Aegis_Armor_F_Aegis_APC_Wheeled_04"
 		};
@@ -80,4 +85,5 @@ class CfgVehicles
 {
 	#include "\RC_Aegis\cfgVehicles\BTR_100.hpp"
 	#include "\RC_Aegis\cfgVehicles\BM_2T_Bumerang.hpp"
+	#include "\RC_Aegis\cfgVehicles\Patria_AMV_ATGM_WD.hpp"
 };
