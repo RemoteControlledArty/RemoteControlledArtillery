@@ -302,6 +302,8 @@ new:
 -added Western Sahara/Aegis BM-2R-Bumerang (olive version), for all factions
 -added Aegis BTR100, and RC BTR-100 unarmed (olive version), for all factions
 
+-added 60mm Ammo/Magazines/Weapon config, for potentially a light Mortar, and the Western Sahara 60mm Mortar Patria
+
 
 DONE - QUALITY OF LIFE:
 

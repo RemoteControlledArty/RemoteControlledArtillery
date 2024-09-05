@@ -2022,7 +2022,137 @@ class RC_Sh_82mm_AMOS_LG_DelayedFuse: RC_Sh_82mm_AMOS_MP_LaserGuided
 };
 
 
-//105mm, yet to be introduced, no vehicle options yet
+//60mm
+class RC_Sh_60mm_AMOS_submunition: RC_Sh_82mm_AMOS_submunition
+{
+	craterEffects="RC_60mmAirburstDust";
+};
+class RC_60mm_HEAB_Shell_Base: RC_82mm_HEAB_Shell_Base
+{
+	hit=100;
+	indirectHit=30;
+	indirectHitRange=10;
+	cost=100;
+};
+class RC_Sh_60mm_AMOS_HEAB: RC_60mm_HEAB_Shell_Base
+{
+	submunitionAmmo="RC_Sh_60mm_AMOS_submunition";
+	aimAboveDefault=2;
+	aimAboveTarget[]={7,7,7};	//high airburst to ignore cover, triggers when descending and this height above ground
+};
+
+
+class RC_Sh_60mm_AMOS_HE_submunition: RC_Sh_60mm_AMOS_submunition
+{
+	craterEffects="ArtyShellCrater";
+};
+class RC_Sh_60mm_AMOS_HE: RC_60mm_HEAB_Shell_Base
+{
+	simulationStep=0.050000001;
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0.8,-0.4};
+	submunitionAmmo="RC_Sh_60mm_AMOS_HE_submunition";
+};
+//used in script as replacement when turret elevation is too low for Airburst
+class RC_Sh_60mm_AMOS_backupHEAB: RC_Sh_60mm_AMOS_HE
+{
+	submunitionInitialOffset[]={0,5,0};
+	submunitionAmmo="RC_Sh_60mm_AMOS_submunition";
+};
+
+
+class RC_Smoke_60mm_AMOS_White: RC_Smoke_82mm_AMOS_White
+{
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		3
+	};
+	//submunitionConeAngle=10;
+	//triggerDistance=50;
+	cost=100;
+	hit=100;
+};
+
+
+class RC_Mine_60mm_AMOS_range: RC_Mine_82mm_AMOS_range
+{
+	submunitionConeType[]=
+	{
+		"custom", {{0,1},{-0.866,-0.5},{0.866,-0.5}};
+	};
+	submunitionConeAngle=10;
+	triggerDistance=50;
+	cost=100;
+	hit=100;
+};
+
+
+class ammo_Penetrator_60mm_MP: ammo_Penetrator_Base
+{
+	caliber=30;
+	warheadName="TandemHEAT";
+	hit=300;
+};
+class RC_60mm_MP_LaserGuided_Submunition: RC_82mm_MP_LaserGuided_Submunition
+{
+	submunitionAmmo="ammo_Penetrator_60mm_MP";
+	//craterEffects="RC_82mmGuidedDust";
+	indirectHit=60;
+	indirectHitRange=4.5;
+	cost=250;
+};
+class RC_Sh_60mm_AMOS_MP_LaserGuided: RC_Sh_82mm_AMOS_MP_LaserGuided
+{
+	submunitionAmmo="RC_60mm_MP_LaserGuided_Submunition";
+	triggerDistance=150;
+	hit=100;
+	indirectHit=60;
+	indirectHitRange=4.5;
+	cost=250;
+};
+
+
+class RC_60mm_MP_MultiGuided_Submunition: RC_82mm_MP_MultiGuided_Submunition
+{
+	submunitionAmmo="ammo_Penetrator_60mm_MP";
+	//craterEffects="RC_82mmGuidedDust";
+	indirectHit=60;
+	indirectHitRange=4.5;
+	cost=250;
+};
+class RC_Sh_60mm_AMOS_MP_MultiGuided: RC_Sh_82mm_AMOS_MP_MultiGuided
+{
+	submunitionAmmo="RC_60mm_MP_MultiGuided_Submunition";
+	triggerDistance=150;
+	hit=100;
+	indirectHit=60;
+	indirectHitRange=4.5;
+	cost=250;
+};
+
+
+class RC_Sh_60mm_AMOS_delayed_submunition: RC_Sh_60mm_AMOS_submunition
+{
+	explosionTime=0.2;
+};
+class RC_M_Mo_60mm_LG_DelayedFuse_Submunition: RC_60mm_MP_LaserGuided_Submunition
+{
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact, acting as delayed fuse against bunkers
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionAmmo="RC_Sh_60mm_AMOS_delayed_submunition";
+	indirectHit=0;
+	indirectHitRange=0;
+};
+class RC_Sh_60mm_AMOS_LG_DelayedFuse: RC_Sh_60mm_AMOS_MP_LaserGuided
+{
+	submunitionAmmo="RC_M_Mo_60mm_LG_DelayedFuse_Submunition";
+};
+
+
 /*
 class RC_Sh_105mm_AMOS: Sh_155mm_AMOS
 {
