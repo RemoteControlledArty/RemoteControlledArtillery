@@ -1,4 +1,4 @@
-//needs to be adjusted so that there is a large color difference for the last +-0.25 MIL
+//needs to be adjusted so that there is a large color difference for the last +-0.3 MIL
 
 // Set color for elevation ctrl
 private _differenceHighAngle = abs (_highAngleSol - _realElevation);
