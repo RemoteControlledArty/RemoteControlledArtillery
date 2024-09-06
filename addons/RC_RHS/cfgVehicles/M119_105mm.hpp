@@ -12,7 +12,7 @@ class RC_M119_base: RHS_M119_D
 	scopeCurator=0;
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
+	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL, 5 = not compatible with script that disables vanilla artillery computer
 	RC_BarrelAGL=0.8;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;

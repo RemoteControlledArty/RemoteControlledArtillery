@@ -84,23 +84,84 @@ RC_Artillery_UI = [] spawn {
 				RC_isAceLoadedHash set [_uavClass, _isAceLoaded];
 			};
 
-			if (_isAceLoaded) then {
-				switch (true) do {
-					case(_ArtyType == 1): {[RC_allowPortableMortarComputer] remoteExec ["enableEngineArtillery", _uav];};
-					case(_ArtyType == 2): {[RC_allowVehicleMortarComputer] remoteExec ["enableEngineArtillery", _uav];};
-					case(_ArtyType == 3): {[RC_allowHowitzerComputer] remoteExec ["enableEngineArtillery", _uav];};
-					case(_ArtyType == 4): {[RC_allowMLRSComputer] remoteExec ["enableEngineArtillery", _uav];};
+			if (shownArtilleryComputer) then {
+				if (_isAceLoaded) then {
+					switch (true) do {
+						case(_ArtyType == 1): {
+							if (!RC_allowPortableMortarComputer) then {
+								closeDialog 0;
+								hintSilent "vanilla artillery computer disabled by mod settings";
+								sleep 2;
+								hintSilent "";
+							};
+						};
+						case(_ArtyType == 2): {
+							if (!RC_allowVehicleMortarComputer) then {
+								closeDialog 0;
+								hintSilent "vanilla artillery computer disabled by mod settings";
+								sleep 2;
+								hintSilent "";
+							};
+						};
+						case(_ArtyType == 3): {
+							if (!RC_allowHowitzerComputer) then {
+								closeDialog 0;
+								hintSilent "vanilla artillery computer disabled by mod settings";
+								sleep 2;
+								hintSilent "";
+							};
+						};
+						case(_ArtyType == 4): {
+							if (!RC_allowMLRSComputer) then {
+								closeDialog 0;
+								hintSilent "vanilla artillery computer disabled by mod settings";
+								sleep 2;
+								hintSilent "";
+							};
+						};
 
-					default {[true] remoteExec ["enableEngineArtillery", _uav];};
-				};
-			} else {
-				switch (true) do {
-					case(_ArtyType == 1): {[true] remoteExec ["enableEngineArtillery", _uav];};
-					case(_ArtyType == 2): {[true] remoteExec ["enableEngineArtillery", _uav];};
-					case(_ArtyType == 3): {[RC_allowHowitzerComputer] remoteExec ["enableEngineArtillery", _uav];};
-					case(_ArtyType == 4): {[RC_allowMLRSComputer] remoteExec ["enableEngineArtillery", _uav];};
+						//default {};
+					};
+				} else {
+					switch (true) do {
+						//mortars dont work correctly without ace
+						/*
+						case(_ArtyType == 1): {
+							if (RC_allowPortableMortarComputer) then {
+								closeDialog 0;
+								hintSilent "vanilla artillery computer disabled by mod settings";
+								sleep 2;
+								hintSilent "";
+							};
+						};
+						case(_ArtyType == 2): {
+							if (RC_allowVehicleMortarComputer) then {
+								closeDialog 0;
+								hintSilent "vanilla artillery computer disabled by mod settings";
+								sleep 2;
+								hintSilent "";
+							};
+						};
+						*/
+						case(_ArtyType == 3): {
+							if (!RC_allowHowitzerComputer) then {
+								closeDialog 0;
+								hintSilent "vanilla artillery computer disabled by mod settings";
+								sleep 2;
+								hintSilent "";
+							};
+						};
+						case(_ArtyType == 4): {
+							if (!RC_allowMLRSComputer) then {
+								closeDialog 0;
+								hintSilent "vanilla artillery computer disabled by mod settings";
+								sleep 2;
+								hintSilent "";
+							};
+						};
 
-					default {[true] remoteExec ["enableEngineArtillery", _uav];};
+						//default {};
+					};
 				};
 			};
 
