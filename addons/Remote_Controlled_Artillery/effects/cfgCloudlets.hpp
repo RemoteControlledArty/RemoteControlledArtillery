@@ -222,6 +222,20 @@ class RC_CircleDustMed: Default
 	randomDirectionPeriodVar=0;
 	randomDirectionIntensityVar=0;
 };
+
+class RC_60mmCircleDust: RC_CircleDustMed
+{
+	circleRadius=7;
+	size[]={5,10};
+	lifeTime=20;
+};
+class RC_60mmGuidedCircleDust: RC_CircleDustMed
+{
+	circleRadius=4.5;
+	size[]={5,10};
+	lifeTime=20;
+};
+
 class RC_82mmCircleDust: RC_CircleDustMed
 {
 	circleRadius=12.7;

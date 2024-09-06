@@ -17,6 +17,7 @@ RC_isAceLoadedHash = createHashMap;
 //RC_localizeHash = createHashMap;	//not yet used
 RC_isRCArtyHash = createHashMap;
 RC_ArtyTypeHash = createHashMap;
+RC_isAceMortarHash = createHashMap;
 RC_BarrelAGLHash = createHashMap;
 RC_BarrelLenghtHash = createHashMap;
 RC_BarrelExtendsHash = createHashMap;
@@ -75,7 +76,8 @@ RC_Artillery_UI = [] spawn {
 				_ArtyType = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_ArtyType");
 				RC_ArtyTypeHash set [_uavClass, _ArtyType];
 			};
-			
+
+			//_isAceLoaded = isClass (configFile >> "CfgPatches" >> "ace_main");
 			private _isAceLoaded = RC_isAceLoadedHash get _uavClass;
 			if (isNil "_isAceLoaded") then {
 				_isAceLoaded = isClass (configFile >> "CfgPatches" >> "ace_main");
@@ -138,7 +140,12 @@ RC_Artillery_UI = [] spawn {
 	
 			// Some sort of Fix for Mortars having some weird Elevation numbers
 			// Dunno what it does, ask the ACE Team
-			if (getNumber (configFile >> "CfgVehicles" >> _uavClass >> "ace_artillerytables_showGunLaying") == 2) then {
+			private _isAceMortar = RC_isAceMortarHash get _uavClass;
+			if (isNil "_isAceMortar") then {
+				_isAceMortar = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "ace_artillerytables_showGunLaying");
+				RC_isAceMortarHash set [_uavClass, _isAceMortar];
+			};
+			if (_isAceMortar == 2) then {
 				private _turretCfg = [_uavClass, _turret] call CBA_fnc_getTurret;
 				private _turretAnimBody = getText (_turretCfg >> "animationSourceBody");
 				private _currentTraverseRad = _uav animationSourcePhase _turretAnimBody;

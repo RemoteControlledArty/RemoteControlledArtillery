@@ -92,19 +92,19 @@ class RC_Howitzer_A: RC_Howitzer_base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=67000;
+					typeRecognitionDistance=55000;
 
 					class AirTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=55000;
+						maxRange=55000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=55000;
+						maxRange=55000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -495,19 +495,19 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=67000;
+					typeRecognitionDistance=55000;
 
 					class AirTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=55000;
+						maxRange=55000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=55000;
+						maxRange=55000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -888,19 +888,19 @@ class RC_Static_Arty: RC_Static_Arty_base
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=67000;
+					typeRecognitionDistance=55000;
 
 					class AirTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=55000;
+						maxRange=55000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=55000;
+						maxRange=55000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};

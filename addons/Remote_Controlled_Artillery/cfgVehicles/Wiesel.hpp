@@ -310,8 +310,8 @@ class RC_Wiesel_AA_DIG_I: RC_Wiesel_AA_WD_I
 };
 
 
-class I_LT_01_Wiesel_F;
-class RC_Wiesel_Radar_Base: I_LT_01_Wiesel_F
+class I_LT_01_scout_F;
+class RC_Wiesel_Radar_Base: I_LT_01_scout_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -329,7 +329,6 @@ class RC_Wiesel_Radar_Base: I_LT_01_Wiesel_F
 	scopeCurator=0;
 	forceHideDriver=1;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
-	
 };
 class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 {

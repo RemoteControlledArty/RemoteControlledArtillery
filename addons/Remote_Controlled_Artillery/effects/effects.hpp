@@ -9,6 +9,21 @@ class RC_CircleDust_Base
 	lifeTime=0.2;
 };
 
+class RC_60mmAirburstDust
+{
+	class RC_CircleDust: RC_CircleDust_Base
+	{
+		type="RC_60mmCircleDust";
+	};
+};
+class RC_60mmGuidedDust
+{
+	class RC_CircleDust: RC_CircleDust_Base
+	{
+		type="RC_60mmGuidedCircleDust";
+	};
+};
+
 class RC_82mmAirburstDust
 {
 	class RC_CircleDust: RC_CircleDust_Base

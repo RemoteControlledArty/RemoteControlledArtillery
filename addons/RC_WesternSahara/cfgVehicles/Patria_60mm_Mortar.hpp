@@ -1,5 +1,5 @@
-class B_APC_Wheeled_01_atgm_lxWS;
-class RC_ICV_IFV_9_A_Base: B_APC_Wheeled_01_atgm_lxWS
+class B_APC_Wheeled_01_mortar_lxWS;
+class RC_60mmMortarPatria_Base: B_APC_Wheeled_01_mortar_lxWS
 {
 	class Turrets;
 	class MainTurret;
@@ -28,12 +28,18 @@ class RC_ICV_IFV_9_A_Base: B_APC_Wheeled_01_atgm_lxWS
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
+
+	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_ArtyType=2; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
+	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RC_BarrelAGL=2.5;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
+class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -50,10 +56,18 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-	maxSpeed=120;
-	normalSpeedForwardCoef=0.64;
-	enginePower=593.8;
-	peakTorque=3017.6;
+
+	vehicleClass="Autonomous";
+	isUav=1;
+	textPlural="UGVs";
+	textSingular="UGV";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP0_pos";
+	uavCameraGunnerDir="PiP0_dir";
+	crew="B_UAV_AI";
+	driverForceOptics=1;
+	forceHideDriver=1;
 
 	hiddenSelectionsTextures[]=
 	{
@@ -63,6 +77,133 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
 		"a3\Armor_F\Data\cage_sand_CO.paa",
 		"lxws\vehicles_f_lxws\data\APC_Wheeled_01\APC_Wheeled_01_lxws_CO.paa"
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=8000;
+
+					class AirTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+
+				class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+				{
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={6000,4000,2000,1000};
+					resource="RscCustomInfoSensors";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				/*
+				class MineDetectorDisplay
+				{
+					componentType="MineDetectorDisplayComponent";
+					range=50;
+					resource="RscCustomInfoMineDetect";
+				};
+				*/
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="EmptyDisplayComponent";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={6000,4000,2000,1000};
+					resource="RscCustomInfoSensors";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				/*
+				class MineDetectorDisplay
+				{
+					componentType="MineDetectorDisplayComponent";
+					range=50;
+					resource="RscCustomInfoMineDetect";
+				};
+				*/
+			};
+		};
 	};
 	
 	class HitPoints: HitPoints
@@ -84,22 +225,17 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 		class muzzle_rot
 		{
 			source="ammorandom";
-			weapon="RC_autocannon_30mm";
+			weapon="RC_vehiclemortar_60mm_V4";
 		};
 		class muzzle_hide
 		{
 			source="reload";
-			weapon="RC_autocannon_30mm";
+			weapon="RC_vehiclemortar_60mm_V4";
 		};
 		class revolving_cannon
 		{
 			source="revolving";
-			weapon="RC_autocannon_30mm";
-		};
-		class Missiles_revolving
-		{
-			source="revolving";
-			weapon="RC_IFV_Missile_Launcher_lxWS";
+			weapon="RC_vehiclemortar_60mm_V4";
 		};
 		class showCamonetHull: showCamonetHull
 		{
@@ -143,29 +279,25 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 };
 
 
-class RC_IFV_9_A: RC_ICV_IFV_9_A
+class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 {
 	class EventHandlers: EventHandlers
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
-	//Missile launcher on top, memoryppoint unclear, and rotate with boolean not working
 
-	displayName="Patria AMV ATGM";
-	editorSubcategory="RC_IFV_APC_subcat";
+	displayName="60mm Mortar Patria";
+	editorSubcategory="RC_Mortar_subcat";
 	scope=2;
 	scopeCurator=2;
-	maximumLoad=3000;
+	/*
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
 
-	crew="B_UAV_AI";
-	
 	weapons[]=
 	{
 		"TruckHorn",
@@ -176,6 +308,7 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
+	*/
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
@@ -184,38 +317,25 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
-			minElev=-10.6;
-			maxElev=40;
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+
+			//magazines[] = {"64Rnd_60mm_Mo_shells_lxWS","64Rnd_60mm_Mo_guided_lxWS","64Rnd_60mm_Mo_Smoke_white_lxWS","64Rnd_60mm_Mo_LG_lxWS"};
 
 			weapons[]=
 			{
-				"RC_autocannon_30mm",
-				"RC_MMG_338_coax",
-				"RC_IFV_Missile_Launcher_lxWS",
-				"SmokeLauncher"
+				"RC_vehiclemortar_60mm_V4"
 			};
 			magazines[]=
 			{
-				"RC_100Rnd_30mm_GPR_T_R",
-				"RC_100Rnd_30mm_GPR_T_R",
-				"RC_100Rnd_30mm_MP_T_R",
-				"RC_100Rnd_30mm_MP_T_R",
-				"RC_100Rnd_30mm_APFSDS_T_R",
-				"RC_100Rnd_30mm_APFSDS_T_R",
-				"RC_100Rnd_30mm_APFSDS_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_4Rnd_IFV_MP_NLOS",
-				"RC_4Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
+				"RC_15Rnd_60mm_Mo_shells",
+				"RC_4Rnd_60mm_Mo_HEAB",
+				"RC_5Rnd_60mm_Mo_MultiGuided",
+				"RC_20Rnd_60mm_Mo_Smoke_white",
+				"RC_9Rnd_60mm_Mo_mine",
+				"RC_6Rnd_60mm_Mo_Flare_white"
 			};
 
 			class OpticsIn
@@ -235,11 +355,45 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 					visionMode[]=
 					{
 						"Normal",
-						"TI"
+						"NVG"
 					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 					gunnerOpticsEffect[]={};
+				};
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={6000,4000,2000,1000};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+					};
 				};
 			};
 			
@@ -248,7 +402,8 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					gunnerCompartments="Compartment3";
+					dontCreateAI=1;
 					showAllTargets="2 + 4";
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
@@ -289,78 +444,91 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 							gunnerOpticsEffect[]={};
 						};
 					};
+
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					{
+						defaultDisplay="SensorDisplay";
+
+						class Components
+						{
+							class SensorDisplay
+							{
+								componentType="SensorsDisplayComponent";
+								range[]={6000,4000,2000,1000};
+								resource="RscCustomInfoSensors";
+							};
+						};
+					};
+					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+					{
+						defaultDisplay="UAVFeedDisplay";
+
+						class Components
+						{
+							class UAVFeedDisplay
+							{
+								componentType="UAVFeedDisplayComponent";
+							};
+							class MinimapDisplay
+							{
+								componentType="MinimapDisplayComponent";
+								resource="RscCustomInfoMiniMap";
+							};
+							class EmptyDisplay
+							{
+								componentType="EmptyDisplayComponent";
+							};
+						};
+					};
 				};
 			};
 		};
 	};
 };
-class RC_IFV_9_A_O: RC_IFV_9_A
+class RC_60mmMortarPatria_A_O: RC_60mmMortarPatria_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_4Rnd_IFV_MP_NLOS",
-				"RC_4Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
-	};
 };
-class RC_IFV_9_A_I: RC_IFV_9_A
+class RC_60mmMortarPatria_A_I: RC_60mmMortarPatria_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
 
-	class Turrets: Turrets
+
+class RC_60mmMortarPatria_WD: RC_60mmMortarPatria_A
+{
+	editorPreview="\lxws\editorpreviews_f_lxws\Data\CfgVehicles\B_T_APC_Wheeled_01_mortar_lxWS.jpg";
+	hiddenSelectionsTextures[]=
 	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_4Rnd_IFV_MP_NLOS",
-				"RC_4Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\Armor_F\Data\cage_olive_CO.paa",
+		"lxws\vehicles_f_lxws\data\APC_Wheeled_01\APC_Wheeled_01_lxws_olive_CO.paa"
 	};
+};
+class RC_60mmMortarPatria_WD_O: RC_60mmMortarPatria_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_60mmMortarPatria_WD_I: RC_60mmMortarPatria_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
