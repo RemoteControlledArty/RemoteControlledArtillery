@@ -31,6 +31,7 @@ class RC_60mmMortarPatria_Base: B_APC_Wheeled_01_mortar_lxWS
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RC_ArtyType=2; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
+	//ace_artillerytables_showGunLaying=2;	//otherwise wont work with ace
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2.5;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
