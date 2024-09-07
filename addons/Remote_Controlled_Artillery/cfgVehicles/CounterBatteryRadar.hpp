@@ -7,6 +7,8 @@ class RC_CounterBatteryRadar_base: B_Radar_System_01_F
 	class MainTurret;
 	scope=0;
 	scopeCurator=0;
+
+	RC_CounterBatteryRadar=1;
 };
 class RC_CounterBatteryRadar_A: RC_CounterBatteryRadar_base
 {
@@ -23,6 +25,14 @@ class RC_CounterBatteryRadar_A: RC_CounterBatteryRadar_base
 	//radarTargetSize=1;
 	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
+
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_scripts\CounterBatteryRadar_Player.hpp"
+		};
+	};
 
 	class Turrets: Turrets
 	{
