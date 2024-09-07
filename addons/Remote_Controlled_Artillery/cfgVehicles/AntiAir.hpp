@@ -42,7 +42,7 @@ class RC_AA_A: RC_AA_base
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	lockDetectionSystem=4;
+	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
 
 	hiddenSelectionsTextures[]=
@@ -255,7 +255,7 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	lockDetectionSystem=4;
+	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
 
 	class AnimationSources: AnimationSources
