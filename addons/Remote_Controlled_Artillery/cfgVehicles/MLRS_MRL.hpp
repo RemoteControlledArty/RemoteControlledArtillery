@@ -51,7 +51,7 @@ class RC_MLRS_A: RC_MLRS_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	lockDetectionSystem=4;
+	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
 
 	hiddenSelectionsTextures[]=
@@ -336,7 +336,7 @@ class RC_MRL_DIG: RC_MRL_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	lockDetectionSystem=4;
+	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
 
 	class Components: Components

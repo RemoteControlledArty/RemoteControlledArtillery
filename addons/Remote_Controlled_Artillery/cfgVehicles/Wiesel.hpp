@@ -46,7 +46,7 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	lockDetectionSystem=4;
+	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
 	soundLocked[]=
 	{
@@ -353,7 +353,7 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	lockDetectionSystem="4+8";
+	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
 	soundLocked[]=
 	{

@@ -59,13 +59,41 @@ class CfgPatches
 			RC_Stryker_M1127_WD_B,
 			RC_Stryker_M1127_WD_I,
 
+			RC_M108_A,
+			RC_M108_WD,
+			RC_M108_A_O,
+			RC_M108_WD_O,
+			RC_M108_A_I,
+			RC_M108_WD_I,
+
+			RC_M108_LC_A,
+			RC_M108_LC_WD,
+			RC_M108_LC_A_O,
+			RC_M108_LC_WD_O,
+			RC_M108_LC_A_I,
+			RC_M108_LC_WD_I,
+
+			RC_M109_A,
+			RC_M109_WD,
+			RC_M109_A_O,
+			RC_M109_WD_O,
+			RC_M109_A_I,
+			RC_M109_WD_I,
+
+			RC_M109_LC_A,
+			RC_M109_LC_WD,
+			RC_M109_LC_A_O,
+			RC_M109_LC_WD_O,
+			RC_M109_LC_A_I,
+			RC_M109_LC_WD_I,
+
 			RC_M119,
 			RC_M119_O,
 			RC_M119_I,
 
 			RC_M119_LC,
 			RC_M119_LC_O,
-			RC_M11_LC_I,
+			RC_M119_LC_I,
 
 			RC_FlatbedTruck_A,
 			RC_FlatbedTruck_WD,
@@ -175,6 +203,7 @@ class CfgVehicles
 	#include "\RC_RHS\cfgVehicles\Abrams.hpp"
 	#include "\RC_RHS\cfgVehicles\Bradley.hpp"
 	#include "\RC_RHS\cfgVehicles\FlatbedTruck.hpp"
+	#include "\RC_RHS\cfgVehicles\M109.hpp"
 	#include "\RC_RHS\cfgVehicles\M119_105mm.hpp"
 	#include "\RC_RHS\cfgVehicles\oldBradley.hpp"
 	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"

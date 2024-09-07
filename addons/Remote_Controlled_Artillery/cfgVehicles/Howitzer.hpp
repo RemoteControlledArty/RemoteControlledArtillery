@@ -56,7 +56,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	lockDetectionSystem=4;
+	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
 
 	hiddenSelectionsTextures[]=
@@ -455,7 +455,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	lockDetectionSystem=4;
+	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
 	soundLocked[]=
 	{
@@ -775,7 +775,7 @@ class RC_Static_Arty: RC_Static_Arty_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-	lockDetectionSystem=4;
+	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
 
 	/*

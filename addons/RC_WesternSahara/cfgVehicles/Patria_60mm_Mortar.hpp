@@ -282,6 +282,7 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 
 class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 {
+	/*
 	class EventHandlers: EventHandlers
 	{	
 		class RC_Artillery
@@ -289,6 +290,7 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
+	*/
 
 	displayName="60mm Mortar Patria";
 	editorSubcategory="RC_Mortar_subcat";

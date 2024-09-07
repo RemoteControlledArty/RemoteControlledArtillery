@@ -2066,6 +2066,10 @@ class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 
 class RC_vehiclemortar_60mm_V4: RC_vehiclemortar_82mm_V4
 {
+	displayName="60mm Mortar";
+	displayNameShort="60mm Mortar";
+	ballisticsComputer=8;	//direct fire reticle for highest charge
+	
 	magazines[]=
 	{
 		"RC_1Rnd_60mm_Mo_shells",
@@ -3964,6 +3968,8 @@ class RC_155mm_AMOS_V4: RC_155mm_AMOS_V3
 //105mm
 class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 {
+	displayName="105mm";
+	displayNameShort="105mm";
 	reloadTime=5;
 	magazineReloadTime=5;
 
