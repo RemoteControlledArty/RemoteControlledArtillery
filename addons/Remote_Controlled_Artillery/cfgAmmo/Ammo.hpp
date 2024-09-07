@@ -341,7 +341,7 @@ class RC_Sh_120mm_MP_T_R: Sh_120mm_HEAT_MP_T_Red
 	hit=95;
 	indirectHit=50;
 	indirectHitRange=10;
-	deflecting=4;
+	deflecting=1;
 	tracerEndTime=4;
 	craterEffects="AAMissileCrater";
 };
@@ -380,7 +380,7 @@ class RC_Sh_125mm_MP_T_R: Sh_125mm_HEAT_T_Red
 	aiAmmoUsageFlags="64 + 128 + 512";
 	indirectHit=50;
 	indirectHitRange=10;
-	deflecting=4;
+	deflecting=1;
 	tracerEndTime=4;
 	craterEffects="AAMissileCrater";
 };

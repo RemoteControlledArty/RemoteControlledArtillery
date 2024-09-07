@@ -30,7 +30,7 @@ class RC_RHS_ammo_M830A1: rhs_ammo_M830A1
 
 	indirectHit=50;
 	indirectHitRange=10;
-	deflecting=4;
+	deflecting=1;
 	craterEffects="AAMissileCrater";
 };
 
