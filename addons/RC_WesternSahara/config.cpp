@@ -64,6 +64,6 @@ class CfgWeapons
 
 class CfgVehicles
 {
-	#include "\RC_WesternSahara\cfgVehicles\Patria_60mm_Mortar.hpp"
-	//#include "\RC_WesternSahara\cfgVehicles\Patria_AMV_ATGM.hpp"
+	//#include "\RC_WesternSahara\cfgVehicles\Patria_60mm_Mortar.hpp"
+	#include "\RC_WesternSahara\cfgVehicles\Patria_AMV_ATGM.hpp"
 };

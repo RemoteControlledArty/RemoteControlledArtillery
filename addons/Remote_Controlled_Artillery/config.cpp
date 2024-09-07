@@ -492,6 +492,8 @@ class CfgPatches
 			RC_ATGM_Lock,
 			RC_IFV_Missile_Launcher,
 
+			RC_vehiclemortar_60mm_V4,
+
 			RC_mortar_82mm_V1,
 			RC_mortar_82mm_V2,
 			RC_mortar_82mm_V3,
