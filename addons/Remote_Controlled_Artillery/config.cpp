@@ -624,6 +624,8 @@ class CfgFactionClasses
 
 class CfgEditorSubcategories
 {
+	class RC_Radar_AI_subcat {displayname="Counter Battery Radar - AI";};
+	class RC_Radar_Player_subcat {displayname="Counter Battery Radar - Player";};
 	class RC_Howitzer_subcat {displayname="'indirect :  Howitzers";};
 	class RC_Mortar_subcat {displayname="'indirect :  Mortars";};
 	class RC_Rocket_subcat {displayname="'indirect :  Rocket Systems";};
@@ -685,6 +687,7 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\CounterBatteryRadar.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
