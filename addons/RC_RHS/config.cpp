@@ -207,5 +207,6 @@ class CfgVehicles
 	#include "\RC_RHS\cfgVehicles\M119_105mm.hpp"
 	#include "\RC_RHS\cfgVehicles\oldBradley.hpp"
 	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
+	#include "\RC_RHS\cfgVehicles\HIMARS.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
 };
