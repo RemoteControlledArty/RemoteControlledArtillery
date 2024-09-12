@@ -26,9 +26,9 @@ class CfgPatches
 			RC_M2A3_BUSKIII_D_I,
 			RC_M2A3_BUSKIII_WD_B,
 			RC_M2A3_BUSKIII_WD_I,
-
-			RC_M2A3_BUSKIII_RC_D_B,
-			RC_M2A3_BUSKIII_DL_D_B,
+			
+			//RC_M2A3_BUSKIII_RC_D_B,
+			//RC_M2A3_BUSKIII_DL_D_B,
 
 			RC_M2A3_BUSKIII_NLOS_D_B,
 			RC_M2A3_BUSKIII_NLOS_D_I,
@@ -94,6 +94,13 @@ class CfgPatches
 			RC_M119_LC,
 			RC_M119_LC_O,
 			RC_M119_LC_I,
+
+			RC_HIMARS_D,
+			RC_HIMARS_WD,
+			RC_HIMARS_D_O,
+			RC_HIMARS_WD_O,
+			RC_HIMARS_D_I,
+			RC_HIMARS_WD_I,
 
 			RC_FlatbedTruck_A,
 			RC_FlatbedTruck_WD,

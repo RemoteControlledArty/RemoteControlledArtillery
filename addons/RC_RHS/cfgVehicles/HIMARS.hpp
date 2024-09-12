@@ -1,6 +1,5 @@
-// MRL
-class rhsusf_M142_usarmy_WD;
-class RC_HIMARS_base: rhsusf_M142_usarmy_WD
+class rhsusf_M142_usarmy_D;
+class RC_HIMARS_base: rhsusf_M142_usarmy_D
 {
 	class AnimationSources;
 	class ViewOptics;
@@ -12,18 +11,19 @@ class RC_HIMARS_base: rhsusf_M142_usarmy_WD
 	scope=0;
 	scopeCurator=0;
 
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RC_ArtyType=4; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
+	//isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI	//CURRENTLY NOT FUNCTIONAL WITH HIMARS, due to lack of turret camera
+	//RC_ArtyType=4; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=1.65;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_HIMARS_A: RC_HIMARS_base
+class RC_HIMARS_D: RC_HIMARS_base
 {
 	author="Ascent";
-	displayName="RC HIMARS";
+	displayName="RC M142 HIMARS";
 	faction="RemoteControlled_B";
+	//editorSubcategory="RC_RHS_D_subcat";
 	editorSubcategory="RC_Rocket_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -33,10 +33,10 @@ class RC_HIMARS_A: RC_HIMARS_base
 	textSingular="UGV";
 	isUav=1;
 	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP1_pos";
-	uavCameraGunnerDir="PiP1_dir";
+	uavCameraDriverPos="dve_view_pos";
+	uavCameraDriverDir="dve_view_pos";
+	uavCameraGunnerPos="dve_view_pos";
+	uavCameraGunnerDir="dve_view_pos";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	driverCompartments="Compartment1";
@@ -124,11 +124,12 @@ class RC_HIMARS_A: RC_HIMARS_base
 			};
 			magazines[]=
 			{
-				"RC_6Rnd_230mm_rockets_HEAB",
-				"RC_4Rnd_230mm_rockets_MultiGuided",
-				"RC_2Rnd_230mm_rockets_cluster"
+				"RC_3Rnd_230mm_rockets_HEAB",
+				"RC_2Rnd_230mm_rockets_MultiGuided",
+				"RC_1Rnd_230mm_rockets_cluster"
 			};
 
+			//working screen, but azimut not changing with launcher direction, but fixed camera direction
 			class OpticsIn
 			{
 				class DVE_Wide: ViewOptics
@@ -137,32 +138,16 @@ class RC_HIMARS_A: RC_HIMARS_base
 					gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
 					visionMode[]=
 					{
+						"Normal",
 						"TI"
 					};
-					thermalMode[]={0,1};
-					initFov=0.60000002;
-					minFov=0.60000002;
-					maxFov=0.60000002;
-					hitpoint="Hit_Optic_DVEA";
-				};
-			};
-
-			/*
-			class OpticsIn: OpticsIn
-			{
-				class Wide: Wide
-				{
+					thermalMode[]={0};
 					initFov=0.125;
 					minFov=0.0125;
 					maxFov=0.89999998;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
+					hitpoint="Hit_Optic_DVEA";
 				};
 			};
-			*/
 
 			class Components: Components
 			{
@@ -195,14 +180,6 @@ class RC_HIMARS_A: RC_HIMARS_base
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
-						/*
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-							resource="RscTransportCameraComponentMissile";
-						};
-						*/
 					};
 				};
 			};
@@ -234,35 +211,40 @@ class RC_HIMARS_A: RC_HIMARS_base
 	{
 	};
 };
-/*
-class RC_HIMARS_WD: RC_HIMARS_A
-{
-	DLC="Enoch";
-	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_Truck_02_MRL_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\soft_f_Enoch\Truck_02\Data\Truck_02_kab_EAF_co.paa",
-		"\A3\soft_f_Enoch\Truck_02\Data\Truck_02_int_EAF_co.paa",
-		"\A3\soft_f_Enoch\Truck_02\Data\Truck_02_mrl_EAF_co.paa",
-		"\A3\soft_f_Enoch\Truck_02\Data\truck_02_chassis_EAF_CO.paa"
-	};
-};
-class RC_MRL_WD_O: RC_MRL_WD
+class RC_HIMARS_D_O: RC_HIMARS_D
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_MRL_DIG_I: RC_MRL_DIG
+class RC_HIMARS_D_I: RC_HIMARS_D
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 };
-class RC_MRL_WD_I: RC_MRL_WD
+class RC_HIMARS_WD: RC_HIMARS_D
+{
+	//editorSubcategory="RC_RHS_WD_subcat";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_M142_usmc_WD.paa";
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_HIMARS\data\M142_Cab_MC_CO.paa",
+		"rhsusf\addons\rhsusf_HIMARS\data\M142_Rear_MC_CO.paa",
+		"rhsusf\addons\rhsusf_HIMARS\data\M142_Chassis_MC_co.paa",
+		"rhsusf\addons\rhsusf_HIMARS\data\M142_Wheel_CO.paa",
+		"rhsusf\addons\rhsusf_HIMARS\data\M142_Int_CO.paa"
+	};
+};
+class RC_HIMARS_WD_O: RC_HIMARS_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_HIMARS_WD_I: RC_HIMARS_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 };
-*/

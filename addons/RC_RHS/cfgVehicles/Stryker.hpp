@@ -730,8 +730,8 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD
 	side=1;
 
 	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
+	uavCameraDriverPos="view_DVE";
+	uavCameraDriverDir="view_DVE";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";

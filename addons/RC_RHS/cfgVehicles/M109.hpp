@@ -26,7 +26,8 @@ class RC_M109_A: RC_M109_base
 	author="Ascent";
 	displayName="RC M109 155mm";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_RHS_D_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
+	editorSubcategory="RC_Howitzer_subcat";
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -35,10 +36,10 @@ class RC_M109_A: RC_M109_base
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
+	uavCameraDriverPos="driverview";
+	uavCameraDriverDir="driverview";
+	uavCameraGunnerPos="gunnerview";
+	uavCameraGunnerDir="gunnerview";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	forceHideDriver=1;
@@ -291,7 +292,7 @@ class RC_M109_A: RC_M109_base
 };
 class RC_M109_WD: RC_M109_A
 {
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview = "rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -331,7 +332,7 @@ class RC_M109_WD_I: RC_M109_WD
 class RC_M109_LC_A: RC_M109_A
 {
 	displayName="RC M109 155mm LowCap";
-	//editorSubcategory="RC_ReducedAmmo_subcat";
+	editorSubcategory="RC_ReducedAmmo_subcat";
 
 	class Turrets: Turrets
 	{
@@ -352,7 +353,7 @@ class RC_M109_LC_A: RC_M109_A
 };
 class RC_M109_LC_WD: RC_M109_LC_A
 {
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview = "rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -515,7 +516,7 @@ class RC_M108_WD_I: RC_M108_WD
 class RC_M108_LC_A: RC_M108_A
 {
 	displayName="RC M108 105mm LowCap";
-	//editorSubcategory="RC_ReducedAmmo_subcat";
+	editorSubcategory="RC_ReducedAmmo_subcat";
 
 	class Turrets: Turrets
 	{
@@ -536,7 +537,7 @@ class RC_M108_LC_A: RC_M108_A
 };
 class RC_M108_LC_WD: RC_M108_LC_A
 {
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview = "rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{

@@ -252,11 +252,11 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 		};
 		class showSLATHull: showSLATHull
 		{
-			initPhase=1;
+			initPhase=0;
 		};
 		class showSLATTurret: showSLATTurret
 		{
-			initPhase=1;
+			initPhase=0;
 		};
 	};
 
@@ -271,9 +271,9 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 		"showCamonetTurret",
 		1,
 		"showSLATHull",
-		1,
+		0,
 		"showSLATTurret",
-		1
+		0
 	};
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"

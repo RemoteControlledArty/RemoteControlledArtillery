@@ -287,13 +287,14 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 };
 
 
+/*
 class RC_M2A3_BUSKIII_RC_D_B: RC_M2A3_BUSKIII_D_B
 {
 	displayName="RC M2A3 Bradley";
 
 	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
+	uavCameraDriverPos="view_DVE";
+	uavCameraDriverDir="view_DVE";
 	isUav=1;
 	textPlural="UGVs";
 	textSingular="UGV";
@@ -330,6 +331,7 @@ class RC_M2A3_BUSKIII_DL_D_B: RC_M2A3_BUSKIII_D
 	crew="";
 	hasDriver=-1;
 };
+*/
 
 
 class RC_M2A3_BUSKIII_WD_B: RC_M2A3_BUSKIII_D_B

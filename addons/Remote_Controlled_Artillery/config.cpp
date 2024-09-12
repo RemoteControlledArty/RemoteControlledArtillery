@@ -193,6 +193,22 @@ class CfgPatches
 			RC_MortarMATV_manned_A_I,
 			RC_MortarMATV_manned_WD_I,
 
+			/*
+			RC_CounterBatteryRadar_AI_A,
+			RC_CounterBatteryRadar_AI_WD,
+			RC_CounterBatteryRadar_AI_A_O,
+			RC_CounterBatteryRadar_AI_WD_O,
+			RC_CounterBatteryRadar_AI_A_I,
+			RC_CounterBatteryRadar_AI_WD_I,
+
+			RC_CounterBatteryRadar_Player_A,
+			RC_CounterBatteryRadar_Player_WD,
+			RC_CounterBatteryRadar_Player_A_O,
+			RC_CounterBatteryRadar_Player_WD_O,
+			RC_CounterBatteryRadar_Player_A_I,
+			RC_CounterBatteryRadar_Player_WD_I,
+			*/
+
 			RC_UAV_AR1,
 			RC_UAV_AR3,
 			RC_UAV_AR1_O,
@@ -637,7 +653,7 @@ class CfgEditorSubcategories
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
 	class RC_FSV_MBT_subcat {displayname="MBTs / FSV";};
-	class RC_ICV_subcat {displayname="ICVs (unarmed)";};
+	class RC_ICV_subcat {displayname="RCIVs (unarmed)";};
 	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
 	class RC_UAV_Designator_subcat {displayname="UAVs / Designators";};
 
