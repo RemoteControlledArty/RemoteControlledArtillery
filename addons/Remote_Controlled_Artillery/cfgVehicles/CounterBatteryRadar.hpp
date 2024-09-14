@@ -34,7 +34,7 @@ class RC_CounterBatteryRadar_Player_A: RC_CounterBatteryRadar_base
 	{	
 		class RC_Artillery
 		{
-			//#include "\Remote_Controlled_Artillery\CounterBatteryRadar_scripts\CounterBatteryRadar_Player.hpp"
+			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player.hpp"
 		};
 	};
 

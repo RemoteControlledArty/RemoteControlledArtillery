@@ -1,7 +1,10 @@
 /*
  * Author: Eric
  * Declare Global variables
- */
+*/
+
+RC_CounterBatteryRadarArray = [];
+publicVariable "RC_CounterBatteryRadarArray";
 
 activeGPSMarkers = [];
 RC_Artillery_Markers = [];

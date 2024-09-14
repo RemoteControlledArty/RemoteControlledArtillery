@@ -1,4 +1,1 @@
-init=
-"(_this select 0) spawn {
-
-};";
+init="RC_CounterBatteryRadarArray pushback (_this select 0);  publicVariable 'RC_CounterBatteryRadarArray';";
