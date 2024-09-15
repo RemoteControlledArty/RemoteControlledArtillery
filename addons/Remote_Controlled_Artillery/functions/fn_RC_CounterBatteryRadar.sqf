@@ -92,29 +92,26 @@ addMissionEventHandler ["EntityCreated", {
 
                         _artySourcePosX = round (_artySourcePos select 0);
                         _artySourcePosY = round (_artySourcePos select 1);
+                        //_artySourcePosZ = round (_artySourcePos select 2);
 
                         hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
                     };
 
                     _unitPos = getPos _unit;
 
-                    //counterfire test
-                    _unitPos spawn
-                    {
-                        sleep 6;
-                        (RC_ArtilleryArray_O select 0) doArtilleryFire [_this, (getArtilleryAmmo [(RC_ArtilleryArray_O select 0)]) select 0, 1];
-                    };
-
-                    /*
                     [_unitPos] spawn
                     {
                         params ["_unitPos"];
-                        sleep 6;
-                        (RC_ArtilleryArray_O select 0) doArtilleryFire [_unitPos, (getArtilleryAmmo [(RC_ArtilleryArray_O select 0)]) select 0, 1];
+                        //check which is actually in range first then select 0, so that not all fire and give away pos, but to make sure atleast one actually fires
+                        _isInRange = _unitPos inRangeOfArtillery [[(RC_ArtilleryArray_O select 0)], ((getArtilleryAmmo [(RC_ArtilleryArray_O select 0)]) select 0)];
+                        //throws string error, maybe if first in array is destroyed?
+                        //{_x getArtilleryAmmo select 0} forEach RC_ArtilleryArray_O;
+                        
+                        if (_isInRange) then {
+                            sleep 6;
+                            (RC_ArtilleryArray_O select 0) doArtilleryFire [_unitPos, (getArtilleryAmmo [(RC_ArtilleryArray_O select 0)]) select 0, 1];
+                        };
                     };
-                    */
-
-                    //hint format ["gunB radO %1", _CBRalive_O];
                 };
                 case(_unitSide_B and _CBRalive_I): {
                     //_unit setDamage 1;
@@ -134,8 +131,6 @@ addMissionEventHandler ["EntityCreated", {
 
                         hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
                     };
-
-                    //hint format ["gunB radI %1", _CBRalive_I];
                 };
 
                 case(_unitSide_O and _CBRalive_B): {
@@ -156,8 +151,20 @@ addMissionEventHandler ["EntityCreated", {
 
                         hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
                     };
-                    
-                    //hint format ["gunO radB %1", _CBRalive_B];
+
+                    _unitPos = getPos _unit;
+
+                    //counterfire test
+                    _unitPos spawn
+                    {
+                        //check which is actually in range first then select 0, so that not all fire and give away pos, but to make sure atleast one actually fires
+                        _isInRange = _this inRangeOfArtillery [[(RC_ArtilleryArray_B select 0)], ((getArtilleryAmmo [(RC_ArtilleryArray_B select 0)]) select 0)];
+                        
+                        if (_isInRange) then {
+                            sleep 6;
+                            (RC_ArtilleryArray_B select 0) doArtilleryFire [_this, (getArtilleryAmmo [(RC_ArtilleryArray_B select 0)]) select 0, 1];
+                        };
+                    };
                 };
                 case(_unitSide_O and _CBRalive_I): {
                     //_unit setDamage 1;
@@ -177,8 +184,6 @@ addMissionEventHandler ["EntityCreated", {
 
                         hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
                     };
-
-                    //hint format ["gunO radI %1", _CBRalive_I];
                 };
 
                 case(_unitSide_I and _CBRalive_B): {
@@ -199,8 +204,6 @@ addMissionEventHandler ["EntityCreated", {
 
                         hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
                     };
-
-                    //hint format ["gunI radB %1", _CBRalive_B];
                 };
                 case(_unitSide_I and _CBRalive_O): {
                     //_unit setDamage 1;
@@ -220,8 +223,6 @@ addMissionEventHandler ["EntityCreated", {
 
                         hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
                     };
-
-                    //hint format ["gunI radB %1", _CBRalive_B];
                 };
             };
 		}];
