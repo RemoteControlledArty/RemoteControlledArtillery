@@ -5,11 +5,18 @@
 */
 
 RC_CounterBatteryRadarArray_B = [];
-publicVariable "RC_CounterBatteryRadarArray_B";
 RC_CounterBatteryRadarArray_O = [];
-publicVariable "RC_CounterBatteryRadarArray_O";
 RC_CounterBatteryRadarArray_I = [];
+publicVariable "RC_CounterBatteryRadarArray_B";
+publicVariable "RC_CounterBatteryRadarArray_O";
 publicVariable "RC_CounterBatteryRadarArray_I";
+
+RC_ArtilleryArray_B = [];
+RC_ArtilleryArray_O = [];
+RC_ArtilleryArray_I = [];
+publicVariable "RC_ArtilleryArray_B";
+publicVariable "RC_ArtilleryArray_O";
+publicVariable "RC_ArtilleryArray_I";
 
 
 if (!isServer) exitwith {};
@@ -21,6 +28,29 @@ addMissionEventHandler ["EntityCreated", {
 	_isArtillery = getNumber (configFile >> "CfgVehicles" >> (typeOf _entity) >> "artilleryScanner") == 1;
 
 	if (_isArtillery) then {
+
+        _entitySide_B = (side _entity == west);
+        _entitySide_O = (side _entity == east);
+        _entitySide_I = (side _entity == resistance);
+
+        switch (true) do {
+            case(_entitySide_B): {
+                RC_ArtilleryArray_B pushback _entity;
+                publicVariable 'RC_ArtilleryArray_B';
+                hint format ["B %1", RC_ArtilleryArray_B];
+            };
+            case(_entitySide_O): {
+                RC_ArtilleryArray_O pushback _entity;
+                publicVariable 'RC_ArtilleryArray_O';
+                hint format ["O %1", RC_ArtilleryArray_O];
+            };
+            case(_entitySide_I): {
+                RC_ArtilleryArray_I pushback _entity;
+                publicVariable 'RC_ArtilleryArray_I';
+                hint format ["I %1", RC_ArtilleryArray_I];
+            };
+        };
+
         //need another maybe custom addEH that can be triggered by below script, so counterbattery can fire?
         //_entity addEventHandler ["CBR_trigger", {
 
@@ -65,6 +95,24 @@ addMissionEventHandler ["EntityCreated", {
 
                         hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
                     };
+
+                    _unitPos = getPos _unit;
+
+                    //counterfire test
+                    _unitPos spawn
+                    {
+                        sleep 6;
+                        (RC_ArtilleryArray_O select 0) doArtilleryFire [_this, (getArtilleryAmmo [(RC_ArtilleryArray_O select 0)]) select 0, 1];
+                    };
+
+                    /*
+                    [_unitPos] spawn
+                    {
+                        params ["_unitPos"];
+                        sleep 6;
+                        (RC_ArtilleryArray_O select 0) doArtilleryFire [_unitPos, (getArtilleryAmmo [(RC_ArtilleryArray_O select 0)]) select 0, 1];
+                    };
+                    */
 
                     //hint format ["gunB radO %1", _CBRalive_O];
                 };

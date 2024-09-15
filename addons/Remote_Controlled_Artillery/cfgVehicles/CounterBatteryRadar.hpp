@@ -38,6 +38,8 @@ class RC_CounterBatteryRadar_Player_A: RC_CounterBatteryRadar_base
 		};
 	};
 
+	//components need to be nerfed against air targets
+
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
