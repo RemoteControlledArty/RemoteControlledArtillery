@@ -34,7 +34,7 @@ class RC_CounterBatteryRadar_Player_A: RC_CounterBatteryRadar_base
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player.hpp"
+			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player_B.hpp"
 		};
 	};
 
@@ -69,12 +69,28 @@ class RC_CounterBatteryRadar_Player_A_O: RC_CounterBatteryRadar_Player_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player_O.hpp"
+		};
+	};
 };
 class RC_CounterBatteryRadar_Player_A_I: RC_CounterBatteryRadar_Player_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player_I.hpp"
+		};
+	};
 };
 
 
@@ -92,12 +108,28 @@ class RC_CounterBatteryRadar_Player_WD_O: RC_CounterBatteryRadar_Player_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player_O.hpp"
+		};
+	};
 };
 class RC_CounterBatteryRadar_Player_WD_I: RC_CounterBatteryRadar_Player_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player_I.hpp"
+		};
+	};
 };
 
 

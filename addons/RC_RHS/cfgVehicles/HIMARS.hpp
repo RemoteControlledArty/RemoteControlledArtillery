@@ -144,7 +144,7 @@ class RC_HIMARS_D: RC_HIMARS_base
 					thermalMode[]={0};
 					initFov=0.125;
 					minFov=0.0125;
-					maxFov=0.89999998;
+					maxFov=1.07692;
 					hitpoint="Hit_Optic_DVEA";
 				};
 			};

@@ -279,7 +279,7 @@ DONE - FEATURES:
 -further improved file structure to streamline testing
 -increased MBT/FSV/IFV datalink panel from 3km to 4km
 
-new:
+new'ish:
 -new NEUTRAL camonets, in uniform olive/tan, making it more fitting for a larger variety of factions/units
 -added radar warning receivers
 -added FPV UAV with explosive charge
@@ -304,6 +304,9 @@ new:
 
 -added 60mm Ammo/Magazines/Weapon config, for potentially a light Mortar
 -added the Western Sahara 60mm Mortar Patria, but overshoots when ace is installed?
+
+new:
+-added orange "not aligned" message with +-0.75 accuracy for quickly shooting multiple smokes
 
 
 DONE - QUALITY OF LIFE:
