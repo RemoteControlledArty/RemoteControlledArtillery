@@ -11,11 +11,11 @@ class RC_UAV_base: B_UAV_01_F
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
-	RC_UAVBlurRange=1500;
+	RC_UAVBlurRange=2000;
 };
 class RC_UAV_AR1: RC_UAV_base
 {
-	displayName="RC AR-1 shortrange";
+	displayName="RC AR-1 shortrange 2km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_UAV_Designator_subcat";
 	scope=2;

@@ -51,9 +51,6 @@ addMissionEventHandler ["EntityCreated", {
             };
         };
 
-        //need another maybe custom addEH that can be triggered by below script, so counterbattery can fire?
-        //_entity addEventHandler ["CBR_trigger", {
-
         _this setVariable ["ArtySourceMarkersTime",0, true]; 
 
         //how to make sure this is not triggered by secondary turret (MG/GMG)
@@ -61,10 +58,14 @@ addMissionEventHandler ["EntityCreated", {
     		params ["_unit"];
             //params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
+            //checks if it was actually artillery ammo, how to check if its equal with one of the array?
+            //_isArtyAmmo = (_magazine == ((getArtilleryAmmo [(RC_ArtilleryArray_O select 0)]) select 0));
+
             _CBRalive_B = ({alive _x} count RC_CounterBatteryRadarArray_B) > 0;
             _CBRalive_O = ({alive _x} count RC_CounterBatteryRadarArray_O) > 0;
             _CBRalive_I = ({alive _x} count RC_CounterBatteryRadarArray_I) > 0;
 
+            //BIS_isEnemy how exactly is it called?
             //_CBRopposed_B = (side _unit != west);
             //_CBRopposed_O = (side _unit != east);
             //_CBRopposed_I = (side _unit != resistance);
@@ -73,12 +74,10 @@ addMissionEventHandler ["EntityCreated", {
             _unitSide_O = (side _unit == east);
             _unitSide_I = (side _unit == resistance);
 
-            //check if two can activate? (needed)
+            //can two can activate? (needed)
             //how to include script, so it doesnt need to be rewritten
-            //how to put marker only on one sides map? (side of the detecting radar)
             switch (true) do {
                 case(_unitSide_B and _CBRalive_O): {
-                    //_unit setDamage 1;
                     private _timeInterval = 10; 
                     private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
                     private _timeSinceLastMarker = time - _lastMarkerTime;
@@ -86,19 +85,39 @@ addMissionEventHandler ["EntityCreated", {
                     if (_timeSinceLastMarker > _timeInterval) then {
                         _unit setVariable ["ArtySourceMarkersTime", time, true];
                         private _artySourcePos = getPos _unit;
-                        private _artySourceMarker = createMarker ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos];
-                        _artySourceMarker setMarkerType "o_art";
-                        _artySourceMarker setMarkerAlpha 0.25;
+                        
+                        _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+                        _markerArray = [_markerName, _artySourcePos, 1];
+                        //private _artySourceMarker = [_markerArray] remoteExec ["createMarkerLocal", east];  //should it have JIP?
+                        //_marker = ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos, 1];
+                        //private _artySourceMarker = [_marker] remoteExec ["createMarkerLocal", 0, false];
+                        //private _artySourceMarker = [_markerArray] remoteExec ["createMarkerLocal", east];
+                        //[_artySourceMarker, "o_art"] remoteExec ["setMarkerType", east];
+                        //[_artySourceMarker, 0.5] remoteExec ["setMarkerAlpha", east];
+
+                        private _artySourceMarker = createMarkerLocal ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos, 1];
+                        _artySourceMarker setMarkerType "b_art";
+                        _artySourceMarker setMarkerAlpha 0.5;
+
+                        /*
+                        {
+                            private _artySourceMarker = createMarkerLocal ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos, 1];
+                            _artySourceMarker setMarkerType "b_art";
+                            _artySourceMarker setMarkerAlpha 0.5;
+                        } forEach (allUnits select {side _x == EAST});
+                        */
 
                         _artySourcePosX = round (_artySourcePos select 0);
                         _artySourcePosY = round (_artySourcePos select 1);
                         //_artySourcePosZ = round (_artySourcePos select 2);
 
-                        hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
+                        //[["incoming! source: %1", [_artySourcePosX, _artySourcePosY]]] remoteExec ["hint format", east];
+                        _message = "incoming! source: " + str _artySourcePosX + " " + str _artySourcePosY;
+                        [_message] remoteExec ["hint", east];
+                        //hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
                     };
 
                     _unitPos = getPos _unit;
-
                     [_unitPos] spawn
                     {
                         params ["_unitPos"];
@@ -113,28 +132,7 @@ addMissionEventHandler ["EntityCreated", {
                         };
                     };
                 };
-                case(_unitSide_B and _CBRalive_I): {
-                    //_unit setDamage 1;
-                    private _timeInterval = 10; 
-                    private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
-                    private _timeSinceLastMarker = time - _lastMarkerTime;
-
-                    if (_timeSinceLastMarker > _timeInterval) then {
-                        _unit setVariable ["ArtySourceMarkersTime", time, true];
-                        private _artySourcePos = getPos _unit;
-                        private _artySourceMarker = createMarker ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos];
-                        _artySourceMarker setMarkerType "o_art";
-                        _artySourceMarker setMarkerAlpha 0.25;
-
-                        _artySourcePosX = round (_artySourcePos select 0);
-                        _artySourcePosY = round (_artySourcePos select 1);
-
-                        hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
-                    };
-                };
-
                 case(_unitSide_O and _CBRalive_B): {
-                    //_unit setDamage 1;
                     private _timeInterval = 10; 
                     private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
                     private _timeSinceLastMarker = time - _lastMarkerTime;
@@ -142,107 +140,57 @@ addMissionEventHandler ["EntityCreated", {
                     if (_timeSinceLastMarker > _timeInterval) then {
                         _unit setVariable ["ArtySourceMarkersTime", time, true];
                         private _artySourcePos = getPos _unit;
-                        private _artySourceMarker = createMarker ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos];
-                        _artySourceMarker setMarkerType "o_art";
-                        _artySourceMarker setMarkerAlpha 0.25;
+
+                        _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+                        _markerArray = [_markerName, _artySourcePos, 1];
+                        //private _artySourceMarker = [_markerArray] remoteExec ["createMarkerLocal", east];  //should it have JIP?
+                        //private _artySourceMarker = ([["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos, 1]] remoteExec ["createMarkerLocal", west]);  //should it have JIP?
+                        //private _artySourceMarker = [_markerArray] remoteExec ["createMarkerLocal", west];
+
+                        private _artySourceMarker = createMarkerLocal ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos, 1];
+                        [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", west];
+                        [_artySourceMarker, 0.5] remoteExec ["setMarkerAlpha", west];
+
+                        /*
+                        {
+                            private _artySourceMarker = createMarkerLocal ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos, 1];
+                            _artySourceMarker setMarkerType "o_art";
+                            _artySourceMarker setMarkerAlpha 0.5;
+                        } forEach (allUnits select {side _x == WEST});
+                        */
 
                         _artySourcePosX = round (_artySourcePos select 0);
                         _artySourcePosY = round (_artySourcePos select 1);
+                        //_artySourcePosZ = round (_artySourcePos select 2);
 
-                        hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
+                        //[["incoming! source: %1", [_artySourcePosX, _artySourcePosY]]] remoteExec ["hint format", west];
+                        _message = "incoming! source: " + str _artySourcePosX + " " + str _artySourcePosY;
+                        [_message] remoteExec ["hint", west];
+                        //hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
                     };
 
                     _unitPos = getPos _unit;
-
-                    //counterfire test
-                    _unitPos spawn
+                    [_unitPos] spawn
                     {
+                        params ["_unitPos"];
                         //check which is actually in range first then select 0, so that not all fire and give away pos, but to make sure atleast one actually fires
-                        _isInRange = _this inRangeOfArtillery [[(RC_ArtilleryArray_B select 0)], ((getArtilleryAmmo [(RC_ArtilleryArray_B select 0)]) select 0)];
+                        _isInRange = _unitPos inRangeOfArtillery [[(RC_ArtilleryArray_B select 0)], ((getArtilleryAmmo [(RC_ArtilleryArray_B select 0)]) select 0)];
                         
                         if (_isInRange) then {
                             sleep 6;
-                            (RC_ArtilleryArray_B select 0) doArtilleryFire [_this, (getArtilleryAmmo [(RC_ArtilleryArray_B select 0)]) select 0, 1];
+                            (RC_ArtilleryArray_B select 0) doArtilleryFire [_unitPos, (getArtilleryAmmo [(RC_ArtilleryArray_B select 0)]) select 0, 1];
                         };
                     };
                 };
-                case(_unitSide_O and _CBRalive_I): {
-                    //_unit setDamage 1;
-                    private _timeInterval = 10; 
-                    private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
-                    private _timeSinceLastMarker = time - _lastMarkerTime;
 
-                    if (_timeSinceLastMarker > _timeInterval) then {
-                        _unit setVariable ["ArtySourceMarkersTime", time, true];
-                        private _artySourcePos = getPos _unit;
-                        private _artySourceMarker = createMarker ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos];
-                        _artySourceMarker setMarkerType "o_art";
-                        _artySourceMarker setMarkerAlpha 0.25;
-
-                        _artySourcePosX = round (_artySourcePos select 0);
-                        _artySourcePosY = round (_artySourcePos select 1);
-
-                        hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
-                    };
-                };
-
-                case(_unitSide_I and _CBRalive_B): {
-                    //_unit setDamage 1;
-                    private _timeInterval = 10; 
-                    private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
-                    private _timeSinceLastMarker = time - _lastMarkerTime;
-
-                    if (_timeSinceLastMarker > _timeInterval) then {
-                        _unit setVariable ["ArtySourceMarkersTime", time, true];
-                        private _artySourcePos = getPos _unit;
-                        private _artySourceMarker = createMarker ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos];
-                        _artySourceMarker setMarkerType "o_art";
-                        _artySourceMarker setMarkerAlpha 0.25;
-
-                        _artySourcePosX = round (_artySourcePos select 0);
-                        _artySourcePosY = round (_artySourcePos select 1);
-
-                        hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
-                    };
-                };
-                case(_unitSide_I and _CBRalive_O): {
-                    //_unit setDamage 1;
-                    private _timeInterval = 10; 
-                    private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
-                    private _timeSinceLastMarker = time - _lastMarkerTime;
-
-                    if (_timeSinceLastMarker > _timeInterval) then {
-                        _unit setVariable ["ArtySourceMarkersTime", time, true];
-                        private _artySourcePos = getPos _unit;
-                        private _artySourceMarker = createMarker ["_USER_DEFINED ArtySourceMarker" + str _artySourcePos, _artySourcePos];
-                        _artySourceMarker setMarkerType "o_art";
-                        _artySourceMarker setMarkerAlpha 0.25;
-                        
-                        _artySourcePosX = round (_artySourcePos select 0);
-                        _artySourcePosY = round (_artySourcePos select 1);
-
-                        hint format ["incoming! source: %1", [_artySourcePosX, _artySourcePosY]];
-                    };
-                };
+                //case(_unitSide_B and _CBRalive_I): {};
+                //case(_unitSide_O and _CBRalive_I): {};
+                //case(_unitSide_I and _CBRalive_B): {};
+                //case(_unitSide_I and _CBRalive_O): {};
             };
 		}];
 	};
 }];
-
-
-/*
-if (_timeSinceLastMarker > _timeInterval) then {
-    _unit setVariable ["ArtyMarkersTime",time, true]; 
-    private _markerPosition = getPos _unit; 
-    //private _markerPosition = position _unit;
-    private _aproxArtyMarker = createMarker ["_USER_DEFINED AproxArtyMarker" + str _markerPosition, _markerPosition];
-    _aproxArtyMarker setMarkerShape "o_art"; 
-    //_aproxArtyMarker setMarkerSize [_radius, _radius];
-    //_aproxArtyMarker setMarkerColor "colorRed";
-    //_aproxArtyMarker setMarkerBrush "SolidBorder";
-    //_aproxArtyMarker setMarkerAlpha 0.1; 
-};
-*/
 
 
 //needs some work creates red areas, optimally instead if the position didnt change a NATO symbol enemy artillery map marker should be made
