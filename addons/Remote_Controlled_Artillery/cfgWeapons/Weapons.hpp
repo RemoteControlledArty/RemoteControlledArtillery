@@ -68,7 +68,7 @@ class Improved_FOV_Laserdesignator_A: Laserdesignator_base
 		"Normal",
 		"NVG"
 	};
-	opticsZoomMin=0.0099999998;
+	opticsZoomMin=0.01;
 	opticsZoomMax=0.25;
 	opticsZoomInit=0.25;
 };
@@ -1441,14 +1441,15 @@ class RC_mortar_82mm_V2: RC_mortar_82mm_V1
 };
 class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 {
+	/*
 	modes[]=
 	{
 		"Single1",
 		"Single2",
 		"Single3"
 	};
-	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
-	/*
+	*/
+
 	modes[]=
 	{
 		"Single1",
@@ -1458,9 +1459,17 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 		"Burst2",
 		"Burst3"
 	};
-	*/
 	class Single1: Single1
 	{
+		/*
+		//burst=1;
+		//soundBurst=0;
+		aiDispersionCoefX=1;
+		aiDispersionCoefY=1;
+		aiRateOfFireDispersion=1;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=10;
+		*/
 		displayName="CH0, 0.5km";
 		artilleryDispersion=1.25;
 		artilleryCharge=0.34999999;
@@ -1478,16 +1487,25 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 	//used by ai, rof decreased
 	class Burst1: Burst1
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
 		reloadTime=15;
 	};
 	class Burst2: Burst2
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
 		reloadTime=15;
 	};
 	class Burst3: Burst3
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
 		reloadTime=15;
 	};
@@ -2003,7 +2021,6 @@ class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 		"Single7",
 		"Single8"
 	};
-	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
 	/*
 	modes[]=
 	{
@@ -3048,6 +3065,15 @@ class RC_ShipCannon_120mm_V2: RC_ShipCannon_120mm_V1
 
 	class Single1: Single1
 	{
+		/*
+		//burst=1;
+		//soundBurst=0;
+		aiDispersionCoefX=1;
+		aiDispersionCoefY=1;
+		aiRateOfFireDispersion=1;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=10;
+		*/
 		reloadTime=6;
 	};
 	class Single2: Single2
@@ -3095,6 +3121,7 @@ class RC_ShipCannon_120mm_V2: RC_ShipCannon_120mm_V1
 };
 class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 {
+	/*
 	modes[]=
 	{
 		"Single1",
@@ -3106,8 +3133,7 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 		"Single7",
 		"Single8"
 	};
-	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
-	/*
+	*/
 	modes[]=
 	{
 		"Single1",
@@ -3124,7 +3150,6 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 		"Burst4",
 		"Burst5"
 	};
-	*/
 	class Single1: Single1
 	{
 		displayName="CH0"
@@ -3765,7 +3790,16 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 	weaponLockDelay=0;
 
 	class Single1: Single1
-	{
+	{	
+		/*
+		//burst=1;
+		//soundBurst=0;
+		aiDispersionCoefX=1;
+		aiDispersionCoefY=1;
+		aiRateOfFireDispersion=1;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=10;
+		*/
 		reloadTime=6;
 	};
 	class Single2: Single2
@@ -3787,32 +3821,48 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 	//used by ai, rof decreased
 	class Burst1: Burst1
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
 		reloadTime=15;
 	};
 	class Burst2: Burst2
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
 		reloadTime=15;
 	};
 	class Burst3: Burst3
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
 		reloadTime=15;
 	};
 	class Burst4: Burst4
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
 		reloadTime=15;
 	};
 	class Burst5: Burst5
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
 		reloadTime=15;
 	};
 };
 class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 {
+	/*
 	modes[]=
 	{
 		"Single1",
@@ -3824,8 +3874,7 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Single7",
 		"Single8"
 	};
-	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
-	/*
+	*/
 	modes[]=
 	{
 		"Single1",
@@ -3842,7 +3891,6 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Burst4",
 		"Burst5"
 	};
-	*/
 
 	/*
 	class Single1: Single1
@@ -3973,39 +4021,17 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 	reloadTime=5;
 	magazineReloadTime=5;
 
-	modes[]=
-	{
-		"Single1",
-		"Single2",
-		"Single3",
-		"Single4",
-		"Single5",
-		"Single6",
-		"Single7",
-		"Single8"
-	};
-	//disabled temporarely ai fire due to autonomous engaging of laser spots potentially causing friendly fire
-	/*
-	modes[]=
-	{
-		"Single1",
-		"Single2",
-		"Single3",
-		"Single4",
-		"Single5",
-		"Single6",
-		"Single7",
-		"Single8"
-		"Burst1",
-		"Burst2",
-		"Burst3",
-		"Burst4",
-		"Burst5"
-	};
-	*/
-
 	class Single1: Single1
 	{
+		/*
+		//burst=1;
+		//soundBurst=0;
+		aiDispersionCoefX=1;
+		aiDispersionCoefY=1;
+		aiRateOfFireDispersion=1;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=10;
+		*/
 		displayName="CH0"
 		artilleryCharge=0.342;	//200m minrange 400ms high trajectory
 		reloadTime=5;
@@ -4621,99 +4647,99 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT_Base
 
 	class Mode_1: Mode_1
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_2: Mode_2
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_3: Mode_3
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_4: Mode_4
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_5: Mode_5
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_6: Mode_6
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_7: Mode_7
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_8: Mode_8
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_9: Mode_9
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_10: Mode_10
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_11: Mode_11
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_12: Mode_12
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_13: Mode_13
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_14: Mode_14
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_15: Mode_15
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	class Mode_16: Mode_16
 	{
-		minRangeProbab=0.0099999998;
-		midRangeProbab=0.0099999998;
-		maxRangeProbab=0.0099999998;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 	};
 	magazines[]=
 	{
