@@ -1491,7 +1491,7 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 		midRangeProbab=0.01;
 		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 	class Burst2: Burst2
 	{
@@ -1499,7 +1499,7 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 		midRangeProbab=0.01;
 		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 	class Burst3: Burst3
 	{
@@ -1507,7 +1507,7 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 		midRangeProbab=0.01;
 		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 };
 
@@ -3095,28 +3095,43 @@ class RC_ShipCannon_120mm_V2: RC_ShipCannon_120mm_V1
 	//used by ai, rof decreased
 	class Burst1: Burst1
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 	class Burst2: Burst2
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 	class Burst3: Burst3
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 	class Burst4: Burst4
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 	class Burst5: Burst5
 	{
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 };
 class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
@@ -3825,7 +3840,7 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 		midRangeProbab=0.01;
 		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 	class Burst2: Burst2
 	{
@@ -3833,7 +3848,7 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 		midRangeProbab=0.01;
 		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 	class Burst3: Burst3
 	{
@@ -3841,7 +3856,7 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 		midRangeProbab=0.01;
 		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 	class Burst4: Burst4
 	{
@@ -3849,7 +3864,7 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 		midRangeProbab=0.01;
 		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 	class Burst5: Burst5
 	{
@@ -3857,7 +3872,7 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 		midRangeProbab=0.01;
 		maxRangeProbab=0.01;
 		burst=1;
-		reloadTime=15;
+		//reloadTime=15;
 	};
 };
 class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
