@@ -313,6 +313,7 @@ new:
 -reworked artillery charges, from 0-7 to 0-6 charges with min 350MIL low solutions (lower is can get caught, too high is inefficient) for easier cycling
 -reworked 120mm & 155mm cannons to have more realistic 40km range (most maps arent larger than 30km anyways), vanilla range is unrealistic 67km
 -RC artillery assets now work with fire script commands, as the charges been reworked to be compatible for ai fire
+-reworked FPV to be more controllable
 
 
 DONE - QUALITY OF LIFE:

@@ -352,8 +352,8 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 					minAngleY=-100;
 					maxAngleY=100;
 
-					initFov=0.9;
-					minFov=0.02;
+					initFov=0.125;
+					minFov=0.0125;
 					maxFov=0.9;
 					visionMode[]=
 					{

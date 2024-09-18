@@ -348,10 +348,10 @@ class RC_UAV_FPV: RC_UAV_base
 	liftForceCoef=2;
 	cyclicAsideForceCoef=2;
 	cyclicForwardForceCoef=1.2;
-	backRotorForceCoef=10;
+	backRotorForceCoef=5;	//10
 	fuelCapacity=200;
-	mainRotorSpeed=-14;
-	backRotorSpeed=14;
+	mainRotorSpeed=-7;	//14
+	backRotorSpeed=7;	//14
 
 	camouflage=0.025;
 	radarTargetSize=0.01;
