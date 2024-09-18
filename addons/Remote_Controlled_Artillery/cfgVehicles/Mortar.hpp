@@ -292,7 +292,7 @@ class RC_VehicleMortar: RC_Mortar
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 
-	armor=200;
+	armor=120;
 	threat[]={0,0,0};
 	cost=0;
 	typicalCargo[]={""};
@@ -363,10 +363,10 @@ class RC_VehicleMortar: RC_Mortar
 				"RC_15Rnd_82mm_vic_Mo_shells",
 				"RC_4Rnd_82mm_vic_Mo_HEAB",
 				"RC_5Rnd_82mm_vic_Mo_MultiGuided",
-				"RC_20Rnd_82mm_Mo_Smoke_white",
-				"RC_9Rnd_82mm_Mo_AT_mine",
-				"RC_9Rnd_82mm_Mo_mine",
-				"RC_6Rnd_82mm_Mo_Flare_white"
+				"RC_20Rnd_82mm_vic_Mo_Smoke_white",
+				"RC_9Rnd_82mm_vic_Mo_AT_mine",
+				"RC_9Rnd_82mm_vic_Mo_mine",
+				"RC_6Rnd_82mm_vic_Mo_Flare_white"
 			};
 
 			class Components: Components
@@ -454,10 +454,10 @@ class RC_VehicleMortar_LC: RC_VehicleMortar
 				"RC_6Rnd_82mm_vic_Mo_shells",
 				"RC_3Rnd_82mm_vic_Mo_HEAB",
 				"RC_3Rnd_82mm_vic_Mo_MultiGuided",
-				"RC_20Rnd_82mm_Mo_Smoke_white",
-				"RC_4Rnd_82mm_Mo_AT_mine",
-				"RC_4Rnd_82mm_Mo_mine",
-				"RC_6Rnd_82mm_Mo_Flare_white"
+				"RC_20Rnd_82mm_vic_Mo_Smoke_white",
+				"RC_4Rnd_82mm_vic_Mo_AT_mine",
+				"RC_4Rnd_82mm_vic_Mo_mine",
+				"RC_6Rnd_82mm_vic_Mo_Flare_white"
 			};
 		};
 	};

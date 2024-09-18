@@ -157,6 +157,7 @@ new:
 -tracer color fixes
 -fixed Wiesel II manned driverless versions for multiplayer use
 -fixed Pandur II not having missles due to a change of magazines
+-fixed vehicle mortar hitpoints
 
 
 DONE - FEATURES:
@@ -307,6 +308,11 @@ new'ish:
 
 new:
 -added orange "not aligned" message with +-0.75 accuracy for quickly shooting multiple smokes
+-changed AR-1 shortrange range to 2km as 1.5km was slightly too short
+-smokes now low trajectory compatible, and low firing solution no longer greyed out, they may land slightly worse but it makes them available way quicker and versatile
+-reworked artillery charges, from 0-7 to 0-6 charges with min 350MIL low solutions (lower is can get caught, too high is inefficient) for easier cycling
+-reworked 120mm & 155mm cannons to have more realistic 40km range (most maps arent larger than 30km anyways), vanilla range is unrealistic 67km
+-RC artillery assets now work with fire script commands, as the charges been reworked to be compatible for ai fire
 
 
 DONE - QUALITY OF LIFE:

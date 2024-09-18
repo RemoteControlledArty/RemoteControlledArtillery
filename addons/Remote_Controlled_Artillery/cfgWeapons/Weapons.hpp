@@ -1462,7 +1462,7 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 	{
 		displayName="CH0, 0.5km";
 		artilleryDispersion=1.25;
-		artilleryCharge=0.34999999;
+		artilleryCharge=0.35;
 		minRange=34;	//34	//60
 		midRange=216.5;	//216.5	//290
 		maxRange=499;	//499	//665
@@ -1478,7 +1478,7 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 	class Single2: Single1
 	{
 		displayName="CH1, 2km";
-		artilleryCharge=0.69999999;
+		artilleryCharge=0.7;
 		minRange=139;	//139	//230
 		midRange=1068.5;	//1068.5	1175
 		maxRange=1998;	//1998	//2660
@@ -1522,6 +1522,8 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 //82mm Vehicle Mortar 6km
 class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 {
+	//ballisticsComputer=8;	//direct fire reticle for highest charge
+
 	magazines[]=
 	{
 		"RC_1Rnd_82mm_vic_Mo_shells",
@@ -1647,46 +1649,46 @@ class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 		"RC_39Rnd_82mm_vic_Mo_lowHEAB",
 		"RC_40Rnd_82mm_vic_Mo_lowHEAB",
 
-		"RC_1Rnd_82mm_Mo_Smoke_white",
-		"RC_2Rnd_82mm_Mo_Smoke_white",
-		"RC_3Rnd_82mm_Mo_Smoke_white",
-		"RC_4Rnd_82mm_Mo_Smoke_white",
-		"RC_5Rnd_82mm_Mo_Smoke_white",
-		"RC_6Rnd_82mm_Mo_Smoke_white",
-		"RC_7Rnd_82mm_Mo_Smoke_white",
-		"RC_8Rnd_82mm_Mo_Smoke_white",
-		"RC_9Rnd_82mm_Mo_Smoke_white",
-		"RC_10Rnd_82mm_Mo_Smoke_white",
-		"RC_11Rnd_82mm_Mo_Smoke_white",
-		"RC_12Rnd_82mm_Mo_Smoke_white",
-		"RC_13Rnd_82mm_Mo_Smoke_white",
-		"RC_14Rnd_82mm_Mo_Smoke_white",
-		"RC_15Rnd_82mm_Mo_Smoke_white",
-		"RC_16Rnd_82mm_Mo_Smoke_white",
-		"RC_17Rnd_82mm_Mo_Smoke_white",
-		"RC_18Rnd_82mm_Mo_Smoke_white",
-		"RC_19Rnd_82mm_Mo_Smoke_white",
-		"RC_20Rnd_82mm_Mo_Smoke_white",
-		"RC_21Rnd_82mm_Mo_Smoke_white",
-		"RC_22Rnd_82mm_Mo_Smoke_white",
-		"RC_23Rnd_82mm_Mo_Smoke_white",
-		"RC_24Rnd_82mm_Mo_Smoke_white",
-		"RC_25Rnd_82mm_Mo_Smoke_white",
-		"RC_26Rnd_82mm_Mo_Smoke_white",
-		"RC_27Rnd_82mm_Mo_Smoke_white",
-		"RC_28Rnd_82mm_Mo_Smoke_white",
-		"RC_29Rnd_82mm_Mo_Smoke_white",
-		"RC_30Rnd_82mm_Mo_Smoke_white",
-		"RC_31Rnd_82mm_Mo_Smoke_white",
-		"RC_32Rnd_82mm_Mo_Smoke_white",
-		"RC_33Rnd_82mm_Mo_Smoke_white",
-		"RC_34Rnd_82mm_Mo_Smoke_white",
-		"RC_35Rnd_82mm_Mo_Smoke_white",
-		"RC_36Rnd_82mm_Mo_Smoke_white",
-		"RC_37Rnd_82mm_Mo_Smoke_white",
-		"RC_38Rnd_82mm_Mo_Smoke_white",
-		"RC_39Rnd_82mm_Mo_Smoke_white",
-		"RC_40Rnd_82mm_Mo_Smoke_white",
+		"RC_1Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_2Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_3Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_4Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_5Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_6Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_7Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_8Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_9Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_10Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_11Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_12Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_13Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_14Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_15Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_16Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_17Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_18Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_19Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_20Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_21Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_22Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_23Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_24Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_25Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_26Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_27Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_28Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_29Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_30Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_31Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_32Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_33Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_34Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_35Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_36Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_37Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_38Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_39Rnd_82mm_vic_Mo_Smoke_white",
+		"RC_40Rnd_82mm_vic_Mo_Smoke_white",
 
 		"RC_1Rnd_82mm_vic_Mo_LaserGuided",
 		"RC_2Rnd_82mm_vic_Mo_LaserGuided",
@@ -1770,128 +1772,128 @@ class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 		"RC_39Rnd_82mm_vic_Mo_MultiGuided",
 		"RC_40Rnd_82mm_vic_Mo_MultiGuided",
 
-		"RC_1Rnd_82mm_Mo_mine",
-		"RC_2Rnd_82mm_Mo_mine",
-		"RC_3Rnd_82mm_Mo_mine",
-		"RC_4Rnd_82mm_Mo_mine",
-		"RC_5Rnd_82mm_Mo_mine",
-		"RC_6Rnd_82mm_Mo_mine",
-		"RC_7Rnd_82mm_Mo_mine",
-		"RC_8Rnd_82mm_Mo_mine",
-		"RC_9Rnd_82mm_Mo_mine",
-		"RC_10Rnd_82mm_Mo_mine",
-		"RC_11Rnd_82mm_Mo_mine",
-		"RC_12Rnd_82mm_Mo_mine",
-		"RC_13Rnd_82mm_Mo_mine",
-		"RC_14Rnd_82mm_Mo_mine",
-		"RC_15Rnd_82mm_Mo_mine",
-		"RC_16Rnd_82mm_Mo_mine",
-		"RC_17Rnd_82mm_Mo_mine",
-		"RC_18Rnd_82mm_Mo_mine",
-		"RC_19Rnd_82mm_Mo_mine",
-		"RC_20Rnd_82mm_Mo_mine",
-		"RC_21Rnd_82mm_Mo_mine",
-		"RC_22Rnd_82mm_Mo_mine",
-		"RC_23Rnd_82mm_Mo_mine",
-		"RC_24Rnd_82mm_Mo_mine",
-		"RC_25Rnd_82mm_Mo_mine",
-		"RC_26Rnd_82mm_Mo_mine",
-		"RC_27Rnd_82mm_Mo_mine",
-		"RC_28Rnd_82mm_Mo_mine",
-		"RC_29Rnd_82mm_Mo_mine",
-		"RC_30Rnd_82mm_Mo_mine",
-		"RC_31Rnd_82mm_Mo_mine",
-		"RC_32Rnd_82mm_Mo_mine",
-		"RC_33Rnd_82mm_Mo_mine",
-		"RC_34Rnd_82mm_Mo_mine",
-		"RC_35Rnd_82mm_Mo_mine",
-		"RC_36Rnd_82mm_Mo_mine",
-		"RC_37Rnd_82mm_Mo_mine",
-		"RC_38Rnd_82mm_Mo_mine",
-		"RC_39Rnd_82mm_Mo_mine",
-		"RC_40Rnd_82mm_Mo_mine",
+		"RC_1Rnd_82mm_vic_Mo_mine",
+		"RC_2Rnd_82mm_vic_Mo_mine",
+		"RC_3Rnd_82mm_vic_Mo_mine",
+		"RC_4Rnd_82mm_vic_Mo_mine",
+		"RC_5Rnd_82mm_vic_Mo_mine",
+		"RC_6Rnd_82mm_vic_Mo_mine",
+		"RC_7Rnd_82mm_vic_Mo_mine",
+		"RC_8Rnd_82mm_vic_Mo_mine",
+		"RC_9Rnd_82mm_vic_Mo_mine",
+		"RC_10Rnd_82mm_vic_Mo_mine",
+		"RC_11Rnd_82mm_vic_Mo_mine",
+		"RC_12Rnd_82mm_vic_Mo_mine",
+		"RC_13Rnd_82mm_vic_Mo_mine",
+		"RC_14Rnd_82mm_vic_Mo_mine",
+		"RC_15Rnd_82mm_vic_Mo_mine",
+		"RC_16Rnd_82mm_vic_Mo_mine",
+		"RC_17Rnd_82mm_vic_Mo_mine",
+		"RC_18Rnd_82mm_vic_Mo_mine",
+		"RC_19Rnd_82mm_vic_Mo_mine",
+		"RC_20Rnd_82mm_vic_Mo_mine",
+		"RC_21Rnd_82mm_vic_Mo_mine",
+		"RC_22Rnd_82mm_vic_Mo_mine",
+		"RC_23Rnd_82mm_vic_Mo_mine",
+		"RC_24Rnd_82mm_vic_Mo_mine",
+		"RC_25Rnd_82mm_vic_Mo_mine",
+		"RC_26Rnd_82mm_vic_Mo_mine",
+		"RC_27Rnd_82mm_vic_Mo_mine",
+		"RC_28Rnd_82mm_vic_Mo_mine",
+		"RC_29Rnd_82mm_vic_Mo_mine",
+		"RC_30Rnd_82mm_vic_Mo_mine",
+		"RC_31Rnd_82mm_vic_Mo_mine",
+		"RC_32Rnd_82mm_vic_Mo_mine",
+		"RC_33Rnd_82mm_vic_Mo_mine",
+		"RC_34Rnd_82mm_vic_Mo_mine",
+		"RC_35Rnd_82mm_vic_Mo_mine",
+		"RC_36Rnd_82mm_vic_Mo_mine",
+		"RC_37Rnd_82mm_vic_Mo_mine",
+		"RC_38Rnd_82mm_vic_Mo_mine",
+		"RC_39Rnd_82mm_vic_Mo_mine",
+		"RC_40Rnd_82mm_vic_Mo_mine",
 
-		"RC_1Rnd_82mm_Mo_AT_mine",
-		"RC_2Rnd_82mm_Mo_AT_mine",
-		"RC_3Rnd_82mm_Mo_AT_mine",
-		"RC_4Rnd_82mm_Mo_AT_mine",
-		"RC_5Rnd_82mm_Mo_AT_mine",
-		"RC_6Rnd_82mm_Mo_AT_mine",
-		"RC_7Rnd_82mm_Mo_AT_mine",
-		"RC_8Rnd_82mm_Mo_AT_mine",
-		"RC_9Rnd_82mm_Mo_AT_mine",
-		"RC_10Rnd_82mm_Mo_AT_mine",
-		"RC_11Rnd_82mm_Mo_AT_mine",
-		"RC_12Rnd_82mm_Mo_AT_mine",
-		"RC_13Rnd_82mm_Mo_AT_mine",
-		"RC_14Rnd_82mm_Mo_AT_mine",
-		"RC_15Rnd_82mm_Mo_AT_mine",
-		"RC_16Rnd_82mm_Mo_AT_mine",
-		"RC_17Rnd_82mm_Mo_AT_mine",
-		"RC_18Rnd_82mm_Mo_AT_mine",
-		"RC_19Rnd_82mm_Mo_AT_mine",
-		"RC_20Rnd_82mm_Mo_AT_mine",
-		"RC_21Rnd_82mm_Mo_AT_mine",
-		"RC_22Rnd_82mm_Mo_AT_mine",
-		"RC_23Rnd_82mm_Mo_AT_mine",
-		"RC_24Rnd_82mm_Mo_AT_mine",
-		"RC_25Rnd_82mm_Mo_AT_mine",
-		"RC_26Rnd_82mm_Mo_AT_mine",
-		"RC_27Rnd_82mm_Mo_AT_mine",
-		"RC_28Rnd_82mm_Mo_AT_mine",
-		"RC_29Rnd_82mm_Mo_AT_mine",
-		"RC_30Rnd_82mm_Mo_AT_mine",
-		"RC_31Rnd_82mm_Mo_AT_mine",
-		"RC_32Rnd_82mm_Mo_AT_mine",
-		"RC_33Rnd_82mm_Mo_AT_mine",
-		"RC_34Rnd_82mm_Mo_AT_mine",
-		"RC_35Rnd_82mm_Mo_AT_mine",
-		"RC_36Rnd_82mm_Mo_AT_mine",
-		"RC_37Rnd_82mm_Mo_AT_mine",
-		"RC_38Rnd_82mm_Mo_AT_mine",
-		"RC_39Rnd_82mm_Mo_AT_mine",
-		"RC_40Rnd_82mm_Mo_AT_mine",
+		"RC_1Rnd_82mm_vic_Mo_AT_mine",
+		"RC_2Rnd_82mm_vic_Mo_AT_mine",
+		"RC_3Rnd_82mm_vic_Mo_AT_mine",
+		"RC_4Rnd_82mm_vic_Mo_AT_mine",
+		"RC_5Rnd_82mm_vic_Mo_AT_mine",
+		"RC_6Rnd_82mm_vic_Mo_AT_mine",
+		"RC_7Rnd_82mm_vic_Mo_AT_mine",
+		"RC_8Rnd_82mm_vic_Mo_AT_mine",
+		"RC_9Rnd_82mm_vic_Mo_AT_mine",
+		"RC_10Rnd_82mm_vic_Mo_AT_mine",
+		"RC_11Rnd_82mm_vic_Mo_AT_mine",
+		"RC_12Rnd_82mm_vic_Mo_AT_mine",
+		"RC_13Rnd_82mm_vic_Mo_AT_mine",
+		"RC_14Rnd_82mm_vic_Mo_AT_mine",
+		"RC_15Rnd_82mm_vic_Mo_AT_mine",
+		"RC_16Rnd_82mm_vic_Mo_AT_mine",
+		"RC_17Rnd_82mm_vic_Mo_AT_mine",
+		"RC_18Rnd_82mm_vic_Mo_AT_mine",
+		"RC_19Rnd_82mm_vic_Mo_AT_mine",
+		"RC_20Rnd_82mm_vic_Mo_AT_mine",
+		"RC_21Rnd_82mm_vic_Mo_AT_mine",
+		"RC_22Rnd_82mm_vic_Mo_AT_mine",
+		"RC_23Rnd_82mm_vic_Mo_AT_mine",
+		"RC_24Rnd_82mm_vic_Mo_AT_mine",
+		"RC_25Rnd_82mm_vic_Mo_AT_mine",
+		"RC_26Rnd_82mm_vic_Mo_AT_mine",
+		"RC_27Rnd_82mm_vic_Mo_AT_mine",
+		"RC_28Rnd_82mm_vic_Mo_AT_mine",
+		"RC_29Rnd_82mm_vic_Mo_AT_mine",
+		"RC_30Rnd_82mm_vic_Mo_AT_mine",
+		"RC_31Rnd_82mm_vic_Mo_AT_mine",
+		"RC_32Rnd_82mm_vic_Mo_AT_mine",
+		"RC_33Rnd_82mm_vic_Mo_AT_mine",
+		"RC_34Rnd_82mm_vic_Mo_AT_mine",
+		"RC_35Rnd_82mm_vic_Mo_AT_mine",
+		"RC_36Rnd_82mm_vic_Mo_AT_mine",
+		"RC_37Rnd_82mm_vic_Mo_AT_mine",
+		"RC_38Rnd_82mm_vic_Mo_AT_mine",
+		"RC_39Rnd_82mm_vic_Mo_AT_mine",
+		"RC_40Rnd_82mm_vic_Mo_AT_mine",
 
-		"RC_1Rnd_82mm_Mo_Flare_white",
-		"RC_2Rnd_82mm_Mo_Flare_white",
-		"RC_3Rnd_82mm_Mo_Flare_white",
-		"RC_4Rnd_82mm_Mo_Flare_white",
-		"RC_5Rnd_82mm_Mo_Flare_white",
-		"RC_6Rnd_82mm_Mo_Flare_white",
-		"RC_7Rnd_82mm_Mo_Flare_white",
-		"RC_8Rnd_82mm_Mo_Flare_white",
-		"RC_9Rnd_82mm_Mo_Flare_white",
-		"RC_10Rnd_82mm_Mo_Flare_white",
-		"RC_11Rnd_82mm_Mo_Flare_white",
-		"RC_12Rnd_82mm_Mo_Flare_white",
-		"RC_13Rnd_82mm_Mo_Flare_white",
-		"RC_14Rnd_82mm_Mo_Flare_white",
-		"RC_15Rnd_82mm_Mo_Flare_white",
-		"RC_16Rnd_82mm_Mo_Flare_white",
-		"RC_17Rnd_82mm_Mo_Flare_white",
-		"RC_18Rnd_82mm_Mo_Flare_white",
-		"RC_19Rnd_82mm_Mo_Flare_white",
-		"RC_20Rnd_82mm_Mo_Flare_white",
-		"RC_21Rnd_82mm_Mo_Flare_white",
-		"RC_22Rnd_82mm_Mo_Flare_white",
-		"RC_23Rnd_82mm_Mo_Flare_white",
-		"RC_24Rnd_82mm_Mo_Flare_white",
-		"RC_25Rnd_82mm_Mo_Flare_white",
-		"RC_26Rnd_82mm_Mo_Flare_white",
-		"RC_27Rnd_82mm_Mo_Flare_white",
-		"RC_28Rnd_82mm_Mo_Flare_white",
-		"RC_29Rnd_82mm_Mo_Flare_white",
-		"RC_30Rnd_82mm_Mo_Flare_white",
-		"RC_31Rnd_82mm_Mo_Flare_white",
-		"RC_32Rnd_82mm_Mo_Flare_white",
-		"RC_33Rnd_82mm_Mo_Flare_white",
-		"RC_34Rnd_82mm_Mo_Flare_white",
-		"RC_35Rnd_82mm_Mo_Flare_white",
-		"RC_36Rnd_82mm_Mo_Flare_white",
-		"RC_37Rnd_82mm_Mo_Flare_white",
-		"RC_38Rnd_82mm_Mo_Flare_white",
-		"RC_39Rnd_82mm_Mo_Flare_white",
-		"RC_40Rnd_82mm_Mo_Flare_white",
+		"RC_1Rnd_82mm_vic_Mo_Flare_white",
+		"RC_2Rnd_82mm_vic_Mo_Flare_white",
+		"RC_3Rnd_82mm_vic_Mo_Flare_white",
+		"RC_4Rnd_82mm_vic_Mo_Flare_white",
+		"RC_5Rnd_82mm_vic_Mo_Flare_white",
+		"RC_6Rnd_82mm_vic_Mo_Flare_white",
+		"RC_7Rnd_82mm_vic_Mo_Flare_white",
+		"RC_8Rnd_82mm_vic_Mo_Flare_white",
+		"RC_9Rnd_82mm_vic_Mo_Flare_white",
+		"RC_10Rnd_82mm_vic_Mo_Flare_white",
+		"RC_11Rnd_82mm_vic_Mo_Flare_white",
+		"RC_12Rnd_82mm_vic_Mo_Flare_white",
+		"RC_13Rnd_82mm_vic_Mo_Flare_white",
+		"RC_14Rnd_82mm_vic_Mo_Flare_white",
+		"RC_15Rnd_82mm_vic_Mo_Flare_white",
+		"RC_16Rnd_82mm_vic_Mo_Flare_white",
+		"RC_17Rnd_82mm_vic_Mo_Flare_white",
+		"RC_18Rnd_82mm_vic_Mo_Flare_white",
+		"RC_19Rnd_82mm_vic_Mo_Flare_white",
+		"RC_20Rnd_82mm_vic_Mo_Flare_white",
+		"RC_21Rnd_82mm_vic_Mo_Flare_white",
+		"RC_22Rnd_82mm_vic_Mo_Flare_white",
+		"RC_23Rnd_82mm_vic_Mo_Flare_white",
+		"RC_24Rnd_82mm_vic_Mo_Flare_white",
+		"RC_25Rnd_82mm_vic_Mo_Flare_white",
+		"RC_26Rnd_82mm_vic_Mo_Flare_white",
+		"RC_27Rnd_82mm_vic_Mo_Flare_white",
+		"RC_28Rnd_82mm_vic_Mo_Flare_white",
+		"RC_29Rnd_82mm_vic_Mo_Flare_white",
+		"RC_30Rnd_82mm_vic_Mo_Flare_white",
+		"RC_31Rnd_82mm_vic_Mo_Flare_white",
+		"RC_32Rnd_82mm_vic_Mo_Flare_white",
+		"RC_33Rnd_82mm_vic_Mo_Flare_white",
+		"RC_34Rnd_82mm_vic_Mo_Flare_white",
+		"RC_35Rnd_82mm_vic_Mo_Flare_white",
+		"RC_36Rnd_82mm_vic_Mo_Flare_white",
+		"RC_37Rnd_82mm_vic_Mo_Flare_white",
+		"RC_38Rnd_82mm_vic_Mo_Flare_white",
+		"RC_39Rnd_82mm_vic_Mo_Flare_white",
+		"RC_40Rnd_82mm_vic_Mo_Flare_white",
 
 		"RC_1Rnd_82mm_vic_Mo_LG_DelayedFuse",
 		"RC_2Rnd_82mm_vic_Mo_LG_DelayedFuse",
@@ -2016,18 +2018,6 @@ class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 		"RC_39Rnd_82mm_vic_Mo_backuplowHEAB",
 		"RC_40Rnd_82mm_vic_Mo_backuplowHEAB"
 	};
-
-	modes[]=
-	{
-		"Single1",
-		"Single2",
-		"Single3",
-		"Single4",
-		"Single5",
-		"Single6",
-		"Single7",
-		"Single8"
-	};
 	/*
 	modes[]=
 	{
@@ -2038,52 +2028,85 @@ class RC_vehiclemortar_82mm_V4: RC_mortar_82mm_V3
 		"Single5",
 		"Single6",
 		"Single7",
-		"Single8",
 		"Burst1",
 		"Burst2",
 		"Burst3",
 	};
 	*/
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5",
+		"Single6",
+		"Single7"
+	};
 	class Single1: Single1
 	{
 		displayName="CH0";
 		artilleryDispersion=1.9;
 		artilleryCharge=0.35;
+		minRange=51;
+		midRange=393;
+		maxRange=735;
+		minRangeProbab=0.01;
+		midRangeProbab=0.02;
+		maxRangeProbab=0.01;
+		aiDispersionCoefX=1;
+		aiDispersionCoefY=1;
+		//aiRateOfFireDispersion=1;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=10;
 	};
 	class Single2: Single1
 	{
 		displayName="CH1";
-		artilleryCharge=0.418;
+		artilleryCharge=0.417;
+		minRange=72;
+		midRange=557.5;
+		maxRange=1043;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2";
-		artilleryCharge=0.4992;
+		artilleryCharge=0.497;
+		minRange=103;
+		midRange=792.5;
+		maxRange=1482;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3";
-		artilleryCharge=0.5962;
+		artilleryCharge=0.592;
+		minRange=142;
+		midRange=1122;
+		maxRange=2102;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4";
-		artilleryCharge=0.712;
+		artilleryCharge=0.705;
+		minRange=208;
+		midRange=1595;
+		maxRange=2982;
 	};
 	class Single6: Single1
 	{
 		displayName="CH5";
-		artilleryCharge=0.8504;
+		artilleryCharge=0.84;
+		minRange=295;
+		midRange=2264;
+		maxRange=4233;
 	};
 	class Single7: Single1
 	{
 		displayName="CH6";
-		artilleryCharge=1.0156;
-	};
-	class Single8: Single1
-	{
-		displayName="CH7";
-		artilleryCharge=1.2129;
+		artilleryCharge=1;
+		minRange=418;
+		midRange=3209;
+		maxRange=6000;
 	};
 };
 
@@ -2096,415 +2119,374 @@ class RC_vehiclemortar_60mm_V4: RC_vehiclemortar_82mm_V4
 	
 	magazines[]=
 	{
-		"RC_1Rnd_60mm_Mo_shells",
-		"RC_2Rnd_60mm_Mo_shells",
-		"RC_3Rnd_60mm_Mo_shells",
-		"RC_4Rnd_60mm_Mo_shells",
-		"RC_5Rnd_60mm_Mo_shells",
-		"RC_6Rnd_60mm_Mo_shells",
-		"RC_7Rnd_60mm_Mo_shells",
-		"RC_8Rnd_60mm_Mo_shells",
-		"RC_9Rnd_60mm_Mo_shells",
-		"RC_10Rnd_60mm_Mo_shells",
-		"RC_11Rnd_60mm_Mo_shells",
-		"RC_12Rnd_60mm_Mo_shells",
-		"RC_13Rnd_60mm_Mo_shells",
-		"RC_14Rnd_60mm_Mo_shells",
-		"RC_15Rnd_60mm_Mo_shells",
-		"RC_16Rnd_60mm_Mo_shells",
-		"RC_17Rnd_60mm_Mo_shells",
-		"RC_18Rnd_60mm_Mo_shells",
-		"RC_19Rnd_60mm_Mo_shells",
-		"RC_20Rnd_60mm_Mo_shells",
-		"RC_21Rnd_60mm_Mo_shells",
-		"RC_22Rnd_60mm_Mo_shells",
-		"RC_23Rnd_60mm_Mo_shells",
-		"RC_24Rnd_60mm_Mo_shells",
-		"RC_25Rnd_60mm_Mo_shells",
-		"RC_26Rnd_60mm_Mo_shells",
-		"RC_27Rnd_60mm_Mo_shells",
-		"RC_28Rnd_60mm_Mo_shells",
-		"RC_29Rnd_60mm_Mo_shells",
-		"RC_30Rnd_60mm_Mo_shells",
-		"RC_31Rnd_60mm_Mo_shells",
-		"RC_32Rnd_60mm_Mo_shells",
-		"RC_33Rnd_60mm_Mo_shells",
-		"RC_34Rnd_60mm_Mo_shells",
-		"RC_35Rnd_60mm_Mo_shells",
-		"RC_36Rnd_60mm_Mo_shells",
-		"RC_37Rnd_60mm_Mo_shells",
-		"RC_38Rnd_60mm_Mo_shells",
-		"RC_39Rnd_60mm_Mo_shells",
-		"RC_40Rnd_60mm_Mo_shells",
+		"RC_1Rnd_60mm_vic_Mo_shells",
+		"RC_2Rnd_60mm_vic_Mo_shells",
+		"RC_3Rnd_60mm_vic_Mo_shells",
+		"RC_4Rnd_60mm_vic_Mo_shells",
+		"RC_5Rnd_60mm_vic_Mo_shells",
+		"RC_6Rnd_60mm_vic_Mo_shells",
+		"RC_7Rnd_60mm_vic_Mo_shells",
+		"RC_8Rnd_60mm_vic_Mo_shells",
+		"RC_9Rnd_60mm_vic_Mo_shells",
+		"RC_10Rnd_60mm_vic_Mo_shells",
+		"RC_11Rnd_60mm_vic_Mo_shells",
+		"RC_12Rnd_60mm_vic_Mo_shells",
+		"RC_13Rnd_60mm_vic_Mo_shells",
+		"RC_14Rnd_60mm_vic_Mo_shells",
+		"RC_15Rnd_60mm_vic_Mo_shells",
+		"RC_16Rnd_60mm_vic_Mo_shells",
+		"RC_17Rnd_60mm_vic_Mo_shells",
+		"RC_18Rnd_60mm_vic_Mo_shells",
+		"RC_19Rnd_60mm_vic_Mo_shells",
+		"RC_20Rnd_60mm_vic_Mo_shells",
+		"RC_21Rnd_60mm_vic_Mo_shells",
+		"RC_22Rnd_60mm_vic_Mo_shells",
+		"RC_23Rnd_60mm_vic_Mo_shells",
+		"RC_24Rnd_60mm_vic_Mo_shells",
+		"RC_25Rnd_60mm_vic_Mo_shells",
+		"RC_26Rnd_60mm_vic_Mo_shells",
+		"RC_27Rnd_60mm_vic_Mo_shells",
+		"RC_28Rnd_60mm_vic_Mo_shells",
+		"RC_29Rnd_60mm_vic_Mo_shells",
+		"RC_30Rnd_60mm_vic_Mo_shells",
+		"RC_31Rnd_60mm_vic_Mo_shells",
+		"RC_32Rnd_60mm_vic_Mo_shells",
+		"RC_33Rnd_60mm_vic_Mo_shells",
+		"RC_34Rnd_60mm_vic_Mo_shells",
+		"RC_35Rnd_60mm_vic_Mo_shells",
+		"RC_36Rnd_60mm_vic_Mo_shells",
+		"RC_37Rnd_60mm_vic_Mo_shells",
+		"RC_38Rnd_60mm_vic_Mo_shells",
+		"RC_39Rnd_60mm_vic_Mo_shells",
+		"RC_40Rnd_60mm_vic_Mo_shells",
 
-		"RC_1Rnd_60mm_Mo_HEAB",
-		"RC_2Rnd_60mm_Mo_HEAB",
-		"RC_3Rnd_60mm_Mo_HEAB",
-		"RC_4Rnd_60mm_Mo_HEAB",
-		"RC_5Rnd_60mm_Mo_HEAB",
-		"RC_6Rnd_60mm_Mo_HEAB",
-		"RC_7Rnd_60mm_Mo_HEAB",
-		"RC_8Rnd_60mm_Mo_HEAB",
-		"RC_9Rnd_60mm_Mo_HEAB",
-		"RC_10Rnd_60mm_Mo_HEAB",
-		"RC_11Rnd_60mm_Mo_HEAB",
-		"RC_12Rnd_60mm_Mo_HEAB",
-		"RC_13Rnd_60mm_Mo_HEAB",
-		"RC_14Rnd_60mm_Mo_HEAB",
-		"RC_15Rnd_60mm_Mo_HEAB",
-		"RC_16Rnd_60mm_Mo_HEAB",
-		"RC_17Rnd_60mm_Mo_HEAB",
-		"RC_18Rnd_60mm_Mo_HEAB",
-		"RC_19Rnd_60mm_Mo_HEAB",
-		"RC_20Rnd_60mm_Mo_HEAB",
-		"RC_21Rnd_60mm_Mo_HEAB",
-		"RC_22Rnd_60mm_Mo_HEAB",
-		"RC_23Rnd_60mm_Mo_HEAB",
-		"RC_24Rnd_60mm_Mo_HEAB",
-		"RC_25Rnd_60mm_Mo_HEAB",
-		"RC_26Rnd_60mm_Mo_HEAB",
-		"RC_27Rnd_60mm_Mo_HEAB",
-		"RC_28Rnd_60mm_Mo_HEAB",
-		"RC_29Rnd_60mm_Mo_HEAB",
-		"RC_30Rnd_60mm_Mo_HEAB",
-		"RC_31Rnd_60mm_Mo_HEAB",
-		"RC_32Rnd_60mm_Mo_HEAB",
-		"RC_33Rnd_60mm_Mo_HEAB",
-		"RC_34Rnd_60mm_Mo_HEAB",
-		"RC_35Rnd_60mm_Mo_HEAB",
-		"RC_36Rnd_60mm_Mo_HEAB",
-		"RC_37Rnd_60mm_Mo_HEAB",
-		"RC_38Rnd_60mm_Mo_HEAB",
-		"RC_39Rnd_60mm_Mo_HEAB",
-		"RC_40Rnd_60mm_Mo_HEAB",
+		"RC_1Rnd_60mm_vic_Mo_HEAB",
+		"RC_2Rnd_60mm_vic_Mo_HEAB",
+		"RC_3Rnd_60mm_vic_Mo_HEAB",
+		"RC_4Rnd_60mm_vic_Mo_HEAB",
+		"RC_5Rnd_60mm_vic_Mo_HEAB",
+		"RC_6Rnd_60mm_vic_Mo_HEAB",
+		"RC_7Rnd_60mm_vic_Mo_HEAB",
+		"RC_8Rnd_60mm_vic_Mo_HEAB",
+		"RC_9Rnd_60mm_vic_Mo_HEAB",
+		"RC_10Rnd_60mm_vic_Mo_HEAB",
+		"RC_11Rnd_60mm_vic_Mo_HEAB",
+		"RC_12Rnd_60mm_vic_Mo_HEAB",
+		"RC_13Rnd_60mm_vic_Mo_HEAB",
+		"RC_14Rnd_60mm_vic_Mo_HEAB",
+		"RC_15Rnd_60mm_vic_Mo_HEAB",
+		"RC_16Rnd_60mm_vic_Mo_HEAB",
+		"RC_17Rnd_60mm_vic_Mo_HEAB",
+		"RC_18Rnd_60mm_vic_Mo_HEAB",
+		"RC_19Rnd_60mm_vic_Mo_HEAB",
+		"RC_20Rnd_60mm_vic_Mo_HEAB",
+		"RC_21Rnd_60mm_vic_Mo_HEAB",
+		"RC_22Rnd_60mm_vic_Mo_HEAB",
+		"RC_23Rnd_60mm_vic_Mo_HEAB",
+		"RC_24Rnd_60mm_vic_Mo_HEAB",
+		"RC_25Rnd_60mm_vic_Mo_HEAB",
+		"RC_26Rnd_60mm_vic_Mo_HEAB",
+		"RC_27Rnd_60mm_vic_Mo_HEAB",
+		"RC_28Rnd_60mm_vic_Mo_HEAB",
+		"RC_29Rnd_60mm_vic_Mo_HEAB",
+		"RC_30Rnd_60mm_vic_Mo_HEAB",
+		"RC_31Rnd_60mm_vic_Mo_HEAB",
+		"RC_32Rnd_60mm_vic_Mo_HEAB",
+		"RC_33Rnd_60mm_vic_Mo_HEAB",
+		"RC_34Rnd_60mm_vic_Mo_HEAB",
+		"RC_35Rnd_60mm_vic_Mo_HEAB",
+		"RC_36Rnd_60mm_vic_Mo_HEAB",
+		"RC_37Rnd_60mm_vic_Mo_HEAB",
+		"RC_38Rnd_60mm_vic_Mo_HEAB",
+		"RC_39Rnd_60mm_vic_Mo_HEAB",
+		"RC_40Rnd_60mm_vic_Mo_HEAB",
 
-		"RC_1Rnd_60mm_Mo_Smoke_white",
-		"RC_2Rnd_60mm_Mo_Smoke_white",
-		"RC_3Rnd_60mm_Mo_Smoke_white",
-		"RC_4Rnd_60mm_Mo_Smoke_white",
-		"RC_5Rnd_60mm_Mo_Smoke_white",
-		"RC_6Rnd_60mm_Mo_Smoke_white",
-		"RC_7Rnd_60mm_Mo_Smoke_white",
-		"RC_8Rnd_60mm_Mo_Smoke_white",
-		"RC_9Rnd_60mm_Mo_Smoke_white",
-		"RC_10Rnd_60mm_Mo_Smoke_white",
-		"RC_11Rnd_60mm_Mo_Smoke_white",
-		"RC_12Rnd_60mm_Mo_Smoke_white",
-		"RC_13Rnd_60mm_Mo_Smoke_white",
-		"RC_14Rnd_60mm_Mo_Smoke_white",
-		"RC_15Rnd_60mm_Mo_Smoke_white",
-		"RC_16Rnd_60mm_Mo_Smoke_white",
-		"RC_17Rnd_60mm_Mo_Smoke_white",
-		"RC_18Rnd_60mm_Mo_Smoke_white",
-		"RC_19Rnd_60mm_Mo_Smoke_white",
-		"RC_20Rnd_60mm_Mo_Smoke_white",
-		"RC_21Rnd_60mm_Mo_Smoke_white",
-		"RC_22Rnd_60mm_Mo_Smoke_white",
-		"RC_23Rnd_60mm_Mo_Smoke_white",
-		"RC_24Rnd_60mm_Mo_Smoke_white",
-		"RC_25Rnd_60mm_Mo_Smoke_white",
-		"RC_26Rnd_60mm_Mo_Smoke_white",
-		"RC_27Rnd_60mm_Mo_Smoke_white",
-		"RC_28Rnd_60mm_Mo_Smoke_white",
-		"RC_29Rnd_60mm_Mo_Smoke_white",
-		"RC_30Rnd_60mm_Mo_Smoke_white",
-		"RC_31Rnd_60mm_Mo_Smoke_white",
-		"RC_32Rnd_60mm_Mo_Smoke_white",
-		"RC_33Rnd_60mm_Mo_Smoke_white",
-		"RC_34Rnd_60mm_Mo_Smoke_white",
-		"RC_35Rnd_60mm_Mo_Smoke_white",
-		"RC_36Rnd_60mm_Mo_Smoke_white",
-		"RC_37Rnd_60mm_Mo_Smoke_white",
-		"RC_38Rnd_60mm_Mo_Smoke_white",
-		"RC_39Rnd_60mm_Mo_Smoke_white",
-		"RC_40Rnd_60mm_Mo_Smoke_white",
+		"RC_1Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_2Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_3Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_4Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_5Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_6Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_7Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_8Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_9Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_10Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_11Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_12Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_13Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_14Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_15Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_16Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_17Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_18Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_19Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_20Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_21Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_22Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_23Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_24Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_25Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_26Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_27Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_28Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_29Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_30Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_31Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_32Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_33Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_34Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_35Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_36Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_37Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_38Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_39Rnd_60mm_vic_Mo_Smoke_white",
+		"RC_40Rnd_60mm_vic_Mo_Smoke_white",
 
-		"RC_1Rnd_60mm_Mo_LaserGuided",
-		"RC_2Rnd_60mm_Mo_LaserGuided",
-		"RC_3Rnd_60mm_Mo_LaserGuided",
-		"RC_4Rnd_60mm_Mo_LaserGuided",
-		"RC_5Rnd_60mm_Mo_LaserGuided",
-		"RC_6Rnd_60mm_Mo_LaserGuided",
-		"RC_7Rnd_60mm_Mo_LaserGuided",
-		"RC_8Rnd_60mm_Mo_LaserGuided",
-		"RC_9Rnd_60mm_Mo_LaserGuided",
-		"RC_10Rnd_60mm_Mo_LaserGuided",
-		"RC_11Rnd_60mm_Mo_LaserGuided",
-		"RC_12Rnd_60mm_Mo_LaserGuided",
-		"RC_13Rnd_60mm_Mo_LaserGuided",
-		"RC_14Rnd_60mm_Mo_LaserGuided",
-		"RC_15Rnd_60mm_Mo_LaserGuided",
-		"RC_16Rnd_60mm_Mo_LaserGuided",
-		"RC_17Rnd_60mm_Mo_LaserGuided",
-		"RC_18Rnd_60mm_Mo_LaserGuided",
-		"RC_19Rnd_60mm_Mo_LaserGuided",
-		"RC_20Rnd_60mm_Mo_LaserGuided",
-		"RC_21Rnd_60mm_Mo_LaserGuided",
-		"RC_22Rnd_60mm_Mo_LaserGuided",
-		"RC_23Rnd_60mm_Mo_LaserGuided",
-		"RC_24Rnd_60mm_Mo_LaserGuided",
-		"RC_25Rnd_60mm_Mo_LaserGuided",
-		"RC_26Rnd_60mm_Mo_LaserGuided",
-		"RC_27Rnd_60mm_Mo_LaserGuided",
-		"RC_28Rnd_60mm_Mo_LaserGuided",
-		"RC_29Rnd_60mm_Mo_LaserGuided",
-		"RC_30Rnd_60mm_Mo_LaserGuided",
-		"RC_31Rnd_60mm_Mo_LaserGuided",
-		"RC_32Rnd_60mm_Mo_LaserGuided",
-		"RC_33Rnd_60mm_Mo_LaserGuided",
-		"RC_34Rnd_60mm_Mo_LaserGuided",
-		"RC_35Rnd_60mm_Mo_LaserGuided",
-		"RC_36Rnd_60mm_Mo_LaserGuided",
-		"RC_37Rnd_60mm_Mo_LaserGuided",
-		"RC_38Rnd_60mm_Mo_LaserGuided",
-		"RC_39Rnd_60mm_Mo_LaserGuided",
-		"RC_40Rnd_60mm_Mo_LaserGuided",
+		"RC_1Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_2Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_3Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_4Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_5Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_6Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_7Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_8Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_9Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_10Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_11Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_12Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_13Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_14Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_15Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_16Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_17Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_18Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_19Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_20Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_21Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_22Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_23Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_24Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_25Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_26Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_27Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_28Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_29Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_30Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_31Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_32Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_33Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_34Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_35Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_36Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_37Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_38Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_39Rnd_60mm_vic_Mo_LaserGuided",
+		"RC_40Rnd_60mm_vic_Mo_LaserGuided",
 
-		"RC_1Rnd_60mm_Mo_MultiGuided",
-		"RC_2Rnd_60mm_Mo_MultiGuided",
-		"RC_3Rnd_60mm_Mo_MultiGuided",
-		"RC_4Rnd_60mm_Mo_MultiGuided",
-		"RC_5Rnd_60mm_Mo_MultiGuided",
-		"RC_6Rnd_60mm_Mo_MultiGuided",
-		"RC_7Rnd_60mm_Mo_MultiGuided",
-		"RC_8Rnd_60mm_Mo_MultiGuided",
-		"RC_9Rnd_60mm_Mo_MultiGuided",
-		"RC_10Rnd_60mm_Mo_MultiGuided",
-		"RC_11Rnd_60mm_Mo_MultiGuided",
-		"RC_12Rnd_60mm_Mo_MultiGuided",
-		"RC_13Rnd_60mm_Mo_MultiGuided",
-		"RC_14Rnd_60mm_Mo_MultiGuided",
-		"RC_15Rnd_60mm_Mo_MultiGuided",
-		"RC_16Rnd_60mm_Mo_MultiGuided",
-		"RC_17Rnd_60mm_Mo_MultiGuided",
-		"RC_18Rnd_60mm_Mo_MultiGuided",
-		"RC_19Rnd_60mm_Mo_MultiGuided",
-		"RC_20Rnd_60mm_Mo_MultiGuided",
-		"RC_21Rnd_60mm_Mo_MultiGuided",
-		"RC_22Rnd_60mm_Mo_MultiGuided",
-		"RC_23Rnd_60mm_Mo_MultiGuided",
-		"RC_24Rnd_60mm_Mo_MultiGuided",
-		"RC_25Rnd_60mm_Mo_MultiGuided",
-		"RC_26Rnd_60mm_Mo_MultiGuided",
-		"RC_27Rnd_60mm_Mo_MultiGuided",
-		"RC_28Rnd_60mm_Mo_MultiGuided",
-		"RC_29Rnd_60mm_Mo_MultiGuided",
-		"RC_30Rnd_60mm_Mo_MultiGuided",
-		"RC_31Rnd_60mm_Mo_MultiGuided",
-		"RC_32Rnd_60mm_Mo_MultiGuided",
-		"RC_33Rnd_60mm_Mo_MultiGuided",
-		"RC_34Rnd_60mm_Mo_MultiGuided",
-		"RC_35Rnd_60mm_Mo_MultiGuided",
-		"RC_36Rnd_60mm_Mo_MultiGuided",
-		"RC_37Rnd_60mm_Mo_MultiGuided",
-		"RC_38Rnd_60mm_Mo_MultiGuided",
-		"RC_39Rnd_60mm_Mo_MultiGuided",
-		"RC_40Rnd_60mm_Mo_MultiGuided",
+		"RC_1Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_2Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_3Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_4Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_5Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_6Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_7Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_8Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_9Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_10Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_11Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_12Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_13Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_14Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_15Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_16Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_17Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_18Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_19Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_20Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_21Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_22Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_23Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_24Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_25Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_26Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_27Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_28Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_29Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_30Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_31Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_32Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_33Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_34Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_35Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_36Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_37Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_38Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_39Rnd_60mm_vic_Mo_MultiGuided",
+		"RC_40Rnd_60mm_vic_Mo_MultiGuided",
 
-		"RC_1Rnd_60mm_Mo_mine",
-		"RC_2Rnd_60mm_Mo_mine",
-		"RC_3Rnd_60mm_Mo_mine",
-		"RC_4Rnd_60mm_Mo_mine",
-		"RC_5Rnd_60mm_Mo_mine",
-		"RC_6Rnd_60mm_Mo_mine",
-		"RC_7Rnd_60mm_Mo_mine",
-		"RC_8Rnd_60mm_Mo_mine",
-		"RC_9Rnd_60mm_Mo_mine",
-		"RC_10Rnd_60mm_Mo_mine",
-		"RC_11Rnd_60mm_Mo_mine",
-		"RC_12Rnd_60mm_Mo_mine",
-		"RC_13Rnd_60mm_Mo_mine",
-		"RC_14Rnd_60mm_Mo_mine",
-		"RC_15Rnd_60mm_Mo_mine",
-		"RC_16Rnd_60mm_Mo_mine",
-		"RC_17Rnd_60mm_Mo_mine",
-		"RC_18Rnd_60mm_Mo_mine",
-		"RC_19Rnd_60mm_Mo_mine",
-		"RC_20Rnd_60mm_Mo_mine",
-		"RC_21Rnd_60mm_Mo_mine",
-		"RC_22Rnd_60mm_Mo_mine",
-		"RC_23Rnd_60mm_Mo_mine",
-		"RC_24Rnd_60mm_Mo_mine",
-		"RC_25Rnd_60mm_Mo_mine",
-		"RC_26Rnd_60mm_Mo_mine",
-		"RC_27Rnd_60mm_Mo_mine",
-		"RC_28Rnd_60mm_Mo_mine",
-		"RC_29Rnd_60mm_Mo_mine",
-		"RC_30Rnd_60mm_Mo_mine",
-		"RC_31Rnd_60mm_Mo_mine",
-		"RC_32Rnd_60mm_Mo_mine",
-		"RC_33Rnd_60mm_Mo_mine",
-		"RC_34Rnd_60mm_Mo_mine",
-		"RC_35Rnd_60mm_Mo_mine",
-		"RC_36Rnd_60mm_Mo_mine",
-		"RC_37Rnd_60mm_Mo_mine",
-		"RC_38Rnd_60mm_Mo_mine",
-		"RC_39Rnd_60mm_Mo_mine",
-		"RC_40Rnd_60mm_Mo_mine",
+		"RC_1Rnd_60mm_vic_Mo_mine",
+		"RC_2Rnd_60mm_vic_Mo_mine",
+		"RC_3Rnd_60mm_vic_Mo_mine",
+		"RC_4Rnd_60mm_vic_Mo_mine",
+		"RC_5Rnd_60mm_vic_Mo_mine",
+		"RC_6Rnd_60mm_vic_Mo_mine",
+		"RC_7Rnd_60mm_vic_Mo_mine",
+		"RC_8Rnd_60mm_vic_Mo_mine",
+		"RC_9Rnd_60mm_vic_Mo_mine",
+		"RC_10Rnd_60mm_vic_Mo_mine",
+		"RC_11Rnd_60mm_vic_Mo_mine",
+		"RC_12Rnd_60mm_vic_Mo_mine",
+		"RC_13Rnd_60mm_vic_Mo_mine",
+		"RC_14Rnd_60mm_vic_Mo_mine",
+		"RC_15Rnd_60mm_vic_Mo_mine",
+		"RC_16Rnd_60mm_vic_Mo_mine",
+		"RC_17Rnd_60mm_vic_Mo_mine",
+		"RC_18Rnd_60mm_vic_Mo_mine",
+		"RC_19Rnd_60mm_vic_Mo_mine",
+		"RC_20Rnd_60mm_vic_Mo_mine",
+		"RC_21Rnd_60mm_vic_Mo_mine",
+		"RC_22Rnd_60mm_vic_Mo_mine",
+		"RC_23Rnd_60mm_vic_Mo_mine",
+		"RC_24Rnd_60mm_vic_Mo_mine",
+		"RC_25Rnd_60mm_vic_Mo_mine",
+		"RC_26Rnd_60mm_vic_Mo_mine",
+		"RC_27Rnd_60mm_vic_Mo_mine",
+		"RC_28Rnd_60mm_vic_Mo_mine",
+		"RC_29Rnd_60mm_vic_Mo_mine",
+		"RC_30Rnd_60mm_vic_Mo_mine",
+		"RC_31Rnd_60mm_vic_Mo_mine",
+		"RC_32Rnd_60mm_vic_Mo_mine",
+		"RC_33Rnd_60mm_vic_Mo_mine",
+		"RC_34Rnd_60mm_vic_Mo_mine",
+		"RC_35Rnd_60mm_vic_Mo_mine",
+		"RC_36Rnd_60mm_vic_Mo_mine",
+		"RC_37Rnd_60mm_vic_Mo_mine",
+		"RC_38Rnd_60mm_vic_Mo_mine",
+		"RC_39Rnd_60mm_vic_Mo_mine",
+		"RC_40Rnd_60mm_vic_Mo_mine",
 
-		"RC_1Rnd_60mm_Mo_AT_mine",
-		"RC_2Rnd_60mm_Mo_AT_mine",
-		"RC_3Rnd_60mm_Mo_AT_mine",
-		"RC_4Rnd_60mm_Mo_AT_mine",
-		"RC_5Rnd_60mm_Mo_AT_mine",
-		"RC_6Rnd_60mm_Mo_AT_mine",
-		"RC_7Rnd_60mm_Mo_AT_mine",
-		"RC_8Rnd_60mm_Mo_AT_mine",
-		"RC_9Rnd_60mm_Mo_AT_mine",
-		"RC_10Rnd_60mm_Mo_AT_mine",
-		"RC_11Rnd_60mm_Mo_AT_mine",
-		"RC_12Rnd_60mm_Mo_AT_mine",
-		"RC_13Rnd_60mm_Mo_AT_mine",
-		"RC_14Rnd_60mm_Mo_AT_mine",
-		"RC_15Rnd_60mm_Mo_AT_mine",
-		"RC_16Rnd_60mm_Mo_AT_mine",
-		"RC_17Rnd_60mm_Mo_AT_mine",
-		"RC_18Rnd_60mm_Mo_AT_mine",
-		"RC_19Rnd_60mm_Mo_AT_mine",
-		"RC_20Rnd_60mm_Mo_AT_mine",
-		"RC_21Rnd_60mm_Mo_AT_mine",
-		"RC_22Rnd_60mm_Mo_AT_mine",
-		"RC_23Rnd_60mm_Mo_AT_mine",
-		"RC_24Rnd_60mm_Mo_AT_mine",
-		"RC_25Rnd_60mm_Mo_AT_mine",
-		"RC_26Rnd_60mm_Mo_AT_mine",
-		"RC_27Rnd_60mm_Mo_AT_mine",
-		"RC_28Rnd_60mm_Mo_AT_mine",
-		"RC_29Rnd_60mm_Mo_AT_mine",
-		"RC_30Rnd_60mm_Mo_AT_mine",
-		"RC_31Rnd_60mm_Mo_AT_mine",
-		"RC_32Rnd_60mm_Mo_AT_mine",
-		"RC_33Rnd_60mm_Mo_AT_mine",
-		"RC_34Rnd_60mm_Mo_AT_mine",
-		"RC_35Rnd_60mm_Mo_AT_mine",
-		"RC_36Rnd_60mm_Mo_AT_mine",
-		"RC_37Rnd_60mm_Mo_AT_mine",
-		"RC_38Rnd_60mm_Mo_AT_mine",
-		"RC_39Rnd_60mm_Mo_AT_mine",
-		"RC_40Rnd_60mm_Mo_AT_mine",
+		"RC_1Rnd_60mm_vic_Mo_Flare_white",
+		"RC_2Rnd_60mm_vic_Mo_Flare_white",
+		"RC_3Rnd_60mm_vic_Mo_Flare_white",
+		"RC_4Rnd_60mm_vic_Mo_Flare_white",
+		"RC_5Rnd_60mm_vic_Mo_Flare_white",
+		"RC_6Rnd_60mm_vic_Mo_Flare_white",
+		"RC_7Rnd_60mm_vic_Mo_Flare_white",
+		"RC_8Rnd_60mm_vic_Mo_Flare_white",
+		"RC_9Rnd_60mm_vic_Mo_Flare_white",
+		"RC_10Rnd_60mm_vic_Mo_Flare_white",
+		"RC_11Rnd_60mm_vic_Mo_Flare_white",
+		"RC_12Rnd_60mm_vic_Mo_Flare_white",
+		"RC_13Rnd_60mm_vic_Mo_Flare_white",
+		"RC_14Rnd_60mm_vic_Mo_Flare_white",
+		"RC_15Rnd_60mm_vic_Mo_Flare_white",
+		"RC_16Rnd_60mm_vic_Mo_Flare_white",
+		"RC_17Rnd_60mm_vic_Mo_Flare_white",
+		"RC_18Rnd_60mm_vic_Mo_Flare_white",
+		"RC_19Rnd_60mm_vic_Mo_Flare_white",
+		"RC_20Rnd_60mm_vic_Mo_Flare_white",
+		"RC_21Rnd_60mm_vic_Mo_Flare_white",
+		"RC_22Rnd_60mm_vic_Mo_Flare_white",
+		"RC_23Rnd_60mm_vic_Mo_Flare_white",
+		"RC_24Rnd_60mm_vic_Mo_Flare_white",
+		"RC_25Rnd_60mm_vic_Mo_Flare_white",
+		"RC_26Rnd_60mm_vic_Mo_Flare_white",
+		"RC_27Rnd_60mm_vic_Mo_Flare_white",
+		"RC_28Rnd_60mm_vic_Mo_Flare_white",
+		"RC_29Rnd_60mm_vic_Mo_Flare_white",
+		"RC_30Rnd_60mm_vic_Mo_Flare_white",
+		"RC_31Rnd_60mm_vic_Mo_Flare_white",
+		"RC_32Rnd_60mm_vic_Mo_Flare_white",
+		"RC_33Rnd_60mm_vic_Mo_Flare_white",
+		"RC_34Rnd_60mm_vic_Mo_Flare_white",
+		"RC_35Rnd_60mm_vic_Mo_Flare_white",
+		"RC_36Rnd_60mm_vic_Mo_Flare_white",
+		"RC_37Rnd_60mm_vic_Mo_Flare_white",
+		"RC_38Rnd_60mm_vic_Mo_Flare_white",
+		"RC_39Rnd_60mm_vic_Mo_Flare_white",
+		"RC_40Rnd_60mm_vic_Mo_Flare_white",
 
-		"RC_1Rnd_60mm_Mo_Flare_white",
-		"RC_2Rnd_60mm_Mo_Flare_white",
-		"RC_3Rnd_60mm_Mo_Flare_white",
-		"RC_4Rnd_60mm_Mo_Flare_white",
-		"RC_5Rnd_60mm_Mo_Flare_white",
-		"RC_6Rnd_60mm_Mo_Flare_white",
-		"RC_7Rnd_60mm_Mo_Flare_white",
-		"RC_8Rnd_60mm_Mo_Flare_white",
-		"RC_9Rnd_60mm_Mo_Flare_white",
-		"RC_10Rnd_60mm_Mo_Flare_white",
-		"RC_11Rnd_60mm_Mo_Flare_white",
-		"RC_12Rnd_60mm_Mo_Flare_white",
-		"RC_13Rnd_60mm_Mo_Flare_white",
-		"RC_14Rnd_60mm_Mo_Flare_white",
-		"RC_15Rnd_60mm_Mo_Flare_white",
-		"RC_16Rnd_60mm_Mo_Flare_white",
-		"RC_17Rnd_60mm_Mo_Flare_white",
-		"RC_18Rnd_60mm_Mo_Flare_white",
-		"RC_19Rnd_60mm_Mo_Flare_white",
-		"RC_20Rnd_60mm_Mo_Flare_white",
-		"RC_21Rnd_60mm_Mo_Flare_white",
-		"RC_22Rnd_60mm_Mo_Flare_white",
-		"RC_23Rnd_60mm_Mo_Flare_white",
-		"RC_24Rnd_60mm_Mo_Flare_white",
-		"RC_25Rnd_60mm_Mo_Flare_white",
-		"RC_26Rnd_60mm_Mo_Flare_white",
-		"RC_27Rnd_60mm_Mo_Flare_white",
-		"RC_28Rnd_60mm_Mo_Flare_white",
-		"RC_29Rnd_60mm_Mo_Flare_white",
-		"RC_30Rnd_60mm_Mo_Flare_white",
-		"RC_31Rnd_60mm_Mo_Flare_white",
-		"RC_32Rnd_60mm_Mo_Flare_white",
-		"RC_33Rnd_60mm_Mo_Flare_white",
-		"RC_34Rnd_60mm_Mo_Flare_white",
-		"RC_35Rnd_60mm_Mo_Flare_white",
-		"RC_36Rnd_60mm_Mo_Flare_white",
-		"RC_37Rnd_60mm_Mo_Flare_white",
-		"RC_38Rnd_60mm_Mo_Flare_white",
-		"RC_39Rnd_60mm_Mo_Flare_white",
-		"RC_40Rnd_60mm_Mo_Flare_white",
+		"RC_1Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_2Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_3Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_4Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_5Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_6Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_7Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_8Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_9Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_10Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_11Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_12Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_13Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_14Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_15Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_16Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_17Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_18Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_19Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_20Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_21Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_22Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_23Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_24Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_25Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_26Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_27Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_28Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_29Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_30Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_31Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_32Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_33Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_34Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_35Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_36Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_37Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_38Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_39Rnd_60mm_vic_Mo_LG_DelayedFuse",
+		"RC_40Rnd_60mm_vic_Mo_LG_DelayedFuse",
 
-		"RC_1Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_2Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_3Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_4Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_5Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_6Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_7Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_8Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_9Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_10Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_11Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_12Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_13Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_14Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_15Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_16Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_17Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_18Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_19Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_20Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_21Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_22Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_23Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_24Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_25Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_26Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_27Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_28Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_29Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_30Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_31Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_32Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_33Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_34Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_35Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_36Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_37Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_38Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_39Rnd_60mm_Mo_LG_DelayedFuse",
-		"RC_40Rnd_60mm_Mo_LG_DelayedFuse",
-
-		"RC_1Rnd_60mm_Mo_backupHEAB",
-		"RC_2Rnd_60mm_Mo_backupHEAB",
-		"RC_3Rnd_60mm_Mo_backupHEAB",
-		"RC_4Rnd_60mm_Mo_backupHEAB",
-		"RC_5Rnd_60mm_Mo_backupHEAB",
-		"RC_6Rnd_60mm_Mo_backupHEAB",
-		"RC_7Rnd_60mm_Mo_backupHEAB",
-		"RC_8Rnd_60mm_Mo_backupHEAB",
-		"RC_9Rnd_60mm_Mo_backupHEAB",
-		"RC_10Rnd_60mm_Mo_backupHEAB",
-		"RC_11Rnd_60mm_Mo_backupHEAB",
-		"RC_12Rnd_60mm_Mo_backupHEAB",
-		"RC_13Rnd_60mm_Mo_backupHEAB",
-		"RC_14Rnd_60mm_Mo_backupHEAB",
-		"RC_15Rnd_60mm_Mo_backupHEAB",
-		"RC_16Rnd_60mm_Mo_backupHEAB",
-		"RC_17Rnd_60mm_Mo_backupHEAB",
-		"RC_18Rnd_60mm_Mo_backupHEAB",
-		"RC_19Rnd_60mm_Mo_backupHEAB",
-		"RC_20Rnd_60mm_Mo_backupHEAB",
-		"RC_21Rnd_60mm_Mo_backupHEAB",
-		"RC_22Rnd_60mm_Mo_backupHEAB",
-		"RC_23Rnd_60mm_Mo_backupHEAB",
-		"RC_24Rnd_60mm_Mo_backupHEAB",
-		"RC_25Rnd_60mm_Mo_backupHEAB",
-		"RC_26Rnd_60mm_Mo_backupHEAB",
-		"RC_27Rnd_60mm_Mo_backupHEAB",
-		"RC_28Rnd_60mm_Mo_backupHEAB",
-		"RC_29Rnd_60mm_Mo_backupHEAB",
-		"RC_30Rnd_60mm_Mo_backupHEAB",
-		"RC_31Rnd_60mm_Mo_backupHEAB",
-		"RC_32Rnd_60mm_Mo_backupHEAB",
-		"RC_33Rnd_60mm_Mo_backupHEAB",
-		"RC_34Rnd_60mm_Mo_backupHEAB",
-		"RC_35Rnd_60mm_Mo_backupHEAB",
-		"RC_36Rnd_60mm_Mo_backupHEAB",
-		"RC_37Rnd_60mm_Mo_backupHEAB",
-		"RC_38Rnd_60mm_Mo_backupHEAB",
-		"RC_39Rnd_60mm_Mo_backupHEAB",
-		"RC_40Rnd_60mm_Mo_backupHEAB"
+		"RC_1Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_2Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_3Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_4Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_5Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_6Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_7Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_8Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_9Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_10Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_11Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_12Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_13Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_14Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_15Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_16Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_17Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_18Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_19Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_20Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_21Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_22Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_23Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_24Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_25Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_26Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_27Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_28Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_29Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_30Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_31Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_32Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_33Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_34Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_35Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_36Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_37Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_38Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_39Rnd_60mm_vic_Mo_backupHEAB",
+		"RC_40Rnd_60mm_vic_Mo_backupHEAB"
 	};
 };
 
@@ -3153,7 +3135,11 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 		"Single5",
 		"Single6",
 		"Single7",
-		"Single8"
+		"Burst1",
+		"Burst2",
+		"Burst3",
+		"Burst4",
+		"Burst5"
 	};
 	*/
 	modes[]=
@@ -3164,53 +3150,71 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 		"Single4",
 		"Single5",
 		"Single6",
-		"Single7",
-		"Single8",
-		"Burst1",
-		"Burst2",
-		"Burst3",
-		"Burst4",
-		"Burst5"
+		"Single7"
 	};
 	class Single1: Single1
 	{
 		displayName="CH0"
-		artilleryCharge=0.206; //300m minrange 700ms high trajectory
+		artilleryCharge=0.265; //300m minrange
+		minRange=293;
+		midRange=1551;
+		maxRange=2809;
+		minRangeProbab=0.01;
+		midRangeProbab=0.02;
+		maxRangeProbab=0.01;
+		aiDispersionCoefX=1;
+		aiDispersionCoefY=1;
+		//aiRateOfFireDispersion=1;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=10;
 	};
 	class Single2: Single1
 	{
 		displayName="CH1"
-		artilleryCharge=0.258;
+		artilleryCharge=0.331;
+		minRange=458;
+		midRange=2420;
+		maxRange=4382;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2"
-		artilleryCharge=0.324;
+		artilleryCharge=0.413;
+		minRange=713;
+		midRange=3767.5;
+		maxRange=6822;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3"
-		artilleryCharge=0.405;
+		artilleryCharge=0.515;
+		minRange=1108;
+		midRange=5858.5;
+		maxRange=10609;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4"
-		artilleryCharge=0.508;
+		artilleryCharge=0.642;
+		minRange=1723;
+		midRange=9104.5;
+		maxRange=16486;
 	};
 	class Single6: Single1
 	{
 		displayName="CH5"
-		artilleryCharge=0.637;
+		artilleryCharge=0.801;
+		minRange=2682;
+		midRange=14173;
+		maxRange=25664;
 	};
 	class Single7: Single1
 	{
-		displayName="CH6"
-		artilleryCharge=0.798;
-	};
-	class Single8: Single1
-	{
-		displayName="CH7 direct"
+		displayName="CH6 reticle"
 		artilleryCharge=1;
+		minRange=4180;
+		midRange=22090;
+		maxRange=40000;
 	};
 };
 class RC_ShipCannon_120mm_V4: RC_ShipCannon_120mm_V3
@@ -3240,10 +3244,6 @@ class RC_ShipCannon_120mm_V4: RC_ShipCannon_120mm_V3
 		artilleryDispersion=2;
 	};
 	class Single7: Single7
-	{
-		artilleryDispersion=2;
-	};
-	class Single8: Single8
 	{
 		artilleryDispersion=2;
 	};
@@ -3898,7 +3898,11 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Single5",
 		"Single6",
 		"Single7",
-		"Single8"
+		"Burst1",
+		"Burst2",
+		"Burst3",
+		"Burst4",
+		"Burst5"
 	};
 	*/
 	modes[]=
@@ -3909,54 +3913,71 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Single4",
 		"Single5",
 		"Single6",
-		"Single7",
-		"Single8",
-		"Burst1",
-		"Burst2",
-		"Burst3",
-		"Burst4",
-		"Burst5"
+		"Single7"
 	};
-
 	class Single1: Single1
 	{
 		displayName="CH0"
-		artilleryCharge=0.206; //300m minrange 700ms high trajectory
+		artilleryCharge=0.265; //300m minrange
+		minRange=293;
+		midRange=1551;
+		maxRange=2809;
+		minRangeProbab=0.01;
+		midRangeProbab=0.02;
+		maxRangeProbab=0.01;
+		aiDispersionCoefX=1;
+		aiDispersionCoefY=1;
+		//aiRateOfFireDispersion=1;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=10;
 	};
 	class Single2: Single1
 	{
 		displayName="CH1"
-		artilleryCharge=0.258;
+		artilleryCharge=0.331;
+		minRange=458;
+		midRange=2420;
+		maxRange=4382;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2"
-		artilleryCharge=0.324;
+		artilleryCharge=0.413;
+		minRange=713;
+		midRange=3767.5;
+		maxRange=6822;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3"
-		artilleryCharge=0.405;
+		artilleryCharge=0.515;
+		minRange=1108;
+		midRange=5858.5;
+		maxRange=10609;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4"
-		artilleryCharge=0.508;
+		artilleryCharge=0.642;
+		minRange=1723;
+		midRange=9104.5;
+		maxRange=16486;
 	};
 	class Single6: Single1
 	{
 		displayName="CH5"
-		artilleryCharge=0.637;
+		artilleryCharge=0.801;
+		minRange=2682;
+		midRange=14173;
+		maxRange=25664;
 	};
 	class Single7: Single1
 	{
-		displayName="CH6"
-		artilleryCharge=0.798;
-	};
-	class Single8: Single1
-	{
-		displayName="CH7 direct"
+		displayName="CH6 reticle"
 		artilleryCharge=1;
+		minRange=4180;
+		midRange=22090;
+		maxRange=40000;
 	};
 };
 class RC_155mm_AMOS_V4: RC_155mm_AMOS_V3
@@ -3989,10 +4010,6 @@ class RC_155mm_AMOS_V4: RC_155mm_AMOS_V3
 	{
 		artilleryDispersion=2;
 	};
-	class Single8: Single8
-	{
-		artilleryDispersion=2;
-	};
 };
 
 
@@ -4006,53 +4023,52 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 
 	class Single1: Single1
 	{
-		/*
-		//burst=1;
-		//soundBurst=0;
-		aiDispersionCoefX=1;
-		aiDispersionCoefY=1;
-		aiRateOfFireDispersion=1;
-		aiRateOfFire=1;
-		aiRateOfFireDistance=10;
-		*/
-		displayName="CH0"
-		artilleryCharge=0.342;	//200m minrange 400ms high trajectory
 		reloadTime=5;
+		minRange=117;
+		midRange=620;
+		maxRange=1123;
 	};
-	class Single2: Single1
+	class Single2: Single2
 	{
-		displayName="CH1"
-		artilleryCharge=0.399;
+		reloadTime=5;
+		minRange=183;
+		midRange=968;
+		maxRange=1753;
 	};
-	class Single3: Single1
+	class Single3: Single3
 	{
-		displayName="CH2"
-		artilleryCharge=0.465;
+		reloadTime=5;
+		minRange=285;
+		midRange=1507;
+		maxRange=2729;
 	};
-	class Single4: Single1
+	class Single4: Single4
 	{
-		displayName="CH3"
-		artilleryCharge=0.542;
+		reloadTime=5;
+		minRange=443;
+		midRange=2343;
+		maxRange=4243;
 	};
-	class Single5: Single1
+	class Single5: Single5
 	{
-		displayName="CH4"
-		artilleryCharge=0.631;
+		reloadTime=5;
+		minRange=689;
+		midRange=3641.5;
+		maxRange=6594;
 	};
-	class Single6: Single1
+	class Single6: Single6
 	{
-		displayName="CH5"
-		artilleryCharge=0.736;
+		reloadTime=5;
+		minRange=1073;
+		midRange=5669;
+		maxRange=10265;
 	};
-	class Single7: Single1
+	class Single7: Single7
 	{
-		displayName="CH6"
-		artilleryCharge=0.859;
-	};
-	class Single8: Single1
-	{
-		displayName="CH7 direct"
-		artilleryCharge=1;
+		reloadTime=5;
+		minRange=1672;
+		midRange=8836;
+		maxRange=16000;
 	};
 
 	magazines[]=
@@ -4624,97 +4640,97 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT_Base
 	class Mode_1: Mode_1
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_2: Mode_2
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_3: Mode_3
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_4: Mode_4
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_5: Mode_5
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_6: Mode_6
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_7: Mode_7
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_8: Mode_8
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_9: Mode_9
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_10: Mode_10
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_11: Mode_11
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_12: Mode_12
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_13: Mode_13
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_14: Mode_14
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_15: Mode_15
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	class Mode_16: Mode_16
 	{
 		minRangeProbab=0.01;
-		midRangeProbab=0.01;
+		midRangeProbab=0.02;
 		maxRangeProbab=0.01;
 	};
 	magazines[]=

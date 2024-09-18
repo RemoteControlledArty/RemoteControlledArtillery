@@ -333,12 +333,12 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 			};
 			magazines[]=
 			{
-				"RC_15Rnd_60mm_Mo_shells",
-				"RC_4Rnd_60mm_Mo_HEAB",
-				"RC_5Rnd_60mm_Mo_MultiGuided",
-				"RC_20Rnd_60mm_Mo_Smoke_white",
-				"RC_9Rnd_60mm_Mo_mine",
-				"RC_6Rnd_60mm_Mo_Flare_white"
+				"RC_15Rnd_60mm_vic_Mo_shells",
+				"RC_4Rnd_60mm_vic_Mo_HEAB",
+				"RC_5Rnd_60mm_vic_Mo_MultiGuided",
+				"RC_20Rnd_60mm_vic_Mo_Smoke_white",
+				"RC_9Rnd_60mm_vic_Mo_mine",
+				"RC_6Rnd_60mm_vic_Mo_Flare_white"
 			};
 
 			class OpticsIn
