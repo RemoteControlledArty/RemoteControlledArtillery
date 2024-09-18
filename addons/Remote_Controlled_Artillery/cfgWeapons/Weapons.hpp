@@ -1441,15 +1441,13 @@ class RC_mortar_82mm_V2: RC_mortar_82mm_V1
 };
 class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 {
-	/*
 	modes[]=
 	{
 		"Single1",
 		"Single2",
 		"Single3"
 	};
-	*/
-
+	/*
 	modes[]=
 	{
 		"Single1",
@@ -1459,30 +1457,39 @@ class RC_mortar_82mm_V3: RC_mortar_82mm_V2
 		"Burst2",
 		"Burst3"
 	};
+	*/
 	class Single1: Single1
 	{
-		/*
-		//burst=1;
-		//soundBurst=0;
-		aiDispersionCoefX=1;
-		aiDispersionCoefY=1;
-		aiRateOfFireDispersion=1;
-		aiRateOfFire=1;
-		aiRateOfFireDistance=10;
-		*/
 		displayName="CH0, 0.5km";
 		artilleryDispersion=1.25;
 		artilleryCharge=0.34999999;
+		minRange=34;	//34	//60
+		midRange=216.5;	//216.5	//290
+		maxRange=499;	//499	//665
+		minRangeProbab=0.01;
+		midRangeProbab=0.02;
+		maxRangeProbab=0.01;
+		aiDispersionCoefX=1;
+		aiDispersionCoefY=1;
+		//aiRateOfFireDispersion=1;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=10;
 	};
 	class Single2: Single1
 	{
 		displayName="CH1, 2km";
 		artilleryCharge=0.69999999;
+		minRange=139;	//139	//230
+		midRange=1068.5;	//1068.5	1175
+		maxRange=1998;	//1998	//2660
 	};
 	class Single3: Single1
 	{
 		displayName="CH2, 4km";
 		artilleryCharge=1;
+		minRange=284;	//284	//540
+		midRange=2181;	//2181	//2355
+		maxRange=4078;	//4078	//5500
 	};
 	//used by ai, rof decreased
 	class Burst1: Burst1
@@ -3168,37 +3175,37 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 	class Single1: Single1
 	{
 		displayName="CH0"
-		artilleryCharge=0.19;
+		artilleryCharge=0.206; //300m minrange 700ms high trajectory
 	};
 	class Single2: Single1
 	{
 		displayName="CH1"
-		artilleryCharge=0.241;
+		artilleryCharge=0.258;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2"
-		artilleryCharge=0.305;
+		artilleryCharge=0.324;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3"
-		artilleryCharge=0.387;
+		artilleryCharge=0.405;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4"
-		artilleryCharge=0.491;
+		artilleryCharge=0.508;
 	};
 	class Single6: Single1
 	{
 		displayName="CH5"
-		artilleryCharge=0.622;
+		artilleryCharge=0.637;
 	};
 	class Single7: Single1
 	{
 		displayName="CH6"
-		artilleryCharge=0.789;
+		artilleryCharge=0.798;
 	};
 	class Single8: Single1
 	{
@@ -3807,13 +3814,17 @@ class RC_155mm_AMOS_V2: RC_155mm_AMOS_V1
 	class Single1: Single1
 	{	
 		/*
-		//burst=1;
-		//soundBurst=0;
+		aiBurstTerminable=1;
+		burst=1;
+		soundBurst=0;
 		aiDispersionCoefX=1;
 		aiDispersionCoefY=1;
 		aiRateOfFireDispersion=1;
 		aiRateOfFire=1;
 		aiRateOfFireDistance=10;
+		minRangeProbab=0.01;
+		midRangeProbab=0.01;
+		maxRangeProbab=0.01;
 		*/
 		reloadTime=6;
 	};
@@ -3906,49 +3917,6 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 		"Burst4",
 		"Burst5"
 	};
-
-	/*
-	class Single1: Single1
-	{
-		displayName="CH0"
-		artilleryCharge=0.19;
-	};
-	class Single2: Single1
-	{
-		displayName="CH1"
-		artilleryCharge=0.241;
-	};
-	class Single3: Single1
-	{
-		displayName="CH2"
-		artilleryCharge=0.305;
-	};
-	class Single4: Single1
-	{
-		displayName="CH3"
-		artilleryCharge=0.387;
-	};
-	class Single5: Single1
-	{
-		displayName="CH4"
-		artilleryCharge=0.491;
-	};
-	class Single6: Single1
-	{
-		displayName="CH5"
-		artilleryCharge=0.622;
-	};
-	class Single7: Single1
-	{
-		displayName="CH6"
-		artilleryCharge=0.789;
-	};
-	class Single8: Single1
-	{
-		displayName="CH7 direct"
-		artilleryCharge=1;
-	};
-	*/
 
 	class Single1: Single1
 	{
@@ -4055,43 +4023,36 @@ class RC_105mm_AMOS_V4: RC_155mm_AMOS_V4
 	{
 		displayName="CH1"
 		artilleryCharge=0.399;
-		reloadTime=5;
 	};
 	class Single3: Single1
 	{
 		displayName="CH2"
 		artilleryCharge=0.465;
-		reloadTime=5;
 	};
 	class Single4: Single1
 	{
 		displayName="CH3"
 		artilleryCharge=0.542;
-		reloadTime=5;
 	};
 	class Single5: Single1
 	{
 		displayName="CH4"
 		artilleryCharge=0.631;
-		reloadTime=5;
 	};
 	class Single6: Single1
 	{
 		displayName="CH5"
 		artilleryCharge=0.736;
-		reloadTime=5;
 	};
 	class Single7: Single1
 	{
 		displayName="CH6"
 		artilleryCharge=0.859;
-		reloadTime=5;
 	};
 	class Single8: Single1
 	{
 		displayName="CH7 direct"
 		artilleryCharge=1;
-		reloadTime=5;
 	};
 
 	magazines[]=

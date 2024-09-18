@@ -476,7 +476,7 @@ class RC_M108_A: RC_M109_A
 
 class RC_M108_WD: RC_M108_A
 {
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview = "rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
