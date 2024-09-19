@@ -550,30 +550,8 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 		1
 	};
 
-	class TransportMagazines
-	{
-	};
-	class TransportItems
-	{
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-	};
-	class TransportWeapons
-	{
-	};
+	#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
+	//#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 
 	hiddenSelectionsTextures[]=
 	{
@@ -671,6 +649,7 @@ class RC_Mortar_Carrier_WD_O: RC_Mortar_Carrier_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
 {
@@ -682,6 +661,7 @@ class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
 {
@@ -716,6 +696,7 @@ class RC_Mortar_Carrier_LC_WD_O: RC_Mortar_Carrier_LC_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Mortar_Carrier_LC_WD_I: RC_Mortar_Carrier_LC_WD
 {
@@ -727,6 +708,7 @@ class RC_Mortar_Carrier_LC_WD_I: RC_Mortar_Carrier_LC_WD
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
@@ -960,30 +942,8 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 		};
 	};
 
-	class TransportMagazines
-	{
-	};
-	class TransportItems
-	{
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-	};
-	class TransportWeapons
-	{
-	};
+	#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
+	//#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 
 	hiddenSelectionsTextures[]=
 	{
@@ -1029,6 +989,7 @@ class RC_Wiesel_ATGM_WD_O: RC_Wiesel_ATGM_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	//#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	magazines[]=
 	{
@@ -1051,6 +1012,7 @@ class RC_Wiesel_ATGM_WD_I: RC_Wiesel_ATGM_WD
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	//#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	magazines[]=
 	{
@@ -1153,6 +1115,7 @@ class RC_Wiesel_ATGM_WD_manned_O: RC_Wiesel_ATGM_WD_manned
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	magazines[]=
 	{
@@ -1175,6 +1138,7 @@ class RC_Wiesel_ATGM_WD_manned_I: RC_Wiesel_ATGM_WD_manned
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	magazines[]=
 	{
@@ -1438,30 +1402,8 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 		};
 	};
 
-	class TransportMagazines
-	{
-	};
-	class TransportItems
-	{
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-	};
-	class TransportWeapons
-	{
-	};
+	//#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 
 	hiddenSelectionsTextures[]=
 	{
@@ -1507,6 +1449,7 @@ class RC_Wiesel_AC_WD_O: RC_Wiesel_AC_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	magazines[]=
 	{
@@ -1532,6 +1475,7 @@ class RC_Wiesel_AC_WD_I: RC_Wiesel_AC_WD
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	magazines[]=
 	{
@@ -1629,6 +1573,7 @@ class RC_Wiesel_AC_WD_manned_O: RC_Wiesel_AC_WD_manned
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	magazines[]=
 	{
@@ -1654,6 +1599,7 @@ class RC_Wiesel_AC_WD_manned_I: RC_Wiesel_AC_WD_manned
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	magazines[]=
 	{

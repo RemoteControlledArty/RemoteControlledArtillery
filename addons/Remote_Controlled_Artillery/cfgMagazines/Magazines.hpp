@@ -14611,7 +14611,7 @@ class RC_12Rnd_230mm_rockets_backuplowHEAB: RC_1Rnd_230mm_rockets_backuplowHEAB
 class RC_1Rnd_604mm_rockets_ATACMS_HEAB: 12Rnd_230mm_rockets
 {
 	displayName="ATACMS HE Airburst 30m";
-	displayNameShort="ATACMS HE AB 30m";
+	displayNameShort="ATACMS HE AB";
 	RC_AimAboveHeight=30;		//airburstheight
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	ammo="RC_R_604mm_ATACMS_HEAB";

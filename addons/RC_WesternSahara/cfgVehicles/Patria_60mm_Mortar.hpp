@@ -57,6 +57,10 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
+	maxSpeed=120;
+	normalSpeedForwardCoef=0.64;
+	enginePower=593.8;
+	peakTorque=3017.6;
 
 	vehicleClass="Autonomous";
 	isUav=1;
@@ -276,7 +280,8 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 		0
 	};
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+	//#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 
 
@@ -493,16 +498,14 @@ class RC_60mmMortarPatria_A_O: RC_60mmMortarPatria_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_60mmMortarPatria_A_I: RC_60mmMortarPatria_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
@@ -524,14 +527,78 @@ class RC_60mmMortarPatria_WD_O: RC_60mmMortarPatria_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_60mmMortarPatria_WD_I: RC_60mmMortarPatria_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+class RC_60mmMortarPatria_LC_A: RC_60mmMortarPatria_A
+{
+	displayName="60mm Mortar Patria LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_8Rnd_60mm_vic_Mo_shells",
+				"RC_3Rnd_60mm_vic_Mo_HEAB",
+				"RC_3Rnd_60mm_vic_Mo_MultiGuided",
+				"RC_20Rnd_60mm_vic_Mo_Smoke_white",
+				"RC_3Rnd_60mm_vic_Mo_mine",
+				"RC_6Rnd_60mm_vic_Mo_Flare_white"
+			};
+		};
+	};
+};
+class RC_60mmMortarPatria_LC_A_O: RC_60mmMortarPatria_LC_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_60mmMortarPatria_LC_A_I: RC_60mmMortarPatria_LC_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
+class RC_60mmMortarPatria_LC_WD: RC_60mmMortarPatria_LC_A
+{
+	editorPreview="\lxws\editorpreviews_f_lxws\Data\CfgVehicles\B_T_APC_Wheeled_01_mortar_lxWS.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\Armor_F\Data\cage_olive_CO.paa",
+		"lxws\vehicles_f_lxws\data\APC_Wheeled_01\APC_Wheeled_01_lxws_olive_CO.paa"
+	};
+};
+class RC_60mmMortarPatria_LC_WD_O: RC_60mmMortarPatria_LC_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_60mmMortarPatria_LC_WD_I: RC_60mmMortarPatria_LC_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };

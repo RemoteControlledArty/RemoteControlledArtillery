@@ -267,35 +267,8 @@ class RC_Howitzer_A: RC_Howitzer_base
 		};
 	};
 
-	class TransportMagazines
-	{
-	};
-	class TransportItems
-	{
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=1;
-		};
-	};
-	class TransportWeapons
-	{
-	};
+	//#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_Howitzer_WD: RC_Howitzer_A
 {
@@ -315,24 +288,28 @@ class RC_Howitzer_A_O: RC_Howitzer_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Howitzer_WD_O: RC_Howitzer_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Howitzer_A_I: RC_Howitzer_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_Howitzer_WD_I: RC_Howitzer_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
@@ -376,24 +353,28 @@ class RC_Howitzer_LC_A_O: RC_Howitzer_LC_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Howitzer_LC_WD_O: RC_Howitzer_LC_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Howitzer_LC_A_I: RC_Howitzer_LC_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_Howitzer_LC_WD_I: RC_Howitzer_LC_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
@@ -662,30 +643,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 		};
 	};
 
-	class TransportMagazines
-	{
-	};
-	class TransportItems
-	{
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-	};
-	class TransportWeapons
-	{
-	};
+	//#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Howitzer_HEX_WD_O: RC_Howitzer_HEX_A_O
 {

@@ -5,6 +5,11 @@ class TransportMagazines
 		magazine="HandGrenade";
 		count=5;
 	};
+	class _xx_SmokeShell
+	{
+		magazine="SmokeShell";
+		count=5;
+	};
 	class _xx_Laserbatteries
 	{
 		magazine="Laserbatteries";

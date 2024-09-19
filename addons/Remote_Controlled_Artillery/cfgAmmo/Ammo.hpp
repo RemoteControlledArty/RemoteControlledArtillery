@@ -1623,6 +1623,16 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
 };
 
 
+//cluster submun that does more damage to vehicles
+class Mo_cluster_AP;
+class RC_Mo_cluster_AP: Mo_cluster_AP
+{
+	hit=70;
+	indirectHit=50;
+	indirectHitRange=12;
+};
+
+
 //82mm
 class Sh_82mm_AMOS;
 /*
@@ -2443,6 +2453,13 @@ class RC_Cluster_105mm_AMOS: Cluster_155mm_AMOS
 		"poissondisc",
 		32
 	};
+	submunitionAmmo[]=
+	{
+		"RC_Mo_cluster_AP",
+		0.93000001,
+		"Mo_cluster_AP_UXO_deploy",
+		0.07
+	};
 };
 
 
@@ -2766,6 +2783,13 @@ class RC_Cluster_120mm_AMOS: Cluster_155mm_AMOS
 		"poissondisc",
 		38
 	};
+	submunitionAmmo[]=
+	{
+		"RC_Mo_cluster_AP",
+		0.93000001,
+		"Mo_cluster_AP_UXO_deploy",
+		0.07
+	};
 };
 
 
@@ -2961,6 +2985,13 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 	{
 		"poissondisc",
 		50
+	};
+	submunitionAmmo[]=
+	{
+		"RC_Mo_cluster_AP",
+		0.93000001,
+		"Mo_cluster_AP_UXO_deploy",
+		0.07
 	};
 };
 
@@ -3279,6 +3310,13 @@ class RC_R_230mm_Cluster: R_230mm_Cluster
 	{
 		"poissondisccenter",
 		80
+	};
+	submunitionAmmo[]=
+	{
+		"RC_Mo_cluster_AP",
+		0.93000001,
+		"Mo_cluster_AP_UXO_deploy",
+		0.07
 	};
 };
 
@@ -3681,5 +3719,12 @@ class RC_R_604mm_ATACMS_DPICM: R_230mm_Cluster
 	{
 		"poissondisccenter",
 		320
+	};
+	submunitionAmmo[]=
+	{
+		"RC_Mo_cluster_AP",
+		0.93000001,
+		"Mo_cluster_AP_UXO_deploy",
+		0.07
 	};
 };

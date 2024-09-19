@@ -35,8 +35,8 @@ class RC_HIMARS_D: RC_HIMARS_base
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="dve_view_pos";
 	uavCameraDriverDir="dve_view_pos";
-	uavCameraGunnerPos="dve_view_pos";
-	uavCameraGunnerDir="dve_view_pos";
+	//uavCameraGunnerPos="dve_view_pos";
+	//uavCameraGunnerDir="dve_view_pos";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	driverCompartments="Compartment1";
@@ -107,6 +107,10 @@ class RC_HIMARS_D: RC_HIMARS_base
 			source="revolving";
 			weapon="RC_rockets_230mm_GAT";
 		};
+		class Missiles_revolving2: Missiles_revolving
+		{
+			weapon="RC_rockets_230mm_GAT";
+		};
 	};
 
 	class Turrets: Turrets
@@ -129,6 +133,7 @@ class RC_HIMARS_D: RC_HIMARS_base
 				"RC_1Rnd_230mm_rockets_cluster"
 			};
 
+			/*
 			//working screen, but azimut not changing with launcher direction, but fixed camera direction
 			class OpticsIn
 			{
@@ -148,6 +153,7 @@ class RC_HIMARS_D: RC_HIMARS_base
 					hitpoint="Hit_Optic_DVEA";
 				};
 			};
+			*/
 
 			class Components: Components
 			{
@@ -186,42 +192,21 @@ class RC_HIMARS_D: RC_HIMARS_base
 		};
 	};
 
-	class TransportMagazines
-	{
-	};
-	class TransportItems
-	{
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-	};
-	class TransportWeapons
-	{
-	};
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_HIMARS_D_O: RC_HIMARS_D
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_HIMARS_D_I: RC_HIMARS_D
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_HIMARS_WD: RC_HIMARS_D
 {
@@ -241,10 +226,75 @@ class RC_HIMARS_WD_O: RC_HIMARS_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_HIMARS_WD_I: RC_HIMARS_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
+//ATACMS
+class RC_HIMARS_ATACMS_D: RC_HIMARS_D
+{
+	displayName="RC M142 ATACMS";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_rockets_230mm_GAT"
+			};
+			magazines[]=
+			{
+				"RC_1Rnd_604mm_rockets_ATACMS_HEAB"
+			};
+		};
+	};
+};
+class RC_HIMARS_ATACMS_D_O: RC_HIMARS_ATACMS_D
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_HIMARS_ATACMS_D_I: RC_HIMARS_ATACMS_D
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+class RC_HIMARS_ATACMS_WD: RC_HIMARS_ATACMS_D
+{
+	//editorSubcategory="RC_RHS_WD_subcat";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_M142_usmc_WD.paa";
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_HIMARS\data\M142_Cab_MC_CO.paa",
+		"rhsusf\addons\rhsusf_HIMARS\data\M142_Rear_MC_CO.paa",
+		"rhsusf\addons\rhsusf_HIMARS\data\M142_Chassis_MC_co.paa",
+		"rhsusf\addons\rhsusf_HIMARS\data\M142_Wheel_CO.paa",
+		"rhsusf\addons\rhsusf_HIMARS\data\M142_Int_CO.paa"
+	};
+};
+class RC_HIMARS_ATACMS_WD_O: RC_HIMARS_ATACMS_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_HIMARS_ATACMS_WD_I: RC_HIMARS_ATACMS_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };

@@ -260,35 +260,7 @@ class RC_M109_A: RC_M109_base
 		};
 	};
 
-	class TransportMagazines
-	{
-	};
-	class TransportItems
-	{
-		class _xx_Toolkit
-		{
-			name="Toolkit";
-			count=2;
-		};
-		class _xx_Medikit
-		{
-			name="Medikit";
-			count=5;
-		};
-		class _xx_FirstAidKit
-		{
-			name="FirstAidKit";
-			count=5;
-		};
-		class _xx_MineDetector
-		{
-			name="MineDetector";
-			count=1;
-		};
-	};
-	class TransportWeapons
-	{
-	};
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_M109_WD: RC_M109_A
 {
@@ -308,24 +280,28 @@ class RC_M109_A_O: RC_M109_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M109_WD_O: RC_M109_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M109_A_I: RC_M109_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_M109_WD_I: RC_M109_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
@@ -369,24 +345,28 @@ class RC_M109_LC_A_O: RC_M109_LC_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M109_LC_WD_O: RC_M109_LC_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M109_LC_A_I: RC_M109_LC_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_M109_LC_WD_I: RC_M109_LC_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
@@ -492,24 +472,28 @@ class RC_M108_A_O: RC_M108_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M108_WD_O: RC_M108_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M108_A_I: RC_M108_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_M108_WD_I: RC_M108_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
@@ -553,22 +537,26 @@ class RC_M108_LC_A_O: RC_M108_LC_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M108_LC_WD_O: RC_M108_LC_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M108_LC_A_I: RC_M108_LC_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_M108_LC_WD_I: RC_M108_LC_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
