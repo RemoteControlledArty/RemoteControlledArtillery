@@ -102,6 +102,13 @@ class CfgPatches
 			RC_HIMARS_D_I,
 			RC_HIMARS_WD_I,
 
+			RC_HIMARS_ATACMS_D,
+			RC_HIMARS_ATACMS_WD,
+			RC_HIMARS_ATACMS_D_O,
+			RC_HIMARS_ATACMS_WD_O,
+			RC_HIMARS_ATACMS_D_I,
+			RC_HIMARS_ATACMS_WD_I,
+
 			RC_FlatbedTruck_A,
 			RC_FlatbedTruck_WD,
 			RC_FlatbedTruck_A_O,

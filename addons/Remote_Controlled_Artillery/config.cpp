@@ -112,12 +112,24 @@ class CfgPatches
 			RC_MLRS_A_I,
 			RC_MLRS_WD_I,
 
-			RC_MRL_DIG,
+			RC_MLRS_ATACMS_A,
+			RC_MLRS_ATACMS_WD,
+			RC_MLRS_ATACMS_A_O,
+			RC_MLRS_ATACMS_WD_O,
+			RC_MLRS_ATACMS_A_I,
+			RC_MLRS_ATACMS_WD_I,
+
 			RC_MRL_WD,
 			RC_MRL_HEX_O,
 			RC_MRL_WD_O,
 			RC_MRL_DIG_I,
 			RC_MRL_WD_I,
+
+			RC_MRL_ATACMS_WD,
+			RC_MRL_ATACMS_HEX_O,
+			RC_MRL_ATACMS_WD_O,
+			RC_MRL_ATACMS_DIG_I,
+			RC_MRL_ATACMS_WD_I,
 
 			RC_AA_A,
 			RC_AA_WD,
@@ -372,6 +384,10 @@ class CfgPatches
 			RC_MLRS_ReTex_D_O,
 			RC_MLRS_ReTex_D_I,
 
+			RC_MLRS_ATACMS_ReTex_D,
+			RC_MLRS_ATACMS_ReTex_D_O,
+			RC_MLRS_ATACMS_ReTex_D_I,
+
 			RC_MRL_ReTex_A,
 			RC_MRL_ReTex_D,
 			RC_MRL_ReTex_WD,
@@ -381,6 +397,16 @@ class CfgPatches
 			RC_MRL_ReTex_A_I,
 			RC_MRL_ReTex_D_I,
 			RC_MRL_ReTex_WD_I,
+
+			RC_MRL_ATACMS_ReTex_A,
+			RC_MRL_ATACMS_ReTex_D,
+			RC_MRL_ATACMS_ReTex_WD,
+			RC_MRL_ATACMS_ReTex_A_O,
+			RC_MRL_ATACMS_ReTex_D_O,
+			RC_MRL_ATACMS_ReTex_WD_O,
+			RC_MRL_ATACMS_ReTex_A_I,
+			RC_MRL_ATACMS_ReTex_D_I,
+			RC_MRL_ATACMS_ReTex_WD_I,
 
 			RC_AA_ReTex_D,
 			RC_AA_ReTex_D_O,

@@ -35,8 +35,8 @@ class RC_HIMARS_D: RC_HIMARS_base
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="dve_view_pos";
 	uavCameraDriverDir="dve_view_pos";
-	//uavCameraGunnerPos="dve_view_pos";
-	//uavCameraGunnerDir="dve_view_pos";
+	uavCameraGunnerPos="dve_view_pos";
+	uavCameraGunnerDir="dve_view_pos";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	driverCompartments="Compartment1";

@@ -20,6 +20,8 @@ class RC_CounterBatteryRadar_Player_A: RC_CounterBatteryRadar_base
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Radar_Player_subcat";
 	author="Ascent";
+	//scope=1;
+	//scopeCurator=1;
 	scope=2;
 	scopeCurator=2;
 	side=1;

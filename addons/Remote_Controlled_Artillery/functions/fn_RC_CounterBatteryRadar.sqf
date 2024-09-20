@@ -18,6 +18,13 @@ publicVariable "RC_ArtilleryArray_B";
 publicVariable "RC_ArtilleryArray_O";
 publicVariable "RC_ArtilleryArray_I";
 
+RC_isInRangeArray_B = [];
+RC_isInRangeArray_O = [];
+RC_isInRangeArray_I = [];
+publicVariable "RC_isInRangeArray_B";
+publicVariable "RC_isInRangeArray_O";
+publicVariable "RC_isInRangeArray_I";
+
 if (!isServer) exitwith {};
 
 addMissionEventHandler ["EntityCreated", {
@@ -76,22 +83,22 @@ addMissionEventHandler ["EntityCreated", {
 
                         if (_timeSinceLastMarker > _timeInterval) then {
                             _unit setVariable ["ArtySourceMarkersTime", time, true];
-                            private _artySourcePos = getPos _unit;
+                            private _artySourcePos = getPosASL _unit;
 
                             _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
                             _markerArray = [_markerName, _artySourcePos, 1];
 
                             private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
                             [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", west];
-                            [_artySourceMarker, 0.5] remoteExec ["setMarkerAlpha", west];
+                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", west];
                             [_markerName] remoteExec ["deleteMarker", east];
                             [_markerName] remoteExec ["deleteMarker", resistance];
 
                             _artySourcePosX = round (_artySourcePos select 0);
                             _artySourcePosY = round (_artySourcePos select 1);
-                            //_artySourcePosZ = round (_artySourcePos select 2);
+                            _artySourcePosZ = round (_artySourcePos select 2);
 
-                            _message = "incoming! source: " + str _artySourcePosX + " " + str _artySourcePosY;
+                            _message = "incoming! source: x" + str _artySourcePosX + " y " + str _artySourcePosY + " z " + str _artySourcePosZ;
                             [_message] remoteExec ["hint", west];
                         };
 
@@ -99,17 +106,21 @@ addMissionEventHandler ["EntityCreated", {
                         [_unitPos] spawn
                         {
                             params ["_unitPos"];
+                            sleep (RC_Test+RC_Test2);
                             {
-                                //private _firstRound = (getArtilleryAmmo [_x]) select 0;
-                                //if (isNil "_firstRound") then {continue};
+                                RC_isInRangeArray_B deleteAt (RC_isInRangeArray_B find _x);     //prevents doubles in array
+
                                 private _currentMag = (currentMagazine _x);
                                 _isInRange = _unitPos inRangeOfArtillery [[_x], _currentMag];
-
-                                if (_isInRange) then {
-                                    sleep 6;
-                                    _x doArtilleryFire [_unitPos, _currentMag, 1];  //select 0, so only 1 fires?
+                                _isAlive = alive _x;
+                                if (_isInRange && _isAlive) then {
+                                    RC_isInRangeArray_B pushback _x;
+                                    publicVariable 'RC_isInRangeArray_B';
                                 };
+                                sleep 0.1;
                             } forEach RC_ArtilleryArray_B;
+
+                            (RC_isInRangeArray_B select 0) doArtilleryFire [_unitPos, (currentMagazine (RC_isInRangeArray_B select 0)), 1];
                         };
                     };
 
@@ -121,22 +132,22 @@ addMissionEventHandler ["EntityCreated", {
 
                         if (_timeSinceLastMarker > _timeInterval) then {
                             _unit setVariable ["ArtySourceMarkersTime", time, true];
-                            private _artySourcePos = getPos _unit;
+                            private _artySourcePos = getPosASL _unit;
                             
                             _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
                             _markerArray = [_markerName, _artySourcePos, 1];
                             
                             private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
                             [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", east];
-                            [_artySourceMarker, 0.5] remoteExec ["setMarkerAlpha", east];
+                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", east];
                             [_markerName] remoteExec ["deleteMarker", west];
                             [_markerName] remoteExec ["deleteMarker", resistance];
 
                             _artySourcePosX = round (_artySourcePos select 0);
                             _artySourcePosY = round (_artySourcePos select 1);
-                            //_artySourcePosZ = round (_artySourcePos select 2);
+                            _artySourcePosZ = round (_artySourcePos select 2);
 
-                            _message = "incoming! source: " + str _artySourcePosX + " " + str _artySourcePosY;
+                            _message = "incoming! source: x" + str _artySourcePosX + " y " + str _artySourcePosY + " z " + str _artySourcePosZ;
                             [_message] remoteExec ["hint", east];
                         };
 
@@ -144,17 +155,22 @@ addMissionEventHandler ["EntityCreated", {
                         [_unitPos] spawn
                         {
                             params ["_unitPos"];
+                            sleep (RC_Test+RC_Test2);
+
                             {
-                                //private _firstRound = (getArtilleryAmmo [_x]) select 0;
-                                //if (isNil "_firstRound") then {continue};
+                                RC_isInRangeArray_O deleteAt (RC_isInRangeArray_O find _x);     //prevents doubles in array
+
                                 private _currentMag = (currentMagazine _x);
                                 _isInRange = _unitPos inRangeOfArtillery [[_x], _currentMag];
-
-                                if (_isInRange) then {
-                                    sleep 6;
-                                    _x doArtilleryFire [_unitPos, _currentMag, 1];  //select 0, so only 1 fires?
+                                _isAlive = alive _x;
+                                if (_isInRange && _isAlive) then {
+                                    RC_isInRangeArray_O pushback _x;
+                                    publicVariable 'RC_isInRangeArray_O';
                                 };
-                            } forEach RC_ArtilleryArray_O;  
+                                sleep 0.1;
+                            } forEach RC_ArtilleryArray_O;
+
+                            (RC_isInRangeArray_O select 0) doArtilleryFire [_unitPos, (currentMagazine (RC_isInRangeArray_O select 0)), 1];
                         };
                     };
 
@@ -166,22 +182,22 @@ addMissionEventHandler ["EntityCreated", {
 
                         if (_timeSinceLastMarker > _timeInterval) then {
                             _unit setVariable ["ArtySourceMarkersTime", time, true];
-                            private _artySourcePos = getPos _unit;
+                            private _artySourcePos = getPosASL _unit;
                             
                             _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
                             _markerArray = [_markerName, _artySourcePos, 1];
  
                             private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
                             [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", resistance];
-                            [_artySourceMarker, 0.5] remoteExec ["setMarkerAlpha", resistance];
+                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", resistance];
                             [_markerName] remoteExec ["deleteMarker", west];
                             [_markerName] remoteExec ["deleteMarker", east];
 
                             _artySourcePosX = round (_artySourcePos select 0);
                             _artySourcePosY = round (_artySourcePos select 1);
-                            //_artySourcePosZ = round (_artySourcePos select 2);
+                            _artySourcePosZ = round (_artySourcePos select 2);
 
-                            _message = "incoming! source: " + str _artySourcePosX + " " + str _artySourcePosY;
+                            _message = "incoming! source: x" + str _artySourcePosX + " y " + str _artySourcePosY + " z " + str _artySourcePosZ;
                             [_message] remoteExec ["hint", resistance];
                         };
 
@@ -189,17 +205,21 @@ addMissionEventHandler ["EntityCreated", {
                         [_unitPos] spawn
                         {
                             params ["_unitPos"];
+                            sleep (RC_Test+RC_Test2);
                             {
-                                //private _firstRound = (getArtilleryAmmo [_x]) select 0;
-                                //if (isNil "_firstRound") then {continue};
+                                RC_isInRangeArray_I deleteAt (RC_isInRangeArray_I find _x);     //prevents doubles in array
+
                                 private _currentMag = (currentMagazine _x);
                                 _isInRange = _unitPos inRangeOfArtillery [[_x], _currentMag];
-
-                                if (_isInRange) then {
-                                    sleep 6;
-                                    _x doArtilleryFire [_unitPos, _currentMag, 1];  //select 0, so only 1 fires?
+                                _isAlive = alive _x;
+                                if (_isInRange && _isAlive) then {
+                                    RC_isInRangeArray_I pushback _x;
+                                    publicVariable 'RC_isInRangeArray_I';
                                 };
+                                sleep 0.1;
                             } forEach RC_ArtilleryArray_I;
+
+                            (RC_isInRangeArray_I select 0) doArtilleryFire [_unitPos, (currentMagazine (RC_isInRangeArray_I select 0)), 1];
                         };
                     };
                 };

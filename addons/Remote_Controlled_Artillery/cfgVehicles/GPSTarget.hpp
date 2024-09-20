@@ -35,3 +35,8 @@ class RC_GPSDatalinkTarget: All
 	//cost=0;
 	armor=500;
 };
+class RC_ArtySourceTarget: RC_GPSDatalinkTarget
+{
+	displayName="GPS Artillery Source";
+	_generalMacro="RC_ArtySourceTarget";
+};
