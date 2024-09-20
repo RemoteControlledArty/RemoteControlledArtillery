@@ -7730,7 +7730,7 @@ class RC_40Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
 
 class RC_1Rnd_105mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 {
-	iinitSpeed=396.12;	//16km range
+	initSpeed=396.12;	//16km range
 	ammo="RC_Sh_105mm_AMOS_HEAB";
 	RC_AimAboveHeight=15.3;		//airburstheight
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
@@ -7898,7 +7898,7 @@ class RC_40Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
 
 class RC_1Rnd_105mm_Mo_lowHEAB: 32Rnd_155mm_Mo_shells
 {
-	iinitSpeed=396.12;	//16km range
+	initSpeed=396.12;	//16km range
 	ammo="RC_Sh_105mm_AMOS_lowHEAB";
 	RC_AimAboveHeight=6;		//airburstheight
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
@@ -8067,7 +8067,7 @@ class RC_40Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
 class 6Rnd_155mm_Mo_mine;
 class RC_1Rnd_105mm_Mo_mine: 6Rnd_155mm_Mo_mine
 {
-	iinitSpeed=396.12;	//16km range
+	initSpeed=396.12;	//16km range
 	ammo="RC_Mine_105mm_AMOS_range";
 	RC_TerrainWarning=1;
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
@@ -8236,7 +8236,7 @@ class RC_40Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
 class 2Rnd_155mm_Mo_Cluster;
 class RC_1Rnd_105mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 {
-	iinitSpeed=396.12;	//16km range
+	initSpeed=396.12;	//16km range
 	ammo="RC_Cluster_105mm_AMOS";
 	RC_TerrainWarning=1;
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
@@ -8405,7 +8405,7 @@ class RC_40Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
 class 6Rnd_155mm_Mo_smoke;
 class RC_1Rnd_105mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 {
-	iinitSpeed=396.12;	//16km range
+	initSpeed=396.12;	//16km range
 	ammo="RC_Smoke_155mm_AMOS_White";
 	RC_TerrainWarning=1;
 	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
@@ -8574,7 +8574,7 @@ class RC_40Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
 class 2Rnd_155mm_Mo_LG;
 class RC_1Rnd_105mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 {
-	iinitSpeed=396.12;	//16km range
+	initSpeed=396.12;	//16km range
 	ammo="RC_Sh_105mm_AMOS_MP_LaserGuided";
 	RC_AimAboveHeight=450;
 	RC_RequiresLock=1;
@@ -8909,7 +8909,7 @@ class RC_40Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
 class 6Rnd_155mm_Mo_AT_mine;
 class RC_1Rnd_105mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 {
-	iinitSpeed=396.12;	//16km range
+	initSpeed=396.12;	//16km range
 	ammo="RC_AT_Mine_105mm_AMOS_range";
 	RC_TerrainWarning=1;
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
@@ -9077,7 +9077,7 @@ class RC_40Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
 
 class RC_1Rnd_105mm_Mo_Illum: 32Rnd_155mm_Mo_shells
 {
-	iinitSpeed=396.12;	//16km range
+	initSpeed=396.12;	//16km range
 	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
 	displayName="Illumination";
 	displayNameShort="Illum";
@@ -9410,7 +9410,7 @@ class RC_40Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
 //backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_105mm_Mo_backupHEAB: 32Rnd_155mm_Mo_shells
 {
-	iinitSpeed=396.12;	//16km range
+	initSpeed=396.12;	//16km range
 	ammo="RC_Sh_105mm_AMOS_backupHEAB";
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="HE AB [direct]";
