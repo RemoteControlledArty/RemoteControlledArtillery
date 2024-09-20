@@ -1,0 +1,1 @@
+init="RC_CBRad_Player_Array_I pushback (_this select 0);  publicVariable 'RC_CBRad_Player_Array_I';";

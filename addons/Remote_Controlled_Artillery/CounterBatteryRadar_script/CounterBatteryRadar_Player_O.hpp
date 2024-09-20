@@ -1,1 +1,0 @@
-init="RC_CounterBatteryRadarArray_O pushback (_this select 0);  publicVariable 'RC_CounterBatteryRadarArray_O';";

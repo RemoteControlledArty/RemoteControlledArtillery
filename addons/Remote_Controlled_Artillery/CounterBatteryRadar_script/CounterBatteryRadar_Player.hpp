@@ -1,1 +1,0 @@
-init="RC_CounterBatteryRadarArray pushback (_this select 0);  publicVariable 'RC_CounterBatteryRadarArray'; hint format ['%1', 'CBRad init'];";

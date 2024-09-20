@@ -1,6 +1,6 @@
 // Counter Battery Radar - Player & AI Versions
 class B_Radar_System_01_F;
-class RC_CounterBatteryRadar_base: B_Radar_System_01_F
+class RC_CBRad_base: B_Radar_System_01_F
 {
 	class Components;
 	class Turrets;
@@ -14,7 +14,7 @@ class RC_CounterBatteryRadar_base: B_Radar_System_01_F
 
 	RC_CBR=1;	//1 = is Counter Battery Radar
 };
-class RC_CounterBatteryRadar_Player_A: RC_CounterBatteryRadar_base
+class RC_CBRad_Player_A: RC_CBRad_base
 {
 	displayName="Counter Battery Radar";
 	faction="RemoteControlled_B";
@@ -36,7 +36,7 @@ class RC_CounterBatteryRadar_Player_A: RC_CounterBatteryRadar_base
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player_B.hpp"
+			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_B.hpp"
 		};
 	};
 
@@ -68,7 +68,7 @@ class RC_CounterBatteryRadar_Player_A: RC_CounterBatteryRadar_base
 		};
 	};
 };
-class RC_CounterBatteryRadar_Player_A_O: RC_CounterBatteryRadar_Player_A
+class RC_CBRad_Player_A_O: RC_CBRad_Player_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -78,11 +78,11 @@ class RC_CounterBatteryRadar_Player_A_O: RC_CounterBatteryRadar_Player_A
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player_O.hpp"
+			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_O.hpp"
 		};
 	};
 };
-class RC_CounterBatteryRadar_Player_A_I: RC_CounterBatteryRadar_Player_A
+class RC_CBRad_Player_A_I: RC_CBRad_Player_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -92,13 +92,13 @@ class RC_CounterBatteryRadar_Player_A_I: RC_CounterBatteryRadar_Player_A
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player_I.hpp"
+			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_I.hpp"
 		};
 	};
 };
 
 
-class RC_CounterBatteryRadar_Player_WD: RC_CounterBatteryRadar_Player_A
+class RC_CBRad_Player_WD: RC_CBRad_Player_A
 {
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\Cfgvehicles\I_E_Radar_System_01_F.jpg";
 	hiddenSelectionsTextures[]=
@@ -107,7 +107,7 @@ class RC_CounterBatteryRadar_Player_WD: RC_CounterBatteryRadar_Player_A
 		"A3\Static_F_Sams\Radar_System_01\Data\Radar_system_01_mat_02_olive_CO.paa"
 	};
 };
-class RC_CounterBatteryRadar_Player_WD_O: RC_CounterBatteryRadar_Player_WD
+class RC_CBRad_Player_WD_O: RC_CBRad_Player_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -117,11 +117,11 @@ class RC_CounterBatteryRadar_Player_WD_O: RC_CounterBatteryRadar_Player_WD
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player_O.hpp"
+			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_O.hpp"
 		};
 	};
 };
-class RC_CounterBatteryRadar_Player_WD_I: RC_CounterBatteryRadar_Player_WD
+class RC_CBRad_Player_WD_I: RC_CBRad_Player_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -131,19 +131,19 @@ class RC_CounterBatteryRadar_Player_WD_I: RC_CounterBatteryRadar_Player_WD
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CounterBatteryRadar_script\CounterBatteryRadar_Player_I.hpp"
+			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_I.hpp"
 		};
 	};
 };
 
 
-class RC_CounterBatteryRadar_AI_A: RC_CounterBatteryRadar_Player_A
+class RC_CBRad_AI_A: RC_CBRad_Player_A
 {
 	class EventHandlers: EventHandlers
 	{	
 		class RC_Artillery
 		{
-			//#include "\Remote_Controlled_Artillery\CounterBatteryRadar_scripts\CounterBatteryRadar_Player.hpp"
+			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_B.hpp"
 		};
 	};
 
@@ -180,21 +180,35 @@ class RC_CounterBatteryRadar_AI_A: RC_CounterBatteryRadar_Player_A
 		};
 	};
 };
-class RC_CounterBatteryRadar_AI_A_O: RC_CounterBatteryRadar_AI_A
+class RC_CBRad_AI_A_O: RC_CBRad_AI_A
 {
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_O.hpp"
+		};
+	};
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_CounterBatteryRadar_AI_A_I: RC_CounterBatteryRadar_AI_A
+class RC_CBRad_AI_A_I: RC_CBRad_AI_A
 {
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_I.hpp"
+		};
+	};
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 };
 
 
-class RC_CounterBatteryRadar_AI_WD: RC_CounterBatteryRadar_AI_A
+class RC_CBRad_AI_WD: RC_CBRad_AI_A
 {
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\Cfgvehicles\I_E_Radar_System_01_F.jpg";
 	hiddenSelectionsTextures[]=
@@ -203,14 +217,28 @@ class RC_CounterBatteryRadar_AI_WD: RC_CounterBatteryRadar_AI_A
 		"A3\Static_F_Sams\Radar_System_01\Data\Radar_system_01_mat_02_olive_CO.paa"
 	};
 };
-class RC_CounterBatteryRadar_AI_WD_O: RC_CounterBatteryRadar_AI_WD
+class RC_CBRad_AI_WD_O: RC_CBRad_AI_WD
 {
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_O.hpp"
+		};
+	};
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_CounterBatteryRadar_AI_WD_I: RC_CounterBatteryRadar_AI_WD
+class RC_CBRad_AI_WD_I: RC_CBRad_AI_WD
 {
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_I.hpp"
+		};
+	};
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;

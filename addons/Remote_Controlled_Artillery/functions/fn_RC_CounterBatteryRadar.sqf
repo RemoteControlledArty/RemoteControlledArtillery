@@ -4,12 +4,19 @@
  * Needs to be preinit to work on 3den spawned vehicles.
 */
 
-RC_CounterBatteryRadarArray_B = [];
-RC_CounterBatteryRadarArray_O = [];
-RC_CounterBatteryRadarArray_I = [];
-publicVariable "RC_CounterBatteryRadarArray_B";
-publicVariable "RC_CounterBatteryRadarArray_O";
-publicVariable "RC_CounterBatteryRadarArray_I";
+RC_CBRad_Player_Array_B = [];
+RC_CBRad_Player_Array_O = [];
+RC_CBRad_Player_Array_I = [];
+publicVariable "RC_CBRad_Player_Array_B";
+publicVariable "RC_CBRad_Player_Array_O";
+publicVariable "RC_CBRad_Player_Array_I";
+
+RC_CBRad_AI_Array_B = [];
+RC_CBRad_AI_Array_O = [];
+RC_CBRad_AI_Array_I = [];
+publicVariable "RC_CBRad_AI_Array_B";
+publicVariable "RC_CBRad_AI_Array_O";
+publicVariable "RC_CBRad_AI_Array_I";
 
 RC_ArtilleryArray_B = [];
 RC_ArtilleryArray_O = [];
@@ -49,17 +56,14 @@ addMissionEventHandler ["EntityCreated", {
             case(_entitySide_B): {
                 RC_ArtilleryArray_B pushback _entity;
                 publicVariable 'RC_ArtilleryArray_B';
-                //hint format ["B %1", RC_ArtilleryArray_B];
             };
             case(_entitySide_O): {
                 RC_ArtilleryArray_O pushback _entity;
                 publicVariable 'RC_ArtilleryArray_O';
-                //hint format ["O %1", RC_ArtilleryArray_O];
             };
             case(_entitySide_I): {
                 RC_ArtilleryArray_I pushback _entity;
                 publicVariable 'RC_ArtilleryArray_I';
-                //hint format ["I %1", RC_ArtilleryArray_I];
             };
         };
 
@@ -101,9 +105,13 @@ addMissionEventHandler ["EntityCreated", {
                 publicVariable "RC_fireMissionArray_I";
                 */
 
-                _CBRalive_B = ({alive _x} count RC_CounterBatteryRadarArray_B) > 0;
-                _CBRalive_O = ({alive _x} count RC_CounterBatteryRadarArray_O) > 0;
-                _CBRalive_I = ({alive _x} count RC_CounterBatteryRadarArray_I) > 0;
+                _CBRad_Player_Alive_B = ({alive _x} count RC_CBRad_Player_Array_B) > 0;
+                _CBRad_Player_Alive_O = ({alive _x} count RC_CBRad_Player_Array_O) > 0;
+                _CBRad_Player_Alive_I = ({alive _x} count RC_CBRad_Player_Array_I) > 0;
+
+                _CBRad_AI_Alive_B = ({alive _x} count RC_CBRad_AI_Array_B) > 0;
+                _CBRad_AI_Alive_O = ({alive _x} count RC_CBRad_AI_Array_O) > 0;
+                _CBRad_AI_Alive_I = ({alive _x} count RC_CBRad_AI_Array_I) > 0;
 
                 _opposedTo_B = [side _unit, west] call BIS_fnc_sideIsEnemy;
                 _opposedTo_O = [side _unit, east] call BIS_fnc_sideIsEnemy;
@@ -111,33 +119,9 @@ addMissionEventHandler ["EntityCreated", {
 
                 //can two can activate? (needed)
                 switch (true) do {
-                    //Blufor
-                    case(_opposedTo_B and _CBRalive_B): {
-                        private _timeInterval = 10;
-                        private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
-                        private _timeSinceLastMarker = time - _lastMarkerTime;
-
-                        if (_timeSinceLastMarker > _timeInterval) then {
-                            _unit setVariable ["ArtySourceMarkersTime", time, true];
-                            private _artySourcePos = getPosASL _unit;
-
-                            _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
-                            _markerArray = [_markerName, _artySourcePos, 1];
-
-                            private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", west];
-                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", west];
-                            [_markerName] remoteExec ["deleteMarker", east];
-                            [_markerName] remoteExec ["deleteMarker", resistance];
-
-                            _artySourcePosX = round (_artySourcePos select 0);
-                            _artySourcePosY = round (_artySourcePos select 1);
-                            _artySourcePosZ = round (_artySourcePos select 2);
-
-                            _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
-                            [_message] remoteExec ["hint", west];
-                        };
-
+                    
+                    //Blufor AI
+                    case(_opposedTo_B and _CBRad_AI_Alive_B): {
                         _unitPos = getPos _unit;
                         [_unitPos] spawn
                         {
@@ -188,6 +172,20 @@ addMissionEventHandler ["EntityCreated", {
                                             {
                                                 _thirdInRange_B = (RC_isInRangeArray_B select 2);
                                                 _thirdInRange_B doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_B), 1];
+
+                                                RC_fireMissionArray_B pushback _thirdInRange_B;
+                                                publicVariable 'RC_fireMissionArray_B';
+                                                sleep 10;
+
+                                                _fireMissionNotCompleted = (({_x == _thirdInRange_B} count RC_fireMissionArray_B) > 0);
+                                                if (_fireMissionNotCompleted) then
+                                                {
+                                                    if ((count RC_isInRangeArray_B) > 3) then
+                                                    {
+                                                        _fourthInRange_B = (RC_isInRangeArray_B select 3);
+                                                        _fourthInRange_B doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_B), 1];
+                                                    };
+                                                };
                                             };
                                         };
                                     };
@@ -196,23 +194,23 @@ addMissionEventHandler ["EntityCreated", {
                         };
                     };
 
-                    //Opfor
-                    case(_opposedTo_O and _CBRalive_O): {
-                        private _timeInterval = 10; 
+                    //Blufor Player
+                    case(_opposedTo_B and _CBRad_Player_Alive_B): {
+                        private _timeInterval = 10;
                         private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
                         private _timeSinceLastMarker = time - _lastMarkerTime;
 
                         if (_timeSinceLastMarker > _timeInterval) then {
                             _unit setVariable ["ArtySourceMarkersTime", time, true];
                             private _artySourcePos = getPosASL _unit;
-                            
+
                             _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
                             _markerArray = [_markerName, _artySourcePos, 1];
-                            
+
                             private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", east];
-                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", east];
-                            [_markerName] remoteExec ["deleteMarker", west];
+                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", west];
+                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", west];
+                            [_markerName] remoteExec ["deleteMarker", east];
                             [_markerName] remoteExec ["deleteMarker", resistance];
 
                             _artySourcePosX = round (_artySourcePos select 0);
@@ -220,9 +218,12 @@ addMissionEventHandler ["EntityCreated", {
                             _artySourcePosZ = round (_artySourcePos select 2);
 
                             _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
-                            [_message] remoteExec ["hint", east];
+                            [_message] remoteExec ["hint", west];
                         };
+                    };
 
+                    //Opfor AI
+                    case(_opposedTo_O and _CBRad_AI_Alive_O): {
                         _unitPos = getPos _unit;
                         [_unitPos] spawn
                         {
@@ -270,26 +271,30 @@ addMissionEventHandler ["EntityCreated", {
                                             {
                                                 _thirdInRange_O = (RC_isInRangeArray_O select 2);
                                                 _thirdInRange_O doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_O), 1];
+
+                                                RC_fireMissionArray_O pushback _thirdInRange_O;
+                                                publicVariable 'RC_fireMissionArray_O';
+                                                sleep 10;
+
+                                                _fireMissionNotCompleted = (({_x == _thirdInRange_O} count RC_fireMissionArray_O) > 0);
+                                                if (_fireMissionNotCompleted) then
+                                                {
+                                                    if ((count RC_isInRangeArray_O) > 3) then
+                                                    {
+                                                        _fourthInRange_O = (RC_isInRangeArray_O select 3);
+                                                        _fourthInRange_O doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_O), 1];
+                                                    };
+                                                };
                                             };
                                         };
                                     };
                                 };
                             };
-                            /*
-                            if ((count RC_isInRangeArray_O) > 0) then
-                            {
-                                (RC_isInRangeArray_O select 0) doArtilleryFire [_unitPos, (currentMagazine (RC_isInRangeArray_O select 0)), 1];
-                            };
-                            if ((count RC_isInRangeArray_O) > 1) then
-                            {
-                                (RC_isInRangeArray_O select 1) doArtilleryFire [_unitPos, (currentMagazine (RC_isInRangeArray_O select 1)), 1];
-                            };
-                            */
                         };
                     };
 
-                    //Independent
-                    case(_opposedTo_I and _CBRalive_I): {
+                    //Opfor Player
+                    case(_opposedTo_O and _CBRad_Player_Alive_O): {
                         private _timeInterval = 10; 
                         private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
                         private _timeSinceLastMarker = time - _lastMarkerTime;
@@ -300,21 +305,24 @@ addMissionEventHandler ["EntityCreated", {
                             
                             _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
                             _markerArray = [_markerName, _artySourcePos, 1];
- 
+                            
                             private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", resistance];
-                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", resistance];
+                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", east];
+                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", east];
                             [_markerName] remoteExec ["deleteMarker", west];
-                            [_markerName] remoteExec ["deleteMarker", east];
+                            [_markerName] remoteExec ["deleteMarker", resistance];
 
                             _artySourcePosX = round (_artySourcePos select 0);
                             _artySourcePosY = round (_artySourcePos select 1);
                             _artySourcePosZ = round (_artySourcePos select 2);
 
                             _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
-                            [_message] remoteExec ["hint", resistance];
+                            [_message] remoteExec ["hint", east];
                         };
+                    };
 
+                    //Independent AI
+                    case(_opposedTo_I and _CBRad_AI_Alive_I): {
                         _unitPos = getPos _unit;
                         [_unitPos] spawn
                         {
@@ -349,9 +357,51 @@ addMissionEventHandler ["EntityCreated", {
                                     {
                                         _secondInRange_I = (RC_isInRangeArray_I select 1);
                                         _secondInRange_I doArtilleryFire [_unitPos, (currentMagazine _secondInRange_I), 1];
+
+                                        RC_fireMissionArray_I pushback _thirdInRange_I;
+                                        publicVariable 'RC_fireMissionArray_I';
+                                        sleep 10;
+
+                                        _fireMissionNotCompleted = (({_x == _thirdInRange_I} count RC_fireMissionArray_I) > 0);
+                                        if (_fireMissionNotCompleted) then
+                                        {
+                                            if ((count RC_isInRangeArray_I) > 3) then
+                                            {
+                                                _fourthInRange_I = (RC_isInRangeArray_I select 3);
+                                                _fourthInRange_I doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_I), 1];
+                                            };
+                                        };
                                     };
                                 };
                             };
+                        };
+                    };
+
+                    //Independent Player
+                    case(_opposedTo_I and _CBRad_Player_Alive_I): {
+                        private _timeInterval = 10; 
+                        private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
+                        private _timeSinceLastMarker = time - _lastMarkerTime;
+
+                        if (_timeSinceLastMarker > _timeInterval) then {
+                            _unit setVariable ["ArtySourceMarkersTime", time, true];
+                            private _artySourcePos = getPosASL _unit;
+                            
+                            _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+                            _markerArray = [_markerName, _artySourcePos, 1];
+ 
+                            private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
+                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", resistance];
+                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", resistance];
+                            [_markerName] remoteExec ["deleteMarker", west];
+                            [_markerName] remoteExec ["deleteMarker", east];
+
+                            _artySourcePosX = round (_artySourcePos select 0);
+                            _artySourcePosY = round (_artySourcePos select 1);
+                            _artySourcePosZ = round (_artySourcePos select 2);
+
+                            _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
+                            [_message] remoteExec ["hint", resistance];
                         };
                     };
                 };
