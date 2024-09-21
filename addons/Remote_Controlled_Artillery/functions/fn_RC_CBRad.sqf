@@ -131,6 +131,13 @@ if (_opposedTo_B and _CBRad_AI_Alive_B) then {
 
 if (!isServer) exitwith {};
 
+//found this EH, "Global Mission Event Handler. Executes each time a vehicle classified as artillery (has an artillery computer) fires a shell."
+/*
+addMissionEventHandler ["ArtilleryShellFired", {
+	params ["_vehicle", "_weapon", "_ammo", "_gunner", "_instigator", "_artilleryTarget", "_targetPosition", "_shell"];
+}];
+*/
+
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
 	_isArtillery = getNumber (configFile >> "CfgVehicles" >> (typeOf _entity) >> "artilleryScanner") == 1;
@@ -279,7 +286,8 @@ addMissionEventHandler ["EntityCreated", {
                         sleep (RC_Test+RC_Test2);
 
                         //for testing
-                        ["blufor detection sleep (AI) over"] remoteExec ["hint", west];
+                        _testHintB = "blufor detection sleep (AI) over, array:"+ str RC_ArtilleryArray_B;
+                        [_testHintB] remoteExec ["hint", west];
 
                         //RC_isInRangeArray_B = [];
                         {
@@ -428,7 +436,8 @@ addMissionEventHandler ["EntityCreated", {
                         sleep (RC_Test+RC_Test2);
 
                         //for testing
-                        ["opfor detection sleep (AI) over"] remoteExec ["hint", west];
+                        _testHintO = "opfor detection sleep (AI) over, array:"+ str RC_ArtilleryArray_O;
+                        [_testHintO] remoteExec ["hint", west];
                         
                         //RC_isInRangeArray_O = [];
                         {
@@ -562,8 +571,9 @@ addMissionEventHandler ["EntityCreated", {
                         sleep (RC_Test+RC_Test2);
 
                         //for testing
-                        ["ind detection sleep (AI) over"] remoteExec ["hint", west];
-                        
+                        _testHintI = "ind detection sleep (AI) over, array:"+ str RC_ArtilleryArray_I;
+                        [_testHintI] remoteExec ["hint", west];
+
                         //RC_isInRangeArray_I = [];
                         {
                             RC_isInRangeArray_I deleteAt (RC_isInRangeArray_I find _x);     //prevents doubles in array
