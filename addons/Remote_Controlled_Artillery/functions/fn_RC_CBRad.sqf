@@ -307,6 +307,9 @@ addMissionEventHandler ["EntityCreated", {
                             sleep 0.1;
                         } forEach RC_ArtilleryArray_B;
 
+                        //for testing
+                        ["no blufor inRange"] remoteExec ["hint", west];
+
                         if ((count RC_isInRangeArray_B) > 0) then
                         {
                             _firstInRange_B = (RC_isInRangeArray_B select 0);
@@ -457,6 +460,9 @@ addMissionEventHandler ["EntityCreated", {
                             sleep 0.1;
                         } forEach RC_ArtilleryArray_O;
 
+                        //for testing
+                        ["no opfor inRange"] remoteExec ["hint", west];
+
                         if ((count RC_isInRangeArray_O) > 0) then
                         {
                             _firstInRange_O = (RC_isInRangeArray_O select 0);
@@ -591,6 +597,9 @@ addMissionEventHandler ["EntityCreated", {
                             };
                             sleep 0.1;
                         } forEach RC_ArtilleryArray_I;
+
+                        //for testing
+                        ["no ind inRange"] remoteExec ["hint", west];
 
                         if ((count RC_isInRangeArray_I) > 0) then
                         {
