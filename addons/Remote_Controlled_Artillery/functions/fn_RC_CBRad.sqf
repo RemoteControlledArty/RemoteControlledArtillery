@@ -280,6 +280,7 @@ addMissionEventHandler ["EntityCreated", {
                         //RC_isInRangeArray_B = [];
                         {
                             RC_isInRangeArray_B deleteAt (RC_isInRangeArray_B find _x);
+                            publicVariable 'RC_isInRangeArray_B';
                             //private _currentMag = (currentMagazine _x);
                             _isNull = isNull _x;
                             if !(_isNull) then
@@ -424,6 +425,7 @@ addMissionEventHandler ["EntityCreated", {
                         //RC_isInRangeArray_O = [];
                         {
                             RC_isInRangeArray_O deleteAt (RC_isInRangeArray_O find _x);     //prevents doubles in array
+                            publicVariable 'RC_isInRangeArray_O';
                             //private _currentMag = (currentMagazine _x);
                             _isNull = isNull _x;
                             if !(_isNull) then
@@ -553,6 +555,7 @@ addMissionEventHandler ["EntityCreated", {
                         //RC_isInRangeArray_I = [];
                         {
                             RC_isInRangeArray_I deleteAt (RC_isInRangeArray_I find _x);     //prevents doubles in array
+                            publicVariable 'RC_isInRangeArray_I';
                             //private _currentMag = (currentMagazine _x);
                             _isNull = isNull _x;
                             if !(_isNull) then
