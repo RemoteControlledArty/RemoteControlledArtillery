@@ -9,7 +9,21 @@ class CfgPatches
 		{
 			RC_IFV_9_A,
 			RC_IFV_9_A_O,
-			RC_IFV_9_A_I
+			RC_IFV_9_A_I,
+			
+			RC_60mmMortarPatria_A,
+			RC_60mmMortarPatria_WD,
+			RC_60mmMortarPatria_A_O,
+			RC_60mmMortarPatria_WD_O,
+			RC_60mmMortarPatria_A_I,
+			RC_60mmMortarPatria_WD_I,
+
+			RC_60mmMortarPatria_LC_A,
+			RC_60mmMortarPatria_LC_WD,
+			RC_60mmMortarPatria_LC_A_O,
+			RC_60mmMortarPatria_LC_WD_O,
+			RC_60mmMortarPatria_LC_A_I,
+			RC_60mmMortarPatria_LC_WD_I
 		};
 
 		weapons[]=

@@ -16,9 +16,11 @@ class RC_CBRad_base: B_Radar_System_01_F
 };
 class RC_CBRad_Player_A: RC_CBRad_base
 {
-	displayName="Counter Battery Radar";
+	displayName="(P)";
+	//displayName="Counter Battery Radar";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Radar_Player_subcat";
+	editorSubcategory="RC_Test_subcat";
+	//editorSubcategory="RC_Radar_Player_subcat";
 	author="Ascent";
 	//scope=1;
 	//scopeCurator=1;
@@ -40,7 +42,15 @@ class RC_CBRad_Player_A: RC_CBRad_base
 		};
 	};
 
-	//components need to be nerfed against air targets
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+			};
+		};
+	};
 
 	class Turrets: Turrets
 	{
@@ -147,7 +157,8 @@ class RC_CBRad_AI_A: RC_CBRad_Player_A
 		};
 	};
 
-	editorSubcategory="RC_Radar_AI_subcat";
+	displayName="(AI)";
+	//editorSubcategory="RC_Radar_AI_subcat";
 
 	armor=40;	//80
 	armorStructural=1;	//2

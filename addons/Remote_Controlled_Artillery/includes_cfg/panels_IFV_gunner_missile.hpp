@@ -27,11 +27,13 @@ class Components: Components
 				componentType="TransportFeedDisplayComponent";
 				source="Commander";
 			};
+			/*
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
 				resource="RscCustomInfoMiniMap";
 			};
+			*/
 			class UAVFeedDisplay
 			{
 				componentType="UAVFeedDisplayComponent";
@@ -48,10 +50,12 @@ class Components: Components
 				resource="RscCustomInfoMineDetect";
 			};
 			*/
+			/*
 			class EmptyDisplay
 			{
 				componentType="EmptyDisplayComponent";
 			};
+			*/
 		};
 	};
 	class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
