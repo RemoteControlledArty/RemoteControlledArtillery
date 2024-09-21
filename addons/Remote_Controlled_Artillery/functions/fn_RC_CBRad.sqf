@@ -145,18 +145,27 @@ addMissionEventHandler ["EntityCreated", {
             case(_entitySide_B): {
                 RC_ArtilleryArray_B pushback _entity;
                 publicVariable 'RC_ArtilleryArray_B';
+
+                //for testing
+                [str RC_ArtilleryArray_B] remoteExec ["hint", west];
             };
             case(_entitySide_O): {
                 RC_ArtilleryArray_O pushback _entity;
                 publicVariable 'RC_ArtilleryArray_O';
+
+                //for testing
+                [str RC_ArtilleryArray_O] remoteExec ["hint", west];
             };
             case(_entitySide_I): {
                 RC_ArtilleryArray_I pushback _entity;
                 publicVariable 'RC_ArtilleryArray_I';
+
+                //for testing
+                [str RC_ArtilleryArray_I] remoteExec ["hint", west];
             };
         };
 
-        _this setVariable ["ArtySourceMarkersTime", 0, true]; 
+        _this setVariable ["ArtySourceMarkersTime", 0, true];
 
 		_entity addEventHandler ["Fired", {
             //params ["_unit", "_magazine"];  //didnt work
@@ -174,14 +183,23 @@ addMissionEventHandler ["EntityCreated", {
                     case(_unitSide_B): {
                         RC_fireMissionArray_B deleteAt (RC_fireMissionArray_B find _unit);
                         publicVariable "RC_fireMissionArray_B";
+
+                        //for testing
+                        [str _unitSide_B] remoteExec ["hint", west];
                     };
                     case(_unitSide_O): {
                         RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _unit);
                         publicVariable "RC_fireMissionArray_O";
+
+                        //for testing
+                        [str _unitSide_O] remoteExec ["hint", west];
                     };
                     case(_unitSide_I): {
                         RC_fireMissionArray_I deleteAt (RC_fireMissionArray_I find _unit);
                         publicVariable "RC_fireMissionArray_I";
+
+                        //for testing
+                        [str _unitSide_I] remoteExec ["hint", west];
                     };
                 };
 
@@ -205,9 +223,49 @@ addMissionEventHandler ["EntityCreated", {
                 _opposedTo_B = [side _unit, west] call BIS_fnc_sideIsEnemy;
                 _opposedTo_O = [side _unit, east] call BIS_fnc_sideIsEnemy;
                 _opposedTo_I = [side _unit, resistance] call BIS_fnc_sideIsEnemy;
-   
+                
+                //Blufor Player
+                if (_opposedTo_B and _CBRad_Player_Alive_B) then {
+                    //for testing
+                    ["blufor rad(P) detected shot"] remoteExec ["hint", west];
+
+                    private _timeInterval = 10;
+                    private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
+                    private _timeSinceLastMarker = time - _lastMarkerTime;
+
+                    if (_timeSinceLastMarker > _timeInterval) then {
+                        [_unit] spawn
+                        {
+                            params ["_unit"];
+                            _unit setVariable ["ArtySourceMarkersTime", time, true];
+                            private _artySourcePos = getPosASL _unit;
+
+                            _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+                            _markerArray = [_markerName, _artySourcePos, 1];
+
+                            sleep (RC_Test);
+                            private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
+                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", west];
+                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", west];
+                            [_markerName] remoteExec ["deleteMarker", east];
+                            [_markerName] remoteExec ["deleteMarker", resistance];
+
+                            _artySourcePosX = round (_artySourcePos select 0);
+                            _artySourcePosY = round (_artySourcePos select 1);
+                            _artySourcePosZ = round (_artySourcePos select 2);
+
+                            _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
+                            [_message] remoteExec ["hint", west];
+                            sleep 3;
+                            [""] remoteExec ["hintSilent", west];
+                        };
+                    };
+                };
+
                 //Blufor AI
                 if (_opposedTo_B and _CBRad_AI_Alive_B) then {
+                    //for testing
+                    ["blufor rad(AI) detected shot"] remoteExec ["hint", west];
 
                     RC_ArtilleryArray_B = RC_ArtilleryArray_B - [objNull];
                     publicVariable 'RC_ArtilleryArray_B';
@@ -250,6 +308,9 @@ addMissionEventHandler ["EntityCreated", {
                             {
                                 if ((count RC_isInRangeArray_B) > 1) then
                                 {
+                                    //for testing
+                                    ["first B firemission failed"] remoteExec ["hint", west];
+
                                     _secondInRange_B = (RC_isInRangeArray_B select 1);
                                     _secondInRange_B doArtilleryFire [_unitPos, (currentMagazine _secondInRange_B), 1];
 
@@ -262,6 +323,9 @@ addMissionEventHandler ["EntityCreated", {
                                     {
                                         if ((count RC_isInRangeArray_B) > 2) then
                                         {
+                                            //for testing
+                                            ["second B firemission failed"] remoteExec ["hint", west];
+
                                             _thirdInRange_B = (RC_isInRangeArray_B select 2);
                                             _thirdInRange_B doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_B), 1];
 
@@ -274,6 +338,9 @@ addMissionEventHandler ["EntityCreated", {
                                             {
                                                 if ((count RC_isInRangeArray_B) > 3) then
                                                 {
+                                                    //for testing
+                                                    ["third B firemission failed"] remoteExec ["hint", west];
+
                                                     _fourthInRange_B = (RC_isInRangeArray_B select 3);
                                                     _fourthInRange_B doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_B), 1];
                                                 };
@@ -286,9 +353,12 @@ addMissionEventHandler ["EntityCreated", {
                     };
                 };
 
-                //Blufor Player
-                if (_opposedTo_B and _CBRad_Player_Alive_B) then {
-                    private _timeInterval = 10;
+                //Opfor Player
+                if (_opposedTo_O and _CBRad_Player_Alive_O) then {
+                    //for testing
+                    ["opfor rad(P) detected shot"] remoteExec ["hint", west];
+
+                    private _timeInterval = 10; 
                     private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
                     private _timeSinceLastMarker = time - _lastMarkerTime;
 
@@ -298,15 +368,15 @@ addMissionEventHandler ["EntityCreated", {
                             params ["_unit"];
                             _unit setVariable ["ArtySourceMarkersTime", time, true];
                             private _artySourcePos = getPosASL _unit;
-
+                            
                             _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
                             _markerArray = [_markerName, _artySourcePos, 1];
-
+                            
                             sleep (RC_Test);
                             private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", west];
-                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", west];
-                            [_markerName] remoteExec ["deleteMarker", east];
+                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", east];
+                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", east];
+                            [_markerName] remoteExec ["deleteMarker", west];
                             [_markerName] remoteExec ["deleteMarker", resistance];
 
                             _artySourcePosX = round (_artySourcePos select 0);
@@ -314,15 +384,17 @@ addMissionEventHandler ["EntityCreated", {
                             _artySourcePosZ = round (_artySourcePos select 2);
 
                             _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
-                            [_message] remoteExec ["hint", west];
+                            [_message] remoteExec ["hint", east];
                             sleep 3;
-                            [""] remoteExec ["hintSilent", west];
+                            [""] remoteExec ["hintSilent", east];
                         };
                     };
                 };
 
                 //Opfor AI
                 if (_opposedTo_O and _CBRad_AI_Alive_O) then {
+                    //for testing
+                    ["opfor rad(AI) detected shot"] remoteExec ["hint", west];
                     
                     RC_ArtilleryArray_O = RC_ArtilleryArray_O - [objNull];
                     publicVariable 'RC_ArtilleryArray_O';
@@ -380,6 +452,9 @@ addMissionEventHandler ["EntityCreated", {
                             {
                                 if ((count RC_isInRangeArray_O) > 1) then
                                 {
+                                    //for testing
+                                    ["first O firemission failed"] remoteExec ["hint", west];
+
                                     _secondInRange_O = (RC_isInRangeArray_O select 1);
                                     _secondInRange_O doArtilleryFire [_unitPos, (currentMagazine _secondInRange_O), 1];
 
@@ -392,6 +467,9 @@ addMissionEventHandler ["EntityCreated", {
                                     {
                                         if ((count RC_isInRangeArray_O) > 2) then
                                         {
+                                            //for testing
+                                            ["second firemission failed"] remoteExec ["hint", west];
+
                                             _thirdInRange_O = (RC_isInRangeArray_O select 2);
                                             _thirdInRange_O doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_O), 1];
 
@@ -404,6 +482,9 @@ addMissionEventHandler ["EntityCreated", {
                                             {
                                                 if ((count RC_isInRangeArray_O) > 3) then
                                                 {
+                                                    //for testing
+                                                    ["third firemission failed"] remoteExec ["hint", west];
+
                                                     _fourthInRange_O = (RC_isInRangeArray_O select 3);
                                                     _fourthInRange_O doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_O), 1];
                                                 };
@@ -416,8 +497,11 @@ addMissionEventHandler ["EntityCreated", {
                     };
                 };
 
-                //Opfor Player
-                if (_opposedTo_O and _CBRad_Player_Alive_O) then {
+                //Independent Player
+                if (_opposedTo_I and _CBRad_Player_Alive_I) then {
+                    //for testing
+                    ["ind rad(P) detected shot"] remoteExec ["hint", west];
+
                     private _timeInterval = 10; 
                     private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
                     private _timeSinceLastMarker = time - _lastMarkerTime;
@@ -434,25 +518,27 @@ addMissionEventHandler ["EntityCreated", {
                             
                             sleep (RC_Test);
                             private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", east];
-                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", east];
+                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", resistance];
+                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", resistance];
                             [_markerName] remoteExec ["deleteMarker", west];
-                            [_markerName] remoteExec ["deleteMarker", resistance];
+                            [_markerName] remoteExec ["deleteMarker", east];
 
                             _artySourcePosX = round (_artySourcePos select 0);
                             _artySourcePosY = round (_artySourcePos select 1);
                             _artySourcePosZ = round (_artySourcePos select 2);
 
                             _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
-                            [_message] remoteExec ["hint", east];
+                            [_message] remoteExec ["hint", resistance];
                             sleep 3;
-                            [""] remoteExec ["hintSilent", east];
+                            [""] remoteExec ["hintSilent", resistance];
                         };
                     };
                 };
 
                 //Independent AI
                 if (_opposedTo_I and _CBRad_AI_Alive_I) then {
+                    //for testing
+                    ["ind rad(AI) detected shot"] remoteExec ["hint", west];
 
                     RC_ArtilleryArray_I = RC_ArtilleryArray_I - [objNull];
                     publicVariable 'RC_ArtilleryArray_I';
@@ -495,59 +581,47 @@ addMissionEventHandler ["EntityCreated", {
                             {
                                 if ((count RC_isInRangeArray_I) > 1) then
                                 {
+                                    //for testing
+                                    ["first I firemission failed"] remoteExec ["hint", west];
+
                                     _secondInRange_I = (RC_isInRangeArray_I select 1);
                                     _secondInRange_I doArtilleryFire [_unitPos, (currentMagazine _secondInRange_I), 1];
 
-                                    RC_fireMissionArray_I pushback _thirdInRange_I;
+                                    RC_fireMissionArray_I pushback _secondInRange_I;
                                     publicVariable 'RC_fireMissionArray_I';
                                     sleep 10;
 
-                                    _fireMissionNotCompleted = (({_x == _thirdInRange_I} count RC_fireMissionArray_I) > 0);
+                                    _fireMissionNotCompleted = (({_x == _secondInRange_I} count RC_fireMissionArray_I) > 0);
                                     if (_fireMissionNotCompleted) then
                                     {
-                                        if ((count RC_isInRangeArray_I) > 3) then
+                                        if ((count RC_isInRangeArray_I) > 2) then
                                         {
-                                            _fourthInRange_I = (RC_isInRangeArray_I select 3);
-                                            _fourthInRange_I doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_I), 1];
+                                            //for testing
+                                            ["second I firemission failed"] remoteExec ["hint", west];
+
+                                            _thirdInRange_I = (RC_isInRangeArray_I select 2);
+                                            _thirdInRange_I doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_I), 1];
+
+                                            RC_fireMissionArray_I pushback _thirdInRange_I;
+                                            publicVariable 'RC_fireMissionArray_I';
+                                            sleep 10;
+
+                                            _fireMissionNotCompleted = (({_x == _thirdInRange_I} count RC_fireMissionArray_I) > 0);
+                                            if (_fireMissionNotCompleted) then
+                                            {
+                                                if ((count RC_isInRangeArray_I) > 3) then
+                                                {
+                                                    //for testing
+                                                    ["third I firemission failed"] remoteExec ["hint", west];
+
+                                                    _fourthInRange_I = (RC_isInRangeArray_I select 3);
+                                                    _fourthInRange_I doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_I), 1];
+                                                };
+                                            };
                                         };
                                     };
                                 };
                             };
-                        };
-                    };
-                };
-
-                //Independent Player
-                if (_opposedTo_I and _CBRad_Player_Alive_I) then {
-                    private _timeInterval = 10; 
-                    private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
-                    private _timeSinceLastMarker = time - _lastMarkerTime;
-
-                    if (_timeSinceLastMarker > _timeInterval) then {
-                        [_unit] spawn
-                        {
-                            params ["_unit"];
-                            _unit setVariable ["ArtySourceMarkersTime", time, true];
-                            private _artySourcePos = getPosASL _unit;
-                            
-                            _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
-                            _markerArray = [_markerName, _artySourcePos, 1];
-                            
-                            sleep (RC_Test);
-                            private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", resistance];
-                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", resistance];
-                            [_markerName] remoteExec ["deleteMarker", west];
-                            [_markerName] remoteExec ["deleteMarker", east];
-
-                            _artySourcePosX = round (_artySourcePos select 0);
-                            _artySourcePosY = round (_artySourcePos select 1);
-                            _artySourcePosZ = round (_artySourcePos select 2);
-
-                            _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
-                            [_message] remoteExec ["hint", resistance];
-                            sleep 3;
-                            [""] remoteExec ["hintSilent", resistance];
                         };
                     };
                 };
