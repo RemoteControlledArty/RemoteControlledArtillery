@@ -185,21 +185,21 @@ addMissionEventHandler ["EntityCreated", {
                         publicVariable "RC_fireMissionArray_B";
 
                         //for testing
-                        [str _unitSide_B] remoteExec ["hint", west];
+                        [str RC_fireMissionArray_B] remoteExec ["hint", west];
                     };
                     case(_unitSide_O): {
                         RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _unit);
                         publicVariable "RC_fireMissionArray_O";
 
                         //for testing
-                        [str _unitSide_O] remoteExec ["hint", west];
+                        [str RC_fireMissionArray_O] remoteExec ["hint", west];
                     };
                     case(_unitSide_I): {
                         RC_fireMissionArray_I deleteAt (RC_fireMissionArray_I find _unit);
                         publicVariable "RC_fireMissionArray_I";
 
                         //for testing
-                        [str _unitSide_I] remoteExec ["hint", west];
+                        [str RC_fireMissionArray_I] remoteExec ["hint", west];
                     };
                 };
 
