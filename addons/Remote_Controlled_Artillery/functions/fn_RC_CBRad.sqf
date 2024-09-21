@@ -42,6 +42,93 @@ publicVariable "RC_fireMissionArray_O";
 publicVariable "RC_fireMissionArray_I";
 
 
+/* testing scripts section
+[(str RC_ArtilleryArray_O)] remoteExec ["hintSilent", west];
+[(str RC_CBRad_AI_Array_O)] remoteExec ["hintSilent", west];
+[(str RC_isInRangeArray_O)] remoteExec ["hintSilent", west];
+[(str RC_fireMissionArray_O)] remoteExec ["hintSilent", west];
+
+
+_this doArtilleryFire [(getpos target), (currentMagazine _this), 1];
+[(getpos target), (currentMagazine _this), 1] remoteExec ["doArtilleryFire", _this];
+
+_entitySide_O = (side _this == east);
+if (_entitySide_O) then { 
+RC_ArtilleryArray_O pushback _entity; 
+publicVariable 'RC_ArtilleryArray_O';
+*/
+/*
+if (_opposedTo_B and _CBRad_AI_Alive_B) then {
+    _unitPos = getPos _unit;
+    [_unitPos] spawn
+    {
+        params ["_unitPos"];
+        sleep (RC_Test+RC_Test2);
+        {
+            RC_isInRangeArray_B deleteAt (RC_isInRangeArray_B find _x);
+
+            _isInRange = _unitPos inRangeOfArtillery [[_x], (currentMagazine _x)];
+            _isAlive = alive _x;
+            _isAlive = isNil _x;
+            if (_isInRange && _isAlive) then {
+                RC_isInRangeArray_B pushback _x;
+                publicVariable 'RC_isInRangeArray_B';
+            };
+            sleep 0.1;
+        } forEach RC_ArtilleryArray_B;
+
+        if ((count RC_isInRangeArray_B) > 0) then
+        {
+            _firstInRange_B = (RC_isInRangeArray_B select 0);
+            _firstInRange_B doArtilleryFire [_unitPos, (currentMagazine _firstInRange_B), 1];
+
+            RC_fireMissionArray_B pushback _firstInRange_B;
+            publicVariable 'RC_fireMissionArray_B';
+            sleep 10;
+
+            _fireMissionNotCompleted = (({_x == _firstInRange_B} count RC_fireMissionArray_B) > 0);
+            if (_fireMissionNotCompleted) then
+            {
+                if ((count RC_isInRangeArray_B) > 1) then
+                {
+                    _secondInRange_B = (RC_isInRangeArray_B select 1);
+                    _secondInRange_B doArtilleryFire [_unitPos, (currentMagazine _secondInRange_B), 1];
+
+                    RC_fireMissionArray_B pushback _secondInRange_B;
+                    publicVariable 'RC_fireMissionArray_B';
+                    sleep 10;
+
+                    _fireMissionNotCompleted = (({_x == _secondInRange_B} count RC_fireMissionArray_B) > 0);
+                    if (_fireMissionNotCompleted) then
+                    {
+                        if ((count RC_isInRangeArray_B) > 2) then
+                        {
+                            _thirdInRange_B = (RC_isInRangeArray_B select 2);
+                            _thirdInRange_B doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_B), 1];
+
+                            RC_fireMissionArray_B pushback _thirdInRange_B;
+                            publicVariable 'RC_fireMissionArray_B';
+                            sleep 10;
+
+                            _fireMissionNotCompleted = (({_x == _thirdInRange_B} count RC_fireMissionArray_B) > 0);
+                            if (_fireMissionNotCompleted) then
+                            {
+                                if ((count RC_isInRangeArray_B) > 3) then
+                                {
+                                    _fourthInRange_B = (RC_isInRangeArray_B select 3);
+                                    _fourthInRange_B doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_B), 1];
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+        };
+    };
+};
+*/
+
+
 if (!isServer) exitwith {};
 
 addMissionEventHandler ["EntityCreated", {
@@ -121,6 +208,12 @@ addMissionEventHandler ["EntityCreated", {
    
                 //Blufor AI
                 if (_opposedTo_B and _CBRad_AI_Alive_B) then {
+
+                    RC_ArtilleryArray_B = RC_ArtilleryArray_B - [objNull];
+                    publicVariable 'RC_ArtilleryArray_B';
+                    RC_isInRangeArray_B = RC_isInRangeArray_B - [objNull];
+                    publicVariable 'RC_isInRangeArray_B';
+
                     _unitPos = getPos _unit;
                     [_unitPos] spawn
                     {
@@ -128,17 +221,17 @@ addMissionEventHandler ["EntityCreated", {
                         sleep (RC_Test+RC_Test2);
                         //RC_isInRangeArray_B = [];
                         {
-                            RC_isInRangeArray_B deleteAt (RC_isInRangeArray_B find _x);     //prevents doubles in array
-                            //You can remove duplicates (get unique items) with this command:
-                            //private _myArray = [1, 2, 2, 3, 4];
-                            //private _result = _myArray arrayIntersect _myArray; // _result is [1, 2, 3, 4]
-
+                            RC_isInRangeArray_B deleteAt (RC_isInRangeArray_B find _x);
                             //private _currentMag = (currentMagazine _x);
-                            _isInRange = _unitPos inRangeOfArtillery [[_x], (currentMagazine _x)];
-                            _isAlive = alive _x;
-                            if (_isInRange && _isAlive) then {
-                                RC_isInRangeArray_B pushback _x;
-                                publicVariable 'RC_isInRangeArray_B';
+                            _isNull = isNull _x;
+                            if !(_isNull) then
+                            {
+                                _isInRange = _unitPos inRangeOfArtillery [[_x], (currentMagazine _x)];
+                                _isAlive = alive _x;
+                                if (_isInRange && _isAlive) then {
+                                    RC_isInRangeArray_B pushback _x;
+                                    publicVariable 'RC_isInRangeArray_B';
+                                };
                             };
                             sleep 0.1;
                         } forEach RC_ArtilleryArray_B;
@@ -230,6 +323,27 @@ addMissionEventHandler ["EntityCreated", {
 
                 //Opfor AI
                 if (_opposedTo_O and _CBRad_AI_Alive_O) then {
+                    
+                    RC_ArtilleryArray_O = RC_ArtilleryArray_O - [objNull];
+                    publicVariable 'RC_ArtilleryArray_O';
+                    RC_isInRangeArray_O = RC_isInRangeArray_O - [objNull];
+                    publicVariable 'RC_isInRangeArray_O';
+
+                    //RC_ArtilleryArray_O deleteAt (RC_ArtilleryArray_O find [objNull]);     //prevents objNull in array
+                    //RC_isInRangeArray_O deleteAt (RC_isInRangeArray_O find [objNull]);     //prevents objNull in array
+                    //RC_ArtilleryArray_O = RC_ArtilleryArray_O arrayIntersect RC_ArtilleryArray_O;
+                    //RC_isInRangeArray_O = RC_isInRangeArray_O arrayIntersect RC_isInRangeArray_O;
+
+                    //You can remove duplicates (get unique items) with this command:
+                    //private _myArray = [1, 2, 2, 3, 4];
+                    //private _result = _myArray arrayIntersect _myArray; // _result is [1, 2, 3, 4]
+
+                    /*
+                    if (ObjNull in RC_isInRangeArray_O) then {
+                        {RC_isInRangeArray_O = RC_isInRangeArray_O - [objNull]} forEach RC_isInRangeArray_O;
+                    };
+                    */
+
                     _unitPos = getPos _unit;
                     [_unitPos] spawn
                     {
@@ -238,13 +352,16 @@ addMissionEventHandler ["EntityCreated", {
                         //RC_isInRangeArray_O = [];
                         {
                             RC_isInRangeArray_O deleteAt (RC_isInRangeArray_O find _x);     //prevents doubles in array
-
                             //private _currentMag = (currentMagazine _x);
-                            _isInRange = _unitPos inRangeOfArtillery [[_x], (currentMagazine _x)];
-                            _isAlive = alive _x;
-                            if (_isInRange && _isAlive) then {
-                                RC_isInRangeArray_O pushback _x;
-                                publicVariable 'RC_isInRangeArray_O';
+                            _isNull = isNull _x;
+                            if !(_isNull) then
+                            {
+                                _isInRange = _unitPos inRangeOfArtillery [[_x], (currentMagazine _x)];
+                                _isAlive = alive _x;
+                                if (_isInRange && _isAlive) then {
+                                    RC_isInRangeArray_O pushback _x;
+                                    publicVariable 'RC_isInRangeArray_O';
+                                };
                             };
                             sleep 0.1;
                         } forEach RC_ArtilleryArray_O;
@@ -336,6 +453,12 @@ addMissionEventHandler ["EntityCreated", {
 
                 //Independent AI
                 if (_opposedTo_I and _CBRad_AI_Alive_I) then {
+
+                    RC_ArtilleryArray_I = RC_ArtilleryArray_I - [objNull];
+                    publicVariable 'RC_ArtilleryArray_I';
+                    RC_isInRangeArray_I = RC_isInRangeArray_I - [objNull];
+                    publicVariable 'RC_isInRangeArray_I';
+
                     _unitPos = getPos _unit;
                     [_unitPos] spawn
                     {
@@ -345,11 +468,15 @@ addMissionEventHandler ["EntityCreated", {
                         {
                             RC_isInRangeArray_I deleteAt (RC_isInRangeArray_I find _x);     //prevents doubles in array
                             //private _currentMag = (currentMagazine _x);
-                            _isInRange = _unitPos inRangeOfArtillery [[_x], (currentMagazine _x)];
-                            _isAlive = alive _x;
-                            if (_isInRange && _isAlive) then {
-                                RC_isInRangeArray_I pushback _x;
-                                publicVariable 'RC_isInRangeArray_I';
+                            _isNull = isNull _x;
+                            if !(_isNull) then
+                            {
+                                _isInRange = _unitPos inRangeOfArtillery [[_x], (currentMagazine _x)];
+                                _isAlive = alive _x;
+                                if (_isInRange && _isAlive) then {
+                                    RC_isInRangeArray_I pushback _x;
+                                    publicVariable 'RC_isInRangeArray_I';
+                                };
                             };
                             sleep 0.1;
                         } forEach RC_ArtilleryArray_I;
