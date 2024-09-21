@@ -277,6 +277,10 @@ addMissionEventHandler ["EntityCreated", {
                     {
                         params ["_unitPos"];
                         sleep (RC_Test+RC_Test2);
+
+                        //for testing
+                        ["blufor detection sleep (AI) over"] remoteExec ["hint", west];
+
                         //RC_isInRangeArray_B = [];
                         {
                             RC_isInRangeArray_B deleteAt (RC_isInRangeArray_B find _x);
@@ -422,6 +426,10 @@ addMissionEventHandler ["EntityCreated", {
                     {
                         params ["_unitPos"];
                         sleep (RC_Test+RC_Test2);
+
+                        //for testing
+                        ["opfor detection sleep (AI) over"] remoteExec ["hint", west];
+                        
                         //RC_isInRangeArray_O = [];
                         {
                             RC_isInRangeArray_O deleteAt (RC_isInRangeArray_O find _x);     //prevents doubles in array
@@ -552,6 +560,10 @@ addMissionEventHandler ["EntityCreated", {
                     {
                         params ["_unitPos"];
                         sleep (RC_Test+RC_Test2);
+
+                        //for testing
+                        ["ind detection sleep (AI) over"] remoteExec ["hint", west];
+                        
                         //RC_isInRangeArray_I = [];
                         {
                             RC_isInRangeArray_I deleteAt (RC_isInRangeArray_I find _x);     //prevents doubles in array
