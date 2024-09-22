@@ -25,6 +25,8 @@ notes:
 
 TO DO - FEATURES:
 
+-remove RE autonomous off? might cause problems and in MP doesnt fullfill its function, instead add in tipps section below FCS that autonomous off = turret not resetting
+
 -EH getout if no player in => engineoff
 -AFV commander take over controls script
 -nerfed IFV subcategory (all 20mm)
