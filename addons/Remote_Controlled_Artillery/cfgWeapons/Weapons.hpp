@@ -4862,3 +4862,17 @@ class RC_rockets_230mm_GAT: rockets_230mm_GAT_Base
 		"RC_2Rnd_604mm_rockets_ATACMS_backupHEAB"
 	};
 };
+class RC_rockets_604mm_GAT: RC_rockets_230mm_GAT
+{
+	magazines[]=
+	{
+		"RC_1Rnd_604mm_rockets_ATACMS_HEAB",
+		"RC_2Rnd_604mm_rockets_ATACMS_HEAB",
+
+		"RC_1Rnd_604mm_rockets_ATACMS_DPICM",
+		"RC_2Rnd_604mm_rockets_ATACMS_DPICM",
+
+		"RC_1Rnd_604mm_rockets_ATACMS_backupHEAB",
+		"RC_2Rnd_604mm_rockets_ATACMS_backupHEAB"
+	};
+};

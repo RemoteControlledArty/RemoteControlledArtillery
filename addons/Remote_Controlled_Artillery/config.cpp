@@ -551,7 +551,8 @@ class CfgPatches
 			RC_155mm_AMOS_V3,
 			RC_155mm_AMOS_V4,
 			
-			RC_rockets_230mm_GAT
+			RC_rockets_230mm_GAT,
+			RC_rockets_604mm_GAT
 		};
 
 		requiredAddons[]=
