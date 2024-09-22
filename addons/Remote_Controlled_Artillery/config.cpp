@@ -573,7 +573,7 @@ class CfgFunctions
 			file="\Remote_Controlled_Artillery\functions";
       		class preInit {preInit=1};
       		class InitCBASettings {preInit=1};
-			class RC_CBRad {preInit=1};
+			//class RC_CBRad {preInit=1};
 
 			class RC_MarkerHandler {postInit=1};
       		class RC_UI_Loop {postInit=1};
