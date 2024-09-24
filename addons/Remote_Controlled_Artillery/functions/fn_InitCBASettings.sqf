@@ -139,7 +139,7 @@
     "SLIDER",
     ["test setting", "Test Setting."],
     ["Remote Controlled Artillery"],
-    [15, 30, 15, 0, false],
+    [5, 30, 15, 0, false],
     true
 ] call CBA_fnc_addSetting;
 
@@ -148,7 +148,7 @@
     "SLIDER",
     ["test2 setting", "Test2 Setting."],
     ["Remote Controlled Artillery"],
-    [10, 30, 10, 0, false],
+    [5, 30, 10, 0, false],
     true
 ] call CBA_fnc_addSetting;
 

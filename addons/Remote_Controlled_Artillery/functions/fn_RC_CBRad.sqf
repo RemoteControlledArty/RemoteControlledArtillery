@@ -57,81 +57,12 @@ if (_entitySide_O) then {
 RC_ArtilleryArray_O pushback _entity; 
 publicVariable 'RC_ArtilleryArray_O';
 */
-/*
-if (_opposedTo_B and _CBRad_AI_Alive_B) then {
-    _unitPos = getPos _unit;
-    [_unitPos] spawn
-    {
-        params ["_unitPos"];
-        sleep (RC_Test+RC_Test2);
-        {
-            RC_isInRangeArray_B deleteAt (RC_isInRangeArray_B find _x);
-
-            _isInRange = _unitPos inRangeOfArtillery [[_x], (currentMagazine _x)];
-            _isAlive = alive _x;
-            _isAlive = isNil _x;
-            if (_isInRange && _isAlive) then {
-                RC_isInRangeArray_B pushback _x;
-                publicVariable 'RC_isInRangeArray_B';
-            };
-            sleep 0.1;
-        } forEach RC_ArtilleryArray_B;
-
-        if ((count RC_isInRangeArray_B) > 0) then
-        {
-            _firstInRange_B = (RC_isInRangeArray_B select 0);
-            _firstInRange_B doArtilleryFire [_unitPos, (currentMagazine _firstInRange_B), 1];
-
-            RC_fireMissionArray_B pushback _firstInRange_B;
-            publicVariable 'RC_fireMissionArray_B';
-            sleep 10;
-
-            _fireMissionNotCompleted = (({_x == _firstInRange_B} count RC_fireMissionArray_B) > 0);
-            if (_fireMissionNotCompleted) then
-            {
-                if ((count RC_isInRangeArray_B) > 1) then
-                {
-                    _secondInRange_B = (RC_isInRangeArray_B select 1);
-                    _secondInRange_B doArtilleryFire [_unitPos, (currentMagazine _secondInRange_B), 1];
-
-                    RC_fireMissionArray_B pushback _secondInRange_B;
-                    publicVariable 'RC_fireMissionArray_B';
-                    sleep 10;
-
-                    _fireMissionNotCompleted = (({_x == _secondInRange_B} count RC_fireMissionArray_B) > 0);
-                    if (_fireMissionNotCompleted) then
-                    {
-                        if ((count RC_isInRangeArray_B) > 2) then
-                        {
-                            _thirdInRange_B = (RC_isInRangeArray_B select 2);
-                            _thirdInRange_B doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_B), 1];
-
-                            RC_fireMissionArray_B pushback _thirdInRange_B;
-                            publicVariable 'RC_fireMissionArray_B';
-                            sleep 10;
-
-                            _fireMissionNotCompleted = (({_x == _thirdInRange_B} count RC_fireMissionArray_B) > 0);
-                            if (_fireMissionNotCompleted) then
-                            {
-                                if ((count RC_isInRangeArray_B) > 3) then
-                                {
-                                    _fourthInRange_B = (RC_isInRangeArray_B select 3);
-                                    _fourthInRange_B doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_B), 1];
-                                };
-                            };
-                        };
-                    };
-                };
-            };
-        };
-    };
-};
-*/
 
 
 if (!isServer) exitwith {};
 
-//found this EH, "Global Mission Event Handler. Executes each time a vehicle classified as artillery (has an artillery computer) fires a shell."
+//found this EH, "Global Mission Event Handler. Will become available with 2.18 .
+//Executes each time a vehicle classified as artillery (has an artillery computer) fires a shell."
 /*
 addMissionEventHandler ["ArtilleryShellFired", {
 	params ["_vehicle", "_weapon", "_ammo", "_gunner", "_instigator", "_artilleryTarget", "_targetPosition", "_shell"];
