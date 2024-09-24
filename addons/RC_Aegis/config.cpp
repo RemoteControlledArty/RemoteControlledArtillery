@@ -7,6 +7,14 @@ class CfgPatches
 
 		units[]=
 		{
+			RC_ICV_5_WD2,
+			RC_ICV_5_WD2_O,
+			RC_ICV_5_WD2_I,
+			
+			RC_IFV_5_WD2,
+			RC_IFV_5_WD2_O,
+			RC_IFV_5_WD2_I,
+
 			RC_ICV_7_WD,
 			RC_ICV_7_WD_O,
 			RC_ICV_7_WD_I,
@@ -14,10 +22,6 @@ class CfgPatches
 			RC_IFV_7_WD,
 			RC_IFV_7_WD_O,
 			RC_IFV_7_WD_I,
-
-			RC_ICV_8_WD,
-			RC_ICV_8_WD_O,
-			RC_ICV_8_WD_I,
 
 			RC_IFV_8_WD,
 			RC_IFV_8_WD_O,

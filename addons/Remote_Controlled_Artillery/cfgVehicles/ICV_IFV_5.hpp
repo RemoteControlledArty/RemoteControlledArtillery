@@ -14,6 +14,7 @@ class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
 	class ViewPilot;
 	class Components;
 	class UserActions;
+	//class TextureSources;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -88,7 +89,7 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 };
 
 
-class RC_ICV_5_A: RC_ICV_IFV_5_A
+class RC_ICV_5_A_O: RC_ICV_IFV_5_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -257,9 +258,7 @@ class RC_ICV_5_A: RC_ICV_IFV_5_A
 		};
 	};
 };
-
-
-class RC_ICV_5_WD: RC_ICV_5_A
+class RC_ICV_5_WD_O: RC_ICV_5_A_O
 {
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_cannon_ghex_F.jpg";
 	textureList[]=
