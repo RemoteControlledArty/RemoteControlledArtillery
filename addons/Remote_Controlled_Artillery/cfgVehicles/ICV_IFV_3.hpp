@@ -147,6 +147,7 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 	driverForceOptics=1;
 
 	maximumLoad=4000;
+	//cost=20000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
 	class Turrets: Turrets
@@ -365,6 +366,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 	scope=2;
 	scopeCurator=2;
 	maximumLoad=3000;
+	//cost=40000;
 
 	//vehicleClass="Autonomous";
 	//uavCameraDriverPos="PiP0_pos";

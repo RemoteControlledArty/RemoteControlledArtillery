@@ -981,6 +981,7 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 	camouflage=0.125;
 	radarTargetSize=0.025;
 	visualTargetSize=0.025;
+	fuelCapacity=200;
 
 	class assembleInfo: assembleInfo
 	{

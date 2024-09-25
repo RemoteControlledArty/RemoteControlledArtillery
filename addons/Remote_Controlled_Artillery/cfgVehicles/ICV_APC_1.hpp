@@ -125,6 +125,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	driverForceOptics=1;
 
 	maximumLoad=4000;
+	//cost=20000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
 	class Turrets: Turrets
@@ -288,6 +289,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	editorSubcategory="RC_IFV_APC_subcat";
 	maximumLoad=3000;
+	//cost=35000;
 
 	class Turrets: Turrets
 	{

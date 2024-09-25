@@ -139,6 +139,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 	driverForceOptics=1;
 
 	maximumLoad=4000;
+	//cost=20000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
 	/*
@@ -369,6 +370,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 	scope=2;
 	scopeCurator=2;
 	maximumLoad=3000;
+	//cost=40000;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;

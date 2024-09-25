@@ -297,6 +297,7 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	driverForceOptics=1;
 
 	maximumLoad=4000;
+	//cost=20000;
 	threat[]={0.30000001,0.30000001,0.30000001};
 
 	smokeLauncherGrenadeCount=12;
@@ -551,6 +552,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
+	//cost=35000;
 	maximumLoad=3000;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;

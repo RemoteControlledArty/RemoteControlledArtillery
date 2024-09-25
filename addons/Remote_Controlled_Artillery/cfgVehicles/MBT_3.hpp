@@ -41,11 +41,12 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 	smokeLauncherAngle=180;
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
-
+	
 	hiddenSelectionsTextures[]=
 	{
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_1_CO.paa",
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_2_CO.paa",
+		"\A3\Armor_F_Tank\MBT_04\Data\MBT_04_command_CO.paa",
 		"A3\Armor_F\Data\camonet_CSAT_Stripe_Desert_CO.paa"
 	};
 
@@ -175,6 +176,47 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 					*/
 				};
 			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_cannon_125mm_advanced";
+		};
+		class muzzle_rot_coax
+		{
+			source="ammorandom";
+			weapon="RC_MMG_93x64_coax";
+		};
+		class muzzle_hide_coax
+		{
+			source="reload";
+			weapon="RC_MMG_93x64_coax";
+		};
+		class recoil_source
+		{
+			source="reload";
+			weapon="RC_cannon_125mm_advanced";
+		};
+		class zeroing_cannon
+		{
+			source="zeroing";
+			weapon="RC_cannon_125mm_advanced";
+		};
+		/*
+		class muzzle_rot_hmg
+		{
+			source="ammorandom";
+			weapon="HMG_127_APC";
+		};
+		*/
+		class com_gun_reload
+		{
+			source="reload";
+			weapon="RC_autocannon_30mm_RCWS";
 		};
 	};
 
@@ -384,49 +426,13 @@ class RC_MBT_3_WD: RC_MBT_3_G
 	{
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_1_CO.paa",
 		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_2_CO.paa",
+		"\A3\Armor_F_Tank\MBT_04\Data\MBT_04_command_jungle_CO.paa",
 		//"A3\Armor_F\Data\camonet_CSAT_Stripe_Green_CO.paa"
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
 
 	class AnimationSources: AnimationSources
 	{
-		class muzzle_rot_cannon
-		{
-			source="ammorandom";
-			weapon="RC_cannon_125mm_advanced";
-		};
-		class muzzle_rot_coax
-		{
-			source="ammorandom";
-			weapon="RC_MMG_93x64_coax";
-		};
-		class muzzle_hide_coax
-		{
-			source="reload";
-			weapon="RC_MMG_93x64_coax";
-		};
-		class recoil_source
-		{
-			source="reload";
-			weapon="RC_cannon_125mm_advanced";
-		};
-		class zeroing_cannon
-		{
-			source="zeroing";
-			weapon="RC_cannon_125mm_advanced";
-		};
-		/*
-		class muzzle_rot_hmg
-		{
-			source="ammorandom";
-			weapon="HMG_127_APC";
-		};
-		*/
-		class com_gun_reload
-		{
-			source="reload";
-			weapon="RC_autocannon_30mm_RCWS";
-		};
 		class showCamonetCannon: showCamonetCannon
 		{
 			initPhase=1;
@@ -439,6 +445,15 @@ class RC_MBT_3_WD: RC_MBT_3_G
 		{
 			initPhase=1;
 		};
+	};
+	animationList[]=
+	{
+		"showCamonetCannon",
+		1,
+		"showCamonetHull",
+		1,
+		"showCamonetTurret",
+		1
 	};
 };
 class RC_MBT_3_WD_O: RC_MBT_3_WD

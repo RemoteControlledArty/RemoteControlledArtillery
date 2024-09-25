@@ -75,6 +75,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 	scope=2;
 	scopeCurator=2;
 	maximumLoad=3000;
+	//cost=40000;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
