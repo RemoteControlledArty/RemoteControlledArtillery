@@ -24,6 +24,10 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 };
 class RC_MLRS_A: RC_MLRS_base
 {
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	author="Ascent";
 	displayName="RC MLRS";
 	faction="RemoteControlled_B";
@@ -46,13 +50,8 @@ class RC_MLRS_A: RC_MLRS_base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem="2+4+8";
-	incomingMissileDetectionSystem=16;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	hiddenSelectionsTextures[]=
 	{
@@ -353,6 +352,10 @@ class RC_MRL_base: I_Truck_02_MRL_F
 };
 class RC_MRL_DIG_I: RC_MRL_base
 {
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	author="Ascent";
 	displayName="RC MRL";
 	faction="RemoteControlled_I";
@@ -376,13 +379,8 @@ class RC_MRL_DIG_I: RC_MRL_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	enableGPS=1;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem="2+4+8";
-	incomingMissileDetectionSystem=16;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	class Components: Components
 	{

@@ -61,18 +61,15 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 	normalSpeedForwardCoef=0.64;
 	enginePower=593.8;
 	peakTorque=3017.6;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
-	vehicleClass="Autonomous";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	crew="B_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
-	crew="B_UAV_AI";
-	driverForceOptics=1;
-	forceHideDriver=1;
 
 	hiddenSelectionsTextures[]=
 	{
@@ -230,17 +227,17 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 		class muzzle_rot
 		{
 			source="ammorandom";
-			weapon="RC_vehiclemortar_60mm_V4";
+			weapon="RC_vehiclemortar_60mm_V4_lxWS";
 		};
 		class muzzle_hide
 		{
 			source="reload";
-			weapon="RC_vehiclemortar_60mm_V4";
+			weapon="RC_vehiclemortar_60mm_V4_lxWS";
 		};
 		class revolving_cannon
 		{
 			source="revolving";
-			weapon="RC_vehiclemortar_60mm_V4";
+			weapon="RC_vehiclemortar_60mm_V4_lxWS";
 		};
 		class showCamonetHull: showCamonetHull
 		{
@@ -330,11 +327,9 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 
-			//magazines[] = {"64Rnd_60mm_Mo_shells_lxWS","64Rnd_60mm_Mo_guided_lxWS","64Rnd_60mm_Mo_Smoke_white_lxWS","64Rnd_60mm_Mo_LG_lxWS"};
-
 			weapons[]=
 			{
-				"RC_vehiclemortar_60mm_V4"
+				"RC_vehiclemortar_60mm_V4_lxWS"
 			};
 			magazines[]=
 			{

@@ -151,25 +151,7 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 				"RC_QIN_338_MMG2",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_QIN_150Rnd_338_T_R",
-				"RC_QIN_150Rnd_338_T_R",
-				"RC_QIN_150Rnd_338_T_R",
-				"RC_QIN_150Rnd_338_T_R",
-				"RC_QIN_150Rnd_338_T_R",
-				"RC_QIN_150Rnd_338_T_R",
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_AP_T_R",
-				"100Rnd_20mm_AP_T_R",
-				"100Rnd_20mm_AP_T_R",
-				"100Rnd_20mm_AP_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Titus\includes_vicmags\mags_Titus_20mm_red.hpp"
 
 			class Components: Components
 			{
@@ -275,7 +257,7 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 	};
 
 	displayName="RC Titus MMG";
-
+	
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
@@ -366,15 +348,7 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 				"RC_QIN_338_MMG1",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_QIN_150Rnd_338_T_R",
-				"RC_QIN_150Rnd_338_T_R",
-				"RC_QIN_150Rnd_338_T_R",
-				"RC_QIN_150Rnd_338_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Titus\includes_vicmags\mags_Titus_MMG_red.hpp"
 		};
 
 		class CargoTurret_01: CargoTurret_01 {};

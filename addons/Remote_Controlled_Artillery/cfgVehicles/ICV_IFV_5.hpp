@@ -42,6 +42,8 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	crewCrashProtection=0.01;
 	enginePower=575.3;
 	peakTorque=2923.7;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	class AnimationSources: AnimationSources
 	{
@@ -99,29 +101,19 @@ class RC_ICV_5_A_O: RC_ICV_IFV_5_A
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
-	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
-	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
 	displayName="RC BM-2T unarmed";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
 
-	vehicleClass="Autonomous";
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	crew="O_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="O_UAV_AI";
-	forceHideDriver=1;
-	driverForceOptics=1;
-
-	maximumLoad=4000;
-	//cost=20000;
-	threat[]={0.30000001,0.30000001,0.30000001};
 
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
@@ -293,21 +285,13 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
-	maximumLoad=3000;
-	//cost=40000;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	crew="O_UAV_AI";
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
-
-	//vehicleClass="Autonomous";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
-	//isUav=1;
-	//textPlural="UGVs";
-	//textSingular="UGV";
-	crew="O_UAV_AI";
-	//driverForceOptics=1;
-	//forceHideDriver=1;
 	
 	weapons[]=
 	{
@@ -318,8 +302,6 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{
@@ -339,29 +321,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 				"RC_IFV_Missile_Launcher",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				//"RC_100Rnd_30mm_Smoke",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_BM2T_30mm_green.hpp"
 
 			class OpticsIn
 			{
@@ -464,8 +424,6 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 		};
 	};
 };
-
-
 class RC_IFV_5_WD_O: RC_IFV_5_A_O
 {
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_cannon_ghex_F.jpg";

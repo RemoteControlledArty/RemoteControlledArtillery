@@ -53,6 +53,8 @@ class RC_FSV_A_Base: RC_FSV_Base
 	smokeLauncherAngle=180;
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	hiddenSelectionsTextures[]=
 	{
@@ -146,19 +148,7 @@ class RC_FSV_A_Base: RC_FSV_Base
 				"RC_MMG_338_FSV_coax",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_15Rnd_120mm_APFSDS_T_R",
-				"RC_15Rnd_120mm_MP_T_R",
-				"RC_3Rnd_120mm_DLG_cannon_missiles",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Rooikat_red.hpp"
 		
 			class OpticsIn
 			{
@@ -201,16 +191,7 @@ class RC_FSV_A_Base: RC_FSV_Base
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
-					magazines[]=
-					{
-						"RC_200Rnd_127x99_T_R",
-						"RC_200Rnd_127x99_T_R",
-						"RC_200Rnd_127x99_T_R",
-						"RC_200Rnd_127x99_T_R",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_red.hpp"
 
 					class OpticsIn
 					{
@@ -291,15 +272,8 @@ class RC_FSV_A: RC_FSV_A_Base
 	side=1;
 	forceInGarage=1;
 
-	//vehicleClass="Autonomous";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
-	//isUav=1;
-	//textPlural="UGVs";
-	//textSingular="UGV";
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
 	crew="B_UAV_AI";
-	//driverForceOptics=1;
-	//forceHideDriver=1;
 };
 class RC_FSV_A_O: RC_FSV_A
 {
@@ -313,34 +287,13 @@ class RC_FSV_A_O: RC_FSV_A
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_15Rnd_120mm_APFSDS_T_G",
-				"RC_15Rnd_120mm_MP_T_G",
-				"RC_3Rnd_120mm_DLG_cannon_missiles",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Rooikat_green.hpp"
 
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					magazines[]=
-					{
-						"RC_200Rnd_127x99_T_G",
-						"RC_200Rnd_127x99_T_G",
-						"RC_200Rnd_127x99_T_G",
-						"RC_200Rnd_127x99_T_G",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_green.hpp"
 				};
 			};
 		};
@@ -351,41 +304,19 @@ class RC_FSV_A_I: RC_FSV_A
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_15Rnd_120mm_APFSDS_T_Y",
-				"RC_15Rnd_120mm_MP_T_Y",
-				"RC_3Rnd_120mm_DLG_cannon_missiles",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Rooikat_yellow.hpp"
 
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					magazines[]=
-					{
-						"RC_200Rnd_127x99_T_Y",
-						"RC_200Rnd_127x99_T_Y",
-						"RC_200Rnd_127x99_T_Y",
-						"RC_200Rnd_127x99_T_Y",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_yellow.hpp"
 				};
 			};
 		};
@@ -420,41 +351,19 @@ class RC_FSV_WD_O: RC_FSV_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_15Rnd_120mm_APFSDS_T_G",
-				"RC_15Rnd_120mm_MP_T_G",
-				"RC_3Rnd_120mm_DLG_cannon_missiles",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Rooikat_green.hpp"
 
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					magazines[]=
-					{
-						"RC_200Rnd_127x99_T_G",
-						"RC_200Rnd_127x99_T_G",
-						"RC_200Rnd_127x99_T_G",
-						"RC_200Rnd_127x99_T_G",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_green.hpp"
 				};
 			};
 		};
@@ -472,34 +381,13 @@ class RC_FSV_WD_I: RC_FSV_WD
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_15Rnd_120mm_APFSDS_T_Y",
-				"RC_15Rnd_120mm_MP_T_Y",
-				"RC_3Rnd_120mm_DLG_cannon_missiles",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Rooikat_yellow.hpp"
 
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					magazines[]=
-					{
-						"RC_200Rnd_127x99_T_Y",
-						"RC_200Rnd_127x99_T_Y",
-						"RC_200Rnd_127x99_T_Y",
-						"RC_200Rnd_127x99_T_Y",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_yellow.hpp"
 				};
 			};
 		};

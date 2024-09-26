@@ -41,6 +41,8 @@ class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 	crewCrashProtection=0.01;
 	enginePower=575.3;
 	peakTorque=2923.7;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	/*
 	hiddenSelectionsTextures[]=
@@ -111,12 +113,13 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
-	maximumLoad=3000;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	crew="B_UAV_AI";
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
-
-	crew="B_UAV_AI";
 	
 	weapons[]=
 	{
@@ -127,8 +130,6 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{
@@ -148,18 +149,7 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 				"missiles_Vorona_vehicle_lxWS",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_160Rnd_30mm_MP_T_R",
-				"RC_160Rnd_30mm_GPR_T_R",
-				"RC_160Rnd_30mm_APFSDS_T_R",
-				"RC_160Rnd_30mm_APFSDS_T_R",
-				"RC_1000Rnd_93x64_T_R",
-				"4rnd_Vorona_HEAT_lxWS",
-				"4rnd_Vorona_HE_lxWS",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_BM2T_Bu_30mm_red.hpp"
 
 			class OpticsIn
 			{
@@ -250,17 +240,7 @@ class RC_IFV_8_WD_O: RC_IFV_8_WD
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_160Rnd_30mm_MP_T_G",
-				"RC_160Rnd_30mm_GPR_T_G",
-				"RC_160Rnd_30mm_APFSDS_T_G",
-				"RC_160Rnd_30mm_APFSDS_T_G",
-				"RC_1000Rnd_93x64_T_G",
-				"4rnd_Vorona_HEAT_lxWS",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_BM2T_Bu_30mm_green.hpp"
 		};
 	};
 };
@@ -276,17 +256,7 @@ class RC_IFV_8_WD_I: RC_IFV_8_WD
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_160Rnd_30mm_MP_T_Y",
-				"RC_160Rnd_30mm_GPR_T_Y",
-				"RC_160Rnd_30mm_APFSDS_T_Y",
-				"RC_160Rnd_30mm_APFSDS_T_Y",
-				"RC_1000Rnd_93x64_T_Y",
-				"4rnd_Vorona_HEAT_lxWS",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_BM2T_Bu_30mm_yellow.hpp"
 		};
 	};
 };
@@ -445,28 +415,7 @@ class RC_IFV_5_WD2: RC_IFV_5_WD2_O
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_MP_T_R",
-				"RC_100Rnd_30mm_MP_T_R",
-				"RC_100Rnd_30mm_GPR_T_R",
-				"RC_100Rnd_30mm_GPR_T_R",
-				"RC_100Rnd_30mm_APFSDS_T_R",
-				"RC_100Rnd_30mm_APFSDS_T_R",
-				"RC_100Rnd_30mm_APFSDS_T_R",
-				"RC_200Rnd_93x64_T_R",
-				"RC_200Rnd_93x64_T_R",
-				"RC_200Rnd_93x64_T_R",
-				"RC_200Rnd_93x64_T_R",
-				"RC_200Rnd_93x64_T_R",
-				"RC_200Rnd_93x64_T_R",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_BM2T_30mm_red.hpp"
 		};
 	};
 };
@@ -482,28 +431,7 @@ class RC_IFV_5_WD2_I: RC_IFV_5_WD2_O
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_200Rnd_93x64_T_Y",
-				"RC_200Rnd_93x64_T_Y",
-				"RC_200Rnd_93x64_T_Y",
-				"RC_200Rnd_93x64_T_Y",
-				"RC_200Rnd_93x64_T_Y",
-				"RC_200Rnd_93x64_T_Y",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_AA",
-				"RC_2Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_BM2T_30mm_yellow.hpp"
 		};
 	};
 };

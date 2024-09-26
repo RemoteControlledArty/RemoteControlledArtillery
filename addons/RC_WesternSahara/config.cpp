@@ -28,7 +28,8 @@ class CfgPatches
 
 		weapons[]=
 		{
-			"RC_IFV_Missile_Launcher_lxWS"
+			"RC_IFV_Missile_Launcher_lxWS",
+			"RC_vehiclemortar_60mm_V4_lxWS"
 		};
 
 		requiredAddons[]=

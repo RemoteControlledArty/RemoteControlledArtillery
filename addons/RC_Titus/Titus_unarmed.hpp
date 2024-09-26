@@ -44,7 +44,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
-
+	
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";

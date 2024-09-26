@@ -51,6 +51,8 @@ class RC_RepairTruck_A: RC_RepairTruck_base
 	smokeLauncherVelocity=14;
 	smokeLauncherOnTurret=0;
 	smokeLauncherAngle=120;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	weapons[]=
 	{

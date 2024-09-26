@@ -1,0 +1,18 @@
+magazines[]=
+{
+	"60Rnd_20mm_HE_T_Y",
+	"60Rnd_20mm_HE_T_Y",
+	"60Rnd_20mm_HE_T_Y",
+	"60Rnd_20mm_HE_T_Y",
+	"60Rnd_20mm_APFSDS_T_Y",
+	"60Rnd_20mm_APFSDS_T_Y",
+	"60Rnd_20mm_APFSDS_T_Y",
+	"60Rnd_20mm_APFSDS_T_Y",
+	"RC_200Rnd_338_T_Y",
+	"RC_200Rnd_338_T_Y",
+	"RC_200Rnd_338_T_Y",
+	"RC_200Rnd_338_T_Y",
+	"SmokeLauncherMag",
+	"SmokeLauncherMag",
+	"SmokeLauncherMag"
+};

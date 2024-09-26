@@ -19,4 +19,7 @@ init=
 			[_this engineOn false] remoteExec ['spawn', 2] \
 		}; \
 	}; \
-};";
+};	\
+(_this select 0) setHitPointDamage ['Light_L', 1]; \
+(_this select 0) setHitPointDamage ['Light_R', 1]; \
+";

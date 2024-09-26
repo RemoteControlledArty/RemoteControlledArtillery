@@ -97,20 +97,13 @@ class RC_ICV_7_WD: RC_ICV_IFV_7_WD
 	scope=2;
 	scopeCurator=2;
 
-	vehicleClass="Autonomous";
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	crew="B_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="B_UAV_AI";
-	forceHideDriver=1;
-	driverForceOptics=1;
-
-	maximumLoad=4000;
-	threat[]={0.30000001,0.30000001,0.30000001};
 
 	class Turrets: Turrets
 	{
@@ -269,11 +262,10 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
-	maximumLoad=3000;
 
-	crew="B_UAV_AI";
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	crew="B_UAV_AI";
 
 	class Turrets: Turrets
 	{
@@ -292,18 +284,7 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 				"missiles_Vorona_vehicle_lxWS",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_160Rnd_30mm_MP_T_R",
-				"RC_160Rnd_30mm_GPR_T_R",
-				"RC_160Rnd_30mm_APFSDS_T_R",
-				"RC_160Rnd_30mm_APFSDS_T_R",
-				"RC_1000Rnd_93x64_T_R",
-				"4rnd_Vorona_HEAT_lxWS",
-				"4rnd_Vorona_HE_lxWS",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_BTR100_Bu_30mm_red.hpp"
 
 			class OpticsIn
 			{
@@ -393,17 +374,7 @@ class RC_IFV_7_WD_O: RC_IFV_7_WD
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_160Rnd_30mm_MP_T_G",
-				"RC_160Rnd_30mm_GPR_T_G",
-				"RC_160Rnd_30mm_APFSDS_T_G",
-				"RC_160Rnd_30mm_APFSDS_T_G",
-				"RC_1000Rnd_93x64_T_G",
-				"4rnd_Vorona_HEAT_lxWS",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_BTR100_Bu_30mm_green.hpp"
 		};
 	};
 };
@@ -419,17 +390,7 @@ class RC_IFV_7_WD_I: RC_IFV_7_WD
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_160Rnd_30mm_MP_T_Y",
-				"RC_160Rnd_30mm_GPR_T_Y",
-				"RC_160Rnd_30mm_APFSDS_T_Y",
-				"RC_160Rnd_30mm_APFSDS_T_Y",
-				"RC_1000Rnd_93x64_T_Y",
-				"4rnd_Vorona_HEAT_lxWS",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_BTR100_Bu_30mm_yellow.hpp"
 		};
 	};
 };

@@ -39,6 +39,8 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 	peakTorque=6875;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
 	
@@ -323,15 +325,8 @@ class RC_MBT_3_G: RC_MBT_3_G_Base
 	side=1;
 	forceInGarage=1;
 
-	//vehicleClass="Autonomous";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
-	//isUav=1;
-	//textPlural="UGVs";
-	//textSingular="UGV";
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
 	crew="B_UAV_AI";
-	//driverForceOptics=1;
-	//forceHideDriver=1;
 };
 class RC_MBT_3_G_O: RC_MBT_3_G
 {

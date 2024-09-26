@@ -27,6 +27,10 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 };
 class RC_Howitzer_A: RC_Howitzer_base
 {
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	author="Ascent";
 	displayName="RC Howitzer";
 	faction="RemoteControlled_B";
@@ -51,13 +55,8 @@ class RC_Howitzer_A: RC_Howitzer_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem="2+4+8";
-	incomingMissileDetectionSystem=16;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	hiddenSelectionsTextures[]=
 	{
@@ -407,6 +406,10 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 };
 class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 {
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	author="Ascent";
 	displayName="RC Howitzer";
 	faction="RemoteControlled_O";
@@ -431,25 +434,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem="2+4+8";
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	class Components: Components
 	{

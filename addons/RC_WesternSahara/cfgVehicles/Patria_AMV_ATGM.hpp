@@ -54,6 +54,8 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 	normalSpeedForwardCoef=0.64;
 	enginePower=593.8;
 	peakTorque=3017.6;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	hiddenSelectionsTextures[]=
 	{
@@ -153,18 +155,18 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
-	//Missile launcher on top, memoryppoint unclear, and rotate with boolean not working
 
 	displayName="Patria AMV ATGM";
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
-	maximumLoad=3000;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	crew="B_UAV_AI";
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
-
-	crew="B_UAV_AI";
 	
 	weapons[]=
 	{
@@ -176,8 +178,6 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{
@@ -197,26 +197,7 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 				"RC_IFV_Missile_Launcher_lxWS",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_GPR_T_R",
-				"RC_100Rnd_30mm_GPR_T_R",
-				"RC_100Rnd_30mm_MP_T_R",
-				"RC_100Rnd_30mm_MP_T_R",
-				"RC_100Rnd_30mm_APFSDS_T_R",
-				"RC_100Rnd_30mm_APFSDS_T_R",
-				"RC_100Rnd_30mm_APFSDS_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_4Rnd_IFV_MP_NLOS",
-				"RC_4Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_WesternSahara\includes_vicmags\mags_Patria_ATGM_30mm_red.hpp"
 
 			class OpticsIn
 			{
@@ -299,33 +280,13 @@ class RC_IFV_9_A_O: RC_IFV_9_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_GPR_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_MP_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_100Rnd_30mm_APFSDS_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_200Rnd_338_T_G",
-				"RC_4Rnd_IFV_MP_NLOS",
-				"RC_4Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_WesternSahara\includes_vicmags\mags_Patria_ATGM_30mm_green.hpp"
 		};
 	};
 };
@@ -334,33 +295,13 @@ class RC_IFV_9_A_I: RC_IFV_9_A
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_GPR_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_MP_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_100Rnd_30mm_APFSDS_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_4Rnd_IFV_MP_NLOS",
-				"RC_4Rnd_IFV_AA",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_WesternSahara\includes_vicmags\mags_Patria_ATGM_30mm_yellow.hpp"
 		};
 	};
 };

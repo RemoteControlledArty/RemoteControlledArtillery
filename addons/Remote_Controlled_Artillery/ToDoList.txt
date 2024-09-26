@@ -306,7 +306,6 @@ new'ish:
 -added Aegis BTR100, and RC BTR-100 unarmed (olive version), for all factions
 
 -added 60mm Ammo/Magazines/Weapon config, for potentially a light Mortar
--added the Western Sahara 60mm Mortar Patria, but overshoots when ace is installed?
 
 new:
 -added orange "not aligned" message with +-0.75 accuracy for quickly shooting multiple smokes
@@ -316,6 +315,11 @@ new:
 -reworked 120mm & 155mm cannons to have more realistic 40km range (most maps arent larger than 30km anyways), vanilla range is unrealistic 67km
 -RC artillery assets now work with fire script commands, as the charges been reworked to be compatible for ai fire
 -reworked FPV to be more controllable
+-slightly reworked vehicle item loadouts
+-improved file structure with includes, like vehicle magazine loadouts of different tracer color
+-added olive BM-2T retexture for all factions (Aegis)
+
+-added 60mm Mortar Patria (WS), love this asset, very mobile and very easy to balance due to only being 60mm
 
 
 DONE - QUALITY OF LIFE:

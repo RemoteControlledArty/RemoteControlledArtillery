@@ -1,0 +1,19 @@
+magazines[]=
+{
+	"RC_QIN_150Rnd_338_T_R",
+	"RC_QIN_150Rnd_338_T_R",
+	"RC_QIN_150Rnd_338_T_R",
+	"RC_QIN_150Rnd_338_T_R",
+	"RC_QIN_150Rnd_338_T_R",
+	"RC_QIN_150Rnd_338_T_R",
+	"100Rnd_20mm_HE_T_R",
+	"100Rnd_20mm_HE_T_R",
+	"100Rnd_20mm_HE_T_R",
+	"100Rnd_20mm_HE_T_R",
+	"100Rnd_20mm_AP_T_R",
+	"100Rnd_20mm_AP_T_R",
+	"100Rnd_20mm_AP_T_R",
+	"100Rnd_20mm_AP_T_R",
+	"SmokeLauncherMag",
+	"SmokeLauncherMag"
+};

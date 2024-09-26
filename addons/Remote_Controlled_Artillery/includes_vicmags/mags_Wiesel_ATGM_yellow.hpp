@@ -1,0 +1,15 @@
+magazines[]=
+{
+	"RC_100Rnd_127x99_SLAP_T_Y",
+	"RC_100Rnd_127x99_SLAP_T_Y",
+	"RC_100Rnd_127x99_SLAP_T_Y",
+	"RC_100Rnd_127x99_SLAP_T_Y",
+	"RC_100Rnd_127x99_SLAP_T_Y",
+	"RC_100Rnd_127x99_SLAP_T_Y",
+	"RC_2Rnd_IFV_MP_NLOS",
+	"RC_2Rnd_IFV_MP_NLOS",
+	"RC_2Rnd_IFV_MP_NLOS",
+	"SmokeLauncherMag",
+	"SmokeLauncherMag",
+	"SmokeLauncherMag"
+};

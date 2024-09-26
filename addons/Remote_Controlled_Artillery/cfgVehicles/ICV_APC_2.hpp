@@ -52,6 +52,8 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	armor=375;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 	
 	driverAction="Driver_APC_Wheeled_02_rcws_F_out";
 	driverInAction="Driver_APC_Wheeled_02_rcws_F_in";
@@ -284,21 +286,13 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	scope=2;
 	scopeCurator=2;
 
-	vehicleClass="Autonomous";
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	crew="O_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="O_UAV_AI";
-	forceHideDriver=1;
-	driverForceOptics=1;
-
-	maximumLoad=4000;
-	//cost=20000;
-	threat[]={0.30000001,0.30000001,0.30000001};
 
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
@@ -552,23 +546,13 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
-	//cost=35000;
-	maximumLoad=3000;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_APC.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	crew="O_UAV_AI";
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
-
-	//vehicleClass="Autonomous";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
-	//isUav=1;
-	//textPlural="UGVs";
-	//textSingular="UGV";
-	crew="O_UAV_AI";
-	//driverForceOptics=1;
-	//forceHideDriver=1;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	
 	weapons[]=
 	{
@@ -597,21 +581,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 				"RC_GMG_40mm",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_200Rnd_127x99_SLAP_T_G",
-				"RC_200Rnd_127x99_SLAP_T_G",
-				"RC_200Rnd_127x99_SLAP_T_G",
-				"RC_200Rnd_127x99_SLAP_T_G",
-				"RC_200Rnd_127x99_SLAP_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_GMG_green.hpp"
 
 			class ViewOptics: RCWSOptics
 			{
@@ -721,21 +691,7 @@ class RC_APC_2_ReTex_WD: RC_APC_2_ReTex_WD_O
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_GMG_red.hpp"
 		};
 
 		class CommanderOptics: CommanderOptics {};
@@ -753,21 +709,7 @@ class RC_APC_2_ReTex_WD_I: RC_APC_2_ReTex_WD_O
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_200Rnd_127x99_SLAP_T_Y",
-				"RC_200Rnd_127x99_SLAP_T_Y",
-				"RC_200Rnd_127x99_SLAP_T_Y",
-				"RC_200Rnd_127x99_SLAP_T_Y",
-				"RC_200Rnd_127x99_SLAP_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_GMG_yellow.hpp"
 		};
 
 		class CommanderOptics: CommanderOptics {};
@@ -805,21 +747,7 @@ class RC_APC_2_ReTex_D: RC_APC_2_ReTex_D_O
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_GMG_red.hpp"
 		};
 
 		class CommanderOptics: CommanderOptics {};
@@ -837,21 +765,7 @@ class RC_APC_2_ReTex_D_I: RC_APC_2_ReTex_D_O
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_50Rnd_40mm_G_belt",
-				"RC_200Rnd_127x99_SLAP_T_Y",
-				"RC_200Rnd_127x99_SLAP_T_Y",
-				"RC_200Rnd_127x99_SLAP_T_Y",
-				"RC_200Rnd_127x99_SLAP_T_Y",
-				"RC_200Rnd_127x99_SLAP_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_GMG_yellow.hpp"
 		};
 
 		class CommanderOptics: CommanderOptics {};
@@ -874,25 +788,7 @@ class RC_IFV_2_A_O: RC_APC_2_A_O
 				"RC_MMG_93x64_APC",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"100Rnd_20mm_HE_T_G",
-				"100Rnd_20mm_HE_T_G",
-				"100Rnd_20mm_HE_T_G",
-				"100Rnd_20mm_HE_T_G",
-				"100Rnd_20mm_APFSDS_T_G",
-				"100Rnd_20mm_APFSDS_T_G",
-				"100Rnd_20mm_APFSDS_T_G",
-				"100Rnd_20mm_APFSDS_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"RC_200Rnd_93x64_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_20mm_green.hpp"
 		};
 
 		class CommanderOptics: CommanderOptics {};
@@ -977,25 +873,7 @@ class RC_IFV_2_ReTex_WD: RC_IFV_2_ReTex_WD_O
 				"RC_MMG_338_APC",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_APFSDS_T_R",
-				"100Rnd_20mm_APFSDS_T_R",
-				"100Rnd_20mm_APFSDS_T_R",
-				"100Rnd_20mm_APFSDS_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_20mm_red.hpp"
 		};
 
 		class CommanderOptics: CommanderOptics {};
@@ -1022,25 +900,7 @@ class RC_IFV_2_ReTex_WD_I: RC_IFV_2_ReTex_WD
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"100Rnd_20mm_HE_T_Y",
-				"100Rnd_20mm_HE_T_Y",
-				"100Rnd_20mm_HE_T_Y",
-				"100Rnd_20mm_HE_T_Y",
-				"100Rnd_20mm_APFSDS_T_Y",
-				"100Rnd_20mm_APFSDS_T_Y",
-				"100Rnd_20mm_APFSDS_T_Y",
-				"100Rnd_20mm_APFSDS_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_20mm_yellow.hpp"
 		};
 
 		class CommanderOptics: CommanderOptics {};
@@ -1084,25 +944,7 @@ class RC_IFV_2_ReTex_D: RC_IFV_2_ReTex_D_O
 				"RC_MMG_338_APC",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_HE_T_R",
-				"100Rnd_20mm_APFSDS_T_R",
-				"100Rnd_20mm_APFSDS_T_R",
-				"100Rnd_20mm_APFSDS_T_R",
-				"100Rnd_20mm_APFSDS_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_20mm_red.hpp"
 		};
 
 		class CommanderOptics: CommanderOptics {};
@@ -1129,25 +971,7 @@ class RC_IFV_2_ReTex_D_I: RC_IFV_2_ReTex_D
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"100Rnd_20mm_HE_T_Y",
-				"100Rnd_20mm_HE_T_Y",
-				"100Rnd_20mm_HE_T_Y",
-				"100Rnd_20mm_HE_T_Y",
-				"100Rnd_20mm_APFSDS_T_Y",
-				"100Rnd_20mm_APFSDS_T_Y",
-				"100Rnd_20mm_APFSDS_T_Y",
-				"100Rnd_20mm_APFSDS_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"RC_200Rnd_338_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_20mm_yellow.hpp"
 		};
 
 		class CommanderOptics: CommanderOptics {};

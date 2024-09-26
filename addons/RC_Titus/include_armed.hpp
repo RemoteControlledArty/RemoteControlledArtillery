@@ -14,28 +14,13 @@ class RC_Titus_AC_D_O: RC_Titus_AC_D
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
 		class ARX20Turret: ARX20Turret
 		{
-			magazines[]=
-			{
-				"RC_QIN_100Rnd_20mm_T_G",
-				"RC_QIN_100Rnd_20mm_T_G",
-				"RC_QIN_100Rnd_20mm_T_G",
-				"RC_QIN_100Rnd_20mm_T_G",
-				"RC_QIN_150Rnd_338_T_G",
-				"RC_QIN_150Rnd_338_T_G",
-				"RC_QIN_150Rnd_338_T_G",
-				"RC_QIN_150Rnd_338_T_G",
-				"RC_QIN_150Rnd_338_T_G",
-				"RC_QIN_150Rnd_338_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Titus\includes_vicmags\mags_Titus_20mm_green.hpp"
 		};
 
 		class CommanderTurret: CommanderTurret {};
@@ -65,21 +50,7 @@ class RC_Titus_AC_D_I: RC_Titus_AC_D
 	{
 		class ARX20Turret: ARX20Turret
 		{
-			magazines[]=
-			{
-				"RC_QIN_100Rnd_20mm_T_Y",
-				"RC_QIN_100Rnd_20mm_T_Y",
-				"RC_QIN_100Rnd_20mm_T_Y",
-				"RC_QIN_100Rnd_20mm_T_Y",
-				"RC_QIN_150Rnd_338_T_Y",
-				"RC_QIN_150Rnd_338_T_Y",
-				"RC_QIN_150Rnd_338_T_Y",
-				"RC_QIN_150Rnd_338_T_Y",
-				"RC_QIN_150Rnd_338_T_Y",
-				"RC_QIN_150Rnd_338_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Titus\includes_vicmags\mags_Titus_20mm_yellow.hpp"
 		};
 
 		class CommanderTurret: CommanderTurret {};
@@ -113,22 +84,13 @@ class RC_Titus_MMG_D_O: RC_Titus_MMG_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
 		class ARX20Turret: ARX20Turret
 		{
-			magazines[]=
-			{
-				"RC_QIN_150Rnd_338_T_G",
-				"RC_QIN_150Rnd_338_T_G",
-				"RC_QIN_150Rnd_338_T_G",
-				"RC_QIN_150Rnd_338_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Titus\includes_vicmags\mags_Titus_MMG_green.hpp"
 		};
 
 		class CommanderTurret: CommanderTurret {};
@@ -151,22 +113,13 @@ class RC_Titus_MMG_D_I: RC_Titus_MMG_D
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
 		class ARX20Turret: ARX20Turret
 		{
-			magazines[]=
-			{
-				"RC_QIN_150Rnd_338_T_Y",
-				"RC_QIN_150Rnd_338_T_Y",
-				"RC_QIN_150Rnd_338_T_Y",
-				"RC_QIN_150Rnd_338_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Titus\includes_vicmags\mags_Titus_MMG_yellow.hpp"
 		};
 
 		class CommanderTurret: CommanderTurret {};

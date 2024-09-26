@@ -17,6 +17,10 @@ class RC_Wiesel_AA_Base: I_LT_01_AA_F
 };
 class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 {
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	displayName="RC Wiesel II Anti-Air";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
@@ -41,25 +45,8 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 	ejectDeadCommander=0;
 	redRpm=1100;
 	idleRpm=250;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem="2+4+8";
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	class Components: Components
 	{
@@ -332,13 +319,10 @@ class RC_Wiesel_Radar_Base: I_LT_01_scout_F
 };
 class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 {
-	/*
-	//for later use
-	class EventHandlers
-	{
-		init="(_this select 0) spawn {};";
-	};
-	*/
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
 	author="Ascent";
@@ -348,25 +332,6 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 	ejectDeadCommander=0;
 	redRpm=1100;
 	idleRpm=250;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-	lockDetectionSystem="2+4+8";
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
 
 	class Components: Components
 	{
@@ -746,6 +711,8 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 	ejectDeadCommander=0;
 	redRpm=1100;
 	idleRpm=250;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 	radartype=2;
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;
@@ -881,21 +848,7 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 				"RC_IFV_Missile_Launcher",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_100Rnd_127x99_SLAP_T_R",
-				"RC_100Rnd_127x99_SLAP_T_R",
-				"RC_100Rnd_127x99_SLAP_T_R",
-				"RC_100Rnd_127x99_SLAP_T_R",
-				"RC_100Rnd_127x99_SLAP_T_R",
-				"RC_100Rnd_127x99_SLAP_T_R",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"RC_2Rnd_IFV_MP_NLOS",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_ATGM_red.hpp"
 
 			class ViewOptics: ViewOptics
 			{
@@ -963,17 +916,12 @@ class RC_Wiesel_ATGM_WD: RC_Wiesel_ATGM_WD_Base
 	side=1;
 	forceInGarage=1;
 
-	isUav=1;
-	vehicleClass="Autonomous";
-	textPlural="UGVs";
-	textSingular="UGV";
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	crew="B_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
-	crew="B_UAV_AI";
-	driverForceOptics=1;
-	forceHideDriver=1;
 
 	class Turrets: Turrets
 	{
@@ -991,20 +939,12 @@ class RC_Wiesel_ATGM_WD_O: RC_Wiesel_ATGM_WD
 	side=0;
 	//#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
-	magazines[]=
+	class Turrets: Turrets
 	{
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_ATGM_green.hpp"
+		};
 	};
 };
 class RC_Wiesel_ATGM_WD_I: RC_Wiesel_ATGM_WD
@@ -1014,20 +954,12 @@ class RC_Wiesel_ATGM_WD_I: RC_Wiesel_ATGM_WD
 	side=2;
 	//#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
-	magazines[]=
+	class Turrets: Turrets
 	{
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_ATGM_yellow.hpp"
+		};
 	};
 };
 class RC_Wiesel_ATGM_DIG_I: RC_Wiesel_ATGM_WD_I
@@ -1060,16 +992,7 @@ class RC_Wiesel_ATGM_WD_manned: RC_Wiesel_ATGM_WD_Base
 	side=1;
 	forceInGarage=1;
 
-	//isUav=1;
-	//vehicleClass="Autonomous";
-	//textPlural="UGVs";
-	//textSingular="UGV";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
 	crew="B_UAV_AI";
-	//driverForceOptics=1;
-	//forceHideDriver=1;
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
@@ -1117,20 +1040,12 @@ class RC_Wiesel_ATGM_WD_manned_O: RC_Wiesel_ATGM_WD_manned
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
-	magazines[]=
+	class Turrets: Turrets
 	{
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_ATGM_green.hpp"
+		};
 	};
 };
 class RC_Wiesel_ATGM_WD_manned_I: RC_Wiesel_ATGM_WD_manned
@@ -1140,20 +1055,12 @@ class RC_Wiesel_ATGM_WD_manned_I: RC_Wiesel_ATGM_WD_manned
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
-	magazines[]=
+	class Turrets: Turrets
 	{
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"RC_2Rnd_IFV_MP_NLOS",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_ATGM_yellow.hpp"
+		};
 	};
 };
 class RC_Wiesel_ATGM_DIG_manned_I: RC_Wiesel_ATGM_WD_manned_I
@@ -1202,6 +1109,8 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 	ejectDeadCommander=0;
 	redRpm=1100;
 	idleRpm=250;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 	radartype=2;
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;
@@ -1338,24 +1247,7 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 				"RC_MMG_338_coax_ext",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"60Rnd_20mm_HE_T_R",
-				"60Rnd_20mm_HE_T_R",
-				"60Rnd_20mm_HE_T_R",
-				"60Rnd_20mm_HE_T_R",
-				"60Rnd_20mm_APFSDS_T_R",
-				"60Rnd_20mm_APFSDS_T_R",
-				"60Rnd_20mm_APFSDS_T_R",
-				"60Rnd_20mm_APFSDS_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_red.hpp"
 
 			class ViewOptics: ViewOptics
 			{
@@ -1423,17 +1315,12 @@ class RC_Wiesel_AC_WD: RC_Wiesel_AC_WD_Base
 	side=1;
 	forceInGarage=1;
 
-	isUav=1;
-	vehicleClass="Autonomous";
-	textPlural="UGVs";
-	textSingular="UGV";
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	crew="B_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
-	crew="B_UAV_AI";
-	driverForceOptics=1;
-	forceHideDriver=1;
 
 	class Turrets: Turrets
 	{
@@ -1451,23 +1338,12 @@ class RC_Wiesel_AC_WD_O: RC_Wiesel_AC_WD
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
-	magazines[]=
+	class Turrets: Turrets
 	{
-		"60Rnd_20mm_HE_T_G",
-		"60Rnd_20mm_HE_T_G",
-		"60Rnd_20mm_HE_T_G",
-		"60Rnd_20mm_HE_T_G",
-		"60Rnd_20mm_APFSDS_T_G",
-		"60Rnd_20mm_APFSDS_T_G",
-		"60Rnd_20mm_APFSDS_T_G",
-		"60Rnd_20mm_APFSDS_T_G",
-		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_G",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_green.hpp"
+		};
 	};
 };
 class RC_Wiesel_AC_WD_I: RC_Wiesel_AC_WD
@@ -1477,23 +1353,12 @@ class RC_Wiesel_AC_WD_I: RC_Wiesel_AC_WD
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
-	magazines[]=
+	class Turrets: Turrets
 	{
-		"60Rnd_20mm_HE_T_Y",
-		"60Rnd_20mm_HE_T_Y",
-		"60Rnd_20mm_HE_T_Y",
-		"60Rnd_20mm_HE_T_Y",
-		"60Rnd_20mm_APFSDS_T_Y",
-		"60Rnd_20mm_APFSDS_T_Y",
-		"60Rnd_20mm_APFSDS_T_Y",
-		"60Rnd_20mm_APFSDS_T_Y",
-		"RC_200Rnd_338_T_Y",
-		"RC_200Rnd_338_T_Y",
-		"RC_200Rnd_338_T_Y",
-		"RC_200Rnd_338_T_Y",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_yellow.hpp"
+		};
 	};
 };
 class RC_Wiesel_AC_DIG_I: RC_Wiesel_AC_WD_I
@@ -1526,15 +1391,8 @@ class RC_Wiesel_AC_WD_manned: RC_Wiesel_AC_WD_Base
 	side=1;
 	forceInGarage=1;
 
-	//isUav=1;
-	//vehicleClass="Autonomous";
-	//textPlural="UGVs";
-	//textSingular="UGV";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
 	crew="B_UAV_AI";
-	//driverForceOptics=1;
-	//forceHideDriver=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{
@@ -1575,23 +1433,12 @@ class RC_Wiesel_AC_WD_manned_O: RC_Wiesel_AC_WD_manned
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
-	magazines[]=
+	class Turrets: Turrets
 	{
-		"60Rnd_20mm_HE_T_G",
-		"60Rnd_20mm_HE_T_G",
-		"60Rnd_20mm_HE_T_G",
-		"60Rnd_20mm_HE_T_G",
-		"60Rnd_20mm_APFSDS_T_G",
-		"60Rnd_20mm_APFSDS_T_G",
-		"60Rnd_20mm_APFSDS_T_G",
-		"60Rnd_20mm_APFSDS_T_G",
-		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_G",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_green.hpp"
+		};
 	};
 };
 class RC_Wiesel_AC_WD_manned_I: RC_Wiesel_AC_WD_manned
@@ -1601,23 +1448,12 @@ class RC_Wiesel_AC_WD_manned_I: RC_Wiesel_AC_WD_manned
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
-	magazines[]=
+	class Turrets: Turrets
 	{
-		"60Rnd_20mm_HE_T_Y",
-		"60Rnd_20mm_HE_T_Y",
-		"60Rnd_20mm_HE_T_Y",
-		"60Rnd_20mm_HE_T_Y",
-		"60Rnd_20mm_APFSDS_T_Y",
-		"60Rnd_20mm_APFSDS_T_Y",
-		"60Rnd_20mm_APFSDS_T_Y",
-		"60Rnd_20mm_APFSDS_T_Y",
-		"RC_200Rnd_338_T_Y",
-		"RC_200Rnd_338_T_Y",
-		"RC_200Rnd_338_T_Y",
-		"RC_200Rnd_338_T_Y",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_yellow.hpp"
+		};
 	};
 };
 class RC_Wiesel_AC_DIG_manned_I: RC_Wiesel_AC_WD_manned_I

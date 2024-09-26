@@ -17,6 +17,9 @@ class RC_AA_base: B_APC_Tracked_01_AA_F
 };
 class RC_AA_A: RC_AA_base
 {
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	displayName="RC Anti-Air";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
@@ -42,8 +45,8 @@ class RC_AA_A: RC_AA_base
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
-	lockDetectionSystem="2+4+8";
-	incomingMissileDetectionSystem=16;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	hiddenSelectionsTextures[]=
 	{
