@@ -17,6 +17,8 @@ class RC_RepairTruck_A: RC_RepairTruck_base
 	};
 	*/
 	//also work on B_APC_Tracked_01_CRV_F
+	
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 
 	displayName="RC Repair Truck";
 	faction="RemoteControlled_B";
@@ -51,8 +53,6 @@ class RC_RepairTruck_A: RC_RepairTruck_base
 	smokeLauncherVelocity=14;
 	smokeLauncherOnTurret=0;
 	smokeLauncherAngle=120;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	weapons[]=
 	{

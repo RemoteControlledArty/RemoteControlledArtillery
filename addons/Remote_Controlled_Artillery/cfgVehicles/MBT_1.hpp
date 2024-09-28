@@ -23,6 +23,7 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -40,8 +41,6 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 	peakTorque=6250;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
 
@@ -73,12 +72,12 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 		class muzzle_rot_coax
 		{
 			source="ammorandom";
-			weapon="RC_MMG_338_MBT_coax";
+			weapon="RC_MMG_338_MBT_Merkava_coax";
 		};
 		class muzzle_hide_coax
 		{
 			source="reload";
-			weapon="RC_MMG_338_MBT_coax";
+			weapon="RC_MMG_338_MBT_Merkava_coax";
 		};
 		class muzzle_rot_cmdr
 		{
@@ -121,7 +120,7 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 			weapons[]=
 			{
 				"RC_cannon_120mm",
-				"RC_MMG_338_MBT_coax",
+				"RC_MMG_338_MBT_Merkava_coax",
 				"SmokeLauncher"
 			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Merkava_red.hpp"

@@ -41,6 +41,7 @@ class RC_60mmMortarPatria_Base: B_APC_Wheeled_01_mortar_lxWS
 class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -61,8 +62,6 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 	normalSpeedForwardCoef=0.64;
 	enginePower=593.8;
 	peakTorque=3017.6;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	crew="B_UAV_AI";

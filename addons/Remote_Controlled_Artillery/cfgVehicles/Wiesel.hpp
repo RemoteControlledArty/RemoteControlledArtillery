@@ -17,6 +17,7 @@ class RC_Wiesel_AA_Base: I_LT_01_AA_F
 };
 class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 {
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -45,8 +46,6 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 	ejectDeadCommander=0;
 	redRpm=1100;
 	idleRpm=250;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	class Components: Components
 	{
@@ -698,6 +697,7 @@ class RC_Wiesel_ATGM_Base: I_LT_01_AT_F
 class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
@@ -711,8 +711,6 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 	ejectDeadCommander=0;
 	redRpm=1100;
 	idleRpm=250;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 	radartype=2;
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;
@@ -1096,6 +1094,7 @@ class RC_Wiesel_AC_Base: I_LT_01_cannon_F
 class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
@@ -1109,8 +1108,6 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 	ejectDeadCommander=0;
 	redRpm=1100;
 	idleRpm=250;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 	radartype=2;
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;

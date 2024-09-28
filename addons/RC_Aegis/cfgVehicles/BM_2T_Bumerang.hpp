@@ -23,6 +23,7 @@ class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -41,8 +42,6 @@ class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 	crewCrashProtection=0.01;
 	enginePower=575.3;
 	peakTorque=2923.7;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	/*
 	hiddenSelectionsTextures[]=

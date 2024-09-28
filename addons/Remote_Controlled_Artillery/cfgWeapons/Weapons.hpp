@@ -348,6 +348,18 @@ class RC_MMG_338_MBT_coax: RC_MMG_338_MBT
 		};
 	};
 };
+class RC_MMG_338_MBT_Merkava_coax: RC_MMG_338_MBT_coax
+{
+	class GunParticles
+	{
+		class effect1
+		{
+			directionName="konec hlavne2";
+			effectName="MachineGunCloud";
+			positionName="usti hlavne2";
+		};
+	};
+};
 
 
 class LMG_coax;

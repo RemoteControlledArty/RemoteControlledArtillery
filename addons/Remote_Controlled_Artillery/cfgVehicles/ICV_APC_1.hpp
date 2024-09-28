@@ -25,6 +25,7 @@ class RC_ICV_APC_1_Base: B_APC_Tracked_01_rcws_F
 class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -45,8 +46,6 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	peakTorque=5386.3;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	hiddenSelectionsTextures[]=
 	{

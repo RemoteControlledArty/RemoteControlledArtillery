@@ -34,6 +34,7 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -54,8 +55,6 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 	normalSpeedForwardCoef=0.64;
 	enginePower=593.8;
 	peakTorque=3017.6;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	hiddenSelectionsTextures[]=
 	{

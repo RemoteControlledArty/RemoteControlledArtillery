@@ -23,6 +23,7 @@ class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
 class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -42,8 +43,6 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	crewCrashProtection=0.01;
 	enginePower=575.3;
 	peakTorque=2923.7;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	class AnimationSources: AnimationSources
 	{

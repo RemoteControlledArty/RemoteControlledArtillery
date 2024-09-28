@@ -31,6 +31,7 @@ class RC_ICV_IFV_3_A_Base: B_APC_Wheeled_03_cannon_F
 class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -54,8 +55,6 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 	peakTorque=2810.4;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_APC_Wheeled_03_cannon_F.jpg";
 	hiddenSelectionsTextures[]=

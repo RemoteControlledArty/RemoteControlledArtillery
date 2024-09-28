@@ -508,6 +508,7 @@ class CfgPatches
 			RC_MMG_338_MBT_coax,
 			RC_MMG_338_coax,
 			RC_MMG_338_coax_ext,
+			RC_MMG_338_MBT_Merkava_coax,
 
 			RC_MMG_93x64_APC,
 			RC_MMG_93x64_coax,

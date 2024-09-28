@@ -24,6 +24,7 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 };
 class RC_MLRS_A: RC_MLRS_base
 {
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -50,8 +51,6 @@ class RC_MLRS_A: RC_MLRS_base
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	hiddenSelectionsTextures[]=
 	{

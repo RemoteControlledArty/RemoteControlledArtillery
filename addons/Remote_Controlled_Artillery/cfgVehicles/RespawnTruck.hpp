@@ -16,6 +16,8 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 		init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
+	
 	displayName="RC Medical Truck";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Respawn_subcat";
@@ -55,8 +57,6 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 	smokeLauncherVelocity=14;
 	smokeLauncherOnTurret=0;
 	smokeLauncherAngle=120;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	weapons[]=
 	{
