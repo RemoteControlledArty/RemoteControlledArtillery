@@ -8,6 +8,7 @@ class RC_HIMARS_base: rhsusf_M142_usarmy_D
 	class OpticsIn;
 	class Wide;
 	class Components;
+	//class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 
@@ -20,6 +21,16 @@ class RC_HIMARS_base: rhsusf_M142_usarmy_D
 };
 class RC_HIMARS_D: RC_HIMARS_base
 {
+	/*
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+	*/
+
 	author="Ascent";
 	displayName="RC M142 HIMARS";
 	faction="RemoteControlled_B";
@@ -51,6 +62,8 @@ class RC_HIMARS_D: RC_HIMARS_base
 	laserScanner=1;
 	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	class Components: Components
 	{

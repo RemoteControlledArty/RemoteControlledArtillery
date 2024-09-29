@@ -23,6 +23,24 @@ class RC_M109_base: rhsusf_M109d_usarmy
 };
 class RC_M109_A: RC_M109_base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RHSUSF_EventHandlers
+		{
+			postInit = "_this call rhs_fnc_reapplyTextures";
+		};
+		/*
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
+		};
+		*/
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+
 	author="Ascent";
 	displayName="RC M109 155mm";
 	faction="RemoteControlled_B";
@@ -55,20 +73,6 @@ class RC_M109_A: RC_M109_base
 	laserScanner=1;
 	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
-
-	class EventHandlers: EventHandlers
-	{	
-		class RHSUSF_EventHandlers
-		{
-			postInit = "_this call rhs_fnc_reapplyTextures";
-		};
-		/*
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
-		};
-		*/
-	};
 
 	class Components: Components
 	{

@@ -11,12 +11,21 @@ class RC_Wiesel_AA_Base: I_LT_01_AA_F
 	class HitPoints;
 	class HitEngine;
 	class Components;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -318,6 +327,14 @@ class RC_Wiesel_Radar_Base: I_LT_01_scout_F
 };
 class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -597,7 +614,10 @@ class RC_Mortar_Carrier_WD: RC_Wiesel_Radar_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
 	};
 
 	displayName="RC Mortar Carrier";
@@ -607,7 +627,10 @@ class RC_Mortar_Carrier_WD_O: RC_Mortar_Carrier_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
 	};
 
 	faction="RemoteControlled_O";
@@ -619,7 +642,10 @@ class RC_Mortar_Carrier_WD_I: RC_Mortar_Carrier_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
 	};
 
 	faction="RemoteControlled_I";
@@ -644,7 +670,10 @@ class RC_Mortar_Carrier_LC_WD: RC_Wiesel_Radar_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
 	};
 
 	displayName="RC Mortar Carrier LowCap";
@@ -654,7 +683,10 @@ class RC_Mortar_Carrier_LC_WD_O: RC_Mortar_Carrier_LC_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
 	};
 
 	faction="RemoteControlled_O";
@@ -666,7 +698,10 @@ class RC_Mortar_Carrier_LC_WD_I: RC_Mortar_Carrier_LC_WD
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
 	};
 
 	faction="RemoteControlled_I";
@@ -696,6 +731,14 @@ class RC_Wiesel_ATGM_Base: I_LT_01_AT_F
 };
 class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -1093,6 +1136,14 @@ class RC_Wiesel_AC_Base: I_LT_01_cannon_F
 };
 class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+	
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"

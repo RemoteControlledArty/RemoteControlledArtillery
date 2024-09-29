@@ -12,7 +12,14 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
 	};
 
 	faction="RemoteControlled_B";
@@ -213,7 +220,10 @@ class RC_FlatbedTruck_A_O: RC_FlatbedTruck_A
 
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 class RC_FlatbedTruck_A_I: RC_FlatbedTruck_A
@@ -224,7 +234,10 @@ class RC_FlatbedTruck_A_I: RC_FlatbedTruck_A
 
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 
@@ -254,7 +267,10 @@ class RC_FlatbedTruck_WD_O: RC_FlatbedTruck_WD
 	
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 class RC_FlatbedTruck_WD_I: RC_FlatbedTruck_WD
@@ -264,7 +280,10 @@ class RC_FlatbedTruck_WD_I: RC_FlatbedTruck_WD
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 
@@ -276,7 +295,10 @@ class RC_FlatbedTruck_LC_A: RC_FlatbedTruck_A
 
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 class RC_FlatbedTruck_LC_A_O: RC_FlatbedTruck_LC_A
@@ -287,7 +309,10 @@ class RC_FlatbedTruck_LC_A_O: RC_FlatbedTruck_LC_A
 
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 class RC_FlatbedTruck_LC_A_I: RC_FlatbedTruck_LC_A
@@ -298,7 +323,10 @@ class RC_FlatbedTruck_LC_A_I: RC_FlatbedTruck_LC_A
 
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 
@@ -328,7 +356,10 @@ class RC_FlatbedTruck_LC_WD_O: RC_FlatbedTruck_LC_WD
 	
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 class RC_FlatbedTruck_LC_WD_I: RC_FlatbedTruck_LC_WD
@@ -338,7 +369,10 @@ class RC_FlatbedTruck_LC_WD_I: RC_FlatbedTruck_LC_WD
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 
@@ -361,7 +395,10 @@ class RC_FlatbedTruck_manned_A_O: RC_FlatbedTruck_manned_A
 
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 class RC_FlatbedTruck_manned_A_I: RC_FlatbedTruck_manned_A
@@ -371,7 +408,10 @@ class RC_FlatbedTruck_manned_A_I: RC_FlatbedTruck_manned_A
 
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 
@@ -399,7 +439,10 @@ class RC_FlatbedTruck_manned_WD_O: RC_FlatbedTruck_manned_WD
 	
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_O', east] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };
 class RC_FlatbedTruck_manned_WD_I: RC_FlatbedTruck_manned_WD
@@ -409,6 +452,9 @@ class RC_FlatbedTruck_manned_WD_I: RC_FlatbedTruck_manned_WD
 
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_I', resistance] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
 	};
 };

@@ -1,3 +1,7 @@
+#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+lockDetectionSystem="2+4+8";
+
 faction="RemoteControlled_B";
 crew="B_UAV_AI";
 driverCompartments="Compartment3";
@@ -10,28 +14,12 @@ ejectDeadGunner=0;
 ejectDeadDriver=0;
 ejectDeadCommander=0;
 crewCrashProtection=0.01;
-radartype=2;
-receiveRemoteTargets=1;
-reportRemoteTargets=1;
-laserScanner=1;
-lockDetectionSystem=4;
-incomingMissileDetectionSystem=16;
-soundLocked[]=
-{
-	"\A3\Sounds_F\weapons\Rockets\locked_1",
-	1,
-	1
-};
-soundIncommingMissile[]=
-{
-	"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-	0.39810717,
-	1
-};
 enginePower=460;
 peakTorque=1312.5;
 maxSpeed=120;
 normalSpeedForwardCoef=0.64;
+class Reflectors {};	//removed, otherwise they are automatically on at night
+aggregateReflectors[]={{""}};
 
 smokeLauncherOnTurret=1;
 smokeLauncherGrenadeCount=12;

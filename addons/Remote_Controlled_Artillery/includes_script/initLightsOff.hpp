@@ -1,11 +1,6 @@
 init=
 "if (!local (_this select 0)) exitwith {}; \
 (_this select 0) spawn { \
-	waitUntil {!isNull gunner _this}; \
-	_this deleteVehicleCrew gunner _this; \
-	waitUntil {!isNull commander _this}; \
-	_this deleteVehicleCrew commander _this; \
-	\
 	_this setHitPointDamage ['#light_l', 1]; \
 	_this setHitPointDamage ['#light_r', 1]; \
 	_this setHitPointDamage ['#light_l_flare', 1]; \

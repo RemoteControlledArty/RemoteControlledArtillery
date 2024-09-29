@@ -40,6 +40,14 @@ class RC_60mmMortarPatria_Base: B_APC_Wheeled_01_mortar_lxWS
 };
 class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -447,38 +455,41 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 						};
 					};
 
-					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+					class Components: Components
 					{
-						defaultDisplay="SensorDisplay";
-
-						class Components
+						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 						{
-							class SensorDisplay
+							defaultDisplay="SensorDisplay";
+
+							class Components
 							{
-								componentType="SensorsDisplayComponent";
-								range[]={6000,4000,2000,1000};
-								resource="RscCustomInfoSensors";
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={6000,4000,2000,1000};
+									resource="RscCustomInfoSensors";
+								};
 							};
 						};
-					};
-					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-					{
-						defaultDisplay="UAVFeedDisplay";
-
-						class Components
+						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 						{
-							class UAVFeedDisplay
+							defaultDisplay="UAVFeedDisplay";
+
+							class Components
 							{
-								componentType="UAVFeedDisplayComponent";
-							};
-							class MinimapDisplay
-							{
-								componentType="MinimapDisplayComponent";
-								resource="RscCustomInfoMiniMap";
-							};
-							class EmptyDisplay
-							{
-								componentType="EmptyDisplayComponent";
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
 							};
 						};
 					};

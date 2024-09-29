@@ -15,6 +15,14 @@ class RC_HMMWV_M2_Base: rhsusf_m1165a1_gmv_m2_m240_socom_d
 };
 class RC_HMMWV_M2: RC_HMMWV_M2_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+	
 	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
 
 	forceInGarage=1;

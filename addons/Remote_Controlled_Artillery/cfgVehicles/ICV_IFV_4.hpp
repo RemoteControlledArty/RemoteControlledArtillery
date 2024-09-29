@@ -119,10 +119,6 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 			#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
-		class lightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\lightsOff.hpp"
-		};
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 

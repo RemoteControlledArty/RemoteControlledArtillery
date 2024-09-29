@@ -12,6 +12,7 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 	class OpticsIn;
 	class Wide;
 	class Components;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 
@@ -24,6 +25,14 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 };
 class RC_MLRS_A: RC_MLRS_base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -187,7 +196,7 @@ class RC_MLRS_A: RC_MLRS_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,20000,10000,5000,2500,67000};
+							range[]={40000,30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -339,6 +348,7 @@ class RC_MRL_base: I_Truck_02_MRL_F
 	class OpticsIn;
 	class Wide;
 	class Components;
+	//class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 
@@ -351,6 +361,17 @@ class RC_MRL_base: I_Truck_02_MRL_F
 };
 class RC_MRL_DIG_I: RC_MRL_base
 {
+	/*
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+	*/
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -483,7 +504,7 @@ class RC_MRL_DIG_I: RC_MRL_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,20000,10000,5000,2500,67000};
+							range[]={40000,30000,20000,10000,5000,2500,67000};
 							resource="RscCustomInfoSensors";
 						};
 					};

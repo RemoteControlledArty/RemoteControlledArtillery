@@ -31,9 +31,11 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
+
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-
 	weapons[]=
 	{
 		"TruckHorn",

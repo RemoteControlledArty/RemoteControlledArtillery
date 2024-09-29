@@ -14,6 +14,7 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	class OpticsIn;
 	class Wide;
 	class Components;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 
@@ -27,6 +28,14 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 };
 class RC_Howitzer_A: RC_Howitzer_base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -230,8 +239,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							//range[]={30000,20000,10000,5000,2500,67000};
-							range[]={30000,20000,10000,5000,2500,50000};
+							range[]={40000,30000,20000,10000,5000,2500};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -392,6 +400,7 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 	class OpticsIn;
 	class Wide;
 	class Components;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 
@@ -405,6 +414,14 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 };
 class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -592,8 +609,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							//range[]={30000,20000,10000,5000,2500,67000};
-							range[]={30000,20000,10000,5000,2500,50000};
+							range[]={40000,30000,20000,10000,5000,2500};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -771,8 +787,7 @@ class RC_Static_Arty: RC_Static_Arty_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							//range[]={30000,20000,10000,5000,2500,67000};
-							range[]={30000,20000,10000,5000,2500,50000};
+							range[]={40000,30000,20000,10000,5000,2500};
 							resource="RscCustomInfoSensors";
 						};
 					};

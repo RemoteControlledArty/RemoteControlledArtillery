@@ -35,7 +35,7 @@ class RC_Titus_AC_base: QIN_Titus_arx20_DES
 class RC_Titus_AC_D: RC_Titus_AC_base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\RC_Titus\Titus_include.hpp"
+	#include "\RC_Titus\cfgVehicles\Titus_include.hpp"
 
 	class EventHandlers: EventHandlers
 	{
@@ -244,12 +244,77 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 		class CargoTurret_02: CargoTurret_02 {};
 	};
 };
+class RC_Titus_AC_WD: RC_Titus_AC_D
+{
+	#include "\RC_Titus\textures\tex_wd_armed.hpp"
+};
+class RC_Titus_AC_A: RC_Titus_AC_D
+{
+	#include "\RC_Titus\textures\tex_a_unarmed.hpp"
+};
+
+
+class RC_Titus_AC_D_O: RC_Titus_AC_D
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class ARX20Turret: ARX20Turret
+		{
+			#include "\RC_Titus\includes_vicmags\mags_Titus_20mm_green.hpp"
+		};
+
+		class CommanderTurret: CommanderTurret {};
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+	};
+};
+class RC_Titus_AC_WD_O: RC_Titus_AC_D_O
+{
+	#include "\RC_Titus\textures\tex_wd_armed.hpp"
+};
+class RC_Titus_AC_A_O: RC_Titus_AC_D_O
+{
+	#include "\RC_Titus\textures\tex_a_armed.hpp"
+};
+
+
+class RC_Titus_AC_D_I: RC_Titus_AC_D
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class ARX20Turret: ARX20Turret
+		{
+			#include "\RC_Titus\includes_vicmags\mags_Titus_20mm_yellow.hpp"
+		};
+
+		class CommanderTurret: CommanderTurret {};
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+	};
+};
+class RC_Titus_AC_WD_I: RC_Titus_AC_D_I
+{
+	#include "\RC_Titus\textures\tex_wd_armed.hpp"
+};
+class RC_Titus_AC_A_I: RC_Titus_AC_D_I
+{
+	#include "\RC_Titus\textures\tex_a_armed.hpp"
+};
 
 
 class RC_Titus_MMG_D: RC_Titus_AC_D
 {
-	#include "\RC_Titus\Titus_include.hpp"
-
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
@@ -355,5 +420,69 @@ class RC_Titus_MMG_D: RC_Titus_AC_D
 		class CargoTurret_02: CargoTurret_02 {};
 	};
 };
+class RC_Titus_MMG_WD: RC_Titus_MMG_D
+{
+	#include "\RC_Titus\textures\tex_wd_armed.hpp"
+};
+class RC_Titus_MMG_A: RC_Titus_MMG_D
+{
+	#include "\RC_Titus\textures\tex_a_armed.hpp"
+};
 
-#include "\RC_Titus\include_armed.hpp"
+
+class RC_Titus_MMG_D_O: RC_Titus_MMG_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class ARX20Turret: ARX20Turret
+		{
+			#include "\RC_Titus\includes_vicmags\mags_Titus_MMG_green.hpp"
+		};
+
+		class CommanderTurret: CommanderTurret {};
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+	};
+};
+class RC_Titus_MMG_WD_O: RC_Titus_MMG_D_O
+{
+	#include "\RC_Titus\textures\tex_wd_armed.hpp"
+};
+class RC_Titus_MMG_A_O: RC_Titus_MMG_D_O
+{
+	#include "\RC_Titus\textures\tex_a_armed.hpp"
+};
+
+
+class RC_Titus_MMG_D_I: RC_Titus_MMG_D
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class ARX20Turret: ARX20Turret
+		{
+			#include "\RC_Titus\includes_vicmags\mags_Titus_MMG_yellow.hpp"
+		};
+
+		class CommanderTurret: CommanderTurret {};
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+	};
+};
+class RC_Titus_MMG_WD_I: RC_Titus_MMG_D_I
+{
+	#include "\RC_Titus\textures\tex_wd_armed.hpp"
+};
+class RC_Titus_MMG_A_I: RC_Titus_MMG_D_I
+{
+	#include "\RC_Titus\textures\tex_a_armed.hpp"
+};
