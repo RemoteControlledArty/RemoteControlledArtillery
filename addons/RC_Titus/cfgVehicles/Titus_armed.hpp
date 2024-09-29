@@ -39,8 +39,15 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+		};
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
 	};
 
 	displayName="Titus 20mm";

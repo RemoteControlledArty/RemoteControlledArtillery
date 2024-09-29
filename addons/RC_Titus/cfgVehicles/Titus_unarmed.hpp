@@ -36,7 +36,14 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
+		};
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
 	};
 
 	displayName="RC Titus";

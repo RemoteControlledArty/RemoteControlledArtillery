@@ -16,10 +16,12 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 		{
 			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
 		};
+		/*
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
+		*/
 	};
 
 	faction="RemoteControlled_B";
@@ -27,37 +29,24 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 	author="Ascent";
 	crewCrashProtection=0.01;
 	enableGPS=1;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
 	threat[]={0,0,0};
 	cost=0;
 	typicalCargo[]=
 	{
 		""
 	};
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
 	smokeLauncherGrenadeCount=8;
 	smokeLauncherVelocity=14;
 	smokeLauncherOnTurret=0;
 	smokeLauncherAngle=120;
-
-	laserScanner=1;
-	lockDetectionSystem=4;
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
-
 	weapons[]=
 	{
 		"TruckHorn",

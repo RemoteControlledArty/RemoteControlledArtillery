@@ -35,10 +35,12 @@ class RC_M109_A: RC_M109_base
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 		*/
+		/*
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
+		*/
 	};
 
 	author="Ascent";
@@ -50,29 +52,25 @@ class RC_M109_A: RC_M109_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-	vehicleClass="Autonomous";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	uavCameraDriverPos="driverview";
-	uavCameraDriverDir="driverview";
-	uavCameraGunnerPos="gunnerview";
-	uavCameraGunnerDir="gunnerview";
-	crew="B_UAV_AI";
-	driverForceOptics=1;
-	forceHideDriver=1;
+
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-	incomingMissileDetectionSystem=16;
+	crew="B_UAV_AI";
+	uavCameraDriverPos="driverview";
+	uavCameraDriverDir="driverview";
+	uavCameraGunnerPos="gunnerview";
+	uavCameraGunnerDir="gunnerview";
+
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+aggregateReflectors[]={{""}};
 
 	class Components: Components
 	{
@@ -216,6 +214,45 @@ class RC_M109_A: RC_M109_base
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
+
+					class Components: Components
+					{
+						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+						{
+							defaultDisplay="SensorDisplay";
+
+							class Components
+							{
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={40000,30000,20000,10000,5000,2500};
+									resource="RscCustomInfoSensors";
+								};
+							};
+						};
+						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+						{
+							defaultDisplay="EmptyDisplayComponent";
+
+							class Components
+							{
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+							};
+						};
+					};
 				};
 			};
 
@@ -230,7 +267,7 @@ class RC_M109_A: RC_M109_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={30000,20000,10000,5000,2500,40000};
+							range[]={40000,30000,20000,10000,5000,2500};
 							resource="RscCustomInfoSensors";
 						};
 					};

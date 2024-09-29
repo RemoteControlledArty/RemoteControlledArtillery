@@ -575,7 +575,7 @@ class CfgFunctions
 			file="\Remote_Controlled_Artillery\functions";
       		class preInit {preInit=1};
       		class InitCBASettings {preInit=1};
-			class RC_CBRad {preInit=1};
+			//class RC_CBRad {preInit=1};
 
 			class RC_MarkerHandler {postInit=1};
       		class RC_UI_Loop {postInit=1};
@@ -718,20 +718,20 @@ class CfgCloudlets
 #include "\Remote_Controlled_Artillery\effects\effects.hpp"
 class CfgAmmo
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmo\Ammo.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\Ammo.hpp"
 };
 class CfgMagazines
 {
-	#include "\Remote_Controlled_Artillery\cfgMagazines\Magazines.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\Magazines.hpp"
 };
 class CfgWeapons
 {
-	#include "\Remote_Controlled_Artillery\cfgWeapons\Weapons.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\Weapons.hpp"
 };
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet

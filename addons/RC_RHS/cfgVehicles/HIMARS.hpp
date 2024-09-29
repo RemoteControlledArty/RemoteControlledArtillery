@@ -40,28 +40,23 @@ class RC_HIMARS_D: RC_HIMARS_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	isUav=1;
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="dve_view_pos";
-	uavCameraDriverDir="dve_view_pos";
-	uavCameraGunnerPos="dve_view_pos";
-	uavCameraGunnerDir="dve_view_pos";
-	crew="B_UAV_AI";
-	driverForceOptics=1;
+
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	enableGPS=1;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-	incomingMissileDetectionSystem=16;
+	crew="B_UAV_AI";
+	uavCameraDriverPos="dve_view_pos";
+	uavCameraDriverDir="dve_view_pos";
+	uavCameraGunnerPos="dve_view_pos";
+	uavCameraGunnerDir="dve_view_pos";
+
 	class Reflectors {};	//removed, otherwise they are automatically on at night
 	aggregateReflectors[]={{""}};
 
@@ -146,7 +141,6 @@ class RC_HIMARS_D: RC_HIMARS_base
 				"RC_1Rnd_230mm_rockets_cluster"
 			};
 
-			/*
 			//working screen, but azimut not changing with launcher direction, but fixed camera direction
 			class OpticsIn
 			{
@@ -166,7 +160,6 @@ class RC_HIMARS_D: RC_HIMARS_base
 					hitpoint="Hit_Optic_DVEA";
 				};
 			};
-			*/
 
 			class Components: Components
 			{

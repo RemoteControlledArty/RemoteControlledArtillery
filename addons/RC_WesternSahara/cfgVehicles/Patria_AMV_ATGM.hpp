@@ -32,6 +32,14 @@ class RC_ICV_IFV_9_A_Base: B_APC_Wheeled_01_atgm_lxWS
 };
 class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"

@@ -16,6 +16,14 @@ class RC_M2A2_Base: RHS_M2A2
 };
 class RC_M2A2_D_Base: RC_M2A2_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	
 	forceInGarage=1;
