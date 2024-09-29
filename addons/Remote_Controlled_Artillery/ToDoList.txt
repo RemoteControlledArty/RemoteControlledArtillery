@@ -160,6 +160,7 @@ new:
 -fixed Wiesel II manned driverless versions for multiplayer use
 -fixed Pandur II not having missles due to a change of magazines
 -fixed vehicle mortar hitpoints
+-disabled vehicle lights that before automatically turned on at night
 
 
 DONE - FEATURES:
@@ -318,7 +319,7 @@ new:
 -slightly reworked vehicle item loadouts
 -improved file structure with includes, like vehicle magazine loadouts of different tracer color
 -added olive BM-2T retexture for all factions (Aegis)
-
+-improved file structure
 -added 60mm Mortar Patria (WS), love this asset, very mobile and very easy to balance due to only being 60mm
 
 
