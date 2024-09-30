@@ -1625,11 +1625,41 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
 
 //cluster submun that does more damage to vehicles
 class Mo_cluster_AP;
-class RC_Mo_cluster_AP: Mo_cluster_AP
+class RC_Mo_cluster_82mm_AP: Mo_cluster_AP
 {
-	hit=70;
+	hit=20;
+	indirectHit=20;
+	indirectHitRange=6;
+};
+class RC_Mo_cluster_105mm_AP: Mo_cluster_AP
+{
+	hit=30;
+	indirectHit=30;
+	indirectHitRange=8;
+};
+class RC_Mo_cluster_120mm_AP: Mo_cluster_AP
+{
+	hit=40;
+	indirectHit=40;
+	indirectHitRange=10;
+};
+class RC_Mo_cluster_155mm_AP: Mo_cluster_AP
+{
+	hit=50;
 	indirectHit=50;
 	indirectHitRange=12;
+};
+class RC_Mo_cluster_230mm_AP: Mo_cluster_AP
+{
+	hit=60;
+	indirectHit=60;
+	indirectHitRange=14;
+};
+class RC_Mo_cluster_604mm_AP: Mo_cluster_AP
+{
+	hit=70;
+	indirectHit=70;
+	indirectHitRange=16;
 };
 
 
@@ -2455,7 +2485,7 @@ class RC_Cluster_105mm_AMOS: Cluster_155mm_AMOS
 	};
 	submunitionAmmo[]=
 	{
-		"RC_Mo_cluster_AP",
+		"RC_Mo_cluster_105mm_AP",
 		0.93000001,
 		"Mo_cluster_AP_UXO_deploy",
 		0.07
@@ -2785,7 +2815,7 @@ class RC_Cluster_120mm_AMOS: Cluster_155mm_AMOS
 	};
 	submunitionAmmo[]=
 	{
-		"RC_Mo_cluster_AP",
+		"RC_Mo_cluster_120mm_AP",
 		0.93000001,
 		"Mo_cluster_AP_UXO_deploy",
 		0.07
@@ -2988,7 +3018,7 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 	};
 	submunitionAmmo[]=
 	{
-		"RC_Mo_cluster_AP",
+		"RC_Mo_cluster_155mm_AP",
 		0.93000001,
 		"Mo_cluster_AP_UXO_deploy",
 		0.07
@@ -3313,7 +3343,7 @@ class RC_R_230mm_Cluster: R_230mm_Cluster
 	};
 	submunitionAmmo[]=
 	{
-		"RC_Mo_cluster_AP",
+		"RC_Mo_cluster_230mm_AP",
 		0.93000001,
 		"Mo_cluster_AP_UXO_deploy",
 		0.07
@@ -3722,7 +3752,7 @@ class RC_R_604mm_ATACMS_DPICM: R_230mm_Cluster
 	};
 	submunitionAmmo[]=
 	{
-		"RC_Mo_cluster_AP",
+		"RC_Mo_cluster_604mm_AP",
 		0.93000001,
 		"Mo_cluster_AP_UXO_deploy",
 		0.07

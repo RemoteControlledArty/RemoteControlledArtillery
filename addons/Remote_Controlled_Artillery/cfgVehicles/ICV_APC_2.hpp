@@ -489,7 +489,6 @@ class RC_ICV_2_ReTex_WD: RC_ICV_2_ReTex_WD_O
 	faction="RemoteControlled_ReTex_B";
 	crew="B_UAV_AI";
 	side=1;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
 class RC_ICV_2_ReTex_WD_I: RC_ICV_2_ReTex_WD_O
@@ -497,7 +496,6 @@ class RC_ICV_2_ReTex_WD_I: RC_ICV_2_ReTex_WD_O
 	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
@@ -525,7 +523,6 @@ class RC_ICV_2_ReTex_D: RC_ICV_2_ReTex_D_O
 	faction="RemoteControlled_ReTex_B";
 	crew="B_UAV_AI";
 	side=1;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
 class RC_ICV_2_ReTex_D_I: RC_ICV_2_ReTex_D_O
@@ -533,7 +530,6 @@ class RC_ICV_2_ReTex_D_I: RC_ICV_2_ReTex_D_O
 	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
@@ -691,7 +687,6 @@ class RC_APC_2_ReTex_WD: RC_APC_2_ReTex_WD_O
 	faction="RemoteControlled_ReTex_B";
 	crew="B_UAV_AI";
 	side=1;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
@@ -709,7 +704,6 @@ class RC_APC_2_ReTex_WD_I: RC_APC_2_ReTex_WD_O
 	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -747,7 +741,6 @@ class RC_APC_2_ReTex_D: RC_APC_2_ReTex_D_O
 	faction="RemoteControlled_ReTex_B";
 	crew="B_UAV_AI";
 	side=1;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
@@ -765,7 +758,6 @@ class RC_APC_2_ReTex_D_I: RC_APC_2_ReTex_D_O
 	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -867,7 +859,6 @@ class RC_IFV_2_ReTex_WD: RC_IFV_2_ReTex_WD_O
 	faction="RemoteControlled_ReTex_B";
 	crew="B_UAV_AI";
 	side=1;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
@@ -900,7 +891,6 @@ class RC_IFV_2_ReTex_WD_I: RC_IFV_2_ReTex_WD
 	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -938,7 +928,6 @@ class RC_IFV_2_ReTex_D: RC_IFV_2_ReTex_D_O
 	faction="RemoteControlled_ReTex_B";
 	crew="B_UAV_AI";
 	side=1;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
@@ -971,7 +960,6 @@ class RC_IFV_2_ReTex_D_I: RC_IFV_2_ReTex_D
 	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets

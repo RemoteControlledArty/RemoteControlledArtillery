@@ -415,7 +415,6 @@ class RC_IFV_5_WD2: RC_IFV_5_WD2_O
 	faction="RemoteControlled_B";
 	crew="B_UAV_AI";
 	side=1;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
@@ -431,7 +430,6 @@ class RC_IFV_5_WD2_I: RC_IFV_5_WD2_O
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets

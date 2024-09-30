@@ -36,6 +36,7 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
+			"vehicles_1_F_lxWS_APC_Wheeled_02",
 			"Vehicles_F_lxWS_APC_Wheeled_01"
 		};
 
@@ -79,6 +80,7 @@ class CfgWeapons
 
 class CfgVehicles
 {
+	#include "\RC_WesternSahara\cfgVehicles\Otokar_Arma_HMG.hpp"
 	#include "\RC_WesternSahara\cfgVehicles\Patria_60mm_Mortar.hpp"
 	#include "\RC_WesternSahara\cfgVehicles\Patria_AMV_ATGM.hpp"
 };
