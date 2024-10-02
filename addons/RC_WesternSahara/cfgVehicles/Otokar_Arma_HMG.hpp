@@ -201,7 +201,7 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initICV_HMG.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initICV_HMG.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV_HMG.hpp"
 		};
 	};
@@ -235,6 +235,7 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 	};
 	*/
 
+	//damageResistance = 0.0001; // only for AI, to know when to shoot and when not	//doesnt work?
 	
 	class Turrets: Turrets
 	{
@@ -246,8 +247,41 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_HMG.hpp"
-			commanding=2;
+			//commanding=2;
 			//dontCreateAI=1;	//somehow doesnt make the gunner targeted by smallarms
+			//crewVulnerable=1;
+
+			/*
+			class HitPoints
+			{
+				class HitGun
+				{
+					armor = -250;
+					armorComponent = "hit_main_gun";
+					explosionShielding = 0.2;
+					isGun = 1;
+					material = -1;
+					minimalHit = 0.03;
+					name = "hit_main_gun_point";
+					passThrough = 0;
+					radius = 0.2;
+					visual = "otochlaven";
+				};
+				class HitTurret
+				{
+					armor = -250;
+					armorComponent = "hit_main_turret";
+					explosionShielding = 0.4;
+					isTurret = 1;
+					material = -1;
+					minimalHit = 0.03;
+					name = "hit_main_turret_point";
+					passThrough = 0;
+					radius = 0.25;
+					visual = "otocvez";
+				};
+			};
+			*/
 
 			weapons[]=
 			{
@@ -288,8 +322,32 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 			showAllTargets="2 + 4";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="RscWeaponRangeFinder";
-			commanding=3;
+			//commanding=3;
 			//dontCreateAI=1;	//somehow doesnt make the gunner targeted by smallarms
+
+			/*
+			class HitPoints
+			{
+				class HitGun
+				{
+					armor = 0.6;
+					explosionShielding = 1;
+					material = 52;
+					name = "gun";
+					passThrough = 1;
+					visual = "gun";
+				};
+				class HitTurret
+				{
+					armor = 0.8;
+					explosionShielding = 1;
+					material = 51;
+					name = "turret";
+					passThrough = 1;
+					visual = "turret";
+				};
+			};
+			*/
 
 			weapons[]=
 			{
@@ -339,10 +397,12 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 				maxFov=1;
 			};
 		};
-
+		
 		//camera for remote control
 		class CommanderOptics : CommanderOptics
 		{
+		};
+		/*
 			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryGunner.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_free.hpp"
@@ -400,6 +460,7 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 				maxFov=1;
 			};
 		};
+		*/
 	};
 };
 class RC_OtokarArma_RCIV_A_O: RC_OtokarArma_RCIV_A
