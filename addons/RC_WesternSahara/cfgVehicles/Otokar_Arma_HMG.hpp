@@ -211,7 +211,6 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 	scope=2;
 	scopeCurator=2;
 
-	/*
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	crew="B_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";
@@ -233,7 +232,6 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-	*/
 
 	//damageResistance = 0.0001; // only for AI, to know when to shoot and when not	//doesnt work?
 	
@@ -242,14 +240,14 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 		//manual HMG
 		class mg_station: mg_station
 		{
-			//primaryGunner=0;
-			//primaryObserver=0;
-			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryObserver.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_HMG.hpp"
-			//commanding=2;
-			//dontCreateAI=1;	//somehow doesnt make the gunner targeted by smallarms
+			commanding=2;
+			dontCreateAI=1;
 			//crewVulnerable=1;
+
+			//ADAPT SCRIPT to turret path
 
 			/*
 			class HitPoints
@@ -317,13 +315,19 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 		class MainTurret: MainTurret
 		{
 			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryObserver.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryGunner.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_HMG.hpp"
 			showAllTargets="2 + 4";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="RscWeaponRangeFinder";
+			gunnerCompartments="Compartment3";
 			//commanding=3;
-			//dontCreateAI=1;	//somehow doesnt make the gunner targeted by smallarms
+			//dontCreateAI=1;
+			forceHideGunner=1;
+			gunnerForceOptics=1;
+
+			//ADAPT SCRIPT to turret path
 
 			/*
 			class HitPoints
@@ -399,20 +403,23 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 		};
 		
 		//camera for remote control
+
 		class CommanderOptics : CommanderOptics
 		{
-		};
-		/*
 			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryGunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_free.hpp"
 			showAllTargets="2 + 4";
-			forceHideGunner=1;
+			//forceHideGunner=1;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="RscWeaponRangeFinder";
-			gunnerForceOptics=1;
+			//gunnerForceOptics=1;
 			commanding=3;
-			gunnerCompartments="Compartment3";
+			//gunnerCompartments="Compartment3";
+			dontCreateAI=1;
+
+			//ADAPT SCRIPT to turret path
 
 			weapons[]=
 			{
@@ -460,7 +467,6 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 				maxFov=1;
 			};
 		};
-		*/
 	};
 };
 class RC_OtokarArma_RCIV_A_O: RC_OtokarArma_RCIV_A
