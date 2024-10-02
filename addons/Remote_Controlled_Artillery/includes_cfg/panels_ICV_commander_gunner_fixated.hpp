@@ -31,7 +31,7 @@ class Components: Components
 	};
 	class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 	{
-		defaultDisplay="EmptyDisplayComponent";
+		defaultDisplay="EmptyDisplay";
 
 		class Components
 		{

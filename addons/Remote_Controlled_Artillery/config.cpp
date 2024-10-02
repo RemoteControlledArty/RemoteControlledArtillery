@@ -680,7 +680,8 @@ class CfgEditorSubcategories
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
 	class RC_FSV_MBT_subcat {displayname="MBTs / FSV";};
-	class RC_ICV_subcat {displayname="RCIVs (mostly unarmed)";};
+	class RC_ICV_armed_subcat {displayname="RCIVs (armed)";};
+	class RC_ICV_subcat {displayname="RCIVs (unarmed)";};
 	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
 	class RC_Test_subcat {displayname="Test";};
 	class RC_UAV_Designator_subcat {displayname="UAVs / Designators";};

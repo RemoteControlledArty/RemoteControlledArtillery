@@ -9,6 +9,24 @@ class RC_IFV_Missile_Launcher_lxWS: RC_IFV_Missile_Launcher
 };
 
 
+class HMG_M2_Marid_lxWS;
+class RC_HMG_M2_lxWS: HMG_M2_Marid_lxWS
+{
+	autoReload=1;
+	ballisticsComputer="2 + 16";
+	FCSMaxLeadSpeed=30.555599;
+	FCSZeroingDelay=0.5;
+	magazineReloadTime=8;
+
+	magazines[]=
+	{
+		"RC_200Rnd_127x99_SLAP_HMG_T_R",
+		"RC_200Rnd_127x99_SLAP_HMG_T_G",
+		"RC_200Rnd_127x99_SLAP_HMG_T_Y"
+	};
+};
+
+
 class mortar_60mm_lxWS;
 class RC_vehiclemortar_60mm_V4_lxWS_Base: mortar_60mm_lxWS
 {

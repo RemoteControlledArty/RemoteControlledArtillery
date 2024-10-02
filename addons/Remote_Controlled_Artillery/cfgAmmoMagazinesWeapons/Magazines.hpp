@@ -182,6 +182,20 @@ class RC_100Rnd_127x99_SLAP_T_Y: RC_200Rnd_127x99_SLAP_T_Y
 };
 
 
+class RC_200Rnd_127x99_SLAP_HMG_T_R: RC_200Rnd_127x99_SLAP_T_R
+{
+	ammo="RC_B_127x99_SLAP_HMG_T_R";
+};
+class RC_200Rnd_127x99_SLAP_HMG_T_G: RC_200Rnd_127x99_SLAP_T_R
+{
+	ammo="RC_B_127x99_SLAP_HMG_T_G";
+};
+class RC_200Rnd_127x99_SLAP_HMG_T_Y: RC_200Rnd_127x99_SLAP_T_R
+{
+	ammo="RC_B_127x99_SLAP_HMG_T_Y";
+};
+
+
 class 96Rnd_40mm_G_belt;
 class RC_50Rnd_40mm_G_belt: 96Rnd_40mm_G_belt
 {

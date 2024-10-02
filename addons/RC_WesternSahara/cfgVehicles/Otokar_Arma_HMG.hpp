@@ -24,6 +24,11 @@ class RC_OtokarArma_RCIV_Base: B_ION_APC_Wheeled_02_hmg_lxWS
 	class UserActions;
 	class mg_hide_armor_front;
 	class mg_hide_armor_rear;
+	class mg_muzzle_hide;
+	class mg_muzzle_rot;
+	class mg_ReloadAnim;
+	class mg_ReloadMagazine;
+	class mg_Revolving;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -52,6 +57,7 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 	scopeCurator=0;
 	side=1;
 	forceInGarage=1;
+	
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -63,9 +69,10 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 	enginePower=475.3;
 	peakTorque=2415.4;
 	armor=375;
+	maximumLoad=4000;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-
+	
 	class TextureSources: TextureSources
 	{
 		class Desert
@@ -96,23 +103,6 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 		"A3\armor_f\data\cage_sand_CO.paa",
 		"lxWS\vehicles_1_f_lxws\APC_Wheeled_02\data\APC_Wheeled_02_adds_02_nato_CO.paa"
 	};
-
-	/*
-	driverAction="Driver_APC_Wheeled_02_rcws_F_out";
-	driverInAction="Driver_APC_Wheeled_02_rcws_F_in";
-	LODDriverTurnedOut=1201;
-	LODDriverTurnedin=1100;
-	LODDriverOpticsIn=1202;
-	viewDriverInExternal=1;
-	viewDriverShadowAmb=0.5;
-	viewDriverShadowDiff=0.050000001;
-	showNVGDriver=0;
-	showNVGCommander=0;
-	showNVGGunner=0;
-	driverOpticsModel="\A3\weapons_f\reticle\optics_empty";
-
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_APC_Wheeled_02_rcws_v2_F.jpg";
-	*/
 	
 	class ViewOptics: ViewOptics
 	{
@@ -154,51 +144,31 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 		{
 			initPhase=0;
 		};
-
-		/*
-		class muzzle_rot
+		class mg_muzzle_hide
+		{
+			source="reload";
+			weapon="RC_HMG_M2_lxWS";
+		};
+		class mg_muzzle_rot
 		{
 			source="ammorandom";
-			weapon="RC_GMG_40mm";
+			weapon="RC_HMG_M2_lxWS";
 		};
-		class muzzle_hide
+		class mg_ReloadAnim
 		{
 			source="reload";
-			weapon="RC_GMG_40mm";
+			weapon="RC_HMG_M2_lxWS";
 		};
-		class muzzle_hide1
+		class mg_ReloadMagazine
 		{
-			source="reload";
-			weapon="RC_HMG_127_APC";
+			source="reloadmagazine";
+			weapon="RC_HMG_M2_lxWS";
 		};
-		class HideTurret
+		class mg_Revolving
 		{
-			source="user";
-			initPhase=0;
-			animPeriod=0.001;
+			source="revolving";
+			weapon="RC_HMG_M2_lxWS";
 		};
-
-		class showBags
-		{
-			initPhase=0;
-		};
-		class showCanisters
-		{
-			initPhase=0;
-		};
-		class showTools
-		{
-			initPhase=0;
-		};
-		class showCamonetHull
-		{
-			initPhase=1;
-		};
-		class showSLATHull: showSLATHull
-		{
-			initPhase=1;
-		};
-		*/
 	};
 
 	animationList[]=
@@ -221,7 +191,7 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 		0
 	};
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
 
 
@@ -231,18 +201,17 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 	{
 		class RC_Artillery
 		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initICV_HMG.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV_HMG.hpp"
 		};
 	};
-	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
 	displayName="RC Otokar Arma HMG";
-	editorSubcategory="RC_ICV_subcat";
+	editorSubcategory="RC_ICV_armed_subcat";
 	scope=2;
 	scopeCurator=2;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
+	/*
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	crew="B_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";
@@ -264,37 +233,63 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
+	*/
 
+	
 	class Turrets: Turrets
 	{
+		//manual HMG
 		class mg_station: mg_station
 		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryObserver.hpp"
+			//primaryGunner=0;
+			//primaryObserver=0;
+			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_free.hpp"
-			//gunnerCompartments="Compartment3";
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_HMG.hpp"
 			commanding=2;
-			dontCreateAI=1;
-			/*
-			magazines[]=
+			//dontCreateAI=1;	//somehow doesnt make the gunner targeted by smallarms
+
+			weapons[]=
 			{
-				"200Rnd_127x99_mag_Tracer_Red",
-				"200Rnd_127x99_mag_Tracer_Red",
-				"200Rnd_127x99_mag_Tracer_Red",
-				"200Rnd_127x99_mag_Tracer_Red"
+				"RC_HMG_M2_lxWS",
+				"SmokeLauncher"
 			};
-			*/
+			#include "\RC_WesternSahara\includes_vicmags\mags_Otokar_Arma_HMG_red.hpp"
+
+			class ViewOptics
+			{
+				initFov=0.75;
+				minFov=0.175;
+				maxFov=1;
+
+				initAngleX=0;
+				initAngleY=0;
+				maxAngleX=30;
+				maxAngleY=100;
+				maxMoveX=0;
+				maxMoveY=0;
+				maxMoveZ=0;
+				minAngleX=-30;
+				minAngleY=-100;
+				minMoveX=0;
+				minMoveY=0;
+				minMoveZ=0;
+				speedZoomMaxFOV=0;
+				speedZoomMaxSpeed=1e+010;
+			};
 		};
+
+		//commander seat to savely drive from with rear camera
 		class MainTurret: MainTurret
 		{
+			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_free.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_HMG.hpp"
 			showAllTargets="2 + 4";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="RscWeaponRangeFinder";
-			//turretInfoType="";
 			commanding=3;
-			dontCreateAI=1;
+			//dontCreateAI=1;	//somehow doesnt make the gunner targeted by smallarms
 
 			weapons[]=
 			{
@@ -345,18 +340,16 @@ class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
 			};
 		};
 
+		//camera for remote control
 		class CommanderOptics : CommanderOptics
 		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryGunner.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryGunner.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_free.hpp"
 			showAllTargets="2 + 4";
-			//personTurretAction="";	//no effect
-			forceHideGunner=1;	//makes view bug
-			//forceHideCommander=1;	//makes view bug
+			forceHideGunner=1;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="RscWeaponRangeFinder";
-			//turretInfoType="";
 			gunnerForceOptics=1;
 			commanding=3;
 			gunnerCompartments="Compartment3";
@@ -415,6 +408,14 @@ class RC_OtokarArma_RCIV_A_O: RC_OtokarArma_RCIV_A
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class mg_station: mg_station
+		{
+			#include "\RC_WesternSahara\includes_vicmags\mags_Otokar_Arma_HMG_green.hpp"
+		};
+	};
 };
 class RC_OtokarArma_RCIV_A_I: RC_OtokarArma_RCIV_A
 {
@@ -422,6 +423,14 @@ class RC_OtokarArma_RCIV_A_I: RC_OtokarArma_RCIV_A
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class mg_station: mg_station
+		{
+			#include "\RC_WesternSahara\includes_vicmags\mags_Otokar_Arma_HMG_yellow.hpp"
+		};
+	};
 };
 
 
@@ -464,6 +473,14 @@ class RC_OtokarArma_RCIV_WD_O: RC_OtokarArma_RCIV_WD
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class mg_station: mg_station
+		{
+			#include "\RC_WesternSahara\includes_vicmags\mags_Otokar_Arma_HMG_green.hpp"
+		};
+	};
 };
 class RC_OtokarArma_RCIV_WD_I: RC_OtokarArma_RCIV_WD
 {
@@ -471,47 +488,12 @@ class RC_OtokarArma_RCIV_WD_I: RC_OtokarArma_RCIV_WD
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
 
-//optional Phantom Hawk Retextures (found in steam workshop)
-/*
-class RC_ICV_2_ReTex_WD_O: RC_ICV_2_A_O
-{
-	faction="RemoteControlled_ReTex_O";
-	editorSubcategory="RC_ReTex_Woodland_subcat";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
-	hiddenSelectionsTextures[]=
+	class Turrets: Turrets
 	{
-		"arma\data\arma_01_ext_wd.paa",
-		"arma\data\arma_02_ext_wd.paa",
-		"arma\data\turret_wd.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"a3\armor_f\data\cage_g1_co.paa"
-	};
-	textureList[]=
-	{
-		"Hex",
-		0
+		class mg_station: mg_station
+		{
+			#include "\RC_WesternSahara\includes_vicmags\mags_Otokar_Arma_HMG_yellow.hpp"
+		};
 	};
 };
-
-
-class RC_ICV_2_ReTex_D_O: RC_ICV_2_A_O
-{
-	faction="RemoteControlled_ReTex_O";
-	editorSubcategory="RC_ReTex_Desert_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"arma\data\arma_01_ext_d.paa",
-		"arma\data\arma_02_ext_d.paa",
-		"arma\data\turret_d.paa",
-		"arma\data\camonet_desert_co.paa",
-		"arma\data\cage_desert_co.paa"
-	};
-	textureList[]=
-	{
-		"Hex",
-		0
-	};
-};
-*/

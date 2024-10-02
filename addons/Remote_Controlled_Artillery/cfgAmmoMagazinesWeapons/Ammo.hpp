@@ -101,6 +101,24 @@ class RC_B_127x99_SLAP_T_Y: RC_B_127x99_SLAP_T_R
 };
 
 
+class RC_B_127x99_SLAP_HMG_T_R: B_127x99_SLAP_Tracer_Red
+{
+	laserLock=0;
+	irLock=0;
+	airLock=0;
+	tracerStartTime=0.04;
+	tracerEndTime=4;
+};
+class RC_B_127x99_SLAP_HMG_T_G: RC_B_127x99_SLAP_HMG_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_127x99_SLAP_HMG_T_Y: RC_B_127x99_SLAP_HMG_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
 class G_40mm_HEDP;
 class RC_G_40mm_HEDP: G_40mm_HEDP
 {

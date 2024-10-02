@@ -9,12 +9,16 @@ class Components: Components
 			class SensorDisplay
 			{
 				componentType="SensorsDisplayComponent";
-				range[]={4000,2000,1000,500};
+				range[]={2000,1000,500,4000};
 				resource="RscCustomInfoSensors";
 			};
 			class UAVFeedDisplay
 			{
 				componentType="UAVFeedDisplayComponent";
+			};
+			class CrewDisplay
+			{
+				componentType="CrewDisplayComponent";
 			};
 			/*
 			class MineDetectorDisplay
@@ -32,16 +36,29 @@ class Components: Components
 
 		class Components
 		{
-			class SensorDisplay
+			class EmptyDisplay
 			{
-				componentType="SensorsDisplayComponent";
-				range[]={4000,2000,1000,500};
-				resource="RscCustomInfoSensors";
+				componentType="EmptyDisplayComponent";
+			};
+			class VehicleDriverDisplay
+			{
+				componentType="TransportFeedDisplayComponent";
+				source="Driver";
 			};
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
 				resource="RscCustomInfoMiniMap";
+			};
+			class CrewDisplay
+			{
+				componentType="CrewDisplayComponent";
+			};
+			class SensorDisplay
+			{
+				componentType="SensorsDisplayComponent";
+				range[]={2000,1000,500,4000};
+				resource="RscCustomInfoSensors";
 			};
 			class UAVFeedDisplay
 			{
@@ -55,10 +72,6 @@ class Components: Components
 				resource="RscCustomInfoMineDetect";
 			};
 			*/
-			class EmptyDisplay
-			{
-				componentType="EmptyDisplayComponent";
-			};
 		};
 	};
 };
