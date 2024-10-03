@@ -462,6 +462,10 @@ class RC_2Rnd_IFV_MP_NLOS: 2Rnd_GAT_missiles
 	displayNameShort="NLOS ATGM";
 	ammo="RC_IFV_MP_NLOS";
 };
+class RC_4Rnd_IFV_MP_NLOS: RC_2Rnd_IFV_MP_NLOS
+{
+	count=4;
+};
 class 4Rnd_Titan_long_missiles;
 class RC_2Rnd_IFV_AA: 4Rnd_Titan_long_missiles
 {
@@ -469,6 +473,10 @@ class RC_2Rnd_IFV_AA: 4Rnd_Titan_long_missiles
 	displayName="AA 4.5km";
 	displayNameShort="AA 4.5km";
 	ammo="RC_IFV_AA";
+};
+class RC_4Rnd_IFV_AA: RC_2Rnd_IFV_AA
+{
+	count=4;
 };
 
 

@@ -322,6 +322,7 @@ new:
 -improved file structure
 -added 60mm Mortar Patria (WS), love this asset, very mobile and very easy to balance due to only being 60mm
 -improved cluster submunition scaling with caliber
+-added Otokar Arma RCIV with manned manual HMG (WS)
 
 
 DONE - QUALITY OF LIFE:

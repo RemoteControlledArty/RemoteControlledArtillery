@@ -23,13 +23,21 @@ class CfgPatches
 			RC_60mmMortarPatria_LC_A_O,
 			RC_60mmMortarPatria_LC_WD_O,
 			RC_60mmMortarPatria_LC_A_I,
-			RC_60mmMortarPatria_LC_WD_I
+			RC_60mmMortarPatria_LC_WD_I,
+
+			RC_OtokarArma_RCIV_A,
+			RC_OtokarArma_RCIV_WD,
+			RC_OtokarArma_RCIV_A_O,
+			RC_OtokarArma_RCIV_WD_O,
+			RC_OtokarArma_RCIV_A_I,
+			RC_OtokarArma_RCIV_WD_I
 		};
 
 		weapons[]=
 		{
 			"RC_IFV_Missile_Launcher_lxWS",
-			"RC_vehiclemortar_60mm_V4_lxWS"
+			"RC_vehiclemortar_60mm_V4_lxWS",
+			"RC_HMG_M2_lxWS"
 		};
 
 		requiredAddons[]=
@@ -68,10 +76,12 @@ class CfgAmmo
 	#include "\RC_WesternSahara\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 */
+/*
 class CfgMagazines
 {
 	#include "\RC_WesternSahara\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
+*/
 class CfgWeapons
 {
 	#include "\RC_WesternSahara\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
