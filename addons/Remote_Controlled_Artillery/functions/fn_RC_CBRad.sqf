@@ -8,23 +8,18 @@
 
 RC_CBRad_Player_Array_B = [];
 RC_CBRad_Player_Array_O = [];
-RC_CBRad_Player_Array_I = [];
 
 RC_CBRad_AI_Array_B = [];
 RC_CBRad_AI_Array_O = [];
-RC_CBRad_AI_Array_I = [];
 
 RC_ArtilleryArray_B = [];
 RC_ArtilleryArray_O = [];
-RC_ArtilleryArray_I = [];
 
 RC_isInRangeArray_B = [];
 RC_isInRangeArray_O = [];
-RC_isInRangeArray_I = [];
 
 RC_fireMissionArray_B = [];
 RC_fireMissionArray_O = [];
-RC_fireMissionArray_I = [];
 
 
 /* testing scripts section
@@ -61,26 +56,19 @@ addMissionEventHandler ["EntityCreated", {
 
         _entitySide_B = (side _entity == west);
         _entitySide_O = (side _entity == east);
-        _entitySide_I = (side _entity == resistance);
 
         switch (true) do {
             case(_entitySide_B): {
                 RC_ArtilleryArray_B pushback _entity;
 
-                //for testing
+                //hint for testing
                 [str RC_ArtilleryArray_B] remoteExec ["hint", west];
             };
             case(_entitySide_O): {
                 RC_ArtilleryArray_O pushback _entity;
 
-                //for testing
+                //hint for testing
                 [str RC_ArtilleryArray_O] remoteExec ["hint", west];
-            };
-            case(_entitySide_I): {
-                RC_ArtilleryArray_I pushback _entity;
-
-                //for testing
-                [str RC_ArtilleryArray_I] remoteExec ["hint", west];
             };
         };
 
@@ -96,50 +84,39 @@ addMissionEventHandler ["EntityCreated", {
                 
                 _unitSide_B = (side _unit == west);
                 _unitSide_O = (side _unit == east);
-                _unitSide_I = (side _unit == resistance);
 
                 switch (true) do {
                     case(_unitSide_B): {
                         RC_fireMissionArray_B deleteAt (RC_fireMissionArray_B find _unit);
 
-                        //for testing
+                        //hint for testing
                         [str RC_fireMissionArray_B] remoteExec ["hint", west];
                     };
                     case(_unitSide_O): {
                         RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _unit);
 
-                        //for testing
+                        //hint for testing
                         [str RC_fireMissionArray_O] remoteExec ["hint", west];
-                    };
-                    case(_unitSide_I): {
-                        RC_fireMissionArray_I deleteAt (RC_fireMissionArray_I find _unit);
-
-                        //for testing
-                        [str RC_fireMissionArray_I] remoteExec ["hint", west];
                     };
                 };
 
                 /*
                 RC_fireMissionArray_B deleteAt (RC_fireMissionArray_B find _unit);
                 RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _unit);
-                RC_fireMissionArray_I deleteAt (RC_fireMissionArray_I find _unit);
                 */
 
                 _CBRad_Player_Alive_B = ({alive _x} count RC_CBRad_Player_Array_B) > 0;
                 _CBRad_Player_Alive_O = ({alive _x} count RC_CBRad_Player_Array_O) > 0;
-                _CBRad_Player_Alive_I = ({alive _x} count RC_CBRad_Player_Array_I) > 0;
 
                 _CBRad_AI_Alive_B = ({alive _x} count RC_CBRad_AI_Array_B) > 0;
                 _CBRad_AI_Alive_O = ({alive _x} count RC_CBRad_AI_Array_O) > 0;
-                _CBRad_AI_Alive_I = ({alive _x} count RC_CBRad_AI_Array_I) > 0;
 
                 _opposedTo_B = [side _unit, west] call BIS_fnc_sideIsEnemy;
                 _opposedTo_O = [side _unit, east] call BIS_fnc_sideIsEnemy;
-                _opposedTo_I = [side _unit, resistance] call BIS_fnc_sideIsEnemy;
                 
                 //Blufor Player
                 if (_opposedTo_B and _CBRad_Player_Alive_B) then {
-                    //for testing
+                    //hint for testing
                     ["blufor rad(P) detected shot"] remoteExec ["hint", west];
 
                     private _timeInterval = 10;
@@ -177,7 +154,7 @@ addMissionEventHandler ["EntityCreated", {
 
                 //Blufor AI
                 if (_opposedTo_B and _CBRad_AI_Alive_B) then {
-                    //for testing
+                    //hint for testing
                     ["blufor rad(AI) detected shot"] remoteExec ["hint", west];
 
                     RC_ArtilleryArray_B = RC_ArtilleryArray_B - [objNull];
@@ -189,14 +166,13 @@ addMissionEventHandler ["EntityCreated", {
                         params ["_unitPos"];
                         sleep (RC_Test+RC_Test2);
 
-                        //for testing
+                        //hint for testing
                         _testHintB = "blufor detection sleep (AI) over, array:"+ str RC_ArtilleryArray_B;
                         [_testHintB] remoteExec ["hint", west];
 
                         //RC_isInRangeArray_B = [];
                         {
-                            RC_isInRangeArray_B deleteAt (RC_isInRangeArray_B find _x);
-                            //private _currentMag = (currentMagazine _x);
+                            RC_isInRangeArray_B deleteAt (RC_isInRangeArray_B find _x); //prevents doubles in array
                             _isNull = isNull _x;
                             if !(_isNull) then
                             {
@@ -209,51 +185,54 @@ addMissionEventHandler ["EntityCreated", {
                             sleep 0.1;
                         } forEach RC_ArtilleryArray_B;
 
-                        //for testing
-                        ["no blufor inRange"] remoteExec ["hint", west];
+                        //hint for testing
+                        if ((count RC_isInRangeArray_B) < 1) then {["no blufor inRange"] remoteExec ["hint", west];};
 
                         if ((count RC_isInRangeArray_B) > 0) then
                         {
+                            _inRangeHintB = "blufor in range:"+ str RC_isInRangeArray_B;
+                            [_inRangeHintB] remoteExec ["hint", west];
+
                             _firstInRange_B = (RC_isInRangeArray_B select 0);
                             _firstInRange_B doArtilleryFire [_unitPos, (currentMagazine _firstInRange_B), 1];
 
                             RC_fireMissionArray_B pushback _firstInRange_B;
-                            sleep 10;
+                            sleep 15;
 
                             _fireMissionNotCompleted = (({_x == _firstInRange_B} count RC_fireMissionArray_B) > 0);
                             if (_fireMissionNotCompleted) then
                             {
                                 if ((count RC_isInRangeArray_B) > 1) then
                                 {
-                                    //for testing
+                                    //hint for testing
                                     ["first B firemission failed"] remoteExec ["hint", west];
 
                                     _secondInRange_B = (RC_isInRangeArray_B select 1);
                                     _secondInRange_B doArtilleryFire [_unitPos, (currentMagazine _secondInRange_B), 1];
 
                                     RC_fireMissionArray_B pushback _secondInRange_B;
-                                    sleep 10;
+                                    sleep 15;
 
                                     _fireMissionNotCompleted = (({_x == _secondInRange_B} count RC_fireMissionArray_B) > 0);
                                     if (_fireMissionNotCompleted) then
                                     {
                                         if ((count RC_isInRangeArray_B) > 2) then
                                         {
-                                            //for testing
+                                            //hint for testing
                                             ["second B firemission failed"] remoteExec ["hint", west];
 
                                             _thirdInRange_B = (RC_isInRangeArray_B select 2);
                                             _thirdInRange_B doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_B), 1];
 
                                             RC_fireMissionArray_B pushback _thirdInRange_B;
-                                            sleep 10;
+                                            sleep 15;
 
                                             _fireMissionNotCompleted = (({_x == _thirdInRange_B} count RC_fireMissionArray_B) > 0);
                                             if (_fireMissionNotCompleted) then
                                             {
                                                 if ((count RC_isInRangeArray_B) > 3) then
                                                 {
-                                                    //for testing
+                                                    //hint for testing
                                                     ["third B firemission failed"] remoteExec ["hint", west];
 
                                                     _fourthInRange_B = (RC_isInRangeArray_B select 3);
@@ -270,7 +249,7 @@ addMissionEventHandler ["EntityCreated", {
 
                 //Opfor Player
                 if (_opposedTo_O and _CBRad_Player_Alive_O) then {
-                    //for testing
+                    //hint for testing
                     ["opfor rad(P) detected shot"] remoteExec ["hint", west];
 
                     private _timeInterval = 10; 
@@ -308,7 +287,7 @@ addMissionEventHandler ["EntityCreated", {
 
                 //Opfor AI
                 if (_opposedTo_O and _CBRad_AI_Alive_O) then {
-                    //for testing
+                    //hint for testing
                     ["opfor rad(AI) detected shot"] remoteExec ["hint", west];
                     
                     RC_ArtilleryArray_O = RC_ArtilleryArray_O - [objNull];
@@ -335,14 +314,13 @@ addMissionEventHandler ["EntityCreated", {
                         params ["_unitPos"];
                         sleep (RC_Test+RC_Test2);
 
-                        //for testing
+                        //hint for testing
                         _testHintO = "opfor detection sleep (AI) over, array:"+ str RC_ArtilleryArray_O;
                         [_testHintO] remoteExec ["hint", west];
                         
                         //RC_isInRangeArray_O = [];
                         {
                             RC_isInRangeArray_O deleteAt (RC_isInRangeArray_O find _x);     //prevents doubles in array
-                            //private _currentMag = (currentMagazine _x);
                             _isNull = isNull _x;
                             if !(_isNull) then
                             {
@@ -355,186 +333,58 @@ addMissionEventHandler ["EntityCreated", {
                             sleep 0.1;
                         } forEach RC_ArtilleryArray_O;
 
-                        //for testing
-                        ["no opfor inRange"] remoteExec ["hint", west];
+                        //hint for testing
+                        if ((count RC_isInRangeArray_B) < 1) then {["no opfor inRange"] remoteExec ["hint", west];};
 
                         if ((count RC_isInRangeArray_O) > 0) then
                         {
+                            _inRangeHintO = "opfor in range:"+ str RC_isInRangeArray_O;
+                            [_inRangeHintO] remoteExec ["hint", west];
+
                             _firstInRange_O = (RC_isInRangeArray_O select 0);
                             _firstInRange_O doArtilleryFire [_unitPos, (currentMagazine _firstInRange_O), 1];
 
                             RC_fireMissionArray_O pushback _firstInRange_O;
-                            sleep 10;
+                            sleep 15;
 
                             _fireMissionNotCompleted = (({_x == _firstInRange_O} count RC_fireMissionArray_O) > 0);
                             if (_fireMissionNotCompleted) then
                             {
                                 if ((count RC_isInRangeArray_O) > 1) then
                                 {
-                                    //for testing
+                                    //hint for testing
                                     ["first O firemission failed"] remoteExec ["hint", west];
 
                                     _secondInRange_O = (RC_isInRangeArray_O select 1);
                                     _secondInRange_O doArtilleryFire [_unitPos, (currentMagazine _secondInRange_O), 1];
 
                                     RC_fireMissionArray_O pushback _secondInRange_O;
-                                    sleep 10;
+                                    sleep 15;
 
                                     _fireMissionNotCompleted = (({_x == _secondInRange_O} count RC_fireMissionArray_O) > 0);
                                     if (_fireMissionNotCompleted) then
                                     {
                                         if ((count RC_isInRangeArray_O) > 2) then
                                         {
-                                            //for testing
+                                            //hint for testing
                                             ["second firemission failed"] remoteExec ["hint", west];
 
                                             _thirdInRange_O = (RC_isInRangeArray_O select 2);
                                             _thirdInRange_O doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_O), 1];
 
                                             RC_fireMissionArray_O pushback _thirdInRange_O;
-                                            sleep 10;
+                                            sleep 15;
 
                                             _fireMissionNotCompleted = (({_x == _thirdInRange_O} count RC_fireMissionArray_O) > 0);
                                             if (_fireMissionNotCompleted) then
                                             {
                                                 if ((count RC_isInRangeArray_O) > 3) then
                                                 {
-                                                    //for testing
+                                                    //hint for testing
                                                     ["third firemission failed"] remoteExec ["hint", west];
 
                                                     _fourthInRange_O = (RC_isInRangeArray_O select 3);
                                                     _fourthInRange_O doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_O), 1];
-                                                };
-                                            };
-                                        };
-                                    };
-                                };
-                            };
-                        };
-                    };
-                };
-
-                //Independent Player
-                if (_opposedTo_I and _CBRad_Player_Alive_I) then {
-                    //for testing
-                    ["ind rad(P) detected shot"] remoteExec ["hint", west];
-
-                    private _timeInterval = 10; 
-                    private _lastMarkerTime = _unit getVariable "ArtySourceMarkersTime";
-                    private _timeSinceLastMarker = time - _lastMarkerTime;
-
-                    if (_timeSinceLastMarker > _timeInterval) then {
-                        [_unit] spawn
-                        {
-                            params ["_unit"];
-                            _unit setVariable ["ArtySourceMarkersTime", time, true];
-                            private _artySourcePos = getPosASL _unit;
-                            
-                            _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
-                            _markerArray = [_markerName, _artySourcePos, 1];
-                            
-                            sleep (RC_Test);
-                            private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-                            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", resistance];
-                            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", resistance];
-                            [_markerName] remoteExec ["deleteMarker", west];
-                            [_markerName] remoteExec ["deleteMarker", east];
-
-                            _artySourcePosX = round (_artySourcePos select 0);
-                            _artySourcePosY = round (_artySourcePos select 1);
-                            _artySourcePosZ = round (_artySourcePos select 2);
-
-                            _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
-                            [_message] remoteExec ["hint", resistance];
-                            sleep 3;
-                            [""] remoteExec ["hintSilent", resistance];
-                        };
-                    };
-                };
-
-                //Independent AI
-                if (_opposedTo_I and _CBRad_AI_Alive_I) then {
-                    //for testing
-                    ["ind rad(AI) detected shot"] remoteExec ["hint", west];
-
-                    RC_ArtilleryArray_I = RC_ArtilleryArray_I - [objNull];
-                    RC_isInRangeArray_I = RC_isInRangeArray_I - [objNull];
-
-                    _unitPos = getPos _unit;
-                    [_unitPos] spawn
-                    {
-                        params ["_unitPos"];
-                        sleep (RC_Test+RC_Test2);
-
-                        //for testing
-                        _testHintI = "ind detection sleep (AI) over, array:"+ str RC_ArtilleryArray_I;
-                        [_testHintI] remoteExec ["hint", west];
-
-                        //RC_isInRangeArray_I = [];
-                        {
-                            RC_isInRangeArray_I deleteAt (RC_isInRangeArray_I find _x);     //prevents doubles in array
-                            //private _currentMag = (currentMagazine _x);
-                            _isNull = isNull _x;
-                            if !(_isNull) then
-                            {
-                                _isInRange = _unitPos inRangeOfArtillery [[_x], (currentMagazine _x)];
-                                _isAlive = alive _x;
-                                if (_isInRange && _isAlive) then {
-                                    RC_isInRangeArray_I pushback _x;
-                                };
-                            };
-                            sleep 0.1;
-                        } forEach RC_ArtilleryArray_I;
-
-                        //for testing
-                        ["no ind inRange"] remoteExec ["hint", west];
-
-                        if ((count RC_isInRangeArray_I) > 0) then
-                        {
-                            _firstInRange_I = (RC_isInRangeArray_I select 0);
-                            _firstInRange_I doArtilleryFire [_unitPos, (currentMagazine _firstInRange_I), 1];
-
-                            RC_fireMissionArray_I pushback _firstInRange_I;
-                            sleep 10;
-
-                            _fireMissionNotCompleted = (({_x == _firstInRange_I} count RC_fireMissionArray_I) > 0);
-                            if (_fireMissionNotCompleted) then
-                            {
-                                if ((count RC_isInRangeArray_I) > 1) then
-                                {
-                                    //for testing
-                                    ["first I firemission failed"] remoteExec ["hint", west];
-
-                                    _secondInRange_I = (RC_isInRangeArray_I select 1);
-                                    _secondInRange_I doArtilleryFire [_unitPos, (currentMagazine _secondInRange_I), 1];
-
-                                    RC_fireMissionArray_I pushback _secondInRange_I;
-                                    sleep 10;
-
-                                    _fireMissionNotCompleted = (({_x == _secondInRange_I} count RC_fireMissionArray_I) > 0);
-                                    if (_fireMissionNotCompleted) then
-                                    {
-                                        if ((count RC_isInRangeArray_I) > 2) then
-                                        {
-                                            //for testing
-                                            ["second I firemission failed"] remoteExec ["hint", west];
-
-                                            _thirdInRange_I = (RC_isInRangeArray_I select 2);
-                                            _thirdInRange_I doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_I), 1];
-
-                                            RC_fireMissionArray_I pushback _thirdInRange_I;
-                                            sleep 10;
-
-                                            _fireMissionNotCompleted = (({_x == _thirdInRange_I} count RC_fireMissionArray_I) > 0);
-                                            if (_fireMissionNotCompleted) then
-                                            {
-                                                if ((count RC_isInRangeArray_I) > 3) then
-                                                {
-                                                    //for testing
-                                                    ["third I firemission failed"] remoteExec ["hint", west];
-
-                                                    _fourthInRange_I = (RC_isInRangeArray_I select 3);
-                                                    _fourthInRange_I doArtilleryFire [_unitPos, (currentMagazine _fourthInRange_I), 1];
                                                 };
                                             };
                                         };

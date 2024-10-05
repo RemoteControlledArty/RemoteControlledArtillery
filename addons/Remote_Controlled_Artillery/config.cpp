@@ -576,6 +576,7 @@ class CfgFunctions
       		class preInit {preInit=1};
       		class InitCBASettings {preInit=1};
 			//class RC_CBRad {preInit=1};
+			//class RC_CBRad {postInit=1};
 
 			class RC_MarkerHandler {postInit=1};
       		class RC_UI_Loop {postInit=1};
