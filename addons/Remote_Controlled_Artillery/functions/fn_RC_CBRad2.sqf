@@ -9,22 +9,37 @@
 RC_CBRad_Player_Array_B = [];
 RC_CBRad_Player_Array_O = [];
 RC_CBRad_Player_Array_I = [];
+publicVariable "RC_CBRad_Player_Array_B";
+publicVariable "RC_CBRad_Player_Array_O";
+publicVariable "RC_CBRad_Player_Array_I";
 
 RC_CBRad_AI_Array_B = [];
 RC_CBRad_AI_Array_O = [];
 RC_CBRad_AI_Array_I = [];
+publicVariable "RC_CBRad_AI_Array_B";
+publicVariable "RC_CBRad_AI_Array_O";
+publicVariable "RC_CBRad_AI_Array_I";
 
 RC_ArtilleryArray_B = [];
 RC_ArtilleryArray_O = [];
 RC_ArtilleryArray_I = [];
+publicVariable "RC_ArtilleryArray_B";
+publicVariable "RC_ArtilleryArray_O";
+publicVariable "RC_ArtilleryArray_I";
 
 RC_isInRangeArray_B = [];
 RC_isInRangeArray_O = [];
 RC_isInRangeArray_I = [];
+publicVariable "RC_isInRangeArray_B";
+publicVariable "RC_isInRangeArray_O";
+publicVariable "RC_isInRangeArray_I";
 
 RC_fireMissionArray_B = [];
 RC_fireMissionArray_O = [];
 RC_fireMissionArray_I = [];
+publicVariable "RC_fireMissionArray_B";
+publicVariable "RC_fireMissionArray_O";
+publicVariable "RC_fireMissionArray_I";
 
 
 /* testing scripts section
@@ -39,7 +54,8 @@ _this doArtilleryFire [(getpos target), (currentMagazine _this), 1];
 
 _entitySide_O = (side _this == east);
 if (_entitySide_O) then { 
-RC_ArtilleryArray_O pushback _entity;
+RC_ArtilleryArray_O pushback _entity; 
+publicVariable 'RC_ArtilleryArray_O';
 */
 
 
@@ -66,18 +82,21 @@ addMissionEventHandler ["EntityCreated", {
         switch (true) do {
             case(_entitySide_B): {
                 RC_ArtilleryArray_B pushback _entity;
+                publicVariable 'RC_ArtilleryArray_B';
 
                 //for testing
                 [str RC_ArtilleryArray_B] remoteExec ["hint", west];
             };
             case(_entitySide_O): {
                 RC_ArtilleryArray_O pushback _entity;
+                publicVariable 'RC_ArtilleryArray_O';
 
                 //for testing
                 [str RC_ArtilleryArray_O] remoteExec ["hint", west];
             };
             case(_entitySide_I): {
                 RC_ArtilleryArray_I pushback _entity;
+                publicVariable 'RC_ArtilleryArray_I';
 
                 //for testing
                 [str RC_ArtilleryArray_I] remoteExec ["hint", west];
@@ -101,18 +120,21 @@ addMissionEventHandler ["EntityCreated", {
                 switch (true) do {
                     case(_unitSide_B): {
                         RC_fireMissionArray_B deleteAt (RC_fireMissionArray_B find _unit);
+                        publicVariable "RC_fireMissionArray_B";
 
                         //for testing
                         [str RC_fireMissionArray_B] remoteExec ["hint", west];
                     };
                     case(_unitSide_O): {
                         RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _unit);
+                        publicVariable "RC_fireMissionArray_O";
 
                         //for testing
                         [str RC_fireMissionArray_O] remoteExec ["hint", west];
                     };
                     case(_unitSide_I): {
                         RC_fireMissionArray_I deleteAt (RC_fireMissionArray_I find _unit);
+                        publicVariable "RC_fireMissionArray_I";
 
                         //for testing
                         [str RC_fireMissionArray_I] remoteExec ["hint", west];
@@ -123,6 +145,9 @@ addMissionEventHandler ["EntityCreated", {
                 RC_fireMissionArray_B deleteAt (RC_fireMissionArray_B find _unit);
                 RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _unit);
                 RC_fireMissionArray_I deleteAt (RC_fireMissionArray_I find _unit);
+                publicVariable "RC_fireMissionArray_B";
+                publicVariable "RC_fireMissionArray_O";
+                publicVariable "RC_fireMissionArray_I";
                 */
 
                 _CBRad_Player_Alive_B = ({alive _x} count RC_CBRad_Player_Array_B) > 0;
@@ -181,7 +206,9 @@ addMissionEventHandler ["EntityCreated", {
                     ["blufor rad(AI) detected shot"] remoteExec ["hint", west];
 
                     RC_ArtilleryArray_B = RC_ArtilleryArray_B - [objNull];
+                    publicVariable 'RC_ArtilleryArray_B';
                     RC_isInRangeArray_B = RC_isInRangeArray_B - [objNull];
+                    publicVariable 'RC_isInRangeArray_B';
 
                     _unitPos = getPos _unit;
                     [_unitPos] spawn
@@ -196,6 +223,7 @@ addMissionEventHandler ["EntityCreated", {
                         //RC_isInRangeArray_B = [];
                         {
                             RC_isInRangeArray_B deleteAt (RC_isInRangeArray_B find _x);
+                            publicVariable 'RC_isInRangeArray_B';
                             //private _currentMag = (currentMagazine _x);
                             _isNull = isNull _x;
                             if !(_isNull) then
@@ -204,6 +232,7 @@ addMissionEventHandler ["EntityCreated", {
                                 _isAlive = alive _x;
                                 if (_isInRange && _isAlive) then {
                                     RC_isInRangeArray_B pushback _x;
+                                    publicVariable 'RC_isInRangeArray_B';
                                 };
                             };
                             sleep 0.1;
@@ -218,6 +247,7 @@ addMissionEventHandler ["EntityCreated", {
                             _firstInRange_B doArtilleryFire [_unitPos, (currentMagazine _firstInRange_B), 1];
 
                             RC_fireMissionArray_B pushback _firstInRange_B;
+                            publicVariable 'RC_fireMissionArray_B';
                             sleep 10;
 
                             _fireMissionNotCompleted = (({_x == _firstInRange_B} count RC_fireMissionArray_B) > 0);
@@ -232,6 +262,7 @@ addMissionEventHandler ["EntityCreated", {
                                     _secondInRange_B doArtilleryFire [_unitPos, (currentMagazine _secondInRange_B), 1];
 
                                     RC_fireMissionArray_B pushback _secondInRange_B;
+                                    publicVariable 'RC_fireMissionArray_B';
                                     sleep 10;
 
                                     _fireMissionNotCompleted = (({_x == _secondInRange_B} count RC_fireMissionArray_B) > 0);
@@ -246,6 +277,7 @@ addMissionEventHandler ["EntityCreated", {
                                             _thirdInRange_B doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_B), 1];
 
                                             RC_fireMissionArray_B pushback _thirdInRange_B;
+                                            publicVariable 'RC_fireMissionArray_B';
                                             sleep 10;
 
                                             _fireMissionNotCompleted = (({_x == _thirdInRange_B} count RC_fireMissionArray_B) > 0);
@@ -312,7 +344,9 @@ addMissionEventHandler ["EntityCreated", {
                     ["opfor rad(AI) detected shot"] remoteExec ["hint", west];
                     
                     RC_ArtilleryArray_O = RC_ArtilleryArray_O - [objNull];
+                    publicVariable 'RC_ArtilleryArray_O';
                     RC_isInRangeArray_O = RC_isInRangeArray_O - [objNull];
+                    publicVariable 'RC_isInRangeArray_O';
 
                     //RC_ArtilleryArray_O deleteAt (RC_ArtilleryArray_O find [objNull]);     //prevents objNull in array
                     //RC_isInRangeArray_O deleteAt (RC_isInRangeArray_O find [objNull]);     //prevents objNull in array
@@ -342,6 +376,7 @@ addMissionEventHandler ["EntityCreated", {
                         //RC_isInRangeArray_O = [];
                         {
                             RC_isInRangeArray_O deleteAt (RC_isInRangeArray_O find _x);     //prevents doubles in array
+                            publicVariable 'RC_isInRangeArray_O';
                             //private _currentMag = (currentMagazine _x);
                             _isNull = isNull _x;
                             if !(_isNull) then
@@ -350,6 +385,7 @@ addMissionEventHandler ["EntityCreated", {
                                 _isAlive = alive _x;
                                 if (_isInRange && _isAlive) then {
                                     RC_isInRangeArray_O pushback _x;
+                                    publicVariable 'RC_isInRangeArray_O';
                                 };
                             };
                             sleep 0.1;
@@ -364,6 +400,7 @@ addMissionEventHandler ["EntityCreated", {
                             _firstInRange_O doArtilleryFire [_unitPos, (currentMagazine _firstInRange_O), 1];
 
                             RC_fireMissionArray_O pushback _firstInRange_O;
+                            publicVariable 'RC_fireMissionArray_O';
                             sleep 10;
 
                             _fireMissionNotCompleted = (({_x == _firstInRange_O} count RC_fireMissionArray_O) > 0);
@@ -378,6 +415,7 @@ addMissionEventHandler ["EntityCreated", {
                                     _secondInRange_O doArtilleryFire [_unitPos, (currentMagazine _secondInRange_O), 1];
 
                                     RC_fireMissionArray_O pushback _secondInRange_O;
+                                    publicVariable 'RC_fireMissionArray_O';
                                     sleep 10;
 
                                     _fireMissionNotCompleted = (({_x == _secondInRange_O} count RC_fireMissionArray_O) > 0);
@@ -392,6 +430,7 @@ addMissionEventHandler ["EntityCreated", {
                                             _thirdInRange_O doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_O), 1];
 
                                             RC_fireMissionArray_O pushback _thirdInRange_O;
+                                            publicVariable 'RC_fireMissionArray_O';
                                             sleep 10;
 
                                             _fireMissionNotCompleted = (({_x == _thirdInRange_O} count RC_fireMissionArray_O) > 0);
@@ -458,7 +497,9 @@ addMissionEventHandler ["EntityCreated", {
                     ["ind rad(AI) detected shot"] remoteExec ["hint", west];
 
                     RC_ArtilleryArray_I = RC_ArtilleryArray_I - [objNull];
+                    publicVariable 'RC_ArtilleryArray_I';
                     RC_isInRangeArray_I = RC_isInRangeArray_I - [objNull];
+                    publicVariable 'RC_isInRangeArray_I';
 
                     _unitPos = getPos _unit;
                     [_unitPos] spawn
@@ -473,6 +514,7 @@ addMissionEventHandler ["EntityCreated", {
                         //RC_isInRangeArray_I = [];
                         {
                             RC_isInRangeArray_I deleteAt (RC_isInRangeArray_I find _x);     //prevents doubles in array
+                            publicVariable 'RC_isInRangeArray_I';
                             //private _currentMag = (currentMagazine _x);
                             _isNull = isNull _x;
                             if !(_isNull) then
@@ -481,6 +523,7 @@ addMissionEventHandler ["EntityCreated", {
                                 _isAlive = alive _x;
                                 if (_isInRange && _isAlive) then {
                                     RC_isInRangeArray_I pushback _x;
+                                    publicVariable 'RC_isInRangeArray_I';
                                 };
                             };
                             sleep 0.1;
@@ -495,6 +538,7 @@ addMissionEventHandler ["EntityCreated", {
                             _firstInRange_I doArtilleryFire [_unitPos, (currentMagazine _firstInRange_I), 1];
 
                             RC_fireMissionArray_I pushback _firstInRange_I;
+                            publicVariable 'RC_fireMissionArray_I';
                             sleep 10;
 
                             _fireMissionNotCompleted = (({_x == _firstInRange_I} count RC_fireMissionArray_I) > 0);
@@ -509,6 +553,7 @@ addMissionEventHandler ["EntityCreated", {
                                     _secondInRange_I doArtilleryFire [_unitPos, (currentMagazine _secondInRange_I), 1];
 
                                     RC_fireMissionArray_I pushback _secondInRange_I;
+                                    publicVariable 'RC_fireMissionArray_I';
                                     sleep 10;
 
                                     _fireMissionNotCompleted = (({_x == _secondInRange_I} count RC_fireMissionArray_I) > 0);
@@ -523,6 +568,7 @@ addMissionEventHandler ["EntityCreated", {
                                             _thirdInRange_I doArtilleryFire [_unitPos, (currentMagazine _thirdInRange_I), 1];
 
                                             RC_fireMissionArray_I pushback _thirdInRange_I;
+                                            publicVariable 'RC_fireMissionArray_I';
                                             sleep 10;
 
                                             _fireMissionNotCompleted = (({_x == _thirdInRange_I} count RC_fireMissionArray_I) > 0);
