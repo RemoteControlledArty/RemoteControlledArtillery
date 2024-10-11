@@ -135,20 +135,29 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "RC_Test",
+    "RC_Timer1",
     "SLIDER",
-    ["test setting", "Test Setting."],
+    ["timer1 setting", "timer1 setting"],
     ["Remote Controlled Artillery"],
     [5, 30, 15, 0, false],
     true
 ] call CBA_fnc_addSetting;
 
 [
-    "RC_Test2",
+    "RC_Timer2",
     "SLIDER",
-    ["test2 setting", "Test2 Setting."],
+    ["timer2 setting", "timer2 setting"],
     ["Remote Controlled Artillery"],
     [5, 30, 10, 0, false],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_Timer3",
+    "SLIDER",
+    ["timer3 setting", "timer3 setting"],
+    ["Remote Controlled Artillery"],
+    [5, 30, 15, 0, false],
     true
 ] call CBA_fnc_addSetting;
 
