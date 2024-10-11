@@ -3749,7 +3749,7 @@ class RC_R_604mm_ATACMS_HEAB: RC_604mm_HEAB_Rocket_Base
 
 
 //used in script as replacement when turret elevation is too low for Airburst
-class RC_R_604mm_backupHEAB: RC_604mm_HEAB_Rocket_Base
+class RC_R_604mm_ATACMS_backupHEAB: RC_604mm_HEAB_Rocket_Base
 {
 	triggerDistance=-1;
 	triggerOnImpact=1;
