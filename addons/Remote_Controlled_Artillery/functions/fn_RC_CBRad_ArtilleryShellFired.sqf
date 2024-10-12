@@ -34,11 +34,13 @@ addMissionEventHandler ["ArtilleryShellFired", {
     switch (true) do {
         case(_vehicleSide_B): {
             RC_fireMissionArray_B deleteAt (RC_fireMissionArray_B find _vehicle);
+            publicVariable "RC_fireMissionArray_B";
             //hint for testing
             //[str RC_fireMissionArray_B] remoteExec ["hint", west];
         };
         case(_vehicleSide_O): {
             RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _vehicle);
+            publicVariable "RC_fireMissionArray_O";
             //hint for testing
             //[str RC_fireMissionArray_O] remoteExec ["hint", west];
         };
@@ -81,6 +83,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
             //simulating AI preperation time before shot (AI only), half to show hints better
             sleep (RC_Timer2 / 2);
 
+
             //checks if opposing artillery is in range
             //RC_isInRangeArray_B = []; //good or bad idea to empty the array?
             {
@@ -96,6 +99,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 };
                 sleep 0.1;
             } forEach RC_ArtilleryArray_B;
+            publicVariable "RC_isInRangeArray_B";
 
 
             //hint for testing
@@ -113,10 +117,16 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                 //selects first opposing artillery in range to return fire
                 _isInRange_B = (RC_isInRangeArray_B select 0);
-                _isInRange_B doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_B), 1];
+                //changes locality of asset to server, as somehow only there doArtilleryFire works
+                //_isInRange_O setOwner 2;
+                //[_isInRange_B, 2] remoteExec ["setOwner", 2];
+                //_isInRange_B doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_B), 1];
+                _isInRange_B_Owner = owner _isInRange_B;
+                [_isInRange_B, [_vehiclePos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
                 
                 //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                 RC_fireMissionArray_B pushback _isInRange_B;
+                publicVariable "RC_fireMissionArray_B";
                 sleep RC_Timer3;
                 _fireMissionNotCompleted = (({_x == _isInRange_B} count RC_fireMissionArray_B) > 0);
 
@@ -129,10 +139,16 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                         //selects second opposing artillery in range to return fire
                         _isInRange_B = (RC_isInRangeArray_B select 1);
-                        _isInRange_B doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_B), 1];
+                        //changes locality of asset to server, as somehow only there doArtilleryFire works
+                        //_isInRange_O setOwner 2;
+                        //[_isInRange_B, 2] remoteExec ["setOwner", 2];
+                        //_isInRange_B doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_B), 1];
+                        _isInRange_B_Owner = owner _isInRange_B;
+                        [_isInRange_B, [_vehiclePos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
                         
                         //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                         RC_fireMissionArray_B pushback _isInRange_B;
+                        publicVariable "RC_fireMissionArray_B";
                         sleep RC_Timer3;
                         _fireMissionNotCompleted = (({_x == _isInRange_B} count RC_fireMissionArray_B) > 0);
 
@@ -145,7 +161,12 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                                 //selects third opposing artillery in range to return fire
                                 _isInRange_B = (RC_isInRangeArray_B select 2);
-                                _isInRange_B doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_B), 1];
+                                //changes locality of asset to server, as somehow only there doArtilleryFire works
+                                //_isInRange_O setOwner 2;
+                                //[_isInRange_B, 2] remoteExec ["setOwner", 2];
+                                //_isInRange_B doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_B), 1];
+                                _isInRange_B_Owner = owner _isInRange_B;
+                                [_isInRange_B, [_vehiclePos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
                             };
                         };
                     };
@@ -163,6 +184,8 @@ addMissionEventHandler ["ArtilleryShellFired", {
         //removes objNull from array
         RC_ArtilleryArray_O = RC_ArtilleryArray_O - [objNull];
         RC_isInRangeArray_O = RC_isInRangeArray_O - [objNull];
+        publicVariable "RC_ArtilleryArray_O";
+        publicVariable "RC_isInRangeArray_O";
 
         //shot source position
         _vehiclePos = getPos _vehicle;
@@ -195,6 +218,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 };
                 sleep 0.1;
             } forEach RC_ArtilleryArray_O;
+            publicVariable "RC_isInRangeArray_O";
 
 
             //hint for testing
@@ -212,10 +236,16 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                 //selects first opposing artillery in range to return fire
                 _isInRange_O = (RC_isInRangeArray_O select 0);
-                _isInRange_O doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_O), 1];
+                //changes locality of asset to server, as somehow only there doArtilleryFire works
+                //_isInRange_O setOwner 2;
+                //[_isInRange_O, 2] remoteExec ["setOwner", 2];
+                //_isInRange_O doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_O), 1];
+                _isInRange_O_Owner = owner _isInRange_O;
+                [_isInRange_O, [_vehiclePos, (currentMagazine _isInRange_O), 1]] remoteExec ["doArtilleryFire", _isInRange_O_Owner];
                 
                 //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                 RC_fireMissionArray_O pushback _isInRange_O;
+                publicVariable "RC_fireMissionArray_O";
                 sleep RC_Timer3;
                 _fireMissionNotCompleted = (({_x == _isInRange_O} count RC_fireMissionArray_O) > 0);
 
@@ -228,10 +258,16 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                         //selects second opposing artillery in range to return fire
                         _isInRange_O = (RC_isInRangeArray_O select 1);
-                        _isInRange_O doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_O), 1];
+                        //changes locality of asset to server, as somehow only there doArtilleryFire works
+                        //_isInRange_O setOwner 2;
+                        //[_isInRange_O, 2] remoteExec ["setOwner", 2];
+                        //_isInRange_O doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_O), 1];
+                        _isInRange_O_Owner = owner _isInRange_O;
+                        [_isInRange_O, [_vehiclePos, (currentMagazine _isInRange_O), 1]] remoteExec ["doArtilleryFire", _isInRange_O_Owner];
                         
                         //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                         RC_fireMissionArray_O pushback _isInRange_O;
+                        publicVariable "RC_fireMissionArray_O";
                         sleep RC_Timer3;
                         _fireMissionNotCompleted = (({_x == _isInRange_O} count RC_fireMissionArray_O) > 0);
 
@@ -244,7 +280,12 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                                 //selects third opposing artillery in range to return fire
                                 _isInRange_O = (RC_isInRangeArray_O select 2);
-                                _isInRange_O doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_O), 1];
+                                //changes locality of asset to server, as somehow only there doArtilleryFire works
+                                //_isInRange_O setOwner 2;
+                                //[_isInRange_O, 2] remoteExec ["setOwner", 2];
+                                //_isInRange_O doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_O), 1];
+                                _isInRange_O_Owner = owner _isInRange_O;
+                                [_isInRange_O, [_vehiclePos, (currentMagazine _isInRange_O), 1]] remoteExec ["doArtilleryFire", _isInRange_O_Owner];
                             };
                         };
                     };

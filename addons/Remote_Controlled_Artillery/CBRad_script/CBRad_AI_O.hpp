@@ -1,1 +1,1 @@
-init="RC_CBRad_AI_Array_O pushback (_this select 0);  publicVariable 'RC_CBRad_AI_Array_O';";
+init="if (!isserver) exitwith {};  RC_CBRad_AI_Array_O pushback (_this select 0);  publicVariable 'RC_CBRad_AI_Array_O';";

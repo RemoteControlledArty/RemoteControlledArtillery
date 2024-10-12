@@ -575,6 +575,7 @@ class CfgFunctions
 			file="\Remote_Controlled_Artillery\functions";
       		class preInit {preInit=1};
       		class InitCBASettings {preInit=1};
+			class RC_CBRad_Arrays {preInit=1};
 			class RC_CBRad_EntityCreated {preInit=1};
 			class RC_CBRad_ArtilleryShellFired {postInit=1};
 
