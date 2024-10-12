@@ -37,8 +37,9 @@ if (_entitySide_O) then {
 RC_ArtilleryArray_O pushback _entity;
 */
 
-//server side only
-if (!isServer) exitwith {};
+//server side only  //creates problem of assets not being added to array or EH triggering
+//eden assets and script attached mortar been local to server and worked, all other assets been local to player and didnt work
+//if (!isServer) exitwith {};
 
 
 //checks if spawned vehicles are artillery, to add them in counter battery array
@@ -54,12 +55,14 @@ addMissionEventHandler ["EntityCreated", {
         switch (true) do {
             case(_entitySide_B): {
                 RC_ArtilleryArray_B pushback _entity;
+                publicVariable "RC_ArtilleryArray_B";
 
                 //hint for testing
                 [str RC_ArtilleryArray_B] remoteExec ["hint", west];
             };
             case(_entitySide_O): {
                 RC_ArtilleryArray_O pushback _entity;
+                publicVariable "RC_ArtilleryArray_O";
 
                 //hint for testing
                 [str RC_ArtilleryArray_O] remoteExec ["hint", west];
