@@ -1,1 +1,2 @@
-init="RC_CBRad_Player_Array_O pushback (_this select 0);  publicVariable 'RC_CBRad_Player_Array_O';";
+init="if (!isserver) exitwith {};  RC_CBRad_Player_Array_O pushback (_this select 0);  publicVariable 'RC_CBRad_Player_Array_O';";
+killed="if (!isserver) exitwith {};  RC_CBRad_Player_Array_O deleteAt (RC_CBRad_Player_Array_O find (_this select 0));  publicVariable 'RC_CBRad_Player_Array_O';";
