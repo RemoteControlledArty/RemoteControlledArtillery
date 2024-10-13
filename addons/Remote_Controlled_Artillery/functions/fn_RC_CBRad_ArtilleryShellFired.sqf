@@ -12,6 +12,9 @@
 [(str RC_fireMissionArray_O)] remoteExec ["hintSilent", west];
 */
 
+//downtime timer for player CBRad map markers
+_this setVariable ["ArtySourceMarkersTime", 0, true];
+
 //if artillery fires checks if opposing CBRad is alive, for opposing AI assigns CB firemission, for opposing players creates map markers
 addMissionEventHandler ["ArtilleryShellFired", {
     params ["_vehicle", "_weapon", "_ammo", "_gunner", "_instigator", "_artilleryTarget", "_targetPosition", "_shell"];
@@ -438,6 +441,50 @@ addMissionEventHandler ["ArtilleryShellFired", {
             };
         };
     };
+
+
+    //Blufor Player
+    if (_opposedTo_B and (_CBRad_Player_AliveAmount_B>0)) then {
+        //for testing
+        ["blufor rad(P) detected shot"] remoteExec ["hint", west];
+
+        private _timeInterval = 10;
+        private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
+        private _timeSinceLastMarker = time - _lastMarkerTime;
+
+        if (_timeSinceLastMarker > _timeInterval) then {
+            [_vehiclePos, _targetPosition] spawn
+            {
+                params ["_vehiclePos"];
+                _vehiclePos setVariable ["ArtySourceMarkersTime", time, true];
+                private _artySourcePos = getPosASL _vehiclePos;
+
+                _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+                _markerArray = [_markerName, _artySourcePos, 1];
+
+                sleep (RC_Timer1);
+                private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
+                _artySourceMarker setMarkerType "o_art";
+                _artySourceMarker setMarkerAlpha 0.7;
+
+                //[_artySourceMarker, "o_art"] remoteExec ["setMarkerType", west];
+                //[_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", west];
+                //[_markerName] remoteExec ["deleteMarker", east];
+                //[_markerName] remoteExec ["deleteMarker", resistance];
+
+                _artySourcePosX = round (_artySourcePos select 0);
+                _artySourcePosY = round (_artySourcePos select 1);
+                //_artySourcePosZ = round (_artySourcePos select 2);
+                _targetPositionX = round (_targetPosition select 0);
+                _targetPositionY = round (_targetPosition select 1);
+
+                _message = "INCOMING" + "\n" + "target: x" + str _artySourcePosX + " y" + str _artySourcePosY + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
+                [_message] remoteExec ["hint", west];
+                sleep 3;
+                [""] remoteExec ["hintSilent", west];
+            };
+        };
+    };
 }];
 
 
@@ -453,88 +500,5 @@ private _result = _myArray arrayIntersect _myArray; // _result is [1, 2, 3, 4]
 
 if (ObjNull in RC_isInRangeArray_O) then {
     {RC_isInRangeArray_O = RC_isInRangeArray_O - [objNull]} forEach RC_isInRangeArray_O;
-};
-*/
-
-
-/*
-//Blufor Player
-//_this setVariable ["ArtySourceMarkersTime", 0, true];
-
-if (_opposedTo_B and _CBRad_Player_AliveAmount_B) then {
-    //hint for testing
-    ["blufor rad(P) detected shot"] remoteExec ["hint", west];
-
-    private _timeInterval = 10;
-    private _lastMarkerTime = _vehicle getVariable "ArtySourceMarkersTime";
-    private _timeSinceLastMarker = time - _lastMarkerTime;
-
-    if (_timeSinceLastMarker > _timeInterval) then {
-        [_vehicle] spawn
-        {
-            params ["_vehicle"];
-            _vehicle setVariable ["ArtySourceMarkersTime", time, true];
-            private _artySourcePos = getPosASL _vehicle;
-
-            _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
-            _markerArray = [_markerName, _artySourcePos, 1];
-
-            sleep (RC_Timer1);
-            private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", west];
-            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", west];
-            [_markerName] remoteExec ["deleteMarker", east];
-            [_markerName] remoteExec ["deleteMarker", resistance];
-
-            _artySourcePosX = round (_artySourcePos select 0);
-            _artySourcePosY = round (_artySourcePos select 1);
-            _artySourcePosZ = round (_artySourcePos select 2);
-
-            _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
-            [_message] remoteExec ["hint", west];
-            sleep 3;
-            [""] remoteExec ["hintSilent", west];
-        };
-    };
-};
-*/
-
-/*
-//Opfor Player
-if (_opposedTo_O and _CBRad_Player_AliveAmount_O) then {
-    //hint for testing
-    ["opfor rad(P) detected shot"] remoteExec ["hint", west];
-
-    private _timeInterval = 10; 
-    private _lastMarkerTime = _vehicle getVariable "ArtySourceMarkersTime";
-    private _timeSinceLastMarker = time - _lastMarkerTime;
-
-    if (_timeSinceLastMarker > _timeInterval) then {
-        [_vehicle] spawn
-        {
-            params ["_vehicle"];
-            _vehicle setVariable ["ArtySourceMarkersTime", time, true];
-            private _artySourcePos = getPosASL _vehicle;
-            
-            _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
-            _markerArray = [_markerName, _artySourcePos, 1];
-            
-            sleep (RC_Timer1);
-            private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-            [_artySourceMarker, "o_art"] remoteExec ["setMarkerType", east];
-            [_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", east];
-            [_markerName] remoteExec ["deleteMarker", west];
-            [_markerName] remoteExec ["deleteMarker", resistance];
-
-            _artySourcePosX = round (_artySourcePos select 0);
-            _artySourcePosY = round (_artySourcePos select 1);
-            _artySourcePosZ = round (_artySourcePos select 2);
-
-            _message = "incoming! source: x" + str _artySourcePosX + " y" + str _artySourcePosY + " z" + str _artySourcePosZ;
-            [_message] remoteExec ["hint", east];
-            sleep 3;
-            [""] remoteExec ["hintSilent", east];
-        };
-    };
 };
 */
