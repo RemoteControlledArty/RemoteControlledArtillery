@@ -9,6 +9,9 @@ addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
     //if (!local _vehicle) exitwith {};
 
+    //downtime timer for player CBRad map markers
+    _entity setVariable ["ArtySourceMarkersTime", 0, true];
+
 	_isArtillery = getNumber (configFile >> "CfgVehicles" >> (typeOf _entity) >> "artilleryScanner") == 1;
 
 	if (_isArtillery) then {

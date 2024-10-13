@@ -12,9 +12,6 @@
 [(str RC_fireMissionArray_O)] remoteExec ["hintSilent", west];
 */
 
-//downtime timer for player CBRad map markers
-_this setVariable ["ArtySourceMarkersTime", 0, true];
-
 //if artillery fires checks if opposing CBRad is alive, for opposing AI assigns CB firemission, for opposing players creates map markers
 addMissionEventHandler ["ArtilleryShellFired", {
     params ["_vehicle", "_weapon", "_ammo", "_gunner", "_instigator", "_artilleryTarget", "_targetPosition", "_shell"];
@@ -452,12 +449,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
         private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
         private _timeSinceLastMarker = time - _lastMarkerTime;
 
-        if (_timeSinceLastMarker > _timeInterval) then {
-            [_vehiclePos, _targetPosition] spawn
-            {
-                params ["_vehiclePos"];
-                _vehiclePos setVariable ["ArtySourceMarkersTime", time, true];
-                private _artySourcePos = getPosASL _vehiclePos;
+        //if (_timeSinceLastMarker > _timeInterval) then {
+            [_vehicle, _targetPosition] spawn {
+                params ["_vehicle", "_targetPosition"];
+                _vehicle setVariable ["ArtySourceMarkersTime", time, true];
+                private _artySourcePos = getPosASL _vehicle;
 
                 _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
                 _markerArray = [_markerName, _artySourcePos, 1];
@@ -475,15 +471,16 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _artySourcePosX = round (_artySourcePos select 0);
                 _artySourcePosY = round (_artySourcePos select 1);
                 //_artySourcePosZ = round (_artySourcePos select 2);
-                _targetPositionX = round (_targetPosition select 0);
-                _targetPositionY = round (_targetPosition select 1);
+                _targetPosX = round (_targetPosition select 0);
+                _targetPosY = round (_targetPosition select 1);
 
-                _message = "INCOMING" + "\n" + "target: x" + str _artySourcePosX + " y" + str _artySourcePosY + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
+                _message = "INCOMING" + "\n" + "target: x" + str _targetPosX + " y" + str _targetPosY + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
+                //_message = "INCOMING at: x" + str _artySourcePosX + " y" + str _artySourcePosY;
                 [_message] remoteExec ["hint", west];
                 sleep 3;
                 [""] remoteExec ["hintSilent", west];
             };
-        };
+        //};
     };
 }];
 
