@@ -461,12 +461,22 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 sleep (RC_Timer1);
                 private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
                 _artySourceMarker setMarkerType "o_art";
-                _artySourceMarker setMarkerAlpha 0.7;
+                _artySourceMarker setMarkerAlpha 1;
+                _artySourceMarker setMarkerColor "ColorOrange";
+                _artySourceMarker setMarkerSize [0.6,0.6];
 
-                //[_artySourceMarker, "o_art"] remoteExec ["setMarkerType", west];
-                //[_artySourceMarker, 0.7] remoteExec ["setMarkerAlpha", west];
-                //[_markerName] remoteExec ["deleteMarker", east];
-                //[_markerName] remoteExec ["deleteMarker", resistance];
+                _artySourceMarkerHour = date select 3;
+                _artySourceMarkerMinute = date select 4;
+                if (_artySourceMarkerMinute < 10) then {
+                    _artySourceMarkerText = str _artySourceMarkerHour + ":0" + str _artySourceMarkerMinute;
+                    _artySourceMarker setMarkerText format ["%1", _artySourceMarkerText];
+                } else {
+                    _artySourceMarkerText = str _artySourceMarkerHour + ":" + str _artySourceMarkerMinute;
+                    _artySourceMarker setMarkerText format ["%1", _artySourceMarkerText];
+                };
+
+                [_markerName] remoteExec ["deleteMarkerLocal", east];
+                [_markerName] remoteExec ["deleteMarkerLocal", resistance];
 
                 _artySourcePosX = round (_artySourcePos select 0);
                 _artySourcePosY = round (_artySourcePos select 1);
@@ -477,7 +487,66 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _message = "INCOMING" + "\n" + "target: x" + str _targetPosX + " y" + str _targetPosY + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
                 //_message = "INCOMING at: x" + str _artySourcePosX + " y" + str _artySourcePosY;
                 [_message] remoteExec ["hint", west];
-                sleep 3;
+                sleep 4;
+                [""] remoteExec ["hintSilent", west];
+            };
+        //};
+    };
+
+    //Opfor Player
+    if (_opposedTo_O and (_CBRad_Player_AliveAmount_O>0)) then {
+        //for testing
+        ["opfor rad(P) detected shot"] remoteExec ["hint", west];
+
+        private _timeInterval = 10;
+        private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
+        private _timeSinceLastMarker = time - _lastMarkerTime;
+
+        //if (_timeSinceLastMarker > _timeInterval) then {
+            [_vehicle, _targetPosition] spawn {
+                params ["_vehicle", "_targetPosition"];
+                _vehicle setVariable ["ArtySourceMarkersTime", time, true];
+                private _artySourcePos = getPosASL _vehicle;
+
+                _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+                _markerArray = [_markerName, _artySourcePos, 1];
+
+                sleep (RC_Timer1);
+                private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
+                _artySourceMarker setMarkerType "o_art";
+                _artySourceMarker setMarkerAlpha 1;
+                _artySourceMarker setMarkerColor "ColorOrange";
+                _artySourceMarker setMarkerSize [0.6,0.6];
+
+                _artySourceMarkerHour = date select 3;
+                _artySourceMarkerMinute = date select 4;
+                if (_artySourceMarkerMinute < 10) then {
+                    _artySourceMarkerText = str _artySourceMarkerHour + ":0" + str _artySourceMarkerMinute;
+                    _artySourceMarker setMarkerText format ["%1", _artySourceMarkerText];
+                } else {
+                    _artySourceMarkerText = str _artySourceMarkerHour + ":" + str _artySourceMarkerMinute;
+                    _artySourceMarker setMarkerText format ["%1", _artySourceMarkerText];
+                };
+
+                [_markerName] remoteExec ["deleteMarkerLocal", west];
+                [_markerName] remoteExec ["deleteMarkerLocal", resistance];
+
+                _artySourcePosX = round (_artySourcePos select 0);
+                _artySourcePosY = round (_artySourcePos select 1);
+                //_artySourcePosZ = round (_artySourcePos select 2);
+                _targetPosX = round (_targetPosition select 0);
+                _targetPosY = round (_targetPosition select 1);
+
+                if ((_targetPosX) == 0) then {
+                    _message = "INCOMING" + "\n" + "target: x ? y ?" + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
+                } else {
+                    _message = "INCOMING" + "\n" + "target: x" + str _targetPosX + " y" + str _targetPosY + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
+                };
+
+                _message = "INCOMING" + "\n" + "target: x" + str _targetPosX + " y" + str _targetPosY + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
+                //_message = "INCOMING at: x" + str _artySourcePosX + " y" + str _artySourcePosY;
+                [_message] remoteExec ["hint", west];
+                sleep 4;
                 [""] remoteExec ["hintSilent", west];
             };
         //};

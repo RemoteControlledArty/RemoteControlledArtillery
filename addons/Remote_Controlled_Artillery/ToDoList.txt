@@ -23,6 +23,13 @@ notes:
 -soon with arma update connectionfix likely wont be needed anymore
 
 
+OPTIMIZATION:
+-remove public variable where not needed
+-remove setowner, test if it still works
+-add local check to vehicle EH? does it acticates multiple times?
+-remove AFV drivercam from being one of the default displays
+
+
 TO DO - FEATURES:
 
 -remove RE autonomous off? might cause problems and in MP doesnt fullfill its function, instead add in tipps section below FCS that autonomous off = turret not resetting
