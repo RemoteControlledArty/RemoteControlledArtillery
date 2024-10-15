@@ -63,20 +63,14 @@ addMissionEventHandler ["ArtilleryShellFired", {
         case(_vehicleSide_B): {
             RC_fireMissionArray_B deleteAt (RC_fireMissionArray_B find _vehicle);
             publicVariable "RC_fireMissionArray_B";
-            //hint for testing
-            //[str RC_fireMissionArray_B] remoteExec ["hint", west];
         };
         case(_vehicleSide_O): {
             RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _vehicle);
             publicVariable "RC_fireMissionArray_O";
-            //hint for testing
-            //[str RC_fireMissionArray_O] remoteExec ["hint", west];
         };
         case(_vehicleSide_I): {
             RC_fireMissionArray_I deleteAt (RC_fireMissionArray_I find _vehicle);
             publicVariable "RC_fireMissionArray_I";
-            //hint for testing
-            //[str RC_fireMissionArray_I] remoteExec ["hint", west];
         };
     };
 
@@ -144,9 +138,6 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 //selects first opposing artillery in range to return fire
                 _isInRange_B = (RC_isInRangeArray_B select 0);
                 //changes locality of asset to server, as somehow only there doArtilleryFire works
-                //_isInRange_O setOwner 2;
-                //[_isInRange_B, 2] remoteExec ["setOwner", 2];
-                //_isInRange_B doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_B), 1];
                 _isInRange_B_Owner = owner _isInRange_B;
                 [_isInRange_B, [_vehiclePos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
                 
@@ -166,9 +157,6 @@ addMissionEventHandler ["ArtilleryShellFired", {
                         //selects second opposing artillery in range to return fire
                         _isInRange_B = (RC_isInRangeArray_B select 1);
                         //changes locality of asset to server, as somehow only there doArtilleryFire works
-                        //_isInRange_O setOwner 2;
-                        //[_isInRange_B, 2] remoteExec ["setOwner", 2];
-                        //_isInRange_B doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_B), 1];
                         _isInRange_B_Owner = owner _isInRange_B;
                         [_isInRange_B, [_vehiclePos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
                         
@@ -188,9 +176,6 @@ addMissionEventHandler ["ArtilleryShellFired", {
                                 //selects third opposing artillery in range to return fire
                                 _isInRange_B = (RC_isInRangeArray_B select 2);
                                 //changes locality of asset to server, as somehow only there doArtilleryFire works
-                                //_isInRange_O setOwner 2;
-                                //[_isInRange_B, 2] remoteExec ["setOwner", 2];
-                                //_isInRange_B doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_B), 1];
                                 _isInRange_B_Owner = owner _isInRange_B;
                                 [_isInRange_B, [_vehiclePos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
                             };
@@ -263,9 +248,6 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 //selects first opposing artillery in range to return fire
                 _isInRange_O = (RC_isInRangeArray_O select 0);
                 //changes locality of asset to server, as somehow only there doArtilleryFire works
-                //_isInRange_O setOwner 2;
-                //[_isInRange_O, 2] remoteExec ["setOwner", 2];
-                //_isInRange_O doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_O), 1];
                 _isInRange_O_Owner = owner _isInRange_O;
                 [_isInRange_O, [_vehiclePos, (currentMagazine _isInRange_O), 1]] remoteExec ["doArtilleryFire", _isInRange_O_Owner];
                 
@@ -285,9 +267,6 @@ addMissionEventHandler ["ArtilleryShellFired", {
                         //selects second opposing artillery in range to return fire
                         _isInRange_O = (RC_isInRangeArray_O select 1);
                         //changes locality of asset to server, as somehow only there doArtilleryFire works
-                        //_isInRange_O setOwner 2;
-                        //[_isInRange_O, 2] remoteExec ["setOwner", 2];
-                        //_isInRange_O doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_O), 1];
                         _isInRange_O_Owner = owner _isInRange_O;
                         [_isInRange_O, [_vehiclePos, (currentMagazine _isInRange_O), 1]] remoteExec ["doArtilleryFire", _isInRange_O_Owner];
                         
@@ -307,9 +286,6 @@ addMissionEventHandler ["ArtilleryShellFired", {
                                 //selects third opposing artillery in range to return fire
                                 _isInRange_O = (RC_isInRangeArray_O select 2);
                                 //changes locality of asset to server, as somehow only there doArtilleryFire works
-                                //_isInRange_O setOwner 2;
-                                //[_isInRange_O, 2] remoteExec ["setOwner", 2];
-                                //_isInRange_O doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_O), 1];
                                 _isInRange_O_Owner = owner _isInRange_O;
                                 [_isInRange_O, [_vehiclePos, (currentMagazine _isInRange_O), 1]] remoteExec ["doArtilleryFire", _isInRange_O_Owner];
                             };
@@ -382,9 +358,6 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 //selects first opposing artillery in range to return fire
                 _isInRange_I = (RC_isInRangeArray_I select 0);
                 //changes locality of asset to server, as somehow only there doArtilleryFire works
-                //_isInRange_O setOwner 2;
-                //[_isInRange_I, 2] remoteExec ["setOwner", 2];
-                //_isInRange_I doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_I), 1];
                 _isInRange_I_Owner = owner _isInRange_I;
                 [_isInRange_I, [_vehiclePos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
                 
@@ -404,9 +377,6 @@ addMissionEventHandler ["ArtilleryShellFired", {
                         //selects second opposing artillery in range to return fire
                         _isInRange_I = (RC_isInRangeArray_I select 1);
                         //changes locality of asset to server, as somehow only there doArtilleryFire works
-                        //_isInRange_O setOwner 2;
-                        //[_isInRange_I, 2] remoteExec ["setOwner", 2];
-                        //_isInRange_I doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_I), 1];
                         _isInRange_I_Owner = owner _isInRange_I;
                         [_isInRange_I, [_vehiclePos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
                         
@@ -426,9 +396,6 @@ addMissionEventHandler ["ArtilleryShellFired", {
                                 //selects third opposing artillery in range to return fire
                                 _isInRange_I = (RC_isInRangeArray_I select 2);
                                 //changes locality of asset to server, as somehow only there doArtilleryFire works
-                                //_isInRange_O setOwner 2;
-                                //[_isInRange_I, 2] remoteExec ["setOwner", 2];
-                                //_isInRange_I doArtilleryFire [_vehiclePos, (currentMagazine _isInRange_I), 1];
                                 _isInRange_I_Owner = owner _isInRange_I;
                                 [_isInRange_I, [_vehiclePos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
                             };
@@ -443,7 +410,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
     //Blufor Player
     if (_opposedTo_B and (_CBRad_Player_AliveAmount_B>0)) then {
         //for testing
-        ["blufor rad(P) detected shot"] remoteExec ["hint", west];
+        //["blufor rad(P) detected shot"] remoteExec ["hint", west];
 
         private _timeInterval = 10;
         private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
@@ -459,36 +426,46 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _markerArray = [_markerName, _artySourcePos, 1];
 
                 sleep (RC_Timer1);
-                private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-                _artySourceMarker setMarkerType "o_art";
-                _artySourceMarker setMarkerAlpha 1;
-                _artySourceMarker setMarkerColor "ColorOrange";
-                _artySourceMarker setMarkerSize [0.6,0.6];
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
+                _artySourceMarker setMarkerTypeLocal "o_art";
+                _artySourceMarker setMarkerAlphaLocal 1;
+                _artySourceMarker setMarkerSizeLocal [0.6,0.6];
 
                 _artySourceMarkerHour = date select 3;
                 _artySourceMarkerMinute = date select 4;
                 if (_artySourceMarkerMinute < 10) then {
                     _artySourceMarkerText = str _artySourceMarkerHour + ":0" + str _artySourceMarkerMinute;
-                    _artySourceMarker setMarkerText format ["%1", _artySourceMarkerText];
+                    _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
                 } else {
                     _artySourceMarkerText = str _artySourceMarkerHour + ":" + str _artySourceMarkerMinute;
-                    _artySourceMarker setMarkerText format ["%1", _artySourceMarkerText];
+                    _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
                 };
+
+                _artySourceMarker setMarkerColor "ColorOrange";
 
                 [_markerName] remoteExec ["deleteMarkerLocal", east];
                 [_markerName] remoteExec ["deleteMarkerLocal", resistance];
 
-                _artySourcePosX = round (_artySourcePos select 0);
-                _artySourcePosY = round (_artySourcePos select 1);
-                //_artySourcePosZ = round (_artySourcePos select 2);
-                _targetPosX = round (_targetPosition select 0);
-                _targetPosY = round (_targetPosition select 1);
+                _artySourceGrid = mapGridPosition _artySourcePos;
+                _artySourceGridX = _artySourceGrid select [0, 3];
+                _artySourceGridY = _artySourceGrid select [3, 3];
+                _targetGrid = mapGridPosition _targetPosition;
+                _targetGridX = _targetGrid select [0, 3];
+                _targetGridY = _targetGrid select [3, 3];
 
-                _message = "INCOMING" + "\n" + "target: x" + str _targetPosX + " y" + str _targetPosY + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
-                //_message = "INCOMING at: x" + str _artySourcePosX + " y" + str _artySourcePosY;
-                [_message] remoteExec ["hint", west];
-                sleep 4;
-                [""] remoteExec ["hintSilent", west];
+                if ((_targetPosition select 0) == 0) then {
+                    _message = "INCOMING" + "\n" + "target: ?-?" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", west];
+                    [_message] remoteExec ["hintSilent", west];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", west];
+                } else {
+                    _message = "INCOMING" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", west];
+                    [_message] remoteExec ["hintSilent", west];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", west];
+                };
             };
         //};
     };
@@ -496,7 +473,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
     //Opfor Player
     if (_opposedTo_O and (_CBRad_Player_AliveAmount_O>0)) then {
         //for testing
-        ["opfor rad(P) detected shot"] remoteExec ["hint", west];
+        //["opfor rad(P) detected shot"] remoteExec ["hint", west];
 
         private _timeInterval = 10;
         private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
@@ -512,42 +489,46 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _markerArray = [_markerName, _artySourcePos, 1];
 
                 sleep (RC_Timer1);
-                private _artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
-                _artySourceMarker setMarkerType "o_art";
-                _artySourceMarker setMarkerAlpha 1;
-                _artySourceMarker setMarkerColor "ColorOrange";
-                _artySourceMarker setMarkerSize [0.6,0.6];
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
+                _artySourceMarker setMarkerTypeLocal "o_art";
+                _artySourceMarker setMarkerAlphaLocal 1;
+                _artySourceMarker setMarkerSizeLocal [0.6,0.6];
 
                 _artySourceMarkerHour = date select 3;
                 _artySourceMarkerMinute = date select 4;
                 if (_artySourceMarkerMinute < 10) then {
                     _artySourceMarkerText = str _artySourceMarkerHour + ":0" + str _artySourceMarkerMinute;
-                    _artySourceMarker setMarkerText format ["%1", _artySourceMarkerText];
+                    _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
                 } else {
                     _artySourceMarkerText = str _artySourceMarkerHour + ":" + str _artySourceMarkerMinute;
-                    _artySourceMarker setMarkerText format ["%1", _artySourceMarkerText];
+                    _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
                 };
+
+                _artySourceMarker setMarkerColor "ColorOrange";
 
                 [_markerName] remoteExec ["deleteMarkerLocal", west];
                 [_markerName] remoteExec ["deleteMarkerLocal", resistance];
 
-                _artySourcePosX = round (_artySourcePos select 0);
-                _artySourcePosY = round (_artySourcePos select 1);
-                //_artySourcePosZ = round (_artySourcePos select 2);
-                _targetPosX = round (_targetPosition select 0);
-                _targetPosY = round (_targetPosition select 1);
+                _artySourceGrid = mapGridPosition _artySourcePos;
+                _artySourceGridX = _artySourceGrid select [0, 3];
+                _artySourceGridY = _artySourceGrid select [3, 3];
+                _targetGrid = mapGridPosition _targetPosition;
+                _targetGridX = _targetGrid select [0, 3];
+                _targetGridY = _targetGrid select [3, 3];
 
-                if ((_targetPosX) == 0) then {
-                    _message = "INCOMING" + "\n" + "target: x ? y ?" + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
+                if ((_targetPosition select 0) == 0) then {
+                    _message = "INCOMING" + "\n" + "target: ?-?" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", east];
+                    [_message] remoteExec ["hintSilent", east];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", east];
                 } else {
-                    _message = "INCOMING" + "\n" + "target: x" + str _targetPosX + " y" + str _targetPosY + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
+                    _message = "INCOMING" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", east];
+                    [_message] remoteExec ["hintSilent", east];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", east];
                 };
-
-                _message = "INCOMING" + "\n" + "target: x" + str _targetPosX + " y" + str _targetPosY + "\n" + "source: x" + str _artySourcePosX + " y" + str _artySourcePosY;
-                //_message = "INCOMING at: x" + str _artySourcePosX + " y" + str _artySourcePosY;
-                [_message] remoteExec ["hint", west];
-                sleep 4;
-                [""] remoteExec ["hintSilent", west];
             };
         //};
     };

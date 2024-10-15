@@ -28,6 +28,7 @@ OPTIMIZATION:
 -remove setowner, test if it still works
 -add local check to vehicle EH? does it acticates multiple times?
 -remove AFV drivercam from being one of the default displays
+-figure out green EL cause
 
 
 TO DO - FEATURES:
