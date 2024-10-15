@@ -454,7 +454,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _targetGridY = _targetGrid select [3, 3];
 
                 if ((_targetPosition select 0) == 0) then {
-                    _message = "INCOMING" + "\n" + "target: ?-?" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    _message = "INCOMING" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
                     [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", west];
                     [_message] remoteExec ["hintSilent", west];
                     sleep 5;
@@ -517,7 +517,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _targetGridY = _targetGrid select [3, 3];
 
                 if ((_targetPosition select 0) == 0) then {
-                    _message = "INCOMING" + "\n" + "target: ?-?" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    _message = "INCOMING" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
                     [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", east];
                     [_message] remoteExec ["hintSilent", east];
                     sleep 5;
@@ -528,6 +528,70 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     [_message] remoteExec ["hintSilent", east];
                     sleep 5;
                     [""] remoteExec ["hintSilent", east];
+                };
+            };
+        //};
+    };
+
+
+    //Infor Player
+    if (_opposedTo_I and (_CBRad_Player_AliveAmount_I>0)) then {
+        //for testing
+        //["infor rad(P) detected shot"] remoteExec ["hint", west];
+
+        private _timeInterval = 10;
+        private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
+        private _timeSinceLastMarker = time - _lastMarkerTime;
+
+        //if (_timeSinceLastMarker > _timeInterval) then {
+            [_vehicle, _targetPosition] spawn {
+                params ["_vehicle", "_targetPosition"];
+                _vehicle setVariable ["ArtySourceMarkersTime", time, true];
+                private _artySourcePos = getPosASL _vehicle;
+
+                _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+                _markerArray = [_markerName, _artySourcePos, 1];
+
+                sleep (RC_Timer1);
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
+                _artySourceMarker setMarkerTypeLocal "o_art";
+                _artySourceMarker setMarkerAlphaLocal 1;
+                _artySourceMarker setMarkerSizeLocal [0.6,0.6];
+
+                _artySourceMarkerHour = date select 3;
+                _artySourceMarkerMinute = date select 4;
+                if (_artySourceMarkerMinute < 10) then {
+                    _artySourceMarkerText = str _artySourceMarkerHour + ":0" + str _artySourceMarkerMinute;
+                    _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
+                } else {
+                    _artySourceMarkerText = str _artySourceMarkerHour + ":" + str _artySourceMarkerMinute;
+                    _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
+                };
+
+                _artySourceMarker setMarkerColor "ColorOrange";
+
+                [_markerName] remoteExec ["deleteMarkerLocal", west];
+                [_markerName] remoteExec ["deleteMarkerLocal", east];
+
+                _artySourceGrid = mapGridPosition _artySourcePos;
+                _artySourceGridX = _artySourceGrid select [0, 3];
+                _artySourceGridY = _artySourceGrid select [3, 3];
+                _targetGrid = mapGridPosition _targetPosition;
+                _targetGridX = _targetGrid select [0, 3];
+                _targetGridY = _targetGrid select [3, 3];
+
+                if ((_targetPosition select 0) == 0) then {
+                    _message = "INCOMING" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", resistance];
+                    [_message] remoteExec ["hintSilent", resistance];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", resistance];
+                } else {
+                    _message = "INCOMING" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", resistance];
+                    [_message] remoteExec ["hintSilent", resistance];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", resistance];
                 };
             };
         //};
