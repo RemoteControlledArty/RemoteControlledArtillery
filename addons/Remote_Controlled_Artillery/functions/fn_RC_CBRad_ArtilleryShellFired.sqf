@@ -10,7 +10,18 @@
 [(str RC_CBRad_AI_Array_O)] remoteExec ["hintSilent", west];
 [(str RC_isInRangeArray_O)] remoteExec ["hintSilent", west];
 [(str RC_fireMissionArray_O)] remoteExec ["hintSilent", west];
+
+_owner = str (owner _this);
+[_owner] remoteExec ["hint", west];
+
+addMissionEventHandler ["ArtilleryShellFired", {
+    params ["_vehicle", "_weapon", "_ammo", "_gunner", "_instigator", "_artilleryTarget", "_targetPosition", "_shell"];
+    if (!local _vehicle) exitwith {};
+
+    [getPos me, 180, "RC_UAV_AR1", west] call BIS_fnc_spawnVehicle;
+]};
 */
+
 
 //if artillery fires checks if opposing CBRad is alive, for opposing AI assigns CB firemission, for opposing players creates map markers
 addMissionEventHandler ["ArtilleryShellFired", {
