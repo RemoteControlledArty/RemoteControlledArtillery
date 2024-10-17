@@ -12,10 +12,10 @@ class UserActions: UserActions
 		_vicCommander = commander this; \
 		_vicCommanderID = owner _vicCommander; \
 		_driverGroup = group (driver this); \
-		[this, 'commander took drive controls'] remoteExec ['vehicleChat', _vicOwner]; \
-		[this, 'commander took drive controls'] remoteExec ['vehicleChat', _vicCommander]; \
-		[_driverGroup, _vicCommanderID] remoteExec ['setGroupOwner', _vicCommander]; \
-		[this, _vicCommander] remoteExec ['setEffectiveCommander', _vicCommander];";
+		this vehicleChat 'commander took drive controls'; \
+		this vehicleChat 'commander took drive controls'; \
+		_driverGroup setGroupOwner _vicCommanderID; \
+		this setEffectiveCommander _vicCommander;";
 
 		onlyforplayer=1;
 		shortcut="";
@@ -32,10 +32,10 @@ class UserActions: UserActions
 		_vicGunner = gunner this; \
 		_vicGunnerID = owner _vicGunner; \
 		_driverGroup = group (driver this); \
-		[this, 'gunner took drive controls'] remoteExec ['vehicleChat', _vicOwner]; \
-		[this, 'gunner took drive controls'] remoteExec ['vehicleChat', _vicGunner]; \
-		[_driverGroup, _vicGunnerID] remoteExec ['setGroupOwner', _vicGunner]; \
-		[this, _vicGunner] remoteExec ['setEffectiveCommander', _vicGunner];";
+		this vehicleChat 'gunner took drive controls'; \
+		this vehicleChat 'gunner took drive controls'; \
+		_driverGroup setGroupOwner _vicGunnerID; \
+		this setEffectiveCommander _vicGunner;";
 		
 		onlyforplayer=1;
 		shortcut="";

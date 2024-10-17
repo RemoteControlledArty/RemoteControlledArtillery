@@ -132,7 +132,6 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\dev_takeDriverControlsEH1.hpp"
 		};
 	};
 
@@ -429,7 +428,6 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\dev_takeDriverControlsEH1.hpp"
 		};
 	};
 
@@ -717,7 +715,6 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\dev_takeDriverControlsEH1.hpp"
 		};
 	};
 
@@ -788,7 +785,6 @@ class RC_Stryker_M1127_WD_B: RC_Stryker_M1127_M2_WD_B
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\dev_takeDriverControlsEH1.hpp"
 		};
 	};
 
