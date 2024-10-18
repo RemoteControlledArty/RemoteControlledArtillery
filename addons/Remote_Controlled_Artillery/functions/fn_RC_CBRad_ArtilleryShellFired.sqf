@@ -300,7 +300,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
     //Blufor Player
     if (_opposedTo_B and (_CBRad_Player_AliveAmount_B>0)) then {
         //for testing
-        //["blufor rad(P) detected shot"] remoteExec ["hint", west];
+        ["blufor rad(P) detected shot"] remoteExec ["hint", west];
 
         private _timeInterval = 10;
         private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
@@ -312,11 +312,13 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _vehicle setVariable ["ArtySourceMarkersTime", time, true];
                 private _artySourcePos = getPosASL _vehicle;
 
-                _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
-                _markerArray = [_markerName, _artySourcePos, 1];
-
                 sleep (RC_Timer1);
-                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
+                //_markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+                //_markerArray = [_markerName, _artySourcePos, 1];
+                //private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
+                _markerName = random [0, 10, 20];
+                _markerArray = format ["%1%2", "_USER_DEFINED_", _markerName];
+                _artySourceMarker = createMarkerLocal [_markerArray, _artySourcePos, 1];
                 _artySourceMarker setMarkerTypeLocal "o_art";
                 _artySourceMarker setMarkerAlphaLocal 1;
                 _artySourceMarker setMarkerSizeLocal [0.6,0.6];
@@ -333,8 +335,8 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                 _artySourceMarker setMarkerColor "ColorOrange";
 
-                [_markerName] remoteExec ["deleteMarkerLocal", east];
-                [_markerName] remoteExec ["deleteMarkerLocal", resistance];
+                //[_markerName] remoteExec ["deleteMarkerLocal", east];
+                //[_markerName] remoteExec ["deleteMarkerLocal", resistance];
 
                 _artySourceGrid = mapGridPosition _artySourcePos;
                 _artySourceGridX = _artySourceGrid select [0, 3];
@@ -345,13 +347,13 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                 if ((_targetPosition select 0) == 0) then {
                     _message = "INCOMING" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", west];
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15]] remoteExec ["playSoundUI", west];
                     [_message] remoteExec ["hintSilent", west];
                     sleep 5;
                     [""] remoteExec ["hintSilent", west];
                 } else {
                     _message = "INCOMING" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", west];
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15]] remoteExec ["playSoundUI", west];
                     [_message] remoteExec ["hintSilent", west];
                     sleep 5;
                     [""] remoteExec ["hintSilent", west];
@@ -363,7 +365,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
     //Opfor Player
     if (_opposedTo_O and (_CBRad_Player_AliveAmount_O>0)) then {
         //for testing
-        //["opfor rad(P) detected shot"] remoteExec ["hint", west];
+        ["opfor rad(P) detected shot"] remoteExec ["hint", west];
 
         private _timeInterval = 10;
         private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
@@ -408,13 +410,13 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                 if ((_targetPosition select 0) == 0) then {
                     _message = "INCOMING" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", east];
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15]] remoteExec ["playSoundUI", east];
                     [_message] remoteExec ["hintSilent", east];
                     sleep 5;
                     [""] remoteExec ["hintSilent", east];
                 } else {
                     _message = "INCOMING" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15, 1]] remoteExec ["playSoundUI", east];
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15]] remoteExec ["playSoundUI", east];
                     [_message] remoteExec ["hintSilent", east];
                     sleep 5;
                     [""] remoteExec ["hintSilent", east];
@@ -424,6 +426,157 @@ addMissionEventHandler ["ArtilleryShellFired", {
     };
 }];
 
+    /*
+    [_vehicle, _targetPosition] spawn {
+        params ["_vehicle", "_targetPosition"];
+        _vehicle setVariable ["ArtySourceMarkersTime", time, true];
+        private _artySourcePos = getPosASL _vehicle;
+
+        //_markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+        //_markerArray = [_markerName, _artySourcePos, 1];
+
+        sleep (RC_Timer1);
+        //_artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
+        _markerName = random [0, 10, 20];
+	    _markerArray = format ["%1%2", "_USER_DEFINED_", _markerName];
+        _artySourceMarker = createMarkerLocal [_markerArray, _artySourcePos, 1];
+        _artySourceMarker setMarkerTypeLocal "o_art";
+        _artySourceMarker setMarkerAlphaLocal 1;
+        _artySourceMarker setMarkerSizeLocal [0.6,0.6];
+
+        _artySourceMarkerHour = date select 3;
+        _artySourceMarkerMinute = date select 4;
+        if (_artySourceMarkerMinute < 10) then {
+            _artySourceMarkerText = str _artySourceMarkerHour + ":0" + str _artySourceMarkerMinute;
+            _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
+        } else {
+            _artySourceMarkerText = str _artySourceMarkerHour + ":" + str _artySourceMarkerMinute;
+            _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
+        };
+
+        _artySourceMarker setMarkerColor "ColorOrange";
+
+        [_markerName] remoteExec ["deleteMarkerLocal", west];
+        [_markerName] remoteExec ["deleteMarkerLocal", resistance];
+
+        _artySourceGrid = mapGridPosition _artySourcePos;
+        _artySourceGridX = _artySourceGrid select [0, 3];
+        _artySourceGridY = _artySourceGrid select [3, 3];
+        _targetGrid = mapGridPosition _targetPosition;
+        _targetGridX = _targetGrid select [0, 3];
+        _targetGridY = _targetGrid select [3, 3];
+
+        if ((_targetPosition select 0) == 0) then {
+            _message = "INCOMING" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+            [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15]] remoteExec ["playSoundUI", east];
+            [_message] remoteExec ["hintSilent", east];
+            sleep 5;
+            [""] remoteExec ["hintSilent", east];
+        } else {
+            _message = "INCOMING" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+            [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15]] remoteExec ["playSoundUI", east];
+            [_message] remoteExec ["hintSilent", east];
+            sleep 5;
+            [""] remoteExec ["hintSilent", east];
+        };
+    };
+    */
+
+
+/*
+_vehicle = vic;
+_artySourcePos = getPosASL _vehicle;
+
+_markerName = random [0, 10, 20];
+_markerArray = format ["%1%2", "_USER_DEFINED_", _markerName];
+
+_artySourceMarker = createMarkerLocal [_markerArray, _artySourcePos, 1];
+_artySourceMarker setMarkerTypeLocal "o_art";
+_artySourceMarker setMarkerAlphaLocal 1;
+_artySourceMarker setMarkerSizeLocal [0.6,0.6];
+
+_artySourceMarker setMarkerColor "ColorOrange";
+*/
+
+
+/*
+_vehicle = vic;
+_artySourcePos = getPosASL _vehicle;
+
+_markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+_markerArray = [_markerName, _artySourcePos, 1];
+
+_artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
+_artySourceMarker setMarkerTypeLocal "o_art";
+_artySourceMarker setMarkerAlphaLocal 1;
+_artySourceMarker setMarkerSizeLocal [0.6,0.6];
+
+[_artySourceMarker, "o_art"] remoteExec ["setMarkerTypeLocal", 0];
+[_artySourceMarker, 1] remoteExec ["setMarkerAlphaLocal", 0];
+[_artySourceMarker, [0.6,0.6]] remoteExec ["setMarkerSizeLocal", 0];
+[_artySourceMarker, "ColorOrange"] remoteExec ["setMarkerColor", 0];
+*/
+
+
+/*
+Putting that here for later, this works run local, not on server.
+```sqf
+_vehicle = _this;
+_pos = getPosASL _vehicle;
+
+_randomName = random [0, 10, 20];
+_markerName = format ["%1%2", "_USER_DEFINED_", _randomName];
+```
+
+local to global
+```sqf
+_marker = createMarkerLocal [_markerName, _pos, 1];
+_marker setMarkerTypeLocal "hd_destroy";
+_marker setMarkerAlphaLocal 1;
+
+_marker setMarkerColor "ColorBlue";  //non, 
+```
+
+global
+```sqf
+_marker = createMarker [_markerName, _pos, 1];
+_marker setMarkerType "hd_destroy";
+_marker setMarkerAlpha 1;
+
+_marker setMarkerColor "ColorBlue";
+```
+
+RE
+```sqf
+_vehicle = _this;
+_pos = getPosASL _vehicle;
+_randomName = random [0, 10, 20];
+_markerName = format ["%1%2", "_USER_DEFINED_", _randomName];
+_marker = createMarker [_markerName, _pos, 1];
+[_marker, "hd_destroy"] remoteExec ["setMarkerType", 4];
+[_marker, 1] remoteExec ["setMarkerAlpha", 4];
+[_marker, "ColorBlue"] remoteExec ["setMarkerColor", 4];
+```
+*/
+
+
+/*
+_vehicle = vic;
+_artySourcePos = getPosASL _vehicle;
+
+_markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
+_markerArray = [_markerName, _artySourcePos, 1];
+
+_artySourceMarker = createMarker [_markerName, _artySourcePos, 1];
+_artySourceMarker setMarkerType "o_art";
+_artySourceMarker setMarkerAlpha 1;
+_artySourceMarker setMarkerSize [0.6,0.6];
+_artySourceMarker setMarkerColor "ColorOrange";
+*/
+
+
+//[_markerName] remoteExec ["deleteMarkerLocal", west];   //causes problems, not use for now
+//[_markerName] remoteExec ["deleteMarkerLocal", resistance];   //causes problems, not use for now
 
 /*
 RC_ArtilleryArray_O deleteAt (RC_ArtilleryArray_O find [objNull]);     //prevents objNull in array
