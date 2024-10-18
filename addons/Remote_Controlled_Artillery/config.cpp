@@ -578,6 +578,7 @@ class CfgFunctions
 			//class RC_CBRad_Arrays {preInit=1};
 			//class RC_CBRad_EntityCreated {preInit=1};
 			//class RC_CBRad_ArtilleryShellFired {postInit=1};
+			//class RC_CBRad_ArtilleryShellFired2 {postInit=1};
 
 			class RC_MarkerHandler {postInit=1};
       		class RC_UI_Loop {postInit=1};

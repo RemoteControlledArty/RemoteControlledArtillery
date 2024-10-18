@@ -296,26 +296,26 @@ addMissionEventHandler ["ArtilleryShellFired", {
         };
     };
 
-
     //Blufor Player
     if (_opposedTo_B and (_CBRad_Player_AliveAmount_B>0)) then {
         //for testing
         ["blufor rad(P) detected shot"] remoteExec ["hint", west];
 
-        private _timeInterval = 10;
-        private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
-        private _timeSinceLastMarker = time - _lastMarkerTime;
+        //private _timeInterval = 10;
+        //private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
+        //private _timeSinceLastMarker = time - _lastMarkerTime;
 
         //if (_timeSinceLastMarker > _timeInterval) then {
             [_vehicle, _targetPosition] spawn {
                 params ["_vehicle", "_targetPosition"];
-                _vehicle setVariable ["ArtySourceMarkersTime", time, true];
+                //_vehicle setVariable ["ArtySourceMarkersTime", time, true];
                 private _artySourcePos = getPosASL _vehicle;
 
                 sleep (RC_Timer1);
                 //_markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
                 //_markerArray = [_markerName, _artySourcePos, 1];
                 //private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
+                /*
                 _markerName = random [0, 10, 20];
                 _markerArray = format ["%1%2", "_USER_DEFINED_", _markerName];
                 _artySourceMarker = createMarkerLocal [_markerArray, _artySourcePos, 1];
@@ -334,6 +334,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 };
 
                 _artySourceMarker setMarkerColor "ColorOrange";
+                */
 
                 //[_markerName] remoteExec ["deleteMarkerLocal", east];
                 //[_markerName] remoteExec ["deleteMarkerLocal", resistance];
@@ -367,16 +368,17 @@ addMissionEventHandler ["ArtilleryShellFired", {
         //for testing
         ["opfor rad(P) detected shot"] remoteExec ["hint", west];
 
-        private _timeInterval = 10;
-        private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
-        private _timeSinceLastMarker = time - _lastMarkerTime;
+        //private _timeInterval = 10;
+        //private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
+        //private _timeSinceLastMarker = time - _lastMarkerTime;
 
         //if (_timeSinceLastMarker > _timeInterval) then {
             [_vehicle, _targetPosition] spawn {
                 params ["_vehicle", "_targetPosition"];
-                _vehicle setVariable ["ArtySourceMarkersTime", time, true];
+                //_vehicle setVariable ["ArtySourceMarkersTime", time, true];
                 private _artySourcePos = getPosASL _vehicle;
 
+                /*
                 _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
                 _markerArray = [_markerName, _artySourcePos, 1];
 
@@ -400,6 +402,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                 [_markerName] remoteExec ["deleteMarkerLocal", west];
                 [_markerName] remoteExec ["deleteMarkerLocal", resistance];
+                */
 
                 _artySourceGrid = mapGridPosition _artySourcePos;
                 _artySourceGridX = _artySourceGrid select [0, 3];
