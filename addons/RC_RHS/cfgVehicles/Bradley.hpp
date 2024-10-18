@@ -277,7 +277,6 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\dev_takeDriverControlsEH1.hpp"
 		};
 	};
 

@@ -7,7 +7,8 @@
 //checks if spawned vehicles are artillery, to add them in counter battery array
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
-    //if (!local _vehicle) exitwith {};
+    if (!local _entity) exitwith {};
+    //if (!isServer) exitwith {};
 
     //downtime timer for player CBRad map markers
     _entity setVariable ["ArtySourceMarkersTime", 0, true];
@@ -18,7 +19,6 @@ addMissionEventHandler ["EntityCreated", {
 
         _entitySide_B = (side _entity == west);
         _entitySide_O = (side _entity == east);
-        _entitySide_I = (side _entity == resistance);
 
         switch (true) do {
             case(_entitySide_B): {
@@ -49,21 +49,6 @@ addMissionEventHandler ["EntityCreated", {
                     publicVariable "RC_ArtilleryArray_O";
                     //hint for testing
                     [str RC_ArtilleryArray_O] remoteExec ["hint", west];
-                }];
-            };
-            case(_entitySide_I): {
-                RC_ArtilleryArray_I pushback _entity;
-                publicVariable "RC_ArtilleryArray_I";
-                //hint for testing
-                [str RC_ArtilleryArray_I] remoteExec ["hint", west];
-
-                _entity addEventHandler ["Killed", {
-                    params ["_unit"];
-
-                    RC_ArtilleryArray_I deleteAt (RC_ArtilleryArray_I find _unit);
-                    publicVariable "RC_ArtilleryArray_I";
-                    //hint for testing
-                    [str RC_ArtilleryArray_I] remoteExec ["hint", west];
                 }];
             };
         };

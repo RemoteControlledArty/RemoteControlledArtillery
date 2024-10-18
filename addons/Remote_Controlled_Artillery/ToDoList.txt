@@ -28,7 +28,10 @@ OPTIMIZATION:
 -remove setowner, test if it still works
 -add local check to vehicle EH? does it acticates multiple times?
 -remove AFV drivercam from being one of the default displays
+
+2.18 new bugs:
 -figure out green EL cause
+-no map marker selected bug
 
 
 TO DO - FEATURES:

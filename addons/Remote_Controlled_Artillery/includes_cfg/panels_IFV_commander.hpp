@@ -55,7 +55,7 @@ class Components: Components
 	};
 	class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 	{
-		defaultDisplay="VehicleGunnerDisplay";
+		defaultDisplay="EmptyDisplay";
 
 		class Components
 		{
