@@ -311,18 +311,21 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 //_vehicle setVariable ["ArtySourceMarkersTime", time, true];
                 private _artySourcePos = getPosASL _vehicle;
 
+                _roundedArtySourcePosX = round (_artySourcePos select 0);
+                _roundedArtySourcePosY = round (_artySourcePos select 1);
+                _markerName = ("_USER_DEFINED_" + str _roundedArtySourcePosX + str _roundedArtySourcePosY);
+                deleteMarker _markerName;   //preventing doubles and outdated timestamp
+
+                //_random = random [0, 10, 20];
+                //_markerName = format ["%1%2", "_USER_DEFINED_", _random];
+
                 sleep (RC_Timer1);
-                //_markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
-                //_markerArray = [_markerName, _artySourcePos, 1];
-                //private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
-                /*
-                _markerName = random [0, 10, 20];
-                _markerArray = format ["%1%2", "_USER_DEFINED_", _markerName];
-                _artySourceMarker = createMarkerLocal [_markerArray, _artySourcePos, 1];
+
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];    //later sidechannel 1
                 _artySourceMarker setMarkerTypeLocal "o_art";
                 _artySourceMarker setMarkerAlphaLocal 1;
                 _artySourceMarker setMarkerSizeLocal [0.6,0.6];
-
+                
                 _artySourceMarkerHour = date select 3;
                 _artySourceMarkerMinute = date select 4;
                 if (_artySourceMarkerMinute < 10) then {
@@ -334,10 +337,9 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 };
 
                 _artySourceMarker setMarkerColor "ColorOrange";
-                */
-
-                //[_markerName] remoteExec ["deleteMarkerLocal", east];
-                //[_markerName] remoteExec ["deleteMarkerLocal", resistance];
+                [_markerName] remoteExec ["deleteMarkerLocal", east];
+                [_markerName] remoteExec ["deleteMarkerLocal", resistance];
+                
 
                 _artySourceGrid = mapGridPosition _artySourcePos;
                 _artySourceGridX = _artySourceGrid select [0, 3];
@@ -378,16 +380,21 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 //_vehicle setVariable ["ArtySourceMarkersTime", time, true];
                 private _artySourcePos = getPosASL _vehicle;
 
-                /*
-                _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
-                _markerArray = [_markerName, _artySourcePos, 1];
+                _roundedArtySourcePosX = round (_artySourcePos select 0);
+                _roundedArtySourcePosY = round (_artySourcePos select 1);
+                _markerName = ("_USER_DEFINED_" + str _roundedArtySourcePosX + str _roundedArtySourcePosY);
+                deleteMarker _markerName;   //preventing doubles and outdated timestamp
+
+                //_random = random [0, 10, 20];
+                //_markerName = format ["%1%2", "_USER_DEFINED_", _random];
 
                 sleep (RC_Timer1);
-                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
+
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];    //later sidechannel 1
                 _artySourceMarker setMarkerTypeLocal "o_art";
                 _artySourceMarker setMarkerAlphaLocal 1;
                 _artySourceMarker setMarkerSizeLocal [0.6,0.6];
-
+                
                 _artySourceMarkerHour = date select 3;
                 _artySourceMarkerMinute = date select 4;
                 if (_artySourceMarkerMinute < 10) then {
@@ -399,10 +406,9 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 };
 
                 _artySourceMarker setMarkerColor "ColorOrange";
-
                 [_markerName] remoteExec ["deleteMarkerLocal", west];
                 [_markerName] remoteExec ["deleteMarkerLocal", resistance];
-                */
+
 
                 _artySourceGrid = mapGridPosition _artySourcePos;
                 _artySourceGridX = _artySourceGrid select [0, 3];

@@ -41,10 +41,10 @@ RC_UAVBlur = [] spawn
 
 		// Checks config if its meant to be a shortrange UAV, no entry means no Effect
 		if (_UAVBlurRange != 0) then {
-			_playerPos = getpos player;
+			_playerPos = getPosASL player;
 			_Distance = 1;
 			_viewBlur = 1;
-			_Distance = _playerPos distance2d (getpos (getConnectedUAV player));
+			_Distance = _playerPos distance2d (getPosASL (getConnectedUAV player));
 			if (_Distance >= _UAVBlurRange) then {_viewBlur = 1+((_Distance-_UAVBlurRange) * 0.005)^2};
 			_finalBlur = 0.1 * _viewBlur;	//_finalBlur should not be worse than 0.45 blur to be usefull
 			_blur ppEffectEnable true;

@@ -9,7 +9,7 @@
 addMissionEventHandler ["ArtilleryShellFired", {
     params ["_vehicle", "_weapon", "_ammo", "_gunner", "_instigator", "_artilleryTarget", "_targetPosition", "_shell"];
     //if (!local _vehicle) exitwith {};
-    //if (!isServer) exitwith {};
+    if (!isServer) exitwith {};
     
     //checks for opposing CBRad's
     _CBRad_Player_AliveAmount_B = ({alive _x} count RC_CBRad_Player_Array_B);
@@ -42,18 +42,21 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 params ["_vehicle"];
                 private _artySourcePos = getPosASL _vehicle;
 
+                _roundedArtySourcePosX = round (_artySourcePos select 0);
+                _roundedArtySourcePosY = round (_artySourcePos select 1);
+                _markerName = ("_USER_DEFINED_" + str _roundedArtySourcePosX + str _roundedArtySourcePosY);
+                deleteMarker _markerName;   //preventing doubles and outdated timestamp
+
+                //_random = random [0, 10, 20];
+                //_markerName = format ["%1%2", "_USER_DEFINED_", _random];
+
                 sleep (RC_Timer1);
-                //_markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
-                //_markerArray = [_markerName, _artySourcePos, 1];
-                //private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
-                _markerName = random [0, 10, 20];
-                _markerArray = format ["%1%2", "_USER_DEFINED_", _markerName];
-                _artySourceMarker = createMarkerLocal [_markerArray, _artySourcePos, 1];
+
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];    //later sidechannel 1
                 _artySourceMarker setMarkerTypeLocal "o_art";
                 _artySourceMarker setMarkerAlphaLocal 1;
-                //_artySourceMarker setMarkerSizeLocal [0.6,0.6];
+                _artySourceMarker setMarkerSizeLocal [0.6,0.6];
                 
-                /*
                 _artySourceMarkerHour = date select 3;
                 _artySourceMarkerMinute = date select 4;
                 if (_artySourceMarkerMinute < 10) then {
@@ -63,12 +66,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     _artySourceMarkerText = str _artySourceMarkerHour + ":" + str _artySourceMarkerMinute;
                     _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
                 };
-                */
 
                 _artySourceMarker setMarkerColor "ColorOrange";
 
-                //[_markerName] remoteExec ["deleteMarkerLocal", east];
-                //[_markerName] remoteExec ["deleteMarkerLocal", resistance];
+                [_markerName] remoteExec ["deleteMarkerLocal", east];
+                [_markerName] remoteExec ["deleteMarkerLocal", resistance];
             };
         //};
     };
@@ -82,17 +84,22 @@ addMissionEventHandler ["ArtilleryShellFired", {
             [_vehicle] spawn {
                 params ["_vehicle"];
                 private _artySourcePos = getPosASL _vehicle;
+                
+                _roundedArtySourcePosX = round (_artySourcePos select 0);
+                _roundedArtySourcePosY = round (_artySourcePos select 1);
+                _markerName = ("_USER_DEFINED_" + str _roundedArtySourcePosX + str _roundedArtySourcePosY);
+                deleteMarker _markerName;   //preventing doubles and outdated timestamp
 
-                _markerName = ("_USER_DEFINED ArtySourceMarker" + str _artySourcePos);
-                _markerArray = [_markerName, _artySourcePos, 1];
+                //_random = random [0, 10, 20];
+                //_markerName = format ["%1%2", "_USER_DEFINED_", _random];
 
                 sleep (RC_Timer1);
-                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 1];
+
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];    //later sidechannel 1
                 _artySourceMarker setMarkerTypeLocal "o_art";
                 _artySourceMarker setMarkerAlphaLocal 1;
-                //_artySourceMarker setMarkerSizeLocal [0.6,0.6];
+                _artySourceMarker setMarkerSizeLocal [0.6,0.6];
                 
-                /*
                 _artySourceMarkerHour = date select 3;
                 _artySourceMarkerMinute = date select 4;
                 if (_artySourceMarkerMinute < 10) then {
@@ -102,7 +109,6 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     _artySourceMarkerText = str _artySourceMarkerHour + ":" + str _artySourceMarkerMinute;
                     _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
                 };
-                */
 
                 _artySourceMarker setMarkerColor "ColorOrange";
 
@@ -112,6 +118,37 @@ addMissionEventHandler ["ArtilleryShellFired", {
         //};
     };
 }];
+
+/*
+_this addEventHandler ["Fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+
+    private _artySourcePos = getPosASL _unit; 
+    _roundedArtySourcePosX = round (_artySourcePos select 0); 
+    _roundedArtySourcePosY = round (_artySourcePos select 1); 
+    _markerName = ("_USER_DEFINED_" + str _roundedArtySourcePosX + str _roundedArtySourcePosY);
+    deleteMarker _markerName;
+    
+    private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];
+    _artySourceMarker setMarkerTypeLocal "o_art"; 
+    _artySourceMarker setMarkerAlphaLocal 1;
+    _artySourceMarker setMarkerSizeLocal [0.6,0.6];
+    
+    _artySourceMarkerHour = date select 3;
+    _artySourceMarkerMinute = date select 4;
+    if (_artySourceMarkerMinute < 10) then { 
+        _artySourceMarkerText = str _artySourceMarkerHour + ":0" + str _artySourceMarkerMinute;
+        _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
+    } else { 
+        _artySourceMarkerText = str _artySourceMarkerHour + ":" + str _artySourceMarkerMinute;
+        _artySourceMarker setMarkerTextLocal format ["%1", _artySourceMarkerText];
+    };
+    
+    _artySourceMarker setMarkerColor "ColorOrange";
+
+    [_markerName] remoteExec ["deleteMarkerLocal", east];
+}];
+*/
 
     /*
     [_vehicle, _targetPosition] spawn {
