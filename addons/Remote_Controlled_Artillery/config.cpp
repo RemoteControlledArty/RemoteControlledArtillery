@@ -576,9 +576,10 @@ class CfgFunctions
       		class preInit {preInit=1;};
       		class InitCBASettings {preInit=1;};
 			class RC_CBRad_Arrays {preInit=1};
-			class RC_CBRad_EntityCreated {preInit=1};
-			class RC_CBRad_ArtilleryShellFired {postInit=1};
-			//class RC_CBRad_ArtilleryShellFiredTest {postInit=1};
+			//class RC_CBRad_EntityCreated {preInit=1};
+			class RC_CBRad_EntityCreated_Test {preInit=1};
+			//class RC_CBRad_ArtilleryShellFired {postInit=1};
+			class RC_CBRad_ArtilleryShellFired_Test {postInit=1};
 
 			class RC_MarkerHandler {postInit=1;};
       		class RC_UI_Loop {postInit=1;};

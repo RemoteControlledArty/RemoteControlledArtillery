@@ -8,6 +8,7 @@
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
     if (!local _entity) exitwith {};
+    //if (!isServer) exitwith {};
 
     //downtime timer for player CBRad map markers
     _entity setVariable ["ArtySourceMarkersTime", 0, true];
@@ -23,23 +24,31 @@ addMissionEventHandler ["EntityCreated", {
             case(_entitySide_B): {
                 RC_ArtilleryArray_B pushback _entity;
                 publicVariable "RC_ArtilleryArray_B";
+                //hint for testing
+                [str RC_ArtilleryArray_B] remoteExec ["hint", west];
 
                 _entity addEventHandler ["Killed", {
                     params ["_unit"];
 
                     RC_ArtilleryArray_B deleteAt (RC_ArtilleryArray_B find _unit);
                     publicVariable "RC_ArtilleryArray_B";
+                    //hint for testing
+                    [str RC_ArtilleryArray_B] remoteExec ["hint", west];
                 }];
             };
             case(_entitySide_O): {
                 RC_ArtilleryArray_O pushback _entity;
                 publicVariable "RC_ArtilleryArray_O";
+                //hint for testing
+                [str RC_ArtilleryArray_O] remoteExec ["hint", west];
 
                 _entity addEventHandler ["Killed", {
                     params ["_unit"];
 
                     RC_ArtilleryArray_O deleteAt (RC_ArtilleryArray_O find _unit);
                     publicVariable "RC_ArtilleryArray_O";
+                    //hint for testing
+                    [str RC_ArtilleryArray_O] remoteExec ["hint", west];
                 }];
             };
         };

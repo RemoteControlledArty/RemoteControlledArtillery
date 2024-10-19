@@ -321,7 +321,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                 sleep (RC_DetectionTime_Test1);
 
-                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];    //later sidechannel 1
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];
                 _artySourceMarker setMarkerTypeLocal "o_art";
                 _artySourceMarker setMarkerAlphaLocal 1;
                 _artySourceMarker setMarkerSizeLocal [0.6,0.6];
@@ -390,7 +390,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                 sleep (RC_DetectionTime_Test1);
 
-                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];    //later sidechannel 1
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];
                 _artySourceMarker setMarkerTypeLocal "o_art";
                 _artySourceMarker setMarkerAlphaLocal 1;
                 _artySourceMarker setMarkerSizeLocal [0.6,0.6];
