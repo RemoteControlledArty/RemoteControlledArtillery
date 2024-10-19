@@ -3166,7 +3166,7 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 	};
 	class Single1: Single1
 	{
-		displayName="CH0"
+		displayName="CH0";
 		artilleryCharge=0.265; //300m minrange
 		minRange=293;
 		midRange=1551;
@@ -3182,7 +3182,7 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 	};
 	class Single2: Single1
 	{
-		displayName="CH1"
+		displayName="CH1";
 		artilleryCharge=0.331;
 		minRange=458;
 		midRange=2420;
@@ -3190,7 +3190,7 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 	};
 	class Single3: Single1
 	{
-		displayName="CH2"
+		displayName="CH2";
 		artilleryCharge=0.413;
 		minRange=713;
 		midRange=3767.5;
@@ -3198,7 +3198,7 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 	};
 	class Single4: Single1
 	{
-		displayName="CH3"
+		displayName="CH3";
 		artilleryCharge=0.515;
 		minRange=1108;
 		midRange=5858.5;
@@ -3206,7 +3206,7 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 	};
 	class Single5: Single1
 	{
-		displayName="CH4"
+		displayName="CH4";
 		artilleryCharge=0.642;
 		minRange=1723;
 		midRange=9104.5;
@@ -3214,7 +3214,7 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 	};
 	class Single6: Single1
 	{
-		displayName="CH5"
+		displayName="CH5";
 		artilleryCharge=0.801;
 		minRange=2682;
 		midRange=14173;
@@ -3222,7 +3222,7 @@ class RC_ShipCannon_120mm_V3: RC_ShipCannon_120mm_V2
 	};
 	class Single7: Single1
 	{
-		displayName="CH6 reticle"
+		displayName="CH6 reticle";
 		artilleryCharge=1;
 		minRange=4180;
 		midRange=22090;
@@ -3929,7 +3929,7 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 	};
 	class Single1: Single1
 	{
-		displayName="CH0"
+		displayName="CH0";
 		artilleryCharge=0.265; //300m minrange
 		minRange=293;
 		midRange=1551;
@@ -3945,7 +3945,7 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 	};
 	class Single2: Single1
 	{
-		displayName="CH1"
+		displayName="CH1";
 		artilleryCharge=0.331;
 		minRange=458;
 		midRange=2420;
@@ -3953,7 +3953,7 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 	};
 	class Single3: Single1
 	{
-		displayName="CH2"
+		displayName="CH2";
 		artilleryCharge=0.413;
 		minRange=713;
 		midRange=3767.5;
@@ -3961,7 +3961,7 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 	};
 	class Single4: Single1
 	{
-		displayName="CH3"
+		displayName="CH3";
 		artilleryCharge=0.515;
 		minRange=1108;
 		midRange=5858.5;
@@ -3969,7 +3969,7 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 	};
 	class Single5: Single1
 	{
-		displayName="CH4"
+		displayName="CH4";
 		artilleryCharge=0.642;
 		minRange=1723;
 		midRange=9104.5;
@@ -3977,7 +3977,7 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 	};
 	class Single6: Single1
 	{
-		displayName="CH5"
+		displayName="CH5";
 		artilleryCharge=0.801;
 		minRange=2682;
 		midRange=14173;
@@ -3985,7 +3985,7 @@ class RC_155mm_AMOS_V3: RC_155mm_AMOS_V2
 	};
 	class Single7: Single1
 	{
-		displayName="CH6 reticle"
+		displayName="CH6 reticle";
 		artilleryCharge=1;
 		minRange=4180;
 		midRange=22090;

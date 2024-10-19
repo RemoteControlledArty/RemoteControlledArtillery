@@ -5,10 +5,34 @@
  * -for AI returns fire on opposing indirect fire sources
 */
 
+/* testing scripts section
+[(str RC_ArtilleryArray_O)] remoteExec ["hintSilent", west];
+[(str RC_CBRad_AI_Array_O)] remoteExec ["hintSilent", west];
+[(str RC_isInRangeArray_O)] remoteExec ["hintSilent", west];
+[(str RC_fireMissionArray_O)] remoteExec ["hintSilent", west];
+
+_owner = str (owner _this);
+[_owner] remoteExec ["hint", west];
+
+addMissionEventHandler ["ArtilleryShellFired", {
+    params ["_vehicle", "_weapon", "_ammo", "_gunner", "_instigator", "_artilleryTarget", "_targetPosition", "_shell"];
+    if (!local _vehicle) exitwith {};
+
+    [getPos me, 180, "RC_UAV_AR1", west] call BIS_fnc_spawnVehicle;
+]};
+*/
+
+
 //if artillery fires checks if opposing CBRad is alive, for opposing AI assigns CB firemission, for opposing players creates map markers
 addMissionEventHandler ["ArtilleryShellFired", {
     params ["_vehicle", "_weapon", "_ammo", "_gunner", "_instigator", "_artilleryTarget", "_targetPosition", "_shell"];
+    //if (!local _vehicle) exitwith {};
     if (!isServer) exitwith {};
+
+    /* would be required for Sholef commander GMG/HMG to not trigger with every shot, hope for BI to fix the EH, or find how to check mag
+    _isPrimaryAmmo = _magazine == (currentMagazine _vehicle);  //currentMagazine usually gives mainturret mag, so usually shouldnt trigger for commander turret?
+    if (_isPrimaryAmmo) then {
+    */
 
     //checks for opposing CBRad's
     _CBRad_Player_AliveAmount_B = ({alive _x} count RC_CBRad_Player_Array_B);
@@ -18,6 +42,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     _CBRad_AliveAmount = _CBRad_Player_AliveAmount_B + _CBRad_Player_AliveAmount_O+ _CBRad_AI_AliveAmount_B + _CBRad_AI_AliveAmount_O;
     if (!(_CBRad_AliveAmount>0)) exitwith {};
+    //if (_CBRad_AliveAmount<1) exitwith {};
 
     //cleans up CBRad arrays
     RC_CBRad_AI_Array_B = RC_CBRad_AI_Array_B - [objNull];
@@ -49,9 +74,13 @@ addMissionEventHandler ["ArtilleryShellFired", {
         };
     };
 
+    //------------------------------------------------------------------
+
 
     //Blufor AI
     if (_opposedTo_B and (_CBRad_AI_AliveAmount_B>0)) then {
+        //hint for testing
+        ["blufor rad(AI) detected shot"] remoteExec ["hint", west];
 
         //removes objNull from array
         RC_ArtilleryArray_B = RC_ArtilleryArray_B - [objNull];
@@ -66,6 +95,14 @@ addMissionEventHandler ["ArtilleryShellFired", {
             params ["_vehiclePos"];
             //CBRad detection time (same for players & AI)
             sleep RC_DetectionTime_Test1;
+
+            //hint for testing
+            _testHintB = "blufor artillery:"+ str RC_ArtilleryArray_B;
+            [_testHintB] remoteExec ["hint", west];
+
+            //simulating AI preperation time before shot (AI only), half to show hints better
+            sleep (RC_PrepTime_Test1 / 2);
+
 
             //checks if opposing artillery is in range
             //RC_isInRangeArray_B = []; //good or bad idea to empty the array?
@@ -84,11 +121,19 @@ addMissionEventHandler ["ArtilleryShellFired", {
             } forEach RC_ArtilleryArray_B;
             publicVariable "RC_isInRangeArray_B";
 
+
+            //hint for testing
+            if ((count RC_isInRangeArray_B) < 1) then {["no blufor inRange"] remoteExec ["hint", west];};
+
             //true if atleast 1 opposing artillery is in range
             if ((count RC_isInRangeArray_B) > 0) then
             {
-                //simulating AI preperation time before shot (AI only)
-                sleep RC_PrepTime_Test1;
+                //hint for testing
+                _isInRangeHintB = "blufor in range:"+ str RC_isInRangeArray_B;
+                [_isInRangeHintB] remoteExec ["hint", west];
+
+                //simulating AI preperation time before shot (AI only), half to show hints better
+                sleep (RC_PrepTime_Test1 / 2);
 
                 //selects first opposing artillery in range to return fire
                 _isInRange_B = (RC_isInRangeArray_B select 0);
@@ -106,6 +151,9 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 {
                     if ((count RC_isInRangeArray_B) > 1) then
                     {
+                        //hint for testing
+                        ["first blufor firemission failed"] remoteExec ["hint", west];
+
                         //selects second opposing artillery in range to return fire
                         _isInRange_B = (RC_isInRangeArray_B select 1);
                         //changes locality of asset to server, as somehow only there doArtilleryFire works
@@ -122,6 +170,9 @@ addMissionEventHandler ["ArtilleryShellFired", {
                         {
                             if ((count RC_isInRangeArray_B) > 2) then
                             {
+                                //hint for testing
+                                ["second blufor firemission failed"] remoteExec ["hint", west];
+
                                 //selects third opposing artillery in range to return fire
                                 _isInRange_B = (RC_isInRangeArray_B select 2);
                                 //changes locality of asset to server, as somehow only there doArtilleryFire works
@@ -138,6 +189,8 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     //Opfor AI
     if (_opposedTo_O and (_CBRad_AI_AliveAmount_O>0)) then {
+        //hint for testing
+        ["opfor rad(AI) detected shot"] remoteExec ["hint", west];
 
         //removes objNull from array
         RC_ArtilleryArray_O = RC_ArtilleryArray_O - [objNull];
@@ -152,6 +205,14 @@ addMissionEventHandler ["ArtilleryShellFired", {
             params ["_vehiclePos"];
             //CBRad detection time (same for players & AI)
             sleep RC_DetectionTime_Test1;
+
+            //hint for testing
+            _testHintO = "opfor artillery:"+ str RC_ArtilleryArray_O;
+            [_testHintO] remoteExec ["hint", west];
+
+            //simulating AI preperation time before shot (AI only), half to show hints better
+            sleep (RC_PrepTime_Test1 / 2);
+
 
             //checks if opposing artillery is in range
             //RC_isInRangeArray_O = []; //good or bad idea to empty the array?
@@ -170,11 +231,19 @@ addMissionEventHandler ["ArtilleryShellFired", {
             } forEach RC_ArtilleryArray_O;
             publicVariable "RC_isInRangeArray_O";
 
+
+            //hint for testing
+            if ((count RC_isInRangeArray_O) < 1) then {["no opfor inRange"] remoteExec ["hint", west];};
+
             //true if atleast 1 opposing artillery is in range
             if ((count RC_isInRangeArray_O) > 0) then
             {
-                //simulating AI preperation time before shot (AI only)
-                sleep RC_PrepTime_Test1;
+                //hint for testing
+                _isInRangeHintO = "opfor in range:"+ str RC_isInRangeArray_O;
+                [_isInRangeHintO] remoteExec ["hint", west];
+
+                //simulating AI preperation time before shot (AI only), half to show hints better
+                sleep (RC_PrepTime_Test1 / 2);
 
                 //selects first opposing artillery in range to return fire
                 _isInRange_O = (RC_isInRangeArray_O select 0);
@@ -192,6 +261,9 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 {
                     if ((count RC_isInRangeArray_O) > 1) then
                     {
+                        //hint for testing
+                        ["first opfor firemission failed"] remoteExec ["hint", west];
+
                         //selects second opposing artillery in range to return fire
                         _isInRange_O = (RC_isInRangeArray_O select 1);
                         //changes locality of asset to server, as somehow only there doArtilleryFire works
@@ -208,6 +280,9 @@ addMissionEventHandler ["ArtilleryShellFired", {
                         {
                             if ((count RC_isInRangeArray_O) > 2) then
                             {
+                                //hint for testing
+                                ["second opfor firemission failed"] remoteExec ["hint", west];
+
                                 //selects third opposing artillery in range to return fire
                                 _isInRange_O = (RC_isInRangeArray_O select 2);
                                 //changes locality of asset to server, as somehow only there doArtilleryFire works
@@ -223,6 +298,9 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     //Blufor Player
     if (_opposedTo_B and (_CBRad_Player_AliveAmount_B>0)) then {
+        //for testing
+        ["blufor rad(P) detected shot"] remoteExec ["hint", west];
+
         //private _timeInterval = 10;
         //private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
         //private _timeSinceLastMarker = time - _lastMarkerTime;
@@ -289,6 +367,9 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     //Opfor Player
     if (_opposedTo_O and (_CBRad_Player_AliveAmount_O>0)) then {
+        //for testing
+        ["opfor rad(P) detected shot"] remoteExec ["hint", west];
+
         //private _timeInterval = 10;
         //private _lastMarkerTime = _vehiclePos getVariable "ArtySourceMarkersTime";
         //private _timeSinceLastMarker = time - _lastMarkerTime;

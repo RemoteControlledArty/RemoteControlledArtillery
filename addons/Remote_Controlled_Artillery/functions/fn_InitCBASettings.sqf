@@ -135,27 +135,27 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "RC_Timer1",
+    "RC_DetectionTime_Test1",
     "SLIDER",
-    ["timer1 setting", "timer1 setting"],
+    ["CBRad detection time", "CBRad detection time"],
     ["Remote Controlled Artillery"],
     [5, 30, 15, 0, false],
     true
 ] call CBA_fnc_addSetting;
 
 [
-    "RC_Timer2",
+    "RC_PrepTime_Test1",
     "SLIDER",
-    ["timer2 setting", "timer2 setting"],
+    ["CB AI preperation time", "CB AI preperation time"],
     ["Remote Controlled Artillery"],
     [5, 30, 10, 0, false],
     true
 ] call CBA_fnc_addSetting;
 
 [
-    "RC_Timer3",
+    "RC_ReassignTime_Test1",
     "SLIDER",
-    ["timer3 setting", "timer3 setting"],
+    ["CB reassign time", "reassign time setting"],
     ["Remote Controlled Artillery"],
     [5, 30, 15, 0, false],
     true

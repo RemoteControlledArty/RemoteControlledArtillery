@@ -2,7 +2,7 @@ class Components: Components
 {
 	class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 	{
-		defaultDisplay="MinimapDisplayComponent";
+		defaultDisplay="EmptyDisplay";
 
 		class Components
 		{

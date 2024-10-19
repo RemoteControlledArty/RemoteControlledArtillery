@@ -573,20 +573,20 @@ class CfgFunctions
 		class RC_Artillery
 		{
 			file="\Remote_Controlled_Artillery\functions";
-      		class preInit {preInit=1};
-      		class InitCBASettings {preInit=1};
-			//class RC_CBRad_Arrays {preInit=1};
-			//class RC_CBRad_EntityCreated {preInit=1};
-			//class RC_CBRad_ArtilleryShellFired {postInit=1};
-			//class RC_CBRad_ArtilleryShellFired2 {postInit=1};
+      		class preInit {preInit=1;};
+      		class InitCBASettings {preInit=1;};
+			class RC_CBRad_Arrays {preInit=1};
+			class RC_CBRad_EntityCreated {preInit=1};
+			class RC_CBRad_ArtilleryShellFired {postInit=1};
+			//class RC_CBRad_ArtilleryShellFiredTest {postInit=1};
 
-			class RC_MarkerHandler {postInit=1};
-      		class RC_UI_Loop {postInit=1};
-			class RC_EngineOff {postInit=1};
-			class RC_UAVBlur {postInit=1};
-			class RC_UAVConnectionFix {postInit=1};
-			class RC_LaserDatalink {postInit=1};
-			//class RC_LocalityFix {postInit=1};
+			class RC_MarkerHandler {postInit=1;};
+      		class RC_UI_Loop {postInit=1;};
+			class RC_EngineOff {postInit=1;};
+			class RC_UAVBlur {postInit=1;};
+			class RC_UAVConnectionFix {postInit=1;};
+			class RC_LaserDatalink {postInit=1;};
+			//class RC_LocalityFix {postInit=1;};
 			class scrollSolutions {};
 			//class RC_TakeControl {};
 		};
@@ -735,7 +735,7 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
