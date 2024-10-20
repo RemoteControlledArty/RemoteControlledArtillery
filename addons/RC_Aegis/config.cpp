@@ -7,6 +7,14 @@ class CfgPatches
 
 		units[]=
 		{
+			RC_CBRad2_AI_WD,
+			RC_CBRad2_AI_WD_O,
+			RC_CBRad2_AI_WD_I,
+
+			RC_CBRad2_Player_WD,
+			RC_CBRad2_Player_WD_O,
+			RC_CBRad2_Player_WD_I,
+
 			RC_ICV_5_WD2,
 			RC_ICV_5_WD2_O,
 			RC_ICV_5_WD2_I,
@@ -89,6 +97,7 @@ class CfgVehicles
 {
 	#include "\RC_Aegis\cfgVehicles\BTR_100.hpp"
 	#include "\RC_Aegis\cfgVehicles\BM_2T_Bumerang.hpp"
+	#include "\RC_Aegis\cfgVehicles\CBRad_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\Otokar_Arma_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\Patria_AMV_ATGM_WD.hpp"
 };

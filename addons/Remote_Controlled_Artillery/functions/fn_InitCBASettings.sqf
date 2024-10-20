@@ -135,9 +135,37 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "RC_DetectionTime_Test1",
+    "RC_DetectionTime_F1",
     "SLIDER",
     ["CBRad detection time", "CBRad detection time"],
+    ["Remote Controlled Artillery"],
+    [15, 30, 15, 0, false],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_PrepTime_F1",
+    "SLIDER",
+    ["CB AI preperation time", "CB AI preperation time"],
+    ["Remote Controlled Artillery"],
+    [10, 30, 10, 0, false],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_ReassignTime_F1",
+    "SLIDER",
+    ["CB reassign time", "reassign time setting"],
+    ["Remote Controlled Artillery"],
+    [15, 30, 15, 0, false],
+    true
+] call CBA_fnc_addSetting;
+
+//testing
+[
+    "RC_DetectionTime_Test1",
+    "SLIDER",
+    ["TEST CBRad detection time", "TEST CBRad detection time"],
     ["Remote Controlled Artillery"],
     [5, 30, 15, 0, false],
     true
@@ -146,7 +174,7 @@
 [
     "RC_PrepTime_Test1",
     "SLIDER",
-    ["CB AI preperation time", "CB AI preperation time"],
+    ["TEST CB AI preperation time", "TEST CB AI preperation time"],
     ["Remote Controlled Artillery"],
     [5, 30, 10, 0, false],
     true
@@ -155,7 +183,7 @@
 [
     "RC_ReassignTime_Test1",
     "SLIDER",
-    ["CB reassign time", "reassign time setting"],
+    ["TEST CB reassign time", "TEST reassign time setting"],
     ["Remote Controlled Artillery"],
     [5, 30, 15, 0, false],
     true

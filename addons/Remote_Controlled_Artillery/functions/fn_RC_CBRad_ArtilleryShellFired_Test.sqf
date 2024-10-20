@@ -346,8 +346,10 @@ addMissionEventHandler ["ArtilleryShellFired", {
         //for testing
         ["blufor rad(P) detected shot"] remoteExec ["hint", west];
 
-        [_vehicle, _targetPosition, _timeSinceLast, _timeInterval] spawn {
-            params ["_vehicle", "_targetPosition", "_timeSinceLast", "_timeInterval"];
+        _ETA = _vehicle getArtilleryETA [_targetPosition, currentMagazine _vehicle];
+
+        [_vehicle, _targetPosition, _timeSinceLast, _timeInterval, _ETA] spawn {
+            params ["_vehicle", "_targetPosition", "_timeSinceLast", "_timeInterval", "_ETA"];
             private _artySourcePos = getPosASL _vehicle;
 
             sleep (RC_DetectionTime_Test1);
@@ -359,15 +361,17 @@ addMissionEventHandler ["ArtilleryShellFired", {
             _targetGridX = _targetGrid select [0, 3];
             _targetGridY = _targetGrid select [3, 3];
 
+            _shownETA = round (_ETA - RC_DetectionTime_Test1);
+
             if ((_targetPosition select 0) == 0) then {
-                _message = "INCOMING" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15]] remoteExec ["playSoundUI", west];
+                _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", west];
                 [_message] remoteExec ["hintSilent", west];
                 sleep 5;
                 [""] remoteExec ["hintSilent", west];
             } else {
-                _message = "INCOMING" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15]] remoteExec ["playSoundUI", west];
+                _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", west];
                 [_message] remoteExec ["hintSilent", west];
                 sleep 5;
                 [""] remoteExec ["hintSilent", west];
@@ -408,8 +412,10 @@ addMissionEventHandler ["ArtilleryShellFired", {
         //for testing
         ["opfor rad(P) detected shot"] remoteExec ["hint", west];
 
-        [_vehicle, _targetPosition, _timeSinceLast, _timeInterval] spawn {
-            params ["_vehicle", "_targetPosition", "_timeSinceLast", "_timeInterval"];
+        _ETA = _vehicle getArtilleryETA [_targetPosition, currentMagazine _vehicle];
+
+        [_vehicle, _targetPosition, _timeSinceLast, _timeInterval, _ETA] spawn {
+            params ["_vehicle", "_targetPosition", "_timeSinceLast", "_timeInterval", "_ETA"];
             _vehicle setVariable ["ArtySourceTime", time, true];
             private _artySourcePos = getPosASL _vehicle;
 
@@ -422,15 +428,17 @@ addMissionEventHandler ["ArtilleryShellFired", {
             _targetGridX = _targetGrid select [0, 3];
             _targetGridY = _targetGrid select [3, 3];
 
+            _shownETA = round (_ETA - RC_DetectionTime_Test1);
+
             if ((_targetPosition select 0) == 0) then {
-                _message = "INCOMING" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15]] remoteExec ["playSoundUI", east];
+                _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", east];
                 [_message] remoteExec ["hintSilent", east];
                 sleep 5;
                 [""] remoteExec ["hintSilent", east];
             } else {
-                _message = "INCOMING" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.15]] remoteExec ["playSoundUI", east];
+                _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", east];
                 [_message] remoteExec ["hintSilent", east];
                 sleep 5;
                 [""] remoteExec ["hintSilent", east];

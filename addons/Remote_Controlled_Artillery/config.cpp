@@ -205,19 +205,22 @@ class CfgPatches
 			RC_MortarMATV_manned_A_I,
 			RC_MortarMATV_manned_WD_I,
 
-			RC_CBRad_AI_A,
-			RC_CBRad_AI_WD,
-			RC_CBRad_AI_A_O,
-			RC_CBRad_AI_WD_O,
-			RC_CBRad_AI_A_I,
-			RC_CBRad_AI_WD_I,
+			RC_CBRad1_AI_A,
+			RC_CBRad1_AI_WD,
+			RC_CBRad1_AI_A_O,
+			RC_CBRad1_AI_WD_O,
+			RC_CBRad1_AI_A_I,
+			RC_CBRad1_AI_WD_I,
 
-			RC_CBRad_Player_A,
+			RC_CBRad1_Player_A,
 			RC_CBRad_Player_WD,
-			RC_CBRad_Player_A_O,
-			RC_CBRad_Player_WD_O,
-			RC_CBRad_Player_A_I,
-			RC_CBRad_Player_WD_I,
+			RC_CBRad1_Player_A_O,
+			RC_CBRad1_Player_WD_O,
+			RC_CBRad1_Player_A_I,
+			RC_CBRad1_Player_WD_I,
+
+			RC_CBRad2_AI_A_O,
+			RC_CBRad2_Player_A_O,
 
 			RC_UAV_AR1,
 			RC_UAV_AR3,
@@ -575,11 +578,12 @@ class CfgFunctions
 			file="\Remote_Controlled_Artillery\functions";
       		class preInit {preInit=1;};
       		class InitCBASettings {preInit=1;};
+
 			class RC_CBRad_Arrays {preInit=1};
-			//class RC_CBRad_EntityCreated {preInit=1};
-			class RC_CBRad_EntityCreated_Test {preInit=1};
-			//class RC_CBRad_ArtilleryShellFired {postInit=1};
-			class RC_CBRad_ArtilleryShellFired_Test {postInit=1};
+			class RC_CBRad_EntityCreated {preInit=1};
+			class RC_CBRad_ArtilleryShellFired {postInit=1};
+			//class RC_CBRad_EntityCreated_Test {preInit=1};
+			//class RC_CBRad_ArtilleryShellFired_Test {postInit=1};
 
 			class RC_MarkerHandler {postInit=1;};
       		class RC_UI_Loop {postInit=1;};
@@ -671,6 +675,7 @@ class CfgFactionClasses
 
 class CfgEditorSubcategories
 {
+	class RC_Radar_subcat {displayname="'Counter Battery Radar";};
 	class RC_Howitzer_subcat {displayname="'indirect :  Howitzers";};
 	class RC_Mortar_subcat {displayname="'indirect :  Mortars";};
 	class RC_Rocket_subcat {displayname="'indirect :  Rocket Systems";};
@@ -678,8 +683,6 @@ class CfgEditorSubcategories
 
 	class RC_AntiAir_subcat {displayname="Anti-Air";};
 	class RC_ATGM_subcat {displayname="ATGMs";};
-	//class RC_Radar_AI_subcat {displayname="Counter Battery Radar - AI";};
-	//class RC_Radar_Player_subcat {displayname="Counter Battery Radar - Player";};
 	class RC_Designator_subcat {displayname="Designators";};
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
