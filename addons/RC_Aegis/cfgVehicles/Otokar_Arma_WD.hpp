@@ -40,7 +40,7 @@ class RC_ICV_2_WD2_O: RC_ICV_2_WD_O_Base
 		"\A3_Aegis\Armor_F_Aegis\Data\cage_RUkhk_CO.paa"
 	};
 };
-class RC_ICV_2_WD2_B: RC_ICV_2_WD2_O
+class RC_ICV_2_WD2: RC_ICV_2_WD2_O
 {
 	faction="RemoteControlled_B";
 	crew="B_UAV_AI";
@@ -101,7 +101,7 @@ class RC_APC_2_WD2_O: RC_APC_2_WD2_O_Base
 		"\A3_Aegis\Armor_F_Aegis\Data\cage_RUkhk_CO.paa"
 	};
 };
-class RC_APC_2_WD2_B: RC_APC_2_WD2_O
+class RC_APC_2_WD2: RC_APC_2_WD2_O
 {
 	faction="RemoteControlled_B";
 	crew="B_UAV_AI";
@@ -195,7 +195,7 @@ class RC_IFV_2_WD2_O: RC_IFV_2_WD_O_Base
 		"\A3_Aegis\Armor_F_Aegis\Data\cage_RUkhk_CO.paa"
 	};
 };
-class RC_IFV_2_WD2_B: RC_IFV_2_WD2_O
+class RC_IFV_2_WD2: RC_IFV_2_WD2_O
 {
 	faction="RemoteControlled_B";
 	crew="B_UAV_AI";
@@ -226,7 +226,7 @@ class RC_IFV_2_WD2_B: RC_IFV_2_WD2_O
 		};
 	};
 };
-class RC_IFV_2_WD2_I: RC_IFV_2_WD2_B
+class RC_IFV_2_WD2_I: RC_IFV_2_WD2
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

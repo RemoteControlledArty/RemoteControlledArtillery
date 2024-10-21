@@ -409,7 +409,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _markerName = ("_USER_DEFINED_" + str _roundedArtySourcePosX + str _roundedArtySourcePosY);
                 deleteMarker _markerName;   //preventing doubles and outdated timestamp
 
-                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos];
                 _artySourceMarker setMarkerTypeLocal "o_art";
                 _artySourceMarker setMarkerAlphaLocal 1;
                 _artySourceMarker setMarkerSizeLocal [0.6,0.6];
@@ -430,16 +430,35 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
                 //-----------------------------------------------------
 
+                /*
+                _unit setVariable ["ArtyMarkersTime",time, true]; 
+                private _artyLocation = getPos _unit; 
+                private _radius = 100; 
+
+                private _angle = random 360;     
+                private _randomSquareRoot = sqrt random 1;    
+                private _distance = _radius * _randomSquareRoot;  
+                private _markerPosition = _artyLocation getPos [_distance, _angle];
+
+                private _aproxArtyMarker = createMarker ["_USER_DEFINED AproxArtyMarker" + str _markerPosition, _markerPosition];
+
+                _aproxArtyMarker setMarkerShape "ELLIPSE"; 
+                _aproxArtyMarker setMarkerSize [_radius, _radius];
+                _aproxArtyMarker setMarkerColor "colorRed";
+                _aproxArtyMarker setMarkerBrush "SolidBorder";
+                _aproxArtyMarker setMarkerAlpha 0.1; 
+                */
+
                 _roundedArtyTargetPosX = round (_targetPosition select 0);
                 _roundedArtyTargetPosY = round (_targetPosition select 1);
                 _targetMarkerName = ("_USER_DEFINED_" + str _roundedArtyTargetPosX + str _roundedArtyTargetPosY);
                 deleteMarker _targetMarkerName;   //preventing doubles and outdated timestamp
 
-                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _targetPosition, 3];  //0!
+                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _targetPosition];
                 _artyTargetMarker setMarkerTypeLocal "mil_dot";
                 _artyTargetMarker setMarkerAlphaLocal 1;
 
-                _artyTargetMarkerText = "INCOMING: <" + str _shownETA + " sec";
+                _artyTargetMarkerText = "ETA: <" + str _shownETA + " sec";
                 _artyTargetMarker setMarkerTextLocal format ["%1", _artyTargetMarkerText];
 
                 _artyTargetMarker setMarkerColor "ColorOrange";
@@ -495,7 +514,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _markerName = ("_USER_DEFINED_" + str _roundedArtySourcePosX + str _roundedArtySourcePosY);
                 deleteMarker _markerName;   //preventing doubles and outdated timestamp
 
-                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos];
                 _artySourceMarker setMarkerTypeLocal "o_art";
                 _artySourceMarker setMarkerAlphaLocal 1;
                 _artySourceMarker setMarkerSizeLocal [0.6,0.6];
@@ -521,11 +540,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _targetMarkerName = ("_USER_DEFINED_" + str _roundedArtyTargetPosX + str _roundedArtyTargetPosY);
                 deleteMarker _targetMarkerName;   //preventing doubles and outdated timestamp
 
-                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _targetPosition, 0];
+                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _targetPosition];
                 _artyTargetMarker setMarkerTypeLocal "mil_dot";
                 _artyTargetMarker setMarkerAlphaLocal 1;
 
-                _artyTargetMarkerText = "INCOMING: <" + str _shownETA + " sec";
+                _artyTargetMarkerText = "ETA: <" + str _shownETA + " sec";
                 _artyTargetMarker setMarkerTextLocal format ["%1", _artyTargetMarkerText];
 
                 _artyTargetMarker setMarkerColor "ColorOrange";
@@ -581,7 +600,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _markerName = ("_USER_DEFINED_" + str _roundedArtySourcePosX + str _roundedArtySourcePosY);
                 deleteMarker _markerName;   //preventing doubles and outdated timestamp
 
-                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos, 0];
+                private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos];
                 _artySourceMarker setMarkerTypeLocal "o_art";
                 _artySourceMarker setMarkerAlphaLocal 1;
                 _artySourceMarker setMarkerSizeLocal [0.6,0.6];
@@ -607,11 +626,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _targetMarkerName = ("_USER_DEFINED_" + str _roundedArtyTargetPosX + str _roundedArtyTargetPosY);
                 deleteMarker _targetMarkerName;   //preventing doubles and outdated timestamp
 
-                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _targetPosition, 0];
+                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _targetPosition];
                 _artyTargetMarker setMarkerTypeLocal "mil_dot";
                 _artyTargetMarker setMarkerAlphaLocal 1;
 
-                _artyTargetMarkerText = "INCOMING: <" + str _shownETA + " sec";
+                _artyTargetMarkerText = "ETA: <" + str _shownETA + " sec";
                 _artyTargetMarker setMarkerTextLocal format ["%1", _artyTargetMarkerText];
 
                 _artyTargetMarker setMarkerColor "ColorOrange";

@@ -15,6 +15,14 @@ class CfgPatches
 			RC_CBRad2_Player_WD_O,
 			RC_CBRad2_Player_WD_I,
 
+			RC_ICV_2_WD2,
+			RC_ICV_2_WD2_O,
+			RC_ICV_2_WD2_I,
+
+			RC_IFV_2_WD2,
+			RC_IFV_2_WD2_O,
+			RC_IFV_2_WD2_I,
+
 			RC_ICV_5_WD2,
 			RC_ICV_5_WD2_O,
 			RC_ICV_5_WD2_I,
