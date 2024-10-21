@@ -406,6 +406,20 @@ addMissionEventHandler ["ArtilleryShellFired", {
             [_targetMarkerName] remoteExec ["deleteMarkerLocal", east];
             [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
             [_targetMarkerName] remoteExec ["deleteMarkerLocal", civilian];
+
+            private _targetMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition);
+            deleteMarker _targetMarkerName2;
+            
+            private _artyTargetMarker2 = createMarkerLocal [_targetMarkerName2, _markerPosition];
+            _artyTargetMarker2 setMarkerShapeLocal "ELLIPSE"; 
+            _artyTargetMarker2 setMarkerSizeLocal [100, 100];
+            _artyTargetMarker2 setMarkerColorLocal "colorOrange";
+            _artyTargetMarker2 setMarkerBrushLocal "SolidBorder";
+
+            _artyTargetMarker2 setMarkerAlpha 0.3;
+            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", east];
+            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", resistance];
+            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
             
 
             /*
@@ -437,7 +451,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 [""] remoteExec ["hintSilent", west];
             } else {
                 _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 5, 1, 300];
+                playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 5, 1, 1000];
                 //try if its louder at mid distance with 300m setting
                 [_message] remoteExec ["hintSilent", west];
                 sleep 5;
@@ -476,8 +490,10 @@ addMissionEventHandler ["ArtilleryShellFired", {
             if ((_shownETA - 5) > 0) then {
                 sleep _shownETA - 5;
                 [_targetMarkerName] remoteExec ["deleteMarker", west];
+                [_targetMarkerName2] remoteExec ["deleteMarker", west];
             } else {
                 [_targetMarkerName] remoteExec ["deleteMarker", west];
+                [_targetMarkerName2] remoteExec ["deleteMarker", west];
             };
         };
     };
