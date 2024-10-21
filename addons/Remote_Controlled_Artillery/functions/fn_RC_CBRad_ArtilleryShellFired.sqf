@@ -387,6 +387,48 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
             sleep (RC_DetectionTime_F1);
 
+            
+            private _radius = 15;
+            private _angle = random 360;
+            private _randomSquareRoot = sqrt random 1;
+            private _distance = _radius * _randomSquareRoot;
+            private _markerPosition = _targetPosition getPos [_distance, _angle];
+            private _targetMarkerName = ("_USER_DEFINED AproxArtyMarker" + str _markerPosition);
+            deleteMarker _targetMarkerName;
+            
+            private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _markerPosition];
+            _artyTargetMarker setMarkerShapeLocal "ELLIPSE"; 
+            _artyTargetMarker setMarkerSizeLocal [_radius, _radius];
+            _artyTargetMarker setMarkerColorLocal "colorRed";
+            _artyTargetMarker setMarkerBrushLocal "SolidBorder";
+
+            _artyTargetMarker setMarkerAlpha 0.5;
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", east];
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", civilian];
+            
+
+            /*
+            _roundedArtyTargetPosX = round (_targetPosition select 0);
+            _roundedArtyTargetPosY = round (_targetPosition select 1);
+            _targetMarkerName = ("_USER_DEFINED_" + str _roundedArtyTargetPosX + str _roundedArtyTargetPosY);
+            deleteMarker _targetMarkerName;   //preventing doubles and outdated timestamp
+
+            private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _targetPosition];
+            _artyTargetMarker setMarkerTypeLocal "mil_dot";
+            _artyTargetMarker setMarkerAlphaLocal 1;
+
+            _artyTargetMarkerText = "ETA: <" + str _shownETA + " sec";
+            _artyTargetMarker setMarkerTextLocal format ["%1", _artyTargetMarkerText];
+
+            _artyTargetMarker setMarkerColor "ColorOrange";
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", east];
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
+            */
+
+            //playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", _targetPosition, 0.15, 1, 100];
+            //playSound3D [filename, soundSource, isInside, soundPosition, volume, soundPitch, distance, offset, local]
+
             if ((_targetPosition select 0) == 0) then {
                 _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
                 [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", west];
@@ -395,7 +437,8 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 [""] remoteExec ["hintSilent", west];
             } else {
                 _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", west];
+                playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 5, 1, 300];
+                //try if its louder at mid distance with 300m setting
                 [_message] remoteExec ["hintSilent", west];
                 sleep 5;
                 [""] remoteExec ["hintSilent", west];
@@ -427,46 +470,14 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _artySourceMarker setMarkerColor "ColorOrange";
                 [_markerName] remoteExec ["deleteMarkerLocal", east];
                 [_markerName] remoteExec ["deleteMarkerLocal", resistance];
+                [_markerName] remoteExec ["deleteMarkerLocal", civilian];
+            };
 
-                //-----------------------------------------------------
-
-                /*
-                _unit setVariable ["ArtyMarkersTime",time, true]; 
-                private _artyLocation = getPos _unit; 
-                private _radius = 100; 
-
-                private _angle = random 360;     
-                private _randomSquareRoot = sqrt random 1;    
-                private _distance = _radius * _randomSquareRoot;  
-                private _markerPosition = _artyLocation getPos [_distance, _angle];
-
-                private _aproxArtyMarker = createMarker ["_USER_DEFINED AproxArtyMarker" + str _markerPosition, _markerPosition];
-
-                _aproxArtyMarker setMarkerShape "ELLIPSE"; 
-                _aproxArtyMarker setMarkerSize [_radius, _radius];
-                _aproxArtyMarker setMarkerColor "colorRed";
-                _aproxArtyMarker setMarkerBrush "SolidBorder";
-                _aproxArtyMarker setMarkerAlpha 0.1; 
-                */
-
-                _roundedArtyTargetPosX = round (_targetPosition select 0);
-                _roundedArtyTargetPosY = round (_targetPosition select 1);
-                _targetMarkerName = ("_USER_DEFINED_" + str _roundedArtyTargetPosX + str _roundedArtyTargetPosY);
-                deleteMarker _targetMarkerName;   //preventing doubles and outdated timestamp
-
-                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _targetPosition];
-                _artyTargetMarker setMarkerTypeLocal "mil_dot";
-                _artyTargetMarker setMarkerAlphaLocal 1;
-
-                _artyTargetMarkerText = "ETA: <" + str _shownETA + " sec";
-                _artyTargetMarker setMarkerTextLocal format ["%1", _artyTargetMarkerText];
-
-                _artyTargetMarker setMarkerColor "ColorOrange";
-                [_targetMarkerName] remoteExec ["deleteMarkerLocal", east];
-                [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
-
-                sleep _shownETA + 1;
-                deleteMarker _targetMarkerName;
+            if ((_shownETA - 5) > 0) then {
+                sleep _shownETA - 5;
+                [_targetMarkerName] remoteExec ["deleteMarker", west];
+            } else {
+                [_targetMarkerName] remoteExec ["deleteMarker", west];
             };
         };
     };
