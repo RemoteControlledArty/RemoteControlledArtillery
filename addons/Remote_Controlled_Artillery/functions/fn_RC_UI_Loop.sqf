@@ -356,6 +356,17 @@ RC_Artillery_UI = [] spawn {
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [parseNumber str _shownDifference, 4, 0] call CBA_fnc_formatNumber];
 				*/
 
+				_ctrlDistance ctrlSetText Format ["DIST: %1", round _targetDistance];
+				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
+					_ctrlTarget ctrlSetText "T: Datalink";
+				} else {
+					_ctrlTarget ctrlSetText Format ["T: %1", round (RC_Current_Target select 0)];
+				};
+
+				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", round _targetAzimuth];
+				_ctrlDifference ctrlSetText Format ["DIF: %1", round _shownDifference];
+
+				/*
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
 					_ctrlTarget ctrlSetText "T: Datalink";
@@ -365,6 +376,7 @@ RC_Artillery_UI = [] spawn {
 
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
+				*/
 
 
 				/* Calculate angles */
@@ -465,6 +477,7 @@ RC_Artillery_UI = [] spawn {
 			//greys out not-advised trajectory for depending on round
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\advised_trajectory.sqf"
 
+			/*
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 0] call CBA_fnc_formatNumber];
@@ -472,6 +485,14 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowSol ctrlSetText Format ["low EL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
 			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
+			*/
+			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
+			_ctrlAzimuth ctrlSetText Format ["AZ: %1", round _realAzimuth];
+			_ctrlElevation ctrlSetText Format ["EL: %1", round _realElevation];
+			_ctrlHighSol ctrlSetText Format ["high EL: %1", round _highAngleSol];
+			_ctrlLowSol ctrlSetText Format ["low EL: %1", round _lowAngleSol];
+			_ctrlHighETA ctrlSetText Format ["ETA: %1", round _travelTimeHigh];
+			_ctrlLowETA ctrlSetText Format ["ETA: %1", round _travelTimeLow];
 			/*
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [parseNumber str _realAzimuth, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlElevation ctrlSetText Format ["EL: %1", [parseNumber str _realElevation, 4, 0] call CBA_fnc_formatNumber];
