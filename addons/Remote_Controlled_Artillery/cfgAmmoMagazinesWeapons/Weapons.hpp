@@ -704,6 +704,7 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 
 	class manual: manual
 	{
+		displayName="12.7mm HMG";
 		dispersion=0.001;
 	};
 
