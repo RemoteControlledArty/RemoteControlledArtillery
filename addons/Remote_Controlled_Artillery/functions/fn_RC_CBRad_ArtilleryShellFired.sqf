@@ -22,12 +22,12 @@ addMissionEventHandler ["ArtilleryShellFired", {
     //cleans up CBRad arrays
     RC_CBRad_AI_Array_B = RC_CBRad_AI_Array_B - [objNull];
     RC_CBRad_AI_Array_O = RC_CBRad_AI_Array_O - [objNull];
-    publicVariable "RC_CBRad_AI_Array_B";
-    publicVariable "RC_CBRad_AI_Array_O";
+    //publicVariable "RC_CBRad_AI_Array_B";
+    //publicVariable "RC_CBRad_AI_Array_O";
     RC_CBRad_Player_Array_B = RC_CBRad_Player_Array_B - [objNull];
     RC_CBRad_Player_Array_O = RC_CBRad_Player_Array_O - [objNull];
-    publicVariable "RC_CBRad_Player_Array_B";
-    publicVariable "RC_CBRad_Player_Array_O";
+    //publicVariable "RC_CBRad_Player_Array_B";
+    //publicVariable "RC_CBRad_Player_Array_O";
     
     //checks side of the vehicle
     _vehicleSide_B = (side _vehicle == west);
@@ -41,11 +41,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
     switch (true) do {
         case(_vehicleSide_B): {
             RC_fireMissionArray_B deleteAt (RC_fireMissionArray_B find _vehicle);
-            publicVariable "RC_fireMissionArray_B";
+            //publicVariable "RC_fireMissionArray_B";
         };
         case(_vehicleSide_O): {
             RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _vehicle);
-            publicVariable "RC_fireMissionArray_O";
+            //publicVariable "RC_fireMissionArray_O";
         };
     };
 
@@ -62,14 +62,18 @@ addMissionEventHandler ["ArtilleryShellFired", {
             //removes objNull from array
             RC_ArtilleryArray_B = RC_ArtilleryArray_B - [objNull];
             RC_isInRangeArray_B = RC_isInRangeArray_B - [objNull];
-            publicVariable "RC_ArtilleryArray_B";
-            publicVariable "RC_isInRangeArray_B";
+            //publicVariable "RC_ArtilleryArray_B";
+            //publicVariable "RC_isInRangeArray_B";
 
             //shot source position
             _vehiclePos = getPos _vehicle;
-            [_vehiclePos] spawn
+            private _angle = random 360;
+            private _distance = 15 * (sqrt random 1);   //first value is radius
+            private _targetPos = _vehiclePos getPos [_distance, _angle];
+
+            [_targetPos] spawn
             {
-                params ["_vehiclePos"];
+                params ["_targetPos"];
                 //CBRad detection time (same for players & AI)
                 sleep RC_DetectionTime_F1;
 
@@ -80,7 +84,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     _isNull = isNull _x;
                     if !(_isNull) then
                     {
-                        _isInRange = _vehiclePos inRangeOfArtillery [[_x], (currentMagazine _x)];
+                        _isInRange = _targetPos inRangeOfArtillery [[_x], (currentMagazine _x)];
                         _isAlive = alive _x;
                         if (_isInRange && _isAlive) then {
                             RC_isInRangeArray_B pushback _x;
@@ -88,7 +92,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     };
                     sleep 0.1;
                 } forEach RC_ArtilleryArray_B;
-                publicVariable "RC_isInRangeArray_B";
+                //publicVariable "RC_isInRangeArray_B";
 
                 //true if atleast 1 opposing artillery is in range
                 if ((count RC_isInRangeArray_B) > 0) then
@@ -100,11 +104,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     _isInRange_B = (RC_isInRangeArray_B select 0);
                     //changes locality of asset to server, as somehow only there doArtilleryFire works
                     _isInRange_B_Owner = owner _isInRange_B;
-                    [_isInRange_B, [_vehiclePos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
+                    [_isInRange_B, [_targetPos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
                     
                     //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                     RC_fireMissionArray_B pushback _isInRange_B;
-                    publicVariable "RC_fireMissionArray_B";
+                    //publicVariable "RC_fireMissionArray_B";
                     sleep RC_ReassignTime_F1;
                     _fireMissionNotCompleted = (({_x == _isInRange_B} count RC_fireMissionArray_B) > 0);
 
@@ -116,11 +120,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
                             _isInRange_B = (RC_isInRangeArray_B select 1);
                             //changes locality of asset to server, as somehow only there doArtilleryFire works
                             _isInRange_B_Owner = owner _isInRange_B;
-                            [_isInRange_B, [_vehiclePos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
+                            [_isInRange_B, [_targetPos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
                             
                             //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                             RC_fireMissionArray_B pushback _isInRange_B;
-                            publicVariable "RC_fireMissionArray_B";
+                            //publicVariable "RC_fireMissionArray_B";
                             sleep RC_ReassignTime_F1;
                             _fireMissionNotCompleted = (({_x == _isInRange_B} count RC_fireMissionArray_B) > 0);
 
@@ -132,11 +136,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
                                     _isInRange_B = (RC_isInRangeArray_B select 2);
                                     //changes locality of asset to server, as somehow only there doArtilleryFire works
                                     _isInRange_B_Owner = owner _isInRange_B;
-                                    [_isInRange_B, [_vehiclePos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
+                                    [_isInRange_B, [_targetPos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
                                     
                                     //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                                     RC_fireMissionArray_B pushback _isInRange_B;
-                                    publicVariable "RC_fireMissionArray_B";
+                                    //publicVariable "RC_fireMissionArray_B";
                                     sleep RC_ReassignTime_F1;
                                     _fireMissionNotCompleted = (({_x == _isInRange_B} count RC_fireMissionArray_B) > 0);
 
@@ -148,7 +152,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                                             _isInRange_B = (RC_isInRangeArray_B select 3);
                                             //changes locality of asset to server, as somehow only there doArtilleryFire works
                                             _isInRange_B_Owner = owner _isInRange_B;
-                                            [_isInRange_B, [_vehiclePos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
+                                            [_isInRange_B, [_targetPos, (currentMagazine _isInRange_B), 1]] remoteExec ["doArtilleryFire", _isInRange_B_Owner];
                                         };
                                     };
                                 };
@@ -165,8 +169,8 @@ addMissionEventHandler ["ArtilleryShellFired", {
             //removes objNull from array
             RC_ArtilleryArray_O = RC_ArtilleryArray_O - [objNull];
             RC_isInRangeArray_O = RC_isInRangeArray_O - [objNull];
-            publicVariable "RC_ArtilleryArray_O";
-            publicVariable "RC_isInRangeArray_O";
+            //publicVariable "RC_ArtilleryArray_O";
+            //publicVariable "RC_isInRangeArray_O";
 
             //shot source position
             _vehiclePos = getPos _vehicle;
@@ -195,7 +199,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     };
                     sleep 0.1;
                 } forEach RC_ArtilleryArray_O;
-                publicVariable "RC_isInRangeArray_O";
+                //publicVariable "RC_isInRangeArray_O";
 
                 //true if atleast 1 opposing artillery is in range
                 if ((count RC_isInRangeArray_O) > 0) then
@@ -211,7 +215,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     
                     //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                     RC_fireMissionArray_O pushback _isInRange_O;
-                    publicVariable "RC_fireMissionArray_O";
+                    //publicVariable "RC_fireMissionArray_O";
                     sleep RC_ReassignTime_F1;
                     _fireMissionNotCompleted = (({_x == _isInRange_O} count RC_fireMissionArray_O) > 0);
 
@@ -227,7 +231,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                             
                             //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                             RC_fireMissionArray_O pushback _isInRange_O;
-                            publicVariable "RC_fireMissionArray_O";
+                            //publicVariable "RC_fireMissionArray_O";
                             sleep RC_ReassignTime_F1;
                             _fireMissionNotCompleted = (({_x == _isInRange_O} count RC_fireMissionArray_O) > 0);
 
@@ -243,7 +247,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                                     
                                     //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                                     RC_fireMissionArray_O pushback _isInRange_O;
-                                    publicVariable "RC_fireMissionArray_O";
+                                    //publicVariable "RC_fireMissionArray_O";
                                     sleep RC_ReassignTime_F1;
                                     _fireMissionNotCompleted = (({_x == _isInRange_O} count RC_fireMissionArray_O) > 0);
 
@@ -272,14 +276,18 @@ addMissionEventHandler ["ArtilleryShellFired", {
             //removes objNull from array
             RC_ArtilleryArray_I = RC_ArtilleryArray_I - [objNull];
             RC_isInRangeArray_I = RC_isInRangeArray_I - [objNull];
-            publicVariable "RC_ArtilleryArray_I";
-            publicVariable "RC_isInRangeArray_I";
+            //publicVariable "RC_ArtilleryArray_I";
+            //publicVariable "RC_isInRangeArray_I";
 
             //shot source position
             _vehiclePos = getPos _vehicle;
-            [_vehiclePos] spawn
+            private _angle = random 360;
+            private _distance = 15 * (sqrt random 1);   //first value is radius
+            private _targetPos = _vehiclePos getPos [_distance, _angle];
+
+            [_targetPos] spawn
             {
-                params ["_vehiclePos"];
+                params ["_targetPos"];
                 //CBRad detection time (same for players & AI)
                 sleep RC_DetectionTime_F1;
 
@@ -290,7 +298,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     _isNull = isNull _x;
                     if !(_isNull) then
                     {
-                        _isInRange = _vehiclePos inRangeOfArtillery [[_x], (currentMagazine _x)];
+                        _isInRange = _targetPos inRangeOfArtillery [[_x], (currentMagazine _x)];
                         _isAlive = alive _x;
                         if (_isInRange && _isAlive) then {
                             RC_isInRangeArray_I pushback _x;
@@ -298,7 +306,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     };
                     sleep 0.1;
                 } forEach RC_ArtilleryArray_I;
-                publicVariable "RC_isInRangeArray_I";
+                //publicVariable "RC_isInRangeArray_I";
 
                 //true if atleast 1 opposing artillery is in range
                 if ((count RC_isInRangeArray_I) > 0) then
@@ -310,11 +318,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
                     _isInRange_I = (RC_isInRangeArray_I select 0);
                     //changes locality of asset to server, as somehow only there doArtilleryFire works
                     _isInRange_I_Owner = owner _isInRange_I;
-                    [_isInRange_I, [_vehiclePos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+                    [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
                     
                     //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                     RC_fireMissionArray_I pushback _isInRange_I;
-                    publicVariable "RC_fireMissionArray_I";
+                    //publicVariable "RC_fireMissionArray_I";
                     sleep RC_ReassignTime_F1;
                     _fireMissionNotCompleted = (({_x == _isInRange_I} count RC_fireMissionArray_I) > 0);
 
@@ -326,11 +334,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
                             _isInRange_I = (RC_isInRangeArray_I select 1);
                             //changes locality of asset to server, as somehow only there doArtilleryFire works
                             _isInRange_I_Owner = owner _isInRange_I;
-                            [_isInRange_I, [_vehiclePos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+                            [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
                             
                             //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                             RC_fireMissionArray_I pushback _isInRange_I;
-                            publicVariable "RC_fireMissionArray_I";
+                            //publicVariable "RC_fireMissionArray_I";
                             sleep RC_ReassignTime_F1;
                             _fireMissionNotCompleted = (({_x == _isInRange_I} count RC_fireMissionArray_I) > 0);
 
@@ -342,11 +350,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
                                     _isInRange_I = (RC_isInRangeArray_I select 2);
                                     //changes locality of asset to server, as somehow only there doArtilleryFire works
                                     _isInRange_I_Owner = owner _isInRange_I;
-                                    [_isInRange_I, [_vehiclePos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+                                    [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
                                     
                                     //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                                     RC_fireMissionArray_I pushback _isInRange_I;
-                                    publicVariable "RC_fireMissionArray_I";
+                                    //publicVariable "RC_fireMissionArray_I";
                                     sleep RC_ReassignTime_F1;
                                     _fireMissionNotCompleted = (({_x == _isInRange_I} count RC_fireMissionArray_I) > 0);
 
@@ -358,7 +366,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                                             _isInRange_I = (RC_isInRangeArray_I select 3);
                                             //changes locality of asset to server, as somehow only there doArtilleryFire works
                                             _isInRange_I_Owner = owner _isInRange_I;
-                                            [_isInRange_I, [_vehiclePos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+                                            [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
                                         };
                                     };
                                 };
@@ -432,7 +440,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 [""] remoteExec ["hintSilent", west];
             } else {
                 _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 2, 1, 1000];
+                playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 2, 1, 1000];    //sadly not side specific
                 //try if its louder at mid distance with 300m setting
                 [_message] remoteExec ["hintSilent", west];
                 sleep 5;
@@ -504,8 +512,10 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
         [_vehicle, _targetPosition, _timeSinceLast, _timeInterval, _ETA] spawn {
             params ["_vehicle", "_targetPosition", "_timeSinceLast", "_timeInterval", "_ETA"];
-            _vehicle setVariable ["ArtySourceTime", time, true];
             private _artySourcePos = getPosASL _vehicle;
+
+            private _angle = random 360;
+            private _distance = 15 * (sqrt random 1);   //first value is radius
 
             _artySourceGrid = mapGridPosition _artySourcePos;
             _artySourceGridX = _artySourceGrid select [0, 3];
@@ -518,6 +528,36 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
             sleep (RC_DetectionTime_F1);
 
+            private _markerPosition = _targetPosition getPos [_distance, _angle];
+
+            //red impact area
+            private _targetMarkerName = ("_USER_DEFINED AproxArtyMarker" + str _markerPosition);
+            //deleteMarker _targetMarkerName;
+            private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _markerPosition];
+            _artyTargetMarker setMarkerShapeLocal "ELLIPSE"; 
+            _artyTargetMarker setMarkerSizeLocal [15, 15];  //radius
+            _artyTargetMarker setMarkerColorLocal "colorRed";
+            _artyTargetMarker setMarkerBrushLocal "SolidBorder";
+
+            _artyTargetMarker setMarkerAlpha 0.5;
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", west];
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", civilian];
+
+            //orange frag area
+            private _targetMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition);
+            //deleteMarker _targetMarkerName2;
+            private _artyTargetMarker2 = createMarkerLocal [_targetMarkerName2, _markerPosition];
+            _artyTargetMarker2 setMarkerShapeLocal "ELLIPSE"; 
+            _artyTargetMarker2 setMarkerSizeLocal [100, 100];  //radius
+            _artyTargetMarker2 setMarkerColorLocal "colorOrange";
+            _artyTargetMarker2 setMarkerBrushLocal "SolidBorder";
+
+            _artyTargetMarker2 setMarkerAlpha 0.3;
+            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", west];
+            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", resistance];
+            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
+
             if ((_targetPosition select 0) == 0) then {
                 _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
                 [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", east];
@@ -526,7 +566,8 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 [""] remoteExec ["hintSilent", east];
             } else {
                 _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", east];
+                playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 2, 1, 1000];    //sadly not side specific
+                //try if its louder at mid distance with 300m setting
                 [_message] remoteExec ["hintSilent", east];
                 sleep 5;
                 [""] remoteExec ["hintSilent", east];
@@ -535,9 +576,27 @@ addMissionEventHandler ["ArtilleryShellFired", {
             if (_timeSinceLast > _timeInterval) then {
                 _vehicle setVariable ["ArtySourceTime", time, true];
 
+                //private _markerPosition2 = _artySourcePos getPos [_distance, _angle];
+
+                /*
+                private _SourceMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition2);
+                //deleteMarker _targetMarkerName;
+                private _artySourceMarker2 = createMarkerLocal [_SourceMarkerName2, _markerPosition2];
+                _artySourceMarker2 setMarkerShapeLocal "ELLIPSE"; 
+                _artySourceMarker2 setMarkerSizeLocal [_radius2, _radius2];
+                _artySourceMarker2 setMarkerColorLocal "colorOrange";
+                _artySourceMarker2 setMarkerBrushLocal "SolidBorder";
+
+                _artySourceMarker2 setMarkerAlpha 0.2;
+                [_sourceMarkerName2] remoteExec ["deleteMarkerLocal", east];
+                [_sourceMarkerName2] remoteExec ["deleteMarkerLocal", resistance];
+                [_sourceMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
+                */
+
                 _roundedArtySourcePosX = round (_artySourcePos select 0);
                 _roundedArtySourcePosY = round (_artySourcePos select 1);
                 _markerName = ("_USER_DEFINED_" + str _roundedArtySourcePosX + str _roundedArtySourcePosY);
+                //_markerName = ("_USER_DEFINED_" + str _markerPosition2);
                 deleteMarker _markerName;   //preventing doubles and outdated timestamp
 
                 private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos];
@@ -558,27 +617,16 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _artySourceMarker setMarkerColor "ColorOrange";
                 [_markerName] remoteExec ["deleteMarkerLocal", west];
                 [_markerName] remoteExec ["deleteMarkerLocal", resistance];
+                [_markerName] remoteExec ["deleteMarkerLocal", civilian];
+            };
 
-                //-----------------------------------------------------
-
-                _roundedArtyTargetPosX = round (_targetPosition select 0);
-                _roundedArtyTargetPosY = round (_targetPosition select 1);
-                _targetMarkerName = ("_USER_DEFINED_" + str _roundedArtyTargetPosX + str _roundedArtyTargetPosY);
-                deleteMarker _targetMarkerName;   //preventing doubles and outdated timestamp
-
-                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _targetPosition];
-                _artyTargetMarker setMarkerTypeLocal "mil_dot";
-                _artyTargetMarker setMarkerAlphaLocal 1;
-
-                _artyTargetMarkerText = "ETA: <" + str _shownETA + " sec";
-                _artyTargetMarker setMarkerTextLocal format ["%1", _artyTargetMarkerText];
-
-                _artyTargetMarker setMarkerColor "ColorOrange";
-                [_targetMarkerName] remoteExec ["deleteMarkerLocal", west];
-                [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
-
-                sleep _shownETA + 1;
-                deleteMarker _targetMarkerName;
+            if ((_shownETA - 5) > 0) then {
+                sleep _shownETA - 5;
+                [_targetMarkerName] remoteExec ["deleteMarker", east];
+                [_targetMarkerName2] remoteExec ["deleteMarker", east];
+            } else {
+                [_targetMarkerName] remoteExec ["deleteMarker", east];
+                [_targetMarkerName2] remoteExec ["deleteMarker", east];
             };
         };
     };
@@ -590,8 +638,10 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
         [_vehicle, _targetPosition, _timeSinceLast, _timeInterval, _ETA] spawn {
             params ["_vehicle", "_targetPosition", "_timeSinceLast", "_timeInterval", "_ETA"];
-            _vehicle setVariable ["ArtySourceTime", time, true];
             private _artySourcePos = getPosASL _vehicle;
+
+            private _angle = random 360;
+            private _distance = 15 * (sqrt random 1);   //first value is radius
 
             _artySourceGrid = mapGridPosition _artySourcePos;
             _artySourceGridX = _artySourceGrid select [0, 3];
@@ -604,6 +654,36 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
             sleep (RC_DetectionTime_F1);
 
+            private _markerPosition = _targetPosition getPos [_distance, _angle];
+
+            //red impact area
+            private _targetMarkerName = ("_USER_DEFINED AproxArtyMarker" + str _markerPosition);
+            //deleteMarker _targetMarkerName;
+            private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _markerPosition];
+            _artyTargetMarker setMarkerShapeLocal "ELLIPSE"; 
+            _artyTargetMarker setMarkerSizeLocal [15, 15];  //radius
+            _artyTargetMarker setMarkerColorLocal "colorRed";
+            _artyTargetMarker setMarkerBrushLocal "SolidBorder";
+
+            _artyTargetMarker setMarkerAlpha 0.5;
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", west];
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", east];
+            [_targetMarkerName] remoteExec ["deleteMarkerLocal", civilian];
+
+            //orange frag area
+            private _targetMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition);
+            //deleteMarker _targetMarkerName2;
+            private _artyTargetMarker2 = createMarkerLocal [_targetMarkerName2, _markerPosition];
+            _artyTargetMarker2 setMarkerShapeLocal "ELLIPSE"; 
+            _artyTargetMarker2 setMarkerSizeLocal [100, 100];  //radius
+            _artyTargetMarker2 setMarkerColorLocal "colorOrange";
+            _artyTargetMarker2 setMarkerBrushLocal "SolidBorder";
+
+            _artyTargetMarker2 setMarkerAlpha 0.3;
+            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", west];
+            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", east];
+            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
+
             if ((_targetPosition select 0) == 0) then {
                 _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
                 [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", resistance];
@@ -612,7 +692,8 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 [""] remoteExec ["hintSilent", resistance];
             } else {
                 _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", resistance];
+                playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 2, 1, 1000];    //sadly not side specific
+                //try if its louder at mid distance with 300m setting
                 [_message] remoteExec ["hintSilent", resistance];
                 sleep 5;
                 [""] remoteExec ["hintSilent", resistance];
@@ -621,9 +702,27 @@ addMissionEventHandler ["ArtilleryShellFired", {
             if (_timeSinceLast > _timeInterval) then {
                 _vehicle setVariable ["ArtySourceTime", time, true];
 
+                //private _markerPosition2 = _artySourcePos getPos [_distance, _angle];
+
+                /*
+                private _SourceMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition2);
+                //deleteMarker _targetMarkerName;
+                private _artySourceMarker2 = createMarkerLocal [_SourceMarkerName2, _markerPosition2];
+                _artySourceMarker2 setMarkerShapeLocal "ELLIPSE"; 
+                _artySourceMarker2 setMarkerSizeLocal [_radius2, _radius2];
+                _artySourceMarker2 setMarkerColorLocal "colorOrange";
+                _artySourceMarker2 setMarkerBrushLocal "SolidBorder";
+
+                _artySourceMarker2 setMarkerAlpha 0.2;
+                [_sourceMarkerName2] remoteExec ["deleteMarkerLocal", east];
+                [_sourceMarkerName2] remoteExec ["deleteMarkerLocal", resistance];
+                [_sourceMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
+                */
+
                 _roundedArtySourcePosX = round (_artySourcePos select 0);
                 _roundedArtySourcePosY = round (_artySourcePos select 1);
                 _markerName = ("_USER_DEFINED_" + str _roundedArtySourcePosX + str _roundedArtySourcePosY);
+                //_markerName = ("_USER_DEFINED_" + str _markerPosition2);
                 deleteMarker _markerName;   //preventing doubles and outdated timestamp
 
                 private _artySourceMarker = createMarkerLocal [_markerName, _artySourcePos];
@@ -644,27 +743,16 @@ addMissionEventHandler ["ArtilleryShellFired", {
                 _artySourceMarker setMarkerColor "ColorOrange";
                 [_markerName] remoteExec ["deleteMarkerLocal", west];
                 [_markerName] remoteExec ["deleteMarkerLocal", east];
+                [_markerName] remoteExec ["deleteMarkerLocal", civilian];
+            };
 
-                //-----------------------------------------------------
-
-                _roundedArtyTargetPosX = round (_targetPosition select 0);
-                _roundedArtyTargetPosY = round (_targetPosition select 1);
-                _targetMarkerName = ("_USER_DEFINED_" + str _roundedArtyTargetPosX + str _roundedArtyTargetPosY);
-                deleteMarker _targetMarkerName;   //preventing doubles and outdated timestamp
-
-                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _targetPosition];
-                _artyTargetMarker setMarkerTypeLocal "mil_dot";
-                _artyTargetMarker setMarkerAlphaLocal 1;
-
-                _artyTargetMarkerText = "ETA: <" + str _shownETA + " sec";
-                _artyTargetMarker setMarkerTextLocal format ["%1", _artyTargetMarkerText];
-
-                _artyTargetMarker setMarkerColor "ColorOrange";
-                [_targetMarkerName] remoteExec ["deleteMarkerLocal", west];
-                [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
-
-                sleep _shownETA + 1;
-                deleteMarker _targetMarkerName;
+            if ((_shownETA - 5) > 0) then {
+                sleep _shownETA - 5;
+                [_targetMarkerName] remoteExec ["deleteMarker", resistance];
+                [_targetMarkerName2] remoteExec ["deleteMarker", resistance];
+            } else {
+                [_targetMarkerName] remoteExec ["deleteMarker", resistance];
+                [_targetMarkerName2] remoteExec ["deleteMarker", resistance];
             };
         };
     };

@@ -340,6 +340,22 @@ RC_Artillery_UI = [] spawn {
 				// Velocity of the Round
 				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
 
+
+				/*
+				_ctrlDistance ctrlSetText Format ["DIST: %1", [parseNumber str _targetDistance, 4, 0] call CBA_fnc_formatNumber];
+				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
+					//hintSilent format ["current target %1", RC_Current_Target];	//TESTING
+					_ctrlTarget ctrlSetText "T: Datalink";
+				} else {
+					//hintSilent format ["current target %1", RC_Current_Target];	//TESTING
+					//_ctrlTarget ctrlSetText Format ["T: %1", [parseNumber str (RC_Current_Target select 0), 2, 0] call CBA_fnc_formatNumber];
+					_ctrlTarget ctrlSetText Format ["T: %1", RC_Current_Target select 0];
+				};
+
+				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [parseNumber str _targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
+				_ctrlDifference ctrlSetText Format ["DIF: %1", [parseNumber str _shownDifference, 4, 0] call CBA_fnc_formatNumber];
+				*/
+
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
 					_ctrlTarget ctrlSetText "T: Datalink";
@@ -349,6 +365,7 @@ RC_Artillery_UI = [] spawn {
 
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
+
 
 				/* Calculate angles */
 				_preAngle = sqrt ((_roundVelocity^4) - GRAVITY * (GRAVITY * (_targetDistance^2) + 2 * _realElevationOriginal * _roundVelocity^2));
@@ -455,6 +472,14 @@ RC_Artillery_UI = [] spawn {
 			_ctrlLowSol ctrlSetText Format ["low EL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
 			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
+			/*
+			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [parseNumber str _realAzimuth, 4, 0] call CBA_fnc_formatNumber];
+			_ctrlElevation ctrlSetText Format ["EL: %1", [parseNumber str _realElevation, 4, 0] call CBA_fnc_formatNumber];
+			_ctrlHighSol ctrlSetText Format ["high EL: %1", [parseNumber str _highAngleSol, 4, 0] call CBA_fnc_formatNumber];
+			_ctrlLowSol ctrlSetText Format ["low EL: %1", [parseNumber str _lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
+			_ctrlHighETA ctrlSetText Format ["ETA: %1", [parseNumber str _travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
+			_ctrlLowETA ctrlSetText Format ["ETA: %1", [parseNumber str _travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
+			*/
 		};
 	};
 };

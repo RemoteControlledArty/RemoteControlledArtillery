@@ -213,7 +213,7 @@ class CfgPatches
 			RC_CBRad1_AI_WD_I,
 
 			RC_CBRad1_Player_A,
-			RC_CBRad_Player_WD,
+			RC_CBRad1_Player_WD,
 			RC_CBRad1_Player_A_O,
 			RC_CBRad1_Player_WD_O,
 			RC_CBRad1_Player_A_I,
@@ -579,9 +579,9 @@ class CfgFunctions
       		class preInit {preInit=1;};
       		class InitCBASettings {preInit=1;};
 
-			class RC_CBRad_Arrays {preInit=1};
-			class RC_CBRad_EntityCreated {preInit=1};
-			class RC_CBRad_ArtilleryShellFired {postInit=1};
+			//class RC_CBRad_Arrays {preInit=1};
+			//class RC_CBRad_EntityCreated {preInit=1};
+			//class RC_CBRad_ArtilleryShellFired {postInit=1};
 			//class RC_CBRad_EntityCreated_Test {preInit=1};
 			//class RC_CBRad_ArtilleryShellFired_Test {postInit=1};
 
@@ -739,7 +739,7 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
