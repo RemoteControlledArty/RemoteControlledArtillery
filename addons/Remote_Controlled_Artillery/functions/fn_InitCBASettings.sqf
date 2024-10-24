@@ -134,6 +134,7 @@
     "GPS"
 ] call CBA_fnc_addSetting;
 
+/*
 [
     "RC_DetectionTime_F1",
     "SLIDER",
@@ -188,6 +189,7 @@
     [5, 30, 15, 0, false],
     true
 ] call CBA_fnc_addSetting;
+*/
 
 //doesnt work with current UI setup
 /*
@@ -202,4 +204,3 @@
     true
 ] call CBA_fnc_addSetting;
 */
-

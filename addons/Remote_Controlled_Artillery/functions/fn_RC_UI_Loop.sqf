@@ -337,47 +337,49 @@ RC_Artillery_UI = [] spawn {
 				_targetAzimuth = [_targetAzimuth mod 360, 360 + _targetAzimuth] select (_targetAzimuth < 0);
 				_targetAzimuth = SLANT_ANGLE * _targetAzimuth;
 
-				// Velocity of the Round
+				//velocity of the round
 				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
 
-
-				/*
-				_ctrlDistance ctrlSetText Format ["DIST: %1", [parseNumber str _targetDistance, 4, 0] call CBA_fnc_formatNumber];
-				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
-					//hintSilent format ["current target %1", RC_Current_Target];	//TESTING
-					_ctrlTarget ctrlSetText "T: Datalink";
-				} else {
-					//hintSilent format ["current target %1", RC_Current_Target];	//TESTING
-					//_ctrlTarget ctrlSetText Format ["T: %1", [parseNumber str (RC_Current_Target select 0), 2, 0] call CBA_fnc_formatNumber];
-					_ctrlTarget ctrlSetText Format ["T: %1", RC_Current_Target select 0];
-				};
-
-				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [parseNumber str _targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
-				_ctrlDifference ctrlSetText Format ["DIF: %1", [parseNumber str _shownDifference, 4, 0] call CBA_fnc_formatNumber];
-				*/
-
-				_ctrlDistance ctrlSetText Format ["DIST: %1", round _targetDistance];
-				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
-					_ctrlTarget ctrlSetText "T: Datalink";
-				} else {
-					_ctrlTarget ctrlSetText Format ["T: %1", round (RC_Current_Target select 0)];
-				};
-
-				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", round _targetAzimuth];
-				_ctrlDifference ctrlSetText Format ["DIF: %1", round _shownDifference];
-
-				/*
+				//displayed target
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
 					_ctrlTarget ctrlSetText "T: Datalink";
 				} else {
 					_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
 				};
-
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
-				*/
 
+				//if cba nan error occurs use this
+				/*
+				if ((RC_Current_Target select 0) isEqualType 0) then {
+					_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
+				} else {
+					_ctrlDistance ctrlSetText Format ["DIST: ????%1"];
+				};
+
+				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
+					_ctrlTarget ctrlSetText "T: Datalink";
+				} else {
+					if ((RC_Current_Target select 0) isEqualType 0) then {
+						_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
+					} else {
+						_ctrlTarget ctrlSetText Format ["T: ??%1"];
+					};
+				};
+
+				if (_targetAzimuth isEqualType 0) then {
+					_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
+				} else {
+					_ctrlTargetAzimuth ctrlSetText Format ["T AZ: ????%1"];
+				};
+
+				if ((RC_Current_Target select 0) isEqualType 0) then {
+					_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
+				} else {
+					_ctrlDifference ctrlSetText Format ["DIF: ????%1"];
+				};
+				*/
 
 				/* Calculate angles */
 				_preAngle = sqrt ((_roundVelocity^4) - GRAVITY * (GRAVITY * (_targetDistance^2) + 2 * _realElevationOriginal * _roundVelocity^2));
@@ -477,30 +479,58 @@ RC_Artillery_UI = [] spawn {
 			//greys out not-advised trajectory for depending on round
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\advised_trajectory.sqf"
 
-			/*
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 0] call CBA_fnc_formatNumber];
+
+			/*
 			_ctrlHighSol ctrlSetText Format ["high EL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlLowSol ctrlSetText Format ["low EL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
 			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
 			*/
-			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
-			_ctrlAzimuth ctrlSetText Format ["AZ: %1", round _realAzimuth];
-			_ctrlElevation ctrlSetText Format ["EL: %1", round _realElevation];
-			_ctrlHighSol ctrlSetText Format ["high EL: %1", round _highAngleSol];
-			_ctrlLowSol ctrlSetText Format ["low EL: %1", round _lowAngleSol];
-			_ctrlHighETA ctrlSetText Format ["ETA: %1", round _travelTimeHigh];
-			_ctrlLowETA ctrlSetText Format ["ETA: %1", round _travelTimeLow];
+
 			/*
-			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [parseNumber str _realAzimuth, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlElevation ctrlSetText Format ["EL: %1", [parseNumber str _realElevation, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlHighSol ctrlSetText Format ["high EL: %1", [parseNumber str _highAngleSol, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlLowSol ctrlSetText Format ["low EL: %1", [parseNumber str _lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlHighETA ctrlSetText Format ["ETA: %1", [parseNumber str _travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
-			_ctrlLowETA ctrlSetText Format ["ETA: %1", [parseNumber str _travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
+			if (_highAngleSol isEqualType 0) then {
+				_ctrlHighSol ctrlSetText Format ["high EL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];
+				_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
+			} else {
+				_ctrlHighSol ctrlSetText Format ["high EL: 0000%1"];
+				_ctrlHighETA ctrlSetText Format ["ETA: 000%1"];
+			};
+
+			if (_lowAngleSol isEqualType 0) then {
+				_ctrlLowSol ctrlSetText Format ["low EL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
+				_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
+			} else {
+				_ctrlLowSol ctrlSetText Format ["low EL: 0000%1"];
+				_ctrlLowETA ctrlSetText Format ["ETA: 000%1"];
+			};
 			*/
+
+			if (_highAngleSol isEqualType 0) then {
+				_ctrlHighSol ctrlSetText Format ["high EL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];
+			} else {
+				_ctrlHighSol ctrlSetText Format ["high EL: 0000%1"];
+			};
+
+			if (_lowAngleSol isEqualType 0) then {
+				_ctrlLowSol ctrlSetText Format ["low EL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
+			} else {
+				_ctrlLowSol ctrlSetText Format ["low EL: 0000%1"];
+			};
+
+			if (_travelTimeHigh isEqualType 0) then {
+				_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
+			} else {
+				_ctrlHighETA ctrlSetText Format ["ETA: 000%1"];
+			};
+
+			if (_travelTimeLow isEqualType 0) then {
+				_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
+			} else {
+				_ctrlLowETA ctrlSetText Format ["ETA: 000%1"];
+			};
 		};
 	};
 };
