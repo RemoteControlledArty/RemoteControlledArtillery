@@ -6,4 +6,5 @@ class ViewOptics: ViewOptics
 		"NVG",
 		"Normal"
 	};
+	thermalMode[]={0};
 };
