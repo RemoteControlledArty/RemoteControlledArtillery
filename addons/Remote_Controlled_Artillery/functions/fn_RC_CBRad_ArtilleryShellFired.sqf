@@ -414,55 +414,57 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
             sleep (RC_DetectionTime_F1);
 
-            private _markerPosition = _targetPosition getPos [_distance, _angle];
+            if (_ETA > RC_DetectionTime_F1) then {
+                private _markerPosition = _targetPosition getPos [_distance, _angle];
 
-            //red impact area
-            private _targetMarkerName = ("_USER_DEFINED AproxArtyMarker" + str _markerPosition);
-            //deleteMarker _targetMarkerName;
-            private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _markerPosition];
-            _artyTargetMarker setMarkerShapeLocal "ELLIPSE"; 
-            _artyTargetMarker setMarkerSizeLocal [15, 15];  //radius
-            _artyTargetMarker setMarkerColorLocal "colorRed";
-            _artyTargetMarker setMarkerBrushLocal "SolidBorder";
+                //red impact area
+                private _targetMarkerName = ("_USER_DEFINED AproxArtyMarker" + str _markerPosition);
+                //deleteMarker _targetMarkerName;
+                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _markerPosition];
+                _artyTargetMarker setMarkerShapeLocal "ELLIPSE"; 
+                _artyTargetMarker setMarkerSizeLocal [15, 15];  //radius
+                _artyTargetMarker setMarkerColorLocal "colorRed";
+                _artyTargetMarker setMarkerBrushLocal "SolidBorder";
 
-            _artyTargetMarker setMarkerAlpha 0.5;
-            [_targetMarkerName] remoteExec ["deleteMarkerLocal", east];
-            [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
-            [_targetMarkerName] remoteExec ["deleteMarkerLocal", civilian];
+                _artyTargetMarker setMarkerAlpha 0.5;
+                [_targetMarkerName] remoteExec ["deleteMarkerLocal", east];
+                [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
+                [_targetMarkerName] remoteExec ["deleteMarkerLocal", civilian];
 
-            //orange frag area
-            private _targetMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition);
-            //deleteMarker _targetMarkerName2;
-            private _artyTargetMarker2 = createMarkerLocal [_targetMarkerName2, _markerPosition];
-            _artyTargetMarker2 setMarkerShapeLocal "ELLIPSE"; 
-            _artyTargetMarker2 setMarkerSizeLocal [100, 100];  //radius
-            _artyTargetMarker2 setMarkerColorLocal "colorOrange";
-            _artyTargetMarker2 setMarkerBrushLocal "SolidBorder";
+                //orange frag area
+                private _targetMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition);
+                //deleteMarker _targetMarkerName2;
+                private _artyTargetMarker2 = createMarkerLocal [_targetMarkerName2, _markerPosition];
+                _artyTargetMarker2 setMarkerShapeLocal "ELLIPSE"; 
+                _artyTargetMarker2 setMarkerSizeLocal [100, 100];  //radius
+                _artyTargetMarker2 setMarkerColorLocal "colorOrange";
+                _artyTargetMarker2 setMarkerBrushLocal "SolidBorder";
 
-            _artyTargetMarker2 setMarkerAlpha 0.3;
-            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", east];
-            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", resistance];
-            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
+                _artyTargetMarker2 setMarkerAlpha 0.3;
+                [_targetMarkerName2] remoteExec ["deleteMarkerLocal", east];
+                [_targetMarkerName2] remoteExec ["deleteMarkerLocal", resistance];
+                [_targetMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
 
-            if ((_targetPosition select 0) == 0) then {
-                _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", west];
-                [_message] remoteExec ["hintSilent", west];
-                sleep 5;
-                [""] remoteExec ["hintSilent", west];
-            } else {
-                _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                //playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 2, 1, 1000];    //sadly not side specific
-                _nearPlayers = allPlayers select {_x distance2D _targetPosition < 200};
-                _nearPlayers_B = _nearPlayers select {side _x == west};
+                if ((_targetPosition select 0) == 0) then {
+                    _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", west];
+                    [_message] remoteExec ["hintSilent", west];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", west];
+                } else {
+                    _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    //playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 2, 1, 1000];    //sadly not side specific
+                    _nearPlayers = allPlayers select {_x distance2D _targetPosition < 200};
+                    _nearPlayers_B = _nearPlayers select {side _x == west};
 
-                if ((count _nearPlayers_B) > 0) then {
-                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.2]] remoteExec ["playSoundUI", _nearPlayers_B];
+                    if ((count _nearPlayers_B) > 0) then {
+                        [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.2]] remoteExec ["playSoundUI", _nearPlayers_B];
+                    };
+
+                    [_message] remoteExec ["hintSilent", west];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", west];
                 };
-
-                [_message] remoteExec ["hintSilent", west];
-                sleep 5;
-                [""] remoteExec ["hintSilent", west];
             };
 
             if (_timeSinceLast > _timeInterval) then {
@@ -546,55 +548,57 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
             sleep (RC_DetectionTime_F1);
 
-            private _markerPosition = _targetPosition getPos [_distance, _angle];
+            if (_ETA > RC_DetectionTime_F1) then {
+                private _markerPosition = _targetPosition getPos [_distance, _angle];
 
-            //red impact area
-            private _targetMarkerName = ("_USER_DEFINED AproxArtyMarker" + str _markerPosition);
-            //deleteMarker _targetMarkerName;
-            private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _markerPosition];
-            _artyTargetMarker setMarkerShapeLocal "ELLIPSE"; 
-            _artyTargetMarker setMarkerSizeLocal [15, 15];  //radius
-            _artyTargetMarker setMarkerColorLocal "colorRed";
-            _artyTargetMarker setMarkerBrushLocal "SolidBorder";
+                //red impact area
+                private _targetMarkerName = ("_USER_DEFINED AproxArtyMarker" + str _markerPosition);
+                //deleteMarker _targetMarkerName;
+                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _markerPosition];
+                _artyTargetMarker setMarkerShapeLocal "ELLIPSE"; 
+                _artyTargetMarker setMarkerSizeLocal [15, 15];  //radius
+                _artyTargetMarker setMarkerColorLocal "colorRed";
+                _artyTargetMarker setMarkerBrushLocal "SolidBorder";
 
-            _artyTargetMarker setMarkerAlpha 0.5;
-            [_targetMarkerName] remoteExec ["deleteMarkerLocal", west];
-            [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
-            [_targetMarkerName] remoteExec ["deleteMarkerLocal", civilian];
+                _artyTargetMarker setMarkerAlpha 0.5;
+                [_targetMarkerName] remoteExec ["deleteMarkerLocal", west];
+                [_targetMarkerName] remoteExec ["deleteMarkerLocal", resistance];
+                [_targetMarkerName] remoteExec ["deleteMarkerLocal", civilian];
 
-            //orange frag area
-            private _targetMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition);
-            //deleteMarker _targetMarkerName2;
-            private _artyTargetMarker2 = createMarkerLocal [_targetMarkerName2, _markerPosition];
-            _artyTargetMarker2 setMarkerShapeLocal "ELLIPSE"; 
-            _artyTargetMarker2 setMarkerSizeLocal [100, 100];  //radius
-            _artyTargetMarker2 setMarkerColorLocal "colorOrange";
-            _artyTargetMarker2 setMarkerBrushLocal "SolidBorder";
+                //orange frag area
+                private _targetMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition);
+                //deleteMarker _targetMarkerName2;
+                private _artyTargetMarker2 = createMarkerLocal [_targetMarkerName2, _markerPosition];
+                _artyTargetMarker2 setMarkerShapeLocal "ELLIPSE"; 
+                _artyTargetMarker2 setMarkerSizeLocal [100, 100];  //radius
+                _artyTargetMarker2 setMarkerColorLocal "colorOrange";
+                _artyTargetMarker2 setMarkerBrushLocal "SolidBorder";
 
-            _artyTargetMarker2 setMarkerAlpha 0.3;
-            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", west];
-            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", resistance];
-            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
+                _artyTargetMarker2 setMarkerAlpha 0.3;
+                [_targetMarkerName2] remoteExec ["deleteMarkerLocal", west];
+                [_targetMarkerName2] remoteExec ["deleteMarkerLocal", resistance];
+                [_targetMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
 
-            if ((_targetPosition select 0) == 0) then {
-                _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", east];
-                [_message] remoteExec ["hintSilent", east];
-                sleep 5;
-                [""] remoteExec ["hintSilent", east];
-            } else {
-                _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                //playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 2, 1, 1000];    //sadly not side specific
-                _nearPlayers = allPlayers select {_x distance2D _targetPosition < 200};
-                _nearPlayers_O = _nearPlayers select {side _x == east};
+                if ((_targetPosition select 0) == 0) then {
+                    _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", east];
+                    [_message] remoteExec ["hintSilent", east];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", east];
+                } else {
+                    _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    //playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 2, 1, 1000];    //sadly not side specific
+                    _nearPlayers = allPlayers select {_x distance2D _targetPosition < 200};
+                    _nearPlayers_O = _nearPlayers select {side _x == east};
 
-                if ((count _nearPlayers_O) > 0) then {
-                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.2]] remoteExec ["playSoundUI", _nearPlayers_O];
+                    if ((count _nearPlayers_O) > 0) then {
+                        [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.2]] remoteExec ["playSoundUI", _nearPlayers_O];
+                    };
+
+                    [_message] remoteExec ["hintSilent", east];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", east];
                 };
-
-                [_message] remoteExec ["hintSilent", east];
-                sleep 5;
-                [""] remoteExec ["hintSilent", east];
             };
 
             if (_timeSinceLast > _timeInterval) then {
@@ -678,55 +682,57 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
             sleep (RC_DetectionTime_F1);
 
-            private _markerPosition = _targetPosition getPos [_distance, _angle];
+            if (_ETA > RC_DetectionTime_F1) then {
+                private _markerPosition = _targetPosition getPos [_distance, _angle];
 
-            //red impact area
-            private _targetMarkerName = ("_USER_DEFINED AproxArtyMarker" + str _markerPosition);
-            //deleteMarker _targetMarkerName;
-            private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _markerPosition];
-            _artyTargetMarker setMarkerShapeLocal "ELLIPSE"; 
-            _artyTargetMarker setMarkerSizeLocal [15, 15];  //radius
-            _artyTargetMarker setMarkerColorLocal "colorRed";
-            _artyTargetMarker setMarkerBrushLocal "SolidBorder";
+                //red impact area
+                private _targetMarkerName = ("_USER_DEFINED AproxArtyMarker" + str _markerPosition);
+                //deleteMarker _targetMarkerName;
+                private _artyTargetMarker = createMarkerLocal [_targetMarkerName, _markerPosition];
+                _artyTargetMarker setMarkerShapeLocal "ELLIPSE"; 
+                _artyTargetMarker setMarkerSizeLocal [15, 15];  //radius
+                _artyTargetMarker setMarkerColorLocal "colorRed";
+                _artyTargetMarker setMarkerBrushLocal "SolidBorder";
 
-            _artyTargetMarker setMarkerAlpha 0.5;
-            [_targetMarkerName] remoteExec ["deleteMarkerLocal", west];
-            [_targetMarkerName] remoteExec ["deleteMarkerLocal", east];
-            [_targetMarkerName] remoteExec ["deleteMarkerLocal", civilian];
+                _artyTargetMarker setMarkerAlpha 0.5;
+                [_targetMarkerName] remoteExec ["deleteMarkerLocal", west];
+                [_targetMarkerName] remoteExec ["deleteMarkerLocal", east];
+                [_targetMarkerName] remoteExec ["deleteMarkerLocal", civilian];
 
-            //orange frag area
-            private _targetMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition);
-            //deleteMarker _targetMarkerName2;
-            private _artyTargetMarker2 = createMarkerLocal [_targetMarkerName2, _markerPosition];
-            _artyTargetMarker2 setMarkerShapeLocal "ELLIPSE"; 
-            _artyTargetMarker2 setMarkerSizeLocal [100, 100];  //radius
-            _artyTargetMarker2 setMarkerColorLocal "colorOrange";
-            _artyTargetMarker2 setMarkerBrushLocal "SolidBorder";
+                //orange frag area
+                private _targetMarkerName2 = ("_USER_DEFINED AproxArtyMarker2" + str _markerPosition);
+                //deleteMarker _targetMarkerName2;
+                private _artyTargetMarker2 = createMarkerLocal [_targetMarkerName2, _markerPosition];
+                _artyTargetMarker2 setMarkerShapeLocal "ELLIPSE"; 
+                _artyTargetMarker2 setMarkerSizeLocal [100, 100];  //radius
+                _artyTargetMarker2 setMarkerColorLocal "colorOrange";
+                _artyTargetMarker2 setMarkerBrushLocal "SolidBorder";
 
-            _artyTargetMarker2 setMarkerAlpha 0.3;
-            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", west];
-            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", east];
-            [_targetMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
+                _artyTargetMarker2 setMarkerAlpha 0.3;
+                [_targetMarkerName2] remoteExec ["deleteMarkerLocal", west];
+                [_targetMarkerName2] remoteExec ["deleteMarkerLocal", east];
+                [_targetMarkerName2] remoteExec ["deleteMarkerLocal", civilian];
 
-            if ((_targetPosition select 0) == 0) then {
-                _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", resistance];
-                [_message] remoteExec ["hintSilent", resistance];
-                sleep 5;
-                [""] remoteExec ["hintSilent", resistance];
-            } else {
-                _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
-                //playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 2, 1, 1000];    //sadly not side specific
-                _nearPlayers = allPlayers select {_x distance2D _targetPosition < 200};
-                _nearPlayers_I = _nearPlayers select {side _x == resistance};
+                if ((_targetPosition select 0) == 0) then {
+                    _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: ???-???" + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.1]] remoteExec ["playSoundUI", resistance];
+                    [_message] remoteExec ["hintSilent", resistance];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", resistance];
+                } else {
+                    _message = "INCOMING" + "\n" + "ETA: <" + str _shownETA + " sec" + "\n" + "target: " + _targetGridX + "-" + _targetGridY + "\n" + "source: " + _artySourceGridX + "-" + _artySourceGridY;
+                    //playSound3D ["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", objNull, false, _targetPosition, 2, 1, 1000];    //sadly not side specific
+                    _nearPlayers = allPlayers select {_x distance2D _targetPosition < 200};
+                    _nearPlayers_I = _nearPlayers select {side _x == resistance};
 
-                if ((count _nearPlayers_I) > 0) then {
-                    [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.2]] remoteExec ["playSoundUI", _nearPlayers_I];
+                    if ((count _nearPlayers_I) > 0) then {
+                        [["\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4.wss", 0.2]] remoteExec ["playSoundUI", _nearPlayers_I];
+                    };
+
+                    [_message] remoteExec ["hintSilent", resistance];
+                    sleep 5;
+                    [""] remoteExec ["hintSilent", resistance];
                 };
-
-                [_message] remoteExec ["hintSilent", resistance];
-                sleep 5;
-                [""] remoteExec ["hintSilent", resistance];
             };
 
             if (_timeSinceLast > _timeInterval) then {
