@@ -8,7 +8,6 @@ TO DO - BUGFIXES:
 major:
 -arty marker distance becomes distance to likely 0,0,0 when renaming (fixed by manually pressing cycle markers, not caused by moving marker)
 -gun laying resetting despite autonomous being off (maybe not global/JIP?)
--artillery computer is supposedly disabled for all assets after this mods artillery is used once, not just of the mod  *add option to keep it enabled on high angle only mortars
 -223mm self seeking inaccurate/not working if first target is lost
 
 minor:
@@ -18,41 +17,26 @@ minor:
 notes:
 -report bug to ace team: turret is locked unable to adjust up/down, when scope of player is adjustable, despite being in remote control
 -report bug to ace team: crl+h cuts connection and destroys UV *only with my hotkeys
--report bug to ace team: one of the left/right vehicle panels closes when opening map
+-report bug: one of the left/right vehicle panels closes when opening map
 -find solution for ace r reload
 -soon with arma update connectionfix likely wont be needed anymore
 
 
 OPTIMIZATION:
--remove public variable where not needed
--remove setowner, test if it still works
--add local check to vehicle EH? does it acticates multiple times?
--remove AFV drivercam from being one of the default displays
-
-2.18 new bugs:
--figure out green EL cause
--no map marker selected bug
+-add local check to IFV EH? does it acticates multiple times?
 
 
 TO DO - FEATURES:
 
+-attemt to make locality fix per custom server cba EH, over EH "PlayerViewChanged"
 -remove RE autonomous off? might cause problems and in MP doesnt fullfill its function, instead add in tipps section below FCS that autonomous off = turret not resetting
+-double check autonomous remote execute structure with Eric (JIP global execute?)
+-find solution for guided round that starts seeking without needing initial target lock (maybe with "aimAboveTarget" value or "lockSeekDistanceFromParent"?)
 
 -EH getout if no player in => engineoff
 -AFV commander take over controls script
 -nerfed IFV subcategory (all 20mm)
 
--"almost aligned message" and +-1 accuracy clearer color difference (for smokes etc)
-
--double check autonomous remote execute structure with Eric (JIP global execute?)
--attemt to make locality fix per custom server cba EH
-
--idea: CounterBatteryRadar that has init EH that spawns check for artillery assets of opposing sides (how to do this performance effective), and attaches EH fired to them?
--2 variants, player (notification, rough mark, maybe Datalink target) and AI (automatic return fire),  with cba settings
-
--find solution for guided round that starts seeking without needing initial target lock (maybe with "aimAboveTarget" value or "lockSeekDistanceFromParent"?)
-
--post CB scripts, and add sound
 -medical patria/otokar/pandur
 -FIX MORTAR ACCURACY on uneven ground (AZ not changing with EL)
 -when someone "took controls" per terminal of icv gunner, it seems to lock the commander seat for people within? can be accessed from outside *needs testing
@@ -61,7 +45,7 @@ TO DO - FEATURES:
 
 checks/testing:
 
--maybe place setgroupowner for UGV gunner in uavblur loop, or testengineon EH
+-maybe place setowner for UGV gunner in uavblur loop, or testengineon EH
 -doublecheck mortar laser guided accuary in MP
 -doublecheck "min/max" range exact function on sensors
 -set ejectdeadcrew to true?
@@ -73,10 +57,9 @@ Arty:
 -fix autoseektarget friend/foe problem...
 -test out SubmunitionTargetDirection for guided, with triggerDistance=; and proximityExplosionDistance=;
 -test FCS without ace on uneven ground
--adding FCS, and Airburst rounds, to a mods 60mm quick deployable Mortar
+-adding FCS and Airburst rounds, to a mods 60mm quick deployable Mortar
 
 AFV:
--variant of Patria AMV with 30mm + ATGM
 -smoke ammo, 40mm bulletbase change to shotshellbase with smoke submunition
 -automatic switch to left missilecamera when missile is launched
 
@@ -172,6 +155,9 @@ new:
 -fixed Pandur II not having missles due to a change of magazines
 -fixed vehicle mortar hitpoints
 -disabled vehicle lights that before automatically turned on at night
+
+-fixed firing solution calculator freezing (major fix, bug was likely caused by 2.18 arma update)
+-fixed small errors that only showed up in the rpt file
 
 
 DONE - FEATURES:
