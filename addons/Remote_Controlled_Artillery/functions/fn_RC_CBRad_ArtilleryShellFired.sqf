@@ -63,7 +63,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     if (_timeSinceLast > _timeInterval) then {
         _vehicle setVariable ["ArtySourceTime", time, true];
-    
+
         //Blufor AI
         if (_opposedTo_B and (_CBRad_AI_AliveAmount_B > 0)) then {
             #include "\Remote_Controlled_Artillery\functions\CBRad_includes\AI_CBRad_Blufor.sqf"
@@ -83,7 +83,7 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     //Blufor Player
     if (_opposedTo_B and (_CBRad_Player_AliveAmount_B > 0)) then {
-        #include "\Remote_Controlled_Artillery\functions\CBRad_includes\Player_CBRad_Bluefor.sqf"
+        #include "\Remote_Controlled_Artillery\functions\CBRad_includes\Player_CBRad_Blufor.sqf"
     };
 
     //Opfor Player
