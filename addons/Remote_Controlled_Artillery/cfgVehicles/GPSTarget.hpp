@@ -13,7 +13,8 @@ class RC_GPSDatalinkTarget: All
 	//alwaysTarget=0;
 
 	//edited lasertarget values
-	model="laserTgt.p3d";
+	model="\A3\Weapons_f\laserTgt.p3d";
+	//model="laserTgt.p3d";
 	//model="";
 	reversed=0;
 	hasDriver=0;
