@@ -83,7 +83,8 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     //Blufor Player
     if (_opposedTo_B and (_CBRad_Player_AliveAmount_B > 0)) then {
-        #include "\Remote_Controlled_Artillery\functions\CBRad_includes\Player_CBRad_Blufor.sqf"
+        [_timeInterval, _lastTime, _timeSinceLast] call RC_fnc_RC_Player_CBRad_Blufor;
+        //#include "\Remote_Controlled_Artillery\functions\CBRad_includes\Player_CBRad_Blufor.sqf"
     };
 
     //Opfor Player
