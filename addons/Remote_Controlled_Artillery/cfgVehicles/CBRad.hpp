@@ -36,7 +36,7 @@ class RC_CBRad1_Player_A: RC_CBRad1_base
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_B.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_B.hpp"
 		};
 	};
 
@@ -86,7 +86,7 @@ class RC_CBRad1_Player_A_O: RC_CBRad1_Player_A
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_O.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_O.hpp"
 		};
 	};
 };
@@ -100,7 +100,7 @@ class RC_CBRad1_Player_A_I: RC_CBRad1_Player_A
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_I.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_I.hpp"
 		};
 	};
 };
@@ -125,7 +125,7 @@ class RC_CBRad1_Player_WD_O: RC_CBRad1_Player_WD
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_O.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_O.hpp"
 		};
 	};
 };
@@ -139,7 +139,7 @@ class RC_CBRad1_Player_WD_I: RC_CBRad1_Player_WD
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_I.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_I.hpp"
 		};
 	};
 };
@@ -151,7 +151,7 @@ class RC_CBRad1_AI_A: RC_CBRad1_Player_A
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_B.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_B.hpp"
 		};
 	};
 
@@ -194,7 +194,7 @@ class RC_CBRad1_AI_A_O: RC_CBRad1_AI_A
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_O.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_O.hpp"
 		};
 	};
 	faction="RemoteControlled_O";
@@ -207,7 +207,7 @@ class RC_CBRad1_AI_A_I: RC_CBRad1_AI_A
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_I.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_I.hpp"
 		};
 	};
 	faction="RemoteControlled_I";
@@ -231,7 +231,7 @@ class RC_CBRad1_AI_WD_O: RC_CBRad1_AI_WD
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_O.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_O.hpp"
 		};
 	};
 	faction="RemoteControlled_O";
@@ -244,7 +244,7 @@ class RC_CBRad1_AI_WD_I: RC_CBRad1_AI_WD
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_I.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_I.hpp"
 		};
 	};
 	faction="RemoteControlled_I";
@@ -291,7 +291,7 @@ class RC_CBRad2_Player_A_O: RC_CBRad2_base
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_Player_O.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_O.hpp"
 		};
 	};
 
@@ -351,7 +351,7 @@ class RC_CBRad2_AI_A_O: RC_CBRad2_Player_A_O
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\CBRad_script\CBRad_AI_O.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_O.hpp"
 		};
 	};
 

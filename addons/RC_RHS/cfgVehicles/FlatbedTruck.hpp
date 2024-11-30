@@ -38,7 +38,6 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 	class Reflectors {};	//removed, otherwise they are automatically on at night
 	aggregateReflectors[]={{""}};
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -184,19 +183,14 @@ class RC_FlatbedTruck_A: RC_FlatbedTruck
 	side=1;
 	forceInGarage=1;
 
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	crew="B_UAV_AI";
-	vehicleClass="Autonomous";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 
 	driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 	//driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 	memoryPointDriverOptics="driverview";
-	driverForceOptics=1;
-	forceHideDriver=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;

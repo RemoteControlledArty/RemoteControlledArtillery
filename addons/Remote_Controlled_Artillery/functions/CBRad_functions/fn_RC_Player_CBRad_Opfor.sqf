@@ -1,3 +1,5 @@
+params ["_vehicle", "_targetPosition", "_timeSinceLast", "_timeInterval"];
+
 _ETA = _vehicle getArtilleryETA [_targetPosition, currentMagazine _vehicle];
 
 [_vehicle, _targetPosition, _timeSinceLast, _timeInterval, _ETA] spawn {

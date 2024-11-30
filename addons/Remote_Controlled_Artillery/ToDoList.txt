@@ -28,6 +28,10 @@ OPTIMIZATION:
 
 TO DO - FEATURES:
 
+-asset specific firemission array that creates sleep for doartyfire (so that smoke barrage doesnt trigger multiple asset return fire)
+-fix "bad vehicle type" for 105mm truck
+
+
 -attemt to make locality fix per custom server cba EH, over EH "PlayerViewChanged"
 -remove RE autonomous off? might cause problems and in MP doesnt fullfill its function, instead add in tipps section below FCS that autonomous off = turret not resetting
 -double check autonomous remote execute structure with Eric (JIP global execute?)

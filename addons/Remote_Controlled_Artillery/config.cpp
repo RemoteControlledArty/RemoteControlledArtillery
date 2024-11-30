@@ -576,27 +576,53 @@ class CfgFunctions
 		class RC_Artillery
 		{
 			file="\Remote_Controlled_Artillery\functions";
+
       		class preInit {preInit=1;};
       		class InitCBASettings {preInit=1;};
 
 			class RC_CBRad_Arrays {preInit=1};
 			class RC_CBRad_EntityCreated {preInit=1};
 			class RC_CBRad_ArtilleryShellFired {postInit=1};
-
-			class RC_Player_CBRad_Blufor {};
 			
-			//class RC_CBRad_EntityCreated_Test {preInit=1};
-			//class RC_CBRad_ArtilleryShellFired_Test {postInit=1};
-
-			class RC_MarkerHandler {postInit=1;};
       		class RC_UI_Loop {postInit=1;};
+			class RC_MarkerHandler {postInit=1;};
+
 			class RC_EngineOff {postInit=1;};
 			class RC_UAVBlur {postInit=1;};
 			class RC_UAVConnectionFix {postInit=1;};
 			class RC_LaserDatalink {postInit=1;};
-			//class RC_LocalityFix {postInit=1;};
+			
 			class scrollSolutions {};
+
+			//class RC_LocalityFix {postInit=1;};
 			//class RC_TakeControl {};
+		};
+		/*
+		class RC_Arty_functions
+		{
+			file="\Remote_Controlled_Artillery\functions\Arty_functions";
+
+			class RC_AB_magchange {};
+			class RC_advised_trajectory {};
+			class RC_ctrl_display {};
+			class RC_eldiff_additions {};
+			class RC_MIL_coloring {};
+			class RC_notarget_display {};
+			class RC_temporary_coloring_workaround {};
+			class RC_weapon_info {};
+		};
+		*/
+		class RC_CBRad_functions
+		{
+			file="\Remote_Controlled_Artillery\functions\CBRad_functions";
+
+			class RC_AI_CBRad_Blufor {};
+			class RC_AI_CBRad_Opfor {};
+			class RC_AI_CBRad_Indfor {};
+
+			class RC_Player_CBRad_Blufor {};
+			class RC_Player_CBRad_Opfor {};
+			class RC_Player_CBRad_Indfor {};
 		};
 	};
 };

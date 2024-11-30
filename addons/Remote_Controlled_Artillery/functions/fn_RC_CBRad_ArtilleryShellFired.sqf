@@ -66,34 +66,32 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
         //Blufor AI
         if (_opposedTo_B and (_CBRad_AI_AliveAmount_B > 0)) then {
-            #include "\Remote_Controlled_Artillery\functions\CBRad_includes\AI_CBRad_Blufor.sqf"
+            [_vehicle] call RC_fnc_RC_AI_CBRad_Blufor;
         };
 
         //Opfor AI
         if (_opposedTo_O and (_CBRad_AI_AliveAmount_O > 0)) then {
-            #include "\Remote_Controlled_Artillery\functions\CBRad_includes\AI_CBRad_Opfor.sqf"
+            [_vehicle] call RC_fnc_RC_AI_CBRad_Opfor;
         };
 
         //Indfor AI
         if (_opposedTo_I and (_CBRad_AI_AliveAmount_I > 0)) then {
-            #include "\Remote_Controlled_Artillery\functions\CBRad_includes\AI_CBRad_Indfor.sqf"
+            [_vehicle] call RC_fnc_RC_AI_CBRad_Indfor;
         };
     };
 
-
     //Blufor Player
     if (_opposedTo_B and (_CBRad_Player_AliveAmount_B > 0)) then {
-        [_timeInterval, _lastTime, _timeSinceLast] call RC_fnc_RC_Player_CBRad_Blufor;
-        //#include "\Remote_Controlled_Artillery\functions\CBRad_includes\Player_CBRad_Blufor.sqf"
+        [_vehicle, _targetPosition, _timeSinceLast, _timeInterval] call RC_fnc_RC_Player_CBRad_Blufor;
     };
 
     //Opfor Player
     if (_opposedTo_O and (_CBRad_Player_AliveAmount_O > 0)) then {
-        #include "\Remote_Controlled_Artillery\functions\CBRad_includes\Player_CBRad_Opfor.sqf"
+        [_vehicle, _targetPosition, _timeSinceLast, _timeInterval] call RC_fnc_RC_Player_CBRad_Opfor;
     };
 
     //Indfor Player
     if (_opposedTo_I and (_CBRad_Player_AliveAmount_I > 0)) then {
-        #include "\Remote_Controlled_Artillery\functions\CBRad_includes\Player_CBRad_Indfor.sqf"
+        [_vehicle, _targetPosition, _timeSinceLast, _timeInterval] call RC_fnc_RC_Player_CBRad_Indfor;
     };
 }];
