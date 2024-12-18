@@ -1,5 +1,5 @@
-class O_R_APC_Wheeled_04_cannon_F;
-class RC_ICV_IFV_7_WD_Base: O_R_APC_Wheeled_04_cannon_F
+class O_R_APC_Wheeled_04_cannon_v2_F;
+class RC_2S90M_Base: O_R_APC_Wheeled_04_cannon_v2_F
 {
 	class Turrets;
 	class MainTurret;
@@ -25,8 +25,14 @@ class RC_ICV_IFV_7_WD_Base: O_R_APC_Wheeled_04_cannon_F
 	scope=0;
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+
+	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL, 5 = not compatible with script that disables vanilla artillery computer
+	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=6;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 };
-class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
+class RC_2S90M: RC_2S90M_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -35,6 +41,8 @@ class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
 	};
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp" //test
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
@@ -77,12 +85,12 @@ class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 		class reload_cannon
 		{
 			source="reload";
-			weapon="RC_autocannon_30mm_lxWS";
+			weapon="RC_105mm_AMOS_V4";
 		};
 		class muzzle_hide
 		{
 			source="reload";
-			weapon="RC_autocannon_30mm_lxWS";
+			weapon="RC_105mm_AMOS_V4";
 		};
 	};
 
@@ -90,174 +98,9 @@ class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 };
 
 
-class RC_ICV_7_WD: RC_ICV_IFV_7_WD
+class RC_2S90M_WD: RC_2S90M
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
-		};
-	};
-
-	displayName="RC BTR-100 unarmed";
-	editorSubcategory="RC_ICV_subcat";
-	scope=2;
-	scopeCurator=2;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	crew="B_UAV_AI";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP1_pos";
-	uavCameraGunnerDir="PiP1_dir";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_gunner_fixated.hpp"
-			showAllTargets="2 + 4";
-			gunnerCompartments="Compartment3";
-			commanding=2;
-			gunnerForceOptics=1;
-			forceHideGunner=1;
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			turretInfoType="";
-
-			class OpticsIn
-			{
-				class Wide: RCWSOptics
-				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
-
-					initFov=1;
-					minFov=0.125;
-					maxFov=1;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-					gunnerOpticsEffect[]={};
-				};
-			};
-
-			class ViewOptics: ViewOptics
-			{
-				visionMode[]=
-				{
-					"Normal",
-					"NVG"
-				};
-				initFov=1;
-				minFov=0.125;
-				maxFov=1;
-			};
-
-			weapons[]=
-			{
-				"TruckHorn",
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics : CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_gunner_fixated.hpp"
-					showAllTargets="2 + 4";
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-					turretInfoType="";
-					gunnerForceOptics=1;
-					commanding=3;
-
-					weapons[]=
-					{
-						"TruckHorn",
-						"SmokeLauncher"
-					};
-					magazines[]=
-					{
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
-					
-					class OpticsIn
-					{
-						class Wide: RCWSOptics
-						{
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-
-							initFov=1;
-							minFov=0.125;
-							maxFov=1;
-							visionMode[]=
-							{
-								"Normal",
-								"NVG"
-							};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							gunnerOpticsEffect[]={};
-						};
-					};
-
-					class ViewOptics: ViewOptics
-					{
-						visionMode[]=
-						{
-							"Normal",
-							"NVG"
-						};
-						initFov=1;
-						minFov=0.125;
-						maxFov=1;
-					};
-				};
-			};
-		};
-	};
-};
-class RC_ICV_7_WD_O: RC_ICV_7_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_ICV_7_WD_I: RC_ICV_7_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
-class RC_IFV_7_WD: RC_ICV_IFV_7_WD
-{
+	/*
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
@@ -266,8 +109,9 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
+	*/
 
-	displayName="BTR-100";
+	displayName="2S23M";
 	editorSubcategory="RC_IFV_APC_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -281,11 +125,46 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
+
+			class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+			{
+				defaultDisplay="SensorDisplay";
+
+				class Components
+				{
+					class SensorDisplay
+					{
+						componentType="SensorsDisplayComponent";
+						range[]={16000,8000,4000,2000};
+						resource="RscCustomInfoSensors";
+					};
+				};
+			};
+
 			showAllTargets="2 + 4";
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
+			maxElev=87;
+
+			weapons[]=
+			{
+				"RC_105mm_AMOS_V4"
+			};
+			magazines[]=
+			{
+				"RC_15Rnd_105mm_Mo_shells",
+				"RC_4Rnd_105mm_Mo_HEAB",
+				"RC_5Rnd_105mm_Mo_MultiGuided",
+				"RC_2Rnd_105mm_Mo_Cluster",
+				"RC_20Rnd_105mm_Mo_Smoke",
+				"RC_9Rnd_105mm_Mo_AT_mine",
+				"RC_9Rnd_105mm_Mo_mine",
+				"RC_6Rnd_105mm_Mo_Illum"
+			};
+
+			/*
 			weapons[]=
 			{
 				"RC_autocannon_30mm_lxWS",
@@ -294,6 +173,7 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 				"SmokeLauncher"
 			};
 			#include "\RC_Aegis\includes_vicmags\mags_BTR100_Bu_30mm_red.hpp"
+			*/
 
 			class OpticsIn
 			{
@@ -307,7 +187,7 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 					maxAngleY=100;
 
 					initFov=0.9;
-					minFov=0.02;
+					minFov=0.0125;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -315,7 +195,8 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 						"TI"
 					};
 					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
+					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
 			};
@@ -371,7 +252,7 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 		};
 	};
 };
-class RC_IFV_7_WD_O: RC_IFV_7_WD
+class RC_2S90M_WD_O: RC_2S90M_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -387,7 +268,7 @@ class RC_IFV_7_WD_O: RC_IFV_7_WD
 		};
 	};
 };
-class RC_IFV_7_WD_I: RC_IFV_7_WD
+class RC_2S90M_WD_I: RC_2S90M_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
