@@ -34,6 +34,7 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	class Reflectors {};	//removed, otherwise they are automatically on at night
 	aggregateReflectors[]={{""}};
 
+	/*
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 	weapons[]=
@@ -46,6 +47,7 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
+	*/
 
 	class DriverOpticsIn
 	{
@@ -127,6 +129,7 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 			{
 				"RC_RHS_weap_m256",
 				"RC_RHS_weap_m240_abrams_coax",
+				"rhsusf_weap_M250",
 				"rhs_weap_fcs"
 			};
 			magazines[]=
@@ -139,6 +142,8 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
+				"rhsusf_mag_L8A3_12",
+				"rhsusf_mag_L8A3_12",
 				"rhs_laserfcsmag",
 				"rhs_laserfcsmag"
 			};
@@ -221,6 +226,7 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 						"RC_RHS_mag_400rnd_127x99_T_R",
 						"RC_RHS_mag_400rnd_127x99_T_R",
 						"Laserbatteries",
+						"rhsusf_mag_L8A3_12",
 						"rhsusf_mag_L8A3_12",
 						"rhsusf_mag_duke"
 					};
