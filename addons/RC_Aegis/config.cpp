@@ -104,7 +104,7 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\RC_Aegis\cfgVehicles\2S23M.hpp"
-	//#include "\RC_Aegis\cfgVehicles\2S90M.hpp"
+	#include "\RC_Aegis\cfgVehicles\2S90M.hpp"
 	#include "\RC_Aegis\cfgVehicles\BTR_80A.hpp"
 	#include "\RC_Aegis\cfgVehicles\BTR_100.hpp"
 	#include "\RC_Aegis\cfgVehicles\BM_2T_Bumerang.hpp"

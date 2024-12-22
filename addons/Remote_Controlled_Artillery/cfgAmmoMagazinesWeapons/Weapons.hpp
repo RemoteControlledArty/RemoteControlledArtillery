@@ -838,7 +838,8 @@ class RC_cannon_125mm_advanced: cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_MP_T_Y",
 		"RC_15Rnd_125mm_MP_T_Y",
 		"RC_20Rnd_125mm_MP_T_Y",
-		"RC_3Rnd_125mm_DLG_cannon_missiles"
+		"RC_3Rnd_125mm_DLG_cannon_missiles",
+		"4Rnd_125mm_cannon_missiles"
 	};
 
 	class TopDown: player
@@ -861,6 +862,16 @@ class RC_cannon_125mm_advanced: cannon_125mm_advanced_base
 		"short",
 		"medium",
 		"far"
+	};
+};
+class RC_cannon_125mm: RC_cannon_125mm_advanced
+{
+	reloadTime=6;
+	magazineReloadTime=6;
+
+	class player: player
+	{
+		reloadTime=6;
 	};
 };
 

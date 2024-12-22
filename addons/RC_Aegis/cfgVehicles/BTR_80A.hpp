@@ -187,3 +187,56 @@ class RC_BTR80A_WD_I: RC_BTR80A_WD
 		};
 	};
 };
+
+
+class RC_BTR80A_A: RC_BTR80A_WD
+{
+	editorPreview="\A3_Aegis\EditorPreviews_F_Aegis\Data\CfgVehicles\Aegis_O_SFIA_APC_Wheeled_04_export_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body_export_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body2_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\data\btr100a_turret_sand_co.paa"
+	};
+	/*
+	textureList[]=
+	{
+		"Green",
+		0,
+		"Sand",
+		0
+	};
+	*/
+};
+class RC_BTR80A_A_O: RC_BTR80A_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_Aegis\includes_vicmags\mags_BTR80A_30mm_green.hpp"
+		};
+	};
+};
+class RC_BTR80A_A_I: RC_BTR80A_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_Aegis\includes_vicmags\mags_BTR80A_30mm_yellow.hpp"
+		};
+	};
+};

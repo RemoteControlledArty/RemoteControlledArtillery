@@ -114,8 +114,8 @@ class RC_APC_2_WD2: RC_APC_2_WD2_O
 		{
 			weapons[]=
 			{
-				"RC_autocannon_20mm_CTWS",
-				"RC_MMG_338_APC",
+				"RC_HMG_127_APC",
+				"RC_GMG_40mm",
 				"SmokeLauncher"
 			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_GMG_red.hpp"
@@ -137,8 +137,8 @@ class RC_APC_2_WD2_I: RC_APC_2_WD2_O
 		{
 			weapons[]=
 			{
-				"RC_autocannon_20mm_CTWS",
-				"RC_MMG_338_APC",
+				"RC_HMG_127_APC",
+				"RC_GMG_40mm",
 				"SmokeLauncher"
 			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_GMG_yellow.hpp"

@@ -233,10 +233,14 @@ aggregateReflectors[]={{""}};
 						};
 						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 						{
-							defaultDisplay="EmptyDisplayComponent";
+							defaultDisplay="UAVFeedDisplay";
 
 							class Components
 							{
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
 								class EmptyDisplay
 								{
 									componentType="EmptyDisplayComponent";
@@ -245,10 +249,6 @@ aggregateReflectors[]={{""}};
 								{
 									componentType="MinimapDisplayComponent";
 									resource="RscCustomInfoMiniMap";
-								};
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
 								};
 							};
 						};

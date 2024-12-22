@@ -1,4 +1,3 @@
-class O_R_APC_Wheeled_04_cannon_v2_F;
 class RC_2S90M_Base: O_R_APC_Wheeled_04_cannon_v2_F
 {
 	class Turrets;
@@ -25,12 +24,6 @@ class RC_2S90M_Base: O_R_APC_Wheeled_04_cannon_v2_F
 	scope=0;
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
-
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL, 5 = not compatible with script that disables vanilla artillery computer
-	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelLenght=6;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 };
 class RC_2S90M: RC_2S90M_Base
 {
@@ -41,8 +34,6 @@ class RC_2S90M: RC_2S90M_Base
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
 	};
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp" //test
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
@@ -70,6 +61,12 @@ class RC_2S90M: RC_2S90M_Base
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 
+	waterLeakiness=2.5;
+	canFloat=1;
+	waterAngularDampingCoef=10;
+	waterPPInVehicle=0;
+	waterResistanceCoef=0.5;
+
 	class HitPoints: HitPoints
 	{
 		class HitFuel: HitFuel
@@ -82,25 +79,29 @@ class RC_2S90M: RC_2S90M_Base
 
 	class AnimationSources: AnimationSources
 	{
-		class reload_cannon
+		class muzzle_hide_cannon
 		{
 			source="reload";
-			weapon="RC_105mm_AMOS_V4";
+			weapon="RC_cannon_125mm";
 		};
-		class muzzle_hide
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_cannon_125mm";
+		};
+		class recoil_source
 		{
 			source="reload";
-			weapon="RC_105mm_AMOS_V4";
+			weapon="RC_cannon_125mm";
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
 };
 
 
 class RC_2S90M_WD: RC_2S90M
 {
-	/*
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
@@ -109,10 +110,9 @@ class RC_2S90M_WD: RC_2S90M
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
-	*/
 
-	displayName="2S23M";
-	editorSubcategory="RC_IFV_APC_subcat";
+	displayName="2S90M";
+	editorSubcategory="RC_FSV_MBT_subcat";
 	scope=2;
 	scopeCurator=2;
 
@@ -125,55 +125,29 @@ class RC_2S90M_WD: RC_2S90M
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
-
-			class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-			{
-				defaultDisplay="SensorDisplay";
-
-				class Components
-				{
-					class SensorDisplay
-					{
-						componentType="SensorsDisplayComponent";
-						range[]={16000,8000,4000,2000};
-						resource="RscCustomInfoSensors";
-					};
-				};
-			};
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 
 			showAllTargets="2 + 4";
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
-			maxElev=87;
+			minElev=-10;
 
 			weapons[]=
 			{
-				"RC_105mm_AMOS_V4"
+				"RC_cannon_125mm",
+				"RC_MMG_93x64_coax_ext",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_15Rnd_105mm_Mo_shells",
-				"RC_4Rnd_105mm_Mo_HEAB",
-				"RC_5Rnd_105mm_Mo_MultiGuided",
-				"RC_2Rnd_105mm_Mo_Cluster",
-				"RC_20Rnd_105mm_Mo_Smoke",
-				"RC_9Rnd_105mm_Mo_AT_mine",
-				"RC_9Rnd_105mm_Mo_mine",
-				"RC_6Rnd_105mm_Mo_Illum"
+				"RC_20Rnd_125mm_APFSDS_T_R",
+				"RC_20Rnd_125mm_MP_T_R",
+				"4Rnd_125mm_cannon_missiles",
+				"RC_1000Rnd_93x64_T_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
 			};
-
-			/*
-			weapons[]=
-			{
-				"RC_autocannon_30mm_lxWS",
-				"RC_MMG_93x64_coax_ext_lxWS",
-				"missiles_Vorona_vehicle_lxWS",
-				"SmokeLauncher"
-			};
-			#include "\RC_Aegis\includes_vicmags\mags_BTR100_Bu_30mm_red.hpp"
-			*/
 
 			class OpticsIn
 			{
@@ -195,8 +169,7 @@ class RC_2S90M_WD: RC_2S90M
 						"TI"
 					};
 					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
 			};
@@ -258,13 +231,21 @@ class RC_2S90M_WD_O: RC_2S90M_WD
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_Aegis\includes_vicmags\mags_BTR100_Bu_30mm_green.hpp"
+			magazines[]=
+			{
+				"RC_20Rnd_125mm_APFSDS_G_R",
+				"RC_20Rnd_125mm_MP_G_R",
+				"4Rnd_125mm_cannon_missiles",
+				"RC_1000Rnd_93x64_G_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
 		};
 	};
 };
@@ -274,13 +255,92 @@ class RC_2S90M_WD_I: RC_2S90M_WD
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_Aegis\includes_vicmags\mags_BTR100_Bu_30mm_yellow.hpp"
+			magazines[]=
+			{
+				"RC_20Rnd_125mm_APFSDS_Y_R",
+				"RC_20Rnd_125mm_MP_Y_R",
+				"4Rnd_125mm_cannon_missiles",
+				"RC_1000Rnd_93x64_Y_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+	};
+};
+
+
+class RC_2S90M_A: RC_2S90M_WD
+{
+	editorPreview="\A3_Aegis\EditorPreviews_F_Aegis\Data\CfgVehicles\Aegis_O_SFIA_APC_Wheeled_04_cannon_v2_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body2_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\apc_wheeled_04_sprut_turret_sand_co.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\camonet_RUS_Green_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\cage_RUkhk_CO.paa"
+	};
+	/*
+	textureList[]=
+	{
+		"Green",
+		0,
+		"Sand",
+		0
+	};
+	*/
+};
+class RC_2S90M_A_O: RC_2S90M_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_125mm_APFSDS_G_R",
+				"RC_20Rnd_125mm_MP_G_R",
+				"4Rnd_125mm_cannon_missiles",
+				"RC_1000Rnd_93x64_G_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+	};
+};
+class RC_2S90M_A_I: RC_2S90M_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_20Rnd_125mm_APFSDS_Y_R",
+				"RC_20Rnd_125mm_MP_Y_R",
+				"4Rnd_125mm_cannon_missiles",
+				"RC_1000Rnd_93x64_Y_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
 		};
 	};
 };

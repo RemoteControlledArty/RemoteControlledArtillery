@@ -46,7 +46,6 @@ class RC_2S23M: RC_2S23M_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -70,6 +69,12 @@ class RC_2S23M: RC_2S23M_Base
 	peakTorque=2529.4;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
+
+	waterLeakiness=2.5;
+	canFloat=1;
+	waterAngularDampingCoef=10;
+	waterPPInVehicle=0;
+	waterResistanceCoef=0.5;
 
 	class HitPoints: HitPoints
 	{
@@ -131,12 +136,17 @@ class RC_2S23M: RC_2S23M_Base
 
 	class AnimationSources: AnimationSources
 	{
-		class reload_cannon
+		class muzzle_hide_cannon
 		{
 			source="reload";
 			weapon="RC_122mm_AMOS_V4";
 		};
-		class muzzle_hide
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";
+			weapon="RC_122mm_AMOS_V4";
+		};
+		class recoil_source
 		{
 			source="reload";
 			weapon="RC_122mm_AMOS_V4";
@@ -165,7 +175,6 @@ class RC_2S23M_WD: RC_2S23M
 	scope=2;
 	scopeCurator=2;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	crew="B_UAV_AI";
 
@@ -173,9 +182,6 @@ class RC_2S23M_WD: RC_2S23M
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
-
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -224,7 +230,7 @@ class RC_2S23M_WD: RC_2S23M
 			turretInfoType="RscWeaponRangeArtilleryAuto";
 			gunnerForceOptics=1;
 			forceHideGunner=1;
-			maxElev=75;
+			maxElev=70;
 
 			weapons[]=
 			{
@@ -261,7 +267,6 @@ class RC_2S23M_WD: RC_2S23M
 						"Normal"
 					};
 					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
 			};
@@ -271,7 +276,6 @@ class RC_2S23M_WD: RC_2S23M
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					showAllTargets="2 + 4";
 					commanding=2;
 					dontCreateAI=1;
@@ -288,6 +292,45 @@ class RC_2S23M_WD: RC_2S23M
 						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
+					};
+
+					class Components: Components
+					{
+						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+						{
+							defaultDisplay="SensorDisplay";
+
+							class Components
+							{
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={20000,10000,5000,2500};
+									resource="RscCustomInfoSensors";
+								};
+							};
+						};
+						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+						{
+							defaultDisplay="UAVFeedDisplay";
+
+							class Components
+							{
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+							};
+						};
 					};
 
 					class OpticsIn
