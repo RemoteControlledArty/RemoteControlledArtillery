@@ -70,6 +70,9 @@ class RC_2S23M: RC_2S23M_Base
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 
+	unitInfoType="RscUnitInfoArtillery";
+	//elevationMode=3;
+	
 	waterLeakiness=2.5;
 	canFloat=1;
 	waterAngularDampingCoef=10;
@@ -231,6 +234,7 @@ class RC_2S23M_WD: RC_2S23M
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			maxElev=70;
+			mminElev=-10;
 
 			weapons[]=
 			{
