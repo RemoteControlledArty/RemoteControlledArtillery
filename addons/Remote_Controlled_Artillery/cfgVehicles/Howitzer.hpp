@@ -36,6 +36,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -49,17 +50,11 @@ class RC_Howitzer_A: RC_Howitzer_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-	vehicleClass="Autonomous";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="B_UAV_AI";
-	driverForceOptics=1;
-	forceHideDriver=1;
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -422,6 +417,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -435,17 +431,11 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	scopeCurator=2;
 	side=0;
 	forceInGarage=1;
-	vehicleClass="Autonomous";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="O_UAV_AI";
-	driverForceOptics=1;
-	forceHideDriver=1;
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;

@@ -16782,3 +16782,16 @@ class RC_2Rnd_604mm_rockets_ATACMS_DPICM: RC_1Rnd_604mm_rockets_ATACMS_DPICM
 {
 	count=2;
 };
+
+
+/*
+//just a test
+class RC_20Rnd_155mm_Mo_MP_LoALAlt: RC_1Rnd_155mm_Mo_HEAB
+{
+	ammo="RC_Sh_155mm_AMOS_MP_LoALAlt";
+	RC_AimAboveHeight=500;
+	displayName="MP LoALAlt";
+	displayNameShort="MP LoALAlt";
+	count=20;
+};
+*/

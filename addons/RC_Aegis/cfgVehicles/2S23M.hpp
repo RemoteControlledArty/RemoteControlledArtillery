@@ -44,6 +44,10 @@ class RC_2S23M: RC_2S23M_Base
 	};
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP0_pos";
+	uavCameraGunnerDir="PiP0_dir";
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
@@ -234,7 +238,7 @@ class RC_2S23M_WD: RC_2S23M
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			maxElev=70;
-			mminElev=-10;
+			minElev=-10;
 
 			weapons[]=
 			{

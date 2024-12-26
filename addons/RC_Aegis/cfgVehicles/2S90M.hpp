@@ -112,7 +112,7 @@ class RC_2S90M_WD: RC_2S90M
 	};
 
 	displayName="2S90M";
-	editorSubcategory="RC_FSV_MBT_subcat";
+	editorSubcategory="RC_FSV_subcat";
 	scope=2;
 	scopeCurator=2;
 

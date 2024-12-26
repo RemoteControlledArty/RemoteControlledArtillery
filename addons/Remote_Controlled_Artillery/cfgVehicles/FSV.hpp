@@ -49,7 +49,7 @@ class RC_FSV_A_Base: RC_FSV_Base
 	lockDetectionSystem="2+4+8";
 
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_FSV_MBT_subcat";
+	editorSubcategory="RC_FSV_subcat";
 	author="Ascent";
 	driverCompartments="Compartment2";
 	//hideProxyInCombat=1;	//for later use

@@ -393,45 +393,73 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 					};
 				};
 
-				/*
-				class IRSensorComponent: SensorTemplateIR
+				class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 				{
-					typeRecognitionDistance=2000;
+					typeRecognitionDistance=8000;
 
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=360;
+					angleRangeVertical=180;
+					aimDown=0;
+					groundNoiseDistanceCoef=0;
+					maxGroundNoiseDistance=0;
+					maxTrackableSpeed=694.44397;
+				};
+
+				/*
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=3000;
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=51;
 					angleRangeVertical=37;
+					animDirection="mainTurret";
 					animDirection="mainGun";
 				};
+
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=1000;
+					typeRecognitionDistance=1500;
 
 					class AirTarget
 					{
-						minRange=1500;
-						maxRange=1500;
+						minRange=2000;
+						maxRange=2000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1500;
-						maxRange=1500;
+						minRange=2000;
+						maxRange=2000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
@@ -439,6 +467,7 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=51;
 					angleRangeVertical=37;
+					animDirection="mainTurret";
 					animDirection="mainGun";
 				};
 				*/
@@ -499,7 +528,7 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 			{
 				directionStabilized=1;
 				initFov=0.9;
-				minFov=0.0166;
+				minFov=0.0125;
 				maxFov=0.9;
 				visionMode[]=
 				{
@@ -746,7 +775,7 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 
 	displayName="RC Wiesel II ATGM 4km";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_ATGM_subcat";
+	editorSubcategory="RC_FSV_subcat";
 	author="Ascent";
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
@@ -1040,37 +1069,7 @@ class RC_Wiesel_ATGM_WD_manned: RC_Wiesel_ATGM_WD_Base
 	{
 		class MainTurret: MainTurret
 		{
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="VehicleDriverDisplay";
-
-					class Components
-					{
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-							resource="RscTransportCameraComponentMissile";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-					};
-				};
-			};
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner_missile.hpp"
 		};
 	};
 };
@@ -1151,7 +1150,7 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 
 	displayName="RC Wiesel II 20mm";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_FSV_MBT_subcat";
+	editorSubcategory="RC_FSV_subcat";
 	author="Ascent";
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
@@ -1446,31 +1445,7 @@ class RC_Wiesel_AC_WD_manned: RC_Wiesel_AC_WD_Base
 	{
 		class MainTurret: MainTurret
 		{
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="VehicleDriverDisplay";
-
-					class Components
-					{
-						class VehicleDriverDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Driver";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-					};
-				};
-			};
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
 		};
 	};
 };

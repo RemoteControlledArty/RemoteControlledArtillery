@@ -38,7 +38,7 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 	lockDetectionSystem="2+4+8";
 
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_FSV_MBT_subcat";
+	editorSubcategory="RC_MBT_subcat";
 	author="Ascent";
 	driverCompartments="Compartment2";
 	ejectDeadGunner=0;

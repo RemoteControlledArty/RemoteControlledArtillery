@@ -73,7 +73,7 @@ class CfgPatches
 
 class CfgEditorSubcategories
 {
-	class RC_Titus_subcat {displayname="Titus MRAP";};
+	class RC_Titus_subcat {displayname="MRAP Titus";};
 };
 
 
