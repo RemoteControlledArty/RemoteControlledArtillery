@@ -127,7 +127,6 @@ class RC_G_40mm_HEDP: G_40mm_HEDP
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	
 };
 
 
@@ -2080,6 +2079,68 @@ class RC_Sh_82mm_AMOS_LG_DelayedFuse: RC_Sh_82mm_AMOS_MP_LaserGuided
 };
 
 
+//40mm
+/*
+class RC_Sh_40mm_AMOS_HE_submunition: RC_Sh_82mm_AMOS_submunition
+{
+	craterEffects="RC_60mmAirburstDust";
+};
+class RC_40mm_HEAB_Shell_Base: RC_82mm_HEAB_Shell_Base
+{
+	hit=80;
+	indirectHit=8;
+	indirectHitRange=6;
+	cost=50;
+};
+*/
+/*
+class RC_Sh_60mm_AMOS_HEAB: RC_60mm_HEAB_Shell_Base
+{
+	submunitionAmmo="RC_Sh_60mm_AMOS_submunition";
+	aimAboveDefault=2;
+	aimAboveTarget[]={7,7,7};	//high airburst to ignore cover, triggers when descending and this height above ground
+};
+*/
+/*
+class RC_Sh_40mm_AMOS_HE: RC_40mm_HEAB_Shell_Base
+{
+	simulationStep=0.050000001;
+	triggerDistance=-1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0.4,-0.2};
+	submunitionAmmo="RC_Sh_40mm_AMOS_HE_submunition";
+};
+*/
+/*
+class G_40mm_HEDP;
+class RC_G_40mm_HEDP: G_40mm_HEDP
+{
+	indirectHit=8;
+	indirectHitRange=6;
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+*/
+class RC_Sh_40mm_AMOS_HE: RC_G_40mm_HEDP
+{
+	artilleryLock=1;
+	timeToLive=45;
+	airFriction=0;
+	sideairFriction=0;
+	deflecting=1;
+
+	hit=100;
+	caliber=4;
+	indirectHit=12;
+	indirectHitRange=8;
+	warheadName="HEAT";
+	//warheadName="HE";
+	simulation="shotShell";
+	//explosive=1;
+};
+
+
 //60mm
 class RC_Sh_60mm_AMOS_submunition: RC_Sh_82mm_AMOS_submunition
 {
@@ -3854,593 +3915,3 @@ class RC_R_604mm_ATACMS_DPICM: R_230mm_Cluster
 		0.07
 	};
 };
-
-
-/*
-class RC_155mm_MP_MultiGuided_LoALAlt_Submunition: RC_155mm_MP_MultiGuided_Submunition
-{
-	artilleryLock=0;	//1 would make submunition unable to hit vanilla firing computer gps point
-	autoSeekTarget=1;
-	missileLockCone=360;
-	missileKeepLockedCone=360;
-
-	lockSeekRadius=20000;
-	missileLockMaxDistance=2000;
-	missileLockMinDistance=1;	//maybe edit
-	missileLockMaxSpeed=150;
-	maxControlRange=1000;
-	fuseDistance=20;
-	timeToLive=50;
-
-	trackOversteer=1;	//required to not completly miss
-	trackLead=1;
-	maneuvrability=20;	//required to not completly miss
-	airFriction=0.059999999;
-	//airFriction=0.085000001;
-	sideAirFriction=0.1;
-	whistleDist=60;
-	lockType=0;
-	initTime=0.01;
-	thrustTime=50;
-	thrust=300;
-	maxSpeed=300;
-	typicalSpeed=300;
-
-	triggerDistance=25;
-	triggerOnImpact=1;
-	deleteParentWhenTriggered=0;
-	submunitionDirectionType="SubmunitionTargetDirection";	//later test SubmunitionTargetDirection, with triggerDistance=; and proximityExplosionDistance=;
-	submunitionInitSpeed=1000;
-	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class GroundTarget
-					{
-						minRange=500;
-						maxRange=500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-				};
-				class IRSensorComponent: SensorTemplateIR
-				{
-					typeRecognitionDistance=500;
-
-					class AirTarget
-					{
-						minRange=500;
-						maxRange=500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=500;
-						maxRange=500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=500;
-
-					class AirTarget
-					{
-						minRange=500;
-						maxRange=500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=500;
-						maxRange=500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
-	*/
-
-	//LoalAltitude
-	/*
-	flightProfiles[]=
-	{
-		"LoalAltitude"
-	};
-	class LoalAltitude
-	{
-		lockSeekAltitude=200;
-	};
-	*/
-
-	/*
-	flightProfiles[]=
-	{
-		"Overfly"
-	};
-	class Overfly
-	{
-		overflyElevation=20;
-	};
-};
-*/
-
-/*
-class ammo_Bomb_LaserGuidedBase;
-class RC_ammo_Bomb_LaserGuidedBase: ammo_Bomb_LaserGuidedBase
-{
-	laserLock=1;
-	irLock=1;
-	weaponLockSystem="2 + 4 + 16";
-	*/
-
-	/*
-	indirectHit=250;
-	indirectHitRange=10;
-	*/
-
-	/*
-	hit=5000;
-	indirectHit=1100;
-	indirectHitRange=12;
-	maneuvrability=10;
-	fuseDistance=50;
-	trackLead=1;
-	trackOversteer=1;
-	airFriction=0.059999999;
-	sideAirFriction=0.12;
-	dangerRadiusHit=1000;
-	suppressionRadiusHit=120;
-	explosionTime=2;
-	whistleDist=24;
-	missileLockCone=360;
-	missileKeepLockedCone=360;
-	missileLockMaxDistance=5000;
-	missileLockMinDistance=100;
-	missileLockMaxSpeed=30;
-	autoSeekTarget=1;
-	lockSeekRadius=500;
-	cmImmunity=0.9;
-	flightProfiles[]=
-	{
-		"LoalAltitude"
-	};
-	class LoalAltitude
-	{
-		lockSeekAltitude=500;
-	};
-	class Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=5000;
-						maxRange=5000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=5000;
-						maxRange=5000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-				};
-				class IRSensorComponent: SensorTemplateIR
-				{
-					typeRecognitionDistance=1000;
-
-					class AirTarget
-					{
-						minRange=1000;
-						maxRange=1000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=1000;
-						maxRange=1000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=67000;
-
-					class AirTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=67000;
-						maxRange=67000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
-};
-*/
-
-/*
-class RC_Sh_155mm_AMOS_MP_LoALAlt: RC_Sh_155mm_AMOS_HEAB
-{
-	submunitionDirectionType="SubmunitionTargetDirection";
-	//submunitionDirectionType="SubmunitionAutoLeveling";
-	submunitionAmmo="ammo_Bomb_LaserGuidedBase";
-	//submunitionAmmo="RC_155mm_MP_MultiGuided_LoALAlt_Submunition";
-	aimAboveTarget[]={500,500,500};
-
-	submunitionParentSpeedCoef=0;
-	submunitionInitSpeed=10;
-};
-
-class RC_ammo_Penetrator_Proxy: ammo_Penetrator_Base
-{
-	caliber=60;
-	warheadName="TandemHEAT";
-	hit=800;
-	airFriction=0.0001;
-};
-
-class MissileBase_Base: MissileBase
-{
-	class Components;
-};
-class M_NLAW_AT_F: MissileBase_Base
-{
-	submunitionAmmo="RC_ammo_Penetrator_Proxy";
-	triggerDistance=30;
-	missileLockCone=180;
-	missileKeepLockedCone=360;
-	proximityExplosionDistance=30;
-	flightProfiles[]=
-	{
-		"Overfly"
-	};
-	class Overfly
-	{
-		overflyElevation=30;
-	};
-	submunitionInitSpeed=3000;
-	submunitionInitialOffset[]={0,0,0};
-	indirectHit=30;
-	indirectHitRange=30;
-
-	hit=50;
-	explosive=0.5;
-	maneuvrability=2;
-	simulationStep=0.0020000001;
-	trackOversteer=0.80000001;
-	trackLead=1;
-	irLock=1;
-	aiAmmoUsageFlags="128 + 512";
-	maxControlRange=11;
-	model="\A3\weapons_f\launchers\nlaw\nlaw_rocket";
-	cost=400;
-	timeToLive=8;
-	airFriction=0.090000004;
-	sideAirFriction=0.5;
-	maxSpeed=180;
-	initTime=0.2;
-	thrustTime=0.80000001;
-	thrust=200;
-	fuseDistance=20;
-	effectsMissile="missile3";
-	whistleDist=16;
-	CraterEffects="ATRocketCrater";
-	explosionEffects="ATRocketExplosion";
-	effectsMissileInit="";
-	allowAgainstInfantry=0;
-	soundHit[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\NLAW\NLAW_Hit",
-		1.7782794,
-		1,
-		1500
-	};
-	soundFly[]=
-	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\NLAW\Fly_NLAW",
-		0.56234133,
-		1.5,
-		700
-	};
-	class CamShakeExplode
-	{
-		power=11;
-		duration=1.4;
-		frequency=20;
-		distance=91.329597;
-	};
-	class CamShakeHit
-	{
-		power=110;
-		duration=0.60000002;
-		frequency=20;
-		distance=1;
-	};
-	class CamShakeFire
-	{
-		power=2.5148699;
-		duration=1.2;
-		frequency=20;
-		distance=50.596401;
-	};
-	class CamShakePlayerFire
-	{
-		power=2;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
-	submunitionDirectionType="SubmunitionTargetDirection";
-	submunitionParentSpeedCoef=0;
-	triggerOnImpact=1;
-
-	deleteParentWhenTriggered=0;
-
-	airLock=1;
-	missileLockMaxDistance=800;
-	missileLockMinDistance=20;
-	missileLockMaxSpeed=35;
-	weaponLockSystem="1 + 16";
-	cmImmunity=0.2;
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					class AirTarget
-					{
-						minRange=500;
-						maxRange=800;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=1;
-					};
-					class GroundTarget
-					{
-						minRange=500;
-						maxRange=800;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
-					};
-					maxTrackableSpeed=35;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=5;
-					angleRangeVertical=5;
-					maxTrackableATL=20;
-				};
-			};
-		};
-	};
-};
-*/
-
-/*
-//class M_NLAW_AT_F;
-class RC_M_NLAW_AT_F: M_NLAW_AT_F
-{
-	submunitionAmmo="RC_ammo_Penetrator_Proxy";
-	triggerDistance=30;
-	missileLockCone=180;
-	missileKeepLockedCone=180;
-	proximityExplosionDistance=30;
-	flightProfiles[]=
-	{
-		"Overfly"
-	};
-	class Overfly
-	{
-		overflyElevation=30;
-	};
-	submunitionInitSpeed=3000;
-	submunitionInitialOffset[]={0,0,0};
-	indirectHit=30;
-	indirectHitRange=20;
-};
-*/
-
-/*
-	class MissileCore: Default
-	{
-		simulation="shotMissile";
-		simulationStep=0.050000001;
-		timeToLive=20;
-		manualControl=1;
-		maxControlRange=250;
-		initTime=0.15000001;
-		thrustTime=2.5;
-		thrust=350;
-		maneuvrability=3;
-		missileLockCone=50;
-		visibleFire=32;
-		audibleFire=32;
-		visibleFireTime=20;
-		soundHit[]=
-		{
-			"",
-			100,
-			1
-		};
-		soundFly[]=
-		{
-			"",
-			0.0099999998,
-			2
-		};
-		soundEngine[]=
-		{
-			"",
-			0.001,
-			1
-		};
-		cost=10000;
-		deflecting=5;
-	};
-	class BombCore: Default
-	{
-		hit=50;
-		indirectHit=40;
-		indirectHitRange=10;
-		cost=200;
-		irLock=0;
-		laserLock=0;
-		maxControlRange=0;
-		maneuvrability=16;
-		sideAirFriction=0.1;
-		simulation="shotMissile";
-		maxSpeed=100;
-		timeToLive=120;
-		initTime=0;
-		thrustTime=0;
-		thrust=0;
-	};
-	class LaserBombCore: BombCore
-	{
-		hit=5000;
-		indirectHit=3500;
-		indirectHitRange=15;
-		cost=20000;
-		irLock=0;
-		laserLock=1;
-		maxControlRange=100000;
-		maneuvrability=16;
-		sideAirFriction=0.1;
-		simulation="shotMissile";
-		maxSpeed=100;
-		timeToLive=120;
-		initTime=0;
-		thrustTime=0;
-		thrust=0;
-		missileLockCone=50;
-	};
-
-	class ammo_Bomb_LaserGuidedBase: LaserBombCore
-	{
-		model="\A3\weapons_f\empty";
-		proxyShape="\A3\weapons_f\empty";
-		hit=5000;
-		indirectHit=1100;
-		indirectHitRange=12;
-		maneuvrability=10;
-		fuseDistance=50;
-		trackLead=0.94999999;
-		trackOversteer=1;
-		airFriction=0.059999999;
-		sideAirFriction=0.12;
-		aiAmmoUsageFlags="128 + 512";
-		dangerRadiusHit=1000;
-		suppressionRadiusHit=120;
-		craterEffects="BombCrater";
-		explosionEffects="BombExplosion";
-		explosionSoundEffect="DefaultExplosion";
-		explosionTime=2;
-		whistleDist=24;
-		missileLockCone=120;
-		missileKeepLockedCone=120;
-		missileLockMaxDistance=5000;
-		missileLockMinDistance=100;
-		missileLockMaxSpeed=30;
-		autoSeekTarget=1;
-		lockSeekRadius=500;
-		weaponLockSystem=4;
-		cmImmunity=0.30000001;
-		flightProfiles[]=
-		{
-			"LoalAltitude"
-		};
-		class LoalAltitude
-		{
-			lockSeekAltitude=500;
-		};
-		class Components
-		{
-			class SensorsManagerComponent
-			{
-				class Components
-				{
-					class NVSensorComponent: SensorTemplateNV
-					{
-						class AirTarget
-						{
-							minRange=500;
-							maxRange=5000;
-							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=1;
-						};
-						class GroundTarget
-						{
-							minRange=500;
-							maxRange=5000;
-							objectDistanceLimitCoef=1;
-							viewDistanceLimitCoef=1;
-						};
-						maxTrackableSpeed=30;
-						angleRangeHorizontal=120;
-						angleRangeVertical=120;
-					};
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-						class AirTarget
-						{
-							minRange=5000;
-							maxRange=5000;
-							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=-1;
-						};
-						class GroundTarget
-						{
-							minRange=5000;
-							maxRange=5000;
-							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=-1;
-						};
-						maxTrackableSpeed=30;
-						angleRangeHorizontal=120;
-						angleRangeVertical=120;
-					};
-				};
-			};
-		};
-	};
-*/

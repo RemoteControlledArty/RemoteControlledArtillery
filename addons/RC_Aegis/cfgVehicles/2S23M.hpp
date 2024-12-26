@@ -388,6 +388,36 @@ class RC_2S23M_WD_I: RC_2S23M_WD
 };
 
 
+class RC_2S23M_A: RC_2S23M_WD
+{
+	editorPreview="\A3_Aegis\EditorPreviews_F_Aegis\Data\CfgVehicles\Aegis_O_SFIA_APC_Wheeled_04_cannon_v2_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body2_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\apc_wheeled_04_sprut_turret_sand_co.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\camonet_RUS_Green_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\cage_RUkhk_CO.paa"
+	};
+};
+class RC_2S23M_A_O: RC_2S23M_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_2S23M_A_I: RC_2S23M_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
 class RC_2S23M_LC_WD: RC_2S23M_WD
 {
 	displayName="RC 2S23M LowCap";
@@ -409,4 +439,50 @@ class RC_2S23M_LC_WD: RC_2S23M_WD
 			};
 		};
 	};
+};
+class RC_2S23M_LC_WD_O: RC_2S23M_LC_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_2S23M_LC_WD_I: RC_2S23M_LC_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
+class RC_2S23M_LC_A: RC_2S23M_LC_WD
+{
+	editorPreview="\A3_Aegis\EditorPreviews_F_Aegis\Data\CfgVehicles\Aegis_O_SFIA_APC_Wheeled_04_cannon_v2_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body2_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\apc_wheeled_04_sprut_turret_sand_co.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\camonet_RUS_Green_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\cage_RUkhk_CO.paa"
+	};
+};
+class RC_2S23M_LC_A_O: RC_2S23M_LC_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_2S23M_LC_A_I: RC_2S23M_LC_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };

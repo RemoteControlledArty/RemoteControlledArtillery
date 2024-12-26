@@ -2515,6 +2515,108 @@ class RC_vehiclemortar_60mm_V4: RC_vehiclemortar_82mm_V4
 };
 
 
+//indirect 40mm GMG
+class RC_indirect_40mm_GMG_V4: RC_vehiclemortar_60mm_V4
+{
+	displayName="indirect 40mm GMG";
+	displayNameShort="indirect 40mm GMG";
+	//ballisticsComputer=8;	//direct fire reticle for highest charge
+	
+	reloadTime=0.25;
+	magazineReloadTime=2.5;
+	autoFire=1;
+	autoReload=1;
+	textureType="fullAuto";
+	type="1+4";
+
+	magazines[]=
+	{
+		"RC_200Rnd_40mm_vic_Mo_shells"
+	};
+
+	modes[]=
+	{
+		"auto1",
+		"auto2",
+		"auto3"
+	};
+	class auto1: Single1
+	{
+		displayName="CH1, 0.5km";
+		//artilleryDispersion=1.25;
+		reloadTime=0.25;
+		autoFire=1;
+		autoReload=1;
+		textureType="fullAuto";
+		type="1+4";
+
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_static\Static_GMG\GMG_01",
+				1.1220185,
+				1,
+				1200
+			};
+			begin2[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_static\Static_GMG\GMG_02",
+				1.1220185,
+				1,
+				1200
+			};
+			begin3[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_static\Static_GMG\GMG_03",
+				1.1220185,
+				1,
+				1200
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.33000001,
+				"begin2",
+				0.33000001,
+				"begin3",
+				0.34
+			};
+		};
+		soundContinuous=0;
+		soundBurst=0;
+	};
+	class auto2: auto1
+	{
+		displayName="CH1, 2km";
+		artilleryCharge=0.7;
+		minRange=139;	//139	//230
+		midRange=1068.5;	//1068.5	1175
+		maxRange=1998;	//1998	//2660
+	};
+	class auto3: auto1
+	{
+		displayName="CH2, 4km, reticle";
+		artilleryCharge=1;
+		minRange=284;	//284	//540
+		midRange=2181;	//2181	//2355
+		maxRange=4078;	//4078	//5500
+	};
+	class GunParticles
+	{
+		class effect1
+		{
+			positionName="usti hlavne";
+			directionName="konec hlavne";
+			effectName="GrenadeLauncherCloud";
+		};
+	};
+};
+
 // 120mm ShipCannon
 class weapon_ShipCannon_120mm;
 class RC_ShipCannon_120mm_base: weapon_ShipCannon_120mm

@@ -4646,6 +4646,17 @@ class RC_40Rnd_82mm_vic_Mo_backuplowHEAB: RC_1Rnd_82mm_vic_Mo_backuplowHEAB
 };
 
 
+//40mm indirect GMG
+class RC_200Rnd_40mm_vic_Mo_shells: RC_1Rnd_82mm_Mo_shells
+{
+	ammo="RC_Sh_40mm_AMOS_HE";
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
+	initSpeed=200;	//4km reach
+	count=200;
+	muzzleImpulseFactor[]={0.1,0.1};
+};
+
+
 //60mm
 class RC_1Rnd_60mm_Mo_shells: RC_1Rnd_82mm_Mo_shells
 {

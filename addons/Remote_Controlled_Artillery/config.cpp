@@ -788,5 +788,6 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UAV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\UGV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Wiesel.hpp"
 };
