@@ -3,6 +3,9 @@ class RC_indirect_GMG_UGV_base: B_UGV_01_rcws_F
 {
 	class AnimationSources;
 	class HitPoints;
+	class HitHull;
+	class HitEngine;
+	class HitFuel;
 	class HitLFWheel;
 	class HitLF2Wheel;
 	class HitLMWheel;
@@ -140,6 +143,27 @@ class RC_indirect_GMG_UGV_A: RC_indirect_GMG_UGV_base
 
 	class HitPoints: HitPoints
 	{
+		class HitHull: HitHull
+		{
+			armor=1.05;
+			passThrough=1;
+			//minimalHit=0.2;
+			explosionShielding=0.4;
+		};
+		class HitEngine: HitEngine
+		{
+			armor=3;
+			passThrough=0.25;
+			//minimalHit=0.2;
+			explosionShielding=0.4;
+		};
+		class HitFuel: HitFuel
+		{
+			armor=2;
+			passThrough=0.15;
+			//minimalHit=0.1;
+			explosionShielding=1.2;
+		};
 		class HitLFWheel: HitLFWheel
 		{
 			armor=-250;
@@ -186,7 +210,7 @@ class RC_indirect_GMG_UGV_A: RC_indirect_GMG_UGV_base
 			turretInfoType="RscWeaponRangeArtilleryAuto";
 			//commanding=2;
 			maxElev=72;
-			minElev=-15;
+			minElev=-14;
 
 			weapons[]=
 			{
@@ -199,24 +223,6 @@ class RC_indirect_GMG_UGV_A: RC_indirect_GMG_UGV_base
 				"RC_200Rnd_127x99_SLAP_T_R",
 				"RC_200Rnd_127x99_SLAP_T_R"
 			};
-
-			/*
-			class ViewOptics: RCWSOptics
-			{
-				initFov=0.9;
-				minFov=0.0125;
-				maxFov=0.9;
-				//directionStabilized=0;
-				visionMode[]=
-				{
-					"Normal",
-					"NVG",
-					"TI"
-				};
-				thermalMode[]={0};
-				gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
-			};
-			*/
 
 			class OpticsIn
 			{
