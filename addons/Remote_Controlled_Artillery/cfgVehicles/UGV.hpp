@@ -11,6 +11,7 @@ class RC_indirect_GMG_UGV_base: B_UGV_01_rcws_F
 	class HitRMWheel;
 	class Turrets;
 	class MainTurret;
+	class CargoTurret_01;
 	class CommanderOptics;
 	class OpticsIn;
 	class Wide;
@@ -185,6 +186,7 @@ class RC_indirect_GMG_UGV_A: RC_indirect_GMG_UGV_base
 			turretInfoType="RscWeaponRangeArtilleryAuto";
 			//commanding=2;
 			maxElev=72;
+			minElev=-15;
 
 			weapons[]=
 			{
@@ -269,6 +271,9 @@ class RC_indirect_GMG_UGV_A: RC_indirect_GMG_UGV_base
 					};
 				};
 			};
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
 		};
 	};
 
