@@ -2080,48 +2080,6 @@ class RC_Sh_82mm_AMOS_LG_DelayedFuse: RC_Sh_82mm_AMOS_MP_LaserGuided
 
 
 //40mm
-/*
-class RC_Sh_40mm_AMOS_HE_submunition: RC_Sh_82mm_AMOS_submunition
-{
-	craterEffects="RC_60mmAirburstDust";
-};
-class RC_40mm_HEAB_Shell_Base: RC_82mm_HEAB_Shell_Base
-{
-	hit=80;
-	indirectHit=8;
-	indirectHitRange=6;
-	cost=50;
-};
-*/
-/*
-class RC_Sh_60mm_AMOS_HEAB: RC_60mm_HEAB_Shell_Base
-{
-	submunitionAmmo="RC_Sh_60mm_AMOS_submunition";
-	aimAboveDefault=2;
-	aimAboveTarget[]={7,7,7};	//high airburst to ignore cover, triggers when descending and this height above ground
-};
-*/
-/*
-class RC_Sh_40mm_AMOS_HE: RC_40mm_HEAB_Shell_Base
-{
-	simulationStep=0.050000001;
-	triggerDistance=-1;
-	triggerOnImpact=1;
-	submunitionInitialOffset[]={0,0.4,-0.2};
-	submunitionAmmo="RC_Sh_40mm_AMOS_HE_submunition";
-};
-*/
-/*
-class G_40mm_HEDP;
-class RC_G_40mm_HEDP: G_40mm_HEDP
-{
-	indirectHit=8;
-	indirectHitRange=6;
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-};
-*/
 class RC_Sh_40mm_AMOS_HE: RC_G_40mm_HEDP
 {
 	artilleryLock=1;

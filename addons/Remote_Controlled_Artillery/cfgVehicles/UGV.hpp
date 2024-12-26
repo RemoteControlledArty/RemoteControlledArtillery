@@ -48,7 +48,7 @@ class RC_indirect_GMG_UGV_A: RC_indirect_GMG_UGV_base
 	author="Ascent";
 	displayName="RC indirect GMG-UGV";
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_Mortar_subcat";
+	editorSubcategory="RC_FSV_subcat";
 	scope=2;
 	scopeCurator=2;
 	side=1;
