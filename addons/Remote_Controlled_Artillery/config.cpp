@@ -781,6 +781,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_3.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_4.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first

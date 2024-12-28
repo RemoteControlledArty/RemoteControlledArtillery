@@ -131,7 +131,7 @@ class RC_2S90M_WD: RC_2S90M
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
-			minElev=-10;
+			minElev=-13;
 
 			weapons[]=
 			{
@@ -230,7 +230,6 @@ class RC_2S90M_WD_O: RC_2S90M_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -239,10 +238,10 @@ class RC_2S90M_WD_O: RC_2S90M_WD
 		{
 			magazines[]=
 			{
-				"RC_20Rnd_125mm_APFSDS_G_R",
-				"RC_20Rnd_125mm_MP_G_R",
+				"RC_20Rnd_125mm_APFSDS_T_G",
+				"RC_20Rnd_125mm_MP_T_G",
 				"4Rnd_125mm_cannon_missiles",
-				"RC_1000Rnd_93x64_G_R",
+				"RC_1000Rnd_93x64_T_G",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -254,7 +253,6 @@ class RC_2S90M_WD_I: RC_2S90M_WD
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -263,10 +261,10 @@ class RC_2S90M_WD_I: RC_2S90M_WD
 		{
 			magazines[]=
 			{
-				"RC_20Rnd_125mm_APFSDS_Y_R",
-				"RC_20Rnd_125mm_MP_Y_R",
+				"RC_20Rnd_125mm_APFSDS_T_Y",
+				"RC_20Rnd_125mm_MP_T_Y",
 				"4Rnd_125mm_cannon_missiles",
-				"RC_1000Rnd_93x64_Y_R",
+				"RC_1000Rnd_93x64_T_Y",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -301,7 +299,6 @@ class RC_2S90M_A_O: RC_2S90M_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -310,10 +307,10 @@ class RC_2S90M_A_O: RC_2S90M_A
 		{
 			magazines[]=
 			{
-				"RC_20Rnd_125mm_APFSDS_G_R",
-				"RC_20Rnd_125mm_MP_G_R",
+				"RC_20Rnd_125mm_APFSDS_T_G",
+				"RC_20Rnd_125mm_MP_T_G",
 				"4Rnd_125mm_cannon_missiles",
-				"RC_1000Rnd_93x64_G_R",
+				"RC_1000Rnd_93x64_T_G",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
@@ -325,7 +322,6 @@ class RC_2S90M_A_I: RC_2S90M_A
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -334,10 +330,10 @@ class RC_2S90M_A_I: RC_2S90M_A
 		{
 			magazines[]=
 			{
-				"RC_20Rnd_125mm_APFSDS_Y_R",
-				"RC_20Rnd_125mm_MP_Y_R",
+				"RC_20Rnd_125mm_APFSDS_T_Y",
+				"RC_20Rnd_125mm_MP_T_Y",
 				"4Rnd_125mm_cannon_missiles",
-				"RC_1000Rnd_93x64_Y_R",
+				"RC_1000Rnd_93x64_T_Y",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

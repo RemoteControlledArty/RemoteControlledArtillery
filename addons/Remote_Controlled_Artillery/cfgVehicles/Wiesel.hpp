@@ -351,9 +351,9 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 
 	class Components: Components
 	{
-		class SensorsManagerComponent: SensorsManagerComponent
+		class SensorsManagerComponent
 		{
-			class Components: Components
+			class Components
 			{
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
@@ -419,7 +419,6 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 					maxTrackableSpeed=694.44397;
 				};
 
-				/*
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=3000;
@@ -439,10 +438,10 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
-					animDirection="mainTurret";
-					animDirection="mainGun";
+					angleRangeHorizontal=45;
+					angleRangeVertical=35;
+					//animDirection="obsTurret";
+					animDirection="obsGun";
 				};
 
 				class VisualSensorComponent: SensorTemplateVisual
@@ -465,42 +464,10 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 					};
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
-					animDirection="mainTurret";
-					animDirection="mainGun";
-				};
-				*/
-			};
-		};
-		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-		{
-			defaultDisplay="SensorDisplay";
-
-			class Components
-			{
-				class SensorDisplay
-				{
-					componentType="SensorsDisplayComponent";
-					range[]={8000,4000,2000,1000};
-					resource="RscCustomInfoSensors";
-				};
-			};
-		};
-		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-		{
-			defaultDisplay="EmptyDisplay";
-
-			class Components
-			{
-				class EmptyDisplay
-				{
-					componentType="EmptyDisplayComponent";
-				};
-				class MinimapDisplay
-				{
-					componentType="MinimapDisplayComponent";
-					resource="RscCustomInfoMiniMap";
+					angleRangeHorizontal=45;
+					angleRangeVertical=35;
+					//animDirection="obsTurret";
+					animDirection="obsGun";
 				};
 			};
 		};
@@ -518,17 +485,27 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 	{
 		class MainTurret: MainTurret
 		{
-			primaryGunner=1;
-			primaryObserver=0;
 			gunnerCompartments="Compartment2";
 			showAllTargets="2 + 4";
 			stabilizedInAxes=3;
 
+			weapons[]=
+			{
+				"RC_Laserdesignator_vehicle",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"Laserbatteries",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
 			class ViewOptics: ViewOptics
 			{
-				directionStabilized=1;
 				initFov=0.9;
-				minFov=0.0125;
+				minFov=0.00833;
 				maxFov=0.9;
 				visionMode[]=
 				{
@@ -537,6 +514,41 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 					"Ti"
 				};
 				thermalMode[]={0};
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={8000,4000,2000,1000};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplay";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+					};
+				};
 			};
 		};
 	};
@@ -560,8 +572,7 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 		1
 	};
 
-	#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
-	//#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 
 	hiddenSelectionsTextures[]=
 	{
@@ -596,20 +607,15 @@ class RC_Wiesel_Radar_WD: RC_Wiesel_Radar_WD_Base
 	{
 		class MainTurret: MainTurret
 		{
+			primaryGunner=1;
+			primaryObserver=0;
+
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 
-			weapons[]=
+			class ViewOptics: ViewOptics
 			{
-				"RC_Laserdesignator_vehicle",
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"Laserbatteries",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
+				directionStabilized=1;
 			};
 		};
 	};
@@ -619,14 +625,108 @@ class RC_Wiesel_Radar_WD_O: RC_Wiesel_Radar_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Wiesel_Radar_WD_I: RC_Wiesel_Radar_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_Wiesel_Radar_DIG_I: RC_Wiesel_Radar_WD_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_radar_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+};
+
+
+class RC_Wiesel_Radar_manned_WD: RC_Wiesel_Radar_WD_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+		};
+	};
+
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	displayName="Wiesel II Radar";
+	crew="B_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			dontCreateAI=1;
+			primaryGunner=1;
+			primaryObserver=0;
+
+			/*
+			class ViewOptics: ViewOptics
+			{
+				directionStabilized=0;
+			};
+			*/
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsDisplayManagerComponentLeft
+				{
+					defaultDisplay="UAVFeedDisplay";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+					};
+				};
+			};
+		};
+	};
+};
+class RC_Wiesel_Radar_manned_WD_O: RC_Wiesel_Radar_manned_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_Wiesel_Radar_manned_WD_I: RC_Wiesel_Radar_manned_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+class RC_Wiesel_Radar_manned_DIG_I: RC_Wiesel_Radar_manned_WD_I
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -694,6 +794,62 @@ class RC_Mortar_Carrier_DIG_I: RC_Mortar_Carrier_WD_I
 };
 
 
+//semi manned variants
+class RC_Mortar_Carrier_manned_WD: RC_Wiesel_Radar_manned_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
+	};
+
+	displayName="Mortar Carrier";
+	editorSubcategory="RC_Mortar_subcat";
+};
+class RC_Mortar_Carrier_manned_WD_O: RC_Mortar_Carrier_manned_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
+	};
+
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_Mortar_Carrier_manned_WD_I: RC_Mortar_Carrier_manned_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
+	};
+
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+class RC_Mortar_Carrier_manned_DIG_I: RC_Mortar_Carrier_manned_WD_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_radar_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+};
+
+
 //version with less rounds for smaller ops
 class RC_Mortar_Carrier_LC_WD: RC_Wiesel_Radar_WD
 {
@@ -724,6 +880,52 @@ class RC_Mortar_Carrier_LC_WD_O: RC_Mortar_Carrier_LC_WD
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Mortar_Carrier_LC_WD_I: RC_Mortar_Carrier_LC_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
+	};
+
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
+//semi manned variant
+class RC_Mortar_Carrier_LC_manned_WD: RC_Wiesel_Radar_manned_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
+	};
+
+	displayName="Mortar Carrier LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+};
+class RC_Mortar_Carrier_LC_manned_WD_O: RC_Mortar_Carrier_LC_manned_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
+		};
+	};
+
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_Mortar_Carrier_LC_manned_WD_I: RC_Mortar_Carrier_LC_manned_WD
 {
 	class EventHandlers: EventHandlers
 	{
@@ -965,8 +1167,7 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
-	//#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 
 	hiddenSelectionsTextures[]=
 	{
@@ -1007,7 +1208,7 @@ class RC_Wiesel_ATGM_WD_O: RC_Wiesel_ATGM_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-	//#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -1022,7 +1223,7 @@ class RC_Wiesel_ATGM_WD_I: RC_Wiesel_ATGM_WD
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-	//#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class Turrets: Turrets
 	{
@@ -1341,7 +1542,6 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 		};
 	};
 
-	//#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 
 	hiddenSelectionsTextures[]=

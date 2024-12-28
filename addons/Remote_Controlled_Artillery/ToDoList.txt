@@ -28,6 +28,7 @@ OPTIMIZATION:
 
 TO DO - FEATURES:
 
+-RC Mortar Fennek
 -asset specific firemission array that creates sleep for doartyfire (so that smoke barrage doesnt trigger multiple asset return fire)
 -fix "bad vehicle type" for 105mm truck
 
@@ -162,6 +163,9 @@ new:
 
 -fixed firing solution calculator freezing (major fix, bug was likely caused by 2.18 arma update)
 -fixed small errors that only showed up in the rpt file
+
+-fixed gps target p3d
+-fixed muzzle smoke position of Leo and Merkava
 
 
 DONE - FEATURES:
@@ -325,6 +329,16 @@ new:
 -improved cluster submunition scaling with caliber
 -added Otokar Arma RCIV with manned manual HMG (WS)
 
+very new:
+-improved gps datalink target visibility when obstructed
+-improved camera zoom of Wiesel Radar & Mortar Carrier
+-added semi manned Wiesel Radar & Mortar Carrier
+-added IR&Visual Sensor to Wiesel Radar & Mortar Carrier
+-improved ActiveRadar of Wiesel Radar & Mortar Carrier
+-added 2S90M, 2S23M, BTR-82A (Aegis)
+-added indirect fire GMG-UGV (40mm HEDP)
+-improved depression of some cannons
+
 
 DONE - QUALITY OF LIFE:
 
@@ -340,6 +354,7 @@ new:
 -gunnerview panel now left panel default for commander
 -vehicle mortar now also has recommended trajectory highlighting
 -MAJOR performance opimization, thanks to Eric teaching me HashMaps, MUCH less constant config checks now!
+-split MBT/FSV categories
 
 
 ---------------------------------------------------------------------------------------------------------

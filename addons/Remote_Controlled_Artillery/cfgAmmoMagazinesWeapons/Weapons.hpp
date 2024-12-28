@@ -434,7 +434,10 @@ class RC_MMG_93x64_coax_ext: RC_MMG_338_coax_ext
 	{
 		"RC_200Rnd_93x64_T_G",
 		"RC_200Rnd_93x64_T_R",
-		"RC_200Rnd_93x64_T_Y"
+		"RC_200Rnd_93x64_T_Y",
+		"RC_1000Rnd_93x64_T_G",
+		"RC_1000Rnd_93x64_T_R",
+		"RC_1000Rnd_93x64_T_Y"
 	};
 	class manual: manual
 	{
@@ -716,6 +719,21 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 		"RC_100Rnd_127x99_SLAP_T_R",
 		"RC_100Rnd_127x99_SLAP_T_G",
 		"RC_100Rnd_127x99_SLAP_T_Y"
+	};
+};
+class RC_HMG_127_APC2: RC_HMG_127_APC
+{
+	magazines[]=
+	{
+		"RC_200Rnd_127x99_SLAP_T_R",
+		"RC_200Rnd_127x99_SLAP_T_G",
+		"RC_200Rnd_127x99_SLAP_T_Y",
+		"RC_100Rnd_127x99_SLAP_T_R",
+		"RC_100Rnd_127x99_SLAP_T_G",
+		"RC_100Rnd_127x99_SLAP_T_Y",
+		"RC_200Rnd_127x99_T_R",
+		"RC_200Rnd_127x99_T_G",
+		"RC_200Rnd_127x99_T_Y"
 	};
 };
 class RC_MMG_338_APC: RC_HMG_127_APC

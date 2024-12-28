@@ -110,7 +110,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 			showAllTargets="2 + 4";
 			commanding=3;
-			//minElev=-10.6;
+			minElev=-14;
 			maxElev=40;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 

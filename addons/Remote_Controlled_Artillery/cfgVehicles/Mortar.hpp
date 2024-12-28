@@ -99,6 +99,7 @@ class RC_Mortar: RC_Mortar_base
 	{
 		class MainTurret: MainTurret
 		{
+			//maxCamElev=67.5;
 			showAllTargets="2 + 4";
 			gunnerForceOptics=1;
 
@@ -116,6 +117,14 @@ class RC_Mortar: RC_Mortar_base
 			};
 			class ViewOptics: ViewOptics
 			{
+				/*
+				initAngleX=0;
+				minAngleX=-30;
+				maxAngleX=30;
+				initAngleY=0;
+				minAngleY=-100;
+				maxAngleY=100;
+				*/
 				initFov=0.125;
 				minFov=0.0125;
 				maxFov=0.89999998;

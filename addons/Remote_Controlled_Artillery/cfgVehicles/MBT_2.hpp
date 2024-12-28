@@ -127,7 +127,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 
 					weapons[]=
 					{
-						"RC_HMG_127x99_MBT",
+						"RC_HMG_127_APC2",
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};

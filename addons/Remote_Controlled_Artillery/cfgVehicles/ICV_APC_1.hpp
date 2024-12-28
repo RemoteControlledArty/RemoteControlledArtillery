@@ -292,6 +292,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 			showAllTargets="2 + 4";
+			minElev=-19;
 			commanding=3;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			turretInfoType="RscOptics_MBT_03_gunner";

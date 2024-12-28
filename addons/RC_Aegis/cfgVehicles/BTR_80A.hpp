@@ -117,6 +117,7 @@ class RC_BTR80A_WD: RC_BTR80A
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
 			showAllTargets="2 + 4";
+			minElev=-6.5;
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
