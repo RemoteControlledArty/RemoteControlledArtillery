@@ -1,9 +1,9 @@
-params ["_vehicle", "_targetPosition", "_timeSinceLast", "_timeInterval"];
+params ["_vehicle", "_targetPosition", "_timeSinceLast"];
 
 _ETA = _vehicle getArtilleryETA [_targetPosition, currentMagazine _vehicle];
 
-[_vehicle, _targetPosition, _timeSinceLast, _timeInterval, _ETA] spawn {
-    params ["_vehicle", "_targetPosition", "_timeSinceLast", "_timeInterval", "_ETA"];
+[_vehicle, _targetPosition, _timeSinceLast, _ETA] spawn {
+    params ["_vehicle", "_targetPosition", "_timeSinceLast", "_ETA"];
     private _artySourcePos = getPosASL _vehicle;
     _firstUnit = (units resistance) select 0;
 
@@ -76,7 +76,7 @@ _ETA = _vehicle getArtilleryETA [_targetPosition, currentMagazine _vehicle];
         };
     //};
 
-    if (_timeSinceLast > _timeInterval) then {
+    if (_timeSinceLast > RC_IgnoreTime_F1) then {
         _vehicle setVariable ["ArtySourceTime", time, true];
 
         _roundedArtySourcePosX = round (_artySourcePos select 0);

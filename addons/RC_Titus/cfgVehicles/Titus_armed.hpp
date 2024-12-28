@@ -32,18 +32,13 @@ class RC_Titus_AC_base: QIN_Titus_arx20_DES
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_Titus_AC_D: RC_Titus_AC_base
+class RC_Titus_AC: RC_Titus_AC_base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\RC_Titus\cfgVehicles\Titus_include.hpp"
 
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -251,6 +246,17 @@ class RC_Titus_AC_D: RC_Titus_AC_base
 		class CargoTurret_02: CargoTurret_02 {};
 	};
 };
+class RC_Titus_AC_D: RC_Titus_AC
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+		};
+	};
+};
 class RC_Titus_AC_WD: RC_Titus_AC_D
 {
 	#include "\RC_Titus\textures\tex_wd_armed.hpp"
@@ -320,12 +326,15 @@ class RC_Titus_AC_A_I: RC_Titus_AC_D_I
 };
 
 
-class RC_Titus_MMG_D: RC_Titus_AC_D
+class RC_Titus_MMG_D: RC_Titus_AC
 {
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
+		};
 	};
 
 	displayName="RC Titus MMG";

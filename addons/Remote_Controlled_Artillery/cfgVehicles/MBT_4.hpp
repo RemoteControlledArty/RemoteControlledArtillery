@@ -18,7 +18,7 @@ class RC_MBT_4_Base: O_MBT_02_cannon_F
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_MBT_4_G_Base: RC_MBT_4_Base
+class RC_MBT_4_HEX_A_Base: RC_MBT_4_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -36,7 +36,7 @@ class RC_MBT_4_G_Base: RC_MBT_4_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	faction="RemoteControlled_B";
+	faction="RemoteControlled_O";
 	editorSubcategory="RC_MBT_subcat";
 	author="Ascent";
 	driverCompartments="Compartment2";
@@ -50,14 +50,6 @@ class RC_MBT_4_G_Base: RC_MBT_4_Base
 	smokeLauncherAngle=180;
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
-	
-	hiddenSelectionsTextures[]=
-	{
-		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_1_CO.paa",
-		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_2_CO.paa",
-		"\A3\Armor_F_Tank\MBT_04\Data\MBT_04_command_CO.paa",
-		"A3\Armor_F\Data\camonet_CSAT_Stripe_Desert_CO.paa"
-	};
 
 	class Turrets: Turrets
 	{
@@ -75,15 +67,7 @@ class RC_MBT_4_G_Base: RC_MBT_4_Base
 				"RC_MMG_93x64_coax",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_R",
-				"RC_20Rnd_125mm_MP_T_R",
-				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T100_green.hpp"
 
 			class OpticsIn
 			{
@@ -122,21 +106,11 @@ class RC_MBT_4_G_Base: RC_MBT_4_Base
 
 					weapons[]=
 					{
-						"RC_autocannon_30mm_RCWS",
+						"RC_HMG_127_NSVT",
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
-					magazines[]=
-					{
-						"RC_60Rnd_30mm_MP_T_R",
-						"RC_60Rnd_30mm_MP_T_R",
-						"RC_60Rnd_30mm_MP_T_R",
-						"RC_60Rnd_30mm_GPR_T_R",
-						"RC_60Rnd_30mm_GPR_T_R",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T100_com_green.hpp"
 
 					class OpticsIn
 					{
@@ -195,144 +169,11 @@ class RC_MBT_4_G_Base: RC_MBT_4_Base
 			source="zeroing";
 			weapon="RC_cannon_125mm_advanced";
 		};
-		/*
-		class muzzle_rot_hmg
+		class muzzle_rot_HMG
 		{
 			source="ammorandom";
-			weapon="HMG_127_APC";
+			weapon="RC_HMG_127_NSVT";
 		};
-		*/
-		class com_gun_reload
-		{
-			source="reload";
-			weapon="RC_autocannon_30mm_RCWS";
-		};
-	};
-
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
-};
-
-
-class RC_MBT_4_G: RC_MBT_4_G_Base
-{
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
-	};
-
-	displayName="T-100";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
-	crew="B_UAV_AI";
-};
-class RC_MBT_4_G_O: RC_MBT_4_G
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_G",
-				"RC_20Rnd_125mm_MP_T_G",
-				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					magazines[]=
-					{
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_GPR_T_G",
-						"RC_60Rnd_30mm_GPR_T_G",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
-				};
-			};
-		};
-	};
-};
-class RC_MBT_4_G_I: RC_MBT_4_G
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_Y",
-				"RC_20Rnd_125mm_MP_T_Y",
-				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					magazines[]=
-					{
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_GPR_T_Y",
-						"RC_60Rnd_30mm_GPR_T_Y",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
-				};
-			};
-		};
-	};
-};
-
-
-class RC_MBT_4_WD: RC_MBT_4_G
-{
-	editorPreview="\A3\EditorPreviews_F_Tank\Data\CfgVehicles\O_T_MBT_04_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_1_CO.paa",
-		"a3\Armor_F_Tank\MBT_04\Data\MBT_04_exterior_jungle_2_CO.paa",
-		"\A3\Armor_F_Tank\MBT_04\Data\MBT_04_command_jungle_CO.paa",
-		//"A3\Armor_F\Data\camonet_CSAT_Stripe_Green_CO.paa"
-		"a3\armor_f\data\camonet_green_co.paa"
-	};
-
-	class AnimationSources: AnimationSources
-	{
 		class showCamonetCannon: showCamonetCannon
 		{
 			initPhase=1;
@@ -355,88 +196,44 @@ class RC_MBT_4_WD: RC_MBT_4_G
 		"showCamonetTurret",
 		1
 	};
-};
-class RC_MBT_4_WD_O: RC_MBT_4_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+};
 
-	class Turrets: Turrets
+
+class RC_MBT_4_HEX_A_O: RC_MBT_4_HEX_A_Base
+{
+	class EventHandlers: EventHandlers
 	{
-		class MainTurret: MainTurret
+		class RC_Artillery
 		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_G",
-				"RC_20Rnd_125mm_MP_T_G",
-				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					magazines[]=
-					{
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_GPR_T_G",
-						"RC_60Rnd_30mm_GPR_T_G",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
-				};
-			};
+			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
+
+	displayName="T-100";
+	scope=2;
+	scopeCurator=2;
+	side=0;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
+	crew="O_UAV_AI";
 };
-class RC_MBT_4_WD_I: RC_MBT_4_WD
+class RC_MBT_4_HEX_WD_O: RC_MBT_4_HEX_A_O
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
-
-	class Turrets: Turrets
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_MBT_02_cannon_ghex_F.jpg";
+	hiddenSelectionsTextures[]=
 	{
-		class MainTurret: MainTurret
-		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_Y",
-				"RC_20Rnd_125mm_MP_T_Y",
-				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					magazines[]=
-					{
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_GPR_T_Y",
-						"RC_60Rnd_30mm_GPR_T_Y",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
-				};
-			};
-		};
+		"a3\Armor_F_Exp\MBT_02\Data\MBT_02_body_ghex_CO.paa",
+		"a3\Armor_F_Exp\MBT_02\Data\MBT_02_turret_ghex_CO.paa",
+		"a3\Armor_F_Exp\MBT_02\Data\MBT_02_ghex_CO.paa",
+		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa"
+	};
+	textureList[]=
+	{
+		"GreenHex",
+		1
 	};
 };

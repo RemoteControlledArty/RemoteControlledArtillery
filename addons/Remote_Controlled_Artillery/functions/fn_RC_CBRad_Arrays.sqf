@@ -8,9 +8,13 @@ if (!isServer) exitwith {};
 RC_DetectionTime_F1 = 15;
 RC_PrepTime_F1 = 10;
 RC_ReassignTime_F1 = 15;
+RC_IgnoreTime_F1 = 15;
+RC_AI_AccuracyRadius_F1 = 15;
 publicVariable "RC_DetectionTime_F1";
 publicVariable "RC_PrepTime_F1";
 publicVariable "RC_ReassignTime_F1";
+publicVariable "RC_IgnoreTime_F1";
+publicVariable "RC_AI_AccuracyRadius_F1";
 
 RC_CBRad_AI_Array_B = [];
 RC_CBRad_AI_Array_O = [];

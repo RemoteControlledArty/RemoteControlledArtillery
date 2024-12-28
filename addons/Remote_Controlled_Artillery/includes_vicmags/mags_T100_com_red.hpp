@@ -1,0 +1,11 @@
+magazines[]=
+{
+	"RC_150Rnd_127x99_T_R",
+	"RC_150Rnd_127x99_T_R",
+	"RC_150Rnd_127x99_T_R",
+	"RC_150Rnd_127x99_T_R",
+	"RC_150Rnd_127x99_T_R",
+	"Laserbatteries",
+	"SmokeLauncherMag",
+	"SmokeLauncherMag"
+};

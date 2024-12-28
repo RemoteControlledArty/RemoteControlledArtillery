@@ -56,12 +56,11 @@ addMissionEventHandler ["ArtilleryShellFired", {
     };
 
 
-    private _timeInterval = 10;
     private _lastTime = _vehicle getVariable "ArtySourceTime";
     private _timeSinceLast = time - _lastTime;
 
 
-    if (_timeSinceLast > _timeInterval) then {
+    if (_timeSinceLast > RC_IgnoreTime_F1) then {
         _vehicle setVariable ["ArtySourceTime", time, true];
 
         //Blufor AI
@@ -82,16 +81,16 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     //Blufor Player
     if (_opposedTo_B and (_CBRad_Player_AliveAmount_B > 0)) then {
-        [_vehicle, _targetPosition, _timeSinceLast, _timeInterval] call RC_fnc_RC_Player_CBRad_Blufor;
+        [_vehicle, _targetPosition, _timeSinceLast] call RC_fnc_RC_Player_CBRad_Blufor;
     };
 
     //Opfor Player
     if (_opposedTo_O and (_CBRad_Player_AliveAmount_O > 0)) then {
-        [_vehicle, _targetPosition, _timeSinceLast, _timeInterval] call RC_fnc_RC_Player_CBRad_Opfor;
+        [_vehicle, _targetPosition, _timeSinceLast] call RC_fnc_RC_Player_CBRad_Opfor;
     };
 
     //Indfor Player
     if (_opposedTo_I and (_CBRad_Player_AliveAmount_I > 0)) then {
-        [_vehicle, _targetPosition, _timeSinceLast, _timeInterval] call RC_fnc_RC_Player_CBRad_Indfor;
+        [_vehicle, _targetPosition, _timeSinceLast] call RC_fnc_RC_Player_CBRad_Indfor;
     };
 }];

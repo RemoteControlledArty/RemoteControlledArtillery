@@ -111,4 +111,6 @@ class CfgVehicles
 	#include "\RC_Aegis\cfgVehicles\CBRad_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\Otokar_Arma_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\Patria_AMV_ATGM_WD.hpp"
+	#include "\RC_Aegis\cfgVehicles\T_100.hpp"
+	#include "\RC_Aegis\cfgVehicles\T_14.hpp"
 };

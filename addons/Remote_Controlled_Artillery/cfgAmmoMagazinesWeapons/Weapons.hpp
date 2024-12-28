@@ -223,7 +223,7 @@ class RC_HMG_127x99: RC_MG_Base
 		"RC_100Rnd_127x99_SLAP_T_Y",
 		"RC_100Rnd_127x99_T_R",
 		"RC_100Rnd_127x99_T_G",
-		"RC_100Rnd_127x99_T_Y",
+		"RC_100Rnd_127x99_T_Y"
 	};
 	class manual: manual
 	{
@@ -241,7 +241,7 @@ class RC_MG_FSV_Base: HMG_127_AFV
 class RC_HMG_127x99_FSV: RC_MG_FSV_Base
 {
 	author="Ascent";
-	//displayName="MMG";
+	displayName="HMG";
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
@@ -249,10 +249,14 @@ class RC_HMG_127x99_FSV: RC_MG_FSV_Base
 	{
 		"RC_200Rnd_127x99_T_R",
 		"RC_200Rnd_127x99_T_G",
-		"RC_200Rnd_127x99_T_Y"
+		"RC_200Rnd_127x99_T_Y",
+		"RC_200Rnd_127x99_SLAP_T_R",
+		"RC_200Rnd_127x99_SLAP_T_G",
+		"RC_200Rnd_127x99_SLAP_T_Y"
 	};
 	class manual: manual
 	{
+		displayName="12.7mm";
 		dispersion=0.001;
 	};
 };
@@ -263,6 +267,8 @@ class RC_MMG_338_FSV: RC_MG_FSV_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	magazineReloadTime=10;
+	reloadTime=0.0857;
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -273,6 +279,7 @@ class RC_MMG_338_FSV: RC_MG_FSV_Base
 	{
 		displayName=".338 NM";
 		dispersion=0.001;
+		reloadTime=0.0857;
 	};
 };
 class RC_MMG_338_FSV_coax: RC_MMG_338_FSV
@@ -299,7 +306,7 @@ class RC_MG_MBT_Base: HMG_127_MBT
 class RC_HMG_127x99_MBT: RC_MG_MBT_Base
 {
 	author="Ascent";
-	//displayName="MMG";
+	displayName="HMG";
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
@@ -307,12 +314,16 @@ class RC_HMG_127x99_MBT: RC_MG_MBT_Base
 	{
 		"RC_200Rnd_127x99_T_R",
 		"RC_200Rnd_127x99_T_G",
-		"RC_200Rnd_127x99_T_Y"
+		"RC_200Rnd_127x99_T_Y",
+		"RC_200Rnd_127x99_SLAP_T_R",
+		"RC_200Rnd_127x99_SLAP_T_G",
+		"RC_200Rnd_127x99_SLAP_T_Y"
 	};
 	class manual: manual
 	{
 		//displayName=".338 NM";
 		dispersion=0.001;
+		reloadTime=0.1;
 	};
 };
 class RC_MMG_338_MBT: RC_MG_MBT_Base
@@ -322,6 +333,8 @@ class RC_MMG_338_MBT: RC_MG_MBT_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	reloadTime=0.0857;
+	magazineReloadTime=10;
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -332,6 +345,7 @@ class RC_MMG_338_MBT: RC_MG_MBT_Base
 	{
 		displayName=".338 NM";
 		dispersion=0.001;
+		reloadTime=0.0857;
 	};
 };
 class RC_MMG_338_MBT_coax: RC_MMG_338_MBT
@@ -384,6 +398,7 @@ class RC_MMG_338_coax: RC_MMG_338_coax_Base
 	{
 		displayName=".338 NM";
 		dispersion=0.001;
+		reloadTime=0.0857;
 	};
 };
 class RC_MMG_93x64_coax: RC_MMG_338_coax
@@ -426,6 +441,7 @@ class RC_MMG_338_coax_ext: RC_MMG_338_coax_ext_Base
 	{
 		displayName=".338 NM";
 		dispersion=0.001;
+		reloadTime=0.0857;
 	};
 };
 class RC_MMG_93x64_coax_ext: RC_MMG_338_coax_ext
@@ -442,6 +458,146 @@ class RC_MMG_93x64_coax_ext: RC_MMG_338_coax_ext
 	class manual: manual
 	{
 		displayName="9.3x64mm";
+	};
+};
+
+
+class HMG_127_APC;
+class HMG_127_APC_Base: HMG_127_APC
+{
+	class manual;
+};
+class RC_HMG_127_APC: HMG_127_APC_Base
+{
+	author="Ascent";
+	displayName="HMG";
+	canLock=2;
+	FCSZeroingDelay=0.5;
+	maxZeroing=3000;
+
+	class manual: manual
+	{
+		displayName="12.7mm HMG";
+		dispersion=0.001;
+	};
+
+	magazines[]=
+	{
+		"RC_200Rnd_127x99_SLAP_T_R",
+		"RC_200Rnd_127x99_SLAP_T_G",
+		"RC_200Rnd_127x99_SLAP_T_Y",
+		"RC_100Rnd_127x99_SLAP_T_R",
+		"RC_100Rnd_127x99_SLAP_T_G",
+		"RC_100Rnd_127x99_SLAP_T_Y"
+	};
+};
+class RC_HMG_127_APC2: RC_HMG_127_APC
+{
+	magazines[]=
+	{
+		"RC_200Rnd_127x99_SLAP_T_R",
+		"RC_200Rnd_127x99_SLAP_T_G",
+		"RC_200Rnd_127x99_SLAP_T_Y",
+		"RC_100Rnd_127x99_SLAP_T_R",
+		"RC_100Rnd_127x99_SLAP_T_G",
+		"RC_100Rnd_127x99_SLAP_T_Y",
+		"RC_200Rnd_127x99_T_R",
+		"RC_200Rnd_127x99_T_G",
+		"RC_200Rnd_127x99_T_Y"
+	};
+};
+class RC_MMG_338_APC: RC_HMG_127_APC
+{
+	displayName="MMG";
+	maxZeroing=3000;
+	reloadTime=0.0857;
+	magazineReloadTime=10;
+
+	magazines[]=
+	{
+		"RC_200Rnd_338_T_R",
+		"RC_200Rnd_338_T_G",
+		"RC_200Rnd_338_T_Y"
+	};
+
+	class manual: manual
+	{
+		displayName=".338 NM";
+		reloadTime=0.0857;
+	};
+};
+class RC_MMG_93x64_APC: RC_MMG_338_APC
+{
+	displayName="MMG";
+
+	magazines[]=
+	{
+		"RC_200Rnd_93x64_T_R",
+		"RC_200Rnd_93x64_T_G",
+		"RC_200Rnd_93x64_T_Y"
+	};
+
+	class manual: manual
+	{
+		displayName="9.3x64mm";
+	};
+};
+
+
+class HMG_NSVT;
+class HMG_NSVT_Base: HMG_NSVT
+{
+	class manual;
+};
+class RC_HMG_127_NSVT: HMG_NSVT_Base
+{
+	author="Ascent";
+	displayName="NSVT";
+	canLock=2;
+	FCSZeroingDelay=0.5;
+	maxZeroing=3000;
+
+	class manual: manual
+	{
+		displayName="12.7mm";
+		dispersion=0.001;
+		reloadTime=0.1;
+	};
+
+	magazines[]=
+	{
+		"RC_150Rnd_127x99_T_R",
+		"RC_150Rnd_127x99_T_G",
+		"RC_150Rnd_127x99_T_Y",
+		"RC_150Rnd_127x99_SLAP_T_R",
+		"RC_150Rnd_127x99_SLAP_T_G",
+		"RC_150Rnd_127x99_SLAP_T_Y"
+	};
+};
+
+
+//GMG
+class GMG_40mm;
+class GMG_40mm_Base: GMG_40mm
+{
+	class manual;
+};
+class RC_GMG_40mm: GMG_40mm_Base
+{
+	author="Ascent";
+	canLock=2;
+	FCSZeroingDelay=0.5;
+
+	class manual: manual
+	{
+		dispersion=0.0025;
+	};
+
+	magazines[]=
+	{
+		"RC_100Rnd_40mm_G_belt",
+		"RC_75Rnd_40mm_G_belt",
+		"RC_50Rnd_40mm_G_belt"
 	};
 };
 
@@ -689,100 +845,6 @@ class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
 		"RC_60Rnd_30mm_GPR_T_G",
 		"RC_60Rnd_30mm_GPR_T_R",
 		"RC_60Rnd_30mm_GPR_T_Y"
-	};
-};
-
-
-class HMG_127_APC;
-class HMG_127_APC_Base: HMG_127_APC
-{
-	class manual;
-};
-class RC_HMG_127_APC: HMG_127_APC_Base
-{
-	author="Ascent";
-	canLock=2;
-	FCSZeroingDelay=0.5;
-	maxZeroing=3000;
-
-	class manual: manual
-	{
-		displayName="12.7mm HMG";
-		dispersion=0.001;
-	};
-
-	magazines[]=
-	{
-		"RC_200Rnd_127x99_SLAP_T_R",
-		"RC_200Rnd_127x99_SLAP_T_G",
-		"RC_200Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_R",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_Y"
-	};
-};
-class RC_HMG_127_APC2: RC_HMG_127_APC
-{
-	magazines[]=
-	{
-		"RC_200Rnd_127x99_SLAP_T_R",
-		"RC_200Rnd_127x99_SLAP_T_G",
-		"RC_200Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_SLAP_T_R",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_200Rnd_127x99_T_R",
-		"RC_200Rnd_127x99_T_G",
-		"RC_200Rnd_127x99_T_Y"
-	};
-};
-class RC_MMG_338_APC: RC_HMG_127_APC
-{
-	displayName=".338 MMG";
-	maxZeroing=3000;
-
-	magazines[]=
-	{
-		"RC_200Rnd_338_T_R",
-		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_Y"
-	};
-};
-class RC_MMG_93x64_APC: RC_HMG_127_APC
-{
-	displayName="9.3x64mm MMG";
-	maxZeroing=3000;
-
-	magazines[]=
-	{
-		"RC_200Rnd_93x64_T_R",
-		"RC_200Rnd_93x64_T_G",
-		"RC_200Rnd_93x64_T_Y"
-	};
-};
-
-
-class GMG_40mm;
-class GMG_40mm_Base: GMG_40mm
-{
-	class manual;
-};
-class RC_GMG_40mm: GMG_40mm_Base
-{
-	author="Ascent";
-	canLock=2;
-	FCSZeroingDelay=0.5;
-
-	class manual: manual
-	{
-		dispersion=0.0025;
-	};
-
-	magazines[]=
-	{
-		"RC_100Rnd_40mm_G_belt",
-		"RC_75Rnd_40mm_G_belt",
-		"RC_50Rnd_40mm_G_belt"
 	};
 };
 
@@ -1476,8 +1538,8 @@ class RC_mortar_82mm_V1: mortar_82mm_base
 };
 class RC_mortar_82mm_V2: RC_mortar_82mm_V1
 {
-	reloadTime=3;
-	magazineReloadTime=3;
+	reloadTime=1.8;
+	magazineReloadTime=2.2;
 	canLock=2;
 	weaponLockDelay=0;
 };
@@ -2158,6 +2220,35 @@ class RC_vehiclemortar_60mm_V4: RC_vehiclemortar_82mm_V4
 	displayName="60mm Mortar";
 	displayNameShort="60mm Mortar";
 	ballisticsComputer=8;	//direct fire reticle for highest charge
+
+	class Single1: Single1
+	{
+		reloadTime=1.4;
+	};
+	class Single2: Single2
+	{
+		reloadTime=1.4;
+	};
+	class Single3: Single3
+	{
+		reloadTime=1.4;
+	};
+	class Single4: Single4
+	{
+		reloadTime=1.4;
+	};
+	class Single5: Single5
+	{
+		reloadTime=1.4;
+	};
+	class Single6: Single6
+	{
+		reloadTime=1.4;
+	};
+	class Single7: Single7
+	{
+		reloadTime=1.4;
+	};
 	
 	magazines[]=
 	{

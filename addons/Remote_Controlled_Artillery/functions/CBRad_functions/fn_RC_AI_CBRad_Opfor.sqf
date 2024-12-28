@@ -7,7 +7,7 @@ publicVariable "RC_isInRangeArray_O";
 //shot source position
 _vehiclePos = getPos _vehicle;
 private _angle = random 360;
-private _distance = 15 * (sqrt random 1);   //first value is radius
+private _distance = RC_AI_AccuracyRadius_F1 * (sqrt random 1);   //first value is radius
 private _targetPos = _vehiclePos getPos [_distance, _angle];
 
 [_targetPos] spawn

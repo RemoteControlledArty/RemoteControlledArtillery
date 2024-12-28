@@ -148,6 +148,18 @@ class RC_100Rnd_127x99_T_Y: RC_200Rnd_127x99_T_Y
 {
 	count=100;
 };
+class RC_150Rnd_127x99_T_R: RC_200Rnd_127x99_T_R
+{
+	count=150;
+};
+class RC_150Rnd_127x99_T_G: RC_200Rnd_127x99_T_G
+{
+	count=150;
+};
+class RC_150Rnd_127x99_T_Y: RC_200Rnd_127x99_T_Y
+{
+	count=150;
+};
 
 
 class RC_200Rnd_127x99_SLAP_T_R: 200Rnd_127x99_mag_Tracer_Red
@@ -179,6 +191,18 @@ class RC_100Rnd_127x99_SLAP_T_G: RC_200Rnd_127x99_SLAP_T_G
 class RC_100Rnd_127x99_SLAP_T_Y: RC_200Rnd_127x99_SLAP_T_Y
 {
 	count=100;
+};
+class RC_150Rnd_127x99_SLAP_T_R: RC_200Rnd_127x99_SLAP_T_R
+{
+	count=150;
+};
+class RC_150Rnd_127x99_SLAP_T_G: RC_200Rnd_127x99_SLAP_T_G
+{
+	count=150;
+};
+class RC_150Rnd_127x99_SLAP_T_Y: RC_200Rnd_127x99_SLAP_T_Y
+{
+	count=150;
 };
 
 

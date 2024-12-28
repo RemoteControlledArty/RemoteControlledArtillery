@@ -521,6 +521,7 @@ class CfgPatches
 			RC_HMG_127_APC,
 			RC_HMG_127x99_FSV,
 			RC_HMG_127x99_MBT,
+			RC_HMG_127_NSVT,
 
 			RC_GMG_40mm,
 			RC_autocannon_20mm,
@@ -536,6 +537,7 @@ class CfgPatches
 			RC_ATGM_Lock,
 			RC_IFV_Missile_Launcher,
 
+			RC_indirect_40mm_GMG_V4,
 			RC_vehiclemortar_60mm_V4,
 
 			RC_mortar_82mm_V1,
@@ -781,7 +783,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_3.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_4.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_4.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first

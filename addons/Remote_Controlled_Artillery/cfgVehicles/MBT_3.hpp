@@ -75,15 +75,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 				"RC_MMG_93x64_coax",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_R",
-				"RC_20Rnd_125mm_MP_T_R",
-				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_red.hpp"
 
 			class OpticsIn
 			{
@@ -126,17 +118,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
-					magazines[]=
-					{
-						"RC_60Rnd_30mm_MP_T_R",
-						"RC_60Rnd_30mm_MP_T_R",
-						"RC_60Rnd_30mm_MP_T_R",
-						"RC_60Rnd_30mm_GPR_T_R",
-						"RC_60Rnd_30mm_GPR_T_R",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_com_red.hpp"
 
 					class OpticsIn
 					{
@@ -163,26 +145,6 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 							gunnerOpticsEffect[]={};
 						};
 					};
-					/*
-					class ViewOptics: ViewOptics
-					{
-						initAngleX=0;
-						minAngleX=-30;
-						maxAngleX=30;
-						initAngleY=0;
-						minAngleY=-100;
-						maxAngleY=100;
-						initFov=0.9;
-						minFov=0.02;
-						maxFov=0.9;
-						visionMode[]=
-						{
-							"Normal",
-							"TI"
-						};
-						thermalMode[]={0};
-					};
-					*/
 				};
 			};
 		};
@@ -347,31 +309,13 @@ class RC_MBT_3_G_O: RC_MBT_3_G
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_G",
-				"RC_20Rnd_125mm_MP_T_G",
-				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_green.hpp"
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					magazines[]=
-					{
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_GPR_T_G",
-						"RC_60Rnd_30mm_GPR_T_G",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_com_green.hpp"
 				};
 			};
 		};
@@ -389,31 +333,13 @@ class RC_MBT_3_G_I: RC_MBT_3_G
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_Y",
-				"RC_20Rnd_125mm_MP_T_Y",
-				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_yellow.hpp"
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					magazines[]=
-					{
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_GPR_T_Y",
-						"RC_60Rnd_30mm_GPR_T_Y",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_com_yellow.hpp"
 				};
 			};
 		};
@@ -470,31 +396,13 @@ class RC_MBT_3_WD_O: RC_MBT_3_WD
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_G",
-				"RC_20Rnd_125mm_MP_T_G",
-				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_green.hpp"
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					magazines[]=
-					{
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_MP_T_G",
-						"RC_60Rnd_30mm_GPR_T_G",
-						"RC_60Rnd_30mm_GPR_T_G",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_com_green.hpp"
 				};
 			};
 		};
@@ -512,31 +420,13 @@ class RC_MBT_3_WD_I: RC_MBT_3_WD
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_Y",
-				"RC_20Rnd_125mm_MP_T_Y",
-				"RC_3Rnd_125mm_DLG_cannon_missiles",
-				"RC_1000Rnd_93x64_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_yellow.hpp"
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					magazines[]=
-					{
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_MP_T_Y",
-						"RC_60Rnd_30mm_GPR_T_Y",
-						"RC_60Rnd_30mm_GPR_T_Y",
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_com_yellow.hpp"
 				};
 			};
 		};

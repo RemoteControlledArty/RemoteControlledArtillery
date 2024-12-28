@@ -1,0 +1,11 @@
+magazines[]=
+{
+	"RC_60Rnd_30mm_MP_T_G",
+	"RC_60Rnd_30mm_MP_T_G",
+	"RC_60Rnd_30mm_MP_T_G",
+	"RC_60Rnd_30mm_GPR_T_G",
+	"RC_60Rnd_30mm_GPR_T_G",
+	"Laserbatteries",
+	"SmokeLauncherMag",
+	"SmokeLauncherMag"
+};
