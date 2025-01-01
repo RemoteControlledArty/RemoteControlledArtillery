@@ -1539,7 +1539,7 @@ class RC_mortar_82mm_V1: mortar_82mm_base
 class RC_mortar_82mm_V2: RC_mortar_82mm_V1
 {
 	reloadTime=1.8;
-	magazineReloadTime=2.2;
+	magazineReloadTime=2.5;
 	canLock=2;
 	weaponLockDelay=0;
 };
@@ -2220,34 +2220,35 @@ class RC_vehiclemortar_60mm_V4: RC_vehiclemortar_82mm_V4
 	displayName="60mm Mortar";
 	displayNameShort="60mm Mortar";
 	ballisticsComputer=8;	//direct fire reticle for highest charge
+	reloadTime=1.6;
 
 	class Single1: Single1
 	{
-		reloadTime=1.4;
+		reloadTime=1.6;
 	};
 	class Single2: Single2
 	{
-		reloadTime=1.4;
+		reloadTime=1.6;
 	};
 	class Single3: Single3
 	{
-		reloadTime=1.4;
+		reloadTime=1.6;
 	};
 	class Single4: Single4
 	{
-		reloadTime=1.4;
+		reloadTime=1.6;
 	};
 	class Single5: Single5
 	{
-		reloadTime=1.4;
+		reloadTime=1.6;
 	};
 	class Single6: Single6
 	{
-		reloadTime=1.4;
+		reloadTime=1.6;
 	};
 	class Single7: Single7
 	{
-		reloadTime=1.4;
+		reloadTime=1.6;
 	};
 	
 	magazines[]=
