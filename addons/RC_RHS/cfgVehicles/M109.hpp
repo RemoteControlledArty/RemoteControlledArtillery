@@ -205,12 +205,12 @@ aggregateReflectors[]={{""}};
 					
 					weapons[]=
 					{
-						"RC_Laserdesignator_vehicle",
+						//"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
 					magazines[]=
 					{
-						"Laserbatteries",
+						//"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -226,7 +226,7 @@ aggregateReflectors[]={{""}};
 								class SensorDisplay
 								{
 									componentType="SensorsDisplayComponent";
-									range[]={40000,30000,20000,10000,5000,2500};
+									range[]={30000,20000,10000,5000,2500,40000};
 									resource="RscCustomInfoSensors";
 								};
 							};
@@ -267,7 +267,7 @@ aggregateReflectors[]={{""}};
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={40000,30000,20000,10000,5000,2500};
+							range[]={30000,20000,10000,5000,2500,40000};
 							resource="RscCustomInfoSensors";
 						};
 					};

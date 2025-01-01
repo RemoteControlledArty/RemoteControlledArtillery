@@ -7,6 +7,34 @@ class CfgPatches
 
 		units[]=
 		{
+			RC_2S23M_A,
+			RC_2S23M_WD,
+			RC_2S23M_A_O,
+			RC_2S23M_WD_O,
+			RC_2S23M_A_I,
+			RC_2S23M_WD_I,
+
+			RC_2S23M_LC_A,
+			RC_2S23M_LC_WD,
+			RC_2S23M_LC_A_O,
+			RC_2S23M_LC_WD_O,
+			RC_2S23M_LC_A_I,
+			RC_2S23M_LC_WD_I,
+
+			RC_2S90M_A,
+			RC_2S90M_WD,
+			RC_2S90M_A_O,
+			RC_2S90M_WD_O,
+			RC_2S90M_A_I,
+			RC_2S90M_WD_I,
+
+			RC_BTR80A_A,
+			RC_BTR80A_WD,
+			RC_BTR80A_A_O,
+			RC_BTR80A_WD_O,
+			RC_BTR80A_A_I,
+			RC_BTR80A_WD_I,
+
 			RC_CBRad2_AI_WD,
 			RC_CBRad2_AI_WD_O,
 			RC_CBRad2_AI_WD_I,
@@ -45,7 +73,18 @@ class CfgPatches
 
 			RC_IFV_9_WD,
 			RC_IFV_9_WD_O,
-			RC_IFV_9_WD_I
+			RC_IFV_9_WD_I,
+
+			RC_MBT_3_WD2,
+			RC_MBT_3_WD2_O,
+			RC_MBT_3_WD2_I,
+
+			RC_MBT_4_A,
+			RC_MBT_4_WD,
+			RC_MBT_4_A_O,
+			RC_MBT_4_WD_O,
+			RC_MBT_4_A_I,
+			RC_MBT_4_WD_I
 		};
 
 		/*

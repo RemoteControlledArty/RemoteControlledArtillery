@@ -717,7 +717,7 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 class RC_Static_Arty: RC_Static_Arty_base
 {
 	author="Ascent";
-	displayName="RC Static Howitzer";
+	displayName="RC Naval Gun";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
 	scope=2;

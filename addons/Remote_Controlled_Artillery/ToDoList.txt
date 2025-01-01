@@ -28,9 +28,10 @@ OPTIMIZATION:
 
 TO DO - FEATURES:
 
+-Patria HMG
+-target hightlighting and vis sensor for grenade dropper
 -datalink WS grenade dropper
 -RC Mortar Fennek
--asset specific firemission array that creates sleep for doartyfire (so that smoke barrage doesnt trigger multiple asset return fire)
 -fix "bad vehicle type" for 105mm truck
 
 

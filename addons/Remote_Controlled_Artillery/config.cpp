@@ -150,6 +150,11 @@ class CfgPatches
 			RC_Wiesel_Radar_DIG_I,
 			RC_Wiesel_Radar_WD_I,
 
+			RC_Wiesel_Radar_manned_WD,
+			RC_Wiesel_Radar_manned_WD_O,
+			RC_Wiesel_Radar_manned_DIG_I,
+			RC_Wiesel_Radar_manned_WD_I,
+
 			RC_Wiesel_ATGM_WD,
 			RC_Wiesel_ATGM_WD_O,
 			RC_Wiesel_ATGM_DIG_I,
@@ -194,9 +199,18 @@ class CfgPatches
 			RC_Mortar_Carrier_WD_I,
 			RC_Mortar_Carrier_DIG_I,
 
+			RC_Mortar_Carrier_manned_WD,
+			RC_Mortar_Carrier_manned_WD_O,
+			RC_Mortar_Carrier_manned_WD_I,
+			RC_Mortar_Carrier_manned_DIG_I,
+
 			RC_Mortar_Carrier_LC_WD,
 			RC_Mortar_Carrier_LC_WD_O,
 			RC_Mortar_Carrier_LC_WD_I,
+
+			RC_Mortar_Carrier_LC_manned_WD,
+			RC_Mortar_Carrier_LC_manned_WD_O,
+			RC_Mortar_Carrier_LC_manned_WD_I,
 
 			RC_MortarMATV_manned_A,
 			RC_MortarMATV_manned_WD,
@@ -372,6 +386,16 @@ class CfgPatches
 			RC_MBT_3_WD_O,
 			RC_MBT_3_G_I,
 			RC_MBT_3_WD_I,
+
+			RC_MBT_4_HEX_A_O,
+			RC_MBT_4_HEX_WD_O,
+
+			RC_indirect_GMG_UGV_A,
+			RC_indirect_GMG_UGV_WD,
+			RC_indirect_GMG_UGV_A_O,
+			RC_indirect_GMG_UGV_WD_O,
+			RC_indirect_GMG_UGV_A_I,
+			RC_indirect_GMG_UGV_WD_I,
 
 			RC_GPSDatalinkTarget,
 

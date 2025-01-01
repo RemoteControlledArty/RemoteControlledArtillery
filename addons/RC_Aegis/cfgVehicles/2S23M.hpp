@@ -29,9 +29,9 @@ class RC_2S23M_Base: O_R_APC_Wheeled_04_cannon_v2_F
 	artilleryScanner=1;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL, 5 = not compatible with script that disables vanilla artillery computer
-	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelLenght=6;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
+	RC_BarrelAGL=2.3;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 };
 class RC_2S23M: RC_2S23M_Base
 {
