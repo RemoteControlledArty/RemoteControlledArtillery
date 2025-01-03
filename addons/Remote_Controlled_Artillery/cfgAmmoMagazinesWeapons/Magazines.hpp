@@ -80,6 +80,18 @@ class RC_200Rnd_338_T_Y: RC_200Rnd_338_T_R
 {
 	ammo="RC_B_338_T_Y";
 };
+class RC_400Rnd_338_T_R: RC_200Rnd_338_T_R
+{
+	count=400;
+};
+class RC_400Rnd_338_T_G: RC_200Rnd_338_T_G
+{
+	acount=400;
+};
+class RC_400Rnd_338_T_Y: RC_200Rnd_338_T_Y
+{
+	count=400;
+};
 
 
 class RC_200Rnd_93x64_T_G: VehicleMagazine
