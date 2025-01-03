@@ -39,7 +39,7 @@ class RC_AAV9A1: RC_AAV9A1_Base
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmVisSens.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSens.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -233,7 +233,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_Sens.hpp"
 			showAllTargets="2 + 4";
 			commanding=4;
 
@@ -245,15 +245,18 @@ class RC_AAV9A1_A: RC_AAV9A1
 			};
 			magazines[]=
 			{
-				"RC_EF_120Rnd_50mm_HE_T",
-				"RC_EF_120Rnd_50mm_HE_T",
-				"RC_EF_120Rnd_50mm_HE_T",
-				"RC_EF_50Rnd_50mm_APFSDS_T",
-				"RC_EF_50Rnd_50mm_APFSDS_T",
-				"RC_EF_50Rnd_50mm_APFSDS_T",
-				"RC_400Rnd_338_T_R",
-				"RC_400Rnd_338_T_R",
-				"RC_400Rnd_338_T_R"
+				"RC_EF_120Rnd_50mm_HE_T_W",
+				"RC_EF_120Rnd_50mm_HE_T_W",
+				"RC_EF_120Rnd_50mm_HE_T_W",
+				"RC_EF_50Rnd_50mm_APFSDS_T_W",
+				"RC_EF_50Rnd_50mm_APFSDS_T_W",
+				"RC_EF_50Rnd_50mm_APFSDS_T_W",
+				"RC_400Rnd_338_T_W",
+				"RC_400Rnd_338_T_W",
+				"RC_400Rnd_338_T_W",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
 			};
 			//#include "\RC_ExpForces\includes_vicmags\mags_AAV9A1_red.hpp"
 
@@ -287,7 +290,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 				class CrewmanStation: CrewmanStation
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander_Sens.hpp"
 					showAllTargets="2 + 4";
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
@@ -331,7 +334,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander_Sens.hpp"
 					showAllTargets="2 + 4";
 					commanding=3;
 					turretInfoType="RscOptics_MBT_03_gunner";
@@ -383,6 +386,30 @@ class RC_AAV9A1_A_O: RC_AAV9A1_A
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class CargoGunner_3: CargoGunner_3 {};
+		class CargoGunner_4: CargoGunner_4 {};
+		class CargoGunner_5: CargoGunner_5 {};
+		class CargoGunner_6: CargoGunner_6 {};
+
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_EF_120Rnd_50mm_HE_T_G",
+				"RC_EF_120Rnd_50mm_HE_T_G",
+				"RC_EF_120Rnd_50mm_HE_T_G",
+				"RC_EF_50Rnd_50mm_APFSDS_T_G",
+				"RC_EF_50Rnd_50mm_APFSDS_T_G",
+				"RC_EF_50Rnd_50mm_APFSDS_T_G",
+				"RC_400Rnd_338_T_G",
+				"RC_400Rnd_338_T_G",
+				"RC_400Rnd_338_T_G"
+			};
+		};
+	};
 };
 class RC_AAV9A1_A_I: RC_AAV9A1_A
 {
@@ -390,6 +417,30 @@ class RC_AAV9A1_A_I: RC_AAV9A1_A
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class CargoGunner_3: CargoGunner_3 {};
+		class CargoGunner_4: CargoGunner_4 {};
+		class CargoGunner_5: CargoGunner_5 {};
+		class CargoGunner_6: CargoGunner_6 {};
+
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_EF_120Rnd_50mm_HE_T_Y",
+				"RC_EF_120Rnd_50mm_HE_T_Y",
+				"RC_EF_120Rnd_50mm_HE_T_Y",
+				"RC_EF_50Rnd_50mm_APFSDS_T_Y",
+				"RC_EF_50Rnd_50mm_APFSDS_T_Y",
+				"RC_EF_50Rnd_50mm_APFSDS_T_Y",
+				"RC_400Rnd_338_T_Y",
+				"RC_400Rnd_338_T_Y",
+				"RC_400Rnd_338_T_Y"
+			};
+		};
+	};
 };
 
 
@@ -434,6 +485,30 @@ class RC_AAV9A1_WD_O: RC_AAV9A1_WD
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class CargoGunner_3: CargoGunner_3 {};
+		class CargoGunner_4: CargoGunner_4 {};
+		class CargoGunner_5: CargoGunner_5 {};
+		class CargoGunner_6: CargoGunner_6 {};
+
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_EF_120Rnd_50mm_HE_T_G",
+				"RC_EF_120Rnd_50mm_HE_T_G",
+				"RC_EF_120Rnd_50mm_HE_T_G",
+				"RC_EF_50Rnd_50mm_APFSDS_T_G",
+				"RC_EF_50Rnd_50mm_APFSDS_T_G",
+				"RC_EF_50Rnd_50mm_APFSDS_T_G",
+				"RC_400Rnd_338_T_G",
+				"RC_400Rnd_338_T_G",
+				"RC_400Rnd_338_T_G"
+			};
+		};
+	};
 };
 class RC_AAV9A1_WD_I: RC_AAV9A1_WD
 {
@@ -441,4 +516,28 @@ class RC_AAV9A1_WD_I: RC_AAV9A1_WD
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class CargoGunner_3: CargoGunner_3 {};
+		class CargoGunner_4: CargoGunner_4 {};
+		class CargoGunner_5: CargoGunner_5 {};
+		class CargoGunner_6: CargoGunner_6 {};
+
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_EF_120Rnd_50mm_HE_T_Y",
+				"RC_EF_120Rnd_50mm_HE_T_Y",
+				"RC_EF_120Rnd_50mm_HE_T_Y",
+				"RC_EF_50Rnd_50mm_APFSDS_T_Y",
+				"RC_EF_50Rnd_50mm_APFSDS_T_Y",
+				"RC_EF_50Rnd_50mm_APFSDS_T_Y",
+				"RC_400Rnd_338_T_Y",
+				"RC_400Rnd_338_T_Y",
+				"RC_400Rnd_338_T_Y"
+			};
+		};
+	};
 };

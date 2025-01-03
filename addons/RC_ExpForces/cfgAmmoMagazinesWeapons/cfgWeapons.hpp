@@ -15,11 +15,6 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 	ballisticsComputer="1 + 2 + 16";
 	cursorAim="mg";
 
-	magazines[]=
-	{
-		"RC_EF_50Rnd_50mm_APFSDS_T"
-	};
-
 	class HE: HE
 	{
 		displayName="XM913";
@@ -29,7 +24,10 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 
 		magazines[]=
 		{
-			"RC_EF_120Rnd_50mm_HE_T"
+			"RC_EF_120Rnd_50mm_HE_T_W",
+			"RC_EF_120Rnd_50mm_HE_T_R",
+			"RC_EF_120Rnd_50mm_HE_T_G",
+			"RC_EF_120Rnd_50mm_HE_T_Y"
 		};
 
 		ballisticsComputer="1 + 2 + 16";
@@ -44,7 +42,10 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 
 		magazines[]=
 		{
-			"RC_EF_50Rnd_50mm_APFSDS_T"
+			"RC_EF_50Rnd_50mm_APFSDS_T_W",
+			"RC_EF_50Rnd_50mm_APFSDS_T_R",
+			"RC_EF_50Rnd_50mm_APFSDS_T_G",
+			"RC_EF_50Rnd_50mm_APFSDS_T_Y"
 		};
 
 		ballisticsComputer="1 + 2 + 16";
@@ -68,6 +69,7 @@ class RC_EF_MMG_coax: RC_EF_MMG_coax_Base
 
 	magazines[]=
 	{
+		"RC_400Rnd_338_T_W",
 		"RC_400Rnd_338_T_R",
 		"RC_400Rnd_338_T_G",
 		"RC_400Rnd_338_T_Y"

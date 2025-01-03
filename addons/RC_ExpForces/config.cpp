@@ -7,15 +7,12 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_AAV9A1_A
-			/*
 			RC_AAV9A1_A,
 			RC_AAV9A1_WD,
 			RC_AAV9A1_A_O,
 			RC_AAV9A1_WD_O,
 			RC_AAV9A1_A_I,
-			RC_AAV9A1_WD_I,
-			*/
+			RC_AAV9A1_WD_I
 		};
 
 		weapons[]=
