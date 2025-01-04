@@ -1,22 +1,22 @@
 class EF_120Rnd_50mm_HE_shells_Tracer_Red;
-class RC_EF_120Rnd_50mm_HEAB_T_W: EF_120Rnd_50mm_HE_shells_Tracer_Red
+class RC_EF_120Rnd_50mm_HE_T_W: EF_120Rnd_50mm_HE_shells_Tracer_Red
 {
-	ammo="RC_EF_B_50mm_HEAB_T_W";
+	ammo="RC_EF_B_50mm_HE_T_W";
 	tracersEvery=1;
-	displayName="50mm HEAB-T";
-	displayNameShort="50mm HEAB-T";
+	displayName="50mm HE-T";
+	displayNameShort="50mm HE-T";
 };
-class RC_EF_120Rnd_50mm_HEAB_T_R: RC_EF_120Rnd_50mm_HEAB_T_W
+class RC_EF_120Rnd_50mm_HE_T_R: RC_EF_120Rnd_50mm_HE_T_W
 {
-	ammo="RC_EF_B_50mm_HEAB_T_R";
+	ammo="RC_EF_B_50mm_HE_T_R";
 };
-class RC_EF_120Rnd_50mm_HEAB_T_G: RC_EF_120Rnd_50mm_HEAB_T_W
+class RC_EF_120Rnd_50mm_HE_T_G: RC_EF_120Rnd_50mm_HE_T_W
 {
-	ammo="RC_EF_B_50mm_HEAB_T_G";
+	ammo="RC_EF_B_50mm_HE_T_G";
 };
-class RC_EF_120Rnd_50mm_HEAB_T_Y: RC_EF_120Rnd_50mm_HEAB_T_W
+class RC_EF_120Rnd_50mm_HE_T_Y: RC_EF_120Rnd_50mm_HE_T_W
 {
-	ammo="RC_EF_B_50mm_HEAB_T_Y";
+	ammo="RC_EF_B_50mm_HE_T_Y";
 };
 
 

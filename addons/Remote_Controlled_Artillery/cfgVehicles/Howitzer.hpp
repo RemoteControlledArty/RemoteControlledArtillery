@@ -875,7 +875,7 @@ class RC_Static_Arty_I: RC_Static_Arty
 
 class RC_Static_Arty_LC: RC_Static_Arty
 {
-	displayName="RC Static Howitzer LowCap";
+	displayName="RC Naval Gun LowCap";
 	editorSubcategory="RC_ReducedAmmo_subcat";
 
 	class Turrets: Turrets

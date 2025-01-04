@@ -72,6 +72,7 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+			dontCreateAI=1;
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=3;
@@ -130,7 +131,7 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
 		};
 	};
@@ -143,15 +144,7 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 	faction="RemoteControlled_B";
 	side=1;
 
-	//vehicleClass="Autonomous";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
-	//isUav=1;
-	//textPlural="UGVs";
-	//textSingular="UGV";
 	crew="B_UAV_AI";
-	//forceHideDriver=1;
-	//driverForceOptics=1;
 	maximumLoad=3000;
 };
 class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
@@ -368,6 +361,7 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+			dontCreateAI=1;
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 			showAllTargets="2 + 4";
 			commanding=3;
@@ -426,7 +420,7 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
 		};
 	};
@@ -439,15 +433,7 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 	faction="RemoteControlled_B";
 	side=1;
 
-	//vehicleClass="Autonomous";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
-	//isUav=1;
-	//textPlural="UGVs";
-	//textSingular="UGV";
 	crew="B_UAV_AI";
-	//forceHideDriver=1;
-	//driverForceOptics=1;
 	maximumLoad=3000;
 };
 class RC_Stryker_M1126_MK19_D_B: RC_Stryker_M1126_MK19_WD_B

@@ -104,7 +104,7 @@ class RC_ICV_5_A_O: RC_ICV_IFV_5_A
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
@@ -201,6 +201,7 @@ class RC_ICV_5_A_O: RC_ICV_IFV_5_A
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_gunner_fixated.hpp"
+					dontCreateAI=1;
 					showAllTargets="2 + 4";
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 					turretInfoType="";
@@ -283,7 +284,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -316,6 +317,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
+			dontCreateAI=1;
 			showAllTargets="2 + 4";
 			commanding=3;
 			//forceHideGunner=1;
@@ -362,6 +364,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					dontCreateAI=1;
 					showAllTargets="2 + 4";
 					commanding=2;
 					//forceHideGunner=1;

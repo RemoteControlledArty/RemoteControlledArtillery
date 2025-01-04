@@ -39,7 +39,7 @@ class RC_AAV9A1: RC_AAV9A1_Base
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSens.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -233,7 +233,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_Sens.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 			dontCreateAI=1;
 			showAllTargets="2 + 4";
 			commanding=4;
@@ -244,7 +244,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 				"RC_EF_MMG_coax",
 				"SmokeLauncher"
 			};
-			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_white.hpp"
+			#include "\RC_ExpeditionaryForces\includes_vicmags\mags_AAV_50mm_white.hpp"
 
 			class OpticsIn
 			{
@@ -276,7 +276,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 				class CrewmanStation: CrewmanStation
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander_Sens.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					dontCreateAI=1;
 					showAllTargets="2 + 4";
 					commanding=2;
@@ -384,7 +384,7 @@ class RC_AAV9A1_A_O: RC_AAV9A1_A
 
 		class MainTurret: MainTurret
 		{
-			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_green.hpp"
+			#include "\RC_ExpeditionaryForces\includes_vicmags\mags_AAV_50mm_green.hpp"
 		};
 	};
 };
@@ -404,7 +404,7 @@ class RC_AAV9A1_A_I: RC_AAV9A1_A
 
 		class MainTurret: MainTurret
 		{
-			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_yellow.hpp"
+			#include "\RC_ExpeditionaryForces\includes_vicmags\mags_AAV_50mm_yellow.hpp"
 		};
 	};
 };
@@ -461,7 +461,7 @@ class RC_AAV9A1_WD_O: RC_AAV9A1_WD
 
 		class MainTurret: MainTurret
 		{
-			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_green.hpp"
+			#include "\RC_ExpeditionaryForces\includes_vicmags\mags_AAV_50mm_green.hpp"
 		};
 	};
 };
@@ -481,7 +481,7 @@ class RC_AAV9A1_WD_I: RC_AAV9A1_WD
 
 		class MainTurret: MainTurret
 		{
-			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_yellow.hpp"
+			#include "\RC_ExpeditionaryForces\includes_vicmags\mags_AAV_50mm_yellow.hpp"
 		};
 	};
 };

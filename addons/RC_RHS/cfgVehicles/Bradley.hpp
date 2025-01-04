@@ -133,6 +133,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 			//isCopilot=1; //allows to trigger EH that gives driving controls
+			dontCreateAI=1;
 
 			showAllTargets="2 + 4";
 			commanding=3;
@@ -200,6 +201,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 				{
 					//#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					dontCreateAI=1;
 					showAllTargets="2 + 4";
 					commanding=2;
 					allowTabLock=1;
@@ -275,7 +277,7 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 		};
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -292,53 +294,6 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 	//forceHideDriver=1;
 	//driverForceOptics=1;
 };
-
-
-/*
-class RC_M2A3_BUSKIII_RC_D_B: RC_M2A3_BUSKIII_D_B
-{
-	displayName="RC M2A3 Bradley";
-
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="view_DVE";
-	uavCameraDriverDir="view_DVE";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	forceHideDriver=1;
-	driverForceOptics=1;
-};
-
-
-class RC_M2A3_BUSKIII_DL_D_B: RC_M2A3_BUSKIII_D
-{
-	class EventHandlers: EventHandlers
-	{	
-		class RHSUSF_EventHandlers
-		{
-			postInit="_this call rhs_fnc_reapplyTextures";
-			getIn="_this call rhs_fnc_m2_doors";
-			getOut="_this call rhs_fnc_m2_doors";
-		};
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
-	};
-
-	displayName="DL M2A3 Bradley";
-
-	editorSubcategory="RC_RHS_D_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
-
-	crew="";
-	hasDriver=-1;
-};
-*/
 
 
 class RC_M2A3_BUSKIII_WD_B: RC_M2A3_BUSKIII_D_B

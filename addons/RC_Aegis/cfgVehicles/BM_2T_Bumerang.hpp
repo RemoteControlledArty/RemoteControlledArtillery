@@ -111,7 +111,7 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -144,6 +144,7 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
+			dontCreateAI=1;
 			showAllTargets="2 + 4";
 			commanding=3;
 			//forceHideGunner=1;
@@ -189,6 +190,7 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					dontCreateAI=1;
 					showAllTargets="2 + 4";
 					commanding=2;
 					//forceHideGunner=1;

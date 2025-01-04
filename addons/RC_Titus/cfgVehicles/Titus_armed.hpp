@@ -36,6 +36,7 @@ class RC_Titus_AC: RC_Titus_AC_base
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\RC_Titus\cfgVehicles\Titus_include.hpp"
+	editorSubcategory="RC_Titus_subcat";
 
 	class EventHandlers: EventHandlers
 	{
@@ -44,12 +45,6 @@ class RC_Titus_AC: RC_Titus_AC_base
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
 	};
-
-	displayName="Titus 20mm";
-	editorSubcategory="RC_Titus_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
 
 	class AnimationSources: AnimationSources
 	{
@@ -100,6 +95,7 @@ class RC_Titus_AC: RC_Titus_AC_base
 		class CommanderTurret: CommanderTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			dontCreateAI=1;
 			showAllTargets="2 + 4";
 
 			class ViewOptics: ViewOptics
@@ -131,6 +127,7 @@ class RC_Titus_AC: RC_Titus_AC_base
 		class ARX20Turret: ARX20Turret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			dontCreateAI=1;
 			showAllTargets="2 + 4";
 
 			class ViewOptics: ViewOptics
@@ -252,10 +249,15 @@ class RC_Titus_AC_D: RC_Titus_AC
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
+
+	displayName="Titus 20mm";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
 };
 class RC_Titus_AC_WD: RC_Titus_AC_D
 {
@@ -332,12 +334,15 @@ class RC_Titus_MMG_D: RC_Titus_AC
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
 
 	displayName="RC Titus MMG";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
 	
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
@@ -367,6 +372,7 @@ class RC_Titus_MMG_D: RC_Titus_AC
 		class CommanderTurret: CommanderTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			dontCreateAI=0;
 			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment4";
 			primaryGunner=1;

@@ -74,7 +74,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -108,6 +108,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
+			dontCreateAI=1;
 			showAllTargets="2 + 4";
 			commanding=3;
 			minElev=-14;
@@ -154,6 +155,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					dontCreateAI=1;
 					showAllTargets="2 + 4";
 					turretInfoType="RscOptics_MBT_03_gunner";
 					commanding=2;

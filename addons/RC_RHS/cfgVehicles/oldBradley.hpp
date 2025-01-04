@@ -184,6 +184,7 @@ class RC_M2A2_D: RC_M2A2_D_Base
 		{
 			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			//isCopilot=1; //allows to trigger EH that gives driving controls
+			dontCreateAI=1;
 
 			//showAllTargets="2 + 4";
 			commanding=3;
@@ -251,6 +252,7 @@ class RC_M2A2_D: RC_M2A2_D_Base
 				{
 					//#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					//isCopilot=1; //allows to trigger EH that gives driving controls
+					dontCreateAI=1;
 					//showAllTargets="2 + 4";
 					commanding=2;
 					allowTabLock=1;
@@ -427,7 +429,7 @@ class RC_M2A2_D_B: RC_M2A2_D
 		};
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};

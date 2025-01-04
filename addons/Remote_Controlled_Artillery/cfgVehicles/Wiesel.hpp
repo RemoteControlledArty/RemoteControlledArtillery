@@ -1252,7 +1252,7 @@ class RC_Wiesel_ATGM_WD_manned: RC_Wiesel_ATGM_WD_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
 		};
 	};
@@ -1270,6 +1270,7 @@ class RC_Wiesel_ATGM_WD_manned: RC_Wiesel_ATGM_WD_Base
 	{
 		class MainTurret: MainTurret
 		{
+			dontCreateAI=1;
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner_missile.hpp"
 		};
 	};
@@ -1627,7 +1628,7 @@ class RC_Wiesel_AC_WD_manned: RC_Wiesel_AC_WD_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
 		};
 	};
@@ -1645,6 +1646,7 @@ class RC_Wiesel_AC_WD_manned: RC_Wiesel_AC_WD_Base
 	{
 		class MainTurret: MainTurret
 		{
+			dontCreateAI=1;
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
 		};
 	};

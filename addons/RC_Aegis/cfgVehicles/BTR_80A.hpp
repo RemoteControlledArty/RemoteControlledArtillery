@@ -96,7 +96,7 @@ class RC_BTR80A_WD: RC_BTR80A
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -116,6 +116,7 @@ class RC_BTR80A_WD: RC_BTR80A
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+			dontCreateAI=1;
 			showAllTargets="2 + 4";
 			minElev=-6.5;
 			commanding=3;

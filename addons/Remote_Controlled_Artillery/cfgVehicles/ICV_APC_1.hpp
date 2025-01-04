@@ -109,7 +109,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
@@ -171,6 +171,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_free.hpp"
+			dontCreateAI=1;
 			showAllTargets="2 + 4";
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
@@ -291,6 +292,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
+			dontCreateAI=1;
 			showAllTargets="2 + 4";
 			minElev=-19;
 			commanding=3;
@@ -324,6 +326,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+			dontCreateAI=1;
 			showAllTargets="2 + 4";
 			turretInfoType="RscOptics_MBT_03_gunner";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
@@ -366,7 +369,7 @@ class RC_APC_1_A: RC_APC_1_A_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
@@ -377,12 +380,6 @@ class RC_APC_1_A: RC_APC_1_A_Base
 	side=1;
 	forceInGarage=1;
 
-	//vehicleClass="Autonomous";
-	//uavCameraDriverPos="PiP0_pos";
-	//uavCameraDriverDir="PiP0_dir";
-	//isUav=1;
-	//textPlural="UGVs";
-	//textSingular="UGV";
 	crew="B_UAV_AI";
 };
 class RC_APC_1_A_O: RC_APC_1_A
@@ -468,72 +465,6 @@ class RC_APC_1_WD_I: RC_APC_1_WD
 		class CommanderOptics: CommanderOptics {};
 	};
 };
-
-
-/*
-class RC_APC_1_A_Driverless: RC_APC_1_A_Base
-{
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
-	};
-
-	displayName="APC I";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
-	crew="";
-	hasDriver=-1;
-};
-class RC_APC_1_A_Driverless_O: RC_APC_1_A_Driverless
-{
-	faction="RemoteControlled_O";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_APC_1_A_Driverless_I: RC_APC_1_A_Driverless
-{
-	faction="RemoteControlled_I";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
-class RC_APC_1_WD_Driverless: RC_APC_1_A_Driverless
-{
-	DLC="Expansion";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_rcws_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Armor_F_exp\APC_Tracked_01\Data\APC_Tracked_01_body_olive_CO.paa",
-		"A3\Armor_F_exp\APC_Tracked_01\Data\mbt_01_body_olive_co.paa",
-		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
-		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
-	};
-};
-class RC_APC_1_WD_Driverless_O: RC_APC_1_WD_Driverless
-{
-	faction="RemoteControlled_O";
-	side=0;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-};
-class RC_APC_1_WD_Driverless_I: RC_APC_1_WD_Driverless
-{
-	faction="RemoteControlled_I";
-	side=2;
-
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-*/
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
