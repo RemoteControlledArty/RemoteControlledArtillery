@@ -344,6 +344,8 @@ very new:
 -improved depression of some cannons
 -added olive camo T-14 (Aegis)
 -added T-100 (Opfor only, but with Aegis all sides)
+-added Expeditionary Forces support
+-added AAV-9A1 with 50mm airburst ammo and advanced sensors
 
 
 DONE - QUALITY OF LIFE:
