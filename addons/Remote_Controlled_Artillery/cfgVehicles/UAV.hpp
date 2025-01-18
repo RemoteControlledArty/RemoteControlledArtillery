@@ -374,6 +374,7 @@ class RC_UAV_FPV: RC_UAV_base
 	class ViewPilot: ViewPilot
 	{
 		showAllTargets="2 + 4";
+		initFov=1.25;
 
 		visionMode[]=
 		{
@@ -384,6 +385,7 @@ class RC_UAV_FPV: RC_UAV_base
 	class Viewoptics: ViewOptics
 	{
 		showAllTargets="2 + 4";
+		initFov=1.25;
 
 		visionMode[]=
 		{
