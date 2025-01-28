@@ -488,8 +488,8 @@ class RC_AAV9A1_WD_I: RC_AAV9A1_WD
 
 
 //30mm AAV
-class EF_B_AAV9_30mm_MJTF_Des;
-class RC_AAV9_Base: EF_B_AAV9_30mm_MJTF_Des
+class EF_B_AAV9_MJTF_Des;
+class RC_AAV9_Base: EF_B_AAV9_MJTF_Des
 {
 	class Turrets;
 	class MainTurret;
@@ -529,7 +529,7 @@ class RC_AAV9: RC_AAV9_Base
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSens.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSensLight.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -723,7 +723,7 @@ class RC_AAV9_A: RC_AAV9
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_Sens.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 			dontCreateAI=1;
 			showAllTargets="2 + 4";
 			commanding=4;
@@ -766,7 +766,7 @@ class RC_AAV9_A: RC_AAV9
 				class CrewmanStation: CrewmanStation
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander_Sens.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					dontCreateAI=1;
 					showAllTargets="2 + 4";
 					commanding=2;
@@ -811,7 +811,7 @@ class RC_AAV9_A: RC_AAV9
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander_Sens.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					dontCreateAI=1;
 					showAllTargets="2 + 4";
 					commanding=3;
@@ -902,7 +902,7 @@ class RC_AAV9_A_I: RC_AAV9_A
 
 class RC_AAV9_WD: RC_AAV9_A
 {
-	editorPreview="\ef\ef_data\editorpreviews\cfgvehicles\EF_B_AAV9_30mm_MJTF_Wdl.jpg";
+	editorPreview="\ef\ef_data\editorpreviews\cfgvehicles\EF_B_AAV9_MJTF_Wdl.jpg";
 	textureList[]=
 	{
 		"Desert",

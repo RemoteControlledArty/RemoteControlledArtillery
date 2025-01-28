@@ -1,5 +1,5 @@
-class EF_B_30mm_APFSDS;
-class RC_EF_B_30mm_APFSDS_T_W: RC_EF_B_30mm_APFSDS_T_W
+class B_30mm_APFSDS;
+class RC_EF_B_30mm_APFSDS_T_W: B_30mm_APFSDS
 {
 	laserLock=1;
 	irLock=1;
