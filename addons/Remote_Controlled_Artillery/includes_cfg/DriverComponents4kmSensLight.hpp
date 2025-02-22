@@ -87,6 +87,14 @@ class Components: Components
 				angleRangeVertical=2;
 				animDirection="mainGun";
 			};
+			class ManSensorComponent: SensorTemplateMan
+			{
+				maxTrackableSpeed=15;
+				angleRangeHorizontal=22.5;
+				angleRangeVertical=22.5;
+				animDirection="mainGun";
+				aimDown=0;	//-0.5
+			};
 
 			#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 		};

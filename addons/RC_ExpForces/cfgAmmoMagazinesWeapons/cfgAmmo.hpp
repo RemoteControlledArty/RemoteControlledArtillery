@@ -50,6 +50,7 @@ class RC_EF_B_30mm_HEAB_T_W: EF_B_30mm_HEAB
 	laserLock=1;
 	irLock=1;
 	airLock=1;
+	indirectHit=7;
 	tracerEndTime=5.5;
 	
 	deflecting=0;
