@@ -792,6 +792,7 @@ class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
@@ -803,12 +804,12 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_IFV_5.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\IFV_6.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ImprovedDesignators.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\MortarMATV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_3.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_4.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\MortarMATV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first
 	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
