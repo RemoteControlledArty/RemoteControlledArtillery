@@ -9,6 +9,7 @@ magazines[]=
 	"RC_2Rnd_IFV_MP_NLOS",
 	"RC_2Rnd_IFV_MP_NLOS",
 	"RC_2Rnd_IFV_MP_NLOS",
+	"RC_2Rnd_IFV_AA",
 	"SmokeLauncherMag",
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"

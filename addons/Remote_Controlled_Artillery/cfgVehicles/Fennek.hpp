@@ -537,4 +537,39 @@ class RC_Mortar_Fennek_ReTex_WD_I: RC_Mortar_Fennek_A_I
 		"Fennek\Data\Turret_wd.paa"
 	};
 };
+
+
+class RC_Mortar_Fennek_LC_ReTex_WD: RC_Mortar_Fennek_LC_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"Fennek\Data\Fennek_ext_wd.paa",
+		"Fennek\Data\Turret_wd.paa"
+	};
+};
+class RC_Mortar_Fennek_LC_ReTex_WD_O: RC_Mortar_Fennek_LC_A_O
+{
+	faction="RemoteControlled_ReTex_O";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"Fennek\Data\Fennek_ext_wd.paa",
+		"Fennek\Data\Turret_wd.paa"
+	};
+};
+class RC_Mortar_Fennek_LC_ReTex_WD_I: RC_Mortar_Fennek_LC_A_I
+{
+	faction="RemoteControlled_ReTex_I";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"Fennek\Data\Fennek_ext_wd.paa",
+		"Fennek\Data\Turret_wd.paa"
+	};
+};
 */

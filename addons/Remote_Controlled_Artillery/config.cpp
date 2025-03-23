@@ -218,6 +218,21 @@ class CfgPatches
 			RC_MortarMATV_manned_WD_O,
 			RC_MortarMATV_manned_A_I,
 			RC_MortarMATV_manned_WD_I,
+			
+			RC_Fennek_A,
+			RC_Fennek_A_O,
+			RC_Fennek_A_I,
+			RC_Fennek_DIG_I,
+
+			RC_Mortar_Fennek_A,
+			RC_Mortar_Fennek_A_O,
+			RC_Mortar_Fennek_A_I,
+			RC_Mortar_Fennek_DIG_I,
+
+			RC_Mortar_Fennek_LC_A,
+			RC_Mortar_Fennek_LC_A_O,
+			RC_Mortar_Fennek_LC_A_I,
+			RC_Mortar_Fennek_LC_DIG_I,
 
 			RC_CBRad1_AI_A,
 			RC_CBRad1_AI_WD,
@@ -515,6 +530,19 @@ class CfgPatches
 			RC_MBT_2_ReTex_A_I,
 			RC_MBT_2_ReTex_D_I,
 			RC_MBT_2_ReTex_WD_I
+			
+			/*
+			RC_Fennek_ReTex_WD,
+			RC_Fennek_ReTex_WD_O,
+			RC_Fennek_ReTex_WD_I,
+
+			RC_Mortar_Fennek_ReTex_WD,
+			RC_Mortar_Fennek_ReTex_WD_O,
+			RC_Mortar_Fennek_ReTex_WD_I
+			RC_Mortar_Fennek_LC_ReTex_WD,
+			RC_Mortar_Fennek_LC_ReTex_WD_O,
+			RC_Mortar_Fennek_LC_ReTex_WD_I
+			*/
 		};
 
 		weapons[]=
