@@ -20,7 +20,7 @@ class RC_Fennek_Base: I_MRAP_03_F
 	forceHideDriver=1;
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_Fennek_DIG_Base: RC_Fennek_Base
+class RC_Fennek_A_Base: RC_Fennek_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -42,6 +42,13 @@ class RC_Fennek_DIG_Base: RC_Fennek_Base
 	ejectDeadCommander=0;
 	//redRpm=1100;
 	//idleRpm=250;
+
+	//model="\A3\soft_f_beta\MRAP_03\MRAP_03_unarmed_F";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\soft_f_beta\MRAP_03\Data\mrap_03_ext_co.paa",
+		"A3\Data_F\Vehicles\Turret_CO.paa"
+	};
 
 	class Components: Components
 	{
@@ -272,7 +279,7 @@ class RC_Fennek_DIG_Base: RC_Fennek_Base
 };
 
 
-class RC_Fennek_DIG: RC_Fennek_DIG_Base
+class RC_Fennek_A: RC_Fennek_A_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -291,7 +298,6 @@ class RC_Fennek_DIG: RC_Fennek_DIG_Base
 	uavCameraGunnerDir="PiP1_dir";
 	crew="B_UAV_AI";
 	
-	/* reactivate after middle passenger driver EH
 	class Turrets: Turrets
 	{
 		class CommanderTurret: CommanderTurret
@@ -302,32 +308,41 @@ class RC_Fennek_DIG: RC_Fennek_DIG_Base
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 
+			/*
 			class ViewOptics: ViewOptics
 			{
 				directionStabilized=1;
 			};
+			*/
 		};
 	};
-	*/
 };
-class RC_Fennek_DIG_O: RC_Fennek_DIG
+class RC_Fennek_A_O: RC_Fennek_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
-class RC_Fennek_DIG_I: RC_Fennek_DIG
+class RC_Fennek_A_I: RC_Fennek_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
+class RC_Fennek_DIG_I: RC_Fennek_A_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"\a3\soft_f_beta\mrap_03\data\mrap_03_ext_indp_co.paa",
+		"\a3\data_f\vehicles\turret_indp_co.paa"
+	};
+};
 
 
 //Fennek with Vehicle Mortar attached, for low power but mobile indirect fire support
-class RC_Mortar_Fennek_DIG: RC_Fennek_DIG
+class RC_Mortar_Fennek_A: RC_Fennek_A
 {
 	class Turrets: Turrets
 	{
@@ -357,7 +372,7 @@ class RC_Mortar_Fennek_DIG: RC_Fennek_DIG
 	displayName="RC Mortar Fennek";
 	editorSubcategory="RC_Mortar_subcat";
 };
-class RC_Mortar_Fennek_DIG_O: RC_Mortar_Fennek_DIG
+class RC_Mortar_Fennek_A_O: RC_Mortar_Fennek_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -372,7 +387,7 @@ class RC_Mortar_Fennek_DIG_O: RC_Mortar_Fennek_DIG
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
-class RC_Mortar_Fennek_DIG_I: RC_Mortar_Fennek_DIG
+class RC_Mortar_Fennek_A_I: RC_Mortar_Fennek_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -387,10 +402,18 @@ class RC_Mortar_Fennek_DIG_I: RC_Mortar_Fennek_DIG
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
+class RC_Mortar_Fennek_DIG_I: RC_Mortar_Fennek_A_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"\a3\soft_f_beta\mrap_03\data\mrap_03_ext_indp_co.paa",
+		"\a3\data_f\vehicles\turret_indp_co.paa"
+	};
+};
 
 
 //version with less rounds for smaller ops
-class RC_Mortar_Fennek_LC_DIG: RC_Mortar_Fennek_DIG
+class RC_Mortar_Fennek_LC_A: RC_Mortar_Fennek_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -403,7 +426,7 @@ class RC_Mortar_Fennek_LC_DIG: RC_Mortar_Fennek_DIG
 	displayName="RC Mortar Fennek LowCap";
 	editorSubcategory="RC_ReducedAmmo_subcat";
 };
-class RC_Mortar_Fennek_LC_DIG_O: RC_Mortar_Fennek_LC_DIG
+class RC_Mortar_Fennek_LC_A_O: RC_Mortar_Fennek_LC_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -418,7 +441,7 @@ class RC_Mortar_Fennek_LC_DIG_O: RC_Mortar_Fennek_LC_DIG
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
-class RC_Mortar_Fennek_LC_DIG_I: RC_Mortar_Fennek_LC_DIG
+class RC_Mortar_Fennek_LC_A_I: RC_Mortar_Fennek_LC_A
 {
 	class EventHandlers: EventHandlers
 	{
@@ -433,3 +456,85 @@ class RC_Mortar_Fennek_LC_DIG_I: RC_Mortar_Fennek_LC_DIG
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
+class RC_Mortar_Fennek_LC_DIG_I: RC_Mortar_Fennek_LC_A_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"\a3\soft_f_beta\mrap_03\data\mrap_03_ext_indp_co.paa",
+		"\a3\data_f\vehicles\turret_indp_co.paa"
+	};
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+/*
+//texture path doesnt work
+class RC_Fennek_ReTex_WD: RC_Fennek_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"Fennek\Data\Fennek_ext_wd.paa",
+		"Fennek\Data\Turret_wd.paa"
+	};
+};
+class RC_Fennek_ReTex_WD_O: RC_Fennek_A_O
+{
+	faction="RemoteControlled_ReTex_O";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"Fennek\Data\Fennek_ext_wd.paa",
+		"Fennek\Data\Turret_wd.paa"
+	};
+};
+class RC_Fennek_ReTex_WD_I: RC_Fennek_A_I
+{
+	faction="RemoteControlled_ReTex_I";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"Fennek\Data\Fennek_ext_wd.paa",
+		"Fennek\Data\Turret_wd.paa"
+	};
+};
+
+
+class RC_Mortar_Fennek_ReTex_WD: RC_Mortar_Fennek_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"Fennek\Data\Fennek_ext_wd.paa",
+		"Fennek\Data\Turret_wd.paa"
+	};
+};
+class RC_Mortar_Fennek_ReTex_WD_O: RC_Mortar_Fennek_A_O
+{
+	faction="RemoteControlled_ReTex_O";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"Fennek\Data\Fennek_ext_wd.paa",
+		"Fennek\Data\Turret_wd.paa"
+	};
+};
+class RC_Mortar_Fennek_ReTex_WD_I: RC_Mortar_Fennek_A_I
+{
+	faction="RemoteControlled_ReTex_I";
+	editorSubcategory="RC_ReTex_Woodland_subcat";
+
+	hiddenSelectionsTextures[]=
+	{
+		"Fennek\Data\Fennek_ext_wd.paa",
+		"Fennek\Data\Turret_wd.paa"
+	};
+};
+*/
