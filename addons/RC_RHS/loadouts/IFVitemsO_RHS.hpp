@@ -35,6 +35,11 @@ class TransportMagazines
 		magazine="30Rnd_762x39_Mag_Tracer_F";
 		count=10;
 	};
+	class _xx_DemoCharge_Remote_Mag
+	{
+		magazine="DemoCharge_Remote_Mag";
+		count=2;
+	};
 };
 class TransportItems
 {

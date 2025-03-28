@@ -3,22 +3,17 @@ class TransportMagazines
 	class _xx_HandGrenade
 	{
 		magazine="HandGrenade";
-		count=20;
+		count=10;
 	};
 	class _xx_SmokeShell
 	{
 		magazine="SmokeShell";
-		count=10;
+		count=5;
 	};
 	class _xx_RPG7_F
 	{
 		magazine="RPG7_F";
-		count=8;
-	};
-	class _xx_1Rnd_Smoke_Grenade_shell
-	{
-		magazine="1Rnd_Smoke_Grenade_shell";
-		count=10;
+		count=3;
 	};
 	class _xx_Laserbatteries
 	{
@@ -28,12 +23,17 @@ class TransportMagazines
 	class _xx_30Rnd_545x39_Mag_Tracer_F
 	{
 		magazine="30Rnd_545x39_Mag_Tracer_F";
-		count=10;
+		count=5;
 	};
 	class _xx_30Rnd_762x39_Mag_Tracer_F
 	{
 		magazine="30Rnd_762x39_Mag_Tracer_F";
-		count=10;
+		count=5;
+	};
+	class _xx_DemoCharge_Remote_Mag
+	{
+		magazine="DemoCharge_Remote_Mag";
+		count=2;
 	};
 };
 class TransportItems
@@ -92,16 +92,6 @@ class TransportBackpacks
 	class _xx_B_Kitbag_cbr
 	{
 		backpack="B_Kitbag_cbr";
-		count=1;
-	};
-	class _xx_B_Carryall_oli
-	{
-		backpack="B_Carryall_oli";
-		count=1;
-	};
-	class _xx_B_Carryall_cbr
-	{
-		backpack="B_Carryall_cbr";
 		count=1;
 	};
 };

@@ -45,6 +45,11 @@ class TransportMagazines
 		magazine="20Rnd_762x51_Mag";
 		count=5;
 	};
+	class _xx_DemoCharge_Remote_Mag
+	{
+		magazine="DemoCharge_Remote_Mag";
+		count=2;
+	};
 };
 class TransportItems
 {

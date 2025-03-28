@@ -3,7 +3,7 @@ class TransportMagazines
 	class _xx_rhs_mag_m67
 	{
 		magazine="rhs_mag_m67";
-		count=5;
+		count=10;
 	};
 	class _xx_rhs_mag_an_m8hc
 	{
@@ -19,6 +19,11 @@ class TransportMagazines
 	{
 		magazine="30Rnd_556x45_Stanag_Tracer_Red";
 		count=5;
+	};
+	class _xx_DemoCharge_Remote_Mag
+	{
+		magazine="DemoCharge_Remote_Mag";
+		count=2;
 	};
 };
 class TransportItems
