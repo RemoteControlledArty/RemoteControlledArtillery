@@ -7,9 +7,17 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_Crocus_MP,
-			RC_Crocus_MP_O,
-			RC_Crocus_MP_I,
+			//RC_Crocus_MP,
+			//RC_Crocus_MP_O,
+			//RC_Crocus_MP_I,
+
+			B_Crocus_AT,
+			O_Crocus_AT,
+			I_Crocus_AT,
+
+			Crocus_MP_Bag,
+			Crocus_MP_Bag_O,
+			Crocus_MP_Bag_I,
 
 			RC_CrocusRepeater,
 			RC_CrocusRepeater_O,
@@ -35,6 +43,7 @@ class CfgPatches
 
 
 //later required sensors
+/*
 class SensorTemplateDataLink;
 class SensorTemplateLaser;
 class SensorTemplateIR;
@@ -46,8 +55,10 @@ class SensorTemplatePassiveRadar;
 //later required sensor panels
 class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
+*/
 
 
+/*
 class CfgAmmo
 {
 	#include "\RC_ExpForces\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
@@ -60,9 +71,12 @@ class CfgWeapons
 {
 	#include "\RC_ExpForces\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
+*/
 
+#include "\RC_Crocus\cfgVehicles\CrocusFetch.hpp"
 
 class CfgVehicles
 {
-	#include "\RC_ExpForces\cfgVehicles\AAV.hpp"
+	#include "\RC_Crocus\cfgVehicles\CrocusBase.hpp"
+	#include "\RC_Crocus\cfgVehicles\CrocusMP.hpp"
 };

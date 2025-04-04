@@ -1021,6 +1021,7 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 	};
 	class Viewoptics: ViewOptics
 	{
+		showAllTargets="2 + 4";
 		initFov=1;
 		minFov=0.45;
 		maxFov=1;
