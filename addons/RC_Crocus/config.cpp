@@ -23,18 +23,20 @@ class CfgPatches
 			RC_CrocusRepeater_O,
 			RC_CrocusRepeater_I
 		};
-
+		
+		/*
 		weapons[]=
 		{
 			"RC_Crocus_MP_Warhead",
 			"RC_"
 		};
+		*/
 
 		requiredAddons[]=
 		{
 			"cba_main",
-			"RC_Artillery",
-			"ArmaFPV_Data"
+			"ArmaFPV_Data",
+			"RC_Artillery"
 		};
 
 		skipWhenMissingDependencies=1;
@@ -43,37 +45,28 @@ class CfgPatches
 
 
 //later required sensors
-/*
-class SensorTemplateDataLink;
-class SensorTemplateLaser;
+class SensorTemplatePassiveRadar;
+class SensorTemplateAntiRadiation;
+class SensorTemplateActiveRadar;
 class SensorTemplateIR;
-class SensorTemplateNV;
 class SensorTemplateVisual;
 class SensorTemplateMan;
-class SensorTemplatePassiveRadar;
-
-//later required sensor panels
-class DefaultVehicleSystemsDisplayManagerLeft;
-class DefaultVehicleSystemsDisplayManagerRight;
-*/
-
-
-/*
-class CfgAmmo
+class SensorTemplateLaser;
+class SensorTemplateNV;
+class SensorTemplateDataLink;
+class DefaultVehicleSystemsDisplayManagerLeft
 {
-	#include "\RC_ExpForces\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
+	class components;
 };
-class CfgMagazines
+class DefaultVehicleSystemsDisplayManagerRight
 {
-	#include "\RC_ExpForces\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+	class components;
 };
-class CfgWeapons
-{
-	#include "\RC_ExpForces\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
-};
-*/
+
 
 #include "\RC_Crocus\cfgVehicles\CrocusFetch.hpp"
+#include "\RC_Crocus\cfgAmmoMagazinesWeapons\cfgAmmoMagazinesWeapons.hpp"
+
 
 class CfgVehicles
 {

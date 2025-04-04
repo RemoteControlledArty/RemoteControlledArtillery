@@ -10,6 +10,143 @@ class RC_target_confirmer_ammo: Default
 
 
 /*
+class FPV_AB_Trigger: Default
+{
+	model="\A3\weapons_f\launchers\RPG32\tbg32v_rocket.p3d";
+	simulation="shotMissile";
+	simulationStep=0.050000001;
+	timeToLive=1;
+
+	hit=0;
+	indirectHit=0;
+	indirectHitRange=0;
+
+	lockType=0;
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	nvLock=1;
+
+	missileLockCone=360;
+	missileKeepLockedCone=360;
+	missileLockMaxDistance=4000;
+	missileLockMinDistance=1;
+	missileLockMaxSpeed=150;
+	cmImmunity=1;
+	manualControl=1;
+	missileManualControlCone=180;
+	maxControlRange=4000;
+
+	initTime=1;
+	thrustTime=1;
+	thrust=1;
+	maneuvrability=1;
+	trackOversteer=1;
+	trackLead=1;
+	airFriction=1;
+	sideAirFriction=1;
+	maxSpeed=1;
+	typicalSpeed=1;
+	fuseDistance=1;
+	deflecting=1;
+	cost=1;
+
+	visibleFire=1;
+	audibleFire=1;
+	visibleFireTime=1;
+
+	soundHit[]=
+	{
+		"",
+		100,
+		1
+	};
+	soundFly[]=
+	{
+		"",
+		0.0099999998,
+		2
+	};
+	soundEngine[]=
+	{
+		"",
+		0.001,
+		1
+	};
+
+	class Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				//autonomous engages lasers spots without differentiating
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=180;
+					angleRangeVertical=180;
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=600;
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=90;
+					angleRangeVertical=90;
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=4000;
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+	};
+};
+*/
+
+
+/*
 class Laserbeam;
 class RC_Laserbeam: Laserbeam
 {

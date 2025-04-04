@@ -12,6 +12,60 @@ class RC_target_confirmer: Default
 };
 
 
+/*
+class RC_target_confirmer_AB: RC_target_confirmer
+{
+	displayName="airburst";
+	displayNameShort="airburst";
+	scope=2;
+	canLock=2;
+	reloadTime=1;
+	magazineReloadTime=1;
+	magazines[]=
+	{
+		"RC_target_confirmer_AB_mag"
+	};
+	class Single
+	{
+		displayName="airburst";
+		reloadTime=1;
+		burst=1;
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F_Orange\Vehicles\Air\UAV_06\UAV_6_DemineDrone_Bomb_Release_01",
+				3.9810717,
+				1,
+				20
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
+		};
+		showToPlayer=1;
+
+		textureType="semi";
+		recoil="recoil_single_primary_3outof10";
+		recoilProne="recoil_single_primary_prone_3outof10";
+		aiDispersionCoefY=1.7;
+		aiDispersionCoefX=1.4;
+		soundBurst=0;
+		requiredOpticType=-1;
+		aiRateOfFire=2;
+		aiRateOfFireDispersion=1;
+		aiRateOfFireDistance=500;
+	};
+};
+*/
+
+
 //vehicle laser designator that can lock datalink targets *needs modded mag, which sadly would likely break simple grid designator
 class Laserdesignator_mounted;
 class RC_Laserdesignator_mounted: Laserdesignator_mounted

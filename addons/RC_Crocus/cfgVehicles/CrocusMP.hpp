@@ -1,19 +1,3 @@
-
-
-/*
-class B_Crocus_Base;
-class RC_Crocus_MP_Base: B_Crocus_Base
-{
-	//class Turrets;
-	//class MainTurret;
-	class ViewOptics;
-	class Components;
-	scope=0;
-	scopeCurator=0;
-};
-*/
-//class RC_Crocus_MP: RC_Crocus_MP_Base
-
 class B_Crocus_AT: B_Crocus_Base
 {
 	author="Ascent";
@@ -35,14 +19,32 @@ class B_Crocus_AT: B_Crocus_Base
 	laserScanner=1;
 	showAllTargets="2 + 4";
 	
+	liftForceCoef=2;	//1
 	/*
 	maxSpeed=180;	//140
-	liftForceCoef=2;	//1
 	cyclicAsideForceCoef=2;	//2
 	cyclicForwardForceCoef=2.4;	//2
 	mainRotorSpeed=-14;	//-7
 	backRotorSpeed=14;	//7
 	backRotorForceCoef=5;	//5
+	*/
+
+	/*
+	//AL-6
+
+	liftForceCoef=1.6;
+	cyclicAsideForceCoef=2.75;
+	cyclicForwardForceCoef=0.58999997;
+	bodyFrictionCoef=0.57999998;
+	backRotorForceCoef=4.5;
+	epeImpulseDamageCoef=1.5;
+	maxMainRotorDive=0;
+	minMainRotorDive=0;
+	neutralMainRotorDive=0;
+	tailBladeVertical=0;
+	gearRetracting=0;
+	mainRotorSpeed=-7;
+	backRotorSpeed=7;
 	*/
 
 	camouflage=0.025;	//0.5

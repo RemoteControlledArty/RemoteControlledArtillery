@@ -9,6 +9,19 @@ class RC_target_confirmer_mag: CA_Magazine
 
 
 /*
+class RC_target_confirmer_AB_mag: RC_target_confirmer_mag
+{
+	ammo="FPV_AB_Trigger";
+	initSpeed=0;
+	scope=2;
+	count=1;
+	//displayName="MP warhead";
+	//displayNameShort="MP warhead";
+};
+*/
+
+
+/*
 class Laserbatteries;
 class RC_Laserbatteries: Laserbatteries
 {
