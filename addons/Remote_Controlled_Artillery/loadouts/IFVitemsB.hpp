@@ -38,7 +38,7 @@ class TransportMagazines
 	class _xx_DemoCharge_Remote_Mag
 	{
 		magazine="DemoCharge_Remote_Mag";
-		count=2;
+		count=3;
 	};
 };
 class TransportItems

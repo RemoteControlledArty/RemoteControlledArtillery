@@ -529,20 +529,18 @@ class CfgPatches
 			RC_MBT_2_ReTex_WD_O,
 			RC_MBT_2_ReTex_A_I,
 			RC_MBT_2_ReTex_D_I,
-			RC_MBT_2_ReTex_WD_I
+			RC_MBT_2_ReTex_WD_I,
 			
-			/*
 			RC_Fennek_ReTex_WD,
 			RC_Fennek_ReTex_WD_O,
 			RC_Fennek_ReTex_WD_I,
 
 			RC_Mortar_Fennek_ReTex_WD,
 			RC_Mortar_Fennek_ReTex_WD_O,
-			RC_Mortar_Fennek_ReTex_WD_I
+			RC_Mortar_Fennek_ReTex_WD_I,
 			RC_Mortar_Fennek_LC_ReTex_WD,
 			RC_Mortar_Fennek_LC_ReTex_WD_O,
 			RC_Mortar_Fennek_LC_ReTex_WD_I
-			*/
 		};
 
 		weapons[]=

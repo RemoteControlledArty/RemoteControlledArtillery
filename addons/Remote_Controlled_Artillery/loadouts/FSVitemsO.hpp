@@ -20,6 +20,11 @@ class TransportMagazines
 		magazine="Laserbatteries";
 		count=1;
 	};
+	class _xx_DemoCharge_Remote_Mag
+	{
+		magazine="DemoCharge_Remote_Mag";
+		count=2;
+	};
 };
 class TransportItems
 {
@@ -47,11 +52,6 @@ class TransportItems
 	{
 		name="MineDetector";
 		count=1;
-	};
-	class _xx_DemoCharge_Remote_Mag
-	{
-		magazine="DemoCharge_Remote_Mag";
-		count=2;
 	};
 };
 class TransportWeapons

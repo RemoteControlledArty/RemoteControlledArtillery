@@ -1,33 +1,35 @@
 class CfgAmmo
 {
-	class M_Vorona_HEAT;
-	class FPV_RPG42_AT: M_Vorona_HEAT
-	{
-		explosive=0.80000001;
-		hit=150;
-		htMax=1800;
-		htMin=60;
-		indirectHit=42;		//MP 42, AT 25, AP 60
-		indirectHitRange=7;		//MP 5, AT 3.5, AP 6
-		submunitionInitSpeed=1000;
-		warheadName="TandemHEAT";
-		submunitionAmmo="FPV_RPG42_AT_Penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionParentSpeedCoef=0;
-		submunitionInitialOffset[]={0,0,-0.1};
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-	};
 	class ammo_Penetrator_Vorona;
-	class FPV_RPG42_AT_Penetrator: ammo_Penetrator_Vorona
+	class FPV_RPG42_AT_Penetrator_MP: ammo_Penetrator_Vorona
 	{
 		hit=480;
 		indirectHit=0;
 		indirectHitRange=0;
 		warheadName="TandemHEAT";
 	};
+
+	class M_Vorona_HEAT;
+	class FPV_RPG42_MP: M_Vorona_HEAT
+	{
+		explosive=0.80000001;
+		hit=150;
+		htMax=1800;
+		htMin=60;
+		indirectHit=42;
+		indirectHitRange=7;
+		submunitionInitSpeed=1000;
+		warheadName="TandemHEAT";
+		submunitionAmmo="FPV_RPG42_AT_Penetrator_MP";
+		submunitionDirectionType="SubmunitionModelDirection";
+		submunitionParentSpeedCoef=0;
+		submunitionInitialOffset[]={0,0,-0.1};
+		triggerOnImpact=1;
+		deleteParentWhenTriggered=0;
+	};
+	
 	class Default;
-	class FPV_AB_Trigger: Default
+	class RC_target_confirmer_AB_ammo: Default
 	{
 		model="\A3\weapons_f\launchers\RPG32\tbg32v_rocket.p3d";
 		simulation="shotMissile";
@@ -44,7 +46,7 @@ class CfgAmmo
 		airLock=1;
 		nvLock=1;
 
-		missileLockCone=360;
+		missileLockCone=40;
 		missileKeepLockedCone=360;
 		missileLockMaxDistance=4000;
 		missileLockMinDistance=1;
@@ -97,47 +99,6 @@ class CfgAmmo
 			{
 				class Components
 				{
-					//autonomous engages lasers spots without differentiating
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-						class AirTarget
-						{
-							minRange=4000;
-							maxRange=4000;
-							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=-1;
-						};
-						class GroundTarget
-						{
-							minRange=4000;
-							maxRange=4000;
-							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=-1;
-						};
-						angleRangeHorizontal=180;
-						angleRangeVertical=180;
-					};
-					class VisualSensorComponent: SensorTemplateVisual
-					{
-						typeRecognitionDistance=600;
-						class AirTarget
-						{
-							minRange=600;
-							maxRange=600;
-							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=-1;
-						};
-						class GroundTarget
-						{
-							minRange=600;
-							maxRange=600;
-							objectDistanceLimitCoef=-1;
-							viewDistanceLimitCoef=-1;
-						};
-						nightRangeCoef=0.80000001;
-						angleRangeHorizontal=90;
-						angleRangeVertical=90;
-					};
 					class DataLinkSensorComponent: SensorTemplateDataLink
 					{
 						typeRecognitionDistance=4000;
@@ -166,21 +127,19 @@ class cfgMagazines
 	class RC_target_confirmer_mag;
 	class RC_target_confirmer_AB_mag: RC_target_confirmer_mag
 	{
-		ammo="FPV_AB_Trigger";
+		ammo="RC_target_confirmer_AB_ammo";
 		initSpeed=0;
 		scope=2;
 		count=1;
-		//displayName="MP warhead";
-		//displayNameShort="MP warhead";
 	};
 };
 class cfgWeapons
 {
 	class RC_target_confirmer;
-	class RC_target_confirmer_AB: RC_target_confirmer
+	class RC_target_confirmer_AB_weapon: RC_target_confirmer
 	{
-		displayName="airburst";
-		displayNameShort="airburst";
+		displayName="MP airburst";
+		displayNameShort="MP airburst";
 		scope=2;
 		canLock=2;
 		weaponLockDelay=0;
@@ -192,7 +151,7 @@ class cfgWeapons
 		};
 		class Single
 		{
-			displayName="airburst";
+			displayName="MP airburst";
 			reloadTime=1;
 			burst=1;
 			sounds[]=

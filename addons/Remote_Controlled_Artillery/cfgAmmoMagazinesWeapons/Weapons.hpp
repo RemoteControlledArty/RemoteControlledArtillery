@@ -1593,7 +1593,7 @@ class RC_mortar_82mm_V1: mortar_82mm_base
 class RC_mortar_82mm_V2: RC_mortar_82mm_V1
 {
 	reloadTime=1.8;
-	magazineReloadTime=2.5;
+	magazineReloadTime=2.2;
 	canLock=2;
 	weaponLockDelay=0;
 };

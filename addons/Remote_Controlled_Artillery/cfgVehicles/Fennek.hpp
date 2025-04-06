@@ -114,7 +114,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 					};
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=45;
-					angleRangeVertical=35;
+					angleRangeVertical=45;
 					//animDirection="obsTurret";
 					animDirection="obsGun";
 				};
@@ -140,7 +140,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=45;
-					angleRangeVertical=35;
+					angleRangeVertical=45;
 					//animDirection="obsTurret";
 					animDirection="obsGun";
 				};
@@ -294,8 +294,8 @@ class RC_Fennek_A: RC_Fennek_A_Base
 	textSingular="UGV";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP1_pos";
-	uavCameraGunnerDir="PiP1_dir";
+	uavCameraGunnerPos="PiP0_pos";
+	uavCameraGunnerDir="PiP0_dir";
 	crew="B_UAV_AI";
 	
 	class Turrets: Turrets
@@ -467,8 +467,6 @@ class RC_Mortar_Fennek_LC_DIG_I: RC_Mortar_Fennek_LC_A_I
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
-/*
-//texture path doesnt work
 class RC_Fennek_ReTex_WD: RC_Fennek_A
 {
 	faction="RemoteControlled_ReTex_B";
@@ -572,4 +570,3 @@ class RC_Mortar_Fennek_LC_ReTex_WD_I: RC_Mortar_Fennek_LC_A_I
 		"Fennek\Data\Turret_wd.paa"
 	};
 };
-*/

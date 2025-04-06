@@ -1,0 +1,30 @@
+class SatelliteAntenna_01_Small_Olive_F;
+class FPV_Retranslator: SatelliteAntenna_01_Small_Olive_F
+{
+	scope=2;
+	scopeCurator=2;
+	displayName="Crocus Signal Booster";
+
+	class assembleInfo
+	{
+		primary=0;
+		base="";
+		assembleTo="";
+		dissasembleTo[]=
+		{
+			"B_Crocus_SignalBooster_Bag"
+		};
+		displayName="";
+	};
+};
+class B_Crocus_SignalBooster_Bag: B_Crocus_MP_Bag
+{
+	displayName="Crocus Signal Booster Bag";
+	mass=70;	//3.2kg
+
+	class assembleInfo: assembleInfo
+	{
+		assembleTo="FPV_Retranslator";
+		displayName="Crocus Signal Booster";
+	};
+};

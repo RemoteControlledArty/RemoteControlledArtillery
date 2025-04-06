@@ -1,6 +1,14 @@
-class B_Crocus_AT: B_Crocus_Base
+class B_Crocus_AT;
+class B_Crocus_MP_Base: B_Crocus_AT
 {
-	author="Ascent";
+	scope=0;
+	scopeCurator=0;
+	class EventHandlers;
+	class Components;
+};
+class B_Crocus_MP: B_Crocus_MP_Base
+{
+	author="Ascent";	//all credits to the original maker, this is only an edit and soft-depends on the original mod
 	displayName="Crocus MP";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_UAV_Designator_subcat";
@@ -18,20 +26,26 @@ class B_Crocus_AT: B_Crocus_Base
 	reportRemoteTargets=1;
 	laserScanner=1;
 	showAllTargets="2 + 4";
+
+	camouflage=0.025;	//0.5
+	audible=0.075;	//0.1
+	radarTargetSize=0.035;	//0.1
+	visualTargetSize=0.075;	//0.1
 	
-	liftForceCoef=2;	//1
+	liftForceCoef=1.5;	//1
+	maxSpeed=200;	//140
+
 	/*
-	maxSpeed=180;	//140
+	//Crocus
 	cyclicAsideForceCoef=2;	//2
-	cyclicForwardForceCoef=2.4;	//2
-	mainRotorSpeed=-14;	//-7
-	backRotorSpeed=14;	//7
+	cyclicForwardForceCoef=2;	//2
+	mainRotorSpeed=-7;	//-7
+	backRotorSpeed=7;	//7
 	backRotorForceCoef=5;	//5
 	*/
 
 	/*
 	//AL-6
-
 	liftForceCoef=1.6;
 	cyclicAsideForceCoef=2.75;
 	cyclicForwardForceCoef=0.58999997;
@@ -47,14 +61,9 @@ class B_Crocus_AT: B_Crocus_Base
 	backRotorSpeed=7;
 	*/
 
-	camouflage=0.025;	//0.5
-	audible=0.025;	//0.1
-	radarTargetSize=0.025;	//0.1
-	visualTargetSize=0.025;	//0.1
-
 	weapons[]=
 	{
-		"RC_target_confirmer_AB"
+		"RC_target_confirmer_AB_weapon"
 	};
 	magazines[]=
 	{
@@ -63,47 +72,13 @@ class B_Crocus_AT: B_Crocus_Base
 
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
+		class RC_Crocus
 		{
-			//fired="(_this select 0) setDamage 1;";
-			fired="_this call DB_fnc_fpv_onDestroy";
+			fired="_this call RC_fnc_fpv_onDestroy_MP";
+			hit="_this call RC_fnc_fpv_onDestroy_MP";
+			init="(_this # 0) spawn RC_fnc_fpv_droneInit_MP;";
 		};
-	};
-
-	/*
-	class ViewPilot: ViewPilot
-	{
-		minFov=0.25;
-		maxFov=1.25;
-		initFov=1;
-		initAngleX=0;
-		minAngleX=-65;
-		maxAngleX=85;
-		initAngleY=0;
-		minAngleY=-150;
-		maxAngleY=150;
-	};
-	class Viewoptics: ViewOptics
-	{
-		initAngleX=0;
-		minAngleX=0;
-		maxAngleX=0;
-		initAngleY=0;
-		minAngleY=0;
-		maxAngleY=0;
-		minFov=1.25;
-		maxFov=1.25;
-		initFov=1.25;
-		visionMode[]=
-		{
-			"Normal"
-		};
-		thermalMode[]={0,1};
-	};
-	*/
-	class Viewoptics: ViewOptics
-	{
-		showAllTargets="2 + 4";
+		class ArmaFPV {};
 	};
 
 	class Components: Components
@@ -125,26 +100,6 @@ class B_Crocus_AT: B_Crocus_Base
 		{
 			class Components
 			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					animDirection="mainGun";
-					aimDown=-0.5;
-
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
 					typeRecognitionDistance=4000;
@@ -164,29 +119,26 @@ class B_Crocus_AT: B_Crocus_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-				class VisualSensorComponent: SensorTemplateVisual
+				class LaserSensorComponent: SensorTemplateLaser
 				{
-					typeRecognitionDistance=600;
-					maxTrackableSpeed=600;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
-					animDirection="mainGun";
-					aimDown=-0.5;
+					angleRangeHorizontal=45;
+					angleRangeVertical=45;
+					animDirection="";	//aligned with body
+					aimDown=0;	//-1
 
 					class AirTarget
 					{
-						minRange=600;
-						maxRange=600;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=600;
-						maxRange=600;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
 					};
 				};
 			};
@@ -195,64 +147,241 @@ class B_Crocus_AT: B_Crocus_Base
 
 	class assembleInfo
 	{
+		primary=0;
+		base="";
 		assembleTo="";
 		dissasembleTo[]=
 		{
-			"RC_Crocus_MP_Bag"
+			"B_Crocus_MP_Bag"
 		};
 		displayName="";
 	};
 };
-
-class B_Crocus_AT_Bag;
-class RC_Crocus_MP_Bag: B_Crocus_AT_Bag
+class O_Crocus_MP: B_Crocus_MP
 {
-	displayName="Crocus MP Bag";
-	author="Ascent";
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
 
-	class assembleInfo
+	class assembleInfo: assembleInfo
 	{
-		assembleTo="B_Crocus_AT";
-		base="";
-		displayName="Crocus MP";
-		dissasembleTo[]={};
-		primary=1;
+		dissasembleTo[]=
+		{
+			"O_Crocus_MP_Bag"
+		};
 	};
+};
+class I_Crocus_MP: B_Crocus_MP
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
 
-	picture="\A3\Weapons_F\ammoboxes\bags\data\ui\icon_B_C_Kitbag_rgr";
-	model="\A3\weapons_f\Ammoboxes\bags\Backpack_Fast";
-	hiddenSelectionsTextures[]=
+	class assembleInfo: assembleInfo
 	{
-		"\A3\weapons_f\ammoboxes\bags\data\backpack_fast_rgr_co.paa"
+		dissasembleTo[]=
+		{
+			"I_Crocus_MP_Bag"
+		};
 	};
 };
 
-/*
-class Land_SatelliteAntenna_01_F;
-	class FPV_Retranslator: Land_SatelliteAntenna_01_F
-	{
-		scope=2;
-		scopeCurator=2;
-		displayName="Signal Booster";
-	};
-*/
-class B_CrocusRepeater_Bag: RC_Crocus_MP_Bag
+
+class RC_UAV_AR1_Bag;
+class B_Crocus_MP_Bag: RC_UAV_AR1_Bag
 {
-	displayName="Crocus-Repeater Bag";
+	scope=2;
+	scopeCurator=2;
+	displayName="Crocus MP Bag";
+	mass=180;	//>8kg
 
 	class assembleInfo
 	{
-		assembleTo="FPV_Retranslator";
+		assembleTo="B_Crocus_MP";
 		base="";
 		displayName="Crocus MP";
 		dissasembleTo[]={};
 		primary=1;
 	};
+};
+class O_Crocus_MP_Bag: B_Crocus_MP_Bag
+{
+	displayName="Crocus MP Bag [Opf]";
 
-	picture="\A3\Weapons_F\ammoboxes\bags\data\ui\icon_B_C_Kitbag_rgr";
-	model="\A3\weapons_f\Ammoboxes\bags\Backpack_Fast";
-	hiddenSelectionsTextures[]=
+	class assembleInfo: assembleInfo
 	{
-		"\A3\weapons_f\ammoboxes\bags\data\backpack_fast_rgr_co.paa"
+		assembleTo="O_Crocus_MP";
+		displayName="Crocus MP [Opf]";
+	};
+};
+class I_Crocus_MP_Bag: B_Crocus_MP_Bag
+{
+	displayName="Crocus MP Bag [Ind]";
+
+	class assembleInfo: assembleInfo
+	{
+		assembleTo="I_Crocus_MP";
+		displayName="Crocus MP [Ind]";
+	};
+};
+
+
+class B_Crocus_MP_Sens: B_Crocus_MP
+{
+	displayName="Crocus MP Sens";
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=4000;
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					angleRangeHorizontal=45;
+					angleRangeVertical=45;
+					animDirection="";	//aligned with body
+					aimDown=0;	//-1
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=350;
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.67;
+					angleRangeHorizontal=45;
+					angleRangeVertical=45;
+					animDirection="";	//aligned with body
+					aimDown=0;	//-1
+
+					class AirTarget
+					{
+						minRange=500;
+						maxRange=500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=350;
+						maxRange=350;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+				};
+				/*
+				//cannot be limited in range, so it would be too op
+				class ManSensorComponent: SensorTemplateMan
+				{
+					maxTrackableSpeed=15;
+					angleRangeHorizontal=45;
+					angleRangeVertical=45;
+					animDirection="";
+					aimDown=0;
+				};
+				*/
+			};
+		};
+	};
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"B_Crocus_MP_Sens_Bag"
+		};
+	};
+};
+class O_Crocus_MP_Sens: B_Crocus_MP_Sens
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"O_Crocus_MP_Bag"
+		};
+	};
+};
+class I_Crocus_MP_Sens: B_Crocus_MP_Sens
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"I_Crocus_MP_Bag"
+		};
+	};
+};
+
+
+class B_Crocus_MP_Sens_Bag: B_Crocus_MP_Bag
+{
+	displayName="Crocus MP Sens Bag";
+
+	class assembleInfo: assembleInfo
+	{
+		assembleTo="B_Crocus_MP_Sens";
+		displayName="Crocus MP Sens";
+	};
+};
+class O_Crocus_MP_Sens_Bag: B_Crocus_MP_Sens_Bag
+{
+	displayName="Crocus MP Sens Bag [Opf]";
+
+	class assembleInfo: assembleInfo
+	{
+		assembleTo="O_Crocus_MP_Sens";
+		displayName="Crocus MP Sens [Opf]";
+	};
+};
+class I_Crocus_MP_Sens_Bag: B_Crocus_MP_Sens_Bag
+{
+	displayName="Crocus MP Sens Bag [Ind]";
+
+	class assembleInfo: assembleInfo
+	{
+		assembleTo="I_Crocus_MP_Sens";
+		displayName="Crocus MP Sens [Ind]";
 	};
 };
