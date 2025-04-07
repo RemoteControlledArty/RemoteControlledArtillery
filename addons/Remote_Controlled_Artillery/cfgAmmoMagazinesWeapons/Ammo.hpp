@@ -356,6 +356,31 @@ class RC_20mm_APFSDS_T_Y: RC_20mm_APFSDS_T_R
 };
 
 
+class BulletBase;
+class RC_ADS_Submun: BulletBase
+{
+	hit=8;	//4 - 8
+	indirectHit=0;
+	indirectHitRange=0.6;	//0.15 - 0.6
+	typicalSpeed=1000;
+	deflecting=0;	//50
+};
+class RC_AntiDroneShot: RC_20mm_HE_T_R
+{
+	simulation="shotSubmunitions";
+	submunitionAmmo="RC_ADS_Submun";
+	submunitionConeType[]=
+	{
+		"poissondisc",	//randomcenter
+		100
+	};
+	submunitionConeAngle="0.668";
+	triggerTime=0.01;
+	aiAmmoUsageFlags="64 + 128 + 256";
+	cost=20;
+};
+
+
 //MP
 class B_30mm_MP_Tracer_Red;
 class RC_B_30mm_MP_T_R: B_30mm_MP_Tracer_Red
@@ -710,7 +735,8 @@ class RC_IFV_AA_Base: M_Titan_AA_long
 };
 class RC_IFV_AA: RC_IFV_AA_Base
 {
-	//test
+	/*
+	//test if true airburst
 	simulationStep=0.0020000001;
 	trackOversteer=1;
 	trackLead=0;	//test 1
@@ -723,17 +749,17 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	cmImmunity=1;
 	//manualControl=1;
 	maneuvrability=0;
-	//
+	*/
 
 	indirectHitRange=15;
 	weaponLockSystem="2 + 4 + 16";
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	//trackLead=1;
-	//cmImmunity=0.92000002;
+	trackLead=1;
+	cmImmunity=0.92000002;
 	cameraViewAvailable=1;
-	//initTime=0.01;
+	initTime=0.01;
 
 	class Components: Components
 	{

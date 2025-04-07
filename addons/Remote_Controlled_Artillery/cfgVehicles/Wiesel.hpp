@@ -1823,6 +1823,50 @@ class RC_Wiesel_SHORAD_DIG_I: RC_Wiesel_SHORAD_WD_I
 };
 
 
+class RC_Wiesel_SHORAD_ADS_WD: RC_Wiesel_SHORAD_WD
+{
+	displayName="RC Wiesel II 20mm ADS SHORAD";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{	
+			weapons[]=
+			{
+				"RC_autocannon_20mm_ADS2_SHORAD",
+				"RC_MMG_338_coax_ext",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_60Rnd_20mm_AntiDroneShot",
+				"RC_60Rnd_20mm_AntiDroneShot",
+				"RC_60Rnd_20mm_AntiDroneShot",
+				"RC_60Rnd_20mm_AntiDroneShot",
+				"RC_60Rnd_20mm_AntiDroneShot",
+				"60Rnd_20mm_APFSDS_T_R",
+				"60Rnd_20mm_APFSDS_T_R",
+				"60Rnd_20mm_APFSDS_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+	};
+};
+class RC_Wiesel_SHORAD_ADS_WD_O: RC_Wiesel_SHORAD_ADS_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+
+
 //semi manned version
 class RC_Wiesel_AC_WD_manned: RC_Wiesel_AC_WD_Base
 {

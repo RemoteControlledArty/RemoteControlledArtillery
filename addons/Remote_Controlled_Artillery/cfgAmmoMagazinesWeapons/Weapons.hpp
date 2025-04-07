@@ -778,6 +778,145 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 };
 
 
+class RC_autocannon_20mm_ADS_SHORAD: RC_autocannon_20mm_Base
+{
+	author="Ascent";
+	displayName="20mm SHORAD";
+	//canLock=2;
+	FCSZeroingDelay=0;
+	maxZeroing=3000;
+	FCSMaxLeadSpeed=30.555599;
+	//ballisticsComputer="1 + 2 + 16";
+	canLock=0;
+	ballisticsComputer="2 + 4";
+	cursorAim="mg";
+
+	class HE: HE
+	{
+		displayName="20mm SHORAD";
+		magazineReloadTime=5;	//15
+		maxZeroing=3000;
+
+		magazines[]=
+		{
+			"RC_60Rnd_20mm_AntiDroneShot",
+			"60Rnd_20mm_HE_T_R",
+			"60Rnd_20mm_HE_T_G",
+			"60Rnd_20mm_HE_T_Y"
+		};
+		class player: player
+		{
+			textureType="burst";
+			recoil="recoil_auto_primary_3outof10";
+			recoilProne="recoil_auto_primary_prone_3outof10";
+			showToPlayer=1;
+			burst=3;
+
+			ballisticsComputer="2 + 4";
+			cursorAim="mg";
+		};
+	};
+	class AP: AP
+	{
+		displayName="20mm AC";
+		magazineReloadTime=15;
+		maxZeroing=3000;
+		ballisticsComputer="2 + 4";
+		cursorAim="mg";
+
+		magazines[]=
+		{
+			"60Rnd_20mm_AP_T_R",
+			"60Rnd_20mm_AP_T_G",
+			"60Rnd_20mm_AP_T_Y",
+			"60Rnd_20mm_APFSDS_T_R",
+			"60Rnd_20mm_APFSDS_T_G",
+			"60Rnd_20mm_APFSDS_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.2;
+			ballisticsComputer="1 + 2 + 16";
+			cursorAim="mg";
+		};
+	};
+};
+
+class autocannon_35mm;
+class CannonCore;
+class RC_autocannon_20mm_ADS2_SHORAD: autocannon_35mm
+{
+	author="Ascent";
+	displayName="20mm SHORAD";
+
+	magazines[]=
+	{
+		"RC_60Rnd_20mm_AntiDroneShot"
+	};
+
+	class manual: CannonCore
+	{
+		displayName="20mm SHORAD";
+		textureType="burst";
+		recoil="recoil_auto_primary_3outof10";
+		recoilProne="recoil_auto_primary_prone_3outof10";
+		showToPlayer=1;
+		burst=3;
+
+		autoFire=1;
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\autocannon_35mm\autocannon_35mm_01",
+				1.7782794,
+				1,
+				2000
+			};
+			begin2[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\autocannon_35mm\autocannon_35mm_02",
+				1.7782794,
+				1,
+				2000
+			};
+			begin3[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\autocannon_35mm\autocannon_35mm_03",
+				1.7782794,
+				1,
+				2000
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				33,
+				"begin2",
+				33,
+				"begin3",
+				33
+			};
+		};
+		soundContinuous=0;
+		soundBurst=0;
+		reloadTime=0.054545499;
+		dispersion=0.0044999998;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=10;
+		minRange=0;
+		minRangeProbab=0.0099999998;
+		midRange=1;
+		midRangeProbab=0.0099999998;
+		maxRange=2;
+		maxRangeProbab=0.0099999998;
+	};
+};
+
+
 class RC_autocannon_20mm_SHORAD: RC_IFV_Missile_Launcher_Base
 {
 	displayName="20mm SHORAD";
