@@ -342,6 +342,19 @@ class 60Rnd_20mm_APFSDS_T_Y: 100Rnd_20mm_APFSDS_T_Y
 };
 
 
+//20mm AB SHORAD
+class RC_60Rnd_20mm_SHORAD_T_W: 100Rnd_20mm_HE_T_R
+{
+	ammo="RC_20mm_AB_SHORAD_T_W";
+	displayName="20mm AB-T";
+	displayNameShort="20mm AB-T";
+	count=60;
+	initSpeed=1000;
+	maxLeadSpeed=694.44397;
+	//nameSound="missiles";
+};
+
+
 //Autocannons
 class 140Rnd_30mm_MP_shells_Tracer_Red;
 class RC_100Rnd_30mm_MP_T_R: 140Rnd_30mm_MP_shells_Tracer_Red
@@ -510,6 +523,9 @@ class RC_2Rnd_IFV_AA: 4Rnd_Titan_long_missiles
 	displayName="AA 4.5km";
 	displayNameShort="AA 4.5km";
 	ammo="RC_IFV_AA";
+
+	//test
+	initSpeed=1000;
 };
 class RC_4Rnd_IFV_AA: RC_2Rnd_IFV_AA
 {

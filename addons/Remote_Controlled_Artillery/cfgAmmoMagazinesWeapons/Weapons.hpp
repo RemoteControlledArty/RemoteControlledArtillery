@@ -778,6 +778,84 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 };
 
 
+class RC_autocannon_20mm_SHORAD: RC_IFV_Missile_Launcher_Base
+{
+	displayName="20mm SHORAD";
+	displayNameShort="20mm SHORAD";
+	magazineReloadTime=5;
+
+	magazines[]=
+	{
+		"RC_60Rnd_20mm_SHORAD_T_W"
+	};
+	class Player: Player
+	{
+		magazineReloadTime=5;
+		dispersion=0.00089999998;
+		reloadTime=0.2;
+
+		//Semi_FullAuto
+		requiredOpticType=-1;
+
+		//Mode_FullAuto
+		textureType="fullAuto";
+		recoil="recoil_auto_primary_3outof10";
+		recoilProne="recoil_auto_primary_prone_3outof10";
+		aiDispersionCoefY=3;
+		aiDispersionCoefX=2;
+		soundBurst=0;
+
+		//autocannonbase
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_01",
+				1.9952624,
+				1,
+				1500
+			};
+			begin2[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_02",
+				1.9952624,
+				1,
+				1500
+			};
+			begin3[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_03",
+				1.9952624,
+				1,
+				1500
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.33000001,
+				"begin2",
+				0.33000001,
+				"begin3",
+				0.34
+			};
+		};
+		soundContinuous=0;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=10;
+		minRange=0;
+		minRangeProbab=0.0099999998;
+		midRange=1;
+		midRangeProbab=0.0099999998;
+		maxRange=2;
+		maxRangeProbab=0.0099999998;
+	};
+};
+
+
 class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 {
 	author="Ascent";

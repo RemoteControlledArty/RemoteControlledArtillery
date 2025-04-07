@@ -710,15 +710,30 @@ class RC_IFV_AA_Base: M_Titan_AA_long
 };
 class RC_IFV_AA: RC_IFV_AA_Base
 {
+	//test
+	simulationStep=0.0020000001;
+	trackOversteer=1;
+	trackLead=0;	//test 1
+	aiAmmoUsageFlags = "64 + 128 + 256";
+	maxSpeed=1000;
+	initTime=0.005;
+	thrustTime=0;
+	thrust=0;
+	missileLockMaxSpeed=1000;
+	cmImmunity=1;
+	//manualControl=1;
+	maneuvrability=0;
+	//
+
 	indirectHitRange=15;
 	weaponLockSystem="2 + 4 + 16";
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	trackLead=1;
-	cmImmunity=0.92000002;
+	//trackLead=1;
+	//cmImmunity=0.92000002;
 	cameraViewAvailable=1;
-	initTime=0.01;
+	//initTime=0.01;
 
 	class Components: Components
 	{
@@ -812,6 +827,149 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	};
 };
 
+
+//20mm AB SHORAD
+class RC_20mm_AB_SHORAD_T_W: RC_IFV_AA
+{
+	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_atl_fly.p3d";
+	hit=60;
+	indirectHit=6;
+	indirectHitRange=6;
+	proximityExplosionDistance=10;
+
+	warheadName="HE";
+	explosive=0.8;
+	caliber=3.4000001;
+	cost=30;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_white";
+	airFriction=-0.00078;
+	sideAirFriction=-0.00078;
+
+	simulationStep=0.0020000001;
+	trackOversteer=1;
+	trackLead=0;	//test 1
+	aiAmmoUsageFlags = "64 + 128 + 256";
+	timeToLive=15;
+	maxSpeed=1000;
+	initTime=0.005;
+	thrustTime=0;
+	thrust=0;
+	fuseDistance=5;
+
+	missileLockCone=4;
+	missileKeepLockedCone=180;
+	missileLockMaxDistance=6000;
+	missileLockMinDistance=5;
+	missileLockMaxSpeed=400;
+	cmImmunity=1;
+
+	manualControl=1;
+	maneuvrability=0;
+	maxControlRange=6000;
+
+	//CraterEffects="ATMissileCrater";
+	//explosionEffects="ATMissileExplosion";
+	//muzzleEffect="BIS_fnc_effectFiredRocket";
+	effectsMissileInit="";
+	effectsMissile="";
+
+	deflecting=0;
+
+	maverickWeaponIndexOffset=0;
+	htMin=60;
+	htMax=1800;
+	afMax=200;
+	mfMax=100;
+	mFact=0;
+	tBody=0;
+
+	//20mm
+	explosionSoundEffect="DefaultExplosion";
+	CraterEffects="ExploAmmoCrater";
+	explosionEffects="ExploAmmoExplosion";
+	muzzleEffect="";
+
+	//weaponType="cannon";	
+	tracerScale=1;
+	tracerStartTime=0.050000001;
+	tracerEndTime=1;
+	//nvgOnly=0;
+	typicalSpeed=1000;
+	visibleFire=32;
+	audibleFire=200;
+	visibleFireTime=4;
+	dangerRadiusBulletClose=16;
+	dangerRadiusHit=40;
+	suppressionRadiusBulletClose=10;
+	suppressionRadiusHit=14;
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_01",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_02",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_03",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_04",
+		1.7782794,
+		1,
+		1300
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
+	class CamShakeExplode
+	{
+		power=4;
+		duration=0.80000001;
+		frequency=20;
+		distance=43.7771;
+	};
+	class CamShakeHit
+	{
+		power=20;
+		duration=0.40000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=2.1147399;
+		duration=0.80000001;
+		frequency=20;
+		distance=35.7771;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
 
 class MissileBase;
 
