@@ -364,6 +364,7 @@ class RC_ADS_Submun: BulletBase
 	indirectHitRange=0.6;	//0.15 - 0.6
 	typicalSpeed=1000;
 	deflecting=0;	//50
+	//airFriction=-0.00050000002;
 };
 class RC_AntiDroneShot: RC_20mm_HE_T_R
 {
@@ -378,6 +379,7 @@ class RC_AntiDroneShot: RC_20mm_HE_T_R
 	triggerTime=0.01;
 	aiAmmoUsageFlags="64 + 128 + 256";
 	cost=20;
+	airFriction=-0.00050000002;
 };
 
 
