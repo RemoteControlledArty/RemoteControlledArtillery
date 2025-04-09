@@ -1621,31 +1621,33 @@ class RC_Wiesel_AC_DIG_I: RC_Wiesel_AC_WD_I
 };
 
 
-class RC_Wiesel_SHORAD_WD: RC_Wiesel_AC_WD
+class RC_Wiesel_AntiDrone_WD: RC_Wiesel_AC_WD
 {
-	displayName="RC Wiesel II 20mm AB SHORAD";
-	editorSubcategory="RC_AntiAir_subcat";
+	displayName="RC Wiesel II Anti-Drone";
+	editorSubcategory="RC_AntiDrone_subcat";
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{	
+			maxElev=80;
+
 			weapons[]=
 			{
-				"RC_autocannon_20mm_SHORAD",
+				"RC_autocannon_20mm_AntiDrone",
 				"RC_MMG_338_coax_ext",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_60Rnd_20mm_SHORAD_T_W",
-				"RC_60Rnd_20mm_SHORAD_T_W",
-				"RC_60Rnd_20mm_SHORAD_T_W",
-				"RC_60Rnd_20mm_SHORAD_T_W",
-				"RC_60Rnd_20mm_SHORAD_T_W",
-				"RC_60Rnd_20mm_SHORAD_T_W",
-				"RC_60Rnd_20mm_SHORAD_T_W",
-				"RC_60Rnd_20mm_SHORAD_T_W",
+				"RC_60Rnd_20mm_AntiDroneShot",
+				"RC_60Rnd_20mm_AntiDroneShot",
+				"RC_60Rnd_20mm_AntiDroneShot",
+				"RC_60Rnd_20mm_AntiDroneShot",
+				"RC_60Rnd_20mm_AntiDroneShot",
+				"60Rnd_20mm_APFSDS_T_R",
+				"60Rnd_20mm_APFSDS_T_R",
+				"60Rnd_20mm_APFSDS_T_R",
 				"RC_200Rnd_338_T_R",
 				"RC_200Rnd_338_T_R",
 				"RC_200Rnd_338_T_R",
@@ -1655,163 +1657,148 @@ class RC_Wiesel_SHORAD_WD: RC_Wiesel_AC_WD
 				"SmokeLauncherMag"
 			};
 
-			/*
 			class Components: Components
 			{
-				class SensorsManagerComponent
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
+					defaultDisplay="SensorDisplay";
+
 					class Components
 					{
-						class DataLinkSensorComponent: SensorTemplateDataLink
+						class SensorDisplay
 						{
-							typeRecognitionDistance=67000;
-
-							class AirTarget
-							{
-								minRange=67000;
-								maxRange=67000;
-								objectDistanceLimitCoef=-1;
-								viewDistanceLimitCoef=-1;
-							};
-							class GroundTarget
-							{
-								minRange=67000;
-								maxRange=67000;
-								objectDistanceLimitCoef=-1;
-								viewDistanceLimitCoef=-1;
-							};
+							componentType="SensorsDisplayComponent";
+							range[]={600};
+							resource="RscCustomInfoSensors";
 						};
-						class IRSensorComponent: SensorTemplateIR
-						{
-							typeRecognitionDistance=3000;
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="SensorDisplay";
 
-							class AirTarget
-							{
-								minRange=4000;
-								maxRange=4000;
-								objectDistanceLimitCoef=-1;
-								viewDistanceLimitCoef=-1;
-							};
-							class GroundTarget
-							{
-								minRange=4000;
-								maxRange=4000;
-								objectDistanceLimitCoef=1;
-								viewDistanceLimitCoef=1;
-							};
-							maxTrackableSpeed=600;
-							angleRangeHorizontal=40;
-							angleRangeVertical=20;
-							animDirection="mainGun";
-						};
-						class VisualSensorComponent: SensorTemplateVisual
+					class Components
+					{
+						class SensorDisplay
 						{
-							typeRecognitionDistance=1500;
-
-							class AirTarget
-							{
-								minRange=2000;
-								maxRange=2000;
-								objectDistanceLimitCoef=-1;
-								viewDistanceLimitCoef=-1;
-							};
-							class GroundTarget
-							{
-								minRange=2000;
-								maxRange=2000;
-								objectDistanceLimitCoef=1;
-								viewDistanceLimitCoef=1;
-							};
-							maxTrackableSpeed=600;
-							nightRangeCoef=0.80000001;
-							angleRangeHorizontal=40;
-							angleRangeVertical=20;
-							animDirection="mainGun";
-						};
-						class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-						{
-							class AirTarget
-							{
-								minRange=8000;
-								maxRange=8000;
-								objectDistanceLimitCoef=-1;
-								viewDistanceLimitCoef=-1;
-							};
-							class GroundTarget
-							{
-								minRange=8000;
-								maxRange=8000;
-								objectDistanceLimitCoef=-1;
-								viewDistanceLimitCoef=-1;
-							};
-						};
-						class ActiveRadarSensorComponent: SensorTemplateActiveRadar
-						{
-							typeRecognitionDistance=8000;
-
-							class AirTarget
-							{
-								minRange=8000;
-								maxRange=8000;
-								objectDistanceLimitCoef=-1;
-								viewDistanceLimitCoef=-1;
-							};
-							class GroundTarget
-							{
-								minRange=8000;
-								maxRange=8000;
-								objectDistanceLimitCoef=-1;
-								viewDistanceLimitCoef=-1;
-							};
-							angleRangeHorizontal=360;
-							angleRangeVertical=180;
-							aimDown=0;
-							groundNoiseDistanceCoef=0;
-							maxGroundNoiseDistance=0;
-							maxTrackableSpeed=694.44397;
+							componentType="SensorsDisplayComponent";
+							range[]={4000,1200,600};
+							resource="RscCustomInfoSensors";
 						};
 					};
 				};
 			};
-			*/
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_20mm_AntiDrone";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_autocannon_20mm_AntiDrone";
+		};
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=67000;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
+
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=600;
+
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=0;
+						maxRange=0;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="mainGun";
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=600;
+
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=0;
+						maxRange=0;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="mainGun";
+				};
+			};
 		};
 	};
 };
-class RC_Wiesel_SHORAD_WD_O: RC_Wiesel_SHORAD_WD
+class RC_Wiesel_AntiDrone_WD_O: RC_Wiesel_AntiDrone_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-
-	/*
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_green.hpp"
-		};
-	};
-	*/
 };
-class RC_Wiesel_SHORAD_WD_I: RC_Wiesel_SHORAD_WD
+class RC_Wiesel_AntiDrone_WD_I: RC_Wiesel_AntiDrone_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
-
-	/*
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_yellow.hpp"
-		};
-	};
-	*/
 };
-class RC_Wiesel_SHORAD_DIG_I: RC_Wiesel_SHORAD_WD_I
+class RC_Wiesel_AntiDrone_DIG_I: RC_Wiesel_AntiDrone_WD_I
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -1820,50 +1807,6 @@ class RC_Wiesel_SHORAD_DIG_I: RC_Wiesel_SHORAD_WD_I
 		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
 		"A3\armor_f\data\cage_aaf_co.paa"
 	};
-};
-
-
-class RC_Wiesel_SHORAD_ADS_WD: RC_Wiesel_SHORAD_WD
-{
-	displayName="RC Wiesel II 20mm ADS SHORAD";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{	
-			weapons[]=
-			{
-				"RC_autocannon_20mm_ADS2_SHORAD",
-				"RC_MMG_338_coax_ext",
-				"SmokeLauncher"
-			};
-			magazines[]=
-			{
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"60Rnd_20mm_APFSDS_T_R",
-				"60Rnd_20mm_APFSDS_T_R",
-				"60Rnd_20mm_APFSDS_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
-		};
-	};
-};
-class RC_Wiesel_SHORAD_ADS_WD_O: RC_Wiesel_SHORAD_ADS_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 
 

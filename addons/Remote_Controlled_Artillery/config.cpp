@@ -759,6 +759,7 @@ class CfgEditorSubcategories
 	class RC_ReducedAmmo_subcat {displayname="'reduced ammo :  Mortar's / Howitzer's";};
 
 	class RC_AntiAir_subcat {displayname="Anti-Air";};
+	class RC_AntiDrone_subcat {displayname="Anti-Drone";};
 	class RC_ATGM_subcat {displayname="ATGMs";};
 	class RC_Designator_subcat {displayname="Designators";};
 	class RC_Respawn_subcat {displayname="Respawn";};
@@ -835,6 +836,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_3.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MBT_4.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\MK32.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MortarMATV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first

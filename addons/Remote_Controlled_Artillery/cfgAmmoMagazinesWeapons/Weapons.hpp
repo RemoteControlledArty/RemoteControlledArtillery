@@ -799,10 +799,7 @@ class RC_autocannon_20mm_ADS_SHORAD: RC_autocannon_20mm_Base
 
 		magazines[]=
 		{
-			"RC_60Rnd_20mm_AntiDroneShot",
-			"60Rnd_20mm_HE_T_R",
-			"60Rnd_20mm_HE_T_G",
-			"60Rnd_20mm_HE_T_Y"
+			"RC_60Rnd_20mm_AntiDroneShot"
 		};
 		class player: player
 		{
@@ -826,6 +823,181 @@ class RC_autocannon_20mm_ADS_SHORAD: RC_autocannon_20mm_Base
 
 		magazines[]=
 		{
+			"60Rnd_20mm_AP_AA_T_R",
+			"60Rnd_20mm_AP_AA_T_G",
+			"60Rnd_20mm_AP_AA_T_Y",
+			"60Rnd_20mm_APFSDS_AA_T_R",
+			"60Rnd_20mm_APFSDS_AA_T_G",
+			"60Rnd_20mm_APFSDS_AA_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.2;
+			ballisticsComputer="2 + 4";
+			cursorAim="mg";
+		};
+	};
+};
+
+class autocannon_35mm;
+class CannonCore;
+class autocannon_Base_F;
+class RC_autocannon_Base_F: autocannon_Base_F
+{
+	class player;
+};
+class RC_autocannon_20mm_AntiDrone: autocannon_35mm
+{
+	author="Ascent";
+	displayName="20mm C-UAS";
+	magazineReloadTime=15;
+	maxZeroing=3000;
+
+	modes[]=
+	{
+		"manual",
+		"close",
+		"short",
+		"medium"
+	};
+	muzzles[]=
+	{
+		"HE",
+		"AP"
+	};
+
+	class HE: autocannon_Base_F
+	{	
+		displayName="20mm C-UAS";
+		magazines[]=
+		{
+			"RC_60Rnd_20mm_AntiDroneShot"
+		};
+		textureType="burst";
+		recoil="recoil_auto_primary_3outof10";
+		recoilProne="recoil_auto_primary_prone_3outof10";
+		burst=3;
+		magazineReloadTime=15;
+		reloadTime=0.3;
+		ballisticsComputer="2 + 4";
+
+		class manual: CannonCore
+		{
+			displayName="20mm C-UAS";
+			textureType="burst";
+			recoil="recoil_auto_primary_3outof10";
+			recoilProne="recoil_auto_primary_prone_3outof10";
+			showToPlayer=1;
+			burst=3;
+			magazineReloadTime=15;
+			reloadTime=0.3;
+			//reloadTime=0.054545499;
+			autoFire=1;
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				begin1[]=
+				{
+					"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_01",
+					1.9952624,
+					1,
+					1500
+				};
+				begin2[]=
+				{
+					"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_02",
+					1.9952624,
+					1,
+					1500
+				};
+				begin3[]=
+				{
+					"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_03",
+					1.9952624,
+					1,
+					1500
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.33000001,
+					"begin2",
+					0.33000001,
+					"begin3",
+					0.34
+				};
+			};
+			soundContinuous=0;
+			soundBurst=0;
+			dispersion=0.0044999998;
+			aiRateOfFire=1;
+			aiRateOfFireDistance=10;
+			minRange=0;
+			minRangeProbab=0.0099999998;
+			midRange=1;
+			midRangeProbab=0.0099999998;
+			maxRange=2;
+			maxRangeProbab=0.0099999998;
+		};
+		class close: manual
+		{
+			aiBurstTerminable=1;
+			showToPlayer=0;
+			burst=3;	//12
+			burstRangeMax=28;
+			aiRateOfFire=0.5;
+			aiRateOfFireDispersion=0.5;
+			aiRateOfFireDistance=200;
+			minRange=1;
+			minRangeProbab=0.1;
+			midRange=100;
+			midRangeProbab=0.75;
+			maxRange=400;
+			maxRangeProbab=0.85000002;
+		};
+		class short: close
+		{
+			aiBurstTerminable=1;
+			showToPlayer=0;
+			burst=3;	//18
+			burstRangeMax=42;
+			aiRateOfFire=1;
+			aiRateOfFireDispersion=1;
+			aiRateOfFireDistance=300;
+			minRange=200;
+			minRangeProbab=0.30000001;
+			midRange=400;
+			midRangeProbab=0.85000002;
+			maxRange=750;
+			maxRangeProbab=0.85000002;
+		};
+		class medium: close
+		{
+			aiBurstTerminable=1;
+			showToPlayer=0;
+			burst=3;	//18
+			burstRangeMax=42;
+			aiRateOfFire=2;
+			aiRateOfFireDispersion=2;
+			aiRateOfFireDistance=800;
+			minRange=500;
+			minRangeProbab=0.60000002;
+			midRange=750;
+			midRangeProbab=0.85000002;
+			maxRange=1000;
+			maxRangeProbab=0.60000002;
+		};
+	};
+	class AP: RC_autocannon_Base_F
+	{
+		displayName="20mm AP";
+		ballisticsComputer="2 + 4";
+		magazineReloadTime=15;
+		magazines[]=
+		{
 			"60Rnd_20mm_AP_T_R",
 			"60Rnd_20mm_AP_T_G",
 			"60Rnd_20mm_AP_T_Y",
@@ -835,84 +1007,96 @@ class RC_autocannon_20mm_ADS_SHORAD: RC_autocannon_20mm_Base
 		};
 		class player: player
 		{
+			dispersion=0.00089999998;
 			reloadTime=0.2;
-			ballisticsComputer="1 + 2 + 16";
-			cursorAim="mg";
+		};
+		class close: player
+		{
+			aiBurstTerminable=1;
+			showToPlayer=0;
+			burst=3;
+			burstRangeMax=6;
+			aiRateOfFire=1;
+			aiRateOfFireDispersion=2;
+			aiRateOfFireDistance=200;
+			minRange=0;
+			minRangeProbab=0.1;
+			midRange=400;
+			midRangeProbab=0.69999999;
+			maxRange=800;
+			maxRangeProbab=0.80000001;
+		};
+		class short: close
+		{
+			aiBurstTerminable=1;
+			showToPlayer=0;
+			burst=1;
+			burstRangeMax=5;
+			aiRateOfFire=2;
+			aiRateOfFireDispersion=2;
+			aiRateOfFireDistance=600;
+			minRange=600;
+			minRangeProbab=0.75;
+			midRange=800;
+			midRangeProbab=0.80000001;
+			maxRange=1200;
+			maxRangeProbab=0.80000001;
+		};
+		class medium: close
+		{
+			aiBurstTerminable=1;
+			showToPlayer=0;
+			burst=1;
+			burstRangeMax=3;
+			aiRateOfFire=2;
+			aiRateOfFireDispersion=3;
+			aiRateOfFireDistance=1000;
+			minRange=1000;
+			minRangeProbab=0.80000001;
+			midRange=1500;
+			midRangeProbab=0.80000001;
+			maxRange=2000;
+			maxRangeProbab=0.69999999;
+		};
+		class far: close
+		{
+			aiBurstTerminable=1;
+			showToPlayer=0;
+			burst=1;
+			burstRangeMax=1;
+			aiRateOfFire=2;
+			aiRateOfFireDispersion=4;
+			aiRateOfFireDistance=1800;
+			minRange=1800;
+			minRangeProbab=0.74000001;
+			midRange=2400;
+			midRangeProbab=0.64999998;
+			maxRange=3000;
+			maxRangeProbab=0.050000001;
 		};
 	};
-};
 
-class autocannon_35mm;
-class CannonCore;
-class RC_autocannon_20mm_ADS2_SHORAD: autocannon_35mm
-{
-	author="Ascent";
-	displayName="20mm SHORAD";
-
-	magazines[]=
+	sound[]=
 	{
-		"RC_60Rnd_20mm_AntiDroneShot"
+		"A3\sounds_f\dummysound",
+		2.5118864,
+		1,
+		1800
 	};
-
-	class manual: CannonCore
+	class GunParticles
 	{
-		displayName="20mm SHORAD";
-		textureType="burst";
-		recoil="recoil_auto_primary_3outof10";
-		recoilProne="recoil_auto_primary_prone_3outof10";
-		showToPlayer=1;
-		burst=3;
-
-		autoFire=1;
-		sounds[]=
+		class Effect
 		{
-			"StandardSound"
+			effectName="AutoCannonFired";
+			positionName="Usti hlavne";
+			directionName="Konec hlavne";
 		};
-		class StandardSound
+		class Shell
 		{
-			begin1[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_vehicles\autocannon_35mm\autocannon_35mm_01",
-				1.7782794,
-				1,
-				2000
-			};
-			begin2[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_vehicles\autocannon_35mm\autocannon_35mm_02",
-				1.7782794,
-				1,
-				2000
-			};
-			begin3[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_vehicles\autocannon_35mm\autocannon_35mm_03",
-				1.7782794,
-				1,
-				2000
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				33,
-				"begin2",
-				33,
-				"begin3",
-				33
-			};
+			positionName="shell_eject_pos";
+			directionName="shell_eject_dir";
+			effectName="HeavyGunCartridge1";
 		};
-		soundContinuous=0;
-		soundBurst=0;
-		reloadTime=0.054545499;
-		dispersion=0.0044999998;
-		aiRateOfFire=1;
-		aiRateOfFireDistance=10;
-		minRange=0;
-		minRangeProbab=0.0099999998;
-		midRange=1;
-		midRangeProbab=0.0099999998;
-		maxRange=2;
-		maxRangeProbab=0.0099999998;
 	};
 };
 

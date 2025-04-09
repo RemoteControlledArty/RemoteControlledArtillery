@@ -356,30 +356,140 @@ class RC_20mm_APFSDS_T_Y: RC_20mm_APFSDS_T_R
 };
 
 
-class BulletBase;
-class RC_ADS_Submun: BulletBase
+class RC_20mm_AP_AA_T_R: RC_20mm_AP_T_R
 {
-	hit=8;	//4 - 8
+	aiAmmoUsageFlags="128 + 256 + 512";
+};
+class RC_20mm_AP_AA_T_G: RC_20mm_AP_AA_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_20mm_AP_AA_T_Y: RC_20mm_AP_AA_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+class RC_20mm_APFSDS_AA_T_R: RC_20mm_APFSDS_T_R
+{
+	aiAmmoUsageFlags="128 + 256 + 512";
+};
+class RC_20mm_APFSDS_AA_T_G: RC_20mm_APFSDS_AA_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_20mm_APFSDS_AA_T_Y: RC_20mm_APFSDS_AA_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+class BulletBase;
+class RC_DS_Submun: BulletBase
+{
+	hit=6;	//4 - 8
 	indirectHit=0;
-	indirectHitRange=0.6;	//0.15 - 0.6
+	indirectHitRange=0.6;	//0.15 - 0.6	//test 0
 	typicalSpeed=1000;
 	deflecting=0;	//50
-	//airFriction=-0.00050000002;
+	airFriction=-0.00050000002;
 };
-class RC_AntiDroneShot: RC_20mm_HE_T_R
+class B_35mm_AA;
+class RC_DroneShot: B_35mm_AA
 {
 	simulation="shotSubmunitions";
-	submunitionAmmo="RC_ADS_Submun";
+	submunitionAmmo="RC_DS_Submun";
 	submunitionConeType[]=
 	{
 		"poissondisc",	//randomcenter
-		100
+		64
 	};
-	submunitionConeAngle="0.668";
+	submunitionConeAngle="0.4";		//0.4deg = 600m 1/3 shots should hit with a spread of 4,16m, 500m 2/3 should hit with a spread of 3,4m
 	triggerTime=0.01;
-	aiAmmoUsageFlags="64 + 128 + 256";
-	cost=20;
 	airFriction=-0.00050000002;
+	aiAmmoUsageFlags="256";
+
+	cost=20;
+	caliber=3.4000001;
+
+	visibleFire=32;
+	audibleFire=200;
+	visibleFireTime=4;
+	dangerRadiusBulletClose=16;
+	dangerRadiusHit=40;
+	suppressionRadiusBulletClose=10;
+	suppressionRadiusHit=14;
+
+	explosionSoundEffect="DefaultExplosion";
+	CraterEffects="ExploAmmoCrater";
+	explosionEffects="ExploAmmoExplosion";
+	muzzleEffect="";
+
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_01",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_02",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_03",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_04",
+		1.7782794,
+		1,
+		1300
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
+	class CamShakeExplode
+	{
+		power=4;
+		duration=0.80000001;
+		frequency=20;
+		distance=43.7771;
+	};
+	class CamShakeHit
+	{
+		power=20;
+		duration=0.40000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=2.1147399;
+		duration=0.80000001;
+		frequency=20;
+		distance=35.7771;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
 };
 
 

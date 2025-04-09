@@ -342,12 +342,38 @@ class 60Rnd_20mm_APFSDS_T_Y: 100Rnd_20mm_APFSDS_T_Y
 };
 
 
+class 60Rnd_20mm_AP_AA_T_R: 60Rnd_20mm_AP_T_R
+{
+	ammo="RC_20mm_AP_AA_T_R";
+};
+class 60Rnd_20mm_AP_AA_T_G: 60Rnd_20mm_AP_AA_T_R
+{
+	ammo="RC_20mm_AP_AA_T_G";
+};
+class 60Rnd_20mm_AP_AA_T_Y: 60Rnd_20mm_AP_AA_T_R
+{
+	ammo="RC_20mm_AP_AA_T_Y";
+};
+class 60Rnd_20mm_APFSDS_AA_T_R: 60Rnd_20mm_APFSDS_T_R
+{
+	ammo="RC_20mm_APFSDS_AA_T_G";
+};
+class 60Rnd_20mm_APFSDS_AA_T_G: 60Rnd_20mm_APFSDS_AA_T_R
+{
+	ammo="RC_20mm_APFSDS_AA_T_G";
+};
+class 60Rnd_20mm_APFSDS_AA_T_Y: 60Rnd_20mm_APFSDS_AA_T_R
+{
+	ammo="RC_20mm_APFSDS_AA_T_G";
+};
+
+
 //20mm AntiDroneShot SHORAD
 class RC_60Rnd_20mm_AntiDroneShot: 60Rnd_20mm_HE_T_R
 {
-	ammo="RC_AntiDroneShot";
-	displayName="20mm AntiDroneShot";
-	displayNameShort="20mm AntiDroneShot";
+	ammo="RC_DroneShot";
+	displayName="20mm DroneShot";
+	displayNameShort="20mm DroneShot";
 	initSpeed=1000;
 	maxLeadSpeed=694.44397;
 	//nameSound="missiles";
