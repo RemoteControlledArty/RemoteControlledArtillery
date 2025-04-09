@@ -180,6 +180,12 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 					aimDown=-90;
 					*/
 
+					//groundNoiseDistanceCoef=;
+					//maxGroundNoiseDistance=;
+					minTrackableATL=4;	//whats good?
+
+					//maxTrackableATL=400; //good or bad?
+
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
 					animDirection="mainGun";
