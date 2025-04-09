@@ -1,5 +1,5 @@
 class B_GMG_01_high_F;
-class RC_AntiDroneTurret_base: B_GMG_01_high_F
+class RC_cUAS_Turret_base: B_GMG_01_high_F
 {
 	class Turrets;
 	class MainTurret;
@@ -11,9 +11,9 @@ class RC_AntiDroneTurret_base: B_GMG_01_high_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_AntiDroneTurret: RC_AntiDroneTurret_base
+class RC_cUAS_Turret: RC_cUAS_Turret_base
 {
-	displayName="RC Anti Drone 20mm";
+	displayName="RC C-UAS Turret";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiDrone_subcat";
 	author="Ascent";
@@ -22,16 +22,11 @@ class RC_AntiDroneTurret: RC_AntiDroneTurret_base
 	side=1;
 	forceInGarage=1;
 
-	visionMode[]=
-	{
-		"Normal"
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 
-	uavCameraGunnerPos="eye";
-	uavCameraGunnerDir="look";
+	uavCameraGunnerPos="gunnerview";
+	uavCameraGunnerDir="gunnerview";
 	crew="B_UAV_AI";
 	showAllTargets="2 + 4";
 	enableGPS=1;
@@ -49,14 +44,14 @@ class RC_AntiDroneTurret: RC_AntiDroneTurret_base
 
 			weapons[]=
 			{
-				"RC_autocannon_20mm_AntiDrone"
+				"RC_GMG_20mm_cUAS"
 			};
 			magazines[]=
 			{
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot"
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS"
 			};
 
 			class OpticsIn: OpticsIn
@@ -177,6 +172,14 @@ class RC_AntiDroneTurret: RC_AntiDroneTurret_base
 					};
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
+
+					/*
+					angleRangeHorizontal=360;
+					angleRangeVertical=178;
+					animDirection="";
+					aimDown=-90;
+					*/
+
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
 					animDirection="mainGun";
@@ -190,115 +193,85 @@ class RC_AntiDroneTurret: RC_AntiDroneTurret_base
 		class muzzle_source
 		{
 			source="reload";
-			weapon="GMG_20mm";
+			weapon="RC_GMG_20mm_cUAS";
 		};
 		class muzzle_source_rot
 		{
 			source="ammorandom";
-			weapon="GMG_20mm";
+			weapon="RC_GMG_20mm_cUAS";
 		};
 		class ReloadAnim
 		{
 			source="reload";
-			weapon="GMG_20mm";
+			weapon="RC_GMG_20mm_cUAS";
 		};
 		class ReloadMagazine
 		{
 			source="reloadmagazine";
-			weapon="GMG_20mm";
+			weapon="RC_GMG_20mm_cUAS";
 		};
 		class Revolving
 		{
 			source="revolving";
-			weapon="GMG_20mm";
+			weapon="RC_GMG_20mm_cUAS";
 		};
 	};
 
-	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
 		{
-			"RC_Mortar_Bag"
+			"RC_cUAS_Turret_Bag"
 		};
 	};
-	*/
 };
-class RC_AntiDroneTurret_O: RC_AntiDroneTurret
+class RC_cUAS_Turret_O: RC_cUAS_Turret
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+
+	armor=15;
 };
-class RC_AntiDroneTurret_I: RC_AntiDroneTurret
+class RC_cUAS_Turret_I: RC_cUAS_Turret
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+
+	armor=15;
 };
 
 
-/*
-class B_Mortar_01_weapon_F;
-class RC_Mortar_Bag_base: B_Mortar_01_weapon_F
+class RC_cUAS_Turret_Bag: RC_Mortar_Bag
 {
-	class assembleInfo;
-	scope=0;
-	scopeCurator=0;
-};
-class RC_Mortar_Bag: RC_Mortar_Bag_base
-{
-	displayName="RC Mortar";
-	scope=2;
-	scopeCurator=2;
-
-	mass=540;
-
-	model="\A3\Weapons_F\Ammoboxes\Bags\Backpack_Tortila.p3d";
-	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_cbr.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_Tortila_cbr_co.paa"
-	};
+	displayName="RC C-UAS Turret";
+	mass=440;	//~30kg
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Mortar";
-		assembleTo="RC_Mortar";
+		displayName="RC C-UAS Turret";
+		assembleTo="RC_cUAS_Turret";
 		base="";
 	};
 };
-class RC_Mortar_Bag_O: RC_Mortar_Bag
+class RC_cUAS_Turret_Bag_O: RC_cUAS_Turret_Bag
 {
-	displayName="RC Mortar [Opf]";
+	displayName="RC C-UAS Turret [Opf]";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Mortar [Opf]";
-		assembleTo="RC_Mortar_O";
-	};
-};
-class RC_Mortar_Bag_HEX_O: RC_Mortar_Bag_base
-{
-	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_hex.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_Tortila_hex_co.paa"
-	};
-
-	class assembleInfo: assembleInfo
-	{
-		assembleTo="RC_Mortar_HEX_O";
+		displayName="RC C-UAS Turret [Opf]";
+		assembleTo="RC_cUAS_Turret_O";
 	};
 };	
-class RC_Mortar_Bag_I: RC_Mortar_Bag
+class RC_cUAS_Turret_Bag_I: RC_cUAS_Turret_Bag
 {
-	displayName="RC Mortar [Ind]";
+	displayName="RC C-UAS Turret [Ind]";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Mortar [Ind]";
-		assembleTo="RC_Mortar_I";
+		displayName="RC C-UAS Turret [Ind]";
+		assembleTo="RC_cUAS_Turret_I";
 	};
 };
-*/

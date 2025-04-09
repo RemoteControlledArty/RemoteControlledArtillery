@@ -1621,9 +1621,9 @@ class RC_Wiesel_AC_DIG_I: RC_Wiesel_AC_WD_I
 };
 
 
-class RC_Wiesel_AntiDrone_WD: RC_Wiesel_AC_WD
+class RC_Wiesel_cUAS_WD: RC_Wiesel_AC_WD
 {
-	displayName="RC Wiesel II Anti-Drone";
+	displayName="RC Wiesel II C-UAS";
 	editorSubcategory="RC_AntiDrone_subcat";
 
 	class Turrets: Turrets
@@ -1634,17 +1634,17 @@ class RC_Wiesel_AntiDrone_WD: RC_Wiesel_AC_WD
 
 			weapons[]=
 			{
-				"RC_autocannon_20mm_AntiDrone",
+				"RC_autocannon_20mm_cUAS",
 				"RC_MMG_338_coax_ext",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot",
-				"RC_60Rnd_20mm_AntiDroneShot",
+				"RC_60Rnd_20mm_cUAS",
+				"RC_60Rnd_20mm_cUAS",
+				"RC_60Rnd_20mm_cUAS",
+				"RC_60Rnd_20mm_cUAS",
+				"RC_60Rnd_20mm_cUAS",
 				"60Rnd_20mm_APFSDS_T_R",
 				"60Rnd_20mm_APFSDS_T_R",
 				"60Rnd_20mm_APFSDS_T_R",
@@ -1696,12 +1696,12 @@ class RC_Wiesel_AntiDrone_WD: RC_Wiesel_AC_WD
 		class muzzle_rot
 		{
 			source="ammorandom";
-			weapon="RC_autocannon_20mm_AntiDrone";
+			weapon="RC_autocannon_20mm_cUAS";
 		};
 		class muzzle_hide
 		{
 			source="reload";
-			weapon="RC_autocannon_20mm_AntiDrone";
+			weapon="RC_autocannon_20mm_cUAS";
 		};
 	};
 
@@ -1784,21 +1784,21 @@ class RC_Wiesel_AntiDrone_WD: RC_Wiesel_AC_WD
 		};
 	};
 };
-class RC_Wiesel_AntiDrone_WD_O: RC_Wiesel_AntiDrone_WD
+class RC_Wiesel_cUAS_WD_O: RC_Wiesel_cUAS_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
-class RC_Wiesel_AntiDrone_WD_I: RC_Wiesel_AntiDrone_WD
+class RC_Wiesel_cUAS_WD_I: RC_Wiesel_cUAS_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
-class RC_Wiesel_AntiDrone_DIG_I: RC_Wiesel_AntiDrone_WD_I
+class RC_Wiesel_cUAS_DIG_I: RC_Wiesel_cUAS_WD_I
 {
 	hiddenSelectionsTextures[]=
 	{

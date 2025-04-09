@@ -368,15 +368,34 @@ class 60Rnd_20mm_APFSDS_AA_T_Y: 60Rnd_20mm_APFSDS_AA_T_R
 };
 
 
-//20mm AntiDroneShot SHORAD
-class RC_60Rnd_20mm_AntiDroneShot: 60Rnd_20mm_HE_T_R
+//20mm C-UAS
+class RC_60Rnd_20mm_cUAS: 60Rnd_20mm_HE_T_R
 {
-	ammo="RC_DroneShot";
-	displayName="20mm DroneShot";
-	displayNameShort="20mm DroneShot";
+	ammo="RC_cUAS";
+	displayName="20mm C-UAS";
+	displayNameShort="20mm C-UAS";
 	initSpeed=1000;
 	maxLeadSpeed=694.44397;
-	//nameSound="missiles";
+};
+class RC_40Rnd_20mm_cUAS: RC_60Rnd_20mm_cUAS
+{
+	ammo="RC_cUAS";
+	displayName="20mm C-UAS";
+	displayNameShort="20mm C-UAS";
+	count=40;
+	initSpeed=500;
+	maxLeadSpeed=694.44397;
+	muzzleImpulseFactor[]={0.1,0.1};
+};
+class 40Rnd_20mm_AP_T_W: 100Rnd_20mm_AP_T_R
+{
+	ammo="RC_20mm_APFSDS_T_W";
+	displayName="20mm AP-T";
+	displayNameShort="20mm AP-T";
+	initSpeed=700;
+	count=60;
+	maxLeadSpeed=694.44397;
+	muzzleImpulseFactor[]={0.1,0.1};
 };
 //20mm AB SHORAD
 class RC_60Rnd_20mm_SHORAD_T_W: 60Rnd_20mm_HE_T_R

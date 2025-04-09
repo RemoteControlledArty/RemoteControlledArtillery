@@ -354,6 +354,11 @@ class RC_20mm_APFSDS_T_Y: RC_20mm_APFSDS_T_R
 {
 	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
+class RC_20mm_APFSDS_T_W: RC_20mm_AP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+	aiAmmoUsageFlags="128 + 256 + 512";
+};
 
 
 class RC_20mm_AP_AA_T_R: RC_20mm_AP_T_R
@@ -383,7 +388,7 @@ class RC_20mm_APFSDS_AA_T_Y: RC_20mm_APFSDS_AA_T_R
 
 
 class BulletBase;
-class RC_DS_Submun: BulletBase
+class RC_cUAS_Sub: BulletBase
 {
 	hit=6;	//4 - 8
 	indirectHit=0;
@@ -393,10 +398,10 @@ class RC_DS_Submun: BulletBase
 	airFriction=-0.00050000002;
 };
 class B_35mm_AA;
-class RC_DroneShot: B_35mm_AA
+class RC_cUAS: B_35mm_AA
 {
 	simulation="shotSubmunitions";
-	submunitionAmmo="RC_DS_Submun";
+	submunitionAmmo="RC_cUAS_Sub";
 	submunitionConeType[]=
 	{
 		"poissondisc",	//randomcenter
@@ -407,8 +412,11 @@ class RC_DroneShot: B_35mm_AA
 	airFriction=-0.00050000002;
 	aiAmmoUsageFlags="256";
 
+	hit=30;			//test if less doesnt engage vehicles
+	indirectHit=0;
+	indirectHitRange=0;
 	cost=20;
-	caliber=3.4000001;
+	caliber=3.4000001;	//test if 1 doesnt engage helis
 
 	visibleFire=32;
 	audibleFire=200;
