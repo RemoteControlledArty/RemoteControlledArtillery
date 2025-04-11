@@ -270,6 +270,7 @@ class RC_HMG_127x99: RC_MG_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	autoReload=1;
 	magazines[]=
 	{
 		"RC_100Rnd_127x99_SLAP_T_R",
@@ -277,7 +278,8 @@ class RC_HMG_127x99: RC_MG_Base
 		"RC_100Rnd_127x99_SLAP_T_Y",
 		"RC_100Rnd_127x99_T_R",
 		"RC_100Rnd_127x99_T_G",
-		"RC_100Rnd_127x99_T_Y"
+		"RC_100Rnd_127x99_T_Y",
+		"RC_100Rnd_127x99_cUAS"
 	};
 	class manual: manual
 	{
@@ -299,6 +301,7 @@ class RC_HMG_127x99_FSV: RC_MG_FSV_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	autoReload=1;
 	magazines[]=
 	{
 		"RC_200Rnd_127x99_T_R",
@@ -306,7 +309,8 @@ class RC_HMG_127x99_FSV: RC_MG_FSV_Base
 		"RC_200Rnd_127x99_T_Y",
 		"RC_200Rnd_127x99_SLAP_T_R",
 		"RC_200Rnd_127x99_SLAP_T_G",
-		"RC_200Rnd_127x99_SLAP_T_Y"
+		"RC_200Rnd_127x99_SLAP_T_Y",
+		"RC_200Rnd_127x99_cUAS"
 	};
 	class manual: manual
 	{
@@ -323,6 +327,7 @@ class RC_MMG_338_FSV: RC_MG_FSV_Base
 	FCSZeroingDelay=0.5;
 	magazineReloadTime=10;
 	reloadTime=0.0857;
+	autoReload=1;
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -364,6 +369,8 @@ class RC_HMG_127x99_MBT: RC_MG_MBT_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	autoReload=1;
+	ballisticsComputer="1 + 2 + 16";
 	magazines[]=
 	{
 		"RC_200Rnd_127x99_T_R",
@@ -371,7 +378,8 @@ class RC_HMG_127x99_MBT: RC_MG_MBT_Base
 		"RC_200Rnd_127x99_T_Y",
 		"RC_200Rnd_127x99_SLAP_T_R",
 		"RC_200Rnd_127x99_SLAP_T_G",
-		"RC_200Rnd_127x99_SLAP_T_Y"
+		"RC_200Rnd_127x99_SLAP_T_Y",
+		"RC_200Rnd_127x99_cUAS"
 	};
 	class manual: manual
 	{
@@ -389,6 +397,8 @@ class RC_MMG_338_MBT: RC_MG_MBT_Base
 	FCSZeroingDelay=0.5;
 	reloadTime=0.0857;
 	magazineReloadTime=10;
+	autoReload=1;
+	ballisticsComputer="1 + 2 + 16";
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -442,6 +452,8 @@ class RC_MMG_338_coax: RC_MMG_338_coax_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	autoReload=1;
+	ballisticsComputer="1 + 2 + 16";
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -485,6 +497,8 @@ class RC_MMG_338_coax_ext: RC_MMG_338_coax_ext_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	autoReload=1;
+	ballisticsComputer="1 + 2 + 16";
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -528,13 +542,13 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=3000;
-
+	autoReload=1;
+	ballisticsComputer="1 + 2 + 16";
 	class manual: manual
 	{
 		displayName="12.7mm HMG";
 		dispersion=0.001;
 	};
-
 	magazines[]=
 	{
 		"RC_200Rnd_127x99_SLAP_T_R",
@@ -542,7 +556,8 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 		"RC_200Rnd_127x99_SLAP_T_Y",
 		"RC_100Rnd_127x99_SLAP_T_R",
 		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_Y"
+		"RC_100Rnd_127x99_SLAP_T_Y",
+		"RC_100Rnd_127x99_cUAS"
 	};
 };
 class RC_HMG_127_APC2: RC_HMG_127_APC
@@ -557,7 +572,8 @@ class RC_HMG_127_APC2: RC_HMG_127_APC
 		"RC_100Rnd_127x99_SLAP_T_Y",
 		"RC_200Rnd_127x99_T_R",
 		"RC_200Rnd_127x99_T_G",
-		"RC_200Rnd_127x99_T_Y"
+		"RC_200Rnd_127x99_T_Y",
+		"RC_200Rnd_127x99_cUAS"
 	};
 };
 class RC_MMG_338_APC: RC_HMG_127_APC
@@ -565,15 +581,14 @@ class RC_MMG_338_APC: RC_HMG_127_APC
 	displayName="MMG";
 	maxZeroing=3000;
 	reloadTime=0.0857;
+	autoReload=1;
 	magazineReloadTime=10;
-
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
 		"RC_200Rnd_338_T_G",
 		"RC_200Rnd_338_T_Y"
 	};
-
 	class manual: manual
 	{
 		displayName=".338 NM";
@@ -608,16 +623,16 @@ class RC_HMG_127_NSVT: HMG_NSVT_Base
 	author="Ascent";
 	displayName="NSVT";
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	maxZeroing=3000;
-
+	FCSZeroingDelay=0.5;
+	autoReload=1;
+	ballisticsComputer="1 + 2 + 16";
 	class manual: manual
 	{
 		displayName="12.7mm";
 		dispersion=0.001;
 		reloadTime=0.1;
 	};
-
 	magazines[]=
 	{
 		"RC_150Rnd_127x99_T_R",
@@ -625,7 +640,8 @@ class RC_HMG_127_NSVT: HMG_NSVT_Base
 		"RC_150Rnd_127x99_T_Y",
 		"RC_150Rnd_127x99_SLAP_T_R",
 		"RC_150Rnd_127x99_SLAP_T_G",
-		"RC_150Rnd_127x99_SLAP_T_Y"
+		"RC_150Rnd_127x99_SLAP_T_Y",
+		"RC_150Rnd_127x99_cUAS"
 	};
 };
 
@@ -641,12 +657,11 @@ class RC_GMG_40mm: GMG_40mm_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-
+	autoReload=1;
 	class manual: manual
 	{
 		dispersion=0.0025;
 	};
-
 	magazines[]=
 	{
 		"RC_100Rnd_40mm_G_belt",
@@ -748,7 +763,8 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 		{
 			"60Rnd_20mm_HE_T_R",
 			"60Rnd_20mm_HE_T_G",
-			"60Rnd_20mm_HE_T_Y"
+			"60Rnd_20mm_HE_T_Y",
+			"RC_60Rnd_20mm_cUAS"
 		};
 		class player: player
 		{

@@ -398,7 +398,7 @@ class RC_cUAS_Sub: BulletBase
 	airFriction=-0.00050000002;
 };
 class B_35mm_AA;
-class RC_cUAS: B_35mm_AA
+class RC_20mm_cUAS: B_35mm_AA
 {
 	simulation="shotSubmunitions";
 	submunitionAmmo="RC_cUAS_Sub";
@@ -407,7 +407,7 @@ class RC_cUAS: B_35mm_AA
 		"poissondisc",	//randomcenter
 		64
 	};
-	submunitionConeAngle="0.4";		//0.4deg = 600m 1/3 shots should hit with a spread of 4,16m, 500m 2/3 should hit with a spread of 3,4m
+	submunitionConeAngle="0.4";		//0.4deg = 600m 1/3 shots should hit with a spread of 4.16m, 500m 2/3 should hit with a spread of 3.4m
 	triggerTime=0.01;
 	airFriction=-0.00050000002;
 	aiAmmoUsageFlags="256";
@@ -498,6 +498,132 @@ class RC_cUAS: B_35mm_AA
 		frequency=20;
 		distance=1;
 	};
+};
+class RC_127x99_cUAS: RC_20mm_cUAS
+{
+	submunitionAmmo="RC_cUAS_Sub";
+	submunitionConeType[]=
+	{
+		"poissondisc",	//randomcenter
+		10
+	};
+	submunitionConeAngle="0.362";		//0.362deg = 300m 1/4 shots should hit with a spread of 1.9m
+	//submunitionConeAngle="0.405";		//0.405deg = 300m 1/5 shots should hit with a spread of 2.12m
+	//submunitionConeAngle="0.421";		//24, 0.421deg = 400m 1/4 shots should hit with a spread of 2.94m
+	aiAmmoUsageFlags="256";
+
+	typicalSpeed=880;
+	hit=30;			//test if less doesnt engage vehicles
+	cost=5;
+	caliber=2.6;	//test if 1 doesnt engage vehicles
+	
+	cartridge="FxCartridge_127";
+	visibleFire=8;
+	audibleFire=120;
+	dangerRadiusBulletClose=12;
+	dangerRadiusHit=16;
+	suppressionRadiusBulletClose=8;
+	suppressionRadiusHit=12;
+
+	explosionSoundEffect="DefaultExplosion";
+	CraterEffects="ExploAmmoCrater";
+	explosionEffects="ExploAmmoExplosion";
+	muzzleEffect="";
+
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_01",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_02",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_03",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_04",
+		1.7782794,
+		1,
+		1300
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
+
+	class CamShakeExplode
+	{
+		power=3.6055501;
+		duration=0.80000001;
+		frequency=20;
+		distance=10.8167;
+	};
+	class CamShakeHit
+	{
+		power=13;
+		duration=0.40000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=0;
+		duration=0;
+		frequency=0;
+		distance=0;
+	};
+	class CamShakePlayerFire
+	{
+		power=0;
+		duration=0;
+		frequency=0;
+		distance=0;
+	};
+};
+class RC_338_cUAS: RC_127x99_cUAS
+{
+	submunitionConeType[]=
+	{
+		"poissondisc",	//randomcenter
+		6
+	};
+	submunitionConeAngle="0.281";		//0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
+
+	/*
+	aiAmmoUsageFlags="256";
+
+	typicalSpeed=880;
+	hit=30;			//test if less doesnt engage vehicles
+	cost=5;
+	caliber=2.6;	//test if 1 doesnt engage vehicles
+	
+	cartridge="FxCartridge_127";
+	visibleFire=8;
+	audibleFire=120;
+	dangerRadiusBulletClose=12;
+	dangerRadiusHit=16;
+	suppressionRadiusBulletClose=8;
+	suppressionRadiusHit=12;
+	*/
 };
 
 

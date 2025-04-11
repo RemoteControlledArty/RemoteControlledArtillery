@@ -57,6 +57,7 @@ class RC_EF_MMG_coax: RC_EF_MMG_coax_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=3000;
+	weaponLockSystem="1 + 4 + 16";
 
 	magazines[]=
 	{

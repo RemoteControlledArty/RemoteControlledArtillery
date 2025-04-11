@@ -21,17 +21,15 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
-
 	uavCameraGunnerPos="gunnerview";
 	uavCameraGunnerDir="gunnerview";
 	crew="B_UAV_AI";
 	showAllTargets="2 + 4";
 	enableGPS=1;
-
 	//armor=30;	//30
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 
 	class Turrets: Turrets
 	{
@@ -148,9 +146,15 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
+
+					//groundNoiseDistanceCoef=;
+					//maxGroundNoiseDistance=;
+					//maxTrackableATL=400; //good or bad?
+					minTrackableATL=4;	//whats good?
+
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
-					animDirection="mainGun";
+					animDirection="";
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
@@ -182,13 +186,12 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 
 					//groundNoiseDistanceCoef=;
 					//maxGroundNoiseDistance=;
-					minTrackableATL=4;	//whats good?
-
 					//maxTrackableATL=400; //good or bad?
+					minTrackableATL=4;	//whats good?
 
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
-					animDirection="mainGun";
+					animDirection="";
 				};
 			};
 		};

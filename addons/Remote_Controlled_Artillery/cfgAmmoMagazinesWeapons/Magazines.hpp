@@ -371,7 +371,7 @@ class 60Rnd_20mm_APFSDS_AA_T_Y: 60Rnd_20mm_APFSDS_AA_T_R
 //20mm C-UAS
 class RC_60Rnd_20mm_cUAS: 60Rnd_20mm_HE_T_R
 {
-	ammo="RC_cUAS";
+	ammo="RC_20mm_cUAS";
 	displayName="20mm C-UAS";
 	displayNameShort="20mm C-UAS";
 	initSpeed=1000;
@@ -379,7 +379,7 @@ class RC_60Rnd_20mm_cUAS: 60Rnd_20mm_HE_T_R
 };
 class RC_40Rnd_20mm_cUAS: RC_60Rnd_20mm_cUAS
 {
-	ammo="RC_cUAS";
+	ammo="RC_20mm_cUAS";
 	displayName="20mm C-UAS";
 	displayNameShort="20mm C-UAS";
 	count=40;
@@ -387,6 +387,59 @@ class RC_40Rnd_20mm_cUAS: RC_60Rnd_20mm_cUAS
 	maxLeadSpeed=694.44397;
 	muzzleImpulseFactor[]={0.1,0.1};
 };
+
+
+class RC_200Rnd_127x99_cUAS: RC_40Rnd_20mm_cUAS
+{
+	ammo="RC_127x99mm_cUAS";
+	displayName="12.7mm C-UAS";
+	displayNameShort="12.7mm C-UAS";
+	count=200;
+	initSpeed=880;
+	maxLeadSpeed=694.44397;
+	muzzleImpulseFactor[]={0.1,0.1};
+};
+class RC_150Rnd_127x99_cUAS: RC_200Rnd_127x99_cUAS
+{
+	count=150;
+};
+class RC_100Rnd_127x99_cUAS: RC_200Rnd_127x99_cUAS
+{
+	count=100;
+};
+class RC_200Rnd_127x108_cUAS: RC_200Rnd_127x99_cUAS
+{
+	initSpeed=860;
+};
+class RC_150Rnd_127x108_cUAS: RC_200Rnd_127x108_cUAS
+{
+	count=150;
+};
+class RC_100Rnd_127x108_cUAS: RC_200Rnd_127x108_cUAS
+{
+	count=100;
+};
+
+
+class RC_200Rnd_338_cUAS: RC_200Rnd_338_T_R
+{
+	ammo="RC_338_cUAS";
+	displayName=".338 C-UAS";
+	displayNameShort=".338 C-UAS";
+	initSpeed=880;
+	maxLeadSpeed=694.44397;
+	muzzleImpulseFactor[]={0.1,0.1};
+};
+class RC_150Rnd_338_cUAS: RC_200Rnd_338_cUAS
+{
+	count=150;
+};
+class RC_100Rnd_338_cUAS: RC_200Rnd_338_cUAS
+{
+	count=100;
+};
+
+
 class 40Rnd_20mm_AP_T_W: 100Rnd_20mm_AP_T_R
 {
 	ammo="RC_20mm_APFSDS_T_W";

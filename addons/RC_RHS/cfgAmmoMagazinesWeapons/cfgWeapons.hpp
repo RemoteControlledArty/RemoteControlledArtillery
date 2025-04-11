@@ -71,6 +71,8 @@ class RC_RHS_M2_CROWS_M153_Abrams: rhs_M2_CROWS_M153_Abrams_base
 	canLock=2;
 	minZeroing=50;
 	maxZeroing=3000;
+	weaponLockSystem="1 + 4 + 16";
+
 	magazines[]=
 	{
 		"RC_RHS_mag_400rnd_127x99_SLAP_T_R",
@@ -93,6 +95,8 @@ class RC_RHS_M2_Abrams_Gunner: rhs_M2_Abrams_Gunner_base
 	canLock=2;
 	minZeroing=50;
 	maxZeroing=3000;
+	weaponLockSystem="1 + 4 + 16";
+
 	magazines[]=
 	{
 		"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
@@ -114,6 +118,8 @@ class RC_RHS_weap_m240_abrams_coax: rhs_weap_m240_abrams_coax_base
 {
 	canLock=2;
 	minZeroing=50;
+	weaponLockSystem="1 + 4 + 16";
+	
 	magazines[]=
 	{
 		"RC_RHS_mag_1200Rnd_762x51_T_R",
@@ -135,6 +141,8 @@ class RC_RHS_weap_m240_bradley_coax: rhs_weap_m240_bradley_coax_base
 {
 	canLock=2;
 	minZeroing=50;
+	weaponLockSystem="1 + 4 + 16";
+	
 	magazines[]=
 	{
 		"RC_RHS_mag_1100Rnd_762x51_T_R",
@@ -288,6 +296,8 @@ class RC_RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
 	canLock=2;
 	minZeroing=50;
 	maxZeroing=3000;
+	weaponLockSystem="1 + 4 + 16";
+	
 	magazines[] =
 	{
 		"RC_RHS_mag_200rnd_127x99",

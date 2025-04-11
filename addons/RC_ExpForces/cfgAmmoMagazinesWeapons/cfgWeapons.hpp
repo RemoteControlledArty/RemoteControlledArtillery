@@ -67,7 +67,6 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 	//canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
-
 	ballisticsComputer="1 + 2 + 16";
 	cursorAim="mg";
 
@@ -122,7 +121,8 @@ class RC_EF_MMG_coax: RC_EF_MMG_coax_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=3000;
-
+	weaponLockSystem="1 + 4 + 16";
+	
 	magazines[]=
 	{
 		"RC_400Rnd_338_T_W",

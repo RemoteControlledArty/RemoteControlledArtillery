@@ -49,6 +49,8 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 class RC_MMG_93x64_coax_ext;
 class RC_MMG_93x64_coax_ext_lxWS: RC_MMG_93x64_coax_ext
 {
+	weaponLockSystem="1 + 4 + 16";
+	
 	magazines[]=
 	{
 		"RC_1000Rnd_93x64_T_G",
