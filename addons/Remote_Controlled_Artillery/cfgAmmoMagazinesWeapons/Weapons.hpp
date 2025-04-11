@@ -824,9 +824,13 @@ class RC_autocannon_20mm_SHORAD: RC_autocannon_20mm_Base
 			"close",
 			"short"
 		};
+		class player: player
+		{
+			reloadTime=0.3;
+		};
 		class close: player
 		{
-			reloadTime=2;
+			reloadTime=3;
 
 			aiBurstTerminable=1;
 			showToPlayer=0;
