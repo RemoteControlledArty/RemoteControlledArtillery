@@ -111,6 +111,30 @@ class RC_Howitzer_A: RC_Howitzer_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=500;
+
+					class AirTarget
+					{
+						minRange=500;
+						maxRange=500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=500;
+						maxRange=500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="mainGun";
+				};
 
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
@@ -241,10 +265,16 @@ class RC_Howitzer_A: RC_Howitzer_base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplayComponent";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={500};
+							resource="RscCustomInfoSensors";
+						};
 						class EmptyDisplay
 						{
 							componentType="EmptyDisplayComponent";

@@ -199,14 +199,14 @@ class RC_Titus_AC: RC_Titus_AC_base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					//defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
+							range[]={500,1000,2000,4000};
 							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay

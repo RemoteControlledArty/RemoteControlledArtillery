@@ -499,6 +499,15 @@ class RC_20mm_cUAS: B_35mm_AA
 		distance=1;
 	};
 };
+class RC_30mm_cUAS: RC_20mm_cUAS
+{
+	submunitionConeType[]=
+	{
+		"poissondisc",	//randomcenter
+		96
+	};
+	submunitionConeAngle="0.4";		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
+};
 class RC_127x99_cUAS: RC_20mm_cUAS
 {
 	submunitionAmmo="RC_cUAS_Sub";
@@ -1114,6 +1123,10 @@ class RC_20mm_AB_SHORAD_T_W: RC_IFV_AA
 	caliber=3.4000001;
 	cost=30;
 	model="\A3\Weapons_f\Data\bullettracer\tracer_white";
+
+	maneuvrability=0;
+
+	/*
 	airFriction=-0.00078;
 	sideAirFriction=-0.00078;
 
@@ -1124,6 +1137,7 @@ class RC_20mm_AB_SHORAD_T_W: RC_IFV_AA
 	timeToLive=15;
 	maxSpeed=1000;
 	initTime=0.005;
+	//initTime=14;
 	thrustTime=0;
 	thrust=0;
 	fuseDistance=5;
@@ -1138,6 +1152,7 @@ class RC_20mm_AB_SHORAD_T_W: RC_IFV_AA
 	manualControl=1;
 	maneuvrability=0;
 	maxControlRange=6000;
+	*/
 
 	//CraterEffects="ATMissileCrater";
 	//explosionEffects="ATMissileExplosion";
@@ -1167,6 +1182,7 @@ class RC_20mm_AB_SHORAD_T_W: RC_IFV_AA
 	tracerEndTime=1;
 	//nvgOnly=0;
 	typicalSpeed=1000;
+
 	visibleFire=32;
 	audibleFire=200;
 	visibleFireTime=4;
@@ -1174,6 +1190,7 @@ class RC_20mm_AB_SHORAD_T_W: RC_IFV_AA
 	dangerRadiusHit=40;
 	suppressionRadiusBulletClose=10;
 	suppressionRadiusHit=14;
+
 	soundHit1[]=
 	{
 		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_01",
@@ -1242,8 +1259,6 @@ class RC_20mm_AB_SHORAD_T_W: RC_IFV_AA
 		distance=1;
 	};
 };
-
-class MissileBase;
 
 
 //ATGM
@@ -1899,6 +1914,8 @@ class RC_MP_Warhead_Base: ShellBase
 };
 */
 
+
+class MissileBase;
 class RC_MP_Guided_Submunition_MissleBase: MissileBase
 {
 	class Components;

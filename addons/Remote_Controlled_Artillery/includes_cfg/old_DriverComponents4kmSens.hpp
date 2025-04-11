@@ -65,51 +65,33 @@ class Components: Components
 			};
 			class VisualSensorComponent: SensorTemplateVisual
 			{
-				typeRecognitionDistance=500;
+				typeRecognitionDistance=3000;
 
 				class AirTarget
 				{
-					minRange=500;
-					maxRange=500;
+					minRange=4000;
+					maxRange=4000;
 					objectDistanceLimitCoef=-1;
 					viewDistanceLimitCoef=-1;
 				};
 				class GroundTarget
 				{
-					minRange=500;
-					maxRange=500;
+					minRange=4000;
+					maxRange=4000;
 					objectDistanceLimitCoef=1;
 					viewDistanceLimitCoef=1;
 				};
 				maxTrackableSpeed=600;
 				nightRangeCoef=0.80000001;
-				angleRangeHorizontal=360;
-				angleRangeVertical=360;
+				angleRangeHorizontal=1;
+				angleRangeVertical=2;
 				animDirection="mainGun";
 			};
 			class ManSensorComponent: SensorTemplateMan
 			{
-				/*
-				typeRecognitionDistance=300;
-
-				class AirTarget
-				{
-					minRange=300;
-					maxRange=300;
-					objectDistanceLimitCoef=-1;
-					viewDistanceLimitCoef=-1;
-				};
-				class GroundTarget
-				{
-					minRange=300;
-					maxRange=300;
-					objectDistanceLimitCoef=1;
-					viewDistanceLimitCoef=1;
-				};
-				*/
 				maxTrackableSpeed=15;
-				angleRangeHorizontal=22.5;
-				angleRangeVertical=22.5;
+				angleRangeHorizontal=360;
+				angleRangeVertical=90;
 				animDirection="mainGun";
 				aimDown=0;	//-0.5
 			};
@@ -151,14 +133,14 @@ class Components: Components
 	};
 	class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 	{
-		defaultDisplay="SensorDisplay";
+		defaultDisplay="EmptyDisplayComponent";
 
 		class Components
 		{
 			class SensorDisplay
 			{
 				componentType="SensorsDisplayComponent";
-				range[]={500,1000,2000,4000};
+				range[]={4000,2000,1000,500};
 				resource="RscCustomInfoSensors";
 			};
 			class MinimapDisplay

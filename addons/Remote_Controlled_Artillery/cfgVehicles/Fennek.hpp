@@ -75,7 +75,6 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-
 				class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
 				{
 					class AirTarget
@@ -93,7 +92,6 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=3000;
@@ -118,29 +116,28 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 					//animDirection="obsTurret";
 					animDirection="obsGun";
 				};
-
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=500;
 
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=500;
+						maxRange=500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=500;
+						maxRange=500;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=45;
-					angleRangeVertical=45;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
 					//animDirection="obsTurret";
 					animDirection="obsGun";
 				};
@@ -155,17 +152,23 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={6000,4000,2000,1000};
+					range[]={6000,4000,2000,1000,500};
 					resource="RscCustomInfoSensors";
 				};
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 		{
-			defaultDisplay="MinimapDisplay";
+			defaultDisplay="SensorDisplay";
 
 			class Components
 			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={500,1000,2000,4000,6000};
+					resource="RscCustomInfoSensors";
+				};
 				class MinimapDisplay
 				{
 					componentType="MinimapDisplayComponent";
@@ -232,18 +235,24 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
-						class EmptyDisplay
+						class SensorDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={500,1000,2000,4000,6000};
+							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 					};
 				};

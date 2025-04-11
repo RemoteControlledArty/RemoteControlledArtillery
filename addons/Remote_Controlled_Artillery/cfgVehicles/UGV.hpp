@@ -111,6 +111,30 @@ class RC_indirect_GMG_UGV_A: RC_indirect_GMG_UGV_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=500;
+
+					class AirTarget
+					{
+						minRange=500;
+						maxRange=500;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=500;
+						maxRange=500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="mainGun";
+				};
 
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
@@ -261,18 +285,24 @@ class RC_indirect_GMG_UGV_A: RC_indirect_GMG_UGV_base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplayComponent";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
-						class EmptyDisplay
+						class SensorDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={500,1000,2000,4000};
+							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 					};
 				};

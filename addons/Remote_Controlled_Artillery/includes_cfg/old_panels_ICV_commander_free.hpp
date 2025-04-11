@@ -12,25 +12,9 @@ class Components: Components
 				range[]={4000,2000,1000,500};
 				resource="RscCustomInfoSensors";
 			};
-			class VehicleDriverDisplay
-			{
-				componentType="TransportFeedDisplayComponent";
-				source="Driver";
-			};
-			/*
-			class MinimapDisplay
-			{
-				componentType="MinimapDisplayComponent";
-				resource="RscCustomInfoMiniMap";
-			};
-			*/
 			class UAVFeedDisplay
 			{
 				componentType="UAVFeedDisplayComponent";
-			};
-			class CrewDisplay
-			{
-				componentType="CrewDisplayComponent";
 			};
 			/*
 			class MineDetectorDisplay
@@ -40,30 +24,19 @@ class Components: Components
 				resource="RscCustomInfoMineDetect";
 			};
 			*/
-			/*
-			class EmptyDisplay
-			{
-				componentType="EmptyDisplayComponent";
-			};
-			*/
 		};
 	};
 	class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 	{
-		defaultDisplay="SensorDisplay";
+		defaultDisplay="EmptyDisplay";
 
 		class Components
 		{
 			class SensorDisplay
 			{
 				componentType="SensorsDisplayComponent";
-				range[]={500,1000,2000,4000};
+				range[]={4000,2000,1000,500};
 				resource="RscCustomInfoSensors";
-			};
-			class VehicleDriverDisplay
-			{
-				componentType="TransportFeedDisplayComponent";
-				source="Driver";
 			};
 			class MinimapDisplay
 			{
@@ -73,10 +46,6 @@ class Components: Components
 			class UAVFeedDisplay
 			{
 				componentType="UAVFeedDisplayComponent";
-			};
-			class CrewDisplay
-			{
-				componentType="CrewDisplayComponent";
 			};
 			/*
 			class MineDetectorDisplay

@@ -160,26 +160,6 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 							gunnerOpticsEffect[]={};
 						};
 					};
-					/*
-					class ViewOptics: ViewOptics
-					{
-						initAngleX=0;
-						minAngleX=-30;
-						maxAngleX=30;
-						initAngleY=0;
-						minAngleY=-100;
-						maxAngleY=100;
-						initFov=0.9;
-						minFov=0.02;
-						maxFov=0.9;
-						visionMode[]=
-						{
-							"Normal",
-							"TI"
-						};
-						thermalMode[]={0};
-					};
-					*/
 				};
 			};
 		};

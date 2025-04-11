@@ -131,26 +131,26 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=500;
 
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=500;
+						maxRange=500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=-1;
-						maxRange=-1;
+						minRange=0;
+						maxRange=0;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
 					animDirection="mainGun";
 				};
 			};
@@ -213,17 +213,23 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={8000,4000,2000,1000};
+							range[]={8000,4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={500,1000,2000,4000,8000};
+							resource="RscCustomInfoSensors";
+						};
 						class EmptyDisplay
 						{
 							componentType="EmptyDisplayComponent";
@@ -446,26 +452,26 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=500;
 
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=500;
+						maxRange=500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=500;
+						maxRange=500;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=45;
-					angleRangeVertical=35;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
 					//animDirection="obsTurret";
 					animDirection="obsGun";
 				};
@@ -527,17 +533,23 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={8000,4000,2000,1000};
+							range[]={8000,4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={500,1000,2000,4000,8000};
+							resource="RscCustomInfoSensors";
+						};
 						class EmptyDisplay
 						{
 							componentType="EmptyDisplayComponent";
@@ -684,13 +696,15 @@ class RC_Wiesel_Radar_manned_WD: RC_Wiesel_Radar_WD_Base
 			{
 				class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsDisplayManagerComponentLeft
 				{
-					defaultDisplay="UAVFeedDisplay";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
-						class EmptyDisplay
+						class SensorDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={500,1000,2000,4000,8000};
+							resource="RscCustomInfoSensors";
 						};
 						class UAVFeedDisplay
 						{
@@ -1044,26 +1058,26 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=500;
 
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=500;
+						maxRange=500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=500;
+						maxRange=500;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=40;
-					angleRangeVertical=20;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
 					animDirection="mainGun";
 				};
 			};
@@ -1148,10 +1162,16 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={500,1000,2000,4000};
+							resource="RscCustomInfoSensors";
+						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
@@ -1419,26 +1439,26 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=500;
 
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=500;
+						maxRange=500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=500;
+						maxRange=500;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=40;
-					angleRangeVertical=20;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
 					animDirection="mainGun";
 				};
 			};
@@ -1524,18 +1544,24 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
-						class EmptyDisplay
+						class SensorDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={500,1000,2000,4000};
+							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 					};
 				};
@@ -1610,6 +1636,78 @@ class RC_Wiesel_AC_WD_I: RC_Wiesel_AC_WD
 	};
 };
 class RC_Wiesel_AC_DIG_I: RC_Wiesel_AC_WD_I
+{
+	hiddenSelectionsTextures[]=
+	{
+		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
+		"A3\armor_f_tank\lt_01\data\lt_01_cannon_co.paa",
+		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+		"A3\armor_f\data\cage_aaf_co.paa"
+	};
+};
+
+
+//semi manned version
+class RC_Wiesel_AC_WD_manned: RC_Wiesel_AC_WD_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+		};
+	};
+
+	displayName="Wiesel II 20mm";
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	crew="B_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			dontCreateAI=1;
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+		};
+	};
+};
+class RC_Wiesel_AC_WD_manned_O: RC_Wiesel_AC_WD_manned
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_green.hpp"
+		};
+	};
+};
+class RC_Wiesel_AC_WD_manned_I: RC_Wiesel_AC_WD_manned
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_yellow.hpp"
+		};
+	};
+};
+class RC_Wiesel_AC_DIG_manned_I: RC_Wiesel_AC_WD_manned_I
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -1810,73 +1908,53 @@ class RC_Wiesel_cUAS_DIG_I: RC_Wiesel_cUAS_WD_I
 };
 
 
-//semi manned version
-class RC_Wiesel_AC_WD_manned: RC_Wiesel_AC_WD_Base
+class RC_Wiesel_SHORAD_WD: RC_Wiesel_cUAS_WD
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-		};
-	};
-
-	displayName="Wiesel II 20mm";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
-	crew="B_UAV_AI";
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	displayName="RC Wiesel II SHORAD";
+	editorSubcategory="RC_AntiDrone_subcat";
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			dontCreateAI=1;
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+			weapons[]=
+			{
+				"RC_autocannon_20mm_SHORAD",
+				"RC_MMG_338_coax_ext",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_60Rnd_20mm_AB",
+				"RC_60Rnd_20mm_AB",
+				"RC_60Rnd_20mm_AB",
+				"RC_60Rnd_20mm_AB",
+				"RC_60Rnd_20mm_AB",
+				"60Rnd_20mm_APFSDS_T_R",
+				"60Rnd_20mm_APFSDS_T_R",
+				"60Rnd_20mm_APFSDS_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"RC_200Rnd_338_T_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
 		};
 	};
-};
-class RC_Wiesel_AC_WD_manned_O: RC_Wiesel_AC_WD_manned
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
-	class Turrets: Turrets
+	class AnimationSources: AnimationSources
 	{
-		class MainTurret: MainTurret
+		class muzzle_rot
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_green.hpp"
+			source="ammorandom";
+			weapon="RC_autocannon_20mm_SHORAD";
 		};
-	};
-};
-class RC_Wiesel_AC_WD_manned_I: RC_Wiesel_AC_WD_manned
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
+		class muzzle_hide
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_20mm_yellow.hpp"
+			source="reload";
+			weapon="RC_autocannon_20mm_SHORAD";
 		};
-	};
-};
-class RC_Wiesel_AC_DIG_manned_I: RC_Wiesel_AC_WD_manned_I
-{
-	hiddenSelectionsTextures[]=
-	{
-		"A3\armor_f_tank\lt_01\data\lt_01_main_co.paa",
-		"A3\armor_f_tank\lt_01\data\lt_01_cannon_co.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-		"A3\armor_f\data\cage_aaf_co.paa"
 	};
 };

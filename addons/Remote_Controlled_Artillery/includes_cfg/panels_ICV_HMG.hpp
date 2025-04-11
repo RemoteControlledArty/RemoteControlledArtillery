@@ -9,7 +9,7 @@ class Components: Components
 			class SensorDisplay
 			{
 				componentType="SensorsDisplayComponent";
-				range[]={2000,1000,500,4000};
+				range[]={4000,2000,1000,500};
 				resource="RscCustomInfoSensors";
 			};
 			class UAVFeedDisplay
@@ -32,13 +32,15 @@ class Components: Components
 	};
 	class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 	{
-		defaultDisplay="EmptyDisplay";
+		defaultDisplay="SensorDisplay";
 
 		class Components
 		{
-			class EmptyDisplay
+			class SensorDisplay
 			{
-				componentType="EmptyDisplayComponent";
+				componentType="SensorsDisplayComponent";
+				range[]={500,1000,2000,4000};
+				resource="RscCustomInfoSensors";
 			};
 			class VehicleDriverDisplay
 			{
@@ -53,12 +55,6 @@ class Components: Components
 			class CrewDisplay
 			{
 				componentType="CrewDisplayComponent";
-			};
-			class SensorDisplay
-			{
-				componentType="SensorsDisplayComponent";
-				range[]={2000,1000,500,4000};
-				resource="RscCustomInfoSensors";
 			};
 			class UAVFeedDisplay
 			{

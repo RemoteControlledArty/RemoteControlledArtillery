@@ -387,6 +387,12 @@ class RC_40Rnd_20mm_cUAS: RC_60Rnd_20mm_cUAS
 	maxLeadSpeed=694.44397;
 	muzzleImpulseFactor[]={0.1,0.1};
 };
+class RC_60Rnd_30mm_cUAS: RC_60Rnd_20mm_cUAS
+{
+	ammo="RC_30mm_cUAS";
+	displayName="30mm C-UAS";
+	displayNameShort="30mm C-UAS";
+};
 
 
 class RC_200Rnd_127x99_cUAS: RC_40Rnd_20mm_cUAS
@@ -630,13 +636,20 @@ class RC_2Rnd_IFV_AA: 4Rnd_Titan_long_missiles
 	displayName="AA 4.5km";
 	displayNameShort="AA 4.5km";
 	ammo="RC_IFV_AA";
-
-	//test
-	initSpeed=1000;
 };
 class RC_4Rnd_IFV_AA: RC_2Rnd_IFV_AA
 {
 	count=4;
+};
+
+
+class RC_60Rnd_20mm_AB: RC_2Rnd_IFV_AA
+{
+	ammo="RC_20mm_AB_SHORAD_T_W";
+	displayName="20mm AB";
+	displayNameShort="20mm AB";
+	count=60;
+	initSpeed=1000;
 };
 
 

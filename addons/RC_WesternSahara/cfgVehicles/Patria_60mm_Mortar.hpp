@@ -184,14 +184,14 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 		};
 		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 		{
-			defaultDisplay="EmptyDisplayComponent";
+			defaultDisplay="SensorDisplay";
 
 			class Components
 			{
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={6000,4000,2000,1000};
+					range[]={1000,2000,4000,6000};
 					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay

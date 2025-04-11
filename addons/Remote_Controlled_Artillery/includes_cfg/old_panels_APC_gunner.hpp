@@ -50,14 +50,14 @@ class Components: Components
 	};
 	class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 	{
-		defaultDisplay="SensorDisplay";
+		defaultDisplay="EmptyDisplay";
 
 		class Components
 		{
 			class SensorDisplay
 			{
 				componentType="SensorsDisplayComponent";
-				range[]={500,1000,2000,4000};
+				range[]={4000,2000,1000,500};
 				resource="RscCustomInfoSensors";
 			};
 			class VehicleDriverDisplay

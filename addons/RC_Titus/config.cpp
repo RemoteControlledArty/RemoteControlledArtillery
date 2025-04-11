@@ -81,6 +81,7 @@ class CfgEditorSubcategories
 class SensorTemplateDataLink;
 class SensorTemplateLaser;
 class SensorTemplatePassiveRadar;
+class SensorTemplateVisual;
 //later required sensor panels
 class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
