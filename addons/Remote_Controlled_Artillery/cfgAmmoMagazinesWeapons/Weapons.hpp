@@ -961,7 +961,7 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 
 		reloadTime=0.2;
 		displayName="20mm AP";
-		ballisticsComputer="1 + 2 + 4 + 16";
+		ballisticsComputer="1 + 2 + 16";
 		maxZeroing=3000;
 		magazineReloadTime=15;
 		magazines[]=
@@ -1369,9 +1369,11 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
+	ballisticsComputer="1 + 2 + 4 + 16";
 
 	class HE: HE
 	{
+		ballisticsComputer="1 + 2 + 4 + 16";
 		magazines[]=
 		{
 			"RC_100Rnd_30mm_MP_T_R",
@@ -1407,9 +1409,11 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
+	ballisticsComputer="1 + 2 + 4 + 16";
 
 	class HE: HE
 	{
+		ballisticsComputer="1 + 2 + 4 + 16";
 		magazines[]=
 		{
 			"RC_100Rnd_30mm_MP_T_R",
