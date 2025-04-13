@@ -72,9 +72,9 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			//isCopilot=1; //allows to trigger EH that gives driving controls
-			showAllTargets="2 + 4";
 			commanding=3;
 			allowTabLock=1;
 
@@ -361,9 +361,9 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			//isCopilot=1; //allows to trigger EH that gives driving controls
-			showAllTargets="2 + 4";
 			commanding=3;
 			allowTabLock=1;
 
@@ -638,6 +638,7 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
 			//isCopilot=1; //allows to trigger EH that gives driving controls
+			//canUseScanner = 0; // Can't use the vehicle's Sensors, can be defined per individual turret. Useful to restrict access to vehicle sensors (target marking) on some positions in vehicles (i.e. door gunners)
 		};
 
 		class Turret_Weapon: Turret_Weapon {};

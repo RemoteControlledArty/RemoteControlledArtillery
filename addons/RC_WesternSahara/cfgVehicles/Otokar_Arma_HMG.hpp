@@ -176,12 +176,14 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryGunner.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_HMG.hpp"
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="RscWeaponRangeFinder";
 			gunnerCompartments="Compartment3";
 			forceHideGunner=1;
 			gunnerForceOptics=1;
+
+			//canUseScanner = 0; // Can't use the vehicle's Sensors, can be defined per individual turret. Useful to restrict access to vehicle sensors (target marking) on some positions in vehicles (i.e. door gunners)
 
 			weapons[]=
 			{
@@ -238,7 +240,7 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgPrimaryObserver.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_HMG.hpp"
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			//forceHideGunner=1;
 			//gunnerForceOptics=1;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";

@@ -66,8 +66,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
-			showAllTargets="2 + 4";
 			commanding=2;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
@@ -77,19 +77,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 				"RC_MMG_338_MBT_coax",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_20Rnd_120mm_APFSDS_T_R",
-				"RC_20Rnd_120mm_MP_T_R",
-				"RC_3Rnd_120mm_DLG_cannon_missiles",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"RC_200Rnd_338_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Leopard_red.hpp"
 
 			class OpticsIn
 			{
@@ -122,8 +110,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
-					showAllTargets="2 + 4";
 					commanding=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
 
@@ -289,6 +277,7 @@ class RC_MBT_2_A: RC_MBT_2_A_Base
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\dev10.hpp"
 		};
 	};
 

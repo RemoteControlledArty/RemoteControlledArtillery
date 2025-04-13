@@ -168,7 +168,7 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_gunner_fixated.hpp"
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerCompartments="Compartment3";
 			commanding=2;
 			gunnerForceOptics=1;
@@ -236,8 +236,8 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_gunner_fixated.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
-					showAllTargets="2 + 4";
 					//personTurretAction="";	//no effect
 					//forceHideGunner=1;	//makes view bug
 					//forceHideCommander=1;	//makes view bug
@@ -391,8 +391,8 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
-			showAllTargets="2 + 4";
 			commanding=3;
 			minElev=-10.6;
 			maxElev=40;
@@ -436,8 +436,8 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
-					showAllTargets="2 + 4";
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
 					//turretInfoType="RscOptics_APC_Wheeled_03_commander";	//green

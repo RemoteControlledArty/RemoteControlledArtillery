@@ -192,8 +192,8 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
-			showAllTargets="2 + 4";
 			commanding=3;
 			minElev=-10.6;
 			maxElev=40;
@@ -238,8 +238,8 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
-					showAllTargets="2 + 4";
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
 

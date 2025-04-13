@@ -186,8 +186,8 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 	{
 		class CommanderTurret: CommanderTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerCompartments="Compartment2";
-			showAllTargets="2 + 4";
 			stabilizedInAxes=3;
 
 			weapons[]=
@@ -284,7 +284,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsB.hpp"
 };
 
 
@@ -331,14 +331,14 @@ class RC_Fennek_A_O: RC_Fennek_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsO.hpp"
 };
 class RC_Fennek_A_I: RC_Fennek_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsI.hpp"
 };
 class RC_Fennek_DIG_I: RC_Fennek_A_I
 {
@@ -380,6 +380,7 @@ class RC_Mortar_Fennek_A: RC_Fennek_A
 
 	displayName="RC Mortar Fennek";
 	editorSubcategory="RC_Mortar_subcat";
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_Mortar_Fennek_A_O: RC_Mortar_Fennek_A
 {

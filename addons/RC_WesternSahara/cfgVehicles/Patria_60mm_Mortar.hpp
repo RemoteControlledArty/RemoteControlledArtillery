@@ -329,7 +329,7 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			commanding=3;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -412,9 +412,9 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					gunnerCompartments="Compartment3";
 					dontCreateAI=1;
-					showAllTargets="2 + 4";
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
 

@@ -132,10 +132,9 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 		{
 			//#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 			dontCreateAI=1;
-
-			showAllTargets="2 + 4";
 			commanding=3;
 			allowTabLock=1;
 
@@ -201,8 +200,8 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 				{
 					//#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
-					showAllTargets="2 + 4";
 					commanding=2;
 					allowTabLock=1;
 					

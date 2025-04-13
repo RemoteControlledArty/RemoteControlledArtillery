@@ -144,8 +144,8 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
-			showAllTargets="2 + 4";
 			commanding=3;
 			//forceHideGunner=1;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -190,8 +190,8 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
-					showAllTargets="2 + 4";
 					commanding=2;
 					//forceHideGunner=1;
 					turretInfoType="RscOptics_MBT_03_gunner";

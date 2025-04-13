@@ -11,7 +11,6 @@ class RC_GPSDatalinkTarget: All
 	//faction="RemoteControlled_B";
 	//editorSubcategory="RC_Spotting_subcat";
 	//alwaysTarget=0;
-
 	//edited lasertarget values
 	model="\A3\Weapons_f\laserTgt.p3d";
 	//model="laserTgt.p3d";
@@ -24,7 +23,7 @@ class RC_GPSDatalinkTarget: All
 	weapons[]={"FakeWeapon"};
 	magazines[]={"FakeWeapon"};
 	type=1;
-	threat[]={0,0,0};
+	threat[]={0,0,0};	//threat[]={1,1,1};
 	maxSpeed=0;
 	simulation="artillerymarker";	//forgot why, but its one of the few/only things that worked
 	laserTarget=0;
@@ -33,7 +32,7 @@ class RC_GPSDatalinkTarget: All
 	artilleryTarget=0;	//1 would make it unlockable on datalink panel by all rounds
 	destrType="DestructNo";
 	side=3;
-	//cost=0;
+	cost=2500000;	//makes it easier to select in datalink
 	armor=500;
 };
 class RC_ArtySourceTarget: RC_GPSDatalinkTarget

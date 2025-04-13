@@ -152,7 +152,7 @@ class RC_Static_AA_A: RC_Static_AA_A_base
 				thermalMode[]={0};
 			};
 
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 
 			class Components: Components
 			{

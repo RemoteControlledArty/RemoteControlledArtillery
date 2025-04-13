@@ -8,11 +8,24 @@ class RC_cUAS_Turret_base: B_GMG_01_high_F
 	class ViewOptics;
 	class Components;
 	class AnimationSources;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 };
 class RC_cUAS_Turret: RC_cUAS_Turret_base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\dev6.hpp"
+		};
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+	
 	displayName="RC C-UAS Turret";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiDrone_subcat";
@@ -24,20 +37,16 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 	uavCameraGunnerPos="gunnerview";
 	uavCameraGunnerDir="gunnerview";
 	crew="B_UAV_AI";
-	showAllTargets="2 + 4";
 	enableGPS=1;
 	//armor=30;	//30
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{	
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerForceOptics=1;
-			maxElev=70;
+			maxElev=45;
 			thermalMode[]={0};
 
 			weapons[]=
@@ -46,7 +55,9 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 			};
 			magazines[]=
 			{
-				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_HEAB_T_R",
+				"RC_40Rnd_20mm_HEAB_T_R",
+				"RC_40Rnd_20mm_HEAB_T_R",
 				"RC_40Rnd_20mm_cUAS",
 				"RC_40Rnd_20mm_cUAS",
 				"RC_40Rnd_20mm_cUAS"
@@ -76,25 +87,22 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={600};
+							range[]={1000};
 							resource="RscCustomInfoSensors";
 						};
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
-						class MinimapDisplay
+						class SensorDisplay
 						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={400};
+							resource="RscCustomInfoSensors";
 						};
 					};
 				};
@@ -129,12 +137,12 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=400;
+					typeRecognitionDistance=1000;
 
 					class AirTarget
 					{
-						minRange=400;
-						maxRange=400;
+						minRange=1000;
+						maxRange=1000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -146,15 +154,9 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
-
-					//groundNoiseDistanceCoef=;
-					//maxGroundNoiseDistance=;
-					//maxTrackableATL=400; //good or bad?
-					minTrackableATL=4;	//whats good?
-
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-					animDirection="";
+					angleRangeHorizontal=1;
+					angleRangeVertical=1;
+					animDirection="maingun";
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{

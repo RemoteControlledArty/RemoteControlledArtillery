@@ -99,8 +99,8 @@ class RC_Mortar: RC_Mortar_base
 	{
 		class MainTurret: MainTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			//maxCamElev=67.5;
-			showAllTargets="2 + 4";
 			gunnerForceOptics=1;
 
 			weapons[]=

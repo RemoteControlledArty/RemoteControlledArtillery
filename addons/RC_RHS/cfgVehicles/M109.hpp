@@ -138,8 +138,8 @@ aggregateReflectors[]={{""}};
 	{
 		class MainTurret: MainTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerCompartments="Compartment2";
-			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -185,8 +185,8 @@ aggregateReflectors[]={{""}};
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					gunnerCompartments="Compartment3";
-					showAllTargets="2 + 4";
 					commanding=1;
 					dontCreateAI=1;
 

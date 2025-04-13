@@ -95,8 +95,8 @@ class RC_AA_A: RC_AA_base
 	{
 		class MainTurret: MainTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerCompartments="Compartment2";
-			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -105,8 +105,8 @@ class RC_AA_A: RC_AA_base
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					gunnerCompartments="Compartment3";
-					showAllTargets="2 + 4";
 					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;
@@ -298,8 +298,8 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	{
 		class MainTurret: MainTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerCompartments="Compartment2";
-			showAllTargets="2 + 4";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
@@ -308,8 +308,8 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 			{
 				class CommanderOptics : CommanderOptics
 				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					gunnerCompartments="Compartment3";
-					showAllTargets="2 + 4";
 					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;

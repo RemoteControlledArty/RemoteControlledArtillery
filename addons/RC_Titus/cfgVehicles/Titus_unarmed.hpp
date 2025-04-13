@@ -92,7 +92,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 		class CommanderTurret : CommanderTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerCompartments="Compartment4";
 			primaryGunner=1;
 			primaryObserver=0;

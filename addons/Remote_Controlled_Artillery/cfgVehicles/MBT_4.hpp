@@ -57,8 +57,8 @@ class RC_MBT_4_HEX_A_Base: RC_MBT_4_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
-			showAllTargets="2 + 4";
 			commanding=2;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
@@ -101,8 +101,8 @@ class RC_MBT_4_HEX_A_Base: RC_MBT_4_Base
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
-					showAllTargets="2 + 4";
 					commanding=1;
 					turretInfoType="RscOptics_MBT_03_gunner";
 

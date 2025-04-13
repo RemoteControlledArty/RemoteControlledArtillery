@@ -1,5 +1,6 @@
 class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
 {
+	typeRecognitionDistance=1;
 	class AirTarget
 	{
 		minRange=4000;
@@ -14,4 +15,5 @@ class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
 		objectDistanceLimitCoef=-1;
 		viewDistanceLimitCoef=-1;
 	};
+	allowsMarking=1;
 };

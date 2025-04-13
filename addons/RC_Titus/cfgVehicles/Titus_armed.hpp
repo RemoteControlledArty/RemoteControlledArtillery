@@ -95,8 +95,8 @@ class RC_Titus_AC: RC_Titus_AC_base
 		class CommanderTurret: CommanderTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
-			showAllTargets="2 + 4";
 
 			class ViewOptics: ViewOptics
 			{
@@ -127,8 +127,8 @@ class RC_Titus_AC: RC_Titus_AC_base
 		class ARX20Turret: ARX20Turret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
-			showAllTargets="2 + 4";
 
 			class ViewOptics: ViewOptics
 			{
@@ -372,8 +372,8 @@ class RC_Titus_MMG_D: RC_Titus_AC
 		class CommanderTurret: CommanderTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=0;
-			showAllTargets="2 + 4";
 			gunnerCompartments="Compartment4";
 			primaryGunner=1;
 			primaryObserver=0;
@@ -411,9 +411,9 @@ class RC_Titus_MMG_D: RC_Titus_AC
 		class ARX20Turret: ARX20Turret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			primaryGunner=0;
 			primaryObserver=1;
-			showAllTargets="2 + 4";
 			commanding=3;
 
 			class ViewOptics: ViewOptics

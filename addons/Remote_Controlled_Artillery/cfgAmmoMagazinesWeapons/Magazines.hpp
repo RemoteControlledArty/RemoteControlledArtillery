@@ -356,7 +356,7 @@ class 60Rnd_20mm_AP_AA_T_Y: 60Rnd_20mm_AP_AA_T_R
 };
 class 60Rnd_20mm_APFSDS_AA_T_R: 60Rnd_20mm_APFSDS_T_R
 {
-	ammo="RC_20mm_APFSDS_AA_T_G";
+	ammo="RC_20mm_APFSDS_AA_T_R";
 };
 class 60Rnd_20mm_APFSDS_AA_T_G: 60Rnd_20mm_APFSDS_AA_T_R
 {
@@ -364,7 +364,7 @@ class 60Rnd_20mm_APFSDS_AA_T_G: 60Rnd_20mm_APFSDS_AA_T_R
 };
 class 60Rnd_20mm_APFSDS_AA_T_Y: 60Rnd_20mm_APFSDS_AA_T_R
 {
-	ammo="RC_20mm_APFSDS_AA_T_G";
+	ammo="RC_20mm_APFSDS_AA_T_Y";
 };
 
 
@@ -377,15 +377,55 @@ class RC_60Rnd_20mm_cUAS: 60Rnd_20mm_HE_T_R
 	initSpeed=1000;
 	maxLeadSpeed=694.44397;
 };
+class RC_60Rnd_20mm_HEAB_T_R: RC_60Rnd_20mm_cUAS
+{
+	ammo="RC_20mm_HEAB_T_R";
+	displayName="20mm HE-AB";
+	displayNameShort="20mm HE-AB";
+};
+class RC_60Rnd_20mm_HEAB_T_G: RC_60Rnd_20mm_HEAB_T_R
+{
+	ammo="RC_20mm_HEAB_T_G";
+};
+class RC_60Rnd_20mm_HEAB_T_Y: RC_60Rnd_20mm_HEAB_T_R
+{
+	ammo="RC_20mm_HEAB_T_Y";
+};
+
+
+class RC_50Rnd_20mm_cUAS: RC_60Rnd_20mm_cUAS
+{
+	count=50;
+	initSpeed=600;
+};
+class RC_50Rnd_20mm_HEAB_T_R: RC_60Rnd_20mm_HEAB_T_R
+{
+	count=50;
+	initSpeed=600;
+};
+class RC_50Rnd_20mm_HEAB_T_G: RC_50Rnd_20mm_HEAB_T_R
+{
+	ammo="RC_20mm_HEAB_T_G";
+};
+class RC_50Rnd_20mm_HEAB_T_Y: RC_50Rnd_20mm_HEAB_T_R
+{
+	ammo="RC_20mm_HEAB_T_Y";
+};
+
+
 class RC_40Rnd_20mm_cUAS: RC_60Rnd_20mm_cUAS
 {
 	ammo="RC_20mm_cUAS";
-	displayName="20mm C-UAS";
-	displayNameShort="20mm C-UAS";
 	count=40;
 	initSpeed=500;
-	maxLeadSpeed=694.44397;
 	muzzleImpulseFactor[]={0.1,0.1};
+};
+class RC_40Rnd_20mm_HEAB_T_R: RC_40Rnd_20mm_cUAS
+{
+	ammo="RC_20mm_HEAB_T_R";
+	displayName="20mm HE-AB";
+	displayNameShort="20mm HE-AB";
+	muzzleImpulseFactor[]={0.05,0.05};
 };
 class RC_60Rnd_30mm_cUAS: RC_60Rnd_20mm_cUAS
 {
@@ -456,16 +496,6 @@ class 40Rnd_20mm_AP_T_W: 100Rnd_20mm_AP_T_R
 	maxLeadSpeed=694.44397;
 	muzzleImpulseFactor[]={0.1,0.1};
 };
-//20mm AB SHORAD
-class RC_60Rnd_20mm_SHORAD_T_W: 60Rnd_20mm_HE_T_R
-{
-	ammo="RC_20mm_AB_SHORAD_T_W";
-	displayName="20mm AB-T";
-	displayNameShort="20mm AB-T";
-	initSpeed=1000;
-	maxLeadSpeed=694.44397;
-	//nameSound="missiles";
-};
 
 
 //Autocannons
@@ -486,6 +516,24 @@ class RC_100Rnd_30mm_MP_T_Y: RC_100Rnd_30mm_MP_T_R
 {
 	ammo="RC_B_30mm_MP_T_Y";
 };
+
+
+class RC_100Rnd_30mm_MP_HEAB_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_MP_HEAB_T_R";
+	displayName="30mm MP-AB-T";
+	displayNameShort="30mm MP-AB-T";
+};
+class RC_100Rnd_30mm_MP_HEAB_T_G: RC_100Rnd_30mm_MP_HEAB_T_R
+{
+	ammo="RC_B_30mm_MP_HEAB_T_G";
+};
+class RC_100Rnd_30mm_MP_HEAB_T_Y: RC_100Rnd_30mm_MP_HEAB_T_R
+{
+	ammo="RC_B_30mm_MP_HEAB_T_Y";
+};
+
+
 class RC_100Rnd_30mm_GPR_T_R: RC_100Rnd_30mm_MP_T_R
 {
 	ammo="RC_B_30mm_GPR_T_R";
@@ -500,6 +548,8 @@ class RC_100Rnd_30mm_GPR_T_Y: RC_100Rnd_30mm_GPR_T_R
 {
 	ammo="RC_B_30mm_GPR_T_Y";
 };
+
+
 class RC_60Rnd_30mm_MP_T_R: RC_100Rnd_30mm_MP_T_R
 {
 	count=60;
@@ -696,6 +746,46 @@ class RC_20Rnd_120mm_MP_T_Y: RC_10Rnd_120mm_MP_T_Y
 };
 
 
+class RC_10Rnd_120mm_MP_HEAB_T_R: RC_10Rnd_120mm_MP_T_R
+{
+	ammo="RC_Sh_120mm_MP_HEAB_T_R";
+	displayName="MP-AB-T";
+	displayNameShort="MP-AB-T";
+};
+class RC_15Rnd_120mm_MP_HEAB_T_R: RC_10Rnd_120mm_MP_HEAB_T_R
+{
+	count=15;
+};
+class RC_20Rnd_120mm_MP_HEAB_T_R: RC_10Rnd_120mm_MP_HEAB_T_R
+{
+	count=20;
+};
+class RC_10Rnd_120mm_MP_HEAB_T_G: RC_10Rnd_120mm_MP_HEAB_T_R
+{
+	ammo="RC_Sh_120mm_MP_HEAB_T_G";
+};
+class RC_15Rnd_120mm_MP_HEAB_T_G: RC_10Rnd_120mm_MP_HEAB_T_G
+{
+	count=15;
+};
+class RC_20Rnd_120mm_MP_HEAB_T_G: RC_10Rnd_120mm_MP_HEAB_T_G
+{
+	count=20;
+};
+class RC_10Rnd_120mm_MP_HEAB_T_Y: RC_10Rnd_120mm_MP_HEAB_T_R
+{
+	ammo="RC_Sh_120mm_MP_HEAB_T_Y";
+};
+class RC_15Rnd_120mm_MP_HEAB_T_Y: RC_10Rnd_120mm_MP_HEAB_T_Y
+{
+	count=15;
+};
+class RC_20Rnd_120mm_MP_HEAB_T_Y: RC_10Rnd_120mm_MP_HEAB_T_Y
+{
+	count=20;
+};
+
+
 class 20Rnd_120mm_APFSDS_shells_Tracer_Red;
 class RC_10Rnd_120mm_APFSDS_T_R: 20Rnd_120mm_APFSDS_shells_Tracer_Red
 {
@@ -779,7 +869,7 @@ class RC_1Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_125mm_DLG_cannon_missiles
 class 12Rnd_125mm_HEAT_T_Red;
 class RC_10Rnd_125mm_MP_T_R: 12Rnd_125mm_HEAT_T_Red
 {
-	ammo="RC_Sh_125mm_MP_T_R";
+	ammo="RC_Sh_125mm_MP_HEAB_T_R";
 	displayName="MP-T";
 	displayNameShort="MP-T";
 	count=10;
@@ -813,6 +903,46 @@ class RC_15Rnd_125mm_MP_T_Y: RC_10Rnd_125mm_MP_T_Y
 	count=15;
 };
 class RC_20Rnd_125mm_MP_T_Y: RC_10Rnd_125mm_MP_T_Y
+{
+	count=20;
+};
+
+
+class RC_10Rnd_125mm_MP_HEAB_T_R: RC_10Rnd_125mm_MP_T_R
+{
+	ammo="RC_Sh_125mm_MP_HEAB_T_R";
+	displayName="MP-AB-T";
+	displayNameShort="MP-AB-T";
+};
+class RC_15Rnd_125mm_MP_HEAB_T_R: RC_10Rnd_125mm_MP_HEAB_T_R
+{
+	count=15;
+};
+class RC_20Rnd_125mm_MP_HEAB_T_R: RC_10Rnd_125mm_MP_HEAB_T_R
+{
+	count=20;
+};
+class RC_10Rnd_125mm_MP_HEAB_T_G: RC_10Rnd_125mm_MP_HEAB_T_R
+{
+	ammo="RC_Sh_125mm_MP_HEAB_T_G";
+};
+class RC_15Rnd_125mm_MP_HEAB_T_G: RC_10Rnd_125mm_MP_HEAB_T_G
+{
+	count=15;
+};
+class RC_20Rnd_125mm_MP_HEAB_T_G: RC_10Rnd_125mm_MP_HEAB_T_G
+{
+	count=20;
+};
+class RC_10Rnd_125mm_MP_HEAB_T_Y: RC_10Rnd_125mm_MP_HEAB_T_R
+{
+	ammo="RC_Sh_125mm_MP_HEAB_T_Y";
+};
+class RC_15Rnd_125mm_MP_HEAB_T_Y: RC_10Rnd_125mm_MP_HEAB_T_Y
+{
+	count=15;
+};
+class RC_20Rnd_125mm_MP_HEAB_T_Y: RC_10Rnd_125mm_MP_HEAB_T_Y
 {
 	count=20;
 };

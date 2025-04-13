@@ -232,7 +232,7 @@ class RC_2S23M_WD: RC_2S23M
 				};
 			};
 
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			commanding=3;
 			turretInfoType="RscWeaponRangeArtilleryAuto";
 			gunnerForceOptics=1;
@@ -284,7 +284,7 @@ class RC_2S23M_WD: RC_2S23M
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					showAllTargets="2 + 4";
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					commanding=2;
 					dontCreateAI=1;
 					gunnerCompartments="Compartment3";

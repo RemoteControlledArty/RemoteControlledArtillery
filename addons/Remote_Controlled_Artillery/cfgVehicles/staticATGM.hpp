@@ -140,7 +140,7 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 	{
 		class MainTurret: MainTurret
 		{
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerForceOptics=1;
 
 			minTurn=-180;

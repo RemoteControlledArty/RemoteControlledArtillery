@@ -1,4 +1,5 @@
 incomingMissileDetectionSystem=16;
+countermeasureActivationRadius=4000;
 soundLocked[]=
 {
 	"\A3\Sounds_F\weapons\Rockets\locked_1",

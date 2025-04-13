@@ -63,30 +63,6 @@ class Components: Components
 				angleRangeVertical=2;
 				animDirection="mainGun";
 			};
-			class VisualSensorComponent: SensorTemplateVisual
-			{
-				typeRecognitionDistance=500;
-
-				class AirTarget
-				{
-					minRange=500;
-					maxRange=500;
-					objectDistanceLimitCoef=-1;
-					viewDistanceLimitCoef=-1;
-				};
-				class GroundTarget
-				{
-					minRange=500;
-					maxRange=500;
-					objectDistanceLimitCoef=1;
-					viewDistanceLimitCoef=1;
-				};
-				maxTrackableSpeed=600;
-				nightRangeCoef=0.80000001;
-				angleRangeHorizontal=360;
-				angleRangeVertical=360;
-				animDirection="mainGun";
-			};
 			class ManSensorComponent: SensorTemplateMan
 			{
 				/*
@@ -114,6 +90,7 @@ class Components: Components
 				aimDown=0;	//-0.5
 			};
 
+			#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 		};
 	};

@@ -113,7 +113,7 @@ class RC_M119: RC_M119_base
 	{
 		class MainTurret: MainTurret
 		{
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerForceOptics=1;
 			maxelev=87;
 

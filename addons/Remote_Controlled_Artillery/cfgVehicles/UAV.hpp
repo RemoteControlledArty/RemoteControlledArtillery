@@ -198,7 +198,7 @@ class RC_UAV_AR1: RC_UAV_base
 	{
 		class MainTurret: MainTurret
 		{
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			//isCopilot=1; //0		//doesnt work yet
 			//commanding=1; //-1	//doesnt work yet
 
@@ -335,6 +335,7 @@ class RC_UAV_AR1_I: RC_UAV_AR1
 
 class RC_UAV_FPV: RC_UAV_base
 {
+	#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 	displayName="RC FPV 4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_UAV_Designator_subcat";
@@ -342,7 +343,6 @@ class RC_UAV_FPV: RC_UAV_base
 	scopeCurator=2;
 	RC_UAVBlurRange=3000;
 	fuelExplosionPower=25;
-	showAllTargets="2 + 4";
 
 	maxSpeed=200;
 	liftForceCoef=1.5;
@@ -375,7 +375,7 @@ class RC_UAV_FPV: RC_UAV_base
 
 	class ViewPilot: ViewPilot
 	{
-		//showAllTargets="2 + 4";
+		//#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 		initFov=1.25;
 
 		visionMode[]=
@@ -386,7 +386,7 @@ class RC_UAV_FPV: RC_UAV_base
 	};
 	class Viewoptics: ViewOptics
 	{
-		//showAllTargets="2 + 4";
+		//#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 		initFov=1.25;
 
 		visionMode[]=
@@ -726,7 +726,7 @@ class RC_UAV_AR3: RC_UAV_AR1
 	{
 		class MainTurret: MainTurret
 		{
-			showAllTargets="2 + 4";
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 
 			class Components: Components
 			{
@@ -1026,7 +1026,7 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 	};
 	class Viewoptics: ViewOptics
 	{
-		showAllTargets="2 + 4";
+		#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 		initFov=1;
 		minFov=0.45;
 		maxFov=1;
