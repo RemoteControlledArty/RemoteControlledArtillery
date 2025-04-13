@@ -929,6 +929,37 @@ class RC_Sh_120mm_MP_HEAB_T_Y: RC_Sh_120mm_MP_T_R
 };
 
 
+class Sh_120mm_HE;
+class RC_Sh_120mm_HEAB_LV_indirect_T_R: Sh_120mm_HE
+{
+	airFriction=0;
+	sideairFriction=0;
+
+	hit=250;
+	indirectHit=80;
+	indirectHitRange=12;
+	//typicalSpeed=1400;
+	aiAmmoUsageFlags="64 + 128";
+
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	deflecting=1;
+	tracerEndTime=15;
+	craterEffects="AAMissileCrater";
+
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+};
+class RC_Sh_120mm_HEAB_LV_indirect_T_G: RC_Sh_120mm_HEAB_LV_indirect_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_Sh_120mm_HEAB_LV_indirect_T_Y: RC_Sh_120mm_HEAB_LV_indirect_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
 class Sh_120mm_APFSDS_Tracer_Red;
 class RC_Sh_120mm_APFSDS_T_R: Sh_120mm_APFSDS_Tracer_Red
 {

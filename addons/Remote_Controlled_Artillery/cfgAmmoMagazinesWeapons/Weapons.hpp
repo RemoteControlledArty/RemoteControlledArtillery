@@ -1092,8 +1092,8 @@ class RC_GMG_20mm_cUAS: RC_autocannon_Base_F
 	{
 		aiBurstTerminable=1;
 		showToPlayer=0;
-		burst=1;
-		burstRangeMax=1;
+		burst=3;
+		burstRangeMax=3;
 		aiRateOfFire=1;
 		aiRateOfFireDispersion=2;
 		aiRateOfFireDistance=50;
@@ -1108,8 +1108,8 @@ class RC_GMG_20mm_cUAS: RC_autocannon_Base_F
 	{
 		aiBurstTerminable=1;
 		showToPlayer=0;
-		burst=1;
-		burstRangeMax=1;
+		burst=3;
+		burstRangeMax=3;
 		aiRateOfFire=1;
 		aiRateOfFireDispersion=2;
 		aiRateOfFireDistance=200;
@@ -1124,8 +1124,8 @@ class RC_GMG_20mm_cUAS: RC_autocannon_Base_F
 	{
 		aiBurstTerminable=1;
 		showToPlayer=0;
-		burst=1;
-		burstRangeMax=1;
+		burst=3;
+		burstRangeMax=3;
 		aiRateOfFire=2;
 		aiRateOfFireDispersion=2;
 		aiRateOfFireDistance=700;
@@ -1140,8 +1140,8 @@ class RC_GMG_20mm_cUAS: RC_autocannon_Base_F
 	{
 		aiBurstTerminable=1;
 		showToPlayer=0;
-		burst=1;
-		burstRangeMax=1;
+		burst=3;
+		burstRangeMax=3;
 		aiRateOfFire=4;
 		aiRateOfFireDispersion=4;
 		aiRateOfFireDistance=1000;
@@ -1371,6 +1371,16 @@ class RC_cannon_120mm: cannon_120mm
 		"RC_10Rnd_120mm_MP_T_Y",
 		"RC_15Rnd_120mm_MP_T_Y",
 		"RC_20Rnd_120mm_MP_T_Y",
+		"RC_5Rnd_120mm_HEAB6_LV_indirect_T_R",
+		"RC_10Rnd_120mm_HEAB6_LV_indirect_T_R",
+		"RC_15Rnd_120mm_HEAB6_LV_indirect_T_R",
+		"RC_20Rnd_120mm_HEAB6_LV_indirect_T_R",
+		"RC_10Rnd_120mm_HEAB6_LV_indirect_T_G",
+		"RC_15Rnd_120mm_HEAB6_LV_indirect_T_G",
+		"RC_20Rnd_120mm_HEAB6_LV_indirect_T_G",
+		"RC_10Rnd_120mm_HEAB6_LV_indirect_T_Y",
+		"RC_15Rnd_120mm_HEAB6_LV_indirect_T_Y",
+		"RC_20Rnd_120mm_HEAB6_LV_indirect_T_Y",
 		"RC_4Rnd_120mm_DLG_cannon_missiles",
 		"RC_3Rnd_120mm_DLG_cannon_missiles",
 		"RC_2Rnd_120mm_DLG_cannon_missiles",
@@ -1419,6 +1429,16 @@ class RC_cannon_125mm_advanced: cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_MP_T_Y",
 		"RC_15Rnd_125mm_MP_T_Y",
 		"RC_20Rnd_125mm_MP_T_Y",
+		"RC_5Rnd_125mm_HEAB6_LV_indirect_T_R",
+		"RC_10Rnd_125mm_HEAB6_LV_indirect_T_R",
+		"RC_15Rnd_125mm_HEAB6_LV_indirect_T_R",
+		"RC_20Rnd_125mm_HEAB6_LV_indirect_T_R",
+		"RC_10Rnd_125mm_HEAB6_LV_indirect_T_G",
+		"RC_15Rnd_125mm_HEAB6_LV_indirect_T_G",
+		"RC_20Rnd_125mm_HEAB6_LV_indirect_T_G",
+		"RC_10Rnd_125mm_HEAB6_LV_indirect_T_Y",
+		"RC_15Rnd_125mm_HEAB6_LV_indirect_T_Y",
+		"RC_20Rnd_125mm_HEAB6_LV_indirect_T_Y",
 		"RC_3Rnd_125mm_DLG_cannon_missiles",
 		"4Rnd_125mm_cannon_missiles"
 	};

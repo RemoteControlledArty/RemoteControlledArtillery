@@ -786,6 +786,60 @@ class RC_20Rnd_120mm_MP_HEAB_T_Y: RC_10Rnd_120mm_MP_HEAB_T_Y
 };
 
 
+class RC_5Rnd_120mm_HEAB6_LV_indirect_T_R: RC_10Rnd_120mm_MP_T_R
+{
+	ammo="RC_Sh_120mm_HEAB_LV_indirect_T_R";
+	displayName="LV-HEAB indirect";
+	displayNameShort="LV-HEAB indirect";
+	initSpeed=450;	//LV = low velocity, 450ms = 100MIL / 5.6° at 4000m for indirect fire
+	count=5;
+};
+class RC_10Rnd_120mm_HEAB6_LV_indirect_T_R: RC_5Rnd_120mm_HEAB6_LV_indirect_T_R
+{
+	count=10;
+};
+class RC_15Rnd_120mm_HEAB6_LV_indirect_T_R: RC_5Rnd_120mm_HEAB6_LV_indirect_T_R
+{
+	count=15;
+};
+class RC_20Rnd_120mm_HEAB6_LV_indirect_T_R: RC_5Rnd_120mm_HEAB6_LV_indirect_T_R
+{
+	count=20;
+};
+class RC_5Rnd_120mm_HEAB6_LV_indirect_T_G: RC_5Rnd_120mm_HEAB6_LV_indirect_T_R
+{
+	ammo="RC_Sh_120mm_HEAB_LV_indirect_T_G";
+};
+class RC_10Rnd_120mm_HEAB6_LV_indirect_T_G: RC_5Rnd_120mm_HEAB6_LV_indirect_T_G
+{
+	count=10;
+};
+class RC_15Rnd_120mm_HEAB6_LV_indirect_T_G: RC_5Rnd_120mm_HEAB6_LV_indirect_T_G
+{
+	count=15;
+};
+class RC_20Rnd_120mm_HEAB6_LV_indirect_T_G: RC_5Rnd_120mm_HEAB6_LV_indirect_T_G
+{
+	count=20;
+};
+class RC_5Rnd_120mm_HEAB6_LV_indirect_T_Y: RC_5Rnd_120mm_HEAB6_LV_indirect_T_R
+{
+	ammo="RC_Sh_120mm_HEAB_LV_indirect_T_Y";
+};
+class RC_10Rnd_120mm_HEAB6_LV_indirect_T_Y: RC_5Rnd_120mm_HEAB6_LV_indirect_T_Y
+{
+	count=10;
+};
+class RC_15Rnd_120mm_HEAB6_LV_indirect_T_Y: RC_5Rnd_120mm_HEAB6_LV_indirect_T_Y
+{
+	count=15;
+};
+class RC_20Rnd_120mm_HEAB6_LV_indirect_T_Y: RC_5Rnd_120mm_HEAB6_LV_indirect_T_Y
+{
+	count=20;
+};
+
+
 class 20Rnd_120mm_APFSDS_shells_Tracer_Red;
 class RC_10Rnd_120mm_APFSDS_T_R: 20Rnd_120mm_APFSDS_shells_Tracer_Red
 {
@@ -943,6 +997,60 @@ class RC_15Rnd_125mm_MP_HEAB_T_Y: RC_10Rnd_125mm_MP_HEAB_T_Y
 	count=15;
 };
 class RC_20Rnd_125mm_MP_HEAB_T_Y: RC_10Rnd_125mm_MP_HEAB_T_Y
+{
+	count=20;
+};
+
+
+class RC_5Rnd_125mm_HEAB6_LV_indirect_T_R: RC_10Rnd_125mm_MP_T_R
+{
+	ammo="RC_Sh_120mm_HEAB_LV_indirect_T_R";
+	displayName="LV-HEAB indirect";
+	displayNameShort="LV-HEAB indirect";
+	initSpeed=450;	//LV = low velocity, 450ms = 100MIL / 5.6° at 4000m for indirect fire
+	count=5;
+};
+class RC_10Rnd_125mm_HEAB6_LV_indirect_T_R: RC_5Rnd_125mm_HEAB6_LV_indirect_T_R
+{
+	count=10;
+};
+class RC_15Rnd_125mm_HEAB6_LV_indirect_T_R: RC_5Rnd_125mm_HEAB6_LV_indirect_T_R
+{
+	count=15;
+};
+class RC_20Rnd_125mm_HEAB6_LV_indirect_T_R: RC_5Rnd_125mm_HEAB6_LV_indirect_T_R
+{
+	count=20;
+};
+class RC_5Rnd_125mm_HEAB6_LV_indirect_T_G: RC_5Rnd_125mm_HEAB6_LV_indirect_T_R
+{
+	ammo="RC_Sh_120mm_HEAB_LV_indirect_T_G";
+};
+class RC_10Rnd_125mm_HEAB6_LV_indirect_T_G: RC_5Rnd_125mm_HEAB6_LV_indirect_T_G
+{
+	count=10;
+};
+class RC_15Rnd_125mm_HEAB6_LV_indirect_T_G: RC_5Rnd_125mm_HEAB6_LV_indirect_T_G
+{
+	count=15;
+};
+class RC_20Rnd_125mm_HEAB6_LV_indirect_T_G: RC_5Rnd_125mm_HEAB6_LV_indirect_T_G
+{
+	count=20;
+};
+class RC_5Rnd_125mm_HEAB6_LV_indirect_T_Y: RC_5Rnd_125mm_HEAB6_LV_indirect_T_R
+{
+	ammo="RC_Sh_120mm_HEAB_LV_indirect_T_Y";
+};
+class RC_10Rnd_125mm_HEAB6_LV_indirect_T_Y: RC_5Rnd_125mm_HEAB6_LV_indirect_T_Y
+{
+	count=10;
+};
+class RC_15Rnd_125mm_HEAB6_LV_indirect_T_Y: RC_5Rnd_125mm_HEAB6_LV_indirect_T_Y
+{
+	count=15;
+};
+class RC_20Rnd_125mm_HEAB6_LV_indirect_T_Y: RC_5Rnd_125mm_HEAB6_LV_indirect_T_Y
 {
 	count=20;
 };
