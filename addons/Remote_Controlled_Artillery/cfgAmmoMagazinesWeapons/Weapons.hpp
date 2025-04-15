@@ -1205,12 +1205,15 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 		maxZeroing=4000;
 		magazines[]=
 		{
-			"RC_100Rnd_30mm_MP_HEAB_T_R",
-			"RC_100Rnd_30mm_MP_HEAB_T_G",
-			"RC_100Rnd_30mm_MP_HEAB_T_Y",
+			"RC_100Rnd_30mm_MPAB_T_R",
+			"RC_100Rnd_30mm_PF_T_R",
+			"RC_100Rnd_30mm_SLPF_T_R",
 			"RC_100Rnd_30mm_MP_T_R",
 			"RC_100Rnd_30mm_MP_T_G",
 			"RC_100Rnd_30mm_MP_T_Y",
+			"RC_100Rnd_30mm_MP_HEAB_T_R",
+			"RC_100Rnd_30mm_MP_HEAB_T_G",
+			"RC_100Rnd_30mm_MP_HEAB_T_Y",
 			"RC_100Rnd_30mm_GPR_T_R",
 			"RC_100Rnd_30mm_GPR_T_G",
 			"RC_100Rnd_30mm_GPR_T_Y"

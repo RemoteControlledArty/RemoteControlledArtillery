@@ -534,6 +534,26 @@ class RC_100Rnd_30mm_MP_HEAB_T_Y: RC_100Rnd_30mm_MP_HEAB_T_R
 };
 
 
+class RC_100Rnd_30mm_PF_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_PF";
+	displayName="30mm PF-T";
+	displayNameShort="30mm PF-T";
+};
+class RC_100Rnd_30mm_SLPF_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_SLPF";
+	displayName="30mm SLPF-T";
+	displayNameShort="30mm SLPF-T";
+};
+class RC_100Rnd_30mm_MPAB_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_MPAB";
+	displayName="30mm MPAB-T";
+	displayNameShort="30mm MPAB-T";
+};
+
+
 class RC_100Rnd_30mm_GPR_T_R: RC_100Rnd_30mm_MP_T_R
 {
 	ammo="RC_B_30mm_GPR_T_R";

@@ -797,7 +797,7 @@ class RC_B_30mm_MP_HEAB_T_Y: RC_B_30mm_MP_HEAB_T_R
 };
 
 
-//GPR
+//GPR, differences:  MP explosive=0.6 sim=HEAT  vs  HE explosive=0.8 sim=HE  vs  GPR explosive=0.8 sim=AP,  as 0.7 is magic line of penetrating soft cover or detonating on cover
 class B_40mm_GPR_Tracer_Red;
 class RC_B_40mm_GPR_T_R: B_40mm_GPR_Tracer_Red
 {
@@ -881,6 +881,364 @@ class RC_B_AC_Smoke: G_40mm_Smoke
 */
 
 
+class SubmunitionBase;
+class RC_PF: SubmunitionBase
+{
+	submunitionConeAngle=0;
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionParentSpeedCoef=1;
+	aiAmmoUsageFlags="64 + 128 + 256 + 512";
+	timeToLive=6;
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	warheadName="HE";
+	deflecting=1;
+
+	//artilleryLock=1;
+	//autoSeekTarget=1;
+	//muzzleEffect="";
+	//explosionEffects="RC_GuidedExplosion";
+	//craterEffects="AAMissileCrater";
+
+	effectFly="AmmoClassic";
+	muzzleEffect="";
+	explosionSoundEffect="DefaultExplosion";
+	explosionEffects="ExploAmmoExplosion";
+	craterEffects="ExploAmmoCrater";
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+	tracerScale=1;
+	tracerStartTime=0.050000001;
+	tracerEndTime=4;
+
+	soundFly[]=
+	{
+		"",
+		1,
+		1,
+		50
+	};
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\30mm40mm_shell_explosion_01",
+		1.7782794,
+		1,
+		1600
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\30mm40mm_shell_explosion_02",
+		1.7782794,
+		1,
+		1600
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\30mm40mm_shell_explosion_03",
+		1.7782794,
+		1,
+		1600
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\shells\30mm40mm_shell_explosion_04",
+		1.7782794,
+		1,
+		1600
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
+	class CamShakeExplode
+	{
+		power=6;
+		duration=1;
+		frequency=20;
+		distance=67.817802;
+	};
+	class CamShakeHit
+	{
+		power=30;
+		duration=0.40000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=2.2360699;
+		duration=1;
+		frequency=20;
+		distance=40;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+class B_30mm_HE;
+class RC_B_30mm_HE: B_30mm_HE
+{
+	//explosionTime=0.0001;
+	timeToLive=0;
+	simulation="shotrocket";
+	//simulation="shotShell";
+};
+class RC_20mm_AP: B_20mm_AP
+{
+	hit=70;
+	caliber=3.8;
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+};
+class RC_B_30mm_PF_Base: RC_PF
+{
+	simulationStep=0.002;	//1.66m
+	//deleteParentWhenTriggered=1;
+
+	submunitionCount=1;
+	//submunitionAmmo="RC_20mm_AP";
+	/*
+	submunitionCount=2;
+	submunitionAmmo[]=
+	{
+		"RC_B_30mm_HE",
+		0.5,
+		"RC_20mm_AP",
+		0.5
+	};
+	*/
+
+	//shellbase -> 120mm
+	//submunitionInitSpeed=1000;
+	//submunitionParentSpeedCoef=0;
+	//submunitionInitialOffset[]={0,0,-0.2};
+	//triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	explosive=1;
+
+	triggerDistance=6;
+	indirectHitRange=4;
+	indirectHit=7;
+
+	hit=30;
+	caliber=1.4;
+	//explosive=0.80000001;	//0.6, 0.7
+	cost=20;
+
+	airFriction=-0.00036000001;
+	typicalSpeed=960;
+
+	visibleFire=32;
+	audibleFire=200;
+	visibleFireTime=3;
+	dangerRadiusBulletClose=20;
+	dangerRadiusHit=60;
+	suppressionRadiusBulletClose=12;
+	suppressionRadiusHit=24;
+};
+class RC_B_30mm_PF_Exp: RC_B_30mm_PF_Base
+{
+	submunitionAmmo="RC_20mm_AP";
+	explosionTime=0.0001;
+	triggerDistance=0.1;
+	triggerOnImpact=1;
+
+	//airFriction=-0.28; HEAT pen
+};
+class RC_B_30mm_PF: RC_B_30mm_PF_Base
+{
+	submunitionAmmo="RC_20mm_AP";
+};
+class RC_B_30mm_SLPF: RC_B_30mm_PF_Base
+{
+	triggerDistance=4;
+	submunitionAmmo="RC_B_30mm_HE";
+};
+class RC_B_30mm_CfgAB: RC_B_30mm_PF_Base
+{
+	triggerDistance=4;
+	submunitionAmmo="RC_B_30mm_HE";
+};
+
+
+class ammo_Penetrator_Base;
+class RC_ammo_Penetrator_AB: ammo_Penetrator_Base
+{
+	airFriction=-0.0005;	//for it to still be effective after airbursting at given distance before target
+	warheadName="HEAT";
+	explosive=0;
+	CraterEffects="NoCrater";	//test both seperate
+	explosionEffects="NoExplosion";
+	//CraterEffects="ExploAmmoCrater";
+	//explosionEffects="ExploAmmoExplosion";
+};
+class RC_ammo_Penetrator_AB_30mm: RC_ammo_Penetrator_AB
+{
+	hit=90;
+	caliber=4.4000001;
+
+	dangerRadiusHit=40;
+	suppressionRadiusHit=14;
+};
+class RC_B_30mm_MPAB: B_30mm_HE
+{
+	//simulationStep=0.002;	//1.66m
+	simulation="shotShell";
+
+	submunitionAmmo="RC_ammo_Penetrator_AB_30mm";
+	submunitionCount=1;
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	//triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	submunitionConeAngle=0;
+	submunitionDirectionType="SubmunitionModelDirection";
+
+	aiAmmoUsageFlags="64 + 128 + 256 + 512";
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+
+	warheadName="HE";
+	deflecting=1;
+
+	indirectHit=7;
+	indirectHitRange=4;
+};
+
+
+/*
+class B_30mm_MP: B_30mm_HE
+{
+	hit=90;
+	indirectHit=4;
+	indirectHitRange=2;
+	warheadName="HEAT";
+	caliber=4.4000001;
+	deflecting=10;
+	explosive=0.60000002;
+	typicalSpeed=1070;
+	airFriction=-0.00036000001;
+	dangerRadiusBulletClose=16;
+	dangerRadiusHit=40;
+	suppressionRadiusBulletClose=10;
+	suppressionRadiusHit=14;
+};
+class ShellCore: Default
+{
+	simulation="shotShell";
+	simulationStep=0.050000001;
+	timeToLive=20;
+	cost=1000;
+	soundHit[]=
+	{
+		"",
+		316.22775,
+		1
+	};
+	soundFly[]=
+	{
+		"",
+		0.031622775,
+		4
+	};
+	indirectHitRange=8;
+	visibleFire=16;
+	audibleFire=16;
+	visibleFireTime=10;
+	deflecting=5;
+};
+class ShellBase: ShellCore
+{
+	supersonicCrackNear[]=
+	{
+		"A3\Sounds_F\weapons\Explosion\supersonic_crack_close",
+		0.31622776,
+		1,
+		50
+	};
+	supersonicCrackFar[]=
+	{
+		"A3\Sounds_F\weapons\Explosion\supersonic_crack_50meters",
+		0.22387211,
+		1,
+		150
+	};
+	CraterEffects="HEShellCrater";
+	CraterWaterEffects="ImpactEffectsWaterHE";
+	ExplosionEffects="HEShellExplosion";
+	visibleFire=64;
+	audibleFire=250;
+	dangerRadiusHit=-1;
+	suppressionRadiusHit=30;
+	timeToLive=360;
+	muzzleEffect="";
+	caliber=34;
+	deflecting=10;
+	deflectionDirDistribution=0.38999999;
+	penetrationDirDistribution=0.25999999;
+	whistleOnFire=2;
+	aiAmmoUsageFlags="64 + 128 + 256";
+};
+class ammo_Penetrator_Base: ShellBase
+{
+	model="\A3\weapons_f\empty";
+	caliber=40;
+	warheadName="HEAT";
+	hit=300;
+	indirectHit=0;
+	indirectHitRange=0;
+	explosive=0;
+	typicalSpeed=1000;
+	timeToLive=0.2;
+	simulationStep=0.050000001;
+	airFriction=-0.28;
+	deflecting=0;
+	deflectionDirDistribution=0;
+	penetrationDirDistribution=0;
+	aiAmmoUsageFlags="128 + 512";
+	dangerRadiusHit=60;
+	suppressionRadiusHit=30;
+	CraterEffects="ExploAmmoCrater";
+	explosionEffects="ExploAmmoExplosion";
+	whistleOnFire=1;
+	whistleDist=14;
+};
+class ammo_Penetrator_30mm: ammo_Penetrator_Base
+{
+	caliber=2;
+	hit=75;
+};
+class ammo_Penetrator_grenade_40mm: ammo_Penetrator_Base
+{
+	caliber=3.3333299;
+	hit=84;
+};
+class ammo_Penetrator_105mm: ammo_Penetrator_Base
+{
+	caliber=28.6667;
+	hit=450;
+};
+class ammo_Penetrator_120mm: ammo_Penetrator_Base
+{
+	caliber=40;
+	hit=510;
+};
+*/
+
+
 //120mm of FSV/MBT
 class ammo_Penetrator_120mm;
 class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
@@ -914,9 +1272,13 @@ class RC_Sh_120mm_MP_T_Y: RC_Sh_120mm_MP_T_R
 };
 
 
+class RC_ammo_Penetrator_AB_120mm: RC_ammo_Penetrator_120mm
+{
+	airFriction=-0.001;
+};
 class RC_Sh_120mm_MP_HEAB_T_R: RC_Sh_120mm_MP_T_R
 {
-	//submunitionInitialOffset[]={0,0,7.8};
+	submunitionAmmo="RC_ammo_Penetrator_AB_120mm";
 	aiAmmoUsageFlags="64 + 128 + 256 + 512";
 };
 class RC_Sh_120mm_MP_HEAB_T_G: RC_Sh_120mm_MP_T_R
@@ -1017,7 +1379,7 @@ class RC_Sh_125mm_APFSDS_T_Y: RC_Sh_125mm_APFSDS_T_R
 };
 
 
-class ammo_Penetrator_Base;
+//class ammo_Penetrator_Base;
 class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
 {
 	caliber=60;
@@ -2161,7 +2523,7 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 		};
 	};
 };
-class SubmunitionBase;
+//class SubmunitionBase;
 class RC_Sh_AMOS_MP_LaserGuided_Base: SubmunitionBase
 {
 	submunitionCount=1;

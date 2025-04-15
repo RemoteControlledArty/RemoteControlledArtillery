@@ -1,5 +1,11 @@
 magazines[]=
 {
+	"RC_100Rnd_30mm_MPAB_T_R",
+	"RC_100Rnd_30mm_MPAB_T_R",
+	"RC_100Rnd_30mm_PF_T_R",
+	"RC_100Rnd_30mm_PF_T_R",
+	"RC_100Rnd_30mm_SLPF_T_R",
+	"RC_100Rnd_30mm_SLPF_T_R",
 	"RC_100Rnd_30mm_MP_T_R",
 	"RC_100Rnd_30mm_MP_T_R",
 	"RC_100Rnd_30mm_MP_HEAB_T_R",
