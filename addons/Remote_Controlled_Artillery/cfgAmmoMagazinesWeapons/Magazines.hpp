@@ -518,40 +518,88 @@ class RC_100Rnd_30mm_MP_T_Y: RC_100Rnd_30mm_MP_T_R
 };
 
 
-class RC_100Rnd_30mm_MP_HEAB_T_R: RC_100Rnd_30mm_MP_T_R
+class RC_100Rnd_30mm_HEAB_T_R: RC_100Rnd_30mm_MP_T_R
 {
-	ammo="RC_B_30mm_MP_HEAB_T_R";
-	displayName="30mm MP-AB-T";
-	displayNameShort="30mm MP-AB-T";
+	ammo="RC_B_30mm_HEAB_T_R";
+	displayName="30mm HEAB-T";
+	displayNameShort="30mm HEAB-T";
 };
-class RC_100Rnd_30mm_MP_HEAB_T_G: RC_100Rnd_30mm_MP_HEAB_T_R
+class RC_100Rnd_30mm_HEAB_T_G: RC_100Rnd_30mm_HEAB_T_R
 {
-	ammo="RC_B_30mm_MP_HEAB_T_G";
+	ammo="RC_B_30mm_HEAB_T_G";
 };
-class RC_100Rnd_30mm_MP_HEAB_T_Y: RC_100Rnd_30mm_MP_HEAB_T_R
+class RC_100Rnd_30mm_HEAB_T_Y: RC_100Rnd_30mm_HEAB_T_R
 {
-	ammo="RC_B_30mm_MP_HEAB_T_Y";
+	ammo="RC_B_30mm_HEAB_T_Y";
+};
+class RC_100Rnd_30mm_HEAB_QF_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_HEAB_QF_T_R";
+	displayName="30mm HEAB-QF-T";
+	displayNameShort="30mm HEAB-QF-T";
+};
+class RC_100Rnd_30mm_HEAB_QF_T_G: RC_100Rnd_30mm_HEAB_QF_T_R
+{
+	ammo="RC_B_30mm_HEAB_QF_T_G";
+};
+class RC_100Rnd_30mm_HEAB_QF_T_Y: RC_100Rnd_30mm_HEAB_QF_T_R
+{
+	ammo="RC_B_30mm_HEAB_QF_T_Y";
 };
 
 
+class RC_100Rnd_30mm_MPAB_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_MPAB_T_R";
+	displayName="30mm MPAB-T";
+	displayNameShort="30mm MPAB-T";
+};
+class RC_100Rnd_30mm_MPAB_T_G: RC_100Rnd_30mm_MPAB_T_R
+{
+	ammo="RC_B_30mm_MPAB_T_G";
+};
+class RC_100Rnd_30mm_MPAB_T_Y: RC_100Rnd_30mm_MPAB_T_R
+{
+	ammo="RC_B_30mm_MPAB_T_Y";
+};
+class RC_100Rnd_30mm_MPAB_QF_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_MPAB_QF_T_R";
+	displayName="30mm MPAB-QF-T";
+	displayNameShort="30mm MPAB-QF-T";
+};
+class RC_100Rnd_30mm_MPAB_QF_T_G: RC_100Rnd_30mm_MPAB_QF_T_R
+{
+	ammo="RC_B_30mm_MPAB_QF_T_G";
+};
+class RC_100Rnd_30mm_MPAB_QF_T_Y: RC_100Rnd_30mm_MPAB_QF_T_R
+{
+	ammo="RC_B_30mm_MPAB_QF_T_Y";
+};
+
+
+class RC_100Rnd_30mm_CfgAB_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_CfgAB_T_R";
+	displayName="30mm CfgAB-T";
+	displayNameShort="30mm CfgAB-T";
+};
+class RC_100Rnd_30mm_CfgAB_T_G: RC_100Rnd_30mm_CfgAB_T_R
+{
+	ammo="RC_B_30mm_CfgAB_T_G";
+};
+class RC_100Rnd_30mm_CfgAB_T_Y: RC_100Rnd_30mm_CfgAB_T_R
+{
+	ammo="RC_B_30mm_CfgAB_T_Y";
+};
+/*
 class RC_100Rnd_30mm_PF_T_R: RC_100Rnd_30mm_MP_T_R
 {
 	ammo="RC_B_30mm_PF";
 	displayName="30mm PF-T";
 	displayNameShort="30mm PF-T";
 };
-class RC_100Rnd_30mm_SLPF_T_R: RC_100Rnd_30mm_MP_T_R
-{
-	ammo="RC_B_30mm_SLPF";
-	displayName="30mm SLPF-T";
-	displayNameShort="30mm SLPF-T";
-};
-class RC_100Rnd_30mm_MPAB_T_R: RC_100Rnd_30mm_MP_T_R
-{
-	ammo="RC_B_30mm_MPAB";
-	displayName="30mm MPAB-T";
-	displayNameShort="30mm MPAB-T";
-};
+*/
 
 
 class RC_100Rnd_30mm_GPR_T_R: RC_100Rnd_30mm_MP_T_R
