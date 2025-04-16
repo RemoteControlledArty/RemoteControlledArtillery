@@ -1199,17 +1199,20 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	ballisticsComputer="1 + 2 + 16";
 	maxZeroing=4000;
 
-	magazineReloadTime=5; //TESTING ONLY!
+	magazineReloadTime=1; //TESTING ONLY!
 
 	class HE: HE
 	{
 		ballisticsComputer="1 + 2 + 16";
 		maxZeroing=4000;
 
-		magazineReloadTime=5; //TESTING ONLY!
+		magazineReloadTime=1; //TESTING ONLY!
 
 		magazines[]=
 		{
+			"RC_100Rnd_30mm_MPAB_DF_T_R",
+			"RC_100Rnd_30mm_MPAB_DF_T_G",
+			"RC_100Rnd_30mm_MPAB_DF_T_Y",
 			"RC_100Rnd_30mm_MPAB_T_R",
 			"RC_100Rnd_30mm_MPAB_T_G",
 			"RC_100Rnd_30mm_MPAB_T_Y",
@@ -1222,6 +1225,9 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 			"RC_100Rnd_30mm_HEAB_QF_T_R",
 			"RC_100Rnd_30mm_HEAB_QF_T_G",
 			"RC_100Rnd_30mm_HEAB_QF_T_Y",
+			"RC_100Rnd_30mm_CfgAB2_T_R",
+			"RC_100Rnd_30mm_CfgAB2_T_G",
+			"RC_100Rnd_30mm_CfgAB2_T_Y",
 			"RC_100Rnd_30mm_CfgAB_T_R",
 			"RC_100Rnd_30mm_CfgAB_T_G",
 			"RC_100Rnd_30mm_CfgAB_T_Y",

@@ -987,7 +987,7 @@ class RC_B_30mm_CfgAB_Test: RC_CfgAB_Core
 };
 class RC_B_30mm_CfgAB_Base: RC_B_30mm_CfgAB_Test
 {
-	//simulationStep=0.0020000001;	//1.66m  , bullet default 0.050000001; would be 50m which doesnt seem to be the case
+	simulationStep=0.003;	//1.66m  , bullet default 0.050000001; would be 50m which doesnt seem to be the case
 	submunitionCount=1;
 	deleteParentWhenTriggered=0;
 
@@ -999,6 +999,10 @@ class RC_B_30mm_CfgAB_Base: RC_B_30mm_CfgAB_Test
 	hit=30;
 	caliber=1.4;
 	cost=20;
+
+	tracerStartTime=0.1;
+	tracerEndTime=4;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
 
 	airFriction=-0.00036000001;
 	typicalSpeed=960;
@@ -1054,7 +1058,8 @@ class RC_B_30mm_PF: RC_B_30mm_PF_Base
 class ammo_Penetrator_Base;
 class RC_ammo_Penetrator_MPAB: ammo_Penetrator_Base
 {
-	airFriction=-0.0005;	//for it to still be effective after airbursting at given distance before target
+	airFriction=0;	//-0.0005 wasnt effective //for it to still be effective after airbursting at given distance before target
+	timeToLive=0.2;
 	warheadName="HEAT";
 	explosive=0;
 	CraterEffects="NoCrater";	//test both seperate
@@ -1123,6 +1128,126 @@ class RC_B_30mm_MPAB_QF_T_G: RC_B_30mm_MPAB_QF_T_R
 class RC_B_30mm_MPAB_QF_T_Y: RC_B_30mm_MPAB_QF_T_R
 {
 	explosive=0.80000001;
+};
+
+/*
+class RC_B_30mm_MPAB_DF_06: RC_B_30mm_MPAB_T_R
+{
+	//simulationStep=0.0020000001;
+	explosionTime=0.015;
+	deleteParentWhenTriggered=0;
+	triggerOnImpact=1;
+
+	explosive=0.60000002;	//penetrating fuze
+};
+class RC_B_30mm_MPAB_DF_T_R: RC_B_30mm_MPAB_T_R
+{
+	//simulationStep=0.0020000001;
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=100;
+	deleteParentWhenTriggered=1;
+	triggerOnImpact=1;
+*/
+class RC_B_30mm_MPAB_DF_06: RC_B_30mm_MPAB_T_R
+{
+	simulationStep=0.0020000001;	//try different parent/sub steps
+	explosionTime=0.015;
+	deleteParentWhenTriggered=0;
+	triggerOnImpact=1;	//0 can result in no submun spawn after wall pen unclear why, does not matter for overly early trigger only sawning submun, but results in no effect against non penetratable objects as speed reaching 0 likely results in deletion
+	//maybe tronimp causes expl 1 simulationstep later?
+
+	explosive=0.60000002;	//penetrating fuze, 0=no explosion
+};
+class RC_B_30mm_MPAB_DF_T_R: RC_B_30mm_MPAB_T_R
+{
+	simulationStep=0.0020000001;
+	submunitionParentSpeedCoef=1;
+	//submunitionInitSpeed=100;
+	deleteParentWhenTriggered=1;
+	triggerOnImpact=1;
+	submunitionInitialOffset[]={0,0,-1};
+
+	explosive=0.80000001;	//quick fuze
+	submunitionAmmo="RC_B_30mm_MPAB_DF_06";
+};
+class RC_B_30mm_MPAB_DF_T_G: RC_B_30mm_MPAB_DF_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_30mm_MPAB_DF_T_Y: RC_B_30mm_MPAB_DF_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+
+/*
+//works, but multiple meters behind target, if submunspeed is reduced, it falls and explodes on the ground
+class RC_B_30mm_MPAB_Sub: RC_B_30mm_MPAB_T_R
+{
+	explosionTime=0.0001;	//0=continues as projectile (not exploding), there is prob a low cap like 0.1s as it falls with 0 speed and explodes delayed
+	//timeToLive=0;
+	//simulation="shotrocket";
+};
+class RC_B_30mm_CfgAB2_T_R: RC_B_30mm_CfgAB_Base
+{
+	triggerDistance=4.5;
+	submunitionAmmo="RC_B_30mm_MPAB_Sub";
+	//submunitionParentSpeedCoef=0;
+	//submunitionInitSpeed=1;
+	//deleteParentWhenTriggered=1;	//same effect when activated, just with out stray continuing main pr
+};
+*/
+/*
+works well, but penetrator not triggered if main round lacks triggeronimpact, but non of both exploding if it has tOimp but hits ground far before selected target
+class RC_B_30mm_MPAB_Sub: RC_B_30mm_MPAB_T_R
+{
+	simulationStep=0.001;
+	explosionTime=0.0001;
+	//triggerTime=0.0001;
+	//timeToLive=0;
+	//simulation="shotrocket";	//doesnt spawn submun, likely as timetolive doesnt trigger submun
+	triggerOnImpact=1;
+};
+class RC_B_30mm_CfgAB2_T_R: RC_B_30mm_CfgAB_Base
+{
+	simulationStep=0.001;
+	triggerDistance=4.5;
+	submunitionAmmo="RC_B_30mm_MPAB_Sub";
+	//submunitionParentSpeedCoef=0;
+	//submunitionInitSpeed=1;
+	deleteParentWhenTriggered=1;
+	triggerOnImpact=1;
+};
+*/
+
+
+class RC_B_30mm_MPAB_Sub: RC_B_30mm_MPAB_T_R
+{
+	simulationStep=0.001;
+	explosionTime=0.0001;
+	//triggerTime=0.0001;
+	//timeToLive=0;
+	//simulation="shotrocket"; //if shotrocket and triggertime very low works (spawns submun), but can create visual rocket effects, might have potential
+	triggerOnImpact=1;
+};
+class RC_B_30mm_CfgAB2_T_R: RC_B_30mm_CfgAB_Base
+{
+	simulationStep=0.001;
+	triggerDistance=4.5;
+	submunitionAmmo="RC_B_30mm_MPAB_Sub";
+	//submunitionParentSpeedCoef=0;
+	//submunitionInitSpeed=1;
+	deleteParentWhenTriggered=1;
+	//triggerOnImpact=1;
+};
+class RC_B_30mm_CfgAB2_T_G: RC_B_30mm_CfgAB2_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_30mm_CfgAB2_T_Y: RC_B_30mm_CfgAB2_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
 
 

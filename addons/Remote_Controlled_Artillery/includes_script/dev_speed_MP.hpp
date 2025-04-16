@@ -6,6 +6,7 @@ if (_ammo find 'MPAB' > -1) then {	\
 		private _gunnerSide = side _gunner;	\
 		waitUntil {	\
 			if (!alive _projectile) exitWith {false};	\
+			sleep 0.005;
 			(count ((nearestObjects [_projectile, ['AllVehicles','LaserTarget','RC_GPSDatalinkTarget'], (6/((1000^0.5)/(((speed _projectile)*0.277778)^0.5)))]) select {alive _x && side _x != _gunnerSide && _gunner knowsAbout _x > 0})) > 0;	\
 		};	\
 		hint format ['%1', (6/((1000^0.5)/(((speed _projectile)*0.277778)^0.5)))];	\
