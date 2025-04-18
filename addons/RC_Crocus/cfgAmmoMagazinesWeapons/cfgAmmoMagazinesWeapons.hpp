@@ -32,7 +32,7 @@ class CfgAmmo
 	class Default;
 	class RC_target_confirmer_AB_ammo: Default
 	{
-		model="\A3\weapons_f\launchers\RPG32\tbg32v_rocket.p3d";
+		model="\A3\weapons_f\launchers\RPG32\tbg32v_rocket.p3d";	//change to something smaller, and remove all explosion effects
 		simulation="shotMissile";
 		simulationStep=0.050000001;
 		timeToLive=1;
@@ -129,7 +129,7 @@ class cfgMagazines
 	class RC_target_confirmer_AB_mag: RC_target_confirmer_mag
 	{
 		ammo="RC_target_confirmer_AB_ammo";
-		initSpeed=0;
+		initSpeed=1;	//1000 for reticle of bc=8; retest
 		scope=2;
 		count=1;
 	};
@@ -144,6 +144,7 @@ class cfgWeapons
 		scope=2;
 		canLock=2;
 		weaponLockDelay=0;
+		//ballisticsComputer=8;	//reticle for shaped charge airburst, retest
 		reloadTime=1;
 		magazineReloadTime=1;
 		magazines[]=
@@ -153,6 +154,7 @@ class cfgWeapons
 		class Single
 		{
 			displayName="MP airburst";
+			//ballisticsComputer=8;	//reticle for shaped charge airburst, retest
 			reloadTime=1;
 			burst=1;
 			sounds[]=
