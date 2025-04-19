@@ -948,10 +948,18 @@ class B_30mm_HE_Tracer_Red;
 class RC_B_30mm_MPAB_T_R: B_30mm_HE_Tracer_Red
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\MP.hpp"
-	submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
-	indirectHit=7;
-	indirectHitRange=4;
+	//submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
+	//indirectHit=7;
+	//indirectHitRange=4;
 	//caliber=;	//adjust for pen and ammo type
+
+	submunitionAmmo="RC_B_30mm_CfgAB_T_R";
+	//simulation="shotSubmunitions";
+	deleteParentWhenTriggered=1;
+	submunitionInitialOffset[]={0,0,0};
+	explosive=1;
+	indirectHit=0;
+	indirectHitRange=0;
 };
 class RC_B_30mm_MPAB_T_G: RC_B_30mm_MPAB_T_R
 {
@@ -1114,11 +1122,78 @@ class RC_B_30mm_CfgAB_Sub: B_30mm_HE
 	timeToLive=0;
 	simulation="shotrocket";
 };
-class RC_B_30mm_CfgAB: RC_B_30mm_CfgAB_Base
+class RC_B_30mm_CfgAB_T_R: RC_B_30mm_CfgAB_Base
 {
-	triggerDistance=4;
+	triggerOnImpact=1;
+	explosive=0.60000002;
+	triggerDistance=5;
 	submunitionAmmo="RC_B_30mm_CfgAB_Sub";
 };
+class RC_B_30mm_CfgAB_T_G: RC_B_30mm_CfgAB_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_30mm_CfgAB_T_Y: RC_B_30mm_CfgAB_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+
+
+/*
+test expl 0.7
+explosionTime=0.007;	//0.01
+
+20fps/1000ms = 0.02s x 1070 = 21.4!!! 0.02x1330=26.6!!! = 20fps/0.02s x 250ms
+=5m r 10m d cuboid, 3.55m h = 6.9445m widht = 345ms!!!
+
+DF submunspeed 500ms, 1.5m delayed fuze, -3/4/5m sumbun offset:
+(5+1.5+1.5) / 500 = 0.016  or  (5+2+1.5) / 500 = 0.017  or  (5+2.5+1.5) / 500 = 0.018
+
+A)
+shotshell -> script triggerammo if > 30m (or more?) -> shotsubmun* expl 0.6 ->
+
+*A1) with specific speed of shotshell submunspeed & based on that delayed fuze triggertime
+	+ simple, next submun is already penetrator, penetrator offset might matter less (-0.2 default)
+	- delayed fuze is for center of object, not outer surface
+
+	*EDIT: cannot be triggertime on unedited velocity, timer start distance can be off!!!
+
+*A2) expl 1 and impact spawning MP submun expl 0.6, offset and triggertime
+	+ reliable DF distance behind outer surface
+	+ doesnt require slowing projectile for correct delayed fuze distance against cover
+	- more config foolaround, testing for bugs needed
+
+B) setvelocity projectile 345ms if > 30m
+
+*B1) ?m triggerdistance + distance > previousdistance
+	- can trigger too early, infront walls
+
+*B2) >250ms distance => previousdistance, 0->5m detonation
+	+ ensures delayed fuze for walls, without submunition
+	~ likely reliable with low velocity, but unknown pen
+	- might overshoot with medium velocity
+	- frame dependant: 20fps 5m could be too much for most houses, 40fps = 2.5m 60fps = 1.67m
+
+= triggeronimpact submun triggertime = likely most consitant delayed distance & penetrates behind surface not center of object
+
+OPTION: preventing shotsubmunition tomfoolery, velocity reduction for trigger distance BUT cfg delayed fuze with normal submunspeed for wall penetration
++cfg triggerdistance doesnt require velocity manipulation = no potential LEAD problems
+-cfg triggerdistance would not include triggerammo for miss (AA), but could be added on submunition
+
+*shotshell > shotsubmun 0.6expl would penetrate houses and hit target if target selected!!! :D
+
+*LEAD could be corrected with slight setvelocity -> target
+*significant velocity manipulation might throw off ballistics calculator LEAD moving targets, less problem for AA (HE), more problem for armored vehicles (MP), BUT given submunitionspeed at 30m would also!
+
+!!!!!!!!!!!!!!!!!!!! shotshell -> shotsubmun does NOT retain selected target for trigger distance, even on sensor targets.
+
+*cfg AB can also miss at the very upper end, but much rarer and at a very far point of the radius, cfg 5m = 2.5x height of IFV
+
+*does triggerOnImpact only count for full stop or also walls (likely full stop, not walls)?
+*/
+
+ADVICE FOR SUNDAY:
+-manipulate velocity, cfg delayed fuze, correct lead with setVelocity if really needed
 
 
 /*
