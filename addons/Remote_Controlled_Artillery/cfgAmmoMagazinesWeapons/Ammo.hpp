@@ -1144,7 +1144,7 @@ test expl 0.7
 explosionTime=0.007;	//0.01
 
 20fps/1000ms = 0.02s x 1070 = 21.4!!! 0.02x1330=26.6!!! = 20fps/0.02s x 250ms
-=5m r 10m d cuboid, 3.55m h = 6.9445m widht = 345ms!!!
+=5m r 10m d sphere, 3.55m h = 6.9445m widht = 345ms!!!
 
 DF submunspeed 500ms, 1.5m delayed fuze, -3/4/5m sumbun offset:
 (5+1.5+1.5) / 500 = 0.016  or  (5+2+1.5) / 500 = 0.017  or  (5+2.5+1.5) / 500 = 0.018
@@ -1194,7 +1194,9 @@ OPTION: preventing shotsubmunition tomfoolery, velocity reduction for trigger di
 
 ADVICE FOR SUNDAY:
 -manipulate velocity, cfg delayed fuze, correct lead with setVelocity if really needed
-
+-velocity reduction can be done in multiple frames (if not mistaken) to not throw off lead to much, 1. 30m preventing fullspeed bypass 2. preventing midspeed bypass 3. preventing lowest speed bypass
+-1000ms -> 672.5ms -> 345ms
+-maybe function for 7m long cylinder/cuboid instead of 10m sphere
 
 /*
 class RC_B_30mm_MPAB_DF_06: RC_B_30mm_MPAB_T_R
