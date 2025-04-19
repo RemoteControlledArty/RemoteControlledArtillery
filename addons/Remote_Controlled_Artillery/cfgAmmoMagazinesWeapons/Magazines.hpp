@@ -427,6 +427,14 @@ class RC_40Rnd_20mm_HEAB_T_R: RC_40Rnd_20mm_cUAS
 	displayNameShort="20mm HE-AB";
 	muzzleImpulseFactor[]={0.05,0.05};
 };
+class RC_40Rnd_20mm_HEAB_T_G: RC_40Rnd_20mm_HEAB_T_R
+{
+	ammo="RC_20mm_HEAB_T_G";
+};
+class RC_40Rnd_20mm_HEAB_T_Y: RC_40Rnd_20mm_HEAB_T_R
+{
+	ammo="RC_20mm_HEAB_T_Y";
+};
 class RC_60Rnd_30mm_cUAS: RC_60Rnd_20mm_cUAS
 {
 	ammo="RC_30mm_cUAS";
@@ -589,6 +597,22 @@ class RC_100Rnd_30mm_MPAB_DF_T_G: RC_100Rnd_30mm_MPAB_DF_T_R
 class RC_100Rnd_30mm_MPAB_DF_T_Y: RC_100Rnd_30mm_MPAB_DF_T_R
 {
 	ammo="RC_B_30mm_MPAB_DF_T_Y";
+};
+
+
+class RC_100Rnd_30mm_MPDF_T_R: RC_100Rnd_30mm_MP_T_R
+{
+	ammo="RC_B_30mm_MPDF_T_R";
+	displayName="30mm MPDF-T";
+	displayNameShort="30mm MPDF-T";
+};
+class RC_100Rnd_30mm_MPDF_T_G: RC_100Rnd_30mm_MPDF_T_R
+{
+	ammo="RC_B_30mm_MPDF_T_G";
+};
+class RC_100Rnd_30mm_MPDF_T_Y: RC_100Rnd_30mm_MPDF_T_R
+{
+	ammo="RC_B_30mm_MPDF_T_Y";
 };
 
 

@@ -1,0 +1,23 @@
+simulation="shotShell";
+//simulationStep=0.0020000001;	//1.66m  , bullet default 0.050000001; would be 50m which doesnt seem to be the case
+submunitionCount=1;
+submunitionInitSpeed=1000;
+submunitionParentSpeedCoef=0;
+submunitionConeAngle=0;
+submunitionDirectionType="SubmunitionModelDirection";
+deleteParentWhenTriggered=1;	//1 for removing exp
+triggerOnImpact=1;
+submunitionInitialOffset[]={0,0,-3.5};	//3 required to not bug
+laserLock=1;
+irLock=1;
+airLock=1;
+deflecting=1;
+tracerEndTime=4;
+warheadName="HE";	//test AP
+aiAmmoUsageFlags="64 + 128 + 256 + 512";
+explosive=1;	//removes hit value, also for penetrating light cover, 0.60000002 = MP, 0.80000001 = HE/GPR, 1 = HE with HEAT submun, test 0.7
+indirectHit=0;
+indirectHitRange=0;
+explosionEffects="";
+//CraterEffects="";
+//muzzleEffect="";

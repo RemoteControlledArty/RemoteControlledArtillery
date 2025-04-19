@@ -18,7 +18,7 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\dev_speed.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\dev_speed.hpp"
 		};
 	};
 
@@ -243,6 +243,22 @@ class RC_cUAS_Turret_O: RC_cUAS_Turret
 	side=0;
 
 	armor=15;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_40Rnd_20mm_HEAB_T_G",
+				"RC_40Rnd_20mm_HEAB_T_G",
+				"RC_40Rnd_20mm_HEAB_T_G",
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS"
+			};
+		};
+	};
 };
 class RC_cUAS_Turret_I: RC_cUAS_Turret
 {
@@ -251,6 +267,22 @@ class RC_cUAS_Turret_I: RC_cUAS_Turret
 	side=2;
 
 	armor=15;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_40Rnd_20mm_HEAB_T_Y",
+				"RC_40Rnd_20mm_HEAB_T_Y",
+				"RC_40Rnd_20mm_HEAB_T_Y",
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS"
+			};
+		};
+	};
 };
 
 

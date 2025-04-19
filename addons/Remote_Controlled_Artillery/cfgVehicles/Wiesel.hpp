@@ -1678,7 +1678,7 @@ class RC_Wiesel_cUAS_WD_Base: RC_Wiesel_AC_WD_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\dev_speed.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\dev_speed.hpp"
 		};
 	};
 

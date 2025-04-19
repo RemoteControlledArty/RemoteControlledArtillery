@@ -356,7 +356,7 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\dev.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\dev.hpp"	//tests if typeof also reacts on MP
 		};
 	};
 

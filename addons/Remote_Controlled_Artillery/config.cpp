@@ -643,6 +643,9 @@ class CfgFunctions
 			class RC_UAVBlur {postInit=1;};
 			class RC_UAVConnectionFix {postInit=1;};
 			class RC_LaserDatalink {postInit=1;};
+
+			class RC_cursorTargetIntoDatalink {postInit=1;};
+			//class RC_calculateAB {postInit=1;};
 			
 			class scrollSolutions {};
 
