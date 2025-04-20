@@ -1,22 +1,12 @@
-//simulationStep=0.0020000001;		//1.66m  , bullet default 0.050000001; would be 50m which doesnt seem to be the case, engine very reliably triggers despite normal simulationStep for shotSubmunitions triggerDistance
+simulationStep=0.0020000001;		//with max 1330m/s = 2.66m, with 1000m/s = 2m,   bullet default 0.050000001 with max 1330m/s = 66.5m, with 1000m/s = 50m
+//!!! min required simulationStep for 7m intesection at 3,55m height of 5m triggerradius for max 1330m/s = 0.005, otherwise will not reliably trigger but pass by !!!
 
 simulation="shotSubmunitions";
-submunitionCount=1;
-submunitionInitSpeed=1000;			//edit?
-submunitionParentSpeedCoef=0;
-submunitionConeAngle=0;
-submunitionDirectionType="SubmunitionModelDirection";
-deleteParentWhenTriggered=1;		//1 for removing explosion and maybe hit value
-triggerOnImpact=1;					//otherwise would trigger on vehicles/cover/terrain
+//deleteParentWhenTriggered=1;		//1 for removing explosion and maybe hit value
 //triggerDistance=5; 				//5m is a good default, REQUIRES simulation "shotsubmunition"
 
-//can lock on datalink targets
-laserLock=1;
-irLock=1;
-airLock=1;
-
-deflecting=1;						//prevents ricochets, its a proximity fuze afterall
-tracerEndTime=4;
+//model="\A3\Weapons_f\Data\bullettracer\tracer_red.p3d"; //model="\A3\Weapons_f\Data\bullettracer\tracer_green.p3d";
+//model="\A3\Weapons_F\Ammo\shell.p3d";
 model="\A3\Weapons_f\Data\bullettracer\tracer_red";	//not visible for simulation shotSubmunitions
 
 /*
