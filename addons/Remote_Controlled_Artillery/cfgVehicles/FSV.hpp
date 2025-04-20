@@ -272,6 +272,7 @@ class RC_FSV_A: RC_FSV_A_Base
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 

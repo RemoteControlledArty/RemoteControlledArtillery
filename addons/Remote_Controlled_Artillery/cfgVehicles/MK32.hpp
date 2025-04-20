@@ -18,7 +18,7 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 	{
 		class RC_Artillery
 		{
-			//#include "\Remote_Controlled_Artillery\includes_script\dev_speed.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 

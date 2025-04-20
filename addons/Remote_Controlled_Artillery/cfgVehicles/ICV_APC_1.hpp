@@ -519,6 +519,15 @@ class RC_APC_1_ReTex_D_I: RC_APC_1_ReTex_D
 //20mm IFV variant
 class RC_IFV_1_A: RC_APC_1_A
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		};
+	};
+
 	displayName="Namer 20mm";
 
 	class Turrets: Turrets

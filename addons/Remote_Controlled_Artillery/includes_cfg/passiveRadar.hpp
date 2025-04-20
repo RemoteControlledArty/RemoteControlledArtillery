@@ -15,5 +15,5 @@ class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
 		objectDistanceLimitCoef=-1;
 		viewDistanceLimitCoef=-1;
 	};
-	allowsMarking=1;
+	//allowsMarking=1;	//targeting would be great, problem is just it tells name which seems a bit op?
 };

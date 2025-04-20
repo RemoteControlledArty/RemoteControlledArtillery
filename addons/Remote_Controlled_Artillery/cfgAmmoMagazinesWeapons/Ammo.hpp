@@ -873,53 +873,24 @@ class RC_B_AC_Smoke: G_40mm_Smoke
 */
 
 
-//testing
-/*
-class RC_20mm_AP: B_20mm_AP
-{
-	hit=70;
-	caliber=3.8;
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-};
-class RC_B_30mm_PF_Exp: RC_B_30mm_PF_Base
-{
-	submunitionAmmo="RC_20mm_AP";
-	explosionTime=0.0001;
-	triggerDistance=0.1;
-	triggerOnImpact=1;
-	//airFriction=-0.28; HEAT pen
-};
-class RC_B_30mm_PF: RC_B_30mm_PF_Base
-{
-	submunitionAmmo="RC_20mm_AP";
-};
-*/
-
-
 //MP Penetrator Submunitions
 class ammo_Penetrator_Base;
 class RC_ammo_Penetrator_MPAB: ammo_Penetrator_Base
 {
-	airFriction=0;	//-0.0005 wasnt effective //for it to still be effective after airbursting at given distance before target
+	airFriction=0;	//-0.0005 wasnt effective for it to still be effective after airbursting at given distance before target
 	timeToLive=0.2;
 	warheadName="HEAT";
 	explosive=0;
 	CraterEffects="NoCrater";	//test both seperate
 	explosionEffects="NoExplosion";
-	//CraterEffects="ExploAmmoCrater";
-	//explosionEffects="ExploAmmoExplosion";
 };
-/*
 class RC_ammo_Penetrator_MP_20mm: RC_ammo_Penetrator_MPAB
 {
-	hit=90;
-	caliber=4.4000001;
+	hit=70;
+	caliber=4.2;	//?
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
-*/
 class RC_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MPAB
 {
 	hit=90;
@@ -941,47 +912,6 @@ class RC_ammo_Penetrator_MP_50mm: RC_ammo_Penetrator_MPAB
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
-
-
-//MPAB
-class B_30mm_HE_Tracer_Red;
-class RC_B_30mm_MPAB_T_R: B_30mm_HE_Tracer_Red
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\MP.hpp"
-	//submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
-	//indirectHit=7;
-	//indirectHitRange=4;
-	//caliber=;	//adjust for pen and ammo type
-
-	submunitionAmmo="RC_B_30mm_CfgAB_T_R";
-	//simulation="shotSubmunitions";
-	deleteParentWhenTriggered=1;
-	submunitionInitialOffset[]={0,0,0};
-	explosive=1;
-	indirectHit=0;
-	indirectHitRange=0;
-};
-class RC_B_30mm_MPAB_T_G: RC_B_30mm_MPAB_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
-};
-class RC_B_30mm_MPAB_T_Y: RC_B_30mm_MPAB_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
-};
-class RC_B_30mm_MPAB_QF_T_R: RC_B_30mm_MPAB_T_R
-{
-	explosive=0.80000001;	//quick fuze
-};
-class RC_B_30mm_MPAB_QF_T_G: RC_B_30mm_MPAB_QF_T_R
-{
-	explosive=0.80000001;
-};
-class RC_B_30mm_MPAB_QF_T_Y: RC_B_30mm_MPAB_QF_T_R
-{
-	explosive=0.80000001;
-};
-
 
 
 class SubmunitionBase;
@@ -1118,10 +1048,10 @@ class RC_B_30mm_CfgAB_Base: RC_CfgAB_Core
 class B_30mm_HE;
 class RC_B_30mm_CfgAB_Sub: B_30mm_HE
 {
-	//explosionTime=0.0001;
 	timeToLive=0;
 	simulation="shotrocket";
 };
+/*
 class RC_B_30mm_CfgAB_T_R: RC_B_30mm_CfgAB_Base
 {
 	triggerOnImpact=1;
@@ -1137,97 +1067,106 @@ class RC_B_30mm_CfgAB_T_Y: RC_B_30mm_CfgAB_T_R
 {
 	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
-
-
-/*
-test expl 0.7
-explosionTime=0.007;	//0.01
-
-20fps/1000ms = 0.02s x 1070 = 21.4!!! 0.02x1330=26.6!!! = 20fps/0.02s x 250ms
-=5m r 10m d sphere, 3.55m h = 6.9445m widht = 345ms!!!
-
-DF submunspeed 500ms, 1.5m delayed fuze, -3/4/5m sumbun offset:
-(5+1.5+1.5) / 500 = 0.016  or  (5+2+1.5) / 500 = 0.017  or  (5+2.5+1.5) / 500 = 0.018
-
-A)
-shotshell -> script triggerammo if > 30m (or more?) -> shotsubmun* expl 0.6 ->
-
-*A1) with specific speed of shotshell submunspeed & based on that delayed fuze triggertime
-	+ simple, next submun is already penetrator, penetrator offset might matter less (-0.2 default)
-	- delayed fuze is for center of object, not outer surface
-
-	*EDIT: cannot be triggertime on unedited velocity, timer start distance can be off!!!
-
-*A2) expl 1 and impact spawning MP submun expl 0.6, offset and triggertime
-	+ reliable DF distance behind outer surface
-	+ doesnt require slowing projectile for correct delayed fuze distance against cover
-	- more config foolaround, testing for bugs needed
-
-B) setvelocity projectile 345ms if > 30m
-
-*B1) ?m triggerdistance + distance > previousdistance
-	- can trigger too early, infront walls
-
-*B2) >250ms distance => previousdistance, 0->5m detonation
-	+ ensures delayed fuze for walls, without submunition
-	~ likely reliable with low velocity, but unknown pen
-	- might overshoot with medium velocity
-	- frame dependant: 20fps 5m could be too much for most houses, 40fps = 2.5m 60fps = 1.67m
-
-= triggeronimpact submun triggertime = likely most consitant delayed distance & penetrates behind surface not center of object
-
-OPTION: preventing shotsubmunition tomfoolery, velocity reduction for trigger distance BUT cfg delayed fuze with normal submunspeed for wall penetration
-+cfg triggerdistance doesnt require velocity manipulation = no potential LEAD problems
--cfg triggerdistance would not include triggerammo for miss (AA), but could be added on submunition
-
-*shotshell > shotsubmun 0.6expl would penetrate houses and hit target if target selected!!! :D
-
-*LEAD could be corrected with slight setvelocity -> target
-*significant velocity manipulation might throw off ballistics calculator LEAD moving targets, less problem for AA (HE), more problem for armored vehicles (MP), BUT given submunitionspeed at 30m would also!
-
-!!!!!!!!!!!!!!!!!!!! shotshell -> shotsubmun does NOT retain selected target for trigger distance, even on sensor targets.
-
-*cfg AB can also miss at the very upper end, but much rarer and at a very far point of the radius, cfg 5m = 2.5x height of IFV
-
-*does triggerOnImpact only count for full stop or also walls (likely full stop, not walls)?
 */
 
-ADVICE FOR SUNDAY:
--manipulate velocity, cfg delayed fuze, correct lead with setVelocity if really needed
--velocity reduction can be done in multiple frames (if not mistaken) to not throw off lead to much, 1. 30m preventing fullspeed bypass 2. preventing midspeed bypass 3. preventing lowest speed bypass
--1000ms -> 672.5ms -> 345ms
--maybe function for 7m long cylinder/cuboid instead of 10m sphere
 
-/*
-class RC_B_30mm_MPAB_DF_06: RC_B_30mm_MPAB_T_R
+//MPAB
+class B_30mm_HE_Tracer_Red;
+class RC_B_30mm_MPDF_Sub: B_30mm_HE_Tracer_Red
 {
-	//simulationStep=0.0020000001;
-	explosionTime=0.015;
+	simulation="shotShell";
+	simulationStep=0.0020000001;
+	explosionTime=0.007;
 	deleteParentWhenTriggered=0;
 	triggerOnImpact=1;
 
-	explosive=0.60000002;	//penetrating fuze
-};
-class RC_B_30mm_MPAB_DF_T_R: RC_B_30mm_MPAB_T_R
-{
-	//simulationStep=0.0020000001;
+	explosive=0.60000002;
+
+	indirectHit=7;
+	indirectHitRange=4;
+
+	submunitionCount=1;
+	submunitionInitSpeed=1000;
 	submunitionParentSpeedCoef=0;
-	submunitionInitSpeed=100;
-	deleteParentWhenTriggered=1;
+	submunitionConeAngle=0;
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionInitialOffset[]={0,0,-0.2};
+
+	submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
+
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	deflecting=1;
+	tracerEndTime=4;
+	warheadName="HE";
+	aiAmmoUsageFlags="64 + 128 + 256 + 512";
+};
+class RC_B_30mm_CfgDist_Sub: RC_B_30mm_CfgAB_Base
+{
+	submunitionAmmo="RC_B_30mm_MPDF_Sub";
+	simulationStep=0.0020000001;
 	triggerOnImpact=1;
-*/
+	explosive=1;
+	
+	triggerDistance=5;
+	submunitionInitialOffset[]={0,0,-3.5};
+	deleteParentWhenTriggered=1;
+
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=1000;
+};
+class RC_B_30mm_MPAB_T_R: B_30mm_HE_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
+	//submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
+	//indirectHit=7;
+	//indirectHitRange=4;
+	//caliber=;	//adjust for pen and ammo type
+
+	simulation="shotShell";
+	submunitionAmmo="RC_B_30mm_CfgDist_Sub";
+	//simulation="shotSubmunitions";
+	deleteParentWhenTriggered=1;
+	submunitionInitialOffset[]={0,0,0};
+	explosive=1;
+	indirectHit=0;
+	indirectHitRange=0;
+};
+class RC_B_30mm_MPAB_T_G: RC_B_30mm_MPAB_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_B_30mm_MPAB_T_Y: RC_B_30mm_MPAB_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
+class RC_B_30mm_MPAB_QF_T_R: RC_B_30mm_MPAB_T_R
+{
+	explosive=0.80000001;	//quick fuze
+};
+class RC_B_30mm_MPAB_QF_T_G: RC_B_30mm_MPAB_QF_T_R
+{
+	explosive=0.80000001;
+};
+class RC_B_30mm_MPAB_QF_T_Y: RC_B_30mm_MPAB_QF_T_R
+{
+	explosive=0.80000001;
+};
+
+
 class RC_B_30mm_MPAB_DF_06: RC_B_30mm_MPAB_T_R
 {
-	simulationStep=0.0020000001;	//try different parent/sub steps
-	explosionTime=0.007;	//0.01
+	simulationStep=0.0020000001;
+	explosionTime=0.007;
 	deleteParentWhenTriggered=0;
-	triggerOnImpact=1;	//0 can result in no submun spawn after wall pen unclear why, does not matter for overly early trigger only sawning submun, but results in no effect against non penetratable objects as speed reaching 0 likely results in deletion
-	//maybe tronimp causes expl 1 simulationstep later?
+	triggerOnImpact=1;
 
-	explosive=0.60000002;	//penetrating fuze, 0=no explosion
+	explosive=0.60000002;
 };
-class RC_B_30mm_MPAB_DF_T_R: RC_B_30mm_CfgAB_Base
+class RC_B_30mm_CfgMPAB_DF_T_R: RC_B_30mm_CfgAB_Base
 {
+	model="\A3\Weapons_F\Ammo\shell.p3d";
 	simulationStep=0.0020000001;
 	submunitionParentSpeedCoef=0;
 	submunitionInitSpeed=1000;
@@ -1235,9 +1174,8 @@ class RC_B_30mm_MPAB_DF_T_R: RC_B_30mm_CfgAB_Base
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,0,-3.5};
 	triggerDistance=5;	//very reliable trigger chance, so 6m is too much
-	//simulation="shotShell";
 
-	explosive=1;	//0.80000001 quick fuze
+	explosive=1;
 	submunitionAmmo="RC_B_30mm_MPAB_DF_06";
 };
 class RC_B_30mm_MPAB_DF_T_G: RC_B_30mm_MPAB_DF_T_R
@@ -1248,9 +1186,9 @@ class RC_B_30mm_MPAB_DF_T_Y: RC_B_30mm_MPAB_DF_T_R
 {
 	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
-//spawn 30mm AP Tracer with most effects/hit removed, to have visal tracer effect, would be near scriptless MPAB-DF...
 
 
+/*
 class RC_B_30mm_MPAB_Sub: RC_B_30mm_MPAB_T_R
 {
 	simulationStep=0.001;
@@ -1262,13 +1200,21 @@ class RC_B_30mm_MPAB_Sub: RC_B_30mm_MPAB_T_R
 };
 class RC_B_30mm_CfgAB2_T_R: RC_B_30mm_CfgAB_Base
 {
+	submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
 	simulationStep=0.001;
 	triggerDistance=4.5;
-	submunitionAmmo="RC_B_30mm_MPAB_Sub";
-	//submunitionParentSpeedCoef=0;
-	//submunitionInitSpeed=1;
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=1000;
+	submunitionInitialOffset[]={0,0,-0.2};
+
+	triggerOnImpact=1;
+	explosive=1;
+
+	//WRONG SIMULATION, needs to be shotshell for tracer effect, and triggered per if (alive && passed) OR (submunitioncreated && !alive) then spawn MPD_Sub.
+
 	deleteParentWhenTriggered=1;
-	//triggerOnImpact=1;
+	indirectHitRange=0;
+	indirectHit=0;
 };
 class RC_B_30mm_CfgAB2_T_G: RC_B_30mm_CfgAB2_T_R
 {
@@ -1278,37 +1224,26 @@ class RC_B_30mm_CfgAB2_T_Y: RC_B_30mm_CfgAB2_T_R
 {
 	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
+*/
 
 
 //add penetrator to 40mm indirect!
 
 
 //MPDF
-/*
-class RC_B_30mm_MPAB_Sub: RC_B_30mm_MPAB_T_R
-{
-	simulationStep=0.001;
-	explosionTime=0.0001;
-	//triggerTime=0.0001;
-	//timeToLive=0;
-	//simulation="shotrocket"; //if shotrocket and triggertime very low works (spawns submun), but can create visual rocket effects, might have potential
-	triggerOnImpact=1;
-};
-*/
 class RC_B_30mm_MPDF: RC_B_30mm_MPAB_T_R
 {
-	simulationStep=0.0020000001;	//try different parent/sub steps
-	explosionTime=0.007;	//0.01
+	simulationStep=0.0020000001;
+	explosionTime=0.007;
 	deleteParentWhenTriggered=0;
-	triggerOnImpact=1;	//0 can result in no submun spawn after wall pen unclear why, does not matter for overly early trigger only sawning submun, but results in no effect against non penetratable objects as speed reaching 0 likely results in deletion
-	//maybe tronimp causes expl 1 simulationstep later?
+	triggerOnImpact=1;
 
 	explosive=0.60000002;	//penetrating fuze, 0=no explosion
 };
 class B_30mm_AP;
 class RC_B_30mm_MPDF_T_R: B_30mm_AP
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\DF.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\DF.hpp"
 	submunitionAmmo="RC_B_30mm_MPDF";
 	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
 	//caliber=;	//adjust for pen and ammo type
@@ -1321,57 +1256,11 @@ class RC_B_30mm_MPDF_T_Y: RC_B_30mm_MPDF_T_R
 {
 	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
-//test indirect hit on penetrator / test invisible submun
-//COMBINE MPDF with AB if EH works for only known targets, to prevent intersectsurface!
-//-3.5 offset + 0.007 exptime = good 1-1.5m delay
-//try non shotshell parent (cratereffects problem without expl, but 30mm AP (sim bullet?) remove hit/indirecthit and spawn submun when !alive)
-
-
-
-/*
-//works, but multiple meters behind target, if submunspeed is reduced, it falls and explodes on the ground
-class RC_B_30mm_MPAB_Sub: RC_B_30mm_MPAB_T_R
-{
-	explosionTime=0.0001;	//0=continues as projectile (not exploding), there is prob a low cap like 0.1s as it falls with 0 speed and explodes delayed
-	//timeToLive=0;
-	//simulation="shotrocket";
-};
-class RC_B_30mm_CfgAB2_T_R: RC_B_30mm_CfgAB_Base
-{
-	triggerDistance=4.5;
-	submunitionAmmo="RC_B_30mm_MPAB_Sub";
-	//submunitionParentSpeedCoef=0;
-	//submunitionInitSpeed=1;
-	//deleteParentWhenTriggered=1;	//same effect when activated, just with out stray continuing main pr
-};
-*/
-/*
-works well, but penetrator not triggered if main round lacks triggeronimpact, but non of both exploding if it has tOimp but hits ground far before selected target
-class RC_B_30mm_MPAB_Sub: RC_B_30mm_MPAB_T_R
-{
-	simulationStep=0.001;
-	explosionTime=0.0001;
-	//triggerTime=0.0001;
-	//timeToLive=0;
-	//simulation="shotrocket";	//doesnt spawn submun, likely as timetolive doesnt trigger submun
-	triggerOnImpact=1;
-};
-class RC_B_30mm_CfgAB2_T_R: RC_B_30mm_CfgAB_Base
-{
-	simulationStep=0.001;
-	triggerDistance=4.5;
-	submunitionAmmo="RC_B_30mm_MPAB_Sub";
-	//submunitionParentSpeedCoef=0;
-	//submunitionInitSpeed=1;
-	deleteParentWhenTriggered=1;
-	triggerOnImpact=1;
-};
-*/
 
 
 class RC_B_40mm_MPAB_T_R: B_40mm_GPR_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\MP.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_40mm";
 	indirectHit=8;
 	indirectHitRange=5;
@@ -1401,7 +1290,7 @@ class RC_B_40mm_MPAB_QF_T_Y: RC_B_40mm_MPAB_QF_T_R
 
 class RC_B_50mm_MPAB_T_R: B_40mm_GPR_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\MP.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_50mm";
 	hit=110
 	indirectHit=12;
@@ -1434,7 +1323,7 @@ class RC_B_50mm_MPAB_QF_T_Y: RC_B_50mm_MPAB_QF_T_R
 //HEAB
 class RC_B_30mm_HEAB_T_R: B_30mm_HE_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\HE.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE.hpp"
 	indirectHit=7;
 	indirectHitRange=4;
 	//caliber=;	//adjust for pen and ammo type
@@ -1463,7 +1352,7 @@ class RC_B_30mm_HEAB_QF_T_Y: RC_B_30mm_HEAB_QF_T_R
 
 class RC_B_40mm_HEAB_T_R: B_40mm_GPR_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\HE.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE.hpp"
 	indirectHit=8;
 	indirectHitRange=5;
 	//caliber=;	//adjust for pen and ammo type
@@ -1492,7 +1381,7 @@ class RC_B_40mm_HEAB_QF_T_Y: RC_B_40mm_HEAB_QF_T_R
 
 class RC_B_50mm_HEAB_T_R: B_40mm_GPR_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\HE.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE.hpp"
 	hit=110
 	indirectHit=11;
 	indirectHitRange=6.5;
@@ -1519,126 +1408,6 @@ class RC_B_50mm_HEAB_QF_T_Y: RC_B_50mm_HEAB_QF_T_R
 {
 	explosive=0.80000001;
 };
-
-
-/*
-class B_30mm_MP: B_30mm_HE
-{
-	hit=90;
-	indirectHit=4;
-	indirectHitRange=2;
-	warheadName="HEAT";
-	caliber=4.4000001;
-	deflecting=10;
-	explosive=0.60000002;
-	typicalSpeed=1070;
-	airFriction=-0.00036000001;
-	dangerRadiusBulletClose=16;
-	dangerRadiusHit=40;
-	suppressionRadiusBulletClose=10;
-	suppressionRadiusHit=14;
-};
-class ShellCore: Default
-{
-	simulation="shotShell";
-	simulationStep=0.050000001;
-	timeToLive=20;
-	cost=1000;
-	soundHit[]=
-	{
-		"",
-		316.22775,
-		1
-	};
-	soundFly[]=
-	{
-		"",
-		0.031622775,
-		4
-	};
-	indirectHitRange=8;
-	visibleFire=16;
-	audibleFire=16;
-	visibleFireTime=10;
-	deflecting=5;
-};
-class ShellBase: ShellCore
-{
-	supersonicCrackNear[]=
-	{
-		"A3\Sounds_F\weapons\Explosion\supersonic_crack_close",
-		0.31622776,
-		1,
-		50
-	};
-	supersonicCrackFar[]=
-	{
-		"A3\Sounds_F\weapons\Explosion\supersonic_crack_50meters",
-		0.22387211,
-		1,
-		150
-	};
-	CraterEffects="HEShellCrater";
-	CraterWaterEffects="ImpactEffectsWaterHE";
-	ExplosionEffects="HEShellExplosion";
-	visibleFire=64;
-	audibleFire=250;
-	dangerRadiusHit=-1;
-	suppressionRadiusHit=30;
-	timeToLive=360;
-	muzzleEffect="";
-	caliber=34;
-	deflecting=10;
-	deflectionDirDistribution=0.38999999;
-	penetrationDirDistribution=0.25999999;
-	whistleOnFire=2;
-	aiAmmoUsageFlags="64 + 128 + 256";
-};
-class ammo_Penetrator_Base: ShellBase
-{
-	model="\A3\weapons_f\empty";
-	caliber=40;
-	warheadName="HEAT";
-	hit=300;
-	indirectHit=0;
-	indirectHitRange=0;
-	explosive=0;
-	typicalSpeed=1000;
-	timeToLive=0.2;
-	simulationStep=0.050000001;
-	airFriction=-0.28;
-	deflecting=0;
-	deflectionDirDistribution=0;
-	penetrationDirDistribution=0;
-	aiAmmoUsageFlags="128 + 512";
-	dangerRadiusHit=60;
-	suppressionRadiusHit=30;
-	CraterEffects="ExploAmmoCrater";
-	explosionEffects="ExploAmmoExplosion";
-	whistleOnFire=1;
-	whistleDist=14;
-};
-class ammo_Penetrator_30mm: ammo_Penetrator_Base
-{
-	caliber=2;
-	hit=75;
-};
-class ammo_Penetrator_grenade_40mm: ammo_Penetrator_Base
-{
-	caliber=3.3333299;
-	hit=84;
-};
-class ammo_Penetrator_105mm: ammo_Penetrator_Base
-{
-	caliber=28.6667;
-	hit=450;
-};
-class ammo_Penetrator_120mm: ammo_Penetrator_Base
-{
-	caliber=40;
-	hit=510;
-};
-*/
 
 
 //120mm of FSV/MBT

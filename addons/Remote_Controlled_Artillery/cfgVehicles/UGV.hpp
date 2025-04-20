@@ -343,7 +343,7 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_A_base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\dev6.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 

@@ -286,6 +286,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 

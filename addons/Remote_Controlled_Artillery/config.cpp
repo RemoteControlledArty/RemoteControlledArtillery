@@ -823,6 +823,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet

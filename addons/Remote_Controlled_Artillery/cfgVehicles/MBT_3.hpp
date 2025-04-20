@@ -287,6 +287,7 @@ class RC_MBT_3_G: RC_MBT_3_G_Base
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 

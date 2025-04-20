@@ -778,6 +778,15 @@ class RC_APC_2_ReTex_D_I: RC_APC_2_ReTex_D_O
 //20mm IFV variant
 class RC_IFV_2_A_O: RC_APC_2_A_O
 {
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		};
+	};
+	
 	displayName="Otokar Arma 20mm";
 
 	class Turrets: Turrets
