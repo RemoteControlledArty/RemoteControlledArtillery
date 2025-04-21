@@ -778,6 +778,7 @@ class RC_B_40mm_MP_T_R: RC_B_30mm_MP_T_R
 	indirectHit=8;
 	indirectHitRange=5;
 	caliber=4.5999999;
+	airFriction=-0.00060000003;
 };
 class RC_B_40mm_MP_T_G: RC_B_40mm_MP_T_R
 {
@@ -815,6 +816,7 @@ class RC_B_30mm_GPR_T_R: RC_B_40mm_GPR_T_R
 	indirectHit=7;
 	indirectHitRange=4;
 	caliber=4.4000001;
+	airFriction=-0.00036000001;
 };
 class RC_B_30mm_GPR_T_G: RC_B_30mm_GPR_T_R
 {
@@ -1211,7 +1213,7 @@ class RC_Sh_120mm_MP_T_R: Sh_120mm_HEAT_MP_T_Red
 	indirectHit=50;
 	indirectHitRange=10;
 	deflecting=1;
-	tracerEndTime=4;
+	tracerEndTime=6;
 	craterEffects="AAMissileCrater";
 };
 class RC_Sh_120mm_MP_T_G: RC_Sh_120mm_MP_T_R
@@ -1300,30 +1302,30 @@ class RC_Sh_120mm_HEAB_LV_Overflight_Base: RC_Sh_120mm_HEAB_LV_Overflight_Core
 };
 class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 {
-	hit=50;
+	hit=250;
 	indirectHit=60;
 	indirectHitRange=12;
 	explosive=1;	//0.5 rare value
 
 	cost=400;
-	timeToLive=8;
+	timeToLive=2;
 
 	irLock=1;
 	airLock=1;
 	laserLock=1;
-	allowAgainstInfantry=0;
+	allowAgainstInfantry=1;
 	aiAmmoUsageFlags="64 + 128 + 256 + 512";
 
 	maneuvrability=2;	//whats optimum
 	simulationStep=0.0020000001;
 	trackOversteer=0.80000001;
-	trackLead=1;
+	trackLead=0;	//1 is op
 	maxControlRange=11;
 	model="\A3\weapons_f\launchers\nlaw\nlaw_rocket";
 	airFriction=0.090000004;
 	sideAirFriction=0.5;
 	maxSpeed=180;
-	initTime=0.005;
+	initTime=0.002;
 	thrustTime=0.80000001;
 	thrust=200;
 	fuseDistance=10;	//test
@@ -1347,10 +1349,12 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 	{
 		overflyElevation=10;
 	};
+
+	//autoSeekTarget=1;	 //steers off course sideways if no target (maybe switches to datalink targets)
 	missileLockCone=300;
 	missileKeepLockedCone=300;
-	missileLockMaxDistance=800;
-	missileLockMinDistance=20;
+	missileLockMaxDistance=200;	//800
+	missileLockMinDistance=1;	//20
 	missileLockMaxSpeed=35;
 	weaponLockSystem="1 + 2 + 4 + 16";	//edit, reduce
 	cmImmunity=1;
@@ -1365,15 +1369,15 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 				{
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=300;
+						maxRange=300;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=300;
+						maxRange=300;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -1382,18 +1386,18 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=2000;
+					typeRecognitionDistance=300;
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=300;
+						maxRange=300;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=300;
+						maxRange=300;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -1403,23 +1407,44 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
+					typeRecognitionDistance=300;
 					class AirTarget
 					{
-						minRange=600;
-						maxRange=600;
+						minRange=300;
+						maxRange=300;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=600;
-						maxRange=600;
+						minRange=300;
+						maxRange=300;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					maxTrackableSpeed=120;
-					typeRecognitionDistance=400;
 					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=180;
+					angleRangeVertical=180;
+				};
+				class ManSensorComponent: SensorTemplateMan
+				{
+					typeRecognitionDistance=300;
+					class AirTarget
+					{
+						minRange=0;
+						maxRange=0;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=300;
+						maxRange=300;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=15;
 					angleRangeHorizontal=180;
 					angleRangeVertical=180;
 				};
@@ -1454,7 +1479,7 @@ class RC_Sh_120mm_HEAB_LV_indirect_T_R: Sh_120mm_HE
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AB.hpp"
 	submunitionAmmo="RC_Sh_120mm_HEAB_LV_Overflight";
 
-	triggerDistance=40;
+	triggerDistance=50;	//is too low at 50m and collides with cover, due to FCS inaccuracy at low velocity
 	deleteParentWhenTriggered=1;
 
 	explosive=1;			//default 1, likely removes hit value, >0.7 does not penetrate light cover, <0.7 does, 1 is for triggering the spawn of delayed fuze submunition with <0.7 and timer
@@ -1481,14 +1506,28 @@ class RC_Sh_120mm_HEAB_LV_indirect_T_R: Sh_120mm_HE
 	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
 	*/
 };
-class RC_Sh_120mm_HEAB_LV_indirect_T_G: RC_Sh_120mm_HEAB_LV_indirect_T_R
+class RC_Sh_120mm_HEAB_LV_indirect2_T_R: Sh_120mm_HE
 {
-	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+	airFriction=0;
+	sideairFriction=0;
+
+	//explosive=1;			//default 1, likely removes hit value, >0.7 does not penetrate light cover, <0.7 does, 1 is for triggering the spawn of delayed fuze submunition with <0.7 and timer
+	hit=250;
+	indirectHit=80;
+	indirectHitRange=12;
+	//typicalSpeed=1400;
+
+	aiAmmoUsageFlags="64 + 128 + 256";
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	deflecting=1;
+	tracerEndTime=15;
+	craterEffects="AAMissileCrater";
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
 };
-class RC_Sh_120mm_HEAB_LV_indirect_T_Y: RC_Sh_120mm_HEAB_LV_indirect_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
-};
+class RC_Sh_120mm_HEAB_LV_indirect_T_G: RC_Sh_120mm_HEAB_LV_indirect_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_120mm_HEAB_LV_indirect_T_Y: RC_Sh_120mm_HEAB_LV_indirect_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 class Sh_120mm_APFSDS_Tracer_Red;
@@ -1499,14 +1538,8 @@ class RC_Sh_120mm_APFSDS_T_R: Sh_120mm_APFSDS_Tracer_Red
 	airLock=1;
 	tracerEndTime=4;
 };
-class RC_Sh_120mm_APFSDS_T_G: RC_Sh_120mm_APFSDS_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
-};
-class RC_Sh_120mm_APFSDS_T_Y: RC_Sh_120mm_APFSDS_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
-};
+class RC_Sh_120mm_APFSDS_T_G: RC_Sh_120mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_120mm_APFSDS_T_Y: RC_Sh_120mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 class Sh_125mm_HEAT_T_Red;
@@ -1519,17 +1552,11 @@ class RC_Sh_125mm_MP_T_R: Sh_125mm_HEAT_T_Red
 	indirectHit=50;
 	indirectHitRange=10;
 	deflecting=1;
-	tracerEndTime=4;
+	tracerEndTime=6;
 	craterEffects="AAMissileCrater";
 };
-class RC_Sh_125mm_MP_T_G: RC_Sh_125mm_MP_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";
-};
-class RC_Sh_125mm_MP_T_Y: RC_Sh_125mm_MP_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\shell_tracer_yellow";
-};
+class RC_Sh_125mm_MP_T_G: RC_Sh_125mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";};
+class RC_Sh_125mm_MP_T_Y: RC_Sh_125mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\shell_tracer_yellow";};
 class Sh_125mm_APFSDS_T_Red;
 class RC_Sh_125mm_APFSDS_T_R: Sh_125mm_APFSDS_T_Red
 {
@@ -1538,14 +1565,8 @@ class RC_Sh_125mm_APFSDS_T_R: Sh_125mm_APFSDS_T_Red
 	airLock=1;
 	tracerEndTime=4;
 };
-class RC_Sh_125mm_APFSDS_T_G: RC_Sh_125mm_APFSDS_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
-};
-class RC_Sh_125mm_APFSDS_T_Y: RC_Sh_125mm_APFSDS_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
-};
+class RC_Sh_125mm_APFSDS_T_G: RC_Sh_125mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_125mm_APFSDS_T_Y: RC_Sh_125mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 //class ammo_Penetrator_Base;
@@ -1562,26 +1583,130 @@ class M_Titan_AT_long_Base: M_Titan_AT_long
 };
 class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 {
-	submunitionAmmo="RC_ammo_Penetrator_MP";
+	//submunitionAmmo="RC_ammo_Penetrator_MP";
+
+	//*
+	submunitionAmmo="RC_ammo_Penetrator_AB_120mm";
+	submunitionDirectionType="SubmunitionTargetDirection";
+	proximityExplosionDistance=30;
+	triggerDistance=30;
+	//*/
+
 	indirectHit=250;
 	indirectHitRange=6;
+
 	maxControlRange=4000;
-	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
+	missileKeepLockedCone=180;
 	missileLockMaxDistance=4000;
+
+	initTime=0.01;
 	fuseDistance=20;
 	thrust=70;
+	//thrustTime=5;		//5
 	maxSpeed=250;
 	maneuvrability=25;
-	initTime=0.01;
+	trackLead=1;
 	cameraViewAvailable=1;
+
+	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 	weaponLockSystem="2 + 4 + 16";
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	trackLead=1;
 	craterEffects="AAMissileCrater";
 
+	/*
+	thrustTime=5;
+	thrust=45;
+	*/
+
+	//Titan
+	/*
+	simulationStep=0.0020000001;
+	initTime=0.25;
+	trackOversteer=1.5;
+	trackLead=0.89999998;
+	timeToLive=22;
+	maneuvrability=20;
+	airFriction=0.085000001;
+	sideAirFriction=1;
+	maxSpeed=180;
+	typicalSpeed=160;
+	thrustTime=5;
+	thrust=45;
+	fuseDistance=50;
+	effectsMissile="missile2";
+	whistleDist=4;
+	airLock=1;
+	lockType=0;
+	missileLockCone=4.5;
+	missileKeepLockedCone=160;
+	missileLockMaxDistance=2000;
+	missileLockMinDistance=50;
+	missileLockMaxSpeed=35;
+	manualControl=1;
+	missileManualControlCone=45;
+	maxControlRange=2000;
+	weaponLockSystem="2 + 16";
+	cmImmunity=0.40000001;
+	flightProfiles[]=
+	{
+		"Direct",
+		"TopDown"
+	};
+	class Direct
+	{
+	};
+	class TopDown
+	{
+		ascendHeight=150;
+		descendDistance=180;
+		minDistance=180;
+		ascendAngle=30;
+	};
+	*/
+
+	//CANNON
+	/*
+	thrustTime=6;
+	thrust=40;
+	lockType=0;
+	autoSeekTarget=1;
+	lockSeekRadius=100;
+	manualControl=0;
+	missileLockCone=180;
+	missileKeepLockedCone=180;
+	missileLockMaxDistance=8000;
+	missileLockMinDistance=100;
+	missileLockMaxSpeed=35;
+	*/
+
+	//RC CANNON
+	/*
+	trackLead=1;
+	manualControl=1;
+	maneuvrability=4;
+	*/
+
+	/*
+	//MISSILECORE
+	simulation="shotMissile";
+	simulationStep=0.050000001;
+	timeToLive=20;
+	manualControl=1;
+	maxControlRange=250;
+	initTime=0.15000001;
+	thrustTime=2.5;
+	thrust=350;
+	maneuvrability=3;
+	missileLockCone=50;
+	visibleFire=32;
+	audibleFire=32;
+	visibleFireTime=20;
+	*/
+
+	/*
 	flightProfiles[]=
 	{
 		"Direct",
@@ -1593,6 +1718,17 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 		descendDistance=360;	//240
 		minDistance=50;	//240
 		ascendAngle=45;	//30
+	};
+	*/
+	flightProfiles[]=
+	{
+		"Direct",
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=100;
+		lockDistanceToTarget=150;
 	};
 
 	class Components: Components
@@ -1694,7 +1830,40 @@ class RC_IFV_AA_Base: M_Titan_AA_long
 };
 class RC_IFV_AA: RC_IFV_AA_Base
 {
+	/*
+	flightProfiles[]=
+	{
+		"Direct",
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=100;
+		lockDistanceToTarget=150;
+	};
+	//submunitionAmmo="RC_ammo_Penetrator_AB_120mm";
+	//submunitionDirectionType="SubmunitionTargetDirection";
+	proximityExplosionDistance=50;
+	triggerDistance=50;
+
+	explosive=1;
+	warheadName="HE";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	//triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	
+
+	maxControlRange=4000;
+	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
+	missileKeepLockedCone=180;
+	missileLockMaxDistance=4000;
+	*/
+
+
 	indirectHitRange=15;
+	//proximityExplosionDistance=15;
 	weaponLockSystem="2 + 4 + 16";
 	laserLock=1;
 	irLock=1;
@@ -1960,11 +2129,33 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 	trackLead=1;
 	craterEffects="AAMissileCrater";
 	weaponLockSystem="2 + 4 + 16";
+	manualControl=1;
 	missileLockMaxDistance=4000;
 	maneuvrability=4;
+	initTime=0.01;	//makes it not hit terrain infront barrel when firing NLOS from cover
+
 	flightProfiles[]=
 	{
+		"Direct",
+		"Cruise"
+	};
+	class Direct
+	{
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=100;
+		lockDistanceToTarget=300;
+	};
+
+	/*
+	flightProfiles[]=
+	{
+		"Direct",
 		"TopDown"
+	};
+	class Direct
+	{
 	};
 	class TopDown
 	{
@@ -1973,6 +2164,7 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 		minDistance=100;	//400
 		ascendAngle=45;	//25
 	};
+	*/
 
 	class Components: Components
 	{
@@ -2627,7 +2819,6 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=1000;
-
 					class AirTarget
 					{
 						minRange=1000;
@@ -2646,6 +2837,7 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 					angleRangeVertical=90;
 				};
 				/*
+				//would be too op
 				class VisualSensorComponent: SensorTemplateVisual
 				{
 					typeRecognitionDistance=10;
@@ -2669,10 +2861,30 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 					angleRangeVertical=40;
 				};
 				*/
+				class AntiRadiationSensorComponent: SensorTemplateAntiRadiation
+				{
+					typeRecognitionDistance=1000;
+					class AirTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=90;
+					angleRangeVertical=90;
+					allowsMarking=1;
+				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
 					typeRecognitionDistance=67000;
-
 					class AirTarget
 					{
 						minRange=67000;

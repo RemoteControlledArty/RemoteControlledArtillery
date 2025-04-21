@@ -790,6 +790,7 @@ class SensorTemplateVisual;
 class SensorTemplateMan;
 class SensorTemplateActiveRadar;
 class SensorTemplatePassiveRadar;
+class SensorTemplateAntiRadiation;
 
 //later required optics
 class RCWSOptics;

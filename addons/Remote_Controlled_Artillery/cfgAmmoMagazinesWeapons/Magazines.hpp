@@ -1167,11 +1167,11 @@ class RC_20Rnd_125mm_MPAB_T_Y: RC_10Rnd_125mm_MPAB_T_Y
 //add vertical guidance (not horizontal), as low velocity = armas FCS is inaccurate
 class RC_5Rnd_125mm_HEAB_LV_indirect_T_R: RC_10Rnd_125mm_MP_T_R
 {
-	ammo="RC_Sh_120mm_HEAB_LV_indirect_T_R";
+	ammo="RC_Sh_120mm_HEAB_LV_indirect2_T_R";
 	displayName="LV-HEAB indirect";
 	displayNameShort="LV-HEAB indirect";
-	//initSpeed=450;	//LV = low velocity, without airfriction 450ms = 100MIL / 5.6° at 4000m for indirect fire
-	initSpeed=500;	//LV = low velocity for indirect fire up to 4000m, unclear angle with airfriction
+	initSpeed=320;	//LV = low velocity, without airfriction 450ms = 100MIL / 5.6° at 4000m for indirect fire
+	//initSpeed=500;	//LV = low velocity for indirect fire up to 4000m, unclear angle with airfriction
 	count=5;
 };
 class RC_10Rnd_125mm_HEAB_LV_indirect_T_R: RC_5Rnd_125mm_HEAB_LV_indirect_T_R

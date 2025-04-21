@@ -260,6 +260,13 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 		"2Rnd_GAT_missiles",
 		"RC_2Rnd_IFV_AA"
 	};
+
+	//weaponLockDelay=3;	//3
+	modes[]=
+	{
+		"Player",
+		"Cruise"
+	};
 	class Player: Player
 	{
 		magazineReloadTime=20;
@@ -285,6 +292,27 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 			};
 		};
 	};
+	class Cruise: Player
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+		magazineReloadTime=20;
+
+		minRange=200;
+		minRangeProbab=0.40000001;
+		midRange=1000;
+		midRangeProbab=0.89999998;
+		maxRange=5000;
+		maxRangeProbab=0.94999999;
+	};
+	/*
+	modes[]=
+	{
+		"Player",
+		"TopDown"
+	};
+	*/
+	/*
 	class TopDown: TopDown
 	{
 		magazineReloadTime=20;
@@ -310,6 +338,7 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 			};
 		};
 	};
+	*/
 };
 
 
@@ -1196,15 +1225,17 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
-	maxZeroing=4000;
+	//ballisticsComputer="1 + 2 + 16";
+	ballisticsComputer="2 + 4 + 16";
+	maxZeroing=3300;
 
 	magazineReloadTime=1; //TESTING ONLY!
 
 	class HE: HE
 	{
-		ballisticsComputer="1 + 2 + 16";
-		maxZeroing=4000;
+		//ballisticsComputer="1 + 2 + 16";
+		ballisticsComputer="2 + 4 + 16";
+		maxZeroing=3300;
 
 		magazineReloadTime=1; //TESTING ONLY!
 
@@ -1248,7 +1279,7 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	class AP: AP
 	{
 		ballisticsComputer="1 + 2 + 16";
-		maxZeroing=4000;
+		maxZeroing=3300;
 		magazines[]=
 		{
 			"RC_100Rnd_30mm_APFSDS_T_R",
@@ -1272,12 +1303,12 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	ballisticsComputer="1 + 2 + 16";
-	maxZeroing=4000;
+	maxZeroing=3300;
 
 	class HE: HE
 	{
 		ballisticsComputer="1 + 2 + 16";
-		maxZeroing=4000;
+		maxZeroing=3300;
 		magazines[]=
 		{
 			"RC_100Rnd_30mm_MP_T_R",
@@ -1292,7 +1323,7 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 	class AP: AP
 	{
 		ballisticsComputer="1 + 2 + 16";
-		maxZeroing=4000;
+		maxZeroing=3300;
 		magazines[]=
 		{
 			"RC_100Rnd_30mm_APFSDS_T_R",
@@ -1315,12 +1346,12 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	ballisticsComputer="1 + 2 + 16";
-	maxZeroing=4000;
+	maxZeroing=3800;
 
 	class HE: HE
 	{
 		ballisticsComputer="1 + 2 + 16";
-		maxZeroing=4000;
+		maxZeroing=3800;
 		magazines[]=
 		{
 			"RC_50Rnd_40mm_MP_T_R",
@@ -1335,7 +1366,7 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	class AP: AP
 	{
 		ballisticsComputer="1 + 2 + 16";
-		maxZeroing=4000;
+		maxZeroing=3800;
 		magazines[]=
 		{
 			"RC_50Rnd_40mm_APFSDS_T_R",
@@ -1353,7 +1384,7 @@ class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	ballisticsComputer="1 + 2 + 16";
-	maxZeroing=4000;
+	maxZeroing=3300;
 
 	magazines[]=
 	{
@@ -1370,7 +1401,11 @@ class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
 
 //120mm direct fire
 class cannon_120mm;
-class RC_cannon_120mm: cannon_120mm
+class RC_cannon_120mm_base: cannon_120mm
+{
+	class player;
+};
+class RC_cannon_120mm: RC_cannon_120mm_base
 {
 	displayName="120mm";
 	canLock=2;
@@ -1424,15 +1459,47 @@ class RC_cannon_120mm: cannon_120mm
 		"RC_2Rnd_120mm_DLG_cannon_missiles",
 		"RC_1Rnd_120mm_DLG_cannon_missiles"
 	};
+	class TopDown: player
+	{
+		textureType="topDown";
+		displayName="$STR_A3_FireMode_TopDown0";
+		minRange=150;
+		minRangeProbab=0.40000001;
+		midRange=400;
+		midRangeProbab=0.94999999;
+		maxRange=4000;
+		maxRangeProbab=0.94999999;
+	};
+	class Cruise: Player
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+		minRange=150;
+		minRangeProbab=0.40000001;
+		midRange=400;
+		midRangeProbab=0.94999999;
+		maxRange=4000;
+		maxRangeProbab=0.94999999;
+	};
+	modes[]=
+	{
+		"player",
+		"Cruise",
+		"topDown",
+		"close",
+		"short",
+		"medium",
+		"far"
+	};
 };
 
 
 class cannon_125mm_advanced;
-class cannon_125mm_advanced_base: cannon_125mm_advanced
+class RC_cannon_125mm_advanced_base: cannon_125mm_advanced
 {
 	class player;
 };
-class RC_cannon_125mm_advanced: cannon_125mm_advanced_base
+class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 {
 	displayName="125mm";
 	canLock=2;
@@ -1480,7 +1547,6 @@ class RC_cannon_125mm_advanced: cannon_125mm_advanced_base
 		"RC_3Rnd_125mm_DLG_cannon_missiles",
 		"4Rnd_125mm_cannon_missiles"
 	};
-
 	class TopDown: player
 	{
 		textureType="topDown";
@@ -1489,13 +1555,24 @@ class RC_cannon_125mm_advanced: cannon_125mm_advanced_base
 		minRangeProbab=0.40000001;
 		midRange=400;
 		midRangeProbab=0.94999999;
-		maxRange=8000;
+		maxRange=4000;
 		maxRangeProbab=0.94999999;
 	};
-
+	class Cruise: Player
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+		minRange=150;
+		minRangeProbab=0.40000001;
+		midRange=400;
+		midRangeProbab=0.94999999;
+		maxRange=4000;
+		maxRangeProbab=0.94999999;
+	};
 	modes[]=
 	{
 		"player",
+		"Cruise",
 		"topDown",
 		"close",
 		"short",
