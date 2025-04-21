@@ -1222,11 +1222,10 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 			"RC_100Rnd_30mm_MPpen_T_R",
 			"RC_100Rnd_30mm_MPpen_T_G",
 			"RC_100Rnd_30mm_MPpen_T_Y",
-
-			/*
 			"RC_100Rnd_30mm_MPAB_QF_T_R",
 			"RC_100Rnd_30mm_MPAB_QF_T_G",
 			"RC_100Rnd_30mm_MPAB_QF_T_Y",
+			/*
 			"RC_100Rnd_30mm_HEAB_T_R",
 			"RC_100Rnd_30mm_HEAB_T_G",
 			"RC_100Rnd_30mm_HEAB_T_Y",
