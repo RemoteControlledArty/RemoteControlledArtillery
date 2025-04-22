@@ -1225,16 +1225,16 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	//ballisticsComputer="1 + 2 + 16";
-	ballisticsComputer="2 + 4 + 16";
+	ballisticsComputer="1 + 2 + 16";
+	//ballisticsComputer="2 + 4 + 16";
 	maxZeroing=3300;
 
 	magazineReloadTime=1; //TESTING ONLY!
 
 	class HE: HE
 	{
-		//ballisticsComputer="1 + 2 + 16";
-		ballisticsComputer="2 + 4 + 16";
+		ballisticsComputer="1 + 2 + 16";
+		//ballisticsComputer="2 + 4 + 16";
 		maxZeroing=3300;
 
 		magazineReloadTime=1; //TESTING ONLY!
