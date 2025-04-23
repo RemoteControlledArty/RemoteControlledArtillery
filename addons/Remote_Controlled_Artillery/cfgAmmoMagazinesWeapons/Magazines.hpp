@@ -835,7 +835,7 @@ class RC_2Rnd_IFV_MP_NLOS: 2Rnd_GAT_missiles
 	count=2;
 	displayName="4km NLOS ATGM";
 	displayNameShort="NLOS ATGM";
-	ammo="RC_IFV_MP_NLOS";
+	ammo="RC_IFV_MP_NLOS";	//RC_IFV_MP_NLOS
 };
 class RC_4Rnd_IFV_MP_NLOS: RC_2Rnd_IFV_MP_NLOS
 {

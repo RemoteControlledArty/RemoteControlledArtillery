@@ -1308,7 +1308,7 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 	explosive=1;	//0.5 rare value
 
 	cost=400;
-	timeToLive=2;
+	timeToLive=20;	//2
 
 	irLock=1;
 	airLock=1;
@@ -1327,7 +1327,7 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 	maxSpeed=180;
 	initTime=0.002;
 	thrustTime=0.80000001;
-	thrust=200;
+	thrust=70;	//200
 	fuseDistance=10;	//test
 
 	//submunitionAmmo="RC_ammo_Penetrator_AB_120mm";	//works like a charm, but is completely op, make seperate version
@@ -1341,13 +1341,26 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 	proximityExplosionDistance=12;
 	deleteParentWhenTriggered=0;
 
+	/*
 	flightProfiles[]=
 	{
 		"Overfly"
 	};
+	*/
+	/*
 	class Overfly
 	{
 		overflyElevation=10;
+	};
+	*/
+	flightProfiles[]=
+	{
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=10;
+		lockDistanceToTarget=20;
 	};
 
 	//autoSeekTarget=1;	 //steers off course sideways if no target (maybe switches to datalink targets)
@@ -1605,7 +1618,7 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 	thrust=70;
 	//thrustTime=5;		//5
 	maxSpeed=250;
-	maneuvrability=25;
+	maneuvrability=25;	//25
 	trackLead=1;
 	cameraViewAvailable=1;
 
