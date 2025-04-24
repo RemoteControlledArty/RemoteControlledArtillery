@@ -55,9 +55,9 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 			};
 			magazines[]=
 			{
-				"RC_40Rnd_20mm_HEAB_T_R",
-				"RC_40Rnd_20mm_HEAB_T_R",
-				"RC_40Rnd_20mm_HEAB_T_R",
+				"RC_40Rnd_20mm_HEAB_DF_T_R",
+				"RC_40Rnd_20mm_HEAB_DF_T_R",
+				"RC_40Rnd_20mm_HEAB_DF_T_R",
 				"RC_40Rnd_20mm_cUAS",
 				"RC_40Rnd_20mm_cUAS",
 				"RC_40Rnd_20mm_cUAS"

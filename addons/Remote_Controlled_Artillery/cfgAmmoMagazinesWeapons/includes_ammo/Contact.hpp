@@ -1,2 +1,1 @@
-//simulationStep=0.0020000001;		//1.66m  , bullet default 0.050000001; would be 50m which doesnt seem to be the case, engine very reliably triggers despite normal simulationStep for shotSubmunitions triggerDistance
 simulation="shotShell";

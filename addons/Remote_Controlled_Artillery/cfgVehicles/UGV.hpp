@@ -463,9 +463,9 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_A_base
 			};
 			magazines[]=
 			{
-				"RC_50Rnd_20mm_HEAB_T_R",
-				"RC_50Rnd_20mm_HEAB_T_R",
-				"RC_50Rnd_20mm_HEAB_T_R",
+				"RC_50Rnd_20mm_HEAB_DF_T_R",
+				"RC_50Rnd_20mm_HEAB_DF_T_R",
+				"RC_50Rnd_20mm_HEAB_DF_T_R",
 				"RC_50Rnd_20mm_cUAS",
 				"RC_200Rnd_127x99_SLAP_T_R",
 				"RC_200Rnd_127x99_SLAP_T_R"

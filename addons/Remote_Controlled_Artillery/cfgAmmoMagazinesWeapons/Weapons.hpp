@@ -774,13 +774,13 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	ballisticsComputer="1 + 2 + 16";
-	maxZeroing=4000;
+	//maxZeroing=4000;
 
 	class HE: HE
 	{
 		displayName="20mm AC";
 		magazineReloadTime=20;
-		maxZeroing=4000;
+		maxZeroing=3300;
 		ballisticsComputer="1 + 2 + 16";
 
 		magazines[]=
@@ -842,14 +842,14 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	ballisticsComputer="1 + 2 + 16";
-	maxZeroing=4000;
+	//maxZeroing=4000;
 	FCSMaxLeadSpeed=30.555599;
 
 	class HE: HE
 	{
 		displayName="20mm AC";
 		magazineReloadTime=15;
-		maxZeroing=4000;
+		maxZeroing=3300;
 		ballisticsComputer="1 + 2 + 16";
 
 		magazines[]=
@@ -911,7 +911,7 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 		displayName="20mm C-UAS";
 		canLock=2;
 		FCSZeroingDelay=0.5;
-		maxZeroing=4000;
+		maxZeroing=3300;
 		FCSMaxLeadSpeed=30.555599;
 
 		reloadTime=0.3;
@@ -1085,11 +1085,16 @@ class RC_GMG_20mm_cUAS: RC_autocannon_Base_F
 
 	magazines[]=
 	{
+		"RC_40Rnd_20mm_HEAB_DF_T_R",
+		"RC_40Rnd_20mm_HEAB_DF_T_G",
+		"RC_40Rnd_20mm_HEAB_DF_T_Y",
 		"RC_40Rnd_20mm_HEAB_T_R",
 		"RC_40Rnd_20mm_HEAB_T_G",
 		"RC_40Rnd_20mm_HEAB_T_Y",
 		"RC_40Rnd_20mm_cUAS",
-		"RC_40Rnd_20mm_AP_T_W"
+		"RC_40Rnd_20mm_AP_T_R",
+		"RC_40Rnd_20mm_AP_T_G",
+		"RC_40Rnd_20mm_AP_T_Y"
 	};
 	modes[]=
 	{
@@ -1201,6 +1206,9 @@ class RC_UGV_20mm_cUAS: RC_GMG_20mm_cUAS
 {
 	magazines[]=
 	{
+		"RC_50Rnd_20mm_HEAB_DF_T_R",
+		"RC_50Rnd_20mm_HEAB_DF_T_G",
+		"RC_50Rnd_20mm_HEAB_DF_T_Y",
 		"RC_50Rnd_20mm_HEAB_T_R",
 		"RC_50Rnd_20mm_HEAB_T_G",
 		"RC_50Rnd_20mm_HEAB_T_Y",
@@ -1279,7 +1287,7 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	class AP: AP
 	{
 		ballisticsComputer="1 + 2 + 16";
-		maxZeroing=3300;
+		maxZeroing=4000;
 		magazines[]=
 		{
 			"RC_100Rnd_30mm_APFSDS_T_R",
@@ -1303,7 +1311,7 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	ballisticsComputer="1 + 2 + 16";
-	maxZeroing=3300;
+	//maxZeroing=3300;
 
 	class HE: HE
 	{
@@ -1323,7 +1331,7 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 	class AP: AP
 	{
 		ballisticsComputer="1 + 2 + 16";
-		maxZeroing=3300;
+		maxZeroing=4000;
 		magazines[]=
 		{
 			"RC_100Rnd_30mm_APFSDS_T_R",
@@ -1346,7 +1354,7 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	ballisticsComputer="1 + 2 + 16";
-	maxZeroing=3800;
+	//maxZeroing=3800;
 
 	class HE: HE
 	{
@@ -1366,7 +1374,7 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	class AP: AP
 	{
 		ballisticsComputer="1 + 2 + 16";
-		maxZeroing=3800;
+		maxZeroing=4000;
 		magazines[]=
 		{
 			"RC_50Rnd_40mm_APFSDS_T_R",
