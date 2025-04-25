@@ -107,9 +107,6 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-
-				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
-
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=6000;
@@ -135,12 +132,12 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=500;
+					typeRecognitionDistance=600;
 
 					class AirTarget
 					{
-						minRange=500;
-						maxRange=500;
+						minRange=600;
+						maxRange=600;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -157,6 +154,7 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 					angleRangeVertical=360;
 					animDirection="mainGun";
 				};
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
 	};
@@ -194,16 +192,52 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerCompartments="Compartment2";
+			turretInfoType="RscOptics_crows";
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			stabilizedInAxes=3;
 
-			class ViewOptics: ViewOptics
+			weapons[]=
 			{
-				//directionStabilized=1;	//sadly creates aiming problems
+				"RC_HMG_127x99",
+				"RC_70mm_AA_Missile_Launcher",
+				"SmokeLauncher"
+			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Wiesel_AA_red.hpp"
+
+			/*
+			class ViewOptics: RCWSOptics
+			{
+				visionMode[]=
+				{
+					"Normal",
+					"NVG",
+					"TI"
+				};
+				thermalMode[]={0};
+				gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
 				initFov=0.9;
 				minFov=0.0166;
 				maxFov=0.9;
+			};
+			*/
+
+			class OpticsIn
+			{
+				class ViewOptics: RCWSOptics
+				{
+					visionMode[]=
+					{
+						"Normal",
+						"NVG",
+						"TI"
+					};
+					thermalMode[]={0};
+					gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
+					initFov=0.9;
+					minFov=0.0166;
+					maxFov=0.9;
+				};
 			};
 
 			class Components: Components
@@ -216,7 +250,7 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={8000,4000,2000,1000,500};
+							range[]={8000,4000,2000,1000,600};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -230,7 +264,7 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={500,1000,2000,4000,8000};
+							range[]={600,1000,2000,4000,8000};
 							resource="RscCustomInfoSensors";
 						};
 						class EmptyDisplay
@@ -537,7 +571,7 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={8000,4000,2000,1000,500};
+							range[]={8000,4000,2000,1000,600};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -551,7 +585,7 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={500,1000,2000,4000,8000};
+							range[]={600,1000,2000,4000,8000};
 							resource="RscCustomInfoSensors";
 						};
 						class EmptyDisplay
@@ -707,7 +741,7 @@ class RC_Wiesel_Radar_manned_WD: RC_Wiesel_Radar_WD_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={500,1000,2000,4000,8000};
+							range[]={600,1000,2000,4000,8000};
 							resource="RscCustomInfoSensors";
 						};
 						class UAVFeedDisplay
@@ -1111,6 +1145,7 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerCompartments="Compartment2";
 			stabilizedInAxes=3;
+			maxElev=55;
 
 			weapons[]=
 			{
@@ -1139,7 +1174,7 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
+							range[]={4000,2000,1000,400};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -1153,7 +1188,7 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={500,1000,2000,4000};
+							range[]={400,1000,2000,4000};
 							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
@@ -1473,6 +1508,7 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerCompartments="Compartment2";
 			stabilizedInAxes=3;
+			maxElev=80;	//of 90°: 67.5 = 3/4, 72 = 4/5
 
 			weapons[]=
 			{
@@ -1501,7 +1537,7 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
+							range[]={4000,2000,1000,400};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -1515,7 +1551,7 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={500,1000,2000,4000};
+							range[]={400,1000,2000,4000};
 							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
@@ -1701,7 +1737,7 @@ class RC_Wiesel_cUAS_WD_Base: RC_Wiesel_AC_WD_Base
 	{
 		class MainTurret: MainTurret
 		{	
-			maxElev=80;	//of 90° -> 67.5 = 3/4, 72 = 4/5
+			maxElev=80;	//of 90°: 67.5 = 3/4, 72 = 4/5
 
 			weapons[]=
 			{
@@ -1953,6 +1989,15 @@ class RC_Wiesel_cUAS_WD_manned: RC_Wiesel_cUAS_WD_Base
 							range[]={4000,1200,600};
 							resource="RscCustomInfoSensors";
 						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -1964,7 +2009,7 @@ class RC_Wiesel_cUAS_WD_manned: RC_Wiesel_cUAS_WD_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={600};
+							range[]={600,1200,4000};
 							resource="RscCustomInfoSensors";
 						};
 						class UAVFeedDisplay

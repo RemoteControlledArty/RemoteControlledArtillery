@@ -341,6 +341,42 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	*/
 };
 
+class missiles_SAAMI;
+/*
+class RC_70mm_AA_Missile_Launcher_Base: missiles_SAAMI
+{
+	class Player;
+};
+*/
+class RC_70mm_AA_Missile_Launcher: missiles_SAAMI
+{
+	scope=1;
+	canLock=2;
+	weaponLockSystem="1 + 2 + 4 + 16";
+	displayName="70mm AA";
+	displayNameShort="70mm AA";
+	//magazineReloadTime=20;
+	magazines[]=
+	{
+		"RC_4Rnd_70mm_AA",
+		"4Rnd_70mm_SAAMI_missiles"
+	};
+	/*
+	modes[]=
+	{
+		"Player",
+		"Cruise"
+	};
+	class Player: Player
+	{
+	};
+	class Cruise: Player
+	{
+		displayName="$STR_A3_firemode_terrain0";
+	};
+	*/
+};
+
 
 //Vehicle MMG's
 class HMG_127;

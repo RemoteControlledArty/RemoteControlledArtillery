@@ -177,8 +177,7 @@ class RC_60Rnd_20mm_cUAS: 300Rnd_20mm_shells
 	ammo="RC_20mm_cUAS";
 	displayName="20mm C-UAS";
 	displayNameShort="20mm C-UAS";
-	initSpeed=1070;
-	maxLeadSpeed=694.44397;
+	initSpeed=1044;
 	tracersEvery=1;
 	count=60;
 };
@@ -202,15 +201,13 @@ class RC_60Rnd_30mm_cUAS: RC_60Rnd_20mm_cUAS
 };
 
 
-class RC_200Rnd_127x99_cUAS: RC_40Rnd_20mm_cUAS
+class RC_200Rnd_127x99_cUAS: 200Rnd_127x99_mag_Tracer_Red
 {
+	author="Ascent";
 	ammo="RC_127x99mm_cUAS";
 	displayName="12.7mm C-UAS";
 	displayNameShort="12.7mm C-UAS";
-	count=200;
-	initSpeed=880;
-	maxLeadSpeed=694.44397;
-	muzzleImpulseFactor[]={0.1,0.1};
+	initSpeed=950;
 };
 class RC_150Rnd_127x99_cUAS: RC_200Rnd_127x99_cUAS {count=150;};
 class RC_100Rnd_127x99_cUAS: RC_200Rnd_127x99_cUAS {count=100;};
@@ -224,9 +221,7 @@ class RC_200Rnd_338_cUAS: RC_200Rnd_338_T_R
 	ammo="RC_338_cUAS";
 	displayName=".338 C-UAS";
 	displayNameShort=".338 C-UAS";
-	initSpeed=880;
-	maxLeadSpeed=694.44397;
-	muzzleImpulseFactor[]={0.1,0.1};
+	initSpeed=950;
 };
 class RC_150Rnd_338_cUAS: RC_200Rnd_338_cUAS {count=150;};
 class RC_100Rnd_338_cUAS: RC_200Rnd_338_cUAS {count=100;};
@@ -276,7 +271,7 @@ class 100Rnd_20mm_HE_T_R: 100Rnd_20mm_AP_T_R
 	ammo="RC_20mm_HE_T_R";
 	displayName="20mm HE-T";
 	displayNameShort="20mm HE-T";
-	initSpeed=1070;
+	initSpeed=1044;
 };
 class 100Rnd_20mm_HE_T_G: 100Rnd_20mm_HE_T_R {ammo="RC_20mm_HE_T_G";};
 class 100Rnd_20mm_HE_T_Y: 100Rnd_20mm_HE_T_R {ammo="RC_20mm_HE_T_Y";};
@@ -410,7 +405,7 @@ class RC_40Rnd_20mm_HEAB_DF_T_Y: RC_40Rnd_20mm_HEAB_DF_T_R {ammo="RC_B_20mm_HEAB
 
 class RC_60Rnd_20mm_HEAB_T_R: RC_60Rnd_20mm_cUAS
 {
-	ammo="RC_20mm_HEAB_T_R";
+	ammo="RC_B_20mm_HEAB_DF_T_R";
 	displayName="20mm HE-AB";
 	displayNameShort="20mm HE-AB";
 	count=60;
@@ -426,7 +421,7 @@ class RC_50Rnd_20mm_HEAB_T_G: RC_50Rnd_20mm_HEAB_T_R {ammo="RC_20mm_HEAB_T_G";};
 class RC_50Rnd_20mm_HEAB_T_Y: RC_50Rnd_20mm_HEAB_T_R {ammo="RC_20mm_HEAB_T_Y";};
 class RC_40Rnd_20mm_HEAB_T_R: RC_40Rnd_20mm_cUAS
 {
-	ammo="RC_20mm_HEAB_T_R";
+	ammo="RC_B_20mm_HEAB_DF_T_R";
 	displayName="20mm HE-AB";
 	displayNameShort="20mm HE-AB";
 	muzzleImpulseFactor[]={0.05,0.05};
@@ -683,6 +678,15 @@ class RC_2Rnd_IFV_AA: 4Rnd_Titan_long_missiles
 	ammo="RC_IFV_AA";
 };
 class RC_4Rnd_IFV_AA: RC_2Rnd_IFV_AA {count=4;};
+
+
+class 4Rnd_70mm_SAAMI_missiles;
+class RC_4Rnd_70mm_AA: 4Rnd_70mm_SAAMI_missiles
+{
+	displayName="70mm SAAMI+";
+	displayNameShort="70mm SAAMI+";
+	ammo="RC_70mm_AA";
+};
 
 
 /*

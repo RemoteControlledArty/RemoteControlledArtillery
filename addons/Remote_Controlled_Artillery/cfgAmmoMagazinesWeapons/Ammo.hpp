@@ -323,461 +323,86 @@ class RC_20mm_APFSDS_AA_T_G: RC_20mm_APFSDS_AA_T_R {model="\A3\Weapons_f\Data\bu
 class RC_20mm_APFSDS_AA_T_Y: RC_20mm_APFSDS_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-/*
-class B_35mm_AA: BulletBase
-	{
-		hit=60;
-		indirectHit=25;
-		indirectHitRange=2.4000001;
-		warheadName="HE";
-		visibleFire=38;
-		audibleFire=200;
-		visibleFireTime=5;
-		dangerRadiusBulletClose=20;
-		dangerRadiusHit=60;
-		suppressionRadiusBulletClose=12;
-		suppressionRadiusHit=24;
-		deflecting=0;
-		explosive=0.60000002;
-		airLock=1;
-		aiAmmoUsageFlags="64 + 128 + 256";
-		cost=42;
-		CraterEffects="ExploAmmoCrater";
-		explosionEffects="ExploAmmoExplosion";
-		explosionSoundEffect="DefaultExplosion";
-		model="\A3\Weapons_f\Data\bullettracer\tracer_white";
-		tracerScale=1.85;
-		tracerStartTime=0.1;
-		tracerEndTime=2;
-		airFriction=-0.00050000002;
-		muzzleEffect="";
-		caliber=2.8;
-		typicalSpeed=960;
-		soundHit1[]=
-		{
-			"A3\Sounds_F\arsenal\explosives\shells\30mm40mm_shell_explosion_01",
-			1.7782794,
-			1,
-			1600
-		};
-		soundHit2[]=
-		{
-			"A3\Sounds_F\arsenal\explosives\shells\30mm40mm_shell_explosion_02",
-			1.7782794,
-			1,
-			1600
-		};
-		soundHit3[]=
-		{
-			"A3\Sounds_F\arsenal\explosives\shells\30mm40mm_shell_explosion_03",
-			1.7782794,
-			1,
-			1600
-		};
-		soundHit4[]=
-		{
-			"A3\Sounds_F\arsenal\explosives\shells\30mm40mm_shell_explosion_04",
-			1.7782794,
-			1,
-			1600
-		};
-		multiSoundHit[]=
-		{
-			"soundHit1",
-			0.25,
-			"soundHit2",
-			0.25,
-			"soundHit3",
-			0.25,
-			"soundHit4",
-			0.25
-		};
-		class CamShakeExplode
-		{
-			power=3.5999999;
-			duration=0.80000001;
-			frequency=20;
-			distance=41.941101;
-		};
-		class CamShakeHit
-		{
-			power=18;
-			duration=0.40000001;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=1.49535;
-			duration=0.40000001;
-			frequency=20;
-			distance=17.8885;
-		};
-		class CamShakePlayerFire
-		{
-			power=0.001;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-	};
-*/
 class BulletBase;
-class RC_cUAS_Sub: BulletBase
+class RC_cUAS_Pellet: BulletBase
 {
-	hit=6;	//4 - 8
+	hit=6;	//4-8
 	indirectHit=0;
-	indirectHitRange=0;	//0.15 - 0.6	//test 0
+	indirectHitRange=0;	//0.15-0.6
 	typicalSpeed=360;
-	deflecting=30;	//50
-	//airFriction=-0.00050000002;
-	airFriction=-0.006;
+	deflecting=30;	//30-50
+	airFriction=-0.005;
 };
-class B_35mm_AA;
-class RC_20mm_cUAS: B_35mm_AA
+class RC_20mm_cUAS: B_20mm_Tracer_Red
 {
-	simulation="shotSubmunitions";
-	submunitionAmmo="RC_cUAS_Sub";
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
+	submunitionConeAngle="0.4";		//0.4deg = 600m 1/3 shots should hit with a spread of 4.16m, 500m 2/3 should hit with a spread of 3.4m
 	submunitionConeType[]=
 	{
-		"poissondisc",	//randomcenter
+		"poissondisc",	//test randomcenter
 		64
 	};
-	submunitionConeAngle="0.4";		//0.4deg = 600m 1/3 shots should hit with a spread of 4.16m, 500m 2/3 should hit with a spread of 3.4m
-	triggerTime=0.01;
-	//airFriction=-0.00050000002;
-	airFriction=-0.006;
-	aiAmmoUsageFlags="256";
-
 	hit=30;			//test if less doesnt engage vehicles
 	indirectHit=0;
 	indirectHitRange=0;
 	cost=20;
+	/*
 	caliber=3.4000001;	//test if 1 doesnt engage helis
-
-	visibleFire=32;
-	audibleFire=200;
-	visibleFireTime=4;
-	dangerRadiusBulletClose=16;
-	dangerRadiusHit=40;
-	suppressionRadiusBulletClose=10;
-	suppressionRadiusHit=14;
-
-	explosionSoundEffect="DefaultExplosion";
-	CraterEffects="ExploAmmoCrater";
-	explosionEffects="ExploAmmoExplosion";
-	muzzleEffect="";
-
-	soundHit1[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_01",
-		1.7782794,
-		1,
-		1300
-	};
-	soundHit2[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_02",
-		1.7782794,
-		1,
-		1300
-	};
-	soundHit3[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_03",
-		1.7782794,
-		1,
-		1300
-	};
-	soundHit4[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_04",
-		1.7782794,
-		1,
-		1300
-	};
-	multiSoundHit[]=
-	{
-		"soundHit1",
-		0.25,
-		"soundHit2",
-		0.25,
-		"soundHit3",
-		0.25,
-		"soundHit4",
-		0.25
-	};
-	class CamShakeExplode
-	{
-		power=4;
-		duration=0.80000001;
-		frequency=20;
-		distance=43.7771;
-	};
-	class CamShakeHit
-	{
-		power=20;
-		duration=0.40000001;
-		frequency=20;
-		distance=1;
-	};
-	class CamShakeFire
-	{
-		power=2.1147399;
-		duration=0.80000001;
-		frequency=20;
-		distance=35.7771;
-	};
-	class CamShakePlayerFire
-	{
-		power=0.0099999998;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
-};
-class RC_20mm_HEAB_T_R: B_35mm_AA
-{
-	//test
-	/*
-	laserLock=1;
-	irLock=1;
-	airLock=1;
 	*/
-
-	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
-	aiAmmoUsageFlags="256";
-	hit=60;
-	indirectHit=6;
-	indirectHitRange=3;
-	cost=30;
-	caliber=3.4000001;
-
-	/*
-	weaponType="cannon";
-	warheadName="HE";
-	explosive=0.40000001;
-	*/
-
-	visibleFire=32;
-	audibleFire=200;
-	visibleFireTime=4;
-	dangerRadiusBulletClose=16;
-	dangerRadiusHit=40;
-	suppressionRadiusBulletClose=10;
-	suppressionRadiusHit=14;
-
-	explosionSoundEffect="DefaultExplosion";
-	CraterEffects="ExploAmmoCrater";
-	explosionEffects="ExploAmmoExplosion";
-	muzzleEffect="";
-
-	soundHit1[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_01",
-		1.7782794,
-		1,
-		1300
-	};
-	soundHit2[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_02",
-		1.7782794,
-		1,
-		1300
-	};
-	soundHit3[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_03",
-		1.7782794,
-		1,
-		1300
-	};
-	soundHit4[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_04",
-		1.7782794,
-		1,
-		1300
-	};
-	multiSoundHit[]=
-	{
-		"soundHit1",
-		0.25,
-		"soundHit2",
-		0.25,
-		"soundHit3",
-		0.25,
-		"soundHit4",
-		0.25
-	};
-	class CamShakeExplode
-	{
-		power=4;
-		duration=0.80000001;
-		frequency=20;
-		distance=43.7771;
-	};
-	class CamShakeHit
-	{
-		power=20;
-		duration=0.40000001;
-		frequency=20;
-		distance=1;
-	};
-	class CamShakeFire
-	{
-		power=2.1147399;
-		duration=0.80000001;
-		frequency=20;
-		distance=35.7771;
-	};
-	class CamShakePlayerFire
-	{
-		power=0.0099999998;
-		duration=0.1;
-		frequency=20;
-		distance=1;
-	};
 };
-class RC_20mm_HEAB_T_G: RC_20mm_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_20mm_HEAB_T_Y: RC_20mm_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
 class RC_30mm_cUAS: RC_20mm_cUAS
 {
+	submunitionConeAngle="0.4";		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
 	submunitionConeType[]=
 	{
-		"poissondisc",	//randomcenter
+		"poissondisc",
 		96
 	};
-	submunitionConeAngle="0.4";		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
 };
-class RC_127x99mm_cUAS: RC_20mm_cUAS
+class RC_40mm_cUAS: RC_20mm_cUAS
 {
-	submunitionAmmo="RC_cUAS_Sub";
+	submunitionConeAngle="0.4";		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
 	submunitionConeType[]=
 	{
-		"poissondisc",	//randomcenter
+		"poissondisc",
+		96
+	};
+};
+class RC_127x99mm_cUAS: B_127x99_Ball_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
+	submunitionConeAngle="0.384";		//20, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m
+	//submunitionConeAngle="0.421";		//24, 0.421deg = 400m 1/4 shots should hit with a spread of 2.94m
+	//submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
+	//submunitionConeAngle="0.362";		//10? 0.362deg = 300m 1/4 shots should hit with a spread of 1.9m
+	submunitionConeType[]=
+	{
+		"poissondisc",	//test randomcenter
+		20
+	};
+	//caliber=2.5999999;	//test relating vehicles
+};
+class RC_338_cUAS: B_338_NM_Ball
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
+	submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
+	//submunitionConeAngle="0.281";		//6, 0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
+	submunitionConeType[]=
+	{
+		"poissondisc",
 		10
 	};
-	submunitionConeAngle="0.272";		//0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
-	//submunitionConeAngle="0.362";		//0.362deg = 300m 1/4 shots should hit with a spread of 1.9m
-	//submunitionConeAngle="0.421";		//24, 0.421deg = 400m 1/4 shots should hit with a spread of 2.94m
-	aiAmmoUsageFlags="256";
-
-	typicalSpeed=880;
-	hit=30;			//test if less doesnt engage vehicles
-	cost=5;
-	caliber=2.6;	//test if 1 doesnt engage vehicles
-	
-	cartridge="FxCartridge_127";
-	visibleFire=8;
-	audibleFire=120;
-	dangerRadiusBulletClose=12;
-	dangerRadiusHit=16;
-	suppressionRadiusBulletClose=8;
-	suppressionRadiusHit=12;
-
-	explosionSoundEffect="DefaultExplosion";
-	CraterEffects="ExploAmmoCrater";
-	explosionEffects="ExploAmmoExplosion";
-	muzzleEffect="";
-
-	soundHit1[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_01",
-		1.7782794,
-		1,
-		1300
-	};
-	soundHit2[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_02",
-		1.7782794,
-		1,
-		1300
-	};
-	soundHit3[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_03",
-		1.7782794,
-		1,
-		1300
-	};
-	soundHit4[]=
-	{
-		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_04",
-		1.7782794,
-		1,
-		1300
-	};
-	multiSoundHit[]=
-	{
-		"soundHit1",
-		0.25,
-		"soundHit2",
-		0.25,
-		"soundHit3",
-		0.25,
-		"soundHit4",
-		0.25
-	};
-
-	class CamShakeExplode
-	{
-		power=3.6055501;
-		duration=0.80000001;
-		frequency=20;
-		distance=10.8167;
-	};
-	class CamShakeHit
-	{
-		power=13;
-		duration=0.40000001;
-		frequency=20;
-		distance=1;
-	};
-	class CamShakeFire
-	{
-		power=0;
-		duration=0;
-		frequency=0;
-		distance=0;
-	};
-	class CamShakePlayerFire
-	{
-		power=0;
-		duration=0;
-		frequency=0;
-		distance=0;
-	};
 };
-class RC_338_cUAS: RC_127x99mm_cUAS
+class RC_93x64_cUAS: B_93x64_Ball
 {
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
+	submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
+	//submunitionConeAngle="0.281";		//6, 0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
 	submunitionConeType[]=
 	{
-		"poissondisc",	//randomcenter
-		6
+		"poissondisc",
+		10
 	};
-	submunitionConeAngle="0.281";		//0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
-
-	/*
-	aiAmmoUsageFlags="256";
-
-	typicalSpeed=880;
-	hit=30;			//test if less doesnt engage vehicles
-	cost=5;
-	caliber=2.6;	//test if 1 doesnt engage vehicles
-	
-	cartridge="FxCartridge_127";
-	visibleFire=8;
-	audibleFire=120;
-	dangerRadiusBulletClose=12;
-	dangerRadiusHit=16;
-	suppressionRadiusBulletClose=8;
-	suppressionRadiusHit=12;
-	*/
 };
 
 
@@ -2038,38 +1663,6 @@ class RC_IFV_AA_Base: M_Titan_AA_long
 };
 class RC_IFV_AA: RC_IFV_AA_Base
 {
-	/*
-	flightProfiles[]=
-	{
-		"Direct",
-		"Cruise"
-	};
-	class Cruise
-	{
-		preferredFlightAltitude=100;
-		lockDistanceToTarget=150;
-	};
-	//submunitionAmmo="RC_ammo_Penetrator_AB_120mm";
-	//submunitionDirectionType="SubmunitionTargetDirection";
-	proximityExplosionDistance=50;
-	triggerDistance=50;
-
-	explosive=1;
-	warheadName="HE";
-	submunitionInitSpeed=1000;
-	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-	//triggerOnImpact=1;
-	deleteParentWhenTriggered=0;
-	
-
-	maxControlRange=4000;
-	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
-	missileKeepLockedCone=180;
-	missileLockMaxDistance=4000;
-	*/
-
-
 	indirectHitRange=15;
 	//proximityExplosionDistance=15;
 	weaponLockSystem="2 + 4 + 16";
@@ -2171,6 +1764,16 @@ class RC_IFV_AA: RC_IFV_AA_Base
 			};
 		};
 	};
+};
+
+
+class RC_70mm_AA: RC_IFV_AA
+{
+	model="\A3\Weapons_F_Tank\Ammo\Missile_SAAMI_AA_01_fly_F.p3d";
+	hit=80;
+	indirectHit=60;
+	indirectHitRange=8;
+	proximityExplosionDistance=10;
 };
 
 

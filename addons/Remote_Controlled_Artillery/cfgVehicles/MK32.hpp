@@ -1,5 +1,5 @@
 class B_GMG_01_high_F;
-class RC_cUAS_Turret_base: B_GMG_01_high_F
+class RC_cUAS_Turret_core: B_GMG_01_high_F
 {
 	class Turrets;
 	class MainTurret;
@@ -12,7 +12,7 @@ class RC_cUAS_Turret_base: B_GMG_01_high_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_cUAS_Turret: RC_cUAS_Turret_base
+class RC_cUAS_Turret_base: RC_cUAS_Turret_core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -22,21 +22,13 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 	
-	displayName="RC C-UAS Turret";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiDrone_subcat";
 	author="Ascent";
-	scope=2;
-	scopeCurator=2;
 	side=1;
-	forceInGarage=1;
-	uavCameraGunnerPos="gunnerview";
-	uavCameraGunnerDir="gunnerview";
-	crew="B_UAV_AI";
 	enableGPS=1;
 	//armor=30;	//30
 
@@ -227,6 +219,19 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 			weapon="RC_GMG_20mm_cUAS";
 		};
 	};
+};
+class RC_cUAS_Turret: RC_cUAS_Turret_base
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+
+	displayName="RC C-UAS Turret";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	uavCameraGunnerPos="gunnerview";
+	uavCameraGunnerDir="gunnerview";
+	crew="B_UAV_AI";
+	//armor=30;	//30
 
 	class assembleInfo: assembleInfo
 	{
@@ -316,5 +321,108 @@ class RC_cUAS_Turret_Bag_I: RC_cUAS_Turret_Bag
 	{
 		displayName="RC C-UAS Turret [Ind]";
 		assembleTo="RC_cUAS_Turret_I";
+	};
+};
+
+
+class RC_cUAS_Turret_manned: RC_cUAS_Turret_base
+{
+	displayName="C-UAS Turret";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	//armor=30;	//30
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			dontCreateAI=1;
+		};
+	};
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_cUAS_Turret_Bag"
+		};
+	};
+};
+class RC_cUAS_Turret_manned_O: RC_cUAS_Turret_manned
+{
+	faction="RemoteControlled_O";
+	side=0;
+
+	armor=15;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_40Rnd_20mm_HEAB_T_G",
+				"RC_40Rnd_20mm_HEAB_T_G",
+				"RC_40Rnd_20mm_HEAB_T_G",
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS"
+			};
+		};
+	};
+};
+class RC_cUAS_Turret_manned_I: RC_cUAS_Turret_manned
+{
+	faction="RemoteControlled_I";
+	side=2;
+
+	armor=15;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_40Rnd_20mm_HEAB_T_Y",
+				"RC_40Rnd_20mm_HEAB_T_Y",
+				"RC_40Rnd_20mm_HEAB_T_Y",
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS",
+				"RC_40Rnd_20mm_cUAS"
+			};
+		};
+	};
+};
+
+
+class RC_cUAS_Turret_manned_Bag: RC_cUAS_Turret_Bag
+{
+	displayName="C-UAS Turret";
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC C-UAS Turret";
+		assembleTo="RC_cUAS_Turret_manned";
+	};
+};
+class RC_cUAS_Turret_manned_Bag_O: RC_cUAS_Turret_manned_Bag
+{
+	displayName="C-UAS Turret [Opf]";
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC C-UAS Turret [Opf]";
+		assembleTo="RC_cUAS_Turret_manned_O";
+	};
+};
+class RC_cUAS_Turret_manned_Bag_I: RC_cUAS_Turret_manned_Bag
+{
+	displayName="C-UAS Turret [Ind]";
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC C-UAS Turret [Ind]";
+		assembleTo="RC_cUAS_Turret_manned_I";
 	};
 };
