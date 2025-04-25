@@ -792,6 +792,7 @@ class RC_B_30mm_MP_T_R: B_30mm_MP_Tracer_Red
 	indirectHitRange=4;
 	deflecting=1;
 	airFriction=-0.00036000001;
+	timeToLive=10;
 };
 class RC_B_30mm_MP_T_G: RC_B_30mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_MP_T_Y: RC_B_30mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -801,7 +802,6 @@ class RC_B_40mm_MP_T_R: RC_B_30mm_MP_T_R
 	indirectHit=8;
 	indirectHitRange=5;
 	caliber=4.5999999;
-	airFriction=-0.00036000001;
 };
 class RC_B_40mm_MP_T_G: RC_B_40mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_40mm_MP_T_Y: RC_B_40mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -819,6 +819,7 @@ class RC_B_40mm_GPR_T_R: B_40mm_GPR_Tracer_Red
 	caliber=4.5999999;
 	deflecting=1;
 	airFriction=-0.00036000001;
+	timeToLive=10;
 };
 class RC_B_40mm_GPR_T_G: RC_B_40mm_GPR_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_40mm_GPR_T_Y: RC_B_40mm_GPR_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -828,7 +829,6 @@ class RC_B_30mm_GPR_T_R: RC_B_40mm_GPR_T_R
 	indirectHit=7;
 	indirectHitRange=4;
 	caliber=4.4000001;
-	airFriction=-0.00036000001;
 };
 class RC_B_30mm_GPR_T_G: RC_B_30mm_GPR_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_GPR_T_Y: RC_B_30mm_GPR_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -930,9 +930,22 @@ class RC_B_20mm_HEDF_Sub: B_20mm_Tracer_Red
 	indirectHit=7;
 	indirectHitRange=4;
 };
-class RC_B_20mm_HEAB_DF_T_R: B_35mm_AA
+class RC_B_20mm_HEAB_DF_T_R: B_20mm_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
+	//irLock=1;	//not needed, airlock also lets select datalinked ground vehicles, and PREVENTS air targets from being selected
+	//laserLock=1;	//without it cant select laser targets in datalink, only when direct view selecting, but makes it not engage airtargets for whatever reason
+	airLock=1;
+
+	triggerOnImpact=1;				//otherwise would not trigger on vehicles/cover/terrain
+	submunitionCount=1;
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=1000;
+	submunitionConeAngle=0;
+	submunitionDirectionType="SubmunitionModelDirection";
+	deflecting=1;					//prevents ricochets, its a proximity fuze afterall
+	tracerEndTime=4;
+	timeToLive=10;
+	//#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AB.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\DelayedFuze.hpp"

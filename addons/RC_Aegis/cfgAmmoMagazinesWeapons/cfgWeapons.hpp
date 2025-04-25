@@ -12,9 +12,11 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	name="30mm";
+	//maxZeroing=4000;
 
 	class HE: HE
 	{
+		maxZeroing=4000;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		magazines[]=
 		{
@@ -32,6 +34,7 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 	};
 	class AP: AP
 	{
+		maxZeroing=4000;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		magazines[]=
 		{

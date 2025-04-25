@@ -781,7 +781,7 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	{
 		displayName="20mm AC";
 		magazineReloadTime=20;
-		maxZeroing=3300;
+		maxZeroing=4000;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 		magazines[]=
@@ -850,7 +850,7 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 	{
 		displayName="20mm AC";
 		magazineReloadTime=15;
-		maxZeroing=3300;
+		maxZeroing=4000;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 		magazines[]=
@@ -900,7 +900,7 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 	displayName="20mm C-UAS";
 	magazineReloadTime=15;
 	ballisticsComputer="4";	//"1 + 2 + 16"
-	//maxZeroing=3000;
+	//maxZeroing=4000;
 
 	muzzles[]=
 	{
@@ -912,7 +912,7 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 		displayName="20mm C-UAS";
 		canLock=2;
 		FCSZeroingDelay=0.5;
-		maxZeroing=3300;
+		maxZeroing=4000;
 		FCSMaxLeadSpeed=30.555599;
 
 		reloadTime=0.3;
@@ -1234,7 +1234,7 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	maxZeroing=3800;
+	maxZeroing=4000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 	magazineReloadTime=1; //TESTING ONLY!
@@ -1242,7 +1242,7 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	class HE: HE
 	{
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
-		maxZeroing=3800;
+		maxZeroing=4000;
 
 		magazineReloadTime=1; //TESTING ONLY!
 
@@ -1315,7 +1315,7 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 	class HE: HE
 	{
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
-		maxZeroing=3300;
+		maxZeroing=4000;
 		magazines[]=
 		{
 			"RC_100Rnd_30mm_MP_T_R",
@@ -1358,7 +1358,7 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	class HE: HE
 	{
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
-		maxZeroing=3800;
+		maxZeroing=4000;
 		magazines[]=
 		{
 			"RC_50Rnd_40mm_MP_T_R",
@@ -1391,7 +1391,7 @@ class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	maxZeroing=3300;
+	maxZeroing=4000;
 
 	magazines[]=
 	{

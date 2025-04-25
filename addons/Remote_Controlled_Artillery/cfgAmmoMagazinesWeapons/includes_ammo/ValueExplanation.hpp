@@ -1,6 +1,6 @@
 //can lock on datalink targets
 laserLock=1;
-irLock=1;	//not needed, airlock also lets select datalinked ground vehicles, and PREVENTS air targets from being selected
+irLock=1;
 airLock=1;
 triggerOnImpact=1;				//otherwise would not trigger on vehicles/cover/terrain
 submunitionCount=1;
