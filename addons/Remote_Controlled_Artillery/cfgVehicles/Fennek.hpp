@@ -24,6 +24,10 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -118,19 +122,19 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=500;
+					typeRecognitionDistance=400;
 
 					class AirTarget
 					{
-						minRange=500;
-						maxRange=500;
+						minRange=400;
+						maxRange=400;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=500;
-						maxRange=500;
+						minRange=0;
+						maxRange=0;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};

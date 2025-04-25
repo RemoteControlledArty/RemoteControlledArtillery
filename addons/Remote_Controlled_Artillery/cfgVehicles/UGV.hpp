@@ -29,6 +29,10 @@ class RC_GMG_UGV_A_base: RC_GMG_UGV_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -441,7 +445,6 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_A_base
 					angleRangeVertical=360;
 					animDirection="maingun";
 				};
-
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};

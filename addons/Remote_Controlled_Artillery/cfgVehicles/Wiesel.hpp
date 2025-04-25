@@ -20,6 +20,10 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -334,6 +338,10 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -397,7 +405,6 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-
 				class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 				{
 					typeRecognitionDistance=8000;
@@ -423,7 +430,6 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 					maxGroundNoiseDistance=0;
 					maxTrackableSpeed=694.44397;
 				};
-
 				class IRSensorComponent: SensorTemplateIR
 				{
 					typeRecognitionDistance=3000;
@@ -448,22 +454,21 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 					//animDirection="obsTurret";
 					animDirection="obsGun";
 				};
-
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=500;
+					typeRecognitionDistance=600;
 
 					class AirTarget
 					{
-						minRange=500;
-						maxRange=500;
+						minRange=600;
+						maxRange=600;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=500;
-						maxRange=500;
+						minRange=0;
+						maxRange=0;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
@@ -977,6 +982,10 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -1335,6 +1344,10 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -1410,7 +1423,6 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 					angleRangeVertical=20;
 					animDirection="mainGun";
 				};
-
 				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
@@ -1828,7 +1840,6 @@ class RC_Wiesel_cUAS_WD_Base: RC_Wiesel_AC_WD_Base
 					angleRangeVertical=360;
 					animDirection="mainGun";
 				};
-
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};

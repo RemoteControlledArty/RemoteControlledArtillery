@@ -274,6 +274,10 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 			getIn="_this call rhs_fnc_m2_doors";
 			getOut="_this call rhs_fnc_m2_doors";
 		};
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_Artillery
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"

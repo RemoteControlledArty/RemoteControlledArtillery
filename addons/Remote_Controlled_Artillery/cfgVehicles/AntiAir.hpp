@@ -20,6 +20,10 @@ class RC_AA_A: RC_AA_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -235,12 +239,20 @@ class RC_AA_base_HEX_O: O_APC_Tracked_02_AA_F
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
+	};
 	displayName="RC Anti-Air";
 	faction="RemoteControlled_O";
 	editorSubcategory="RC_AntiAir_subcat";

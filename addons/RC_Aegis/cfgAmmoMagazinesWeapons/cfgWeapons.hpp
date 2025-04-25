@@ -10,12 +10,12 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 {
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	name="30mm";
 
 	class HE: HE
 	{
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		magazines[]=
 		{
 			"RC_160Rnd_30mm_MP_T_R",
@@ -32,7 +32,7 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 	};
 	class AP: AP
 	{
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		magazines[]=
 		{
 			"RC_160Rnd_30mm_APFSDS_T_R",
@@ -50,7 +50,7 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 class RC_MMG_93x64_coax_ext;
 class RC_MMG_93x64_coax_ext_lxWS: RC_MMG_93x64_coax_ext
 {
-	ballisticsComputer="1 + 2 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	magazines[]=
 	{
 		"RC_1000Rnd_93x64_T_G",

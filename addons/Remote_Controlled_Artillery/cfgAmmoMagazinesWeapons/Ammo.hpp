@@ -791,6 +791,7 @@ class RC_B_30mm_MP_T_R: B_30mm_MP_Tracer_Red
 	indirectHit=7;
 	indirectHitRange=4;
 	deflecting=1;
+	airFriction=-0.00036000001;
 };
 class RC_B_30mm_MP_T_G: RC_B_30mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_MP_T_Y: RC_B_30mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -800,7 +801,7 @@ class RC_B_40mm_MP_T_R: RC_B_30mm_MP_T_R
 	indirectHit=8;
 	indirectHitRange=5;
 	caliber=4.5999999;
-	airFriction=-0.00060000003;
+	airFriction=-0.00036000001;
 };
 class RC_B_40mm_MP_T_G: RC_B_40mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_40mm_MP_T_Y: RC_B_40mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -817,6 +818,7 @@ class RC_B_40mm_GPR_T_R: B_40mm_GPR_Tracer_Red
 	indirectHitRange=5;
 	caliber=4.5999999;
 	deflecting=1;
+	airFriction=-0.00036000001;
 };
 class RC_B_40mm_GPR_T_G: RC_B_40mm_GPR_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_40mm_GPR_T_Y: RC_B_40mm_GPR_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -871,7 +873,7 @@ class RC_B_AC_Smoke: G_40mm_Smoke
 class ammo_Penetrator_Base;
 class RC_ammo_Penetrator_MPAB: ammo_Penetrator_Base
 {
-	airFriction=0;	//-0.0005 wasnt effective for it to still be effective after airbursting at given distance before target
+	airFriction=0;	//0 for it to still work with given airburst distance
 	timeToLive=0.2;
 	warheadName="HEAT";
 	explosive=0;
@@ -928,7 +930,7 @@ class RC_B_20mm_HEDF_Sub: B_20mm_Tracer_Red
 	indirectHit=7;
 	indirectHitRange=4;
 };
-class RC_B_20mm_HEAB_DF_T_R: B_20mm_Tracer_Red
+class RC_B_20mm_HEAB_DF_T_R: B_35mm_AA
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE.hpp"
@@ -985,6 +987,7 @@ class RC_B_30mm_MPDF_Sub: B_30mm_MP_Tracer_Red
 	//hit=;	//adjust
 	indirectHit=7;
 	indirectHitRange=4;
+	airFriction=-0.00036000001;
 };
 class RC_B_30mm_MPDF_T_R: B_30mm_MP_Tracer_Red
 {
@@ -1019,6 +1022,7 @@ class RC_B_30mm_MPQF_Sub: B_30mm_MP_Tracer_Red
 	//hit=;	//adjust
 	indirectHit=7;
 	indirectHitRange=4;
+	airFriction=-0.00036000001;
 };
 class RC_B_30mm_MPQF_T_R: B_30mm_MP_Tracer_Red
 {
@@ -1091,6 +1095,7 @@ class RC_B_30mm_MPAB_DF_T_R: B_30mm_MP_Tracer_Red
 	//hit=;	//adjust
 	indirectHit=7;
 	indirectHitRange=4;
+	airFriction=-0.00036000001;
 };
 class RC_B_30mm_MPAB_DF_T_G: RC_B_30mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_MPAB_DF_T_Y: RC_B_30mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -1109,6 +1114,7 @@ class RC_B_30mm_MPAB_QF_T_R: B_30mm_MP_Tracer_Red
 	//hit=;	//adjust
 	indirectHit=7;
 	indirectHitRange=4;
+	airFriction=-0.00036000001;
 };
 class RC_B_30mm_MPAB_QF_T_G: RC_B_30mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_MPAB_QF_T_Y: RC_B_30mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -1255,171 +1261,6 @@ class RC_Sh_120mm_MP_HEAB_T_Y: RC_Sh_120mm_MP_T_R {model="\A3\Weapons_f\Data\bul
 
 
 class MissileBase;
-class RC_IFV_MP_NLOS_PD_Base: MissileBase
-{
-	class Components;
-};
-class RC_IFV_MP_NLOS_PD: RC_IFV_MP_NLOS_PD_Base
-{
-	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
-	//model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";
-	craterEffects="AAMissileCrater";
-
-	hit=150;	// Titan AT long
-	indirectHit=80;
-	indirectHitRange=12;
-	explosive=1;
-
-	cost=500;	//Titan AT / Titan AT long
-	timeToLive=20;	//75 CLBM likely also cannon lg atgm
-
-	//lockType=0;	//?, 0 Titan AT & cannon lg atgm, 1 CLMB
-	irLock=1;
-	airLock=1;
-	laserLock=1;
-	allowAgainstInfantry=1;
-	aiAmmoUsageFlags="64 + 128 + 256 + 512";
-
-
-	simulationStep=0.0020000001;	//0.0020000001 CLMB & Titan AT & AA, 0.0099999998 missilebase, 0.050000001 missilecore
-	airFriction=0.085000001;		//0.050000001 CLBM, 0.2 missilebase, -0.00050000002 default & missilecore, 0.085000001 Titan AT
-	sideAirFriction=2;				//affects accuracy, 0.1 CLBM, 0.001 missilebase, 1 default & missilecore & Titan AT
-	maneuvrability=40;	//40 is accurate with 160m and 1 SAFr, 3 CLMB & missilecore, 20 missilebase & ?cannon lg atgm?
-	trackOversteer=1;	//1.4 CLBM, 1 default, missilecore, missilebase
-	trackLead=1;		//CLBM 0.94999999
-	maxSpeed=350;		//280 CLBM, 180 Titan AT, 350 125mm ATGM, 500 missilebase, 0 default & missilecore
-	
-	initTime=0;			//0 CLBM
-	thrustTime=6;		//5 CLMB & Titan, 6 cannon lg atgm, NLAW 0.80000001, too long thrust time seems to lead to misses
-	thrust=60;			//60 CLBM, 125mm ATGM, 40 cannon lg atgm, 45 Titan AT
-	fuseDistance=15;	//test
-
-
-	submunitionAmmo="RC_ammo_Penetrator_AB_120mm";
-	//submunitionDirectionType="SubmunitionTargetDirection";  //would cause probems when lasing armored targets
-	submunitionInitSpeed=1000;
-	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-	triggerOnImpact=1;
-	triggerDistance=12;	//find optimum
-	proximityExplosionDistance=12;
-	deleteParentWhenTriggered=0;
-
-	flightProfiles[]=
-	{
-		"Cruise"
-	};
-	class Cruise
-	{
-		preferredFlightAltitude=100;
-		lockDistanceToTarget=160;	//~45°=142
-	};
-
-	//autoSeekTarget=1;	 //unlear if it works in this context
-	manualControl=1;
-	//manualControlOffset=100;	//??? CLMB
-	missileLockCone=300;
-	missileKeepLockedCone=300;
-	maxControlRange=4000;
-	missileLockMaxDistance=4000;
-	missileLockMinDistance=20;
-	missileLockMaxSpeed=35;
-	weaponLockSystem="1 + 2 + 4 + 16";	//edit, reduce
-	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
-	cameraViewAvailable=1;
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-				};
-				class IRSensorComponent: SensorTemplateIR
-				{
-					typeRecognitionDistance=2000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					angleRangeHorizontal=67.5;
-					angleRangeVertical=67.5;
-				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					class AirTarget
-					{
-						minRange=600;
-						maxRange=600;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=600;
-						maxRange=600;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					typeRecognitionDistance=400;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=67.5;
-					angleRangeVertical=67.5;
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=4000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
-};
-
-
 class RC_Sh_120mm_HEAB_LV_Overflight_Core: MissileBase
 {
 	class Components;
@@ -1667,7 +1508,6 @@ class RC_Sh_120mm_HEAB_LV_indirect_T_R: Sh_120mm_HE
 	submunitionAmmo="RC_Sh_120mm_HEAB_LV_Overflight";
 
 	triggerDistance=50;	//is too low at 50m and collides with cover, due to FCS inaccuracy at low velocity
-	deleteParentWhenTriggered=1;
 
 	explosive=1;			//default 1, likely removes hit value, >0.7 does not penetrate light cover, <0.7 does, 1 is for triggering the spawn of delayed fuze submunition with <0.7 and timer
 	submunitionInitialOffset[]={0,0,0};
@@ -1763,6 +1603,174 @@ class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
 	warheadName="TandemHEAT";
 	hit=800;
 };
+class RC_ammo_Penetrator_MP_PD: RC_ammo_Penetrator_MP
+{
+	airFriction=0;
+};
+class RC_IFV_MP_NLOS_PD_Base: MissileBase
+{
+	class Components;
+};
+class RC_IFV_MP_NLOS_PD: RC_IFV_MP_NLOS_PD_Base
+{
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	//model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";
+	craterEffects="AAMissileCrater";
+
+	hit=150;	// Titan AT long
+	indirectHit=80;
+	indirectHitRange=8;
+	explosive=1;
+
+	cost=500;	//Titan AT / Titan AT long
+	timeToLive=20;	//75 CLBM likely also cannon lg atgm
+
+	//lockType=0;	//?, 0 Titan AT & cannon lg atgm, 1 CLMB
+	irLock=1;
+	airLock=1;
+	laserLock=1;
+	allowAgainstInfantry=1;
+	aiAmmoUsageFlags="64 + 128 + 256 + 512";
+
+
+	simulationStep=0.0020000001;	//0.0020000001 CLMB & Titan AT & AA, 0.0099999998 missilebase, 0.050000001 missilecore
+	airFriction=0.085000001;		//0.050000001 CLBM, 0.2 missilebase, -0.00050000002 default & missilecore, 0.085000001 Titan AT
+	sideAirFriction=2;				//affects accuracy, 0.1 CLBM, 0.001 missilebase, 1 default & missilecore & Titan AT
+	maneuvrability=40;	//40 is accurate with 160m and 1 SAFr, 3 CLMB & missilecore, 20 missilebase & ?cannon lg atgm?
+	trackOversteer=1;	//1.4 CLBM, 1 default, missilecore, missilebase
+	trackLead=1;		//CLBM 0.94999999
+	maxSpeed=350;		//280 CLBM, 180 Titan AT, 350 125mm ATGM, 500 missilebase, 0 default & missilecore
+	
+	initTime=0;			//0 CLBM
+	thrustTime=6;		//5 CLMB & Titan, 6 cannon lg atgm, NLAW 0.80000001, too long thrust time seems to lead to misses
+	thrust=60;			//60 CLBM, 125mm ATGM, 40 cannon lg atgm, 45 Titan AT
+	fuseDistance=15;	//test
+
+
+	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
+	submunitionDirectionType="SubmunitionTargetDirection";
+	//submunitionDirectionType="SubmunitionTargetDirection";  //would cause probems when lasing armored targets
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-1};
+	triggerOnImpact=1;
+	triggerDistance=10;
+	proximityExplosionDistance=10;
+	deleteParentWhenTriggered=0;
+
+	flightProfiles[]=
+	{
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=100;
+		lockDistanceToTarget=160;	//~45°=142
+	};
+
+	//autoSeekTarget=1;	 //unlear if it works in this context
+	manualControl=1;
+	//manualControlOffset=100;	//??? CLMB
+	missileLockCone=300;
+	missileKeepLockedCone=300;
+	maxControlRange=4000;
+	missileLockMaxDistance=4000;
+	missileLockMinDistance=20;
+	missileLockMaxSpeed=35;
+	weaponLockSystem="1 + 2 + 4 + 16";	//edit, reduce
+	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
+	cameraViewAvailable=1;
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=2000;
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					maxTrackableSpeed=120;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					maxTrackableSpeed=120;
+					typeRecognitionDistance=400;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=4000;
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+	};
+};
 class M_Titan_AT_long;
 class M_Titan_AT_long_Base: M_Titan_AT_long
 {
@@ -1773,7 +1781,7 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 	//submunitionAmmo="RC_ammo_Penetrator_MP";
 
 	//*
-	submunitionAmmo="RC_ammo_Penetrator_AB_120mm";
+	submunitionAmmo="RC_ammo_Penetrator_MP";
 	submunitionDirectionType="SubmunitionTargetDirection";
 	proximityExplosionDistance=30;
 	triggerDistance=30;

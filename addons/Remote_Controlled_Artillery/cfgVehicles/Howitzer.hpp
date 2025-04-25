@@ -30,6 +30,10 @@ class RC_Howitzer_A: RC_Howitzer_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -111,31 +115,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					typeRecognitionDistance=500;
-
-					class AirTarget
-					{
-						minRange=500;
-						maxRange=500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=500;
-						maxRange=500;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
-					};
-					maxTrackableSpeed=600;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-					animDirection="mainGun";
-				};
-
+				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
@@ -441,6 +421,10 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -514,7 +498,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-
+				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
@@ -883,7 +867,7 @@ class RC_Static_Arty: RC_Static_Arty_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-
+				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};

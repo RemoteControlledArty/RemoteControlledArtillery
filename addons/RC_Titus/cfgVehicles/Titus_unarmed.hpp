@@ -36,6 +36,10 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"

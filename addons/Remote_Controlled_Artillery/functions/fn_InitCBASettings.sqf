@@ -134,6 +134,17 @@
     "GPS"
 ] call CBA_fnc_addSetting;
 
+[
+    "RC_AT_SourceIndication",
+    "CHECKBOX",
+    ["allow AT fire source indicator", "Only for this mods vehicles that have missile/rocket detection systems, marks source of enemy AT fire in datalink for short period."],
+    ["Remote Controlled Artillery"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
 /*
 [
     "RC_DetectionTime_F1",

@@ -164,7 +164,7 @@ class CfgWeapons
 		canLock=2;
 		displayName=".338 NM MMG";
 		magazineReloadTime=10;
-		weaponLockSystem="1 + 4 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 
 		magazines[]=
 		{
@@ -193,7 +193,7 @@ class CfgWeapons
 	{
 		canLock=2;
 		displayName=".338 NM MMG";
-		weaponLockSystem="1 + 4 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 		magazines[]=
 		{
 			"RC_QIN_150Rnd_338_T_R",
@@ -210,7 +210,7 @@ class CfgWeapons
 		canLock=2;
 		
 		//displayName="M240C";
-		ballisticsComputer=2;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 		magazines[]=
 		{
 			"RC_QIN_300Rnd_762x51_Belt"

@@ -33,7 +33,7 @@
 						};
 						if (_target isKindOf "StaticWeapon") then {
 							private _side = side player;
-							_side reportRemoteTarget [_target, 120];
+							_side reportRemoteTarget [_target, 180];
 							_target confirmSensorTarget [_side, true];
 						};
 					};
@@ -49,7 +49,7 @@
 						};
 						if (_target isKindOf "StaticWeapon") then {
 							private _side = side player;
-							_side reportRemoteTarget [_target, 120];
+							_side reportRemoteTarget [_target, 180];
 							_target confirmSensorTarget [_side, true];
 						};
 					};

@@ -149,6 +149,7 @@ class RC_MortarMATV: RC_MortarMATV_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
+				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight

@@ -193,7 +193,7 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
-					animDirection="";
+					animDirection="maingun";
 				};
 			};
 		};

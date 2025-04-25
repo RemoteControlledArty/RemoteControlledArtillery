@@ -103,6 +103,7 @@ class RC_Static_AA_A: RC_Static_AA_A_base
 					animDirection="mainGun";
 					//aimDown=-0.5;
 				};
+				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 			};
 		};
 	};

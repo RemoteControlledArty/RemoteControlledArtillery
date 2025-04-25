@@ -355,6 +355,7 @@ class RC_HMG_127x99: RC_MG_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
 	magazines[]=
 	{
@@ -386,7 +387,7 @@ class RC_HMG_127x99_FSV: RC_MG_FSV_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
 	magazines[]=
 	{
@@ -411,7 +412,7 @@ class RC_MMG_338_FSV: RC_MG_FSV_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	magazineReloadTime=10;
 	reloadTime=0.0857;
 	autoReload=1;
@@ -456,8 +457,8 @@ class RC_HMG_127x99_MBT: RC_MG_MBT_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
-	ballisticsComputer="1 + 2 + 16";
 	magazines[]=
 	{
 		"RC_200Rnd_127x99_T_R",
@@ -482,10 +483,10 @@ class RC_MMG_338_MBT: RC_MG_MBT_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	reloadTime=0.0857;
 	magazineReloadTime=10;
 	autoReload=1;
-	ballisticsComputer="1 + 2 + 16";
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -539,8 +540,8 @@ class RC_MMG_338_coax: RC_MMG_338_coax_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
-	ballisticsComputer="1 + 2 + 16";
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -584,8 +585,8 @@ class RC_MMG_338_coax_ext: RC_MMG_338_coax_ext_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
-	ballisticsComputer="1 + 2 + 16";
 	magazines[]=
 	{
 		"RC_200Rnd_338_T_R",
@@ -627,10 +628,10 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 	author="Ascent";
 	displayName="HMG";
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	maxZeroing=3000;
+	FCSZeroingDelay=0.5;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
-	ballisticsComputer="1 + 2 + 16";
 	class manual: manual
 	{
 		displayName="12.7mm HMG";
@@ -712,8 +713,8 @@ class RC_HMG_127_NSVT: HMG_NSVT_Base
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
-	ballisticsComputer="1 + 2 + 16";
 	class manual: manual
 	{
 		displayName="12.7mm";
@@ -744,7 +745,7 @@ class RC_GMG_40mm: GMG_40mm_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	autoReload=1;
 	class manual: manual
 	{
@@ -773,7 +774,7 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	displayName="20mm AC";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	//maxZeroing=4000;
 
 	class HE: HE
@@ -781,7 +782,7 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 		displayName="20mm AC";
 		magazineReloadTime=20;
 		maxZeroing=3300;
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 		magazines[]=
 		{
@@ -799,7 +800,7 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 		displayName="20mm AC";
 		magazineReloadTime=20;
 		maxZeroing=4000;
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 		magazines[]=
 		{
@@ -841,7 +842,7 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 	displayName="20mm AC";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	//maxZeroing=4000;
 	FCSMaxLeadSpeed=30.555599;
 
@@ -850,7 +851,7 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 		displayName="20mm AC";
 		magazineReloadTime=15;
 		maxZeroing=3300;
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 		magazines[]=
 		{
@@ -869,7 +870,7 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 		displayName="20mm AC";
 		magazineReloadTime=15;
 		maxZeroing=4000;
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 		magazines[]=
 		{
@@ -986,7 +987,7 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 
 		reloadTime=0.2;
 		displayName="20mm AP";
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		maxZeroing=4000;
 		magazineReloadTime=15;
 		magazines[]=
@@ -1233,17 +1234,15 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
-	//ballisticsComputer="2 + 4 + 16";
-	maxZeroing=3300;
+	maxZeroing=3800;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 	magazineReloadTime=1; //TESTING ONLY!
 
 	class HE: HE
 	{
-		ballisticsComputer="1 + 2 + 16";
-		//ballisticsComputer="2 + 4 + 16";
-		maxZeroing=3300;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+		maxZeroing=3800;
 
 		magazineReloadTime=1; //TESTING ONLY!
 
@@ -1286,7 +1285,7 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	};
 	class AP: AP
 	{
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		maxZeroing=4000;
 		magazines[]=
 		{
@@ -1310,12 +1309,12 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	//maxZeroing=3300;
 
 	class HE: HE
 	{
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		maxZeroing=3300;
 		magazines[]=
 		{
@@ -1330,7 +1329,7 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 	};
 	class AP: AP
 	{
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		maxZeroing=4000;
 		magazines[]=
 		{
@@ -1353,12 +1352,12 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	author="Ascent";
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	//maxZeroing=3800;
 
 	class HE: HE
 	{
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		maxZeroing=3800;
 		magazines[]=
 		{
@@ -1373,7 +1372,7 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 	};
 	class AP: AP
 	{
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		maxZeroing=4000;
 		magazines[]=
 		{
@@ -1389,9 +1388,9 @@ class autocannon_30mm_RCWS;
 class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
 {
 	author="Ascent";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	canLock=2;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
 	maxZeroing=3300;
 
 	magazines[]=
@@ -1415,12 +1414,13 @@ class RC_cannon_120mm_base: cannon_120mm
 };
 class RC_cannon_120mm: RC_cannon_120mm_base
 {
+	author="Ascent";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	displayName="120mm";
 	canLock=2;
 	reloadTime=5;
 	magazineReloadTime=5;
 	FCSZeroingDelay=0.5;
-	ballisticsComputer="1 + 2 + 16";
 	FCSMaxLeadSpeed=30;
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	magazines[]=
@@ -1509,9 +1509,10 @@ class RC_cannon_125mm_advanced_base: cannon_125mm_advanced
 };
 class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 {
+	author="Ascent";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	displayName="125mm";
 	canLock=2;
-	ballisticsComputer="1 + 2 + 16";
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	magazines[]=
 	{

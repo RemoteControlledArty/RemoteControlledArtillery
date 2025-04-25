@@ -23,6 +23,10 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -286,6 +290,7 @@ class RC_MBT_1_A: RC_MBT_1_A_Base
 {
 	class EventHandlers: EventHandlers
 	{
+		
 		class RC_Artillery
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"

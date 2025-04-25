@@ -29,6 +29,10 @@ class RC_M109_A: RC_M109_base
 		{
 			postInit = "_this call rhs_fnc_reapplyTextures";
 		};
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		/*
 		class RC_Artillery
 		{

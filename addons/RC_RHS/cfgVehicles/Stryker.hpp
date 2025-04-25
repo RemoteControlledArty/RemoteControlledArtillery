@@ -697,7 +697,7 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD
 {
 	class EventHandlers: EventHandlers
-	{	
+	{
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
@@ -767,7 +767,7 @@ class RC_Stryker_M1127_M2_D_I: RC_Stryker_M1127_M2_D_B
 class RC_Stryker_M1127_WD_B: RC_Stryker_M1127_M2_WD_B
 {
 	class EventHandlers: EventHandlers
-	{	
+	{
 		class RC_Artillery
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"

@@ -27,6 +27,10 @@ class RC_MLRS_A: RC_MLRS_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -110,31 +114,7 @@ class RC_MLRS_A: RC_MLRS_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					typeRecognitionDistance=500;
-
-					class AirTarget
-					{
-						minRange=500;
-						maxRange=500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=500;
-						maxRange=500;
-						objectDistanceLimitCoef=1;
-						viewDistanceLimitCoef=1;
-					};
-					maxTrackableSpeed=600;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-					animDirection="mainGun";
-				};
-
+				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
@@ -372,7 +352,7 @@ class RC_MRL_base: I_Truck_02_MRL_F
 	class OpticsIn;
 	class Wide;
 	class Components;
-	//class EventHandlers;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 
@@ -385,15 +365,19 @@ class RC_MRL_base: I_Truck_02_MRL_F
 };
 class RC_MRL_DIG_I: RC_MRL_base
 {
-	/*
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
+		/*
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
+		*/
 	};
-	*/
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -468,7 +452,7 @@ class RC_MRL_DIG_I: RC_MRL_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-
+				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
