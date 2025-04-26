@@ -1,5 +1,5 @@
 class B_GMG_01_high_F;
-class RC_cUAS_Turret_core: B_GMG_01_high_F
+class RC_cUAS_Static_core: B_GMG_01_high_F
 {
 	class Turrets;
 	class MainTurret;
@@ -12,7 +12,7 @@ class RC_cUAS_Turret_core: B_GMG_01_high_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_cUAS_Turret_base: RC_cUAS_Turret_core
+class RC_cUAS_Static_base: RC_cUAS_Static_core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -220,11 +220,11 @@ class RC_cUAS_Turret_base: RC_cUAS_Turret_core
 		};
 	};
 };
-class RC_cUAS_Turret: RC_cUAS_Turret_base
+class RC_cUAS_Static: RC_cUAS_Static_base
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 
-	displayName="RC C-UAS Turret";
+	displayName="RC C-UAS Static";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -237,11 +237,11 @@ class RC_cUAS_Turret: RC_cUAS_Turret_base
 	{
 		dissasembleTo[]=
 		{
-			"RC_cUAS_Turret_Bag"
+			"RC_cUAS_Static_Bag"
 		};
 	};
 };
-class RC_cUAS_Turret_O: RC_cUAS_Turret
+class RC_cUAS_Static_O: RC_cUAS_Static
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -265,7 +265,7 @@ class RC_cUAS_Turret_O: RC_cUAS_Turret
 		};
 	};
 };
-class RC_cUAS_Turret_I: RC_cUAS_Turret
+class RC_cUAS_Static_I: RC_cUAS_Static
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -291,43 +291,43 @@ class RC_cUAS_Turret_I: RC_cUAS_Turret
 };
 
 
-class RC_cUAS_Turret_Bag: RC_Mortar_Bag
+class RC_cUAS_Static_Bag: RC_Mortar_Bag
 {
-	displayName="RC C-UAS Turret";
+	displayName="RC C-UAS Static";
 	mass=440;	//~30kg
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Turret";
-		assembleTo="RC_cUAS_Turret";
+		displayName="RC C-UAS Static";
+		assembleTo="RC_cUAS_Static";
 		base="";
 	};
 };
-class RC_cUAS_Turret_Bag_O: RC_cUAS_Turret_Bag
+class RC_cUAS_Static_Bag_O: RC_cUAS_Static_Bag
 {
-	displayName="RC C-UAS Turret [Opf]";
+	displayName="RC C-UAS Static [Opf]";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Turret [Opf]";
-		assembleTo="RC_cUAS_Turret_O";
+		displayName="RC C-UAS Static [Opf]";
+		assembleTo="RC_cUAS_Static_O";
 	};
 };	
-class RC_cUAS_Turret_Bag_I: RC_cUAS_Turret_Bag
+class RC_cUAS_Static_Bag_I: RC_cUAS_Static_Bag
 {
-	displayName="RC C-UAS Turret [Ind]";
+	displayName="RC C-UAS Static [Ind]";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Turret [Ind]";
-		assembleTo="RC_cUAS_Turret_I";
+		displayName="RC C-UAS Static [Ind]";
+		assembleTo="RC_cUAS_Static_I";
 	};
 };
 
 
-class RC_cUAS_Turret_manned: RC_cUAS_Turret_base
+class RC_cUAS_Static_manned: RC_cUAS_Static_base
 {
-	displayName="C-UAS Turret";
+	displayName="C-UAS Static";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -344,11 +344,11 @@ class RC_cUAS_Turret_manned: RC_cUAS_Turret_base
 	{
 		dissasembleTo[]=
 		{
-			"RC_cUAS_Turret_Bag"
+			"RC_cUAS_Static_Bag"
 		};
 	};
 };
-class RC_cUAS_Turret_manned_O: RC_cUAS_Turret_manned
+class RC_cUAS_Static_manned_O: RC_cUAS_Static_manned
 {
 	faction="RemoteControlled_O";
 	side=0;
@@ -371,7 +371,7 @@ class RC_cUAS_Turret_manned_O: RC_cUAS_Turret_manned
 		};
 	};
 };
-class RC_cUAS_Turret_manned_I: RC_cUAS_Turret_manned
+class RC_cUAS_Static_manned_I: RC_cUAS_Static_manned
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -396,33 +396,33 @@ class RC_cUAS_Turret_manned_I: RC_cUAS_Turret_manned
 };
 
 
-class RC_cUAS_Turret_manned_Bag: RC_cUAS_Turret_Bag
+class RC_cUAS_Static_manned_Bag: RC_cUAS_Static_Bag
 {
-	displayName="C-UAS Turret";
+	displayName="C-UAS Static";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Turret";
-		assembleTo="RC_cUAS_Turret_manned";
+		displayName="RC C-UAS Static";
+		assembleTo="RC_cUAS_Static_manned";
 	};
 };
-class RC_cUAS_Turret_manned_Bag_O: RC_cUAS_Turret_manned_Bag
+class RC_cUAS_Static_manned_Bag_O: RC_cUAS_Static_manned_Bag
 {
-	displayName="C-UAS Turret [Opf]";
+	displayName="C-UAS Static [Opf]";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Turret [Opf]";
-		assembleTo="RC_cUAS_Turret_manned_O";
+		displayName="RC C-UAS Static [Opf]";
+		assembleTo="RC_cUAS_Static_manned_O";
 	};
 };
-class RC_cUAS_Turret_manned_Bag_I: RC_cUAS_Turret_manned_Bag
+class RC_cUAS_Static_manned_Bag_I: RC_cUAS_Static_manned_Bag
 {
-	displayName="C-UAS Turret [Ind]";
+	displayName="C-UAS Static [Ind]";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Turret [Ind]";
-		assembleTo="RC_cUAS_Turret_manned_I";
+		displayName="RC C-UAS Static [Ind]";
+		assembleTo="RC_cUAS_Static_manned_I";
 	};
 };
