@@ -289,14 +289,14 @@ class RC_40mm_cUAS: RC_20mm_cUAS
 class RC_127x99mm_cUAS: B_127x99_Ball_Tracer_Red
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
-	submunitionConeAngle="0.384";		//20, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m
-	//submunitionConeAngle="0.421";		//24, 0.421deg = 400m 1/4 shots should hit with a spread of 2.94m
+	submunitionConeAngle="0.344";		//16, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m
+	//submunitionConeAngle="0.384";		//20, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m	 //worked slightly too well
 	//submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
 	//submunitionConeAngle="0.362";		//10? 0.362deg = 300m 1/4 shots should hit with a spread of 1.9m
 	submunitionConeType[]=
 	{
 		"poissondisc",	//test randomcenter
-		20
+		16
 	};
 	//caliber=2.5999999;	//test relating vehicles
 };
@@ -826,35 +826,60 @@ class RC_B_30mm_HEAB_QF_T_Y: RC_B_30mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bu
 
 //35mm HEAB C-UAS / MPAB AA
 class B_35mm_AA;
-class RC_B_35mm_MP_DF_Sub: B_35mm_AA
+class RC_B_35mm_MP_AA_Sub: B_35mm_AA
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm_AA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_35mm";
 };
 class RC_B_35mm_MPAB_AA_T_R: B_35mm_AA
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults_cUAS.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm_AA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
-	submunitionAmmo="RC_B_35mm_MP_DF_Sub";
+	submunitionAmmo="RC_B_35mm_MP_AA_Sub";
 };
 class RC_B_35mm_MPAB_AA_T_G: RC_B_35mm_MPAB_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_35mm_MPAB_AA_T_Y: RC_B_35mm_MPAB_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_B_35mm_HE_DF_Sub: B_35mm_AA
+class RC_B_35mm_HE_AA_Sub: B_35mm_AA
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm_AA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_HE_DF.hpp"
 };
 class RC_B_35mm_HEAB_AA_T_R: B_35mm_AA
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults_cUAS.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm_AA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_HEAB_DF.hpp"
-	submunitionAmmo="RC_B_35mm_HE_DF_Sub";
+	submunitionAmmo="RC_B_35mm_HE_AA_Sub";
 };
 class RC_B_35mm_HEAB_AA_T_G: RC_B_35mm_HEAB_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_35mm_HEAB_AA_T_Y: RC_B_35mm_HEAB_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//35mm FSV
+class RC_B_35mm_APFSDS_T_R: RC_B_30mm_APFSDS_T_R
+{
+	hit=135;
+	cost=85;
+};
+class RC_B_35mm_APFSDS_T_G: RC_B_35mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_35mm_APFSDS_T_Y: RC_B_35mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_35mm_MP_DF_Sub: B_35mm_AA
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_35mm";
+};
+class RC_B_35mm_MPAB_DF_T_R: B_35mm_AA
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
+	submunitionAmmo="RC_B_35mm_MP_DF_Sub";
+};
+class RC_B_35mm_MPAB_DF_T_G: RC_B_35mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_35mm_MPAB_DF_T_Y: RC_B_35mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 
@@ -1586,7 +1611,6 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 
 	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
 	submunitionDirectionType="SubmunitionTargetDirection";
-	//submunitionDirectionType="SubmunitionTargetDirection";  //would cause probems when lasing armored targets
 	submunitionInitSpeed=1000;
 	submunitionParentSpeedCoef=0;
 	submunitionInitialOffset[]={0,0,-1};
@@ -1728,6 +1752,13 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	cameraViewAvailable=1;
 	initTime=0.01;
 
+	missileLockCone=90;
+	missileKeepLockedCone=90;
+	thrustTime=4;
+
+	//autoSeekTarget=1;	 //unlear if it works in this context
+	//lockSeekRadius=1500;
+
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -1819,6 +1850,7 @@ class RC_IFV_AA: RC_IFV_AA_Base
 		};
 	};
 };
+/*
 class RC_AA_NLOS: RC_IFV_AA
 {
 	indirectHitRange=12;
@@ -1826,11 +1858,11 @@ class RC_AA_NLOS: RC_IFV_AA
 	//weaponLockSystem="2 + 4 + 16";
 	//cmImmunity=0.89999998;
 	lockType=0;
-	/*
-	manualControl=1;
-	missileManualControlCone=45;
-	maxControlRange=8000;
-	*/
+
+	//manualControl=1;
+	//missileManualControlCone=45;
+	//maxControlRange=8000;
+	
 	//autoSeekTarget=1;	 //unlear if it works in this context
 	//lockSeekRadius=1500;
 	missileLockCone=180;
@@ -1851,7 +1883,7 @@ class RC_AA_NLOS: RC_IFV_AA
 		lockDistanceToTarget=150;
 	};
 };
-
+*/
 
 
 class RC_70mm_AA: RC_IFV_AA
@@ -1881,34 +1913,64 @@ class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 //ATGM
 class RC_M_ATGM_MP_Lock: M_Titan_AT_long_Base
 {
-	submunitionAmmo="RC_ammo_Penetrator_MP";
+	craterEffects="AAMissileCrater";
 	indirectHit=40;
 	indirectHitRange=10;
-	maxControlRange=3000;
-	cmImmunity=0.85;
-	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
-	missileLockMaxDistance=3000;
-	fuseDistance=20;
-	initTime=0.01;
-	laserLock=0;
-	weaponLockSystem="1 + 2 + 16";
-	cameraViewAvailable=1;
+	explosive=1;
+	timeToLive=20;
+
+	//lockType=0;	//?, 0 Titan AT & cannon lg atgm, 1 Titan AP & CLMB, 0 likely fire forget 1 likely beamriding
+	irLock=1;
+	airLock=1;
+	laserLock=1;
+	allowAgainstInfantry=1;
+	aiAmmoUsageFlags="64 + 128 + 256 + 512";
+
+	simulationStep=0.0020000001;
+	airFriction=0.085000001;
+	sideAirFriction=2;
+	maneuvrability=40;
+	trackOversteer=1;
+	trackLead=1;
+	maxSpeed=350;
+	
+	initTime=0;
+	thrustTime=5;
+	thrust=50;
+	fuseDistance=15;
+
+	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
+	submunitionDirectionType="SubmunitionTargetDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-1};
+	triggerOnImpact=1;
+	triggerDistance=10;
+	proximityExplosionDistance=10;
+	deleteParentWhenTriggered=0;
 
 	flightProfiles[]=
 	{
-		"TopDown",
-		"Direct"
+		"Cruise"
 	};
-	class Direct
+	class Cruise
 	{
+		preferredFlightAltitude=100;
+		lockDistanceToTarget=160;	//~45°=142
 	};
-	class TopDown
-	{
-		ascendHeight=300;	//200
-		descendDistance=360;	//240
-		minDistance=100;	//240
-		ascendAngle=45;	//30
-	};
+
+	//autoSeekTarget=1;	 //unlear if it works in this context
+	manualControl=1;
+	//manualControlOffset=100;	//??? CLMB
+	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
+	missileKeepLockedCone=180;
+	maxControlRange=3000;
+	missileLockMaxDistance=3000;
+	missileLockMinDistance=20;
+	missileLockMaxSpeed=35;
+	weaponLockSystem="1 + 2 + 4 + 16";
+	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
+	cameraViewAvailable=1;
 
 	class Components: Components
 	{
@@ -1955,8 +2017,9 @@ class RC_M_ATGM_MP_Lock: M_Titan_AT_long_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					maxTrackableSpeed=120;
+					angleRangeHorizontal=45;
+					angleRangeVertical=45;
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
@@ -1975,9 +2038,10 @@ class RC_M_ATGM_MP_Lock: M_Titan_AT_long_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
+					maxTrackableSpeed=120;
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					angleRangeHorizontal=45;
+					angleRangeVertical=45;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{

@@ -273,6 +273,14 @@ class RC_cUAS_Static_Bag: RC_Mortar_Bag
 	displayName="RC C-UAS Static 20mm AB";
 	mass=440;	//~30kg
 
+	/*
+	picture="\a3\Supplies_F_Enoch\Bags\Data\UI\icon_B_Carryall_green_F_ca.paa";
+	hiddenSelectionsTextures[]=
+	{
+		"\A3\Supplies_F_Enoch\bags\data\backpack_tortila_RUkhk_co.paa"
+	};
+	*/
+
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC C-UAS Static 20mm AB";

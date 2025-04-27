@@ -1,7 +1,8 @@
 magazines[]=
 {
-	"RC_680Rnd_35mm_HEAB_AA_T_R",
-	"RC_4Rnd_IFV_AA",
+	"RC_340Rnd_35mm_MPAB_DF_T_R",
+	"RC_340Rnd_35mm_APFSDS_T_R",
+	"RC_4Rnd_IFV_MP_NLOS",
 	"RC_4Rnd_IFV_AA",
 	"SmokeLauncherMag",
 	"SmokeLauncherMag",

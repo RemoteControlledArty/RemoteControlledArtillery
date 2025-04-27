@@ -225,18 +225,41 @@ class RC_ATGM_SACLOS: launch_Vorona_base_F
 	};
 };
 class missiles_titan_static;
-class RC_ATGM_Lock: missiles_titan_static
+class RC_ATGM_Lock_Base: missiles_titan_static
+{
+	class Player;
+};
+class RC_ATGM_Lock: RC_ATGM_Lock_Base
 {
 	scope=1;
 	displayName="ATGM";
 	displayNameShort="ATGM";
 	canLock=2;
-	weaponLockSystem="1 + 4 + 16";
+	weaponLockSystem="1 + 2 + 4 + 16";
 	reloadTime=7;
 	magazineReloadTime=7;
+	autoReload=1;
 	magazines[]=
 	{
 		"RC_1Rnd_ATGM_MP_Lock"
+	};
+
+	modes[]=
+	{
+		"Player",
+		"Cruise"
+	};
+	class Cruise: Player
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+
+		minRange=200;
+		minRangeProbab=0.40000001;
+		midRange=1500;
+		midRangeProbab=0.89999998;
+		maxRange=3000;
+		maxRangeProbab=0.94999999;
 	};
 };
 class missiles_titan;
@@ -258,8 +281,7 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	{
 		"RC_2Rnd_IFV_MP_NLOS",
 		"2Rnd_GAT_missiles",
-		"RC_2Rnd_IFV_AA",
-		"RC_2Rnd_AA_NLOS"
+		"RC_2Rnd_IFV_AA"
 	};
 
 	//weaponLockDelay=3;	//3
@@ -344,12 +366,12 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 class RC_AA_Missile_Launcher: RC_IFV_Missile_Launcher
 {
 	//weaponLockSystem="1 + 2 + 4 + 16";
-	displayName="NLOS AAML";
-	displayNameShort="NLOS AAML";
+	displayName="AA ML";
+	displayNameShort="AA ML";
 	magazineReloadTime=50;
 	magazines[]=
 	{
-		"RC_4Rnd_AA_NLOS",
+		"RC_4Rnd_IFV_AA",
 		"4Rnd_GAA_missiles",
 		"RC_4Rnd_IFV_MP_NLOS",
 		"4Rnd_Titan_long_missiles"
@@ -364,6 +386,18 @@ class RC_AA_Missile_Launcher: RC_IFV_Missile_Launcher
 		midRangeProbab=0.89999998;
 		maxRange=6000;
 		maxRangeProbab=0.89999998;
+	};
+};
+class RC_AC_FSV_Missile_Launcher: RC_AA_Missile_Launcher
+{
+	displayName="NLOS ML";
+	displayNameShort="NLOS ML";
+	magazines[]=
+	{
+		"RC_4Rnd_IFV_MP_NLOS",
+		"4Rnd_Titan_long_missiles",
+		"RC_4Rnd_IFV_AA",
+		"4Rnd_GAA_missiles"
 	};
 };
 class missiles_SAAMI;
@@ -906,12 +940,12 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 
 		magazines[]=
 		{
-			"100Rnd_20mm_AP_T_R",
-			"100Rnd_20mm_AP_T_G",
-			"100Rnd_20mm_AP_T_Y",
-			"100Rnd_20mm_APFSDS_T_R",
-			"100Rnd_20mm_APFSDS_T_G",
-			"100Rnd_20mm_APFSDS_T_Y"
+			"RC_100Rnd_20mm_AP_T_R",
+			"RC_100Rnd_20mm_AP_T_G",
+			"RC_100Rnd_20mm_AP_T_Y",
+			"RC_100Rnd_20mm_APFSDS_T_R",
+			"RC_100Rnd_20mm_APFSDS_T_G",
+			"RC_100Rnd_20mm_APFSDS_T_Y"
 		};
 		class player: player
 		{
@@ -1670,11 +1704,11 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 };
 
 class autocannon_35mm;
-class RC_autocannon_35mm_base: autocannon_35mm
+class RC_autocannon_35mm_AA_base: autocannon_35mm
 {
 	class manual;
 };
-class RC_autocannon_35mm_AB: RC_autocannon_35mm_base
+class RC_autocannon_35mm_AA: RC_autocannon_35mm_AA_base
 {
 	author="Ascent";
 	displayName="35mm";
@@ -1703,6 +1737,90 @@ class RC_autocannon_35mm_AB: RC_autocannon_35mm_base
 		reloadTime=0.05;
 	};
 };
+
+
+/*
+class RC_autocannon_35mm: RC_autocannon_35mm_AA_base
+{
+	author="Ascent";
+	displayName="35mm";
+	reloadTime=0.05;
+	magazineReloadTime=30;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+
+	muzzles[]=
+	{
+		"HE",
+		"AP"
+	};
+	class HE: autocannon_35mm
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+		displayName="35mm";
+		magazineReloadTime=30;
+		dispersion=0.0012;
+
+		magazines[]=
+		{
+			"RC_340Rnd_35mm_MPAB_DF_T_R",
+			"RC_340Rnd_35mm_MPAB_DF_T_G",
+			"RC_340Rnd_35mm_MPAB_DF_T_Y"
+		};
+
+		class manual: manual
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+			displayName="35mm";
+			magazineReloadTime=30;
+			dispersion=0.0012;
+			reloadTime=0.05;
+
+			class standardsound
+			{
+				soundsetshot[]=
+				{
+					"jsrs_2025_autocannon_big_shot_soundset",
+					"jsrs_2025_weapon_stereo_autocannon_soundset",
+					"jsrs_2025_autocannon_tails_soundset"
+				};
+			};
+		};
+	};
+	class AP: autocannon_35mm
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+		displayName="35mm";
+		magazineReloadTime=30;
+		dispersion=0.0012;
+
+		magazines[]=
+		{
+			"RC_340Rnd_35mm_APFSDS_T_R",
+			"RC_340Rnd_35mm_APFSDS_T_G",
+			"RC_340Rnd_35mm_APFSDS_T_Y"
+		};
+
+		class manual: manual
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+			displayName="35mm";
+			magazineReloadTime=30;
+			dispersion=0.0012;
+			reloadTime=0.05;
+
+			class standardsound
+			{
+				soundsetshot[]=
+				{
+					"jsrs_2025_autocannon_big_shot_soundset",
+					"jsrs_2025_weapon_stereo_autocannon_soundset",
+					"jsrs_2025_autocannon_tails_soundset"
+				};
+			};
+		};
+	};
+};
+*/
 
 
 class autocannon_40mm_CTWS;

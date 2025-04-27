@@ -267,11 +267,11 @@ class RC_Static_AA_A_Bag: RC_Static_AA_A_Bag_base
 	mass=540;
 
 	model="\A3\Weapons_F\Ammoboxes\Bags\Backpack_Tortila.p3d";
+	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_cbr.paa";
 	hiddenSelectionsTextures[]=
 	{
 		"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_Tortila_cbr_co.paa"
 	};
-	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_cbr.paa";
 
 	class assembleInfo: assembleInfo
 	{
@@ -282,11 +282,11 @@ class RC_Static_AA_A_Bag: RC_Static_AA_A_Bag_base
 };
 class RC_Static_AA_WD_Bag: RC_Static_AA_A_Bag
 {
+	picture="\a3\Supplies_F_Enoch\Bags\Data\UI\icon_B_Carryall_green_F_ca.paa";
 	hiddenSelectionsTextures[]=
 	{
-		"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_Tortila_oli_co.paa"
+		"\A3\Supplies_F_Enoch\bags\data\backpack_tortila_RUkhk_co.paa"
 	};
-	picture="\A3\weapons_f_beta\ammoboxes\bags\data\ui\icon_B_Tortila_oli_ca.paa";
 
 	class assembleInfo: assembleInfo
 	{

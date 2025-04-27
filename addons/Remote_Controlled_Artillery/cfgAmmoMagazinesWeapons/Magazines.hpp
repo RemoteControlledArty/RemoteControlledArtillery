@@ -799,6 +799,25 @@ class RC_680Rnd_35mm_HEAB_AA_T_G: RC_680Rnd_35mm_HEAB_AA_T_R {ammo="RC_B_35mm_HE
 class RC_680Rnd_35mm_HEAB_AA_T_Y: RC_680Rnd_35mm_HEAB_AA_T_R {ammo="RC_B_35mm_HEAB_AA_T_Y";};
 
 
+class RC_340Rnd_35mm_APFSDS_T_R: 60Rnd_30mm_APFSDS_shells_Tracer_Red
+{
+	ammo="RC_B_35mm_APFSDS_T_R";
+	displayName="35mm APFSDS-T";
+	displayNameShort="35mm APFSDS-T";
+	count=340;
+};
+class RC_340Rnd_35mm_APFSDS_T_G: RC_340Rnd_35mm_APFSDS_T_R {ammo="RC_B_35mm_APFSDS_T_G";};
+class RC_340Rnd_35mm_APFSDS_T_Y: RC_340Rnd_35mm_APFSDS_T_R {ammo="RC_B_35mm_APFSDS_T_Y";};
+class RC_340Rnd_35mm_MPAB_DF_T_R: 680Rnd_35mm_AA_shells_Tracer_Red
+{
+	ammo="RC_B_35mm_MPAB_DF_T_R";
+	displayName="35mm MPAB-DF";
+	displayNameShort="35mm MPAB-DF";
+	count=340;
+};
+class RC_340Rnd_35mm_MPAB_DF_T_G: RC_340Rnd_35mm_MPAB_DF_T_R {ammo="RC_B_35mm_MPAB_DF_T_G";};
+class RC_340Rnd_35mm_MPAB_DF_T_Y: RC_340Rnd_35mm_MPAB_DF_T_R {ammo="RC_B_35mm_MPAB_DF_T_Y";};
+
 
 
 //40mm
@@ -1053,6 +1072,7 @@ class RC_2Rnd_IFV_AA: 4Rnd_Titan_long_missiles
 	ammo="RC_IFV_AA";
 };
 class RC_4Rnd_IFV_AA: RC_2Rnd_IFV_AA {count=4;};
+/*
 class RC_2Rnd_AA_NLOS: RC_2Rnd_IFV_AA
 {
 	displayName="NLOS AAM";
@@ -1060,6 +1080,7 @@ class RC_2Rnd_AA_NLOS: RC_2Rnd_IFV_AA
 	ammo="RC_AA_NLOS";
 };
 class RC_4Rnd_AA_NLOS: RC_2Rnd_AA_NLOS {count=4;};
+*/
 
 
 class 4Rnd_70mm_SAAMI_missiles;

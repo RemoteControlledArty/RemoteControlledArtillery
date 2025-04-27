@@ -1,1 +1,1 @@
-ballisticsComputer="1 + 2 + 16";	//"2 + 16"
+ballisticsComputer="2 + 16";	//"1 + 2 + 16"

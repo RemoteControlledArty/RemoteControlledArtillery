@@ -1,6 +1,6 @@
 // AA
 class B_APC_Tracked_01_AA_F;
-class RC_AA_base: B_APC_Tracked_01_AA_F
+class RC_AA_Base: B_APC_Tracked_01_AA_F
 {
 	class AnimationSources;
 	class Components;
@@ -17,7 +17,7 @@ class RC_AA_base: B_APC_Tracked_01_AA_F
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_AA_A: RC_AA_base
+class RC_AA_A_Base: RC_AA_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -35,28 +35,13 @@ class RC_AA_A: RC_AA_base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	displayName="RC Anti-Air";
+	author="Ascent";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
-	author="Ascent";
-	scope=2;
-	scopeCurator=2;
 	side=1;
-	forceInGarage=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	isUav=1;
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
 	crew="B_UAV_AI";
 	driverForceOptics=1;
 	driverCompartments="Compartment1";
-	ejectDeadGunner=0;
-	ejectDeadDriver=0;
-	ejectDeadCommander=0;
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
@@ -83,12 +68,12 @@ class RC_AA_A: RC_AA_base
 		class muzzle_rot
 		{
 			source="ammorandom";
-			weapon="RC_autocannon_35mm_AB";
+			weapon="RC_autocannon_35mm_AA";
 		};
 		class cannon_35mm_revolving
 		{
 			source="revolving";
-			weapon="RC_autocannon_35mm_AB";
+			weapon="RC_autocannon_35mm_AA";
 		};
 		class showCamonetPlates1: showCamonetPlates1
 		{
@@ -121,19 +106,17 @@ class RC_AA_A: RC_AA_base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			turretInfoType="RscOptics_APC_Wheeled_03_gunner";	//RscOptics_APC_Tracked_01_gunner
-			gunnerCompartments="Compartment2";
 			commanding=2;
-			gunnerForceOptics=1;
-			forceHideGunner=1;
 
 			weapons[]=
 			{
-				"RC_autocannon_35mm_AB",
+				"RC_autocannon_35mm_AA",
 				"RC_AA_Missile_Launcher",
 				"SmokeLauncher"
 			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_red.hpp"
 
+			
 			class OpticsIn
 			{
 				class ViewOptics: RCWSOptics
@@ -172,60 +155,7 @@ class RC_AA_A: RC_AA_base
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-					gunnerCompartments="Compartment3";
 					commanding=1;
-					hasGunner=-1;
-					hasCommander=-1;
-					forceHideGunner=1;
-				};
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={16000,8000,4000,2000,600};
-							resource="RscCustomInfoSensors";
-						};
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={600,2000,8000,16000};
-							resource="RscCustomInfoSensors";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						/*
-						class MineDetectorDisplay
-						{
-							componentType="MineDetectorDisplayComponent";
-							range=50;
-							resource="RscCustomInfoMineDetect";
-						};
-						*/
-					};
 				};
 			};
 		};
@@ -347,7 +277,95 @@ class RC_AA_A: RC_AA_base
 			};
 		};
 	};
+};
+class RC_AA_A: RC_AA_A_Base
+{
+	displayName="RC Anti-Air";
 
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	textPlural="UGVs";
+	textSingular="UGV";
+	isUav=1;
+	vehicleClass="Autonomous";
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP0_pos";
+	uavCameraGunnerDir="PiP0_dir";
+	ejectDeadGunner=0;
+	ejectDeadDriver=0;
+	ejectDeadCommander=0;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			gunnerCompartments="Compartment2";
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+			
+			class Turrets: Turrets
+			{
+				class CommanderOptics : CommanderOptics
+				{
+					gunnerCompartments="Compartment3";
+					hasGunner=-1;
+					hasCommander=-1;
+					forceHideGunner=1;
+				};
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={16000,8000,4000,2000,600};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={600,2000,8000,16000};
+							resource="RscCustomInfoSensors";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+					};
+				};
+			};
+		};
+	};
 	class TransportMagazines
 	{
 	};
@@ -537,7 +555,7 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 
 			weapons[]=
 			{
-				"RC_autocannon_35mm_AB",
+				"RC_autocannon_35mm_AA",
 				"RC_AA_Missile_Launcher",
 				"SmokeLauncher"
 			};

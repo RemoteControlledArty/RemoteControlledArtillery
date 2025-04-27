@@ -77,6 +77,22 @@ class CfgPatches
 			RC_Static_ATGM_A_Bag_I,
 			RC_Static_ATGM_WD_Bag_I,
 
+			RC_cUAS_Static,
+			RC_cUAS_Static_O,
+			RC_cUAS_Static_I,
+
+			RC_cUAS_Static_Bag,
+			RC_cUAS_Static_Bag_O,
+			RC_cUAS_Static_Bag_I,
+
+			RC_cUAS_Static_HMG,
+			RC_cUAS_Static_HMG_O,
+			RC_cUAS_Static_HMG_I,
+
+			RC_cUAS_Static_HMG_Bag,
+			RC_cUAS_Static_HMG_Bag_O,
+			RC_cUAS_Static_HMG_Bag_I,
+
 			RC_Howitzer_A,
 			RC_Howitzer_WD,
 			RC_Howitzer_A_O,
@@ -822,6 +838,7 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\AC_FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
