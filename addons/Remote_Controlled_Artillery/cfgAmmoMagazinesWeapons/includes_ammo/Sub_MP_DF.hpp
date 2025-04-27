@@ -12,7 +12,7 @@ submunitionDirectionType="SubmunitionModelDirection";
 //Trigger/ed
 deleteParentWhenTriggered=0;
 submunitionInitialOffset[]={0,0,-0.2};
-explosionTime=0.01;
+explosionTime=0.007;
 
 //Penetration / Fuze
 explosive=0.60000002;

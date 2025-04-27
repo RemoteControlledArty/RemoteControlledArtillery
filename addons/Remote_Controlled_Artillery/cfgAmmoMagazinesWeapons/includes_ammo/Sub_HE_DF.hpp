@@ -2,7 +2,7 @@
 deflecting=0;
 
 //Trigger/ed
-explosionTime=0.01;
+explosionTime=0.007;
 
 //Penetration / Fuze
 explosive=0.60000002;
