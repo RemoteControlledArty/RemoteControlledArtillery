@@ -81,12 +81,12 @@ class RC_BTR80A: RC_BTR80A_Base
 		class reload_cannon
 		{
 			source="reload";
-			weapon="RC_autocannon_30mm_lxWS";
+			weapon="RC_autocannon_30mm_APC_Wheeled_04";
 		};
 		class muzzle_hide
 		{
 			source="reload";
-			weapon="RC_autocannon_30mm_lxWS";
+			weapon="RC_autocannon_30mm_APC_Wheeled_04";
 		};
 	};
 
@@ -128,7 +128,7 @@ class RC_BTR80A_WD: RC_BTR80A
 
 			weapons[]=
 			{
-				"RC_autocannon_30mm_lxWS",
+				"RC_autocannon_30mm_APC_Wheeled_04",
 				"RC_MMG_93x64_coax_ext_lxWS",
 				"SmokeLauncher"
 			};

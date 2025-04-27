@@ -843,7 +843,8 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MortarMATV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\MK32.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\XM307.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\XM312.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first
 	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"

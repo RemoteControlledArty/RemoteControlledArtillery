@@ -17,6 +17,10 @@ class Components: Components
 				componentType="TransportFeedDisplayComponent";
 				source="Missile";
 			};
+			class UAVFeedDisplay
+			{
+				componentType="UAVFeedDisplayComponent";
+			};
 			class VehicleDriverDisplay
 			{
 				componentType="TransportFeedDisplayComponent";
@@ -29,10 +33,6 @@ class Components: Components
 				resource="RscCustomInfoMiniMap";
 			};
 			*/
-			class UAVFeedDisplay
-			{
-				componentType="UAVFeedDisplayComponent";
-			};
 			class CrewDisplay
 			{
 				componentType="CrewDisplayComponent";
@@ -70,6 +70,10 @@ class Components: Components
 				componentType="TransportFeedDisplayComponent";
 				source="Missile";
 			};
+			class UAVFeedDisplay
+			{
+				componentType="UAVFeedDisplayComponent";
+			};
 			class VehicleDriverDisplay
 			{
 				componentType="TransportFeedDisplayComponent";
@@ -79,10 +83,6 @@ class Components: Components
 			{
 				componentType="MinimapDisplayComponent";
 				resource="RscCustomInfoMiniMap";
-			};
-			class UAVFeedDisplay
-			{
-				componentType="UAVFeedDisplayComponent";
 			};
 			class CrewDisplay
 			{

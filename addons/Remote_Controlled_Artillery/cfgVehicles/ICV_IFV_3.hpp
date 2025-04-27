@@ -418,6 +418,48 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 					gunnerOpticsEffect[]={};
 				};
 			};
+
+			/*
+			class OpticsIn
+			{
+				class ViewOptics: RCWSOptics
+				{
+					initAngleX=0;
+					minAngleX=-30;
+					maxAngleX=30;
+					initAngleY=0;
+					minAngleY=-100;
+					maxAngleY=100;
+
+					initFov=0.9;
+					minFov=0.02;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"Normal",
+						"TI"
+					};
+					thermalMode[]={0};
+					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_APC_03_m_F.p3d";
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					//gunnerOpticsEffect[]={};
+				};
+			};
+
+			class ViewOptics: ViewOptics
+			{
+				initFov=0.9;
+				minFov=0.02;
+				maxFov=0.9;
+				visionMode[]=
+				{
+					"Normal",
+					"Ti"
+				};
+				thermalMode[]={0};
+				gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+			};
+			*/
 			
 			class Turrets: Turrets
 			{

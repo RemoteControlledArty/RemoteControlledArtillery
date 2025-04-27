@@ -1,0 +1,9 @@
+magazines[]=
+{
+	"RC_680Rnd_35mm_HEAB_AA_T_G",
+	"RC_4Rnd_AA_NLOS",
+	"RC_4Rnd_AA_NLOS",
+	"SmokeLauncherMag",
+	"SmokeLauncherMag",
+	"SmokeLauncherMag"
+};

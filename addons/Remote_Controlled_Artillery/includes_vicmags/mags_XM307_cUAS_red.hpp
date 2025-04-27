@@ -1,0 +1,9 @@
+magazines[]=
+{
+	"RC_40Rnd_20mm_HEAB_cUAS_T_R",
+	"RC_40Rnd_20mm_HEAB_cUAS_T_R",
+	"RC_40Rnd_20mm_HEAB_cUAS_T_R",
+	"RC_40Rnd_20mm_cUAS"
+	//"SmokeLauncherMag",
+	//"SmokeLauncherMag"
+};

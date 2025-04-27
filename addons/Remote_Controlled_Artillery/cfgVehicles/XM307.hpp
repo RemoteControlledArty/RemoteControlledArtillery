@@ -37,29 +37,22 @@ class RC_cUAS_Static_base: RC_cUAS_Static_core
 		class MainTurret: MainTurret
 		{	
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			turretInfoType="RscOptics_Strider_commander";
 			gunnerForceOptics=1;
-			maxElev=45;
+			maxElev=50;
 			thermalMode[]={0};
 
 			weapons[]=
 			{
 				"RC_GMG_20mm_cUAS"
 			};
-			magazines[]=
-			{
-				"RC_40Rnd_20mm_HEAB_DF_T_R",
-				"RC_40Rnd_20mm_HEAB_DF_T_R",
-				"RC_40Rnd_20mm_HEAB_DF_T_R",
-				"RC_40Rnd_20mm_cUAS",
-				"RC_40Rnd_20mm_cUAS",
-				"RC_40Rnd_20mm_cUAS"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_XM307_cUAS_red.hpp"
 
 			class OpticsIn: OpticsIn
 			{
 				class ViewOptics: ViewOptics
 				{
-					gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
+					gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Optics_Commander_01_F.p3d";	//"\A3\weapons_f\reticle\Optics_Gunner_02_F"
 					initFov=0.89999998;
 					minFov=0.02;
 					maxFov=0.89999998;
@@ -224,7 +217,7 @@ class RC_cUAS_Static: RC_cUAS_Static_base
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 
-	displayName="RC C-UAS Static";
+	displayName="RC C-UAS Static 20mm AB";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -253,15 +246,7 @@ class RC_cUAS_Static_O: RC_cUAS_Static
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_40Rnd_20mm_HEAB_T_G",
-				"RC_40Rnd_20mm_HEAB_T_G",
-				"RC_40Rnd_20mm_HEAB_T_G",
-				"RC_40Rnd_20mm_cUAS",
-				"RC_40Rnd_20mm_cUAS",
-				"RC_40Rnd_20mm_cUAS"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_XM307_cUAS_green.hpp"
 		};
 	};
 };
@@ -277,15 +262,7 @@ class RC_cUAS_Static_I: RC_cUAS_Static
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_40Rnd_20mm_HEAB_T_Y",
-				"RC_40Rnd_20mm_HEAB_T_Y",
-				"RC_40Rnd_20mm_HEAB_T_Y",
-				"RC_40Rnd_20mm_cUAS",
-				"RC_40Rnd_20mm_cUAS",
-				"RC_40Rnd_20mm_cUAS"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_XM307_cUAS_yellow.hpp"
 		};
 	};
 };
@@ -293,33 +270,33 @@ class RC_cUAS_Static_I: RC_cUAS_Static
 
 class RC_cUAS_Static_Bag: RC_Mortar_Bag
 {
-	displayName="RC C-UAS Static";
+	displayName="RC C-UAS Static 20mm AB";
 	mass=440;	//~30kg
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static";
-		assembleTo="RC_cUAS_Static";
+		displayName="RC C-UAS Static 20mm AB";
+		assembleTo="RC_cUAS_Static 20mm AB";
 		base="";
 	};
 };
 class RC_cUAS_Static_Bag_O: RC_cUAS_Static_Bag
 {
-	displayName="RC C-UAS Static [Opf]";
+	displayName="RC C-UAS Static 20mm AB [Opf]";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static [Opf]";
+		displayName="RC C-UAS Static 20mm AB [Opf]";
 		assembleTo="RC_cUAS_Static_O";
 	};
 };	
 class RC_cUAS_Static_Bag_I: RC_cUAS_Static_Bag
 {
-	displayName="RC C-UAS Static [Ind]";
+	displayName="RC C-UAS Static 20mm AB [Ind]";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static [Ind]";
+		displayName="RC C-UAS Static 20mm AB [Ind]";
 		assembleTo="RC_cUAS_Static_I";
 	};
 };
@@ -327,7 +304,7 @@ class RC_cUAS_Static_Bag_I: RC_cUAS_Static_Bag
 
 class RC_cUAS_Static_manned: RC_cUAS_Static_base
 {
-	displayName="C-UAS Static";
+	displayName="C-UAS Static 20mm AB";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -359,15 +336,7 @@ class RC_cUAS_Static_manned_O: RC_cUAS_Static_manned
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_40Rnd_20mm_HEAB_T_G",
-				"RC_40Rnd_20mm_HEAB_T_G",
-				"RC_40Rnd_20mm_HEAB_T_G",
-				"RC_40Rnd_20mm_cUAS",
-				"RC_40Rnd_20mm_cUAS",
-				"RC_40Rnd_20mm_cUAS"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_XM307_cUAS_green.hpp"
 		};
 	};
 };
@@ -382,15 +351,7 @@ class RC_cUAS_Static_manned_I: RC_cUAS_Static_manned
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_40Rnd_20mm_HEAB_T_Y",
-				"RC_40Rnd_20mm_HEAB_T_Y",
-				"RC_40Rnd_20mm_HEAB_T_Y",
-				"RC_40Rnd_20mm_cUAS",
-				"RC_40Rnd_20mm_cUAS",
-				"RC_40Rnd_20mm_cUAS"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_XM307_cUAS_yellow.hpp"
 		};
 	};
 };
@@ -398,31 +359,31 @@ class RC_cUAS_Static_manned_I: RC_cUAS_Static_manned
 
 class RC_cUAS_Static_manned_Bag: RC_cUAS_Static_Bag
 {
-	displayName="C-UAS Static";
+	displayName="C-UAS Static 20mm AB";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static";
+		displayName="RC C-UAS Static 20mm AB";
 		assembleTo="RC_cUAS_Static_manned";
 	};
 };
 class RC_cUAS_Static_manned_Bag_O: RC_cUAS_Static_manned_Bag
 {
-	displayName="C-UAS Static [Opf]";
+	displayName="C-UAS Static 20mm AB [Opf]";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static [Opf]";
+		displayName="RC C-UAS Static 20mm AB [Opf]";
 		assembleTo="RC_cUAS_Static_manned_O";
 	};
 };
 class RC_cUAS_Static_manned_Bag_I: RC_cUAS_Static_manned_Bag
 {
-	displayName="C-UAS Static [Ind]";
+	displayName="C-UAS Static 20mm AB [Ind]";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static [Ind]";
+		displayName="RC C-UAS Static 20mm AB [Ind]";
 		assembleTo="RC_cUAS_Static_manned_I";
 	};
 };

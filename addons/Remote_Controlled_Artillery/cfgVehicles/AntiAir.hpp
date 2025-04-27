@@ -10,6 +10,7 @@ class RC_AA_base: B_APC_Tracked_01_AA_F
 	class showCamonetPlates2;
 	class Turrets;
 	class MainTurret;
+	class ViewOptics;
 	class CommanderOptics;
 	class EventHandlers;
 	scope=0;
@@ -70,6 +71,25 @@ class RC_AA_A: RC_AA_base
 
 	class AnimationSources: AnimationSources
 	{
+		class Missiles_revolving
+		{
+			source="revolving";
+			weapon="RC_AA_Missile_Launcher";
+		};
+		class Missiles_reloadMagazine: Missiles_revolving
+		{
+			source="reloadMagazine";
+		};
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_35mm_AB";
+		};
+		class cannon_35mm_revolving
+		{
+			source="revolving";
+			weapon="RC_autocannon_35mm_AB";
+		};
 		class showCamonetPlates1: showCamonetPlates1
 		{
 			initPhase=1;
@@ -100,10 +120,52 @@ class RC_AA_A: RC_AA_base
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			turretInfoType="RscOptics_APC_Wheeled_03_gunner";	//RscOptics_APC_Tracked_01_gunner
 			gunnerCompartments="Compartment2";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
+
+			weapons[]=
+			{
+				"RC_autocannon_35mm_AB",
+				"RC_AA_Missile_Launcher",
+				"SmokeLauncher"
+			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_red.hpp"
+
+			class OpticsIn
+			{
+				class ViewOptics: RCWSOptics
+				{
+					initFov=0.9;
+					minFov=0.01;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"Normal",
+						"NVG",
+						"Ti"
+					};
+					thermalMode[]={0};
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_AAA_01_m_F.p3d";
+				};
+			};
+
+			class ViewOptics: ViewOptics
+			{
+				initFov=0.9;
+				minFov=0.01;
+				maxFov=0.9;
+				visionMode[]=
+				{
+					"Normal",
+					"NVG",
+					"Ti"
+				};
+				thermalMode[]={0};
+				gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_AAA_01_m_F.p3d";
+			};
 			
 			class Turrets: Turrets
 			{
@@ -129,17 +191,23 @@ class RC_AA_A: RC_AA_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={16000,8000,4000,2000};
+							range[]={16000,8000,4000,2000,600};
 							resource="RscCustomInfoSensors";
 						};
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={600,2000,8000,16000};
+							resource="RscCustomInfoSensors";
+						};
 						class EmptyDisplay
 						{
 							componentType="EmptyDisplayComponent";
@@ -158,6 +226,123 @@ class RC_AA_A: RC_AA_base
 						};
 						*/
 					};
+				};
+			};
+		};
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+				{
+					class AirTarget
+					{
+						minRange=9000;
+						maxRange=9000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=6000;
+					angleRangeHorizontal=360;
+					angleRangeVertical=100;
+					aimDown=-45;
+					maxTrackableSpeed=694.44397;
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=67000;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=6000;
+
+					class AirTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=-1;
+						maxRange=-1;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=30;
+					angleRangeVertical=30;
+					animDirection="mainGun";
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=600;
+
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=0;
+						maxRange=0;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="mainGun";
+				};
+				class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+				{
+					typeRecognitionDistance=1;
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					//allowsMarking=1;	//targeting would be great, problem is just it tells name which seems a bit op?
 				};
 			};
 		};
@@ -206,24 +391,56 @@ class RC_AA_A_O: RC_AA_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_green.hpp"
+		};
+	};
 };
 class RC_AA_WD_O: RC_AA_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_green.hpp"
+		};
+	};
 };
 class RC_AA_A_I: RC_AA_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_yellow.hpp"
+		};
+	};
 };
 class RC_AA_WD_I: RC_AA_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_yellow.hpp"
+		};
+	};
 };
 
 
@@ -238,6 +455,7 @@ class RC_AA_base_HEX_O: O_APC_Tracked_02_AA_F
 	class showSLATHull;
 	class Turrets;
 	class MainTurret;
+	class ViewOptics;
 	class CommanderOptics;
 	class EventHandlers;
 	scope=0;
@@ -311,10 +529,52 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			turretInfoType="RscOptics_APC_Wheeled_03_gunner";	//RscOptics_APC_Tracked_01_gunner
 			gunnerCompartments="Compartment2";
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
+
+			weapons[]=
+			{
+				"RC_autocannon_35mm_AB",
+				"RC_AA_Missile_Launcher",
+				"SmokeLauncher"
+			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_red.hpp"
+
+			class OpticsIn
+			{
+				class ViewOptics: RCWSOptics
+				{
+					initFov=0.9;
+					minFov=0.01;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"Normal",
+						"NVG",
+						"Ti"
+					};
+					thermalMode[]={0};
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_AAA_01_m_F.p3d";
+				};
+			};
+
+			class ViewOptics: ViewOptics
+			{
+				initFov=0.9;
+				minFov=0.01;
+				maxFov=0.9;
+				visionMode[]=
+				{
+					"Normal",
+					"NVG",
+					"Ti"
+				};
+				thermalMode[]={0};
+				gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_AAA_01_m_F.p3d";
+			};
 			
 			class Turrets: Turrets
 			{
@@ -340,17 +600,23 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={16000,8000,4000,2000};
+							range[]={16000,8000,4000,2000,600};
 							resource="RscCustomInfoSensors";
 						};
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={600,2000,8000,16000};
+							resource="RscCustomInfoSensors";
+						};
 						class EmptyDisplay
 						{
 							componentType="EmptyDisplayComponent";
@@ -373,6 +639,124 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 			};
 		};
 	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+				{
+					class AirTarget
+					{
+						minRange=9000;
+						maxRange=9000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=6000;
+					angleRangeHorizontal=360;
+					angleRangeVertical=100;
+					aimDown=-45;
+					maxTrackableSpeed=694.44397;
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=67000;
+
+					class AirTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=67000;
+						maxRange=67000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=6000;
+
+					class AirTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=-1;
+						maxRange=-1;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=30;
+					angleRangeVertical=30;
+					animDirection="mainGun";
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=600;
+
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=0;
+						maxRange=0;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="mainGun";
+				};
+				class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+				{
+					typeRecognitionDistance=1;
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					//allowsMarking=1;	//targeting would be great, problem is just it tells name which seems a bit op?
+				};
+			};
+		};
+	};
+
 	class TransportMagazines
 	{
 	};
@@ -436,10 +820,26 @@ class RC_AA_ReTex_D_O: RC_AA_ReTex_D
 	faction="RemoteControlled_ReTex_O";
 	crew="O_UAV_AI";
 	side=0;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_green.hpp"
+		};
+	};
 };
 class RC_AA_ReTex_D_I: RC_AA_ReTex_D
 {
 	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_yellow.hpp"
+		};
+	};
 };

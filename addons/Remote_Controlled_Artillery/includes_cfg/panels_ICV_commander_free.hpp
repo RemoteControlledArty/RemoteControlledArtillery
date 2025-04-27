@@ -38,14 +38,14 @@ class Components: Components
 				range[]={400,1000,2000,4000};
 				resource="RscCustomInfoSensors";
 			};
+			class UAVFeedDisplay
+			{
+				componentType="UAVFeedDisplayComponent";
+			};
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
 				resource="RscCustomInfoMiniMap";
-			};
-			class UAVFeedDisplay
-			{
-				componentType="UAVFeedDisplayComponent";
 			};
 			/*
 			class MineDetectorDisplay

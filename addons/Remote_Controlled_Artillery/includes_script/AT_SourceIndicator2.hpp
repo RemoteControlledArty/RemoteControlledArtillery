@@ -1,7 +1,7 @@
 IncomingMissile="params ['_target','_ammo','_vehicle','_instigator','_missile'];	\
-if (!local (_this select 0)) exitwith {}; \
+if (!(vehicle player == _target)) exitWith {}; \
 if ((_target distance _vehicle) > 4000) exitwith {}; \
-[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.2]] remoteExec ['playSoundUI', crew _target];	\
+['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.2];	\
 if (!RC_AT_SourceIndication) exitwith {}; \
 if (([_vehicle, 'GEOM', _target] checkVisibility [eyePos _vehicle, eyePos _target]) == 0) exitwith {}; \
 private _side = side _target;	\

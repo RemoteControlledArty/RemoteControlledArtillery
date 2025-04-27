@@ -258,7 +258,8 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	{
 		"RC_2Rnd_IFV_MP_NLOS",
 		"2Rnd_GAT_missiles",
-		"RC_2Rnd_IFV_AA"
+		"RC_2Rnd_IFV_AA",
+		"RC_2Rnd_AA_NLOS"
 	};
 
 	//weaponLockDelay=3;	//3
@@ -340,7 +341,31 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	};
 	*/
 };
+class RC_AA_Missile_Launcher: RC_IFV_Missile_Launcher
+{
+	//weaponLockSystem="1 + 2 + 4 + 16";
+	displayName="NLOS AAML";
+	displayNameShort="NLOS AAML";
+	magazineReloadTime=50;
+	magazines[]=
+	{
+		"RC_4Rnd_AA_NLOS",
+		"4Rnd_GAA_missiles",
+		"RC_4Rnd_IFV_MP_NLOS",
+		"4Rnd_Titan_long_missiles"
+	};
+	class Player: Player
+	{
+		magazineReloadTime=50;
 
+		minRange=100;
+		minRangeProbab=0.30000001;
+		midRange=1500;
+		midRangeProbab=0.89999998;
+		maxRange=6000;
+		maxRangeProbab=0.89999998;
+	};
+};
 class missiles_SAAMI;
 /*
 class RC_70mm_AA_Missile_Launcher_Base: missiles_SAAMI
@@ -822,9 +847,50 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 
 		magazines[]=
 		{
-			"100Rnd_20mm_HE_T_R",
-			"100Rnd_20mm_HE_T_G",
-			"100Rnd_20mm_HE_T_Y"
+			"RC_100Rnd_20mm_MP_Pen_T_R",
+			"RC_100Rnd_20mm_MP_Pen_T_G",
+			"RC_100Rnd_20mm_MP_Pen_T_Y",
+
+			"RC_100Rnd_20mm_HE_Pen_T_R",
+			"RC_100Rnd_20mm_HE_Pen_T_G",
+			"RC_100Rnd_20mm_HE_Pen_T_Y",
+
+			"RC_100Rnd_20mm_MP_DF_T_R",
+			"RC_100Rnd_20mm_MP_DF_T_G",
+			"RC_100Rnd_20mm_MP_DF_T_Y",
+
+			"RC_100Rnd_20mm_HE_DF_T_R",
+			"RC_100Rnd_20mm_HE_DF_T_G",
+			"RC_100Rnd_20mm_HE_DF_T_Y",
+
+			"RC_100Rnd_20mm_MP_QF_T_R",
+			"RC_100Rnd_20mm_MP_QF_T_G",
+			"RC_100Rnd_20mm_MP_QF_T_Y",
+
+			"RC_100Rnd_20mm_HE_QF_T_R",
+			"RC_100Rnd_20mm_HE_QF_T_G",
+			"RC_100Rnd_20mm_HE_QF_T_Y",
+
+			"RC_100Rnd_20mm_MPAB_DF_T_R",
+			"RC_100Rnd_20mm_MPAB_DF_T_G",
+			"RC_100Rnd_20mm_MPAB_DF_T_Y",
+
+			"RC_100Rnd_20mm_HEAB_DF_T_R",
+			"RC_100Rnd_20mm_HEAB_DF_T_G",
+			"RC_100Rnd_20mm_HEAB_DF_T_Y",
+
+			"RC_100Rnd_20mm_MPAB_QF_T_R",
+			"RC_100Rnd_20mm_MPAB_QF_T_G",
+			"RC_100Rnd_20mm_MPAB_QF_T_Y",
+
+			"RC_100Rnd_20mm_HEAB_QF_T_R",
+			"RC_100Rnd_20mm_HEAB_QF_T_G",
+			"RC_100Rnd_20mm_HEAB_QF_T_Y",
+			"RC_100Rnd_20mm_cUAS",
+			
+			"RC_100Rnd_20mm_HE_T_R",
+			"RC_100Rnd_20mm_HE_T_G",
+			"RC_100Rnd_20mm_HE_T_Y"
 		};
 		class player: player
 		{
@@ -891,10 +957,51 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 
 		magazines[]=
 		{
-			"60Rnd_20mm_HE_T_R",
-			"60Rnd_20mm_HE_T_G",
-			"60Rnd_20mm_HE_T_Y",
-			"RC_60Rnd_20mm_cUAS"
+			"RC_60Rnd_20mm_MP_Pen_T_R",
+			"RC_60Rnd_20mm_MP_Pen_T_G",
+			"RC_60Rnd_20mm_MP_Pen_T_Y",
+
+			"RC_60Rnd_20mm_HE_Pen_T_R",
+			"RC_60Rnd_20mm_HE_Pen_T_G",
+			"RC_60Rnd_20mm_HE_Pen_T_Y",
+
+			"RC_60Rnd_20mm_MP_DF_T_R",
+			"RC_60Rnd_20mm_MP_DF_T_G",
+			"RC_60Rnd_20mm_MP_DF_T_Y",
+
+			"RC_60Rnd_20mm_HE_DF_T_R",
+			"RC_60Rnd_20mm_HE_DF_T_G",
+			"RC_60Rnd_20mm_HE_DF_T_Y",
+
+			"RC_60Rnd_20mm_MP_QF_T_R",
+			"RC_60Rnd_20mm_MP_QF_T_G",
+			"RC_60Rnd_20mm_MP_QF_T_Y",
+
+			"RC_60Rnd_20mm_HE_QF_T_R",
+			"RC_60Rnd_20mm_HE_QF_T_G",
+			"RC_60Rnd_20mm_HE_QF_T_Y",
+
+			"RC_60Rnd_20mm_MPAB_DF_T_R",
+			"RC_60Rnd_20mm_MPAB_DF_T_G",
+			"RC_60Rnd_20mm_MPAB_DF_T_Y",
+
+			"RC_60Rnd_20mm_HEAB_DF_T_R",
+			"RC_60Rnd_20mm_HEAB_DF_T_G",
+			"RC_60Rnd_20mm_HEAB_DF_T_Y",
+
+			"RC_60Rnd_20mm_MPAB_QF_T_R",
+			"RC_60Rnd_20mm_MPAB_QF_T_G",
+			"RC_60Rnd_20mm_MPAB_QF_T_Y",
+
+			"RC_60Rnd_20mm_HEAB_QF_T_R",
+			"RC_60Rnd_20mm_HEAB_QF_T_G",
+			"RC_60Rnd_20mm_HEAB_QF_T_Y",
+
+			"RC_60Rnd_20mm_cUAS",
+
+			"RC_60Rnd_20mm_HE_T_R",
+			"RC_60Rnd_20mm_HE_T_G",
+			"RC_60Rnd_20mm_HE_T_Y"
 		};
 		class player: player
 		{
@@ -910,12 +1017,12 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 
 		magazines[]=
 		{
-			"60Rnd_20mm_AP_T_R",
-			"60Rnd_20mm_AP_T_G",
-			"60Rnd_20mm_AP_T_Y",
-			"60Rnd_20mm_APFSDS_T_R",
-			"60Rnd_20mm_APFSDS_T_G",
-			"60Rnd_20mm_APFSDS_T_Y"
+			"RC_60Rnd_20mm_AP_T_R",
+			"RC_60Rnd_20mm_AP_T_G",
+			"RC_60Rnd_20mm_AP_T_Y",
+			"RC_60Rnd_20mm_APFSDS_T_R",
+			"RC_60Rnd_20mm_APFSDS_T_G",
+			"RC_60Rnd_20mm_APFSDS_T_Y"
 		};
 		class player: player
 		{
@@ -950,7 +1057,6 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
 		FCSMaxLeadSpeed=30.555599;
-
 		reloadTime=0.3;
 		magazineReloadTime=15;
 		ballisticsComputer="4";	//"1 + 2 + 16"
@@ -962,23 +1068,24 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 		burst=3;
 		burst=2;
 		*/
+		magazines[]=
+		{
+			"RC_60Rnd_20mm_HEAB_cUAS_T_R",
+			"RC_60Rnd_20mm_HEAB_cUAS_T_G",
+			"RC_60Rnd_20mm_HEAB_cUAS_T_Y",
+			"RC_60Rnd_20mm_cUAS"
+		};
 		modes[]=
 		{
 			"player",
 			"close",
-			"short"
-		};
-		
-		magazines[]=
-		{
-			"RC_60Rnd_20mm_HEAB_T_R",
-			"RC_60Rnd_20mm_HEAB_T_G",
-			"RC_60Rnd_20mm_HEAB_T_Y",
-			"RC_60Rnd_20mm_cUAS"
+			"short",
+			"medium",
+			"far"
 		};
 		class player: player
 		{
-			dispersion=0.00089999998;
+			dispersion=0.001;
 			reloadTime=0.3;
 		};
 		class close: player
@@ -1013,6 +1120,38 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 			maxRange=1200;
 			maxRangeProbab=0.80000001;
 		};
+		class medium: close
+		{
+			aiBurstTerminable=1;
+			showToPlayer=0;
+			burst=3;
+			burstRangeMax=3;
+			aiRateOfFire=2;
+			aiRateOfFireDispersion=3;
+			aiRateOfFireDistance=1000;
+			minRange=1000;
+			minRangeProbab=0.80000001;
+			midRange=1500;
+			midRangeProbab=0.80000001;
+			maxRange=2000;
+			maxRangeProbab=0.69999999;
+		};
+		class far: close
+		{
+			aiBurstTerminable=1;
+			showToPlayer=0;
+			burst=3;
+			burstRangeMax=3;
+			aiRateOfFire=2;
+			aiRateOfFireDispersion=4;
+			aiRateOfFireDistance=1800;
+			minRange=1800;
+			minRangeProbab=0.74000001;
+			midRange=2400;
+			midRangeProbab=0.64999998;
+			maxRange=3000;
+			maxRangeProbab=0.050000001;
+		};
 	};
 
 	class AP: autocannon_Base_F
@@ -1028,16 +1167,16 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 		magazineReloadTime=15;
 		magazines[]=
 		{
-			"60Rnd_20mm_AP_T_R",
-			"60Rnd_20mm_AP_T_G",
-			"60Rnd_20mm_AP_T_Y",
-			"60Rnd_20mm_APFSDS_T_R",
-			"60Rnd_20mm_APFSDS_T_G",
-			"60Rnd_20mm_APFSDS_T_Y"
+			"RC_60Rnd_20mm_AP_T_R",
+			"RC_60Rnd_20mm_AP_T_G",
+			"RC_60Rnd_20mm_AP_T_Y",
+			"RC_60Rnd_20mm_APFSDS_T_R",
+			"RC_60Rnd_20mm_APFSDS_T_G",
+			"RC_60Rnd_20mm_APFSDS_T_Y"
 		};
 		class player: player
 		{
-			dispersion=0.00089999998;
+			dispersion=0.001;
 			reloadTime=0.2;
 		};
 		class close: player
@@ -1115,19 +1254,16 @@ class RC_GMG_20mm_cUAS: RC_autocannon_Base_F
 	autoReload=1;
 	canLock=2;
 	//cursorAim="gl";
-	autoFire=0;
+	autoFire=0;	//?
 	FCSMaxLeadSpeed=30;
 	FCSZeroingDelay=0.5;
 	ballisticsComputer="4";
 
 	magazines[]=
 	{
-		"RC_40Rnd_20mm_HEAB_DF_T_R",
-		"RC_40Rnd_20mm_HEAB_DF_T_G",
-		"RC_40Rnd_20mm_HEAB_DF_T_Y",
-		"RC_40Rnd_20mm_HEAB_T_R",
-		"RC_40Rnd_20mm_HEAB_T_G",
-		"RC_40Rnd_20mm_HEAB_T_Y",
+		"RC_40Rnd_20mm_HEAB_cUAS_T_R",
+		"RC_40Rnd_20mm_HEAB_cUAS_T_G",
+		"RC_40Rnd_20mm_HEAB_cUAS_T_Y",
 		"RC_40Rnd_20mm_cUAS",
 		"RC_40Rnd_20mm_AP_T_R",
 		"RC_40Rnd_20mm_AP_T_G",
@@ -1243,14 +1379,13 @@ class RC_UGV_20mm_cUAS: RC_GMG_20mm_cUAS
 {
 	magazines[]=
 	{
-		"RC_50Rnd_20mm_HEAB_DF_T_R",
-		"RC_50Rnd_20mm_HEAB_DF_T_G",
-		"RC_50Rnd_20mm_HEAB_DF_T_Y",
-		"RC_50Rnd_20mm_HEAB_T_R",
-		"RC_50Rnd_20mm_HEAB_T_G",
-		"RC_50Rnd_20mm_HEAB_T_Y",
+		"RC_50Rnd_20mm_HEAB_cUAS_T_R",
+		"RC_50Rnd_20mm_HEAB_cUAS_T_G",
+		"RC_50Rnd_20mm_HEAB_cUAS_T_Y",
 		"RC_50Rnd_20mm_cUAS",
-		"RC_50Rnd_20mm_AP_T_W"
+		"RC_50Rnd_20mm_AP_T_R",
+		"RC_50Rnd_20mm_AP_T_G",
+		"RC_50Rnd_20mm_AP_T_Y"
 	};
 
 	class GunParticles
@@ -1265,6 +1400,110 @@ class RC_UGV_20mm_cUAS: RC_GMG_20mm_cUAS
 };
 
 
+class HMG_static;
+class RC_HMG_static_cUAS_base: HMG_static
+{
+	class manual;
+};
+class RC_HMG_static_cUAS: RC_HMG_static_cUAS_base
+{
+	displayName="12.7mm C-UAS";
+	reloadTime=0.11;
+	autoReload=1;
+	canLock=2;
+	autoFire=0;	//?
+	FCSMaxLeadSpeed=30;
+	FCSZeroingDelay=0.5;
+	ballisticsComputer="4";
+
+	magazines[]=
+	{
+		"RC_100Rnd_127x99_cUAS",
+		"RC_100Rnd_127x99_SLAP_T_R",
+		"RC_100Rnd_127x99_SLAP_T_G",
+		"RC_100Rnd_127x99_SLAP_T_Y"
+	};
+	modes[]=
+	{
+		"manual",
+		"close",
+		"short",
+		"medium",
+		"far"
+	};
+	class manual: manual
+	{
+		displayName="12.7mm C-UAS";
+		ballisticsComputer="4";
+		reloadTime=0.11;
+	};
+	class close: manual
+	{
+		aiBurstTerminable=1;
+		showToPlayer=0;
+		burst=4;
+		burstRangeMax=4;
+		aiRateOfFire=0.5;
+		aiRateOfFireDispersion=1.5;
+		aiRateOfFireDistance=50;
+		minRange=0;
+		minRangeProbab=0.69999999;
+		midRange=100;
+		midRangeProbab=0.69999999;
+		maxRange=200;
+		maxRangeProbab=0.2;
+	};
+	class short: close
+	{
+		aiBurstTerminable=1;
+		showToPlayer=0;
+		burst=4;
+		burstRangeMax=4;
+		aiRateOfFire=1;
+		aiRateOfFireDispersion=2;
+		aiRateOfFireDistance=150;
+		minRange=100;
+		minRangeProbab=0.69999999;
+		midRange=400;
+		midRangeProbab=0.75;
+		maxRange=800;
+		maxRangeProbab=0.2;
+	};
+	class medium: close
+	{
+		aiBurstTerminable=1;
+		showToPlayer=0;
+		burst=4;
+		burstRangeMax=4;
+		aiRateOfFire=2;
+		aiRateOfFireDispersion=2;
+		aiRateOfFireDistance=400;
+		minRange=400;
+		minRangeProbab=0.75;
+		midRange=800;
+		midRangeProbab=0.69999999;
+		maxRange=1500;
+		maxRangeProbab=0.1;
+	};
+	class far: close
+	{
+		aiBurstTerminable=1;
+		showToPlayer=0;
+		burst=4;
+		burstRangeMax=4;
+		aiRateOfFire=4;
+		aiRateOfFireDispersion=4;
+		aiRateOfFireDistance=800;
+		minRange=800;
+		minRangeProbab=0.60000002;
+		midRange=1500;
+		midRangeProbab=0.25;
+		maxRange=2000;
+		maxRangeProbab=0.050000001;
+	};
+};
+
+
 class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 {
 	author="Ascent";
@@ -1272,43 +1511,56 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
-
-	magazineReloadTime=1; //TESTING ONLY!
+	//magazineReloadTime=1; //TESTING ONLY!
 
 	class HE: HE
 	{
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		maxZeroing=4000;
-
-		magazineReloadTime=1; //TESTING ONLY!
+		//magazineReloadTime=1; //TESTING ONLY!
 
 		magazines[]=
 		{
+			"RC_100Rnd_30mm_MP_Pen_T_R",
+			"RC_100Rnd_30mm_MP_Pen_T_G",
+			"RC_100Rnd_30mm_MP_Pen_T_Y",
+
+			"RC_100Rnd_30mm_HE_Pen_T_R",
+			"RC_100Rnd_30mm_HE_Pen_T_G",
+			"RC_100Rnd_30mm_HE_Pen_T_Y",
+
+			"RC_100Rnd_30mm_MP_DF_T_R",
+			"RC_100Rnd_30mm_MP_DF_T_G",
+			"RC_100Rnd_30mm_MP_DF_T_Y",
+
+			"RC_100Rnd_30mm_HE_DF_T_R",
+			"RC_100Rnd_30mm_HE_DF_T_G",
+			"RC_100Rnd_30mm_HE_DF_T_Y",
+
+			"RC_100Rnd_30mm_MP_QF_T_R",
+			"RC_100Rnd_30mm_MP_QF_T_G",
+			"RC_100Rnd_30mm_MP_QF_T_Y",
+
+			"RC_100Rnd_30mm_HE_QF_T_R",
+			"RC_100Rnd_30mm_HE_QF_T_G",
+			"RC_100Rnd_30mm_HE_QF_T_Y",
+
 			"RC_100Rnd_30mm_MPAB_DF_T_R",
 			"RC_100Rnd_30mm_MPAB_DF_T_G",
 			"RC_100Rnd_30mm_MPAB_DF_T_Y",
-			"RC_100Rnd_30mm_MPAB_T_R",
-			"RC_100Rnd_30mm_MPAB_T_G",
-			"RC_100Rnd_30mm_MPAB_T_Y",
-			"RC_100Rnd_30mm_MPDF_T_R",
-			"RC_100Rnd_30mm_MPDF_T_G",
-			"RC_100Rnd_30mm_MPDF_T_Y",
-			"RC_100Rnd_30mm_MPpen_T_R",
-			"RC_100Rnd_30mm_MPpen_T_G",
-			"RC_100Rnd_30mm_MPpen_T_Y",
+
+			"RC_100Rnd_30mm_HEAB_DF_T_R",
+			"RC_100Rnd_30mm_HEAB_DF_T_G",
+			"RC_100Rnd_30mm_HEAB_DF_T_Y",
+
 			"RC_100Rnd_30mm_MPAB_QF_T_R",
 			"RC_100Rnd_30mm_MPAB_QF_T_G",
 			"RC_100Rnd_30mm_MPAB_QF_T_Y",
-			/*
-			"RC_100Rnd_30mm_HEAB_T_R",
-			"RC_100Rnd_30mm_HEAB_T_G",
-			"RC_100Rnd_30mm_HEAB_T_Y",
+
 			"RC_100Rnd_30mm_HEAB_QF_T_R",
 			"RC_100Rnd_30mm_HEAB_QF_T_G",
 			"RC_100Rnd_30mm_HEAB_QF_T_Y",
-			*/
-
-			//REMOVE magazineReloadTime
+			"RC_100Rnd_30mm_cUAS",
 
 			"RC_100Rnd_30mm_MP_T_R",
 			"RC_100Rnd_30mm_MP_T_G",
@@ -1354,6 +1606,47 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 		maxZeroing=4000;
 		magazines[]=
 		{
+			"RC_100Rnd_30mm_MP_Pen_T_R",
+			"RC_100Rnd_30mm_MP_Pen_T_G",
+			"RC_100Rnd_30mm_MP_Pen_T_Y",
+
+			"RC_100Rnd_30mm_HE_Pen_T_R",
+			"RC_100Rnd_30mm_HE_Pen_T_G",
+			"RC_100Rnd_30mm_HE_Pen_T_Y",
+
+			"RC_100Rnd_30mm_MP_DF_T_R",
+			"RC_100Rnd_30mm_MP_DF_T_G",
+			"RC_100Rnd_30mm_MP_DF_T_Y",
+
+			"RC_100Rnd_30mm_HE_DF_T_R",
+			"RC_100Rnd_30mm_HE_DF_T_G",
+			"RC_100Rnd_30mm_HE_DF_T_Y",
+
+			"RC_100Rnd_30mm_MP_QF_T_R",
+			"RC_100Rnd_30mm_MP_QF_T_G",
+			"RC_100Rnd_30mm_MP_QF_T_Y",
+
+			"RC_100Rnd_30mm_HE_QF_T_R",
+			"RC_100Rnd_30mm_HE_QF_T_G",
+			"RC_100Rnd_30mm_HE_QF_T_Y",
+
+			"RC_100Rnd_30mm_MPAB_DF_T_R",
+			"RC_100Rnd_30mm_MPAB_DF_T_G",
+			"RC_100Rnd_30mm_MPAB_DF_T_Y",
+
+			"RC_100Rnd_30mm_HEAB_DF_T_R",
+			"RC_100Rnd_30mm_HEAB_DF_T_G",
+			"RC_100Rnd_30mm_HEAB_DF_T_Y",
+
+			"RC_100Rnd_30mm_MPAB_QF_T_R",
+			"RC_100Rnd_30mm_MPAB_QF_T_G",
+			"RC_100Rnd_30mm_MPAB_QF_T_Y",
+
+			"RC_100Rnd_30mm_HEAB_QF_T_R",
+			"RC_100Rnd_30mm_HEAB_QF_T_G",
+			"RC_100Rnd_30mm_HEAB_QF_T_Y",
+			"RC_100Rnd_30mm_cUAS",
+
 			"RC_100Rnd_30mm_MP_T_R",
 			"RC_100Rnd_30mm_MP_T_G",
 			"RC_100Rnd_30mm_MP_T_Y",
@@ -1373,6 +1666,41 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 			"RC_100Rnd_30mm_APFSDS_T_G",
 			"RC_100Rnd_30mm_APFSDS_T_Y"
 		};
+	};
+};
+
+class autocannon_35mm;
+class RC_autocannon_35mm_base: autocannon_35mm
+{
+	class manual;
+};
+class RC_autocannon_35mm_AB: RC_autocannon_35mm_base
+{
+	author="Ascent";
+	displayName="35mm";
+	//cursor="EmptyCursor";
+	//cursorAim="mg";
+	magazineReloadTime=20;	//default
+	canLock=2;
+	ballisticsComputer="2 + 4";	//why 2?
+	magazines[]=
+	{
+
+		"RC_680Rnd_35mm_HEAB_AA_T_R",
+		"RC_680Rnd_35mm_HEAB_AA_T_G",
+		"RC_680Rnd_35mm_HEAB_AA_T_Y",
+		"RC_680Rnd_35mm_MPAB_AA_T_R",
+		"RC_680Rnd_35mm_MPAB_AA_T_G",
+		"RC_680Rnd_35mm_MPAB_AA_T_Y",
+		"680Rnd_35mm_AA_shells",
+		"680Rnd_35mm_AA_shells_Tracer_Red",
+		"680Rnd_35mm_AA_shells_Tracer_Green",
+		"680Rnd_35mm_AA_shells_Tracer_Yellow"
+	};
+	class manual: manual
+	{
+		displayName="35mm";
+		reloadTime=0.05;
 	};
 };
 
@@ -1397,6 +1725,47 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 		maxZeroing=4000;
 		magazines[]=
 		{
+			"RC_50Rnd_40mm_MP_Pen_T_R",
+			"RC_50Rnd_40mm_MP_Pen_T_G",
+			"RC_50Rnd_40mm_MP_Pen_T_Y",
+
+			"RC_50Rnd_40mm_HE_Pen_T_R",
+			"RC_50Rnd_40mm_HE_Pen_T_G",
+			"RC_50Rnd_40mm_HE_Pen_T_Y",
+
+			"RC_50Rnd_40mm_MP_DF_T_R",
+			"RC_50Rnd_40mm_MP_DF_T_G",
+			"RC_50Rnd_40mm_MP_DF_T_Y",
+
+			"RC_50Rnd_40mm_HE_DF_T_R",
+			"RC_50Rnd_40mm_HE_DF_T_G",
+			"RC_50Rnd_40mm_HE_DF_T_Y",
+
+			"RC_50Rnd_40mm_MP_QF_T_R",
+			"RC_50Rnd_40mm_MP_QF_T_G",
+			"RC_50Rnd_40mm_MP_QF_T_Y",
+
+			"RC_50Rnd_40mm_HE_QF_T_R",
+			"RC_50Rnd_40mm_HE_QF_T_G",
+			"RC_50Rnd_40mm_HE_QF_T_Y",
+
+			"RC_50Rnd_40mm_MPAB_DF_T_R",
+			"RC_50Rnd_40mm_MPAB_DF_T_G",
+			"RC_50Rnd_40mm_MPAB_DF_T_Y",
+
+			"RC_50Rnd_40mm_HEAB_DF_T_R",
+			"RC_50Rnd_40mm_HEAB_DF_T_G",
+			"RC_50Rnd_40mm_HEAB_DF_T_Y",
+
+			"RC_50Rnd_40mm_MPAB_QF_T_R",
+			"RC_50Rnd_40mm_MPAB_QF_T_G",
+			"RC_50Rnd_40mm_MPAB_QF_T_Y",
+
+			"RC_50Rnd_40mm_HEAB_QF_T_R",
+			"RC_50Rnd_40mm_HEAB_QF_T_G",
+			"RC_50Rnd_40mm_HEAB_QF_T_Y",
+			"RC_50Rnd_40mm_cUAS",
+
 			"RC_50Rnd_40mm_MP_T_R",
 			"RC_50Rnd_40mm_MP_T_G",
 			"RC_50Rnd_40mm_MP_T_Y",
@@ -1431,13 +1800,53 @@ class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
 
 	magazines[]=
 	{
+		"RC_60Rnd_30mm_MP_Pen_T_R",
+		"RC_60Rnd_30mm_MP_Pen_T_G",
+		"RC_60Rnd_30mm_MP_Pen_T_Y",
+
+		"RC_60Rnd_30mm_HE_Pen_T_R",
+		"RC_60Rnd_30mm_HE_Pen_T_G",
+		"RC_60Rnd_30mm_HE_Pen_T_Y",
+
+		"RC_60Rnd_30mm_MP_DF_T_R",
+		"RC_60Rnd_30mm_MP_DF_T_G",
+		"RC_60Rnd_30mm_MP_DF_T_Y",
+
+		"RC_60Rnd_30mm_HE_DF_T_R",
+		"RC_60Rnd_30mm_HE_DF_T_G",
+		"RC_60Rnd_30mm_HE_DF_T_Y",
+
+		"RC_60Rnd_30mm_MP_QF_T_R",
+		"RC_60Rnd_30mm_MP_QF_T_G",
+		"RC_60Rnd_30mm_MP_QF_T_Y",
+
+		"RC_60Rnd_30mm_HE_QF_T_R",
+		"RC_60Rnd_30mm_HE_QF_T_G",
+		"RC_60Rnd_30mm_HE_QF_T_Y",
+
+		"RC_60Rnd_30mm_MPAB_DF_T_R",
+		"RC_60Rnd_30mm_MPAB_DF_T_G",
+		"RC_60Rnd_30mm_MPAB_DF_T_Y",
+
+		"RC_60Rnd_30mm_HEAB_DF_T_R",
+		"RC_60Rnd_30mm_HEAB_DF_T_G",
+		"RC_60Rnd_30mm_HEAB_DF_T_Y",
+
+		"RC_60Rnd_30mm_MPAB_QF_T_R",
+		"RC_60Rnd_30mm_MPAB_QF_T_G",
+		"RC_60Rnd_30mm_MPAB_QF_T_Y",
+
+		"RC_60Rnd_30mm_HEAB_QF_T_R",
+		"RC_60Rnd_30mm_HEAB_QF_T_G",
+		"RC_60Rnd_30mm_HEAB_QF_T_Y",
+		//"RC_60Rnd_30mm_cUAS",
+
 		"RC_60Rnd_30mm_MP_T_G",
 		"RC_60Rnd_30mm_MP_T_R",
 		"RC_60Rnd_30mm_MP_T_Y",
 		"RC_60Rnd_30mm_GPR_T_G",
 		"RC_60Rnd_30mm_GPR_T_R",
-		"RC_60Rnd_30mm_GPR_T_Y",
-		"RC_60Rnd_30mm_cUAS"
+		"RC_60Rnd_30mm_GPR_T_Y"
 	};
 };
 

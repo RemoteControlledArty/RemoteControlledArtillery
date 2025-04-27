@@ -159,7 +159,7 @@ class RC_Laserbeam: Laserbeam
 */
 
 
-//.338 NM Tracer for Vehicle MMG
+//MMG
 class B_338_NM_Ball;
 class RC_B_338_T_R: B_338_NM_Ball
 {
@@ -188,6 +188,7 @@ class RC_B_93x64_T_R: RC_B_93x64_T_G {model="\A3\Weapons_f\Data\bullettracer\tra
 class RC_B_93x64_T_Y: RC_B_93x64_T_G {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+//HMG
 class B_127x99_Ball_Tracer_Red;
 class RC_B_127x99_T_R: B_127x99_Ball_Tracer_Red
 {
@@ -226,6 +227,7 @@ class RC_B_127x99_SLAP_HMG_T_G: RC_B_127x99_SLAP_HMG_T_R {model="\A3\Weapons_f\D
 class RC_B_127x99_SLAP_HMG_T_Y: RC_B_127x99_SLAP_HMG_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+//GMG
 class G_40mm_HEDP;
 class RC_G_40mm_HEDP: G_40mm_HEDP
 {
@@ -237,92 +239,7 @@ class RC_G_40mm_HEDP: G_40mm_HEDP
 };
 
 
-class B_20mm_Tracer_Red;
-class RC_20mm_HE_T_R: B_20mm_Tracer_Red
-{
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-	tracerStartTime=0.05;
-	tracerEndTime=4;
-	indirectHit=6;
-	indirectHitRange=3;
-	deflecting=1;
-};
-class RC_20mm_HE_T_G: RC_20mm_HE_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_20mm_HE_T_Y: RC_20mm_HE_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-class B_20mm_AP;
-class RC_20mm_AP_T_R: B_20mm_AP
-{
-	hit=70;
-	caliber=3.8;
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-	tracerStartTime=0.045;
-	tracerEndTime=4;
-	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
-};
-class RC_20mm_AP_T_G: RC_20mm_AP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_20mm_AP_T_Y: RC_20mm_AP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-class RC_20mm_APFSDS_T_R: RC_20mm_AP_T_R
-{
-	hit=90;
-	caliber=4.8;
-	deflecting=15;
-	airFriction=-9.9999997e-005;
-	typicalSpeed=1320;
-	cost=50;
-	tracerStartTime=0.04;
-
-	class HitEffects
-	{
-		hitMetal="ImpactMetalSabotSmall";
-		hitMetalPlate="ImpactMetalSabotSmall";
-		hitBuilding="ImpactConcreteSabotSmall";
-		hitConcrete="ImpactConcreteSabotSmall";
-		hitGroundSoft="ImpactEffectsGroundSabot";
-		hitGroundHard="ImpactEffectsGroundSabot";
-		Hit_Foliage_green="ImpactLeavesGreen";
-		Hit_Foliage_Dead="ImpactLeavesDead";
-		Hit_Foliage_Green_big="ImpactLeavesGreenBig";
-		Hit_Foliage_Palm="ImpactLeavesPalm";
-		Hit_Foliage_Pine="ImpactLeavesPine";
-		hitFoliage="ImpactLeaves";
-		hitGlass="ImpactGlass";
-		hitGlassArmored="ImpactGlassThin";
-		hitWood="ImpactWood";
-		hitHay="ImpactHay";
-		hitPlastic="ImpactPlastic";
-		hitRubber="ImpactRubber";
-		hitTyre="ImpactTyre";
-		hitMan="ImpactEffectsBlood";
-		hitWater="ImpactEffectsWater";
-		default_mat="ImpactEffectsGroundSabot";
-	};
-};
-class RC_20mm_APFSDS_T_G: RC_20mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_20mm_APFSDS_T_Y: RC_20mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-class RC_20mm_AP_AA_T_R: RC_20mm_AP_T_R
-{
-	aiAmmoUsageFlags="128 + 256 + 512";
-};
-class RC_20mm_AP_AA_T_G: RC_20mm_AP_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_20mm_AP_AA_T_Y: RC_20mm_AP_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_20mm_APFSDS_AA_T_R: RC_20mm_APFSDS_T_R
-{
-	aiAmmoUsageFlags="128 + 256 + 512";
-};
-class RC_20mm_APFSDS_AA_T_G: RC_20mm_APFSDS_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_20mm_APFSDS_AA_T_Y: RC_20mm_APFSDS_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
+//C-UAS
 class BulletBase;
 class RC_cUAS_Pellet: BulletBase
 {
@@ -333,6 +250,7 @@ class RC_cUAS_Pellet: BulletBase
 	deflecting=30;	//30-50
 	airFriction=-0.005;
 };
+class B_20mm_Tracer_Red;
 class RC_20mm_cUAS: B_20mm_Tracer_Red
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
@@ -406,26 +324,86 @@ class RC_93x64_cUAS: B_93x64_Ball
 };
 
 
+//Autocannon
+class RC_20mm_HE_T_R: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+};
+class RC_20mm_HE_T_G: RC_20mm_HE_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_20mm_HE_T_Y: RC_20mm_HE_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class B_20mm_AP;
+class RC_20mm_AP_T_R: B_20mm_AP
+{
+	hit=70;
+	caliber=3.8;
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerEndTime=5;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+	airFriction=-0.00042;
+	timeToLive=12;
+};
+class RC_20mm_AP_T_G: RC_20mm_AP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_20mm_AP_T_Y: RC_20mm_AP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_20mm_APFSDS_T_R: RC_20mm_AP_T_R
+{
+	hit=90;
+	caliber=4.8;
+	deflecting=15;
+	airFriction=-9.9999997e-005;
+	typicalSpeed=1320;
+	cost=50;
+
+	class HitEffects
+	{
+		hitMetal="ImpactMetalSabotSmall";
+		hitMetalPlate="ImpactMetalSabotSmall";
+		hitBuilding="ImpactConcreteSabotSmall";
+		hitConcrete="ImpactConcreteSabotSmall";
+		hitGroundSoft="ImpactEffectsGroundSabot";
+		hitGroundHard="ImpactEffectsGroundSabot";
+		Hit_Foliage_green="ImpactLeavesGreen";
+		Hit_Foliage_Dead="ImpactLeavesDead";
+		Hit_Foliage_Green_big="ImpactLeavesGreenBig";
+		Hit_Foliage_Palm="ImpactLeavesPalm";
+		Hit_Foliage_Pine="ImpactLeavesPine";
+		hitFoliage="ImpactLeaves";
+		hitGlass="ImpactGlass";
+		hitGlassArmored="ImpactGlassThin";
+		hitWood="ImpactWood";
+		hitHay="ImpactHay";
+		hitPlastic="ImpactPlastic";
+		hitRubber="ImpactRubber";
+		hitTyre="ImpactTyre";
+		hitMan="ImpactEffectsBlood";
+		hitWater="ImpactEffectsWater";
+		default_mat="ImpactEffectsGroundSabot";
+	};
+};
+class RC_20mm_APFSDS_T_G: RC_20mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_20mm_APFSDS_T_Y: RC_20mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 //MP
 class B_30mm_MP_Tracer_Red;
 class RC_B_30mm_MP_T_R: B_30mm_MP_Tracer_Red
 {
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-	indirectHit=7;
-	indirectHitRange=4;
-	deflecting=1;
-	airFriction=-0.00036000001;
-	timeToLive=10;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
 };
 class RC_B_30mm_MP_T_G: RC_B_30mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_MP_T_Y: RC_B_30mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 class RC_B_40mm_MP_T_R: RC_B_30mm_MP_T_R
 {
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
 	hit=110;
-	indirectHit=8;
-	indirectHitRange=5;
 	caliber=4.5999999;
 };
 class RC_B_40mm_MP_T_G: RC_B_40mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
@@ -436,23 +414,17 @@ class RC_B_40mm_MP_T_Y: RC_B_40mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer
 class B_40mm_GPR_Tracer_Red;
 class RC_B_40mm_GPR_T_R: B_40mm_GPR_Tracer_Red
 {
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-	indirectHit=8;
-	indirectHitRange=5;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
 	caliber=4.5999999;
-	deflecting=1;
-	airFriction=-0.00036000001;
-	timeToLive=10;
 };
 class RC_B_40mm_GPR_T_G: RC_B_40mm_GPR_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_40mm_GPR_T_Y: RC_B_40mm_GPR_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 class RC_B_30mm_GPR_T_R: RC_B_40mm_GPR_T_R
 {
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
 	hit=55;
-	indirectHit=7;
-	indirectHitRange=4;
 	caliber=4.4000001;
 };
 class RC_B_30mm_GPR_T_G: RC_B_30mm_GPR_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
@@ -519,6 +491,13 @@ class RC_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MPAB
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
+class RC_ammo_Penetrator_MP_35mm: RC_ammo_Penetrator_MPAB
+{
+	hit=100;
+	caliber=4.5;
+	dangerRadiusHit=40;
+	suppressionRadiusHit=14;
+};
 class RC_ammo_Penetrator_MP_40mm: RC_ammo_Penetrator_MPAB
 {
 	hit=110;
@@ -536,326 +515,644 @@ class RC_ammo_Penetrator_MP_50mm: RC_ammo_Penetrator_MPAB
 
 
 //add penetrator to 40mm indirect!
-//!!! delayed submun might be THE solution for scriptless AA, allows larger trigger radius !!!
 
 
-//HEABDF
-class RC_B_20mm_HEDF_Sub: B_20mm_Tracer_Red
+//20mm MP Pen/DF/QF
+class RC_B_20mm_MP_Pen_T_R: B_20mm_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default_HE_Sub.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Contact.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\PenetratingFuze.hpp"
-
-	simulationStep=0.0020000001;
-	explosionTime=0.007;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_Pen.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_20mm";
 
 	//caliber=;	//adjust for pen and ammo type
 	//hit=;	//adjust
-	indirectHit=7;
-	indirectHitRange=4;
+};
+class RC_B_20mm_MP_Pen_T_G: RC_B_20mm_MP_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_MP_Pen_T_Y: RC_B_20mm_MP_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_20mm_MP_DF_Sub: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_20mm";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_20mm_MP_DF_T_R: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_DF.hpp"
+	submunitionAmmo="RC_B_20mm_MP_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_20mm_MP_DF_T_G: RC_B_20mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_MP_DF_T_Y: RC_B_20mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_20mm_MP_QF_T_R: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_QF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_20mm";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_20mm_MP_QF_T_G: RC_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_MP_QF_T_Y: RC_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//20mm MPAB DF/QF
+class RC_B_20mm_MPAB_DF_T_R: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
+	submunitionAmmo="RC_B_20mm_MP_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_20mm_MPAB_DF_T_G: RC_B_20mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_MPAB_DF_T_Y: RC_B_20mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_20mm_MPAB_QF_T_R: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_QF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_20mm";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_20mm_MPAB_QF_T_G: RC_B_20mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_MPAB_QF_T_Y: RC_B_20mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//20mm HE Pen/DF/QF
+class RC_B_20mm_HE_Pen_T_R: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_Pen.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_20mm_HE_Pen_T_G: RC_B_20mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_HE_Pen_T_Y: RC_B_20mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_20mm_HE_DF_Sub: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_HE_DF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_20mm_HE_DF_T_R: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_DF.hpp"
+	submunitionAmmo="RC_B_20mm_HE_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_20mm_HE_DF_T_G: RC_B_20mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_HE_DF_T_Y: RC_B_20mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_20mm_HE_QF_T_R: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_QF.hpp"
+	
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_20mm_HE_QF_T_G: RC_B_20mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_HE_QF_T_Y: RC_B_20mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//20mm HEAB C-UAS/DF/QF
+class RC_B_20mm_HEAB_cUAS_T_R: B_20mm_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults_cUAS.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
+	submunitionAmmo="RC_B_20mm_HE_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
 };
 class RC_B_20mm_HEAB_DF_T_R: B_20mm_Tracer_Red
 {
-	//irLock=1;	//not needed, airlock also lets select datalinked ground vehicles, and PREVENTS air targets from being selected
-	//laserLock=1;	//without it cant select laser targets in datalink, only when direct view selecting, but makes it not engage airtargets for whatever reason
-	airLock=1;
-
-	triggerOnImpact=1;				//otherwise would not trigger on vehicles/cover/terrain
-	submunitionCount=1;
-	submunitionParentSpeedCoef=0;
-	submunitionInitSpeed=1000;
-	submunitionConeAngle=0;
-	submunitionDirectionType="SubmunitionModelDirection";
-	deflecting=1;					//prevents ricochets, its a proximity fuze afterall
-	tracerEndTime=4;
-	timeToLive=10;
-	//#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AB.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\DelayedFuze.hpp"
-	submunitionAmmo="RC_B_20mm_HEDF_Sub";
-	triggerDistance=5; 				//5m is a good default, REQUIRES simulation "shotsubmunition"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
+	submunitionAmmo="RC_B_20mm_HE_DF_Sub";
 
 	//caliber=;	//adjust for pen and ammo type
 	//hit=;	//adjust
-	indirectHit=7;
-	indirectHitRange=4;
 };
 class RC_B_20mm_HEAB_DF_T_G: RC_B_20mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_20mm_HEAB_DF_T_Y: RC_B_20mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-//MP with actual shaped charge penetrator submunition
-class RC_B_30mm_MPpen_T_R: B_30mm_MP_Tracer_Red
+class RC_B_20mm_HEAB_QF_T_R: B_20mm_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Contact.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\PenetratingFuze.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_QF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_20mm_HEAB_QF_T_G: RC_B_20mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_HEAB_QF_T_Y: RC_B_20mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+
+
+//30mm MP Pen/DF/QF
+class RC_B_30mm_MP_Pen_T_R: B_30mm_MP_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_Pen.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
 
-	deleteParentWhenTriggered=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-
 	//caliber=;	//adjust for pen and ammo type
 	//hit=;	//adjust
-	indirectHit=7;
-	indirectHitRange=4;
 };
-class RC_B_30mm_MPpen_T_G: RC_B_30mm_MPpen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_30mm_MPpen_T_Y: RC_B_30mm_MPpen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-//MPDF
-class RC_B_30mm_MPDF_Sub: B_30mm_MP_Tracer_Red
+class RC_B_30mm_MP_Pen_T_G: RC_B_30mm_MP_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_30mm_MP_Pen_T_Y: RC_B_30mm_MP_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_30mm_MP_DF_Sub: B_30mm_MP_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Contact.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\PenetratingFuze.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
 
-	simulationStep=0.0020000001;
-	explosionTime=0.007;
-	deleteParentWhenTriggered=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-
 	//caliber=;	//adjust for pen and ammo type
 	//hit=;	//adjust
-	indirectHit=7;
-	indirectHitRange=4;
-	airFriction=-0.00036000001;
 };
-class RC_B_30mm_MPDF_T_R: B_30mm_MP_Tracer_Red
+class RC_B_30mm_MP_DF_T_R: B_30mm_MP_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Contact.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\DelayedFuze.hpp"
-	submunitionAmmo="RC_B_30mm_MPDF_Sub";
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_DF.hpp"
+	submunitionAmmo="RC_B_30mm_MP_DF_Sub";
 
 	//caliber=;	//adjust for pen and ammo type
 	//hit=;	//adjust
 };
-class RC_B_30mm_MPDF_T_G: RC_B_30mm_MPDF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_30mm_MPDF_T_Y: RC_B_30mm_MPDF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-//MPQF
-class RC_B_30mm_MPQF_Sub: B_30mm_MP_Tracer_Red
+class RC_B_30mm_MP_DF_T_G: RC_B_30mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_30mm_MP_DF_T_Y: RC_B_30mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_30mm_MP_QF_T_R: B_30mm_MP_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Contact.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\QuickFuze_Sub.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_QF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
 
-	simulationStep=0.0020000001;
-	explosionTime=0.007;
-	deleteParentWhenTriggered=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-
-	//caliber=;	//adjust for pen and ammo type
-	//hit=;	//adjust
-	indirectHit=7;
-	indirectHitRange=4;
-	airFriction=-0.00036000001;
-};
-class RC_B_30mm_MPQF_T_R: B_30mm_MP_Tracer_Red
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Contact.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\QuickFuze.hpp"
-	submunitionAmmo="RC_B_30mm_MPQF_Sub";
-
 	//caliber=;	//adjust for pen and ammo type
 	//hit=;	//adjust
 };
-class RC_B_30mm_MPQF_T_G: RC_B_30mm_MPQF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_30mm_MPQF_T_Y: RC_B_30mm_MPQF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_30mm_MP_QF_T_G: RC_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_30mm_MP_QF_T_Y: RC_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-//MPAB
-/*
-//useless for airburst
-class RC_B_30mm_MP_Sub: B_30mm_MP_Tracer_Red
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Contact.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\PenetratingFuze.hpp"
-	submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
-
-	simulationStep=0.0020000001;
-	deleteParentWhenTriggered=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-
-	//caliber=;	//adjust for pen and ammo type
-	//hit=;	//adjust
-	indirectHit=7;
-	indirectHitRange=4;
-};
-class RC_B_30mm_MPAB_T_R: B_30mm_MP_Tracer_Red
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AB.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\PenetratingFuze.hpp"
-	submunitionAmmo="RC_B_30mm_MP_Sub";
-	
-	triggerDistance=5; 				//5m is a good default, REQUIRES simulation "shotsubmunition"
-	//submunitionInitSpeed=1000;
-	deleteParentWhenTriggered=1;
-
-	//caliber=;	//adjust for pen and ammo type
-	//hit=;	//adjust
-	indirectHit=7;
-	indirectHitRange=4;
-};
-class RC_B_30mm_MPAB_T_G: RC_B_30mm_MPAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_30mm_MPAB_T_Y: RC_B_30mm_MPAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-*/
-
-
-//MPABDF
+//30mm MPAB DF/QF
 class RC_B_30mm_MPAB_DF_T_R: B_30mm_MP_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AB.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\DelayedFuze.hpp"
-	submunitionAmmo="RC_B_30mm_MPDF_Sub";
-	triggerDistance=5; 				//5m is a good default, REQUIRES simulation "shotsubmunition"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
+	submunitionAmmo="RC_B_30mm_MP_DF_Sub";
 
 	//caliber=;	//adjust for pen and ammo type
 	//hit=;	//adjust
-	indirectHit=7;
-	indirectHitRange=4;
-	airFriction=-0.00036000001;
 };
 class RC_B_30mm_MPAB_DF_T_G: RC_B_30mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_MPAB_DF_T_Y: RC_B_30mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
 class RC_B_30mm_MPAB_QF_T_R: B_30mm_MP_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AB.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\QuickFuze.hpp"
-	submunitionAmmo="RC_B_30mm_MPQF_Sub";
-	triggerDistance=5; 				//5m is a good default, REQUIRES simulation "shotsubmunition"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_QF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
 
 	//caliber=;	//adjust for pen and ammo type
 	//hit=;	//adjust
-	indirectHit=7;
-	indirectHitRange=4;
-	airFriction=-0.00036000001;
 };
 class RC_B_30mm_MPAB_QF_T_G: RC_B_30mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_MPAB_QF_T_Y: RC_B_30mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-
-/*
-class RC_B_40mm_MPAB_T_R: B_40mm_GPR_Tracer_Red
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	submunitionAmmo="RC_ammo_Penetrator_MP_40mm";
-	indirectHit=8;
-	indirectHitRange=5;
-	//caliber=;	//adjust for pen and ammo type
-};
-class RC_B_40mm_MPAB_T_G: RC_B_40mm_MPAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_40mm_MPAB_T_Y: RC_B_40mm_MPAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_B_40mm_MPAB_QF_T_R: RC_B_40mm_MPAB_T_R
-{
-	explosive=0.80000001;
-};
-class RC_B_40mm_MPAB_QF_T_G: RC_B_40mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_40mm_MPAB_QF_T_Y: RC_B_40mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-class RC_B_50mm_MPAB_T_R: B_40mm_GPR_Tracer_Red
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	submunitionAmmo="RC_ammo_Penetrator_MP_50mm";
-	hit=110
-	indirectHit=12;
-	indirectHitRange=6.5;
-	caliber=4.8;	//adjust for pen and ammo type
-	cost=50;
-};
-class RC_B_50mm_MPAB_T_G: RC_B_50mm_MPAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_50mm_MPAB_T_Y: RC_B_50mm_MPAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_B_50mm_MPAB_QF_T_R: RC_B_50mm_MPAB_T_R
-{
-	explosive=0.80000001;
-};
-class RC_B_50mm_MPAB_QF_T_G: RC_B_50mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_50mm_MPAB_QF_T_Y: RC_B_50mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-//HEAB
+//30mm HE Pen/DF/QF
 class B_30mm_HE_Tracer_Red;
-class RC_B_30mm_CfgAB_Sub: B_30mm_HE_Tracer_Red
+class RC_B_30mm_HE_Pen_T_R: B_30mm_HE_Tracer_Red
 {
-	timeToLive=0;
-	simulation="shotrocket";
-};
-class RC_B_30mm_HEAB_T_R: B_30mm_HE_Tracer_Red
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE.hpp"
-	indirectHit=7;
-	indirectHitRange=4;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_Pen.hpp"
+
 	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
 };
-class RC_B_30mm_HEAB_T_G: RC_B_30mm_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_30mm_HEAB_T_Y: RC_B_30mm_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_B_30mm_HEAB_QF_T_R: RC_B_30mm_HEAB_T_R
+class RC_B_30mm_HE_Pen_T_G: RC_B_30mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_30mm_HE_Pen_T_Y: RC_B_30mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_30mm_HE_DF_Sub: B_30mm_HE_Tracer_Red
 {
-	explosive=0.80000001;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_HE_DF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_30mm_HE_DF_T_R: B_30mm_HE_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_DF.hpp"
+	submunitionAmmo="RC_B_30mm_HE_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_30mm_HE_DF_T_G: RC_B_30mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_30mm_HE_DF_T_Y: RC_B_30mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_30mm_HE_QF_T_R: B_30mm_HE_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_QF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_30mm_HE_QF_T_G: RC_B_30mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_30mm_HE_QF_T_Y: RC_B_30mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//30mm HEAB DF/QF
+class RC_B_30mm_HEAB_DF_T_R: B_30mm_HE_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
+	submunitionAmmo="RC_B_30mm_HE_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_30mm_HEAB_DF_T_G: RC_B_30mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_30mm_HEAB_DF_T_Y: RC_B_30mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_30mm_HEAB_QF_T_R: B_30mm_HE_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_QF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
 };
 class RC_B_30mm_HEAB_QF_T_G: RC_B_30mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_HEAB_QF_T_Y: RC_B_30mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-class RC_B_40mm_HEAB_T_R: B_40mm_GPR_Tracer_Red
+
+
+//35mm HEAB C-UAS / MPAB AA
+class B_35mm_AA;
+class RC_B_35mm_MP_DF_Sub: B_35mm_AA
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE.hpp"
-	indirectHit=8;
-	indirectHitRange=5;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_35mm";
+};
+class RC_B_35mm_MPAB_AA_T_R: B_35mm_AA
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults_cUAS.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
+	submunitionAmmo="RC_B_35mm_MP_DF_Sub";
+};
+class RC_B_35mm_MPAB_AA_T_G: RC_B_35mm_MPAB_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_35mm_MPAB_AA_T_Y: RC_B_35mm_MPAB_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_35mm_HE_DF_Sub: B_35mm_AA
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_HE_DF.hpp"
+};
+class RC_B_35mm_HEAB_AA_T_R: B_35mm_AA
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults_cUAS.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_HEAB_DF.hpp"
+	submunitionAmmo="RC_B_35mm_HE_DF_Sub";
+};
+class RC_B_35mm_HEAB_AA_T_G: RC_B_35mm_HEAB_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_35mm_HEAB_AA_T_Y: RC_B_35mm_HEAB_AA_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+
+
+//40mm MP Pen/DF/QF
+class RC_B_40mm_MP_Pen_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_Pen.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_40mm";
+
 	//caliber=;	//adjust for pen and ammo type
-}; class RC_B_40mm_HEAB_T_G: RC_B_40mm_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_40mm_HEAB_T_Y: RC_B_40mm_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_B_40mm_HEAB_QF_T_R: RC_B_40mm_HEAB_T_R
+	//hit=;	//adjust
+};
+class RC_B_40mm_MP_Pen_T_G: RC_B_40mm_MP_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_40mm_MP_Pen_T_Y: RC_B_40mm_MP_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_40mm_MP_DF_Sub: B_40mm_GPR_Tracer_Red
 {
-	explosive=0.80000001;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_40mm";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_40mm_MP_DF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_DF.hpp"
+	submunitionAmmo="RC_B_40mm_MP_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_40mm_MP_DF_T_G: RC_B_40mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_40mm_MP_DF_T_Y: RC_B_40mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_40mm_MP_QF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_QF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_40mm";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_40mm_MP_QF_T_G: RC_B_40mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_40mm_MP_QF_T_Y: RC_B_40mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//40mm MPAB DF/QF
+class RC_B_40mm_MPAB_DF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
+	submunitionAmmo="RC_B_40mm_MP_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_40mm_MPAB_DF_T_G: RC_B_40mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_40mm_MPAB_DF_T_Y: RC_B_40mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_40mm_MPAB_QF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_QF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_40mm";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_40mm_MPAB_QF_T_G: RC_B_40mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_40mm_MPAB_QF_T_Y: RC_B_40mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//40mm HE Pen/DF/QF
+class RC_B_40mm_HE_Pen_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_Pen.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_40mm_HE_Pen_T_G: RC_B_40mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_40mm_HE_Pen_T_Y: RC_B_40mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_40mm_HE_DF_Sub: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_HE_DF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_40mm_HE_DF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_DF.hpp"
+	submunitionAmmo="RC_B_40mm_HE_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_40mm_HE_DF_T_G: RC_B_40mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_40mm_HE_DF_T_Y: RC_B_40mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_40mm_HE_QF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_QF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_40mm_HE_QF_T_G: RC_B_40mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_40mm_HE_QF_T_Y: RC_B_40mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//40mm HEAB DF/QF
+class RC_B_40mm_HEAB_DF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
+	submunitionAmmo="RC_B_40mm_HE_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_40mm_HEAB_DF_T_G: RC_B_40mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_40mm_HEAB_DF_T_Y: RC_B_40mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_40mm_HEAB_QF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_40mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_QF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
 };
 class RC_B_40mm_HEAB_QF_T_G: RC_B_40mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_40mm_HEAB_QF_T_Y: RC_B_40mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-class RC_B_50mm_HEAB_T_R: B_40mm_GPR_Tracer_Red
+
+
+//50mm MP Pen/DF/QF
+class RC_B_50mm_MP_Pen_T_R: B_40mm_GPR_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE.hpp"
-	hit=110
-	indirectHit=11;
-	indirectHitRange=6.5;
-	caliber=4.8;	//adjust for pen and ammo type
-	cost=50;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_Pen.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_50mm";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
 };
-class RC_B_50mm_HEAB_T_G: RC_B_50mm_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_50mm_HEAB_T_Y: RC_B_50mm_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_B_50mm_HEAB_QF_T_R: RC_B_50mm_HEAB_T_R
+class RC_B_50mm_MP_Pen_T_G: RC_B_50mm_MP_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_50mm_MP_Pen_T_Y: RC_B_50mm_MP_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_50mm_MP_DF_Sub: B_40mm_GPR_Tracer_Red
 {
-	explosive=0.80000001;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_50mm";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_50mm_MP_DF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_DF.hpp"
+	submunitionAmmo="RC_B_50mm_MP_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_50mm_MP_DF_T_G: RC_B_50mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_50mm_MP_DF_T_Y: RC_B_50mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_50mm_MP_QF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_QF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_50mm";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_50mm_MP_QF_T_G: RC_B_50mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_50mm_MP_QF_T_Y: RC_B_50mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//50mm MPAB DF/QF
+class RC_B_50mm_MPAB_DF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
+	submunitionAmmo="RC_B_50mm_MP_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_50mm_MPAB_DF_T_G: RC_B_50mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_50mm_MPAB_DF_T_Y: RC_B_50mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_50mm_MPAB_QF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_QF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_50mm";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_50mm_MPAB_QF_T_G: RC_B_50mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_50mm_MPAB_QF_T_Y: RC_B_50mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//50mm HE Pen/DF/QF
+class RC_B_50mm_HE_Pen_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_Pen.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_50mm_HE_Pen_T_G: RC_B_50mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_50mm_HE_Pen_T_Y: RC_B_50mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_50mm_HE_DF_Sub: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_HE_DF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_50mm_HE_DF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_DF.hpp"
+	submunitionAmmo="RC_B_50mm_HE_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_50mm_HE_DF_T_G: RC_B_50mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_50mm_HE_DF_T_Y: RC_B_50mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_50mm_HE_QF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_QF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_50mm_HE_QF_T_G: RC_B_50mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_50mm_HE_QF_T_Y: RC_B_50mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//50mm HEAB DF/QF
+class RC_B_50mm_HEAB_DF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
+	submunitionAmmo="RC_B_50mm_HE_DF_Sub";
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
+};
+class RC_B_50mm_HEAB_DF_T_G: RC_B_50mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_50mm_HEAB_DF_T_Y: RC_B_50mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_50mm_HEAB_QF_T_R: B_40mm_GPR_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_50mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_QF.hpp"
+
+	//caliber=;	//adjust for pen and ammo type
+	//hit=;	//adjust
 };
 class RC_B_50mm_HEAB_QF_T_G: RC_B_50mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_50mm_HEAB_QF_T_Y: RC_B_50mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-*/
+
+
 
 
 //120mm of FSV/MBT
@@ -961,13 +1258,13 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 	explosive=1;	//0.5 rare value
 
 	cost=400;
-	timeToLive=20;	//2
+	timeToLive=1.5;	//2
 
 	irLock=1;
 	airLock=1;
 	laserLock=1;
 	allowAgainstInfantry=1;
-	aiAmmoUsageFlags="64 + 128 + 256 + 512";
+	aiAmmoUsageFlags="64 + 128 + 256";
 
 	maneuvrability=2;	//whats optimum
 	simulationStep=0.0020000001;
@@ -978,14 +1275,13 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 	airFriction=0.090000004;
 	sideAirFriction=0.5;
 	maxSpeed=180;
-	initTime=0.002;
-	thrustTime=0.80000001;
+	initTime=0;
+	thrustTime=1;
 	thrust=70;	//200
 	fuseDistance=10;	//test
 
 	//submunitionAmmo="RC_ammo_Penetrator_AB_120mm";	//works like a charm, but is completely op, make seperate version
-
-	submunitionDirectionType="SubmunitionTargetDirection";
+	//submunitionDirectionType="SubmunitionTargetDirection";
 	//submunitionInitSpeed=1000;
 	//submunitionParentSpeedCoef=0;
 	//submunitionInitialOffset[]={0,0,-0.5};
@@ -994,18 +1290,15 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 	proximityExplosionDistance=12;
 	deleteParentWhenTriggered=0;
 
-	/*
 	flightProfiles[]=
 	{
 		"Overfly"
 	};
-	*/
-	/*
 	class Overfly
 	{
 		overflyElevation=10;
 	};
-	*/
+	/*
 	flightProfiles[]=
 	{
 		"Cruise"
@@ -1015,6 +1308,7 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 		preferredFlightAltitude=10;
 		lockDistanceToTarget=20;
 	};
+	*/
 
 	//autoSeekTarget=1;	 //steers off course sideways if no target (maybe switches to datalink targets)
 	missileLockCone=300;
@@ -1137,48 +1431,60 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 	};
 };
 
-class Sh_120mm_HE;
-class RC_Sh_120mm_HEAB_LV_indirect_T_R: Sh_120mm_HE
+class Sh_120mm_HE_Tracer_Red;
+class RC_Sh_120mm_HEAB_LV_indirect_T_R: Sh_120mm_HE_Tracer_Red
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Default.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AB.hpp"
-	submunitionAmmo="RC_Sh_120mm_HEAB_LV_Overflight";
-
-	triggerDistance=50;	//is too low at 50m and collides with cover, due to FCS inaccuracy at low velocity
-
-	explosive=1;			//default 1, likely removes hit value, >0.7 does not penetrate light cover, <0.7 does, 1 is for triggering the spawn of delayed fuze submunition with <0.7 and timer
-	submunitionInitialOffset[]={0,0,0};
-
-	//airFriction=0;
-	//sideairFriction=0;
-
-	hit=250;
-	indirectHit=80;
-	indirectHitRange=12;
-	//typicalSpeed=1400;
-
-	/*
-	aiAmmoUsageFlags="64 + 128";
-
+	//Default
 	laserLock=1;
 	irLock=1;
 	airLock=1;
 	deflecting=1;
 	tracerEndTime=15;
-	craterEffects="AAMissileCrater";
+	timeToLive=20;
 
-	model="\A3\Weapons_f\Data\bullettracer\tracer_red";
-	*/
+	//Submun
+	triggerOnImpact=1;
+	submunitionCount=1;
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=40;	//NLAW default
+	submunitionConeAngle=0;
+	submunitionDirectionType="SubmunitionTargetDirection";
+
+	//!!!TRY 10m above ground trigger + 10m triggerdistance!!!
+
+	//Trigger/ed
+	deleteParentWhenTriggered=1;
+	submunitionInitialOffset[]={0,0,0};
+	triggerDistance=50;
+
+	//Penetration / Fuze
+	explosive=0.80000001;
+
+	//Simulation
+	simulation="shotSubmunitions";
+	simulationStep=0.0020000001;
+
+	//Use
+	warheadName="HE";
+	aiAmmoUsageFlags="64 + 128 + 256";
+
+
+	submunitionAmmo="RC_Sh_120mm_HEAB_LV_Overflight";
+	//airFriction=0;
+	//sideairFriction=0;
+	hit=250;
+	indirectHit=60;
+	indirectHitRange=12;
+	craterEffects="AAMissileCrater";
 };
-class RC_Sh_120mm_HEAB_LV_indirect2_T_R: Sh_120mm_HE
+class RC_Sh_120mm_HEAB_LV_indirect2_T_R: Sh_120mm_HE_Tracer_Red
 {
 	airFriction=0;
 	sideairFriction=0;
 
 	//explosive=1;			//default 1, likely removes hit value, >0.7 does not penetrate light cover, <0.7 does, 1 is for triggering the spawn of delayed fuze submunition with <0.7 and timer
 	hit=250;
-	indirectHit=80;
+	indirectHit=60;
 	indirectHitRange=12;
 	//typicalSpeed=1400;
 
@@ -1245,31 +1551,25 @@ class RC_ammo_Penetrator_MP_PD: RC_ammo_Penetrator_MP
 {
 	airFriction=0;
 };
-class RC_IFV_MP_NLOS_PD_Base: MissileBase
+class M_Titan_AT_long;
+class M_Titan_AT_long_Base: M_Titan_AT_long
 {
 	class Components;
 };
-class RC_IFV_MP_NLOS_PD: RC_IFV_MP_NLOS_PD_Base
+class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 {
-	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
-	//model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";
 	craterEffects="AAMissileCrater";
-
-	hit=150;	// Titan AT long
 	indirectHit=80;
-	indirectHitRange=8;
+	indirectHitRange=10;
 	explosive=1;
+	timeToLive=20;	//25 CLBM likely also cannon lg atgm
 
-	cost=500;	//Titan AT / Titan AT long
-	timeToLive=20;	//75 CLBM likely also cannon lg atgm
-
-	//lockType=0;	//?, 0 Titan AT & cannon lg atgm, 1 CLMB
+	//lockType=0;	//?, 0 Titan AT & cannon lg atgm, 1 Titan AP & CLMB, 0 likely fire forget 1 likely beamriding
 	irLock=1;
 	airLock=1;
 	laserLock=1;
 	allowAgainstInfantry=1;
 	aiAmmoUsageFlags="64 + 128 + 256 + 512";
-
 
 	simulationStep=0.0020000001;	//0.0020000001 CLMB & Titan AT & AA, 0.0099999998 missilebase, 0.050000001 missilecore
 	airFriction=0.085000001;		//0.050000001 CLBM, 0.2 missilebase, -0.00050000002 default & missilecore, 0.085000001 Titan AT
@@ -1283,7 +1583,6 @@ class RC_IFV_MP_NLOS_PD: RC_IFV_MP_NLOS_PD_Base
 	thrustTime=6;		//5 CLMB & Titan, 6 cannon lg atgm, NLAW 0.80000001, too long thrust time seems to lead to misses
 	thrust=60;			//60 CLBM, 125mm ATGM, 40 cannon lg atgm, 45 Titan AT
 	fuseDistance=15;	//test
-
 
 	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
 	submunitionDirectionType="SubmunitionTargetDirection";
@@ -1409,251 +1708,6 @@ class RC_IFV_MP_NLOS_PD: RC_IFV_MP_NLOS_PD_Base
 		};
 	};
 };
-class M_Titan_AT_long;
-class M_Titan_AT_long_Base: M_Titan_AT_long
-{
-	class Components;
-};
-class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
-{
-	//submunitionAmmo="RC_ammo_Penetrator_MP";
-
-	//*
-	submunitionAmmo="RC_ammo_Penetrator_MP";
-	submunitionDirectionType="SubmunitionTargetDirection";
-	proximityExplosionDistance=30;
-	triggerDistance=30;
-	//*/
-
-	indirectHit=250;
-	indirectHitRange=6;
-
-	maxControlRange=4000;
-	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
-	missileKeepLockedCone=180;
-	missileLockMaxDistance=4000;
-
-	initTime=0.01;
-	fuseDistance=20;
-	thrust=70;
-	//thrustTime=5;		//5
-	maxSpeed=250;
-	maneuvrability=25;	//25
-	trackLead=1;
-	cameraViewAvailable=1;
-
-	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
-	weaponLockSystem="2 + 4 + 16";
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-	craterEffects="AAMissileCrater";
-
-	/*
-	thrustTime=5;
-	thrust=45;
-	*/
-
-	//Titan
-	/*
-	simulationStep=0.0020000001;
-	initTime=0.25;
-	trackOversteer=1.5;
-	trackLead=0.89999998;
-	timeToLive=22;
-	maneuvrability=20;
-	airFriction=0.085000001;
-	sideAirFriction=1;
-	maxSpeed=180;
-	typicalSpeed=160;
-	thrustTime=5;
-	thrust=45;
-	fuseDistance=50;
-	effectsMissile="missile2";
-	whistleDist=4;
-	airLock=1;
-	lockType=0;
-	missileLockCone=4.5;
-	missileKeepLockedCone=160;
-	missileLockMaxDistance=2000;
-	missileLockMinDistance=50;
-	missileLockMaxSpeed=35;
-	manualControl=1;
-	missileManualControlCone=45;
-	maxControlRange=2000;
-	weaponLockSystem="2 + 16";
-	cmImmunity=0.40000001;
-	flightProfiles[]=
-	{
-		"Direct",
-		"TopDown"
-	};
-	class Direct
-	{
-	};
-	class TopDown
-	{
-		ascendHeight=150;
-		descendDistance=180;
-		minDistance=180;
-		ascendAngle=30;
-	};
-	*/
-
-	//CANNON
-	/*
-	thrustTime=6;
-	thrust=40;
-	lockType=0;
-	autoSeekTarget=1;
-	lockSeekRadius=100;
-	manualControl=0;
-	missileLockCone=180;
-	missileKeepLockedCone=180;
-	missileLockMaxDistance=8000;
-	missileLockMinDistance=100;
-	missileLockMaxSpeed=35;
-	*/
-
-	//RC CANNON
-	/*
-	trackLead=1;
-	manualControl=1;
-	maneuvrability=4;
-	*/
-
-	/*
-	//MISSILECORE
-	simulation="shotMissile";
-	simulationStep=0.050000001;
-	timeToLive=20;
-	manualControl=1;
-	maxControlRange=250;
-	initTime=0.15000001;
-	thrustTime=2.5;
-	thrust=350;
-	maneuvrability=3;
-	missileLockCone=50;
-	visibleFire=32;
-	audibleFire=32;
-	visibleFireTime=20;
-	*/
-
-	/*
-	flightProfiles[]=
-	{
-		"Direct",
-		"TopDown"
-	};
-	class TopDown
-	{
-		ascendHeight=300;	//200
-		descendDistance=360;	//240
-		minDistance=50;	//240
-		ascendAngle=45;	//30
-	};
-	*/
-	flightProfiles[]=
-	{
-		"Direct",
-		"Cruise"
-	};
-	class Cruise
-	{
-		preferredFlightAltitude=100;
-		lockDistanceToTarget=150;
-	};
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-				};
-				class IRSensorComponent: SensorTemplateIR
-				{
-					typeRecognitionDistance=2000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					angleRangeHorizontal=67.5;
-					angleRangeVertical=67.5;
-				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					class AirTarget
-					{
-						minRange=600;
-						maxRange=600;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=600;
-						maxRange=600;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					typeRecognitionDistance=400;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=67.5;
-					angleRangeVertical=67.5;
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=4000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
-};
 
 
 class M_Titan_AA_long;
@@ -1663,8 +1717,8 @@ class RC_IFV_AA_Base: M_Titan_AA_long
 };
 class RC_IFV_AA: RC_IFV_AA_Base
 {
-	indirectHitRange=15;
-	//proximityExplosionDistance=15;
+	indirectHitRange=12;
+	proximityExplosionDistance=12;
 	weaponLockSystem="2 + 4 + 16";
 	laserLock=1;
 	irLock=1;
@@ -1765,6 +1819,39 @@ class RC_IFV_AA: RC_IFV_AA_Base
 		};
 	};
 };
+class RC_AA_NLOS: RC_IFV_AA
+{
+	indirectHitRange=12;
+	proximityExplosionDistance=12;
+	//weaponLockSystem="2 + 4 + 16";
+	//cmImmunity=0.89999998;
+	lockType=0;
+	/*
+	manualControl=1;
+	missileManualControlCone=45;
+	maxControlRange=8000;
+	*/
+	//autoSeekTarget=1;	 //unlear if it works in this context
+	//lockSeekRadius=1500;
+	missileLockCone=180;
+	missileKeepLockedCone=180;
+	thrustTime=5;
+
+	flightProfiles[]=
+	{
+		"Direct",
+		"Cruise"
+	};
+	class Direct
+	{
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=100;
+		lockDistanceToTarget=150;
+	};
+};
+
 
 
 class RC_70mm_AA: RC_IFV_AA

@@ -10,14 +10,14 @@ class Components: Components
 			{
 				componentType="EmptyDisplayComponent";
 			};
+			class UAVFeedDisplay
+			{
+				componentType="UAVFeedDisplayComponent";
+			};
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
 				resource="RscCustomInfoMiniMap";
-			};
-			class UAVFeedDisplay
-			{
-				componentType="UAVFeedDisplayComponent";
 			};
 			/*
 			class MineDetectorDisplay
@@ -39,14 +39,14 @@ class Components: Components
 			{
 				componentType="EmptyDisplayComponent";
 			};
+			class UAVFeedDisplay
+			{
+				componentType="UAVFeedDisplayComponent";
+			};
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
 				resource="RscCustomInfoMiniMap";
-			};
-			class UAVFeedDisplay
-			{
-				componentType="UAVFeedDisplayComponent";
 			};
 			/*
 			class MineDetectorDisplay

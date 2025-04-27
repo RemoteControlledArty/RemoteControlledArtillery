@@ -11,11 +11,15 @@ RC_LaserDatalink = [] spawn
 {
 	while {true} do
 	{
-		_laserSpot = laserTarget player;
-		if (!isNull _laserSpot) then {[(side player),[_laserSpot, 5]] remoteExec ["reportRemoteTarget", 0, true];};
+		private _laserSpot = laserTarget player;
+		private _side = side player;
+		if (!isNull _laserSpot) then {[_side,[_laserSpot, 5]] remoteExec ["reportRemoteTarget", _side];};
 		sleep 2;
 	};
 };
+
+//prior ["reportRemoteTarget", 0, true] but removed true (JIP) to prevent backlogging, will add again if it made it stop working
+
 
 /*
 //old versions

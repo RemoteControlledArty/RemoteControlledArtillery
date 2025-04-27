@@ -134,11 +134,79 @@
     "GPS"
 ] call CBA_fnc_addSetting;
 
+
+//RC Modernized Vehicles Settings
 [
-    "RC_AT_SourceIndication",
+    "RC_AT_SourceIndicationVic",
     "CHECKBOX",
-    ["allow AT fire source indicator", "Only for this mods vehicles that have missile/rocket detection systems, marks source of enemy AT fire in datalink for short period."],
-    ["Remote Controlled Artillery"],
+    ["allow Vehicle-AT-fire source indicator", "Only for this mods vehicles that have missile/rocket detection systems, BRIEFLY marks source of enemy AT Vehicle fire in datalink."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_AT_SourceIndicationStatic",
+    "CHECKBOX",
+    ["allow Static-AT-fire source indicator", "Only for this mods vehicles that have missile/rocket detection systems, marks source of enemy AT Static fire in datalink for 3min."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_AT_SourceIndicationInf",
+    "CHECKBOX",
+    ["allow (brief) Infantry-AT-fire source indicator", "Only for this mods vehicles that have missile/rocket detection systems, BRIEFLY marks source of enemy Infantry AT fire in datalink."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_AB_StaticConfirming",
+    "CHECKBOX",
+    ["allow airburst on enemy statics", "AB ammo requires a confirmed target, if AB loaded pressing LOCK TARGET confirms enemy statics as target, alternative if off is lasing by commander."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_AB_InfConfirming",
+    "CHECKBOX",
+    ["allow airburst on enemy infantry", "AB ammo requires a confirmed target, if AB loaded pressing LOCK TARGET briefly confirms enemy infantry as target, alternative if off is lasing by commander."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_UAV_StaticReporting",
+    "CHECKBOX",
+    ["allow enemy static reporting by UAV", "For AR-1/AR-3 pressing LOCK TARGET reports enemy statics into datalink for 3min, to improve situational awareness & coordination."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_UAV_InfReporting",
+    "CHECKBOX",
+    ["allow (brief) enemy infantry reporting by UAV", "For AR-1/AR-3 pressing LOCK TARGET briefly reports enemy infantry into datalink, to improve situational awareness & coordination."],
+    ["RC Modernized Vehicles"],
     true,
     true,
     {},

@@ -104,7 +104,7 @@ class Components: Components
 			class SensorDisplay
 			{
 				componentType="SensorsDisplayComponent";
-				range[]={4000,2000,1000,500};
+				range[]={4000,2000,1000,400};
 				resource="RscCustomInfoSensors";
 			};
 			class MinimapDisplay
@@ -135,7 +135,7 @@ class Components: Components
 			class SensorDisplay
 			{
 				componentType="SensorsDisplayComponent";
-				range[]={500,1000,2000,4000};
+				range[]={400,1000,2000,4000};
 				resource="RscCustomInfoSensors";
 			};
 			class MinimapDisplay

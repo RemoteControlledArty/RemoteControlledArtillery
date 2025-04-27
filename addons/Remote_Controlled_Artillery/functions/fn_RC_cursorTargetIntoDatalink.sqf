@@ -8,15 +8,15 @@
 				if ((_currentMag find 'HEAB' != -1) or (_currentMag find 'MPAB' != -1)) then {
 					private _target = cursorTarget;
 					if (!isNull _target && alive _target) then {
-						if (_target isKindOf "Man") then {
+						if (_target isKindOf "Man" && RC_AB_InfConfirming) then {
 							private _side = side player;
-							_side reportRemoteTarget [_target, 8];
-							_target confirmSensorTarget [_side, true];
+							[_side,[_target, 8]] remoteExec ["reportRemoteTarget", _side];
+							[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
 						};
-						if (_target isKindOf "StaticWeapon") then {
+						if (_target isKindOf "StaticWeapon" && RC_AB_StaticConfirming) then {
 							private _side = side player;
-							_side reportRemoteTarget [_target, 180];
-							_target confirmSensorTarget [_side, true];
+							[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
+							[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
 						};
 					};
 				};
@@ -26,15 +26,15 @@
 				if (_uav isKindOf 'RC_UAV_base') then {
 					private _target = cursorTarget;
 					if (!isNull _target && alive _target) then {
-						if (_target isKindOf "Man") then {
+						if (_target isKindOf "Man" && RC_UAV_InfReporting) then {
 							private _side = side player;
-							_side reportRemoteTarget [_target, 10];
-							_target confirmSensorTarget [_side, true];
+							[_side,[_target, 8]] remoteExec ["reportRemoteTarget", _side];
+							[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
 						};
-						if (_target isKindOf "StaticWeapon") then {
+						if (_target isKindOf "StaticWeapon" && RC_UAV_StaticReporting) then {
 							private _side = side player;
-							_side reportRemoteTarget [_target, 180];
-							_target confirmSensorTarget [_side, true];
+							[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
+							[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
 						};
 					};
 				};
@@ -42,15 +42,15 @@
 				if ((_currentMag find 'HEAB' != -1) or (_currentMag find 'MPAB' != -1)) then {
 					private _target = cursorTarget;
 					if (!isNull _target && alive _target) then {
-						if (_target isKindOf "Man") then {
+						if (_target isKindOf "Man" && RC_AB_InfConfirming) then {
 							private _side = side player;
-							_side reportRemoteTarget [_target, 8];
-							_target confirmSensorTarget [_side, true];
+							[_side,[_target, 8]] remoteExec ["reportRemoteTarget", _side];
+							[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
 						};
-						if (_target isKindOf "StaticWeapon") then {
+						if (_target isKindOf "StaticWeapon" && RC_AB_StaticConfirming) then {
 							private _side = side player;
-							_side reportRemoteTarget [_target, 180];
-							_target confirmSensorTarget [_side, true];
+							[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
+							[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
 						};
 					};
 				};

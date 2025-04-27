@@ -42,6 +42,10 @@ class Components: Components
 				range[]={400,1000,2000,4000};
 				resource="RscCustomInfoSensors";
 			};
+			class UAVFeedDisplay
+			{
+				componentType="UAVFeedDisplayComponent";
+			};
 			class VehicleDriverDisplay
 			{
 				componentType="TransportFeedDisplayComponent";
@@ -55,10 +59,6 @@ class Components: Components
 			class CrewDisplay
 			{
 				componentType="CrewDisplayComponent";
-			};
-			class UAVFeedDisplay
-			{
-				componentType="UAVFeedDisplayComponent";
 			};
 			/*
 			class MineDetectorDisplay

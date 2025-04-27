@@ -4,4 +4,4 @@ aiAmmoUsageFlags="256";
 deleteParentWhenTriggered=1;
 triggerTime=0.01;
 airFriction=-0.005;
-airLock=1;
+airLock=2;
