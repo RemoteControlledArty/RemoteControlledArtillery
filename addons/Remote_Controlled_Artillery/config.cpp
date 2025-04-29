@@ -93,6 +93,13 @@ class CfgPatches
 			RC_cUAS_Static_HMG_Bag_O,
 			RC_cUAS_Static_HMG_Bag_I,
 
+			RC_cUAS_UGV_A,
+			RC_cUAS_GMG_UGV_WD,
+			RC_cUAS_GMG_UGV_A_O,
+			RC_cUAS_GMG_UGV_WD_O,
+			RC_cUAS_GMG_UGV_A_I,
+			RC_cUAS_GMG_UGV_WD_I,
+
 			RC_Howitzer_A,
 			RC_Howitzer_WD,
 			RC_Howitzer_A_O,

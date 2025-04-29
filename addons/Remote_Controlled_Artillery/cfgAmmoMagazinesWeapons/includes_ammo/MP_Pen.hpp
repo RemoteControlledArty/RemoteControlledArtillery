@@ -1,5 +1,5 @@
 //Submun
-triggerOnImpact=1;
+triggerOnImpact=0;
 submunitionCount=1;
 submunitionParentSpeedCoef=0;
 submunitionInitSpeed=1000;
