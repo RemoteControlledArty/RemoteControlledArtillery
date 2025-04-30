@@ -198,6 +198,16 @@ class CfgPatches
 			RC_Wiesel_AC_WD_manned_I,
 			RC_Wiesel_AC_DIG_manned_I,
 
+			RC_Wiesel_cUAS_WD,
+			RC_Wiesel_cUAS_WD_O,
+			RC_Wiesel_cUAS_WD_I,
+			RC_Wiesel_cUAS_DIG_I,
+
+			RC_Wiesel_cUAS_WD_manned,
+			RC_Wiesel_cUAS_WD_manned_O,
+			RC_Wiesel_cUAS_WD_manned_I,
+			RC_Wiesel_cUAS_DIG_manned_I,
+
 			RC_Mortar,
 			RC_Mortar_O,
 			RC_Mortar_HEX_O,
