@@ -35,7 +35,7 @@ class RC_cUAS_Static_HMG_base: RC_cUAS_Static_HMG_core
 
 			weapons[]=
 			{
-				"RC_HMG_static_cUAS"
+				"RC_HMG_127x99_cUAS"
 			};
 			magazines[]=
 			{
@@ -196,27 +196,27 @@ class RC_cUAS_Static_HMG_base: RC_cUAS_Static_HMG_core
 		class muzzle_source
 		{
 			source="reload";
-			weapon="RC_HMG_static_cUAS";
+			weapon="RC_HMG_127x99_cUAS";
 		};
 		class muzzle_source_rot
 		{
 			source="ammorandom";
-			weapon="RC_HMG_static_cUAS";
+			weapon="RC_HMG_127x99_cUAS";
 		};
 		class ReloadAnim
 		{
 			source="reload";
-			weapon="RC_HMG_static_cUAS";
+			weapon="RC_HMG_127x99_cUAS";
 		};
 		class ReloadMagazine
 		{
 			source="reloadmagazine";
-			weapon="RC_HMG_static_cUAS";
+			weapon="RC_HMG_127x99_cUAS";
 		};
 		class Revolving
 		{
 			source="revolving";
-			weapon="RC_HMG_static_cUAS";
+			weapon="RC_HMG_127x99_cUAS";
 		};
 	};
 };

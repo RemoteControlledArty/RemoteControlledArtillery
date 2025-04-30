@@ -370,11 +370,14 @@ class RC_FlatbedTruck_manned_A: RC_FlatbedTruck
 	forceInGarage=1;
 
 	crew="";
+	//crew="B_UAV_AI";
+	//dontCreateAI=1;	//doesnt fully work
 };
 class RC_FlatbedTruck_manned_A_O: RC_FlatbedTruck_manned_A
 {
 	faction="RemoteControlled_O";
 	side=0;
+	//crew="O_UAV_AI";
 
 	class EventHandlers: EventHandlers
 	{
@@ -388,6 +391,7 @@ class RC_FlatbedTruck_manned_A_I: RC_FlatbedTruck_manned_A
 {
 	faction="RemoteControlled_I";
 	side=2;
+	//crew="I_UAV_AI";
 
 	class EventHandlers: EventHandlers
 	{
@@ -419,6 +423,7 @@ class RC_FlatbedTruck_manned_WD_O: RC_FlatbedTruck_manned_WD
 {
 	faction="RemoteControlled_O";
 	side=0;
+	//crew="O_UAV_AI";
 	
 	class EventHandlers: EventHandlers
 	{
@@ -432,6 +437,7 @@ class RC_FlatbedTruck_manned_WD_I: RC_FlatbedTruck_manned_WD
 {
 	faction="RemoteControlled_I";
 	side=2;
+	//crew="I_UAV_AI";
 
 	class EventHandlers: EventHandlers
 	{

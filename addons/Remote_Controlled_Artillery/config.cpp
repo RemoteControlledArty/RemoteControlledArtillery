@@ -605,6 +605,11 @@ class CfgPatches
 			RC_HMG_127x99_FSV,
 			RC_HMG_127x99_MBT,
 			RC_HMG_127_NSVT,
+			
+			RC_HMG_127x99_cUAS,
+			RC_GMG_20mm_cUAS,
+			RC_UGV_20mm_cUAS,
+			RC_autocannon_20mm_cUAS,
 
 			RC_GMG_40mm,
 			RC_autocannon_20mm,
@@ -619,6 +624,8 @@ class CfgPatches
 			RC_ATGM_SACLOS,
 			RC_ATGM_Lock,
 			RC_IFV_Missile_Launcher,
+			RC_AA_Missile_Launcher,
+			RC_70mm_AA_Missile_Launcher,
 
 			RC_indirect_40mm_GMG_V4,
 			RC_vehiclemortar_60mm_V4,

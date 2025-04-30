@@ -46,6 +46,10 @@ class RC_AA_A_Base: RC_AA_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 
+	smokeLauncherVelocity=5;
+	smokeLauncherGrenadeCount=8;
+	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
+
 	hiddenSelectionsTextures[]=
 	{
 		"A3\Armor_F_Beta\APC_Tracked_01\Data\apc_tracked_01_aa_body_co.paa",
@@ -516,6 +520,10 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	reportRemoteTargets=1;
 	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
+
+	smokeLauncherVelocity=5;
+	smokeLauncherGrenadeCount=8;
+	smokeLauncherAngle=360;
 
 	class AnimationSources: AnimationSources
 	{

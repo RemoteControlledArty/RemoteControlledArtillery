@@ -7,7 +7,7 @@ class CfgAmmo
 		indirectHit=0;
 		indirectHitRange=0;
 		warheadName="TandemHEAT";
-		airFriction=-0.001;		//so shaped charge still has an effect when airbursted
+		airFriction=-0.01;		//so shaped charge still has an effect when airbursted
 	};
 
 	class M_Vorona_HEAT;

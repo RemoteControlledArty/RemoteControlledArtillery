@@ -583,6 +583,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 			commanding=3;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			turretInfoType="RscOptics_MBT_03_gunner";
+			maxElev=40;	//31.5
 
 			weapons[]=
 			{
@@ -618,6 +619,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			commanding=2;
 			forceHideGunner=1;
+			maxElev=40;
 
 			weapons[]=
 			{

@@ -4,6 +4,7 @@ magazines[]=
 	"RC_50Rnd_40mm_MP_QF_T_Y",
 	"RC_50Rnd_40mm_MP_DF_T_Y",
 	"RC_50Rnd_40mm_MPAB_DF_T_Y",
+	"RC_50Rnd_40mm_MPAB_DF_T_Y",
 	/*
 	//available but unused
 	"RC_50Rnd_40mm_MPAB_QF_T_Y",

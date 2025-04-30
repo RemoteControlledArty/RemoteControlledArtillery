@@ -9,7 +9,6 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 	//minZeroing=50;
 	//ballisticsComputer="2 + 16";
 	//FCSMaxLeadSpeed=25;
-
 	reloadTime=6;
 	magazineReloadTime=6;
 
@@ -71,7 +70,7 @@ class RC_RHS_M2_CROWS_M153_Abrams: rhs_M2_CROWS_M153_Abrams_base
 	canLock=2;
 	minZeroing=50;
 	maxZeroing=3000;
-	weaponLockSystem="1 + 4 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 
 	magazines[]=
 	{
@@ -95,7 +94,7 @@ class RC_RHS_M2_Abrams_Gunner: rhs_M2_Abrams_Gunner_base
 	canLock=2;
 	minZeroing=50;
 	maxZeroing=3000;
-	weaponLockSystem="1 + 4 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 
 	magazines[]=
 	{
@@ -118,7 +117,8 @@ class RC_RHS_weap_m240_abrams_coax: rhs_weap_m240_abrams_coax_base
 {
 	canLock=2;
 	minZeroing=50;
-	weaponLockSystem="1 + 4 + 16";
+	maxZeroing=2000;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	
 	magazines[]=
 	{
@@ -141,7 +141,8 @@ class RC_RHS_weap_m240_bradley_coax: rhs_weap_m240_bradley_coax_base
 {
 	canLock=2;
 	minZeroing=50;
-	weaponLockSystem="1 + 4 + 16";
+	maxZeroing=2000;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	
 	magazines[]=
 	{
@@ -208,10 +209,35 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 	{
 		// - M792 HEI-T
 		displayName="25mm M242 - HEI-T";
-		magazines[]={"RC_RHS_mag_230Rnd_25mm_HEI_T_R"};
+		magazines[]=
+		{
+			"RC_110Rnd_25mm_HEI_Pen_T_R",
+			"RC_110Rnd_25mm_HEI_DF_T_R",
+			"RC_110Rnd_25mm_HEI_QF_T_R",
+			"RC_110Rnd_25mm_HEAB_DF_T_R",
+			"RC_110Rnd_25mm_HEAB_QF_T_R",
+			"RC_110Rnd_25mm_MP_Pen_T_R",
+			"RC_110Rnd_25mm_MP_DF_T_R",
+			"RC_110Rnd_25mm_MP_QF_T_R",
+			"RC_110Rnd_25mm_MPAB_DF_T_R",
+			"RC_110Rnd_25mm_MPAB_QF_T_R",
+
+			"RC_230Rnd_25mm_HEI_Pen_T_R",
+			"RC_230Rnd_25mm_HEI_DF_T_R",
+			"RC_230Rnd_25mm_HEI_QF_T_R",
+			"RC_230Rnd_25mm_HEAB_DF_T_R",
+			"RC_230Rnd_25mm_HEAB_QF_T_R",
+			"RC_230Rnd_25mm_MP_Pen_T_R",
+			"RC_230Rnd_25mm_MP_DF_T_R",
+			"RC_230Rnd_25mm_MP_QF_T_R",
+			"RC_230Rnd_25mm_MPAB_DF_T_R",
+			"RC_230Rnd_25mm_MPAB_QF_T_R",
+
+			"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
+		};
 		magazineWell[]={RHS_AutoCannon_25mm_M242_HE};
 		canlock=2;
-		magazineReloadTime = 0.3;
+		magazineReloadTime=0.3;
 		modes[]={"player"};
 		//200rpm
 		class player: player
@@ -221,7 +247,9 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 			dispersion=0.0006;
 		};
 		FCSMaxLeadSpeed=30.555599;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		minZeroing=50;
+		maxZeroing=4000;
 	};
 	class AP: AP
 	{
@@ -230,7 +258,7 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 		magazines[]={"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R"};
 		magazineWell[]={RHS_AutoCannon_25mm_M242_AP};
 		canlock=2;
-		magazineReloadTime = 0.3;
+		magazineReloadTime=0.3;
 		modes[]={"player"};
 		//200rpm
 		class player: player
@@ -240,7 +268,9 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 			dispersion=0.0006;
 		};
 		FCSMaxLeadSpeed=30.555599;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		minZeroing=50;
+		maxZeroing=4000;
 	};
 };
 
@@ -296,7 +326,7 @@ class RC_RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
 	canLock=2;
 	minZeroing=50;
 	maxZeroing=3000;
-	weaponLockSystem="1 + 4 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	
 	magazines[] =
 	{

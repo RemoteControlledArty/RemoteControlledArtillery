@@ -47,6 +47,10 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 	//redRpm=1100;
 	//idleRpm=250;
 
+	smokeLauncherVelocity=5;
+	smokeLauncherGrenadeCount=6;
+	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
+
 	//model="\A3\soft_f_beta\MRAP_03\MRAP_03_unarmed_F";
 	hiddenSelectionsTextures[]=
 	{
@@ -156,7 +160,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={6000,4000,2000,1000,500};
+					range[]={6000,4000,2000,1000,400};
 					resource="RscCustomInfoSensors";
 				};
 			};
@@ -170,7 +174,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={500,1000,2000,4000,6000};
+					range[]={400,1000,2000,4000,6000};
 					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay

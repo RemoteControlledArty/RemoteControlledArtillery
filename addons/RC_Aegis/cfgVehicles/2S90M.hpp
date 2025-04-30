@@ -134,8 +134,8 @@ class RC_2S90M_WD: RC_2S90M
 			dontCreateAI=1;
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
-
 			minElev=-13;
+			maxElev=25;
 
 			weapons[]=
 			{

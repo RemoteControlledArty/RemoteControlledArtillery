@@ -202,12 +202,7 @@ class RC_indirect_GMG_UGV_A: RC_GMG_UGV_A_base
 				"RC_indirect_40mm_GMG_V4",
 				"RC_HMG_127_APC"
 			};
-			magazines[]=
-			{
-				"RC_200Rnd_40mm_vic_Mo_shells",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"RC_200Rnd_127x99_SLAP_T_R"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_red.hpp"
 
 			class OpticsIn
 			{
@@ -316,6 +311,14 @@ class RC_indirect_GMG_UGV_A_O: RC_indirect_GMG_UGV_A
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_green.hpp"
+		};
+	};
 };
 class RC_indirect_GMG_UGV_WD_O: RC_indirect_GMG_UGV_WD
 {
@@ -323,6 +326,14 @@ class RC_indirect_GMG_UGV_WD_O: RC_indirect_GMG_UGV_WD
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_green.hpp"
+		};
+	};
 };
 
 class RC_indirect_GMG_UGV_A_I: RC_indirect_GMG_UGV_A
@@ -331,6 +342,14 @@ class RC_indirect_GMG_UGV_A_I: RC_indirect_GMG_UGV_A
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_yellow.hpp"
+		};
+	};
 };
 class RC_indirect_GMG_UGV_WD_I: RC_indirect_GMG_UGV_WD
 {
@@ -338,6 +357,14 @@ class RC_indirect_GMG_UGV_WD_I: RC_indirect_GMG_UGV_WD
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_yellow.hpp"
+		};
+	};
 };
 
 
@@ -355,6 +382,10 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_A_base
 	scopeCurator=2;
 	displayName="RC C-UAS UGV";
 	editorSubcategory="RC_AntiDrone_subcat";
+
+	smokeLauncherVelocity=3;
+	smokeLauncherGrenadeCount=4;
+	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
 
 	class Components: Components
 	{
@@ -462,17 +493,10 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_A_base
 			weapons[]=
 			{
 				"RC_UGV_20mm_cUAS",
-				"RC_HMG_127_APC"
+				"RC_HMG_127_APC",
+				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_50Rnd_20mm_HEAB_DF_T_R",
-				"RC_50Rnd_20mm_HEAB_DF_T_R",
-				"RC_50Rnd_20mm_HEAB_DF_T_R",
-				"RC_50Rnd_20mm_cUAS",
-				"RC_200Rnd_127x99_SLAP_T_R",
-				"RC_200Rnd_127x99_SLAP_T_R"
-			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_red.hpp"
 
 			class OpticsIn
 			{
@@ -581,6 +605,14 @@ class RC_cUAS_UGV_A_O: RC_cUAS_UGV_A
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_green.hpp"
+		};
+	};
 };
 class RC_cUAS_UGV_WD_O: RC_cUAS_UGV_WD
 {
@@ -588,6 +620,14 @@ class RC_cUAS_UGV_WD_O: RC_cUAS_UGV_WD
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_green.hpp"
+		};
+	};
 };
 
 class RC_cUAS_UGV_A_I: RC_cUAS_UGV_A
@@ -596,6 +636,14 @@ class RC_cUAS_UGV_A_I: RC_cUAS_UGV_A
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_yellow.hpp"
+		};
+	};
 };
 class RC_cUAS_UGV_WD_I: RC_cUAS_UGV_WD
 {
@@ -603,4 +651,12 @@ class RC_cUAS_UGV_WD_I: RC_cUAS_UGV_WD
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_yellow.hpp"
+		};
+	};
 };

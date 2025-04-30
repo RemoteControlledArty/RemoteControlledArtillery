@@ -9,13 +9,13 @@ submunitionDirectionType="SubmunitionModelDirection";
 submunitionInitialOffset[]={0,0,-3.5};
 triggerDistance=5;
 
-//Use
-warheadName="HE";
-aiAmmoUsageFlags="64 + 128 + 256 + 512";
-
 //Penetration / Fuze
 explosive=0.80000001;
 
 //Simulation
 simulation="shotSubmunitions";
 simulationStep=0.0020000001;
+
+//Use
+warheadName="HE";
+aiAmmoUsageFlags="64 + 128 + 256 + 512";

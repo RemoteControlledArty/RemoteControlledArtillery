@@ -277,14 +277,13 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	displayNameShort="NLOS ML";
 	magazineReloadTime=20;
 	cmImmunity=0.67;
+	//weaponLockDelay=3;	//3
 	magazines[]=
 	{
 		"RC_2Rnd_IFV_MP_NLOS",
 		"2Rnd_GAT_missiles",
 		"RC_2Rnd_IFV_AA"
 	};
-
-	//weaponLockDelay=3;	//3
 	modes[]=
 	{
 		"Player",
@@ -1435,11 +1434,11 @@ class RC_UGV_20mm_cUAS: RC_GMG_20mm_cUAS
 
 
 class HMG_static;
-class RC_HMG_static_cUAS_base: HMG_static
+class RC_HMG_127x99_cUAS_base: HMG_static
 {
 	class manual;
 };
-class RC_HMG_static_cUAS: RC_HMG_static_cUAS_base
+class RC_HMG_127x99_cUAS: RC_HMG_127x99_cUAS_base
 {
 	displayName="12.7mm C-UAS";
 	reloadTime=0.11;
@@ -1997,6 +1996,7 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_10Rnd_120mm_APFSDS_T_Y",
 		"RC_15Rnd_120mm_APFSDS_T_Y",
 		"RC_20Rnd_120mm_APFSDS_T_Y",
+		/*
 		"RC_10Rnd_120mm_MP_HEAB_T_R",
 		"RC_15Rnd_120mm_MP_HEAB_T_R",
 		"RC_20Rnd_120mm_MP_HEAB_T_R",
@@ -2006,6 +2006,7 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_10Rnd_120mm_MP_HEAB_T_Y",
 		"RC_15Rnd_120mm_MP_HEAB_T_Y",
 		"RC_20Rnd_120mm_MP_HEAB_T_Y",
+		*/
 		"RC_10Rnd_120mm_MP_T_R",
 		"RC_15Rnd_120mm_MP_T_R",
 		"RC_20Rnd_120mm_MP_T_R",
@@ -2088,6 +2089,7 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_APFSDS_T_Y",
 		"RC_15Rnd_125mm_APFSDS_T_Y",
 		"RC_20Rnd_125mm_APFSDS_T_Y",
+		/*
 		"RC_10Rnd_125mm_MP_HEAB_T_R",
 		"RC_15Rnd_125mm_MP_HEAB_T_R",
 		"RC_20Rnd_125mm_MP_HEAB_T_R",
@@ -2097,6 +2099,7 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_MP_HEAB_T_Y",
 		"RC_15Rnd_125mm_MP_HEAB_T_Y",
 		"RC_20Rnd_125mm_MP_HEAB_T_Y",
+		*/
 		"RC_10Rnd_125mm_MP_T_R",
 		"RC_15Rnd_125mm_MP_T_R",
 		"RC_20Rnd_125mm_MP_T_R",
@@ -2116,7 +2119,10 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_HEAB_LV_indirect_T_Y",
 		"RC_15Rnd_125mm_HEAB_LV_indirect_T_Y",
 		"RC_20Rnd_125mm_HEAB_LV_indirect_T_Y",
+		"RC_4Rnd_125mm_DLG_cannon_missiles",
 		"RC_3Rnd_125mm_DLG_cannon_missiles",
+		"RC_2Rnd_125mm_DLG_cannon_missiles",
+		"RC_1Rnd_125mm_DLG_cannon_missiles",
 		"4Rnd_125mm_cannon_missiles"
 	};
 	class TopDown: player

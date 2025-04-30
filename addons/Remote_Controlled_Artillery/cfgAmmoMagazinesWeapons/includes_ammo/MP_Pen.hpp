@@ -1,21 +1,12 @@
 //Submun
-triggerOnImpact=1;
-submunitionCount=1;
-submunitionParentSpeedCoef=0;
-submunitionInitSpeed=1000;
-submunitionConeAngle=0;
-submunitionDirectionType="SubmunitionModelDirection";
-
-//Trigger/ed
-submunitionInitialOffset[]={0,0,-0.2};
-deleteParentWhenTriggered=0;
+//no submun as it would trigger against soft surface before main projectile does on hard surface
 
 //Penetration / Fuze
 explosive=0.60000002;
 
 //Simulation
-simulation="shotShell";
+simulation="shotBullet";
 
 //Use
-warheadName="HE";
+warheadName="HEAT";
 aiAmmoUsageFlags="64 + 128 + 256 + 512";

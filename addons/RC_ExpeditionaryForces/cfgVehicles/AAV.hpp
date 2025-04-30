@@ -9,7 +9,11 @@ class RC_AAV9A1_Base: EF_B_AAV9_50mm_MJTF_Des
 	class CargoGunner_4;
 	class CargoGunner_5;
 	class CargoGunner_6;
-	//class HitPoints;
+	class HitPoints;
+	class HitComGun;
+	class HitComTurret;
+	class HitCrewGun;
+	class HitCrewTurret;
 	//class HitHull;
 	//class HitEngine;
 	//class HitFuel;
@@ -320,6 +324,20 @@ class RC_AAV9A1_A: RC_AAV9A1
 							gunnerOpticsEffect[]={};
 						};
 					};
+
+					class HitPoints: HitPoints
+					{
+						class HitCrewGun: HitCrewGun
+						{
+							armor=0.1;
+							passThrough=0;
+						};
+						class HitCrewTurret: HitCrewTurret
+						{
+							armor=0.2;
+							passThrough=0;
+						};
+					};
 				};
 
 				class CommanderOptics : CommanderOptics
@@ -365,6 +383,20 @@ class RC_AAV9A1_A: RC_AAV9A1
 							thermalMode[]={0};
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 							gunnerOpticsEffect[]={};
+						};
+					};
+
+					class HitPoints: HitPoints
+					{
+						class HitComGun: HitComGun
+						{
+							armor=0.1;
+							passThrough=0;
+						};
+						class HitComTurret: HitComTurret
+						{
+							armor=0.25;
+							passThrough=0;
 						};
 					};
 				};

@@ -124,6 +124,7 @@ class TransportBackpacks
 		backpack="B_Kitbag_cbr";
 		count=1;
 	};
+	/*
 	class _xx_B_Carryall_oli
 	{
 		backpack="B_Carryall_oli";
@@ -134,4 +135,5 @@ class TransportBackpacks
 		backpack="B_Carryall_cbr";
 		count=1;
 	};
+	*/
 };

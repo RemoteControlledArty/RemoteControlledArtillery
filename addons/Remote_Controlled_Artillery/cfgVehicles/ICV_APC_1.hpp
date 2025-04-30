@@ -299,6 +299,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			minElev=-19;
+			maxElev=40;	//30
 			commanding=3;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			turretInfoType="RscOptics_MBT_03_gunner";
@@ -336,6 +337,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			commanding=2;
+			maxElev=40;
 
 			weapons[]=
 			{

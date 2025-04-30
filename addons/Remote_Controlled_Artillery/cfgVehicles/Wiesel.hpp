@@ -60,6 +60,10 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 	redRpm=1100;
 	idleRpm=250;
 
+	smokeLauncherVelocity=4;
+	smokeLauncherGrenadeCount=6;
+	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
+
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -395,6 +399,10 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 	ejectDeadCommander=0;
 	redRpm=1100;
 	idleRpm=250;
+
+	smokeLauncherVelocity=4;
+	smokeLauncherGrenadeCount=6;
+	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
 
 	class Components: Components
 	{
@@ -1732,6 +1740,10 @@ class RC_Wiesel_cUAS_WD_Base: RC_Wiesel_AC_WD_Base
 
 	displayName="RC Wiesel II C-UAS";
 	editorSubcategory="RC_AntiDrone_subcat";
+
+	smokeLauncherVelocity=4;
+	smokeLauncherGrenadeCount=6;
+	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
 
 	class Turrets: Turrets
 	{

@@ -8,14 +8,13 @@ submunitionDirectionType="SubmunitionModelDirection";
 
 //Trigger/ed
 deleteParentWhenTriggered=0;
-submunitionInitialOffset[]={0,0,-0.2};
+submunitionInitialOffset[]={0,0,-3.5};
 
 //Penetration / Fuze
 explosive=0.80000001;
 
 //Simulation
 simulation="shotShell";
-
 
 //Use
 warheadName="HE";

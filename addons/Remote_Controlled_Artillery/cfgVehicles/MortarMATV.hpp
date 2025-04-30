@@ -34,10 +34,11 @@ class RC_MortarMATV: RC_MortarMATV_base
 	{
 		""
 	};
-	smokeLauncherGrenadeCount=8;
-	smokeLauncherVelocity=14;
+
 	smokeLauncherOnTurret=0;
-	smokeLauncherAngle=120;
+	smokeLauncherVelocity=5;
+	smokeLauncherGrenadeCount=6;
+	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
 
 	laserScanner=1;
 	lockDetectionSystem=4;
@@ -253,11 +254,14 @@ class RC_MortarMATV_manned_A: RC_MortarMATV
 	forceInGarage=1;
 
 	crew="";
+	//crew="B_UAV_AI";
+	//dontCreateAI=1;	//doesnt fully work
 };
 class RC_MortarMATV_manned_A_I: RC_MortarMATV_manned_A
 {
 	faction="RemoteControlled_I";
 	side=2;
+	//crew="I_UAV_AI";
 	class EventHandlers: EventHandlers
 	{
 		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
@@ -317,6 +321,7 @@ class RC_MortarMATV_manned_WD_I: RC_MortarMATV_manned_WD
 {
 	faction="RemoteControlled_I";
 	side=2;
+	//crew="I_UAV_AI";
 	class EventHandlers: EventHandlers
 	{
 		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";

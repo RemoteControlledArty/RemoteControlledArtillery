@@ -1124,6 +1124,7 @@ class RC_20Rnd_120mm_MP_T_G: RC_10Rnd_120mm_MP_T_G {count=20;};
 class RC_20Rnd_120mm_MP_T_Y: RC_10Rnd_120mm_MP_T_Y {count=20;};
 
 
+/*
 class RC_10Rnd_120mm_MPAB_T_R: RC_10Rnd_120mm_MP_T_R
 {
 	ammo="RC_Sh_120mm_MPAB_T_R";
@@ -1138,6 +1139,7 @@ class RC_15Rnd_120mm_MPAB_T_Y: RC_10Rnd_120mm_MPAB_T_Y {count=15;};
 class RC_20Rnd_120mm_MPAB_T_R: RC_10Rnd_120mm_MPAB_T_R {count=20;};
 class RC_20Rnd_120mm_MPAB_T_G: RC_10Rnd_120mm_MPAB_T_G {count=20;};
 class RC_20Rnd_120mm_MPAB_T_Y: RC_10Rnd_120mm_MPAB_T_Y {count=20;};
+*/
 
 
 class RC_5Rnd_120mm_HEAB_LV_indirect_T_R: RC_10Rnd_120mm_MP_T_R
@@ -1186,6 +1188,7 @@ class RC_4Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 	displayNameShort="NLOS ATGM";
 	ammo="RC_M_120mm_cannon_ATGM_DLG";
 	count=4;
+	//initSpeed=36;
 };
 class RC_3Rnd_120mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles {count=3;};
 class RC_2Rnd_120mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles {count=2;};
@@ -1195,6 +1198,7 @@ class RC_1Rnd_120mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles {coun
 class RC_4Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
 {
 	ammo="RC_M_125mm_cannon_ATGM_DLG";
+	//initSpeed=36;
 };
 class RC_3Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_125mm_DLG_cannon_missiles {count=3;};
 class RC_2Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_125mm_DLG_cannon_missiles {count=2;};
@@ -1219,6 +1223,7 @@ class RC_20Rnd_125mm_MP_T_G: RC_10Rnd_125mm_MP_T_G {count=20;};
 class RC_20Rnd_125mm_MP_T_Y: RC_10Rnd_125mm_MP_T_Y {count=20;};
 
 
+/*
 class RC_10Rnd_125mm_MPAB_T_R: RC_10Rnd_125mm_MP_T_R
 {
 	ammo="RC_Sh_125mm_MPAB_T_R";
@@ -1233,16 +1238,16 @@ class RC_15Rnd_125mm_MPAB_T_Y: RC_10Rnd_125mm_MPAB_T_Y {count=15;};
 class RC_20Rnd_125mm_MPAB_T_R: RC_10Rnd_125mm_MPAB_T_R {count=20;};
 class RC_20Rnd_125mm_MPAB_T_G: RC_10Rnd_125mm_MPAB_T_G {count=20;};
 class RC_20Rnd_125mm_MPAB_T_Y: RC_10Rnd_125mm_MPAB_T_Y {count=20;};
+*/
 
 
 //add vertical guidance (not horizontal), as low velocity = armas FCS is inaccurate
 class RC_5Rnd_125mm_HEAB_LV_indirect_T_R: RC_10Rnd_125mm_MP_T_R
 {
-	ammo="RC_Sh_120mm_HEAB_LV_indirect2_T_R";
+	ammo="RC_Sh_125mm_HEAB_LV_indirect_T_R";
 	displayName="LV-HEAB indirect";
 	displayNameShort="LV-HEAB indirect";
-	initSpeed=320;	//LV = low velocity, without airfriction 450ms = 100MIL / 5.6° at 4000m for indirect fire
-	//initSpeed=500;	//LV = low velocity for indirect fire up to 4000m, unclear angle with airfriction
+	initSpeed=450;	//LV = low velocity, without airfriction 450ms = 100MIL / 5.6° at 4000m for indirect fire
 	count=5;
 };
 class RC_5Rnd_125mm_HEAB_LV_indirect_T_G: RC_5Rnd_125mm_HEAB_LV_indirect_T_R {ammo="RC_Sh_120mm_HEAB_LV_indirect_T_G";};
