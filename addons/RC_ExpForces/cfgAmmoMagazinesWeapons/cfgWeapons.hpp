@@ -12,7 +12,7 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 	cursorAim="mg";
 
 	class HE: HE
@@ -30,7 +30,7 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 			"RC_EF_120Rnd_30mm_HEAB_T_Y"
 		};
 
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 		cursorAim="mg";
 	};
 	class AP: AP
@@ -48,7 +48,7 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 			"RC_EF_80Rnd_30mm_APFSDS_T_Y"
 		};
 
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 		cursorAim="mg";
 	};
 };
@@ -67,7 +67,7 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 	//canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
-	ballisticsComputer="1 + 2 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 	cursorAim="mg";
 
 	class HE: HE
@@ -85,7 +85,7 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 			"RC_EF_120Rnd_50mm_HEAB_T_Y"
 		};
 
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 		cursorAim="mg";
 	};
 	class AP: AP
@@ -103,7 +103,7 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 			"RC_EF_50Rnd_50mm_APFSDS_T_Y"
 		};
 
-		ballisticsComputer="1 + 2 + 16";
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 		cursorAim="mg";
 	};
 };
@@ -121,7 +121,7 @@ class RC_EF_MMG_coax: RC_EF_MMG_coax_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=3000;
-	weaponLockSystem="1 + 4 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 	
 	magazines[]=
 	{

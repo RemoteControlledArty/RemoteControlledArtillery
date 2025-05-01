@@ -11,6 +11,7 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 	class HE: HE
 	{
@@ -18,6 +19,7 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 		magazineReloadTime=30;	//40
 		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 		magazines[]=
 		{
@@ -33,6 +35,7 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 		magazineReloadTime=30;	//40
 		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 
 		magazines[]=
 		{
@@ -57,7 +60,7 @@ class RC_EF_MMG_coax: RC_EF_MMG_coax_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=3000;
-	weaponLockSystem="1 + 4 + 16";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
 	magazines[]=
 	{
