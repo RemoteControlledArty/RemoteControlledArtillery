@@ -37,6 +37,8 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	faction="RemoteControlled_B";
 	author="Ascent";
@@ -236,7 +238,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={6000,4000,2000,1000};
+							range[]={6000,4000,2000,1000,400};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -250,7 +252,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={500,1000,2000,4000,6000};
+							range[]={400,1000,2000,4000,6000};
 							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
