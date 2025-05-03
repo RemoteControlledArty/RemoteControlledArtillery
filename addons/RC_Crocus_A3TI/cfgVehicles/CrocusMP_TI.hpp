@@ -170,7 +170,7 @@ class B_Crocus_MP_TI_Sens: B_Crocus_MP_TI
 				{
 					typeRecognitionDistance=350;
 					maxTrackableSpeed=600;
-					nightRangeCoef=0.67;
+					nightRangeCoef=0.6;
 					angleRangeHorizontal=45;
 					angleRangeVertical=45;
 					animDirection="";	//aligned with body
@@ -215,16 +215,31 @@ class B_Crocus_MP_TI_Sens: B_Crocus_MP_TI
 						viewDistanceLimitCoef=1;
 					};
 				};
-				/*
 				class ManSensorComponent: SensorTemplateMan
 				{
+					typeRecognitionDistance=1;
 					maxTrackableSpeed=15;
+					nightRangeCoef=1;
 					angleRangeHorizontal=45;
-					angleRangeVertical=45;
-					animDirection="";
-					aimDown=0;
+					angleRangeVertical=90;
+					animDirection="";	//aligned with body
+					aimDown=0;	//-1
+
+					class AirTarget
+					{
+						minRange=150;
+						maxRange=150;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=150;
+						maxRange=150;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
 				};
-				*/
 			};
 		};
 	};
