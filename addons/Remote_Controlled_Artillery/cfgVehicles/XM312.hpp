@@ -51,7 +51,7 @@ class RC_cUAS_Static_HMG_base: RC_cUAS_Static_HMG_core
 				{
 					gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Optics_Commander_01_F.p3d";	//"\A3\weapons_f\reticle\Optics_Gunner_02_F"
 					initFov=0.89999998;
-					minFov=0.02;
+					minFov=0.06;
 					maxFov=0.89999998;
 					//memoryPointGunnerOptics="gunnerview";
 					thermalMode[]={0};
@@ -62,7 +62,7 @@ class RC_cUAS_Static_HMG_base: RC_cUAS_Static_HMG_core
 			{
 				gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Optics_Commander_01_F.p3d";	//"\A3\weapons_f\reticle\Optics_Gunner_02_F"
 				initFov=0.89999998;
-				minFov=0.02;
+				minFov=0.06;
 				maxFov=0.89999998;
 				//memoryPointGunnerOptics="gunnerview";
 				thermalMode[]={0};

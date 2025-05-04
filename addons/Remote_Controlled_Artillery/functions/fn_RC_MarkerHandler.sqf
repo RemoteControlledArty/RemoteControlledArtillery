@@ -1,5 +1,5 @@
 /*
-	Author: Fluffy, Ascent, Eric
+	Author: Fluffy, Eric, Ascent
 */
 
 if (!hasInterface) exitWith { };

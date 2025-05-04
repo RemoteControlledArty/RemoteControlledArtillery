@@ -27,10 +27,10 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	laserScanner=1;
 	showAllTargets="2 + 4";
 
-	camouflage=0.025;	//0.5
-	audible=0.075;	//0.1
+	camouflage=0.1;	//0.5
+	audible=0.1;	//0.1
 	radarTargetSize=0.035;	//0.1
-	visualTargetSize=0.075;	//0.1
+	visualTargetSize=0.1;	//0.1
 	
 	liftForceCoef=1.5;	//1
 	maxSpeed=200;	//140

@@ -36,6 +36,8 @@ class CfgAmmo
 		simulation="shotMissile";
 		simulationStep=0.050000001;
 		timeToLive=1;
+		CraterEffects="";
+		explosionEffects="";
 
 		hit=0;
 		indirectHit=0;
@@ -54,17 +56,17 @@ class CfgAmmo
 		missileLockMaxSpeed=150;
 		cmImmunity=1;
 		manualControl=1;
-		missileManualControlCone=180;
+		missileManualControlCone=0;
 		maxControlRange=4000;
 
 		initTime=1;
 		thrustTime=1;
-		thrust=1;
-		maneuvrability=1;
+		thrust=0;
+		maneuvrability=0;
 		trackOversteer=1;
 		trackLead=1;
-		airFriction=1;
-		sideAirFriction=1;
+		airFriction=0.01;
+		sideAirFriction=0.01;
 		maxSpeed=1;
 		typicalSpeed=1;
 		fuseDistance=1;
@@ -74,6 +76,8 @@ class CfgAmmo
 		visibleFire=1;
 		audibleFire=1;
 		visibleFireTime=1;
+
+		aiAmmoUsageFlags="32";
 
 		soundHit[]=
 		{
@@ -93,6 +97,35 @@ class CfgAmmo
 			0.001,
 			1
 		};
+
+		/*
+		class HitEffects
+		{
+			Hit_Foliage_green="ImpactLeavesGreen";
+			Hit_Foliage_Dead="ImpactLeavesDead";
+			Hit_Foliage_Green_big="ImpactLeavesGreenBig";
+			Hit_Foliage_Palm="ImpactLeavesPalm";
+			Hit_Foliage_Pine="ImpactLeavesPine";
+			hitFoliage="ImpactLeaves";
+			hitGlass="ImpactMetalSabotSmall";
+			hitGlassArmored="ImpactMetalSabotSmall";
+			hitWood="ImpactMetalSabotSmall";
+			hitHay="ImpactMetalSabotSmall";
+			hitMetal="ImpactMetalSabotSmall";
+			hitMetalPlate="ImpactMetalSabotSmall";
+			hitBuilding="ImpactMetalSabotSmall";
+			hitPlastic="ImpactMetalSabotSmall";
+			hitRubber="ImpactMetalSabotSmall";
+			hitTyre="ImpactMetalSabotSmall";
+			hitConcrete="ImpactMetalSabotSmall";
+			hitMan="ImpactMetalSabotSmall";
+			hitGroundSoft="ImpactMetalSabotSmall";
+			hitGroundRed="ImpactMetalSabotSmall";
+			hitGroundHard="ImpactMetalSabotSmall";
+			hitWater="ImpactEffectsWater";
+			default_mat="ImpactMetalSabotSmall";
+		};
+		*/
 
 		class Components
 		{
@@ -129,11 +162,12 @@ class cfgMagazines
 	class RC_target_confirmer_AB_mag: RC_target_confirmer_mag
 	{
 		ammo="RC_target_confirmer_AB_ammo";
-		initSpeed=1;	//1000 for reticle of bc=8; retest
+		initSpeed=1;	//1000 for reticle of bc=8; requires maxControlRange=0;
 		scope=2;
 		count=1;
 	};
 };
+class Mode_SemiAuto;
 class cfgWeapons
 {
 	class RC_target_confirmer;
@@ -144,19 +178,21 @@ class cfgWeapons
 		scope=2;
 		canLock=2;
 		weaponLockDelay=0;
-		//ballisticsComputer=8;	//reticle for shaped charge airburst, retest
+		//ballisticsComputer=8;	//8 reticle for shaped charge airburst; requires maxControlRange=0;
 		reloadTime=1;
 		magazineReloadTime=1;
 		magazines[]=
 		{
 			"RC_target_confirmer_AB_mag"
 		};
-		class Single
+		modes[]=
+		{
+			"player"
+		};
+		class player: Mode_SemiAuto
 		{
 			displayName="MP airburst";
-			//ballisticsComputer=8;	//reticle for shaped charge airburst, retest
-			reloadTime=1;
-			burst=1;
+			//ballisticsComputer=8;	//8 reticle for shaped charge airburst, requires maxControlRange=0;
 			sounds[]=
 			{
 				"StandardSound"
@@ -178,16 +214,14 @@ class cfgWeapons
 			};
 			showToPlayer=1;
 
-			textureType="semi";
-			recoil="recoil_single_primary_3outof10";
-			recoilProne="recoil_single_primary_prone_3outof10";
-			aiDispersionCoefY=1.7;
-			aiDispersionCoefX=1.4;
-			soundBurst=0;
-			requiredOpticType=-1;
-			aiRateOfFire=2;
-			aiRateOfFireDispersion=1;
-			aiRateOfFireDistance=500;
+			aiDispersionCoefY=0;
+			aiDispersionCoefX=0;
+			aiRateOfFire=0;
+			aiRateOfFireDispersion=0;
+			aiRateOfFireDistance=0;
+			minRangeProbab=0;
+			midRangeProbab=0;
+			maxRangeProbab=0;
 		};
 	};
 };

@@ -621,6 +621,8 @@ class RC_B_20mm_HEAB_cUAS_T_R: B_20mm_Tracer_Red
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
 	submunitionAmmo="RC_B_20mm_HE_DF_Sub";
 };
+class RC_B_20mm_HEAB_cUAS_T_G: RC_B_20mm_HEAB_cUAS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_HEAB_cUAS_T_Y: RC_B_20mm_HEAB_cUAS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 class RC_B_20mm_HEAB_DF_T_R: B_20mm_Tracer_Red
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"

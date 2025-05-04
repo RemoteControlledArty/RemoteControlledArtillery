@@ -207,18 +207,24 @@ class RC_MLRS_A: RC_MLRS_base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplayComponent";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
-						class EmptyDisplay
+						class SensorDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={400};
+							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 						/*
 						class VehicleMissileDisplay
@@ -519,18 +525,24 @@ class RC_MRL_DIG_I: RC_MRL_base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplayComponent";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
-						class EmptyDisplay
+						class SensorDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={400};
+							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 						/*
 						class VehicleMissileDisplay

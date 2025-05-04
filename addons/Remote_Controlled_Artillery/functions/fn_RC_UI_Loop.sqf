@@ -251,7 +251,7 @@ RC_Artillery_UI = [] spawn {
 			_artyPos = getPosASL _uav;
 			//checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
 			_selectedTargetDistance = 1;
-			if (cursorTarget isNotEqualto objNull) then { _selectedTargetDistance = (getpos cursorTarget) distance2d _artyPos };
+			if (cursorTarget isNotEqualto objNull) then { _selectedTargetDistance = (getPosASL cursorTarget) distance2d _artyPos };
 			_noTargetOrTargetTooClose = (cursorTarget isEqualto objNull) || (_selectedTargetDistance <= MIN_SELECTED_TARGET_DISTANCE);
 
 			// If we are looking into the Sky
@@ -309,7 +309,8 @@ RC_Artillery_UI = [] spawn {
 				_artyPos = getPosASL _uav;
 				//Target Pos
 				if (_hasTargetSelected && !(_noTargetOrTargetTooClose)) then {
-					_targetPos = getpos cursorTarget;
+					//_targetPos = getpos cursorTarget;
+					_targetPos = getposASL cursorTarget;
 				} else {
 					_targetPos = markerPos (RC_Current_Target select 1);
 				};
@@ -327,12 +328,14 @@ RC_Artillery_UI = [] spawn {
 				_targetDistance = (round ((_targetPos distance2d _artyPos) - _muzzleFromCenterEstimate)) max 1;
 
 				_Difference = 0;
-				_Difference = ((AGLToASL _targetPos) select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
+				//_Difference = ((AGLToASL _targetPos) select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
+				_Difference = (_targetPos select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
 
 				//how ElDiff is shown based on cba settings
 				_shownDifference = [-_Difference, _Difference] select RC_Arty_EL_Diff;
 
-				_targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (AGLtoASL _targetPos);
+				//_targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (AGLtoASL _targetPos);
+				_targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (_targetPos);
 				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
 				_targetAzimuth = [_targetAzimuth mod 360, 360 + _targetAzimuth] select (_targetAzimuth < 0);
 				_targetAzimuth = SLANT_ANGLE * _targetAzimuth;

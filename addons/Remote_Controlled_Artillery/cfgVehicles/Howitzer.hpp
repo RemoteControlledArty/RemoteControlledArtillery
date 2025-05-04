@@ -252,17 +252,17 @@ class RC_Howitzer_A: RC_Howitzer_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={500};
+							range[]={400};
 							resource="RscCustomInfoSensors";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
 						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 						/*
 						class VehicleMissileDisplay
@@ -620,18 +620,24 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplayComponent";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
-						class EmptyDisplay
+						class SensorDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={400};
+							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 						/*
 						class VehicleMissileDisplay
@@ -798,18 +804,24 @@ class RC_Static_Arty: RC_Static_Arty_base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplayComponent";
+					defaultDisplay="SensorDisplay";
 
 					class Components
 					{
-						class EmptyDisplay
+						class SensorDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={400};
+							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 						/*
 						class VehicleMissileDisplay
