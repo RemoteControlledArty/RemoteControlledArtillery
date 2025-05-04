@@ -56,8 +56,13 @@ class RC_cUAS_Static_base: RC_cUAS_Static_core
 					initFov=0.89999998;
 					minFov=0.06;
 					maxFov=0.89999998;
+					visionMode[]=
+					{
+						"Normal",
+						"NVG"
+					};
+					//thermalMode[]={0};
 					//memoryPointGunnerOptics="gunnerview";
-					thermalMode[]={0};
 				};
 			};
 

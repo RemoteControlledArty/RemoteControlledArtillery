@@ -985,9 +985,10 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
 	laserScanner=1;
-	camouflage=0.125;
-	radarTargetSize=0.025;
-	visualTargetSize=0.025;
+	camouflage=0.1;
+	audible=0.1;
+	radarTargetSize=0.035;
+	visualTargetSize=0.1;
 	fuelCapacity=200;
 
 	class assembleInfo: assembleInfo

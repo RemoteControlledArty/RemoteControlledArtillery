@@ -214,11 +214,11 @@ class cfgWeapons
 			};
 			showToPlayer=1;
 
-			aiDispersionCoefY=0;
-			aiDispersionCoefX=0;
-			aiRateOfFire=0;
+			aiRateOfFire=100000;	//too not make AI fire itself when it flies in direction of laser target per waypoint
 			aiRateOfFireDispersion=0;
 			aiRateOfFireDistance=0;
+			aiDispersionCoefY=0;
+			aiDispersionCoefX=0;
 			minRangeProbab=0;
 			midRangeProbab=0;
 			maxRangeProbab=0;
