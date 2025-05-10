@@ -622,6 +622,7 @@ class CfgPatches
 			RC_GMG_20mm_cUAS,
 			RC_UGV_20mm_cUAS,
 			RC_autocannon_20mm_cUAS,
+			RC_autocannon_35mm_AA,
 
 			RC_GMG_40mm,
 			RC_autocannon_20mm,
