@@ -94,6 +94,9 @@ class RC_ACV_30_Base: RC_ACV_30_Core
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
 
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
+
 	weapons[]=
 	{
 		"TruckHorn",

@@ -1,21 +1,32 @@
 class CfgPatches
 {
-	class RC_ACV
+	class RC_BW
 	{
-		name="RC ACV";
+		name="RC BW";
 		author="Ascent";
 
 		units[]=
 		{
-			RC_ACV_30mm,
-			RC_ACV_30mm_O,
-			RC_ACV_30mm_I
-			
-			/*
-			RC_ACV_HMG,
-			RC_ACV_HMG_O,
-			RC_ACV_HMG_I
-			*/
+			RC_Puma_30mm_FT,
+			RC_Puma_30mm_FT_O,
+			RC_Puma_30mm_FT_I,
+			RC_Puma_30mm_TT,
+			RC_Puma_30mm_TT_O,
+			RC_Puma_30mm_TT_I,
+
+			RC_PzH2000_FT,
+			RC_PzH2000_FT_O,
+			RC_PzH2000_FT_I,
+			RC_PzH2000_TT,
+			RC_PzH2000_TT_O,
+			RC_PzH2000_TT_I,
+
+			RC_PzH2000_LC_FT,
+			RC_PzH2000_LC_FT_O,
+			RC_PzH2000_LC_FT_I,
+			RC_PzH2000_LC_TT,
+			RC_PzH2000_LC_TT_O,
+			RC_PzH2000_LC_TT_I
 		};
 
 		/*
@@ -29,12 +40,20 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
-			"ACV"
+			"bwa3_puma",
+			"bwa3_pzh2000"
 		};
 
 		skipWhenMissingDependencies=1;
 	};
 };
+
+
+class CfgEditorSubcategories
+{
+	class RC_BW_subcat {displayname="Bundeswehr";};
+};
+
 
 //later required sensors
 class SensorTemplateDataLink;
@@ -53,23 +72,22 @@ class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
 
-/*
 class CfgAmmo
 {
-	#include "\RC_ACV\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
+	#include "\RC_BW\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 class CfgMagazines
 {
-	#include "\RC_ACV\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+	#include "\RC_BW\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
-*/
 class CfgWeapons
 {
-	#include "\RC_ACV\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
+	#include "\RC_BW\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
 
 
 class CfgVehicles
 {
-	#include "\RC_ACV\cfgVehicles\ACV_30mm.hpp"
+	#include "\RC_BW\cfgVehicles\Puma.hpp"
+	#include "\RC_BW\cfgVehicles\PzH2000.hpp"
 };
