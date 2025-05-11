@@ -247,8 +247,8 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 			dispersion=0.0006;
 		};
 		FCSMaxLeadSpeed=30.555599;
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
-		//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+		//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		minZeroing=50;
 		maxZeroing=4000;
 	};
@@ -269,8 +269,8 @@ class RC_RHS_weap_M242BC: autocannon_30mm_CTWS
 			dispersion=0.0006;
 		};
 		FCSMaxLeadSpeed=30.555599;
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
-		//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+		//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		minZeroing=50;
 		maxZeroing=4000;
 	};
