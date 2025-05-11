@@ -1,3 +1,129 @@
+class Aegis_NVG_IVAS_01_tan_F;
+class RC_SO_Goggles_tan_Base: Aegis_NVG_IVAS_01_tan_F
+{
+	scope=0;
+	scopeArsenal=0;
+	class ItemInfo;
+};
+class RC_SO_Goggles_tan: RC_SO_Goggles_tan_Base
+{
+	scope=2;
+	scopeArsenal=2;
+	displayName="Systems-Operator Goggles";
+	visionMode[]=
+	{
+		"Normal"
+	};
+	class ItemInfo: ItemInfo
+	{
+		mass=20;
+	};
+};
+class RC_SO_Goggles_NV_tan: RC_SO_Goggles_tan
+{
+	displayName="Systems-Operator Goggles NV";
+	visionMode[]=
+	{
+		"Normal",
+		"NVG"
+	};
+};
+class RC_SO_Goggles_TI_tan: RC_SO_Goggles_tan
+{
+	displayName="Systems-Operator Goggles TI";
+	visionMode[]=
+	{
+		"Normal",
+		"NVG",
+		"TI"
+	};
+};
+
+
+class Aegis_NVG_IVAS_01_blk_F;
+class RC_SO_Goggles_blk_Base: Aegis_NVG_IVAS_01_blk_F
+{
+	scope=0;
+	scopeArsenal=0;
+	class ItemInfo;
+};
+class RC_SO_Goggles_blk: RC_SO_Goggles_blk_Base
+{
+	scope=2;
+	scopeArsenal=2;
+	displayName="Systems-Operator Goggles";
+	visionMode[]=
+	{
+		"Normal"
+	};
+	class ItemInfo: ItemInfo
+	{
+		mass=20;
+	};
+};
+class RC_SO_Goggles_NV_blk: RC_SO_Goggles_blk
+{
+	displayName="Systems-Operator Goggles NV";
+	visionMode[]=
+	{
+		"Normal",
+		"NVG"
+	};
+};
+class RC_SO_Goggles_TI_blk: RC_SO_Goggles_blk
+{
+	displayName="Systems-Operator Goggles TI";
+	visionMode[]=
+	{
+		"Normal",
+		"NVG",
+		"TI"
+	};
+};
+
+
+class Aegis_NVG_IVAS_01_grn_F;
+class RC_SO_Goggles_grn_Base: Aegis_NVG_IVAS_01_grn_F
+{
+	scope=0;
+	scopeArsenal=0;
+	class ItemInfo;
+};
+class RC_SO_Goggles_grn: RC_SO_Goggles_grn_Base
+{
+	scope=2;
+	scopeArsenal=2;
+	displayName="Systems-Operator Goggles";
+	visionMode[]=
+	{
+		"Normal"
+	};
+	class ItemInfo: ItemInfo
+	{
+		mass=20;
+	};
+};
+class RC_SO_Goggles_NV_grn: RC_SO_Goggles_grn
+{
+	displayName="Systems-Operator Goggles NV";
+	visionMode[]=
+	{
+		"Normal",
+		"NVG"
+	};
+};
+class RC_SO_Goggles_TI_grn: RC_SO_Goggles_grn
+{
+	displayName="Systems-Operator Goggles TI";
+	visionMode[]=
+	{
+		"Normal",
+		"NVG",
+		"TI"
+	};
+};
+
+
 //Autocannons
 class autocannon_30mm_lxWS;
 class RC_autocannon_30mm_lxWS_Base: autocannon_30mm_lxWS
