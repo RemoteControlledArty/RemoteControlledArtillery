@@ -790,21 +790,21 @@ class RC_IFV_3_ReTex_D_I: RC_IFV_3_ReTex_D
 	};
 };
 
-/*
-class RC_IFV_3_A_Test1: RC_ICV_IFV_3_A
+
+//UserAction Test
+class RC_IFV_3_A_Test: RC_ICV_IFV_3_A
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControlsTest1.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControlsTest.hpp"
 
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
-	displayName="Pandur II Test1";
+	displayName="Pandur II Test";
 	editorSubcategory="RC_Test_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -820,6 +820,7 @@ class RC_IFV_3_A_Test1: RC_ICV_IFV_3_A
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			dontCreateAI=1;
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
@@ -857,7 +858,6 @@ class RC_IFV_3_A_Test1: RC_ICV_IFV_3_A
 					gunnerOpticsEffect[]={};
 				};
 			};
-			
 			class Turrets: Turrets
 			{
 				class CommanderOptics : CommanderOptics
@@ -865,6 +865,7 @@ class RC_IFV_3_A_Test1: RC_ICV_IFV_3_A
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+					dontCreateAI=1;
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
 
@@ -884,6 +885,8 @@ class RC_IFV_3_A_Test1: RC_ICV_IFV_3_A
 					{
 						class Wide: RCWSOptics
 						{
+							//directionStabilized=1;	//unfortunately causes spinning camera bug
+
 							initAngleX=0;
 							minAngleX=-30;
 							maxAngleX=30;
@@ -901,6 +904,7 @@ class RC_IFV_3_A_Test1: RC_ICV_IFV_3_A
 							};
 							thermalMode[]={0};
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 							gunnerOpticsEffect[]={};
 						};
 					};
@@ -909,20 +913,19 @@ class RC_IFV_3_A_Test1: RC_ICV_IFV_3_A
 		};
 	};
 };
-class RC_IFV_3_A_Test2: RC_ICV_IFV_3_A
+class RC_IFV_3_A_Test0: RC_ICV_IFV_3_A
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControlsTest2.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControlsTest0.hpp"
 
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
-	displayName="Pandur II Test2";
+	displayName="Pandur II Test 0";
 	editorSubcategory="RC_Test_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -938,6 +941,7 @@ class RC_IFV_3_A_Test2: RC_ICV_IFV_3_A
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			dontCreateAI=1;
 			commanding=3;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
@@ -970,11 +974,11 @@ class RC_IFV_3_A_Test2: RC_ICV_IFV_3_A
 						"TI"
 					};
 					thermalMode[]={0};
+					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_APC_03_m_F.p3d";
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};
 			};
-			
 			class Turrets: Turrets
 			{
 				class CommanderOptics : CommanderOptics
@@ -982,6 +986,7 @@ class RC_IFV_3_A_Test2: RC_ICV_IFV_3_A
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+					dontCreateAI=1;
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
 
@@ -1001,6 +1006,8 @@ class RC_IFV_3_A_Test2: RC_ICV_IFV_3_A
 					{
 						class Wide: RCWSOptics
 						{
+							//directionStabilized=1;	//unfortunately causes spinning camera bug
+
 							initAngleX=0;
 							minAngleX=-30;
 							maxAngleX=30;
@@ -1018,6 +1025,7 @@ class RC_IFV_3_A_Test2: RC_ICV_IFV_3_A
 							};
 							thermalMode[]={0};
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 							gunnerOpticsEffect[]={};
 						};
 					};
@@ -1026,6 +1034,9 @@ class RC_IFV_3_A_Test2: RC_ICV_IFV_3_A
 		};
 	};
 };
+
+
+/*
 class RC_IFV_3_A_Test3: RC_ICV_IFV_3_A
 {
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControlsTest3.hpp"

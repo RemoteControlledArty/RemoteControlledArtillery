@@ -458,7 +458,9 @@ class CfgPatches
 			RC_indirect_GMG_UGV_WD_I,
 
 			RC_GPSDatalinkTarget,
-
+			
+			RC_IFV_3_A_Test,
+			RC_IFV_3_A_Test0,
 
 			//optional retextures
 			RC_Howitzer_ReTex_D,
@@ -699,6 +701,11 @@ class CfgFunctions
 
 			class RC_cursorTargetIntoDatalink {postInit=1;};
 			//class RC_calculateAB {postInit=1;};
+
+			class RC_TakeControlCommander {};
+			class RC_TakeControlCommander0 {};
+			class RC_TakeControlGunner {};
+			class RC_TakeControlGunner0 {};
 			
 			class scrollSolutions {};
 

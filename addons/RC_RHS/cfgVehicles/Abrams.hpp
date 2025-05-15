@@ -4,7 +4,6 @@ class RC_M1A2_SEPV2_Base: rhsusf_m1a2sep2d_usarmy
 	scope=0;
 	scopeCurator=0;
 	class Components;
-	class EventHandlers;
 	class Turrets;
 	class MainTurret;
 	class CROWS_Turret;
@@ -14,6 +13,8 @@ class RC_M1A2_SEPV2_Base: rhsusf_m1a2sep2d_usarmy
 	class Loader;
 	class CommanderMG;
 	class LoaderMG;
+	class EventHandlers;
+	class UserActions;
 };
 class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 {

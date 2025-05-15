@@ -9,6 +9,7 @@ class RC_Puma_FT_Core: BWA3_Puma_Fleck
 	class ViewOptics;
 	class Components;
 	class EventHandlers;
+	class UserActions;
 	scope=0;
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
