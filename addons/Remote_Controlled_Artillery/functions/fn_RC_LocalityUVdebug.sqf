@@ -22,21 +22,21 @@ RC_RCLocalHash = createHashMap;
 
 			private _uav = getConnectedUAV player;
 
-            [_uav] call RC_fnc_RC_uavContinue;
+            [_uav] call RC_fnc_RC_debugContinue;
 
             private _uavClass = typeOf _uav;
             private _RCLocal = RC_RCLocalHash get _uavClass;
 
-            [_uav] call RC_fnc_RC_uavHash;
+            [_uav] call RC_fnc_RC_debugHash;
 
 			if ((_RCLocal != 0) or RC_FixLocalityOfAllUVs) then {
 
 				if (!isNull (findDisplay 160)) then {
-					[_uav, _prevWpsCount, _prevWpPos1] call RC_fnc_RC_uavWps;
+					[_uav, _prevWpsCount, _prevWpPos1] call RC_fnc_RC_debugWps;
 				};
 
 				if (isRemoteControlling player) then {
-					[_uav] call RC_fnc_RC_uavChangeLocality;
+					[_uav] call RC_fnc_RC_debugChangeLocality;
 				};
 			};
 		};

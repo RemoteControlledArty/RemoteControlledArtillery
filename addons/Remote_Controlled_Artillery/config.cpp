@@ -700,6 +700,9 @@ class CfgFunctions
 			class RC_LaserDatalink {postInit=1;};
 
 			class RC_cursorTargetIntoDatalink {postInit=1;};
+			//class RC_LocalityUV {postInit=1;};
+			//class RC_LocalityUVdebug {postInit=1;};
+
 			//class RC_calculateAB {postInit=1;};
 
 			class RC_TakeControlCommander {};
@@ -708,9 +711,6 @@ class CfgFunctions
 			class RC_TakeControlGunner0 {};
 			
 			class scrollSolutions {};
-
-			//class RC_LocalityFix {postInit=1;};
-			//class RC_TakeControl {};
 		};
 		/*
 		class RC_Arty_functions
@@ -738,6 +738,21 @@ class CfgFunctions
 			class RC_Player_CBRad_Blufor {};
 			class RC_Player_CBRad_Opfor {};
 			class RC_Player_CBRad_Indfor {};
+		};
+		class RC_LocalityUV_functions
+		{
+			file="\Remote_Controlled_Artillery\functions\LocalityUV_functions";
+
+			class RC_uavContinue {};
+			class RC_uavHash {};
+			class RC_uavChangeLocality {};
+			class RC_uavWps {};
+
+			class RC_debugServerLocalityTest {};
+			class RC_debugContinue {};
+			class RC_debugHash {};
+			class RC_debugChangeLocality {};
+			class RC_debugvWps {};
 		};
 	};
 };

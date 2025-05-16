@@ -213,6 +213,28 @@
     true
 ] call CBA_fnc_addSetting;
 
+[
+    "RC_FixLocalityOfRCUVs",
+    "CHECKBOX",
+    ["fixes locality of this mods UVs", "Drive UGV from turret / set correct UAV waypoint altitude, without first having to connect to driver to localize. Unknown if causes issues."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_FixLocalityOfAllUVs",
+    "CHECKBOX",
+    ["fixes locality of all UVs", "Drive UGV from turret / set correct UAV waypoint altitude, without first having to connect to driver to localize. Unknown if causes issues."],
+    ["RC Modernized Vehicles"],
+    false,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
 /*
 [
     "RC_DetectionTime_F1",
