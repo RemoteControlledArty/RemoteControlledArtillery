@@ -131,6 +131,8 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 
 class RC_ICV_3_A: RC_ICV_IFV_3_A
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
@@ -520,6 +522,8 @@ class RC_IFV_3_A_Base: RC_ICV_IFV_3_A
 };
 class RC_IFV_3_A: RC_IFV_3_A_Base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
