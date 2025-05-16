@@ -458,9 +458,9 @@ class CfgPatches
 			RC_indirect_GMG_UGV_WD_I,
 
 			RC_GPSDatalinkTarget,
-			
-			RC_IFV_3_A_Test,
-			RC_IFV_3_A_Test0,
+
+			RC_IFV_3_A_TestGlobalServer,
+			RC_IFV_3_A_EHTestGlobal,
 
 			//optional retextures
 			RC_Howitzer_ReTex_D,
@@ -704,11 +704,6 @@ class CfgFunctions
 			//class RC_LocalityUVdebug {postInit=1;};
 
 			//class RC_calculateAB {postInit=1;};
-
-			class RC_TakeControlCommander {};
-			class RC_TakeControlCommander0 {};
-			class RC_TakeControlGunner {};
-			class RC_TakeControlGunner0 {};
 			
 			class scrollSolutions {};
 		};
@@ -753,6 +748,18 @@ class CfgFunctions
 			class RC_debugHash {};
 			class RC_debugChangeLocality {};
 			class RC_debugvWps {};
+		};
+		class RC_LocalityVic_functions
+		{
+			file="\Remote_Controlled_Artillery\functions\LocalityVic_functions";
+			
+			class RC_CommanderIsDriverGlobal {};
+			class RC_GunnerIsDriverGlobal {};
+			class RC_CommanderOrGunnerIsDriverGlobal {};
+			class RC_GunnerOrCommanderIsDriverGlobal {};
+
+			class RC_TakeControlCommanderServer {};
+			class RC_TakeControlGunnerServer {};
 		};
 	};
 };

@@ -1,35 +1,5 @@
-getin=
-"params ['_vehicle']; \
-if (isPlayer (commander _vehicle)) then { \
-	(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-	_vehicle setEffectiveCommander (commander _vehicle); \
-} else { \
-	if (isPlayer (gunner _vehicle)) then { \
-		(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-		_vehicle setEffectiveCommander (gunner _vehicle); \
-	} \
-};";
+getin="params ['_vic'];  [_vic] call RC_fnc_RC_CommanderOrGunnerIsDriverGlobal;";
 
-getout=
-"params ['_vehicle']; \
-if (isPlayer (commander _vehicle)) then { \
-	(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-	_vehicle setEffectiveCommander (commander _vehicle); \
-} else { \
-	if (isPlayer (gunner _vehicle)) then { \
-		(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-		_vehicle setEffectiveCommander (gunner _vehicle); \
-	} \
-};";
+getout="params ['_vic'];  [_vic] call RC_fnc_RC_CommanderOrGunnerIsDriverGlobal;";
 
-seatswitched=
-"params ['_vehicle']; \
-if (isPlayer (commander _vehicle)) then { \
-	(group (driver _vehicle)) setGroupOwner (owner (commander _vehicle)); \
-	_vehicle setEffectiveCommander (commander _vehicle); \
-} else { \
-	if (isPlayer (gunner _vehicle)) then { \
-		(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle)); \
-		_vehicle setEffectiveCommander (gunner _vehicle); \
-	} \
-};";
+seatswitched="params ['_vic'];  [_vic] call RC_fnc_RC_CommanderOrGunnerIsDriverGlobal;";

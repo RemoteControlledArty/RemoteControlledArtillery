@@ -352,26 +352,10 @@ class RC_ICV_3_WD_I: RC_ICV_3_WD
 };
 
 
-class RC_IFV_3_A: RC_ICV_IFV_3_A
+class RC_IFV_3_A_Base: RC_ICV_IFV_3_A
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-
-	displayName="Pandur II";
-	editorSubcategory="RC_IFV_APC_subcat";
-	scope=2;
-	scopeCurator=2;
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	crew="B_UAV_AI";
 
 	class Turrets: Turrets
 	{
@@ -533,6 +517,25 @@ class RC_IFV_3_A: RC_ICV_IFV_3_A
 			};
 		};
 	};
+};
+class RC_IFV_3_A: RC_IFV_3_A_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		};
+	};
+
+	displayName="Pandur II";
+	editorSubcategory="RC_IFV_APC_subcat";
+	scope=2;
+	scopeCurator=2;
+
+	crew="B_UAV_AI";
 };
 class RC_IFV_3_A_O: RC_IFV_3_A
 {
@@ -791,11 +794,9 @@ class RC_IFV_3_ReTex_D_I: RC_IFV_3_ReTex_D
 };
 
 
-//UserAction Test
-class RC_IFV_3_A_Test: RC_ICV_IFV_3_A
+//UserAction/EH Testing
+class RC_IFV_3_A_Test_Base: RC_IFV_3_A_Base
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControlsTest.hpp"
-
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
@@ -804,354 +805,30 @@ class RC_IFV_3_A_Test: RC_ICV_IFV_3_A
 		};
 	};
 
-	displayName="Pandur II Test";
 	editorSubcategory="RC_Test_subcat";
+	crew="B_UAV_AI";
+};
+class RC_IFV_3_A_TestGlobalServer: RC_IFV_3_A_Test_Base
+{
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControlsTestGlobalServer.hpp"
+
+	displayName="Pandur II Test Global Server";
 	scope=2;
 	scopeCurator=2;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	crew="B_UAV_AI";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-			dontCreateAI=1;
-			commanding=3;
-			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
-
-			weapons[]=
-			{
-				"RC_autocannon_30mm_CTWS",
-				"RC_MMG_338_coax_ext",
-				"RC_IFV_Missile_Launcher",
-				"SmokeLauncher"
-			};
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_30mm_red.hpp"
-
-			class OpticsIn
-			{
-				class Wide: RCWSOptics
-				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
-
-					initFov=0.9;
-					minFov=0.02;
-					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_APC_03_m_F.p3d";
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
-				};
-			};
-			class Turrets: Turrets
-			{
-				class CommanderOptics : CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-					dontCreateAI=1;
-					commanding=2;
-					turretInfoType="RscOptics_MBT_03_gunner";
-
-					weapons[]=
-					{
-						"RC_Laserdesignator_vehicle",
-						"SmokeLauncher"
-					};
-					magazines[]=
-					{
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
-
-					class OpticsIn
-					{
-						class Wide: RCWSOptics
-						{
-							//directionStabilized=1;	//unfortunately causes spinning camera bug
-
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-							gunnerOpticsEffect[]={};
-						};
-					};
-				};
-			};
-		};
-	};
 };
-class RC_IFV_3_A_Test0: RC_ICV_IFV_3_A
+class RC_IFV_3_A_EHTestGlobal: RC_IFV_3_A_Test_Base
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControlsTest0.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\GunnerOrCommanderIsDriverEH.hpp"
 		};
 	};
 
-	displayName="Pandur II Test 0";
-	editorSubcategory="RC_Test_subcat";
+	displayName="Pandur II EH Test Global";
 	scope=2;
 	scopeCurator=2;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	crew="B_UAV_AI";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-			dontCreateAI=1;
-			commanding=3;
-			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
-
-			weapons[]=
-			{
-				"RC_autocannon_30mm_CTWS",
-				"RC_MMG_338_coax_ext",
-				"RC_IFV_Missile_Launcher",
-				"SmokeLauncher"
-			};
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_30mm_red.hpp"
-
-			class OpticsIn
-			{
-				class Wide: RCWSOptics
-				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
-
-					initFov=0.9;
-					minFov=0.02;
-					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_APC_03_m_F.p3d";
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
-				};
-			};
-			class Turrets: Turrets
-			{
-				class CommanderOptics : CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-					dontCreateAI=1;
-					commanding=2;
-					turretInfoType="RscOptics_MBT_03_gunner";
-
-					weapons[]=
-					{
-						"RC_Laserdesignator_vehicle",
-						"SmokeLauncher"
-					};
-					magazines[]=
-					{
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
-
-					class OpticsIn
-					{
-						class Wide: RCWSOptics
-						{
-							//directionStabilized=1;	//unfortunately causes spinning camera bug
-
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-							gunnerOpticsEffect[]={};
-						};
-					};
-				};
-			};
-		};
-	};
 };
-
-
-/*
-class RC_IFV_3_A_Test3: RC_ICV_IFV_3_A
-{
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControlsTest3.hpp"
-
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
-	};
-
-	displayName="Pandur II Test3";
-	editorSubcategory="RC_Test_subcat";
-	scope=2;
-	scopeCurator=2;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	crew="B_UAV_AI";
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-			commanding=3;
-			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
-
-			weapons[]=
-			{
-				"RC_autocannon_30mm_CTWS",
-				"RC_MMG_338_coax_ext",
-				"RC_IFV_Missile_Launcher",
-				"SmokeLauncher"
-			};
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_30mm_red.hpp"
-
-			class OpticsIn
-			{
-				class Wide: RCWSOptics
-				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
-
-					initFov=0.9;
-					minFov=0.02;
-					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
-				};
-			};
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics : CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-					commanding=2;
-					turretInfoType="RscOptics_MBT_03_gunner";
-
-					weapons[]=
-					{
-						"RC_Laserdesignator_vehicle",
-						"SmokeLauncher"
-					};
-					magazines[]=
-					{
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
-
-					class OpticsIn
-					{
-						class Wide: RCWSOptics
-						{
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							gunnerOpticsEffect[]={};
-						};
-					};
-				};
-			};
-		};
-	};
-};
-*/
