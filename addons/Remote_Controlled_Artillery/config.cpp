@@ -747,7 +747,7 @@ class CfgFunctions
 			class RC_debugContinue {};
 			class RC_debugHash {};
 			class RC_debugChangeLocality {};
-			class RC_debugvWps {};
+			class RC_debugWps {};
 		};
 		class RC_LocalityVic_functions
 		{
