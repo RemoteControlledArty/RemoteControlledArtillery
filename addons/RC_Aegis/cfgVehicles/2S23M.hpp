@@ -24,7 +24,6 @@ class RC_2S23M_Base: O_R_APC_Wheeled_04_cannon_v2_F
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
-	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 
 	artilleryScanner=1;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
@@ -32,6 +31,7 @@ class RC_2S23M_Base: O_R_APC_Wheeled_04_cannon_v2_F
 	RC_BarrelAGL=2.3;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_2S23M: RC_2S23M_Base
 {

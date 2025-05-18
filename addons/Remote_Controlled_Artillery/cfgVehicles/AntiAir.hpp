@@ -16,6 +16,7 @@ class RC_AA_Base: B_APC_Tracked_01_AA_F
 	scope=0;
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_AA_A_Base: RC_AA_Base
 {
@@ -483,6 +484,7 @@ class RC_AA_base_HEX_O: O_APC_Tracked_02_AA_F
 	scope=0;
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 {

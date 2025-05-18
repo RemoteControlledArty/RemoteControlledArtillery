@@ -587,6 +587,7 @@ class RC_Stryker_M1127_M2_WD_Base: rhsusf_stryker_m1127_m2_wd
 	class HitRF2Wheel;
 	class HitRMWheel;
 	class HitRBWheel;
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 {

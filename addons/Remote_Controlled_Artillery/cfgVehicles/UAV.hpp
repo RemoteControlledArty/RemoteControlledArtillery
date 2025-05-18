@@ -12,6 +12,7 @@ class RC_UAV_base: B_UAV_01_F
 	scope=0;
 	scopeCurator=0;
 	RC_UAVBlurRange=2000;
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_UAV_AR1: RC_UAV_base
 {
@@ -970,6 +971,7 @@ class RC_GrenadeDropper_Base: C_IDAP_UAV_06_antimine_F
 	scope=0;
 	scopeCurator=0;
 	RC_UAVBlurRange=3000;
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_GrenadeDropper: RC_GrenadeDropper_Base
 {

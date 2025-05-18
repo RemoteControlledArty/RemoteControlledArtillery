@@ -7,6 +7,7 @@ class RC_FlatbedTruck_base: B_Truck_01_flatbed_F
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_FlatbedTruck: RC_FlatbedTruck_base
 {

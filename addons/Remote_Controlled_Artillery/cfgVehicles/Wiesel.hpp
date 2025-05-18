@@ -15,6 +15,7 @@ class RC_Wiesel_AA_Base: I_LT_01_AA_F
 	scope=0;
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 {
@@ -371,6 +372,7 @@ class RC_Wiesel_Radar_Base: I_LT_01_scout_F
 	scopeCurator=0;
 	forceHideDriver=1;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 {
@@ -1019,6 +1021,7 @@ class RC_Wiesel_ATGM_Base: I_LT_01_AT_F
 	scope=0;
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 {
@@ -1382,6 +1385,7 @@ class RC_Wiesel_AC_Base: I_LT_01_cannon_F
 	scope=0;
 	scopeCurator=0;
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 {

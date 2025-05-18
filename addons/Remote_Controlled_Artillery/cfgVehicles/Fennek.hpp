@@ -19,6 +19,7 @@ class RC_Fennek_Base: I_MRAP_03_F
 	scopeCurator=0;
 	forceHideDriver=1;
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_Fennek_A_Base: RC_Fennek_Base
 {

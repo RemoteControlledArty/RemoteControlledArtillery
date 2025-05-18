@@ -5,6 +5,7 @@ class B_Crocus_MP_Base: B_Crocus_AT
 	scopeCurator=0;
 	class EventHandlers;
 	class Components;
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class B_Crocus_MP: B_Crocus_MP_Base
 {
