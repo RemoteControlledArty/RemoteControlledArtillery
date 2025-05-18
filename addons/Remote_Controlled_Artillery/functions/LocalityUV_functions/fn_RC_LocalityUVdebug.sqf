@@ -93,7 +93,6 @@ private _ServercurWpCount = count (waypoints _uav);
 
 
 
-
 private _uav = getConnectedUAV player;
 private _driverGroupServer = group (driver _uav);
 [_driverGroupServer, 2] remoteExec ['setGroupOwner', 2];
@@ -114,6 +113,7 @@ private _curWpPos3 = (waypointPosition [_uav, 3]) select 1;
 private _ServercurWpCount = count (waypoints _uav);
 _uav setVariable ["RC_prevWpCount", _ServercurWpCount];
 [player, "SERVER WpCount: " + str _ServercurWpCount] remoteExec ['globalChat', 0];
+
 
 
 RC_fnc_uavWaypointsTest =
