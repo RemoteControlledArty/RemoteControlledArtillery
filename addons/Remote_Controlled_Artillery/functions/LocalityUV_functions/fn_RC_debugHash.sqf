@@ -1,6 +1,6 @@
-params ["_uav", "_RCLocalHash"];
+params ["_uav"];
 
 if (isNil "_RCLocal") then {
     _RCLocal = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_Local");
-    _RCLocalHash set [_uavClass, _RCLocal];
+    RC_RCLocalHash set [_uavClass, _RCLocal];
 };

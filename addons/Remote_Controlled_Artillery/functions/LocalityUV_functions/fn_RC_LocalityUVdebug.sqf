@@ -28,7 +28,7 @@ if (!hasInterface) exitWith {};
 			if ((_RCLocal != 0) or RC_FixLocalityOfAllUVs) then {
 
 				if (!isNull (findDisplay 160)) then {
-					[_uav] call RC_fnc_debugWp;	//RC_fnc_debugWpTest;
+					[_uav] call RC_fnc_debugWaypoints;
 				};
 
 				if (isRemoteControlling player) then {
@@ -40,14 +40,15 @@ if (!hasInterface) exitWith {};
 };
 
 
-/*
-//test: 2x player
+//remote controlling maybe needs waypoint variables set on uav too?
+//test: 2x player, !!!WPS used change to WP!!!
+
 if (isServer) then {RC_RCLocalHash = createHashMap;};
 if (!hasInterface) exitWith {};
 
 [] spawn {
 	
-	_repeats = 50;
+	_repeats = 80;
 
 	while {true} do {
 
@@ -60,7 +61,8 @@ if (!hasInterface) exitWith {};
 
 			private _uav = getConnectedUAV player;
 
-            [_uav] call RC_fnc_RC_debugContinue;
+			if (_uav isEqualto objNull) then {continue;};
+			if (local _uav) then {continue;};
 
             private _uavClass = typeOf _uav;
             private _RCLocal = RC_RCLocalHash get _uavClass;
@@ -70,7 +72,7 @@ if (!hasInterface) exitWith {};
 			if ((_RCLocal != 0) or RC_FixLocalityOfAllUVs) then {
 
 				if (!isNull (findDisplay 160)) then {
-					[_uav] call RC_fnc_debugWpTest;
+					[_uav] call RC_fnc_debugWaypointsTest;
 				};
 
 				if (isRemoteControlling player) then {
@@ -82,6 +84,90 @@ if (!hasInterface) exitWith {};
 };
 
 
+//default values after spawned
+private _uav = getConnectedUAV player;
+private _curWpPos1 = (waypointPosition [_uav, 1]) select 1;
+[player, "Wp1: " + str _curWpPos1] remoteExec ['globalChat', 0];
+private _ServercurWpCount = count (waypoints _uav);
+[player, "WpCount: " + str _ServercurWpCount] remoteExec ['globalChat', 0];
+
+
+
+
+private _uav = getConnectedUAV player;
+private _driverGroupServer = group (driver _uav);
+[_driverGroupServer, 2] remoteExec ['setGroupOwner', 2];
+[player, "SERVER locality"] remoteExec ['globalChat', 0];
+
+private _uav = getConnectedUAV player;
+private _prevWpPos1 = (_uav getVariable ["RC_prevWpPos1", 0]);
+private _prevWpPos2 = (_uav getVariable ["RC_prevWpPos2", 0]);
+private _prevWpPos3 = (_uav getVariable ["RC_prevWpPos3", 0]);
+private _curWpPos1 = (waypointPosition [_uav, 1]) select 1;
+private _curWpPos2 = (waypointPosition [_uav, 2]) select 1;
+private _curWpPos3 = (waypointPosition [_uav, 3]) select 1;
+
+[_uav, ["RC_prevWpPos1", _curWpPos1]] remoteExec ["setVariable", 0];
+[_uav, ["RC_prevWpPos2", _curWpPos2]] remoteExec ["setVariable", 0];
+[_uav, ["RC_prevWpPos3", _curWpPos3]] remoteExec ["setVariable", 0];
+
+private _ServercurWpCount = count (waypoints _uav);
+_uav setVariable ["RC_prevWpCount", _ServercurWpCount];
+[player, "SERVER WpCount: " + str _ServercurWpCount] remoteExec ['globalChat', 0];
+
+
+RC_fnc_uavWaypointsTest =
+{
+    params ["_uav"];
+  
+    private _prevWpPos1 = (_uav getVariable ["RC_prevWpPos1", 0]);
+    private _prevWpPos2 = (_uav getVariable ["RC_prevWpPos2", 0]);
+    private _prevWpPos3 = (_uav getVariable ["RC_prevWpPos3", 0]);
+    private _curWpPos1 = (waypointPosition [_uav, 1]) select 1;
+    private _curWpPos2 = (waypointPosition [_uav, 2]) select 1;
+    private _curWpPos3 = (waypointPosition [_uav, 3]) select 1;
+
+    if (((_curWpPos1 isNotEqualTo _prevWpPos1))) then {
+
+        private _driverGroup = group (driver _uav);
+        private _playerID = clientOwner;
+        [_driverGroup, _playerID] remoteExec ['setGroupOwner', 2];
+
+        [_uav, ["RC_prevWpPos1", _curWpPos1]] remoteExec ["setVariable", 0, true];
+    };
+    if (((_curWpPos2 isNotEqualTo _prevWpPos2))) then {
+
+        private _driverGroup = group (driver _uav);
+        private _playerID = clientOwner;
+        [_driverGroup, _playerID] remoteExec ['setGroupOwner', 2];
+
+        [_uav, ["RC_prevWpPos2", _curWpPos2]] remoteExec ["setVariable", 0, true];
+    };
+    if (((_curWpPos3 isNotEqualTo _prevWpPos3))) then {
+
+        private _driverGroup = group (driver _uav);
+        private _playerID = clientOwner;
+        [_driverGroup, _playerID] remoteExec ['setGroupOwner', 2];
+
+        [_uav, ["RC_prevWpPos3", _curWpPos3]] remoteExec ["setVariable", 0, true];
+    };
+
+    private _prevWpCount = (_uav getVariable ["RC_prevWpCount", 0]);
+    private _curWpCount = count (waypoints _uav);
+    if (_curWpCount != _prevWpCount) then {
+
+        private _driverGroup = group (driver _uav);
+        private _playerID = clientOwner;
+        [_driverGroup, _playerID] remoteExec ['setGroupOwner', 2];
+
+        [_uav, ["RC_prevWpCount", _curWpCount]] remoteExec ["setVariable", 0, true];
+    } else {
+        [player, "same waypoints"] remoteExec ['globalChat', 0];
+    };
+};
+
+
+/*
 //test: 1x player + server
 if (isServer) then {RC_RCLocalHash = createHashMap;};
 if (!hasInterface) exitWith {};

@@ -696,15 +696,9 @@ class CfgFunctions
 
 			class RC_EngineOff {postInit=1;};
 			class RC_UAVBlur {postInit=1;};
-			class RC_UAVConnectionFix {postInit=1;};
 			class RC_LaserDatalink {postInit=1;};
-
 			class RC_cursorTargetIntoDatalink {postInit=1;};
-			//class RC_LocalityUV {postInit=1;};
-			//class RC_LocalityUVdebug {postInit=1;};
 
-			//class RC_calculateAB {postInit=1;};
-			
 			class scrollSolutions {};
 		};
 		/*
@@ -737,17 +731,18 @@ class CfgFunctions
 		class RC_LocalityUV_functions
 		{
 			file="\Remote_Controlled_Artillery\functions\LocalityUV_functions";
+			
+			class RC_LocalityUV {postInit=1;};
+			class RC_uavConnectionFix {postInit=1;};	//maybe not required anymore after recent arma update
 
-			class RC_uavContinue {};
 			class RC_uavHash {};
+			class RC_uavWaypoints {};
 			class RC_uavChangeLocality {};
-			class RC_uavWps {};
 
-			class RC_debugServerLocalityTest {};
-			class RC_debugContinue {};
+			//class RC_LocalityUVdebug {postInit=1;};
 			class RC_debugHash {};
+			//class RC_debugWaypoints {};
 			class RC_debugChangeLocality {};
-			class RC_debugWps {};
 		};
 		class RC_LocalityVic_functions
 		{

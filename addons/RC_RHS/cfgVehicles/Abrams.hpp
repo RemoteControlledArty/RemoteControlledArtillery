@@ -325,7 +325,7 @@ class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner_missile.hpp"
-
+			
 			weapons[]=
 			{
 				"RC_RHS_weap_m256",
