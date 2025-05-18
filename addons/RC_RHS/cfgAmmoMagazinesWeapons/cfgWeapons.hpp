@@ -1,14 +1,35 @@
-class rhs_weap_m256;
-class rhs_weap_m256_base: rhs_weap_m256
+class RC_cannon_120mm;
+class rhs_weap_m256_base: RC_cannon_120mm
 {
 	class player;
 };
 class RC_RHS_weap_m256: rhs_weap_m256_base
 {
+	displayname="120mm M256A1";
+	reloadSound[]={ "\rhsusf\addons\rhsusf_c_heavyweapons\sounds\reload_tank_cannon_loader", 3.622776, 1, 15 };
+	reloadMagazineSound[]={ "\rhsusf\addons\rhsusf_c_heavyweapons\sounds\reload_tank_cannon_loader", 3.622776, 1, 15 };
+	autoReload=1;
+	flash="gunfire";
+	flashSize=10;
+	magazineWell[]={RHS_Cannon_120mm_M256};
+
+	class EventHandlers
+	{
+		class RHS_Fired_EH
+		{
+			fired = "_this call rhs_fnc_tankLoader";
+		};
+	};
+
+	/*
+	showaimcursorinternal = 0;
+	cursor="EmptyCursor";
+	cursoraim="EmptyCursor";
+	cursoraimon="EmptyCursor";
+	*/
+
 	canLock=2;
-	//minZeroing=50;
-	//ballisticsComputer="2 + 16";
-	//FCSMaxLeadSpeed=25;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	reloadTime=6;
 	magazineReloadTime=6;
 
@@ -56,6 +77,88 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 		"RC_3Rnd_120mm_DLG_cannon_missiles",
 		"RC_2Rnd_120mm_DLG_cannon_missiles",
 		"RC_1Rnd_120mm_DLG_cannon_missiles"
+	};
+};
+
+
+class rhs_weap_m256;
+class rhs_weap_m256_old_base: rhs_weap_m256
+{
+	class player;
+};
+class RC_RHS_weap_m256_old: rhs_weap_m256_old_base
+{
+	canLock=2;
+	//minZeroing=50;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+	//FCSMaxLeadSpeed=25;
+	reloadTime=6;
+	magazineReloadTime=6;
+
+	magazines[]=
+	{
+		//SABOT
+		"RC_RHS_mag_M829A4_20Rnd",
+		"RC_RHS_mag_M829A4_15Rnd",
+		"RC_RHS_mag_M829A4_10Rnd",
+		"rhs_mag_M829A3",
+		"rhs_mag_M829A2",
+		"rhs_mag_M829A1",
+		"rhs_mag_M829",
+		//HEAT
+		"RC_RHS_mag_M830A1_20Rnd",
+		"RC_RHS_mag_M830A1_15Rnd",
+		"RC_RHS_mag_M830A1_10Rnd",
+		"rhs_mag_M830",
+		//HE
+		"rhs_mag_M1069",
+		"rhs_mag_M1147",
+		//Canister
+		"rhs_mag_M1028",
+		//Smoke/WP
+		"rhs_mag_M416",
+
+		//Datalink Missile
+		"RC_4Rnd_120mm_DLG_cannon_missiles",
+		"RC_3Rnd_120mm_DLG_cannon_missiles",
+		"RC_2Rnd_120mm_DLG_cannon_missiles",
+		"RC_1Rnd_120mm_DLG_cannon_missiles"
+	};
+	class player: player
+	{
+		reloadTime=6;
+	};
+	class Cruise: Player
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+		minRange=150;
+		minRangeProbab=0.40000001;
+		midRange=400;
+		midRangeProbab=0.94999999;
+		maxRange=4000;
+		maxRangeProbab=0.94999999;
+	};
+	class TopDown: player
+	{
+		textureType="topDown";
+		displayName="$STR_A3_FireMode_TopDown0";
+		minRange=150;
+		minRangeProbab=0.40000001;
+		midRange=400;
+		midRangeProbab=0.94999999;
+		maxRange=4000;
+		maxRangeProbab=0.94999999;
+	};
+	modes[]=
+	{
+		"player",
+		"Cruise",
+		"topDown",
+		"close",
+		"short",
+		"medium",
+		"far"
 	};
 };
 

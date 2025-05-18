@@ -1980,8 +1980,8 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	displayName="120mm";
 	canLock=2;
-	reloadTime=5;
-	magazineReloadTime=5;
+	reloadTime=6;
+	magazineReloadTime=6;
 	FCSZeroingDelay=0.5;
 	FCSMaxLeadSpeed=30;
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
@@ -2031,10 +2031,14 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_2Rnd_120mm_DLG_cannon_missiles",
 		"RC_1Rnd_120mm_DLG_cannon_missiles"
 	};
-	class TopDown: player
+	class player: player
 	{
-		textureType="topDown";
-		displayName="$STR_A3_FireMode_TopDown0";
+		reloadTime=6;
+	};
+	class Cruise: Player
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
 		minRange=150;
 		minRangeProbab=0.40000001;
 		midRange=400;
@@ -2042,10 +2046,10 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		maxRange=4000;
 		maxRangeProbab=0.94999999;
 	};
-	class Cruise: Player
+	class TopDown: player
 	{
-		displayName="$STR_A3_firemode_terrain0";
-		textureType="terrain";
+		textureType="topDown";
+		displayName="$STR_A3_FireMode_TopDown0";
 		minRange=150;
 		minRangeProbab=0.40000001;
 		midRange=400;

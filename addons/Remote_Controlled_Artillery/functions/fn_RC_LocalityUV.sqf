@@ -5,18 +5,14 @@
 	Fixes multiplayer locality of UAV's/UGV's, to drive from UGV turret & set correct UAV altitude, without needing to first take driver control.
 */
 
+if (isServer) then {RC_RCLocalHash = createHashMap;};
 if (!hasInterface) exitWith {};
-RC_RCLocalHash = createHashMap;
 
 [] spawn {
 
-	private _prevUAV = getConnectedUAV player;
-	private _prevWpsCount = count (waypoints _prevUAV);
-	private _prevWpPos1 = waypointPosition [_prevUAV, 1];
-
 	while {true} do {
 
-		sleep 1;
+		sleep 0.5;
 
 		if (RC_FixLocalityOfRCUVs or RC_FixLocalityOfAllUVs) then {
 
@@ -32,7 +28,7 @@ RC_RCLocalHash = createHashMap;
 			if ((_RCLocal != 0) or RC_FixLocalityOfAllUVs) then {
 
 				if (!isNull (findDisplay 160)) then {
-					[_uav, _prevWpsCount, _prevWpPos1] call RC_fnc_RC_uavWps;
+					[_uav] call RC_fnc_uavWp;
 				};
 
 				if (isRemoteControlling player) then {

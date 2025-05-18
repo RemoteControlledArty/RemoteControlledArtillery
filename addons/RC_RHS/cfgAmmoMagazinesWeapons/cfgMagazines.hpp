@@ -1,34 +1,28 @@
 //120mm
 class rhs_mag_M829A4;
+//class RC_20Rnd_120mm_APFSDS_T_R;
 class RC_RHS_mag_M829A4_20Rnd: rhs_mag_M829A4
 {
+	displayName="M829A4 APFSDS-T";
 	displayNameShort="M829A4 AP";
 	ammo="RC_RHS_ammo_M829A4";
 	count=20;
 };
-class RC_RHS_mag_M829A4_15Rnd: RC_RHS_mag_M829A4_20Rnd
-{
-	count=15;
-};
-class RC_RHS_mag_M829A4_10Rnd: RC_RHS_mag_M829A4_20Rnd
-{
-	count=10;
-};
+class RC_RHS_mag_M829A4_15Rnd: RC_RHS_mag_M829A4_20Rnd {count=15;};
+class RC_RHS_mag_M829A4_10Rnd: RC_RHS_mag_M829A4_20Rnd {count=10;};
+
+
 class rhs_mag_M830A1;
+//class RC_10Rnd_120mm_MP_T_R;
 class RC_RHS_mag_M830A1_20Rnd: rhs_mag_M830A1
 {
+	displayName="M830A1 MPAT";
 	displayNameShort="M830A1 MP";
 	ammo="RC_RHS_ammo_M830A1";
 	count=20;
 };
-class RC_RHS_mag_M830A1_15Rnd: RC_RHS_mag_M830A1_20Rnd
-{
-	count=15;
-};
-class RC_RHS_mag_M830A1_10Rnd: RC_RHS_mag_M830A1_20Rnd
-{
-	count=10;
-};
+class RC_RHS_mag_M830A1_15Rnd: RC_RHS_mag_M830A1_20Rnd {count=15;};
+class RC_RHS_mag_M830A1_10Rnd: RC_RHS_mag_M830A1_20Rnd {count=10;};
 
 
 /*
@@ -47,18 +41,7 @@ class RC_RHS_mag_M830A1_10Rnd: RC_RHS_mag_M830A1_20Rnd
 //Canister
 "rhs_mag_M1028",
 //Smoke/WP
-"rhs_mag_M416",
-"rhs_mag_M829A4_max",
-"rhs_mag_M829A3_max",
-"rhs_mag_M829A2_max",
-"rhs_mag_M829A1_max",
-"rhs_mag_M829_max",
-"rhs_mag_M830_max",
-"rhs_mag_M830A1_max",
-"rhs_mag_M1069_max",
-"rhs_mag_M1147_max",
-"rhs_mag_M1028_max",
-"rhs_mag_M416_max"
+"rhs_mag_M416"
 */
 
 
@@ -69,20 +52,14 @@ class RC_RHS_mag_1100Rnd_762x51_T_R: rhs_mag_1100Rnd_762x51_M240
 	ammo="RC_RHS_ammo_M80A1EPR_T_R";
 	tracersEvery=1;
 };
+class RC_RHS_mag_1200Rnd_762x51_T_R: RC_RHS_mag_1100Rnd_762x51_T_R {count=1200;};
 class RC_RHS_mag_1100Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_T_R
 {
 	ammo="RC_RHS_ammo_M61_AP_T_R";
 	displayname="7.62x51mm AP";
 	displaynameshort="M61 AP";
 };
-class RC_RHS_mag_1200Rnd_762x51_T_R: RC_RHS_mag_1100Rnd_762x51_T_R
-{
-	count=1200;
-};
-class RC_RHS_mag_1200Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_M61_T_R
-{
-	count=1200;
-};
+class RC_RHS_mag_1200Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_M61_T_R {count=1200;};
 
 
 //25mm

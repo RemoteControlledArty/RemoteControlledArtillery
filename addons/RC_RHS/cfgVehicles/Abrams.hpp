@@ -129,13 +129,18 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 
 			weapons[]=
 			{
+				//"RC_cannon_120mm",
 				"RC_RHS_weap_m256",
 				"RC_RHS_weap_m240_abrams_coax",
-				"rhsusf_weap_M250",
-				"rhs_weap_fcs"
+				"rhsusf_weap_M250"
+				//"rhs_weap_fcs"
 			};
 			magazines[]=
 			{
+				/*
+				"RC_20Rnd_120mm_APFSDS_T_R",
+				"RC_20Rnd_120mm_MP_T_R",
+				*/
 				"RC_RHS_mag_M829A4_20Rnd",
 				"RC_RHS_mag_M830A1_20Rnd",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
@@ -145,9 +150,9 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
 				"rhsusf_mag_L8A3_12",
-				"rhsusf_mag_L8A3_12",
-				"rhs_laserfcsmag",
-				"rhs_laserfcsmag"
+				"rhsusf_mag_L8A3_12"
+				//"rhs_laserfcsmag",
+				//"rhs_laserfcsmag"
 			};
 
 			//turretInfoType="RscOptics_MBT_01_commander";
@@ -253,8 +258,8 @@ class RC_M1A2_SEPV2_D_B: RC_M1A2_SEPV2_D
 		class RHSUSF_EventHandlers
 		{
 			getOut="_this call rhs_fnc_M1_hatch";
-			init = "_this call RHS_fnc_M1_init";
-			postInit = "_this call rhs_fnc_reapplyTextures";
+			init="_this call RHS_fnc_M1_init";
+			postInit="_this call rhs_fnc_reapplyTextures";
 		};
 		class RC_Detection
 		{
@@ -325,7 +330,8 @@ class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 			{
 				"RC_RHS_weap_m256",
 				"RC_RHS_weap_m240_abrams_coax",
-				"rhs_weap_fcs"
+				"rhsusf_weap_M250"
+				//"rhs_weap_fcs"
 			};
 			magazines[]=
 			{
@@ -338,8 +344,10 @@ class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"rhs_laserfcsmag",
-				"rhs_laserfcsmag"
+				"rhsusf_mag_L8A3_12",
+				"rhsusf_mag_L8A3_12"
+				//"rhs_laserfcsmag",
+				//"rhs_laserfcsmag"
 			};
 		};
 	};
