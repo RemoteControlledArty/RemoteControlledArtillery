@@ -105,6 +105,9 @@ private _prevWpPos3 = (_uav getVariable ["RC_prevWpPos3", 0]);
 private _curWpPos1 = (waypointPosition [_uav, 1]) select 1;
 private _curWpPos2 = (waypointPosition [_uav, 2]) select 1;
 private _curWpPos3 = (waypointPosition [_uav, 3]) select 1;
+[player, "Wp1: " + str _curWpPos1] remoteExec ['globalChat', 0];
+[player, "Wp2: " + str _curWpPos2] remoteExec ['globalChat', 0];
+[player, "Wp3: " + str _curWpPos3] remoteExec ['globalChat', 0];
 
 [_uav, ["RC_prevWpPos1", _curWpPos1]] remoteExec ["setVariable", 0];
 [_uav, ["RC_prevWpPos2", _curWpPos2]] remoteExec ["setVariable", 0];
