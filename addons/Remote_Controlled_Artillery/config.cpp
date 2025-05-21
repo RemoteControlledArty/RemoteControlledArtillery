@@ -732,17 +732,10 @@ class CfgFunctions
 		{
 			file="\Remote_Controlled_Artillery\functions\LocalityUV_functions";
 			
-			//class RC_LocalityUV {postInit=1;};
 			class RC_uavConnectionFix {postInit=1;};	//maybe not required anymore after recent arma update
-
-			class RC_uavHash {};
+			class RC_LocalityUV {postInit=1;};
 			class RC_uavWaypoints {};
 			class RC_uavChangeLocality {};
-
-			//class RC_LocalityUVdebug {postInit=1;};
-			class RC_debugHash {};
-			//class RC_debugWaypoints {};
-			class RC_debugChangeLocality {};
 		};
 		class RC_LocalityVic_functions
 		{

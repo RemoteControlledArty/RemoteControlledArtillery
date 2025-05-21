@@ -1,4 +1,4 @@
-params ["_uav"];
+params ["_uav", "_uavClass"];
 
 if (isNil "_RCLocal") then {
     _RCLocal = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_Local");
