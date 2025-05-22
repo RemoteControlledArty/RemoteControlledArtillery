@@ -106,11 +106,11 @@ class CfgPatches
 			RC_cUAS_Static_HMG_manned_Bag_I,
 
 			RC_cUAS_UGV_A,
-			RC_cUAS_GMG_UGV_WD,
-			RC_cUAS_GMG_UGV_A_O,
-			RC_cUAS_GMG_UGV_WD_O,
-			RC_cUAS_GMG_UGV_A_I,
-			RC_cUAS_GMG_UGV_WD_I,
+			RC_cUAS_UGV_WD,
+			RC_cUAS_UGV_A_O,
+			RC_cUAS_UGV_WD_O,
+			RC_cUAS_UGV_A_I,
+			RC_cUAS_UGV_WD_I,
 
 			RC_Howitzer_A,
 			RC_Howitzer_WD,
@@ -215,7 +215,7 @@ class CfgPatches
 			RC_Wiesel_cUAS_WD_I,
 			RC_Wiesel_cUAS_DIG_I,
 
-			RC_Wiesel_cUAS_WD,
+			RC_Wiesel_cUAS_WD_manned,
 			RC_Wiesel_cUAS_WD_manned_O,
 			RC_Wiesel_cUAS_WD_manned_I,
 			RC_Wiesel_cUAS_DIG_manned_I,
@@ -313,10 +313,16 @@ class CfgPatches
 			RC_GrenadeDropper,
 			RC_GrenadeDropper_O,
 			RC_GrenadeDropper_I,
+			RC_GrenadeDropper_Sens,
+			RC_GrenadeDropper_Sens_O,
+			RC_GrenadeDropper_Sens_I,
 
 			RC_GrenadeDropper_Bag,
 			RC_GrenadeDropper_Bag_O,
 			RC_GrenadeDropper_Bag_I,
+			RC_GrenadeDropper_Sens_Bag,
+			RC_GrenadeDropper_Sens_Bag_O,
+			RC_GrenadeDropper_Sens_Bag_I,
 
 			RC_UAV_FPV,
 			RC_UAV_FPV_O,
