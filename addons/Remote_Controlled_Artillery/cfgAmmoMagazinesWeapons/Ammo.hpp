@@ -239,92 +239,8 @@ class RC_G_40mm_HEDP: G_40mm_HEDP
 };
 
 
-//C-UAS
-class BulletBase;
-class RC_cUAS_Pellet: BulletBase
-{
-	hit=6;	//4-8
-	indirectHit=0;
-	indirectHitRange=0;	//0.15-0.6
-	typicalSpeed=360;
-	deflecting=30;	//30-50
-	airFriction=-0.005;
-};
-class B_20mm_Tracer_Red;
-class RC_20mm_cUAS: B_20mm_Tracer_Red
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
-	submunitionConeAngle="0.4";		//0.4deg = 600m 1/3 shots should hit with a spread of 4.16m, 500m 2/3 should hit with a spread of 3.4m
-	submunitionConeType[]=
-	{
-		"poissondisc",	//test randomcenter
-		64
-	};
-	hit=30;			//test if less doesnt engage vehicles
-	indirectHit=0;
-	indirectHitRange=0;
-	cost=20;
-	/*
-	caliber=3.4000001;	//test if 1 doesnt engage helis
-	*/
-};
-class RC_30mm_cUAS: RC_20mm_cUAS
-{
-	submunitionConeAngle="0.4";		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
-	submunitionConeType[]=
-	{
-		"poissondisc",
-		96
-	};
-};
-class RC_40mm_cUAS: RC_20mm_cUAS
-{
-	submunitionConeAngle="0.4";		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
-	submunitionConeType[]=
-	{
-		"poissondisc",
-		96
-	};
-};
-class RC_127x99mm_cUAS: B_127x99_Ball_Tracer_Red
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
-	submunitionConeAngle="0.344";		//16, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m
-	//submunitionConeAngle="0.384";		//20, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m	 //worked slightly too well
-	//submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
-	//submunitionConeAngle="0.362";		//10? 0.362deg = 300m 1/4 shots should hit with a spread of 1.9m
-	submunitionConeType[]=
-	{
-		"poissondisc",	//test randomcenter
-		16
-	};
-	//caliber=2.5999999;	//test relating vehicles
-};
-class RC_338_cUAS: B_338_NM_Ball
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
-	submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
-	//submunitionConeAngle="0.281";		//6, 0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
-	submunitionConeType[]=
-	{
-		"poissondisc",
-		10
-	};
-};
-class RC_93x64_cUAS: B_93x64_Ball
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
-	submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
-	//submunitionConeAngle="0.281";		//6, 0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
-	submunitionConeType[]=
-	{
-		"poissondisc",
-		10
-	};
-};
-
-
 //Autocannon
+class B_20mm_Tracer_Red;
 class RC_20mm_HE_T_R: B_20mm_Tracer_Red
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
@@ -466,49 +382,161 @@ class RC_B_AC_Smoke: G_40mm_Smoke
 */
 
 
+/*
+class BulletBase;
+class B_30mm_MP_Core: BulletBase
+{
+	ace_vehicle_damage_incendiary=1;
+
+	//B_19mm_HE
+	explosionSoundEffect="DefaultExplosion";
+	explosionEffects="ExploAmmoExplosion";
+	craterEffects="ExploAmmoCrater";
+	//model="\A3\Weapons_f\Data\bullettracer\tracer_white";
+
+	//B_30mm_HE
+	weaponType="cannon";
+	visibleFire=32;
+	audibleFire=200;
+	visibleFireTime=3;
+	cost=20;
+	fuseDistance=3;
+	airlock=1;
+	aiAmmoUsageFlags="64 + 128 + 512";
+	tracerScale=2.5;
+	tracerStartTime=0.1;
+	tracerEndTime=4.6999998;
+
+	//B_30mm_MP
+	hit=90;
+	//indirectHit=4;
+	//indirectHitRange=2;
+	warheadName="HEAT";
+	caliber=4.4000001;
+	//deflecting=10;
+	explosive=0.60000002;
+	//typicalSpeed=1070;
+	airFriction=-0.00036000001;
+	dangerRadiusBulletClose=16;
+	dangerRadiusHit=40;
+	suppressionRadiusBulletClose=10;
+	suppressionRadiusHit=14;
+
+	//ShellCore
+	//simulation="shotShell";
+	simulationStep=0.050000001;
+	soundHit[]=
+	{
+		"",
+		316.22775,
+		1
+	};
+	soundFly[]=
+	{
+		"",
+		0.031622775,
+		4
+	};
+
+	//ammo_Penetrator_Base
+	model="\A3\weapons_f\empty";
+	indirectHit=0;
+	indirectHitRange=0;
+	//explosive=0;
+	typicalSpeed=1000;	//1070
+	timeToLive=0.2;
+	deflecting=0;
+	//deflectionDirDistribution=0;
+	//penetrationDirDistribution=0;
+
+	class HitEffects
+	{
+		Hit_Foliage_green="ImpactLeavesGreen";
+		Hit_Foliage_Dead="ImpactLeavesDead";
+		Hit_Foliage_Green_big="ImpactLeavesGreenBig";
+		Hit_Foliage_Palm="ImpactLeavesPalm";
+		Hit_Foliage_Pine="ImpactLeavesPine";
+		hitFoliage="ImpactLeaves";
+		hitGlass="ImpactMetalSabotSmall";
+		hitGlassArmored="ImpactMetalSabotSmall";
+		hitWood="ImpactMetalSabotSmall";
+		hitHay="ImpactMetalSabotSmall";
+		hitMetal="ImpactMetalSabotSmall";
+		hitMetalPlate="ImpactMetalSabotSmall";
+		hitBuilding="ImpactMetalSabotSmall";
+		hitPlastic="ImpactMetalSabotSmall";
+		hitRubber="ImpactMetalSabotSmall";
+		hitTyre="ImpactMetalSabotSmall";
+		hitConcrete="ImpactMetalSabotSmall";
+		hitMan="ImpactMetalSabotSmall";
+		hitGroundSoft="ImpactMetalSabotSmall";
+		hitGroundRed="ImpactMetalSabotSmall";
+		hitGroundHard="ImpactMetalSabotSmall";
+		hitWater="ImpactEffectsWater";
+		default_mat="ImpactMetalSabotSmall";
+	};
+	whistleOnFire=1;
+	whistleDist=14;
+};
+*/
+
+
 //MP Penetrator Submunitions
 class ammo_Penetrator_Base;
+/*
 class RC_ammo_Penetrator_MPAB: ammo_Penetrator_Base
 {
+	explosive=0.60000002;	//expl 0 (purely kinetic) results in nearly no damage for small calibers for unknown reason
+
 	airFriction=0;	//0 for it to still work with given airburst distance
 	timeToLive=0.2;
 	warheadName="HEAT";
+	craterEffects="ExploAmmoCrater";	//no matter which, produces false craters
+	explosionEffects="ExploAmmoExplosion";
+	explosionSoundEffect="DefaultExplosion";
+};
+*/
+class RC_ammo_Penetrator_MPAB: ammo_Penetrator_Base
+{
 	explosive=0;
+	airFriction=0;	//0 for it to still work with given airburst distance
+	timeToLive=0.2;
+	warheadName="HEAT";
 	CraterEffects="NoCrater";	//test both seperate
 	explosionEffects="NoExplosion";
 };
 class RC_ammo_Penetrator_MP_20mm: RC_ammo_Penetrator_MPAB
 {
-	hit=70;
-	caliber=4.2;	//?
+	hit=80;
+	caliber=4.4;
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
 class RC_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MPAB
 {
-	hit=90;
-	caliber=4.4;
+	hit=100;
+	caliber=4.6;
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
 class RC_ammo_Penetrator_MP_35mm: RC_ammo_Penetrator_MPAB
 {
-	hit=100;
-	caliber=4.5;
+	hit=110;
+	caliber=4.7;
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
 class RC_ammo_Penetrator_MP_40mm: RC_ammo_Penetrator_MPAB
 {
-	hit=110;
-	caliber=4.6;	//maybe should be 5.87 based on 40/30=1.3x4.4
+	hit=120;
+	caliber=4.8;
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
 class RC_ammo_Penetrator_MP_50mm: RC_ammo_Penetrator_MPAB
 {
-	hit=130;
-	caliber=4.8;	//? min 4.8, rather 5.75 to 7.3
+	hit=140;
+	caliber=5;
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
@@ -613,16 +641,7 @@ class RC_B_20mm_HE_QF_T_G: RC_B_20mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullet
 class RC_B_20mm_HE_QF_T_Y: RC_B_20mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-//20mm HEAB C-UAS/DF/QF
-class RC_B_20mm_HEAB_cUAS_T_R: B_20mm_Tracer_Red
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults_cUAS.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
-	submunitionAmmo="RC_B_20mm_HE_DF_Sub";
-};
-class RC_B_20mm_HEAB_cUAS_T_G: RC_B_20mm_HEAB_cUAS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_20mm_HEAB_cUAS_T_Y: RC_B_20mm_HEAB_cUAS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+//20mm HEAB DF/QF
 class RC_B_20mm_HEAB_DF_T_R: B_20mm_Tracer_Red
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults.hpp"
@@ -640,6 +659,125 @@ class RC_B_20mm_HEAB_QF_T_R: B_20mm_Tracer_Red
 };
 class RC_B_20mm_HEAB_QF_T_G: RC_B_20mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_20mm_HEAB_QF_T_Y: RC_B_20mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class B_35mm_AA;
+class B_20mm_cUAS_Base: B_35mm_AA
+{
+	caliber=3.4000001;	//2.8 for 35mm
+	hit=60;
+	indirectHit=6;
+	indirectHitRange=1.6;
+	weaponType="cannon";	//not in 35mm
+	warheadName="HE";
+	explosive=0.40000001;	//0.6 for 35mm
+	visibleFire=32;
+	audibleFire=200;
+	visibleFireTime=4;
+	dangerRadiusBulletClose=16;
+	dangerRadiusHit=40;
+	suppressionRadiusBulletClose=10;
+	suppressionRadiusHit=14;
+	deflecting=0;
+	airLock=1;
+	aiAmmoUsageFlags="64 + 128 + 256";
+	cost=30;	//42 for 35mm
+	CraterEffects="ExploAmmoCrater";
+	explosionEffects="ExploAmmoExplosion";
+	explosionSoundEffect="DefaultExplosion";
+	model="\A3\Weapons_f\Data\bullettracer\tracer_white";
+	tracerScale=1;
+	tracerStartTime=0.050000001;
+	nvgOnly=0;	//not in 35mm
+	tracerEndTime=2;
+	airFriction=-0.00078;
+	muzzleEffect="";
+	typicalSpeed=1030;
+	soundHit1[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_01",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit2[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_02",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit3[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_03",
+		1.7782794,
+		1,
+		1300
+	};
+	soundHit4[]=
+	{
+		"A3\Sounds_F\arsenal\explosives\grenades\Explosion_mini_grenade_04",
+		1.7782794,
+		1,
+		1300
+	};
+	multiSoundHit[]=
+	{
+		"soundHit1",
+		0.25,
+		"soundHit2",
+		0.25,
+		"soundHit3",
+		0.25,
+		"soundHit4",
+		0.25
+	};
+	class CamShakeExplode
+	{
+		power=4;
+		duration=0.80000001;
+		frequency=20;
+		distance=43.7771;
+	};
+	class CamShakeHit
+	{
+		power=20;
+		duration=0.40000001;
+		frequency=20;
+		distance=1;
+	};
+	class CamShakeFire
+	{
+		power=2.1147399;
+		duration=0.80000001;
+		frequency=20;
+		distance=35.7771;
+	};
+	class CamShakePlayerFire
+	{
+		power=0.0099999998;
+		duration=0.1;
+		frequency=20;
+		distance=1;
+	};
+};
+
+
+//20mm HEAB C-UAS
+class RC_B_20mm_HE_DF_cUAS_Sub: B_20mm_cUAS_Base
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_HE_DF.hpp"
+};
+class RC_B_20mm_HEAB_cUAS_T_R: B_20mm_cUAS_Base
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults_cUAS.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_20mm.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
+	submunitionAmmo="RC_B_20mm_HE_DF_Sub";
+};
+class RC_B_20mm_HEAB_cUAS_T_G: RC_B_20mm_HEAB_cUAS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_HEAB_cUAS_T_Y: RC_B_20mm_HEAB_cUAS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 
@@ -764,7 +902,6 @@ class RC_B_30mm_HEAB_QF_T_Y: RC_B_30mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bu
 
 
 //35mm HEAB C-UAS / MPAB AA
-class B_35mm_AA;
 class RC_B_35mm_MP_AA_Sub: B_35mm_AA
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_35mm_AA.hpp"
@@ -1061,6 +1198,90 @@ class RC_B_50mm_HEAB_QF_T_G: RC_B_50mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bu
 class RC_B_50mm_HEAB_QF_T_Y: RC_B_50mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+
+
+//C-UAS
+class BulletBase;
+class RC_cUAS_Pellet: BulletBase
+{
+	hit=6;	//4-8
+	indirectHit=0;
+	indirectHitRange=0;	//0.15-0.6
+	typicalSpeed=360;
+	deflecting=30;	//30-50
+	airFriction=-0.005;
+};
+class RC_20mm_cUAS: B_20mm_cUAS_Base
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
+	submunitionConeAngle="0.4";		//0.4deg = 600m 1/3 shots should hit with a spread of 4.16m, 500m 2/3 should hit with a spread of 3.4m
+	submunitionConeType[]=
+	{
+		"poissondisc",	//test randomcenter
+		64
+	};
+	hit=30;			//test if less doesnt engage vehicles
+	indirectHit=0;
+	indirectHitRange=0;
+	cost=20;
+	/*
+	caliber=3.4000001;	//test if 1 doesnt engage helis
+	*/
+};
+class RC_30mm_cUAS: RC_20mm_cUAS
+{
+	submunitionConeAngle="0.4";		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		96
+	};
+};
+class RC_40mm_cUAS: RC_20mm_cUAS
+{
+	submunitionConeAngle="0.4";		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		96
+	};
+};
+class RC_127x99mm_cUAS: B_127x99_Ball_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
+	submunitionConeAngle="0.344";		//16, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m
+	//submunitionConeAngle="0.384";		//20, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m	 //worked slightly too well
+	//submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
+	//submunitionConeAngle="0.362";		//10? 0.362deg = 300m 1/4 shots should hit with a spread of 1.9m
+	submunitionConeType[]=
+	{
+		"poissondisc",	//test randomcenter
+		16
+	};
+	//caliber=2.5999999;	//test relating vehicles
+};
+class RC_338_cUAS: B_338_NM_Ball
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
+	submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
+	//submunitionConeAngle="0.281";		//6, 0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		10
+	};
+};
+class RC_93x64_cUAS: B_93x64_Ball
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
+	submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
+	//submunitionConeAngle="0.281";		//6, 0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		10
+	};
+};
 
 
 //120mm of FSV/MBT

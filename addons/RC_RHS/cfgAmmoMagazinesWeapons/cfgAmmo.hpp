@@ -95,8 +95,8 @@ class RC_RHS_ammo_M792_HEI_T_Y: RC_RHS_ammo_M792_HEI_T_R
 class RC_ammo_Penetrator_MP_30mm;
 class RC_ammo_Penetrator_MP_25mm: RC_ammo_Penetrator_MP_30mm
 {
-	hit=80;
-	caliber=4.3;
+	hit=90;
+	caliber=4.5;
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };

@@ -247,7 +247,7 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 
 class RC_Puma_30mm_FT: RC_Puma_FT_Base
 {
-	displayName="SPZ Puma";
+	displayName="SPz Puma";
 	editorSubcategory="RC_BW_subcat";
 	scope=2;
 	scopeCurator=2;

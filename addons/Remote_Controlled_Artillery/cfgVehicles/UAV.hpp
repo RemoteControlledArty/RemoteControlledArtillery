@@ -975,6 +975,7 @@ class RC_GrenadeDropper_Base: C_IDAP_UAV_06_antimine_F
 };
 class RC_GrenadeDropper: RC_GrenadeDropper_Base
 {
+	#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 	displayName="RC Grenade Dropper 4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_UAV_Designator_subcat";
@@ -1003,6 +1004,8 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 
 	class PilotCamera: PilotCamera
 	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+
 		class OpticsIn: OpticsIn
 		{
 			class Wide: Wide
@@ -1029,7 +1032,6 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 	};
 	class Viewoptics: ViewOptics
 	{
-		#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 		initFov=1;
 		minFov=0.45;
 		maxFov=1;
@@ -1109,19 +1111,21 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750,375};
+					range[]={3000,1500,750,350};
 					resource="RscCustomInfoSensors";
 				};
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 		{
-			defaultDisplay="EmptyDisplay";
+			defaultDisplay="SensorDisplay";
 			class components
 			{
-				class EmptyDisplay
+				class SensorDisplay
 				{
-					componentType="EmptyDisplayComponent";
+					componentType="SensorsDisplayComponent";
+					range[]={350,750,1500,3000};
+					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay
 				{
@@ -1134,12 +1138,17 @@ class RC_GrenadeDropper: RC_GrenadeDropper_Base
 					range=50;
 					resource="RscCustomInfoMineDetect";
 				};
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
 			};
 		};
 	};
 };
 class RC_GrenadeDropper_O: RC_GrenadeDropper
 {
+	displayName="RC Grenade Dropper 4km [Opf]";
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
@@ -1154,6 +1163,7 @@ class RC_GrenadeDropper_O: RC_GrenadeDropper
 };
 class RC_GrenadeDropper_I: RC_GrenadeDropper
 {
+	displayName="RC Grenade Dropper 4km [Ind]";
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
@@ -1209,5 +1219,199 @@ class RC_GrenadeDropper_Bag_I: RC_GrenadeDropper_Bag
 	{
 		displayName="RC Grenade Dropper [Ind]";
 		assembleTo="RC_GrenadeDropper_I";
+	};
+};
+
+
+//with Sensor
+class RC_GrenadeDropper_Sens: RC_GrenadeDropper
+{
+	displayName="RC Grenade Dropper Sens 4km";
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=3000;
+
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=350;
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.8;
+					angleRangeHorizontal=45;
+					angleRangeVertical=90;
+					animDirection="";
+					aimDown=0;	//-1
+
+					class AirTarget
+					{
+						minRange=350;
+						maxRange=350;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=350;
+						maxRange=350;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+				};
+				class NVSensorComponent: SensorTemplateNV
+				{
+					typeRecognitionDistance=3000;
+					maxTrackableSpeed=450;
+					angleRangeHorizontal=45;
+					angleRangeVertical=90;
+					animDirection="";
+					aimDown=0;
+
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+				};
+				class ManSensorComponent: SensorTemplateMan
+				{
+					typeRecognitionDistance=1;
+					maxTrackableSpeed=15;
+					nightRangeCoef=0.8;
+					angleRangeHorizontal=45;
+					angleRangeVertical=90;
+					animDirection=""; //aligned with body	//pip_pilot_dir or pip_pilot_pos doesnt work
+					aimDown=0;	//-1
+
+					class AirTarget
+					{
+						minRange=200;
+						maxRange=200;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=200;
+						maxRange=200;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+				};
+			};
+		};
+	};
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_GrenadeDropper_Sens_Bag"
+		};
+	};
+};
+class RC_GrenadeDropper_Sens_O: RC_GrenadeDropper_Sens
+{
+	displayName="RC Grenade Dropper Sens 4km [Opf]";
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_GrenadeDropper_Sens_Bag_O"
+		};
+	};
+};
+class RC_GrenadeDropper_Sens_I: RC_GrenadeDropper_Sens
+{
+	displayName="RC Grenade Dropper Sens 4km [Ind]";
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_GrenadeDropper_Sens_Bag_I"
+		};
+	};
+};
+
+
+class RC_GrenadeDropper_Sens_Bag: RC_GrenadeDropper_Bag
+{
+	displayName="RC Grenade Dropper Sens";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC Grenade Dropper Sens";
+		assembleTo="RC_GrenadeDropper_Sens";
+	};
+};
+class RC_GrenadeDropper_Sens_Bag_O: RC_GrenadeDropper_Sens_Bag
+{
+	displayName="RC Grenade Dropper Sens [Opf]";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC Grenade Dropper Sens [Opf]";
+		assembleTo="RC_GrenadeDropper_Sens_O";
+	};
+};
+class RC_GrenadeDropper_Sens_Bag_I: RC_GrenadeDropper_Sens_Bag
+{
+	displayName="RC Grenade Dropper Sens [Ind]";
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC Grenade Dropper Sens [Ind]";
+		assembleTo="RC_GrenadeDropper_Sens_I";
 	};
 };
