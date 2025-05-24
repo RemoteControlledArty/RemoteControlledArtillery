@@ -464,9 +464,11 @@ class CfgPatches
 			RC_indirect_GMG_UGV_WD_I,
 
 			RC_GPSDatalinkTarget,
-
+			
+			/*
 			RC_IFV_3_A_TestGlobalServer,
 			RC_IFV_3_A_EHTestGlobal,
+			*/
 
 			//optional retextures
 			RC_Howitzer_ReTex_D,

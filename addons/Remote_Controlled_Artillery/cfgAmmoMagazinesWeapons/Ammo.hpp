@@ -160,6 +160,20 @@ class RC_Laserbeam: Laserbeam
 
 
 //MMG
+class B_762x51_Tracer_Red;
+class RC_B_762x51_T_R: B_762x51_Tracer_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	typicalSpeed=860;
+	tracerStartTime=0.04;
+	tracerEndTime=4;
+};
+class RC_B_762x51_T_G: RC_B_762x51_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_762x51_T_Y: RC_B_762x51_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 class B_338_NM_Ball;
 class RC_B_338_T_R: B_338_NM_Ball
 {

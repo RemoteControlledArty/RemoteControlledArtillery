@@ -27,6 +27,16 @@ class CfgPatches
 			RC_Titus_AC_D_I,
 			RC_Titus_AC_WD_I,
 
+			RC_Titus_HMG_A,
+			RC_Titus_HMG_D,
+			RC_Titus_HMG_WD,
+			RC_Titus_HMG_A_O,
+			RC_Titus_HMG_D_O,
+			RC_Titus_HMG_WD_O,
+			RC_Titus_HMG_A_I,
+			RC_Titus_HMG_D_I,
+			RC_Titus_HMG_WD_I,
+
 			RC_Titus_MMG_A,
 			RC_Titus_MMG_D,
 			RC_Titus_MMG_WD,

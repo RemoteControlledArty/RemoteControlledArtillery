@@ -799,6 +799,7 @@ class RC_IFV_3_ReTex_D_I: RC_IFV_3_ReTex_D
 
 
 //UserAction/EH Testing
+/*
 class RC_IFV_3_A_Test_Base: RC_IFV_3_A_Base
 {
 	class EventHandlers: EventHandlers
@@ -836,3 +837,4 @@ class RC_IFV_3_A_EHTestGlobal: RC_IFV_3_A_Test_Base
 	scope=2;
 	scopeCurator=2;
 };
+*/

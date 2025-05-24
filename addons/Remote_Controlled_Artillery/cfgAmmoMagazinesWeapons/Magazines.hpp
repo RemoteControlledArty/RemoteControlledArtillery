@@ -70,6 +70,27 @@ class RC_PylonRack_4Rnd_BombDemine_01_F: PylonRack_4Rnd_BombDemine_01_F
 
 
 //.338NM Vehicle MMG Belts
+class 200Rnd_762x51_Belt;
+class RC_200Rnd_762x51_T_R: 200Rnd_762x51_Belt
+{
+	author="Ascent";
+	ammo="RC_B_762x51_T_R";
+	count=200;
+	initSpeed=860;
+	tracersEvery=1;
+	displayName="7.62mm";
+	descriptionShort="7.62mm";
+};
+class RC_200Rnd_762x51_T_G: RC_200Rnd_762x51_T_R {ammo="RC_B_762x51_T_G";};
+class RC_200Rnd_762x51_T_Y: RC_200Rnd_762x51_T_R {ammo="RC_B_762x51_T_Y";};
+class RC_150Rnd_762x51_T_G: RC_200Rnd_762x51_T_G {count=150;};
+class RC_150Rnd_762x51_T_R: RC_200Rnd_762x51_T_R {count=150;};
+class RC_150Rnd_762x51_T_Y: RC_200Rnd_762x51_T_Y {count=150;};
+class RC_100Rnd_762x51_T_G: RC_200Rnd_762x51_T_G {count=100;};
+class RC_100Rnd_762x51_T_R: RC_200Rnd_762x51_T_R {count=100;};
+class RC_100Rnd_762x51_T_Y: RC_200Rnd_762x51_T_Y {count=100;};
+
+
 class VehicleMagazine;
 class RC_200Rnd_338_T_R: VehicleMagazine
 {

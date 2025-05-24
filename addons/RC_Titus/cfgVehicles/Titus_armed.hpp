@@ -167,8 +167,12 @@ class RC_Titus_AC: RC_Titus_AC_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,500};
+							range[]={4000,2000,1000,400};
 							resource="RscCustomInfoSensors";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
 						};
 						/*
 						class MinimapDisplay
@@ -177,10 +181,6 @@ class RC_Titus_AC: RC_Titus_AC_base
 							resource="RscCustomInfoMiniMap";
 						};
 						*/
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
 						class CrewDisplay
 						{
 							componentType="CrewDisplayComponent";
@@ -210,17 +210,17 @@ class RC_Titus_AC: RC_Titus_AC_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={500,1000,2000,4000};
+							range[]={400,1000,2000,4000};
 							resource="RscCustomInfoSensors";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
 						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
 						};
 						class CrewDisplay
 						{
@@ -286,7 +286,6 @@ class RC_Titus_AC_D_O: RC_Titus_AC_D
 		{
 			#include "\RC_Titus\includes_vicmags\mags_Titus_20mm_green.hpp"
 		};
-
 		class CommanderTurret: CommanderTurret {};
 		class CargoTurret_01: CargoTurret_01 {};
 		class CargoTurret_02: CargoTurret_02 {};
@@ -316,7 +315,6 @@ class RC_Titus_AC_D_I: RC_Titus_AC_D
 		{
 			#include "\RC_Titus\includes_vicmags\mags_Titus_20mm_yellow.hpp"
 		};
-
 		class CommanderTurret: CommanderTurret {};
 		class CargoTurret_01: CargoTurret_01 {};
 		class CargoTurret_02: CargoTurret_02 {};
@@ -327,6 +325,117 @@ class RC_Titus_AC_WD_I: RC_Titus_AC_D_I
 	#include "\RC_Titus\textures\tex_wd_armed.hpp"
 };
 class RC_Titus_AC_A_I: RC_Titus_AC_D_I
+{
+	#include "\RC_Titus\textures\tex_a_armed.hpp"
+};
+
+
+class RC_Titus_HMG_D: RC_Titus_AC_D
+{
+	displayName="Titus HMG";
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_QIN_HMG";
+		};
+		class muzzle2_rot
+		{
+			source="ammorandom";
+			weapon="RC_QIN_762_MMG";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_QIN_HMG";
+		};
+		class muzzle2_hide
+		{
+			source="reload";
+			weapon="RC_QIN_762_MMG";
+		};
+	};
+
+	class Turrets: Turrets
+	{
+		class ARX20Turret: ARX20Turret
+		{
+			weapons[]=
+			{
+				"RC_QIN_HMG",
+				"RC_QIN_762_MMG",
+				"SmokeLauncher"
+			};
+			#include "\RC_Titus\includes_vicmags\mags_Titus_HMG_red.hpp"
+		};
+		class CommanderTurret: CommanderTurret {};
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+	};
+};
+class RC_Titus_HMG_WD: RC_Titus_HMG_D
+{
+	#include "\RC_Titus\textures\tex_wd_armed.hpp"
+};
+class RC_Titus_HMG_A: RC_Titus_HMG_D
+{
+	#include "\RC_Titus\textures\tex_a_armed.hpp"
+};
+
+
+class RC_Titus_HMG_D_O: RC_Titus_HMG_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class ARX20Turret: ARX20Turret
+		{
+			#include "\RC_Titus\includes_vicmags\mags_Titus_HMG_green.hpp"
+		};
+		class CommanderTurret: CommanderTurret {};
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+	};
+};
+class RC_Titus_HMG_WD_O: RC_Titus_HMG_D_O
+{
+	#include "\RC_Titus\textures\tex_wd_armed.hpp"
+};
+class RC_Titus_HMG_A_O: RC_Titus_HMG_D_O
+{
+	#include "\RC_Titus\textures\tex_a_armed.hpp"
+};
+
+
+class RC_Titus_HMG_D_I: RC_Titus_HMG_D
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class ARX20Turret: ARX20Turret
+		{
+			#include "\RC_Titus\includes_vicmags\mags_Titus_HMG_yellow.hpp"
+		};
+		class CommanderTurret: CommanderTurret {};
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+	};
+};
+class RC_Titus_HMG_WD_I: RC_Titus_HMG_D_I
+{
+	#include "\RC_Titus\textures\tex_wd_armed.hpp"
+};
+class RC_Titus_HMG_A_I: RC_Titus_HMG_D_I
 {
 	#include "\RC_Titus\textures\tex_a_armed.hpp"
 };
@@ -469,7 +578,6 @@ class RC_Titus_MMG_D_O: RC_Titus_MMG_WD
 		{
 			#include "\RC_Titus\includes_vicmags\mags_Titus_MMG_green.hpp"
 		};
-
 		class CommanderTurret: CommanderTurret {};
 		class CargoTurret_01: CargoTurret_01 {};
 		class CargoTurret_02: CargoTurret_02 {};
@@ -498,7 +606,6 @@ class RC_Titus_MMG_D_I: RC_Titus_MMG_D
 		{
 			#include "\RC_Titus\includes_vicmags\mags_Titus_MMG_yellow.hpp"
 		};
-
 		class CommanderTurret: CommanderTurret {};
 		class CargoTurret_01: CargoTurret_01 {};
 		class CargoTurret_02: CargoTurret_02 {};
