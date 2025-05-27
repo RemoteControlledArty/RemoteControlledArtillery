@@ -78,7 +78,7 @@ class Components: Components
 					viewDistanceLimitCoef=-1;
 				};
 			};
-			#include "\Remote_Controlled_Artillery\includes_cfg\UAV_Sensor.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 		};
 	};
