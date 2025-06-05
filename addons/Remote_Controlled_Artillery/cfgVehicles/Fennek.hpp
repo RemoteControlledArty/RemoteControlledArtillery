@@ -163,7 +163,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={6000,4000,2000,1000,400};
+					range[]={4000,2000,1000,400};
 					resource="RscCustomInfoSensors";
 				};
 			};
@@ -177,7 +177,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={400,1000,2000,4000,6000};
+					range[]={400,1000,2000,4000};
 					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay
@@ -239,7 +239,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={6000,4000,2000,1000,400};
+							range[]={4000,2000,1000,400};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -253,7 +253,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={400,1000,2000,4000,6000};
+							range[]={400,1000,2000,4000};
 							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
@@ -305,6 +305,13 @@ class RC_Fennek_A: RC_Fennek_A_Base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+
+	camouflage=1.5;	//2
+	/*
+	radarTargetSize=0.7; //?
+	irTargetSize=0.7; //?
+	visualTargetSize=0.7; //?
+	*/
 
 	displayName="RC Recon Fennek";
 	editorSubcategory="RC_ICV_subcat";
@@ -364,6 +371,60 @@ class RC_Fennek_DIG_I: RC_Fennek_A_I
 //Fennek with Vehicle Mortar attached, for low power but mobile indirect fire support
 class RC_Mortar_Fennek_A: RC_Fennek_A
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
+		};
+	};
+
+	displayName="RC Mortar Fennek";
+	editorSubcategory="RC_Mortar_subcat";
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+	camouflage=2;	//2
+
+	class Components: Components
+	{
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={6000,4000,2000,1000,400};
+					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={400,1000,2000,4000,6000};
+					resource="RscCustomInfoSensors";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+			};
+		};
+	};
+
 	class Turrets: Turrets
 	{
 		class CommanderTurret: CommanderTurret
@@ -378,20 +439,49 @@ class RC_Mortar_Fennek_A: RC_Fennek_A
 			{
 				directionStabilized=1;
 			};
-		};
-	};
-	
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
-		};
-	};
 
-	displayName="RC Mortar Fennek";
-	editorSubcategory="RC_Mortar_subcat";
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={6000,4000,2000,1000,400};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={400,1000,2000,4000,6000};
+							resource="RscCustomInfoSensors";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+					};
+				};
+			};
+		};
+	};
 };
 class RC_Mortar_Fennek_A_O: RC_Mortar_Fennek_A
 {

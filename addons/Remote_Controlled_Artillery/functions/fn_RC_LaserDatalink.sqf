@@ -6,14 +6,14 @@
 */
 
 // Need to exit early if we aren't a client
-if !hasInterface exitWith {};
+if (!hasInterface) exitWith {};
 RC_LaserDatalink = [] spawn
 {
 	while {true} do
 	{
 		private _laserSpot = laserTarget player;
 		private _side = side player;
-		if (!isNull _laserSpot) then {[_side,[_laserSpot, 5]] remoteExec ["reportRemoteTarget", _side];};
+		if (!isNull _laserSpot) then {[_side,[_laserSpot, 4]] remoteExec ["reportRemoteTarget", _side];};
 		sleep 2;
 	};
 };

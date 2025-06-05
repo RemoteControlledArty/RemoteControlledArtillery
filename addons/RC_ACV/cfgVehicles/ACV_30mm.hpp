@@ -58,6 +58,7 @@ class RC_ACV_30_Base: RC_ACV_30_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
 
 	faction="RemoteControlled_B";
@@ -75,20 +76,6 @@ class RC_ACV_30_Base: RC_ACV_30_Core
 	normalSpeedForwardCoef=0.64;	//0.52;
 	enginePower=600;				//506.25
 	peakTorque=3000;				//2825
-
-	//AAV values (testing)
-	rudderForceCoef=0.8;
-	rudderForceCoefAtMaxSpeed=0.004;
-	waterAngularDampingCoef=3;
-	waterEffectSpeed=5;
-	waterFastEffectSpeed=28;
-	waterLeakiness=10;
-	waterLinearDampingCoefX=3;
-	waterLinearDampingCoefY=1;
-	waterPPInVehicle=0;
-	waterResistance=0;
-	waterResistanceCoef=0.008;
-	waterSpeedFactor=1;
 
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;

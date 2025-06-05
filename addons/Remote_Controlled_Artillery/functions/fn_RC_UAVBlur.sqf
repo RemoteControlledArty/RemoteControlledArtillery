@@ -13,16 +13,16 @@
 */
 
 // Need to exit early if we aren't a client
-if !hasInterface exitWith {};
+if (!hasInterface) exitWith {};
 
 RC_UAVBlurRangeHash = createHashMap;
+RC_UAVCtrlRangeHash = createHashMap;
 
 RC_UAVBlur = [] spawn
 {
 	while {true} do
 	{
 		sleep 0.2;
-
 		_blur = ppEffectCreate ["dynamicBlur", 401];
 
 		if !(isRemoteControlling player) then {
@@ -38,13 +38,10 @@ RC_UAVBlur = [] spawn
 			_UAVBlurRange = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_UAVBlurRange");
 			RC_UAVBlurRangeHash set [_uavClass, _UAVBlurRange];
 		};
-
-		// Checks config if its meant to be a shortrange UAV, no entry means no Effect
 		if (_UAVBlurRange != 0) then {
-			_playerPos = getPosASL player;
 			_Distance = 1;
 			_viewBlur = 1;
-			_Distance = _playerPos distance2d (getPosASL (getConnectedUAV player));
+			_Distance = (getPosASL player) distance2d (getPosASL (getConnectedUAV player));
 			if (_Distance >= _UAVBlurRange) then {_viewBlur = 1+((_Distance-_UAVBlurRange) * 0.005)^2};
 			_finalBlur = 0.1 * _viewBlur;	//_finalBlur should not be worse than 0.45 blur to be usefull
 			_blur ppEffectEnable true;
@@ -53,6 +50,20 @@ RC_UAVBlur = [] spawn
 		}
 		else {
 			_blur ppEffectEnable false;
+		};
+
+		private _UAVCtrlRange = RC_UAVCtrlRangeHash get _uavClass;
+		if (isNil "_UAVCtrlRange") then {
+			_UAVCtrlRange = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_UAVCtrlRange");
+			RC_UAVCtrlRangeHash set [_uavClass, _UAVCtrlRange];
+		};
+		if (_UAVCtrlRange != 0) then {
+			_Distance = 1;
+			_Distance = (getPosASL player) distance2d (getPosASL (getConnectedUAV player));
+			if (_Distance >= _UAVCtrlRange) then {
+				player remoteControl objNull;
+				systemchat "out of range, lost UV connection";
+			};
 		};
 	};
 };

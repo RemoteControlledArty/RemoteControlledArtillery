@@ -6,7 +6,7 @@
 */
 
 // Need to exit early if we aren't a client
-if !hasInterface exitWith {};
+if (!hasInterface) exitWith {};
 
 RCEngineOffHash = createHashMap;
 

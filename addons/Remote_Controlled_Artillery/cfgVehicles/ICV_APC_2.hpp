@@ -44,6 +44,7 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
@@ -387,6 +388,7 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_free.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			//gunnerCompartments="Compartment1";
 			dontCreateAI=1;
 			//personTurretAction="";	//no effect
 			forceHideGunner=1;	//makes view bug

@@ -47,6 +47,7 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
@@ -532,6 +533,12 @@ class RC_IFV_3_A: RC_IFV_3_A_Base
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
+		/*
+		class RC_cUAS
+		{
+			init="if (!isServer) exitWith {};  params ['_vic'];  [_vic] call RC_fnc_RC_cUAS_Beep;";
+		};
+		*/
 	};
 
 	displayName="Pandur II";

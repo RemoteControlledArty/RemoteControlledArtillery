@@ -135,7 +135,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 				{
-					defaultDisplay="SensorsDisplayComponent";
+					defaultDisplay="SensorsDisplay";
 
 					class Components
 					{
@@ -145,10 +145,6 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 							range[]={4000,2000,1000,400};
 							resource="RscCustomInfoSensors";
 						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
@@ -157,6 +153,10 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 						class UAVFeedDisplay
 						{
 							componentType="UAVFeedDisplayComponent";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 						/*
 						class MineDetectorDisplay
@@ -170,7 +170,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplayComponent";
+					defaultDisplay="SensorsDisplay";
 
 					class Components
 					{
@@ -180,10 +180,6 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 							range[]={400,1000,2000,4000};
 							resource="RscCustomInfoSensors";
 						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
@@ -192,6 +188,10 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 						class UAVFeedDisplay
 						{
 							componentType="UAVFeedDisplayComponent";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 						/*
 						class MineDetectorDisplay
@@ -239,10 +239,6 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 							range[]={4000,2000,1000,400};
 							resource="RscCustomInfoSensors";
 						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
@@ -251,6 +247,10 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 						class UAVFeedDisplay
 						{
 							componentType="UAVFeedDisplayComponent";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 						/*
 						class MineDetectorDisplay
@@ -274,10 +274,6 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 							range[]={400,1000,2000,4000};
 							resource="RscCustomInfoSensors";
 						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
@@ -286,6 +282,10 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 						class UAVFeedDisplay
 						{
 							componentType="UAVFeedDisplayComponent";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 						/*
 						class MineDetectorDisplay
