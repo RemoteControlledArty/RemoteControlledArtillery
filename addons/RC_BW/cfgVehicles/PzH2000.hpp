@@ -139,6 +139,9 @@ class RC_PzH2000_FT_Base: RC_PzH2000_Core
 			maxElev=87;
 			stabilizedInAxes=3;
 
+			maxHorizontalRotSpeed=0.78;	 //0.5 was too slow, 0.78 of sholef is decent
+			maxVerticalRotSpeed=0.26;
+
 			weapons[]=
 			{
 				"RC_155mm_AMOS_PzH"
