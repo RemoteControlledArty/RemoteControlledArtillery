@@ -13,6 +13,11 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+		};
 		class RC_Artillery
 		{
 			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";

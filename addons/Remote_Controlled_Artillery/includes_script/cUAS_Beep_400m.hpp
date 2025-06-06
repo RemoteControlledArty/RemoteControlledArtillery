@@ -1,0 +1,1 @@
+init="params ['_vic'];  if (!isServer) exitWith {};  _beepDist=400;  [_vic, _beepDist] call RC_fnc_RC_cUAS_Beep;";

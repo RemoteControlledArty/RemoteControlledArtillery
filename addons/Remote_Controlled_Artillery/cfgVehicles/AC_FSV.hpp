@@ -23,12 +23,12 @@ class RC_AC_FSV_A: RC_AA_A
 		class muzzle_rot
 		{
 			source="ammorandom";
-			weapon="RC_autocannon_35mm";
+			weapon="RC_autocannon_35mm_C";
 		};
 		class cannon_35mm_revolving
 		{
 			source="revolving";
-			weapon="RC_autocannon_35mm";
+			weapon="RC_autocannon_35mm_C";
 		};
 	};
 
@@ -41,7 +41,7 @@ class RC_AC_FSV_A: RC_AA_A
 
 			weapons[]=
 			{
-				"RC_autocannon_35mm",
+				"RC_autocannon_35mm_C",
 				"RC_AA_Missile_Launcher",
 				"SmokeLauncher"
 			};

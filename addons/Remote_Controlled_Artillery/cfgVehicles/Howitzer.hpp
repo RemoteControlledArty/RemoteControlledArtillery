@@ -33,6 +33,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
 		class RC_LightsOff
 		{
@@ -424,6 +425,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
 		class RC_LightsOff
 		{
@@ -725,6 +727,7 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 	class MainTurret;
 	class Components;
 	class AnimationSources;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 
@@ -736,6 +739,15 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 };
 class RC_Static_Arty: RC_Static_Arty_base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+		};
+	};
+
 	author="Ascent";
 	displayName="RC Naval Gun";
 	faction="RemoteControlled_B";

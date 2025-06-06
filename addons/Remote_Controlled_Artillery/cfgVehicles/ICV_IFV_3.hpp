@@ -35,6 +35,7 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
 		class RC_LightsOff
 		{
@@ -533,12 +534,6 @@ class RC_IFV_3_A: RC_IFV_3_A_Base
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
-		/*
-		class RC_cUAS
-		{
-			init="if (!isServer) exitWith {};  params ['_vic'];  [_vic] call RC_fnc_RC_cUAS_Beep;";
-		};
-		*/
 	};
 
 	displayName="Pandur II";

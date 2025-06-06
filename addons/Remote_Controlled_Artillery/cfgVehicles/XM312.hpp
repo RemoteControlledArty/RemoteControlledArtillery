@@ -13,6 +13,14 @@ class RC_cUAS_Static_HMG_core: B_HMG_01_high_F
 };
 class RC_cUAS_Static_HMG_base: RC_cUAS_Static_HMG_core
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+		};
+	};
+
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 	

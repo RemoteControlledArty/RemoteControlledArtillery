@@ -30,6 +30,7 @@ class RC_MLRS_A: RC_MLRS_base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
 		class RC_LightsOff
 		{
@@ -376,6 +377,7 @@ class RC_MRL_DIG_I: RC_MRL_base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
 		/*
 		class RC_LightsOff

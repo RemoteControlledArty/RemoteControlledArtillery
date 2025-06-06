@@ -1909,18 +1909,18 @@ class RC_IFV_AA: RC_IFV_AA_Base
 			{
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=4000;
+					typeRecognitionDistance=5000;
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=5000;
+						maxRange=5000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=5000;
+						maxRange=5000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -1929,15 +1929,15 @@ class RC_IFV_AA: RC_IFV_AA_Base
 				{
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=5000;
+						maxRange=5000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=5000;
+						maxRange=5000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -1948,19 +1948,19 @@ class RC_IFV_AA: RC_IFV_AA_Base
 				{
 					class AirTarget
 					{
-						minRange=4500;
-						maxRange=4500;
+						minRange=5000;
+						maxRange=5000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=5000;
+						maxRange=5000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=-1;
 					};
-					typeRecognitionDistance=2250;
+					typeRecognitionDistance=2500;
 					maxTrackableSpeed=500;
 					angleRangeHorizontal=67.5;
 					angleRangeVertical=67.5;

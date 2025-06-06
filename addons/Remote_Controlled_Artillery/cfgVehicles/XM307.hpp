@@ -16,6 +16,10 @@ class RC_cUAS_Static_base: RC_cUAS_Static_core
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+		};
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"

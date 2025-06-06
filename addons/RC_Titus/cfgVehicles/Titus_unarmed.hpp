@@ -39,6 +39,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
 		class RC_Artillery
 		{

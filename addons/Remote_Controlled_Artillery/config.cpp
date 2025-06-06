@@ -706,8 +706,9 @@ class CfgFunctions
 			class RC_UAVBlur {postInit=1;};
 			class RC_LaserDatalink {postInit=1;};
 			class RC_cursorTargetIntoDatalink {postInit=1;};
-
-			//class RC_cUAS_Beep {};
+			
+			class RC_AT_SourceIndicator {};
+			class RC_cUAS_Beep {};
 			class scrollSolutions {};
 		};
 		/*

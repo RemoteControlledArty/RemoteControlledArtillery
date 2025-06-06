@@ -1742,6 +1742,290 @@ class RC_autocannon_35mm_AA: RC_autocannon_35mm_AA_base
 class RC_autocannon_35mm: RC_autocannon_35mm_AA_base
 {
 	author="Ascent";
+	displayName="twin 35mm";
+	reloadTime=0.05;
+	magazineReloadTime=30;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+	muzzles[]=
+	{
+		"HE",
+		"AP"
+	};
+	class HE: autocannon_35mm
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		displayName="35mm";
+		magazineReloadTime=30;
+		dispersion=0.001;
+
+		magazines[]=
+		{
+			"RC_400Rnd_35mm_MPAB_DF_T_R",
+			"RC_400Rnd_35mm_MPAB_DF_T_G",
+			"RC_400Rnd_35mm_MPAB_DF_T_Y"
+		};
+
+		class manual: manual
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+			displayName="35mm";
+			magazineReloadTime=30;
+			dispersion=0.001;
+			reloadTime=0.1;
+		};
+	};
+	class AP: autocannon_35mm
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		displayName="35mm";
+		magazineReloadTime=30;
+		dispersion=0.001;
+
+		magazines[]=
+		{
+			"RC_400Rnd_35mm_APFSDS_T_R",
+			"RC_400Rnd_35mm_APFSDS_T_G",
+			"RC_400Rnd_35mm_APFSDS_T_Y"
+		};
+
+		class manual: manual
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+			displayName="35mm";
+			magazineReloadTime=30;
+			dispersion=0.001;
+			reloadTime=0.1;
+		};
+	};
+};
+*/
+
+
+/*
+class RC_autocannon_35mm_B: RC_autocannon_35mm_AA_base
+{
+	author="Ascent";
+	displayName="twin 35mm";
+	reloadTime=0.05;
+	magazineReloadTime=30;
+	canLock=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+	nameSound="cannon";
+	cursor="EmptyCursor";
+	cursorAim="cannon";
+
+	muzzles[]=
+	{
+		"HE",
+		"AP"
+	};
+	class HE: autocannon_Base_F
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		displayName="35mm";
+		magazineReloadTime=30;
+		dispersion=0.001;
+		canLock=2;
+
+		nameSound="cannon";
+		cursor="EmptyCursor";
+		cursorAim="cannon";
+
+		magazines[]=
+		{
+			"RC_400Rnd_35mm_MPAB_DF_T_R",
+			"RC_400Rnd_35mm_MPAB_DF_T_G",
+			"RC_400Rnd_35mm_MPAB_DF_T_Y"
+		};
+
+		class player: manual
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+			displayName="35mm";
+			magazineReloadTime=30;
+			dispersion=0.001;
+			reloadTime=0.1;
+		};
+
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="MachineGun1";
+				positionName="Usti hlavne 1";
+				directionName="Konec hlavne 1";
+			};
+			class SecondEffect
+			{
+				effectName="MachineGun1";
+				positionName="Usti hlavne 2";
+				directionName="Konec hlavne 2";
+			};
+		};
+	};
+	class AP: autocannon_Base_F
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		displayName="35mm";
+		magazineReloadTime=30;
+		dispersion=0.001;
+		canLock=2;
+
+		nameSound="cannon";
+		cursor="EmptyCursor";
+		cursorAim="cannon";
+
+		magazines[]=
+		{
+			"RC_400Rnd_35mm_APFSDS_T_R",
+			"RC_400Rnd_35mm_APFSDS_T_G",
+			"RC_400Rnd_35mm_APFSDS_T_Y"
+		};
+
+		class player: manual
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+			displayName="35mm";
+			magazineReloadTime=30;
+			dispersion=0.001;
+			reloadTime=0.1;
+		};
+
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="MachineGun1";
+				positionName="Usti hlavne 1";
+				directionName="Konec hlavne 1";
+			};
+			class SecondEffect
+			{
+				effectName="MachineGun1";
+				positionName="Usti hlavne 2";
+				directionName="Konec hlavne 2";
+			};
+		};
+	};
+};
+*/
+
+
+/*
+class RC_autocannon_35mm_C_Base: RC_autocannon_30mm_CTWS
+{
+	//class HE;
+	//class AP;
+	class player;
+};
+class RC_autocannon_35mm_C: RC_autocannon_35mm_C_Base
+{
+	author="Ascent";
+	displayName="twin 35mm";
+	reloadTime=0.05;
+	magazineReloadTime=30;
+	canLock=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+	muzzles[]=
+	{
+		"HE",
+		"AP"
+	};
+	class HE: HE
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		displayName="35mm";
+		magazineReloadTime=30;
+		dispersion=0.001;
+		//canLock=2;
+
+		magazines[]=
+		{
+			"RC_400Rnd_35mm_MPAB_DF_T_R",
+			"RC_400Rnd_35mm_MPAB_DF_T_G",
+			"RC_400Rnd_35mm_MPAB_DF_T_Y"
+		};
+
+		class player: player
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+			displayName="35mm";
+			magazineReloadTime=30;
+			dispersion=0.001;
+			reloadTime=0.1;
+
+			burst=2;
+		};
+
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="MachineGun1";
+				positionName="Usti hlavne 1";
+				directionName="Konec hlavne 1";
+			};
+			class SecondEffect
+			{
+				effectName="MachineGun1";
+				positionName="Usti hlavne 2";
+				directionName="Konec hlavne 2";
+			};
+		};
+	};
+	class AP: AP
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		displayName="35mm";
+		magazineReloadTime=30;
+		dispersion=0.001;
+		//canLock=2;
+
+		magazines[]=
+		{
+			"RC_400Rnd_35mm_APFSDS_T_R",
+			"RC_400Rnd_35mm_APFSDS_T_G",
+			"RC_400Rnd_35mm_APFSDS_T_Y"
+		};
+
+		class player: player
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+			displayName="35mm";
+			magazineReloadTime=30;
+			dispersion=0.001;
+			reloadTime=0.1;
+
+			burst=2;
+		};
+
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="MachineGun1";
+				positionName="Usti hlavne 1";
+				directionName="Konec hlavne 1";
+			};
+			class SecondEffect
+			{
+				effectName="MachineGun1";
+				positionName="Usti hlavne 2";
+				directionName="Konec hlavne 2";
+			};
+		};
+	};
+};
+*/
+
+
+/*
+class RC_autocannon_35mm: RC_autocannon_35mm_AA_base
+{
+	author="Ascent";
 	displayName="35mm";
 	reloadTime=0.05;
 	magazineReloadTime=30;
@@ -1761,9 +2045,9 @@ class RC_autocannon_35mm: RC_autocannon_35mm_AA_base
 
 		magazines[]=
 		{
-			"RC_340Rnd_35mm_MPAB_DF_T_R",
-			"RC_340Rnd_35mm_MPAB_DF_T_G",
-			"RC_340Rnd_35mm_MPAB_DF_T_Y"
+			"RC_400Rnd_35mm_MPAB_DF_T_R",
+			"RC_400Rnd_35mm_MPAB_DF_T_G",
+			"RC_400Rnd_35mm_MPAB_DF_T_Y"
 		};
 
 		class manual: manual
@@ -1794,9 +2078,9 @@ class RC_autocannon_35mm: RC_autocannon_35mm_AA_base
 
 		magazines[]=
 		{
-			"RC_340Rnd_35mm_APFSDS_T_R",
-			"RC_340Rnd_35mm_APFSDS_T_G",
-			"RC_340Rnd_35mm_APFSDS_T_Y"
+			"RC_400Rnd_35mm_APFSDS_T_R",
+			"RC_400Rnd_35mm_APFSDS_T_G",
+			"RC_400Rnd_35mm_APFSDS_T_Y"
 		};
 
 		class manual: manual
