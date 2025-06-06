@@ -297,17 +297,27 @@ class CfgPatches
 			RC_CBRad2_Player_A_O,
 
 			RC_UAV_AR1,
-			RC_UAV_AR3,
 			RC_UAV_AR1_O,
-			RC_UAV_AR3_O,
 			RC_UAV_AR1_I,
-			RC_UAV_AR3_I,
 
 			RC_UAV_AR1_Bag,
-			RC_UAV_AR3_Bag,
 			RC_UAV_AR1_Bag_O,
-			RC_UAV_AR3_Bag_O,
 			RC_UAV_AR1_Bag_I,
+
+			RC_UAV_AR15,
+			RC_UAV_AR15_O,
+			RC_UAV_AR15_I,
+
+			RC_UAV_AR15_Bag,
+			RC_UAV_AR15_Bag_O,
+			RC_UAV_AR15_Bag_I,
+
+			RC_UAV_AR3,
+			RC_UAV_AR3_O,
+			RC_UAV_AR3_I,
+
+			RC_UAV_AR3_Bag,
+			RC_UAV_AR3_Bag_O,
 			RC_UAV_AR3_Bag_I,
 
 			RC_GrenadeDropper,
