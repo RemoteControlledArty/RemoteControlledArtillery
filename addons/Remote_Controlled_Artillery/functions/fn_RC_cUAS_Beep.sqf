@@ -54,19 +54,15 @@
 
 				private _distance = selectMin _targetsDistances;
 				private _dNorm = (_distance / _beepDist) min 1;
-				private _vol   = (1 - _dNorm) * 0.16 + 0.04;
-				_vol = _vol max 0.04 min 0.2;
+				private _vol   = (1 - _dNorm) * 0.11 + 0.04;
+				_vol = _vol max 0.04 min 0.15;
 
 				private _sound = ["a3\sounds_f\air\heli_light_01\warning.wss", _vol, 0.8];
-				systemchat "before";
 				[_sound] remoteExec ["playSoundUI", crew _vic];
-				systemchat "after";
 
 				private _controller1 = _controllers select 0;
 				if (_controller1 isNotEqualTo objNull) then {
-					systemchat "ctrl1";
 					[_sound] remoteExec ["playSoundUI", crew _controller1];
-					systemchat "ctrl1 sound";
 
 					if (count _controllers > 2) then {
 						private _controller2 = _controllers select 3;
