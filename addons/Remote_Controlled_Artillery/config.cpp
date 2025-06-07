@@ -304,13 +304,13 @@ class CfgPatches
 			RC_UAV_AR1_Bag_O,
 			RC_UAV_AR1_Bag_I,
 
-			RC_UAV_AR15,
-			RC_UAV_AR15_O,
-			RC_UAV_AR15_I,
+			RC_UAV_AR1_5,
+			RC_UAV_AR1_5_O,
+			RC_UAV_AR1_5_I,
 
-			RC_UAV_AR15_Bag,
-			RC_UAV_AR15_Bag_O,
-			RC_UAV_AR15_Bag_I,
+			RC_UAV_AR1_5_Bag,
+			RC_UAV_AR1_5_Bag_O,
+			RC_UAV_AR1_5_Bag_I,
 
 			RC_UAV_AR3,
 			RC_UAV_AR3_O,
@@ -768,6 +768,9 @@ class CfgFunctions
 
 			class RC_TakeControlCommanderServer {};
 			class RC_TakeControlGunnerServer {};
+
+			class RC_TakeControlPilotGlobal {};
+			class RC_TakeControlCopilotGlobal {};
 		};
 	};
 };
@@ -859,6 +862,7 @@ class CfgEditorSubcategories
 	class RC_Repair_subcat {displayname="Repair";};
 	class RC_FSV_subcat {displayname="FSVs";};
 	class RC_MBT_subcat {displayname="MBTs";};
+	class RC_Heli_subcat {displayname="Helicopters";};
 	class RC_ICV_armed_subcat {displayname="RCIVs (armed)";};
 	class RC_ICV_subcat {displayname="RCIVs (unarmed)";};
 	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
@@ -918,7 +922,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_2.hpp"

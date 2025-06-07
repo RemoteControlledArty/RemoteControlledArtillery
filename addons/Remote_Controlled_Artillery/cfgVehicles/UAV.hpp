@@ -336,7 +336,7 @@ class RC_UAV_AR1_I: RC_UAV_AR1
 };
 
 
-class RC_UAV_AR15: RC_UAV_AR1
+class RC_UAV_AR1_5: RC_UAV_AR1
 {
 	displayName="RC AR-1.5 shortrange 3km";
 	RC_UAVBlurRange=0;	//no blur
@@ -346,7 +346,7 @@ class RC_UAV_AR15: RC_UAV_AR1
 	{
 		dissasembleTo[]=
 		{
-			"RC_UAV_AR15_Bag"
+			"RC_UAV_AR1_5_Bag"
 		};
 	};
 
@@ -508,7 +508,7 @@ class RC_UAV_AR15: RC_UAV_AR1
 		};
 	};
 };
-class RC_UAV_AR15_O: RC_UAV_AR15
+class RC_UAV_AR1_5_O: RC_UAV_AR1_5
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -528,11 +528,11 @@ class RC_UAV_AR15_O: RC_UAV_AR15
 	{
 		dissasembleTo[]=
 		{
-			"RC_UAV_AR15_Bag_O"
+			"RC_UAV_AR1_5_Bag_O"
 		};
 	};
 };
-class RC_UAV_AR15_I: RC_UAV_AR15
+class RC_UAV_AR1_5_I: RC_UAV_AR1_5
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -552,7 +552,7 @@ class RC_UAV_AR15_I: RC_UAV_AR15
 	{
 		dissasembleTo[]=
 		{
-			"RC_UAV_AR15_Bag_I"
+			"RC_UAV_AR1_5_Bag_I"
 		};
 	};
 };
@@ -1120,31 +1120,31 @@ class RC_UAV_AR1_Bag_I: RC_UAV_AR1_Bag
 };
 
 
-class RC_UAV_AR15_Bag: RC_UAV_AR1_Bag
+class RC_UAV_AR1_5_Bag: RC_UAV_AR1_Bag
 {
 	displayName="RC AR-1.5";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC AR-1.5";
-		assembleTo="RC_UAV_AR15";
+		assembleTo="RC_UAV_AR1_5";
 	};
 };
-class RC_UAV_AR15_Bag_O: RC_UAV_AR1_Bag
+class RC_UAV_AR1_5_Bag_O: RC_UAV_AR1_Bag
 {
 	displayName="RC AR-1.5 [Opf]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC AR-1.5 [Opf]";
-		assembleTo="RC_UAV_AR15_O";
+		assembleTo="RC_UAV_AR1_5_O";
 	};
 };
-class RC_UAV_AR15_Bag_I: RC_UAV_AR1_Bag
+class RC_UAV_AR1_5_Bag_I: RC_UAV_AR1_Bag
 {
 	displayName="RC AR-1.5 [Ind]";
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC AR-1.5 [Ind]";
-		assembleTo="RC_UAV_AR15_I";
+		assembleTo="RC_UAV_AR1_5_I";
 	};
 };
 
