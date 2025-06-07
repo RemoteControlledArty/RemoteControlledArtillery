@@ -20,5 +20,6 @@ class VisualSensorComponent: SensorTemplateVisual
 	nightRangeCoef=0.80000001;
 	angleRangeHorizontal=360;
 	angleRangeVertical=360;
-	animDirection="mainGun";	//"" , "obsGun"
+	//animDirection="mainGun";	//"" , "obsGun"
+	animDirection="";
 };

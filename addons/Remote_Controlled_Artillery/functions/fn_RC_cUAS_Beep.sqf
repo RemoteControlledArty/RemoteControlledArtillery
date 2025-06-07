@@ -5,6 +5,7 @@
 	Beep for newly detected UAV in Datalink.
 */
 
+
 [_vic, _beepDist] spawn
 {
 	params ["_vic","_beepDist"];
@@ -13,12 +14,13 @@
 	while {true} do
 	{
 		sleep 1;
-
 		if (!alive _vic) exitwith {};
+		if (!local _vic) then {
+			continue;
+		};
 
 		private _crewPlayers = (crew _vic) select {isPlayer _x};
 		private _controllers = (UAVControl _vic);
-
 		if (((count _crewPlayers) == 0) && ((_controllers select 0) isEqualTo objNull)) then {
 			continue;  
 		};
@@ -56,11 +58,15 @@
 				_vol = _vol max 0.04 min 0.2;
 
 				private _sound = ["a3\sounds_f\air\heli_light_01\warning.wss", _vol, 0.8];
+				systemchat "before";
 				[_sound] remoteExec ["playSoundUI", crew _vic];
+				systemchat "after";
 
 				private _controller1 = _controllers select 0;
 				if (_controller1 isNotEqualTo objNull) then {
+					systemchat "ctrl1";
 					[_sound] remoteExec ["playSoundUI", crew _controller1];
+					systemchat "ctrl1 sound";
 
 					if (count _controllers > 2) then {
 						private _controller2 = _controllers select 3;
@@ -73,6 +79,32 @@
 		};
 	};
 };
+
+
+/*
+this addEventHandler ["Local", {
+	params ["_vic", "_isLocal"];
+
+	if (!_isLocal) exitwith {};
+	
+	[_vic, _beepDist] spawn
+	{
+		params ["_vic","_beepDist"];
+		private _cycle = 0;
+		while {true} do
+		{
+			sleep 1;
+			if (!local _vic) exitwith {};
+
+			if (isRemoteControlling player) then {
+				continue;
+			};
+
+			//code
+		};
+	};
+}];
+*/
 
 
 /*
