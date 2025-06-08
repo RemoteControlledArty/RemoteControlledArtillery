@@ -57,9 +57,29 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 	//driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-	memoryPointDriverOptics="pip_pilot_pos";
+	//memoryPointDriverOptics="pip_pilot_pos";
+
+	//isCopilot=0;
+	
+	//gunBeg="Copilot_view_dir";
+	//gunEnd="Copilot_view_pos";
+	//memoryPointGun="Copilot_view_pos";
+	//memoryPointDriverOptics="Copilot_view_dir";
+
+	extCameraPosition[]={0,-0.25,-2.3499999};
+	extCameraParams[]={0.93000001,10,30,0.25,1,10,30,0,1};
+	memoryPointTaskMarker="TaskMarker_1_pos";
+	memoryPointDriverOptics="Copilot_view_dir";
+	//memoryPointDriverOptics="pip_pilot_pos";
+	//memoryPointDriverOptics="Slingload_cam";
+	//driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
+	driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+	unitInfoType="RscOptics_AV_pilot";
+	unitInfoTypeRTD="RscOptics_AV_pilot";
+
 	crew="O_UAV_AI";
 	driverForceOptics=1;
+	driverCompartments="Compartment2";
 	forceHideDriver=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -77,8 +97,8 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 		minAngleY=0;
 		maxAngleY=0;
 		minFov=0.25;
-		maxFov=1.25;
-		initFov=0.75;
+		maxFov=1.5;
+		initFov=1.5;
 		visionMode[]=
 		{
 			"Normal",
@@ -97,8 +117,8 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 		minAngleY=0;
 		maxAngleY=0;
 		minFov=0.25;
-		maxFov=1.25;
-		initFov=0.75;
+		maxFov=1.5;
+		initFov=1.5;
 		visionMode[]=
 		{
 			"Normal",
@@ -111,6 +131,8 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 	class pilotCamera
 	{
 		turretInfoType="RscOptics_MBT_03_gunner";
+		//unitInfoType="RscOptics_AV_pilot";
+		//unitInfoTypeRTD="RscOptics_AV_pilot";
 
 		class OpticsIn
 		{
@@ -123,16 +145,18 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 				initAngleY=0;
 				minAngleY=0;
 				maxAngleY=0;
-				initFov=1.25;
 				minFov=0.025;
-				maxFov=1.25;
-				directionStabilized=1;
+				maxFov=1.5;
+				initFov=1.5;
+				directionStabilized=0;
+				//directionStabilized=1;
 				visionMode[]=
 				{
 					"Normal",
-					"NVG"
+					"NVG",
+					"Ti"
 				};
-				thermalMode[]={0,1};
+				thermalMode[]={0};
 				gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			};
 			showMiniMapInOptics=0;
@@ -163,7 +187,10 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 			primaryObserver=0;
 			gunnerForceOptics=1;
 			isCopilot=1;
+			dontCreateAI=1;
 			//cargoCanControlUAV=1;
+			stabilizedInAxes=0;
+			//stabilizedInAxes=3;
 
 			minElev=-90;
 			maxElev=30;
@@ -188,7 +215,6 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 			gun="Optics_1_muzzle_rot";
 			animationSourceBody="Optics_1_source";
 			animationSourceGun="Optics_1_muzzle_source";
-			stabilizedInAxes=3;
 			gunBeg="Copilot_view_dir";
 			gunEnd="Copilot_view_pos";
 			memoryPointGun="Copilot_view_pos";
@@ -204,7 +230,10 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 			*/
 			usePip=1;
 			//turretInfoType="RscOptics_Heli_Attack_01_gunner";
-			turretInfoType="RscOptics_MBT_03_gunner";
+			//turretInfoType="RscOptics_MBT_03_gunner";
+			unitInfoType="RscOptics_AV_pilot";
+			unitInfoTypeRTD="RscOptics_AV_pilot";
+
 			weapons[]=
 			{
 				"FakeHorn"
@@ -274,7 +303,11 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 				};
 			};
 		};
-		class LoadmasterTurret: LoadmasterTurret {dontCreateAI=1;};
+		class LoadmasterTurret: LoadmasterTurret
+		{
+			dontCreateAI=1;
+			gunnerCompartments="Compartment2";
+		};
 		class CargoTurret_01: CargoTurret_01 {dontCreateAI=1;};
 		class CargoTurret_02: CargoTurret_02 {dontCreateAI=1;};
 		class CargoTurret_03: CargoTurret_03 {dontCreateAI=1;};
@@ -288,10 +321,28 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 
 
 /*
+this addEventHandler ["Fired", {
+	params ["_unit", "_weapon"];
+	[getPos _unit, 180, "O_Crocus_MP_TI", east] call BIS_fnc_spawnVehicle;
+}];
+
+
+this addEventHandler ["Fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+	[getPos _this, 180, "BMP3", east] call BIS_fnc_spawnVehicle;
+}];
+
 heli addEventHandler ["ControlsShifted", { 
 	params ["_vehicle", "_activeCoPilot", "_oldController"]; 
 	systemchat "EH";
 	hint format ["active %1 old %2 copilot %3", _activeCoPilot, _oldController, gunner _vehicle]; 
+}];
+
+heli addEventHandler ["ControlsShifted", {
+	params ["_vic"];
+
+	systemchat str time;
+	(gunner _vic) action ["TakeVehicleControl", _vic];
 }];
 */
 
