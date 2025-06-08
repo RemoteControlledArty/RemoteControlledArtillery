@@ -130,9 +130,9 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 
 	class pilotCamera
 	{
-		turretInfoType="RscOptics_MBT_03_gunner";
-		//unitInfoType="RscOptics_AV_pilot";
-		//unitInfoTypeRTD="RscOptics_AV_pilot";
+		//turretInfoType="RscOptics_MBT_03_gunner";
+		unitInfoType="RscOptics_AV_pilot";
+		unitInfoTypeRTD="RscOptics_AV_pilot";
 
 		class OpticsIn
 		{
