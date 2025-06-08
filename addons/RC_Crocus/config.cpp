@@ -48,15 +48,18 @@ class CfgPatches
 		{
 			"FPV_RPG42_AT_Penetrator_MP",
 			"FPV_RPG42_MP",
-			"RC_target_confirmer_AB_ammo"
+			"RC_target_confirmer_AB_ammo",
+			"RC_Crocus_Deployer_Ammo"
 		};
 		magazines[]=
 		{
-			"RC_target_confirmer_AB_mag"
+			"RC_target_confirmer_AB_mag",
+			"RC_6xCrocus_Deployer_Mag"
 		};
 		weapons[]=
 		{
-			"RC_target_confirmer_AB_weapon"
+			"RC_target_confirmer_AB_weapon",
+			"RC_Crocus_Deployer"
 		};
 
 		requiredAddons[]=
@@ -80,6 +83,7 @@ class CfgFunctions
 			class fpv_handleConnect_MP {postInit=1;};
 			class fpv_droneInit_MP {};
 			class fpv_onDestroy_MP {};
+			class fpv_MothershipDeploy {};
 		};
 	};
 };

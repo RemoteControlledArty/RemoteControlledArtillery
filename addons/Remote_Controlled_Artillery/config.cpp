@@ -605,14 +605,20 @@ class CfgPatches
 			RC_Mortar_Fennek_ReTex_WD_I,
 			RC_Mortar_Fennek_LC_ReTex_WD,
 			RC_Mortar_Fennek_LC_ReTex_WD_O,
-			RC_Mortar_Fennek_LC_ReTex_WD_I
+			RC_Mortar_Fennek_LC_ReTex_WD_I,
+
+			RC_HeliTransport_blk,
+			RC_HeliTransport_blk_O,
+			RC_HeliTransport_blk_I
 		};
 
 		weapons[]=
 		{
 			RC_target_confirmer,
+			RC_target_confirmer_heli,
 			RC_Laserdesignator_mounted,
 			RC_Laserdesignator_vehicle,
+			RC_FPV_Deployer,
 			
 			Improved_FOV_Laserdesignator_A,
 			Improved_FOV_Laserdesignator_WD,
@@ -769,8 +775,8 @@ class CfgFunctions
 			class RC_TakeControlCommanderServer {};
 			class RC_TakeControlGunnerServer {};
 
-			class RC_TakeControlPilotGlobal {};
-			class RC_TakeControlCopilotGlobal {};
+			//class RC_TakeControlPilotGlobal {};
+			//class RC_TakeControlCopilotGlobal {};
 		};
 	};
 };
@@ -921,6 +927,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\FPV_Mothership.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"

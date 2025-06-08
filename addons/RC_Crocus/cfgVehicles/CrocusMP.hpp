@@ -36,6 +36,23 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	liftForceCoef=1.5;	//1
 	maxSpeed=200;	//140
 
+	//HUD
+	//disableInventory=0;
+	unitInfoType="RscOptics_AV_pilot";
+	unitInfoTypeRTD="RscOptics_AV_pilot";
+	//driverWeaponsInfoType="RscOptics_AV_pilot";
+	//driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+	//GunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+	/*
+	disableInventory=0;
+	driverOpticsModel="\ArmaFPV\lancet_hud.p3d";
+	GunnerOpticsModel="\ArmaFPV\lancet_hud.p3d";
+	unitInfoType="RscUnitInfoParachute";
+	unitInfoTypeRTD="RscUnitInfoParachute";
+	driverWeaponsInfoType="RscOptics_Offroad_01";
+	*/
+
 	/*
 	//Crocus
 	cyclicAsideForceCoef=2;	//2

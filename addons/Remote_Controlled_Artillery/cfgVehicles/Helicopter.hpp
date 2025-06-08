@@ -1,5 +1,5 @@
 class O_Heli_Transport_04_bench_black_F;
-class RC_HeliTransport_blk_Base: O_Heli_Transport_04_bench_black_F
+class RC_OM_Heli_InfTransport_Core: O_Heli_Transport_04_bench_black_F
 {
 	class CargoTurret;
 
@@ -17,76 +17,29 @@ class RC_HeliTransport_blk_Base: O_Heli_Transport_04_bench_black_F
 
 	class ViewPilot;
 	class ViewOptics;
-	class UserActions;
+	class Components;
+	//class UserActions;
 	class EventHandlers;
-
 	scope=0;
 	scopeCurator=0;
+	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
+class RC_OM_Heli_InfTransport_Base: RC_OM_Heli_InfTransport_Core
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakePilotCtrl.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakePilotCtrl.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\PilotComponents6kmSens.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
 
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-		};
-		/*
-		class RC_Heli
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initHeli.hpp"
-		};
-		*/
-	};
-
-	displayName="RC Transport Helicopter";
-	faction="RemoteControlled_O";
 	editorSubcategory="RC_Heli_subcat";
 	author="Ascent";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-
-	vehicleClass="Autonomous";
-	isUav=1;
-	uavCameraDriverPos="pip_pilot_pos";
-	uavCameraDriverDir="pip_pilot_dir";
-	uavCameraGunnerPos="PiP1_pos";
-	uavCameraGunnerDir="PiP1_dir";
-	//driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-	//memoryPointDriverOptics="pip_pilot_pos";
-
-	//isCopilot=0;
-	
-	//gunBeg="Copilot_view_dir";
-	//gunEnd="Copilot_view_pos";
-	//memoryPointGun="Copilot_view_pos";
-	//memoryPointDriverOptics="Copilot_view_dir";
-
-	extCameraPosition[]={0,-0.25,-2.3499999};
-	extCameraParams[]={0.93000001,10,30,0.25,1,10,30,0,1};
-	memoryPointTaskMarker="TaskMarker_1_pos";
-	memoryPointDriverOptics="Copilot_view_dir";
-	//memoryPointDriverOptics="pip_pilot_pos";
-	//memoryPointDriverOptics="Slingload_cam";
-	//driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
-	driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-	unitInfoType="RscOptics_AV_pilot";
-	unitInfoTypeRTD="RscOptics_AV_pilot";
-
-	crew="O_UAV_AI";
-	driverForceOptics=1;
-	driverCompartments="Compartment2";
-	forceHideDriver=1;
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
-
-	dontCreateAI=1;
 
 	class Viewoptics: ViewOptics
 	{
@@ -183,17 +136,19 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 	{
 		class CopilotTurret: CopilotTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_Heli_Copilot.hpp"
+
 			primaryGunner=1;
 			primaryObserver=0;
-			gunnerForceOptics=1;
 			isCopilot=1;
-			dontCreateAI=1;
+			//dontCreateAI=1;
 			//cargoCanControlUAV=1;
-			stabilizedInAxes=0;
-			//stabilizedInAxes=3;
+			stabilizedInAxes=3;
+			gunnerCompartments="Compartment2";
+			//driverCompartments="Compartment2";
 
 			minElev=-90;
-			maxElev=30;
+			maxElev=20;
 			initElev=0;
 			minTurn=-360;
 			maxTurn=360;
@@ -202,7 +157,6 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 			//maxCamElev=90;
 
 			gunnerAction="pilot_Heli_Transport_04";
-			gunnerCompartments="Compartment1";
 			proxyIndex=1;
 			hideWeaponsGunner=1;
 			memoryPointsGetInGunner="Codriver_pos";
@@ -234,10 +188,22 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 			unitInfoType="RscOptics_AV_pilot";
 			unitInfoTypeRTD="RscOptics_AV_pilot";
 
+			/*
+			weapons[]=
+			{
+				"CMFlareLauncher"
+			};
+			magazines[]=
+			{
+				"168Rnd_CMFlare_Chaff_Magazine"
+			};
+			*/
 			weapons[]=
 			{
 				"FakeHorn"
 			};
+			magazines[]={};
+
 			soundServo[]=
 			{
 				"",
@@ -245,7 +211,6 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 				1,
 				30
 			};
-			magazines[]={};
 			inGunnerMayFire=1;
 			gunnerOpticsEffect[]={};
 			gunnerOpticsModel="";
@@ -272,7 +237,7 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 						"NVG",
 						"Ti"
 					};
-					thermalMode[]={0,1};
+					thermalMode[]={0};
 					opticsDisplayName="W";
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 					//gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_wide_F";
@@ -302,22 +267,137 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 				};
 			};
+			/*
+			loadercamera attemt, didnt work as optics cannot be changed button wise, or other reason
+
+			class pilotCamera
+			{
+				//turretInfoType="RscOptics_MBT_03_gunner";
+				unitInfoType="RscOptics_AV_pilot";
+				unitInfoTypeRTD="RscOptics_AV_pilot";
+
+				class OpticsIn
+				{
+					class Wide
+					{
+						opticsDisplayName="W";
+						initAngleX=0;
+						minAngleX=0;
+						maxAngleX=0;
+						initAngleY=0;
+						minAngleY=0;
+						maxAngleY=0;
+						minFov=0.025;
+						maxFov=1.5;
+						initFov=1.5;
+						directionStabilized=0;
+						//directionStabilized=1;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG",
+							"Ti"
+						};
+						thermalMode[]={0};
+						gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+					};
+					showMiniMapInOptics=0;
+					showUAVViewpInOptics=0;
+					showSlingLoadManagerInOptics=1;
+				};
+				minTurn=0;
+				maxTurn=0;
+				initTurn=0;
+				minElev=80;
+				maxElev=80;
+				initElev=80;
+				maxXRotSpeed=0.5;
+				maxYRotSpeed=0.5;
+				pilotOpticsShowCursor=1;
+				controllable=0;	//test 1
+			};
+			*/
 		};
 		class LoadmasterTurret: LoadmasterTurret
 		{
 			dontCreateAI=1;
 			gunnerCompartments="Compartment2";
 		};
-		class CargoTurret_01: CargoTurret_01 {dontCreateAI=1;};
-		class CargoTurret_02: CargoTurret_02 {dontCreateAI=1;};
-		class CargoTurret_03: CargoTurret_03 {dontCreateAI=1;};
-		class CargoTurret_04: CargoTurret_04 {dontCreateAI=1;};
-		class CargoTurret_05: CargoTurret_05 {dontCreateAI=1;};
-		class CargoTurret_06: CargoTurret_06 {dontCreateAI=1;};
-		class CargoTurret_07: CargoTurret_07 {dontCreateAI=1;};
-		class CargoTurret_08: CargoTurret_08 {dontCreateAI=1;};
+		class CargoTurret_01: CargoTurret_01 {gunnerCompartments="Compartment2"; dontCreateAI=1;};
+		class CargoTurret_02: CargoTurret_02 {gunnerCompartments="Compartment2"; dontCreateAI=1;};
+		class CargoTurret_03: CargoTurret_03 {gunnerCompartments="Compartment2"; dontCreateAI=1;};
+		class CargoTurret_04: CargoTurret_04 {gunnerCompartments="Compartment2"; dontCreateAI=1;};
+		class CargoTurret_05: CargoTurret_05 {gunnerCompartments="Compartment2"; dontCreateAI=1;};
+		class CargoTurret_06: CargoTurret_06 {gunnerCompartments="Compartment2"; dontCreateAI=1;};
+		class CargoTurret_07: CargoTurret_07 {gunnerCompartments="Compartment2"; dontCreateAI=1;};
+		class CargoTurret_08: CargoTurret_08 {gunnerCompartments="Compartment2"; dontCreateAI=1;};
 	};
 };
+
+class RC_OM_Heli_InfTransport_blk: RC_OM_Heli_InfTransport_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+		};
+		class RC_Heli
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initHeli.hpp"
+		};
+	};
+
+	//add 2x FPV deployable per mousewheel
+	//NEEDS script to reset camera when pilot left / when remote control is taken
+	//make RC-OM Y-32
+	//vehicle player setPilotCameraDirection [0,1,0] // re-centers the camera
+
+	displayName="RC-OM Helicopter [Inf]";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	isUav=1;
+	vehicleClass="Autonomous";
+	uavCameraDriverPos="pip_pilot_pos";
+	uavCameraDriverDir="pip_pilot_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
+
+	memoryPointTaskMarker="TaskMarker_1_pos";
+	memoryPointDriverOptics="Copilot_view_dir";
+	//memoryPointDriverOptics="pip_pilot_pos";
+	//memoryPointDriverOptics="Slingload_cam";
+
+	driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+	unitInfoType="RscOptics_AV_pilot";
+	unitInfoTypeRTD="RscOptics_AV_pilot";
+
+	side=1;
+	faction="RemoteControlled_B";
+	crew="B_UAV_AI";
+	driverForceOptics=1;
+	driverCompartments="Compartment1";
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
+class RC_OM_Heli_InfTransport_blk_O: RC_OM_Heli_InfTransport_blk
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_OM_Heli_InfTransport_blk_I: RC_OM_Heli_InfTransport_blk
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
 
 
 /*
@@ -343,131 +423,5 @@ heli addEventHandler ["ControlsShifted", {
 
 	systemchat str time;
 	(gunner _vic) action ["TakeVehicleControl", _vic];
-}];
-*/
-
-
-/*
-_vic = _this select 0;
-[_vic] spawn {
-	params ["_vic"];
-
-	while {true} do {
-		(gunner _vic) action ["TakeVehicleControl", _vic];
-	};
-};
-*/
-
-
-/*
-_vehicle = _this;
-[_vehicle] spawn {
-	params ["_vehicle"];
-
-	while {true} do {
-		sleep 0.1;
-		(gunner _this) action ["TakeVehicleControl", _this];
-		systemchat str time;
-	};
-};
-*/
-
-
-/*
-heli addEventHandler ["ControlsShifted", {
-	params ["_vehicle", "_activeCoPilot", "_oldController"];
-
-	[_vehicle] spawn {
-		params ["_vehicle"];
-	
-		while {true} do {
-		sleep 1;
-		(gunner _vehicle) action ["TakeVehicleControl", _vehicle];
-		systemchat str time;
-		};
-	};
-}];
-*/
-
-
-
-
-/*
-heli addEventHandler ["ControlsShifted", {
-	params ["_vehicle", "_activeCoPilot", "_oldController"];
-
-	hint format ["active %1 old %2", _activeCoPilot, _oldController];
-	hint format ["active %1 old %2", (gunner _vehicle), _vehicle];
-
-	(group (driver _vic)) setGroupOwner (owner (gunner _vehicle));
-	_vic setEffectiveCommander (gunner _vehicle);
-
-	(gunner _vehicle) action ["TakeVehicleControl", _vehicle];
-}];
-*/
-
-/*
-heli addEventHandler ["ControlsShifted", {
-	params ["_vehicle", "_activeCoPilot", "_oldController"];
-
-	private _copilot = (gunner _vehicle);
-	if (_oldController isNotEqualTo _copilot) then 
-	{
-		_copilot action ["TakeVehicleControl", _vehicle];
-	} else {
-		_copilot action ["SuspendVehicleControl", _vehicle];
-	};
-}];
-
-heli addEventHandler ["ControlsShifted", {
-	params ["_vehicle", "_activeCoPilot", "_oldController"];
-
-	private _copilot = (gunner _vehicle);
-	hint format ["active %1 old %2", _copilot, _oldController];
-
-	if (_oldController isEqualTo _copilot) then 
-	{
-		_copilot action ["TakeVehicleControl", _vehicle];
-	} else {
-		_copilot action ["SuspendVehicleControl", _vehicle];
-	};
-}];
-
-heli addEventHandler ["ControlsShifted", {
-	params ["_vehicle", "_activeCoPilot", "_oldController"];
-
-	private _copilot = (gunner _vehicle);
-	hint format ["active %1 old %2 copilot %3", _activeCoPilot, _oldController, _copilot];
-	_copilot action ["TakeVehicleControl", _vehicle];
-}];
-
-heli addEventHandler ["ControlsShifted", {
-	params ["_vehicle", "_activeCoPilot", "_oldController"];
-
-	systemchat str time;
-	private _copilot = (gunner _vehicle);
-	_copilot action ["TakeVehicleControl", _vehicle];
-}];
-*/
-
-/*
-heli addEventHandler ["ControlsShifted", {
-	params ["_vehicle", "_activeCoPilot", "_oldController"];
-
-	hint format ["active %1 old %2", _activeCoPilot, _oldController];
-	hint format ["active %1 old %2", (gunner _vehicle), _vehicle];
-
-	(group (driver _vic)) setGroupOwner (owner player);
-	_vic setEffectiveCommander player;
-}];
-*/
-
-/*
-heli addEventHandler ["ControlsShifted", {
-	params ["_vehicle", "_activeCoPilot", "_oldController"];
-
-	hint format ["active %1 old %2", _activeCoPilot, _oldController];
-	hint format ["active %1 old %2", (gunner _vehicle), _vehicle];
-	(gunner _vehicle) remoteControl _vehicle;
 }];
 */

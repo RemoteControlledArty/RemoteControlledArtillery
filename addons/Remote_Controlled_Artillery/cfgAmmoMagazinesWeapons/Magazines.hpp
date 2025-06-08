@@ -8,6 +8,25 @@ class RC_target_confirmer_mag: CA_Magazine
 };
 
 
+class VehicleMagazine;
+class RC_6xFPV_Deployer_Mag: VehicleMagazine
+{
+	author="Ascent";
+	scope=2;
+	ammo="RC_FPV_Deployer_Ammo";
+	count=6;
+	nameSound="smokeshell";
+	initSpeed=14;
+
+	displayName="deploy FPV";
+	displayNameShort="deploy FPV";
+	magazines[]=
+	{
+		"RC_FPV_Deployer_mag"
+	};
+};
+
+
 /*
 class RC_target_confirmer_AB_mag: RC_target_confirmer_mag
 {
@@ -91,7 +110,6 @@ class RC_100Rnd_762x51_T_R: RC_200Rnd_762x51_T_R {count=100;};
 class RC_100Rnd_762x51_T_Y: RC_200Rnd_762x51_T_Y {count=100;};
 
 
-class VehicleMagazine;
 class RC_200Rnd_338_T_R: VehicleMagazine
 {
 	author="Ascent";

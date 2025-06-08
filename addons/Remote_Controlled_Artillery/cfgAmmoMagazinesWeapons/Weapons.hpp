@@ -10,6 +10,53 @@ class RC_target_confirmer: Default
 	};
 	canLock=2;
 };
+class RC_target_confirmer_heli: Default
+{
+	scope=2;
+	displayName="datalink";
+	displayNameShort="datalink";
+	magazines[]=
+	{
+		"RC_target_confirmer_mag"
+	};
+	canLock=2;
+};
+
+
+class MGun;
+class RC_FPV_Deployer: MGun
+{
+	author="Ascent";
+	scope=2;
+	displayName="deploy FPV";
+	displayNameShort="deploy FPV";
+	sounds[]=
+	{
+		"StandardSound"
+	};
+	class StandardSound
+	{
+		soundSetShot[]=
+		{
+			"UGL_shot_SoundSet",
+			"UGL_Tail_SoundSet",
+			"UGL_InteriorTail_SoundSet"
+		};
+	};
+	magazines[]=
+	{
+		"RC_6xFPV_Deployer_Mag"
+	};
+	reloadTime=1;
+	magazineReloadTime=30;
+	canLock=0;	//2?
+	autoFire=0;
+	simulation="cmlauncher";
+	showToPlayer=1;
+	minRange=0;
+	maxRange=10000;
+	textureType="semi";
+};
 
 
 /*

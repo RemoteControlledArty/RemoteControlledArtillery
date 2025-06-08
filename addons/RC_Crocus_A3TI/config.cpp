@@ -21,7 +21,11 @@ class CfgPatches
 
 			B_Crocus_MP_TI_Sens_Bag,
 			O_Crocus_MP_TI_Sens_Bag,
-			I_Crocus_MP_TI_Sens_Bag
+			I_Crocus_MP_TI_Sens_Bag,
+
+			RC_Crocus_Mothership,
+			RC_Crocus_Mothership_O,
+			RC_Crocus_Mothership_I
 		};
 
 		requiredAddons[]=
@@ -46,4 +50,5 @@ class SensorTemplateDataLink;
 class CfgVehicles
 {
 	#include "\RC_Crocus_A3TI\cfgVehicles\CrocusMP_TI.hpp"
+	#include "\RC_Crocus_A3TI\cfgVehicles\Crocus_Mothership.hpp"
 };

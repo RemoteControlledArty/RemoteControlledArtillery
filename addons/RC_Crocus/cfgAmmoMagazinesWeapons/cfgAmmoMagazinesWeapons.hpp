@@ -155,6 +155,12 @@ class CfgAmmo
 			};
 		};
 	};
+
+
+	class RC_Crocus_Deployer_Ammo: RC_target_confirmer_AB_ammo
+	{
+		model="\ArmaFPV\drone.p3d";
+	};
 };
 class cfgMagazines
 {
@@ -165,6 +171,11 @@ class cfgMagazines
 		initSpeed=1;	//1000 for reticle of bc=8; requires maxControlRange=0;
 		scope=2;
 		count=1;
+	};
+	class RC_6xCrocus_Deployer_Mag: RC_target_confirmer_AB_mag
+	{
+		ammo="RC_Crocus_Deployer_Ammo";
+		count=6;
 	};
 };
 class Mode_SemiAuto;
@@ -222,6 +233,23 @@ class cfgWeapons
 			minRangeProbab=0;
 			midRangeProbab=0;
 			maxRangeProbab=0;
+		};
+	};
+
+
+	class RC_Crocus_Deployer: RC_target_confirmer_AB_weapon
+	{
+		displayName="deploy Crocus";
+		displayNameShort="deploy Crocus";
+		reloadTime=1;
+		magazineReloadTime=1;
+		magazines[]=
+		{
+			"RC_6xCrocus_Deployer_Mag"
+		};
+		class player: player
+		{
+			displayName="deploy Crocus";
 		};
 	};
 };

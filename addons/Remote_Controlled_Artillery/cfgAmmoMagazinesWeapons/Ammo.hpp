@@ -9,6 +9,26 @@ class RC_target_confirmer_ammo: Default
 };
 
 
+class BulletBase;
+class RC_FPV_Deployer_Ammo: BulletBase
+{
+	muzzleEffect="BIS_fnc_effectFiredSmokeLauncher";
+	effectsSmoke="EmptyEffect";
+	weaponLockSystem="1 + 2 + 4";
+	hit=1;
+	indirectHit=0;
+	indirectHitRange=0;
+	timeToLive=10;
+	thrustTime=10;
+	airFriction=-0.1;
+	simulation="shotCM";
+	model="\A3\weapons_f\empty";
+	maxControlRange=50;
+	initTime=2;
+	aiAmmoUsageFlags="4 + 8";
+};
+
+
 /*
 class FPV_AB_Trigger: Default
 {
@@ -1215,7 +1235,6 @@ class RC_B_50mm_HEAB_QF_T_Y: RC_B_50mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bu
 
 
 //C-UAS
-class BulletBase;
 class RC_cUAS_Pellet: BulletBase
 {
 	hit=6;	//4-8
