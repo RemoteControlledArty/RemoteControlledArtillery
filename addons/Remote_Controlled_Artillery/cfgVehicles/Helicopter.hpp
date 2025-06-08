@@ -1,12 +1,25 @@
 class O_Heli_Transport_04_bench_black_F;
 class RC_HeliTransport_blk_Base: O_Heli_Transport_04_bench_black_F
 {
+	class CargoTurret;
+
 	class Turrets;
 	class CopilotTurret;
+	class LoadmasterTurret;
+	class CargoTurret_01;
+	class CargoTurret_02;
+	class CargoTurret_03;
+	class CargoTurret_04;
+	class CargoTurret_05;
+	class CargoTurret_06;
+	class CargoTurret_07;
+	class CargoTurret_08;
+
 	class ViewPilot;
 	class ViewOptics;
 	class UserActions;
 	class EventHandlers;
+
 	scope=0;
 	scopeCurator=0;
 };
@@ -135,10 +148,12 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 		maxXRotSpeed=0.5;
 		maxYRotSpeed=0.5;
 		pilotOpticsShowCursor=1;
-		controllable=1;
+		controllable=0;	//test 1
 	};
 
-	cargoCanControlUAV=1;
+	//cargoCanControlUAV=1;
+
+	class CargoTurret;
 
 	class Turrets: Turrets
 	{
@@ -148,7 +163,7 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 			primaryObserver=0;
 			gunnerForceOptics=1;
 			isCopilot=1;
-			cargoCanControlUAV=1;
+			//cargoCanControlUAV=1;
 
 			minElev=-90;
 			maxElev=30;
@@ -259,6 +274,15 @@ class RC_HeliTransport_blk: RC_HeliTransport_blk_Base
 				};
 			};
 		};
+		class LoadmasterTurret: LoadmasterTurret {dontCreateAI=1;};
+		class CargoTurret_01: CargoTurret_01 {dontCreateAI=1;};
+		class CargoTurret_02: CargoTurret_02 {dontCreateAI=1;};
+		class CargoTurret_03: CargoTurret_03 {dontCreateAI=1;};
+		class CargoTurret_04: CargoTurret_04 {dontCreateAI=1;};
+		class CargoTurret_05: CargoTurret_05 {dontCreateAI=1;};
+		class CargoTurret_06: CargoTurret_06 {dontCreateAI=1;};
+		class CargoTurret_07: CargoTurret_07 {dontCreateAI=1;};
+		class CargoTurret_08: CargoTurret_08 {dontCreateAI=1;};
 	};
 };
 
