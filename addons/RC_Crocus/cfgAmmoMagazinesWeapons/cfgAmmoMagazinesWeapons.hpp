@@ -160,6 +160,14 @@ class CfgAmmo
 	class RC_Crocus_Deployer_Ammo: RC_target_confirmer_AB_ammo
 	{
 		model="\ArmaFPV\drone.p3d";
+		timeToLive=3;
+		initTime=3;
+		thrustTime=3;
+		typicalSpeed=1;
+		fuseDistance=3;
+		visibleFire=3;
+		audibleFire=3;
+		visibleFireTime=3;
 	};
 };
 class cfgMagazines

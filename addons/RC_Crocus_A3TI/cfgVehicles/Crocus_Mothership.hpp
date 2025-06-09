@@ -40,13 +40,13 @@ class RC_Crocus_Mothership: RC_Crocus_Mothership_Base
 	scope=2;
 	scopeCurator=2;
 };
-class RC_FPV_Mothership_O: RC_FPV_Mothership
+class RC_Crocus_Mothership_O: RC_Crocus_Mothership
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
-class RC_FPV_Mothership_I: RC_FPV_Mothership
+class RC_Crocus_Mothership_I: RC_Crocus_Mothership
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

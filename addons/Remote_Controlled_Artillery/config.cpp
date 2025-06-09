@@ -342,6 +342,10 @@ class CfgPatches
 			RC_UAV_FPV_Bag_O,
 			RC_UAV_FPV_Bag_I,
 
+			RC_OM_Heli_InfTransport_blk,
+			RC_OM_Heli_InfTransport_blk_O,
+			RC_OM_Heli_InfTransport_blk_I,
+
 			RC_RespawnTruck_A,
 			RC_RespawnTruck_WD,
 			RC_RespawnTruck_A_O,
