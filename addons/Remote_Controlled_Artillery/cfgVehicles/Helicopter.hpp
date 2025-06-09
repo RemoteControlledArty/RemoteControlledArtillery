@@ -353,6 +353,8 @@ class RC_OM_Heli_InfTransport_blk: RC_OM_Heli_InfTransport_Base
 	//NEEDS script to reset camera when pilot left / when remote control is taken
 	//make RC-OM Y-32
 	//vehicle player setPilotCameraDirection [0,1,0] // re-centers the camera
+	//correct uavCameraDriverPos
+	//more variants
 
 	displayName="RC-OM Helicopter [Inf]";
 	scope=2;

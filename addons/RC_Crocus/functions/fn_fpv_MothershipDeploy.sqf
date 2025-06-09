@@ -1,6 +1,7 @@
 params ["_uav"];
 
 if (isNull _uav) exitWith {};
+if (!Local _uav) exitWith {};
 
 private _pos = getPos _uav;
 private _posZ = (_pos select 2) - 15;

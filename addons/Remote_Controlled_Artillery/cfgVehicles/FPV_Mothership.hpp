@@ -189,6 +189,32 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 
+			class OpticsIn
+			{
+				class Wide
+				{
+					opticsDisplayName="W";
+					initAngleX=0;
+					minAngleX=-35;
+					maxAngleX=85;
+					initAngleY=0;
+					minAngleY=-130;
+					maxAngleY=130;
+					initFov=1.0;
+					minFov=0.03;
+					maxFov=1.0;
+					directionStabilized=1;
+					visionMode[]=
+					{
+						"Normal",
+						"NVG",
+						"Ti"
+					};
+					thermalMode[]={0};
+					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+				};
+			};
+
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -199,7 +225,7 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000};
+							range[]={4000,2000};
 							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
@@ -217,7 +243,7 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={1000,2000,4000};
+							range[]={2000,4000};
 							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
