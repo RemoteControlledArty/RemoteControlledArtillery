@@ -356,6 +356,8 @@ class RC_OM_Heli_InfTransport_blk: RC_OM_Heli_InfTransport_Base
 	//correct uavCameraDriverPos
 	//more variants
 
+	//LOADMASTER COMMANDER, REMOVE COMMANDER SCRIPT!
+
 	displayName="RC-OM Helicopter [Inf]";
 	scope=2;
 	scopeCurator=2;
