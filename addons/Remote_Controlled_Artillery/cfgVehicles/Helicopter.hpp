@@ -356,7 +356,7 @@ class RC_OM_Heli_InfTransport_blk: RC_OM_Heli_InfTransport_Base
 	//correct uavCameraDriverPos
 	//more variants
 
-	//LOADMASTER COMMANDER, REMOVE COMMANDER SCRIPT!
+	//LOADMASTER COMMANDER, REMOVE COMMANDER SCRIPT! Going/leaving to Gopilot SPAWNS gunner AI in loadmaster or copilot seat.
 
 	displayName="RC-OM Helicopter [Inf]";
 	scope=2;

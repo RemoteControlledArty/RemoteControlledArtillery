@@ -104,6 +104,7 @@ class DefaultVehicleSystemsDisplayManagerRight
 	class components;
 };
 
+#include "\RC_Crocus\HUD\ArmaFPV_interface.hpp"
 #include "\RC_Crocus\cfgAmmoMagazinesWeapons\cfgAmmoMagazinesWeapons.hpp"
 
 class CfgVehicles
