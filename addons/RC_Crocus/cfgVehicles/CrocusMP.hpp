@@ -38,8 +38,8 @@ class B_Crocus_MP: B_Crocus_MP_Base
 
 	//HUD
 	//disableInventory=0;
-	unitInfoType="RscOptics_AV_pilot";
-	unitInfoTypeRTD="RscOptics_AV_pilot";
+	unitInfoType="RscOptics_AV_pilot_RC_Crocus";
+	unitInfoTypeRTD="RscOptics_AV_pilot_RC_Crocus";
 	//driverWeaponsInfoType="RscOptics_AV_pilot";
 	//driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 	//GunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";

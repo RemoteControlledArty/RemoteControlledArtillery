@@ -15,7 +15,7 @@ class RC_Crocus_Mothership: RC_Crocus_Mothership_Base
 	{
 		class RC_Crocus
 		{
-			fired="_this call RC_fnc_fpv_MothershipDeploy";
+			fired="params ['_uav', '_weapon'];  if (!Local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_MothershipDeploy";
 		};
 	};
 

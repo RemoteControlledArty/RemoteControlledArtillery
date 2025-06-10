@@ -28,7 +28,7 @@
 
 			(getConnectedUAV _player) setVariable ["DB_fpv_isUAVsignalLost", false];
 
-			call DB_fnc_fpv_createDialog;
+			call RC_fnc_fpv_createDialogNew;
 
 			waitUntil {!((typeOf (getConnectedUAV _player)) in _dronesArray) or (cameraView != "GUNNER") or !((typeOf cameraOn) in _dronesArray)};
 

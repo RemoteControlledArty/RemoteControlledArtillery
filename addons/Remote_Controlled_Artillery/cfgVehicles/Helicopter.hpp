@@ -410,6 +410,12 @@ this addEventHandler ["Fired", {
 	[getPos _unit, 180, "O_Crocus_MP_TI", east] call BIS_fnc_spawnVehicle;
 }];
 
+this addEventHandler ["Fired", {
+	params ["_unit", "_weapon"];
+	if (_weapon isNotEqualTo RC_Crocus_Deployer) exitWith {systemchat "nope";};
+	[getPos _unit, 180, "O_Crocus_MP_TI", east] call BIS_fnc_spawnVehicle;
+}];
+
 
 this addEventHandler ["Fired", {
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];

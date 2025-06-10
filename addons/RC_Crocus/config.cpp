@@ -84,6 +84,7 @@ class CfgFunctions
 			class fpv_droneInit_MP {};
 			class fpv_onDestroy_MP {};
 			class fpv_MothershipDeploy {};
+			class fpv_createDialogNew {};
 		};
 	};
 };
