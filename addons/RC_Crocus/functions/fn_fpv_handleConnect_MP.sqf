@@ -28,7 +28,7 @@
 
 			(getConnectedUAV _player) setVariable ["DB_fpv_isUAVsignalLost", false];
 
-			call RC_fnc_fpv_createDialogNew;
+			call RC_fnc_fpv_createDialog_MP;
 
 			waitUntil {!((typeOf (getConnectedUAV _player)) in _dronesArray) or (cameraView != "GUNNER") or !((typeOf cameraOn) in _dronesArray)};
 
@@ -76,7 +76,7 @@
 					private _currentTime = (time - _signalDropTime);
 
 					if (_currentTime >= 5) then {
-						[_player, _uav] call DB_fnc_fpv_onSignalLost;
+						[_player, _uav] call RC_fnc_fpv_onSignalLost_MP;
 						_signalDropTime = -1;
 					};
                 };

@@ -72,25 +72,44 @@ class RscInGameUI
 				class TextGrid: RscText
 				{
 					style=0;
-					sizeEx="0.02*SafezoneH";
+					//sizeEx="0.02*SafezoneH";
+                    sizeEx="0.03*SafezoneH";
 					shadow=0;
 					font="EtelkaMonospacePro";
+
 					idc=1005;
 					text="GRID:";
+                    /*
 					x="5.8 * 		(0.01875 * SafezoneH)";
 					y="31.8 * 		(0.025 * SafezoneH)";
 					w="5 * 		(0.01875 * SafezoneH)";
 					h="1 * 		(0.025 * SafezoneH)";
+                    */
+
+					//style=1;
+					x="5 * 		(0.01875 * SafezoneH)";
+					y="8 * 		    (0.025 * SafezoneH)";
+					w="3.2 * 		(0.01875 * SafezoneH)";
+					h="1.2 * 		(0.025 * SafezoneH)";
 				};
 				class ValueGrid: TextGrid
 				{
 					idc=189;
 					text="382546";
+                    /*
 					x="10.3 * 		(0.01875 * SafezoneH)";
 					y="31.8 * 		(0.025 * SafezoneH)";
 					w="6 * 		(0.01875 * SafezoneH)";
 					h="1 * 		(0.025 * SafezoneH)";
+                    */
+
+                    x="8 * 		(0.01875 * SafezoneH)";
+					y="8 * 		    (0.025 * SafezoneH)";
+                    //w="3.2 * 		(0.01875 * SafezoneH)";
+					w="3.2 * 		(0.025 * SafezoneH)";
+					h="1.2 * 		(0.025 * SafezoneH)";
 				};
+                /*
 				class TextTime: TextGrid
 				{
 					idc=1010;
@@ -109,6 +128,7 @@ class RscInGameUI
 					w="6 * 		(0.01875 * SafezoneH)";
 					h="1 * 		(0.025 * SafezoneH)";
 				};
+                */
                 /*
                 class Target: RscIGUIText
                 {
@@ -214,6 +234,31 @@ class RscInGameUI
                 */
 				class CA_Alt: TextGrid
 				{
+                    /*
+                    class CA_Alt: ctrlStructuredText
+                    
+                    class Attributes
+                    {
+                        font = "VCROSDMono";
+                        align = "center";
+                        shadow = 1;
+                    };
+
+                    shadow = 0;
+                    size = GRID_H(1.4);
+
+                    //x="42 * 		(0.01875 * SafezoneH)";
+					//y="19.5 * 		(0.025 * SafezoneH)";
+                    x = 0.0;
+                    y = GRID_H(0.3);
+                    w = GRID_W(6.5);
+                    h = GRID_H(2);
+
+                    idc=191;
+					//style=1;
+					text="3825";
+                    */
+
 					idc=191;
 					sizeEx="0.03*SafezoneH";
 					style=1;

@@ -3,5 +3,5 @@ _layer cutRsc ["ArmaFPV_DialogNew", "PLAIN"];
 
 call DB_fnc_fpv_handleSettings;
 call DB_fnc_fpv_handleBattery;
-call DB_fnc_fpv_handleSignal;
+call RC_fnc_fpv_handleSignal_MP;
 call DB_fnc_fpv_handleTime;

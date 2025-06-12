@@ -37,7 +37,7 @@
 			};
 			if (isRemoteControlling player) then {
 				private _uav = getConnectedUAV player;
-				if ((_uav isKindOf 'RC_UAV_base') or (_uav isKindOf 'RC_GrenadeDropper_Base') or (_uav isKindOf 'B_Crocus_MP_Base')) then {
+				if ((_uav isKindOf 'RC_UAV_base') or (_uav isKindOf 'RC_GrenadeDropper_Base') or (_uav isKindOf 'B_Crocus_MP_Base') or (_uav isKindOf 'RC_FPV_Mothership_Base')) then {
 					private _target = cursorTarget;
 					if (!isNull _target && alive _target) then {
 						if (_target isKindOf "StaticWeapon" && RC_UAV_StaticReporting) then {
