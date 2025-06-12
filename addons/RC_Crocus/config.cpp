@@ -117,4 +117,5 @@ class CfgVehicles
 	#include "\RC_Crocus\cfgVehicles\CrocusMP.hpp"
 	#include "\RC_Crocus\cfgVehicles\CrocusMP_NV.hpp"
 	#include "\RC_Crocus\cfgVehicles\SignalBooster.hpp"
+	#include "\RC_Crocus\cfgVehicles\SignalBoosterBackpack.hpp"
 };
