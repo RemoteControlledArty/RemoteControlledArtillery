@@ -7,7 +7,7 @@
 		private _player = missionNamespace getVariable ["bis_fnc_moduleRemoteControl_unit", player];
 		private _uav = getConnectedUAV _player;
 		
-		private _signal = [_player, _uav] call DB_fnc_fpv_getSignal;
+		private _signal = [_player, _uav] call RC_fnc_fpv_getSignal_MP;
 		private _altitude = getPos _uav select 2;
 		private _controlPicture = uiNameSpace getVariable ["ArmaFPV_SignalPicture", controlNull];
 		private _controlText = uiNameSpace getVariable ["ArmaFPV_SignalText", controlNull];

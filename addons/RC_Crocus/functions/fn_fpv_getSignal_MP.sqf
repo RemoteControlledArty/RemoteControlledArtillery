@@ -2,11 +2,12 @@ params ["_player", "_uav"];
 
 private _fnc_evaluateTerrainImpact = {  
     params ["_startPoint", "_endPoint"];
-    private _terrainInterceptionValue = 0; 
-    private _initialPos = eyePos _startPoint; 
-    private _finalPos = getPosWorld _endPoint; 
-    private _isIntersecting = terrainIntersectASL[_initialPos, _finalPos];
-    _terrainInterceptionValue = if (_isIntersecting) then { 1 } else { (_finalPos select 2) / 500 };
+    private _terrainInterceptionValue = 0;
+    private _initialPos = eyePos _startPoint;
+    private _finalPos = getPosWorld _endPoint;
+    private _isIntersecting = terrainIntersectASL [_initialPos, _finalPos];
+    //_terrainInterceptionValue = if (_isIntersecting) then { 1 } else { (_finalPos select 2) / 500 };
+    _terrainInterceptionValue = if (_isIntersecting) then { 1 } else { 0.1 };
     _terrainInterceptionValue
 };
 
@@ -30,14 +31,21 @@ private _fnc_countInterferingObjects = {
     count _filteredObstacles
 };
 
-RC_Crocus_Mothership
 
+//make transition smoother, like booster to FPV, maybe also add: intesect from operator to booster to uav
 private _fnc_findRetranslators = {
-    params ["_position", "_radius"];
+    params ["_position", "_radius"];    //radius didnt work?
+    /*
     private _retr1 = _position nearObjects ["FPV_Retranslator", _radius];
     private _retr2 = _position nearObjects ["RC_Crocus_Mothership", _radius];
     private _retr3 = _position nearObjects ["RC_Crocus_Mothership_O", _radius];
-    private _retr3 = _position nearObjects ["RC_Crocus_Mothership_I", _radius];
+    private _retr4 = _position nearObjects ["RC_Crocus_Mothership_I", _radius];
+    */
+    private _retr1 = _position nearObjects ["FPV_Retranslator", 3000];
+    private _retr2 = _position nearObjects ["RC_Crocus_Mothership", 3000];
+    private _retr3 = _position nearObjects ["RC_Crocus_Mothership_O", 3000];
+    private _retr4 = _position nearObjects ["RC_Crocus_Mothership_I", 3000];
+    private _retranslators = _retr1 + _retr2 + _retr3 + _retr4;
     _retranslators
 };
 
@@ -117,6 +125,7 @@ private _signalStrength = 1 - (_objectCount * 0.05);
 
 private _distanceImpact = [_distance, _maxDistance] call _fnc_distanceImpact;
 _signalStrength = _signalStrength * (1 - (_terrainInterception * (_distance / _maxDistance))) * _distanceImpact;
+hint format ["obj %1 ter %2 dis %3", _objectCount, _terrainInterception, _distanceImpact];
 
 if ((_retranslatorsNearUAV isNotEqualTo []) || (_retranslatorsNearPlayer isNotEqualTo [])) then {
     _signalStrength = _signalStrength * 1.8;

@@ -4,6 +4,7 @@
 
 	while { True } do {
 		private _player = missionNamespace getVariable ["bis_fnc_moduleRemoteControl_unit", player];
+		/*
 		private _assignedItems = assignedItems _player;
 
 		if ({ _x in _assignedItems } count _terminalsArray > 0) then {
@@ -20,7 +21,7 @@
 				_player enableUAVConnectability [_x, true];
 			} forEach _dronesNear;
 		};
-
+		*/
 
 		if (((typeOf (getConnectedUAV _player)) in _dronesArray) and (cameraView == "GUNNER") and ((typeOf cameraOn) in _dronesArray)) then {
 
@@ -67,7 +68,7 @@
 		private _connectedUAVType = typeOf _uav;
 
 		if (_connectedUAVType in _dronesArray) then {
-			private _uavSignal = [_player, _uav] call DB_fnc_fpv_getSignal;
+			private _uavSignal = [_player, _uav] call RC_fnc_fpv_getSignal_MP;
 
             if (_uavSignal < 0.05) then {
                 if (_signalDropTime == -1) then {
