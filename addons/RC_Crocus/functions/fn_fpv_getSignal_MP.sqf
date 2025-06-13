@@ -99,7 +99,7 @@ private _jammersNearUAV = [_uav, 1000] call _fnc_findJammers;
 
 //private _maxDistance = if (count _retranslatorsNearUAV > 0 || count _retranslatorsNearPlayer > 0) then { FPV_MaxFlightDistance + 2500 } else { FPV_MaxFlightDistance };
 private _maxDistance = if (count _retranslatorsNearUAV > 0 || count _retranslatorsNearPlayer > 0) then { 6000 } else { 3000 };
-private _distance = _player distance2D _uav;
+private _distance = _player distance _uav;
 private _distanceImpact = [_distance, _maxDistance] call _fnc_distanceImpact;
 
 private _terrainInterception = [_player, _uav] call _fnc_evaluateTerrainImpact;

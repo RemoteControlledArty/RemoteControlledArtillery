@@ -81,11 +81,13 @@ class B_Crocus_MP: B_Crocus_MP_Base
 
 	weapons[]=
 	{
-		"RC_target_confirmer_AB_weapon"
+		"RC_target_confirmer_AB_weapon",
+		"RC_shapedcharge_reticle_AB_weapon"
 	};
 	magazines[]=
 	{
-		"RC_target_confirmer_AB_mag"
+		"RC_target_confirmer_AB_mag",
+		"RC_shapedcharge_reticle_AB_mag"
 	};
 
 	class EventHandlers: EventHandlers

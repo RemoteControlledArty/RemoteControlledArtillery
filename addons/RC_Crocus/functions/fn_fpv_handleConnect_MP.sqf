@@ -23,6 +23,7 @@
 		};
 		*/
 
+		//change to remote controlled UAV not connected, or make not connectable at double range of controllable
 		if (((typeOf (getConnectedUAV _player)) in _dronesArray) and (cameraView == "GUNNER") and ((typeOf cameraOn) in _dronesArray)) then {
 
 			missionNamespace setVariable ["ArmaFPV_isControl", true];

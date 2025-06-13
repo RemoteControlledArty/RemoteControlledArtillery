@@ -180,17 +180,16 @@ class RscInGameUI
 					h="1 * 		(0.025 * SafezoneH)";
 				};
                 */
-				class TextSpd: TextGrid
-				{
-					idc=1004;
-                    sizeEx="0.03*SafezoneH";
-					text="SPD";
-                    x="6.4 * 		(0.01875 * SafezoneH)";
-					y="19.5 * 		(0.025 * SafezoneH)";
-					w="6 * 		(0.01875 * SafezoneH)";
-					h="1.2 * 		(0.025 * SafezoneH)";
-				};
                 /*
+				class AltValueBorder: RscPicture
+				{
+					idc=1201;
+					text="\A3\Ui_f\data\IGUI\Cfg\HelicopterHUD\airspeed_value_ca.paa";
+					x="42.25 * 		(0.01875 * SafezoneH)";
+					y="19 * 		(0.025 * SafezoneH)";
+					w="5 * 		(0.01875 * SafezoneH)";
+					h="2 * 		(0.025 * SafezoneH)";
+				};
 				class SpeedValueBorder: RscPicture
 				{
 					idc=1200;
@@ -201,6 +200,16 @@ class RscInGameUI
 					h="2 * 		(0.025 * SafezoneH)";
 				};
                 */
+				class TextSpd: TextGrid
+				{
+					idc=1004;
+                    sizeEx="0.03*SafezoneH";
+					text="SPD";
+                    x="6.4 * 		(0.01875 * SafezoneH)";
+					y="19.5 * 		(0.025 * SafezoneH)";
+					w="6 * 		(0.01875 * SafezoneH)";
+					h="1.2 * 		(0.025 * SafezoneH)";
+				};
 				class CA_Speed: TextGrid
 				{
 					idc=190;
@@ -221,19 +230,17 @@ class RscInGameUI
 					w="3.2 * 		(0.01875 * SafezoneH)";
 					h="1.2 * 		(0.025 * SafezoneH)";
 				};
-                /*
-				class AltValueBorder: RscPicture
-				{
-					idc=1201;
-					text="\A3\Ui_f\data\IGUI\Cfg\HelicopterHUD\airspeed_value_ca.paa";
-					x="42.25 * 		(0.01875 * SafezoneH)";
-					y="19 * 		(0.025 * SafezoneH)";
-					w="5 * 		(0.01875 * SafezoneH)";
-					h="2 * 		(0.025 * SafezoneH)";
-				};
-                */
 				class CA_Alt: TextGrid
 				{
+					idc=191;
+					sizeEx="0.03*SafezoneH";
+					style=1;
+					text="3825";
+					x="42 * 		(0.01875 * SafezoneH)";
+					y="19.5 * 		(0.025 * SafezoneH)";
+					w="3.2 * 		(0.01875 * SafezoneH)";
+					h="1.2 * 		(0.025 * SafezoneH)";
+
                     /*
                     class CA_Alt: ctrlStructuredText
                     
@@ -258,15 +265,6 @@ class RscInGameUI
 					//style=1;
 					text="3825";
                     */
-
-					idc=191;
-					sizeEx="0.03*SafezoneH";
-					style=1;
-					text="3825";
-					x="42 * 		(0.01875 * SafezoneH)";
-					y="19.5 * 		(0.025 * SafezoneH)";
-					w="3.2 * 		(0.01875 * SafezoneH)";
-					h="1.2 * 		(0.025 * SafezoneH)";
 				};
 				class AnalogueHorizon: RscLadderPicture
 				{
@@ -307,12 +305,10 @@ class RscTitles
 
                 colorBackground[] = {0, 0, 0, 1};
             };
-
             class RightLine : LeftLine
             {
                 x = safeZoneXAbs + safeZoneWAbs - LINE_WIDTH;
             };
-
             class CommunicationGroup : ctrlControlsGroupNoScrollBars
             {
                 idc = -1;
@@ -336,7 +332,6 @@ class RscTitles
                         w = GRID_W(3) / 2;
                         h = GRID_H(1);
                     };
-
                     class CommunicationText : ctrlStructuredText
                     {
                         idc = -1;
@@ -362,7 +357,6 @@ class RscTitles
                     };
                 };
             };
-
             class BatteryGroup : ctrlControlsGroupNoScrollBars
             {
                 idc = -1;
@@ -387,7 +381,6 @@ class RscTitles
                         w = GRID_W(1);
                         h = GRID_H(1.8);
                     };
-
                     class BatteryText : ctrlStructuredText
                     {
                         idc = -1;
@@ -413,7 +406,6 @@ class RscTitles
                     };
                 };
             };
-
             class OnTime_Group : ctrlControlsGroupNoScrollBars
             {
                 idc = -1;
@@ -436,7 +428,6 @@ class RscTitles
                         w = GRID_W(6) / 2;
                         h = GRID_H(2);
                     };
-
                     class OnTime_Text : ctrlStructuredText
                     {
                         idc = -1;
@@ -462,7 +453,6 @@ class RscTitles
                     };
                 };
             };
-
             class Center_target : ctrlStaticPicture
             {
                 idc = -1;
@@ -474,7 +464,6 @@ class RscTitles
                 w = GRID_W(2);
                 h = GRID_H(2);
             };
-
             class V_Line_Left : ctrlStaticPicture
             {
                 idc = -1;
@@ -486,12 +475,10 @@ class RscTitles
                 w = GRID_W(1);
                 h = GRID_H(12);
             };
-
             class V_Line_Right : V_Line_Left
             {
                 x = 0.5 - GRID_W(10);
             };
-
             class MainText : ctrlStructuredText
             {
                 idc = -1;

@@ -155,7 +155,12 @@ class CfgAmmo
 			};
 		};
 	};
-
+	class RC_shapedcharge_reticle_AB_ammo: RC_target_confirmer_AB_ammo
+	{
+		maxControlRange=0;
+		maxSpeed=1000;
+		typicalSpeed=1000;
+	};
 
 	class RC_Crocus_Deployer_Ammo: RC_target_confirmer_AB_ammo
 	{
@@ -176,9 +181,14 @@ class cfgMagazines
 	class RC_target_confirmer_AB_mag: RC_target_confirmer_mag
 	{
 		ammo="RC_target_confirmer_AB_ammo";
-		initSpeed=1;	//1000 for reticle of bc=8; requires maxControlRange=0;
+		initSpeed=1;
 		scope=2;
 		count=1;
+	};
+	class RC_shapedcharge_reticle_AB_mag: RC_target_confirmer_AB_mag
+	{
+		ammo="RC_shapedcharge_reticle_AB_ammo";
+		initSpeed=1000;	//for reticle of bc=8; requires maxControlRange=0;
 	};
 	class RC_6xCrocus_Deployer_Mag: RC_target_confirmer_AB_mag
 	{
@@ -241,6 +251,20 @@ class cfgWeapons
 			minRangeProbab=0;
 			midRangeProbab=0;
 			maxRangeProbab=0;
+		};
+	};
+	class RC_shapedcharge_reticle_AB_weapon: RC_target_confirmer_AB_weapon
+	{
+		displayName="MP airburst reticle";
+		displayNameShort="MP airburst reticle";
+		ballisticsComputer=8;	//reticle for shaped charge airburst; requires maxControlRange=0;
+		magazines[]=
+		{
+			"RC_shapedcharge_reticle_AB_mag"
+		};
+		class player: player
+		{
+			ballisticsComputer=8;	//reticle for shaped charge airburst, requires maxControlRange=0;
 		};
 	};
 
