@@ -3,7 +3,6 @@ params ["_player", "_uav"];
 if (isRemoteControlling _player) then {
 	player remoteControl objNull;
 	_uav setVariable ["DB_fpv_isUAVsignalLost", true];
-	systemchat "out of range, lost connection";
 };
 
 /*

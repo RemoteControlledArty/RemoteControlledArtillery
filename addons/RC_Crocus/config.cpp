@@ -40,8 +40,13 @@ class CfgPatches
 			I_Crocus_MP_NV_Sens_Bag,
 
 			B_Crocus_SignalBooster_Bag,
-			O_Crocus_SignalBooster_Bag,
-			I_Crocus_SignalBooster_Bag
+			//O_Crocus_SignalBooster_Bag,
+			//I_Crocus_SignalBooster_Bag,
+
+			RC_SignalBoosterLRR_blk,
+			RC_SignalBoosterLRR_mtp,
+			RC_SignalBoosterLRR_wdl,
+			RC_SignalBoosterLRR_tropic
 		};
 		
 		ammo[]=
@@ -49,16 +54,19 @@ class CfgPatches
 			"FPV_RPG42_AT_Penetrator_MP",
 			"FPV_RPG42_MP",
 			"RC_target_confirmer_AB_ammo",
+			"RC_shapedcharge_reticle_AB_ammo",
 			"RC_Crocus_Deployer_Ammo"
 		};
 		magazines[]=
 		{
 			"RC_target_confirmer_AB_mag",
+			"RC_shapedcharge_reticle_AB_mag",
 			"RC_6xCrocus_Deployer_Mag"
 		};
 		weapons[]=
 		{
 			"RC_target_confirmer_AB_weapon",
+			"RC_shapedcharge_reticle_AB_weapon",
 			"RC_Crocus_Deployer"
 		};
 
