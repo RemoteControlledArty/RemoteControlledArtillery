@@ -68,7 +68,7 @@
 		private _uav = getConnectedUAV _player;
 		private _connectedUAVType = typeOf _uav;
 
-		if (_connectedUAVType in _dronesArray) then {
+		if (isRemoteControlling _player && _connectedUAVType in _dronesArray) then {
 			private _uavSignal = [_player, _uav] call RC_fnc_fpv_getSignal_MP;
 
             if (_uavSignal < 0.05) then {

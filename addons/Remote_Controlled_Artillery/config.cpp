@@ -619,7 +619,7 @@ class CfgPatches
 		weapons[]=
 		{
 			RC_target_confirmer,
-			RC_target_confirmer_heli,
+			RC_target_confirmer_datalink,
 			RC_Laserdesignator_mounted,
 			RC_Laserdesignator_vehicle,
 			RC_FPV_Deployer,
@@ -931,6 +931,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\FPV_Carrier.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FPV_Mothership.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet

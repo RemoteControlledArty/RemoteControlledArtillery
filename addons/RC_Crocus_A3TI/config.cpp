@@ -25,7 +25,11 @@ class CfgPatches
 
 			RC_Crocus_Mothership,
 			RC_Crocus_Mothership_O,
-			RC_Crocus_Mothership_I
+			RC_Crocus_Mothership_I,
+
+			RC_Crocus_Carrier,
+			RC_Crocus_Carrier_O,
+			RC_Crocus_Carrier_I
 		};
 
 		requiredAddons[]=
@@ -50,5 +54,6 @@ class SensorTemplateDataLink;
 class CfgVehicles
 {
 	#include "\RC_Crocus_A3TI\cfgVehicles\CrocusMP_TI.hpp"
+	#include "\RC_Crocus_A3TI\cfgVehicles\Crocus_Carrier.hpp"
 	#include "\RC_Crocus_A3TI\cfgVehicles\Crocus_Mothership.hpp"
 };

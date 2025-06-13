@@ -36,6 +36,7 @@ private _fnc_findRetranslators = {
     params ["_position", "_radius", "_side"];
 
     /*
+    //supposedly good for multiple vics
     retr1 = switch (_side) do {
         case west:      {_position nearObjects ["RC_Crocus_Mothership", 3000]};
         case east:      {_position nearObjects ["RC_Crocus_Mothership_O", 3000]};
@@ -43,15 +44,20 @@ private _fnc_findRetranslators = {
         default         {[]};
     };
     */
+
     _retr1 = [];
+    //_retr2 = [];
     if (_side isEqualTo west) then {
         _retr1 = _uav nearEntities ["RC_Crocus_Mothership", 3000];
+        //_retr2 = _uav nearEntities ["RC_Crocus_Carrier", 3000];
     };
     if (_side isEqualTo east) then {
         _retr1 = _uav nearEntities ["RC_Crocus_Mothership_O", 3000];
+        //_retr2 = _uav nearEntities ["RC_Crocus_Carrier_O", 3000];
     };
     if (_side isEqualTo resistance) then {
         _retr1 = _uav nearEntities ["RC_Crocus_Mothership_I", 3000];
+        //_retr2 = _uav nearEntities ["RC_Crocus_Carrier_I", 3000];
     };
 
     private _retr2 = [];
@@ -93,15 +99,21 @@ private _jammersNearUAV = [_uav, 1000] call _fnc_findJammers;
 private _maxDistance = if (count _retranslatorsNearUAV > 0 || count _retranslatorsNearPlayer > 0) then { 6000 } else { 3000 };
 private _distance = _player distance _uav;
 private _distanceImpact = [_distance, _maxDistance] call _fnc_distanceImpact;
-
 private _receiver = _uav;
-_firstRetranslatorsNearPlayer = _retranslatorsNearPlayer select 0;
-if ((_firstRetranslatorsNearPlayer isKindOf 'RC_FPV_Mothership_Base')) then {
-    _receiver = _firstRetranslatorsNearPlayer;
+
+if (count _retranslatorsNearPlayer > 0) then {
+    _firstRetranslatorsNearPlayer = _retranslatorsNearPlayer select 0;
+    //if ((_firstRetranslatorsNearPlayer isKindOf 'RC_FPV_Mothership_Base') or (_firstRetranslatorsNearPlayer isKindOf 'RC_FPV_Carrier_Base')) then {
+    if ((_firstRetranslatorsNearPlayer isKindOf 'RC_FPV_Mothership_Base')) then {
+        _receiver = _firstRetranslatorsNearPlayer;
+    };
 };
-_firstRetranslatorsNearUAV = _retranslatorsNearUAV select 0;
-if ((_firstRetranslatorsNearUAV isKindOf 'RC_FPV_Mothership_Base')) then {
-    _receiver = _firstRetranslatorsNearUAV;
+if (count _retranslatorsNearUAV > 0) then {
+    _firstRetranslatorsNearUAV = _retranslatorsNearUAV select 0;
+    //if ((_firstRetranslatorsNearUAV isKindOf 'RC_FPV_Mothership_Base') or (_firstRetranslatorsNearUAV isKindOf 'RC_FPV_Carrier_Base')) then {
+    if ((_firstRetranslatorsNearUAV isKindOf 'RC_FPV_Mothership_Base')) then {
+        _receiver = _firstRetranslatorsNearUAV;
+    };
 };
 
 private _terrainInterception = [_player, _receiver] call _fnc_evaluateTerrainImpact;
@@ -110,6 +122,15 @@ private _objectCount = [_player, _receiver] call _fnc_countInterferingObjects;
 
 private _signalStrength = 1 - (_objectCount * 0.05);
 _signalStrength = _signalStrength * (1 - (_terrainInterception * (_distance / _maxDistance))) * _distanceImpact;
+
+if (_receiver isNotEqualTo _uav) then {
+    _terrainInterceptionReceiver = [_receiver, _uav] call _fnc_evaluateTerrainImpact;
+    _objectCountReceiver = [_receiver, _uav] call _fnc_countInterferingObjects;
+
+    _signalStrength = 1 - (((_objectCount + _objectCountReceiver) / 2)  * 0.05);
+    _signalStrength = _signalStrength * (1 - (((_terrainInterception + _terrainInterceptionReceiver) / 2) * (_distance / _maxDistance))) * _distanceImpact;
+};
+
 
 if ((_retranslatorsNearUAV isNotEqualTo []) || (_retranslatorsNearPlayer isNotEqualTo [])) then {
     _signalStrength = _signalStrength * 1.8;

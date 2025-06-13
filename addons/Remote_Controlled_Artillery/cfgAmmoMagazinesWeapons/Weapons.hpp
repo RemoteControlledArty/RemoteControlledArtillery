@@ -10,16 +10,10 @@ class RC_target_confirmer: Default
 	};
 	canLock=2;
 };
-class RC_target_confirmer_heli: Default
+class RC_target_confirmer_datalink: RC_target_confirmer
 {
-	scope=2;
 	displayName="datalink";
 	displayNameShort="datalink";
-	magazines[]=
-	{
-		"RC_target_confirmer_mag"
-	};
-	canLock=2;
 };
 
 

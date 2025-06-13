@@ -103,19 +103,19 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=67000;
+					typeRecognitionDistance=8000;
 
 					class AirTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=67000;
-						maxRange=67000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
