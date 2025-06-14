@@ -77,7 +77,7 @@
                 } else {
 					private _currentTime = (time - _signalDropTime);
 
-					if (_currentTime >= 5) then {
+					if (_currentTime >= 3) then {
 						[_player, _uav] call RC_fnc_fpv_onSignalLost_MP;
 						_signalDropTime = -1;
 					};

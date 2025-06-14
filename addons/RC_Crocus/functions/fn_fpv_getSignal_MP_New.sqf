@@ -115,9 +115,18 @@ private _fnc_distanceImpact = {
 private _side = side _player;
 private _retranslatorsNearUAV = [_uav, 3000, _side] call _fnc_findRetranslatorsNearUAV;
 private _retranslatorsNearPlayer = [_player, 3000, _side] call _fnc_findRetranslatorsNearPlayer;
+
 //add backpacks, also add Jammer, maybe add one with useraction that has to be actively used, "jam FPV's" within xmeters that jams all UV's for given time, which for type air results in ground crash
 private _jammersNearUAV = [_uav, 1000] call _fnc_findJammers;
-private _maxDistance = if (count _retranslatorsNearUAV > 0 || count _retranslatorsNearPlayer > 0) then { 6000 } else { 3000 };
+
+//private _maxDistance = if (count _retranslatorsNearUAV > 0 || count _retranslatorsNearPlayer > 0) then { FPV_MaxFlightDistance + 2500 } else { FPV_MaxFlightDistance };
+private _maxDistance = if (count _retranslatorsNearUAV > 0 || count _retranslatorsNearPlayer > 0) then { 3000 } else { 3000 };
+
+
+
+//_maxDistance changed to 3000!!! DOES NOT WORK FOR BACKPACK
+
+
 
 private _distance = _player distance _uav;
 private _distanceImpact = [_distance, _maxDistance] call _fnc_distanceImpact;
@@ -125,11 +134,13 @@ private _distanceImpact = [_distance, _maxDistance] call _fnc_distanceImpact;
 private _terrainInterception = [_player, _uav] call _fnc_evaluateTerrainImpact;
 private _objectCount = [_player, _uav] call _fnc_countInterferingObjects;
 
+private _signalStrength = 1 - (_objectCount * 0.05);
+_signalStrength = _signalStrength * (1 - (_terrainInterception * (_distance / _maxDistance))) * _distanceImpact;
 
 private _receiver = _uav;
 if (count _retranslatorsNearPlayer > 0) then {
     private _firstRetranslatorsNearPlayer = _retranslatorsNearPlayer select 0;
-    if ((_firstRetranslatorsNearPlayer isKindOf 'RC_FPV_Mothership_Base')) then {
+    if ((_firstRetranslatorsNearPlayer isKindOf 'RC_FPV_Mothership_Base') || (_firstRetranslatorsNearPlayer isKindOf 'RC_FPV_Carrier_Base') || (_firstRetranslatorsNearPlayer isKindOf 'FPV_Retranslator')) then {
         if (alive _firstRetranslatorsNearPlayer) then {
             _receiver = _firstRetranslatorsNearPlayer;
             systemchat "receiver near player";
@@ -138,7 +149,7 @@ if (count _retranslatorsNearPlayer > 0) then {
 };
 if (count _retranslatorsNearUAV > 0) then {
     private _firstRetranslatorsNearUAV = _retranslatorsNearUAV select 0;
-    if ((_firstRetranslatorsNearUAV isKindOf 'RC_FPV_Mothership_Base')) then {
+    if ((_firstRetranslatorsNearUAV isKindOf 'RC_FPV_Mothership_Base') || (_firstRetranslatorsNearUAV isKindOf 'RC_FPV_Carrier_Base') || (_firstRetranslatorsNearUAV isKindOf 'FPV_Retranslator')) then {
         if ((alive _firstRetranslatorsNearUAV) || (_firstRetranslatorsNearUAV isKindOf 'FPV_Retranslator')) then {
             _receiver = _firstRetranslatorsNearUAV;
             systemchat "receiver near UAV";
@@ -146,24 +157,69 @@ if (count _retranslatorsNearUAV > 0) then {
     };
 };
 
-private _signalStrength = 1 - (_objectCount * 0.05);
-_signalStrength = _signalStrength * (1 - (_terrainInterception * (_distance / _maxDistance))) * _distanceImpact;
 
-if (_receiver isNotEqualTo _uav) then {
-    private _objectCountPtR = [_player, _receiver] call _fnc_countInterferingObjects;
-    private _terrainInterceptionPtR = [_player, _receiver] call _fnc_evaluateTerrainImpact;
+//_maxDistance changed to 3000!!! DOES NOT WORK FOR BACKPACK
 
-    private _objectCountRtoU = [_receiver, _uav] call _fnc_countInterferingObjects;
-    private _terrainInterceptionRtoU = [_receiver, _uav] call _fnc_evaluateTerrainImpact;
-
-    _signalStrength = 1 - (((_objectCountPtR + _objectCountRtoU) / 2) * 0.05);
-    _signalStrength = _signalStrength * (1 - (((_terrainInterceptionPtR + _terrainInterceptionRtoU) / 2) * (_distance / _maxDistance))) * _distanceImpact;
-};
-
-//DOES THIS MAKE SENSE?  _signalStrength = _signalStrength * 1.8;
+//maybe this x1.8 is the PROBLEM???
+/*
+//found further down
 if ((_retranslatorsNearUAV isNotEqualTo []) || (_retranslatorsNearPlayer isNotEqualTo [])) then {
     _signalStrength = _signalStrength * 1.8;
 };
+*/
+
+
+if (_receiver isNotEqualTo _uav) then {
+    _distance2 = _player distance _receiver;
+    _distanceImpact2 = [_distance2, _maxDistance] call _fnc_distanceImpact;
+
+    private _distanceReceiver = _receiver distance _uav;
+    private _distanceImpactReceiver = [_distanceReceiver, _maxDistance] call _fnc_distanceImpact;
+
+    private _terrainInterception2 = [_player, _receiver] call _fnc_evaluateTerrainImpact;
+    private _objectCount2 = [_player, _receiver] call _fnc_countInterferingObjects;
+
+    private _terrainInterceptionReceiver = [_receiver, _uav] call _fnc_evaluateTerrainImpact;
+    private _objectCountReceiver = [_receiver, _uav] call _fnc_countInterferingObjects;
+
+    private _signalStrength2 = 1 - ((_objectCount2)  * 0.05);
+    _signalStrength2 = _signalStrength2 * (1 - (_terrainInterception2 * (_distance / _maxDistance))) * _distanceImpact2;
+
+    private _signalStrengthReceiver = 1 - (_objectCountReceiver  * 0.05);
+    _signalStrengthReceiver = _signalStrengthReceiver * (1 - (_terrainInterceptionReceiver * (_distance / _maxDistance))) * _distanceImpactReceiver;
+
+    private _signalStrengthFinal = _signalStrength;
+    //connection quality based on the worse connection of playerToReceiver and receiverToUav
+    if (_signalStrength2 > _signalStrengthReceiver) then {
+        _signalStrengthFinal = _signalStrengthReceiver;
+    } else {
+        _signalStrengthFinal = _signalStrength2;
+    };
+
+
+    //_maxDistance changed to 3000!!! DOES NOT WORK FOR BACKPACK
+
+
+    /*
+    private _signalStrengthReceiver = 1 - (((_objectCount2 + _objectCountReceiver) / 2)  * 0.05);
+    private _signalStrengthReceiver = _signalStrengthReceiver * (1 - (((_terrainInterception2 + _terrainInterceptionReceiver) / 2) * (_distance / _maxDistance))) * ((_distanceImpact2 + _distanceImpactReceiver)/2);
+    */
+
+    hint format ["obj %1\n ter %2\n dis %3\n sig %4\n rec %5\n obj2 %6\n objR %7\n ter2 %8\n terR %9\n dist2 %10\n distR %11\n sig2 %12\n sigR %13\n sigF %14", _objectCount, _terrainInterception, _distanceImpact, _signalStrength, _receiver, _objectCount2, _objectCountReceiver, _terrainInterception2, _terrainInterceptionReceiver, _distanceImpact2, _distanceImpactReceiver, _signalStrength2, _signalStrengthReceiver, _signalStrengthFinal];
+
+    if (_signalStrengthFinal > _signalStrength) then {
+        _signalStrength = _signalStrengthFinal;
+    };
+} else {
+    hint format ["obj %1\n ter %2\n dis %3\n sig %4\n rec %5", _objectCount, _terrainInterception, _distanceImpact, _signalStrength, _receiver];
+};
+
+
+//maybe this x1.8 is the PROBLEM???
+if ((_retranslatorsNearUAV isNotEqualTo []) || (_retranslatorsNearPlayer isNotEqualTo [])) then {
+    _signalStrength = _signalStrength * 1.8;
+};
+
 
 if (isNil "DB_timeInJammerZone") then {
     DB_timeInJammerZone = 0;
