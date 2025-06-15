@@ -78,6 +78,41 @@
 
 
 /*
+//didnt work, localizing vic per take control did
+[_this, 400] spawn
+{
+	params ["_vic","_beepDist"];
+
+	while {true} do
+	{
+		sleep 1;
+		if (!alive _vic) exitwith {};
+
+		private _targetsDL = listRemoteTargets side _vic;
+		private _validTargets = [];
+		{
+			private _target = _x select 0;
+
+			if (!isNull _target && {_target isKindOf "Air"}) then {
+				if ((_target distance _vic <= _beepDist)) then {
+					if ([side _target, side _vic] call BIS_fnc_sideIsEnemy) then {
+						if (side _target != civilian) then {
+
+							[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
+							[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
+
+							hint format ["target %1", _target];
+						};
+					};
+				};
+			};
+		} forEach _targetsDL;
+	};
+};
+*/
+
+
+/*
 this addEventHandler ["Local", {
 	params ["_vic", "_isLocal"];
 
