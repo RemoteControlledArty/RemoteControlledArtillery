@@ -46,7 +46,7 @@ class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
 	side=1;
 	forceInGarage=1;
 	crewCrashProtection=0.01;
-	maxSpeed=60;
+	maxSpeed=80;
 	enginePower=120;
 	peakTorque=750;
 
