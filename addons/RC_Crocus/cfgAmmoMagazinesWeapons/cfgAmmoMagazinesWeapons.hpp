@@ -195,6 +195,10 @@ class cfgMagazines
 		ammo="RC_Crocus_Deployer_Ammo";
 		count=6;
 	};
+	class RC_6xCrocus_Deployer_UGV_Mag: RC_6xCrocus_Deployer_Mag
+	{
+		initSpeed=1000;		//only to prevent scorch mark on ground
+	};
 };
 class Mode_SemiAuto;
 class cfgWeapons
@@ -277,7 +281,8 @@ class cfgWeapons
 		magazineReloadTime=1;
 		magazines[]=
 		{
-			"RC_6xCrocus_Deployer_Mag"
+			"RC_6xCrocus_Deployer_Mag",
+			"RC_6xCrocus_Deployer_UGV_Mag"
 		};
 		class player: player
 		{

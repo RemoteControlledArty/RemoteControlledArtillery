@@ -61,7 +61,8 @@ class CfgPatches
 		{
 			"RC_target_confirmer_AB_mag",
 			"RC_shapedcharge_reticle_AB_mag",
-			"RC_6xCrocus_Deployer_Mag"
+			"RC_6xCrocus_Deployer_Mag",
+			"RC_6xCrocus_Deployer_UGV_Mag"
 		};
 		weapons[]=
 		{
@@ -96,7 +97,19 @@ class CfgFunctions
 			class fpv_onDestroy_MP {};
 			class fpv_onSignalLost_MP {};
 
+			class fpv_CarrierDeploy {};
 			class fpv_MothershipDeploy {};
+		};
+		class RC_Crocus_getSignalSub
+		{
+            file="\RC_Crocus\functions\getSignalSub";
+			class fpv_evaluateTerrainImpact_MP {};
+			class fpv_countInterferingObjects_MP {};
+			class fpv_findRetranslatorsUAV_MP {};
+			class fpv_findRetranslatorsUGV_MP {};
+			class fpv_findRetranslatorsAntenna_MP {};
+			class fpv_findRetranslatorsBackpack_MP {};
+			class fpv_findJammers_MP {};
 		};
 	};
 };

@@ -22,7 +22,13 @@ if (side _uav == resistance) then {_version = 'I_Crocus_MP_TI';};
 //[_spawnArray, BIS_fnc_spawnVehicle] remoteExec ['call', 2];
 private _uavSpawn = [_spawnPos, direction _uav, _version, _side] call BIS_fnc_spawnVehicle;
 private _uavNew = _uavSpawn select 0;
-//_uavNew setVectorDirAndUp [[0,0,-1], [0,1,0]];    //freezes it for unknown reason
-player connectTerminalToUAV _uavNew;
-driver _uavNew switchCamera "Internal";
-player remoteControl driver _uavNew;
+
+[_uavNew] spawn {
+	params ["_uavNew"];
+
+    //_uavNew setVectorDirAndUp [[0,0,-1], [0,1,0]];    //freezes it for unknown reason
+	sleep 1;
+	player connectTerminalToUAV _uavNew;
+	driver _uavNew switchCamera "Internal";
+	player remoteControl driver _uavNew;
+};

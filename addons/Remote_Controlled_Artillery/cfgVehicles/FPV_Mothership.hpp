@@ -14,15 +14,12 @@ class RC_FPV_Mothership_Core: O_T_UAV_04_CAS_F
 };
 class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 {
+	camouflage=100;					//0.25 or 150
+	radarTargetSize=0.33;			//0.5
+	visualTargetSize=0.47;			//0.7
+	irTargetSize=0.33;				//0.5
+
 	/*
-	radarTargetSize=0.5;
-	visualTargetSize=0.69999999;
-	irTargetSize=0.5;
-
-	camouflage=0.25;
-	radarTargetSize=0.05;
-	visualTargetSize=0.05;
-
 	maxSpeed=200;
 	liftForceCoef=2;
 	cyclicAsideForceCoef=2;

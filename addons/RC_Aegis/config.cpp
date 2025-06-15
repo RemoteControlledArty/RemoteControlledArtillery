@@ -84,7 +84,10 @@ class CfgPatches
 			RC_MBT_4_A_O,
 			RC_MBT_4_WD_O,
 			RC_MBT_4_A_I,
-			RC_MBT_4_WD_I
+			RC_MBT_4_WD_I,
+
+			RC_SignalBoosterLRR_a,
+			RC_SignalBoosterLRR_g
 		};
 
 		/*
@@ -152,4 +155,5 @@ class CfgVehicles
 	#include "\RC_Aegis\cfgVehicles\Patria_AMV_ATGM_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\T_100.hpp"
 	#include "\RC_Aegis\cfgVehicles\T_14.hpp"
+	#include "\RC_Aegis\cfgVehicles\SignalBoosterBackpack.hpp"
 };

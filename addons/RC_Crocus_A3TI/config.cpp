@@ -27,9 +27,12 @@ class CfgPatches
 			RC_Crocus_Mothership_O,
 			RC_Crocus_Mothership_I,
 
-			RC_Crocus_Carrier,
-			RC_Crocus_Carrier_O,
-			RC_Crocus_Carrier_I
+			RC_Crocus_Carrier_A,
+			RC_Crocus_Carrier_A_O,
+			RC_Crocus_Carrier_A_I,
+			RC_Crocus_Carrier_WD,
+			RC_Crocus_Carrier_WD_O,
+			RC_Crocus_Carrier_WD_I
 		};
 
 		requiredAddons[]=
