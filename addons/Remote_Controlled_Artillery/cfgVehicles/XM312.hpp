@@ -322,6 +322,7 @@ class RC_cUAS_Static_HMG_Bag_I: RC_cUAS_Static_HMG_Bag
 class RC_cUAS_Static_HMG_manned: RC_cUAS_Static_HMG_base
 {
 	displayName="C-UAS Static 12.7mm";
+	isUav=1;
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -364,7 +365,7 @@ class RC_cUAS_Static_HMG_manned_Bag: RC_cUAS_Static_HMG_Bag
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static 12.7mm";
+		displayName="C-UAS Static 12.7mm";
 		assembleTo="RC_cUAS_Static_HMG_manned";
 	};
 };
@@ -374,7 +375,7 @@ class RC_cUAS_Static_HMG_manned_Bag_O: RC_cUAS_Static_HMG_manned_Bag
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static 12.7mm [Opf]";
+		displayName="C-UAS Static 12.7mm [Opf]";
 		assembleTo="RC_cUAS_Static_HMG_manned_O";
 	};
 };
@@ -384,7 +385,7 @@ class RC_cUAS_Static_HMG_manned_Bag_I: RC_cUAS_Static_HMG_manned_Bag
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static 12.7mm [Ind]";
+		displayName="C-UAS Static 12.7mm [Ind]";
 		assembleTo="RC_cUAS_Static_HMG_manned_I";
 	};
 };

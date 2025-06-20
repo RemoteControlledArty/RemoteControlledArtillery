@@ -585,6 +585,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 			dontCreateAI=1;
 			commanding=3;
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+			//gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_m_F.p3d";
 			turretInfoType="RscOptics_MBT_03_gunner";
 			maxElev=40;	//31.5
 

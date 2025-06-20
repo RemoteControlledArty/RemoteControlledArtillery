@@ -322,6 +322,7 @@ class RC_cUAS_Static_Bag_I: RC_cUAS_Static_Bag
 class RC_cUAS_Static_manned: RC_cUAS_Static_base
 {
 	displayName="C-UAS Static 20mm AB";
+	isUav=1;
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -380,7 +381,7 @@ class RC_cUAS_Static_manned_Bag: RC_cUAS_Static_Bag
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static 20mm AB";
+		displayName="C-UAS Static 20mm AB";
 		assembleTo="RC_cUAS_Static_manned";
 	};
 };
@@ -390,7 +391,7 @@ class RC_cUAS_Static_manned_Bag_O: RC_cUAS_Static_manned_Bag
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static 20mm AB [Opf]";
+		displayName="C-UAS Static 20mm AB [Opf]";
 		assembleTo="RC_cUAS_Static_manned_O";
 	};
 };
@@ -400,7 +401,7 @@ class RC_cUAS_Static_manned_Bag_I: RC_cUAS_Static_manned_Bag
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC C-UAS Static 20mm AB [Ind]";
+		displayName="C-UAS Static 20mm AB [Ind]";
 		assembleTo="RC_cUAS_Static_manned_I";
 	};
 };
