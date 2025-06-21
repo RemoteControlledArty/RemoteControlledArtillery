@@ -9,28 +9,14 @@
 					private _target = cursorTarget;
 					private _distance = _target distance _vehicle;	//make dependant on zoom and target type
 					if (!isNull _target && alive _target && (_distance <= 4000)) then {
+						private _side = side player;
 						if (_target isKindOf "StaticWeapon" && RC_AB_StaticConfirming) then {
-							private _side = side player;
-							private _targetSide = side _target;
 							[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
-							if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
-								[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
-							};
 						} else {
 							if (_target isKindOf "Man" && RC_AB_InfConfirming) then {
-								private _side = side player;
-								private _targetSide = side _target;
 								[_side,[_target, 8]] remoteExec ["reportRemoteTarget", _side];
-								if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
-									[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
-								};
 							} else {
-								private _side = side player;
-								private _targetSide = side _target;
 								[_side,[_target, 12]] remoteExec ["reportRemoteTarget", _side];
-								if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
-									[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
-								};
 							};
 						};
 					};
@@ -42,24 +28,20 @@
 					private _target = cursorTarget;
 					private _distance = _target distance _vehicle;	//make dependant on zoom and target type
 					if (!isNull _target && alive _target && (_distance <= 4000)) then {
+						private _side = side player;
+						private _targetSide = side _target;
 						if (_target isKindOf "StaticWeapon" && RC_UAV_StaticReporting) then {
-							private _side = side player;
-							private _targetSide = side _target;
 							[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
 							if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
 								[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
 							};
 						} else {
 							if (_target isKindOf "Man" && RC_UAV_InfReporting) then {
-								private _side = side player;
-								private _targetSide = side _target;
 								[_side,[_target, 8]] remoteExec ["reportRemoteTarget", _side];
 								if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
 									[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
 								};
 							} else {
-								private _side = side player;
-								private _targetSide = side _target;
 								[_side,[_target, 12]] remoteExec ["reportRemoteTarget", _side];
 								if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
 									[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
@@ -73,28 +55,14 @@
 					private _target = cursorTarget;
 					private _distance = _target distance _vehicle;	//make dependant on zoom and target type
 					if (!isNull _target && alive _target && (_distance <= 4000)) then {
+						private _side = side player;
 						if (_target isKindOf "StaticWeapon" && RC_AB_StaticConfirming) then {
-							private _side = side player;
-							private _targetSide = side _target;
 							[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
-							if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
-								[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
-							};
 						} else {
 							if (_target isKindOf "Man" && RC_AB_InfConfirming) then {
-								private _side = side player;
-								private _targetSide = side _target;
 								[_side,[_target, 8]] remoteExec ["reportRemoteTarget", _side];
-								if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
-									[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
-								};
 							} else {
-								private _side = side player;
-								private _targetSide = side _target;
 								[_side,[_target, 12]] remoteExec ["reportRemoteTarget", _side];
-								if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
-									[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
-								};
 							};
 						};
 					};
