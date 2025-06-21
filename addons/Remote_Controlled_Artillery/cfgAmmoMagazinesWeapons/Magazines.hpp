@@ -742,6 +742,9 @@ class RC_100Rnd_30mm_MPAB_DF_T_Y: RC_100Rnd_30mm_MPAB_DF_T_R {ammo="RC_B_30mm_MP
 class RC_60Rnd_30mm_MPAB_DF_T_R: RC_100Rnd_30mm_MPAB_DF_T_R {count=60;};
 class RC_60Rnd_30mm_MPAB_DF_T_G: RC_100Rnd_30mm_MPAB_DF_T_G {count=60;};
 class RC_60Rnd_30mm_MPAB_DF_T_Y: RC_100Rnd_30mm_MPAB_DF_T_Y {count=60;};
+class RC_120Rnd_30mm_MPAB_DF_T_R: RC_100Rnd_30mm_MPAB_DF_T_R {count=120;};
+class RC_120Rnd_30mm_MPAB_DF_T_G: RC_100Rnd_30mm_MPAB_DF_T_G {count=120;};
+class RC_120Rnd_30mm_MPAB_DF_T_Y: RC_100Rnd_30mm_MPAB_DF_T_Y {count=120;};
 class RC_100Rnd_30mm_MPAB_QF_T_R: RC_100Rnd_30mm_MP_T_R
 {
 	ammo="RC_B_30mm_MPAB_QF_T_R";
@@ -1032,6 +1035,9 @@ class RC_50Rnd_50mm_MPAB_DF_T_R: RC_50Rnd_40mm_MP_T_R
 };
 class RC_50Rnd_50mm_MPAB_DF_T_G: RC_50Rnd_50mm_MPAB_DF_T_R {ammo="RC_B_50mm_MPAB_DF_T_G";};
 class RC_50Rnd_50mm_MPAB_DF_T_Y: RC_50Rnd_50mm_MPAB_DF_T_R {ammo="RC_B_50mm_MPAB_DF_T_Y";};
+class RC_120Rnd_50mm_MPAB_DF_T_R: RC_50Rnd_50mm_MPAB_DF_T_R {count=120;};
+class RC_120Rnd_50mm_MPAB_DF_T_G: RC_50Rnd_50mm_MPAB_DF_T_G {count=120;};
+class RC_120Rnd_50mm_MPAB_DF_T_Y: RC_50Rnd_50mm_MPAB_DF_T_Y {count=120;};
 class RC_50Rnd_50mm_MPAB_QF_T_R: RC_50Rnd_40mm_MP_T_R
 {
 	ammo="RC_B_50mm_MPAB_QF_T_R";

@@ -206,6 +206,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
@@ -253,7 +254,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 				"RC_EF_MMG_coax",
 				"SmokeLauncher"
 			};
-			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_white.hpp"
+			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_red.hpp"
 
 			class OpticsIn
 			{
@@ -733,6 +734,7 @@ class RC_AAV9_A: RC_AAV9
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
@@ -780,7 +782,7 @@ class RC_AAV9_A: RC_AAV9
 				"RC_EF_MMG_coax",
 				"SmokeLauncher"
 			};
-			#include "\RC_ExpForces\includes_vicmags\mags_AAV_30mm_white.hpp"
+			#include "\RC_ExpForces\includes_vicmags\mags_AAV_30mm_red.hpp"
 
 			class OpticsIn
 			{

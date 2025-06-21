@@ -1,8 +1,11 @@
 magazines[]=
 {
-	"RC_EF_120Rnd_30mm_HEAB_T_Y",
-	"RC_EF_120Rnd_30mm_HEAB_T_Y",
-	"RC_EF_120Rnd_30mm_HEAB_T_Y",
+	"RC_120Rnd_30mm_MPAB_DF_T_Y",
+	"RC_120Rnd_30mm_MPAB_DF_T_Y",
+	"RC_120Rnd_30mm_MPAB_DF_T_Y",
+	//"RC_EF_120Rnd_30mm_HEAB_T_Y",
+	//"RC_EF_120Rnd_30mm_HEAB_T_Y",
+	//"RC_EF_120Rnd_30mm_HEAB_T_Y",
 	"RC_EF_80Rnd_30mm_APFSDS_T_Y",
 	"RC_EF_80Rnd_30mm_APFSDS_T_Y",
 	"RC_EF_80Rnd_30mm_APFSDS_T_Y",
