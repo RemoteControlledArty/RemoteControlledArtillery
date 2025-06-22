@@ -31,12 +31,12 @@ class RC_Crocus_Mothership: RC_Crocus_Mothership_Base
 			magazines[]=
 			{
 				"Laserbatteries",
-				"RC_6xCrocus_Deployer_Mag"
+				"RC_8xCrocus_Deployer_Mag"
 			};
 		};
 	};
 
-	displayName="6xCrocus Mothership";
+	displayName="Crocus Mothership";
 	scope=2;
 	scopeCurator=2;
 };

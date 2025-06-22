@@ -23,10 +23,10 @@ class RC_Crocus_Carrier_A: RC_Crocus_Carrier_Base
 	};
 	magazines[]=
 	{
-		"RC_6xCrocus_Deployer_UGV_Mag"
+		"RC_8xCrocus_Deployer_UGV_Mag"
 	};
 
-	displayName="6xCrocus Carrier";
+	displayName="Crocus Carrier";
 	scope=2;
 	scopeCurator=2;
 };
