@@ -312,7 +312,9 @@ RC_Artillery_UI = [] spawn {
 					//_targetPos = getpos cursorTarget;
 					_targetPos = getposASL cursorTarget;
 				} else {
-					_targetPos = markerPos (RC_Current_Target select 1);
+					_targetPos = markerPos (RC_Current_Target select 1);	//this alone worked before summer 2025, now marker z seems to be 0
+					_newTargetASL = getTerrainHeightASL _targetPos;
+					_targetPos set [2, _newTargetASL];
 				};
 
 				//Barrel End to Target Distance
