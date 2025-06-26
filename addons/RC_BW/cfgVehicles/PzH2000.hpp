@@ -26,11 +26,6 @@ class RC_PzH2000_FT_Base: RC_PzH2000_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -101,7 +96,6 @@ class RC_PzH2000_FT_Base: RC_PzH2000_Core
 						viewDistanceLimitCoef=-1;
 					};
 				};
-				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};

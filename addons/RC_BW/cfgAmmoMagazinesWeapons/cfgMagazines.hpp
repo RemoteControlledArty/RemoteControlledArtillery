@@ -44,14 +44,6 @@ class RC_100Rnd_30mm_MP_QF_T_R;
 class RC_100Rnd_30mm_MP_QF_T_G;
 class RC_100Rnd_30mm_MP_QF_T_Y;
 
-class RC_100Rnd_30mm_MPAB_DF_T_R;
-class RC_100Rnd_30mm_MPAB_DF_T_G;
-class RC_100Rnd_30mm_MPAB_DF_T_Y;
-
-class RC_100Rnd_30mm_MPAB_QF_T_R;
-class RC_100Rnd_30mm_MPAB_QF_T_G;
-class RC_100Rnd_30mm_MPAB_QF_T_Y;
-
 
 class RC_100Rnd_30mm_HE_Pen_T_R;
 class RC_100Rnd_30mm_HE_Pen_T_G;
@@ -64,14 +56,6 @@ class RC_100Rnd_30mm_HE_DF_T_Y;
 class RC_100Rnd_30mm_HE_QF_T_R;
 class RC_100Rnd_30mm_HE_QF_T_G;
 class RC_100Rnd_30mm_HE_QF_T_Y;
-
-class RC_100Rnd_30mm_HEAB_DF_T_R;
-class RC_100Rnd_30mm_HEAB_DF_T_G;
-class RC_100Rnd_30mm_HEAB_DF_T_Y;
-
-class RC_100Rnd_30mm_HEAB_QF_T_R;
-class RC_100Rnd_30mm_HEAB_QF_T_G;
-class RC_100Rnd_30mm_HEAB_QF_T_Y;
 
 
 class RC_200Rnd_338_T_R;
@@ -110,14 +94,6 @@ class RC_160Rnd_30mm_MP_QF_T_R: RC_100Rnd_30mm_MP_QF_T_R {count=160; displayName
 class RC_160Rnd_30mm_MP_QF_T_G: RC_100Rnd_30mm_MP_QF_T_G {count=160; displayNameShort="MP-QF-T";};
 class RC_160Rnd_30mm_MP_QF_T_Y: RC_100Rnd_30mm_MP_QF_T_Y {count=160; displayNameShort="MP-QF-T";};
 
-class RC_160Rnd_30mm_MPAB_DF_T_R: RC_100Rnd_30mm_MPAB_DF_T_R {count=160; displayNameShort="MPAB-DF-T";};
-class RC_160Rnd_30mm_MPAB_DF_T_G: RC_100Rnd_30mm_MPAB_DF_T_G {count=160; displayNameShort="MPAB-DF-T";};
-class RC_160Rnd_30mm_MPAB_DF_T_Y: RC_100Rnd_30mm_MPAB_DF_T_Y {count=160; displayNameShort="MPAB-DF-T";};
-
-class RC_160Rnd_30mm_MPAB_QF_T_R: RC_100Rnd_30mm_MPAB_QF_T_R {count=160; displayNameShort="MPAB-QF-T";};
-class RC_160Rnd_30mm_MPAB_QF_T_G: RC_100Rnd_30mm_MPAB_QF_T_G {count=160; displayNameShort="MPAB-QF-T";};
-class RC_160Rnd_30mm_MPAB_QF_T_Y: RC_100Rnd_30mm_MPAB_QF_T_Y {count=160; displayNameShort="MPAB-QF-T";};
-
 
 //HE
 class RC_160Rnd_30mm_HE_Pen_T_R: RC_100Rnd_30mm_HE_Pen_T_R {count=160; displayNameShort="HE-T";};
@@ -131,14 +107,6 @@ class RC_160Rnd_30mm_HE_DF_T_Y: RC_100Rnd_30mm_HE_DF_T_Y {count=160; displayName
 class RC_160Rnd_30mm_HE_QF_T_R: RC_100Rnd_30mm_HE_QF_T_R {count=160; displayNameShort="HE-QF-T";};
 class RC_160Rnd_30mm_HE_QF_T_G: RC_100Rnd_30mm_HE_QF_T_G {count=160; displayNameShort="HE-QF-T";};
 class RC_160Rnd_30mm_HE_QF_T_Y: RC_100Rnd_30mm_HE_QF_T_Y {count=160; displayNameShort="HE-QF-T";};
-
-class RC_160Rnd_30mm_HEAB_DF_T_R: RC_100Rnd_30mm_HEAB_DF_T_R {count=160; displayNameShort="HEAB-DF-T";};
-class RC_160Rnd_30mm_HEAB_DF_T_G: RC_100Rnd_30mm_HEAB_DF_T_G {count=160; displayNameShort="HEAB-DF-T";};
-class RC_160Rnd_30mm_HEAB_DF_T_Y: RC_100Rnd_30mm_HEAB_DF_T_Y {count=160; displayNameShort="HEAB-DF-T";};
-
-class RC_160Rnd_30mm_HEAB_QF_T_R: RC_100Rnd_30mm_HEAB_QF_T_R {count=160; displayNameShort="HEAB-QF-T";};
-class RC_160Rnd_30mm_HEAB_QF_T_G: RC_100Rnd_30mm_HEAB_QF_T_G {count=160; displayNameShort="HEAB-QF-T";};
-class RC_160Rnd_30mm_HEAB_QF_T_Y: RC_100Rnd_30mm_HEAB_QF_T_Y {count=160; displayNameShort="HEAB-QF-T";};
 
 
 //MG

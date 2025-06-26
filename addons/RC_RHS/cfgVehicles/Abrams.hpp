@@ -261,11 +261,6 @@ class RC_M1A2_SEPV2_D_B: RC_M1A2_SEPV2_D
 			init="_this call RHS_fnc_M1_init";
 			postInit="_this call rhs_fnc_reapplyTextures";
 		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-		};
 		class RC_Artillery
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"

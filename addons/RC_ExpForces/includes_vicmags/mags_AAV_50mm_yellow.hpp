@@ -1,11 +1,13 @@
 magazines[]=
 {
-	"RC_120Rnd_50mm_MPAB_DF_T_Y",
-	"RC_120Rnd_50mm_MPAB_DF_T_Y",
-	"RC_120Rnd_50mm_MPAB_DF_T_Y",
-	//"RC_EF_120Rnd_50mm_HEAB_T_Y",
-	//"RC_EF_120Rnd_50mm_HEAB_T_Y",
-	//"RC_EF_120Rnd_50mm_HEAB_T_Y",
+	"RC_120Rnd_50mm_MP_Pen_T_G",
+	"RC_120Rnd_50mm_MP_QF_T_G",
+	"RC_120Rnd_50mm_MP_DF_T_G",
+	/*
+	"RC_120Rnd_50mm_HE_Pen_T_G",
+	"RC_120Rnd_50mm_HE_QF_T_G",
+	"RC_120Rnd_50mm_HE_DF_T_G",
+	*/
 	"RC_EF_50Rnd_50mm_APFSDS_T_Y",
 	"RC_EF_50Rnd_50mm_APFSDS_T_Y",
 	"RC_EF_50Rnd_50mm_APFSDS_T_Y",

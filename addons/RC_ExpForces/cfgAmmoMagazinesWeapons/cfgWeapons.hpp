@@ -12,7 +12,7 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	cursorAim="mg";
 
 	class HE: HE
@@ -24,16 +24,33 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 
 		magazines[]=
 		{
-			"RC_120Rnd_30mm_MPAB_DF_T_R",
-			"RC_120Rnd_30mm_MPAB_DF_T_G",
-			"RC_120Rnd_30mm_MPAB_DF_T_Y",
-			"RC_EF_120Rnd_30mm_HEAB_T_W",
-			"RC_EF_120Rnd_30mm_HEAB_T_R",
-			"RC_EF_120Rnd_30mm_HEAB_T_G",
-			"RC_EF_120Rnd_30mm_HEAB_T_Y"
+			"RC_120Rnd_30mm_MP_Pen_T_R",
+			"RC_120Rnd_30mm_MP_Pen_T_G",
+			"RC_120Rnd_30mm_MP_Pen_T_Y",
+			
+			"RC_120Rnd_30mm_MP_QF_T_R",
+			"RC_120Rnd_30mm_MP_QF_T_G",
+			"RC_120Rnd_30mm_MP_QF_T_Y",
+
+			"RC_120Rnd_30mm_MP_DF_T_R",
+			"RC_120Rnd_30mm_MP_DF_T_G",
+			"RC_120Rnd_30mm_MP_DF_T_Y",
+
+
+			"RC_120Rnd_30mm_HE_Pen_T_R",
+			"RC_120Rnd_30mm_HE_Pen_T_G",
+			"RC_120Rnd_30mm_HE_Pen_T_Y",
+			
+			"RC_120Rnd_30mm_HE_QF_T_R",
+			"RC_120Rnd_30mm_HE_QF_T_G",
+			"RC_120Rnd_30mm_HE_QF_T_Y",
+
+			"RC_120Rnd_30mm_HE_DF_T_R",
+			"RC_120Rnd_30mm_HE_DF_T_G",
+			"RC_120Rnd_30mm_HE_DF_T_Y"
 		};
 
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		cursorAim="mg";
 	};
 	class AP: AP
@@ -51,7 +68,7 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 			"RC_EF_80Rnd_30mm_APFSDS_T_Y"
 		};
 
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		cursorAim="mg";
 	};
 };
@@ -70,7 +87,7 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 	//canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
-	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	cursorAim="mg";
 
 	class HE: HE
@@ -82,16 +99,33 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 
 		magazines[]=
 		{
-			"RC_120Rnd_50mm_MPAB_DF_T_R",
-			"RC_120Rnd_50mm_MPAB_DF_T_G",
-			"RC_120Rnd_50mm_MPAB_DF_T_Y",
-			"RC_EF_120Rnd_50mm_HEAB_T_W",
-			"RC_EF_120Rnd_50mm_HEAB_T_R",
-			"RC_EF_120Rnd_50mm_HEAB_T_G",
-			"RC_EF_120Rnd_50mm_HEAB_T_Y"
+			"RC_120Rnd_50mm_MP_Pen_T_R",
+			"RC_120Rnd_50mm_MP_Pen_T_G",
+			"RC_120Rnd_50mm_MP_Pen_T_Y",
+			
+			"RC_120Rnd_50mm_MP_QF_T_R",
+			"RC_120Rnd_50mm_MP_QF_T_G",
+			"RC_120Rnd_50mm_MP_QF_T_Y",
+
+			"RC_120Rnd_50mm_MP_DF_T_R",
+			"RC_120Rnd_50mm_MP_DF_T_G",
+			"RC_120Rnd_50mm_MP_DF_T_Y",
+
+
+			"RC_120Rnd_50mm_HE_Pen_T_R",
+			"RC_120Rnd_50mm_HE_Pen_T_G",
+			"RC_120Rnd_50mm_HE_Pen_T_Y",
+			
+			"RC_120Rnd_50mm_HE_QF_T_R",
+			"RC_120Rnd_50mm_HE_QF_T_G",
+			"RC_120Rnd_50mm_HE_QF_T_Y",
+
+			"RC_120Rnd_50mm_HE_DF_T_R",
+			"RC_120Rnd_50mm_HE_DF_T_G",
+			"RC_120Rnd_50mm_HE_DF_T_Y"
 		};
 
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		cursorAim="mg";
 	};
 	class AP: AP
@@ -109,7 +143,7 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 			"RC_EF_50Rnd_50mm_APFSDS_T_Y"
 		};
 
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		cursorAim="mg";
 	};
 };
@@ -127,7 +161,7 @@ class RC_EF_MMG_coax: RC_EF_MMG_coax_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	maxZeroing=3000;
-	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	
 	magazines[]=
 	{

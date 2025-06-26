@@ -170,23 +170,6 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 			"RC_160Rnd_30mm_HE_QF_T_G",
 			"RC_160Rnd_30mm_HE_QF_T_Y",
 
-			"RC_160Rnd_30mm_MPAB_DF_T_R",
-			"RC_160Rnd_30mm_MPAB_DF_T_G",
-			"RC_160Rnd_30mm_MPAB_DF_T_Y",
-
-			"RC_160Rnd_30mm_HEAB_DF_T_R",
-			"RC_160Rnd_30mm_HEAB_DF_T_G",
-			"RC_160Rnd_30mm_HEAB_DF_T_Y",
-
-			"RC_160Rnd_30mm_MPAB_QF_T_R",
-			"RC_160Rnd_30mm_MPAB_QF_T_G",
-			"RC_160Rnd_30mm_MPAB_QF_T_Y",
-
-			"RC_160Rnd_30mm_HEAB_QF_T_R",
-			"RC_160Rnd_30mm_HEAB_QF_T_G",
-			"RC_160Rnd_30mm_HEAB_QF_T_Y",
-			"RC_160Rnd_30mm_cUAS",
-
 			"RC_160Rnd_30mm_MP_T_R",
 			"RC_160Rnd_30mm_MP_T_G",
 			"RC_160Rnd_30mm_MP_T_Y",
@@ -261,23 +244,6 @@ class RC_autocannon_30mm_APC_Wheeled_04: RC_autocannon_30mm_APC_Wheeled_04_Base
 			"RC_160Rnd_30mm_HE_QF_T_R",
 			"RC_160Rnd_30mm_HE_QF_T_G",
 			"RC_160Rnd_30mm_HE_QF_T_Y",
-
-			"RC_160Rnd_30mm_MPAB_DF_T_R",
-			"RC_160Rnd_30mm_MPAB_DF_T_G",
-			"RC_160Rnd_30mm_MPAB_DF_T_Y",
-
-			"RC_160Rnd_30mm_HEAB_DF_T_R",
-			"RC_160Rnd_30mm_HEAB_DF_T_G",
-			"RC_160Rnd_30mm_HEAB_DF_T_Y",
-
-			"RC_160Rnd_30mm_MPAB_QF_T_R",
-			"RC_160Rnd_30mm_MPAB_QF_T_G",
-			"RC_160Rnd_30mm_MPAB_QF_T_Y",
-
-			"RC_160Rnd_30mm_HEAB_QF_T_R",
-			"RC_160Rnd_30mm_HEAB_QF_T_G",
-			"RC_160Rnd_30mm_HEAB_QF_T_Y",
-			"RC_160Rnd_30mm_cUAS",
 
 			"RC_160Rnd_30mm_MP_T_R",
 			"RC_160Rnd_30mm_MP_T_G",

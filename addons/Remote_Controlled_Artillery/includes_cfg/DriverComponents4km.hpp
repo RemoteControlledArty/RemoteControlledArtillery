@@ -41,7 +41,6 @@ class Components: Components
 				};
 			};
 
-			#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 		};
 	};

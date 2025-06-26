@@ -19,7 +19,6 @@ class RC_B_30mm_ABM_Helper: BWA3_B_30mm_ABM_Helper
 	simulation="shotRocket";
 	timeToLive=0;
 };
-//class RC_B_30mm_MPAB_DF_T_R;	//would mean no tracer
 class RC_B_30mm_MP_Pen_T_R;
 class RC_B_30mm_ABM_T_R: RC_B_30mm_MP_Pen_T_R
 {

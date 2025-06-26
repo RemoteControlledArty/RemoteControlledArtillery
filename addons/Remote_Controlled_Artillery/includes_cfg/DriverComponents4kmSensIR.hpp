@@ -63,7 +63,6 @@ class Components: Components
 				angleRangeVertical=0.5;
 				animDirection="mainGun";
 			};
-			#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 		};
 	};

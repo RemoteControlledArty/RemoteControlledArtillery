@@ -103,7 +103,30 @@ class RC_Static_AA_A: RC_Static_AA_A_base
 					animDirection="mainGun";
 					//aimDown=-0.5;
 				};
-				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=600;
+
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=0;
+						maxRange=0;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=51;
+					angleRangeVertical=37;
+					animDirection="mainGun";
+				};
 			};
 		};
 	};

@@ -74,7 +74,7 @@ class RC_M109_A: RC_M109_base
 	uavCameraGunnerDir="gunnerview";
 
 	class Reflectors {};	//removed, otherwise they are automatically on at night
-aggregateReflectors[]={{""}};
+	aggregateReflectors[]={{""}};
 
 	class Components: Components
 	{

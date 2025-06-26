@@ -40,7 +40,7 @@ class Components: Components
 					viewDistanceLimitCoef=-1;
 				};
 			};
-			class VisualSensorComponent: SensorTemplateVisual
+			class IRSensorComponent: SensorTemplateIR
 			{
 				typeRecognitionDistance=600;
 
@@ -59,7 +59,6 @@ class Components: Components
 					viewDistanceLimitCoef=1;
 				};
 				maxTrackableSpeed=600;
-				nightRangeCoef=0.80000001;
 				angleRangeHorizontal=360;
 				angleRangeVertical=360;
 				animDirection="";

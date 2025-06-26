@@ -66,14 +66,6 @@ class RC_MK30: RC_MK30_Base
 			"RC_160Rnd_30mm_MP_QF_T_G",
 			"RC_160Rnd_30mm_MP_QF_T_Y",
 
-			"RC_160Rnd_30mm_MPAB_DF_T_R",
-			"RC_160Rnd_30mm_MPAB_DF_T_G",
-			"RC_160Rnd_30mm_MPAB_DF_T_Y",
-
-			"RC_160Rnd_30mm_MPAB_QF_T_R",
-			"RC_160Rnd_30mm_MPAB_QF_T_G",
-			"RC_160Rnd_30mm_MPAB_QF_T_Y",
-
 			"RC_160Rnd_30mm_HE_Pen_T_R",
 			"RC_160Rnd_30mm_HE_Pen_T_G",
 			"RC_160Rnd_30mm_HE_Pen_T_Y",
@@ -84,15 +76,7 @@ class RC_MK30: RC_MK30_Base
 
 			"RC_160Rnd_30mm_HE_QF_T_R",
 			"RC_160Rnd_30mm_HE_QF_T_G",
-			"RC_160Rnd_30mm_HE_QF_T_Y",
-
-			"RC_160Rnd_30mm_HEAB_DF_T_R",
-			"RC_160Rnd_30mm_HEAB_DF_T_G",
-			"RC_160Rnd_30mm_HEAB_DF_T_Y",
-
-			"RC_160Rnd_30mm_HEAB_QF_T_R",
-			"RC_160Rnd_30mm_HEAB_QF_T_G",
-			"RC_160Rnd_30mm_HEAB_QF_T_Y"
+			"RC_160Rnd_30mm_HE_QF_T_Y"
 		};
 
 		class player: player {class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};

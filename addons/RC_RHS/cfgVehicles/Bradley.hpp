@@ -151,14 +151,13 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 			magazines[]=
 			{
 				"RC_110Rnd_25mm_HEI_Pen_T_R",
+				"RC_110Rnd_25mm_HEI_Pen_T_R",
 				"RC_110Rnd_25mm_HEI_DF_T_R",
 				"RC_110Rnd_25mm_HEI_QF_T_R",
-				"RC_110Rnd_25mm_HEAB_DF_T_R",
 				/*
 				"RC_110Rnd_25mm_MP_Pen_T_R",
 				"RC_110Rnd_25mm_MP_DF_T_R",
 				"RC_110Rnd_25mm_MP_QF_T_R",
-				"RC_110Rnd_25mm_MPAB_DF_T_R",
 
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
@@ -286,11 +285,6 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 			getIn="_this call rhs_fnc_m2_doors";
 			getOut="_this call rhs_fnc_m2_doors";
 		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-		};
 		class RC_Artillery
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
@@ -365,14 +359,13 @@ class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 			magazines[]=
 			{
 				"RC_110Rnd_25mm_HEI_Pen_T_R",
+				"RC_110Rnd_25mm_HEI_Pen_T_R",
 				"RC_110Rnd_25mm_HEI_DF_T_R",
 				"RC_110Rnd_25mm_HEI_QF_T_R",
-				"RC_110Rnd_25mm_HEAB_DF_T_R",
 				/*
 				"RC_110Rnd_25mm_MP_Pen_T_R",
 				"RC_110Rnd_25mm_MP_DF_T_R",
 				"RC_110Rnd_25mm_MP_QF_T_R",
-				"RC_110Rnd_25mm_MPAB_DF_T_R",
 
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
 				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",

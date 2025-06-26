@@ -17,12 +17,6 @@ class RC_MortarMATV: RC_MortarMATV_base
 	class EventHandlers: EventHandlers
 	{
 		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
-
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-		};
 	};
 
 	faction="RemoteControlled_B";
@@ -156,7 +150,6 @@ class RC_MortarMATV: RC_MortarMATV_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight

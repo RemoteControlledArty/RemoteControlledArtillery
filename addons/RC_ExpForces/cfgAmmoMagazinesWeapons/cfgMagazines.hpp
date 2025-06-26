@@ -1,28 +1,93 @@
-class EF_160Rnd_30mm_HE_shells_Tracer_Red;
-class RC_EF_120Rnd_30mm_HEAB_T_W: EF_160Rnd_30mm_HE_shells_Tracer_Red
-{
-	ammo="RC_EF_B_30mm_HEAB_T_W";
-	tracersEvery=1;
-	count=120;
-	displayName="30mm HEAB-T";
-	displayNameShort="30mm HEAB-T";
-};
-class RC_EF_120Rnd_30mm_HEAB_T_R: RC_EF_120Rnd_30mm_HEAB_T_W {ammo="RC_EF_B_30mm_HEAB_T_R";};
-class RC_EF_120Rnd_30mm_HEAB_T_G: RC_EF_120Rnd_30mm_HEAB_T_W {ammo="RC_EF_B_30mm_HEAB_T_G";};
-class RC_EF_120Rnd_30mm_HEAB_T_Y: RC_EF_120Rnd_30mm_HEAB_T_W {ammo="RC_EF_B_30mm_HEAB_T_Y";};
+//30mm multi purpose (HE with shaped charge penetrator) + pen/delayed/quick fuze
+class RC_100Rnd_30mm_MP_Pen_T_R;
+class RC_100Rnd_30mm_MP_Pen_T_G;
+class RC_100Rnd_30mm_MP_Pen_T_Y;
+class RC_120Rnd_30mm_MP_Pen_T_R: RC_100Rnd_30mm_MP_Pen_T_R {count=120;};
+class RC_120Rnd_30mm_MP_Pen_T_G: RC_100Rnd_30mm_MP_Pen_T_G {count=120;};
+class RC_120Rnd_30mm_MP_Pen_T_Y: RC_100Rnd_30mm_MP_Pen_T_Y {count=120;};
+
+class RC_100Rnd_30mm_MP_DF_T_R;
+class RC_100Rnd_30mm_MP_DF_T_G;
+class RC_100Rnd_30mm_MP_DF_T_Y;
+class RC_120Rnd_30mm_MP_DF_T_R: RC_100Rnd_30mm_MP_DF_T_R {count=120;};
+class RC_120Rnd_30mm_MP_DF_T_G: RC_100Rnd_30mm_MP_DF_T_G {count=120;};
+class RC_120Rnd_30mm_MP_DF_T_Y: RC_100Rnd_30mm_MP_DF_T_Y {count=120;};
+
+class RC_100Rnd_30mm_MP_QF_T_R;
+class RC_100Rnd_30mm_MP_QF_T_G;
+class RC_100Rnd_30mm_MP_QF_T_Y;
+class RC_120Rnd_30mm_MP_QF_T_R: RC_100Rnd_30mm_MP_QF_T_R {count=120;};
+class RC_120Rnd_30mm_MP_QF_T_G: RC_100Rnd_30mm_MP_QF_T_G {count=120;};
+class RC_120Rnd_30mm_MP_QF_T_Y: RC_100Rnd_30mm_MP_QF_T_Y {count=120;};
 
 
-class EF_120Rnd_50mm_HE_shells_Tracer_Red;
-class RC_EF_120Rnd_50mm_HEAB_T_W: EF_120Rnd_50mm_HE_shells_Tracer_Red
-{
-	ammo="RC_EF_B_50mm_HEAB_T_W";
-	tracersEvery=1;
-	displayName="50mm HEAB-T";
-	displayNameShort="50mm HEAB-T";
-};
-class RC_EF_120Rnd_50mm_HEAB_T_R: RC_EF_120Rnd_50mm_HEAB_T_W {ammo="RC_EF_B_50mm_HEAB_T_R";};
-class RC_EF_120Rnd_50mm_HEAB_T_G: RC_EF_120Rnd_50mm_HEAB_T_W {ammo="RC_EF_B_50mm_HEAB_T_G";};
-class RC_EF_120Rnd_50mm_HEAB_T_Y: RC_EF_120Rnd_50mm_HEAB_T_W {ammo="RC_EF_B_50mm_HEAB_T_Y";};
+//30mm HE + pen/delayed/quick fuze
+class RC_100Rnd_30mm_HE_Pen_T_R;
+class RC_100Rnd_30mm_HE_Pen_T_G;
+class RC_100Rnd_30mm_HE_Pen_T_Y;
+class RC_120Rnd_30mm_HE_Pen_T_R: RC_100Rnd_30mm_HE_Pen_T_R {count=120;};
+class RC_120Rnd_30mm_HE_Pen_T_G: RC_100Rnd_30mm_HE_Pen_T_G {count=120;};
+class RC_120Rnd_30mm_HE_Pen_T_Y: RC_100Rnd_30mm_HE_Pen_T_Y {count=120;};
+
+class RC_100Rnd_30mm_HE_DF_T_R;
+class RC_100Rnd_30mm_HE_DF_T_G;
+class RC_100Rnd_30mm_HE_DF_T_Y;
+class RC_120Rnd_30mm_HE_DF_T_R: RC_100Rnd_30mm_HE_DF_T_R {count=120;};
+class RC_120Rnd_30mm_HE_DF_T_G: RC_100Rnd_30mm_HE_DF_T_G {count=120;};
+class RC_120Rnd_30mm_HE_DF_T_Y: RC_100Rnd_30mm_HE_DF_T_Y {count=120;};
+
+class RC_100Rnd_30mm_HE_QF_T_R;
+class RC_100Rnd_30mm_HE_QF_T_G;
+class RC_100Rnd_30mm_HE_QF_T_Y;
+class RC_120Rnd_30mm_HE_QF_T_R: RC_100Rnd_30mm_HE_QF_T_R {count=120;};
+class RC_120Rnd_30mm_HE_QF_T_G: RC_100Rnd_30mm_HE_QF_T_G {count=120;};
+class RC_120Rnd_30mm_HE_QF_T_Y: RC_100Rnd_30mm_HE_QF_T_Y {count=120;};
+
+
+//50mm multi purpose (HE with shaped charge penetrator) + pen/delayed/quick fuze
+class RC_50Rnd_50mm_MP_Pen_T_R;
+class RC_50Rnd_50mm_MP_Pen_T_G;
+class RC_50Rnd_50mm_MP_Pen_T_Y;
+class RC_120Rnd_50mm_MP_Pen_T_R: RC_50Rnd_50mm_MP_Pen_T_R {count=120;};
+class RC_120Rnd_50mm_MP_Pen_T_G: RC_50Rnd_50mm_MP_Pen_T_G {count=120;};
+class RC_120Rnd_50mm_MP_Pen_T_Y: RC_50Rnd_50mm_MP_Pen_T_Y {count=120;};
+
+class RC_50Rnd_50mm_MP_DF_T_R;
+class RC_50Rnd_50mm_MP_DF_T_G;
+class RC_50Rnd_50mm_MP_DF_T_Y;
+class RC_120Rnd_50mm_MP_DF_T_R: RC_50Rnd_50mm_MP_DF_T_R {count=120;};
+class RC_120Rnd_50mm_MP_DF_T_G: RC_50Rnd_50mm_MP_DF_T_G {count=120;};
+class RC_120Rnd_50mm_MP_DF_T_Y: RC_50Rnd_50mm_MP_DF_T_Y {count=120;};
+
+class RC_50Rnd_50mm_MP_QF_T_R;
+class RC_50Rnd_50mm_MP_QF_T_G;
+class RC_50Rnd_50mm_MP_QF_T_Y;
+class RC_120Rnd_50mm_MP_QF_T_R: RC_50Rnd_50mm_MP_QF_T_R {count=120;};
+class RC_120Rnd_50mm_MP_QF_T_G: RC_50Rnd_50mm_MP_QF_T_G {count=120;};
+class RC_120Rnd_50mm_MP_QF_T_Y: RC_50Rnd_50mm_MP_QF_T_Y {count=120;};
+
+
+//50mm HE + pen/delayed/quick fuze
+class RC_50Rnd_50mm_HE_Pen_T_R;
+class RC_50Rnd_50mm_HE_Pen_T_G;
+class RC_50Rnd_50mm_HE_Pen_T_Y;
+class RC_120Rnd_50mm_HE_Pen_T_R: RC_50Rnd_50mm_HE_Pen_T_R {count=120;};
+class RC_120Rnd_50mm_HE_Pen_T_G: RC_50Rnd_50mm_HE_Pen_T_G {count=120;};
+class RC_120Rnd_50mm_HE_Pen_T_Y: RC_50Rnd_50mm_HE_Pen_T_Y {count=120;};
+
+class RC_50Rnd_50mm_HE_DF_T_R;
+class RC_50Rnd_50mm_HE_DF_T_G;
+class RC_50Rnd_50mm_HE_DF_T_Y;
+class RC_120Rnd_50mm_HE_DF_T_R: RC_50Rnd_50mm_HE_DF_T_R {count=120;};
+class RC_120Rnd_50mm_HE_DF_T_G: RC_50Rnd_50mm_HE_DF_T_G {count=120;};
+class RC_120Rnd_50mm_HE_DF_T_Y: RC_50Rnd_50mm_HE_DF_T_Y {count=120;};
+
+class RC_50Rnd_50mm_HE_QF_T_R;
+class RC_50Rnd_50mm_HE_QF_T_G;
+class RC_50Rnd_50mm_HE_QF_T_Y;
+class RC_120Rnd_50mm_HE_QF_T_R: RC_50Rnd_50mm_HE_QF_T_R {count=120;};
+class RC_120Rnd_50mm_HE_QF_T_G: RC_50Rnd_50mm_HE_QF_T_G {count=120;};
+class RC_120Rnd_50mm_HE_QF_T_Y: RC_50Rnd_50mm_HE_QF_T_Y {count=120;};
 
 
 class EF_55Rnd_30mm_APFSDS_shells_Tracer_Red;

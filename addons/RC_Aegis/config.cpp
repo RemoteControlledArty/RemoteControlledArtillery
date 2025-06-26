@@ -35,14 +35,6 @@ class CfgPatches
 			RC_BTR80A_A_I,
 			RC_BTR80A_WD_I,
 
-			RC_CBRad2_AI_WD,
-			RC_CBRad2_AI_WD_O,
-			RC_CBRad2_AI_WD_I,
-
-			RC_CBRad2_Player_WD,
-			RC_CBRad2_Player_WD_O,
-			RC_CBRad2_Player_WD_I,
-
 			RC_ICV_2_WD2,
 			RC_ICV_2_WD2_O,
 			RC_ICV_2_WD2_I,
@@ -84,10 +76,7 @@ class CfgPatches
 			RC_MBT_4_A_O,
 			RC_MBT_4_WD_O,
 			RC_MBT_4_A_I,
-			RC_MBT_4_WD_I,
-
-			RC_SignalBoosterLRR_a,
-			RC_SignalBoosterLRR_g
+			RC_MBT_4_WD_I
 		};
 
 		/*
@@ -150,10 +139,8 @@ class CfgVehicles
 	#include "\RC_Aegis\cfgVehicles\BTR_80A.hpp"
 	#include "\RC_Aegis\cfgVehicles\BTR_100.hpp"
 	#include "\RC_Aegis\cfgVehicles\BM_2T_Bumerang.hpp"
-	#include "\RC_Aegis\cfgVehicles\CBRad_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\Otokar_Arma_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\Patria_AMV_ATGM_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\T_100.hpp"
 	#include "\RC_Aegis\cfgVehicles\T_14.hpp"
-	#include "\RC_Aegis\cfgVehicles\SignalBoosterBackpack.hpp"
 };

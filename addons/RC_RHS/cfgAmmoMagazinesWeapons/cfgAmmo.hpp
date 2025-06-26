@@ -142,29 +142,6 @@ class RC_B_25mm_MP_QF_T_G: RC_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullet
 class RC_B_25mm_MP_QF_T_Y: RC_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-//25mm MPAB DF/QF
-class RC_B_25mm_MPAB_DF_T_R: RHS_ammo_M792_HEI
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults2.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HitMP_25mm.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
-	submunitionAmmo="RC_B_25mm_MP_DF_Sub";
-};
-class RC_B_25mm_MPAB_DF_T_G: RC_B_25mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_25mm_MPAB_DF_T_Y: RC_B_25mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_B_25mm_MPAB_QF_T_R: RHS_ammo_M792_HEI
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults2.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HitMP_25mm.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_QF.hpp"
-	submunitionAmmo="RC_ammo_Penetrator_MP_25mm";
-};
-class RC_B_25mm_MPAB_QF_T_G: RC_B_25mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_25mm_MPAB_QF_T_Y: RC_B_25mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
 //25mm HE Pen/DF/QF
 class RC_B_25mm_HEI_Pen_T_R: RHS_ammo_M792_HEI
 {
@@ -196,26 +173,6 @@ class RC_B_25mm_HEI_QF_T_R: RHS_ammo_M792_HEI
 };
 class RC_B_25mm_HEI_QF_T_G: RC_B_25mm_HEI_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_25mm_HEI_QF_T_Y: RC_B_25mm_HEI_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-//25mm HEAB DF/QF
-class RC_B_25mm_HEAB_DF_T_R: RHS_ammo_M792_HEI
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults2.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
-	submunitionAmmo="RC_B_25mm_HEI_DF_Sub";
-};
-class RC_B_25mm_HEAB_DF_T_G: RC_B_25mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_25mm_HEAB_DF_T_Y: RC_B_25mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_B_25mm_HEAB_QF_T_R: RHS_ammo_M792_HEI
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults2.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_QF.hpp"
-};
-class RC_B_25mm_HEAB_QF_T_G: RC_B_25mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_25mm_HEAB_QF_T_Y: RC_B_25mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 class RHS_ammo_M919_APFSDS;

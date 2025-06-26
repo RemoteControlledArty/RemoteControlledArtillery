@@ -499,8 +499,7 @@ class RC_HMG_127x99: RC_MG_Base
 		"RC_100Rnd_127x99_SLAP_T_Y",
 		"RC_100Rnd_127x99_T_R",
 		"RC_100Rnd_127x99_T_G",
-		"RC_100Rnd_127x99_T_Y",
-		"RC_100Rnd_127x99_cUAS"
+		"RC_100Rnd_127x99_T_Y"
 	};
 	class manual: manual
 	{
@@ -531,8 +530,7 @@ class RC_HMG_127x99_FSV: RC_MG_FSV_Base
 		"RC_200Rnd_127x99_T_Y",
 		"RC_200Rnd_127x99_SLAP_T_R",
 		"RC_200Rnd_127x99_SLAP_T_G",
-		"RC_200Rnd_127x99_SLAP_T_Y",
-		"RC_200Rnd_127x99_cUAS"
+		"RC_200Rnd_127x99_SLAP_T_Y"
 	};
 	class manual: manual
 	{
@@ -601,8 +599,7 @@ class RC_HMG_127x99_MBT: RC_MG_MBT_Base
 		"RC_200Rnd_127x99_T_Y",
 		"RC_200Rnd_127x99_SLAP_T_R",
 		"RC_200Rnd_127x99_SLAP_T_G",
-		"RC_200Rnd_127x99_SLAP_T_Y",
-		"RC_200Rnd_127x99_cUAS"
+		"RC_200Rnd_127x99_SLAP_T_Y"
 	};
 	class manual: manual
 	{
@@ -779,8 +776,7 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 		"RC_200Rnd_127x99_SLAP_T_Y",
 		"RC_100Rnd_127x99_SLAP_T_R",
 		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_100Rnd_127x99_cUAS"
+		"RC_100Rnd_127x99_SLAP_T_Y"
 	};
 };
 class RC_HMG_127_APC2: RC_HMG_127_APC
@@ -795,8 +791,7 @@ class RC_HMG_127_APC2: RC_HMG_127_APC
 		"RC_100Rnd_127x99_SLAP_T_Y",
 		"RC_200Rnd_127x99_T_R",
 		"RC_200Rnd_127x99_T_G",
-		"RC_200Rnd_127x99_T_Y",
-		"RC_200Rnd_127x99_cUAS"
+		"RC_200Rnd_127x99_T_Y"
 	};
 };
 class RC_MMG_338_APC: RC_HMG_127_APC
@@ -863,8 +858,7 @@ class RC_HMG_127_NSVT: HMG_NSVT_Base
 		"RC_150Rnd_127x99_T_Y",
 		"RC_150Rnd_127x99_SLAP_T_R",
 		"RC_150Rnd_127x99_SLAP_T_G",
-		"RC_150Rnd_127x99_SLAP_T_Y",
-		"RC_150Rnd_127x99_cUAS"
+		"RC_150Rnd_127x99_SLAP_T_Y"
 	};
 };
 
@@ -1071,478 +1065,6 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 };
 
 
-class autocannon_Base_F;
-class RC_autocannon_Base_F: autocannon_Base_F
-{
-	class player;
-};
-class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
-{
-	author="Ascent";
-	displayName="20mm C-UAS";
-	magazineReloadTime=15;
-	ballisticsComputer="4";	//"1 + 2 + 16"
-	//maxZeroing=4000;
-
-	muzzles[]=
-	{
-		"HE",
-		"AP"
-	};
-	class HE: autocannon_Base_F
-	{
-		displayName="20mm C-UAS";
-		canLock=2;
-		FCSZeroingDelay=0.5;
-		maxZeroing=4000;
-		FCSMaxLeadSpeed=30.555599;
-		reloadTime=0.3;
-		magazineReloadTime=15;
-		ballisticsComputer="4";	//"1 + 2 + 16"
-
-		/*
-		textureType="burst";
-		recoil="recoil_auto_primary_3outof10";
-		recoilProne="recoil_auto_primary_prone_3outof10";
-		burst=3;
-		burst=2;
-		*/
-		magazines[]=
-		{
-			"RC_60Rnd_20mm_HEAB_cUAS_T_R",
-			"RC_60Rnd_20mm_HEAB_cUAS_T_G",
-			"RC_60Rnd_20mm_HEAB_cUAS_T_Y",
-			"RC_60Rnd_20mm_cUAS"
-		};
-		modes[]=
-		{
-			"player",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
-		class player: player
-		{
-			dispersion=0.001;
-			reloadTime=0.3;
-		};
-		class close: player
-		{
-			aiBurstTerminable=1;
-			showToPlayer=0;
-			burst=3;
-			burstRangeMax=3;
-			aiRateOfFire=1;
-			aiRateOfFireDispersion=2;
-			aiRateOfFireDistance=200;
-			minRange=0;
-			minRangeProbab=0.1;
-			midRange=400;
-			midRangeProbab=0.69999999;
-			maxRange=800;
-			maxRangeProbab=0.80000001;
-		};
-		class short: close
-		{
-			aiBurstTerminable=1;
-			showToPlayer=0;
-			burst=3;
-			burstRangeMax=3;
-			aiRateOfFire=2;
-			aiRateOfFireDispersion=2;
-			aiRateOfFireDistance=600;
-			minRange=600;
-			minRangeProbab=0.75;
-			midRange=800;
-			midRangeProbab=0.80000001;
-			maxRange=1200;
-			maxRangeProbab=0.80000001;
-		};
-		class medium: close
-		{
-			aiBurstTerminable=1;
-			showToPlayer=0;
-			burst=3;
-			burstRangeMax=3;
-			aiRateOfFire=2;
-			aiRateOfFireDispersion=3;
-			aiRateOfFireDistance=1000;
-			minRange=1000;
-			minRangeProbab=0.80000001;
-			midRange=1500;
-			midRangeProbab=0.80000001;
-			maxRange=2000;
-			maxRangeProbab=0.69999999;
-		};
-		class far: close
-		{
-			aiBurstTerminable=1;
-			showToPlayer=0;
-			burst=3;
-			burstRangeMax=3;
-			aiRateOfFire=2;
-			aiRateOfFireDispersion=4;
-			aiRateOfFireDistance=1800;
-			minRange=1800;
-			minRangeProbab=0.74000001;
-			midRange=2400;
-			midRangeProbab=0.64999998;
-			maxRange=3000;
-			maxRangeProbab=0.050000001;
-		};
-	};
-
-	class AP: autocannon_Base_F
-	{
-		canLock=2;
-		FCSZeroingDelay=0.5;
-		FCSMaxLeadSpeed=30.555599;
-
-		reloadTime=0.2;
-		displayName="20mm AP";
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
-		maxZeroing=4000;
-		magazineReloadTime=15;
-		magazines[]=
-		{
-			"RC_60Rnd_20mm_AP_T_R",
-			"RC_60Rnd_20mm_AP_T_G",
-			"RC_60Rnd_20mm_AP_T_Y",
-			"RC_60Rnd_20mm_APFSDS_T_R",
-			"RC_60Rnd_20mm_APFSDS_T_G",
-			"RC_60Rnd_20mm_APFSDS_T_Y"
-		};
-		class player: player
-		{
-			dispersion=0.001;
-			reloadTime=0.2;
-		};
-		class close: player
-		{
-			aiBurstTerminable=1;
-			showToPlayer=0;
-			burst=3;
-			burstRangeMax=6;
-			aiRateOfFire=1;
-			aiRateOfFireDispersion=2;
-			aiRateOfFireDistance=200;
-			minRange=0;
-			minRangeProbab=0.1;
-			midRange=400;
-			midRangeProbab=0.69999999;
-			maxRange=800;
-			maxRangeProbab=0.80000001;
-		};
-		class short: close
-		{
-			aiBurstTerminable=1;
-			showToPlayer=0;
-			burst=1;
-			burstRangeMax=5;
-			aiRateOfFire=2;
-			aiRateOfFireDispersion=2;
-			aiRateOfFireDistance=600;
-			minRange=600;
-			minRangeProbab=0.75;
-			midRange=800;
-			midRangeProbab=0.80000001;
-			maxRange=1200;
-			maxRangeProbab=0.80000001;
-		};
-		class medium: close
-		{
-			aiBurstTerminable=1;
-			showToPlayer=0;
-			burst=1;
-			burstRangeMax=3;
-			aiRateOfFire=2;
-			aiRateOfFireDispersion=3;
-			aiRateOfFireDistance=1000;
-			minRange=1000;
-			minRangeProbab=0.80000001;
-			midRange=1500;
-			midRangeProbab=0.80000001;
-			maxRange=2000;
-			maxRangeProbab=0.69999999;
-		};
-		class far: close
-		{
-			aiBurstTerminable=1;
-			showToPlayer=0;
-			burst=1;
-			burstRangeMax=1;
-			aiRateOfFire=2;
-			aiRateOfFireDispersion=4;
-			aiRateOfFireDistance=1800;
-			minRange=1800;
-			minRangeProbab=0.74000001;
-			midRange=2400;
-			midRangeProbab=0.64999998;
-			maxRange=3000;
-			maxRangeProbab=0.050000001;
-		};
-	};
-};
-
-
-class RC_GMG_20mm_cUAS: RC_autocannon_Base_F
-{
-	displayName="20mm C-UAS";
-	reloadTime=0.3;
-	autoReload=1;
-	canLock=2;
-	//cursorAim="gl";
-	autoFire=0;	//?
-	FCSMaxLeadSpeed=30;
-	FCSZeroingDelay=0.5;
-	ballisticsComputer="4";
-
-	magazines[]=
-	{
-		"RC_40Rnd_20mm_HEAB_cUAS_T_R",
-		"RC_40Rnd_20mm_HEAB_cUAS_T_G",
-		"RC_40Rnd_20mm_HEAB_cUAS_T_Y",
-		"RC_40Rnd_20mm_cUAS",
-		"RC_40Rnd_20mm_AP_T_R",
-		"RC_40Rnd_20mm_AP_T_G",
-		"RC_40Rnd_20mm_AP_T_Y"
-	};
-	modes[]=
-	{
-		"player",
-		"close",
-		"short",
-		"medium",
-		"far"
-	};
-	class player: player
-	{
-		displayName="20mm C-UAS";
-		ballisticsComputer="4";
-		reloadTime=0.3;
-
-		soundContinuous=0;
-		soundBurst=0;
-		dispersion=0.0038000001;
-		aiRateOfFire=1;
-		aiRateOfFireDistance=10;
-		minRange=0;
-		minRangeProbab=0.0099999998;
-		midRange=1;
-		midRangeProbab=0.0099999998;
-		maxRange=2;
-		maxRangeProbab=0.0099999998;
-	};
-	class close: player
-	{
-		aiBurstTerminable=1;
-		showToPlayer=0;
-		burst=3;
-		burstRangeMax=3;
-		aiRateOfFire=1;
-		aiRateOfFireDispersion=2;
-		aiRateOfFireDistance=50;
-		minRange=16;
-		minRangeProbab=0.1;
-		midRange=200;
-		midRangeProbab=0.5;
-		maxRange=400;
-		maxRangeProbab=0.2;
-	};
-	class short: close
-	{
-		aiBurstTerminable=1;
-		showToPlayer=0;
-		burst=3;
-		burstRangeMax=3;
-		aiRateOfFire=1;
-		aiRateOfFireDispersion=2;
-		aiRateOfFireDistance=200;
-		minRange=200;
-		minRangeProbab=0.5;
-		midRange=400;
-		midRangeProbab=0.69999999;
-		maxRange=800;
-		maxRangeProbab=0.69999999;
-	};
-	class medium: close
-	{
-		aiBurstTerminable=1;
-		showToPlayer=0;
-		burst=3;
-		burstRangeMax=3;
-		aiRateOfFire=2;
-		aiRateOfFireDispersion=2;
-		aiRateOfFireDistance=700;
-		minRange=700;
-		minRangeProbab=0.69999999;
-		midRange=1000;
-		midRangeProbab=0.80000001;
-		maxRange=1500;
-		maxRangeProbab=0.75;
-	};
-	class far: close
-	{
-		aiBurstTerminable=1;
-		showToPlayer=0;
-		burst=3;
-		burstRangeMax=3;
-		aiRateOfFire=4;
-		aiRateOfFireDispersion=4;
-		aiRateOfFireDistance=1000;
-		minRange=1000;
-		minRangeProbab=0.80000001;
-		midRange=1500;
-		midRangeProbab=0.75;
-		maxRange=2000;
-		maxRangeProbab=0.1;
-	};
-
-	class GunClouds
-	{
-	};
-	class GunParticles
-	{
-		class effect1
-		{
-			positionName="usti hlavne3";
-			directionName="konec hlavne3";
-			effectName="GrenadeLauncherCloud";
-		};
-	};
-};
-
-
-class RC_UGV_20mm_cUAS: RC_GMG_20mm_cUAS
-{
-	magazines[]=
-	{
-		"RC_50Rnd_20mm_HEAB_cUAS_T_R",
-		"RC_50Rnd_20mm_HEAB_cUAS_T_G",
-		"RC_50Rnd_20mm_HEAB_cUAS_T_Y",
-		"RC_50Rnd_20mm_cUAS",
-		"RC_50Rnd_20mm_AP_T_R",
-		"RC_50Rnd_20mm_AP_T_G",
-		"RC_50Rnd_20mm_AP_T_Y"
-	};
-
-	class GunParticles
-	{
-		class effect1
-		{
-			positionName="usti hlavne";
-			directionName="konec hlavne";
-			effectName="GrenadeLauncherCloud";
-		};
-	};
-};
-
-
-class HMG_static;
-class RC_HMG_127x99_cUAS_base: HMG_static
-{
-	class manual;
-};
-class RC_HMG_127x99_cUAS: RC_HMG_127x99_cUAS_base
-{
-	displayName="12.7mm C-UAS";
-	reloadTime=0.11;
-	autoReload=1;
-	canLock=2;
-	autoFire=0;	//?
-	FCSMaxLeadSpeed=30;
-	FCSZeroingDelay=0.5;
-	ballisticsComputer="4";
-
-	magazines[]=
-	{
-		"RC_100Rnd_127x99_cUAS",
-		"RC_100Rnd_127x99_SLAP_T_R",
-		"RC_100Rnd_127x99_SLAP_T_G",
-		"RC_100Rnd_127x99_SLAP_T_Y"
-	};
-	modes[]=
-	{
-		"manual",
-		"close",
-		"short",
-		"medium",
-		"far"
-	};
-	class manual: manual
-	{
-		displayName="12.7mm C-UAS";
-		ballisticsComputer="4";
-		reloadTime=0.11;
-	};
-	class close: manual
-	{
-		aiBurstTerminable=1;
-		showToPlayer=0;
-		burst=4;
-		burstRangeMax=4;
-		aiRateOfFire=0.5;
-		aiRateOfFireDispersion=1.5;
-		aiRateOfFireDistance=50;
-		minRange=0;
-		minRangeProbab=0.69999999;
-		midRange=100;
-		midRangeProbab=0.69999999;
-		maxRange=200;
-		maxRangeProbab=0.2;
-	};
-	class short: close
-	{
-		aiBurstTerminable=1;
-		showToPlayer=0;
-		burst=4;
-		burstRangeMax=4;
-		aiRateOfFire=1;
-		aiRateOfFireDispersion=2;
-		aiRateOfFireDistance=150;
-		minRange=100;
-		minRangeProbab=0.69999999;
-		midRange=400;
-		midRangeProbab=0.75;
-		maxRange=800;
-		maxRangeProbab=0.2;
-	};
-	class medium: close
-	{
-		aiBurstTerminable=1;
-		showToPlayer=0;
-		burst=4;
-		burstRangeMax=4;
-		aiRateOfFire=2;
-		aiRateOfFireDispersion=2;
-		aiRateOfFireDistance=400;
-		minRange=400;
-		minRangeProbab=0.75;
-		midRange=800;
-		midRangeProbab=0.69999999;
-		maxRange=1500;
-		maxRangeProbab=0.1;
-	};
-	class far: close
-	{
-		aiBurstTerminable=1;
-		showToPlayer=0;
-		burst=4;
-		burstRangeMax=4;
-		aiRateOfFire=4;
-		aiRateOfFireDispersion=4;
-		aiRateOfFireDistance=800;
-		minRange=800;
-		minRangeProbab=0.60000002;
-		midRange=1500;
-		midRangeProbab=0.25;
-		maxRange=2000;
-		maxRangeProbab=0.050000001;
-	};
-};
-
-
 class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 {
 	author="Ascent";
@@ -1690,9 +1212,11 @@ class RC_autocannon_35mm_AA: RC_autocannon_35mm_AA_base
 	ballisticsComputer="2 + 4";	//why 2?
 	magazines[]=
 	{
+		/*
 		"RC_680Rnd_35mm_AA_T_R",
 		"RC_680Rnd_35mm_AA_T_G",
 		"RC_680Rnd_35mm_AA_T_Y",
+		*/
 
 		"680Rnd_35mm_AA_shells",
 		"680Rnd_35mm_AA_shells_Tracer_Red",
@@ -1847,17 +1371,6 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_10Rnd_120mm_APFSDS_T_Y",
 		"RC_15Rnd_120mm_APFSDS_T_Y",
 		"RC_20Rnd_120mm_APFSDS_T_Y",
-		/*
-		"RC_10Rnd_120mm_MP_HEAB_T_R",
-		"RC_15Rnd_120mm_MP_HEAB_T_R",
-		"RC_20Rnd_120mm_MP_HEAB_T_R",
-		"RC_10Rnd_120mm_MP_HEAB_T_G",
-		"RC_15Rnd_120mm_MP_HEAB_T_G",
-		"RC_20Rnd_120mm_MP_HEAB_T_G",
-		"RC_10Rnd_120mm_MP_HEAB_T_Y",
-		"RC_15Rnd_120mm_MP_HEAB_T_Y",
-		"RC_20Rnd_120mm_MP_HEAB_T_Y",
-		*/
 		"RC_10Rnd_120mm_MP_T_R",
 		"RC_15Rnd_120mm_MP_T_R",
 		"RC_20Rnd_120mm_MP_T_R",
@@ -1867,16 +1380,6 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_10Rnd_120mm_MP_T_Y",
 		"RC_15Rnd_120mm_MP_T_Y",
 		"RC_20Rnd_120mm_MP_T_Y",
-		"RC_5Rnd_120mm_HEAB_LV_indirect_T_R",
-		"RC_10Rnd_120mm_HEAB_LV_indirect_T_R",
-		"RC_15Rnd_120mm_HEAB_LV_indirect_T_R",
-		"RC_20Rnd_120mm_HEAB_LV_indirect_T_R",
-		"RC_10Rnd_120mm_HEAB_LV_indirect_T_G",
-		"RC_15Rnd_120mm_HEAB_LV_indirect_T_G",
-		"RC_20Rnd_120mm_HEAB_LV_indirect_T_G",
-		"RC_10Rnd_120mm_HEAB_LV_indirect_T_Y",
-		"RC_15Rnd_120mm_HEAB_LV_indirect_T_Y",
-		"RC_20Rnd_120mm_HEAB_LV_indirect_T_Y",
 		"RC_4Rnd_120mm_DLG_cannon_missiles",
 		"RC_3Rnd_120mm_DLG_cannon_missiles",
 		"RC_2Rnd_120mm_DLG_cannon_missiles",
@@ -1944,17 +1447,6 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_APFSDS_T_Y",
 		"RC_15Rnd_125mm_APFSDS_T_Y",
 		"RC_20Rnd_125mm_APFSDS_T_Y",
-		/*
-		"RC_10Rnd_125mm_MP_HEAB_T_R",
-		"RC_15Rnd_125mm_MP_HEAB_T_R",
-		"RC_20Rnd_125mm_MP_HEAB_T_R",
-		"RC_10Rnd_125mm_MP_HEAB_T_G",
-		"RC_15Rnd_125mm_MP_HEAB_T_G",
-		"RC_20Rnd_125mm_MP_HEAB_T_G",
-		"RC_10Rnd_125mm_MP_HEAB_T_Y",
-		"RC_15Rnd_125mm_MP_HEAB_T_Y",
-		"RC_20Rnd_125mm_MP_HEAB_T_Y",
-		*/
 		"RC_10Rnd_125mm_MP_T_R",
 		"RC_15Rnd_125mm_MP_T_R",
 		"RC_20Rnd_125mm_MP_T_R",
@@ -1964,16 +1456,6 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_MP_T_Y",
 		"RC_15Rnd_125mm_MP_T_Y",
 		"RC_20Rnd_125mm_MP_T_Y",
-		"RC_5Rnd_125mm_HEAB_LV_indirect_T_R",
-		"RC_10Rnd_125mm_HEAB_LV_indirect_T_R",
-		"RC_15Rnd_125mm_HEAB_LV_indirect_T_R",
-		"RC_20Rnd_125mm_HEAB_LV_indirect_T_R",
-		"RC_10Rnd_125mm_HEAB_LV_indirect_T_G",
-		"RC_15Rnd_125mm_HEAB_LV_indirect_T_G",
-		"RC_20Rnd_125mm_HEAB_LV_indirect_T_G",
-		"RC_10Rnd_125mm_HEAB_LV_indirect_T_Y",
-		"RC_15Rnd_125mm_HEAB_LV_indirect_T_Y",
-		"RC_20Rnd_125mm_HEAB_LV_indirect_T_Y",
 		"RC_4Rnd_125mm_DLG_cannon_missiles",
 		"RC_3Rnd_125mm_DLG_cannon_missiles",
 		"RC_2Rnd_125mm_DLG_cannon_missiles",
