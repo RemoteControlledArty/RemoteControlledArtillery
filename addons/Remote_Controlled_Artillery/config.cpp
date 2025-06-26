@@ -77,41 +77,6 @@ class CfgPatches
 			RC_Static_ATGM_A_Bag_I,
 			RC_Static_ATGM_WD_Bag_I,
 
-			RC_cUAS_Static,
-			RC_cUAS_Static_O,
-			RC_cUAS_Static_I,
-			RC_cUAS_Static_manned,
-			RC_cUAS_Static_manned_O,
-			RC_cUAS_Static_manned_I,
-
-			RC_cUAS_Static_Bag,
-			RC_cUAS_Static_Bag_O,
-			RC_cUAS_Static_Bag_I,
-			RC_cUAS_Static_manned_Bag,
-			RC_cUAS_Static_manned_Bag_O,
-			RC_cUAS_Static_manned_Bag_I,
-
-			RC_cUAS_Static_HMG,
-			RC_cUAS_Static_HMG_O,
-			RC_cUAS_Static_HMG_I,
-			RC_cUAS_Static_HMG_manned,
-			RC_cUAS_Static_HMG_manned_O,
-			RC_cUAS_Static_HMG_manned_I,
-
-			RC_cUAS_Static_HMG_Bag,
-			RC_cUAS_Static_HMG_Bag_O,
-			RC_cUAS_Static_HMG_Bag_I,
-			RC_cUAS_Static_HMG_manned_Bag,
-			RC_cUAS_Static_HMG_manned_Bag_O,
-			RC_cUAS_Static_HMG_manned_Bag_I,
-
-			RC_cUAS_UGV_A,
-			RC_cUAS_UGV_WD,
-			RC_cUAS_UGV_A_O,
-			RC_cUAS_UGV_WD_O,
-			RC_cUAS_UGV_A_I,
-			RC_cUAS_UGV_WD_I,
-
 			RC_Howitzer_A,
 			RC_Howitzer_WD,
 			RC_Howitzer_A_O,
@@ -210,16 +175,6 @@ class CfgPatches
 			RC_Wiesel_AC_WD_manned_I,
 			RC_Wiesel_AC_DIG_manned_I,
 
-			RC_Wiesel_cUAS_WD,
-			RC_Wiesel_cUAS_WD_O,
-			RC_Wiesel_cUAS_WD_I,
-			RC_Wiesel_cUAS_DIG_I,
-
-			RC_Wiesel_cUAS_WD_manned,
-			RC_Wiesel_cUAS_WD_manned_O,
-			RC_Wiesel_cUAS_WD_manned_I,
-			RC_Wiesel_cUAS_DIG_manned_I,
-
 			RC_Mortar,
 			RC_Mortar_O,
 			RC_Mortar_HEX_O,
@@ -278,23 +233,6 @@ class CfgPatches
 			RC_Mortar_Fennek_LC_A_O,
 			RC_Mortar_Fennek_LC_A_I,
 			RC_Mortar_Fennek_LC_DIG_I,
-
-			RC_CBRad1_AI_A,
-			RC_CBRad1_AI_WD,
-			RC_CBRad1_AI_A_O,
-			RC_CBRad1_AI_WD_O,
-			RC_CBRad1_AI_A_I,
-			RC_CBRad1_AI_WD_I,
-
-			RC_CBRad1_Player_A,
-			RC_CBRad1_Player_WD,
-			RC_CBRad1_Player_A_O,
-			RC_CBRad1_Player_WD_O,
-			RC_CBRad1_Player_A_I,
-			RC_CBRad1_Player_WD_I,
-
-			RC_CBRad2_AI_A_O,
-			RC_CBRad2_Player_A_O,
 
 			RC_UAV_AR1,
 			RC_UAV_AR1_O,
@@ -478,11 +416,7 @@ class CfgPatches
 			RC_indirect_GMG_UGV_WD_I,
 
 			RC_GPSDatalinkTarget,
-			
-			/*
-			RC_IFV_3_A_TestGlobalServer,
-			RC_IFV_3_A_EHTestGlobal,
-			*/
+
 
 			//optional retextures
 			RC_Howitzer_ReTex_D,
@@ -647,11 +581,7 @@ class CfgPatches
 			RC_HMG_127x99_FSV,
 			RC_HMG_127x99_MBT,
 			RC_HMG_127_NSVT,
-			
-			RC_HMG_127x99_cUAS,
-			RC_GMG_20mm_cUAS,
-			RC_UGV_20mm_cUAS,
-			RC_autocannon_20mm_cUAS,
+
 			RC_autocannon_35mm_AA,
 
 			RC_GMG_40mm,
@@ -714,10 +644,6 @@ class CfgFunctions
 
       		class preInit {preInit=1;};
       		class InitCBASettings {preInit=1;};
-
-			class RC_CBRad_Arrays {preInit=1;};
-			class RC_CBRad_EntityCreated {preInit=1;};
-			class RC_CBRad_ArtilleryShellFired {postInit=1;};
 			
       		class RC_UI_Loop {postInit=1;};
 			class RC_MarkerHandler {postInit=1;};
@@ -725,10 +651,7 @@ class CfgFunctions
 			class RC_EngineOff {postInit=1;};
 			class RC_UAVBlur {postInit=1;};
 			class RC_LaserDatalink {postInit=1;};
-			class RC_cursorTargetIntoDatalink {postInit=1;};
-			
-			class RC_AT_SourceIndicator {};
-			class RC_cUAS_Beep {};
+
 			class scrollSolutions {};
 		};
 		/*
@@ -746,18 +669,6 @@ class CfgFunctions
 			class RC_weapon_info {};
 		};
 		*/
-		class RC_CBRad_functions
-		{
-			file="\Remote_Controlled_Artillery\functions\CBRad_functions";
-
-			class RC_AI_CBRad_Blufor {};
-			class RC_AI_CBRad_Opfor {};
-			class RC_AI_CBRad_Indfor {};
-
-			class RC_Player_CBRad_Blufor {};
-			class RC_Player_CBRad_Opfor {};
-			class RC_Player_CBRad_Indfor {};
-		};
 		class RC_LocalityUV_functions
 		{
 			file="\Remote_Controlled_Artillery\functions\LocalityUV_functions";
@@ -858,7 +769,6 @@ class CfgFactionClasses
 
 class CfgEditorSubcategories
 {
-	class RC_Radar_subcat {displayname="'Counter Battery Radar";};
 	class RC_Howitzer_subcat {displayname="'indirect :  Howitzers";};
 	class RC_Mortar_subcat {displayname="'indirect :  Mortars";};
 	class RC_Rocket_subcat {displayname="'indirect :  Rocket Systems";};
@@ -876,7 +786,6 @@ class CfgEditorSubcategories
 	class RC_ICV_armed_subcat {displayname="RCIVs (armed)";};
 	class RC_ICV_subcat {displayname="RCIVs (unarmed)";};
 	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
-	class RC_Test_subcat {displayname="Test";};
 	class RC_UAV_Designator_subcat {displayname="UAVs / Designators";};
 
 	class RC_ReTex_Arid_subcat {displayname="Arid";};
@@ -927,7 +836,6 @@ class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\AC_FSV.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
@@ -950,13 +858,10 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MLRS_MRL.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\MortarMATV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\XM307.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\XM312.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first
 	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\SystemsOperator.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UAV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UGV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Wiesel.hpp"

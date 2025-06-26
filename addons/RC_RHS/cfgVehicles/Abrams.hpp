@@ -273,7 +273,7 @@ class RC_M1A2_SEPV2_D_B: RC_M1A2_SEPV2_D
 		};
 	};
 
-	displayName="M1A2 SEPV2 Abrams";
+	displayName="M1A2 SEPV2 Abrams [atm broken zeroing]";
 	editorSubcategory="RC_RHS_D_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -319,7 +319,7 @@ class RC_M1A2_SEPV2_WD_I: RC_M1A2_SEPV2_WD_B
 
 class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 {
-	displayName="M1A2 SEPV2 Abrams NLOS";
+	displayName="M1A2 SEPV2 Abrams NLOS [atm broken zeroing]";
 
 	class Turrets: Turrets
 	{

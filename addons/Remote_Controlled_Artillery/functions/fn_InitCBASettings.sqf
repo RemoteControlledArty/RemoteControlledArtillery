@@ -135,89 +135,12 @@
 ] call CBA_fnc_addSetting;
 
 
-//RC Modernized Vehicles Settings
-[
-    "RC_AT_SourceIndicationVic",
-    "CHECKBOX",
-    ["allow Vehicle-AT-fire source indicator", "Only for this mods vehicles that have missile/rocket detection systems, BRIEFLY marks source of enemy AT Vehicle fire in datalink."],
-    ["RC Modernized Vehicles"],
-    true,
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_AT_SourceIndicationStatic",
-    "CHECKBOX",
-    ["allow Static-AT-fire source indicator", "Only for this mods vehicles that have missile/rocket detection systems, marks source of enemy AT Static fire in datalink for 3min."],
-    ["RC Modernized Vehicles"],
-    true,
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_AT_SourceIndicationInf",
-    "CHECKBOX",
-    ["allow (brief) Infantry-AT-fire source indicator", "Only for this mods vehicles that have missile/rocket detection systems, BRIEFLY marks source of enemy Infantry AT fire in datalink."],
-    ["RC Modernized Vehicles"],
-    true,
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_AB_StaticConfirming",
-    "CHECKBOX",
-    ["allow airburst on enemy statics", "AB ammo requires a confirmed target, if AB loaded pressing LOCK TARGET confirms enemy statics as target, alternative if off is lasing by commander."],
-    ["RC Modernized Vehicles"],
-    true,
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_AB_InfConfirming",
-    "CHECKBOX",
-    ["allow airburst on enemy infantry", "AB ammo requires a confirmed target, if AB loaded pressing LOCK TARGET briefly confirms enemy infantry as target, alternative if off is lasing by commander."],
-    ["RC Modernized Vehicles"],
-    true,
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_UAV_StaticReporting",
-    "CHECKBOX",
-    ["allow enemy static reporting by UAV", "For AR-1/AR-3 pressing LOCK TARGET reports enemy statics into datalink for 3min, to improve situational awareness & coordination."],
-    ["RC Modernized Vehicles"],
-    true,
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_UAV_InfReporting",
-    "CHECKBOX",
-    ["allow (brief) enemy infantry reporting by UAV", "For AR-1/AR-3 pressing LOCK TARGET briefly reports enemy infantry into datalink, to improve situational awareness & coordination."],
-    ["RC Modernized Vehicles"],
-    true,
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
+//UAV Locality fix
 [
     "RC_FixLocalityOfRCUVs",
     "CHECKBOX",
     ["fixes locality of this mods UVs", "Drive UGV from turret / set correct UAV waypoint altitude, without first having to connect to driver to localize. Unknown if causes issues."],
-    ["RC Modernized Vehicles"],
+    ["RC UAV Locality Fix"],
     true,
     true,
     {},
@@ -228,69 +151,13 @@
     "RC_FixLocalityOfAllUVs",
     "CHECKBOX",
     ["fixes locality of all UVs", "Drive UGV from turret / set correct UAV waypoint altitude, without first having to connect to driver to localize. Unknown if causes issues."],
-    ["RC Modernized Vehicles"],
+    ["RC UAV Locality Fix"],
     false,
     true,
     {},
     true
 ] call CBA_fnc_addSetting;
 
-/*
-[
-    "RC_DetectionTime_F1",
-    "SLIDER",
-    ["CBRad detection time", "CBRad detection time"],
-    ["Remote Controlled Artillery"],
-    [15, 30, 15, 0, false],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_PrepTime_F1",
-    "SLIDER",
-    ["CB AI preperation time", "CB AI preperation time"],
-    ["Remote Controlled Artillery"],
-    [10, 30, 10, 0, false],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_ReassignTime_F1",
-    "SLIDER",
-    ["CB reassign time", "reassign time setting"],
-    ["Remote Controlled Artillery"],
-    [15, 30, 15, 0, false],
-    true
-] call CBA_fnc_addSetting;
-
-//testing
-[
-    "RC_DetectionTime_Test1",
-    "SLIDER",
-    ["TEST CBRad detection time", "TEST CBRad detection time"],
-    ["Remote Controlled Artillery"],
-    [5, 30, 15, 0, false],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_PrepTime_Test1",
-    "SLIDER",
-    ["TEST CB AI preperation time", "TEST CB AI preperation time"],
-    ["Remote Controlled Artillery"],
-    [5, 30, 10, 0, false],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_ReassignTime_Test1",
-    "SLIDER",
-    ["TEST CB reassign time", "TEST reassign time setting"],
-    ["Remote Controlled Artillery"],
-    [5, 30, 15, 0, false],
-    true
-] call CBA_fnc_addSetting;
-*/
 
 //doesnt work with current UI setup
 /*
