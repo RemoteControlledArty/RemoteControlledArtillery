@@ -7,6 +7,11 @@ if (!hasInterface) exitWith { };
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
 
+	private _markerIndex = RC_Artillery_Markers findIf { (_x select 1) isEqualTo _marker };
+	if (_markerIndex > -1) then {
+		RC_Artillery_Markers deleteAt _markerIndex;	
+	};
+
 	/* Check if Marker starts with RC_Marker_Prefix or RC_GPS_Prefix */
 	private _markerText = markerText _marker;
 	private _isArtyMarker = (toLower (_markerText select [0, count RC_Marker_Prefix])) isEqualTo (toLower RC_Marker_Prefix);
