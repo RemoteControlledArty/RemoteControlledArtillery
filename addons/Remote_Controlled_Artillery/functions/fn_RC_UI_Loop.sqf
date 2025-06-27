@@ -312,9 +312,15 @@ RC_Artillery_UI = [] spawn {
 					//_targetPos = getpos cursorTarget;
 					_targetPos = getposASL cursorTarget;
 				} else {
+					
+    				//_targetPos = markerPos [(RC_Current_Target select 1), true]; //test preserveelevation true
 					_targetPos = markerPos (RC_Current_Target select 1);	//this alone worked before summer 2025, now marker z seems to be 0
 					_newTargetASL = getTerrainHeightASL _targetPos;
 					_targetPos set [2, _newTargetASL];
+
+					//this likely caused problem below
+					//before: _targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (AGLtoASL _targetPos);
+					//atm: _targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (_targetPos);
 				};
 
 				//Barrel End to Target Distance
