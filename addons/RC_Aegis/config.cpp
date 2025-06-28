@@ -91,7 +91,6 @@ class CfgPatches
 			"cba_main",
 			"RC_Artillery",
 			"A3_Aegis_Armor_F_Aegis_APC_Wheeled_01",
-			"A3_Aegis_Armor_F_Aegis_APC_Tracked_02",
 			"A3_Aegis_Armor_F_Aegis_APC_Wheeled_04"
 		};
 
