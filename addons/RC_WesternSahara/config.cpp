@@ -90,7 +90,9 @@ class CfgWeapons
 
 class CfgVehicles
 {
+	#include "\RC_Aegis\cfgVehicles\BM_2T_A.hpp"
 	#include "\RC_WesternSahara\cfgVehicles\Otokar_Arma_HMG.hpp"
 	#include "\RC_WesternSahara\cfgVehicles\Patria_60mm_Mortar.hpp"
 	#include "\RC_WesternSahara\cfgVehicles\Patria_AMV_ATGM.hpp"
+	#include "\RC_Aegis\cfgVehicles\ZSU_35_A.hpp"
 };
