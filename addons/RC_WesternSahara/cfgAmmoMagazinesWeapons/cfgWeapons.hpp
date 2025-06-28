@@ -13,6 +13,7 @@ class HMG_M2_Marid_lxWS;
 class RC_HMG_M2_lxWS: HMG_M2_Marid_lxWS
 {
 	autoReload=1;
+	canLock=0;
 	ballisticsComputer="2 + 16";
 	FCSMaxLeadSpeed=30.555599;
 	FCSZeroingDelay=0.5;
