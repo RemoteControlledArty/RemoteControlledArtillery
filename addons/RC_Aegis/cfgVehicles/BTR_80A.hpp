@@ -130,7 +130,7 @@ class RC_BTR80A_WD: RC_BTR80A
 			weapons[]=
 			{
 				"RC_autocannon_30mm_APC_Wheeled_04",
-				"RC_MMG_93x64_coax_ext_lxWS",
+				"RC_MMG_93x64_coax_ext",
 				"SmokeLauncher"
 			};
 			#include "\RC_Aegis\includes_vicmags\mags_BTR80A_30mm_red.hpp"

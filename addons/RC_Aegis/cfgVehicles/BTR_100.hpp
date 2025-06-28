@@ -345,7 +345,7 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 			weapons[]=
 			{
 				"RC_autocannon_30mm_lxWS",
-				"RC_MMG_93x64_coax_ext_lxWS",
+				"RC_MMG_93x64_coax_ext",
 				"RC_IFV_Missile_Launcher_4R",
 				"SmokeLauncher"
 			};
