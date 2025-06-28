@@ -12,9 +12,11 @@ RC_LaserDatalink = [] spawn
 	while {true} do
 	{
 		private _laserSpot = laserTarget player;
-		private _side = side player;
-		if (!isNull _laserSpot) then {[_side,[_laserSpot, 4]] remoteExec ["reportRemoteTarget", _side];};
-		sleep 2;
+		if (!isNull _laserSpot) then {
+			private _side = side player;
+			[_side,[_laserSpot, 2]] remoteExec ["reportRemoteTarget", _side];
+		};
+		sleep 1;
 	};
 };
 
