@@ -157,4 +157,5 @@ class CfgVehicles
 	#include "\RC_Aegis\cfgVehicles\T_100.hpp"
 	#include "\RC_Aegis\cfgVehicles\T_14.hpp"
 	#include "\RC_Aegis\cfgVehicles\SignalBoosterBackpack.hpp"
+	#include "\RC_Aegis\cfgVehicles\ZSU_35_WD_A.hpp"
 };
