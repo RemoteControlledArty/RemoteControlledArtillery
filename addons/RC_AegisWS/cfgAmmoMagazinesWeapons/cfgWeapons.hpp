@@ -74,19 +74,6 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 };
 
 
-class RC_MMG_93x64_coax_ext;
-class RC_MMG_93x64_coax_ext_lxWS: RC_MMG_93x64_coax_ext
-{
-	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
-	magazines[]=
-	{
-		"RC_1000Rnd_93x64_T_G",
-		"RC_1000Rnd_93x64_T_R",
-		"RC_1000Rnd_93x64_T_Y"
-	};
-};
-
-
 /*
 class missles_Vorona_vehicles_lxWS;
 class RC_missles_Vorona_vehicles_lxWS_Base: missles_Vorona_vehicles_lxWS

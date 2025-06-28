@@ -46,10 +46,12 @@ class CfgAmmo
 	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 */
+/*
 class CfgMagazines
 {
 	#include "\RC_AegisWS\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
+*/
 class CfgWeapons
 {
 	#include "\RC_AegisWS\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
