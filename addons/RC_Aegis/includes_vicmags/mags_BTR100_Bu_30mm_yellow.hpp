@@ -1,11 +1,11 @@
 magazines[]=
 {
 	"RC_160Rnd_30mm_MP_Pen_T_Y",
-	"RC_160Rnd_30mm_MP_DF_T_Y",
+	"RC_160Rnd_30mm_MPAB_DF_T_Y",
 	/*
 	//available but unused
+	"RC_160Rnd_30mm_MP_DF_T_Y",
 	"RC_160Rnd_30mm_MP_QF_T_Y",
-	"RC_160Rnd_30mm_MPAB_DF_T_Y",
 	"RC_160Rnd_30mm_MPAB_QF_T_Y",
 	
 	"RC_160Rnd_30mm_HE_Pen_T_Y",
@@ -20,7 +20,8 @@ magazines[]=
 	"RC_160Rnd_30mm_APFSDS_T_Y",
 	"RC_160Rnd_30mm_APFSDS_T_Y",
 	"RC_1000Rnd_93x64_T_Y",
-	"4rnd_Vorona_HEAT_lxWS",
+	"RC_4Rnd_IFV_MP_NLOS",
+	"RC_4Rnd_IFV_AA",
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"
 };

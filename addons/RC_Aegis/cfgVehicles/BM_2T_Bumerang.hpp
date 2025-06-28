@@ -85,6 +85,16 @@ class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 			source="reload";
 			weapon="RC_autocannon_30mm_lxWS";
 		};
+		class Missiles_reloadMagazine
+		{
+			source="reloadMagazine";
+			weapon="RC_IFV_Missile_Launcher_lxWS";
+		};
+		class Missiles_revolving
+		{
+			source="revolving";
+			weapon="RC_IFV_Missile_Launcher_lxWS";
+		};
 		class showCamonetHull: showCamonetHull
 		{
 			initPhase=0;
@@ -159,7 +169,7 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 			{
 				"RC_autocannon_30mm_lxWS",
 				"RC_MMG_93x64_coax_ext_lxWS",
-				"missiles_Vorona_vehicle_lxWS",
+				"RC_IFV_Missile_Launcher_lxWS",
 				"SmokeLauncher"
 			};
 			#include "\RC_Aegis\includes_vicmags\mags_BM2T_Bu_30mm_red.hpp"
