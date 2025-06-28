@@ -35,16 +35,16 @@ class RC_Laserbatteries: Laserbatteries
 class Vorona_HEAT;
 class RC_1Rnd_ATGM_MP_SACLOS: Vorona_HEAT
 {
-	displayName="MP 3km SACLOS";
-	displayNameShort="MP 3km";
+	displayName="MP 4km SACLOS";
+	displayNameShort="MP 4km";
 	ammo="RC_M_ATGM_MP_SACLOS";
 };
 class 1Rnd_GAT_missiles;
-class RC_1Rnd_ATGM_MP_Lock: 1Rnd_GAT_missiles
+class RC_1Rnd_ATGM_MP_NLOS: 1Rnd_GAT_missiles
 {
-	displayName="MP 3km	Guided";
-	displayNameShort="MP 3km";
-	ammo="RC_M_ATGM_MP_Lock";
+	displayName="MP 4km	NLOS";
+	displayNameShort="MP 4km";
+	ammo="RC_M_ATGM_MP_NLOS";
 };
 
 

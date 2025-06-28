@@ -1259,7 +1259,7 @@ class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 	submunitionAmmo="RC_ammo_Penetrator_MP";
 	indirectHit=40;
 	indirectHitRange=10;
-	maxControlRange=3000;
+	maxControlRange=4000;
 	trackOversteer=0.5;
 	fuseDistance=20;
 	cameraViewAvailable=1;
@@ -1267,7 +1267,7 @@ class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 
 
 //ATGM
-class RC_M_ATGM_MP_Lock: M_Titan_AT_long_Base
+class RC_M_ATGM_MP_NLOS: M_Titan_AT_long_Base
 {
 	craterEffects="AAMissileCrater";
 	indirectHit=40;
@@ -1336,18 +1336,18 @@ class RC_M_ATGM_MP_Lock: M_Titan_AT_long_Base
 			{
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -1358,15 +1358,15 @@ class RC_M_ATGM_MP_Lock: M_Titan_AT_long_Base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -1376,18 +1376,18 @@ class RC_M_ATGM_MP_Lock: M_Titan_AT_long_Base
 				*/
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=2000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};

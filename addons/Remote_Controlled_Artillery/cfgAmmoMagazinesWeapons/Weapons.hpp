@@ -219,7 +219,7 @@ class RC_ATGM_SACLOS: launch_Vorona_base_F
 	scope=1;
 	displayName="SACLOS ATGM";
 	displayNameShort="SACLOS ATGM";
-	canLock=2;
+	canLock=0;
 	weaponLockSystem="1 + 4 + 16";
 	reloadTime=7;
 	magazineReloadTime=7;
@@ -234,11 +234,11 @@ class RC_ATGM_Lock_Base: missiles_titan_static
 {
 	class Player;
 };
-class RC_ATGM_Lock: RC_ATGM_Lock_Base
+class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
 {
 	scope=1;
-	displayName="ATGM";
-	displayNameShort="ATGM";
+	displayName="NLOS ATGM";
+	displayNameShort="NLOS ATGM";
 	canLock=2;
 	weaponLockSystem="1 + 2 + 4 + 16";
 	reloadTime=7;
@@ -246,7 +246,7 @@ class RC_ATGM_Lock: RC_ATGM_Lock_Base
 	autoReload=1;
 	magazines[]=
 	{
-		"RC_1Rnd_ATGM_MP_Lock"
+		"RC_1Rnd_ATGM_MP_NLOS"
 	};
 
 	modes[]=
@@ -261,9 +261,9 @@ class RC_ATGM_Lock: RC_ATGM_Lock_Base
 
 		minRange=200;
 		minRangeProbab=0.40000001;
-		midRange=1500;
+		midRange=2000;
 		midRangeProbab=0.89999998;
-		maxRange=3000;
+		maxRange=4000;
 		maxRangeProbab=0.94999999;
 	};
 };
