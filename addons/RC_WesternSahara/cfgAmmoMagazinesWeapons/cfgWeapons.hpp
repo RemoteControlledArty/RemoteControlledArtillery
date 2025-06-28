@@ -12,6 +12,7 @@ class RC_IFV_Missile_Launcher_lxWS: RC_IFV_Missile_Launcher
 class HMG_M2_Marid_lxWS;
 class RC_HMG_M2_lxWS: HMG_M2_Marid_lxWS
 {
+	canLock=0;
 	autoReload=1;
 	ballisticsComputer="2 + 16";
 	FCSMaxLeadSpeed=30.555599;

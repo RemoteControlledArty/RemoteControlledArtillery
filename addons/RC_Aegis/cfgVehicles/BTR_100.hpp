@@ -272,6 +272,45 @@ class RC_ICV_7_WD_I: RC_ICV_7_WD
 };
 
 
+class RC_ICV_7_A: RC_ICV_7_WD
+{
+	//editorPreview="";		//non available
+	hiddenSelectionsTextures[]=
+	{
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body2_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_tow_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\camonet_RUS_Green_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\cage_RUkhk_CO.paa"
+	};
+	/*
+	textureList[]=
+	{
+		"Green",
+		0,
+		"Sand",
+		0
+	};
+	*/
+};
+class RC_ICV_7_A_O: RC_ICV_7_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_ICV_7_A_I: RC_ICV_7_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
 class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 {
 	class EventHandlers: EventHandlers
