@@ -230,7 +230,7 @@ class RC_ATGM_SACLOS: launch_Vorona_base_F
 	};
 };
 class missiles_titan_static;
-class RC_ATGM_Lock_Base: missiles_titan_static
+class RC_ATGM_NLOS_Base: missiles_titan_static
 {
 	class Player;
 };

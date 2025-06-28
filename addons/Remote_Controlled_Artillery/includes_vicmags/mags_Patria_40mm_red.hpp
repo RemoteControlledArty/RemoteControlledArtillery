@@ -15,7 +15,6 @@ magazines[]=
 	"RC_50Rnd_40mm_GPR_T_R",
 	*/
 	//"RC_50Rnd_40mm_Smoke",
-	//"RC_50Rnd_40mm_Smoke",
 	"RC_50Rnd_40mm_APFSDS_T_R",
 	"RC_50Rnd_40mm_APFSDS_T_R",
 	"RC_50Rnd_40mm_APFSDS_T_R",
