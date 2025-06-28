@@ -1,6 +1,6 @@
 magazines[]=
 {
-	"RC_680Rnd_35mm_HEAB_AA_T_Y",
+	"680Rnd_35mm_AA_shells_Tracer_Yellow",
 	"RC_4Rnd_IFV_AA",
 	"RC_4Rnd_IFV_AA",
 	"SmokeLauncherMag",

@@ -146,10 +146,6 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
 						class EmptyDisplay
 						{
 							componentType="EmptyDisplayComponent";
@@ -180,10 +176,6 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
 						};
 						class EmptyDisplay
 						{

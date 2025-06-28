@@ -527,7 +527,6 @@ class RC_IFV_3_A: RC_IFV_3_A_Base
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
@@ -793,45 +792,3 @@ class RC_IFV_3_ReTex_D_I: RC_IFV_3_ReTex_D
 		};
 	};
 };
-
-
-//UserAction/EH Testing
-/*
-class RC_IFV_3_A_Test_Base: RC_IFV_3_A_Base
-{
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-
-	editorSubcategory="RC_Test_subcat";
-	crew="B_UAV_AI";
-};
-class RC_IFV_3_A_TestGlobalServer: RC_IFV_3_A_Test_Base
-{
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControlsTestGlobalServer.hpp"
-
-	displayName="Pandur II Test Global Server";
-	scope=2;
-	scopeCurator=2;
-};
-class RC_IFV_3_A_EHTestGlobal: RC_IFV_3_A_Test_Base
-{
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GunnerOrCommanderIsDriverEH.hpp"
-		};
-	};
-
-	displayName="Pandur II EH Test Global";
-	scope=2;
-	scopeCurator=2;
-};
-*/

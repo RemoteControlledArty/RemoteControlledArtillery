@@ -9,26 +9,6 @@ class RC_target_confirmer_ammo: Default
 };
 
 
-class BulletBase;
-class RC_FPV_Deployer_Ammo: BulletBase
-{
-	muzzleEffect="BIS_fnc_effectFiredSmokeLauncher";
-	effectsSmoke="EmptyEffect";
-	weaponLockSystem="1 + 2 + 4";
-	hit=1;
-	indirectHit=0;
-	indirectHitRange=0;
-	timeToLive=10;
-	thrustTime=10;
-	airFriction=-0.1;
-	simulation="shotCM";
-	model="\A3\weapons_f\empty";
-	maxControlRange=50;
-	initTime=2;
-	aiAmmoUsageFlags="4 + 8";
-};
-
-
 /*
 class FPV_AB_Trigger: Default
 {
@@ -517,7 +497,7 @@ class B_30mm_MP_Core: BulletBase
 
 //MP Penetrator Submunitions
 class ammo_Penetrator_Base;
-class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
+class RC_ammo_Penetrator_MP_AC: ammo_Penetrator_Base
 {
 	explosive=0;
 	airFriction=0;	//0 for it to still work if vehicle further behind the wall
@@ -526,35 +506,35 @@ class RC_ammo_Penetrator_MP: ammo_Penetrator_Base
 	CraterEffects="NoCrater";	//test both seperate
 	explosionEffects="NoExplosion";
 };
-class RC_ammo_Penetrator_MP_20mm: RC_ammo_Penetrator_MP
+class RC_ammo_Penetrator_MP_20mm: RC_ammo_Penetrator_MP_AC
 {
 	hit=80;
 	caliber=4.4;
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
-class RC_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MP
+class RC_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MP_AC
 {
 	hit=100;
 	caliber=4.6;
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
-class RC_ammo_Penetrator_MP_35mm: RC_ammo_Penetrator_MP
+class RC_ammo_Penetrator_MP_35mm: RC_ammo_Penetrator_MP_AC
 {
 	hit=110;
 	caliber=4.7;
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
-class RC_ammo_Penetrator_MP_40mm: RC_ammo_Penetrator_MP
+class RC_ammo_Penetrator_MP_40mm: RC_ammo_Penetrator_MP_AC
 {
 	hit=120;
 	caliber=4.8;
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
-class RC_ammo_Penetrator_MP_50mm: RC_ammo_Penetrator_MP
+class RC_ammo_Penetrator_MP_50mm: RC_ammo_Penetrator_MP_AC
 {
 	hit=140;
 	caliber=5;

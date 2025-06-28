@@ -22,7 +22,6 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 		class RC_LightsOff
 		{

@@ -280,10 +280,6 @@ class CfgPatches
 			RC_UAV_FPV_Bag_O,
 			RC_UAV_FPV_Bag_I,
 
-			RC_OM_Heli_InfTransport_blk,
-			RC_OM_Heli_InfTransport_blk_O,
-			RC_OM_Heli_InfTransport_blk_I,
-
 			RC_RespawnTruck_A,
 			RC_RespawnTruck_WD,
 			RC_RespawnTruck_A_O,
@@ -543,11 +539,7 @@ class CfgPatches
 			RC_Mortar_Fennek_ReTex_WD_I,
 			RC_Mortar_Fennek_LC_ReTex_WD,
 			RC_Mortar_Fennek_LC_ReTex_WD_O,
-			RC_Mortar_Fennek_LC_ReTex_WD_I,
-
-			RC_HeliTransport_blk,
-			RC_HeliTransport_blk_O,
-			RC_HeliTransport_blk_I
+			RC_Mortar_Fennek_LC_ReTex_WD_I
 		};
 
 		weapons[]=
@@ -556,7 +548,6 @@ class CfgPatches
 			RC_target_confirmer_datalink,
 			RC_Laserdesignator_mounted,
 			RC_Laserdesignator_vehicle,
-			RC_FPV_Deployer,
 			
 			Improved_FOV_Laserdesignator_A,
 			Improved_FOV_Laserdesignator_WD,
@@ -782,7 +773,6 @@ class CfgEditorSubcategories
 	class RC_Repair_subcat {displayname="Repair";};
 	class RC_FSV_subcat {displayname="FSVs";};
 	class RC_MBT_subcat {displayname="MBTs";};
-	class RC_Heli_subcat {displayname="Helicopters";};
 	class RC_ICV_armed_subcat {displayname="RCIVs (armed)";};
 	class RC_ICV_subcat {displayname="RCIVs (unarmed)";};
 	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
@@ -835,12 +825,9 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\AC_FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_2.hpp"

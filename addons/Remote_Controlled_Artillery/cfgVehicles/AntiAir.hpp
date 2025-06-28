@@ -484,13 +484,6 @@ class RC_AA_base_HEX_O: O_APC_Tracked_02_AA_F
 };
 class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		};
-	};
 	displayName="RC Anti-Air";
 	faction="RemoteControlled_O";
 	editorSubcategory="RC_AntiAir_subcat";

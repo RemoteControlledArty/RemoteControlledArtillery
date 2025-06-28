@@ -526,7 +526,6 @@ class RC_IFV_1_A: RC_APC_1_A
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
