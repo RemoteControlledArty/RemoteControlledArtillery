@@ -14,7 +14,7 @@ class RC_Static_AT_A_base: B_static_AT_F
 };
 class RC_Static_AT_A: RC_Static_AT_A_base
 {
-	displayname="RC ATGM 3km lock";
+	displayname="RC ATGM 4km NLOS";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
 	scope=2;
@@ -47,15 +47,15 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -63,36 +63,36 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 				*/
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1500;
+					typeRecognitionDistance=2000;
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -129,7 +129,7 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km lock";
+		displayName="RC ATGM 4km NLOS";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_A_Bag"
@@ -148,14 +148,14 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 
 			weapons[]=
 			{
-				"RC_ATGM_Lock"
+				"RC_ATGM_NLOS"
 			};
 			magazines[]=
 			{
-				"RC_1Rnd_ATGM_MP_Lock",
-				"RC_1Rnd_ATGM_MP_Lock",
-				"RC_1Rnd_ATGM_MP_Lock",
-				"RC_1Rnd_ATGM_MP_Lock"
+				"RC_1Rnd_ATGM_MP_NLOS",
+				"RC_1Rnd_ATGM_MP_NLOS",
+				"RC_1Rnd_ATGM_MP_NLOS",
+				"RC_1Rnd_ATGM_MP_NLOS"
 			};
 			class ViewOptics: ViewOptics
 			{
@@ -219,37 +219,37 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 		class muzzle_source
 		{
 			source="reload";
-			weapon="RC_ATGM_Lock";
+			weapon="RC_ATGM_NLOS";
 		};
 		class muzzle_source_rot
 		{
 			source="ammorandom";
-			weapon="RC_ATGM_Lock";
+			weapon="RC_ATGM_NLOS";
 		};
 		class ReloadAnim
 		{
 			source="reload";
-			weapon="RC_ATGM_Lock";
+			weapon="RC_ATGM_NLOS";
 		};
 		class ReloadMagazine
 		{
 			source="reloadmagazine";
-			weapon="RC_ATGM_Lock";
+			weapon="RC_ATGM_NLOS";
 		};
 		class Revolving
 		{
 			source="revolving";
-			weapon="RC_ATGM_Lock";
+			weapon="RC_ATGM_NLOS";
 		};
 	};
 };
 class RC_Static_AT_A_Bag: RC_Static_AA_A_Bag
 {
-	displayName="RC ATGM 3km lock";
+	displayName="RC ATGM 4km NLOS";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km lock";
+		displayName="RC ATGM 4km NLOS";
 		assembleTo="RC_Static_AT_A";
 	};
 };
@@ -276,11 +276,11 @@ class RC_Static_AT_WD: RC_Static_AT_A
 };
 class RC_Static_AT_WD_Bag: RC_Static_AA_WD_Bag
 {
-	displayName="RC ATGM 3km lock";
+	displayName="RC ATGM 4km NLOS";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km lock";
+		displayName="RC ATGM 4km NLOS";
 		assembleTo="RC_Static_AT_WD";
 	};
 };
@@ -296,7 +296,7 @@ class RC_Static_AT_A_O: RC_Static_AT_A
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km [Opf]";
+		displayName="RC ATGM 4km SACLOS [Opf]";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_A_Bag_O"
@@ -305,10 +305,10 @@ class RC_Static_AT_A_O: RC_Static_AT_A
 };
 class RC_Static_AT_A_Bag_O: RC_Static_AT_A_Bag
 {
-	displayName="RC Static AT 3km [Opf]";
+	displayName="RC ATGM 4km SACLOS [Opf]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km [Opf]";
+		displayName="RC ATGM 4km SACLOS [Opf]";
 		assembleTo="RC_Static_AT_A_O";
 	};
 };
@@ -322,7 +322,7 @@ class RC_Static_AT_WD_O: RC_Static_AT_WD
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km [Opf]";
+		displayName="RC ATGM 4km SACLOS [Opf]";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_WD_Bag_O"
@@ -331,10 +331,10 @@ class RC_Static_AT_WD_O: RC_Static_AT_WD
 };
 class RC_Static_AT_WD_Bag_O: RC_Static_AT_WD_Bag
 {
-	displayName="RC Static AT 3km [Opf]";
+	displayName="RC ATGM 4km SACLOS [Opf]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km [Opf]";
+		displayName="RC ATGM 4km SACLOS [Opf]";
 		assembleTo="RC_Static_AT_WD_O";
 	};
 };
@@ -350,7 +350,7 @@ class RC_Static_AT_A_I: RC_Static_AT_A
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km [Ind]";
+		displayName="RC ATGM 4km SACLOS [Ind]";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_A_Bag_I"
@@ -359,10 +359,10 @@ class RC_Static_AT_A_I: RC_Static_AT_A
 };
 class RC_Static_AT_A_Bag_I: RC_Static_AT_A_Bag
 {
-	displayName="RC Static AT 3km [Ind]";
+	displayName="RC ATGM 4km SACLOS [Ind]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km [Ind]";
+		displayName="RC ATGM 4km SACLOS [Ind]";
 		assembleTo="RC_Static_AT_A_I";
 	};
 };
@@ -376,7 +376,7 @@ class RC_Static_AT_WD_I: RC_Static_AT_WD
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km [Ind]";
+		displayName="RC ATGM 4km SACLOS [Ind]";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_WD_Bag_I"
@@ -385,10 +385,10 @@ class RC_Static_AT_WD_I: RC_Static_AT_WD
 };
 class RC_Static_AT_WD_Bag_I: RC_Static_AT_WD_Bag
 {
-	displayName="RC Static AT 3km [Ind]";
+	displayName="RC ATGM 4km SACLOS [Ind]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC Static AT 3km [Ind]";
+		displayName="RC ATGM 4km SACLOS [Ind]";
 		assembleTo="RC_Static_AT_WD_I";
 	};
 };
@@ -398,11 +398,11 @@ class RC_Static_AT_WD_Bag_I: RC_Static_AT_WD_Bag
 // Arid
 class RC_Static_ATGM_A: RC_Static_AT_A
 {
-	displayname="RC ATGM 3km manual";
+	displayname="RC ATGM 4km NLOS";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual";
+		displayName="RC ATGM 4km NLOS";
 		dissasembleTo[]=
 		{
 			"RC_Static_ATGM_A_Bag"
@@ -501,10 +501,10 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 };
 class RC_Static_ATGM_A_Bag: RC_Static_AA_A_Bag
 {
-	displayName="RC ATGM 3km manual";
+	displayName="RC ATGM 4km NLOS";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual";
+		displayName="RC ATGM 4km NLOS";
 		assembleTo="RC_Static_ATGM_A";
 	};
 };
@@ -531,10 +531,10 @@ class RC_Static_ATGM_WD: RC_Static_ATGM_A
 };
 class RC_Static_ATGM_WD_Bag: RC_Static_AA_WD_Bag
 {
-	displayName="RC ATGM 3km manual";
+	displayName="RC ATGM 4km NLOS";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual";
+		displayName="RC ATGM 4km NLOS";
 		assembleTo="RC_Static_ATGM_WD";
 	};
 };
@@ -549,7 +549,7 @@ class RC_Static_ATGM_A_O: RC_Static_ATGM_A
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual [Opf]";
+		displayName="RC ATGM 4km NLOS [Opf]";
 		dissasembleTo[]=
 		{
 			"RC_Static_ATGM_A_Bag_O"
@@ -558,10 +558,10 @@ class RC_Static_ATGM_A_O: RC_Static_ATGM_A
 };
 class RC_Static_ATGM_A_Bag_O: RC_Static_ATGM_A_Bag
 {
-	displayName="RC ATGM 3km manual [Opf]";
+	displayName="RC ATGM 4km NLOS [Opf]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual [Opf]";
+		displayName="RC ATGM 4km NLOS [Opf]";
 		assembleTo="RC_Static_AT_A_O";
 	};
 };
@@ -575,7 +575,7 @@ class RC_Static_ATGM_WD_O: RC_Static_ATGM_WD
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual [Opf]";
+		displayName="RC ATGM 4km NLOS [Opf]";
 		dissasembleTo[]=
 		{
 			"RC_Static_ATGM_WD_Bag_O"
@@ -584,10 +584,10 @@ class RC_Static_ATGM_WD_O: RC_Static_ATGM_WD
 };
 class RC_Static_ATGM_WD_Bag_O: RC_Static_ATGM_WD_Bag
 {
-	displayName="RC ATGM 3km manual [Opf]";
+	displayName="RC ATGM 4km NLOS [Opf]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual [Opf]";
+		displayName="RC ATGM 4km NLOS [Opf]";
 		assembleTo="RC_Static_ATGM_WD_O";
 	};
 };
@@ -602,7 +602,7 @@ class RC_Static_ATGM_A_I: RC_Static_ATGM_A
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual [Ind]";
+		displayName="RC ATGM 4km NLOS [Ind]";
 		dissasembleTo[]=
 		{
 			"RC_Static_ATGM_A_Bag_I"
@@ -611,10 +611,10 @@ class RC_Static_ATGM_A_I: RC_Static_ATGM_A
 };
 class RC_Static_ATGM_A_Bag_I: RC_Static_ATGM_A_Bag
 {
-	displayName="RC ATGM 3km manual [Ind]";
+	displayName="RC ATGM 4km NLOS [Ind]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual [Ind]";
+		displayName="RC ATGM 4km NLOS [Ind]";
 		assembleTo="RC_Static_ATGM_A_I";
 	};
 };
@@ -628,7 +628,7 @@ class RC_Static_ATGM_WD_I: RC_Static_ATGM_WD
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual [Ind]";
+		displayName="RC ATGM 4km NLOS [Ind]";
 		dissasembleTo[]=
 		{
 			"RC_Static_ATGM_WD_Bag_I"
@@ -637,10 +637,10 @@ class RC_Static_ATGM_WD_I: RC_Static_ATGM_WD
 };
 class RC_Static_ATGM_WD_Bag_I: RC_Static_ATGM_WD_Bag
 {
-	displayName="RC ATGM 3km manual [Ind]";
+	displayName="RC ATGM 4km NLOS [Ind]";
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 3km manual [Ind]";
+		displayName="RC ATGM 4km NLOS [Ind]";
 		assembleTo="RC_Static_ATGM_WD_I";
 	};
 };
