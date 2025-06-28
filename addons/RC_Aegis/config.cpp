@@ -68,15 +68,35 @@ class CfgPatches
 			RC_MBT_4_A_O,
 			RC_MBT_4_WD_O,
 			RC_MBT_4_A_I,
-			RC_MBT_4_WD_I
+			RC_MBT_4_WD_I,
+
+			RC_ICV_5_WD2,
+			RC_ICV_5_WD2_O,
+			RC_ICV_5_WD2_I,
+
+			RC_IFV_5_WD2,
+			RC_IFV_5_WD2_O,
+			RC_IFV_5_WD2_I,
+
+			RC_ZSU35_WD,
+			RC_ZSU35_WD_O,
+			RC_ZSU35_WD_I
 		};
 
-		/*
 		weapons[]=
 		{
-			""
+			RC_autocannon_30mm_APC_Wheeled_04,
+
+			RC_SO_Goggles_tan,
+			RC_SO_Goggles_grn,
+			RC_SO_Goggles_blk,
+			RC_SO_Goggles_NV_tan,
+			RC_SO_Goggles_NV_grn,
+			RC_SO_Goggles_NV_blk,
+			RC_SO_Goggles_TI_tan,
+			RC_SO_Goggles_TI_grn,
+			RC_SO_Goggles_TI_blk,
 		};
-		*/
 
 		requiredAddons[]=
 		{

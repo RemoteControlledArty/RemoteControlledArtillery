@@ -16,12 +16,10 @@ class CfgPatches
 			RC_IFV_9_WD_I
 		};
 
-		/*
 		weapons[]=
 		{
-			""
+			RC_autocannon_30mm_lxWS
 		};
-		*/
 
 		requiredAddons[]=
 		{
