@@ -65,8 +65,10 @@ class CfgPatches
 		weapons[]=
 		{
 			RC_Titus_autocannon_20mm,
+			RC_QIN_HMG,
 			RC_QIN_338_MMG1,
-			RC_QIN_338_MMG2
+			RC_QIN_338_MMG2,
+			RC_QIN_762_MMG
 		};
 
 		requiredAddons[]=
