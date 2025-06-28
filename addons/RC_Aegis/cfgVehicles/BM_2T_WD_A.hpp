@@ -80,12 +80,12 @@ class RC_ICV_5_A2_O: RC_ICV_5_WD2_O
 	editorPreview="\A3_Aegis\EditorPreviews_F_Aegis\Data\CfgVehicles\O_R_APC_Tracked_02_cannon_ard_F.jpg";
 	textureList[]=
 	{
-		"Green",
+		"Sand",
 		1
 	};
 	class TextureSources: TextureSources
 	{
-		class Green
+		class Sand
 		{
 			textures[]=
 			{
