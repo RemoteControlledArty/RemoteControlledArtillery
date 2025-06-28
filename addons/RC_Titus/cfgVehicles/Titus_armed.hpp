@@ -128,6 +128,102 @@ class RC_Titus_AC: RC_Titus_AC_base
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={4000,2000,1000,400};
+							resource="RscCustomInfoSensors";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class VehicleGunnerDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="PrimaryGunner";
+						};
+						/*
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						*/
+						class CrewDisplay
+						{
+							componentType="CrewDisplayComponent";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+						/*
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						*/
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={400,1000,2000,4000};
+							resource="RscCustomInfoSensors";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class VehicleGunnerDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="PrimaryGunner";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class CrewDisplay
+						{
+							componentType="CrewDisplayComponent";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+					};
+				};
+			};
 		};
 		class ARX20Turret: ARX20Turret
 		{
@@ -520,6 +616,84 @@ class RC_Titus_MMG_D: RC_Titus_AC
 				"Laserbatteries",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={4000,2000,1000,400};
+							resource="RscCustomInfoSensors";
+						};
+						/*
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						*/
+						class CrewDisplay
+						{
+							componentType="CrewDisplayComponent";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+						/*
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						*/
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={400,1000,2000,4000};
+							resource="RscCustomInfoSensors";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class CrewDisplay
+						{
+							componentType="CrewDisplayComponent";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+					};
+				};
 			};
 		};
 		class ARX20Turret: ARX20Turret
