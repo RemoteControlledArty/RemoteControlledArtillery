@@ -67,14 +67,6 @@ class CfgPatches
 			RC_IFV_7_WD_O,
 			RC_IFV_7_WD_I,
 
-			RC_IFV_8_WD,
-			RC_IFV_8_WD_O,
-			RC_IFV_8_WD_I,
-
-			RC_IFV_9_WD,
-			RC_IFV_9_WD_O,
-			RC_IFV_9_WD_I,
-
 			RC_MBT_3_WD2,
 			RC_MBT_3_WD2_O,
 			RC_MBT_3_WD2_I,
@@ -85,6 +77,18 @@ class CfgPatches
 			RC_MBT_4_WD_O,
 			RC_MBT_4_A_I,
 			RC_MBT_4_WD_I,
+
+			RC_ICV_5_WD2,
+			RC_ICV_5_WD2_O,
+			RC_ICV_5_WD2_I,
+
+			RC_IFV_5_WD2,
+			RC_IFV_5_WD2_O,
+			RC_IFV_5_WD2_I,
+
+			RC_ZSU35_WD,
+			RC_ZSU35_WD_O,
+			RC_ZSU35_WD_I,
 
 			RC_SignalBoosterLRR_a,
 			RC_SignalBoosterLRR_g

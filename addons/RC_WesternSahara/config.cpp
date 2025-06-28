@@ -36,6 +36,10 @@ class CfgPatches
 			RC_ICV_5_A2_O,
 			RC_ICV_5_A2_I,
 
+			RC_IFV_5_A2,
+			RC_IFV_5_A2_O,
+			RC_IFV_5_A2_I,
+
 			RC_ZSU35_A,
 			RC_ZSU35_A_O,
 			RC_ZSU35_A_I
