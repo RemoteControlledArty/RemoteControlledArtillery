@@ -255,7 +255,7 @@ class RC_ATGM_SACLOS: launch_Vorona_base_F
 	scope=1;
 	displayName="SACLOS ATGM";
 	displayNameShort="SACLOS ATGM";
-	canLock=2;
+	canLock=0;
 	weaponLockSystem="1 + 4 + 16";
 	reloadTime=7;
 	magazineReloadTime=7;
