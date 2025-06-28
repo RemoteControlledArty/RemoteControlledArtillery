@@ -122,10 +122,12 @@ class CfgAmmo
 	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 */
+/*
 class CfgMagazines
 {
 	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
+*/
 class CfgWeapons
 {
 	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
@@ -139,9 +141,7 @@ class CfgVehicles
 	#include "\RC_Aegis\cfgVehicles\BTR_80A.hpp"
 	#include "\RC_Aegis\cfgVehicles\BTR_100.hpp"
 	#include "\RC_Aegis\cfgVehicles\BM_2T_WD.hpp"
-	#include "\RC_Aegis\cfgVehicles\BM_2T_Bumerang.hpp"
 	#include "\RC_Aegis\cfgVehicles\Otokar_Arma_WD.hpp"
-	#include "\RC_Aegis\cfgVehicles\Patria_AMV_ATGM_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\T_100.hpp"
 	#include "\RC_Aegis\cfgVehicles\T_14.hpp"
 	#include "\RC_Aegis\cfgVehicles\ZSU_35_WD.hpp"
