@@ -146,11 +146,13 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 							range[]={4000,2000,1000,400};
 							resource="RscCustomInfoSensors";
 						};
+						/*
 						class MinimapDisplay
 						{
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
+						*/
 						class CrewDisplay
 						{
 							componentType="CrewDisplayComponent";
