@@ -14,7 +14,7 @@ class RC_Static_AT_A_base: B_static_AT_F
 };
 class RC_Static_AT_A: RC_Static_AT_A_base
 {
-	displayname="RC ATGM 4km NLOS";
+	displayname="RC ATGM 4km SACLOS";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
 	scope=2;
@@ -103,18 +103,18 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=500;
+					typeRecognitionDistance=1000;
 					class AirTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=1500;
+						maxRange=1500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=1500;
+						maxRange=1500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -129,7 +129,7 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 4km NLOS";
+		displayName="RC ATGM 4km SACLOS";
 		dissasembleTo[]=
 		{
 			"RC_Static_AT_A_Bag"
@@ -148,14 +148,14 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 
 			weapons[]=
 			{
-				"RC_ATGM_NLOS"
+				"RC_ATGM_SACLOS"
 			};
 			magazines[]=
 			{
-				"RC_1Rnd_ATGM_MP_NLOS",
-				"RC_1Rnd_ATGM_MP_NLOS",
-				"RC_1Rnd_ATGM_MP_NLOS",
-				"RC_1Rnd_ATGM_MP_NLOS"
+				"RC_1Rnd_ATGM_MP_SACLOS",
+				"RC_1Rnd_ATGM_MP_SACLOS",
+				"RC_1Rnd_ATGM_MP_SACLOS",
+				"RC_1Rnd_ATGM_MP_SACLOS"
 			};
 			class ViewOptics: ViewOptics
 			{
@@ -219,37 +219,37 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 		class muzzle_source
 		{
 			source="reload";
-			weapon="RC_ATGM_NLOS";
+			weapon="RC_ATGM_SACLOS";
 		};
 		class muzzle_source_rot
 		{
 			source="ammorandom";
-			weapon="RC_ATGM_NLOS";
+			weapon="RC_ATGM_SACLOS";
 		};
 		class ReloadAnim
 		{
 			source="reload";
-			weapon="RC_ATGM_NLOS";
+			weapon="RC_ATGM_SACLOS";
 		};
 		class ReloadMagazine
 		{
 			source="reloadmagazine";
-			weapon="RC_ATGM_NLOS";
+			weapon="RC_ATGM_SACLOS";
 		};
 		class Revolving
 		{
 			source="revolving";
-			weapon="RC_ATGM_NLOS";
+			weapon="RC_ATGM_SACLOS";
 		};
 	};
 };
 class RC_Static_AT_A_Bag: RC_Static_AA_A_Bag
 {
-	displayName="RC ATGM 4km NLOS";
+	displayName="RC ATGM 4km SACLOS";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 4km NLOS";
+		displayName="RC ATGM 4km SACLOS";
 		assembleTo="RC_Static_AT_A";
 	};
 };
@@ -276,11 +276,11 @@ class RC_Static_AT_WD: RC_Static_AT_A
 };
 class RC_Static_AT_WD_Bag: RC_Static_AA_WD_Bag
 {
-	displayName="RC ATGM 4km NLOS";
+	displayName="RC ATGM 4km SACLOS";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 4km NLOS";
+		displayName="RC ATGM 4km SACLOS";
 		assembleTo="RC_Static_AT_WD";
 	};
 };
@@ -415,14 +415,14 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 		{
 			weapons[]=
 			{
-				"RC_ATGM_SACLOS"
+				"RC_ATGM_NLOS"
 			};
 			magazines[]=
 			{
-				"RC_1Rnd_ATGM_MP_SACLOS",
-				"RC_1Rnd_ATGM_MP_SACLOS",
-				"RC_1Rnd_ATGM_MP_SACLOS",
-				"RC_1Rnd_ATGM_MP_SACLOS"
+				"RC_1Rnd_ATGM_MP_NLOS",
+				"RC_1Rnd_ATGM_MP_NLOS",
+				"RC_1Rnd_ATGM_MP_NLOS",
+				"RC_1Rnd_ATGM_MP_NLOS"
 			};
 
 			class Components: Components
@@ -475,27 +475,27 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 		class muzzle_source
 		{
 			source="reload";
-			weapon="RC_ATGM_SACLOS";
+			weapon="RC_ATGM_NLOS";
 		};
 		class muzzle_source_rot
 		{
 			source="ammorandom";
-			weapon="RC_ATGM_SACLOS";
+			weapon="RC_ATGM_NLOS";
 		};
 		class ReloadAnim
 		{
 			source="reload";
-			weapon="RC_ATGM_SACLOS";
+			weapon="RC_ATGM_NLOS";
 		};
 		class ReloadMagazine
 		{
 			source="reloadmagazine";
-			weapon="RC_ATGM_SACLOS";
+			weapon="RC_ATGM_NLOS";
 		};
 		class Revolving
 		{
 			source="revolving";
-			weapon="RC_ATGM_SACLOS";
+			weapon="RC_ATGM_NLOS";
 		};
 	};
 };
