@@ -24,7 +24,6 @@ _markerCount = count RC_Artillery_Markers;
 // Main Handler
 if _direction then {
 	// Forward
-
 	// If we are at the Final Target
 	if (RC_Current_Index >= (_markerCount - 1)) then {
 		RC_Current_Index = 0;
@@ -32,17 +31,11 @@ if _direction then {
 		// Increment
 		RC_Current_Index = RC_Current_Index + 1;
 	};
-
-	RC_Current_Target = RC_Artillery_Markers select RC_Current_Index;
-
 } else {
 	// Backward
-
 	if (RC_Current_Index <= 0) then {
 		RC_Current_Index = (_markerCount - 1);
 	} else {
 		RC_Current_Index = RC_Current_Index - 1;
 	};
-
-	RC_Current_Target = RC_Artillery_Markers select RC_Current_Index;
 };
