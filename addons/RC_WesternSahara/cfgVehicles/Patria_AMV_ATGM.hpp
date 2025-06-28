@@ -109,7 +109,7 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 		class Missiles_revolving
 		{
 			source="revolving";
-			weapon="RC_IFV_Missile_Launcher_lxWS";
+			weapon="RC_IFV_Missile_Launcher_4R";
 		};
 		class showCamonetHull: showCamonetHull
 		{
@@ -203,7 +203,7 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 			{
 				"RC_autocannon_30mm",
 				"RC_MMG_338_coax",
-				"RC_IFV_Missile_Launcher_lxWS",
+				"RC_IFV_Missile_Launcher_4R",
 				"SmokeLauncher"
 			};
 			#include "\RC_WesternSahara\includes_vicmags\mags_Patria_ATGM_30mm_red.hpp"
