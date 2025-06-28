@@ -285,12 +285,15 @@ RC_Artillery_UI = [] spawn {
 			// If we actually have a Target (thats not too close)
 			if (((cursorTarget isNotEqualto objNull) && { _selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE }) || !(RC_Artillery_Markers isEqualTo [])) then {
 				if !(RC_Artillery_Markers isEqualTo []) then {
-					if (isNil "RC_Current_Target" || RC_Current_Target isEqualTo []) then {
-						RC_Current_Target = RC_Artillery_Markers select 0;
+
+					_currentTargetMarker = RC_Artillery_Markers select RC_Current_Index;	//moved from scroll solution to here, to still update when marker name was edited
+
+					if (isNil "_currentTargetMarker" || _currentTargetMarker isEqualTo []) then {
+						_currentTargetMarker = RC_Artillery_Markers select 0;
 					};
 					// Try to see if the Current Target Exists
 					_targetExists = RC_Artillery_Markers findIf {
-						(_x select 0) == (RC_Current_Target select 0);
+						(_x select 0) == (_currentTargetMarker select 0);
 					};
 					// If the Target can't be found we reset the current target
 					if (_targetExists == -1) then {
@@ -312,15 +315,12 @@ RC_Artillery_UI = [] spawn {
 					//_targetPos = getpos cursorTarget;
 					_targetPos = getposASL cursorTarget;
 				} else {
-					
-    				//_targetPos = markerPos [(RC_Current_Target select 1), true]; //test preserveelevation true
-					_targetPos = markerPos (RC_Current_Target select 1);	//this alone worked before summer 2025, now marker z seems to be 0
+    				_targetPos = AGLtoASL (markerPos [(_currentTargetMarker select 1), true]);
+					/*
+					_targetPos = markerPos (_currentTargetMarker select 1);
 					_newTargetASL = getTerrainHeightASL _targetPos;
 					_targetPos set [2, _newTargetASL];
-
-					//this likely caused problem below
-					//before: _targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (AGLtoASL _targetPos);
-					//atm: _targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (_targetPos);
+					*/
 				};
 
 				//Barrel End to Target Distance
@@ -356,14 +356,14 @@ RC_Artillery_UI = [] spawn {
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
 					_ctrlTarget ctrlSetText "T: Datalink";
 				} else {
-					_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
+					_ctrlTarget ctrlSetText Format ["T: %1", [_currentTargetMarker select 0, 2, 0] call CBA_fnc_formatNumber];
 				};
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 
 				//if cba nan error occurs use this
 				/*
-				if ((RC_Current_Target select 0) isEqualType 0) then {
+				if ((_currentTargetMarker select 0) isEqualType 0) then {
 					_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
 				} else {
 					_ctrlDistance ctrlSetText Format ["DIST: ????%1"];
@@ -372,8 +372,8 @@ RC_Artillery_UI = [] spawn {
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
 					_ctrlTarget ctrlSetText "T: Datalink";
 				} else {
-					if ((RC_Current_Target select 0) isEqualType 0) then {
-						_ctrlTarget ctrlSetText Format ["T: %1", [RC_Current_Target select 0, 2, 0] call CBA_fnc_formatNumber];
+					if ((_currentTargetMarker select 0) isEqualType 0) then {
+						_ctrlTarget ctrlSetText Format ["T: %1", [_currentTargetMarker select 0, 2, 0] call CBA_fnc_formatNumber];
 					} else {
 						_ctrlTarget ctrlSetText Format ["T: ??%1"];
 					};
@@ -385,7 +385,7 @@ RC_Artillery_UI = [] spawn {
 					_ctrlTargetAzimuth ctrlSetText Format ["T AZ: ????%1"];
 				};
 
-				if ((RC_Current_Target select 0) isEqualType 0) then {
+				if ((_currentTargetMarker select 0) isEqualType 0) then {
 					_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 				} else {
 					_ctrlDifference ctrlSetText Format ["DIF: ????%1"];
