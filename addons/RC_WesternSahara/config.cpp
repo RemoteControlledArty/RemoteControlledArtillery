@@ -30,7 +30,15 @@ class CfgPatches
 			RC_OtokarArma_RCIV_A_O,
 			RC_OtokarArma_RCIV_WD_O,
 			RC_OtokarArma_RCIV_A_I,
-			RC_OtokarArma_RCIV_WD_I
+			RC_OtokarArma_RCIV_WD_I,
+
+			RC_ICV_5_A2,
+			RC_ICV_5_A2_O,
+			RC_ICV_5_A2_I,
+
+			RC_ZSU35_A,
+			RC_ZSU35_A_O,
+			RC_ZSU35_A_I
 		};
 
 		weapons[]=
