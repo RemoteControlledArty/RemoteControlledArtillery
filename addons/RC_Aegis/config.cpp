@@ -59,14 +59,6 @@ class CfgPatches
 			RC_IFV_7_WD_O,
 			RC_IFV_7_WD_I,
 
-			RC_IFV_8_WD,
-			RC_IFV_8_WD_O,
-			RC_IFV_8_WD_I,
-
-			RC_IFV_9_WD,
-			RC_IFV_9_WD_O,
-			RC_IFV_9_WD_I,
-
 			RC_MBT_3_WD2,
 			RC_MBT_3_WD2_O,
 			RC_MBT_3_WD2_I,
