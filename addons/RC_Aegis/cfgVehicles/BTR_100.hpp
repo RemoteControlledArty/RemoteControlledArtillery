@@ -92,12 +92,12 @@ class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 		class Missiles_reloadMagazine
 		{
 			source="reloadMagazine";
-			weapon="RC_IFV_Missile_Launcher_lxWS";
+			weapon="RC_IFV_Missile_Launcher_4R";
 		};
 		class Missiles_revolving
 		{
 			source="revolving";
-			weapon="RC_IFV_Missile_Launcher_lxWS";
+			weapon="RC_IFV_Missile_Launcher_4R";
 		};
 	};
 
@@ -346,7 +346,7 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 			{
 				"RC_autocannon_30mm_lxWS",
 				"RC_MMG_93x64_coax_ext_lxWS",
-				"RC_IFV_Missile_Launcher_lxWS",
+				"RC_IFV_Missile_Launcher_4R",
 				"SmokeLauncher"
 			};
 			#include "\RC_Aegis\includes_vicmags\mags_BTR100_Bu_30mm_red.hpp"
