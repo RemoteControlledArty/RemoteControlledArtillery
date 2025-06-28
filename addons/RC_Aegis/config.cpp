@@ -94,12 +94,20 @@ class CfgPatches
 			RC_SignalBoosterLRR_g
 		};
 
-		/*
 		weapons[]=
 		{
-			""
+			RC_autocannon_30mm_APC_Wheeled_04,
+
+			RC_SO_Goggles_tan,
+			RC_SO_Goggles_grn,
+			RC_SO_Goggles_blk,
+			RC_SO_Goggles_NV_tan,
+			RC_SO_Goggles_NV_grn,
+			RC_SO_Goggles_NV_blk,
+			RC_SO_Goggles_TI_tan,
+			RC_SO_Goggles_TI_grn,
+			RC_SO_Goggles_TI_blk
 		};
-		*/
 
 		requiredAddons[]=
 		{
