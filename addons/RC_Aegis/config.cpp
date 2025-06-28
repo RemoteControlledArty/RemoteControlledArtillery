@@ -95,7 +95,7 @@ class CfgPatches
 			RC_SO_Goggles_NV_blk,
 			RC_SO_Goggles_TI_tan,
 			RC_SO_Goggles_TI_grn,
-			RC_SO_Goggles_TI_blk,
+			RC_SO_Goggles_TI_blk
 		};
 
 		requiredAddons[]=
