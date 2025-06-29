@@ -111,7 +111,7 @@ class CfgWeapons
 		};
 		class manual: manual
 		{
-			reloadTime==0.0857;
+			reloadTime=0.0857;
 		};
 
 		muzzlePos="usti hlavne";

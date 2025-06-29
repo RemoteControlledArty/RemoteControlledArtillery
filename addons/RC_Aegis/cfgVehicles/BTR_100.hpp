@@ -82,12 +82,12 @@ class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 		class reload_cannon
 		{
 			source="reload";
-			weapon="RC_autocannon_30mm_lxWS";
+			weapon="RC_autocannon_30mm_Bu";
 		};
 		class muzzle_hide
 		{
 			source="reload";
-			weapon="RC_autocannon_30mm_lxWS";
+			weapon="RC_autocannon_30mm_Bu";
 		};
 		class Missiles_reloadMagazine
 		{
@@ -344,7 +344,7 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 
 			weapons[]=
 			{
-				"RC_autocannon_30mm_lxWS",
+				"RC_autocannon_30mm_Bu",
 				"RC_MMG_93x64_coax_ext",
 				"RC_IFV_Missile_Launcher_4R",
 				"SmokeLauncher"
