@@ -51,7 +51,7 @@ class RC_Crocus_Truck_A_I: RC_Crocus_Truck_A
 
 class RC_Crocus_Truck_WD: RC_Crocus_Truck_A
 {
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_olive_F.jpg";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_Truck_01_box_F.jpg";
 	textureList[]=
 	{
 		"Olive",
@@ -132,7 +132,7 @@ class RC_Crocus_Truck_manned_A_I: RC_Crocus_Truck_manned_A
 
 class RC_Crocus_Truck_manned_WD: RC_Crocus_Truck_manned_A
 {
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_olive_F.jpg";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_Truck_01_box_F.jpg";
 	textureList[]=
 	{
 		"Olive",
