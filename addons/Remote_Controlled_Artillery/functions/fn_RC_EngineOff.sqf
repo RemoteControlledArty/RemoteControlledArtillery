@@ -28,14 +28,18 @@ RC_EngineOff = [] spawn
 			_EngineOff = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCEngineOff");
 			RCEngineOffHash set [_uavClass, _EngineOff];
 		};
-		
-		// Turns off Engine when staying still
-		_speedCheck1 = false;
-		_speedCheck2 = false;
-		if ((speed _uav <= 0.1) and (speed _uav >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false};
+
+		if (_EngineOff > 0) then {
+			// Turns off Engine when staying still
+			_speedCheck1 = false;
+			_speedCheck2 = false;
+			if ((speed _uav <= 0.1) and (speed _uav >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false};
+			sleep 1;
+			if (_EngineOff == 2) then {sleep 2};
+			if ((speed _uav <= 0.1) and (speed _uav >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false};
+			if ((_speedCheck1) and (_speedCheck2) and ((_EngineOff == 1) or (_EngineOff == 2))) then {_uav engineOn false};
+		};
+
 		sleep 1;
-		if (_EngineOff == 2) then {sleep 2};
-		if ((speed _uav <= 0.1) and (speed _uav >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false};
-		if ((_speedCheck1) and (_speedCheck2) and ((_EngineOff == 1) or (_EngineOff == 2))) then {_uav engineOn false};
 	};
 };

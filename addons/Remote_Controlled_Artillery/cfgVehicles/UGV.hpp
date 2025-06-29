@@ -24,6 +24,7 @@ class RC_GMG_UGV_base: B_UGV_01_rcws_F
 	scopeCurator=0;
 
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
 class RC_GMG_UGV_A_base: RC_GMG_UGV_base
 {
