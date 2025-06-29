@@ -199,6 +199,17 @@ class RC_autocannon_30mm_APC_Wheeled_04: RC_autocannon_30mm_APC_Wheeled_04_Base
 };
 
 
+class RC_autocannon_30mm_Bu: RC_autocannon_30mm_APC_Wheeled_04
+{
+	class GunParticles
+	{
+		directionName="konec hlavne";
+		effectName="AutoCannonFired";
+		positionName="usti hlavne";
+	};
+};
+
+
 /*
 class missles_Vorona_vehicles_lxWS;
 class RC_missles_Vorona_vehicles_lxWS_Base: missles_Vorona_vehicles_lxWS

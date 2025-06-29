@@ -86,6 +86,7 @@ class CfgPatches
 		weapons[]=
 		{
 			"RC_autocannon_30mm_APC_Wheeled_04",
+			"RC_autocannon_30mm_Bu",
 
 			"RC_SO_Goggles_tan",
 			"RC_SO_Goggles_grn",
