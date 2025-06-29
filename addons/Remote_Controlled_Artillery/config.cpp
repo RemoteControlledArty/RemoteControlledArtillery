@@ -892,8 +892,12 @@ class CfgEditorSubcategories
 	class RC_ICV_armed_subcat {displayname="RCIVs (armed)";};
 	class RC_ICV_subcat {displayname="RCIVs (unarmed)";};
 	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
-	class RC_Test_subcat {displayname="Test";};
+	//class RC_Test_subcat {displayname="Test";};
 	class RC_UAV_Designator_subcat {displayname="UAVs / Designators";};
+	/*
+	class RC_UAV_Designator_subcat {displayname="UAVs (Attack)";};
+	class RC_UAV_Designator_subcat {displayname="UAVs (Recon) / Designators";};
+	*/
 
 	class RC_ReTex_Arid_subcat {displayname="Arid";};
 	class RC_ReTex_Desert_subcat {displayname="Desert";};
