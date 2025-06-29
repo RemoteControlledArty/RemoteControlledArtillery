@@ -3572,8 +3572,8 @@ class RC_Sh_40mm_AMOS_HE: RC_G_40mm_HEDP
 	sideairFriction=0;
 	deflecting=1;
 
-	hit=100;
-	caliber=4;
+	hit=110;
+	caliber=4.7;
 	indirectHit=12;
 	indirectHitRange=8;
 	warheadName="HEAT";
