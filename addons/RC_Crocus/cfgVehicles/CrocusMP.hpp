@@ -94,7 +94,7 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	{
 		class RC_Crocus
 		{
-			fired="_this call RC_fnc_fpv_onDestroy_MP";
+			fired="if (local (_this select 0)) then {_this call RC_fnc_fpv_onDestroy_MP};";
 			hit="_this call RC_fnc_fpv_onDestroy_MP";
 			init="(_this # 0) spawn RC_fnc_fpv_droneInit_MP;";
 		};
