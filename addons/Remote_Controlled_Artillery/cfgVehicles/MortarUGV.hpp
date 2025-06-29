@@ -187,7 +187,6 @@ class RC_Mortar_UGV_Base: RC_Mortar_UGV_Core
 						viewDistanceLimitCoef=-1;
 					};
 				};
-				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 			};
 		};
 	};
