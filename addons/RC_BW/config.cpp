@@ -7,34 +7,35 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_Puma_30mm_FT,
-			RC_Puma_30mm_FT_O,
-			RC_Puma_30mm_FT_I,
-			RC_Puma_30mm_TT,
-			RC_Puma_30mm_TT_O,
-			RC_Puma_30mm_TT_I,
+			"RC_Puma_30mm_FT",
+			"RC_Puma_30mm_FT_O",
+			"RC_Puma_30mm_FT_I",
+			"RC_Puma_30mm_TT",
+			"RC_Puma_30mm_TT_O",
+			"RC_Puma_30mm_TT_I",
 
-			RC_PzH2000_FT,
-			RC_PzH2000_FT_O,
-			RC_PzH2000_FT_I,
-			RC_PzH2000_TT,
-			RC_PzH2000_TT_O,
-			RC_PzH2000_TT_I,
+			"RC_PzH2000_FT",
+			"RC_PzH2000_FT_O",
+			"RC_PzH2000_FT_I",
+			"RC_PzH2000_TT",
+			"RC_PzH2000_TT_O",
+			"RC_PzH2000_TT_I",
 
-			RC_PzH2000_LC_FT,
-			RC_PzH2000_LC_FT_O,
-			RC_PzH2000_LC_FT_I,
-			RC_PzH2000_LC_TT,
-			RC_PzH2000_LC_TT_O,
-			RC_PzH2000_LC_TT_I
+			"RC_PzH2000_LC_FT",
+			"RC_PzH2000_LC_FT_O",
+			"RC_PzH2000_LC_FT_I",
+			"RC_PzH2000_LC_TT",
+			"RC_PzH2000_LC_TT_O",
+			"RC_PzH2000_LC_TT_I"
 		};
 
-		/*
 		weapons[]=
 		{
-			""
+			"RC_SPz_Spike",
+			"RC_MK30",
+			"RC_MG338_vehicle",
+			"RC_155mm_AMOS_PzH"
 		};
-		*/
 
 		requiredAddons[]=
 		{

@@ -7,18 +7,18 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_IFV_8_WD,
-			RC_IFV_8_WD_O,
-			RC_IFV_8_WD_I,
+			"RC_IFV_8_WD",
+			"RC_IFV_8_WD_O",
+			"RC_IFV_8_WD_I",
 
-			RC_IFV_9_WD,
-			RC_IFV_9_WD_O,
-			RC_IFV_9_WD_I
+			"RC_IFV_9_WD",
+			"RC_IFV_9_WD_O",
+			"RC_IFV_9_WD_I"
 		};
 
 		weapons[]=
 		{
-			RC_autocannon_30mm_lxWS
+			"RC_autocannon_30mm_lxWS"
 		};
 
 		requiredAddons[]=
@@ -36,6 +36,23 @@ class CfgPatches
 		skipWhenMissingDependencies=1;
 	};
 };
+
+
+//later required sensors
+class SensorTemplateDataLink;
+class SensorTemplateLaser;
+class SensorTemplateIR;
+class SensorTemplateNV;
+class SensorTemplateVisual;
+class SensorTemplateMan;
+class SensorTemplatePassiveRadar;
+
+//later required optics
+class RCWSOptics;
+
+//later required sensor panels
+class DefaultVehicleSystemsDisplayManagerLeft;
+class DefaultVehicleSystemsDisplayManagerRight;
 
 
 /*
