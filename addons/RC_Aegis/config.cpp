@@ -51,12 +51,18 @@ class CfgPatches
 			"RC_IFV_5_WD2_O",
 			"RC_IFV_5_WD2_I",
 
+			"RC_ICV_7_A",
 			"RC_ICV_7_WD",
+			"RC_ICV_7_A_O",
 			"RC_ICV_7_WD_O",
+			"RC_ICV_7_A_I",
 			"RC_ICV_7_WD_I",
 
+			"RC_IFV_7_A",
 			"RC_IFV_7_WD",
+			"RC_IFV_7_A_O",
 			"RC_IFV_7_WD_O",
+			"RC_IFV_7_A_I",
 			"RC_IFV_7_WD_I",
 
 			"RC_MBT_3_WD2",
