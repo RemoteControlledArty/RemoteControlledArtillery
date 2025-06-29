@@ -274,7 +274,7 @@ class RC_FPV_Mothership: RC_FPV_Mothership_Base
 	};
 	*/
 
-	displayName="FPV Mothership";
+	displayName="RC FPV Mothership";
 	editorSubcategory="RC_UAV_Designator_subcat";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;
@@ -299,7 +299,7 @@ class RC_FPV_Mothership_I: RC_FPV_Mothership
 
 class RC_FPV_Mothership_NoCam: RC_FPV_Mothership
 {
-	displayName="FPV Mothership [no camera]";
+	displayName="RC FPV Mothership [no camera]";
 
 	class Turrets: Turrets
 	{
@@ -702,7 +702,7 @@ class RC_FPV_MothershipMQ: RC_FPV_MothershipMQ_Base
 	};
 	*/
 
-	displayName="FPV Mothership";
+	displayName="RC FPV Mothership";
 	editorSubcategory="RC_UAV_Designator_subcat";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;
@@ -728,7 +728,7 @@ class RC_FPV_MothershipMQ_I: RC_FPV_MothershipMQ
 
 class RC_FPV_MothershipMQ_NoCam: RC_FPV_MothershipMQ
 {
-	displayName="FPV Mothership [no camera]";
+	displayName="RC FPV Mothership [no camera]";
 
 	class Turrets: Turrets
 	{

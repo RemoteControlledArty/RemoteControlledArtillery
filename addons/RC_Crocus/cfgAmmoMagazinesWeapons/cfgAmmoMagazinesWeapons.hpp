@@ -201,11 +201,16 @@ class cfgMagazines
 	{
 		count=6;
 	};
-	class RC_8xCrocus_Deployer_UGV_Mag: RC_8xCrocus_Deployer_Mag
+	class RC_18xCrocus_Deployer_UGV_Mag: RC_8xCrocus_Deployer_Mag
 	{
 		initSpeed=1000;		//only to prevent scorch mark on ground below the vic
+		count=18;
 	};
-	class RC_6xCrocus_Deployer_UGV_Mag: RC_8xCrocus_Deployer_UGV_Mag
+	class RC_8xCrocus_Deployer_UGV_Mag: RC_18xCrocus_Deployer_UGV_Mag
+	{
+		count=6;
+	};
+	class RC_6xCrocus_Deployer_UGV_Mag: RC_18xCrocus_Deployer_UGV_Mag
 	{
 		count=6;
 	};
@@ -295,6 +300,7 @@ class cfgWeapons
 		{
 			"RC_8xCrocus_Deployer_Mag",
 			"RC_6xCrocus_Deployer_Mag",
+			"RC_18xCrocus_Deployer_UGV_Mag",
 			"RC_8xCrocus_Deployer_UGV_Mag",
 			"RC_6xCrocus_Deployer_UGV_Mag"
 		};

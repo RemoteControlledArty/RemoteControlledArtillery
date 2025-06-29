@@ -39,7 +39,12 @@ class RC_FPV_Deployer: MGun
 	};
 	magazines[]=
 	{
-		"RC_6xFPV_Deployer_Mag"
+		"RC_6xFPV_Deployer_Mag",
+		"RC_8xFPV_Deployer_Mag",
+
+		"RC_6xFPV_Deployer_UGV_Mag",
+		"RC_8xFPV_Deployer_UGV_Mag",
+		"RC_18xFPV_Deployer_UGV_Mag"
 	};
 	reloadTime=1;
 	magazineReloadTime=30;

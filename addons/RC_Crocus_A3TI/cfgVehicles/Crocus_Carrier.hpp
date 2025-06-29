@@ -19,14 +19,16 @@ class RC_Crocus_Carrier_A: RC_Crocus_Carrier_Base
 
 	weapons[]=
 	{
-		"RC_Crocus_Deployer"
+		"RC_Crocus_Deployer",
+		"SmokeLauncher"
 	};
 	magazines[]=
 	{
-		"RC_8xCrocus_Deployer_UGV_Mag"
+		"RC_8xCrocus_Deployer_UGV_Mag",
+		"SmokeLauncherMag"
 	};
 
-	displayName="Crocus Carrier";
+	displayName="RC Crocus Carrier";
 	scope=2;
 	scopeCurator=2;
 };

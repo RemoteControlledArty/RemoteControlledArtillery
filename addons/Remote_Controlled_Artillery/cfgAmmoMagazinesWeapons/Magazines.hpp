@@ -25,6 +25,15 @@ class RC_6xFPV_Deployer_Mag: VehicleMagazine
 		"RC_FPV_Deployer_mag"
 	};
 };
+class RC_8xFPV_Deployer_Mag: RC_6xFPV_Deployer_Mag {count=8;};
+
+
+class RC_6xFPV_Deployer_UGV_Mag: RC_6xFPV_Deployer_Mag
+{
+	initSpeed=1000;
+};
+class RC_8xFPV_Deployer_UGV_Mag: RC_6xFPV_Deployer_UGV_Mag {count=8;};
+class RC_18xFPV_Deployer_UGV_Mag: RC_6xFPV_Deployer_UGV_Mag {count=18;};
 
 
 /*

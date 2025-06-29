@@ -36,7 +36,7 @@ class RC_Crocus_Mothership: RC_Crocus_Mothership_Base
 		};
 	};
 
-	displayName="Crocus Mothership";
+	displayName="RC Crocus Mothership";
 	scope=2;
 	scopeCurator=2;
 };
@@ -90,7 +90,7 @@ class RC_Crocus_Mothership_NoCam: RC_Crocus_Mothership_NoCam_Base
 		};
 	};
 
-	displayName="Crocus Mothership [no camera]";
+	displayName="RC Crocus Mothership [no camera]";
 	scope=2;
 	scopeCurator=2;
 };
@@ -146,7 +146,7 @@ class RC_Crocus_MothershipMQ: RC_Crocus_MothershipMQ_Base
 		};
 	};
 
-	displayName="Crocus Mothership";
+	displayName="RC Crocus Mothership";
 	scope=2;
 	scopeCurator=2;
 };
@@ -200,7 +200,7 @@ class RC_Crocus_MothershipMQ_NoCam: RC_Crocus_MothershipMQ_NoCam_Base
 		};
 	};
 
-	displayName="Crocus Mothership [no camera]";
+	displayName="RC Crocus Mothership [no camera]";
 	scope=2;
 	scopeCurator=2;
 };

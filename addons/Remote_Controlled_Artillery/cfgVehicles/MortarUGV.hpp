@@ -56,10 +56,6 @@ class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
 	waterPPInVehicle=0;
 	waterResistanceCoef=0.5;
 
-	smokeLauncherVelocity=3;
-	smokeLauncherGrenadeCount=4;
-	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
-
 	class HitPoints: HitPoints
 	{
 		class HitHull: HitHull
@@ -191,20 +187,26 @@ class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
 class RC_FPV_Carrier_A: RC_FPV_Carrier_Base
 {
 	/*
-	weapons[]=
+	class Turrets: Turrets
 	{
-		"RC_FPV_Deployer",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"RC_8xFPV_Deployer_Mag",
-		"SmokeLauncherMag"
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"Laserdesignator_mounted",
+				"RC_FPV_Deployer"
+			};
+			magazines[]=
+			{
+				"Laserbatteries",
+				"RC_6xFPV_Deployer_Mag"
+			};
+		};
 	};
 	*/
 
 	author="Ascent";
-	displayName="RC FPV Carrier";
+	displayName="FPV Carrier";
 	editorSubcategory="RC_UAV_Designator_subcat";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;

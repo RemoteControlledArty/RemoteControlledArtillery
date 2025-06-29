@@ -71,4 +71,5 @@ class CfgVehicles
 	#include "\RC_Crocus_A3TI\cfgVehicles\CrocusMP_TI.hpp"
 	#include "\RC_Crocus_A3TI\cfgVehicles\Crocus_Carrier.hpp"
 	#include "\RC_Crocus_A3TI\cfgVehicles\Crocus_Mothership.hpp"
+	#include "\RC_Crocus_A3TI\cfgVehicles\Crocus_Truck.hpp"
 };
