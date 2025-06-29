@@ -1,5 +1,5 @@
 class B_UGV_01_F;
-class RC_FPV_Carrier_Core: B_UGV_01_F
+class RC_Mortar_UGV_Core: B_UGV_01_F
 {
 	class HitPoints;
 	class HitHull;
@@ -11,8 +11,6 @@ class RC_FPV_Carrier_Core: B_UGV_01_F
 	class HitRFWheel;
 	class HitRF2Wheel;
 	class HitRMWheel;
-	class Turrets;
-	class MainTurret;
 	class ViewOptics;
 	class ViewPilot;
 	class Components;
@@ -22,7 +20,7 @@ class RC_FPV_Carrier_Core: B_UGV_01_F
 	//RC_UAVBlurRange=2000;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
+class RC_Mortar_UGV_Base: RC_Mortar_UGV_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -43,8 +41,9 @@ class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
 	class Reflectors {};	//removed, otherwise they are automatically on at night
 	aggregateReflectors[]={{""}};
 
+	author="Ascent";
+	editorSubcategory="RC_Mortar_subcat";
 	side=1;
-	forceInGarage=1;
 	crewCrashProtection=0.01;
 	maxSpeed=80;
 	enginePower=120;
@@ -55,6 +54,21 @@ class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
 	waterAngularDampingCoef=10;
 	waterPPInVehicle=0;
 	waterResistanceCoef=0.5;
+
+	smokeLauncherVelocity=3;
+	smokeLauncherGrenadeCount=4;
+	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
+
+	weapons[]=
+	{
+		"RC_target_confirmer",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_target_confirmer_mag",
+		"SmokeLauncherMag"
+	};
 
 	class HitPoints: HitPoints
 	{
@@ -161,19 +175,19 @@ class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
 			{
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=8000;
+					typeRecognitionDistance=67000;
 
 					class AirTarget
 					{
-						minRange=8000;
-						maxRange=8000;
+						minRange=67000;
+						maxRange=67000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=8000;
-						maxRange=8000;
+						minRange=67000;
+						maxRange=67000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -184,47 +198,52 @@ class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
 	};
 };
 
-class RC_FPV_Carrier_A: RC_FPV_Carrier_Base
+
+class RC_Mortar_UGV_A: RC_Mortar_UGV_Base
 {
-	/*
-	class Turrets: Turrets
+	class EventHandlers: EventHandlers
 	{
-		class MainTurret: MainTurret
+		class RC_Artillery
 		{
-			weapons[]=
-			{
-				"Laserdesignator_mounted",
-				"RC_FPV_Deployer"
-			};
-			magazines[]=
-			{
-				"Laserbatteries",
-				"RC_6xFPV_Deployer_Mag"
-			};
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.355, -0.87, 0.04]];};";
 		};
 	};
-	*/
 
-	author="Ascent";
-	displayName="FPV Carrier";
-	editorSubcategory="RC_UAV_Designator_subcat";
-	//scope=2;	//until weapon in rc crocus config is put to main
-	//scopeCurator=2;
+	displayName="RC Mortar UGV";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
 	
 	faction="RemoteControlled_B";
 	crew="B_UAV_AI";
 	side=1;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
-class RC_FPV_Carrier_A_O: RC_FPV_Carrier_A
+class RC_Mortar_UGV_A_O: RC_Mortar_UGV_A
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.355, -0.87, 0.04]];};";
+		};
+	};
+
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
-class RC_FPV_Carrier_A_I: RC_FPV_Carrier_A
+class RC_Mortar_UGV_A_I: RC_Mortar_UGV_A
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.355, -0.87, 0.04]];};";
+		};
+	};
+
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
@@ -233,7 +252,7 @@ class RC_FPV_Carrier_A_I: RC_FPV_Carrier_A
 
 
 
-class RC_FPV_Carrier_WD: RC_FPV_Carrier_A
+class RC_Mortar_UGV_WD: RC_Mortar_UGV_A
 {
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_olive_F.jpg";
 	textureList[]=
@@ -248,15 +267,108 @@ class RC_FPV_Carrier_WD: RC_FPV_Carrier_A
 		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
 	};
 };
-class RC_FPV_Carrier_WD_O: RC_FPV_Carrier_WD
+class RC_Mortar_UGV_WD_O: RC_Mortar_UGV_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
-class RC_FPV_Carrier_WD_I: RC_FPV_Carrier_WD
+class RC_Mortar_UGV_WD_I: RC_Mortar_UGV_WD
 {
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
+class RC_Mortar_UGV_LC_A: RC_Mortar_UGV_A
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.355, -0.87, 0.04]];};";
+		};
+	};
+
+	displayName="RC Mortar UGV LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+};
+class RC_Mortar_UGV_LC_A_O: RC_Mortar_UGV_LC_A
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.355, -0.87, 0.04]];};";
+		};
+	};
+
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_Mortar_UGV_LC_A_I: RC_Mortar_UGV_LC_A
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.355, -0.87, 0.04]];};";
+		};
+	};
+	
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
+
+class RC_Mortar_UGV_LC_WD: RC_Mortar_UGV_LC_A
+{
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_olive_F.jpg";
+	textureList[]=
+	{
+		"Olive",
+		1
+	};
+	hiddenSelectionsTextures[]=
+	{
+		"\A3\Soft_F_Exp\UGV_01\Data\UGV_01_ext_olive_CO.paa",
+		"\A3\Soft_F_Exp\UGV_01\Data\UGV_01_int_olive_CO.paa",
+		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
+	};
+};
+class RC_Mortar_UGV_LC_WD_O: RC_Mortar_UGV_LC_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.355, -0.87, 0.04]];};";
+		};
+	};
+
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_Mortar_UGV_LC_WD_I: RC_Mortar_UGV_LC_WD
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.355, -0.87, 0.04]];};";
+		};
+	};
+
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;

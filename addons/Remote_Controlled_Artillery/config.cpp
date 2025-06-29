@@ -931,6 +931,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\MortarUGV.hpp"	//further up for later inheritance 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FPV_Carrier.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FPV_Mothership.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FPV_Truck.hpp"

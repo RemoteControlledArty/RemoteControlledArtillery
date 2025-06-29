@@ -1,28 +1,4 @@
-class B_UGV_01_F;
-class RC_FPV_Carrier_Core: B_UGV_01_F
-{
-	class HitPoints;
-	class HitHull;
-	class HitEngine;
-	class HitFuel;
-	class HitLFWheel;
-	class HitLF2Wheel;
-	class HitLMWheel;
-	class HitRFWheel;
-	class HitRF2Wheel;
-	class HitRMWheel;
-	class Turrets;
-	class MainTurret;
-	class ViewOptics;
-	class ViewPilot;
-	class Components;
-	class EventHandlers;
-	scope=0;
-	scopeCurator=0;
-	//RC_UAVBlurRange=2000;
-	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
-};
-class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
+class RC_FPV_Carrier_Base: RC_Mortar_UGV_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -37,128 +13,10 @@ class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
-	lockDetectionSystem="2+4+8";
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
-
-	side=1;
-	forceInGarage=1;
-	crewCrashProtection=0.01;
-	maxSpeed=80;
-	enginePower=120;
-	peakTorque=750;
-
-	waterLeakiness=2.5;
-	canFloat=1;
-	waterAngularDampingCoef=10;
-	waterPPInVehicle=0;
-	waterResistanceCoef=0.5;
-
-	smokeLauncherVelocity=3;
-	smokeLauncherGrenadeCount=4;
-	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
-
-	class HitPoints: HitPoints
-	{
-		class HitHull: HitHull
-		{
-			armor=1.05;
-			passThrough=1;
-			//minimalHit=0.2;
-			explosionShielding=0.4;
-		};
-		class HitEngine: HitEngine
-		{
-			armor=3;
-			passThrough=0.25;
-			//minimalHit=0.2;
-			explosionShielding=0.4;
-		};
-		class HitFuel: HitFuel
-		{
-			armor=2;
-			passThrough=0.15;
-			//minimalHit=0.1;
-			explosionShielding=1.2;
-		};
-		class HitLFWheel: HitLFWheel
-		{
-			armor=-250;
-			minimalHit=-0.045;
-			explosionShielding=1;
-		};
-		class HitLF2Wheel: HitLF2Wheel
-		{
-			armor=-250;
-			minimalHit=-0.045;
-			explosionShielding=1;
-		};
-		class HitLMWheel: HitLMWheel
-		{
-			armor=-250;
-			minimalHit=-0.045;
-			explosionShielding=1;
-		};
-		class HitRFWheel: HitRFWheel
-		{
-			armor=-250;
-			minimalHit=-0.045;
-			explosionShielding=1;
-		};
-		class HitRF2Wheel: HitRF2Wheel
-		{
-			armor=-250;
-			minimalHit=-0.045;
-			explosionShielding=1;
-		};
-		class HitRMWheel: HitRMWheel
-		{
-			armor=-250;
-			minimalHit=-0.045;
-			explosionShielding=1;
-		};
-	};
+	editorSubcategory="RC_UAV_Designator_subcat";
 
 	class Components: Components
 	{
-		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-		{
-			defaultDisplay="SensorDisplay";
-			class components
-			{
-				class SensorDisplay
-				{
-					componentType="SensorsDisplayComponent";
-					range[]={6000,3000,1500,400};
-					resource="RscCustomInfoSensors";
-				};
-				class MinimapDisplay
-				{
-					componentType="MinimapDisplayComponent";
-					resource="RscCustomInfoAirborneMiniMap";
-				};
-			};
-		};
-		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-		{
-			defaultDisplay="SensorDisplay";
-			class components
-			{
-				class SensorDisplay
-				{
-					componentType="SensorsDisplayComponent";
-					range[]={400,1500,3000,6000};
-					resource="RscCustomInfoSensors";
-				};
-				class MinimapDisplay
-				{
-					componentType="MinimapDisplayComponent";
-					resource="RscCustomInfoAirborneMiniMap";
-				};
-			};
-		};
 		class SensorsManagerComponent
 		{
 			class Components
@@ -203,9 +61,7 @@ class RC_FPV_Carrier_A: RC_FPV_Carrier_Base
 	};
 	*/
 
-	author="Ascent";
 	displayName="RC FPV Carrier";
-	editorSubcategory="RC_UAV_Designator_subcat";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;
 	
