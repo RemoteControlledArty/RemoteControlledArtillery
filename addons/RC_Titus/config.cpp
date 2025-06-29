@@ -7,68 +7,68 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_Titus_A,
-			RC_Titus_D,
-			RC_Titus_WD,
-			RC_Titus_A_O,
-			RC_Titus_D_O,
-			RC_Titus_WD_O,
-			RC_Titus_A_I,
-			RC_Titus_D_I,
-			RC_Titus_WD_I,
+			"RC_Titus_A",
+			"RC_Titus_D",
+			"RC_Titus_WD",
+			"RC_Titus_A_O",
+			"RC_Titus_D_O",
+			"RC_Titus_WD_O",
+			"RC_Titus_A_I",
+			"RC_Titus_D_I",
+			"RC_Titus_WD_I",
 
-			RC_Titus_AC_A,
-			RC_Titus_AC_D,
-			RC_Titus_AC_WD,
-			RC_Titus_AC_A_O,
-			RC_Titus_AC_D_O,
-			RC_Titus_AC_WD_O,
-			RC_Titus_AC_A_I,
-			RC_Titus_AC_D_I,
-			RC_Titus_AC_WD_I,
+			"RC_Titus_AC_A",
+			"RC_Titus_AC_D",
+			"RC_Titus_AC_WD",
+			"RC_Titus_AC_A_O",
+			"RC_Titus_AC_D_O",
+			"RC_Titus_AC_WD_O",
+			"RC_Titus_AC_A_I",
+			"RC_Titus_AC_D_I",
+			"RC_Titus_AC_WD_I",
 
-			RC_Titus_HMG_A,
-			RC_Titus_HMG_D,
-			RC_Titus_HMG_WD,
-			RC_Titus_HMG_A_O,
-			RC_Titus_HMG_D_O,
-			RC_Titus_HMG_WD_O,
-			RC_Titus_HMG_A_I,
-			RC_Titus_HMG_D_I,
-			RC_Titus_HMG_WD_I,
+			"RC_Titus_HMG_A",
+			"RC_Titus_HMG_D",
+			"RC_Titus_HMG_WD",
+			"RC_Titus_HMG_A_O",
+			"RC_Titus_HMG_D_O",
+			"RC_Titus_HMG_WD_O",
+			"RC_Titus_HMG_A_I",
+			"RC_Titus_HMG_D_I",
+			"RC_Titus_HMG_WD_I",
 
-			RC_Titus_MMG_A,
-			RC_Titus_MMG_D,
-			RC_Titus_MMG_WD,
-			RC_Titus_MMG_A_O,
-			RC_Titus_MMG_D_O,
-			RC_Titus_MMG_WD_O,
-			RC_Titus_MMG_A_I,
-			RC_Titus_MMG_D_I,
-			RC_Titus_MMG_WD_I
+			"RC_Titus_MMG_A",
+			"RC_Titus_MMG_D",
+			"RC_Titus_MMG_WD",
+			"RC_Titus_MMG_A_O",
+			"RC_Titus_MMG_D_O",
+			"RC_Titus_MMG_WD_O",
+			"RC_Titus_MMG_A_I",
+			"RC_Titus_MMG_D_I",
+			"RC_Titus_MMG_WD_I"
 		};
 
 		ammo[]=
 		{
-			RC_QIN_338_T_R,
-			RC_QIN_338_T_G,
-			RC_QIN_338_T_Y
+			"RC_QIN_338_T_R",
+			"RC_QIN_338_T_G",
+			"RC_QIN_338_T_Y"
 		};
 
 		magazines[]=
 		{
-			RC_QIN_150Rnd_338_T_R,
-			RC_QIN_150Rnd_338_T_G,
-			RC_QIN_150Rnd_338_T_Y
+			"RC_QIN_150Rnd_338_T_R",
+			"RC_QIN_150Rnd_338_T_G",
+			"RC_QIN_150Rnd_338_T_Y"
 		};
 
 		weapons[]=
 		{
-			RC_Titus_autocannon_20mm,
-			RC_QIN_HMG,
-			RC_QIN_338_MMG1,
-			RC_QIN_338_MMG2,
-			RC_QIN_762_MMG
+			"RC_Titus_autocannon_20mm",
+			"RC_QIN_HMG",
+			"RC_QIN_338_MMG1",
+			"RC_QIN_338_MMG2",
+			"RC_QIN_762_MMG"
 		};
 
 		requiredAddons[]=

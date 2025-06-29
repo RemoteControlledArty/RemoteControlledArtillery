@@ -7,46 +7,46 @@ class CfgPatches
 
 		units[]=
 		{
-			B_Crocus_MP,
-			O_Crocus_MP,
-			I_Crocus_MP,
+			"B_Crocus_MP",
+			"O_Crocus_MP",
+			"I_Crocus_MP",
 
-			B_Crocus_MP_Bag,
-			O_Crocus_MP_Bag,
-			I_Crocus_MP_Bag,
+			"B_Crocus_MP_Bag",
+			"O_Crocus_MP_Bag",
+			"I_Crocus_MP_Bag",
 
-			B_Crocus_MP_Sens,
-			O_Crocus_MP_Sens,
-			I_Crocus_MP_Sens,
+			"B_Crocus_MP_Sens",
+			"O_Crocus_MP_Sens",
+			"I_Crocus_MP_Sens",
 
-			B_Crocus_MP_Sens_Bag,
-			O_Crocus_MP_Sens_Bag,
-			I_Crocus_MP_Sens_Bag,
+			"B_Crocus_MP_Sens_Bag",
+			"O_Crocus_MP_Sens_Bag",
+			"I_Crocus_MP_Sens_Bag",
 
-			B_Crocus_MP_NV,
-			O_Crocus_MP_NV,
-			I_Crocus_MP_NV,
+			"B_Crocus_MP_NV",
+			"O_Crocus_MP_NV",
+			"I_Crocus_MP_NV",
 
-			B_Crocus_MP_NV_Bag,
-			O_Crocus_MP_NV_Bag,
-			I_Crocus_MP_NV_Bag,
+			"B_Crocus_MP_NV_Bag",
+			"O_Crocus_MP_NV_Bag",
+			"I_Crocus_MP_NV_Bag",
 
-			B_Crocus_MP_NV_Sens,
-			O_Crocus_MP_NV_Sens,
-			I_Crocus_MP_NV_Sens,
+			"B_Crocus_MP_NV_Sens",
+			"O_Crocus_MP_NV_Sens",
+			"I_Crocus_MP_NV_Sens",
 
-			B_Crocus_MP_NV_Sens_Bag,
-			O_Crocus_MP_NV_Sens_Bag,
-			I_Crocus_MP_NV_Sens_Bag,
+			"B_Crocus_MP_NV_Sens_Bag",
+			"O_Crocus_MP_NV_Sens_Bag",
+			"I_Crocus_MP_NV_Sens_Bag",
 
-			B_Crocus_SignalBooster_Bag,
-			//O_Crocus_SignalBooster_Bag,
-			//I_Crocus_SignalBooster_Bag,
+			"B_Crocus_SignalBooster_Bag",
+			//"O_Crocus_SignalBooster_Bag",
+			//"I_Crocus_SignalBooster_Bag",
 
-			RC_SignalBoosterLRR_blk,
-			RC_SignalBoosterLRR_mtp,
-			RC_SignalBoosterLRR_wdl,
-			RC_SignalBoosterLRR_tropic
+			"RC_SignalBoosterLRR_blk",
+			"RC_SignalBoosterLRR_mtp",
+			"RC_SignalBoosterLRR_wdl",
+			"RC_SignalBoosterLRR_tropic"
 		};
 		
 		ammo[]=
@@ -62,7 +62,9 @@ class CfgPatches
 			"RC_target_confirmer_AB_mag",
 			"RC_shapedcharge_reticle_AB_mag",
 			"RC_6xCrocus_Deployer_Mag",
-			"RC_6xCrocus_Deployer_UGV_Mag"
+			"RC_8xCrocus_Deployer_Mag",
+			"RC_6xCrocus_Deployer_UGV_Mag",
+			"RC_8xCrocus_Deployer_UGV_Mag"
 		};
 		weapons[]=
 		{

@@ -206,7 +206,7 @@ class RC_FPV_Carrier_A: RC_FPV_Carrier_Base
 	*/
 
 	author="Ascent";
-	displayName="6xFPV Carrier";
+	displayName="FPV Carrier";
 	editorSubcategory="RC_UAV_Designator_subcat";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;

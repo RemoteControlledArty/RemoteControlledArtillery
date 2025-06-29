@@ -7,9 +7,9 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_SignalBoosterLRR_ilbe_A,
-			RC_SignalBoosterLRR_ilbe_G,
-			RC_SignalBoosterLRR_ilbe_MC
+			"RC_SignalBoosterLRR_ilbe_A",
+			"RC_SignalBoosterLRR_ilbe_G",
+			"RC_SignalBoosterLRR_ilbe_MC"
 		};
 
 		requiredAddons[]=

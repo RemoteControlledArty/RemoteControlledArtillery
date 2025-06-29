@@ -173,7 +173,7 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 				"RC_IFV_Missile_Launcher_4R",
 				"SmokeLauncher"
 			};
-			#include "\RC_Aegis\includes_vicmags\mags_BM2T_Bu_30mm_red.hpp"
+			#include "\RC_AegisWS\includes_vicmags\mags_BM2T_Bu_30mm_red.hpp"
 
 			class OpticsIn
 			{
@@ -265,7 +265,7 @@ class RC_IFV_8_WD_O: RC_IFV_8_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_Aegis\includes_vicmags\mags_BM2T_Bu_30mm_green.hpp"
+			#include "\RC_AegisWS\includes_vicmags\mags_BM2T_Bu_30mm_green.hpp"
 		};
 	};
 };
@@ -281,7 +281,7 @@ class RC_IFV_8_WD_I: RC_IFV_8_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_Aegis\includes_vicmags\mags_BM2T_Bu_30mm_yellow.hpp"
+			#include "\RC_AegisWS\includes_vicmags\mags_BM2T_Bu_30mm_yellow.hpp"
 		};
 	};
 };

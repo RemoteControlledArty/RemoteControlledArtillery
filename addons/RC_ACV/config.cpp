@@ -7,23 +7,27 @@ class CfgPatches
 
 		units[]=
 		{
-			RC_ACV_30mm,
-			RC_ACV_30mm_O,
-			RC_ACV_30mm_I
+			"RC_ACV_30",
+			"RC_ACV_30_O",
+			"RC_ACV_30_I",
+
+			"RC_ACV_40",
+			"RC_ACV_40_O",
+			"RC_ACV_40_I"
 			
 			/*
-			RC_ACV_HMG,
-			RC_ACV_HMG_O,
-			RC_ACV_HMG_I
+			"RC_ACV_HMG",
+			"RC_ACV_HMG_O",
+			"RC_ACV_HMG_I"
 			*/
 		};
 
-		/*
 		weapons[]=
 		{
-			""
+			"RC_autocannon_30mm_ACV",
+			"RC_autocannon_40mm_ACV",
+			"RC_HMG_M2_ACV"
 		};
-		*/
 
 		requiredAddons[]=
 		{

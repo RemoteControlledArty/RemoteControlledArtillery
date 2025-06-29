@@ -175,6 +175,8 @@ class CfgAmmo
 		visibleFireTime=3;
 	};
 };
+
+
 class cfgMagazines
 {
 	class RC_target_confirmer_mag;
@@ -208,6 +210,8 @@ class cfgMagazines
 		count=6;
 	};
 };
+
+
 class Mode_SemiAuto;
 class cfgWeapons
 {
@@ -285,8 +289,8 @@ class cfgWeapons
 	{
 		displayName="deploy Crocus";
 		displayNameShort="deploy Crocus";
-		reloadTime=1;
-		magazineReloadTime=1;
+		reloadTime=3.5;
+		magazineReloadTime=3.5;
 		magazines[]=
 		{
 			"RC_8xCrocus_Deployer_Mag",
@@ -297,6 +301,7 @@ class cfgWeapons
 		class player: player
 		{
 			displayName="deploy Crocus";
+			reloadTime=3.5;
 		};
 	};
 };
