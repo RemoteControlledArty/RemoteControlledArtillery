@@ -18,6 +18,7 @@ class RC_Mortar_UGV_Core: B_UGV_01_F
 	scope=0;
 	scopeCurator=0;
 	//RC_UAVBlurRange=2000;
+	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 class RC_Mortar_UGV_Base: RC_Mortar_UGV_Core
