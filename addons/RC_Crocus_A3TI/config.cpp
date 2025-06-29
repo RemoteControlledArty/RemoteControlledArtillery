@@ -44,7 +44,21 @@ class CfgPatches
 			"RC_Crocus_Carrier_A_I",
 			"RC_Crocus_Carrier_WD",
 			"RC_Crocus_Carrier_WD_O",
-			"RC_Crocus_Carrier_WD_I"
+			"RC_Crocus_Carrier_WD_I",
+
+			"RC_Crocus_Truck_A",
+			"RC_Crocus_Truck_A_O",
+			"RC_Crocus_Truck_A_I",
+			"RC_Crocus_Truck_WD",
+			"RC_Crocus_Truck_WD_O",
+			"RC_Crocus_Truck_WD_I",
+
+			"RC_Crocus_Truck_manned_A",
+			"RC_Crocus_Truck_manned_A_O",
+			"RC_Crocus_Truck_manned_A_I",
+			"RC_Crocus_Truck_manned_WD",
+			"RC_Crocus_Truck_manned_WD_O",
+			"RC_Crocus_Truck_manned_WD_I"
 		};
 
 		requiredAddons[]=

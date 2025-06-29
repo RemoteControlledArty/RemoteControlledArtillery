@@ -257,6 +257,22 @@ class CfgPatches
 			"RC_Mortar_Carrier_LC_manned_WD_O",
 			"RC_Mortar_Carrier_LC_manned_WD_I",
 
+			"RC_Mortar_UGV_A",
+			"RC_Mortar_UGV_A_O",
+			"RC_Mortar_UGV_A_I",
+
+			"RC_Mortar_UGV_LC_A",
+			"RC_Mortar_UGV_LC_A_O",
+			"RC_Mortar_UGV_LC_A_I",
+
+			"RC_Mortar_UGV_WD",
+			"RC_Mortar_UGV_WD_O",
+			"RC_Mortar_UGV_WD_I",
+
+			"RC_Mortar_UGV_LC_WD",
+			"RC_Mortar_UGV_LC_WD_O",
+			"RC_Mortar_UGV_LC_WD_I",
+
 			"RC_MortarMATV_manned_A",
 			"RC_MortarMATV_manned_WD",
 			"RC_MortarMATV_manned_A_O",
