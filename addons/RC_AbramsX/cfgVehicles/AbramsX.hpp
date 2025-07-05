@@ -1,5 +1,5 @@
-class qav_abramsx;
-class RC_AbramsX_Core: qav_abramsx
+class B_W_qav_abramsx;
+class RC_AbramsX_Core: B_W_qav_abramsx
 {
 	class Turrets;
 	class MainTurret;
@@ -57,13 +57,13 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
 
+	/*
 	hiddenSelectionsTextures[]=
 	{
-		"A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa",
-		"A3\armor_f_gamma\MBT_01\Data\MBT_01_tow_CO.paa",
-		"a3\armor_f_epc\mbt_01\data\mbt_addons_co.paa",
-		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
+		"QAV_AbramsX\data\textures\AbramsX\Woodland\AbramsX_Hull_co.paa",
+		"A3\Armor_F\Data\camonet_nato_green_co.paa"
 	};
+	*/
 
 	class AnimationSources: AnimationSources
 	{
@@ -215,11 +215,11 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
 };
 
 
-class RC_MBT_1_A: RC_MBT_1_A_Base
+class RC_AbramsX_A: RC_AbramsX_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -241,13 +241,13 @@ class RC_MBT_1_A: RC_MBT_1_A_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
 	crew="B_UAV_AI";
 };
-class RC_MBT_1_A_O: RC_MBT_1_A
+class RC_AbramsX_A_O: RC_AbramsX_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -265,13 +265,13 @@ class RC_MBT_1_A_O: RC_MBT_1_A
 		};
 	};
 };
-class RC_MBT_1_A_I: RC_MBT_1_A
+class RC_AbramsX_A_I: RC_AbramsX_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
@@ -291,7 +291,7 @@ class RC_MBT_1_A_I: RC_MBT_1_A
 };
 
 
-class RC_MBT_1_WD: RC_MBT_1_A
+class RC_AbramsX_WD: RC_AbramsX_A
 {
 	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_TUSK_F.jpg";
@@ -304,13 +304,13 @@ class RC_MBT_1_WD: RC_MBT_1_A
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
-class RC_MBT_1_WD_O: RC_MBT_1_WD
+class RC_AbramsX_WD_O: RC_AbramsX_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -328,13 +328,13 @@ class RC_MBT_1_WD_O: RC_MBT_1_WD
 		};
 	};
 };
-class RC_MBT_1_WD_I: RC_MBT_1_WD
+class RC_AbramsX_WD_I: RC_AbramsX_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
