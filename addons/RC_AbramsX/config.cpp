@@ -1,39 +1,27 @@
 class CfgPatches
 {
-	class RC_ACV
+	class RC_AbramsX
 	{
-		name="RC ACV";
+		name="RC AbramsX";
 		author="Ascent";
 
 		units[]=
 		{
-			"RC_ACV_30",
-			"RC_ACV_30_O",
-			"RC_ACV_30_I",
-
-			"RC_ACV_40",
-			"RC_ACV_40_O",
-			"RC_ACV_40_I"
-			
-			/*
-			"RC_ACV_HMG",
-			"RC_ACV_HMG_O",
-			"RC_ACV_HMG_I"
-			*/
+			"RC_AbramsX_A",
+			"RC_AbramsX_WD"
 		};
 
 		weapons[]=
 		{
 			"RC_autocannon_30mm_ACV",
-			"RC_autocannon_40mm_ACV",
-			"RC_HMG_M2_ACV"
+			"RC_autocannon_40mm_ACV"
 		};
 
 		requiredAddons[]=
 		{
 			"cba_main",
 			"RC_Artillery",
-			"ACV"
+			"QAV_AbramsX"
 		};
 
 		skipWhenMissingDependencies=1;
@@ -69,11 +57,11 @@ class CfgMagazines
 */
 class CfgWeapons
 {
-	#include "\RC_ACV\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
+	#include "\RC_AbramsX\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
 
 
 class CfgVehicles
 {
-	#include "\RC_ACV\cfgVehicles\ACV_30mm.hpp"
+	#include "\RC_AbramsX\cfgVehicles\AbramsX.hpp"
 };
