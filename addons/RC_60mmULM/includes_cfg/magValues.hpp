@@ -1,0 +1,9 @@
+author="Ascent";
+//DLC="twc_config";
+scope=2;
+scopeCurator=2;
+weaponPoolAvailable=1;
+descriptionShort="for advanced 60mm Mortar";
+mass=5;
+type=256;
+initSpeed=80;
