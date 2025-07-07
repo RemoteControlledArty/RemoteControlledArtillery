@@ -1,10 +1,10 @@
 params ["_player", "_mortarVeh"];
 
-if (!(_mortarVeh isKindOf "RC_60mm_ULM")) exitWith {};
+if (!(_mortarVeh isKindOf "RC_60mm_ULM_Vic")) exitWith {};
 
 [{
 	_display = uiNamespace getVariable ["twc_2inch_RscWeaponRangeArtillery", displayNull];
-	_precalcArray = [] call twc_2inch_fnc_rangetable;
+	_precalcArray = [] call RC_ULM_fnc_rangetable;
 	{
 		(_display displayCtrl 4215) lnbAddRow _x;
 	} forEach _precalcArray;

@@ -6,4 +6,4 @@ weaponPoolAvailable=1;
 descriptionShort="for advanced 60mm Mortar";
 mass=5;
 type=256;
-initSpeed=80;
+initSpeed=242.58;

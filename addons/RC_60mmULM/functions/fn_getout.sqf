@@ -20,8 +20,8 @@ _unit removeMagazines "RC_1Rnd_60mm_Mo_Flare_white_ULM";
 
 deleteVehicle _vehicle;
 
-//_unit addWeapon "RC_60mm_ULM_Bag";
-_unit addWeapon "twc_2inch_bag";
+_unit addWeapon "RC_60mm_ULM_Bag";
+//_unit addWeapon "twc_2inch_bag";
 if (_loadedMag != "") then {
 	_unit addMagazine [_loadedMag, 1];
 };

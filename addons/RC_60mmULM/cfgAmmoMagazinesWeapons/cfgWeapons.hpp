@@ -75,7 +75,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 {
 	displayname="advanced 60mm Mortar";
 	ballisticsComputer=8;
-	initSpeed=80;	//???
+	initSpeed=242.58;	//???
 
 	magazines[]=
 	{

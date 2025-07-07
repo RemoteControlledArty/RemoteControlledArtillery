@@ -34,7 +34,7 @@ class twc_2inch_vehicle: Mortar_01_base_F
 	displayname="60mm COMMANDO Mortar";
 	author="LeoVetta";
 	model="twc_2inch\twc_2inch.p3d";
-	artilleryScanner=0;
+	artilleryScanner=1;
 	scope=2;
 	side=1;
 	faction="BLU_F";
@@ -52,6 +52,27 @@ class twc_2inch_vehicle: Mortar_01_base_F
 		dissasembleTo[]={};
 		primary=0;
 	};
+
+	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
+	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=0.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
+
+	textPlural="UGVs";
+	textSingular="UGV";
+	isUav=1;
+	vehicleClass="Autonomous";
+	uavCameraGunnerPos="eye";
+	uavCameraGunnerDir="look";
+	driverForceOptics=1;
+
+	enableGPS=1;
+	radartype=2;
+	reportOwnPosition=1;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	laserScanner=1;
 
 	class Components: Components
 	{
@@ -203,7 +224,7 @@ class RC_60mm_ULM_Core: twc_2inch_vehicle
 	RC_BarrelLenght=0.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 };
-class RC_60mm_ULM: RC_60mm_ULM_Core
+class RC_60mm_ULM_Vic: RC_60mm_ULM_Core
 {
 	displayName="advanced 60mm Mortar";
 	faction="RemoteControlled_B";

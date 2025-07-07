@@ -1,7 +1,7 @@
 params ["_unit"];
 
-//if ((secondaryWeapon _unit != "RC_60mm_ULM_Bag") || !(local _unit) || !(isPlayer _unit) || (vehicle player != player)) exitwith {};
-if ((secondaryWeapon _unit != "twc_2inch_bag") || !(local _unit) || !(isPlayer _unit) || (vehicle player != player)) exitwith {};
+if ((secondaryWeapon _unit != "RC_60mm_ULM_Bag") || !(local _unit) || !(isPlayer _unit) || (vehicle player != player)) exitwith {};
+//if ((secondaryWeapon _unit != "twc_2inch_bag") || !(local _unit) || !(isPlayer _unit) || (vehicle player != player)) exitwith {};
 
 if (weaponLowered _unit) then {_unit switchMove "amovpercmstpslowwrfldnon"};
 
@@ -19,8 +19,8 @@ _KK_fnc_setPosAGLS = {
 	_obj setPosASL _pos;
 };
 
-//_mortar = "RC_60mm_ULM" createVehicle _pos;
-_mortar = "twc_2inch_vehicle" createVehicle _pos;
+_mortar = "RC_60mm_ULM_Vic" createVehicle _pos;
+//_mortar = "twc_2inch_vehicle" createVehicle _pos;
 [_mortar, _pos] call _KK_fnc_setPosAGLS;
 _mortar setDir _dir;
 if ((getPosATL _unit) isEqualTo (getPos _unit)) then {_mortar setVectorUp (surfaceNormal _pos)} else {_mortar setVectorUp (vectorUp _unit)};

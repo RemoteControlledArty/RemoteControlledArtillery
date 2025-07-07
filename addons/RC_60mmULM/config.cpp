@@ -7,7 +7,7 @@ class CfgPatches
 
 		units[]=
 		{
-			"RC_60mm_ULM"
+			"RC_60mm_ULM_Vic"
 		};
 		weapons[]=
 		{
@@ -40,9 +40,9 @@ class CfgPatches
 
 class CfgFunctions
 {
-	class RC
+	class RC_ULM
 	{
-		class RC_60mmULM_Functions
+		class functions
 		{
 			file="\RC_60mmULM\functions";
       		//class preInit {preInit=1;};
@@ -60,28 +60,28 @@ class CfgFunctions
 
 class Extended_PostInit_EventHandlers
 {
-	class RC_60mmULM_Functions
+	class RC_ULM
 	{
-		init="_this call RC_fnc_init";
+		init="_this call RC_ULM_fnc_init";
 	};
 };
 class Extended_GetOut_Eventhandlers
 {
-	class RC_60mmULM
+	class RC_60mm_ULM_Vic
 	{
-		class RC_60mmULM_Functions
+		class RC_ULM
 		{
-			getout="_this call RC_fnc_getout";
+			getout="_this call RC_ULM_fnc_getout";
 		};
 	};
 };
 class Extended_FiredBIS_EventHandlers
 {
-	class RC_60mmULM
+	class RC_60mm_ULM_Vic
 	{
-		class RC_60mmULM_Functions
+		class RC_ULM
 		{
-			firedBIS="_this call RC_fnc_fire";
+			firedBIS="_this call RC_ULM_fnc_fire";
 		};
 	};
 };
