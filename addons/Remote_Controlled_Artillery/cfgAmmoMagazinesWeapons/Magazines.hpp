@@ -884,6 +884,62 @@ class RC_160Rnd_30mm_HEAB_QF_T_G: RC_100Rnd_30mm_HEAB_QF_T_G {count=160;};
 class RC_160Rnd_30mm_HEAB_QF_T_Y: RC_100Rnd_30mm_HEAB_QF_T_Y {count=160;};
 
 
+//for AbramsX commander turret
+class RC_140Rnd_30mm_APFSDS_T_R: RC_100Rnd_30mm_APFSDS_T_R {count=140;};
+class RC_140Rnd_30mm_APFSDS_T_G: RC_100Rnd_30mm_APFSDS_T_G {count=140;};
+class RC_140Rnd_30mm_APFSDS_T_Y: RC_100Rnd_30mm_APFSDS_T_Y {count=140;};
+
+class RC_140Rnd_30mm_MP_T_R: RC_100Rnd_30mm_MP_T_R {count=140;};
+class RC_140Rnd_30mm_MP_T_G: RC_100Rnd_30mm_MP_T_G {count=140;};
+class RC_140Rnd_30mm_MP_T_Y: RC_100Rnd_30mm_MP_T_Y {count=140;};
+
+class RC_140Rnd_30mm_GPR_T_R: RC_100Rnd_30mm_GPR_T_R {count=140;};
+class RC_140Rnd_30mm_GPR_T_G: RC_100Rnd_30mm_GPR_T_G {count=140;};
+class RC_140Rnd_30mm_GPR_T_Y: RC_100Rnd_30mm_GPR_T_Y {count=140;};
+
+
+class RC_140Rnd_30mm_MP_Pen_T_R: RC_100Rnd_30mm_MP_Pen_T_R {count=140;};
+class RC_140Rnd_30mm_MP_Pen_T_G: RC_100Rnd_30mm_MP_Pen_T_G {count=140;};
+class RC_140Rnd_30mm_MP_Pen_T_Y: RC_100Rnd_30mm_MP_Pen_T_Y {count=140;};
+
+class RC_140Rnd_30mm_MP_DF_T_R: RC_100Rnd_30mm_MP_DF_T_R {count=140;};
+class RC_140Rnd_30mm_MP_DF_T_G: RC_100Rnd_30mm_MP_DF_T_G {count=140;};
+class RC_140Rnd_30mm_MP_DF_T_Y: RC_100Rnd_30mm_MP_DF_T_Y {count=140;};
+
+class RC_140Rnd_30mm_MP_QF_T_R: RC_100Rnd_30mm_MP_QF_T_R {count=140;};
+class RC_140Rnd_30mm_MP_QF_T_G: RC_100Rnd_30mm_MP_QF_T_G {count=140;};
+class RC_140Rnd_30mm_MP_QF_T_Y: RC_100Rnd_30mm_MP_QF_T_Y {count=140;};
+
+class RC_140Rnd_30mm_MPAB_DF_T_R: RC_100Rnd_30mm_MPAB_DF_T_R {count=140;};
+class RC_140Rnd_30mm_MPAB_DF_T_G: RC_100Rnd_30mm_MPAB_DF_T_G {count=140;};
+class RC_140Rnd_30mm_MPAB_DF_T_Y: RC_100Rnd_30mm_MPAB_DF_T_Y {count=140;};
+
+class RC_140Rnd_30mm_MPAB_QF_T_R: RC_100Rnd_30mm_MPAB_QF_T_R {count=140;};
+class RC_140Rnd_30mm_MPAB_QF_T_G: RC_100Rnd_30mm_MPAB_QF_T_G {count=140;};
+class RC_140Rnd_30mm_MPAB_QF_T_Y: RC_100Rnd_30mm_MPAB_QF_T_Y {count=140;};
+
+
+class RC_140Rnd_30mm_HE_Pen_T_R: RC_100Rnd_30mm_HE_Pen_T_R {count=140;};
+class RC_140Rnd_30mm_HE_Pen_T_G: RC_100Rnd_30mm_HE_Pen_T_G {count=140;};
+class RC_140Rnd_30mm_HE_Pen_T_Y: RC_100Rnd_30mm_HE_Pen_T_Y {count=140;};
+
+class RC_140Rnd_30mm_HE_DF_T_R: RC_100Rnd_30mm_HE_DF_T_R {count=140;};
+class RC_140Rnd_30mm_HE_DF_T_G: RC_100Rnd_30mm_HE_DF_T_G {count=140;};
+class RC_140Rnd_30mm_HE_DF_T_Y: RC_100Rnd_30mm_HE_DF_T_Y {count=140;};
+
+class RC_140Rnd_30mm_HE_QF_T_R: RC_100Rnd_30mm_HE_QF_T_R {count=140;};
+class RC_140Rnd_30mm_HE_QF_T_G: RC_100Rnd_30mm_HE_QF_T_G {count=140;};
+class RC_140Rnd_30mm_HE_QF_T_Y: RC_100Rnd_30mm_HE_QF_T_Y {count=140;};
+
+class RC_140Rnd_30mm_HEAB_DF_T_R: RC_100Rnd_30mm_HEAB_DF_T_R {count=140;};
+class RC_140Rnd_30mm_HEAB_DF_T_G: RC_100Rnd_30mm_HEAB_DF_T_G {count=140;};
+class RC_140Rnd_30mm_HEAB_DF_T_Y: RC_100Rnd_30mm_HEAB_DF_T_Y {count=140;};
+
+class RC_140Rnd_30mm_HEAB_QF_T_R: RC_100Rnd_30mm_HEAB_QF_T_R {count=140;};
+class RC_140Rnd_30mm_HEAB_QF_T_G: RC_100Rnd_30mm_HEAB_QF_T_G {count=140;};
+class RC_140Rnd_30mm_HEAB_QF_T_Y: RC_100Rnd_30mm_HEAB_QF_T_Y {count=140;};
+
+
 //35mm MBAB AA / HEAB C-UAS 
 class 680Rnd_35mm_AA_shells_Tracer_Red;
 class RC_680Rnd_35mm_MPAB_AA_T_R: 680Rnd_35mm_AA_shells_Tracer_Red

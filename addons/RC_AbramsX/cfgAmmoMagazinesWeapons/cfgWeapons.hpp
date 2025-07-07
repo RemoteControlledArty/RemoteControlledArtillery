@@ -6,13 +6,15 @@ class RC_cannon_120mm_M360_base: cannon_120mm_M360
 class RC_cannon_120mm_M360: RC_cannon_120mm_M360_base
 {
 	author="Ascent";
-	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-	displayName="120mm";
+	//displayName="120mm";
 	canLock=2;
+	maxZeroing=4000;
+	FCSZeroingDelay=0.5;
+	FCSMaxLeadSpeed=100;
 	reloadTime=5;
 	magazineReloadTime=5;
-	FCSZeroingDelay=0.5;
-	FCSMaxLeadSpeed=30;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
 	magazines[]=
 	{
 		"RC_10Rnd_120mm_APFSDS_T_R",
@@ -97,189 +99,232 @@ class RC_cannon_120mm_M360: RC_cannon_120mm_M360_base
 	};
 };
 
-//"qav_SmokeLauncher"
+
 //Autocannons
 class autocannon_30mm_M914;
 class RC_autocannon_30mm_M914_Base: autocannon_30mm_M914
 {
-	class HE;
-	class AP;
+	class HighROF;
 	class player;
 };
 class RC_autocannon_30mm_M914: RC_autocannon_30mm_M914_Base
 {
+	author="Ascent";
+	//displayName="30mm";
 	canLock=2;
 	FCSZeroingDelay=0.5;
+	maxZeroing=4000;
+	FCSMaxLeadSpeed=100;
+	autoReload=1;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-	name="30mm";
-	//maxZeroing=4000;
 
-	class HE: HE
+	class HighROF: HighROF
 	{
+		canLock=2;
+		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+		FCSMaxLeadSpeed=100;
+		autoReload=1;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
 		magazines[]=
 		{
-			"RC_100Rnd_30mm_MP_Pen_T_R",
-			"RC_100Rnd_30mm_MP_Pen_T_G",
-			"RC_100Rnd_30mm_MP_Pen_T_Y",
+			"RC_140Rnd_30mm_MP_Pen_T_R",
+			"RC_140Rnd_30mm_MP_Pen_T_G",
+			"RC_140Rnd_30mm_MP_Pen_T_Y",
 
-			"RC_100Rnd_30mm_HE_Pen_T_R",
-			"RC_100Rnd_30mm_HE_Pen_T_G",
-			"RC_100Rnd_30mm_HE_Pen_T_Y",
+			"RC_140Rnd_30mm_HE_Pen_T_R",
+			"RC_140Rnd_30mm_HE_Pen_T_G",
+			"RC_140Rnd_30mm_HE_Pen_T_Y",
 
-			"RC_100Rnd_30mm_MP_DF_T_R",
-			"RC_100Rnd_30mm_MP_DF_T_G",
-			"RC_100Rnd_30mm_MP_DF_T_Y",
+			"RC_140Rnd_30mm_MP_DF_T_R",
+			"RC_140Rnd_30mm_MP_DF_T_G",
+			"RC_140Rnd_30mm_MP_DF_T_Y",
 
-			"RC_100Rnd_30mm_HE_DF_T_R",
-			"RC_100Rnd_30mm_HE_DF_T_G",
-			"RC_100Rnd_30mm_HE_DF_T_Y",
+			"RC_140Rnd_30mm_HE_DF_T_R",
+			"RC_140Rnd_30mm_HE_DF_T_G",
+			"RC_140Rnd_30mm_HE_DF_T_Y",
 
-			"RC_100Rnd_30mm_MP_QF_T_R",
-			"RC_100Rnd_30mm_MP_QF_T_G",
-			"RC_100Rnd_30mm_MP_QF_T_Y",
+			"RC_140Rnd_30mm_MP_QF_T_R",
+			"RC_140Rnd_30mm_MP_QF_T_G",
+			"RC_140Rnd_30mm_MP_QF_T_Y",
 
-			"RC_100Rnd_30mm_HE_QF_T_R",
-			"RC_100Rnd_30mm_HE_QF_T_G",
-			"RC_100Rnd_30mm_HE_QF_T_Y",
+			"RC_140Rnd_30mm_HE_QF_T_R",
+			"RC_140Rnd_30mm_HE_QF_T_G",
+			"RC_140Rnd_30mm_HE_QF_T_Y",
 
-			"RC_100Rnd_30mm_MPAB_DF_T_R",
-			"RC_100Rnd_30mm_MPAB_DF_T_G",
-			"RC_100Rnd_30mm_MPAB_DF_T_Y",
+			"RC_140Rnd_30mm_MPAB_DF_T_R",
+			"RC_140Rnd_30mm_MPAB_DF_T_G",
+			"RC_140Rnd_30mm_MPAB_DF_T_Y",
 
-			"RC_100Rnd_30mm_HEAB_DF_T_R",
-			"RC_100Rnd_30mm_HEAB_DF_T_G",
-			"RC_100Rnd_30mm_HEAB_DF_T_Y",
+			"RC_140Rnd_30mm_HEAB_DF_T_R",
+			"RC_140Rnd_30mm_HEAB_DF_T_G",
+			"RC_140Rnd_30mm_HEAB_DF_T_Y",
 
-			"RC_100Rnd_30mm_MPAB_QF_T_R",
-			"RC_100Rnd_30mm_MPAB_QF_T_G",
-			"RC_100Rnd_30mm_MPAB_QF_T_Y",
+			"RC_140Rnd_30mm_MPAB_QF_T_R",
+			"RC_140Rnd_30mm_MPAB_QF_T_G",
+			"RC_140Rnd_30mm_MPAB_QF_T_Y",
 
-			"RC_100Rnd_30mm_HEAB_QF_T_R",
-			"RC_100Rnd_30mm_HEAB_QF_T_G",
-			"RC_100Rnd_30mm_HEAB_QF_T_Y",
-			"RC_100Rnd_30mm_cUAS",
+			"RC_140Rnd_30mm_HEAB_QF_T_R",
+			"RC_140Rnd_30mm_HEAB_QF_T_G",
+			"RC_140Rnd_30mm_HEAB_QF_T_Y",
+			"RC_140Rnd_30mm_cUAS",
 
-			"RC_100Rnd_30mm_MP_T_R",
-			"RC_100Rnd_30mm_MP_T_G",
-			"RC_100Rnd_30mm_MP_T_Y",
-			"RC_100Rnd_30mm_GPR_T_R",
-			"RC_100Rnd_30mm_GPR_T_G",
-			"RC_100Rnd_30mm_GPR_T_Y",
+			"RC_140Rnd_30mm_MP_T_R",
+			"RC_140Rnd_30mm_MP_T_G",
+			"RC_140Rnd_30mm_MP_T_Y",
+			"RC_140Rnd_30mm_GPR_T_R",
+			"RC_140Rnd_30mm_GPR_T_G",
+			"RC_140Rnd_30mm_GPR_T_Y",
 
-			"RC_100Rnd_30mm_APFSDS_T_R",
-			"RC_100Rnd_30mm_APFSDS_T_G",
-			"RC_100Rnd_30mm_APFSDS_T_Y"
+			"RC_140Rnd_30mm_APFSDS_T_R",
+			"RC_140Rnd_30mm_APFSDS_T_G",
+			"RC_140Rnd_30mm_APFSDS_T_Y"
 		};
 		class player: player
 		{
-			reloadTime=0.3;
+			reloadTime=0.2;
 		};
 	};
 };
-
-
-/*
-class RC_autocannon_40mm_ACV: RC_autocannon_30mm_ACV
-{
-	name="40mm";
-
-	class HE: HE
-	{
-		magazines[]=
-		{
-			"RC_50Rnd_40mm_MP_Pen_T_R",
-			"RC_50Rnd_40mm_MP_Pen_T_G",
-			"RC_50Rnd_40mm_MP_Pen_T_Y",
-
-			"RC_50Rnd_40mm_HE_Pen_T_R",
-			"RC_50Rnd_40mm_HE_Pen_T_G",
-			"RC_50Rnd_40mm_HE_Pen_T_Y",
-
-			"RC_50Rnd_40mm_MP_DF_T_R",
-			"RC_50Rnd_40mm_MP_DF_T_G",
-			"RC_50Rnd_40mm_MP_DF_T_Y",
-
-			"RC_50Rnd_40mm_HE_DF_T_R",
-			"RC_50Rnd_40mm_HE_DF_T_G",
-			"RC_50Rnd_40mm_HE_DF_T_Y",
-
-			"RC_50Rnd_40mm_MP_QF_T_R",
-			"RC_50Rnd_40mm_MP_QF_T_G",
-			"RC_50Rnd_40mm_MP_QF_T_Y",
-
-			"RC_50Rnd_40mm_HE_QF_T_R",
-			"RC_50Rnd_40mm_HE_QF_T_G",
-			"RC_50Rnd_40mm_HE_QF_T_Y",
-
-			"RC_50Rnd_40mm_MPAB_DF_T_R",
-			"RC_50Rnd_40mm_MPAB_DF_T_G",
-			"RC_50Rnd_40mm_MPAB_DF_T_Y",
-
-			"RC_50Rnd_40mm_HEAB_DF_T_R",
-			"RC_50Rnd_40mm_HEAB_DF_T_G",
-			"RC_50Rnd_40mm_HEAB_DF_T_Y",
-
-			"RC_50Rnd_40mm_MPAB_QF_T_R",
-			"RC_50Rnd_40mm_MPAB_QF_T_G",
-			"RC_50Rnd_40mm_MPAB_QF_T_Y",
-
-			"RC_50Rnd_40mm_HEAB_QF_T_R",
-			"RC_50Rnd_40mm_HEAB_QF_T_G",
-			"RC_50Rnd_40mm_HEAB_QF_T_Y",
-			"RC_50Rnd_40mm_cUAS",
-
-			"RC_50Rnd_40mm_MP_T_R",
-			"RC_50Rnd_40mm_MP_T_G",
-			"RC_50Rnd_40mm_MP_T_Y",
-			"RC_50Rnd_40mm_GPR_T_R",
-			"RC_50Rnd_40mm_GPR_T_G",
-			"RC_50Rnd_40mm_GPR_T_Y"
-		};
-	};
-	class AP: AP
-	{
-		magazines[]=
-		{
-			"RC_50Rnd_40mm_APFSDS_T_R",
-			"RC_50Rnd_40mm_APFSDS_T_G",
-			"RC_50Rnd_40mm_APFSDS_T_Y"
-		};
-		class player: player
-		{
-			reloadTime=0.3;
-		};
-	};
-};
-*/
 
 
 //Machineguns
 class qav_abrams_coax;
-class RC_QAV_AbramsX_coax_base: qav_abrams_coax
+class RC_QAV_AbramsX_HMG_coax_base: qav_abrams_coax
 {
 	class manual;
 };
-class RC_QAV_AbramsX_coax: RC_QAV_AbramsX_coax_base
+class RC_QAV_AbramsX_HMG_coax: RC_QAV_AbramsX_HMG_coax_base
 {
-	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
-	name="coax HMG";
+	author="Ascent";
+	displayName="coax HMG";
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;
+	FCSMaxLeadSpeed=100;
+	autoReload=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
 	magazines[]=
 	{
-		"RC_150Rnd_127x99_T_G",
-		"RC_150Rnd_127x99_T_R",
-		"RC_150Rnd_127x99_T_Y",
 		"RC_150Rnd_127x99_SLAP_T_G",
 		"RC_150Rnd_127x99_SLAP_T_R",
-		"RC_150Rnd_127x99_SLAP_T_Y"
+		"RC_150Rnd_127x99_SLAP_T_Y",
+		"RC_150Rnd_127x99_T_G",
+		"RC_150Rnd_127x99_T_R",
+		"RC_150Rnd_127x99_T_Y"
 	};
 	class manual: manual
 	{
 		dispersion=0.001;
 		reloadTime=0.1;
+	};
+};
+
+
+class RC_autocannon_20mm;
+class RC_AbramsX_20mm_coax_Base: RC_autocannon_20mm
+{
+	class HE;
+	class AP;
+	class player;
+};
+class RC_AbramsX_20mm_coax: RC_AbramsX_20mm_coax_Base
+{
+	author="Ascent";
+	displayName="coax 20mm";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	FCSMaxLeadSpeed=100;
+
+	class HE: HE
+	{
+		displayName="coax 20mm";
+		FCSMaxLeadSpeed=100;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+		magazines[]=
+		{
+			"RC_60Rnd_20mm_MP_Pen_T_R",
+			"RC_60Rnd_20mm_MP_Pen_T_G",
+			"RC_60Rnd_20mm_MP_Pen_T_Y",
+
+			"RC_60Rnd_20mm_HE_Pen_T_R",
+			"RC_60Rnd_20mm_HE_Pen_T_G",
+			"RC_60Rnd_20mm_HE_Pen_T_Y",
+
+			"RC_60Rnd_20mm_MP_DF_T_R",
+			"RC_60Rnd_20mm_MP_DF_T_G",
+			"RC_60Rnd_20mm_MP_DF_T_Y",
+
+			"RC_60Rnd_20mm_HE_DF_T_R",
+			"RC_60Rnd_20mm_HE_DF_T_G",
+			"RC_60Rnd_20mm_HE_DF_T_Y",
+
+			"RC_60Rnd_20mm_MP_QF_T_R",
+			"RC_60Rnd_20mm_MP_QF_T_G",
+			"RC_60Rnd_20mm_MP_QF_T_Y",
+
+			"RC_60Rnd_20mm_HE_QF_T_R",
+			"RC_60Rnd_20mm_HE_QF_T_G",
+			"RC_60Rnd_20mm_HE_QF_T_Y",
+
+			"RC_60Rnd_20mm_MPAB_DF_T_R",
+			"RC_60Rnd_20mm_MPAB_DF_T_G",
+			"RC_60Rnd_20mm_MPAB_DF_T_Y",
+
+			"RC_60Rnd_20mm_HEAB_DF_T_R",
+			"RC_60Rnd_20mm_HEAB_DF_T_G",
+			"RC_60Rnd_20mm_HEAB_DF_T_Y",
+
+			"RC_60Rnd_20mm_MPAB_QF_T_R",
+			"RC_60Rnd_20mm_MPAB_QF_T_G",
+			"RC_60Rnd_20mm_MPAB_QF_T_Y",
+
+			"RC_60Rnd_20mm_HEAB_QF_T_R",
+			"RC_60Rnd_20mm_HEAB_QF_T_G",
+			"RC_60Rnd_20mm_HEAB_QF_T_Y",
+
+			"RC_60Rnd_20mm_cUAS",
+
+			"RC_60Rnd_20mm_HE_T_R",
+			"RC_60Rnd_20mm_HE_T_G",
+			"RC_60Rnd_20mm_HE_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.25;
+		};
+	};
+	class AP: AP
+	{
+		displayName="coax 20mm";
+		FCSMaxLeadSpeed=100;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+		magazines[]=
+		{
+			"RC_60Rnd_20mm_AP_T_R",
+			"RC_60Rnd_20mm_AP_T_G",
+			"RC_60Rnd_20mm_AP_T_Y",
+			"RC_60Rnd_20mm_APFSDS_T_R",
+			"RC_60Rnd_20mm_APFSDS_T_G",
+			"RC_60Rnd_20mm_APFSDS_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.2;
+		};
+	};
+
+	//selectionFireAnim="zasleh2";
+	class GunParticles
+	{
+		class effect1
+		{
+			effectName="AutoCannonFired";
+			positionName="Usti hlavne2";
+			directionName="konec hlavne2";
+		};
 	};
 };

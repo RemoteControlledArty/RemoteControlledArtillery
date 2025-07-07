@@ -1,0 +1,15 @@
+magazines[]=
+{
+	"RC_20Rnd_120mm_APFSDS_T_G",
+	"RC_20Rnd_120mm_MP_T_G",
+	//"RC_10Rnd_120mm_MPAB_T_G",
+	//"RC_10Rnd_120mm_HEAB_LV_indirect_T_G",
+	"RC_4Rnd_120mm_DLG_cannon_missiles",
+	"RC_150Rnd_127x99_SLAP_T_G",
+	"RC_150Rnd_127x99_SLAP_T_G",
+	"RC_150Rnd_127x99_SLAP_T_G",
+	"RC_150Rnd_127x99_SLAP_T_G",
+	"RC_150Rnd_127x99_SLAP_T_G",
+	"qav_SmokeLauncherMag",
+	"qav_SmokeLauncherMag"
+};
