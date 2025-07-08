@@ -214,6 +214,7 @@ class CfgWeapons
 
 class CfgVehicles
 {
+	//#include "\RC_RHS\cfgVehicles\ASV.hpp"
 	#include "\RC_RHS\cfgVehicles\Abrams.hpp"
 	#include "\RC_RHS\cfgVehicles\Bradley.hpp"
 	#include "\RC_RHS\cfgVehicles\FlatbedTruck.hpp"

@@ -1,5 +1,5 @@
-class RHS_M2A3_BUSKIII;
-class RC_M2A3_BUSKIII_Base: RHS_M2A3_BUSKIII
+class rhsusf_M1117_O;
+class RC_ASV_Core: rhsusf_M1117_O
 {
 	scope=0;
 	scopeCurator=0;
@@ -14,7 +14,7 @@ class RC_M2A3_BUSKIII_Base: RHS_M2A3_BUSKIII
 	class ramp;
 	class HatchC;
 };
-class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
+class RC_ASV_Base: RC_ASV_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -122,11 +122,6 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 		*/
 	};
 
-	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
-};
-
-class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
-{
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -273,10 +268,12 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 			};
 		};
 	};
+
+	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
 };
 
 
-class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
+class RC_ASV_WD: RC_ASV_Base
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -298,7 +295,7 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 		};
 	};
 
-	displayName="M2A3 Bradley";
+	displayName="ASV";
 	editorSubcategory="RC_RHS_D_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -311,7 +308,7 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 	//driverForceOptics=1;
 };
 
-
+/*
 class RC_M2A3_BUSKIII_WD_B: RC_M2A3_BUSKIII_D_B
 {
 	editorSubcategory="RC_RHS_WD_subcat";
@@ -341,88 +338,4 @@ class RC_M2A3_BUSKIII_WD_I: RC_M2A3_BUSKIII_WD_B
 	side=2;
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
-
-
-class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
-{
-	displayName="M2A3 Bradley NLOS";
-	
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
-
-			weapons[]=
-			{
-				"RC_RHS_weap_M242BC",
-				"RC_RHS_weap_m240_bradley_coax",
-				"RC_Bradley_Missile_Launcher",
-				"rhs_weap_fcs_ammo",
-
-				"rhsusf_weap_M257_8"
-			};
-			magazines[]=
-			{
-				"RC_110Rnd_25mm_HEI_Pen_T_R",
-				"RC_110Rnd_25mm_HEI_DF_T_R",
-				"RC_110Rnd_25mm_HEI_QF_T_R",
-				"RC_110Rnd_25mm_HEAB_DF_T_R",
-				/*
-				"RC_110Rnd_25mm_MP_Pen_T_R",
-				"RC_110Rnd_25mm_MP_DF_T_R",
-				"RC_110Rnd_25mm_MP_QF_T_R",
-				"RC_110Rnd_25mm_MPAB_DF_T_R",
-
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				*/
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_2Rnd_TOW_MP_NLOS",
-				"RC_2Rnd_TOW_MP_NLOS",
-				"RC_2Rnd_TOW_AA",
-				"RC_2Rnd_TOW_AA",
-				"rhs_laserfcsmag",
-
-				"rhsusf_mag_L8A3_8",
-				"rhsusf_mag_L8A3_8",
-				"rhsusf_mag_L8A3_8"
-			};
-		};
-	};
-};
-class RC_M2A3_BUSKIII_NLOS_WD_B: RC_M2A3_BUSKIII_NLOS_D_B
-{
-	editorSubcategory="RC_RHS_WD_subcat";
-	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A3_BUSKIII_wd.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_base_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_a3_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
-		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\BUSKIII_co.paa",
-		"\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
-	};
-};
-
-
-class RC_M2A3_BUSKIII_NLOS_D_I: RC_M2A3_BUSKIII_NLOS_D_B
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
-};
-class RC_M2A3_BUSKIII_NLOS_WD_I: RC_M2A3_BUSKIII_NLOS_WD_B
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
-};
+*/
