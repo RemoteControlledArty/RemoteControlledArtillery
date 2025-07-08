@@ -40,7 +40,6 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -61,6 +60,49 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 	*/
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
+
+	maxSpeed=121;
+	enginePower=1216; //1100
+	peakTorque=6500; //6500
+	idleRPM=0; //1000
+	redRPM=5000; //5000
+	minOmega=__EVAL((0 * 2 * PI) / 60);
+	maxOmega=__EVAL((5000 * 2 * PI) / 60);
+	engineLosses=5; //25
+	transmissionLosses=5; //15
+	brakeDistance=3; //5
+	brakeIdleSpeed=0.3; //0.1
+	fuelCapacity=1909;
+
+	irTarget=1;
+	irTargetSize=0.7;
+	radarTarget=1;
+	radarTargetSize=0.7;
+
+	torqueCurve[]=
+	{
+		{0,0},
+		{0.00333505,1},
+		{0.08333505,1},
+		{0.16666804,1},
+		{0.25000103,1},
+		{0.33333402,1},
+		{0.41666701,1},
+		{0.5,1},
+		{0.58333302,1},
+		{0.66666698,1},
+		{0.75,1},
+		{0.83333302,1},
+		{0.91666698,1},
+		{1,1}
+	};
+	thrustDelay=0;
+	accelAidForceCoef=3.5;
+	accelAidForceYOffset=-3;
+	accelAidForceSpd=2.83;
+
+	mineDetectorRange=50;
+	canAccessMineDetector=1;
 
 	hiddenSelectionsTextures[]=
 	{
@@ -150,12 +192,236 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 		};
 	};
 
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=4000;
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=4000;
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="mainGun";
+				};
+				class ManSensorComponent: SensorTemplateMan
+				{
+					typeRecognitionDistance=600;
+
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=15;
+					angleRangeHorizontal=360;
+					angleRangeVertical=180;
+					animDirection="mainGun";
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=400;
+
+					class AirTarget
+					{
+						minRange=400;
+						maxRange=400;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=400;
+						maxRange=400;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					//animDirection="mainGun";
+					animDirection="";
+				};
+				class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+				{
+					typeRecognitionDistance=6000;
+
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=360;
+					angleRangeVertical=180;
+					aimDown=0;
+					groundNoiseDistanceCoef=0;
+					maxGroundNoiseDistance=0;
+					maxTrackableSpeed=694.44397;
+				};
+				class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+				{
+					class AirTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+
+					allowsMarking=1;
+				};
+			};
+		};
+
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={6000,4000,2000,600};
+					resource="RscCustomInfoSensors";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				/*
+				class MineDetectorDisplay
+				{
+					componentType="MineDetectorDisplayComponent";
+					range=50;
+					resource="RscCustomInfoMineDetect";
+				};
+				*/
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="EmptyDisplayComponent";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={600,2000,4000,6000};
+					resource="RscCustomInfoSensors";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+				/*
+				class MineDetectorDisplay
+				{
+					componentType="MineDetectorDisplayComponent";
+					range=50;
+					resource="RscCustomInfoMineDetect";
+				};
+				*/
+			};
+		};
+	};
+
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner_missile.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner_missile.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			minElev=-11;
@@ -183,7 +449,7 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 					maxAngleY=100;
 
 					initFov=0.9;
-					minFov=0.02;
+					minFov=0.01;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -201,11 +467,11 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 				class CommanderOptics: CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
+					//#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander_600m_cUAS.hpp"
 					dontCreateAI=1;
 					showAllTargets="2 + 4";
 					commanding=1;
-					turretInfoType="RscOptics_MBT_03_gunner";
+					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 					weapons[]=
 					{
@@ -227,7 +493,7 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 							maxAngleY=100;
 
 							initFov=0.9;
-							minFov=0.02;
+							minFov=0.01;
 							maxFov=0.9;
 							visionMode[]=
 							{
@@ -235,9 +501,214 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 								"TI"
 							};
 							thermalMode[]={0};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_m_F.p3d";
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 							gunnerOpticsEffect[]={};
+						};
+					};
+
+					class Components: Components
+					{
+						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+						{
+							defaultDisplay="SensorDisplay";
+
+							class Components
+							{
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={6000,4000,2000,600};
+									resource="RscCustomInfoSensors";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								class VehicleDriverDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="Driver";
+								};
+								class VehicleGunnerDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="PrimaryGunner";
+								};
+								/*
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								*/
+								/*
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
+								};
+								*/
+								/*
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+								*/
+							};
+						};
+						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+						{
+							defaultDisplay="SensorDisplay";
+
+							class Components
+							{
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={600,2000,4000,6000};
+									resource="RscCustomInfoSensors";
+								};
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								class VehicleDriverDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="Driver";
+								};
+								class VehicleGunnerDisplay
+								{
+									componentType="TransportFeedDisplayComponent";
+									source="PrimaryGunner";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								/*
+								class MineDetectorDisplay
+								{
+									componentType="MineDetectorDisplayComponent";
+									range=50;
+									resource="RscCustomInfoMineDetect";
+								};
+								*/
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+							};
+						};
+					};
+				};
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={6000,4000,2000,600};
+							resource="RscCustomInfoSensors";
+						};
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleCommanderDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Commander";
+						};
+						/*
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						*/
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+						/*
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						*/
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={600,2000,4000,6000};
+							resource="RscCustomInfoSensors";
+						};
+						class VehicleMissileDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Missile";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class VehicleDriverDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Driver";
+						};
+						class VehicleCommanderDisplay
+						{
+							componentType="TransportFeedDisplayComponent";
+							source="Commander";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						/*
+						class MineDetectorDisplay
+						{
+							componentType="MineDetectorDisplayComponent";
+							range=50;
+							resource="RscCustomInfoMineDetect";
+						};
+						*/
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
 						};
 					};
 				};

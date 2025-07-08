@@ -538,41 +538,39 @@ class RC_ammo_Penetrator_MPAB: ammo_Penetrator_Base
 	warheadName="HEAT";
 	CraterEffects="NoCrater";	//test both seperate
 	explosionEffects="NoExplosion";
+	dangerRadiusHit=40;
+	suppressionRadiusHit=14;
 };
 class RC_ammo_Penetrator_MP_20mm: RC_ammo_Penetrator_MPAB
 {
 	hit=80;
 	caliber=4.4;
-	dangerRadiusHit=40;
-	suppressionRadiusHit=14;
 };
 class RC_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MPAB
 {
 	hit=100;
 	caliber=4.6;
-	dangerRadiusHit=40;
-	suppressionRadiusHit=14;
 };
 class RC_ammo_Penetrator_MP_35mm: RC_ammo_Penetrator_MPAB
 {
 	hit=110;
 	caliber=4.7;
-	dangerRadiusHit=40;
-	suppressionRadiusHit=14;
 };
 class RC_ammo_Penetrator_MP_40mm: RC_ammo_Penetrator_MPAB
 {
 	hit=120;
 	caliber=4.8;
-	dangerRadiusHit=40;
-	suppressionRadiusHit=14;
 };
 class RC_ammo_Penetrator_MP_50mm: RC_ammo_Penetrator_MPAB
 {
 	hit=140;
 	caliber=5;
-	dangerRadiusHit=40;
-	suppressionRadiusHit=14;
+};
+class RC_ammo_Penetrator_MP_120mm: RC_ammo_Penetrator_MPAB
+{
+	hit=780;
+	caliber=60;
+	warheadName="TandemHEAT";
 };
 
 
@@ -1344,6 +1342,21 @@ class RC_Sh_120mm_MP_T_G: RC_Sh_120mm_MP_T_R {model="\A3\Weapons_f\Data\bullettr
 class RC_Sh_120mm_MP_T_Y: RC_Sh_120mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+//120mm MPAB DF
+class RC_Sh_120mm_MP_DF_Sub: RC_Sh_120mm_MP_T_R
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_120mm";
+};
+class RC_Sh_120mm_MPAB_DF_T_R: RC_Sh_120mm_MP_T_R
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
+	submunitionAmmo="RC_Sh_120mm_MP_DF_Sub";
+};
+class RC_Sh_120mm_MPAB_DF_T_G: RC_Sh_120mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_120mm_MPAB_DF_T_Y: RC_Sh_120mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 class RC_ammo_Penetrator_AB_120mm: RC_ammo_Penetrator_120mm
 {
 	airFriction=-0.001;
@@ -1691,6 +1704,23 @@ class RC_Sh_125mm_MP_T_R: Sh_125mm_HEAT_T_Red
 };
 class RC_Sh_125mm_MP_T_G: RC_Sh_125mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\shell_tracer_green";};
 class RC_Sh_125mm_MP_T_Y: RC_Sh_125mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\shell_tracer_yellow";};
+
+
+//125mm MPAB DF
+class RC_Sh_125mm_MP_DF_Sub: RC_Sh_125mm_MP_T_R
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_MP_125mm";
+};
+class RC_Sh_125mm_MPAB_DF_T_R: RC_Sh_125mm_MP_T_R
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
+	submunitionAmmo="RC_Sh_125mm_MP_DF_Sub";
+};
+class RC_Sh_125mm_MPAB_DF_T_G: RC_Sh_125mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_125mm_MPAB_DF_T_Y: RC_Sh_125mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 class Sh_125mm_HE_T_Red;
 class RC_Sh_125mm_HEAB_LV_indirect_T_R: Sh_125mm_HE_T_Red
 {
@@ -2386,9 +2416,161 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 		};
 	};
 };
+class RC_M_120mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG_Base
+{
+	timeToLive=30;
+	maxControlRange=6000;
+	missileLockMaxDistance=6000;
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=6000;
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=3000;
+					maxTrackableSpeed=500;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
+					groundNoiseDistanceCoef=0.2;
+					maxGroundNoiseDistance=50;
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=500;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
+				};
+			};
+		};
+	};
+};
 class RC_M_125mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
 {
 	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
+};
+
+
+class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
+{
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+
+	//make KE focused, keep submunitiontargetdirection
+
+	indirectHit=80;
+	indirectHitRange=10;
+	explosive=1;
+	timeToLive=20;
+
+	simulationStep=0.0020000001;
+	airFriction=0.01;
+	sideAirFriction=2;
+	maneuvrability=40;
+	trackOversteer=1;
+	trackLead=1;
+	maxSpeed=1715;
+	
+	initTime=0.01;
+	thrustTime=10;
+	thrust=1000;
+
+	/*
+	flightProfiles[]=
+	{
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=50;
+		lockDistanceToTarget=500;
+	};
+	*/
+
+	flightProfiles[]=
+	{
+		"Direct",
+		"TopDown"
+	};
+	class TopDown
+	{
+		ascendHeight=100;
+		descendDistance=500;
+		minDistance=500;
+		ascendAngle=20;
+	};
+	//autoSeekTarget=1;	 //unlear if it works in this context
+	//missileLockCone=300;
+	//missileKeepLockedCone=300;
+	missileLockMaxSpeed=100;
+	cmImmunity=0.95;
 };
 
 

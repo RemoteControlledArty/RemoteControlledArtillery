@@ -2336,17 +2336,18 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_10Rnd_120mm_APFSDS_T_Y",
 		"RC_15Rnd_120mm_APFSDS_T_Y",
 		"RC_20Rnd_120mm_APFSDS_T_Y",
-		/*
-		"RC_10Rnd_120mm_MP_HEAB_T_R",
-		"RC_15Rnd_120mm_MP_HEAB_T_R",
-		"RC_20Rnd_120mm_MP_HEAB_T_R",
-		"RC_10Rnd_120mm_MP_HEAB_T_G",
-		"RC_15Rnd_120mm_MP_HEAB_T_G",
-		"RC_20Rnd_120mm_MP_HEAB_T_G",
-		"RC_10Rnd_120mm_MP_HEAB_T_Y",
-		"RC_15Rnd_120mm_MP_HEAB_T_Y",
-		"RC_20Rnd_120mm_MP_HEAB_T_Y",
-		*/
+
+		"RC_5Rnd_120mm_MPAB_DF_T_R",
+		"RC_10Rnd_120mm_MPAB_DF_T_R",
+		"RC_15Rnd_120mm_MPAB_DF_T_R",
+		"RC_20Rnd_120mm_MPAB_DF_T_R",
+		"RC_10Rnd_120mm_MPAB_DF_T_G",
+		"RC_15Rnd_120mm_MPAB_DF_T_G",
+		"RC_20Rnd_120mm_MPAB_DF_T_G",
+		"RC_10Rnd_120mm_MPAB_DF_T_Y",
+		"RC_15Rnd_120mm_MPAB_DF_T_Y",
+		"RC_20Rnd_120mm_MPAB_DF_T_Y",
+
 		"RC_10Rnd_120mm_MP_T_R",
 		"RC_15Rnd_120mm_MP_T_R",
 		"RC_20Rnd_120mm_MP_T_R",
@@ -2356,6 +2357,7 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_10Rnd_120mm_MP_T_Y",
 		"RC_15Rnd_120mm_MP_T_Y",
 		"RC_20Rnd_120mm_MP_T_Y",
+
 		"RC_5Rnd_120mm_HEAB_LV_indirect_T_R",
 		"RC_10Rnd_120mm_HEAB_LV_indirect_T_R",
 		"RC_15Rnd_120mm_HEAB_LV_indirect_T_R",
@@ -2366,6 +2368,7 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_10Rnd_120mm_HEAB_LV_indirect_T_Y",
 		"RC_15Rnd_120mm_HEAB_LV_indirect_T_Y",
 		"RC_20Rnd_120mm_HEAB_LV_indirect_T_Y",
+
 		"RC_4Rnd_120mm_DLG_cannon_missiles",
 		"RC_3Rnd_120mm_DLG_cannon_missiles",
 		"RC_2Rnd_120mm_DLG_cannon_missiles",
@@ -2433,17 +2436,18 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_APFSDS_T_Y",
 		"RC_15Rnd_125mm_APFSDS_T_Y",
 		"RC_20Rnd_125mm_APFSDS_T_Y",
-		/*
-		"RC_10Rnd_125mm_MP_HEAB_T_R",
-		"RC_15Rnd_125mm_MP_HEAB_T_R",
-		"RC_20Rnd_125mm_MP_HEAB_T_R",
-		"RC_10Rnd_125mm_MP_HEAB_T_G",
-		"RC_15Rnd_125mm_MP_HEAB_T_G",
-		"RC_20Rnd_125mm_MP_HEAB_T_G",
-		"RC_10Rnd_125mm_MP_HEAB_T_Y",
-		"RC_15Rnd_125mm_MP_HEAB_T_Y",
-		"RC_20Rnd_125mm_MP_HEAB_T_Y",
-		*/
+
+		"RC_5Rnd_125mm_MPAB_DF_T_R",
+		"RC_10Rnd_125mm_MPAB_DF_T_R",
+		"RC_15Rnd_125mm_MPAB_DF_T_R",
+		"RC_20Rnd_125mm_MPAB_DF_T_R",
+		"RC_10Rnd_125mm_MPAB_DF_T_G",
+		"RC_15Rnd_125mm_MPAB_DF_T_G",
+		"RC_20Rnd_125mm_MPAB_DF_T_G",
+		"RC_10Rnd_125mm_MPAB_DF_T_Y",
+		"RC_15Rnd_125mm_MPAB_DF_T_Y",
+		"RC_20Rnd_125mm_MPAB_DF_T_Y",
+
 		"RC_10Rnd_125mm_MP_T_R",
 		"RC_15Rnd_125mm_MP_T_R",
 		"RC_20Rnd_125mm_MP_T_R",
@@ -2453,6 +2457,7 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_MP_T_Y",
 		"RC_15Rnd_125mm_MP_T_Y",
 		"RC_20Rnd_125mm_MP_T_Y",
+
 		"RC_5Rnd_125mm_HEAB_LV_indirect_T_R",
 		"RC_10Rnd_125mm_HEAB_LV_indirect_T_R",
 		"RC_15Rnd_125mm_HEAB_LV_indirect_T_R",
@@ -2463,6 +2468,7 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_HEAB_LV_indirect_T_Y",
 		"RC_15Rnd_125mm_HEAB_LV_indirect_T_Y",
 		"RC_20Rnd_125mm_HEAB_LV_indirect_T_Y",
+
 		"RC_4Rnd_125mm_DLG_cannon_missiles",
 		"RC_3Rnd_125mm_DLG_cannon_missiles",
 		"RC_2Rnd_125mm_DLG_cannon_missiles",
