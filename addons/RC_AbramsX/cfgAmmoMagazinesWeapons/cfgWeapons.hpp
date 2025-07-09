@@ -9,11 +9,12 @@ class RC_cannon_120mm_M360: RC_cannon_120mm_M360_base
 	//displayName="120mm";
 	canLock=2;
 	weaponLockSystem=0;
-	maxZeroing=4000;
+	maxZeroing=6000;
 	FCSZeroingDelay=0.5;
 	FCSMaxLeadSpeed=100;
 	reloadTime=4.5;
 	magazineReloadTime=4.5;
+	//ballisticsComputer="4";
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
 	magazines[]=

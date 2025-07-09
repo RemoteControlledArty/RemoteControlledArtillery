@@ -2519,16 +2519,40 @@ class RC_M_125mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
 };
 
 
+class Sh_120mm_APFSDS;
+class RC_Sh_HVKEM_Penetrator: Sh_120mm_APFSDS
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerEndTime=4;
+
+	hit=1000;
+	indirectHit=30;
+	indirectHitRange=3;
+	deflecting=5;
+};
 class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
 {
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
 
-	//make KE focused, keep submunitiontargetdirection
+	submunitionAmmo="RC_Sh_HVKEM_Penetrator";
+	submunitionDirectionType="SubmunitionTargetDirection";
+	//submunitionInitSpeed=1715;
+	submunitionParentSpeedCoef=2;
+	submunitionInitialOffset[]={0,0,-1};
+	triggerOnImpact=1;
+	triggerDistance=20;
+	proximityExplosionDistance=20;
+	deleteParentWhenTriggered=1;
 
-	indirectHit=80;
-	indirectHitRange=10;
-	explosive=1;
-	timeToLive=20;
+	missileLockMaxSpeed=686;
+	cmImmunity=1;
+
+	indirectHit=30;
+	indirectHitRange=3;
+	explosive=0.7;
+	timeToLive=10;
 
 	simulationStep=0.0020000001;
 	airFriction=0.01;
@@ -2540,19 +2564,7 @@ class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
 	
 	initTime=0.01;
 	thrustTime=10;
-	thrust=1000;
-
-	/*
-	flightProfiles[]=
-	{
-		"Cruise"
-	};
-	class Cruise
-	{
-		preferredFlightAltitude=50;
-		lockDistanceToTarget=500;
-	};
-	*/
+	thrust=1715;
 
 	flightProfiles[]=
 	{
@@ -2562,15 +2574,11 @@ class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
 	class TopDown
 	{
 		ascendHeight=100;
-		descendDistance=500;
-		minDistance=500;
+		descendDistance=1000;
+		minDistance=1000;
 		ascendAngle=20;
 	};
-	//autoSeekTarget=1;	 //unlear if it works in this context
-	//missileLockCone=300;
-	//missileKeepLockedCone=300;
-	missileLockMaxSpeed=100;
-	cmImmunity=0.95;
+	//autoSeekTarget=1;
 };
 
 

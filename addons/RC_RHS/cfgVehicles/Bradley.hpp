@@ -298,11 +298,13 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 		};
 	};
 
+	/*
 	memoryPointsGetInCargo[]	= {"pos cargo","pos cargo 1","pos cargo 2","pos cargo 3"};
 	memoryPointsGetInCargoDir[]	= {"pos cargo dir","pos cargo 1 dir","pos cargo dir","pos cargo 2 dir","pos cargo 3 dir"};
 	cargoProxyIndexes[] = {1,2,3,4,5,6,7,8};
 	getInProxyOrder[] = {1,2,3,4,5,6,7,8};
 	cargoAction[] = {"RHS_M113_Cargo03","RHS_M113_Cargo03","RHS_M113_Cargo03","RHS_M113_Cargo03","RHS_M113_Cargo02","RHS_M113_Cargo02","RHS_M113_Cargo02","RHS_M113_Cargo02"};
+	*/
 
 	displayName="M2A3 Bradley";
 	editorSubcategory="RC_RHS_D_subcat";

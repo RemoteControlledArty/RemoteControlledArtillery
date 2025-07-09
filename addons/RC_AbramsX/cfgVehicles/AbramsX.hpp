@@ -21,6 +21,9 @@ class RC_AbramsX_Core: B_W_qav_abramsx
 	scope=0;
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
+
+	isRCArty=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 };
 class RC_AbramsX_Base: RC_AbramsX_Core
 {
@@ -43,6 +46,8 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
+	canAccessMineDetector=1;
+	mineDetectorRange=50;
 
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_MBT_subcat";
@@ -51,65 +56,36 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-	/*
-	maxSpeed=70;
-	enginePower=1537.5;
-	peakTorque=6250;
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherAngle=180;
-	*/
-	//mineDetectorRange=50;	//doesnt work yet
-	//canAccessMineDetector=1;	//doesnt work yet
 
-	maxSpeed=121;
-	enginePower=1216; //1100
-	peakTorque=6500; //6500
-	idleRPM=0; //1000
-	redRPM=5000; //5000
-	minOmega=__EVAL((0 * 2 * PI) / 60);
-	maxOmega=__EVAL((5000 * 2 * PI) / 60);
-	engineLosses=5; //25
-	transmissionLosses=5; //15
-	brakeDistance=3; //5
-	brakeIdleSpeed=0.3; //0.1
-	fuelCapacity=1909;
-
-	irTarget=1;
-	irTargetSize=0.7;
+	radarTargetSize=0.75;
 	radarTarget=1;
-	radarTargetSize=0.7;
+	irTargetSize=0.75;
+	irTarget=1;
 
-	torqueCurve[]=
-	{
-		{0,0},
-		{0.00333505,1},
-		{0.08333505,1},
-		{0.16666804,1},
-		{0.25000103,1},
-		{0.33333402,1},
-		{0.41666701,1},
-		{0.5,1},
-		{0.58333302,1},
-		{0.66666698,1},
-		{0.75,1},
-		{0.83333302,1},
-		{0.91666698,1},
-		{1,1}
-	};
+	//experimental values for testing, maybe removed later
+	fuelCapacity=1800;
+	maxSpeed=110;
+	peakTorque=6250;
+	enginePower=1200;
+	redRPM=5000;
+	idleRPM=0;
+	maxOmega=__EVAL((5000 * 2 * PI) / 60);
+	minOmega=__EVAL((0 * 2 * PI) / 60);
+	brakeIdleSpeed=0.31;
+	brakeDistance=3.5;
 	thrustDelay=0;
-	accelAidForceCoef=3.5;
+	transmissionLosses=6;
+	engineLosses=6;
+	accelAidForceCoef=3.6;
+	accelAidForceSpd=2.9;
 	accelAidForceYOffset=-3;
-	accelAidForceSpd=2.83;
-
-	mineDetectorRange=50;
-	canAccessMineDetector=1;
+	torqueCurve[]={{0,0},{0.00333505,1},{0.08333505,1},{0.16666804,1},{0.25000103,1},{0.33333402,1},{0.41666701,1},{0.5,1},{0.58333302,1},{0.66666698,1},{0.75,1},{0.83333302,1},{0.91666698,1},{1,1}};
 
 	hiddenSelectionsTextures[]=
 	{
 		"QAV_AbramsX\data\textures\AbramsX\Woodland\AbramsX_Hull_co.paa",
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
-	
 	class TextureSources: TextureSources
 	{
 		class woodland: woodland
@@ -127,7 +103,7 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 			textures[]=
 			{
 				"QAV_AbramsX\data\textures\AbramsX\desert\AbramsX_Hull_co.paa",
-				"A3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
+				"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
 			};
 		};
 	};
@@ -217,19 +193,19 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=4000;
+					typeRecognitionDistance=6000;
 
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=6000;
+						maxRange=6000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=6000;
+						maxRange=6000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -277,24 +253,24 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 					};
 					maxTrackableSpeed=15;
 					angleRangeHorizontal=360;
-					angleRangeVertical=180;
+					angleRangeVertical=360;
 					animDirection="mainGun";
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=400;
+					typeRecognitionDistance=600;
 
 					class AirTarget
 					{
-						minRange=400;
-						maxRange=400;
+						minRange=600;
+						maxRange=600;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=400;
-						maxRange=400;
+						minRange=600;
+						maxRange=600;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
@@ -302,8 +278,7 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 					nightRangeCoef=0.80000001;
 					angleRangeHorizontal=360;
 					angleRangeVertical=360;
-					//animDirection="mainGun";
-					animDirection="";
+					animDirection="mainGun";
 				};
 				class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 				{
@@ -329,6 +304,7 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 					groundNoiseDistanceCoef=0;
 					maxGroundNoiseDistance=0;
 					maxTrackableSpeed=694.44397;
+					animDirection="mainGun";
 				};
 				class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
 				{
@@ -346,8 +322,8 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-
 					allowsMarking=1;
+					animDirection="mainGun";
 				};
 			};
 		};
@@ -423,7 +399,7 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			//#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner_missile.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-			dontCreateAI=1;
+			//dontCreateAI=1;
 			minElev=-11;
 			commanding=2;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
