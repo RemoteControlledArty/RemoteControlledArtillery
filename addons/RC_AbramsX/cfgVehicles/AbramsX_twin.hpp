@@ -1,5 +1,5 @@
-class B_W_qav_abramsx;
-class RC_AbramsX_Core: B_W_qav_abramsx
+class qav_abramsx_templar;
+class RC_AbramsX_Twin_Core: qav_abramsx_templar
 {
 	class Turrets;
 	class MainTurret;
@@ -24,7 +24,7 @@ class RC_AbramsX_Core: B_W_qav_abramsx
 	//isRCArty=1;
 	//#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 };
-class RC_AbramsX_Base: RC_AbramsX_Core
+class RC_AbramsX_Twin_Base: RC_AbramsX_Twin_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -134,6 +134,7 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 			source="reload";
 			weapon="RC_AbramsX_20mm_coax";
 		};
+		/*
 		class zasleh3_hide
 		{
 			source="reload";
@@ -148,6 +149,27 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 		{
 			source="revolving";
 			weapon="RC_autocannon_30mm_M914";
+		};
+		*/
+		class commandergun_recoil
+		{
+			source="reload";
+			weapon="RC_autocannon_30mm_M914_twin";
+		};
+		class commandergun_recoil_2
+		{
+			source="reload";
+			weapon="RC_autocannon_30mm_M914_twin";
+		};
+		class zasleh3_hide
+		{
+			source="reload";
+			weapon="RC_autocannon_30mm_M914_twin";
+		};
+		class zasleh4_hide
+		{
+			source="reload";
+			weapon="RC_autocannon_30mm_M914_twin";
 		};
 		class bashbar: bashbar
 		{
@@ -177,15 +199,15 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 				{
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=6000;
+						maxRange=6000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=6000;
+						maxRange=6000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -451,11 +473,11 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 
 					weapons[]=
 					{
-						"RC_autocannon_30mm_M914",
+						"RC_autocannon_30mm_M914_twin",
 						"Laserdesignator_mounted",
 						"qav_SmokeLauncher"
 					};
-					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_com_red.hpp"
+					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_comtwin_red.hpp"
 
 					class OpticsIn
 					{
@@ -696,7 +718,7 @@ class RC_AbramsX_Base: RC_AbramsX_Core
 };
 
 
-class RC_AbramsX_WD: RC_AbramsX_Base
+class RC_AbramsX_Twin_WD: RC_AbramsX_Twin_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -709,7 +731,7 @@ class RC_AbramsX_WD: RC_AbramsX_Base
 		};
 	};
 
-	displayName="AbramsX";
+	displayName="AbramsX Twin";
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -718,7 +740,7 @@ class RC_AbramsX_WD: RC_AbramsX_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
 	crew="B_UAV_AI";
 };
-class RC_AbramsX_WD_O: RC_AbramsX_WD
+class RC_AbramsX_Twin_WD_O: RC_AbramsX_Twin_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -736,13 +758,13 @@ class RC_AbramsX_WD_O: RC_AbramsX_WD
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_com_green.hpp"
+					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_comtwin_green.hpp"
 				};
 			};
 		};
 	};
 };
-class RC_AbramsX_WD_I: RC_AbramsX_WD
+class RC_AbramsX_Twin_WD_I: RC_AbramsX_Twin_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -760,7 +782,7 @@ class RC_AbramsX_WD_I: RC_AbramsX_WD
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_com_yellow.hpp"
+					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_comtwin_yellow.hpp"
 				};
 			};
 		};
@@ -768,7 +790,7 @@ class RC_AbramsX_WD_I: RC_AbramsX_WD
 };
 
 
-class RC_AbramsX_A: RC_AbramsX_WD
+class RC_AbramsX_Twin_A: RC_AbramsX_Twin_WD
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -776,7 +798,7 @@ class RC_AbramsX_A: RC_AbramsX_WD
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
 	};
 };
-class RC_AbramsX_A_O: RC_AbramsX_A
+class RC_AbramsX_Twin_A_O: RC_AbramsX_Twin_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -794,13 +816,13 @@ class RC_AbramsX_A_O: RC_AbramsX_A
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_com_green.hpp"
+					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_comtwin_green.hpp"
 				};
 			};
 		};
 	};
 };
-class RC_AbramsX_A_I: RC_AbramsX_A
+class RC_AbramsX_Twin_A_I: RC_AbramsX_Twin_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -818,7 +840,7 @@ class RC_AbramsX_A_I: RC_AbramsX_A
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_com_yellow.hpp"
+					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_comtwin_yellow.hpp"
 				};
 			};
 		};

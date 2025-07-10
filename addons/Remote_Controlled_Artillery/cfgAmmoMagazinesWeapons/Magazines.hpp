@@ -248,10 +248,9 @@ class RC_60Rnd_30mm_cUAS: RC_60Rnd_20mm_cUAS
 	displayNameShort="30mm C-UAS";
 	initSpeed=1200;
 };
-class RC_100Rnd_30mm_cUAS: RC_60Rnd_30mm_cUAS
-{
-	count=100;
-};
+class RC_100Rnd_30mm_cUAS: RC_60Rnd_30mm_cUAS {count=100;};
+class RC_140Rnd_30mm_cUAS: RC_60Rnd_30mm_cUAS {count=140;};
+class RC_200Rnd_30mm_cUAS: RC_60Rnd_30mm_cUAS {count=200;};
 class RC_50Rnd_40mm_cUAS: RC_60Rnd_20mm_cUAS
 {
 	ammo="RC_40mm_cUAS";
@@ -940,6 +939,61 @@ class RC_140Rnd_30mm_HEAB_QF_T_G: RC_100Rnd_30mm_HEAB_QF_T_G {count=140;};
 class RC_140Rnd_30mm_HEAB_QF_T_Y: RC_100Rnd_30mm_HEAB_QF_T_Y {count=140;};
 
 
+class RC_200Rnd_30mm_APFSDS_T_R: RC_100Rnd_30mm_APFSDS_T_R {count=200;};
+class RC_200Rnd_30mm_APFSDS_T_G: RC_100Rnd_30mm_APFSDS_T_G {count=200;};
+class RC_200Rnd_30mm_APFSDS_T_Y: RC_100Rnd_30mm_APFSDS_T_Y {count=200;};
+
+class RC_200Rnd_30mm_MP_T_R: RC_100Rnd_30mm_MP_T_R {count=200;};
+class RC_200Rnd_30mm_MP_T_G: RC_100Rnd_30mm_MP_T_G {count=200;};
+class RC_200Rnd_30mm_MP_T_Y: RC_100Rnd_30mm_MP_T_Y {count=200;};
+
+class RC_200Rnd_30mm_GPR_T_R: RC_100Rnd_30mm_GPR_T_R {count=200;};
+class RC_200Rnd_30mm_GPR_T_G: RC_100Rnd_30mm_GPR_T_G {count=200;};
+class RC_200Rnd_30mm_GPR_T_Y: RC_100Rnd_30mm_GPR_T_Y {count=200;};
+
+
+class RC_200Rnd_30mm_MP_Pen_T_R: RC_100Rnd_30mm_MP_Pen_T_R {count=200;};
+class RC_200Rnd_30mm_MP_Pen_T_G: RC_100Rnd_30mm_MP_Pen_T_G {count=200;};
+class RC_200Rnd_30mm_MP_Pen_T_Y: RC_100Rnd_30mm_MP_Pen_T_Y {count=200;};
+
+class RC_200Rnd_30mm_MP_DF_T_R: RC_100Rnd_30mm_MP_DF_T_R {count=200;};
+class RC_200Rnd_30mm_MP_DF_T_G: RC_100Rnd_30mm_MP_DF_T_G {count=200;};
+class RC_200Rnd_30mm_MP_DF_T_Y: RC_100Rnd_30mm_MP_DF_T_Y {count=200;};
+
+class RC_200Rnd_30mm_MP_QF_T_R: RC_100Rnd_30mm_MP_QF_T_R {count=200;};
+class RC_200Rnd_30mm_MP_QF_T_G: RC_100Rnd_30mm_MP_QF_T_G {count=200;};
+class RC_200Rnd_30mm_MP_QF_T_Y: RC_100Rnd_30mm_MP_QF_T_Y {count=200;};
+
+class RC_200Rnd_30mm_MPAB_DF_T_R: RC_100Rnd_30mm_MPAB_DF_T_R {count=200;};
+class RC_200Rnd_30mm_MPAB_DF_T_G: RC_100Rnd_30mm_MPAB_DF_T_G {count=200;};
+class RC_200Rnd_30mm_MPAB_DF_T_Y: RC_100Rnd_30mm_MPAB_DF_T_Y {count=200;};
+
+class RC_200Rnd_30mm_MPAB_QF_T_R: RC_100Rnd_30mm_MPAB_QF_T_R {count=200;};
+class RC_200Rnd_30mm_MPAB_QF_T_G: RC_100Rnd_30mm_MPAB_QF_T_G {count=200;};
+class RC_200Rnd_30mm_MPAB_QF_T_Y: RC_100Rnd_30mm_MPAB_QF_T_Y {count=200;};
+
+
+class RC_200Rnd_30mm_HE_Pen_T_R: RC_100Rnd_30mm_HE_Pen_T_R {count=200;};
+class RC_200Rnd_30mm_HE_Pen_T_G: RC_100Rnd_30mm_HE_Pen_T_G {count=200;};
+class RC_200Rnd_30mm_HE_Pen_T_Y: RC_100Rnd_30mm_HE_Pen_T_Y {count=200;};
+
+class RC_200Rnd_30mm_HE_DF_T_R: RC_100Rnd_30mm_HE_DF_T_R {count=200;};
+class RC_200Rnd_30mm_HE_DF_T_G: RC_100Rnd_30mm_HE_DF_T_G {count=200;};
+class RC_200Rnd_30mm_HE_DF_T_Y: RC_100Rnd_30mm_HE_DF_T_Y {count=200;};
+
+class RC_200Rnd_30mm_HE_QF_T_R: RC_100Rnd_30mm_HE_QF_T_R {count=200;};
+class RC_200Rnd_30mm_HE_QF_T_G: RC_100Rnd_30mm_HE_QF_T_G {count=200;};
+class RC_200Rnd_30mm_HE_QF_T_Y: RC_100Rnd_30mm_HE_QF_T_Y {count=200;};
+
+class RC_200Rnd_30mm_HEAB_DF_T_R: RC_100Rnd_30mm_HEAB_DF_T_R {count=200;};
+class RC_200Rnd_30mm_HEAB_DF_T_G: RC_100Rnd_30mm_HEAB_DF_T_G {count=200;};
+class RC_200Rnd_30mm_HEAB_DF_T_Y: RC_100Rnd_30mm_HEAB_DF_T_Y {count=200;};
+
+class RC_200Rnd_30mm_HEAB_QF_T_R: RC_100Rnd_30mm_HEAB_QF_T_R {count=200;};
+class RC_200Rnd_30mm_HEAB_QF_T_G: RC_100Rnd_30mm_HEAB_QF_T_G {count=200;};
+class RC_200Rnd_30mm_HEAB_QF_T_Y: RC_100Rnd_30mm_HEAB_QF_T_Y {count=200;};
+
+
 //35mm MBAB AA / HEAB C-UAS 
 class 680Rnd_35mm_AA_shells_Tracer_Red;
 class RC_680Rnd_35mm_MPAB_AA_T_R: 680Rnd_35mm_AA_shells_Tracer_Red
@@ -1351,17 +1405,18 @@ class RC_20Rnd_120mm_APFSDS_T_Y: RC_10Rnd_120mm_APFSDS_T_Y {count=20;};
 
 
 class 4Rnd_120mm_LG_cannon_missiles;
-class RC_4Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
+class RC_5Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 {
 	displayName="4km NLOS ATGM";
 	displayNameShort="NLOS ATGM";
 	ammo="RC_M_120mm_cannon_ATGM_DLG";
-	count=4;
+	count=5;
 	//initSpeed=36;
 };
-class RC_3Rnd_120mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles {count=3;};
-class RC_2Rnd_120mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles {count=2;};
-class RC_1Rnd_120mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles {count=1;};
+class RC_4Rnd_120mm_DLG_cannon_missiles: RC_5Rnd_120mm_DLG_cannon_missiles {count=4;};
+class RC_3Rnd_120mm_DLG_cannon_missiles: RC_5Rnd_120mm_DLG_cannon_missiles {count=3;};
+class RC_2Rnd_120mm_DLG_cannon_missiles: RC_5Rnd_120mm_DLG_cannon_missiles {count=2;};
+class RC_1Rnd_120mm_DLG_cannon_missiles: RC_5Rnd_120mm_DLG_cannon_missiles {count=1;};
 
 
 class RC_5Rnd_120mm_DLG_LR_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
@@ -1378,19 +1433,26 @@ class RC_1Rnd_120mm_DLG_LR_cannon_missiles: RC_5Rnd_120mm_DLG_LR_cannon_missiles
 
 class RC_5Rnd_120mm_DLG_HVKEM: RC_5Rnd_120mm_DLG_LR_cannon_missiles
 {
-	displayName="HV-KEM";
+	displayName="HV-KE-M";
+	displayNameShort="HV-KE-M";
 	ammo="RC_M_120mm_DLG_HVKEM";
 };
+class RC_4Rnd_120mm_DLG_HVKEM: RC_5Rnd_120mm_DLG_HVKEM {count=4;};
+class RC_3Rnd_120mm_DLG_HVKEM: RC_5Rnd_120mm_DLG_HVKEM {count=3;};
+class RC_2Rnd_120mm_DLG_HVKEM: RC_5Rnd_120mm_DLG_HVKEM {count=2;};
+class RC_1Rnd_120mm_DLG_HVKEM: RC_5Rnd_120mm_DLG_HVKEM {count=1;};
 
 
-class RC_4Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
+class RC_5Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
 {
 	ammo="RC_M_125mm_cannon_ATGM_DLG";
 	//initSpeed=36;
+	count=5;
 };
-class RC_3Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_125mm_DLG_cannon_missiles {count=3;};
-class RC_2Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_125mm_DLG_cannon_missiles {count=2;};
-class RC_1Rnd_125mm_DLG_cannon_missiles: RC_4Rnd_125mm_DLG_cannon_missiles {count=1;};
+class RC_4Rnd_125mm_DLG_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles {count=4;};
+class RC_3Rnd_125mm_DLG_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles {count=3;};
+class RC_2Rnd_125mm_DLG_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles {count=2;};
+class RC_1Rnd_125mm_DLG_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles {count=1;};
 
 
 class 12Rnd_125mm_HEAT_T_Red;

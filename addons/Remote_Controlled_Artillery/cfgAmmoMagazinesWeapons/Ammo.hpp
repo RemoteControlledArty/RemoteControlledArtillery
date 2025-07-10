@@ -2527,7 +2527,7 @@ class RC_Sh_HVKEM_Penetrator: Sh_120mm_APFSDS
 	airLock=1;
 	tracerEndTime=4;
 
-	hit=1000;
+	hit=800;
 	indirectHit=30;
 	indirectHitRange=3;
 	deflecting=5;
@@ -2539,7 +2539,7 @@ class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
 	submunitionAmmo="RC_Sh_HVKEM_Penetrator";
 	submunitionDirectionType="SubmunitionTargetDirection";
 	//submunitionInitSpeed=1715;
-	submunitionParentSpeedCoef=2;
+	submunitionParentSpeedCoef=1;	//worse at short range
 	submunitionInitialOffset[]={0,0,-1};
 	triggerOnImpact=1;
 	triggerDistance=20;
@@ -2564,22 +2564,40 @@ class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
 	
 	initTime=0.01;
 	thrustTime=10;
-	thrust=1715;
+	thrust=800;
 
 	flightProfiles[]=
 	{
-		"Direct",
 		"TopDown"
 	};
 	class TopDown
 	{
 		ascendHeight=100;
-		descendDistance=1000;
-		minDistance=1000;
+		descendDistance=500;
+		minDistance=500;
 		ascendAngle=20;
 	};
 	//autoSeekTarget=1;
 };
+
+
+/*
+(vehicle player) addEventHandler ["Fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+
+	[_projectile] spawn {
+		params ["_projectile"];
+
+		while {alive _projectile} do
+		{
+			_speed = round ((speed _projectile) / 3.6);
+			systemchat str _speed;
+		};
+
+		systemchat "splash";
+	};
+}];
+*/
 
 
 /*

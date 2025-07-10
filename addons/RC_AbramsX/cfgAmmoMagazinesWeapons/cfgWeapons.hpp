@@ -67,11 +67,16 @@ class RC_cannon_120mm_M360: RC_cannon_120mm_M360_base
 		"RC_2Rnd_120mm_DLG_LR_cannon_missiles",
 		"RC_1Rnd_120mm_DLG_LR_cannon_missiles",
 
-		"RC_5Rnd_120mm_DLG_HVKEM"
+		"RC_5Rnd_120mm_DLG_HVKEM",
+		"RC_4Rnd_120mm_DLG_HVKEM",
+		"RC_3Rnd_120mm_DLG_HVKEM",
+		"RC_2Rnd_120mm_DLG_HVKEM",
+		"RC_1Rnd_120mm_DLG_HVKEM"
 	};
 	class player: player
 	{
 		reloadTime=4.5;
+		dispersion=0.0003;
 	};
 	class Cruise: Player
 	{
@@ -125,6 +130,7 @@ class RC_autocannon_30mm_M914: RC_autocannon_30mm_M914_Base
 	maxZeroing=4000;
 	FCSMaxLeadSpeed=100;
 	autoReload=1;
+	magazineReloadTime=20;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
 	class HighROF: HighROF
@@ -194,9 +200,103 @@ class RC_autocannon_30mm_M914: RC_autocannon_30mm_M914_Base
 		class player: player
 		{
 			reloadTime=0.2;
+			dispersion=0.0008;
 		};
 	};
 };
+
+
+class autocannon_30mm_M914_twin;
+class RC_autocannon_30mm_M914_twin_Base: autocannon_30mm_M914_twin
+{
+	class HighROF;
+	class player;
+};
+class RC_autocannon_30mm_M914_twin: RC_autocannon_30mm_M914_twin_Base
+{
+	author="Ascent";
+	//displayName="30mm";
+	canLock=2;
+	weaponLockSystem=0;
+	FCSZeroingDelay=0.5;
+	maxZeroing=4000;
+	FCSMaxLeadSpeed=100;
+	autoReload=1;
+	magazineReloadTime=25;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+	class HighROF: HighROF
+	{
+		canLock=2;
+		weaponLockSystem=0;
+		FCSZeroingDelay=0.5;
+		maxZeroing=4000;
+		FCSMaxLeadSpeed=100;
+		autoReload=1;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+		magazines[]=
+		{
+			"RC_200Rnd_30mm_MP_Pen_T_R",
+			"RC_200Rnd_30mm_MP_Pen_T_G",
+			"RC_200Rnd_30mm_MP_Pen_T_Y",
+
+			"RC_200Rnd_30mm_HE_Pen_T_R",
+			"RC_200Rnd_30mm_HE_Pen_T_G",
+			"RC_200Rnd_30mm_HE_Pen_T_Y",
+
+			"RC_200Rnd_30mm_MP_DF_T_R",
+			"RC_200Rnd_30mm_MP_DF_T_G",
+			"RC_200Rnd_30mm_MP_DF_T_Y",
+
+			"RC_200Rnd_30mm_HE_DF_T_R",
+			"RC_200Rnd_30mm_HE_DF_T_G",
+			"RC_200Rnd_30mm_HE_DF_T_Y",
+
+			"RC_200Rnd_30mm_MP_QF_T_R",
+			"RC_200Rnd_30mm_MP_QF_T_G",
+			"RC_200Rnd_30mm_MP_QF_T_Y",
+
+			"RC_200Rnd_30mm_HE_QF_T_R",
+			"RC_200Rnd_30mm_HE_QF_T_G",
+			"RC_200Rnd_30mm_HE_QF_T_Y",
+
+			"RC_200Rnd_30mm_MPAB_DF_T_R",
+			"RC_200Rnd_30mm_MPAB_DF_T_G",
+			"RC_200Rnd_30mm_MPAB_DF_T_Y",
+
+			"RC_200Rnd_30mm_HEAB_DF_T_R",
+			"RC_200Rnd_30mm_HEAB_DF_T_G",
+			"RC_200Rnd_30mm_HEAB_DF_T_Y",
+
+			"RC_200Rnd_30mm_MPAB_QF_T_R",
+			"RC_200Rnd_30mm_MPAB_QF_T_G",
+			"RC_200Rnd_30mm_MPAB_QF_T_Y",
+
+			"RC_200Rnd_30mm_HEAB_QF_T_R",
+			"RC_200Rnd_30mm_HEAB_QF_T_G",
+			"RC_200Rnd_30mm_HEAB_QF_T_Y",
+			"RC_200Rnd_30mm_cUAS",
+
+			"RC_200Rnd_30mm_MP_T_R",
+			"RC_200Rnd_30mm_MP_T_G",
+			"RC_200Rnd_30mm_MP_T_Y",
+			"RC_200Rnd_30mm_GPR_T_R",
+			"RC_200Rnd_30mm_GPR_T_G",
+			"RC_200Rnd_30mm_GPR_T_Y",
+
+			"RC_200Rnd_30mm_APFSDS_T_R",
+			"RC_200Rnd_30mm_APFSDS_T_G",
+			"RC_200Rnd_30mm_APFSDS_T_Y"
+		};
+		class player: player
+		{
+			dispersion=0.0008;
+		};
+	};
+};
+
+
 class RC_AbramsX_20mm_coax: RC_autocannon_30mm_M914
 {
 	displayName="coax 20mm";
@@ -260,6 +360,7 @@ class RC_AbramsX_20mm_coax: RC_autocannon_30mm_M914
 		class player: player
 		{
 			reloadTime=0.25;
+			dispersion=0.0008;
 		};
 	};
 
@@ -274,6 +375,179 @@ class RC_AbramsX_20mm_coax: RC_autocannon_30mm_M914
 		};
 	};
 };
+
+
+/*
+class RC_autocannon_30mm_CTWS;
+class RC_autocannon_30mm_M914_twin_Base: RC_autocannon_30mm_CTWS
+{
+	class HE;
+	class AP;
+	class player;
+};
+class RC_autocannon_30mm_M914_twin: RC_autocannon_30mm_M914_twin_Base
+{
+	author="Ascent";
+	displayName="Twin M914 30mm";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	FCSMaxLeadSpeed=100;
+
+	class HE: HE
+	{
+		displayName="M914 30mm";
+		FCSMaxLeadSpeed=100;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+		magazines[]=
+		{
+			"RC_140Rnd_30mm_MP_Pen_T_R",
+			"RC_140Rnd_30mm_MP_Pen_T_G",
+			"RC_140Rnd_30mm_MP_Pen_T_Y",
+
+			"RC_140Rnd_30mm_HE_Pen_T_R",
+			"RC_140Rnd_30mm_HE_Pen_T_G",
+			"RC_140Rnd_30mm_HE_Pen_T_Y",
+
+			"RC_140Rnd_30mm_MP_DF_T_R",
+			"RC_140Rnd_30mm_MP_DF_T_G",
+			"RC_140Rnd_30mm_MP_DF_T_Y",
+
+			"RC_140Rnd_30mm_HE_DF_T_R",
+			"RC_140Rnd_30mm_HE_DF_T_G",
+			"RC_140Rnd_30mm_HE_DF_T_Y",
+
+			"RC_140Rnd_30mm_MP_QF_T_R",
+			"RC_140Rnd_30mm_MP_QF_T_G",
+			"RC_140Rnd_30mm_MP_QF_T_Y",
+
+			"RC_140Rnd_30mm_HE_QF_T_R",
+			"RC_140Rnd_30mm_HE_QF_T_G",
+			"RC_140Rnd_30mm_HE_QF_T_Y",
+
+			"RC_140Rnd_30mm_MPAB_DF_T_R",
+			"RC_140Rnd_30mm_MPAB_DF_T_G",
+			"RC_140Rnd_30mm_MPAB_DF_T_Y",
+
+			"RC_140Rnd_30mm_HEAB_DF_T_R",
+			"RC_140Rnd_30mm_HEAB_DF_T_G",
+			"RC_140Rnd_30mm_HEAB_DF_T_Y",
+
+			"RC_140Rnd_30mm_MPAB_QF_T_R",
+			"RC_140Rnd_30mm_MPAB_QF_T_G",
+			"RC_140Rnd_30mm_MPAB_QF_T_Y",
+
+			"RC_140Rnd_30mm_HEAB_QF_T_R",
+			"RC_140Rnd_30mm_HEAB_QF_T_G",
+			"RC_140Rnd_30mm_HEAB_QF_T_Y",
+			"RC_140Rnd_30mm_cUAS",
+
+			"RC_140Rnd_30mm_MP_T_R",
+			"RC_140Rnd_30mm_MP_T_G",
+			"RC_140Rnd_30mm_MP_T_Y",
+			"RC_140Rnd_30mm_GPR_T_R",
+			"RC_140Rnd_30mm_GPR_T_G",
+			"RC_140Rnd_30mm_GPR_T_Y",
+
+			"RC_140Rnd_30mm_APFSDS_T_R",
+			"RC_140Rnd_30mm_APFSDS_T_G",
+			"RC_140Rnd_30mm_APFSDS_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.2;
+			dispersion=0.0008;
+		};
+	};
+	class AP: AP
+	{
+		displayName="M914 30mm";
+		FCSMaxLeadSpeed=100;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+		magazines[]=
+		{
+			"RC_140Rnd_30mm_MP_Pen_T_R",
+			"RC_140Rnd_30mm_MP_Pen_T_G",
+			"RC_140Rnd_30mm_MP_Pen_T_Y",
+
+			"RC_140Rnd_30mm_HE_Pen_T_R",
+			"RC_140Rnd_30mm_HE_Pen_T_G",
+			"RC_140Rnd_30mm_HE_Pen_T_Y",
+
+			"RC_140Rnd_30mm_MP_DF_T_R",
+			"RC_140Rnd_30mm_MP_DF_T_G",
+			"RC_140Rnd_30mm_MP_DF_T_Y",
+
+			"RC_140Rnd_30mm_HE_DF_T_R",
+			"RC_140Rnd_30mm_HE_DF_T_G",
+			"RC_140Rnd_30mm_HE_DF_T_Y",
+
+			"RC_140Rnd_30mm_MP_QF_T_R",
+			"RC_140Rnd_30mm_MP_QF_T_G",
+			"RC_140Rnd_30mm_MP_QF_T_Y",
+
+			"RC_140Rnd_30mm_HE_QF_T_R",
+			"RC_140Rnd_30mm_HE_QF_T_G",
+			"RC_140Rnd_30mm_HE_QF_T_Y",
+
+			"RC_140Rnd_30mm_MPAB_DF_T_R",
+			"RC_140Rnd_30mm_MPAB_DF_T_G",
+			"RC_140Rnd_30mm_MPAB_DF_T_Y",
+
+			"RC_140Rnd_30mm_HEAB_DF_T_R",
+			"RC_140Rnd_30mm_HEAB_DF_T_G",
+			"RC_140Rnd_30mm_HEAB_DF_T_Y",
+
+			"RC_140Rnd_30mm_MPAB_QF_T_R",
+			"RC_140Rnd_30mm_MPAB_QF_T_G",
+			"RC_140Rnd_30mm_MPAB_QF_T_Y",
+
+			"RC_140Rnd_30mm_HEAB_QF_T_R",
+			"RC_140Rnd_30mm_HEAB_QF_T_G",
+			"RC_140Rnd_30mm_HEAB_QF_T_Y",
+			"RC_140Rnd_30mm_cUAS",
+
+			"RC_140Rnd_30mm_MP_T_R",
+			"RC_140Rnd_30mm_MP_T_G",
+			"RC_140Rnd_30mm_MP_T_Y",
+			"RC_140Rnd_30mm_GPR_T_R",
+			"RC_140Rnd_30mm_GPR_T_G",
+			"RC_140Rnd_30mm_GPR_T_Y",
+
+			"RC_140Rnd_30mm_APFSDS_T_R",
+			"RC_140Rnd_30mm_APFSDS_T_G",
+			"RC_140Rnd_30mm_APFSDS_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.2;
+			dispersion=0.0008;
+		};
+	};
+
+	class GunParticles
+	{
+		class Effect1
+		{
+			effectName="AutoCannonFired";
+			positionName="usti hlavne3";
+			directionName="konec hlavne3";
+		};
+		class Effect2
+		{
+			effectName="QAV_mk30_casingeject";
+			positionName="nabojnicestart";
+			directionName="nabojniceend";
+		};
+		class Effect3
+		{
+			effectName="QAV_mk30_casingeject";
+			positionName="nabojnicestart_2";
+			directionName="nabojniceend_2";
+		};
+	};
+};
+*/
 
 
 //Machineguns
@@ -305,7 +579,7 @@ class RC_QAV_AbramsX_HMG_coax: RC_QAV_AbramsX_HMG_coax_base
 	};
 	class manual: manual
 	{
-		dispersion=0.001;
+		dispersion=0.0008;
 		reloadTime=0.1;
 	};
 };
@@ -316,7 +590,7 @@ class RC_AbramsX_20mm_coax_Base: RC_autocannon_20mm_CTWS
 {
 	class HE;
 	class AP;
-	//class player;
+	class player;
 };
 class RC_AbramsX_20mm_DualFed_coax: RC_AbramsX_20mm_coax_Base
 {
@@ -332,6 +606,11 @@ class RC_AbramsX_20mm_DualFed_coax: RC_AbramsX_20mm_coax_Base
 		FCSMaxLeadSpeed=100;
 		//type="1+4";
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 	class AP: AP
 	{
@@ -339,6 +618,11 @@ class RC_AbramsX_20mm_DualFed_coax: RC_AbramsX_20mm_coax_Base
 		FCSMaxLeadSpeed=100;
 		//type="1+4";
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 
 	//selectionFireAnim="zasleh2";

@@ -66,4 +66,5 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\RC_AbramsX\cfgVehicles\AbramsX.hpp"
+	#include "\RC_AbramsX\cfgVehicles\AbramsX_twin.hpp"
 };
