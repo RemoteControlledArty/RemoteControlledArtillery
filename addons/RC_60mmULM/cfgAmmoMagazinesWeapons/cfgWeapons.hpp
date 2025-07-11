@@ -74,7 +74,7 @@ class RC_60mm_ULM_Weapon_Base: twc_2inch_weapon
 class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 {
 	displayname="advanced 60mm Mortar";
-	//ballisticsComputer=8;
+	ballisticsComputer=8;	//TEST WITHOUT
 	initSpeed=242.58;	//???
 	magazineReloadTime=1.6;
 	reloadTime=1.6;
