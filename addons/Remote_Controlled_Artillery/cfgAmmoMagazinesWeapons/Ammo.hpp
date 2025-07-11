@@ -1345,12 +1345,12 @@ class RC_Sh_120mm_MP_T_Y: RC_Sh_120mm_MP_T_R {model="\A3\Weapons_f\Data\bullettr
 //120mm MPAB DF
 class RC_Sh_120mm_MP_DF_Sub: RC_Sh_120mm_MP_T_R
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_120mm";
 };
 class RC_Sh_120mm_MPAB_DF_T_R: RC_Sh_120mm_MP_T_R
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
 	submunitionAmmo="RC_Sh_120mm_MP_DF_Sub";
 };
 class RC_Sh_120mm_MPAB_DF_T_G: RC_Sh_120mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
@@ -1709,12 +1709,12 @@ class RC_Sh_125mm_MP_T_Y: RC_Sh_125mm_MP_T_R {model="\A3\Weapons_f\Data\bullettr
 //125mm MPAB DF
 class RC_Sh_125mm_MP_DF_Sub: RC_Sh_125mm_MP_T_R
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_125mm";
 };
 class RC_Sh_125mm_MPAB_DF_T_R: RC_Sh_125mm_MP_T_R
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
 	submunitionAmmo="RC_Sh_125mm_MP_DF_Sub";
 };
 class RC_Sh_125mm_MPAB_DF_T_G: RC_Sh_125mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
@@ -2520,17 +2520,23 @@ class RC_M_125mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
 
 
 class Sh_120mm_APFSDS;
-class RC_Sh_HVKEM_Penetrator: Sh_120mm_APFSDS
+class RC_Sh_HVKEM_Penetrator_Base: Sh_120mm_APFSDS
 {
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-	tracerEndTime=4;
-
-	hit=800;
+	class HitEffects;
+};
+class RC_Sh_HVKEM_Penetrator: RC_Sh_HVKEM_Penetrator_Base
+{
+	typicalSpeed=2200;	//1550
+	hit=900;
 	indirectHit=30;
 	indirectHitRange=3;
 	deflecting=5;
+
+	class HitEffects: HitEffects
+	{
+		hitMetal="ImpactMetalSabotBig_HVKEM";
+		hitMetalPlate="ImpactMetalSabotBig_HVKEM";
+	};
 };
 class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
 {
@@ -2551,20 +2557,20 @@ class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
 
 	indirectHit=30;
 	indirectHitRange=3;
-	explosive=0.7;
-	timeToLive=10;
+	explosive=0.6;
+	timeToLive=6;	//6km in 3sec
 
 	simulationStep=0.0020000001;
-	airFriction=0.01;
+	airFriction=0.02;
 	sideAirFriction=2;
 	maneuvrability=40;
 	trackOversteer=1;
 	trackLead=1;
-	maxSpeed=1715;
+	maxSpeed=2200;	//like CKEM
 	
 	initTime=0.01;
-	thrustTime=10;
-	thrust=800;
+	thrustTime=3;	//6km in 3sec
+	thrust=1000;
 
 	flightProfiles[]=
 	{

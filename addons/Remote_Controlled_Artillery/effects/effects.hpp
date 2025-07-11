@@ -281,3 +281,35 @@ class RC_GuidedExplosion
 		lifeTime=1;
 	};
 };
+
+class ImpactMetalSabotBig;
+class ImpactMetalSabotBig_HVKEM: ImpactMetalSabotBig
+{
+	class ImpactSparks1
+	{
+		simulation="particles";
+		type="ImpactSparksSabot1_HVKEM";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.5;
+	};
+	class ImpactSparks2
+	{
+		simulation="particles";
+		type="ImpactSparksSabot2_HVKEM";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+	};
+	class ShellShockwave1
+	{
+		simulation="particles";
+		type="ShellShockwave";
+		position[]={0,0,0};
+		intensity=1;
+		interval= 1;
+		lifeTime=1;
+	};
+};

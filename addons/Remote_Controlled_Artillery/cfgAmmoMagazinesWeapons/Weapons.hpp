@@ -2348,6 +2348,7 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_15Rnd_120mm_MPAB_DF_T_Y",
 		"RC_20Rnd_120mm_MPAB_DF_T_Y",
 
+		"RC_5Rnd_120mm_MP_T_R",
 		"RC_10Rnd_120mm_MP_T_R",
 		"RC_15Rnd_120mm_MP_T_R",
 		"RC_20Rnd_120mm_MP_T_R",
@@ -2449,6 +2450,7 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_15Rnd_125mm_MPAB_DF_T_Y",
 		"RC_20Rnd_125mm_MPAB_DF_T_Y",
 
+		"RC_5Rnd_125mm_MP_T_R",
 		"RC_10Rnd_125mm_MP_T_R",
 		"RC_15Rnd_125mm_MP_T_R",
 		"RC_20Rnd_125mm_MP_T_R",

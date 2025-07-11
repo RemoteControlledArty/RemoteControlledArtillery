@@ -7,14 +7,31 @@ class CfgPatches
 
 		units[]=
 		{
+			"RC_AbramsX_WD",
+			"RC_AbramsX_WD_O",
+			"RC_AbramsX_WD_I",
+
 			"RC_AbramsX_A",
-			"RC_AbramsX_WD"
+			"RC_AbramsX_A_O",
+			"RC_AbramsX_A_I",
+
+			"RC_AbramsX_Twin_WD",
+			"RC_AbramsX_Twin_WD_O",
+			"RC_AbramsX_Twin_WD_I",
+			
+			"RC_AbramsX_Twin_A",
+			"RC_AbramsX_Twin_A_O",
+			"RC_AbramsX_Twin_A_I"
 		};
 
 		weapons[]=
 		{
-			"RC_autocannon_30mm_ACV",
-			"RC_autocannon_40mm_ACV"
+			"RC_AbramsX_120mm_M360",
+			"RC_AbramsX_30mm_M914",
+			"RC_AbramsX_30mm_M914_twin",
+			"RC_AbramsX_20mm_coax",
+			"RC_AbramsX_20mm_DualFed_coax",
+			"RC_AbramsX_HMG_coax"
 		};
 
 		requiredAddons[]=

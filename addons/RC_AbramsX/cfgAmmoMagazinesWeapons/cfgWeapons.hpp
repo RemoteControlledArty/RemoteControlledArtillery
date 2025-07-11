@@ -1,9 +1,9 @@
 class cannon_120mm_M360;
-class RC_cannon_120mm_M360_base: cannon_120mm_M360
+class RC_AbramsX_120mm_M360_base: cannon_120mm_M360
 {
 	class player;
 };
-class RC_cannon_120mm_M360: RC_cannon_120mm_M360_base
+class RC_AbramsX_120mm_M360: RC_AbramsX_120mm_M360_base
 {
 	author="Ascent";
 	//displayName="120mm";
@@ -40,6 +40,7 @@ class RC_cannon_120mm_M360: RC_cannon_120mm_M360_base
 		"RC_15Rnd_120mm_MPAB_DF_T_Y",
 		"RC_20Rnd_120mm_MPAB_DF_T_Y",
 
+		"RC_5Rnd_120mm_MP_T_R",
 		"RC_10Rnd_120mm_MP_T_R",
 		"RC_15Rnd_120mm_MP_T_R",
 		"RC_20Rnd_120mm_MP_T_R",
@@ -115,12 +116,12 @@ class RC_cannon_120mm_M360: RC_cannon_120mm_M360_base
 
 //Autocannons
 class autocannon_30mm_M914;
-class RC_autocannon_30mm_M914_Base: autocannon_30mm_M914
+class RC_AbramsX_30mm_M914_Base: autocannon_30mm_M914
 {
 	class HighROF;
 	class player;
 };
-class RC_autocannon_30mm_M914: RC_autocannon_30mm_M914_Base
+class RC_AbramsX_30mm_M914: RC_AbramsX_30mm_M914_Base
 {
 	author="Ascent";
 	//displayName="30mm";
@@ -207,12 +208,12 @@ class RC_autocannon_30mm_M914: RC_autocannon_30mm_M914_Base
 
 
 class autocannon_30mm_M914_twin;
-class RC_autocannon_30mm_M914_twin_Base: autocannon_30mm_M914_twin
+class RC_AbramsX_30mm_M914_twin_Base: autocannon_30mm_M914_twin
 {
 	class HighROF;
 	class player;
 };
-class RC_autocannon_30mm_M914_twin: RC_autocannon_30mm_M914_twin_Base
+class RC_AbramsX_30mm_M914_twin: RC_AbramsX_30mm_M914_twin_Base
 {
 	author="Ascent";
 	//displayName="30mm";
@@ -297,65 +298,67 @@ class RC_autocannon_30mm_M914_twin: RC_autocannon_30mm_M914_twin_Base
 };
 
 
-class RC_AbramsX_20mm_coax: RC_autocannon_30mm_M914
+class RC_AbramsX_20mm_coax: RC_AbramsX_30mm_M914
 {
 	displayName="coax 20mm";
 
 	class HighROF: HighROF
 	{
+		displayName="coax 20mm";
+
 		magazines[]=
 		{
-			"RC_100Rnd_20mm_MP_Pen_T_R",
-			"RC_100Rnd_20mm_MP_Pen_T_G",
-			"RC_100Rnd_20mm_MP_Pen_T_Y",
+			"RC_200Rnd_20mm_MP_Pen_T_R",
+			"RC_200Rnd_20mm_MP_Pen_T_G",
+			"RC_200Rnd_20mm_MP_Pen_T_Y",
 
-			"RC_100Rnd_20mm_HE_Pen_T_R",
-			"RC_100Rnd_20mm_HE_Pen_T_G",
-			"RC_100Rnd_20mm_HE_Pen_T_Y",
+			"RC_200Rnd_20mm_HE_Pen_T_R",
+			"RC_200Rnd_20mm_HE_Pen_T_G",
+			"RC_200Rnd_20mm_HE_Pen_T_Y",
 
-			"RC_100Rnd_20mm_MP_DF_T_R",
-			"RC_100Rnd_20mm_MP_DF_T_G",
-			"RC_100Rnd_20mm_MP_DF_T_Y",
+			"RC_200Rnd_20mm_MP_DF_T_R",
+			"RC_200Rnd_20mm_MP_DF_T_G",
+			"RC_200Rnd_20mm_MP_DF_T_Y",
 
-			"RC_100Rnd_20mm_HE_DF_T_R",
-			"RC_100Rnd_20mm_HE_DF_T_G",
-			"RC_100Rnd_20mm_HE_DF_T_Y",
+			"RC_200Rnd_20mm_HE_DF_T_R",
+			"RC_200Rnd_20mm_HE_DF_T_G",
+			"RC_200Rnd_20mm_HE_DF_T_Y",
 
-			"RC_100Rnd_20mm_MP_QF_T_R",
-			"RC_100Rnd_20mm_MP_QF_T_G",
-			"RC_100Rnd_20mm_MP_QF_T_Y",
+			"RC_200Rnd_20mm_MP_QF_T_R",
+			"RC_200Rnd_20mm_MP_QF_T_G",
+			"RC_200Rnd_20mm_MP_QF_T_Y",
 
-			"RC_100Rnd_20mm_HE_QF_T_R",
-			"RC_100Rnd_20mm_HE_QF_T_G",
-			"RC_100Rnd_20mm_HE_QF_T_Y",
+			"RC_200Rnd_20mm_HE_QF_T_R",
+			"RC_200Rnd_20mm_HE_QF_T_G",
+			"RC_200Rnd_20mm_HE_QF_T_Y",
 
-			"RC_100Rnd_20mm_MPAB_DF_T_R",
-			"RC_100Rnd_20mm_MPAB_DF_T_G",
-			"RC_100Rnd_20mm_MPAB_DF_T_Y",
+			"RC_200Rnd_20mm_MPAB_DF_T_R",
+			"RC_200Rnd_20mm_MPAB_DF_T_G",
+			"RC_200Rnd_20mm_MPAB_DF_T_Y",
 
-			"RC_100Rnd_20mm_HEAB_DF_T_R",
-			"RC_100Rnd_20mm_HEAB_DF_T_G",
-			"RC_100Rnd_20mm_HEAB_DF_T_Y",
+			"RC_200Rnd_20mm_HEAB_DF_T_R",
+			"RC_200Rnd_20mm_HEAB_DF_T_G",
+			"RC_200Rnd_20mm_HEAB_DF_T_Y",
 
-			"RC_100Rnd_20mm_MPAB_QF_T_R",
-			"RC_100Rnd_20mm_MPAB_QF_T_G",
-			"RC_100Rnd_20mm_MPAB_QF_T_Y",
+			"RC_200Rnd_20mm_MPAB_QF_T_R",
+			"RC_200Rnd_20mm_MPAB_QF_T_G",
+			"RC_200Rnd_20mm_MPAB_QF_T_Y",
 
-			"RC_100Rnd_20mm_HEAB_QF_T_R",
-			"RC_100Rnd_20mm_HEAB_QF_T_G",
-			"RC_100Rnd_20mm_HEAB_QF_T_Y",
-			"RC_100Rnd_20mm_cUAS",
+			"RC_200Rnd_20mm_HEAB_QF_T_R",
+			"RC_200Rnd_20mm_HEAB_QF_T_G",
+			"RC_200Rnd_20mm_HEAB_QF_T_Y",
+			"RC_200Rnd_20mm_cUAS",
 			
-			"RC_100Rnd_20mm_HE_T_R",
-			"RC_100Rnd_20mm_HE_T_G",
-			"RC_100Rnd_20mm_HE_T_Y",
+			"RC_200Rnd_20mm_HE_T_R",
+			"RC_200Rnd_20mm_HE_T_G",
+			"RC_200Rnd_20mm_HE_T_Y",
 
-			"RC_100Rnd_20mm_AP_T_R",
-			"RC_100Rnd_20mm_AP_T_G",
-			"RC_100Rnd_20mm_AP_T_Y",
-			"RC_100Rnd_20mm_APFSDS_T_R",
-			"RC_100Rnd_20mm_APFSDS_T_G",
-			"RC_100Rnd_20mm_APFSDS_T_Y"
+			"RC_200Rnd_20mm_AP_T_R",
+			"RC_200Rnd_20mm_AP_T_G",
+			"RC_200Rnd_20mm_AP_T_Y",
+			"RC_200Rnd_20mm_APFSDS_T_R",
+			"RC_200Rnd_20mm_APFSDS_T_G",
+			"RC_200Rnd_20mm_APFSDS_T_Y"
 		};
 		class player: player
 		{
@@ -552,11 +555,11 @@ class RC_autocannon_30mm_M914_twin: RC_autocannon_30mm_M914_twin_Base
 
 //Machineguns
 class qav_abrams_coax;
-class RC_QAV_AbramsX_HMG_coax_base: qav_abrams_coax
+class RC_AbramsX_HMG_coax_base: qav_abrams_coax
 {
 	class manual;
 };
-class RC_QAV_AbramsX_HMG_coax: RC_QAV_AbramsX_HMG_coax_base
+class RC_AbramsX_HMG_coax: RC_AbramsX_HMG_coax_base
 {
 	author="Ascent";
 	displayName="coax HMG";
@@ -570,12 +573,9 @@ class RC_QAV_AbramsX_HMG_coax: RC_QAV_AbramsX_HMG_coax_base
 
 	magazines[]=
 	{
-		"RC_150Rnd_127x99_SLAP_T_G",
-		"RC_150Rnd_127x99_SLAP_T_R",
-		"RC_150Rnd_127x99_SLAP_T_Y",
-		"RC_150Rnd_127x99_T_G",
-		"RC_150Rnd_127x99_T_R",
-		"RC_150Rnd_127x99_T_Y"
+		"RC_400Rnd_127x99_SLAP_T_G",
+		"RC_400Rnd_127x99_SLAP_T_R",
+		"RC_400Rnd_127x99_SLAP_T_Y"
 	};
 	class manual: manual
 	{

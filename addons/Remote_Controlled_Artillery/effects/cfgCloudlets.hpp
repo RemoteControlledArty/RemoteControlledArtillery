@@ -338,3 +338,26 @@ class ShellShockwave: Default
 	timerPeriod=1;
 	rubbing=0.1;
 };
+
+class ImpactSparksSabot1;
+class ImpactSparksSabot1_HVKEM: ImpactSparksSabot1
+{
+	interval=0.0014;	//0.0014	//0.0049999999
+	lifeTime=6;		//3.5	//3.5
+	volume=0.02;	//0.0099999998	//0.0099999998
+	rubbing=0.30000001;	//0.30000001	//0.30000001
+	size[]={0.24,0};	//{0.12,0}	//{0.12,0}
+	sizeCoef=1;	//1	//1
+	animationSpeed[]={1715};	//1000	//1000
+};
+
+class ImpactSparksSabot2;
+class ImpactSparksSabot2_HVKEM: ImpactSparksSabot2
+{
+	interval=0.0099999998;	//0099999998	//0.0049999999
+	lifeTime=0.08;	//0.039999999	//3.5
+	volume=2;	//1	//0.0099999998
+	rubbing=0;	//0	//0.30000001
+	size[]={1.79999996,0.89999998,0};	//{0.89999998,0.44999999,0}	//{0.12,0}
+	animationSpeed[]={1715};	//1000	//1000
+};
