@@ -65,12 +65,12 @@ if !(isNil "_loadedMag") then {
 		case ((1- loadVest _unit) * (getContainerMaxLoad vest _unit) > _mass);
 		case ((1- loadBackpack _unit) * (getContainerMaxLoad backpack _unit) > _mass);
 		case ((1- loadUniform _unit) * (getContainerMaxLoad uniform _unit) > _mass): {_unit addMagazine [_loadedMag, 1];};
-		default {_mortar setVariable ["TWC_2inch_LoadedMag", _loadedMag, true];
+		default {_mortar setVariable ["RC_60mm_ULM_LoadedMag", _loadedMag, true];
 			//_weaponHolder = "GroundWeaponHolder_Scripted" createVehicle _pos;
 			//_weaponHolder addMagazineCargo [_loadedMag, 1];
 		};
 	};
 };
 
-//_unit removeWeapon "RC_60mm_ULM_Bag";
-_unit removeWeapon "twc_2inch_bag";
+_unit removeWeapon "RC_60mm_ULM_Bag";
+//_unit removeWeapon "twc_2inch_bag";
