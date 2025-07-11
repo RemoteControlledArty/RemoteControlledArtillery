@@ -74,8 +74,10 @@ class RC_60mm_ULM_Weapon_Base: twc_2inch_weapon
 class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 {
 	displayname="advanced 60mm Mortar";
-	ballisticsComputer=8;
+	//ballisticsComputer=8;
 	initSpeed=242.58;	//???
+	magazineReloadTime=1.6;
+	reloadTime=1.6;
 
 	magazines[]=
 	{
@@ -95,49 +97,39 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 	};
 	class Single1: Single1
 	{
-		displayname="CH0";
 		burst=1;
-		//reloadTime=15;
+		reloadTime=1.6;
 		artilleryDispersion=1.25;
+
+		displayname="CH0, 0.5km";
 		artilleryCharge=0.35;
 
-		/*
 		minRange=34;
 		midRange=216.5;
 		maxRange=499;
-		*/
 	};
 	class Single2: Single1
 	{
-		displayname="CH1";
-		burst=1;
-		//reloadTime=15;
-		artilleryDispersion=1.25;
-		artilleryCharge=0.65;
+		displayname="CH1, 2km";
+		artilleryCharge=0.7;
 
-		/*
 		minRange=139;
 		midRange=1068.5;
 		maxRange=1998;
-		*/
 	};
 	class Single3: Single1
 	{
-		displayname="CH2";
-		burst=1;
-		//reloadTime=15;
-		artilleryDispersion=1.25;
+		displayname="CH2, 4km";
 		artilleryCharge=1;
 
-		/*
 		minRange=284;
 		midRange=2181;
 		maxRange=4078;
-		*/
 	};
 };
 
 
+/*
 class RC_mortar_82mm_V3;
 class RC_60mm_ULM_Weapon_Base: RC_mortar_82mm_V3
 {
@@ -205,3 +197,4 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 		maxRange=4078;
 	};
 };
+*/
