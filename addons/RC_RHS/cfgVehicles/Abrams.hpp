@@ -142,7 +142,8 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 				"RC_20Rnd_120mm_MP_T_R",
 				*/
 				"RC_RHS_mag_M829A4_20Rnd",
-				"RC_RHS_mag_M830A1_20Rnd",
+				"RC_RHS_mag_M830A1_15Rnd",
+				"RC_5Rnd_120mm_MPAB_DF_T_R",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
@@ -338,7 +339,8 @@ class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 			{
 				"RC_RHS_mag_M829A4_20Rnd",
 				"RC_RHS_mag_M830A1_15Rnd",
-				"RC_4Rnd_120mm_DLG_cannon_missiles",
+				"RC_5Rnd_120mm_MPAB_DF_T_R",
+				"RC_3Rnd_120mm_DLG_cannon_missiles",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
 				"RC_RHS_mag_1200Rnd_762x51_T_R",
