@@ -316,16 +316,16 @@ class Components: Components
 				range[]={6000,4000,2000,600};
 				resource="RscCustomInfoSensors";
 			};
-			class MinimapDisplay
-			{
-				componentType="MinimapDisplayComponent";
-				resource="RscCustomInfoMiniMap";
-			};
 			class MineDetectorDisplay
 			{
 				componentType="MineDetectorDisplayComponent";
 				range=50;
 				resource="RscCustomInfoMineDetect";
+			};
+			class MinimapDisplay
+			{
+				componentType="MinimapDisplayComponent";
+				resource="RscCustomInfoMiniMap";
 			};
 			class EmptyDisplay
 			{
@@ -345,16 +345,16 @@ class Components: Components
 				range[]={600,2000,4000,6000};
 				resource="RscCustomInfoSensors";
 			};
-			class MinimapDisplay
-			{
-				componentType="MinimapDisplayComponent";
-				resource="RscCustomInfoMiniMap";
-			};
 			class MineDetectorDisplay
 			{
 				componentType="MineDetectorDisplayComponent";
 				range=50;
 				resource="RscCustomInfoMineDetect";
+			};
+			class MinimapDisplay
+			{
+				componentType="MinimapDisplayComponent";
+				resource="RscCustomInfoMiniMap";
 			};
 			class EmptyDisplay
 			{
@@ -372,7 +372,8 @@ class Turrets: Turrets
 		//#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner_missile.hpp"
 		#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 		dontCreateAI=1;
-		minElev=-12.5;
+		canAccessMineDetector=1;
+		//minElev=-12;	//doesnt work
 		commanding=2;
 		turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
@@ -417,6 +418,7 @@ class Turrets: Turrets
 				#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 				//#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander_600m_cUAS.hpp"
 				dontCreateAI=1;
+				canAccessMineDetector=1;
 				showAllTargets="2 + 4";
 				commanding=1;
 				maxElev=50;
@@ -465,6 +467,12 @@ class Turrets: Turrets
 							{
 								componentType="UAVFeedDisplayComponent";
 							};
+							class MineDetectorDisplay
+							{
+								componentType="MineDetectorDisplayComponent";
+								range=50;
+								resource="RscCustomInfoMineDetect";
+							};
 							class VehicleDriverDisplay
 							{
 								componentType="TransportFeedDisplayComponent";
@@ -482,12 +490,6 @@ class Turrets: Turrets
 								resource="RscCustomInfoMiniMap";
 							};
 							*/
-							class MineDetectorDisplay
-							{
-								componentType="MineDetectorDisplayComponent";
-								range=50;
-								resource="RscCustomInfoMineDetect";
-							};
 							/*
 							class EmptyDisplay
 							{
@@ -512,6 +514,12 @@ class Turrets: Turrets
 							{
 								componentType="UAVFeedDisplayComponent";
 							};
+							class MineDetectorDisplay
+							{
+								componentType="MineDetectorDisplayComponent";
+								range=50;
+								resource="RscCustomInfoMineDetect";
+							};
 							class VehicleDriverDisplay
 							{
 								componentType="TransportFeedDisplayComponent";
@@ -526,12 +534,6 @@ class Turrets: Turrets
 							{
 								componentType="MinimapDisplayComponent";
 								resource="RscCustomInfoMiniMap";
-							};
-							class MineDetectorDisplay
-							{
-								componentType="MineDetectorDisplayComponent";
-								range=50;
-								resource="RscCustomInfoMineDetect";
 							};
 							class EmptyDisplay
 							{
@@ -566,6 +568,12 @@ class Turrets: Turrets
 					{
 						componentType="UAVFeedDisplayComponent";
 					};
+					class MineDetectorDisplay
+					{
+						componentType="MineDetectorDisplayComponent";
+						range=50;
+						resource="RscCustomInfoMineDetect";
+					};
 					class VehicleDriverDisplay
 					{
 						componentType="TransportFeedDisplayComponent";
@@ -583,12 +591,6 @@ class Turrets: Turrets
 						resource="RscCustomInfoMiniMap";
 					};
 					*/
-					class MineDetectorDisplay
-					{
-						componentType="MineDetectorDisplayComponent";
-						range=50;
-						resource="RscCustomInfoMineDetect";
-					};
 					/*
 					class EmptyDisplay
 					{
@@ -618,6 +620,12 @@ class Turrets: Turrets
 					{
 						componentType="UAVFeedDisplayComponent";
 					};
+					class MineDetectorDisplay
+					{
+						componentType="MineDetectorDisplayComponent";
+						range=50;
+						resource="RscCustomInfoMineDetect";
+					};
 					class VehicleDriverDisplay
 					{
 						componentType="TransportFeedDisplayComponent";
@@ -632,12 +640,6 @@ class Turrets: Turrets
 					{
 						componentType="MinimapDisplayComponent";
 						resource="RscCustomInfoMiniMap";
-					};
-					class MineDetectorDisplay
-					{
-						componentType="MineDetectorDisplayComponent";
-						range=50;
-						resource="RscCustomInfoMineDetect";
 					};
 					class EmptyDisplay
 					{
