@@ -87,7 +87,7 @@ class RC_AbramsX_120mm_M360: RC_AbramsX_120mm_M360_base
 		minRangeProbab=0.40000001;
 		midRange=400;
 		midRangeProbab=0.94999999;
-		maxRange=4000;
+		maxRange=6000;
 		maxRangeProbab=0.94999999;
 	};
 	class TopDown: player
@@ -98,7 +98,7 @@ class RC_AbramsX_120mm_M360: RC_AbramsX_120mm_M360_base
 		minRangeProbab=0.40000001;
 		midRange=400;
 		midRangeProbab=0.94999999;
-		maxRange=4000;
+		maxRange=6000;
 		maxRangeProbab=0.94999999;
 	};
 	modes[]=

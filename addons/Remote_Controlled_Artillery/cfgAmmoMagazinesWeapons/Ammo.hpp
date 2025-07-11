@@ -2416,7 +2416,7 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 		};
 	};
 };
-class RC_M_120mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG_Base
+class RC_M_120mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG
 {
 	timeToLive=30;
 	maxControlRange=6000;
@@ -2514,6 +2514,10 @@ class RC_M_120mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG_Base
 	};
 };
 class RC_M_125mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
+{
+	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
+};
+class RC_M_125mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG_LR
 {
 	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
 };

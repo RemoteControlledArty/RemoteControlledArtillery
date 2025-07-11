@@ -1506,6 +1506,18 @@ class RC_2Rnd_125mm_DLG_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles {coun
 class RC_1Rnd_125mm_DLG_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles {count=1;};
 
 
+class RC_5Rnd_125mm_DLG_HVKEM: RC_5Rnd_125mm_DLG_cannon_missiles
+{
+	displayName="HV-KE-M";
+	displayNameShort="HV-KE-M";
+	ammo="RC_M_120mm_DLG_HVKEM";
+};
+class RC_4Rnd_125mm_DLG_HVKEM: RC_5Rnd_125mm_DLG_HVKEM {count=4;};
+class RC_3Rnd_125mm_DLG_HVKEM: RC_5Rnd_125mm_DLG_HVKEM {count=3;};
+class RC_2Rnd_125mm_DLG_HVKEM: RC_5Rnd_125mm_DLG_HVKEM {count=2;};
+class RC_1Rnd_125mm_DLG_HVKEM: RC_5Rnd_125mm_DLG_HVKEM {count=1;};
+
+
 class 12Rnd_125mm_HEAT_T_Red;
 class RC_5Rnd_125mm_MP_T_R: 12Rnd_125mm_HEAT_T_Red
 {
