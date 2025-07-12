@@ -125,6 +125,7 @@ class RC_Mortar: RC_Mortar_base
 				minAngleY=-100;
 				maxAngleY=100;
 				*/
+				
 				initFov=0.125;
 				minFov=0.0125;
 				maxFov=0.89999998;

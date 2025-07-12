@@ -47,7 +47,7 @@ class CfgFunctions
 			file="\RC_60mmULM\functions";
       		//class preInit {preInit=1;};
       		//class InitCBASettings {preInit=1;};
-      		class RC_UI_Loop_ULM {postInit=1;};
+      		//class RC_UI_Loop_ULM {postInit=1;};
 			class ui {};
 			class deploy {};
 			class rangetable {};
@@ -85,6 +85,10 @@ class Extended_FiredBIS_EventHandlers
 		};
 	};
 };
+
+
+//later required optics
+class RCWSOptics;
 
 //later required sensors
 class SensorTemplateDataLink;

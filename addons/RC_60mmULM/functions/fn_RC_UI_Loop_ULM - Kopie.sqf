@@ -28,23 +28,17 @@ RC_requiresLockHash = createHashMap;
 RC_terrainWarningHash = createHashMap;
 RC_aimAboveHeightHash = createHashMap;
 
-RC_Artillery_UI = [] spawn {
+RC_ULM_UI = [] spawn {
 	while { true } do {
 		sleep 0.1;
 
 		_player = player;
 		_vicPlayer = vehicle player;
 
-		/*
-		private _inOptics = false;
-		if (cameraOn == _uav && cameraView == "Internal") then	{
-			_inOptics = true;
-		};
-		*/
-
-		if ((_vicPlayer isEqualTo _player) || (cameraView != "GUNNER")) then {
+		if (_vicPlayer isEqualTo _player) then {
 			// UI Shouldn't be Shown so we cut it
-			"RC_Artillery" cutFadeOut 0;
+			systemchat "_vicPlayer isEqualTo _player";
+			"RC_ULM" cutFadeOut 0;
 			RC_InUI = false;
 			continue;
 		};
@@ -55,7 +49,6 @@ RC_Artillery_UI = [] spawn {
 		_uavClass = typeOf _uav;
 		// See if the vehicle has the isRCArty property
 		private _isRCArty = RC_isRCArtyHash get _uavClass;
-
 		if (isNil "_isRCArty") then {
 			_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
 			RC_isRCArtyHash set [_uavClass, _isRCArty];
@@ -72,7 +65,7 @@ RC_Artillery_UI = [] spawn {
 			//if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
 			
 			// Check if the Display for the UI Exists if not Create it
-			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then { "RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false] };
+			if (isNull (uiNamespace getVariable ["RC_ULM", displayNull])) then { "RC_ULM" cutRsc ["RC_ULM", "PLAIN", 0, false] };
 			
 			disableSerialization;	//what effect does this have again, maybe change location futher down?
 
@@ -201,7 +194,7 @@ RC_Artillery_UI = [] spawn {
 			};
 			
 			// Display
-			_display = uiNamespace getVariable ["RC_Artillery", displayNull];
+			_display = uiNamespace getVariable ["RC_ULM", displayNull];
 
 			//weapon informations like charges and current charge
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"
