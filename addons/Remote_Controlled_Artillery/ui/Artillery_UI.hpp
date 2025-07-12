@@ -320,3 +320,4 @@ class RC_Artillery {
 	// GUI EDITOR OUTPUT END
 	////////////////////////////////////////////////////////
 };
+class RC_ULM: RC_Artillery {};

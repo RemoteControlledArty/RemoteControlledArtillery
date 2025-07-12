@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "\Remote_Controlled_Artillery\script_component.hpp"
 /*
 	This Code is held together by Duct Tape and Hope
 	Author: Fluffy, Ascent, Eric
@@ -28,19 +28,22 @@ RC_requiresLockHash = createHashMap;
 RC_terrainWarningHash = createHashMap;
 RC_aimAboveHeightHash = createHashMap;
 
-RC_Artillery_UI = [] spawn {
+RC_ULM_UI = [] spawn {
 	while { true } do {
 		sleep 0.1;
 
-		if !(isRemoteControlling player) then {
+		_player = player;
+		_vicPlayer = vehicle player;
+
+		if (_vicPlayer isEqualTo _player) then {
 			// UI Shouldn't be Shown so we cut it
-			"RC_Artillery" cutFadeOut 0;
+			"RC_ULM" cutFadeOut 0;
 			RC_InUI = false;
 			continue;
 		};
 
 		// UAV
-		_uav = getConnectedUAV player;
+		_uav = _vicPlayer;
 		// UAV ClassName
 		_uavClass = typeOf _uav;
 		// See if the vehicle has the isRCArty property
@@ -58,10 +61,10 @@ RC_Artillery_UI = [] spawn {
 			
 			// If our UAV is Autonomous we want to make it not
 			// We need to remote exec it since setAutonomous is of Local Effect so it needs to be where the UAV is Local
-			if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
+			//if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
 			
 			// Check if the Display for the UI Exists if not Create it
-			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then { "RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false] };
+			if (isNull (uiNamespace getVariable ["RC_ULM", displayNull])) then { "RC_ULM" cutRsc ["RC_ULM", "PLAIN", 0, false] };
 			
 			disableSerialization;	//what effect does this have again, maybe change location futher down?
 
@@ -190,7 +193,7 @@ RC_Artillery_UI = [] spawn {
 			};
 			
 			// Display
-			_display = uiNamespace getVariable ["RC_Artillery", displayNull];
+			_display = uiNamespace getVariable ["RC_ULM", displayNull];
 
 			//weapon informations like charges and current charge
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"

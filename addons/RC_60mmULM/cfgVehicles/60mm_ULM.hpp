@@ -84,34 +84,34 @@ class twc_2inch_vehicle: Mortar_01_base_F
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=5000;
+					typeRecognitionDistance=6000;
 
 					class AirTarget
 					{
-						minRange=5000;
-						maxRange=5000;
+						minRange=6000;
+						maxRange=6000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=5000;
-						maxRange=5000;
+						minRange=6000;
+						maxRange=6000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -150,7 +150,7 @@ class twc_2inch_vehicle: Mortar_01_base_F
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750};
+							range[]={4000,2000,1000};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -219,7 +219,7 @@ class RC_60mm_ULM_Core: twc_2inch_vehicle
 	scopeCurator=0;
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
+	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=0.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
@@ -261,34 +261,34 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Core
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
 				{
-					typeRecognitionDistance=5000;
+					typeRecognitionDistance=6000;
 
 					class AirTarget
 					{
-						minRange=5000;
-						maxRange=5000;
+						minRange=6000;
+						maxRange=6000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=5000;
-						maxRange=5000;
+						minRange=6000;
+						maxRange=6000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -326,7 +326,7 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Core
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750};
+							range[]={4000,2000,1000};
 							resource="RscCustomInfoSensors";
 						};
 					};
