@@ -497,7 +497,15 @@ class RC_60mm_ULM_Base: RC_60mm_ULM_Core
 };
 */
 
+class RC_Mortar;
+class RC_60mm_ULM_Vic: RC_Mortar
+{
+	displayName="60mm advanced Mortar";
+	scope=2;
+	scopeCurator=2;
+};
 
+/*
 class RC_60mm_ULM_Vic: RC_60mm_ULM_Core
 {
 	textPlural="UGVs";
@@ -508,7 +516,7 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Core
 	uavCameraGunnerDir="look";
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
-	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
+	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
@@ -579,13 +587,14 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Core
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-
+			*/
 			/*
 			weapons[]=
 			{
 				"RC_60mm_ULM_weapon"
 			};
 			*/
+			/*
 			weapons[]=
 			{
 				"RC_mortar_82mm_V3"
@@ -642,3 +651,4 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Core
 		};
 	};
 };
+*/

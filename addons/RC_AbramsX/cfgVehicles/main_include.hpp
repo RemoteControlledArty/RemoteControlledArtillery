@@ -36,6 +36,24 @@ crewCrashProtection=0.01;
 //experimental values for testing, maybe removed later
 armor=800;
 //armorStructural=5;	//5
+
+class HitPoints: HitPoints
+{
+	class HitHull: HitHull
+	{
+		armor=2;  //1.8
+		passThrough=0.75; //1
+	};
+	class HitLTrack: HitLTrack
+	{
+		explosionShielding=0.7;
+	};
+	class HitRTrack: HitRTrack
+	{
+		explosionShielding=0.7;
+	};
+};
+
 radarTargetSize=0.75;
 irTargetSize=0.75;
 fuelCapacity=1800;
