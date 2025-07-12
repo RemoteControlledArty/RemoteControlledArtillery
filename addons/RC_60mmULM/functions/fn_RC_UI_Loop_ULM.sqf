@@ -212,12 +212,14 @@ RC_Artillery_UI = [] spawn {
 	
 			// Some sort of Fix for Mortars having some weird Elevation numbers
 			// Dunno what it does, ask the ACE Team
+			/*
 			private _isAceMortar = RC_isAceMortarHash get _uavClass;
 			if (isNil "_isAceMortar") then {
 				_isAceMortar = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "ace_artillerytables_showGunLaying");
 				RC_isAceMortarHash set [_uavClass, _isAceMortar];
 			};
 			if (_isAceMortar == 2) then {
+				systemchat "_isAceMortar == 2";
 				private _turretCfg = [_uavClass, _turret] call CBA_fnc_getTurret;
 				private _turretAnimBody = getText (_turretCfg >> "animationSourceBody");
 				private _currentTraverseRad = _uav animationSourcePhase _turretAnimBody;
@@ -228,6 +230,7 @@ RC_Artillery_UI = [] spawn {
 				if (_realElevationOriginal > 90) then { _realElevationOriginal = 180 - _realElevationOriginal };
 				_realElevation = (SLANT_ANGLE * _realElevationOriginal);
 			};
+			*/
 
 			//changes magazine to backup airburst if EL is too low for conventional airburst
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\AB_magchange.sqf"

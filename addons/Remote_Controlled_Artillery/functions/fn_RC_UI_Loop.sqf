@@ -207,6 +207,7 @@ RC_Artillery_UI = [] spawn {
 				RC_isAceMortarHash set [_uavClass, _isAceMortar];
 			};
 			if (_isAceMortar == 2) then {
+				//systemchat "_isAceMortar == 2";
 				private _turretCfg = [_uavClass, _turret] call CBA_fnc_getTurret;
 				private _turretAnimBody = getText (_turretCfg >> "animationSourceBody");
 				private _currentTraverseRad = _uav animationSourcePhase _turretAnimBody;

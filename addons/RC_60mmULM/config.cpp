@@ -47,15 +47,13 @@ class CfgFunctions
 			file="\RC_60mmULM\functions";
       		//class preInit {preInit=1;};
       		//class InitCBASettings {preInit=1;};
-      		//class RC_UI_Loop_ULM {postInit=1;};
-			/*
+      		class RC_UI_Loop_ULM {postInit=1;};
 			class ui {};
 			class deploy {};
 			class rangetable {};
 			class fire {};
 			class init {};
 			class getout {};
-			*/
 		};
 	};
 };
@@ -88,10 +86,6 @@ class Extended_FiredBIS_EventHandlers
 	};
 };
 
-
-//later required optics
-class RCWSOptics;
-
 //later required sensors
 class SensorTemplateDataLink;
 class SensorTemplateLaser;
@@ -105,6 +99,9 @@ class SensorTemplatePassiveRadar;
 class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
+//later required sensor firemodes
+class Mode_SemiAuto;
+class Mode_Burst;
 
 /*
 class CfgAmmo

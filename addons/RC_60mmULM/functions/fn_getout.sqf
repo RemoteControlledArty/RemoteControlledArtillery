@@ -1,5 +1,7 @@
 params ["_vehicle", "_role", "_unit", "_turret"];
 
+systemchat "getout"
+
 if !(local _vehicle) exitWith {};
 
 _loadedMag = _vehicle getVariable ["RC_60mm_ULM_LoadedMag", ""];
@@ -31,6 +33,7 @@ _unit removeMagazines "RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM";
 _unit removeMagazines "RC_1Rnd_60mm_Mo_mine_ULM";
 _unit removeMagazines "RC_1Rnd_60mm_Mo_Flare_white_ULM";
 
+systemchat "mags removed"
 
 {
 	_unit addMagazine [_x, 1];

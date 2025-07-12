@@ -30,7 +30,6 @@ _mortar setVariable ["ace_mk6mortar_exclude", true];
 _unit assignAsGunner _mortar;
 _unit moveInGunner _mortar;
 
-/*
 _magazines = magazines _unit;
 _HECount = {_x == "RC_1Rnd_60mm_Mo_shells_ULM"} count _magazines;
 _HEABCount = {_x == "RC_1Rnd_60mm_Mo_HEAB_ULM"} count _magazines;
@@ -109,7 +108,6 @@ if !(isNil "_loadedMag") then {
 		};
 	};
 };
-*/
 
 _unit removeWeapon "RC_60mm_ULM_Bag";
 //_unit removeWeapon "twc_2inch_bag";

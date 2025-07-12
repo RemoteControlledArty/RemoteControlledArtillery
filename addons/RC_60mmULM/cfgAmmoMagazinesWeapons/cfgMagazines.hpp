@@ -72,6 +72,30 @@ class RC_1Rnd_60mm_Mo_backupHEAB_ULM: RC_1Rnd_60mm_vic_Mo_backupHEAB
 };
 
 
+class VehicleMagazine;
+class RC_10Rnd_R_HEAB_Base: VehicleMagazine
+{
+	scope=2;
+	displayNameMFDFormat="HE";
+	nameSound="heat";
+	author="$STR_A3_Bohemia_Interactive";
+	displayName="$STR_A3_cfgmagazines_8rnd_82mm_mo_shells0";
+	displayNameShort="$STR_A3_cfgmagazines_8rnd_82mm_mo_shells_dns";
+	count=10;
+	ammo="Sh_82mm_AMOS";
+	muzzleImpulseFactor[]={0,0};
+	initSpeed=200;
+};
+class RC_10Rnd_R_HEAB: RC_10Rnd_R_HEAB_Base
+{
+	ammo="RC_Sh_82mm_AMOS_HEAB";
+	RC_AimAboveHeight=12.7;		//airburstheight
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
+	displayName="HE Airburst 12m";
+	displayNameShort="HE Airburst 12m";
+	count=10;
+};
+
 
 /*
 class 8Rnd_82mm_Mo_shells;

@@ -1601,22 +1601,7 @@ class RC_20Rnd_125mm_APFSDS_T_Y: RC_10Rnd_125mm_APFSDS_T_Y {count=20;};
 
 //Artillery ammo below
 //82mm
-//class 8Rnd_82mm_Mo_shells;
-class 8Rnd_82mm_Mo_shells: VehicleMagazine
-{
-	scope=2;
-	displayNameMFDFormat="HE";
-	nameSound="heat";
-	author="$STR_A3_Bohemia_Interactive";
-	displayName="$STR_A3_cfgmagazines_8rnd_82mm_mo_shells0";
-	displayNameShort="$STR_A3_cfgmagazines_8rnd_82mm_mo_shells_dns";
-	count=8;
-	ammo="Sh_82mm_AMOS";
-	muzzleImpulseFactor[]={0,0};
-	initSpeed=200;
-};
-
-
+class 8Rnd_82mm_Mo_shells;
 class RC_1Rnd_82mm_Mo_shells: 8Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_82mm_AMOS_HE";
