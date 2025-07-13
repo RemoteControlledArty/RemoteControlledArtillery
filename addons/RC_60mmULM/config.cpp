@@ -71,7 +71,7 @@ class Extended_GetOut_Eventhandlers
 	{
 		class RC_ULM
 		{
-			getout="_this call RC_ULM_fnc_getout";
+			getout="systemchat 'GetOutEH'; _this call RC_ULM_fnc_getout";
 		};
 	};
 };

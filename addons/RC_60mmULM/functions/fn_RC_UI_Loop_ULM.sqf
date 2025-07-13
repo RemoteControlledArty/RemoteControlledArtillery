@@ -212,6 +212,8 @@ RC_Artillery_UI = [] spawn {
 	
 			// Some sort of Fix for Mortars having some weird Elevation numbers
 			// Dunno what it does, ask the ACE Team
+
+			//seems to work with and without?
 			/*
 			private _isAceMortar = RC_isAceMortarHash get _uavClass;
 			if (isNil "_isAceMortar") then {
@@ -237,15 +239,6 @@ RC_Artillery_UI = [] spawn {
 
 			//ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
-
-			/*
-			//locality fix, put in custom cba server EH instead as it requires remotex, and also groupowner can only be checked on server
-			if ((!isnull (driver _vehicle)) && !(isplayer (driver _vehicle))) then {
-				(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle));
-				//_vehicle setOwner (owner (gunner _vehicle));
-				//_vehicle setEffectiveCommander (gunner _vehicle);
-			};
-			*/
 
 			// checks if shell requires lock before firing to activate guidance
 			private _requiresLock = RC_RequiresLockHash get _currentMag;

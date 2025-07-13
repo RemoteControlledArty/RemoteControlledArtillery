@@ -1,6 +1,6 @@
-params ["_vehicle", "_role", "_unit", "_turret"];
+systemchat "getout";
 
-systemchat "getout"
+params ["_vehicle", "_role", "_unit", "_turret"];
 
 if !(local _vehicle) exitWith {};
 
@@ -33,7 +33,7 @@ _unit removeMagazines "RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM";
 _unit removeMagazines "RC_1Rnd_60mm_Mo_mine_ULM";
 _unit removeMagazines "RC_1Rnd_60mm_Mo_Flare_white_ULM";
 
-systemchat "mags removed"
+systemchat "mags removed";
 
 {
 	_unit addMagazine [_x, 1];
