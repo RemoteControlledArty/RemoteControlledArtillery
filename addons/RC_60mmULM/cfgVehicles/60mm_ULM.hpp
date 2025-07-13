@@ -426,8 +426,10 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 	{
 		class RM_ULM
 		{
-			getout="if (!local (_this select 0)) exitwith {}; systemchat 'GetOutEH'; _this call RC_ULM_fnc_getout";
-			fired="if (!local (_this select 0)) exitwith {}; systemchat 'GetOutEH'; _this call RC_ULM_fnc_fire";
+			getout="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";
+			fired="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_fire";
+			//getout="if (!local (_this select 0)) exitwith {}; systemchat 'GetOutEH'; _this call RC_ULM_fnc_getout";
+			//fired="if (!local (_this select 0)) exitwith {}; systemchat 'GetOutEH'; _this call RC_ULM_fnc_fire";
 			//firedBIS="_this call RC_ULM_fnc_fire";
 		};
 	};

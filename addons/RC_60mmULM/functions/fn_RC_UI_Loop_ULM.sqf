@@ -10,6 +10,10 @@
 // Need to exit early if we aren't a client
 if (!hasInterface) exitWith {};
 
+/*
+//hashmaps already created in mod it depends onBriefingGear
+
+
 //general hashmaps
 RC_isAceLoadedHash = createHashMap;
 
@@ -27,6 +31,7 @@ RC_advisedTrajectoryHash = createHashMap;
 RC_requiresLockHash = createHashMap;
 RC_terrainWarningHash = createHashMap;
 RC_aimAboveHeightHash = createHashMap;
+*/
 
 RC_ULM_UI = [] spawn {
 	while { true } do {
@@ -45,9 +50,10 @@ RC_ULM_UI = [] spawn {
 		if ((_vicPlayer isEqualTo _player) || (cameraView != "GUNNER")) then {
 			// UI Shouldn't be Shown so we cut it
 			"RC_ULM_Rsc" cutFadeOut 0;
-			RC_InUI = false;
+			RC_ULM_InUI = false;
 			continue;
 		};
+		//systemchat "_vicPlayer isNotEqualTo _player";
 
 		// UAV
 		_uav = _vicPlayer;
@@ -65,7 +71,7 @@ RC_ULM_UI = [] spawn {
 		if (_isRCArty) then {
 			
 			// We are in the UI now
-			RC_InUI = true;
+			RC_ULM_InUI = true;
 			
 			// If our UAV is Autonomous we want to make it not
 			// We need to remote exec it since setAutonomous is of Local Effect so it needs to be where the UAV is Local

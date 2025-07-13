@@ -89,3 +89,17 @@ if !(isNil "_loadedMag") then {
 };
 
 _unit removeWeapon "RC_60mm_ULM_Bag";
+
+/*
+_unit selectWeapon [weapon, muzzle, firemode];
+
+_unit action ["SWITCHWEAPON", _mortar, _mortar, 3]
+*/
+
+/*
+_weapon = currentWeapon player;
+_ammo = player ammo _weapon;
+player setAmmo [_weapon, 0];
+player forceWeaponFire [_weapon, "FullAuto"];
+player setAmmo [_weapon, _ammo];
+*/

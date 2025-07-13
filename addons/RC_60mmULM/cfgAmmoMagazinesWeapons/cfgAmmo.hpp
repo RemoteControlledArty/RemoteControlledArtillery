@@ -31,3 +31,6 @@ class twc_2inch_illum: Flare_82mm_AMOS_White
 	fuseDistance=3;
 	brightness=4;
 };
+
+
+//redefine smoke and mine for aimaboveheight

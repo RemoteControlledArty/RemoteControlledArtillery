@@ -1,4 +1,4 @@
-systemchat "getout";
+//systemchat "getout";
 
 params ["_vehicle", "_role", "_unit", "_turret"];
 
@@ -33,11 +33,15 @@ _unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse";
 _unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_mine";
 _unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_Illum";
 
-systemchat "mags removed";
+//systemchat "mags removed";
+
 
 {
 	_unit addMagazine [_x, 1];
 } forEach _magazines;
+
+
+//RC_ULM_currentFireMode = currentWeaponMode (gunner _vehicle);
 
 
 deleteVehicle _vehicle;

@@ -14,7 +14,7 @@
 	Index<INT>
 */
 
-if !RC_InUI exitWith {};
+if ((!RC_InUI) && (!RC_ULM_InUI)) exitWith {};
 if (RC_Artillery_Markers isEqualTo []) exitWith {};
 
 params ["_direction"];

@@ -16,22 +16,24 @@ class CfgPatches
 		};
 		magazines[]=
 		{
-			"RC_1Rnd_60mm_Mo_shells_ULM",
-			"RC_1Rnd_60mm_Mo_HEAB_ULM",
-			"RC_1Rnd_60mm_Mo_Flare_white_ULM",
-			"RC_1Rnd_60mm_Mo_Smoke_white_ULM",
-			"RC_1Rnd_60mm_Mo_LaserGuided_ULM",
-			"RC_1Rnd_60mm_Mo_LaserGuided_ULM",
-			"RC_1Rnd_60mm_Mo_MultiGuided_ULM",
-			"RC_1Rnd_60mm_Mo_mine_ULM",
-			"RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM",
-			"RC_1Rnd_60mm_Mo_backupHEAB_ULM"
+			"RC_ULM_1Rnd_60mm_Mo_shells",
+			"RC_ULM_1Rnd_60mm_Mo_HEAB",
+			"RC_ULM_1Rnd_60mm_Mo_backupHEAB",
+			"RC_ULM_1Rnd_60mm_Mo_Smoke",
+
+			"RC_ULM_1Rnd_60mm_Mo_MultiGuided",
+			"RC_ULM_1Rnd_60mm_Mo_LaserGuided",
+			"RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse",
+			
+			"RC_ULM_1Rnd_60mm_Mo_mine",
+			"RC_ULM_1Rnd_60mm_Mo_Illum"
 		};
 		requiredAddons[]=
 		{
 			"cba_main",
 			"RC_Artillery",
-			"twc_2inch"
+			"twc_2inch",
+			"NDS_M224_mortar"
 		};
 
 		skipWhenMissingDependencies=1;

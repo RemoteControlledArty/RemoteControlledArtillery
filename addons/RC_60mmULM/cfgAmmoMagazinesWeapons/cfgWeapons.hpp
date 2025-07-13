@@ -76,6 +76,93 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 		"RC_ULM_1Rnd_60mm_Mo_mine",
 		"RC_ULM_1Rnd_60mm_Mo_Illum"
 	};
+
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Single4",
+		"Single5",
+		"Single6",
+		"Single7",
+		"Burst1",
+		"Burst2",
+		"Burst3"
+	};
+	class Single1: Single1
+	{
+		displayName="CH0";
+		artilleryDispersion=1.5;
+		artilleryCharge=0.35;
+		/*
+		minRange=51;
+		midRange=393;
+		maxRange=735;
+		*/
+	};
+	class Single2: Single1
+	{
+		displayName="CH1";
+		artilleryCharge=0.417;
+		/*
+		minRange=72;
+		midRange=557.5;
+		maxRange=1043;
+		*/
+	};
+	class Single3: Single1
+	{
+		displayName="CH2";
+		artilleryCharge=0.497;
+		/*
+		minRange=103;
+		midRange=792.5;
+		maxRange=1482;
+		*/
+	};
+	class Single4: Single1
+	{
+		displayName="CH3";
+		artilleryCharge=0.592;
+		/*
+		minRange=142;
+		midRange=1122;
+		maxRange=2102;
+		*/
+	};
+	class Single5: Single1
+	{
+		displayName="CH4";
+		artilleryCharge=0.705;
+		/*
+		minRange=208;
+		midRange=1595;
+		maxRange=2982;
+		*/
+	};
+	class Single6: Single1
+	{
+		displayName="CH5";
+		artilleryCharge=0.84;
+		/*
+		minRange=295;
+		midRange=2264;
+		maxRange=4233;
+		*/
+	};
+	class Single7: Single1
+	{
+		displayName="CH6";
+		artilleryCharge=1;
+		/*
+		minRange=418;
+		midRange=3209;
+		maxRange=6000;
+		*/
+	};
+
+	/*
 	modes[]=
 	{
 		"Single1",
@@ -116,6 +203,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 		midRange=2181;
 		maxRange=4078;
 	};
+	*/
 };
 
 
