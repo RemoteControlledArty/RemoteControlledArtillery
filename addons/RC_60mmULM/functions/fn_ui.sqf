@@ -1,3 +1,4 @@
+/*
 params ["_player", "_mortarVeh"];
 
 if (!(_mortarVeh isKindOf "RC_60mm_ULM_Vic")) exitWith {};
@@ -29,3 +30,4 @@ _handle = [
 	(_display displayCtrl 4213) ctrlSetText str _elev;
 	(_display displayCtrl 4214) ctrlSetText str _dir;
 }, 0, [_player, _mortarVeh]] call CBA_fnc_addPerFrameHandler;
+*/

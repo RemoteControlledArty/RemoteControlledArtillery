@@ -47,17 +47,21 @@ class CfgFunctions
 			file="\RC_60mmULM\functions";
       		//class preInit {preInit=1;};
       		//class InitCBASettings {preInit=1;};
-      		class RC_UI_Loop_ULM {postInit=1;};
-			class ui {};
+			class RC_UI_Loop_ULM {postInit=1;};
+      		class init {postInit=1;};
+			//class ui {};
 			class deploy {};
 			class rangetable {};
 			class fire {};
-			class init {};
 			class getout {};
+
+			//ADD "HE - splash in 5sec", fired EH, mag speed, elev TOF for ASL, or fired setvalue on mortar if true UILoop starts scritpt and sets to false so it doesnt trigger twice
 		};
 	};
 };
 
+
+/*
 class Extended_PostInit_EventHandlers
 {
 	class RC_ULM
@@ -85,6 +89,8 @@ class Extended_FiredBIS_EventHandlers
 		};
 	};
 };
+*/
+
 
 //later required sensors
 class SensorTemplateDataLink;
@@ -102,6 +108,13 @@ class DefaultVehicleSystemsDisplayManagerRight;
 //later required sensor firemodes
 class Mode_SemiAuto;
 class Mode_Burst;
+
+
+class RscInGameUI
+{
+	class RscWeaponRangeArtillery;
+	class Rsc_ULM: RscWeaponRangeArtillery {};
+};
 
 /*
 class CfgAmmo

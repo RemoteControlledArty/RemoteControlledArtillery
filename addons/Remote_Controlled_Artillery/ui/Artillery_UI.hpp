@@ -320,4 +320,6 @@ class RC_Artillery {
 	// GUI EDITOR OUTPUT END
 	////////////////////////////////////////////////////////
 };
-class RC_ULM: RC_Artillery {};
+class RC_ULM_Rsc: RC_Artillery {
+	onLoad = "uiNameSpace setVariable ['RC_ULM_Rsc', _this select 0]";
+};

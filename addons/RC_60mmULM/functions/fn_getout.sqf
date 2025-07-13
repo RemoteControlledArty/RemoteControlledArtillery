@@ -8,30 +8,30 @@ _loadedMag = _vehicle getVariable ["RC_60mm_ULM_LoadedMag", ""];
 
 
 _magazines = magazines [_vehicle, false];
-_vehicle removeMagazinesTurret ["RC_1Rnd_60mm_Mo_shells_ULM", [0]];
-_vehicle removeMagazinesTurret ["RC_1Rnd_60mm_Mo_HEAB_ULM", [0]];
-_vehicle removeMagazinesTurret ["RC_1Rnd_60mm_Mo_backupHEAB_ULM", [0]];
-_vehicle removeMagazinesTurret ["RC_1Rnd_60mm_Mo_Smoke_white_ULM", [0]];
+_vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_shells", [0]];
+_vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_HEAB", [0]];
+_vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_backupHEAB", [0]];
+_vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_Smoke", [0]];
 
-_vehicle removeMagazinesTurret ["RC_1Rnd_60mm_Mo_MultiGuided_ULM", [0]];
-_vehicle removeMagazinesTurret ["RC_1Rnd_60mm_Mo_LaserGuided_ULM", [0]];
-_vehicle removeMagazinesTurret ["RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM", [0]];
+_vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_MultiGuided", [0]];
+_vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_LaserGuided", [0]];
+_vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse", [0]];
 
-_vehicle removeMagazinesTurret ["RC_1Rnd_60mm_Mo_mine_ULM", [0]];
-_vehicle removeMagazinesTurret ["RC_1Rnd_60mm_Mo_Flare_white_ULM", [0]];
+_vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_mine", [0]];
+_vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_Illum", [0]];
 
 
-_unit removeMagazines "RC_1Rnd_60mm_Mo_shells_ULM";
-_unit removeMagazines "RC_1Rnd_60mm_Mo_HEAB_ULM";
-_unit removeMagazines "RC_1Rnd_60mm_Mo_backupHEAB_ULM";
-_unit removeMagazines "RC_1Rnd_60mm_Mo_Smoke_white_ULM";
+_unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_shells";
+_unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_HEAB";
+_unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_backupHEAB";
+_unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_Smoke";
 
-_unit removeMagazines "RC_1Rnd_60mm_Mo_MultiGuided_ULM";
-_unit removeMagazines "RC_1Rnd_60mm_Mo_LaserGuided_ULM";
-_unit removeMagazines "RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM";
+_unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_MultiGuided";
+_unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_LaserGuided";
+_unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse";
 
-_unit removeMagazines "RC_1Rnd_60mm_Mo_mine_ULM";
-_unit removeMagazines "RC_1Rnd_60mm_Mo_Flare_white_ULM";
+_unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_mine";
+_unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_Illum";
 
 systemchat "mags removed";
 
@@ -42,7 +42,6 @@ systemchat "mags removed";
 
 deleteVehicle _vehicle;
 _unit addWeapon "RC_60mm_ULM_Bag";
-//_unit addWeapon "twc_2inch_bag";
 if (_loadedMag != "") then {
 	_unit addMagazine [_loadedMag, 1];
 };

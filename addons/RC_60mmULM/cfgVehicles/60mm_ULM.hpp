@@ -22,7 +22,10 @@ class RC_ULM_Core: StaticMortar
 	features="Randomization: No						<br />Camo selections: 1 - the whole weapon with pod						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: Just the weapon						<br />Slingload: No						<br />Cargo proxy indexes: None";
 	author="$STR_A3_Bohemia_Interactive";
 	_generalMacro="RC_M_Core";
+
 	scope=0;
+	scopeCurator=0;
+
 	displayname="$STR_A3_CfgVehicles_Mortar_01_Base0";
 	class Library
 	{
@@ -215,7 +218,6 @@ class RC_ULM_Base: RC_ULM_Core
 	};
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_Mortar_01_F.jpg";
 	_generalMacro="RC_M_Base";
-	scope=2;
 	side=1;
 	faction="BLU_F";
 	crew="B_Soldier_F";
@@ -226,9 +228,6 @@ class RC_ULM_Base: RC_ULM_Core
 };
 class RC_60mm_ULM_Core: RC_ULM_Base
 {
-	scope=0;
-	scopeCurator=0;
-
 	model="twc_2inch\twc_2inch.p3d";
 	artilleryScanner=1;
 	side=1;
@@ -326,7 +325,8 @@ class RC_60mm_ULM_Base: RC_60mm_ULM_Core
 			initElev=-30;
 			maxelev=0;
 			minelev=-88;
-			turretInfoType="twc_2inch_ui";
+			turretInfoType="Rsc_ULM";
+			//turretInfoType="twc_2inch_ui";
 			gunnerOpticsModel="\A3\weapons_f\reticle\optics_empty";
 			animationSourceElevation="elevBarrel";
 			memoryPointGunnerOptics="AimPoint";
@@ -426,7 +426,9 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 	{
 		class RM_ULM
 		{
-			getout="systemchat 'GetOutEH'; if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";
+			getout="if (!local (_this select 0)) exitwith {}; systemchat 'GetOutEH'; _this call RC_ULM_fnc_getout";
+			fired="if (!local (_this select 0)) exitwith {}; systemchat 'GetOutEH'; _this call RC_ULM_fnc_fire";
+			//firedBIS="_this call RC_ULM_fnc_fire";
 		};
 	};
 
@@ -444,7 +446,7 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 	uavCameraGunnerPos="eye";
 	uavCameraGunnerDir="look";
 	*/
-
+	
 	displayName="60mm advanced Mortar";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
@@ -612,7 +614,7 @@ class NDS_M224_mortar: NDS_M224_mortar_core
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 
-	displayName="60mm advanced Mortar";
+	displayName="60mm advanced Mortar [long]";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
@@ -683,15 +685,17 @@ class NDS_M224_mortar: NDS_M224_mortar_core
 			};
 			magazines[]=
 			{
-				"RC_1Rnd_60mm_Mo_shells_ULM",
-				"RC_1Rnd_60mm_Mo_HEAB_ULM",
-				"RC_1Rnd_60mm_Mo_Flare_white_ULM",
-				"RC_1Rnd_60mm_Mo_Smoke_white_ULM",
-				"RC_1Rnd_60mm_Mo_LaserGuided_ULM",
-				"RC_1Rnd_60mm_Mo_MultiGuided_ULM",
-				"RC_1Rnd_60mm_Mo_mine_ULM",
-				"RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM",
-				"RC_1Rnd_60mm_Mo_backupHEAB_ULM"
+				"RC_ULM_1Rnd_60mm_Mo_shells",
+				"RC_ULM_1Rnd_60mm_Mo_HEAB",
+				"RC_ULM_1Rnd_60mm_Mo_backupHEAB",
+				"RC_ULM_1Rnd_60mm_Mo_Smoke",
+
+				"RC_ULM_1Rnd_60mm_Mo_MultiGuided",
+				"RC_ULM_1Rnd_60mm_Mo_LaserGuided",
+				"RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse",
+				
+				"RC_ULM_1Rnd_60mm_Mo_mine",
+				"RC_ULM_1Rnd_60mm_Mo_Illum"
 			};
 			/*
 			weapons[]=

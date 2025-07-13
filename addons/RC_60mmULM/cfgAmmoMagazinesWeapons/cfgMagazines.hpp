@@ -1,5 +1,5 @@
 class RC_1Rnd_60mm_vic_Mo_shells;
-class RC_1Rnd_60mm_Mo_shells_ULM: RC_1Rnd_60mm_vic_Mo_shells
+class RC_ULM_1Rnd_60mm_Mo_shells: RC_1Rnd_60mm_vic_Mo_shells
 {
 	//ammo="RC_Sh_60mm_AMOS_HE";
 	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
@@ -7,55 +7,7 @@ class RC_1Rnd_60mm_Mo_shells_ULM: RC_1Rnd_60mm_vic_Mo_shells
 	picture="\twc_2inch\data\ui\m_he_ca.paa";
 };
 class RC_1Rnd_60mm_vic_Mo_HEAB;
-class RC_1Rnd_60mm_Mo_HEAB_ULM: RC_1Rnd_60mm_vic_Mo_HEAB
-{
-	//ammo="RC_Sh_60mm_AMOS_HEAB";
-	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
-	model="\twc_2inch\twc_2inch_shell_he.p3d";
-	picture="\twc_2inch\data\ui\m_he_ca.paa";
-};
-class RC_1Rnd_60mm_vic_Mo_Flare_white;
-class RC_1Rnd_60mm_Mo_Flare_white_ULM: RC_1Rnd_60mm_vic_Mo_Flare_white
-{
-	//ammo="RC_Sh_60mm_AMOS_HEAB";
-	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
-	model="\twc_2inch\twc_2inch_shell_he.p3d";
-	picture="\twc_2inch\data\ui\m_he_ca.paa";
-};
-class RC_1Rnd_60mm_vic_Mo_Smoke_white;
-class RC_1Rnd_60mm_Mo_Smoke_white_ULM: RC_1Rnd_60mm_vic_Mo_Smoke_white
-{
-	//ammo="RC_Sh_60mm_AMOS_HEAB";
-	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
-	model="\twc_2inch\twc_2inch_shell_he.p3d";
-	picture="\twc_2inch\data\ui\m_he_ca.paa";
-};
-class RC_1Rnd_60mm_vic_Mo_LaserGuided;
-class RC_1Rnd_60mm_Mo_LaserGuided_ULM: RC_1Rnd_60mm_vic_Mo_LaserGuided
-{
-	//ammo="RC_Sh_60mm_AMOS_HEAB";
-	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
-	model="\twc_2inch\twc_2inch_shell_he.p3d";
-	picture="\twc_2inch\data\ui\m_he_ca.paa";
-};
-class RC_1Rnd_60mm_vic_Mo_MultiGuided;
-class RC_1Rnd_60mm_Mo_MultiGuided_ULM: RC_1Rnd_60mm_vic_Mo_MultiGuided
-{
-	//ammo="RC_Sh_60mm_AMOS_HEAB";
-	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
-	model="\twc_2inch\twc_2inch_shell_he.p3d";
-	picture="\twc_2inch\data\ui\m_he_ca.paa";
-};
-class RC_1Rnd_60mm_vic_Mo_mine;
-class RC_1Rnd_60mm_Mo_mine_ULM: RC_1Rnd_60mm_vic_Mo_mine
-{
-	//ammo="RC_Sh_60mm_AMOS_HEAB";
-	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
-	model="\twc_2inch\twc_2inch_shell_he.p3d";
-	picture="\twc_2inch\data\ui\m_he_ca.paa";
-};
-class RC_1Rnd_60mm_vic_Mo_LG_DelayedFuse;
-class RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM: RC_1Rnd_60mm_vic_Mo_LG_DelayedFuse
+class RC_ULM_1Rnd_60mm_Mo_HEAB: RC_1Rnd_60mm_vic_Mo_HEAB
 {
 	//ammo="RC_Sh_60mm_AMOS_HEAB";
 	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
@@ -63,15 +15,64 @@ class RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM: RC_1Rnd_60mm_vic_Mo_LG_DelayedFuse
 	picture="\twc_2inch\data\ui\m_he_ca.paa";
 };
 class RC_1Rnd_60mm_vic_Mo_backupHEAB;
-class RC_1Rnd_60mm_Mo_backupHEAB_ULM: RC_1Rnd_60mm_vic_Mo_backupHEAB
+class RC_ULM_1Rnd_60mm_Mo_backupHEAB: RC_1Rnd_60mm_vic_Mo_backupHEAB
 {
 	//ammo="RC_Sh_60mm_AMOS_HEAB";
 	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
 	model="\twc_2inch\twc_2inch_shell_he.p3d";
 	picture="\twc_2inch\data\ui\m_he_ca.paa";
 };
+class RC_1Rnd_60mm_vic_Mo_Smoke_white;
+class RC_ULM_1Rnd_60mm_Mo_Smoke: RC_1Rnd_60mm_vic_Mo_Smoke_white
+{
+	//ammo="RC_Sh_60mm_AMOS_HEAB";
+	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
+	model="\twc_2inch\twc_2inch_shell_smoke.p3d";
+	picture="\twc_2inch\data\ui\m_smoke_ca.paa";
+};
+class RC_1Rnd_60mm_vic_Mo_LaserGuided;
+class RC_ULM_1Rnd_60mm_Mo_LaserGuided: RC_1Rnd_60mm_vic_Mo_LaserGuided
+{
+	//ammo="RC_Sh_60mm_AMOS_HEAB";
+	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
+	model="\twc_2inch\twc_2inch_shell_he.p3d";
+	picture="\twc_2inch\data\ui\m_he_ca.paa";
+};
+class RC_1Rnd_60mm_vic_Mo_MultiGuided;
+class RC_ULM_1Rnd_60mm_Mo_MultiGuided: RC_1Rnd_60mm_vic_Mo_MultiGuided
+{
+	//ammo="RC_Sh_60mm_AMOS_HEAB";
+	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
+	model="\twc_2inch\twc_2inch_shell_he.p3d";
+	picture="\twc_2inch\data\ui\m_he_ca.paa";
+};
+class RC_1Rnd_60mm_vic_Mo_mine;
+class RC_ULM_1Rnd_60mm_Mo_mine: RC_1Rnd_60mm_vic_Mo_mine
+{
+	//ammo="RC_Sh_60mm_AMOS_HEAB";
+	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
+	model="\twc_2inch\twc_2inch_shell_smoke.p3d";
+	picture="\twc_2inch\data\ui\m_smoke_ca.paa";
+};
+class RC_1Rnd_60mm_vic_Mo_LG_DelayedFuse;
+class RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse: RC_1Rnd_60mm_vic_Mo_LG_DelayedFuse
+{
+	//ammo="RC_Sh_60mm_AMOS_HEAB";
+	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
+	model="\twc_2inch\twc_2inch_shell_he.p3d";
+	picture="\twc_2inch\data\ui\m_he_ca.paa";
+};
+class RC_1Rnd_60mm_vic_Mo_Flare_white;
+class RC_ULM_1Rnd_60mm_Mo_Illum: RC_1Rnd_60mm_vic_Mo_Flare_white
+{
+	//ammo="RC_Sh_60mm_AMOS_HEAB";
+	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
+	model="\twc_2inch\twc_2inch_shell_illum.p3d";
+	picture="\twc_2inch\data\ui\m_smoke_ca.paa";
+};
 
 
+/*
 class VehicleMagazine;
 class RC_10Rnd_R_HEAB_Base: VehicleMagazine
 {
@@ -95,6 +96,7 @@ class RC_10Rnd_R_HEAB: RC_10Rnd_R_HEAB_Base
 	displayNameShort="HE Airburst 12m";
 	count=10;
 };
+*/
 
 
 /*

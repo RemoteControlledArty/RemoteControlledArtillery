@@ -199,8 +199,7 @@ RC_Artillery_UI = [] spawn {
 			_realElevationOriginal = asin (_weaponDir select 2);
 			_realElevation = SLANT_ANGLE * _realElevationOriginal;
 	
-			// Some sort of Fix for Mortars having some weird Elevation numbers
-			// Dunno what it does, ask the ACE Team
+			// fixes barrel elevation value for static mortars if used on UNEVEN ground
 			private _isAceMortar = RC_isAceMortarHash get _uavClass;
 			if (isNil "_isAceMortar") then {
 				_isAceMortar = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "ace_artillerytables_showGunLaying");

@@ -735,7 +735,7 @@ class CfgFunctions
 			class RC_CBRad_EntityCreated {preInit=1;};
 			class RC_CBRad_ArtilleryShellFired {postInit=1;};
 			
-      		//class RC_UI_Loop {postInit=1;};
+      		class RC_UI_Loop {postInit=1;};
 			class RC_MarkerHandler {postInit=1;};
 
 			class RC_EngineOff {postInit=1;};

@@ -28,7 +28,7 @@ RC_requiresLockHash = createHashMap;
 RC_terrainWarningHash = createHashMap;
 RC_aimAboveHeightHash = createHashMap;
 
-RC_Artillery_UI = [] spawn {
+RC_ULM_UI = [] spawn {
 	while { true } do {
 		sleep 0.1;
 
@@ -44,7 +44,7 @@ RC_Artillery_UI = [] spawn {
 
 		if ((_vicPlayer isEqualTo _player) || (cameraView != "GUNNER")) then {
 			// UI Shouldn't be Shown so we cut it
-			"RC_Artillery" cutFadeOut 0;
+			"RC_ULM_Rsc" cutFadeOut 0;
 			RC_InUI = false;
 			continue;
 		};
@@ -72,7 +72,7 @@ RC_Artillery_UI = [] spawn {
 			//if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
 			
 			// Check if the Display for the UI Exists if not Create it
-			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then { "RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false] };
+			if (isNull (uiNamespace getVariable ["RC_ULM_Rsc", displayNull])) then { "RC_ULM_Rsc" cutRsc ["RC_ULM_Rsc", "PLAIN", 0, false] };
 			
 			disableSerialization;	//what effect does this have again, maybe change location futher down?
 
@@ -201,7 +201,7 @@ RC_Artillery_UI = [] spawn {
 			};
 			
 			// Display
-			_display = uiNamespace getVariable ["RC_Artillery", displayNull];
+			_display = uiNamespace getVariable ["RC_ULM_Rsc", displayNull];
 
 			//weapon informations like charges and current charge
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"
@@ -210,18 +210,14 @@ RC_Artillery_UI = [] spawn {
 			_realElevationOriginal = asin (_weaponDir select 2);
 			_realElevation = SLANT_ANGLE * _realElevationOriginal;
 	
-			// Some sort of Fix for Mortars having some weird Elevation numbers
-			// Dunno what it does, ask the ACE Team
-
-			//seems to work with and without?
-			/*
+			// fixes barrel elevation value for static mortars if used on UNEVEN ground
 			private _isAceMortar = RC_isAceMortarHash get _uavClass;
 			if (isNil "_isAceMortar") then {
 				_isAceMortar = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "ace_artillerytables_showGunLaying");
 				RC_isAceMortarHash set [_uavClass, _isAceMortar];
 			};
 			if (_isAceMortar == 2) then {
-				systemchat "_isAceMortar == 2";
+				//systemchat "_isAceMortar == 2";
 				private _turretCfg = [_uavClass, _turret] call CBA_fnc_getTurret;
 				private _turretAnimBody = getText (_turretCfg >> "animationSourceBody");
 				private _currentTraverseRad = _uav animationSourcePhase _turretAnimBody;
@@ -232,7 +228,6 @@ RC_Artillery_UI = [] spawn {
 				if (_realElevationOriginal > 90) then { _realElevationOriginal = 180 - _realElevationOriginal };
 				_realElevation = (SLANT_ANGLE * _realElevationOriginal);
 			};
-			*/
 
 			//changes magazine to backup airburst if EL is too low for conventional airburst
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\AB_magchange.sqf"
@@ -368,36 +363,6 @@ RC_Artillery_UI = [] spawn {
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 
-				//if cba nan error occurs use this
-				/*
-				if ((RC_currentTargetMarker select 0) isEqualType 0) then {
-					_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
-				} else {
-					_ctrlDistance ctrlSetText Format ["DIST: ????%1"];
-				};
-
-				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
-					_ctrlTarget ctrlSetText "T: Datalink";
-				} else {
-					if ((RC_currentTargetMarker select 0) isEqualType 0) then {
-						_ctrlTarget ctrlSetText Format ["T: %1", [RC_currentTargetMarker select 0, 2, 0] call CBA_fnc_formatNumber];
-					} else {
-						_ctrlTarget ctrlSetText Format ["T: ??%1"];
-					};
-				};
-
-				if (_targetAzimuth isEqualType 0) then {
-					_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
-				} else {
-					_ctrlTargetAzimuth ctrlSetText Format ["T AZ: ????%1"];
-				};
-
-				if ((RC_currentTargetMarker select 0) isEqualType 0) then {
-					_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
-				} else {
-					_ctrlDifference ctrlSetText Format ["DIF: ????%1"];
-				};
-				*/
 
 				/* Calculate angles */
 				_preAngle = sqrt ((_roundVelocity^4) - GRAVITY * (GRAVITY * (_targetDistance^2) + 2 * _realElevationOriginal * _roundVelocity^2));
@@ -500,31 +465,6 @@ RC_Artillery_UI = [] spawn {
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 0] call CBA_fnc_formatNumber];
-
-			/*
-			_ctrlHighSol ctrlSetText Format ["high EL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlLowSol ctrlSetText Format ["low EL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
-			_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
-			_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
-			*/
-
-			/*
-			if (_highAngleSol isEqualType 0) then {
-				_ctrlHighSol ctrlSetText Format ["high EL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];
-				_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
-			} else {
-				_ctrlHighSol ctrlSetText Format ["high EL: 0000%1"];
-				_ctrlHighETA ctrlSetText Format ["ETA: 000%1"];
-			};
-
-			if (_lowAngleSol isEqualType 0) then {
-				_ctrlLowSol ctrlSetText Format ["low EL: %1", [_lowAngleSol, 4, 0] call CBA_fnc_formatNumber];
-				_ctrlLowETA ctrlSetText Format ["ETA: %1", [_travelTimeLow, 3, 0] call CBA_fnc_formatNumber];
-			} else {
-				_ctrlLowSol ctrlSetText Format ["low EL: 0000%1"];
-				_ctrlLowETA ctrlSetText Format ["ETA: 000%1"];
-			};
-			*/
 
 			if (_highAngleSol isEqualType 0) then {
 				_ctrlHighSol ctrlSetText Format ["high EL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];

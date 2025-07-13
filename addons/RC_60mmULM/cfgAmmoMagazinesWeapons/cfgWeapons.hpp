@@ -1,61 +1,41 @@
-class Launcher;
-class Launcher_Base_F: Launcher
-{
-	class WeaponsSlotsInfo;
-};
-class twc_2inch_bag: Launcher_Base_F
-{
-	author="LeoVetta";
-	scope=2;
-	displayname="60mm Mortar";
-	model="twc_2inch\twc_2inch_bag.p3d";
-	picture="\twc_2inch\data\ui\w_2inch_ca.paa";
-	UiPicture="\A3\Weapons_F\Data\UI\icon_at_CA.paa";
-	magazines[]=
-	{
-		"twc_2inch_he_1rnd",
-		"twc_2inch_smoke_1rnd",
-		"twc_2inch_illum_1rnd",
-		"RC_1Rnd_60mm_Mo_shells_ULM",
-		"RC_1Rnd_60mm_Mo_HEAB_ULM",
-		"RC_1Rnd_60mm_Mo_Flare_white_ULM",
-		"RC_1Rnd_60mm_Mo_Smoke_white_ULM",
-		"RC_1Rnd_60mm_Mo_LaserGuided_ULM",
-		"RC_1Rnd_60mm_Mo_MultiGuided_ULM",
-		"RC_1Rnd_60mm_Mo_mine_ULM",
-		"RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM",
-		"RC_1Rnd_60mm_Mo_backupHEAB_ULM"
-	};
-	handAnim[]={};
-	class weaponSlotsInfo: WeaponsSlotsInfo
-	{
-		mass=50;
-	};
-};
 
-
-class RC_60mm_ULM_Bag_Base: twc_2inch_bag
+/*class Launcher_Base_F;
+class RC_60mm_ULM_Bag_Base: Launcher_Base_F
 {
 	class WeaponsSlotsInfo;
 	scope=0;
 };
+*/
+class twc_2inch_bag;
+class RC_60mm_ULM_Bag_Base: twc_2inch_bag
+{
+	class WeaponsSlotsInfo;
+};
 class RC_60mm_ULM_Bag: RC_60mm_ULM_Bag_Base
 {
 	author="Ascent";
-	scope=2;
 	displayname="advanced 60mm Mortar";
+	scope=2;
+	scopeArsenal=2;
+
+	model="twc_2inch\twc_2inch_bag.p3d";
+	picture="\twc_2inch\data\ui\w_2inch_ca.paa";
+	UiPicture="\A3\Weapons_F\Data\UI\icon_at_CA.paa";
 	handAnim[]={};
+
 	magazines[]=
 	{
-		"RC_1Rnd_60mm_Mo_shells_ULM",
-		"RC_1Rnd_60mm_Mo_HEAB_ULM",
-		"RC_1Rnd_60mm_Mo_Flare_white_ULM",
-		"RC_1Rnd_60mm_Mo_Smoke_white_ULM",
-		"RC_1Rnd_60mm_Mo_LaserGuided_ULM",
-		"RC_1Rnd_60mm_Mo_MultiGuided_ULM",
-		"RC_1Rnd_60mm_Mo_mine_ULM",
-		"RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM",
-		"RC_1Rnd_60mm_Mo_backupHEAB_ULM"
+		"RC_ULM_1Rnd_60mm_Mo_shells",
+		"RC_ULM_1Rnd_60mm_Mo_HEAB",
+		"RC_ULM_1Rnd_60mm_Mo_backupHEAB",
+		"RC_ULM_1Rnd_60mm_Mo_Smoke",
+
+		"RC_ULM_1Rnd_60mm_Mo_MultiGuided",
+		"RC_ULM_1Rnd_60mm_Mo_LaserGuided",
+		"RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse",
+
+		"RC_ULM_1Rnd_60mm_Mo_mine",
+		"RC_ULM_1Rnd_60mm_Mo_Illum"
 	};
 	class weaponSlotsInfo: WeaponsSlotsInfo
 	{
@@ -64,45 +44,8 @@ class RC_60mm_ULM_Bag: RC_60mm_ULM_Bag_Base
 };
 
 
-/*
-class CannonCore;
-class mortar_82mm: CannonCore
-{
-	class Single1;
-	class Single2;
-	class Single3;
-};
-class twc_2inch_weapon: mortar_82mm
-{
-	displayname="60mm COMMANDO Mortar";
-	ballisticsComputer=0;
-	magazines[]=
-	{
-		"twc_2inch_he_1rnd",
-		"twc_2inch_smoke_1rnd",
-		"twc_2inch_illum_1rnd"
-	};
-	initSpeed=80;
-	class Single1: Single1
-	{
-		displayname="";
-		artilleryCharge=1;
-	};
-	class Single2: Single2
-	{
-		showToPlayer=0;
-	};
-	class Single3: Single3
-	{
-		showToPlayer=0;
-	};
-};
-*/
-
-
-/*
-class twc_2inch_weapon;
-class RC_60mm_ULM_Weapon_Base: twc_2inch_weapon
+class mortar_82mm_base;
+class RC_60mm_ULM_Weapon_Base: mortar_82mm_base
 {
 	class Single1;
 	class Single2;
@@ -110,95 +53,37 @@ class RC_60mm_ULM_Weapon_Base: twc_2inch_weapon
 };
 class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 {
-	displayname="advanced 60mm Mortar";
-	ballisticsComputer=8;	//TEST WITHOUT
-	initSpeed=242.58;	//???
-	magazineReloadTime=3;
-	reloadTime=1.8;
-
-	magazines[]=
-	{
-		"twc_2inch_he_1rnd",
-		"twc_2inch_smoke_1rnd",
-		"twc_2inch_illum_1rnd",
-
-		"RC_1Rnd_60mm_Mo_shells_ULM",
-		"RC_1Rnd_60mm_Mo_HEAB_ULM",
-		"RC_1Rnd_60mm_Mo_Flare_white_ULM",
-		"RC_1Rnd_60mm_Mo_Smoke_white_ULM",
-		"RC_1Rnd_60mm_Mo_LaserGuided_ULM",
-		"RC_1Rnd_60mm_Mo_MultiGuided_ULM",
-		"RC_1Rnd_60mm_Mo_mine_ULM",
-		"RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM",
-		"RC_1Rnd_60mm_Mo_backupHEAB_ULM"
-	};
-	class Single1: Single1
-	{
-		burst=1;
-		reloadTime=1.8;
-		artilleryDispersion=1.25;
-
-		displayname="CH0, 0.5km";
-		artilleryCharge=0.35;
-
-		minRange=34;
-		midRange=216.5;
-		maxRange=499;
-	};
-	class Single2: Single1
-	{
-		displayname="CH1, 2km";
-		artilleryCharge=0.7;
-
-		minRange=139;
-		midRange=1068.5;
-		maxRange=1998;
-	};
-	class Single3: Single1
-	{
-		displayname="CH2, 4km";
-		artilleryCharge=1;
-
-		minRange=284;
-		midRange=2181;
-		maxRange=4078;
-	};
-};
-*/
-
-
-class RC_mortar_82mm_V3;
-class RC_60mm_ULM_Weapon_Base: RC_mortar_82mm_V3
-{
-	class Single1;
-	class Single2;
-	class Single3;
-};
-class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
-{
-	//initSpeed=242.58;	//???
-
 	displayname="advanced 60mm Mortar";
 	displayNameShort="60mm Mortar";
-	ballisticsComputer=0;	//direct fire reticle for highest charge
-	magazineReloadTime=3;
+	ballisticsComputer=0;	//8 is direct fire reticle for highest charge
+	canLock=2;
+	weaponLockDelay=0;
+	magazineReloadTime=2.5;
 	reloadTime=1.8;
+	//initSpeed=242.58;	//???
 
 	magazines[]=
 	{
-		"twc_2inch_he_1rnd",
-		"twc_2inch_smoke_1rnd",
-		"twc_2inch_illum_1rnd",
+		"RC_ULM_1Rnd_60mm_Mo_shells",
+		"RC_ULM_1Rnd_60mm_Mo_HEAB",
+		"RC_ULM_1Rnd_60mm_Mo_backupHEAB",
+		"RC_ULM_1Rnd_60mm_Mo_Smoke",
 
-		"RC_1Rnd_60mm_Mo_shells_ULM",
-		"RC_1Rnd_60mm_Mo_HEAB_ULM",
-		"RC_1Rnd_60mm_Mo_Flare_white_ULM",
-		"RC_1Rnd_60mm_Mo_Smoke_white_ULM",
-		"RC_1Rnd_60mm_Mo_LaserGuided_ULM",
-		"RC_1Rnd_60mm_Mo_MultiGuided_ULM",
-		"RC_1Rnd_60mm_Mo_mine_ULM",
-		"RC_1Rnd_60mm_Mo_LG_DelayedFuse_ULM",
-		"RC_1Rnd_60mm_Mo_backupHEAB_ULM"
+		"RC_ULM_1Rnd_60mm_Mo_MultiGuided",
+		"RC_ULM_1Rnd_60mm_Mo_LaserGuided",
+		"RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse",
+		
+		"RC_ULM_1Rnd_60mm_Mo_mine",
+		"RC_ULM_1Rnd_60mm_Mo_Illum"
+	};
+	modes[]=
+	{
+		"Single1",
+		"Single2",
+		"Single3",
+		"Burst1",
+		"Burst2",
+		"Burst3"
 	};
 	class Single1: Single1
 	{
@@ -234,6 +119,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 };
 
 
+/*
 class CannonCore;
 class M_Base: CannonCore
 {
@@ -486,17 +372,6 @@ class RC_M_V3: RC_M_V2
 		"Single2",
 		"Single3"
 	};
-	/*
-	modes[]=
-	{
-		"Single1",
-		"Single2",
-		"Single3",
-		"Burst1",
-		"Burst2",
-		"Burst3"
-	};
-	*/
 	class Single1: Single1
 	{
 		displayName="CH0, 0.5km";
@@ -556,3 +431,4 @@ class RC_M_V3: RC_M_V2
 		//reloadTime=15;
 	};
 };
+*/

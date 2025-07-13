@@ -28,17 +28,23 @@ RC_requiresLockHash = createHashMap;
 RC_terrainWarningHash = createHashMap;
 RC_aimAboveHeightHash = createHashMap;
 
-RC_ULM_UI = [] spawn {
+RC_Artillery_UI = [] spawn {
 	while { true } do {
 		sleep 0.1;
 
 		_player = player;
 		_vicPlayer = vehicle player;
 
-		if (_vicPlayer isEqualTo _player) then {
+		/*
+		private _inOptics = false;
+		if (cameraOn == _uav && cameraView == "Internal") then	{
+			_inOptics = true;
+		};
+		*/
+
+		if ((_vicPlayer isEqualTo _player) || (cameraView != "GUNNER")) then {
 			// UI Shouldn't be Shown so we cut it
-			systemchat "_vicPlayer isEqualTo _player";
-			"RC_ULM" cutFadeOut 0;
+			"RC_Artillery" cutFadeOut 0;
 			RC_InUI = false;
 			continue;
 		};
@@ -49,6 +55,7 @@ RC_ULM_UI = [] spawn {
 		_uavClass = typeOf _uav;
 		// See if the vehicle has the isRCArty property
 		private _isRCArty = RC_isRCArtyHash get _uavClass;
+
 		if (isNil "_isRCArty") then {
 			_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
 			RC_isRCArtyHash set [_uavClass, _isRCArty];
@@ -65,7 +72,7 @@ RC_ULM_UI = [] spawn {
 			//if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
 			
 			// Check if the Display for the UI Exists if not Create it
-			if (isNull (uiNamespace getVariable ["RC_ULM", displayNull])) then { "RC_ULM" cutRsc ["RC_ULM", "PLAIN", 0, false] };
+			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then { "RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false] };
 			
 			disableSerialization;	//what effect does this have again, maybe change location futher down?
 
@@ -194,7 +201,7 @@ RC_ULM_UI = [] spawn {
 			};
 			
 			// Display
-			_display = uiNamespace getVariable ["RC_ULM", displayNull];
+			_display = uiNamespace getVariable ["RC_Artillery", displayNull];
 
 			//weapon informations like charges and current charge
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"
@@ -205,12 +212,16 @@ RC_ULM_UI = [] spawn {
 	
 			// Some sort of Fix for Mortars having some weird Elevation numbers
 			// Dunno what it does, ask the ACE Team
+
+			//seems to work with and without?
+			/*
 			private _isAceMortar = RC_isAceMortarHash get _uavClass;
 			if (isNil "_isAceMortar") then {
 				_isAceMortar = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "ace_artillerytables_showGunLaying");
 				RC_isAceMortarHash set [_uavClass, _isAceMortar];
 			};
 			if (_isAceMortar == 2) then {
+				systemchat "_isAceMortar == 2";
 				private _turretCfg = [_uavClass, _turret] call CBA_fnc_getTurret;
 				private _turretAnimBody = getText (_turretCfg >> "animationSourceBody");
 				private _currentTraverseRad = _uav animationSourcePhase _turretAnimBody;
@@ -221,21 +232,13 @@ RC_ULM_UI = [] spawn {
 				if (_realElevationOriginal > 90) then { _realElevationOriginal = 180 - _realElevationOriginal };
 				_realElevation = (SLANT_ANGLE * _realElevationOriginal);
 			};
+			*/
 
 			//changes magazine to backup airburst if EL is too low for conventional airburst
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\AB_magchange.sqf"
 
 			//ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
-
-			/*
-			//locality fix, put in custom cba server EH instead as it requires remotex, and also groupowner can only be checked on server
-			if ((!isnull (driver _vehicle)) && !(isplayer (driver _vehicle))) then {
-				(group (driver _vehicle)) setGroupOwner (owner (gunner _vehicle));
-				//_vehicle setOwner (owner (gunner _vehicle));
-				//_vehicle setEffectiveCommander (gunner _vehicle);
-			};
-			*/
 
 			// checks if shell requires lock before firing to activate guidance
 			private _requiresLock = RC_RequiresLockHash get _currentMag;
