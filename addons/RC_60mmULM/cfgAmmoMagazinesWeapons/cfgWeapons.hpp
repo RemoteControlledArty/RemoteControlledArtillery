@@ -10,11 +10,14 @@ class twc_2inch_bag;
 class RC_60mm_ULM_Bag_Base: twc_2inch_bag
 {
 	class WeaponsSlotsInfo;
+	scope=0;
+	scopeArsenal=0;
 };
 class RC_60mm_ULM_Bag: RC_60mm_ULM_Bag_Base
 {
 	author="Ascent";
 	displayname="advanced 60mm Mortar";
+	displayNameShort="advanced 60mm Mortar";
 	scope=2;
 	scopeArsenal=2;
 
