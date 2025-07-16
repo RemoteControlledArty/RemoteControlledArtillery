@@ -2,7 +2,7 @@ class CA_Magazine;
 class RC_target_confirmer_mag: CA_Magazine
 {
 	author="Ascent";
-	scope=2;
+	scope=1;
 	ammo="RC_target_confirmer_ammo";
 	count=1;
 };
@@ -12,7 +12,7 @@ class VehicleMagazine;
 class RC_6xFPV_Deployer_Mag: VehicleMagazine
 {
 	author="Ascent";
-	scope=2;
+	scope=1;
 	ammo="RC_FPV_Deployer_Ammo";
 	count=6;
 	nameSound="smokeshell";
