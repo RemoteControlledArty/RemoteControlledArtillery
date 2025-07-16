@@ -5,8 +5,10 @@ class Launcher_Base_F: Launcher
 };
 class twc_2inch_bag: Launcher_Base_F
 {
-	scope=0;
-	scopeArsenal=0;
+	scope=1;
+	scopeCurator=1;
+	scopeArsenal=1;
+	author="LeoVetta";
 	displayname="60mm COMMANDO Mortar";
 	model="twc_2inch\twc_2inch_bag.p3d";
 	picture="\twc_2inch\data\ui\w_2inch_ca.paa";

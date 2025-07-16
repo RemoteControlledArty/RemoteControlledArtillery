@@ -17,10 +17,82 @@ class StaticMortar: StaticWeapon
 		};
 	};
 };
-class twc_2inch_vehicle: StaticMortar
+class Mortar_01_base_F: StaticMortar
 {
-	scope=0;
-	scopeCurator=0;
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			class ViewOptics: ViewOptics
+			{
+			};
+		};
+	};
+};
+class twc_2inch_vehicle: Mortar_01_base_F
+{
+	displayname="60mm COMMANDO Mortar";
+	author="LeoVetta";
+	model="twc_2inch\twc_2inch.p3d";
+	artilleryScanner=0;
+	scope=1;
+	scopeCurator=1;
+	scopeArsenal=1;
+	side=1;
+	faction="BLU_F";
+	crew="B_Soldier_F";
+	availableForSupportTypes[]=
+	{
+		"Artillery"
+	};
+	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_Mortar_01_F.jpg";
+	class assembleInfo
+	{
+		assembleTo="";
+		base="";
+		displayName="";
+		dissasembleTo[]={};
+		primary=0;
+	};
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			initElev=-30;
+			maxelev=0;
+			minelev=-88;
+			weapons[]=
+			{
+				"twc_2inch_weapon"
+			};
+			magazines[]={};
+			gunnerAction="twc_2inch_Gunner";
+			gunnerRightHandAnimName="OtocHlaven";
+			gunnerOpticsModel="\A3\weapons_f\reticle\optics_empty";
+			turretInfoType="twc_2inch_ui";
+			elevationAnimSourceSpeed=10;
+			maxHorizontalRotSpeed=4;
+			maxVerticalRotSpeed=4;
+			animationSourceElevation="elevBarrel";
+			memoryPointGunnerOptics="AimPoint";
+			class ViewOptics: ViewOptics
+			{
+				initAngleX=0;
+				minAngleX=-30;
+				maxAngleX=30;
+				initAngleY=0;
+				minAngleY=0;
+				maxAngleY=45;
+				initFov=0.69999999;
+				minFov=0.69999999;
+				maxFov=0.69999999;
+				visionMode[]=
+				{
+					"Normal"
+				};
+			};
+		};
+	};
 };
 class RC_ULM_Core: StaticMortar
 {
@@ -622,8 +694,9 @@ class NDS_M224_mortar: NDS_M224_mortar_core
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
-	scope=0;
-	scopeCurator=0;
+	scope=1;
+	scopeCurator=1;
+	scopeArsenal=1;
 	//driverForceOptics=1;
 
 	enableGPS=1;

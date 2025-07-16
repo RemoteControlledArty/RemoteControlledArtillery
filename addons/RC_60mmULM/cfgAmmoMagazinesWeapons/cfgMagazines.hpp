@@ -1,20 +1,23 @@
 class 8Rnd_82mm_Mo_shells;
 class twc_2inch_he_1rnd: 8Rnd_82mm_Mo_shells
 {
-	scope=0;
-	scopeCurator=0;
+	scope=1;
+	scopeCurator=1;
+	scopeArsenal=1;
 };
 class 8Rnd_82mm_Mo_Smoke_white;
 class twc_2inch_smoke_1rnd: 8Rnd_82mm_Mo_Smoke_white
 {
-	scope=0;
-	scopeCurator=0;
+	scope=1;
+	scopeCurator=1;
+	scopeArsenal=1;
 };
 class 8Rnd_82mm_Mo_Flare_white;
 class twc_2inch_illum_1rnd: 8Rnd_82mm_Mo_Flare_white
 {
-	scope=0;
-	scopeCurator=0;
+	scope=1;
+	scopeCurator=1;
+	scopeArsenal=1;
 };
 
 
