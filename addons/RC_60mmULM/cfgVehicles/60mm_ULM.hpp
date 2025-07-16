@@ -324,7 +324,7 @@ class RC_60mm_ULM_Base: RC_60mm_ULM_Core
 
 			initElev=-30;
 			maxelev=0;
-			minelev=-88;
+			minelev=-45;	//88
 			turretInfoType="Rsc_ULM";
 			//turretInfoType="twc_2inch_ui";
 			gunnerOpticsModel="\A3\weapons_f\reticle\optics_empty";
@@ -428,13 +428,10 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 		{
 			getout="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";
 			fired="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_fire";
-			//getout="if (!local (_this select 0)) exitwith {}; systemchat 'GetOutEH'; _this call RC_ULM_fnc_getout";
-			//fired="if (!local (_this select 0)) exitwith {}; systemchat 'GetOutEH'; _this call RC_ULM_fnc_fire";
-			//firedBIS="_this call RC_ULM_fnc_fire";
 		};
 	};
 
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	isULM=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=0.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -474,15 +471,15 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 				{
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=3500;
+						maxRange=3500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=3500;
+						maxRange=3500;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -532,7 +529,7 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000};
+							range[]={3500,2000,1000};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -610,10 +607,10 @@ class NDS_M224_mortar_core: NDS_M224_mortar_base
 };
 class NDS_M224_mortar: NDS_M224_mortar_core
 {
-	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	isULM=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelLenght=1;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 
 	displayName="60mm advanced Mortar [long]";

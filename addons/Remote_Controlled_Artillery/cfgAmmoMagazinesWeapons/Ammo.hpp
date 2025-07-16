@@ -1825,7 +1825,7 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 	//manualControlOffset=100;	//??? CLMB
 	missileLockCone=300;
 	missileKeepLockedCone=300;
-	maxControlRange=4000;
+	maxControlRange=4200;	//+200 for ascent and descent
 	missileLockMaxDistance=4000;
 	missileLockMinDistance=20;
 	missileLockMaxSpeed=35;
@@ -2189,7 +2189,7 @@ class RC_M_ATGM_MP_NLOS: M_Titan_AT_long_Base
 	//manualControlOffset=100;	//??? CLMB
 	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
 	missileKeepLockedCone=180;
-	maxControlRange=4000;
+	maxControlRange=4200;	//+200 for ascent and descent
 	missileLockMaxDistance=4000;
 	missileLockMinDistance=20;
 	missileLockMaxSpeed=35;
@@ -2351,7 +2351,7 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 	//manualControlOffset=100;	//??? CLMB
 	missileLockCone=300;
 	missileKeepLockedCone=300;
-	maxControlRange=4000;
+	maxControlRange=4200;	//+200 for ascent and descent
 	missileLockMaxDistance=4000;
 	missileLockMinDistance=20;
 	missileLockMaxSpeed=35;
@@ -2453,7 +2453,7 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 class RC_M_120mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG
 {
 	timeToLive=30;
-	maxControlRange=6000;
+	maxControlRange=6200;	//+200 for ascent and descent
 	missileLockMaxDistance=6000;
 
 	class Components: Components

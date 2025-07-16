@@ -1,12 +1,22 @@
+class RC_Sh_60mm_AMOS_submunition;
+class RC_ULM_Sh_60mm_AMOS_submunition: RC_Sh_60mm_AMOS_submunition
+{
+	explosionEffects="RC_ULM_MortarExplosion";
+};
+class RC_Sh_60mm_AMOS_HEAB;
+class RC_ULM_Sh_60mm_AMOS_HEAB: RC_Sh_60mm_AMOS_HEAB
+{
+	submunitionAmmo="RC_ULM_Sh_60mm_AMOS_submunition";
+};
 class RC_Sh_60mm_AMOS_HE;
 class RC_ULM_Sh_60mm_AMOS_HE: RC_Sh_60mm_AMOS_HE
 {
-	submunitionAmmo="RC_Sh_60mm_AMOS_submunition";
+	submunitionAmmo="RC_ULM_Sh_60mm_AMOS_submunition";
 };
 class RC_Sh_60mm_AMOS_backupHEAB;
 class RC_ULM_Sh_60mm_AMOS_backupHEAB: RC_Sh_60mm_AMOS_backupHEAB
 {
-	submunitionAmmo="RC_Sh_60mm_AMOS_submunition";
+	submunitionAmmo="RC_ULM_Sh_60mm_AMOS_submunition";
 };
 
 
@@ -39,16 +49,19 @@ class RC_Sh_60mm_AMOS_MP_MultiGuided;
 class RC_ULM_Sh_60mm_AMOS_MP_MultiGuided: RC_Sh_60mm_AMOS_MP_MultiGuided
 {
 	fuseDistance=3;
+	triggerDistance=300;
 };
 class RC_Sh_60mm_AMOS_MP_LaserGuided;
 class RC_ULM_Sh_60mm_AMOS_MP_LaserGuided: RC_Sh_60mm_AMOS_MP_LaserGuided
 {
 	fuseDistance=3;
+	triggerDistance=300;
 };
 class RC_Sh_60mm_AMOS_LG_DelayedFuse;
 class RC_ULM_Sh_60mm_AMOS_LG_DelayedFuse: RC_Sh_60mm_AMOS_LG_DelayedFuse
 {
 	fuseDistance=3;
+	triggerDistance=300;
 };
 
 

@@ -9,6 +9,7 @@
 
 // Need to exit early if we aren't a client
 if (!hasInterface) exitWith {};
+RC_isULMHash = createHashMap;
 
 /*
 //hashmaps already created in mod it depends onBriefingGear
@@ -19,7 +20,6 @@ RC_isAceLoadedHash = createHashMap;
 
 //vehicle hashmaps
 //RC_localizeHash = createHashMap;	//not yet used
-RC_isRCArtyHash = createHashMap;
 RC_ArtyTypeHash = createHashMap;
 RC_isAceMortarHash = createHashMap;
 RC_BarrelAGLHash = createHashMap;
@@ -59,16 +59,16 @@ RC_ULM_UI = [] spawn {
 		_uav = _vicPlayer;
 		// UAV ClassName
 		_uavClass = typeOf _uav;
-		// See if the vehicle has the isRCArty property
-		private _isRCArty = RC_isRCArtyHash get _uavClass;
+		// See if the vehicle has the isULM property
+		private _isULM = RC_isULMHash get _uavClass;
 
-		if (isNil "_isRCArty") then {
-			_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
-			RC_isRCArtyHash set [_uavClass, _isRCArty];
+		if (isNil "_isULM") then {
+			_isULM = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isULM") == 1;
+			RC_isULMHash set [_uavClass, _isULM];
 		};
 
 		// If it's of Artillery or Mortar Type do da thing
-		if (_isRCArty) then {
+		if (_isULM) then {
 			
 			// We are in the UI now
 			RC_ULM_InUI = true;

@@ -165,6 +165,54 @@ class RC_MortarExplosion
 		lifeTime=1;
 	};
 };
+class RC_ULM_MortarExplosion
+{
+	class Light1
+	{
+		simulation="light";
+		type="GrenadeExploLight";
+		position[]={0,0,0};
+		intensity=0.0099999998;
+		interval=1;
+		lifeTime=1;
+	};
+	class RC_MortarExp1
+	{
+		simulation="particles";
+		type="RC_MortarExp";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.5;
+	};
+	class ShellSparks1
+	{
+		simulation="particles";
+		type="ShellSparks1";
+		position[]={0,2,0};
+		interval=0.1;
+		intensity=0.01;
+		lifeTime=0.4;
+	};
+	class ShellSparks2
+	{
+		simulation="particles";
+		type="ShellSparks2";
+		position[]={0,2,0};
+		interval=0.1;
+		intensity=1;
+		lifeTime=0.4;
+	};
+	class ShellShockwave1
+	{
+		simulation="particles";
+		type="ShellShockwave";
+		position[]={0,0,0};
+		intensity=1;
+		interval= 1;
+		lifeTime=1;
+	};
+};
 
 class RC_MortarExplosionImpact
 {
