@@ -72,16 +72,31 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 		"rhs_mag_M1028_max",
 		"rhs_mag_M416_max",
 
+		"RC_2Rnd_120mm_MPAB_DF_T_R",
+		"RC_3Rnd_120mm_MPAB_DF_T_R",
+		"RC_4Rnd_120mm_MPAB_DF_T_R",
 		"RC_5Rnd_120mm_MPAB_DF_T_R",
 		"RC_10Rnd_120mm_MPAB_DF_T_R",
 		"RC_15Rnd_120mm_MPAB_DF_T_R",
 		"RC_20Rnd_120mm_MPAB_DF_T_R",
+
+		/*
+		"RC_2Rnd_120mm_MPAB_DF_T_G",
+		"RC_3Rnd_120mm_MPAB_DF_T_G",
+		"RC_4Rnd_120mm_MPAB_DF_T_G",
+		"RC_5Rnd_120mm_MPAB_DF_T_G",
 		"RC_10Rnd_120mm_MPAB_DF_T_G",
 		"RC_15Rnd_120mm_MPAB_DF_T_G",
 		"RC_20Rnd_120mm_MPAB_DF_T_G",
+
+		"RC_2Rnd_120mm_MPAB_DF_T_Y",
+		"RC_3Rnd_120mm_MPAB_DF_T_Y",
+		"RC_4Rnd_120mm_MPAB_DF_T_Y",
+		"RC_5Rnd_120mm_MPAB_DF_T_Y",
 		"RC_10Rnd_120mm_MPAB_DF_T_Y",
 		"RC_15Rnd_120mm_MPAB_DF_T_Y",
 		"RC_20Rnd_120mm_MPAB_DF_T_Y",
+		*/
 		
 		//Datalink Missile
 		"RC_5Rnd_120mm_DLG_cannon_missiles",

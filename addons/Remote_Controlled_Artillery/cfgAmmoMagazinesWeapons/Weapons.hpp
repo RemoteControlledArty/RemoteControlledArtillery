@@ -1,7 +1,7 @@
 class Default;
 class RC_target_confirmer: Default
 {
-	scope=2;
+	scope=1;
 	displayName="explosive charge";
 	displayNameShort="explosive charge";
 	magazines[]=
@@ -21,7 +21,7 @@ class MGun;
 class RC_FPV_Deployer: MGun
 {
 	author="Ascent";
-	scope=2;
+	scope=1;
 	displayName="deploy FPV";
 	displayNameShort="deploy FPV";
 	sounds[]=
@@ -63,7 +63,7 @@ class RC_target_confirmer_AB: RC_target_confirmer
 {
 	displayName="airburst";
 	displayNameShort="airburst";
-	scope=2;
+	scope=1;
 	canLock=2;
 	reloadTime=1;
 	magazineReloadTime=1;
@@ -2341,20 +2341,35 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_10Rnd_120mm_MP_T_R",
 		"RC_15Rnd_120mm_MP_T_R",
 		"RC_20Rnd_120mm_MP_T_R",
+		"RC_5Rnd_120mm_MP_T_G",
 		"RC_10Rnd_120mm_MP_T_G",
 		"RC_15Rnd_120mm_MP_T_G",
 		"RC_20Rnd_120mm_MP_T_G",
+		"RC_5Rnd_120mm_MP_T_Y",
 		"RC_10Rnd_120mm_MP_T_Y",
 		"RC_15Rnd_120mm_MP_T_Y",
 		"RC_20Rnd_120mm_MP_T_Y",
 
+		"RC_2Rnd_120mm_MPAB_DF_T_R",
+		"RC_3Rnd_120mm_MPAB_DF_T_R",
+		"RC_4Rnd_120mm_MPAB_DF_T_R",
 		"RC_5Rnd_120mm_MPAB_DF_T_R",
 		"RC_10Rnd_120mm_MPAB_DF_T_R",
 		"RC_15Rnd_120mm_MPAB_DF_T_R",
 		"RC_20Rnd_120mm_MPAB_DF_T_R",
+
+		"RC_2Rnd_120mm_MPAB_DF_T_G",
+		"RC_3Rnd_120mm_MPAB_DF_T_G",
+		"RC_4Rnd_120mm_MPAB_DF_T_G",
+		"RC_5Rnd_120mm_MPAB_DF_T_G",
 		"RC_10Rnd_120mm_MPAB_DF_T_G",
 		"RC_15Rnd_120mm_MPAB_DF_T_G",
 		"RC_20Rnd_120mm_MPAB_DF_T_G",
+
+		"RC_2Rnd_120mm_MPAB_DF_T_Y",
+		"RC_3Rnd_120mm_MPAB_DF_T_Y",
+		"RC_4Rnd_120mm_MPAB_DF_T_Y",
+		"RC_5Rnd_120mm_MPAB_DF_T_Y",
 		"RC_10Rnd_120mm_MPAB_DF_T_Y",
 		"RC_15Rnd_120mm_MPAB_DF_T_Y",
 		"RC_20Rnd_120mm_MPAB_DF_T_Y",
@@ -2449,20 +2464,35 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_MP_T_R",
 		"RC_15Rnd_125mm_MP_T_R",
 		"RC_20Rnd_125mm_MP_T_R",
+		"RC_5Rnd_125mm_MP_T_G",
 		"RC_10Rnd_125mm_MP_T_G",
 		"RC_15Rnd_125mm_MP_T_G",
 		"RC_20Rnd_125mm_MP_T_G",
+		"RC_5Rnd_125mm_MP_T_Y",
 		"RC_10Rnd_125mm_MP_T_Y",
 		"RC_15Rnd_125mm_MP_T_Y",
 		"RC_20Rnd_125mm_MP_T_Y",
 
+		"RC_2Rnd_125mm_MPAB_DF_T_R",
+		"RC_3Rnd_125mm_MPAB_DF_T_R",
+		"RC_4Rnd_125mm_MPAB_DF_T_R",
 		"RC_5Rnd_125mm_MPAB_DF_T_R",
 		"RC_10Rnd_125mm_MPAB_DF_T_R",
 		"RC_15Rnd_125mm_MPAB_DF_T_R",
 		"RC_20Rnd_125mm_MPAB_DF_T_R",
+
+		"RC_2Rnd_125mm_MPAB_DF_T_G",
+		"RC_3Rnd_125mm_MPAB_DF_T_G",
+		"RC_4Rnd_125mm_MPAB_DF_T_G",
+		"RC_5Rnd_125mm_MPAB_DF_T_G",
 		"RC_10Rnd_125mm_MPAB_DF_T_G",
 		"RC_15Rnd_125mm_MPAB_DF_T_G",
 		"RC_20Rnd_125mm_MPAB_DF_T_G",
+
+		"RC_2Rnd_125mm_MPAB_DF_T_Y",
+		"RC_3Rnd_125mm_MPAB_DF_T_Y",
+		"RC_4Rnd_125mm_MPAB_DF_T_Y",
+		"RC_5Rnd_125mm_MPAB_DF_T_Y",
 		"RC_10Rnd_125mm_MPAB_DF_T_Y",
 		"RC_15Rnd_125mm_MPAB_DF_T_Y",
 		"RC_20Rnd_125mm_MPAB_DF_T_Y",

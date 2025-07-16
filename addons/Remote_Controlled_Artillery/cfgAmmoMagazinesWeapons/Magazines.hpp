@@ -1396,15 +1396,24 @@ class RC_20Rnd_120mm_MP_T_Y: RC_10Rnd_120mm_MP_T_Y {count=20;};
 
 
 
-class RC_5Rnd_120mm_MPAB_DF_T_R: RC_10Rnd_120mm_MP_T_R
+class RC_2Rnd_120mm_MPAB_DF_T_R: RC_10Rnd_120mm_MP_T_R
 {
 	ammo="RC_Sh_120mm_MPAB_DF_T_R";
 	displayName="MPAB-DF-T";
 	displayNameShort="MPAB-DF-T";
-	count=5;
+	count=2;
 };
-class RC_5Rnd_120mm_MPAB_DF_T_G: RC_5Rnd_120mm_MPAB_DF_T_R {ammo="RC_Sh_120mm_MPAB_DF_T_G";};
-class RC_5Rnd_120mm_MPAB_DF_T_Y: RC_5Rnd_120mm_MPAB_DF_T_R {ammo="RC_Sh_120mm_MPAB_DF_T_Y";};
+class RC_2Rnd_120mm_MPAB_DF_T_G: RC_2Rnd_120mm_MPAB_DF_T_R {ammo="RC_Sh_120mm_MPAB_DF_T_G";};
+class RC_2Rnd_120mm_MPAB_DF_T_Y: RC_2Rnd_120mm_MPAB_DF_T_R {ammo="RC_Sh_120mm_MPAB_DF_T_Y";};
+class RC_3Rnd_120mm_MPAB_DF_T_R: RC_2Rnd_120mm_MPAB_DF_T_R {count=3;};
+class RC_3Rnd_120mm_MPAB_DF_T_G: RC_2Rnd_120mm_MPAB_DF_T_G {count=3;};
+class RC_3Rnd_120mm_MPAB_DF_T_Y: RC_2Rnd_120mm_MPAB_DF_T_Y {count=3;};
+class RC_4Rnd_120mm_MPAB_DF_T_R: RC_2Rnd_120mm_MPAB_DF_T_R {count=4;};
+class RC_4Rnd_120mm_MPAB_DF_T_G: RC_2Rnd_120mm_MPAB_DF_T_G {count=4;};
+class RC_4Rnd_120mm_MPAB_DF_T_Y: RC_2Rnd_120mm_MPAB_DF_T_Y {count=4;};
+class RC_5Rnd_120mm_MPAB_DF_T_R: RC_2Rnd_120mm_MPAB_DF_T_R {count=5;};
+class RC_5Rnd_120mm_MPAB_DF_T_G: RC_2Rnd_120mm_MPAB_DF_T_G {count=5;};
+class RC_5Rnd_120mm_MPAB_DF_T_Y: RC_2Rnd_120mm_MPAB_DF_T_Y {count=5;};
 class RC_10Rnd_120mm_MPAB_DF_T_R: RC_5Rnd_120mm_MPAB_DF_T_R {count=10;};
 class RC_10Rnd_120mm_MPAB_DF_T_G: RC_5Rnd_120mm_MPAB_DF_T_G {count=10;};
 class RC_10Rnd_120mm_MPAB_DF_T_Y: RC_5Rnd_120mm_MPAB_DF_T_Y {count=10;};
@@ -1539,15 +1548,24 @@ class RC_20Rnd_125mm_MP_T_G: RC_10Rnd_125mm_MP_T_G {count=20;};
 class RC_20Rnd_125mm_MP_T_Y: RC_10Rnd_125mm_MP_T_Y {count=20;};
 
 
-class RC_5Rnd_125mm_MPAB_DF_T_R: RC_10Rnd_125mm_MP_T_R
+class RC_2Rnd_125mm_MPAB_DF_T_R: RC_10Rnd_125mm_MP_T_R
 {
 	ammo="RC_Sh_125mm_MPAB_DF_T_R";
 	displayName="MPAB-DF-T";
 	displayNameShort="MPAB-DF-T";
-	count=5;
+	count=2;
 };
-class RC_5Rnd_125mm_MPAB_DF_T_G: RC_5Rnd_125mm_MPAB_DF_T_R {ammo="RC_Sh_125mm_MPAB_DF_T_G";};
-class RC_5Rnd_125mm_MPAB_DF_T_Y: RC_5Rnd_125mm_MPAB_DF_T_R {ammo="RC_Sh_125mm_MPAB_DF_T_Y";};
+class RC_2Rnd_125mm_MPAB_DF_T_G: RC_2Rnd_125mm_MPAB_DF_T_R {ammo="RC_Sh_125mm_MPAB_DF_T_G";};
+class RC_2Rnd_125mm_MPAB_DF_T_Y: RC_2Rnd_125mm_MPAB_DF_T_R {ammo="RC_Sh_125mm_MPAB_DF_T_Y";};
+class RC_3Rnd_125mm_MPAB_DF_T_R: RC_2Rnd_125mm_MPAB_DF_T_R {count=3;};
+class RC_3Rnd_125mm_MPAB_DF_T_G: RC_2Rnd_125mm_MPAB_DF_T_G {count=3;};
+class RC_3Rnd_125mm_MPAB_DF_T_Y: RC_2Rnd_125mm_MPAB_DF_T_Y {count=3;};
+class RC_4Rnd_125mm_MPAB_DF_T_R: RC_2Rnd_125mm_MPAB_DF_T_R {count=4;};
+class RC_4Rnd_125mm_MPAB_DF_T_G: RC_2Rnd_125mm_MPAB_DF_T_G {count=4;};
+class RC_4Rnd_125mm_MPAB_DF_T_Y: RC_2Rnd_125mm_MPAB_DF_T_Y {count=4;};
+class RC_5Rnd_125mm_MPAB_DF_T_R: RC_2Rnd_125mm_MPAB_DF_T_R {count=5;};
+class RC_5Rnd_125mm_MPAB_DF_T_G: RC_2Rnd_125mm_MPAB_DF_T_G {count=5;};
+class RC_5Rnd_125mm_MPAB_DF_T_Y: RC_2Rnd_125mm_MPAB_DF_T_Y {count=5;};
 class RC_10Rnd_125mm_MPAB_DF_T_R: RC_5Rnd_125mm_MPAB_DF_T_R {count=10;};
 class RC_10Rnd_125mm_MPAB_DF_T_G: RC_5Rnd_125mm_MPAB_DF_T_G {count=10;};
 class RC_10Rnd_125mm_MPAB_DF_T_Y: RC_5Rnd_125mm_MPAB_DF_T_Y {count=10;};
@@ -5989,7 +6007,7 @@ class RC_40Rnd_60mm_Mo_Smoke_white: RC_1Rnd_60mm_Mo_Smoke_white
 class RC_1Rnd_60mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	ammo="RC_Sh_60mm_AMOS_MP_LaserGuided";
-	RC_AimAboveHeight=135;
+	RC_AimAboveHeight=270;
 };
 class RC_2Rnd_60mm_Mo_LaserGuided: RC_1Rnd_60mm_Mo_LaserGuided
 {
@@ -6152,7 +6170,7 @@ class RC_40Rnd_60mm_Mo_LaserGuided: RC_1Rnd_60mm_Mo_LaserGuided
 class RC_1Rnd_60mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
 {
 	ammo="RC_Sh_60mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=135;
+	RC_AimAboveHeight=270;
 };
 class RC_2Rnd_60mm_Mo_MultiGuided: RC_1Rnd_60mm_Mo_MultiGuided
 {
@@ -6479,7 +6497,7 @@ class RC_40Rnd_60mm_Mo_mine: RC_1Rnd_60mm_Mo_mine
 class RC_1Rnd_60mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	ammo="RC_Sh_60mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=135;
+	RC_AimAboveHeight=270;
 };
 class RC_2Rnd_60mm_Mo_LG_DelayedFuse: RC_1Rnd_60mm_Mo_LG_DelayedFuse
 {

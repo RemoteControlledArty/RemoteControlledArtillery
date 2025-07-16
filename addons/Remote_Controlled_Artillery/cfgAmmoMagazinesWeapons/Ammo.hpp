@@ -3047,17 +3047,64 @@ class RC_MP_Warhead_Base: ShellBase
 */
 
 
+class ammo_Penetrator_MP_Guided_Base: ammo_Penetrator_Base
+{
+	warheadName="TandemHEAT";
+	airFriction=-0.01;	//to allow further submunitionoffset
+};
 //class MissileBase;
 class RC_MP_Guided_Submunition_MissleBase: MissileBase
 {
 	class Components;
 };
-class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
+class RC_MP_LaserGuided_Submunition_SteeringBase: RC_MP_Guided_Submunition_MissleBase
+{
+	//model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";	//fancier but inaccurate
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	simulationStep=0.0020000001;
+
+	trackOversteer=1;	//required to not completly miss
+	trackLead=1;
+	maneuvrability=40;	//20, required to not completly miss
+	airFriction=0.085000001;		//0.085000001 Titan AT
+	sideAirFriction=2;	//0.1
+
+	initTime=0.01;	//0.01
+	thrustTime=8;
+	thrust=120;		//300
+	maxSpeed=350;	//300
+	typicalSpeed=350;	//300
+
+	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
+	submunitionDirectionType="SubmunitionTargetDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-1};
+	triggerOnImpact=1;
+	triggerDistance=10;
+	proximityExplosionDistance=10;
+	deleteParentWhenTriggered=0;
+
+	/*
+	submunitionDirectionType="SubmunitionModelDirection";	//later test SubmunitionTargetDirection, with triggerDistance=; and proximityExplosionDistance=;
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
+	*/
+};
+class RC_MP_LaserGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_SteeringBase
 {
 	artilleryLock=0;	//1 would make submunition unable to hit vanilla firing computer gps point
 	laserLock=1;
 	autoSeekTarget=1;
 	cameraViewAvailable=1;
+
+	lockType=0;
+	weaponLockSystem="4 + 16";
+	cmImmunity=0.9;
+
 	missileLockCone=180;
 	missileKeepLockedCone=180;
 	lockSeekRadius=900;
@@ -3065,40 +3112,22 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_Guided_Submunition_MissleBase
 	missileLockMinDistance=1;	//maybe edit
 	missileLockMaxSpeed=150;
 	maxControlRange=1000;
+	//manualControl=0;
 	fuseDistance=20;
 	timeToLive=10;
-	model="\A3\Weapons_F_Tank\Ammo\Missile_ATGM_01_fly_F";
 	explosive=1;
+
+	whistleDist=60;
+	//warheadName="TandemHEAT";
+	warheadName="HE";
+	hit=165;	//submunition penetrator contains main hit value
 	aiAmmoUsageFlags="128 + 512";
+	
 	explosionSoundEffect="DefaultExplosion";
 	explosionEffects="RC_GuidedExplosion";
 	craterEffects="AAMissileCrater";
 	effectsMissileInit="";
 	muzzleEffect="";
-	simulationStep=0.0020000001;
-	trackOversteer=1;	//required to not completly miss
-	trackLead=1;
-	maneuvrability=20;	//required to not completly miss
-	airFriction=0.085000001;
-	sideAirFriction=0.1;
-	whistleDist=60;
-	lockType=0;
-	submunitionDirectionType="SubmunitionModelDirection";	//later test SubmunitionTargetDirection, with triggerDistance=; and proximityExplosionDistance=;
-	submunitionInitSpeed=1000;
-	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-	triggerOnImpact=1;
-	deleteParentWhenTriggered=0;
-	//warheadName="TandemHEAT";
-	warheadName="HE";
-	hit=165;	//submunition penetrator contains main hit value
-	initTime=0.01;
-	thrustTime=8;
-	thrust=300;
-	maxSpeed=300;
-	typicalSpeed=300;
-	weaponLockSystem="4 + 16";
-	cmImmunity=0.9;
 
 	soundFly[]=
 	{
@@ -3639,10 +3668,9 @@ class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 };
 
 
-class ammo_Penetrator_82mm_MP: ammo_Penetrator_Base
+class ammo_Penetrator_82mm_MP: ammo_Penetrator_MP_Guided_Base
 {
 	caliber=37.8;
-	warheadName="TandemHEAT";
 	hit=454.1;
 };
 class RC_82mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
@@ -3910,10 +3938,9 @@ class RC_Mine_60mm_AMOS_range: RC_Mine_82mm_AMOS_range
 };
 
 
-class ammo_Penetrator_60mm_MP: ammo_Penetrator_Base
+class ammo_Penetrator_60mm_MP: ammo_Penetrator_MP_Guided_Base
 {
 	caliber=30;
-	warheadName="TandemHEAT";
 	hit=300;
 };
 class RC_60mm_MP_LaserGuided_Submunition: RC_82mm_MP_LaserGuided_Submunition
@@ -3927,7 +3954,7 @@ class RC_60mm_MP_LaserGuided_Submunition: RC_82mm_MP_LaserGuided_Submunition
 class RC_Sh_60mm_AMOS_MP_LaserGuided: RC_Sh_82mm_AMOS_MP_LaserGuided
 {
 	submunitionAmmo="RC_60mm_MP_LaserGuided_Submunition";
-	triggerDistance=150;
+	triggerDistance=300;
 	hit=100;
 	indirectHit=60;
 	indirectHitRange=4.5;
@@ -3946,7 +3973,7 @@ class RC_60mm_MP_MultiGuided_Submunition: RC_82mm_MP_MultiGuided_Submunition
 class RC_Sh_60mm_AMOS_MP_MultiGuided: RC_Sh_82mm_AMOS_MP_MultiGuided
 {
 	submunitionAmmo="RC_60mm_MP_MultiGuided_Submunition";
-	triggerDistance=150;
+	triggerDistance=300;
 	hit=100;
 	indirectHit=60;
 	indirectHitRange=4.5;
@@ -4071,10 +4098,9 @@ class RC_Sh_105mm_AMOS_backupHEAB: RC_Sh_105mm_AMOS_HE
 };
 
 
-class ammo_Penetrator_105mm_MP: ammo_Penetrator_Base
+class ammo_Penetrator_105mm_MP: ammo_Penetrator_MP_Guided_Base
 {
 	caliber=48.4;
-	warheadName="TandemHEAT";
 	hit=581.6;
 };
 class RC_105mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
@@ -4402,10 +4428,9 @@ class RC_Sh_120mm_AMOS_backupHEAB: RC_Sh_120mm_AMOS_HE
 };
 
 
-class ammo_Penetrator_120mm_MP: ammo_Penetrator_Base
+class ammo_Penetrator_120mm_MP: ammo_Penetrator_MP_Guided_Base
 {
 	caliber=55.4;
-	warheadName="TandemHEAT";
 	hit=664.6;
 };
 class RC_120mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
@@ -4807,10 +4832,9 @@ class RC_Cluster_155mm_AMOS: Cluster_155mm_AMOS
 };
 
 
-class ammo_Penetrator_155mm_MP: ammo_Penetrator_Base
+class ammo_Penetrator_155mm_MP: ammo_Penetrator_MP_Guided_Base
 {
 	caliber=71.5;
-	warheadName="TandemHEAT";
 	hit=858.5;
 };
 class RC_155mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
@@ -5174,10 +5198,9 @@ class RC_R_230mm_Cluster: R_230mm_Cluster
 };
 
 
-class ammo_Penetrator_230mm_MP: ammo_Penetrator_Base
+class ammo_Penetrator_230mm_MP: ammo_Penetrator_MP_Guided_Base
 {
 	caliber=106.1;
-	warheadName="TandemHEAT";
 	hit=1273.8;
 };
 class RC_230mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base

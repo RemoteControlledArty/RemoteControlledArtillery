@@ -80,7 +80,6 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 	weaponLockDelay=0;
 	magazineReloadTime=2.5;
 	reloadTime=1.8;
-	//initSpeed=242.58;	//???
 
 	magazines[]=
 	{
@@ -116,8 +115,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 	{
 		displayName="CH0";
 		artilleryDispersion=1.5;
-		artilleryCharge=0.175;
-		//artilleryCharge=0.35;
+		artilleryCharge=0.2295;
 		/*
 		minRange=51;
 		midRange=393;
@@ -127,8 +125,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 	class Single2: Single1
 	{
 		displayName="CH1";
-		artilleryCharge=0.234;
-		//artilleryCharge=0.417;
+		artilleryCharge=0.2933;
 		/*
 		minRange=72;
 		midRange=557.5;
@@ -138,8 +135,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 	class Single3: Single1
 	{
 		displayName="CH2";
-		artilleryCharge=0.313;
-		//artilleryCharge=0.497;
+		artilleryCharge=0.3748;
 		/*
 		minRange=103;
 		midRange=792.5;
@@ -149,8 +145,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 	class Single4: Single1
 	{
 		displayName="CH3";
-		artilleryCharge=0.418;
-		//artilleryCharge=0.592;
+		artilleryCharge=0.4791;
 		/*
 		minRange=142;
 		midRange=1122;
@@ -160,8 +155,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 	class Single5: Single1
 	{
 		displayName="CH4";
-		artilleryCharge=0.559;
-		//artilleryCharge=0.705;
+		artilleryCharge=0.6122;
 		/*
 		minRange=208;
 		midRange=1595;
@@ -171,8 +165,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 	class Single6: Single1
 	{
 		displayName="CH5";
-		artilleryCharge=0.748;
-		//artilleryCharge=0.84;
+		artilleryCharge=0.7825;
 		/*
 		minRange=295;
 		midRange=2264;

@@ -184,7 +184,7 @@ class cfgMagazines
 	{
 		ammo="RC_target_confirmer_AB_ammo";
 		initSpeed=1;
-		scope=2;
+		scope=1;
 		count=1;
 	};
 	class RC_shapedcharge_reticle_AB_mag: RC_target_confirmer_AB_mag
@@ -225,7 +225,7 @@ class cfgWeapons
 	{
 		displayName="MP airburst";
 		displayNameShort="MP airburst";
-		scope=2;
+		scope=1;
 		canLock=2;
 		weaponLockDelay=0;
 		//ballisticsComputer=8;	//8 reticle for shaped charge airburst; requires maxControlRange=0;

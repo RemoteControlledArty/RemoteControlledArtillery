@@ -2,7 +2,7 @@ magazines[]=
 {
 	"RC_20Rnd_125mm_APFSDS_T_Y",
 	"RC_15Rnd_125mm_MP_T_Y",
-	"RC_5Rnd_125mm_MPAB_DF_T_R",
+	"RC_3Rnd_125mm_MPAB_DF_T_R",
 	"RC_3Rnd_125mm_DLG_cannon_missiles",
 	"RC_200Rnd_93x64_T_Y",
 	"RC_200Rnd_93x64_T_Y",

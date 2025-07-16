@@ -31,7 +31,7 @@ class RC_ULM_1Rnd_60mm_Mo_shells: RC_1Rnd_60mm_vic_Mo_shells
 class RC_1Rnd_60mm_vic_Mo_HEAB;
 class RC_ULM_1Rnd_60mm_Mo_HEAB: RC_1Rnd_60mm_vic_Mo_HEAB
 {
-	displayName="60mm HE-AB 7m";
+	displayName="60mm HE Airburst 7m";
 	ammo="RC_ULM_Sh_60mm_AMOS_HEAB";
 	#include "\RC_60mmULM\includes_cfg\magValues_Exp.hpp"
 };
@@ -102,6 +102,7 @@ class RC_ULM_1Rnd_60mm_Mo_Illum: RC_1Rnd_60mm_vic_Mo_Flare_white
 {
 	displayName="60mm Illumination";
 	ammo="RC_ULM_Sh_60mm_AMOS_HEAB";
+	RC_AimAboveHeight=300;
 	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
 	model="\twc_2inch\twc_2inch_shell_illum.p3d";
 	picture="\twc_2inch\data\ui\m_smoke_ca.paa";
