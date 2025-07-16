@@ -118,12 +118,23 @@ class RscInGameUI
 	class Rsc_ULM: RscWeaponRangeArtillery {};
 };
 
-/*
+
+class CfgMineTriggers
+{
+	class RangeTriggerBounding;
+	class RC_ULM_RangeTriggerBounding: RangeTriggerBounding
+	{
+		mineTriggerRange=12;	//3		//12m is the same as 60mm HE indirectHit radius
+		mineTriggerActivationRange=20;	//5
+		restrictZoneRadius=20;	//5
+	};
+};
+
+
 class CfgAmmo
 {
 	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
-*/
 class CfgMagazines
 {
 	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"

@@ -38,6 +38,7 @@ _smokeCount = {_x == "RC_ULM_1Rnd_60mm_Mo_Smoke"} count _magazines;
 _MpMgCount = {_x == "RC_ULM_1Rnd_60mm_Mo_MultiGuided"} count _magazines;
 _MpLgCount = {_x == "RC_ULM_1Rnd_60mm_Mo_LaserGuided"} count _magazines;
 _MpLgDfCount = {_x == "RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse"} count _magazines;
+_MpLgDfCount = {_x == "RC_ULM_1Rnd_MP_NLOS_Nano"} count _magazines;
 
 _mineCount = {_x == "RC_ULM_1Rnd_60mm_Mo_mine"} count _magazines;
 _IllumCount = {_x == "RC_ULM_1Rnd_60mm_Mo_Illum"} count _magazines;
@@ -54,6 +55,7 @@ switch (_loadedMag) do
 	case "RC_ULM_1Rnd_60mm_Mo_MultiGuided": {_MpMgCount = _MpMgCount + 1};
 	case "RC_ULM_1Rnd_60mm_Mo_LaserGuided": {_MpLgCount = _MpLgCount + 1};
 	case "RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse": {_MpLgDfCount = _MpLgDfCount + 1};
+	case "RC_ULM_1Rnd_MP_NLOS_Nano": {_MpLgDfCount = _MpLgDfCount + 1};
 
 	case "RC_ULM_1Rnd_60mm_Mo_mine": {_mineCount = _mineCount + 1};
 	case "RC_ULM_1Rnd_60mm_Mo_Illum": {_IllumCount = _IllumCount + 1};
@@ -69,6 +71,7 @@ for "_i" from 1 to _smokeCount do {_mortar addMagazineTurret ["RC_ULM_1Rnd_60mm_
 for "_i" from 1 to _MpMgCount do {_mortar addMagazineTurret ["RC_ULM_1Rnd_60mm_Mo_MultiGuided", [0]];};
 for "_i" from 1 to _MpLgCount do {_mortar addMagazineTurret ["RC_ULM_1Rnd_60mm_Mo_LaserGuided", [0]];};
 for "_i" from 1 to _MpLgDfCount do {_mortar addMagazineTurret ["RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse", [0]];};
+for "_i" from 1 to _MpLgDfCount do {_mortar addMagazineTurret ["RC_ULM_1Rnd_MP_NLOS_Nano", [0]];};
 
 for "_i" from 1 to _mineCount do {_mortar addMagazineTurret ["RC_ULM_1Rnd_60mm_Mo_mine", [0]];};
 for "_i" from 1 to _IllumCount do {_mortar addMagazineTurret ["RC_ULM_1Rnd_60mm_Mo_Illum", [0]];};

@@ -249,11 +249,13 @@ RC_ULM_UI = [] spawn {
 			};
 			
 			// checks if camera needs to be raised into sky to not deploy submunitions too early
+			/*
 			private _terrainWarning = RC_TerrainWarningHash get _currentMag;
 			if (isNil "_terrainWarning") then {
 				_terrainWarning = (getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_TerrainWarning"))==1;
 				RC_TerrainWarningHash set [_currentMag, _terrainWarning];
 			};
+			*/
 
 			//UV Pos
 			_artyPos = getPosASL _uav;
@@ -275,7 +277,8 @@ RC_ULM_UI = [] spawn {
 				// Else use the Look Vector
 				_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
 				// Show Submunition Warning when looking at Terrain
-				{ (_display displayCtrl _x) ctrlShow _terrainWarning } forEach [1013, 1014];
+				//{ (_display displayCtrl _x) ctrlShow _terrainWarning } forEach [1013, 1014];
+				{ (_display displayCtrl _x) ctrlShow false } forEach [1013, 1014];
 				// Show Lock Requirement Warning when having no Target selected
 				{ (_display displayCtrl _x) ctrlShow (_requiresLock && _noTargetOrTargetTooClose) } forEach [1015, 1016];
 			};
@@ -387,7 +390,7 @@ RC_ULM_UI = [] spawn {
 				_travelTimeLow = round (((2 * _roundVelocity) * (sin _calcLow)) / GRAVITY);
 
 				// AZ/EL coloring when close to firing solution
-				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\temporary_coloring_workaround.sqf"
+				#include "\RC_60mmULM\functions\temporary_coloring_workaround_ULM.sqf"
 				//#include "\Remote_Controlled_Artillery\functions\UILoop_includes\MIL_coloring.sqf"
 				
 				// shows if its not, almost, or fully aligned

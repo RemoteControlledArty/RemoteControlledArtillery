@@ -36,6 +36,7 @@ class RC_60mm_ULM_Bag: RC_60mm_ULM_Bag_Base
 		"RC_ULM_1Rnd_60mm_Mo_MultiGuided",
 		"RC_ULM_1Rnd_60mm_Mo_LaserGuided",
 		"RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse",
+		"RC_ULM_1Rnd_MP_NLOS_Nano",
 
 		"RC_ULM_1Rnd_60mm_Mo_mine",
 		"RC_ULM_1Rnd_60mm_Mo_Illum"
@@ -75,6 +76,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 		"RC_ULM_1Rnd_60mm_Mo_MultiGuided",
 		"RC_ULM_1Rnd_60mm_Mo_LaserGuided",
 		"RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse",
+		"RC_ULM_1Rnd_MP_NLOS_Nano",
 		
 		"RC_ULM_1Rnd_60mm_Mo_mine",
 		"RC_ULM_1Rnd_60mm_Mo_Illum"
@@ -91,7 +93,8 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 		"Single7",
 		"Burst1",
 		"Burst2",
-		"Burst3"
+		"Burst3",
+		"Cruise"
 	};
 	class Single1: Single1
 	{
@@ -168,6 +171,20 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 		minRange=418;
 		midRange=3209;
 		maxRange=6000;
+		*/
+	};
+	class Cruise: Single1
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+		artilleryCharge=1.1;
+		/*
+		minRange=200;
+		minRangeProbab=0.40000001;
+		midRange=2000;
+		midRangeProbab=0.89999998;
+		maxRange=4000;
+		maxRangeProbab=0.94999999;
 		*/
 	};
 

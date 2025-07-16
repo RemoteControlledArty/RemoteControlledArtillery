@@ -2041,6 +2041,40 @@ class RC_IFV_AA: RC_IFV_AA_Base
 		};
 	};
 };
+class ammo_Penetrator_Nano_MP: ammo_Penetrator_Base
+{
+	caliber=30;
+	warheadName="TandemHEAT";
+	hit=300;
+	airFriction=-0.01;	//to allow further submunitionoffset
+};
+class RC_MP_NLOS_Nano: RC_IFV_MP_NLOS
+{
+	//model="";
+	//craterEffects="AAMissileCrater";
+	indirectHit=40;
+	indirectHitRange=12;
+	submunitionAmmo="ammo_Penetrator_Nano_MP";
+
+	delete Direct;
+
+	flightProfiles[]=
+	{
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=50;
+		lockDistanceToTarget=100;
+	};
+
+	//initTime=8;
+	autoSeekTarget=1;	 //unlear if it works in this context
+	manualControl=0;
+	//missileLockMaxSpeed=35;
+	//weaponLockSystem="1 + 2 + 4 + 16";
+	//cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
+};
 /*
 class RC_AA_NLOS: RC_IFV_AA
 {
@@ -3480,7 +3514,7 @@ class RC_SmokeShellArty: SmokeShellArty
 {
 	deflecting=0;
 	explosionTime=0.2;
-	timeToLive=120;
+	timeToLive=180;
 };
 class Smoke_120mm_AMOS_White;
 class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
@@ -3517,14 +3551,18 @@ class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 
 
 /*
-//makes game close when going close to mine... removed until fixed
-class RangeTriggerBounding;
-class RC_RangeTriggerBounding: RangeTriggerBounding
+NEEDS TO BE own cfg like:
+class CfgMineTriggers
 {
-	mineTriggerRange=6;
-	mineTriggerActivationRange=10;
-	restrictZoneRadius=10;
+	class RangeTriggerBounding;
+	class RC_RangeTriggerBounding: RangeTriggerBounding
+	{
+		mineTriggerRange=9;	//3
+		mineTriggerActivationRange=15;	//5
+		restrictZoneRadius=15;	//5
+	};
 };
+//test if triggers from to far like without LOS
 */
 class APERSBoundingMine_Range_Ammo;
 class RC_APERSBoundingMine_Range_Ammo: APERSBoundingMine_Range_Ammo
@@ -3805,12 +3843,16 @@ class RC_Sh_40mm_AMOS_HE: RC_G_40mm_HEDP
 class RC_Sh_60mm_AMOS_submunition: RC_Sh_82mm_AMOS_submunition
 {
 	craterEffects="RC_60mmAirburstDust";
+	hit=100;
+	indirectHit=40;
+	indirectHitRange=12;
+	cost=100;
 };
 class RC_60mm_HEAB_Shell_Base: RC_82mm_HEAB_Shell_Base
 {
 	hit=100;
-	indirectHit=30;
-	indirectHitRange=10;
+	indirectHit=40;
+	indirectHitRange=12;
 	cost=100;
 };
 class RC_Sh_60mm_AMOS_HEAB: RC_60mm_HEAB_Shell_Base

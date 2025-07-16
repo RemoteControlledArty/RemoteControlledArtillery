@@ -302,9 +302,9 @@ class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
 
 		minRange=200;
 		minRangeProbab=0.40000001;
-		midRange=1500;
+		midRange=2000;
 		midRangeProbab=0.89999998;
-		maxRange=3000;
+		maxRange=4000;
 		maxRangeProbab=0.94999999;
 	};
 };
