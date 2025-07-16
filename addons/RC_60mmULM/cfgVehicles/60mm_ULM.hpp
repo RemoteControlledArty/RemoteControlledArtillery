@@ -17,6 +17,11 @@ class StaticMortar: StaticWeapon
 		};
 	};
 };
+class twc_2inch_vehicle: StaticMortar
+{
+	scope=0;
+	scopeCurator=0;
+};
 class RC_ULM_Core: StaticMortar
 {
 	features="Randomization: No						<br />Camo selections: 1 - the whole weapon with pod						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: Just the weapon						<br />Slingload: No						<br />Cargo proxy indexes: None";

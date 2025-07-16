@@ -1,11 +1,24 @@
-
-/*class Launcher_Base_F;
-class RC_60mm_ULM_Bag_Base: Launcher_Base_F
+class Launcher;
+class Launcher_Base_F: Launcher
 {
 	class WeaponsSlotsInfo;
-	scope=0;
 };
-*/
+class twc_2inch_bag: Launcher_Base_F
+{
+	scope=0;
+	scopeArsenal=0;
+	displayname="60mm COMMANDO Mortar";
+	model="twc_2inch\twc_2inch_bag.p3d";
+	picture="\twc_2inch\data\ui\w_2inch_ca.paa";
+	UiPicture="\A3\Weapons_F\Data\UI\icon_at_CA.paa";
+	magazines[]={};
+	handAnim[]={};
+	class weaponSlotsInfo: WeaponsSlotsInfo
+	{
+		mass=50;
+	};
+};
+/*
 class twc_2inch_bag;
 class RC_60mm_ULM_Bag_Base: twc_2inch_bag
 {
@@ -13,7 +26,8 @@ class RC_60mm_ULM_Bag_Base: twc_2inch_bag
 	scope=0;
 	scopeArsenal=0;
 };
-class RC_60mm_ULM_Bag: RC_60mm_ULM_Bag_Base
+*/
+class RC_60mm_ULM_Bag: twc_2inch_bag
 {
 	author="Ascent";
 	displayname="advanced 60mm Mortar";
