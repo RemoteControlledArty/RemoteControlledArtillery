@@ -30,8 +30,8 @@ class RC_60mm_ULM_Bag_Base: twc_2inch_bag
 class RC_60mm_ULM_Bag: twc_2inch_bag
 {
 	author="Ascent";
-	displayname="advanced 60mm Mortar";
-	displayNameShort="advanced 60mm Mortar";
+	displayname="60mm advanced Mortar";
+	displayNameShort="60mm advanced Mortar";
 	scope=2;
 	scopeArsenal=2;
 
@@ -71,7 +71,7 @@ class RC_60mm_ULM_Weapon_Base: mortar_82mm_base
 };
 class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 {
-	displayname="advanced 60mm Mortar";
+	displayname="60mm advanced Mortar";
 	displayNameShort="60mm Mortar";
 	ballisticsComputer=0;	//8 is direct fire reticle for highest charge
 	canLock=2;
