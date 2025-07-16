@@ -396,10 +396,10 @@ RC_ULM_UI = [] spawn {
 				// shows if its not, almost, or fully aligned
 				switch (true) do {
 					case(
-						(_realElevation < (_highAngleSol + 0.3)) and
-						(_realElevation > (_highAngleSol - 0.3)) and
-						(_realAzimuth < (_targetAzimuth + 0.3)) and
-						(_realAzimuth > (_targetAzimuth - 0.3))
+						(_realElevation < (_highAngleSol + 0.5)) and
+						(_realElevation > (_highAngleSol - 0.5)) and
+						(_realAzimuth < (_targetAzimuth + 0.5)) and
+						(_realAzimuth > (_targetAzimuth - 0.5))
 					): {
 						_ctrlMessage ctrlSetTextColor [0,1,0,1];
 						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
@@ -407,10 +407,10 @@ RC_ULM_UI = [] spawn {
 					};
 
 					case(
-						(_realElevation < (_lowAngleSol + 0.3)) and
-						(_realElevation > (_lowAngleSol - 0.3)) and
-						(_realAzimuth < (_targetAzimuth + 0.3)) and
-						(_realAzimuth > (_targetAzimuth - 0.3))
+						(_realElevation < (_lowAngleSol + 0.5)) and
+						(_realElevation > (_lowAngleSol - 0.5)) and
+						(_realAzimuth < (_targetAzimuth + 0.5)) and
+						(_realAzimuth > (_targetAzimuth - 0.5))
 					): {
 						_ctrlMessage ctrlSetTextColor [0,1,0,1];
 						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
