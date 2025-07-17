@@ -25,6 +25,7 @@ class CfgMagazines
 	class 130Rnd_338_Mag;
 	class RC_QIN_150Rnd_338_T_R: 130Rnd_338_Mag
 	{
+		scope=1;
 		ammo="RC_QIN_338_T_R";
 		displayName=".338 NM";
 		displayNameShort=".338 NM";
