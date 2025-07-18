@@ -101,7 +101,7 @@ class RC_1Rnd_60mm_vic_Mo_Flare_white;
 class RC_ULM_1Rnd_60mm_Mo_Illum: RC_1Rnd_60mm_vic_Mo_Flare_white
 {
 	displayName="60mm Illumination";
-	ammo="RC_ULM_Sh_60mm_AMOS_HEAB";
+	ammo="RC_ULM_Sh_60mm_AMOS_Illum";
 	RC_AimAboveHeight=300;
 	#include "\RC_60mmULM\includes_cfg\magValues.hpp"
 	model="\twc_2inch\twc_2inch_shell_illum.p3d";
