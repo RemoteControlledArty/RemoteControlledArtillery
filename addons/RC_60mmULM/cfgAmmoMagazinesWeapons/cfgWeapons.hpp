@@ -36,6 +36,8 @@ class RC_60mm_ULM_Bag: twc_2inch_bag
 	displayNameShort="60mm advanced Mortar";
 	scope=2;
 	scopeArsenal=2;
+	magazineReloadTime=2.5;
+	reloadTime=1.8;
 
 	model="twc_2inch\twc_2inch_bag.p3d";
 	picture="\twc_2inch\data\ui\w_2inch_ca.paa";
