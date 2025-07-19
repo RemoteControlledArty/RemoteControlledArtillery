@@ -29,6 +29,7 @@ private _uavNew = _uavSpawn select 0;
     //_uavNew setVectorDirAndUp [[0,0,-1], [0,1,0]];    //freezes it for unknown reason
 	sleep 1;
 	player connectTerminalToUAV _uavNew;
-	driver _uavNew switchCamera "Internal";
-	player remoteControl driver _uavNew;
+	player action ["UAVTerminalOpen", player];
+	//driver _uavNew switchCamera "Internal";
+	//player remoteControl driver _uavNew;
 };
