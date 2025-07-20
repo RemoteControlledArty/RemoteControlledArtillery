@@ -123,8 +123,6 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 		};
 	};
 };
-
-
 class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 {
 	class EventHandlers: EventHandlers
@@ -186,6 +184,46 @@ class RC_Stryker_M1126_M2_A_B: RC_Stryker_M1126_M2_D_B
 		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_od_co.paa"
 	};
 };
+/*
+class RC_Stryker_M1126_M2_Javelin_WD_B: RC_Stryker_M1126_M2_WD_B
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Javelin
+		{
+			//init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.355, -0.87, 0.04]];};";
+			
+			displayName="M1126 Stryker M2 Javelin";
+			
+			init="if (!isserver) exitwith {}; \
+			(_this select 0) spawn { \
+			_javelin = 'item_rhs_fgm148_magazine_AT' createVehicle [0,0,0]; \
+			_javelin attachTo [vehicle player, [0.34, -0.05, -0.13], 'konec hlavne', true]; \
+			_javelin = 90; _pitch = 0; _roll = 20; \
+			_javelin setVectorDirAndUp [ \
+				[sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch], \
+				[[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D \
+			]; \
+			};";
+			*/
+
+			/*
+			private _javelin = "item_rhs_fgm148_magazine_AT" createVehicle _this;
+			//_javelin attachTo [vehicle player, [0, 0, 0], "usti hlavne", true];
+			_javelin attachTo [vehicle player, [0.34, -0.05, -0.13], "konec hlavne", true];
+
+			_javelin = 90; _pitch = 0; _roll = 20;
+			_javelin setVectorDirAndUp [
+				[sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch],
+				[[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D
+			];
+			*/
+
+			/*
+		};
+	};
+};
+/*
 
 
 class RC_Stryker_M1126_M2_WD_I: RC_Stryker_M1126_M2_WD_B
