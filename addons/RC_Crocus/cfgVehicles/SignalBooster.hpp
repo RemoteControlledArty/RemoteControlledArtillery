@@ -3,7 +3,7 @@ class FPV_Retranslator: SatelliteAntenna_01_Small_Olive_F
 {
 	scope=2;
 	scopeCurator=2;
-	displayName="Crocus Signal Booster [Antenna]";
+	displayName="Crocus Signal Booster [Static]";
 
 	class assembleInfo
 	{
@@ -19,7 +19,7 @@ class FPV_Retranslator: SatelliteAntenna_01_Small_Olive_F
 };
 class B_Crocus_SignalBooster_Bag: B_Crocus_MP_Bag
 {
-	displayName="Crocus Signal Booster [Antenna]";
+	displayName="Crocus Signal Booster [Static]";
 	mass=60;	//2.75kg
 
 	class assembleInfo: assembleInfo
