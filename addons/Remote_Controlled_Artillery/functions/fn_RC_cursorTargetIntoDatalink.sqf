@@ -43,7 +43,7 @@
 				private _uav = getConnectedUAV player;
 				if ((_uav isKindOf 'RC_UAV_base') or (_uav isKindOf 'RC_GrenadeDropper_Base') or (_uav isKindOf 'B_Crocus_MP_Base') or (_uav isKindOf 'RC_FPV_Mothership_Base')) then {
 					private _target = cursorTarget;
-					private _distance = _target distance _vehicle;	//make dependant on zoom and target type
+					private _distance = _target distance _uav;	//make dependant on zoom and target type
 					if (!isNull _target && alive _target && (_distance <= 4000)) then {
 						private _side = side player;
 						private _targetSide = side _target;
@@ -70,7 +70,7 @@
 				private _currentMag = _uav currentMagazineTurret (_uav unitTurret gunner _uav);
 				if ((_currentMag find 'HEAB' != -1) or (_currentMag find 'MPAB' != -1) or (_currentMag find 'HVKEM' != -1)) then {
 					private _target = cursorTarget;
-					private _distance = _target distance _vehicle;	//make dependant on zoom and target type
+					private _distance = _target distance _uav;	//make dependant on zoom and target type
 					if (!isNull _target && alive _target && (_distance <= 4000)) then {
 						private _side = side player;
 						if (_target isKindOf "StaticWeapon" && RC_AB_StaticConfirming) then {
