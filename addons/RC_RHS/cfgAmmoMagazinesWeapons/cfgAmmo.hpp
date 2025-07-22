@@ -243,7 +243,6 @@ class RC_RHS_ammo_TOW2A_AT: rhs_ammo_TOW2A_AT
 	irLock=1;
 	airLock=1;
 };
-
 class rhs_ammo_TOW2_BB;
 class RC_RHS_ammo_TOW2_BB: rhs_ammo_TOW2_BB
 {
@@ -252,20 +251,52 @@ class RC_RHS_ammo_TOW2_BB: rhs_ammo_TOW2_BB
 	airLock=1;
 };
 
+
 class RC_IFV_MP_NLOS;
+class RC_IFV_MP_LOS;
 class RC_TOW_MP_NLOS: RC_IFV_MP_NLOS
 {
 	effectsMissile="RHS_Missile2";
 	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
-	soundFly[] = {"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
+	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
 };
+class RC_TOW_MP_LOS: RC_IFV_MP_LOS
+{
+	effectsMissile="RHS_Missile2";
+	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
+	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
+};
+
+
+class RC_Javelin_MP_NLOS: RC_IFV_MP_NLOS
+{
+	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
+	effectsMissile="missile2";
+	effectsMissileInit="RocketBackEffectsRPG";
+	effectsSmoke="SmokeShellWhite";
+};
+class RC_Javelin_MP_LOS: RC_IFV_MP_LOS
+{
+	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
+	effectsMissile="missile2";
+	effectsMissileInit="RocketBackEffectsRPG";
+	effectsSmoke="SmokeShellWhite";
+};
+
 
 class RC_IFV_AA;
 class RC_TOW_AA: RC_IFV_AA
 {
 	effectsMissile="RHS_Missile2";
 	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
-	soundFly[] = {"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
+	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
+};
+class RC_Javelin_AA: RC_IFV_AA
+{
+	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
+	effectsMissile="missile2";
+	effectsMissileInit="RocketBackEffectsRPG";
+	effectsSmoke="SmokeShellWhite";
 };
 
 
@@ -277,7 +308,6 @@ class RC_RHS_ammo_127x99_Ball: rhs_ammo_127x99_Ball
 	irLock=1;
 	airLock=1;
 };
-
 class rhs_ammo_127x99_Ball_Tracer_Red;
 class RC_RHS_ammo_127x99_Ball_T_R: rhs_ammo_127x99_Ball_Tracer_Red
 {
@@ -286,7 +316,6 @@ class RC_RHS_ammo_127x99_Ball_T_R: rhs_ammo_127x99_Ball_Tracer_Red
 	airLock=1;
 	tracerStartTime=0.04;
 };
-
 class rhs_ammo_127x99_SLAP;
 class RC_RHS_ammo_127x99_SLAP: rhs_ammo_127x99_SLAP
 {
@@ -294,7 +323,6 @@ class RC_RHS_ammo_127x99_SLAP: rhs_ammo_127x99_SLAP
 	irLock=1;
 	airLock=1;
 };
-
 class rhs_ammo_127x99_SLAP_Tracer_Red;
 class RC_RHS_mag_100rnd_127x99_SLAP_T_R: rhs_ammo_127x99_SLAP_Tracer_Red
 {
@@ -303,7 +331,6 @@ class RC_RHS_mag_100rnd_127x99_SLAP_T_R: rhs_ammo_127x99_SLAP_Tracer_Red
 	airLock=1;
 	tracerStartTime=0.04;
 };
-
 class RC_RHS_ammo_127x99_Ball_T_R_nonlock: RC_RHS_ammo_127x99_Ball_T_R
 {
 	laserLock=0;

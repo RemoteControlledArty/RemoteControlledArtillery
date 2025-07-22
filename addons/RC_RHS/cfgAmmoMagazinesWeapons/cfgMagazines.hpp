@@ -205,20 +205,44 @@ class RC_RHS_mag_2Rnd_TOW2A: rhs_mag_2Rnd_TOW2A
 {
 	ammo="RC_RHS_ammo_TOW2A_AT";
 };
-
 class rhs_mag_2Rnd_TOW2BB;
 class RC_RHS_mag_2Rnd_TOW2BB: rhs_mag_2Rnd_TOW2BB
 {
 	ammo="RC_RHS_ammo_TOW2_BB";
 };
 
+
 class RC_2Rnd_IFV_MP_NLOS;
+class RC_2Rnd_IFV_MP_LOS;
 class RC_2Rnd_TOW_MP_NLOS: RC_2Rnd_IFV_MP_NLOS
 {
 	ammo="RC_TOW_MP_NLOS";
 	displayName="TOW NLOS";
 	displayNameShort="TOW NLOS";
 };
+class RC_2Rnd_TOW_MP_LOS: RC_2Rnd_IFV_MP_LOS
+{
+	ammo="RC_TOW_MP_LOS";
+	displayName="TOW";
+	displayNameShort="TOW";
+};
+
+
+class RC_1Rnd_Javelin_MP_NLOS: RC_2Rnd_IFV_MP_NLOS
+{
+	ammo="RC_Javelin_MP_NLOS";
+	displayName="Javelin NLOS";
+	displayNameShort="Javelin NLOS";
+	count=1;
+};
+class RC_1Rnd_Javelin_MP_LOS: RC_2Rnd_IFV_MP_LOS
+{
+	ammo="RC_Javelin_MP_LOS";
+	displayName="Javelin";
+	displayNameShort="Javelin";
+	count=1;
+};
+
 
 class RC_2Rnd_IFV_AA;
 class RC_2Rnd_TOW_AA: RC_2Rnd_IFV_AA
@@ -226,6 +250,13 @@ class RC_2Rnd_TOW_AA: RC_2Rnd_IFV_AA
 	ammo="RC_TOW_AA";
 	displayName="TOW AA";
 	displayNameShort="TOW AA";
+};
+class RC_1Rnd_Javelin_AA: RC_2Rnd_IFV_AA
+{
+	ammo="RC_Javelin_AA";
+	displayName="Javelin AA";
+	displayNameShort="Javelin AA";
+	count=1;
 };
 
 

@@ -10,12 +10,14 @@
 					if (!isNull _target && alive _target && (_distance <= 6000)) then {
 						private _side = side player;
 						if (_target isKindOf "StaticWeapon" && RC_AB_StaticConfirming) then {
-							[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
+							[_side,[_target, 300]] remoteExec ["reportRemoteTarget", _side];
 						} else {
-							if (_target isKindOf "Man" && RC_AB_InfConfirming) then {
-								[_side,[_target, 8]] remoteExec ["reportRemoteTarget", _side];
+							if ((_target isKindOf "LandVehicle" or _target isKindOf "Air" or _target isKindOf "Ship") && RC_AB_VicConfirming) then {
+								[_side,[_target, 20]] remoteExec ["reportRemoteTarget", _side];
 							} else {
-								[_side,[_target, 12]] remoteExec ["reportRemoteTarget", _side];
+								if (_target isKindOf "Man" && RC_AB_InfConfirming) then {
+									[_side,[_target, 10]] remoteExec ["reportRemoteTarget", _side];
+								};
 							};
 						};
 					};
@@ -27,12 +29,14 @@
 						if (!isNull _target && alive _target && (_distance <= 4000)) then {
 							private _side = side player;
 							if (_target isKindOf "StaticWeapon" && RC_AB_StaticConfirming) then {
-								[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
+								[_side,[_target, 300]] remoteExec ["reportRemoteTarget", _side];
 							} else {
-								if (_target isKindOf "Man" && RC_AB_InfConfirming) then {
-									[_side,[_target, 8]] remoteExec ["reportRemoteTarget", _side];
+									if ((_target isKindOf "LandVehicle" or _target isKindOf "Air" or _target isKindOf "Ship") && RC_AB_VicConfirming) then {
+									[_side,[_target, 20]] remoteExec ["reportRemoteTarget", _side];
 								} else {
-									[_side,[_target, 12]] remoteExec ["reportRemoteTarget", _side];
+									if (_target isKindOf "Man" && RC_AB_InfConfirming) then {
+										[_side,[_target, 10]] remoteExec ["reportRemoteTarget", _side];
+									};
 								};
 							};
 						};
@@ -48,20 +52,13 @@
 						private _side = side player;
 						private _targetSide = side _target;
 						if (_target isKindOf "StaticWeapon" && RC_UAV_StaticReporting) then {
-							[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
-							if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
-								[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
-							};
+							[_side,[_target, 300]] remoteExec ["reportRemoteTarget", _side];
 						} else {
-							if (_target isKindOf "Man" && RC_UAV_InfReporting) then {
-								[_side,[_target, 8]] remoteExec ["reportRemoteTarget", _side];
-								if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
-									[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
-								};
+							if ((_target isKindOf "LandVehicle" or _target isKindOf "Air" or _target isKindOf "Ship") && RC_UAV_VicReporting) then {
+								[_side,[_target, 20]] remoteExec ["reportRemoteTarget", _side];
 							} else {
-								[_side,[_target, 12]] remoteExec ["reportRemoteTarget", _side];
-								if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
-									[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
+								if (_target isKindOf "Man" && RC_UAV_InfReporting) then {
+									[_side,[_target, 10]] remoteExec ["reportRemoteTarget", _side];
 								};
 							};
 						};
@@ -74,12 +71,14 @@
 					if (!isNull _target && alive _target && (_distance <= 4000)) then {
 						private _side = side player;
 						if (_target isKindOf "StaticWeapon" && RC_AB_StaticConfirming) then {
-							[_side,[_target, 180]] remoteExec ["reportRemoteTarget", _side];
+							[_side,[_target, 300]] remoteExec ["reportRemoteTarget", _side];
 						} else {
-							if (_target isKindOf "Man" && RC_AB_InfConfirming) then {
-								[_side,[_target, 8]] remoteExec ["reportRemoteTarget", _side];
+							if ((_target isKindOf "LandVehicle" or _target isKindOf "Air" or _target isKindOf "Ship") && RC_AB_VicConfirming) then {
+								[_side,[_target, 20]] remoteExec ["reportRemoteTarget", _side];
 							} else {
-								[_side,[_target, 12]] remoteExec ["reportRemoteTarget", _side];
+								if (_target isKindOf "Man" && RC_AB_InfConfirming) then {
+									[_side,[_target, 10]] remoteExec ["reportRemoteTarget", _side];
+								};
 							};
 						};
 					};
@@ -88,3 +87,10 @@
 		};
     }] call BIS_fnc_addStackedEventHandler;
 };
+
+
+/*
+if (([_targetSide, _side] call BIS_fnc_sideIsEnemy) && (_targetSide != civilian)) then {
+	[_target, [_side, true]] remoteExec ["confirmSensorTarget", _side];
+};
+*/

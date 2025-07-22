@@ -181,6 +181,17 @@
 ] call CBA_fnc_addSetting;
 
 [
+    "RC_AB_VicConfirming",
+    "CHECKBOX",
+    ["allow airburst on enemy vehicles", "AB ammo requires a confirmed target, if AB loaded pressing LOCK TARGET briefly confirms enemy vehicles as target, alternative if off is lasing by commander."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
     "RC_AB_InfConfirming",
     "CHECKBOX",
     ["allow airburst on enemy infantry", "AB ammo requires a confirmed target, if AB loaded pressing LOCK TARGET briefly confirms enemy infantry as target, alternative if off is lasing by commander."],
@@ -194,7 +205,18 @@
 [
     "RC_UAV_StaticReporting",
     "CHECKBOX",
-    ["allow enemy static reporting by UAV", "For AR-1/AR-3 pressing LOCK TARGET reports enemy statics into datalink for 3min, to improve situational awareness & coordination."],
+    ["allow enemy static reporting by UAV", "For AR-1/1.5/3 pressing LOCK TARGET reports enemy statics into datalink for 3min, to improve situational awareness & coordination."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "RC_UAV_VicReporting",
+    "CHECKBOX",
+    ["allow (brief) enemy vehicle reporting by UAV", "For AR-1/1.5/3 pressing LOCK TARGET briefly reports enemy vehicles into datalink, to improve situational awareness & coordination."],
     ["RC Modernized Vehicles"],
     true,
     true,
@@ -205,7 +227,7 @@
 [
     "RC_UAV_InfReporting",
     "CHECKBOX",
-    ["allow (brief) enemy infantry reporting by UAV", "For AR-1/AR-3 pressing LOCK TARGET briefly reports enemy infantry into datalink, to improve situational awareness & coordination."],
+    ["allow (brief) enemy infantry reporting by UAV", "For AR-1/1.5/3 pressing LOCK TARGET briefly reports enemy infantry into datalink, to improve situational awareness & coordination."],
     ["RC Modernized Vehicles"],
     true,
     true,

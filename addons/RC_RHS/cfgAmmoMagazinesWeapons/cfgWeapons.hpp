@@ -97,6 +97,12 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 		"RC_15Rnd_120mm_MPAB_DF_T_Y",
 		"RC_20Rnd_120mm_MPAB_DF_T_Y",
 		*/
+
+		"RC_5Rnd_120mm_cannon_missiles",
+		"RC_4Rnd_120mm_cannon_missiles",
+		"RC_3Rnd_120mm_cannon_missiles",
+		"RC_2Rnd_120mm_cannon_missiles",
+		"RC_1Rnd_120mm_cannon_missiles",
 		
 		//Datalink Missile
 		"RC_5Rnd_120mm_DLG_cannon_missiles",
@@ -439,8 +445,22 @@ class RC_Bradley_Missile_Launcher: RC_Bradley_Missile_Launcher_Base
 
 	magazines[]=
 	{
+		"RC_2Rnd_TOW_MP_LOS",
 		"RC_2Rnd_TOW_MP_NLOS",
 		"RC_2Rnd_TOW_AA"
+	};
+};
+class RC_Stryker_Missile_Launcher: RC_Bradley_Missile_Launcher_Base
+{
+	displayName="FGM-148 Javelin";
+	displayNameShort="FGM-148 Javelin";
+	magazineReloadTime=12.5;
+
+	magazines[]=
+	{
+		"RC_1Rnd_Javelin_MP_LOS",
+		"RC_1Rnd_Javelin_MP_NLOS",
+		"RC_1Rnd_Javelin_AA"
 	};
 };
 
@@ -462,6 +482,7 @@ class RHS_M2_CROWS_M151_base: RHS_M2_CROWS_M151
 class RC_RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
 {
 	canLock=2;
+	autoReload=1;
 	minZeroing=50;
 	maxZeroing=3000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
@@ -488,6 +509,7 @@ class RHS_MK19_CROWS_M153_base: RHS_MK19_CROWS_M153
 class RC_RHS_MK19_CROWS_M153: RHS_MK19_CROWS_M153_base
 {
 	canLock=2;
+	autoReload=1;
 	minZeroing=50;
 	magazines[] =
 	{

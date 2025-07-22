@@ -1772,7 +1772,7 @@ class M_Titan_AT_long_Base: M_Titan_AT_long
 {
 	class Components;
 };
-class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
+class RC_IFV_MP_LOS: M_Titan_AT_long_Base
 {
 	craterEffects="AAMissileCrater";
 	indirectHit=80;
@@ -1810,16 +1810,6 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 	proximityExplosionDistance=10;
 	deleteParentWhenTriggered=0;
 
-	flightProfiles[]=
-	{
-		"Cruise"
-	};
-	class Cruise
-	{
-		preferredFlightAltitude=100;
-		lockDistanceToTarget=160;	//~45°=142
-	};
-
 	//autoSeekTarget=1;	 //unlear if it works in this context
 	manualControl=1;
 	//manualControlOffset=100;	//??? CLMB
@@ -1832,6 +1822,90 @@ class RC_IFV_MP_NLOS: M_Titan_AT_long_Base
 	weaponLockSystem="1 + 2 + 4 + 16";
 	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 	cameraViewAvailable=1;
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=2000;
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					maxTrackableSpeed=120;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					maxTrackableSpeed=120;
+					typeRecognitionDistance=400;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=67.5;
+				};
+			};
+		};
+	};
+};
+class RC_IFV_MP_NLOS: RC_IFV_MP_LOS
+{
+	flightProfiles[]=
+	{
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=100;
+		lockDistanceToTarget=160;	//~45°=142
+	};
 
 	class Components: Components
 	{
@@ -2136,7 +2210,7 @@ class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 
 
 //ATGM
-class RC_M_ATGM_MP_NLOS: M_Titan_AT_long_Base
+class RC_M_ATGM_MP_LOS: M_Titan_AT_long_Base
 {
 	craterEffects="AAMissileCrater";
 	indirectHit=40;
@@ -2173,16 +2247,6 @@ class RC_M_ATGM_MP_NLOS: M_Titan_AT_long_Base
 	triggerDistance=10;
 	proximityExplosionDistance=10;
 	deleteParentWhenTriggered=0;
-
-	flightProfiles[]=
-	{
-		"Cruise"
-	};
-	class Cruise
-	{
-		preferredFlightAltitude=100;
-		lockDistanceToTarget=160;	//~45°=142
-	};
 
 	//autoSeekTarget=1;	 //unlear if it works in this context
 	manualControl=1;
@@ -2290,14 +2354,26 @@ class RC_M_ATGM_MP_NLOS: M_Titan_AT_long_Base
 		};
 	};
 };
+class RC_M_ATGM_MP_NLOS: RC_M_ATGM_MP_LOS
+{
+	flightProfiles[]=
+	{
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=100;
+		lockDistanceToTarget=160;	//~45°=142
+	};
+};
 
 
 class M_120mm_cannon_ATGM_LG;
-class RC_M_120mm_cannon_ATGM_DLG_Base: M_120mm_cannon_ATGM_LG
+class RC_M_120mm_cannon_ATGM_Base: M_120mm_cannon_ATGM_LG
 {
 	class Components;
 };
-class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
+class RC_M_120mm_cannon_ATGM: RC_M_120mm_cannon_ATGM_Base
 {
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
 	craterEffects="AAMissileCrater";
@@ -2335,16 +2411,6 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 	triggerDistance=10;
 	proximityExplosionDistance=10;
 	deleteParentWhenTriggered=0;
-
-	flightProfiles[]=
-	{
-		"Cruise"
-	};
-	class Cruise
-	{
-		preferredFlightAltitude=100;
-		lockDistanceToTarget=160;	//~45°=142
-	};
 
 	//autoSeekTarget=1;	 //unlear if it works in this context
 	manualControl=1;
@@ -2450,6 +2516,18 @@ class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG_Base
 		};
 	};
 };
+class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM
+{
+	flightProfiles[]=
+	{
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=100;
+		lockDistanceToTarget=160;	//~45°=142
+	};
+};
 class RC_M_120mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG
 {
 	timeToLive=30;
@@ -2547,14 +2625,9 @@ class RC_M_120mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG
 		};
 	};
 };
-class RC_M_125mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
-{
-	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
-};
-class RC_M_125mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG_LR
-{
-	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
-};
+class RC_M_125mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG {};
+class RC_M_125mm_cannon_ATGM: RC_M_120mm_cannon_ATGM {};
+class RC_M_125mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG_LR {};
 
 
 class Sh_120mm_APFSDS;

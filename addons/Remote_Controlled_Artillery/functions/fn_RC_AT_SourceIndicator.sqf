@@ -28,15 +28,15 @@ if (([_vehicle, 'GEOM', _target] checkVisibility [eyePos _vehicle, eyePos _targe
 
 private _side = side _target;
 if (_vehicle isKindOf 'StaticWeapon' && RC_AT_SourceIndicationStatic) then {
-	[_side,[_vehicle, 180]] remoteExec ['reportRemoteTarget', _side];
+	[_side,[_vehicle, 300]] remoteExec ['reportRemoteTarget', _side];
 	[_vehicle, [_side, true]] remoteExec ['confirmSensorTarget', _side];
 } else {
 	if (_vehicle isKindOf 'Man'	&& RC_AT_SourceIndicationInf) then {
-		[_side,[_vehicle, 6]] remoteExec ['reportRemoteTarget', _side];
+		[_side,[_vehicle, 10]] remoteExec ['reportRemoteTarget', _side];
 		[_vehicle, [_side, true]] remoteExec ['confirmSensorTarget', _side];
 	} else {
 		if (RC_AT_SourceIndicationVic) then {
-			[_side,[_vehicle, 12]] remoteExec ['reportRemoteTarget', _side];
+			[_side,[_vehicle, 20]] remoteExec ['reportRemoteTarget', _side];
 			[_vehicle, [_side, true]] remoteExec ['confirmSensorTarget', _side];
 		};
 	};

@@ -287,6 +287,7 @@ class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
 	autoReload=1;
 	magazines[]=
 	{
+		"RC_1Rnd_ATGM_MP_LOS",
 		"RC_1Rnd_ATGM_MP_NLOS"
 	};
 
@@ -326,6 +327,7 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	//weaponLockDelay=3;	//3
 	magazines[]=
 	{
+		"RC_2Rnd_IFV_MP_LOS",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"2Rnd_GAT_missiles",
 		"RC_2Rnd_IFV_AA"
@@ -2385,6 +2387,12 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_15Rnd_120mm_HEAB_LV_indirect_T_Y",
 		"RC_20Rnd_120mm_HEAB_LV_indirect_T_Y",
 
+		"RC_5Rnd_120mm_cannon_missiles",
+		"RC_4Rnd_120mm_cannon_missiles",
+		"RC_3Rnd_120mm_cannon_missiles",
+		"RC_2Rnd_120mm_cannon_missiles",
+		"RC_1Rnd_120mm_cannon_missiles",
+
 		"RC_5Rnd_120mm_DLG_cannon_missiles",
 		"RC_4Rnd_120mm_DLG_cannon_missiles",
 		"RC_3Rnd_120mm_DLG_cannon_missiles",
@@ -2507,6 +2515,12 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_HEAB_LV_indirect_T_Y",
 		"RC_15Rnd_125mm_HEAB_LV_indirect_T_Y",
 		"RC_20Rnd_125mm_HEAB_LV_indirect_T_Y",
+
+		"RC_5Rnd_125mm_cannon_missiles",
+		"RC_4Rnd_125mm_cannon_missiles",
+		"RC_3Rnd_125mm_cannon_missiles",
+		"RC_2Rnd_125mm_cannon_missiles",
+		"RC_1Rnd_125mm_cannon_missiles",
 
 		"RC_5Rnd_125mm_DLG_cannon_missiles",
 		"RC_4Rnd_125mm_DLG_cannon_missiles",

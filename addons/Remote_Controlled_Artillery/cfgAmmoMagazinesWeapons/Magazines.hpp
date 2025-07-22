@@ -74,7 +74,12 @@ class RC_1Rnd_ATGM_MP_NLOS: 1Rnd_GAT_missiles
 	displayNameShort="MP 4km";
 	ammo="RC_M_ATGM_MP_NLOS";
 };
-
+class RC_1Rnd_ATGM_MP_LOS: 1Rnd_GAT_missiles
+{
+	displayName="MP 4km";
+	displayNameShort="MP 4km";
+	ammo="RC_M_ATGM_MP_LOS";
+};
 
 /*
 //for later use
@@ -1327,6 +1332,13 @@ class RC_2Rnd_IFV_MP_NLOS: 2Rnd_GAT_missiles
 	ammo="RC_IFV_MP_NLOS";
 };
 class RC_4Rnd_IFV_MP_NLOS: RC_2Rnd_IFV_MP_NLOS {count=4;};
+class RC_2Rnd_IFV_MP_LOS: RC_2Rnd_IFV_MP_NLOS
+{
+	displayName="4km ATGM";
+	displayNameShort="ATGM";
+	ammo="RC_IFV_MP_LOS";
+};
+class RC_4Rnd_IFV_MP_LOS: RC_2Rnd_IFV_MP_LOS {count=4;};
 
 
 class 4Rnd_Titan_long_missiles;
@@ -1479,6 +1491,18 @@ class RC_2Rnd_120mm_DLG_cannon_missiles: RC_5Rnd_120mm_DLG_cannon_missiles {coun
 class RC_1Rnd_120mm_DLG_cannon_missiles: RC_5Rnd_120mm_DLG_cannon_missiles {count=1;};
 
 
+class RC_5Rnd_120mm_cannon_missiles: RC_5Rnd_120mm_DLG_cannon_missiles
+{
+	displayName="4km ATGM";
+	displayNameShort="ATGM";
+	ammo="RC_M_120mm_cannon_ATGM";
+};
+class RC_4Rnd_120mm_cannon_missiles: RC_5Rnd_120mm_cannon_missiles {count=4;};
+class RC_3Rnd_120mm_cannon_missiles: RC_5Rnd_120mm_cannon_missiles {count=3;};
+class RC_2Rnd_120mm_cannon_missiles: RC_5Rnd_120mm_cannon_missiles {count=2;};
+class RC_1Rnd_120mm_cannon_missiles: RC_5Rnd_120mm_cannon_missiles {count=1;};
+
+
 class RC_5Rnd_120mm_DLG_LR_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
 {
 	displayName="6km NLOS ATGM";
@@ -1513,6 +1537,18 @@ class RC_4Rnd_125mm_DLG_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles {coun
 class RC_3Rnd_125mm_DLG_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles {count=3;};
 class RC_2Rnd_125mm_DLG_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles {count=2;};
 class RC_1Rnd_125mm_DLG_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles {count=1;};
+
+
+class RC_5Rnd_125mm_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles
+{
+	displayName="4km ATGM";
+	displayNameShort="ATGM";
+	ammo="RC_M_125mm_cannon_ATGM";
+};
+class RC_4Rnd_125mm_cannon_missiles: RC_5Rnd_125mm_cannon_missiles {count=4;};
+class RC_3Rnd_125mm_cannon_missiles: RC_5Rnd_125mm_cannon_missiles {count=3;};
+class RC_2Rnd_125mm_cannon_missiles: RC_5Rnd_125mm_cannon_missiles {count=2;};
+class RC_1Rnd_125mm_cannon_missiles: RC_5Rnd_125mm_cannon_missiles {count=1;};
 
 
 class RC_5Rnd_125mm_DLG_HVKEM: RC_5Rnd_125mm_DLG_cannon_missiles

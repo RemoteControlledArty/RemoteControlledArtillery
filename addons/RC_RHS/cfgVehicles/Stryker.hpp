@@ -184,46 +184,69 @@ class RC_Stryker_M1126_M2_A_B: RC_Stryker_M1126_M2_D_B
 		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_od_co.paa"
 	};
 };
-/*
 class RC_Stryker_M1126_M2_Javelin_WD_B: RC_Stryker_M1126_M2_WD_B
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Javelin
 		{
-			//init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.355, -0.87, 0.04]];};";
-			
-			displayName="M1126 Stryker M2 Javelin";
-			
 			init="if (!isserver) exitwith {}; \
 			(_this select 0) spawn { \
-			_javelin = 'item_rhs_fgm148_magazine_AT' createVehicle [0,0,0]; \
-			_javelin attachTo [vehicle player, [0.34, -0.05, -0.13], 'konec hlavne', true]; \
-			_javelin = 90; _pitch = 0; _roll = 20; \
-			_javelin setVectorDirAndUp [ \
-				[sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch], \
-				[[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D \
-			]; \
+				private _javelin = 'item_rhs_fgm148_magazine_AT' createVehicle [0,0,0]; \
+				_javelin attachTo [_this, [0.34, -0.05, -0.13], 'konec hlavne', true]; \
+				private _yaw = 90; private _pitch = 0; private _roll = 20; \
+				_javelin setVectorDirAndUp [ \
+					[sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch], \
+					[[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D \
+				]; \
 			};";
-			*/
+		};
+	};
 
-			/*
-			private _javelin = "item_rhs_fgm148_magazine_AT" createVehicle _this;
-			//_javelin attachTo [vehicle player, [0, 0, 0], "usti hlavne", true];
-			_javelin attachTo [vehicle player, [0.34, -0.05, -0.13], "konec hlavne", true];
+	displayName="M1126 Stryker M2/Javelin";
 
-			_javelin = 90; _pitch = 0; _roll = 20;
-			_javelin setVectorDirAndUp [
-				[sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch],
-				[[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D
-			];
-			*/
+	class Turrets: Turrets
+	{
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+		class CargoTurret_03: CargoTurret_03 {};
 
-			/*
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner_missile.hpp"
+
+			weapons[]=
+			{
+				"RC_RHS_M2_CROWS_M151",
+				"RC_Stryker_Missile_Launcher",
+				"rhsusf_weap_M6"
+			};
+			magazines[]=
+			{
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				//"RC_1Rnd_Javelin_MP_LOS",
+				//"RC_1Rnd_Javelin_MP_LOS",
+				"RC_1Rnd_Javelin_MP_NLOS",
+				"RC_1Rnd_Javelin_MP_NLOS",
+				"RC_1Rnd_Javelin_MP_NLOS",
+				"RC_1Rnd_Javelin_AA",
+				"RC_1Rnd_Javelin_AA",
+				"RC_1Rnd_Javelin_AA",
+				"rhsusf_mag_L8A3_16",
+				"rhsusf_mag_L8A3_16",
+				"rhsusf_mag_L8A3_16"
+			};
 		};
 	};
 };
-/*
 
 
 class RC_Stryker_M1126_M2_WD_I: RC_Stryker_M1126_M2_WD_B
