@@ -176,7 +176,7 @@ class CfgFunctions
 
 class CfgEditorSubcategories
 {
-	class RC_RHS_A_subcat {displayname="RHS Arid";};
+	//class RC_RHS_A_subcat {displayname="RHS Arid";};
 	class RC_RHS_D_subcat {displayname="RHS Desert";};
 	class RC_RHS_WD_subcat {displayname="RHS Woodland";};
 };

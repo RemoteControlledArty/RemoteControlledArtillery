@@ -64,7 +64,12 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 
 	class Turrets: Turrets
 	{
-		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_01: CargoTurret_01
+		{
+			gunnerName="Commander";
+			primaryGunner=0;
+			primaryObserver=1;
+		};
 		class CargoTurret_02: CargoTurret_02 {};
 		class CargoTurret_03: CargoTurret_03 {};
 
@@ -77,6 +82,7 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 			commanding=3;
 			allowTabLock=1;
+			gunnerName="Gunner";
 
 			weapons[]=
 			{
@@ -130,7 +136,8 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 		class RC_Artillery
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -165,25 +172,36 @@ class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
 		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
 	};
 };
-class RC_Stryker_M1126_M2_A_B: RC_Stryker_M1126_M2_D_B
+class RC_Stryker_M1126_M2_WD_O: RC_Stryker_M1126_M2_WD_B
 {
-	editorSubcategory="RC_RHS_A_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_od_ca.paa",
-		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_od_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_od_co.paa"
-	};
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
+class RC_Stryker_M1126_M2_D_O: RC_Stryker_M1126_M2_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1126_M2_WD_I: RC_Stryker_M1126_M2_WD_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+class RC_Stryker_M1126_M2_D_I: RC_Stryker_M1126_M2_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+
+
 class RC_Stryker_M1126_M2_Javelin_WD_B: RC_Stryker_M1126_M2_WD_B
 {
 	class EventHandlers: EventHandlers
@@ -232,14 +250,9 @@ class RC_Stryker_M1126_M2_Javelin_WD_B: RC_Stryker_M1126_M2_WD_B
 				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
 				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
 				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				//"RC_1Rnd_Javelin_MP_LOS",
-				//"RC_1Rnd_Javelin_MP_LOS",
-				"RC_1Rnd_Javelin_MP_NLOS",
-				"RC_1Rnd_Javelin_MP_NLOS",
-				"RC_1Rnd_Javelin_MP_NLOS",
-				"RC_1Rnd_Javelin_AA",
-				"RC_1Rnd_Javelin_AA",
-				"RC_1Rnd_Javelin_AA",
+				"RC_4Rnd_Javelin_MP_LOS",
+				"RC_2Rnd_Javelin_MP_NLOS",
+				"RC_4Rnd_Javelin_AA",
 				"rhsusf_mag_L8A3_16",
 				"rhsusf_mag_L8A3_16",
 				"rhsusf_mag_L8A3_16"
@@ -247,23 +260,48 @@ class RC_Stryker_M1126_M2_Javelin_WD_B: RC_Stryker_M1126_M2_WD_B
 		};
 	};
 };
-
-
-class RC_Stryker_M1126_M2_WD_I: RC_Stryker_M1126_M2_WD_B
+class RC_Stryker_M1126_M2_Javelin_D_B: RC_Stryker_M1126_M2_Javelin_WD_B
+{
+	editorSubcategory="RC_RHS_D_subcat";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_ca.paa",
+		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
+	};
+};
+class RC_Stryker_M1126_M2_Javelin_WD_O: RC_Stryker_M1126_M2_Javelin_WD_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1126_M2_Javelin_D_O: RC_Stryker_M1126_M2_Javelin_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1126_M2_Javelin_WD_I: RC_Stryker_M1126_M2_Javelin_WD_B
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
-class RC_Stryker_M1126_M2_D_I: RC_Stryker_M1126_M2_D_B
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
-};
-class RC_Stryker_M1126_M2_A_I: RC_Stryker_M1126_M2_A_B
+class RC_Stryker_M1126_M2_Javelin_D_I: RC_Stryker_M1126_M2_Javelin_D_B
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -313,7 +351,6 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 		{
 			animPeriod=1.25;
 		};
-
 		class MK19_CROWS_Reload
 		{
 			weapon="RC_RHS_MK19_CROWS_M153";
@@ -335,6 +372,10 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 	{
 		class CargoTurret_01: CargoTurret_01
 		{
+			gunnerName="Commander";
+			primaryGunner=0;
+			primaryObserver=1;
+
 			/*
 			class Components: Components
 			{
@@ -427,6 +468,7 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 			commanding=3;
 			allowTabLock=1;
+			gunnerName="Gunner";
 
 			weapons[]=
 			{
@@ -482,7 +524,8 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 		class RC_Artillery
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 
@@ -517,27 +560,22 @@ class RC_Stryker_M1126_MK19_D_B: RC_Stryker_M1126_MK19_WD_B
 		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
 	};
 };
-class RC_Stryker_M1126_MK19_A_B: RC_Stryker_M1126_MK19_D_B
+
+
+class RC_Stryker_M1126_MK19_WD_O: RC_Stryker_M1126_MK19_WD_B
 {
-	editorSubcategory="RC_RHS_A_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_od_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_od_ca.paa",
-		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_od_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_od_co.paa"
-	};
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
-
-
+class RC_Stryker_M1126_MK19_D_O: RC_Stryker_M1126_MK19_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
 class RC_Stryker_M1126_MK19_WD_I: RC_Stryker_M1126_MK19_WD_B
 {
 	faction="RemoteControlled_I";
@@ -552,17 +590,150 @@ class RC_Stryker_M1126_MK19_D_I: RC_Stryker_M1126_MK19_D_B
 	side=2;
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
-class RC_Stryker_M1126_MK19_A_I: RC_Stryker_M1126_MK19_A_B
+
+
+class rhsusf_stryker_m1132_m2_wd;
+class RC_Stryker_M1132_M2_WD_Base: rhsusf_stryker_m1132_m2_wd
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+	scope=0;
+	scopeCurator=0;
+	class Components;
+	class EventHandlers;
+	class Turrets;
+	class CargoTurret_01;
+	class CargoTurret_02;
+	class CargoTurret_03;
+	class MainTurret;
+	class ViewOptics;
+	class AnimationSources;
+	class ramp;
+	class Hatch_Commander;
+	class UserActions;
+	class HitPoints;
+	class HitLFWheel;
+	class HitLF2Wheel;
+	class HitLMWheel;
+	class HitLBWheel;
+	class HitRFWheel;
+	class HitRF2Wheel;
+	class HitRMWheel;
+	class HitRBWheel;
 };
+class RC_Stryker_M1132_M2_WD: RC_Stryker_M1132_M2_WD_Base
+{
+	#include "\RC_RHS\cfgVehicles\StrykerBasics_Include.hpp"
 
+	class AnimationSources: AnimationSources
+	{
+		class Hatch_Commander: Hatch_Commander
+		{
+			animPeriod=0.8;
+		};
+		class ramp: ramp
+		{
+			animPeriod=1.25;
+		};	
+		class M2_CROWS_AmmoRandom
+		{
+			weapon="RC_RHS_M2_CROWS_M151";
+			source="ammorandom";
+		};
+		class M2_CROWS_Reload
+		{
+			weapon="RC_RHS_M2_CROWS_M151";
+			source="reload";
+		};
+		class M2_CROWS_ReloadMagazine
+		{
+			weapon="RC_RHS_M2_CROWS_M151";
+			source="reloadmagazine";
+		};
+		class M2_CROWS_Revolving
+		{
+			weapon="RC_RHS_M2_CROWS_M151";
+			source="revolving";
+		};
+	};
 
-/*
-//for later, mineplow needs to be usable from m1132 gunner seat
+	class Turrets: Turrets
+	{
+		class CargoTurret_01: CargoTurret_01
+		{
+			gunnerName="Commander";
+			primaryGunner=0;
+			primaryObserver=1;
+		};
+		class CargoTurret_02: CargoTurret_02 {};
+		class CargoTurret_03: CargoTurret_03 {};
+
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			dontCreateAI=1;
+			//isCopilot=1; //allows to trigger EH that gives driving controls
+			commanding=3;
+			allowTabLock=1;
+			gunnerName="Gunner";
+
+			weapons[]=
+			{
+				"RC_RHS_M2_CROWS_M151",
+				"rhsusf_weap_M6"
+			};
+			magazines[]=
+			{
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"rhsusf_mag_L8A3_16",
+				"rhsusf_mag_L8A3_16",
+				"rhsusf_mag_L8A3_16"
+			};
+
+			class OpticsIn
+			{
+				class DaysightWFOV: ViewOptics
+				{
+					camPos="View_CROWS";
+					//opticsDisplayName="1.0x";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CROWS_monitor";
+					initFov=0.9;
+					minFov=0.025;
+					maxFov=0.9;
+					visionMode[]=
+					{
+						"Normal",
+						"TI"
+					};
+					thermalMode[]={0};
+					hitpoint="Hit_Optic_CROWS_Day";
+				};
+			};
+		};
+	};
+};
+class RC_Stryker_M1132_M2_WD_B: RC_Stryker_M1132_M2_WD
+{
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+		};
+	};
+
 	class UserActions: UserActions
 	{
 		class RaiseSMP
@@ -603,9 +774,48 @@ class RC_Stryker_M1126_MK19_A_I: RC_Stryker_M1126_MK19_A_B
 			condition="((gunner this) isEqualTo (call rhs_fnc_findPlayer)) && {this animationSourcePhase 'Dispenser_Fold' isEqualTo 0};";
 			statement="this animateSource ['Dispenser_Fold', 1];this addWeaponTurret ['rhsusf_weap_laneMarkerSystem',[-1]]";
 		};
+		class LaneMarkingSystem_Deactivate: LaneMarkingSystem_Activate
+		{
+			displayName="Deactivate Lane Marking System";
+			condition="((driver this) isEqualTo (call rhs_fnc_findPlayer)) && {this animationSourcePhase 'Dispenser_Fold' isEqualTo 1};";
+			statement="this animateSource ['Dispenser_Fold', 0];this removeWeaponTurret ['rhsusf_weap_laneMarkerSystem',[-1]]";
+		};
+		class LaneMarkingSystem_Options: LaneMarkingSystem_Deactivate
+		{
+			displayName="<t color='#FDDE00'>Lane Marking System - Options</t>";
+			statement="this call rhs_fnc_stryker_m1132_LMS_UI;";
+		};
+		class Interact_LeftPlow
+		{
+			displayName="Interact with left mine plow";
+			position="";
+			radius=1.5;
+			onlyforplayer=0;
+			actionNamedSel="SMP_L";
+			condition="speed this < 1";
+			statement="this animateSource ['SMP_L', abs((this animationSourcePhase 'SMP_L') - 1)]";
+		};
+		class Interact_RightPlow: Interact_LeftPlow
+		{
+			displayName="Interact with right mine plow";
+			actionNamedSel="SMP_R";
+			statement="this animateSource ['SMP_R', abs((this animationSourcePhase 'SMP_R') - 1)]";
+		};
 	};
-*/
 
+	displayName="M1132 Stryker M2";
+	editorSubcategory="RC_RHS_WD_subcat";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	faction="RemoteControlled_B";
+	side=1;
+
+	crew="B_UAV_AI";
+	maximumLoad=3000;
+};
+
+//editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1132_m2_d.paa";
 
 /*
 	//testing alternatives to make M1127 driver view work
@@ -699,6 +909,7 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+			gunnerName="Gunner";
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 			//canUseScanner = 0; // Can't use the vehicle's Sensors, can be defined per individual turret. Useful to restrict access to vehicle sensors (target marking) on some positions in vehicles (i.e. door gunners)
 		};

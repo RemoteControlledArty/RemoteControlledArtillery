@@ -315,6 +315,7 @@ class RC_RHS_ammo_127x99_Ball_T_R: rhs_ammo_127x99_Ball_Tracer_Red
 	irLock=1;
 	airLock=1;
 	tracerStartTime=0.04;
+	tracerEndTime=5;
 };
 class rhs_ammo_127x99_SLAP;
 class RC_RHS_ammo_127x99_SLAP: rhs_ammo_127x99_SLAP
@@ -322,14 +323,16 @@ class RC_RHS_ammo_127x99_SLAP: rhs_ammo_127x99_SLAP
 	laserLock=1;
 	irLock=1;
 	airLock=1;
+	tracerEndTime=4.5;
 };
 class rhs_ammo_127x99_SLAP_Tracer_Red;
-class RC_RHS_mag_100rnd_127x99_SLAP_T_R: rhs_ammo_127x99_SLAP_Tracer_Red
+class RC_RHS_ammo_127x99_SLAP_T_R: rhs_ammo_127x99_SLAP_Tracer_Red
 {
 	laserLock=1;
 	irLock=1;
 	airLock=1;
 	tracerStartTime=0.04;
+	tracerEndTime=4.5;
 };
 class RC_RHS_ammo_127x99_Ball_T_R_nonlock: RC_RHS_ammo_127x99_Ball_T_R
 {

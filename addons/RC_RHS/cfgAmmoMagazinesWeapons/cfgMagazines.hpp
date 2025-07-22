@@ -213,37 +213,19 @@ class RC_RHS_mag_2Rnd_TOW2BB: rhs_mag_2Rnd_TOW2BB
 
 
 class RC_2Rnd_IFV_MP_NLOS;
-class RC_2Rnd_IFV_MP_LOS;
 class RC_2Rnd_TOW_MP_NLOS: RC_2Rnd_IFV_MP_NLOS
 {
 	ammo="RC_TOW_MP_NLOS";
 	displayName="TOW NLOS";
 	displayNameShort="TOW NLOS";
 };
+class RC_2Rnd_IFV_MP_LOS;
 class RC_2Rnd_TOW_MP_LOS: RC_2Rnd_IFV_MP_LOS
 {
 	ammo="RC_TOW_MP_LOS";
 	displayName="TOW";
 	displayNameShort="TOW";
 };
-
-
-class RC_1Rnd_Javelin_MP_NLOS: RC_2Rnd_IFV_MP_NLOS
-{
-	ammo="RC_Javelin_MP_NLOS";
-	displayName="Javelin NLOS";
-	displayNameShort="Javelin NLOS";
-	count=1;
-};
-class RC_1Rnd_Javelin_MP_LOS: RC_2Rnd_IFV_MP_LOS
-{
-	ammo="RC_Javelin_MP_LOS";
-	displayName="Javelin";
-	displayNameShort="Javelin";
-	count=1;
-};
-
-
 class RC_2Rnd_IFV_AA;
 class RC_2Rnd_TOW_AA: RC_2Rnd_IFV_AA
 {
@@ -251,13 +233,39 @@ class RC_2Rnd_TOW_AA: RC_2Rnd_IFV_AA
 	displayName="TOW AA";
 	displayNameShort="TOW AA";
 };
-class RC_1Rnd_Javelin_AA: RC_2Rnd_IFV_AA
+
+
+class RC_2Rnd_Javelin_MP_NLOS: RC_2Rnd_IFV_MP_NLOS
+{
+	ammo="RC_Javelin_MP_NLOS";
+	displayName="Javelin NLOS";
+	displayNameShort="Javelin NLOS";
+};
+class RC_1Rnd_Javelin_MP_NLOS: RC_2Rnd_Javelin_MP_NLOS {count=1;};
+class RC_3Rnd_Javelin_MP_NLOS: RC_2Rnd_Javelin_MP_NLOS {count=3;};
+class RC_4Rnd_Javelin_MP_NLOS: RC_2Rnd_Javelin_MP_NLOS {count=4;};
+
+
+class RC_2Rnd_Javelin_MP_LOS: RC_2Rnd_IFV_MP_LOS
+{
+	ammo="RC_Javelin_MP_LOS";
+	displayName="Javelin Direct";
+	displayNameShort="Javelin Direct";
+};
+class RC_1Rnd_Javelin_MP_LOS: RC_2Rnd_Javelin_MP_LOS {count=1;};
+class RC_3Rnd_Javelin_MP_LOS: RC_2Rnd_Javelin_MP_LOS {count=3;};
+class RC_4Rnd_Javelin_MP_LOS: RC_2Rnd_Javelin_MP_LOS {count=4;};
+
+
+class RC_2Rnd_Javelin_AA: RC_2Rnd_IFV_AA
 {
 	ammo="RC_Javelin_AA";
 	displayName="Javelin AA";
 	displayNameShort="Javelin AA";
-	count=1;
 };
+class RC_1Rnd_Javelin_AA: RC_2Rnd_Javelin_AA {count=1;};
+class RC_3Rnd_Javelin_AA: RC_2Rnd_Javelin_AA {count=3;};
+class RC_4Rnd_Javelin_AA: RC_2Rnd_Javelin_AA {count=4;};
 
 
 /*
@@ -371,7 +379,7 @@ class RC_RHS_mag_400rnd_127x99_SLAP: RC_RHS_mag_200rnd_127x99_SLAP
 class rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red;
 class RC_RHS_mag_200rnd_127x99_SLAP_T_R: rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red
 {
-	ammo="RC_RHS_mag_100rnd_127x99_SLAP_T_R";
+	ammo="RC_RHS_ammo_127x99_SLAP_T_R";
 	tracersEvery=1;
 };
 class RC_RHS_mag_400rnd_127x99_SLAP_T_R: RC_RHS_mag_200rnd_127x99_SLAP_T_R

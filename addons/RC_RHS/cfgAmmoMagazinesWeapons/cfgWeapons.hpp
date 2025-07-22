@@ -436,7 +436,7 @@ class RC_IFV_Missile_Launcher;
 class RC_Bradley_Missile_Launcher_Base: RC_IFV_Missile_Launcher
 {
 	class Player;
-	class TopDown;
+	class Cruise;
 }
 class RC_Bradley_Missile_Launcher: RC_Bradley_Missile_Launcher_Base
 {
@@ -456,10 +456,27 @@ class RC_Stryker_Missile_Launcher: RC_Bradley_Missile_Launcher_Base
 	displayNameShort="FGM-148 Javelin";
 	magazineReloadTime=12.5;
 
+	class Player: Player
+	{
+		reloadTime=12.5;
+	};
+	class Cruise: Cruise
+	{
+		reloadTime=12.5;
+	};
 	magazines[]=
 	{
+		"RC_4Rnd_Javelin_MP_LOS",
+		"RC_3Rnd_Javelin_MP_LOS",
+		"RC_2Rnd_Javelin_MP_LOS",
 		"RC_1Rnd_Javelin_MP_LOS",
+		"RC_4Rnd_Javelin_MP_NLOS",
+		"RC_3Rnd_Javelin_MP_NLOS",
+		"RC_2Rnd_Javelin_MP_NLOS",
 		"RC_1Rnd_Javelin_MP_NLOS",
+		"RC_4Rnd_Javelin_AA",
+		"RC_3Rnd_Javelin_AA",
+		"RC_2Rnd_Javelin_AA",
 		"RC_1Rnd_Javelin_AA"
 	};
 };
@@ -496,7 +513,7 @@ class RC_RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
 	};
 	class manual: manual
 	{
-		dispersion=0.001;
+		dispersion=0.0005;
 	};
 };
 
