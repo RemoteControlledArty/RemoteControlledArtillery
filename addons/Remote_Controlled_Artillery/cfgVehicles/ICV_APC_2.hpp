@@ -424,7 +424,7 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 					maxAngleY=100;
 
 					initFov=1;
-					minFov=0.025;
+					minFov=0.02;
 					maxFov=1;
 					visionMode[]=
 					{
@@ -444,7 +444,7 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 					"NVG"
 				};
 				initFov=1;
-				minFov=0.025;
+				minFov=0.02;
 				maxFov=1;
 			};
 		};
@@ -600,7 +600,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 			class ViewOptics: RCWSOptics
 			{
 				initFov=0.9;
-				minFov=0.025;
+				minFov=0.02;
 				maxFov=0.9;
 
 				visionMode[]=
@@ -641,7 +641,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 			{
 				//directionStabilized=1;
 				initFov=1;
-				minFov=0.025;
+				minFov=0.02;
 				maxFov=1;
 				visionMode[]=
 				{

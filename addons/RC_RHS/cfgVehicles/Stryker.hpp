@@ -115,7 +115,7 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 					//opticsDisplayName="1.0x";
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CROWS_monitor";
 					initFov=0.9;
-					minFov=0.025;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -206,16 +206,7 @@ class RC_Stryker_M1126_M2_Javelin_WD_B: RC_Stryker_M1126_M2_WD_B
 	{
 		class RC_Javelin
 		{
-			init="if (!isserver) exitwith {}; \
-			(_this select 0) spawn { \
-				private _javelin = 'item_rhs_fgm148_magazine_AT' createVehicle [0,0,0]; \
-				_javelin attachTo [_this, [0.34, -0.05, -0.13], 'konec hlavne', true]; \
-				private _yaw = 90; private _pitch = 0; private _roll = 20; \
-				_javelin setVectorDirAndUp [ \
-					[sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch], \
-					[[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D \
-				]; \
-			};";
+			#include "\RC_RHS\includes_script\AttachJavelin.hpp"
 		};
 	};
 
@@ -499,7 +490,7 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 					//opticsDisplayName="1.0x";
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CROWS_monitor";
 					initFov=0.9;
-					minFov=0.025;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -585,7 +576,7 @@ class RC_Stryker_M1126_MK19_D_I: RC_Stryker_M1126_MK19_D_B
 };
 
 
-class RC_Stryker_M1126_20mm_AC_WD_B: RC_Stryker_M1126_MK19_WD_B
+class RC_Stryker_M1126_20mmAC_WD_B: RC_Stryker_M1126_MK19_WD_B
 {
 	class EventHandlers: EventHandlers
 	{
@@ -673,7 +664,7 @@ class RC_Stryker_M1126_20mm_AC_WD_B: RC_Stryker_M1126_MK19_WD_B
 		};
 	};
 };
-class RC_Stryker_M1126_20mm_AC_D_B: RC_Stryker_M1126_20mm_AC_WD_B
+class RC_Stryker_M1126_20mmAC_D_B: RC_Stryker_M1126_20mmAC_WD_B
 {
 	editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
@@ -693,28 +684,144 @@ class RC_Stryker_M1126_20mm_AC_D_B: RC_Stryker_M1126_20mm_AC_WD_B
 		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
 	};
 };
-class RC_Stryker_M1126_20mm_AC_WD_O: RC_Stryker_M1126_20mm_AC_WD_B
+class RC_Stryker_M1126_20mmAC_WD_O: RC_Stryker_M1126_20mmAC_WD_B
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
-class RC_Stryker_M1126_20mm_AC_D_O: RC_Stryker_M1126_20mm_AC_D_B
+class RC_Stryker_M1126_20mmAC_D_O: RC_Stryker_M1126_20mmAC_D_B
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
-class RC_Stryker_M1126_20mm_AC_WD_I: RC_Stryker_M1126_MK19_WD_B
+class RC_Stryker_M1126_20mmAC_WD_I: RC_Stryker_M1126_MK19_WD_B
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
-class RC_Stryker_M1126_20mm_AC_D_I: RC_Stryker_M1126_20mm_AC_D_B
+class RC_Stryker_M1126_20mmAC_D_I: RC_Stryker_M1126_20mmAC_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+
+
+class RC_Stryker_M1126_20mmAC_Javelin_WD_B: RC_Stryker_M1126_20mmAC_WD_B
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Javelin
+		{
+			#include "\RC_RHS\includes_script\AttachJavelin.hpp"
+		};
+	};
+
+	displayName="M1126 Stryker 20mm AC/Javelin";
+
+	class Turrets: Turrets
+	{
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+		class CargoTurret_03: CargoTurret_03 {};
+
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner_missile.hpp"
+
+			weapons[]=
+			{
+				"RC_RHS_20mm_AC_CROWS_M153",
+				"RC_Stryker_Missile_Launcher",
+				"rhsusf_weap_M6"
+			};
+			magazines[]=
+			{
+				"RC_100Rnd_20mm_HE_Pen_T_R",
+				"RC_100Rnd_20mm_HE_Pen_T_R",
+				"RC_100Rnd_20mm_HE_QF_T_R",
+				"RC_100Rnd_20mm_HE_DF_T_R",
+				"RC_100Rnd_20mm_HE_DF_T_R",
+				"RC_100Rnd_20mm_HEAB_DF_T_R",
+				/*
+				//available but unused
+				"RC_100Rnd_20mm_HEAB_QF_T_R",
+				
+				"RC_100Rnd_20mm_MP_Pen_T_R",
+				"RC_100Rnd_20mm_MP_QF_T_R",
+				"RC_100Rnd_20mm_MP_DF_T_R",
+				"RC_100Rnd_20mm_MPAB_DF_T_R",
+				"RC_100Rnd_20mm_MPAB_QF_T_R",
+
+				"RC_100Rnd_20mm_MP_T_R",
+				"RC_100Rnd_20mm_GPR_T_R",
+
+				"RC_100Rnd_20mm_HE_T_R",
+				*/
+				"RC_100Rnd_20mm_APFSDS_T_R",
+				"RC_100Rnd_20mm_APFSDS_T_R",
+				"RC_100Rnd_20mm_APFSDS_T_R",
+				"RC_100Rnd_20mm_APFSDS_T_R",
+				"RC_100Rnd_20mm_APFSDS_T_R",
+				"RC_2Rnd_Javelin_MP_LOS",
+				"RC_2Rnd_Javelin_MP_NLOS",
+				"RC_4Rnd_Javelin_AA",
+				"rhsusf_mag_L8A3_16",
+				"rhsusf_mag_L8A3_16",
+				"rhsusf_mag_L8A3_16"
+			};
+		};
+	};
+};
+class RC_Stryker_M1126_20mmAC_Javelin_D_B: RC_Stryker_M1126_20mmAC_Javelin_WD_B
+{
+	editorSubcategory="RC_RHS_D_subcat";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_ca.paa",
+		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
+	};
+};
+class RC_Stryker_M1126_20mmAC_Javelin_WD_O: RC_Stryker_M1126_20mmAC_Javelin_WD_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1126_20mmAC_Javelin_D_O: RC_Stryker_M1126_20mmAC_Javelin_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1126_20mmAC_Javelin_WD_I: RC_Stryker_M1126_20mmAC_Javelin_WD_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+class RC_Stryker_M1126_20mmAC_Javelin_D_I: RC_Stryker_M1126_20mmAC_Javelin_D_B
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -839,7 +946,7 @@ class RC_Stryker_M1132_M2_WD: RC_Stryker_M1132_M2_WD_Base
 					//opticsDisplayName="1.0x";
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CROWS_monitor";
 					initFov=0.9;
-					minFov=0.025;
+					minFov=0.02;
 					maxFov=0.9;
 					visionMode[]=
 					{
@@ -1006,16 +1113,7 @@ class RC_Stryker_M1132_M2_Javelin_WD_B: RC_Stryker_M1132_M2_WD_B
 	{
 		class RC_Javelin
 		{
-			init="if (!isserver) exitwith {}; \
-			(_this select 0) spawn { \
-				private _javelin = 'item_rhs_fgm148_magazine_AT' createVehicle [0,0,0]; \
-				_javelin attachTo [_this, [0.34, -0.05, -0.13], 'konec hlavne', true]; \
-				private _yaw = 90; private _pitch = 0; private _roll = 20; \
-				_javelin setVectorDirAndUp [ \
-					[sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch], \
-					[[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D \
-				]; \
-			};";
+			#include "\RC_RHS\includes_script\AttachJavelin.hpp"
 		};
 	};
 
@@ -1130,12 +1228,14 @@ class RC_Stryker_M1127_M2_WD_Base: rhsusf_stryker_m1127_m2_wd
 	class Components;
 	class EventHandlers;
 	class Turrets;
+	class CargoTurret;
 	//class CargoTurret_01;
 	class CargoTurret_02;
 	class CargoTurret_03;
 	class MainTurret;
 	class Turret_LRAS;
 	class Turret_Weapon;
+	class ViewPilot;
 	class ViewOptics;
 	class AnimationSources;
 	class ramp;
@@ -1257,20 +1357,148 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 		class CargoTurret_03: CargoTurret_03 {};
 	};
 };
+class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
+{
+	class DriverOpticsIn: DriverOpticsIn
+	{
+		class DVE_Wide: DVE_Wide
+		{
+			visionMode[]=
+			{
+				"Normal",
+				"NVG",
+				"TI"
+			};
+		};
+		class DVS_Rear: DVS_Rear
+		{
+			visionMode[]=
+			{
+				"Normal",
+				"NVG",
+				"TI"
+			};
+		};
+	};
+
+	//driverDoor="";
+	//LODDriverTurnedOut=1100;
+	//LODDriverTurnedin=1100;
+
+	/*
+	class AnimationSources: AnimationSources
+	{
+		class Hatch_Driver
+		{
+			*/
+			/*
+			displayName="Open driver hatch";
+			source="door";
+			animPeriod=2.0999999;
+			sound="RHS_HMMWV_Door";
+			soundPosition="hatch_driver_axis";
+			*/
+			/*
+		};
+	};
+
+	/*
+	class ViewPilot: ViewPilot
+	{
+		class Wide: ViewOptics
+		{
+			camPos="view_driver";
+			opticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_vision_block";
+			visionMode[]=
+			{
+				"Normal"
+			};
+			hitpoint="Hit_Optic_Driver2";
+		};
+		class DVE_Wide: Wide
+		{
+			camPos="view_DVE";
+			opticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
+			visionMode[]=
+			{
+				"TI"
+			};
+			thermalMode[]={0,1};
+			initFov=1.07692;
+			minFov=1.07692;
+			maxFov=1.07692;
+			hitpoint="Hit_Optic_DVEA";
+		};
+		class DVS_Rear: DVE_Wide
+		{
+			camPos="view_rear";
+			camDir="view_rear_dir";
+			hitpoint="Hit_Optic_Driver_Rear";
+		};
+	};
+	*/
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			dontCreateAI=1;
+			primaryGunner=0;	//to not be bugged by being remote controlled
+			primaryObserver=1;	//to still trigger driver controls script
+			//gunnerForceOptics=1;
+			//forceHideGunner=1;
+		};
+		class Turret_Weapon: Turret_Weapon {};
+		class Turret_LRAS: Turret_LRAS {};
+		class CargoTurret_01: CargoTurret
+		{
+			//required to keep AI driver hatch closed, as turned out driver cannot view optic while remote controlling
+			dontCreateAI=0;
+
+			gunnerName="AI";
+			gunnerCompartments="Compartment3";
+			proxyIndex=8;	//1
+			cargoProxyIndexes[]={2,3,4,5,6,7, 8};
+
+			showAsCargo=0;
+			personturretAction="";
+			gunnerDoor="Ramp";
+			viewGunnerInExternal=1;
+			isPersonTurret=2;
+			commanding=4;
+			maxOutTurn=110;
+			minOutTurn=-110;
+			maxOutElev=75;
+			minOutElev=-15;
+			LODTurnedOut=1;
+			LODTurnedin=1200;
+			animationSourceHatch="";
+			gunnerForceOptics=0;
+
+			//commenting out one of these below removed buggy first passenger sitting animation
+			//gunnerInAction="RHS_Stryker_M1126_TC_in";
+			//gunnerAction="RHS_Stryker_M1126_TC_out";
+			//rhs_hatch="Hatch_Front";
+			//rhs_hatch_control=1;
+			//enabledByAnimationSource="Hatch_Front";
+		};
+		class CargoTurret_02: CargoTurret_02 {};
+		class CargoTurret_03: CargoTurret_03 {};
+	};
+};
 
 
-class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD
+class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD_FixedRC
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
 
-	displayName="M1127 Stryker M2";
+	displayName="RC M1127 Stryker LRAS/M2";
 	editorSubcategory="RC_RHS_WD_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -1310,8 +1538,20 @@ class RC_Stryker_M1127_M2_D_B: RC_Stryker_M1127_M2_WD_B
 		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
 	};
 };
-
-
+class RC_Stryker_M1127_M2_WD_O: RC_Stryker_M1127_M2_WD_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
+class RC_Stryker_M1127_M2_D_O: RC_Stryker_M1127_M2_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
 class RC_Stryker_M1127_M2_WD_I: RC_Stryker_M1127_M2_WD_B
 {
 	faction="RemoteControlled_I";
@@ -1320,72 +1560,6 @@ class RC_Stryker_M1127_M2_WD_I: RC_Stryker_M1127_M2_WD_B
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 class RC_Stryker_M1127_M2_D_I: RC_Stryker_M1127_M2_D_B
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-
-
-class RC_Stryker_M1127_WD_B: RC_Stryker_M1127_M2_WD_B
-{
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-		};
-	};
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			gunnerForceOptics=1;
-			forceHideGunner=1;
-		};
-		class Turret_Weapon: Turret_Weapon {};
-		class Turret_LRAS: Turret_LRAS {};
-		class CargoTurret_02: CargoTurret_02 {};
-		class CargoTurret_03: CargoTurret_03 {};
-	};
-
-	displayName="RC M1127 Stryker";
-};
-class RC_Stryker_M1127_D_B: RC_Stryker_M1127_WD_B
-{
-	editorSubcategory="RC_RHS_D_subcat";
-	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1127_m2_d.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_M1127_des_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_LRAS3_d_CO.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_ca.paa",
-		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
-	};
-};
-
-
-class RC_Stryker_M1127_WD_I: RC_Stryker_M1127_WD_B
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-};
-class RC_Stryker_M1127_D_I: RC_Stryker_M1127_D_B
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";

@@ -200,7 +200,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 			class ViewOptics: ViewOptics
 			{
 				initFov=1;
-				minFov=0.025;
+				minFov=0.02;
 				maxFov=1;
 				visionMode[]=
 				{
@@ -316,7 +316,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			class ViewOptics: RCWSOptics
 			{
 				initFov=0.9;
-				minFov=0.025;
+				minFov=0.02;
 				maxFov=0.9;
 
 				visionMode[]=
@@ -356,7 +356,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			{
 				//directionStabilized=1;
 				initFov=1;
-				minFov=0.025;
+				minFov=0.02;
 				maxFov=1;
 				visionMode[]=
 				{
