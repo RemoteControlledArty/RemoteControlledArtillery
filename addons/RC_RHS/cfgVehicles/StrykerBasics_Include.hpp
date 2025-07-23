@@ -24,6 +24,7 @@ ejectDeadGunner=0;
 ejectDeadDriver=0;
 ejectDeadCommander=0;
 crewCrashProtection=0.01;
+maximumLoad=4000;
 //maxSpeed=;
 //enginePower=;
 //peakTorque=;

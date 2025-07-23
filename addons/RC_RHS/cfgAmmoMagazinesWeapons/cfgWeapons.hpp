@@ -539,6 +539,21 @@ class RC_RHS_MK19_CROWS_M153: RHS_MK19_CROWS_M153_base
 };
 
 
+class RC_autocannon_20mm_CTWS;
+class RC_RHS_20mm_AC_CROWS_M153: RC_autocannon_20mm_CTWS
+{
+	class GunParticles
+	{
+		class effect1
+		{
+			effectName="AutoCannonFired";
+			positionName="usti hlavne";
+			directionName="konec hlavne";
+		};
+	};
+};
+
+
 /*
 class RHS_M2;
 class RC_RHS_M2_nonlock: RHS_M2

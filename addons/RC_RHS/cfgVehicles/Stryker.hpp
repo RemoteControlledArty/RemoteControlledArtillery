@@ -148,9 +148,7 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 	forceInGarage=1;
 	faction="RemoteControlled_B";
 	side=1;
-
 	crew="B_UAV_AI";
-	maximumLoad=3000;
 };
 class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
 {
@@ -515,8 +513,6 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 		};
 	};
 };
-
-
 class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 {
 	class EventHandlers: EventHandlers
@@ -538,7 +534,6 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 	side=1;
 
 	crew="B_UAV_AI";
-	maximumLoad=3000;
 };
 class RC_Stryker_M1126_MK19_D_B: RC_Stryker_M1126_MK19_WD_B
 {
@@ -560,8 +555,6 @@ class RC_Stryker_M1126_MK19_D_B: RC_Stryker_M1126_MK19_WD_B
 		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
 	};
 };
-
-
 class RC_Stryker_M1126_MK19_WD_O: RC_Stryker_M1126_MK19_WD_B
 {
 	faction="RemoteControlled_O";
@@ -584,6 +577,144 @@ class RC_Stryker_M1126_MK19_WD_I: RC_Stryker_M1126_MK19_WD_B
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 class RC_Stryker_M1126_MK19_D_I: RC_Stryker_M1126_MK19_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+
+
+class RC_Stryker_M1126_20mm_AC_WD_B: RC_Stryker_M1126_MK19_WD_B
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		};
+	};
+
+	displayName="M1126 Stryker 20mm AC";
+
+	class AnimationSources: AnimationSources
+	{
+		class Hatch_Commander: Hatch_Commander
+		{
+			animPeriod=0.8;
+		};
+		class ramp: ramp
+		{
+			animPeriod=1.25;
+		};
+		class MK19_CROWS_Reload
+		{
+			weapon="RC_RHS_20mm_AC_CROWS_M153";
+			source="reload";
+		};
+		class MK19_CROWS_ReloadMagazine
+		{
+			weapon="RC_RHS_20mm_AC_CROWS_M153";
+			source="reloadmagazine";
+		};
+		class MK19_CROWS_Revolving
+		{
+			weapon="RC_RHS_20mm_AC_CROWS_M153";
+			source="revolving";
+		};
+	};
+
+	class Turrets: Turrets
+	{
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+		class CargoTurret_03: CargoTurret_03 {};
+
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_RHS_20mm_AC_CROWS_M153",
+				"rhsusf_weap_M6"
+			};
+			magazines[]=
+			{
+				"RC_100Rnd_20mm_HE_Pen_T_R",
+				"RC_100Rnd_20mm_HE_Pen_T_R",
+				"RC_100Rnd_20mm_HE_QF_T_R",
+				"RC_100Rnd_20mm_HE_DF_T_R",
+				"RC_100Rnd_20mm_HE_DF_T_R",
+				"RC_100Rnd_20mm_HEAB_DF_T_R",
+				/*
+				//available but unused
+				"RC_100Rnd_20mm_HEAB_QF_T_R",
+				
+				"RC_100Rnd_20mm_MP_Pen_T_R",
+				"RC_100Rnd_20mm_MP_QF_T_R",
+				"RC_100Rnd_20mm_MP_DF_T_R",
+				"RC_100Rnd_20mm_MPAB_DF_T_R",
+				"RC_100Rnd_20mm_MPAB_QF_T_R",
+
+				"RC_100Rnd_20mm_MP_T_R",
+				"RC_100Rnd_20mm_GPR_T_R",
+
+				"RC_100Rnd_20mm_HE_T_R",
+				*/
+				"RC_100Rnd_20mm_APFSDS_T_R",
+				"RC_100Rnd_20mm_APFSDS_T_R",
+				"RC_100Rnd_20mm_APFSDS_T_R",
+				"RC_100Rnd_20mm_APFSDS_T_R",
+				"RC_100Rnd_20mm_APFSDS_T_R",
+				"rhsusf_mag_L8A3_16",
+				"rhsusf_mag_L8A3_16",
+				"rhsusf_mag_L8A3_16"
+			};
+		};
+	};
+};
+class RC_Stryker_M1126_20mm_AC_D_B: RC_Stryker_M1126_20mm_AC_WD_B
+{
+	editorSubcategory="RC_RHS_D_subcat";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_ca.paa",
+		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
+	};
+};
+class RC_Stryker_M1126_20mm_AC_WD_O: RC_Stryker_M1126_20mm_AC_WD_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1126_20mm_AC_D_O: RC_Stryker_M1126_20mm_AC_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1126_20mm_AC_WD_I: RC_Stryker_M1126_MK19_WD_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+class RC_Stryker_M1126_20mm_AC_D_I: RC_Stryker_M1126_20mm_AC_D_B
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -803,7 +934,12 @@ class RC_Stryker_M1132_M2_WD_B: RC_Stryker_M1132_M2_WD
 		};
 	};
 
-	displayName="M1132 Stryker M2";
+	class HitPoints: HitPoints
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\hitWheelsRunflat.hpp"
+	};
+
+	displayName="M1132 Mineplow Stryker M2";
 	editorSubcategory="RC_RHS_WD_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -812,10 +948,166 @@ class RC_Stryker_M1132_M2_WD_B: RC_Stryker_M1132_M2_WD
 	side=1;
 
 	crew="B_UAV_AI";
-	maximumLoad=3000;
+};
+class RC_Stryker_M1132_M2_D_B: RC_Stryker_M1132_M2_WD_B
+{
+	editorSubcategory="RC_RHS_D_subcat";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1132_m2_d.paa";
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1132_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_ca.paa",
+		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
+	};
+};
+class RC_Stryker_M1132_M2_WD_O: RC_Stryker_M1132_M2_WD_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1132_M2_D_O: RC_Stryker_M1132_M2_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1132_M2_WD_I: RC_Stryker_M1132_M2_WD_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+class RC_Stryker_M1132_M2_D_I: RC_Stryker_M1132_M2_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 
-//editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1132_m2_d.paa";
+
+class RC_Stryker_M1132_M2_Javelin_WD_B: RC_Stryker_M1132_M2_WD_B
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Javelin
+		{
+			init="if (!isserver) exitwith {}; \
+			(_this select 0) spawn { \
+				private _javelin = 'item_rhs_fgm148_magazine_AT' createVehicle [0,0,0]; \
+				_javelin attachTo [_this, [0.34, -0.05, -0.13], 'konec hlavne', true]; \
+				private _yaw = 90; private _pitch = 0; private _roll = 20; \
+				_javelin setVectorDirAndUp [ \
+					[sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch], \
+					[[sin _roll, -sin _pitch, cos _roll * cos _pitch], -_yaw] call BIS_fnc_rotateVector2D \
+				]; \
+			};";
+		};
+	};
+
+	displayName="M1132 Mineplow Stryker M2/Javelin";
+
+	class Turrets: Turrets
+	{
+		class CargoTurret_01: CargoTurret_01 {};
+		class CargoTurret_02: CargoTurret_02 {};
+		class CargoTurret_03: CargoTurret_03 {};
+
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner_missile.hpp"
+
+			weapons[]=
+			{
+				"RC_RHS_M2_CROWS_M151",
+				"RC_Stryker_Missile_Launcher",
+				"rhsusf_weap_M6"
+			};
+			magazines[]=
+			{
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+				"RC_4Rnd_Javelin_MP_LOS",
+				"RC_2Rnd_Javelin_MP_NLOS",
+				"RC_4Rnd_Javelin_AA",
+				"rhsusf_mag_L8A3_16",
+				"rhsusf_mag_L8A3_16",
+				"rhsusf_mag_L8A3_16"
+			};
+		};
+	};
+};
+class RC_Stryker_M1132_M2_Javelin_D_B: RC_Stryker_M1132_M2_Javelin_WD_B
+{
+	editorSubcategory="RC_RHS_D_subcat";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1132_m2_d.paa";
+	hiddenSelectionsTextures[]=
+	{
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1132_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_co.paa",
+		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_ca.paa",
+		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
+		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
+	};
+};
+class RC_Stryker_M1132_M2_Javelin_WD_O: RC_Stryker_M1132_M2_Javelin_WD_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1132_M2_Javelin_D_O: RC_Stryker_M1132_M2_Javelin_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_Stryker_M1132_M2_Javelin_WD_I: RC_Stryker_M1132_M2_Javelin_WD_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+class RC_Stryker_M1132_M2_Javelin_D_I: RC_Stryker_M1132_M2_Javelin_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
+
 
 /*
 	//testing alternatives to make M1127 driver view work
@@ -995,7 +1287,6 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD
 	crew="B_UAV_AI";
 	forceHideDriver=1;
 	driverForceOptics=1;
-	maximumLoad=3000;
 };
 class RC_Stryker_M1127_M2_D_B: RC_Stryker_M1127_M2_WD_B
 {

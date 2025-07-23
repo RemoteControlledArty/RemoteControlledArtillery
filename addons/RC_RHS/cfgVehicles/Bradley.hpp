@@ -42,6 +42,7 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 	maxSpeed=75;
 	enginePower=670;
 	peakTorque=2490;
+	maximumLoad=4000;
 
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
