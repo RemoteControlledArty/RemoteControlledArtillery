@@ -572,6 +572,12 @@ class RC_ammo_Penetrator_MP_120mm: RC_ammo_Penetrator_MPAB
 	caliber=60;
 	warheadName="TandemHEAT";
 };
+class RC_ammo_Penetrator_MP_125mm: RC_ammo_Penetrator_MPAB
+{
+	hit=780;
+	caliber=60;
+	warheadName="TandemHEAT";
+};
 
 
 //add penetrator to 40mm indirect!

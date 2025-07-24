@@ -1256,28 +1256,19 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 {
 	#include "\RC_RHS\cfgVehicles\StrykerBasics_Include.hpp"
 
-	/*
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherAngle=180;
 	weapons[]=
 	{
-		"rhsusf_weap_M6_GLUA",
-		"rhsusf_weap_M6_L1",
-		"rhsusf_weap_M6_L2",
-		"rhsusf_weap_M6_L3",
-		"rhsusf_weap_M6_R1",
-		"rhsusf_weap_M6_R2",
-		"rhsusf_weap_M6_R3"
+		"RC_target_confirmer_datalink",
+		"SmokeLauncher"
 	};
 	magazines[]=
 	{
-		"rhsusf_mag_L8A3_48",
-		"rhsusf_mag_L8A3_L1_8",
-		"rhsusf_mag_L8A3_L2_8",
-		"rhsusf_mag_L8A3_L3_8",
-		"rhsusf_mag_L8A3_R1_8",
-		"rhsusf_mag_L8A3_R2_8",
-		"rhsusf_mag_L8A3_R3_8"
+		"RC_target_confirmer_mag",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
 	};
-	*/
 	
 	class AnimationSources: AnimationSources
 	{
@@ -1302,37 +1293,98 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
 			gunnerName="Gunner";
-			//isCopilot=1; //allows to trigger EH that gives driving controls
-			//canUseScanner = 0; // Can't use the vehicle's Sensors, can be defined per individual turret. Useful to restrict access to vehicle sensors (target marking) on some positions in vehicles (i.e. door gunners)
-		};
 
-		class Turret_Weapon: Turret_Weapon {};
-
-		/*
-		class Turret_Weapon: Turret_Weapon
-		{
 			weapons[]=
 			{
-				"RC_RHS_M2_nonlock"
+				"RC_target_confirmer_datalink",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"RC_RHS_mag_100rnd_127x99_T_R_nonlock",
-				"RC_RHS_mag_100rnd_127x99_T_R_nonlock",
-				"RC_RHS_mag_100rnd_127x99_T_R_nonlock",
-				"RC_RHS_mag_100rnd_127x99_T_R_nonlock",
-				"RC_RHS_mag_100rnd_127x99_T_R_nonlock",
-				"RC_RHS_mag_100rnd_127x99_T_R_nonlock",
-				"RC_RHS_mag_100rnd_127x99_T_R_nonlock",
-				"RC_RHS_mag_100rnd_127x99_T_R_nonlock",
-				"RC_RHS_mag_100rnd_127x99_T_R_nonlock",
-				"RC_RHS_mag_100rnd_127x99_T_R_nonlock"
+				"RC_target_confirmer_mag",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			/*
+			memoryPointGunnerOptics[]={"driverview","pilot"};	// ""
+			//gunnerOpticsModel="";
+
+			class OpticsIn
+			{
+				class DVE_Wide: ViewOptics
+				{
+					camPos="view_DVE";
+					opticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
+					gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
+					visionMode[]=
+					{
+						"Normal",
+						"NVG",
+						"TI"
+					};
+					thermalMode[]={0};
+					hitpoint="Hit_Optic_DVEA";
+					initFov=0.9;
+					minFov=0.02;
+					maxFov=0.9;
+				};
+				class DVS_Rear: DVE_Wide
+				{
+					camPos="view_rear";
+					camDir="view_rear_dir";
+					hitpoint="Hit_Optic_Driver_Rear";
+				};
+			};
+			class ViewOptics: ViewOptics
+			{
+				camPos="view_DVE";
+				opticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
+				gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
+				visionMode[]=
+				{
+					"Normal",
+					"NVG",
+					"TI"
+				};
+				thermalMode[]={0};
+				hitpoint="Hit_Optic_DVEA";
+				initFov=0.9;
+				minFov=0.02;
+				maxFov=0.9;
+			};
+			*/
+		};
+
+		class Turret_Weapon: Turret_Weapon
+		{
+			//canUseScanner=0; // Can't use the vehicle's Sensors, can be defined per individual turret. Useful to restrict access to vehicle sensors (target marking) on some positions in vehicles (i.e. door gunners)
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+			maxElev=50;	//30
+
+			weapons[]=
+			{
+				"RC_RHS_M2_DroneLock",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
+				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
+				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
+				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
+				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
+				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
+				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
 			};
 		};
-		*/
 		
 		class Turret_LRAS: Turret_LRAS
 		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+
 			class OpticsIn
 			{
 				class Wide: ViewOptics
@@ -1343,8 +1395,9 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 					maxFov=0.9;
 					visionMode[]=
 					{
-						"TI",
-						"Normal"
+						"Normal",
+						"NVG",
+						"TI"
 					};
 					thermalMode[]={0};
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CITV_w";
@@ -1399,41 +1452,6 @@ class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
 			soundPosition="hatch_driver_axis";
 			*/
 			/*
-		};
-	};
-
-	/*
-	class ViewPilot: ViewPilot
-	{
-		class Wide: ViewOptics
-		{
-			camPos="view_driver";
-			opticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_vision_block";
-			visionMode[]=
-			{
-				"Normal"
-			};
-			hitpoint="Hit_Optic_Driver2";
-		};
-		class DVE_Wide: Wide
-		{
-			camPos="view_DVE";
-			opticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
-			visionMode[]=
-			{
-				"TI"
-			};
-			thermalMode[]={0,1};
-			initFov=1.07692;
-			minFov=1.07692;
-			maxFov=1.07692;
-			hitpoint="Hit_Optic_DVEA";
-		};
-		class DVS_Rear: DVE_Wide
-		{
-			camPos="view_rear";
-			camDir="view_rear_dir";
-			hitpoint="Hit_Optic_Driver_Rear";
 		};
 	};
 	*/

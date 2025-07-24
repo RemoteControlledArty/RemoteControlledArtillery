@@ -334,11 +334,17 @@ class RC_RHS_ammo_127x99_SLAP_T_R: rhs_ammo_127x99_SLAP_Tracer_Red
 	tracerStartTime=0.04;
 	tracerEndTime=4.5;
 };
-class RC_RHS_ammo_127x99_Ball_T_R_nonlock: RC_RHS_ammo_127x99_Ball_T_R
+class RC_RHS_ammo_127x99_Ball_DroneLock_T_R: RC_RHS_ammo_127x99_Ball_T_R
 {
 	laserLock=0;
 	irLock=0;
-	airLock=0;
+	airLock=2;
+};
+class RC_RHS_ammo_127x99_SLAP_DroneLock_T_R: RC_RHS_ammo_127x99_SLAP_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=2;
 };
 
 

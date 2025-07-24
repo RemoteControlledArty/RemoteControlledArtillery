@@ -554,14 +554,19 @@ class RC_RHS_20mm_AC_CROWS_M153: RC_autocannon_20mm_CTWS
 };
 
 
-/*
 class RHS_M2;
-class RC_RHS_M2_nonlock: RHS_M2
+class RC_RHS_M2_DroneLock: RHS_M2
 {
-	canLock=0;
-	magazines[] =
+	ballisticsComputer="1 + 2";
+	//canLock=0;
+	magazines[]=
 	{
-		"RC_RHS_mag_100rnd_127x99_T_R_nonlock"
+		"RC_RHS_mag_200rnd_127x99_DroneLock_T_R",
+		"RC_RHS_mag_150rnd_127x99_DroneLock_T_R",
+		"RC_RHS_mag_100rnd_127x99_DroneLock_T_R",
+
+		"RC_RHS_mag_200rnd_127x99_SLAP_DroneLock_T_R",
+		"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
+		"RC_RHS_mag_100rnd_127x99_SLAP_DroneLock_T_R"
 	};
 };
-*/

@@ -347,10 +347,7 @@ class RC_RHS_mag_200rnd_127x99: rhs_mag_200rnd_127x99_mag
 {
 	ammo="RC_RHS_ammo_127x99_Ball";
 };
-class RC_RHS_mag_400rnd_127x99: RC_RHS_mag_200rnd_127x99
-{
-	count=400;
-};
+class RC_RHS_mag_400rnd_127x99: RC_RHS_mag_200rnd_127x99 {count=400;};
 
 
 class rhs_mag_200rnd_127x99_mag_Tracer_Red;
@@ -359,10 +356,7 @@ class RC_RHS_mag_200rnd_127x99_T_R: rhs_mag_200rnd_127x99_mag_Tracer_Red
 	ammo="RC_RHS_ammo_127x99_Ball_T_R";
 	tracersEvery=1;
 };
-class RC_RHS_mag_400rnd_127x99_T_R: RC_RHS_mag_200rnd_127x99_T_R
-{
-	count=400;
-};
+class RC_RHS_mag_400rnd_127x99_T_R: RC_RHS_mag_200rnd_127x99_T_R {count=400;};
 
 
 class rhs_mag_200rnd_127x99_SLAP_mag;
@@ -370,10 +364,7 @@ class RC_RHS_mag_200rnd_127x99_SLAP: rhs_mag_200rnd_127x99_SLAP_mag
 {
 	ammo="RC_RHS_ammo_127x99_SLAP";
 };
-class RC_RHS_mag_400rnd_127x99_SLAP: RC_RHS_mag_200rnd_127x99_SLAP
-{
-	count=400;
-};
+class RC_RHS_mag_400rnd_127x99_SLAP: RC_RHS_mag_200rnd_127x99_SLAP {count=400;};
 
 
 class rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red;
@@ -382,17 +373,25 @@ class RC_RHS_mag_200rnd_127x99_SLAP_T_R: rhs_mag_200rnd_127x99_SLAP_mag_Tracer_R
 	ammo="RC_RHS_ammo_127x99_SLAP_T_R";
 	tracersEvery=1;
 };
-class RC_RHS_mag_400rnd_127x99_SLAP_T_R: RC_RHS_mag_200rnd_127x99_SLAP_T_R
-{
-	count=400;
-};
+class RC_RHS_mag_400rnd_127x99_SLAP_T_R: RC_RHS_mag_200rnd_127x99_SLAP_T_R {count=400;};
 
 
-class RC_RHS_mag_100rnd_127x99_T_R_nonlock: RC_RHS_mag_200rnd_127x99_T_R
+class RC_RHS_mag_200rnd_127x99_Ball_DroneLock_T_R: RC_RHS_mag_200rnd_127x99_T_R
 {
-	ammo="RC_RHS_ammo_127x99_Ball_T_R_nonlock";
-	count=100;
+	ammo="RC_RHS_ammo_127x99_Ball_DroneLock_T_R";
+	tracersEvery=1;
 };
+class RC_RHS_mag_150rnd_127x99_Ball_DroneLock_T_R: RC_RHS_mag_200rnd_127x99_Ball_DroneLock_T_R {count=150;};
+class RC_RHS_mag_100rnd_127x99_Ball_DroneLock_T_R: RC_RHS_mag_200rnd_127x99_Ball_DroneLock_T_R {count=100;};
+
+
+class RC_RHS_mag_200rnd_127x99_SLAP_DroneLock_T_R: rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red
+{
+	ammo="RC_RHS_ammo_127x99_SLAP_DroneLock_T_R";
+	tracersEvery=1;
+};
+class RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R: RC_RHS_mag_200rnd_127x99_SLAP_DroneLock_T_R {count=150;};
+class RC_RHS_mag_100rnd_127x99_SLAP_DroneLock_T_R: RC_RHS_mag_200rnd_127x99_SLAP_DroneLock_T_R {count=100;};
 
 
 //40mm
