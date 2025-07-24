@@ -1285,6 +1285,26 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 		{
 		};
 		*/
+		class ReloadAnim
+		{
+			source="reload";
+			weapon="RC_RHS_M2_DroneLock";
+		};
+		class ReloadMagazine
+		{
+			source="reloadmagazine";
+			weapon="RC_RHS_M2_DroneLock";
+		};
+		class Revolving
+		{
+			source="revolving";
+			weapon="RC_RHS_M2_DroneLock";
+		};
+		class muzzle_rot_MG
+		{
+			source="ammorandom";
+			weapon="RC_RHS_M2_DroneLock";
+		};
 	};
 
 	class Turrets: Turrets
@@ -1396,8 +1416,8 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 					visionMode[]=
 					{
 						"Normal",
-						"NVG",
-						"TI"
+						"TI",
+						"NVG"
 					};
 					thermalMode[]={0};
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CITV_w";
@@ -1419,8 +1439,8 @@ class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
 			visionMode[]=
 			{
 				"Normal",
-				"NVG",
-				"TI"
+				"TI",
+				"NVG"
 			};
 		};
 		class DVS_Rear: DVS_Rear
@@ -1428,8 +1448,8 @@ class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
 			visionMode[]=
 			{
 				"Normal",
-				"NVG",
-				"TI"
+				"TI",
+				"NVG"
 			};
 		};
 	};

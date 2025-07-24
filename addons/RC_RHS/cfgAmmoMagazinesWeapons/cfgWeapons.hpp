@@ -540,8 +540,24 @@ class RC_RHS_MK19_CROWS_M153: RHS_MK19_CROWS_M153_base
 
 
 class RC_autocannon_20mm_CTWS;
-class RC_RHS_20mm_AC_CROWS_M153: RC_autocannon_20mm_CTWS
+class RC_RHS_20mm_AC_CROWS_M153_Base: RC_autocannon_20mm_CTWS
 {
+	class HE;
+	class AP;
+};
+class RC_RHS_20mm_AC_CROWS_M153: RC_RHS_20mm_AC_CROWS_M153_Base
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+	class HE: HE
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	};
+	class AP: AP
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	};
+
 	class GunParticles
 	{
 		class effect1
