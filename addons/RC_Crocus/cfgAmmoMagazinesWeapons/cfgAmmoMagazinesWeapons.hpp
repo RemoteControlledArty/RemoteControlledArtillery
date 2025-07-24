@@ -208,7 +208,7 @@ class cfgMagazines
 	};
 	class RC_8xCrocus_Deployer_UGV_Mag: RC_18xCrocus_Deployer_UGV_Mag
 	{
-		count=6;
+		count=8;
 	};
 	class RC_6xCrocus_Deployer_UGV_Mag: RC_18xCrocus_Deployer_UGV_Mag
 	{

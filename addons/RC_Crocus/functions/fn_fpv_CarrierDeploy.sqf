@@ -25,6 +25,7 @@ private _uavNew = _uavSpawn select 0;
 
 	sleep 3;
 	player connectTerminalToUAV _uavNew;
+	[_uavNew] call RC_fnc_RC_uavChangeLocality;
 	player action ["UAVTerminalOpen", player];
 	//driver _uavNew switchCamera "Internal";
 	//player remoteControl driver _uavNew;
