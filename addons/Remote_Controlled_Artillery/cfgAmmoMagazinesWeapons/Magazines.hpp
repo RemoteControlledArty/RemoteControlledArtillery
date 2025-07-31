@@ -8,6 +8,31 @@ class RC_target_confirmer_mag: CA_Magazine
 };
 
 
+/*
+class RC_1Rnd_DroneInterceptor_shell: CA_Magazine
+{
+	ammo="RC_IFV_AA";
+	displayName="Drone-Interceptor";
+	displayNameShort="Drone-Interceptor";
+	author="Ascent";
+
+	scope=2;
+	scopeArsenal=2;
+
+	type=16;
+	picture="\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
+	initSpeed=80;
+	count=1;
+	nameSound="";
+	descriptionShort="$STR_A3_CfgMagazines_1Rnd_HE_Grenade_shell1";
+	mass=4;
+	modelSpecial="\a3\Weapons_F\MagazineProxies\mag_40x36_HE_1rnd.p3d";
+	modelSpecialIsProxy=1;
+	deleteIfEmpty=0;
+};
+*/
+
+
 class VehicleMagazine;
 class RC_6xFPV_Deployer_Mag: VehicleMagazine
 {

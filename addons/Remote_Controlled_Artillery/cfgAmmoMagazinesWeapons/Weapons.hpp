@@ -16,6 +16,69 @@ class RC_target_confirmer_datalink: RC_target_confirmer
 	displayNameShort="datalink";
 };
 
+/*
+class arifle_Mk20_GL_F;
+class RC_arifle_Mk20_GL_F_Base: arifle_Mk20_GL_F
+{
+	class EGLM;
+	scope=0;
+}
+class RC_arifle_Mk20_GL_F: RC_arifle_Mk20_GL_F_Base
+{
+	scope=2;
+	scopeArsenal=2;
+	displayName="Drone-Interceptor";
+	displayNameShort="Drone-Interceptor";
+	
+	class EGLM: EGLM
+	{
+		canLock = 0;
+		lockedTargetSound[] = {"",0.000316228,6};
+		lockingTargetSound[] = {"",0.000316228,2};
+		lockAcquire = 1;
+
+		magazines[] = {"1Rnd_HE_Grenade_shell", "RC_1Rnd_DroneInterceptor_shell"};
+		magazineWell[] = {"RC_UGL_40x36"};
+	};
+};
+
+class RC_UGL_40x36
+{
+	BI_Magazines[]=
+	{
+		"1Rnd_HE_Grenade_shell",
+		"RC_1Rnd_DroneInterceptor_shell"
+	};
+	magazines[]=
+	{
+		"1Rnd_HE_Grenade_shell",
+		"RC_1Rnd_DroneInterceptor_shell"
+	};
+	*/
+
+	/*
+	RC_Magazines[]=
+	{
+		"1Rnd_HE_Grenade_shell",
+		"UGL_FlareWhite_F",
+		"UGL_FlareGreen_F",
+		"UGL_FlareRed_F",
+		"UGL_FlareYellow_F",
+		"UGL_FlareCIR_F",
+		"1Rnd_Smoke_Grenade_shell",
+		"1Rnd_SmokeRed_Grenade_shell",
+		"1Rnd_SmokeGreen_Grenade_shell",
+		"1Rnd_SmokeYellow_Grenade_shell",
+		"1Rnd_SmokePurple_Grenade_shell",
+		"1Rnd_SmokeBlue_Grenade_shell",
+		"1Rnd_SmokeOrange_Grenade_shell"
+	};
+	*/
+
+	/*
+};
+*/
+
 
 class MGun;
 class RC_FPV_Deployer: MGun
