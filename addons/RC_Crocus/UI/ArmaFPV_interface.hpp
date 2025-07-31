@@ -464,6 +464,17 @@ class RscTitles
                 w = GRID_W(2);
                 h = GRID_H(2);
             };
+            class AimingArea: RscPicture
+            {
+                idc = -1;
+                text="\RC_Crocus\UI\FPV_aiming_area_ca.paa";    //vertical line to indicate aiming area
+                x="14.5 * 		(0.01875 * SafezoneH)";
+                //x = 0.5 - GRID_W(2) / 2;
+                //x = 0.5 - GRID_W(2) / 2;
+                y = 0.5 - GRID_H(9.6) / 2 - GRID_H(1.6);
+                w="0.3 * 		(0.025 * SafezoneH)";   //"1 * 		(0.025 * SafezoneH)";
+                h="1 * 		(0.01875 * SafezoneH)"; //"3 * 		(0.01875 * SafezoneH)";     
+            };
             class V_Line_Left : ctrlStaticPicture
             {
                 idc = -1;

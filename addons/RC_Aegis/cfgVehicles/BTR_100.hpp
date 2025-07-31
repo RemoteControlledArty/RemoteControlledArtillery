@@ -323,7 +323,7 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 	};
 
 	displayName="BTR-100 Bumerang";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_IFV_ATGM_subcat";
 	scope=2;
 	scopeCurator=2;
 

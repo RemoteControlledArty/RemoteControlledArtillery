@@ -286,7 +286,7 @@ class RC_AA_A_Base: RC_AA_Base
 };
 class RC_AA_A: RC_AA_A_Base
 {
-	displayName="RC Anti-Air";
+	displayName="RC Anti-Air / C-UAS";
 
 	scope=2;
 	scopeCurator=2;
@@ -505,7 +505,7 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	displayName="RC Anti-Air";
+	displayName="RC Anti-Air / C-UAS";
 	faction="RemoteControlled_O";
 	editorSubcategory="RC_AntiAir_subcat";
 	author="Ascent";

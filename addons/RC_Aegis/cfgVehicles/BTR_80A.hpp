@@ -107,7 +107,7 @@ class RC_BTR80A_WD: RC_BTR80A
 	};
 
 	displayName="BTR-80A";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_IFV_subcat";
 	scope=2;
 	scopeCurator=2;
 

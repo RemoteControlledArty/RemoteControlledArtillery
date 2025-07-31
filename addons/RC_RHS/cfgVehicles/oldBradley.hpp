@@ -433,7 +433,8 @@ class RC_M2A2_D_B: RC_M2A2_D
 	};
 
 	displayName="M2A2 Bradley";
-	editorSubcategory="RC_RHS_D_subcat";
+	editorSubcategory="RC_IFV_ATGM_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -448,7 +449,7 @@ class RC_M2A2_D_B: RC_M2A2_D
 
 class RC_M2A2_WD_B: RC_M2A2_D_B
 {
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A2_wd.paa";
 	hiddenSelectionsTextures[]=
 	{

@@ -2023,6 +2023,7 @@ class RC_IFV_AA: RC_IFV_AA_Base
 	cameraViewAvailable=1;
 	initTime=0.01;
 
+	missileLockMinDistance=20;
 	missileLockCone=90;
 	missileKeepLockedCone=90;
 	thrustTime=4;

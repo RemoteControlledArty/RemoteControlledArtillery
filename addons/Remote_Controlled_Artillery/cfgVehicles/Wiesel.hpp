@@ -37,7 +37,7 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	displayName="RC Wiesel II Anti-Air";
+	displayName="RC Wiesel II Anti-Air / C-UAS";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
 	author="Ascent";

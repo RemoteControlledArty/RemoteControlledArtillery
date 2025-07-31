@@ -275,7 +275,7 @@ class RC_FPV_Mothership: RC_FPV_Mothership_Base
 	*/
 
 	displayName="RC FPV Mothership";
-	editorSubcategory="RC_UAV_Designator_subcat";
+	editorSubcategory="RC_UAV_Deployers_subcat";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;
 	
@@ -703,7 +703,7 @@ class RC_FPV_MothershipMQ: RC_FPV_MothershipMQ_Base
 	*/
 
 	displayName="RC FPV Mothership";
-	editorSubcategory="RC_UAV_Designator_subcat";
+	editorSubcategory="RC_UAV_Deployers_subcat";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;
 	

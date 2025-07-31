@@ -17,6 +17,8 @@ class EventHandlers: EventHandlers
 #include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 lockDetectionSystem="2+4+8";
 
+editorSubcategory="RC_APC_subcat";
+
 forceInGarage=1;
 driverCompartments="Compartment2";
 commanding=2;

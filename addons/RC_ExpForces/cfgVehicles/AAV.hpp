@@ -211,7 +211,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 	};
 
 	displayName="AAV-9A1";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_IFV_subcat";
 	scope=2;
 	scopeCurator=2;
 
@@ -739,7 +739,7 @@ class RC_AAV9_A: RC_AAV9
 	};
 
 	displayName="AAV-9";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_IFV_subcat";
 	scope=2;
 	scopeCurator=2;
 

@@ -296,7 +296,7 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 	};
 
 	displayName="BM-2T";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_IFV_ATGM_subcat";
 	scope=2;
 	scopeCurator=2;
 

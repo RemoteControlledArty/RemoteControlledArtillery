@@ -170,7 +170,7 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 	};
 
 	displayName="Patria AMV ATGM";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_IFV_ATGM_subcat";
 	scope=2;
 	scopeCurator=2;
 

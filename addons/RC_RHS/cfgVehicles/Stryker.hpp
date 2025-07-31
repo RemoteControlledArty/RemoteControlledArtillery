@@ -142,7 +142,7 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 	};
 
 	displayName="M1126 Stryker M2";
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -152,7 +152,7 @@ class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
 };
 class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
 {
-	editorSubcategory="RC_RHS_D_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -211,6 +211,7 @@ class RC_Stryker_M1126_M2_Javelin_WD_B: RC_Stryker_M1126_M2_WD_B
 	};
 
 	displayName="M1126 Stryker M2/Javelin";
+	editorSubcategory="RC_APC_ATGM_subcat";
 
 	class Turrets: Turrets
 	{
@@ -251,7 +252,7 @@ class RC_Stryker_M1126_M2_Javelin_WD_B: RC_Stryker_M1126_M2_WD_B
 };
 class RC_Stryker_M1126_M2_Javelin_D_B: RC_Stryker_M1126_M2_Javelin_WD_B
 {
-	editorSubcategory="RC_RHS_D_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -517,7 +518,7 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 	};
 
 	displayName="M1126 Stryker Mk19";
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -528,7 +529,7 @@ class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
 };
 class RC_Stryker_M1126_MK19_D_B: RC_Stryker_M1126_MK19_WD_B
 {
-	editorSubcategory="RC_RHS_D_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -588,6 +589,7 @@ class RC_Stryker_M1126_20mmAC_WD_B: RC_Stryker_M1126_MK19_WD_B
 	};
 
 	displayName="M1126 Stryker 20mm AC";
+	editorSubcategory="RC_IFV_subcat";
 
 	class AnimationSources: AnimationSources
 	{
@@ -666,7 +668,7 @@ class RC_Stryker_M1126_20mmAC_WD_B: RC_Stryker_M1126_MK19_WD_B
 };
 class RC_Stryker_M1126_20mmAC_D_B: RC_Stryker_M1126_20mmAC_WD_B
 {
-	editorSubcategory="RC_RHS_D_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -725,6 +727,7 @@ class RC_Stryker_M1126_20mmAC_Javelin_WD_B: RC_Stryker_M1126_20mmAC_WD_B
 	};
 
 	displayName="M1126 Stryker 20mm AC/Javelin";
+	editorSubcategory="RC_IFV_ATGM_subcat";
 
 	class Turrets: Turrets
 	{
@@ -782,7 +785,7 @@ class RC_Stryker_M1126_20mmAC_Javelin_WD_B: RC_Stryker_M1126_20mmAC_WD_B
 };
 class RC_Stryker_M1126_20mmAC_Javelin_D_B: RC_Stryker_M1126_20mmAC_Javelin_WD_B
 {
-	editorSubcategory="RC_RHS_D_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -1047,7 +1050,7 @@ class RC_Stryker_M1132_M2_WD_B: RC_Stryker_M1132_M2_WD
 	};
 
 	displayName="M1132 Mineplow Stryker M2";
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -1058,7 +1061,7 @@ class RC_Stryker_M1132_M2_WD_B: RC_Stryker_M1132_M2_WD
 };
 class RC_Stryker_M1132_M2_D_B: RC_Stryker_M1132_M2_WD_B
 {
-	editorSubcategory="RC_RHS_D_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1132_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -1118,6 +1121,7 @@ class RC_Stryker_M1132_M2_Javelin_WD_B: RC_Stryker_M1132_M2_WD_B
 	};
 
 	displayName="M1132 Mineplow Stryker M2/Javelin";
+	editorSubcategory="RC_APC_ATGM_subcat";
 
 	class Turrets: Turrets
 	{
@@ -1158,7 +1162,7 @@ class RC_Stryker_M1132_M2_Javelin_WD_B: RC_Stryker_M1132_M2_WD_B
 };
 class RC_Stryker_M1132_M2_Javelin_D_B: RC_Stryker_M1132_M2_Javelin_WD_B
 {
-	editorSubcategory="RC_RHS_D_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1132_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -1537,7 +1541,7 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD_FixedRC
 	};
 
 	displayName="RC M1127 Stryker LRAS/M2";
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
@@ -1556,7 +1560,7 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD_FixedRC
 };
 class RC_Stryker_M1127_M2_D_B: RC_Stryker_M1127_M2_WD_B
 {
-	editorSubcategory="RC_RHS_D_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1127_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -1603,4 +1607,31 @@ class RC_Stryker_M1127_M2_D_I: RC_Stryker_M1127_M2_D_B
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+};
+
+
+
+class RC_Stryker_M1127_M2_RCIV_WD_B: RC_Stryker_M1127_M2_WD_B
+{
+	editorSubcategory="RC_ICV_armed_subcat";
+};
+class RC_Stryker_M1127_M2_RCIV_D_B: RC_Stryker_M1127_M2_D_B
+{
+	editorSubcategory="RC_ICV_armed_subcat";
+};
+class RC_Stryker_M1127_M2_RCIV_WD_O: RC_Stryker_M1127_M2_WD_O
+{
+	editorSubcategory="RC_ICV_armed_subcat";
+};
+class RC_Stryker_M1127_M2_RCIV_D_O: RC_Stryker_M1127_M2_D_O
+{
+	editorSubcategory="RC_ICV_armed_subcat";
+};
+class RC_Stryker_M1127_M2_RCIV_WD_I: RC_Stryker_M1127_M2_WD_I
+{
+	editorSubcategory="RC_ICV_armed_subcat";
+};
+class RC_Stryker_M1127_M2_RCIV_D_I: RC_Stryker_M1127_M2_D_I
+{
+	editorSubcategory="RC_ICV_armed_subcat";
 };

@@ -537,7 +537,7 @@ class RC_IFV_3_A: RC_IFV_3_A_Base
 	};
 
 	displayName="Pandur II";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_IFV_ATGM_subcat";
 	scope=2;
 	scopeCurator=2;
 

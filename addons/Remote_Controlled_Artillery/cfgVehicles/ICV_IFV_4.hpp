@@ -370,7 +370,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 	};
 
 	displayName="Patria AMV";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_IFV_subcat";
 	scope=2;
 	scopeCurator=2;
 

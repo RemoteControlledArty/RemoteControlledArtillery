@@ -13,7 +13,7 @@ class RC_FPV_Carrier_Base: RC_Mortar_UGV_Base
 		};
 	};
 
-	editorSubcategory="RC_UAV_Designator_subcat";
+	editorSubcategory="RC_UAV_Deployers_subcat";
 
 	class Components: Components
 	{

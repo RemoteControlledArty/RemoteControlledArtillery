@@ -153,7 +153,7 @@ class RC_ACV_30: RC_ACV_30_Base
 	};
 
 	displayName="ACV-30";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_IFV_subcat";
 	scope=2;
 	scopeCurator=2;
 	crew="B_UAV_AI";

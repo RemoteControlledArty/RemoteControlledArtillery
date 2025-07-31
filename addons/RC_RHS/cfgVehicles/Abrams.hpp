@@ -275,14 +275,22 @@ class RC_M1A2_SEPV2_D_B: RC_M1A2_SEPV2_D
 	};
 
 	displayName="M1A2 SEPV2 Abrams";
-	editorSubcategory="RC_RHS_D_subcat";
-	scope=2;
-	scopeCurator=2;
+	editorSubcategory="RC_MBT_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
+	scope=1;
+	scopeCurator=1;
 	forceInGarage=1;
 	faction="RemoteControlled_B";
 	side=1;
 
 	crew="B_UAV_AI";
+};
+class RC_M1A2_SEPV2_D_O: RC_M1A2_SEPV2_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
 };
 class RC_M1A2_SEPV2_D_I: RC_M1A2_SEPV2_D_B
 {
@@ -295,7 +303,7 @@ class RC_M1A2_SEPV2_D_I: RC_M1A2_SEPV2_D_B
 
 class RC_M1A2_SEPV2_WD_B: RC_M1A2_SEPV2_D_B
 {
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep2wd_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -309,6 +317,13 @@ class RC_M1A2_SEPV2_WD_B: RC_M1A2_SEPV2_D_B
 		"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv2_crows_wd_co.paa"
 	};
 };
+class RC_M1A2_SEPV2_WD_O: RC_M1A2_SEPV2_WD_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
+};
 class RC_M1A2_SEPV2_WD_I: RC_M1A2_SEPV2_WD_B
 {
 	faction="RemoteControlled_I";
@@ -320,7 +335,10 @@ class RC_M1A2_SEPV2_WD_I: RC_M1A2_SEPV2_WD_B
 
 class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 {
-	displayName="M1A2 SEPV2 Abrams NLOS";
+	//displayName="M1A2 SEPV2 Abrams NLOS";
+	displayName="M1A2 SEPV2 Abrams [broken zeroing]";
+	scope=2;
+	scopeCurator=2;
 
 	class Turrets: Turrets
 	{
@@ -362,11 +380,18 @@ class RC_M1A2_SEPV2_NLOS_D_I: RC_M1A2_SEPV2_NLOS_D_B
 	side=2;
 	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
 };
+class RC_M1A2_SEPV2_NLOS_D_O: RC_M1A2_SEPV2_NLOS_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
+};
 
 
 class RC_M1A2_SEPV2_NLOS_WD_B: RC_M1A2_SEPV2_NLOS_D_B
 {
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep2wd_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -379,6 +404,13 @@ class RC_M1A2_SEPV2_NLOS_WD_B: RC_M1A2_SEPV2_NLOS_D_B
 		"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv2_wd_co.paa",
 		"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv2_crows_wd_co.paa"
 	};
+};
+class RC_M1A2_SEPV2_NLOS_WD_O: RC_M1A2_SEPV2_NLOS_WD_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
 };
 class RC_M1A2_SEPV2_NLOS_WD_I: RC_M1A2_SEPV2_NLOS_WD_B
 {

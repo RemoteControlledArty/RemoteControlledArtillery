@@ -554,7 +554,7 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 	};
 
 	displayName="Otokar Arma";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_APC_subcat";
 	scope=2;
 	scopeCurator=2;
 
@@ -798,6 +798,7 @@ class RC_IFV_2_A_O: RC_APC_2_A_O
 	};
 	
 	displayName="Otokar Arma 20mm";
+	editorSubcategory="RC_IFV_subcat";
 
 	class Turrets: Turrets
 	{

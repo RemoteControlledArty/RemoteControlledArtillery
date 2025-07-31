@@ -308,9 +308,10 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 	*/
 
 	displayName="M2A3 Bradley";
-	editorSubcategory="RC_RHS_D_subcat";
-	scope=2;
-	scopeCurator=2;
+	editorSubcategory="RC_IFV_ATGM_subcat";
+	//editorSubcategory="RC_RHS_D_subcat";
+	scope=1;
+	scopeCurator=1;
 	forceInGarage=1;
 	faction="RemoteControlled_B";
 	side=1;
@@ -319,11 +320,23 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 	//forceHideDriver=1;
 	//driverForceOptics=1;
 };
-
-
+class RC_M2A3_BUSKIII_D_O: RC_M2A3_BUSKIII_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_M2A3_BUSKIII_D_I: RC_M2A3_BUSKIII_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
 class RC_M2A3_BUSKIII_WD_B: RC_M2A3_BUSKIII_D_B
 {
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A3_BUSKIII_wd.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -334,14 +347,12 @@ class RC_M2A3_BUSKIII_WD_B: RC_M2A3_BUSKIII_D_B
 		"\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
 	};
 };
-
-
-class RC_M2A3_BUSKIII_D_I: RC_M2A3_BUSKIII_D_B
+class RC_M2A3_BUSKIII_WD_O: RC_M2A3_BUSKIII_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M2A3_BUSKIII_WD_I: RC_M2A3_BUSKIII_WD_B
 {
@@ -354,7 +365,10 @@ class RC_M2A3_BUSKIII_WD_I: RC_M2A3_BUSKIII_WD_B
 
 class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 {
-	displayName="M2A3 Bradley NLOS";
+	scope=2;
+	scopeCurator=2;
+	//displayName="M2A3 Bradley NLOS";
+	displayName="M2A3 Bradley";
 	
 	class Turrets: Turrets
 	{
@@ -406,9 +420,23 @@ class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 		};
 	};
 };
+class RC_M2A3_BUSKIII_NLOS_D_O: RC_M2A3_BUSKIII_NLOS_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
+};
+class RC_M2A3_BUSKIII_NLOS_D_I: RC_M2A3_BUSKIII_NLOS_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+};
 class RC_M2A3_BUSKIII_NLOS_WD_B: RC_M2A3_BUSKIII_NLOS_D_B
 {
-	editorSubcategory="RC_RHS_WD_subcat";
+	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A3_BUSKIII_wd.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -419,14 +447,12 @@ class RC_M2A3_BUSKIII_NLOS_WD_B: RC_M2A3_BUSKIII_NLOS_D_B
 		"\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
 	};
 };
-
-
-class RC_M2A3_BUSKIII_NLOS_D_I: RC_M2A3_BUSKIII_NLOS_D_B
+class RC_M2A3_BUSKIII_NLOS_WD_O: RC_M2A3_BUSKIII_NLOS_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M2A3_BUSKIII_NLOS_WD_I: RC_M2A3_BUSKIII_NLOS_WD_B
 {

@@ -86,7 +86,7 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 	};
 
 	displayName="Warrior";
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_IFV_subcat";
 	scope=2;
 	scopeCurator=2;
 

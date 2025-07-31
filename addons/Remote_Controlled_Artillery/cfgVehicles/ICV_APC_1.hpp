@@ -289,7 +289,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_APC.hpp"
-	editorSubcategory="RC_IFV_APC_subcat";
+	editorSubcategory="RC_APC_subcat";
 
 	class Turrets: Turrets
 	{
@@ -536,6 +536,7 @@ class RC_IFV_1_A: RC_APC_1_A
 	};
 
 	displayName="Namer 20mm";
+	editorSubcategory="RC_IFV_subcat";
 
 	class Turrets: Turrets
 	{

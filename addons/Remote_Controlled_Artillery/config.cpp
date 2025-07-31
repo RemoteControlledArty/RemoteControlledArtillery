@@ -891,8 +891,12 @@ class CfgEditorSubcategories
 	class RC_Heli_subcat {displayname="Helicopters";};
 	class RC_ICV_armed_subcat {displayname="RCIVs (armed)";};
 	class RC_ICV_subcat {displayname="RCIVs (unarmed)";};
-	class RC_IFV_APC_subcat {displayname="IFVs / APCs";};
+	class RC_APC_subcat {displayname="APCs";};
+	class RC_APC_ATGM_subcat {displayname="APCs (ATGM)";};
+	class RC_IFV_subcat {displayname="IFVs";};
+	class RC_IFV_ATGM_subcat {displayname="IFVs (ATGM)";};
 	//class RC_Test_subcat {displayname="Test";};
+	class RC_UAV_Deployers_subcat {displayname="UAV Deployers";};
 	class RC_UAV_Designator_subcat {displayname="UAVs / Designators";};
 	/*
 	class RC_UAV_Designator_subcat {displayname="UAVs (Attack)";};
