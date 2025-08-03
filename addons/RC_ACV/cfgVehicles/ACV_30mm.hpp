@@ -493,6 +493,127 @@ class RC_ACV_30_I: RC_ACV_30
 };
 
 
+//20mm
+class RC_ACV_20: RC_ACV_30
+{
+	displayName="ACV-20";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_autocannon_20mm_ACV",
+				"RC_HMG_M2_ACV",
+				"SmokeLauncher_ACV"
+			};
+			#include "\RC_ACV\includes_vicmags\mags_ACV_20mm_red.hpp"
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class 30_flash
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_20mm_ACV";
+		};
+	};
+};
+class RC_ACV_20_O: RC_ACV_20
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_ACV\includes_vicmags\mags_ACV_20mm_green.hpp"
+		};
+	};
+};
+class RC_ACV_20_I: RC_ACV_20
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_ACV\includes_vicmags\mags_ACV_20mm_yellow.hpp"
+		};
+	};
+};
+
+
+//25mm
+class RC_ACV_25: RC_ACV_30
+{
+	displayName="ACV-25";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_autocannon_25mm_ACV",
+				"RC_HMG_M2_ACV",
+				"SmokeLauncher_ACV"
+			};
+			#include "\RC_ACV\includes_vicmags\mags_ACV_25mm_red.hpp"
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class 30_flash
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_25mm_ACV";
+		};
+	};
+};
+class RC_ACV_25_O: RC_ACV_25
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_ACV\includes_vicmags\mags_ACV_25mm_green.hpp"
+		};
+	};
+};
+class RC_ACV_25_I: RC_ACV_25
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_ACV\includes_vicmags\mags_ACV_40mm_yellow.hpp"
+		};
+	};
+};
+
+
+//40mm
 class RC_ACV_40: RC_ACV_30
 {
 	displayName="ACV-40";
@@ -508,6 +629,15 @@ class RC_ACV_40: RC_ACV_30
 				"SmokeLauncher_ACV"
 			};
 			#include "\RC_ACV\includes_vicmags\mags_ACV_40mm_red.hpp"
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class 30_flash
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_40mm_ACV";
 		};
 	};
 };

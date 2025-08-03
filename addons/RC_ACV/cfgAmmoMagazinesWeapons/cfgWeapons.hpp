@@ -91,6 +91,138 @@ class RC_autocannon_30mm_ACV: RC_autocannon_30mm_ACV_Base
 };
 
 
+class RC_autocannon_20mm_ACV: RC_autocannon_30mm_ACV
+{
+	name="20mm";
+
+	class HE: HE
+	{
+		magazines[]=
+		{
+			"RC_120Rnd_20mm_MP_Pen_T_R",
+			"RC_120Rnd_20mm_MP_Pen_T_G",
+			"RC_120Rnd_20mm_MP_Pen_T_Y",
+
+			"RC_120Rnd_20mm_HE_Pen_T_R",
+			"RC_120Rnd_20mm_HE_Pen_T_G",
+			"RC_120Rnd_20mm_HE_Pen_T_Y",
+
+			"RC_120Rnd_20mm_MP_DF_T_R",
+			"RC_120Rnd_20mm_MP_DF_T_G",
+			"RC_120Rnd_20mm_MP_DF_T_Y",
+
+			"RC_120Rnd_20mm_HE_DF_T_R",
+			"RC_120Rnd_20mm_HE_DF_T_G",
+			"RC_120Rnd_20mm_HE_DF_T_Y",
+
+			"RC_120Rnd_20mm_MP_QF_T_R",
+			"RC_120Rnd_20mm_MP_QF_T_G",
+			"RC_120Rnd_20mm_MP_QF_T_Y",
+
+			"RC_120Rnd_20mm_HE_QF_T_R",
+			"RC_120Rnd_20mm_HE_QF_T_G",
+			"RC_120Rnd_20mm_HE_QF_T_Y",
+
+			"RC_120Rnd_20mm_MPAB_DF_T_R",
+			"RC_120Rnd_20mm_MPAB_DF_T_G",
+			"RC_120Rnd_20mm_MPAB_DF_T_Y",
+
+			"RC_120Rnd_20mm_HEAB_DF_T_R",
+			"RC_120Rnd_20mm_HEAB_DF_T_G",
+			"RC_120Rnd_20mm_HEAB_DF_T_Y",
+
+			"RC_120Rnd_20mm_MPAB_QF_T_R",
+			"RC_120Rnd_20mm_MPAB_QF_T_G",
+			"RC_120Rnd_20mm_MPAB_QF_T_Y",
+
+			"RC_120Rnd_20mm_HEAB_QF_T_R",
+			"RC_120Rnd_20mm_HEAB_QF_T_G",
+			"RC_120Rnd_20mm_HEAB_QF_T_Y",
+			"RC_120Rnd_20mm_cUAS"
+		};
+	};
+	class AP: AP
+	{
+		magazines[]=
+		{
+			"RC_120Rnd_20mm_APFSDS_T_R",
+			"RC_120Rnd_20mm_APFSDS_T_G",
+			"RC_120Rnd_20mm_APFSDS_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.15;
+		};
+	};
+};
+
+
+class RC_autocannon_25mm_ACV: RC_autocannon_30mm_ACV
+{
+	name="25mm";
+
+	class HE: HE
+	{
+		magazines[]=
+		{
+			"RC_120Rnd_25mm_MP_Pen_T_R",
+			"RC_120Rnd_25mm_MP_Pen_T_G",
+			"RC_120Rnd_25mm_MP_Pen_T_Y",
+
+			"RC_120Rnd_25mm_HE_Pen_T_R",
+			"RC_120Rnd_25mm_HE_Pen_T_G",
+			"RC_120Rnd_25mm_HE_Pen_T_Y",
+
+			"RC_120Rnd_25mm_MP_DF_T_R",
+			"RC_120Rnd_25mm_MP_DF_T_G",
+			"RC_120Rnd_25mm_MP_DF_T_Y",
+
+			"RC_120Rnd_25mm_HE_DF_T_R",
+			"RC_120Rnd_25mm_HE_DF_T_G",
+			"RC_120Rnd_25mm_HE_DF_T_Y",
+
+			"RC_120Rnd_25mm_MP_QF_T_R",
+			"RC_120Rnd_25mm_MP_QF_T_G",
+			"RC_120Rnd_25mm_MP_QF_T_Y",
+
+			"RC_120Rnd_25mm_HE_QF_T_R",
+			"RC_120Rnd_25mm_HE_QF_T_G",
+			"RC_120Rnd_25mm_HE_QF_T_Y",
+
+			"RC_120Rnd_25mm_MPAB_DF_T_R",
+			"RC_120Rnd_25mm_MPAB_DF_T_G",
+			"RC_120Rnd_25mm_MPAB_DF_T_Y",
+
+			"RC_120Rnd_25mm_HEAB_DF_T_R",
+			"RC_120Rnd_25mm_HEAB_DF_T_G",
+			"RC_120Rnd_25mm_HEAB_DF_T_Y",
+
+			"RC_120Rnd_25mm_MPAB_QF_T_R",
+			"RC_120Rnd_25mm_MPAB_QF_T_G",
+			"RC_120Rnd_25mm_MPAB_QF_T_Y",
+
+			"RC_120Rnd_25mm_HEAB_QF_T_R",
+			"RC_120Rnd_25mm_HEAB_QF_T_G",
+			"RC_120Rnd_25mm_HEAB_QF_T_Y",
+			"RC_120Rnd_25mm_cUAS"
+		};
+	};
+	class AP: AP
+	{
+		magazines[]=
+		{
+			"RC_120Rnd_25mm_APFSDS_T_R",
+			"RC_120Rnd_25mm_APFSDS_T_G",
+			"RC_120Rnd_25mm_APFSDS_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.175;
+		};
+	};
+};
+
+
 class RC_autocannon_40mm_ACV: RC_autocannon_30mm_ACV
 {
 	name="40mm";
@@ -99,6 +231,49 @@ class RC_autocannon_40mm_ACV: RC_autocannon_30mm_ACV
 	{
 		magazines[]=
 		{
+			"RC_120Rnd_40mm_MP_Pen_T_R",
+			"RC_120Rnd_40mm_MP_Pen_T_G",
+			"RC_120Rnd_40mm_MP_Pen_T_Y",
+
+			"RC_120Rnd_40mm_HE_Pen_T_R",
+			"RC_120Rnd_40mm_HE_Pen_T_G",
+			"RC_120Rnd_40mm_HE_Pen_T_Y",
+
+			"RC_120Rnd_40mm_MP_DF_T_R",
+			"RC_120Rnd_40mm_MP_DF_T_G",
+			"RC_120Rnd_40mm_MP_DF_T_Y",
+
+			"RC_120Rnd_40mm_HE_DF_T_R",
+			"RC_120Rnd_40mm_HE_DF_T_G",
+			"RC_120Rnd_40mm_HE_DF_T_Y",
+
+			"RC_120Rnd_40mm_MP_QF_T_R",
+			"RC_120Rnd_40mm_MP_QF_T_G",
+			"RC_120Rnd_40mm_MP_QF_T_Y",
+
+			"RC_120Rnd_40mm_HE_QF_T_R",
+			"RC_120Rnd_40mm_HE_QF_T_G",
+			"RC_120Rnd_40mm_HE_QF_T_Y",
+
+			"RC_120Rnd_40mm_MPAB_DF_T_R",
+			"RC_120Rnd_40mm_MPAB_DF_T_G",
+			"RC_120Rnd_40mm_MPAB_DF_T_Y",
+
+			"RC_120Rnd_40mm_HEAB_DF_T_R",
+			"RC_120Rnd_40mm_HEAB_DF_T_G",
+			"RC_120Rnd_40mm_HEAB_DF_T_Y",
+
+			"RC_120Rnd_40mm_MPAB_QF_T_R",
+			"RC_120Rnd_40mm_MPAB_QF_T_G",
+			"RC_120Rnd_40mm_MPAB_QF_T_Y",
+
+			"RC_120Rnd_40mm_HEAB_QF_T_R",
+			"RC_120Rnd_40mm_HEAB_QF_T_G",
+			"RC_120Rnd_40mm_HEAB_QF_T_Y",
+			"RC_120Rnd_40mm_cUAS"
+
+			
+			//50Rnd
 			"RC_50Rnd_40mm_MP_Pen_T_R",
 			"RC_50Rnd_40mm_MP_Pen_T_G",
 			"RC_50Rnd_40mm_MP_Pen_T_Y",

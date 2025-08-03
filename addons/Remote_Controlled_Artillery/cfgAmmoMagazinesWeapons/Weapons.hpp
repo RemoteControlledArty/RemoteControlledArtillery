@@ -16,6 +16,7 @@ class RC_target_confirmer_datalink: RC_target_confirmer
 	displayNameShort="datalink";
 };
 
+
 /*
 class arifle_Mk20_GL_F;
 class RC_arifle_Mk20_GL_F_Base: arifle_Mk20_GL_F
