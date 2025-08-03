@@ -322,7 +322,6 @@ class RC_cUAS_Static_HMG_Bag_I: RC_cUAS_Static_HMG_Bag
 class RC_cUAS_Static_HMG_manned: RC_cUAS_Static_HMG_base
 {
 	displayName="C-UAS Static 12.7mm";
-	isUav=1;
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;

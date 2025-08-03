@@ -322,7 +322,6 @@ class RC_cUAS_Static_Bag_I: RC_cUAS_Static_Bag
 class RC_cUAS_Static_manned: RC_cUAS_Static_base
 {
 	displayName="C-UAS Static 20mm AB";
-	isUav=1;
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;

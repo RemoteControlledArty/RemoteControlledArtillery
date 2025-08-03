@@ -20,53 +20,46 @@ class RC_autocannon_30mm_ACV: RC_autocannon_30mm_ACV_Base
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		magazines[]=
 		{
-			"RC_100Rnd_30mm_MP_Pen_T_R",
-			"RC_100Rnd_30mm_MP_Pen_T_G",
-			"RC_100Rnd_30mm_MP_Pen_T_Y",
+			"RC_120Rnd_30mm_MP_Pen_T_R",
+			"RC_120Rnd_30mm_MP_Pen_T_G",
+			"RC_120Rnd_30mm_MP_Pen_T_Y",
 
-			"RC_100Rnd_30mm_HE_Pen_T_R",
-			"RC_100Rnd_30mm_HE_Pen_T_G",
-			"RC_100Rnd_30mm_HE_Pen_T_Y",
+			"RC_120Rnd_30mm_HE_Pen_T_R",
+			"RC_120Rnd_30mm_HE_Pen_T_G",
+			"RC_120Rnd_30mm_HE_Pen_T_Y",
 
-			"RC_100Rnd_30mm_MP_DF_T_R",
-			"RC_100Rnd_30mm_MP_DF_T_G",
-			"RC_100Rnd_30mm_MP_DF_T_Y",
+			"RC_120Rnd_30mm_MP_DF_T_R",
+			"RC_120Rnd_30mm_MP_DF_T_G",
+			"RC_120Rnd_30mm_MP_DF_T_Y",
 
-			"RC_100Rnd_30mm_HE_DF_T_R",
-			"RC_100Rnd_30mm_HE_DF_T_G",
-			"RC_100Rnd_30mm_HE_DF_T_Y",
+			"RC_120Rnd_30mm_HE_DF_T_R",
+			"RC_120Rnd_30mm_HE_DF_T_G",
+			"RC_120Rnd_30mm_HE_DF_T_Y",
 
-			"RC_100Rnd_30mm_MP_QF_T_R",
-			"RC_100Rnd_30mm_MP_QF_T_G",
-			"RC_100Rnd_30mm_MP_QF_T_Y",
+			"RC_120Rnd_30mm_MP_QF_T_R",
+			"RC_120Rnd_30mm_MP_QF_T_G",
+			"RC_120Rnd_30mm_MP_QF_T_Y",
 
-			"RC_100Rnd_30mm_HE_QF_T_R",
-			"RC_100Rnd_30mm_HE_QF_T_G",
-			"RC_100Rnd_30mm_HE_QF_T_Y",
+			"RC_120Rnd_30mm_HE_QF_T_R",
+			"RC_120Rnd_30mm_HE_QF_T_G",
+			"RC_120Rnd_30mm_HE_QF_T_Y",
 
-			"RC_100Rnd_30mm_MPAB_DF_T_R",
-			"RC_100Rnd_30mm_MPAB_DF_T_G",
-			"RC_100Rnd_30mm_MPAB_DF_T_Y",
+			"RC_120Rnd_30mm_MPAB_DF_T_R",
+			"RC_120Rnd_30mm_MPAB_DF_T_G",
+			"RC_120Rnd_30mm_MPAB_DF_T_Y",
 
-			"RC_100Rnd_30mm_HEAB_DF_T_R",
-			"RC_100Rnd_30mm_HEAB_DF_T_G",
-			"RC_100Rnd_30mm_HEAB_DF_T_Y",
+			"RC_120Rnd_30mm_HEAB_DF_T_R",
+			"RC_120Rnd_30mm_HEAB_DF_T_G",
+			"RC_120Rnd_30mm_HEAB_DF_T_Y",
 
-			"RC_100Rnd_30mm_MPAB_QF_T_R",
-			"RC_100Rnd_30mm_MPAB_QF_T_G",
-			"RC_100Rnd_30mm_MPAB_QF_T_Y",
+			"RC_120Rnd_30mm_MPAB_QF_T_R",
+			"RC_120Rnd_30mm_MPAB_QF_T_G",
+			"RC_120Rnd_30mm_MPAB_QF_T_Y",
 
-			"RC_100Rnd_30mm_HEAB_QF_T_R",
-			"RC_100Rnd_30mm_HEAB_QF_T_G",
-			"RC_100Rnd_30mm_HEAB_QF_T_Y",
-			"RC_100Rnd_30mm_cUAS",
-
-			"RC_100Rnd_30mm_MP_T_R",
-			"RC_100Rnd_30mm_MP_T_G",
-			"RC_100Rnd_30mm_MP_T_Y",
-			"RC_100Rnd_30mm_GPR_T_R",
-			"RC_100Rnd_30mm_GPR_T_G",
-			"RC_100Rnd_30mm_GPR_T_Y"
+			"RC_120Rnd_30mm_HEAB_QF_T_R",
+			"RC_120Rnd_30mm_HEAB_QF_T_G",
+			"RC_120Rnd_30mm_HEAB_QF_T_Y",
+			"RC_120Rnd_30mm_cUAS"
 		};
 		class player: player
 		{
@@ -79,9 +72,9 @@ class RC_autocannon_30mm_ACV: RC_autocannon_30mm_ACV_Base
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		magazines[]=
 		{
-			"RC_100Rnd_30mm_APFSDS_T_R",
-			"RC_100Rnd_30mm_APFSDS_T_G",
-			"RC_100Rnd_30mm_APFSDS_T_Y"
+			"RC_120Rnd_30mm_APFSDS_T_R",
+			"RC_120Rnd_30mm_APFSDS_T_G",
+			"RC_120Rnd_30mm_APFSDS_T_Y"
 		};
 		class player: player
 		{
@@ -151,7 +144,7 @@ class RC_autocannon_20mm_ACV: RC_autocannon_30mm_ACV
 		};
 		class player: player
 		{
-			reloadTime=0.15;
+			reloadTime=0.175;
 		};
 	};
 };
@@ -217,7 +210,7 @@ class RC_autocannon_25mm_ACV: RC_autocannon_30mm_ACV
 		};
 		class player: player
 		{
-			reloadTime=0.175;
+			reloadTime=0.1875;
 		};
 	};
 };
@@ -270,7 +263,7 @@ class RC_autocannon_40mm_ACV: RC_autocannon_30mm_ACV
 			"RC_120Rnd_40mm_HEAB_QF_T_R",
 			"RC_120Rnd_40mm_HEAB_QF_T_G",
 			"RC_120Rnd_40mm_HEAB_QF_T_Y",
-			"RC_120Rnd_40mm_cUAS"
+			"RC_120Rnd_40mm_cUAS",
 
 			
 			//50Rnd
