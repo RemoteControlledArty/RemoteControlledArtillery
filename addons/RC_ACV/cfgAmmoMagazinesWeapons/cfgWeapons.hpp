@@ -84,6 +84,9 @@ class RC_autocannon_30mm_ACV: RC_autocannon_30mm_ACV_Base
 };
 
 
+//make seamless reload but less rounds, 60-80 40mm, 100 30mm, 120 25mm, 140 20mm
+
+
 class RC_autocannon_20mm_ACV: RC_autocannon_30mm_ACV
 {
 	name="20mm";
