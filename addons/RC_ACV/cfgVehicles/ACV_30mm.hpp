@@ -453,6 +453,7 @@ class RC_ACV_30: RC_ACV_30_Base
 			commanding=2;
 			gunnerForceOptics=0;
 		};
+
 		class CargoTurret_01: CargoTurret_01 {};
 		class CargoTurret_02: CargoTurret_02 {};
 		class CargoTurret_04: CargoTurret_04 {};
@@ -474,6 +475,7 @@ class RC_ACV_30_O: RC_ACV_30
 		{
 			#include "\RC_ACV\includes_vicmags\mags_ACV_30mm_green.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 };
 class RC_ACV_30_I: RC_ACV_30
@@ -489,6 +491,7 @@ class RC_ACV_30_I: RC_ACV_30
 		{
 			#include "\RC_ACV\includes_vicmags\mags_ACV_30mm_yellow.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 };
 
@@ -510,6 +513,7 @@ class RC_ACV_20: RC_ACV_30
 			};
 			#include "\RC_ACV\includes_vicmags\mags_ACV_20mm_red.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 
 	class AnimationSources: AnimationSources
@@ -534,6 +538,7 @@ class RC_ACV_20_O: RC_ACV_20
 		{
 			#include "\RC_ACV\includes_vicmags\mags_ACV_20mm_green.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 };
 class RC_ACV_20_I: RC_ACV_20
@@ -549,6 +554,7 @@ class RC_ACV_20_I: RC_ACV_20
 		{
 			#include "\RC_ACV\includes_vicmags\mags_ACV_20mm_yellow.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 };
 
@@ -570,6 +576,7 @@ class RC_ACV_25: RC_ACV_30
 			};
 			#include "\RC_ACV\includes_vicmags\mags_ACV_25mm_red.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 
 	class AnimationSources: AnimationSources
@@ -594,6 +601,7 @@ class RC_ACV_25_O: RC_ACV_25
 		{
 			#include "\RC_ACV\includes_vicmags\mags_ACV_25mm_green.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 };
 class RC_ACV_25_I: RC_ACV_25
@@ -609,6 +617,7 @@ class RC_ACV_25_I: RC_ACV_25
 		{
 			#include "\RC_ACV\includes_vicmags\mags_ACV_40mm_yellow.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 };
 
@@ -630,6 +639,7 @@ class RC_ACV_40: RC_ACV_30
 			};
 			#include "\RC_ACV\includes_vicmags\mags_ACV_40mm_red.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 
 	class AnimationSources: AnimationSources
@@ -654,6 +664,7 @@ class RC_ACV_40_O: RC_ACV_40
 		{
 			#include "\RC_ACV\includes_vicmags\mags_ACV_40mm_green.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 };
 class RC_ACV_40_I: RC_ACV_40
@@ -669,6 +680,7 @@ class RC_ACV_40_I: RC_ACV_40
 		{
 			#include "\RC_ACV\includes_vicmags\mags_ACV_40mm_yellow.hpp"
 		};
+		#include "\RC_ACV\includes_cfg\cargoturrets.hpp"
 	};
 };
 
