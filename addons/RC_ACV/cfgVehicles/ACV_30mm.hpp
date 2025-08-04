@@ -167,8 +167,8 @@ class RC_ACV_30: RC_ACV_30_Base
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			commanding=3;
-			minElev=-27;
-			maxElev=80;
+			minElev=-12.5;
+			maxElev=45;
 			stabilizedInAxes=3;	//somehow doesnt work, not even 4
 
 			weapons[]=

@@ -11,55 +11,61 @@ class RC_autocannon_30mm_ACV: RC_autocannon_30mm_ACV_Base
 	canLock=2;
 	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
-	name="30mm";
+	name="MCT-30";
+	displayName="MCT-30";
+	displayNameShort="MCT-30";
+	magazineReloadTime=1;
 	//maxZeroing=4000;
 
 	class HE: HE
 	{
+		displayName="MCT-30 HE";
+		displayNameShort="MCT-30 HE";
 		maxZeroing=4000;
+		magazineReloadTime=1;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		magazines[]=
 		{
-			"RC_120Rnd_30mm_MP_Pen_T_R",
-			"RC_120Rnd_30mm_MP_Pen_T_G",
-			"RC_120Rnd_30mm_MP_Pen_T_Y",
+			"RC_100Rnd_30mm_MP_Pen_T_R",
+			"RC_100Rnd_30mm_MP_Pen_T_G",
+			"RC_100Rnd_30mm_MP_Pen_T_Y",
 
-			"RC_120Rnd_30mm_HE_Pen_T_R",
-			"RC_120Rnd_30mm_HE_Pen_T_G",
-			"RC_120Rnd_30mm_HE_Pen_T_Y",
+			"RC_100Rnd_30mm_HE_Pen_T_R",
+			"RC_100Rnd_30mm_HE_Pen_T_G",
+			"RC_100Rnd_30mm_HE_Pen_T_Y",
 
-			"RC_120Rnd_30mm_MP_DF_T_R",
-			"RC_120Rnd_30mm_MP_DF_T_G",
-			"RC_120Rnd_30mm_MP_DF_T_Y",
+			"RC_100Rnd_30mm_MP_DF_T_R",
+			"RC_100Rnd_30mm_MP_DF_T_G",
+			"RC_100Rnd_30mm_MP_DF_T_Y",
 
-			"RC_120Rnd_30mm_HE_DF_T_R",
-			"RC_120Rnd_30mm_HE_DF_T_G",
-			"RC_120Rnd_30mm_HE_DF_T_Y",
+			"RC_100Rnd_30mm_HE_DF_T_R",
+			"RC_100Rnd_30mm_HE_DF_T_G",
+			"RC_100Rnd_30mm_HE_DF_T_Y",
 
-			"RC_120Rnd_30mm_MP_QF_T_R",
-			"RC_120Rnd_30mm_MP_QF_T_G",
-			"RC_120Rnd_30mm_MP_QF_T_Y",
+			"RC_100Rnd_30mm_MP_QF_T_R",
+			"RC_100Rnd_30mm_MP_QF_T_G",
+			"RC_100Rnd_30mm_MP_QF_T_Y",
 
-			"RC_120Rnd_30mm_HE_QF_T_R",
-			"RC_120Rnd_30mm_HE_QF_T_G",
-			"RC_120Rnd_30mm_HE_QF_T_Y",
+			"RC_100Rnd_30mm_HE_QF_T_R",
+			"RC_100Rnd_30mm_HE_QF_T_G",
+			"RC_100Rnd_30mm_HE_QF_T_Y",
 
-			"RC_120Rnd_30mm_MPAB_DF_T_R",
-			"RC_120Rnd_30mm_MPAB_DF_T_G",
-			"RC_120Rnd_30mm_MPAB_DF_T_Y",
+			"RC_100Rnd_30mm_MPAB_DF_T_R",
+			"RC_100Rnd_30mm_MPAB_DF_T_G",
+			"RC_100Rnd_30mm_MPAB_DF_T_Y",
 
-			"RC_120Rnd_30mm_HEAB_DF_T_R",
-			"RC_120Rnd_30mm_HEAB_DF_T_G",
-			"RC_120Rnd_30mm_HEAB_DF_T_Y",
+			"RC_100Rnd_30mm_HEAB_DF_T_R",
+			"RC_100Rnd_30mm_HEAB_DF_T_G",
+			"RC_100Rnd_30mm_HEAB_DF_T_Y",
 
-			"RC_120Rnd_30mm_MPAB_QF_T_R",
-			"RC_120Rnd_30mm_MPAB_QF_T_G",
-			"RC_120Rnd_30mm_MPAB_QF_T_Y",
+			"RC_100Rnd_30mm_MPAB_QF_T_R",
+			"RC_100Rnd_30mm_MPAB_QF_T_G",
+			"RC_100Rnd_30mm_MPAB_QF_T_Y",
 
-			"RC_120Rnd_30mm_HEAB_QF_T_R",
-			"RC_120Rnd_30mm_HEAB_QF_T_G",
-			"RC_120Rnd_30mm_HEAB_QF_T_Y",
-			"RC_120Rnd_30mm_cUAS"
+			"RC_100Rnd_30mm_HEAB_QF_T_R",
+			"RC_100Rnd_30mm_HEAB_QF_T_G",
+			"RC_100Rnd_30mm_HEAB_QF_T_Y",
+			"RC_100Rnd_30mm_cUAS"
 		};
 		class player: player
 		{
@@ -68,17 +74,20 @@ class RC_autocannon_30mm_ACV: RC_autocannon_30mm_ACV_Base
 	};
 	class AP: AP
 	{
+		displayName="MCT-30 AP";
+		displayNameShort="MCT-30 AP";
 		maxZeroing=4000;
+		magazineReloadTime=1;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		magazines[]=
 		{
-			"RC_120Rnd_30mm_APFSDS_T_R",
-			"RC_120Rnd_30mm_APFSDS_T_G",
-			"RC_120Rnd_30mm_APFSDS_T_Y"
+			"RC_100Rnd_30mm_APFSDS_T_R",
+			"RC_100Rnd_30mm_APFSDS_T_G",
+			"RC_100Rnd_30mm_APFSDS_T_Y"
 		};
 		class player: player
 		{
-			reloadTime=0.2;
+			reloadTime=0.225;
 		};
 	};
 };
@@ -89,61 +98,69 @@ class RC_autocannon_30mm_ACV: RC_autocannon_30mm_ACV_Base
 
 class RC_autocannon_20mm_ACV: RC_autocannon_30mm_ACV
 {
-	name="20mm";
+	name="MCT-20";
+	displayName="MCT-20";
+	displayNameShort="MCT-20";
 
 	class HE: HE
 	{
+		displayName="MCT-20 HE";
+		displayNameShort="MCT-20 HE";
+
 		magazines[]=
 		{
-			"RC_120Rnd_20mm_MP_Pen_T_R",
-			"RC_120Rnd_20mm_MP_Pen_T_G",
-			"RC_120Rnd_20mm_MP_Pen_T_Y",
+			"RC_140Rnd_20mm_MP_Pen_T_R",
+			"RC_140Rnd_20mm_MP_Pen_T_G",
+			"RC_140Rnd_20mm_MP_Pen_T_Y",
 
-			"RC_120Rnd_20mm_HE_Pen_T_R",
-			"RC_120Rnd_20mm_HE_Pen_T_G",
-			"RC_120Rnd_20mm_HE_Pen_T_Y",
+			"RC_140Rnd_20mm_HE_Pen_T_R",
+			"RC_140Rnd_20mm_HE_Pen_T_G",
+			"RC_140Rnd_20mm_HE_Pen_T_Y",
 
-			"RC_120Rnd_20mm_MP_DF_T_R",
-			"RC_120Rnd_20mm_MP_DF_T_G",
-			"RC_120Rnd_20mm_MP_DF_T_Y",
+			"RC_140Rnd_20mm_MP_DF_T_R",
+			"RC_140Rnd_20mm_MP_DF_T_G",
+			"RC_140Rnd_20mm_MP_DF_T_Y",
 
-			"RC_120Rnd_20mm_HE_DF_T_R",
-			"RC_120Rnd_20mm_HE_DF_T_G",
-			"RC_120Rnd_20mm_HE_DF_T_Y",
+			"RC_140Rnd_20mm_HE_DF_T_R",
+			"RC_140Rnd_20mm_HE_DF_T_G",
+			"RC_140Rnd_20mm_HE_DF_T_Y",
 
-			"RC_120Rnd_20mm_MP_QF_T_R",
-			"RC_120Rnd_20mm_MP_QF_T_G",
-			"RC_120Rnd_20mm_MP_QF_T_Y",
+			"RC_140Rnd_20mm_MP_QF_T_R",
+			"RC_140Rnd_20mm_MP_QF_T_G",
+			"RC_140Rnd_20mm_MP_QF_T_Y",
 
-			"RC_120Rnd_20mm_HE_QF_T_R",
-			"RC_120Rnd_20mm_HE_QF_T_G",
-			"RC_120Rnd_20mm_HE_QF_T_Y",
+			"RC_140Rnd_20mm_HE_QF_T_R",
+			"RC_140Rnd_20mm_HE_QF_T_G",
+			"RC_140Rnd_20mm_HE_QF_T_Y",
 
-			"RC_120Rnd_20mm_MPAB_DF_T_R",
-			"RC_120Rnd_20mm_MPAB_DF_T_G",
-			"RC_120Rnd_20mm_MPAB_DF_T_Y",
+			"RC_140Rnd_20mm_MPAB_DF_T_R",
+			"RC_140Rnd_20mm_MPAB_DF_T_G",
+			"RC_140Rnd_20mm_MPAB_DF_T_Y",
 
-			"RC_120Rnd_20mm_HEAB_DF_T_R",
-			"RC_120Rnd_20mm_HEAB_DF_T_G",
-			"RC_120Rnd_20mm_HEAB_DF_T_Y",
+			"RC_140Rnd_20mm_HEAB_DF_T_R",
+			"RC_140Rnd_20mm_HEAB_DF_T_G",
+			"RC_140Rnd_20mm_HEAB_DF_T_Y",
 
-			"RC_120Rnd_20mm_MPAB_QF_T_R",
-			"RC_120Rnd_20mm_MPAB_QF_T_G",
-			"RC_120Rnd_20mm_MPAB_QF_T_Y",
+			"RC_140Rnd_20mm_MPAB_QF_T_R",
+			"RC_140Rnd_20mm_MPAB_QF_T_G",
+			"RC_140Rnd_20mm_MPAB_QF_T_Y",
 
-			"RC_120Rnd_20mm_HEAB_QF_T_R",
-			"RC_120Rnd_20mm_HEAB_QF_T_G",
-			"RC_120Rnd_20mm_HEAB_QF_T_Y",
-			"RC_120Rnd_20mm_cUAS"
+			"RC_140Rnd_20mm_HEAB_QF_T_R",
+			"RC_140Rnd_20mm_HEAB_QF_T_G",
+			"RC_140Rnd_20mm_HEAB_QF_T_Y",
+			"RC_140Rnd_20mm_cUAS"
 		};
 	};
 	class AP: AP
 	{
+		displayName="MCT-20 AP";
+		displayNameShort="MCT-20 AP";
+
 		magazines[]=
 		{
-			"RC_120Rnd_20mm_APFSDS_T_R",
-			"RC_120Rnd_20mm_APFSDS_T_G",
-			"RC_120Rnd_20mm_APFSDS_T_Y"
+			"RC_140Rnd_20mm_APFSDS_T_R",
+			"RC_140Rnd_20mm_APFSDS_T_G",
+			"RC_140Rnd_20mm_APFSDS_T_Y"
 		};
 		class player: player
 		{
@@ -155,10 +172,15 @@ class RC_autocannon_20mm_ACV: RC_autocannon_30mm_ACV
 
 class RC_autocannon_25mm_ACV: RC_autocannon_30mm_ACV
 {
-	name="25mm";
+	name="MCT-25";
+	displayName="MCT-25";
+	displayNameShort="MCT-25";
 
 	class HE: HE
 	{
+		displayName="MCT-25 HE";
+		displayNameShort="MCT-25 HE";
+
 		magazines[]=
 		{
 			"RC_120Rnd_25mm_MP_Pen_T_R",
@@ -205,6 +227,9 @@ class RC_autocannon_25mm_ACV: RC_autocannon_30mm_ACV
 	};
 	class AP: AP
 	{
+		displayName="MCT-25 AP";
+		displayNameShort="MCT-25 AP";
+
 		magazines[]=
 		{
 			"RC_120Rnd_25mm_APFSDS_T_R",
@@ -213,7 +238,7 @@ class RC_autocannon_25mm_ACV: RC_autocannon_30mm_ACV
 		};
 		class player: player
 		{
-			reloadTime=0.1875;
+			reloadTime=0.2;
 		};
 	};
 };
@@ -221,108 +246,70 @@ class RC_autocannon_25mm_ACV: RC_autocannon_30mm_ACV
 
 class RC_autocannon_40mm_ACV: RC_autocannon_30mm_ACV
 {
-	name="40mm";
+	name="MCT-40";
+	displayName="MCT-40";
+	displayNameShort="MCT-40";
 
 	class HE: HE
 	{
+		displayName="MCT-40 HE";
+		displayNameShort="MCT-40 HE";
+
 		magazines[]=
 		{
-			"RC_120Rnd_40mm_MP_Pen_T_R",
-			"RC_120Rnd_40mm_MP_Pen_T_G",
-			"RC_120Rnd_40mm_MP_Pen_T_Y",
+			"RC_80Rnd_40mm_MP_Pen_T_R",
+			"RC_80Rnd_40mm_MP_Pen_T_G",
+			"RC_80Rnd_40mm_MP_Pen_T_Y",
 
-			"RC_120Rnd_40mm_HE_Pen_T_R",
-			"RC_120Rnd_40mm_HE_Pen_T_G",
-			"RC_120Rnd_40mm_HE_Pen_T_Y",
+			"RC_80Rnd_40mm_HE_Pen_T_R",
+			"RC_80Rnd_40mm_HE_Pen_T_G",
+			"RC_80Rnd_40mm_HE_Pen_T_Y",
 
-			"RC_120Rnd_40mm_MP_DF_T_R",
-			"RC_120Rnd_40mm_MP_DF_T_G",
-			"RC_120Rnd_40mm_MP_DF_T_Y",
+			"RC_80Rnd_40mm_MP_DF_T_R",
+			"RC_80Rnd_40mm_MP_DF_T_G",
+			"RC_80Rnd_40mm_MP_DF_T_Y",
 
-			"RC_120Rnd_40mm_HE_DF_T_R",
-			"RC_120Rnd_40mm_HE_DF_T_G",
-			"RC_120Rnd_40mm_HE_DF_T_Y",
+			"RC_80Rnd_40mm_HE_DF_T_R",
+			"RC_80Rnd_40mm_HE_DF_T_G",
+			"RC_80Rnd_40mm_HE_DF_T_Y",
 
-			"RC_120Rnd_40mm_MP_QF_T_R",
-			"RC_120Rnd_40mm_MP_QF_T_G",
-			"RC_120Rnd_40mm_MP_QF_T_Y",
+			"RC_80Rnd_40mm_MP_QF_T_R",
+			"RC_80Rnd_40mm_MP_QF_T_G",
+			"RC_80Rnd_40mm_MP_QF_T_Y",
 
-			"RC_120Rnd_40mm_HE_QF_T_R",
-			"RC_120Rnd_40mm_HE_QF_T_G",
-			"RC_120Rnd_40mm_HE_QF_T_Y",
+			"RC_80Rnd_40mm_HE_QF_T_R",
+			"RC_80Rnd_40mm_HE_QF_T_G",
+			"RC_80Rnd_40mm_HE_QF_T_Y",
 
-			"RC_120Rnd_40mm_MPAB_DF_T_R",
-			"RC_120Rnd_40mm_MPAB_DF_T_G",
-			"RC_120Rnd_40mm_MPAB_DF_T_Y",
+			"RC_80Rnd_40mm_MPAB_DF_T_R",
+			"RC_80Rnd_40mm_MPAB_DF_T_G",
+			"RC_80Rnd_40mm_MPAB_DF_T_Y",
 
-			"RC_120Rnd_40mm_HEAB_DF_T_R",
-			"RC_120Rnd_40mm_HEAB_DF_T_G",
-			"RC_120Rnd_40mm_HEAB_DF_T_Y",
+			"RC_80Rnd_40mm_HEAB_DF_T_R",
+			"RC_80Rnd_40mm_HEAB_DF_T_G",
+			"RC_80Rnd_40mm_HEAB_DF_T_Y",
 
-			"RC_120Rnd_40mm_MPAB_QF_T_R",
-			"RC_120Rnd_40mm_MPAB_QF_T_G",
-			"RC_120Rnd_40mm_MPAB_QF_T_Y",
+			"RC_80Rnd_40mm_MPAB_QF_T_R",
+			"RC_80Rnd_40mm_MPAB_QF_T_G",
+			"RC_80Rnd_40mm_MPAB_QF_T_Y",
 
-			"RC_120Rnd_40mm_HEAB_QF_T_R",
-			"RC_120Rnd_40mm_HEAB_QF_T_G",
-			"RC_120Rnd_40mm_HEAB_QF_T_Y",
-			"RC_120Rnd_40mm_cUAS",
-
-			
-			//50Rnd
-			"RC_50Rnd_40mm_MP_Pen_T_R",
-			"RC_50Rnd_40mm_MP_Pen_T_G",
-			"RC_50Rnd_40mm_MP_Pen_T_Y",
-
-			"RC_50Rnd_40mm_HE_Pen_T_R",
-			"RC_50Rnd_40mm_HE_Pen_T_G",
-			"RC_50Rnd_40mm_HE_Pen_T_Y",
-
-			"RC_50Rnd_40mm_MP_DF_T_R",
-			"RC_50Rnd_40mm_MP_DF_T_G",
-			"RC_50Rnd_40mm_MP_DF_T_Y",
-
-			"RC_50Rnd_40mm_HE_DF_T_R",
-			"RC_50Rnd_40mm_HE_DF_T_G",
-			"RC_50Rnd_40mm_HE_DF_T_Y",
-
-			"RC_50Rnd_40mm_MP_QF_T_R",
-			"RC_50Rnd_40mm_MP_QF_T_G",
-			"RC_50Rnd_40mm_MP_QF_T_Y",
-
-			"RC_50Rnd_40mm_HE_QF_T_R",
-			"RC_50Rnd_40mm_HE_QF_T_G",
-			"RC_50Rnd_40mm_HE_QF_T_Y",
-
-			"RC_50Rnd_40mm_MPAB_DF_T_R",
-			"RC_50Rnd_40mm_MPAB_DF_T_G",
-			"RC_50Rnd_40mm_MPAB_DF_T_Y",
-
-			"RC_50Rnd_40mm_HEAB_DF_T_R",
-			"RC_50Rnd_40mm_HEAB_DF_T_G",
-			"RC_50Rnd_40mm_HEAB_DF_T_Y",
-
-			"RC_50Rnd_40mm_MPAB_QF_T_R",
-			"RC_50Rnd_40mm_MPAB_QF_T_G",
-			"RC_50Rnd_40mm_MPAB_QF_T_Y",
-
-			"RC_50Rnd_40mm_HEAB_QF_T_R",
-			"RC_50Rnd_40mm_HEAB_QF_T_G",
-			"RC_50Rnd_40mm_HEAB_QF_T_Y",
-			"RC_50Rnd_40mm_cUAS",
-
-			"RC_50Rnd_40mm_MP_T_R",
-			"RC_50Rnd_40mm_MP_T_G",
-			"RC_50Rnd_40mm_MP_T_Y",
-			"RC_50Rnd_40mm_GPR_T_R",
-			"RC_50Rnd_40mm_GPR_T_G",
-			"RC_50Rnd_40mm_GPR_T_Y"
+			"RC_80Rnd_40mm_HEAB_QF_T_R",
+			"RC_80Rnd_40mm_HEAB_QF_T_G",
+			"RC_80Rnd_40mm_HEAB_QF_T_Y",
+			"RC_80Rnd_40mm_cUAS"
 		};
 	};
 	class AP: AP
 	{
+		displayName="MCT-40 AP";
+		displayNameShort="MCT-40 AP";
+
 		magazines[]=
 		{
+			"RC_80Rnd_40mm_APFSDS_T_R",
+			"RC_80Rnd_40mm_APFSDS_T_G",
+			"RC_80Rnd_40mm_APFSDS_T_Y",
+
 			"RC_50Rnd_40mm_APFSDS_T_R",
 			"RC_50Rnd_40mm_APFSDS_T_G",
 			"RC_50Rnd_40mm_APFSDS_T_Y"
