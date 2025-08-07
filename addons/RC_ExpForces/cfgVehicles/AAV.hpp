@@ -295,10 +295,12 @@ class RC_AAV9A1_A: RC_AAV9A1
 
 					weapons[]=
 					{
+						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
 					magazines[]=
 					{
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
@@ -824,10 +826,12 @@ class RC_AAV9_A: RC_AAV9
 
 					weapons[]=
 					{
+						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
 					magazines[]=
 					{
+						"Laserbatteries",
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
