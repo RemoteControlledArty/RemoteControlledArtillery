@@ -1018,7 +1018,7 @@ class RC_Stryker_M1132_M2_WD_B: RC_Stryker_M1132_M2_WD
 		class LaneMarkingSystem_Deactivate: LaneMarkingSystem_Activate
 		{
 			displayName="Deactivate Lane Marking System";
-			condition="((driver this) isEqualTo (call rhs_fnc_findPlayer)) && {this animationSourcePhase 'Dispenser_Fold' isEqualTo 1};";
+			condition="((gunner this) isEqualTo (call rhs_fnc_findPlayer)) && {this animationSourcePhase 'Dispenser_Fold' isEqualTo 1};";
 			statement="this animateSource ['Dispenser_Fold', 0];this removeWeaponTurret ['rhsusf_weap_laneMarkerSystem',[-1]]";
 		};
 		class LaneMarkingSystem_Options: LaneMarkingSystem_Deactivate
