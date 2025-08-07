@@ -235,10 +235,10 @@ class RC_AAV9A1_A: RC_AAV9A1
 
 	class Turrets: Turrets
 	{
-		class CargoGunner_3: CargoGunner_3 {};
-		class CargoGunner_4: CargoGunner_4 {};
-		class CargoGunner_5: CargoGunner_5 {};
-		class CargoGunner_6: CargoGunner_6 {};
+		class CargoGunner_3: CargoGunner_3 {gunnerName="L1";};
+		class CargoGunner_4: CargoGunner_4 {gunnerName="R1";};
+		class CargoGunner_5: CargoGunner_5 {gunnerName="L2";};
+		class CargoGunner_6: CargoGunner_6 {gunnerName="R2";};
 
 		class MainTurret: MainTurret
 		{
@@ -291,6 +291,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 					showAllTargets="2 + 4";
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
+					gunnerName="Periscope";
 
 					weapons[]=
 					{
@@ -763,10 +764,10 @@ class RC_AAV9_A: RC_AAV9
 
 	class Turrets: Turrets
 	{
-		class CargoGunner_3: CargoGunner_3 {};
-		class CargoGunner_4: CargoGunner_4 {};
-		class CargoGunner_5: CargoGunner_5 {};
-		class CargoGunner_6: CargoGunner_6 {};
+		class CargoGunner_3: CargoGunner_3 {gunnerName="L1";};
+		class CargoGunner_4: CargoGunner_4 {gunnerName="R1";};
+		class CargoGunner_5: CargoGunner_5 {gunnerName="L2";};
+		class CargoGunner_6: CargoGunner_6 {gunnerName="R2";};
 
 		class MainTurret: MainTurret
 		{
@@ -819,6 +820,7 @@ class RC_AAV9_A: RC_AAV9
 					showAllTargets="2 + 4";
 					commanding=2;
 					turretInfoType="RscOptics_MBT_03_gunner";
+					gunnerName="Periscope";
 
 					weapons[]=
 					{

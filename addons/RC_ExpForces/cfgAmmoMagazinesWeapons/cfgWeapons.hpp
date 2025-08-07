@@ -24,13 +24,14 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 
 		magazines[]=
 		{
-			"RC_120Rnd_30mm_MPAB_DF_T_R",
-			"RC_120Rnd_30mm_MPAB_DF_T_G",
-			"RC_120Rnd_30mm_MPAB_DF_T_Y",
-			"RC_EF_120Rnd_30mm_HEAB_T_W",
-			"RC_EF_120Rnd_30mm_HEAB_T_R",
-			"RC_EF_120Rnd_30mm_HEAB_T_G",
-			"RC_EF_120Rnd_30mm_HEAB_T_Y"
+			"RC_100Rnd_30mm_MPAB_DF_T_R",
+			"RC_100Rnd_30mm_MPAB_DF_T_G",
+			"RC_100Rnd_30mm_MPAB_DF_T_Y",
+
+			"RC_EF_100Rnd_30mm_HEAB_T_W",
+			"RC_EF_100Rnd_30mm_HEAB_T_R",
+			"RC_EF_100Rnd_30mm_HEAB_T_G",
+			"RC_EF_100Rnd_30mm_HEAB_T_Y"
 		};
 
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
@@ -45,10 +46,10 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 
 		magazines[]=
 		{
-			"RC_EF_80Rnd_30mm_APFSDS_T_W",
-			"RC_EF_80Rnd_30mm_APFSDS_T_R",
-			"RC_EF_80Rnd_30mm_APFSDS_T_G",
-			"RC_EF_80Rnd_30mm_APFSDS_T_Y"
+			"RC_EF_100Rnd_30mm_APFSDS_T_W",
+			"RC_EF_100Rnd_30mm_APFSDS_T_R",
+			"RC_EF_100Rnd_30mm_APFSDS_T_G",
+			"RC_EF_100Rnd_30mm_APFSDS_T_Y"
 		};
 
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
@@ -82,13 +83,14 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 
 		magazines[]=
 		{
-			"RC_120Rnd_50mm_MPAB_DF_T_R",
-			"RC_120Rnd_50mm_MPAB_DF_T_G",
-			"RC_120Rnd_50mm_MPAB_DF_T_Y",
-			"RC_EF_120Rnd_50mm_HEAB_T_W",
-			"RC_EF_120Rnd_50mm_HEAB_T_R",
-			"RC_EF_120Rnd_50mm_HEAB_T_G",
-			"RC_EF_120Rnd_50mm_HEAB_T_Y"
+			"RC_60Rnd_50mm_MPAB_DF_T_R",
+			"RC_60Rnd_50mm_MPAB_DF_T_G",
+			"RC_60Rnd_50mm_MPAB_DF_T_Y",
+
+			"RC_EF_60Rnd_50mm_HEAB_T_W",
+			"RC_EF_60Rnd_50mm_HEAB_T_R",
+			"RC_EF_60Rnd_50mm_HEAB_T_G",
+			"RC_EF_60Rnd_50mm_HEAB_T_Y"
 		};
 
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
@@ -103,10 +105,10 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 
 		magazines[]=
 		{
-			"RC_EF_50Rnd_50mm_APFSDS_T_W",
-			"RC_EF_50Rnd_50mm_APFSDS_T_R",
-			"RC_EF_50Rnd_50mm_APFSDS_T_G",
-			"RC_EF_50Rnd_50mm_APFSDS_T_Y"
+			"RC_EF_60Rnd_50mm_APFSDS_T_W",
+			"RC_EF_60Rnd_50mm_APFSDS_T_R",
+			"RC_EF_60Rnd_50mm_APFSDS_T_G",
+			"RC_EF_60Rnd_50mm_APFSDS_T_Y"
 		};
 
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"

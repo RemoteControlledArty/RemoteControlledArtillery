@@ -341,6 +341,8 @@ class RC_ACV_30: RC_ACV_30_Base
 		delete Commandercamera;
 		class CargoTurret_03: CargoTurret
 		{
+			gunnerName="SL";
+
 			class ViewOptics
 			{
 				initAngleX=0;
@@ -430,7 +432,6 @@ class RC_ACV_30: RC_ACV_30_Base
 			memoryPointGunnerOptics="commander_pip_pov";
 			turretInfoType="RscOptics_MBT_01_commander";
 
-			gunnerName="Troop Commander";
 			gunnerGetInAction="GetInAMV_cargo";
 			gunnerGetOutAction="GetOutLOW";
 			gunnerCompartments="Compartment1";
@@ -454,12 +455,12 @@ class RC_ACV_30: RC_ACV_30_Base
 			gunnerForceOptics=0;
 		};
 
-		class CargoTurret_01: CargoTurret_01 {};
-		class CargoTurret_02: CargoTurret_02 {};
-		class CargoTurret_04: CargoTurret_04 {};
-		class CargoTurret_05: CargoTurret_05 {};
-		class CargoTurret_06: CargoTurret_06 {};
-		class CargoTurret_07: CargoTurret_07 {};
+		class CargoTurret_01: CargoTurret_01 {gunnerName="L3";};
+		class CargoTurret_02: CargoTurret_02 {gunnerName="R3";};
+		class CargoTurret_04: CargoTurret_04 {gunnerName="R1";};
+		class CargoTurret_05: CargoTurret_05 {gunnerName="R2";};
+		class CargoTurret_06: CargoTurret_06 {gunnerName="L1";};
+		class CargoTurret_07: CargoTurret_07 {gunnerName="L2";};
 	};
 };
 class RC_ACV_30_O: RC_ACV_30

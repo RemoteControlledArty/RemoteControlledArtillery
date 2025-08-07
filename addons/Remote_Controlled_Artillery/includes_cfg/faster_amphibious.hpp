@@ -2,7 +2,7 @@
 rudderForceCoef=0.8;
 rudderForceCoefAtMaxSpeed=0.004;
 waterAngularDampingCoef=3;
-waterEffectSpeed=5;
+waterEffectSpeed=5;	//5
 waterFastEffectSpeed=28;
 waterLeakiness=10;
 waterLinearDampingCoefX=3;
