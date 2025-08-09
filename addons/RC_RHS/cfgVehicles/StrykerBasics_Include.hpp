@@ -10,8 +10,24 @@ class EventHandlers: EventHandlers
 		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 	};
 };
-	
-#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+
+class UserActions: UserActions
+{
+	#include "\Remote_Controlled_Artillery\includes_script\TakeDriverControls.hpp"
+	//class ToggleLight {};
+	//class AdjustMap {};
+	class AdjustMap: AdjustMap
+	{
+		displayName="removed";
+		condition="1 => 0;";
+	};
+	class ToggleLight: ToggleLight
+	{
+		displayName="removed";
+		condition="1 => 0;";
+	};
+};
+
 #include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"

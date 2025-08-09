@@ -1,4 +1,37 @@
-class Default;
+//APS
+class Default
+{
+	class EventHandlers;
+};
+class MissileCore: Default {};
+class MissileBase: MissileCore
+{
+	class EventHandlers: EventHandlers
+	{
+		class RHS_APS_FiredEH
+		{
+			//fired = "_this spawn RC_fnc_M_APS";
+			fired = "systemchat 'missile'";
+			//params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+		};
+	};
+};
+/*
+class RocketCore: Default {};
+class RocketBase: RocketCore
+{
+	class EventHandlers: EventHandlers
+	{
+		class RHS_APS_FiredEH
+		{
+			fired = "_this spawn RC_fnc_R_APS";
+		};
+	};
+};
+*/
+
+
+//class Default;
 class RC_target_confirmer_ammo: Default
 {
 	author="Ascent";
@@ -1511,7 +1544,7 @@ class RC_Sh_120mm_MP_HEAB_T_G: RC_Sh_120mm_MP_T_R {model="\A3\Weapons_f\Data\bul
 class RC_Sh_120mm_MP_HEAB_T_Y: RC_Sh_120mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-class MissileBase;
+//class MissileBase;
 class RC_Sh_120mm_HEAB_LV_Overflight_Core: MissileBase
 {
 	class Components;

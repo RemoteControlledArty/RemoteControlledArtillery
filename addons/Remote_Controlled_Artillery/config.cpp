@@ -743,6 +743,8 @@ class CfgFunctions
 			class RC_LaserDatalink {postInit=1;};
 			class RC_cursorTargetIntoDatalink {postInit=1;};
 			
+			class RC_APS {};
+			class RC_APS_AT_SourceIndicator {};
 			class RC_AT_SourceIndicator {};
 			class RC_cUAS_Beep {};
 			class scrollSolutions {};

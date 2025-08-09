@@ -15,6 +15,8 @@ class RC_Stryker_M1126_M2_WD_Base: rhsusf_stryker_m1126_m2_wd
 	class ramp;
 	class Hatch_Commander;
 	class UserActions;
+	class AdjustMap;
+	class ToggleLight;
 	class HitPoints;
 	class HitLFWheel;
 	class HitLF2Wheel;
@@ -317,6 +319,8 @@ class RC_Stryker_M1126_MK19_WD_Base: rhsusf_stryker_m1126_mk19_wd
 	class ramp;
 	class Hatch_Commander;
 	class UserActions;
+	class AdjustMap;
+	class ToggleLight;
 	class HitPoints;
 	class HitLFWheel;
 	class HitLF2Wheel;
@@ -850,6 +854,8 @@ class RC_Stryker_M1132_M2_WD_Base: rhsusf_stryker_m1132_m2_wd
 	class ramp;
 	class Hatch_Commander;
 	class UserActions;
+	class AdjustMap;
+	class ToggleLight;
 	class HitPoints;
 	class HitLFWheel;
 	class HitLF2Wheel;
@@ -1245,6 +1251,9 @@ class RC_Stryker_M1127_M2_WD_Base: rhsusf_stryker_m1127_m2_wd
 	class ramp;
 	class Hatch_Commander;
 	class UserActions;
+	class SmokeLaunchers_Options;
+	class AdjustMap;
+	class ToggleLight;
 	class HitPoints;
 	class HitLFWheel;
 	class HitLF2Wheel;
@@ -1537,6 +1546,14 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD_FixedRC
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+		};
+	};
+	class UserActions: UserActions
+	{
+		class SmokeLaunchers_Options: SmokeLaunchers_Options
+		{
+			displayName="removed";
+			condition="1 => 0;";
 		};
 	};
 
