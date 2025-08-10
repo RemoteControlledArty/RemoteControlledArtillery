@@ -51,13 +51,20 @@ private _ATrespondingTurret = getNumber (configFile >> "CfgVehicles" >> typeOf _
 
 	if (_ATrespondingTurret == 1) then {
 
-		_target lockCameraTo [_unit, [0], true];
+		private _gunTurretID = _target turretOwner [0];
+		[_target, [_unit, [0], true]] remoteExec ['lockCameraTo', _gunTurretID];
+		//_target lockCameraTo [_unit, [0], true];
 		sleep 3.5;
-		_target lockCameraTo [objNull, [0], true];
+		[_target, [objNull, [0], true]] remoteExec ['lockCameraTo', _gunTurretID];
+		//_target lockCameraTo [objNull, [0], true];
 	};
 	if (_ATrespondingTurret == 2) then {
-		_target lockCameraTo [_unit, [0,0], true];
+
+		private _comTurretID = _target turretOwner [0,0];
+		[_target, [_unit, [0,0], true]] remoteExec ['lockCameraTo', _comTurretID];
+		//_target lockCameraTo [_unit, [0,0], true];
 		sleep 3.5;
-		_target lockCameraTo [objNull, [0,0], true];
+		[_target, [objNull, [0,0], true]] remoteExec ['lockCameraTo', _comTurretID];
+		//_target lockCameraTo [objNull, [0,0], true];
 	};
 };

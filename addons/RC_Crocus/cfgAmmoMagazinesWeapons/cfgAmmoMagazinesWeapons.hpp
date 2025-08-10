@@ -18,7 +18,7 @@ class CfgAmmo
 		htMax=1800;
 		htMin=60;
 		indirectHit=42;
-		indirectHitRange=7;
+		indirectHitRange=3.5;	//7
 		submunitionInitSpeed=1000;
 		warheadName="TandemHEAT";
 		submunitionAmmo="FPV_RPG42_AT_Penetrator_MP";

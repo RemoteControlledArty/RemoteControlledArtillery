@@ -902,6 +902,9 @@ class RC_Stryker_M1132_M2_WD: RC_Stryker_M1132_M2_WD_Base
 		};
 	};
 
+	canAccessMineDetector=1;
+	mineDetectorRange=50;
+
 	class Turrets: Turrets
 	{
 		class CargoTurret_01: CargoTurret_01
@@ -916,9 +919,10 @@ class RC_Stryker_M1132_M2_WD: RC_Stryker_M1132_M2_WD_Base
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner_mine.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
+			canAccessMineDetector=1;
 			//isCopilot=1; //allows to trigger EH that gives driving controls
 			commanding=3;
 			allowTabLock=1;
@@ -1137,7 +1141,7 @@ class RC_Stryker_M1132_M2_Javelin_WD_B: RC_Stryker_M1132_M2_WD_B
 
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_APC_gunner_missile_mine.hpp"
 
 			weapons[]=
 			{

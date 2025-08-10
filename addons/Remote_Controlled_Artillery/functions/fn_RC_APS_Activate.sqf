@@ -52,6 +52,16 @@ if (_APSChargesCfg != 0) then {
 	//systemchat str _chargesAPS;
 
 	if (_chargesAPS > 0) then {
+		
+		/*
+		_projectile addEventHandler ["SubmunitionCreated", {
+			params ["_projectile", "_submunitionProjectile"];
+
+			deleteVehicle _submunitionProjectile;
+			[_submunitionProjectile] remoteExec ["deleteVehicle", 0];
+		}];
+		*/
+		
 		//systemchat "_chargesAPS > 0";
 		
 		[_target, _projectile, _APSChargesCfg] spawn
@@ -65,7 +75,7 @@ if (_APSChargesCfg != 0) then {
 				//systemchat "while APS";
 
 				//sleep 0.01;
-				if ((_projectile distance _target) <= 50) exitwith {
+				if ((_projectile distance _target) <= 100) exitwith {
 
 					//systemchat "exitwith";
 
@@ -77,20 +87,30 @@ if (_APSChargesCfg != 0) then {
 
 						//systemchat "if";
 						
+						/*
 						_projectile addEventHandler ["SubmunitionCreated", {
 							params ["_projectile", "_submunitionProjectile"];
 
 							deleteVehicle _submunitionProjectile;
 						}];
+						*/
 
-						triggerAmmo _projectile;
+						private _projPos = (position _projectile);
+						[_projectile] remoteExec ["deleteVehicle", 0];
+						//[_projectile] remoteExec ["triggerAmmo", 0];
+						//triggerAmmo _projectile;
+						playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _target, false, getPosASL _target, 10, 0.8, 600];
+						_explosion = "ClaymoreDirectionalMine_Remote_Ammo_Scripted" createVehicle _projPos;
+						_explosion setDamage 1;
 						
-						private _nextChargesAPS = _chargesAPS - 1;
-						//systemchat str _nextChargesAPS;
-						_target setVariable ["RC_chargesAPS", _nextChargesAPS, true];	//true is public without RE
-						
-						private _string = "activated APS, " + str _nextChargesAPS + " remaining";
-						[_target, _string] remoteExec ["vehicleChat", 0];
+						//if (isServer) then {
+							private _nextChargesAPS = _chargesAPS - 1;
+							//systemchat str _nextChargesAPS;
+							_target setVariable ["RC_chargesAPS", _nextChargesAPS, true];	//true is public without RE
+
+							private _string = "activated APS, " + str _nextChargesAPS + " remaining";
+							[_target, _string] remoteExec ["vehicleChat", 0];
+						//};
 					};
 				};
 			};

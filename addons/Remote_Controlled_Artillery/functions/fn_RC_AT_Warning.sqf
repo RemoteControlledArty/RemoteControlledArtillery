@@ -8,8 +8,11 @@
 //params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 params ["_unit", "_projectile"];
 
-if (!local _projectile) exitwith {};
+//if (!local _projectile) exitwith {};
 //if (!isServer) exitwith {};
+//if ((!isServer) && (!local _projectile)) exitwith {};
+
+//systemchat "fired";
 
 //maybe use single array but add radar side check, as that could prevent post spawn side change issues
 //checks for opposing AT_Warning vehicles
@@ -26,6 +29,10 @@ RC_AT_Warning_Array_B = RC_AT_Warning_Array_B - [objNull];
 RC_AT_Warning_Array_O = RC_AT_Warning_Array_O - [objNull];
 RC_AT_Warning_Array_I = RC_AT_Warning_Array_I - [objNull];
 
+publicVariable "RC_AT_Warning_Array_B";
+publicVariable "RC_AT_Warning_Array_O";
+publicVariable "RC_AT_Warning_Array_I";
+
 //checks side of the unit which fired
 private _unitSide_B = (side _unit == west);
 private _unitSide_O = (side _unit == east);
@@ -39,6 +46,8 @@ private _opposedTo_I = [side _unit, resistance] call BIS_fnc_sideIsEnemy;
 
 if (_opposedTo_B and (_AT_Warning_AliveAmount_B > 0)) then {
 	{
+		//systemchat "B > 0";
+
 		private _target = _x;
 		[_target, _projectile] call RC_fnc_RC_APS_Activate;
 		[_target, _unit] call RC_fnc_RC_AT_Warning_Activate;
