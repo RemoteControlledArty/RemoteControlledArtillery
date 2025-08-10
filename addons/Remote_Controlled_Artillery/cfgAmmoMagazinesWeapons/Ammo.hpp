@@ -1042,6 +1042,21 @@ class RC_B_30mm_MPAB_QF_T_G: RC_B_30mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bu
 class RC_B_30mm_MPAB_QF_T_Y: RC_B_30mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+class RC_B_30mm_MP_DF_Sub_X: RC_B_30mm_MP_DF_Sub
+{
+	submunitionInitialOffset[]={0,0,-3.5};
+	explosionTime=0.014;
+};
+class RC_B_30mm_MPAB_DF_X_T_R: RC_B_30mm_MPAB_DF_T_R
+{
+	submunitionInitialOffset[]={0,0,-3.5};
+	triggerDistance=10;
+	submunitionAmmo="RC_B_30mm_MP_DF_Sub_X";
+};
+class RC_B_30mm_MPAB_DF_X_T_G: RC_B_30mm_MPAB_DF_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_30mm_MPAB_DF_X_T_Y: RC_B_30mm_MPAB_DF_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 //30mm HE Pen/DF/QF
 class RC_B_30mm_HE_Pen_T_R: B_30mm_HE_Tracer_Red
 {
