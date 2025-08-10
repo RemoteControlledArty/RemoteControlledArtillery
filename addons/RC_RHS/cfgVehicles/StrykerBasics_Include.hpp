@@ -5,6 +5,10 @@ class EventHandlers: EventHandlers
 		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 	};
+	class RC_AT_Warning
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_B.hpp"
+	};
 	class RC_LightsOff
 	{
 		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -14,8 +18,7 @@ class EventHandlers: EventHandlers
 class UserActions: UserActions
 {
 	#include "\Remote_Controlled_Artillery\includes_script\TakeDriverControls.hpp"
-	//class ToggleLight {};
-	//class AdjustMap {};
+	
 	class AdjustMap: AdjustMap
 	{
 		displayName="removed";
@@ -27,6 +30,9 @@ class UserActions: UserActions
 		condition="player isEqualTo (driver this);";
 	};
 };
+
+RC_APSCharges = 3;
+RC_ATrespondingTurret = 1;	//1=gunner 2=commander
 
 #include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"

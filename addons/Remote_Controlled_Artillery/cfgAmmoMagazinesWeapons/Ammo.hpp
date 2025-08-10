@@ -8,28 +8,25 @@ class MissileBase: MissileCore
 {
 	class EventHandlers: EventHandlers
 	{
-		class RHS_APS_FiredEH
+		class AT_Warning
 		{
-			//fired = "_this spawn RC_fnc_RC_M_APS";
-			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner']; [_unit, _projectile] spawn RC_fnc_RC_M_APS";
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner']; [_unit, _projectile] spawn RC_fnc_RC_AT_Warning";
 			//fired = "systemchat 'missile'";
-			//params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 		};
 	};
 };
-/*
 class RocketCore: Default {};
 class RocketBase: RocketCore
 {
 	class EventHandlers: EventHandlers
 	{
-		class RHS_APS_FiredEH
+		class AT_Warning
 		{
-			fired = "_this spawn RC_fnc_R_APS";
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner']; [_unit, _projectile] spawn RC_fnc_RC_AT_Warning";
+			//fired = "systemchat 'rocket'";
 		};
 	};
 };
-*/
 
 
 //class Default;

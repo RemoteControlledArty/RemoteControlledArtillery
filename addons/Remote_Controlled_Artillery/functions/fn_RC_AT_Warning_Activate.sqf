@@ -2,12 +2,14 @@
 	Author: Ascent
 
 	Description:
-	Warning sound fired at by any AT (except player fired unguided), if line of sight marks source of fire briefly in datalink.
+	If line of sight: Warning sound for any hostile AT, marks source of fire briefly in datalink.
 */
 
-params ['_target','_ammo','_vehicle','_instigator','_missile'];
+params ['_target','_unit'];
 
-if ((_target distance _vehicle) > 4000) exitwith {};
+if ((_target distance _unit) > 4000) exitwith {};
+if (!RC_AT_SourceIndicationStatic && !RC_AT_SourceIndicationInf && !RC_AT_SourceIndicationVic) exitwith {};
+if (([_unit, 'GEOM', _target] checkVisibility [eyePos _unit, eyePos _target]) == 0) exitwith {};
 
 private _crew = (crew _target) select {isPlayer _x};
 [['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.3]] remoteExec ['playSoundUI', _crew];
@@ -23,21 +25,18 @@ if (_controller1 isNotEqualTo objNull) then {
 	};
 };
 
-if (!RC_AT_SourceIndicationStatic && !RC_AT_SourceIndicationInf && !RC_AT_SourceIndicationVic) exitwith {};
-if (([_vehicle, 'GEOM', _target] checkVisibility [eyePos _vehicle, eyePos _target]) == 0) exitwith {};
-
 private _side = side _target;
-if (_vehicle isKindOf 'StaticWeapon' && RC_AT_SourceIndicationStatic) then {
-	[_side,[_vehicle, 300]] remoteExec ['reportRemoteTarget', _side];
-	[_vehicle, [_side, true]] remoteExec ['confirmSensorTarget', _side];
+if (_unit isKindOf 'StaticWeapon' && RC_AT_SourceIndicationStatic) then {
+	[_side,[_unit, 300]] remoteExec ['reportRemoteTarget', _side];
+	[_unit, [_side, true]] remoteExec ['confirmSensorTarget', _side];
 } else {
-	if (_vehicle isKindOf 'Man'	&& RC_AT_SourceIndicationInf) then {
-		[_side,[_vehicle, 10]] remoteExec ['reportRemoteTarget', _side];
-		[_vehicle, [_side, true]] remoteExec ['confirmSensorTarget', _side];
+	if (_unit isKindOf 'Man' && RC_AT_SourceIndicationInf) then {
+		[_side,[_unit, 10]] remoteExec ['reportRemoteTarget', _side];
+		[_unit, [_side, true]] remoteExec ['confirmSensorTarget', _side];
 	} else {
 		if (RC_AT_SourceIndicationVic) then {
-			[_side,[_vehicle, 20]] remoteExec ['reportRemoteTarget', _side];
-			[_vehicle, [_side, true]] remoteExec ['confirmSensorTarget', _side];
+			[_side,[_unit, 20]] remoteExec ['reportRemoteTarget', _side];
+			[_unit, [_side, true]] remoteExec ['confirmSensorTarget', _side];
 		};
 	};
 };
