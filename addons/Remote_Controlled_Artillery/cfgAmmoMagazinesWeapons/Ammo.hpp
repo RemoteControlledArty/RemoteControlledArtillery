@@ -10,8 +10,9 @@ class MissileBase: MissileCore
 	{
 		class RHS_APS_FiredEH
 		{
-			//fired = "_this spawn RC_fnc_M_APS";
-			fired = "systemchat 'missile'";
+			//fired = "_this spawn RC_fnc_RC_M_APS";
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner']; [_unit, _projectile] spawn RC_fnc_RC_M_APS";
+			//fired = "systemchat 'missile'";
 			//params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 		};
 	};

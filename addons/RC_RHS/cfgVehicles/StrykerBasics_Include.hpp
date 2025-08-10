@@ -19,12 +19,12 @@ class UserActions: UserActions
 	class AdjustMap: AdjustMap
 	{
 		displayName="removed";
-		condition="1 => 0;";
+		condition="player isEqualTo (driver this);";
 	};
 	class ToggleLight: ToggleLight
 	{
 		displayName="removed";
-		condition="1 => 0;";
+		condition="player isEqualTo (driver this);";
 	};
 };
 
@@ -87,21 +87,6 @@ class DriverOpticsIn
 		hitpoint="Hit_Optic_Driver_Rear";
 	};
 };
-
-/*
-class UserActions: UserActions
-{
-	class AdjustMap
-	{
-		displayName="";
-		position="pos driver";
-		radius=20;
-		condition="player == driver this";
-		statement="";
-		onlyforplayer=1;
-	};
-};
-*/
 
 class HitPoints: HitPoints
 {

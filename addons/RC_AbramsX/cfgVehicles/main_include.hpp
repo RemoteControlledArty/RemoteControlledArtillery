@@ -10,6 +10,10 @@ class EventHandlers: EventHandlers
 		#include "\Remote_Controlled_Artillery\includes_script\APS_AT_SourceIndicator.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
 	};
+	class RC_APS
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\APS.hpp"
+	};
 	class RC_LightsOff
 	{
 		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"

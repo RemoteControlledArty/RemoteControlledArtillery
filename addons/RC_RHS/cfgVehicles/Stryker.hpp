@@ -1553,7 +1553,7 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD_FixedRC
 		class SmokeLaunchers_Options: SmokeLaunchers_Options
 		{
 			displayName="removed";
-			condition="1 => 0;";
+			condition="player isEqualTo (driver this);";
 		};
 	};
 

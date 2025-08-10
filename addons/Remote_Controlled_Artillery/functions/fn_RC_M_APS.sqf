@@ -5,7 +5,8 @@
 	APS
 */
 
-params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+//params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+params ["_unit", "_projectile"];
 
 if (!isServer) exitwith {};
 
@@ -36,14 +37,65 @@ private _opposedTo_I = [side _unit, resistance] call BIS_fnc_sideIsEnemy;
 
 
 if (_opposedTo_B and (_APS_AliveAmount_B > 0)) then {
-	[_vehicle] call RC_fnc_RC_AI_CBRad_Blufor;
+	{
+		private _target = _x;
+		_chargesAPS = _target getVariable ["RC_chargesAPS", 1];		//1 = default return value if undefined
+
+		//systemchat str _chargesAPS;
+
+		if (_chargesAPS > 0) then {
+			//systemchat "_chargesAPS > 0";
+			
+			[_target, _projectile, _chargesAPS] spawn
+			{
+				//systemchat "spawn";
+				params ["_target","_projectile"];
+				//systemchat "waiting for APS";
+
+				while {(alive _target) and (alive _projectile)} do
+				{
+					//systemchat "while APS";
+
+					//sleep 0.01;
+					if ((_projectile distance _target) <= 50) exitwith {
+
+						//systemchat "exitwith";
+
+						private _chargesAPS = _target getVariable ["RC_chargesAPS", -1];	//-1 = default return value
+						if (_chargesAPS == -1) then {_chargesAPS = 4;};
+						systemchat str _chargesAPS;
+
+						if (_chargesAPS > 0) then {
+
+							//systemchat "if";
+							
+							_projectile addEventHandler ["SubmunitionCreated", {
+								params ["_projectile", "_submunitionProjectile"];
+
+								deleteVehicle _submunitionProjectile;
+							}];
+
+							triggerAmmo _projectile;
+							
+							private _nextChargesAPS = _chargesAPS - 1;
+							systemchat str _nextChargesAPS;
+							_target setVariable ["RC_chargesAPS", _nextChargesAPS, true];	//true is public without RE
+							systemchat "activated APS" + " " + str _nextChargesAPS + " " + "charges remaining";
+						};
+					};
+				};
+			};
+		};
+	} forEach RC_APS_Array_B;
 };
+/*
 if (_opposedTo_O and (_APS_AliveAmount_O > 0)) then {
 	[_vehicle] call RC_fnc_RC_AI_CBRad_Opfor;
 };
 if (_opposedTo_I and (_APS_AliveAmount_I > 0)) then {
 	[_vehicle] call RC_fnc_RC_AI_CBRad_Indfor;
 };
+*/
 
 
 /*
@@ -57,42 +109,3 @@ if (_timeSinceLast > RC_IgnoreTime_F1) then {
 
 
 //if (RC_M_APS_Vic);
-
-private _chargesAPS = _target getVariable ["RC_chargesAPS", -1];	//-1 = default return value
-if (_chargesAPS == -1) then {_chargesAPS = 3;};
-
-systemchat str _chargesAPS;
-
-if (_chargesAPS > 0) then {
-	systemchat "passed";
-
-	private _nextChargesAPS = _chargesAPS - 1;
-	_nextChargesAPSstr = str _nextChargesAPS;
-	if (local target) then {
-		_target setVariable ["RC_chargesAPS", _nextChargesAPS, true];	//true is public without RE
-	};
-
-	_missile addEventHandler ["SubmunitionCreated", {
-		params ["_projectile", "_submunitionProjectile"];
-
-		deleteVehicle _submunitionProjectile;
-	}];
-	
-	[_target, _missile, _nextChargesAPSstr] spawn
-	{
-		systemchat "spawned";
-		params ["_target","_missile", "_nextChargesAPSstr"];
-		//systemchat "waiting for APS";
-
-		while {(alive _target) and (alive _missile)} do
-		{
-			//systemchat "while APS";
-
-			//sleep 0.01;
-			if ((_missile distance _target) <= 30) exitwith {
-				triggerAmmo _missile;
-				systemchat "activated APS, " + _nextChargesAPSstr + " charges remaining";
-			};
-		};
-	};
-};

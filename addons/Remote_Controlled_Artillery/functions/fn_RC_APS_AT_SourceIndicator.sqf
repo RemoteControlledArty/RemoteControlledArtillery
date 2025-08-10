@@ -54,6 +54,7 @@ private _curCargesAPS = _prevCargesAPS - 1;
 _target lockCameraTo [_vehicle, [0,0], true];	//commander
 
 
+/*
 private _chargesAPS = _target getVariable ["RC_chargesAPS", -1];	//-1 = default return value
 if (_chargesAPS == -1) then {_chargesAPS = 3;};
 
@@ -70,16 +71,7 @@ if (_chargesAPS > 0) then {
 
 	_missile addEventHandler ["SubmunitionCreated", {
 		params ["_projectile", "_submunitionProjectile"];
-		/*
-		private _submunDir = getDir _submunitionProjectile;
-		systemchat "_submunDir" + str _submunDir;
-		_submunitionProjectile setDir -_submunDir;
 
-		private _submunDir2 = getDir _submunitionProjectile;
-		systemchat "_submunDir" + str _submunDir2;
-
-		triggerAmmo _submunitionProjectile;
-		*/
 		deleteVehicle _submunitionProjectile;
 	}];
 	
@@ -101,3 +93,4 @@ if (_chargesAPS > 0) then {
 		};
 	};
 };
+*/
