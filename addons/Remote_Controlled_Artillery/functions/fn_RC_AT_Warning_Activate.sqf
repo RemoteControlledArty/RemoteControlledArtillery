@@ -45,9 +45,19 @@ if (_unit isKindOf 'StaticWeapon' && RC_AT_SourceIndicationStatic) then {
 //turns turret to AT source
 private _ATrespondingTurret = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "RC_ATrespondingTurret");
 
-if (_ATrespondingTurret == 1) then {
-	_target lockCameraTo [_unit, [0], true];	//gunner
-};
-if (_ATrespondingTurret == 2) then {
-	_target lockCameraTo [_unit, [0,0], true];	//commander
+[_target, _unit, _ATrespondingTurret] spawn {
+
+	params ['_target','_unit','_ATrespondingTurret'];
+
+	if (_ATrespondingTurret == 1) then {
+
+		_target lockCameraTo [_unit, [0], true];
+		sleep 3.5;
+		_target lockCameraTo [objNull, [0], true];
+	};
+	if (_ATrespondingTurret == 2) then {
+		_target lockCameraTo [_unit, [0,0], true];
+		sleep 3.5;
+		_target lockCameraTo [objNull, [0,0], true];
+	};
 };

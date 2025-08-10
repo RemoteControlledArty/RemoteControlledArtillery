@@ -43,6 +43,7 @@ if (_vehicle isKindOf 'StaticWeapon' && RC_AT_SourceIndicationStatic) then {
 };
 
 
+/*
 //turns turret to AT source
 private _ATrespondingTurret = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "RC_ATrespondingTurret");
 
@@ -52,3 +53,4 @@ if (_ATrespondingTurret == 1) then {
 if (_ATrespondingTurret == 2) then {
 	_target lockCameraTo [_unit, [0,0], true];	//commander
 };
+*/

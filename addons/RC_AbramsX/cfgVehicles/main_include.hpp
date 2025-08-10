@@ -14,20 +14,15 @@ class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_B.hpp"
 	};
-	/*
-	class RC_APS
-	{
-		#include "\Remote_Controlled_Artillery\includes_script\APS.hpp"
-	};
-	*/
 	class RC_LightsOff
 	{
 		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 	};
 };
 
-RC_APSCharges = 4;
 RC_ATrespondingTurret = 2;	//1=gunner 2=commander
+RC_ignoreRockets = 1;
+RC_APSCharges = 4;
 
 #include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"

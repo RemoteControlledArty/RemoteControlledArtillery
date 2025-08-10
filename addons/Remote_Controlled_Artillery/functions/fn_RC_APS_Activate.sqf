@@ -7,8 +7,45 @@
 
 params ["_target", "_projectile"];
 
-private _APSCharges = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "RC_APSCharges");
-if (_APSCharges != 0) then {
+private _APSChargesCfg = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "RC_APSCharges");
+
+private _ingoreRockets = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "RC_ignoreRockets");
+private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _projectile >> "simulation");
+if ((_ingoreRockets != 0) && _ammoType isEqualTo "shotRocket") exitwith {};
+
+
+/*
+if (_ammoType isEqualTo "shotRocket") then {
+
+	private _posProj = getPosASL _projectile;
+	private _velProj = velocity _projectile;
+
+	private _posVeh = getPosASL _vehicle;
+	private _velVeh = velocity _vehicle;
+
+	// Relative position & velocity
+	private _relPos = _posProj vectorDiff _posVeh;
+	private _relVel = _velProj vectorDiff _velVeh;
+
+	// Time to closest approach
+	private _tClosest = -((_relPos vectorDotProduct _relVel) / (_relVel vectorDotProduct _relVel));
+	if (_tClosest <= 0) exitWith { false }; // Already passed or moving away
+
+	// Predicted positions at closest point
+	private _futureProj = _posProj vectorAdd (_velProj vectorMultiply _tClosest);
+	private _futureVeh  = _posVeh vectorAdd (_velVeh vectorMultiply _tClosest);
+
+	// Distance at closest point
+	private _distClosest = _futureProj distance _futureVeh;
+
+	// Vehicle size / hit radius
+	private _hitRadius = 5; // adjust for vehicle model
+	if (_distClosest > _hitRadius) exitWith { false }; // Will miss
+};
+*/
+
+
+if (_APSChargesCfg != 0) then {
 
 	_chargesAPS = _target getVariable ["RC_chargesAPS", 1];		//1 = default return value if undefined
 
@@ -17,10 +54,10 @@ if (_APSCharges != 0) then {
 	if (_chargesAPS > 0) then {
 		//systemchat "_chargesAPS > 0";
 		
-		[_target, _projectile, _chargesAPS] spawn
+		[_target, _projectile, _APSChargesCfg] spawn
 		{
 			//systemchat "spawn";
-			params ["_target", "_projectile"];
+			params ["_target", "_projectile", "_APSChargesCfg"];
 			//systemchat "waiting for APS";
 
 			while {(alive _target) and (alive _projectile)} do
@@ -33,7 +70,7 @@ if (_APSCharges != 0) then {
 					//systemchat "exitwith";
 
 					private _chargesAPS = _target getVariable ["RC_chargesAPS", -1];	//-1 = default return value
-					if (_chargesAPS == -1) then {_chargesAPS = 4;};
+					if (_chargesAPS == -1) then {_chargesAPS = _APSChargesCfg};
 					//systemchat str _chargesAPS;
 
 					if (_chargesAPS > 0) then {
