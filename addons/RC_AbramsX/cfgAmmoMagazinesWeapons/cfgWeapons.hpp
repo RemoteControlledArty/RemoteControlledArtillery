@@ -146,7 +146,7 @@ class RC_AbramsX_30mm_M914: RC_AbramsX_30mm_M914_Base
 	maxZeroing=4000;
 	FCSMaxLeadSpeed=100;
 	autoReload=1;
-	magazineReloadTime=20;
+	magazineReloadTime=15;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
 	class HighROF: HighROF
@@ -157,6 +157,7 @@ class RC_AbramsX_30mm_M914: RC_AbramsX_30mm_M914_Base
 		maxZeroing=4000;
 		FCSMaxLeadSpeed=100;
 		autoReload=1;
+		magazineReloadTime=15;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
 		magazines[]=
@@ -238,7 +239,7 @@ class RC_AbramsX_30mm_M914_twin: RC_AbramsX_30mm_M914_twin_Base
 	maxZeroing=4000;
 	FCSMaxLeadSpeed=100;
 	autoReload=1;
-	magazineReloadTime=25;
+	magazineReloadTime=20;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
 	class HighROF: HighROF
@@ -249,6 +250,7 @@ class RC_AbramsX_30mm_M914_twin: RC_AbramsX_30mm_M914_twin_Base
 		maxZeroing=4000;
 		FCSMaxLeadSpeed=100;
 		autoReload=1;
+		magazineReloadTime=20;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
 		magazines[]=
