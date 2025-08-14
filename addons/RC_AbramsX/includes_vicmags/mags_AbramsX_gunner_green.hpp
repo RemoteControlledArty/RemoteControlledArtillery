@@ -1,6 +1,6 @@
 magazines[]=
 {
-	"RC_20Rnd_120mm_APFSDS_T_G",
+	"RC_20Rnd_120mm_APFSDS_X_T_G",
 	"RC_5Rnd_120mm_MP_T_G",
 	"RC_10Rnd_120mm_MPAB_DF_T_G",
 	"RC_4Rnd_120mm_DLG_HVKEM",

@@ -584,6 +584,11 @@ class RC_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MPAB
 	hit=100;
 	caliber=4.6;
 };
+class RC_ammo_Penetrator_MP_30mm_X: RC_ammo_Penetrator_MPAB
+{
+	hit=130;
+	caliber=4.9;
+};
 class RC_ammo_Penetrator_MP_35mm: RC_ammo_Penetrator_MPAB
 {
 	hit=110;
@@ -1045,6 +1050,7 @@ class RC_B_30mm_MPAB_QF_T_Y: RC_B_30mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bu
 
 class RC_B_30mm_MP_DF_Sub_X: RC_B_30mm_MP_DF_Sub
 {
+	submunitionAmmo="RC_ammo_Penetrator_MP_30mm_X";
 	submunitionInitialOffset[]={0,0,-3.5};
 	explosionTime=0.014;
 };
@@ -1875,6 +1881,16 @@ class RC_Sh_120mm_APFSDS_T_R: Sh_120mm_APFSDS_Tracer_Red
 };
 class RC_Sh_120mm_APFSDS_T_G: RC_Sh_120mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_Sh_120mm_APFSDS_T_Y: RC_Sh_120mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_Sh_120mm_APFSDS_X_T_R: RC_Sh_120mm_APFSDS_T_R
+{
+	hit=600;
+	indirectHitRange=1;
+	deflecting=10;
+};
+class RC_Sh_120mm_APFSDS_X_T_G: RC_Sh_120mm_APFSDS_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_120mm_APFSDS_X_T_Y: RC_Sh_120mm_APFSDS_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 class Sh_125mm_HEAT_T_Red;

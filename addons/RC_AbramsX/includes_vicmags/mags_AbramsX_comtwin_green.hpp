@@ -2,7 +2,8 @@ magazines[]=
 {
 	"RC_200Rnd_30mm_MPAB_DF_T_G",
 	"RC_200Rnd_30mm_MPAB_DF_T_G",
-	"RC_200Rnd_30mm_APFSDS_T_G",
+	"RC_200Rnd_30mm_MPAB_DF_T_G",
+	//"RC_200Rnd_30mm_APFSDS_T_G",
 	/*
 	//available but unused
 	"RC_200Rnd_30mm_MP_Pen_T_G",

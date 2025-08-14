@@ -1787,6 +1787,20 @@ class RC_20Rnd_120mm_APFSDS_T_G: RC_10Rnd_120mm_APFSDS_T_G {count=20;};
 class RC_20Rnd_120mm_APFSDS_T_Y: RC_10Rnd_120mm_APFSDS_T_Y {count=20;};
 
 
+class RC_10Rnd_120mm_APFSDS_X_T_R: RC_10Rnd_120mm_APFSDS_T_R
+{
+	ammo="RC_Sh_120mm_APFSDS_X_T_R";
+};
+class RC_10Rnd_120mm_APFSDS_X_T_G: RC_10Rnd_120mm_APFSDS_X_T_R {ammo="RC_Sh_120mm_APFSDS_X_T_G";};
+class RC_10Rnd_120mm_APFSDS_X_T_Y: RC_10Rnd_120mm_APFSDS_X_T_R {ammo="RC_Sh_120mm_APFSDS_X_T_Y";};
+class RC_15Rnd_120mm_APFSDS_X_T_R: RC_10Rnd_120mm_APFSDS_X_T_R {count=15;};
+class RC_15Rnd_120mm_APFSDS_X_T_G: RC_10Rnd_120mm_APFSDS_X_T_G {count=15;};
+class RC_15Rnd_120mm_APFSDS_X_T_Y: RC_10Rnd_120mm_APFSDS_X_T_Y {count=15;};
+class RC_20Rnd_120mm_APFSDS_X_T_R: RC_10Rnd_120mm_APFSDS_X_T_R {count=20;};
+class RC_20Rnd_120mm_APFSDS_X_T_G: RC_10Rnd_120mm_APFSDS_X_T_G {count=20;};
+class RC_20Rnd_120mm_APFSDS_X_T_Y: RC_10Rnd_120mm_APFSDS_X_T_Y {count=20;};
+
+
 class 4Rnd_120mm_LG_cannon_missiles;
 class RC_5Rnd_120mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 {

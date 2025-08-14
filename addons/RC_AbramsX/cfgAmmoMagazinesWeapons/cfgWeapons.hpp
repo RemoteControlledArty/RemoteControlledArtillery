@@ -318,10 +318,12 @@ class RC_AbramsX_30mm_M914_twin: RC_AbramsX_30mm_M914_twin_Base
 class RC_AbramsX_20mm_coax: RC_AbramsX_30mm_M914
 {
 	displayName="coax 20mm";
+	magazineReloadTime=1;
 
 	class HighROF: HighROF
 	{
 		displayName="coax 20mm";
+		magazineReloadTime=1;
 
 		magazines[]=
 		{
@@ -586,6 +588,7 @@ class RC_AbramsX_HMG_coax: RC_AbramsX_HMG_coax_base
 	FCSZeroingDelay=0.5;
 	FCSMaxLeadSpeed=100;
 	autoReload=1;
+	magazineReloadTime=1;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
 	magazines[]=
@@ -615,12 +618,14 @@ class RC_AbramsX_20mm_DualFed_coax: RC_AbramsX_20mm_coax_Base
 	displayName="coax 20mm dualfed";
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 	FCSMaxLeadSpeed=100;
+	magazineReloadTime=1;
 	//type="1+4";
 
 	class HE: HE
 	{
 		displayName="coax 20mm";
 		FCSMaxLeadSpeed=100;
+		magazineReloadTime=1;
 		//type="1+4";
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
@@ -633,6 +638,7 @@ class RC_AbramsX_20mm_DualFed_coax: RC_AbramsX_20mm_coax_Base
 	{
 		displayName="coax 20mm";
 		FCSMaxLeadSpeed=100;
+		magazineReloadTime=1;
 		//type="1+4";
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
