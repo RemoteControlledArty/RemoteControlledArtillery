@@ -37,6 +37,7 @@ if (_chargesAPS > 0) then {
 
 				if (_chargesAPS > 0) then {
 					private _projPos = (getPosATL _proj);
+					private _projDir = (getDir _proj);
 					deleteVehicle _proj;
 					//[_proj] remoteExec ["deleteVehicle", 0];
 
@@ -58,8 +59,10 @@ if (_chargesAPS > 0) then {
 					];
 					_explPosATL = ASLToATL _explPosASL;
 					*/
-					_explosion = "RC_APS_Expl_Scripted" createVehicle _projPos;
-					_explosion setDamage 1;
+					_expl = "RC_APS_Expl_Scripted" createVehicle _projPos;
+					private _explDir = -_projDir;
+					[_expl, _explDir] remoteExec ["setDir", 0];
+					_expl setDamage 1;
 					
 					private _nextChargesAPS = 0 max (_chargesAPS - 1);
 					_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
