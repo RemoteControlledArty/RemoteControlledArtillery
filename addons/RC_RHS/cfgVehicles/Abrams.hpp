@@ -37,6 +37,7 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 

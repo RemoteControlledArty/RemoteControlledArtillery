@@ -26,7 +26,7 @@ RC_ignoreRockets=1;
 weapons[]=
 {
 	"RC_APS_W",
-	"SmokeLauncher"
+	"qav_SmokeLauncher"
 };
 magazines[]=
 {
@@ -34,7 +34,18 @@ magazines[]=
 	"RC_1Rnd_APS_M",
 	"RC_1Rnd_APS_M",
 	"RC_1Rnd_APS_M",
-	"SmokeLauncherMag"
+
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+
+	"qav_SmokeLauncherMag",
+	"qav_SmokeLauncherMag"
 };
 
 #include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
@@ -485,6 +496,20 @@ class Turrets: Turrets
 						thermalMode[]={0};
 						gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 						gunnerOpticsEffect[]={};
+					};
+				};
+
+				class HitPoints: HitPoints
+				{
+					class HitComTurret: HitComTurret
+					{
+						armor=0.3;
+						explosionShielding=0.8;
+					};
+					class HitComGun: HitComGun
+					{
+						armor=0.3;
+						explosionShielding=0.8;
 					};
 				};
 

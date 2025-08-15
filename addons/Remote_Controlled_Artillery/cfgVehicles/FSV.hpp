@@ -69,6 +69,7 @@ class RC_FSV_A_Base: RC_FSV_Base
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 

@@ -64,6 +64,7 @@ class RC_BTR80A: RC_BTR80A_Base
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 

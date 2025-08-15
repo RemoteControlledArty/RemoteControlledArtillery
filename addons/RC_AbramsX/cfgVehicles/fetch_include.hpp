@@ -19,5 +19,7 @@ class HitPoints;
 class HitHull;
 class HitLTrack;
 class HitRTrack;
+class HitComTurret;
+class HitComGun;
 scope=0;
 scopeCurator=0;

@@ -63,6 +63,7 @@ class RC_2S90M: RC_2S90M_Base
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 

@@ -60,6 +60,7 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 

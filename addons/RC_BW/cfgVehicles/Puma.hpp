@@ -53,14 +53,16 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 
 	weapons[]=
 	{
+		"TruckHorn",
 		"RC_APS_W",
-		"SmokeLauncher"
+		"BWA3_SmokeLauncher"
 	};
 	magazines[]=
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
-		"SmokeLauncherMag"
+		"BWA3_SmokeLauncherMag",
+		"BWA3_SmokeLauncherMag"
 	};
 
 	faction="RemoteControlled_B";
@@ -85,17 +87,6 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 
 	//smokeLauncherGrenadeCount=6;
 	//smokeLauncherAngle=180;
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"BWA3_SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"BWA3_SmokeLauncherMag",
-		"BWA3_SmokeLauncherMag"
-	};
 
 	class Turrets: Turrets
 	{

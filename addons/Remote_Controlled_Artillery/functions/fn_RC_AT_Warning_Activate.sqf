@@ -5,10 +5,7 @@
 	If line of sight: Warning sound for any hostile AT, marks source of fire briefly in datalink.
 */
 
-params ['_target','_unit'];
-
-private _vic = _target;
-private _source = _unit;
+params ['_vic','_source'];
 
 if ((_vic distance _source) > 4000) exitwith {};
 if (!RC_AT_SourceIndicationStatic && !RC_AT_SourceIndicationInf && !RC_AT_SourceIndicationVic) exitwith {};

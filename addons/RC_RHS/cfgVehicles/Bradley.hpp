@@ -37,6 +37,7 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 
 	weapons[]=
 	{
+		"TruckHorn",
 		"RC_APS_W",
 		"SmokeLauncher"
 	};
@@ -44,6 +45,7 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 
@@ -61,17 +63,6 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	class DriverOpticsIn
 	{

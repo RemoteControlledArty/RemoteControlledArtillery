@@ -71,14 +71,16 @@ class RC_ACV_30_Base: RC_ACV_30_Core
 
 	weapons[]=
 	{
+		"TruckHorn",
 		"RC_APS_W",
-		"SmokeLauncher"
+		"SmokeLauncher_ACV"
 	};
 	magazines[]=
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
-		"SmokeLauncherMag"
+		"SmokeLauncherMag_ACV",
+		"SmokeLauncherMag_ACV"
 	};
 
 	faction="RemoteControlled_B";
@@ -103,17 +105,6 @@ class RC_ACV_30_Base: RC_ACV_30_Core
 
 	class Reflectors {};	//removed, otherwise they are automatically on at night
 	aggregateReflectors[]={{""}};
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher_ACV"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag_ACV",
-		"SmokeLauncherMag_ACV"
-	};
 	
 	class HitPoints: HitPoints
 	{

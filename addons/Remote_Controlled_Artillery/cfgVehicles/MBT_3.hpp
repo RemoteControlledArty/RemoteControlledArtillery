@@ -57,6 +57,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 

@@ -57,6 +57,7 @@ class RC_MBT_4_HEX_A_Base: RC_MBT_4_Base
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 

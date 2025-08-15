@@ -67,6 +67,7 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 
 	weapons[]=
 	{
+		"TruckHorn",
 		"RC_APS_W",
 		"SmokeLauncher"
 	};
@@ -74,6 +75,7 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 
@@ -100,17 +102,6 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 	
 	class TextureSources: TextureSources
 	{

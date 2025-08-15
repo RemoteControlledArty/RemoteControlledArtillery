@@ -70,6 +70,7 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 	{
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 

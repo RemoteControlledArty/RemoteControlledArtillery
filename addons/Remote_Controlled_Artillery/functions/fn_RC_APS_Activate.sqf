@@ -5,23 +5,141 @@
 	APS
 */
 
-params ["_target", "_projectile"];
+params ["_vic", "_proj"];
 
-private _APSChargesCfg = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "RC_APSCharges");
+//systemchat "APS start";
 
-private _mags = _target magazinesTurret [-1];
-private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count _mags;
+private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
 
-private _ingoreRockets = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "RC_ignoreRockets");
-private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _projectile >> "simulation");
-if ((_ingoreRockets != 0) && _ammoType isEqualTo "shotRocket") exitwith {};
+//systemchat "charges" + str _chargesAPS;
+
+if (_chargesAPS > 0) then {
+
+	//systemchat "_chargesAPS > 0";
+
+	private _ingoreRockets = getNumber (configFile >> "CfgVehicles" >> typeOf _vic >> "RC_ignoreRockets");
+	private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
+	if ((_ingoreRockets != 0) && _ammoType isEqualTo "shotRocket") exitwith {};
+
+	//systemchat "before spawn";
+
+	[_vic, _proj, _chargesAPS] spawn
+	{
+		params ["_vic", "_proj", "_chargesAPS"];
+
+		while {(alive _vic) and (alive _proj)} do
+		{
+			if ((_proj distance _vic) < 150) exitwith {
+
+				//systemchat "<150m";
+
+				private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
+
+				if (_chargesAPS > 0) then {
+					private _projPos = (getPosATL _proj);
+					deleteVehicle _proj;
+					//[_proj] remoteExec ["deleteVehicle", 0];
+
+					//systemchat "activated APS";
+
+					playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _vic, false, getPosASL _vic, 10, 0.8, 600];
+
+					private _vicPos = (getPosATL _vic);
+					//private _factor = 1 max ((_vicPos distance _projPos) / 50);		//choose distance
+					//systemchat str _factor;
+					
+					private _explPos = [
+						(_vicPos #0 + _projPos #0) / 2,
+						(_vicPos #1 + _projPos #1) / 2,
+						(_vicPos #2 + _projPos #2) / 2
+					];
+					_explosion = "ClaymoreDirectionalMine_Remote_Ammo_Scripted" createVehicle _explPos;
+					_explosion setDamage 1;
+					
+					private _nextChargesAPS = 0 max (_chargesAPS - 1);
+					_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
+					
+					private _string = "activated APS, " + str _nextChargesAPS + " remaining";
+					[_vic, _string] remoteExec ["vehicleChat", 0];
+				};
+			};
+		};
+	};
+};
+
+
+/*
+params ["_vic", "_proj"];
+
+// Count APS charges up front
+private _chargesAPS = { _x isEqualTo "RC_1Rnd_APS_M" } count (_vic magazinesTurret [-1]);
+
+if (_chargesAPS > 0) then {
+
+    private _ignoreRockets = getNumber (configFile >> "CfgVehicles" >> typeOf _vic >> "RC_ignoreRockets");
+    private _ammoType      = getText   (configFile >> "CfgAmmo"     >> typeOf _proj >> "simulation");
+
+    // Skip if rocket should be ignored
+    if ((_ignoreRockets != 0) && {_ammoType isEqualTo "shotRocket"}) exitWith {};
+
+    // Register EachFrame handler
+    addMissionEventHandler [
+        "EachFrame",
+        {
+            params ["_args"];
+            _args params ["_vic", "_proj"];
+
+            // Bail if one of them is gone
+            if (!alive _vic || {!alive _proj}) exitWith {
+                removeMissionEventHandler ["EachFrame", _thisEventHandler];
+            };
+
+            // Check distance threshold
+            if ((_proj distance _vic) < 150) exitWith {
+
+                private _chargesAPS = { _x isEqualTo "RC_1Rnd_APS_M" } count (_vic magazinesTurret [-1]);
+
+                if (_chargesAPS > 0) then {
+                    private _projPos = getPosATL _proj;
+                    deleteVehicle _proj;
+
+                    playSound3D [
+                        "a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss",
+                        _vic, false, getPosASL _vic, 10, 0.8, 600
+                    ];
+
+                    private _vicPos = getPosATL _vic;
+                    private _explPos = [
+                        (_vicPos # 0 + _projPos # 0) / 2,
+                        (_vicPos # 1 + _projPos # 1) / 2,
+                        (_vicPos # 2 + _projPos # 2) / 2
+                    ];
+                    private _explosion = "ClaymoreDirectionalMine_Remote_Ammo_Scripted" createVehicle _explPos;
+                    _explosion setDamage 1;
+
+                    private _nextChargesAPS = 0 max (_chargesAPS - 1);
+                    _vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
+
+                    [_vic, format ["activated APS, %1 remaining", _nextChargesAPS]]
+                        remoteExec ["vehicleChat", 0];
+                };
+
+                // Remove handler once action is taken
+                removeMissionEventHandler ["EachFrame", _thisEventHandler];
+            };
+        },
+        [_vic, _proj] // _thisArgs passed into EH
+    ];
+};
+*/
+
 
 
 /*
 if (_ammoType isEqualTo "shotRocket") then {
 
-	private _posProj = getPosASL _projectile;
-	private _velProj = velocity _projectile;
+	private _posProj = getPosASL _proj;
+	private _velProj = velocity _proj;
 
 	private _posVeh = getPosASL _vehicle;
 	private _velVeh = velocity _vehicle;
@@ -48,34 +166,39 @@ if (_ammoType isEqualTo "shotRocket") then {
 */
 
 
-if (_chargesAPS > 0) then {
-	
-	[_target, _projectile] spawn
-	{
-		params ["_target", "_projectile"];
 
-		while {(alive _target) and (alive _projectile)} do
-		{
-			if ((_projectile distance _target) <= 100) exitwith {
 
-				private _mags = _target magazinesTurret [-1];
-				private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count _mags;
+/*
+private _dist = (_proj distance _vic);
 
-				if (_chargesAPS > 0) then {
+if ((_dist < 500) && (_dist > 400)) then {
+	private _mags = _vic magazinesTurret [-1];
+	private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count _mags;
 
-					private _projPos = (position _projectile);
-					[_projectile] remoteExec ["deleteVehicle", 0];
-					playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _target, false, getPosASL _target, 10, 0.8, 600];
-					_explosion = "ClaymoreDirectionalMine_Remote_Ammo_Scripted" createVehicle _projPos;
-					_explosion setDamage 1;
+	if (((speed _proj) / 3.6) > 600) exitwith {};		//decide on max interception speed
 
-					private _nextChargesAPS = 0 max (_chargesAPS - 1);
-					_target removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
+	systemchat "<500m >400m";
 
-					private _string = "activated APS, " + str _nextChargesAPS + " remaining";
-					[_target, _string] remoteExec ["vehicleChat", 0];
-				};
-			};
-		};
-	};
+	if (((_proj distance _vic) < 100) && (_chargesAPS > 0)) exitwith {
 };
+
+if ((_dist < 400) && (_dist > 100)) then {
+
+	systemchat "<400m >100m";
+};
+*/
+
+
+/*
+private _dist = _proj distance _vic;
+private _frameTime = diag_deltaTime;
+
+private _hitNextFrame = false;
+private _projSpeed = (speed _proj) / 3.6;
+
+if (_projSpeed != 0) then {
+	private _hitNextFrame = (_frameTime * 2) >= ((_dist + 100) / _projSpeed);
+};
+
+if (((_dist <= 100) or _hitNextFrame) && (_chargesAPS > 0)) exitwith {
+*/
