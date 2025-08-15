@@ -746,6 +746,7 @@ class CfgFunctions
 			class RC_AT_Warning_Arrays {preInit=1;};
 			class RC_AT_Warning {};
 			class RC_AT_Warning_Activate {};
+			class RC_AT_TurretOwner {};
 			class RC_AT_Turn {};
 			class RC_APS_Activate {};
 

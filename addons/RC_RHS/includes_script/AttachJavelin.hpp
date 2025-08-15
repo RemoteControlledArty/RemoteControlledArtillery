@@ -9,3 +9,14 @@ init="if (!isserver) exitwith {}; \
 	]; \
 };";
 //konec hlavne / usti hlavne
+
+
+/*
+_this addEventHandler ["CuratorObjectDeleted", {
+	params ["_curator", "_entity"];
+}];
+
+_this addEventHandler ["Killed", {
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
+}];
+*/

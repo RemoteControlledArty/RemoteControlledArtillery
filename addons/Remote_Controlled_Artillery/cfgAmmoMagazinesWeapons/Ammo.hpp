@@ -23,7 +23,8 @@ class RocketBase: RocketCore
 	{
 		class AT_Warning
 		{
-			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!(local _projectile)) exitwith {};  [_unit, _projectile] remoteExecCall ['RC_fnc_RC_AT_Warning', 2];";
+			//fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!(local _projectile)) exitwith {};  [_unit, _projectile] remoteExecCall ['RC_fnc_RC_AT_Warning', 2];";
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!(local _projectile)) exitwith {};  [_unit, _projectile] call RC_fnc_RC_AT_Warning;";
 			//fired = "systemchat 'rocket'";
 		};
 	};
@@ -42,6 +43,14 @@ class RC_target_confirmer_ammo: Default
 class RC_APS_A: RC_target_confirmer_ammo
 {
 	//??
+};
+class ClaymoreDirectionalMine_Remote_Ammo_Scripted;
+class RC_APS_Expl_Scripted: ClaymoreDirectionalMine_Remote_Ammo_Scripted
+{
+	author="Ascent";
+	indirectHit=10;			//40
+	indirectHitRange=5;	//30
+	//explosionAngle=60;
 };
 
 

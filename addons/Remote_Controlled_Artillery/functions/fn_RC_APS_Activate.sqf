@@ -29,7 +29,7 @@ if (_chargesAPS > 0) then {
 
 		while {(alive _vic) and (alive _proj)} do
 		{
-			if ((_proj distance _vic) < 150) exitwith {
+			if ((_proj distance _vic) < 120) exitwith {
 
 				//systemchat "<150m";
 
@@ -42,18 +42,23 @@ if (_chargesAPS > 0) then {
 
 					//systemchat "activated APS";
 
-					playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _vic, false, getPosASL _vic, 10, 0.8, 600];
+					playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _vic, false, getPosASL _vic, 5, 0.8, 600];
 
-					private _vicPos = (getPosATL _vic);
+					/*
+					private _vicPos = (getPosASL _vic);
 					//private _factor = 1 max ((_vicPos distance _projPos) / 50);		//choose distance
 					//systemchat str _factor;
 					
-					private _explPos = [
+					/*
+					//if bypassing vehicle suddenly get dragged closer, despite model being seen shortly before
+					private _explPosASL = [
 						(_vicPos #0 + _projPos #0) / 2,
 						(_vicPos #1 + _projPos #1) / 2,
 						(_vicPos #2 + _projPos #2) / 2
 					];
-					_explosion = "ClaymoreDirectionalMine_Remote_Ammo_Scripted" createVehicle _explPos;
+					_explPosATL = ASLToATL _explPosASL;
+					*/
+					_explosion = "RC_APS_Expl_Scripted" createVehicle _projPos;
 					_explosion setDamage 1;
 					
 					private _nextChargesAPS = 0 max (_chargesAPS - 1);
