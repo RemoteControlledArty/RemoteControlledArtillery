@@ -11,7 +11,8 @@ class MissileBase: MissileCore
 		class AT_Warning
 		{
 			//fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner']; [_unit, _projectile] spawn RC_fnc_RC_AT_Warning";
-			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  [_unit, _projectile] remoteExecCall ['RC_fnc_RC_AT_Warning', 2];";
+			//fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  [_unit, _projectile] remoteExecCall ['RC_fnc_RC_AT_Warning', 2];";
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile] call RC_fnc_RC_AT_Warning;";
 			//fired = "systemchat 'missile'";
 		};
 	};
@@ -24,7 +25,7 @@ class RocketBase: RocketCore
 		class AT_Warning
 		{
 			//fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!(local _projectile)) exitwith {};  [_unit, _projectile] remoteExecCall ['RC_fnc_RC_AT_Warning', 2];";
-			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile] call RC_fnc_RC_AT_Warning;";
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!(local _projectile)) exitwith {};  [_unit, _projectile] call RC_fnc_RC_AT_Warning;";
 			//fired = "systemchat 'rocket'";
 		};
 	};
