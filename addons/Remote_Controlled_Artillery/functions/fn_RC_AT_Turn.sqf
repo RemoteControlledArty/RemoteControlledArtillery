@@ -21,7 +21,7 @@ if (count _controllers > 2) then {
 private _isPlayerCamera = (isPlayer (_vic turretUnit _turretPath)) or (isPlayer _turretController);
 
 
-if (isPlayerCamera) then {
+if (_isPlayerCamera) then {
 	private _turretCfg = [_vic, _turretPath] call BIS_fnc_turretConfig;
 	private _rotSpeedH = getNumber (_turretCfg >> "maxHorizontalRotSpeed");
 	private _rotSpeedV = getNumber (_turretCfg >> "maxVerticalRotSpeed");

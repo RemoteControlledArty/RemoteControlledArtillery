@@ -48,8 +48,8 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	RC_ATrespondingTurret[] = {1};
-	//RC_ignoreRockets = 1;
+	RC_ATrespondingTurret[]={1};
+	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{

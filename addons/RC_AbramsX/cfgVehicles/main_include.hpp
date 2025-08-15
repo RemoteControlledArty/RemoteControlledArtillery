@@ -12,7 +12,7 @@ class EventHandlers: EventHandlers
 	};
 	class RC_AT_Warning
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_B.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 	};
 	class RC_LightsOff
 	{
@@ -20,10 +20,22 @@ class EventHandlers: EventHandlers
 	};
 };
 
-//RC_ATrespondingTurret = 2;	//1=gunner 2=commander
-RC_ATrespondingTurret[] = {0,0};
-RC_ignoreRockets = 1;
-RC_APSCharges = 4;
+RC_ATrespondingTurret[]={0,0};
+RC_ignoreRockets=1;
+
+weapons[]=
+{
+	"RC_APS_W",
+	"SmokeLauncher"
+};
+magazines[]=
+{
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"SmokeLauncherMag"
+};
 
 #include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"

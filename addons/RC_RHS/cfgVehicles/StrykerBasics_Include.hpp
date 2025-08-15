@@ -31,13 +31,25 @@ class UserActions: UserActions
 	};
 };
 
-RC_ATrespondingTurret[] = {0};
-RC_APSCharges = 4;
-
 #include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 lockDetectionSystem="2+4+8";
+
+RC_ATrespondingTurret[] = {0};
+//RC_ignoreRockets = 1;
+
+weapons[]=
+{
+	"RC_APS_W",
+	"SmokeLauncher"
+};
+magazines[]=
+{
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"SmokeLauncherMag"
+};
 
 editorSubcategory="RC_APC_subcat";
 

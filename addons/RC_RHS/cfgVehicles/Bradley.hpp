@@ -32,8 +32,8 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	RC_ATrespondingTurret[] = {0,0};
-	//RC_ignoreRockets = 1;
+	RC_ATrespondingTurret[]={0,0};
+	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{

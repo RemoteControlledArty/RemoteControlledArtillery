@@ -1275,17 +1275,6 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-	weapons[]=
-	{
-		"RC_target_confirmer_datalink",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"RC_target_confirmer_mag",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 	
 	class AnimationSources: AnimationSources
 	{
@@ -1449,6 +1438,20 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 };
 class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
 {
+	weapons[]=
+	{
+		"RC_target_confirmer_datalink",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_target_confirmer_mag",
+		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag"
+	};
+
 	class DriverOpticsIn: DriverOpticsIn
 	{
 		class DVE_Wide: DVE_Wide

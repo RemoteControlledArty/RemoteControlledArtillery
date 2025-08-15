@@ -34,6 +34,10 @@ class RC_2S90M: RC_2S90M_Base
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -46,6 +50,21 @@ class RC_2S90M: RC_2S90M_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
+
+	RC_ATrespondingTurret[]={0,0};
+	//RC_ignoreRockets=1;
+
+	weapons[]=
+	{
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag"
+	};
 
 	author="Ascent";
 	faction="RemoteControlled_B";
