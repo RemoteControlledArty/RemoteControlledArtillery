@@ -32,6 +32,21 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
+	RC_ATrespondingTurret[] = {0,0};
+	//RC_ignoreRockets = 1;
+
+	weapons[]=
+	{
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag"
+	};
+
 	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=2;
@@ -291,6 +306,10 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
 		class RC_Artillery
 		{

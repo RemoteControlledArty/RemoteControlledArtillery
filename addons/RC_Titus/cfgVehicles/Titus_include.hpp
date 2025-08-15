@@ -3,6 +3,23 @@
 #include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 lockDetectionSystem="2+4+8";
 
+RC_ATrespondingTurret[]={0,0};
+//RC_ignoreRockets = 1;
+RC_APSCharges=2;
+
+weapons[]=
+{
+	"TruckHorn2",
+	"RC_APS_W",
+	"SmokeLauncher"
+};
+magazines[]=
+{
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+	"SmokeLauncherMag"
+};
+
 faction="RemoteControlled_B";
 crew="B_UAV_AI";
 driverCompartments="Compartment3";
@@ -26,16 +43,6 @@ smokeLauncherOnTurret=1;
 smokeLauncherGrenadeCount=12;
 smokeLauncherVelocity=14;
 smokeLauncherAngle=180;
-weapons[]=
-{
-	"TruckHorn2",
-	"SmokeLauncher"
-};
-magazines[]=
-{
-	"SmokeLauncherMag",
-	"SmokeLauncherMag"
-};
 
 animationList[]=
 {

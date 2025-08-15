@@ -49,6 +49,18 @@ class RC_MBT_4_HEX_A_Base: RC_MBT_4_Base
 	RC_ignoreRockets = 1;
 	RC_APSCharges = 2;
 
+	weapons[]=
+	{
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag"
+	};
+
 	faction="RemoteControlled_O";
 	editorSubcategory="RC_MBT_subcat";
 	author="Ascent";

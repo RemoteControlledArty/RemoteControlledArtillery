@@ -18,7 +18,7 @@ if (_controller1 isNotEqualTo objNull) then {
 	[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.3]] remoteExec ['playSoundUI', _controller1];
 
 	if (count _controllers > 2) then {
-		private _controller2 = _controllers select 3;
+		private _controller2 = _controllers select 2;
 		[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.3]] remoteExec ['playSoundUI', _controller2];
 	};
 };

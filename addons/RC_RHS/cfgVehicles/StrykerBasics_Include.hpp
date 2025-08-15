@@ -7,7 +7,7 @@ class EventHandlers: EventHandlers
 	};
 	class RC_AT_Warning
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_B.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 	};
 	class RC_LightsOff
 	{
