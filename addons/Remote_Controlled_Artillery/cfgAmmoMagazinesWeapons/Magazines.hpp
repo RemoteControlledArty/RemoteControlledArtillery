@@ -6,6 +6,17 @@ class RC_target_confirmer_mag: CA_Magazine
 	ammo="RC_target_confirmer_ammo";
 	count=1;
 };
+class RC_1Rnd_APS_M: RC_target_confirmer_mag
+{
+	ammo="RC_APS_A";
+	displayName="APS charges";
+	displayNameShort="APS charges";
+};
+/*
+class RC_2Rnd_APS_M: RC_target_confirmer_mag {count=2;};
+class RC_3Rnd_APS_M: RC_target_confirmer_mag {count=3;};
+class RC_4Rnd_APS_M: RC_target_confirmer_mag {count=4;};
+*/
 
 
 /*

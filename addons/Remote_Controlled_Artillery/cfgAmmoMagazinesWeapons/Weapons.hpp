@@ -15,6 +15,16 @@ class RC_target_confirmer_datalink: RC_target_confirmer
 	displayName="datalink";
 	displayNameShort="datalink";
 };
+class RC_APS_W: RC_target_confirmer
+{
+	displayName="APS";
+	displayNameShort="APS";
+	autoReload=1;
+	magazines[]=
+	{
+		"RC_1Rnd_APS_M"
+	};
+};
 
 
 /*

@@ -9,9 +9,6 @@ params ["_target", "_projectile"];
 
 private _APSChargesCfg = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "RC_APSCharges");
 
-private _mags = _target magazinesTurret [-1];
-private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count _mags;
-
 private _ingoreRockets = getNumber (configFile >> "CfgVehicles" >> typeOf _target >> "RC_ignoreRockets");
 private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _projectile >> "simulation");
 if ((_ingoreRockets != 0) && _ammoType isEqualTo "shotRocket") exitwith {};
@@ -48,14 +45,13 @@ if (_ammoType isEqualTo "shotRocket") then {
 */
 
 
-if (_chargesAPS > 0) then {
-//if (_APSChargesCfg != 0) then {
+if (_APSChargesCfg != 0) then {
 
-	//_chargesAPS = _target getVariable ["RC_chargesAPS", 1];		//1 = default return value if undefined
+	_chargesAPS = _target getVariable ["RC_chargesAPS", 1];		//1 = default return value if undefined
 
 	//systemchat str _chargesAPS;
 
-	//if (_chargesAPS > 0) then {
+	if (_chargesAPS > 0) then {
 		
 		/*
 		_projectile addEventHandler ["SubmunitionCreated", {
@@ -68,12 +64,10 @@ if (_chargesAPS > 0) then {
 		
 		//systemchat "_chargesAPS > 0";
 		
-		//[_target, _projectile, _APSChargesCfg] spawn
-		[_target, _projectile] spawn
+		[_target, _projectile, _APSChargesCfg] spawn
 		{
 			//systemchat "spawn";
-			//params ["_target", "_projectile", "_APSChargesCfg"];
-			params ["_target", "_projectile"];
+			params ["_target", "_projectile", "_APSChargesCfg"];
 			//systemchat "waiting for APS";
 
 			while {(alive _target) and (alive _projectile)} do
@@ -85,12 +79,9 @@ if (_chargesAPS > 0) then {
 
 					//systemchat "exitwith";
 
-					//private _chargesAPS = _target getVariable ["RC_chargesAPS", -1];	//-1 = default return value
-					//if (_chargesAPS == -1) then {_chargesAPS = _APSChargesCfg};
+					private _chargesAPS = _target getVariable ["RC_chargesAPS", -1];	//-1 = default return value
+					if (_chargesAPS == -1) then {_chargesAPS = _APSChargesCfg};
 					//systemchat str _chargesAPS;
-
-					private _mags = _target magazinesTurret [-1];
-					private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count _mags;
 
 					if (_chargesAPS > 0) then {
 
@@ -113,10 +104,9 @@ if (_chargesAPS > 0) then {
 						_explosion setDamage 1;
 						
 						//if (isServer) then {
-							private _nextChargesAPS = 0 max (_chargesAPS - 1);
-							_target removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
+							private _nextChargesAPS = _chargesAPS - 1;
 							//systemchat str _nextChargesAPS;
-							//_target setVariable ["RC_chargesAPS", _nextChargesAPS, true];	//true is public without RE
+							_target setVariable ["RC_chargesAPS", _nextChargesAPS, true];	//true is public without RE
 
 							private _string = "activated APS, " + str _nextChargesAPS + " remaining";
 							[_target, _string] remoteExec ["vehicleChat", 0];
@@ -125,5 +115,5 @@ if (_chargesAPS > 0) then {
 				};
 			};
 		};
-	//};
+	};
 };

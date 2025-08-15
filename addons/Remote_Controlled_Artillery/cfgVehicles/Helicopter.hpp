@@ -34,6 +34,19 @@ class RC_OM_Heli_InfTransport_Base: RC_OM_Heli_InfTransport_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
+	//RC_ATrespondingTurret[] = {1};
+	//RC_ignoreRockets = 1;
+
+	weapons[]=
+	{
+		"RC_APS_W"
+	};
+	magazines[]=
+	{
+		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M"
+	};
+
 	editorSubcategory="RC_Heli_subcat";
 	author="Ascent";
 	ejectDeadGunner=0;
@@ -334,6 +347,7 @@ class RC_OM_Heli_InfTransport_Base: RC_OM_Heli_InfTransport_Core
 	};
 };
 
+
 class RC_OM_Heli_InfTransport_blk: RC_OM_Heli_InfTransport_Base
 {
 	class EventHandlers: EventHandlers
@@ -342,6 +356,10 @@ class RC_OM_Heli_InfTransport_blk: RC_OM_Heli_InfTransport_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
 		class RC_Heli
 		{

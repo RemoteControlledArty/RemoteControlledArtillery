@@ -39,6 +39,10 @@ class RC_target_confirmer_ammo: Default
 	airLock=1;
 	nvLock=1;
 };
+class RC_APS_A: RC_target_confirmer_ammo
+{
+	//??
+};
 
 
 class BulletBase;

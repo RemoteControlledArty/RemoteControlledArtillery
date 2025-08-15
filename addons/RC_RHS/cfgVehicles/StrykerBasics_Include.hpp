@@ -31,7 +31,7 @@ class UserActions: UserActions
 	};
 };
 
-RC_ATrespondingTurret = 1;	//1=gunner 2=commander
+RC_ATrespondingTurret[] = {0};
 RC_APSCharges = 4;
 
 #include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"

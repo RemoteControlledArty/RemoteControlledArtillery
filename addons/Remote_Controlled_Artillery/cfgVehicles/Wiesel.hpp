@@ -1034,6 +1034,10 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -1044,6 +1048,21 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
+
+	RC_ATrespondingTurret[] = {0};
+	//RC_ignoreRockets = 1;
+
+	weapons[]=
+	{
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag"
+	};
 
 	displayName="RC Wiesel II ATGM 4km";
 	faction="RemoteControlled_B";
@@ -1399,6 +1418,10 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -1409,6 +1432,21 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
+
+	RC_ATrespondingTurret[] = {0};
+	//RC_ignoreRockets = 1;
+
+	weapons[]=
+	{
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag"
+	};
 
 	displayName="RC Wiesel II 20mm";
 	faction="RemoteControlled_B";

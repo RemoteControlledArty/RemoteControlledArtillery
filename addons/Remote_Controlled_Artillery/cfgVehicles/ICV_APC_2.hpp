@@ -34,6 +34,10 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -47,6 +51,23 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
+
+	RC_ATrespondingTurret[] = {1};
+	//RC_ignoreRockets = 1;
+
+	weapons[]=
+	{
+		"TruckHorn",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
 
 	author="Ascent";
 	faction="RemoteControlled_O";
@@ -311,17 +332,6 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
 
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -564,16 +574,6 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
-	
-	weapons[]=
-	{
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	class Turrets: Turrets
 	{

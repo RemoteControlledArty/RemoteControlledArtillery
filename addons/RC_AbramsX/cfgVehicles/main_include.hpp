@@ -20,7 +20,8 @@ class EventHandlers: EventHandlers
 	};
 };
 
-RC_ATrespondingTurret = 2;	//1=gunner 2=commander
+//RC_ATrespondingTurret = 2;	//1=gunner 2=commander
+RC_ATrespondingTurret[] = {0,0};
 RC_ignoreRockets = 1;
 RC_APSCharges = 4;
 

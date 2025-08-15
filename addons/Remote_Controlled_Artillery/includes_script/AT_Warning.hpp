@@ -1,0 +1,2 @@
+init="if (!isserver) exitwith {};  RC_AT_Warning_Array pushback (_this select 0);  publicVariable 'RC_AT_Warning_Array';";
+killed="if (!isserver) exitwith {};  RC_AT_Warning_Array deleteAt (RC_AT_Warning_Array find (_this select 0));  publicVariable 'RC_AT_Warning_Array';";

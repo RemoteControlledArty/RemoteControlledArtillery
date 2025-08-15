@@ -19,15 +19,15 @@ class RC_AbramsX_120mm_M360: RC_AbramsX_120mm_M360_base
 
 	magazines[]=
 	{
-		"RC_10Rnd_120mm_APFSDS_T_R",
-		"RC_15Rnd_120mm_APFSDS_T_R",
-		"RC_20Rnd_120mm_APFSDS_T_R",
-		"RC_10Rnd_120mm_APFSDS_T_G",
-		"RC_15Rnd_120mm_APFSDS_T_G",
-		"RC_20Rnd_120mm_APFSDS_T_G",
-		"RC_10Rnd_120mm_APFSDS_T_Y",
-		"RC_15Rnd_120mm_APFSDS_T_Y",
-		"RC_20Rnd_120mm_APFSDS_T_Y",
+		"RC_10Rnd_120mm_APFSDS_X_T_R",
+		"RC_15Rnd_120mm_APFSDS_X_T_R",
+		"RC_20Rnd_120mm_APFSDS_X_T_R",
+		"RC_10Rnd_120mm_APFSDS_X_T_G",
+		"RC_15Rnd_120mm_APFSDS_X_T_G",
+		"RC_20Rnd_120mm_APFSDS_X_T_G",
+		"RC_10Rnd_120mm_APFSDS_X_T_Y",
+		"RC_15Rnd_120mm_APFSDS_X_T_Y",
+		"RC_20Rnd_120mm_APFSDS_X_T_Y",
 
 		"RC_5Rnd_120mm_MP_T_R",
 		"RC_10Rnd_120mm_MP_T_R",
