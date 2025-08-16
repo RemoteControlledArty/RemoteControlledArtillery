@@ -47,7 +47,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 	lockDetectionSystem="2+4+8";
 
 	RC_ATrespondingTurret[]={0,0};
-	RC_ignoreRockets=1;
+	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{

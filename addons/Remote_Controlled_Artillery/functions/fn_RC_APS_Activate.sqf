@@ -17,63 +17,132 @@ if (_chargesAPS > 0) then {
 
 	//systemchat "_chargesAPS > 0";
 
-	private _ingoreRockets = getNumber (configFile >> "CfgVehicles" >> typeOf _vic >> "RC_ignoreRockets");
 	private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
-	if ((_ingoreRockets != 0) && _ammoType isEqualTo "shotRocket") exitwith {};
+	/*
+	private _ingoreRockets = getNumber (configFile >> "CfgVehicles" >> typeOf _vic >> "RC_ignoreRockets");
+	private _isRocket = _ammoType isEqualTo "shotRocket";
+	if ((_ingoreRockets != 0) && _isRocket) exitwith {};
+	*/
 
 	//systemchat "before spawn";
 
-	[_vic, _proj, _chargesAPS] spawn
-	{
-		params ["_vic", "_proj", "_chargesAPS"];
-
-		while {(alive _vic) and (alive _proj)} do
+	if (_ammoType isEqualTo "shotRocket") then {
+		[_vic, _proj, _chargesAPS] spawn
 		{
-			if ((_proj distance _vic) < 120) exitwith {
+			params ["_vic", "_proj", "_chargesAPS"];
 
-				//systemchat "<150m";
+			scopeName "APS";
+			while {alive _vic && alive _proj} do {
+				private _projPos = getPosASL _proj;
+				private _vicPos  = getPosASL _vic;
+				private _dist = _projPos distance _vicPos;
 
-				private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
+				if (_dist < 120) then {
 
-				if (_chargesAPS > 0) then {
-					private _projPos = (getPosATL _proj);
-					private _projDir = (getDir _proj);
-					deleteVehicle _proj;
-					//[_proj] remoteExec ["deleteVehicle", 0];
+					private _projVel = velocity _proj;
+					private _vicVel  = velocity _vic;
+					private _projSpeed = vectorMagnitude _projVel;
+					if (_projSpeed < 1) exitWith {};
 
-					//systemchat "activated APS";
-
-					playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _vic, false, getPosASL _vic, 5, 0.8, 600];
-
-					/*
-					private _vicPos = (getPosASL _vic);
-					//private _factor = 1 max ((_vicPos distance _projPos) / 50);		//choose distance
-					//systemchat str _factor;
-					
-					/*
-					//if bypassing vehicle suddenly get dragged closer, despite model being seen shortly before
-					private _explPosASL = [
-						(_vicPos #0 + _projPos #0) / 2,
-						(_vicPos #1 + _projPos #1) / 2,
-						(_vicPos #2 + _projPos #2) / 2
+					private _time = _dist / _projSpeed;
+					private _vicFuture = [
+						(_vicPos #0) + (_vicVel #0) * _time,
+						(_vicPos #1) + (_vicVel #1) * _time,
+						(_vicPos #2) + (_vicVel #2) * _time
 					];
-					_explPosATL = ASLToATL _explPosASL;
-					*/
-					_expl = "RC_APS_Expl_Scripted" createVehicle _projPos;
-					private _explDir = -_projDir;
-					[_expl, _explDir] remoteExec ["setDir", 0];
-					_expl setDamage 1;
-					
-					private _nextChargesAPS = 0 max (_chargesAPS - 1);
-					_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
-					
-					private _string = "activated APS, " + str _nextChargesAPS + " remaining";
-					[_vic, _string] remoteExec ["vehicleChat", 0];
+					private _projFuture = [
+						(_projPos #0) + (_projVel #0) * _time,
+						(_projPos #1) + (_projVel #1) * _time,
+						(_projPos #2) + (_projVel #2) * _time
+					];
+
+					if ((_vicFuture distance _projFuture) < 7) exitWith {
+
+						private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
+
+						if (_chargesAPS > 0) then {
+							private _projPos = (getPosATL _proj);
+							private _projDir = (getDir _proj);
+							deleteVehicle _proj;
+
+							playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _vic, false, getPosASL _vic, 5, 0.8, 600];
+
+							_expl = "RC_APS_Expl_Scripted" createVehicle _projPos;
+							private _explDir = -_projDir;
+							[_expl, _explDir] remoteExec ["setDir", 0];
+							_expl setDamage 1;
+							
+							private _nextChargesAPS = 0 max (_chargesAPS - 1);
+							_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
+							
+							private _string = "activated APS, " + str _nextChargesAPS + " remaining";
+							private _crew = (crew _vic) select {isPlayer _x};
+							[_string] remoteExec ["systemChat", _crew];
+
+							breakOut "APS";
+						};
+					};
+				};
+			};
+		};
+	} else {
+		[_vic, _proj, _chargesAPS] spawn
+		{
+			params ["_vic", "_proj", "_chargesAPS"];
+
+			scopeName "main";
+			while {(alive _vic) and (alive _proj)} do
+			{
+				if ((_proj distance _vic) < 120) exitwith {
+
+					//systemchat "<150m";
+
+					private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
+
+					if (_chargesAPS > 0) then {
+						private _projPos = (getPosATL _proj);
+						private _projDir = (getDir _proj);
+						deleteVehicle _proj;
+						//[_proj] remoteExec ["deleteVehicle", 0];
+
+						//systemchat "activated APS";
+
+						playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _vic, false, getPosASL _vic, 5, 0.8, 600];
+
+						/*
+						private _vicPos = (getPosASL _vic);
+						//private _factor = 1 max ((_vicPos distance _projPos) / 50);		//choose distance
+						//systemchat str _factor;
+						
+						/*
+						//if bypassing vehicle suddenly get dragged closer, despite model being seen shortly before
+						private _explPosASL = [
+							(_vicPos #0 + _projPos #0) / 2,
+							(_vicPos #1 + _projPos #1) / 2,
+							(_vicPos #2 + _projPos #2) / 2
+						];
+						_explPosATL = ASLToATL _explPosASL;
+						*/
+						_expl = "RC_APS_Expl_Scripted" createVehicle _projPos;
+						private _explDir = -_projDir;
+						[_expl, _explDir] remoteExec ["setDir", 0];
+						_expl setDamage 1;
+						
+						private _nextChargesAPS = 0 max (_chargesAPS - 1);
+						_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
+						
+						private _string = "activated APS, " + str _nextChargesAPS + " remaining";
+						private _crew = (crew _vic) select {isPlayer _x};
+						[_string] remoteExec ["systemChat", _crew];
+
+						breakOut "APS";
+					};
 				};
 			};
 		};
 	};
 };
+
 
 
 /*
@@ -172,7 +241,6 @@ if (_ammoType isEqualTo "shotRocket") then {
 	if (_distClosest > _hitRadius) exitWith { false }; // Will miss
 };
 */
-
 
 
 

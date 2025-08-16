@@ -142,7 +142,7 @@
     "order turret turn",
     {call RC_fnc_RC_OrderTurretTurnKey},
     "",
-	[7, [false, false, false]]
+	[6, [false, false, false]]
 ] call CBA_fnc_addKeybind;
 
 [

@@ -21,7 +21,7 @@ class EventHandlers: EventHandlers
 };
 
 RC_ATrespondingTurret[]={0,0};
-RC_ignoreRockets=1;
+//RC_ignoreRockets=1;
 
 weapons[]=
 {
@@ -30,6 +30,9 @@ weapons[]=
 };
 magazines[]=
 {
+	"RC_1Rnd_APS_M",
+	"RC_1Rnd_APS_M",
+
 	"RC_1Rnd_APS_M",
 	"RC_1Rnd_APS_M",
 	"RC_1Rnd_APS_M",

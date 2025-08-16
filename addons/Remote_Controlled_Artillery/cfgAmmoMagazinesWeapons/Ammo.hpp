@@ -10,7 +10,7 @@ class MissileBase: MissileCore
 	{
 		class AT_Warning
 		{
-			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile] call RC_fnc_RC_AT_Warning;";
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile, _magazine] call RC_fnc_RC_AT_Warning;";
 			//fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner']; [_unit, _projectile] spawn RC_fnc_RC_AT_Warning";
 			//fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  [_unit, _projectile] remoteExecCall ['RC_fnc_RC_AT_Warning', 2];";
 			//fired = "systemchat 'missile'";
@@ -24,7 +24,7 @@ class RocketBase: RocketCore
 	{
 		class AT_Warning
 		{
-			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile] call RC_fnc_RC_AT_Warning;";
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile, _magazine] call RC_fnc_RC_AT_Warning;";
 			//fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!(local _projectile)) exitwith {};  [_unit, _projectile] call RC_fnc_RC_AT_Warning;";
 			//fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!(local _projectile)) exitwith {};  [_unit, _projectile] remoteExecCall ['RC_fnc_RC_AT_Warning', 2];";
 			//fired = "systemchat 'rocket'";
@@ -50,9 +50,9 @@ class ClaymoreDirectionalMine_Remote_Ammo_Scripted;
 class RC_APS_Expl_Scripted: ClaymoreDirectionalMine_Remote_Ammo_Scripted
 {
 	author="Ascent";
-	indirectHit=10;			//40
-	indirectHitRange=5;	//30
-	//explosionAngle=60;
+	indirectHit=20;			//10	//default 40
+	indirectHitRange=15;	//5		//default 30
+	explosionAngle=200;				//default 60, 180 seems insufficient to damage source, but 360 endangers friendlies, but doesnt seem to actually work at all
 };
 
 

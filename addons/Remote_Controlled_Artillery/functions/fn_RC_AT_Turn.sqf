@@ -5,9 +5,8 @@
 	Turns turret to detected AT source.
 */
 
-params ['_vic','_source','_turretPath'];
+params ['_vic','_posSource','_turretPath'];
 
-private _posSource = eyePos _source;
 private _turretCfg = [_vic, _turretPath] call BIS_fnc_turretConfig;
 private _rotSpeedH = getNumber (_turretCfg >> "maxHorizontalRotSpeed");
 if ((typeName _rotSpeedH isNotEqualTo "SCALAR") or (_rotSpeedH == 0)) exitwith {};

@@ -26,7 +26,7 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	lockDetectionSystem="2+4+8";
 
 	RC_ATrespondingTurret[]={0,0};
-	RC_ignoreRockets=1;
+	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{
