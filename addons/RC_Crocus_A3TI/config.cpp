@@ -15,6 +15,14 @@ class CfgPatches
 			"O_Crocus_MP_TI_Sens",
 			"I_Crocus_MP_TI_Sens",
 
+			"B_Crocus_PvP",
+			"O_Crocus_PvP",
+			"I_Crocus_PvP",
+
+			"B_Crocus_Training",
+			"O_Crocus_Training",
+			"I_Crocus_Training",
+
 			"B_Crocus_MP_TI_Bag",
 			"O_Crocus_MP_TI_Bag",
 			"I_Crocus_MP_TI_Bag",
@@ -22,6 +30,14 @@ class CfgPatches
 			"B_Crocus_MP_TI_Sens_Bag",
 			"O_Crocus_MP_TI_Sens_Bag",
 			"I_Crocus_MP_TI_Sens_Bag",
+
+			"B_Crocus_PvP_Bag",
+			"O_Crocus_PvP_Bag",
+			"I_Crocus_PvP_Bag",
+
+			"B_Crocus_Training_Bag",
+			"O_Crocus_Training_Bag",
+			"I_Crocus_Training_Bag",
 
 			"RC_Crocus_Mothership",
 			"RC_Crocus_Mothership_O",
@@ -83,6 +99,8 @@ class SensorTemplateDataLink;
 class CfgVehicles
 {
 	#include "\RC_Crocus_A3TI\cfgVehicles\CrocusMP_TI.hpp"
+	#include "\RC_Crocus_A3TI\cfgVehicles\CrocusPvP.hpp"
+	#include "\RC_Crocus_A3TI\cfgVehicles\CrocusTraining.hpp"
 	#include "\RC_Crocus_A3TI\cfgVehicles\Crocus_Carrier.hpp"
 	#include "\RC_Crocus_A3TI\cfgVehicles\Crocus_Mothership.hpp"
 	#include "\RC_Crocus_A3TI\cfgVehicles\Crocus_Truck.hpp"

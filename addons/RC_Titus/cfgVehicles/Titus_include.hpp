@@ -3,9 +3,8 @@
 #include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 lockDetectionSystem="2+4+8";
 
-RC_ATrespondingTurret[]={0,0};
+//RC_ATrespondingTurret[]={0,0};	//comCamera has no turretPath, and idk if gunner camera turn is good turing driving
 //RC_ignoreRockets = 1;
-RC_APSCharges=2;
 
 weapons[]=
 {

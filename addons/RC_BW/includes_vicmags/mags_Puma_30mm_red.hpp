@@ -1,8 +1,8 @@
 magazines[]=
 {
-	"RC_160Rnd_30mm_ABM_T_R",
+	//"RC_160Rnd_30mm_ABM_T_R",		//atm seem bugged?
 	"RC_160Rnd_30mm_MP_Pen_T_R",
-	//"RC_160Rnd_30mm_MPAB_DF_T_R",
+	"RC_160Rnd_30mm_MPAB_DF_T_R",
 	"RC_160Rnd_30mm_APFSDS_T_R",
 	"RC_160Rnd_30mm_APFSDS_T_R",
 	"RC_600Rnd_338_T_R",

@@ -369,7 +369,7 @@ class O_Crocus_MP_Sens: B_Crocus_MP_Sens
 	{
 		dissasembleTo[]=
 		{
-			"O_Crocus_MP_Bag"
+			"O_Crocus_MP_Sens_Bag"
 		};
 	};
 };
@@ -383,7 +383,7 @@ class I_Crocus_MP_Sens: B_Crocus_MP_Sens
 	{
 		dissasembleTo[]=
 		{
-			"I_Crocus_MP_Bag"
+			"I_Crocus_MP_Sens_Bag"
 		};
 	};
 };

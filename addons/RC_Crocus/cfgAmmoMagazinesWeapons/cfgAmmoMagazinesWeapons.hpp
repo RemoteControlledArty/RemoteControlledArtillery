@@ -9,7 +9,6 @@ class CfgAmmo
 		warheadName="TandemHEAT";
 		airFriction=-0.01;		//so shaped charge still has an effect when airbursted
 	};
-
 	class M_Vorona_HEAT;
 	class FPV_RPG42_MP: M_Vorona_HEAT
 	{
@@ -28,7 +27,44 @@ class CfgAmmo
 		triggerOnImpact=1;
 		deleteParentWhenTriggered=0;
 	};
-	
+
+
+	class FPV_RPG42_AT_Penetrator_PvP: FPV_RPG42_AT_Penetrator_MP
+	{
+		hit=240;
+		warheadName="TandemHEAT";
+		//warheadName="HEAT";
+	};
+	class FPV_RPG42_PvP: FPV_RPG42_MP
+	{
+		hit=150;
+		htMax=600;	//?
+		htMin=60;	//?
+		indirectHit=21;	//42
+		indirectHitRange=4;
+		warheadName="TandemHEAT";
+		//warheadName="HEAT";
+		submunitionAmmo="FPV_RPG42_AT_Penetrator_PvP";
+	};
+
+
+	class FPV_RPG42_AT_Penetrator_Training: FPV_RPG42_AT_Penetrator_MP
+	{
+		hit=3;
+		warheadName="HEAT";
+	};
+	class FPV_RPG42_Training: FPV_RPG42_MP
+	{
+		hit=0;
+		htMax=0;	//?
+		htMin=0;	//?
+		indirectHit=1;
+		indirectHitRange=7;
+		warheadName="HEAT";
+		submunitionAmmo="FPV_RPG42_AT_Penetrator_Training";
+	};
+
+
 	class Default;
 	class RC_target_confirmer_AB_ammo: Default
 	{

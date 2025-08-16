@@ -750,6 +750,10 @@ class CfgFunctions
 			class RC_AT_Turn {};
 			class RC_APS_Activate {};
 
+			class RC_OrderTurretTurnKey {};
+			class RC_OrderTurretTurnOwner {};
+			class RC_OrderTurretTurn {};
+
 			class RC_AT_SourceIndicator {};
 			class RC_cUAS_Beep {};
 			class scrollSolutions {};

@@ -1,30 +1,19 @@
 /*
 	Author: Ascent
 
-	Description:
-	Turns turret to detected AT source.
+	Order turret turn to your target.
 */
 
-params ['_vic','_source','_turretPath'];
+params ['_vic','_responder','_targetPos'];
 
-private _posSource = eyePos _source;
+private _turretPath = _vic unitTurret _responder;
 private _turretCfg = [_vic, _turretPath] call BIS_fnc_turretConfig;
 private _rotSpeedH = getNumber (_turretCfg >> "maxHorizontalRotSpeed");
 if ((typeName _rotSpeedH isNotEqualTo "SCALAR") or (_rotSpeedH == 0)) exitwith {};
 private _turnTime = (180 / (_rotSpeedH * 57.3)) + 1;		//+1 for acceleration & deaccelecation of turret
 
 
-private _controllers = (UAVControl _vic);
-private _turretController = objNull;
-if (_controllers #1 isEqualTo "GUNNER") then {_turretController = _controllers #0};
-if (count _controllers > 2) then {
-	if (_controllers #3 isEqualTo "GUNNER") then {_turretController = _controllers #2};
-};
-
-private _isPlayerCamera = (isPlayer (_vic turretUnit _turretPath)) or (isPlayer _turretController);
-
-
-if (_isPlayerCamera) then {
+if (isPlayer _responder) then {
 	private _rotSpeedV = getNumber (_turretCfg >> "maxVerticalRotSpeed");
 
 	//turret angles
@@ -39,9 +28,9 @@ if (_isPlayerCamera) then {
 	//vic to source angles
 	private _posVic = getPosASL _vic;
 
-	private _dx = (_posSource # 0) - (_posVic # 0);
-	private _dy = (_posSource # 1) - (_posVic # 1);
-	private _dz = (_posSource # 2) - (_posVic # 2);
+	private _dx = (_targetPos # 0) - (_posVic # 0);
+	private _dy = (_targetPos # 1) - (_posVic # 1);
+	private _dz = (_targetPos # 2) - (_posVic # 2);
 
 	private _dirSource = _dx atan2 _dy;
 	if (_dirSource < 0) then {_dirSource = _dirSource + 360};
@@ -57,16 +46,14 @@ if (_isPlayerCamera) then {
 	private _turnTimeH = (_dirDiff / (_rotSpeedH * 57.3));
 	private _turnTimeV = (_pitchDiff / (_rotSpeedV * 57.3));
 	private _turnTime = (_turnTimeH max _turnTimeV) + 1;	//+1 for acceleration & deaccelecation of turret
-
-	//hint format ["_dirRel %1 _dirAngle %2 _dirDiff %3 _pitchDiff %4 _turnTimeH %5 _turnTimeV %6 _turnTime %7", _dirSource, _dirTurret, _dirDiff, _pitchDiff, _turnTimeH, _turnTimeV, _turnTime];
 };
 
 
-[_vic, _posSource, _turretPath, _turnTime] spawn {
+[_vic, _targetPos, _turretPath, _turnTime] spawn {
 
-	params ['_vic','_posSource','_turretPath','_turnTime'];
-
-	_vic lockCameraTo [_posSource, _turretPath, true];
+	params ['_vic','_targetPos','_turretPath', '_turnTime'];
+	
+	_vic lockCameraTo [_targetPos, _turretPath, true];
 	sleep _turnTime;
     _vic lockCameraTo [objNull, _turretPath, true];
 };

@@ -213,6 +213,7 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 		class CargoTurret_02: CargoTurret_02 {};
 		class CargoTurret_03: CargoTurret_03
 		{
+			gunnerName="Driver";
 			commanding=3;
 			primaryGunner=0;
 			primaryObserver=1;

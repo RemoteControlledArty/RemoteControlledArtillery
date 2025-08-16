@@ -45,11 +45,23 @@ class RC_Titus_AC: RC_Titus_AC_base
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		/*
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+		};
+		*/
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
 	};
+
+	//RC_ATrespondingTurret[]={1};	//deactivated until lock isnt stuck as long
 
 	class AnimationSources: AnimationSources
 	{

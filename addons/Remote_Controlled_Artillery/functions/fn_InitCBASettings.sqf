@@ -135,7 +135,16 @@
 ] call CBA_fnc_addSetting;
 
 
-//RC Modernized Vehicles Settings
+//RC Modernized Vehicles
+[
+    "RC Modernized Vehicles",
+    "RC_OrderTurnTurret",
+    "order turret turn",
+    {call RC_fnc_RC_OrderTurretTurnKey},
+    "",
+	[7, [false, false, false]]
+] call CBA_fnc_addKeybind;
+
 [
     "RC_AT_SourceIndicationVic",
     "CHECKBOX",

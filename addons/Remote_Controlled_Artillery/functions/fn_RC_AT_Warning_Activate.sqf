@@ -47,5 +47,9 @@ if (_source isKindOf 'StaticWeapon' && RC_AT_SourceIndicationStatic) then {
 private _turretPath = getArray (configFile >> "CfgVehicles" >> typeOf _vic >> "RC_ATrespondingTurret");
 
 if (_turretPath isNotEqualTo []) then {
+	private _responder = _vic turretUnit _turretPath;
+	if (_responder isEqualTo objNull) exitwith {};
+	
+	_responder doTarget _source;
 	[_vic, _source, _turretPath] remoteExec ['RC_fnc_RC_AT_TurretOwner', 2];
 };
