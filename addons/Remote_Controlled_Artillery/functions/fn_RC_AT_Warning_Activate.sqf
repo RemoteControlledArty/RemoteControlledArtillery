@@ -22,18 +22,17 @@ params ["_vic", "_source", "_proj", "_mag"];
 
 				//warning beeb as soon as projectile is detectable
 				private _crew = (crew _vic) select {isPlayer _x};
-				[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.3]] remoteExec ['playSoundUI', _crew];
-
 				private _controllers = (UAVControl _vic);
 				private _controller1 = _controllers select 0;
+
 				if (_controller1 isNotEqualTo objNull) then {
-					[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.3]] remoteExec ['playSoundUI', _controller1];
+					_crew pushBack _controller1;
 
 					if (count _controllers > 2) then {
-						private _controller2 = _controllers select 2;
-						[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.3]] remoteExec ['playSoundUI', _controller2];
+						_crew pushBack (_controllers select 2);
 					};
 				};
+				[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.3]] remoteExec ['playSoundUI', _crew];
 
 
 				//checks if launcher visible

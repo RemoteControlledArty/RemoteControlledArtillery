@@ -52,7 +52,7 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
 
-	RC_ATrespondingTurret[]={1};
+	//RC_ATrespondingTurret[]={1};
 	//RC_ignoreRockets=1;
 
 	weapons[]=
@@ -315,6 +315,8 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
+	RC_ATrespondingTurret[]={1};
+	
 	displayName="RC Otokar Arma unarmed";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;

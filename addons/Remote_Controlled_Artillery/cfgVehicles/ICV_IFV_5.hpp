@@ -46,7 +46,7 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	RC_ATrespondingTurret[]={0,0};
+	//RC_ATrespondingTurret[]={0,0};
 	//RC_ignoreRockets=1;
 
 	weapons[]=
@@ -314,6 +314,8 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
+
+	RC_ATrespondingTurret[]={0,0};
 
 	displayName="BM-2T";
 	editorSubcategory="RC_IFV_ATGM_subcat";

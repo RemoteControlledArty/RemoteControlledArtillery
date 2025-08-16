@@ -52,7 +52,7 @@ class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	RC_ATrespondingTurret[]={0,0};
+	//RC_ATrespondingTurret[]={0,0};
 	//RC_ignoreRockets=1;
 
 	weapons[]=
@@ -341,6 +341,8 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};
+
+	RC_ATrespondingTurret[]={0,0};
 
 	displayName="BTR-100 Bumerang";
 	editorSubcategory="RC_IFV_ATGM_subcat";

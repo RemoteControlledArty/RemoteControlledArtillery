@@ -57,7 +57,7 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
 
-	RC_ATrespondingTurret[]={0,0};
+	//RC_ATrespondingTurret[]={0,0};
 	//RC_ignoreRockets=1;
 
 	weapons[]=
@@ -388,6 +388,8 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
+
+	RC_ATrespondingTurret[]={0,0};
 
 	displayName="Patria AMV";
 	editorSubcategory="RC_IFV_subcat";

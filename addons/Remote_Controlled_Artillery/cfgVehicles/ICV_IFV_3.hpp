@@ -55,7 +55,7 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
 
-	RC_ATrespondingTurret[]={0,0};
+	//RC_ATrespondingTurret[]={0,0};
 	//RC_ignoreRockets=1;
 
 	weapons[]=
@@ -378,6 +378,8 @@ class RC_ICV_3_WD_I: RC_ICV_3_WD
 
 class RC_IFV_3_A_Base: RC_ICV_IFV_3_A
 {
+	RC_ATrespondingTurret[]={0,0};
+	
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
