@@ -865,6 +865,9 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 	};
 	magazines[]=
 	{
+		"RC_200Rnd_127x99_T_R",
+		"RC_200Rnd_127x99_T_G",
+		"RC_200Rnd_127x99_T_Y",
 		"RC_200Rnd_127x99_SLAP_T_R",
 		"RC_200Rnd_127x99_SLAP_T_G",
 		"RC_200Rnd_127x99_SLAP_T_Y",
@@ -878,15 +881,15 @@ class RC_HMG_127_APC2: RC_HMG_127_APC
 {
 	magazines[]=
 	{
+		"RC_200Rnd_127x99_T_R",
+		"RC_200Rnd_127x99_T_G",
+		"RC_200Rnd_127x99_T_Y",
 		"RC_200Rnd_127x99_SLAP_T_R",
 		"RC_200Rnd_127x99_SLAP_T_G",
 		"RC_200Rnd_127x99_SLAP_T_Y",
 		"RC_100Rnd_127x99_SLAP_T_R",
 		"RC_100Rnd_127x99_SLAP_T_G",
 		"RC_100Rnd_127x99_SLAP_T_Y",
-		"RC_200Rnd_127x99_T_R",
-		"RC_200Rnd_127x99_T_G",
-		"RC_200Rnd_127x99_T_Y",
 		"RC_200Rnd_127x99_cUAS"
 	};
 };
