@@ -86,24 +86,45 @@ params ["_vic", "_source", "_proj", "_mag"];
 				private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
 				private _magName = getText (configFile >> "CfgMagazines" >> _mag >> "displayName");
 
-
-				// Projectile direction vector (normalized velocity)
+				// missile direction vector (normalized velocity)
 				private _dirProj = vectorNormalized velocity _proj;
 				// Reverse it (points back toward the shooter)
 				private _dirSource = _dirProj vectorMultiply -1;
 				// Construct a "fake shooter position" along that reverse vector (arbitrary distance, e.g. 1000m back)
-				private _fakeSourcePos = (getPosASL _proj) vectorAdd (_dirSource vectorMultiply 4000);
+				private _fakeMissileSourcePos = (getPosASL _proj) vectorAdd (_dirSource vectorMultiply 4000);
+				private _maxSourceBearing = round ([_vic, _fakeMissileSourcePos] call BIS_fnc_dirTo);
+				//_stringMissile = "missile: " + str _maxSourceBearing;
+				//[_stringMissile] remoteExec ["systemChat", _crew];
 
 
 				private _string = "missile detected: " + _magName;
 				if (_ammoType isEqualTo "shotRocket") then {
 					_string = "rocket detected: " + _magName;
-					_fakeSourcePos = (getPosASL _proj) vectorAdd (_dirSource vectorMultiply 1000);
+
+					//Estimate launcher bearing & distance
+					private _projVel = velocity _proj;
+					private _projSpeed = vectorMagnitude _projVel;
+					// assume initial speed ~30% higher than current
+					private _estInitSpeed = _projSpeed * 1.3;
+
+					// rough guess: how far back along trajectory it started
+					// time since fired (guess) = currentDistance / avgSpeed
+					private _distNow = _projFirstPos distance (getPosASL _vic);
+					private _avgSpeed = (_projSpeed + _estInitSpeed) / 2;
+					private _timeGuess = _distNow / _avgSpeed;
+
+					// project backwards along velocity vector
+					private _estLaunchPos = _projFirstPos vectorDiff (_projVel vectorMultiply _timeGuess);
+					// bearing from vic to guessed launch pos
+					_maxSourceBearing = round ([_vic, _estLaunchPos] call BIS_fnc_dirTo);
+
+					//_stringRocket = "rocket: " + str _maxSourceBearing;
+					//[_stringRocket] remoteExec ["systemChat", _crew];
 				};
 
-				// Bearing from vehicle to that fake shooter position
-				private _maxSourceBearing = round (_vic getRelDir _fakeSourcePos);
-				private _bearing =  round (_vic getRelDir _projFirstPos);
+
+				//bearing of first detected projectile pos
+				private _bearing =  round ([_vic, _projFirstPos] call BIS_fnc_dirTo);
 
 				if (_sourceVisible) then {
 					if (_source isKindOf 'Man') then {
@@ -127,3 +148,45 @@ params ["_vic", "_source", "_proj", "_mag"];
 		sleep 0.01;
 	};
 };
+
+
+
+
+/*
+private _projFirstPos = getPosASL _proj;
+
+//warning message with information
+private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
+private _magName = getText (configFile >> "CfgMagazines" >> _mag >> "displayName");
+
+// missile direction vector (normalized velocity)
+private _dirProj = vectorNormalized velocity _proj;
+// Reverse it (points back toward the shooter)
+private _dirSource = _dirProj vectorMultiply -1;
+// Construct a "fake shooter position" along that reverse vector (arbitrary distance, e.g. 1000m back)
+private _fakeSourcePos = (getPosASL _proj) vectorAdd (_dirSource vectorMultiply 4000);
+private _maxSourceBearing = round ([_vic, _fakeSourcePos] call BIS_fnc_dirTo)
+
+
+if (_ammoType isEqualTo "shotRocket") then {
+
+	//_fakeSourcePos = (getPosASL _proj) vectorAdd (_dirSource vectorMultiply 1000);
+
+	//Estimate launcher bearing & distance
+	private _projVel = velocity _proj;
+	private _projSpeed = vectorMagnitude _projVel;
+	// assume initial speed ~30% higher than current
+	private _estInitSpeed = _projSpeed * 1.3;
+
+	// rough guess: how far back along trajectory it started
+	// time since fired (guess) = currentDistance / avgSpeed
+	private _distNow = _projFirstPos distance (getPosASL _vic);
+	private _avgSpeed = (_projSpeed + _estInitSpeed) / 2;
+	private _timeGuess = _distNow / _avgSpeed;
+
+	// project backwards along velocity vector
+	private _estLaunchPos = _projFirstPos vectorDiff (_projVel vectorMultiply _timeGuess);
+	// bearing from vic to guessed launch pos
+	private _maxSourceBearing = round ([_vic, _estLaunchPos] call BIS_fnc_dirTo);
+};
+*/
