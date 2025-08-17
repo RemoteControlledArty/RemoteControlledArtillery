@@ -7,7 +7,7 @@ if !(local _vehicle) exitWith {};
 private _loadedMag = _vehicle getVariable ["RC_60mm_ULM_LoadedMag", ""];
 
 
-_magazines = magazines [_vehicle, false];
+private _magazines = magazines [_vehicle, false];
 _vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_shells", [0]];
 _vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_HEAB", [0]];
 _vehicle removeMagazinesTurret ["RC_ULM_1Rnd_60mm_Mo_backupHEAB", [0]];
