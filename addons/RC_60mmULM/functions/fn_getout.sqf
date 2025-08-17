@@ -4,7 +4,7 @@ params ["_vehicle", "_role", "_unit", "_turret"];
 
 if !(local _vehicle) exitWith {};
 
-_loadedMag = _vehicle getVariable ["RC_60mm_ULM_LoadedMag", ""];
+private _loadedMag = _vehicle getVariable ["RC_60mm_ULM_LoadedMag", ""];
 
 
 _magazines = magazines [_vehicle, false];

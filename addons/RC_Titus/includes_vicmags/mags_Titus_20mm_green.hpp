@@ -25,10 +25,16 @@ magazines[]=
 
 	"RC_100Rnd_20mm_HE_T_G",
 	*/
+	/*
 	"RC_100Rnd_20mm_AP_T_G",
 	"RC_100Rnd_20mm_AP_T_G",
 	"RC_100Rnd_20mm_AP_T_G",
 	"RC_100Rnd_20mm_AP_T_G",
+	*/
+	"RC_100Rnd_20mm_APFSDS_T_G",
+	"RC_100Rnd_20mm_APFSDS_T_G",
+	"RC_100Rnd_20mm_APFSDS_T_G",
+	"RC_100Rnd_20mm_APFSDS_T_G",
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"
 };

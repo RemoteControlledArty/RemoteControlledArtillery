@@ -4,9 +4,9 @@ if ((secondaryWeapon _unit != "RC_60mm_ULM_Bag") || !(local _unit) || !(isPlayer
 
 if (weaponLowered _unit) then {_unit switchMove "amovpercmstpslowwrfldnon"};
 
-_dir = getDir _unit;
-_height = (getPos _unit) select 2;
-_pos = _unit getPos [0.1, _dir];
+private _dir = getDir _unit;
+private _height = (getPos _unit) select 2;
+private _pos = _unit getPos [0.1, _dir];
 
 _KK_fnc_setPosAGLS = {
 	params ["_obj", "_pos", "_offset"];
@@ -29,7 +29,7 @@ _unit assignAsGunner _mortar;
 _unit moveInGunner _mortar;
 
 
-_magazines = magazines _unit;
+private _magazines = magazines _unit;
 _HECount = {_x == "RC_ULM_1Rnd_60mm_Mo_shells"} count _magazines;
 _HEABCount = {_x == "RC_ULM_1Rnd_60mm_Mo_HEAB"} count _magazines;
 _HEABbackupCount = {_x == "RC_ULM_1Rnd_60mm_Mo_backupHEAB"} count _magazines;
@@ -42,7 +42,7 @@ _MpLgDfCount = {_x == "RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse"} count _magazines;
 
 _mineCount = {_x == "RC_ULM_1Rnd_60mm_Mo_mine"} count _magazines;
 _IllumCount = {_x == "RC_ULM_1Rnd_60mm_Mo_Illum"} count _magazines;
-_loadedMag = (secondaryWeaponMagazine _unit) select 0;
+private _loadedMag = (secondaryWeaponMagazine _unit) select 0;
 
 
 switch (_loadedMag) do
@@ -78,20 +78,34 @@ for "_i" from 1 to _IllumCount do {_mortar addMagazineTurret ["RC_ULM_1Rnd_60mm_
 
 
 if !(isNil "_loadedMag") then {
-	_mass = getNumber (configFile >> "CfgMagazines" >> _loadedMag >> "mass");
-	switch (true) do
+	private _mass = getNumber (configFile >> "CfgMagazines" >> _loadedMag >> "mass");
+
+		if (((1 - loadVest _unit) * (getContainerMaxLoad vest _unit) > _mass)
+		or ((1 - loadBackpack _unit) * (getContainerMaxLoad backpack _unit) > _mass)
+		or ((1 - loadUniform _unit) * (getContainerMaxLoad uniform _unit) > _mass)) then {
+
+		_unit addMagazine [_loadedMag, 1];
+	} else {
+		_mortar setVariable ["RC_60mm_ULM_LoadedMag", _loadedMag, true];
+	};
+};
+
+_unit removeWeapon "RC_60mm_ULM_Bag";
+
+/*
+switch (true) do
 	{
+		//original, idk if it makes more or less sence
 		case ((1- loadVest _unit) * (getContainerMaxLoad vest _unit) > _mass);
 		case ((1- loadBackpack _unit) * (getContainerMaxLoad backpack _unit) > _mass);
 		case ((1- loadUniform _unit) * (getContainerMaxLoad uniform _unit) > _mass): {_unit addMagazine [_loadedMag, 1];};
+
 		default {_mortar setVariable ["RC_60mm_ULM_LoadedMag", _loadedMag, true];
 			//_weaponHolder = "GroundWeaponHolder_Scripted" createVehicle _pos;
 			//_weaponHolder addMagazineCargo [_loadedMag, 1];
 		};
 	};
-};
-
-_unit removeWeapon "RC_60mm_ULM_Bag";
+*/
 
 /*
 _unit selectWeapon [weapon, muzzle, firemode];
