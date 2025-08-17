@@ -86,13 +86,19 @@ params ["_vic", "_source", "_proj", "_mag"];
 				private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
 				private _magName = getText (configFile >> "CfgMagazines" >> _mag >> "displayName");
 
+				// Projectile direction vector (normalized velocity)
+				private _dirProj = vectorNormalized velocity _proj;
+				// Reverse it (points back toward the shooter)
+				private _dirSource = _dirProj vectorMultiply -1;
+				// Construct a "fake shooter position" along that reverse vector (arbitrary distance, e.g. 1000m back)
+				private _fakeSourcePos = (getPosASL _proj) vectorAdd (_dirSource vectorMultiply 1000);
+
+
 				private _string = "missile detected: " + _magName;
 				if (_ammoType isEqualTo "shotRocket") then {
 					_string = "rocket detected: " + _magName;
+					_fakeSourcePos = (getPosASL _proj) vectorAdd (_dirSource vectorMultiply 1000);
 				};
-
-				private _bearing =  round (_vic getRelDir _projFirstPos);
-				_string = _string + ",   bearing: " + str _bearing;
 
 				if (_sourceVisible) then {
 					if (_source isKindOf 'Man') then {
@@ -104,6 +110,12 @@ params ["_vic", "_source", "_proj", "_mag"];
 				} else {
 					_string = _string + ",   launcher: not detected";
 				};
+
+
+				// Bearing from vehicle to that fake shooter position
+				private _maxSourceBearing = round (_vic getRelDir _fakeSourcePos);
+				private _bearing =  round (_vic getRelDir _projFirstPos);
+				_string = _string + ",   bearing: " + str _bearing + " - " + str _maxSourceBearing;
 
 				[_string] remoteExec ["systemChat", _crew];
 
