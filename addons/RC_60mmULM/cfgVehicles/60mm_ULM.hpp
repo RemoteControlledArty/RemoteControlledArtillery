@@ -503,6 +503,7 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 	{
 		class RM_ULM
 		{
+			//check getout as that not triggering might cause ammo loss
 			getout="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";
 			fired="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_fire";
 		};
