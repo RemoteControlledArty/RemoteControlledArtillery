@@ -32,7 +32,20 @@ params ["_vic", "_source", "_proj", "_mag"];
 						_crew pushBack (_controllers select 2);
 					};
 				};
-				[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.3]] remoteExec ['playSoundUI', _crew];
+
+				private _tresh = 30;	//meters to side concidered rocket/missile is not aimed at vic, 30m as it includes lead moving >100kmh
+    			private _projDir = getDir _proj;
+				private _relDir = ([_proj, _vic] call BIS_fnc_dirTo);
+				private _dist = _proj distance2D _vic;
+				private _dirDif = abs (_projDir - _relDir);
+				if (_dirDif > 180) then {_dirDif = 360 - _dirDif;};
+				private _distPass = _dist * tan(_dirDif);
+
+				if (_distPass < _tresh) then {
+					[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.3]] remoteExec ['playSoundUI', _crew];
+				} else {
+					[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_2.wss', 0.3, 0.9]] remoteExec ['playSoundUI', _crew];
+				};
 
 
 				//checks if launcher visible

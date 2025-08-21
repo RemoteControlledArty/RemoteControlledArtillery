@@ -388,3 +388,239 @@ class RC_cUAS_Static_HMG_manned_Bag_I: RC_cUAS_Static_HMG_manned_Bag
 		assembleTo="RC_cUAS_Static_HMG_manned_I";
 	};
 };
+
+
+class RC_cUAS_Mounted_Static_HMG: RC_cUAS_Static_HMG
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Autonomous
+		{
+			init="(_this select 0) spawn {waitUntil {!isNull gunner _this}; _this disableAI 'FIREWEAPON';};";
+		};
+	};
+
+	//add if vic destroyed then setdamage 1 to hmg
+
+	displayName="RC mountable C-UAS 12.7mm";
+	armor=80;	//30
+	threat[]={0,0,0};
+	cost=0;
+	typicalCargo[]={""};
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]={};
+	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			maxElev=50;
+			thermalMode[]={0};
+
+			weapons[]=
+			{
+				"RC_HMG_127x99_mounted_cUAS"
+			};
+			magazines[]=
+			{
+				"RC_200Rnd_127x99_mounted_cUAS",
+				"RC_200Rnd_127x99_mounted_cUAS",
+				"RC_200Rnd_127x99_mounted_cUAS",
+				"RC_200Rnd_127x99_mounted_cUAS",
+				"RC_200Rnd_127x99_mounted_SLAP_T_R",
+				"RC_200Rnd_127x99_mounted_SLAP_T_R",
+				"RC_200Rnd_127x99_mounted_SLAP_T_R",
+				"RC_200Rnd_127x99_mounted_SLAP_T_R"
+			};
+
+			class OpticsIn: OpticsIn
+			{
+				class ViewOptics: ViewOptics
+				{
+					minFov=0.04;
+					visionMode[]=
+					{
+						"Normal",
+						"NVG"
+					};
+					//thermalMode[]={0};
+				};
+			};
+			class ViewOptics: ViewOptics
+			{
+				minFov=0.04;
+				visionMode[]=
+				{
+					"Normal",
+					"NVG"
+				};
+				//thermalMode[]={0};
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={1500};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={600};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+			};
+		};
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=4000;
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=1200;
+
+					class AirTarget
+					{
+						minRange=1200;
+						maxRange=1200;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=0;
+						maxRange=0;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=1;
+					angleRangeVertical=1;
+					animDirection="maingun";
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=600;
+
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=0;
+						maxRange=0;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					minTrackableATL=4;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="maingun";
+				};
+				class ManSensorComponent: SensorTemplateMan
+				{
+					typeRecognitionDistance=300;
+
+					class AirTarget
+					{
+						minRange=300;
+						maxRange=300;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=300;
+						maxRange=300;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=15;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="maingun";
+					aimDown=0;
+				};
+			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_source
+		{
+			source="reload";
+			weapon="RC_HMG_127x99_mounted_cUAS";
+		};
+		class muzzle_source_rot
+		{
+			source="ammorandom";
+			weapon="RC_HMG_127x99_mounted_cUAS";
+		};
+		class ReloadAnim
+		{
+			source="reload";
+			weapon="RC_HMG_127x99_mounted_cUAS";
+		};
+		class ReloadMagazine
+		{
+			source="reloadmagazine";
+			weapon="RC_HMG_127x99_mounted_cUAS";
+		};
+		class Revolving
+		{
+			source="revolving";
+			weapon="RC_HMG_127x99_mounted_cUAS";
+		};
+	};
+};

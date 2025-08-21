@@ -1524,6 +1524,28 @@ class RC_93x64_cUAS: B_93x64_Ball
 };
 
 
+class RC_mounted_cUAS_Pellet: RC_cUAS_Pellet
+{
+	hit=6;
+	deflecting=20;			//30
+	airFriction=-0.0025;	//-0.005
+};
+class RC_127x99mm_mounted_cUAS: RC_127x99mm_cUAS
+{
+	submunitionAmmo="RC_mounted_cUAS_Pellet";
+	airFriction=-0.0025;	//-0.005
+	airLock=1;	//2
+	submunitionConeAngle="0.344";		//16, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m
+};
+class RC_B_127x99_mounted_SLAP_T_R: RC_B_127x99_SLAP_T_R
+{
+	laserLock=0;	//1
+	irLock=0;		//1
+	airLock=1;
+	model="\A3\Weapons_f\Data\bullettracer\tracer_white";
+};
+
+
 //120mm of FSV/MBT
 class ammo_Penetrator_120mm;
 class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm

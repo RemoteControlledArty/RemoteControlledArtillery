@@ -338,6 +338,17 @@ class RC_150Rnd_127x108_cUAS: RC_200Rnd_127x108_cUAS {count=150;};
 class RC_100Rnd_127x108_cUAS: RC_200Rnd_127x108_cUAS {count=100;};
 
 
+class RC_200Rnd_127x99_mounted_cUAS: RC_200Rnd_127x99_cUAS
+{
+	ammo="RC_127x99mm_mounted_cUAS";
+	initSpeed=1000;
+};
+class RC_200Rnd_127x99_mounted_SLAP_T_R: RC_200Rnd_127x99_SLAP_T_R
+{
+	ammo="RC_B_127x99_mounted_SLAP_T_R";
+};
+
+
 class RC_200Rnd_338_cUAS: RC_200Rnd_338_T_R
 {
 	ammo="RC_338_cUAS";

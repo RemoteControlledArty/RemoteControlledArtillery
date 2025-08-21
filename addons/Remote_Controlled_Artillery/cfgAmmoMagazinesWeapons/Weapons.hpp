@@ -1670,6 +1670,26 @@ class RC_HMG_127x99_cUAS: RC_HMG_127x99_cUAS_base
 		maxRangeProbab=0.050000001;
 	};
 };
+class RC_HMG_127x99_mounted_cUAS: RC_HMG_127x99_cUAS
+{
+	FCSMaxLeadSpeed=80;
+	FCSZeroingDelay=0.3;
+	ballisticsComputer="1 + 2 + 16";
+	magazineReloadTime=6;
+
+	magazines[]=
+	{
+		"RC_200Rnd_127x99_mounted_cUAS",
+		"RC_200Rnd_127x99_mounted_SLAP_T_R",
+		"RC_200Rnd_127x99_mounted_SLAP_T_G",
+		"RC_200Rnd_127x99_mounted_SLAP_T_Y"
+	};
+	class manual: manual
+	{
+		ballisticsComputer="1 + 2 + 16";
+		magazineReloadTime=6;
+	};
+};
 
 
 class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
