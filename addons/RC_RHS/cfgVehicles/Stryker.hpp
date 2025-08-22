@@ -91,23 +91,7 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 				"RC_RHS_M2_CROWS_M151",
 				"rhsusf_weap_M6"
 			};
-			magazines[]=
-			{
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_StrykerM2_red.hpp"
 
 			class OpticsIn
 			{
@@ -231,24 +215,7 @@ class RC_Stryker_M1126_M2_Javelin_WD_B: RC_Stryker_M1126_M2_WD_B
 				"RC_Stryker_Missile_Launcher",
 				"rhsusf_weap_M6"
 			};
-			magazines[]=
-			{
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_4Rnd_Javelin_MP_LOS",
-				"RC_2Rnd_Javelin_MP_NLOS",
-				"RC_4Rnd_Javelin_AA",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_StrykerM2_J_red.hpp"
 		};
 	};
 };
@@ -469,23 +436,7 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 				"RC_RHS_MK19_CROWS_M153",
 				"rhsusf_weap_M6"
 			};
-			magazines[]=
-			{
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"RC_RHS_96Rnd_40mm_MK19_M430A1",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_StrykerMk19_red.hpp"
 
 			class OpticsIn
 			{
@@ -635,38 +586,7 @@ class RC_Stryker_M1126_20mmAC_WD_B: RC_Stryker_M1126_MK19_WD_B
 				"RC_RHS_20mm_AC_CROWS_M153",
 				"rhsusf_weap_M6"
 			};
-			magazines[]=
-			{
-				"RC_100Rnd_20mm_HE_Pen_T_R",
-				"RC_100Rnd_20mm_HE_Pen_T_R",
-				"RC_100Rnd_20mm_HE_QF_T_R",
-				"RC_100Rnd_20mm_HE_DF_T_R",
-				"RC_100Rnd_20mm_HE_DF_T_R",
-				"RC_100Rnd_20mm_HEAB_DF_T_R",
-				/*
-				//available but unused
-				"RC_100Rnd_20mm_HEAB_QF_T_R",
-				
-				"RC_100Rnd_20mm_MP_Pen_T_R",
-				"RC_100Rnd_20mm_MP_QF_T_R",
-				"RC_100Rnd_20mm_MP_DF_T_R",
-				"RC_100Rnd_20mm_MPAB_DF_T_R",
-				"RC_100Rnd_20mm_MPAB_QF_T_R",
-
-				"RC_100Rnd_20mm_MP_T_R",
-				"RC_100Rnd_20mm_GPR_T_R",
-
-				"RC_100Rnd_20mm_HE_T_R",
-				*/
-				"RC_100Rnd_20mm_APFSDS_T_R",
-				"RC_100Rnd_20mm_APFSDS_T_R",
-				"RC_100Rnd_20mm_APFSDS_T_R",
-				"RC_100Rnd_20mm_APFSDS_T_R",
-				"RC_100Rnd_20mm_APFSDS_T_R",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_Stryker20mmAC_red.hpp"
 		};
 	};
 };
@@ -749,41 +669,7 @@ class RC_Stryker_M1126_20mmAC_Javelin_WD_B: RC_Stryker_M1126_20mmAC_WD_B
 				"RC_Stryker_Missile_Launcher",
 				"rhsusf_weap_M6"
 			};
-			magazines[]=
-			{
-				"RC_100Rnd_20mm_HE_Pen_T_R",
-				"RC_100Rnd_20mm_HE_Pen_T_R",
-				"RC_100Rnd_20mm_HE_QF_T_R",
-				"RC_100Rnd_20mm_HE_DF_T_R",
-				"RC_100Rnd_20mm_HE_DF_T_R",
-				"RC_100Rnd_20mm_HEAB_DF_T_R",
-				/*
-				//available but unused
-				"RC_100Rnd_20mm_HEAB_QF_T_R",
-				
-				"RC_100Rnd_20mm_MP_Pen_T_R",
-				"RC_100Rnd_20mm_MP_QF_T_R",
-				"RC_100Rnd_20mm_MP_DF_T_R",
-				"RC_100Rnd_20mm_MPAB_DF_T_R",
-				"RC_100Rnd_20mm_MPAB_QF_T_R",
-
-				"RC_100Rnd_20mm_MP_T_R",
-				"RC_100Rnd_20mm_GPR_T_R",
-
-				"RC_100Rnd_20mm_HE_T_R",
-				*/
-				"RC_100Rnd_20mm_APFSDS_T_R",
-				"RC_100Rnd_20mm_APFSDS_T_R",
-				"RC_100Rnd_20mm_APFSDS_T_R",
-				"RC_100Rnd_20mm_APFSDS_T_R",
-				"RC_100Rnd_20mm_APFSDS_T_R",
-				"RC_2Rnd_Javelin_MP_LOS",
-				"RC_2Rnd_Javelin_MP_NLOS",
-				"RC_4Rnd_Javelin_AA",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_Stryker20mmAC_J_red.hpp"
 		};
 	};
 };
@@ -933,23 +819,7 @@ class RC_Stryker_M1132_M2_WD: RC_Stryker_M1132_M2_WD_Base
 				"RC_RHS_M2_CROWS_M151",
 				"rhsusf_weap_M6"
 			};
-			magazines[]=
-			{
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_StrykerM2_red.hpp"
 
 			class OpticsIn
 			{
@@ -1149,24 +1019,7 @@ class RC_Stryker_M1132_M2_Javelin_WD_B: RC_Stryker_M1132_M2_WD_B
 				"RC_Stryker_Missile_Launcher",
 				"rhsusf_weap_M6"
 			};
-			magazines[]=
-			{
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
-				"RC_4Rnd_Javelin_MP_LOS",
-				"RC_2Rnd_Javelin_MP_NLOS",
-				"RC_4Rnd_Javelin_AA",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16",
-				"rhsusf_mag_L8A3_16"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_StrykerM2_J_red.hpp"
 		};
 	};
 };
@@ -1393,18 +1246,7 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 				"RC_RHS_M2_DroneLock",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
-				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
-				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
-				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
-				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
-				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
-				"RC_RHS_mag_150rnd_127x99_SLAP_DroneLock_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_StrykerM2_manual_red.hpp"
 		};
 		
 		class Turret_LRAS: Turret_LRAS
@@ -1447,7 +1289,7 @@ class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
 	magazines[]=
 	{
 		"RC_target_confirmer_mag",
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag"
 	};

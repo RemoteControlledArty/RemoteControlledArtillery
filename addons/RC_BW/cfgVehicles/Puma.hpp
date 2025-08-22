@@ -59,7 +59,7 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"BWA3_SmokeLauncherMag",
 		"BWA3_SmokeLauncherMag"

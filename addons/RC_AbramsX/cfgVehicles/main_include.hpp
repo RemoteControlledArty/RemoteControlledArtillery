@@ -30,7 +30,7 @@ weapons[]=
 };
 magazines[]=
 {
-	"RC_1Rnd_APS_M",
+	//"RC_1Rnd_APS_M",
 	"RC_1Rnd_APS_M",
 	"RC_1Rnd_APS_M",
 	"RC_1Rnd_APS_M",

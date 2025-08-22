@@ -1,0 +1,17 @@
+magazines[]=
+{
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"RC_RHS_mag_200rnd_127x99_SLAP_T_R",
+	"rhsusf_mag_L8A3_16",
+	"rhsusf_mag_L8A3_16",
+	"rhsusf_mag_L8A3_16"
+};

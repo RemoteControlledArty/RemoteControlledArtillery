@@ -35,7 +35,7 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
@@ -151,26 +151,7 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 				"rhsusf_weap_M250"
 				//"rhs_weap_fcs"
 			};
-			magazines[]=
-			{
-				/*
-				"RC_20Rnd_120mm_APFSDS_T_R",
-				"RC_20Rnd_120mm_MP_T_R",
-				*/
-				"RC_RHS_mag_M829A4_20Rnd",
-				"RC_RHS_mag_M830A1_15Rnd",
-				"RC_3Rnd_120mm_MPAB_DF_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"rhsusf_mag_L8A3_12",
-				"rhsusf_mag_L8A3_12"
-				//"rhs_laserfcsmag",
-				//"rhs_laserfcsmag"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_Abrams_red.hpp"
 
 			//turretInfoType="RscOptics_MBT_01_commander";
 			class OpticsIn
@@ -248,8 +229,7 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 					{
 						"RC_RHS_mag_400rnd_127x99_SLAP_T_R",
 						"RC_RHS_mag_400rnd_127x99_SLAP_T_R",
-						"RC_RHS_mag_400rnd_127x99_T_R",
-						"RC_RHS_mag_400rnd_127x99_T_R",
+						"RC_RHS_mag_400rnd_127x99_SLAP_T_R",
 						"Laserbatteries",
 						"rhsusf_mag_L8A3_12",
 						"rhsusf_mag_L8A3_12",
@@ -373,23 +353,7 @@ class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 				"rhsusf_weap_M250"
 				//"rhs_weap_fcs"
 			};
-			magazines[]=
-			{
-				"RC_RHS_mag_M829A4_20Rnd",
-				"RC_RHS_mag_M830A1_15Rnd",
-				"RC_5Rnd_120mm_MPAB_DF_T_R",
-				"RC_3Rnd_120mm_DLG_cannon_missiles",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"RC_RHS_mag_1200Rnd_762x51_T_R",
-				"rhsusf_mag_L8A3_12",
-				"rhsusf_mag_L8A3_12"
-				//"rhs_laserfcsmag",
-				//"rhs_laserfcsmag"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_Abrams_NLOS_red.hpp"
 		};
 	};
 };

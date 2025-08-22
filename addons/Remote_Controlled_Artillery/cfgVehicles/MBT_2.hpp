@@ -56,7 +56,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"

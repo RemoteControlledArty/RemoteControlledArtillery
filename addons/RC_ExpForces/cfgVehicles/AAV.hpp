@@ -68,7 +68,7 @@ class RC_AAV9A1: RC_AAV9A1_Base
 	magazines[]=
 	{
 		"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};

@@ -67,7 +67,7 @@ class RC_FSV_A_Base: RC_FSV_Base
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"

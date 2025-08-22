@@ -1,0 +1,17 @@
+magazines[]=
+{
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"RC_RHS_96Rnd_40mm_MK19_M430A1",
+	"rhsusf_mag_L8A3_16",
+	"rhsusf_mag_L8A3_16",
+	"rhsusf_mag_L8A3_16"
+};

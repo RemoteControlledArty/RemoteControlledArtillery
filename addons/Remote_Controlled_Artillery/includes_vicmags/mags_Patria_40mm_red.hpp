@@ -1,7 +1,7 @@
 magazines[]=
 {
 	"RC_50Rnd_40mm_MP_Pen_T_R",
-	"RC_50Rnd_40mm_MP_QF_T_R",
+	//"RC_50Rnd_40mm_MP_QF_T_R",
 	"RC_50Rnd_40mm_MP_DF_T_R",
 	"RC_50Rnd_40mm_MPAB_DF_T_R",
 	"RC_50Rnd_40mm_MPAB_DF_T_R",

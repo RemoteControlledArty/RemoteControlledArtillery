@@ -78,125 +78,125 @@ class RC_RHS_mag_230Rnd_25mm_HEI_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 
 
 //25mm multi purpose (HE with shaped charge penetrator) + pen/delayed/quick fuze
-class RC_230Rnd_25mm_MP_Pen_T_R: rhs_mag_230Rnd_25mm_M242_HEI
+class RC_RHS_230Rnd_25mm_MP_Pen_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_MP_Pen_T_R";
 	displayName="M792A1 MP-T";
 	displayNameShort="M792A1 MP";
 };
-class RC_230Rnd_25mm_MP_Pen_T_G: RC_230Rnd_25mm_MP_Pen_T_R {ammo="RC_RHS_B_25mm_MP_Pen_T_G";};
-class RC_230Rnd_25mm_MP_Pen_T_Y: RC_230Rnd_25mm_MP_Pen_T_R {ammo="RC_RHS_B_25mm_MP_Pen_T_Y";};
-class RC_110Rnd_25mm_MP_Pen_T_R: RC_230Rnd_25mm_MP_Pen_T_R {count=110;};
-class RC_110Rnd_25mm_MP_Pen_T_G: RC_230Rnd_25mm_MP_Pen_T_G {count=110;};
-class RC_110Rnd_25mm_MP_Pen_T_Y: RC_230Rnd_25mm_MP_Pen_T_Y {count=110;};
-class RC_230Rnd_25mm_MP_DF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
+class RC_RHS_230Rnd_25mm_MP_Pen_T_G: RC_RHS_230Rnd_25mm_MP_Pen_T_R {ammo="RC_RHS_B_25mm_MP_Pen_T_G";};
+class RC_RHS_230Rnd_25mm_MP_Pen_T_Y: RC_RHS_230Rnd_25mm_MP_Pen_T_R {ammo="RC_RHS_B_25mm_MP_Pen_T_Y";};
+class RC_RHS_110Rnd_25mm_MP_Pen_T_R: RC_RHS_230Rnd_25mm_MP_Pen_T_R {count=110;};
+class RC_RHS_110Rnd_25mm_MP_Pen_T_G: RC_RHS_230Rnd_25mm_MP_Pen_T_G {count=110;};
+class RC_RHS_110Rnd_25mm_MP_Pen_T_Y: RC_RHS_230Rnd_25mm_MP_Pen_T_Y {count=110;};
+class RC_RHS_230Rnd_25mm_MP_DF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_MP_DF_T_R";
 	displayName="M792A1 MP-DF-T";
 	displayNameShort="M792A1 MP-DF";
 };
-class RC_230Rnd_25mm_MP_DF_T_G: RC_230Rnd_25mm_MP_DF_T_R {ammo="RC_RHS_B_25mm_MP_DF_T_G";};
-class RC_230Rnd_25mm_MP_DF_T_Y: RC_230Rnd_25mm_MP_DF_T_R {ammo="RC_RHS_B_25mm_MP_DF_T_Y";};
-class RC_110Rnd_25mm_MP_DF_T_R: RC_230Rnd_25mm_MP_DF_T_R {count=110;};
-class RC_110Rnd_25mm_MP_DF_T_G: RC_230Rnd_25mm_MP_DF_T_G {count=110;};
-class RC_110Rnd_25mm_MP_DF_T_Y: RC_230Rnd_25mm_MP_DF_T_Y {count=110;};
-class RC_230Rnd_25mm_MP_QF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
+class RC_RHS_230Rnd_25mm_MP_DF_T_G: RC_RHS_230Rnd_25mm_MP_DF_T_R {ammo="RC_RHS_B_25mm_MP_DF_T_G";};
+class RC_RHS_230Rnd_25mm_MP_DF_T_Y: RC_RHS_230Rnd_25mm_MP_DF_T_R {ammo="RC_RHS_B_25mm_MP_DF_T_Y";};
+class RC_RHS_110Rnd_25mm_MP_DF_T_R: RC_RHS_230Rnd_25mm_MP_DF_T_R {count=110;};
+class RC_RHS_110Rnd_25mm_MP_DF_T_G: RC_RHS_230Rnd_25mm_MP_DF_T_G {count=110;};
+class RC_RHS_110Rnd_25mm_MP_DF_T_Y: RC_RHS_230Rnd_25mm_MP_DF_T_Y {count=110;};
+class RC_RHS_230Rnd_25mm_MP_QF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_MP_QF_T_R";
 	displayName="M792A1 MP-QF-T";
 	displayNameShort="M792A1 MP-QF";
 };
-class RC_230Rnd_25mm_MP_QF_T_G: RC_230Rnd_25mm_MP_QF_T_R {ammo="RC_RHS_B_25mm_MP_QF_T_G";};
-class RC_230Rnd_25mm_MP_QF_T_Y: RC_230Rnd_25mm_MP_QF_T_R {ammo="RC_RHS_B_25mm_MP_QF_T_Y";};
-class RC_110Rnd_25mm_MP_QF_T_R: RC_230Rnd_25mm_MP_QF_T_R {count=110;};
-class RC_110Rnd_25mm_MP_QF_T_G: RC_230Rnd_25mm_MP_QF_T_G {count=110;};
-class RC_110Rnd_25mm_MP_QF_T_Y: RC_230Rnd_25mm_MP_QF_T_Y {count=110;};
+class RC_RHS_230Rnd_25mm_MP_QF_T_G: RC_RHS_230Rnd_25mm_MP_QF_T_R {ammo="RC_RHS_B_25mm_MP_QF_T_G";};
+class RC_RHS_230Rnd_25mm_MP_QF_T_Y: RC_RHS_230Rnd_25mm_MP_QF_T_R {ammo="RC_RHS_B_25mm_MP_QF_T_Y";};
+class RC_RHS_110Rnd_25mm_MP_QF_T_R: RC_RHS_230Rnd_25mm_MP_QF_T_R {count=110;};
+class RC_RHS_110Rnd_25mm_MP_QF_T_G: RC_RHS_230Rnd_25mm_MP_QF_T_G {count=110;};
+class RC_RHS_110Rnd_25mm_MP_QF_T_Y: RC_RHS_230Rnd_25mm_MP_QF_T_Y {count=110;};
 
 
 //25mm multi purpose (HE with shaped charge penetrator) + airburst + delayed/quick fuze
-class RC_230Rnd_25mm_MPAB_DF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
+class RC_RHS_230Rnd_25mm_MPAB_DF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_MPAB_DF_T_R";
 	displayName="M792A1 MPAB-DF-T";
 	displayNameShort="M792A1 MPAB-DF";
 };
-class RC_230Rnd_25mm_MPAB_DF_T_G: RC_230Rnd_25mm_MPAB_DF_T_R {ammo="RC_RHS_B_25mm_MPAB_DF_T_G";};
-class RC_230Rnd_25mm_MPAB_DF_T_Y: RC_230Rnd_25mm_MPAB_DF_T_R {ammo="RC_RHS_B_25mm_MPAB_DF_T_Y";};
-class RC_110Rnd_25mm_MPAB_DF_T_R: RC_230Rnd_25mm_MPAB_DF_T_R {count=110;};
-class RC_110Rnd_25mm_MPAB_DF_T_G: RC_230Rnd_25mm_MPAB_DF_T_G {count=110;};
-class RC_110Rnd_25mm_MPAB_DF_T_Y: RC_230Rnd_25mm_MPAB_DF_T_Y {count=110;};
-class RC_230Rnd_25mm_MPAB_QF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
+class RC_RHS_230Rnd_25mm_MPAB_DF_T_G: RC_RHS_230Rnd_25mm_MPAB_DF_T_R {ammo="RC_RHS_B_25mm_MPAB_DF_T_G";};
+class RC_RHS_230Rnd_25mm_MPAB_DF_T_Y: RC_RHS_230Rnd_25mm_MPAB_DF_T_R {ammo="RC_RHS_B_25mm_MPAB_DF_T_Y";};
+class RC_RHS_110Rnd_25mm_MPAB_DF_T_R: RC_RHS_230Rnd_25mm_MPAB_DF_T_R {count=110;};
+class RC_RHS_110Rnd_25mm_MPAB_DF_T_G: RC_RHS_230Rnd_25mm_MPAB_DF_T_G {count=110;};
+class RC_RHS_110Rnd_25mm_MPAB_DF_T_Y: RC_RHS_230Rnd_25mm_MPAB_DF_T_Y {count=110;};
+class RC_RHS_230Rnd_25mm_MPAB_QF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_MPAB_QF_T_R";
 	displayName="M792A1 MPAB-QF-T";
 	displayNameShort="M792A1 MPAB-QF";
 };
-class RC_230Rnd_25mm_MPAB_QF_T_G: RC_230Rnd_25mm_MPAB_QF_T_R {ammo="RC_RHS_B_25mm_MPAB_QF_T_G";};
-class RC_230Rnd_25mm_MPAB_QF_T_Y: RC_230Rnd_25mm_MPAB_QF_T_R {ammo="RC_RHS_B_25mm_MPAB_QF_T_Y";};
-class RC_110Rnd_25mm_MPAB_QF_T_R: RC_230Rnd_25mm_MPAB_QF_T_R {count=110;};
-class RC_110Rnd_25mm_MPAB_QF_T_G: RC_230Rnd_25mm_MPAB_QF_T_G {count=110;};
-class RC_110Rnd_25mm_MPAB_QF_T_Y: RC_230Rnd_25mm_MPAB_QF_T_Y {count=110;};
+class RC_RHS_230Rnd_25mm_MPAB_QF_T_G: RC_RHS_230Rnd_25mm_MPAB_QF_T_R {ammo="RC_RHS_B_25mm_MPAB_QF_T_G";};
+class RC_RHS_230Rnd_25mm_MPAB_QF_T_Y: RC_RHS_230Rnd_25mm_MPAB_QF_T_R {ammo="RC_RHS_B_25mm_MPAB_QF_T_Y";};
+class RC_RHS_110Rnd_25mm_MPAB_QF_T_R: RC_RHS_230Rnd_25mm_MPAB_QF_T_R {count=110;};
+class RC_RHS_110Rnd_25mm_MPAB_QF_T_G: RC_RHS_230Rnd_25mm_MPAB_QF_T_G {count=110;};
+class RC_RHS_110Rnd_25mm_MPAB_QF_T_Y: RC_RHS_230Rnd_25mm_MPAB_QF_T_Y {count=110;};
 
 
 //25mm HEI + pen/delayed/quick fuze
-class RC_230Rnd_25mm_HEI_Pen_T_R: rhs_mag_230Rnd_25mm_M242_HEI
+class RC_RHS_230Rnd_25mm_HEI_Pen_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_HEI_Pen_T_R";
 	displayName="M792 HEI-T";
 	displayNameShort="M792 HEI";
 };
-class RC_230Rnd_25mm_HEI_Pen_T_G: RC_230Rnd_25mm_HEI_Pen_T_R {ammo="RC_RHS_B_25mm_HEI_Pen_T_G";};
-class RC_230Rnd_25mm_HEI_Pen_T_Y: RC_230Rnd_25mm_HEI_Pen_T_R {ammo="RC_RHS_B_25mm_HEI_Pen_T_Y";};
-class RC_110Rnd_25mm_HEI_Pen_T_R: RC_230Rnd_25mm_HEI_Pen_T_R {count=110;};
-class RC_110Rnd_25mm_HEI_Pen_T_G: RC_230Rnd_25mm_HEI_Pen_T_G {count=110;};
-class RC_110Rnd_25mm_HEI_Pen_T_Y: RC_230Rnd_25mm_HEI_Pen_T_Y {count=110;};
-class RC_230Rnd_25mm_HEI_DF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
+class RC_RHS_230Rnd_25mm_HEI_Pen_T_G: RC_RHS_230Rnd_25mm_HEI_Pen_T_R {ammo="RC_RHS_B_25mm_HEI_Pen_T_G";};
+class RC_RHS_230Rnd_25mm_HEI_Pen_T_Y: RC_RHS_230Rnd_25mm_HEI_Pen_T_R {ammo="RC_RHS_B_25mm_HEI_Pen_T_Y";};
+class RC_RHS_110Rnd_25mm_HEI_Pen_T_R: RC_RHS_230Rnd_25mm_HEI_Pen_T_R {count=110;};
+class RC_RHS_110Rnd_25mm_HEI_Pen_T_G: RC_RHS_230Rnd_25mm_HEI_Pen_T_G {count=110;};
+class RC_RHS_110Rnd_25mm_HEI_Pen_T_Y: RC_RHS_230Rnd_25mm_HEI_Pen_T_Y {count=110;};
+class RC_RHS_230Rnd_25mm_HEI_DF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_HEI_DF_T_R";
 	displayName="M792 HEI-DF-T";
 	displayNameShort="M792 HEI-DF";
 };
-class RC_230Rnd_25mm_HEI_DF_T_G: RC_230Rnd_25mm_HEI_DF_T_R {ammo="RC_RHS_B_25mm_HEI_DF_T_G";};
-class RC_230Rnd_25mm_HEI_DF_T_Y: RC_230Rnd_25mm_HEI_DF_T_R {ammo="RC_RHS_B_25mm_HEI_DF_T_Y";};
-class RC_110Rnd_25mm_HEI_DF_T_R: RC_230Rnd_25mm_HEI_DF_T_R {count=110;};
-class RC_110Rnd_25mm_HEI_DF_T_G: RC_230Rnd_25mm_HEI_DF_T_G {count=110;};
-class RC_110Rnd_25mm_HEI_DF_T_Y: RC_230Rnd_25mm_HEI_DF_T_Y {count=110;};
-class RC_230Rnd_25mm_HEI_QF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
+class RC_RHS_230Rnd_25mm_HEI_DF_T_G: RC_RHS_230Rnd_25mm_HEI_DF_T_R {ammo="RC_RHS_B_25mm_HEI_DF_T_G";};
+class RC_RHS_230Rnd_25mm_HEI_DF_T_Y: RC_RHS_230Rnd_25mm_HEI_DF_T_R {ammo="RC_RHS_B_25mm_HEI_DF_T_Y";};
+class RC_RHS_110Rnd_25mm_HEI_DF_T_R: RC_RHS_230Rnd_25mm_HEI_DF_T_R {count=110;};
+class RC_RHS_110Rnd_25mm_HEI_DF_T_G: RC_RHS_230Rnd_25mm_HEI_DF_T_G {count=110;};
+class RC_RHS_110Rnd_25mm_HEI_DF_T_Y: RC_RHS_230Rnd_25mm_HEI_DF_T_Y {count=110;};
+class RC_RHS_230Rnd_25mm_HEI_QF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_HEI_QF_T_R";
 	displayName="M792 HEI-QF-T";
 	displayNameShort="M792 HEI-QF";
 };
-class RC_230Rnd_25mm_HEI_QF_T_G: RC_230Rnd_25mm_HEI_QF_T_R {ammo="RC_RHS_B_25mm_HEI_QF_T_G";};
-class RC_230Rnd_25mm_HEI_QF_T_Y: RC_230Rnd_25mm_HEI_QF_T_R {ammo="RC_RHS_B_25mm_HEI_QF_T_Y";};
-class RC_110Rnd_25mm_HEI_QF_T_R: RC_230Rnd_25mm_HEI_QF_T_R {count=110;};
-class RC_110Rnd_25mm_HEI_QF_T_G: RC_230Rnd_25mm_HEI_QF_T_G {count=110;};
-class RC_110Rnd_25mm_HEI_QF_T_Y: RC_230Rnd_25mm_HEI_QF_T_Y {count=110;};
+class RC_RHS_230Rnd_25mm_HEI_QF_T_G: RC_RHS_230Rnd_25mm_HEI_QF_T_R {ammo="RC_RHS_B_25mm_HEI_QF_T_G";};
+class RC_RHS_230Rnd_25mm_HEI_QF_T_Y: RC_RHS_230Rnd_25mm_HEI_QF_T_R {ammo="RC_RHS_B_25mm_HEI_QF_T_Y";};
+class RC_RHS_110Rnd_25mm_HEI_QF_T_R: RC_RHS_230Rnd_25mm_HEI_QF_T_R {count=110;};
+class RC_RHS_110Rnd_25mm_HEI_QF_T_G: RC_RHS_230Rnd_25mm_HEI_QF_T_G {count=110;};
+class RC_RHS_110Rnd_25mm_HEI_QF_T_Y: RC_RHS_230Rnd_25mm_HEI_QF_T_Y {count=110;};
 
 
 //M792 HEI + airburst + delayed/quick fuze
-class RC_230Rnd_25mm_HEAB_DF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
+class RC_RHS_230Rnd_25mm_HEAB_DF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_HEAB_DF_T_R";
 	displayName="M792 HEI-AB-DF-T";
 	displayNameShort="M792 HEI-AB-DF";
 };
-class RC_230Rnd_25mm_HEAB_DF_T_G: RC_230Rnd_25mm_HEAB_DF_T_R {ammo="RC_RHS_B_25mm_HEAB_DF_T_G";};
-class RC_230Rnd_25mm_HEAB_DF_T_Y: RC_230Rnd_25mm_HEAB_DF_T_R {ammo="RC_RHS_B_25mm_HEAB_DF_T_Y";};
-class RC_110Rnd_25mm_HEAB_DF_T_R: RC_230Rnd_25mm_HEAB_DF_T_R {count=110;};
-class RC_110Rnd_25mm_HEAB_DF_T_G: RC_230Rnd_25mm_HEAB_DF_T_G {count=110;};
-class RC_110Rnd_25mm_HEAB_DF_T_Y: RC_230Rnd_25mm_HEAB_DF_T_Y {count=110;};
-class RC_230Rnd_25mm_HEAB_QF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
+class RC_RHS_230Rnd_25mm_HEAB_DF_T_G: RC_RHS_230Rnd_25mm_HEAB_DF_T_R {ammo="RC_RHS_B_25mm_HEAB_DF_T_G";};
+class RC_RHS_230Rnd_25mm_HEAB_DF_T_Y: RC_RHS_230Rnd_25mm_HEAB_DF_T_R {ammo="RC_RHS_B_25mm_HEAB_DF_T_Y";};
+class RC_RHS_110Rnd_25mm_HEAB_DF_T_R: RC_RHS_230Rnd_25mm_HEAB_DF_T_R {count=110;};
+class RC_RHS_110Rnd_25mm_HEAB_DF_T_G: RC_RHS_230Rnd_25mm_HEAB_DF_T_G {count=110;};
+class RC_RHS_110Rnd_25mm_HEAB_DF_T_Y: RC_RHS_230Rnd_25mm_HEAB_DF_T_Y {count=110;};
+class RC_RHS_230Rnd_25mm_HEAB_QF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_HEAB_QF_T_R";
 	displayName="M792 HEI-AB-QF-T";
 	displayNameShort="M792 HEI-AB-QF";
 };
-class RC_230Rnd_25mm_HEAB_QF_T_G: RC_230Rnd_25mm_HEAB_QF_T_R {ammo="RC_RHS_B_25mm_HEAB_QF_T_G";};
-class RC_230Rnd_25mm_HEAB_QF_T_Y: RC_230Rnd_25mm_HEAB_QF_T_R {ammo="RC_RHS_B_25mm_HEAB_QF_T_Y";};
-class RC_110Rnd_25mm_HEAB_QF_T_R: RC_230Rnd_25mm_HEAB_QF_T_R {count=110;};
-class RC_110Rnd_25mm_HEAB_QF_T_G: RC_230Rnd_25mm_HEAB_QF_T_G {count=110;};
-class RC_110Rnd_25mm_HEAB_QF_T_Y: RC_230Rnd_25mm_HEAB_QF_T_Y {count=110;};
+class RC_RHS_230Rnd_25mm_HEAB_QF_T_G: RC_RHS_230Rnd_25mm_HEAB_QF_T_R {ammo="RC_RHS_B_25mm_HEAB_QF_T_G";};
+class RC_RHS_230Rnd_25mm_HEAB_QF_T_Y: RC_RHS_230Rnd_25mm_HEAB_QF_T_R {ammo="RC_RHS_B_25mm_HEAB_QF_T_Y";};
+class RC_RHS_110Rnd_25mm_HEAB_QF_T_R: RC_RHS_230Rnd_25mm_HEAB_QF_T_R {count=110;};
+class RC_RHS_110Rnd_25mm_HEAB_QF_T_G: RC_RHS_230Rnd_25mm_HEAB_QF_T_G {count=110;};
+class RC_RHS_110Rnd_25mm_HEAB_QF_T_Y: RC_RHS_230Rnd_25mm_HEAB_QF_T_Y {count=110;};
 
 
 //TOW's

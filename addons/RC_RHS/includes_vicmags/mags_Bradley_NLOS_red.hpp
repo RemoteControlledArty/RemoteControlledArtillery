@@ -1,0 +1,32 @@
+magazines[]=
+{
+	"RC_RHS_110Rnd_25mm_HEI_Pen_T_R",
+	"RC_RHS_110Rnd_25mm_HEI_DF_T_R",
+	//"RC_RHS_110Rnd_25mm_HEI_QF_T_R",
+	"RC_RHS_110Rnd_25mm_HEAB_DF_T_R",
+	/*
+	"RC_RHS_110Rnd_25mm_MP_Pen_T_R",
+	"RC_RHS_110Rnd_25mm_MP_DF_T_R",
+	"RC_RHS_110Rnd_25mm_MP_QF_T_R",
+	"RC_RHS_110Rnd_25mm_MPAB_DF_T_R",
+
+	"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
+	"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
+	*/
+	"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+	"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+	"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+	"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+	"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+	"RC_RHS_mag_1100Rnd_762x51_T_R",
+	"RC_RHS_mag_1100Rnd_762x51_T_R",
+	"RC_2Rnd_TOW_MP_NLOS",
+	"RC_2Rnd_TOW_MP_NLOS",
+	"RC_2Rnd_TOW_AA",
+	"RC_2Rnd_TOW_AA",
+	"rhs_laserfcsmag",
+
+	"rhsusf_mag_L8A3_8",
+	"rhsusf_mag_L8A3_8",
+	"rhsusf_mag_L8A3_8"
+};

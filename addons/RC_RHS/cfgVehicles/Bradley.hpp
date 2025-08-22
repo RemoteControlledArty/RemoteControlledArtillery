@@ -43,7 +43,7 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
@@ -155,37 +155,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 
 				"rhsusf_weap_M257_8"
 			};
-			magazines[]=
-			{
-				"RC_110Rnd_25mm_HEI_Pen_T_R",
-				"RC_110Rnd_25mm_HEI_DF_T_R",
-				"RC_110Rnd_25mm_HEI_QF_T_R",
-				"RC_110Rnd_25mm_HEAB_DF_T_R",
-				/*
-				"RC_110Rnd_25mm_MP_Pen_T_R",
-				"RC_110Rnd_25mm_MP_DF_T_R",
-				"RC_110Rnd_25mm_MP_QF_T_R",
-				"RC_110Rnd_25mm_MPAB_DF_T_R",
-
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				*/
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_2Rnd_TOW2A",
-				"RC_RHS_mag_2Rnd_TOW2A",
-				"RC_RHS_mag_2Rnd_TOW2A",
-				"RC_RHS_mag_2Rnd_TOW2BB",
-				"rhs_laserfcsmag",
-
-				"rhsusf_mag_L8A3_8",
-				"rhsusf_mag_L8A3_8"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_Bradley_red.hpp"
 			
 			class OpticsIn
 			{
@@ -395,38 +365,7 @@ class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 
 				"rhsusf_weap_M257_8"
 			};
-			magazines[]=
-			{
-				"RC_110Rnd_25mm_HEI_Pen_T_R",
-				"RC_110Rnd_25mm_HEI_DF_T_R",
-				"RC_110Rnd_25mm_HEI_QF_T_R",
-				"RC_110Rnd_25mm_HEAB_DF_T_R",
-				/*
-				"RC_110Rnd_25mm_MP_Pen_T_R",
-				"RC_110Rnd_25mm_MP_DF_T_R",
-				"RC_110Rnd_25mm_MP_QF_T_R",
-				"RC_110Rnd_25mm_MPAB_DF_T_R",
-
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				*/
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_T_R",
-				"RC_2Rnd_TOW_MP_NLOS",
-				"RC_2Rnd_TOW_MP_NLOS",
-				"RC_2Rnd_TOW_AA",
-				"RC_2Rnd_TOW_AA",
-				"rhs_laserfcsmag",
-
-				"rhsusf_mag_L8A3_8",
-				"rhsusf_mag_L8A3_8",
-				"rhsusf_mag_L8A3_8"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_Bradley_NLOS_red.hpp"
 		};
 	};
 };

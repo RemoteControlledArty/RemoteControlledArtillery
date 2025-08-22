@@ -790,7 +790,10 @@ class RC_MMG_93x64_coax: RC_MMG_338_coax
 		"RC_200Rnd_93x64_T_Y",
 		"RC_1000Rnd_93x64_T_G",
 		"RC_1000Rnd_93x64_T_R",
-		"RC_1000Rnd_93x64_T_Y"
+		"RC_1000Rnd_93x64_T_Y",
+		"RC_1200Rnd_93x64_T_G",
+		"RC_1200Rnd_93x64_T_R",
+		"RC_1200Rnd_93x64_T_Y"
 	};
 	class manual: manual
 	{
@@ -835,7 +838,10 @@ class RC_MMG_93x64_coax_ext: RC_MMG_338_coax_ext
 		"RC_200Rnd_93x64_T_Y",
 		"RC_1000Rnd_93x64_T_G",
 		"RC_1000Rnd_93x64_T_R",
-		"RC_1000Rnd_93x64_T_Y"
+		"RC_1000Rnd_93x64_T_Y",
+		"RC_1200Rnd_93x64_T_G",
+		"RC_1200Rnd_93x64_T_R",
+		"RC_1200Rnd_93x64_T_Y"
 	};
 	class manual: manual
 	{

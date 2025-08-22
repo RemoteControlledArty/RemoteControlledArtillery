@@ -77,7 +77,7 @@ class RC_ACV_30_Base: RC_ACV_30_Core
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag_ACV",
 		"SmokeLauncherMag_ACV"

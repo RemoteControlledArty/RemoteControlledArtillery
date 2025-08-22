@@ -67,7 +67,7 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"

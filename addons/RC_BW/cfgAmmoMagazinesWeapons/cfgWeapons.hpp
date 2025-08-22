@@ -150,7 +150,7 @@ class RC_MG338_vehicle_Base: BWA3_MG5_vehicle
 class RC_MG338_vehicle: RC_MG338_vehicle_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
-	displayName="MG338";
+	displayName="MMG";
 	canLock=2;
 	maxZeroing=3000;
 	FCSZeroingDelay=0.5;

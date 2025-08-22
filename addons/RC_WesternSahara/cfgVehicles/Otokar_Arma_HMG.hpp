@@ -72,7 +72,7 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"

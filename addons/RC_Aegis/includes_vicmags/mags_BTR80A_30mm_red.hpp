@@ -19,7 +19,7 @@ magazines[]=
 	*/
 	"RC_160Rnd_30mm_APFSDS_T_R",
 	"RC_160Rnd_30mm_APFSDS_T_R",
-	"RC_1000Rnd_93x64_T_R",
+	"RC_1200Rnd_93x64_T_R",
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"
 };

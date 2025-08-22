@@ -1,7 +1,7 @@
 magazines[]=
 {
 	"RC_100Rnd_30mm_MP_Pen_T_R",
-	"RC_100Rnd_30mm_MP_QF_T_R",
+	//"RC_100Rnd_30mm_MP_QF_T_R",
 	"RC_100Rnd_30mm_MP_DF_T_R",
 	"RC_100Rnd_30mm_MPAB_DF_T_R",
 	/*
@@ -21,6 +21,7 @@ magazines[]=
 	"RC_100Rnd_30mm_APFSDS_T_R",
 	"RC_100Rnd_30mm_APFSDS_T_R",
 	"RC_100Rnd_30mm_APFSDS_T_R",
+	"RC_200Rnd_93x64_T_R",
 	"RC_200Rnd_93x64_T_R",
 	"RC_200Rnd_93x64_T_R",
 	"RC_200Rnd_93x64_T_R",

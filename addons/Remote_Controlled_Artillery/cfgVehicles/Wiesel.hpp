@@ -1067,7 +1067,7 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
@@ -1452,7 +1452,7 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
