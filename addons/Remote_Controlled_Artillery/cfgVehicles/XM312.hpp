@@ -402,8 +402,11 @@ class RC_cUAS_Mounted_Static_HMG: RC_cUAS_Static_HMG
 
 	//add if vic destroyed then setdamage 1 to hmg
 
-	displayName="RC mountable C-UAS 12.7mm";
-	armor=80;	//30
+	displayName="RC mounted C-UAS 12.7mm";
+	scope=1;
+	scopeCurator=1;
+
+	armor=120;	//30
 	threat[]={0,0,0};
 	cost=0;
 	typicalCargo[]={""};

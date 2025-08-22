@@ -501,6 +501,10 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"

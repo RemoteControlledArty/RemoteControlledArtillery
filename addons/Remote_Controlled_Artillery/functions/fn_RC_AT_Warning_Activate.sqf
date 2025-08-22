@@ -44,7 +44,7 @@ params ["_vic", "_source", "_proj", "_mag"];
 				if (_distPass < _tresh) then {
 					[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_1.wss', 0.3]] remoteExec ['playSoundUI', _crew];
 				} else {
-					[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_2.wss', 0.3, 0.9]] remoteExec ['playSoundUI', _crew];
+					[['\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_2.wss', 0.2, 0.9]] remoteExec ['playSoundUI', _crew];
 				};
 
 

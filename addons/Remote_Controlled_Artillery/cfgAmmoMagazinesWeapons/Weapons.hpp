@@ -1541,6 +1541,34 @@ class RC_GMG_20mm_cUAS: RC_autocannon_Base_F
 		};
 	};
 };
+class RC_GMG_20mm_mounted_cUAS: RC_GMG_20mm_cUAS
+{
+	displayName="20mm C-UAS/FS";
+	FCSMaxLeadSpeed=80;
+	FCSZeroingDelay=0.3;
+	ballisticsComputer="1 + 2 + 16";
+	magazineReloadTime=6;
+
+	magazines[]=
+	{
+		"RC_60Rnd_20mm_mounted_HEAB_T_R",
+		"RC_60Rnd_20mm_mounted_HEAB_T_G",
+		"RC_60Rnd_20mm_mounted_HEAB_T_Y",
+		"RC_60Rnd_20mm_mounted_HEAB_T_W",
+		"RC_60Rnd_20mm_mounted_cUAS",
+		"RC_60Rnd_20mm_mounted_AP_T_R",
+		"RC_60Rnd_20mm_mounted_AP_T_G",
+		"RC_60Rnd_20mm_mounted_AP_T_Y",
+		"RC_60Rnd_20mm_mounted_AP_T_W"
+	};
+	class player: player
+	{
+		displayName="20mm C-UAS/FS";
+		ballisticsComputer="1 + 2 + 16";
+		magazineReloadTime=6;
+		dispersion=0.00125;
+	};
+};
 
 
 class RC_UGV_20mm_cUAS: RC_GMG_20mm_cUAS

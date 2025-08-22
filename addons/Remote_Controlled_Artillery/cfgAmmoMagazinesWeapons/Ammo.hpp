@@ -387,6 +387,17 @@ class RC_20mm_APFSDS_T_G: RC_20mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettr
 class RC_20mm_APFSDS_T_Y: RC_20mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+class RC_20mm_mounted_APFSDS_T_R: RC_20mm_APFSDS_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_20mm_mounted_APFSDS_T_G: RC_20mm_mounted_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_20mm_mounted_APFSDS_T_Y: RC_20mm_mounted_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_20mm_mounted_APFSDS_T_W: RC_20mm_mounted_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
+
+
 //MP
 class B_30mm_MP_Tracer_Red;
 class B_30mm_HE_Tracer_Red;
@@ -867,9 +878,24 @@ class RC_B_20mm_HEAB_cUAS_T_R: B_20mm_cUAS_Base
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
 	submunitionAmmo="RC_B_20mm_HE_DF_Sub";
 };
-class RC_B_20mm_HEAB_cUAS_T_G: RC_B_20mm_HEAB_cUAS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_B_20mm_HEAB_cUAS_T_Y: RC_B_20mm_HEAB_cUAS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_20mm_HEAB_cUAS_T_G: RC_B_20mm_HEAB_cUAS_T_R {fuseDistance=12; model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_HEAB_cUAS_T_Y: RC_B_20mm_HEAB_cUAS_T_R {fuseDistance=12; model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
+
+class RC_B_20mm_mounted_HE_DF_Sub: RC_B_20mm_HE_DF_cUAS_Sub
+{
+	explosionTime=0.028;
+	airlock=1;
+};
+class RC_B_20mm_mounted_HEAB_T_R: RC_B_20mm_HEAB_cUAS_T_R
+{
+	triggerDistance=20;
+	submunitionAmmo="RC_B_20mm_mounted_HE_DF_Sub";
+	airlock=1;
+};
+class RC_B_20mm_mounted_HEAB_T_G: RC_B_20mm_mounted_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_20mm_mounted_HEAB_T_Y: RC_B_20mm_mounted_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_20mm_mounted_HEAB_T_W: RC_B_20mm_mounted_HEAB_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
 
 
 //25mm
@@ -1543,6 +1569,12 @@ class RC_B_127x99_mounted_SLAP_T_R: RC_B_127x99_SLAP_T_R
 	irLock=0;		//1
 	airLock=1;
 	model="\A3\Weapons_f\Data\bullettracer\tracer_white";
+};
+class RC_20mm_mounted_cUAS: RC_20mm_cUAS
+{
+	submunitionAmmo="RC_mounted_cUAS_Pellet";
+	airFriction=-0.0025;	//-0.005
+	airLock=1;	//2
 };
 
 

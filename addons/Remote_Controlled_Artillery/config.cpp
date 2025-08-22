@@ -220,6 +220,9 @@ class CfgPatches
 			"RC_Wiesel_cUAS_WD_manned_I",
 			"RC_Wiesel_cUAS_DIG_manned_I",
 
+			"RC_Offroad_cUAS",
+			"RC_Offroad_cUAS_HMG",
+
 			"RC_Mortar",
 			"RC_Mortar_O",
 			"RC_Mortar_HEX_O",
@@ -989,6 +992,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Mortar.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\XM307.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\XM312.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Offroad.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first
 	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"

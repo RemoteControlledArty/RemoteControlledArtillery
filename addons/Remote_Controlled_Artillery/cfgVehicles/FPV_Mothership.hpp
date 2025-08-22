@@ -20,6 +20,10 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 	};
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -446,6 +450,10 @@ class RC_FPV_MothershipMQ_Base: RC_FPV_MothershipMQ_Core
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
 	};
 

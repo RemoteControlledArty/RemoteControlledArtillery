@@ -30,6 +30,10 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -50,6 +54,19 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 	ejectDeadCommander=0;
 	//redRpm=1100;
 	//idleRpm=250;
+
+	weapons[]=
+	{
+		"RC_target_confirmer_datalink",
+		"TruckHorn",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_target_confirmer_mag",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
 
 	smokeLauncherVelocity=5;
 	smokeLauncherGrenadeCount=6;

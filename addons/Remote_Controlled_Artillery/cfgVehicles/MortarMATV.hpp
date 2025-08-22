@@ -23,6 +23,10 @@ class RC_MortarMATV: RC_MortarMATV_base
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 	};
 
 	faction="RemoteControlled_B";
@@ -61,14 +65,17 @@ class RC_MortarMATV: RC_MortarMATV_base
 		0.39810717,
 		1
 	};
-
+	
 	weapons[]=
 	{
+		"RC_target_confirmer_datalink",
 		"TruckHorn",
 		"SmokeLauncher"
 	};
 	magazines[]=
 	{
+		"RC_target_confirmer_mag",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 

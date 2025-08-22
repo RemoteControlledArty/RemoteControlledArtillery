@@ -26,6 +26,10 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
 		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
@@ -383,6 +387,10 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
 		class RC_LightsOff
 		{
@@ -1784,6 +1792,10 @@ class RC_Wiesel_cUAS_WD_Base: RC_Wiesel_AC_WD_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
 		class RC_Artillery
 		{

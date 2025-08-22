@@ -285,6 +285,11 @@ class RC_40Rnd_20mm_cUAS: RC_60Rnd_20mm_cUAS
 	initSpeed=500;
 	muzzleImpulseFactor[]={0.1,0.1};
 };
+class RC_60Rnd_20mm_mounted_cUAS: RC_40Rnd_20mm_cUAS
+{
+	ammo="RC_20mm_mounted_cUAS";
+	count=60;
+};
 class RC_100Rnd_20mm_cUAS: RC_40Rnd_20mm_cUAS {count=100;};
 class RC_140Rnd_20mm_cUAS: RC_40Rnd_20mm_cUAS {count=140;};
 
@@ -403,11 +408,23 @@ class RC_50Rnd_20mm_AP_T_G: RC_50Rnd_20mm_AP_T_R {ammo="RC_20mm_APFSDS_T_G";};
 class RC_50Rnd_20mm_AP_T_Y: RC_50Rnd_20mm_AP_T_R {ammo="RC_20mm_APFSDS_T_Y";};
 class RC_40Rnd_20mm_AP_T_R: RC_100Rnd_20mm_APFSDS_T_R
 {
+	displayName="20mm AP-T";
+	displayNameShort="20mm AP-T";
 	initSpeed=700;
 	count=40;
+	muzzleImpulseFactor[]={0.1,0.1};
 };
 class RC_40Rnd_20mm_AP_T_G: RC_40Rnd_20mm_AP_T_R {ammo="RC_20mm_APFSDS_T_G";};
 class RC_40Rnd_20mm_AP_T_Y: RC_40Rnd_20mm_AP_T_R {ammo="RC_20mm_APFSDS_T_Y";};
+
+
+class RC_60Rnd_20mm_mounted_AP_T_R: RC_40Rnd_20mm_AP_T_R
+{
+	ammo="RC_20mm_mounted_APFSDS_T_R";
+};
+class RC_60Rnd_20mm_mounted_AP_T_G: RC_60Rnd_20mm_mounted_AP_T_R {ammo="RC_20mm_mounted_APFSDS_T_G";};
+class RC_60Rnd_20mm_mounted_AP_T_Y: RC_60Rnd_20mm_mounted_AP_T_R {ammo="RC_20mm_mounted_APFSDS_T_Y";};
+class RC_60Rnd_20mm_mounted_AP_T_W: RC_60Rnd_20mm_mounted_AP_T_R {ammo="RC_20mm_mounted_APFSDS_T_W";};
 
 
 class RC_100Rnd_20mm_HE_T_R: 300Rnd_20mm_shells
@@ -756,6 +773,16 @@ class RC_40Rnd_20mm_HEAB_cUAS_T_R: RC_60Rnd_20mm_HEAB_cUAS_T_R
 };
 class RC_40Rnd_20mm_HEAB_cUAS_T_G: RC_40Rnd_20mm_HEAB_cUAS_T_R {ammo="RC_B_20mm_HEAB_cUAS_T_G";};
 class RC_40Rnd_20mm_HEAB_cUAS_T_Y: RC_40Rnd_20mm_HEAB_cUAS_T_R {ammo="RC_B_20mm_HEAB_cUAS_T_Y";};
+
+
+class RC_60Rnd_20mm_mounted_HEAB_T_R: RC_40Rnd_20mm_HEAB_cUAS_T_R
+{
+	count=60;
+	ammo="RC_B_20mm_mounted_HEAB_T_R";
+};
+class RC_60Rnd_20mm_mounted_HEAB_T_G: RC_60Rnd_20mm_mounted_HEAB_T_R {ammo="RC_B_20mm_mounted_HEAB_T_G";};
+class RC_60Rnd_20mm_mounted_HEAB_T_Y: RC_60Rnd_20mm_mounted_HEAB_T_R {ammo="RC_B_20mm_mounted_HEAB_T_Y";};
+class RC_60Rnd_20mm_mounted_HEAB_T_W: RC_60Rnd_20mm_mounted_HEAB_T_R {ammo="RC_B_20mm_mounted_HEAB_T_W";};
 
 
 class RC_200Rnd_20mm_APFSDS_T_R: RC_100Rnd_20mm_APFSDS_T_R {count=200;};
