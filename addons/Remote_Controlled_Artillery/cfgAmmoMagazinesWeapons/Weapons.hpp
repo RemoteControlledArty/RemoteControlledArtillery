@@ -402,6 +402,7 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	magazines[]=
 	{
 		"RC_2Rnd_IFV_MP_LOS",
+		"RC_2Rnd_IFV_MP_Overfly",
 		"RC_2Rnd_IFV_MP_NLOS",
 		"2Rnd_GAT_missiles",
 		"RC_2Rnd_IFV_AA"
@@ -409,6 +410,7 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	modes[]=
 	{
 		"Player",
+		"Overfly",
 		"Cruise"
 	};
 	class Player: Player
@@ -440,6 +442,19 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	{
 		displayName="$STR_A3_firemode_terrain0";
 		textureType="terrain";
+		magazineReloadTime=20;
+
+		minRange=200;
+		minRangeProbab=0.40000001;
+		midRange=1000;
+		midRangeProbab=0.89999998;
+		maxRange=5000;
+		maxRangeProbab=0.94999999;
+	};
+	class Overfly: Player
+	{
+		displayName="$STR_A3_FireMode_TopDown0";
+		textureType="topDown";
 		magazineReloadTime=20;
 
 		minRange=200;

@@ -1702,6 +1702,12 @@ class RC_2Rnd_IFV_MP_LOS: RC_2Rnd_IFV_MP_NLOS
 	ammo="RC_IFV_MP_LOS";
 };
 class RC_4Rnd_IFV_MP_LOS: RC_2Rnd_IFV_MP_LOS {count=4;};
+class RC_2Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_NLOS
+{
+	displayName="4km Overfly ATGM";
+	displayNameShort="Overfly ATGM";
+	ammo="RC_IFV_MP_Overfly";
+};
 
 
 class 4Rnd_Titan_long_missiles;
