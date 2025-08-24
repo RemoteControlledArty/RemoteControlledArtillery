@@ -26,7 +26,7 @@ magazines[]=
 	"RC_200Rnd_93x64_T_Y",
 	"RC_200Rnd_93x64_T_Y",
 	"RC_200Rnd_93x64_T_Y",
-	"RC_2Rnd_IFV_MP_NLOS",
+	"RC_2Rnd_IFV_MP_Overfly",
 	"RC_2Rnd_IFV_MP_NLOS",
 	"RC_2Rnd_IFV_AA",
 	"RC_2Rnd_IFV_AA",

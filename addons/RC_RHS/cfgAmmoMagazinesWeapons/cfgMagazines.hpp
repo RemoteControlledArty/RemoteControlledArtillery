@@ -226,6 +226,13 @@ class RC_2Rnd_TOW_MP_LOS: RC_2Rnd_IFV_MP_LOS
 	displayName="TOW";
 	displayNameShort="TOW";
 };
+class RC_2Rnd_IFV_MP_Overfly;
+class RC_2Rnd_TOW_MP_Overfly: RC_2Rnd_IFV_MP_Overfly
+{
+	ammo="RC_TOW_MP_Overfly";
+	displayName="TOW Overly";
+	displayNameShort="TOW Overly";
+};
 class RC_2Rnd_IFV_AA;
 class RC_2Rnd_TOW_AA: RC_2Rnd_IFV_AA
 {
@@ -244,6 +251,17 @@ class RC_2Rnd_Javelin_MP_NLOS: RC_2Rnd_IFV_MP_NLOS
 class RC_1Rnd_Javelin_MP_NLOS: RC_2Rnd_Javelin_MP_NLOS {count=1;};
 class RC_3Rnd_Javelin_MP_NLOS: RC_2Rnd_Javelin_MP_NLOS {count=3;};
 class RC_4Rnd_Javelin_MP_NLOS: RC_2Rnd_Javelin_MP_NLOS {count=4;};
+
+
+class RC_2Rnd_Javelin_MP_Overfly: RC_2Rnd_IFV_MP_Overfly
+{
+	ammo="RC_Javelin_MP_Overfly";
+	displayName="Javelin Overfly";
+	displayNameShort="Javelin Overfly";
+};
+class RC_1Rnd_Javelin_MP_Overfly: RC_2Rnd_Javelin_MP_Overfly {count=1;};
+class RC_3Rnd_Javelin_MP_Overfly: RC_2Rnd_Javelin_MP_Overfly {count=3;};
+class RC_4Rnd_Javelin_MP_Overfly: RC_2Rnd_Javelin_MP_Overfly {count=4;};
 
 
 class RC_2Rnd_Javelin_MP_LOS: RC_2Rnd_IFV_MP_LOS

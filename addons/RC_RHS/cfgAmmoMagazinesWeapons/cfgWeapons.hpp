@@ -446,6 +446,7 @@ class RC_Bradley_Missile_Launcher: RC_Bradley_Missile_Launcher_Base
 	magazines[]=
 	{
 		"RC_2Rnd_TOW_MP_LOS",
+		"RC_2Rnd_TOW_MP_Overfly",
 		"RC_2Rnd_TOW_MP_NLOS",
 		"RC_2Rnd_TOW_AA"
 	};
@@ -470,6 +471,10 @@ class RC_Stryker_Missile_Launcher: RC_Bradley_Missile_Launcher_Base
 		"RC_3Rnd_Javelin_MP_LOS",
 		"RC_2Rnd_Javelin_MP_LOS",
 		"RC_1Rnd_Javelin_MP_LOS",
+		"RC_4Rnd_Javelin_MP_Overfly",
+		"RC_3Rnd_Javelin_MP_Overfly",
+		"RC_2Rnd_Javelin_MP_Overfly",
+		"RC_1Rnd_Javelin_MP_Overfly",
 		"RC_4Rnd_Javelin_MP_NLOS",
 		"RC_3Rnd_Javelin_MP_NLOS",
 		"RC_2Rnd_Javelin_MP_NLOS",

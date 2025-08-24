@@ -1709,6 +1709,7 @@ class RC_2Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_LOS
 	ammo="RC_IFV_MP_Overfly";
 	initSpeed=100;
 };
+class RC_4Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_Overfly {count=4;};
 
 
 class 4Rnd_Titan_long_missiles;

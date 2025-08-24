@@ -1,3 +1,19 @@
+class RC_2Rnd_IFV_MP_LOS;
+class RC_2Rnd_SPz_Spike_LOS: RC_2Rnd_IFV_MP_LOS
+{
+	count=2;
+	displayName="4km Spike Direct";
+	displayNameShort="Spike Direct";
+	ammo="RC_IFV_MP_LOS";
+};
+class RC_2Rnd_IFV_MP_Overfly;
+class RC_2Rnd_SPz_Spike_Overfly: RC_2Rnd_IFV_MP_Overfly
+{
+	count=2;
+	displayName="4km Spike Overfly";
+	displayNameShort="Spike Overfly";
+	ammo="RC_IFV_MP_Overfly";
+};
 class RC_2Rnd_IFV_MP_NLOS;
 class RC_2Rnd_SPz_Spike_NLOS: RC_2Rnd_IFV_MP_NLOS
 {

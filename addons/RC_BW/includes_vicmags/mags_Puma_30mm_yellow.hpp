@@ -9,7 +9,7 @@ magazines[]=
 	"RC_600Rnd_338_T_Y",
 	//"BWA3_2Rnd_Spike_Lr",
 	//"BWA3_2Rnd_Spike_Lr",
-	"RC_2Rnd_SPz_Spike_NLOS",
+	"RC_2Rnd_SPz_Spike_Overfly",
 	"RC_2Rnd_SPz_Spike_NLOS",
 	"RC_2Rnd_SPz_Spike_AA",
 	"RC_2Rnd_SPz_Spike_AA",
