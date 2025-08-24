@@ -54,6 +54,7 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 		class player: player
 		{
 			reloadTime=0.15;
+			dispersion=0.0008;
 		};
 	};
 	class AP: AP
@@ -69,6 +70,7 @@ class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 		class player: player
 		{
 			reloadTime=0.3;
+			dispersion=0.0008;
 		};
 	};
 };

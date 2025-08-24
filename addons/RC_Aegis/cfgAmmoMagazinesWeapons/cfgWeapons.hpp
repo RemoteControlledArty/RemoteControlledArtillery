@@ -196,6 +196,7 @@ class RC_autocannon_30mm_APC_Wheeled_04: RC_autocannon_30mm_APC_Wheeled_04_Base
 		class player: player
 		{
 			reloadTime=0.15;
+			dispersion=0.0008;
 		};
 	};
 	class AP: AP
@@ -211,6 +212,7 @@ class RC_autocannon_30mm_APC_Wheeled_04: RC_autocannon_30mm_APC_Wheeled_04_Base
 		class player: player
 		{
 			reloadTime=0.3;
+			dispersion=0.0008;
 		};
 	};
 };

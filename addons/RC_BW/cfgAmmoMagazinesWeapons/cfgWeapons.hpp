@@ -34,7 +34,6 @@ class RC_MK30: RC_MK30_Base
 		"medium",
 		"far"
 	};
-
 	muzzles[]=
 	{
 		"HE",
@@ -95,7 +94,7 @@ class RC_MK30: RC_MK30_Base
 			"RC_160Rnd_30mm_HEAB_QF_T_Y"
 		};
 
-		class player: player {class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};
+		class player: player {dispersion=0.0008; class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};
 		class close: close {class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};
 		class short: short {class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};
 		class medium: medium {class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};
@@ -116,7 +115,7 @@ class RC_MK30: RC_MK30_Base
 			"RC_160Rnd_30mm_APFSDS_T_Y"
 		};
 
-		class player: player {class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};
+		class player: player {dispersion=0.0008; class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};
 		class close: close {class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};
 		class short: short {class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};
 		class medium: medium {class StandardSound {SoundSetShot[] = {"BWA3_MK30_Shot_SoundSet", "BWA3_MK30_Tail_SoundSet"};};magazineReloadTime = 0.3;};

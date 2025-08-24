@@ -230,8 +230,8 @@ class RC_2Rnd_IFV_MP_Overfly;
 class RC_2Rnd_TOW_MP_Overfly: RC_2Rnd_IFV_MP_Overfly
 {
 	ammo="RC_TOW_MP_Overfly";
-	displayName="TOW Overly";
-	displayNameShort="TOW Overly";
+	displayName="TOW Overfly";
+	displayNameShort="TOW Overfly";
 };
 class RC_2Rnd_IFV_AA;
 class RC_2Rnd_TOW_AA: RC_2Rnd_IFV_AA

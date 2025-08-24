@@ -259,8 +259,8 @@ class RC_TOW_MP_NLOS: RC_IFV_MP_NLOS
 	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
 	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
 };
-class RC_IFV_MP_Overly;
-class RC_TOW_MP_Overly: RC_IFV_MP_Overly
+class RC_IFV_MP_Overfly;
+class RC_TOW_MP_Overfly: RC_IFV_MP_Overfly
 {
 	effectsMissile="RHS_Missile2";
 	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
@@ -282,7 +282,7 @@ class RC_Javelin_MP_NLOS: RC_IFV_MP_NLOS
 	effectsMissileInit="RocketBackEffectsRPG";
 	effectsSmoke="SmokeShellWhite";
 };
-class RC_Javelin_MP_Overly: RC_IFV_MP_NLOS
+class RC_Javelin_MP_Overfly: RC_IFV_MP_Overfly
 {
 	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
 	effectsMissile="missile2";

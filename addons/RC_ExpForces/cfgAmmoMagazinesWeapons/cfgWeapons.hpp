@@ -3,6 +3,7 @@ class RC_EF_autocannon_30mm_Base: EF_autocannon_30mm_AAV9
 {
 	class HE;
 	class AP;
+	class player;
 };
 class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 {
@@ -21,6 +22,8 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 		magazineReloadTime=30;	//40
 		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		cursorAim="mg";
 
 		magazines[]=
 		{
@@ -33,9 +36,10 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 			"RC_EF_100Rnd_30mm_HEAB_T_G",
 			"RC_EF_100Rnd_30mm_HEAB_T_Y"
 		};
-
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-		cursorAim="mg";
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 	class AP: AP
 	{
@@ -43,6 +47,8 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 		magazineReloadTime=30;	//40
 		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		cursorAim="mg";
 
 		magazines[]=
 		{
@@ -51,9 +57,10 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 			"RC_EF_100Rnd_30mm_APFSDS_T_G",
 			"RC_EF_100Rnd_30mm_APFSDS_T_Y"
 		};
-
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-		cursorAim="mg";
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 };
 
@@ -63,6 +70,7 @@ class RC_EF_autocannon_50mm_Base: EF_autocannon_50mm_AAV9
 {
 	class HE;
 	class AP;
+	class player;
 };
 class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 {
@@ -80,6 +88,8 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 		magazineReloadTime=30;	//40
 		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		cursorAim="mg";
 
 		magazines[]=
 		{
@@ -92,9 +102,10 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 			"RC_EF_60Rnd_50mm_HEAB_T_G",
 			"RC_EF_60Rnd_50mm_HEAB_T_Y"
 		};
-
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-		cursorAim="mg";
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 	class AP: AP
 	{
@@ -102,6 +113,8 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 		magazineReloadTime=30;	//40
 		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		cursorAim="mg";
 
 		magazines[]=
 		{
@@ -110,9 +123,10 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 			"RC_EF_60Rnd_50mm_APFSDS_T_G",
 			"RC_EF_60Rnd_50mm_APFSDS_T_Y"
 		};
-
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-		cursorAim="mg";
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 };
 

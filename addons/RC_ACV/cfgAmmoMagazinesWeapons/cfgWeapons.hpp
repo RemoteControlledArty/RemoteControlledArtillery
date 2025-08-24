@@ -70,6 +70,7 @@ class RC_autocannon_30mm_ACV: RC_autocannon_30mm_ACV_Base
 		class player: player
 		{
 			reloadTime=0.3;
+			dispersion=0.0008;
 		};
 	};
 	class AP: AP
@@ -88,6 +89,7 @@ class RC_autocannon_30mm_ACV: RC_autocannon_30mm_ACV_Base
 		class player: player
 		{
 			reloadTime=0.225;
+			dispersion=0.0008;
 		};
 	};
 };
