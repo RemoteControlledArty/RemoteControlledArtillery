@@ -2463,15 +2463,56 @@ class RC_M_NLAW_AT_F_Core: MissileBase
 };
 class RC_IFV_MP_Overfly: RC_M_NLAW_AT_F_Core
 {
-	missileLockMaxDistance=4000;
-	timeToLive=10;
-	maxSpeed=350;
-	thrustTime=10;
-	cmImmunity=0.85;
-	proximityExplosionDistance=12;
-	triggerDistance=11;
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+
+	craterEffects="AAMissileCrater";
+	indirectHit=80;
+	indirectHitRange=10;
+	explosive=1;
+	timeToLive=20;	//25 CLBM likely also cannon lg atgm
+
+	//lockType=0;	//?, 0 Titan AT & cannon lg atgm, 1 Titan AP & CLMB, 0 likely fire forget 1 likely beamriding
+	irLock=1;
+	airLock=1;
+	laserLock=1;
+	allowAgainstInfantry=1;
+	aiAmmoUsageFlags="64 + 128 + 256 + 512";
+
+	simulationStep=0.0020000001;	//0.0020000001 CLMB & Titan AT & AA, 0.0099999998 missilebase, 0.050000001 missilecore
+	airFriction=0.085000001;		//0.050000001 CLBM, 0.2 missilebase, -0.00050000002 default & missilecore, 0.085000001 Titan AT
+	sideAirFriction=2;				//affects accuracy, 0.1 CLBM, 0.001 missilebase, 1 default & missilecore & Titan AT
+	maneuvrability=40;	//40 is accurate with 160m and 1 SAFr, 3 CLMB & missilecore, 20 missilebase & ?cannon lg atgm?
+	trackOversteer=1;	//1.4 CLBM, 1 default, missilecore, missilebase
+	trackLead=1;		//CLBM 0.94999999
+	maxSpeed=350;		//280 CLBM, 180 Titan AT, 350 125mm ATGM, 500 missilebase, 0 default & missilecore
+	
+	initTime=0;			//0 CLBM
+	thrustTime=10;		//5 CLMB & Titan, 6 cannon lg atgm, NLAW 0.80000001, too long thrust time seems to lead to misses
+	thrust=120;			//60 CLBM, 125mm ATGM, 40 cannon lg atgm, 45 Titan AT
+	fuseDistance=15;	//test
 
 	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
+	submunitionDirectionType="SubmunitionTargetDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-1};
+	triggerOnImpact=1;
+	triggerDistance=12;
+	proximityExplosionDistance=14;
+	deleteParentWhenTriggered=0;
+
+	//autoSeekTarget=1;	 //unlear if it works in this context
+	manualControl=1;
+	//manualControlOffset=100;	//??? CLMB
+	missileLockCone=300;
+	missileKeepLockedCone=300;
+	maxControlRange=4200;	//+200 for ascent and descent
+	missileLockMaxDistance=4000;
+	missileLockMinDistance=20;
+	missileLockMaxSpeed=100;	//35
+	weaponLockSystem="1 + 2 + 4 + 16";
+	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
+	cameraViewAvailable=1;
 
 	class Overfly	//: Direct
 	{

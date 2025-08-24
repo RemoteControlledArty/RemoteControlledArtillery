@@ -399,6 +399,22 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	magazineReloadTime=20;
 	cmImmunity=0.67;
 	//weaponLockDelay=3;	//3
+
+	/*
+	lockingTargetSound[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\NLAW\locking_NLAW",
+		0.31622776,
+		1
+	};
+	lockedTargetSound[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\NLAW\locked_NLAW",
+		0.31622776,
+		2.5
+	};
+	*/
+
 	magazines[]=
 	{
 		"RC_2Rnd_IFV_MP_LOS",
@@ -453,8 +469,8 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	};
 	class Overfly: Player
 	{
-		displayName="$STR_A3_FireMode_TopDown0";
-		textureType="topDown";
+		displayName="Overfly Top Attack";
+		textureType="overfly";
 		magazineReloadTime=20;
 
 		minRange=200;
