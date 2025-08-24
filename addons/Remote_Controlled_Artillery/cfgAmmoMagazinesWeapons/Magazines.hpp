@@ -1687,26 +1687,27 @@ class RC_50Rnd_50mm_HEAB_QF_T_Y: RC_50Rnd_50mm_HEAB_QF_T_R {ammo="RC_B_50mm_HEAB
 
 //missiles
 class 2Rnd_GAT_missiles;
-class RC_2Rnd_IFV_MP_NLOS: 2Rnd_GAT_missiles
+class RC_2Rnd_IFV_MP_LOS: 2Rnd_GAT_missiles
 {
+	displayName="4km ATGM";
+	displayNameShort="ATGM";
+	ammo="RC_IFV_MP_LOS";
 	count=2;
+};
+class RC_4Rnd_IFV_MP_LOS: RC_2Rnd_IFV_MP_LOS {count=4;};
+class RC_2Rnd_IFV_MP_NLOS: RC_2Rnd_IFV_MP_LOS
+{
 	displayName="4km NLOS ATGM";
 	displayNameShort="NLOS ATGM";
 	ammo="RC_IFV_MP_NLOS";
 };
 class RC_4Rnd_IFV_MP_NLOS: RC_2Rnd_IFV_MP_NLOS {count=4;};
-class RC_2Rnd_IFV_MP_LOS: RC_2Rnd_IFV_MP_NLOS
-{
-	displayName="4km ATGM";
-	displayNameShort="ATGM";
-	ammo="RC_IFV_MP_LOS";
-};
-class RC_4Rnd_IFV_MP_LOS: RC_2Rnd_IFV_MP_LOS {count=4;};
-class RC_2Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_NLOS
+class RC_2Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_LOS
 {
 	displayName="4km Overfly ATGM";
 	displayNameShort="Overfly ATGM";
 	ammo="RC_IFV_MP_Overfly";
+	initSpeed=100;
 };
 
 

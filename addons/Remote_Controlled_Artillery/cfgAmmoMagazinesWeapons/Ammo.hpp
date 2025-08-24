@@ -2186,7 +2186,7 @@ class RC_IFV_MP_Overfly: RC_IFV_MP_LOS
 	proximityExplosionDistance=14;
 
 	maxSpeed=350;		//280 CLBM, 180 Titan AT, 350 125mm ATGM, 500 missilebase, 0 default & missilecore
-	initTime=0;			//0 CLBM
+	initTime=0.25;			//0 CLBM
 	thrustTime=10;		//5 CLMB & Titan, 6 cannon lg atgm, NLAW 0.80000001, too long thrust time seems to lead to misses
 	thrust=120;			//60 CLBM, 125mm ATGM, 40 cannon lg atgm, 45 Titan AT
 

@@ -1290,7 +1290,7 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 		};
 		class player: player
 		{
-			dispersion=0.001;
+			dispersion=0.0008;
 			reloadTime=0.3;
 		};
 		class close: player
@@ -1381,7 +1381,7 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 		};
 		class player: player
 		{
-			dispersion=0.001;
+			dispersion=0.0008;
 			reloadTime=0.2;
 		};
 		class close: player
@@ -1823,6 +1823,10 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 			"RC_100Rnd_30mm_GPR_T_Y"
 			//"RC_100Rnd_30mm_Smoke"
 		};
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 	class AP: AP
 	{
@@ -1834,6 +1838,10 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 			"RC_100Rnd_30mm_APFSDS_T_G",
 			"RC_100Rnd_30mm_APFSDS_T_Y"
 		};
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 };
 
@@ -1844,6 +1852,7 @@ class RC_autocannon_30mm_base: autocannon_30mm
 {
 	class HE;
 	class AP;
+	class player;
 };
 class RC_autocannon_30mm: RC_autocannon_30mm_base
 {
@@ -1908,6 +1917,10 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 			"RC_100Rnd_30mm_GPR_T_Y"
 			//"RC_100Rnd_30mm_Smoke"
 		};
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 	class AP: AP
 	{
@@ -1918,6 +1931,10 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 			"RC_100Rnd_30mm_APFSDS_T_R",
 			"RC_100Rnd_30mm_APFSDS_T_G",
 			"RC_100Rnd_30mm_APFSDS_T_Y"
+		};
+		class player: player
+		{
+			dispersion=0.0008;
 		};
 	};
 };
@@ -2331,6 +2348,7 @@ class RC_autocannon_40mm_CTWS_Base: autocannon_40mm_CTWS
 {
 	class HE;
 	class AP;
+	class player;
 };
 class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 {
@@ -2395,6 +2413,10 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 			"RC_50Rnd_40mm_GPR_T_Y"
 			//"RC_50Rnd_40mm_Smoke"
 		};
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 	class AP: AP
 	{
@@ -2406,12 +2428,20 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 			"RC_50Rnd_40mm_APFSDS_T_G",
 			"RC_50Rnd_40mm_APFSDS_T_Y"
 		};
+		class player: player
+		{
+			dispersion=0.0008;
+		};
 	};
 };
 
 
 class autocannon_30mm_RCWS;
-class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
+class RC_autocannon_30mm_RCWS_Base: autocannon_30mm_RCWS
+{
+	class player;
+};
+class RC_autocannon_30mm_RCWS: RC_autocannon_30mm_RCWS_Base
 {
 	author="Ascent";
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
@@ -2468,6 +2498,10 @@ class RC_autocannon_30mm_RCWS: autocannon_30mm_RCWS
 		"RC_60Rnd_30mm_GPR_T_G",
 		"RC_60Rnd_30mm_GPR_T_R",
 		"RC_60Rnd_30mm_GPR_T_Y"
+	};
+	class player: player
+	{
+		dispersion=0.0008;
 	};
 };
 
