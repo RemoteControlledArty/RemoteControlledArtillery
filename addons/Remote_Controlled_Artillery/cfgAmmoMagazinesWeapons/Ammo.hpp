@@ -50,8 +50,8 @@ class ClaymoreDirectionalMine_Remote_Ammo_Scripted;
 class RC_APS_Expl_Scripted: ClaymoreDirectionalMine_Remote_Ammo_Scripted
 {
 	author="Ascent";
-	indirectHit=20;			//10	//default 40
-	indirectHitRange=15;	//5		//default 30
+	indirectHit=10;			//10	//default 40
+	indirectHitRange=5;		//5		//default 30
 	explosionAngle=200;				//default 60, 180 seems insufficient to damage source, but 360 endangers friendlies, but doesnt seem to actually work at all
 };
 

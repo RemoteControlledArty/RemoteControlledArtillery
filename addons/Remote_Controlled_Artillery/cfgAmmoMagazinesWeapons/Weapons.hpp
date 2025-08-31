@@ -519,6 +519,7 @@ class RC_IFV_Missile_Launcher_4R: RC_IFV_Missile_Launcher
 {
 	magazines[]=
 	{
+		"RC_4Rnd_IFV_MP_Overfly",
 		"RC_4Rnd_IFV_MP_NLOS",
 		"RC_4Rnd_IFV_AA"
 	};

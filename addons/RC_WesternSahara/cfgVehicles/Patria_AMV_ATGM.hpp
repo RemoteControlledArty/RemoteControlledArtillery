@@ -56,10 +56,7 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
-
 	RC_ATrespondingTurret[]={0,0};
-	//RC_ignoreRockets=1;
-	RC_APSCharges=2;
 
 	weapons[]=
 	{
@@ -68,7 +65,7 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
