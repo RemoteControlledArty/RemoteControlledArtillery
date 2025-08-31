@@ -61,7 +61,7 @@ class RC_FPV_Deployer_Ammo: BulletBase
 {
 	muzzleEffect="BIS_fnc_effectFiredSmokeLauncher";
 	effectsSmoke="EmptyEffect";
-	weaponLockSystem="1 + 2";
+	weaponLockSystem=0;
 	hit=1;
 	indirectHit=0;
 	indirectHitRange=0;

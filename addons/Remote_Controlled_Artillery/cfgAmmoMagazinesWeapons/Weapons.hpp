@@ -9,6 +9,7 @@ class RC_target_confirmer: Default
 		"RC_target_confirmer_mag"
 	};
 	canLock=2;
+	weaponLockSystem=0;
 };
 class RC_target_confirmer_datalink: RC_target_confirmer
 {
@@ -335,7 +336,7 @@ class RC_ATGM_SACLOS: launch_Vorona_base_F
 	displayName="SACLOS ATGM";
 	displayNameShort="SACLOS ATGM";
 	canLock=0;
-	weaponLockSystem="1 + 2";	//"1 + 4 + 16";
+	weaponLockSystem=0;	//"1 + 4 + 16";
 	reloadTime=7;
 	magazineReloadTime=7;
 	autoReload=1;	
