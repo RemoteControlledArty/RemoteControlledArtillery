@@ -52,22 +52,6 @@ class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	//RC_ATrespondingTurret[]={0,0};
-	//RC_ignoreRockets=1;
-
-	weapons[]=
-	{
-		"RC_APS_W",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		//"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-
 	author="Ascent";
 	faction="RemoteControlled_B";
 	scope=0;
@@ -135,8 +119,23 @@ class RC_ICV_7_WD: RC_ICV_IFV_7_WD
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
 	};
+	
+	//RC_ATrespondingTurret[]={0,0};
 
-	displayName="RC BTR-100 unarmed";
+	weapons[]=
+	{
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
+
+	displayName="RC BTR-80 unarmed";	//RC BTR-100 unarmed
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -343,6 +342,19 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 	};
 
 	RC_ATrespondingTurret[]={0,0};
+	
+	weapons[]=
+	{
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
 
 	displayName="BTR-100 Bumerang";
 	editorSubcategory="RC_IFV_ATGM_subcat";

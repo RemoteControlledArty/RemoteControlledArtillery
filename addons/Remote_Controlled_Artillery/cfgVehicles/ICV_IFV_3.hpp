@@ -55,22 +55,6 @@ class RC_ICV_IFV_3_A: RC_ICV_IFV_3_A_Base
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
 
-	//RC_ATrespondingTurret[]={0,0};
-	//RC_ignoreRockets=1;
-
-	weapons[]=
-	{
-		"RC_APS_W",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		//"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-
 	author="Ascent";
 	faction="RemoteControlled_B";
 	scope=0;
@@ -165,6 +149,20 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 	};
 	//init="if (!local (_this select 0)) exitwith {}; (_this select 0) spawn {waitUntil {!isNull commander _this}; _this deleteVehicleCrew commander _this; {_this animate [_x, 1]} forEach ['HideHull','HideTurret'];}; (_this select 0) spawn {while {true} do {if (isPlayer _this && !(isPlayer (gunner _this))) then {_this lockTurret [[0], true]} else {_this lockTurret [[0], false]}; sleep 0.5;};}; (_this select 0) spawn {while {true} do {_speedCheck1 = false; _speedCheck2 = false; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false}; sleep 4; if ((speed _this <= 0.1) and (speed _this >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false}; if ((_speedCheck1) and (_speedCheck2)) then {_this engineOn false};};};";
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
+
+	weapons[]=
+	{
+		"TruckHorn",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
 
 	displayName="RC Pandur II unarmed";
 	editorSubcategory="RC_ICV_subcat";
@@ -379,6 +377,20 @@ class RC_ICV_3_WD_I: RC_ICV_3_WD
 class RC_IFV_3_A_Base: RC_ICV_IFV_3_A
 {
 	RC_ATrespondingTurret[]={0,0};
+
+	weapons[]=
+	{
+		"TruckHorn",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
 	
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
@@ -562,7 +574,6 @@ class RC_IFV_3_A: RC_IFV_3_A_Base
 	editorSubcategory="RC_IFV_ATGM_subcat";
 	scope=2;
 	scopeCurator=2;
-
 	crew="B_UAV_AI";
 };
 class RC_IFV_3_A_O: RC_IFV_3_A

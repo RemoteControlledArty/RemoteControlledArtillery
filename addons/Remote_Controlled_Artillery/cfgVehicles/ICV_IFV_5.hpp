@@ -46,22 +46,6 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	//RC_ATrespondingTurret[]={0,0};
-	//RC_ignoreRockets=1;
-
-	weapons[]=
-	{
-		"RC_APS_W",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		//"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-
 	author="Ascent";
 	faction="RemoteControlled_O";
 	scope=0;
@@ -134,6 +118,19 @@ class RC_ICV_5_A_O: RC_ICV_IFV_5_A
 		};
 	};
 
+	weapons[]=
+	{
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
+
 	displayName="RC BM-2T unarmed";
 	editorSubcategory="RC_ICV_subcat";
 	scope=2;
@@ -149,16 +146,6 @@ class RC_ICV_5_A_O: RC_ICV_IFV_5_A
 
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
-
-	weapons[]=
-	{
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	class Turrets: Turrets
 	{
@@ -314,8 +301,20 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
-
 	RC_ATrespondingTurret[]={0,0};
+
+	weapons[]=
+	{
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
 
 	displayName="BM-2T";
 	editorSubcategory="RC_IFV_ATGM_subcat";
@@ -328,16 +327,6 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
-	
-	weapons[]=
-	{
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	class Turrets: Turrets
 	{

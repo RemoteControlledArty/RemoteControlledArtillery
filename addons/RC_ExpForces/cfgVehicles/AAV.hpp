@@ -49,6 +49,9 @@ class RC_AAV9A1: RC_AAV9A1_Base
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
 	};
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
@@ -56,9 +59,7 @@ class RC_AAV9A1: RC_AAV9A1_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-
 	RC_ATrespondingTurret[]={4,1};
-	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{
@@ -90,6 +91,10 @@ class RC_AAV9A1: RC_AAV9A1_Base
 	normalSpeedForwardCoef=0.75;
 	enginePower=1000;	//800
 	peakTorque=4000;	//3400
+
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherVelocity=14;
+	smokeLauncherAngle=180;
 	
 	/*
 	class HitPoints: HitPoints
@@ -234,24 +239,7 @@ class RC_AAV9A1_A: RC_AAV9A1
 	editorSubcategory="RC_IFV_subcat";
 	scope=2;
 	scopeCurator=2;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	crew="B_UAV_AI";
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherVelocity=14;
-	smokeLauncherAngle=180;
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	class Turrets: Turrets
 	{
@@ -600,6 +588,9 @@ class RC_AAV9: RC_AAV9_Base
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
 	};
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
@@ -607,8 +598,20 @@ class RC_AAV9: RC_AAV9_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-
 	RC_ATrespondingTurret[]={4,1};
+
+	weapons[]=
+	{
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
 
 	author="Ascent";
 	faction="RemoteControlled_B";
@@ -627,6 +630,10 @@ class RC_AAV9: RC_AAV9_Base
 	normalSpeedForwardCoef=0.75;
 	enginePower=1000;	//800
 	peakTorque=4000;	//3400
+
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherVelocity=14;
+	smokeLauncherAngle=180;
 	
 	/*
 	class HitPoints: HitPoints
@@ -771,24 +778,7 @@ class RC_AAV9_A: RC_AAV9
 	editorSubcategory="RC_IFV_subcat";
 	scope=2;
 	scopeCurator=2;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	crew="B_UAV_AI";
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherVelocity=14;
-	smokeLauncherAngle=180;
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	class Turrets: Turrets
 	{

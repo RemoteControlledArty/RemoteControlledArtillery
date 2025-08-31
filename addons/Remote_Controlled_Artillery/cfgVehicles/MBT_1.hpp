@@ -45,9 +45,7 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-
 	RC_ATrespondingTurret[]={0,0};
-	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{

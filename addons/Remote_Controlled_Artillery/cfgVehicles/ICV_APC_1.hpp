@@ -48,22 +48,6 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	//RC_ATrespondingTurret[]={1};
-	//RC_ignoreRockets=1;
-
-	weapons[]=
-	{
-		"RC_APS_W",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		//"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-
 	author="Ascent";
 	faction="RemoteControlled_B";
 	forceHideDriver=1;
@@ -140,7 +124,21 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	RC_ATrespondingTurret[]={1};
+	//RC_ATrespondingTurret[]={1};
+
+	weapons[]=
+	{
+		"TruckHorn",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
 	
 	displayName="RC Namer unarmed";
 	editorSubcategory="RC_ICV_subcat";
@@ -307,6 +305,22 @@ class RC_ICV_1_ReTex_D_I: RC_ICV_1_ReTex_D
 
 class RC_APC_1_A_Base: RC_ICV_APC_1_A
 {
+	RC_ATrespondingTurret[]={1};
+
+	weapons[]=
+	{
+		"TruckHorn",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
+	
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_APC.hpp"
 	editorSubcategory="RC_APC_subcat";

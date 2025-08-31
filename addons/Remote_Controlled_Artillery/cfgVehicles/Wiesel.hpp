@@ -1056,9 +1056,7 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-
 	//RC_ATrespondingTurret[]={0};	//deactivated until lock isnt stuck as long
-	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{
@@ -1441,9 +1439,7 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-
 	//RC_ATrespondingTurret[]={0};	//deactivated until lock isnt stuck as long
-	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{

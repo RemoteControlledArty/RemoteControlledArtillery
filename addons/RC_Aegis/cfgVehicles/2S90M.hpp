@@ -44,15 +44,16 @@ class RC_2S90M: RC_2S90M_Base
 		};
 	};
 	
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-
 	RC_ATrespondingTurret[]={0,0};
-	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{
@@ -140,9 +141,6 @@ class RC_2S90M_WD: RC_2S90M
 	editorSubcategory="RC_FSV_subcat";
 	scope=2;
 	scopeCurator=2;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	crew="B_UAV_AI";
 
 	class Turrets: Turrets

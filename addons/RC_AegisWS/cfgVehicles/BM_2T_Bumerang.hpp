@@ -37,6 +37,9 @@ class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
 	};
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
@@ -73,6 +76,10 @@ class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 	crewCrashProtection=0.01;
 	enginePower=575.3;
 	peakTorque=2923.7;
+
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherVelocity=14;
+	smokeLauncherAngle=180;
 
 	/*
 	hiddenSelectionsTextures[]=
@@ -155,22 +162,7 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 	scope=2;
 	scopeCurator=2;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	crew="B_UAV_AI";
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherVelocity=14;
-	smokeLauncherAngle=180;
-	
-	weapons[]=
-	{
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	class Turrets: Turrets
 	{

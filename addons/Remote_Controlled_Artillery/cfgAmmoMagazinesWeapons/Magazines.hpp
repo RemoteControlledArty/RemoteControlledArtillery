@@ -99,22 +99,28 @@ class RC_Laserbatteries: Laserbatteries
 class Vorona_HEAT;
 class RC_1Rnd_ATGM_MP_SACLOS: Vorona_HEAT
 {
-	displayName="MP 4km SACLOS";
-	displayNameShort="MP 4km";
+	displayName="MP SACLOS ATGM";
+	displayNameShort="SACLOS ATGM";
 	ammo="RC_M_ATGM_MP_SACLOS";
 };
 class 1Rnd_GAT_missiles;
-class RC_1Rnd_ATGM_MP_NLOS: 1Rnd_GAT_missiles
-{
-	displayName="MP 4km	NLOS";
-	displayNameShort="MP 4km";
-	ammo="RC_M_ATGM_MP_NLOS";
-};
 class RC_1Rnd_ATGM_MP_LOS: 1Rnd_GAT_missiles
 {
-	displayName="MP 4km";
-	displayNameShort="MP 4km";
+	displayName="MP ATGM";
+	displayNameShort="ATGM";
 	ammo="RC_M_ATGM_MP_LOS";
+};
+class RC_1Rnd_ATGM_MP_Overfly: 1Rnd_GAT_missiles
+{
+	displayName="MP Overfly ATGM";
+	displayNameShort="Overfly ATGM";
+	ammo="RC_M_ATGM_MP_Overfly";
+};
+class RC_1Rnd_ATGM_MP_NLOS: 1Rnd_GAT_missiles
+{
+	displayName="MP NLOS ATGM";
+	displayNameShort="NLOS ATGM";
+	ammo="RC_M_ATGM_MP_NLOS";
 };
 
 /*

@@ -61,7 +61,7 @@ class RC_FPV_Deployer_Ammo: BulletBase
 {
 	muzzleEffect="BIS_fnc_effectFiredSmokeLauncher";
 	effectsSmoke="EmptyEffect";
-	weaponLockSystem="1 + 2 + 4";
+	weaponLockSystem="1 + 2";
 	hit=1;
 	indirectHit=0;
 	indirectHitRange=0;
@@ -1754,7 +1754,7 @@ class RC_Sh_120mm_HEAB_LV_Overflight: RC_Sh_120mm_HEAB_LV_Overflight_Base
 	missileLockMaxDistance=200;	//800
 	missileLockMinDistance=1;	//20
 	missileLockMaxSpeed=100;	//35
-	weaponLockSystem="1 + 2 + 4 + 16";	//edit, reduce
+	weaponLockSystem="1 + 2 + 16";	//edit, reduce
 	cmImmunity=1;
 
 	class Components: Components
@@ -2092,7 +2092,7 @@ class RC_IFV_MP_LOS: M_Titan_AT_long_Base
 	missileLockMaxDistance=4000;
 	missileLockMinDistance=20;
 	missileLockMaxSpeed=100;	//35
-	weaponLockSystem="1 + 2 + 4 + 16";
+	weaponLockSystem="1 + 2 + 16";
 	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 	cameraViewAvailable=1;
 
@@ -2401,7 +2401,7 @@ class RC_IFV_AA: RC_IFV_AA_Base
 {
 	indirectHitRange=12;
 	proximityExplosionDistance=12;
-	weaponLockSystem="2 + 4 + 16";
+	weaponLockSystem="2 + 16";
 	laserLock=1;
 	irLock=1;
 	airLock=1;
@@ -2540,7 +2540,7 @@ class RC_MP_NLOS_Nano: RC_IFV_MP_NLOS
 	autoSeekTarget=1;	 //unlear if it works in this context
 	manualControl=0;
 	//missileLockMaxSpeed=100;	//35
-	//weaponLockSystem="1 + 2 + 4 + 16";
+	//weaponLockSystem="1 + 2 + 16";
 	//cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 };
 /*
@@ -2548,7 +2548,7 @@ class RC_AA_NLOS: RC_IFV_AA
 {
 	indirectHitRange=12;
 	proximityExplosionDistance=12;
-	//weaponLockSystem="2 + 4 + 16";
+	//weaponLockSystem="2 + 16";
 	//cmImmunity=0.89999998;
 	lockType=0;
 
@@ -2593,6 +2593,8 @@ class RC_70mm_AA: RC_IFV_AA
 class M_Vorona_HEAT;
 class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 {
+	weaponLockSystem="4 + 16";
+
 	submunitionAmmo="RC_ammo_Penetrator_MP";
 	indirectHit=40;
 	indirectHitRange=10;
@@ -2651,7 +2653,7 @@ class RC_M_ATGM_MP_LOS: M_Titan_AT_long_Base
 	missileLockMaxDistance=4000;
 	missileLockMinDistance=20;
 	missileLockMaxSpeed=100;	//35
-	weaponLockSystem="1 + 2 + 4 + 16";
+	weaponLockSystem="1 + 2 + 16";
 	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 	cameraViewAvailable=1;
 
@@ -2815,7 +2817,7 @@ class RC_M_120mm_cannon_ATGM: RC_M_120mm_cannon_ATGM_Base
 	missileLockMaxDistance=4000;
 	missileLockMinDistance=20;
 	missileLockMaxSpeed=100;	//35
-	weaponLockSystem="1 + 2 + 4 + 16";
+	weaponLockSystem="1 + 2 + 16";
 	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 	cameraViewAvailable=1;
 
@@ -3569,7 +3571,7 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Steering
 	cameraViewAvailable=1;
 
 	lockType=0;
-	weaponLockSystem="4 + 16";
+	weaponLockSystem="2 + 16";
 	cmImmunity=0.9;
 
 	missileLockCone=180;
@@ -3696,7 +3698,7 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	weaponLockSystem="2 + 4 + 16";
+	weaponLockSystem="2 + 16";
 
 	class Components: Components
 	{

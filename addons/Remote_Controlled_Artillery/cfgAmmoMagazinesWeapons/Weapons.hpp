@@ -335,7 +335,7 @@ class RC_ATGM_SACLOS: launch_Vorona_base_F
 	displayName="SACLOS ATGM";
 	displayNameShort="SACLOS ATGM";
 	canLock=0;
-	weaponLockSystem="1 + 4 + 16";
+	weaponLockSystem="1 + 2";	//"1 + 4 + 16";
 	reloadTime=7;
 	magazineReloadTime=7;
 	autoReload=1;	
@@ -355,13 +355,14 @@ class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
 	displayName="NLOS ATGM";
 	displayNameShort="NLOS ATGM";
 	canLock=2;
-	weaponLockSystem="1 + 2 + 4 + 16";
+	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
 	reloadTime=7;
 	magazineReloadTime=7;
 	autoReload=1;
 	magazines[]=
 	{
 		"RC_1Rnd_ATGM_MP_LOS",
+		"RC_1Rnd_ATGM_MP_Overfly",
 		"RC_1Rnd_ATGM_MP_NLOS"
 	};
 
@@ -393,7 +394,7 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 {
 	scope=1;
 	canLock=2;
-	weaponLockSystem="1 + 2 + 4 + 16";
+	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
 	displayName="NLOS ML";
 	displayNameShort="NLOS ML";
 	magazineReloadTime=20;
@@ -528,7 +529,7 @@ class RC_IFV_Missile_Launcher_4R: RC_IFV_Missile_Launcher
 
 class RC_AA_Missile_Launcher: RC_IFV_Missile_Launcher
 {
-	//weaponLockSystem="1 + 2 + 4 + 16";
+	weaponLockSystem="1 + 2";
 	displayName="AA ML";
 	displayNameShort="AA ML";
 	magazineReloadTime=50;
@@ -536,6 +537,7 @@ class RC_AA_Missile_Launcher: RC_IFV_Missile_Launcher
 	{
 		"RC_4Rnd_IFV_AA",
 		"4Rnd_GAA_missiles",
+		"RC_4Rnd_IFV_MP_Overfly",
 		"RC_4Rnd_IFV_MP_NLOS",
 		"4Rnd_Titan_long_missiles"
 	};
@@ -557,6 +559,7 @@ class RC_AC_FSV_Missile_Launcher: RC_AA_Missile_Launcher
 	displayNameShort="NLOS ML";
 	magazines[]=
 	{
+		"RC_4Rnd_IFV_MP_Overfly",
 		"RC_4Rnd_IFV_MP_NLOS",
 		"4Rnd_Titan_long_missiles",
 		"RC_4Rnd_IFV_AA",
@@ -574,7 +577,7 @@ class RC_70mm_AA_Missile_Launcher: missiles_SAAMI
 {
 	scope=1;
 	canLock=2;
-	weaponLockSystem="1 + 2 + 4 + 16";
+	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
 	displayName="70mm AA";
 	displayNameShort="70mm AA";
 	//magazineReloadTime=20;

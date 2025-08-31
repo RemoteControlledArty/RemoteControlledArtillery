@@ -56,9 +56,7 @@ class RC_FSV_A_Base: RC_FSV_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-
 	RC_ATrespondingTurret[]={1};
-	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{

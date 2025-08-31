@@ -57,22 +57,6 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
 
-	//RC_ATrespondingTurret[]={0,0};
-	//RC_ignoreRockets=1;
-
-	weapons[]=
-	{
-		"RC_APS_W",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		//"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-
 	author="Ascent";
 	faction="RemoteControlled_B";
 	scope=0;
@@ -89,6 +73,10 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 	normalSpeedForwardCoef=0.64;
 	enginePower=593.8;
 	peakTorque=3017.6;
+
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherVelocity=14;
+	smokeLauncherAngle=180;
 
 	hiddenSelectionsTextures[]=
 	{
@@ -169,24 +157,21 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
 
-	/*
-	//doesnt work yet
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherVelocity=14;
-	smokeLauncherOnTurret=0;	//1
-	smokeLauncherAngle=180;
+	smokeLauncherOnTurret=0;	//1		//smoke still only for driver, not commander
 
 	weapons[]=
 	{
 		"TruckHorn",
+		"RC_APS_W",
 		"SmokeLauncher"
 	};
 	magazines[]=
 	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-	*/
 
 	class Turrets: Turrets
 	{
@@ -391,6 +376,20 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 
 	RC_ATrespondingTurret[]={0,0};
 
+	weapons[]=
+	{
+		"TruckHorn",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
+
 	displayName="Patria AMV";
 	editorSubcategory="RC_IFV_subcat";
 	scope=2;
@@ -399,20 +398,6 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	crew="B_UAV_AI";
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherVelocity=14;
-	smokeLauncherAngle=180;
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	class Turrets: Turrets
 	{

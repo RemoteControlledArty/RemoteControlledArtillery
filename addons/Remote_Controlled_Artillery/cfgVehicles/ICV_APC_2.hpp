@@ -52,23 +52,6 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
 
-	//RC_ATrespondingTurret[]={1};
-	//RC_ignoreRockets=1;
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"RC_APS_W",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		//"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-
 	author="Ascent";
 	faction="RemoteControlled_O";
 	scope=0;
@@ -315,7 +298,21 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	};
 	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
 
-	RC_ATrespondingTurret[]={1};
+	//RC_ATrespondingTurret[]={1};
+
+	weapons[]=
+	{
+		"TruckHorn",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
 	
 	displayName="RC Otokar Arma unarmed";
 	editorSubcategory="RC_ICV_subcat";
@@ -563,6 +560,22 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
+	};
+
+	RC_ATrespondingTurret[]={1};
+
+	weapons[]=
+	{
+		"TruckHorn",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
 	};
 
 	displayName="Otokar Arma";
