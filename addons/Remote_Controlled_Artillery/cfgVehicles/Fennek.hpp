@@ -55,19 +55,6 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 	//redRpm=1100;
 	//idleRpm=250;
 
-	weapons[]=
-	{
-		"RC_target_confirmer_datalink",
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"RC_target_confirmer_mag",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-
 	smokeLauncherVelocity=5;
 	smokeLauncherGrenadeCount=6;
 	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
@@ -218,6 +205,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerCompartments="Compartment2";
 			stabilizedInAxes=3;
+			//maxHorizontalRotSpeed=2;
 
 			weapons[]=
 			{
@@ -319,6 +307,20 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 
 class RC_Fennek_A: RC_Fennek_A_Base
 {
+	weapons[]=
+	{
+		"TruckHorn",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
+
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -397,10 +399,23 @@ class RC_Mortar_Fennek_A: RC_Fennek_A
 		};
 	};
 
+	weapons[]=
+	{
+		"RC_target_confirmer_datalink",
+		"TruckHorn",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_target_confirmer_mag",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
+
 	displayName="RC Mortar Fennek";
 	editorSubcategory="RC_Mortar_subcat";
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
-	camouflage=2;	//2
+	//camouflage=2;	//2
 
 	class Components: Components
 	{

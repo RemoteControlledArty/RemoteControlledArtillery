@@ -49,6 +49,9 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
@@ -60,6 +63,7 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 
 	weapons[]=
 	{
+		"TruckHorn",
 		"RC_APS_W",
 		"SmokeLauncher"
 	};
@@ -87,6 +91,10 @@ class RC_ICV_IFV_9_A: RC_ICV_IFV_9_A_Base
 	normalSpeedForwardCoef=0.64;
 	enginePower=593.8;
 	peakTorque=3017.6;
+
+	smokeLauncherGrenadeCount=12;
+	smokeLauncherVelocity=14;
+	smokeLauncherAngle=180;
 
 	hiddenSelectionsTextures[]=
 	{
@@ -191,24 +199,7 @@ class RC_IFV_9_A: RC_ICV_IFV_9_A
 	editorSubcategory="RC_IFV_ATGM_subcat";
 	scope=2;
 	scopeCurator=2;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	crew="B_UAV_AI";
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherVelocity=14;
-	smokeLauncherAngle=180;
-	
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
 
 	class Turrets: Turrets
 	{

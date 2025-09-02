@@ -1,6 +1,7 @@
 init=
 "if (!local (_this select 0)) exitwith {}; \
 (_this select 0) spawn { \
+	sleep 1; \
 	_this setHitPointDamage ['#light_l', 1]; \
 	_this setHitPointDamage ['#light_r', 1]; \
 	_this setHitPointDamage ['#light_l_flare', 1]; \
