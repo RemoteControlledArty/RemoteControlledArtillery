@@ -53,6 +53,11 @@ class RC_RHS_mag_1100Rnd_762x51_T_R: rhs_mag_1100Rnd_762x51_M240
 	tracersEvery=1;
 };
 class RC_RHS_mag_1200Rnd_762x51_T_R: RC_RHS_mag_1100Rnd_762x51_T_R {count=1200;};
+class RC_RHS_mag_1000Rnd_762x51_T_R: RC_RHS_mag_1100Rnd_762x51_T_R {count=1000;};
+class RC_RHS_mag_800Rnd_762x51_T_R: RC_RHS_mag_1100Rnd_762x51_T_R {count=800;};
+class RC_RHS_mag_600Rnd_762x51_T_R: RC_RHS_mag_1100Rnd_762x51_T_R {count=600;};
+
+
 class RC_RHS_mag_1100Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_T_R
 {
 	ammo="RC_RHS_ammo_M61_AP_T_R";
@@ -60,6 +65,9 @@ class RC_RHS_mag_1100Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_T_R
 	displaynameshort="M61 AP";
 };
 class RC_RHS_mag_1200Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_M61_T_R {count=1200;};
+class RC_RHS_mag_1000Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_M61_T_R {count=1000;};
+class RC_RHS_mag_800Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_M61_T_R {count=800;};
+class RC_RHS_mag_600Rnd_762x51_M61_T_R: RC_RHS_mag_1100Rnd_762x51_M61_T_R {count=600;};
 
 
 //25mm

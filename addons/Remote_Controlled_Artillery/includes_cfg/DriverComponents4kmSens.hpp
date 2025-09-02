@@ -84,8 +84,10 @@ class Components: Components
 				};
 				*/
 				maxTrackableSpeed=15;
-				angleRangeHorizontal=360;
-				angleRangeVertical=90;
+				//angleRangeHorizontal=360;
+				//angleRangeVertical=90;
+				angleRangeHorizontal=22.5;
+				angleRangeVertical=22.5;
 				animDirection="mainGun";
 				aimDown=0;	//-0.5
 			};

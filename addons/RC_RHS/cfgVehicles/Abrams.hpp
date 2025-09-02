@@ -225,16 +225,7 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 						"rhsusf_weap_M250",
 						"rhsusf_weap_duke"
 					};
-					magazines[]=
-					{
-						"RC_RHS_mag_400rnd_127x99_SLAP_T_R",
-						"RC_RHS_mag_400rnd_127x99_SLAP_T_R",
-						"RC_RHS_mag_400rnd_127x99_SLAP_T_R",
-						"Laserbatteries",
-						"rhsusf_mag_L8A3_12",
-						"rhsusf_mag_L8A3_12",
-						"rhsusf_mag_duke"
-					};
+					#include "\RC_RHS\includes_vicmags\mags_Abrams_com_red.hpp"
 				};
 
 				class Loader: Loader

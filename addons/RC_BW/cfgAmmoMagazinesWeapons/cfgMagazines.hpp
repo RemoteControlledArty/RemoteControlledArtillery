@@ -158,6 +158,10 @@ class RC_160Rnd_30mm_HEAB_QF_T_Y: RC_100Rnd_30mm_HEAB_QF_T_Y {count=160; display
 
 
 //MG
-class RC_600Rnd_338_T_R: RC_200Rnd_338_T_R {count=600; displayNameShort="8.6x70mm";};
-class RC_600Rnd_338_T_G: RC_200Rnd_338_T_G {count=600; displayNameShort="8.6x70mm";};
-class RC_600Rnd_338_T_Y: RC_200Rnd_338_T_Y {count=600; displayNameShort="8.6x70mm";};
+class RC_400Rnd_338_T_R: RC_200Rnd_338_T_R {count=400; displayNameShort="8.6x70mm";};
+class RC_400Rnd_338_T_G: RC_200Rnd_338_T_G {count=400; displayNameShort="8.6x70mm";};
+class RC_400Rnd_338_T_Y: RC_200Rnd_338_T_Y {count=400; displayNameShort="8.6x70mm";};
+
+class RC_600Rnd_338_T_R: RC_400Rnd_338_T_R {count=600;};
+class RC_600Rnd_338_T_G: RC_400Rnd_338_T_G {count=600;};
+class RC_600Rnd_338_T_Y: RC_400Rnd_338_T_Y {count=600;};

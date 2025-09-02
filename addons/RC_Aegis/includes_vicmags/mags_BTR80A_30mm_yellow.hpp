@@ -2,6 +2,7 @@ magazines[]=
 {
 	"RC_160Rnd_30mm_MP_Pen_T_Y",
 	"RC_160Rnd_30mm_MP_DF_T_Y",
+	
 	/*
 	//available but unused
 	"RC_160Rnd_30mm_MP_QF_T_Y",
@@ -17,9 +18,13 @@ magazines[]=
 	"RC_160Rnd_30mm_MP_T_Y",
 	"RC_160Rnd_30mm_GPR_T_Y",
 	*/
+
 	"RC_160Rnd_30mm_APFSDS_T_Y",
 	"RC_160Rnd_30mm_APFSDS_T_Y",
-	"RC_1200Rnd_93x64_T_Y",
+	"RC_160Rnd_30mm_APFSDS_T_Y",
+
+	"RC_800Rnd_93x64_T_Y",
+
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"
 };

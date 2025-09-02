@@ -198,26 +198,7 @@ class RC_M2A2_D: RC_M2A2_D_Base
 
 				"rhsusf_weap_M257_8"
 			};
-			magazines[]=
-			{
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_230Rnd_25mm_HEI_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_M61_T_R",
-				"RC_RHS_mag_1100Rnd_762x51_M61_T_R",
-				"RC_RHS_mag_2Rnd_TOW2A",
-				"RC_RHS_mag_2Rnd_TOW2A",
-				"RC_RHS_mag_2Rnd_TOW2A",
-				"RC_RHS_mag_2Rnd_TOW2BB",
-				"rhs_laserfcsmag",
-
-				"rhsusf_mag_L8A3_8",
-				"rhsusf_mag_L8A3_8"
-			};
+			#include "\RC_RHS\includes_vicmags\mags_oldBradley_red.hpp"
 			
 			class OpticsIn
 			{

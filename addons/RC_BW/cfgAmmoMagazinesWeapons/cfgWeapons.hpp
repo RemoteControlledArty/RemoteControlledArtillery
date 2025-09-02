@@ -155,6 +155,10 @@ class RC_MG338_vehicle: RC_MG338_vehicle_Base
 	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
+		"RC_400Rnd_338_T_R",
+		"RC_400Rnd_338_T_G",
+		"RC_400Rnd_338_T_Y",
+
 		"RC_600Rnd_338_T_R",
 		"RC_600Rnd_338_T_G",
 		"RC_600Rnd_338_T_Y"

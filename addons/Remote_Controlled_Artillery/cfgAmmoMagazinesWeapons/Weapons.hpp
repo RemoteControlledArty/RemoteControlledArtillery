@@ -824,9 +824,19 @@ class RC_MMG_93x64_coax: RC_MMG_338_coax
 		"RC_200Rnd_93x64_T_G",
 		"RC_200Rnd_93x64_T_R",
 		"RC_200Rnd_93x64_T_Y",
+
+		"RC_600Rnd_93x64_T_G",
+		"RC_600Rnd_93x64_T_R",
+		"RC_600Rnd_93x64_T_Y",
+
+		"RC_800Rnd_93x64_T_G",
+		"RC_800Rnd_93x64_T_R",
+		"RC_800Rnd_93x64_T_Y",
+
 		"RC_1000Rnd_93x64_T_G",
 		"RC_1000Rnd_93x64_T_R",
 		"RC_1000Rnd_93x64_T_Y",
+
 		"RC_1200Rnd_93x64_T_G",
 		"RC_1200Rnd_93x64_T_R",
 		"RC_1200Rnd_93x64_T_Y"
@@ -4456,7 +4466,7 @@ class RC_indirect_40mm_GMG_V4: RC_vehiclemortar_60mm_V4
 	//ballisticsComputer=8;	//direct fire reticle for highest charge
 	
 	reloadTime=0.25;
-	magazineReloadTime=2.5;
+	magazineReloadTime=5;	//2.5
 	autoFire=1;
 	autoReload=1;
 	textureType="fullAuto";
@@ -4464,9 +4474,9 @@ class RC_indirect_40mm_GMG_V4: RC_vehiclemortar_60mm_V4
 
 	magazines[]=
 	{
-		"RC_200Rnd_40mm_vic_Mo_shells"
+		"RC_200Rnd_40mm_vic_Mo_shells",
+		"RC_200Rnd_40mm_vic_Mo_Smoke"
 	};
-
 	modes[]=
 	{
 		"auto1",
@@ -4476,8 +4486,9 @@ class RC_indirect_40mm_GMG_V4: RC_vehiclemortar_60mm_V4
 	class auto1: Single1
 	{
 		displayName="CH1, 0.5km";
-		//artilleryDispersion=1.25;
+		artilleryDispersion=1.5;
 		reloadTime=0.25;
+		magazineReloadTime=5;	//2.5
 		autoFire=1;
 		autoReload=1;
 		textureType="fullAuto";

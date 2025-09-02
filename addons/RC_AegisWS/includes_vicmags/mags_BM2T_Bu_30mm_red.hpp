@@ -2,6 +2,7 @@ magazines[]=
 {
 	"RC_160Rnd_30mm_MP_Pen_T_R",
 	"RC_160Rnd_30mm_MP_DF_T_R",
+
 	/*
 	//available but unused
 	"RC_160Rnd_30mm_MP_QF_T_R",
@@ -13,11 +14,17 @@ magazines[]=
 	"RC_160Rnd_30mm_MP_T_R",
 	"RC_160Rnd_30mm_GPR_T_R",
 	*/
+
 	"RC_160Rnd_30mm_APFSDS_T_R",
 	"RC_160Rnd_30mm_APFSDS_T_R",
-	"RC_1200Rnd_93x64_T_R",
+	"RC_160Rnd_30mm_APFSDS_T_R",
+
+	"RC_800Rnd_93x64_T_R",
+	//"RC_1200Rnd_93x64_T_R",
+
 	"RC_4Rnd_IFV_MP_Overfly",
 	"RC_4Rnd_IFV_AA",
+
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"
 };

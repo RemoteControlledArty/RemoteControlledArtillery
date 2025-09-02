@@ -3,15 +3,21 @@ magazines[]=
 	"RC_60Rnd_50mm_MPAB_DF_T_Y",
 	"RC_60Rnd_50mm_MPAB_DF_T_Y",
 	"RC_60Rnd_50mm_MPAB_DF_T_Y",
-	//"RC_EF_60Rnd_50mm_HEAB_T_Y",
-	//"RC_EF_60Rnd_50mm_HEAB_T_Y",
-	//"RC_EF_60Rnd_50mm_HEAB_T_Y",
+	/*
+	"RC_EF_60Rnd_50mm_HEAB_T_Y",
+	"RC_EF_60Rnd_50mm_HEAB_T_Y",
+	"RC_EF_60Rnd_50mm_HEAB_T_Y",
+	*/
+
 	"RC_EF_60Rnd_50mm_APFSDS_T_Y",
 	"RC_EF_60Rnd_50mm_APFSDS_T_Y",
 	"RC_EF_60Rnd_50mm_APFSDS_T_Y",
+	"RC_EF_60Rnd_50mm_APFSDS_T_Y",
+
 	"RC_400Rnd_338_T_Y",
 	"RC_400Rnd_338_T_Y",
-	"RC_400Rnd_338_T_Y",
+	//"RC_400Rnd_338_T_Y",
+
 	"SmokeLauncherMag",
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"

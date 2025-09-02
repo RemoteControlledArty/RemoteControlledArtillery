@@ -4,8 +4,12 @@ magazines[]=
 	"RC_15Rnd_125mm_MP_T_Y",
 	"RC_3Rnd_125mm_MPAB_DF_T_Y",
 	//"RC_5Rnd_125mm_HEAB6_LV_indirect_T_Y",
+	
 	"RC_3Rnd_125mm_DLG_cannon_missiles",
-	"RC_1200Rnd_93x64_T_Y",
+	
+	"RC_600Rnd_93x64_T_Y",
+	//"RC_1200Rnd_93x64_T_Y",
+
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"
 };

@@ -200,6 +200,12 @@ class RC_200Rnd_93x64_T_G: VehicleMagazine
 };
 class RC_200Rnd_93x64_T_R: RC_200Rnd_93x64_T_G {ammo="RC_B_93x64_T_R";};
 class RC_200Rnd_93x64_T_Y: RC_200Rnd_93x64_T_G {ammo="RC_B_93x64_T_Y";};
+class RC_600Rnd_93x64_T_G: RC_200Rnd_93x64_T_G {count=600;};
+class RC_600Rnd_93x64_T_R: RC_200Rnd_93x64_T_R {count=600;};
+class RC_600Rnd_93x64_T_Y: RC_200Rnd_93x64_T_Y {count=600;};
+class RC_800Rnd_93x64_T_G: RC_200Rnd_93x64_T_G {count=800;};
+class RC_800Rnd_93x64_T_R: RC_200Rnd_93x64_T_R {count=800;};
+class RC_800Rnd_93x64_T_Y: RC_200Rnd_93x64_T_Y {count=800;};
 class RC_1000Rnd_93x64_T_G: RC_200Rnd_93x64_T_G {count=1000;};
 class RC_1000Rnd_93x64_T_R: RC_200Rnd_93x64_T_R {count=1000;};
 class RC_1000Rnd_93x64_T_Y: RC_200Rnd_93x64_T_Y {count=1000;};
@@ -5773,6 +5779,15 @@ class RC_40Rnd_82mm_vic_Mo_backuplowHEAB: RC_1Rnd_82mm_vic_Mo_backuplowHEAB
 class RC_200Rnd_40mm_vic_Mo_shells: RC_1Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_40mm_AMOS_HE";
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
+	initSpeed=200;	//4km reach
+	count=200;
+	muzzleImpulseFactor[]={0.1,0.1};
+};
+class RC_200Rnd_40mm_vic_Mo_Smoke: RC_1Rnd_82mm_Mo_Smoke_white
+{
+	ammo="RC_Sh_40mm_AMOS_Smoke";
+	RC_TerrainWarning=0;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	initSpeed=200;	//4km reach
 	count=200;

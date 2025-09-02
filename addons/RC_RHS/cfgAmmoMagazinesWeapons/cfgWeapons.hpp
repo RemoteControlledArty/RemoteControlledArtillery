@@ -264,6 +264,15 @@ class RC_RHS_weap_m240_abrams_coax: rhs_weap_m240_abrams_coax_base
 	
 	magazines[]=
 	{
+		"RC_RHS_mag_600Rnd_762x51_T_R",
+		"RC_RHS_mag_600Rnd_762x51_M61_T_R",
+
+		"RC_RHS_mag_800Rnd_762x51_T_R",
+		"RC_RHS_mag_800Rnd_762x51_M61_T_R",
+
+		"RC_RHS_mag_1000Rnd_762x51_T_R",
+		"RC_RHS_mag_1000Rnd_762x51_M61_T_R",
+		
 		"RC_RHS_mag_1200Rnd_762x51_T_R",
 		"RC_RHS_mag_1200Rnd_762x51_M61_T_R"
 	};
@@ -288,6 +297,15 @@ class RC_RHS_weap_m240_bradley_coax: rhs_weap_m240_bradley_coax_base
 	
 	magazines[]=
 	{
+		"RC_RHS_mag_600Rnd_762x51_T_R",
+		"RC_RHS_mag_600Rnd_762x51_M61_T_R",
+		
+		"RC_RHS_mag_800Rnd_762x51_T_R",
+		"RC_RHS_mag_800Rnd_762x51_M61_T_R",
+
+		"RC_RHS_mag_1000Rnd_762x51_T_R",
+		"RC_RHS_mag_1000Rnd_762x51_M61_T_R",
+
 		"RC_RHS_mag_1100Rnd_762x51_T_R",
 		"RC_RHS_mag_1100Rnd_762x51_M61_T_R"
 	};

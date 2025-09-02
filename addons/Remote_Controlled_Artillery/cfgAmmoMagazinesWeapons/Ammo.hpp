@@ -4334,6 +4334,55 @@ class RC_Sh_40mm_AMOS_HE: RC_G_40mm_HEDP
 	simulation="shotShell";
 	//explosive=1;
 };
+/*
+class SmokeShell;
+class RC_Sh_40mm_AMOS_Smoke: SmokeShell
+{	
+	//SmokeShellArty
+	simulation="shotSmoke";
+	effectsSmoke="SmokeShellWhiteSmall";
+	model="\A3\weapons_f\ammo\shell_smoke";
+
+	//edit
+	explosionTime=-1;	//2
+	triggerOnImpact=1;
+
+	artilleryLock=1;
+	airFriction=0;
+	sideairFriction=0;
+	timeToLive=180;
+};
+*/
+class SmokeShell;
+class RC_40mm_SmokeSubMun: SmokeShell
+{
+	model="\A3\weapons_f\Ammo\UGL_slug";
+	deflecting=0;
+	//triggerOnImpact=1;
+	explosionTime=0.1;
+	timeToLive=180;
+};
+class RC_Sh_40mm_AMOS_Smoke: RC_Sh_40mm_AMOS_HE
+{
+	hit=12;
+	caliber=3;
+	indirectHit=0;
+	indirectHitRange=0;
+
+	submunitionAmmo="RC_40mm_SmokeSubMun";
+	simulation="shotShell";
+	triggerOnImpact=1;
+	submunitionCount=1;
+	submunitionParentSpeedCoef=0;
+	submunitionInitSpeed=0;
+	submunitionConeAngle=0;
+	submunitionDirectionType="SubmunitionModelDirection";
+	deleteParentWhenTriggered=1;
+	submunitionInitialOffset[]={0,0,-0.2};
+	explosive=0;
+	warheadName="HE";
+	aiAmmoUsageFlags="4";
+};
 
 
 //60mm
