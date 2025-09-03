@@ -16,6 +16,15 @@ class RC_AbramsX_WD: RC_AbramsX_Base
 	side=1;
 	forceInGarage=1;
 
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
+		
+		"qav_SmokeLauncherMag",
+		"qav_SmokeLauncherMag"
+	};
+
 	class AnimationSources: AnimationSources
 	{
 		class zasleh3_hide

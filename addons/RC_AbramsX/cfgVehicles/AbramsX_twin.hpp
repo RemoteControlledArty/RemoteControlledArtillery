@@ -9,12 +9,22 @@ class RC_AbramsX_Twin_Base: RC_AbramsX_Twin_Core
 };
 class RC_AbramsX_Twin_WD: RC_AbramsX_Twin_Base
 {
-	displayName="AbramsX Twin";
+	displayName="AbramsY";
 	crew="B_UAV_AI";
 	scope=2;
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+
+	magazines[]=
+	{
+		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		
+		"qav_SmokeLauncherMag",
+		"qav_SmokeLauncherMag"
+	};
 
 	class AnimationSources: AnimationSources
 	{

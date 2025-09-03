@@ -32,15 +32,6 @@ weapons[]=
 	"RC_APS_W",
 	"qav_SmokeLauncher"
 };
-magazines[]=
-{
-	//"RC_1Rnd_APS_M",
-	"RC_1Rnd_APS_M",
-	"RC_1Rnd_APS_M",
-	"RC_1Rnd_APS_M",
-	"qav_SmokeLauncherMag",
-	"qav_SmokeLauncherMag"
-};
 
 canAccessMineDetector=1;
 mineDetectorRange=50;
