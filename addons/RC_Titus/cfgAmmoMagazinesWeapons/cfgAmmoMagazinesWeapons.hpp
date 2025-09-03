@@ -32,14 +32,11 @@ class CfgMagazines
 		tracersEvery=1;
 		count=150;
 	};
-	class RC_QIN_150Rnd_338_T_G: RC_QIN_150Rnd_338_T_R
-	{
-		ammo="RC_QIN_338_T_G";
-	};
-	class RC_QIN_150Rnd_338_T_Y: RC_QIN_150Rnd_338_T_R
-	{
-		ammo="RC_QIN_338_T_Y";
-	};
+	class RC_QIN_150Rnd_338_T_G: RC_QIN_150Rnd_338_T_R {ammo="RC_QIN_338_T_G";};
+	class RC_QIN_150Rnd_338_T_Y: RC_QIN_150Rnd_338_T_R {ammo="RC_QIN_338_T_Y";};
+	class RC_QIN_200Rnd_338_T_R: RC_QIN_150Rnd_338_T_R {count=200;};
+	class RC_QIN_200Rnd_338_T_G: RC_QIN_150Rnd_338_T_G {count=200;};
+	class RC_QIN_200Rnd_338_T_Y: RC_QIN_150Rnd_338_T_Y {count=200;};
 };
 
 
@@ -71,6 +68,13 @@ class CfgWeapons
 
 		magazines[]=
 		{
+			"RC_200Rnd_127x99_T_R",
+			"RC_200Rnd_127x99_T_G",
+			"RC_200Rnd_127x99_T_Y",
+			"RC_200Rnd_127x99_SLAP_T_R",
+			"RC_200Rnd_127x99_SLAP_T_G",
+			"RC_200Rnd_127x99_SLAP_T_Y",
+
 			"RC_150Rnd_127x99_T_R",
 			"RC_150Rnd_127x99_T_G",
 			"RC_150Rnd_127x99_T_Y",
@@ -137,6 +141,10 @@ class CfgWeapons
 		maxZeroing=2000;
 		magazines[]=
 		{
+			"RC_QIN_200Rnd_338_T_R",
+			"RC_QIN_200Rnd_338_T_G",
+			"RC_QIN_200Rnd_338_T_Y",
+
 			"RC_QIN_150Rnd_338_T_R",
 			"RC_QIN_150Rnd_338_T_G",
 			"RC_QIN_150Rnd_338_T_Y"
@@ -154,6 +162,7 @@ class CfgWeapons
 			"RC_200Rnd_762x51_T_R",
 			"RC_200Rnd_762x51_T_G",
 			"RC_200Rnd_762x51_T_Y",
+
 			"RC_150Rnd_762x51_T_R",
 			"RC_150Rnd_762x51_T_G",
 			"RC_150Rnd_762x51_T_Y"

@@ -593,6 +593,9 @@ class RC_AbramsX_HMG_coax: RC_AbramsX_HMG_coax_base
 
 	magazines[]=
 	{
+		"RC_300Rnd_127x99_SLAP_T_R",
+		"RC_300Rnd_127x99_SLAP_T_G",
+		"RC_300Rnd_127x99_SLAP_T_Y",
 		"RC_400Rnd_127x99_SLAP_T_G",
 		"RC_400Rnd_127x99_SLAP_T_R",
 		"RC_400Rnd_127x99_SLAP_T_Y"

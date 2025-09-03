@@ -39,6 +39,14 @@ class RC_AbramsX_WD: RC_AbramsX_Base
 	{
 		class MainTurret: MainTurret
 		{
+			weapons[]=
+			{
+				"RC_AbramsX_120mm_M360",
+				"RC_AbramsX_HMG_coax",
+				"qav_SmokeLauncher"
+			};
+			#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunner_red.hpp"
+
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics

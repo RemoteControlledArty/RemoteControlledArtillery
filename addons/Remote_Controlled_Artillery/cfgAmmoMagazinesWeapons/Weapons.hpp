@@ -621,6 +621,14 @@ class RC_HMG_127x99: RC_MG_Base
 	autoReload=1;
 	magazines[]=
 	{
+		"RC_200Rnd_127x99_SLAP_T_R",
+		"RC_200Rnd_127x99_SLAP_T_G",
+		"RC_200Rnd_127x99_SLAP_T_Y",
+		"RC_200Rnd_127x99_T_R",
+		"RC_200Rnd_127x99_T_G",
+		"RC_200Rnd_127x99_T_Y",
+		"RC_200Rnd_127x99_cUAS",
+
 		"RC_100Rnd_127x99_SLAP_T_R",
 		"RC_100Rnd_127x99_SLAP_T_G",
 		"RC_100Rnd_127x99_SLAP_T_Y",
@@ -882,6 +890,9 @@ class RC_MMG_93x64_coax_ext: RC_MMG_338_coax_ext
 		"RC_200Rnd_93x64_T_G",
 		"RC_200Rnd_93x64_T_R",
 		"RC_200Rnd_93x64_T_Y",
+		"RC_800Rnd_93x64_T_G",
+		"RC_800Rnd_93x64_T_R",
+		"RC_800Rnd_93x64_T_Y",
 		"RC_1000Rnd_93x64_T_G",
 		"RC_1000Rnd_93x64_T_R",
 		"RC_1000Rnd_93x64_T_Y",
@@ -2465,6 +2476,7 @@ class RC_autocannon_30mm_RCWS: RC_autocannon_30mm_RCWS_Base
 	author="Ascent";
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	canLock=2;
+	magazineReloadTime=25;
 	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
 

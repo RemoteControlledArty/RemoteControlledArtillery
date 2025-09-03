@@ -1,11 +1,9 @@
 magazines[]=
 {
-	"RC_100Rnd_127x99_SLAP_T_G",
-	"RC_100Rnd_127x99_SLAP_T_G",
-	"RC_100Rnd_127x99_SLAP_T_G",
-	"RC_100Rnd_127x99_SLAP_T_G",
-	"RC_100Rnd_127x99_SLAP_T_G",
-	
+	"RC_200Rnd_127x99_SLAP_T_G",
+	"RC_200Rnd_127x99_SLAP_T_G",
+	"RC_200Rnd_127x99_SLAP_T_G",
+
 	"RC_100Rnd_127x99_cUAS",
 	"RC_100Rnd_127x99_cUAS",
 	

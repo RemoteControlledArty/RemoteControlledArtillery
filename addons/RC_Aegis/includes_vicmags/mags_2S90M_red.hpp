@@ -4,7 +4,7 @@ magazines[]=
 	"RC_10Rnd_125mm_MP_T_R",
 	"RC_3Rnd_125mm_MPAB_DF_T_R",
 	
-	"3Rnd_125mm_cannon_missiles",
+	"4Rnd_125mm_cannon_missiles",
 	
 	"RC_1200Rnd_93x64_T_R",
 

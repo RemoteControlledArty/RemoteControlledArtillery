@@ -416,15 +416,6 @@ class Turrets: Turrets
 		commanding=2;
 		turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
-		weapons[]=
-		{
-			"RC_AbramsX_120mm_M360",
-			"RC_AbramsX_20mm_coax",
-			//"RC_AbramsX_HMG_coax",
-			"qav_SmokeLauncher"
-		};
-		#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunner_red.hpp"
-
 		class OpticsIn
 		{
 			class Wide: RCWSOptics

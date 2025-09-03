@@ -162,15 +162,7 @@ class RC_2S90M_WD: RC_2S90M
 				"RC_MMG_93x64_coax_ext",
 				"SmokeLauncher"
 			};
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_R",
-				"RC_20Rnd_125mm_MP_T_R",
-				"4Rnd_125mm_cannon_missiles",
-				"RC_1000Rnd_93x64_T_R",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_2S90M_red.hpp"
 
 			class OpticsIn
 			{
@@ -260,15 +252,7 @@ class RC_2S90M_WD_O: RC_2S90M_WD
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_G",
-				"RC_20Rnd_125mm_MP_T_G",
-				"4Rnd_125mm_cannon_missiles",
-				"RC_1000Rnd_93x64_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_2S90M_green.hpp"
 		};
 	};
 };
@@ -283,15 +267,7 @@ class RC_2S90M_WD_I: RC_2S90M_WD
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_Y",
-				"RC_20Rnd_125mm_MP_T_Y",
-				"4Rnd_125mm_cannon_missiles",
-				"RC_1000Rnd_93x64_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_2S90M_yellow.hpp"
 		};
 	};
 };
@@ -329,15 +305,7 @@ class RC_2S90M_A_O: RC_2S90M_A
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_G",
-				"RC_20Rnd_125mm_MP_T_G",
-				"4Rnd_125mm_cannon_missiles",
-				"RC_1000Rnd_93x64_T_G",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_2S90M_green.hpp"
 		};
 	};
 };
@@ -352,15 +320,7 @@ class RC_2S90M_A_I: RC_2S90M_A
 	{
 		class MainTurret: MainTurret
 		{
-			magazines[]=
-			{
-				"RC_20Rnd_125mm_APFSDS_T_Y",
-				"RC_20Rnd_125mm_MP_T_Y",
-				"4Rnd_125mm_cannon_missiles",
-				"RC_1000Rnd_93x64_T_Y",
-				"SmokeLauncherMag",
-				"SmokeLauncherMag"
-			};
+			#include "\RC_Aegis\includes_vicmags\mags_2S90M_yellow.hpp"
 		};
 	};
 };

@@ -44,6 +44,14 @@ class RC_AbramsX_Twin_WD: RC_AbramsX_Twin_Base
 	{
 		class MainTurret: MainTurret
 		{
+			weapons[]=
+			{
+				"RC_AbramsX_120mm_M360",
+				"RC_AbramsX_20mm_coax",
+				"qav_SmokeLauncher"
+			};
+			#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunnertwin_red.hpp"
+
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
@@ -72,7 +80,7 @@ class RC_AbramsX_Twin_WD_O: RC_AbramsX_Twin_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunner_green.hpp"
+			#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunnertwin_green.hpp"
 			
 			class Turrets: Turrets
 			{
@@ -96,7 +104,7 @@ class RC_AbramsX_Twin_WD_I: RC_AbramsX_Twin_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunner_yellow.hpp"
+			#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunnertwin_yellow.hpp"
 			
 			class Turrets: Turrets
 			{
@@ -135,7 +143,7 @@ class RC_AbramsX_Twin_A_O: RC_AbramsX_Twin_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunner_green.hpp"
+			#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunnertwin_green.hpp"
 			
 			class Turrets: Turrets
 			{
@@ -159,7 +167,7 @@ class RC_AbramsX_Twin_A_I: RC_AbramsX_Twin_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunner_yellow.hpp"
+			#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_gunnertwin_yellow.hpp"
 			
 			class Turrets: Turrets
 			{
