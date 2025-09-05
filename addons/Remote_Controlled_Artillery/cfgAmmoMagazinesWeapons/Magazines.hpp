@@ -172,9 +172,9 @@ class RC_200Rnd_338_T_R: VehicleMagazine
 	scope=2;
 	count=200;
 	ammo="RC_B_338_T_R";
-	initSpeed=1006;
-	maxLeadSpeed=36.111099;
-	tracersEvery=1;	//4
+	initSpeed=1000;		//1006
+	maxLeadSpeed=50;	//36.111099
+	tracersEvery=1;
 	nameSound="mgun";
 	displayName=".338 NM";
 	displayNameShort=".338 NM";
@@ -197,19 +197,12 @@ class RC_800Rnd_338_T_Y: RC_200Rnd_338_T_Y {count=800;};
 class RC_800Rnd_338_T_W: RC_200Rnd_338_T_W {count=800;};
 
 
-class RC_200Rnd_93x64_T_G: VehicleMagazine
+class RC_200Rnd_93x64_T_G: RC_200Rnd_338_T_G
 {
-	author="Ascent";
-	scope=2;
-	count=200;
 	ammo="RC_B_93x64_T_G";
-	initSpeed=957;
-	maxLeadSpeed=36.111099;
-	tracersEvery=1;	//4
-	nameSound="mgun";
+	//initSpeed=957;
 	displayName="9.3x64mm";
 	displayNameShort="9.3x64mm";
-	muzzleImpulseFactor[]={0.050000001,0.050000001};
 };
 class RC_200Rnd_93x64_T_R: RC_200Rnd_93x64_T_G {ammo="RC_B_93x64_T_R";};
 class RC_200Rnd_93x64_T_Y: RC_200Rnd_93x64_T_G {ammo="RC_B_93x64_T_Y";};
@@ -239,7 +232,7 @@ class RC_200Rnd_127x99_T_R: 200Rnd_127x99_mag_Tracer_Red
 	author="Ascent";
 	ammo="RC_B_127x99_T_R";
 	count=200;
-	tracersEvery=1;	//4
+	tracersEvery=1;
 	displayName="12.7mm";
 	displayNameShort="12.7mm";
 };
@@ -258,7 +251,7 @@ class RC_200Rnd_127x99_SLAP_T_R: 200Rnd_127x99_mag_Tracer_Red
 	author="Ascent";
 	ammo="RC_B_127x99_SLAP_T_R";
 	count=200;
-	tracersEvery=1;	//4
+	tracersEvery=1;
 	initSpeed=1200;
 	displayName="12.7mm SLAP";
 	displayNameShort="12.7mm SLAP";

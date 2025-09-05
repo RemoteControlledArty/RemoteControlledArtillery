@@ -52,7 +52,6 @@ magazines[]=
 };
 
 editorSubcategory="RC_APC_subcat";
-
 forceInGarage=1;
 driverCompartments="Compartment2";
 commanding=2;

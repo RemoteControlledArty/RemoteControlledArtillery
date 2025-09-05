@@ -244,11 +244,11 @@ class RC_B_762x51_T_Y: RC_B_762x51_T_R {model="\A3\Weapons_f\Data\bullettracer\t
 class B_338_NM_Ball;
 class RC_B_338_T_R: B_338_NM_Ball
 {
+	hit=16;
+	typicalSpeed=825;	//760, 890
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	hit=16;
-	typicalSpeed=890;
 	tracerStartTime=0.04;
 	tracerEndTime=4;
 };
@@ -260,6 +260,9 @@ class RC_B_338_T_W: RC_B_338_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_
 class B_93x64_Ball;
 class RC_B_93x64_T_G: B_93x64_Ball
 {
+	airFriction=-0.00053639;	//otherwise less usable for armored vehicle coax
+	hit=16;
+	typicalSpeed=825;	//785
 	laserLock=1;
 	irLock=1;
 	airLock=1;
