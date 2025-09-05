@@ -30,7 +30,7 @@ ejectDeadDriver=0;
 ejectDeadCommander=0;
 crewCrashProtection=0.01;
 enginePower=460;
-peakTorque=1312.5;
+peakTorque=1500;	//1312.5
 maxSpeed=120;
 normalSpeedForwardCoef=0.64;
 class Reflectors {};	//removed, otherwise they are automatically on at night

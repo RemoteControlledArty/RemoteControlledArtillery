@@ -62,8 +62,9 @@ ejectDeadCommander=0;
 crewCrashProtection=0.01;
 maximumLoad=4000;
 //maxSpeed=;
-//enginePower=;
-//peakTorque=;
+enginePower=500;	//326
+peakTorque=2500;	//1457.5
+
 
 /*
 smokeLauncherGrenadeCount=12;
