@@ -175,6 +175,94 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 						};
 					};
 				};
+				/*
+				class Loader: CommanderOptics
+				{
+					class HitPoints
+					{
+						class Hit_Optic_LoaderPeriscope
+						{
+							armor=-40;
+							explosionShielding=0;
+							name="";
+							visual="vis_optic_LoaderPeriscope";
+							armorComponent="Hit_Optic_LoaderPeriscope";
+							passThrough=0;
+						};
+					};
+					isPersonTurret=1;
+					lockWhenDriverOut=0;
+					lodTurnedOut=1200;
+					minTurn=-140;
+					maxTurn=140;
+					stabilizedInAxes=0;
+					gunnerAction="RHS_M1A1_Loader_out";
+					gunnerInAction="RHS_M1A1_Loader_in";
+					weapons[]={};
+					magazines[]={};
+					gunnerForceOptics=1;
+					gunnerOutForceOptics=0;
+					gunnerOutOpticsModel="\A3\weapons_f\reticle\optics_empty";
+					inGunnerMayFire=1;
+					outGunnerMayFire=1;
+					memoryPointGun="usti hlavne5";
+					gunBeg="usti hlavne5";
+					gunEnd="konec hlavne5";
+					selectionFireAnim="";
+					soundAttenuationTurret="HeliAttenuationGunner";
+					disableSoundAttenuation=0;
+					animationSourceHatch="HatchGunner";
+					animationSourceBody="LoaderVisorTurret";
+					animationSourceGun="LoaderVisorGun";
+					body="LoaderVisorTurret";
+					gun="LoaderVisorGun";
+					animationSourceStickX="";
+					animationSourceStickY="";
+					commanding=-3;
+					primaryObserver=0;
+					memoryPointsGetInGunner="pos gunner";
+					memoryPointsGetInGunnerDir="pos gunner dir";
+					gunnername="Loader";
+					memoryPointGunnerOptics="loadervisor_view";
+					soundServo[]=
+					{
+						"A3\sounds_f\dummysound",
+						1e-006,
+						1
+					};
+					gunnerDoor="hatchL";
+					proxyindex=2;
+					class OpticsIn: OpticsIn
+					{
+						class Medium_TI: RCWSOptics
+						{
+							//mainturret memoryPointGunnerOptics="CITV_view";
+							camPos="CITV_view";
+							camDir="CITV_view_dir";
+
+							initAngleX=0;
+							minAngleX=-30;
+							maxAngleX=30;
+							initAngleY=0;
+							minAngleY=-100;
+							maxAngleY=100;
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+							visionMode[]=
+							{
+								"Normal",
+								"TI"
+							};
+							thermalMode[]={0};
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
+							gunnerOpticsEffect[]={};
+							hitpoint="Hit_Optic_GPS_TI";
+						};
+					};
+				};
+				*/
 			};
 		};
 	};

@@ -206,6 +206,7 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			stabilizedInAxes=3;
+			gunnerName="Gunner";
 
 			weapons[]=
 			{
@@ -1186,6 +1187,7 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 			gunnerCompartments="Compartment2";
 			stabilizedInAxes=3;
 			maxElev=55;
+			gunnerName="Gunner";
 
 			weapons[]=
 			{
@@ -1569,6 +1571,7 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 			gunnerCompartments="Compartment2";
 			stabilizedInAxes=3;
 			maxElev=80;	//of 90°: 67.5 = 3/4, 72 = 4/5
+			gunnerName="Gunner";
 
 			weapons[]=
 			{

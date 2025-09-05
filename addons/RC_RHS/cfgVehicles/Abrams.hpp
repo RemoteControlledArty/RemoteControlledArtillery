@@ -10,6 +10,7 @@ class RC_M1A2_SEPV2_Base: rhsusf_m1a2sep2d_usarmy
 	class ViewOptics;
 	class DaysightWFOV;
 	class AnimationSources;
+	class sparerw_hide;
 	class Loader;
 	class CommanderMG;
 	class LoaderMG;
@@ -98,6 +99,10 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 
 	class AnimationSources: AnimationSources
 	{
+		class sparerw_hide: sparerw_hide
+		{
+			initPhase=1;
+		};
 		class recoil_source
 		{
 			source="reload";
@@ -239,10 +244,15 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 
 				class Loader: Loader
 				{
+					gunnerName="UAV Operator";
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
 					dontCreateAI=1;
 					allowTabLock=1;
 					canUseScanners=1;
+					//turretInfoType="RscOptics_UGV_gunner";
+					//unitInfoType="RscOptics_AV_driver";
+					minTurn=-360;
+					maxTurn=360;
 
 					weapons[]=
 					{
@@ -252,8 +262,78 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 					{
 						"RC_target_confirmer_mag"
 					};
+
+					class OpticsIn
+					{
+						class Periscope: ViewOptics
+						{
+							initFov=0.9;
+							minFov=0.9;
+							maxFov=0.9;
+							visionMode[]=
+							{
+								"Normal",
+								"TI"
+							};
+							thermalMode[]={0};
+							gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
+							//gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhs_periscope_BISType";
+							hitpoint="Hit_Optic_LoaderPeriscope";
+						};
+						//class Wide: RCWSOptics
+						class Medium_TI: RCWSOptics
+						{
+							//mainturret memoryPointGunnerOptics="CITV_view";
+							camPos="CITV_view";
+							camDir="CITV_view_dir";
+
+							initAngleX=0;
+							minAngleX=-30;
+							maxAngleX=30;
+							initAngleY=0;
+							minAngleY=-100;
+							maxAngleY=100;
+
+							initFov=0.9;
+							minFov=0.9;
+							maxFov=0.9;
+							visionMode[]=
+							{
+								"Normal",
+								"TI"
+							};
+							thermalMode[]={0};
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
+							gunnerOpticsEffect[]={};
+							hitpoint="Hit_Optic_GPS_TI";
+						};
+						class Medium2_TI: Medium_TI
+						{
+							initFov=0.35;
+							minFov=0.35;
+							maxFov=0.35;
+						};
+						class Medium3_TI: Medium_TI
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Narrow_TI: Medium_TI
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+					};
 				};
-				class LoaderMG: LoaderMG {};
+				class LoaderMG: LoaderMG
+				{
+					initTurn=34;
+					minElev=-11;
+					minTurn=34;
+					maxTurn=155;
+				};
 			};
 		};
 	};

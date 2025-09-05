@@ -2,6 +2,8 @@
 class rhs_ammo_M829A4;
 class RC_RHS_ammo_M829A4: rhs_ammo_M829A4
 {
+	//caliber=?; //vanilla 35.268799, RHS 0.1, RHS seems to overpen with little hull damage
+
 	laserLock=1;
 	irLock=1;
 	airLock=1;
@@ -46,7 +48,7 @@ class RC_RHS_ammo_M1147_DF_Sub: RC_RHS_ammo_M830A1
 class RC_RHS_ammo_M1147_MPAB_DF: RC_RHS_ammo_M830A1
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
-	submunitionAmmo="RC_RHS_ammo_M830A1_DF_Sub";
+	submunitionAmmo="RC_RHS_ammo_M1147_DF_Sub";
 };
 
 
@@ -143,7 +145,7 @@ class RC_RHS_B_25mm_MP_DF_T_R: RHS_ammo_M792_HEI
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HitMP_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_DF.hpp"
-	submunitionAmmo="RC_B_25mm_MP_DF_Sub";
+	submunitionAmmo="RC_RHS_B_25mm_MP_DF_Sub";
 };
 class RC_RHS_B_25mm_MP_DF_T_G: RC_RHS_B_25mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_RHS_B_25mm_MP_DF_T_Y: RC_RHS_B_25mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -166,7 +168,7 @@ class RC_RHS_B_25mm_MPAB_DF_T_R: RHS_ammo_M792_HEI
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HitMP_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MPAB_DF.hpp"
-	submunitionAmmo="RC_B_25mm_MP_DF_Sub";
+	submunitionAmmo="RC_RHS_B_25mm_MP_DF_Sub";
 };
 class RC_RHS_B_25mm_MPAB_DF_T_G: RC_RHS_B_25mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_RHS_B_25mm_MPAB_DF_T_Y: RC_RHS_B_25mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -201,7 +203,7 @@ class RC_RHS_B_25mm_HEI_DF_T_R: RHS_ammo_M792_HEI
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_DF.hpp"
-	submunitionAmmo="RC_B_25mm_HEI_DF_Sub";
+	submunitionAmmo="RC_RHS_B_25mm_MP_DF_Sub";
 };
 class RC_RHS_B_25mm_HEI_DF_T_G: RC_RHS_B_25mm_HEI_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_RHS_B_25mm_HEI_DF_T_Y: RC_RHS_B_25mm_HEI_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -221,7 +223,7 @@ class RC_RHS_B_25mm_HEAB_DF_T_R: RHS_ammo_M792_HEI
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HEAB_DF.hpp"
-	submunitionAmmo="RC_B_25mm_HEI_DF_Sub";
+	submunitionAmmo="RC_RHS_B_25mm_MP_DF_Sub";
 };
 class RC_RHS_B_25mm_HEAB_DF_T_G: RC_RHS_B_25mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_RHS_B_25mm_HEAB_DF_T_Y: RC_RHS_B_25mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};

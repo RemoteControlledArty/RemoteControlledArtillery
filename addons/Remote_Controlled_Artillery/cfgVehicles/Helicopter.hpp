@@ -37,21 +37,23 @@ class RC_OM_Heli_InfTransport_Base: RC_OM_Heli_InfTransport_Core
 
 	weapons[]=
 	{
-		"RC_APS_W",
-		"SmokeLauncher"
+		"RC_APS_W"
+		//"SmokeLauncher"
 	};
 	magazines[]=
 	{
 		"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		"RC_1Rnd_APS_M"
+		//"SmokeLauncherMag",
+		//"SmokeLauncherMag"
 	};
 
+	/*
 	smokeLauncherOnTurret=0;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=360;
+	*/
 
 	editorSubcategory="RC_Heli_subcat";
 	author="Ascent";

@@ -30,8 +30,8 @@ magazines[]=
 	"RC_200Rnd_338_T_R",
 	"RC_200Rnd_338_T_R",
 	"RC_200Rnd_338_T_R",
-	"RC_200Rnd_338_T_R",
-	"RC_200Rnd_338_T_R",
+	//"RC_200Rnd_338_T_R",
+	//"RC_200Rnd_338_T_R",
 
 	/*
 	"RC_2Rnd_IFV_MP_NLOS",
