@@ -23,7 +23,9 @@ magazines[]=
 	"RC_160Rnd_30mm_APFSDS_T_Y",
 	"RC_160Rnd_30mm_APFSDS_T_Y",
 
-	"RC_800Rnd_93x64_T_Y",
+	"RC_400Rnd_93x64_T_Y",
+	"RC_400Rnd_93x64_T_Y",
+	//"RC_800Rnd_93x64_T_Y",
 
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"

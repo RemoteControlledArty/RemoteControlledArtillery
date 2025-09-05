@@ -169,7 +169,7 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			commanding=3;

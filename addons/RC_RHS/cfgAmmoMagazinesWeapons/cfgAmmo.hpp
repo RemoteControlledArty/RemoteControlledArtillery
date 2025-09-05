@@ -25,13 +25,28 @@ class RC_RHS_ammo_M830A1: rhs_ammo_M830A1
 	laserLock=1;
 	irLock=1;
 	airLock=1;
-	tracerStartTime=0.045;
-	tracerEndTime=4;
+	aiAmmoUsageFlags="64 + 128 + 512";
 
+	tracerStartTime=0.045;
+	tracerEndTime=6;
+
+	warheadName="HE";
 	indirectHit=50;
 	indirectHitRange=10;
 	deflecting=1;
 	craterEffects="AAMissileCrater";
+};
+
+
+class RC_RHS_ammo_M1147_DF_Sub: RC_RHS_ammo_M830A1
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
+	//submunitionAmmo="RC_ammo_Penetrator_MP_120mm";
+};
+class RC_RHS_ammo_M1147_MPAB_DF: RC_RHS_ammo_M830A1
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
+	submunitionAmmo="RC_RHS_ammo_M830A1_DF_Sub";
 };
 
 
@@ -47,6 +62,7 @@ class RC_RHS_ammo_M80A1EPR_T_R: rhs_ammo_762x51_M80A1EPR_Ball
 
 	hit=14;			//giving it acceptable lethality
 	caliber=1.1;	//giving it acceptable lethality
+	//airFriction=-0.00060999999;	//giving it acceptable range for vehicles
 };
 /*
 class RC_RHS_ammo_M80A1EPR_T_Y: RC_RHS_ammo_M80A1EPR_T_R
@@ -65,6 +81,7 @@ class RC_RHS_ammo_M61_AP_T_R: rhs_ammo_762x51_M61_AP
 
 	hit=14;			//giving it acceptable lethality
 	caliber=1.1;	//giving it acceptable lethality
+	//airFriction=-0.00060999999;	//giving it acceptable range for vehicles
 };
 
 

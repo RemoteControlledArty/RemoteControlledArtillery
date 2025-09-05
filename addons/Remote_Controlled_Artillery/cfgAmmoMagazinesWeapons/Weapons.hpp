@@ -384,6 +384,12 @@ class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
 		maxRange=4000;
 		maxRangeProbab=0.94999999;
 	};
+	class Overfly: Cruise
+	{
+		displayName="Overfly Top Attack";
+		textureType="overfly";
+		magazineReloadTime=20;
+	};
 };
 class missiles_titan;
 class RC_IFV_Missile_Launcher_Base: missiles_titan
@@ -396,8 +402,8 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	scope=1;
 	canLock=2;
 	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
-	displayName="NLOS ML";
-	displayNameShort="NLOS ML";
+	displayName="Launcher";
+	displayNameShort="Launcher";
 	magazineReloadTime=20;
 	cmImmunity=0.67;
 	//weaponLockDelay=3;	//3
@@ -460,7 +466,6 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	{
 		displayName="$STR_A3_firemode_terrain0";
 		textureType="terrain";
-		magazineReloadTime=20;
 
 		minRange=200;
 		minRangeProbab=0.40000001;
@@ -469,18 +474,11 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 		maxRange=5000;
 		maxRangeProbab=0.94999999;
 	};
-	class Overfly: Player
+	class Overfly: Cruise
 	{
 		displayName="Overfly Top Attack";
 		textureType="overfly";
 		magazineReloadTime=20;
-
-		minRange=200;
-		minRangeProbab=0.40000001;
-		midRange=1000;
-		midRangeProbab=0.89999998;
-		maxRange=5000;
-		maxRangeProbab=0.94999999;
 	};
 	/*
 	modes[]=
@@ -556,8 +554,8 @@ class RC_AA_Missile_Launcher: RC_IFV_Missile_Launcher
 };
 class RC_AC_FSV_Missile_Launcher: RC_AA_Missile_Launcher
 {
-	displayName="NLOS ML";
-	displayNameShort="NLOS ML";
+	displayName="Launcher";
+	displayNameShort="Launcher";
 	magazines[]=
 	{
 		"RC_4Rnd_IFV_MP_Overfly",
@@ -579,8 +577,8 @@ class RC_70mm_AA_Missile_Launcher: missiles_SAAMI
 	scope=1;
 	canLock=2;
 	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
-	displayName="70mm AA";
-	displayNameShort="70mm AA";
+	displayName="70mm AA ML";
+	displayNameShort="70mm AA ML";
 	//magazineReloadTime=20;
 	magazines[]=
 	{
@@ -690,7 +688,15 @@ class RC_MMG_338_FSV: RC_MG_FSV_Base
 	{
 		"RC_200Rnd_338_T_R",
 		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_Y"
+		"RC_200Rnd_338_T_Y",
+
+		"RC_300Rnd_338_T_R",
+		"RC_300Rnd_338_T_G",
+		"RC_300Rnd_338_T_Y",
+
+		"RC_400Rnd_338_T_R",
+		"RC_400Rnd_338_T_G",
+		"RC_400Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -761,7 +767,15 @@ class RC_MMG_338_MBT: RC_MG_MBT_Base
 	{
 		"RC_200Rnd_338_T_R",
 		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_Y"
+		"RC_200Rnd_338_T_Y",
+
+		"RC_300Rnd_338_T_R",
+		"RC_300Rnd_338_T_G",
+		"RC_300Rnd_338_T_Y",
+
+		"RC_400Rnd_338_T_R",
+		"RC_400Rnd_338_T_G",
+		"RC_400Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -816,7 +830,15 @@ class RC_MMG_338_coax: RC_MMG_338_coax_Base
 	{
 		"RC_200Rnd_338_T_R",
 		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_Y"
+		"RC_200Rnd_338_T_Y",
+
+		"RC_300Rnd_338_T_R",
+		"RC_300Rnd_338_T_G",
+		"RC_300Rnd_338_T_Y",
+
+		"RC_400Rnd_338_T_R",
+		"RC_400Rnd_338_T_G",
+		"RC_400Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -832,6 +854,14 @@ class RC_MMG_93x64_coax: RC_MMG_338_coax
 		"RC_200Rnd_93x64_T_G",
 		"RC_200Rnd_93x64_T_R",
 		"RC_200Rnd_93x64_T_Y",
+
+		"RC_300Rnd_93x64_T_G",
+		"RC_300Rnd_93x64_T_R",
+		"RC_300Rnd_93x64_T_Y",
+
+		"RC_400Rnd_93x64_T_G",
+		"RC_400Rnd_93x64_T_R",
+		"RC_400Rnd_93x64_T_Y",
 
 		"RC_600Rnd_93x64_T_G",
 		"RC_600Rnd_93x64_T_R",
@@ -874,7 +904,15 @@ class RC_MMG_338_coax_ext: RC_MMG_338_coax_ext_Base
 	{
 		"RC_200Rnd_338_T_R",
 		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_Y"
+		"RC_200Rnd_338_T_Y",
+
+		"RC_300Rnd_338_T_R",
+		"RC_300Rnd_338_T_G",
+		"RC_300Rnd_338_T_Y",
+
+		"RC_400Rnd_338_T_R",
+		"RC_400Rnd_338_T_G",
+		"RC_400Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -890,12 +928,27 @@ class RC_MMG_93x64_coax_ext: RC_MMG_338_coax_ext
 		"RC_200Rnd_93x64_T_G",
 		"RC_200Rnd_93x64_T_R",
 		"RC_200Rnd_93x64_T_Y",
+
+		"RC_300Rnd_93x64_T_G",
+		"RC_300Rnd_93x64_T_R",
+		"RC_300Rnd_93x64_T_Y",
+
+		"RC_400Rnd_93x64_T_G",
+		"RC_400Rnd_93x64_T_R",
+		"RC_400Rnd_93x64_T_Y",
+
+		"RC_600Rnd_93x64_T_G",
+		"RC_600Rnd_93x64_T_R",
+		"RC_600Rnd_93x64_T_Y",
+
 		"RC_800Rnd_93x64_T_G",
 		"RC_800Rnd_93x64_T_R",
 		"RC_800Rnd_93x64_T_Y",
+
 		"RC_1000Rnd_93x64_T_G",
 		"RC_1000Rnd_93x64_T_R",
 		"RC_1000Rnd_93x64_T_Y",
+		
 		"RC_1200Rnd_93x64_T_G",
 		"RC_1200Rnd_93x64_T_R",
 		"RC_1200Rnd_93x64_T_Y"
@@ -967,7 +1020,15 @@ class RC_MMG_338_APC: RC_HMG_127_APC
 	{
 		"RC_200Rnd_338_T_R",
 		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_Y"
+		"RC_200Rnd_338_T_Y",
+
+		"RC_300Rnd_338_T_R",
+		"RC_300Rnd_338_T_G",
+		"RC_300Rnd_338_T_Y",
+
+		"RC_400Rnd_338_T_R",
+		"RC_400Rnd_338_T_G",
+		"RC_400Rnd_338_T_Y"
 	};
 	class manual: manual
 	{
@@ -983,7 +1044,11 @@ class RC_MMG_93x64_APC: RC_MMG_338_APC
 	{
 		"RC_200Rnd_93x64_T_R",
 		"RC_200Rnd_93x64_T_G",
-		"RC_200Rnd_93x64_T_Y"
+		"RC_200Rnd_93x64_T_Y",
+
+		"RC_400Rnd_93x64_T_R",
+		"RC_400Rnd_93x64_T_G",
+		"RC_400Rnd_93x64_T_Y"
 	};
 
 	class manual: manual

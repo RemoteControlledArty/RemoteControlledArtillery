@@ -55,7 +55,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 	magazines[]=
 	{
 		//"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
@@ -93,6 +93,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 			dontCreateAI=1;
 			commanding=2;
 			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+			//turretInfoType="RscOptics_MBT_03_gunner";
 
 			weapons[]=
 			{
@@ -122,6 +123,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 						"TI"
 					};
 					thermalMode[]={0};
+					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_01_m_F.p3d";
+					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_m_F.p3d";
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					gunnerOpticsEffect[]={};
 				};

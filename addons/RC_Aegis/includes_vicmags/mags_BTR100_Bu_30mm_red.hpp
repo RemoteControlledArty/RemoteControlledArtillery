@@ -24,7 +24,9 @@ magazines[]=
 	"RC_160Rnd_30mm_APFSDS_T_R",
 	"RC_160Rnd_30mm_APFSDS_T_R",
 	
-	"RC_800Rnd_93x64_T_R",
+	"RC_400Rnd_93x64_T_R",
+	"RC_400Rnd_93x64_T_R",
+	//"RC_800Rnd_93x64_T_R",
 
 	"RC_4Rnd_IFV_MP_Overfly",
 	"RC_4Rnd_IFV_AA",

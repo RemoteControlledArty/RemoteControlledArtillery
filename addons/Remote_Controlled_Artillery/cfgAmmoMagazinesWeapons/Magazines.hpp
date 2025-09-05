@@ -182,6 +182,19 @@ class RC_200Rnd_338_T_R: VehicleMagazine
 };
 class RC_200Rnd_338_T_G: RC_200Rnd_338_T_R {ammo="RC_B_338_T_G";};
 class RC_200Rnd_338_T_Y: RC_200Rnd_338_T_R {ammo="RC_B_338_T_Y";};
+class RC_200Rnd_338_T_W: RC_200Rnd_338_T_R {ammo="RC_B_338_T_W";};
+class RC_400Rnd_338_T_R: RC_200Rnd_338_T_R {count=400;};
+class RC_400Rnd_338_T_G: RC_200Rnd_338_T_G {count=400;};
+class RC_400Rnd_338_T_Y: RC_200Rnd_338_T_Y {count=400;};
+class RC_400Rnd_338_T_W: RC_200Rnd_338_T_W {count=400;};
+class RC_600Rnd_338_T_R: RC_200Rnd_338_T_R {count=600;};
+class RC_600Rnd_338_T_G: RC_200Rnd_338_T_G {count=600;};
+class RC_600Rnd_338_T_Y: RC_200Rnd_338_T_Y {count=600;};
+class RC_600Rnd_338_T_W: RC_200Rnd_338_T_W {count=600;};
+class RC_800Rnd_338_T_R: RC_200Rnd_338_T_R {count=800;};
+class RC_800Rnd_338_T_G: RC_200Rnd_338_T_G {count=800;};
+class RC_800Rnd_338_T_Y: RC_200Rnd_338_T_Y {count=800;};
+class RC_800Rnd_338_T_W: RC_200Rnd_338_T_W {count=800;};
 
 
 class RC_200Rnd_93x64_T_G: VehicleMagazine
@@ -200,6 +213,12 @@ class RC_200Rnd_93x64_T_G: VehicleMagazine
 };
 class RC_200Rnd_93x64_T_R: RC_200Rnd_93x64_T_G {ammo="RC_B_93x64_T_R";};
 class RC_200Rnd_93x64_T_Y: RC_200Rnd_93x64_T_G {ammo="RC_B_93x64_T_Y";};
+class RC_300Rnd_93x64_T_G: RC_200Rnd_93x64_T_G {count=300;};
+class RC_300Rnd_93x64_T_R: RC_200Rnd_93x64_T_R {count=300;};
+class RC_300Rnd_93x64_T_Y: RC_200Rnd_93x64_T_Y {count=300;};
+class RC_400Rnd_93x64_T_G: RC_200Rnd_93x64_T_G {count=400;};
+class RC_400Rnd_93x64_T_R: RC_200Rnd_93x64_T_R {count=400;};
+class RC_400Rnd_93x64_T_Y: RC_200Rnd_93x64_T_Y {count=400;};
 class RC_600Rnd_93x64_T_G: RC_200Rnd_93x64_T_G {count=600;};
 class RC_600Rnd_93x64_T_R: RC_200Rnd_93x64_T_R {count=600;};
 class RC_600Rnd_93x64_T_Y: RC_200Rnd_93x64_T_Y {count=600;};

@@ -20,7 +20,9 @@ magazines[]=
 	"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
 	"RC_RHS_mag_70Rnd_25mm_APFSDS_T_R",
 
-	"RC_RHS_mag_800Rnd_762x51_T_R",
+	"RC_RHS_mag_400Rnd_762x51_T_R",
+	"RC_RHS_mag_400Rnd_762x51_T_R",
+	//"RC_RHS_mag_800Rnd_762x51_T_R",
 	//"RC_RHS_mag_1100Rnd_762x51_T_R",
 
 	"RC_2Rnd_TOW_MP_Overfly",

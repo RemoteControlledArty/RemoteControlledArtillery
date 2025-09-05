@@ -7,7 +7,9 @@ magazines[]=
 	
 	"RC_3Rnd_125mm_DLG_cannon_missiles",
 	
-	"RC_600Rnd_93x64_T_G",
+	"RC_300Rnd_93x64_T_G",
+	"RC_300Rnd_93x64_T_G",
+	//"RC_600Rnd_93x64_T_G",
 	//"RC_1200Rnd_93x64_T_G",
 
 	"SmokeLauncherMag",

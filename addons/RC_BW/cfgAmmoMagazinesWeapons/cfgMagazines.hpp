@@ -26,7 +26,7 @@ class RC_2Rnd_IFV_AA;
 class RC_2Rnd_SPz_Spike_AA: RC_2Rnd_IFV_AA
 {
 	count=2;
-	displayName="4.5km Spike AA";
+	displayName="5km Spike AA";
 	displayNameShort="Spike AA";
 	ammo="RC_IFV_AA";
 };

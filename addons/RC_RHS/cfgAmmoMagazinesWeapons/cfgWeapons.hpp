@@ -1,13 +1,48 @@
+/*
 class RC_cannon_120mm;
-class rhs_weap_m256_base: RC_cannon_120mm
+class RC_Abrams_cannon_120mm_base: RC_cannon_120mm
 {
 	class player;
 };
-class RC_RHS_weap_m256: rhs_weap_m256_base
+class RC_Abrams_cannon_120mm: RC_Abrams_cannon_120mm_base
+{
+	//displayname="120mm M256A1";
+	//reloadSound[]={"\rhsusf\addons\rhsusf_c_heavyweapons\sounds\reload_tank_cannon_loader", 3.622776, 1, 15};
+	//reloadMagazineSound[]={"\rhsusf\addons\rhsusf_c_heavyweapons\sounds\reload_tank_cannon_loader", 3.622776, 1, 15};
+	//flash="gunfire";
+	//flashSize=10;
+
+	class EventHandlers
+	{
+		class RHS_Fired_EH
+		{
+			fired = "_this call rhs_fnc_tankLoader";
+		};
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	reloadTime=6;
+	magazineReloadTime=6;
+
+	class player: player
+	{
+		reloadTime=6;
+	};
+};
+*/
+
+
+/*
+class rhs_weap_m256_vanilla_base: RC_cannon_120mm
+{
+	class player;
+};
+class RC_RHS_weap_m256_vanilla: rhs_weap_m256_vanilla_base
 {
 	displayname="120mm M256A1";
-	reloadSound[]={ "\rhsusf\addons\rhsusf_c_heavyweapons\sounds\reload_tank_cannon_loader", 3.622776, 1, 15 };
-	reloadMagazineSound[]={ "\rhsusf\addons\rhsusf_c_heavyweapons\sounds\reload_tank_cannon_loader", 3.622776, 1, 15 };
+	reloadSound[]={"\rhsusf\addons\rhsusf_c_heavyweapons\sounds\reload_tank_cannon_loader", 3.622776, 1, 15};
+	reloadMagazineSound[]={"\rhsusf\addons\rhsusf_c_heavyweapons\sounds\reload_tank_cannon_loader", 3.622776, 1, 15};
 	autoReload=1;
 	flash="gunfire";
 	flashSize=10;
@@ -22,14 +57,15 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 	};
 
 	/*
-	showaimcursorinternal = 0;
-	cursor="EmptyCursor";
-	cursoraim="EmptyCursor";
-	cursoraimon="EmptyCursor";
-	*/
+	//showaimcursorinternal = 0;
+	//cursor="EmptyCursor";
+	//cursoraim="EmptyCursor";
+	//cursoraimon="EmptyCursor";
 
 	canLock=2;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	//ballisticsComputer="4";
 	reloadTime=6;
 	magazineReloadTime=6;
 
@@ -52,6 +88,13 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 		"RC_RHS_mag_M830A1_20Rnd",
 		"RC_RHS_mag_M830A1_15Rnd",
 		"RC_RHS_mag_M830A1_10Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_20Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_15Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_10Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_5Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_4Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_3Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_2Rnd",
 		"rhs_mag_M830",
 		//HE
 		"rhs_mag_M1069",
@@ -72,38 +115,12 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 		"rhs_mag_M1028_max",
 		"rhs_mag_M416_max",
 
-		"RC_2Rnd_120mm_MPAB_DF_T_R",
-		"RC_3Rnd_120mm_MPAB_DF_T_R",
-		"RC_4Rnd_120mm_MPAB_DF_T_R",
-		"RC_5Rnd_120mm_MPAB_DF_T_R",
-		"RC_10Rnd_120mm_MPAB_DF_T_R",
-		"RC_15Rnd_120mm_MPAB_DF_T_R",
-		"RC_20Rnd_120mm_MPAB_DF_T_R",
-
-		/*
-		"RC_2Rnd_120mm_MPAB_DF_T_G",
-		"RC_3Rnd_120mm_MPAB_DF_T_G",
-		"RC_4Rnd_120mm_MPAB_DF_T_G",
-		"RC_5Rnd_120mm_MPAB_DF_T_G",
-		"RC_10Rnd_120mm_MPAB_DF_T_G",
-		"RC_15Rnd_120mm_MPAB_DF_T_G",
-		"RC_20Rnd_120mm_MPAB_DF_T_G",
-
-		"RC_2Rnd_120mm_MPAB_DF_T_Y",
-		"RC_3Rnd_120mm_MPAB_DF_T_Y",
-		"RC_4Rnd_120mm_MPAB_DF_T_Y",
-		"RC_5Rnd_120mm_MPAB_DF_T_Y",
-		"RC_10Rnd_120mm_MPAB_DF_T_Y",
-		"RC_15Rnd_120mm_MPAB_DF_T_Y",
-		"RC_20Rnd_120mm_MPAB_DF_T_Y",
-		*/
-
 		"RC_5Rnd_120mm_cannon_missiles",
 		"RC_4Rnd_120mm_cannon_missiles",
 		"RC_3Rnd_120mm_cannon_missiles",
 		"RC_2Rnd_120mm_cannon_missiles",
 		"RC_1Rnd_120mm_cannon_missiles",
-		
+
 		//Datalink Missile
 		"RC_5Rnd_120mm_DLG_cannon_missiles",
 		"RC_4Rnd_120mm_DLG_cannon_missiles",
@@ -118,50 +135,88 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 		"RC_1Rnd_120mm_DLG_HVKEM"
 	};
 };
+*/
 
 
 class rhs_weap_m256;
-class rhs_weap_m256_old_base: rhs_weap_m256
+class rhs_weap_m256_base: rhs_weap_m256
 {
 	class player;
 };
-class RC_RHS_weap_m256_old: rhs_weap_m256_old_base
+class RC_RHS_weap_m256: rhs_weap_m256_base
 {
 	canLock=2;
 	//minZeroing=50;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
-	//FCSMaxLeadSpeed=25;
+	//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	FCSMaxLeadSpeed=30;
+	FCSZeroingDelay=0.5;
 	reloadTime=6;
 	magazineReloadTime=6;
 
 	magazines[]=
 	{
-		//SABOT
 		"RC_RHS_mag_M829A4_20Rnd",
 		"RC_RHS_mag_M829A4_15Rnd",
 		"RC_RHS_mag_M829A4_10Rnd",
+
+		"RC_RHS_mag_M830A1_20Rnd",
+		"RC_RHS_mag_M830A1_15Rnd",
+		"RC_RHS_mag_M830A1_10Rnd",
+
+		"RC_RHS_mag_M1147_MPAB_DF_20Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_15Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_10Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_5Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_4Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_3Rnd",
+		"RC_RHS_mag_M1147_MPAB_DF_2Rnd",
+
+		"RC_5Rnd_120mm_cannon_missiles",
+		"RC_4Rnd_120mm_cannon_missiles",
+		"RC_3Rnd_120mm_cannon_missiles",
+		"RC_2Rnd_120mm_cannon_missiles",
+		"RC_1Rnd_120mm_cannon_missiles",
+
+		//Datalink Missile
+		"RC_5Rnd_120mm_DLG_cannon_missiles",
+		"RC_4Rnd_120mm_DLG_cannon_missiles",
+		"RC_3Rnd_120mm_DLG_cannon_missiles",
+		"RC_2Rnd_120mm_DLG_cannon_missiles",
+		"RC_1Rnd_120mm_DLG_cannon_missiles",
+
+		"RC_5Rnd_120mm_DLG_HVKEM",
+		"RC_4Rnd_120mm_DLG_HVKEM",
+		"RC_3Rnd_120mm_DLG_HVKEM",
+		"RC_2Rnd_120mm_DLG_HVKEM",
+		"RC_1Rnd_120mm_DLG_HVKEM",
+
+
+		//default SABOT
 		"rhs_mag_M829A3",
 		"rhs_mag_M829A2",
 		"rhs_mag_M829A1",
 		"rhs_mag_M829",
-		//HEAT
-		"RC_RHS_mag_M830A1_20Rnd",
-		"RC_RHS_mag_M830A1_15Rnd",
-		"RC_RHS_mag_M830A1_10Rnd",
+		//default HEAT
 		"rhs_mag_M830",
-		//HE
+		//default HE
 		"rhs_mag_M1069",
 		"rhs_mag_M1147",
-		//Canister
+		//default Canister
 		"rhs_mag_M1028",
-		//Smoke/WP
+		//default Smoke/WP
 		"rhs_mag_M416",
-
-		//Datalink Missile
-		"RC_4Rnd_120mm_DLG_cannon_missiles",
-		"RC_3Rnd_120mm_DLG_cannon_missiles",
-		"RC_2Rnd_120mm_DLG_cannon_missiles",
-		"RC_1Rnd_120mm_DLG_cannon_missiles"
+		"rhs_mag_M829A4_max",
+		"rhs_mag_M829A3_max",
+		"rhs_mag_M829A2_max",
+		"rhs_mag_M829A1_max",
+		"rhs_mag_M829_max",
+		"rhs_mag_M830_max",
+		"rhs_mag_M830A1_max",
+		"rhs_mag_M1069_max",
+		"rhs_mag_M1147_max",
+		"rhs_mag_M1028_max",
+		"rhs_mag_M416_max"
 	};
 	class player: player
 	{
@@ -178,6 +233,7 @@ class RC_RHS_weap_m256_old: rhs_weap_m256_old_base
 		maxRange=4000;
 		maxRangeProbab=0.94999999;
 	};
+	/*
 	class TopDown: player
 	{
 		textureType="topDown";
@@ -189,11 +245,12 @@ class RC_RHS_weap_m256_old: rhs_weap_m256_old_base
 		maxRange=4000;
 		maxRangeProbab=0.94999999;
 	};
+	*/
 	modes[]=
 	{
 		"player",
 		"Cruise",
-		"topDown",
+		//"topDown",
 		"close",
 		"short",
 		"medium",
@@ -216,8 +273,14 @@ class RC_RHS_M2_CROWS_M153_Abrams: rhs_M2_CROWS_M153_Abrams_base
 
 	magazines[]=
 	{
+		"RC_RHS_mag_300rnd_127x99_SLAP_T_R",
 		"RC_RHS_mag_400rnd_127x99_SLAP_T_R",
-		"RC_RHS_mag_400rnd_127x99_T_R"
+
+		"RC_RHS_mag_300rnd_127x99_T_R",
+		"RC_RHS_mag_400rnd_127x99_T_R",
+
+		"RC_RHS_mag_300rnd_127x99_cUAS",
+		"RC_RHS_mag_400rnd_127x99_cUAS"
 	};
 	class manual: manual
 	{
@@ -260,10 +323,17 @@ class RC_RHS_weap_m240_abrams_coax: rhs_weap_m240_abrams_coax_base
 	canLock=2;
 	minZeroing=50;
 	maxZeroing=2000;
+	//maxZeroing=3000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	
 	magazines[]=
 	{
+		"RC_RHS_mag_300Rnd_762x51_T_R",
+		"RC_RHS_mag_300Rnd_762x51_M61_T_R",
+
+		"RC_RHS_mag_400Rnd_762x51_T_R",
+		"RC_RHS_mag_400Rnd_762x51_M61_T_R",
+
 		"RC_RHS_mag_600Rnd_762x51_T_R",
 		"RC_RHS_mag_600Rnd_762x51_M61_T_R",
 
@@ -279,6 +349,7 @@ class RC_RHS_weap_m240_abrams_coax: rhs_weap_m240_abrams_coax_base
 	class manual: manual
 	{
 		dispersion=0.001;
+		reloadTime=0.0857;
 	};
 };
 
@@ -293,10 +364,17 @@ class RC_RHS_weap_m240_bradley_coax: rhs_weap_m240_bradley_coax_base
 	canLock=2;
 	minZeroing=50;
 	maxZeroing=2000;
+	//maxZeroing=3000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	
 	magazines[]=
 	{
+		"RC_RHS_mag_300Rnd_762x51_T_R",
+		"RC_RHS_mag_300Rnd_762x51_M61_T_R",
+
+		"RC_RHS_mag_400Rnd_762x51_T_R",
+		"RC_RHS_mag_400Rnd_762x51_M61_T_R",
+
 		"RC_RHS_mag_600Rnd_762x51_T_R",
 		"RC_RHS_mag_600Rnd_762x51_M61_T_R",
 		
@@ -312,6 +390,7 @@ class RC_RHS_weap_m240_bradley_coax: rhs_weap_m240_bradley_coax_base
 	class manual: manual
 	{
 		dispersion=0.001;
+		reloadTime=0.0857;
 	};
 };
 
@@ -524,7 +603,7 @@ class RC_RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
 	canLock=2;
 	autoReload=1;
 	minZeroing=50;
-	maxZeroing=3000;
+	maxZeroing=2000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	
 	magazines[] =

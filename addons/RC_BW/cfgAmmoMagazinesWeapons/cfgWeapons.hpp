@@ -6,6 +6,8 @@ class RC_SPz_Spike: RC_IFV_Missile_Launcher
 	displayNameShort="Spike Launcher";
 	magazines[]=
 	{
+		"RC_2Rnd_SPz_Spike_LOS",
+		"RC_2Rnd_SPz_Spike_Overfly",
 		"RC_2Rnd_SPz_Spike_NLOS",
 		"RC_2Rnd_SPz_Spike_AA"
 	};

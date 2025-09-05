@@ -254,6 +254,7 @@ class RC_B_338_T_R: B_338_NM_Ball
 };
 class RC_B_338_T_G: RC_B_338_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_338_T_Y: RC_B_338_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_338_T_W: RC_B_338_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
 
 
 class B_93x64_Ball;

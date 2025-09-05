@@ -102,10 +102,3 @@ class RC_EF_B_50mm_HEAB_T_Y: RC_EF_B_50mm_HEAB_T_W
 {	
 	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 };
-
-
-class RC_B_338_T_R;
-class RC_B_338_T_W: RC_B_338_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\tracer_white";
-};

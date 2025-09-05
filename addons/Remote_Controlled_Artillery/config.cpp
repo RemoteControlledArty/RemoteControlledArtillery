@@ -944,6 +944,9 @@ class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
 
+//#include "\Remote_Controlled_Artillery\ui\turretInfoType.hpp"
+
+
 class CfgCloudlets
 {
 	#include "\Remote_Controlled_Artillery\effects\cfgCloudlets.hpp"

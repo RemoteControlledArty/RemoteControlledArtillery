@@ -21,6 +21,7 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSensIR.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -36,10 +37,13 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	magazines[]=
 	{
 		//"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
+
+	allowTabLock=1;
+	canUseScanners=1;
 
 	forceInGarage=1;
 	driverCompartments="Compartment2";
@@ -142,10 +146,13 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 			dontCreateAI=1;
 			commanding=3;
 			allowTabLock=1;
+			canUseScanners=1;
+			discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500,2600,2700,2800,2900,3000,3100,3200,3300,3400,3500,3600,3700,3800,3900,4000,4100,4200,4300,4400,4500,4600,4700,4800,4900,5000};
+			turretInfoType="RscOptics_MBT_01_gunner";
 
 			weapons[]=
 			{
-				//"RC_cannon_120mm",
+				//"RC_Abrams_cannon_120mm",
 				"RC_RHS_weap_m256",
 				"RC_RHS_weap_m240_abrams_coax",
 				"rhsusf_weap_M250"
@@ -166,7 +173,7 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 					maxAngleY=100;
 
 					initFov=0.53;
-					minFov=0.014;
+					minFov=0.02;	//0.014
 					maxFov=0.53;
 					visionMode[]=
 					{
@@ -190,6 +197,8 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 					dontCreateAI=1;
 					commanding=2;
 					allowTabLock=1;
+					canUseScanners=1;
+					//turretInfoType="RscOptics_MBT_01_commander_RCWS";
 
 					class OpticsIn
 					{
@@ -230,7 +239,19 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 
 				class Loader: Loader
 				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
 					dontCreateAI=1;
+					allowTabLock=1;
+					canUseScanners=1;
+
+					weapons[]=
+					{
+						"RC_target_confirmer_datalink"
+					};
+					magazines[]=
+					{
+						"RC_target_confirmer_mag"
+					};
 				};
 				class LoaderMG: LoaderMG {};
 			};
@@ -327,7 +348,7 @@ class RC_M1A2_SEPV2_WD_I: RC_M1A2_SEPV2_WD_B
 class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 {
 	//displayName="M1A2 SEPV2 Abrams NLOS";
-	displayName="M1A2 SEPV2 Abrams [broken zeroing]";
+	displayName="M1A2 SEPV2 Abrams";
 	scope=2;
 	scopeCurator=2;
 
@@ -336,14 +357,6 @@ class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner_missile.hpp"
-			
-			weapons[]=
-			{
-				"RC_RHS_weap_m256",
-				"RC_RHS_weap_m240_abrams_coax",
-				"rhsusf_weap_M250"
-				//"rhs_weap_fcs"
-			};
 			#include "\RC_RHS\includes_vicmags\mags_Abrams_NLOS_red.hpp"
 		};
 	};

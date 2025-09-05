@@ -66,10 +66,3 @@ class RC_EF_60Rnd_50mm_APFSDS_T_W: RC_EF_50Rnd_50mm_APFSDS_T_W {count=60;};
 class RC_EF_60Rnd_50mm_APFSDS_T_R: RC_EF_50Rnd_50mm_APFSDS_T_R {count=60;};
 class RC_EF_60Rnd_50mm_APFSDS_T_G: RC_EF_50Rnd_50mm_APFSDS_T_G {count=60;};
 class RC_EF_60Rnd_50mm_APFSDS_T_Y: RC_EF_50Rnd_50mm_APFSDS_T_Y {count=60;};
-
-
-class RC_200Rnd_338_T_R;
-class RC_400Rnd_338_T_R: RC_200Rnd_338_T_R {count=400;};
-class RC_400Rnd_338_T_G: RC_400Rnd_338_T_R {ammo="RC_B_338_T_G";};
-class RC_400Rnd_338_T_Y: RC_400Rnd_338_T_R {ammo="RC_B_338_T_Y";};
-class RC_400Rnd_338_T_W: RC_400Rnd_338_T_R {ammo="RC_B_338_T_W";};
