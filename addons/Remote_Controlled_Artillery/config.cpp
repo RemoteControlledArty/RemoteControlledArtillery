@@ -812,6 +812,12 @@ class CfgFunctions
 			//class RC_TakeControlPilotGlobal {};
 			//class RC_TakeControlCopilotGlobal {};
 		};
+		class RC_Immobilized
+		{
+			file="\Remote_Controlled_Artillery\immobilized";
+
+			class RC_allowCrewInImmobile {};
+		};
 	};
 };
 
@@ -966,6 +972,8 @@ class CfgWeapons
 };
 class CfgVehicles
 {
+	#include "\Remote_Controlled_Artillery\immobilized\allowCrewInImmobileCfgEH.hpp"
+
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\AC_FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
