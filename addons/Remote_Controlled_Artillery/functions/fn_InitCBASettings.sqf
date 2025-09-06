@@ -266,6 +266,17 @@
     true
 ] call CBA_fnc_addSetting;
 
+[
+    "RC_allowCrewInImmobile",
+    "CHECKBOX",
+    ["armor crew stays in immobilized vehicle for 1-2min", "Instead of unrealistic instant gunner dismount of immobilized vehicle, crew of armored vehicles leave only after 1-2min, making gameplay more interesting."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
 /*
 [
     "RC_DetectionTime_F1",
