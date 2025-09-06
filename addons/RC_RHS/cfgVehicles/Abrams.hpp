@@ -245,7 +245,7 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 				class Loader: Loader
 				{
 					gunnerName="UAV Operator";
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_advisor.hpp"
 					dontCreateAI=1;
 					allowTabLock=1;
 					canUseScanners=1;

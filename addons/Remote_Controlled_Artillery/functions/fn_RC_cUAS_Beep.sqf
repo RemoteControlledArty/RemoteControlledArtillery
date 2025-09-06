@@ -6,15 +6,17 @@
 */
 
 
-[_vic, _beepDist] spawn
-{
+[_vic, _beepDist] spawn {
+	
 	params ["_vic","_beepDist"];
 	private _cycle = 0;
 
-	while {true} do
-	{
+	while {true} do {
+
 		sleep 1;
 		if (!alive _vic) exitwith {};
+
+		//needs to be changed if only run on server
 		if (!local _vic) then {
 			continue;
 		};

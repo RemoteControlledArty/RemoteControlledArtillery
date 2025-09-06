@@ -761,6 +761,12 @@ class CfgFunctions
 			class RC_cUAS_Beep {};
 			class scrollSolutions {};
 		};
+		class RC_Immobilized
+		{
+			file="\Remote_Controlled_Artillery\functions\Immobilized";
+
+			class RC_allowCrewInImmobile {};
+		};
 		/*
 		class RC_Arty_functions
 		{
@@ -812,13 +818,23 @@ class CfgFunctions
 			//class RC_TakeControlPilotGlobal {};
 			//class RC_TakeControlCopilotGlobal {};
 		};
-		class RC_Immobilized
-		{
-			file="\Remote_Controlled_Artillery\immobilized";
-
-			class RC_allowCrewInImmobile {};
-		};
 	};
+};
+
+
+class Extended_Init_EventHandlers {
+    class Tank_F {
+        class RC_Immobilized {
+            init="if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
+			//init="systemChat 'init Tank_F'; if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
+        };
+    };
+    class Wheeled_APC_F {
+        class RC_Immobilized {
+            init="if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
+			//init="systemChat 'init Tank_F'; if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
+        };
+    };
 };
 
 
@@ -972,7 +988,7 @@ class CfgWeapons
 };
 class CfgVehicles
 {
-	#include "\Remote_Controlled_Artillery\immobilized\allowCrewInImmobileCfgEH.hpp"
+	//#include "\Remote_Controlled_Artillery\immobilized\allowCrewInImmobileCfgEH.hpp"
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\AC_FSV.hpp"
