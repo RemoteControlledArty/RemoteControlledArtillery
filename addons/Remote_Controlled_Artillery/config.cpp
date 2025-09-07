@@ -761,12 +761,14 @@ class CfgFunctions
 			class RC_cUAS_Beep {};
 			class scrollSolutions {};
 		};
+		/*
 		class RC_Immobilized
 		{
 			file="\Remote_Controlled_Artillery\functions\Immobilized";
 
 			class RC_allowCrewInImmobile {};
 		};
+		*/
 		/*
 		class RC_Arty_functions
 		{
@@ -821,7 +823,7 @@ class CfgFunctions
 	};
 };
 
-
+/*
 class Extended_Init_EventHandlers {
     class Tank_F {
         class RC_Immobilized {
@@ -836,6 +838,7 @@ class Extended_Init_EventHandlers {
         };
     };
 };
+*/
 
 
 #include "\Remote_Controlled_Artillery\ui\baseClasses.hpp"
