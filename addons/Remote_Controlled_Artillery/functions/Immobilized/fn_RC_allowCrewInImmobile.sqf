@@ -104,11 +104,15 @@ RC_fnc_ImmobilizeTest = {
 
 
                         private _crew = crew _veh;
+                        private _dri = driver _veh;
+                        private _gun = gunner _veh;
+                        private _com = commander _veh;
+
                         private _cargoArr = [];
                         {
                             private _unit = _x;
                             if !(isPlayer _x) then {
-                                if ((_unit isNotEqualTo (driver _veh)) && (_unit isNotEqualTo (gunner _veh)) && (_unit isNotEqualTo (commander _veh))) then {
+                                if ((_unit isNotEqualTo _dri) && (_unit isNotEqualTo _gun) && (_unit isNotEqualTo _com)) then {
                                     
                                     [[_unit], grpNull] remoteExec ["joinSilent", _ownerID];
                                     _cargoArr pushBackUnique _unit;
