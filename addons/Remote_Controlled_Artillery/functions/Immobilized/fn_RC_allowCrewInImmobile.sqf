@@ -70,6 +70,78 @@ params ["_veh"];
 };
 
 
+params ["_veh"];
+
+[_veh] spawn {
+    params ["_veh"];
+
+    sleep 2;
+    if (_veh isEqualTo objNull) exitwith {};
+    if !(alive _veh) exitwith {};
+    
+    _veh allowCrewInImmobile true;
+
+    while {true} do {
+
+        sleep 2;
+        if (_veh isEqualTo objNull) exitwith {};
+        if !(alive _veh) exitwith {};
+
+        if !(canMove _veh) then {
+            if ((count (crew _veh)) > 0) then {
+                if !(_veh getVariable ["RC_immobileTimerRunning", false]) then {
+                    _veh setVariable ["RC_immobileTimerRunning", true];
+
+                    private _vehOwner = owner _veh;
+                    private _crew = crew _veh;
+                    private _dri = driver _veh;
+                    private _gun = gunner _veh;
+                    private _com = commander _veh;
+
+                    private _cargoArr = [];
+                    {
+                        private _unit = _x;
+                        if !(isPlayer _x) then {
+                            if ((_unit isNotEqualTo _dri) && (_unit isNotEqualTo _gun) && (_unit isNotEqualTo _com)) then {
+                                
+                                [_unit] joinSilent grpNull;
+                                _cargoArr pushBackUnique _unit;
+                            };
+                        };
+                    } forEach _crew;
+
+
+                    if (count _cargoArr > 0) then {
+
+                        private _newLead = _cargoArr #0;
+                        [_newLead] joinSilent grpNull;
+                        sleep 0.1;
+                        _cargoArr deleteAt 0;
+                        private _newGroup = group _newLead;
+
+                        if (count _cargoArr > 0) then {
+                            _cargoArr joinSilent _newGroup;
+                        };
+                        [_newGroup, _veh] remoteExec ["leaveVehicle", _vehOwner];
+                    };
+
+                    
+                    sleep random [10, 11, 12];
+                    _vehOwner = owner _veh;
+                    _veh allowCrewInImmobile false;
+                    _veh setVariable ["RC_immobileTimerRunning", false];
+
+                    private _driverGroup = group (driver _veh);
+                    [_driverGroup, _veh] remoteExec ["leaveVehicle", _vehOwner];
+                };
+            } else {
+                sleep 20;
+            };
+        };
+    };
+};
+
+
 //current
 RC_fnc_ImmobilizeTest = {
 
@@ -82,10 +154,8 @@ RC_fnc_ImmobilizeTest = {
         if (_veh isEqualTo objNull) exitwith {};
         if !(alive _veh) exitwith {};
         
-        private _ownerID = (owner _veh);
         _veh allowCrewInImmobile true;
-        private _str1 = "passed";
-        _str1 remoteExec ["systemchat", _ownerID];
+        "passed" remoteExec ["systemchat", 0];
 
         while {true} do {
 
@@ -98,12 +168,7 @@ RC_fnc_ImmobilizeTest = {
                     if !(_veh getVariable ["RC_immobileTimerRunning", false]) then {
                         _veh setVariable ["RC_immobileTimerRunning", true];
 
-                        private _ownerID = (owner _veh);
-                        private _str2 = "immobilized";
-                        _str2 remoteExec ["systemchat", _ownerID];
-
-
-                        private _crew = crew _veh;
+                        "immobilized" remoteExec ["systemchat", -2];
                         private _dri = driver _veh;
                         private _gun = gunner _veh;
                         private _com = commander _veh;
@@ -111,40 +176,50 @@ RC_fnc_ImmobilizeTest = {
                         private _cargoArr = [];
                         {
                             private _unit = _x;
-                            if !(isPlayer _x) then {
-                                if ((_unit isNotEqualTo _dri) && (_unit isNotEqualTo _gun) && (_unit isNotEqualTo _com)) then {
-                                    
-                                    [[_unit], grpNull] remoteExec ["joinSilent", _ownerID];
-                                    _cargoArr pushBackUnique _unit;
+                            if !(isPlayer _unit) then {
+                                if (alive _unit) then {
+                                    if ((_unit isNotEqualTo _dri) && (_unit isNotEqualTo _gun) && (_unit isNotEqualTo _com)) then {
+                                        
+                                        [_unit] joinSilent grpNull;
+                                        _cargoArr pushBackUnique _unit;
+                                    };
                                 };
                             };
-                        } forEach _crew;
+                        } forEach (crew _veh);
 
 
+                        private _driverGrp = group (driver _veh);
                         if (count _cargoArr > 0) then {
 
                             private _newLead = _cargoArr #0;
-                            [[_newLead], grpNull] remoteExec ["joinSilent", _ownerID];
+                            [_newLead] joinSilent grpNull;
                             sleep 0.1;
                             _cargoArr deleteAt 0;
-                            private _newGroup = group _newLead;
+                            private _newGrp = group _newLead;
 
                             if (count _cargoArr > 0) then {
-                                [_cargoArr, _newGroup] remoteExec ["joinSilent", _ownerID];
+                                _cargoArr joinSilent _newGrp;
                             };
-                            [_newGroup, _veh] remoteExec ["leaveVehicle", _ownerID];
+                            private _grpOwner = groupOwner _newGrp;
+                            [_newGrp, _veh] remoteExec ["leaveVehicle", _grpOwner];
+                            
+                            _newGrp copyWaypoints _driverGrp
                         };
 
                         
-                        sleep random [6, 9, 12];
-                        private _ownerID = (owner _veh);
+                        sleep random [20, 30, 40];
                         _veh allowCrewInImmobile false;
-                        private _str3 = "timer over";
-                        _str3 remoteExec ["systemchat", _ownerID];
+
+                        "timer over" remoteExec ["systemchat", -2];
                         _veh setVariable ["RC_immobileTimerRunning", false];
 
-                        private _driverGroup = group (driver _veh);
-                        [_driverGroup, _veh] remoteExec ["leaveVehicle", _ownerID];
+                        if !(canMove _veh) then {
+                            if ((count (crew _veh)) > 0) then {
+                                private _grpOwner = groupOwner _driverGrp;
+                                [_driverGrp, _veh] remoteExec ["leaveVehicle", _grpOwner];
+                                "crew dismounting" remoteExec ["systemchat", -2];
+                            };
+                        };
                     };
                 } else {
                     sleep 20;
@@ -155,6 +230,10 @@ RC_fnc_ImmobilizeTest = {
 };
 private _veh = _this;
 [_veh] remoteExecCall ["RC_fnc_ImmobilizeTest", 2];
+
+//REACTIVATE AFTER REPAIR!? maybe in else statement of canMove?
+
+
 
 
 RC_fnc_SpawnTest = {
