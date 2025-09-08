@@ -126,7 +126,7 @@ params ["_veh"];
                     };
 
                     
-                    sleep random [10, 11, 12];
+                    sleep random [60, 75, 90];
                     _vehOwner = owner _veh;
                     _veh allowCrewInImmobile false;
                     _veh setVariable ["RC_immobileTimerRunning", false];
@@ -207,7 +207,7 @@ RC_fnc_ImmobilizeTest = {
                         };
 
                         
-                        sleep random [20, 30, 40];
+                        sleep random [30, 40, 50];
                         _veh allowCrewInImmobile false;
 
                         "timer over" remoteExec ["systemchat", -2];
@@ -231,7 +231,10 @@ RC_fnc_ImmobilizeTest = {
 private _veh = _this;
 [_veh] remoteExecCall ["RC_fnc_ImmobilizeTest", 2];
 
+
 //REACTIVATE AFTER REPAIR!? maybe in else statement of canMove?
+private _owner = owner _this;
+"local" remoteExec ["systemchat", _owner];
 
 
 
