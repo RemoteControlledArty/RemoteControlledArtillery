@@ -207,7 +207,7 @@ RC_fnc_ImmobilizeTest = {
                         };
 
                         
-                        sleep random [30, 40, 50];
+                        sleep random [12, 15, 18];
                         _veh allowCrewInImmobile false;
 
                         "timer over" remoteExec ["systemchat", -2];
