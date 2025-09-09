@@ -823,22 +823,21 @@ class CfgFunctions
 	};
 };
 
-/*
+
 class Extended_Init_EventHandlers {
     class Tank_F {
         class RC_Immobilized {
             init="if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
-			//init="systemChat 'init Tank_F'; if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
         };
     };
     class Wheeled_APC_F {
         class RC_Immobilized {
             init="if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
-			//init="systemChat 'init Tank_F'; if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
         };
     };
 };
-*/
+//init="systemChat 'init Tank_F'; if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
+//init="systemChat 'init Wheeled_APC_F'; if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
 
 
 #include "\Remote_Controlled_Artillery\ui\baseClasses.hpp"

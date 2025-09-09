@@ -26,7 +26,7 @@ magazines[]=
 	"RC_50Rnd_40mm_APFSDS_T_R",
 	"RC_50Rnd_40mm_APFSDS_T_R",
 	"RC_50Rnd_40mm_APFSDS_T_R",
-	"RC_50Rnd_40mm_APFSDS_T_R",
+	//"RC_50Rnd_40mm_APFSDS_T_R",
 
 	"RC_200Rnd_338_T_R",
 	"RC_200Rnd_338_T_R",
