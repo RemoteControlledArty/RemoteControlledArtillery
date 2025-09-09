@@ -27,9 +27,9 @@ if (_chargesAPS > 0) then {
 	//systemchat "before spawn";
 
 	if (_ammoType isEqualTo "shotRocket") then {
-		[_vic, _proj, _chargesAPS] spawn
+		[_vic, _proj] spawn
 		{
-			params ["_vic", "_proj", "_chargesAPS"];
+			params ["_vic", "_proj"];
 
 			scopeName "APS";
 			while {alive _vic && alive _proj} do {
@@ -80,9 +80,12 @@ if (_chargesAPS > 0) then {
 							[_expl, _explDir] remoteExec ["setDir", 0];
 							_expl setDamage 1;
 							
-							private _nextChargesAPS = 0 max (_chargesAPS - 1);
-							_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
+							//_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
+							private _vicOwner = owner _vic;
+							private _removeMagArr = ["RC_1Rnd_APS_M", [-1]];
+							[_vic, _removeMagArr] remoteExec ["removeMagazineTurret", _vicOwner];
 							
+							private _nextChargesAPS = 0 max (_chargesAPS - 1);
 							private _string = "activated APS, " + str _nextChargesAPS + " remaining";
 							private _crew = (crew _vic) select {isPlayer _x};
 							[_string] remoteExec ["systemChat", _crew];
@@ -94,9 +97,9 @@ if (_chargesAPS > 0) then {
 			};
 		};
 	} else {
-		[_vic, _proj, _chargesAPS] spawn
+		[_vic, _proj] spawn
 		{
-			params ["_vic", "_proj", "_chargesAPS"];
+			params ["_vic", "_proj"];
 
 			scopeName "main";
 			while {(alive _vic) and (alive _proj)} do
@@ -147,9 +150,12 @@ if (_chargesAPS > 0) then {
 						[_expl, _explDir] remoteExec ["setDir", 0];
 						_expl setDamage 1;
 						
-						private _nextChargesAPS = 0 max (_chargesAPS - 1);
-						_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
+						//_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
+						private _vicOwner = owner _vic;
+						private _removeMagArr = ["RC_1Rnd_APS_M", [-1]];
+						[_vic, _removeMagArr] remoteExec ["removeMagazineTurret", _vicOwner];
 						
+						private _nextChargesAPS = 0 max (_chargesAPS - 1);
 						private _string = "activated APS, " + str _nextChargesAPS + " remaining";
 						private _crew = (crew _vic) select {isPlayer _x};
 						[_string] remoteExec ["systemChat", _crew];
