@@ -390,7 +390,7 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 		"SmokeLauncherMag"
 	};
 
-	displayName="Patria AMV";
+	displayName="Patria AMV40";
 	editorSubcategory="RC_IFV_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -683,6 +683,167 @@ class RC_IFV_4_ReTex_D_I: RC_IFV_4_ReTex_D
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Patria_40mm_yellow.hpp"
+		};
+	};
+};
+
+
+class RC_IFV_4_30mm_A: RC_IFV_4_A
+{
+	displayName="Patria AMV30";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_autocannon_30mm_CTWS",
+				"RC_MMG_338_coax",
+				"SmokeLauncher"
+			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Patria_30mm_red.hpp"
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_rot
+		{
+			source="ammorandom";
+			weapon="RC_autocannon_30mm_CTWS";
+		};
+		class muzzle_hide
+		{
+			source="reload";
+			weapon="RC_autocannon_30mm_CTWS";
+		};
+		class revolving_cannon
+		{
+			source="revolving";
+			weapon="RC_autocannon_30mm_CTWS";
+		};
+	};
+};
+class RC_IFV_4_30mm_A_O: RC_IFV_4_30mm_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Patria_30mm_green.hpp"
+		};
+	};
+};
+class RC_IFV_4_30mm_A_I: RC_IFV_4_30mm_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Patria_30mm_yellow.hpp"
+		};
+	};
+};
+
+
+class RC_IFV_4_30mm_WD: RC_IFV_4_30mm_A
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\Armor_F\Data\cage_olive_CO.paa"
+	};
+};
+class RC_IFV_4_30mm_WD_O: RC_IFV_4_30mm_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Patria_30mm_green.hpp"
+		};
+	};
+};
+class RC_IFV_4_30mm_WD_I: RC_IFV_4_30mm_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Patria_30mm_yellow.hpp"
+		};
+	};
+};
+
+
+//optional Phantom Hawk Retextures (found in steam workshop)
+class RC_IFV_4_30mm_ReTex_D: RC_IFV_4_30mm_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Desert_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"patria\data\patria_01_ext_d.paa",
+		"patria\data\patria_02_ext_d.paa",
+		"patria\data\patria_turret_d.paa",
+		"patria\data\camonet_desert_co.paa",
+		"patria\data\cage_desert_co.paa"
+	};
+};
+class RC_IFV_4_30mm_ReTex_D_O: RC_IFV_4_30mm_ReTex_D
+{
+	faction="RemoteControlled_ReTex_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Patria_30mm_green.hpp"
+		};
+	};
+};
+class RC_IFV_4_30mm_ReTex_D_I: RC_IFV_4_30mm_ReTex_D
+{
+	faction="RemoteControlled_ReTex_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Patria_30mm_yellow.hpp"
 		};
 	};
 };

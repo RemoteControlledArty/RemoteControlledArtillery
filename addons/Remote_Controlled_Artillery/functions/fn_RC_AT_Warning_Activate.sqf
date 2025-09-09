@@ -19,6 +19,9 @@ params ["_vic", "_source", "_proj", "_mag"];
 			if ((([_proj, 'GEOM', _vic] checkVisibility [getPosASL _proj, eyePos _vic]) > 0)) exitwith {
 
 				private _projFirstPos = getPosASL _proj;
+				private _vicPos = getPosASL _vic;
+				private _distNow = _projFirstPos distance _vicPos;
+				private _distSource = _source distance _vicPos;
 
 				//warning beeb as soon as projectile is detectable
 				private _crew = (crew _vic) select {isPlayer _x};
@@ -54,7 +57,7 @@ params ["_vic", "_source", "_proj", "_mag"];
 
 					//if visible datalinks launcher
 					if (RC_AT_SourceIndicationStatic && RC_AT_SourceIndicationInf && RC_AT_SourceIndicationVic) then {
-						if ((_vic distance _source) < 4000) then {
+						if ((_distSource) < 4000) then {
 							private _side = side _vic;
 							if (_source isKindOf 'StaticWeapon' && RC_AT_SourceIndicationStatic) then {
 								[_side, [_source, 300]] remoteExec ['reportRemoteTarget', _side];
@@ -95,64 +98,69 @@ params ["_vic", "_source", "_proj", "_mag"];
 				};
 
 
-				//warning message with information
-				private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
-				private _magName = getText (configFile >> "CfgMagazines" >> _mag >> "displayName");
+				//only runs if player inside / connected per terminal
+				if ((count _crew) > 0) then {
+					//warning message with information
+					private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
+					private _magName = getText (configFile >> "CfgMagazines" >> _mag >> "displayName");
 
-				// missile direction vector (normalized velocity)
-				private _dirProj = vectorNormalized velocity _proj;
-				// Reverse it (points back toward the shooter)
-				private _dirSource = _dirProj vectorMultiply -1;
-				// Construct a "fake shooter position" along that reverse vector (arbitrary distance, e.g. 1000m back)
-				private _fakeMissileSourcePos = (getPosASL _proj) vectorAdd (_dirSource vectorMultiply 4000);
-				private _maxSourceBearing = round ([_vic, _fakeMissileSourcePos] call BIS_fnc_dirTo);
-				//_stringMissile = "missile: " + str _maxSourceBearing;
-				//[_stringMissile] remoteExec ["systemChat", _crew];
+					// missile direction vector (normalized velocity)
+					private _dirProj = vectorNormalized velocity _proj;
+					// Reverse it (points back toward the shooter)
+					private _dirSource = _dirProj vectorMultiply -1;
+					// Construct a "fake shooter position" along that reverse vector (arbitrary distance, e.g. 1000m back)
+					private _fakeMissileSourcePos = _projFirstPos vectorAdd (_dirSource vectorMultiply 4000);
+					private _maxSourceBearing = round ([_vic, _fakeMissileSourcePos] call BIS_fnc_dirTo);
+					//_stringMissile = "missile: " + str _maxSourceBearing;
+					//[_stringMissile] remoteExec ["systemChat", _crew];
 
+					
+					private _stringPrj = "missile: " + _magName;
+					if (_ammoType isEqualTo "shotRocket") then {
+						_stringPrj = "rocket: " + _magName;
 
-				private _string = "missile detected: " + _magName;
-				if (_ammoType isEqualTo "shotRocket") then {
-					_string = "rocket detected: " + _magName;
+						//Estimate launcher bearing & distance
+						private _projVel = velocity _proj;
+						private _projSpeed = vectorMagnitude _projVel;
+						// assume initial speed ~30% higher than current
+						private _estInitSpeed = _projSpeed * 1.3;
 
-					//Estimate launcher bearing & distance
-					private _projVel = velocity _proj;
-					private _projSpeed = vectorMagnitude _projVel;
-					// assume initial speed ~30% higher than current
-					private _estInitSpeed = _projSpeed * 1.3;
+						// rough guess: how far back along trajectory it started
+						// time since fired (guess) = currentDistance / avgSpeed
+						private _avgSpeed = (_projSpeed + _estInitSpeed) / 2;
+						private _timeGuess = _distNow / _avgSpeed;
 
-					// rough guess: how far back along trajectory it started
-					// time since fired (guess) = currentDistance / avgSpeed
-					private _distNow = _projFirstPos distance (getPosASL _vic);
-					private _avgSpeed = (_projSpeed + _estInitSpeed) / 2;
-					private _timeGuess = _distNow / _avgSpeed;
+						// project backwards along velocity vector
+						private _estLaunchPos = _projFirstPos vectorDiff (_projVel vectorMultiply _timeGuess);
+						// bearing from vic to guessed launch pos
+						_maxSourceBearing = round ([_vic, _estLaunchPos] call BIS_fnc_dirTo);
 
-					// project backwards along velocity vector
-					private _estLaunchPos = _projFirstPos vectorDiff (_projVel vectorMultiply _timeGuess);
-					// bearing from vic to guessed launch pos
-					_maxSourceBearing = round ([_vic, _estLaunchPos] call BIS_fnc_dirTo);
-
-					//_stringRocket = "rocket: " + str _maxSourceBearing;
-					//[_stringRocket] remoteExec ["systemChat", _crew];
-				};
-
-
-				//bearing of first detected projectile pos
-				private _bearing =  round ([_vic, _projFirstPos] call BIS_fnc_dirTo);
-
-				if (_sourceVisible) then {
-					if (_source isKindOf 'Man') then {
-						_string = _string + ",  launcher: infantry";
-					} else {
-						private _sourceType = getText (configFile >> "CfgVehicles" >> typeOf _source >> "displayName");
-						_string = _string + ",  launcher: " + _sourceType;
+						//_stringRocket = "rocket: " + str _maxSourceBearing;
+						//[_stringRocket] remoteExec ["systemChat", _crew];
 					};
-					_string = _string + ",  bearing: " + str _bearing;
-				} else {
-					_string = _string + ",  launcher: not detected";
-					_string = _string + ",  bearing: " + str _bearing + " - " + str _maxSourceBearing;
-				};
 
-				[_string] remoteExec ["systemChat", _crew];
+					//bearing of first detected projectile pos
+					private _bearing =  round ([_vic, _projFirstPos] call BIS_fnc_dirTo);
+
+					private _stringSource = "launcher: ";
+					if (_sourceVisible) then {
+						if (_source isKindOf 'Man') then {
+							_stringSource = _stringSource + "infantry";
+						} else {
+							private _sourceType = getText (configFile >> "CfgVehicles" >> typeOf _source >> "displayName");
+							_stringSource = _stringSource + _sourceType;
+						};
+						_stringSource = _stringSource + ",  " + str (round _distSource) + "m,  " + str _bearing + "°";
+					} else {
+						_stringSource = _stringSource + "not detected";
+						_stringSource = _stringSource + ",  " + str _bearing + "° - " + str _maxSourceBearing + "°";
+
+						_stringPrj = _stringPrj + ",  " + str (round _distNow) + "m";
+					};
+
+					[_stringPrj] remoteExec ["systemChat", _crew];
+					[_stringSource] remoteExec ["systemChat", _crew];
+				};
 
 				breakOut "DetectProjectile";
 			};

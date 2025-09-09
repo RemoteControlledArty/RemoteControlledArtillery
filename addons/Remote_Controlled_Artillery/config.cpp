@@ -446,6 +446,12 @@ class CfgPatches
 			"RC_IFV_4_WD_O",
 			"RC_IFV_4_A_I",
 			"RC_IFV_4_WD_I",
+			"RC_IFV_4_30mm_A",
+			"RC_IFV_4_30mm_WD",
+			"RC_IFV_4_30mm_A_O",
+			"RC_IFV_4_30mm_WD_O",
+			"RC_IFV_4_30mm_A_I",
+			"RC_IFV_4_30mm_WD_I",
 
 			"RC_IFV_5_A_O",
 			"RC_IFV_5_WD_O",
@@ -594,6 +600,9 @@ class CfgPatches
 			"RC_IFV_4_ReTex_D",
 			"RC_IFV_4_ReTex_D_O",
 			"RC_IFV_4_ReTex_D_I",
+			"RC_IFV_4_30mm_ReTex_D",
+			"RC_IFV_4_30mm_ReTex_D_O",
+			"RC_IFV_4_30mm_ReTex_D_I",
 
 			"RC_IFV_6_ReTex_A",
 			"RC_IFV_6_ReTex_D",
@@ -761,14 +770,12 @@ class CfgFunctions
 			class RC_cUAS_Beep {};
 			class scrollSolutions {};
 		};
-		/*
 		class RC_Immobilized
 		{
 			file="\Remote_Controlled_Artillery\functions\Immobilized";
 
 			class RC_allowCrewInImmobile {};
 		};
-		*/
 		/*
 		class RC_Arty_functions
 		{

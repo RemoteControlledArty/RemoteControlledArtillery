@@ -2,7 +2,7 @@
 	Author: Ascent
 
 	Description:
-	Allows crew to stay in armored vehicles if immobilized (tracks/wheels), but after a timer they dismount.
+	Allows crew to stay in armored vehicles if immobilized (tracks/wheels), but after a 60-90sec timer they dismount.
 	Making armored vehicles more threatening, in a balanced way, without extra effort for the zeus.
 */
 
@@ -68,19 +68,19 @@ params ["_veh"];
                     };
 
                     
-                    sleep random [12, 15, 18];
+                    sleep random [60, 75, 90];
                     if (isNull _veh) exitwith {_while = false;};
                     if !(alive _veh) exitwith {_while = false;};
 
-                    _veh allowCrewInImmobile false;
-                    _veh setVariable ["RC_immobileTimerRunning", false];
-
                     if !(canMove _veh) then {
-                        if ((count (crew _veh)) > 0) then {
-                            
+
+                        _veh allowCrewInImmobile false;
+                        _veh setVariable ["RC_immobileTimerRunning", false];
+                        _while = false;
+
+                        if (((count (crew _veh)) > 0) && (!isNull _driverGrp)) then {  
                             private _grpOwner = groupOwner _driverGrp;
                             [_driverGrp, _veh] remoteExec ["leaveVehicle", _grpOwner];
-                            _while = false;
                         };
                     };
                 };
@@ -159,21 +159,21 @@ RC_fnc_ImmobilizeTest = {
                         };
 
                         
-                        sleep random [60, 90, 120];
+                        sleep random [60, 75, 90];
                         if (isNull _veh) exitwith {_while = false;};
                         if !(alive _veh) exitwith {_while = false;};
 
-                        _veh allowCrewInImmobile false;
-                        _veh setVariable ["RC_immobileTimerRunning", false];
-                        "timer over" remoteExec ["systemchat", -2];
-
                         if !(canMove _veh) then {
-                            if ((count (crew _veh)) > 0) then {
+
+                            _veh allowCrewInImmobile false;
+                            _veh setVariable ["RC_immobileTimerRunning", false];
+                            "timer over" remoteExec ["systemchat", -2];
+                            _while = false;
+                            
+                            if (((count (crew _veh)) > 0) && (!isNull _driverGrp)) then {  
                                 private _grpOwner = groupOwner _driverGrp;
                                 [_driverGrp, _veh] remoteExec ["leaveVehicle", _grpOwner];
                                 "crew dismounting" remoteExec ["systemchat", -2];
-
-                                _while = false;
                             };
                         };
                     };

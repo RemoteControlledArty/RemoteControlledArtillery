@@ -146,6 +146,17 @@
 ] call CBA_fnc_addKeybind;
 
 [
+    "RC_allowCrewInImmobile",
+    "CHECKBOX",
+    ["armor crew stays in immobilized vehicle for 60-90sec", "Instead of unrealistic instant gunner dismount of immobilized vehicle, crew of armored vehicles leave only after 60-90sec, making gameplay more interesting."],
+    ["RC Modernized Vehicles"],
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
     "RC_AT_SourceIndicationVic",
     "CHECKBOX",
     ["allow Vehicle-AT-fire source indicator", "Only for this mods vehicles that have missile/rocket detection systems, BRIEFLY marks source of enemy AT Vehicle fire in datalink."],
@@ -261,17 +272,6 @@
     ["fixes locality of all UVs", "Drive UGV from turret / set correct UAV waypoint altitude, without first having to connect to driver to localize. Unknown if causes issues."],
     ["RC Modernized Vehicles"],
     false,
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    "RC_allowCrewInImmobile",
-    "CHECKBOX",
-    ["armor crew stays in immobilized vehicle for 1-2min", "Instead of unrealistic instant gunner dismount of immobilized vehicle, crew of armored vehicles leave only after 1-2min, making gameplay more interesting."],
-    ["RC Modernized Vehicles"],
-    true,
     true,
     {},
     true
