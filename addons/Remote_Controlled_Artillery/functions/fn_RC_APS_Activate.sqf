@@ -111,7 +111,6 @@ if (_chargesAPS > 0) then {
 					private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
 
 					if (_chargesAPS > 0) then {
-						private _dist = _proj distance _vic;
 						private _projPos = getPosASL _proj;
 						private _projDir = getDir _proj;
 						private _projVel = velocity _proj;
@@ -122,6 +121,7 @@ if (_chargesAPS > 0) then {
 
 						playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _vic, false, getPosASL _vic, 5, 0.8, 600];
 
+						private _dist = _projPos distance (getPosASL _vic);
 						private _timeOffset = ((_dist/2) min 15) / (vectorMagnitude _projVel);
 						private _interceptPos = [
 							(_projPos #0) + (_projVel #0) * _timeOffset,

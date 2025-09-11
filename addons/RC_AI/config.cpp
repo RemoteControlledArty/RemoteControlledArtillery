@@ -1,97 +1,91 @@
 class CfgPatches
 {
-	class RC_60mmULM
+	class RC_AI
 	{
-		name="advanced 60mm Mortar";
+		name="RC - Modernized AI Vehicles";
 		author="Ascent";
-
+		
+		/*
 		units[]=
 		{
-			"RC_60mm_ULM_Vic"
+			"RC_AI_B_Crew",
+			"RC_AI_O_Crew",
+			"RC_AI_I_Crew",
+
+			"RC_AAV9_A",
+			"RC_AAV9_WD",
+			"RC_AAV9_A_O"
 		};
+
 		weapons[]=
 		{
-			"RC_60mm_ULM_Bag",
-			"RC_60mm_ULM_Weapon"
+			"RC_EF_autocannon_30mm",
+			"RC_EF_autocannon_50mm",
+			"RC_EF_MMG_coax"
 		};
-		magazines[]=
-		{
-			"RC_ULM_1Rnd_60mm_Mo_shells",
-			"RC_ULM_1Rnd_60mm_Mo_HEAB",
-			"RC_ULM_1Rnd_60mm_Mo_backupHEAB",
-			"RC_ULM_1Rnd_60mm_Mo_Smoke",
+		*/
 
-			"RC_ULM_1Rnd_60mm_Mo_MultiGuided",
-			"RC_ULM_1Rnd_60mm_Mo_LaserGuided",
-			"RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse",
-			
-			"RC_ULM_1Rnd_60mm_Mo_mine",
-			"RC_ULM_1Rnd_60mm_Mo_Illum"
-		};
 		requiredAddons[]=
 		{
 			"cba_main",
-			"RC_Artillery",
-			"twc_2inch",
-			"NDS_M224_mortar"
+			"RC_Artillery"
 		};
 
 		skipWhenMissingDependencies=1;
 	};
 };
 
-class CfgFunctions
-{
-	class RC_ULM
-	{
-		class functions
-		{
-			file="\RC_60mmULM\functions";
-      		//class preInit {preInit=1;};
-      		//class InitCBASettings {preInit=1;};
-			class RC_UI_Loop_ULM {postInit=1;};
-      		class init {postInit=1;};
-			//class ui {};
-			class deploy {};
-			class rangetable {};
-			class fire {};
-			class getout {};
-
-			//ADD "HE - splash in 5sec", fired EH, mag speed, elev TOF for ASL, or fired setvalue on mortar if true UILoop starts scritpt and sets to false so it doesnt trigger twice
-		};
-	};
-};
-
 
 /*
-class Extended_PostInit_EventHandlers
+class CfgFunctions
 {
-	class RC_ULM
+	class RC
 	{
-		init="_this call RC_ULM_fnc_init";
-	};
-};
-class Extended_GetOut_Eventhandlers
-{
-	class RC_60mm_ULM_Vic
-	{
-		class RC_ULM
+		class RC_AI
 		{
-			getout="systemchat 'GetOutEH'; _this call RC_ULM_fnc_getout";
-		};
-	};
-};
-class Extended_FiredBIS_EventHandlers
-{
-	class RC_60mm_ULM_Vic
-	{
-		class RC_ULM
-		{
-			firedBIS="_this call RC_ULM_fnc_fire";
+			file="\Remote_Controlled_Artillery\functions";
+
+      		class preInit {preInit=1;};
+      		class InitCBASettings {preInit=1;};
+		
+      		class RC_UI_Loop {postInit=1;};
+
+			class RC_AT_Warning_Arrays {preInit=1;};
+			class RC_AT_Warning {};
+
 		};
 	};
 };
 */
+
+
+class CfgFactionClasses
+{
+	class RC_AI_O
+	{
+		displayName="'RC - Modernized AI Vehicles'";
+		side=0;
+		flag="\a3\Data_f\Flags\flag_CSAT_co.paa";
+		icon="\a3\Data_f\cfgFactionClasses_OPF_ca.paa";
+		priority=0;
+	};
+	class RC_AI_B
+	{
+		displayName="'RC - Modernized AI Vehicles'";
+		side=1;
+		flag="\a3\Data_f\Flags\flag_nato_co.paa";
+		icon="\a3\Data_f\cfgFactionClasses_BLU_ca.paa";
+		priority=0;
+	};
+	class RC_AI_I
+	{
+		displayName="'RC - Modernized AI Vehicles'";
+		side=2;
+		flag="\a3\Data_f\Flags\flag_AAF_CO.paa";
+		icon="\a3\Data_f\cfgFactionClasses_IND_ca.paa";
+		priority=0;
+	};
+};
 
 
 //later required sensors
@@ -101,51 +95,34 @@ class SensorTemplateIR;
 class SensorTemplateNV;
 class SensorTemplateVisual;
 class SensorTemplateMan;
+class SensorTemplateActiveRadar;
 class SensorTemplatePassiveRadar;
+class SensorTemplateAntiRadiation;
+
+//later required optics
+class RCWSOptics;
 
 //later required sensor panels
 class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
-//later required sensor firemodes
-class Mode_SemiAuto;
-class Mode_Burst;
-
-
-class RscInGameUI
-{
-	class RscWeaponRangeArtillery;
-	class Rsc_ULM: RscWeaponRangeArtillery {};
-};
-
-
-class CfgMineTriggers
-{
-	class RangeTriggerBounding;
-	class RC_ULM_RangeTriggerBounding: RangeTriggerBounding
-	{
-		mineTriggerRange=12;	//3		//12m is the same as 60mm HE indirectHit radius
-		mineTriggerActivationRange=20;	//5
-		restrictZoneRadius=20;	//5
-	};
-};
-
 
 class CfgAmmo
 {
-	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
+	#include "\RC_AI\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 class CfgMagazines
 {
-	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+	#include "\RC_AI\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
 class CfgWeapons
 {
-	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
+	#include "\RC_AI\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
 
 
 class CfgVehicles
 {
-	#include "\RC_60mmULM\cfgVehicles\60mm_ULM.hpp"
+	#include "\RC_AI\cfgVehicles\Crew.hpp"
+	#include "\RC_AI\cfgVehicles\Pandur.hpp"
 };
