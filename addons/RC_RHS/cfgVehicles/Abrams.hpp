@@ -33,14 +33,14 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	weapons[]=
 	{
 		"RC_APS_W",
-		"SmokeLauncher"
+		"rhsusf_weap_M250"
 	};
 	magazines[]=
 	{
 		//"RC_1Rnd_APS_M",
 		//"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		"rhsusf_mag_L8A3_12",
+		"rhsusf_mag_L8A3_12"
 	};
 
 	allowTabLock=1;
@@ -194,7 +194,7 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 			
 			class Turrets: Turrets
 			{
-				class CROWS_Turret : CROWS_Turret
+				class CROWS_Turret: CROWS_Turret
 				{
 					//#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"

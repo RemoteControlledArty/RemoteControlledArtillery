@@ -5,30 +5,53 @@ class CfgPatches
 		name="RC - Modernized AI Vehicles";
 		author="Ascent";
 		
-		/*
 		units[]=
 		{
-			"RC_AI_B_Crew",
-			"RC_AI_O_Crew",
-			"RC_AI_I_Crew",
+			"RC_AI_B_Pandur_A",
+			"RC_AI_O_Pandur_A",
+			"RC_AI_I_Pandur_A",
 
-			"RC_AAV9_A",
-			"RC_AAV9_WD",
-			"RC_AAV9_A_O"
+			"RC_AI_B_Pandur_WD",
+			"RC_AI_O_Pandur_WD",
+			"RC_AI_I_Pandur_WD",
+
+			"RC_AI_B_M2A3_BUSKIII_D",
+			"RC_AI_O_M2A3_BUSKIII_D",
+			"RC_AI_I_M2A3_BUSKIII_D",
+
+			"RC_AI_B_M2A3_BUSKIII_WD",
+			"RC_AI_O_M2A3_BUSKIII_WD",
+			"RC_AI_I_M2A3_BUSKIII_WD",
+
+			"RC_AI_B_M1A2_SEPV2_D",
+			"RC_AI_O_M1A2_SEPV2_D",
+			"RC_AI_I_M1A2_SEPV2_D",
+
+			"RC_AI_B_M1A2_SEPV2_WD",
+			"RC_AI_O_M1A2_SEPV2_WD",
+			"RC_AI_I_M1A2_SEPV2_WD"
 		};
 
 		weapons[]=
 		{
-			"RC_EF_autocannon_30mm",
-			"RC_EF_autocannon_50mm",
-			"RC_EF_MMG_coax"
+			/*
+			"",
+			"",
+			"",
+			*/
+
+			"RC_AI_autocannon_30mm_CTWS",
+			"RC_AI_RHS_weap_m240_bradley_coax",
+			"RC_AI_RHS_weap_M242BC",
+			"RC_AI_RHS_weap_m256"
 		};
-		*/
 
 		requiredAddons[]=
 		{
 			"cba_main",
-			"RC_Artillery"
+			"RC_Artillery",
+			"RC_Aegis",
+			"RC_RHS"
 		};
 
 		skipWhenMissingDependencies=1;
@@ -125,4 +148,6 @@ class CfgVehicles
 {
 	#include "\RC_AI\cfgVehicles\Crew.hpp"
 	#include "\RC_AI\cfgVehicles\Pandur.hpp"
+	#include "\RC_AI\cfgVehicles\Abrams.hpp"
+	#include "\RC_AI\cfgVehicles\Bradley.hpp"
 };
