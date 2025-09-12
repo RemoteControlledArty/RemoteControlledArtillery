@@ -1610,10 +1610,14 @@ class RC_Sh_120mm_MP_T_Y: RC_Sh_120mm_MP_T_R {model="\A3\Weapons_f\Data\bullettr
 
 
 //120mm MPAB DF
+class RC_ammo_Penetrator_AB_120mm: RC_ammo_Penetrator_120mm
+{
+	airFriction=-0.001;
+};
 class RC_Sh_120mm_MP_DF_Sub: RC_Sh_120mm_MP_T_R
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
-	submunitionAmmo="RC_ammo_Penetrator_MP_120mm";
+	submunitionAmmo="RC_ammo_Penetrator_AB_120mm";
 };
 class RC_Sh_120mm_MPAB_DF_T_R: RC_Sh_120mm_MP_T_R
 {
@@ -1624,10 +1628,7 @@ class RC_Sh_120mm_MPAB_DF_T_G: RC_Sh_120mm_MPAB_DF_T_R {model="\A3\Weapons_f\Dat
 class RC_Sh_120mm_MPAB_DF_T_Y: RC_Sh_120mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-class RC_ammo_Penetrator_AB_120mm: RC_ammo_Penetrator_120mm
-{
-	airFriction=-0.001;
-};
+
 class RC_Sh_120mm_MP_HEAB_T_R: RC_Sh_120mm_MP_T_R
 {
 	submunitionAmmo="RC_ammo_Penetrator_AB_120mm";
@@ -1984,10 +1985,15 @@ class RC_Sh_125mm_MP_T_Y: RC_Sh_125mm_MP_T_R {model="\A3\Weapons_f\Data\bullettr
 
 
 //125mm MPAB DF
+class ammo_Penetrator_125mm;
+class RC_ammo_Penetrator_AB_125mm: ammo_Penetrator_125mm
+{
+	airFriction=-0.001;
+};
 class RC_Sh_125mm_MP_DF_Sub: RC_Sh_125mm_MP_T_R
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
-	submunitionAmmo="RC_ammo_Penetrator_MP_125mm";
+	submunitionAmmo="RC_ammo_Penetrator_AB_125mm";
 };
 class RC_Sh_125mm_MPAB_DF_T_R: RC_Sh_125mm_MP_T_R
 {
@@ -2600,12 +2606,17 @@ class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 	weaponLockSystem="4 + 16";
 
 	submunitionAmmo="RC_ammo_Penetrator_MP";
+	//craterEffects="AAMissileCrater";
 	indirectHit=40;
 	indirectHitRange=10;
-	maxControlRange=4000;
+	maxControlRange=4050;
 	trackOversteer=0.5;
-	fuseDistance=20;
+	fuseDistance=15;
 	cameraViewAvailable=1;
+	
+	maxSpeed=350;
+	thrustTime=5;
+	initTime=0;
 };
 
 

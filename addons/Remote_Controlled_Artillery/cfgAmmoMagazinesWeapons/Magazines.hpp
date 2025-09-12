@@ -183,6 +183,10 @@ class RC_200Rnd_338_T_R: VehicleMagazine
 class RC_200Rnd_338_T_G: RC_200Rnd_338_T_R {ammo="RC_B_338_T_G";};
 class RC_200Rnd_338_T_Y: RC_200Rnd_338_T_R {ammo="RC_B_338_T_Y";};
 class RC_200Rnd_338_T_W: RC_200Rnd_338_T_R {ammo="RC_B_338_T_W";};
+class RC_300Rnd_338_T_R: RC_200Rnd_338_T_R {count=300;};
+class RC_300Rnd_338_T_G: RC_200Rnd_338_T_G {count=300;};
+class RC_300Rnd_338_T_Y: RC_200Rnd_338_T_Y {count=300;};
+class RC_300Rnd_338_T_W: RC_200Rnd_338_T_W {count=300;};
 class RC_400Rnd_338_T_R: RC_200Rnd_338_T_R {count=400;};
 class RC_400Rnd_338_T_G: RC_200Rnd_338_T_G {count=400;};
 class RC_400Rnd_338_T_Y: RC_200Rnd_338_T_Y {count=400;};

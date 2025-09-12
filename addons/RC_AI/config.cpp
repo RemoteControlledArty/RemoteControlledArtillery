@@ -150,4 +150,5 @@ class CfgVehicles
 	#include "\RC_AI\cfgVehicles\Pandur.hpp"
 	#include "\RC_AI\cfgVehicles\Abrams.hpp"
 	#include "\RC_AI\cfgVehicles\Bradley.hpp"
+	#include "\RC_AI\cfgVehicles\Rooikat.hpp"
 };

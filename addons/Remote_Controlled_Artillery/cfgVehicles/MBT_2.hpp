@@ -176,8 +176,24 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 					};
 				};
 				/*
-				class Loader: CommanderOptics
+				class AdvisorOptics: CommanderOptics
 				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_advisor.hpp"
+					gunnername="UAV Operator";
+					primaryObserver=0;
+					commanding=-3;
+					dontCreateAI=1;
+					canUseScanners=1;
+
+					weapons[]=
+					{
+						"RC_target_confirmer_datalink"
+					};
+					magazines[]=
+					{
+						"RC_target_confirmer_mag"
+					};
+
 					class HitPoints
 					{
 						class Hit_Optic_LoaderPeriscope
@@ -190,27 +206,30 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 							passThrough=0;
 						};
 					};
+
+					minTurn=360;	//-140
+					maxTurn=360;	//140
+					stabilizedInAxes=0;
+
 					isPersonTurret=1;
 					lockWhenDriverOut=0;
 					lodTurnedOut=1200;
-					minTurn=-140;
-					maxTurn=140;
-					stabilizedInAxes=0;
 					gunnerAction="RHS_M1A1_Loader_out";
 					gunnerInAction="RHS_M1A1_Loader_in";
-					weapons[]={};
-					magazines[]={};
+
 					gunnerForceOptics=1;
 					gunnerOutForceOptics=0;
 					gunnerOutOpticsModel="\A3\weapons_f\reticle\optics_empty";
 					inGunnerMayFire=1;
 					outGunnerMayFire=1;
+
 					memoryPointGun="usti hlavne5";
 					gunBeg="usti hlavne5";
 					gunEnd="konec hlavne5";
 					selectionFireAnim="";
 					soundAttenuationTurret="HeliAttenuationGunner";
 					disableSoundAttenuation=0;
+
 					animationSourceHatch="HatchGunner";
 					animationSourceBody="LoaderVisorTurret";
 					animationSourceGun="LoaderVisorGun";
@@ -218,20 +237,21 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 					gun="LoaderVisorGun";
 					animationSourceStickX="";
 					animationSourceStickY="";
-					commanding=-3;
-					primaryObserver=0;
+				
 					memoryPointsGetInGunner="pos gunner";
 					memoryPointsGetInGunnerDir="pos gunner dir";
-					gunnername="Loader";
 					memoryPointGunnerOptics="loadervisor_view";
+
+					gunnerDoor="hatchL";
+					proxyindex=2;
+
 					soundServo[]=
 					{
 						"A3\sounds_f\dummysound",
 						1e-006,
 						1
 					};
-					gunnerDoor="hatchL";
-					proxyindex=2;
+
 					class OpticsIn: OpticsIn
 					{
 						class Medium_TI: RCWSOptics
@@ -256,7 +276,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 								"TI"
 							};
 							thermalMode[]={0};
-							gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
+							//gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 							gunnerOpticsEffect[]={};
 							hitpoint="Hit_Optic_GPS_TI";
 						};

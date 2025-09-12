@@ -40,3 +40,41 @@ class RC_ArtySourceTarget: RC_GPSDatalinkTarget
 	displayName="GPS Artillery Source";
 	_generalMacro="RC_ArtySourceTarget";
 };
+class RC_CRAM_Target_Base: All
+{
+	author="Ascent";
+	displayName="R/A/M Projectile";
+	scope=1;	//0?
+	scopeCurator=1;	//0?
+	scopeArsenal=0;
+
+	alwaysTarget=1;
+	armor=1;
+	side=5;
+	destrType="DestructNo";
+	irTarget=1;
+	//sualTarget=1;
+
+	model="\A3\Weapons_f\laserTgt.p3d";
+	reversed=0;
+	hasDriver=0;
+	icon="iconLaserTarget";
+	accuracy=9.9999997e-005;
+	picture="pictureLaserTarget";
+	weapons[]={"FakeWeapon"};
+	magazines[]={"FakeWeapon"};
+	type=1;
+	threat[]={0,0,0};	//threat[]={1,1,1};
+	maxSpeed=1750;	//0
+	simulation="artillerymarker";	//forgot why, but its one of the few/only things that worked
+	laserTarget=0;
+	nvTarget=0;
+	artilleryTarget=0;	//1 would make it unlockable on datalink panel by all rounds
+	cost=2500000;	//makes it easier to select in datalink
+};
+class RC_CRAM_Target_Base: All
+{
+	scope=1;	//0?
+	scopeCurator=1;	//0?
+
+	side=1;
