@@ -276,7 +276,7 @@ class RC_400Rnd_127x99_SLAP_T_G: RC_200Rnd_127x99_SLAP_T_G {count=400;};
 class RC_400Rnd_127x99_SLAP_T_Y: RC_200Rnd_127x99_SLAP_T_Y {count=400;};
 
 
-class RC_200Rnd_127x99_SLAP_cUAS_T_R: 200Rnd_127x99_mag_Tracer_Red
+class RC_200Rnd_127x99_SLAP_cUAS_T_R: RC_200Rnd_127x99_SLAP_T_R
 {
 	ammo="RC_B_127x99_SLAP_cUAS_T_R";
 };

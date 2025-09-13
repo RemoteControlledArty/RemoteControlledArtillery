@@ -12,14 +12,14 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     //maybe use single array but add radar side check, as that could prevent post spawn side change issues
     //checks for opposing CBRad's
-    _CBRad_Player_AliveAmount_B = ({alive _x} count RC_CBRad_Player_Array_B);
-    _CBRad_Player_AliveAmount_O = ({alive _x} count RC_CBRad_Player_Array_O);
-    _CBRad_Player_AliveAmount_I = ({alive _x} count RC_CBRad_Player_Array_I);
-    _CBRad_AI_AliveAmount_B = ({alive _x} count RC_CBRad_AI_Array_B);
-    _CBRad_AI_AliveAmount_O = ({alive _x} count RC_CBRad_AI_Array_O);
-    _CBRad_AI_AliveAmount_I = ({alive _x} count RC_CBRad_AI_Array_I);
+    private _CBRad_Player_AliveAmount_B = ({alive _x} count RC_CBRad_Player_Array_B);
+    private _CBRad_Player_AliveAmount_O = ({alive _x} count RC_CBRad_Player_Array_O);
+    private _CBRad_Player_AliveAmount_I = ({alive _x} count RC_CBRad_Player_Array_I);
+    private _CBRad_AI_AliveAmount_B = ({alive _x} count RC_CBRad_AI_Array_B);
+    private _CBRad_AI_AliveAmount_O = ({alive _x} count RC_CBRad_AI_Array_O);
+    private _CBRad_AI_AliveAmount_I = ({alive _x} count RC_CBRad_AI_Array_I);
 
-    _CBRad_AliveAmount = _CBRad_Player_AliveAmount_B + _CBRad_Player_AliveAmount_O + _CBRad_Player_AliveAmount_I + _CBRad_AI_AliveAmount_B + _CBRad_AI_AliveAmount_O + _CBRad_AI_AliveAmount_I;
+    private _CBRad_AliveAmount = _CBRad_Player_AliveAmount_B + _CBRad_Player_AliveAmount_O + _CBRad_Player_AliveAmount_I + _CBRad_AI_AliveAmount_B + _CBRad_AI_AliveAmount_O + _CBRad_AI_AliveAmount_I;
     if (!(_CBRad_AliveAmount>0)) exitwith {};
 
 
@@ -32,25 +32,26 @@ addMissionEventHandler ["ArtilleryShellFired", {
     RC_CBRad_Player_Array_I = RC_CBRad_Player_Array_I - [objNull];
     
     //checks side of the vehicle
-    _vehicleSide_B = (side _vehicle == west);
-    _vehicleSide_O = (side _vehicle == east);
-    _vehicleSide_I = (side _vehicle == resistance);
+    private _vehSide = side _vehicle;
+    private _vehSide_B = _vehSide== west;
+    private _vehSide_O = _vehSide == east;
+    private _vehSide_I = _vehSide == resistance;
 
     //checks opposing sides
-    _opposedTo_B = [side _vehicle, west] call BIS_fnc_sideIsEnemy;
-    _opposedTo_O = [side _vehicle, east] call BIS_fnc_sideIsEnemy;
-    _opposedTo_I = [side _vehicle, resistance] call BIS_fnc_sideIsEnemy;
+    private _opposedTo_B = [_vehSide, west] call BIS_fnc_sideIsEnemy;
+    private _opposedTo_O = [_vehSide, east] call BIS_fnc_sideIsEnemy;
+    private _opposedTo_I = [_vehSide, resistance] call BIS_fnc_sideIsEnemy;
 
 
     //conciders potential prior CB firemission completed
     switch (true) do {
-        case(_vehicleSide_B): {
+        case(_vehSide_B): {
             RC_fireMissionArray_B deleteAt (RC_fireMissionArray_B find _vehicle);
         };
-        case(_vehicleSide_O): {
+        case(_vehSide_O): {
             RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _vehicle);
         };
-        case(_vehicleSide_I): {
+        case(_vehSide_I): {
             RC_fireMissionArray_I deleteAt (RC_fireMissionArray_I find _vehicle);
         };
     };
