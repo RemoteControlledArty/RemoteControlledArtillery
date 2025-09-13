@@ -312,7 +312,7 @@ class RC_Offroad_cUAS: RC_Offroad_Base
 		};";
 	};
 
-	displayName="Offroad C-UAS/FS 12.7mm";
+	displayName="Offroad C-UAS/FS 20mm";
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -335,5 +335,5 @@ class RC_Offroad_cUAS_HMG: RC_Offroad_cUAS
 		};";
 	};
 
-	displayName="Offroad C-UAS/FS 20mm";
+	displayName="Offroad C-UAS/FS 12.7mm";
 };

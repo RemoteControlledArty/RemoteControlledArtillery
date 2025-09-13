@@ -300,6 +300,16 @@ class RC_B_127x99_SLAP_T_G: RC_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bull
 class RC_B_127x99_SLAP_T_Y: RC_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+class RC_B_127x99_SLAP_cUAS_T_R: B_127x99_SLAP_Tracer_Red
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_B_127x99_SLAP_cUAS_T_G: RC_B_127x99_SLAP_cUAS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_127x99_SLAP_cUAS_T_Y: RC_B_127x99_SLAP_cUAS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 class RC_B_127x99_SLAP_HMG_T_R: B_127x99_SLAP_Tracer_Red
 {
 	laserLock=0;
