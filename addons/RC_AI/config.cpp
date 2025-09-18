@@ -147,6 +147,7 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\RC_AI\cfgVehicles\Crew.hpp"
+	#include "\RC_AI\cfgVehicles\2S90M.hpp"
 	#include "\RC_AI\cfgVehicles\Pandur.hpp"
 	#include "\RC_AI\cfgVehicles\Abrams.hpp"
 	#include "\RC_AI\cfgVehicles\Bradley.hpp"

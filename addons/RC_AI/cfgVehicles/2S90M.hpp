@@ -1,9 +1,18 @@
-class RC_M1A2_SEPV2_D_B;
-class RC_AI_B_M1A2_SEPV2_D_Core: RC_M1A2_SEPV2_D_B
+class RC_2S90M_WD;
+class RC_AI_B_2S90M_WD_Core: RC_2S90M_WD
 {
 	class Turrets;
 	class MainTurret;
-	class CROWS_Turret;
+	class CommanderOptics;
+	class HitPoints;
+	class HitLFWheel;
+	class HitLF2Wheel;
+	class HitLMWheel;
+	class HitLBWheel;
+	class HitRFWheel;
+	class HitRF2Wheel;
+	class HitRMWheel;
+	class HitRBWheel;
 	class AnimationSources;
 	class Components;
 	class UserActions;
@@ -11,7 +20,7 @@ class RC_AI_B_M1A2_SEPV2_D_Core: RC_M1A2_SEPV2_D_B
 	scope=0;
 	scopeCurator=0;
 };
-class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
+class RC_AI_B_2S90M_WD_Base: RC_AI_B_2S90M_WD_Core
 {
 	/*
 	class EventHandlers: EventHandlers
@@ -34,7 +43,7 @@ class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 
-	displayName="[AI] M1A2 SEPv2 Abrams";
+	displayName="[AI] 2S90M";
 	scope=0;
 	scopeCurator=0;
 	forceInGarage=1;	//1
@@ -46,15 +55,15 @@ class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
 
 	weapons[]=
 	{
-		"TruckHorn",
 		"RC_APS_W",
-		"rhsusf_weap_M250"
+		"SmokeLauncher"
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
-		"rhsusf_mag_L8A3_12",
-		"rhsusf_mag_L8A3_12"
+		//"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
 	};
 
 	class Turrets: Turrets
@@ -66,7 +75,7 @@ class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
 
 			class Turrets: Turrets
 			{
-				class CROWS_Turret : CROWS_Turret
+				class CommanderOptics : CommanderOptics
 				{
 					dontCreateAI=0;	//1
 					commanding=2;	//2
@@ -75,49 +84,39 @@ class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
 		};
 	};
 
+	class HitPoints: HitPoints
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\hitWheels.hpp"
+	};
+
 	class AnimationSources: AnimationSources
 	{
-		class recoil_source
+		class muzzle_hide_cannon
 		{
 			source="reload";
-			weapon="RC_AI_RHS_weap_m256";
-		};
-		class muzzle_hide_cannon: recoil_source
-		{
+			weapon="RC_AI_cannon_125mm";
 		};
 		class muzzle_rot_cannon
 		{
 			source="ammorandom";
-			weapon="RC_AI_RHS_weap_m256";
+			weapon="RC_AI_cannon_125mm";
 		};
-		class muzzle_rot_CoaxMG
+		class recoil_source
 		{
-			source="ammorandom";
-			weapon="RC_AI_RHS_weap_m240_abrams_coax";
-		};
-		/*
-		class muzzle_rot_hmg2
-		{
-			source="ammorandom";
-			weapon="RC_RHS_M2_Abrams_Gunner";
-		};
-		*/
-		class muzzle_rot_crows
-		{
-			source="ammorandom";
-			weapon="RC_AI_RHS_M2_CROWS_M153_Abrams";
+			source="reload";
+			weapon="RC_AI_cannon_125mm";
 		};
 	};
 };
 
 
-class RC_AI_B_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D_Base
+class RC_AI_B_2S90M_WD: RC_AI_B_2S90M_WD_Base
 {
 	scope=2;
 	scopeCurator=2;
 
 	faction="RC_AI_B";
-	crew="RC_AI_B_Crew";	//B_UAV_AI
+	crew="RC_AI_B_Crew";
 	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
@@ -126,95 +125,15 @@ class RC_AI_B_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D_Base
 		{
 			weapons[]=
 			{
-				"RC_AI_RHS_weap_m256",
-				"RC_AI_RHS_weap_m240_abrams_coax",
-				"rhsusf_weap_M250"
+				"RC_AI_cannon_125mm",
+				"RC_AI_MMG_93x64_coax_ext",
+				"SmokeLauncher"
 			};
-			#include "\RC_AI\includes_vicmags\mags_AI_Abrams_red.hpp"
-
-			class Turrets: Turrets
-			{
-				class CROWS_Turret: CROWS_Turret
-				{
-					/*
-					weapons[]=
-					{
-						"RC_AI_RHS_M2_CROWS_M153_Abrams",
-						"RC_Laserdesignator_vehicle",
-						"rhsusf_weap_M250",
-						"rhsusf_weap_duke"
-					};
-					#include "\RC_RHS\includes_vicmags\mags_AI_Abrams_com_red.hpp"
-					*/
-				};
-			};
+			#include "\RC_AI\includes_vicmags\mags_AI_2S90M_red.hpp"
 		};
 	};
 };
-class RC_AI_O_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D
-{
-	faction="RC_AI_O";
-	crew="RC_AI_O_Crew";	//O_UAV_AI
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			//#include "\RC_AI\includes_vicmags\mags_AI_Abrams_green.hpp"
-
-			class Turrets: Turrets
-			{
-				class CROWS_Turret: CROWS_Turret
-				{
-					//#include "\RC_RHS\includes_vicmags\mags_AI_Abrams_com_red.hpp"
-				};
-			};
-		};
-	};
-};
-class RC_AI_I_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D
-{
-	faction="RC_AI_I";
-	crew="RC_AI_I_Crew";	//I_UAV_AI
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			//#include "\RC_AI\includes_vicmags\mags_AI_Abrams_yellow.hpp"
-
-			class Turrets: Turrets
-			{
-				class CROWS_Turret: CROWS_Turret
-				{
-					//#include "\RC_RHS\includes_vicmags\mags_AI_Abrams_com_red.hpp"
-				};
-			};
-		};
-	};
-};
-
-
-class RC_AI_B_M1A2_SEPV2_WD: RC_AI_B_M1A2_SEPV2_D
-{
-	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep2wd_usarmy.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_wd_01_co.paa",
-		"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_wd_02_co.paa",
-		"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
-		"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_wd_co.paa",
-		"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskia2_wd_co.paa",
-		"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_wd_co.paa",
-		"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv2_wd_co.paa",
-		"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv2_crows_wd_co.paa"
-	};
-};
-class RC_AI_O_M1A2_SEPV2_WD: RC_AI_B_M1A2_SEPV2_WD
+class RC_AI_O_2S90M_WD: RC_AI_B_2S90M_WD
 {
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
@@ -225,19 +144,11 @@ class RC_AI_O_M1A2_SEPV2_WD: RC_AI_B_M1A2_SEPV2_WD
 	{
 		class MainTurret: MainTurret
 		{
-			//#include "\RC_AI\includes_vicmags\mags_AI_Abrams_green.hpp"
-
-			class Turrets: Turrets
-			{
-				class CROWS_Turret: CROWS_Turret
-				{
-					//#include "\RC_RHS\includes_vicmags\mags_AI_Abrams_com_red.hpp"
-				};
-			};
+			#include "\RC_AI\includes_vicmags\mags_AI_2S90M_green.hpp"
 		};
 	};
 };
-class RC_AI_I_M1A2_SEPV2_WD: RC_AI_B_M1A2_SEPV2_WD
+class RC_AI_I_2S90M_WD: RC_AI_B_2S90M_WD
 {
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
@@ -248,15 +159,60 @@ class RC_AI_I_M1A2_SEPV2_WD: RC_AI_B_M1A2_SEPV2_WD
 	{
 		class MainTurret: MainTurret
 		{
-			//#include "\RC_AI\includes_vicmags\mags_AI_Pandur_Abrams_yellow.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_2S90M_yellow.hpp"
+		};
+	};
+};
 
-			class Turrets: Turrets
-			{
-				class CROWS_Turret: CROWS_Turret
-				{
-					//#include "\RC_RHS\includes_vicmags\mags_AI_Abrams_com_red.hpp"
-				};
-			};
+
+class RC_AI_B_2S90M_A: RC_AI_B_2S90M_WD
+{
+	editorPreview="\A3_Aegis\EditorPreviews_F_Aegis\Data\CfgVehicles\Aegis_O_SFIA_APC_Wheeled_04_cannon_v2_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\APC_Wheeled_04_body2_sand_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\APC_Wheeled_04\Data\apc_wheeled_04_sprut_turret_sand_co.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\camonet_RUS_Green_CO.paa",
+		"\A3_Aegis\Armor_F_Aegis\Data\cage_RUkhk_CO.paa"
+	};
+	/*
+	textureList[]=
+	{
+		"Green",
+		0,
+		"Sand",
+		0
+	};
+	*/
+};
+class RC_AI_O_2S90M_A: RC_AI_B_2S90M_A
+{
+	faction="RC_AI_O";
+	crew="RC_AI_O_Crew";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_AI\includes_vicmags\mags_AI_2S90M_green.hpp"
+		};
+	};
+};
+class RC_AI_I_2S90M_A: RC_AI_B_2S90M_A
+{
+	faction="RC_AI_I";
+	crew="RC_AI_I_Crew";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_AI\includes_vicmags\mags_AI_2S90M_yellow.hpp"
 		};
 	};
 };

@@ -39,6 +39,30 @@ class RC_AI_MMG_338_coax_ext: RC_MMG_338_coax_ext
 };
 
 
+class RC_MMG_93x64_coax_ext;
+class RC_AI_MMG_93x64_coax_ext: RC_MMG_93x64_coax_ext
+{
+	magazines[]=
+	{
+		"RC_AI_200Rnd_93x64_T_G",
+		"RC_AI_200Rnd_93x64_T_R",
+		"RC_AI_200Rnd_93x64_T_Y",
+
+		"RC_AI_300Rnd_93x64_T_G",
+		"RC_AI_300Rnd_93x64_T_R",
+		"RC_AI_300Rnd_93x64_T_Y",
+
+		"RC_AI_400Rnd_93x64_T_G",
+		"RC_AI_400Rnd_93x64_T_R",
+		"RC_AI_400Rnd_93x64_T_Y",
+
+		"RC_AI_600Rnd_93x64_T_G",
+		"RC_AI_600Rnd_93x64_T_R",
+		"RC_AI_600Rnd_93x64_T_Y"
+	};
+};
+
+
 class RC_autocannon_30mm_CTWS;
 class RC_AI_autocannon_30mm_CTWS_Base: RC_autocannon_30mm_CTWS
 {
@@ -141,6 +165,58 @@ class RC_AI_cannon_120mm: RC_cannon_120mm
 		"RC_3Rnd_120mm_DLG_HVKEM",
 		"RC_2Rnd_120mm_DLG_HVKEM",
 		"RC_1Rnd_120mm_DLG_HVKEM"
+		*/
+	};
+};
+
+
+class RC_cannon_125mm;
+class RC_AI_cannon_125mm: RC_cannon_125mm
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+	FCSZeroingDelay=0.5;
+
+	magazines[]=
+	{
+		"RC_AI_15Rnd_125mm_APFSDS_T_R",
+		"RC_AI_20Rnd_125mm_APFSDS_T_R",
+		"RC_AI_15Rnd_125mm_APFSDS_T_G",
+		"RC_AI_20Rnd_125mm_APFSDS_T_G",
+		"RC_AI_15Rnd_125mm_APFSDS_T_Y",
+		"RC_AI_20Rnd_125mm_APFSDS_T_Y",
+
+		"RC_AI_10Rnd_125mm_MP_T_R",
+		"RC_AI_15Rnd_125mm_MP_T_R",
+		"RC_AI_20Rnd_125mm_MP_T_R",
+		"RC_AI_10Rnd_125mm_MP_T_G",
+		"RC_AI_15Rnd_125mm_MP_T_G",
+		"RC_AI_20Rnd_125mm_MP_T_G",
+		"RC_AI_10Rnd_125mm_MP_T_Y",
+		"RC_AI_15Rnd_125mm_MP_T_Y",
+		"RC_AI_20Rnd_125mm_MP_T_Y",
+
+		"RC_AI_3Rnd_125mm_MPAB_DF_T_R",
+		"RC_AI_3Rnd_125mm_MPAB_DF_T_G",
+		"RC_AI_3Rnd_125mm_MPAB_DF_T_Y"
+
+		/*
+		"RC_5Rnd_125mm_cannon_missiles",
+		"RC_4Rnd_125mm_cannon_missiles",
+		"RC_3Rnd_125mm_cannon_missiles",
+		"RC_2Rnd_125mm_cannon_missiles",
+		"RC_1Rnd_125mm_cannon_missiles",
+
+		"RC_5Rnd_125mm_DLG_cannon_missiles",
+		"RC_4Rnd_125mm_DLG_cannon_missiles",
+		"RC_3Rnd_125mm_DLG_cannon_missiles",
+		"RC_2Rnd_125mm_DLG_cannon_missiles",
+		"RC_1Rnd_125mm_DLG_cannon_missiles",
+
+		"RC_5Rnd_125mm_DLG_HVKEM",
+		"RC_4Rnd_125mm_DLG_HVKEM",
+		"RC_3Rnd_125mm_DLG_HVKEM",
+		"RC_2Rnd_125mm_DLG_HVKEM",
+		"RC_1Rnd_125mm_DLG_HVKEM"
 		*/
 	};
 };

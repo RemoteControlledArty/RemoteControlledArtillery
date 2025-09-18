@@ -1,9 +1,10 @@
-class RC_IFV_3_A;
-class RC_AI_B_Pandur_A_Core: RC_IFV_3_A
+class RC_name_A;
+class RC_AI_B_name_A_Core: RC_name_A
 {
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
+	
 	class HitPoints;
 	class HitLFWheel;
 	class HitLF2Wheel;
@@ -13,6 +14,7 @@ class RC_AI_B_Pandur_A_Core: RC_IFV_3_A
 	class HitRF2Wheel;
 	class HitRMWheel;
 	class HitRBWheel;
+
 	class AnimationSources;
 	class Components;
 	class UserActions;
@@ -20,7 +22,7 @@ class RC_AI_B_Pandur_A_Core: RC_IFV_3_A
 	scope=0;
 	scopeCurator=0;
 };
-class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
+class RC_AI_B_name_A_Base: RC_AI_B_name_A_Core
 {
 	/*
 	class EventHandlers: EventHandlers
@@ -43,7 +45,7 @@ class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 
-	displayName="[AI] BTR-80A";
+	displayName="[AI] name";
 	scope=0;
 	scopeCurator=0;
 	forceInGarage=1;	//1
@@ -55,12 +57,12 @@ class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
 
 	weapons[]=
 	{
+		"TruckHorn",
 		"RC_APS_W",
 		"SmokeLauncher"
 	};
 	magazines[]=
 	{
-		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
@@ -91,28 +93,19 @@ class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
 
 	class AnimationSources: AnimationSources
 	{
-		class reload_cannon
-		{
-			source="reload";
-			weapon="RC_autocannon_30mm_APC_Wheeled_04";
-		};
-		class muzzle_hide
-		{
-			source="reload";
-			weapon="RC_autocannon_30mm_APC_Wheeled_04";
-		};
+		
 	};
 };
 
 
-class RC_AI_B_Pandur_A: RC_AI_B_Pandur_A_Base
+class RC_AI_B_name_A: RC_AI_B_name_A_Base
 {
 	scope=2;
 	scopeCurator=2;
 
 	faction="RC_AI_B";
 	crew="RC_AI_B_Crew";
-	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -125,11 +118,11 @@ class RC_AI_B_Pandur_A: RC_AI_B_Pandur_A_Base
 				"RC_AI_IFV_Missile_Launcher",
 				"SmokeLauncher"
 			};
-			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_30mm_red.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_name_red.hpp"
 		};
 	};
 };
-class RC_AI_O_Pandur_A: RC_AI_B_Pandur_A
+class RC_AI_O_name_A: RC_AI_B_name_A
 {
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
@@ -140,11 +133,11 @@ class RC_AI_O_Pandur_A: RC_AI_B_Pandur_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_30mm_green.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_name_green.hpp"
 		};
 	};
 };
-class RC_AI_I_Pandur_A: RC_AI_B_Pandur_A
+class RC_AI_I_name_A: RC_AI_B_name_A
 {
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
@@ -155,53 +148,20 @@ class RC_AI_I_Pandur_A: RC_AI_B_Pandur_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_30mm_yellow.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_name_yellow.hpp"
 		};
 	};
 };
-class RC_AI_I_Pandur_DIG: RC_AI_I_Pandur_A
-{
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_APC_Wheeled_03_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext2_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\RCWS30_INDP_CO.paa",
-		"A3\armor_f_gamma\APC_Wheeled_03\data\APC_Wheeled_03_Ext_alpha_INDP_CO.paa",
-		"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-		"A3\armor_f\data\cage_aaf_co.paa"
-	};
-	textureList[]=
-	{
-		"Indep",
-		1
-	};
-};
 
 
-class RC_AI_B_Pandur_WD: RC_AI_B_Pandur_A
+class RC_AI_B_name_WD: RC_AI_B_name_A
 {
 	hiddenSelectionsTextures[]=
 	{
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext2_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\RCWS30_IG_01_CO.paa",
-		"A3\Data_F_Tacops\data\APC_Wheeled_03_Ext_alpha_IG_01_CO.paa",
-		//"A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"A3\armor_f\data\cage_G1_co.paa"
-	};
-	textureList[]=
-	{
-		"Guerilla_01",
-		1,
-		"Guerilla_02",
-		0,
-		"Guerilla_03",
-		0
+		
 	};
 };
-class RC_AI_O_Pandur_WD: RC_AI_B_Pandur_WD
+class RC_AI_O_name_WD: RC_AI_B_name_WD
 {
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
@@ -212,11 +172,11 @@ class RC_AI_O_Pandur_WD: RC_AI_B_Pandur_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_30mm_green.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_name_green.hpp"
 		};
 	};
 };
-class RC_AI_I_Pandur_WD: RC_AI_B_Pandur_WD
+class RC_AI_I_name_WD: RC_AI_B_name_WD
 {
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
@@ -227,7 +187,7 @@ class RC_AI_I_Pandur_WD: RC_AI_B_Pandur_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_30mm_yellow.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_name_yellow.hpp"
 		};
 	};
 };

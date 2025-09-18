@@ -117,7 +117,7 @@ class RC_AI_B_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D_Base
 	scopeCurator=2;
 
 	faction="RC_AI_B";
-	crew="RC_AI_B_Crew";	//B_UAV_AI
+	crew="RC_AI_B_Crew";
 	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
@@ -154,7 +154,7 @@ class RC_AI_B_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D_Base
 class RC_AI_O_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D
 {
 	faction="RC_AI_O";
-	crew="RC_AI_O_Crew";	//O_UAV_AI
+	crew="RC_AI_O_Crew";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
@@ -177,7 +177,7 @@ class RC_AI_O_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D
 class RC_AI_I_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D
 {
 	faction="RC_AI_I";
-	crew="RC_AI_I_Crew";	//I_UAV_AI
+	crew="RC_AI_I_Crew";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
