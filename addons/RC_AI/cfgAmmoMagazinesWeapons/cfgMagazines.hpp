@@ -183,7 +183,7 @@ class RC_AI_100Rnd_30mm_MPAB_DF_T_G: RC_AI_100Rnd_30mm_MPAB_DF_T_R {ammo="RC_AI_
 class RC_AI_100Rnd_30mm_MPAB_DF_T_Y: RC_AI_100Rnd_30mm_MPAB_DF_T_R {ammo="RC_AI_B_30mm_MPAB_DF_T_Y";};
 class RC_AI_60Rnd_30mm_MPAB_DF_T_R: RC_AI_100Rnd_30mm_MPAB_DF_T_R {count=60;};
 class RC_AI_60Rnd_30mm_MPAB_DF_T_G: RC_AI_100Rnd_30mm_MPAB_DF_T_G {count=60;};
-class RC_AI_60Rnd_30mm_MPAB_DF_T_R: RC_AI_100Rnd_30mm_MPAB_DF_T_R {count=60;};
+class RC_AI_60Rnd_30mm_MPAB_DF_T_Y: RC_AI_100Rnd_30mm_MPAB_DF_T_Y {count=60;};
 
 
 //120mm
