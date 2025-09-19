@@ -336,7 +336,7 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
 		};
 	};

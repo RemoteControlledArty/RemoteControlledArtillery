@@ -40,6 +40,9 @@ class RC_160Rnd_30mm_ABM_T_R: BWA3_160Rnd_ABM_shells
 };
 class RC_160Rnd_30mm_ABM_T_G: RC_160Rnd_30mm_ABM_T_R {ammo="RC_B_30mm_ABM_T_G";};
 class RC_160Rnd_30mm_ABM_T_Y: RC_160Rnd_30mm_ABM_T_R {ammo="RC_B_30mm_ABM_T_Y";};
+class RC_100Rnd_30mm_ABM_T_R: RC_160Rnd_30mm_ABM_T_R {count=100;};
+class RC_100Rnd_30mm_ABM_T_G: RC_160Rnd_30mm_ABM_T_G {count=100;};
+class RC_100Rnd_30mm_ABM_T_Y: RC_160Rnd_30mm_ABM_T_Y {count=100;};
 
 
 //Fetch

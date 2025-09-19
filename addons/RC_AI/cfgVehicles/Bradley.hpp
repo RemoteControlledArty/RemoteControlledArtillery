@@ -35,8 +35,6 @@ class RC_AI_B_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_NLOS_D_B_Core
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 
 	displayName="[AI] M2A3 Bradley";
-	scope=0;
-	scopeCurator=0;
 	forceInGarage=1;	//1
 	driverCompartments="Compartment2";	//2
 	commanding=1;			//1
@@ -130,6 +128,7 @@ class RC_AI_O_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
+	/*
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -137,6 +136,7 @@ class RC_AI_O_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D
 			//#include "\RC_AI\includes_vicmags\mags_AI_Bradley_green.hpp"
 		};
 	};
+	*/
 };
 class RC_AI_I_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D
 {
@@ -145,6 +145,7 @@ class RC_AI_I_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
+	/*
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -152,6 +153,7 @@ class RC_AI_I_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D
 			//#include "\RC_AI\includes_vicmags\mags_AI_Bradley_yellow.hpp"
 		};
 	};
+	*/
 };
 
 
@@ -174,6 +176,7 @@ class RC_AI_O_M2A3_BUSKIII_WD: RC_AI_B_M2A3_BUSKIII_WD
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
+	/*
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -181,6 +184,7 @@ class RC_AI_O_M2A3_BUSKIII_WD: RC_AI_B_M2A3_BUSKIII_WD
 			//#include "\RC_AI\includes_vicmags\mags_AI_Bradley_green.hpp"
 		};
 	};
+	*/
 };
 class RC_AI_I_M2A3_BUSKIII_WD: RC_AI_B_M2A3_BUSKIII_WD
 {
@@ -189,6 +193,7 @@ class RC_AI_I_M2A3_BUSKIII_WD: RC_AI_B_M2A3_BUSKIII_WD
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
+	/*
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -196,4 +201,5 @@ class RC_AI_I_M2A3_BUSKIII_WD: RC_AI_B_M2A3_BUSKIII_WD
 			//#include "\RC_AI\includes_vicmags\mags_AI_Bradley_yellow.hpp"
 		};
 	};
+	*/
 };

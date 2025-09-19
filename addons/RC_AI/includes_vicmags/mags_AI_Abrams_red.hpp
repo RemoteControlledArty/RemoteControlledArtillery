@@ -6,8 +6,8 @@ magazines[]=
 
 	//"RC_AI_3Rnd_120mm_DLG_cannon_missiles",
 
-	"RC_AI_RHS_mag_300Rnd_762x51_T_R",
-	"RC_AI_RHS_mag_300Rnd_762x51_T_R",
+	"RC_AI_RHS_300Rnd_762x51_T_R",
+	"RC_AI_RHS_300Rnd_762x51_T_R",
 
 	"rhsusf_mag_L8A3_12",
 	"rhsusf_mag_L8A3_12"

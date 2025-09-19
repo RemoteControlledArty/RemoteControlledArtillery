@@ -44,8 +44,6 @@ class RC_AI_B_2S90M_WD_Base: RC_AI_B_2S90M_WD_Core
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 
 	displayName="[AI] 2S90M";
-	scope=0;
-	scopeCurator=0;
 	forceInGarage=1;	//1
 	driverCompartments="Compartment2";	//2
 	commanding=1;			//1

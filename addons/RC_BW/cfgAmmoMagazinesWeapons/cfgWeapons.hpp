@@ -140,6 +140,69 @@ class RC_MK30: RC_MK30_Base
 		};
 	};
 };
+class RC_MK30_Adv: RC_MK30
+{
+	class HE: HE
+	{
+		magazineReloadTime=1;
+
+		magazines[]=
+		{
+			"RC_100Rnd_30mm_ABM_T_R",
+			"RC_100Rnd_30mm_ABM_T_G",
+			"RC_100Rnd_30mm_ABM_T_Y",
+
+			"RC_100Rnd_30mm_MP_Pen_T_R",
+			"RC_100Rnd_30mm_MP_Pen_T_G",
+			"RC_100Rnd_30mm_MP_Pen_T_Y",
+
+			"RC_100Rnd_30mm_MP_DF_T_R",
+			"RC_100Rnd_30mm_MP_DF_T_G",
+			"RC_100Rnd_30mm_MP_DF_T_Y",
+
+			"RC_100Rnd_30mm_MP_QF_T_R",
+			"RC_100Rnd_30mm_MP_QF_T_G",
+			"RC_100Rnd_30mm_MP_QF_T_Y",
+
+			"RC_100Rnd_30mm_MPAB_DF_T_R",
+			"RC_100Rnd_30mm_MPAB_DF_T_G",
+			"RC_100Rnd_30mm_MPAB_DF_T_Y",
+
+			"RC_100Rnd_30mm_MPAB_QF_T_R",
+			"RC_100Rnd_30mm_MPAB_QF_T_G",
+			"RC_100Rnd_30mm_MPAB_QF_T_Y",
+
+			"RC_100Rnd_30mm_HE_Pen_T_R",
+			"RC_100Rnd_30mm_HE_Pen_T_G",
+			"RC_100Rnd_30mm_HE_Pen_T_Y",
+
+			"RC_100Rnd_30mm_HE_DF_T_R",
+			"RC_100Rnd_30mm_HE_DF_T_G",
+			"RC_100Rnd_30mm_HE_DF_T_Y",
+
+			"RC_100Rnd_30mm_HE_QF_T_R",
+			"RC_100Rnd_30mm_HE_QF_T_G",
+			"RC_100Rnd_30mm_HE_QF_T_Y",
+
+			"RC_100Rnd_30mm_HEAB_DF_T_R",
+			"RC_100Rnd_30mm_HEAB_DF_T_G",
+			"RC_100Rnd_30mm_HEAB_DF_T_Y",
+
+			"RC_100Rnd_30mm_HEAB_QF_T_R",
+			"RC_100Rnd_30mm_HEAB_QF_T_G",
+			"RC_100Rnd_30mm_HEAB_QF_T_Y"
+		};
+	};
+	class AP: AP
+	{
+		magazines[]=
+		{
+			"RC_100Rnd_30mm_APFSDS_T_R",
+			"RC_100Rnd_30mm_APFSDS_T_G",
+			"RC_100Rnd_30mm_APFSDS_T_Y"
+		};
+	};
+};
 
 
 //Machinegun
@@ -154,7 +217,6 @@ class RC_MG338_vehicle: RC_MG338_vehicle_Base
 	displayName="MMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
 		"RC_400Rnd_338_T_R",

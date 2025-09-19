@@ -1,4 +1,4 @@
-//Vanilla
+//Basegame
 //MMG
 class RC_B_338_T_R;
 class RC_AI_B_338_T_R: RC_B_338_T_R
@@ -25,17 +25,30 @@ class RC_AI_B_93x64_T_R: RC_AI_B_93x64_T_G {model="\A3\Weapons_f\Data\bullettrac
 class RC_AI_B_93x64_T_Y: RC_AI_B_93x64_T_G {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-//30mm
-/*
-class RC_B_30mm_MP_DF_Sub;
-class RC_AI_B_30mm_MP_DF_Sub: RC_B_30mm_MP_DF_Sub
+//12.7x99mm
+class RC_B_127x99_T_R;
+class RC_AI_B_127x99_T_R: RC_B_127x99_T_R
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_30mm.hpp"
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
-	submunitionAmmo="RC_ammo_Penetrator_MP_30mm";
-	caliber=4.4;
+	laserLock=0;
+	irLock=0;
+	airLock=1;
 };
-*/
+class RC_AI_B_127x99_T_G: RC_AI_B_127x99_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_127x99_T_Y: RC_AI_B_127x99_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_B_127x99_SLAP_T_R;
+class RC_AI_B_127x99_SLAP_T_R: RC_B_127x99_SLAP_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_B_127x99_SLAP_T_G: RC_AI_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_127x99_SLAP_T_Y: RC_AI_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//30mm AP
 class RC_B_30mm_APFSDS_T_R;
 class RC_AI_B_30mm_APFSDS_T_R: RC_B_30mm_APFSDS_T_R
 {
@@ -47,6 +60,43 @@ class RC_AI_B_30mm_APFSDS_T_G: RC_AI_B_30mm_APFSDS_T_R {model="\A3\Weapons_f\Dat
 class RC_AI_B_30mm_APFSDS_T_Y: RC_AI_B_30mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+//30mm HE
+class RC_B_30mm_HE_Pen_T_R;
+class RC_AI_B_30mm_HE_Pen_T_R: RC_B_30mm_HE_Pen_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_B_30mm_HE_Pen_T_G: RC_AI_B_30mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_30mm_HE_Pen_T_Y: RC_AI_B_30mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_B_30mm_HE_DF_T_R;
+class RC_AI_B_30mm_HE_DF_T_R: RC_B_30mm_HE_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	//submunitionAmmo="RC_AI_B_30mm_HE_DF_Sub";
+};
+class RC_AI_B_30mm_HE_DF_T_G: RC_AI_B_30mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_30mm_HE_DF_T_Y: RC_AI_B_30mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_B_30mm_HEAB_DF_T_R;
+class RC_AI_B_30mm_HEAB_DF_T_R: RC_B_30mm_HEAB_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	//submunitionAmmo="RC_AI_B_30mm_HE_DF_Sub";
+};
+class RC_AI_B_30mm_HEAB_DF_T_G: RC_AI_B_30mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_30mm_HEAB_DF_T_Y: RC_AI_B_30mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//30mm MP
 class RC_B_30mm_MP_Pen_T_R;
 class RC_AI_B_30mm_MP_Pen_T_R: RC_B_30mm_MP_Pen_T_R
 {
@@ -207,13 +257,13 @@ class RC_AI_ammo_Penetrator_MP_SACLOS: ammo_Penetrator_Base
 {
 	warheadName="HEAT";
 	caliber=40;
-	hit=500;
+	hit=400;
 };
-class RC_M_ATGM_MP_SACLOS;
-class RC_AI_IFV_MP_SACLOS: RC_M_ATGM_MP_SACLOS
+class RC_IFV_MP_SACLOS;
+class RC_AI_IFV_MP_SACLOS: RC_IFV_MP_SACLOS
 {
 	submunitionAmmo="RC_AI_ammo_Penetrator_MP_SACLOS";
-	indirectHit=30;		//40
+	indirectHit=30;		//80
 	indirectHitRange=7;	//10
 	maxSpeed=200;
 	thrustTime=8;
@@ -222,27 +272,7 @@ class RC_AI_IFV_MP_SACLOS: RC_M_ATGM_MP_SACLOS
 
 
 //RHS
-class RC_RHS_ammo_M919_APFSDS_T_R;
-class RC_AI_RHS_ammo_M919_APFSDS_T_R: RC_RHS_ammo_M919_APFSDS_T_R
-{
-	laserLock=0;
-	irLock=0;
-	airLock=1;
-};
-class RC_RHS_B_25mm_MPAB_DF_T_R;
-class RC_AI_RHS_B_25mm_MPAB_DF_T_R: RC_RHS_B_25mm_MPAB_DF_T_R
-{
-	laserLock=0;
-	irLock=0;
-	airLock=1;
-	//submunitionAmmo="RC_AI_B_30mm_MP_DF_Sub";
-};
-/*
-class RC_AI_RHS_B_25mm_MPAB_DF_T_G: RC_AI_RHS_B_25mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_AI_RHS_B_25mm_MPAB_DF_T_Y: RC_AI_RHS_B_25mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-*/
-
-
+//7.62x51mm
 class RC_RHS_ammo_M80A1EPR_T_R;
 class RC_AI_RHS_ammo_M80A1EPR_T_R: RC_RHS_ammo_M80A1EPR_T_R
 {
@@ -252,5 +282,77 @@ class RC_AI_RHS_ammo_M80A1EPR_T_R: RC_RHS_ammo_M80A1EPR_T_R
 
 	hit=10.5;		//original
 	caliber=0.55;	//original
-	//hit=11.6; caliber=1.6; vanilla ball
+	//hit=11.6; caliber=1.6; basegame ball
+};
+
+
+class RC_RHS_ammo_127x99_T_R;
+class RC_AI_RHS_ammo_127x99_T_R: RC_RHS_ammo_127x99_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+
+
+class RC_RHS_ammo_127x99_SLAP_T_R;
+class RC_AI_RHS_ammo_127x99_SLAP_T_R: RC_RHS_ammo_127x99_SLAP_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+
+
+//25mm AP
+class RC_RHS_B_25mm_APFSDS_T_R;
+class RC_AI_RHS_B_25mm_APFSDS_T_R: RC_RHS_B_25mm_APFSDS_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+
+
+//25mm HE
+class RC_RHS_B_25mm_HE_Pen_T_R;
+class RC_AI_RHS_B_25mm_HE_Pen_T_R: RC_RHS_B_25mm_HE_Pen_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_RHS_B_25mm_HE_DF_T_R;
+class RC_AI_RHS_B_25mm_HE_DF_T_R: RC_RHS_B_25mm_HE_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	//submunitionAmmo="RC_AI_B_30mm_HE_DF_Sub";
+};
+class RC_RHS_B_25mm_HEAB_DF_T_R;
+class RC_AI_RHS_B_25mm_HEAB_DF_T_R: RC_RHS_B_25mm_HEAB_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	//submunitionAmmo="RC_AI_B_30mm_HE_DF_Sub";
+};
+
+
+class RC_TOW_MP_SACLOS;
+class RC_AI_TOW_MP_SACLOS: RC_TOW_MP_SACLOS
+{
+	submunitionAmmo="RC_AI_ammo_Penetrator_MP_SACLOS";
+	indirectHit=30;		//80
+	indirectHitRange=7;	//10
+	maxSpeed=200;
+};
+class RC_Javelin_MP_SACLOS;
+class RC_AI_Javelin_MP_SACLOS: RC_Javelin_MP_SACLOS
+{
+	submunitionAmmo="RC_AI_ammo_Penetrator_MP_SACLOS";
+	indirectHit=30;		//80
+	indirectHitRange=7;	//10
+	maxSpeed=200;
 };

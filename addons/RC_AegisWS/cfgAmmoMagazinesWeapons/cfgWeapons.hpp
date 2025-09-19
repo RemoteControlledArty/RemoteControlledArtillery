@@ -9,7 +9,6 @@ class RC_autocannon_30mm_lxWS_Base: autocannon_30mm_lxWS
 class RC_autocannon_30mm_lxWS: RC_autocannon_30mm_lxWS_Base
 {
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	name="30mm";
 	//maxZeroing=4000;

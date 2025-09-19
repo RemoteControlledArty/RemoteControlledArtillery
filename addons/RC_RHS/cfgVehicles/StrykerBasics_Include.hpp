@@ -42,13 +42,15 @@ lockDetectionSystem="2+4+8";
 weapons[]=
 {
 	"RC_APS_W",
-	"SmokeLauncher"
+	"rhsusf_weap_M6"
 };
 magazines[]=
 {
 	//"RC_1Rnd_APS_M",
 	"RC_1Rnd_APS_M",
-	"SmokeLauncherMag"
+	"rhsusf_mag_L8A3_16",
+	"rhsusf_mag_L8A3_16",
+	"rhsusf_mag_L8A3_16"
 };
 
 editorSubcategory="RC_APC_subcat";

@@ -7,6 +7,7 @@ class CfgPatches
 		
 		units[]=
 		{
+			//Basegame
 			"RC_AI_B_Pandur_A",
 			"RC_AI_O_Pandur_A",
 			"RC_AI_I_Pandur_A",
@@ -15,6 +16,54 @@ class CfgPatches
 			"RC_AI_O_Pandur_WD",
 			"RC_AI_I_Pandur_WD",
 
+			"RC_AI_I_Pandur_DIG",
+			
+
+			//WS
+			"RC_AI_B_BM2T_A",
+			"RC_AI_O_BM2T_A",
+			"RC_AI_I_BM2T_A",
+
+
+			//Aegis
+			"RC_AI_B_2S90M_A",
+			"RC_AI_O_2S90M_A",
+			"RC_AI_I_2S90M_A",
+
+			"RC_AI_B_2S90M_WD",
+			"RC_AI_O_2S90M_WD",
+			"RC_AI_I_2S90M_WD",
+
+			"RC_AI_B_BTR80A_A",
+			"RC_AI_O_BTR80A_A",
+			"RC_AI_I_BTR80A_A",
+
+			"RC_AI_B_BTR80A_WD",
+			"RC_AI_O_BTR80A_WD",
+			"RC_AI_I_BTR80A_WD",
+
+
+			//Aegis Retex
+			"RC_AI_B_BM2T_WD",
+			"RC_AI_O_BM2T_WD",
+			"RC_AI_I_BM2T_WD",
+
+			"RC_AI_B_T100_WD",
+			"RC_AI_O_T100_WD",
+			"RC_AI_I_T100_WD",
+
+			"RC_AI_B_T14_WD",
+			"RC_AI_O_T14_WD",
+			"RC_AI_I_T14_WD",
+
+
+			//AegisWS
+
+
+			//AbramsX
+
+
+			//RHS
 			"RC_AI_B_M2A3_BUSKIII_D",
 			"RC_AI_O_M2A3_BUSKIII_D",
 			"RC_AI_I_M2A3_BUSKIII_D",
@@ -22,6 +71,7 @@ class CfgPatches
 			"RC_AI_B_M2A3_BUSKIII_WD",
 			"RC_AI_O_M2A3_BUSKIII_WD",
 			"RC_AI_I_M2A3_BUSKIII_WD",
+
 
 			"RC_AI_B_M1A2_SEPV2_D",
 			"RC_AI_O_M1A2_SEPV2_D",
@@ -50,7 +100,9 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
+			"RC_WesternSahara",
 			"RC_Aegis",
+			"RC_AegisWS",
 			"RC_RHS"
 		};
 
@@ -146,10 +198,30 @@ class CfgWeapons
 
 class CfgVehicles
 {
+	//Basegame
 	#include "\RC_AI\cfgVehicles\Crew.hpp"
-	#include "\RC_AI\cfgVehicles\2S90M.hpp"
 	#include "\RC_AI\cfgVehicles\Pandur.hpp"
-	#include "\RC_AI\cfgVehicles\Abrams.hpp"
-	#include "\RC_AI\cfgVehicles\Bradley.hpp"
 	#include "\RC_AI\cfgVehicles\Rooikat.hpp"
+
+	//WS
+	#include "\RC_AI\cfgVehicles\BM_2T_A.hpp"
+
+	//Aegis
+	#include "\RC_AI\cfgVehicles\BTR_80A.hpp"
+	#include "\RC_AI\cfgVehicles\BTR_100.hpp"
+	#include "\RC_AI\cfgVehicles\2S90M.hpp"
+
+	//AegisRetex
+	#include "\RC_AI\cfgVehicles\BM_2T_WD.hpp"
+	#include "\RC_AI\cfgVehicles\T_100.hpp"
+	#include "\RC_AI\cfgVehicles\T_14.hpp"
+
+	//AegisWS
+
+	//AbramsX
+	
+	//RHS
+	#include "\RC_AI\cfgVehicles\Stryker.hpp"
+	#include "\RC_AI\cfgVehicles\Bradley.hpp"
+	#include "\RC_AI\cfgVehicles\Abrams.hpp"
 };

@@ -1291,6 +1291,7 @@ class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
 		"RC_target_confirmer_mag",
 		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 

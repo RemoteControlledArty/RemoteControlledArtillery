@@ -134,7 +134,6 @@ class RC_autocannon_30mm_APC_Wheeled_04_Base: autocannon_30mm_APC_Wheeled_04
 class RC_autocannon_30mm_APC_Wheeled_04: RC_autocannon_30mm_APC_Wheeled_04_Base
 {
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	name="30mm";
 	//maxZeroing=4000;

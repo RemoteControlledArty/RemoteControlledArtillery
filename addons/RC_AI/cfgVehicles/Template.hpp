@@ -46,8 +46,6 @@ class RC_AI_B_name_A_Base: RC_AI_B_name_A_Core
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 
 	displayName="[AI] name";
-	scope=0;
-	scopeCurator=0;
 	forceInGarage=1;	//1
 	driverCompartments="Compartment2";	//2
 	commanding=1;			//1

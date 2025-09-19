@@ -88,6 +88,19 @@ class RC_RHS_ammo_M61_AP_T_R: rhs_ammo_762x51_M61_AP
 
 
 //25mm
+class RHS_ammo_M919_APFSDS;
+class RC_RHS_B_25mm_APFSDS_T_R: RHS_ammo_M919_APFSDS
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerStartTime=0.04;
+	tracerEndTime=4;
+};
+class RC_RHS_B_25mm_APFSDS_T_G: RC_RHS_B_25mm_APFSDS_T_R {model= "\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_RHS_B_25mm_APFSDS_T_Y: RC_RHS_B_25mm_APFSDS_T_R {model= "\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 class RHS_ammo_M792_HEI;
 class RC_RHS_ammo_M792_HEI_T_R: RHS_ammo_M792_HEI
 {
@@ -102,12 +115,8 @@ class RC_RHS_ammo_M792_HEI_T_R: RHS_ammo_M792_HEI
 	indirectHit=6;
 	indirectHitRange=3.75;
 };
-/*
-class RC_RHS_ammo_M792_HEI_T_Y: RC_RHS_ammo_M792_HEI_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
-};
-*/
+class RC_RHS_ammo_M792_HEI_T_G: RC_RHS_ammo_M792_HEI_T_R {model= "\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_RHS_ammo_M792_HEI_T_Y: RC_RHS_ammo_M792_HEI_T_R {model= "\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 //MP Penetrator Submunition
@@ -185,36 +194,36 @@ class RC_RHS_B_25mm_MPAB_QF_T_Y: RC_RHS_B_25mm_MPAB_QF_T_R {model="\A3\Weapons_f
 
 
 //25mm HE Pen/DF/QF
-class RC_RHS_B_25mm_HEI_Pen_T_R: RHS_ammo_M792_HEI
+class RC_RHS_B_25mm_HE_Pen_T_R: RHS_ammo_M792_HEI
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_Pen.hpp"
 };
-class RC_RHS_B_25mm_HEI_Pen_T_G: RC_RHS_B_25mm_HEI_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_RHS_B_25mm_HEI_Pen_T_Y: RC_RHS_B_25mm_HEI_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_RHS_B_25mm_HEI_DF_Sub: RHS_ammo_M792_HEI
+class RC_RHS_B_25mm_HE_Pen_T_G: RC_RHS_B_25mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_RHS_B_25mm_HE_Pen_T_Y: RC_RHS_B_25mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_RHS_B_25mm_HE_DF_Sub: RHS_ammo_M792_HEI
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_HE_DF.hpp"
 };
-class RC_RHS_B_25mm_HEI_DF_T_R: RHS_ammo_M792_HEI
+class RC_RHS_B_25mm_HE_DF_T_R: RHS_ammo_M792_HEI
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_DF.hpp"
 	submunitionAmmo="RC_RHS_B_25mm_MP_DF_Sub";
 };
-class RC_RHS_B_25mm_HEI_DF_T_G: RC_RHS_B_25mm_HEI_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_RHS_B_25mm_HEI_DF_T_Y: RC_RHS_B_25mm_HEI_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-class RC_RHS_B_25mm_HEI_QF_T_R: RHS_ammo_M792_HEI
+class RC_RHS_B_25mm_HE_DF_T_G: RC_RHS_B_25mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_RHS_B_25mm_HE_DF_T_Y: RC_RHS_B_25mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_RHS_B_25mm_HE_QF_T_R: RHS_ammo_M792_HEI
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Defaults2.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HE_QF.hpp"
 };
-class RC_RHS_B_25mm_HEI_QF_T_G: RC_RHS_B_25mm_HEI_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_RHS_B_25mm_HEI_QF_T_Y: RC_RHS_B_25mm_HEI_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_RHS_B_25mm_HE_QF_T_G: RC_RHS_B_25mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_RHS_B_25mm_HE_QF_T_Y: RC_RHS_B_25mm_HE_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 //25mm HEAB DF/QF
@@ -235,23 +244,6 @@ class RC_RHS_B_25mm_HEAB_QF_T_R: RHS_ammo_M792_HEI
 };
 class RC_RHS_B_25mm_HEAB_QF_T_G: RC_RHS_B_25mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_RHS_B_25mm_HEAB_QF_T_Y: RC_RHS_B_25mm_HEAB_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-class RHS_ammo_M919_APFSDS;
-class RC_RHS_ammo_M919_APFSDS_T_R: RHS_ammo_M919_APFSDS
-{
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-	tracerStartTime=0.04;
-	tracerEndTime=4;
-};
-/*
-class RC_RHS_ammo_M919_APFSDS_T_Y: RC_RHS_ammo_M919_APFSDS_T_R
-{
-	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
-};
-*/
 
 
 //TOW's
@@ -292,6 +284,13 @@ class RC_TOW_MP_LOS: RC_IFV_MP_LOS
 	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
 	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
 };
+class RC_IFV_MP_SACLOS;
+class RC_TOW_MP_SACLOS: RC_IFV_MP_SACLOS
+{
+	effectsMissile="RHS_Missile2";
+	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
+	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
+};
 
 
 class RC_Javelin_MP_NLOS: RC_IFV_MP_NLOS
@@ -309,6 +308,13 @@ class RC_Javelin_MP_Overfly: RC_IFV_MP_Overfly
 	effectsSmoke="SmokeShellWhite";
 };
 class RC_Javelin_MP_LOS: RC_IFV_MP_LOS
+{
+	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
+	effectsMissile="missile2";
+	effectsMissileInit="RocketBackEffectsRPG";
+	effectsSmoke="SmokeShellWhite";
+};
+class RC_Javelin_MP_SACLOS: RC_IFV_MP_SACLOS
 {
 	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
 	effectsMissile="missile2";
@@ -342,7 +348,7 @@ class RC_RHS_ammo_127x99_Ball: rhs_ammo_127x99_Ball
 	airLock=1;
 };
 class rhs_ammo_127x99_Ball_Tracer_Red;
-class RC_RHS_ammo_127x99_Ball_T_R: rhs_ammo_127x99_Ball_Tracer_Red
+class RC_RHS_ammo_127x99_T_R: rhs_ammo_127x99_Ball_Tracer_Red
 {
 	laserLock=1;
 	irLock=1;
@@ -367,7 +373,7 @@ class RC_RHS_ammo_127x99_SLAP_T_R: rhs_ammo_127x99_SLAP_Tracer_Red
 	tracerStartTime=0.04;
 	tracerEndTime=4.5;
 };
-class RC_RHS_ammo_127x99_Ball_DroneLock_T_R: RC_RHS_ammo_127x99_Ball_T_R
+class RC_RHS_ammo_127x99_Ball_DroneLock_T_R: RC_RHS_ammo_127x99_T_R
 {
 	laserLock=0;
 	irLock=0;

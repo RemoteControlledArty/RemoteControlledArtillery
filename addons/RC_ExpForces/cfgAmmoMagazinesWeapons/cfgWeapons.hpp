@@ -10,7 +10,6 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 	displayName="XM913";
 	magazineReloadTime=30;	//40
 	//canLock=2;
-	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
@@ -20,7 +19,6 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 	{
 		displayName="XM913";
 		magazineReloadTime=30;	//40
-		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 		cursorAim="mg";
@@ -45,7 +43,6 @@ class RC_EF_autocannon_30mm: RC_EF_autocannon_30mm_Base
 	{
 		displayName="XM913";
 		magazineReloadTime=30;	//40
-		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 		cursorAim="mg";
@@ -77,7 +74,6 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 	displayName="XM913";
 	magazineReloadTime=30;	//40
 	//canLock=2;
-	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 	cursorAim="mg";
@@ -86,7 +82,6 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 	{
 		displayName="XM913";
 		magazineReloadTime=30;	//40
-		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 		cursorAim="mg";
@@ -111,7 +106,6 @@ class RC_EF_autocannon_50mm: RC_EF_autocannon_50mm_Base
 	{
 		displayName="XM913";
 		magazineReloadTime=30;	//40
-		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 		cursorAim="mg";
@@ -141,7 +135,6 @@ class RC_EF_MMG_coax: RC_EF_MMG_coax_Base
 	displayName="coaxial";
 	magazineReloadTime=30;	//40
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	maxZeroing=3000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 	

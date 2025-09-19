@@ -57,7 +57,6 @@ class CfgWeapons
 		class manual;
 		canLock=2;
 		autoReload=1;
-		FCSZeroingDelay=0.5;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	};
 	class RC_QIN_HMG: RC_QIN_MG_Base

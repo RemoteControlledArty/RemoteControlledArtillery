@@ -1,15 +1,21 @@
 magazines[]=
 {
-	"RC_AI_RHS_110Rnd_25mm_MPAB_DF_T_R",
-	"RC_AI_RHS_110Rnd_25mm_MPAB_DF_T_R",
-	"RC_AI_RHS_110Rnd_25mm_MPAB_DF_T_R",
+	"RC_AI_RHS_110Rnd_25mm_HE_Pen_T_R",
+	"RC_AI_RHS_110Rnd_25mm_HE_DF_T_R",
+	"RC_AI_RHS_110Rnd_25mm_HEAB_DF_T_R",
 
-	"RC_AI_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-	"RC_AI_RHS_mag_70Rnd_25mm_APFSDS_T_R",
-	"RC_AI_RHS_mag_70Rnd_25mm_APFSDS_T_R",
+	/*
+	"RC_AI_RHS_110Rnd_25mm_MP_Pen_T_R",
+	"RC_AI_RHS_110Rnd_25mm_MP_DF_T_R",
+	"RC_AI_RHS_110Rnd_25mm_MPAB_DF_T_R",
+	*/
 
-	"RC_AI_RHS_mag_400Rnd_762x51_T_R",
-	"RC_AI_RHS_mag_400Rnd_762x51_T_R",
+	"RC_AI_RHS_70Rnd_25mm_APFSDS_T_R",
+	"RC_AI_RHS_70Rnd_25mm_APFSDS_T_R",
+	"RC_AI_RHS_70Rnd_25mm_APFSDS_T_R",
+
+	"RC_AI_RHS_400Rnd_762x51_T_R",
+	"RC_AI_RHS_400Rnd_762x51_T_R",
 
 	/*
 	"RC_2Rnd_TOW_MP_Overfly",

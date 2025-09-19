@@ -35,8 +35,6 @@ class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 
 	displayName="[AI] M1A2 SEPv2 Abrams";
-	scope=0;
-	scopeCurator=0;
 	forceInGarage=1;	//1
 	driverCompartments="Compartment2";	//2
 	commanding=1;			//1

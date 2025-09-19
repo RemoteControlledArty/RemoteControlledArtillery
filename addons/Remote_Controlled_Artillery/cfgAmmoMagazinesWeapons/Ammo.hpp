@@ -2616,13 +2616,19 @@ class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 	indirectHit=40;
 	indirectHitRange=10;
 	maxControlRange=4050;
-	trackOversteer=0.5;
+	trackOversteer=0.67;	//0.5
 	fuseDistance=15;
 	cameraViewAvailable=1;
 	
 	maxSpeed=350;
 	thrustTime=5;
 	initTime=0;
+};
+class RC_IFV_MP_SACLOS: RC_M_ATGM_MP_SACLOS
+{
+	submunitionAmmo="RC_ammo_Penetrator_MP";
+	indirectHit=80;
+	indirectHitRange=10;
 };
 
 

@@ -10,8 +10,6 @@ class RC_AbramsX_120mm_M360: RC_AbramsX_120mm_M360_base
 	canLock=2;
 	weaponLockSystem=0;
 	maxZeroing=6000;
-	FCSZeroingDelay=0.5;
-	FCSMaxLeadSpeed=100;
 	reloadTime=4.5;
 	magazineReloadTime=4.5;
 	//ballisticsComputer="4";
@@ -142,9 +140,7 @@ class RC_AbramsX_30mm_M914: RC_AbramsX_30mm_M914_Base
 	//displayName="30mm";
 	canLock=2;
 	weaponLockSystem=0;
-	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
-	FCSMaxLeadSpeed=100;
 	autoReload=1;
 	magazineReloadTime=15;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
@@ -153,9 +149,7 @@ class RC_AbramsX_30mm_M914: RC_AbramsX_30mm_M914_Base
 	{
 		canLock=2;
 		weaponLockSystem=0;
-		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
-		FCSMaxLeadSpeed=100;
 		autoReload=1;
 		magazineReloadTime=15;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
@@ -235,9 +229,7 @@ class RC_AbramsX_30mm_M914_twin: RC_AbramsX_30mm_M914_twin_Base
 	//displayName="30mm";
 	canLock=2;
 	weaponLockSystem=0;
-	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
-	FCSMaxLeadSpeed=100;
 	autoReload=1;
 	magazineReloadTime=20;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
@@ -246,9 +238,7 @@ class RC_AbramsX_30mm_M914_twin: RC_AbramsX_30mm_M914_twin_Base
 	{
 		canLock=2;
 		weaponLockSystem=0;
-		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
-		FCSMaxLeadSpeed=100;
 		autoReload=1;
 		magazineReloadTime=20;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
@@ -412,12 +402,10 @@ class RC_autocannon_30mm_M914_twin: RC_autocannon_30mm_M914_twin_Base
 	author="Ascent";
 	displayName="Twin M914 30mm";
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-	FCSMaxLeadSpeed=100;
 
 	class HE: HE
 	{
 		displayName="M914 30mm";
-		FCSMaxLeadSpeed=100;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
 		magazines[]=
@@ -483,7 +471,6 @@ class RC_autocannon_30mm_M914_twin: RC_autocannon_30mm_M914_twin_Base
 	class AP: AP
 	{
 		displayName="M914 30mm";
-		FCSMaxLeadSpeed=100;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
 		magazines[]=
@@ -585,8 +572,6 @@ class RC_AbramsX_HMG_coax: RC_AbramsX_HMG_coax_base
 	canLock=2;
 	weaponLockSystem=0;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
-	FCSMaxLeadSpeed=100;
 	autoReload=1;
 	magazineReloadTime=1;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
@@ -620,14 +605,12 @@ class RC_AbramsX_20mm_DualFed_coax: RC_AbramsX_20mm_coax_Base
 	author="Ascent";
 	displayName="coax 20mm dualfed";
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-	FCSMaxLeadSpeed=100;
 	magazineReloadTime=1;
 	//type="1+4";
 
 	class HE: HE
 	{
 		displayName="coax 20mm";
-		FCSMaxLeadSpeed=100;
 		magazineReloadTime=1;
 		//type="1+4";
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
@@ -640,7 +623,6 @@ class RC_AbramsX_20mm_DualFed_coax: RC_AbramsX_20mm_coax_Base
 	class AP: AP
 	{
 		displayName="coax 20mm";
-		FCSMaxLeadSpeed=100;
 		magazineReloadTime=1;
 		//type="1+4";
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"

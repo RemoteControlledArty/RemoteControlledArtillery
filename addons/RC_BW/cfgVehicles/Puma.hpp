@@ -119,7 +119,7 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 
 			weapons[]=
 			{
-				"RC_MK30",
+				"RC_MK30_Adv",
 				"RC_MG338_vehicle",
 				//"BWA3_Spike_LR",
 				"RC_SPz_Spike",
@@ -214,12 +214,12 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 		class mainGun_reload
 		{
 			source="reload";
-			weapon="RC_MK30";
+			weapon="RC_MK30_Adv";
 		};
 		class mainGun_random
 		{
 			source="ammorandom";
-			weapon="RC_MK30";
+			weapon="RC_MK30_Adv";
 		};
 		class MG_reload
 		{

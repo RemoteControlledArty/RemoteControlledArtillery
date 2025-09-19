@@ -9,7 +9,6 @@ class RC_autocannon_30mm_ACV_Base: autocannon_30mm_ACV
 class RC_autocannon_30mm_ACV: RC_autocannon_30mm_ACV_Base
 {
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	name="MCT-30";
 	displayName="MCT-30";
@@ -335,7 +334,6 @@ class RC_HMG_M2_ACV: RC_HMG_M2_ACV_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	magazines[]=
 	{
 		"RC_200Rnd_127x99_T_G",

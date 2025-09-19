@@ -425,6 +425,7 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 
 	magazines[]=
 	{
+		"RC_2Rnd_IFV_MP_SACLOS",
 		"RC_2Rnd_IFV_MP_LOS",
 		"RC_2Rnd_IFV_MP_Overfly",
 		"RC_2Rnd_IFV_MP_NLOS",
@@ -519,6 +520,8 @@ class RC_IFV_Missile_Launcher_4R: RC_IFV_Missile_Launcher
 {
 	magazines[]=
 	{
+		"RC_4Rnd_IFV_MP_SACLOS",
+		"RC_4Rnd_IFV_MP_LOS",
 		"RC_4Rnd_IFV_MP_Overfly",
 		"RC_4Rnd_IFV_MP_NLOS",
 		"RC_4Rnd_IFV_AA"
@@ -614,7 +617,6 @@ class RC_HMG_127x99: RC_MG_Base
 	//displayName="HMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
 	magazines[]=
@@ -657,7 +659,6 @@ class RC_HMG_127x99_FSV: RC_MG_FSV_Base
 	displayName="HMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
 	magazines[]=
@@ -682,7 +683,6 @@ class RC_MMG_338_FSV: RC_MG_FSV_Base
 	displayName="MMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	magazineReloadTime=10;
 	reloadTime=0.0857;
@@ -735,7 +735,6 @@ class RC_HMG_127x99_MBT: RC_MG_MBT_Base
 	displayName="HMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
 	magazines[]=
@@ -761,7 +760,6 @@ class RC_MMG_338_MBT: RC_MG_MBT_Base
 	displayName="MMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	reloadTime=0.0857;
 	magazineReloadTime=10;
@@ -826,7 +824,6 @@ class RC_MMG_338_coax: RC_MMG_338_coax_Base
 	displayName="coaxial MMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
 	magazines[]=
@@ -900,7 +897,6 @@ class RC_MMG_338_coax_ext: RC_MMG_338_coax_ext_Base
 	displayName="coaxial MMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
 	magazines[]=
@@ -974,7 +970,6 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 	displayName="HMG";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
 	class manual: manual
@@ -1072,7 +1067,6 @@ class RC_HMG_127_NSVT: HMG_NSVT_Base
 	displayName="NSVT";
 	canLock=2;
 	maxZeroing=3000;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
 	class manual: manual
@@ -1104,7 +1098,6 @@ class RC_GMG_40mm: GMG_40mm_Base
 {
 	author="Ascent";
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	autoReload=1;
 	class manual: manual
@@ -1133,7 +1126,6 @@ class RC_autocannon_20mm_CTWS: RC_autocannon_30mm_CTWS_Base
 	author="Ascent";
 	displayName="20mm AC";
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	//maxZeroing=4000;
 
@@ -1244,10 +1236,8 @@ class RC_autocannon_20mm: RC_autocannon_20mm_Base
 	author="Ascent";
 	displayName="20mm AC";
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	//maxZeroing=4000;
-	FCSMaxLeadSpeed=30.555599;
 
 	class HE: HE
 	{
@@ -1345,7 +1335,7 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 	author="Ascent";
 	displayName="20mm C-UAS";
 	magazineReloadTime=15;
-	ballisticsComputer="4";	//"1 + 2 + 16"
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAA.hpp"
 	//maxZeroing=4000;
 
 	muzzles[]=
@@ -1357,12 +1347,10 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 	{
 		displayName="20mm C-UAS";
 		canLock=2;
-		FCSZeroingDelay=0.5;
 		maxZeroing=4000;
-		FCSMaxLeadSpeed=30.555599;
 		reloadTime=0.3;
 		magazineReloadTime=15;
-		ballisticsComputer="4";	//"1 + 2 + 16"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAA.hpp"
 
 		/*
 		textureType="burst";
@@ -1460,9 +1448,6 @@ class RC_autocannon_20mm_cUAS: RC_autocannon_20mm_Base
 	class AP: autocannon_Base_F
 	{
 		canLock=2;
-		FCSZeroingDelay=0.5;
-		FCSMaxLeadSpeed=30.555599;
-
 		reloadTime=0.2;
 		displayName="20mm AP";
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
@@ -1558,9 +1543,7 @@ class RC_GMG_20mm_cUAS: RC_autocannon_Base_F
 	canLock=2;
 	//cursorAim="gl";
 	autoFire=0;	//?
-	FCSMaxLeadSpeed=30;
-	FCSZeroingDelay=0.5;
-	ballisticsComputer="4";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAA.hpp"
 
 	magazines[]=
 	{
@@ -1679,7 +1662,7 @@ class RC_GMG_20mm_cUAS: RC_autocannon_Base_F
 class RC_GMG_20mm_mounted_cUAS: RC_GMG_20mm_cUAS
 {
 	displayName="20mm C-UAS/FS";
-	FCSMaxLeadSpeed=80;
+	FCSMaxLeadSpeed=100;
 	FCSZeroingDelay=0.3;
 	ballisticsComputer="1 + 2 + 16";
 	magazineReloadTime=6;
@@ -1743,9 +1726,7 @@ class RC_HMG_127x99_cUAS: RC_HMG_127x99_cUAS_base
 	autoReload=1;
 	canLock=2;
 	autoFire=0;	//?
-	FCSMaxLeadSpeed=30;
-	FCSZeroingDelay=0.5;
-	ballisticsComputer="4";
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAA.hpp"
 
 	magazines[]=
 	{
@@ -1838,7 +1819,8 @@ class RC_HMG_127x99_cUAS: RC_HMG_127x99_cUAS_base
 };
 class RC_HMG_127x99_mounted_cUAS: RC_HMG_127x99_cUAS
 {
-	FCSMaxLeadSpeed=80;
+	displayName="12.7mm C-UAS/FS";
+	FCSMaxLeadSpeed=100;
 	FCSZeroingDelay=0.3;
 	ballisticsComputer="1 + 2 + 16";
 	magazineReloadTime=6;
@@ -1862,7 +1844,6 @@ class RC_autocannon_30mm_CTWS: RC_autocannon_30mm_CTWS_Base
 {
 	author="Ascent";
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	//magazineReloadTime=1; //TESTING ONLY!
@@ -1959,12 +1940,12 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 {
 	author="Ascent";
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	//maxZeroing=3300;
 
 	class HE: HE
 	{
+		canLock=2;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		maxZeroing=4000;
 		magazines[]=
@@ -2025,6 +2006,7 @@ class RC_autocannon_30mm: RC_autocannon_30mm_base
 	};
 	class AP: AP
 	{
+		canLock=2;
 		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		maxZeroing=4000;
 		magazines[]=
@@ -2455,7 +2437,6 @@ class RC_autocannon_40mm_CTWS: RC_autocannon_40mm_CTWS_Base
 {
 	author="Ascent";
 	canLock=2;
-	FCSZeroingDelay=0.5;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	//maxZeroing=3800;
 
@@ -2548,7 +2529,6 @@ class RC_autocannon_30mm_RCWS: RC_autocannon_30mm_RCWS_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	canLock=2;
 	magazineReloadTime=25;
-	FCSZeroingDelay=0.5;
 	maxZeroing=4000;
 
 	magazines[]=
@@ -2622,8 +2602,6 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 	canLock=2;
 	reloadTime=6;
 	magazineReloadTime=6;
-	FCSZeroingDelay=0.5;
-	FCSMaxLeadSpeed=30;
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	magazines[]=
 	{
