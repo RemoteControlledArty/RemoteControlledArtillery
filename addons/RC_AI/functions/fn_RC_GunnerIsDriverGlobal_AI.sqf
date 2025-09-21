@@ -4,7 +4,7 @@ if ((crew _vic) findIf {isPlayer _x} > -1) then {
 
 	private _gun = gunner _vic;
 
-	if (isPlayer _com) then {
+	if (isPlayer _gun) then {
 		
 		if ((driver _vic) isEqualTo objNull) then {
 			private _driver = createAgent [(typeOf _gun), [0,0,0], [], 0, "NONE"];

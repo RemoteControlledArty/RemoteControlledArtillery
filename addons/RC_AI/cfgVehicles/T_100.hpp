@@ -13,24 +13,26 @@ class RC_AI_B_T100_WD_Core: RC_MBT_4_WD
 };
 class RC_AI_B_T100_WD_Base: RC_AI_B_T100_WD_Core
 {
-	/*
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\RC_AI\includes_script\GunnerOrCommanderIsDriverEH_AI.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
+		class RC_EngineOff
+		{
+			#include "\RC_AI\includes_script\EmptyGetOutEngineOffEH.hpp"
+		};
+		/*
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		*/
 	};
-	*/
 	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\RC_AI\includes_script\UserActions_TakeDriverControlsGlobalServer_AI.hpp"
 	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
 	displayName="[AI] T-100";

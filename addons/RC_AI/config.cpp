@@ -146,9 +146,9 @@ class CfgPatches
 			"RC_Crocus",
 			"RC_Crocus_A3TI",
 			"RC_ilbe",
-			"RC_60mmULM"/*,
+			"RC_60mmULM",
 
-			"A3U"*/
+			"RemoveStamina"		//temporary alternative until i find the correct cfg name of antistasi ultimate
 		};
 
 		skipWhenMissingDependencies=1;

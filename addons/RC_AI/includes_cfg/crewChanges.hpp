@@ -67,7 +67,7 @@ linkedItems[]=
 {
 	"V_TacVest_oli",
 	"H_HelmetCrew_I",
-	"G_Tactical_Clear",
+	"G_Tactical_Clear",		//"RC_SO_Goggles_NV_grn", looks good with green armor etc
 	"ItemMap",
 	"ItemCompass",
 	"ItemWatch",
