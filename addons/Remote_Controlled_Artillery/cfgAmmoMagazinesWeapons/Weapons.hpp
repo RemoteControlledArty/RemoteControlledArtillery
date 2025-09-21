@@ -2528,7 +2528,7 @@ class RC_autocannon_30mm_RCWS: RC_autocannon_30mm_RCWS_Base
 	author="Ascent";
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	canLock=2;
-	magazineReloadTime=25;
+	magazineReloadTime=15;
 	maxZeroing=4000;
 
 	magazines[]=
