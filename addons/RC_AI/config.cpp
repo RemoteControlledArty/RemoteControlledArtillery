@@ -7,6 +7,11 @@ class CfgPatches
 		
 		units[]=
 		{
+			//visually neutral crew
+			"RC_AI_B_Crew",
+			"RC_AI_O_Crew",
+			"RC_AI_I_Crew",
+
 			//Basegame
 			"RC_AI_B_Pandur_A",
 			"RC_AI_O_Pandur_A",
@@ -18,12 +23,26 @@ class CfgPatches
 
 			"RC_AI_I_Pandur_DIG",
 			
+			"RC_AI_B_Patria40_A",
+			"RC_AI_O_Patria40_A",
+			"RC_AI_I_Patria40_A",
 
-			//WS
+			"RC_AI_B_Patria40_WD",
+			"RC_AI_O_Patria40_WD",
+			"RC_AI_I_Patria40_WD",
+
+			"RC_AI_B_Rooikat_A",
+			"RC_AI_O_Rooikat0_A",
+			"RC_AI_I_Rooikat_A",
+
+			"RC_AI_B_Rooikat_WD",
+			"RC_AI_O_Rooikat_WD",
+			"RC_AI_I_Rooikat_WD",
+
+			//WS Retex
 			"RC_AI_B_BM2T_A",
 			"RC_AI_O_BM2T_A",
 			"RC_AI_I_BM2T_A",
-
 
 			//Aegis
 			"RC_AI_B_2S90M_A",
@@ -42,7 +61,6 @@ class CfgPatches
 			"RC_AI_O_BTR80A_WD",
 			"RC_AI_I_BTR80A_WD",
 
-
 			//Aegis Retex
 			"RC_AI_B_BM2T_WD",
 			"RC_AI_O_BM2T_WD",
@@ -56,14 +74,33 @@ class CfgPatches
 			"RC_AI_O_T14_WD",
 			"RC_AI_I_T14_WD",
 
-
 			//AegisWS
+			"RC_AI_B_BTR100_A",
+			"RC_AI_O_BTR100_A",
+			"RC_AI_I_BTR100_A",
 
+			"RC_AI_B_BTR100_WD",
+			"RC_AI_O_BTR100_WD",
+			"RC_AI_I_BTR100_WD",
 
 			//AbramsX
+			"RC_AI_B_AbramsX_A",
+			"RC_AI_O_AbramsX_A",
+			"RC_AI_I_AbramsX_A",
 
+			"RC_AI_B_AbramsX_WD",
+			"RC_AI_O_AbramsX_WD",
+			"RC_AI_I_AbramsX_WD",
 
 			//RHS
+			"RC_AI_B_M1127_M2Jav_D",
+			"RC_AI_O_M1127_M2Jav_D",
+			"RC_AI_I_M1127_M2Jav_D",
+
+			"RC_AI_B_M2A3_M2Jav_WD",
+			"RC_AI_O_M2A3_M2Jav_WD",
+			"RC_AI_I_M2A3_M2Jav_WD",
+
 			"RC_AI_B_M2A3_BUSKIII_D",
 			"RC_AI_O_M2A3_BUSKIII_D",
 			"RC_AI_I_M2A3_BUSKIII_D",
@@ -71,7 +108,6 @@ class CfgPatches
 			"RC_AI_B_M2A3_BUSKIII_WD",
 			"RC_AI_O_M2A3_BUSKIII_WD",
 			"RC_AI_I_M2A3_BUSKIII_WD",
-
 
 			"RC_AI_B_M1A2_SEPV2_D",
 			"RC_AI_O_M1A2_SEPV2_D",
@@ -89,8 +125,8 @@ class CfgPatches
 			"",
 			"",
 			*/
-
 			"RC_AI_autocannon_30mm_CTWS",
+			"RC_AI_autocannon_40mm_CTWS",
 			"RC_AI_RHS_weap_m240_bradley_coax",
 			"RC_AI_RHS_weap_M242BC",
 			"RC_AI_RHS_weap_m256"
@@ -100,10 +136,19 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
+
 			"RC_WesternSahara",
 			"RC_Aegis",
 			"RC_AegisWS",
-			"RC_RHS"
+			"RC_RHS",
+			"RC_AbramsX",
+
+			"RC_Crocus",
+			"RC_Crocus_A3TI",
+			"RC_ilbe",
+			"RC_60mmULM"/*,
+
+			"A3U"*/
 		};
 
 		skipWhenMissingDependencies=1;
@@ -201,24 +246,26 @@ class CfgVehicles
 	//Basegame
 	#include "\RC_AI\cfgVehicles\Crew.hpp"
 	#include "\RC_AI\cfgVehicles\Pandur.hpp"
+	#include "\RC_AI\cfgVehicles\Patria.hpp"
 	#include "\RC_AI\cfgVehicles\Rooikat.hpp"
 
-	//WS
+	//WS Retex
 	#include "\RC_AI\cfgVehicles\BM_2T_A.hpp"
 
 	//Aegis
 	#include "\RC_AI\cfgVehicles\BTR_80A.hpp"
-	#include "\RC_AI\cfgVehicles\BTR_100.hpp"
 	#include "\RC_AI\cfgVehicles\2S90M.hpp"
 
-	//AegisRetex
+	//Aegis Retex
 	#include "\RC_AI\cfgVehicles\BM_2T_WD.hpp"
 	#include "\RC_AI\cfgVehicles\T_100.hpp"
 	#include "\RC_AI\cfgVehicles\T_14.hpp"
 
 	//AegisWS
+	#include "\RC_AI\cfgVehicles\BTR_100.hpp"
 
 	//AbramsX
+	#include "\RC_AI\cfgVehicles\AbramsX.hpp"
 	
 	//RHS
 	#include "\RC_AI\cfgVehicles\Stryker.hpp"

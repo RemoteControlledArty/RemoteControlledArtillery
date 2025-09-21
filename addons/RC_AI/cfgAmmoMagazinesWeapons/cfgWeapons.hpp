@@ -1,87 +1,76 @@
 //Basegame
 class RC_MMG_338_FSV_coax;
-class RC_AI_MMG_338_FSV_coax: RC_MMG_338_FSV_coax
+class RC_AI_MMG_338_FSV_coax_Base: RC_MMG_338_FSV_coax
 {
-	magazines[]=
-	{
-		"RC_AI_200Rnd_338_T_R",
-		"RC_AI_200Rnd_338_T_G",
-		"RC_AI_200Rnd_338_T_Y",
-
-		"RC_AI_300Rnd_338_T_R",
-		"RC_AI_300Rnd_338_T_G",
-		"RC_AI_300Rnd_338_T_Y",
-
-		"RC_AI_400Rnd_338_T_R",
-		"RC_AI_400Rnd_338_T_G",
-		"RC_AI_400Rnd_338_T_Y"
-	};
+	class manual;
 };
-class RC_MMG_338_coax_ext;
-class RC_AI_MMG_338_coax_ext: RC_MMG_338_coax_ext
+class RC_AI_MMG_338_FSV_coax: RC_AI_MMG_338_FSV_coax_Base
 {
-	magazines[]=
-	{
-		"RC_AI_200Rnd_338_T_R",
-		"RC_AI_200Rnd_338_T_G",
-		"RC_AI_200Rnd_338_T_Y",
+	#include "\RC_AI\includes_weaponmags\mags_338.hpp"
+};
+class RC_AI_MMG_762x51_FSV_coax: RC_AI_MMG_338_FSV_coax_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_762x51.hpp"
+};
 
-		"RC_AI_300Rnd_338_T_R",
-		"RC_AI_300Rnd_338_T_G",
-		"RC_AI_300Rnd_338_T_Y",
 
-		"RC_AI_400Rnd_338_T_R",
-		"RC_AI_400Rnd_338_T_G",
-		"RC_AI_400Rnd_338_T_Y"
-	};
+class RC_MMG_338_coax_ext;
+class RC_AI_MMG_338_coax_ext_Base: RC_MMG_338_FSV_coax
+{
+	class manual;
+};
+class RC_AI_MMG_338_coax_ext: RC_AI_MMG_338_coax_ext_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_338.hpp"
+};
+class RC_AI_MMG_762x51_coax_ext: RC_AI_MMG_338_coax_ext_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_762x51.hpp"
+};
+
+
+class RC_MMG_338_coax;
+class RC_AI_MMG_338_coax_Base: RC_MMG_338_coax
+{
+	class manual;
+};
+class RC_AI_MMG_338_coax: RC_AI_MMG_338_coax_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_338.hpp"
+};
+class RC_AI_MMG_762x51_coax: RC_AI_MMG_338_coax_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_762x51.hpp"
 };
 
 
 class RC_MMG_93x64_coax_ext;
-class RC_AI_MMG_93x64_coax_ext: RC_MMG_93x64_coax_ext
+class RC_AI_MMG_93x64_coax_ext_Base: RC_MMG_93x64_coax_ext
 {
-	magazines[]=
-	{
-		"RC_AI_200Rnd_93x64_T_G",
-		"RC_AI_200Rnd_93x64_T_R",
-		"RC_AI_200Rnd_93x64_T_Y",
-
-		"RC_AI_300Rnd_93x64_T_G",
-		"RC_AI_300Rnd_93x64_T_R",
-		"RC_AI_300Rnd_93x64_T_Y",
-
-		"RC_AI_400Rnd_93x64_T_G",
-		"RC_AI_400Rnd_93x64_T_R",
-		"RC_AI_400Rnd_93x64_T_Y",
-
-		"RC_AI_600Rnd_93x64_T_G",
-		"RC_AI_600Rnd_93x64_T_R",
-		"RC_AI_600Rnd_93x64_T_Y"
-	};
+	class manual;
+};
+class RC_AI_MMG_93x64_coax_ext: RC_AI_MMG_93x64_coax_ext_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_93x64.hpp"
+};
+class RC_AI_MMG_762x54_coax_ext: RC_AI_MMG_93x64_coax_ext_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_762x54.hpp"
 };
 
 
 class RC_MMG_93x64_coax;
-class RC_AI_MMG_93x64_coax: RC_MMG_93x64_coax
+class RC_AI_MMG_93x64_coax_Base: RC_MMG_93x64_coax
 {
-	magazines[]=
-	{
-		"RC_AI_200Rnd_93x64_T_G",
-		"RC_AI_200Rnd_93x64_T_R",
-		"RC_AI_200Rnd_93x64_T_Y",
-
-		"RC_AI_300Rnd_93x64_T_G",
-		"RC_AI_300Rnd_93x64_T_R",
-		"RC_AI_300Rnd_93x64_T_Y",
-
-		"RC_AI_400Rnd_93x64_T_G",
-		"RC_AI_400Rnd_93x64_T_R",
-		"RC_AI_400Rnd_93x64_T_Y",
-
-		"RC_AI_600Rnd_93x64_T_G",
-		"RC_AI_600Rnd_93x64_T_R",
-		"RC_AI_600Rnd_93x64_T_Y"
-	};
+	class manual;
+};
+class RC_AI_MMG_93x64_coax: RC_AI_MMG_93x64_coax_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_93x64.hpp"
+};
+class RC_AI_MMG_762x54_coax: RC_AI_MMG_93x64_coax_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_762x54.hpp"
 };
 
 
@@ -301,6 +290,56 @@ class RC_AI_autocannon_30mm_RCWS: RC_autocannon_30mm_RCWS
 };
 
 
+class RC_autocannon_40mm_CTWS;
+class RC_AI_autocannon_40mm_CTWS_Base: RC_autocannon_40mm_CTWS
+{
+	class HE;
+	class AP;
+	class player;
+};
+class RC_AI_autocannon_40mm_CTWS: RC_AI_autocannon_40mm_CTWS_Base
+{
+	class HE: HE
+	{
+		magazines[]=
+		{
+			"RC_AI_50Rnd_40mm_HE_Pen_T_R",
+			"RC_AI_50Rnd_40mm_HE_Pen_T_G",
+			"RC_AI_50Rnd_40mm_HE_Pen_T_Y",
+
+			"RC_AI_50Rnd_40mm_HE_DF_T_R",
+			"RC_AI_50Rnd_40mm_HE_DF_T_G",
+			"RC_AI_50Rnd_40mm_HE_DF_T_Y",
+
+			"RC_AI_50Rnd_40mm_HEAB_DF_T_R",
+			"RC_AI_50Rnd_40mm_HEAB_DF_T_G",
+			"RC_AI_50Rnd_40mm_HEAB_DF_T_Y",
+
+			"RC_AI_50Rnd_40mm_MP_Pen_T_R",
+			"RC_AI_50Rnd_40mm_MP_Pen_T_G",
+			"RC_AI_50Rnd_40mm_MP_Pen_T_Y",
+
+			"RC_AI_50Rnd_40mm_MP_DF_T_R",
+			"RC_AI_50Rnd_40mm_MP_DF_T_G",
+			"RC_AI_50Rnd_40mm_MP_DF_T_Y",
+
+			"RC_AI_50Rnd_40mm_MPAB_DF_T_R",
+			"RC_AI_50Rnd_40mm_MPAB_DF_T_G",
+			"RC_AI_50Rnd_40mm_MPAB_DF_T_Y"
+		};
+	};
+	class AP: AP
+	{
+		magazines[]=
+		{
+			"RC_AI_50Rnd_40mm_APFSDS_T_R",
+			"RC_AI_50Rnd_40mm_APFSDS_T_G",
+			"RC_AI_50Rnd_40mm_APFSDS_T_Y"
+		};
+	};
+};
+
+
 class RC_cannon_120mm;
 class RC_AI_cannon_120mm: RC_cannon_120mm
 {
@@ -488,6 +527,114 @@ class RC_AI_IFV_Missile_Launcher_4R: RC_AI_IFV_Missile_Launcher
 };
 
 
+//AbramsX
+class RC_AbramsX_HMG_coax;
+class RC_AI_AbramsX_HMG_coax: RC_AbramsX_HMG_coax
+{
+	magazines[]=
+	{
+		"RC_AI_300Rnd_127x99_SLAP_T_R",
+		"RC_AI_300Rnd_127x99_SLAP_T_G",
+		"RC_AI_300Rnd_127x99_SLAP_T_Y",
+		"RC_AI_400Rnd_127x99_SLAP_T_G",
+		"RC_AI_400Rnd_127x99_SLAP_T_R",
+		"RC_AI_400Rnd_127x99_SLAP_T_Y"
+	};
+};
+
+
+class RC_AbramsX_30mm_M914;
+class RC_AI_AbramsX_30mm_M914_Base: RC_AbramsX_30mm_M914
+{
+	class HighROF;
+};
+class RC_AI_AbramsX_30mm_M914: RC_AI_AbramsX_30mm_M914_Base
+{
+	class HighROF: HighROF
+	{
+		magazines[]=
+		{
+			"RC_AI_140Rnd_30mm_HE_Pen_T_R",
+			"RC_AI_140Rnd_30mm_HE_Pen_T_G",
+			"RC_AI_140Rnd_30mm_HE_Pen_T_Y",
+
+			"RC_AI_140Rnd_30mm_HE_DF_T_R",
+			"RC_AI_140Rnd_30mm_HE_DF_T_G",
+			"RC_AI_140Rnd_30mm_HE_DF_T_Y",
+
+			"RC_AI_140Rnd_30mm_HEAB_DF_T_R",
+			"RC_AI_140Rnd_30mm_HEAB_DF_T_G",
+			"RC_AI_140Rnd_30mm_HEAB_DF_T_Y",
+
+			"RC_AI_140Rnd_30mm_MP_Pen_T_R",
+			"RC_AI_140Rnd_30mm_MP_Pen_T_G",
+			"RC_AI_140Rnd_30mm_MP_Pen_T_Y",
+
+			"RC_AI_140Rnd_30mm_MP_DF_T_R",
+			"RC_AI_140Rnd_30mm_MP_DF_T_G",
+			"RC_AI_140Rnd_30mm_MP_DF_T_Y",
+
+			"RC_AI_140Rnd_30mm_MPAB_DF_T_R",
+			"RC_AI_140Rnd_30mm_MPAB_DF_T_G",
+			"RC_AI_140Rnd_30mm_MPAB_DF_T_Y",
+
+			"RC_140Rnd_30mm_cUAS",
+
+			"RC_AI_140Rnd_30mm_APFSDS_T_R",
+			"RC_AI_140Rnd_30mm_APFSDS_T_G",
+			"RC_AI_140Rnd_30mm_APFSDS_T_Y"
+		};
+	};
+};
+
+
+class RC_AbramsX_120mm_M360;
+class RC_AI_AbramsX_120mm_M360: RC_AbramsX_120mm_M360
+{
+	magazines[]=
+	{
+		"RC_AI_20Rnd_120mm_APFSDS_X_T_R",
+		"RC_AI_20Rnd_120mm_APFSDS_X_T_G",
+		"RC_AI_20Rnd_120mm_APFSDS_X_T_Y",
+
+		"RC_AI_10Rnd_120mm_MP_T_R",
+		"RC_AI_15Rnd_120mm_MP_T_R",
+		"RC_AI_20Rnd_120mm_MP_T_R",
+
+		"RC_AI_10Rnd_120mm_MP_T_G",
+		"RC_AI_15Rnd_120mm_MP_T_G",
+		"RC_AI_20Rnd_120mm_MP_T_G",
+
+		"RC_AI_10Rnd_120mm_MP_T_Y",
+		"RC_AI_15Rnd_120mm_MP_T_Y",
+		"RC_AI_20Rnd_120mm_MP_T_Y",
+
+		"RC_AI_3Rnd_120mm_MPAB_DF_T_R",
+		"RC_AI_5Rnd_120mm_MPAB_DF_T_R",
+		"RC_AI_10Rnd_120mm_MPAB_DF_T_R",
+		"RC_AI_15Rnd_120mm_MPAB_DF_T_R",
+
+		"RC_AI_3Rnd_120mm_MPAB_DF_T_G",
+		"RC_AI_5Rnd_120mm_MPAB_DF_T_G",
+		"RC_AI_10Rnd_120mm_MPAB_DF_T_G",
+		"RC_AI_15Rnd_120mm_MPAB_DF_T_G",
+
+		"RC_AI_4Rnd_120mm_MPAB_DF_T_Y",
+		"RC_AI_5Rnd_120mm_MPAB_DF_T_Y",
+		"RC_AI_10Rnd_120mm_MPAB_DF_T_Y",
+		"RC_AI_15Rnd_120mm_MPAB_DF_T_Y",
+
+		"RC_3Rnd_120mm_DLG_LR_cannon_missiles",
+		"RC_2Rnd_120mm_DLG_LR_cannon_missiles",
+		"RC_1Rnd_120mm_DLG_LR_cannon_missiles",
+
+		"RC_3Rnd_120mm_DLG_HVKEM",
+		"RC_2Rnd_120mm_DLG_HVKEM",
+		"RC_1Rnd_120mm_DLG_HVKEM"
+	};
+};
+
+
 //RHS
 class RC_RHS_weap_m240_abrams_coax;
 class RC_AI_RHS_weap_m240_abrams_coax: RC_RHS_weap_m240_abrams_coax
@@ -518,6 +665,17 @@ class RC_AI_RHS_M2_CROWS_M151: RC_RHS_M2_CROWS_M151
 	{
 		"RC_AI_RHS_200rnd_127x99_T_R",
 		"RC_AI_RHS_200rnd_127x99_SLAP_T_R"
+	};
+};
+
+
+class RC_RHS_M2_CROWS_M153_Abrams;
+class RC_AI_RHS_M2_CROWS_M153_Abrams: RC_RHS_M2_CROWS_M153_Abrams
+{
+	magazines[]=
+	{
+		"RC_AI_RHS_300rnd_127x99_T_R",
+		"RC_AI_RHS_300rnd_127x99_SLAP_T_R"
 	};
 };
 

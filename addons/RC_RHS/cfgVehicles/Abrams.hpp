@@ -14,6 +14,7 @@ class RC_M1A2_SEPV2_Base: rhsusf_m1a2sep2d_usarmy
 	class Loader;
 	class CommanderMG;
 	class LoaderMG;
+	class HitPoints;
 	class EventHandlers;
 	class UserActions;
 };
@@ -28,7 +29,6 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	lockDetectionSystem="2+4+8";
 
 	RC_ATrespondingTurret[]={0,0};
-	//RC_ignoreRockets=1;
 
 	weapons[]=
 	{
@@ -189,6 +189,22 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
 					gunnerOpticsEffect[]={};
 					hitpoint="Hit_Optic_GPS_TI";
+				};
+			};
+
+			class HitPoints:  HitPoints
+			{
+				class HitGun: HitGun
+				{
+					armor=0.5;	//0.3
+					//explosionShielding=0;
+					//minimalHit=0.15;
+				};
+				class HitTurret: HitTurret
+				{
+					armor=0.4;	//0.2
+					//explosionShielding=0.001;
+					//minimalHit=0.34;
 				};
 			};
 			

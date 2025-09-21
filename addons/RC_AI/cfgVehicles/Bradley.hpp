@@ -31,8 +31,7 @@ class RC_AI_B_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_NLOS_D_B_Core
 	*/
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
-	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
+	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
 	displayName="[AI] M2A3 Bradley";
 	forceInGarage=1;	//1
@@ -50,7 +49,8 @@ class RC_AI_B_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_NLOS_D_B_Core
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"rhsusf_mag_L8A3_8",
 		"rhsusf_mag_L8A3_8"
 	};
@@ -61,6 +61,16 @@ class RC_AI_B_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_NLOS_D_B_Core
 		{
 			dontCreateAI=0;		//1
 			commanding=1;		//3
+			
+			weapons[]=
+			{
+				"RC_AI_RHS_weap_M242BC",
+				"RC_AI_RHS_weap_m240_bradley_coax",
+				"RC_AI_Bradley_Missile_Launcher",
+				"rhs_weap_fcs_ammo",
+
+				"rhsusf_weap_M257_8"
+			};
 
 			class Turrets: Turrets
 			{
@@ -101,22 +111,13 @@ class RC_AI_B_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D_Base
 	scopeCurator=2;
 
 	faction="RC_AI_B";
-	crew="RC_AI_B_Crew";	//B_UAV_AI
+	crew="RC_AI_B_Crew";
 	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			weapons[]=
-			{
-				"RC_AI_RHS_weap_M242BC",
-				"RC_AI_RHS_weap_m240_bradley_coax",
-				"RC_AI_Bradley_Missile_Launcher",
-				"rhs_weap_fcs_ammo",
-
-				"rhsusf_weap_M257_8"
-			};
 			#include "\RC_AI\includes_vicmags\mags_AI_Bradley_red.hpp"
 		};
 	};
@@ -124,7 +125,7 @@ class RC_AI_B_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D_Base
 class RC_AI_O_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D
 {
 	faction="RC_AI_O";
-	crew="RC_AI_O_Crew";	//O_UAV_AI
+	crew="RC_AI_O_Crew";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
@@ -141,7 +142,7 @@ class RC_AI_O_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D
 class RC_AI_I_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D
 {
 	faction="RC_AI_I";
-	crew="RC_AI_I_Crew";	//I_UAV_AI
+	crew="RC_AI_I_Crew";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 

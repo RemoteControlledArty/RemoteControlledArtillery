@@ -43,7 +43,6 @@ class RC_AI_B_name_A_Base: RC_AI_B_name_A_Core
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
-	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 
 	displayName="[AI] name";
 	forceInGarage=1;	//1
@@ -55,13 +54,12 @@ class RC_AI_B_name_A_Base: RC_AI_B_name_A_Core
 
 	weapons[]=
 	{
-		"TruckHorn",
 		"RC_APS_W",
 		"SmokeLauncher"
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
@@ -72,6 +70,12 @@ class RC_AI_B_name_A_Base: RC_AI_B_name_A_Core
 		{
 			dontCreateAI=0;		//1
 			commanding=1;		//3
+
+			weapons[]=
+			{
+				"RC_AI_Weapon",
+				"SmokeLauncher"
+			};
 
 			class Turrets: Turrets
 			{
@@ -109,13 +113,6 @@ class RC_AI_B_name_A: RC_AI_B_name_A_Base
 	{
 		class MainTurret: MainTurret
 		{
-			weapons[]=
-			{
-				"RC_AI_autocannon_30mm_CTWS",
-				"RC_AI_MMG_338_coax_ext",
-				"RC_AI_IFV_Missile_Launcher",
-				"SmokeLauncher"
-			};
 			#include "\RC_AI\includes_vicmags\mags_AI_name_red.hpp"
 		};
 	};

@@ -31,8 +31,7 @@ class RC_AI_B_T100_WD_Base: RC_AI_B_T100_WD_Core
 	*/
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
-	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
+	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
 	displayName="[AI] T-100";
 	forceInGarage=1;	//1
@@ -49,7 +48,7 @@ class RC_AI_B_T100_WD_Base: RC_AI_B_T100_WD_Core
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
@@ -60,6 +59,13 @@ class RC_AI_B_T100_WD_Base: RC_AI_B_T100_WD_Core
 		{
 			dontCreateAI=0;		//1
 			commanding=1;		//3
+			
+			weapons[]=
+			{
+				"RC_AI_cannon_125mm_advanced",
+				"RC_AI_MMG_93x64_coax",
+				"SmokeLauncher"
+			};
 
 			class Turrets: Turrets
 			{
@@ -67,6 +73,13 @@ class RC_AI_B_T100_WD_Base: RC_AI_B_T100_WD_Core
 				{
 					dontCreateAI=0;	//1
 					commanding=2;	//2
+					
+					weapons[]=
+					{
+						"RC_AI_HMG_127_NSVT",
+						"RC_Laserdesignator_vehicle",
+						"SmokeLauncher"
+					};
 				};
 			};
 		};
@@ -121,24 +134,12 @@ class RC_AI_B_T100_WD: RC_AI_B_T100_WD_Base
 	{
 		class MainTurret: MainTurret
 		{
-			weapons[]=
-			{
-				"RC_AI_cannon_125mm_advanced",
-				"RC_AI_MMG_93x64_coax",
-				"SmokeLauncher"
-			};
 			#include "\RC_AI\includes_vicmags\mags_AI_T100_red.hpp"
 
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					weapons[]=
-					{
-						"RC_AI_HMG_127_NSVT",
-						"RC_Laserdesignator_vehicle",
-						"SmokeLauncher"
-					};
 					#include "\RC_AI\includes_vicmags\mags_AI_T100_com_red.hpp"
 				};
 			};

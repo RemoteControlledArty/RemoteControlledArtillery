@@ -1,10 +1,9 @@
-class RC_Stryker_M1126_M2_WD_B;
-class RC_AI_B_M1126_M2_A_Core: RC_Stryker_M1126_M2_WD_B
+class RC_Stryker_M1126_M2_Javelin_WD_B;
+class RC_AI_B_M1126_M2Jav_WD_Core: RC_Stryker_M1126_M2_Javelin_WD_B
 {
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
-	
 	class HitPoints;
 	class HitLFWheel;
 	class HitLF2Wheel;
@@ -14,7 +13,6 @@ class RC_AI_B_M1126_M2_A_Core: RC_Stryker_M1126_M2_WD_B
 	class HitRF2Wheel;
 	class HitRMWheel;
 	class HitRBWheel;
-
 	class AnimationSources;
 	class Components;
 	class UserActions;
@@ -22,7 +20,7 @@ class RC_AI_B_M1126_M2_A_Core: RC_Stryker_M1126_M2_WD_B
 	scope=0;
 	scopeCurator=0;
 };
-class RC_AI_B_M1126_M2_A_Base: RC_AI_B_M1126_M2_A_Core
+class RC_AI_B_M1126_M2Jav_WD_Base: RC_AI_B_M1126_M2Jav_WD_Core
 {
 	/*
 	class EventHandlers: EventHandlers
@@ -42,10 +40,9 @@ class RC_AI_B_M1126_M2_A_Base: RC_AI_B_M1126_M2_A_Core
 	*/
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
-	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
+	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
-	displayName="[AI] M1126 Stryker M2";
+	displayName="[AI] M1126 Stryker M2 Javelin";
 	forceInGarage=1;	//1
 	driverCompartments="Compartment2";	//2
 	commanding=1;			//1
@@ -60,7 +57,8 @@ class RC_AI_B_M1126_M2_A_Base: RC_AI_B_M1126_M2_A_Core
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"rhsusf_mag_L8A3_16",
 		"rhsusf_mag_L8A3_16",
 		"rhsusf_mag_L8A3_16"
@@ -72,6 +70,13 @@ class RC_AI_B_M1126_M2_A_Base: RC_AI_B_M1126_M2_A_Core
 		{
 			dontCreateAI=0;		//1
 			commanding=1;		//3
+			
+			weapons[]=
+			{
+				"RC_AI_RHS_M2_CROWS_M151",
+				"RC_AI_Stryker_Missile_Launcher",
+				"rhsusf_weap_M6"
+			};
 		};
 	};
 
@@ -106,7 +111,7 @@ class RC_AI_B_M1126_M2_A_Base: RC_AI_B_M1126_M2_A_Core
 };
 
 
-class RC_AI_B_M1126_M2_A: RC_AI_B_M1126_M2_A_Base
+class RC_AI_B_M1126_M2Jav_WD: RC_AI_B_M1126_M2Jav_WD_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -119,16 +124,11 @@ class RC_AI_B_M1126_M2_A: RC_AI_B_M1126_M2_A_Base
 	{
 		class MainTurret: MainTurret
 		{
-			weapons[]=
-			{
-				"RC_AI_RHS_M2_CROWS_M151",
-				"rhsusf_weap_M6"
-			};
-			#include "\RC_AI\includes_vicmags\mags_AI_Stryker_M2_red.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Stryker_M2Jav_red.hpp"
 		};
 	};
 };
-class RC_AI_O_M1126_M2_A: RC_AI_B_M1126_M2_A
+class RC_AI_O_M1126_M2Jav_WD: RC_AI_B_M1126_M2Jav_WD
 {
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
@@ -140,12 +140,12 @@ class RC_AI_O_M1126_M2_A: RC_AI_B_M1126_M2_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Stryker_M2_green.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Stryker_M2Jav_green.hpp"
 		};
 	};
 	*/
 };
-class RC_AI_I_M1126_M2_A: RC_AI_B_M1126_M2_A
+class RC_AI_I_M1126_M2Jav_WD: RC_AI_B_M1126_M2Jav_WD
 {
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
@@ -157,14 +157,14 @@ class RC_AI_I_M1126_M2_A: RC_AI_B_M1126_M2_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Stryker_M2_yellow.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Stryker_M2Jav_yellow.hpp"
 		};
 	};
 	*/
 };
 
 
-class RC_AI_B_M1126_M2_WD: RC_AI_B_M1126_M2_A
+class RC_AI_B_M1126_M2Jav_A: RC_AI_B_M1126_M2Jav_WD
 {
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
@@ -183,7 +183,7 @@ class RC_AI_B_M1126_M2_WD: RC_AI_B_M1126_M2_A
 		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
 	};
 };
-class RC_AI_O_M1126_M2_WD: RC_AI_B_M1126_M2_WD
+class RC_AI_O_M1126_M2Jav_A: RC_AI_B_M1126_M2Jav_A
 {
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
@@ -195,12 +195,12 @@ class RC_AI_O_M1126_M2_WD: RC_AI_B_M1126_M2_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Stryker_M2_green.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Stryker_M2Jav_green.hpp"
 		};
 	};
 	*/
 };
-class RC_AI_I_M1126_M2_WD: RC_AI_B_M1126_M2_WD
+class RC_AI_I_M1126_M2Jav_A: RC_AI_B_M1126_M2Jav_A
 {
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
@@ -212,7 +212,7 @@ class RC_AI_I_M1126_M2_WD: RC_AI_B_M1126_M2_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Stryker_M2_yellow.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Stryker_M2Jav_yellow.hpp"
 		};
 	};
 	*/

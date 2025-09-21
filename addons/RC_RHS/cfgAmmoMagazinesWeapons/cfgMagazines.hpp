@@ -252,7 +252,7 @@ class RC_2Rnd_TOW_MP_NLOS: RC_2Rnd_IFV_MP_NLOS
 class RC_2Rnd_IFV_MP_SACLOS;
 class RC_2Rnd_TOW_MP_SACLOS: RC_2Rnd_IFV_MP_SACLOS
 {
-	ammo="RC_TOW_MP_LOS";
+	ammo="RC_TOW_MP_SACLOS";
 	displayName="4km TOW SACLOS";
 	displayNameShort="TOW SACLOS";
 };

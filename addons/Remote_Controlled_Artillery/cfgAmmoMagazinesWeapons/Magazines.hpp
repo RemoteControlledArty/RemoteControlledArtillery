@@ -1749,13 +1749,16 @@ class RC_2Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_LOS
 	initSpeed=100;
 };
 class RC_4Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_Overfly {count=4;};
-class RC_2Rnd_IFV_MP_SACLOS: RC_2Rnd_IFV_MP_LOS
+class RC_1Rnd_IFV_MP_SACLOS: RC_2Rnd_IFV_MP_LOS
 {
 	displayName="4km SACLOS ATGM";
 	displayNameShort="SACLOS ATGM";
 	ammo="RC_IFV_MP_SACLOS";
 	initSpeed=150;
+	count=1;
 };
+class RC_2Rnd_IFV_MP_SACLOS: RC_1Rnd_IFV_MP_SACLOS {count=2;};
+class RC_3Rnd_IFV_MP_SACLOS: RC_1Rnd_IFV_MP_SACLOS {count=3;};
 class RC_4Rnd_IFV_MP_SACLOS: RC_2Rnd_IFV_MP_SACLOS {count=4;};
 
 

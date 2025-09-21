@@ -4,7 +4,6 @@ class RC_AI_B_BTR100_A_Core: RC_IFV_7_WD
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
-	
 	class HitPoints;
 	class HitLFWheel;
 	class HitLF2Wheel;
@@ -14,7 +13,6 @@ class RC_AI_B_BTR100_A_Core: RC_IFV_7_WD
 	class HitRF2Wheel;
 	class HitRMWheel;
 	class HitRBWheel;
-
 	class AnimationSources;
 	class Components;
 	class UserActions;
@@ -42,8 +40,7 @@ class RC_AI_B_BTR100_A_Base: RC_AI_B_BTR100_A_Core
 	*/
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
-	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
+	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
 	displayName="[AI] BTR-100 Bumerang";
 	forceInGarage=1;	//1
@@ -61,7 +58,8 @@ class RC_AI_B_BTR100_A_Base: RC_AI_B_BTR100_A_Core
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
@@ -72,6 +70,14 @@ class RC_AI_B_BTR100_A_Base: RC_AI_B_BTR100_A_Core
 		{
 			dontCreateAI=0;		//1
 			commanding=1;		//3
+			
+			weapons[]=
+			{
+				"RC_AI_autocannon_30mm_Bu",
+				"RC_AI_MMG_93x64_coax_ext",
+				"RC_AI_IFV_Missile_Launcher_4R",
+				"SmokeLauncher"
+			};
 
 			class Turrets: Turrets
 			{
@@ -128,13 +134,6 @@ class RC_AI_B_BTR100_A: RC_AI_B_BTR100_A_Base
 	{
 		class MainTurret: MainTurret
 		{
-			weapons[]=
-			{
-				"RC_AI_autocannon_30mm_Bu",
-				"RC_AI_MMG_93x64_coax_ext",
-				"RC_AI_IFV_Missile_Launcher_4R",
-				"SmokeLauncher"
-			};
 			#include "\RC_AI\includes_vicmags\mags_AI_BTR_100_red.hpp"
 		};
 	};

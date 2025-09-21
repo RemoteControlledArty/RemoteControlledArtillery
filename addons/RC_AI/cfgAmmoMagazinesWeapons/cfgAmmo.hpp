@@ -132,6 +132,90 @@ class RC_AI_B_30mm_MPAB_DF_T_G: RC_AI_B_30mm_MPAB_DF_T_R {model="\A3\Weapons_f\D
 class RC_AI_B_30mm_MPAB_DF_T_Y: RC_AI_B_30mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+//40mm AP
+class RC_B_40mm_APFSDS_T_R;
+class RC_AI_B_40mm_APFSDS_T_R: RC_B_40mm_APFSDS_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_B_40mm_APFSDS_T_G: RC_AI_B_40mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_40mm_APFSDS_T_Y: RC_AI_B_40mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//40mm HE
+class RC_B_40mm_HE_Pen_T_R;
+class RC_AI_B_40mm_HE_Pen_T_R: RC_B_40mm_HE_Pen_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_B_40mm_HE_Pen_T_G: RC_AI_B_40mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_40mm_HE_Pen_T_Y: RC_AI_B_40mm_HE_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_B_40mm_HE_DF_T_R;
+class RC_AI_B_40mm_HE_DF_T_R: RC_B_40mm_HE_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	//submunitionAmmo="RC_AI_B_40mm_HE_DF_Sub";
+};
+class RC_AI_B_40mm_HE_DF_T_G: RC_AI_B_40mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_40mm_HE_DF_T_Y: RC_AI_B_40mm_HE_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_B_40mm_HEAB_DF_T_R;
+class RC_AI_B_40mm_HEAB_DF_T_R: RC_B_40mm_HEAB_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	//submunitionAmmo="RC_AI_B_40mm_HE_DF_Sub";
+};
+class RC_AI_B_40mm_HEAB_DF_T_G: RC_AI_B_40mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_40mm_HEAB_DF_T_Y: RC_AI_B_40mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//40mm MP
+class RC_B_40mm_MP_Pen_T_R;
+class RC_AI_B_40mm_MP_Pen_T_R: RC_B_40mm_MP_Pen_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_B_40mm_MP_Pen_T_G: RC_AI_B_40mm_MP_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_40mm_MP_Pen_T_Y: RC_AI_B_40mm_MP_Pen_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_B_40mm_MP_DF_T_R;
+class RC_AI_B_40mm_MP_DF_T_R: RC_B_40mm_MP_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	//submunitionAmmo="RC_AI_B_40mm_MP_DF_Sub";
+};
+class RC_AI_B_40mm_MP_DF_T_G: RC_AI_B_40mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_40mm_MP_DF_T_Y: RC_AI_B_40mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_B_40mm_MPAB_DF_T_R;
+class RC_AI_B_40mm_MPAB_DF_T_R: RC_B_40mm_MPAB_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	//submunitionAmmo="RC_AI_B_40mm_MP_DF_Sub";
+};
+class RC_AI_B_40mm_MPAB_DF_T_G: RC_AI_B_40mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_40mm_MPAB_DF_T_Y: RC_AI_B_40mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 //120mm
 class RC_Sh_120mm_APFSDS_T_R;
 class RC_AI_Sh_120mm_APFSDS_T_R: RC_Sh_120mm_APFSDS_T_R
@@ -142,6 +226,18 @@ class RC_AI_Sh_120mm_APFSDS_T_R: RC_Sh_120mm_APFSDS_T_R
 };
 class RC_AI_Sh_120mm_APFSDS_T_G: RC_AI_Sh_120mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_AI_Sh_120mm_APFSDS_T_Y: RC_AI_Sh_120mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_Sh_120mm_APFSDS_X_T_R;
+class RC_AI_Sh_120mm_APFSDS_X_T_R: RC_Sh_120mm_APFSDS_X_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_Sh_120mm_APFSDS_X_T_G: RC_AI_Sh_120mm_APFSDS_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_Sh_120mm_APFSDS_X_T_Y: RC_AI_Sh_120mm_APFSDS_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
 
 class RC_ammo_Penetrator_120mm;
 class RC_AI_ammo_Penetrator_120mm: RC_ammo_Penetrator_120mm
@@ -265,8 +361,9 @@ class RC_AI_IFV_MP_SACLOS: RC_IFV_MP_SACLOS
 	submunitionAmmo="RC_AI_ammo_Penetrator_MP_SACLOS";
 	indirectHit=30;		//80
 	indirectHitRange=7;	//10
-	maxSpeed=200;
-	thrustTime=8;
+	thrust=50;
+	maxSpeed=150;
+	thrustTime=10;
 };
 
 

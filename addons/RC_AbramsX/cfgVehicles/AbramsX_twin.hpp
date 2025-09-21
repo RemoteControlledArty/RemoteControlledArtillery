@@ -48,6 +48,16 @@ class RC_AbramsX_Twin_WD: RC_AbramsX_Twin_Base
 			source="reload";
 			weapon="RC_AbramsX_30mm_M914_twin";
 		};
+		class zasleh2_rot
+		{
+			source="ammorandom";
+			weapon="RC_AbramsX_20mm_coax";
+		};
+		class zasleh2_hide
+		{
+			source="reload";
+			weapon="RC_AbramsX_20mm_coax";
+		};
 	};
 
 	class Turrets: Turrets

@@ -17,6 +17,9 @@ magazines[]=
 	"RC_AI_RHS_400Rnd_762x51_T_R",
 	"RC_AI_RHS_400Rnd_762x51_T_R",
 
+	"RC_AI_2Rnd_TOW_MP_SACLOS",
+	"RC_AI_2Rnd_TOW_MP_SACLOS",
+	
 	/*
 	"RC_2Rnd_TOW_MP_Overfly",
 	"RC_2Rnd_TOW_MP_NLOS",

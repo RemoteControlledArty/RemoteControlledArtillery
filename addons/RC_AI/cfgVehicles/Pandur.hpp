@@ -40,8 +40,7 @@ class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
 	*/
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
-	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
+	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
 	displayName="[AI] Pandur II";
 	forceInGarage=1;	//1
@@ -59,7 +58,8 @@ class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
 	};
 	magazines[]=
 	{
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
@@ -70,6 +70,14 @@ class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
 		{
 			dontCreateAI=0;		//1
 			commanding=1;		//3
+
+			weapons[]=
+			{
+				"RC_AI_autocannon_30mm_CTWS",
+				"RC_AI_MMG_338_coax_ext",
+				"RC_AI_IFV_Missile_Launcher",
+				"SmokeLauncher"
+			};
 
 			class Turrets: Turrets
 			{
@@ -130,14 +138,7 @@ class RC_AI_B_Pandur_A: RC_AI_B_Pandur_A_Base
 	{
 		class MainTurret: MainTurret
 		{
-			weapons[]=
-			{
-				"RC_AI_autocannon_30mm_CTWS",
-				"RC_AI_MMG_338_coax_ext",
-				"RC_AI_IFV_Missile_Launcher",
-				"SmokeLauncher"
-			};
-			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_30mm_red.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_red.hpp"
 		};
 	};
 };
@@ -152,7 +153,7 @@ class RC_AI_O_Pandur_A: RC_AI_B_Pandur_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_30mm_green.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_green.hpp"
 		};
 	};
 };
@@ -167,7 +168,7 @@ class RC_AI_I_Pandur_A: RC_AI_B_Pandur_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_30mm_yellow.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_yellow.hpp"
 		};
 	};
 };
@@ -224,7 +225,7 @@ class RC_AI_O_Pandur_WD: RC_AI_B_Pandur_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_30mm_green.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_green.hpp"
 		};
 	};
 };
@@ -239,7 +240,7 @@ class RC_AI_I_Pandur_WD: RC_AI_B_Pandur_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_30mm_yellow.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Pandur_yellow.hpp"
 		};
 	};
 };
@@ -272,7 +273,7 @@ class RC_IFV_3_ReTex_WD_O: RC_IFV_3_ReTex_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_30mm_green.hpp"
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_green.hpp"
 		};
 	};
 };
@@ -287,7 +288,7 @@ class RC_IFV_3_ReTex_WD_I: RC_IFV_3_ReTex_WD
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_30mm_yellow.hpp"
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_yellow.hpp"
 		};
 	};
 };
@@ -318,7 +319,7 @@ class RC_IFV_3_ReTex_D_O: RC_IFV_3_ReTex_D
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_30mm_green.hpp"
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_green.hpp"
 		};
 	};
 };
@@ -333,7 +334,7 @@ class RC_IFV_3_ReTex_D_I: RC_IFV_3_ReTex_D
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_30mm_yellow.hpp"
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Pandur_yellow.hpp"
 		};
 	};
 };

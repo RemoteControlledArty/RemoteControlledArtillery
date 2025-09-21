@@ -2572,7 +2572,7 @@ class RC_autocannon_30mm_RCWS: RC_autocannon_30mm_RCWS_Base
 		"RC_60Rnd_30mm_HEAB_QF_T_R",
 		"RC_60Rnd_30mm_HEAB_QF_T_G",
 		"RC_60Rnd_30mm_HEAB_QF_T_Y",
-		//"RC_60Rnd_30mm_cUAS",
+		"RC_60Rnd_30mm_cUAS",
 
 		"RC_60Rnd_30mm_MP_T_G",
 		"RC_60Rnd_30mm_MP_T_R",

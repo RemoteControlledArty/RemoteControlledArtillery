@@ -63,7 +63,6 @@ respawnMagazines[]=
 	"Chemlight_green",
 	"Chemlight_green"
 };
-/*
 linkedItems[]=
 {
 	"V_TacVest_oli",
@@ -86,4 +85,3 @@ respawnLinkedItems[]=
 	"ItemRadio",
 	"NVGoggles_OPFOR"
 };
-*/

@@ -628,7 +628,7 @@ class RC_RHS_M2_CROWS_M151: RHS_M2_CROWS_M151_base
 	maxZeroing=3000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	
-	magazines[] =
+	magazines[]=
 	{
 		"RC_RHS_200rnd_127x99",
 		"RC_RHS_200rnd_127x99_T_R",

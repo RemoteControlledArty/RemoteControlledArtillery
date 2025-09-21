@@ -576,7 +576,6 @@ class RC_IFV_4_WD: RC_IFV_4_A
 		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
 		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
 		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
-		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
 		"a3\armor_f\data\camonet_green_co.paa",
 		"a3\Armor_F\Data\cage_olive_CO.paa"
 	};

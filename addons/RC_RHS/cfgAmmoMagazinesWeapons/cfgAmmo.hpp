@@ -288,7 +288,7 @@ class RC_IFV_MP_SACLOS;
 class RC_TOW_MP_SACLOS: RC_IFV_MP_SACLOS
 {
 	effectsMissile="RHS_Missile2";
-	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
+	//model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
 	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
 };
 
@@ -316,7 +316,7 @@ class RC_Javelin_MP_LOS: RC_IFV_MP_LOS
 };
 class RC_Javelin_MP_SACLOS: RC_IFV_MP_SACLOS
 {
-	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
+	//model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
 	effectsMissile="missile2";
 	effectsMissileInit="RocketBackEffectsRPG";
 	effectsSmoke="SmokeShellWhite";

@@ -146,16 +146,6 @@ class AnimationSources: AnimationSources
 		source="reload";
 		weapon="RC_AbramsX_120mm_M360";
 	};
-	class zasleh2_rot
-	{
-		source="ammorandom";
-		weapon="RC_AbramsX_20mm_coax";
-	};
-	class zasleh2_hide
-	{
-		source="reload";
-		weapon="RC_AbramsX_20mm_coax";
-	};
 	class bashbar: bashbar
 	{
 		initPhase=1;

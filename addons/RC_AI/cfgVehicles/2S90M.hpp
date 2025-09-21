@@ -40,8 +40,7 @@ class RC_AI_B_2S90M_WD_Base: RC_AI_B_2S90M_WD_Core
 	*/
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
-	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
+	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
 	displayName="[AI] 2S90M";
 	forceInGarage=1;	//1
@@ -70,6 +69,13 @@ class RC_AI_B_2S90M_WD_Base: RC_AI_B_2S90M_WD_Core
 		{
 			dontCreateAI=0;		//1
 			commanding=1;		//3
+
+			weapons[]=
+			{
+				"RC_AI_cannon_125mm",
+				"RC_AI_MMG_93x64_coax_ext",
+				"SmokeLauncher"
+			};
 
 			class Turrets: Turrets
 			{
@@ -121,12 +127,6 @@ class RC_AI_B_2S90M_WD: RC_AI_B_2S90M_WD_Base
 	{
 		class MainTurret: MainTurret
 		{
-			weapons[]=
-			{
-				"RC_AI_cannon_125mm",
-				"RC_AI_MMG_93x64_coax_ext",
-				"SmokeLauncher"
-			};
 			#include "\RC_AI\includes_vicmags\mags_AI_2S90M_red.hpp"
 		};
 	};

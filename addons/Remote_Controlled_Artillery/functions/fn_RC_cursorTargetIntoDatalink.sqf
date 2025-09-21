@@ -4,7 +4,7 @@
         if ((inputAction "lockTarget") > 0.5) then {
 			private _vehicle = vehicle player;
 			if (_vehicle != player) then {
-				if (((typeOf _vehicle) find 'RC_AbramsX' != -1)) then {
+				if (((typeOf _vehicle) find '_AbramsX_' != -1)) then {
 					private _target = cursorTarget;
 					private _distance = _target distance _vehicle;	//make dependant on zoom and target type
 					if (!isNull _target && alive _target && (_distance <= 6000)) then {

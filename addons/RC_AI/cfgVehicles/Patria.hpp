@@ -1,10 +1,18 @@
-class RC_IFV_5_A2;	//Arid is WS, Woodland is Aegis!
-class RC_AI_B_BM2T_A_Core: RC_IFV_5_A2
+class RC_IFV_4_A;
+class RC_AI_B_Patria40_A_Core: RC_IFV_4_A
 {
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
 	class HitPoints;
+	class HitLFWheel;
+	class HitLF2Wheel;
+	class HitLMWheel;
+	class HitLBWheel;
+	class HitRFWheel;
+	class HitRF2Wheel;
+	class HitRMWheel;
+	class HitRBWheel;
 	class AnimationSources;
 	class Components;
 	class UserActions;
@@ -12,7 +20,7 @@ class RC_AI_B_BM2T_A_Core: RC_IFV_5_A2
 	scope=0;
 	scopeCurator=0;
 };
-class RC_AI_B_BM2T_A_Base: RC_AI_B_BM2T_A_Core
+class RC_AI_B_Patria40_A_Base: RC_AI_B_Patria40_A_Core
 {
 	/*
 	class EventHandlers: EventHandlers
@@ -34,7 +42,7 @@ class RC_AI_B_BM2T_A_Base: RC_AI_B_BM2T_A_Core
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
-	displayName="[AI] BM-2T";
+	displayName="[AI] Patria AMV40";
 	forceInGarage=1;	//1
 	driverCompartments="Compartment2";	//2
 	commanding=1;			//1
@@ -61,12 +69,11 @@ class RC_AI_B_BM2T_A_Base: RC_AI_B_BM2T_A_Core
 		{
 			dontCreateAI=0;		//1
 			commanding=1;		//3
-
+			
 			weapons[]=
 			{
-				"RC_AI_autocannon_30mm_CTWS",
-				"RC_AI_MMG_93x64_coax_ext",
-				"RC_AI_IFV_Missile_Launcher",
+				"RC_AI_autocannon_40mm_CTWS",
+				"RC_AI_MMG_338_coax",
 				"SmokeLauncher"
 			};
 
@@ -81,32 +88,33 @@ class RC_AI_B_BM2T_A_Base: RC_AI_B_BM2T_A_Core
 		};
 	};
 
+	class HitPoints: HitPoints
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\hitWheels.hpp"
+	};
+
 	class AnimationSources: AnimationSources
 	{
 		class muzzle_rot
 		{
 			source="ammorandom";
-			weapon="RC_autocannon_30mm_CTWS";
+			weapon="RC_AI_autocannon_40mm_CTWS";
 		};
 		class muzzle_hide
 		{
 			source="reload";
-			weapon="RC_autocannon_30mm_CTWS";
+			weapon="RC_AI_autocannon_40mm_CTWS";
 		};
-		class Missiles_revolving
+		class revolving_cannon
 		{
 			source="revolving";
-			weapon="RC_IFV_Missile_Launcher";
-		};
-		class Missiles_reloadMagazine: Missiles_revolving
-		{
-			source="reloadMagazine";
+			weapon="RC_AI_autocannon_40mm_CTWS";
 		};
 	};
 };
 
 
-class RC_AI_B_BM2T_A: RC_AI_B_BM2T_A_Base
+class RC_AI_B_Patria40_A: RC_AI_B_Patria40_A_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -119,11 +127,11 @@ class RC_AI_B_BM2T_A: RC_AI_B_BM2T_A_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_BM_2T_red.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Patria40_red.hpp"
 		};
 	};
 };
-class RC_AI_O_BM2T_A: RC_AI_B_BM2T_A
+class RC_AI_O_Patria40_A: RC_AI_B_Patria40_A
 {
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
@@ -134,11 +142,11 @@ class RC_AI_O_BM2T_A: RC_AI_B_BM2T_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_BM_2T_green.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Patria40_green.hpp"
 		};
 	};
 };
-class RC_AI_I_BM2T_A: RC_AI_B_BM2T_A
+class RC_AI_I_Patria40_A: RC_AI_B_Patria40_A
 {
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
@@ -149,7 +157,52 @@ class RC_AI_I_BM2T_A: RC_AI_B_BM2T_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_BM_2T_yellow.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Patria40_yellow.hpp"
+		};
+	};
+};
+
+
+class RC_AI_B_Patria40_WD: RC_AI_B_Patria40_A
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
+		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
+		"a3\armor_f\data\camonet_green_co.paa",
+		"a3\Armor_F\Data\cage_olive_CO.paa"
+	};
+};
+class RC_AI_O_Patria40_WD: RC_AI_B_Patria40_WD
+{
+	faction="RC_AI_O";
+	crew="RC_AI_O_Crew";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_AI\includes_vicmags\mags_AI_Patria40_green.hpp"
+		};
+	};
+};
+class RC_AI_I_Patria40_WD: RC_AI_B_Patria40_WD
+{
+	faction="RC_AI_I";
+	crew="RC_AI_I_Crew";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_AI\includes_vicmags\mags_AI_Patria40_yellow.hpp"
 		};
 	};
 };
