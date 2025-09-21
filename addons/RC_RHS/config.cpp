@@ -8,32 +8,42 @@ class CfgPatches
 		units[]=
 		{
 			"RC_M1A2_SEPV2_D_B",
-			"RC_M1A2_SEPV2_WD_B",
 			"RC_M1A2_SEPV2_D_I",
+			"RC_M1A2_SEPV2_D_O",
+			"RC_M1A2_SEPV2_WD_B",
 			"RC_M1A2_SEPV2_WD_I",
+			"RC_M1A2_SEPV2_WD_O",
 
 			"RC_M1A2_SEPV2_NLOS_D_B",
-			"RC_M1A2_SEPV2_NLOS_WD_B",
 			"RC_M1A2_SEPV2_NLOS_D_I",
+			"RC_M1A2_SEPV2_NLOS_D_O",
+			"RC_M1A2_SEPV2_NLOS_WD_B",
 			"RC_M1A2_SEPV2_NLOS_WD_I",
+			"RC_M1A2_SEPV2_NLOS_WD_O",
 
 			"RC_M2A2_D_B",
 			"RC_M2A2_D_I",
+			"RC_M2A2_D_O",
 			"RC_M2A2_WD_B",
 			"RC_M2A2_WD_I",
+			"RC_M2A2_WD_O",
 
 			"RC_M2A3_BUSKIII_D_B",
 			"RC_M2A3_BUSKIII_D_I",
+			"RC_M2A3_BUSKIII_D_O",
 			"RC_M2A3_BUSKIII_WD_B",
 			"RC_M2A3_BUSKIII_WD_I",
+			"RC_M2A3_BUSKIII_WD_O",
 			
 			//"RC_M2A3_BUSKIII_"RC_D_B",
 			//"RC_M2A3_BUSKIII_DL_D_B",
 
 			"RC_M2A3_BUSKIII_NLOS_D_B",
 			"RC_M2A3_BUSKIII_NLOS_D_I",
+			"RC_M2A3_BUSKIII_NLOS_D_O",
 			"RC_M2A3_BUSKIII_NLOS_WD_B",
 			"RC_M2A3_BUSKIII_NLOS_WD_I",
+			"RC_M2A3_BUSKIII_NLOS_WD_O",
 
 			"RC_Stryker_M1126_M2_D_B",
 			"RC_Stryker_M1126_M2_D_O",
@@ -119,7 +129,8 @@ class CfgPatches
 			"RC_M119_LC",
 			"RC_M119_LC_O",
 			"RC_M119_LC_I",
-
+			
+			/*
 			"RC_HIMARS_D",
 			"RC_HIMARS_WD",
 			"RC_HIMARS_D_O",
@@ -133,6 +144,7 @@ class CfgPatches
 			"RC_HIMARS_ATACMS_WD_O",
 			"RC_HIMARS_ATACMS_D_I",
 			"RC_HIMARS_ATACMS_WD_I",
+			*/
 
 			"RC_FlatbedTruck_A",
 			"RC_FlatbedTruck_WD",
