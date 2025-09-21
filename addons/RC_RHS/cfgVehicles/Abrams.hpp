@@ -15,6 +15,8 @@ class RC_M1A2_SEPV2_Base: rhsusf_m1a2sep2d_usarmy
 	class CommanderMG;
 	class LoaderMG;
 	class HitPoints;
+	class HitGun;
+	class HitTurret;
 	class EventHandlers;
 	class UserActions;
 };
@@ -192,18 +194,16 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 				};
 			};
 
-			class HitPoints:  HitPoints
+			class HitPoints: HitPoints
 			{
 				class HitGun: HitGun
 				{
 					armor=0.5;	//0.3
-					//explosionShielding=0;
 					//minimalHit=0.15;
 				};
 				class HitTurret: HitTurret
 				{
 					armor=0.4;	//0.2
-					//explosionShielding=0.001;
 					//minimalHit=0.34;
 				};
 			};

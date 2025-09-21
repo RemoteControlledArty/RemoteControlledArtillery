@@ -1,5 +1,8 @@
 params ['_vic'];
-if (isPlayer (commander _vic)) then {
-	(group (driver _vic)) setGroupOwner (owner (commander _vic));
-	_vic setEffectiveCommander (commander _vic);
+
+private _com = commander _vic;
+
+if (isPlayer _com) then {
+	(group (driver _vic)) setGroupOwner (owner _com);
+	_vic setEffectiveCommander _com;
 };

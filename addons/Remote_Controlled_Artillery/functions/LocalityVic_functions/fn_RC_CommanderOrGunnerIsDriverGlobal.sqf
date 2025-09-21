@@ -1,10 +1,14 @@
 params ['_vic'];
-if (isPlayer (commander _vic) && (!(isplayer (gunner _vic)))) then {
-	(group (driver _vic)) setGroupOwner (owner (commander _vic));
-	_vic setEffectiveCommander (commander _vic);
+
+private _com = commander _vic;
+private _gun = gunner _vic;
+
+if (isPlayer _com && (!(isplayer _gun))) then {
+	(group (driver _vic)) setGroupOwner (owner _com);
+	_vic setEffectiveCommander _com;
 } else {
-	if (isPlayer (gunner _vic) && (!(isplayer (commander _vic)))) then {
-		(group (driver _vic)) setGroupOwner (owner (gunner _vic));
-		_vic setEffectiveCommander (gunner _vic);
+	if (isPlayer _gun && (!(isplayer _com))) then {
+		(group (driver _vic)) setGroupOwner (owner _gun);
+		_vic setEffectiveCommander _gun;
 	}
 };

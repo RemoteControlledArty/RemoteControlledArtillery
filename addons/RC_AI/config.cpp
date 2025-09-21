@@ -156,15 +156,15 @@ class CfgPatches
 };
 
 
-/*
 class CfgFunctions
 {
 	class RC
 	{
 		class RC_AI
 		{
-			file="\Remote_Controlled_Artillery\functions";
+			file="\RC_AI\functions";
 
+			/*
       		class preInit {preInit=1;};
       		class InitCBASettings {preInit=1;};
 		
@@ -172,11 +172,18 @@ class CfgFunctions
 
 			class RC_AT_Warning_Arrays {preInit=1;};
 			class RC_AT_Warning {};
+			*/
 
+			class RC_CommanderIsDriverGlobal_AI {};
+			class RC_GunnerIsDriverGlobal_AI {};
+			class RC_CommanderOrGunnerIsDriverGlobal_AI {};
+			class RC_GunnerOrCommanderIsDriverGlobal_AI {};
+
+			class RC_TakeControlCommanderServer_AI {};
+			class RC_TakeControlGunnerServer_AI {};
 		};
 	};
 };
-*/
 
 
 class CfgFactionClasses
