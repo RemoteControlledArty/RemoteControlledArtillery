@@ -776,6 +776,22 @@ class CfgFunctions
 
 			class RC_allowCrewInImmobile {};
 		};
+		class RC_Testing
+		{
+			file="\Remote_Controlled_Artillery\functions\testing_functions";
+
+			class RC_GunnerOrCommanderIsDriverGlobal_AI1 {};
+			class RC_GunnerOrCommanderIsDriverGlobal_AI2 {};
+			class RC_GunnerOrCommanderIsDriverGlobal_AI3 {};
+
+			class RC_TakeControlCommanderServer_AI1 {};
+			class RC_TakeControlCommanderServer_AI2 {};
+			class RC_TakeControlCommanderServer_AI3 {};
+
+			class RC_TakeControlGunnerServer_AI1 {};
+			class RC_TakeControlGunnerServer_AI2 {};
+			class RC_TakeControlGunnerServer_AI3 {};
+		};
 		/*
 		class RC_Arty_functions
 		{
