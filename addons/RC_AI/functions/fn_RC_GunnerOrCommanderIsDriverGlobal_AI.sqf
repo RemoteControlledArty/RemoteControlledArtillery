@@ -6,24 +6,34 @@ if ((crew _vic) findIf {isPlayer _x} > -1) then {
 
 	if (isPlayer _gun) then {
 		
-		if ((driver _vic) isEqualTo objNull) then {
+    	_vic deleteVehicleCrew (driver _vic);
+		//if ((driver _vic) isEqualTo objNull) then {
 			private _driver = createAgent [(typeOf _gun), [0,0,0], [], 0, "NONE"];
 			_driver allowDamage false;
+			//_driver hideObjectGlobal true;
 			_driver moveInDriver _vic;
-		};
-		_vic setEffectiveCommander _gun;
+			//_driver setBehaviour "COMBAT";
+		//};
+
+		[_vic, _gun] remoteExec ['setEffectiveCommander', 0];
+		//_vic setEffectiveCommander _gun;
 	} else {
 
 		private _com = commander _vic;
 
 		if (isPlayer _com) then {
-			
-			if ((driver _vic) isEqualTo objNull) then {
+
+			_vic deleteVehicleCrew (driver _vic);
+			//if ((driver _vic) isEqualTo objNull) then {
 				private _driver = createAgent [(typeOf _com), [0,0,0], [], 0, "NONE"];
 				_driver allowDamage false;
+				//_driver hideObjectGlobal true;
 				_driver moveInDriver _vic;
-			};
-			_vic setEffectiveCommander _com;
+				//_driver setBehaviour "COMBAT";
+			//};
+
+			[_vic, _com] remoteExec ['setEffectiveCommander', 0];
+			//_vic setEffectiveCommander _com;
 		};
 	};
 } else {
@@ -31,9 +41,8 @@ if ((crew _vic) findIf {isPlayer _x} > -1) then {
 };
 
 
-/*
-params ['_vic'];
 
+/*
 systemchat "EH";
 
 if ((crew _vic) findIf {isPlayer _x} > -1) then {
@@ -52,6 +61,7 @@ if ((crew _vic) findIf {isPlayer _x} > -1) then {
 			
 			private _driver = createAgent [(typeOf _gun), [0,0,0], [], 0, "NONE"];
 			_driver allowDamage false;
+			//_driver hideObjectGlobal true;
 			_driver moveInDriver _vic;
 		};
 		_vic setEffectiveCommander _gun;
