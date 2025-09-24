@@ -6,7 +6,10 @@ if ((crew _vic) findIf {isPlayer _x} > -1) then {
 
 	if (isPlayer _gun) then {
 		
-    	_vic deleteVehicleCrew (driver _vic);
+    	if ((driver _vic) isNotEqualTo objNull) then {
+			_vic deleteVehicleCrew (driver _vic);
+		};
+
 		//if ((driver _vic) isEqualTo objNull) then {
 			private _driver = createAgent [(typeOf _gun), [0,0,0], [], 0, "NONE"];
 			_driver allowDamage false;
@@ -15,15 +18,19 @@ if ((crew _vic) findIf {isPlayer _x} > -1) then {
 			//_driver setBehaviour "COMBAT";
 		//};
 
-		[_vic, _gun] remoteExec ['setEffectiveCommander', 0];
-		//_vic setEffectiveCommander _gun;
+		_vic setOwner (owner _gun);
+		//[_vic, _gun] remoteExec ['setEffectiveCommander', 0];
+		_vic setEffectiveCommander _gun;
 	} else {
 
 		private _com = commander _vic;
 
 		if (isPlayer _com) then {
 
-			_vic deleteVehicleCrew (driver _vic);
+			if ((driver _vic) isNotEqualTo objNull) then {
+				_vic deleteVehicleCrew (driver _vic);
+			};
+
 			//if ((driver _vic) isEqualTo objNull) then {
 				private _driver = createAgent [(typeOf _com), [0,0,0], [], 0, "NONE"];
 				_driver allowDamage false;
@@ -32,8 +39,9 @@ if ((crew _vic) findIf {isPlayer _x} > -1) then {
 				//_driver setBehaviour "COMBAT";
 			//};
 
-			[_vic, _com] remoteExec ['setEffectiveCommander', 0];
-			//_vic setEffectiveCommander _com;
+			_vic setOwner (owner _com);
+			//[_vic, _com] remoteExec ['setEffectiveCommander', 0];
+			_vic setEffectiveCommander _com;
 		};
 	};
 } else {

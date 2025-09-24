@@ -3,7 +3,9 @@ params ["_vic"];
 private _gun = gunner _vic;
 
 
-_vic deleteVehicleCrew (driver _vic);
+if ((driver _vic) isNotEqualTo objNull) then {
+	_vic deleteVehicleCrew (driver _vic);
+};
 private _driver = createAgent [(typeOf _gun), [0,0,0], [], 0, "NONE"];
 _driver allowDamage false;
 //_driver hideObjectGlobal true;
