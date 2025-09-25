@@ -2,18 +2,16 @@ params ["_vic"];
 
 private _com = commander _vic;
 
-
-if ((driver _vic) isNotEqualTo objNull) then {
-	_vic deleteVehicleCrew (driver _vic);
+if (isNull (driver _vic)) then {
+	private _driver = createAgent [(typeOf _gun), [0,0,0], [], 0, "NONE"];
+	_driver allowDamage false;
+	//_driver hideObjectGlobal true;
+	_driver moveInDriver _vic;
+	//_driver setBehaviour "COMBAT";
 };
-private _driver = createAgent [(typeOf _com), [0,0,0], [], 0, "NONE"];
-_driver allowDamage false;
-//_driver hideObjectGlobal true;
-_driver moveInDriver _vic;
-//_driver setBehaviour "COMBAT";
 
-
-_vic setOwner (owner _com);
+(driver _vic) setOwner (owner _com);
+//_vic setEffectiveCommander _gun;
 [_vic, _com] remoteExec ['setEffectiveCommander', 0];
 
 private _crew = (crew _vic) select {isPlayer _x};

@@ -503,11 +503,6 @@ class CfgPatches
 			"RC_indirect_GMG_UGV_WD_I",
 
 			"RC_GPSDatalinkTarget",
-			
-			/*
-			"RC_IFV_3_A_TestGlobalServer",
-			"RC_IFV_3_A_EHTestGlobal",
-			*/
 
 			//optional retextures
 			"RC_Howitzer_ReTex_D",
@@ -638,6 +633,12 @@ class CfgPatches
 			"RC_Mortar_Fennek_LC_ReTex_WD",
 			"RC_Mortar_Fennek_LC_ReTex_WD_O",
 			"RC_Mortar_Fennek_LC_ReTex_WD_I",
+
+			/*
+			"RC_IFV_3_A_Test1",
+			"RC_IFV_3_A_Test2",
+			"RC_IFV_3_A_Test3",
+			*/
 
 			"RC_HeliTransport_blk",
 			"RC_HeliTransport_blk_O",
@@ -859,8 +860,6 @@ class Extended_Init_EventHandlers {
         };
     };
 };
-//init="systemChat 'init Tank_F'; if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
-//init="systemChat 'init Wheeled_APC_F'; if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
 
 
 #include "\Remote_Controlled_Artillery\ui\baseClasses.hpp"
@@ -956,13 +955,13 @@ class CfgEditorSubcategories
 	class RC_APC_ATGM_subcat {displayname="APCs (ATGM)";};
 	class RC_IFV_subcat {displayname="IFVs";};
 	class RC_IFV_ATGM_subcat {displayname="IFVs (ATGM)";};
-	//class RC_Test_subcat {displayname="Test";};
 	class RC_UAV_Deployers_subcat {displayname="UAV Deployers";};
 	class RC_UAV_Designator_subcat {displayname="UAVs / Designators";};
 	/*
 	class RC_UAV_Designator_subcat {displayname="UAVs (Attack)";};
 	class RC_UAV_Designator_subcat {displayname="UAVs (Recon) / Designators";};
 	*/
+	//class RC_Test_subcat {displayname="Test";};
 
 	class RC_ReTex_Arid_subcat {displayname="Arid";};
 	class RC_ReTex_Desert_subcat {displayname="Desert";};
