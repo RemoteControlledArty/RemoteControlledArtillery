@@ -47,13 +47,14 @@ if ((crew _vic) findIf {isPlayer _x} > -1) then {
 } else {
 
 	_drv = (driver _vic);
-	//private _crewArr = crew _vic;
-	//_crewArr = _crewArr - [_drv];
-	//if (_crewArr isEqualTo []) exitWith {};
-	if ((!isNull _drv) && (isAgent _drv)) then {
+	private _crewArr = crew _vic;
+	_crewArr = _crewArr - [_drv];
+
+	//if ((!isNull _drv) && (isAgent _drv)) then {
+	if ((!isNull _drv) && (_crewArr isEqualTo [])) then {
         deleteVehicle _drv;
     };
-    _vic deleteVehicleCrew _drv;
+
 	_vic engineOn false;
 };
 
