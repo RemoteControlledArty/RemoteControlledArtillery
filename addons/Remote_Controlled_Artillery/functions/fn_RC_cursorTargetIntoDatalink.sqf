@@ -45,7 +45,7 @@
 			};
 			if (isRemoteControlling player) then {
 				private _uav = getConnectedUAV player;
-				if ((_uav isKindOf 'RC_UAV_base') or (_uav isKindOf 'RC_GrenadeDropper_Base') or (_uav isKindOf 'B_Crocus_MP_Base') or (_uav isKindOf 'RC_FPV_Mothership_Base')) then {
+				if ((_uav isKindOf 'RC_UAV_base') or (_uav isKindOf 'RC_GrenadeDropper_Base') or (_uav isKindOf 'B_Crocus_MP_Base') or (_uav isKindOf 'RC_FPV_Mothership_Base') or (_uav isKindOf 'rhs_pchela1t_base')) then {
 					private _target = cursorTarget;
 					private _distance = _target distance _uav;	//make dependant on zoom and target type
 					if (!isNull _target && alive _target && (_distance <= 4000)) then {
