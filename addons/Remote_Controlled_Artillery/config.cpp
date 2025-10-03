@@ -948,6 +948,7 @@ class CfgEditorSubcategories
 	class RC_Designator_subcat {displayname="Designators";};
 	class RC_Respawn_subcat {displayname="Respawn";};
 	class RC_Repair_subcat {displayname="Repair";};
+	class RC_CRV_subcat {displayname="CRVs";};
 	class RC_FSV_subcat {displayname="FSVs";};
 	class RC_MBT_subcat {displayname="MBTs";};
 	class RC_Heli_subcat {displayname="Helicopters";};
@@ -1019,6 +1020,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\AC_FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\CRV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
