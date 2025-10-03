@@ -50,11 +50,10 @@ class RC_CRV_Base: RC_CRV_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	author="Ascent";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_CRV_subcat";
-	forceHideDriver=1;
-	driverForceOptics=1;
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -67,6 +66,7 @@ class RC_CRV_Base: RC_CRV_Core
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 
+	/*
 	hiddenSelectionsTextures[]=
 	{
 		"A3\Armor_F_Beta\APC_Tracked_01\Data\APC_Tracked_01_body_CO.paa",
@@ -74,6 +74,7 @@ class RC_CRV_Base: RC_CRV_Core
 		"a3\data_f\vehicles\turret_co.paa",
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
 	};
+	*/
 
 	weapons[]=
 	{
