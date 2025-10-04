@@ -7,10 +7,16 @@ class CfgPatches
 		
 		units[]=
 		{
+			//[getPos player, 180, "RC_AI_I_Pandur_WD", resistance] call BIS_fnc_spawnVehicle;
+
 			//visually neutral crew
 			"RC_AI_B_Crew",
 			"RC_AI_O_Crew",
 			"RC_AI_I_Crew",
+
+			"RC_AI_B_Crew_Agent",
+			"RC_AI_O_Crew_Agent",
+			"RC_AI_I_Crew_Agent",
 
 			//Basegame
 			"RC_AI_B_Pandur_A",
