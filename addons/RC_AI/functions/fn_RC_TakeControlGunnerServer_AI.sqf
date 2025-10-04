@@ -3,7 +3,22 @@ params ["_vic"];
 private _gun = gunner _vic;
 
 if (isNull (driver _vic)) then {
-	private _driver = createAgent [(typeOf _gun), [0,0,0], [], 0, "NONE"];
+
+	private _side = side _gun;
+	private _agentKind = typeOf _gun;
+	switch (true) do {
+		case((_side == west)): {
+			_agentKind = "RC_AI_B_Crew_Agent";
+		};
+		case((_side == east)): {
+			_agentKind = "RC_AI_O_Crew_Agent";
+		};
+		case((_side == resistance)): {
+			_agentKind = "RC_AI_I_Crew_Agent";
+		};
+	};
+
+	private _driver = createAgent [_agentKind, [0,0,0], [], 0, "NONE"];
 	_driver allowDamage false;
 	//_driver hideObjectGlobal true;
 	_driver moveInDriver _vic;

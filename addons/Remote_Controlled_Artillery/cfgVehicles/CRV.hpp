@@ -66,15 +66,14 @@ class RC_CRV_Base: RC_CRV_Core
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 
-	/*
 	hiddenSelectionsTextures[]=
 	{
-		"A3\Armor_F_Beta\APC_Tracked_01\Data\APC_Tracked_01_body_CO.paa",
-		"A3\Armor_F_Beta\APC_Tracked_01\Data\mbt_01_body_co.paa",
-		"a3\data_f\vehicles\turret_co.paa",
+		"\A3\Armor_F_Beta\APC_Tracked_01\Data\APC_Tracked_01_body_CRV_CO.paa",
+		"\A3\Armor_F_Beta\APC_Tracked_01\Data\MBT_01_body_CO.paa",
+		"\A3_Aegis\Soft_F_Aegis\UGV_01\Data\Turret_CO.paa",
+		"\A3\Armor_F_Beta\APC_Tracked_01\Data\APC_Tracked_01_CRV_CO.paa",
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
 	};
-	*/
 
 	weapons[]=
 	{
@@ -85,6 +84,7 @@ class RC_CRV_Base: RC_CRV_Core
 	magazines[]=
 	{
 		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
@@ -272,10 +272,10 @@ class RC_CRV_WD: RC_CRV_A
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_rcws_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
-		"A3\Armor_F_exp\APC_Tracked_01\Data\APC_Tracked_01_body_olive_CO.paa",
+		"A3\Armor_F_exp\APC_Tracked_01\Data\apc_tracked_01_body_crv_olive_co.paa",
 		"A3\Armor_F_exp\APC_Tracked_01\Data\mbt_01_body_olive_co.paa",
 		"A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa",
-		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"A3\Armor_F_exp\APC_Tracked_01\Data\apc_tracked_01_crv_olive_co.paa",
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
