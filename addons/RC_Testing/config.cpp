@@ -53,17 +53,32 @@ class CfgFunctions
 {
 	class RC
 	{
-		class RC_Testing
+		class RC_Test_Agent
 		{
-			file="\RC_Testing\functions";
+			file="\RC_Testing\functions\Agent";
 
-			class RC_CommanderIsDriverGlobal_Test {};
-			class RC_GunnerIsDriverGlobal_Test {};
-			class RC_CommanderOrGunnerIsDriverGlobal_Test {};
-			class RC_GunnerOrCommanderIsDriverGlobal_Test {};
+			class RC_Test_Agent_GunnerOrCommanderIsDriverGlobal {};
 
-			class RC_TakeControlCommanderServer_Test {};
-			class RC_TakeControlGunnerServer_Test {};
+			class RC_Test_Agent_TakeControlCommanderServer {};
+			class RC_Test_Agent_TakeControlGunnerServer {};
+		};
+		class RC_Test_AgentDelayed
+		{
+			file="\RC_Testing\functions\AgentDelayed";
+
+			class RC_Test_AgentDelayed_GunnerOrCommanderIsDriverGlobal {};
+
+			class RC_Test_AgentDelayed_TakeControlCommanderServer {};
+			class RC_Test_AgentDelayed_TakeControlGunnerServer {};
+		};
+		class RC_Test_UGV
+		{
+			file="\RC_Testing\functions\UGV";
+
+			class RC_Test_UGV_GunnerOrCommanderIsDriverGlobal {};
+
+			class RC_Test_UGV_TakeControlCommanderServer {};
+			class RC_Test_UGV_TakeControlGunnerServer {};
 		};
 	};
 };
@@ -97,22 +112,22 @@ class DefaultVehicleSystemsDisplayManagerRight;
 /*
 class CfgAmmo
 {
-	#include "\RC_AI\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
+	#include "\RC_Testing\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 class CfgMagazines
 {
-	#include "\RC_AI\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+	#include "\RC_Testing\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
 class CfgWeapons
 {
-	#include "\RC_AI\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
+	#include "\RC_Testing\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
 */
 
 
 class CfgVehicles
 {
-	#include "\RC_AI\cfgVehicles\Crew.hpp"
-	#include "\RC_AI\cfgVehicles\Pandur.hpp"
-	//#include "\RC_AI\cfgVehicles\Rooikat.hpp"
+	#include "\RC_Testing\cfgVehicles\Crew.hpp"
+	#include "\RC_Testing\cfgVehicles\Pandur.hpp"
+	//#include "\RC_Testing\cfgVehicles\Rooikat.hpp"
 };

@@ -89,14 +89,52 @@ class RC_Test_B_Pandur_Agent: RC_Test_B_Pandur_A_Base
 	{
 		class RC_Artillery
 		{
-			#include "\RC_Testing\includes_script\GunnerOrCommanderIsDriverEH_Test.hpp"
+			#include "\RC_Testing\includes_script\Agent\Test_Agent_GunnerOrCommanderIsDriverEH.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
-	#include "\RC_Testing\includes_script\UserActions_TakeDriverControlsGlobalServer_Test.hpp"
+	#include "\RC_Testing\includes_script\Agent\Test_Agent_UserActions_TakeDriverControlsGlobalServer.hpp"
 
 	displayName="Test Pandur - Agent AI";
+	scope=2;
+	scopeCurator=2;
+};
+
+
+class RC_Test_B_Pandur_AgentDelayed: RC_Test_B_Pandur_A_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\RC_Testing\includes_script\AgentDelayed\Test_AgentDelayed_GunnerOrCommanderIsDriverEH.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		};
+	};
+
+	#include "\RC_Testing\includes_script\AgentDelayed\Test_AgentDelayed_UserActions_TakeDriverControlsGlobalServer.hpp"
+
+	displayName="Test Pandur - AgentDelayed AI";
+	scope=2;
+	scopeCurator=2;
+};
+
+
+class RC_Test_B_Pandur_AgentDelete: RC_Test_B_Pandur_A_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\RC_Testing\includes_script\AgentDelete\Test_AgentDelete_GunnerOrCommanderIsDriverEH.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		};
+	};
+
+	#include "\RC_Testing\includes_script\AgentDelete\Test_AgentDelete_UserActions_TakeDriverControlsGlobalServer.hpp"
+
+	displayName="Test Pandur - AgentDelete AI";
 	scope=2;
 	scopeCurator=2;
 };
@@ -108,12 +146,12 @@ class RC_Test_B_Pandur_UGV: RC_Test_B_Pandur_A_Base
 	{
 		class RC_Artillery
 		{
-			#include "\RC_Testing\includes_script\GunnerOrCommanderIsDriverEH_Test.hpp"
+			#include "\RC_Testing\includes_script\UGV\Test_UGV_GunnerOrCommanderIsDriverEH.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
-	#include "\RC_Testing\includes_script\UserActions_TakeDriverControlsGlobalServer_Test.hpp"
+	#include "\RC_Testing\includes_script\UGV\Test_UGV_UserActions_TakeDriverControlsGlobalServer.hpp"
 
 	displayName="Test Pandur - UGV AI";
 	scope=2;
