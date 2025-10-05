@@ -16,7 +16,11 @@ class CfgPatches
 			"RC_Test_O_Crew_Agent",
 			"RC_Test_I_Crew_Agent",
 
-			"RC_Test_B_Pandur_A"
+			"RC_Test_B_Pandur_Agent",
+			"RC_Test_B_Pandur_AgentDelayed",
+			"RC_Test_B_Pandur_UGV",
+			"RC_Test_B_Pandur_UGVDelayed"
+
 
 			/*
 			"RC_Test_O_Pandur_A",
@@ -41,7 +45,8 @@ class CfgPatches
 		requiredAddons[]=
 		{
 			"cba_main",
-			"RC_Artillery"
+			"RC_Artillery",
+			"experimental_stamina"			//only used because its loaded on our server and likely not others, so testing pbo isnt loaded for most, creating less errors
 		};
 
 		skipWhenMissingDependencies=1;
