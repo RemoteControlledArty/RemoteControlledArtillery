@@ -71,6 +71,15 @@ class CfgFunctions
 			class RC_Test_AgentDelayed_TakeControlCommanderServer {};
 			class RC_Test_AgentDelayed_TakeControlGunnerServer {};
 		};
+		class RC_Test_AgentDelete
+		{
+			file="\RC_Testing\functions\AgentDelete";
+
+			class RC_Test_AgentDelete_GunnerOrCommanderIsDriverGlobal {};
+
+			class RC_Test_AgentDelete_TakeControlCommanderServer {};
+			class RC_Test_AgentDelete_TakeControlGunnerServer {};
+		};
 		class RC_Test_UGV
 		{
 			file="\RC_Testing\functions\UGV";
@@ -79,6 +88,15 @@ class CfgFunctions
 
 			class RC_Test_UGV_TakeControlCommanderServer {};
 			class RC_Test_UGV_TakeControlGunnerServer {};
+		};
+		class RC_Test_UGVDelayed
+		{
+			file="\RC_Testing\functions\UGVDelayed";
+
+			class RC_Test_UGVDelayed_GunnerOrCommanderIsDriverGlobal {};
+
+			class RC_Test_UGVDelayed_TakeControlCommanderServer {};
+			class RC_Test_UGVDelayed_TakeControlGunnerServer {};
 		};
 	};
 };

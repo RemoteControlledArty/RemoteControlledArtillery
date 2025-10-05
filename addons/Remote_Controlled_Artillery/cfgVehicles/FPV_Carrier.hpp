@@ -14,6 +14,7 @@ class RC_FPV_Carrier_Base: RC_Mortar_UGV_Base
 	};
 
 	editorSubcategory="RC_UAV_Deployers_subcat";
+	unitInfoType="RscOptics_AV_driver";
 
 	class Components: Components
 	{

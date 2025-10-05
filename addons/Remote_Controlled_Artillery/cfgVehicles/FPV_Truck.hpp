@@ -30,6 +30,7 @@ class RC_FPV_Truck_Base: RC_FPV_Truck_Core
 	lockDetectionSystem="2+4+8";
 	class Reflectors {};	//removed, otherwise they are automatically on at night
 	aggregateReflectors[]={{""}};
+	unitInfoType="RscOptics_AV_driver";
 
 	author="Ascent";
 	editorSubcategory="RC_UAV_Deployers_subcat";

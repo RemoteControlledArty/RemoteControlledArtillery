@@ -121,6 +121,9 @@ class RC_Test_B_Pandur_AgentDelayed: RC_Test_B_Pandur_A_Base
 };
 
 
+/*
+driver deletion non stop triggers EH
+
 class RC_Test_B_Pandur_AgentDelete: RC_Test_B_Pandur_A_Base
 {
 	class EventHandlers: EventHandlers
@@ -138,6 +141,8 @@ class RC_Test_B_Pandur_AgentDelete: RC_Test_B_Pandur_A_Base
 	scope=2;
 	scopeCurator=2;
 };
+*/
+
 
 
 class RC_Test_B_Pandur_UGV: RC_Test_B_Pandur_A_Base
@@ -154,6 +159,25 @@ class RC_Test_B_Pandur_UGV: RC_Test_B_Pandur_A_Base
 	#include "\RC_Testing\includes_script\UGV\Test_UGV_UserActions_TakeDriverControlsGlobalServer.hpp"
 
 	displayName="Test Pandur - UGV AI";
+	scope=2;
+	scopeCurator=2;
+};
+
+
+class RC_Test_B_Pandur_UGVDelayed: RC_Test_B_Pandur_A_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\RC_Testing\includes_script\UGVDelayed\Test_UGVDelayed_GunnerOrCommanderIsDriverEH.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		};
+	};
+
+	#include "\RC_Testing\includes_script\UGVDelayed\Test_UGVDelayed_UserActions_TakeDriverControlsGlobalServer.hpp"
+
+	displayName="Test Pandur - UGVDelayed AI";
 	scope=2;
 	scopeCurator=2;
 };
