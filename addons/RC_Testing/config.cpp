@@ -8,17 +8,20 @@ class CfgPatches
 		units[]=
 		{
 			//[getPos player, 180, "RC_AI_I_Pandur_WD", resistance] call BIS_fnc_spawnVehicle;
-			"RC_AI_B_Crew",
-			"RC_AI_O_Crew",
-			"RC_AI_I_Crew",
+			"RC_Test_B_Crew",
+			"RC_Test_O_Crew",
+			"RC_Test_I_Crew",
 
-			"RC_AI_B_Crew_Agent",
-			"RC_AI_O_Crew_Agent",
-			"RC_AI_I_Crew_Agent",
+			"RC_Test_B_Crew_Agent",
+			"RC_Test_O_Crew_Agent",
+			"RC_Test_I_Crew_Agent",
 
-			"RC_AI_B_Pandur_A",
-			"RC_AI_O_Pandur_A",
-			"RC_AI_I_Pandur_A"
+			"RC_Test_B_Pandur_A"
+
+			/*
+			"RC_Test_O_Pandur_A",
+			"RC_Test_I_Pandur_A"
+			*/
 
 			/*
 			"RC_AI_B_Rooikat_A",
@@ -66,6 +69,12 @@ class CfgFunctions
 };
 
 
+class CfgEditorSubcategories
+{
+	class RC_Testing_subcat {displayname="Test";};
+};
+
+
 //later required sensors
 class SensorTemplateDataLink;
 class SensorTemplateLaser;
@@ -105,5 +114,5 @@ class CfgVehicles
 {
 	#include "\RC_AI\cfgVehicles\Crew.hpp"
 	#include "\RC_AI\cfgVehicles\Pandur.hpp"
-	#include "\RC_AI\cfgVehicles\Rooikat.hpp"
+	//#include "\RC_AI\cfgVehicles\Rooikat.hpp"
 };
