@@ -1,10 +1,16 @@
 params ["_vic"];
 
 private _gun = gunner _vic;
+private _gunID = owner _gun;
 
-//_vic deleteVehicleCrew (driver _vic);
+[_vic, _gun, _gunID] spawn {
+	params ["_vic","_gun","_gunID"];
 
-if (isNull (driver _vic)) then {
+	_vic deleteVehicleCrew (driver _vic);
+	sleep 0.1;
+	[_vic,_gun] remoteExec ['RC_fnc_RC_Test_AgentMoveDelayed_Gunner_RE', _gunID];
+	sleep 1;
+
 
 	private _side = side _gun;
 	private _agentKind = typeOf _gun;
@@ -19,11 +25,12 @@ if (isNull (driver _vic)) then {
 	//_driver hideObjectGlobal true;
 	_driver moveInDriver _vic;
 	//_driver setBehaviour "COMBAT";
+
+
+	(driver _vic) setOwner (owner _gun);
+	//_vic setEffectiveCommander _gun;
+	[_vic, _gun] remoteExec ['setEffectiveCommander', 0];
+
+	private _crew = (crew _vic) select {isPlayer _x};
+	['gunner took drive controls'] remoteExec ['systemChat', _crew];
 };
-
-(driver _vic) setOwner (owner _gun);
-//_vic setEffectiveCommander _gun;
-[_vic, _gun] remoteExec ['setEffectiveCommander', 0];
-
-private _crew = (crew _vic) select {isPlayer _x};
-['gunner took drive controls'] remoteExec ['systemChat', _crew];

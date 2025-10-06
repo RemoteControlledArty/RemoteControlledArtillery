@@ -121,6 +121,44 @@ class RC_Test_B_Pandur_AgentDelayed: RC_Test_B_Pandur_A_Base
 };
 
 
+class RC_Test_B_Pandur_AgentMove: RC_Test_B_Pandur_A_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\RC_Testing\includes_script\AgentMove\Test_AgentMove_GunnerOrCommanderIsDriverEH.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		};
+	};
+
+	#include "\RC_Testing\includes_script\AgentMove\Test_AgentMove_UserActions_TakeDriverControlsGlobalServer.hpp"
+
+	displayName="Test Pandur - AgentMove AI";
+	scope=2;
+	scopeCurator=2;
+};
+
+
+class RC_Test_B_Pandur_AgentMoveDelayed: RC_Test_B_Pandur_A_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\RC_Testing\includes_script\AgentMoveDelayed\Test_AgentMoveDelayed_GunnerOrCommanderIsDriverEH.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		};
+	};
+
+	#include "\RC_Testing\includes_script\AgentMoveDelayed\Test_AgentMoveDelayed_UserActions_TakeDriverControlsGlobalServer.hpp"
+
+	displayName="Test Pandur - AgentMoveDelayed AI";
+	scope=2;
+	scopeCurator=2;
+};
+
+
 /*
 driver deletion non stop triggers EH
 

@@ -18,6 +18,7 @@ class CfgPatches
 
 			"RC_Test_B_Pandur_Agent",
 			"RC_Test_B_Pandur_AgentDelayed",
+			"RC_Test_B_Pandur_AgentMove",
 			"RC_Test_B_Pandur_UGV",
 			"RC_Test_B_Pandur_UGVDelayed"
 
@@ -76,6 +77,29 @@ class CfgFunctions
 			class RC_Test_AgentDelayed_TakeControlCommanderServer {};
 			class RC_Test_AgentDelayed_TakeControlGunnerServer {};
 		};
+		class RC_Test_AgentMove
+		{
+			file="\RC_Testing\functions\AgentMove";
+
+			class RC_Test_AgentMove_Gunner_RE {};
+			class RC_Test_AgentMove_Commander_RE {};
+			class RC_Test_AgentMove_GunnerOrCommanderIsDriverGlobal {};
+
+			class RC_Test_AgentMove_TakeControlCommanderServer {};
+			class RC_Test_AgentMove_TakeControlGunnerServer {};
+		};
+		class RC_Test_AgentMoveDelayed
+		{
+			file="\RC_Testing\functions\AgentMoveDelayed";
+			
+			class RC_Test_AgentMoveDelayed_Gunner_RE {};
+			class RC_Test_AgentMoveDelayed_Commander_RE {};
+			class RC_Test_AgentMoveDelayed_GunnerOrCommanderIsDriverGlobal {};
+
+			class RC_Test_AgentMoveDelayed_TakeControlCommanderServer {};
+			class RC_Test_AgentMoveDelayed_TakeControlGunnerServer {};
+		};
+		/*
 		class RC_Test_AgentDelete
 		{
 			file="\RC_Testing\functions\AgentDelete";
@@ -85,6 +109,7 @@ class CfgFunctions
 			class RC_Test_AgentDelete_TakeControlCommanderServer {};
 			class RC_Test_AgentDelete_TakeControlGunnerServer {};
 		};
+		*/
 		class RC_Test_UGV
 		{
 			file="\RC_Testing\functions\UGV";

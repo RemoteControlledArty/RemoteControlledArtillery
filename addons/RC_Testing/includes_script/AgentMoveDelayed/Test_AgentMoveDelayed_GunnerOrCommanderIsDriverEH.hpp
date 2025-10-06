@@ -1,0 +1,1 @@
+getout="params ['_vic'];  [_vic] call RC_fnc_RC_Test_AgentMoveDelayed_GunnerOrCommanderIsDriverGlobal;";

@@ -10,7 +10,7 @@ class UserActions: UserActions
 		shortcut="";
 
 		condition="player isEqualTo (commander this);";
-		statement="[this, RC_fnc_RC_Test_AgentMove_TakeControlCommanderServer] remoteExec ['call', 2]";
+		statement="[this, RC_fnc_RC_Test_AgentMoveDelayed_TakeControlCommanderServer] remoteExec ['call', 2]";
 	};
 	class DriveControlsGunner
 	{
@@ -22,6 +22,6 @@ class UserActions: UserActions
 		shortcut="";
 
 		condition="player isEqualTo (gunner this);";
-		statement="[this, RC_fnc_RC_Test_AgentMove_TakeControlGunnerServer] remoteExec ['call', 2]";
+		statement="[this, RC_fnc_RC_Test_AgentMoveDelayed_TakeControlGunnerServer] remoteExec ['call', 2]";
 	};
 };
