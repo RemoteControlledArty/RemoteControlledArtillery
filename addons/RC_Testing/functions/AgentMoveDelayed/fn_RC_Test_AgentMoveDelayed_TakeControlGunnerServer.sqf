@@ -9,7 +9,7 @@ private _gunID = owner _gun;
 	_vic deleteVehicleCrew (driver _vic);
 	sleep 0.1;
 	[_vic,_gun] remoteExec ['RC_fnc_RC_Test_AgentMoveDelayed_Gunner_RE', _gunID];
-	sleep 1;
+	sleep 1.2;
 
 
 	private _side = side _gun;
