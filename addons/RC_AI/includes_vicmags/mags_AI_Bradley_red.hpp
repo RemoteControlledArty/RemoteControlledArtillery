@@ -13,6 +13,8 @@ magazines[]=
 	"RC_AI_RHS_70Rnd_25mm_APFSDS_T_R",
 	"RC_AI_RHS_70Rnd_25mm_APFSDS_T_R",
 	"RC_AI_RHS_70Rnd_25mm_APFSDS_T_R",
+	"RC_AI_RHS_70Rnd_25mm_APFSDS_T_R",
+	"RC_AI_RHS_70Rnd_25mm_APFSDS_T_R",
 
 	"RC_AI_RHS_400Rnd_762x51_T_R",
 	"RC_AI_RHS_400Rnd_762x51_T_R",
