@@ -197,7 +197,7 @@ class CfgFactionClasses
 {
 	class RC_AI_O
 	{
-		displayName="'RC - Modernized AI Vehicles'";
+		displayName="'RC Modernized AI Vehicles'";
 		side=0;
 		flag="\a3\Data_f\Flags\flag_CSAT_co.paa";
 		icon="\a3\Data_f\cfgFactionClasses_OPF_ca.paa";
@@ -205,7 +205,7 @@ class CfgFactionClasses
 	};
 	class RC_AI_B
 	{
-		displayName="'RC - Modernized AI Vehicles'";
+		displayName="'RC Modernized AI Vehicles'";
 		side=1;
 		flag="\a3\Data_f\Flags\flag_nato_co.paa";
 		icon="\a3\Data_f\cfgFactionClasses_BLU_ca.paa";
@@ -213,7 +213,7 @@ class CfgFactionClasses
 	};
 	class RC_AI_I
 	{
-		displayName="'RC - Modernized AI Vehicles'";
+		displayName="'RC Modernized AI Vehicles'";
 		side=2;
 		flag="\a3\Data_f\Flags\flag_AAF_CO.paa";
 		icon="\a3\Data_f\cfgFactionClasses_IND_ca.paa";
