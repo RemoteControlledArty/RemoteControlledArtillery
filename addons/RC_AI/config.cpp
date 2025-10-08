@@ -2,7 +2,7 @@ class CfgPatches
 {
 	class RC_AI
 	{
-		name="RC - Modernized AI Vehicles";
+		name="RC Modernized AI Vehicles";
 		author="Ascent";
 		
 		units[]=
@@ -153,8 +153,9 @@ class CfgPatches
 			"RC_Crocus_A3TI",
 			"RC_ilbe",
 			"RC_60mmULM",
-
-			"RemoveStamina"		//temporary alternative until i find the correct cfg name of antistasi ultimate
+			
+			//temporary alternative until i find the correct cfg name of antistasi ultimate
+			"RemoveStamina"
 		};
 
 		skipWhenMissingDependencies=1;

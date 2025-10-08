@@ -20,10 +20,6 @@ class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
 			#include "\RC_AI\includes_script\GunnerOrCommanderIsDriverEH_AI.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
-		class RC_EngineOff
-		{
-			#include "\RC_AI\includes_script\EmptyGetOutEngineOffEH.hpp"
-		};
 		/*
 		class RC_Detection
 		{

@@ -29,10 +29,6 @@ class RC_AI_B_BTR80A_WD_Base: RC_AI_B_BTR80A_WD_Core
 			#include "\RC_AI\includes_script\GunnerIsDriverEH_AI.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
-		class RC_EngineOff
-		{
-			#include "\RC_AI\includes_script\EmptyGetOutEngineOffEH.hpp"
-		};
 		/*
 		class RC_Detection
 		{

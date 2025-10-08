@@ -1,5 +1,6 @@
-class RC_IFV_3_A;
-class RC_AI_B_Pandur_A_Core: RC_IFV_3_A
+//class RC_IFV_3_A;
+class RC_IFV_3_A_Base;
+class RC_AI_B_Pandur_A_Core: RC_IFV_3_A_Base
 {
 	class Turrets;
 	class MainTurret;
@@ -29,10 +30,6 @@ class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
 			#include "\RC_AI\includes_script\GunnerOrCommanderIsDriverEH_AI.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
-		class RC_EngineOff
-		{
-			#include "\RC_AI\includes_script\EmptyGetOutEngineOffEH.hpp"
-		};
 		/*
 		class RC_Detection
 		{
@@ -45,6 +42,7 @@ class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
 	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
 	displayName="[AI] Pandur II";
+	editorSubcategory="RC_IFV_ATGM_subcat";
 	forceInGarage=1;	//1
 	driverCompartments="Compartment2";	//2
 	commanding=1;			//1
