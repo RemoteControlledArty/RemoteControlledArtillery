@@ -121,6 +121,7 @@ class RC_Test_B_Pandur_AgentDelayed: RC_Test_B_Pandur_A_Base
 };
 
 
+/*
 class RC_Test_B_Pandur_AgentMove: RC_Test_B_Pandur_A_Base
 {
 	class EventHandlers: EventHandlers
@@ -157,6 +158,7 @@ class RC_Test_B_Pandur_AgentMoveDelayed: RC_Test_B_Pandur_A_Base
 	scope=2;
 	scopeCurator=2;
 };
+*/
 
 
 /*

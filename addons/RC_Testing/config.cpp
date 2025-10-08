@@ -18,22 +18,14 @@ class CfgPatches
 
 			"RC_Test_B_Pandur_Agent",
 			"RC_Test_B_Pandur_AgentDelayed",
+			
+			/*
 			"RC_Test_B_Pandur_AgentMove",
 			"RC_Test_B_Pandur_AgentMoveDelayed",
+			*/
+
 			"RC_Test_B_Pandur_UGV",
 			"RC_Test_B_Pandur_UGVDelayed"
-
-
-			/*
-			"RC_Test_O_Pandur_A",
-			"RC_Test_I_Pandur_A"
-			*/
-
-			/*
-			"RC_AI_B_Rooikat_A",
-			"RC_AI_O_Rooikat0_A",
-			"RC_AI_I_Rooikat_A",
-			*/
 		};
 
 		/*
