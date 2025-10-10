@@ -305,6 +305,130 @@ class RC_AbramsX_30mm_M914_twin: RC_AbramsX_30mm_M914_twin_Base
 };
 
 
+class RC_autocannon_30mm_CTWS;
+class RC_autocannon_30mm_M914_twin_dualfed_Base: RC_autocannon_30mm_CTWS
+{
+	class HE;
+	class AP;
+	class player;
+};
+class RC_AbramsX_30mm_M914_twin_dualfed: RC_autocannon_30mm_M914_twin_dualfed_Base
+{
+	author="Ascent";
+	displayName="Twin M914 30mm";
+	canLock=2;
+	weaponLockSystem=0;
+	maxZeroing=4000;
+	autoReload=1;
+	magazineReloadTime=20;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+	class HE: HE
+	{
+		displayName="M914 30mm HE/MP";
+		canLock=2;
+		weaponLockSystem=0;
+		maxZeroing=4000;
+		autoReload=1;
+		magazineReloadTime=20;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+		magazines[]=
+		{
+			"RC_200Rnd_30mm_MP_Pen_T_R",
+			"RC_200Rnd_30mm_MP_Pen_T_G",
+			"RC_200Rnd_30mm_MP_Pen_T_Y",
+
+			"RC_200Rnd_30mm_HE_Pen_T_R",
+			"RC_200Rnd_30mm_HE_Pen_T_G",
+			"RC_200Rnd_30mm_HE_Pen_T_Y",
+
+			"RC_200Rnd_30mm_MP_DF_T_R",
+			"RC_200Rnd_30mm_MP_DF_T_G",
+			"RC_200Rnd_30mm_MP_DF_T_Y",
+
+			"RC_200Rnd_30mm_HE_DF_T_R",
+			"RC_200Rnd_30mm_HE_DF_T_G",
+			"RC_200Rnd_30mm_HE_DF_T_Y",
+
+			"RC_200Rnd_30mm_MP_QF_T_R",
+			"RC_200Rnd_30mm_MP_QF_T_G",
+			"RC_200Rnd_30mm_MP_QF_T_Y",
+
+			"RC_200Rnd_30mm_HE_QF_T_R",
+			"RC_200Rnd_30mm_HE_QF_T_G",
+			"RC_200Rnd_30mm_HE_QF_T_Y",
+
+			"RC_200Rnd_30mm_MPAB_DF_T_R",
+			"RC_200Rnd_30mm_MPAB_DF_T_G",
+			"RC_200Rnd_30mm_MPAB_DF_T_Y",
+
+			"RC_200Rnd_30mm_HEAB_DF_T_R",
+			"RC_200Rnd_30mm_HEAB_DF_T_G",
+			"RC_200Rnd_30mm_HEAB_DF_T_Y",
+
+			"RC_200Rnd_30mm_MPAB_QF_T_R",
+			"RC_200Rnd_30mm_MPAB_QF_T_G",
+			"RC_200Rnd_30mm_MPAB_QF_T_Y",
+
+			"RC_200Rnd_30mm_HEAB_QF_T_R",
+			"RC_200Rnd_30mm_HEAB_QF_T_G",
+			"RC_200Rnd_30mm_HEAB_QF_T_Y",
+			"RC_200Rnd_30mm_cUAS"
+		};
+		class player: player
+		{
+			reloadTime=0.2;
+			dispersion=0.0006;
+		};
+	};
+	class AP: AP
+	{
+		displayName="M914 30mm AP";
+		canLock=2;
+		weaponLockSystem=0;
+		maxZeroing=4000;
+		autoReload=1;
+		magazineReloadTime=20;
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+
+		magazines[]=
+		{
+			"RC_200Rnd_30mm_APFSDS_T_R",
+			"RC_200Rnd_30mm_APFSDS_T_G",
+			"RC_200Rnd_30mm_APFSDS_T_Y"
+		};
+		class player: player
+		{
+			reloadTime=0.2;
+			dispersion=0.0006;
+		};
+	};
+
+	class GunParticles
+	{
+		class Effect1
+		{
+			effectName="AutoCannonFired";
+			positionName="usti hlavne3";
+			directionName="konec hlavne3";
+		};
+		class Effect2
+		{
+			effectName="QAV_mk30_casingeject";
+			positionName="nabojnicestart";
+			directionName="nabojniceend";
+		};
+		class Effect3
+		{
+			effectName="QAV_mk30_casingeject";
+			positionName="nabojnicestart_2";
+			directionName="nabojniceend_2";
+		};
+	};
+};
+
+
 class RC_AbramsX_20mm_coax: RC_AbramsX_30mm_M914
 {
 	displayName="coax 20mm";

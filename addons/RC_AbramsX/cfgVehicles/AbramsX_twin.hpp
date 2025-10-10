@@ -31,22 +31,22 @@ class RC_AbramsX_Twin_WD: RC_AbramsX_Twin_Base
 		class commandergun_recoil
 		{
 			source="reload";
-			weapon="RC_AbramsX_30mm_M914_twin";
+			weapon="RC_AbramsX_30mm_M914_twin_dualfed";
 		};
 		class commandergun_recoil_2
 		{
 			source="reload";
-			weapon="RC_AbramsX_30mm_M914_twin";
+			weapon="RC_AbramsX_30mm_M914_twin_dualfed";
 		};
 		class zasleh3_hide
 		{
 			source="reload";
-			weapon="RC_AbramsX_30mm_M914_twin";
+			weapon="RC_AbramsX_30mm_M914_twin_dualfed";
 		};
 		class zasleh4_hide
 		{
 			source="reload";
-			weapon="RC_AbramsX_30mm_M914_twin";
+			weapon="RC_AbramsX_30mm_M914_twin_dualfed";
 		};
 		class zasleh2_rot
 		{
@@ -78,7 +78,7 @@ class RC_AbramsX_Twin_WD: RC_AbramsX_Twin_Base
 				{
 					weapons[]=
 					{
-						"RC_AbramsX_30mm_M914_twin",
+						"RC_AbramsX_30mm_M914_twin_dualfed",
 						"Laserdesignator_mounted",
 						"qav_SmokeLauncher"
 					};
