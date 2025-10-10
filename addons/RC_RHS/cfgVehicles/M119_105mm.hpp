@@ -114,6 +114,8 @@ class RC_M119: RC_M119_base
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			turretInfoType="RscWeaponRangeArtilleryAuto";
+			gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 			gunnerForceOptics=1;
 			maxelev=87;
 
@@ -123,8 +125,8 @@ class RC_M119: RC_M119_base
 			};
 			magazines[]=
 			{
-				"RC_15Rnd_105mm_Mo_shells",
-				"RC_4Rnd_105mm_Mo_HEAB",
+				"RC_16Rnd_105mm_Mo_shells",
+				"RC_5Rnd_105mm_Mo_HEAB",
 				"RC_5Rnd_105mm_Mo_MultiGuided",
 				"RC_2Rnd_105mm_Mo_Cluster",
 				"RC_20Rnd_105mm_Mo_Smoke",
@@ -137,6 +139,7 @@ class RC_M119: RC_M119_base
 				initFov=0.125;
 				minFov=0.0125;
 				maxFov=1;
+				gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 			};
 
 			class Components: Components

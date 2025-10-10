@@ -205,12 +205,15 @@ class RC_FlatbedTruck_A: RC_FlatbedTruck
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
+
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_FlatbedTruck_A_O: RC_FlatbedTruck_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	class EventHandlers: EventHandlers
 	{
@@ -225,6 +228,7 @@ class RC_FlatbedTruck_A_I: RC_FlatbedTruck_A
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class EventHandlers: EventHandlers
 	{
@@ -258,6 +262,7 @@ class RC_FlatbedTruck_WD_O: RC_FlatbedTruck_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 	
 	class EventHandlers: EventHandlers
 	{
@@ -272,6 +277,8 @@ class RC_FlatbedTruck_WD_I: RC_FlatbedTruck_WD
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
@@ -300,6 +307,7 @@ class RC_FlatbedTruck_LC_A_O: RC_FlatbedTruck_LC_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	class EventHandlers: EventHandlers
 	{
@@ -314,6 +322,7 @@ class RC_FlatbedTruck_LC_A_I: RC_FlatbedTruck_LC_A
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class EventHandlers: EventHandlers
 	{
@@ -347,6 +356,7 @@ class RC_FlatbedTruck_LC_WD_O: RC_FlatbedTruck_LC_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 	
 	class EventHandlers: EventHandlers
 	{
@@ -361,6 +371,8 @@ class RC_FlatbedTruck_LC_WD_I: RC_FlatbedTruck_LC_WD
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
@@ -383,12 +395,14 @@ class RC_FlatbedTruck_manned_A: RC_FlatbedTruck
 	crew="";
 	//crew="B_UAV_AI";
 	//dontCreateAI=1;	//doesnt fully work
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
 };
 class RC_FlatbedTruck_manned_A_O: RC_FlatbedTruck_manned_A
 {
 	faction="RemoteControlled_O";
 	side=0;
 	//crew="O_UAV_AI";
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
 	class EventHandlers: EventHandlers
 	{
@@ -403,6 +417,7 @@ class RC_FlatbedTruck_manned_A_I: RC_FlatbedTruck_manned_A
 	faction="RemoteControlled_I";
 	side=2;
 	//crew="I_UAV_AI";
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
 	class EventHandlers: EventHandlers
 	{
@@ -435,6 +450,7 @@ class RC_FlatbedTruck_manned_WD_O: RC_FlatbedTruck_manned_WD
 	faction="RemoteControlled_O";
 	side=0;
 	//crew="O_UAV_AI";
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 	
 	class EventHandlers: EventHandlers
 	{
@@ -449,6 +465,7 @@ class RC_FlatbedTruck_manned_WD_I: RC_FlatbedTruck_manned_WD
 	faction="RemoteControlled_I";
 	side=2;
 	//crew="I_UAV_AI";
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
 	class EventHandlers: EventHandlers
 	{
@@ -458,3 +475,21 @@ class RC_FlatbedTruck_manned_WD_I: RC_FlatbedTruck_manned_WD
 		};
 	};
 };
+
+
+/*
+//temporary
+class RC_FlatbedTruck_LC_manned_WD: RC_FlatbedTruck_manned_WD
+{
+	displayName="RC 105mm Truck LowCap";
+	editorSubcategory="RC_ReducedAmmo_subcat";
+
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119_LC', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
+		};
+	};
+};
+*/

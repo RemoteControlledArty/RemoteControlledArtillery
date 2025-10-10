@@ -378,7 +378,7 @@ class RC_AbramsX_30mm_M914_twin_dualfed: RC_autocannon_30mm_M914_twin_dualfed_Ba
 		};
 		class player: player
 		{
-			reloadTime=0.2;
+			reloadTime=0.15;
 			dispersion=0.0006;
 		};
 	};
@@ -400,7 +400,7 @@ class RC_AbramsX_30mm_M914_twin_dualfed: RC_autocannon_30mm_M914_twin_dualfed_Ba
 		};
 		class player: player
 		{
-			reloadTime=0.2;
+			reloadTime=0.15;
 			dispersion=0.0006;
 		};
 	};
@@ -511,176 +511,6 @@ class RC_AbramsX_20mm_coax: RC_AbramsX_30mm_M914
 		};
 	};
 };
-
-
-/*
-class RC_autocannon_30mm_CTWS;
-class RC_autocannon_30mm_M914_twin_Base: RC_autocannon_30mm_CTWS
-{
-	class HE;
-	class AP;
-	class player;
-};
-class RC_autocannon_30mm_M914_twin: RC_autocannon_30mm_M914_twin_Base
-{
-	author="Ascent";
-	displayName="Twin M914 30mm";
-	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-
-	class HE: HE
-	{
-		displayName="M914 30mm";
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-
-		magazines[]=
-		{
-			"RC_140Rnd_30mm_MP_Pen_T_R",
-			"RC_140Rnd_30mm_MP_Pen_T_G",
-			"RC_140Rnd_30mm_MP_Pen_T_Y",
-
-			"RC_140Rnd_30mm_HE_Pen_T_R",
-			"RC_140Rnd_30mm_HE_Pen_T_G",
-			"RC_140Rnd_30mm_HE_Pen_T_Y",
-
-			"RC_140Rnd_30mm_MP_DF_T_R",
-			"RC_140Rnd_30mm_MP_DF_T_G",
-			"RC_140Rnd_30mm_MP_DF_T_Y",
-
-			"RC_140Rnd_30mm_HE_DF_T_R",
-			"RC_140Rnd_30mm_HE_DF_T_G",
-			"RC_140Rnd_30mm_HE_DF_T_Y",
-
-			"RC_140Rnd_30mm_MP_QF_T_R",
-			"RC_140Rnd_30mm_MP_QF_T_G",
-			"RC_140Rnd_30mm_MP_QF_T_Y",
-
-			"RC_140Rnd_30mm_HE_QF_T_R",
-			"RC_140Rnd_30mm_HE_QF_T_G",
-			"RC_140Rnd_30mm_HE_QF_T_Y",
-
-			"RC_140Rnd_30mm_MPAB_DF_T_R",
-			"RC_140Rnd_30mm_MPAB_DF_T_G",
-			"RC_140Rnd_30mm_MPAB_DF_T_Y",
-
-			"RC_140Rnd_30mm_HEAB_DF_T_R",
-			"RC_140Rnd_30mm_HEAB_DF_T_G",
-			"RC_140Rnd_30mm_HEAB_DF_T_Y",
-
-			"RC_140Rnd_30mm_MPAB_QF_T_R",
-			"RC_140Rnd_30mm_MPAB_QF_T_G",
-			"RC_140Rnd_30mm_MPAB_QF_T_Y",
-
-			"RC_140Rnd_30mm_HEAB_QF_T_R",
-			"RC_140Rnd_30mm_HEAB_QF_T_G",
-			"RC_140Rnd_30mm_HEAB_QF_T_Y",
-			"RC_140Rnd_30mm_cUAS",
-
-			"RC_140Rnd_30mm_MP_T_R",
-			"RC_140Rnd_30mm_MP_T_G",
-			"RC_140Rnd_30mm_MP_T_Y",
-			"RC_140Rnd_30mm_GPR_T_R",
-			"RC_140Rnd_30mm_GPR_T_G",
-			"RC_140Rnd_30mm_GPR_T_Y",
-
-			"RC_140Rnd_30mm_APFSDS_T_R",
-			"RC_140Rnd_30mm_APFSDS_T_G",
-			"RC_140Rnd_30mm_APFSDS_T_Y"
-		};
-		class player: player
-		{
-			reloadTime=0.2;
-			dispersion=0.0008;
-		};
-	};
-	class AP: AP
-	{
-		displayName="M914 30mm";
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
-
-		magazines[]=
-		{
-			"RC_140Rnd_30mm_MP_Pen_T_R",
-			"RC_140Rnd_30mm_MP_Pen_T_G",
-			"RC_140Rnd_30mm_MP_Pen_T_Y",
-
-			"RC_140Rnd_30mm_HE_Pen_T_R",
-			"RC_140Rnd_30mm_HE_Pen_T_G",
-			"RC_140Rnd_30mm_HE_Pen_T_Y",
-
-			"RC_140Rnd_30mm_MP_DF_T_R",
-			"RC_140Rnd_30mm_MP_DF_T_G",
-			"RC_140Rnd_30mm_MP_DF_T_Y",
-
-			"RC_140Rnd_30mm_HE_DF_T_R",
-			"RC_140Rnd_30mm_HE_DF_T_G",
-			"RC_140Rnd_30mm_HE_DF_T_Y",
-
-			"RC_140Rnd_30mm_MP_QF_T_R",
-			"RC_140Rnd_30mm_MP_QF_T_G",
-			"RC_140Rnd_30mm_MP_QF_T_Y",
-
-			"RC_140Rnd_30mm_HE_QF_T_R",
-			"RC_140Rnd_30mm_HE_QF_T_G",
-			"RC_140Rnd_30mm_HE_QF_T_Y",
-
-			"RC_140Rnd_30mm_MPAB_DF_T_R",
-			"RC_140Rnd_30mm_MPAB_DF_T_G",
-			"RC_140Rnd_30mm_MPAB_DF_T_Y",
-
-			"RC_140Rnd_30mm_HEAB_DF_T_R",
-			"RC_140Rnd_30mm_HEAB_DF_T_G",
-			"RC_140Rnd_30mm_HEAB_DF_T_Y",
-
-			"RC_140Rnd_30mm_MPAB_QF_T_R",
-			"RC_140Rnd_30mm_MPAB_QF_T_G",
-			"RC_140Rnd_30mm_MPAB_QF_T_Y",
-
-			"RC_140Rnd_30mm_HEAB_QF_T_R",
-			"RC_140Rnd_30mm_HEAB_QF_T_G",
-			"RC_140Rnd_30mm_HEAB_QF_T_Y",
-			"RC_140Rnd_30mm_cUAS",
-
-			"RC_140Rnd_30mm_MP_T_R",
-			"RC_140Rnd_30mm_MP_T_G",
-			"RC_140Rnd_30mm_MP_T_Y",
-			"RC_140Rnd_30mm_GPR_T_R",
-			"RC_140Rnd_30mm_GPR_T_G",
-			"RC_140Rnd_30mm_GPR_T_Y",
-
-			"RC_140Rnd_30mm_APFSDS_T_R",
-			"RC_140Rnd_30mm_APFSDS_T_G",
-			"RC_140Rnd_30mm_APFSDS_T_Y"
-		};
-		class player: player
-		{
-			reloadTime=0.2;
-			dispersion=0.0008;
-		};
-	};
-
-	class GunParticles
-	{
-		class Effect1
-		{
-			effectName="AutoCannonFired";
-			positionName="usti hlavne3";
-			directionName="konec hlavne3";
-		};
-		class Effect2
-		{
-			effectName="QAV_mk30_casingeject";
-			positionName="nabojnicestart";
-			directionName="nabojniceend";
-		};
-		class Effect3
-		{
-			effectName="QAV_mk30_casingeject";
-			positionName="nabojnicestart_2";
-			directionName="nabojniceend_2";
-		};
-	};
-};
-*/
 
 
 //Machineguns

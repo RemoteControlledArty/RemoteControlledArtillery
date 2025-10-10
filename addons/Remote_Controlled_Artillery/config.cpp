@@ -1001,6 +1001,10 @@ class CfgCloudlets
 	#include "\Remote_Controlled_Artillery\effects\cfgCloudlets.hpp"
 };
 #include "\Remote_Controlled_Artillery\effects\effects.hpp"
+class CfgMineTriggers
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\MineTriggers.hpp"
+};
 class CfgAmmo
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\Ammo.hpp"

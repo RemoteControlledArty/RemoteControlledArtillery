@@ -557,6 +557,7 @@ class RC_M108_LC_A: RC_M108_A
 				"RC_6Rnd_105mm_Mo_shells",
 				"RC_3Rnd_105mm_Mo_HEAB",
 				"RC_3Rnd_105mm_Mo_MultiGuided",
+				"RC_2Rnd_105mm_Mo_Cluster",
 				"RC_20Rnd_105mm_Mo_Smoke",
 				"RC_4Rnd_105mm_Mo_AT_mine",
 				"RC_4Rnd_105mm_Mo_mine",
