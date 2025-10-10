@@ -35,8 +35,8 @@ if (_chargesAPS > 0) then {
 			while {alive _vic && alive _proj} do {
 
 				if ((_proj distance _vic) < 120) then {
-
-					if !(terrainIntersectASL [getPosASL _vic, getPosASL _proj]) exitwith {
+					
+					if !(terrainIntersectASL [((getPosASL _vic) vectorAdd [0, 0, 2.5]), getPosASL _proj]) exitwith {
 					
 						private _dist = _proj distance _vic;
 						private _projPos = getPosASL _proj;
@@ -109,7 +109,7 @@ if (_chargesAPS > 0) then {
 			{
 				if ((_proj distance _vic) < 120) then {
 					
-					if !(terrainIntersectASL [getPosASL _vic, getPosASL _proj]) exitwith {
+					if !(terrainIntersectASL [((getPosASL _vic) vectorAdd [0, 0, 2.5]), getPosASL _proj]) exitwith {
 					
 						//systemchat "<150m";
 
