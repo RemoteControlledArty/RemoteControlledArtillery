@@ -150,6 +150,7 @@ class RC_T90AM_Base: RC_T90AM_Core
 					turretInfoType="RscOptics_MBT_02_gunner";
 
 					minElev=-10;	//-7
+					maxElev=35;		//50
 					maxHorizontalRotSpeed=1.8;	//0.9
 					maxVerticalRotSpeed=1.8;	//0.47
 
