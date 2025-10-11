@@ -41,7 +41,6 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 		{
 			animPeriod=1.25;
 		};
-		
 		class M2_CROWS_AmmoRandom
 		{
 			weapon="RC_RHS_M2_CROWS_M151";

@@ -135,6 +135,17 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 			source="ammorandom";
 			weapon="RC_RHS_M2_CROWS_M153_Abrams";
 		};
+		class HatchC
+		{
+			source="door";
+			animPeriod=0.5;
+		};
+		class HatchL: HatchC
+		{
+		};
+		class HatchD: HatchC
+		{
+		};
 	};
 
 	#include "\RC_RHS\loadouts\FSVitemsB_RHS.hpp"

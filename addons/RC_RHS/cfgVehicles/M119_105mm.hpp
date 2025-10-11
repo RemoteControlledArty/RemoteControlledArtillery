@@ -125,8 +125,8 @@ class RC_M119: RC_M119_base
 			};
 			magazines[]=
 			{
-				"RC_16Rnd_105mm_Mo_shells",
-				"RC_5Rnd_105mm_Mo_HEAB",
+				"RC_15Rnd_105mm_Mo_shells",
+				"RC_4Rnd_105mm_Mo_HEAB",
 				"RC_5Rnd_105mm_Mo_MultiGuided",
 				"RC_2Rnd_105mm_Mo_Cluster",
 				"RC_20Rnd_105mm_Mo_Smoke",

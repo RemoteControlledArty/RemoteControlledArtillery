@@ -1,0 +1,17 @@
+magazines[]=
+{
+	"RC_20Rnd_125mm_APFSDS_T_Y",
+	"RC_15Rnd_125mm_MP_T_Y",
+	"RC_3Rnd_125mm_MPAB_DF_T_R",
+	
+	"4Rnd_125mm_cannon_missiles",
+
+	"RC_200Rnd_93x64_T_Y",
+	"RC_200Rnd_93x64_T_Y",
+	"RC_200Rnd_93x64_T_Y",
+	//"RC_200Rnd_93x64_T_Y",
+	//"RC_200Rnd_93x64_T_Y",
+
+	"SmokeLauncherMag",
+	"SmokeLauncherMag"
+};
