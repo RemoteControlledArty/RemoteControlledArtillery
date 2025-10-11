@@ -75,9 +75,11 @@ class RC_T90AM_Base: RC_T90AM_Core
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
+	/*
 	maxSpeed=70;
 	enginePower=1400;
 	peakTorque=6875;
+	*/
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
 	//mineDetectorRange=50;	//doesnt work yet
@@ -102,8 +104,8 @@ class RC_T90AM_Base: RC_T90AM_Core
 
 			minElev=-10;	//-5
 			maxElev=14;	//14
-			maxHorizontalRotSpeed=1.2;	//1
-			maxVerticalRotSpeed=1.2;	//0.07
+			maxHorizontalRotSpeed=1;	//1.2	//1
+			maxVerticalRotSpeed=1;	//1.2	//0.07
 
 			weapons[]=
 			{
@@ -151,8 +153,8 @@ class RC_T90AM_Base: RC_T90AM_Core
 
 					minElev=-10;	//-7
 					maxElev=35;		//50
-					maxHorizontalRotSpeed=1.8;	//0.9
-					maxVerticalRotSpeed=1.8;	//0.47
+					maxHorizontalRotSpeed=1;	//1.8	//0.9
+					maxVerticalRotSpeed=1;	//1.8	//0.47
 
 					weapons[]=
 					{
