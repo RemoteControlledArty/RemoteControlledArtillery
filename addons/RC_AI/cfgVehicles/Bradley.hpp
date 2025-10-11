@@ -100,6 +100,8 @@ class RC_AI_B_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_NLOS_D_B_Core
 			weapon="RC_AI_RHS_weap_m240_bradley_coax";
 		};
 	};
+
+	#include "\RC_AI\loadouts\IFVitemsB_RHS_AI.hpp"
 };
 
 
@@ -110,7 +112,6 @@ class RC_AI_B_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D_Base
 
 	faction="RC_AI_B";
 	crew="RC_AI_B_Crew";
-	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -125,7 +126,6 @@ class RC_AI_O_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	/*
 	class Turrets: Turrets
@@ -142,7 +142,6 @@ class RC_AI_I_M2A3_BUSKIII_D: RC_AI_B_M2A3_BUSKIII_D
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	/*
 	class Turrets: Turrets
@@ -173,7 +172,6 @@ class RC_AI_O_M2A3_BUSKIII_WD: RC_AI_B_M2A3_BUSKIII_WD
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	/*
 	class Turrets: Turrets
@@ -190,7 +188,6 @@ class RC_AI_I_M2A3_BUSKIII_WD: RC_AI_B_M2A3_BUSKIII_WD
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	/*
 	class Turrets: Turrets

@@ -118,6 +118,8 @@ class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
 			weapon="RC_AI_RHS_M2_CROWS_M153_Abrams";
 		};
 	};
+
+	#include "\RC_AI\loadouts\FSVitemsB_RHS_AI.hpp"
 };
 
 
@@ -128,7 +130,6 @@ class RC_AI_B_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D_Base
 
 	faction="RC_AI_B";
 	crew="RC_AI_B_Crew";
-	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -151,7 +152,6 @@ class RC_AI_O_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -174,7 +174,6 @@ class RC_AI_I_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
@@ -214,7 +213,6 @@ class RC_AI_O_M1A2_SEPV2_WD: RC_AI_B_M1A2_SEPV2_WD
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -237,7 +235,6 @@ class RC_AI_I_M1A2_SEPV2_WD: RC_AI_B_M1A2_SEPV2_WD
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{

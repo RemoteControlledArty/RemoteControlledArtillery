@@ -234,7 +234,7 @@ class RC_T90AM_Base: RC_T90AM_Core
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+	#include "\RC_RHS_AFRF\loadouts\FSVitemsO_RHS_AFRF.hpp"
 };
 
 
@@ -261,10 +261,10 @@ class RC_T90AM_WD_O: RC_T90AM_Base
 };
 class RC_T90AM_WD: RC_T90AM_WD_O
 {
-	faction="RemoteControlled_I";
+	faction="RemoteControlled_B";
 	crew="I_UAV_AI";
 	side=1;
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
+	#include "\RC_RHS_AFRF\loadouts\FSVitemsB_RHS_AFRF.hpp"
 
 	class Turrets: Turrets
 	{
@@ -287,7 +287,7 @@ class RC_T90AM_WD_I: RC_T90AM_WD_O
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+	#include "\RC_RHS_AFRF\loadouts\FSVitemsI_RHS_AFRF.hpp"
 
 	class Turrets: Turrets
 	{
@@ -331,10 +331,10 @@ class RC_T90AM_A_O: RC_T90AM_WD_O
 };
 class RC_T90AM_A: RC_T90AM_A_O
 {
-	faction="RemoteControlled_I";
+	faction="RemoteControlled_B";
 	crew="I_UAV_AI";
 	side=1;
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
+	#include "\RC_RHS_AFRF\loadouts\FSVitemsB_RHS_AFRF.hpp"
 
 	class Turrets: Turrets
 	{
@@ -357,7 +357,7 @@ class RC_T90AM_A_I: RC_T90AM_A_O
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+	#include "\RC_RHS_AFRF\loadouts\FSVitemsI_RHS_AFRF.hpp"
 
 	class Turrets: Turrets
 	{

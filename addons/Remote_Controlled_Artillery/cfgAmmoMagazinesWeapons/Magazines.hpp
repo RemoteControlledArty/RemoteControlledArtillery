@@ -289,6 +289,20 @@ class RC_200Rnd_127x99_SLAP_HMG_T_G: RC_200Rnd_127x99_SLAP_T_R {ammo="RC_B_127x9
 class RC_200Rnd_127x99_SLAP_HMG_T_Y: RC_200Rnd_127x99_SLAP_T_R {ammo="RC_B_127x99_SLAP_HMG_T_Y";};
 
 
+class RC_150Rnd_127x108_APDS_T_R: RC_200Rnd_127x99_SLAP_T_R
+{
+	author="Ascent";
+	ammo="RC_B_127x108_APDS_T_R";
+	count=150;
+	tracersEvery=1;
+	initSpeed=910;
+	displayName="12.7mm APDS";
+	displayNameShort="12.7mm APDS";
+};
+class RC_150Rnd_127x108_APDS_T_G: RC_150Rnd_127x108_APDS_T_R {ammo="RC_B_127x108_APDS_T_G";};
+class RC_150Rnd_127x108_APDS_T_Y: RC_150Rnd_127x108_APDS_T_R {ammo="RC_B_127x108_APDS_T_Y";};
+
+
 //GMG
 class 96Rnd_40mm_G_belt;
 class RC_50Rnd_40mm_G_belt: 96Rnd_40mm_G_belt

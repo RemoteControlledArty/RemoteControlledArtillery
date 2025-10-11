@@ -13,16 +13,16 @@ class TransportMagazines
 	class _xx_Laserbatteries
 	{
 		magazine="Laserbatteries";
-		count=1;
+		count=2;
 	};
-	class _xx_30Rnd_545x39_Mag_Tracer_F
+	class _xx_30Rnd_556x45_Stanag_Tracer_Red
 	{
-		magazine="30Rnd_545x39_Mag_Tracer_F";
+		magazine="30Rnd_556x45_Stanag_Tracer_Red";
 		count=5;
 	};
-	class _xx_30Rnd_762x39_Mag_Tracer_F
+	class _xx_20Rnd_762x51_Mag
 	{
-		magazine="30Rnd_762x39_Mag_Tracer_F";
+		magazine="20Rnd_762x51_Mag";
 		count=5;
 	};
 	class _xx_DemoCharge_Remote_Mag
@@ -33,9 +33,9 @@ class TransportMagazines
 };
 class TransportItems
 {
-	class _xx_I_UavTerminal
+	class _xx_B_UavTerminal
 	{
-		name="I_UavTerminal";
+		name="B_UavTerminal";
 		count=2;
 	};
 	class _xx_Toolkit
@@ -46,12 +46,12 @@ class TransportItems
 	class _xx_Medikit
 	{
 		name="Medikit";
-		count=3;
+		count=2;
 	};
 	class _xx_FirstAidKit
 	{
 		name="FirstAidKit";
-		count=3;
+		count=2;
 	};
 	class _xx_MineDetector
 	{
@@ -71,6 +71,11 @@ class TransportWeapons
 		weapon="Improved_FOV_Laserdesignator_A";
 		count=1;
 	};
+	class _xx_Rangefinder
+	{
+		weapon="Rangefinder";
+		count=1;
+	};
 };
 class TransportBackpacks
 {
@@ -83,10 +88,5 @@ class TransportBackpacks
 	{
 		backpack="B_Kitbag_cbr";
 		count=1;
-	};
-	class _xx_I_Crocus_MP_TI_Bag
-	{
-		backpack="I_Crocus_MP_TI_Bag";
-		count=2;
 	};
 };

@@ -1,10 +1,9 @@
-class RC_IFV_5_A2;	//Arid is WS, Woodland is Aegis!
-class RC_AI_B_BM2T_A_Core: RC_IFV_5_A2
+class RC_T90AM_WD;
+class RC_AI_B_T90AM_WD_Core: RC_T90AM_WD
 {
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
-	class HitPoints;
 	class AnimationSources;
 	class Components;
 	class UserActions;
@@ -12,7 +11,7 @@ class RC_AI_B_BM2T_A_Core: RC_IFV_5_A2
 	scope=0;
 	scopeCurator=0;
 };
-class RC_AI_B_BM2T_A_Base: RC_AI_B_BM2T_A_Core
+class RC_AI_B_T90AM_WD_Base: RC_AI_B_T90AM_WD_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -32,7 +31,7 @@ class RC_AI_B_BM2T_A_Base: RC_AI_B_BM2T_A_Core
 	#include "\RC_AI\includes_script\UserActions_TakeDriverControlsGlobalServer_AI.hpp"
 	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
-	displayName="[AI] BM-2T";
+	displayName="[AI] T-90AM";
 	forceInGarage=1;	//1
 	driverCompartments="Compartment2";	//2
 	commanding=1;			//1
@@ -48,7 +47,6 @@ class RC_AI_B_BM2T_A_Base: RC_AI_B_BM2T_A_Core
 	magazines[]=
 	{
 		//"RC_1Rnd_APS_M",
-		//"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
@@ -59,12 +57,11 @@ class RC_AI_B_BM2T_A_Base: RC_AI_B_BM2T_A_Core
 		{
 			dontCreateAI=0;		//1
 			commanding=1;		//3
-
+			
 			weapons[]=
 			{
-				"RC_AI_autocannon_30mm_CTWS",
-				"RC_AI_MMG_93x64_coax_ext",
-				"RC_AI_IFV_Missile_Launcher",
+				"RC_AI_cannon_125mm_advanced",
+				"RC_AI_MMG_93x64_coax",
 				"SmokeLauncher"
 			};
 
@@ -74,6 +71,13 @@ class RC_AI_B_BM2T_A_Base: RC_AI_B_BM2T_A_Core
 				{
 					dontCreateAI=0;	//1
 					commanding=2;	//2
+					
+					weapons[]=
+					{
+						"RC_AI_HMG_127_NSVT",
+						"RC_Laserdesignator_vehicle",
+						"SmokeLauncher"
+					};
 				};
 			};
 		};
@@ -81,32 +85,43 @@ class RC_AI_B_BM2T_A_Base: RC_AI_B_BM2T_A_Core
 
 	class AnimationSources: AnimationSources
 	{
-		class muzzle_rot
+		class muzzle_rot_cannon
 		{
 			source="ammorandom";
-			weapon="RC_autocannon_30mm_CTWS";
+			weapon="RC_AI_cannon_125mm_advanced";
 		};
-		class muzzle_hide
+		class muzzle_rot_mg1
 		{
-			source="reload";
-			weapon="RC_autocannon_30mm_CTWS";
+			weapon="RC_AI_MMG_93x64_coax";
+			source="ammorandom";
 		};
-		class Missiles_revolving
-		{
-			source="revolving";
-			weapon="RC_IFV_Missile_Launcher";
-		};
-		class Missiles_reloadMagazine: Missiles_revolving
+		class reload_magazine_source
 		{
 			source="reloadMagazine";
+			weapon="RC_AI_cannon_125mm_advanced";
+		};
+		class reload_source
+		{
+			source="reload";
+			weapon="RC_AI_cannon_125mm_advanced";
+		};
+		class Revolving
+		{
+			source="revolving";
+			weapon="RC_AI_HMG_127_NSVT";
+		};
+		class ReloadMagazine
+		{
+			source="reloadmagazine";
+			weapon="RC_AI_HMG_127_NSVT";
 		};
 	};
 
-	#include "\RC_AI\loadouts\IFVitemsO_RHS_AI.hpp"
+	#include "\RC_AI\loadouts\FSVitemsO_RHS_AI.hpp"
 };
 
 
-class RC_AI_B_BM2T_A: RC_AI_B_BM2T_A_Base
+class RC_AI_B_T90AM_WD: RC_AI_B_T90AM_WD_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -118,11 +133,19 @@ class RC_AI_B_BM2T_A: RC_AI_B_BM2T_A_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_BM_2T_red.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_T90AM_red.hpp"
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					#include "\RC_AI\includes_vicmags\mags_AI_T90AM_com_red.hpp"
+				};
+			};
 		};
 	};
 };
-class RC_AI_O_BM2T_A: RC_AI_B_BM2T_A
+class RC_AI_O_T90AM_WD: RC_AI_B_T90AM_WD
 {
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
@@ -132,11 +155,19 @@ class RC_AI_O_BM2T_A: RC_AI_B_BM2T_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_BM_2T_green.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_T90AM_green.hpp"
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					#include "\RC_AI\includes_vicmags\mags_AI_T90AM_com_green.hpp"
+				};
+			};
 		};
 	};
 };
-class RC_AI_I_BM2T_A: RC_AI_B_BM2T_A
+class RC_AI_I_T90AM_WD: RC_AI_B_T90AM_WD
 {
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
@@ -146,7 +177,15 @@ class RC_AI_I_BM2T_A: RC_AI_B_BM2T_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_BM_2T_yellow.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_T90AM_yellow.hpp"
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					#include "\RC_AI\includes_vicmags\mags_AI_T90AM_com_yellow.hpp"
+				};
+			};
 		};
 	};
 };

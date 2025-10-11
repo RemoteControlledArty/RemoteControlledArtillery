@@ -1074,7 +1074,7 @@ class RC_HMG_127_NSVT: HMG_NSVT_Base
 	autoReload=1;
 	class manual: manual
 	{
-		displayName="12.7mm";
+		displayName="12.7";
 		dispersion=0.001;
 		reloadTime=0.1;
 	};
@@ -1086,6 +1086,9 @@ class RC_HMG_127_NSVT: HMG_NSVT_Base
 		"RC_150Rnd_127x99_SLAP_T_R",
 		"RC_150Rnd_127x99_SLAP_T_G",
 		"RC_150Rnd_127x99_SLAP_T_Y",
+		"RC_150Rnd_127x108_APDS_T_R",
+		"RC_150Rnd_127x108_APDS_T_G",
+		"RC_150Rnd_127x108_APDS_T_Y",
 		"RC_150Rnd_127x99_cUAS"
 	};
 };

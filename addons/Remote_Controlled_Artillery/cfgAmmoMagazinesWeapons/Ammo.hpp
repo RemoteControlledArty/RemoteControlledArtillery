@@ -300,6 +300,14 @@ class RC_B_127x99_SLAP_T_G: RC_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bull
 class RC_B_127x99_SLAP_T_Y: RC_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+class RC_B_127x108_APDS_T_R: RC_B_127x99_SLAP_T_R
+{
+	typicalSpeed=920;
+};
+class RC_B_127x108_APDS_T_G: RC_B_127x108_APDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_127x108_APDS_T_Y: RC_B_127x108_APDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 class RC_B_127x99_SLAP_cUAS_T_R: B_127x99_SLAP_Tracer_Red
 {
 	laserLock=0;

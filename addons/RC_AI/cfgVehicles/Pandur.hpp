@@ -122,6 +122,8 @@ class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
 			weapon="RC_AI_autocannon_30mm_CTWS";
 		};
 	};
+
+	#include "\RC_AI\loadouts\IFVitemsB_RHS_AI.hpp"
 };
 
 
@@ -132,7 +134,6 @@ class RC_AI_B_Pandur_A: RC_AI_B_Pandur_A_Base
 
 	faction="RC_AI_B";
 	crew="RC_AI_B_Crew";	//B_UAV_AI
-	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -147,7 +148,6 @@ class RC_AI_O_Pandur_A: RC_AI_B_Pandur_A
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";	//O_UAV_AI
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -162,7 +162,6 @@ class RC_AI_I_Pandur_A: RC_AI_B_Pandur_A
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";	//I_UAV_AI
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
@@ -219,7 +218,6 @@ class RC_AI_O_Pandur_WD: RC_AI_B_Pandur_WD
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -234,7 +232,6 @@ class RC_AI_I_Pandur_WD: RC_AI_B_Pandur_WD
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
@@ -267,7 +264,6 @@ class RC_IFV_3_ReTex_WD_O: RC_IFV_3_ReTex_WD
 	faction="RemoteControlled_ReTex_O";
 	crew="O_UAV_AI";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -282,7 +278,6 @@ class RC_IFV_3_ReTex_WD_I: RC_IFV_3_ReTex_WD
 	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
@@ -313,7 +308,6 @@ class RC_IFV_3_ReTex_D_O: RC_IFV_3_ReTex_D
 	faction="RemoteControlled_ReTex_O";
 	crew="O_UAV_AI";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -328,7 +322,6 @@ class RC_IFV_3_ReTex_D_I: RC_IFV_3_ReTex_D
 	faction="RemoteControlled_ReTex_I";
 	crew="I_UAV_AI";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{

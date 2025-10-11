@@ -20,10 +20,15 @@ class TransportMagazines
 		magazine="30Rnd_556x45_Stanag_Tracer_Red";
 		count=5;
 	};
+	class _xx_20Rnd_762x51_Mag
+	{
+		magazine="20Rnd_762x51_Mag";
+		count=5;
+	};
 	class _xx_DemoCharge_Remote_Mag
 	{
 		magazine="DemoCharge_Remote_Mag";
-		count=1;
+		count=2;
 	};
 };
 class TransportItems
@@ -31,22 +36,22 @@ class TransportItems
 	class _xx_I_UavTerminal
 	{
 		name="I_UavTerminal";
-		count=1;
+		count=2;
 	};
 	class _xx_Toolkit
 	{
 		name="Toolkit";
-		count=1;
+		count=2;
 	};
 	class _xx_Medikit
 	{
 		name="Medikit";
-		count=2;
+		count=3;
 	};
 	class _xx_FirstAidKit
 	{
 		name="FirstAidKit";
-		count=2;
+		count=3;
 	};
 	class _xx_MineDetector
 	{
@@ -78,5 +83,10 @@ class TransportBackpacks
 	{
 		backpack="B_Kitbag_cbr";
 		count=1;
+	};
+	class _xx_I_Crocus_MP_TI_Bag
+	{
+		backpack="I_Crocus_MP_TI_Bag";
+		count=2;
 	};
 };

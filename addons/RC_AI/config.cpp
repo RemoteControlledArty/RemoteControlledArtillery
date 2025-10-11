@@ -147,6 +147,7 @@ class CfgPatches
 			"RC_Aegis",
 			"RC_AegisWS",
 			"RC_RHS",
+			"RC_RHS_AFRF",
 			"RC_AbramsX",
 
 			"RC_Crocus",
@@ -285,4 +286,7 @@ class CfgVehicles
 	#include "\RC_AI\cfgVehicles\Stryker.hpp"
 	#include "\RC_AI\cfgVehicles\Bradley.hpp"
 	#include "\RC_AI\cfgVehicles\Abrams.hpp"
+
+	//RHS AFRF
+	#include "\RC_AI\cfgVehicles\T_90AM.hpp"
 };

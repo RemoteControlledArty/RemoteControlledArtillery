@@ -109,6 +109,8 @@ class RC_AI_B_Patria40_A_Base: RC_AI_B_Patria40_A_Core
 			weapon="RC_AI_autocannon_40mm_CTWS";
 		};
 	};
+
+	#include "\RC_AI\loadouts\IFVitemsB_RHS_AI.hpp"
 };
 
 
@@ -119,7 +121,6 @@ class RC_AI_B_Patria40_A: RC_AI_B_Patria40_A_Base
 
 	faction="RC_AI_B";
 	crew="RC_AI_B_Crew";
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -134,7 +135,6 @@ class RC_AI_O_Patria40_A: RC_AI_B_Patria40_A
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -149,7 +149,6 @@ class RC_AI_I_Patria40_A: RC_AI_B_Patria40_A
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
@@ -179,7 +178,6 @@ class RC_AI_O_Patria40_WD: RC_AI_B_Patria40_WD
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -194,7 +192,6 @@ class RC_AI_I_Patria40_WD: RC_AI_B_Patria40_WD
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{

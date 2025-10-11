@@ -128,6 +128,8 @@ class RC_AI_B_AbramsX_WD_Base: RC_AI_B_AbramsX_WD_Core
 			weapon="RC_AI_AbramsX_HMG_coax";
 		};
 	};
+
+	#include "\RC_AI\loadouts\FSVitemsB_RHS_AI.hpp"
 };
 
 
@@ -138,7 +140,6 @@ class RC_AI_B_AbramsX_WD: RC_AI_B_AbramsX_WD_Base
 
 	faction="RC_AI_B";
 	crew="RC_AI_B_Crew";
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -161,7 +162,6 @@ class RC_AI_O_AbramsX_WD: RC_AI_B_AbramsX_WD
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -184,7 +184,6 @@ class RC_AI_I_AbramsX_WD: RC_AI_B_AbramsX_WD
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
@@ -222,7 +221,6 @@ class RC_AI_O_AbramsX_A: RC_AI_B_AbramsX_A
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -245,7 +243,6 @@ class RC_AI_I_AbramsX_A: RC_AI_B_AbramsX_A
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{

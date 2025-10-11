@@ -5,6 +5,9 @@ class RC_AI_B_T100_WD_Core: RC_MBT_4_WD
 	class MainTurret;
 	class CommanderOptics;
 	class AnimationSources;
+	class showCamonetCannon;
+	class showCamonetHull;
+	class showCamonetTurret;
 	class Components;
 	class UserActions;
 	class EventHandlers;
@@ -115,7 +118,30 @@ class RC_AI_B_T100_WD_Base: RC_AI_B_T100_WD_Core
 			source="ammorandom";
 			weapon="RC_AI_HMG_127_NSVT";
 		};
+		class showCamonetCannon: showCamonetCannon
+		{
+			initPhase=0;
+		};
+		class showCamonetHull: showCamonetHull
+		{
+			initPhase=0;
+		};
+		class showCamonetTurret: showCamonetTurret
+		{
+			initPhase=0;
+		};
 	};
+	animationList[]=
+	{
+		"showCamonetCannon",
+		0,
+		"showCamonetHull",
+		0,
+		"showCamonetTurret",
+		0
+	};
+
+	#include "\RC_AI\loadouts\FSVitemsO_RHS_AI.hpp"
 };
 
 
@@ -126,7 +152,6 @@ class RC_AI_B_T100_WD: RC_AI_B_T100_WD_Base
 
 	faction="RC_AI_B";
 	crew="RC_AI_B_Crew";
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -149,7 +174,6 @@ class RC_AI_O_T100_WD: RC_AI_B_T100_WD
 	faction="RC_AI_O";
 	crew="RC_AI_O_Crew";
 	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -172,7 +196,6 @@ class RC_AI_I_T100_WD: RC_AI_B_T100_WD
 	faction="RC_AI_I";
 	crew="RC_AI_I_Crew";
 	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
