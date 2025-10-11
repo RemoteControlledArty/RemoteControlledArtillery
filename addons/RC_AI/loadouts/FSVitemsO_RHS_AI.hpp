@@ -3,17 +3,32 @@ class TransportMagazines
 	class _xx_HandGrenade
 	{
 		magazine="HandGrenade";
-		count=5;
+		count=10;
 	};
 	class _xx_SmokeShell
 	{
 		magazine="SmokeShell";
 		count=5;
 	};
+	class _xx_RPG7_F
+	{
+		magazine="RPG7_F";
+		count=3;
+	};
 	class _xx_Laserbatteries
 	{
 		magazine="Laserbatteries";
-		count=1;
+		count=2;
+	};
+	class _xx_30Rnd_545x39_Mag_Tracer_F
+	{
+		magazine="30Rnd_545x39_Mag_Tracer_F";
+		count=5;
+	};
+	class _xx_30Rnd_762x39_Mag_Tracer_F
+	{
+		magazine="30Rnd_762x39_Mag_Tracer_F";
+		count=5;
 	};
 	class _xx_DemoCharge_Remote_Mag
 	{
@@ -23,9 +38,9 @@ class TransportMagazines
 };
 class TransportItems
 {
-	class _xx_B_UavTerminal
+	class _xx_O_UavTerminal
 	{
-		name="B_UavTerminal";
+		name="O_UavTerminal";
 		count=2;
 	};
 	class _xx_Toolkit
@@ -36,25 +51,25 @@ class TransportItems
 	class _xx_Medikit
 	{
 		name="Medikit";
-		count=2;
+		count=5;
 	};
 	class _xx_FirstAidKit
 	{
 		name="FirstAidKit";
-		count=2;
+		count=5;
 	};
 	class _xx_MineDetector
 	{
 		name="MineDetector";
-		count=1;
+		count=2;
 	};
 };
 class TransportWeapons
 {
-	class _xx_launch_NLAW_F
+	class _xx_launch_RPG7_F
 	{
-		weapon="launch_NLAW_F";
-		count=2;
+		weapon="launch_RPG7_F";
+		count=1;
 	};
 	class _xx_Improved_FOV_Laserdesignator_A
 	{
