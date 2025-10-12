@@ -1,4 +1,4 @@
-class RC_FPV_Carrier_Base: RC_Mortar_UGV_Base
+class RC_FPV_Carrier_Base: RC_Mule_UGV_Base
 {
 	class EventHandlers: EventHandlers
 	{

@@ -7,8 +7,6 @@ class CfgPatches
 		
 		units[]=
 		{
-			//[getPos player, 180, "RC_AI_I_Pandur_WD", resistance] call BIS_fnc_spawnVehicle;
-
 			//visually neutral crew
 			"RC_AI_B_Crew",
 			"RC_AI_O_Crew",
@@ -126,16 +124,39 @@ class CfgPatches
 
 		weapons[]=
 		{
-			/*
-			"",
-			"",
-			"",
-			*/
+			"RC_AI_MMG_338_FSV_coax",
+			"RC_AI_MMG_762x51_FSV_coax",
+			"RC_AI_MMG_338_coax_ext",
+			"RC_AI_MMG_762x51_coax_ext",
+			"RC_AI_MMG_338_coax",
+			"RC_AI_MMG_762x51_coax",
+			"RC_AI_MMG_93x64_coax_ext",
+			"RC_AI_MMG_762x54_coax_ext",
+			"RC_AI_HMG_127x99_FSV",
+			"RC_AI_HMG_127_NSVT",
 			"RC_AI_autocannon_30mm_CTWS",
+			"RC_AI_autocannon_30mm_APC_Wheeled_04",
+			"RC_AI_autocannon_30mm_Bu",
+			"RC_AI_autocannon_30mm_RCWS",
 			"RC_AI_autocannon_40mm_CTWS",
+			"RC_AI_cannon_120mm",
+			"RC_AI_cannon_125mm",
+			"RC_AI_cannon_125mm_advanced",
+			"RC_AI_IFV_Missile_Launcher",
+			"RC_AI_IFV_Missile_Launcher_4R",
+
+			"RC_AI_AbramsX_HMG_coax",
+			"RC_AI_AbramsX_30mm_M914",
+			"RC_AI_AbramsX_120mm_M360",
+
+			"RC_AI_RHS_weap_m240_abrams_coax",
 			"RC_AI_RHS_weap_m240_bradley_coax",
+			"RC_AI_RHS_M2_CROWS_M151",
+			"RC_AI_RHS_M2_CROWS_M153_Abrams",
 			"RC_AI_RHS_weap_M242BC",
-			"RC_AI_RHS_weap_m256"
+			"RC_AI_RHS_weap_m256",
+			"RC_AI_Bradley_Missile_Launcher",
+			"RC_AI_Stryker_Missile_Launcher"
 		};
 
 		requiredAddons[]=

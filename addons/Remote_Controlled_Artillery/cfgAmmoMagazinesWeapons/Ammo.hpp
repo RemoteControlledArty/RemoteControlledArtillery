@@ -3968,6 +3968,7 @@ class RC_Sh_82mm_AMOS_submunition: Sh_82mm_AMOS
 };
 class RC_82mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 {
+	ace_rearm_caliber=82;
 	hit=165;
 	indirectHit=52;
 	indirectHitRange=18;
@@ -4028,6 +4029,7 @@ class RC_Sh_82mm_AMOS_HE_submunition: RC_Sh_82mm_AMOS_submunition
 };
 class RC_Sh_82mm_AMOS_HE: RC_82mm_HEAB_Shell_Base
 {
+	ace_rearm_caliber=82;
 	simulationStep=0.050000001;
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -4052,6 +4054,7 @@ class RC_SmokeShellArty: SmokeShellArty
 class Smoke_120mm_AMOS_White;
 class RC_Smoke_82mm_AMOS_White: Smoke_120mm_AMOS_White
 {
+	ace_rearm_caliber=82;
 	aiAmmoUsageFlags=4;
 	model="\A3\weapons_f\ammo\shell";
 	submunitionAmmo="RC_SmokeShellArty";
@@ -4098,6 +4101,7 @@ class RC_Mo_ClassicMineRange: Mo_ClassicMineRange
 
 class RC_Mine_82mm_AMOS_range: SubmunitionBase
 {
+	ace_rearm_caliber=82;
 	aiAmmoUsageFlags=16;
 	submunitionAmmo="RC_Mo_ClassicMineRange";
 	submunitionConeType[]=
@@ -4129,6 +4133,7 @@ class RC_Mine_82mm_AMOS_range: SubmunitionBase
 
 class RC_AT_Mine_82mm_AMOS_range: SubmunitionBase
 {
+	ace_rearm_caliber=82;
 	aiAmmoUsageFlags=16;
 	submunitionAmmo="Mo_ATMineRange";
 	submunitionConeType[]=
@@ -4202,6 +4207,7 @@ class RC_82mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_82mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
+	ace_rearm_caliber=82;
 	submunitionAmmo="RC_82mm_MP_LaserGuided_Submunition";
 	triggerDistance=300;
 	hit=165;
@@ -4279,6 +4285,7 @@ class RC_82mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 };
 class RC_Sh_82mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
+	ace_rearm_caliber=82;
 	submunitionAmmo="RC_82mm_MP_MultiGuided_Submunition";
 	triggerDistance=300;
 	hit=165;
@@ -4409,6 +4416,7 @@ class RC_Sh_40mm_AMOS_Smoke: RC_Sh_40mm_AMOS_HE
 //60mm
 class RC_Sh_60mm_AMOS_submunition: RC_Sh_82mm_AMOS_submunition
 {
+	ace_rearm_caliber=60;
 	craterEffects="RC_60mmAirburstDust";
 	hit=100;
 	indirectHit=40;
@@ -4417,6 +4425,7 @@ class RC_Sh_60mm_AMOS_submunition: RC_Sh_82mm_AMOS_submunition
 };
 class RC_60mm_HEAB_Shell_Base: RC_82mm_HEAB_Shell_Base
 {
+	ace_rearm_caliber=60;
 	hit=100;
 	indirectHit=40;
 	indirectHitRange=12;
@@ -4436,6 +4445,7 @@ class RC_Sh_60mm_AMOS_HE_submunition: RC_Sh_60mm_AMOS_submunition
 };
 class RC_Sh_60mm_AMOS_HE: RC_60mm_HEAB_Shell_Base
 {
+	ace_rearm_caliber=60;
 	simulationStep=0.050000001;
 	triggerDistance=-1;
 	triggerOnImpact=1;
@@ -4452,6 +4462,7 @@ class RC_Sh_60mm_AMOS_backupHEAB: RC_Sh_60mm_AMOS_HE
 
 class RC_Smoke_60mm_AMOS_White: RC_Smoke_82mm_AMOS_White
 {
+	ace_rearm_caliber=60;
 	submunitionConeType[]=
 	{
 		"poissondisc",
@@ -4466,6 +4477,7 @@ class RC_Smoke_60mm_AMOS_White: RC_Smoke_82mm_AMOS_White
 
 class RC_Mine_60mm_AMOS_range: RC_Mine_82mm_AMOS_range
 {
+	ace_rearm_caliber=60;
 	submunitionConeType[]=
 	{
 		"custom", {{0,1},{-0.866,-0.5},{0.866,-0.5}};
@@ -4492,6 +4504,7 @@ class RC_60mm_MP_LaserGuided_Submunition: RC_82mm_MP_LaserGuided_Submunition
 };
 class RC_Sh_60mm_AMOS_MP_LaserGuided: RC_Sh_82mm_AMOS_MP_LaserGuided
 {
+	ace_rearm_caliber=60;
 	submunitionAmmo="RC_60mm_MP_LaserGuided_Submunition";
 	triggerDistance=300;
 	hit=100;
@@ -4503,6 +4516,7 @@ class RC_Sh_60mm_AMOS_MP_LaserGuided: RC_Sh_82mm_AMOS_MP_LaserGuided
 
 class RC_60mm_MP_MultiGuided_Submunition: RC_82mm_MP_MultiGuided_Submunition
 {
+	ace_rearm_caliber=60;
 	submunitionAmmo="ammo_Penetrator_60mm_MP";
 	//craterEffects="RC_82mmGuidedDust";
 	indirectHit=60;
@@ -4511,6 +4525,7 @@ class RC_60mm_MP_MultiGuided_Submunition: RC_82mm_MP_MultiGuided_Submunition
 };
 class RC_Sh_60mm_AMOS_MP_MultiGuided: RC_Sh_82mm_AMOS_MP_MultiGuided
 {
+	ace_rearm_caliber=60;
 	submunitionAmmo="RC_60mm_MP_MultiGuided_Submunition";
 	triggerDistance=300;
 	hit=100;
@@ -4647,7 +4662,6 @@ class ammo_Penetrator_105mm_MP: ammo_Penetrator_MP_Guided_Base
 };
 class RC_105mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 {
-	ace_rearm_caliber=105;
 	submunitionAmmo="ammo_Penetrator_105mm_MP";
 	//craterEffects="RC_105mmGuidedDust";
 	indirectHit=151.2;
@@ -4726,7 +4740,6 @@ class RC_Sh_105mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 
 class RC_105mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
-	ace_rearm_caliber=105;
 	submunitionAmmo="ammo_Penetrator_105mm_MP";
 	//craterEffects="RC_105mmGuidedDust";
 	indirectHit=151.2;
@@ -4809,7 +4822,6 @@ class RC_Sh_105mm_AMOS_delayed_submunition: RC_Sh_105mm_AMOS_submunition
 };
 class RC_M_Mo_105mm_LG_DelayedFuse_submunition: RC_105mm_MP_LaserGuided_Submunition
 {
-	ace_rearm_caliber=105;
 	triggerDistance=-1;
 	triggerOnImpact=1;
 	submunitionInitialOffset[]={0,0,2};	//2m infront of projecticle during impact, acting as delayed fuse against bunkers
@@ -4914,6 +4926,7 @@ class RC_Sh_120mm_AMOS_submunition: Sh_155mm_AMOS
 };
 class RC_120mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 {
+	ace_rearm_caliber=120;
 	hit=236.7;
 	indirectHit=86.4;
 	indirectHitRange=24.8;
@@ -5024,6 +5037,7 @@ class RC_120mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_120mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
+	ace_rearm_caliber=120;
 	submunitionAmmo="RC_120mm_MP_LaserGuided_Submunition";
 	triggerDistance=500;
 	hit=236.7;
@@ -5101,6 +5115,7 @@ class RC_120mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 };
 class RC_Sh_120mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
+	ace_rearm_caliber=120;
 	submunitionAmmo="RC_120mm_MP_MultiGuided_Submunition";
 	triggerDistance=500;
 	hit=236.7;
@@ -5161,6 +5176,7 @@ class RC_Sh_120mm_AMOS_LG_DelayedFuse: RC_Sh_120mm_AMOS_MP_LaserGuided
 
 class RC_Cluster_120mm_AMOS: Cluster_155mm_AMOS
 {
+	ace_rearm_caliber=120;
 	hit=236.7;
 	indirectHit=86.4;
 	indirectHitRange=24.8;
@@ -5183,6 +5199,7 @@ class RC_Cluster_120mm_AMOS: Cluster_155mm_AMOS
 
 class RC_Mine_120mm_AMOS_range: RC_Mine_105mm_AMOS_range
 {
+	ace_rearm_caliber=120;
 	submunitionConeAngle=25.5;	//10.2
 	submunitionConeType[]=
 	{
@@ -5193,6 +5210,7 @@ class RC_Mine_120mm_AMOS_range: RC_Mine_105mm_AMOS_range
 
 class RC_AT_Mine_120mm_AMOS_range: RC_AT_Mine_105mm_AMOS_range
 {
+	ace_rearm_caliber=120;
 	submunitionConeAngle=10.2;
 	submunitionConeType[]=
 	{
@@ -5203,6 +5221,7 @@ class RC_AT_Mine_120mm_AMOS_range: RC_AT_Mine_105mm_AMOS_range
 
 class RC_Smoke_120mm_AMOS_White: RC_Smoke_105mm_AMOS_White
 {
+	ace_rearm_caliber=120;
 	submunitionConeAngle=10;
 	submunitionConeType[]=
 	{
@@ -5230,6 +5249,7 @@ class RC_Sh_155mm_AMOS_submunition: Sh_155mm_AMOS
 };
 class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 {
+	ace_rearm_caliber=155;
 	hit=340;
 	indirectHit=125;
 	indirectHitRange=30;
@@ -5307,6 +5327,7 @@ class RC_Mo_Illum: F_40mm_White
 };
 class Flare_155mm_AMOS_White: SubmunitionBase
 {
+	ace_rearm_caliber=155;
 	aiAmmoUsageFlags=1;
 	submunitionAmmo[]=
 	{
@@ -5334,6 +5355,7 @@ class Flare_155mm_AMOS_White: SubmunitionBase
 
 class RC_Mine_155mm_AMOS_range: RC_Mine_105mm_AMOS_range
 {
+	ace_rearm_caliber=155;
 	submunitionConeAngle=32.675;	//13.07
 	submunitionConeType[]=
 	{
@@ -5344,6 +5366,7 @@ class RC_Mine_155mm_AMOS_range: RC_Mine_105mm_AMOS_range
 
 class RC_AT_Mine_155mm_AMOS_range: RC_AT_Mine_105mm_AMOS_range
 {
+	ace_rearm_caliber=155;
 	submunitionConeAngle=13.07;
 	submunitionConeType[]=
 	{
@@ -5354,6 +5377,7 @@ class RC_AT_Mine_155mm_AMOS_range: RC_AT_Mine_105mm_AMOS_range
 
 class RC_Smoke_155mm_AMOS_White: RC_Smoke_105mm_AMOS_White
 {
+	ace_rearm_caliber=155;
 	submunitionConeAngle=10;
 	submunitionConeType[]=
 	{
@@ -5428,6 +5452,7 @@ class RC_155mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
+	ace_rearm_caliber=155;
 	submunitionAmmo="RC_155mm_MP_LaserGuided_Submunition";
 	triggerDistance=500;
 	hit=340;
@@ -5548,6 +5573,7 @@ class RC_155mm_MP_MultiGuided_Proximity_Submunition: RC_155mm_MP_MultiGuided_Sub
 */
 class RC_Sh_155mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
+	ace_rearm_caliber=155;
 	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
 	triggerDistance=500;
 	hit=340;
@@ -5626,6 +5652,7 @@ class RC_R_230mm_fly_HEAB_submunition: R_230mm_fly
 };
 class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 {
+	ace_rearm_caliber=230;
 	craterEffects="RC_230mmAirburstDust";
 	hit=300;	//defines recoil, needs to be this low, indirecthit defines damage
 	indirectHit=800;
@@ -5834,6 +5861,7 @@ class RC_230mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_R_230mm_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
+	ace_rearm_caliber=230;
 	submunitionAmmo="RC_230mm_MP_LaserGuided_Submunition";
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
@@ -6027,6 +6055,7 @@ class RC_230mm_MP_MultiGuided_Proximity_Submunition: RC_230mm_MP_MultiGuided_Sub
 */
 class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
+	ace_rearm_caliber=230;
 	//deleteParentWhenTriggered=1;
 	submunitionAmmo="RC_230mm_MP_MultiGuided_Submunition";
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
@@ -6144,6 +6173,7 @@ class RC_R_604mm_fly_HEAB_submunition_ATACMS: RC_R_230mm_fly_HEAB_submunition
 };
 class RC_604mm_HEAB_Rocket_Base: RC_230mm_HEAB_Rocket_Base
 {
+	ace_rearm_caliber=604;
 	aiAmmoUsageFlags="64 + 128 + 512";
 	indirectHit=3200;
 	indirectHitRange=120;
@@ -6176,6 +6206,7 @@ class RC_R_604mm_ATACMS_backupHEAB: RC_604mm_HEAB_Rocket_Base
 
 class RC_R_604mm_ATACMS_DPICM: R_230mm_Cluster
 {
+	ace_rearm_caliber=604;
 	indirectHit=3200;
 	indirectHitRange=120;
 	submunitionConeAngle=25;
