@@ -1,5 +1,5 @@
-class rhs_t90am_tv;
-class RC_T90AM_Core: rhs_t90am_tv
+class rhs_bmp3mera_msv;
+class RC_BMP3_Core: rhs_bmp3mera_msv
 {
 	class Turrets;
 	class MainTurret;
@@ -18,7 +18,7 @@ class RC_T90AM_Core: rhs_t90am_tv
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_T90AM_Base: RC_T90AM_Core
+class RC_BMP3_Base: RC_BMP3_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -113,7 +113,7 @@ class RC_T90AM_Base: RC_T90AM_Core
 				"RC_MMG_93x64_coax",
 				"SmokeLauncher"
 			};
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_green.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_green.hpp"
 
 			class OpticsIn
 			{
@@ -162,7 +162,7 @@ class RC_T90AM_Base: RC_T90AM_Core
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_green.hpp"
+					#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_com_green.hpp"
 
 					class OpticsIn
 					{
@@ -238,7 +238,7 @@ class RC_T90AM_Base: RC_T90AM_Core
 };
 
 
-class RC_T90AM_WD_O: RC_T90AM_Base
+class RC_BMP3_WD_O: RC_BMP3_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -259,7 +259,7 @@ class RC_T90AM_WD_O: RC_T90AM_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
 	crew="O_UAV_AI";
 };
-class RC_T90AM_WD: RC_T90AM_WD_O
+class RC_BMP3_WD: RC_BMP3_WD_O
 {
 	faction="RemoteControlled_B";
 	crew="I_UAV_AI";
@@ -270,19 +270,19 @@ class RC_T90AM_WD: RC_T90AM_WD_O
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_yellow.hpp"
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_yellow.hpp"
+					#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_com_yellow.hpp"
 				};
 			};
 		};
 	};
 };
-class RC_T90AM_WD_I: RC_T90AM_WD_O
+class RC_BMP3_WD_I: RC_BMP3_WD_O
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -293,13 +293,13 @@ class RC_T90AM_WD_I: RC_T90AM_WD_O
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_yellow.hpp"
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_yellow.hpp"
+					#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_com_yellow.hpp"
 				};
 			};
 		};
@@ -307,7 +307,7 @@ class RC_T90AM_WD_I: RC_T90AM_WD_O
 };
 
 
-class RC_T90AM_A_O: RC_T90AM_WD_O
+class RC_BMP3_A_O: RC_BMP3_WD_O
 {
 	//editorPreview="";
 	hiddenSelectionsTextures[]=
@@ -316,8 +316,8 @@ class RC_T90AM_A_O: RC_T90AM_WD_O
 		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b3_02_sand_co.paa",
 		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b_03_sand_co.paa",
 		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b_04_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_t90am_01_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_t90am_02_sand_co.paa",
+		"rhsafrf\addons\rhs_t72_camo\data\rhs_BMP3_01_sand_co.paa",
+		"rhsafrf\addons\rhs_t72_camo\data\rhs_BMP3_02_sand_co.paa",
 		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b3_e_01_sand_co.paa",
 		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b3_e_02_sand_co.paa",
 		"rhsafrf\addons\rhs_t72_camo\data\rhs_t90parts_sand_co.paa",
@@ -329,7 +329,7 @@ class RC_T90AM_A_O: RC_T90AM_WD_O
 		1
 	};
 };
-class RC_T90AM_A: RC_T90AM_A_O
+class RC_BMP3_A: RC_BMP3_A_O
 {
 	faction="RemoteControlled_B";
 	crew="I_UAV_AI";
@@ -340,19 +340,19 @@ class RC_T90AM_A: RC_T90AM_A_O
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_yellow.hpp"
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_yellow.hpp"
+					#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_com_yellow.hpp"
 				};
 			};
 		};
 	};
 };
-class RC_T90AM_A_I: RC_T90AM_A_O
+class RC_BMP3_A_I: RC_BMP3_A_O
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -363,13 +363,13 @@ class RC_T90AM_A_I: RC_T90AM_A_O
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_yellow.hpp"
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_yellow.hpp"
+					#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_com_yellow.hpp"
 				};
 			};
 		};
