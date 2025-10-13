@@ -830,6 +830,7 @@ class CfgFunctions
 			class RC_LocalityUV {postInit=1;};
 			class RC_uavWaypoints {};
 			class RC_uavChangeLocality {};
+			class RC_NameUV_Server {};
 		};
 		class RC_LocalityVic_functions
 		{

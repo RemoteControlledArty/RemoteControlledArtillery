@@ -7,6 +7,7 @@ class RC_cUAS_Static_HMG_core: B_HMG_01_high_F
 	class ViewOptics;
 	class Components;
 	class AnimationSources;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -240,6 +241,7 @@ class RC_cUAS_Static_HMG_base: RC_cUAS_Static_HMG_core
 };
 class RC_cUAS_Static_HMG: RC_cUAS_Static_HMG_base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 
 	displayName="RC C-UAS Static 12.7mm";

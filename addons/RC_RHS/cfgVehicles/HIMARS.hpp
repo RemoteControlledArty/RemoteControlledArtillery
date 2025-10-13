@@ -7,6 +7,7 @@ class RC_HIMARS_base: rhsusf_M142_usarmy_D
 	class MainTurret;
 	class OpticsIn;
 	class Wide;
+	class UserActions;
 	class Components;
 	//class EventHandlers;
 	scope=0;
@@ -31,6 +32,7 @@ class RC_HIMARS_D: RC_HIMARS_base
 	};
 	*/
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions.hpp"
 	author="Ascent";
 	displayName="RC M142 HIMARS";
 	faction="RemoteControlled_B";

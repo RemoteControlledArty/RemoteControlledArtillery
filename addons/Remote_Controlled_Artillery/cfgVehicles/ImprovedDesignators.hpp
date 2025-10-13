@@ -12,11 +12,14 @@ class RC_Improved_FOV_Designator_A_base: B_Static_Designator_01_F
 	class viewOptics;
 	class assembleInfo;
 	class Components;
+	class UserActions;
 	scope=0;
 	scopeCurator=0;
 };
 class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
+
 	displayname="RC Improved Designator";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_UAV_Designator_subcat";

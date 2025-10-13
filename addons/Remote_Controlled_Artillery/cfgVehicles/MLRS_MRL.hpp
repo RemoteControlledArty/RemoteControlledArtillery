@@ -12,6 +12,7 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 	class OpticsIn;
 	class Wide;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -42,6 +43,7 @@ class RC_MLRS_A: RC_MLRS_base
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -363,6 +365,7 @@ class RC_MRL_base: I_Truck_02_MRL_F
 	class OpticsIn;
 	class Wide;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -395,6 +398,7 @@ class RC_MRL_DIG_I: RC_MRL_base
 		*/
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"

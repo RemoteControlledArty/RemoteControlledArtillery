@@ -169,6 +169,7 @@ class RC_ICV_3_A: RC_ICV_IFV_3_A
 	scope=2;
 	scopeCurator=2;
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	crew="B_UAV_AI";

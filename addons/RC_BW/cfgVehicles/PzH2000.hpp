@@ -10,6 +10,7 @@ class RC_PzH2000_Core: BWA3_Panzerhaubitze2000_Fleck
 	class OpticsIn;
 	class Wide;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -37,6 +38,7 @@ class RC_PzH2000_FT_Base: RC_PzH2000_Core
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"

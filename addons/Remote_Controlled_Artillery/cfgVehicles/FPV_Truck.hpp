@@ -4,6 +4,7 @@ class RC_FPV_Truck_Core: B_Truck_01_box_F
 {
 	class Components;
 	class ViewOptics;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -141,6 +142,7 @@ class RC_FPV_Truck_A: RC_FPV_Truck_Base
 	//scopeCurator=2;
 	forceInGarage=1;
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";

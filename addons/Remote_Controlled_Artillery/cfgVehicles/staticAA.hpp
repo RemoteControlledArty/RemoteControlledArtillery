@@ -9,11 +9,14 @@ class RC_Static_AA_A_base: B_static_AA_F
 	class assembleInfo;
 	class Components;
 	class AnimationSources;
+	class UserActions;
 	scope=0;
 	scopeCurator=0;
 };
 class RC_Static_AA_A: RC_Static_AA_A_base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
+
 	displayname="RC Static AA 3.5km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";

@@ -4,6 +4,7 @@ class RC_FlatbedTruck_base: B_Truck_01_flatbed_F
 {
 	class Components;
 	class ViewOptics;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -194,6 +195,7 @@ class RC_FlatbedTruck_A: RC_FlatbedTruck
 	side=1;
 	forceInGarage=1;
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	crew="B_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";

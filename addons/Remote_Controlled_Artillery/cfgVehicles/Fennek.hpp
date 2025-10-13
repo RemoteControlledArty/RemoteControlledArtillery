@@ -14,6 +14,7 @@ class RC_Fennek_Base: I_MRAP_03_F
 	class Components;
 	class SensorsManagerComponent;
 	class SensorTemplateDataLink;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -40,6 +41,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";

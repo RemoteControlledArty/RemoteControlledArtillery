@@ -4,6 +4,8 @@ class RC_BMP3_Core: rhs_bmp3mera_msv
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
+	class GPMGTurret1;
+	class GPMGTurret2;
 	class ViewOptics;
 	class Components;
 	class UserActions;
@@ -89,6 +91,50 @@ class RC_BMP3_Base: RC_BMP3_Core
 
 	class Turrets: Turrets
 	{
+		class GPMGTurret1: GPMGTurret1
+		{
+			weapons[]=
+			{
+				"rhs_weap_pkt_bmd_bow1"
+			};
+			magazines[]=
+			{
+				"rhs_mag_762x54mm_250",
+				"rhs_mag_762x54mm_250",
+				"rhs_mag_762x54mm_250",
+				"rhs_mag_762x54mm_250"
+			};
+
+			maxVerticalRotSpeed = 1.2;	//1.2
+			maxHorizontalRotSpeed = 1.2;	//1.2
+			maxTurn = 30;	//10
+			minTurn = -30;	//-10
+			maxElev = 45;	//35
+			minElev = -24;	//-24
+		};
+		
+		class GPMGTurret2: GPMGTurret2
+		{
+			weapons[]=
+			{
+				"rhs_weap_pkt_bmd_bow1"
+			};
+			magazines[]=
+			{
+				"rhs_mag_762x54mm_250",
+				"rhs_mag_762x54mm_250",
+				"rhs_mag_762x54mm_250",
+				"rhs_mag_762x54mm_250"
+			};
+
+			maxVerticalRotSpeed = 1.2;	//1.2
+			maxHorizontalRotSpeed = 1.2;	//1.2
+			maxTurn = 30;	//10
+			minTurn = -30;	//-10
+			maxElev = 45;	//35
+			minElev = -24;	//-24
+		};
+
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
@@ -103,16 +149,38 @@ class RC_BMP3_Base: RC_BMP3_Core
 			turretInfoType="RscOptics_MBT_02_gunner";
 
 			minElev=-10;	//-5
-			maxElev=14;	//14
-			maxHorizontalRotSpeed=1;	//1.2	//1
-			maxVerticalRotSpeed=1;	//1.2	//0.07
+			maxElev=60;	//60
+			maxHorizontalRotSpeed=1;	//1.2	//0.55
+			maxVerticalRotSpeed=1;	//1.2	//0.55
+
+			/*
+			magazines[] = {"rhs_mag_3UOF191_22","rhs_mag_9m117m1_8","rhs_mag_3uof8_305","rhs_mag_3ubr11_195","rhs_mag_762x54mm_2000","rhs_mag_3d17_6","rhs_laserfcsmag","rhs_laserfcsmag"};
+			weapons[] = {"rhs_weap_2a70","rhs_weap_2a72","rhs_weap_pkt_bmd_coax","rhs_weap_902a","rhs_weap_fcs"};
+			*/
 
 			weapons[]=
 			{
+				"RC_RHS_weap_2a70",
+				"RC_RHS_weap_2a72",
+				"RC_RHS_weap_pkt_bmd_coax",
+				"RC_RHS_weap_902a"
+
+				/*
 				"RC_cannon_125mm_advanced",
 				"RC_MMG_93x64_coax",
 				"SmokeLauncher"
+				*/
 			};
+
+			/*
+			"rhs_mag_3UOF191_22",
+			"rhs_mag_9m117m1_8",
+			"rhs_mag_3uof8_305",
+			"rhs_mag_3ubr11_195",
+			"rhs_mag_762x54mm_2000",
+			"rhs_mag_3d17_6"
+			*/
+
 			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_green.hpp"
 
 			class OpticsIn
@@ -151,14 +219,13 @@ class RC_BMP3_Base: RC_BMP3_Core
 					//turretInfoType="RC_RHS_RscWeaponSosnaU_commander_FCS";
 					turretInfoType="RscOptics_MBT_02_gunner";
 
-					minElev=-10;	//-7
-					maxElev=35;		//50
-					maxHorizontalRotSpeed=1;	//1.8	//0.9
-					maxVerticalRotSpeed=1;	//1.8	//0.47
+					maxElev=60;
+					minElev=-10;	//-5
+					maxVerticalRotSpeed=1.8;
+					maxHorizontalRotSpeed=1.8;
 
 					weapons[]=
 					{
-						"RC_HMG_127_NSVT",
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
@@ -180,8 +247,9 @@ class RC_BMP3_Base: RC_BMP3_Core
 								"Ti"
 							};
 							thermalMode[]={0};
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 							//gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_sosnau.p3d";
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 						};
 					};
 				};
@@ -191,35 +259,55 @@ class RC_BMP3_Base: RC_BMP3_Core
 
 	class AnimationSources: AnimationSources
 	{
-		class muzzle_rot_cannon
-		{
-			source="ammorandom";
-			weapon="RC_cannon_125mm_advanced";	//rhs_weap_2a46m_4
-		};
-		class muzzle_rot_mg1
-		{
-			weapon="RC_MMG_93x64_coax";	//rhs_weap_pkt
-			source="ammorandom";
-		};
-		class reload_magazine_source
-		{
-			source="reloadMagazine";
-			weapon="RC_cannon_125mm_advanced";	//rhs_weap_2a46m_4
-		};
-		class reload_source
+		class muzzle_hide_cannon
 		{
 			source="reload";
-			weapon="RC_cannon_125mm_advanced";	//rhs_weap_2a46m_5
+			weapon="rhs_weap_2a70";
 		};
-		class Revolving
+		class muzzle_hide_hmg
+		{
+			source="reload";
+			weapon="rhs_weap_2a72";
+		};
+		class muzzle_rot_cannon
+		{
+			source="ammorandom";	
+			weapon="rhs_weap_2a70";
+		};
+		class muzzle_rot_coax
+		{
+			source="ammorandom";
+			weapon="rhs_weap_pkt_bmd_coax";
+		};
+		class muzzle_rot_coax2
+		{
+			source="ammorandom";
+			weapon="rhs_weap_pkt_bmd_bow1";
+		};
+		class muzzle_rot_coax3
+		{
+			source="ammorandom";
+			weapon="rhs_weap_pkt_bmd_bow2";
+		};
+		class muzzle_rot_hmg
+		{
+			source="ammorandom";
+			weapon="rhs_weap_2a72";
+		};
+		class recoil_source
+		{
+			source="reload";
+			weapon="rhs_weap_2a70";
+		};
+		class recoil_source2
+		{
+			source="reload";
+			weapon="rhs_weap_2a72";
+		};
+		class smokecap_revolving_source
 		{
 			source="revolving";
-			weapon="RC_HMG_127_NSVT";	//rhs_weap_nsvt_t72
-		};
-		class ReloadMagazine
-		{
-			source="reloadmagazine";
-			weapon="RC_HMG_127_NSVT";	//rhs_weap_nsvt_t72
+			weapon="rhs_weap_902a";
 		};
 		class HatchC
 		{
@@ -230,6 +318,12 @@ class RC_BMP3_Base: RC_BMP3_Core
 		{
 		};
 		class HatchD: HatchC
+		{
+		};
+		class HatchRA: HatchC
+		{
+		};
+		class HatchLA: HatchC
 		{
 		};
 	};
@@ -312,16 +406,11 @@ class RC_BMP3_A_O: RC_BMP3_WD_O
 	//editorPreview="";
 	hiddenSelectionsTextures[]=
 	{
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b3_01_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b3_02_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b_03_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b_04_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_BMP3_01_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_BMP3_02_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b3_e_01_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_t72b3_e_02_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_t90parts_sand_co.paa",
-		"rhsafrf\addons\rhs_t72_camo\data\rhs_t90a_02_sand_co.paa"
+		"rhsafrf\addons\rhs_bmp3_camo\data\rhs_bmp3_01_3mera_sand_co.paa",
+		"rhsafrf\addons\rhs_bmp3_camo\data\rhs_bmp3_02_3mera_sand_co.paa",
+		"rhsafrf\addons\rhs_bmp3_camo\data\rhs_bmp3_03_3m_sand_co.paa",
+		"rhsafrf\addons\rhs_bmp3_camo\data\rhs_bmp3_04_sand_co.paa",
+		"rhsafrf\addons\rhs_bmp3_camo\data\3m_era_sand_co.paa"
 	};
 	textureList[]=
 	{

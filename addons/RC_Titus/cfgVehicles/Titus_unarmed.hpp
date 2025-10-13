@@ -24,6 +24,7 @@ class RC_Titus_unarmed_D_base: QIN_Titus_DES
 	class HitRF2Wheel;
 	class HitRMWheel;
 	class HitRBWheel;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -32,6 +33,7 @@ class RC_Titus_unarmed_D_base: QIN_Titus_DES
 
 class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV_TakeDriverControls.hpp"
 	#include "\RC_Titus\cfgVehicles\Titus_include.hpp"
 
 	class EventHandlers: EventHandlers

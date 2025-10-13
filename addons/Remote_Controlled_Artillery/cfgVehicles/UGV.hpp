@@ -19,10 +19,10 @@ class RC_GMG_UGV_base: B_UGV_01_rcws_F
 	class ViewOptics;
 	class Wide;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
-
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
@@ -41,6 +41,7 @@ class RC_GMG_UGV_A_base: RC_GMG_UGV_base
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"	
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";

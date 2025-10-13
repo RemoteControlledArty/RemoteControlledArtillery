@@ -11,6 +11,7 @@ class RC_Wiesel_AA_Base: I_LT_01_AA_F
 	class HitPoints;
 	class HitEngine;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -35,7 +36,8 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
 	};
-
+	
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -373,6 +375,7 @@ class RC_Wiesel_Radar_Base: I_LT_01_scout_F
 	class Components;
 	class SensorsManagerComponent;
 	class SensorTemplateDataLink;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -658,6 +661,8 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 
 class RC_Wiesel_Radar_WD: RC_Wiesel_Radar_WD_Base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
+
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -1028,6 +1033,7 @@ class RC_Wiesel_ATGM_Base: I_LT_01_AT_F
 	class HitPoints;
 	class HitEngine;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -1263,6 +1269,7 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 
 class RC_Wiesel_ATGM_WD: RC_Wiesel_ATGM_WD_Base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -1412,6 +1419,7 @@ class RC_Wiesel_AC_Base: I_LT_01_cannon_F
 	class HitPoints;
 	class HitEngine;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -1647,6 +1655,7 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 
 class RC_Wiesel_AC_WD: RC_Wiesel_AC_WD_Base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	scope=2;
 	scopeCurator=2;
 	side=1;
@@ -1801,7 +1810,7 @@ class RC_Wiesel_cUAS_WD_Base: RC_Wiesel_AC_WD_Base
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
-
+	
 	displayName="RC Wiesel II C-UAS";
 	editorSubcategory="RC_AntiDrone_subcat";
 
@@ -1961,6 +1970,7 @@ class RC_Wiesel_cUAS_WD_Base: RC_Wiesel_AC_WD_Base
 
 class RC_Wiesel_cUAS_WD: RC_Wiesel_cUAS_WD_Base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	scope=2;
 	scopeCurator=2;
 	side=1;

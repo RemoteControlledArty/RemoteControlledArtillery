@@ -12,6 +12,7 @@ class RC_AA_Base: B_APC_Tracked_01_AA_F
 	class MainTurret;
 	class ViewOptics;
 	class CommanderOptics;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -37,6 +38,7 @@ class RC_AA_A_Base: RC_AA_Base
 		};
 	};
 	
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";

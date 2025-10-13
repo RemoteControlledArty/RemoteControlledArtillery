@@ -8,6 +8,7 @@ class RC_M119_base: RHS_M119_D
 	class EventHandlers;
 	class Hitpoints;
 	class AnimationSources;
+	class UserActions;
 	scope=0;
 	scopeCurator=0;
 
@@ -19,6 +20,7 @@ class RC_M119_base: RHS_M119_D
 };
 class RC_M119: RC_M119_base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions.hpp"
 	displayName="RC M119 105mm 16km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
@@ -26,6 +28,7 @@ class RC_M119: RC_M119_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
+	
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;

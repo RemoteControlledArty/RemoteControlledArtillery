@@ -25,6 +25,7 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 };
 class RC_Howitzer_A: RC_Howitzer_base
 {
@@ -738,6 +739,7 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 	class MainTurret;
 	class Components;
 	class AnimationSources;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -759,6 +761,7 @@ class RC_Static_Arty: RC_Static_Arty_base
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	author="Ascent";
 	displayName="RC Naval Gun";
 	faction="RemoteControlled_B";

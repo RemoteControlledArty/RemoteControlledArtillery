@@ -6,6 +6,7 @@ class RC_FPV_Mothership_Core: O_T_UAV_04_CAS_F
 	class ViewOptics;
 	class ViewPilot;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -26,6 +27,7 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";

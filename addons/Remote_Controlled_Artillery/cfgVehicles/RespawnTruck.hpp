@@ -4,6 +4,7 @@ class RC_RespawnTruck_base: B_Truck_01_medical_F
 {
 	class Components;
 	class ViewOptics;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -16,6 +17,7 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 		init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	
 	displayName="RC Medical Truck";

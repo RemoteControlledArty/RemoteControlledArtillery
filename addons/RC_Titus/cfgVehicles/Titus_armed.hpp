@@ -2,7 +2,6 @@ class QIN_Titus_arx20_DES;
 class RC_Titus_AC_base: QIN_Titus_arx20_DES
 {
 	class ARX20Turret;
-
 	class Turrets;
 	class ViewOptics;
 	class ViewGunner;
@@ -441,6 +440,7 @@ class RC_Titus_AC_A_I: RC_Titus_AC_D_I
 
 class RC_Titus_HMG_D: RC_Titus_AC_D
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV_TakeDriverControls.hpp"
 	displayName="Titus HMG";
 
 	class AnimationSources: AnimationSources
@@ -561,6 +561,7 @@ class RC_Titus_MMG_D: RC_Titus_AC
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV_TakeDriverControls.hpp"
 	displayName="RC Titus MMG";
 	scope=2;
 	scopeCurator=2;

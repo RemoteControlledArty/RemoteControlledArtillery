@@ -8,6 +8,7 @@ class RC_cUAS_Static_core: B_GMG_01_high_F
 	class ViewOptics;
 	class Components;
 	class AnimationSources;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -224,6 +225,7 @@ class RC_cUAS_Static_base: RC_cUAS_Static_core
 };
 class RC_cUAS_Static: RC_cUAS_Static_base
 {
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 
 	displayName="RC C-UAS Static 20mm AB";

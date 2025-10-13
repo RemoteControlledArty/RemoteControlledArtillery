@@ -7,6 +7,7 @@ class RC_RepairTruck_base: B_Truck_01_Repair_F
 	scope=0;
 	scopeCurator=0;
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV_GlobalServer.hpp"
 };
 class RC_RepairTruck_A: RC_RepairTruck_base
 {
