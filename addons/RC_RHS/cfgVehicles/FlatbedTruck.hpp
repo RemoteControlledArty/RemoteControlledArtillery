@@ -195,7 +195,6 @@ class RC_FlatbedTruck_A: RC_FlatbedTruck
 	side=1;
 	forceInGarage=1;
 
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	crew="B_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";

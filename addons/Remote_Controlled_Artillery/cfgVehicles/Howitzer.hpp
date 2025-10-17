@@ -14,6 +14,7 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	class OpticsIn;
 	class Wide;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -25,7 +26,6 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 };
 class RC_Howitzer_A: RC_Howitzer_base
 {
@@ -412,6 +412,7 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 	class OpticsIn;
 	class Wide;
 	class Components;
+	class UserActions;
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
@@ -443,13 +444,12 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 		};
 	};
 
-	RC_ATrespondingTurret[]={0,0};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
+	RC_ATrespondingTurret[]={0,0};
 
 	author="Ascent";
 	displayName="RC Howitzer";
@@ -761,7 +761,6 @@ class RC_Static_Arty: RC_Static_Arty_base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	author="Ascent";
 	displayName="RC Naval Gun";
 	faction="RemoteControlled_B";

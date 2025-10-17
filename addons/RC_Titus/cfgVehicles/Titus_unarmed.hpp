@@ -33,7 +33,7 @@ class RC_Titus_unarmed_D_base: QIN_Titus_DES
 
 class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\RC_Titus\cfgVehicles\Titus_include.hpp"
 
 	class EventHandlers: EventHandlers

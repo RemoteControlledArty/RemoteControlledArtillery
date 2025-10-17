@@ -12,13 +12,13 @@ addMissionEventHandler ["EntityCreated", {
     //downtime timer for player CBRad map markers
     _entity setVariable ["ArtySourceTime", 0, true];
 
-	_isArtillery = getNumber (configFile >> "CfgVehicles" >> (typeOf _entity) >> "artilleryScanner") == 1;
+	private _isArtillery = getNumber (configFile >> "CfgVehicles" >> (typeOf _entity) >> "artilleryScanner") == 1;
 
 	if (_isArtillery) then {
 
-        _entitySide_B = (side _entity == west);
-        _entitySide_O = (side _entity == east);
-        _entitySide_I = (side _entity == resistance);
+        private _entitySide_B = (side _entity == west);
+        private _entitySide_O = (side _entity == east);
+        private _entitySide_I = (side _entity == resistance);
 
         switch (true) do {
             case(_entitySide_B): {

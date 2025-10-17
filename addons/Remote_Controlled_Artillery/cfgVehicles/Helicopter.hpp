@@ -27,7 +27,6 @@ class RC_OM_Heli_InfTransport_Core: O_Heli_Transport_04_bench_black_F
 };
 class RC_OM_Heli_InfTransport_Base: RC_OM_Heli_InfTransport_Core
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakePilotCtrl.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"

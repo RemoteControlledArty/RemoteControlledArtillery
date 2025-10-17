@@ -15,8 +15,6 @@ class RC_Static_AT_A_base: B_static_AT_F
 };
 class RC_Static_AT_A: RC_Static_AT_A_base
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
-	
 	displayname="RC ATGM 4km SACLOS";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";

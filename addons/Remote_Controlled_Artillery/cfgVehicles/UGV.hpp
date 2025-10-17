@@ -41,7 +41,6 @@ class RC_GMG_UGV_A_base: RC_GMG_UGV_base
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"	
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";

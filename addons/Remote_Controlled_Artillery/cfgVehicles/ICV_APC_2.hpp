@@ -319,7 +319,7 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	scope=2;
 	scopeCurator=2;
 
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	crew="O_UAV_AI";

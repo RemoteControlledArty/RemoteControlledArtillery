@@ -10,7 +10,6 @@ class B_Crocus_MP_Base: B_Crocus_AT
 };
 class B_Crocus_MP: B_Crocus_MP_Base
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	author="Ascent";	//all credits to the original maker, this is only an edit and soft-depends on the original mod
 	displayName="Crocus MP";
 	faction="RemoteControlled_B";

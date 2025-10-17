@@ -17,7 +17,6 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 		init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 	};
 
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	
 	displayName="RC Medical Truck";

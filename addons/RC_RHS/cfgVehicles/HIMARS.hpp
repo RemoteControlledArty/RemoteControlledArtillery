@@ -32,7 +32,6 @@ class RC_HIMARS_D: RC_HIMARS_base
 	};
 	*/
 
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions.hpp"
 	author="Ascent";
 	displayName="RC M142 HIMARS";
 	faction="RemoteControlled_B";

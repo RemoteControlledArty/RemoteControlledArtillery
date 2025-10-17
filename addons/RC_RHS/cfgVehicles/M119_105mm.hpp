@@ -20,7 +20,6 @@ class RC_M119_base: RHS_M119_D
 };
 class RC_M119: RC_M119_base
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions.hpp"
 	displayName="RC M119 105mm 16km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";

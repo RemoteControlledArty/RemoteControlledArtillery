@@ -17,8 +17,6 @@ class RC_UAV_base: B_UAV_01_F
 };
 class RC_UAV_AR1: RC_UAV_base
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
-	
 	displayName="RC AR-1 shortrange 2km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_UAV_Designator_subcat";
@@ -861,7 +859,6 @@ class RC_UAV_AR3_I: RC_UAV_AR3
 
 class RC_UAV_FPV: RC_UAV_base
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 	displayName="RC FPV 4km";
 	faction="RemoteControlled_B";

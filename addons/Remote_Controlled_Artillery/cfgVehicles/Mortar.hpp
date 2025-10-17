@@ -19,8 +19,6 @@ class RC_Mortar_base: B_Mortar_01_F
 };
 class RC_Mortar: RC_Mortar_base
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
-
 	displayName="RC Mortar 4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";

@@ -41,7 +41,6 @@ class rhs_pchela1t_base: rhs_pchela1t_core
 	reportRemoteTargets=1;
 	laserScanner=1;
 
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\RC_RHS_AFRF\includes_cfg\Pchela1T_MainInclude.hpp"
 	
 	class Turrets

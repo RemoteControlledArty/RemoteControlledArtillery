@@ -142,7 +142,6 @@ class RC_FPV_Truck_A: RC_FPV_Truck_Base
 	//scopeCurator=2;
 	forceInGarage=1;
 
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
