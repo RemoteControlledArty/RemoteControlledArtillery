@@ -495,6 +495,13 @@ class CfgPatches
 			"RC_MBT_4_HEX_A_O",
 			"RC_MBT_4_HEX_WD_O",
 
+			"RC_Mule_UGV_A",
+			"RC_Mule_UGV_WD",
+			"RC_Mule_UGV_A_O",
+			"RC_Mule_UGV_WD_O",
+			"RC_Mule_UGV_A_I",
+			"RC_Mule_UGV_WD_I",
+
 			"RC_indirect_GMG_UGV_A",
 			"RC_indirect_GMG_UGV_WD",
 			"RC_indirect_GMG_UGV_A_O",
