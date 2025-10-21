@@ -66,6 +66,20 @@ maximumLoad=4000;
 enginePower=500;	//326
 peakTorque=2500;	//1457.5
 
+canFloat=1;
+maxFordingDepth=0.5
+rudderForceCoef=0.8;
+rudderForceCoefAtMaxSpeed=0.004;
+waterEffectSpeed=5;
+waterFastEffectSpeed=28;
+waterLeakiness=2.5;
+waterAngularDampingCoef=8;
+waterLinearDampingCoefX=3;
+waterLinearDampingCoefY=1;
+waterPPInVehicle=0;
+waterResistance=0;
+waterResistanceCoef=0.25;
+waterSpeedFactor=1;
 
 /*
 smokeLauncherGrenadeCount=12;

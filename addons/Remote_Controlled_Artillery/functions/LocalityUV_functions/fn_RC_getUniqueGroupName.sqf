@@ -1,5 +1,7 @@
 params ["_name"];
 
+private _name = trim ((_name splitString ". ") select ((count (_name splitString ". ")) - 1));
+
 private _existingNames = allGroups apply {groupId _x};
 private _number = 1;
 

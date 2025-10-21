@@ -11,5 +11,5 @@ _entity addAction [
 	true,
 	true,
 	"",
-	"(isRemoteControlling player) && ((groupId group (getconnectedUAV player)) find (name player) == -1)"
+	"(isRemoteControlling player) && ((groupId group (getconnectedUAV player)) find (trim (((name player) splitString '. ') select ((count ((name player) splitString '. ')) - 1))) == -1)"
 ];
