@@ -840,6 +840,7 @@ class CfgFunctions
 			class RC_uavWaypoints {};
 			class RC_uavChangeLocality {};
 			class RC_getUniqueGroupName {};
+			class RC_addLocalName {};
 			class RC_addAction_NameUV {};
 			class RC_NameUV_Server {};
 		};
@@ -1036,7 +1037,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\AC_FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\CRV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\CRV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
