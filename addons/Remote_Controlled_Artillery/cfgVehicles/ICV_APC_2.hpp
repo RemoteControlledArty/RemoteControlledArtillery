@@ -412,12 +412,12 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 
 			weapons[]=
 			{
-				"RC_Laserdesignator_vehicle",
+				//"RC_Laserdesignator_vehicle",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"Laserbatteries",
+				//"Laserbatteries",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

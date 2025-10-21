@@ -619,12 +619,12 @@ class RC_Titus_MMG_D: RC_Titus_AC
 
 			weapons[]=
 			{
-				"RC_Laserdesignator_vehicle",
+				//"RC_Laserdesignator_vehicle",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"Laserbatteries",
+				//"Laserbatteries",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

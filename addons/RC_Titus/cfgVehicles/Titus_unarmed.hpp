@@ -128,12 +128,12 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 
 			weapons[]=
 			{
-				"RC_Laserdesignator_vehicle",
+				//"RC_Laserdesignator_vehicle",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				"Laserbatteries",
+				//"Laserbatteries",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
