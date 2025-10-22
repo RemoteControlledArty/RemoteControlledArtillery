@@ -279,7 +279,6 @@ class RC_CRV_A: RC_CRV_Base
 			onlyForPlayer=0;
 			radius=4;
 			condition="((gunner this == player) or (this == getConnectedUAV player)) && this animationSourcePhase 'MovePlow' == 0";
-			//condition="gunner this == player && this animationSourcePhase 'MovePlow' == 0 && (typeOf this in ['B_APC_Tracked_01_CRV_F','B_T_APC_Tracked_01_CRV_F'])";
 			statement="this animateSource ['MovePlow', 1];";
 		};
 		class RaiseMinePlow
@@ -289,7 +288,6 @@ class RC_CRV_A: RC_CRV_Base
 			onlyForPlayer=0;
 			radius=4;
 			condition="((gunner this == player) or (this == getConnectedUAV player)) && this animationSourcePhase 'MovePlow' == 1";
-			//condition="gunner this == player && this animationSourcePhase 'MovePlow' == 1 && (typeOf this in ['B_APC_Tracked_01_CRV_F','B_T_APC_Tracked_01_CRV_F'])";
 			statement="this animateSource ['MovePlow', 0];";
 		};
 	};

@@ -641,6 +641,13 @@ class CfgPatches
 			"RC_Mortar_Fennek_LC_ReTex_WD_O",
 			"RC_Mortar_Fennek_LC_ReTex_WD_I",
 
+			"RC_CRV_A",
+			"RC_CRV_WD",
+			"RC_CRV_A_O",
+			"RC_CRV_WD_O",
+			"RC_CRV_A_I",
+			"RC_CRV_WD_I",
+
 			/*
 			"RC_IFV_3_A_Test1",
 			"RC_IFV_3_A_Test2",

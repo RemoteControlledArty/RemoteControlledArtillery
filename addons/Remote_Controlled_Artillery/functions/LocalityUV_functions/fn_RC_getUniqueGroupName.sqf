@@ -65,5 +65,37 @@ while {alive _veh} do {
 		sleep _interval;
 	};
 };
+
+
+[] spawn {
+	private _veh = getconnectedUAV player;
+	private _range = 4;
+	private _scanRadius = 3;
+	private _interval = 0.25;
+	private _lowSpeed = 20;
+	private _anim = "MovePlow";
+	
+	while {alive _veh && local _veh} do {
+	
+		if (_veh animationPhase _anim > 0.5) then {
+			
+			_veh setCruiseControl [_lowSpeed, false];
+			
+			private _frontPos = _veh modelToWorld [0, _range, -0.3];
+			private _mines = nearestObjects [_frontPos, ["MineBase"], _scanRadius];
+		
+			{
+				if (alive _x) then {
+		
+					triggerAmmo _x;
+				};
+			} forEach _mines;
+		} else {
+			_veh setCruiseControl [200, false];
+		};
+	
+		sleep _interval;
+	};
+};
 */
 
