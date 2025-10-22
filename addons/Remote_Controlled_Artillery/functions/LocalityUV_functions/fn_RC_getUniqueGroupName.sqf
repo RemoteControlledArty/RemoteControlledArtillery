@@ -12,9 +12,6 @@ while {format ["%1 %2", _name, _number] in _existingNames} do {
 format ["%1 %2", _name, _number];
 
 
-
-//
-
 /*
 private _range = 4;			  // distance ahead of plow
 private _scanRadius = 3;		 // width of scan area
@@ -62,12 +59,11 @@ while {alive _veh} do {
 				};
 			} forEach _mines;
 		} else {
-			_veh setCruiseControl [200, true];
+			_veh setCruiseControl [200, false];
 		};
 	
 		sleep _interval;
 	};
 };
-
 */
 

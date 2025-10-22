@@ -108,14 +108,15 @@ class Components: Components
 			{
 				componentType="CrewDisplayComponent";
 			};
+			class SlingLoadDisplay
+			{
+				componentType="SlingLoadDisplayComponent";
+				resource="RscCustomInfoSlingLoad";
+			};
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
 				resource="RscCustomInfoMiniMap";
-			};
-			class EmptyDisplay
-			{
-				componentType="EmptyDisplayComponent";
 			};
 		};
 	};
@@ -135,14 +136,15 @@ class Components: Components
 			{
 				componentType="CrewDisplayComponent";
 			};
+			class SlingLoadDisplay
+			{
+				componentType="SlingLoadDisplayComponent";
+				resource="RscCustomInfoSlingLoad";
+			};
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
 				resource="RscCustomInfoMiniMap";
-			};
-			class EmptyDisplay
-			{
-				componentType="EmptyDisplayComponent";
 			};
 		};
 	};

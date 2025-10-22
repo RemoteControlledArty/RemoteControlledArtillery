@@ -1,3 +1,4 @@
+//O_Heli_Transport_04_black_F
 class O_Heli_Transport_04_bench_black_F;
 class RC_OM_Heli_InfTransport_Core: O_Heli_Transport_04_bench_black_F
 {
@@ -62,6 +63,26 @@ class RC_OM_Heli_InfTransport_Base: RC_OM_Heli_InfTransport_Core
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
+	#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+
+
+	//edit values
+	//O_Heli_Transport_04_bench_black_F  	//Chinook B_Heli_Transport_03_F
+	slingLoadMaxCargoMass=20000;	//t 13500
+	maximumLoad=6000;	//t 4000	//c 6000
+	maxSpeed=350;	//t250	//c300
+	liftForceCoef=1.65;	//taru 1.3	//chinook 1.65;
+
+	ace_cargo_hasCargo=1;
+	ace_cargo_space=20;	//t8 c40
+	
+	ace_refuel_canReceive=1;	//1
+	ace_refuel_flowRate=8;	//8
+	ace_refuel_fuelCapacity=3000;	//t ?, ch 3914
+
+	//airCapacity=10; ???
+	//bodyFrictionCoef=2.8;	//2.8
+
 
 	class Viewoptics: ViewOptics
 	{
@@ -105,6 +126,7 @@ class RC_OM_Heli_InfTransport_Base: RC_OM_Heli_InfTransport_Core
 
 	class pilotCamera
 	{
+		//#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 		//turretInfoType="RscOptics_MBT_03_gunner";
 		unitInfoType="RscOptics_AV_pilot";
 		unitInfoTypeRTD="RscOptics_AV_pilot";
@@ -159,9 +181,11 @@ class RC_OM_Heli_InfTransport_Base: RC_OM_Heli_InfTransport_Core
 		class CopilotTurret: CopilotTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_Heli_Copilot.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 
-			primaryGunner=1;
-			primaryObserver=0;
+			dontCreateAI=1;
+			primaryGunner=0;
+			primaryObserver=1;
 			isCopilot=1;
 			//dontCreateAI=1;
 			//cargoCanControlUAV=1;
@@ -220,11 +244,27 @@ class RC_OM_Heli_InfTransport_Base: RC_OM_Heli_InfTransport_Core
 				"168Rnd_CMFlare_Chaff_Magazine"
 			};
 			*/
+
+			/*
 			weapons[]=
 			{
 				"FakeHorn"
 			};
 			magazines[]={};
+			*/
+
+			weapons[]=
+			{
+				"RC_target_confirmer_datalink",
+				//"CMFlareLauncher"
+				//"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_target_confirmer_mag",
+				//"168Rnd_CMFlare_Chaff_Magazine"
+				//"SmokeLauncherMag"
+			};
 
 			soundServo[]=
 			{
@@ -342,8 +382,34 @@ class RC_OM_Heli_InfTransport_Base: RC_OM_Heli_InfTransport_Core
 		};
 		class LoadmasterTurret: LoadmasterTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_Heli_Copilot.hpp"
 			dontCreateAI=1;
+
+			//leadmaster is default gunner, so remote controllable
+			primaryGunner=0;
+			primaryObserver=1;
 			gunnerCompartments="Compartment2";
+
+			/*
+			primaryGunner=1;
+			primaryObserver=0;
+			gunnerCompartments="Compartment3";
+			*/
+			
+			/*
+			weapons[]=
+			{
+				"RC_target_confirmer_datalink",
+				//"CMFlareLauncher"
+				//"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_target_confirmer_mag",
+				//"168Rnd_CMFlare_Chaff_Magazine"
+				//"SmokeLauncherMag"
+			};
+			*/
 		};
 		class CargoTurret_01: CargoTurret_01 {gunnerCompartments="Compartment2"; dontCreateAI=1;};
 		class CargoTurret_02: CargoTurret_02 {gunnerCompartments="Compartment2"; dontCreateAI=1;};

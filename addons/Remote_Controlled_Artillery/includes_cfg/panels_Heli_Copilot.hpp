@@ -16,6 +16,11 @@ class Components: Components
 			{
 				componentType="CrewDisplayComponent";
 			};
+			class SlingLoadDisplay
+			{
+				componentType="SlingLoadDisplayComponent";
+				resource="RscCustomInfoSlingLoad";
+			};
 			class VehicleDriverDisplay
 			{
 				componentType="TransportFeedDisplayComponent";
@@ -51,6 +56,11 @@ class Components: Components
 			class CrewDisplay
 			{
 				componentType="CrewDisplayComponent";
+			};
+			class SlingLoadDisplay
+			{
+				componentType="SlingLoadDisplayComponent";
+				resource="RscCustomInfoSlingLoad";
 			};
 			class VehicleDriverDisplay
 			{

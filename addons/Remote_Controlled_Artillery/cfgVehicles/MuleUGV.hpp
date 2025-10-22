@@ -63,7 +63,7 @@ class RC_Mule_UGV_Base: RC_Mule_UGV_Core
 
 	weapons[]=
 	{
-		"RC_target_confirmer",
+		"RC_target_confirmer_datalink",
 		"SmokeLauncher"
 	};
 	magazines[]=

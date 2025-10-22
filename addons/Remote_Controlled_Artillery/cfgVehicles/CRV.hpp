@@ -294,7 +294,7 @@ class RC_CRV_A: RC_CRV_Base
 		};
 	};
 
-	displayName="RC Hercules UGV (Re-pair/arm/fuel)";
+	displayName="RC Hercules U-CEV (Re-pair/arm/fuel)";
 	scope=2;
 	scopeCurator=2;
 	side=1;
