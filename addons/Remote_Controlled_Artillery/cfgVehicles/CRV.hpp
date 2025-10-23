@@ -68,6 +68,9 @@ class RC_CRV_Base: RC_CRV_Core
 	smokeLauncherGrenadeCount=18;
 	smokeLauncherAngle=270;
 
+	canAccessMineDetector=1;
+	mineDetectorRange=50;
+
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
@@ -93,6 +96,7 @@ class RC_CRV_Base: RC_CRV_Core
 		//"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
 		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
@@ -134,11 +138,12 @@ class RC_CRV_Base: RC_CRV_Core
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_gunner_fixated.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_CRV_commander_gunner_fixated.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="";
 			commanding=3;
+			canAccessMineDetector=1;
 
 			dontCreateAI=1;
 			primaryObserver=1;
@@ -165,17 +170,19 @@ class RC_CRV_Base: RC_CRV_Core
 			magazines[]=
 			{
 				"SmokeLauncherMag",
+				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};
 		};
 		class CommanderOptics : CommanderOptics
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_free.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_CRV_commander_free.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="RscWeaponRangeFinder";
 			commanding=2;
+			canAccessMineDetector=1;
 
 			gunnerCompartments="Compartment3";
 			primaryObserver=0;
@@ -185,12 +192,13 @@ class RC_CRV_Base: RC_CRV_Core
 
 			weapons[]=
 			{
-				//"RC_Laserdesignator_vehicle",
+				"RC_Laserdesignator_vehicle",
 				"SmokeLauncher"
 			};
 			magazines[]=
 			{
-				//"Laserbatteries",
+				"Laserbatteries",
+				"SmokeLauncherMag",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
 			};

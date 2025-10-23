@@ -4,7 +4,7 @@ class UserActions: UserActions
 	{
 		displayName="Name UV";
 		position="pos driver";
-		radius=15;
+		radius=5;
 		showwindow=0;
 		onlyforplayer=1;
 		shortcut="";
@@ -30,7 +30,7 @@ class UserActions: UserActions
 	{
 		displayName="Take Drive Controls";
 		position="pos commander";
-		radius=15;
+		radius=5;
 		showwindow=0;
 		onlyforplayer=1;
 		shortcut="";
@@ -42,7 +42,7 @@ class UserActions: UserActions
 	{
 		displayName="Take Drive Controls";
 		position="pos gunner";
-		radius=15;
+		radius=5;
 		showwindow=0;
 		onlyforplayer=1;
 		shortcut="";

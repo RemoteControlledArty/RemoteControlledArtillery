@@ -4,7 +4,7 @@ class UserActions: UserActions
 	{
 		displayName="Name UV";
 		position="pos driver";
-		radius=15;
+		radius=5;
 		showwindow=0;
 		onlyforplayer=1;
 		shortcut="";

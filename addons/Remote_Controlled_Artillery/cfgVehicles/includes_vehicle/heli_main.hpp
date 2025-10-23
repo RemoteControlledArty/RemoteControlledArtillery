@@ -38,7 +38,7 @@ crewCrashProtection=0.01;
 
 //edit values
 //O_Heli_Transport_04_bench_black_F  	//Chinook B_Heli_Transport_03_F
-slingLoadMaxCargoMass=20000;	//t 13500
+slingLoadMaxCargoMass=25000;	//t 13500
 maximumLoad=6000;	//t 4000	//c 6000
 maxSpeed=350;	//t250	//c300
 liftForceCoef=1.65;	//taru 1.3	//chinook 1.65;

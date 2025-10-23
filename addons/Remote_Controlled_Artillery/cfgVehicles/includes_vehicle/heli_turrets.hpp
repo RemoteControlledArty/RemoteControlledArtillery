@@ -5,7 +5,7 @@ class CopilotTurret: CopilotTurret
 
 	dontCreateAI=1;
 	primaryGunner=0;
-	primaryObserver=1;
+	primaryObserver=0;
 	isCopilot=1;
 	//dontCreateAI=1;
 	//cargoCanControlUAV=1;
@@ -48,30 +48,11 @@ class CopilotTurret: CopilotTurret
 	maxTurn=120;
 	initTurn=0;
 	*/
-	usePip=1;
+	usePip=1;	//needed?
 	//turretInfoType="RscOptics_Heli_Attack_01_gunner";
 	//turretInfoType="RscOptics_MBT_03_gunner";
 	unitInfoType="RscOptics_AV_pilot";
 	unitInfoTypeRTD="RscOptics_AV_pilot";
-
-	/*
-	weapons[]=
-	{
-		"CMFlareLauncher"
-	};
-	magazines[]=
-	{
-		"168Rnd_CMFlare_Chaff_Magazine"
-	};
-	*/
-
-	/*
-	weapons[]=
-	{
-		"FakeHorn"
-	};
-	magazines[]={};
-	*/
 
 	weapons[]=
 	{
@@ -200,34 +181,24 @@ class CopilotTurret: CopilotTurret
 	};
 	*/
 };
+/*
+class CopilotTurret2: CopilotTurret
+{
+	gunnerName="Turret Camera";
+	driverForceOptics=1;
+	driverCompartments="Compartment3";
+	dontCreateAI=0;
+	primaryGunner=1;
+	primaryObserver=0;
+	//isCopilot=1;
+};
+*/
 class LoadmasterTurret: LoadmasterTurret
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\panels_Heli_Copilot.hpp"
 	dontCreateAI=1;
 
-	//leadmaster is default gunner, so remote controllable
 	primaryGunner=0;
-	primaryObserver=1;
-	gunnerCompartments="Compartment2";
-
-	/*
-	primaryGunner=1;
 	primaryObserver=0;
-	gunnerCompartments="Compartment3";
-	*/
-	
-	/*
-	weapons[]=
-	{
-		"RC_target_confirmer_datalink",
-		//"CMFlareLauncher"
-		//"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"RC_target_confirmer_mag",
-		//"168Rnd_CMFlare_Chaff_Magazine"
-		//"SmokeLauncherMag"
-	};
-	*/
+	gunnerCompartments="Compartment2";
 };

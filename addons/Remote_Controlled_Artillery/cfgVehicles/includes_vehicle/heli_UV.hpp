@@ -6,10 +6,15 @@
 
 isUav=1;
 vehicleClass="Autonomous";
+/*
 uavCameraDriverPos="pip_pilot_pos";
 uavCameraDriverDir="pip_pilot_dir";
 uavCameraGunnerPos="PiP1_pos";
 uavCameraGunnerDir="PiP1_dir";
+*/
+
+uavCameraDriverPos="Copilot_view_dir";
+uavCameraDriverDir="Copilot_view_dir";
 
 memoryPointTaskMarker="TaskMarker_1_pos";
 memoryPointDriverOptics="Copilot_view_dir";
