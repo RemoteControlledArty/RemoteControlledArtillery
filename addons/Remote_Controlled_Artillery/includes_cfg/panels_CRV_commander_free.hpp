@@ -31,7 +31,7 @@ class Components: Components
 	};
 	class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 	{
-		defaultDisplay="SensorDisplay";
+		defaultDisplay="MineDetectorDisplay";
 
 		class Components
 		{

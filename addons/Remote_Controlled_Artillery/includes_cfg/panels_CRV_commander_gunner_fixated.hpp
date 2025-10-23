@@ -2,14 +2,14 @@ class Components: Components
 {
 	class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 	{
-		defaultDisplay="EmptyDisplay";
+		defaultDisplay="MineDetectorDisplay";
 
 		class Components
 		{
 			class MineDetectorDisplay
 			{
 				componentType="MineDetectorDisplayComponent";
-				range=50;
+				range=75;
 				resource="RscCustomInfoMineDetect";
 			};
 			class MinimapDisplay
@@ -29,28 +29,28 @@ class Components: Components
 	};
 	class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 	{
-		defaultDisplay="EmptyDisplay";
+		defaultDisplay="MinimapDisplay";
 
 		class Components
 		{
-			class EmptyDisplay
+			class MinimapDisplay
 			{
-				componentType="EmptyDisplayComponent";
+				componentType="MinimapDisplayComponent";
+				resource="RscCustomInfoMiniMap";
 			};
 			class MineDetectorDisplay
 			{
 				componentType="MineDetectorDisplayComponent";
-				range=50;
+				range=75;
 				resource="RscCustomInfoMineDetect";
 			};
 			class UAVFeedDisplay
 			{
 				componentType="UAVFeedDisplayComponent";
 			};
-			class MinimapDisplay
+			class EmptyDisplay
 			{
-				componentType="MinimapDisplayComponent";
-				resource="RscCustomInfoMiniMap";
+				componentType="EmptyDisplayComponent";
 			};
 		};
 	};

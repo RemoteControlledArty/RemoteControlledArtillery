@@ -69,7 +69,7 @@ class RC_CRV_Base: RC_CRV_Core
 	smokeLauncherAngle=270;
 
 	canAccessMineDetector=1;
-	mineDetectorRange=50;
+	mineDetectorRange=75;
 
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
