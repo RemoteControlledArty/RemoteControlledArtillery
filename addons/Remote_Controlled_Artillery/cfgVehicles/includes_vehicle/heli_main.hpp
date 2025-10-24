@@ -15,7 +15,7 @@ weapons[]=
 magazines[]=
 {
 	"RC_1Rnd_APS_M",
-	"RC_1Rnd_APS_M"
+	//"RC_1Rnd_APS_M"
 	//"SmokeLauncherMag",
 	//"SmokeLauncherMag"
 };
@@ -38,17 +38,19 @@ crewCrashProtection=0.01;
 
 //edit values
 //O_Heli_Transport_04_bench_black_F  	//Chinook B_Heli_Transport_03_F
-slingLoadMaxCargoMass=25000;	//t 13500
+slingLoadMaxCargoMass=25000;	//t 13500	ch
 maximumLoad=6000;	//t 4000	//c 6000
 maxSpeed=350;	//t250	//c300
 liftForceCoef=1.65;	//taru 1.3	//chinook 1.65;
 
-ace_cargo_hasCargo=1;
-ace_cargo_space=20;	//t8 c40
+//ace_cargo_hasCargo=1;
+//ace_cargo_space=20;	//t8 c40
 
+/*
 ace_refuel_canReceive=1;	//1
 ace_refuel_flowRate=8;	//8
 ace_refuel_fuelCapacity=3000;	//t ?, ch 3914
+*/
 
 //airCapacity=10; ???
 //bodyFrictionCoef=2.8;	//2.8

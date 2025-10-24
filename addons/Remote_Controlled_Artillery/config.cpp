@@ -368,28 +368,22 @@ class CfgPatches
 			"RC_OM_Heli_Bench_blk",
 			"RC_OM_Heli_Bench_blk_O",
 			"RC_OM_Heli_Bench_blk_I",
+
 			"RC_OM_Heli_Transport_blk",
 			"RC_OM_Heli_Transport_blk_O",
 			"RC_OM_Heli_Transport_blk_I",
+
 			"RC_OM_Heli_MedEvac_blk",
 			"RC_OM_Heli_MedEvac_blk_O",
 			"RC_OM_Heli_MedEvac_blk_I",
 
-			"RC_OM_Heli_Cargo_blk",
-			"RC_OM_Heli_Cargo_blk_O",
-			"RC_OM_Heli_Cargo_blk_I",
-			"RC_OM_Heli_Ammo_blk",
-			"RC_OM_Heli_Ammo_blk_O",
-			"RC_OM_Heli_Ammo_blk_I",
-			"RC_OM_Heli_Multi_blk",
-			"RC_OM_Heli_Multi_blk_O",
-			"RC_OM_Heli_Multi_blk_I",
-			"RC_OM_Heli_Fuel_blk",
-			"RC_OM_Heli_Fuel_blk_O",
-			"RC_OM_Heli_Fuel_blk_I",
-			"RC_OM_Heli_Repair_blk",
-			"RC_OM_Heli_Repair_blk_O",
-			"RC_OM_Heli_Repair_blk_I",
+			"RC_OM_Heli_MultiMission_blk",
+			"RC_OM_Heli_MultiMission_blk_O",
+			"RC_OM_Heli_MultiMission_blk_I",
+
+			"RC_OMH_MultiMissionPod_blk",
+			"RC_OMH_MultiMissionPod_blk_O",
+			"RC_OMH_MultiMissionPod_blk_I",
 
 			"RC_OMH_BenchPod_blk",
 			"RC_OMH_BenchPod_blk_O",
@@ -402,11 +396,6 @@ class CfgPatches
 			"RC_OMH_MedEvacPod_blk",
 			"RC_OMH_MedEvacPod_blk_O",
 			"RC_OMH_MedEvacPod_blk_I",
-
-			"RC_OMH_AmmoPod_blk",
-			"RC_OMH_CargoPod_blk",
-			"RC_OMH_FuelPod_blk",
-			"RC_OMH_RepairPod_blk",
 
 			"RC_RespawnTruck_A",
 			"RC_RespawnTruck_WD",
@@ -819,6 +808,8 @@ class CfgFunctions
 			class RC_AT_TurretOwner {};
 			class RC_AT_Turn {};
 			class RC_APS_Activate {};
+
+			class RC_MinePlow {};
 
 			class RC_OrderTurretTurnKey {};
 			class RC_OrderTurretTurnOwner {};

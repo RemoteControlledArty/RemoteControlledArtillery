@@ -45,7 +45,7 @@ class RC_CRV_Base: RC_CRV_Core
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km_CRV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -69,12 +69,15 @@ class RC_CRV_Base: RC_CRV_Core
 	smokeLauncherAngle=270;
 
 	canAccessMineDetector=1;
-	mineDetectorRange=75;
+	mineDetectorRange=60;
 
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP0_pos";
-	uavCameraGunnerDir="PiP0_dir";
+	ace_cargo_hasCargo=1;
+	ace_cargo_space=5;	//4
+
+	uavCameraDriverPos="driverview_old";
+	uavCameraDriverDir="driverview_old";
+	uavCameraGunnerPos="commanderview";
+	uavCameraGunnerDir="commanderview";
 	
 	hiddenSelectionsTextures[]=
 	{
@@ -276,6 +279,10 @@ class RC_CRV_A: RC_CRV_Base
 			#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
+		class RC_MinePlow
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initMinePlow.hpp"
+		};
 	};
 
 	class UserActions: UserActions
@@ -300,7 +307,7 @@ class RC_CRV_A: RC_CRV_Base
 		};
 	};
 
-	displayName="RC Hercules U-CEV (Re-pair/arm/fuel)";
+	displayName="RC Hercules U-CEV (Re-arm/pair/fuel/supply)";
 	scope=2;
 	scopeCurator=2;
 	side=1;

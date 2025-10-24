@@ -67,12 +67,17 @@ while {alive _veh} do {
 };
 
 
+//widht=1.85x2, saver 1.9x2, 2m radius = -0.1 offset
+//setCruiseControl does not work for AI
+//scanradius/lowspeed=interval
+
 [] spawn {
 	private _veh = getconnectedUAV player;
 	private _range = 4;
-	private _scanRadius = 3;
-	private _interval = 0.25;
+	private _scanRadius = 2;
+	private _interval = 0.1;
 	private _lowSpeed = 20;
+	private _resetSpeed = 200;
 	private _anim = "MovePlow";
 	
 	while {alive _veh && local _veh} do {
@@ -80,8 +85,9 @@ while {alive _veh} do {
 		if (_veh animationPhase _anim > 0.5) then {
 			
 			_veh setCruiseControl [_lowSpeed, false];
+			_veh limitSpeed _lowSpeed;
 			
-			private _frontPos = _veh modelToWorld [0, _range, -0.3];
+			private _frontPos = _veh modelToWorld [0, _range, -2];
 			private _mines = nearestObjects [_frontPos, ["MineBase"], _scanRadius];
 		
 			{
@@ -91,7 +97,8 @@ while {alive _veh} do {
 				};
 			} forEach _mines;
 		} else {
-			_veh setCruiseControl [200, false];
+			_veh setCruiseControl [_resetSpeed, false];
+			_veh limitSpeed _resetSpeed;
 		};
 	
 		sleep _interval;

@@ -9,7 +9,7 @@ class Components: Components
 			class MineDetectorDisplay
 			{
 				componentType="MineDetectorDisplayComponent";
-				range=75;
+				range=60;
 				resource="RscCustomInfoMineDetect";
 			};
 			class MinimapDisplay
@@ -33,16 +33,16 @@ class Components: Components
 
 		class Components
 		{
+			class MineDetectorDisplay
+			{
+				componentType="MineDetectorDisplayComponent";
+				range=60;
+				resource="RscCustomInfoMineDetect";
+			};
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
 				resource="RscCustomInfoMiniMap";
-			};
-			class MineDetectorDisplay
-			{
-				componentType="MineDetectorDisplayComponent";
-				range=75;
-				resource="RscCustomInfoMineDetect";
 			};
 			class UAVFeedDisplay
 			{

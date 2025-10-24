@@ -651,12 +651,6 @@ class RC_IFV_1_A_I: RC_IFV_1_A
 	{
 		class MainTurret: MainTurret
 		{
-			weapons[]=
-			{
-				"RC_autocannon_20mm_CTWS",
-				"RC_MMG_338_APC",
-				"SmokeLauncher"
-			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Namer_20mm_yellow.hpp"
 		};
 
@@ -791,12 +785,6 @@ class RC_IFV_1_ReTex_D_I: RC_IFV_1_ReTex_D
 	{
 		class MainTurret: MainTurret
 		{
-			weapons[]=
-			{
-				"RC_autocannon_20mm_CTWS",
-				"RC_MMG_338_APC",
-				"SmokeLauncher"
-			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Namer_20mm_yellow.hpp"
 		};
 
