@@ -199,6 +199,8 @@ class RC_Challenger2_A_Base: RC_Challenger2_Base
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
 					commanding=1;
+					minTurn=-360;
+					maxTurn=360;
 					//turretInfoType="RscOptics_MBT_03_gunner";
 
 					weapons[]=
