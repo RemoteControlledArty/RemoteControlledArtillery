@@ -16,16 +16,21 @@ params ['_veh'];
 //center to mineplow = 3.7m
 //hull until plow collider = 1.5m
 
+
 [_veh] spawn {
 	params ['_veh'];
 
-	private _range1 = 3.9;
-	private _range2 = 3.15;
-	private _scanRadius = 2;
+	private _range = 4.2;
+	private _scanRadius = 1.9;
+	private _refRange = 10;
+	private _height = -2.4;
+	
 	private _interval = 0.05;
-	private _lowSpeed = 20;
+	private _lowSpeed = 15;
 	private _resetSpeed = 200;
 	private _anim = "MovePlow";
+	
+	private _oldPos = getPosASL _veh;
 	
 	while {alive _veh} do {
 
@@ -36,22 +41,22 @@ params ['_veh'];
 	
 		if (_veh animationPhase _anim > 0.5) then {
 			
-			_veh setCruiseControl [_lowSpeed, false];
-			_veh limitSpeed _lowSpeed;
-			
-			private _mines = nearestObjects [(_veh modelToWorld [0, _range1, -2]), ["MineBase"], _scanRadius];
-    		_mines pushBackUnique (nearestObjects [(_veh modelToWorld [0, _range2, -2]), ["MineBase"], _scanRadius]);
-
-			private _refPos = (_veh modelToWorld [0, 10, -2]);
-			{
-				//even with > 0.4 doesnt work?
-				if ((_refPos distance2D (getPosAGL _x)) > 6.1) then {
-					if (alive _x) then {
-
+			if (_oldPos isNotEqualTo (getPosASL _veh)) then { 
+				
+				_veh setCruiseControl [_lowSpeed, false];
+				_veh limitSpeed _lowSpeed;
+	
+				private _mines = nearestObjects [(_veh modelToWorld [0, _range, _height]), ["MineBase"], _scanRadius];
+	
+				private _refPos = (_veh modelToWorld [0, -_refRange, _height]);
+				{
+					if (((_refPos distance2D (ASLToAGL (getPosASL _x))) < (_refRange+_range)) && alive _x) then {
+	
 						triggerAmmo _x;
 					};
-				};
-			} forEach _mines;
+				} forEach _mines;
+			};
+			_oldPos = getPosASL _veh;
 		} else {
 			_veh setCruiseControl [_resetSpeed, false];
 			_veh limitSpeed _resetSpeed;

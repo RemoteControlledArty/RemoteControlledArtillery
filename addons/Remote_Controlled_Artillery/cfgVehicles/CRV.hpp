@@ -279,10 +279,12 @@ class RC_CRV_A: RC_CRV_Base
 			#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
 		};
+		/*
 		class RC_MinePlow
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initMinePlow.hpp"
 		};
+		*/
 	};
 
 	class UserActions: UserActions
