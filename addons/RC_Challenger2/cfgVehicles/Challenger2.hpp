@@ -245,6 +245,7 @@ class RC_Challenger2_A_Base: RC_Challenger2_Base
 				class LoaderTurret: LoaderTurret
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
+					dontCreateAI=1;
 
 					weapons[]=
 					{
