@@ -8792,6 +8792,7 @@ class RC_1Rnd_105mm_Mo_shells: 32Rnd_155mm_Mo_shells
 	displayName="HE";
 	displayNameShort="HE";
 	count=1;
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_shells: RC_1Rnd_105mm_Mo_shells
 {
@@ -8960,6 +8961,7 @@ class RC_1Rnd_105mm_Mo_HEAB: 32Rnd_155mm_Mo_shells
 	displayName="HE Airburst 15m";
 	displayNameShort="HE Airburst 15m";
 	count=1;
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_HEAB: RC_1Rnd_105mm_Mo_HEAB
 {
@@ -9128,6 +9130,7 @@ class RC_1Rnd_105mm_Mo_lowHEAB: 32Rnd_155mm_Mo_shells
 	displayName="HE low Airburst 6m";
 	displayNameShort="HE low Airburst 6m";
 	count=1;
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_lowHEAB: RC_1Rnd_105mm_Mo_lowHEAB
 {
@@ -9297,6 +9300,7 @@ class RC_1Rnd_105mm_Mo_mine: 6Rnd_155mm_Mo_mine
 	displayName="AP Mines";
 	displayNameShort="AP Mines";
 	count=1;
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_mine: RC_1Rnd_105mm_Mo_mine
 {
@@ -9466,6 +9470,7 @@ class RC_1Rnd_105mm_Mo_Cluster: 2Rnd_155mm_Mo_Cluster
 	displayName="Cluster [7% UXO]";
 	displayNameShort="Cluster";
 	count=1;
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_Cluster: RC_1Rnd_105mm_Mo_Cluster
 {
@@ -9635,6 +9640,7 @@ class RC_1Rnd_105mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	count=1;
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_smoke: RC_1Rnd_105mm_Mo_smoke
 {
@@ -9805,6 +9811,7 @@ class RC_1Rnd_105mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 	displayName="MP Laser Guided";
 	displayNameShort="MP Laser Guided";
 	count=1;
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_LaserGuided: RC_1Rnd_105mm_Mo_LaserGuided
 {
@@ -9970,6 +9977,7 @@ class RC_1Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_LaserGuided
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Guided";
 	displayNameShort="MP Guided";
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_MultiGuided: RC_1Rnd_105mm_Mo_MultiGuided
 {
@@ -10139,6 +10147,7 @@ class RC_1Rnd_105mm_Mo_AT_mine: 6Rnd_155mm_Mo_AT_mine
 	displayName="AT Mines";
 	displayNameShort="AT Mines";
 	count=1;
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_AT_mine: RC_1Rnd_105mm_Mo_AT_mine
 {
@@ -10306,6 +10315,7 @@ class RC_1Rnd_105mm_Mo_Illum: 32Rnd_155mm_Mo_shells
 	displayNameShort="Illum";
 	ammo="Flare_155mm_AMOS_White";
 	count=1;
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_Illum: RC_1Rnd_105mm_Mo_Illum
 {
@@ -10471,6 +10481,7 @@ class RC_1Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LaserGuided
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";
 	displayNameShort="LG 2m Delayed";
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_LG_DelayedFuse: RC_1Rnd_105mm_Mo_LG_DelayedFuse
 {
@@ -10639,6 +10650,7 @@ class RC_1Rnd_105mm_Mo_backupHEAB: 32Rnd_155mm_Mo_shells
 	displayName="HE AB [direct]";
 	displayNameShort="HE AB [direct]";
 	count=1;
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_backupHEAB: RC_1Rnd_105mm_Mo_backupHEAB
 {
@@ -10803,6 +10815,7 @@ class RC_1Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backupHEAB
 {
 	displayName="HE lAB [direct]";
 	displayNameShort="HE lAB [direct]";
+	muzzleImpulseFactor[]={1,1};
 };
 class RC_2Rnd_105mm_Mo_backuplowHEAB: RC_1Rnd_105mm_Mo_backuplowHEAB
 {

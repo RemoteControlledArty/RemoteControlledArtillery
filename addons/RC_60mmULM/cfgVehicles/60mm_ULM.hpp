@@ -509,7 +509,7 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 		};
 	};
 
-	isULM=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	isULM=1; // 1 = is ultralight mortar, show display UI
 	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=0.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
@@ -643,6 +643,20 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 		};
 	};
 };
+class RC_60mm_ULM_Vic_AutoCharge: RC_60mm_ULM_Vic
+{
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			initElev=-45;
+		};
+	};
+
+	isULM=2; // 1 = display UI, 1 = display alternate automatic charge 45° UI
+	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
+	displayName="60mm advanced Mortar (automatic charge)";
+};
 
 
 class NDS_M224_mortar_base;
@@ -685,7 +699,7 @@ class NDS_M224_mortar_core: NDS_M224_mortar_base
 };
 class NDS_M224_mortar: NDS_M224_mortar_core
 {
-	isULM=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	isULM=1; // 1 = display UI
 	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=1;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy

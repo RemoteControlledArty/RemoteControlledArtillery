@@ -326,3 +326,9 @@ class RC_ULM_Rsc: RC_Artillery {
 	//delete RscText_1013;
 	//delete RscText_1014;
 };
+class RC_ULM_AC_Rsc: RC_Artillery {
+	onLoad = "uiNameSpace setVariable ['RC_ULM_AC_Rsc', _this select 0]";
+
+	//delete RscText_1013;
+	//delete RscText_1014;
+};

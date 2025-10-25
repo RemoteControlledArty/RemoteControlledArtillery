@@ -1,6 +1,9 @@
 params ["_unit"];
 
-if ((secondaryWeapon _unit != "RC_60mm_ULM_Bag") || !(local _unit) || !(isPlayer _unit) || (vehicle player != player)) exitwith {};
+private _secWeap = secondaryWeapon _unit;
+private _secWeap = secondaryWeapon _unit;
+if (!(_secWeap in ["RC_60mm_ULM_Bag", "RC_60mm_ULM_Bag_AutoCharge"]) || !(local _unit) || !(isPlayer _unit) || (vehicle player != player)) exitwith {};
+//(secondaryWeapon _unit != "RC_60mm_ULM_Bag")
 
 if (weaponLowered _unit) then {_unit switchMove "amovpercmstpslowwrfldnon"};
 
@@ -19,7 +22,14 @@ _KK_fnc_setPosAGLS = {
 };
 
 
-_mortar = "RC_60mm_ULM_Vic" createVehicle _pos;
+_mortar = objNull;
+private _ULMtype = _secWeap == "RC_60mm_ULM_Bag";
+if (_ULMtype) then {
+	_mortar = "RC_60mm_ULM_Vic" createVehicle _pos;
+} else {
+	_mortar = "RC_60mm_ULM_Vic_AutoCharge" createVehicle _pos;
+};
+
 [_mortar, _pos] call _KK_fnc_setPosAGLS;
 _mortar setDir _dir;
 if ((getPosATL _unit) isEqualTo (getPos _unit)) then {_mortar setVectorUp (surfaceNormal _pos)} else {_mortar setVectorUp (vectorUp _unit)};
@@ -90,7 +100,11 @@ if !(isNil "_loadedMag") then {
 	};
 };
 
-_unit removeWeapon "RC_60mm_ULM_Bag";
+if (_ULMtype) then {
+	_unit removeWeapon "RC_60mm_ULM_Bag";
+} else {
+	_unit removeWeapon "RC_60mm_ULM_Bag_AutoCharge";
+};
 
 /*
 switch (true) do

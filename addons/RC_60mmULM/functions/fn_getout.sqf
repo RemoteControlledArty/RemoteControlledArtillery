@@ -47,7 +47,14 @@ _unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_Illum";
 
 
 deleteVehicle _vehicle;
-_unit addWeapon "RC_60mm_ULM_Bag";
+private _isULM = getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "isULM");
+
+if (_isULM == 1) then {
+	_unit addWeapon "RC_60mm_ULM_Bag";
+} else {
+	_unit addWeapon "RC_60mm_ULM_Bag_AutoCharge";
+};
+
 if (_loadedMag != "") then {
 	_unit addMagazine [_loadedMag, 1];
 };

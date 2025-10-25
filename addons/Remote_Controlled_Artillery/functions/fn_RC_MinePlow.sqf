@@ -53,6 +53,10 @@ params ['_veh'];
 					if (((_refPos distance2D (ASLToAGL (getPosASL _x))) < (_refRange+_range)) && alive _x) then {
 	
 						triggerAmmo _x;
+
+						//deleteVehicle _x;
+						//_expl = "RC_APS_Expl_Scripted" createVehicle (getPosATL _x);
+						//_expl setDamage 1;
 					};
 				} forEach _mines;
 			};

@@ -64,6 +64,11 @@ class RC_60mm_ULM_Bag: twc_2inch_bag
 		mass=50;
 	};
 };
+class RC_60mm_ULM_Bag_AutoCharge: RC_60mm_ULM_Bag
+{
+	displayname="60mm advanced Mortar (automatic charge)";
+	displayNameShort="60mm advanced Mortar (automatic charge)";
+};
 
 
 class mortar_82mm_base;
@@ -202,4 +207,9 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 		/*
 	};
 	*/
+};
+class RC_60mm_ULM_Weapon_AutoCharge: RC_60mm_ULM_Weapon
+{
+	displayname="60mm advanced Mortar (automatic charge)";
+	displayNameShort="60mm Mortar";
 };
