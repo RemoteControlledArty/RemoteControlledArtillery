@@ -20,13 +20,10 @@ RC_ULM_AC_UI = [] spawn {
 		_player = player;
 		_vicPlayer = vehicle player;
 
-		systemchat "sleep";
-
 		if ((_vicPlayer isEqualTo _player) || (cameraView != "GUNNER")) then {
 			// UI Shouldn't be Shown so we cut it
 			"RC_ULM_AC_Rsc" cutFadeOut 0;
 			RC_ULM_AC_InUI = false;
-			systemchat "false";
 			continue;
 		};
 
@@ -48,7 +45,6 @@ RC_ULM_AC_UI = [] spawn {
 
 			// We are in the UI now
 			RC_ULM_AC_InUI = true;
-			systemchat "UI";
 			
 			// If our UAV is Autonomous we want to make it not
 			// We need to remote exec it since setAutonomous is of Local Effect so it needs to be where the UAV is Local
@@ -146,8 +142,11 @@ RC_ULM_AC_UI = [] spawn {
 
 			//ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
+			_ctrlMediumSol = _display displayCtrl IDC_MEDSOL;
+			_ctrlMediumETA = _display displayCtrl IDC_MEDETA;
 
 			// checks if shell requires lock before firing to activate guidance
+			_currentMag = currentMagazine _uav;
 			private _requiresLock = RC_RequiresLockHash get _currentMag;
 			if (isNil "_requiresLock") then {
 				_requiresLock = (getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_RequiresLock"))==1;
@@ -273,10 +272,33 @@ RC_ULM_AC_UI = [] spawn {
 				_preSol = sqrt ((_roundVelocity^4) - (GRAVITY * ((2 * (_roundVelocity^2) * _Difference) + (GRAVITY * (_targetDistance^2)))));
 
 				/* Calculate Marker Medium Angle */
+				/*
+				_calcHigh = atan (((_roundVelocity^2) + _preAngle) / (GRAVITY * _targetDistance));
+				_calcHigh = round (_calcHigh * 100) / 100;
+				_highAngleSol = (3200 * atan (((_roundVelocity^2) + _preSol) / (GRAVITY * _targetDistance))) / pi / MAGIC_CONSTANT;
+				_travelTimeHigh = round ((2 * _roundVelocity) * (sin _calcHigh)) / GRAVITY;
+				*/
+
 				_calcMedium = atan (((_roundVelocity^2) + _preAngle) / (GRAVITY * _targetDistance));
 				_calcMedium = round (_calcMedium * 100) / 100;
 				_mediumAngleSol = (3200 * atan (((_roundVelocity^2) + _preSol) / (GRAVITY * _targetDistance))) / pi / MAGIC_CONSTANT;
 				_travelTimeMedium = round ((2 * _roundVelocity) * (sin _calcMedium)) / GRAVITY;
+
+
+				/*
+				_unit addEventHandler ["Fired", {
+					params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_mag", "_projectile"];
+					
+					private _vel = velocity _projectile;
+					
+					private _currentSpeed = vectorMagnitude _vel;
+					private _newSpeed = 200;
+					private _factor = _newSpeed / _currentSpeed;
+					
+					_projectile setVelocity (_vel vectorMultiply _factor);
+				}];
+				*/
+
 				
 				// AZ/EL coloring when close to firing solution
 				#include "\RC_60mmULM\functions\temporary_coloring_workaround_ULM_AutoCharge.sqf"

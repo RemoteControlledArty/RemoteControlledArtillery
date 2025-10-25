@@ -649,7 +649,8 @@ class RC_60mm_ULM_Vic_AutoCharge: RC_60mm_ULM_Vic
 	{
 		class MainTurret: MainTurret
 		{
-			initElev=-45;
+			initElev=-45;	//800MIL
+			minelev=-55;	//<800MIL for use on uneven ground
 		};
 	};
 

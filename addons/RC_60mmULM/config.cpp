@@ -50,6 +50,7 @@ class CfgFunctions
       		//class preInit {preInit=1;};
       		//class InitCBASettings {preInit=1;};
 			class RC_UI_Loop_ULM {postInit=1;};
+			class RC_UI_Loop_ULM_AutoCharge {postInit=1;};
       		class init {postInit=1;};
 			//class ui {};
 			class deploy {};
