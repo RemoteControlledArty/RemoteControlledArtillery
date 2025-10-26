@@ -144,6 +144,7 @@ RC_ULM_AC_UI = [] spawn {
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
 			_ctrlMediumSol = _display displayCtrl IDC_MEDSOL;
 			_ctrlMediumETA = _display displayCtrl IDC_MEDETA;
+			_ctrlMediumMV = _display displayCtrl IDC_MEDMV;
 
 			// checks if shell requires lock before firing to activate guidance
 			_currentMag = currentMagazine _uav;
@@ -186,6 +187,7 @@ RC_ULM_AC_UI = [] spawn {
 			/* Declare vars */
 			private _mediumAngleSol = 0;
 			private _travelTimeMedium = 0;
+			private _adjustedVelocity = 0;
 
 			// If we actually have a Target (thats not too close)
 			if (((cursorTarget isNotEqualto objNull) && { _selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE }) || !(RC_Artillery_Markers isEqualTo [])) then {
@@ -254,7 +256,8 @@ RC_ULM_AC_UI = [] spawn {
 				_targetAzimuth = SLANT_ANGLE * _targetAzimuth;
 
 				//velocity of the round
-				_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
+				//_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
+				_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
 
 				//displayed target
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
@@ -267,37 +270,60 @@ RC_ULM_AC_UI = [] spawn {
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 
 
-				/* Calculate angles */
-				_preAngle = sqrt ((_roundVelocity^4) - GRAVITY * (GRAVITY * (_targetDistance^2) + 2 * _realElevationOriginal * _roundVelocity^2));
-				_preSol = sqrt ((_roundVelocity^4) - (GRAVITY * ((2 * (_roundVelocity^2) * _Difference) + (GRAVITY * (_targetDistance^2)))));
+				//private _targetDistance = 100;      // set the distance you tested
+				//private _difference = 0;            // test case: flat ground
 
-				/* Calculate Marker Medium Angle */
+				private _tanA = tan 45;
+				private _cosA = cos 45;
+				private _cosA2 = _cosA * _cosA;
+
+				private _numerator = GRAVITY * (_targetDistance * _targetDistance);
+				private _den = (_targetDistance * _tanA) - _difference;
+				private _denFactor = 2 * _cosA2 * _den;
+
+				private _insideSqrt = _numerator / _denFactor;
+				if (_den > 0 && _denFactor > 0 && _insideSqrt > 0) then {
+					_adjustedVelocity = sqrt _insideSqrt;
+				};
+				//to limit max range
+				if (_adjustedVelocity > _roundVelocity) then {
+					_adjustedVelocity = -1;
+				};
+
 				/*
-				_calcHigh = atan (((_roundVelocity^2) + _preAngle) / (GRAVITY * _targetDistance));
-				_calcHigh = round (_calcHigh * 100) / 100;
-				_highAngleSol = (3200 * atan (((_roundVelocity^2) + _preSol) / (GRAVITY * _targetDistance))) / pi / MAGIC_CONSTANT;
-				_travelTimeHigh = round ((2 * _roundVelocity) * (sin _calcHigh)) / GRAVITY;
+				hintSilent format [
+					"Debug ballistic calc\n\nR: %1\nh: %2\nangleMils: %3\nangleRad: %4\n tan(angle): %5\n cos^2(angle): %6\n\nnumerator (g*R^2): %7\n_den (R*tan - h): %8\n_denFactor (2*cos^2*_den): %9\ninsideSqrt: %10\ncomputed v: %11",
+					_targetDistance, _difference, 800, 45, _tanA, _cosA2,
+					_numerator, _den, _denFactor, _insideSqrt, _roundVelocity
+				];
 				*/
 
-				_calcMedium = atan (((_roundVelocity^2) + _preAngle) / (GRAVITY * _targetDistance));
-				_calcMedium = round (_calcMedium * 100) / 100;
-				_mediumAngleSol = (3200 * atan (((_roundVelocity^2) + _preSol) / (GRAVITY * _targetDistance))) / pi / MAGIC_CONSTANT;
-				_travelTimeMedium = round ((2 * _roundVelocity) * (sin _calcMedium)) / GRAVITY;
+				ULM_Velocity = _adjustedVelocity;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
 
+				private _ETA = -1;
+				if (_adjustedVelocity > 0) then {
 
-				/*
-				_unit addEventHandler ["Fired", {
-					params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_mag", "_projectile"];
-					
-					private _vel = velocity _projectile;
-					
-					private _currentSpeed = vectorMagnitude _vel;
-					private _newSpeed = 200;
-					private _factor = _newSpeed / _currentSpeed;
-					
-					_projectile setVelocity (_vel vectorMultiply _factor);
-				}];
-				*/
+					// Horizontal velocity
+					private _vX = _adjustedVelocity * cos 45;	
+					private _vY = _adjustedVelocity * sin 45;
+
+					// Horizontal-only ETA (simpler, if _Difference==0)
+					private _ETA_h = _targetDistance / _vX;
+
+					// Full quadratic solution
+					private _discriminant = (_vY * _vY) - (2 * GRAVITY * _difference);
+
+					if (_discriminant >= 0) then {
+						_ETA = (_vY + sqrt(_discriminant)) / GRAVITY;  // first impact
+					};
+
+					// Optional: fallback to horizontal-only if h=0
+					if (_difference == 0) then { _ETA = _ETA_h; };
+				};
+
+				_mediumAngleSol = 800;	//45°
+				_travelTimeMedium = _ETA;
+				ULM_ETA = _ETA;
 
 				
 				// AZ/EL coloring when close to firing solution
@@ -338,11 +364,13 @@ RC_ULM_AC_UI = [] spawn {
 				// Parse these back to Numbers incase they are NaN
 				_mediumAngleSol = parseNumber str _mediumAngleSol;
 				_travelTimeMedium = parseNumber str _travelTimeMedium;
+				_adjustedVelocity = parseNumber str _adjustedVelocity;
 	
 				// If they were NaN then make them Zero
 				if (_mediumAngleSol < 0) then {
 					_mediumAngleSol = 0;
 					_travelTimeMedium = 0;
+					_adjustedVelocity = 0;
 				};
 			} else {
 				//display if no target is available/selected
@@ -358,6 +386,7 @@ RC_ULM_AC_UI = [] spawn {
 				_ctrlDifference ctrlSetText "DIF: 0000" ;
 				_ctrlMediumSol ctrlSetText "med EL: 0000";
 				_ctrlMediumETA ctrlSetText "ETA: 000";
+				_ctrlMediumMV ctrlSetText "m/s: 000";
 
 				// If we have no Targets
 				_ctrlMessage ctrlSetTextColor [1, 0, 0, 1];
@@ -366,9 +395,11 @@ RC_ULM_AC_UI = [] spawn {
 			};
 			_ctrlMediumSol ctrlShow true;
 			_ctrlMediumETA ctrlShow true;
+			_ctrlMediumMV ctrlShow true;
 
 			_ctrlMediumSol ctrlSetTextColor [1, 1, 1, 1];
 			_ctrlMediumETA ctrlSetTextColor [1, 1, 1, 1];
+			_ctrlMediumMV ctrlSetTextColor [1, 1, 1, 1];
 
 			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
@@ -384,6 +415,12 @@ RC_ULM_AC_UI = [] spawn {
 				_ctrlMediumETA ctrlSetText Format ["ETA: %1", [_travelTimeMedium, 3, 0] call CBA_fnc_formatNumber];
 			} else {
 				_ctrlMediumETA ctrlSetText Format ["ETA: 000%1"];
+			};
+
+			if (_adjustedVelocity isEqualType 0) then {
+				_ctrlMediumMV ctrlSetText Format ["m/s: %1", [_adjustedVelocity, 3, 0] call CBA_fnc_formatNumber];
+			} else {
+				_ctrlMediumMV ctrlSetText Format ["m/s: 000%1"];
 			};
 		};
 	};

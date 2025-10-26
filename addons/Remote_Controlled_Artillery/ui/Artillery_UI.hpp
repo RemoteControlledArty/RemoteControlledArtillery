@@ -418,7 +418,8 @@ class RC_ULM_AC_Rsc: RC_Artillery_Base
 		RscText_1027,
 		RscText_1028,
 		RscText_1029,
-		RscText_1030
+		RscText_1030,
+		RscText_1031
 	};
 
 	class RscText_1029: RscText_1001
@@ -435,5 +436,13 @@ class RC_ULM_AC_Rsc: RC_Artillery_Base
 		text = "ETA: 000"; //--- ToDo: Localize;
 		x = "0.915154 * safezoneW + safezoneX";
 		y = "0.1639327 * safezoneH + safezoneY";
+	};
+	class RscText_1031: RscText_1001
+	{
+		idc = IDC_MEDMV;
+		text = "m/s: 000"; //--- ToDo: Localize;
+
+		x = "0.95165 * safezoneW + safezoneX";
+		y = "0.1859345 * safezoneH + safezoneY";
 	};
 };
