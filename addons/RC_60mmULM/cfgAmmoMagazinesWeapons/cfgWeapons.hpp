@@ -72,16 +72,14 @@ class RC_60mm_ULM_Bag_AutoCharge: RC_60mm_ULM_Bag
 
 
 class mortar_82mm_base;
-class RC_60mm_ULM_Weapon_Base: mortar_82mm_base
+class RC_60mm_ULM_Weapon_Core: mortar_82mm_base
 {
 	class Single1;
 	class Single2;
 	class Single3;
 };
-class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
+class RC_60mm_ULM_Weapon_Base: RC_60mm_ULM_Weapon_Core
 {
-	displayname="60mm advanced Mortar";
-	displayNameShort="60mm Mortar";
 	ballisticsComputer=0;	//8 is direct fire reticle for highest charge
 	canLock=2;
 	weaponLockDelay=0;
@@ -103,6 +101,11 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 		"RC_ULM_1Rnd_60mm_Mo_mine",
 		"RC_ULM_1Rnd_60mm_Mo_Illum"
 	};
+};
+class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
+{
+	displayname="60mm advanced Mortar";
+	displayNameShort="60mm Mortar";
 
 	modes[]=
 	{
@@ -210,6 +213,26 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 };
 class RC_60mm_ULM_Weapon_AutoCharge: RC_60mm_ULM_Weapon
 {
-	displayname="60mm advanced Mortar (automatic charge)";
+	displayname="60mm advanced Mortar V2";
 	displayNameShort="60mm Mortar";
+
+	modes[]=
+	{
+		"Single1",
+		"Burst1",
+		"Burst2",
+		"Burst3"
+		//"Cruise"
+	};
+	class Single1: Single1
+	{
+		displayName="CH1";
+		artilleryDispersion=1;
+		artilleryCharge=1;
+		/*
+		minRange=10;
+		midRange=1500;
+		maxRange=3500;
+		*/
+	};
 };

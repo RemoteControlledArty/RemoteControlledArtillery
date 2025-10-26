@@ -649,14 +649,14 @@ class RC_60mm_ULM_Vic_AutoCharge: RC_60mm_ULM_Vic
 	{
 		class MainTurret: MainTurret
 		{
-			initElev=-44.2;	//800MIL
+			initElev=-44.2;	//800MIL on flat ground
 			minelev=-55;	//<800MIL for use on uneven ground
 		};
 	};
 
 	isULM=2; // 1 = display UI, 1 = display alternate automatic charge 45° UI
 	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
-	displayName="60mm advanced Mortar (automatic charge)";
+	displayName="60mm advanced Mortar V2";
 };
 
 
