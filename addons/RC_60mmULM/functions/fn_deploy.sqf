@@ -29,12 +29,13 @@ if (_ULMtype) then {
 } else {
 	_mortar = "RC_60mm_ULM_Vic_AutoCharge" createVehicle _pos;
 
+	/*
 	_mortar addEventHandler ["Fired", {
 		params ["","","","","","","_prj"];
 		
 		private _vel = velocity _prj;
 		private _currentSpeed = vectorMagnitude _vel;
-		if (ULM_Velocity <= 0) exitWith {systemchat "vel <= 1"};
+		if (RC_ULM_Velocity <= 0) exitWith {systemchat "vel <= 1"};
 		
 		private _newSpeed = ULM_Velocity;
 		private _factor = _newSpeed / _currentSpeed;
@@ -43,7 +44,7 @@ if (_ULMtype) then {
 		//systemchat str ULM_Velocity;
 		//systemchat str ULM_ETA;
 		
-		[ULM_ETA] spawn {
+		[RC_ULM_ETA] spawn {
 			params ["_ETA"];
 
 			if (_ETA	 > 5) then {
@@ -57,6 +58,7 @@ if (_ULMtype) then {
 			systemchat "splash";
 		};
 	}];
+	*/
 };
 
 [_mortar, _pos] call _KK_fnc_setPosAGLS;

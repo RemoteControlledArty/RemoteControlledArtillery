@@ -116,6 +116,9 @@ RC_ULM_AC_UI = [] spawn {
 
 			//weapon informations like charges and current charge
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"
+			private _mediumAngleSol = parseNumber ((_currentFireMode splitString "MIL") select 0);
+			private _mediumAngleSol_Deg = (_mediumAngleSol * 360) / 6400;
+			private _mediumAngleSol_DegStr = str _mediumAngleSol_Deg;
 
 			// Get Weapon Elevation
 			_realElevationOriginal = asin (_weaponDir select 2);
@@ -185,7 +188,6 @@ RC_ULM_AC_UI = [] spawn {
 			_realAzimuth = SLANT_ANGLE * _realAzimuth;
 			
 			/* Declare vars */
-			private _mediumAngleSol = 0;
 			private _travelTimeMedium = 0;
 			private _adjustedVelocity = 0;
 
@@ -255,10 +257,6 @@ RC_ULM_AC_UI = [] spawn {
 				_targetAzimuth = [_targetAzimuth mod 360, 360 + _targetAzimuth] select (_targetAzimuth < 0);
 				_targetAzimuth = SLANT_ANGLE * _targetAzimuth;
 
-				//velocity of the round
-				//_roundVelocity = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
-				_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
-
 				//displayed target
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
@@ -270,11 +268,9 @@ RC_ULM_AC_UI = [] spawn {
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 
 
-				//private _targetDistance = 100;      // set the distance you tested
-				//private _difference = 0;            // test case: flat ground
-
-				private _tanA = tan 45;
-				private _cosA = cos 45;
+				//calulate required velocity to hit target
+				private _tanA = tan _mediumAngleSol_Deg;
+				private _cosA = cos _mediumAngleSol_Deg;
 				private _cosA2 = _cosA * _cosA;
 
 				private _numerator = GRAVITY * (_targetDistance * _targetDistance);
@@ -286,9 +282,11 @@ RC_ULM_AC_UI = [] spawn {
 					_adjustedVelocity = sqrt _insideSqrt;
 				};
 				//to limit max range
+				_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
 				if (_adjustedVelocity > _roundVelocity) then {
 					_adjustedVelocity = -1;
 				};
+				RC_ULM_Velocity = _adjustedVelocity;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
 
 				/*
 				hintSilent format [
@@ -298,14 +296,12 @@ RC_ULM_AC_UI = [] spawn {
 				];
 				*/
 
-				ULM_Velocity = _adjustedVelocity;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
-
 				private _ETA = -1;
 				if (_adjustedVelocity > 0) then {
 
 					// Horizontal velocity
-					private _vX = _adjustedVelocity * cos 45;	
-					private _vY = _adjustedVelocity * sin 45;
+					private _vX = _adjustedVelocity * cos _mediumAngleSol_Deg;	
+					private _vY = _adjustedVelocity * sin _mediumAngleSol_Deg;
 
 					// Horizontal-only ETA (simpler, if _Difference==0)
 					private _ETA_h = _targetDistance / _vX;
@@ -320,10 +316,8 @@ RC_ULM_AC_UI = [] spawn {
 					// Optional: fallback to horizontal-only if h=0
 					if (_difference == 0) then { _ETA = _ETA_h; };
 				};
-
-				_mediumAngleSol = 800;	//45°
 				_travelTimeMedium = _ETA;
-				ULM_ETA = _ETA;
+				RC_ULM_ETA = _ETA;
 
 				
 				// AZ/EL coloring when close to firing solution
@@ -401,7 +395,8 @@ RC_ULM_AC_UI = [] spawn {
 			_ctrlMediumETA ctrlSetTextColor [1, 1, 1, 1];
 			_ctrlMediumMV ctrlSetTextColor [1, 1, 1, 1];
 
-			_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
+			_ctrlCharge ctrlSetText Format ["A: %1", _mediumAngleSol_DegStr + "°"];
+			//_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 0] call CBA_fnc_formatNumber];
 

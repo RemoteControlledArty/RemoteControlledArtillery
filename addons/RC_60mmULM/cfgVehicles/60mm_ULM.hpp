@@ -649,6 +649,11 @@ class RC_60mm_ULM_Vic_AutoCharge: RC_60mm_ULM_Vic
 	{
 		class MainTurret: MainTurret
 		{
+			weapons[]=
+			{
+				"RC_60mm_ULM_Weapon_AutoCharge"
+			};
+
 			initElev=-44.2;	//800MIL on flat ground
 			minelev=-55;	//<800MIL for use on uneven ground
 		};
