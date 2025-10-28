@@ -12,7 +12,7 @@
 #define IDC_HIGHETA 1010
 #define IDC_LOWETA 1011
 #define IDC_MESSAGE 1012
-#define IDC_MEDMV 1031
+#define IDC_ADJMV 1031
 
 
 #define IDC_KEY_SELECT 1017

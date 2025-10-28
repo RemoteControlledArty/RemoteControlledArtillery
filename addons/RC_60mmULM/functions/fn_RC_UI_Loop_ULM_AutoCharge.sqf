@@ -146,8 +146,10 @@ RC_ULM_AC_UI = [] spawn {
 			//ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
 			_ctrlMediumSol = _display displayCtrl IDC_MEDSOL;
+			_ctrlHighSol = _display displayCtrl IDC_HIGHSOL;
 			_ctrlMediumETA = _display displayCtrl IDC_MEDETA;
-			_ctrlMediumMV = _display displayCtrl IDC_MEDMV;
+			_ctrlHighETA = _display displayCtrl IDC_HIGHETA;
+			_ctrlMV = _display displayCtrl IDC_MEDMV;
 
 			// checks if shell requires lock before firing to activate guidance
 			_currentMag = currentMagazine _uav;
@@ -189,7 +191,9 @@ RC_ULM_AC_UI = [] spawn {
 			
 			/* Declare vars */
 			private _travelTimeMedium = 0;
-			private _adjustedVelocity = 0;
+			private _travelTimeHigh = 0;
+			private _adjustedVelocityMedium = 0;
+			private _adjustedVelocityHigh = 0;
 
 			// If we actually have a Target (thats not too close)
 			if (((cursorTarget isNotEqualto objNull) && { _selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE }) || !(RC_Artillery_Markers isEqualTo [])) then {
@@ -279,14 +283,33 @@ RC_ULM_AC_UI = [] spawn {
 
 				private _insideSqrt = _numerator / _denFactor;
 				if (_den > 0 && _denFactor > 0 && _insideSqrt > 0) then {
-					_adjustedVelocity = sqrt _insideSqrt;
+					_adjustedVelocityMedium = sqrt _insideSqrt;
 				};
 				//to limit max range
 				_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
-				if (_adjustedVelocity > _roundVelocity) then {
-					_adjustedVelocity = -1;
+				if (_adjustedVelocityMedium > _roundVelocity) then {
+					_adjustedVelocityMedium = -1;
 				};
-				RC_ULM_Velocity = _adjustedVelocity;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
+
+
+				//calulate required velocity to hit target
+				private _tanA = tan _highAngleSol_Deg;
+				private _cosA = cos _highAngleSol_Deg;
+				private _cosA2 = _cosA * _cosA;
+
+				private _numerator = GRAVITY * (_targetDistance * _targetDistance);
+				private _den = (_targetDistance * _tanA) - _difference;
+				private _denFactor = 2 * _cosA2 * _den;
+
+				private _insideSqrt = _numerator / _denFactor;
+				if (_den > 0 && _denFactor > 0 && _insideSqrt > 0) then {
+					_adjustedVelocityHigh = sqrt _insideSqrt;
+				};
+				//to limit max range
+				_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
+				if (_adjustedVelocityHigh > _roundVelocity) then {
+					_adjustedVelocityHigh = -1;
+				};
 
 				/*
 				hintSilent format [
@@ -317,7 +340,35 @@ RC_ULM_AC_UI = [] spawn {
 					if (_difference == 0) then { _ETA = _ETA_h; };
 				};
 				_travelTimeMedium = _ETA;
-				RC_ULM_ETA = _ETA;
+
+				if (_adjustedVelocity > 0) then {
+
+					// Horizontal velocity
+					private _vX = _adjustedVelocity * cos _highAngleSol_Deg;	
+					private _vY = _adjustedVelocity * sin _highAngleSol_Deg;
+
+					// Horizontal-only ETA (simpler, if _Difference==0)
+					private _ETA_h = _targetDistance / _vX;
+
+					// Full quadratic solution
+					private _discriminant = (_vY * _vY) - (2 * GRAVITY * _difference);
+
+					if (_discriminant >= 0) then {
+						_ETA = (_vY + sqrt(_discriminant)) / GRAVITY;  // first impact
+					};
+
+					// Optional: fallback to horizontal-only if h=0
+					if (_difference == 0) then { _ETA = _ETA_h; };
+				};
+				_travelTimeHigh = _ETA;
+
+				if (abs (_realElevation - _mediumAngleSol) > abs (_realElevation -_highAngleSol)) then {
+					RC_ULM_Velocity = _adjustedVelocityHigh;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
+					RC_ULM_ETA = _ETA;
+				} else {
+					RC_ULM_Velocity = _adjustedVelocityHigh;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
+					RC_ULM_ETA = _travelTimeHigh;
+				};
 
 				
 				// AZ/EL coloring when close to firing solution
@@ -327,6 +378,17 @@ RC_ULM_AC_UI = [] spawn {
 				// shows if its not, almost, or fully aligned
 				switch (true) do {
 					case(
+						(_realElevation < (_highAngleSol + 0.5)) and
+						(_realElevation > (_highAngleSol - 0.5)) and
+						(_realAzimuth < (_targetAzimuth + 0.5)) and
+						(_realAzimuth > (_targetAzimuth - 0.5))
+					): {
+						_ctrlMessage ctrlSetTextColor [0,1,0,1];
+						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
+						_ctrlMessage ctrlSetText "ALIGNED";
+					};
+
+					case(
 						(_realElevation < (_mediumAngleSol + 0.5)) and
 						(_realElevation > (_mediumAngleSol - 0.5)) and
 						(_realAzimuth < (_targetAzimuth + 0.5)) and
@@ -335,6 +397,17 @@ RC_ULM_AC_UI = [] spawn {
 						_ctrlMessage ctrlSetTextColor [0,1,0,1];
 						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
 						_ctrlMessage ctrlSetText "ALIGNED";
+					};
+
+					case(
+						(_realElevation < (_highAngleSol + 0.75)) and
+						(_realElevation > (_highAngleSol - 0.75)) and
+						(_realAzimuth < (_targetAzimuth + 0.75)) and
+						(_realAzimuth > (_targetAzimuth - 0.75))
+					): {
+						_ctrlMessage ctrlSetTextColor [1,0.5,0,1];
+						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
+						_ctrlMessage ctrlSetText "NOT ALIGNED";
 					};
 
 					case(
@@ -357,7 +430,9 @@ RC_ULM_AC_UI = [] spawn {
 				
 				// Parse these back to Numbers incase they are NaN
 				_mediumAngleSol = parseNumber str _mediumAngleSol;
+				_highAngleSol = parseNumber str _highAngleSol;
 				_travelTimeMedium = parseNumber str _travelTimeMedium;
+				_travelTimeHigh = parseNumber str _travelTimeMedium;
 				_adjustedVelocity = parseNumber str _adjustedVelocity;
 	
 				// If they were NaN then make them Zero
@@ -365,6 +440,11 @@ RC_ULM_AC_UI = [] spawn {
 					_mediumAngleSol = 0;
 					_travelTimeMedium = 0;
 					_adjustedVelocity = 0;
+				};
+				if (_highAngleSol < 0) then {
+					_highAngleSol = 0;
+					_travelTimehigh = 0;
+					_adjustedVelocity = 0;	//?
 				};
 			} else {
 				//display if no target is available/selected
@@ -379,8 +459,10 @@ RC_ULM_AC_UI = [] spawn {
 				_ctrlTargetAzimuth ctrlSetText "T AZ: 0000";
 				_ctrlDifference ctrlSetText "DIF: 0000" ;
 				_ctrlMediumSol ctrlSetText "med EL: 0000";
+				_ctrlHighSol ctrlSetText "high EL: 0000";
 				_ctrlMediumETA ctrlSetText "ETA: 000";
-				_ctrlMediumMV ctrlSetText "m/s: 000";
+				_ctrlHighETA ctrlSetText "ETA: 000";
+				_ctrlMV ctrlSetText "m/s: 000";
 
 				// If we have no Targets
 				_ctrlMessage ctrlSetTextColor [1, 0, 0, 1];
@@ -388,12 +470,14 @@ RC_ULM_AC_UI = [] spawn {
 				_ctrlMessage ctrlSetText format ["ADD MAP MARKER: %1%2", RC_Marker_Prefix, "1-99 / gps"];
 			};
 			_ctrlMediumSol ctrlShow true;
+			_ctrlHighSol ctrlShow true;
 			_ctrlMediumETA ctrlShow true;
-			_ctrlMediumMV ctrlShow true;
+			_ctrlHighETA ctrlShow true;
+			_ctrlMV ctrlShow true;
 
 			_ctrlMediumSol ctrlSetTextColor [1, 1, 1, 1];
 			_ctrlMediumETA ctrlSetTextColor [1, 1, 1, 1];
-			_ctrlMediumMV ctrlSetTextColor [1, 1, 1, 1];
+			_ctrlMV ctrlSetTextColor [1, 1, 1, 1];
 
 			//wrong check?
 			if (_ctrlCharge isEqualType 0) then {

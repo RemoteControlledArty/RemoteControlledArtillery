@@ -31,16 +31,6 @@ class RC_Artillery_Base
 	// GUI EDITOR OUTPUT START (by Fluffy, v1.063, #Huxaga)
 	////////////////////////////////////////////////////////
 
-	class RscText_1001: RscText
-	{
-		idc = IDC_CHARGE;
-		text = "CH: 0"; //--- ToDo: Localize;
-		x = "0.871267 * safezoneW + safezoneX";
-		y = "0.1199294 * safezoneH + safezoneY";
-		w = "0.0801219 * safezoneW";
-		h = "0.0330027 * safezoneH";
-		sizeEx = "0.55 * (0.0330027 * safezoneH)";
-	};
 	class RscText_1002: RscText_1001
 	{
 		idc = IDC_AZIMUTH;
@@ -290,6 +280,16 @@ class RC_Artillery: RC_Artillery_Base
 		RscText_1028
 	};
 
+	class RscText_1001: RscText
+	{
+		idc = IDC_CHARGE;
+		text = "CH: 0"; //--- ToDo: Localize;
+		x = "0.871267 * safezoneW + safezoneX";
+		y = "0.1199294 * safezoneH + safezoneY";
+		w = "0.0801219 * safezoneW";
+		h = "0.0330027 * safezoneH";
+		sizeEx = "0.55 * (0.0330027 * safezoneH)";
+	};
 	class RscText_1008: RscText_1001
 	{
 		idc = IDC_HIGHSOL;
@@ -373,6 +373,16 @@ class RC_ULM_Rsc: RC_Artillery_Base
 		RscText_1028
 	};
 
+	class RscText_1001: RscText
+	{
+		idc = IDC_CHARGE;
+		text = "CH: 0"; //--- ToDo: Localize;
+		x = "0.871267 * safezoneW + safezoneX";
+		y = "0.1199294 * safezoneH + safezoneY";
+		w = "0.0801219 * safezoneW";
+		h = "0.0330027 * safezoneH";
+		sizeEx = "0.55 * (0.0330027 * safezoneH)";
+	};
 	class RscText_1008: RscText_1001
 	{
 		idc = IDC_HIGHSOL;
@@ -395,7 +405,6 @@ class RC_ULM_AC_Rsc: RC_Artillery_Base
 
 	controls[]=
 	{
-		RscText_1001,
 		RscText_1002,
 		RscText_1003,
 		RscText_1004,
@@ -439,10 +448,7 @@ class RC_ULM_AC_Rsc: RC_Artillery_Base
 	};
 	class RscText_1031: RscText_1001
 	{
-		idc = IDC_MEDMV;
+		idc = IDC_ADJMV;
 		text = "m/s: 000"; //--- ToDo: Localize;
-
-		x = "0.95165 * safezoneW + safezoneX";
-		y = "0.1859345 * safezoneH + safezoneY";
 	};
 };
