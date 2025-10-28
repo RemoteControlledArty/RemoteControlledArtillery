@@ -31,6 +31,16 @@ class RC_Artillery_Base
 	// GUI EDITOR OUTPUT START (by Fluffy, v1.063, #Huxaga)
 	////////////////////////////////////////////////////////
 
+	class RscText_1001: RscText
+	{
+		idc = IDC_CHARGE;
+		text = "CH: 0"; //--- ToDo: Localize;
+		x = "0.871267 * safezoneW + safezoneX";
+		y = "0.1199294 * safezoneH + safezoneY";
+		w = "0.0801219 * safezoneW";
+		h = "0.0330027 * safezoneH";
+		sizeEx = "0.55 * (0.0330027 * safezoneH)";
+	};
 	class RscText_1002: RscText_1001
 	{
 		idc = IDC_AZIMUTH;
@@ -280,16 +290,6 @@ class RC_Artillery: RC_Artillery_Base
 		RscText_1028
 	};
 
-	class RscText_1001: RscText
-	{
-		idc = IDC_CHARGE;
-		text = "CH: 0"; //--- ToDo: Localize;
-		x = "0.871267 * safezoneW + safezoneX";
-		y = "0.1199294 * safezoneH + safezoneY";
-		w = "0.0801219 * safezoneW";
-		h = "0.0330027 * safezoneH";
-		sizeEx = "0.55 * (0.0330027 * safezoneH)";
-	};
 	class RscText_1008: RscText_1001
 	{
 		idc = IDC_HIGHSOL;
@@ -411,6 +411,8 @@ class RC_ULM_AC_Rsc: RC_Artillery_Base
 		RscText_1005,
 		RscText_1006,
 		RscText_1007,
+		RscText_1008,
+		RscText_1010,
 		RscText_1012,
 		RscText_1015,
 		RscText_1016,
@@ -431,20 +433,42 @@ class RC_ULM_AC_Rsc: RC_Artillery_Base
 		RscText_1031
 	};
 
+	class RscText_1008: RscText_1001
+	{
+		idc = IDC_HIGHSOL;
+		text = "high EL: 0000"; //--- ToDo: Localize;
+
+		x = "0.95165 * safezoneW + safezoneX";
+		y = "0.1639327 * safezoneH + safezoneY";
+	};
+	class RscText_1010: RscText_1001
+	{
+		idc = IDC_HIGHETA;
+		text = "ETA: 000"; //--- ToDo: Localize;
+		x = "0.915154 * safezoneW + safezoneX";
+		y = "0.1639327 * safezoneH + safezoneY";
+	};
 	class RscText_1029: RscText_1001
 	{
 		idc = IDC_MEDSOL;
 		text = "medium EL: 0000"; //--- ToDo: Localize;
-
+		x = "0.95165 * safezoneW + safezoneX";
+		y = "0.1859345 * safezoneH + safezoneY";
+		/*
 		x = "0.95165 * safezoneW + safezoneX";
 		y = "0.1639327 * safezoneH + safezoneY";
+		*/
 	};
 	class RscText_1030: RscText_1001
 	{
 		idc = IDC_MEDETA;
 		text = "ETA: 000"; //--- ToDo: Localize;
 		x = "0.915154 * safezoneW + safezoneX";
+		y = "0.1859345 * safezoneH + safezoneY";
+		/*
+		x = "0.915154 * safezoneW + safezoneX";
 		y = "0.1639327 * safezoneH + safezoneY";
+		*/
 	};
 	class RscText_1031: RscText_1001
 	{

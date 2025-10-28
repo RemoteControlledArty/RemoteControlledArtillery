@@ -116,9 +116,10 @@ RC_ULM_AC_UI = [] spawn {
 
 			//weapon informations like charges and current charge
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"
-			private _mediumAngleSol = parseNumber ((_currentFireMode splitString "MIL") select 0);
+			private _highAngleSol = 1200;
+			private _mediumAngleSol = 800;
+			private _highAngleSol_Deg = (_highAngleSol * 360) / 6400;
 			private _mediumAngleSol_Deg = (_mediumAngleSol * 360) / 6400;
-			private _mediumAngleSol_DegStr = str _mediumAngleSol_Deg;
 
 			// Get Weapon Elevation
 			_realElevationOriginal = asin (_weaponDir select 2);
@@ -149,7 +150,7 @@ RC_ULM_AC_UI = [] spawn {
 			_ctrlHighSol = _display displayCtrl IDC_HIGHSOL;
 			_ctrlMediumETA = _display displayCtrl IDC_MEDETA;
 			_ctrlHighETA = _display displayCtrl IDC_HIGHETA;
-			_ctrlMV = _display displayCtrl IDC_MEDMV;
+			_ctrlAdjMV = _display displayCtrl IDC_ADJMV;
 
 			// checks if shell requires lock before firing to activate guidance
 			_currentMag = currentMagazine _uav;
@@ -192,6 +193,7 @@ RC_ULM_AC_UI = [] spawn {
 			/* Declare vars */
 			private _travelTimeMedium = 0;
 			private _travelTimeHigh = 0;
+			private _adjustedVelocity = 0;
 			private _adjustedVelocityMedium = 0;
 			private _adjustedVelocityHigh = 0;
 
@@ -320,11 +322,11 @@ RC_ULM_AC_UI = [] spawn {
 				*/
 
 				private _ETA = -1;
-				if (_adjustedVelocity > 0) then {
+				if (_adjustedVelocityMedium > 0) then {
 
 					// Horizontal velocity
-					private _vX = _adjustedVelocity * cos _mediumAngleSol_Deg;	
-					private _vY = _adjustedVelocity * sin _mediumAngleSol_Deg;
+					private _vX = _adjustedVelocityMedium * cos _highAngleSol_Deg;	
+					private _vY = _adjustedVelocityMedium * sin _highAngleSol_Deg;
 
 					// Horizontal-only ETA (simpler, if _Difference==0)
 					private _ETA_h = _targetDistance / _vX;
@@ -341,11 +343,11 @@ RC_ULM_AC_UI = [] spawn {
 				};
 				_travelTimeMedium = _ETA;
 
-				if (_adjustedVelocity > 0) then {
+				if (_adjustedVelocityHigh > 0) then {
 
 					// Horizontal velocity
-					private _vX = _adjustedVelocity * cos _highAngleSol_Deg;	
-					private _vY = _adjustedVelocity * sin _highAngleSol_Deg;
+					private _vX = _adjustedVelocityHigh * cos _mediumAngleSol_Deg;	
+					private _vY = _adjustedVelocityHigh * sin _mediumAngleSol_Deg;
 
 					// Horizontal-only ETA (simpler, if _Difference==0)
 					private _ETA_h = _targetDistance / _vX;
@@ -362,10 +364,13 @@ RC_ULM_AC_UI = [] spawn {
 				};
 				_travelTimeHigh = _ETA;
 
-				if (abs (_realElevation - _mediumAngleSol) > abs (_realElevation -_highAngleSol)) then {
-					RC_ULM_Velocity = _adjustedVelocityHigh;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
-					RC_ULM_ETA = _ETA;
+				//decides based on angle which velocity adjustment is used
+				if (abs (_realElevation - _mediumAngleSol) < abs (_realElevation -_highAngleSol)) then {
+					_adjustedVelocity = _travelTimeMedium;
+					RC_ULM_Velocity = _travelTimeMedium;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
+					RC_ULM_ETA = _travelTimeMedium;
 				} else {
+					_adjustedVelocity = _adjustedVelocityHigh;
 					RC_ULM_Velocity = _adjustedVelocityHigh;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
 					RC_ULM_ETA = _travelTimeHigh;
 				};
@@ -457,33 +462,35 @@ RC_ULM_AC_UI = [] spawn {
 				_ctrlDistance ctrlSetText "DIST: 0000";
 				_ctrlTarget ctrlSetText "T: 0";
 				_ctrlTargetAzimuth ctrlSetText "T AZ: 0000";
-				_ctrlDifference ctrlSetText "DIF: 0000" ;
-				_ctrlMediumSol ctrlSetText "med EL: 0000";
+				_ctrlDifference ctrlSetText "DIF: 0000";
 				_ctrlHighSol ctrlSetText "high EL: 0000";
-				_ctrlMediumETA ctrlSetText "ETA: 000";
+				_ctrlMediumSol ctrlSetText "med EL: 0000";
 				_ctrlHighETA ctrlSetText "ETA: 000";
-				_ctrlMV ctrlSetText "m/s: 000";
+				_ctrlMediumETA ctrlSetText "ETA: 000";
+				_ctrlAdjMV ctrlSetText "m/s: 000";
 
 				// If we have no Targets
 				_ctrlMessage ctrlSetTextColor [1, 0, 0, 1];
 				_ctrlMessage ctrlSetPositionX (0.868267 * safezoneW + safezoneX);
 				_ctrlMessage ctrlSetText format ["ADD MAP MARKER: %1%2", RC_Marker_Prefix, "1-99 / gps"];
 			};
-			_ctrlMediumSol ctrlShow true;
 			_ctrlHighSol ctrlShow true;
-			_ctrlMediumETA ctrlShow true;
+			_ctrlMediumSol ctrlShow true;
 			_ctrlHighETA ctrlShow true;
-			_ctrlMV ctrlShow true;
+			_ctrlMediumETA ctrlShow true;
+			_ctrlAdjMV ctrlShow true;
 
+			_ctrlHighSol ctrlSetTextColor [1, 1, 1, 1];
 			_ctrlMediumSol ctrlSetTextColor [1, 1, 1, 1];
+			_ctrlHighETA ctrlSetTextColor [1, 1, 1, 1];
 			_ctrlMediumETA ctrlSetTextColor [1, 1, 1, 1];
-			_ctrlMV ctrlSetTextColor [1, 1, 1, 1];
+			_ctrlAdjMV ctrlSetTextColor [1, 1, 1, 1];
 
 			//wrong check?
-			if (_ctrlCharge isEqualType 0) then {
-				_ctrlCharge ctrlSetText Format ["m/s: %1", [_adjustedVelocity, 3, 0] call CBA_fnc_formatNumber];
+			if (_ctrlAdjMV isEqualType 0) then {
+				_ctrlAdjMV ctrlSetText Format ["m/s: %1", [_adjustedVelocity, 3, 0] call CBA_fnc_formatNumber];
 			} else {
-				_ctrlCharge ctrlSetText Format ["m/s: 000%1"];
+				_ctrlAdjMV ctrlSetText Format ["m/s: 000%1"];
 			};
 
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
@@ -494,7 +501,7 @@ RC_ULM_AC_UI = [] spawn {
 			} else {
 				_ctrlMediumSol ctrlSetText Format ["med EL: 0000%1"];
 			};
-			if (_mediumHighSol isEqualType 0) then {
+			if (_highAngleSol isEqualType 0) then {
 				_ctrlHighSol ctrlSetText Format ["high EL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];
 			} else {
 				_ctrlHighSol ctrlSetText Format ["high EL: 0000%1"];
