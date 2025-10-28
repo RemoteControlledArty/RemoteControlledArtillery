@@ -395,13 +395,8 @@ RC_ULM_AC_UI = [] spawn {
 			_ctrlMediumETA ctrlSetTextColor [1, 1, 1, 1];
 			_ctrlMediumMV ctrlSetTextColor [1, 1, 1, 1];
 
-			//wrong check?
-			if (_ctrlCharge isEqualType 0) then {
-				_ctrlCharge ctrlSetText Format ["m/s: %1", [_adjustedVelocity, 3, 0] call CBA_fnc_formatNumber];
-			} else {
-				_ctrlCharge ctrlSetText Format ["m/s: 000%1"];
-			};
-
+			_ctrlCharge ctrlSetText Format ["A: %1", _mediumAngleSol_DegStr + "°"];
+			//_ctrlCharge ctrlSetText Format ["CH: %1", _realCharge];
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];
 			_ctrlElevation ctrlSetText Format ["EL: %1", [_realElevation, 4, 0] call CBA_fnc_formatNumber];
 
@@ -410,21 +405,17 @@ RC_ULM_AC_UI = [] spawn {
 			} else {
 				_ctrlMediumSol ctrlSetText Format ["med EL: 0000%1"];
 			};
-			if (_mediumHighSol isEqualType 0) then {
-				_ctrlHighSol ctrlSetText Format ["high EL: %1", [_highAngleSol, 4, 0] call CBA_fnc_formatNumber];
-			} else {
-				_ctrlHighSol ctrlSetText Format ["high EL: 0000%1"];
-			};
 
 			if (_travelTimeMedium isEqualType 0) then {
 				_ctrlMediumETA ctrlSetText Format ["ETA: %1", [_travelTimeMedium, 3, 0] call CBA_fnc_formatNumber];
 			} else {
 				_ctrlMediumETA ctrlSetText Format ["ETA: 000%1"];
 			};
-			if (_travelTimeHigh isEqualType 0) then {
-				_ctrlHighETA ctrlSetText Format ["ETA: %1", [_travelTimeHigh, 3, 0] call CBA_fnc_formatNumber];
+
+			if (_adjustedVelocity isEqualType 0) then {
+				_ctrlMediumMV ctrlSetText Format ["m/s: %1", [_adjustedVelocity, 3, 0] call CBA_fnc_formatNumber];
 			} else {
-				_ctrlHighETA ctrlSetText Format ["ETA: 000%1"];
+				_ctrlMediumMV ctrlSetText Format ["m/s: 000%1"];
 			};
 		};
 	};
