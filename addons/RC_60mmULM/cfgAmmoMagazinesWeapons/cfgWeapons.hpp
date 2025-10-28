@@ -218,6 +218,26 @@ class RC_60mm_ULM_Weapon_AutoCharge: RC_60mm_ULM_Weapon_Base
 
 	modes[]=
 	{
+		"Single1",
+		"Burst1",
+		"Burst2",
+		"Burst3"
+		//"Cruise"
+	};
+	class Single1: Single1
+	{
+		displayName="CH1";
+		artilleryDispersion=1;
+		artilleryCharge=1;
+		
+		minRange=10;
+		midRange=1750;
+		maxRange=3500;
+	};
+
+	/*
+	modes[]=
+	{
 		"800MIL",
 		"1200MIL",
 		"Burst1",
@@ -245,4 +265,5 @@ class RC_60mm_ULM_Weapon_AutoCharge: RC_60mm_ULM_Weapon_Base
 		midRange=875;
 		maxRange=1750;
 	};
+	*/
 };
