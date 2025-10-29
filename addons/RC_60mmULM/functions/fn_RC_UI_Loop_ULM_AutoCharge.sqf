@@ -150,7 +150,9 @@ RC_ULM_AC_UI = [] spawn {
 			_ctrlHighSol = _display displayCtrl IDC_HIGHSOL;
 			_ctrlMediumETA = _display displayCtrl IDC_MEDETA;
 			_ctrlHighETA = _display displayCtrl IDC_HIGHETA;
-			_ctrlAdjMV = _display displayCtrl IDC_ADJMV;
+			_ctrlHighMV = _display displayCtrl IDC_HIGHMV;
+			_ctrlMediumMV = _display displayCtrl IDC_MEDMV;
+			_ctrlNewTarget = _display displayCtrl IDC_NEWTARGET;
 
 			// checks if shell requires lock before firing to activate guidance
 			_currentMag = currentMagazine _uav;
@@ -266,49 +268,49 @@ RC_ULM_AC_UI = [] spawn {
 				//displayed target
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
-					_ctrlTarget ctrlSetText "T: Datalink";
+					_ctrlNewTarget ctrlSetText "T: Datalink";
 				} else {
-					_ctrlTarget ctrlSetText Format ["T: %1", [RC_currentTargetMarker select 0, 2, 0] call CBA_fnc_formatNumber];
+					_ctrlNewTarget ctrlSetText Format ["T: %1", [RC_currentTargetMarker select 0, 2, 0] call CBA_fnc_formatNumber];
 				};
 				_ctrlTargetAzimuth ctrlSetText Format ["T AZ: %1", [_targetAzimuth, 4, 0] call CBA_fnc_formatNumber];
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 
 
-				//calulate required velocity to hit target
-				private _tanA = tan _mediumAngleSol_Deg;
-				private _cosA = cos _mediumAngleSol_Deg;
-				private _cosA2 = _cosA * _cosA;
-
-				private _numerator = GRAVITY * (_targetDistance * _targetDistance);
-				private _den = (_targetDistance * _tanA) - _difference;
-				private _denFactor = 2 * _cosA2 * _den;
-
-				private _insideSqrt = _numerator / _denFactor;
-				if (_den > 0 && _denFactor > 0 && _insideSqrt > 0) then {
-					_adjustedVelocityMedium = sqrt _insideSqrt;
-				};
 				//to limit max range
 				_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
+
+				//calulate required velocity to hit target
+				private _tanA_M = tan _mediumAngleSol_Deg;
+				private _cosA_M = cos _mediumAngleSol_Deg;
+				private _cosA2_M = _cosA_M * _cosA_M;
+
+				private _numerator_M = GRAVITY * (_targetDistance * _targetDistance);
+				private _den_M = (_targetDistance * _tanA_M) - _difference;
+				private _denFactor_M = 2 * _cosA2_M * _den_M;
+
+				private _insideSqrt_M = _numerator_M / _denFactor_M;
+				if (_den_M > 0 && _denFactor_M > 0 && _insideSqrt_M > 0) then {
+					_adjustedVelocityMedium = sqrt _insideSqrt_M;
+				};
+				//to limit max range
 				if (_adjustedVelocityMedium > _roundVelocity) then {
 					_adjustedVelocityMedium = -1;
 				};
 
-
 				//calulate required velocity to hit target
-				private _tanA = tan _highAngleSol_Deg;
-				private _cosA = cos _highAngleSol_Deg;
-				private _cosA2 = _cosA * _cosA;
+				private _tanA_H = tan _highAngleSol_Deg;
+				private _cosA_H = cos _highAngleSol_Deg;
+				private _cosA2_H = _cosA_H * _cosA_H;
 
-				private _numerator = GRAVITY * (_targetDistance * _targetDistance);
-				private _den = (_targetDistance * _tanA) - _difference;
-				private _denFactor = 2 * _cosA2 * _den;
+				private _numerator_H = GRAVITY * (_targetDistance * _targetDistance);
+				private _den_H = (_targetDistance * _tanA_H) - _difference;
+				private _denFactor_H = 2 * _cosA2_H * _den_H;
 
-				private _insideSqrt = _numerator / _denFactor;
-				if (_den > 0 && _denFactor > 0 && _insideSqrt > 0) then {
-					_adjustedVelocityHigh = sqrt _insideSqrt;
+				private _insideSqrt_H = _numerator_H / _denFactor_H;
+				if (_den_H > 0 && _denFactor_H > 0 && _insideSqrt_H > 0) then {
+					_adjustedVelocityHigh = sqrt _insideSqrt_H;
 				};
 				//to limit max range
-				_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
 				if (_adjustedVelocityHigh > _roundVelocity) then {
 					_adjustedVelocityHigh = -1;
 				};
@@ -325,8 +327,8 @@ RC_ULM_AC_UI = [] spawn {
 				if (_adjustedVelocityMedium > 0) then {
 
 					// Horizontal velocity
-					private _vX = _adjustedVelocityMedium * cos _highAngleSol_Deg;	
-					private _vY = _adjustedVelocityMedium * sin _highAngleSol_Deg;
+					private _vX = _adjustedVelocityMedium * cos _mediumAngleSol_Deg;	
+					private _vY = _adjustedVelocityMedium * sin _mediumAngleSol_Deg;
 
 					// Horizontal-only ETA (simpler, if _Difference==0)
 					private _ETA_h = _targetDistance / _vX;
@@ -346,8 +348,8 @@ RC_ULM_AC_UI = [] spawn {
 				if (_adjustedVelocityHigh > 0) then {
 
 					// Horizontal velocity
-					private _vX = _adjustedVelocityHigh * cos _mediumAngleSol_Deg;	
-					private _vY = _adjustedVelocityHigh * sin _mediumAngleSol_Deg;
+					private _vX = _adjustedVelocityHigh * cos _highAngleSol_Deg;	
+					private _vY = _adjustedVelocityHigh * sin _highAngleSol_Deg;
 
 					// Horizontal-only ETA (simpler, if _Difference==0)
 					private _ETA_h = _targetDistance / _vX;
@@ -366,19 +368,17 @@ RC_ULM_AC_UI = [] spawn {
 
 				//decides based on angle which velocity adjustment is used
 				if (abs (_realElevation - _mediumAngleSol) < abs (_realElevation -_highAngleSol)) then {
-					_adjustedVelocity = _travelTimeMedium;
-					RC_ULM_Velocity = _travelTimeMedium;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
+					RC_ULM_Velocity = _adjustedVelocityMedium;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
 					RC_ULM_ETA = _travelTimeMedium;
 				} else {
-					_adjustedVelocity = _adjustedVelocityHigh;
 					RC_ULM_Velocity = _adjustedVelocityHigh;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
 					RC_ULM_ETA = _travelTimeHigh;
 				};
 
 				
 				// AZ/EL coloring when close to firing solution
-				#include "\RC_60mmULM\functions\temporary_coloring_workaround_ULM_AutoCharge.sqf"
-				//#include "\Remote_Controlled_Artillery\functions\UILoop_includes\MIL_coloring.sqf"
+				//#include "\RC_60mmULM\functions\temporary_coloring_workaround_ULM_AutoCharge.sqf"
+				#include "\RC_60mmULM\functions\MIL_coloring_ULM.sqf"
 				
 				// shows if its not, almost, or fully aligned
 				switch (true) do {
@@ -438,18 +438,21 @@ RC_ULM_AC_UI = [] spawn {
 				_highAngleSol = parseNumber str _highAngleSol;
 				_travelTimeMedium = parseNumber str _travelTimeMedium;
 				_travelTimeHigh = parseNumber str _travelTimeMedium;
-				_adjustedVelocity = parseNumber str _adjustedVelocity;
+				_adjustedVelocityHigh = parseNumber str _adjustedVelocityHigh;
+				_adjustedVelocityMedium = parseNumber str _adjustedVelocityMedium;
 	
 				// If they were NaN then make them Zero
 				if (_mediumAngleSol < 0) then {
 					_mediumAngleSol = 0;
 					_travelTimeMedium = 0;
-					_adjustedVelocity = 0;
+					_adjustedVelocityHigh  = 0;
+					_adjustedVelocityMedium = 0;	//?
 				};
 				if (_highAngleSol < 0) then {
 					_highAngleSol = 0;
 					_travelTimehigh = 0;
-					_adjustedVelocity = 0;	//?
+					_adjustedVelocityHigh  = 0;	//?
+					_adjustedVelocityMedium = 0;	//?
 				};
 			} else {
 				//display if no target is available/selected
@@ -460,14 +463,15 @@ RC_ULM_AC_UI = [] spawn {
 				_ctrlElevation ctrlSetTextColor [1, 1, 1, 1];
 
 				_ctrlDistance ctrlSetText "DIST: 0000";
-				_ctrlTarget ctrlSetText "T: 0";
+				_ctrlNewTarget ctrlSetText "T: 0";
 				_ctrlTargetAzimuth ctrlSetText "T AZ: 0000";
 				_ctrlDifference ctrlSetText "DIF: 0000";
 				_ctrlHighSol ctrlSetText "high EL: 0000";
 				_ctrlMediumSol ctrlSetText "med EL: 0000";
 				_ctrlHighETA ctrlSetText "ETA: 000";
 				_ctrlMediumETA ctrlSetText "ETA: 000";
-				_ctrlAdjMV ctrlSetText "m/s: 000";
+				_ctrlHighMV ctrlSetText "MV: 000";
+				_ctrlMediumMV ctrlSetText "MV: 000";
 
 				// If we have no Targets
 				_ctrlMessage ctrlSetTextColor [1, 0, 0, 1];
@@ -478,19 +482,26 @@ RC_ULM_AC_UI = [] spawn {
 			_ctrlMediumSol ctrlShow true;
 			_ctrlHighETA ctrlShow true;
 			_ctrlMediumETA ctrlShow true;
-			_ctrlAdjMV ctrlShow true;
+			_ctrlHighMV ctrlShow true;
+			_ctrlMediumMV ctrlShow true;
 
 			_ctrlHighSol ctrlSetTextColor [1, 1, 1, 1];
 			_ctrlMediumSol ctrlSetTextColor [1, 1, 1, 1];
 			_ctrlHighETA ctrlSetTextColor [1, 1, 1, 1];
 			_ctrlMediumETA ctrlSetTextColor [1, 1, 1, 1];
-			_ctrlAdjMV ctrlSetTextColor [1, 1, 1, 1];
+			_ctrlHighMV ctrlSetTextColor [1, 1, 1, 1];
+			_ctrlMediumMV ctrlSetTextColor [1, 1, 1, 1];
 
 			//wrong check?
-			if (_ctrlAdjMV isEqualType 0) then {
-				_ctrlAdjMV ctrlSetText Format ["m/s: %1", [_adjustedVelocity, 3, 0] call CBA_fnc_formatNumber];
+			if (_adjustedVelocityHigh isEqualType 0) then {
+				_ctrlHighMV ctrlSetText Format ["MV: %1", [_adjustedVelocityHigh, 3, 0] call CBA_fnc_formatNumber];
 			} else {
-				_ctrlAdjMV ctrlSetText Format ["m/s: 000%1"];
+				_ctrlHighMV ctrlSetText Format ["MV: 000%1"];
+			};
+			if (_adjustedVelocityMedium isEqualType 0) then {
+				_ctrlMediumMV ctrlSetText Format ["MV: %1", [_adjustedVelocityMedium, 3, 0] call CBA_fnc_formatNumber];
+			} else {
+				_ctrlMediumMV ctrlSetText Format ["MV: 000%1"];
 			};
 
 			_ctrlAzimuth ctrlSetText Format ["AZ: %1", [_realAzimuth, 4, 0] call CBA_fnc_formatNumber];

@@ -373,16 +373,6 @@ class RC_ULM_Rsc: RC_Artillery_Base
 		RscText_1028
 	};
 
-	class RscText_1001: RscText
-	{
-		idc = IDC_CHARGE;
-		text = "CH: 0"; //--- ToDo: Localize;
-		x = "0.871267 * safezoneW + safezoneX";
-		y = "0.1199294 * safezoneH + safezoneY";
-		w = "0.0801219 * safezoneW";
-		h = "0.0330027 * safezoneH";
-		sizeEx = "0.55 * (0.0330027 * safezoneH)";
-	};
 	class RscText_1008: RscText_1001
 	{
 		idc = IDC_HIGHSOL;
@@ -408,7 +398,6 @@ class RC_ULM_AC_Rsc: RC_Artillery_Base
 		RscText_1002,
 		RscText_1003,
 		RscText_1004,
-		RscText_1005,
 		RscText_1006,
 		RscText_1007,
 		RscText_1008,
@@ -430,7 +419,9 @@ class RC_ULM_AC_Rsc: RC_Artillery_Base
 		RscText_1028,
 		RscText_1029,
 		RscText_1030,
-		RscText_1031
+		RscText_1031,
+		RscText_1032,
+		RscText_1033
 	};
 
 	class RscText_1008: RscText_1001
@@ -470,9 +461,20 @@ class RC_ULM_AC_Rsc: RC_Artillery_Base
 		y = "0.1639327 * safezoneH + safezoneY";
 		*/
 	};
-	class RscText_1031: RscText_1001
+	class RscText_1031: RscText_1005
 	{
-		idc = IDC_ADJMV;
-		text = "m/s: 000"; //--- ToDo: Localize;
+		idc = IDC_HIGHMV;
+		text = "MV: 000"; //--- ToDo: Localize;
+	};
+	class RscText_1032: RscText_1005
+	{
+		idc = IDC_MEDMV;
+		text = "MV: 000"; //--- ToDo: Localize;
+		y = "0.1859345 * safezoneH + safezoneY";
+	};
+	class RscText_1033: RscText_1005
+	{
+		idc = IDC_NEWTARGET;
+		y = "0.1199294 * safezoneH + safezoneY";
 	};
 };

@@ -227,7 +227,7 @@ class RC_60mm_ULM_Weapon_AutoCharge: RC_60mm_ULM_Weapon_Base
 	class Single1: Single1
 	{
 		displayName="CH1";
-		artilleryDispersion=1;
+		artilleryDispersion=2;
 		artilleryCharge=1;
 		
 		minRange=10;
