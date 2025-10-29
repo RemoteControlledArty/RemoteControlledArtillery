@@ -166,8 +166,12 @@ RC_ULM_AC_UI = [] spawn {
 			_artyPos = getPosASL _uav;
 			//checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
 			_selectedTargetDistance = 1;
-			if (cursorTarget isNotEqualto objNull) then { _selectedTargetDistance = (getPosASL cursorTarget) distance2d _artyPos };
-			_noTargetOrTargetTooClose = (cursorTarget isEqualto objNull) || (_selectedTargetDistance <= MIN_SELECTED_TARGET_DISTANCE);
+
+			_lockedTarget = playerTargetLock#0;
+			//_lockedTarget = cursorTarget;
+
+			if (_lockedTarget isNotEqualto objNull) then { _selectedTargetDistance = (getPosASL _lockedTarget) distance2d _artyPos };
+			_noTargetOrTargetTooClose = (_lockedTarget isEqualto objNull) || (_selectedTargetDistance <= MIN_SELECTED_TARGET_DISTANCE);
 
 			// If we are looking into the Sky
 			private "_realAzimuth";
@@ -200,7 +204,7 @@ RC_ULM_AC_UI = [] spawn {
 			private _adjustedVelocityHigh = 0;
 
 			// If we actually have a Target (thats not too close)
-			if (((cursorTarget isNotEqualto objNull) && { _selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE }) || !(RC_Artillery_Markers isEqualTo [])) then {
+			if (((_lockedTarget isNotEqualto objNull) && { _selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE }) || !(RC_Artillery_Markers isEqualTo [])) then {
 				if !(RC_Artillery_Markers isEqualTo []) then {
 
 					RC_currentTargetMarker = RC_Artillery_Markers select RC_Current_Index;	//moved from scroll solution to here, to still update when marker name was edited
@@ -223,14 +227,14 @@ RC_ULM_AC_UI = [] spawn {
 
 				//find if datalink target is selected
 				_targetPos = [0,0,0];
-				_hasTargetSelected = (cursorTarget isNotEqualto objNull);
+				_hasTargetSelected = (_lockedTarget isNotEqualto objNull);
 
 				//UV Pos
 				_artyPos = getPosASL _uav;
 				//Target Pos
 				if (_hasTargetSelected && !(_noTargetOrTargetTooClose)) then {
-					//_targetPos = getpos cursorTarget;
-					_targetPos = getposASL cursorTarget;
+					//_targetPos = getpos _lockedTarget;
+					_targetPos = getposASL _lockedTarget;
 				} else {
     				_targetPos = AGLtoASL (markerPos [(RC_currentTargetMarker select 1), true]);
 					/*
@@ -278,6 +282,8 @@ RC_ULM_AC_UI = [] spawn {
 
 				//to limit max range
 				_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
+				//_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_maxMV");
+
 
 				//calulate required velocity to hit target
 				private _tanA_M = tan _mediumAngleSol_Deg;
@@ -437,7 +443,7 @@ RC_ULM_AC_UI = [] spawn {
 				_mediumAngleSol = parseNumber str _mediumAngleSol;
 				_highAngleSol = parseNumber str _highAngleSol;
 				_travelTimeMedium = parseNumber str _travelTimeMedium;
-				_travelTimeHigh = parseNumber str _travelTimeMedium;
+				_travelTimeHigh = parseNumber str _travelTimeHigh;
 				_adjustedVelocityHigh = parseNumber str _adjustedVelocityHigh;
 				_adjustedVelocityMedium = parseNumber str _adjustedVelocityMedium;
 	
