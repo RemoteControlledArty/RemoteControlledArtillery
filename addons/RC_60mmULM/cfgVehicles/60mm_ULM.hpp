@@ -442,7 +442,7 @@ class RC_60mm_ULM_Base: RC_60mm_ULM_Core
 				minAngleY=-100;
 				maxAngleY=100;
 
-				initFov=0.9;
+				initFov=0.1;
 				minFov=0.0125;
 				maxFov=0.9;
 				visionMode[]=
@@ -472,7 +472,7 @@ class RC_60mm_ULM_Base: RC_60mm_ULM_Core
 					minAngleY=-100;
 					maxAngleY=100;
 
-					initFov=0.9;
+					initFov=0.1;
 					minFov=0.0125;
 					maxFov=0.9;
 					visionMode[]=
@@ -654,7 +654,7 @@ class RC_60mm_ULM_Vic_AutoCharge: RC_60mm_ULM_Vic
 				"RC_60mm_ULM_Weapon_AutoCharge"
 			};
 
-			initElev=-44.2;	//800MIL on flat ground
+			initElev=-44;	//800MIL on flat ground
 			minelev=-55;	//<800MIL for use on uneven ground
 		};
 	};
