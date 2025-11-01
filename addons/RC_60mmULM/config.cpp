@@ -7,12 +7,15 @@ class CfgPatches
 
 		units[]=
 		{
-			"RC_60mm_ULM_Vic"
+			"RC_60mm_ULM_Vic",
+			"RC_60mm_ULM_Vic_old"
 		};
 		weapons[]=
 		{
 			"RC_60mm_ULM_Bag",
-			"RC_60mm_ULM_Weapon"
+			"RC_60mm_ULM_Bag_old",
+			"RC_60mm_ULM_Weapon",
+			"RC_60mm_ULM_Weapon_old"
 		};
 		magazines[]=
 		{
@@ -50,15 +53,14 @@ class CfgFunctions
       		//class preInit {preInit=1;};
       		//class InitCBASettings {preInit=1;};
 			class RC_UI_Loop_ULM {postInit=1;};
-			class RC_UI_Loop_ULM_AutoCharge {postInit=1;};
+			class RC_UI_Loop_ULM_old {postInit=1;};
       		class init {postInit=1;};
 			//class ui {};
 			class deploy {};
 			class rangetable {};
 			class fire {};
+			class fire_old {};
 			class getout {};
-
-			//ADD "HE - splash in 5sec", fired EH, mag speed, elev TOF for ASL, or fired setvalue on mortar if true UILoop starts scritpt and sets to false so it doesnt trigger twice
 		};
 	};
 };
@@ -113,6 +115,7 @@ class Mode_SemiAuto;
 class Mode_Burst;
 
 
+//to prevent ace ballistics messing with the the calulated trajectory (only needed for manned assets)
 class RscInGameUI
 {
 	class RscWeaponRangeArtillery;
@@ -122,16 +125,8 @@ class RscInGameUI
 
 class CfgMineTriggers
 {
-	class RangeTriggerBounding;
-	class RC_ULM_RangeTriggerBounding: RangeTriggerBounding
-	{
-		mineTriggerRange=12;	//3		//12m is the same as 60mm HE indirectHit radius
-		mineTriggerActivationRange=20;	//5
-		restrictZoneRadius=20;	//5
-	};
+	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgMineTriggers.hpp"
 };
-
-
 class CfgAmmo
 {
 	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
@@ -149,4 +144,5 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\RC_60mmULM\cfgVehicles\60mm_ULM.hpp"
+	#include "\RC_60mmULM\cfgVehicles\60mm_ULM_alternative.hpp"
 };

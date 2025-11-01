@@ -7,7 +7,13 @@ private _colorEL = [[0.725,1,0.5,1], COLOR_CLOSE_TARGET, 0.12, (_differenceHighA
 _ctrlElevation ctrlSetTextColor ([[1, 1, 1, 1], _colorEL] select ((_differenceHighAngle min _differenceMediumAngle) <= 10.0));
 
 if ((_realElevation < (_mediumAngleSol + 0.5)) and (_realElevation > (_mediumAngleSol - 0.5))) then {_ctrlElevation ctrlSetTextColor [0,1,0,1];};
+if ((_realElevation < (_highAngleSol + 0.5)) and (_realElevation > (_highAngleSol - 0.5))) then {_ctrlElevation ctrlSetTextColor [0,1,0,1];};
 
+if (_usingMediumAngle) then {
+	if (_adjustedVelocityMedium == 0) then {_ctrlElevation ctrlSetTextColor [1, 1, 1, 1]};
+} else {
+	if (_adjustedVelocityHigh == 0) then {_ctrlElevation ctrlSetTextColor [1, 1, 1, 1]};
+};
 
 // Set color for azimuth ctrl
 private _difference = abs (_targetAzimuth - _realAzimuth);

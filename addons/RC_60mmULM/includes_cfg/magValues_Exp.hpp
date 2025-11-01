@@ -2,10 +2,6 @@ author="Ascent";
 scope=2;
 scopeCurator=2;
 
-
-//RC_maxMV=193;	//3.5km reach with 280m elev disadvantage (highest mountain on altis)
-//initSpeed=10;	//3.5km reach with 280m elev disadvantage (highest mountain on altis)
-
 initSpeed=193;	//3.5km reach with 280m elev disadvantage (highest mountain on altis)
 RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 

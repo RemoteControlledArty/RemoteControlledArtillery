@@ -399,9 +399,8 @@ class RC_60mm_ULM_Base: RC_60mm_ULM_Core
 			gunnerAction="twc_2inch_Gunner";
 			gunnerRightHandAnimName="OtocHlaven";
 
-			initElev=-30;
 			maxelev=0;
-			minelev=-45;	//88
+			minelev=-55;	//<800MIL for use on uneven ground	//88 for low
 			turretInfoType="Rsc_ULM";
 			//turretInfoType="twc_2inch_ui";
 			gunnerOpticsModel="\A3\weapons_f\reticle\optics_empty";
@@ -497,20 +496,8 @@ class RC_60mm_ULM_Base: RC_60mm_ULM_Core
 };
 
 
-class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
+class RC_60mm_ULM_Vic_Pre: RC_60mm_ULM_Base
 {
-	class EventHandlers: EventHandlers
-	{
-		class RM_ULM
-		{
-			//check getout as that not triggering might cause ammo loss
-			getout="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";
-			fired="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_fire";
-		};
-	};
-
-	isULM=1; // 1 = is ultralight mortar, show display UI
-	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=0.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
@@ -524,12 +511,9 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 	uavCameraGunnerDir="look";
 	*/
 	
-	displayName="60mm advanced Mortar";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
-	scope=2;
-	scopeCurator=2;
 	//driverForceOptics=1;
 
 	enableGPS=1;
@@ -591,11 +575,6 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 
-			weapons[]=
-			{
-				"RC_60mm_ULM_weapon"
-			};
-
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -643,135 +622,56 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Base
 		};
 	};
 };
-class RC_60mm_ULM_Vic_AutoCharge: RC_60mm_ULM_Vic
+class RC_60mm_ULM_Vic: RC_60mm_ULM_Vic_Pre
 {
+	class EventHandlers: EventHandlers
+	{
+		class RM_ULM
+		{
+			//check getout as that not triggering might cause ammo loss
+			getout="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";
+			fired="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_fire";
+		};
+	};
+
+	scope=2;
+	scopeCurator=2;
+	
+	displayName="60mm advanced Mortar";
+	isULM=2; // 1 = display UI, 2 = display automatic gas vent UI, 45° always available
+	RC_ArtyType=5; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL, 5 = NA for vanilla computer
+
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
 			weapons[]=
 			{
-				"RC_60mm_ULM_Weapon_AutoCharge"
+				"RC_60mm_ULM_Weapon"
 			};
 
-			initElev=-44;	//800MIL on flat ground
-			minelev=-55;	//<800MIL for use on uneven ground
+			initElev=-44;	//804MIL on flat ground
 		};
 	};
-
-	isULM=2; // 1 = display UI, 1 = display alternate automatic charge 45° UI
-	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
-	displayName="60mm advanced Mortar V2";
 };
-
-
-class NDS_M224_mortar_base;
-class NDS_M224_mortar_core: NDS_M224_mortar_base
+class RC_60mm_ULM_Vic_old: RC_60mm_ULM_Vic_Pre
 {
-	class Turrets;
-	class MainTurret;
-	class ViewOptics;
-
-	class SimpleObject
+	class EventHandlers: EventHandlers
 	{
-		animate[]=
+		class RM_ULM
 		{
-			
-			{
-				"foldweapon",
-				0
-			}
+			//check getout as that not triggering might cause ammo loss
+			getout="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";
+			fired="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_fire_old";
 		};
-		hide[]={};
-		verticalOffset=0;
 	};
-	editorPreview="NDS_M224_mortar\cannon\data\ui\NDS_M224_eden.jpg";
-	_generalMacro="NDS_M224_mortar";
-	scope=0;
-	scopecurator=0;
-	side=1;
-	displayname="M224 60mm Mortar";
-	editorSubcategory="EdSubcat_Turrets";
-	faction="BLU_F";
-	crew="B_Soldier_F";
-	availableForSupportTypes[]=
-	{
-		"Artillery"
-	};
-	hiddenSelectionsTextures[]=
-	{
-		"NDS_M224_mortar\cannon\data\NDS_M224_co.paa"
-	};
-};
-class NDS_M224_mortar: NDS_M224_mortar_core
-{
-	isULM=1; // 1 = display UI
-	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
-	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelLenght=1;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 
-	displayName="60mm advanced Mortar [long]";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_Mortar_subcat";
-	author="Ascent";
 	scope=1;
 	scopeCurator=1;
-	scopeArsenal=1;
-	//driverForceOptics=1;
 
-	enableGPS=1;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	laserScanner=1;
-
-	class Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=6000;
-
-					class AirTarget
-					{
-						minRange=6000;
-						maxRange=6000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=6000;
-						maxRange=6000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
+	displayName="60mm advanced Mortar (old)";
+	isULM=1; // 1 = display UI, 2 = display automatic gas vent UI, 45° always available
+	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL, 5 = NA for vanilla computer
 
 	class Turrets: Turrets
 	{
@@ -779,158 +679,10 @@ class NDS_M224_mortar: NDS_M224_mortar_core
 		{
 			weapons[]=
 			{
-				"RC_60mm_ULM_weapon"
-			};
-			magazines[]=
-			{
-				"RC_ULM_1Rnd_60mm_Mo_shells",
-				"RC_ULM_1Rnd_60mm_Mo_HEAB",
-				"RC_ULM_1Rnd_60mm_Mo_backupHEAB",
-				"RC_ULM_1Rnd_60mm_Mo_Smoke",
-
-				"RC_ULM_1Rnd_60mm_Mo_MultiGuided",
-				"RC_ULM_1Rnd_60mm_Mo_LaserGuided",
-				"RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse",
-				
-				"RC_ULM_1Rnd_60mm_Mo_mine",
-				"RC_ULM_1Rnd_60mm_Mo_Illum"
-			};
-			/*
-			weapons[]=
-			{
-				"NDS_W_M224_mortar"
-			};
-			magazines[]=
-			{
-				"NDS_M_6Rnd_60mm_HE",
-				"NDS_M_6Rnd_60mm_HE",
-				"NDS_M_6Rnd_60mm_HE_0",
-				"NDS_M_6Rnd_60mm_HE_0",
-				"NDS_M_6Rnd_60mm_SMOKE",
-				"NDS_M_6Rnd_60mm_SMOKE",
-				"NDS_M_6Rnd_60mm_ILLUM",
-				"NDS_M_6Rnd_60mm_ILLUM"
-			};
-			*/
-
-			gunnerForceOptics=0;	//1
-
-			minTurn=-45;
-			maxTurn=45;
-			//minelev=0;
-			minelev=-38;
-			//maxelev=38;
-			maxelev=38;
-			stabilizedInAxes=1;
-			maxVerticalRotSpeed=1;
-			initCamElev=-90;
-			minCamElev=-100;
-			maxCamElev=65;
-
-			class ViewOptics: ViewOptics
-			{
-				initAngleX=0;
-				minAngleX=-30;
-				maxAngleX=30;
-				initAngleY=0;
-				minAngleY=-100;
-				maxAngleY=100;
-
-				initFov=0.9;
-				minFov=0.0125;
-				maxFov=0.9;
-				visionMode[]=
-				{
-					"Normal",
-					"NVG"
-				};
-				
-				minMoveX=0;
-				maxMoveX=0;
-				minMoveY=0;
-				maxMoveY=0;
-				minMoveZ=0;
-				maxMoveZ=0;
-
-				gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
-				gunnerOpticsEffect[]={};
-			};
-			class OpticsIn
-			{
-				class Wide
-				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
-
-					initFov=0.9;
-					minFov=0.0125;
-					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-					
-					minMoveX=0;
-					maxMoveX=0;
-					minMoveY=0;
-					maxMoveY=0;
-					minMoveZ=0;
-					maxMoveZ=0;
-
-					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
-					gunnerOpticsEffect[]={};
-				};
+				"RC_60mm_ULM_Weapon_old"
 			};
 
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000};
-							resource="RscCustomInfoSensors";
-						};
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="UAVFeedDisplay";
-
-					class Components
-					{
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class VehicleMissileDisplay
-						{
-							componentType="TransportFeedDisplayComponent";
-							source="Missile";
-							resource="RscTransportCameraComponentMissile";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-					};
-				};
-			};
+			initElev=-30;
 		};
 	};
 };

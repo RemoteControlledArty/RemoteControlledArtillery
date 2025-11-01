@@ -1,8 +1,7 @@
 params ["_unit"];
 
 private _secWeap = secondaryWeapon _unit;
-private _secWeap = secondaryWeapon _unit;
-if (!(_secWeap in ["RC_60mm_ULM_Bag", "RC_60mm_ULM_Bag_AutoCharge"]) || !(local _unit) || !(isPlayer _unit) || (vehicle player != player)) exitwith {};
+if (!(_secWeap in ["RC_60mm_ULM_Bag", "RC_60mm_ULM_Bag_old"]) || !(local _unit) || !(isPlayer _unit) || (vehicle player != player)) exitwith {};
 //(secondaryWeapon _unit != "RC_60mm_ULM_Bag")
 
 if (weaponLowered _unit) then {_unit switchMove "amovpercmstpslowwrfldnon"};
@@ -23,43 +22,13 @@ _KK_fnc_setPosAGLS = {
 
 
 _mortar = objNull;
-private _ULMtype = _secWeap == "RC_60mm_ULM_Bag";
+private _ULMtype = (_secWeap == "RC_60mm_ULM_Bag");
 if (_ULMtype) then {
 	_mortar = "RC_60mm_ULM_Vic" createVehicle _pos;
 } else {
-	_mortar = "RC_60mm_ULM_Vic_AutoCharge" createVehicle _pos;
-
-	/*
-	_mortar addEventHandler ["Fired", {
-		params ["","","","","","","_prj"];
-		
-		private _vel = velocity _prj;
-		private _currentSpeed = vectorMagnitude _vel;
-		if (RC_ULM_Velocity <= 0) exitWith {systemchat "vel <= 1"};
-		
-		private _newSpeed = ULM_Velocity;
-		private _factor = _newSpeed / _currentSpeed;
-		_prj setVelocity (_vel vectorMultiply _factor);
-
-		//systemchat str ULM_Velocity;
-		//systemchat str ULM_ETA;
-		
-		[RC_ULM_ETA] spawn {
-			params ["_ETA"];
-
-			if (_ETA	 > 5) then {
-				sleep (_ETA - 5);
-				systemchat "splash in 5sec";
-				sleep 5;
-			} else {
-				sleep _ETA;
-			};
-
-			systemchat "splash";
-		};
-	}];
-	*/
+	_mortar = "RC_60mm_ULM_Vic_old" createVehicle _pos;
 };
+
 
 [_mortar, _pos] call _KK_fnc_setPosAGLS;
 _mortar setDir _dir;
@@ -131,11 +100,13 @@ if !(isNil "_loadedMag") then {
 	};
 };
 
+
 if (_ULMtype) then {
 	_unit removeWeapon "RC_60mm_ULM_Bag";
 } else {
-	_unit removeWeapon "RC_60mm_ULM_Bag_AutoCharge";
+	_unit removeWeapon "RC_60mm_ULM_Bag_old";
 };
+
 
 /*
 switch (true) do

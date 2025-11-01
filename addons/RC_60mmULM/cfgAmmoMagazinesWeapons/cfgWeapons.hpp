@@ -29,13 +29,9 @@ class RC_60mm_ULM_Bag_Base: twc_2inch_bag
 	scopeArsenal=0;
 };
 */
-class RC_60mm_ULM_Bag: twc_2inch_bag
+class RC_60mm_ULM_Bag_Base: twc_2inch_bag
 {
 	author="Ascent";
-	displayname="60mm advanced Mortar";
-	displayNameShort="60mm advanced Mortar";
-	scope=2;
-	scopeArsenal=2;
 	magazineReloadTime=2.5;
 	reloadTime=1.8;
 
@@ -64,10 +60,19 @@ class RC_60mm_ULM_Bag: twc_2inch_bag
 		mass=50;
 	};
 };
-class RC_60mm_ULM_Bag_AutoCharge: RC_60mm_ULM_Bag
+class RC_60mm_ULM_Bag: RC_60mm_ULM_Bag_Base
 {
-	displayname="60mm advanced Mortar (automatic charge)";
-	displayNameShort="60mm advanced Mortar (automatic charge)";
+	displayname="60mm advanced Mortar";
+	displayNameShort="60mm advanced Mortar";
+	scope=2;
+	scopeArsenal=2;
+};
+class RC_60mm_ULM_Bag_old: RC_60mm_ULM_Bag_Base
+{
+	displayname="60mm advanced Mortar (old)";
+	displayNameShort="60mm advanced Mortar (old)";
+	scope=1;
+	scopeArsenal=1;
 };
 
 
@@ -105,6 +110,38 @@ class RC_60mm_ULM_Weapon_Base: RC_60mm_ULM_Weapon_Core
 class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 {
 	displayname="60mm advanced Mortar";
+	displayNameShort="60mm Mortar";
+
+	modes[]=
+	{
+		"Single1",
+		"Burst1",
+		"Burst2",
+		"Burst3"
+		//"Cruise"
+	};
+	class Single1: Single1
+	{
+		displayName="CH1";
+		artilleryDispersion=1;	//no effect, dispersion applied by script
+		artilleryCharge=1;		//velocity applied per script
+		
+		minRange=10;
+		midRange=1750;
+		maxRange=3500;
+	};
+	/*
+	class Cruise: Single1
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+		artilleryCharge=1;	//1.1
+	};
+	*/
+};
+class RC_60mm_ULM_Weapon_old: RC_60mm_ULM_Weapon_Base
+{
+	displayname="60mm advanced Mortar (old)";
 	displayNameShort="60mm Mortar";
 
 	modes[]=
@@ -208,62 +245,6 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 		maxRangeProbab=0.94999999;
 		*/
 		/*
-	};
-	*/
-};
-class RC_60mm_ULM_Weapon_AutoCharge: RC_60mm_ULM_Weapon_Base
-{
-	displayname="60mm advanced Mortar V2";
-	displayNameShort="60mm Mortar";
-
-	modes[]=
-	{
-		"Single1",
-		"Burst1",
-		"Burst2",
-		"Burst3"
-		//"Cruise"
-	};
-	class Single1: Single1
-	{
-		displayName="CH1";
-		artilleryDispersion=1;
-		artilleryCharge=1;
-		
-		minRange=10;
-		midRange=1750;
-		maxRange=3500;
-	};
-
-	/*
-	modes[]=
-	{
-		"800MIL",
-		"1200MIL",
-		"Burst1",
-		"Burst2",
-		"Burst3"
-		//"Cruise"
-	};
-	class 800MIL: Single1
-	{
-		displayName="45°";
-		artilleryDispersion=1;
-		artilleryCharge=1;
-		
-		minRange=10;
-		midRange=1750;
-		maxRange=3500;
-	};
-	class 1200MIL: 800MIL
-	{
-		displayName="65.5°";
-		artilleryDispersion=1;
-		artilleryCharge=1;
-
-		minRange=10;
-		midRange=875;
-		maxRange=1750;
 	};
 	*/
 };

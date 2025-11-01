@@ -347,54 +347,6 @@ class RC_ULM_Rsc: RC_Artillery_Base
 
 	controls[]=
 	{
-		RscText_1001,
-		RscText_1002,
-		RscText_1003,
-		RscText_1004,
-		RscText_1005,
-		RscText_1006,
-		RscText_1007,
-		RscText_1008,
-		RscText_1010,
-		RscText_1012,
-		RscText_1015,
-		RscText_1016,
-		RscText_1017,
-		RscText_1018,
-		RscText_1019,
-		RscText_1020,
-		RscText_1021,
-		RscText_1022,
-		RscText_1023,
-		RscText_1024,
-		RscText_1025,
-		RscText_1026,
-		RscText_1027,
-		RscText_1028
-	};
-
-	class RscText_1008: RscText_1001
-	{
-		idc = IDC_HIGHSOL;
-		text = "high EL: 0000"; //--- ToDo: Localize;
-
-		x = "0.95165 * safezoneW + safezoneX";
-		y = "0.1639327 * safezoneH + safezoneY";
-	};
-	class RscText_1010: RscText_1001
-	{
-		idc = IDC_HIGHETA;
-		text = "ETA: 000"; //--- ToDo: Localize;
-		x = "0.915154 * safezoneW + safezoneX";
-		y = "0.1639327 * safezoneH + safezoneY";
-	};
-};
-class RC_ULM_AC_Rsc: RC_Artillery_Base
-{
-	onLoad = "uiNameSpace setVariable ['RC_ULM_AC_Rsc', _this select 0]";
-
-	controls[]=
-	{
 		RscText_1002,
 		RscText_1003,
 		RscText_1004,
@@ -476,5 +428,53 @@ class RC_ULM_AC_Rsc: RC_Artillery_Base
 	{
 		idc = IDC_NEWTARGET;
 		y = "0.1199294 * safezoneH + safezoneY";
+	};
+};
+class RC_ULM_old_Rsc: RC_Artillery_Base
+{
+	onLoad = "uiNameSpace setVariable ['RC_ULM_old_Rsc', _this select 0]";
+
+	controls[]=
+	{
+		RscText_1001,
+		RscText_1002,
+		RscText_1003,
+		RscText_1004,
+		RscText_1005,
+		RscText_1006,
+		RscText_1007,
+		RscText_1008,
+		RscText_1010,
+		RscText_1012,
+		RscText_1015,
+		RscText_1016,
+		RscText_1017,
+		RscText_1018,
+		RscText_1019,
+		RscText_1020,
+		RscText_1021,
+		RscText_1022,
+		RscText_1023,
+		RscText_1024,
+		RscText_1025,
+		RscText_1026,
+		RscText_1027,
+		RscText_1028
+	};
+
+	class RscText_1008: RscText_1001
+	{
+		idc = IDC_HIGHSOL;
+		text = "high EL: 0000"; //--- ToDo: Localize;
+
+		x = "0.95165 * safezoneW + safezoneX";
+		y = "0.1639327 * safezoneH + safezoneY";
+	};
+	class RscText_1010: RscText_1001
+	{
+		idc = IDC_HIGHETA;
+		text = "ETA: 000"; //--- ToDo: Localize;
+		x = "0.915154 * safezoneW + safezoneX";
+		y = "0.1639327 * safezoneH + safezoneY";
 	};
 };

@@ -34,7 +34,6 @@ _unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse";
 
 _unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_mine";
 _unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_Illum";
-
 //systemchat "mags removed";
 
 
@@ -45,14 +44,13 @@ _unit removeMagazines "RC_ULM_1Rnd_60mm_Mo_Illum";
 
 //RC_ULM_currentFireMode = currentWeaponMode (gunner _vehicle);
 
-
 deleteVehicle _vehicle;
 private _isULM = getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "isULM");
 
-if (_isULM == 1) then {
+if (_isULM == 2) then {
 	_unit addWeapon "RC_60mm_ULM_Bag";
 } else {
-	_unit addWeapon "RC_60mm_ULM_Bag_AutoCharge";
+	_unit addWeapon "RC_60mm_ULM_Bag_old";
 };
 
 if (_loadedMag != "") then {

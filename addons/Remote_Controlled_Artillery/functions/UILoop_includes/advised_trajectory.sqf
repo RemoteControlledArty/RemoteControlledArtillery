@@ -12,14 +12,12 @@ switch (_advisedTrajectory) do {
 		_ctrlHighSol ctrlSetTextColor [0.5, 0.5, 0.5, 0.5]; 
 		_ctrlHighETA ctrlSetTextColor [0.5, 0.5, 0.5, 0.5];
 	};
-
 	case 2: {
-		_ctrlHighSol ctrlSetTextColor [1.0, 1.0, 1.0, 1.0];
-		_ctrlHighETA ctrlSetTextColor [1.0, 1.0, 1.0, 1.0];
 		_ctrlLowSol ctrlSetTextColor [0.5, 0.5, 0.5, 0.5];
 		_ctrlLowETA ctrlSetTextColor [0.5, 0.5, 0.5, 0.5];
+		_ctrlHighSol ctrlSetTextColor [1.0, 1.0, 1.0, 1.0];
+		_ctrlHighETA ctrlSetTextColor [1.0, 1.0, 1.0, 1.0];
 	};
-
 	case 3: {
 		_ctrlLowSol ctrlSetTextColor [1.0, 1.0, 1.0, 1.0]; 
 		_ctrlLowETA ctrlSetTextColor [1.0, 1.0, 1.0, 1.0]; 
