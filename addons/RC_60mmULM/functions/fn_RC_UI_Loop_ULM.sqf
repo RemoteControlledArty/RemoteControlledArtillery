@@ -14,6 +14,8 @@ RC_isULM_Hash = createHashMap;
 
 
 RC_ULM_UI = [] spawn {
+	_prevVelocity=0; //for gas vent servo sound
+
 	while { true } do {
 		sleep 0.1;
 
@@ -34,7 +36,7 @@ RC_ULM_UI = [] spawn {
 		// See if the vehicle has the isULM property
 		private _isULM = RC_isULM_Hash get _uavClass;
 
-		//2 is automatic charge system, venting excess gas to reduce velocity, allowing to always shoot at 45deg
+		//2 is automatic gas vent, altering velocity, allowing to always shoot at 45deg
 		if (isNil "_isULM") then {
 			_isULM = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isULM") == 2;
 			RC_isULM_Hash set [_uavClass, _isULM];
@@ -48,6 +50,9 @@ RC_ULM_UI = [] spawn {
 		};
 
 		if (cameraView != "GUNNER") then {
+			// UI Shouldn't be Shown so we cut it
+			"RC_ULM_Rsc" cutFadeOut 0;
+			RC_ULM_InUI = false;
 			continue;
 		};
 
@@ -246,8 +251,14 @@ RC_ULM_UI = [] spawn {
 					};
 				};
 
-				//ElDiff additions, like muzzle position, and rounds aim above value (airburst & topdown guided)
-				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\eldiff_additions.sqf"
+				//ElDiff additions, like muzzle position, and rounds aim above value (airburst, topdown guided, illum)
+				//#include "\Remote_Controlled_Artillery\functions\UILoop_includes\eldiff_additions.sqf"
+				_muzzleHeightEstimate = 0.5;
+				private _aimAboveHeight = RC_AimAboveHeightHash get _currentMag;
+				if (isNil "_aimAboveHeight") then {
+					_aimAboveHeight = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_AimAboveHeight");
+					RC_AimAboveHeightHash set [_currentMag, _aimAboveHeight];
+				};
 
 				//find if datalink target is selected
 				_targetPos = [0,0,0];
@@ -271,6 +282,7 @@ RC_ULM_UI = [] spawn {
 				//Barrel End to Target Distance
 				_muzzleFromCenterEstimate = 0;
 				
+				/*
 				private _BarrelExtends = RC_BarrelExtendsHash get _uavClass;
 				if (isNil "_BarrelExtends") then {
 					_BarrelExtends = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends") == 1;
@@ -279,6 +291,9 @@ RC_ULM_UI = [] spawn {
 
 				if (_BarrelExtends) then { _muzzleFromCenterEstimate = _BarrelLenght * (cos (_WeaponDirection * 90)) };
 				_targetDistance = (round ((_targetPos distance2d _artyPos) - _muzzleFromCenterEstimate)) max 1;
+				*/
+
+				_targetDistance = (round (_targetPos distance2d _artyPos)) max 1;
 
 				_Difference = 0;
 				//_Difference = ((AGLToASL _targetPos) select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
@@ -404,6 +419,18 @@ RC_ULM_UI = [] spawn {
 					RC_ULM_ETA = _travelTimeHigh;
 				};
 
+				//gas vent servo sound if new target selected
+				if (_usingMediumAngle) then {
+					if ((_adjustedVelocityMedium != 0) && (RC_ULM_Velocity != _prevVelocity)) then {
+						playSound3D ["a3\sounds_f_enoch\assets\vehicles\ugv_02\ugv_02_servo_01.wss", _uav, false, getPosASL _uav, 5, 1.75, 6, 23.5, true];
+						_prevVelocity = RC_ULM_Velocity;
+					};
+				} else {
+					if ((_adjustedVelocityHigh != 0) && (RC_ULM_Velocity != _prevVelocity)) then {
+						playSound3D ["a3\sounds_f_enoch\assets\vehicles\ugv_02\ugv_02_servo_01.wss", _uav, false, getPosASL _uav, 5, 1.75, 6, 23.5, true];
+						_prevVelocity = RC_ULM_Velocity;
+					};
+				};
 				
 				// AZ/EL coloring when close to firing solution
 				//#include "\RC_60mmULM\functions\temporary_coloring_workaround_ULM_AutoCharge.sqf"

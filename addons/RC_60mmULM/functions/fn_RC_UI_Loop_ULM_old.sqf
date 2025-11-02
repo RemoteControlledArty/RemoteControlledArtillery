@@ -40,20 +40,12 @@ RC_ULM_old_UI = [] spawn {
 		_player = player;
 		_vicPlayer = vehicle player;
 
-		/*
-		private _inOptics = false;
-		if (cameraOn == _uav && cameraView == "Internal") then	{
-			_inOptics = true;
-		};
-		*/
-
-		if ((_vicPlayer isEqualTo _player) || (cameraView != "GUNNER")) then {
+		if (_vicPlayer isEqualTo _player) then {
 			// UI Shouldn't be Shown so we cut it
 			"RC_ULM_old_Rsc" cutFadeOut 0;
 			RC_ULM_old_InUI = false;
 			continue;
 		};
-		//systemchat "_vicPlayer isNotEqualTo _player";
 
 		// UAV
 		_uav = _vicPlayer;
@@ -65,6 +57,22 @@ RC_ULM_old_UI = [] spawn {
 		if (isNil "_isULM") then {
 			_isULM = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isULM") == 1;
 			RC_isULM_old_Hash set [_uavClass, _isULM];
+		};
+
+		if (_isULM && shownArtilleryComputer) then {
+			if (!RC_allowPortableMortarComputer) then {
+				closeDialog 0;
+				hintSilent "vanilla artillery computer disabled by mod settings";
+				sleep 2;
+				hintSilent "";
+			};
+		};
+
+		if (cameraView != "GUNNER") then {
+			// UI Shouldn't be Shown so we cut it
+			"RC_ULM_Rsc" cutFadeOut 0;
+			RC_ULM_InUI = false;
+			continue;
 		};
 
 		// If it's of Artillery or Mortar Type do da thing
@@ -86,6 +94,7 @@ RC_ULM_old_UI = [] spawn {
 			_AceUI = uiNamespace getVariable ["ACE_dlgArtillery", displayNull];
 			_RCAUI = uiNamespace getVariable ["RCA_ArtyUI", displayNull];
 			
+			/*
 			// CBA Option for Allowing the Artillery Computer in RC Artillery UGVs, without ACE its stays on for Mortars (as they dont work manually without ACE atm)
 			// Remote Execute this to make it Multiplayer Compatible
 			private _ArtyType = RC_ArtyTypeHash get _uavClass;
@@ -113,6 +122,7 @@ RC_ULM_old_UI = [] spawn {
 					};
 				};
 			};
+			*/
 
 			_RCA_CurrentArtyDisplay = displayNull;
 			// If our one is Null we use theirs

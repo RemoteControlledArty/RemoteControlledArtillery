@@ -498,23 +498,13 @@ class RC_60mm_ULM_Base: RC_60mm_ULM_Core
 
 class RC_60mm_ULM_Vic_Pre: RC_60mm_ULM_Base
 {
-	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
+	RC_BarrelAGL=0;			//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=0.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
-	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
-	
-	/*
-	textPlural="UGVs";
-	textSingular="UGV";
-	isUav=1;
-	vehicleClass="Autonomous";
-	uavCameraGunnerPos="eye";
-	uavCameraGunnerDir="look";
-	*/
-	
+	RC_BarrelExtends=1;		//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
+
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
-	//driverForceOptics=1;
 
 	enableGPS=1;
 	radartype=2;
@@ -628,7 +618,6 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Vic_Pre
 	{
 		class RM_ULM
 		{
-			//check getout as that not triggering might cause ammo loss
 			getout="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";
 			fired="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_fire";
 		};
@@ -654,13 +643,35 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Vic_Pre
 		};
 	};
 };
+class RC_60mm_ULM_Vic_attachable: RC_60mm_ULM_Vic
+{
+	class EventHandlers: EventHandlers
+	{
+		class RM_ULM
+		{
+			fired="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_fire";
+		};
+	};
+
+	displayName="RC 60mm advanced Mortar (attached)";
+	scope=1;
+	scopeCurator=1;
+
+	crew="B_UAV_AI";
+	textPlural="UGVs";
+	textSingular="UGV";
+	isUav=1;
+	vehicleClass="Autonomous";
+	uavCameraGunnerPos="eye";
+	uavCameraGunnerDir="look";
+	driverForceOptics=1;
+};
 class RC_60mm_ULM_Vic_old: RC_60mm_ULM_Vic_Pre
 {
 	class EventHandlers: EventHandlers
 	{
 		class RM_ULM
 		{
-			//check getout as that not triggering might cause ammo loss
 			getout="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";
 			fired="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_fire_old";
 		};
