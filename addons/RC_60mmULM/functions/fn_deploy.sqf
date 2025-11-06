@@ -10,18 +10,8 @@ private _dir = getDir _unit;
 private _height = (getPos _unit) select 2;
 private _pos = _unit getPos [0.1, _dir];
 
-_KK_fnc_setPosAGLS = {
-	params ["_obj", "_pos", "_offset"];
-	private _offset = _pos select 2;
-	if (isNil "_offset") then {_offset = 0};
-	_pos set [2, worldSize];
-	_obj setPosASL _pos;
-	_pos set [2, vectorMagnitude (_pos vectorDiff getPosVisual _obj) + _offset];
-	_obj setPosASL _pos;
-};
 
-
-_mortar = objNull;
+private _mortar = objNull;
 private _ULMtype = (_secWeap == "RC_60mm_ULM_Bag");
 if (_ULMtype) then {
 	_mortar = "RC_60mm_ULM_Vic" createVehicle _pos;
@@ -30,9 +20,13 @@ if (_ULMtype) then {
 };
 
 
-[_mortar, _pos] call _KK_fnc_setPosAGLS;
+[_mortar, _pos] call RC_ULM_fnc_setPosAGLS;
 _mortar setDir _dir;
-if ((getPosATL _unit) isEqualTo (getPos _unit)) then {_mortar setVectorUp (surfaceNormal _pos)} else {_mortar setVectorUp (vectorUp _unit)};
+if ((getPosATL _unit) isEqualTo (getPos _unit)) then {
+	_mortar setVectorUp (surfaceNormal _pos)
+} else {
+	_mortar setVectorUp (vectorUp _unit)
+};
 _mortar setVariable ["ace_mk6mortar_exclude", true];	//???
 
 _unit assignAsGunner _mortar;
@@ -40,18 +34,18 @@ _unit moveInGunner _mortar;
 
 
 private _magazines = magazines _unit;
-_HECount = {_x == "RC_ULM_1Rnd_60mm_Mo_shells"} count _magazines;
-_HEABCount = {_x == "RC_ULM_1Rnd_60mm_Mo_HEAB"} count _magazines;
-_HEABbackupCount = {_x == "RC_ULM_1Rnd_60mm_Mo_backupHEAB"} count _magazines;
-_smokeCount = {_x == "RC_ULM_1Rnd_60mm_Mo_Smoke"} count _magazines;
+private _HECount = {_x == "RC_ULM_1Rnd_60mm_Mo_shells"} count _magazines;
+private _HEABCount = {_x == "RC_ULM_1Rnd_60mm_Mo_HEAB"} count _magazines;
+private _HEABbackupCount = {_x == "RC_ULM_1Rnd_60mm_Mo_backupHEAB"} count _magazines;
+private _smokeCount = {_x == "RC_ULM_1Rnd_60mm_Mo_Smoke"} count _magazines;
 
-_MpMgCount = {_x == "RC_ULM_1Rnd_60mm_Mo_MultiGuided"} count _magazines;
-_MpLgCount = {_x == "RC_ULM_1Rnd_60mm_Mo_LaserGuided"} count _magazines;
-_MpLgDfCount = {_x == "RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse"} count _magazines;
+private _MpMgCount = {_x == "RC_ULM_1Rnd_60mm_Mo_MultiGuided"} count _magazines;
+private _MpLgCount = {_x == "RC_ULM_1Rnd_60mm_Mo_LaserGuided"} count _magazines;
+private _MpLgDfCount = {_x == "RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse"} count _magazines;
 //_MpLgDfCount = {_x == "RC_ULM_1Rnd_MP_NLOS_Nano"} count _magazines;
 
-_mineCount = {_x == "RC_ULM_1Rnd_60mm_Mo_mine"} count _magazines;
-_IllumCount = {_x == "RC_ULM_1Rnd_60mm_Mo_Illum"} count _magazines;
+private _mineCount = {_x == "RC_ULM_1Rnd_60mm_Mo_mine"} count _magazines;
+private _IllumCount = {_x == "RC_ULM_1Rnd_60mm_Mo_Illum"} count _magazines;
 private _loadedMag = (secondaryWeaponMagazine _unit) select 0;
 
 

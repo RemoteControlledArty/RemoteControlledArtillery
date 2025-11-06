@@ -122,7 +122,7 @@ class RC_60mm_ULM_Weapon: RC_60mm_ULM_Weapon_Base
 	};
 	class Single1: Single1
 	{
-		displayName="CH1";
+		displayName="Adjusted";
 		artilleryDispersion=1;	//no effect, dispersion applied by script
 		artilleryCharge=1;		//velocity applied per script
 		

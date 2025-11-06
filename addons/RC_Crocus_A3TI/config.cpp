@@ -62,6 +62,13 @@ class CfgPatches
 			"RC_Crocus_Carrier_WD_O",
 			"RC_Crocus_Carrier_WD_I",
 
+			"RC_Crocus_Carrier_PvP_A",
+			"RC_Crocus_Carrier_PvP_A_O",
+			"RC_Crocus_Carrier_PvP_A_I",
+			"RC_Crocus_Carrier_PvP_WD",
+			"RC_Crocus_Carrier_PvP_WD_O",
+			"RC_Crocus_Carrier_PvP_WD_I",
+
 			"RC_Crocus_Truck_A",
 			"RC_Crocus_Truck_A_O",
 			"RC_Crocus_Truck_A_I",

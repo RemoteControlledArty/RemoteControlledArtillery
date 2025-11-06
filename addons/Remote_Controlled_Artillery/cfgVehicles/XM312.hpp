@@ -251,6 +251,7 @@ class RC_cUAS_Static_HMG: RC_cUAS_Static_HMG_base
 	uavCameraGunnerDir="gunnerview";
 	crew="B_UAV_AI";
 	//armor=30;	//30
+	armor=15;
 
 	class assembleInfo: assembleInfo
 	{
@@ -327,6 +328,7 @@ class RC_cUAS_Static_HMG_manned: RC_cUAS_Static_HMG_base
 	scopeCurator=2;
 	forceInGarage=1;
 	//armor=30;	//30
+	armor=15;
 
 	class Turrets: Turrets
 	{

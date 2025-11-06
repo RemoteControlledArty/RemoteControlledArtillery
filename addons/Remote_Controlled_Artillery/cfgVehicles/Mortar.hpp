@@ -1,5 +1,5 @@
 class B_Mortar_01_F;
-class RC_Mortar_base: B_Mortar_01_F
+class RC_Mortar_Core: B_Mortar_01_F
 {
 	class Turrets;
 	class MainTurret;
@@ -17,24 +17,12 @@ class RC_Mortar_base: B_Mortar_01_F
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 };
-class RC_Mortar: RC_Mortar_base
+class RC_Mortar_Base: RC_Mortar_Core
 {
 	displayName="RC Mortar 4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	isUav=1;
-	vehicleClass="Autonomous";
-	uavCameraGunnerPos="eye";
-	uavCameraGunnerDir="look";
-	crew="B_UAV_AI";
-	driverForceOptics=1;
 	enableGPS=1;
 	radartype=2;
 	reportOwnPosition=1;
@@ -176,6 +164,23 @@ class RC_Mortar: RC_Mortar_base
 			};
 		};
 	};
+};
+class RC_Mortar: RC_Mortar_Base
+{
+	displayName="RC Mortar 4km";
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	textPlural="UGVs";
+	textSingular="UGV";
+	isUav=1;
+	vehicleClass="Autonomous";
+	uavCameraGunnerPos="eye";
+	uavCameraGunnerDir="look";
+	crew="B_UAV_AI";
+	driverForceOptics=1;
 };
 class RC_Mortar_O: RC_Mortar
 {

@@ -235,6 +235,7 @@ class RC_cUAS_Static: RC_cUAS_Static_base
 	uavCameraGunnerDir="gunnerview";
 	crew="B_UAV_AI";
 	//armor=30;	//30
+	armor=15;
 
 	class assembleInfo: assembleInfo
 	{
@@ -327,6 +328,7 @@ class RC_cUAS_Static_manned: RC_cUAS_Static_base
 	scopeCurator=2;
 	forceInGarage=1;
 	//armor=30;	//30
+	armor=15;
 
 	class Turrets: Turrets
 	{

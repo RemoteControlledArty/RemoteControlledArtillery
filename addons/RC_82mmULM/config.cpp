@@ -1,42 +1,37 @@
 class CfgPatches
 {
-	class RC_60mmULM
+	class RC_82mmULM
 	{
-		name="advanced 60mm Mortar";
+		name="advanced 82mm Mortar";
 		author="Ascent";
 
 		units[]=
 		{
-			"RC_60mm_ULM_Vic",
-			"RC_60mm_ULM_Vic_old"
+			"RC_82mm_ULM_Vic"
 		};
 		weapons[]=
 		{
-			"RC_60mm_ULM_Bag",
-			"RC_60mm_ULM_Bag_old",
-			"RC_60mm_ULM_Weapon",
-			"RC_60mm_ULM_Weapon_old"
+			"RC_82mm_ULM_Bag",
+			"RC_82mm_ULM_Weapon"
 		};
 		magazines[]=
 		{
-			"RC_ULM_1Rnd_60mm_Mo_shells",
-			"RC_ULM_1Rnd_60mm_Mo_HEAB",
-			"RC_ULM_1Rnd_60mm_Mo_backupHEAB",
-			"RC_ULM_1Rnd_60mm_Mo_Smoke",
+			"RC_ULM_1Rnd_82mm_Mo_shells",
+			"RC_ULM_1Rnd_82mm_Mo_HEAB",
+			"RC_ULM_1Rnd_82mm_Mo_Smoke",
 
-			"RC_ULM_1Rnd_60mm_Mo_MultiGuided",
-			"RC_ULM_1Rnd_60mm_Mo_LaserGuided",
-			"RC_ULM_1Rnd_60mm_Mo_LG_DelayedFuse",
+			"RC_ULM_1Rnd_82mm_Mo_MultiGuided",
+			"RC_ULM_1Rnd_82mm_Mo_LaserGuided",
+			"RC_ULM_1Rnd_82mm_Mo_LG_DelayedFuse",
 			
-			"RC_ULM_1Rnd_60mm_Mo_mine",
-			"RC_ULM_1Rnd_60mm_Mo_Illum"
+			"RC_ULM_1Rnd_82mm_Mo_mine",
+			"RC_ULM_1Rnd_82mm_Mo_AT_mine",
+			"RC_ULM_1Rnd_82mm_Mo_Illum"
 		};
 		requiredAddons[]=
 		{
 			"cba_main",
-			"RC_Artillery",
-			"twc_2inch",
-			"NDS_M224_mortar"
+			"RC_Artillery"
 		};
 
 		skipWhenMissingDependencies=1;
@@ -46,21 +41,19 @@ class CfgPatches
 
 class CfgFunctions
 {
-	class RC_ULM
+	class RC_82mmULM
 	{
 		class functions
 		{
-			file="\RC_60mmULM\functions";
+			file="\RC_82mmULM\functions";
       		//class preInit {preInit=1;};
       		//class InitCBASettings {preInit=1;};
 			class RC_UI_Loop_ULM {postInit=1;};
-			class RC_UI_Loop_ULM_old {postInit=1;};
-      		class init {postInit=1;};
-			class deploy {};
+      		class init_82mm {postInit=1;};
+			class deploy_82mm {};
 			class setPosAGLS {};
-			class fire {};
-			class fire_old {};
-			class getout {};
+			class fire_82mm {};
+			class getout_82mm {};
 			//class ui {};
 			//class rangetable {};
 		};
@@ -78,7 +71,7 @@ class Extended_PostInit_EventHandlers
 };
 class Extended_GetOut_Eventhandlers
 {
-	class RC_60mm_ULM_Vic
+	class RC_82mm_ULM_Vic
 	{
 		class RC_ULM
 		{
@@ -88,7 +81,7 @@ class Extended_GetOut_Eventhandlers
 };
 class Extended_FiredBIS_EventHandlers
 {
-	class RC_60mm_ULM_Vic
+	class RC_82mm_ULM_Vic
 	{
 		class RC_ULM
 		{
@@ -125,26 +118,17 @@ class RscInGameUI
 };
 
 
-class CfgMineTriggers
-{
-	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgMineTriggers.hpp"
-};
-class CfgAmmo
-{
-	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
-};
 class CfgMagazines
 {
-	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+	#include "\RC_82mmULM\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
 class CfgWeapons
 {
-	#include "\RC_60mmULM\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
+	#include "\RC_82mmULM\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
 
 
 class CfgVehicles
 {
-	#include "\RC_60mmULM\cfgVehicles\60mm_ULM.hpp"
-	#include "\RC_60mmULM\cfgVehicles\60mm_ULM_alternative.hpp"
+	#include "\RC_82mmULM\cfgVehicles\82mm_ULM.hpp"
 };
