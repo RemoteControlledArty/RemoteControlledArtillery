@@ -41,7 +41,7 @@ class CfgAmmo
 		htMax=600;	//?
 		htMin=60;	//?
 		indirectHit=21;	//42
-		indirectHitRange=4;
+		indirectHitRange=5.5;
 		warheadName="TandemHEAT";
 		//warheadName="HEAT";
 		submunitionAmmo="FPV_RPG42_AT_Penetrator_PvP";

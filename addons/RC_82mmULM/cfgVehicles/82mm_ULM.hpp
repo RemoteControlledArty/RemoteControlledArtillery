@@ -4,9 +4,13 @@ class RC_82mm_ULM_Vic_Core: RC_Mortar_Base
 	class Turrets;
 	class MainTurret;
 	class ViewOptics;
-	class Components;
+	//class Components;
 	class EventHandlers;
 };
+
+//needs to be build from ground up not dependant on ace modified Mk6, and no backpack model is available
+//UXO item models and pictures could be used for shells
+
 class RC_82mm_ULM_Vic: RC_82mm_ULM_Vic_Core
 {
 	class EventHandlers: EventHandlers
@@ -36,6 +40,7 @@ class RC_82mm_ULM_Vic: RC_82mm_ULM_Vic_Core
 		primary=0;
 	};
 
+	/*
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -81,6 +86,7 @@ class RC_82mm_ULM_Vic: RC_82mm_ULM_Vic_Core
 			};
 		};
 	};
+	*/
 
 	class Turrets: Turrets
 	{
@@ -88,7 +94,9 @@ class RC_82mm_ULM_Vic: RC_82mm_ULM_Vic_Core
 		{
 			turretInfoType="Rsc_ULM";
 			//maxCamElev=45;
-			initElev=-29.8;	//804MIL on flat ground
+			initCamElev=0;
+			minCamElev=-5;
+			initElev=-29.75;	//804MIL on flat ground
 			//maxelev=89;
 			minelev=-35;	//<800MIL for use on uneven ground
 
@@ -105,6 +113,7 @@ class RC_82mm_ULM_Vic: RC_82mm_ULM_Vic_Core
 				maxFov=0.9;
 			};
 
+			/*
 			class Components: Components
 			{
 				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -149,6 +158,7 @@ class RC_82mm_ULM_Vic: RC_82mm_ULM_Vic_Core
 					};
 				};
 			};
+			*/
 		};
 	};
 };
