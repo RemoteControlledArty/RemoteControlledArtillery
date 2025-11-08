@@ -188,6 +188,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			maxElev=87;
+			//initElev=20;
 
 			weapons[]=
 			{

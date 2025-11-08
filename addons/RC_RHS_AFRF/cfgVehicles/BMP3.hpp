@@ -26,12 +26,11 @@ class RC_BMP3_Base: RC_BMP3_Core
 	{
 		class RHS_EventHandlers
 		{
-			init="_this call RHS_fnc_T72_init;";
-			postInit="_this call rhs_fnc_reapplyTextures";
-			fired="_this call RHS_fnc_T72_autoloader;";
+			fired="_this call RHS_fnc_bmp3_autoloader;";
+			getOut="_this call rhs_fnc_hatchAbandon";
 			hitpart="_this call rhs_fnc_hitSpall";
-			getOut="_this call rhs_fnc_t72_hatch;_this call rhs_fnc_hatchAbandon";
-			killed="[_this select 0,'rhs_Wreck_T90am_turret_F'] call rhs_fnc_turretBlow";
+			init="_this call rhs_fnc_bmp3_init;";
+			postInit="_this call rhs_fnc_reapplyTextures";
 		};
 		class RC_Detection
 		{
@@ -55,7 +54,7 @@ class RC_BMP3_Base: RC_BMP3_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-	RC_ATrespondingTurret[]={0,0};
+	RC_ATrespondingTurret[]={2,0};
 
 	weapons[]=
 	{
@@ -64,14 +63,14 @@ class RC_BMP3_Base: RC_BMP3_Core
 	};
 	magazines[]=
 	{
-		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
 		//"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
 
 	faction="RemoteControlled_O";
-	editorSubcategory="RC_MBT_subcat";
+	editorSubcategory="RC_IFV_ATGM_subcat";
 	author="Ascent";
 	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
@@ -93,17 +92,35 @@ class RC_BMP3_Base: RC_BMP3_Core
 	{
 		class GPMGTurret1: GPMGTurret1
 		{
+			gunnerName="SL";
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander_noDriver.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			allowTabLock=1;
+			canUseScanners=1;
+			discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000};
+			discreteDistanceInitIndex=2;
+			
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+			turretInfoType="RscOptics_MBT_03_gunner";
+			
+			class ViewOptics: ViewOptics
+			{
+				visionMode[]=
+				{
+					"Normal",
+					"TI"
+				};
+				thermalMode[]={0};
+				initFov=0.9;
+				minFov=0.02;
+				maxFov=0.9;
+			};
+
 			weapons[]=
 			{
-				"rhs_weap_pkt_bmd_bow1"
+				"RC_RHS_weap_pkt_bmd_bow1"
 			};
-			magazines[]=
-			{
-				"rhs_mag_762x54mm_250",
-				"rhs_mag_762x54mm_250",
-				"rhs_mag_762x54mm_250",
-				"rhs_mag_762x54mm_250"
-			};
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_green.hpp"
 
 			maxVerticalRotSpeed = 1.2;	//1.2
 			maxHorizontalRotSpeed = 1.2;	//1.2
@@ -112,20 +129,38 @@ class RC_BMP3_Base: RC_BMP3_Core
 			maxElev = 45;	//35
 			minElev = -24;	//-24
 		};
-		
+
 		class GPMGTurret2: GPMGTurret2
 		{
+			gunnerName="TL";
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander_noDriver.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			allowTabLock=1;
+			canUseScanners=1;
+			discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000};
+			discreteDistanceInitIndex=2;
+			
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+			turretInfoType="RscOptics_MBT_03_gunner";
+			
+			class ViewOptics: ViewOptics
+			{
+				visionMode[]=
+				{
+					"Normal",
+					"TI"
+				};
+				thermalMode[]={0};
+				initFov=0.9;
+				minFov=0.02;
+				maxFov=0.9;
+			};
+
 			weapons[]=
 			{
-				"rhs_weap_pkt_bmd_bow1"
+				"RC_RHS_weap_pkt_bmd_bow2"
 			};
-			magazines[]=
-			{
-				"rhs_mag_762x54mm_250",
-				"rhs_mag_762x54mm_250",
-				"rhs_mag_762x54mm_250",
-				"rhs_mag_762x54mm_250"
-			};
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_green.hpp"
 
 			maxVerticalRotSpeed = 1.2;	//1.2
 			maxHorizontalRotSpeed = 1.2;	//1.2
@@ -138,25 +173,21 @@ class RC_BMP3_Base: RC_BMP3_Core
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile_noDriver.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			commanding=2;
 			allowTabLock=1;
 			canUseScanners=1;
 			discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500,2600,2700,2800,2900,3000,3100,3200,3300,3400,3500,3600,3700,3800,3900,4000,4100,4200,4300,4400,4500,4600,4700,4800,4900,5000};
+			discreteDistanceInitIndex=5;
 			//turretInfoType="RC_RHS_RscWeaponSosnaU_FCS";
 			turretInfoType="RscOptics_MBT_02_gunner";
 
-			minElev=-10;	//-5
-			maxElev=60;	//60
+			minElev=-10;	//-5	//futher down not possible
+			maxElev=60;		//45? 	//60
 			maxHorizontalRotSpeed=1;	//1.2	//0.55
 			maxVerticalRotSpeed=1;	//1.2	//0.55
-
-			/*
-			magazines[] = {"rhs_mag_3UOF191_22","rhs_mag_9m117m1_8","rhs_mag_3uof8_305","rhs_mag_3ubr11_195","rhs_mag_762x54mm_2000","rhs_mag_3d17_6","rhs_laserfcsmag","rhs_laserfcsmag"};
-			weapons[] = {"rhs_weap_2a70","rhs_weap_2a72","rhs_weap_pkt_bmd_coax","rhs_weap_902a","rhs_weap_fcs"};
-			*/
 
 			weapons[]=
 			{
@@ -164,13 +195,8 @@ class RC_BMP3_Base: RC_BMP3_Core
 				"RC_RHS_weap_2a72",
 				"RC_RHS_weap_pkt_bmd_coax",
 				"RC_RHS_weap_902a"
-
-				/*
-				"RC_cannon_125mm_advanced",
-				"RC_MMG_93x64_coax",
-				"SmokeLauncher"
-				*/
 			};
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_green.hpp"
 
 			/*
 			"rhs_mag_3UOF191_22",
@@ -181,14 +207,10 @@ class RC_BMP3_Base: RC_BMP3_Core
 			"rhs_mag_3d17_6"
 			*/
 
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_green.hpp"
-
 			class OpticsIn
 			{
 				class Medium: ViewOptics
 				{
-					camPos="gunnerview2";
-					hitpoint="Hit_Optic_SosnaU";
 					opticsDisplayName="TI";
 					initFov=0.9;
 					minFov=0.02;
@@ -200,7 +222,6 @@ class RC_BMP3_Base: RC_BMP3_Core
 					};
 					thermalMode[]={0};
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_02_m_F.p3d";
-					//gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_sosnau.p3d";
 				};
 			};
 			
@@ -209,7 +230,7 @@ class RC_BMP3_Base: RC_BMP3_Core
 				class CommanderOptics: CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander_noDriver.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
 					commanding=1;
@@ -226,10 +247,15 @@ class RC_BMP3_Base: RC_BMP3_Core
 
 					weapons[]=
 					{
-						"RC_Laserdesignator_vehicle",
-						"SmokeLauncher"
+						"RC_Laserdesignator_vehicle"
+						//"SmokeLauncher"
 					};
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_com_green.hpp"
+					magazines[]=
+					{
+						"Laserbatteries"
+						//"SmokeLauncherMag",
+						//"SmokeLauncherMag"
+					};
 
 					class OpticsIn
 					{
@@ -238,9 +264,9 @@ class RC_BMP3_Base: RC_BMP3_Core
 							camPos="commanderview";
 							hitpoint="Hit_Optic_SosnaU";
 							opticsDisplayName="TI";
-							initFov=0.9;
+							initFov=0.75;
 							minFov=0.02;
-							maxFov=0.9;
+							maxFov=0.75;
 							visionMode[]=
 							{
 								"Normal",
@@ -262,52 +288,52 @@ class RC_BMP3_Base: RC_BMP3_Core
 		class muzzle_hide_cannon
 		{
 			source="reload";
-			weapon="rhs_weap_2a70";
+			weapon="RC_RHS_weap_2a70";
 		};
 		class muzzle_hide_hmg
 		{
 			source="reload";
-			weapon="rhs_weap_2a72";
+			weapon="RC_RHS_weap_2a72";
 		};
 		class muzzle_rot_cannon
 		{
 			source="ammorandom";	
-			weapon="rhs_weap_2a70";
+			weapon="RC_RHS_weap_2a70";
 		};
 		class muzzle_rot_coax
 		{
 			source="ammorandom";
-			weapon="rhs_weap_pkt_bmd_coax";
+			weapon="RC_RHS_weap_pkt_bmd_coax";
 		};
 		class muzzle_rot_coax2
 		{
 			source="ammorandom";
-			weapon="rhs_weap_pkt_bmd_bow1";
+			weapon="RC_RHS_weap_pkt_bmd_bow1";
 		};
 		class muzzle_rot_coax3
 		{
 			source="ammorandom";
-			weapon="rhs_weap_pkt_bmd_bow2";
+			weapon="RC_RHS_weap_pkt_bmd_bow2";
 		};
 		class muzzle_rot_hmg
 		{
 			source="ammorandom";
-			weapon="rhs_weap_2a72";
+			weapon="RC_RHS_weap_2a72";
 		};
 		class recoil_source
 		{
 			source="reload";
-			weapon="rhs_weap_2a70";
+			weapon="RC_RHS_weap_2a70";
 		};
 		class recoil_source2
 		{
 			source="reload";
-			weapon="rhs_weap_2a72";
+			weapon="RC_RHS_weap_2a72";
 		};
 		class smokecap_revolving_source
 		{
 			source="revolving";
-			weapon="rhs_weap_902a";
+			weapon="RC_RHS_weap_902a";
 		};
 		class HatchC
 		{
@@ -344,7 +370,7 @@ class RC_BMP3_WD_O: RC_BMP3_Base
 		};
 	};
 
-	displayName="T-90AM";
+	displayName="BMP-3";
 	scope=2;
 	scopeCurator=2;
 	side=0;
@@ -362,17 +388,17 @@ class RC_BMP3_WD: RC_BMP3_WD_O
 
 	class Turrets: Turrets
 	{
+		class GPMGTurret1: GPMGTurret1
+		{
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_red.hpp"
+		};
+		class GPMGTurret2: GPMGTurret2
+		{
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_red.hpp"
+		};
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_yellow.hpp"
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_com_yellow.hpp"
-				};
-			};
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_red.hpp"
 		};
 	};
 };
@@ -385,17 +411,17 @@ class RC_BMP3_WD_I: RC_BMP3_WD_O
 
 	class Turrets: Turrets
 	{
+		class GPMGTurret1: GPMGTurret1
+		{
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_yellow.hpp"
+		};
+		class GPMGTurret2: GPMGTurret2
+		{
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_yellow.hpp"
+		};
 		class MainTurret: MainTurret
 		{
 			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_yellow.hpp"
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_com_yellow.hpp"
-				};
-			};
 		};
 	};
 };
@@ -427,17 +453,17 @@ class RC_BMP3_A: RC_BMP3_A_O
 
 	class Turrets: Turrets
 	{
+		class GPMGTurret1: GPMGTurret1
+		{
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_red.hpp"
+		};
+		class GPMGTurret2: GPMGTurret2
+		{
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_red.hpp"
+		};
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_yellow.hpp"
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_com_yellow.hpp"
-				};
-			};
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_red.hpp"
 		};
 	};
 };
@@ -450,17 +476,17 @@ class RC_BMP3_A_I: RC_BMP3_A_O
 
 	class Turrets: Turrets
 	{
+		class GPMGTurret1: GPMGTurret1
+		{
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_yellow.hpp"
+		};
+		class GPMGTurret2: GPMGTurret2
+		{
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_yellow.hpp"
+		};
 		class MainTurret: MainTurret
 		{
 			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_yellow.hpp"
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_com_yellow.hpp"
-				};
-			};
 		};
 	};
 };

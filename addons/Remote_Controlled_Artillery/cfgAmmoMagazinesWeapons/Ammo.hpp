@@ -648,6 +648,12 @@ class RC_ammo_Penetrator_MP_50mm: RC_ammo_Penetrator_MPAB
 	hit=140;
 	caliber=5;
 };
+class RC_ammo_Penetrator_MP_100mm: RC_ammo_Penetrator_MPAB
+{
+	hit=515;
+	caliber=45;
+	warheadName="TandemHEAT";
+};
 class RC_ammo_Penetrator_MP_120mm: RC_ammo_Penetrator_MPAB
 {
 	hit=780;
@@ -659,6 +665,16 @@ class RC_ammo_Penetrator_MP_125mm: RC_ammo_Penetrator_MPAB
 	hit=780;
 	caliber=60;
 	warheadName="TandemHEAT";
+};
+
+
+class ammo_Penetrator_105mm;
+class RC_ammo_Penetrator_AB_100mm: ammo_Penetrator_105mm
+{
+	airFriction=-0.001;
+	warheadName="TandemHEAT";
+	caliber=28.6667;
+	hit=450;
 };
 
 
@@ -2798,27 +2814,24 @@ class RC_M_ATGM_MP_NLOS: RC_M_ATGM_MP_LOS
 	};
 };
 
-
-class M_120mm_cannon_ATGM_LG;
-class RC_M_120mm_cannon_ATGM_Base: M_120mm_cannon_ATGM_LG
+class ammo_Missile_CannonLaunchedBase;
+class RC_M_120mm_cannon_ATGM_Core: ammo_Missile_CannonLaunchedBase
 {
 	class Components;
 };
-class RC_M_120mm_cannon_ATGM: RC_M_120mm_cannon_ATGM_Base
+class RC_M_120mm_cannon_ATGM_Base: RC_M_120mm_cannon_ATGM_Core
 {
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
 	craterEffects="AAMissileCrater";
+	warheadName="HE";
+	hit=150;
 	indirectHit=80;
 	indirectHitRange=10;
 	explosive=1;
 	timeToLive=20;
 
-	//lockType=0;	//?, 0 Titan AT & cannon lg atgm, 1 Titan AP & CLMB, 0 likely fire forget 1 likely beamriding
-	irLock=1;
-	airLock=1;
-	laserLock=1;
 	allowAgainstInfantry=1;
-	aiAmmoUsageFlags="64 + 128 + 256 + 512";
+	aiAmmoUsageFlags="64 + 128 + 256";
 
 	simulationStep=0.0020000001;
 	airFriction=0.085000001;
@@ -2832,29 +2845,45 @@ class RC_M_120mm_cannon_ATGM: RC_M_120mm_cannon_ATGM_Base
 	thrustTime=6;
 	thrust=60;
 	fuseDistance=15;
-
+	
+	manualControl=1;
+	maxControlRange=4200;	//+200 for ascent and descent
+	cameraViewAvailable=1;
+};
+class RC_M_120mm_cannon_ATGM_SACLOS: RC_M_120mm_cannon_ATGM_Base
+{
 	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
-	submunitionDirectionType="SubmunitionTargetDirection";
+	submunitionInitialOffset[]={0,0,-0.2};
 	submunitionInitSpeed=1000;
 	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-1};
 	triggerOnImpact=1;
-	triggerDistance=10;
-	proximityExplosionDistance=10;
 	deleteParentWhenTriggered=0;
 
+	aiAmmoUsageFlags="64 + 128 + 256 + 512";
+};
+class RC_M_120mm_cannon_ATGM: RC_M_120mm_cannon_ATGM_SACLOS
+{
+	//lockType=0;	//?, 0 Titan AT & cannon lg atgm, 1 Titan AP & CLMB, 0 likely fire forget 1 likely beamriding
+	irLock=1;
+	airLock=1;
+	laserLock=1;
+	allowAgainstInfantry=1;
+
 	//autoSeekTarget=1;	 //unlear if it works in this context
-	manualControl=1;
+	lockSeekRadius=100;
 	//manualControlOffset=100;	//??? CLMB
 	missileLockCone=300;
 	missileKeepLockedCone=300;
-	maxControlRange=4200;	//+200 for ascent and descent
 	missileLockMaxDistance=4000;
 	missileLockMinDistance=20;
 	missileLockMaxSpeed=100;	//35
 	weaponLockSystem="1 + 2 + 16";
 	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
-	cameraViewAvailable=1;
+
+	submunitionDirectionType="SubmunitionTargetDirection";
+	submunitionInitialOffset[]={0,0,-1};
+	triggerDistance=10;
+	proximityExplosionDistance=10;
 
 	class Components: Components
 	{
@@ -3056,7 +3085,129 @@ class RC_M_120mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG
 		};
 	};
 };
+class RC_M_120mm_cannon_AA: RC_M_120mm_cannon_ATGM_Base
+{
+	thrust=380;
+	airFriction=0.145;
+	sideAirFriction=0.1;
+	aiAmmoUsageFlags=256;
+	maxSpeed=850;
+	missileLockMaxSpeed=250;
+
+	indirectHit=60;
+	triggerDistance=10;
+	indirectHitRange=10;
+	proximityExplosionDistance=12;
+	weaponLockSystem="2 + 16";
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	trackLead=1;
+	cmImmunity=0.92000002;
+	cameraViewAvailable=1;
+	initTime=0.01;
+
+	missileLockMinDistance=20;
+	missileLockCone=90;
+	missileKeepLockedCone=90;
+	thrustTime=4;
+
+	//autoSeekTarget=1;	 //unlear if it works in this context
+	//lockSeekRadius=1500;
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=5000;
+					class AirTarget
+					{
+						minRange=5000;
+						maxRange=5000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=5000;
+						maxRange=5000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=5000;
+						maxRange=5000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=5000;
+						maxRange=5000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=135;
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=5000;
+						maxRange=5000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=5000;
+						maxRange=5000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=2500;
+					maxTrackableSpeed=500;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=135;
+					groundNoiseDistanceCoef=0.2;
+					maxGroundNoiseDistance=50;
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=400;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=135;
+				};
+			};
+		};
+	};
+};
 class RC_M_125mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG {};
+class RC_M_125mm_cannon_AA: RC_M_120mm_cannon_AA {};
 class RC_M_125mm_cannon_ATGM: RC_M_120mm_cannon_ATGM {};
 class RC_M_125mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG_LR {};
 
@@ -3126,6 +3277,56 @@ class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
 		ascendAngle=20;
 	};
 	//autoSeekTarget=1;
+};
+class RC_M_125mm_DLG_HVKEM: RC_M_120mm_DLG_HVKEM {};
+
+
+class RC_M_100mm_cannon_ATGM_Overfly: RC_M_120mm_cannon_ATGM
+{
+	submunitionAmmo="RC_ammo_Penetrator_MP_100mm";
+
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at_fly";
+	craterEffects="AAMissileCrater";
+	explosionEffects="RC_ULM_MortarExplosion";
+	indirectHit=40;
+
+	class Overfly	//: Direct
+	{
+		overflyElevation=10;
+	};
+	flightProfiles[]=
+	{
+		//"Direct",
+		"Overfly"
+	};
+
+	triggerDistance=12;
+	proximityExplosionDistance=14;
+	indirectHitRange=12;
+
+	maxSpeed=350;
+	initTime=0.25;
+	thrustTime=10;
+	thrust=120;
+};
+class RC_M_100mm_cannon_ATGM_NLOS: RC_M_100mm_cannon_ATGM_Overfly
+{
+	flightProfiles[]=
+	{
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=100;
+		lockDistanceToTarget=160;	//~45°=142
+	};
+};
+class RC_M_100mm_cannon_AA: RC_M_120mm_cannon_AA
+{
+	indirectHit=45;
+	triggerDistance=8;
+	indirectHitRange=8;
+	proximityExplosionDistance=10;
 };
 
 

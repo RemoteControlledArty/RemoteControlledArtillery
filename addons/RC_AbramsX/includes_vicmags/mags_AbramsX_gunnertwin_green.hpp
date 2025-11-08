@@ -6,6 +6,7 @@ magazines[]=
 	
 	"RC_4Rnd_120mm_DLG_HVKEM",
 	"RC_4Rnd_120mm_DLG_LR_cannon_missiles",
+	"RC_2Rnd_120mm_AA_cannon_missiles",
 	//"RC_10Rnd_120mm_HEAB_LV_indirect_T_G",
 
 	"RC_200Rnd_20mm_HEAB_DF_T_G",

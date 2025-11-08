@@ -10,6 +10,7 @@ magazines[]=
 	*/
 
 	"RC_3Rnd_120mm_DLG_cannon_missiles",
+	"RC_3Rnd_120mm_AA_cannon_missiles",
 
 	"RC_RHS_300Rnd_762x51_T_R",
 	"RC_RHS_300Rnd_762x51_T_R",

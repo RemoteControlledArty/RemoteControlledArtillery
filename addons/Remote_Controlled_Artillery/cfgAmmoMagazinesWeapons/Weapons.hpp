@@ -2681,6 +2681,12 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_2Rnd_120mm_DLG_cannon_missiles",
 		"RC_1Rnd_120mm_DLG_cannon_missiles",
 
+		"RC_5Rnd_120mm_AA_cannon_missiles",
+		"RC_4Rnd_120mm_AA_cannon_missiles",
+		"RC_3Rnd_120mm_AA_cannon_missiles",
+		"RC_2Rnd_120mm_AA_cannon_missiles",
+		"RC_1Rnd_120mm_AA_cannon_missiles",
+
 		"RC_5Rnd_120mm_DLG_HVKEM",
 		"RC_4Rnd_120mm_DLG_HVKEM",
 		"RC_3Rnd_120mm_DLG_HVKEM",
@@ -2809,6 +2815,19 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_3Rnd_125mm_DLG_cannon_missiles",
 		"RC_2Rnd_125mm_DLG_cannon_missiles",
 		"RC_1Rnd_125mm_DLG_cannon_missiles",
+
+		"RC_5Rnd_125mm_AA_cannon_missiles",
+		"RC_4Rnd_125mm_AA_cannon_missiles",
+		"RC_3Rnd_125mm_AA_cannon_missiles",
+		"RC_2Rnd_125mm_AA_cannon_missiles",
+		"RC_1Rnd_125mm_AA_cannon_missiles",
+
+		"RC_5Rnd_125mm_DLG_HVKEM",
+		"RC_4Rnd_125mm_DLG_HVKEM",
+		"RC_3Rnd_125mm_DLG_HVKEM",
+		"RC_2Rnd_125mm_DLG_HVKEM",
+		"RC_1Rnd_125mm_DLG_HVKEM",
+
 		"4Rnd_125mm_cannon_missiles"
 	};
 	class TopDown: player

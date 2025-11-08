@@ -15,22 +15,31 @@ class CfgPatches
 			"RC_T90AM_WD_I",
 			"RC_T90AM_A",
 			"RC_T90AM_A_O",
-			"RC_T90AM_A_I"
-		};
+			"RC_T90AM_A_I",
 
-		/*
+			"RC_BMP3_WD",
+			"RC_BMP3_WD_O",
+			"RC_BMP3_WD_I",
+			"RC_BMP3_A",
+			"RC_BMP3_A_O",
+			"RC_BMP3_A_I"
+		};
 		weapons[]=
 		{
-			""
+			"RC_RHS_weap_2a70",
+			"RC_RHS_weap_2a72",
+			"RC_RHS_weap_pkt_bmd_coax",
+			"RC_RHS_weap_902a",
+			"RC_RHS_weap_pkt_bmd_bow1",
+			"RC_RHS_weap_pkt_bmd_bow2"
 		};
-		*/
-
 		requiredAddons[]=
 		{
 			"cba_main",
 			"RC_Artillery",
-			"rhs_c_a2port_air",
-			"rhs_c_t72"
+			"rhs_c_bmp3",
+			"rhs_c_t72",
+			"rhs_c_a2port_air"
 		};
 
 		skipWhenMissingDependencies=1;
@@ -74,7 +83,7 @@ class RscInGameUI
 };
 */
 
-/*
+
 class CfgAmmo
 {
 	#include "\RC_RHS_AFRF\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
@@ -87,11 +96,11 @@ class CfgWeapons
 {
 	#include "\RC_RHS_AFRF\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
-*/
+
 
 class CfgVehicles
 {
+	#include "\RC_RHS_AFRF\cfgVehicles\BMP3.hpp"
 	#include "\RC_RHS_AFRF\cfgVehicles\Pchela1T.hpp"
 	#include "\RC_RHS_AFRF\cfgVehicles\T90AM.hpp"
-	//#include "\RC_RHS_AFRF\cfgVehicles\T90SA.hpp"
 };

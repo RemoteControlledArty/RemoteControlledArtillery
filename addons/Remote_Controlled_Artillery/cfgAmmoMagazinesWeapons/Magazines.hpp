@@ -1952,6 +1952,18 @@ class RC_2Rnd_120mm_cannon_missiles: RC_5Rnd_120mm_cannon_missiles {count=2;};
 class RC_1Rnd_120mm_cannon_missiles: RC_5Rnd_120mm_cannon_missiles {count=1;};
 
 
+class RC_5Rnd_120mm_AA_cannon_missiles: RC_5Rnd_120mm_DLG_cannon_missiles
+{
+	displayName="5km AA";
+	displayNameShort="AA";
+	ammo="RC_M_120mm_cannon_AA";
+};
+class RC_4Rnd_120mm_AA_cannon_missiles: RC_5Rnd_120mm_AA_cannon_missiles {count=4;};
+class RC_3Rnd_120mm_AA_cannon_missiles: RC_5Rnd_120mm_AA_cannon_missiles {count=3;};
+class RC_2Rnd_120mm_AA_cannon_missiles: RC_5Rnd_120mm_AA_cannon_missiles {count=2;};
+class RC_1Rnd_120mm_AA_cannon_missiles: RC_5Rnd_120mm_AA_cannon_missiles {count=1;};
+
+
 class RC_5Rnd_120mm_DLG_LR_cannon_missiles: RC_4Rnd_120mm_DLG_cannon_missiles
 {
 	displayName="6km NLOS ATGM";
@@ -2000,11 +2012,23 @@ class RC_2Rnd_125mm_cannon_missiles: RC_5Rnd_125mm_cannon_missiles {count=2;};
 class RC_1Rnd_125mm_cannon_missiles: RC_5Rnd_125mm_cannon_missiles {count=1;};
 
 
+class RC_5Rnd_125mm_AA_cannon_missiles: RC_5Rnd_125mm_DLG_cannon_missiles
+{
+	displayName="5km AA";
+	displayNameShort="AA";
+	ammo="RC_M_125mm_cannon_AA";
+};
+class RC_4Rnd_125mm_AA_cannon_missiles: RC_5Rnd_125mm_AA_cannon_missiles {count=4;};
+class RC_3Rnd_125mm_AA_cannon_missiles: RC_5Rnd_125mm_AA_cannon_missiles {count=3;};
+class RC_2Rnd_125mm_AA_cannon_missiles: RC_5Rnd_125mm_AA_cannon_missiles {count=2;};
+class RC_1Rnd_125mm_AA_cannon_missiles: RC_5Rnd_125mm_AA_cannon_missiles {count=1;};
+
+
 class RC_5Rnd_125mm_DLG_HVKEM: RC_5Rnd_125mm_DLG_cannon_missiles
 {
 	displayName="HV-KE-M";
 	displayNameShort="HV-KE-M";
-	ammo="RC_M_120mm_DLG_HVKEM";
+	ammo="RC_M_125mm_DLG_HVKEM";
 };
 class RC_4Rnd_125mm_DLG_HVKEM: RC_5Rnd_125mm_DLG_HVKEM {count=4;};
 class RC_3Rnd_125mm_DLG_HVKEM: RC_5Rnd_125mm_DLG_HVKEM {count=3;};
