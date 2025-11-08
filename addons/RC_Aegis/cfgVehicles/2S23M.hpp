@@ -437,6 +437,7 @@ class RC_2S23M_LC_WD: RC_2S23M_WD
 				"RC_6Rnd_122mm_Mo_shells",
 				"RC_3Rnd_122mm_Mo_HEAB",
 				"RC_3Rnd_122mm_Mo_MultiGuided",
+				//"RC_2Rnd_122mm_Mo_Cluster",
 				"RC_20Rnd_122mm_Mo_smoke",
 				"RC_4Rnd_122mm_Mo_AT_mine",
 				"RC_4Rnd_122mm_Mo_mine",

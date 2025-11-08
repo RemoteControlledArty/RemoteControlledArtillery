@@ -1,5 +1,5 @@
 class rhs_bmp3mera_msv;
-class RC_BMP3_Core: rhs_bmp3mera_msv
+class RC_BMP3M_Core: rhs_bmp3mera_msv
 {
 	class Turrets;
 	class MainTurret;
@@ -20,7 +20,7 @@ class RC_BMP3_Core: rhs_bmp3mera_msv
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_BMP3_Base: RC_BMP3_Core
+class RC_BMP3M_Base: RC_BMP3M_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -59,14 +59,14 @@ class RC_BMP3_Base: RC_BMP3_Core
 	weapons[]=
 	{
 		"RC_APS_W",
-		"SmokeLauncher"
+		//"SmokeLauncher"
 	};
 	magazines[]=
 	{
 		"RC_1Rnd_APS_M",
 		//"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		//"SmokeLauncherMag",
+		//"SmokeLauncherMag"
 	};
 
 	faction="RemoteControlled_O";
@@ -76,13 +76,14 @@ class RC_BMP3_Base: RC_BMP3_Core
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
-	/*
-	maxSpeed=70;
-	enginePower=1400;
-	peakTorque=6875;
-	*/
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherAngle=180;
+
+	//armor=200;		//200
+	maxSpeed=80;		//70
+	enginePower=600;	//478
+	peakTorque=2500;	//1650
+
+	//smokeLauncherGrenadeCount=12;
+	//smokeLauncherAngle=180;
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
 	class Reflectors {};	//removed, otherwise they are automatically on at night
@@ -120,7 +121,7 @@ class RC_BMP3_Base: RC_BMP3_Core
 			{
 				"RC_RHS_weap_pkt_bmd_bow1"
 			};
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_green.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_green.hpp"
 
 			maxVerticalRotSpeed = 1.2;	//1.2
 			maxHorizontalRotSpeed = 1.2;	//1.2
@@ -160,7 +161,7 @@ class RC_BMP3_Base: RC_BMP3_Core
 			{
 				"RC_RHS_weap_pkt_bmd_bow2"
 			};
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_green.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_green.hpp"
 
 			maxVerticalRotSpeed = 1.2;	//1.2
 			maxHorizontalRotSpeed = 1.2;	//1.2
@@ -196,7 +197,7 @@ class RC_BMP3_Base: RC_BMP3_Core
 				"RC_RHS_weap_pkt_bmd_coax",
 				"RC_RHS_weap_902a"
 			};
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_green.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_green.hpp"
 
 			/*
 			"rhs_mag_3UOF191_22",
@@ -247,12 +248,15 @@ class RC_BMP3_Base: RC_BMP3_Core
 
 					weapons[]=
 					{
-						"RC_Laserdesignator_vehicle"
+						"RC_Laserdesignator_vehicle",
+						"RC_RHS_weap_902a"
 						//"SmokeLauncher"
 					};
 					magazines[]=
 					{
-						"Laserbatteries"
+						"Laserbatteries",
+						"rhs_mag_3d17_6",
+						"rhs_mag_3d17_6"
 						//"SmokeLauncherMag",
 						//"SmokeLauncherMag"
 					};
@@ -358,7 +362,7 @@ class RC_BMP3_Base: RC_BMP3_Core
 };
 
 
-class RC_BMP3_WD_O: RC_BMP3_Base
+class RC_BMP3M_WD_O: RC_BMP3M_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -370,7 +374,7 @@ class RC_BMP3_WD_O: RC_BMP3_Base
 		};
 	};
 
-	displayName="BMP-3";
+	displayName="BMP-3M";
 	scope=2;
 	scopeCurator=2;
 	side=0;
@@ -379,7 +383,7 @@ class RC_BMP3_WD_O: RC_BMP3_Base
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
 	crew="O_UAV_AI";
 };
-class RC_BMP3_WD: RC_BMP3_WD_O
+class RC_BMP3M_WD: RC_BMP3M_WD_O
 {
 	faction="RemoteControlled_B";
 	crew="I_UAV_AI";
@@ -390,19 +394,19 @@ class RC_BMP3_WD: RC_BMP3_WD_O
 	{
 		class GPMGTurret1: GPMGTurret1
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_red.hpp"
 		};
 		class GPMGTurret2: GPMGTurret2
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_red.hpp"
 		};
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_red.hpp"
 		};
 	};
 };
-class RC_BMP3_WD_I: RC_BMP3_WD_O
+class RC_BMP3M_WD_I: RC_BMP3M_WD_O
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -413,21 +417,21 @@ class RC_BMP3_WD_I: RC_BMP3_WD_O
 	{
 		class GPMGTurret1: GPMGTurret1
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_yellow.hpp"
 		};
 		class GPMGTurret2: GPMGTurret2
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_yellow.hpp"
 		};
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_yellow.hpp"
 		};
 	};
 };
 
 
-class RC_BMP3_A_O: RC_BMP3_WD_O
+class RC_BMP3M_A_O: RC_BMP3M_WD_O
 {
 	//editorPreview="";
 	hiddenSelectionsTextures[]=
@@ -444,7 +448,7 @@ class RC_BMP3_A_O: RC_BMP3_WD_O
 		1
 	};
 };
-class RC_BMP3_A: RC_BMP3_A_O
+class RC_BMP3M_A: RC_BMP3M_A_O
 {
 	faction="RemoteControlled_B";
 	crew="I_UAV_AI";
@@ -455,19 +459,19 @@ class RC_BMP3_A: RC_BMP3_A_O
 	{
 		class GPMGTurret1: GPMGTurret1
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_red.hpp"
 		};
 		class GPMGTurret2: GPMGTurret2
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_red.hpp"
 		};
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_red.hpp"
 		};
 	};
 };
-class RC_BMP3_A_I: RC_BMP3_A_O
+class RC_BMP3M_A_I: RC_BMP3M_A_O
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -478,15 +482,15 @@ class RC_BMP3_A_I: RC_BMP3_A_O
 	{
 		class GPMGTurret1: GPMGTurret1
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_yellow.hpp"
 		};
 		class GPMGTurret2: GPMGTurret2
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_side_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_yellow.hpp"
 		};
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_yellow.hpp"
 		};
 	};
 };

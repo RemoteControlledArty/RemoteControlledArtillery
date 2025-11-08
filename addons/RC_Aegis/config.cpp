@@ -96,6 +96,14 @@ class CfgPatches
 			"RC_ZSU35_WD_O",
 			"RC_ZSU35_WD_I",
 
+			"RC_Howitzer_WD2",
+			"RC_Howitzer_WD2_O",
+			"RC_Howitzer_WD2_I",
+
+			"RC_Howitzer_LC_WD2",
+			"RC_Howitzer_LC_WD2_O",
+			"RC_Howitzer_LC_WD2_I",
+
 			"RC_SignalBoosterLRR_a",
 			"RC_SignalBoosterLRR_g"
 		};
@@ -121,7 +129,9 @@ class CfgPatches
 			"cba_main",
 			"RC_Artillery",
 			"A3_Aegis_Armor_F_Aegis_APC_Wheeled_01",
-			"A3_Aegis_Armor_F_Aegis_APC_Wheeled_04"
+			"A3_Aegis_Armor_F_Aegis_APC_Wheeled_04",
+			"A3_Aegis_Armor_F_Aegis_MBT_02",
+			"A3_Aegis_Armor_F_Aegis_MBT_04"
 		};
 
 		skipWhenMissingDependencies=1;
@@ -169,11 +179,15 @@ class CfgVehicles
 	#include "\RC_Aegis\cfgVehicles\2S90M.hpp"
 	#include "\RC_Aegis\cfgVehicles\BTR_80A.hpp"
 	#include "\RC_Aegis\cfgVehicles\BTR_100.hpp"
+
+	#include "\RC_Aegis\cfgVehicles\2S9_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\BM_2T_WD.hpp"
-	#include "\RC_Aegis\cfgVehicles\CBRad_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\Otokar_Arma_WD.hpp"
-	#include "\RC_Aegis\cfgVehicles\T_100.hpp"
-	#include "\RC_Aegis\cfgVehicles\T_14.hpp"
-	#include "\RC_Aegis\cfgVehicles\SignalBoosterBackpack.hpp"
+	#include "\RC_Aegis\cfgVehicles\T_100_WD.hpp"
+	#include "\RC_Aegis\cfgVehicles\T_14_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\ZSU_35_WD.hpp"
+
+	#include "\RC_Aegis\cfgVehicles\SignalBoosterBackpack.hpp"
+
+	#include "\RC_Aegis\cfgVehicles\CBRad_WD.hpp"
 };

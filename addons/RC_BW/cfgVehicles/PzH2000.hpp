@@ -326,6 +326,7 @@ class RC_PzH2000_LC_FT: RC_PzH2000_FT
 				"RC_6Rnd_155mm_Mo_shells",
 				"RC_3Rnd_155mm_Mo_HEAB",
 				"RC_3Rnd_155mm_Mo_MultiGuided",
+				//"RC_2Rnd_155mm_Mo_Cluster",
 				"RC_20Rnd_155mm_Mo_smoke",
 				"RC_4Rnd_155mm_Mo_AT_mine",
 				"RC_4Rnd_155mm_Mo_mine",

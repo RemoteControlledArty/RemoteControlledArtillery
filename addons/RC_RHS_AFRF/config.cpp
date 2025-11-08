@@ -17,12 +17,12 @@ class CfgPatches
 			"RC_T90AM_A_O",
 			"RC_T90AM_A_I",
 
-			"RC_BMP3_WD",
-			"RC_BMP3_WD_O",
-			"RC_BMP3_WD_I",
-			"RC_BMP3_A",
-			"RC_BMP3_A_O",
-			"RC_BMP3_A_I"
+			"RC_BMP3M_WD",
+			"RC_BMP3M_WD_O",
+			"RC_BMP3M_WD_I",
+			"RC_BMP3M_A",
+			"RC_BMP3M_A_O",
+			"RC_BMP3M_A_I"
 		};
 		weapons[]=
 		{
@@ -100,7 +100,7 @@ class CfgWeapons
 
 class CfgVehicles
 {
-	#include "\RC_RHS_AFRF\cfgVehicles\BMP3.hpp"
+	#include "\RC_RHS_AFRF\cfgVehicles\BMP3M.hpp"
 	#include "\RC_RHS_AFRF\cfgVehicles\Pchela1T.hpp"
 	#include "\RC_RHS_AFRF\cfgVehicles\T90AM.hpp"
 };

@@ -4,6 +4,7 @@ class RC_MBT_3_WD_Base: RC_MBT_3_WD
 	class MainTurret;
 	class Turrets;
 	class CommanderOptics;
+	class TextureSources;
 	scope=0;
 	scopeCurator=0;
 };
@@ -20,6 +21,27 @@ class RC_MBT_3_WD2: RC_MBT_3_WD_Base
 		"\A3\Armor_F_Tank\MBT_04\Data\MBT_04_command_CO.paa",
 		//"\A3_Aegis\Armor_F_Aegis\Data\camonet_RUS_green_CO.paa"
 		"a3\armor_f\data\camonet_green_co.paa"
+	};
+	class TextureSources: TextureSources
+	{
+		class RC_Green
+		{
+			displayName="Woodland";
+			textures[]=
+			{
+				"\A3_Aegis\Armor_F_Aegis\MBT_04\Data\MBT_04_exterior_RUkhk_1_CO.paa",
+				"\A3_Aegis\Armor_F_Aegis\MBT_04\Data\MBT_04_exterior_RUkhk_2_CO.paa",
+				"\A3\Armor_F_Tank\MBT_04\Data\MBT_04_command_CO.paa",
+				//"\A3_Aegis\Armor_F_Aegis\Data\camonet_RUS_green_CO.paa"
+				"a3\armor_f\data\camonet_green_co.paa"
+			};
+			factions[]={};
+		};
+	};
+	textureList[]=
+	{
+		"RC_Green",
+		1
 	};
 };
 class RC_MBT_3_WD2_O: RC_MBT_3_WD2

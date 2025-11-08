@@ -16,8 +16,9 @@ class RC_MBT_4_WD_O: RC_MBT_4_HEX_A_O_Base
 	editorPreview="\A3_Aegis\EditorPreviews_F_Aegis\Data\CfgVehicles\O_R_MBT_02_cannon_F.jpg";
 	class TextureSources: TextureSources
 	{
-		class Green
+		class RC_Green
 		{
+			displayName="Woodland";
 			textures[]=
 			{
 				"\A3_Aegis\Armor_F_Aegis\MBT_02\Data\MBT_02_body_RUkhk_CO.paa",
@@ -39,7 +40,7 @@ class RC_MBT_4_WD_O: RC_MBT_4_HEX_A_O_Base
 	};
 	textureList[]=
 	{
-		"Green",
+		"RC_Green",
 		1
 	};
 };
