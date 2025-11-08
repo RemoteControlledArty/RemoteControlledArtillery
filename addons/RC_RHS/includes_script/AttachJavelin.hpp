@@ -15,12 +15,12 @@ deleted="if (!isserver) exitwith {}; \
 params ['_entity']; \
 private _attObj = (attachedObjects _entity); \
 if (count _attObj > 0) then { \
-	deleteVehicle _attObj; \
+	{deleteVehicle _x} forEach _attObj;
 };";
 
 
 killed="params ['_unit']; \
 private _attObj = (attachedObjects _unit); \
 if (count _attObj > 0) then { \
-	deleteVehicle _attObj; \
+	{deleteVehicle _x} forEach _attObj;
 };";
