@@ -11,12 +11,16 @@ init="if (!isserver) exitwith {}; \
 //konec hlavne / usti hlavne
 
 
-/*
-_this addEventHandler ["CuratorObjectDeleted", {
-	params ["_curator", "_entity"];
-}];
+deleted="if (!isserver) exitwith {}; \
+params ['_entity']; \
+private _attObj = (attachedObjects _entity); \
+if (count _attObj > 0) then { \
+	deleteVehicle _attObj; \
+};";
 
-_this addEventHandler ["Killed", {
-	params ["_unit", "_killer", "_instigator", "_useEffects"];
-}];
-*/
+
+killed="params ['_unit']; \
+private _attObj = (attachedObjects _unit); \
+if (count _attObj > 0) then { \
+	deleteVehicle _attObj; \
+};";

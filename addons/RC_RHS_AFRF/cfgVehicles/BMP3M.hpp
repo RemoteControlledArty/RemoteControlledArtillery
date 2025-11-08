@@ -7,15 +7,19 @@ class RC_BMP3M_Core: rhs_bmp3mera_msv
 	class GPMGTurret1;
 	class GPMGTurret2;
 	class ViewOptics;
+	class OpticsIn;
+	class Wide;
 	class Components;
 	class UserActions;
-	class EventHandlers;
+	class HitPoints;
+	class HitHull;
+	class HitEngine;
+	class HitFuel;
 	class AnimationSources;
 	class showCamonetCannon;
 	class showCamonetHull;
 	class showCamonetTurret;
-	class OpticsIn;
-	class Wide;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
@@ -77,7 +81,7 @@ class RC_BMP3M_Base: RC_BMP3M_Core
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 
-	//armor=200;		//200
+	armor=250;		//200
 	maxSpeed=80;		//70
 	enginePower=600;	//478
 	peakTorque=2500;	//1650
@@ -88,6 +92,50 @@ class RC_BMP3M_Base: RC_BMP3M_Core
 	//canAccessMineDetector=1;	//doesnt work yet
 	class Reflectors {};	//removed, otherwise they are automatically on at night
 	aggregateReflectors[]={{""}};
+
+	class HitPoints: HitPoints
+	{
+		class HitHull: HitHull
+		{
+			armor=0.6;					//0.4
+			explosionShielding=0.5;		//0.5
+			passThrough=0;				//0
+		};
+		class HitEngine: HitEngine
+		{
+			armor=0.4;					//0.25
+			explosionShielding=0.009;	//0.009
+			passThrough=0;				//0
+		};
+		class HitFuel: HitFuel
+		{
+			armor=1.2;					//1.2
+			explosionShielding=0.001;	//0.001
+			passThrough=0;				//0
+		};
+		/*
+		class Armor_Composite_50: Armor_Composite_50
+		{
+			armor = 999;
+			armorComponent = "Armor_CE_50";
+			explosionShielding = 0;
+			passThrough = 0;
+			simulation = "RHS_Composite_50";
+		};
+		class HitLTrack: HitLTrack
+		{
+			armor = -150;
+			explosionShielding = 0.15;
+			passThrough = 0;
+		};
+		class HitRTrack: HitRTrack
+		{
+			armor = -150;
+			explosionShielding = 0.15;
+			passThrough = 0;
+		};
+		*/
+	};
 
 	class Turrets: Turrets
 	{

@@ -21,11 +21,6 @@ class Components: Components
 			{
 				componentType="UAVFeedDisplayComponent";
 			};
-			class VehicleDriverDisplay
-			{
-				componentType="TransportFeedDisplayComponent";
-				source="Driver";
-			};
 			class VehicleCommanderDisplay
 			{
 				componentType="TransportFeedDisplayComponent";

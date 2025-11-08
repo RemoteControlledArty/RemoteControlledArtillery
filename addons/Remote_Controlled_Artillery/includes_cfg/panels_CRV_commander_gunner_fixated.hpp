@@ -2,16 +2,19 @@ class Components: Components
 {
 	class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
 	{
-		defaultDisplay="MineDetectorDisplay";
+		defaultDisplay="UAVFeedDisplay";
 
 		class Components
 		{
+			/*
+			//not possible with deleted turret
 			class MineDetectorDisplay
 			{
 				componentType="MineDetectorDisplayComponent";
 				range=60;
 				resource="RscCustomInfoMineDetect";
 			};
+			*/
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
@@ -33,12 +36,15 @@ class Components: Components
 
 		class Components
 		{
+			/*
+			//not possible with deleted turret
 			class MineDetectorDisplay
 			{
 				componentType="MineDetectorDisplayComponent";
 				range=60;
 				resource="RscCustomInfoMineDetect";
 			};
+			*/
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
