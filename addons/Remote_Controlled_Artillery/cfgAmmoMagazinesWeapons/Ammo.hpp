@@ -4114,7 +4114,7 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
 //distance trigger can be outside radius and not trigger, height trigger will trigger if descending and height reached, so maybe not perfect for max charge
 //normal guided if shot on gps/lase which is deactivated, will have normal trigger range and full seeking radius
 //but if lase kept on and moved / vehicle locked and moves, it can quickly be out of trigger distance
-//aimAbove would need round change script for lower than x MIL
+//doesnt need mag change script as very low EL would indicate LOS?
 class RC_Sh_AMOS_MP_MultiGuided_HeightTrigger_Base: RC_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_MP_MultiGuided_Submunition_Base";
@@ -4136,6 +4136,14 @@ class RC_Sh_AMOS_MP_MultiGuided_HeightTrigger_Base: RC_HEAB_Shell_Base
 	explosionEffects="RC_GuidedExplosion";
 	craterEffects="AAMissileCrater";
 	canLock=2;	//supposedly only cfgweapons not ammo
+};
+//test, releases guided submun at given height instead of distance
+class RC_Sh_155mm_AMOS_MP_MultiGuided_HeightTrigger: RC_Sh_AMOS_MP_MultiGuided_HeightTrigger_Base
+{
+	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
+	aimAboveDefault=2;
+	aimAboveTarget[]={500,500,500};	//guided submunition trigger height
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
 };
 
 
