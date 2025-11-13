@@ -3891,15 +3891,15 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Steering
 				{
 					class AirTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=707;
+						maxRange=707;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=707;
+						maxRange=707;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -3946,28 +3946,28 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 				{
 					class GroundTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=707;	//500m radius from 500m height
+						maxRange=707;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=90;
+					angleRangeHorizontal=90;	//45° to both sides = 500m radius from 500m height (howitzer), 300m radius from 300m height (mortar)
 					angleRangeVertical=90;
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1000;
+					typeRecognitionDistance=707;
 					class AirTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=707;
+						maxRange=707;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=707;
+						maxRange=707;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -4001,18 +4001,18 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 				*/
 				class AntiRadiationSensorComponent: SensorTemplateAntiRadiation
 				{
-					typeRecognitionDistance=1000;
+					typeRecognitionDistance=707;
 					class AirTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=707;
+						maxRange=707;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=707;
+						maxRange=707;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -4107,6 +4107,35 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
 	irLock=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;	//would allow for sensor-recon shots, to then datalink lock with second shot, doesnt work yet, maybe cfgvic only
+};
+
+
+//releases guided submun at given height instead of distance, better for counter battery, also allows faster less accurate aligning
+//distance trigger can be outside radius and not trigger, height trigger will trigger if descending and height reached, so maybe not perfect for max charge
+//normal guided if shot on gps/lase which is deactivated, will have normal trigger range and full seeking radius
+//but if lase kept on and moved / vehicle locked and moves, it can quickly be out of trigger distance
+//aimAbove would need round change script for lower than x MIL
+class RC_Sh_AMOS_MP_MultiGuided_HeightTrigger_Base: RC_HEAB_Shell_Base
+{
+	submunitionAmmo="RC_MP_MultiGuided_Submunition_Base";
+	aimAboveDefault=2;
+	aimAboveTarget[]={500,500,500};	//guided submunition trigger height
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
+	autoSeekTarget=1;
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+
+	submunitionCount=1;
+	submunitionConeAngle=0;
+	submunitionDirectionType="SubmunitionTargetDirection";	//required to not completly miss
+	submunitionParentSpeedCoef=0.1;	//required to not completly miss
+	aiAmmoUsageFlags="128 + 512";
+
+	muzzleEffect="";
+	explosionEffects="RC_GuidedExplosion";
+	craterEffects="AAMissileCrater";
+	canLock=2;	//supposedly only cfgweapons not ammo
 };
 
 
@@ -5810,6 +5839,16 @@ class RC_Sh_155mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 		frequency=20;
 		distance=1;
 	};
+};
+
+
+//test, releases guided submun at given height instead of distance
+class RC_Sh_155mm_AMOS_MP_MultiGuided_HeightTrigger: RC_Sh_AMOS_MP_MultiGuided_HeightTrigger_Base
+{
+	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
+	aimAboveDefault=2;
+	aimAboveTarget[]={500,500,500};	//guided submunition trigger height
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
 };
 
 

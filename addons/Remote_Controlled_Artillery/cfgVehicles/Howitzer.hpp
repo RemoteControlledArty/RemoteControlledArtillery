@@ -580,6 +580,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			};
 			magazines[]=
 			{
+				//"RC_20Rnd_155mm_Mo_MP_LoALAlt",
+
 				"RC_15Rnd_155mm_Mo_shells",
 				"RC_4Rnd_155mm_Mo_HEAB",
 				"RC_5Rnd_155mm_Mo_MultiGuided",
