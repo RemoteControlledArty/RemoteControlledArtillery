@@ -3903,8 +3903,8 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Steering
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=90;
-					angleRangeVertical=90;
+					angleRangeHorizontal=120;
+					angleRangeVertical=120;
 				};
 				/*
 				class DataLinkSensorComponent: SensorTemplateDataLink
@@ -3951,8 +3951,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=90;	//45° to both sides = 500m radius from 500m height (howitzer), 300m radius from 300m height (mortar)
-					angleRangeVertical=90;
+					angleRangeHorizontal=120;	//60° to both sides = 500m radius from 500m height (howitzer), 300m radius from 300m height (mortar)
+					angleRangeVertical=120;
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
@@ -3971,8 +3971,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=90;
-					angleRangeVertical=90;
+					angleRangeHorizontal=120;
+					angleRangeVertical=120;
 				};
 				/*
 				//would be too op
@@ -3995,8 +3995,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 						viewDistanceLimitCoef=-1;
 					};
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
+					angleRangeHorizontal=120;
+					angleRangeVertical=120;
 				};
 				*/
 				class AntiRadiationSensorComponent: SensorTemplateAntiRadiation
@@ -4016,8 +4016,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=90;
-					angleRangeVertical=90;
+					angleRangeHorizontal=120;
+					angleRangeVertical=120;
 					allowsMarking=1;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
@@ -4045,6 +4045,21 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 class SubmunitionBase;
 class RC_Sh_AMOS_MP_LaserGuided_Base: SubmunitionBase
 {
+	/*
+	1. height trigger:
+	aimAboveDefault=1;					//index
+	aimAboveTarget[]={height,height};	//guided submunition trigger height
+	
+	-> releases guided submunition at given height,
+	making it a MUCH more reliable trigger than distance from locked target (which can change if it moved / was moved),
+	also allows faster less accurate aligning while still triggering
+
+	2. distance trigger:
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	
+	-> backup for high charge short range shots at the high aimpoint over the target, as height trigger only works if already descending
+	*/
+
 	submunitionCount=1;
 	submunitionConeAngle=0;
 	submunitionDirectionType="SubmunitionTargetDirection";	//required to not completly miss
@@ -4107,43 +4122,6 @@ class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
 	irLock=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;	//would allow for sensor-recon shots, to then datalink lock with second shot, doesnt work yet, maybe cfgvic only
-};
-
-
-//releases guided submun at given height instead of distance, better for counter battery, also allows faster less accurate aligning
-//distance trigger can be outside radius and not trigger, height trigger will trigger if descending and height reached, so maybe not perfect for max charge
-//normal guided if shot on gps/lase which is deactivated, will have normal trigger range and full seeking radius
-//but if lase kept on and moved / vehicle locked and moves, it can quickly be out of trigger distance
-//doesnt need mag change script as very low EL would indicate LOS?
-class RC_Sh_AMOS_MP_MultiGuided_HeightTrigger_Base: RC_HEAB_Shell_Base
-{
-	submunitionAmmo="RC_MP_MultiGuided_Submunition_Base";
-	aimAboveDefault=2;
-	aimAboveTarget[]={500,500,500};	//guided submunition trigger height
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
-
-	autoSeekTarget=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-
-	submunitionCount=1;
-	submunitionConeAngle=0;
-	submunitionDirectionType="SubmunitionTargetDirection";	//required to not completly miss
-	submunitionParentSpeedCoef=0.1;	//required to not completly miss
-	aiAmmoUsageFlags="128 + 512";
-
-	muzzleEffect="";
-	explosionEffects="RC_GuidedExplosion";
-	craterEffects="AAMissileCrater";
-	canLock=2;	//supposedly only cfgweapons not ammo
-};
-//test, releases guided submun at given height instead of distance
-class RC_Sh_155mm_AMOS_MP_MultiGuided_HeightTrigger: RC_Sh_AMOS_MP_MultiGuided_HeightTrigger_Base
-{
-	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
-	aimAboveDefault=2;
-	aimAboveTarget[]={500,500,500};	//guided submunition trigger height
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
 };
 
 
@@ -4445,9 +4423,12 @@ class RC_82mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_82mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={300};	//guided submunition trigger height
+	triggerDistance=315;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
 	ace_rearm_caliber=82;
 	submunitionAmmo="RC_82mm_MP_LaserGuided_Submunition";
-	triggerDistance=300;
 	hit=165;
 	indirectHit=104;
 	indirectHitRange=6;
@@ -4523,9 +4504,12 @@ class RC_82mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 };
 class RC_Sh_82mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={300};	//guided submunition trigger height
+	triggerDistance=315;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
 	ace_rearm_caliber=82;
 	submunitionAmmo="RC_82mm_MP_MultiGuided_Submunition";
-	triggerDistance=300;
 	hit=165;
 	indirectHit=104;
 	indirectHitRange=6;
@@ -4742,9 +4726,12 @@ class RC_60mm_MP_LaserGuided_Submunition: RC_82mm_MP_LaserGuided_Submunition
 };
 class RC_Sh_60mm_AMOS_MP_LaserGuided: RC_Sh_82mm_AMOS_MP_LaserGuided
 {
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={300};	//guided submunition trigger height
+	triggerDistance=315;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
 	ace_rearm_caliber=60;
 	submunitionAmmo="RC_60mm_MP_LaserGuided_Submunition";
-	triggerDistance=300;
 	hit=100;
 	indirectHit=60;
 	indirectHitRange=4.5;
@@ -4763,9 +4750,12 @@ class RC_60mm_MP_MultiGuided_Submunition: RC_82mm_MP_MultiGuided_Submunition
 };
 class RC_Sh_60mm_AMOS_MP_MultiGuided: RC_Sh_82mm_AMOS_MP_MultiGuided
 {
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={300};	//guided submunition trigger height
+	triggerDistance=315;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
 	ace_rearm_caliber=60;
 	submunitionAmmo="RC_60mm_MP_MultiGuided_Submunition";
-	triggerDistance=300;
 	hit=100;
 	indirectHit=60;
 	indirectHitRange=4.5;
@@ -4937,9 +4927,12 @@ class RC_105mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_105mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={500};	//guided submunition trigger height
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
 	ace_rearm_caliber=105;
 	submunitionAmmo="RC_105mm_MP_LaserGuided_Submunition";
-	triggerDistance=500;
 	hit=207.3;
 	indirectHit=151.2;
 	indirectHitRange=7.2;
@@ -5015,9 +5008,12 @@ class RC_105mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 };
 class RC_Sh_105mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={500};	//guided submunition trigger height
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
 	ace_rearm_caliber=105;
 	submunitionAmmo="RC_105mm_MP_MultiGuided_Submunition";
-	triggerDistance=500;
 	hit=207.3;
 	indirectHit=151.2;
 	indirectHitRange=7.2;
@@ -5275,9 +5271,12 @@ class RC_120mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_120mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={500};	//guided submunition trigger height
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
 	ace_rearm_caliber=120;
 	submunitionAmmo="RC_120mm_MP_LaserGuided_Submunition";
-	triggerDistance=500;
 	hit=236.7;
 	indirectHit=172.8;
 	indirectHitRange=8.3;
@@ -5690,9 +5689,12 @@ class RC_155mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={500};	//guided submunition trigger height
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
 	ace_rearm_caliber=155;
 	submunitionAmmo="RC_155mm_MP_LaserGuided_Submunition";
-	triggerDistance=500;
 	hit=340;
 	indirectHit=250;
 	indirectHitRange=10;
@@ -5811,9 +5813,14 @@ class RC_155mm_MP_MultiGuided_Proximity_Submunition: RC_155mm_MP_MultiGuided_Sub
 */
 class RC_Sh_155mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
+	/*
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={500};	//guided submunition trigger height
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	*/
+
 	ace_rearm_caliber=155;
 	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
-	triggerDistance=500;
 	hit=340;
 	indirectHit=250;
 	indirectHitRange=10;
@@ -5847,16 +5854,6 @@ class RC_Sh_155mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 		frequency=20;
 		distance=1;
 	};
-};
-
-
-//test, releases guided submun at given height instead of distance
-class RC_Sh_155mm_AMOS_MP_MultiGuided_HeightTrigger: RC_Sh_AMOS_MP_MultiGuided_HeightTrigger_Base
-{
-	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
-	aimAboveDefault=2;
-	aimAboveTarget[]={500,500,500};	//guided submunition trigger height
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
 };
 
 
@@ -6109,13 +6106,16 @@ class RC_230mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_R_230mm_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={500};	//guided submunition trigger height
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
 	ace_rearm_caliber=230;
 	submunitionAmmo="RC_230mm_MP_LaserGuided_Submunition";
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
 	explosionEffects="HEShellExplosion";
 	craterEffects="BombCrater";
-	triggerDistance=500;
 	hit=300;
 	indirectHit=800;
 	indirectHitRange=15;
@@ -6303,6 +6303,10 @@ class RC_230mm_MP_MultiGuided_Proximity_Submunition: RC_230mm_MP_MultiGuided_Sub
 */
 class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
+	aimAboveDefault=0;		//index
+	aimAboveTarget[]={500};	//guided submunition trigger height
+	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+
 	ace_rearm_caliber=230;
 	//deleteParentWhenTriggered=1;
 	submunitionAmmo="RC_230mm_MP_MultiGuided_Submunition";
@@ -6310,7 +6314,6 @@ class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 	effectFly="Missile0";
 	explosionEffects="HEShellExplosion";
 	craterEffects="BombCrater";
-	triggerDistance=500;
 	hit=300;
 	indirectHit=800;
 	indirectHitRange=15;

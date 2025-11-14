@@ -444,6 +444,10 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
 	};
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"

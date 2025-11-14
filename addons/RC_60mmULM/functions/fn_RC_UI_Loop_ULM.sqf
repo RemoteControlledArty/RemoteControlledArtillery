@@ -414,18 +414,16 @@ RC_ULM_UI = [] spawn {
 				if (_usingMediumAngle) then {
 					RC_ULM_Velocity = _adjustedVelocityMedium;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
 					RC_ULM_ETA = _travelTimeMedium;
-				} else {
-					RC_ULM_Velocity = _adjustedVelocityHigh;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
-					RC_ULM_ETA = _travelTimeHigh;
-				};
 
-				//gas vent servo sound if new target selected
-				if (_usingMediumAngle) then {
+					//gas vent servo sound if new target selected
 					if ((_adjustedVelocityMedium != 0) && (RC_ULM_Velocity != _prevVelocity)) then {
 						playSound3D ["a3\sounds_f_enoch\assets\vehicles\ugv_02\ugv_02_servo_01.wss", _uav, false, getPosASL _uav, 5, 1.75, 6, 23.5, true];
 						_prevVelocity = RC_ULM_Velocity;
 					};
 				} else {
+					RC_ULM_Velocity = _adjustedVelocityHigh;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
+					RC_ULM_ETA = _travelTimeHigh;
+
 					if ((_adjustedVelocityHigh != 0) && (RC_ULM_Velocity != _prevVelocity)) then {
 						playSound3D ["a3\sounds_f_enoch\assets\vehicles\ugv_02\ugv_02_servo_01.wss", _uav, false, getPosASL _uav, 5, 1.75, 6, 23.5, true];
 						_prevVelocity = RC_ULM_Velocity;

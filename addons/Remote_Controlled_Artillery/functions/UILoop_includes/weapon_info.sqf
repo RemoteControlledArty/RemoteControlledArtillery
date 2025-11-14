@@ -14,7 +14,8 @@ _fireModes = getArray (configFile >> "CfgWeapons" >> _weapon >> "modes");
 _fireModes = (_fireModes apply { configFile >> "CfgWeapons" >> _weapon >> _x }) select { 1 == getNumber (_x >> "showToPlayer") };
 // If the Firemodes have 'artilleryCharge' as a value
 _fireModes = _fireModes apply { [getNumber (_x >> "artilleryCharge"), configName _x] };
-_fireModes sort true; // Basic Sort in Ascending order
+// Basic Sort in ascending order
+_fireModes sort true;
 // Grab only the names of the Firemodes 
 _fireModes = _fireModes apply { _x select 1 };
 // Find the Current charge

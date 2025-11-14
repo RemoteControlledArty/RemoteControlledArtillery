@@ -16477,7 +16477,7 @@ class RC_40Rnd_155mm_Mo_LaserGuided: RC_1Rnd_155mm_Mo_LaserGuided
 class RC_1Rnd_155mm_Mo_MultiGuided: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=450;
+	RC_AimAboveHeight=500;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Guided";
@@ -18019,16 +18019,4 @@ class RC_1Rnd_604mm_rockets_ATACMS_DPICM: 12Rnd_230mm_rockets
 class RC_2Rnd_604mm_rockets_ATACMS_DPICM: RC_1Rnd_604mm_rockets_ATACMS_DPICM
 {
 	count=2;
-};
-
-
-//test
-class RC_20Rnd_155mm_Mo_MP_LoALAlt: RC_1Rnd_155mm_Mo_HEAB
-{
-	//ammo="RC_Sh_155mm_AMOS_MP_LoALAlt";
-	ammo="RC_Sh_155mm_AMOS_MP_MultiGuided_HeightTrigger";
-	RC_AimAboveHeight=500;
-	displayName="MP LoALAlt";
-	displayNameShort="MP LoALAlt";
-	count=20;
 };

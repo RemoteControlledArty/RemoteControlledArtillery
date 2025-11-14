@@ -393,6 +393,7 @@ RC_Artillery_UI = [] spawn {
 				*/
 
 				/* Calculate angles */
+				//*note, later change "velocity" to "speed"
 				_preAngle = sqrt ((_roundVelocity^4) - GRAVITY * (GRAVITY * (_targetDistance^2) + 2 * _realElevationOriginal * _roundVelocity^2));
 				_preSol = sqrt ((_roundVelocity^4) - (GRAVITY * ((2 * (_roundVelocity^2) * _Difference) + (GRAVITY * (_targetDistance^2)))));
 
@@ -405,8 +406,87 @@ RC_Artillery_UI = [] spawn {
 				/* Calculate Marker Low Angle */
 				_calcLow = atan (((_roundVelocity^2) - _preAngle) / (GRAVITY * _targetDistance));
 				_calcLow = round (_calcLow * 100) / 100;
+
 				_lowAngleSol = (3200 * atan (((_roundVelocity^2) - _preSol) / (GRAVITY * _targetDistance))) / pi / MAGIC_CONSTANT;
 				_travelTimeLow = round (((2 * _roundVelocity) * (sin _calcLow)) / GRAVITY);
+
+				//set backup trigger timer, used in fired EH
+				if (_hasTargetSelected && !(_noTargetOrTargetTooClose)) then {
+					if ((abs (_realElevation - _lowAngleSol)) < (abs (_realElevation -_highAngleSol))) then {
+						RC_GuidedTriggerTime = _travelTimeLow;
+					};
+				};
+
+				// returns time when projectile hits target height (descending root)
+				/*
+				getImpactTime = {
+					params ["_roundVelocity", "_lowAngleSol", "GRAVITY", "_Difference"]
+
+					private _a = 0.5 * GRAVITY;
+					private _b = -_roundVelocity * sin (_lowAngleSol * (2*pi/6400));
+
+					private _disc = _b*_b - 4*_a*_Difference;
+					if (_disc < 0) exitWith {nil};
+
+					private _sqrt = sqrt _disc;
+
+					private _t1 = (-_b + _sqrt) / (2*_a);
+					private _t2 = (-_b - _sqrt) / (2*_a);
+
+					private _res = [_t1, _t2] select {_x > 0};
+					if (_res isEqualTo []) exitWith {nil};
+
+					selectMax _res   // descending root
+				};
+				*/
+
+				/*
+				getImpactTime = {
+					params ["_v", "_theta", "_g", "_y0", "_yt"];
+
+					private _a = 0.5 * _g;
+					private _b = -_v * sin (_lowAngleSol * (2*pi/6400));
+					private _c = (_yt - _y0);
+
+					private _disc = _b*_b - 4*_a*_c;
+					if (_disc < 0) exitWith {nil};
+
+					private _sqrt = sqrt _disc;
+
+					private _t1 = (-_b + _sqrt) / (2*_a);
+					private _t2 = (-_b - _sqrt) / (2*_a);
+
+					private _res = [_t1, _t2] select {_x > 0};
+					if (_res isEqualTo []) exitWith {nil};
+
+					selectMax _res   // descending root
+				};
+				*/
+
+
+				/*
+				//alternate ETA formula, seems incorrect at high charge upwards shots, otherwise slightly varies to default
+
+				// Horizontal velocity
+				private _travelTimeLow2 = 0;
+				private _lowAngleSolDeg = ((_lowAngleSol * 360) / 6400);
+				private _vX = _roundVelocity * cos _lowAngleSolDeg;	
+				private _vY = _roundVelocity * sin _lowAngleSolDeg;
+				// Horizontal-only ETA (simpler, if _Difference==0)
+				private _travelTimeLow_h = _targetDistance / _vX;
+				// Full quadratic solution
+				private _discriminant = (_vY * _vY) - (2 * GRAVITY * _Difference);
+				if (_discriminant >= 0) then {
+					_travelTimeLow2 = (_vY + sqrt(_discriminant)) / GRAVITY;  // first impact
+				};
+				// Optional: fallback to horizontal-only if h=0
+				if (_Difference == 0) then { _travelTimeLow2 = _travelTimeLow_h; };
+
+				_travelTimeLow1 = ((2 * _roundVelocity) * (sin _calcLow)) / GRAVITY;
+
+				private _travelTimeLowStr = str _travelTimeLow1 + ", " + str _travelTimeLow2;
+				systemchat _travelTimeLowStr;
+				*/
 
 				// AZ/EL coloring when close to firing solution
 				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\temporary_coloring_workaround.sqf"
