@@ -16,13 +16,18 @@ RC_isAceLoadedHash = createHashMap;
 //vehicle hashmaps
 //RC_localizeHash = createHashMap;	//not yet used
 RC_isRCArtyHash = createHashMap;
-RC_ArtyTypeHash = createHashMap;
+RC_artyTypeHash = createHashMap;
 RC_isAceMortarHash = createHashMap;
-RC_BarrelAGLHash = createHashMap;
-RC_BarrelLenghtHash = createHashMap;
-RC_BarrelExtendsHash = createHashMap;
+RC_barrelAGLHash = createHashMap;
+RC_barrelLenghtHash = createHashMap;
+RC_barrelExtendsHash = createHashMap;
+
+//weapon hashmaps
+RC_weaponConfig = createHashMap;
+RC_fireModes = createHashMap;
 
 //magazine hashmaps
+RC_magSpeedHash = createHashMap;
 RC_advisedTrajectoryHash = createHashMap;
 RC_requiresLockHash = createHashMap;
 RC_terrainWarningHash = createHashMap;
@@ -72,10 +77,10 @@ RC_Artillery_UI = [] spawn {
 			
 			// CBA Option for Allowing the Artillery Computer in RC Artillery UGVs, without ACE its stays on for Mortars (as they dont work manually without ACE atm)
 			// Remote Execute this to make it Multiplayer Compatible
-			private _ArtyType = RC_ArtyTypeHash get _uavClass;
+			private _ArtyType = RC_artyTypeHash get _uavClass;
 			if (isNil "_ArtyType") then {
 				_ArtyType = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_ArtyType");
-				RC_ArtyTypeHash set [_uavClass, _ArtyType];
+				RC_artyTypeHash set [_uavClass, _ArtyType];
 			};
 
 			//_isAceLoaded = isClass (configFile >> "CfgPatches" >> "ace_main");
@@ -183,7 +188,7 @@ RC_Artillery_UI = [] spawn {
 				private _testPoint = _testSeekerPosASL vectorAdd (_lookVector vectorMultiply viewDistance);
     			private _lookingAtGround = !((terrainIntersectASL [_testSeekerPosASL, _testPoint]) || { lineIntersects [_testSeekerPosASL, _testPoint, _uav] });
 				
-				if _lookingAtGround then {
+				if (_lookingAtGround) then {
 					_rangeText = "--";
 				} else {
 					_rangeText = "0";
@@ -247,7 +252,7 @@ RC_Artillery_UI = [] spawn {
 			private _noTargetOrTargetTooClose = (cursorTarget isEqualto objNull) || (_selectedTargetDistance <= MIN_SELECTED_TARGET_DISTANCE);
 
 			// If we are looking into the Sky
-			private "_realAzimuth";
+			private _realAzimuth = 0; //previously private "_realAzimuth";
 			if (_rangeText isEqualTo "--") then {
 				// Use the Weapon Dir
 				_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
@@ -315,14 +320,14 @@ RC_Artillery_UI = [] spawn {
 				// barrel end to target distance
 				private _muzzleFromCenterEstimate = 0;
 				
-				private _barrelExtends = RC_BarrelExtendsHash get _uavClass;
+				private _barrelExtends = RC_barrelExtendsHash get _uavClass;
 				if (isNil "_barrelExtends") then {
 					_barrelExtends = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends") == 1;
-					RC_BarrelExtendsHash set [_uavClass, _barrelExtends];
+					RC_barrelExtendsHash set [_uavClass, _barrelExtends];
 				};
 
 				if (_barrelExtends) then { _muzzleFromCenterEstimate = _barrelLenght * (cos (_weaponDirection * 90)) };
-				private _targetDistance = (round ((_targetPos distance2d _artyPos) - _muzzleFromCenterEstimate)) max 1;
+				private _distance = (round ((_targetPos distance2d _artyPos) - _muzzleFromCenterEstimate)) max 1;
 
 				private _difference = 0;
 				_difference = (_targetPos select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
@@ -336,11 +341,16 @@ RC_Artillery_UI = [] spawn {
 				_targetAzimuth = [_targetAzimuth mod 360, 360 + _targetAzimuth] select (_targetAzimuth < 0);
 				_targetAzimuth = SLANT_ANGLE * _targetAzimuth;
 
-				// velocity of the round
-				private _speed = getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge") * getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
+				// speed of the round
+				private _magSpeed = RC_magSpeedHash get (typeOf _currentMag);
+				if (isNil "_magSpeed") then {
+					_magSpeed = getNumber (configFile >> "CfgMagazines" >> _uavClass >> "initSpeed");
+					RC_magSpeedHash set [_uavClass, _magSpeed];
+				};
+				private _speed = _magSpeed * (getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge"));
 
 				// displayed target
-				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
+				_ctrlDistance ctrlSetText Format ["DIST: %1", [_distance, 4, 0] call CBA_fnc_formatNumber];
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
 					_ctrlTarget ctrlSetText "T: Datalink";
 				} else {
@@ -350,16 +360,30 @@ RC_Artillery_UI = [] spawn {
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 
 
-				// idk anymore why this first
-				private _preSol = sqrt ((_speed^4) - (GRAVITY * ((2 * (_speed^2) * _difference) + (GRAVITY * (_targetDistance^2)))));
+				// precalculation
+				_privatePreSol = sqrt (_speed^2 * (_speed^2 - 2 * GRAVITY * _difference) - GRAVITY^2 * _distance^2);	//((_speed^4) - (GRAVITY * ((2 * (_speed^2) * _difference) + (GRAVITY * (_distance^2)))));
 
-				// calculate high angle
-				private _highAngleSol = (3200 * atan (((_speed^2) + _preSol) / (GRAVITY * _targetDistance))) / pi / MAGIC_CONSTANT;
-				private _travelTimeHigh = _targetDistance / (_speed * cos (_highAngleSol * (2*pi/6400)));
-				
-				// calculate low angle
-				private _lowAngleSol = (3200 * atan (((_speed^2) - _preSol) / (GRAVITY * _targetDistance))) / pi / MAGIC_CONSTANT;
-				private _travelTimeLow = _targetDistance / (_speed * cos (_lowAngleSol * (2*pi/6400)));
+				// required launch angles to hit target (aka firing solution), in degrees
+				_highAngleSolDeg = atan(((_speed^2) + _privatePreSol) / (GRAVITY * _distance));
+				_lowAngleSolDeg  = atan(((_speed^2) - _privatePreSol) / (GRAVITY * _distance));
+
+				// travel time using degrees
+				_travelTimeHigh = _distance / (_speed * cos _highAngleSolDeg);
+				_travelTimeLow  = _distance / (_speed * cos _lowAngleSolDeg);
+
+				// degree to MIL conversion, with horizontal being 0
+				_highAngleSol = _highAngleSolDeg * (6400/360);
+				_lowAngleSol = _lowAngleSolDeg * (6400/360);
+
+				/*
+				_debugStr = format [
+					"%1 m/s   %2 mHor   %3 mVer   %4 m/s  /  %5 Deg   %6 MIL   %7 s  /  %8 Deg   %9 MIL   %10 s",
+					round _speed, round _distance, round _difference, round GRAVITY,
+					_highAngleSolDeg, _highAngleSol, round _travelTimeHigh,
+					_lowAngleSolDeg, _lowAngleSol, round _travelTimeLow
+				];
+				systemChat _debugStr;
+				*/
 
 				// set backup guided trigger timer, used in fired EH
 				private _lockedGuided = _requiresLock && _hasTargetSelected && !_noTargetOrTargetTooClose;
@@ -371,8 +395,8 @@ RC_Artillery_UI = [] spawn {
 
 
 				// AZ/EL coloring when close to firing solution
-				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\temporary_coloring_workaround.sqf"
-				//#include "\Remote_Controlled_Artillery\functions\UILoop_includes\MIL_coloring.sqf"
+				//#include "\Remote_Controlled_Artillery\functions\UILoop_includes\temporary_coloring_workaround.sqf"
+				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\MIL_coloring.sqf"
 				
 				// shows if its not, almost, or fully aligned
 				switch (true) do {

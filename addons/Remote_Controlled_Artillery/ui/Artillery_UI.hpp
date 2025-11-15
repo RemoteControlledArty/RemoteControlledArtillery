@@ -306,13 +306,6 @@ class RC_Artillery: RC_Artillery_Base
 		x = "0.95165 * safezoneW + safezoneX";
 		y = "0.1859345 * safezoneH + safezoneY";
 	};
-	class RscText_1010: RscText_1001
-	{
-		idc = IDC_HIGHETA;
-		text = "ETA: 000"; //--- ToDo: Localize;
-		x = "0.915154 * safezoneW + safezoneX";
-		y = "0.1639327 * safezoneH + safezoneY";
-	};
 	class RscText_1011: RscText_1001
 	{
 		idc = IDC_LOWETA;
@@ -382,13 +375,6 @@ class RC_ULM_Rsc: RC_Artillery_Base
 		text = "high EL: 0000"; //--- ToDo: Localize;
 
 		x = "0.95165 * safezoneW + safezoneX";
-		y = "0.1639327 * safezoneH + safezoneY";
-	};
-	class RscText_1010: RscText_1001
-	{
-		idc = IDC_HIGHETA;
-		text = "ETA: 000"; //--- ToDo: Localize;
-		x = "0.915154 * safezoneW + safezoneX";
 		y = "0.1639327 * safezoneH + safezoneY";
 	};
 	class RscText_1029: RscText_1001
@@ -468,13 +454,6 @@ class RC_ULM_old_Rsc: RC_Artillery_Base
 		text = "high EL: 0000"; //--- ToDo: Localize;
 
 		x = "0.95165 * safezoneW + safezoneX";
-		y = "0.1639327 * safezoneH + safezoneY";
-	};
-	class RscText_1010: RscText_1001
-	{
-		idc = IDC_HIGHETA;
-		text = "ETA: 000"; //--- ToDo: Localize;
-		x = "0.915154 * safezoneW + safezoneX";
 		y = "0.1639327 * safezoneH + safezoneY";
 	};
 };

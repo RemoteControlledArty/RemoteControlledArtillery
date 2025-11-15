@@ -26,13 +26,13 @@ _ctrlAzSlow = _display displayCtrl IDC_KEY_AZSLOW;
 _ctrlKeySelect ctrlSetText format ["select DL target: %1%2", ((actionKeysNamesArray "vehLockTargets") select 0), " / aim at"];
 _ctrlKeyUnselect ctrlSetText format ["unselect DL target: %1%2", ((actionKeysNamesArray "lockTarget") select 0)];
 
-_ArrayMarkersF = ["Remote Controlled Artillery", "RC_Scroll_Targets_Forwards"] call CBA_fnc_getKeybind;
-_KeyMarkersF = (((_ArrayMarkersF select 8) select 0) select 0) call BIS_fnc_keyCode;
-if (!isNil "_KeyMarkersF") then {_ctrlKeyMarkersF ctrlSetText format ["cycle markers ->: %1%2", _KeyMarkersF];};
+private _arrayMarkersF = ["Remote Controlled Artillery", "RC_Scroll_Targets_Forwards"] call CBA_fnc_getKeybind;
+private _keyMarkersF = (((_arrayMarkersF select 8) select 0) select 0) call BIS_fnc_keyCode;
+if (!isNil "_keyMarkersF") then {_ctrlKeyMarkersF ctrlSetText format ["cycle markers ->: %1%2", _keyMarkersF];};
 
-_ArrayMarkersB = ["Remote Controlled Artillery", "RC_Scroll_Targets_Backwards"] call CBA_fnc_getKeybind;
-_KeyMarkersB = (((_ArrayMarkersB select 8) select 0) select 0) call BIS_fnc_keyCode;
-if (!isNil "_KeyMarkersB") then {_ctrlKeyMarkersB ctrlSetText format ["cycle markers <-: %1%2", _KeyMarkersB];};
+private _arrayMarkersB = ["Remote Controlled Artillery", "RC_Scroll_Targets_Backwards"] call CBA_fnc_getKeybind;
+private _keyMarkersB = (((_arrayMarkersB select 8) select 0) select 0) call BIS_fnc_keyCode;
+if (!isNil "_keyMarkersB") then {_ctrlKeyMarkersB ctrlSetText format ["cycle markers <-: %1%2", _keyMarkersB];};
 
 _ctrlKeyCharges ctrlSetText format ["cycle charges: %1%2", ((actionKeysNamesArray "nextWeapon") select 0)];
 _ctrlKeyElUp ctrlSetText format ["elevation up: %1%2", ((actionKeysNamesArray "gunElevUp") select 0)];

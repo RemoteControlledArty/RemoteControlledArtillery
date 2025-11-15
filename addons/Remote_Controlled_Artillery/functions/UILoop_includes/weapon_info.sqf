@@ -1,22 +1,28 @@
-// Current Turret of UAV Gunner
-_turret = _uav unitTurret gunner _uav;
-// Current Fire mode of the UAV Gunner
-_currentFireMode = currentWeaponMode (gunner _uav);
-// All of the Turrets Weapons
-_weaponsTurret = _uav weaponsTurret _turret;
-// Weapon
-_weapon = _weaponsTurret param [0, ""];
-// Weapon Config
-_weaponConfig = configFile >> "CfgWeapons" >> _weapon;
-// Get all Firemodes of the UAV Weapon
-_fireModes = getArray (configFile >> "CfgWeapons" >> _weapon >> "modes");
-// Get all the Firemodes the Players can use
+// current turret of UAV gunner
+private _turret = _uav unitTurret gunner _uav;
+// current fire mode of the UAV gunner
+private _currentFireMode = currentWeaponMode (gunner _uav);
+// weapon
+private _weapon = (_uav weaponsTurret _turret) param [0, ""];
+
+// weapon config
+private _weaponConfig = RC_weaponConfigHash get _uavClass;
+if (isNil "_weaponConfig") then {
+	_weaponConfig = configFile >> "CfgWeapons" >> _weapon;
+	RC_weaponConfigHash set [_uavClass, _weaponConfig];
+};
+
+// het all firemodes of the weapon
+private _fireModes = getArray (configFile >> "CfgWeapons" >> _weapon >> "modes");
+// get all the firemodes the players can use
 _fireModes = (_fireModes apply { configFile >> "CfgWeapons" >> _weapon >> _x }) select { 1 == getNumber (_x >> "showToPlayer") };
-// If the Firemodes have 'artilleryCharge' as a value
+// if the firemodes have 'artilleryCharge' as a value
 _fireModes = _fireModes apply { [getNumber (_x >> "artilleryCharge"), configName _x] };
-// Basic Sort in ascending order
+
+
+// basic sort in ascending order
 _fireModes sort true;
-// Grab only the names of the Firemodes 
+// grab only the names of the firemodes
 _fireModes = _fireModes apply { _x select 1 };
-// Find the Current charge
-_realCharge = _fireModes find _currentFireMode;
+// find the current charge
+private _realCharge = _fireModes find _currentFireMode;

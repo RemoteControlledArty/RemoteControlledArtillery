@@ -6255,9 +6255,6 @@ class RC_155mm_AMOS_V1: RC_155mm_AMOS_base
 		"RC_38Rnd_155mm_Mo_MultiGuided",
 		"RC_39Rnd_155mm_Mo_MultiGuided",
 		"RC_40Rnd_155mm_Mo_MultiGuided",
-		
-		//test
-		"RC_20Rnd_155mm_Mo_MP_LoALAlt",
 
 		"RC_1Rnd_155mm_Mo_mine",
 		"RC_2Rnd_155mm_Mo_mine",
