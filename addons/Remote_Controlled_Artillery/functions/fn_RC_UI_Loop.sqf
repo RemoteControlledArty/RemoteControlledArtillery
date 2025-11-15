@@ -417,6 +417,54 @@ RC_Artillery_UI = [] spawn {
 					};
 				};
 
+				/*
+				_timeToTarget = {
+					params ["_speed","_distH","_angle","_diffV"];
+					private _g = 9.81;
+					private _vs = _speed * sin _angle;
+					private _D = _vs*_vs - 2 * _g * _diffV;
+					if (_D < 0) exitWith {-1};                      // no solution
+					private _t1 = (_vs - sqrt _D) / _g;
+					private _t2 = (_vs + sqrt _D) / _g;
+					private _tH = _distH / (_speed * cos _angle);   // horizontal time
+					// choose the positive root closest to horizontal time (fall back if one is negative)
+					( (_t1 >= 0) && (abs(_t1 - _tH) <= abs(_t2 - _tH)) ) then { _t1 } else { (_t2 >= 0) then { _t2 } else { -1 } }
+				};
+				*/
+
+				/*
+				_disc = (_speed * sin(_angle))^2 - 2 * GRAVITY * _diff;
+				_tAsc = (_speed * sin(_angle) - sqrt(_disc)) / GRAVITY;
+				_tDesc = (_speed * sin(_angle) + sqrt(_disc)) / GRAVITY;
+				_tHoriz = _dist / (_speed * cos(_angle));
+				*/
+
+				/*
+				// inputs: _speed, _dist, _angle (rad), _diff, GRAVITY
+				private _sinA = sin _angle;
+				private _cosA = cos _angle;
+				private _disc = (_speed*_sinA)^2 - 2 * GRAVITY * _diff;
+				if (_disc < 0) exitWith { [false, []] };            // no solution
+
+				private _sqrt = sqrt _disc;
+				private _t1 = ((_speed*_sinA) - _sqrt) / GRAVITY;
+				private _t2 = ((_speed*_sinA) + _sqrt) / GRAVITY;
+
+				private _tol = 1.0;                                // horizontal tolerance (m)
+				private _valid = [];
+				{
+					if ((_x > 1e-9) && (abs((_speed * _cosA * _x) - _dist) <= _tol)) then {
+						_valid pushBack _x;
+					};
+				} forEach [_t1, _t2];
+
+				// sort so first is ascending (if both present)
+				_valid sort true;
+				[ (count _valid > 0), _valid ]  // returns [hasSolution, [t_ascending?, t_descending?]]
+				*/
+
+
+
 				// returns time when projectile hits target height (descending root)
 				/*
 				getImpactTime = {
