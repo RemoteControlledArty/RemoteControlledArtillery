@@ -7,19 +7,19 @@ if (isNil "_aimAboveHeight") then {
 	RC_AimAboveHeightHash set [_currentMag, _aimAboveHeight];
 };
 
-private _BarrelAGL = RC_BarrelAGLHash get _uavClass;
-if (isNil "_BarrelAGL") then {
-	_BarrelAGL = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelAGL");
-	RC_BarrelAGLHash set [_uavClass, _BarrelAGL];
+private _barrelAGL = RC_BarrelAGLHash get _uavClass;
+if (isNil "_barrelAGL") then {
+	_barrelAGL = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelAGL");
+	RC_BarrelAGLHash set [_uavClass, _barrelAGL];
 };
 
-private _BarrelLenght = RC_BarrelLenghtHash get _uavClass;
-if (isNil "_BarrelLenght") then {
-	_BarrelLenght = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelLenght");
-	RC_BarrelLenghtHash set [_uavClass, _BarrelLenght];
+private _barrelLenght = RC_BarrelLenghtHash get _uavClass;
+if (isNil "_barrelLenght") then {
+	_barrelLenght = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelLenght");
+	RC_BarrelLenghtHash set [_uavClass, _barrelLenght];
 };
 
-_WeaponDirection = 0;
+_weaponDirection = 0;
 _muzzleHeight = 0;
-_WeaponDirection = ((_uav weaponDirection currentWeapon _uav) select 2);
-_muzzleHeightEstimate = _BarrelLenght * (sin (_WeaponDirection * 90)) + _BarrelAGL;
+_weaponDirection = ((_uav weaponDirection currentWeapon _uav) select 2);
+_muzzleHeightEstimate = _barrelLenght * (sin (_weaponDirection * 90)) + _barrelAGL;

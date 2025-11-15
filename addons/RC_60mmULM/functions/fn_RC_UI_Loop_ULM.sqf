@@ -367,8 +367,11 @@ RC_ULM_UI = [] spawn {
 					_numerator, _den, _denFactor, _insideSqrt, _roundVelocity
 				];
 				*/
-
+					
 				private _ETA = -1;
+
+				//"_diff is needed if the target is higher or lower than the height implied by the chosen angle, or if the angle is arbitrary."
+				//"_diff exists to handle targets at different heights than the chosen angle implies."
 				if (_adjustedVelocityMedium > 0) then {
 
 					// Horizontal velocity
