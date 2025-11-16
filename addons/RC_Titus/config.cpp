@@ -99,7 +99,10 @@ class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
 
-#include "\RC_Titus\cfgAmmoMagazinesWeapons\cfgAmmoMagazinesWeapons.hpp"
+class CfgWeapons
+{
+	#include "\RC_Titus\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
+};
 
 
 class CfgVehicles

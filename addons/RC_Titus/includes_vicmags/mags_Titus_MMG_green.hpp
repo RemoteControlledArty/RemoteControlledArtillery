@@ -1,9 +1,9 @@
 magazines[]=
 {
-	"RC_QIN_150Rnd_338_T_G",
-	"RC_QIN_150Rnd_338_T_G",
-	"RC_QIN_150Rnd_338_T_G",
-	"RC_QIN_150Rnd_338_T_G",
+	"RC_150Rnd_338_T_G",
+	"RC_150Rnd_338_T_G",
+	"RC_150Rnd_338_T_G",
+	"RC_150Rnd_338_T_G",
 	
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"

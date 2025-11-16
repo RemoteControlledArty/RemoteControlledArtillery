@@ -28,11 +28,10 @@ magazines[]=
 	"RC_100Rnd_20mm_APFSDS_T_R",
 	//"RC_100Rnd_20mm_AP_T_R",
 
-	"RC_QIN_200Rnd_338_T_R",
-	"RC_QIN_200Rnd_338_T_R",
-	"RC_QIN_200Rnd_338_T_R",
-	"RC_QIN_200Rnd_338_T_R",
-	//"RC_QIN_150Rnd_338_T_R",
+	"RC_200Rnd_338_T_R",
+	"RC_200Rnd_338_T_R",
+	"RC_200Rnd_338_T_R",
+	"RC_200Rnd_338_T_R",
 
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"

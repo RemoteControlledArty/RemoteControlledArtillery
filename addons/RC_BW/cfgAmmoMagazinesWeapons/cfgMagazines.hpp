@@ -4,6 +4,7 @@ class RC_2Rnd_SPz_Spike_LOS: RC_2Rnd_IFV_MP_LOS
 	count=2;
 	displayName="4km Spike Direct";
 	displayNameShort="Spike Direct";
+	displayNameMFDFormat="Spike Dir";
 	ammo="RC_IFV_MP_LOS";
 };
 class RC_2Rnd_IFV_MP_Overfly;
@@ -12,6 +13,7 @@ class RC_2Rnd_SPz_Spike_Overfly: RC_2Rnd_IFV_MP_Overfly
 	count=2;
 	displayName="4km Spike Overfly";
 	displayNameShort="Spike Overfly";
+	displayNameMFDFormat="Spike OvFly";
 	ammo="RC_IFV_MP_Overfly";
 };
 class RC_2Rnd_IFV_MP_NLOS;
@@ -20,6 +22,7 @@ class RC_2Rnd_SPz_Spike_NLOS: RC_2Rnd_IFV_MP_NLOS
 	count=2;
 	displayName="4km Spike NLOS";
 	displayNameShort="Spike NLOS";
+	displayNameMFDFormat="Spike NLOS";
 	ammo="RC_IFV_MP_NLOS";
 };
 class RC_2Rnd_IFV_AA;
@@ -28,6 +31,7 @@ class RC_2Rnd_SPz_Spike_AA: RC_2Rnd_IFV_AA
 	count=2;
 	displayName="5km Spike AA";
 	displayNameShort="Spike AA";
+	displayNameMFDFormat="Spike AA";
 	ammo="RC_IFV_AA";
 };
 
@@ -161,9 +165,9 @@ class RC_160Rnd_30mm_HEAB_QF_T_Y: RC_100Rnd_30mm_HEAB_QF_T_Y {count=160; display
 
 
 //MG
-class RC_400Rnd_338_T_R: RC_200Rnd_338_T_R {count=400; displayNameShort="8.6x70mm";};
-class RC_400Rnd_338_T_G: RC_200Rnd_338_T_G {count=400; displayNameShort="8.6x70mm";};
-class RC_400Rnd_338_T_Y: RC_200Rnd_338_T_Y {count=400; displayNameShort="8.6x70mm";};
+class RC_400Rnd_338_T_R: RC_200Rnd_338_T_R {count=400; displayNameShort="8.6x70mm"; displayNameMFDFormat="8.6mm";};
+class RC_400Rnd_338_T_G: RC_200Rnd_338_T_G {count=400; displayNameShort="8.6x70mm"; displayNameMFDFormat="8.6mm";};
+class RC_400Rnd_338_T_Y: RC_200Rnd_338_T_Y {count=400; displayNameShort="8.6x70mm"; displayNameMFDFormat="8.6mm";};
 
 class RC_600Rnd_338_T_R: RC_400Rnd_338_T_R {count=600;};
 class RC_600Rnd_338_T_G: RC_400Rnd_338_T_G {count=600;};

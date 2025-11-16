@@ -59,6 +59,7 @@ class RC_APS_Expl_Scripted: ClaymoreDirectionalMine_Remote_Ammo_Scripted
 class BulletBase;
 class RC_FPV_Deployer_Ammo: BulletBase
 {
+	ace_rearm_caliber=155;	//to cost supplies
 	muzzleEffect="BIS_fnc_effectFiredSmokeLauncher";
 	effectsSmoke="EmptyEffect";
 	weaponLockSystem=0;
@@ -6177,6 +6178,8 @@ class RC_R_230mm_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 
 class RC_230mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 {
+	//fix flight accuracy, improve sideways steering
+
 	model="\A3\Weapons_F\Ammo\Rocket_230mm_F";
 	effectFly="Missile0";
 	//explosionEffects="HEShellExplosion";
