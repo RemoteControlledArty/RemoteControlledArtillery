@@ -6,8 +6,10 @@ if (!((RC_GuidedTriggerTime isEqualType 0) && (RC_GuidedTriggerTime > 0))) exitW
 [_projectile] spawn {	\
 	params ['_projectile'];	\
 	sleep RC_GuidedTriggerTime;	\
+	if (!alive _projectile) exitwith {}; \
 	triggerAmmo _projectile;	\
 };";
 
 //if (!(_unit turretLocal [0])) exitwith {};	//only works if mainturret is [0]
 //if (!local _unit) exitwith {};
+//if (_projectile isEqualTo objNull) exitwith {};

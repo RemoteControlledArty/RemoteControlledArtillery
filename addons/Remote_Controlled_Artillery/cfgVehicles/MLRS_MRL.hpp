@@ -28,6 +28,10 @@ class RC_MLRS_A: RC_MLRS_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
@@ -380,6 +384,10 @@ class RC_MRL_DIG_I: RC_MRL_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"

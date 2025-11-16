@@ -1,26 +1,33 @@
 #include "\Remote_Controlled_Artillery\script_component.hpp"
 /*
-	This Code is held together by Duct Tape and Hope
+	This code is held together by duct tape and hope.
+
 	Author: Fluffy, Ascent, Eric
 
-	Description:
-	Main Loop to Handle the Calculation and UI of RC Artillery Units
+	Description: Main loop to handle the calculation and UI of RC Artillery Units.
+
+	Public: No.
 */
 
-// Need to exit early if we aren't a client
+// need to exit early if we aren't a client
 if (!hasInterface) exitWith {};
-RC_isULM_Hash = createHashMap;
-//other hashmaps already created in mod it depends on
 
+// predefine for fired EH if not yet calulated
+RC_ULM_Velocity= 0;
+RC_ULM_ETA = 0;
+
+// hashmap to prevent config check spam, other hashmaps already created in mod it depends on
+RC_isULM_Hash = createHashMap;
 
 RC_ULM_UI = [] spawn {
-	_prevVelocity=0; //for gas vent servo sound
+	//for gas vent servo sound
+	private _prevVelocity=0;
 
 	while { true } do {
 		sleep 0.1;
 
-		_player = player;
-		_vicPlayer = vehicle player;
+		private _player = player;
+		private _vicPlayer = vehicle player;
 
 		if (_vicPlayer isEqualTo _player) then {
 			// UI Shouldn't be Shown so we cut it
@@ -29,14 +36,12 @@ RC_ULM_UI = [] spawn {
 			continue;
 		};
 
-		// UAV
-		_uav = _vicPlayer;
-		// UAV ClassName
-		_uavClass = typeOf _uav;
-		// See if the vehicle has the isULM property
+		// only named UAV to be more compatible with main mod script components
+		private _uav = _vicPlayer;
+		// UAV className
+		private _uavClass = typeOf _uav;
+		// see if the vehicle has the isULM property, 2 is automatic gas vent, altering velocity, allowing to always shoot at 45deg
 		private _isULM = RC_isULM_Hash get _uavClass;
-
-		//2 is automatic gas vent, altering velocity, allowing to always shoot at 45deg
 		if (isNil "_isULM") then {
 			_isULM = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isULM") == 2;
 			RC_isULM_Hash set [_uavClass, _isULM];
@@ -62,95 +67,56 @@ RC_ULM_UI = [] spawn {
 			// We are in the UI now
 			RC_ULM_InUI = true;
 			
-			// If our UAV is Autonomous we want to make it not
-			// We need to remote exec it since setAutonomous is of Local Effect so it needs to be where the UAV is Local
-			//if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
-			
 			// Check if the Display for the UI Exists if not Create it
 			if (isNull (uiNamespace getVariable ["RC_ULM_Rsc", displayNull])) then { "RC_ULM_Rsc" cutRsc ["RC_ULM_Rsc", "PLAIN", 0, false] };
 			
-			disableSerialization;	//what effect does this have again, maybe change location futher down?
+			// makes script able to use more data types like UI
+			disableSerialization;
 
-			// Get the UI so we can see if it has Distance or not
-			_AceUI = uiNamespace getVariable ["ACE_dlgArtillery", displayNull];
-			_RCAUI = uiNamespace getVariable ["RCA_ArtyUI", displayNull];
-			
-			/*
-			// CBA Option for Allowing the Artillery Computer in RC Artillery UGVs, without ACE its stays on for Mortars (as they dont work manually without ACE atm)
-			// Remote Execute this to make it Multiplayer Compatible
-			private _ArtyType = RC_ArtyTypeHash get _uavClass;
-			if (isNil "_ArtyType") then {
-				_ArtyType = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_ArtyType");
-				RC_ArtyTypeHash set [_uavClass, _ArtyType];
-			};
+			// get the UI so we can see if it has distance or not
+			private _AceUI = uiNamespace getVariable ["ACE_dlgArtillery", displayNull];
+			private _RCAUI = uiNamespace getVariable ["RCA_ArtyUI", displayNull];
 
-			//_isAceLoaded = isClass (configFile >> "CfgPatches" >> "ace_main");
-			private _isAceLoaded = RC_isAceLoadedHash get _uavClass;
-			if (isNil "_isAceLoaded") then {
-				_isAceLoaded = isClass (configFile >> "CfgPatches" >> "ace_main");
-				RC_isAceLoadedHash set [_uavClass, _isAceLoaded];
-			};
-
-			if (shownArtilleryComputer) then {
-				if (_isAceLoaded) then {
-					if (_ArtyType == 1) then {
-						if (!RC_allowPortableMortarComputer) then {
-							closeDialog 0;
-							hintSilent "vanilla artillery computer disabled by mod settings";
-							sleep 2;
-							hintSilent "";
-						};
-					};
-				};
-			};
-			*/
-
-			/*
-			if (shownArtilleryComputer) then {
-				closeDialog 0;
-				hintSilent "asset cannot use vanilla artillery computer";
-				sleep 2;
-				hintSilent "";
-			};
-			*/
-
-			_RCA_CurrentArtyDisplay = displayNull;
-			// If our one is Null we use theirs
+			private _RCA_CurrentArtyDisplay = displayNull;
+			// if our one is null we use theirs
 			_RCA_CurrentArtyDisplay = [_RCAUI, _AceUI] select (isNull _RCAUI);
 
-			// This is the Range Text
-			_rangeText = ctrlText (_RCA_CurrentArtyDisplay displayCtrl 173);
+			// this is the range text
+			private _rangeText = ctrlText (_RCA_CurrentArtyDisplay displayCtrl 173);
 
-			// Look Vector relative to the Camera
-			_lookVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (AGLtoASL (positionCameraToWorld [0, 0, 1]));
-			_weaponDir = _uav weaponDirection (currentWeapon _uav); // Weapon direction as a Relative Vector3
+			// look vector relative to the Camera
+			private _lookVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (AGLtoASL (positionCameraToWorld [0, 0, 1]));
+			// weapon direction as a relative vector3
+			private _weaponDir = _uav weaponDirection (currentWeapon _uav);
 			
-			// Fallback if we are using the Mortar and the Display isn't working
+			// fallback if we are using the mortar and the display isn't working
 			if (isNull _RCA_CurrentArtyDisplay) then {
 				private _testSeekerPosASL = AGLtoASL (positionCameraToWorld [0,0,0]);
 				private _testPoint = _testSeekerPosASL vectorAdd (_lookVector vectorMultiply viewDistance);
-    			_lookingAtGround = !((terrainIntersectASL [_testSeekerPosASL, _testPoint]) || { lineIntersects [_testSeekerPosASL, _testPoint, _uav] });
+    			private _lookingAtGround = !((terrainIntersectASL [_testSeekerPosASL, _testPoint]) || { lineIntersects [_testSeekerPosASL, _testPoint, _uav] });
 				
-				if _lookingAtGround then {
+				if (_lookingAtGround) then {
 					_rangeText = "--";
 				} else {
 					_rangeText = "0";
 				};
 			};
 			
-			// Display
-			_display = uiNamespace getVariable ["RC_ULM_Rsc", displayNull];
+			// display
+			private _display = uiNamespace getVariable ["RC_ULM_Rsc", displayNull];
 
-			//weapon informations like charges and current charge
-			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"
+			// weapon informations
+			#include "\RC_60mmULM\functions\weapon_info_ULM.sqf"
+
 			private _highAngleSol = 1200;
 			private _mediumAngleSol = 800;
-			private _highAngleSol_Deg = (_highAngleSol * 360) / 6400;
-			private _mediumAngleSol_Deg = (_mediumAngleSol * 360) / 6400;
+			private _highAngleSolDeg = (_highAngleSol * 360) / 6400;
+			private _mediumAngleSolDeg = (_mediumAngleSol * 360) / 6400;
 
-			// Get Weapon Elevation
-			_realElevationOriginal = asin (_weaponDir select 2);
-			_realElevation = SLANT_ANGLE * _realElevationOriginal;
+			// get weapon elevation
+			private _realElevationDeg = asin (_weaponDir select 2);
+			// degree to MIL
+			private _realElevation = SLANT_ANGLE * _realElevationDeg;
 	
 			// fixes barrel elevation value for static mortars if used on UNEVEN ground
 			private _isAceMortar = RC_isAceMortarHash get _uavClass;
@@ -166,12 +132,14 @@ RC_ULM_UI = [] spawn {
 				if (isNil "_currentTraverseRad") then { _currentTraverseRad = _uav animationPhase _turretAnimBody };
 				// Get turret roatation around it's z axis, then calc weapon elev in it's projection
 				private _turretRot = [vectorDir _uav, vectorUp _uav, deg _currentTraverseRad] call CBA_fnc_vectRotate3D;
-				_realElevationOriginal = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
-				if (_realElevationOriginal > 90) then { _realElevationOriginal = 180 - _realElevationOriginal };
-				_realElevation = (SLANT_ANGLE * _realElevationOriginal);
+				_realElevationDeg = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
+				if (_realElevationDeg > 90) then { _realElevationDeg = 180 - _realElevationDeg };
+				_realElevation = (SLANT_ANGLE * _realElevationDeg);
 			};
 
-			//ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
+			private _currentMag = currentMagazine _uav;
+
+			// ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
 			_ctrlMediumSol = _display displayCtrl IDC_MEDSOL;
 			_ctrlHighSol = _display displayCtrl IDC_HIGHSOL;
@@ -182,57 +150,54 @@ RC_ULM_UI = [] spawn {
 			_ctrlNewTarget = _display displayCtrl IDC_NEWTARGET;
 
 			// checks if shell requires lock before firing to activate guidance
-			_currentMag = currentMagazine _uav;
-			private _requiresLock = RC_RequiresLockHash get _currentMag;
+			private _requiresLock = RC_requiresLockHash get _currentMag;
 			if (isNil "_requiresLock") then {
 				_requiresLock = (getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_RequiresLock"))==1;
-				RC_RequiresLockHash set [_currentMag, _requiresLock];
+				RC_requiresLockHash set [_currentMag, _requiresLock];
 			};
 
-			//UV Pos
-			_artyPos = getPosASL _uav;
-			//checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
-			_selectedTargetDistance = 1;
-
-			_lockedTarget = playerTargetLock#0;
-			//_lockedTarget = cursorTarget;
-
+			// UV pos (above sea level)
+			private _artyPos = getPosASL _uav;
+			// checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
+			private _selectedTargetDistance = 1;
+			private _lockedTarget = playerTargetLock#0;
 			private _ULM_minDist = 20;
 
 			if (_lockedTarget isNotEqualto objNull) then { _selectedTargetDistance = (getPosASL _lockedTarget) distance2d _artyPos };
-			_noTargetOrTargetTooClose = (_lockedTarget isEqualto objNull) || (_selectedTargetDistance <= _ULM_minDist);
+			private _noTargetOrTargetTooClose = (_lockedTarget isEqualto objNull) || (_selectedTargetDistance <= _ULM_minDist);
 
-			// If we are looking into the Sky
-			private "_realAzimuth";
+			// if we are looking into the sky
+			private _realAzimuth = 0;
 			if (_rangeText isEqualTo "--") then {
-				// Use the Weapon Dir
+				// use the weapon dir
 				_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
-				// Hide Submunition Warning when looking at the Sky
+				// hide submunition warning when looking at the sky
 				{ (_display displayCtrl _x) ctrlShow false } forEach [1013, 1014];
-				// Show Lock Requirement Warning when having no Target selected
+				// show lock requirement warning when having no target selected
 				{ (_display displayCtrl _x) ctrlShow (_requiresLock && _noTargetOrTargetTooClose) } forEach [1015,1016];
 			} else {
-				// Else use the Look Vector
+				// else use the look vector
 				_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
-				// Show Submunition Warning when looking at Terrain
-				//{ (_display displayCtrl _x) ctrlShow _terrainWarning } forEach [1013, 1014];
+				// show submunition warning when looking at terrain
+				//{ (_display displayCtrl _x) ctrlShow _terrainWarning } forEach [1013, 1014];	//not needed for ULM ammo
 				{ (_display displayCtrl _x) ctrlShow false } forEach [1013, 1014];
-				// Show Lock Requirement Warning when having no Target selected
+				// show lock requirement warning when having no target selected
 				{ (_display displayCtrl _x) ctrlShow (_requiresLock && _noTargetOrTargetTooClose) } forEach [1015, 1016];
 			};
 
-			// Wrap around
+			// wrap around
 			_realAzimuth = [_realAzimuth mod 360, 360 + _realAzimuth] select (_realAzimuth < 0);
+			// degree to MIL
 			_realAzimuth = SLANT_ANGLE * _realAzimuth;
 			
-			/* Declare vars */
+			// declare vars
 			private _travelTimeMedium = 0;
 			private _travelTimeHigh = 0;
 			private _adjustedVelocity = 0;
 			private _adjustedVelocityMedium = 0;
 			private _adjustedVelocityHigh = 0;
 
-			// If we actually have a Target (thats not too close)
+			// if we actually have a target (thats not too close)
 			if (((_lockedTarget isNotEqualto objNull) && { _selectedTargetDistance >= _ULM_minDist }) || !(RC_Artillery_Markers isEqualTo [])) then {
 				if !(RC_Artillery_Markers isEqualTo []) then {
 
@@ -241,34 +206,33 @@ RC_ULM_UI = [] spawn {
 					if (isNil "RC_currentTargetMarker" || RC_currentTargetMarker isEqualTo []) then {
 						RC_currentTargetMarker = RC_Artillery_Markers select 0;
 					};
-					// Try to see if the Current Target Exists
-					_targetExists = RC_Artillery_Markers findIf {
+					// try to see if the current target exists
+					private _targetExists = RC_Artillery_Markers findIf {
 						(_x select 0) == (RC_currentTargetMarker select 0);
 					};
-					// If the Target can't be found we reset the current target
+					// if the target can't be found we reset the current target
 					if (_targetExists == -1) then {
 						RC_Current_Index = 0;
 					};
 				};
 
-				//ElDiff additions, like muzzle position, and rounds aim above value (airburst, topdown guided, illum)
+				// ElDiff additions, like muzzle position, and rounds aim above value (airburst, topdown guided, illum)
 				//#include "\Remote_Controlled_Artillery\functions\UILoop_includes\eldiff_additions.sqf"
-				_muzzleHeightEstimate = 0.5;
-				private _aimAboveHeight = RC_AimAboveHeightHash get _currentMag;
+				private _muzzleHeightEstimate = 0.5;
+				private _aimAboveHeight = RC_aimAboveHeightHash get _currentMag;
 				if (isNil "_aimAboveHeight") then {
 					_aimAboveHeight = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_AimAboveHeight");
-					RC_AimAboveHeightHash set [_currentMag, _aimAboveHeight];
+					RC_aimAboveHeightHash set [_currentMag, _aimAboveHeight];
 				};
 
-				//find if datalink target is selected
-				_targetPos = [0,0,0];
-				_hasTargetSelected = (_lockedTarget isNotEqualto objNull);
+				// find if datalink target is selected
+				private _targetPos = [0,0,0];
+				private _hasTargetSelected = (_lockedTarget isNotEqualto objNull);
 
-				//UV Pos
-				_artyPos = getPosASL _uav;
-				//Target Pos
+				// UV pos (above sea level)
+				private _artyPos = getPosASL _uav;
+				// target pos (above sea level)
 				if (_hasTargetSelected && !(_noTargetOrTargetTooClose)) then {
-					//_targetPos = getpos _lockedTarget;
 					_targetPos = getposASL _lockedTarget;
 				} else {
     				_targetPos = AGLtoASL (markerPos [(RC_currentTargetMarker select 1), true]);
@@ -279,37 +243,37 @@ RC_ULM_UI = [] spawn {
 					*/
 				};
 
-				//Barrel End to Target Distance
-				_muzzleFromCenterEstimate = 0;
+				// barrel end to target distance
+				private _muzzleFromCenterEstimate = 0;
 				
 				/*
-				private _BarrelExtends = RC_BarrelExtendsHash get _uavClass;
+				private _BarrelExtends = RC_barrelExtendsHash get _uavClass;
 				if (isNil "_BarrelExtends") then {
 					_BarrelExtends = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends") == 1;
-					RC_BarrelExtendsHash set [_uavClass, _BarrelExtends];
+					RC_barrelExtendsHash set [_uavClass, _BarrelExtends];
 				};
 
 				if (_BarrelExtends) then { _muzzleFromCenterEstimate = _BarrelLenght * (cos (_WeaponDirection * 90)) };
-				_targetDistance = (round ((_targetPos distance2d _artyPos) - _muzzleFromCenterEstimate)) max 1;
+				_distance = (round ((_targetPos distance2d _artyPos) - _muzzleFromCenterEstimate)) max 1;
 				*/
 
-				_targetDistance = (round (_targetPos distance2d _artyPos)) max 1;
+				// distance from of UV muzzle and target
+				private _distance = (round (_targetPos distance2d _artyPos)) max 1;
 
-				_Difference = 0;
-				//_Difference = ((AGLToASL _targetPos) select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
-				_Difference = (_targetPos select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
-
+				// height difference of UV muzzle to aimpoint
+				private _difference = 0;
+				_difference = (_targetPos select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
 				//how ElDiff is shown based on cba settings
-				_shownDifference = [-_Difference, _Difference] select RC_Arty_EL_Diff;
+				private _shownDifference = [-_difference, _difference] select RC_Arty_EL_Diff;
 
-				//_targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (AGLtoASL _targetPos);
-				_targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (_targetPos);
-				_targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
+				// turret azimuth
+				private _targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (_targetPos);
+				private _targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
 				_targetAzimuth = [_targetAzimuth mod 360, 360 + _targetAzimuth] select (_targetAzimuth < 0);
 				_targetAzimuth = SLANT_ANGLE * _targetAzimuth;
 
-				//displayed target
-				_ctrlDistance ctrlSetText Format ["DIST: %1", [_targetDistance, 4, 0] call CBA_fnc_formatNumber];
+				// displayed target
+				_ctrlDistance ctrlSetText Format ["DIST: %1", [_distance, 4, 0] call CBA_fnc_formatNumber];
 				if (_hasTargetSelected && (_selectedTargetDistance >= _ULM_minDist)) then {
 					_ctrlNewTarget ctrlSetText "T: Datalink";
 				} else {
@@ -319,112 +283,122 @@ RC_ULM_UI = [] spawn {
 				_ctrlDifference ctrlSetText Format ["DIF: %1", [_shownDifference, 4, 0] call CBA_fnc_formatNumber];
 
 
-				//to limit max range
-				_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
-				//_roundVelocity = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_maxMV");
+				// speed of the round, defines max range
+				private _magSpeed = RC_magSpeedHash get _currentMag;
+				if (isNil "_magSpeed") then {
+					_magSpeed = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
+					RC_magSpeedHash set [_currentMag, _magSpeed];
+				};
+				private _speed = _magSpeed;		//private _speed = _magSpeed * (getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge"));	//maybe more modular?
 
-
-				//calulate required velocity to hit target
-				private _tanA_M = tan _mediumAngleSol_Deg;
-				private _cosA_M = cos _mediumAngleSol_Deg;
+				// calulate required velocity to hit target using medium angle
+				private _tanA_M = tan _mediumAngleSolDeg;
+				private _cosA_M = cos _mediumAngleSolDeg;
 				private _cosA2_M = _cosA_M * _cosA_M;
 
-				private _numerator_M = GRAVITY * (_targetDistance * _targetDistance);
-				private _den_M = (_targetDistance * _tanA_M) - _difference;
+				private _numerator_M = GRAVITY * (_distance * _distance);
+				private _den_M = (_distance * _tanA_M) - _difference;
 				private _denFactor_M = 2 * _cosA2_M * _den_M;
 
 				private _insideSqrt_M = _numerator_M / _denFactor_M;
 				if (_den_M > 0 && _denFactor_M > 0 && _insideSqrt_M > 0) then {
 					_adjustedVelocityMedium = sqrt _insideSqrt_M;
 				};
-				//to limit max range
-				if (_adjustedVelocityMedium > _roundVelocity) then {
+				// to limit max range
+				if (_adjustedVelocityMedium > _speed) then {
 					_adjustedVelocityMedium = 0;
 				};
 
-				//calulate required velocity to hit target
-				private _tanA_H = tan _highAngleSol_Deg;
-				private _cosA_H = cos _highAngleSol_Deg;
+				// calulate required velocity to hit target using high angle
+				private _tanA_H = tan _highAngleSolDeg;
+				private _cosA_H = cos _highAngleSolDeg;
 				private _cosA2_H = _cosA_H * _cosA_H;
 
-				private _numerator_H = GRAVITY * (_targetDistance * _targetDistance);
-				private _den_H = (_targetDistance * _tanA_H) - _difference;
+				private _numerator_H = GRAVITY * (_distance * _distance);
+				private _den_H = (_distance * _tanA_H) - _difference;
 				private _denFactor_H = 2 * _cosA2_H * _den_H;
 
 				private _insideSqrt_H = _numerator_H / _denFactor_H;
 				if (_den_H > 0 && _denFactor_H > 0 && _insideSqrt_H > 0) then {
 					_adjustedVelocityHigh = sqrt _insideSqrt_H;
 				};
-				//to limit max range
-				if (_adjustedVelocityHigh > _roundVelocity) then {
+				// to limit max range
+				if (_adjustedVelocityHigh > _speed) then {
 					_adjustedVelocityHigh = 0;
 				};
 
 				/*
 				hintSilent format [
 					"Debug ballistic calc\n\nR: %1\nh: %2\nangleMils: %3\nangleRad: %4\n tan(angle): %5\n cos^2(angle): %6\n\nnumerator (g*R^2): %7\n_den (R*tan - h): %8\n_denFactor (2*cos^2*_den): %9\ninsideSqrt: %10\ncomputed v: %11",
-					_targetDistance, _difference, 800, 45, _tanA, _cosA2,
-					_numerator, _den, _denFactor, _insideSqrt, _roundVelocity
+					_distance, _difference, 800, 45, _tanA, _cosA2,
+					_numerator, _den, _denFactor, _insideSqrt, _speed
 				];
 				*/
-					
-				private _ETA = -1;
 
-				//"_diff is needed if the target is higher or lower than the height implied by the chosen angle, or if the angle is arbitrary."
-				//"_diff exists to handle targets at different heights than the chosen angle implies."
+				// ETA				
+				//"_diff is needed if the target is higher or lower than the height already IMPLIED by the given angle, or if the given angle is arbitrary."
+				//"_diff exists to handle targets at different heights than the given angle already IMPLIES."
 				if (_adjustedVelocityMedium > 0) then {
 
-					// Horizontal velocity
-					private _vX = _adjustedVelocityMedium * cos _mediumAngleSol_Deg;	
-					private _vY = _adjustedVelocityMedium * sin _mediumAngleSol_Deg;
+					// horizontal velocity
+					private _vX = _adjustedVelocityMedium * cos _mediumAngleSolDeg;	
+					private _vY = _adjustedVelocityMedium * sin _mediumAngleSolDeg;
 
-					// Horizontal-only ETA (simpler, if _Difference==0)
-					private _travelTimeMedium_h = _targetDistance / _vX;
+					// horizontal-only ETA (simpler, if _difference==0)
+					private _travelTimeMedium_h = _distance / _vX;
 
-					// Full quadratic solution
+					// full quadratic solution
 					private _discriminant = (_vY * _vY) - (2 * GRAVITY * _difference);
 
 					if (_discriminant >= 0) then {
 						_travelTimeMedium = (_vY + sqrt(_discriminant)) / GRAVITY;  // first impact
 					};
 
-					// Optional: fallback to horizontal-only if h=0
+					// optional: fallback to horizontal-only if h=0
 					if (_difference == 0) then { _travelTimeMedium = _travelTimeMedium_h; };
 				};
 
 				if (_adjustedVelocityHigh > 0) then {
 
-					// Horizontal velocity
-					private _vX = _adjustedVelocityHigh * cos _highAngleSol_Deg;	
-					private _vY = _adjustedVelocityHigh * sin _highAngleSol_Deg;
+					private _vX = _adjustedVelocityHigh * cos _highAngleSolDeg;	
+					private _vY = _adjustedVelocityHigh * sin _highAngleSolDeg;
 
-					// Horizontal-only ETA (simpler, if _Difference==0)
-					private _travelTimeHigh_h = _targetDistance / _vX;
+					private _travelTimeHigh_h = _distance / _vX;
 
-					// Full quadratic solution
 					private _discriminant = (_vY * _vY) - (2 * GRAVITY * _difference);
 
 					if (_discriminant >= 0) then {
 						_travelTimeHigh = (_vY + sqrt(_discriminant)) / GRAVITY;  // first impact
 					};
 
-					// Optional: fallback to horizontal-only if h=0
 					if (_difference == 0) then { _travelTimeHigh = _travelTimeHigh_h; };
 				};
 
-				//decides based on angle which velocity adjustment is used
-				_usingMediumAngle = (abs (_realElevation - _mediumAngleSol)) < (abs (_realElevation -_highAngleSol));
+				/*
+				// ETA, correct formula but somehow display result jitters from correct to wrong
+				if (_adjustedVelocityMedium > 0) then {
+					_travelTimeMedium = _distance / (_speed * cos _mediumAngleSolDeg);
+				};
+				if (_adjustedVelocityHigh > 0) then {
+					_travelTimeHigh = _distance / (_speed * cos _highAngleSolDeg);
+				};
+				*/
+
+				// decides based on angle which velocity adjustment is used
+				private _usingMediumAngle = (abs (_realElevation - _mediumAngleSol)) < (abs (_realElevation - _highAngleSol));
 				if (_usingMediumAngle) then {
-					RC_ULM_Velocity = _adjustedVelocityMedium;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
+					// used for fired EH to adjust velocity (automatic gas vent adjuster)
+					RC_ULM_Velocity = _adjustedVelocityMedium;
+					// used for fired EH for ETA message
 					RC_ULM_ETA = _travelTimeMedium;
 
-					//gas vent servo sound if new target selected
+					// gas vent servo sound if new target selected
 					if ((_adjustedVelocityMedium != 0) && (RC_ULM_Velocity != _prevVelocity)) then {
 						playSound3D ["a3\sounds_f_enoch\assets\vehicles\ugv_02\ugv_02_servo_01.wss", _uav, false, getPosASL _uav, 5, 1.75, 6, 23.5, true];
 						_prevVelocity = RC_ULM_Velocity;
 					};
 				} else {
-					RC_ULM_Velocity = _adjustedVelocityHigh;	//used for fired EH to adjust velocity (automatic gas vent adjuster)
+					RC_ULM_Velocity = _adjustedVelocityHigh;
 					RC_ULM_ETA = _travelTimeHigh;
 
 					if ((_adjustedVelocityHigh != 0) && (RC_ULM_Velocity != _prevVelocity)) then {
@@ -432,127 +406,49 @@ RC_ULM_UI = [] spawn {
 						_prevVelocity = RC_ULM_Velocity;
 					};
 				};
+
+				// set backup guided trigger timer, used in fired EH, calculated by actually used elevation not recommended one
+				private _lockedGuided = false;
+				_lockedGuided = _requiresLock && _hasTargetSelected && (!(_noTargetOrTargetTooClose));
+				//private _triggerDistance = 0;
 				
-				// AZ/EL coloring when close to firing solution
-				//#include "\RC_60mmULM\functions\temporary_coloring_workaround_ULM_AutoCharge.sqf"
-				#include "\RC_60mmULM\functions\MIL_coloring_ULM.sqf"
-				
-				// shows if its not, almost, or fully aligned
-				switch (true) do {
-					case(
-						(_adjustedVelocityHigh > 0) and
-						(_realElevation < (_highAngleSol + 0.5)) and
-						(_realElevation > (_highAngleSol - 0.5)) and
-						(_realAzimuth < (_targetAzimuth + 0.5)) and
-						(_realAzimuth > (_targetAzimuth - 0.5))
-					): {
-						_ctrlMessage ctrlSetTextColor [0,1,0,1];
-						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "ALIGNED";
-					};
-					case(
-						(_adjustedVelocityMedium > 0) and
-						(_realElevation < (_mediumAngleSol + 0.5)) and
-						(_realElevation > (_mediumAngleSol - 0.5)) and
-						(_realAzimuth < (_targetAzimuth + 0.5)) and
-						(_realAzimuth > (_targetAzimuth - 0.5))
-					): {
-						_ctrlMessage ctrlSetTextColor [0,1,0,1];
-						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "ALIGNED";
+				if (_lockedGuided) then {
+					// checks if horizontal velocity > 0 to prevent division by 0
+					private _horVel = (RC_ULM_Velocity * cos _realElevationDeg);
+
+					if (_horVel > 0) then {
+						RC_GuidedTriggerTime = _distance / _horVel;
+					} else {
+						//ignored by fired EH
+						RC_GuidedTriggerTime = 0;
 					};
 
-					case(
-						(_adjustedVelocityHigh > 0) and
-						(_realElevation < (_highAngleSol + 1)) and
-						(_realElevation > (_highAngleSol - 1)) and
-						(_realAzimuth < (_targetAzimuth + 1)) and
-						(_realAzimuth > (_targetAzimuth - 1))
-					): {
-						_ctrlMessage ctrlSetTextColor [1,0.5,0,1];
-						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "NOT ALIGNED";
+					/*
+					// get triggerDistance to warn in aligned_coloring if too close
+					_triggerDistance = RC_triggerDistanceHash get _currentMag;
+					if (isNil "_triggerDistance") then {
+						_triggerDistance = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_triggerDistance");
+						RC_triggerDistanceHash set [_currentMag, _triggerDistance];
 					};
-					case(
-						(_adjustedVelocityMedium > 0) and
-						(_realElevation < (_mediumAngleSol + 1)) and
-						(_realElevation > (_mediumAngleSol - 1)) and
-						(_realAzimuth < (_targetAzimuth + 1)) and
-						(_realAzimuth > (_targetAzimuth - 1))
-					): {
-						_ctrlMessage ctrlSetTextColor [1,0.5,0,1];
-						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "NOT ALIGNED";
-					};
-
-					case(
-						(_adjustedVelocityHigh == 0) and
-						(!_usingMediumAngle)
-					): {
-						_ctrlMessage ctrlSetTextColor [1,0,0,1];
-						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "NOT IN RANGE";
-					};
-					case(
-						(_adjustedVelocityMedium == 0) and
-						(_usingMediumAngle)
-					): {
-						_ctrlMessage ctrlSetTextColor [1,0,0,1];
-						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "NOT IN RANGE";
-					};
-
-					default {
-						_ctrlMessage ctrlSetTextColor [1,0,0,1];
-						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "NOT ALIGNED";
-					};
+					*/
+				} else {
+					RC_GuidedTriggerTime = 0;
 				};
 				
-				// Parse these back to Numbers incase they are NaN
+				// AZ/EL coloring when close to firing solution
+				#include "\RC_60mmULM\functions\MIL_coloring_ULM.sqf"
+				// shows if its not, almost, or fully aligned
+				#include "\RC_60mmULM\functions\aligned_coloring_ULM.sqf"
+				
+				// parse these back to numbers incase they are NaN
 				_travelTimeMedium = parseNumber str _travelTimeMedium;
 				_travelTimeHigh = parseNumber str _travelTimeHigh;
 				_adjustedVelocityHigh = parseNumber str _adjustedVelocityHigh;
 				_adjustedVelocityMedium = parseNumber str _adjustedVelocityMedium;
-
-				/*
-				//likely not needed atm
-				_mediumAngleSol = parseNumber str _mediumAngleSol;
-				_highAngleSol = parseNumber str _highAngleSol;
-	
-				// If they were NaN then make them Zero
-				if (_adjustedVelocityMedium < 0) then {
-					_mediumAngleSol = 0;
-					_travelTimeMedium = 0;
-				};
-				if (_adjustedVelocityHigh < 0) then {
-					_highAngleSol = 0;
-					_travelTimehigh = 0;
-				};
-				*/
+				
 			} else {
-				//display if no target is available/selected
-				//#include "\Remote_Controlled_Artillery\functions\UILoop_includes\notarget_display.sqf"
-
-				// If we don't have any Valid Targets
-				_ctrlAzimuth ctrlSetTextColor [1, 1, 1, 1];
-				_ctrlElevation ctrlSetTextColor [1, 1, 1, 1];
-
-				_ctrlDistance ctrlSetText "DIST: 0000";
-				_ctrlNewTarget ctrlSetText "T: 0";
-				_ctrlTargetAzimuth ctrlSetText "T AZ: 0000";
-				_ctrlDifference ctrlSetText "DIF: 0000";
-				_ctrlHighSol ctrlSetText "high EL: 0000";
-				_ctrlMediumSol ctrlSetText "med EL: 0000";
-				_ctrlHighETA ctrlSetText "ETA: 000";
-				_ctrlMediumETA ctrlSetText "ETA: 000";
-				_ctrlHighMV ctrlSetText "MV: 000";
-				_ctrlMediumMV ctrlSetText "MV: 000";
-
-				// If we have no Targets
-				_ctrlMessage ctrlSetTextColor [1, 0, 0, 1];
-				_ctrlMessage ctrlSetPositionX (0.868267 * safezoneW + safezoneX);
-				_ctrlMessage ctrlSetText format ["ADD MAP MARKER: %1%2", RC_Marker_Prefix, "1-99 / gps"];
+				// display if no target is available/selected
+				#include "\RC_60mmULM\functions\notarget_display_ULM.sqf"
 			};
 			_ctrlHighSol ctrlShow true;
 			_ctrlMediumSol ctrlShow true;
@@ -581,7 +477,7 @@ RC_ULM_UI = [] spawn {
 				_ctrlMediumMV ctrlSetTextColor [0.5, 0.5, 0.5, 0.5];
 			};
 
-			//wrong check?
+			// wrong check?
 			if (_adjustedVelocityHigh isEqualType 0) then {
 				_ctrlHighMV ctrlSetText Format ["MV: %1", [_adjustedVelocityHigh, 3, 0] call CBA_fnc_formatNumber];
 			} else {

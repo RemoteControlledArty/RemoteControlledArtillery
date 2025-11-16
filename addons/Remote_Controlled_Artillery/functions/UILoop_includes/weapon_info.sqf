@@ -6,19 +6,22 @@ private _currentFireMode = currentWeaponMode (gunner _uav);
 private _weapon = (_uav weaponsTurret _turret) param [0, ""];
 
 // weapon config
-private _weaponConfig = RC_weaponConfigHash get _uavClass;
+private _weaponConfig = RC_weaponConfigHash get _weapon;
 if (isNil "_weaponConfig") then {
 	_weaponConfig = configFile >> "CfgWeapons" >> _weapon;
-	RC_weaponConfigHash set [_uavClass, _weaponConfig];
+	RC_weaponConfigHash set [_weapon, _weaponConfig];
 };
 
-// het all firemodes of the weapon
-private _fireModes = getArray (configFile >> "CfgWeapons" >> _weapon >> "modes");
-// get all the firemodes the players can use
-_fireModes = (_fireModes apply { configFile >> "CfgWeapons" >> _weapon >> _x }) select { 1 == getNumber (_x >> "showToPlayer") };
-// if the firemodes have 'artilleryCharge' as a value
-_fireModes = _fireModes apply { [getNumber (_x >> "artilleryCharge"), configName _x] };
+// 1. get all firemodes of the weapon 2. the player can use 3. have 'artilleryCharge' as a value
+private _fireModes = RC_fireModesHash get _weapon;
+if (isNil "_fireModes") then {
 
+	_fireModes = getArray (configFile >> "CfgWeapons" >> _weapon >> "modes");
+	_fireModes = (_fireModes apply { configFile >> "CfgWeapons" >> _weapon >> _x }) select { 1 == getNumber (_x >> "showToPlayer") };
+	_fireModes = _fireModes apply { [getNumber (_x >> "artilleryCharge"), configName _x] };
+
+	RC_fireModesHash set [_weapon, _fireModes];
+};
 
 // basic sort in ascending order
 _fireModes sort true;

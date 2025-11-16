@@ -2733,7 +2733,7 @@ class 8Rnd_82mm_Mo_LG;
 class RC_1Rnd_82mm_Mo_LaserGuided: 8Rnd_82mm_Mo_LG
 {
 	ammo="RC_Sh_82mm_AMOS_MP_LaserGuided";
-	RC_AimAboveHeight=270;
+	RC_AimAboveHeight=280;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
@@ -6525,7 +6525,7 @@ class RC_40Rnd_60mm_Mo_Smoke_white: RC_1Rnd_60mm_Mo_Smoke_white
 class RC_1Rnd_60mm_Mo_LaserGuided: RC_1Rnd_82mm_Mo_LaserGuided
 {
 	ammo="RC_Sh_60mm_AMOS_MP_LaserGuided";
-	RC_AimAboveHeight=270;
+	RC_AimAboveHeight=280;
 };
 class RC_2Rnd_60mm_Mo_LaserGuided: RC_1Rnd_60mm_Mo_LaserGuided
 {
@@ -6688,7 +6688,7 @@ class RC_40Rnd_60mm_Mo_LaserGuided: RC_1Rnd_60mm_Mo_LaserGuided
 class RC_1Rnd_60mm_Mo_MultiGuided: RC_1Rnd_82mm_Mo_MultiGuided
 {
 	ammo="RC_Sh_60mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=270;
+	RC_AimAboveHeight=280;
 };
 class RC_2Rnd_60mm_Mo_MultiGuided: RC_1Rnd_60mm_Mo_MultiGuided
 {
@@ -7015,7 +7015,7 @@ class RC_40Rnd_60mm_Mo_mine: RC_1Rnd_60mm_Mo_mine
 class RC_1Rnd_60mm_Mo_LG_DelayedFuse: RC_1Rnd_82mm_Mo_LG_DelayedFuse
 {
 	ammo="RC_Sh_60mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=270;
+	RC_AimAboveHeight=280;
 };
 class RC_2Rnd_60mm_Mo_LG_DelayedFuse: RC_1Rnd_60mm_Mo_LG_DelayedFuse
 {
@@ -9829,7 +9829,7 @@ class RC_1Rnd_105mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 {
 	initSpeed=396.12;	//16km range
 	ammo="RC_Sh_105mm_AMOS_MP_LaserGuided";
-	RC_AimAboveHeight=450;
+	RC_AimAboveHeight=500;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
@@ -11508,7 +11508,7 @@ class magazine_ShipCannon_120mm_HE_LG_shells_x2;
 class RC_1Rnd_120mm_Mo_LaserGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_MP_LaserGuided";
-	RC_AimAboveHeight=450;
+	RC_AimAboveHeight=500;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
@@ -11677,7 +11677,7 @@ class RC_40Rnd_120mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
 class RC_1Rnd_120mm_Mo_MultiGuided: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_MP_MultiGuided";
-	RC_AimAboveHeight=450;
+	RC_AimAboveHeight=500;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Guided";
@@ -12690,7 +12690,7 @@ class RC_40Rnd_120mm_Mo_Illum: RC_1Rnd_120mm_Mo_Illum
 class RC_1Rnd_120mm_Mo_LG_DelayedFuse: magazine_ShipCannon_120mm_HE_LG_shells_x2
 {
 	ammo="RC_Sh_120mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=450;
+	RC_AimAboveHeight=500;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";
@@ -16308,7 +16308,7 @@ class RC_40Rnd_155mm_Mo_smoke: RC_1Rnd_155mm_Mo_smoke
 class RC_1Rnd_155mm_Mo_LaserGuided: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_MP_LaserGuided";
-	RC_AimAboveHeight=450;
+	RC_AimAboveHeight=500;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
@@ -16981,7 +16981,7 @@ class RC_40Rnd_155mm_Mo_Illum: RC_1Rnd_155mm_Mo_Illum
 class RC_1Rnd_155mm_Mo_LG_DelayedFuse: 2Rnd_155mm_Mo_LG
 {
 	ammo="RC_Sh_155mm_AMOS_LG_DelayedFuse";
-	RC_AimAboveHeight=450;
+	RC_AimAboveHeight=500;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";
@@ -17704,7 +17704,7 @@ class RC_12Rnd_230mm_rockets_cluster: RC_1Rnd_230mm_rockets_cluster
 class RC_1Rnd_230mm_rockets_LaserGuided: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_MP_LaserGuided";
-	RC_AimAboveHeight=450;
+	RC_AimAboveHeight=500;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Laser Guided";
@@ -17760,7 +17760,7 @@ class RC_12Rnd_230mm_rockets_LaserGuided: RC_1Rnd_230mm_rockets_LaserGuided
 class RC_1Rnd_230mm_rockets_MultiGuided: 12Rnd_230mm_rockets
 {
 	ammo="RC_R_230mm_MP_MultiGuided";
-	RC_AimAboveHeight=450;
+	RC_AimAboveHeight=500;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="MP Guided";
@@ -17816,7 +17816,7 @@ class RC_12Rnd_230mm_rockets_MultiGuided: RC_1Rnd_230mm_rockets_MultiGuided
 class RC_1Rnd_230mm_rockets_LG_DelayedFuse: 12Rnd_230mm_rockets
 {
 	ammo="RC_230mm_LG_DelayedFuse";
-	RC_AimAboveHeight=450;
+	RC_AimAboveHeight=500;
 	RC_RequiresLock=1;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="LG 2m Delayed";

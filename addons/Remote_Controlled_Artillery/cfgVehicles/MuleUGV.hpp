@@ -318,3 +318,74 @@ class RC_Mule_UGV_VehAmmo_WD_I: RC_Mule_UGV_VehAmmo_WD
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
+
+
+/*
+//modified fuel barrel pallet, to be ace interactable
+class CargoNet_01_barrels_F;
+class RC_RefuelPallet: CargoNet_01_barrels_F
+{
+	transportFuel=900;	//3000 fuel container
+	ace_refuel_hooks[]={{-1.49,1.41,-0.3}};
+	ace_refuel_fuelCargo=3000;		//10000
+};
+
+//refuel
+class RC_Mule_UGV_Refuel_A: RC_Mule_UGV_A
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {('Box_NATO_AmmoVeh_F' createVehicle [0,0,0]) attachTo [_this, [0.425, -0.4, 0.1]];};";
+		};
+	};
+
+	displayName="RC Mule - Refuel";
+};
+class RC_Mule_UGV_Refuel_A_O: RC_Mule_UGV_Refuel_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_Mule_UGV_Refuel_A_I: RC_Mule_UGV_Refuel_A
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
+class RC_Mule_UGV_Refuel_WD: RC_Mule_UGV_Refuel_A
+{
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_olive_F.jpg";
+	textureList[]=
+	{
+		"Olive",
+		1
+	};
+	hiddenSelectionsTextures[]=
+	{
+		"\A3\Soft_F_Exp\UGV_01\Data\UGV_01_ext_olive_CO.paa",
+		"\A3\Soft_F_Exp\UGV_01\Data\UGV_01_int_olive_CO.paa",
+		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
+	};
+};
+class RC_Mule_UGV_Refuel_WD_O: RC_Mule_UGV_Refuel_WD
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_Mule_UGV_Refuel_WD_I: RC_Mule_UGV_Refuel_WD
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+*/

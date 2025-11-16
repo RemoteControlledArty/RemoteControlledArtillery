@@ -5,10 +5,10 @@ class RC_M119_base: RHS_M119_D
 	class MainTurret;
 	class ViewOptics;
 	class Components;
-	class EventHandlers;
 	class Hitpoints;
 	class AnimationSources;
 	class UserActions;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 
@@ -20,6 +20,14 @@ class RC_M119_base: RHS_M119_D
 };
 class RC_M119: RC_M119_base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
+	};
+
 	displayName="RC M119 105mm 16km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";

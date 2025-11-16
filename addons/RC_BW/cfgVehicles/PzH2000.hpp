@@ -27,6 +27,10 @@ class RC_PzH2000_FT_Base: RC_PzH2000_Core
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"

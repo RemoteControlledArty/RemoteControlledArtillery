@@ -38,6 +38,16 @@ class NDS_M224_mortar_core: NDS_M224_mortar_base
 };
 class NDS_M224_mortar: NDS_M224_mortar_core
 {
+	/*
+	class EventHandlers: EventHandlers
+	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
+	};
+	*/
+
 	isULM=1; // 1 = display UI
 	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy

@@ -49,6 +49,7 @@ class RC_ULM_Sh_60mm_AMOS_Smoke: Smoke_82mm_AMOS_White
 	laserLock=1;
 	irLock=1;
 	//airLock=1;
+	//airLock=2;
 };
 
 
@@ -116,6 +117,7 @@ class RC_ULM_Sh_60mm_AMOS_AP_Mine: ShotDeployBase
 	laserLock=1;
 	irLock=1;
 	//airLock=1;
+	//airLock=2;
 };
 class Flare_82mm_AMOS_White;
 class RC_ULM_Sh_60mm_AMOS_Illum: Flare_82mm_AMOS_White

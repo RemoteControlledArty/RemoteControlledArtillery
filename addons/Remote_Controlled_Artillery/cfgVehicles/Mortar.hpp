@@ -19,6 +19,14 @@ class RC_Mortar_Core: B_Mortar_01_F
 };
 class RC_Mortar_Base: RC_Mortar_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
+	};
+
 	displayName="RC Mortar 4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
@@ -299,7 +307,10 @@ class RC_VehicleMortar: RC_Mortar
 	//didnt found a fitting script yet, as its a single texture
 	class EventHandlers: EventHandlers
 	{
-		init="insert script for mortar leg hiding";
+		class RC_HideLegs
+		{
+			init="insert script for mortar leg hiding";
+		};
 	};
 	*/
 

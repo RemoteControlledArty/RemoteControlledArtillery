@@ -1,14 +1,19 @@
 #include "script_component.hpp"
 /*
-	This Code is held together by Duct Tape and Hope
+	This code is held together by duct tape and hope.
+
 	Author: Fluffy, Ascent, Eric
 
-	Description:
-	Main Loop to Handle the Calculation and UI of RC Artillery Units
+	Description: Main loop to handle the calculation and UI of RC Artillery Units.
+
+	Public: No.
 */
 
-// Need to exit early if we aren't a client
+// need to exit early if we aren't a client
 if (!hasInterface) exitWith {};
+
+//backup if no target or target too close
+RC_GuidedTriggerTime=0;
 
 //general hashmaps
 RC_isAceLoadedHash = createHashMap;
@@ -23,13 +28,14 @@ RC_barrelLenghtHash = createHashMap;
 RC_barrelExtendsHash = createHashMap;
 
 //weapon hashmaps
-RC_weaponConfig = createHashMap;
-RC_fireModes = createHashMap;
+RC_weaponConfigHash = createHashMap;
+RC_fireModesHash = createHashMap;
 
 //magazine hashmaps
 RC_magSpeedHash = createHashMap;
 RC_advisedTrajectoryHash = createHashMap;
 RC_requiresLockHash = createHashMap;
+RC_triggerDistanceHash = createHashMap;
 RC_terrainWarningHash = createHashMap;
 RC_aimAboveHeightHash = createHashMap;
 
@@ -44,9 +50,9 @@ RC_Artillery_UI = [] spawn {
 			continue;
 		};
 
-		// UAV
+		// UV
 		private _uav = getConnectedUAV player;
-		// UAV className
+		// UV className
 		private _uavClass = typeOf _uav;
 		// see if the vehicle has the isRCArty property
 		private _isRCArty = RC_isRCArtyHash get _uavClass;
@@ -69,7 +75,8 @@ RC_Artillery_UI = [] spawn {
 			// check if the Display for the UI Exists if not create it
 			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then { "RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false] };
 			
-			disableSerialization;	//what effect does this have again, maybe change location futher down?
+			// makes script able to use more data types like UI
+			disableSerialization;
 
 			// get the UI so we can see if it has Distance or not
 			private _AceUI = uiNamespace getVariable ["ACE_dlgArtillery", displayNull];
@@ -172,17 +179,18 @@ RC_Artillery_UI = [] spawn {
 			};
 
 			private _RCA_CurrentArtyDisplay = displayNull;
-			// If our one is Null we use theirs
+			// if our one is null we use theirs
 			_RCA_CurrentArtyDisplay = [_RCAUI, _AceUI] select (isNull _RCAUI);
 
-			// This is the Range Text
+			// this is the range text
 			private _rangeText = ctrlText (_RCA_CurrentArtyDisplay displayCtrl 173);
 
-			// Look Vector relative to the Camera
+			// look vector relative to the camera
 			private _lookVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (AGLtoASL (positionCameraToWorld [0, 0, 1]));
-			private _weaponDir = _uav weaponDirection (currentWeapon _uav); // Weapon direction as a Relative Vector3
+			// weapon direction as a relative vector3
+			private _weaponDir = _uav weaponDirection (currentWeapon _uav);
 			
-			// Fallback if we are using the Mortar and the Display isn't working
+			// fallback if we are using the Mortar and the display isn't working
 			if (isNull _RCA_CurrentArtyDisplay) then {
 				private _testSeekerPosASL = AGLtoASL (positionCameraToWorld [0,0,0]);
 				private _testPoint = _testSeekerPosASL vectorAdd (_lookVector vectorMultiply viewDistance);
@@ -195,15 +203,16 @@ RC_Artillery_UI = [] spawn {
 				};
 			};
 			
-			// Display
+			// display
 			private _display = uiNamespace getVariable ["RC_Artillery", displayNull];
 
-			//weapon informations like charges and current charge
+			// weapon informations like charges and current charge
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"
 
-			// Get Weapon Elevation
-			private _realElevationOriginal = asin (_weaponDir select 2);
-			private _realElevation = SLANT_ANGLE * _realElevationOriginal;
+			// get weapon elevation
+			private _realElevationDeg = asin (_weaponDir select 2);
+			// degree into MIL
+			private _realElevation = SLANT_ANGLE * _realElevationDeg;
 	
 			// fixes barrel elevation value for static mortars if used on UNEVEN ground
 			private _isAceMortar = RC_isAceMortarHash get _uavClass;
@@ -219,22 +228,22 @@ RC_Artillery_UI = [] spawn {
 				if (isNil "_currentTraverseRad") then { _currentTraverseRad = _uav animationPhase _turretAnimBody };
 				// Get turret roatation around it's z axis, then calc weapon elev in it's projection
 				private _turretRot = [vectorDir _uav, vectorUp _uav, deg _currentTraverseRad] call CBA_fnc_vectRotate3D;
-				_realElevationOriginal = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
-				if (_realElevationOriginal > 90) then { _realElevationOriginal = 180 - _realElevationOriginal };
-				_realElevation = (SLANT_ANGLE * _realElevationOriginal);
+				_realElevationDeg = (acos ((_turretRot vectorCos _weaponDir) min 1)) + ((_turretRot call CBA_fnc_vect2polar) select 2);
+				if (_realElevationDeg > 90) then { _realElevationDeg = 180 - _realElevationDeg };
+				_realElevation = (SLANT_ANGLE * _realElevationDeg);
 			};
 
-			//changes magazine to backup airburst if EL is too low for conventional airburst
+			// changes magazine to backup airburst if EL is too low for conventional airburst
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\AB_magchange.sqf"
 
-			//ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
+			// ctrl display, hotkey display, ace adjustable scope hotkey overlap warning
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\ctrl_display.sqf"
 
 			// checks if shell requires lock before firing to activate guidance
-			private _requiresLock = RC_RequiresLockHash get _currentMag;
+			private _requiresLock = RC_requiresLockHash get _currentMag;
 			if (isNil "_requiresLock") then {
 				_requiresLock = (getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_RequiresLock"))==1;
-				RC_RequiresLockHash set [_currentMag, _requiresLock];
+				RC_requiresLockHash set [_currentMag, _requiresLock];
 			};
 			
 			// checks if camera needs to be raised into sky to not deploy submunitions too early
@@ -244,32 +253,32 @@ RC_Artillery_UI = [] spawn {
 				RC_TerrainWarningHash set [_currentMag, _terrainWarning];
 			};
 
-			//UV Pos
+			// UV pos (above sea level)
 			private _artyPos = getPosASL _uav;
-			//checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
+			// checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
 			private _selectedTargetDistance = 1;
 			if (cursorTarget isNotEqualto objNull) then { _selectedTargetDistance = (getPosASL cursorTarget) distance2d _artyPos };
 			private _noTargetOrTargetTooClose = (cursorTarget isEqualto objNull) || (_selectedTargetDistance <= MIN_SELECTED_TARGET_DISTANCE);
 
-			// If we are looking into the Sky
-			private _realAzimuth = 0; //previously private "_realAzimuth";
+			// if we are looking into the sky
+			private _realAzimuth = 0;
 			if (_rangeText isEqualTo "--") then {
-				// Use the Weapon Dir
+				// use the weapon dir
 				_realAzimuth = ((_weaponDir select 0) atan2 (_weaponDir select 1));
-				// Hide Submunition Warning when looking at the Sky
+				// hide submunition warning when looking at the sky
 				{ (_display displayCtrl _x) ctrlShow false } forEach [1013, 1014];
-				// Show Lock Requirement Warning when having no Target selected
+				// show lock requirement warning when having no target selected
 				{ (_display displayCtrl _x) ctrlShow (_requiresLock && _noTargetOrTargetTooClose) } forEach [1015,1016];
 			} else {
-				// Else use the Look Vector
+				// else use the look vector
 				_realAzimuth = ((_lookVector select 0) atan2 (_lookVector select 1));
-				// Show Submunition Warning when looking at Terrain
+				// show submunition warning when looking at terrain
 				{ (_display displayCtrl _x) ctrlShow _terrainWarning } forEach [1013, 1014];
-				// Show Lock Requirement Warning when having no Target selected
+				// show lock requirement warning when having no target selected
 				{ (_display displayCtrl _x) ctrlShow (_requiresLock && _noTargetOrTargetTooClose) } forEach [1015, 1016];
 			};
 
-			// Wrap around
+			// wrap around
 			_realAzimuth = [_realAzimuth mod 360, 360 + _realAzimuth] select (_realAzimuth < 0);
 			_realAzimuth = SLANT_ANGLE * _realAzimuth;
 			
@@ -289,7 +298,7 @@ RC_Artillery_UI = [] spawn {
 						RC_currentTargetMarker = RC_Artillery_Markers select 0;
 					};
 					// try to see if the current target exists
-					_targetExists = RC_Artillery_Markers findIf {
+					private _targetExists = RC_Artillery_Markers findIf {
 						(_x select 0) == (RC_currentTargetMarker select 0);
 					};
 					// if the target can't be found we reset the current target
@@ -305,7 +314,7 @@ RC_Artillery_UI = [] spawn {
 				private _targetPos = [0, 0, 0];
 				private _hasTargetSelected = (cursorTarget isNotEqualto objNull);
 
-				// target pos
+				// target pos (above sea level)
 				if (_hasTargetSelected && !(_noTargetOrTargetTooClose)) then {
 					_targetPos = getposASL cursorTarget;
 				} else {
@@ -325,27 +334,29 @@ RC_Artillery_UI = [] spawn {
 					_barrelExtends = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_BarrelExtends") == 1;
 					RC_barrelExtendsHash set [_uavClass, _barrelExtends];
 				};
-
 				if (_barrelExtends) then { _muzzleFromCenterEstimate = _barrelLenght * (cos (_weaponDirection * 90)) };
+
+				// distance from of UV muzzle and target
 				private _distance = (round ((_targetPos distance2d _artyPos) - _muzzleFromCenterEstimate)) max 1;
 
+				// height difference of UV muzzle to aimpoint
 				private _difference = 0;
 				_difference = (_targetPos select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
 
 				// how ElDiff is shown based on cba settings
 				private _shownDifference = [-_difference, _difference] select RC_Arty_EL_Diff;
 
-				// _targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (AGLtoASL _targetPos);
+				// turret azimuth
 				private _targetVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (_targetPos);
 				private _targetAzimuth = ((_targetVector select 0) atan2 (_targetVector select 1));
 				_targetAzimuth = [_targetAzimuth mod 360, 360 + _targetAzimuth] select (_targetAzimuth < 0);
 				_targetAzimuth = SLANT_ANGLE * _targetAzimuth;
 
 				// speed of the round
-				private _magSpeed = RC_magSpeedHash get (typeOf _currentMag);
+				private _magSpeed = RC_magSpeedHash get _currentMag;
 				if (isNil "_magSpeed") then {
-					_magSpeed = getNumber (configFile >> "CfgMagazines" >> _uavClass >> "initSpeed");
-					RC_magSpeedHash set [_uavClass, _magSpeed];
+					_magSpeed = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "initSpeed");
+					RC_magSpeedHash set [_currentMag, _magSpeed];
 				};
 				private _speed = _magSpeed * (getNumber (_weaponConfig >> _currentFireMode >> "artilleryCharge"));
 
@@ -361,11 +372,11 @@ RC_Artillery_UI = [] spawn {
 
 
 				// precalculation
-				_privatePreSol = sqrt (_speed^2 * (_speed^2 - 2 * GRAVITY * _difference) - GRAVITY^2 * _distance^2);	//((_speed^4) - (GRAVITY * ((2 * (_speed^2) * _difference) + (GRAVITY * (_distance^2)))));
+				private _preSol = sqrt (_speed^2 * (_speed^2 - 2 * GRAVITY * _difference) - GRAVITY^2 * _distance^2);	//((_speed^4) - (GRAVITY * ((2 * (_speed^2) * _difference) + (GRAVITY * (_distance^2)))));
 
 				// required launch angles to hit target (aka firing solution), in degrees
-				_highAngleSolDeg = atan(((_speed^2) + _privatePreSol) / (GRAVITY * _distance));
-				_lowAngleSolDeg  = atan(((_speed^2) - _privatePreSol) / (GRAVITY * _distance));
+				_highAngleSolDeg = atan(((_speed^2) + _preSol) / (GRAVITY * _distance));
+				_lowAngleSolDeg  = atan(((_speed^2) - _preSol) / (GRAVITY * _distance));
 
 				// travel time using degrees
 				_travelTimeHigh = _distance / (_speed * cos _highAngleSolDeg);
@@ -385,95 +396,38 @@ RC_Artillery_UI = [] spawn {
 				systemChat _debugStr;
 				*/
 
-				// set backup guided trigger timer, used in fired EH
-				private _lockedGuided = _requiresLock && _hasTargetSelected && !_noTargetOrTargetTooClose;
-				if (_lockedGuided) then {
-					if ((abs (_realElevation - _lowAngleSol)) < (abs (_realElevation -_highAngleSol))) then {
-						RC_GuidedTriggerTime = _travelTimeLow;
-					};
-				};
+				// set backup guided trigger timer, used in fired EH, calculated by actually used elevation not recommended one
+				private _lockedGuided = false;
+				_lockedGuided = _requiresLock && _hasTargetSelected && (!(_noTargetOrTargetTooClose));
+				//private _triggerDistance = 0;
 
+				if (_lockedGuided) then {
+					// checks if horizontal velocity > 0 to prevent division by 0
+					private _horVel = (_speed * cos _realElevationDeg);
+
+					if (_horVel > 0) then {
+						RC_GuidedTriggerTime = _distance / _horVel;
+					} else {
+						//ignored by fired EH
+						RC_GuidedTriggerTime = 0;
+					};
+
+					/*
+					// get triggerDistance to warn in aligned_coloring if too close
+					_triggerDistance = RC_triggerDistanceHash get _currentMag;
+					if (isNil "_triggerDistance") then {
+						_triggerDistance = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "RC_triggerDistance");
+						RC_triggerDistanceHash set [_currentMag, _triggerDistance];
+					};
+					*/
+				} else {
+					RC_GuidedTriggerTime = 0;
+				};
 
 				// AZ/EL coloring when close to firing solution
-				//#include "\Remote_Controlled_Artillery\functions\UILoop_includes\temporary_coloring_workaround.sqf"
 				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\MIL_coloring.sqf"
-				
 				// shows if its not, almost, or fully aligned
-				switch (true) do {
-					case(
-						(_realElevation < (_highAngleSol + 0.3)) and
-						(_realElevation > (_highAngleSol - 0.3)) and
-						(_realAzimuth < (_targetAzimuth + 0.3)) and
-						(_realAzimuth > (_targetAzimuth - 0.3))
-					): {
-						_ctrlMessage ctrlSetTextColor [0,1,0,1];
-						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "ALIGNED";
-					};
-
-					case(
-						(_realElevation < (_lowAngleSol + 0.3)) and
-						(_realElevation > (_lowAngleSol - 0.3)) and
-						(_realAzimuth < (_targetAzimuth + 0.3)) and
-						(_realAzimuth > (_targetAzimuth - 0.3))
-					): {
-						_ctrlMessage ctrlSetTextColor [0,1,0,1];
-						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "ALIGNED";
-					};
-
-					case(
-						(_realElevation < (_highAngleSol + 0.75)) and
-						(_realElevation > (_highAngleSol - 0.75)) and
-						(_realAzimuth < (_targetAzimuth + 0.75)) and
-						(_realAzimuth > (_targetAzimuth - 0.75))
-					): {
-						_ctrlMessage ctrlSetTextColor [1,0.5,0,1];
-						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "NOT ALIGNED";
-					};
-
-					case(
-						(_realElevation < (_lowAngleSol + 0.75)) and
-						(_realElevation > (_lowAngleSol - 0.75)) and
-						(_realAzimuth < (_targetAzimuth + 0.75)) and
-						(_realAzimuth > (_targetAzimuth - 0.75))
-					): {
-						_ctrlMessage ctrlSetTextColor [1,0.5,0,1];
-						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "NOT ALIGNED";
-					};
-
-					case(
-						(_lockedGuided) and
-						(_realElevation < (_highAngleSol + 3)) and
-						(_realElevation > (_highAngleSol - 3)) and
-						(_realAzimuth < (_targetAzimuth + 3)) and
-						(_realAzimuth > (_targetAzimuth - 3))
-					): {
-						_ctrlMessage ctrlSetTextColor [0,1,0,1];
-						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "ALIGNED";
-					};
-
-					case(
-						(_lockedGuided) and
-						(_realElevation < (_lowAngleSol + 3)) and
-						(_realElevation > (_lowAngleSol - 3)) and
-						(_realAzimuth < (_targetAzimuth + 3)) and
-						(_realAzimuth > (_targetAzimuth - 3))
-					): {
-						_ctrlMessage ctrlSetTextColor [0,1,0,1];
-						_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "ALIGNED";
-					};
-
-					default {
-						_ctrlMessage ctrlSetTextColor [1,0,0,1];
-						_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
-						_ctrlMessage ctrlSetText "NOT ALIGNED";
-					};
-				};
+				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\aligned_coloring.sqf"
 				
 				// parse these back to numbers incase they are NaN
 				_highAngleSol = parseNumber str _highAngleSol;

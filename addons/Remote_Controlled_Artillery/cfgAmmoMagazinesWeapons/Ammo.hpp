@@ -3903,8 +3903,8 @@ class RC_MP_LaserGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Steering
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=120;
-					angleRangeVertical=120;
+					angleRangeHorizontal=122;
+					angleRangeVertical=122;
 				};
 				/*
 				class DataLinkSensorComponent: SensorTemplateDataLink
@@ -3951,8 +3951,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=120;	//60° to both sides = 500m radius from 500m height (howitzer), 300m radius from 300m height (mortar)
-					angleRangeVertical=120;
+					angleRangeHorizontal=122;	//61° to both sides = 500m radius from 500m height (howitzer), 500m radius from 280m height (mortar)
+					angleRangeVertical=122;
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
@@ -3971,8 +3971,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=120;
-					angleRangeVertical=120;
+					angleRangeHorizontal=122;
+					angleRangeVertical=122;
 				};
 				/*
 				//would be too op
@@ -3995,8 +3995,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 						viewDistanceLimitCoef=-1;
 					};
 					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=120;
-					angleRangeVertical=120;
+					angleRangeHorizontal=122;
+					angleRangeVertical=122;
 				};
 				*/
 				class AntiRadiationSensorComponent: SensorTemplateAntiRadiation
@@ -4016,8 +4016,8 @@ class RC_MP_MultiGuided_Submunition_Base: RC_MP_LaserGuided_Submunition_Base
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
-					angleRangeHorizontal=120;
-					angleRangeVertical=120;
+					angleRangeHorizontal=122;
+					angleRangeVertical=122;
 					allowsMarking=1;
 				};
 				class DataLinkSensorComponent: SensorTemplateDataLink
@@ -4046,18 +4046,26 @@ class SubmunitionBase;
 class RC_Sh_AMOS_MP_LaserGuided_Base: SubmunitionBase
 {
 	/*
+	Trigger options, can be combined:
+
 	1. height trigger:
-	aimAboveDefault=1;					//index
-	aimAboveTarget[]={height,height};	//guided submunition trigger height
+	aimAboveDefault=0;			//index
+	aimAboveTarget[]={height};	//guided submunition trigger height
 	
 	-> releases guided submunition at given height,
-	making it a MUCH more reliable trigger than distance from locked target (which can change if it moved / was moved),
-	also allows faster less accurate aligning while still triggering
+	making more reliable trigger than distance from locked target (which can change if it moved / was moved),
+	allows faster less accurate aligning while still triggering
+	MAJOR downside is with max charge very flat trajectories it will be triggered by hills, leading to extremely shallow submunition flight
 
 	2. distance trigger:
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=520;	//backup trigger, if still ascending, recommended: trDist = height * 1.04	//or 20 if only used as direct fire backup, and allow for better indirect fire at close
 	
-	-> backup for high charge short range shots at the high aimpoint over the target, as height trigger only works if already descending
+	-> backup for high charge short range shots at the high aimpoint over the target, as height trigger only works if already descending,
+	good backup for non player use, does not have "early trigger by hill problem" as height trigger
+
+	3. time trigger, time of flight calculated in script as global variable, applied to projectile per cfgVehicles fired EH
+
+	-> independant of vertical and horizontal misalignment, independant on terrain unevenness, but can only be used by players, so backup triggerDistance recommended
 	*/
 
 	submunitionCount=1;
@@ -4229,12 +4237,12 @@ class RC_82mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 class RC_Sh_82mm_AMOS_HEAB: RC_82mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_82mm_AMOS_submunition";
-	aimAboveDefault=2;
-	aimAboveTarget[]={12.7,12.7,12.7};	//high airburst to ignore cover, triggers when descending and this height above ground
+	aimAboveDefault=0;
+	aimAboveTarget[]={12.7};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 class RC_Sh_82mm_AMOS_lowHEAB: RC_Sh_82mm_AMOS_HEAB
 {
-	imAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
+	imAboveTarget[]={6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -4423,9 +4431,7 @@ class RC_82mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_82mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={300};	//guided submunition trigger height
-	triggerDistance=315;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=291.2;	//backup trigger distance, besides script calulated timer
 
 	ace_rearm_caliber=82;
 	submunitionAmmo="RC_82mm_MP_LaserGuided_Submunition";
@@ -4504,9 +4510,7 @@ class RC_82mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 };
 class RC_Sh_82mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={300};	//guided submunition trigger height
-	triggerDistance=315;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=291.2;	//backup trigger distance, besides script calulated timer
 
 	ace_rearm_caliber=82;
 	submunitionAmmo="RC_82mm_MP_MultiGuided_Submunition";
@@ -4656,7 +4660,7 @@ class RC_60mm_HEAB_Shell_Base: RC_82mm_HEAB_Shell_Base
 class RC_Sh_60mm_AMOS_HEAB: RC_60mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_60mm_AMOS_submunition";
-	aimAboveDefault=2;
+	aimAboveDefault=0;
 	aimAboveTarget[]={7,7,7};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 
@@ -4726,9 +4730,7 @@ class RC_60mm_MP_LaserGuided_Submunition: RC_82mm_MP_LaserGuided_Submunition
 };
 class RC_Sh_60mm_AMOS_MP_LaserGuided: RC_Sh_82mm_AMOS_MP_LaserGuided
 {
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={300};	//guided submunition trigger height
-	triggerDistance=315;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=291.2;	//backup trigger distance, besides script calulated timer
 
 	ace_rearm_caliber=60;
 	submunitionAmmo="RC_60mm_MP_LaserGuided_Submunition";
@@ -4750,9 +4752,7 @@ class RC_60mm_MP_MultiGuided_Submunition: RC_82mm_MP_MultiGuided_Submunition
 };
 class RC_Sh_60mm_AMOS_MP_MultiGuided: RC_Sh_82mm_AMOS_MP_MultiGuided
 {
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={300};	//guided submunition trigger height
-	triggerDistance=315;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=291.2;	//backup trigger distance, besides script calulated timer
 
 	ace_rearm_caliber=60;
 	submunitionAmmo="RC_60mm_MP_MultiGuided_Submunition";
@@ -4852,12 +4852,12 @@ class RC_105mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 class RC_Sh_105mm_AMOS_HEAB: RC_105mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_105mm_AMOS_submunition";
-	aimAboveDefault=2;
-	aimAboveTarget[]={15.3,15.3,15.3};	//high airburst to ignore cover, triggers when descending and this height above ground
+	aimAboveDefault=0;
+	aimAboveTarget[]={15.3};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 class RC_Sh_105mm_AMOS_lowHEAB: RC_Sh_105mm_AMOS_HEAB
 {
-	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
+	aimAboveTarget[]={6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -4927,9 +4927,7 @@ class RC_105mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_105mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={500};	//guided submunition trigger height
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=520;	//backup trigger distance, besides script calulated timer
 
 	ace_rearm_caliber=105;
 	submunitionAmmo="RC_105mm_MP_LaserGuided_Submunition";
@@ -5008,9 +5006,7 @@ class RC_105mm_MP_MultiGuided_Submunition: RC_MP_MultiGuided_Submunition_Base
 };
 class RC_Sh_105mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={500};	//guided submunition trigger height
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=520;	//backup trigger distance, besides script calulated timer
 
 	ace_rearm_caliber=105;
 	submunitionAmmo="RC_105mm_MP_MultiGuided_Submunition";
@@ -5197,12 +5193,12 @@ class RC_120mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 class RC_Sh_120mm_AMOS_HEAB: RC_120mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_120mm_AMOS_submunition";
-	aimAboveDefault=2;
-	aimAboveTarget[]={17.5,17.5,17.5};	//high airburst to ignore cover, triggers when descending and this height above ground
+	aimAboveDefault=0;
+	aimAboveTarget[]={17.5};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 class RC_Sh_120mm_AMOS_lowHEAB: RC_Sh_120mm_AMOS_HEAB
 {
-	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
+	aimAboveTarget[]={6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 
@@ -5271,9 +5267,7 @@ class RC_120mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_120mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={500};	//guided submunition trigger height
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=520;	//backup trigger distance, besides script calulated timer
 
 	ace_rearm_caliber=120;
 	submunitionAmmo="RC_120mm_MP_LaserGuided_Submunition";
@@ -5523,12 +5517,12 @@ class RC_155mm_HEAB_Shell_Base: RC_HEAB_Shell_Base
 class RC_Sh_155mm_AMOS_HEAB: RC_155mm_HEAB_Shell_Base
 {
 	submunitionAmmo="RC_Sh_155mm_AMOS_submunition";
-	aimAboveDefault=2;
-	aimAboveTarget[]={21.2,21.2,21.2};	//high airburst to ignore cover, triggers when descending and this height above ground
+	aimAboveDefault=0;
+	aimAboveTarget[]={21.2};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 class RC_Sh_155mm_AMOS_lowHEAB: RC_Sh_155mm_AMOS_HEAB
 {
-	aimAboveTarget[]={6,6,6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
+	aimAboveTarget[]={6};	//low airburst to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 //impact quick fuze
@@ -5585,8 +5579,8 @@ class Flare_155mm_AMOS_White: SubmunitionBase
 		1
 	};
 	whistleDist=0;
-	aimAboveDefault=2;
-	aimAboveTarget[]={500,500,500};		//triggers when descending and at this height above ground
+	aimAboveDefault=0;
+	aimAboveTarget[]={500};		//triggers when descending and at this height above ground
 };
 
 
@@ -5689,9 +5683,7 @@ class RC_155mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_Sh_155mm_AMOS_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={500};	//guided submunition trigger height
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=520;	//backup trigger distance, besides script calulated timer
 
 	ace_rearm_caliber=155;
 	submunitionAmmo="RC_155mm_MP_LaserGuided_Submunition";
@@ -5813,11 +5805,7 @@ class RC_155mm_MP_MultiGuided_Proximity_Submunition: RC_155mm_MP_MultiGuided_Sub
 */
 class RC_Sh_155mm_AMOS_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
-	/*
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={500};	//guided submunition trigger height
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
-	*/
+	triggerDistance=520;	//backup trigger distance, besides script calulated timer
 
 	ace_rearm_caliber=155;
 	submunitionAmmo="RC_155mm_MP_MultiGuided_Submunition";
@@ -5972,12 +5960,12 @@ class RC_230mm_HEAB_Rocket_Base: RC_HEAB_Rocket_Base
 class RC_R_230mm_HEAB: RC_230mm_HEAB_Rocket_Base
 {
 	submunitionAmmo="RC_R_230mm_fly_HEAB_submunition";
-	aimAboveDefault=2;
-	aimAboveTarget[]={21.2,21.2,21.2};	//high airburst to ignore cover, triggers when descending and this height above ground
+	aimAboveDefault=0;
+	aimAboveTarget[]={21.2};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 class RC_R_230mm_lowHEAB: RC_R_230mm_HEAB
 {
-	aimAboveTarget[]={6,6,6};	//to atleast ignore microterrain, triggers when descending and this height above ground
+	aimAboveTarget[]={6};	//to atleast ignore microterrain, triggers when descending and this height above ground
 };
 
 //impact quick fuze
@@ -6106,9 +6094,7 @@ class RC_230mm_MP_LaserGuided_Submunition: RC_MP_LaserGuided_Submunition_Base
 };
 class RC_R_230mm_MP_LaserGuided: RC_Sh_AMOS_MP_LaserGuided_Base
 {
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={500};	//guided submunition trigger height
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=520;	//backup trigger distance, besides script calulated timer
 
 	ace_rearm_caliber=230;
 	submunitionAmmo="RC_230mm_MP_LaserGuided_Submunition";
@@ -6303,9 +6289,7 @@ class RC_230mm_MP_MultiGuided_Proximity_Submunition: RC_230mm_MP_MultiGuided_Sub
 */
 class RC_R_230mm_MP_MultiGuided: RC_Sh_AMOS_MP_MultiGuided_Base
 {
-	aimAboveDefault=0;		//index
-	aimAboveTarget[]={500};	//guided submunition trigger height
-	triggerDistance=525;	//backup trigger, if still ascending, recommended: trDist = height * 1.05
+	triggerDistance=520;	//backup trigger distance
 
 	ace_rearm_caliber=230;
 	//deleteParentWhenTriggered=1;
@@ -6440,8 +6424,8 @@ class RC_604mm_HEAB_Rocket_Base: RC_230mm_HEAB_Rocket_Base
 class RC_R_604mm_ATACMS_HEAB: RC_604mm_HEAB_Rocket_Base
 {
 	submunitionAmmo="RC_R_604mm_fly_HEAB_submunition_ATACMS";
-	aimAboveDefault=2;
-	aimAboveTarget[]={30,30,30};	//high airburst to ignore cover, triggers when descending and this height above ground
+	aimAboveDefault=0;
+	aimAboveTarget[]={30};	//high airburst to ignore cover, triggers when descending and this height above ground
 };
 
 

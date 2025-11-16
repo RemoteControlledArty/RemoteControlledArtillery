@@ -31,6 +31,10 @@ class RC_Howitzer_A: RC_Howitzer_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
@@ -431,6 +435,10 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
@@ -443,10 +451,6 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
 		};
 	};
 
@@ -763,6 +767,10 @@ class RC_Static_Arty: RC_Static_Arty_base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"

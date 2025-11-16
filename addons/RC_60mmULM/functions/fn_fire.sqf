@@ -23,18 +23,21 @@ if (RC_ULM_Velocity > 0) then {
 
 
 	//"splash in 3sec" notification
-	[RC_ULM_ETA] spawn {
-		params ["_ETA"];
+	if (RC_ULM_ETA > 0) then {
+		
+		[RC_ULM_ETA] spawn {
+			params ["_ETA"];
 
-		if (_ETA > 3) then {
-			sleep (_ETA - 3);
-			systemchat "splash in 3sec";
-			sleep 3;
-		} else {
-			sleep _ETA;
+			if (_ETA > 3) then {
+				sleep (_ETA - 3);
+				systemchat "splash in 3sec";
+				sleep 3;
+			} else {
+				sleep _ETA;
+			};
+
+			systemchat "splash";
 		};
-
-		systemchat "splash";
 	};
 } else {
 	systemchat "could not calculate MV";

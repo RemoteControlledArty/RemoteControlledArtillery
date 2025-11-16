@@ -9,7 +9,7 @@ class RC_HIMARS_base: rhsusf_M142_usarmy_D
 	class Wide;
 	class UserActions;
 	class Components;
-	//class EventHandlers;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 
@@ -22,15 +22,19 @@ class RC_HIMARS_base: rhsusf_M142_usarmy_D
 };
 class RC_HIMARS_D: RC_HIMARS_base
 {
-	/*
 	class EventHandlers: EventHandlers
 	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
+		/*
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
+		*/
 	};
-	*/
 
 	author="Ascent";
 	displayName="RC M142 HIMARS";
