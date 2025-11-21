@@ -98,7 +98,7 @@ class RC_QIN_338_MMG2: RC_QIN_MG_Base
 	{
 		"RC_200Rnd_338_T_R",
 		"RC_200Rnd_338_T_G",
-		"RC_200Rnd_338_T_Y"
+		"RC_200Rnd_338_T_Y",
 
 		"RC_150Rnd_338_T_R",
 		"RC_150Rnd_338_T_G",

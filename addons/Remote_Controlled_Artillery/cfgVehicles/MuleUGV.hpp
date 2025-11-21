@@ -26,6 +26,10 @@ class RC_Mule_UGV_Base: RC_Mule_UGV_Core
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_RemoveAttachedObj
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\removeAttachedObj_deletedEH.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
@@ -60,6 +64,11 @@ class RC_Mule_UGV_Base: RC_Mule_UGV_Core
 	smokeLauncherVelocity=3;
 	smokeLauncherGrenadeCount=4;
 	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
+
+	ace_cargo_hasCargo=1;
+	ace_cargo_space=8;
+	ace_repair_spareWheels=2;
+	ace_repair_spareTracks=1;
 
 	weapons[]=
 	{
@@ -260,27 +269,56 @@ class RC_Mule_UGV_WD_I: RC_Mule_UGV_WD
 };
 
 
-//vehicle ammo
-class RC_Mule_UGV_VehAmmo_A: RC_Mule_UGV_A
+//ReArmPairFuel
+class Land_WeldingTrolley_01_F;
+class RC_PortableRepairWelder: Land_WeldingTrolley_01_F
+{
+	displayName="Portable Repair Welder";
+	scope=2;
+	scopeCurator=2;
+	transportRepair=250000000000;
+	ace_cargo_canLoad=1;
+	ace_cargo_size=1;
+	ace_dragging_canCarry=1;
+	ace_dragging_canDrag=1;
+	ace_dragging_carryDirection=270;
+	ace_dragging_dragDirection=270;
+	ace_dragging_dragPosition[]={0,1.2,0};
+};
+class RC_RepairWelder: Land_WeldingTrolley_01_F
+{
+	displayName="Repair Welder";
+	transportRepair=250000000000;
+	scope=1;
+	scopeCurator=1;
+};
+class RC_Mule_UGV_ReArmPairFuel_A: RC_Mule_UGV_A
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
-			init="if (!isserver) exitwith {}; (_this select 0) spawn {('Box_NATO_AmmoVeh_F' createVehicle [0,0,0]) attachTo [_this, [0.425, -0.4, 0.1]];};";
+			init="if (!isServer) exitwith {}; \
+			(_this select 0) spawn { \
+				('Box_NATO_AmmoVeh_F' createVehicle [0,0,0]) attachTo [_this, [0.425, -0.4, 0.1]]; \
+				('RC_RepairWelder' createVehicle [0,0,0]) attachTo [_this, [0.105, -1.44, -0.3]]; \
+				('FlexibleTank_01_forest_F' createVehicle [0,0,0]) attachTo [_this, [0.89, -1.45, -0.17]]; \
+			};";
 		};
 	};
 
-	displayName="RC Mule - Vehicle Ammo";
+	displayName="RC Mule - Re-arm/pair/fuel";
+	ace_repair_spareWheels=4;
+	ace_repair_spareTracks=2;
 };
-class RC_Mule_UGV_VehAmmo_A_O: RC_Mule_UGV_VehAmmo_A
+class RC_Mule_UGV_ReArmPairFuel_A_O: RC_Mule_UGV_ReArmPairFuel_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
-class RC_Mule_UGV_VehAmmo_A_I: RC_Mule_UGV_VehAmmo_A
+class RC_Mule_UGV_ReArmPairFuel_A_I: RC_Mule_UGV_ReArmPairFuel_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -289,7 +327,7 @@ class RC_Mule_UGV_VehAmmo_A_I: RC_Mule_UGV_VehAmmo_A
 };
 
 
-class RC_Mule_UGV_VehAmmo_WD: RC_Mule_UGV_VehAmmo_A
+class RC_Mule_UGV_ReArmPairFuel_WD: RC_Mule_UGV_ReArmPairFuel_A
 {
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_olive_F.jpg";
 	textureList[]=
@@ -304,14 +342,14 @@ class RC_Mule_UGV_VehAmmo_WD: RC_Mule_UGV_VehAmmo_A
 		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
 	};
 };
-class RC_Mule_UGV_VehAmmo_WD_O: RC_Mule_UGV_VehAmmo_WD
+class RC_Mule_UGV_ReArmPairFuel_WD_O: RC_Mule_UGV_ReArmPairFuel_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
-class RC_Mule_UGV_VehAmmo_WD_I: RC_Mule_UGV_VehAmmo_WD
+class RC_Mule_UGV_ReArmPairFuel_WD_I: RC_Mule_UGV_ReArmPairFuel_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -320,37 +358,43 @@ class RC_Mule_UGV_VehAmmo_WD_I: RC_Mule_UGV_VehAmmo_WD
 };
 
 
-/*
-//modified fuel barrel pallet, to be ace interactable
-class CargoNet_01_barrels_F;
-class RC_RefuelPallet: CargoNet_01_barrels_F
+//ReSupply
+class Land_Pallet_MilBoxes_F;
+class RC_ReSupplyPallet: Land_Pallet_MilBoxes_F
 {
-	transportFuel=900;	//3000 fuel container
-	ace_refuel_hooks[]={{-1.49,1.41,-0.3}};
-	ace_refuel_fuelCargo=3000;		//10000
+	displayName="Inf Resupply Pallet";
+	ace_cargo_size=2;
+	maximumLoad=4000;
+	vehicleClass="Container";
+	transportMaxMagazines=128;
+	transportMaxWeapons=24;
+	transportMaxBackpacks=12;
+	transportAmmo=0;
+	transportFuel=0;
 };
-
-//refuel
-class RC_Mule_UGV_Refuel_A: RC_Mule_UGV_A
+class RC_Mule_UGV_ReSupply_A: RC_Mule_UGV_A
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
-			init="if (!isserver) exitwith {}; (_this select 0) spawn {('Box_NATO_AmmoVeh_F' createVehicle [0,0,0]) attachTo [_this, [0.425, -0.4, 0.1]];};";
+			init="if (!isServer) exitwith {}; \
+			(_this select 0) spawn { \
+				('RC_ReSupplyPallet' createVehicle [0,0,0]) attachTo [_this, [0.3, -0.354, -0.4045]]; \
+			};";
 		};
 	};
 
-	displayName="RC Mule - Refuel";
+	displayName="RC Mule - Re-supply";
 };
-class RC_Mule_UGV_Refuel_A_O: RC_Mule_UGV_Refuel_A
+class RC_Mule_UGV_ReSupply_A_O: RC_Mule_UGV_ReSupply_A
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
-class RC_Mule_UGV_Refuel_A_I: RC_Mule_UGV_Refuel_A
+class RC_Mule_UGV_ReSupply_A_I: RC_Mule_UGV_ReSupply_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
@@ -359,7 +403,7 @@ class RC_Mule_UGV_Refuel_A_I: RC_Mule_UGV_Refuel_A
 };
 
 
-class RC_Mule_UGV_Refuel_WD: RC_Mule_UGV_Refuel_A
+class RC_Mule_UGV_ReSupply_WD: RC_Mule_UGV_ReSupply_A
 {
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_olive_F.jpg";
 	textureList[]=
@@ -374,18 +418,17 @@ class RC_Mule_UGV_Refuel_WD: RC_Mule_UGV_Refuel_A
 		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
 	};
 };
-class RC_Mule_UGV_Refuel_WD_O: RC_Mule_UGV_Refuel_WD
+class RC_Mule_UGV_ReSupply_WD_O: RC_Mule_UGV_ReSupply_WD
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
-class RC_Mule_UGV_Refuel_WD_I: RC_Mule_UGV_Refuel_WD
+class RC_Mule_UGV_ReSupply_WD_I: RC_Mule_UGV_ReSupply_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
-*/

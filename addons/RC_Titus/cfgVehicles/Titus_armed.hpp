@@ -493,7 +493,7 @@ class RC_Titus_HMG_A: RC_Titus_HMG_D
 };
 
 
-class RC_Titus_HMG_D_O: RC_Titus_HMG_WD
+class RC_Titus_HMG_D_O: RC_Titus_HMG_D
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
@@ -751,7 +751,7 @@ class RC_Titus_MMG_A: RC_Titus_MMG_D
 };
 
 
-class RC_Titus_MMG_D_O: RC_Titus_MMG_WD
+class RC_Titus_MMG_D_O: RC_Titus_MMG_D
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
