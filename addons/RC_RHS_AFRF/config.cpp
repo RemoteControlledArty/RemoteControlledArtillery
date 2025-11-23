@@ -22,7 +22,15 @@ class CfgPatches
 			"RC_BMP3M_WD_I",
 			"RC_BMP3M_A",
 			"RC_BMP3M_A_O",
-			"RC_BMP3M_A_I"
+			"RC_BMP3M_A_I",
+
+			"RC_2S1_WD",
+			"RC_2S1_WD_O",
+			"RC_2S1_WD_I",
+
+			"RC_2S1_LC_WD",
+			"RC_2S1_LC_WD_O",
+			"RC_2S1_LC_WD_I"
 		};
 		weapons[]=
 		{
@@ -31,15 +39,17 @@ class CfgPatches
 			"RC_RHS_weap_pkt_bmd_coax",
 			"RC_RHS_weap_902a",
 			"RC_RHS_weap_pkt_bmd_bow1",
-			"RC_RHS_weap_pkt_bmd_bow2"
+			"RC_RHS_weap_pkt_bmd_bow2",
+			"RC_122mm_AMOS_V4_2S1"
 		};
 		requiredAddons[]=
 		{
 			"cba_main",
 			"RC_Artillery",
+			"rhs_c_2s1",
+			"rhs_c_a2port_air",
 			"rhs_c_bmp3",
-			"rhs_c_t72",
-			"rhs_c_a2port_air"
+			"rhs_c_t72"
 		};
 
 		skipWhenMissingDependencies=1;
@@ -70,7 +80,7 @@ class SensorTemplateMan;
 class SensorTemplatePassiveRadar;
 
 //later required optics
-//class RCWSOptics;
+class RCWSOptics;
 
 //later required sensor panels
 class DefaultVehicleSystemsDisplayManagerLeft;
@@ -100,6 +110,7 @@ class CfgWeapons
 
 class CfgVehicles
 {
+	#include "\RC_RHS_AFRF\cfgVehicles\2S1.hpp"
 	#include "\RC_RHS_AFRF\cfgVehicles\BMP3M.hpp"
 	#include "\RC_RHS_AFRF\cfgVehicles\Pchela1T.hpp"
 	#include "\RC_RHS_AFRF\cfgVehicles\T90AM.hpp"

@@ -295,7 +295,7 @@ class RC_PzH2000_FT_Base: RC_PzH2000_Core
 
 class RC_PzH2000_FT: RC_PzH2000_FT_Base
 {
-	displayName="PzH 2000";
+	displayName="RC PzH 2000";
 	editorSubcategory="RC_BW_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -319,7 +319,7 @@ class RC_PzH2000_FT_I: RC_PzH2000_FT
 
 class RC_PzH2000_LC_FT: RC_PzH2000_FT
 {
-	displayName="PzH 2000 LowCap";
+	displayName="RC PzH 2000 LowCap";
 
 	class Turrets: Turrets
 	{

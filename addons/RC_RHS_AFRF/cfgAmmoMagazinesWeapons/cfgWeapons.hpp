@@ -316,3 +316,32 @@ class RC_RHS_weap_pkt_bmd_bow1: RC_RHS_weap_pkt_bmd_bow1_Base
 	};
 };
 class RC_RHS_weap_pkt_bmd_bow2: RC_RHS_weap_pkt_bmd_bow1 {};
+
+
+//indirect
+//2S1 rhs_weap_2a31
+class RC_122mm_AMOS_V4;
+class RC_122mm_AMOS_V4_2S1: RC_122mm_AMOS_V4
+{
+	class GunParticles
+	{
+		class Effect1
+		{
+			directionname="Konec hlavne";
+			effectname="ArtilleryFired1";
+			positionname="Usti hlavne";
+		};
+		class Effect2
+		{
+			directionname="Usti hlavne b";
+			effectname="ArtilleryFiredL";
+			positionname="Usti hlavne";
+		};
+		class Effect3
+		{
+			directionname="Usti hlavne b";
+			effectname="ArtilleryFiredR";
+			positionname="Usti hlavne";
+		};
+	};
+};

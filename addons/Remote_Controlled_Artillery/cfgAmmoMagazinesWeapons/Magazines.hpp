@@ -13345,6 +13345,7 @@ class RC_40Rnd_120mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backuplowHEAB
 class RC_1Rnd_122mm_Mo_shells: RC_1Rnd_120mm_Mo_shells
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_shells: RC_1Rnd_122mm_Mo_shells
 {
@@ -13507,6 +13508,7 @@ class RC_40Rnd_122mm_Mo_shells: RC_1Rnd_122mm_Mo_shells
 class RC_1Rnd_122mm_Mo_HEAB: RC_1Rnd_120mm_Mo_HEAB
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_HEAB: RC_1Rnd_122mm_Mo_HEAB
 {
@@ -13669,6 +13671,7 @@ class RC_40Rnd_122mm_Mo_HEAB: RC_1Rnd_122mm_Mo_HEAB
 class RC_1Rnd_122mm_Mo_lowHEAB: RC_1Rnd_120mm_Mo_lowHEAB
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_lowHEAB: RC_1Rnd_122mm_Mo_lowHEAB
 {
@@ -13831,6 +13834,7 @@ class RC_40Rnd_122mm_Mo_lowHEAB: RC_1Rnd_122mm_Mo_lowHEAB
 class RC_1Rnd_122mm_Mo_LaserGuided: RC_1Rnd_120mm_Mo_LaserGuided
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_LaserGuided: RC_1Rnd_122mm_Mo_LaserGuided
 {
@@ -13993,6 +13997,7 @@ class RC_40Rnd_122mm_Mo_LaserGuided: RC_1Rnd_122mm_Mo_LaserGuided
 class RC_1Rnd_122mm_Mo_MultiGuided: RC_1Rnd_120mm_Mo_MultiGuided
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_MultiGuided: RC_1Rnd_122mm_Mo_MultiGuided
 {
@@ -14155,6 +14160,7 @@ class RC_40Rnd_122mm_Mo_MultiGuided: RC_1Rnd_122mm_Mo_MultiGuided
 class RC_1Rnd_122mm_Mo_Cluster: RC_1Rnd_120mm_Mo_Cluster
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_Cluster: RC_1Rnd_122mm_Mo_Cluster
 {
@@ -14317,6 +14323,7 @@ class RC_40Rnd_122mm_Mo_Cluster: RC_1Rnd_122mm_Mo_Cluster
 class RC_1Rnd_122mm_Mo_mine: RC_1Rnd_120mm_Mo_mine
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_mine: RC_1Rnd_122mm_Mo_mine
 {
@@ -14479,6 +14486,7 @@ class RC_40Rnd_122mm_Mo_mine: RC_1Rnd_122mm_Mo_mine
 class RC_1Rnd_122mm_Mo_smoke: RC_1Rnd_120mm_Mo_smoke
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_smoke: RC_1Rnd_122mm_Mo_smoke
 {
@@ -14641,6 +14649,7 @@ class RC_40Rnd_122mm_Mo_smoke: RC_1Rnd_122mm_Mo_smoke
 class RC_1Rnd_122mm_Mo_AT_mine: RC_1Rnd_120mm_Mo_AT_mine
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_AT_mine: RC_1Rnd_122mm_Mo_AT_mine
 {
@@ -14803,6 +14812,7 @@ class RC_40Rnd_122mm_Mo_AT_mine: RC_1Rnd_122mm_Mo_AT_mine
 class RC_1Rnd_122mm_Mo_Illum: RC_1Rnd_120mm_Mo_Illum
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_Illum: RC_1Rnd_122mm_Mo_Illum
 {
@@ -14965,6 +14975,7 @@ class RC_40Rnd_122mm_Mo_Illum: RC_1Rnd_122mm_Mo_Illum
 class RC_1Rnd_122mm_Mo_LG_DelayedFuse: RC_1Rnd_120mm_Mo_LG_DelayedFuse
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_LG_DelayedFuse: RC_1Rnd_122mm_Mo_LG_DelayedFuse
 {
@@ -15128,6 +15139,7 @@ class RC_40Rnd_122mm_Mo_LG_DelayedFuse: RC_1Rnd_122mm_Mo_LG_DelayedFuse
 class RC_1Rnd_122mm_Mo_backupHEAB: RC_1Rnd_120mm_Mo_backupHEAB
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_backupHEAB: RC_1Rnd_122mm_Mo_backupHEAB
 {
@@ -15291,6 +15303,7 @@ class RC_40Rnd_122mm_Mo_backupHEAB: RC_1Rnd_122mm_Mo_backupHEAB
 class RC_1Rnd_122mm_Mo_backuplowHEAB: RC_1Rnd_120mm_Mo_backuplowHEAB
 {
 	initSpeed=442.9;	//20km range
+	muzzleImpulseFactor[]={1.5,30};
 };
 class RC_2Rnd_122mm_Mo_backuplowHEAB: RC_1Rnd_122mm_Mo_backuplowHEAB
 {

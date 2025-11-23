@@ -311,7 +311,7 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 	};
 	*/
 
-	displayName="RC Mortar Patria 60mm";
+	displayName="RC 60mm Mortar Patria";
 	editorSubcategory="RC_Mortar_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -555,7 +555,7 @@ class RC_60mmMortarPatria_WD_I: RC_60mmMortarPatria_WD
 
 class RC_60mmMortarPatria_LC_A: RC_60mmMortarPatria_A
 {
-	displayName="RC Mortar Patria 60mm LowCap";
+	displayName="RC 60mm Mortar Patria LowCap";
 	editorSubcategory="RC_ReducedAmmo_subcat";
 
 	class Turrets: Turrets
