@@ -92,6 +92,9 @@ class RC_2S1: RC_2S1_Base
 	//smokeLauncherGrenadeCount=12;
 	//smokeLauncherAngle=180;
 
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
+
 	unitInfoType="RscUnitInfoArtillery";
 
 	class Components: Components
