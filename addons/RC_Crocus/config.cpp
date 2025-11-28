@@ -100,6 +100,7 @@ class CfgFunctions
 			class fpv_onSignalLost_MP {};
 
 			class fpv_CarrierDeploy {};
+			class fpv_CarrierDeployLow {};
 			class fpv_CarrierDeployPvP {};
 			class fpv_MothershipDeploy {};
 		};

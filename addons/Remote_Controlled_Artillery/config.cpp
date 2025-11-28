@@ -827,6 +827,8 @@ class CfgFunctions
 			class RC_APS_Activate {};
 
 			class RC_MinePlow {};
+			class RC_FPV_Request_Condition {};
+			class RC_FPV_Request {};
 
 			class RC_OrderTurretTurnKey {};
 			class RC_OrderTurretTurnOwner {};
@@ -1090,6 +1092,23 @@ class CfgWeapons
 };
 class CfgVehicles
 {
+    class Man;
+    class CAManBase : Man {
+        class ACE_SelfActions {
+            class RequestFPV {
+				displayName = "Request FPV";
+				//statement = "[_player] call RC_fnc_RC_FPV_Request_Condition;";
+				condition = "{if (_x in [goggles _player, headgear _player]) exitWith {true}} forEach ['G_Tactical_Clear', 'G_Tactical_Black']";
+				//condition = "'G_Tactical_Clear' isEqualTo (goggles _player)";
+				//_condition = {(!pabst_radioFinder_on) && {(backpack _player) in pabst_radioFinder_backpacks} && {[_player, _target, []] call ace_common_fnc_canInteractWith}};
+				statement = "[_player] call RC_fnc_RC_FPV_Request;";
+
+				//exceptions[] = {};
+				//icon = "\A3\ui_f\data\igui\cfg\actions\take_ca.paa";
+            };
+        };
+    };
+
 	//#include "\Remote_Controlled_Artillery\immobilized\allowCrewInImmobileCfgEH.hpp"
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
