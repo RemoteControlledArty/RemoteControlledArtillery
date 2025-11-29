@@ -7,20 +7,8 @@
 
 params ['_player'];
 
-systemchat "1";
-
 private _sidePlayer = side player;
 private _validFPVs = [];
-if (_sidePlayer == west) then {
-	_validFPVs = ["B_Crocus_MP_Bag", "B_Crocus_MP_Sens_Bag", "B_Crocus_MP_NV_Bag", "B_Crocus_MP_NV_Sens_Bag", "B_Crocus_MP_TI_Bag", "B_Crocus_MP_TI_Sens_Bag", "B_Crocus_PvP_Bag", "B_Crocus_Training_Bag"];
-};
-if (_sidePlayer == east) then {
-	_validFPVs = ["O_Crocus_MP_Bag", "O_Crocus_MP_Sens_Bag", "O_Crocus_MP_NV_Bag", "O_Crocus_MP_NV_Sens_Bag", "O_Crocus_MP_TI_Bag", "O_Crocus_MP_TI_Sens_Bag", "O_Crocus_PvP_Bag", "O_Crocus_Training_Bag"];
-};
-if (_sidePlayer == resistance) then {
-	_validFPVs = ["I_Crocus_MP_Bag", "I_Crocus_MP_Sens_Bag", "I_Crocus_MP_NV_Bag", "I_Crocus_MP_NV_Sens_Bag", "I_Crocus_MP_TI_Bag", "I_Crocus_MP_TI_Sens_Bag", "I_Crocus_PvP_Bag", "I_Crocus_Training_Bag"];
-};
-/*
 switch (true) do {
 	case(_sidePlayer == west): {
 		_validFPVs = ["B_Crocus_MP_Bag", "B_Crocus_MP_Sens_Bag", "B_Crocus_MP_NV_Bag", "B_Crocus_MP_NV_Sens_Bag", "B_Crocus_MP_TI_Bag", "B_Crocus_MP_TI_Sens_Bag", "B_Crocus_PvP_Bag", "B_Crocus_Training_Bag"];
@@ -32,9 +20,7 @@ switch (true) do {
 		_validFPVs = ["I_Crocus_MP_Bag", "I_Crocus_MP_Sens_Bag", "I_Crocus_MP_NV_Bag", "I_Crocus_MP_NV_Sens_Bag", "I_Crocus_MP_TI_Bag", "I_Crocus_MP_TI_Sens_Bag", "I_Crocus_PvP_Bag", "I_Crocus_Training_Bag"];
 	};
 };
-*/
 
-systemchat "2";
 
 private _allVeh = vehicles;
 private _validVeh = [];
@@ -50,19 +36,12 @@ private _validVeh = [];
 	};
 } forEach _allVeh;
 
-systemchat "3";
 
 _validVeh = _validVeh apply {[round (_x distance player), _x]};
 _validVeh sort true;
-/*
-hint format [
-	"Most distant is at %1, distance %2 m",
-	_validVeh	
-];
-*/
 
-systemchat "4";
 
+private _foundFPV = false;
 {
 	private _veh = _x select 1;
 	private _cargo = getBackpackCargo _veh;
@@ -78,7 +57,7 @@ systemchat "4";
 		_stringSplit deleteAt _stringCountNew;
 		private _classFPV = _stringSplit joinString "_";
 
-		systemchat _classFPV;
+		//systemchat _classFPV;
 		systemchat "sending FPV";
 
 		//find backpack index
@@ -104,12 +83,11 @@ systemchat "4";
 			};
 		};
 
-		[_veh, _classFPV, _sidePlayer] call RC_fnc_fpv_CarrierDeployLow;
-		private _foundFPV = true;
+		[_veh, _classFPV, _sidePlayer] call RC_fnc_RC_FPV_Request_Deploy;
+		_foundFPV = true;
 	};
 } forEach _validVeh;
 
-systemchat "5";
 
 if (!_foundFPV) then {
 	systemchat "no FPV's available";

@@ -712,6 +712,7 @@ class CfgPatches
 		{
 			"RC_target_confirmer",
 			"RC_target_confirmer_datalink",
+			"RC_APS_W",
 			"RC_Laserdesignator_mounted",
 			"RC_Laserdesignator_vehicle",
 			"RC_FPV_Deployer",
@@ -827,8 +828,6 @@ class CfgFunctions
 			class RC_APS_Activate {};
 
 			class RC_MinePlow {};
-			class RC_FPV_Request_Condition {};
-			class RC_FPV_Request {};
 
 			class RC_OrderTurretTurnKey {};
 			class RC_OrderTurretTurnOwner {};
@@ -843,6 +842,14 @@ class CfgFunctions
 			file="\Remote_Controlled_Artillery\functions\Immobilized";
 
 			class RC_allowCrewInImmobile {};
+		};
+		class RC_FPV
+		{
+			file="\Remote_Controlled_Artillery\functions\FPV_Request";
+
+			class RC_FPV_Request_Condition {};
+			class RC_FPV_Request_Search {};
+			class RC_FPV_Request_Deploy {};
 		};
 		/*
 		class RC_Testing
@@ -1074,6 +1081,20 @@ class CfgCloudlets
 	#include "\Remote_Controlled_Artillery\effects\cfgCloudlets.hpp"
 };
 #include "\Remote_Controlled_Artillery\effects\effects.hpp"
+class CfgGlasses
+{
+	class G_Tactical_Clear;
+	class RC_SO_Glasses: G_Tactical_Clear
+	{
+		//if equipped allows to request FPV's stored in vehicles etc, per ace self interaction
+		scope=2;
+		scopeArsenal=2;
+		author="Ascent";
+		displayName="Systems-Operator Glasses";
+		displayNameShort="SO Glasses";
+		identityTypes[]={};
+	};
+};
 class CfgMineTriggers
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\MineTriggers.hpp"
@@ -1092,23 +1113,7 @@ class CfgWeapons
 };
 class CfgVehicles
 {
-    class Man;
-    class CAManBase : Man {
-        class ACE_SelfActions {
-            class RequestFPV {
-				displayName = "Request FPV";
-				//statement = "[_player] call RC_fnc_RC_FPV_Request_Condition;";
-				condition = "{if (_x in [goggles _player, headgear _player]) exitWith {true}} forEach ['G_Tactical_Clear', 'G_Tactical_Black']";
-				//condition = "'G_Tactical_Clear' isEqualTo (goggles _player)";
-				//_condition = {(!pabst_radioFinder_on) && {(backpack _player) in pabst_radioFinder_backpacks} && {[_player, _target, []] call ace_common_fnc_canInteractWith}};
-				statement = "[_player] call RC_fnc_RC_FPV_Request;";
-
-				//exceptions[] = {};
-				//icon = "\A3\ui_f\data\igui\cfg\actions\take_ca.paa";
-            };
-        };
-    };
-
+	#include "\Remote_Controlled_Artillery\cfgVehicles\ManSelfActions.hpp"
 	//#include "\Remote_Controlled_Artillery\immobilized\allowCrewInImmobileCfgEH.hpp"
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
