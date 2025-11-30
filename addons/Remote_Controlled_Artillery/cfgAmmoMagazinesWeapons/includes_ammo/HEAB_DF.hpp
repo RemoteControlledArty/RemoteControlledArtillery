@@ -9,7 +9,7 @@ submunitionDirectionType="SubmunitionModelDirection";
 //Trigger/ed
 deleteParentWhenTriggered=1;
 submunitionInitialOffset[]={0,0,-3.5};
-triggerDistance=5;
+triggerDistance=7;
 
 //Penetration / Fuze
 explosive=0.60000002;

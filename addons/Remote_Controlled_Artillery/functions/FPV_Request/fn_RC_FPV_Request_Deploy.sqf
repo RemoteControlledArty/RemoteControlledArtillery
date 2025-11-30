@@ -7,7 +7,6 @@ private _posZ = (_pos select 2) + 7;
 private _spawnPos = +_pos;
 _spawnPos set [2, _posZ];
 
-//systemchat _classFPV;
 private _uavArray = [_pos, direction _veh, _classFPV, _sidePlayer];
 
 [_uavArray, _spawnPos] spawn {

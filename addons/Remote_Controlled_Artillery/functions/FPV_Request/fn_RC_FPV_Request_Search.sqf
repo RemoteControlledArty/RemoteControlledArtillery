@@ -27,10 +27,14 @@ private _validVeh = [];
 {
 	if (!isNull _x) then {
 		if ((_x distance player <= 15000)) then {
-			if (!([side _x, _sidePlayer] call BIS_fnc_sideIsEnemy)) then {
-				if (side _x != civilian) then {
-					_validVeh pushBack _x;
+			if ((count (crew _x)) > 0) then {
+				if (!([side _x, _sidePlayer] call BIS_fnc_sideIsEnemy)) then {
+					if (side _x != civilian) then {
+						_validVeh pushBack _x;
+					};
 				};
+			} else {
+				_validVeh pushBack _x;
 			};
 		};
 	};
@@ -45,7 +49,7 @@ private _foundFPV = false;
 {
 	private _veh = _x select 1;
 	private _cargo = getBackpackCargo _veh;
-	private _classes = _cargo select 0;
+	private _classes = _cargo select 0;		//0 is classes, 1 is amount
 	private _idx = _classes findIf {(_x in _validFPVs)};
 
 	if (_idx > -1) exitWith {
@@ -74,8 +78,7 @@ private _foundFPV = false;
 			private _count = _counts select _idx;
 
 			if (_class == _classToRemove) then {
-				//avoiding negative numbers
-				_count = _newCount max 0;
+				_count = _newCount max 0;	//avoiding negative numbers
 			};
 
 			if (_count > 0) then {

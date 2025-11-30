@@ -7,7 +7,7 @@ submunitionInitSpeed=1000;
 submunitionConeAngle=0;
 submunitionDirectionType="SubmunitionModelDirection";
 submunitionInitialOffset[]={0,0,-3.5};
-triggerDistance=5;
+triggerDistance=7;
 
 //Penetration / Fuze
 explosive=0.80000001;
