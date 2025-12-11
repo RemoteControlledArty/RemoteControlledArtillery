@@ -2,14 +2,14 @@
 triggerOnImpact=1;
 submunitionCount=1;
 submunitionParentSpeedCoef=0;
-submunitionInitSpeed=700;	//to allow 10m triggerdistance, but no delayed fuze overpen of small rooms with its triggertime
+submunitionInitSpeed=1000;	//to allow 10m triggerdistance, but no delayed fuze overpen of small rooms with its triggertime
 submunitionConeAngle=0;
 submunitionDirectionType="SubmunitionModelDirection";
 
 //Trigger/ed
 deleteParentWhenTriggered=1;
 submunitionInitialOffset[]={0,0,-3.5};
-triggerDistance=10;
+triggerDistance=7;
 
 //Penetration / Fuze
 explosive=0.60000002;
