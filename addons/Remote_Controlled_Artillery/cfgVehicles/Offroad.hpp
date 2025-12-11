@@ -301,7 +301,7 @@ class RC_Offroad_cUAS: RC_Offroad_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {};	\
+		init="if (!isServer) exitwith {};	\
 		(_this select 0) spawn {	\
 			private _static = ([[0,0,0], (getDir _this), 'RC_cUAS_Mounted_Static', west] call BIS_fnc_spawnVehicle);	\
 			(_static #0) attachTo [_this, [0.16, -2.15, 1]];	\
@@ -324,7 +324,7 @@ class RC_Offroad_cUAS_HMG: RC_Offroad_cUAS
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {};	\
+		init="if (!isServer) exitwith {};	\
 		(_this select 0) spawn {	\
 			private _static = ([[0,0,0], (getDir _this), 'RC_cUAS_Mounted_Static_HMG', west] call BIS_fnc_spawnVehicle);	\
 			(_static #0) attachTo [_this, [0.16, -2.15, 1]];	\
