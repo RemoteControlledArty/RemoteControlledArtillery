@@ -20,7 +20,7 @@ hit=0;	//to not cause additional direct hit damage besides the penetrator submun
 
 //Simulation
 simulation="shotShell";
-simulationStep=0.0020000001;
+simulationStep=0.001;
 
 //Use
 warheadName="HE";

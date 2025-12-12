@@ -2,7 +2,7 @@
 triggerOnImpact=1;
 submunitionCount=1;
 submunitionParentSpeedCoef=0;
-submunitionInitSpeed=1000;	//to allow 10m triggerdistance, but no delayed fuze overpen of small rooms with its triggertime
+submunitionInitSpeed=1000;
 submunitionConeAngle=0;
 submunitionDirectionType="SubmunitionModelDirection";
 

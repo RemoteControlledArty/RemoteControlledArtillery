@@ -959,7 +959,7 @@ class RC_B_25mm_MP_DF_Sub: B_30mm_MP_Tracer_Red
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Values_25mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_25mm";
-	caliber=4.4;
+	caliber=4.3;
 };
 class RC_B_25mm_MP_DF_T_R: B_30mm_MP_Tracer_Red
 {
@@ -1127,13 +1127,9 @@ class RC_B_30mm_MPAB_QF_T_Y: RC_B_30mm_MPAB_QF_T_R {model="\A3\Weapons_f\Data\bu
 class RC_B_30mm_MP_DF_Sub_X: RC_B_30mm_MP_DF_Sub
 {
 	submunitionAmmo="RC_ammo_Penetrator_MP_30mm_X";
-	submunitionInitialOffset[]={0,0,-3.5};
-	explosionTime=0.014;
 };
 class RC_B_30mm_MPAB_DF_X_T_R: RC_B_30mm_MPAB_DF_T_R
 {
-	submunitionInitialOffset[]={0,0,-3.5};
-	triggerDistance=10;
 	submunitionAmmo="RC_B_30mm_MP_DF_Sub_X";
 };
 class RC_B_30mm_MPAB_DF_X_T_G: RC_B_30mm_MPAB_DF_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};

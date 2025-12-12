@@ -19,7 +19,7 @@ explosive=0.60000002;
 
 //Simulation
 simulation="shotShell";
-simulationStep=0.0020000001;
+simulationStep=0.001;
 
 //Use
 warheadName="HE";

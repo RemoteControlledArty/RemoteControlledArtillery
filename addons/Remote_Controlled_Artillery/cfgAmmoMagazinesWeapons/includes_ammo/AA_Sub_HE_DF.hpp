@@ -8,7 +8,7 @@ explosionTime=0.014;
 explosive=0.60000002;
 
 //Simulation
-simulationStep=0.0020000001;
+simulationStep=0.001;
 
 //Use
 warheadName="HE";
