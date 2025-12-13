@@ -103,6 +103,8 @@ class SensorTemplateMan;
 class SensorTemplateLaser;
 class SensorTemplateDataLink;
 
+#include "\RC_Crocus_A3TI\cfgAmmoMagazinesWeapons\cfgAmmoMagazinesWeapons.hpp"
+
 class CfgVehicles
 {
 	#include "\RC_Crocus_A3TI\cfgVehicles\CrocusMP_TI.hpp"

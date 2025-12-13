@@ -15,9 +15,9 @@ if ((_spawnPos select 2) > 1000) then {
 };
 
 private _side = side _uav;
-private _version = 'B_Crocus_MP_TI';
-if (side _uav == east) then {_version = 'O_Crocus_MP_TI';};
-if (side _uav == resistance) then {_version = 'I_Crocus_MP_TI';};
+private _version = 'B_Crocus_MP_TI_Sens';
+if (side _uav == east) then {_version = 'O_Crocus_MP_TI_Sens';};
+if (side _uav == resistance) then {_version = 'I_Crocus_MP_TI_Sens';};
 
 //[_spawnArray, BIS_fnc_spawnVehicle] remoteExec ['call', 2];
 private _uavSpawn = [_spawnPos, direction _uav, _version, _side] call BIS_fnc_spawnVehicle;

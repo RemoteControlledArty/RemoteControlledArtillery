@@ -93,12 +93,14 @@ class CfgFunctions
             file="\RC_Crocus\functions";
 			class fpv_handleConnect_MP {postInit=1;};
 			class fpv_handleSignal_MP {};
+			class fpv_handleTarget_MP {};
 			class fpv_getSignal_MP {};
 			class fpv_createDialog_MP {};
 			class fpv_droneInit_MP {};
 			class fpv_onDestroy_MP {};
 			class fpv_onSignalLost_MP {};
 
+			class fpv_Throw {};
 			class fpv_CarrierDeploy {};
 			class fpv_CarrierDeployPvP {};
 			class fpv_MothershipDeploy {};

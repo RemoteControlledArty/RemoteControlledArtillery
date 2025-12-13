@@ -210,6 +210,29 @@ class CfgAmmo
 		audibleFire=3;
 		visibleFireTime=3;
 	};
+
+	//throwable
+	class GrenadeHand;
+	class Crocus_MP_ThrowAmmo_Base: GrenadeHand
+	{
+		class Eventhandlers
+		{
+			fired="if (!local (_this select 6)) exitWith {}; [_this select 6, _this select 7] spawn RC_fnc_fpv_Throw;";		//spawn to allow sleep
+		};
+		model="\ArmaFPV\drone.p3d";
+
+		hit=0;	//8
+		indirectHit=0;	//8
+		indirectHitRange=0;	//6
+		dangerRadiusHit=0;	//60
+		suppressionRadiusHit=0;	//24
+		typicalspeed=18;
+		fuseDistance=20;	//0
+	};
+	class Crocus_MP_ThrowAmmo:			Crocus_MP_ThrowAmmo_Base 	{asset="Crocus_MP";};
+	class Crocus_MP_Sens_ThrowAmmo:		Crocus_MP_ThrowAmmo_Base 	{asset="Crocus_MP_Sens";};
+	class Crocus_MP_NV_ThrowAmmo:		Crocus_MP_ThrowAmmo_Base	{asset="Crocus_MP_NV";};
+	class Crocus_MP_NV_Sens_ThrowAmmo:	Crocus_MP_ThrowAmmo_Base 	{asset="Crocus_MP_NV_Sens";};
 };
 
 
@@ -249,6 +272,47 @@ class cfgMagazines
 	class RC_6xCrocus_Deployer_UGV_Mag: RC_18xCrocus_Deployer_UGV_Mag
 	{
 		count=6;
+	};
+
+
+	//throwable
+	class HandGrenade;
+	class Crocus_MP_Throw_Base: HandGrenade
+	{
+		scope=0;
+		//scopeArsenal = 0;
+		model="\ArmaFPV\drone.p3d";
+		picture="\ArmaFPV\data\krokus1.jpg";
+		descriptionShort="throwable FPV";
+		mass=50;
+	};
+	class Crocus_MP_Throw: Crocus_MP_Throw_Base
+	{
+		scope=2;
+		ammo="Crocus_MP_ThrowAmmo";
+		displayName="Crocus MP";
+		displayNameShort="Crocus MP";
+	};
+	class Crocus_MP_Sens_Throw: Crocus_MP_Throw_Base
+	{
+		scope=2;
+		ammo="Crocus_MP_Sens_ThrowAmmo";
+		displayName="Crocus MP Sens";
+		displayNameShort="Crocus MP Sens";
+	};
+	class Crocus_MP_NV_Throw: Crocus_MP_Throw_Base
+	{
+		scope=2;
+		ammo="Crocus_MP_NV_ThrowAmmo";
+		displayName="Crocus MP NV";
+		displayNameShort="Crocus MP NV";
+	};
+	class Crocus_MP_NV_Sens_Throw: Crocus_MP_Throw_Base
+	{
+		scope=2;
+		ammo="Crocus_MP_NV_Sens_ThrowAmmo";
+		displayName="Crocus MP NV Sens";
+		displayNameShort="Crocus MP NV Sens";
 	};
 };
 
@@ -344,6 +408,25 @@ class cfgWeapons
 		{
 			displayName="deploy Crocus";
 			reloadTime=3.5;
+		};
+	};
+
+	//throwable
+	class GrenadeLauncher;
+    class Throw: GrenadeLauncher {
+
+		class ThrowMuzzle: GrenadeLauncher {};
+		class Crocus_MP_ThrowMuzzle: 			ThrowMuzzle {magazines[] = {"Crocus_MP_Throw"};			};
+		class Crocus_MP_Sens_ThrowMuzzle:		ThrowMuzzle {magazines[] = {"Crocus_MP_Sens_Throw"};	};
+		class Crocus_MP_NV_ThrowMuzzle:			ThrowMuzzle {magazines[] = {"Crocus_MP_NV_Throw"};		};
+		class Crocus_MP_NV_Sens_ThrowMuzzle: 	ThrowMuzzle {magazines[] = {"Crocus_MP_NV_Sens_Throw"};	};
+
+		muzzles[]+=
+		{
+			"Crocus_MP_ThrowMuzzle",
+			"Crocus_MP_Sens_ThrowMuzzle",
+			"Crocus_MP_NV_ThrowMuzzle",
+			"Crocus_MP_NV_Sens_ThrowMuzzle"
 		};
 	};
 };

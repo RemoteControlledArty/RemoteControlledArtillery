@@ -35,6 +35,7 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	visualTargetSize=0.1;	//0.1
 	
 	liftForceCoef=1.5;	//1
+	//cyclicForwardForceCoef=3;	//1.2	//doesnt seem to work, only less stable vertical steering
 	maxSpeed=200;	//140
 
 	//HUD
