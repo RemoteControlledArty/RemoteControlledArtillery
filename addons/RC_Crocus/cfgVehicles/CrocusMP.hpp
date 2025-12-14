@@ -19,6 +19,8 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	side=1;
 	forceInGarage=1;
 
+	armor=2;	//needed for EH
+
 	fuelCapacity=14;	//8.5
 
 	enableGPS=1;
@@ -96,11 +98,13 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	{
 		class RC_Crocus
 		{
-			fired="if (local (_this select 0)) then {_this call RC_fnc_fpv_onDestroy_MP};";
-			hit="_this call RC_fnc_fpv_onDestroy_MP";
+			handleDamage = "if (local (_this select 0)) then {_this spawn RC_fnc_fpv_handleDmg_MP};";
+			fired="if (local (_this select 0)) then {_this call RC_fnc_fpv_handleAB_MP};";
+			//hit="_this call RC_fnc_fpv_onDestroy_MP";
 			init="(_this # 0) spawn RC_fnc_fpv_droneInit_MP;";
 		};
 		class ArmaFPV {};
+		//class ArmaFPV {hit="";};
 	};
 
 	class Components: Components
