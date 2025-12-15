@@ -1,4 +1,5 @@
-params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitPartIndex", "_instigator", "_hitPoint", "_directHit", "_context"];
+params ["_unit", "_selection", "_damage"];
+//params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitPartIndex", "_instigator", "_hitPoint", "_directHit", "_context"];
 
 if (_damage > 0.1) exitWith {
 
