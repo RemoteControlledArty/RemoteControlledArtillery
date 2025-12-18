@@ -38,3 +38,125 @@ class RC_ArtySourceTarget: RC_GPSDatalinkTarget
 	displayName="GPS Artillery Source";
 	_generalMacro="RC_ArtySourceTarget";
 };
+
+
+class Helicopter;
+class RC_Projectile_Target_Base: Helicopter
+{
+	class HitPoints;
+	class HitHull;
+	class HitHRotor;
+	class EventHandlers;
+};
+class RC_Projectile_Target: RC_Projectile_Target_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			killed="if (!isserver) exitwith {}; triggerAmmo attachedTo (_this select 0);";
+			//killed="if (!isserver) exitwith {}; deleteVehicle (_this select 0);";
+			//killed="if (!(local (_this select 0))) exitwith {}; deleteVehicle (_this select 0);";
+		};
+	};
+
+	author="Ascent";
+	scope=0;
+	displayName="Projectile";
+
+	cost=999999999;
+	threat[]={1,1,1};
+	armor=0.5;
+	precision=15;
+
+	//laserTarget=1;	//might increase detection range due to lasersensorcomponent
+	irTarget=1;
+	visualTarget=1;
+
+	radarTargetSize=1;
+	visualTargetSize=1;
+	irTargetSize=1;
+
+	camouflage=0.5;
+	audible=0.1;
+	accuracy=1;	//AR2 0.5, FW 1
+
+	//maxSpeed=100;
+	maxSpeed=1750;
+	isUav=1;
+	vehicleClass="Autonomous";
+	reportOwnPosition=1;	//for testing
+
+	//model="\A3\Weapons_F\empty.p3d";	//doesnt work
+	model="\A3\Weapons_f\ammo\cartridge_small";
+	//model="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
+	//tracerStartTime=0.0074999998;
+	//tracerEndTime=5;
+	//model="\A3\Weapons_F\Ammo\shell.p3d";	//empty model resulted in no engagement / it being indestructable, find smaller way to reduce size to bullet size
+	//model="\A3\Weapons_f\ammo\shell";
+
+	//editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_UAV_01_F.jpg";
+	mapSize=1;
+	icon="iconManVirtual";
+	picture="";
+	//icon="\A3\Drones_F\Air_F_Gamma\UAV_01\Data\UI\Map_UAV_01_CA.paa";
+	//picture="\A3\Drones_F\Air_F_Gamma\UAV_01\Data\UI\UAV_01_CA.paa";
+	//picture="\A3\Weapons_f\Data\ui\gear_UGL_slug_CA.paa";
+
+	epeImpulseDamageCoef=5;
+	fuelExplosionPower=0;
+
+	lockDetectionSystem=0;
+	incomingMissileDetectionSystem=0;
+	weapons[]={};
+	magazines[]={};
+
+	features="Randomization: No						<br />Camo selections: 1 - the whole body						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: No						<br />Slingload: No						<br />Cargo proxy indexes: None";
+
+	damageEffect="UAVDestructionEffects";
+	destrType="DestructDefault";
+	driverCompartments="Compartment3";
+	cargoCompartments[]=
+	{
+		"Compartment2"
+	};
+	class HitPoints: HitPoints
+	{
+		class HitHull: HitHull
+		{
+			armor=0.1;
+		};
+	};
+	class TransportItems
+	{
+	};
+};
+class RC_Projectile_Target_B: RC_Projectile_Target
+{
+	scope=1;
+
+	side=1;
+	crew="B_UAV_AI";
+	typicalCargo[]=
+	{
+		"B_UAV_AI"
+	};
+};
+class RC_Projectile_Target_O: RC_Projectile_Target_B
+{
+	side=0;
+	crew="O_UAV_AI";
+	typicalCargo[]=
+	{
+		"O_UAV_AI"
+	};
+};
+class RC_Projectile_Target_I: RC_Projectile_Target_B
+{
+	side=2;
+	crew="I_UAV_AI";
+	typicalCargo[]=
+	{
+		"I_UAV_AI"
+	};
+};
