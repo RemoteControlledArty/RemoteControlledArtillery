@@ -142,15 +142,14 @@ private _EventHead = addMissionEventHandler ["EachFrame", {
     //gravity cancel
     //_vel set [2, (_vel # 2) + (9.81 * _dt)];
 
+
     // gravity compensation
     _vel set [2, (_vel # 2) + (9.81 * _dt)];
-
     // manual lift (independent of camera)
     _vel set [2, (_vel # 2) + _liftSpeed];
-
     private _vLen = vectorMagnitude _vel;
 
-    _speed = _larger = _maxSpeed max _liftspeed;
+    _speed = _maxSpeed max _liftspeed;
     if (_vLen > _speed) then {
         _vel = _vel vectorMultiply (_speed / _vLen);
     };
