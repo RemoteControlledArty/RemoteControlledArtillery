@@ -41,14 +41,14 @@ class RC_ArtySourceTarget: RC_GPSDatalinkTarget
 
 
 class Helicopter;
-class RC_Projectile_Target_Base: Helicopter
+class RC_Projectile_Target_Core: Helicopter
 {
 	class HitPoints;
 	class HitHull;
 	class HitHRotor;
 	class EventHandlers;
 };
-class RC_Projectile_Target: RC_Projectile_Target_Base
+class RC_Projectile_Target_Base: RC_Projectile_Target_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -131,7 +131,7 @@ class RC_Projectile_Target: RC_Projectile_Target_Base
 	{
 	};
 };
-class RC_Projectile_Target_B: RC_Projectile_Target
+class RC_Projectile_Target_B: RC_Projectile_Target_Base
 {
 	scope=1;
 
