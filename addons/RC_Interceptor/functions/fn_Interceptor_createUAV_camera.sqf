@@ -84,6 +84,9 @@ localNameSpace setVariable ["RC_Interceptor_cameraZoom", 0.9]; //0.75
 };
 
 
+//ADD BUTTOM TO max throttle GAIN ALTITUDE independant of mouse movement, that has same acc, but only acts if pressed, not hold upwards speed
+
+
 _currentX = 0.5;    // smoothed yaw for momentum
 _currentY = 0.5;    // smoothed pitch for momentum
 _previousX = _currentX;
@@ -130,12 +133,27 @@ private _EventHead = addMissionEventHandler ["EachFrame", {
 
     _speed = speed _uav;
     _maxSpeed = localNameSpace getVariable ["RC_Interceptor_maxSpeed", 1];
+    _maxSpeed = localNameSpace getVariable ["RC_Interceptor_maxLiftSpeed", 1];
     if (_speed > _maxSpeed) then {_speed = _maxSpeed;};
+    if (_liftspeed > _maxLiftSpeed) then {_liftspeed = _maxLiftSpeed;};
     
     //_vel = _velDir vectorMultiply (_speed / 3.6);
     _vel = _dir vectorMultiply (_speed / 3.6);
     //gravity cancel
+    //_vel set [2, (_vel # 2) + (9.81 * _dt)];
+
+    // gravity compensation
     _vel set [2, (_vel # 2) + (9.81 * _dt)];
+
+    // manual lift (independent of camera)
+    _vel set [2, (_vel # 2) + _liftSpeed];
+
+    private _vLen = vectorMagnitude _vel;
+
+    _speed = _larger = _maxSpeed max _liftspeed;
+    if (_vLen > _speed) then {
+        _vel = _vel vectorMultiply (_speed / _vLen);
+    };
     //apply
     _uav setVelocity _vel;
 
@@ -200,6 +218,54 @@ private _idEachFrame = addMissionEventHandler ["EachFrame", {
     _controlDate  ctrlSetStructuredText _ddMMyyyy;
     _controlSpeed ctrlSetStructuredText parseText format ["<t font='EtelkaMonospacePro'>%1 Km/h</t>", round (speed _vehicle)];
 }, [_uav]];
+
+
+RC_LIFT=false;
+private _idLift = _display displayAddEventHandler ["KeyDown",  { 
+    params ["", "", "", "", "_alt"];
+
+    if !(_alt) exitWith {RC_LIFT=false;};
+
+    private _liftSpeed = localNameSpace getVariable ["RC_Interceptor_maxLiftSpeed", 1];   //101
+
+    private _norm = linearConversion [1, 350, _liftSpeed, 0, 1, true];
+
+    private _maxAcc = 5;
+    private _minAcc = 1;
+    private _acc = (_maxAcc * (_maxAcc * _norm * (1 - _norm))) max _minAcc;
+
+    _liftSpeed = (_liftSpeed + _acc) min 350;
+
+    localNameSpace setVariable ["RC_Interceptor_maxLiftSpeed", _liftSpeed];
+}];
+
+
+[_uav] spawn {
+    params ["_uav"];
+
+	while {
+        !(isNull _uav)
+    } do {
+
+        if (!RC_LIFT) then {
+            
+            private _liftSpeed = localNameSpace getVariable ["RC_Interceptor_maxLiftSpeed", 1];
+
+            private _norm = linearConversion [1, 350, _liftSpeed, 0, 1, true];
+
+            private _maxAcc = 5;
+            private _minAcc = 1;
+            private _acc = (_maxAcc * (_maxAcc * _norm * (1 - _norm))) max _minAcc;
+
+            _liftSpeed = (_liftSpeed - _acc) max 1;
+
+            localNameSpace setVariable ["RC_Interceptor_maxLiftSpeed", _liftSpeed];
+
+            sleep 0.1;
+        };
+	};
+};
+
 
 private _idSlowDown = _display displayAddEventHandler ["KeyDown",  { 
     params ["", "_key"];
@@ -292,12 +358,14 @@ removeMissionEventHandler ["EachFrame",_EventHead];
 private _controls = localNameSpace getVariable ["RC_Interceptor_controls", []];
 
 _display closeDisplay 1;
-  
-private _effect_1 = localNameSpace getVariable ["RC_Interceptor_effect_1",  -1];
-private _effect_2 = localNameSpace getVariable ["RC_Interceptor_effect_2",  -1];
 
-ppEffectDestroy _effect_1;
-ppEffectDestroy _effect_2;
+private _PP_colorC = localNameSpace getVariable ["RC_Interceptor_PP_colorC",  -1];
+private _PP_dynamic = localNameSpace getVariable ["RC_Interceptor_PP_dynamic",  -1];
+private _PP_film = localNameSpace getVariable ["RC_Interceptor_PP_film",  -1];
+
+ppEffectDestroy _PP_colorC;
+ppEffectDestroy _PP_dynamic;
+ppEffectDestroy _PP_film;
 
 removeMissionEventHandler ["EachFrame", _idEachFrame];
 removeMissionEventHandler ["EachFrame", _EventHead];

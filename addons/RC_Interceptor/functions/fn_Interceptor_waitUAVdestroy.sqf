@@ -2,8 +2,9 @@ params ["_uav", "_position", "_magazine"];
 
 private _time = time + 600;     //10min flight time
 private _camera   = localNameSpace getVariable ["RC_Interceptor_camera", objNull];
-private _effect_1 = localNameSpace getVariable ["RC_Interceptor_effect_1",  -1];
-//private _effect_2 = localNameSpace getVariable ["RC_Interceptor_effect_2",  -1];
+private _PP_colorC = localNameSpace getVariable ["RC_Interceptor_PP_colorC",  -1];
+private _PP_dynamic = localNameSpace getVariable ["RC_Interceptor_PP_dynamic",  -1];
+private _PP_film = localNameSpace getVariable ["RC_Interceptor_PP_film",  -1];
 private _idEachFrame = localNameSpace getVariable ["RC_Interceptor_idEachFrame", -1];
 private _idEventHead = localNameSpace getVariable ["RC_Interceptor_EventHead", -1];
 private _idMouse     = localNameSpace getVariable ["RC_Interceptor_idMouse", -1];
@@ -26,8 +27,6 @@ _ammo setVectorDirAndUp [vectorDir _camera, vectorUp _camera];
 ppEffectDestroy _PP_colorC;
 ppEffectDestroy _PP_dynamic;
 ppEffectDestroy _PP_film;
-//ppEffectDestroy _effect_1;
-//ppEffectDestroy _effect_2;
 
 removeMissionEventHandler ["EachFrame", _idEachFrame];
 removeMissionEventHandler ["EachFrame", _idEventHead];

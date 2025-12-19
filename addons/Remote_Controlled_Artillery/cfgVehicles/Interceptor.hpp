@@ -553,6 +553,7 @@ class RC_Sting_B: RC_Sting_Base2
 	};
 };
 
+
 /*
 class RC_UAV_FPV: RC_UAV_base
 {

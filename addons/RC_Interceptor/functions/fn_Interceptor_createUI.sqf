@@ -87,7 +87,9 @@ _controlSpeed ctrlSetPosition [
 ];
 _controlSpeed ctrlCommit 0.0;
 
-localNameSpace setVariable ["RC_Interceptor_effect_1",  _effect_1];
-//localNameSpace setVariable ["RC_Interceptor_effect_2",  _effect_2];
+localNameSpace setVariable ["RC_Interceptor_PP_colorC",  _PP_colorC];
+localNameSpace setVariable ["RC_Interceptor_PP_dynamic",  _PP_dynamic];
+localNameSpace setVariable ["RC_Interceptor_PP_film",  _PP_film];
+
 localNameSpace setVariable ["RC_Interceptor_controls", [_controlCoord, _controlDate, _controlSpeed]];
 localNameSpace setVariable ["RC_Interceptor_display", _display];
