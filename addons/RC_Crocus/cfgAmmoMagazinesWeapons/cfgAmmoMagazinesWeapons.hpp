@@ -284,7 +284,7 @@ class cfgMagazines
 		model="\ArmaFPV\drone.p3d";
 		picture="\ArmaFPV\data\krokus1.jpg";
 		descriptionShort="throwable FPV";
-		mass=40;
+		mass=50;
 	};
 	class Crocus_MP_Throw: Crocus_MP_Throw_Base
 	{

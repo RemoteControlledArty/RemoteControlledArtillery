@@ -51,7 +51,9 @@ _dir = getDir _uav;
 
 //localNameSpace setVariable ["RC_Interceptor_speed", speed _uav];
 localNameSpace setVariable ["RC_Interceptor_camera", _camera];
-localNameSpace setVariable ["RC_Interceptor_maxSpeed", 1];    //300
+localNameSpace setVariable ["RC_Interceptor_AB", false];
+localNameSpace setVariable ["RC_Interceptor_maxSpeed", 1];    //350
+localNameSpace setVariable ["RC_Interceptor_maxLiftSpeed", 0];    //0
 localNameSpace setVariable ["RC_Interceptor_vehicle", _uav];
 localNameSpace setVariable ["RC_Interceptor_cameraZoom", 0.9]; //0.75
 
@@ -87,78 +89,26 @@ localNameSpace setVariable ["RC_Interceptor_cameraZoom", 0.9]; //0.75
 //ADD BUTTOM TO max throttle GAIN ALTITUDE independant of mouse movement, that has same acc, but only acts if pressed, not hold upwards speed
 
 
+/*
 _currentX = 0.5;    // smoothed yaw for momentum
 _currentY = 0.5;    // smoothed pitch for momentum
 _previousX = _currentX;
 _previousY = _currentY;
+*/
 _alpha = 8;         // momentum / smoothing factor
+
 
 private _EventHead = addMissionEventHandler ["EachFrame", {
     _thisArgs params ["_uav"];
+    //params ["_uav"];
 
-    private _dt = diag_deltaTime;
-    private _frameAlpha = (_alpha * _dt) min 1;  // smoothing factor scaled by deltaTime
-
-    _currentX = _currentX + (RC_X - _currentX) * _frameAlpha;
-    _currentY = _currentY + (RC_Y - _currentY) * _frameAlpha;
-
-    //_y = RC_X * RC_SENSIVITY * (_dt / 0.0167);
-    //_p = RC_Y * RC_SENSIVITY * (_dt / 0.0167);
-    _y = RC_X * RC_SENSIVITY;
-    _p = RC_Y * RC_SENSIVITY;
-    _r = 0;
-
-    _dir = [
-        sin _y * cos _p,
-        cos _y * cos _p,
-        sin _p
-    ];
-    
-    _uav setVectorDirAndUp [
-        _dir,
-        [[0, -sin _p, cos _p], -_y] call BIS_fnc_rotateVector2D
-    ];
-
-    //physics
-    /*
-    _velDir = [
-        sin _currentX * cos _currentY,
-        cos _currentX * cos _currentY,
-        sin _currentY
-    ];
-    */
-
-    //visual
-    //_visDir = vectorNormalized [sin _currentX, cos _currentX, 0]; // horizontal
-
-    _speed = speed _uav;
-    _maxSpeed = localNameSpace getVariable ["RC_Interceptor_maxSpeed", 1];
-    _maxSpeed = localNameSpace getVariable ["RC_Interceptor_maxLiftSpeed", 1];
-    if (_speed > _maxSpeed) then {_speed = _maxSpeed;};
-    if (_liftspeed > _maxLiftSpeed) then {_liftspeed = _maxLiftSpeed;};
-    
-    //_vel = _velDir vectorMultiply (_speed / 3.6);
-    _vel = _dir vectorMultiply (_speed / 3.6);
-    //gravity cancel
-    //_vel set [2, (_vel # 2) + (9.81 * _dt)];
-
-
-    // gravity compensation
-    _vel set [2, (_vel # 2) + (9.81 * _dt)];
-    // manual lift (independent of camera)
-    _vel set [2, (_vel # 2) + _liftSpeed];
-    private _vLen = vectorMagnitude _vel;
-
-    _speed = _maxSpeed max _liftspeed;
-    if (_vLen > _speed) then {
-        _vel = _vel vectorMultiply (_speed / _vLen);
+    private _AB = localNameSpace getVariable ["RC_Interceptor_AB", false];
+    if (_AB) then {
+        triggerAmmo _uav;   //check if that makes it double trigger
     };
-    //apply
-    _uav setVelocity _vel;
 
-    //_previousX = _currentX;
-
-    //hint format ["_dir: %1\n_up: %2", _dir, _up];
+    //[_uav] call (missionNamespace getVariable "fnc_Interceptor_SetVel");
+    [_uav] call fnc_Interceptor_SetVel;
 
 }, [_uav]];
 
@@ -219,18 +169,28 @@ private _idEachFrame = addMissionEventHandler ["EachFrame", {
 }, [_uav]];
 
 
+private _idAB = _display displayAddEventHandler ["KeyDown",  { 
+    params ["", "_key"];
+
+    if (_key != 57) exitWith {};
+
+    localNameSpace setVariable ["RC_Interceptor_AB", true];
+}];
+
+
 RC_LIFT=false;
 private _idLift = _display displayAddEventHandler ["KeyDown",  { 
     params ["", "", "", "", "_alt"];
 
     if !(_alt) exitWith {RC_LIFT=false;};
 
-    private _liftSpeed = localNameSpace getVariable ["RC_Interceptor_maxLiftSpeed", 1];   //101
+    private _liftSpeed = localNameSpace getVariable ["RC_Interceptor_maxLiftSpeed", 0];
 
-    private _norm = linearConversion [1, 350, _liftSpeed, 0, 1, true];
+    private _norm = linearConversion [0, 350, _liftSpeed, 0, 1, true];
 
     private _maxAcc = 5;
     private _minAcc = 1;
+    //private _acc = (_maxAcc * (_maxAcc * _norm * (0 - _norm))) max _minAcc;   //figure out if 0 or 1
     private _acc = (_maxAcc * (_maxAcc * _norm * (1 - _norm))) max _minAcc;
 
     _liftSpeed = (_liftSpeed + _acc) min 350;

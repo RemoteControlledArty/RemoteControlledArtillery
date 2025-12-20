@@ -54,6 +54,8 @@ class CfgFunctions
 		class RC_Interceptor
 		{
 			file="\RC_Interceptor\functions";
+			//class Interceptor_preInit 		{preInit=1;};
+			class Interceptor_postInit 			{postInit=1;};
 			class Interceptor_fired 			{};
 			class Interceptor_createUAV_camera 	{};
 			class Interceptor_createUAV_vehicle {};
