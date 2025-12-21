@@ -8,12 +8,14 @@ cutrsc ["Interceptor_RscDisplayUAV", "plain"];
 private _display = localNameSpace getVariable ["RC_Interceptor_display", displayNull];
 
 
-//basics
+//spawn _uav
 private _versionOutput = [_pos, _dir, _vel] call fnc_Interceptor_version;
 _versionOutput params ["_uav", "_ammo"];
 
+
 //interceptability
 [_uav, _dir] call fnc_Interceptor_interceptability;
+
 
 //camera
 private _cameraOutput = [_uav, _pos, _dir, _vel, _dirVec] call fnc_Interceptor_camera;
@@ -24,6 +26,7 @@ _cameraOutput params ["_camera", "_lastpos", "_dir"];
 //[_uav, _pos, _magazine] spawn RC_fnc_Interceptor_destroy;    //?
 
 
+//steering
 [_uav, _pos] spawn fnc_Interceptor_mouseSteer;  //spawn to allow sleep
 
 
@@ -35,6 +38,7 @@ localNameSpace setVariable ["RC_Interceptor_maxSpeed", 1];
 localNameSpace setVariable ["RC_Interceptor_cameraZoom", 0.9];
 
 
+//hotkeys
 // e = 18
 private _idAB = _display displayAddEventHandler ["KeyDown",  { 
     params ["", "_key"];
@@ -211,8 +215,11 @@ localNameSpace setVariable ["RC_Interceptor_EventHead", _EventHead];
 
 
 //updateCam
-//[_uav] call fnc_Interceptor_UpdateCam;
-[_uav, _lastpos] spawn fnc_Interceptor_UpdateCam;     //"spawn" to be able to use while loop
+while {
+    !(isNull _uav)
+} do {
+    [_uav, _lastpos] call fnc_Interceptor_UpdateCam;
+};
 
 
 //waitUntil

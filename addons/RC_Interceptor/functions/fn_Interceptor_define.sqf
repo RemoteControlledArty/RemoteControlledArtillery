@@ -199,23 +199,19 @@ fnc_Interceptor_setVel = {
 fnc_Interceptor_updateCam = {
 	params ["_uav", "_lastpos"];
 
-	while {
-		!(isNull _uav)
-	} do {
-		if (isNull (localNameSpace getVariable ["RC_Interceptor_display", displayNull])) exitWith {};
-		if !(_lastpos isEqualTo [0,0,0]) then {
-			_lastpos = getPosASL _uav;
-		};
-		
-		_lastTime = time;
-		_distancePOS = getPosASL _uav;
-		_S = getMousePosition;
-
-		_camera camSetTarget _uav;
-		_dir = getDir _uav;
-		_camera camSetRelPos [0,0,0];
-		_camera camcommit 5 * (time - _lastTime);
+	if (isNull (localNameSpace getVariable ["RC_Interceptor_display", displayNull])) exitWith {};
+	if !(_lastpos isEqualTo [0,0,0]) then {
+		_lastpos = getPosASL _uav;
 	};
+	
+	_lastTime = time;
+	_distancePOS = getPosASL _uav;
+	_S = getMousePosition;
+
+	_camera camSetTarget _uav;
+	_dir = getDir _uav;
+	_camera camSetRelPos [0,0,0];
+	_camera camcommit 5 * (time - _lastTime);
 };
 
 
