@@ -50,7 +50,6 @@ class CfgFunctions
 			class Interceptor_firedEH 			{};
 			class Interceptor_create			{};
 			//class Interceptor_create_veh		{};
-			class Interceptor_destroy 			{};
 			class Interceptor_UI 				{};
 		};
 	};

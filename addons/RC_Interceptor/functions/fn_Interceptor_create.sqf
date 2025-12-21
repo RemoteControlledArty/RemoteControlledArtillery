@@ -110,7 +110,7 @@ _display displayAddEventHandler ["KeyUp", {
 }];
 
 
-//main logic
+//main setVel logic
 private _EventHead = addMissionEventHandler ["EachFrame", {
     _thisArgs params ["_uav"];
     //params ["_uav"];
@@ -120,7 +120,7 @@ private _EventHead = addMissionEventHandler ["EachFrame", {
         triggerAmmo _uav;   //check if that makes it double trigger
     };
 
-    [_uav] call fnc_Interceptor_SetVel;
+    [_uav] call fnc_Interceptor_setVel;
 
 }, [_uav]];
 
@@ -184,42 +184,6 @@ private _idEachFrame = addMissionEventHandler ["EachFrame", {
 }, [_uav]];
 
 
-private _idSlowDown = _display displayAddEventHandler ["KeyDown",  { 
-    params ["", "_key"];
-    if (_key != 46) exitWith {};
-
-    private _speed = localNameSpace getVariable ["RC_Interceptor_maxSpeed", 1]; ///350
-
-    private _norm = linearConversion [1, 350, _speed, 0, 1, true];
-
-    private _maxAcc = 5;
-    private _minAcc = 1;
-    private _acc = (_maxAcc * (_maxAcc * _norm * (1 - _norm))) max _minAcc;
-
-    _speed = (_speed - _acc) max 1;
-
-    localNameSpace setVariable ["RC_Interceptor_maxSpeed", _speed];
-}];
-
-
-private _idUpSpeed = _display displayAddEventHandler ["KeyDown",  { 
-    params ["", "", "_shift"];
-    if !(_shift) exitWith {};
-
-    private _speed = localNameSpace getVariable ["RC_Interceptor_maxSpeed", 1];   //101
-
-    private _norm = linearConversion [1, 350, _speed, 0, 1, true];
-
-    private _maxAcc = 5;
-    private _minAcc = 1;
-    private _acc = (_maxAcc * (_maxAcc * _norm * (1 - _norm))) max _minAcc;
-
-    _speed = (_speed + _acc) min 350;
-
-    localNameSpace setVariable ["RC_Interceptor_maxSpeed", _speed];
-}];
-
-
 private _idZoom = _display displayAddEventHandler ["MouseZChanged", {
     params ["", "_scroll"];
 
@@ -246,58 +210,19 @@ localNameSpace setVariable ["RC_Interceptor_idNvg", _idNvg];
 localNameSpace setVariable ["RC_Interceptor_EventHead", _EventHead];
 
 
-while {
-    !(isNull _uav)
-} do {
-    if (isNull (localNameSpace getVariable ["RC_Interceptor_display", displayNull])) exitWith {};
-    if !(_lastpos isEqualTo [0,0,0]) then {
-        _lastpos = getPosASL _uav;
-    };
-    
-    _lastTime = time;
-    _distancePOS = getPosASL _uav;
-    _S = getMousePosition;
-
-	_camera camSetTarget _uav;
-    _dir = getDir _uav;
-	_camera camSetRelPos [0,0,0];
-	_camera camcommit 5 * (time - _lastTime);
-};
+//updateCam
+//[_uav] call fnc_Interceptor_UpdateCam;
+[_uav, _lastpos] spawn fnc_Interceptor_UpdateCam;     //"spawn" to be able to use while loop
 
 
-//moved here from fn_Interceptor_destroy
+//waitUntil
 waitUntil {
     !(canMove _uav) ||
     ((_uav distance _pos) > 10000) ||
     (isNull (localNameSpace getVariable ["RC_Interceptor_display", displayNull]))
 };
 
-removeMissionEventHandler ["EachFrame",_EventHead];
 
-private _controls = localNameSpace getVariable ["RC_Interceptor_controls", []];
-
-_display closeDisplay 1;
-
-private _PP_colorC = localNameSpace getVariable ["RC_Interceptor_PP_colorC",  -1];
-private _PP_dynamic = localNameSpace getVariable ["RC_Interceptor_PP_dynamic",  -1];
-private _PP_film = localNameSpace getVariable ["RC_Interceptor_PP_film",  -1];
-
-ppEffectDestroy _PP_colorC;
-ppEffectDestroy _PP_dynamic;
-ppEffectDestroy _PP_film;
-
-removeMissionEventHandler ["EachFrame", _idEachFrame];
-removeMissionEventHandler ["EachFrame", _EventHead];
-_display displayRemoveEventHandler ["KeyDown", _idNvg];
-_controls apply { ctrlDelete _x };
-
-// deleteVehicle _uav;      //was that right or wrong?
-
-camUseNVG false;
-false setCamUseTI 1;
-
-_camera cameraEffect ["terminate","back"];
-camDestroy _camera;
-
-cutText ["", "PLAIN"];
-"SB_RscCompass" cutText ["", "PLAIN"];
+//destroy
+[_uav, _pos] call fnc_Interceptor_destroy;
+//outputs needed or not?

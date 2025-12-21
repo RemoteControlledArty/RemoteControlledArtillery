@@ -193,3 +193,121 @@ fnc_Interceptor_setVel = {
 	_uav setVelocity _finalVel;
 	_uav setVectorDirAndUp [_vDir, [[0, -sin _p, cos _p], -_y] call BIS_fnc_rotateVector2D];
 };
+
+
+//is this actually needed? isnt the camera attached to the projectile? or would it not self align?
+fnc_Interceptor_updateCam = {
+	params ["_uav", "_lastpos"];
+
+	while {
+		!(isNull _uav)
+	} do {
+		if (isNull (localNameSpace getVariable ["RC_Interceptor_display", displayNull])) exitWith {};
+		if !(_lastpos isEqualTo [0,0,0]) then {
+			_lastpos = getPosASL _uav;
+		};
+		
+		_lastTime = time;
+		_distancePOS = getPosASL _uav;
+		_S = getMousePosition;
+
+		_camera camSetTarget _uav;
+		_dir = getDir _uav;
+		_camera camSetRelPos [0,0,0];
+		_camera camcommit 5 * (time - _lastTime);
+	};
+};
+
+
+fnc_Interceptor_destroy = {
+	params ["_uav", "_pos"];
+	
+	removeMissionEventHandler ["EachFrame", _EventHead];
+
+	private _controls = localNameSpace getVariable ["RC_Interceptor_controls", []];
+	_display closeDisplay 1;
+	private _PP_colorC = localNameSpace getVariable ["RC_Interceptor_PP_colorC",  -1];
+	private _PP_dynamic = localNameSpace getVariable ["RC_Interceptor_PP_dynamic",  -1];
+	private _PP_film = localNameSpace getVariable ["RC_Interceptor_PP_film",  -1];
+
+	ppEffectDestroy _PP_colorC;
+	ppEffectDestroy _PP_dynamic;
+	ppEffectDestroy _PP_film;
+
+	removeMissionEventHandler ["EachFrame", _idEachFrame];
+	removeMissionEventHandler ["EachFrame", _EventHead];
+	_display displayRemoveEventHandler ["KeyDown", _idNvg];
+	_controls apply { ctrlDelete _x };
+
+	// deleteVehicle _uav;      //was that right or wrong? *right for current version which doesnt spawn seperate ammo
+
+	camUseNVG false;
+	false setCamUseTI 1;
+
+	//planned: add short static camera effect after detonation
+
+	_camera cameraEffect ["terminate","back"];
+	camDestroy _camera;
+
+	cutText ["", "PLAIN"];
+	"SB_RscCompass" cutText ["", "PLAIN"];
+};
+
+
+
+/*
+//full destroy version, reimplement whats needed later
+
+fnc_Interceptor_destroy = {
+	//params ["_uav", "_pos", "_magazine"];
+	params ["_uav", "_pos", "_magazine"];
+
+	private _time           = time + 600;     //10min flight time
+	private _camera         = localNameSpace getVariable ["RC_Interceptor_camera", objNull];
+	private _PP_colorC      = localNameSpace getVariable ["RC_Interceptor_PP_colorC",  -1];
+	private _PP_dynamic     = localNameSpace getVariable ["RC_Interceptor_PP_dynamic",  -1];
+	private _PP_film        = localNameSpace getVariable ["RC_Interceptor_PP_film",  -1];
+	private _idEachFrame    = localNameSpace getVariable ["RC_Interceptor_idEachFrame", -1];
+	private _idEventHead    = localNameSpace getVariable ["RC_Interceptor_EventHead", -1];
+	private _idMouse        = localNameSpace getVariable ["RC_Interceptor_idMouse", -1];
+	private _idNvg          = localNameSpace getVariable ["RC_Interceptor_idNvg", -1]; 
+	private _idSlowDown     = localNameSpace getVariable ["RC_Interceptor_idSlowDown", -1]; 
+	private _idUpSpeed      = localNameSpace getVariable ["RC_Interceptor_idUpSpeed", -1]; 
+	private _controls       = localNameSpace getVariable ["RC_Interceptor_controls", []];
+
+	//private _ammo           = getText (configFile >> "CfgMagazines" >> _magazine >> "ammo");
+	private _ammo = "Interceptor_MP";
+
+
+	waitUntil {
+		!(canMove _uav) ||
+		((_uav distance _pos) > 10000) ||
+		(time > _time)
+	};
+
+	deleteVehicle ((attachedObjects _uav)#0);   //removes target
+	_ammo = createVehicle [_ammo, (_uav modelToWorld [0, 0, 0]), [], 0, "CAN_COLLIDE"];
+	_ammo setVectorDirAndUp [vectorDir _camera, vectorUp _camera];
+
+
+	ppEffectDestroy _PP_colorC;
+	ppEffectDestroy _PP_dynamic;
+	ppEffectDestroy _PP_film;
+
+	removeMissionEventHandler ["EachFrame", _idEachFrame];
+	removeMissionEventHandler ["EachFrame", _idEventHead];
+	findDisplay 46 displayRemoveEventHandler ["KeyDown", _idNvg];
+	_controls apply { ctrlDelete _x };
+		
+	deleteVehicle _uav;
+
+	camUseNVG false;
+	false setCamUseTI 1;
+
+	_camera cameraEffect ["terminate","back"];
+	camDestroy _camera;
+
+	cutText ["", "PLAIN"];
+	"SB_RscCompass" cutText ["", "PLAIN"];
+};
+*/
