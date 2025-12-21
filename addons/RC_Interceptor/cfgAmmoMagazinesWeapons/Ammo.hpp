@@ -4,7 +4,7 @@ class Interceptor_MP_ThrowAmmo_Base: GrenadeHand
 {
 	class Eventhandlers
 	{
-		fired="if (!local (_this select 6)) exitWith {}; [_this select 6, _this select 7] spawn RC_fnc_Interceptor_fired;";		//spawn to allow sleep
+		fired="if (!local (_this select 6)) exitWith {}; [_this select 6, _this select 7] spawn RC_fnc_Interceptor_firedEH;";		//spawn to allow sleep
 	};
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
 	//model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap_fly";
@@ -34,7 +34,6 @@ class Interceptor_Penetrator_MP: ammo_Penetrator_Vorona
 
 
 class ammo_Missile_CruiseBase;
-//class DB_ammo_switchblade_AT
 class Interceptor_MP_Core: ammo_Missile_CruiseBase
 {
 	soundHit1[]=
@@ -116,10 +115,9 @@ class Interceptor_MP_Base: Interceptor_MP_Core
 	triggerOnImpact=1;
 	deleteParentWhenTriggered=0;
 
-
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
 	//model="\A3\Weapons_F_Sams\Ammo\Bomb_05_F_fly.p3d";
-	proxyShape="\A3\Weapons_F_Sams\Ammo\Bomb_05_F_fly.p3d";	//supposedly no effect
+	proxyShape="\A3\Weapons_F_Sams\Ammo\Bomb_05_F_fly.p3d";		//supposedly no effect
 	soundFly[]=
 	{
 		//soundEngineOnExt[]=
@@ -138,8 +136,14 @@ class Interceptor_MP_Base: Interceptor_MP_Core
 	};
 	*/
 };
-class Interceptor_MP: Interceptor_MP_Base
+class Interceptor_MP_Pre: Interceptor_MP_Base
 {
+	timeToLive=600;
+	maxSpeed=97.222;
+	//maneuvDependsOnSpeedCoef=0.40000001;
+	fuseDistance=20;
+	//cost=5000;
+
 	hit=150;
 	htMax=1800;
 	htMin=60;
@@ -149,188 +153,60 @@ class Interceptor_MP: Interceptor_MP_Base
 	submunitionAmmo="Interceptor_Penetrator_MP";
 	submunitionDirectionType="SubmunitionModelDirection";
 };
-
-
-/*
-class ammo_Penetrator_Vorona;
-class FPV_RPG42_AT_Penetrator_MP: ammo_Penetrator_Vorona
+class Interceptor_MP: Interceptor_MP_Pre
 {
-	hit=480;
-	indirectHit=0;
-	indirectHitRange=0;
-	warheadName="TandemHEAT";
-	airFriction=-0.01;		//so shaped charge still has an effect when airbursted
-};
-class M_Vorona_HEAT;
-class FPV_RPG42_MP: M_Vorona_HEAT
-{
-	explosive=0.80000001;
-	hit=150;
-	htMax=1800;
-	htMin=60;
-	indirectHit=42;
-	indirectHitRange=7;	//7
-	submunitionInitSpeed=1000;
-	warheadName="TandemHEAT";
-	submunitionAmmo="FPV_RPG42_AT_Penetrator_MP";
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-0.1};
-	triggerOnImpact=1;
-	deleteParentWhenTriggered=0;
+	airFriction=0;			//vanilla 0.44999999
+	sideAirFriction=0;		//vanilla 0.5
+
+	initTime=0;
+	thrustTime=0;
+	thrust=0;				//0 causes jitter as it tries to fall?
 };
 
 
-class FPV_RPG42_AT_Penetrator_PvP: FPV_RPG42_AT_Penetrator_MP
+//testing alternatives
+class Interceptor_MP_Friction: Interceptor_MP_Pre
 {
-	hit=240;
-	warheadName="TandemHEAT";
-	//warheadName="HEAT";
-};
-class FPV_RPG42_PvP: FPV_RPG42_MP
-{
-	hit=150;
-	htMax=600;	//?
-	htMin=60;	//?
-	indirectHit=21;	//42
-	indirectHitRange=5.5;
-	warheadName="TandemHEAT";
-	//warheadName="HEAT";
-	submunitionAmmo="FPV_RPG42_AT_Penetrator_PvP";
-};
+	airFriction=0.5;
+	sideAirFriction=0.5;
 
-
-class FPV_RPG42_AT_Penetrator_Training: FPV_RPG42_AT_Penetrator_MP
-{
-	hit=3;
-	warheadName="HEAT";
-};
-class FPV_RPG42_Training: FPV_RPG42_MP
-{
-	hit=0;
-	htMax=0;	//?
-	htMin=0;	//?
-	indirectHit=1;
-	indirectHitRange=7;
-	warheadName="HEAT";
-	submunitionAmmo="FPV_RPG42_AT_Penetrator_Training";
-};
-
-
-class Default;
-class RC_target_confirmer_AB_ammo: Default
-{
-	model="\A3\weapons_f\launchers\RPG32\tbg32v_rocket.p3d";	//change to something smaller, and remove all explosion effects
-	simulation="shotMissile";
-	simulationStep=0.050000001;
-	timeToLive=1;
-	CraterEffects="";
-	explosionEffects="";
-
-	hit=0;
-	indirectHit=0;
-	indirectHitRange=0;
-
-	lockType=0;
-	laserLock=1;
-	irLock=1;
-	airLock=1;
-	nvLock=1;
-
-	missileLockCone=40;
-	missileKeepLockedCone=360;
-	missileLockMaxDistance=4000;
-	missileLockMinDistance=1;
-	missileLockMaxSpeed=150;
-	cmImmunity=1;
-	manualControl=1;
-	missileManualControlCone=0;
-	maxControlRange=4000;
-
-	initTime=1;
-	thrustTime=1;
+	initTime=0;
+	thrustTime=0;
 	thrust=0;
-	maneuvrability=0;
-	trackOversteer=1;
-	trackLead=1;
-	airFriction=0.01;
-	sideAirFriction=0.01;
-	maxSpeed=1;
-	typicalSpeed=1;
-	fuseDistance=1;
-	deflecting=1;
-	cost=1;
-
-	visibleFire=1;
-	audibleFire=1;
-	visibleFireTime=1;
-
-	aiAmmoUsageFlags="32";
-
-	soundHit[]=
-	{
-		"",
-		100,
-		1
-	};
-	soundFly[]=
-	{
-		"",
-		0.0099999998,
-		2
-	};
-	soundEngine[]=
-	{
-		"",
-		0.001,
-		1
-	};
-
-	class Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=4000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-			};
-		};
-	};
 };
-class RC_shapedcharge_reticle_AB_ammo: RC_target_confirmer_AB_ammo
+class Interceptor_MP_Thrust10: Interceptor_MP_Pre
 {
-	maxControlRange=0;
-	maxSpeed=1000;
-	typicalSpeed=1000;
-};
+	airFriction=0;
+	sideAirFriction=0;
 
-class RC_Crocus_Deployer_Ammo: RC_target_confirmer_AB_ammo
-{
-	model="\ArmaFPV\drone.p3d";
-	timeToLive=3;
-	initTime=3;
-	thrustTime=3;
-	typicalSpeed=1;
-	fuseDistance=3;
-	visibleFire=3;
-	audibleFire=3;
-	visibleFireTime=3;
+	initTime=0.1;
+	thrustTime=5;
+	thrust=10;
 };
-*/
+class Interceptor_MP_Thrust35: Interceptor_MP_Pre
+{
+	airFriction=0;
+	sideAirFriction=0;
+
+	initTime=0.1;
+	thrustTime=5;
+	thrust=35;
+};
+class Interceptor_MP_Friction_Thrust10: Interceptor_MP_Pre
+{
+	airFriction=0.5;
+	sideAirFriction=0.5;
+
+	initTime=0.1;
+	thrustTime=5;
+	thrust=10;
+};
+class Interceptor_MP_Friction_Thrust35: Interceptor_MP_Pre
+{
+	airFriction=0.5;
+	sideAirFriction=0.5;
+
+	initTime=0.1;
+	thrustTime=5;
+	thrust=35;
+};

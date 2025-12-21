@@ -21,7 +21,7 @@ class RscTitles
 		fadeout=0;
 		duration=0;
 	};
-	class SB_RscDisplayUAV
+	class Interceptor_RscDisplayUAV
 	{
 		idd=9999;
 		duration=1e+010;

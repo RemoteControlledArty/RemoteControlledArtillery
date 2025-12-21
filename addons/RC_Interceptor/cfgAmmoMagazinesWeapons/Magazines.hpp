@@ -13,49 +13,11 @@ class Interceptor_MP_Throw_Base: HandGrenade
 };
 class Interceptor_MP_Throw: Interceptor_MP_Throw_Base
 {
-	scope=2;
-	scopeArsenal=2;
+	//scope=2;
+	//scopeArsenal=2;
+	scope=1;
 
 	ammo="Interceptor_MP_ThrowAmmo";
 	displayName="MP Interceptor";
 	displayNameShort="MP Interceptor";
 };
-
-
-/*
-class RC_target_confirmer_mag;
-class RC_target_confirmer_AB_mag: RC_target_confirmer_mag
-{
-	ammo="RC_target_confirmer_AB_ammo";
-	initSpeed=1;
-	scope=1;
-	count=1;
-};
-class RC_shapedcharge_reticle_AB_mag: RC_target_confirmer_AB_mag
-{
-	ammo="RC_shapedcharge_reticle_AB_ammo";
-	initSpeed=1000;	//for reticle of bc=8; requires maxControlRange=0;
-};
-class RC_8xCrocus_Deployer_Mag: RC_target_confirmer_AB_mag
-{
-	ammo="RC_Crocus_Deployer_Ammo";
-	count=8;
-};
-class RC_6xCrocus_Deployer_Mag: RC_8xCrocus_Deployer_Mag
-{
-	count=6;
-};
-class RC_18xCrocus_Deployer_UGV_Mag: RC_8xCrocus_Deployer_Mag
-{
-	initSpeed=1000;		//only to prevent scorch mark on ground below the vic
-	count=18;
-};
-class RC_8xCrocus_Deployer_UGV_Mag: RC_18xCrocus_Deployer_UGV_Mag
-{
-	count=8;
-};
-class RC_6xCrocus_Deployer_UGV_Mag: RC_18xCrocus_Deployer_UGV_Mag
-{
-	count=6;
-};
-*/

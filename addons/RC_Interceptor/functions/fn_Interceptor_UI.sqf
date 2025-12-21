@@ -1,19 +1,5 @@
-/*
-private _effect_1 = ppEffectCreate ["FilmGrain", 1400]; 
-_effect_1 ppEffectAdjust [0.15,1,1,0.45,1, false]; 
-_effect_1 ppEffectCommit 0; 
-_effect_1 ppEffectEnable true;
-*/
+RC_INTERCEPTOR_SIGNAL=1;    //pre/re-define
 
-/*
-private _effect_2 = ppEffectCreate ["colorCorrections", 1500]; 
-_effect_2 ppEffectAdjust [1,1,0,[1,1,1,0],[1,1,1,0],[0.75,0.25,0,1]]; 
-_effect_2 ppEffectCommit 0; 
-_effect_2 ppEffectEnable true;
-*/
-
-
-RC_INTERCEPTOR_SIGNAL = 1;   //predefine, modified in loop
 private _effect_1 = missionNameSpace getVariable ["RC_fpv_ppEffect", []];
 private _adjust = linearConversion [1, 0, RC_INTERCEPTOR_SIGNAL, 0.1, 1.0];
 
@@ -37,7 +23,6 @@ private _PP_film = ppEffectCreate ["FilmGrain", 2000];
 _PP_film ppEffectEnable true;
 _PP_film ppEffectAdjust [[0.04, 1, _adjust] call BIS_fnc_lerp, 1, [4.09, 4.5, _adjust] call BIS_fnc_lerp, 0.5, 0.5, true];
 _PP_film ppEffectCommit 0;
-
 
 
 private _display = findDisplay 46 createDisplay "RscDisplayEmpty";

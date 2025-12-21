@@ -3,22 +3,24 @@ class CfgPatches
 	class RC_Interceptor
 	{
 		name="Interceptor";
-		author="Ascent";	//large credits to DarkBall for steering / HUD
-		//url="";
-		//requiredVersion=2.0799999;
+		author="Ascent";
+		//Major credit to DarkBall for the HUD and steering, i drastically rewrote most parts to suit interceptor drone functionality more.
+		//I would have made a inheritance based mod requiring their to be loaded BUT their mod completely BUGS mortars, so that was not possible!
 
 		/*
+		//not yet in
 		units[]=
 		{
 			"B_Interceptor_MP",
 			"O_Interceptor_MP",
 			"I_Interceptor_MP"
 		};
-		*/
-		/*
+		magazines[]=
+		{
+			"Interceptor_MP_Throw"
+		};
 		weapons[]=
 		{
-			"",
 			""
 		};
 		*/
@@ -37,16 +39,6 @@ class CfgPatches
 };
 
 
-/*
-//added automatically or manual?
-class cfgMods
-{
-	author="Ascent";
-	timepacked="code";
-};
-*/
-
-
 class CfgFunctions
 {
 	class RC
@@ -54,13 +46,12 @@ class CfgFunctions
 		class RC_Interceptor
 		{
 			file="\RC_Interceptor\functions";
-			//class Interceptor_preInit 		{preInit=1;};
-			class Interceptor_postInit 			{postInit=1;};
-			class Interceptor_fired 			{};
-			class Interceptor_createUAV_camera 	{};
-			class Interceptor_createUAV_vehicle {};
-			class Interceptor_waitUAVdestroy 	{};
-			class Interceptor_createUI 			{};
+			class Interceptor_define 			{postInit=1;};
+			class Interceptor_firedEH 			{};
+			class Interceptor_create			{};
+			//class Interceptor_create_veh		{};
+			class Interceptor_destroy 			{};
+			class Interceptor_UI 				{};
 		};
 	};
 };
