@@ -11,10 +11,131 @@ player addItem "Interceptor_MP_Throw";
 
 
 //global modifiers
+RC_ACC = 50.0;
+RC_MAXMS = 350.0 / 3.6;
+
+RC_PREV_VEL = [0, 0, 0];
+RC_PREV_POS = [0, 0, 0];
+RC_DT = 0.01;
+RC_G = 9.81;
+
+//velocity merging version
+fnc_Interceptor_SetVel = {
+	params ["_uav"];
+
+	private _dt = diag_deltaTime * 0.25 + 0.75 * RC_DT;
+	RC_DT = _dt;
+	
+
+	// 1. DIRECT TARGET LOGIC (Instant 0 or 350)
+	// Removed smoothing: _cur values now equal _tar values immediately
+	private _curFwd  = (if (RC_FORWARD) then { 1 } else { 0 }) + (if (RC_BACKWARD) then { -1 } else { 0 });
+	private _curSide = (if (RC_RIGHT) then { 1 } else { 0 }) + (if (RC_LEFT) then { -1 } else { 0 });
+	private _curVert = (if (RC_LIFT) then { 1 } else { 0 }) + (if (RC_DROP) then { -1 } else { 0 });
+
+	// 2. ORIENTATION (Camera Aim)
+	private _y = RC_X * RC_SENSIVITY;
+	private _p = RC_Y * RC_SENSIVITY;
+	
+	private _vDir = [sin _y * cos _p, cos _y * cos _p, sin _p];
+
+	private _currentVel = velocity _uav;
+	private _currentPos = position _uav;
+	private _vel = vectorMagnitude _currentVel;
+	
+	//-----------------------------------------------------------------------------------------------
+	// _steer is the direction we want to go
+	private _steer = [0,0,0];
+	if (_curFwd == 0 and _curSide == 0 and _curVert == 0) then 
+	{
+		// hover/stop
+		_steer = _currentVel vectorMultiply -1;
+	}
+	else
+	{
+		//has inputs
+		private _p0 = positionCameraToWorld [0,0,0];
+		private _pFront = positionCameraToWorld [0,0,1];
+		private _pRight = positionCameraToWorld [-1,0,0];
+		
+		private _front = vectorNormalized (_pFront vectorDiff _p0);
+		private _right = vectorNormalized (_pRight vectorDiff _p0);
+
+		_steer = (_front vectorMultiply _curFwd) vectorAdd (_right vectorMultiply _curSide) vectorAdd ([0,0,1] vectorMultiply _curVert);
+	};
+	// gravity is applied by the engine outside of the loop, so we may want to have gravity compensation "builtin"
+	// compensate gravity, use just enough accel to counter gravity
+	// the direction we want to fly to
+	private _steerDir = (vectorNormalized _steer);
+	private _steerZ = _steerDir#2;
+	private _steerRad = sqrt (1 - _steerZ * _steerZ);
+	// the acceleration we have to apply to overcome gravity, but still fly in the direction we want to head
+	private _accelMag = sqrt (RC_G * RC_G *_steerZ * _steerZ + RC_ACC * RC_ACC) - RC_G * _steerZ;
+	// steering direction on ground
+	private _steerFlat = vectorNormalized [_steer#0, _steer#1, 0];
+	// steering direction and magnitude, here RC_G is antigravity acceleration, _steerZ is the intended 
+	_steer = (_steerFlat vectorMultiply _steerRad * _accelMag) vectorAdd [0, 0, RC_G + _steerZ * _accelMag];
+	
+	// compute Drag deccel, to include wind, we would need to add the wind velocity here, the wind direction and magnitude
+	private _vel4Drag = _currentVel;
+	private _dragAcc = _vel4Drag vectorMultiply (-_vel * RC_ACC / RC_MAXMS / RC_MAXMS);
+	private _drag = vectorMagnitude _dragAcc;
+	// add drag and steering
+	private _accel = _dragAcc vectorAdd _steer;
+	// compute new velocity, integrate over time
+	private _newVel = _currentVel vectorAdd (_accel vectorMultiply _dt);
+		
+	// --- 7. DEBUG HUD (The "Clean List") ---
+	private _activeKeys = [];
+	if (RC_FORWARD)  then { _activeKeys pushBack "Forward" };
+	if (RC_BACKWARD) then { _activeKeys pushBack "Backward" };
+	if (RC_LEFT)	 then { _activeKeys pushBack "Left" };
+	if (RC_RIGHT)	then { _activeKeys pushBack "Right" };
+	if (RC_LIFT)	 then { _activeKeys pushBack "Up" };
+	if (RC_DROP)	 then { _activeKeys pushBack "Down" };
+	
+	private _keyString = if (count _activeKeys == 0) then {"None"} else {_activeKeys joinString " & "};
+	
+	private _deltaVel = (_currentPos vectorDiff RC_PREV_POS) vectorMultiply (1/_dt);
+	private _deltaAcc = (_deltaVel vectorDiff RC_PREV_VEL) vectorMultiply (1/_dt);
+	
+	hintSilent format [
+		"--- INTERCEPTOR DEBUG ---\nKeys: %1\nPos: %2 m\nActualS: %3 km/h\nActualVel: %4\nComputedS: %5 km/h\nComputedVel: %6\nAccel (RC_ACC): %7 m/s2\nComputedAcc: %8 m/s2\nComputedAccel: %9\nDrag: %10 m/s^2\nDragVec: %11\nFPS: %12",
+		_keyString,
+		[round (_currentPos#0), round (_currentPos#1), round (_currentPos#2)],
+		
+		round (vectorMagnitude _currentVel * 3.6),
+		[round (_currentVel#0), round (_currentVel#1), round (_currentVel#2)],
+		
+		round (vectorMagnitude _deltaVel * 3.6),
+		[round (_deltaVel#0), round (_deltaVel#1), round (_deltaVel#2)],
+		
+		RC_ACC,
+		round (vectorMagnitude _deltaAcc),
+		[round (_deltaAcc#0), round (_deltaAcc#1), round (_deltaAcc#2)],
+		_drag,
+		[round (_dragAcc#0), round (_dragAcc#1), round (_dragAcc#2)],
+		
+		round diag_fps
+	];
+	
+	// DEBUG systemChat for _dt
+	systemchat str _dt; 
+
+	// 6. APPLY
+	_uav setVelocity _newVel;	//_newVel
+	_uav setVectorDirAndUp [_vDir, [[0, -sin _p, cos _p], -_y] call BIS_fnc_rotateVector2D];
+	RC_PREV_VEL = _deltaVel;
+	RC_PREV_POS = _currentPos;
+};
+
+
+
+// ---------------------------- OLD ------------------------------
+//global modifiers
 RC_ACC = 20.0;
 RC_MAXMS = 350.0 / 3.6;
 RC_DRAGCOEFF = RC_ACC / RC_MAXMS / RC_MAXMS;
-
 
 //velocity merging version
 fnc_Interceptor_SetVel = {

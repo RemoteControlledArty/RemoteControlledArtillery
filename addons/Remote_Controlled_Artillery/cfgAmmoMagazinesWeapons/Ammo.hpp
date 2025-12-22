@@ -2580,6 +2580,37 @@ class RC_MP_NLOS_Nano: RC_IFV_MP_NLOS
 	//weaponLockSystem="1 + 2 + 16";
 	//cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 };
+class RC_MP_Interceptor_Lock: RC_MP_NLOS_Nano
+{
+	//model="";
+	autoSeekTarget=0;	//0 for testing as it often prevents saclos
+	manualControl=1;
+	maxControlRange=10000;
+	
+	maxSpeed=97.22;
+	thrustTime=180;
+	thrust=15;
+
+	weaponLockSystem="2 + 16";
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	cmImmunity=1;
+
+	missileLockMaxDistance=10000;
+	missileLockCone=360;
+	missileKeepLockedCone=360;
+
+	soundFly[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Fly_Titan",
+		0.63095737,
+		1.5,
+		300
+	};
+};
+
+
 /*
 class RC_AA_NLOS: RC_IFV_AA
 {

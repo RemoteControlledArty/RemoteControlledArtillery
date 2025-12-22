@@ -131,6 +131,15 @@ class RC_1Rnd_ATGM_MP_NLOS: 1Rnd_GAT_missiles
 };
 
 
+class RC_1Rnd_MP_Interceptor_Lock: RC_1Rnd_ATGM_MP_NLOS
+{
+	displayName="Interceptor Drone";
+	displayNameShort="Interceptor Drone";
+	displayNameMFDFormat="Interceptor";
+	ammo="RC_MP_Interceptor_Lock";
+};
+
+
 /*
 //for later use
 class PylonRack_4Rnd_BombDemine_01_F;

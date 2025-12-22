@@ -420,10 +420,18 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 			};
 			magazines[]=
 			{
+				/*
 				"RC_1Rnd_ATGM_MP_NLOS",
 				"RC_1Rnd_ATGM_MP_NLOS",
 				"RC_1Rnd_ATGM_MP_NLOS",
 				"RC_1Rnd_ATGM_MP_NLOS"
+				*/
+				//*
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock"
+				//*/
 			};
 
 			class Components: Components
@@ -444,7 +452,7 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplayComponent";
+					defaultDisplay="VehicleMissileDisplay";
 
 					class Components
 					{
@@ -457,14 +465,12 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
-						/*
 						class VehicleMissileDisplay
 						{
 							componentType="TransportFeedDisplayComponent";
 							source="Missile";
 							resource="RscTransportCameraComponentMissile";
 						};
-						*/
 					};
 				};
 			};

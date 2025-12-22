@@ -364,7 +364,8 @@ class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
 	{
 		"RC_1Rnd_ATGM_MP_LOS",
 		"RC_1Rnd_ATGM_MP_Overfly",
-		"RC_1Rnd_ATGM_MP_NLOS"
+		"RC_1Rnd_ATGM_MP_NLOS",
+		"RC_1Rnd_MP_Interceptor_Lock"
 	};
 
 	modes[]=
