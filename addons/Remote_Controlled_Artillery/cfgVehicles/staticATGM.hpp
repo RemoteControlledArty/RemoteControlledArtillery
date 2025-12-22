@@ -420,18 +420,16 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 			};
 			magazines[]=
 			{
-				/*
 				"RC_1Rnd_ATGM_MP_NLOS",
 				"RC_1Rnd_ATGM_MP_NLOS",
 				"RC_1Rnd_ATGM_MP_NLOS",
 				"RC_1Rnd_ATGM_MP_NLOS"
-				*/
-				//*
+				/*
 				"RC_1Rnd_MP_Interceptor_Lock",
 				"RC_1Rnd_MP_Interceptor_Lock",
 				"RC_1Rnd_MP_Interceptor_Lock",
 				"RC_1Rnd_MP_Interceptor_Lock"
-				//*/
+				*/
 			};
 
 			class Components: Components
