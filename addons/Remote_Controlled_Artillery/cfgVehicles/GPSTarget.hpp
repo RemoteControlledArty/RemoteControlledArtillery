@@ -40,10 +40,33 @@ class RC_ArtySourceTarget: RC_GPSDatalinkTarget
 };
 
 
+//class Air;
 class Helicopter;
+//class RC_Projectile_Target_Core: Air
 class RC_Projectile_Target_Core: Helicopter
 {
-	//simulation="helicopter";	//Air
+	/*
+	simulation="helicopter";	//Air
+	//simulation="airplanex";
+
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
+	proxyShape="\A3\Weapons_F_Sams\Ammo\Bomb_05_F_fly.p3d";
+
+	fuelCapacity=0;
+	gearsUpFrictionCoef=0;
+	//airBrakeFrictionCoef=3;
+	airFrictionCoefs2[]={0,0,0};
+	airFrictionCoefs1[]={0,0,0};
+	airFrictionCoefs0[]={0,0,0};
+	enableSweep=1;
+	liftForceCoef=0;
+	cyclicAsideForceCoef=0;
+	cyclicForwardForceCoef=0;
+	backRotorForceCoef=0;
+	bodyFrictionCoef=0;
+	mainRotorSpeed=0;
+	backRotorSpeed=0;
+	*/
 
 	class HitPoints;
 	class HitHull;
