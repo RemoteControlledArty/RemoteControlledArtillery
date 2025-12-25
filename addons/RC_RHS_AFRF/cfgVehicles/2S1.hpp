@@ -213,7 +213,7 @@ class RC_2S1_WD: RC_2S1
 	};
 	*/
 
-	displayName="122 PSH 74";	//2S1
+	displayName="2S1";	//122 PSH 74
 	editorSubcategory="RC_Howitzer_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -491,7 +491,7 @@ class RC_2S1_A_I: RC_2S1_A
 
 class RC_2S1_LC_WD: RC_2S1_WD
 {
-	displayName="122 PSH 74 LowCap";	//2S1
+	displayName="2S1 LowCap";	//122 PSH 74 LowCap
 	editorSubcategory="RC_ReducedAmmo_subcat";
 
 	class Turrets: Turrets
