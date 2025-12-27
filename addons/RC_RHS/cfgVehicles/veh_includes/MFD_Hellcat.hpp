@@ -1,5 +1,4 @@
 defaultUserMFDvalues[]={0,1,0.30000001,1};
-
 class MFD
 {
 	class AirplaneHUD
