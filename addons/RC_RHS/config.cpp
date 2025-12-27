@@ -261,4 +261,5 @@ class CfgVehicles
 	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
 	//#include "\RC_RHS\cfgVehicles\HIMARS.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
+	#include "\RC_RHS\cfgVehicles\H_6M.hpp"
 };
