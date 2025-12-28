@@ -2,12 +2,15 @@ class PylonWeapon_300Rnd_20mm_shells;
 class RC_PylonWeapon_300Rnd_20mm_shells_slow: PylonWeapon_300Rnd_20mm_shells
 {
 	author="Ascent";
+	/*
 	displayName="20mm MP-DF";
 	displayNameShort="20mm MP-DF";
-	/*
+	*/
+	//*
+	//use airlock1 ones
 	displayName="20mm MPAB-DF";
 	displayNameShort="20mm MPAB-DF";
-	*/
+	/*/
 
 	pylonWeapon="RC_Twin_Cannon_20mm_gunpod_slow";
 	hardpoints[]=

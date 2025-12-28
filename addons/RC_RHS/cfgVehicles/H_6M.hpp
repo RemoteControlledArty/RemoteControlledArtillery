@@ -14,10 +14,8 @@ class RC_MELB_AH6M_Core: RHS_MELB_AH6M
 };
 class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 {
-	displayName="OM AH-6M";
+	displayName="AH-6 OM (optionally manned)";
 	editorSubcategory="RC_Heli_subcat";
-
-	driverCompartments="Compartment1";
 
 	bodyFrictionCoef=0.2;
 	maxSpeed=250;
@@ -40,6 +38,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 	gunnerCanFire=1;
 	enableManualFire=1;
 
+	driverCompartments="Compartment1";
 	crewCrashProtection=0.1;		//0.2
 	ejectDeadCargo=1;
 	hullDamageCauseExplosion=1;		//1
@@ -229,7 +228,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 			gunnerCompartments="Compartment2";
 			memoryPointsGetInGunner="pos L1";
 			memoryPointsGetInGunnerDir="pos L1 dir";
-			gunnerName="Passenger (Left Bench 1)";
+			gunnerName="Front Left";
 			proxyIndex=3;
 			maxElev=45;
 			minElev=-60;
@@ -250,17 +249,18 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 			gunnerCompartments="compartment3";
 			memoryPointsGetInGunner="pos R1";
 			memoryPointsGetInGunnerDir="pos R1 dir";
-			gunnerName="Passenger (Right Bench 1)";
+			gunnerName="Front Right";
 			proxyIndex=4;
 			maxTurn=15;
 			minTurn=-95;
 		};
+		/*
 		class CargoTurret_05: CargoTurret_04
 		{
 			gunnerCompartments="Compartment2";
 			memoryPointsGetInGunner="pos L2";
 			memoryPointsGetInGunnerDir="pos L2 dir";
-			gunnerName="Passenger (Left Bench 2)";
+			gunnerName="Middle Left";
 			proxyIndex=5;
 			maxElev=45;
 			minElev=-45;
@@ -277,7 +277,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 			gunnerCompartments="compartment3";
 			memoryPointsGetInGunner="pos R2";
 			memoryPointsGetInGunnerDir="pos R2 dir";
-			gunnerName="Passenger (Right Bench 2)";
+			gunnerName="Middle Right";
 			proxyIndex=6;
 			class dynamicViewLimits
 			{
@@ -285,29 +285,38 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 				CargoTurret_08[]={-50,95};
 			};
 		};
-		class CargoTurret_07: CargoTurret_06
+		*/
+		class CargoTurret_07: CargoTurret_04
 		{
 			gunnerCompartments="Compartment2";
 			memoryPointsGetInGunner="pos L3";
 			memoryPointsGetInGunnerDir="pos L3 dir";
-			gunnerName="Passenger (Left Bench 3)";
+			gunnerName="Rear Left";
 			proxyIndex=7;
+			maxElev=45;
+			minElev=-45;
+			maxTurn=95;
+			minTurn=-95;
+			/*
 			class dynamicViewLimits
 			{
 				CargoTurret_05[]={-50,95};
 			};
+			*/
 		};
 		class CargoTurret_08: CargoTurret_07
 		{
 			gunnerCompartments="compartment3";
 			memoryPointsGetInGunner="pos R3";
 			memoryPointsGetInGunnerDir="pos R3 dir";
-			gunnerName="Passenger (Right Bench 3)";
+			gunnerName="Rear Right";
 			proxyIndex=8;
+			/*
 			class dynamicViewLimits
 			{
 				CargoTurret_06[]={-95,50};
 			};
+			*/
 		};
 
 
@@ -787,7 +796,7 @@ class RC_MELB_AH6M_UV: RC_MELB_AH6M_Base
 	uavCameraDriverPos="commanderview";
 	uavCameraDriverDir="commanderview";
 
-	//driverForceOptics=1;					//OFF FOR MFD TESTING
+	driverForceOptics=1;
 	driverCompartments="Compartment0";
 };
 class RC_MELB_AH6M: RC_MELB_AH6M_UV

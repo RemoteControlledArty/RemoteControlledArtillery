@@ -10,8 +10,8 @@ class RC_Twin_Cannon_20mm_gunpod_slow: RC_Twin_Cannon_20mm_gunpod_slow_core
 	weaponLockDelay=0;
 	weaponLockSystem=0;
 	lockAcquire=0;	//manual
-	ballisticsComputer="4 + 8";
-	//ballisticsComputer="1 + 4 + 8";
+	//ballisticsComputer="4 + 8";
+	ballisticsComputer="1";
 	displayName="20mm AC";
 	
 	/*
