@@ -1,4 +1,7 @@
 class Default;
+#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\PylonWeapons.hpp"
+
+
 class RC_target_confirmer: Default
 {
 	scope=1;

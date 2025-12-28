@@ -5,6 +5,8 @@ class RC_MELB_AH6M_Core: RHS_MELB_AH6M
 	class CopilotTurret;
 	class OpticsIn;
 	class Wide;
+	class Components;
+	class AnimationSources;
 	class UserActions;
 	scope=0;
 	scopeCurator=0;
@@ -21,17 +23,23 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 	liftForceCoef=1.7;
 	cyclicAsideForceCoef=2;
 	cyclicForwardForceCoef=0.43000001;
-	startDuration=3;
-	//slingLoadMaxCargoMass=25000;
-
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-	reportOwnPosition=1;
+	startDuration=7.5;				//10
+	slingLoadMemoryPoint="slingLoad0";
+	slingLoadMaxCargoMass=4000;		//900
+	maximumLoad=1500;				//1000
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";	//4+8
+	showAllTargets="2 + 4";
+	receiveRemoteTargets=1;
+	reportRemoteTargets=1;
+	reportOwnPosition=1;
+	allowTabLock=1;
+	canUseScanner=1;
+	gunnerCanFire=1;
+	enableManualFire=1;
 
-	crewCrashProtection=0.01;		//0.2
+	crewCrashProtection=0.1;		//0.2
 	ejectDeadCargo=1;
 	hullDamageCauseExplosion=1;		//1
 	hullExplosionDelay[]={10,20};	//{10,20}
@@ -52,11 +60,90 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		};
 	};
 
-	#include "\RC_RHS\cfgVehicles\veh_includes\MFD_AH99.hpp"
+	#include "\Remote_Controlled_Artillery\MFD\MFD_merged.hpp"
 
-	//cam
-	//uavCameraDriverPos="commanderview";
-	//uavCameraDriverDir="commanderview";
+	class Components: Components
+	{
+		class TransportPylonsComponent
+		{
+			UIPicture = "\rhsusf\addons\rhsusf_melb\data\loadouts\RHS_AH6M_EDEN_CA.paa";
+			class pylons
+			{
+				class pylon1
+				{
+					hardpoints[]={"20MM_TWIN_CANNON","RHS_HP_MELB","RHS_HP_MELB_L"};
+					priority=2;
+					attachment="RC_PylonWeapon_300Rnd_20mm_shells_slow";
+					maxweight=1200;
+					UIposition[]={0.625,0.2};
+					bay=-1;
+					turret[]={0};
+					hitpoint="HitPylon1";
+				};
+				class pylon2 : pylon1
+				{
+					hardpoints[]		= {"RHS_HP_MELB_M134"};
+					UIposition[]		= {0.562,0.30};
+					priority			= 1;
+					attachment			= "rhs_mag_m134_pylon_3000";
+					hitpoint 			= HitPylon2;
+				};
+				class pylon3 : pylon2
+				{
+					UIposition[]		= {0.103,0.30};
+					mirroredMissilePos	= 2;
+					attachment			= "rhs_mag_m134_pylon_3000";
+					hitpoint 			= HitPylon3;
+				};
+				class pylon4 : pylon1
+				{
+					hardpoints[]		= {"RHS_HP_MELB","RHS_HP_MELB_R"};
+					UIposition[]		= {0.04,0.20};
+					//attachment			= "rhs_mag_M151_7";
+					mirroredMissilePos	= 1;
+					turret[]={};
+					hitpoint 			= HitPylon4;
+				};
+			};
+
+			class Presets
+			{
+				class Light
+				{
+					attachment[] =
+					{
+						"rhs_mag_M151_7",
+						"rhs_mag_m134_pylon_3000",
+						"rhs_mag_m134_pylon_3000",
+						"rhs_mag_M151_7"
+					};
+					displayname = "Light";
+				};
+				class Medium
+				{
+					attachment[] =
+					{
+						"rhsusf_mag_gau19_melb_left",
+						"",
+						"",
+						"rhs_mag_M151_19"
+					};
+					displayname = "Medium";
+				};
+				class Heavy
+				{
+					attachment[] =
+					{
+						"rhsusf_mag_gau19_melb_left",
+						"",
+						"",
+						"rhs_mag_AGM114K_2"
+					};
+					displayname = "Heavy";
+				};
+			};
+		};
+	};
 
 	memoryPointTaskMarker="TaskMarker_1_pos";
 	memoryPointDriverOptics="commanderview";
@@ -114,16 +201,54 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		controllable=0;	//test 1
 	};
 
+	class AnimationSources: AnimationSources
+	{
+		class Addcrosshair
+		{
+			source="user";
+			animPeriod=1;
+			initPhase=0;
+		};
+	};
+
 	class Turrets: Turrets
 	{
 		class CopilotTurret: CopilotTurret
 		{
-			primaryGunner=1;
-			gunnerCompartments="Compartment1";
+			dontCreateAI=1;
 
-			showAllTargets=1;
+			//showHMD=0;
+			primaryGunner=0;
+			primaryObserver=1;
+			gunnerCompartments="Compartment1";
+			showAllTargets="2 + 4";
+
+			//test values
+			gunnerCanFire=1;
+			enableManualFire=1;
+			vehicleWeaponAccess=1;
+			inGunnerMayFire = 1;
 			canUseScanners=1;
 			allowTabLock=1;	//0
+			isCopilot=1;
+			//gunnerUsesPilotView = 0;	//??? in Mi48
+
+			stabilizedInAxes=3;
+
+			/*
+			weapons[]=
+			{
+				"RC_Twin_Cannon_20mm_gunpod_slow",
+				"rhs_weap_laserDesignator_AI",
+				"rhs_weap_fcs_ah64"
+			};
+			magazines[]=
+			{
+				"RC_PylonWeapon_300Rnd_20mm_shells_slow",
+				"rhs_laserfcsmag",
+				"rhs_LaserMag_ai"
+			};
+			*/
 
 			/*
 			body="obsTurret";
@@ -777,7 +902,18 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 	};
 	*/
 };
-class RC_MELB_AH6M: RC_MELB_AH6M_Base
+class RC_MELB_AH6M_UV: RC_MELB_AH6M_Base
+{
+	isUav=1;
+	vehicleClass="Autonomous";
+
+	uavCameraDriverPos="commanderview";
+	uavCameraDriverDir="commanderview";
+
+	//driverForceOptics=1;					//OFF FOR MFD TESTING
+	driverCompartments="Compartment0";
+};
+class RC_MELB_AH6M: RC_MELB_AH6M_UV
 {
 	scope=2;
 	scopeCurator=2;
