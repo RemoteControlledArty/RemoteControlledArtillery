@@ -27,6 +27,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 	slingLoadMaxCargoMass=4000;		//900
 	maximumLoad=1500;				//1000
 
+	//#include "\Remote_Controlled_Artillery\MFD\MFD_merged.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";	//4+8
 	showAllTargets="2 + 4";
@@ -59,8 +60,6 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 			statement="this lockCameraTo [this modelToWorld [0, 100, 90], [0], true]";
 		};
 	};
-
-	#include "\Remote_Controlled_Artillery\MFD\MFD_merged.hpp"
 
 	class Components: Components
 	{
