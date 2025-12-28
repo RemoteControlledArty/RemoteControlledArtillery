@@ -3,6 +3,7 @@ class RC_MELB_AH6M_Core: RHS_MELB_AH6M
 {
 	class Turrets;
 	class CopilotTurret;
+	class CargoTurret;
 	class OpticsIn;
 	class Wide;
 	class Components;
@@ -71,14 +72,14 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 			{
 				class pylon1
 				{
-					hardpoints[]={"20MM_TWIN_CANNON","RHS_HP_MELB","RHS_HP_MELB_L"};
-					priority=2;
-					attachment="RC_PylonWeapon_300Rnd_20mm_shells_slow";
-					maxweight=1200;
-					UIposition[]={0.625,0.2};
-					bay=-1;
-					turret[]={0};
-					hitpoint="HitPylon1";
+					hardpoints[]		= {"20MM_TWIN_CANNON","RHS_HP_MELB","RHS_HP_MELB_L"};
+					priority			= 2;
+					attachment			= "RC_PylonWeapon_300Rnd_20mm_shells_slow";
+					maxweight			= 1200;
+					UIposition[]		= {0.625,0.2};
+					bay					= -1;
+					turret[]			= {0};
+					hitpoint			= "HitPylon1";
 				};
 				class pylon2 : pylon1
 				{
@@ -201,8 +202,17 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		controllable=0;	//test 1
 	};
 
+	transportsoldier=1;
+	cargoProxyIndexes[]={9};
+
 	class AnimationSources: AnimationSources
 	{
+		class AddBenches
+		{
+			source="user";
+			animPeriod=1e-006;
+			initPhase=1;
+		};
 		class Addcrosshair
 		{
 			source="user";
@@ -213,6 +223,94 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 
 	class Turrets: Turrets
 	{
+		class CargoTurret_03: CargoTurret
+		{
+			gunnerAction="passenger_bench_1";
+			gunnerCompartments="Compartment2";
+			memoryPointsGetInGunner="pos L1";
+			memoryPointsGetInGunnerDir="pos L1 dir";
+			gunnerName="Passenger (Left Bench 1)";
+			proxyIndex=3;
+			maxElev=45;
+			minElev=-60;
+			maxTurn=95;
+			minTurn=-15;
+			isPersonTurret=1;
+			ejectDeadGunner=0;
+			playerPosition=4;
+			soundAttenuationTurret="";
+			disableSoundAttenuation=1;
+			gunnerGetInAction="GetInHeli_Light_01bench";
+			class Hitpoints
+			{
+			};
+		};
+		class CargoTurret_04: CargoTurret_03
+		{
+			gunnerCompartments="compartment3";
+			memoryPointsGetInGunner="pos R1";
+			memoryPointsGetInGunnerDir="pos R1 dir";
+			gunnerName="Passenger (Right Bench 1)";
+			proxyIndex=4;
+			maxTurn=15;
+			minTurn=-95;
+		};
+		class CargoTurret_05: CargoTurret_04
+		{
+			gunnerCompartments="Compartment2";
+			memoryPointsGetInGunner="pos L2";
+			memoryPointsGetInGunnerDir="pos L2 dir";
+			gunnerName="Passenger (Left Bench 2)";
+			proxyIndex=5;
+			maxElev=45;
+			minElev=-45;
+			maxTurn=95;
+			minTurn=-95;
+			class dynamicViewLimits
+			{
+				CargoTurret_03[]={-30,95};
+				CargoTurret_07[]={-95,50};
+			};
+		};
+		class CargoTurret_06: CargoTurret_05
+		{
+			gunnerCompartments="compartment3";
+			memoryPointsGetInGunner="pos R2";
+			memoryPointsGetInGunnerDir="pos R2 dir";
+			gunnerName="Passenger (Right Bench 2)";
+			proxyIndex=6;
+			class dynamicViewLimits
+			{
+				CargoTurret_04[]={-95,30};
+				CargoTurret_08[]={-50,95};
+			};
+		};
+		class CargoTurret_07: CargoTurret_06
+		{
+			gunnerCompartments="Compartment2";
+			memoryPointsGetInGunner="pos L3";
+			memoryPointsGetInGunnerDir="pos L3 dir";
+			gunnerName="Passenger (Left Bench 3)";
+			proxyIndex=7;
+			class dynamicViewLimits
+			{
+				CargoTurret_05[]={-50,95};
+			};
+		};
+		class CargoTurret_08: CargoTurret_07
+		{
+			gunnerCompartments="compartment3";
+			memoryPointsGetInGunner="pos R3";
+			memoryPointsGetInGunnerDir="pos R3 dir";
+			gunnerName="Passenger (Right Bench 3)";
+			proxyIndex=8;
+			class dynamicViewLimits
+			{
+				CargoTurret_06[]={-95,50};
+			};
+		};
+
+
 		class CopilotTurret: CopilotTurret
 		{
 			dontCreateAI=1;
@@ -361,15 +459,6 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 					};
 					*/
 				};
-				/*
-				class WideT: Wide
-				{
-					initFov=0.2;
-					minFov=0.2;
-					maxFov=0.2;
-					gunnerOpticsModel="rhsusf\addons\rhsusf_melb\data\optics\melb_flir_w2.p3d";
-				};
-				*/
 			};
 		};
 	};
@@ -598,10 +687,6 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		};
 	};
 
-	class pilotCamera
-	{
-	};
-
 	armor=35;
 	armorStructural=20;
 	epeImpulseDamageCoef=20;
@@ -690,214 +775,6 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 			armor=2;
 			radius=0.15000001;
 			explosionShielding=2;
-		};
-		class HitPylon1
-		{
-			armor=-30;
-			name="hit_pylon_1";
-			passThrough=0;
-			minimalHit=-0.1;
-			explosionShielding=0.1;
-			radius=0.69999999;
-			visual="-";
-			class DestructionEffects
-			{
-				ammoExplosionEffect="";
-				effectRadius=1;
-				ignoreFuel=1;
-				class RHS_Pylon_Flash
-				{
-					simulation="particles";
-					type="RHS_ERA_Flash";
-					position="fx_pylon_1";
-					intensity=0.5;
-					interval=1;
-					lifeTime=0.0060000001;
-				};
-				class RHS_Pylon_Sound
-				{
-					simulation="sound";
-					type="RHS_ERA_Explosion_Sound";
-					position="fx_pylon_1";
-					intensity=1;
-					interval=1;
-					lifeTime=1;
-				};
-				class RHS_Pylon_Smoke
-				{
-					simulation="particles";
-					type="RHS_ERA_Smoke";
-					position="fx_pylon_1";
-					intensity=0.1;
-					interval=1;
-					lifeTime=0.039999999;
-				};
-				class RHS_Pylon_Shard
-				{
-					simulation="particles";
-					type="RHS_ERA_Shard";
-					position="fx_pylon_1";
-					intensity=1;
-					interval=1;
-					lifeTime=0.029999999;
-				};
-			};
-		};
-		class HitPylon2
-		{
-			armor=-30;
-			name="hit_pylon_2";
-			passThrough=0;
-			minimalHit=-0.1;
-			explosionShielding=0.1;
-			radius=0.69999999;
-			visual="-";
-			class DestructionEffects
-			{
-				ammoExplosionEffect="";
-				effectRadius=1;
-				ignoreFuel=1;
-				class RHS_Pylon_Flash
-				{
-					simulation="particles";
-					type="RHS_ERA_Flash";
-					position="fx_pylon_2";
-					intensity=0.5;
-					interval=1;
-					lifeTime=0.0060000001;
-				};
-				class RHS_Pylon_Sound
-				{
-					simulation="sound";
-					type="RHS_ERA_Explosion_Sound";
-					position="fx_pylon_2";
-					intensity=1;
-					interval=1;
-					lifeTime=1;
-				};
-				class RHS_Pylon_Smoke
-				{
-					simulation="particles";
-					type="RHS_ERA_Smoke";
-					position="fx_pylon_2";
-					intensity=0.1;
-					interval=1;
-					lifeTime=0.039999999;
-				};
-				class RHS_Pylon_Shard
-				{
-					simulation="particles";
-					type="RHS_ERA_Shard";
-					position="fx_pylon_2";
-					intensity=1;
-					interval=1;
-					lifeTime=0.029999999;
-				};
-			};
-		};
-		class HitPylon3
-		{
-			armor=-30;
-			name="hit_pylon_3";
-			passThrough=0;
-			minimalHit=-0.1;
-			explosionShielding=0.1;
-			radius=0.69999999;
-			visual="-";
-			class DestructionEffects
-			{
-				ammoExplosionEffect="";
-				effectRadius=1;
-				ignoreFuel=1;
-				class RHS_Pylon_Flash
-				{
-					simulation="particles";
-					type="RHS_ERA_Flash";
-					position="fx_pylon_3";
-					intensity=0.5;
-					interval=1;
-					lifeTime=0.0060000001;
-				};
-				class RHS_Pylon_Sound
-				{
-					simulation="sound";
-					type="RHS_ERA_Explosion_Sound";
-					position="fx_pylon_3";
-					intensity=1;
-					interval=1;
-					lifeTime=1;
-				};
-				class RHS_Pylon_Smoke
-				{
-					simulation="particles";
-					type="RHS_ERA_Smoke";
-					position="fx_pylon_3";
-					intensity=0.1;
-					interval=1;
-					lifeTime=0.039999999;
-				};
-				class RHS_Pylon_Shard
-				{
-					simulation="particles";
-					type="RHS_ERA_Shard";
-					position="fx_pylon_3";
-					intensity=1;
-					interval=1;
-					lifeTime=0.029999999;
-				};
-			};
-		};
-		class HitPylon4
-		{
-			armor=-30;
-			name="hit_pylon_4";
-			passThrough=0;
-			minimalHit=-0.1;
-			explosionShielding=0.1;
-			radius=0.69999999;
-			visual="-";
-			class DestructionEffects
-			{
-				ammoExplosionEffect="";
-				effectRadius=1;
-				ignoreFuel=1;
-				class RHS_Pylon_Flash
-				{
-					simulation="particles";
-					type="RHS_ERA_Flash";
-					position="fx_pylon_4";
-					intensity=0.5;
-					interval=1;
-					lifeTime=0.0060000001;
-				};
-				class RHS_Pylon_Sound
-				{
-					simulation="sound";
-					type="RHS_ERA_Explosion_Sound";
-					position="fx_pylon_4";
-					intensity=1;
-					interval=1;
-					lifeTime=1;
-				};
-				class RHS_Pylon_Smoke
-				{
-					simulation="particles";
-					type="RHS_ERA_Smoke";
-					position="fx_pylon_4";
-					intensity=0.1;
-					interval=1;
-					lifeTime=0.039999999;
-				};
-				class RHS_Pylon_Shard
-				{
-					simulation="particles";
-					type="RHS_ERA_Shard";
-					position="fx_pylon_4";
-					intensity=1;
-					interval=1;
-					lifeTime=0.029999999;
-				};
-			};
 		};
 	};
 	*/

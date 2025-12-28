@@ -14,7 +14,7 @@ class MFD
 		class Bones
 		{
 			//additions
-			//#include "\Remote_Controlled_Artillery\MFD\MFD_bones_static.hpp"
+			#include "\Remote_Controlled_Artillery\MFD\MFD_bones_static.hpp"
 			#include "\Remote_Controlled_Artillery\MFD\MFD_bones_vector.hpp"
 			#include "\Remote_Controlled_Artillery\MFD\MFD_bones_vertical.hpp"
 			#include "\Remote_Controlled_Artillery\MFD\MFD_bones_horizontal.hpp"
