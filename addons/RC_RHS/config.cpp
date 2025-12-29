@@ -130,9 +130,9 @@ class CfgPatches
 			"RC_M119_LC_O",
 			"RC_M119_LC_I",
 			
-			"RC_MELB_AH6M",
-			"RC_MELB_AH6M_O",
-			"RC_MELB_AH6M_I",
+			"RC_MELB_AH6_OM",
+			"RC_MELB_AH6_OM_O",
+			"RC_MELB_AH6_OM_I",
 			
 			/*
 			"RC_HIMARS_D",
@@ -265,5 +265,6 @@ class CfgVehicles
 	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
 	//#include "\RC_RHS\cfgVehicles\HIMARS.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
-	#include "\RC_RHS\cfgVehicles\H_6M.hpp"
+	#include "\RC_RHS\cfgVehicles\AH6_OM.hpp"
+	//#include "\RC_RHS\cfgVehicles\MH6_OM.hpp"
 };

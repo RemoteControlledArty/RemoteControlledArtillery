@@ -1,5 +1,5 @@
 class RHS_MELB_AH6M;
-class RC_MELB_AH6M_Core: RHS_MELB_AH6M
+class RC_MELB_AH6_OM_Core: RHS_MELB_AH6M
 {
 	class Turrets;
 	class CopilotTurret;
@@ -12,24 +12,25 @@ class RC_MELB_AH6M_Core: RHS_MELB_AH6M
 	scope=0;
 	scopeCurator=0;
 };
-class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
+class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 {
 	displayName="AH-6 OM (optionally manned)";
 	editorSubcategory="RC_Heli_subcat";
 
-	bodyFrictionCoef=0.2;
-	maxSpeed=250;
-	liftForceCoef=1.7;
-	cyclicAsideForceCoef=2;
-	cyclicForwardForceCoef=0.43000001;
-	startDuration=7.5;				//10
+	bodyFrictionCoef=0.2;				//0.3
+	maxSpeed=250;						//200
+	liftForceCoef=1;					//1				//1.7
+	cyclicAsideForceCoef=1.65;			//1.65			//2
+	cyclicForwardForceCoef=0.40000001;	//0.40000001	//0.43000001
+	backrotorforcecoef=0.89999998;		//0.89999998	//0.89999998
+	startDuration=7.5;					//10
 	slingLoadMemoryPoint="slingLoad0";
-	slingLoadMaxCargoMass=4000;		//900
-	maximumLoad=1500;				//1000
+	slingLoadMaxCargoMass=4000;			//900
+	maximumLoad=1500;					//1000
 
 	//#include "\Remote_Controlled_Artillery\MFD\MFD_merged.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
-	lockDetectionSystem="2+4+8";	//4+8
+	lockDetectionSystem="2+4+8";		//4+8
 	showAllTargets="2 + 4";
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
@@ -40,10 +41,10 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 	enableManualFire=1;
 
 	driverCompartments="Compartment1";
-	crewCrashProtection=0.1;		//0.2
+	crewCrashProtection=0.1;			//0.2
 	ejectDeadCargo=1;
-	hullDamageCauseExplosion=1;		//1
-	hullExplosionDelay[]={10,20};	//{10,20}
+	hullDamageCauseExplosion=1;			//1
+	hullExplosionDelay[]={20,30};		//{10,20}
 
 	class UserActions: UserActions
 	{
@@ -224,6 +225,9 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 
 	class Turrets: Turrets
 	{
+		class CargoTurret_01 {};
+		class CargoTurret_02 {};
+		
 		class CargoTurret_03: CargoTurret
 		{
 			gunnerAction="passenger_bench_1";
@@ -790,7 +794,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 	};
 	*/
 };
-class RC_MELB_AH6M_UV: RC_MELB_AH6M_Base
+class RC_MELB_AH6_OM_UV: RC_MELB_AH6_OM_Base
 {
 	isUav=1;
 	vehicleClass="Autonomous";
@@ -801,7 +805,7 @@ class RC_MELB_AH6M_UV: RC_MELB_AH6M_Base
 	driverForceOptics=1;
 	driverCompartments="Compartment0";
 };
-class RC_MELB_AH6M: RC_MELB_AH6M_UV
+class RC_MELB_AH6_OM: RC_MELB_AH6_OM_UV
 {
 	scope=2;
 	scopeCurator=2;
@@ -809,11 +813,11 @@ class RC_MELB_AH6M: RC_MELB_AH6M_UV
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 };
-class RC_MELB_AH6M_O: RC_MELB_AH6M
+class RC_MELB_AH6_OM_O: RC_MELB_AH6_OM
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
 };
-class RC_MELB_AH6M_I: RC_MELB_AH6M
+class RC_MELB_AH6_OM_I: RC_MELB_AH6_OM
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 };
