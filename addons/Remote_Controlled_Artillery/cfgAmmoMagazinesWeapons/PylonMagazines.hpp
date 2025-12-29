@@ -6,12 +6,13 @@ class RC_PylonWeapon_shells_slow_base: PylonWeapon_300Rnd_20mm_shells
 
 	hardpoints[]=
 	{
-		"B_A143_BUZZARD_CENTER_PYLON",
-		"20MM_TWIN_CANNON",
-		"20MM_CANNON",
-		"DAGR",
-		"DAR",
-		"B_MISSILE_PYLON"
+		"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","20MM_CANNON",
+		
+		"DAGR","DAR","B_MISSILE_PYLON",
+
+		"GX_HELI_SMALL",
+
+		"UNI_LEAFLETS_PYLON"
 	};
 
 	//mass=230;
@@ -34,6 +35,7 @@ class RC_PylonWeapon_300Rnd_20mm_shells_slow: RC_PylonWeapon_shells_slow_base
 {
 	displayName="20mm MPAB-DF";
 	displayNameShort="20mm MPAB-DF";
+	descriptionShort = "20mm autocannon pod";
 	//use airlock1 ones
 	ammo="RC_B_20mm_MPAB_DF_T_R";
 	pylonWeapon="RC_Twin_Cannon_gunpod_slow";
@@ -44,6 +46,7 @@ class RC_PylonWeapon_200Rnd_25mm_shells_slow: RC_PylonWeapon_300Rnd_20mm_shells_
 {
 	displayName="25mm MPAB-DF";
 	displayNameShort="25mm MPAB-DF";
+	descriptionShort = "25mm autocannon pod";
 	pylonWeapon="RC_Twin_Cannon_gunpod_slow";
 	//pylonWeapon="RC_Twin_Cannon_25mm_gunpod_slow";
 	ammo="RC_B_25mm_MPAB_DF_T_R";
@@ -53,6 +56,7 @@ class RC_PylonWeapon_150Rnd_30mm_shells_slow: RC_PylonWeapon_300Rnd_20mm_shells_
 {
 	displayName="30mm MPAB-DF";
 	displayNameShort="30mm MPAB-DF";
+	descriptionShort = "30mm autocannon pod";
 	pylonWeapon="RC_Twin_Cannon_gunpod_slow";
 	//pylonWeapon="RC_Twin_Cannon_30mm_gunpod_slow";
 	ammo="RC_B_30mm_MPAB_DF_T_R";

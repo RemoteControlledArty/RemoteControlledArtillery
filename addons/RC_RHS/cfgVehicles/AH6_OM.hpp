@@ -1,21 +1,11 @@
 class RHS_MELB_AH6M;
 class RC_MELB_AH6_OM_Core: RHS_MELB_AH6M
 {
-	class Turrets;
-	class CopilotTurret;
-	class CargoTurret;
-	class OpticsIn;
-	class Wide;
-	class Components;
-	class AnimationSources;
-	class UserActions;
-	class EventHandlers;
-	scope=0;
-	scopeCurator=0;
+	#include "\RC_RHS\cfgVehicles\includes_vehicles\H6M_fetch.hpp"
 };
 class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 {
-	displayName="AH-6 OM (optionally manned)";
+	displayName="OM AH-6M";
 	editorSubcategory="RC_Heli_subcat";
 
 	bodyFrictionCoef=0.2;				//0.3
@@ -23,7 +13,7 @@ class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 	liftForceCoef=1;					//1				//1.7
 	cyclicAsideForceCoef=1.65;			//1.65			//2
 	cyclicForwardForceCoef=0.40000001;	//0.40000001	//0.43000001
-	backrotorforcecoef=0.89999998;		//0.89999998	//0.89999998
+	backrotorforcecoef=1.8;				//0.89999998	//0.89999998
 	startDuration=7.5;					//10
 	slingLoadMemoryPoint="slingLoad0";
 	slingLoadMaxCargoMass=4000;			//900
