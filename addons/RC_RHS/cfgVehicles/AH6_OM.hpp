@@ -9,6 +9,7 @@ class RC_MELB_AH6_OM_Core: RHS_MELB_AH6M
 	class Components;
 	class AnimationSources;
 	class UserActions;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 };
@@ -71,7 +72,7 @@ class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 			{
 				class pylon1
 				{
-					hardpoints[]		= {"20MM_CANNON","20MM_TWIN_CANNON","RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R"};
+					hardpoints[]		= {"TITAN_NLOS_1RND",  "20MM_CANNON","20MM_TWIN_CANNON",  "DAGR","DAR","B_MISSILE_PYLON",  "RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R"};
 					priority			= 2;
 					attachment			= "RC_PylonWeapon_300Rnd_20mm_shells_slow";
 					maxweight			= 1200;
@@ -82,7 +83,7 @@ class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 				};
 				class pylon2 : pylon1
 				{
-					hardpoints[]		= {"RHS_HP_MELB_M134", "20MM_CANNON","20MM_TWIN_CANNON","RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R"};
+					hardpoints[]		= {"TITAN_NLOS_1RND",  "20MM_CANNON","20MM_TWIN_CANNON",  "DAGR","DAR","B_MISSILE_PYLON",  "RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R"};
 					//hardpoints[]		= {"RHS_HP_MELB_M134"};
 					UIposition[]		= {0.562,0.30};
 					priority			= 1;
@@ -204,7 +205,7 @@ class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 		controllable=0;	//test 1
 	};
 
-	transportsoldier=1;
+	transportsoldier=0;
 	cargoProxyIndexes[]={9};
 
 	class AnimationSources: AnimationSources
@@ -225,21 +226,11 @@ class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 
 	class Turrets: Turrets
 	{
-		class CargoTurret_01 {};
-		class CargoTurret_02 {};
-		
-		class CargoTurret_03: CargoTurret
+		class CargoTurret_01: CargoTurret
 		{
-			gunnerAction="passenger_bench_1";
 			gunnerCompartments="Compartment1";
-			memoryPointsGetInGunner="pos L1";
-			memoryPointsGetInGunnerDir="pos L1 dir";
-			gunnerName="Front Left";
-			proxyIndex=3;
-			maxElev=45;
-			minElev=-60;
-			maxTurn=95;
-			minTurn=-15;
+
+			gunnerAction="passenger_bench_1";
 			isPersonTurret=1;
 			ejectDeadGunner=0;
 			playerPosition=4;
@@ -249,10 +240,18 @@ class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 			class Hitpoints
 			{
 			};
+
+			memoryPointsGetInGunner="pos L1";
+			memoryPointsGetInGunnerDir="pos L1 dir";
+			gunnerName="Front Left";
+			proxyIndex=3;
+			maxElev=45;
+			minElev=-60;
+			maxTurn=95;
+			minTurn=-15;
 		};
-		class CargoTurret_04: CargoTurret_03
+		class CargoTurret_02: CargoTurret_01
 		{
-			gunnerCompartments="compartment1";
 			memoryPointsGetInGunner="pos R1";
 			memoryPointsGetInGunnerDir="pos R1 dir";
 			gunnerName="Front Right";
@@ -260,41 +259,8 @@ class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 			maxTurn=15;
 			minTurn=-95;
 		};
-		/*
-		class CargoTurret_05: CargoTurret_04
+		class CargoTurret_03: CargoTurret_02
 		{
-			gunnerCompartments="Compartment2";
-			memoryPointsGetInGunner="pos L2";
-			memoryPointsGetInGunnerDir="pos L2 dir";
-			gunnerName="Middle Left";
-			proxyIndex=5;
-			maxElev=45;
-			minElev=-45;
-			maxTurn=95;
-			minTurn=-95;
-			class dynamicViewLimits
-			{
-				CargoTurret_03[]={-30,95};
-				CargoTurret_07[]={-95,50};
-			};
-		};
-		class CargoTurret_06: CargoTurret_05
-		{
-			gunnerCompartments="compartment3";
-			memoryPointsGetInGunner="pos R2";
-			memoryPointsGetInGunnerDir="pos R2 dir";
-			gunnerName="Middle Right";
-			proxyIndex=6;
-			class dynamicViewLimits
-			{
-				CargoTurret_04[]={-95,30};
-				CargoTurret_08[]={-50,95};
-			};
-		};
-		*/
-		class CargoTurret_07: CargoTurret_04
-		{
-			gunnerCompartments="Compartment1";
 			memoryPointsGetInGunner="pos L3";
 			memoryPointsGetInGunnerDir="pos L3 dir";
 			gunnerName="Rear Left";
@@ -303,26 +269,21 @@ class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 			minElev=-45;
 			maxTurn=95;
 			minTurn=-95;
-			/*
 			class dynamicViewLimits
 			{
 				CargoTurret_05[]={-50,95};
 			};
-			*/
 		};
-		class CargoTurret_08: CargoTurret_07
+		class CargoTurret_04: CargoTurret_03
 		{
-			gunnerCompartments="compartment1";
 			memoryPointsGetInGunner="pos R3";
 			memoryPointsGetInGunnerDir="pos R3 dir";
 			gunnerName="Rear Right";
 			proxyIndex=8;
-			/*
 			class dynamicViewLimits
 			{
 				CargoTurret_06[]={-95,50};
 			};
-			*/
 		};
 
 
@@ -796,6 +757,18 @@ class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 };
 class RC_MELB_AH6_OM_UV: RC_MELB_AH6_OM_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Heli
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\killedHeli.hpp"
+		};
+		class RC_Autonomous
+		{
+			init="(_this select 0) spawn {waitUntil {!isNull driver _this}; _this disableAI 'FIREWEAPON';};";
+		};
+	};
+
 	isUav=1;
 	vehicleClass="Autonomous";
 

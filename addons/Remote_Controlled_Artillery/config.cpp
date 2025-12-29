@@ -910,6 +910,8 @@ class CfgFunctions
 			class RC_addLocalName {};
 			class RC_addAction_NameUV {};
 			class RC_NameUV_Server {};
+
+			class RC_OMH_Disconnect {};
 		};
 		class RC_LocalityVic_functions
 		{

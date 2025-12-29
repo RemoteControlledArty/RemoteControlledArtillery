@@ -403,8 +403,6 @@ class RC_cUAS_Mounted_Static_HMG: RC_cUAS_Static_HMG
 		};
 	};
 
-	//add if vic destroyed then setdamage 1 to hmg
-
 	displayName="RC mounted C-UAS 12.7mm";
 	scope=1;
 	scopeCurator=1;

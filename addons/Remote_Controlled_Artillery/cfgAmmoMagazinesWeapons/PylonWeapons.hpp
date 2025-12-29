@@ -13,7 +13,7 @@ class RC_Twin_Cannon_gunpod_slow: RC_Twin_Cannon_20mm_gunpod_slow_core
 	weaponLockDelay=0;
 	weaponLockSystem=0;
 	lockAcquire=0;						//manual
-	ballisticsComputer="4 + 8";			//test 1 more
+	ballisticsComputer="8";				//4 + 8, test 1 more
 	
 	/*
 	showAimCursorInternal=0;
@@ -101,7 +101,7 @@ class RC_Twin_Cannon_30mm_gunpod_slow: RC_Twin_Cannon_gunpod_slow
 		reloadTime=0.15;				//0.04
 	};
 };
-
+//EF_PylonMissile_Titan_NLOS_2Rnd  pylonWeapon = "EF_Weapon_Titan_NLOS";	 hardpoints[] = {"TITAN_NLOS_2RND"};	ammo = "EF_Ammo_Titan_NLOS";
 
 /*
 displayName = "Hydra 70 12x HE";

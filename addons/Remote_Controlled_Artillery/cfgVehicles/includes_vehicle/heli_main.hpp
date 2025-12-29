@@ -9,15 +9,13 @@ lockDetectionSystem="2+4+8";
 
 weapons[]=
 {
+	"RC_target_confirmer_datalink",
 	"RC_APS_W"
-	//"SmokeLauncher"
 };
 magazines[]=
 {
-	"RC_1Rnd_APS_M",
+	"RC_target_confirmer_mag"
 	//"RC_1Rnd_APS_M"
-	//"SmokeLauncherMag",
-	//"SmokeLauncherMag"
 };
 
 /*
@@ -36,12 +34,13 @@ crewCrashProtection=0.01;
 #include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 
 
-//edit values
-//O_Heli_Transport_04_bench_black_F  	//Chinook B_Heli_Transport_03_F
-slingLoadMaxCargoMass=25000;	//t 13500	ch
-maximumLoad=6000;	//t 4000	//c 6000
-maxSpeed=350;	//t250	//c300
-liftForceCoef=1.65;	//taru 1.3	//chinook 1.65;
+//edit values					//O_Heli_Transport_04_bench_black_F  	//Chinook B_Heli_Transport_03_F
+startDuration=10;				//t 20
+slingLoadMaxCargoMass=25000;	//t 13500	//c 
+maximumLoad=6000;				//t 4000	//c 6000
+maxSpeed=350;					//t 250		//c 300
+liftForceCoef=1.65;				//t 1.3		//c 1.65;
+//bodyFrictionCoef=2.8;	//2.8
 
 //ace_cargo_hasCargo=1;
 //ace_cargo_space=20;	//t8 c40
@@ -51,10 +50,6 @@ ace_refuel_canReceive=1;	//1
 ace_refuel_flowRate=8;	//8
 ace_refuel_fuelCapacity=3000;	//t ?, ch 3914
 */
-
-//airCapacity=10; ???
-//bodyFrictionCoef=2.8;	//2.8
-
 
 class Viewoptics: ViewOptics
 {

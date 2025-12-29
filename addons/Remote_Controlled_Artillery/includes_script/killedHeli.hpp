@@ -2,8 +2,4 @@
 Killed=
 "params ['_unit']; \
 if (!local _unit) exitwith {}; \
-(_unit) spawn { \
-	sleep 3; \
-	player remoteControl objNull; \
-	systemChat 'lost connection to OM-H'; \
-};";
+[_unit] call RC_fnc_RC_OMH_Disconnect;";

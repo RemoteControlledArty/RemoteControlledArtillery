@@ -419,8 +419,6 @@ class RC_cUAS_Mounted_Static: RC_cUAS_Static
 		};
 	};
 
-	//add if vic destroyed then setdamage 1 to hmg
-
 	displayName="RC mounted C-UAS 20mm";
 	scope=1;
 	scopeCurator=1;
