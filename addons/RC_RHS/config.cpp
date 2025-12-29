@@ -130,11 +130,9 @@ class CfgPatches
 			"RC_M119_LC_O",
 			"RC_M119_LC_I",
 			
-			/*
 			"RC_MELB_AH6M",
 			"RC_MELB_AH6M_O",
 			"RC_MELB_AH6M_I",
-			*/
 			
 			/*
 			"RC_HIMARS_D",

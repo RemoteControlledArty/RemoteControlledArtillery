@@ -70,7 +70,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 			{
 				class pylon1
 				{
-					hardpoints[]		= {"20MM_TWIN_CANNON","RHS_HP_MELB","RHS_HP_MELB_L"};
+					hardpoints[]		= {"20MM_CANNON","20MM_TWIN_CANNON","RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R"};
 					priority			= 2;
 					attachment			= "RC_PylonWeapon_300Rnd_20mm_shells_slow";
 					maxweight			= 1200;
@@ -81,26 +81,29 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 				};
 				class pylon2 : pylon1
 				{
-					hardpoints[]		= {"RHS_HP_MELB_M134"};
+					hardpoints[]		= {"RHS_HP_MELB_M134", "20MM_CANNON","20MM_TWIN_CANNON","RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R"};
+					//hardpoints[]		= {"RHS_HP_MELB_M134"};
 					UIposition[]		= {0.562,0.30};
 					priority			= 1;
-					attachment			= "rhs_mag_m134_pylon_3000";
+					//attachment		= "rhs_mag_m134_pylon_3000";
+					attachment			= "rhs_mag_M151_7";
 					hitpoint 			= HitPylon2;
 				};
 				class pylon3 : pylon2
 				{
 					UIposition[]		= {0.103,0.30};
 					mirroredMissilePos	= 2;
-					attachment			= "rhs_mag_m134_pylon_3000";
+					//attachment		= "rhs_mag_m134_pylon_3000";
+					attachment			= "rhs_mag_M151_7";
+					turret[]			= {};
 					hitpoint 			= HitPylon3;
 				};
 				class pylon4 : pylon1
 				{
-					hardpoints[]		= {"RHS_HP_MELB","RHS_HP_MELB_R"};
 					UIposition[]		= {0.04,0.20};
-					//attachment			= "rhs_mag_M151_7";
+					//attachment		= "rhs_mag_M151_7";
 					mirroredMissilePos	= 1;
-					turret[]={};
+					turret[]			= {};
 					hitpoint 			= HitPylon4;
 				};
 			};
@@ -224,7 +227,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		class CargoTurret_03: CargoTurret
 		{
 			gunnerAction="passenger_bench_1";
-			gunnerCompartments="Compartment2";
+			gunnerCompartments="Compartment1";
 			memoryPointsGetInGunner="pos L1";
 			memoryPointsGetInGunnerDir="pos L1 dir";
 			gunnerName="Front Left";
@@ -245,7 +248,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		};
 		class CargoTurret_04: CargoTurret_03
 		{
-			gunnerCompartments="compartment3";
+			gunnerCompartments="compartment1";
 			memoryPointsGetInGunner="pos R1";
 			memoryPointsGetInGunnerDir="pos R1 dir";
 			gunnerName="Front Right";
@@ -287,7 +290,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		*/
 		class CargoTurret_07: CargoTurret_04
 		{
-			gunnerCompartments="Compartment2";
+			gunnerCompartments="Compartment1";
 			memoryPointsGetInGunner="pos L3";
 			memoryPointsGetInGunnerDir="pos L3 dir";
 			gunnerName="Rear Left";
@@ -305,7 +308,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		};
 		class CargoTurret_08: CargoTurret_07
 		{
-			gunnerCompartments="compartment3";
+			gunnerCompartments="compartment1";
 			memoryPointsGetInGunner="pos R3";
 			memoryPointsGetInGunnerDir="pos R3 dir";
 			gunnerName="Rear Right";
