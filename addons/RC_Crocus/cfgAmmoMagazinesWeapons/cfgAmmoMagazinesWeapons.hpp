@@ -251,27 +251,14 @@ class cfgMagazines
 		ammo="RC_shapedcharge_reticle_AB_ammo";
 		initSpeed=1000;	//for reticle of bc=8; requires maxControlRange=0;
 	};
-	class RC_8xCrocus_Deployer_Mag: RC_target_confirmer_AB_mag
+	class RC_1Rnd_Crocus_Deployer_Mag: RC_target_confirmer_AB_mag
 	{
 		ammo="RC_Crocus_Deployer_Ammo";
-		count=8;
+		count=1;
 	};
-	class RC_6xCrocus_Deployer_Mag: RC_8xCrocus_Deployer_Mag
-	{
-		count=6;
-	};
-	class RC_18xCrocus_Deployer_UGV_Mag: RC_8xCrocus_Deployer_Mag
+	class RC_1Rnd_Crocus_Deployer_UGV_Mag: RC_1Rnd_Crocus_Deployer_Mag
 	{
 		initSpeed=1000;		//only to prevent scorch mark on ground below the vic
-		count=18;
-	};
-	class RC_8xCrocus_Deployer_UGV_Mag: RC_18xCrocus_Deployer_UGV_Mag
-	{
-		count=8;
-	};
-	class RC_6xCrocus_Deployer_UGV_Mag: RC_18xCrocus_Deployer_UGV_Mag
-	{
-		count=6;
 	};
 
 
@@ -398,11 +385,8 @@ class cfgWeapons
 		magazineReloadTime=3.5;
 		magazines[]=
 		{
-			"RC_8xCrocus_Deployer_Mag",
-			"RC_6xCrocus_Deployer_Mag",
-			"RC_18xCrocus_Deployer_UGV_Mag",
-			"RC_8xCrocus_Deployer_UGV_Mag",
-			"RC_6xCrocus_Deployer_UGV_Mag"
+			"RC_1Rnd_Crocus_Deployer_Mag",
+			"RC_1RndCrocus_Deployer_UGV_Mag"
 		};
 		class player: player
 		{

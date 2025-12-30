@@ -24,7 +24,24 @@ class RC_Crocus_Truck_A: RC_Crocus_Truck_Base
 	};
 	magazines[]=
 	{
-		"RC_18xCrocus_Deployer_UGV_Mag",
+		//x18
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};

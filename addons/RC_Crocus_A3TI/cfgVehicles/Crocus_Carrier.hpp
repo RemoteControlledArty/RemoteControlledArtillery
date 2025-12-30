@@ -24,7 +24,14 @@ class RC_Crocus_Carrier_A: RC_Crocus_Carrier_Base
 	};
 	magazines[]=
 	{
-		"RC_8xCrocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+		"RC_1Rnd_Crocus_Deployer_UGV_Mag",
 		"SmokeLauncherMag"
 	};
 

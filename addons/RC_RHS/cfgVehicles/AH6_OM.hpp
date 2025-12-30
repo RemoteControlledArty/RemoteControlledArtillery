@@ -13,7 +13,7 @@ class RC_MELB_AH6_OM_Base: RC_MELB_AH6_OM_Core
 	liftForceCoef=1;					//1				//1.7
 	cyclicAsideForceCoef=1.65;			//1.65			//2
 	cyclicForwardForceCoef=0.40000001;	//0.40000001	//0.43000001
-	backrotorforcecoef=1.8;				//0.89999998	//0.89999998
+	backrotorforcecoef=1.35;			//0.89999998	//0.89999998
 	startDuration=7.5;					//10
 	slingLoadMemoryPoint="slingLoad0";
 	slingLoadMaxCargoMass=4000;			//900

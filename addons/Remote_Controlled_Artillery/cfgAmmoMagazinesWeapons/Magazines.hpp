@@ -5990,23 +5990,25 @@ class RC_40Rnd_82mm_vic_Mo_backuplowHEAB: RC_1Rnd_82mm_vic_Mo_backuplowHEAB
 
 
 //40mm indirect GMG
-class RC_200Rnd_40mm_vic_Mo_shells: RC_1Rnd_82mm_Mo_shells
+class RC_100Rnd_40mm_vic_Mo_shells: RC_1Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_40mm_AMOS_HE";
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	initSpeed=200;	//4km reach
-	count=200;
+	count=100;
 	muzzleImpulseFactor[]={0.1,0.1};
 };
-class RC_200Rnd_40mm_vic_Mo_Smoke: RC_1Rnd_82mm_Mo_Smoke_white
+class RC_200Rnd_40mm_vic_Mo_shells: RC_100Rnd_40mm_vic_Mo_shells {count=200;};
+class RC_100Rnd_40mm_vic_Mo_Smoke: RC_1Rnd_82mm_Mo_Smoke_white
 {
 	ammo="RC_Sh_40mm_AMOS_Smoke";
 	RC_TerrainWarning=0;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	initSpeed=200;	//4km reach
-	count=200;
+	count=100;
 	muzzleImpulseFactor[]={0.1,0.1};
 };
+class RC_200Rnd_40mm_vic_Mo_Smoke: RC_100Rnd_40mm_vic_Mo_Smoke {count=200;};
 
 
 //60mm

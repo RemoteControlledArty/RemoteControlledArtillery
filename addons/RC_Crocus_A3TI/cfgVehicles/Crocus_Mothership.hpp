@@ -31,7 +31,14 @@ class RC_Crocus_Mothership: RC_Crocus_Mothership_Base
 			magazines[]=
 			{
 				"Laserbatteries",
-				"RC_8xCrocus_Deployer_Mag"
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag"
 			};
 		};
 	};
@@ -85,7 +92,14 @@ class RC_Crocus_Mothership_NoCam: RC_Crocus_Mothership_NoCam_Base
 			};
 			magazines[]=
 			{
-				"RC_8xCrocus_Deployer_Mag"
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag"
 			};
 		};
 	};
@@ -141,7 +155,14 @@ class RC_Crocus_MothershipMQ: RC_Crocus_MothershipMQ_Base
 			magazines[]=
 			{
 				"Laserbatteries",
-				"RC_8xCrocus_Deployer_Mag"
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag"
 			};
 		};
 	};
@@ -195,7 +216,14 @@ class RC_Crocus_MothershipMQ_NoCam: RC_Crocus_MothershipMQ_NoCam_Base
 			};
 			magazines[]=
 			{
-				"RC_8xCrocus_Deployer_Mag"
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+				"RC_1Rnd_Crocus_Deployer_UGV_Mag"
 			};
 		};
 	};
