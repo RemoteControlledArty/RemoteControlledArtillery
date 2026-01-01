@@ -22,32 +22,12 @@ class RC_CBRad2_Player_WD: RC_CBRad2_Player_WD_O
 	faction="RemoteControlled_B";
 	crew="B_UAV_AI";
 	side=1;
-
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_B.hpp"
-		};
-	};
-	*/
 };
 class RC_CBRad2_Player_WD_I: RC_CBRad2_Player_WD_O
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_I.hpp"
-		};
-	};
-	*/
 };
 
 
@@ -74,30 +54,10 @@ class RC_CBRad2_AI_WD: RC_CBRad2_AI_WD_O
 	faction="RemoteControlled_B";
 	crew="B_UAV_AI";
 	side=1;
-
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_B.hpp"
-		};
-	};
-	*/
 };
 class RC_CBRad2_AI_WD_I: RC_CBRad2_AI_WD_O
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_I.hpp"
-		};
-	};
-	*/
 };

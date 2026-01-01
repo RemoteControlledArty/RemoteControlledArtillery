@@ -50,7 +50,7 @@ private _targetPos = _vehiclePos getPos [_distance, _angle];
         private _isInRange_I = (_sortedIsInRangeArray_I select 0);
         //changes locality of asset to server, as somehow only there doArtilleryFire works
         private _isInRange_I_Owner = owner _isInRange_I;
-        [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+        [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
         
         //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
         RC_fireMissionArray_I pushback _isInRange_I;
@@ -66,7 +66,7 @@ private _targetPos = _vehiclePos getPos [_distance, _angle];
                 _isInRange_I = (_sortedIsInRangeArray_I select 1);
                 //changes locality of asset to server, as somehow only there doArtilleryFire works
                 _isInRange_I_Owner = owner _isInRange_I;
-                [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+                [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
                 
                 //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                 RC_fireMissionArray_I pushback _isInRange_I;
@@ -82,7 +82,7 @@ private _targetPos = _vehiclePos getPos [_distance, _angle];
                         _isInRange_I = (_sortedIsInRangeArray_I select 2);
                         //changes locality of asset to server, as somehow only there doArtilleryFire works
                         _isInRange_I_Owner = owner _isInRange_I;
-                        [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+                        [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
                         
                         //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
                         RC_fireMissionArray_I pushback _isInRange_I;
@@ -98,7 +98,7 @@ private _targetPos = _vehiclePos getPos [_distance, _angle];
                                 _isInRange_I = (_sortedIsInRangeArray_I select 3);
                                 //changes locality of asset to server, as somehow only there doArtilleryFire works
                                 _isInRange_I_Owner = owner _isInRange_I;
-                                [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), 1]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+                                [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
                             };
                         };
                     };

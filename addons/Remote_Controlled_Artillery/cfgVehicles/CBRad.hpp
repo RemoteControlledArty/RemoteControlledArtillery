@@ -81,32 +81,12 @@ class RC_CBRad1_Player_A_O: RC_CBRad1_Player_A
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_O.hpp"
-		};
-	};
-	*/
 };
 class RC_CBRad1_Player_A_I: RC_CBRad1_Player_A
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_I.hpp"
-		};
-	};
-	*/
 };
 
 
@@ -124,32 +104,12 @@ class RC_CBRad1_Player_WD_O: RC_CBRad1_Player_WD
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_O.hpp"
-		};
-	};
-	*/
 };
 class RC_CBRad1_Player_WD_I: RC_CBRad1_Player_WD
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player_I.hpp"
-		};
-	};
-	*/
 };
 
 
@@ -198,30 +158,12 @@ class RC_CBRad1_AI_A: RC_CBRad1_Player_A
 };
 class RC_CBRad1_AI_A_O: RC_CBRad1_AI_A
 {
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_O.hpp"
-		};
-	};
-	*/
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
 class RC_CBRad1_AI_A_I: RC_CBRad1_AI_A
 {
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_I.hpp"
-		};
-	};
-	*/
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
@@ -239,30 +181,12 @@ class RC_CBRad1_AI_WD: RC_CBRad1_AI_A
 };
 class RC_CBRad1_AI_WD_O: RC_CBRad1_AI_WD
 {
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_O.hpp"
-		};
-	};
-	*/
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 };
 class RC_CBRad1_AI_WD_I: RC_CBRad1_AI_WD
 {
-	/*
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI_I.hpp"
-		};
-	};
-	*/
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
