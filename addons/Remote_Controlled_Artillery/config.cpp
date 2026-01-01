@@ -558,6 +558,13 @@ class CfgPatches
 			"RC_indirect_GMG_UGV_A_I",
 			"RC_indirect_GMG_UGV_WD_I",
 
+			"RC_B_Crew",
+			"RC_O_Crew",
+			"RC_I_Crew",
+			"RC_B_HeliPilot",
+			"RC_O_HeliPilot",
+			"RC_I_Helipilot",
+
 			"RC_GPSDatalinkTarget",
 
 			//optional retextures
@@ -962,6 +969,13 @@ class RscTitles
 #endif
 
 
+class RscInGameUI
+{
+   	#include "\Remote_Controlled_Artillery\ui\infoType_Heli.hpp"
+	//#include "\Remote_Controlled_Artillery\ui\turretInfoType.hpp"
+};
+
+
 class CfgFactionClasses
 {
 	class RemoteControlled_O
@@ -1076,9 +1090,6 @@ class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
 
-//#include "\Remote_Controlled_Artillery\ui\turretInfoType.hpp"
-
-
 class CfgCloudlets
 {
 	#include "\Remote_Controlled_Artillery\effects\cfgCloudlets.hpp"
@@ -1118,6 +1129,7 @@ class CfgVehicles
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ManSelfActions.hpp"
 	//#include "\Remote_Controlled_Artillery\immobilized\allowCrewInImmobileCfgEH.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Crew.hpp"
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\AC_FSV.hpp"

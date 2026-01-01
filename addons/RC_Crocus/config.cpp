@@ -55,16 +55,22 @@ class CfgPatches
 			"FPV_RPG42_MP",
 			"RC_target_confirmer_AB_ammo",
 			"RC_shapedcharge_reticle_AB_ammo",
-			"RC_Crocus_Deployer_Ammo"
+			"RC_Crocus_Deployer_Ammo",
+			"Crocus_MP_ThrowAmmo",
+			"Crocus_MP_Sens_ThrowAmmo",
+			"Crocus_MP_NV_ThrowAmmo",
+			"Crocus_MP_NV_Sens_ThrowAmmo"
 		};
 		magazines[]=
 		{
 			"RC_target_confirmer_AB_mag",
 			"RC_shapedcharge_reticle_AB_mag",
-			"RC_6xCrocus_Deployer_Mag",
-			"RC_8xCrocus_Deployer_Mag",
-			"RC_6xCrocus_Deployer_UGV_Mag",
-			"RC_8xCrocus_Deployer_UGV_Mag"
+			"RC_1Rnd_Crocus_Deployer_Mag",
+			"RC_1Rnd_Crocus_Deployer_UGV_Mag",
+			"Crocus_MP_Throw",
+			"Crocus_MP_Sens_Throw",
+			"Crocus_MP_NV_Throw",
+			"Crocus_MP_NV_Sens_Throw"
 		};
 		weapons[]=
 		{

@@ -51,6 +51,8 @@ ace_refuel_flowRate=8;	//8
 ace_refuel_fuelCapacity=3000;	//t ?, ch 3914
 */
 
+//memoryPointDriverOptics="Driver_dir";
+
 class Viewoptics: ViewOptics
 {
 	initAngleX=0;
@@ -94,8 +96,8 @@ class ViewPilot: ViewPilot
 class pilotCamera
 {
 	//turretInfoType="RscOptics_MBT_03_gunner";
-	unitInfoType="RscOptics_AV_pilot";
-	unitInfoTypeRTD="RscOptics_AV_pilot";
+	unitInfoType="RC_RscOptics_AV_Heli";
+	unitInfoTypeRTD="RC_RscOptics_AV_Heli";
 
 	class OpticsIn
 	{

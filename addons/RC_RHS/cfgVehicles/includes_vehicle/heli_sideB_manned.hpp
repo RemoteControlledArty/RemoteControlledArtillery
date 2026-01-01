@@ -1,5 +1,5 @@
 faction="RemoteControlled_B";
 side=1;
-crew="B_UAV_AI";
-typicalCargo[]={"B_UAV_AI"};
+crew="RC_RHS_B_HeliPilot";
+typicalCargo[]={"RC_RHS_B_HeliPilot"};
 #include "\Remote_Controlled_Artillery\loadouts\HeliitemsB.hpp"

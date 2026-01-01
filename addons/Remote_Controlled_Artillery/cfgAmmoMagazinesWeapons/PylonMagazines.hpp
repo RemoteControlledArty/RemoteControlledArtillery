@@ -33,11 +33,11 @@ class RC_PylonWeapon_shells_slow_base: PylonWeapon_300Rnd_20mm_shells
 };
 class RC_PylonWeapon_300Rnd_20mm_shells_slow: RC_PylonWeapon_shells_slow_base
 {
-	displayName="20mm MPAB-DF";
-	displayNameShort="20mm MPAB-DF";
-	descriptionShort = "20mm autocannon pod";
+	displayName="20mm HE-DF";
+	displayNameShort="20mm HE-DF";
+	descriptionShort="20mm autocannon pod";
 	//use airlock1 ones
-	ammo="RC_B_20mm_MPAB_DF_T_R";
+	ammo="RC_B_20mm_HE_DF_T_R";
 	pylonWeapon="RC_Twin_Cannon_gunpod_slow";
 	//pylonWeapon="RC_Twin_Cannon_20mm_gunpod_slow";
 	count=300;
@@ -46,7 +46,7 @@ class RC_PylonWeapon_200Rnd_25mm_shells_slow: RC_PylonWeapon_300Rnd_20mm_shells_
 {
 	displayName="25mm MPAB-DF";
 	displayNameShort="25mm MPAB-DF";
-	descriptionShort = "25mm autocannon pod";
+	descriptionShort="25mm autocannon pod";
 	pylonWeapon="RC_Twin_Cannon_gunpod_slow";
 	//pylonWeapon="RC_Twin_Cannon_25mm_gunpod_slow";
 	ammo="RC_B_25mm_MPAB_DF_T_R";
@@ -56,7 +56,7 @@ class RC_PylonWeapon_150Rnd_30mm_shells_slow: RC_PylonWeapon_300Rnd_20mm_shells_
 {
 	displayName="30mm MPAB-DF";
 	displayNameShort="30mm MPAB-DF";
-	descriptionShort = "30mm autocannon pod";
+	descriptionShort="30mm autocannon pod";
 	pylonWeapon="RC_Twin_Cannon_gunpod_slow";
 	//pylonWeapon="RC_Twin_Cannon_30mm_gunpod_slow";
 	ammo="RC_B_30mm_MPAB_DF_T_R";
@@ -65,7 +65,17 @@ class RC_PylonWeapon_150Rnd_30mm_shells_slow: RC_PylonWeapon_300Rnd_20mm_shells_
 /*
 class RC_PylonWeapon_300Rnd_20mm_shells_slow_Aegis: RC_PylonWeapon_300Rnd_20mm_shells_slow
 {
+	//magazines[] = {"PylonWeapon_250Rnd_20mm_shells"};
 	//model="\A3_Aegis\Weapons_F_Aegis\DynamicLoadout\PylonPod_Cannon_20mm.p3d";
 	//pylonWeapon="cannon_20mm_Heli_Light_03";
 };
 */
+class PylonRack_12Rnd_missiles;
+class RC_PylonRack_12Rnd_70mm_Hydra: PylonRack_12Rnd_missiles
+{
+	displayName="70mm Hydra";
+	displayNameShort="70mm Hydra";
+	descriptionShort="12x 70mm Hydra Pod";
+	pylonWeapon="RC_Pylon_12Rnd_70mm_Hydra_RocketPod";
+	ammo="M_AT";
+};

@@ -386,7 +386,7 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RC_1Rnd_Crocus_Deployer_Mag",
-			"RC_1RndCrocus_Deployer_UGV_Mag"
+			"RC_1Rnd_Crocus_Deployer_UGV_Mag"
 		};
 		class player: player
 		{

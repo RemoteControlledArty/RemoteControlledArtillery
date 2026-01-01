@@ -51,8 +51,8 @@ class CopilotTurret: CopilotTurret
 	usePip=1;	//needed?
 	//turretInfoType="RscOptics_Heli_Attack_01_gunner";
 	//turretInfoType="RscOptics_MBT_03_gunner";
-	unitInfoType="RscOptics_AV_pilot";
-	unitInfoTypeRTD="RscOptics_AV_pilot";
+	unitInfoType="RC_RscOptics_AV_Heli";
+	unitInfoTypeRTD="RC_RscOptics_AV_Heli";
 
 	weapons[]=
 	{
