@@ -5,7 +5,7 @@ class TransportPylonsComponent
 	{
 		class pylon1
 		{
-			hardpoints[]		= {"TITAN_NLOS_1RND",  "20MM_CANNON","20MM_TWIN_CANNON",  "DAGR","DAR","B_MISSILE_PYLON",  "RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134"};
+			hardpoints[]		= {"OM_H",  "TITAN_NLOS_1RND",  "20MM_CANNON","20MM_TWIN_CANNON",  "DAGR","DAR","B_MISSILE_PYLON",  "RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134"};
 			maxweight			= 1200;
 			bay					= -1;
 			turret[]			= {};

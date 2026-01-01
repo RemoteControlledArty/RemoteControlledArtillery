@@ -60,7 +60,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 //AH manned
 class RC_MELB_AH6M: RC_MELB_AH6M_Base
 {
-	displayName="AH-6M"
+	displayName="AH-6M DAP"
 
 	scope=1;			//2
 	scopeCurator=0;		//2
@@ -84,7 +84,7 @@ class RC_MELB_OM_AH6M_UV: RC_MELB_AH6M_Base
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
 
-	displayName="OM AH-6M"
+	displayName="OM AH-6M DAP"
 };
 class RC_MELB_OM_AH6M: RC_MELB_OM_AH6M_UV
 {
@@ -148,7 +148,7 @@ class RC_MELB_AH6M_T_Base: RC_MELB_AH6M_Base
 };
 class RC_MELB_AH6M_T: RC_MELB_AH6M_T_Base
 {
-	displayName="AH-6M T"
+	displayName="AH-6M T DAP"
 
 	scope=1;			//2
 	scopeCurator=0;		//2
@@ -172,7 +172,7 @@ class RC_MELB_OM_AH6M_T_UV: RC_MELB_AH6M_T_Base
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
 
-	displayName="OM AH-6M T"
+	displayName="OM AH-6M T DAP"
 };
 class RC_MELB_OM_AH6M_T: RC_MELB_OM_AH6M_T_UV
 {

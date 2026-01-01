@@ -6,13 +6,16 @@ class RC_PylonWeapon_shells_slow_base: PylonWeapon_300Rnd_20mm_shells
 
 	hardpoints[]=
 	{
-		"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","20MM_CANNON",
+		"OM_H"
+
+		/*"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","20MM_CANNON",
 		
 		"DAGR","DAR","B_MISSILE_PYLON",
 
 		"GX_HELI_SMALL",
 
 		"UNI_LEAFLETS_PYLON"
+		*/
 	};
 
 	//mass=230;
@@ -33,11 +36,11 @@ class RC_PylonWeapon_shells_slow_base: PylonWeapon_300Rnd_20mm_shells
 };
 class RC_PylonWeapon_300Rnd_20mm_shells_slow: RC_PylonWeapon_shells_slow_base
 {
-	displayName="20mm HE-DF";
-	displayNameShort="20mm HE-DF";
+	displayName="20mm MP-DF";
+	displayNameShort="20mm MP-DF";
 	descriptionShort="20mm autocannon pod";
 	//use airlock1 ones
-	ammo="RC_B_20mm_HE_DF_T_R";
+	ammo="RC_B_20mm_MP_DF_T_R";
 	pylonWeapon="RC_Twin_Cannon_gunpod_slow";
 	//pylonWeapon="RC_Twin_Cannon_20mm_gunpod_slow";
 	count=300;
@@ -50,7 +53,7 @@ class RC_PylonWeapon_200Rnd_25mm_shells_slow: RC_PylonWeapon_300Rnd_20mm_shells_
 	pylonWeapon="RC_Twin_Cannon_gunpod_slow";
 	//pylonWeapon="RC_Twin_Cannon_25mm_gunpod_slow";
 	ammo="RC_B_25mm_MPAB_DF_T_R";
-	count=150;
+	count=200;
 };
 class RC_PylonWeapon_150Rnd_30mm_shells_slow: RC_PylonWeapon_300Rnd_20mm_shells_slow
 {
@@ -73,6 +76,11 @@ class RC_PylonWeapon_300Rnd_20mm_shells_slow_Aegis: RC_PylonWeapon_300Rnd_20mm_s
 class PylonRack_12Rnd_missiles;
 class RC_PylonRack_12Rnd_70mm_Hydra: PylonRack_12Rnd_missiles
 {
+	author="Ascent";
+	hardpoints[]=
+	{
+		"OM_H"
+	};
 	displayName="70mm Hydra";
 	displayNameShort="70mm Hydra";
 	descriptionShort="12x 70mm Hydra Pod";

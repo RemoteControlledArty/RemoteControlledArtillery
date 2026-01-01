@@ -18,7 +18,7 @@ class TransportPylonsComponent
 		};
 		class pylon2 : pylon1
 		{
-			hardpoints[]		= {"TITAN_NLOS_1RND",  "20MM_CANNON","20MM_TWIN_CANNON",  "DAGR","DAR","B_MISSILE_PYLON",  "RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134"};
+			hardpoints[]		= {"OM_H",  "TITAN_NLOS_1RND",  "20MM_CANNON","20MM_TWIN_CANNON",  "DAGR","DAR","B_MISSILE_PYLON",  "RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134"};
 
 			priority			= 1;
 			UIposition[]		= {0.562,0.30};
@@ -34,6 +34,7 @@ class TransportPylonsComponent
 			hitpoint 			= "HitPylon3";
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
+			//change to M261 19x Hyra MP
 			attachment			= "RC_PylonRack_12Rnd_70mm_Hydra";
 		};
 		class pylon4 : pylon1

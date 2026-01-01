@@ -47,15 +47,15 @@ private _targetPos = _vehiclePos getPos [_distance, _angle];
         sleep (RC_CBRad_PrepTime_AI);
 
         //selects first opposing artillery in range to return fire
-        private _isInRange_I = (_sortedIsInRangeArray_I select 0);
+        private _responder_I = (_sortedIsInRangeArray_I select 0);
         //changes locality of asset to server, as somehow only there doArtilleryFire works
-        private _isInRange_I_Owner = owner _isInRange_I;
-        [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+        private _responder_I_Owner = owner _responder_I;
+        [_responder_I, [_targetPos, (currentMagazine _responder_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _responder_I_Owner];
         
         //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
-        RC_fireMissionArray_I pushback _isInRange_I;
+        RC_fireMissionArray_I pushback _responder_I;
         sleep RC_CBRad_ReassignTime_AI;
-        private _fireMissionNotCompleted = (({_x == _isInRange_I} count RC_fireMissionArray_I) > 0);
+        private _fireMissionNotCompleted = (({_x == _responder_I} count RC_fireMissionArray_I) > 0);
 
 
         if (_fireMissionNotCompleted) then
@@ -63,15 +63,15 @@ private _targetPos = _vehiclePos getPos [_distance, _angle];
             if ((count _sortedIsInRangeArray_I) > 1) then
             {
                 //selects second opposing artillery in range to return fire
-                _isInRange_I = (_sortedIsInRangeArray_I select 1);
+                _responder_I = (_sortedIsInRangeArray_I select 1);
                 //changes locality of asset to server, as somehow only there doArtilleryFire works
-                _isInRange_I_Owner = owner _isInRange_I;
-                [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+                _responder_I_Owner = owner _responder_I;
+                [_responder_I, [_targetPos, (currentMagazine _responder_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _responder_I_Owner];
                 
                 //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
-                RC_fireMissionArray_I pushback _isInRange_I;
+                RC_fireMissionArray_I pushback _responder_I;
                 sleep RC_CBRad_ReassignTime_AI;
-                _fireMissionNotCompleted = (({_x == _isInRange_I} count RC_fireMissionArray_I) > 0);
+                _fireMissionNotCompleted = (({_x == _responder_I} count RC_fireMissionArray_I) > 0);
 
 
                 if (_fireMissionNotCompleted) then
@@ -79,15 +79,15 @@ private _targetPos = _vehiclePos getPos [_distance, _angle];
                     if ((count _sortedIsInRangeArray_I) > 2) then
                     {
                         //selects second opposing artillery in range to return fire
-                        _isInRange_I = (_sortedIsInRangeArray_I select 2);
+                        _responder_I = (_sortedIsInRangeArray_I select 2);
                         //changes locality of asset to server, as somehow only there doArtilleryFire works
-                        _isInRange_I_Owner = owner _isInRange_I;
-                        [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+                        _responder_I_Owner = owner _responder_I;
+                        [_responder_I, [_targetPos, (currentMagazine _responder_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _responder_I_Owner];
                         
                         //if it doesnt shoot in time, firemission will be passed to next in isInRangeArray
-                        RC_fireMissionArray_I pushback _isInRange_I;
+                        RC_fireMissionArray_I pushback _responder_I;
                         sleep RC_CBRad_ReassignTime_AI;
-                        _fireMissionNotCompleted = (({_x == _isInRange_I} count RC_fireMissionArray_I) > 0);
+                        _fireMissionNotCompleted = (({_x == _responder_I} count RC_fireMissionArray_I) > 0);
 
 
                         if (_fireMissionNotCompleted) then
@@ -95,10 +95,10 @@ private _targetPos = _vehiclePos getPos [_distance, _angle];
                             if ((count _sortedIsInRangeArray_I) > 3) then
                             {
                                 //selects third opposing artillery in range to return fire
-                                _isInRange_I = (_sortedIsInRangeArray_I select 3);
+                                _responder_I = (_sortedIsInRangeArray_I select 3);
                                 //changes locality of asset to server, as somehow only there doArtilleryFire works
-                                _isInRange_I_Owner = owner _isInRange_I;
-                                [_isInRange_I, [_targetPos, (currentMagazine _isInRange_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _isInRange_I_Owner];
+                                _responder_I_Owner = owner _responder_I;
+                                [_responder_I, [_targetPos, (currentMagazine _responder_I), RC_CBRad_ReturnAmount_AI]] remoteExec ["doArtilleryFire", _responder_I_Owner];
                             };
                         };
                     };
