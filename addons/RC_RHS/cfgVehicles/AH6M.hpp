@@ -36,13 +36,13 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		class Addgunrack
 		{
 			source="user";
-			animPeriod=1e-007;
+			animPeriod=0.1;
 			initPhase=1;
 		};
 		class AddBenches
 		{
 			source="user";
-			animPeriod=1e-006;
+			animPeriod=0.1;
 			initPhase=1;
 		};
 		/*
@@ -62,9 +62,9 @@ class RC_MELB_AH6M: RC_MELB_AH6M_Base
 {
 	displayName="AH-6M"
 
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
+	scope=1;			//2
+	scopeCurator=0;		//2
+	forceInGarage=0;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 };
@@ -88,9 +88,9 @@ class RC_MELB_OM_AH6M_UV: RC_MELB_AH6M_Base
 };
 class RC_MELB_OM_AH6M: RC_MELB_OM_AH6M_UV
 {
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
+	scope=1;			//2
+	scopeCurator=0;		//2
+	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 };
@@ -150,9 +150,9 @@ class RC_MELB_AH6M_T: RC_MELB_AH6M_T_Base
 {
 	displayName="AH-6M T"
 
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
+	scope=1;			//2
+	scopeCurator=0;		//2
+	forceInGarage=0;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 };
@@ -176,9 +176,9 @@ class RC_MELB_OM_AH6M_T_UV: RC_MELB_AH6M_T_Base
 };
 class RC_MELB_OM_AH6M_T: RC_MELB_OM_AH6M_T_UV
 {
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
+	scope=1;			//2
+	scopeCurator=0;		//2
+	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 };
@@ -232,9 +232,9 @@ class RC_MELB_MH6M: RC_MELB_MH6M_Base
 {
 	displayName="MH-6M"
 
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
+	scope=1;			//2
+	scopeCurator=0;		//2
+	forceInGarage=0;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 };
@@ -258,9 +258,9 @@ class RC_MELB_OM_MH6M_UV: RC_MELB_MH6M_Base
 };
 class RC_MELB_OM_MH6M: RC_MELB_OM_MH6M_UV
 {
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
+	scope=1;			//2
+	scopeCurator=0;		//2
+	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 };

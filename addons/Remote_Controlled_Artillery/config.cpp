@@ -895,6 +895,9 @@ class CfgFunctions
 		{
 			file="\Remote_Controlled_Artillery\functions\CBRad_functions";
 
+			//class RC_CBRad_EntityCreated_RE {};
+			//class RC_CBRad_Killed_RE {};
+
 			class RC_AI_CBRad_Blufor {};
 			class RC_AI_CBRad_Opfor {};
 			class RC_AI_CBRad_Indfor {};

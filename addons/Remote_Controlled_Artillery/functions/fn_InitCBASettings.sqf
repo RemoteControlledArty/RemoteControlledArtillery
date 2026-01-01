@@ -1,3 +1,16 @@
+/*
+[
+    "VALUE",                    //value
+    "SLIDER",                   //setting type
+    ["name", "description"],    //displayname, description
+    ["category"],               //category
+    [1, 30, 15, 0, false],      //min, max, default, trailingDecimals, isPercent   /    for checkbox bool true/false
+    false,                      //global
+    {},                         //script
+    false                       //restart
+] call CBA_fnc_addSetting;
+*/
+
 [
     "RC_ace_hotkey_warning",
     "CHECKBOX",
