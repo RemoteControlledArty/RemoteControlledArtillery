@@ -1,6 +1,8 @@
 class PylonWeapon_300Rnd_20mm_shells;
 class RC_PylonWeapon_shells_slow_base: PylonWeapon_300Rnd_20mm_shells
 {
+	//INCREASE REARM COST
+
 	author="Ascent";
 	model="\A3\Weapons_F\DynamicLoadout\PylonPod_Twin_Cannon_20mm.p3d";
 
@@ -76,6 +78,8 @@ class RC_PylonWeapon_300Rnd_20mm_shells_slow_Aegis: RC_PylonWeapon_300Rnd_20mm_s
 class PylonRack_12Rnd_missiles;
 class RC_PylonRack_12Rnd_70mm_Hydra: PylonRack_12Rnd_missiles
 {
+	//INCREASE REARM COST
+	
 	author="Ascent";
 	hardpoints[]=
 	{
