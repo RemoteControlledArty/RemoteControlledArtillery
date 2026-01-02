@@ -1,6 +1,7 @@
 class TransportPylonsComponent
 {
 	UIPicture = "\rhsusf\addons\rhsusf_melb\data\loadouts\RHS_AH6M_EDEN_CA.paa";
+	
 	class pylons
 	{
 		class pylon1
@@ -59,6 +60,7 @@ class TransportPylonsComponent
 			attachment			= "";
 		};
 	};
+
 
 	class Presets
 	{

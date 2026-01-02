@@ -10,14 +10,15 @@ class RC_PylonWeapon_shells_slow_base: PylonWeapon_300Rnd_20mm_shells
 	{
 		"OM_H"
 
-		/*"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","20MM_CANNON",
+		//*
+		"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","20MM_CANNON",
 		
 		"DAGR","DAR","B_MISSILE_PYLON",
 
 		"GX_HELI_SMALL",
 
 		"UNI_LEAFLETS_PYLON"
-		*/
+		//*/
 	};
 
 	//mass=230;
@@ -81,15 +82,26 @@ class RC_PylonRack_12Rnd_70mm_Hydra: PylonRack_12Rnd_missiles
 	//INCREASE REARM COST
 	
 	author="Ascent";
-	hardpoints[]=
-	{
-		"OM_H"
-	};
 	displayName="70mm Hydra";
 	displayNameShort="70mm Hydra";
 	descriptionShort="12x 70mm Hydra Pod";
 	pylonWeapon="RC_Pylon_12Rnd_70mm_Hydra_RocketPod";
 	ammo="M_AT";
+
+	hardpoints[]=
+	{
+		"OM_H"
+
+		//*
+		"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","20MM_CANNON",
+		
+		"DAGR","DAR","B_MISSILE_PYLON",
+
+		"GX_HELI_SMALL",
+
+		"UNI_LEAFLETS_PYLON"
+		//*/
+	};
 };
 /*
 class PylonRack_19Rnd_Rocket_Skyfire;

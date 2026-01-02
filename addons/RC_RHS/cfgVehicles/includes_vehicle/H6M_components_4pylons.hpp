@@ -1,6 +1,7 @@
 class TransportPylonsComponent
 {
 	UIPicture = "\rhsusf\addons\rhsusf_melb\data\loadouts\RHS_AH6M_EDEN_CA.paa";
+	
 	class pylons
 	{
 		class pylon1
@@ -56,6 +57,7 @@ class TransportPylonsComponent
 			attachment			= "RC_PylonWeapon_300Rnd_20mm_shells_slow";
 		};
 	};
+
 
 	class Presets
 	{
