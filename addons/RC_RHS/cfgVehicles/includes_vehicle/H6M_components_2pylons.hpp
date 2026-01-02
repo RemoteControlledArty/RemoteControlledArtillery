@@ -21,6 +21,12 @@ class TransportPylonsComponent
 			hardpoints[]=
 			{
 				"OM_H",
+				"O_MISSILE_PYLON","O_SKYFIRE",
+				"VTX_ST_L","VTX_ST_R",
+
+				"WEAPON_PODS_RF","CANNON_PODS_RF","B_A143_BUZZARD_CENTER_PYLON",
+				"CE_Munitions_Cannon_Hardpoint","O_ORCA_RIGHT_PYLON","UK3CB_BAF_M621_PYLON_GUNPOD","CE_Munitions_BigCannon_Hardpoint",
+				
 				"TITAN_NLOS_1RND",
 				"20MM_CANNON","20MM_TWIN_CANNON",
 				"DAGR","DAR","B_MISSILE_PYLON",

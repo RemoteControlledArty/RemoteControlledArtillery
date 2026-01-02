@@ -91,3 +91,24 @@ class RC_PylonRack_12Rnd_70mm_Hydra: PylonRack_12Rnd_missiles
 	pylonWeapon="RC_Pylon_12Rnd_70mm_Hydra_RocketPod";
 	ammo="M_AT";
 };
+/*
+class PylonRack_19Rnd_Rocket_Skyfire;
+class RC_PylonRack_19Rnd_Rocket_Skyfire: PylonRack_19Rnd_Rocket_Skyfire
+{
+	//INCREASE REARM COST
+	
+	author="Ascent";
+	hardpoints[]=
+	{
+		"OM_H"
+	};
+	//displayName="70mm Hydra";
+	//displayNameShort="70mm Hydra";
+	//descriptionShort="12x 70mm Hydra Pod";
+	//pylonWeapon="RC_Pylon_12Rnd_70mm_Hydra_RocketPod";
+	pylonWeapon="rockets_Skyfire";
+	//ammo="R_80mm_HE";
+	//initSpeed=44;
+	//maxLeadSpeed=41.666698;
+};
+*/
