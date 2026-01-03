@@ -1,6 +1,7 @@
 class PylonWeapon_300Rnd_20mm_shells;
 class RC_PylonWeapon_shells_slow_base: PylonWeapon_300Rnd_20mm_shells
 {
+	//ADD SCOPE 0
 	//INCREASE REARM COST
 
 	author="Ascent";
@@ -8,7 +9,7 @@ class RC_PylonWeapon_shells_slow_base: PylonWeapon_300Rnd_20mm_shells
 
 	hardpoints[]=
 	{
-		"OM_H"
+		"OM_H",
 
 		//*
 		"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","20MM_CANNON",
@@ -21,6 +22,10 @@ class RC_PylonWeapon_shells_slow_base: PylonWeapon_300Rnd_20mm_shells
 		//*/
 	};
 
+	/*Moin, ich bin auf eure tolle Webseite gestoßen und mich sehr gefragt woher denn die schicke Maschinenkanone am AH-6M ist die auf der Webseite im Bereich "Rotary Wing" "AH-6M MELB" auf dem Bild zu sehen ist? :exploding_head: Finde es leider nirgends sonnst.
+	Weiß das jemand / weiß jemand wer es von euch wissen könnte? Würde mich sehr freuen! :D*/
+
+	muzzleImpulseFactor[]={0.0375,0.3};		//{0.1,0.8}
 	//mass=230;
 	tracersEvery=1;
 
@@ -90,7 +95,7 @@ class RC_PylonRack_12Rnd_70mm_Hydra: PylonRack_12Rnd_missiles
 
 	hardpoints[]=
 	{
-		"OM_H"
+		"OM_H",
 
 		//*
 		"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","20MM_CANNON",

@@ -59,7 +59,11 @@ class RC_Twin_Cannon_gunpod_slow: RC_Twin_Cannon_20mm_gunpod_slow_core
 
 
 class missiles_DAR;
-class RC_Pylon_12Rnd_70mm_Hydra_RocketPod: missiles_DAR
+class RC_Pylon_12Rnd_70mm_Hydra_RocketPod_Core: missiles_DAR
+{
+	class Burst;
+};
+class RC_Pylon_12Rnd_70mm_Hydra_RocketPod: RC_Pylon_12Rnd_70mm_Hydra_RocketPod_Core
 {
 	displayName="70mm Hydra";
 	displayNameShort="70mm Hydra";
@@ -72,6 +76,10 @@ class RC_Pylon_12Rnd_70mm_Hydra_RocketPod: missiles_DAR
 	modes[]=
 	{
 		"Burst"
+	};
+	class Burst: Burst
+	{
+		reloadTime=0.15;
 	};
 
 	/*

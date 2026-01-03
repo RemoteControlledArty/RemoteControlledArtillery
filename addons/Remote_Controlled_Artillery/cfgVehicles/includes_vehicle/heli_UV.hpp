@@ -22,8 +22,8 @@ memoryPointDriverOptics="Copilot_view_dir";
 //memoryPointDriverOptics="Slingload_cam";
 
 driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-unitInfoType="RscOptics_AV_pilot";
-unitInfoTypeRTD="RscOptics_AV_pilot";
+unitInfoType="RC_RscOptics_AV_Heli";
+unitInfoTypeRTD="RC_RscOptics_AV_Heli";
 
 driverForceOptics=1;
 driverCompartments="Compartment1";

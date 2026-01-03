@@ -1,3 +1,6 @@
+//class ViewPilot;
+class Viewoptics;
+
 class Turrets;
 class CopilotTurret;
 class CargoTurret;
