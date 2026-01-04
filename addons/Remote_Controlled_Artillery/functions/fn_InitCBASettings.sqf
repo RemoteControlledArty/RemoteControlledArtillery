@@ -43,7 +43,7 @@
     false,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -54,7 +54,7 @@
     false,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -65,7 +65,7 @@
     false,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -76,7 +76,7 @@
     false,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 /*
@@ -166,7 +166,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -177,7 +177,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -188,7 +188,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -199,7 +199,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -210,7 +210,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -221,7 +221,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -232,7 +232,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -243,7 +243,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -254,7 +254,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -265,7 +265,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -276,7 +276,7 @@
     true,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 [
@@ -287,8 +287,9 @@
     false,
     true,
     {},
-    true
+    false
 ] call CBA_fnc_addSetting;
+
 
 /*
 [
