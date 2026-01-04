@@ -23,9 +23,9 @@ class TransportMagazines
 };
 class TransportItems
 {
-	class _xx_B_UavTerminal
+	class _xx_I_UavTerminal
 	{
-		name="B_UavTerminal";
+		name="I_UavTerminal";
 		count=2;
 	};
 	class _xx_Toolkit
@@ -72,6 +72,6 @@ class TransportBackpacks
 	class _xx_B_Parachute
 	{
 		backpack="RC_LightParachute";
-		count=3;
+		count=8;
 	};
 };

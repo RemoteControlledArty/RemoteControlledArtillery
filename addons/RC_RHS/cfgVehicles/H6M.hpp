@@ -33,6 +33,18 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 
 	class AnimationSources: AnimationSources
 	{
+		/*
+		//REMOVE without breaking script
+		class pilotpip
+		{
+			source="user";
+			animperiod=0.001;
+			initPhase=0;
+		};
+		class copilotpip: pilotpip
+		{
+		};
+		*/
 		class Addgunrack
 		{
 			source="user";
@@ -67,14 +79,17 @@ class RC_MELB_AH6M: RC_MELB_AH6M_Base
 	forceInGarage=0;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
 class RC_MELB_AH6M_O: RC_MELB_AH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
 class RC_MELB_AH6M_I: RC_MELB_AH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
 };
 
 
@@ -93,14 +108,17 @@ class RC_MELB_OM_AH6M: RC_MELB_OM_AH6M_UV
 	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
 class RC_MELB_OM_AH6M_O: RC_MELB_OM_AH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
 class RC_MELB_OM_AH6M_I: RC_MELB_OM_AH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
 };
 
 
@@ -155,14 +173,17 @@ class RC_MELB_AH6M_T: RC_MELB_AH6M_T_Base
 	forceInGarage=0;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
 class RC_MELB_AH6M_T_O: RC_MELB_AH6M_T
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
 class RC_MELB_AH6M_T_I: RC_MELB_AH6M_T
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
 };
 
 
@@ -181,14 +202,17 @@ class RC_MELB_OM_AH6M_T: RC_MELB_OM_AH6M_T_UV
 	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
 class RC_MELB_OM_AH6M_T_O: RC_MELB_OM_AH6M_T
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
 class RC_MELB_OM_AH6M_T_I: RC_MELB_OM_AH6M_T
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
 };
 
 
@@ -237,14 +261,17 @@ class RC_MELB_MH6M: RC_MELB_MH6M_Base
 	forceInGarage=0;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
 class RC_MELB_MH6M_O: RC_MELB_MH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
 class RC_MELB_MH6M_I: RC_MELB_MH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
 };
 
 
@@ -263,14 +290,17 @@ class RC_MELB_OM_MH6M: RC_MELB_OM_MH6M_UV
 	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
 class RC_MELB_OM_MH6M_O: RC_MELB_OM_MH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
 class RC_MELB_OM_MH6M_I: RC_MELB_OM_MH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
 };
 
 

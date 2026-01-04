@@ -44,7 +44,7 @@ class RC_Twin_Cannon_gunpod_slow: RC_Twin_Cannon_20mm_gunpod_slow_core
 		allowTabLock=1;
 		canLock=2;
 		weaponLockDelay=0;
-		burst=1;						//5
+		burst=2;						//5
 		autoFire=1;
 		textureType="fullAuto";
 
@@ -65,8 +65,8 @@ class RC_Pylon_12Rnd_70mm_Hydra_RocketPod_Core: missiles_DAR
 };
 class RC_Pylon_12Rnd_70mm_Hydra_RocketPod: RC_Pylon_12Rnd_70mm_Hydra_RocketPod_Core
 {
-	displayName="70mm Hydra";
-	displayNameShort="70mm Hydra";
+	displayName="70mm Hydra Pod";
+	displayNameShort="70mm Hydra Pod";
 	ballisticsComputer=8;
 
 	magazines[]=
@@ -81,69 +81,5 @@ class RC_Pylon_12Rnd_70mm_Hydra_RocketPod: RC_Pylon_12Rnd_70mm_Hydra_RocketPod_C
 	{
 		reloadTime=0.15;
 	};
-
-	/*
-	displayName = "Hydra 70 12x HE";
-	displayNameShort = "70mm HE";
-	ammo = "M_AT";
-	ballisticsComputer = 0;
-	"PylonRack_12Rnd_missiles"
-	pylonWeapon = "missiles_DAR";
-	model = "\A3\Weapons_F\DynamicLoadout\PylonPod_12x_Rocket_DAR_F.p3d";
-	hardpoints[] = {"B_MISSILE_PYLON","DAR"};
-	*/
 };
-
-
-/*
-class RC_Twin_Cannon_20mm_gunpod_slow: RC_Twin_Cannon_gunpod_slow
-{
-	displayName="20mm AC";
-	displayNameShort="20mm AC";
-
-	magazines[]=
-	{
-		"RC_PylonWeapon_300Rnd_20mm_shells_slow"
-		//"RC_PylonWeapon_300Rnd_20mm_shells_slow_Aegis"
-	};
-	class manual: manual
-	{
-		displayName="20mm AC";
-		displayNameShort="20mm AC";
-		reloadTime=0.15;				//0.04
-	};
-};
-class RC_Twin_Cannon_25mm_gunpod_slow: RC_Twin_Cannon_gunpod_slow
-{
-	displayName="25mm AC";
-	displayNameShort="25mm AC";
-
-	magazines[]=
-	{
-		"RC_PylonWeapon_200Rnd_25mm_shells_slow"
-	};
-	class manual: manual
-	{
-		displayName="25mm AC";
-		displayNameShort="25mm AC";
-		reloadTime=0.175;				//0.04
-	};
-};
-class RC_Twin_Cannon_30mm_gunpod_slow: RC_Twin_Cannon_gunpod_slow
-{
-	displayName="30mm AC";
-	displayNameShort="30mm AC";
-
-	magazines[]=
-	{
-		"RC_PylonWeapon_150Rnd_30mm_shells_slow"
-	};
-	class manual: manual
-	{
-		displayName="30mm AC";
-		displayNameShort="30mm AC";
-		reloadTime=0.2;				//0.04
-	};
-};
-*/
 //EF_PylonMissile_Titan_NLOS_2Rnd  pylonWeapon = "EF_Weapon_Titan_NLOS";	 hardpoints[] = {"TITAN_NLOS_2RND"};	ammo = "EF_Ammo_Titan_NLOS";

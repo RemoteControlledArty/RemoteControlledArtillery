@@ -31,14 +31,17 @@ class RC_OM_Heli_SkyCrane_blk: RC_OM_Heli_SkyCrane_blk_UV
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\HeliitemsB.hpp"
 };
 class RC_OM_Heli_SkyCrane_blk_O: RC_OM_Heli_SkyCrane_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\HeliitemsO.hpp"
 };
 class RC_OM_Heli_SkyCrane_blk_I: RC_OM_Heli_SkyCrane_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\HeliitemsI.hpp"
 };
 
 
@@ -93,14 +96,17 @@ class RC_OM_Heli_Bench_blk: RC_OM_Heli_Bench_blk_UV
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
 class RC_OM_Heli_Bench_blk_O: RC_OM_Heli_Bench_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
 class RC_OM_Heli_Bench_blk_I: RC_OM_Heli_Bench_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
 };
 
 
@@ -136,14 +142,17 @@ class RC_OM_Heli_Transport_blk: RC_OM_Heli_Transport_blk_UV
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
 class RC_OM_Heli_Transport_blk_O: RC_OM_Heli_Transport_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
 class RC_OM_Heli_Transport_blk_I: RC_OM_Heli_Transport_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
 };
 
 
@@ -179,14 +188,17 @@ class RC_OM_Heli_MedEvac_blk: RC_OM_Heli_MedEvac_blk_UV
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
 class RC_OM_Heli_MedEvac_blk_O: RC_OM_Heli_MedEvac_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
 class RC_OM_Heli_MedEvac_blk_I: RC_OM_Heli_MedEvac_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
 };
 
 
@@ -222,14 +234,17 @@ class RC_OM_Heli_MultiMission_blk: RC_OM_Heli_MultiMission_blk_UV
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\HeliitemsB.hpp"
 };
 class RC_OM_Heli_MultiMission_blk_O: RC_OM_Heli_MultiMission_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\HeliitemsO.hpp"
 };
 class RC_OM_Heli_MultiMission_blk_I: RC_OM_Heli_MultiMission_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\HeliitemsI.hpp"
 };
 
 
@@ -251,14 +266,17 @@ class RC_OMH_MultiMissionPod_blk: RC_OMH_MultiMissionPod_blk_Core
 	scopeCurator=2;
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\HeliitemsB.hpp"
 };
 class RC_OMH_MultiMissionPod_blk_O: RC_OMH_MultiMissionPod_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\HeliitemsO.hpp"
 };
 class RC_OMH_MultiMissionPod_blk_I: RC_OMH_MultiMissionPod_blk
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\HeliitemsI.hpp"
 };
 
 

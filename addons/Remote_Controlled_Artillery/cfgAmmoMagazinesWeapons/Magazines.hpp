@@ -16,11 +16,6 @@ class RC_1Rnd_APS_M: RC_target_confirmer_mag
 	displayNameShort="APS charges";
 	displayNameMFDFormat="APS";
 };
-/*
-class RC_2Rnd_APS_M: RC_target_confirmer_mag {count=2;};
-class RC_3Rnd_APS_M: RC_target_confirmer_mag {count=3;};
-class RC_4Rnd_APS_M: RC_target_confirmer_mag {count=4;};
-*/
 
 
 /*

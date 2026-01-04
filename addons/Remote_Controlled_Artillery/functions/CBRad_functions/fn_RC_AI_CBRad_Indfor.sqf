@@ -32,7 +32,7 @@ private _targetPos = _vehiclePos getPos [_distance, _angle];
 
     //creating subarray with distance to target
     private _sortedIsInRangeArray_I = _isInRangeArray_I select {!isNull _x} apply {
-        [_x distance2D player, _x]
+        [_x distance2D _targetPos, _x]
     };
     //sorts array based on distance to target
     _sortedIsInRangeArray_I sort true;

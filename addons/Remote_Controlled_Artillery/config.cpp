@@ -1133,6 +1133,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ManSelfActions.hpp"
 	//#include "\Remote_Controlled_Artillery\immobilized\allowCrewInImmobileCfgEH.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Crew.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\LightParachute.hpp"
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\AntiAir.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\AC_FSV.hpp"

@@ -129,7 +129,8 @@ class CfgPatches
 			"RC_M119_LC",
 			"RC_M119_LC_O",
 			"RC_M119_LC_I",
-
+			
+			/*
 			"RC_MELB_AH6M",
 			"RC_MELB_AH6M_O",
 			"RC_MELB_AH6M_I",
@@ -153,6 +154,7 @@ class CfgPatches
 			"RC_MELB_OM_MH6M",
 			"RC_MELB_OM_MH6M_O",
 			"RC_MELB_OM_MH6M_I",
+			*/
 			
 			/*
 			"RC_HIMARS_D",
@@ -218,7 +220,8 @@ class CfgPatches
 			"RHS_US_A2Port_Armor",
 			"rhsusf_c_m1a2",
 			"rhsusf_c_statics",
-			"rhsusf_c_stryker"
+			"rhsusf_c_stryker",
+			"rhsusf_c_melb"
 		};
 
 		skipWhenMissingDependencies=1;
@@ -271,25 +274,27 @@ class CfgAmmo
 class CfgMagazines
 {
 	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgPylonMagazines.hpp"
 };
 class CfgWeapons
 {
 	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
+	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgPylonWeapons.hpp"
 };
 
 class CfgVehicles
 {
-	//#include "\RC_RHS\cfgVehicles\ASV.hpp"
 	#include "\RC_RHS\cfgVehicles\Abrams.hpp"
 	#include "\RC_RHS\cfgVehicles\Bradley.hpp"
 	#include "\RC_RHS\cfgVehicles\FlatbedTruck.hpp"
 	#include "\RC_RHS\cfgVehicles\M109.hpp"
 	#include "\RC_RHS\cfgVehicles\M119_105mm.hpp"
 	#include "\RC_RHS\cfgVehicles\oldBradley.hpp"
-	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
-	//#include "\RC_RHS\cfgVehicles\HIMARS.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
 	#include "\RC_RHS\cfgVehicles\HeliPilot.hpp"
-	#include "\RC_RHS\cfgVehicles\AH6M.hpp"
-	//#include "\RC_RHS\cfgVehicles\MH6M.hpp"
+	#include "\RC_RHS\cfgVehicles\H6M.hpp"
+
+	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
+	//#include "\RC_RHS\cfgVehicles\ASV.hpp"
+	//#include "\RC_RHS\cfgVehicles\HIMARS.hpp"
 };
