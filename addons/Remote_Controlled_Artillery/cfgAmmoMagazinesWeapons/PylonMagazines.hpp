@@ -95,6 +95,15 @@ class RC_PylonRack_12Rnd_70mm_Hydra: PylonRack_12Rnd_missiles
 		/*/
 	};
 };
+class PylonRack_12Rnd_PG_missiles;
+class RC_PylonRack_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
+{
+	displayName="12x APKWS LG";
+    displayNameShort="APKWS LG";
+    ammo="RC_APKWS";
+    pylonWeapon="RC_Pylon_12Rnd_APKWS_RocketPod";
+	hardpoints[]={"OM_H"};
+};
 /*
 class PylonRack_19Rnd_Rocket_Skyfire;
 class RC_PylonRack_19Rnd_Rocket_Skyfire: PylonRack_19Rnd_Rocket_Skyfire

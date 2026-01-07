@@ -9,6 +9,7 @@ class TransportPylonsComponent
 			hardpoints[]=
 			{
 				"OM_H",
+				//"Pylon",
 				"O_MISSILE_PYLON","O_SKYFIRE",
 				"VTX_ST_L","VTX_ST_R",
 

@@ -82,4 +82,39 @@ class RC_Pylon_12Rnd_70mm_Hydra_RocketPod: RC_Pylon_12Rnd_70mm_Hydra_RocketPod_C
 		reloadTime=0.15;
 	};
 };
+class missiles_DAGR;
+class RC_Pylon_12Rnd_APKWS_RocketPod_Core: missiles_DAGR
+{
+	class Burst;
+};
+class RC_Pylon_12Rnd_APKWS_RocketPod: RC_Pylon_12Rnd_APKWS_RocketPod_Core
+{
+	// TEST WITHOUT ACE
+
+	displayName="APKWS LG Pod";
+	displayNameShort="APKWS LG Pod";
+	ballisticsComputer=8;
+
+	magazines[]=
+	{
+		"RC_PylonRack_12Rnd_APKWS"
+	};
+	modes[]=
+	{
+		"Burst"
+	};
+	class Burst: Burst
+	{
+		reloadTime=0.15;
+	};
+
+	//ace guidance
+	ace_laser_canSelect=1; 	// can ace_laser lock (allows switching laser code)
+	ace_laser_showHud=1; 	// show attack profile / lock on hud
+	autoFire=0;
+	canLock=0;
+	weaponLockSystem=0;
+	lockingTargetSound[]={"",0,1};
+	lockedTargetSound[]={"",0,1};
+};
 //EF_PylonMissile_Titan_NLOS_2Rnd  pylonWeapon = "EF_Weapon_Titan_NLOS";	 hardpoints[] = {"TITAN_NLOS_2RND"};	ammo = "EF_Ammo_Titan_NLOS";

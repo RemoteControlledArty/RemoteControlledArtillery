@@ -800,6 +800,9 @@ class CfgPatches
 			"A3_Data_F_Enoch_Loadorder",
 			"cba_main"
 		};
+		//cbocammon reqAdd
+		//"A3_Data_F_AoW_Loadorder",
+		//"A3_Data_F_Mod_Loadorder"
 	};
 };
 
