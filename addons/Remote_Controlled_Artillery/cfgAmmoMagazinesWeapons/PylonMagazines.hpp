@@ -71,6 +71,8 @@ class RC_PylonWeapon_300Rnd_20mm_shells_slow_Aegis: RC_PylonWeapon_300Rnd_20mm_s
 	//pylonWeapon="cannon_20mm_Heli_Light_03";
 };
 */
+
+
 class PylonRack_12Rnd_missiles;
 class RC_PylonRack_12Rnd_70mm_Hydra: PylonRack_12Rnd_missiles
 {
@@ -104,29 +106,28 @@ class RC_PylonRack_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
     pylonWeapon="RC_Pylon_12Rnd_APKWS_RocketPod";
 	hardpoints[]={"OM_H"};
 };
-/*
+
+
+//fitting for MH-80M DAP
 class PylonRack_19Rnd_Rocket_Skyfire;
 class RC_PylonRack_19Rnd_Rocket_Skyfire: PylonRack_19Rnd_Rocket_Skyfire
 {
-	//INCREASE REARM COST
-	
 	author="Ascent";
+	displayName="'19x 70mm Hydra";
+	displayNameShort="70mm Hydra";
+	descriptionShort="19x 70mm Hydra Pod";
+	pylonWeapon="RC_Pylon_19Rnd_70mm_Hydra_RocketPod";
+	ammo="M_AT";
+
 	hardpoints[]=
 	{
-		"OM_H",
+		"OM_H"
 
+		/*
 		"B_A143_BUZZARD_CENTER_PYLON","20MM_TWIN_CANNON","20MM_CANNON",
 		"DAGR","DAR","B_MISSILE_PYLON",
 		"GX_HELI_SMALL",
 		"UNI_LEAFLETS_PYLON"
+		*/
 	};
-	//displayName="70mm Hydra";
-	//displayNameShort="70mm Hydra";
-	//descriptionShort="12x 70mm Hydra Pod";
-	//pylonWeapon="RC_Pylon_12Rnd_70mm_Hydra_RocketPod";
-	pylonWeapon="rockets_Skyfire";
-	//ammo="R_80mm_HE";
-	//initSpeed=44;
-	//maxLeadSpeed=41.666698;
 };
-*/

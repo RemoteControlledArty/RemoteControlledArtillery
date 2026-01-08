@@ -82,6 +82,34 @@ class RC_Pylon_12Rnd_70mm_Hydra_RocketPod: RC_Pylon_12Rnd_70mm_Hydra_RocketPod_C
 		reloadTime=0.15;
 	};
 };
+
+//unify 70mm rocket pods?
+class rockets_Skyfire;
+class RC_Pylon_19Rnd_70mm_Hydra_RocketPod_Core: rockets_Skyfire
+{
+	class Burst;
+};
+class RC_Pylon_19Rnd_70mm_Hydra_RocketPod: RC_Pylon_19Rnd_70mm_Hydra_RocketPod_Core
+{
+	displayName="70mm Hydra Pod";
+	displayNameShort="70mm Hydra Pod";
+	ballisticsComputer=8;
+
+	magazines[]=
+	{
+		"RC_PylonRack_19Rnd_70mm_Hydra"
+	};
+	modes[]=
+	{
+		"Burst"
+	};
+	class Burst: Burst
+	{
+		reloadTime=0.15;
+	};
+};
+
+
 class missiles_DAGR;
 class RC_Pylon_12Rnd_APKWS_RocketPod_Core: missiles_DAGR
 {

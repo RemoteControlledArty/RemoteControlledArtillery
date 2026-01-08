@@ -1,5 +1,3 @@
-#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\PylonAmmo.hpp"
-
 //APS
 class Default
 {

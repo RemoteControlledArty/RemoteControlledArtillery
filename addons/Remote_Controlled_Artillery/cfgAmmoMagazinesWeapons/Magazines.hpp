@@ -1,7 +1,3 @@
-class CA_Magazine;
-#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\PylonMagazines.hpp"
-
-
 class RC_target_confirmer_mag: CA_Magazine
 {
 	author="Ascent";

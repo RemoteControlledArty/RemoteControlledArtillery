@@ -1121,15 +1121,21 @@ class CfgMineTriggers
 };
 class CfgAmmo
 {
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\PylonAmmo.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\Ammo.hpp"
 };
 class CfgMagazines
 {
+	class CA_Magazine;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\PylonMagazines.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\Magazines.hpp"
 };
 class CfgWeapons
 {
+	class Default;
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\PylonWeapons.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\Weapons.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\Uniforms.hpp"
 };
 class CfgVehicles
 {

@@ -1,7 +1,7 @@
 author="Ascent";
 scope=2;
 role="Crewman";
-uniformClass="U_C_WorkerCoveralls";
+uniformClass="RC_CoverallsBlk";	//U_C_WorkerCoveralls
 
 engineer=1;	//engi
 //canDeactivateMines=1;	//engi
