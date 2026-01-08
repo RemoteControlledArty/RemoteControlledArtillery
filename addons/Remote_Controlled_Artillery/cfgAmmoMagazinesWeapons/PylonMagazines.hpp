@@ -110,7 +110,7 @@ class RC_PylonRack_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
 
 //fitting for MH-80M DAP
 class PylonRack_19Rnd_Rocket_Skyfire;
-class RC_PylonRack_19Rnd_Rocket_Skyfire: PylonRack_19Rnd_Rocket_Skyfire
+class RC_PylonRack_19Rnd_70mm_Hydra: PylonRack_19Rnd_Rocket_Skyfire
 {
 	author="Ascent";
 	displayName="'19x 70mm Hydra";
