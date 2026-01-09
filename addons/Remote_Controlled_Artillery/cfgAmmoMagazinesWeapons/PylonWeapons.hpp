@@ -1,9 +1,9 @@
 class Twin_Cannon_20mm_gunpod;
-class RC_Twin_Cannon_20mm_gunpod_slow_core: Twin_Cannon_20mm_gunpod
+class RC_PylonW_TwinCannon_20mm_Core: Twin_Cannon_20mm_gunpod
 {
 	class manual;
 };
-class RC_Twin_Cannon_gunpod_slow: RC_Twin_Cannon_20mm_gunpod_slow_core
+class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 {
 	displayName="Autocannon";
 	displayNameShort="Autocannon";
@@ -24,12 +24,11 @@ class RC_Twin_Cannon_gunpod_slow: RC_Twin_Cannon_20mm_gunpod_slow_core
 
 	magazines[]=
 	{
-		"RC_PylonWeapon_300Rnd_20mm_shells_slow",
-		//"RC_PylonWeapon_300Rnd_20mm_shells_slow_Aegis",
-		"RC_PylonWeapon_200Rnd_25mm_shells_slow",
-		"RC_PylonWeapon_150Rnd_30mm_shells_slow"
+		//"RC_PylonM_300Rnd_20mm_Aegis",
+		"RC_PylonM_300Rnd_20mm",
+		"RC_PylonM_200Rnd_25mm",
+		"RC_PylonM_150Rnd_30mm"
 	};
-
 	modes[]=
 	{
 		"manual"
@@ -59,11 +58,11 @@ class RC_Twin_Cannon_gunpod_slow: RC_Twin_Cannon_20mm_gunpod_slow_core
 
 
 class missiles_DAR;
-class RC_Pylon_12Rnd_70mm_Hydra_RocketPod_Core: missiles_DAR
+class RC_PylonW_12Rnd_70mm_Hydra_Core: missiles_DAR
 {
 	class Burst;
 };
-class RC_Pylon_12Rnd_70mm_Hydra_RocketPod: RC_Pylon_12Rnd_70mm_Hydra_RocketPod_Core
+class RC_PylonW_12Rnd_70mm_Hydra: RC_PylonW_12Rnd_70mm_Hydra_Core
 {
 	displayName="70mm Hydra Pod";
 	displayNameShort="70mm Hydra Pod";
@@ -71,7 +70,8 @@ class RC_Pylon_12Rnd_70mm_Hydra_RocketPod: RC_Pylon_12Rnd_70mm_Hydra_RocketPod_C
 
 	magazines[]=
 	{
-		"RC_PylonRack_12Rnd_70mm_Hydra"
+		"RC_PylonM_12Rnd_70mm_Hydra_HE",
+		"RC_PylonM_12Rnd_70mm_Hydra_MP"
 	};
 	modes[]=
 	{
@@ -83,13 +83,14 @@ class RC_Pylon_12Rnd_70mm_Hydra_RocketPod: RC_Pylon_12Rnd_70mm_Hydra_RocketPod_C
 	};
 };
 
+
 //unify 70mm rocket pods?
 class rockets_Skyfire;
-class RC_Pylon_19Rnd_70mm_Hydra_RocketPod_Core: rockets_Skyfire
+class RC_PylonW_19Rnd_70mm_Hydra_Core: rockets_Skyfire
 {
 	class Burst;
 };
-class RC_Pylon_19Rnd_70mm_Hydra_RocketPod: RC_Pylon_19Rnd_70mm_Hydra_RocketPod_Core
+class RC_PylonW_19Rnd_70mm_Hydra: RC_PylonW_19Rnd_70mm_Hydra_Core
 {
 	displayName="70mm Hydra Pod";
 	displayNameShort="70mm Hydra Pod";
@@ -97,7 +98,8 @@ class RC_Pylon_19Rnd_70mm_Hydra_RocketPod: RC_Pylon_19Rnd_70mm_Hydra_RocketPod_C
 
 	magazines[]=
 	{
-		"RC_PylonRack_19Rnd_70mm_Hydra"
+		"RC_PylonM_19Rnd_70mm_Hydra_HE",
+		"RC_PylonM_19Rnd_70mm_Hydra_MP"
 	};
 	modes[]=
 	{
@@ -111,11 +113,11 @@ class RC_Pylon_19Rnd_70mm_Hydra_RocketPod: RC_Pylon_19Rnd_70mm_Hydra_RocketPod_C
 
 
 class missiles_DAGR;
-class RC_Pylon_12Rnd_APKWS_RocketPod_Core: missiles_DAGR
+class RC_PylonW_APKWS_Core: missiles_DAGR
 {
 	class Burst;
 };
-class RC_Pylon_12Rnd_APKWS_RocketPod: RC_Pylon_12Rnd_APKWS_RocketPod_Core
+class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 {
 	// TEST WITHOUT ACE
 
@@ -125,7 +127,8 @@ class RC_Pylon_12Rnd_APKWS_RocketPod: RC_Pylon_12Rnd_APKWS_RocketPod_Core
 
 	magazines[]=
 	{
-		"RC_PylonRack_12Rnd_APKWS"
+		"RC_PylonM_12Rnd_APKWS",
+		"RC_PylonM_7Rnd_APKWS"
 	};
 	modes[]=
 	{

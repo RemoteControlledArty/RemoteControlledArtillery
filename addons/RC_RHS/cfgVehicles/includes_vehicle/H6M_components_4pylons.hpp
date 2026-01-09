@@ -29,7 +29,7 @@ class TransportPylonsComponent
 			UIposition[]		= {0.625,0.2};
 			hitpoint			= "HitPylon1";
 			
-			attachment			= "RC_PylonWeapon_300Rnd_20mm_shells_slow";
+			attachment			= "RC_PylonM_300Rnd_20mm";
 		};
 		class pylon2 : pylon1
 		{
@@ -38,7 +38,7 @@ class TransportPylonsComponent
 			hitpoint 			= "HitPylon2";
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
-			attachment			= "RC_RHS_PylonMag_19Rnd_M229";
+			attachment			= "RC_RHS_PylonM_19Rnd_M229";
 		};
 		class pylon3 : pylon2
 		{
@@ -47,7 +47,7 @@ class TransportPylonsComponent
 			hitpoint 			= "HitPylon3";
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
-			attachment			= "RC_RHS_PylonMag_19Rnd_M229";
+			attachment			= "RC_RHS_PylonM_19Rnd_M229";
 		};
 		class pylon4 : pylon1
 		{
@@ -55,7 +55,7 @@ class TransportPylonsComponent
 			UIposition[]		= {0.04,0.20};
 			hitpoint 			= "HitPylon4";
 
-			attachment			= "RC_PylonWeapon_300Rnd_20mm_shells_slow";
+			attachment			= "RC_PylonM_300Rnd_20mm";
 		};
 	};
 

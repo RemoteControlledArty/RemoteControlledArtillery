@@ -1,6 +1,8 @@
 class M_PG_AT;
-class RC_APKWS: M_PG_AT
+class RC_RHS_APKWS: M_PG_AT
 {
+	proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229";
+
 	//indirectHit=40;
 	indirectHitRange=4.5;	//3.2
 
@@ -38,22 +40,11 @@ class RC_APKWS: M_PG_AT
 };
 
 
-class M_AT;
-class RC_Hydra_MP: M_AT
+/*
+class RC_APKWS;
+class RC_RHS_APKWS: RC_APKWS
 {
-	submunitionAmmo="ammo_Penetrator_PG_AT";
-	submunitionDirectionType="SubmunitionModelDirection";
-	submunitionInitSpeed=1000;
-	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-0.2};
-	triggerOnImpact=1;
-
-	hit=95;
-	indirectHit=40;
-	indirectHitRange=8;
-
-	airLock=0;		//0
-	irLock=0;		//0
-	laserLock=0;	//0
-	nvLock=0;		//0
+	//model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229_fly";
+	proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229";
 };
+*/

@@ -27,6 +27,11 @@ class RC_CBRad1_Player_A: RC_CBRad1_base
 	side=1;
 	forceInGarage=1;
 
+	armor=140;
+	radarTargetSize=0.5;
+	visualTargetSize=0.6;
+	irTargetSize=0.25;
+
 	threat[]={0.2,0.2,0.2};
 	//radarTargetSize=1;
 	lockDetectionSystem="2+4+8";
@@ -125,6 +130,7 @@ class RC_CBRad1_AI_A: RC_CBRad1_Player_A
 
 	displayName="Counter-Battery Radar (AI)";
 
+	/*
 	armor=40;	//80
 	armorStructural=1;	//2
 	//damageResistance=0.0040000002;
@@ -155,6 +161,7 @@ class RC_CBRad1_AI_A: RC_CBRad1_Player_A
 			};
 		};
 	};
+	*/
 };
 class RC_CBRad1_AI_A_O: RC_CBRad1_AI_A
 {
@@ -221,6 +228,11 @@ class RC_CBRad2_Player_A_O: RC_CBRad2_base
 	scopeCurator=2;
 	side=0;
 	forceInGarage=1;
+
+	armor=140;
+	radarTargetSize=0.5;
+	visualTargetSize=0.6;
+	irTargetSize=0.25;
 
 	threat[]={0.2,0.2,0.2};
 	//radarTargetSize=1;
@@ -297,6 +309,7 @@ class RC_CBRad2_AI_A_O: RC_CBRad2_Player_A_O
 
 	displayName="Counter-Battery Radar (AI)";
 
+	/*
 	armor=40;	//80
 	armorStructural=1;	//2
 	//damageResistance=0.0040000002;
@@ -327,6 +340,7 @@ class RC_CBRad2_AI_A_O: RC_CBRad2_Player_A_O
 			};
 		};
 	};
+	*/
 };
 /*
 class RC_CBRad2_AI_WD_O: RC_CBRad2_AI_A_O

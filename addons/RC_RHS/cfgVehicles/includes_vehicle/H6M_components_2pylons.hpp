@@ -40,7 +40,7 @@ class TransportPylonsComponent
 			hitpoint 			= "HitPylon2";
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
-			attachment			= "RC_PylonWeapon_300Rnd_20mm_shells_slow";
+			attachment			= "RC_PylonM_300Rnd_20mm";
 		};
 		class pylon3 : pylon2
 		{
@@ -50,7 +50,7 @@ class TransportPylonsComponent
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
 			//change to M261 19x Hyra MP
-			attachment			= "RC_RHS_PylonMag_19Rnd_M229";
+			attachment			= "RC_RHS_PylonM_19Rnd_M229";
 		};
 		class pylon4 : pylon1
 		{
