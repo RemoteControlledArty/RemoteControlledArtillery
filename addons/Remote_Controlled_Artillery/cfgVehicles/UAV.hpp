@@ -420,7 +420,6 @@ class RC_UAV_AR1_5: RC_UAV_AR1
 						viewDistanceLimitCoef=1;
 					};
 				};
-				/*
 				class VisualSensorComponent: SensorTemplateVisual
 				{
 					typeRecognitionDistance=1500;
@@ -446,7 +445,6 @@ class RC_UAV_AR1_5: RC_UAV_AR1
 						viewDistanceLimitCoef=1;
 					};
 				};
-				*/
 			};
 		};
 	};
@@ -673,7 +671,6 @@ class RC_UAV_AR3: RC_UAV_AR1
 						viewDistanceLimitCoef=1;
 					};
 				};
-				/*
 				class VisualSensorComponent: SensorTemplateVisual
 				{
 					typeRecognitionDistance=1000;
@@ -699,7 +696,6 @@ class RC_UAV_AR3: RC_UAV_AR1
 						viewDistanceLimitCoef=1;
 					};
 				};
-				*/
 				/*
 				class ManSensorComponent: SensorTemplateMan
 				{
