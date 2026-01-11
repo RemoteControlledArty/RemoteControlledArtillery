@@ -9,7 +9,7 @@ class TransportPylonsComponent
 			hardpoints[]		= {};
 			maxweight			= 1200;
 			bay					= -1;
-			turret[]			= {};
+			//turret[]			= {};
 
 			priority			= 2;
 			UIposition[]		= {0.625,0.2};

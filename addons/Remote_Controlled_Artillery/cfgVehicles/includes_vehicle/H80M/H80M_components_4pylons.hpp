@@ -1,6 +1,6 @@
 class TransportPylonsComponent
 {
-	//UIPicture = ".paa";
+	uiPicture="\A3\Air_F_Beta\Heli_Transport_01\Data\UI\Heli_Transport_01_pylons_EDEN_CA.paa";
 	
 	class pylons
 	{
@@ -13,6 +13,8 @@ class TransportPylonsComponent
 				"O_MISSILE_PYLON","O_SKYFIRE",
 				"VTX_ST_L","VTX_ST_R",
 
+				"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGRM",
+
 				"WEAPON_PODS_RF","CANNON_PODS_RF","B_A143_BUZZARD_CENTER_PYLON",
 				"CE_Munitions_Cannon_Hardpoint","O_ORCA_RIGHT_PYLON","UK3CB_BAF_M621_PYLON_GUNPOD","CE_Munitions_BigCannon_Hardpoint",
 				
@@ -23,39 +25,30 @@ class TransportPylonsComponent
 			};
 			maxweight			= 1200;
 			bay					= -1;
-			turret[]			= {};
 
 			priority			= 2;
-			UIposition[]		= {0.625,0.2};
-			hitpoint			= "HitPylon1";
-			
-			attachment			= "RC_PylonW_300Rnd_20mm";
+			UIposition[] 		= {0.625,0.42};
+
+			//turret[]			= {};	//none = both?
+			attachment			= "RC_PylonM_12Rnd_70mm_Hydra_MP";
 		};
-		class pylon2 : pylon1
+		class pylon2: pylon1
 		{
 			priority			= 1;
-			UIposition[]		= {0.562,0.30};
-			hitpoint 			= "HitPylon2";
-
-			//attachment		= "rhs_mag_m134_pylon_3000";
-			attachment			= "RC_RHS_PylonM_19Rnd_M229";
+			UIposition[] 		= {0.555,0.37};
+			attachment			= "RC_PylonM_150Rnd_30mm";
 		};
-		class pylon3 : pylon2
+		class pylon3: pylon2
 		{
 			//mirroredMissilePos= 2;
-			UIposition[]		= {0.103,0.30};
-			hitpoint 			= "HitPylon3";
-
-			//attachment		= "rhs_mag_m134_pylon_3000";
-			attachment			= "RC_RHS_PylonM_19Rnd_M229";
+			UIposition[] 		= {0.11,0.37};
+			attachment			= "RC_PylonM_12Rnd_APKWS";
 		};
-		class pylon4 : pylon1
+		class pylon4: pylon1
 		{
 			//mirroredMissilePos= 1;
-			UIposition[]		= {0.04,0.20};
-			hitpoint 			= "HitPylon4";
-
-			attachment			= "RC_PylonW_300Rnd_20mm";
+			UIposition[] 		= {0.04,0.42};
+			attachment			= "RC_PylonM_12Rnd_70mm_Hydra_MP";
 		};
 	};
 

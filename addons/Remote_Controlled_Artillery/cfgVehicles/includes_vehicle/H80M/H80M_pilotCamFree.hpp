@@ -47,10 +47,6 @@ class pilotCamera
 			};
 			thermalMode[]={0};
 			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
-
-			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
-			//gunnerOpticsModel="rhsusf\addons\rhsusf_melb\data\optics\melb_flir_wf.p3d";
 		};
 		showMiniMapInOptics=1;			//alterative to cTab to follow path
 		showUAVViewpInOptics=1;			//remove for optionally manned version
@@ -60,32 +56,9 @@ class pilotCamera
 
 
 /*
-class pilotCamera
-{
-	gunBeg="commanderview";
-	gunEnd="laserstart";
-	memoryPointGun="commanderview";
-	discretedistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500,2600,2700,2800,2900,3000};
-	discretedistanceinitindex=3;
-	weapons[]=
-	{
-		"rhs_weap_laserDesignator_AI",
-		"rhs_weap_fcs_ah64"
-	};
-	magazines[]=
-	{
-		"rhs_laserfcsmag",
-		"rhs_LaserMag_ai"
-	};
-	minTurn=-1080;
-	maxTurn=1080;
-	initTurn=0;
-	minElev=-35;
-	maxElev=90;
-	initElev=0;
-	maxXRotSpeed=0.5;
-	maxYRotSpeed=0.5;
-	pilotOpticsShowCursor=1;
-	controllable=1;
-};
+gunBeg="commanderview";
+gunEnd="laserstart";
+memoryPointGun="commanderview";
+discretedistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500,2600,2700,2800,2900,3000};
+discretedistanceinitindex=3;
 */

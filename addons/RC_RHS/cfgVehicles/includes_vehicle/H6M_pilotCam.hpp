@@ -46,11 +46,11 @@ class pilotCamera
 				"Ti"
 			};
 			thermalMode[]={0};
-			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+			gunnerOpticsModel="rhsusf\addons\rhsusf_melb\data\optics\melb_flir_m.p3d";
 
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
-			//gunnerOpticsModel="rhsusf\addons\rhsusf_melb\data\optics\melb_flir_wf.p3d";
+			//gunnerOpticsModel="rhsusf\addons\rhsusf_melb\data\optics\melb_flir_m.p3d";
 		};
 		showMiniMapInOptics=1;			//alterative to cTab to follow path
 		showUAVViewpInOptics=1;			//remove for optionally manned version

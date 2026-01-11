@@ -1157,7 +1157,8 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FPV_Mothership.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FPV_Truck.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"	//viewpoint doesnt work yet
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\H80M.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_2.hpp"

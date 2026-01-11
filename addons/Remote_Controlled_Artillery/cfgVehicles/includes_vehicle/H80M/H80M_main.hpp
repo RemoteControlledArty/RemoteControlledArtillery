@@ -14,13 +14,17 @@ gunnerCanFire=1;
 enableManualFire=1;
 
 
-bodyFrictionCoef=0.2;				//0.3
-maxSpeed=250;						//200
-liftForceCoef=1;					//1				//1.7
-cyclicAsideForceCoef=1.65;			//1.65			//2
-cyclicForwardForceCoef=0.40000001;	//0.40000001	//0.43000001
-backrotorforcecoef=0.89999998;			//0.89999998	//0.89999998	//1.35
-startDuration=12;					//
+bodyFrictionCoef=0.75;				//1
+maxSpeed=300;						//300
+/*
+liftForceCoef=1;					//1
+cyclicAsideForceCoef=1;				//1
+cyclicForwardForceCoef=1;			//1
+backRotorForceCoef=1;				//1
+*/
+startDuration=15;					//20
+
+
 /*
 slingLoadMemoryPoint="slingLoad0";
 slingLoadMaxCargoMass=4000;			//900
