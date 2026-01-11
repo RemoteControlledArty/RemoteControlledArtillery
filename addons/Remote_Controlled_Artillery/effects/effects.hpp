@@ -1,22 +1,79 @@
-/*
-ExploAmmoExplosion
-ExploAmmoFlash
-ExploAmmoSmoke
-FiredLightSmall
-*/
-
-class ExploAmmoExplosion;
-class RC_ExploAmmoExplosion_AC: ExploAmmoExplosion
+class RC_ImpactMetalSabotSmall
 {
-	class ExploAmmoSmoke
+	class SparksLight
 	{
+		simulation="light";
+		type="SparksLightSabot";
+		position[]={0,0,0};
+		intensity=0.001;
+		interval=1;
+		lifeTime=0.5;
+	};
+	class ImpactSparks1
+	{
+		simulation="particles";
+		type="ImpactSparksSabot1Small";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.5;
+	};
+	class ImpactSparks2
+	{
+		simulation="particles";
+		type="ImpactSparksSabot2";
+		position[]={0,0,0};
 		intensity=1;
 		interval=1;
 		lifeTime=1;
-		position[]={0,0,0};
-		simulation="particles";
-		type="RC_ExploAmmoSmoke_AC";
 	};
+	/*
+	class ImpactSmoke2
+    {
+        simulation = "particles";
+        type = "";       // No particle type
+        position[] = {0,0,0};
+        intensity = 0;   // Zero intensity
+        interval = 1;
+        lifeTime = 0;    // Zero lifetime
+    };
+	*/
+	//delete ImpactSmoke2;
+};
+
+
+//class ExploAmmoExplosion;
+class RC_ExploAmmoExplosion_AC
+{
+	class FiredLightSmall
+	{
+		simulation="light";
+		type="FiredLightMed";
+		position[]={0,0,0};
+		intensity=0;
+		interval=1;
+		lifeTime=0.1;
+	};
+	class ExploAmmoFlash
+	{
+		simulation="particles";
+		type="ExploAmmoFlash";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+	};
+	/*
+	class ExploAmmoSmoke
+	{
+		simulation="particles";
+		type="ExploAmmoSmoke";	//RC_ExploAmmoSmoke_AC
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+	};
+	*/
 };
 
 

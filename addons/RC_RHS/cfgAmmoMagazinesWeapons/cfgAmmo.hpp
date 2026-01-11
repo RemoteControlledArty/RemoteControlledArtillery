@@ -119,17 +119,6 @@ class RC_RHS_ammo_M792_HEI_T_G: RC_RHS_ammo_M792_HEI_T_R {model= "\A3\Weapons_f\
 class RC_RHS_ammo_M792_HEI_T_Y: RC_RHS_ammo_M792_HEI_T_R {model= "\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-//MP Penetrator Submunition
-class RC_ammo_Penetrator_MP_30mm;
-class RC_ammo_Penetrator_MP_25mm: RC_ammo_Penetrator_MP_30mm
-{
-	hit=90;
-	caliber=4.5;
-	dangerRadiusHit=40;
-	suppressionRadiusHit=14;
-};
-
-
 //25mm MP Pen/DF/QF
 class RC_RHS_B_25mm_MP_Pen_T_R: RHS_ammo_M792_HEI
 {

@@ -46,9 +46,9 @@ class RC_MH80M_DAP: RC_MH80M_DAP_Base
 {
 	displayName="MH-80M DAP"
 
-	scope=2;			//2
-	scopeCurator=2;		//2
-	forceInGarage=1;	//1
+	scope=1;			//2
+	scopeCurator=0;		//2
+	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
@@ -75,9 +75,9 @@ class RC_OM_MH80M_DAP_UV: RC_MH80M_DAP_Base
 };
 class RC_OM_MH80M_DAP: RC_OM_MH80M_DAP_UV
 {
-	scope=2;			//2
-	scopeCurator=2;		//2
-	forceInGarage=1;	//1
+	scope=1;			//2
+	scopeCurator=0;		//2
+	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"

@@ -70,7 +70,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 
 
 //AH manned
-class RC_MELB_AH6M: RC_MELB_AH6M_Base
+class RC_MELB_AH6M_DAP: RC_MELB_AH6M_Base
 {
 	displayName="AH-6M DAP"
 
@@ -81,12 +81,12 @@ class RC_MELB_AH6M: RC_MELB_AH6M_Base
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
-class RC_MELB_AH6M_O: RC_MELB_AH6M
+class RC_MELB_AH6M_DAP_O: RC_MELB_AH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
-class RC_MELB_AH6M_I: RC_MELB_AH6M
+class RC_MELB_AH6M_DAP_I: RC_MELB_AH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
@@ -94,14 +94,14 @@ class RC_MELB_AH6M_I: RC_MELB_AH6M
 
 
 //AH optionally manned
-class RC_MELB_OM_AH6M_UV: RC_MELB_AH6M_Base
+class RC_MELB_OM_AH6M_DAP_UV: RC_MELB_AH6M_Base
 {
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
 
 	displayName="OM AH-6M DAP"
 };
-class RC_MELB_OM_AH6M: RC_MELB_OM_AH6M_UV
+class RC_MELB_OM_AH6M_DAP: RC_MELB_OM_AH6M_DAP_UV
 {
 	scope=1;			//2
 	scopeCurator=0;		//2
@@ -110,12 +110,12 @@ class RC_MELB_OM_AH6M: RC_MELB_OM_AH6M_UV
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
-class RC_MELB_OM_AH6M_O: RC_MELB_OM_AH6M
+class RC_MELB_OM_AH6M_DAP_O: RC_MELB_OM_AH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
-class RC_MELB_OM_AH6M_I: RC_MELB_OM_AH6M
+class RC_MELB_OM_AH6M_DAP_I: RC_MELB_OM_AH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
@@ -123,7 +123,7 @@ class RC_MELB_OM_AH6M_I: RC_MELB_OM_AH6M
 
 
 //MH manned
-class RC_MELB_AH6M_T_Base: RC_MELB_AH6M_Base
+class RC_MELB_MH6M_DAP_Base: RC_MELB_AH6M_Base
 {
 	transportsoldier=1;
 	cargoProxyIndexes[]={9};
@@ -164,7 +164,7 @@ class RC_MELB_AH6M_T_Base: RC_MELB_AH6M_Base
 		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_cargoTurrets_middle.hpp"
 	};
 };
-class RC_MELB_AH6M_T: RC_MELB_AH6M_T_Base
+class RC_MELB_MH6M_DAP: RC_MELB_AH6M_Base
 {
 	displayName="MH-6M DAP"
 
@@ -175,12 +175,12 @@ class RC_MELB_AH6M_T: RC_MELB_AH6M_T_Base
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
-class RC_MELB_AH6M_T_O: RC_MELB_AH6M_T
+class RC_MELB_MH6M_DAP_O: RC_MELB_MH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
-class RC_MELB_AH6M_T_I: RC_MELB_AH6M_T
+class RC_MELB_MH6M_DAP_I: RC_MELB_MH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
@@ -188,14 +188,14 @@ class RC_MELB_AH6M_T_I: RC_MELB_AH6M_T
 
 
 //AH T optionally manned
-class RC_MELB_OM_AH6M_T_UV: RC_MELB_AH6M_T_Base
+class RC_MELB_OM_MH6M_DAP_UV: RC_MELB_MH6M_DAP_Base
 {
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
 
 	displayName="OM MH-6M DAP"
 };
-class RC_MELB_OM_AH6M_T: RC_MELB_OM_AH6M_T_UV
+class RC_MELB_OM_MH6M_DAP: RC_MELB_OM_MH6M_DAP_UV
 {
 	scope=1;			//2
 	scopeCurator=0;		//2
@@ -204,12 +204,12 @@ class RC_MELB_OM_AH6M_T: RC_MELB_OM_AH6M_T_UV
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
 };
-class RC_MELB_OM_AH6M_T_O: RC_MELB_OM_AH6M_T
+class RC_MELB_OM_MH6M_DAP_O: RC_MELB_OM_MH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
 };
-class RC_MELB_OM_AH6M_T_I: RC_MELB_OM_AH6M_T
+class RC_MELB_OM_MH6M_DAP_I: RC_MELB_OM_MH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"

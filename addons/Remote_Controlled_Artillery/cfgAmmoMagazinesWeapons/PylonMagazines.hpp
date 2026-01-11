@@ -35,7 +35,7 @@ class RC_PylonM_300Rnd_20mm: RC_PylonM_Autocannon_base
 	displayName="[20mm MP-QF]";
 	displayNameShort="20mm MP-QF";
 	descriptionShort="20mm Autocannon";
-	ammo="RC_B_20mm_MP_QF_T_R";
+	ammo="RC_Pylon_B_20mm_MP_QF_T_R";
 	count=300;
 
 	/*

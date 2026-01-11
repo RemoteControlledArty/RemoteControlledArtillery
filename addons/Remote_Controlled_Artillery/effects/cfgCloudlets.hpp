@@ -1,8 +1,58 @@
 class Default;
-class RC_ExploAmmoSmoke_AC: Default
+class ExploAmmoSmoke;
+class RC_ExploAmmoSmoke_AC: ExploAmmoSmoke
 {
+	volume=0.01;	//0.039999999
+	lifeTime=1;	//4.5
 
+	/*
+	interval="0.013 * interval + 0.009";
+	circleRadius=0;
+	circleVelocity[]={0,0,0};
+	particleShape="\A3\data_f\ParticleEffects\Universal\Universal_02";
+	particleFSNtieth=8;
+	particleFSIndex=0;
+	particleFSFrameCount=40;
+	particleFSLoop=1;
+	angleVar=1;
+	animationName="";
+	particleType="Billboard";
+	timerPeriod=1;
+	moveVelocity[]={0,1.5,0};
+	rotationVelocity=0;
+	weight=0.052999999;
+	rubbing=0.2;
+	size[]=
+	{
+		"0.018 * intensity + 1.2",
+		"0.018 * intensity + 3",
+		"0.018 * intensity + 5",
+		"0.018 * intensity + 7.5"
+	};
+	color[]=
+	{
+		{1,1,1,0.60000002},
+		{1,1,1,0.40000001},
+		{1,1,1,0.22},
+		{1,1,1,0.1},
+		{1,1,1,0}
+	};
+	animationSpeed[]={1.7,0.60000002,0.40000001,0.30000001,0.30000001};
+	randomDirectionPeriod=0.2;
+	randomDirectionIntensity=0.050000001;
+	onTimerScript="";
+	beforeDestroyScript="";
+	lifeTimeVar=2;
+	positionVar[]={0.89999998,0.80000001,0.89999998};
+	MoveVelocityVar[]={1.5,2,1.5};
+	rotationVelocityVar=10;
+	sizeVar=0.5;
+	colorVar[]={0,0,0,0};
+	randomDirectionPeriodVar=0;
+	randomDirectionIntensityVar=0;
+	*/
 };
+
 
 class RC_MortarExp: Default
 {

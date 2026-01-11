@@ -615,7 +615,7 @@ class RC_ammo_Penetrator_MPAB: ammo_Penetrator_Base
 	timeToLive=0.2;
 	warheadName="HEAT";
 	CraterEffects="NoCrater";	//test both seperate
-	explosionEffects="NoExplosion";
+	explosionEffects="NoExplosion";	//test "EmptyEffect"
 	dangerRadiusHit=40;
 	suppressionRadiusHit=14;
 };
@@ -623,6 +623,11 @@ class RC_ammo_Penetrator_MP_20mm: RC_ammo_Penetrator_MPAB
 {
 	hit=80;
 	caliber=4.4;
+};
+class RC_ammo_Penetrator_MP_25mm: RC_ammo_Penetrator_MPAB
+{
+	hit=90;
+	caliber=4.5;
 };
 class RC_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MPAB
 {
@@ -717,12 +722,48 @@ class RC_B_20mm_MP_QF_T_R: B_20mm_Tracer_Red
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HitMP_20mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_QF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_20mm";
-
-	craterEffects="ExploAmmoCrater";
-	explosionEffects="ExploAmmoExplosion";
 };
 class RC_B_20mm_MP_QF_T_G: RC_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_20mm_MP_QF_T_Y: RC_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//helicopter ammo, reduced smoke effect
+class RC_Pylon_ammo_Penetrator_MP_20mm: RC_ammo_Penetrator_MP_20mm
+{
+	class HitEffects
+	{
+		Hit_Foliage_green="ImpactLeavesGreen";
+		Hit_Foliage_Dead="ImpactLeavesDead";
+		Hit_Foliage_Green_big="ImpactLeavesGreenBig";
+		Hit_Foliage_Palm="ImpactLeavesPalm";
+		Hit_Foliage_Pine="ImpactLeavesPine";
+		hitFoliage="ImpactLeaves";
+		hitGlass="RC_ImpactMetalSabotSmall";
+		hitGlassArmored="RC_ImpactMetalSabotSmall";
+		hitWood="RC_ImpactMetalSabotSmall";
+		hitHay="RC_ImpactMetalSabotSmall";
+		hitMetal="RC_ImpactMetalSabotSmall";
+		hitMetalPlate="RC_ImpactMetalSabotSmall";
+		hitBuilding="RC_ImpactMetalSabotSmall";
+		hitPlastic="RC_ImpactMetalSabotSmall";
+		hitRubber="RC_ImpactMetalSabotSmall";
+		hitTyre="RC_ImpactMetalSabotSmall";
+		hitConcrete="RC_ImpactMetalSabotSmall";
+		hitMan="RC_ImpactMetalSabotSmall";
+		hitGroundSoft="RC_ImpactMetalSabotSmall";
+		hitGroundRed="RC_ImpactMetalSabotSmall";
+		hitGroundHard="RC_ImpactMetalSabotSmall";
+		hitWater="ImpactEffectsWater";
+		default_mat="RC_ImpactMetalSabotSmall";
+	};
+};
+class RC_Pylon_B_20mm_MP_QF_T_R: RC_B_20mm_MP_QF_T_R
+{
+	submunitionAmmo="RC_Pylon_ammo_Penetrator_MP_20mm";
+	explosionEffects="RC_ExploAmmoExplosion_AC";
+};
+class RC_Pylon_B_20mm_MP_QF_T_G: RC_Pylon_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Pylon_B_20mm_MP_QF_T_Y: RC_Pylon_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 //20mm MPAB DF/QF
@@ -986,6 +1027,45 @@ class RC_B_25mm_MP_QF_T_G: RC_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullet
 class RC_B_25mm_MP_QF_T_Y: RC_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+//helicopter ammo, reduced smoke effect
+class RC_Pylon_ammo_Penetrator_MP_25mm: RC_ammo_Penetrator_MP_25mm
+{
+	class HitEffects
+	{
+		Hit_Foliage_green="ImpactLeavesGreen";
+		Hit_Foliage_Dead="ImpactLeavesDead";
+		Hit_Foliage_Green_big="ImpactLeavesGreenBig";
+		Hit_Foliage_Palm="ImpactLeavesPalm";
+		Hit_Foliage_Pine="ImpactLeavesPine";
+		hitFoliage="ImpactLeaves";
+		hitGlass="RC_ImpactMetalSabotSmall";
+		hitGlassArmored="RC_ImpactMetalSabotSmall";
+		hitWood="RC_ImpactMetalSabotSmall";
+		hitHay="RC_ImpactMetalSabotSmall";
+		hitMetal="RC_ImpactMetalSabotSmall";
+		hitMetalPlate="RC_ImpactMetalSabotSmall";
+		hitBuilding="RC_ImpactMetalSabotSmall";
+		hitPlastic="RC_ImpactMetalSabotSmall";
+		hitRubber="RC_ImpactMetalSabotSmall";
+		hitTyre="RC_ImpactMetalSabotSmall";
+		hitConcrete="RC_ImpactMetalSabotSmall";
+		hitMan="RC_ImpactMetalSabotSmall";
+		hitGroundSoft="RC_ImpactMetalSabotSmall";
+		hitGroundRed="RC_ImpactMetalSabotSmall";
+		hitGroundHard="RC_ImpactMetalSabotSmall";
+		hitWater="ImpactEffectsWater";
+		default_mat="RC_ImpactMetalSabotSmall";
+	};
+};
+class RC_Pylon_B_25mm_MP_QF_T_R: RC_B_25mm_MP_QF_T_R
+{
+	submunitionAmmo="RC_Pylon_ammo_Penetrator_MP_25mm";
+	explosionEffects="RC_ExploAmmoExplosion_AC";
+};
+class RC_Pylon_B_25mm_MP_QF_T_G: RC_Pylon_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Pylon_B_25mm_MP_QF_T_Y: RC_Pylon_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 //25mm MPAB DF/QF
 class RC_B_25mm_MPAB_DF_T_R: B_30mm_MP_Tracer_Red
 {
@@ -1102,6 +1182,45 @@ class RC_B_30mm_MP_QF_T_R: B_30mm_MP_Tracer_Red
 };
 class RC_B_30mm_MP_QF_T_G: RC_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_MP_QF_T_Y: RC_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//helicopter ammo, reduced smoke effect
+class RC_Pylon_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MP_30mm
+{
+	class HitEffects
+	{
+		Hit_Foliage_green="ImpactLeavesGreen";
+		Hit_Foliage_Dead="ImpactLeavesDead";
+		Hit_Foliage_Green_big="ImpactLeavesGreenBig";
+		Hit_Foliage_Palm="ImpactLeavesPalm";
+		Hit_Foliage_Pine="ImpactLeavesPine";
+		hitFoliage="ImpactLeaves";
+		hitGlass="RC_ImpactMetalSabotSmall";
+		hitGlassArmored="RC_ImpactMetalSabotSmall";
+		hitWood="RC_ImpactMetalSabotSmall";
+		hitHay="RC_ImpactMetalSabotSmall";
+		hitMetal="RC_ImpactMetalSabotSmall";
+		hitMetalPlate="RC_ImpactMetalSabotSmall";
+		hitBuilding="RC_ImpactMetalSabotSmall";
+		hitPlastic="RC_ImpactMetalSabotSmall";
+		hitRubber="RC_ImpactMetalSabotSmall";
+		hitTyre="RC_ImpactMetalSabotSmall";
+		hitConcrete="RC_ImpactMetalSabotSmall";
+		hitMan="RC_ImpactMetalSabotSmall";
+		hitGroundSoft="RC_ImpactMetalSabotSmall";
+		hitGroundRed="RC_ImpactMetalSabotSmall";
+		hitGroundHard="RC_ImpactMetalSabotSmall";
+		hitWater="ImpactEffectsWater";
+		default_mat="RC_ImpactMetalSabotSmall";
+	};
+};
+class RC_Pylon_B_30mm_MP_QF_T_R: RC_B_30mm_MP_QF_T_R
+{
+	submunitionAmmo="RC_Pylon_ammo_Penetrator_MP_20mm";
+	explosionEffects="RC_ExploAmmoExplosion_AC";
+};
+class RC_Pylon_B_30mm_MP_QF_T_G: RC_Pylon_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Pylon_B_30mm_MP_QF_T_Y: RC_Pylon_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 //30mm MPAB DF/QF
