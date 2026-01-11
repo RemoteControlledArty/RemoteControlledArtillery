@@ -45,13 +45,30 @@ class RC_PylonM_300Rnd_20mm: RC_PylonM_Autocannon_base
 	};
 	*/
 };
-class RC_PylonM_200Rnd_25mm: RC_PylonM_300Rnd_20mm
+class RC_PylonM_250Rnd_25mm: RC_PylonM_300Rnd_20mm
 {
 	scope=2;
 	displayName="[25mm MPAB-DF]";
 	displayNameShort="25mm MPAB-DF";
 	descriptionShort="25mm Autocannon";
 	ammo="RC_B_25mm_MPAB_DF_T_R";
+	count=250;
+
+	/*
+	hardpoints[]=
+	{
+		"OM_H"
+	};
+	*/
+};
+class RC_PylonM_200Rnd_25mm: RC_PylonM_250Rnd_25mm {count=200;};
+class RC_PylonM_200Rnd_30mm: RC_PylonM_300Rnd_20mm
+{
+	scope=2;
+	displayName="[30mm MPAB-DF]";
+	displayNameShort="30mm MPAB-DF";
+	descriptionShort="30mm Autocannon";
+	ammo="RC_B_30mm_MPAB_DF_T_R";
 	count=200;
 
 	/*
@@ -61,22 +78,9 @@ class RC_PylonM_200Rnd_25mm: RC_PylonM_300Rnd_20mm
 	};
 	*/
 };
-class RC_PylonM_150Rnd_30mm: RC_PylonM_300Rnd_20mm
-{
-	scope=2;
-	displayName="[30mm MPAB-DF]";
-	displayNameShort="30mm MPAB-DF";
-	descriptionShort="30mm Autocannon";
-	ammo="RC_B_30mm_MPAB_DF_T_R";
-	count=150;
+class RC_PylonM_150Rnd_30mm: RC_PylonM_200Rnd_30mm {count=150;};
 
-	/*
-	hardpoints[]=
-	{
-		"OM_H"
-	};
-	*/
-};
+
 /*
 class RC_PylonWeapon_300Rnd_20mm_Aegis: RC_PylonWeapon_300Rnd_20mm
 {

@@ -717,6 +717,9 @@ class RC_B_20mm_MP_QF_T_R: B_20mm_Tracer_Red
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\HitMP_20mm.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_QF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_MP_20mm";
+
+	craterEffects="ExploAmmoCrater";
+	explosionEffects="ExploAmmoExplosion";
 };
 class RC_B_20mm_MP_QF_T_G: RC_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_20mm_MP_QF_T_Y: RC_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};

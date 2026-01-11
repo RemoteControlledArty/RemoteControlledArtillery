@@ -1,4 +1,9 @@
 class Default;
+class RC_ExploAmmoSmoke_AC: Default
+{
+
+};
+
 class RC_MortarExp: Default
 {
 	interval=0.02;

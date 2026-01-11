@@ -1,3 +1,25 @@
+/*
+ExploAmmoExplosion
+ExploAmmoFlash
+ExploAmmoSmoke
+FiredLightSmall
+*/
+
+class ExploAmmoExplosion;
+class RC_ExploAmmoExplosion_AC: ExploAmmoExplosion
+{
+	class ExploAmmoSmoke
+	{
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+		position[]={0,0,0};
+		simulation="particles";
+		type="RC_ExploAmmoSmoke_AC";
+	};
+};
+
+
 //cratereffects
 class RC_CircleDust_Base
 {

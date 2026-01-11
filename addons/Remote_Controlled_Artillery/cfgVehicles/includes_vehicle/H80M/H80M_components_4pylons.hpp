@@ -36,7 +36,7 @@ class TransportPylonsComponent
 		{
 			priority			= 1;
 			UIposition[] 		= {0.555,0.37};
-			attachment			= "RC_PylonM_150Rnd_30mm";
+			attachment			= "RC_PylonM_200Rnd_30mm";
 		};
 		class pylon3: pylon2
 		{

@@ -2,7 +2,7 @@ class M_PG_AT;
 class RC_APKWS: M_PG_AT
 {
 	//indirectHit=40;
-	indirectHitRange=4.5;	//3.2
+	indirectHitRange=5;	//3.2
 
 	ace_rearm_caliber=70;
 	displayName="APKWS 4km";

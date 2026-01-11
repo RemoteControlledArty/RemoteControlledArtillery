@@ -1,5 +1,9 @@
 memoryPointTaskMarker="TaskMarker_1_pos";
-memoryPointDriverOptics="pos gunner";	//light_l, Eye, pos gunner, pos gunner dir, slingCamera, pos pilot, pos pilot dir
+memoryPointDriverOptics="light_l";	//light_l, Eye, Eye2, pos gunner, pos gunner dir, slingCamera, pos pilot, pos pilot dir, pos gunner2, pos gunner2 dir
+//pos pilot dir = left bottom of hull, decent
+//pos pilot = similar as pos pilot dir, but futher from hull, so worse
+//light_l = front bottom
+//Eye, pos gunner, pos gunner dir, slingLoad0 = not good
 
 //slingLoadMemoryPoint = "slingLoad0";
 
