@@ -164,7 +164,7 @@ class RC_MELB_MH6M_DAP_Base: RC_MELB_AH6M_Base
 		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_cargoTurrets_middle.hpp"
 	};
 };
-class RC_MELB_MH6M_DAP: RC_MELB_AH6M_Base
+class RC_MELB_MH6M_DAP: RC_MELB_MH6M_DAP_Base
 {
 	displayName="MH-6M DAP"
 

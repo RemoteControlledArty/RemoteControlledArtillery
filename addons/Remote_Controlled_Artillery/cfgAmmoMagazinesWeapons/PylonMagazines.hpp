@@ -47,11 +47,10 @@ class RC_PylonM_300Rnd_20mm: RC_PylonM_Autocannon_base
 };
 class RC_PylonM_250Rnd_25mm: RC_PylonM_300Rnd_20mm
 {
-	scope=2;
-	displayName="[25mm MPAB-DF]";
-	displayNameShort="25mm MPAB-DF";
+	displayName="[25mm MP-QF]";
+	displayNameShort="25mm MP-QF";
 	descriptionShort="25mm Autocannon";
-	ammo="RC_B_25mm_MPAB_DF_T_R";
+	ammo="RC_Pylon_B_25mm_MP_QF_T_R";
 	count=250;
 
 	/*
@@ -64,11 +63,10 @@ class RC_PylonM_250Rnd_25mm: RC_PylonM_300Rnd_20mm
 class RC_PylonM_200Rnd_25mm: RC_PylonM_250Rnd_25mm {count=200;};
 class RC_PylonM_200Rnd_30mm: RC_PylonM_300Rnd_20mm
 {
-	scope=2;
-	displayName="[30mm MPAB-DF]";
-	displayNameShort="30mm MPAB-DF";
+	displayName="[30mm MP-QF]";
+	displayNameShort="30mm MP-QF";
 	descriptionShort="30mm Autocannon";
-	ammo="RC_B_30mm_MPAB_DF_T_R";
+	ammo="RC_Pylon_B_30mm_MP_QF_T_R";
 	count=200;
 
 	/*

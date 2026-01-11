@@ -1216,7 +1216,7 @@ class RC_Pylon_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MP_30mm
 };
 class RC_Pylon_B_30mm_MP_QF_T_R: RC_B_30mm_MP_QF_T_R
 {
-	submunitionAmmo="RC_Pylon_ammo_Penetrator_MP_20mm";
+	submunitionAmmo="RC_Pylon_ammo_Penetrator_MP_30mm";
 	explosionEffects="RC_ExploAmmoExplosion_AC";
 };
 class RC_Pylon_B_30mm_MP_QF_T_G: RC_Pylon_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
