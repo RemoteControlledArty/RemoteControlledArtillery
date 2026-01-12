@@ -1,0 +1,26 @@
+class HitEffects
+{
+	Hit_Foliage_green="ImpactLeavesGreen";
+	Hit_Foliage_Dead="ImpactLeavesDead";
+	Hit_Foliage_Green_big="ImpactLeavesGreenBig";
+	Hit_Foliage_Palm="ImpactLeavesPalm";
+	Hit_Foliage_Pine="ImpactLeavesPine";
+	hitFoliage="ImpactLeaves";
+	hitGlass="RC_ImpactMetalSabotSmall";
+	hitGlassArmored="RC_ImpactMetalSabotSmall";
+	hitWood="RC_ImpactMetalSabotSmall";
+	hitHay="RC_ImpactMetalSabotSmall";
+	hitMetal="RC_ImpactMetalSabotSmall";
+	hitMetalPlate="RC_ImpactMetalSabotSmall";
+	hitBuilding="RC_ImpactMetalSabotSmall";
+	hitPlastic="RC_ImpactMetalSabotSmall";
+	hitRubber="RC_ImpactMetalSabotSmall";
+	hitTyre="RC_ImpactMetalSabotSmall";
+	hitConcrete="RC_ImpactMetalSabotSmall";
+	hitMan="RC_ImpactMetalSabotSmall";
+	hitGroundSoft="RC_ImpactMetalSabotSmall";
+	hitGroundRed="RC_ImpactMetalSabotSmall";
+	hitGroundHard="RC_ImpactMetalSabotSmall";
+	hitWater="ImpactEffectsWater";
+	default_mat="RC_ImpactMetalSabotSmall";
+};

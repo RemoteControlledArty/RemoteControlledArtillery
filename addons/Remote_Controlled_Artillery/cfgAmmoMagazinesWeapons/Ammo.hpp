@@ -730,32 +730,7 @@ class RC_B_20mm_MP_QF_T_Y: RC_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullet
 //helicopter ammo, reduced smoke effect
 class RC_Pylon_ammo_Penetrator_MP_20mm: RC_ammo_Penetrator_MP_20mm
 {
-	class HitEffects
-	{
-		Hit_Foliage_green="ImpactLeavesGreen";
-		Hit_Foliage_Dead="ImpactLeavesDead";
-		Hit_Foliage_Green_big="ImpactLeavesGreenBig";
-		Hit_Foliage_Palm="ImpactLeavesPalm";
-		Hit_Foliage_Pine="ImpactLeavesPine";
-		hitFoliage="ImpactLeaves";
-		hitGlass="RC_ImpactMetalSabotSmall";
-		hitGlassArmored="RC_ImpactMetalSabotSmall";
-		hitWood="RC_ImpactMetalSabotSmall";
-		hitHay="RC_ImpactMetalSabotSmall";
-		hitMetal="RC_ImpactMetalSabotSmall";
-		hitMetalPlate="RC_ImpactMetalSabotSmall";
-		hitBuilding="RC_ImpactMetalSabotSmall";
-		hitPlastic="RC_ImpactMetalSabotSmall";
-		hitRubber="RC_ImpactMetalSabotSmall";
-		hitTyre="RC_ImpactMetalSabotSmall";
-		hitConcrete="RC_ImpactMetalSabotSmall";
-		hitMan="RC_ImpactMetalSabotSmall";
-		hitGroundSoft="RC_ImpactMetalSabotSmall";
-		hitGroundRed="RC_ImpactMetalSabotSmall";
-		hitGroundHard="RC_ImpactMetalSabotSmall";
-		hitWater="ImpactEffectsWater";
-		default_mat="RC_ImpactMetalSabotSmall";
-	};
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\hitEffectsMP_AC.hpp"
 };
 class RC_Pylon_B_20mm_MP_QF_T_R: RC_B_20mm_MP_QF_T_R
 {
@@ -1030,32 +1005,7 @@ class RC_B_25mm_MP_QF_T_Y: RC_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullet
 //helicopter ammo, reduced smoke effect
 class RC_Pylon_ammo_Penetrator_MP_25mm: RC_ammo_Penetrator_MP_25mm
 {
-	class HitEffects
-	{
-		Hit_Foliage_green="ImpactLeavesGreen";
-		Hit_Foliage_Dead="ImpactLeavesDead";
-		Hit_Foliage_Green_big="ImpactLeavesGreenBig";
-		Hit_Foliage_Palm="ImpactLeavesPalm";
-		Hit_Foliage_Pine="ImpactLeavesPine";
-		hitFoliage="ImpactLeaves";
-		hitGlass="RC_ImpactMetalSabotSmall";
-		hitGlassArmored="RC_ImpactMetalSabotSmall";
-		hitWood="RC_ImpactMetalSabotSmall";
-		hitHay="RC_ImpactMetalSabotSmall";
-		hitMetal="RC_ImpactMetalSabotSmall";
-		hitMetalPlate="RC_ImpactMetalSabotSmall";
-		hitBuilding="RC_ImpactMetalSabotSmall";
-		hitPlastic="RC_ImpactMetalSabotSmall";
-		hitRubber="RC_ImpactMetalSabotSmall";
-		hitTyre="RC_ImpactMetalSabotSmall";
-		hitConcrete="RC_ImpactMetalSabotSmall";
-		hitMan="RC_ImpactMetalSabotSmall";
-		hitGroundSoft="RC_ImpactMetalSabotSmall";
-		hitGroundRed="RC_ImpactMetalSabotSmall";
-		hitGroundHard="RC_ImpactMetalSabotSmall";
-		hitWater="ImpactEffectsWater";
-		default_mat="RC_ImpactMetalSabotSmall";
-	};
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\hitEffectsMP_AC.hpp"
 };
 class RC_Pylon_B_25mm_MP_QF_T_R: RC_B_25mm_MP_QF_T_R
 {
@@ -1187,32 +1137,7 @@ class RC_B_30mm_MP_QF_T_Y: RC_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullet
 //helicopter ammo, reduced smoke effect
 class RC_Pylon_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MP_30mm
 {
-	class HitEffects
-	{
-		Hit_Foliage_green="ImpactLeavesGreen";
-		Hit_Foliage_Dead="ImpactLeavesDead";
-		Hit_Foliage_Green_big="ImpactLeavesGreenBig";
-		Hit_Foliage_Palm="ImpactLeavesPalm";
-		Hit_Foliage_Pine="ImpactLeavesPine";
-		hitFoliage="ImpactLeaves";
-		hitGlass="RC_ImpactMetalSabotSmall";
-		hitGlassArmored="RC_ImpactMetalSabotSmall";
-		hitWood="RC_ImpactMetalSabotSmall";
-		hitHay="RC_ImpactMetalSabotSmall";
-		hitMetal="RC_ImpactMetalSabotSmall";
-		hitMetalPlate="RC_ImpactMetalSabotSmall";
-		hitBuilding="RC_ImpactMetalSabotSmall";
-		hitPlastic="RC_ImpactMetalSabotSmall";
-		hitRubber="RC_ImpactMetalSabotSmall";
-		hitTyre="RC_ImpactMetalSabotSmall";
-		hitConcrete="RC_ImpactMetalSabotSmall";
-		hitMan="RC_ImpactMetalSabotSmall";
-		hitGroundSoft="RC_ImpactMetalSabotSmall";
-		hitGroundRed="RC_ImpactMetalSabotSmall";
-		hitGroundHard="RC_ImpactMetalSabotSmall";
-		hitWater="ImpactEffectsWater";
-		default_mat="RC_ImpactMetalSabotSmall";
-	};
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\hitEffectsMP_AC.hpp"
 };
 class RC_Pylon_B_30mm_MP_QF_T_R: RC_B_30mm_MP_QF_T_R
 {
