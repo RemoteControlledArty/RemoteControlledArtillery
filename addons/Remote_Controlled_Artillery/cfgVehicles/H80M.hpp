@@ -36,7 +36,7 @@ class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 
 	class AnimationSources: AnimationSources
 	{
-		//
+		//DOOR
 	};
 };
 
