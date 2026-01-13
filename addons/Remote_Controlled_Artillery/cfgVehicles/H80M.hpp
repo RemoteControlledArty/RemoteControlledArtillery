@@ -18,16 +18,15 @@ class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 
 	class Components: Components
 	{
-		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_components_sensors.hpp"
-		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_components_panels.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_components_4pylons.hpp"
 	};
-	/*
 	class Turrets: Turrets
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_copilotTurret.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_cargoTurrets.hpp"
 	};
-	*/
 
 
 	//transportsoldier=0;		//removes default 1 left pylon seat, replaced with 4 bench seats

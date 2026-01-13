@@ -1,6 +1,7 @@
 class CopilotTurret: CopilotTurret
 {
 	dontCreateAI=1;
+	CanEject=1;
 
 	primaryGunner=0;
 	primaryObserver=1;	//test 0, but center cam uses if commander condition

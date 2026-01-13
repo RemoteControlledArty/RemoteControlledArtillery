@@ -36,6 +36,7 @@ maximumLoad=1500;					//1000
 
 
 driverCompartments="Compartment1";
+CanEject=1;
 crewCrashProtection=0.1;			//0.2
 ejectDeadCargo=1;
 hullDamageCauseExplosion=1;			//1, maybe just bool?
