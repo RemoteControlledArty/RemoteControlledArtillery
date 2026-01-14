@@ -130,7 +130,7 @@ class PylonRack_19Rnd_Rocket_Skyfire;
 class RC_PylonM_19Rnd_70mm_Hydra_HE: PylonRack_19Rnd_Rocket_Skyfire
 {
 	author="Ascent";
-	displayName="[Hydra HE 19x hexagonal]";
+	displayName="[Hydra HE 19x Hex]";
 	displayNameShort="Hydra HE";
 	descriptionShort="Hydra HE 19x";
 	pylonWeapon="RC_PylonW_19Rnd_70mm_Hydra";
@@ -143,7 +143,7 @@ class RC_PylonM_19Rnd_70mm_Hydra_HE: PylonRack_19Rnd_Rocket_Skyfire
 };
 class RC_PylonM_19Rnd_70mm_Hydra_MP: RC_PylonM_19Rnd_70mm_Hydra_HE
 {
-	displayName="[Hydra MP 19x hexagonal]";
+	displayName="[Hydra MP 19x Hex]";
 	displayNameShort="Hydra MP";
 	descriptionShort="Hydra MP 19x";
 	ammo="RC_Hydra_MP";

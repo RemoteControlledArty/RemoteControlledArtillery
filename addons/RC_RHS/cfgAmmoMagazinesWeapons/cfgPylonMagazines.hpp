@@ -56,6 +56,14 @@ class RC_RHS_PylonM_9Rnd_M229: RC_RHS_PylonM_19Rnd_M229
 };
 
 
+class RC_RHS_PylonM_19Rnd_MP: RC_RHS_PylonM_19Rnd_M229
+{
+	displayName="[Hydra MP 19x]";
+	descriptionShort="Hydra MP 19x Pod";
+	ammo="RC_Hydra_MP";
+};
+
+
 class rhs_mag_M151_7;
 class RC_RHS_PylonM_7Rnd_M151: rhs_mag_M151_7
 {
@@ -121,15 +129,18 @@ class RC_PylonM_7Rnd_APKWS: RC_PylonM_12Rnd_APKWS
 };
 
 
-//rhs_mag_DAGR_8
+/*
+rhs_mag_DAGR_8
+pylonWeapon = "RHS_weap_DAGR_Launcher";
 displayName = "DAGR (M310)";
 ammo = "RHS_Ammo_DAGR";
 hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"};
-
+*/
 class rhs_mag_DAGR_8;
 class RC_PylonM_8Rnd_DAGR: rhs_mag_DAGR_8
 {
-	displayName="[DAGR 8x]";
+	displayName="[DAGR M310 8x]";
+	pylonWeapon="RC_RHS_PylonW_DAGR";
 	//ammo="";
 
 	hardpoints[]=
@@ -141,14 +152,17 @@ class RC_PylonM_8Rnd_DAGR: rhs_mag_DAGR_8
 
 /*
 rhs_mag_AGM114K_2
+pylonWeapon = "RHS_weap_AGM114K_Launcher";
 displayName = "AGM-114K (M310)";
 descriptionShort = "×2 Hellfire, Laser-homing ";
 ammo = "RHS_ammo_AGM_114K";
 hardpoints[] = {"RHS_HP_HELLFIRE_RACK","RHS_HP_LONGBOW_RACK","RHS_HP_MELB"};
+*/
 class rhs_mag_AGM114K_2;
 class RC_PylonM_2Rnd_AGM114K: rhs_mag_AGM114K_2
 {
-	displayName="[AGM-114K 2x]";
+	displayName="[AGM-114K Hellfire II 2x]";
+	pylonWeapon="RC_RHS_PylonW_AGM114K";
 	//ammo="";
 
 	hardpoints[]=
@@ -156,3 +170,6 @@ class RC_PylonM_2Rnd_AGM114K: rhs_mag_AGM114K_2
 		"OM_H"
 	};
 };
+
+
+//ADD GAU, only high firerate, also M134 .338NM
