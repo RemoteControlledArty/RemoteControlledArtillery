@@ -21,9 +21,9 @@ class RC_APKWS: M_PG_AT
 		enabled=1;
 		canVanillaLock=0;
 		seekerMinRange=1;
-		seekerMaxRange=4000;
+		seekerMaxRange=5000;	//4000
 		seekerAccuracy=1;
-		seekerAngle=45;
+		seekerAngle=60;			//45
 		incDeflection=0.0005;
 		minDeflection=0.0005;
 		maxDeflection=0.0025;
@@ -39,6 +39,13 @@ class RC_APKWS: M_PG_AT
 
 
 class M_AT;
+class RC_Hydra_HE: M_AT
+{
+	airLock=0;		//0
+	irLock=0;		//0
+	laserLock=0;	//0
+	nvLock=0;		//0
+};
 class RC_Hydra_MP: M_AT
 {
 	submunitionAmmo="ammo_Penetrator_PG_AT";

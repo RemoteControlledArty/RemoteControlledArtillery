@@ -258,7 +258,7 @@ class RC_OMH_MultiMissionPod_blk_Core: Pod_Heli_Transport_04_crewed_base_F
 
 	author="Ascent";
 	displayName="OM-H Re-arm/pair/fuel/supply Pod";
-	editorSubcategory="RC_Heli_subcat";
+	editorSubcategory="RC_Heli_unarmed_subcat";
 };
 class RC_OMH_MultiMissionPod_blk: RC_OMH_MultiMissionPod_blk_Core
 {
@@ -288,7 +288,7 @@ class RC_OMH_MultiMissionPod_Object_blk: Land_Pod_Heli_Transport_04_ammo_black_F
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\OMH\heli_logi_large.hpp"
 
 	displayName="OM-H Re-arm/pair/fuel/supply Pod (Object)";
-	editorSubcategory="RC_Heli_subcat";
+	editorSubcategory="RC_Heli_unarmed_subcat";
 	scope=2;
 	scopeCurator=2;
 	side=3;
@@ -315,7 +315,7 @@ class RC_OMH_BenchPod_blk_Base: RC_OMH_BenchPod_blk_Core
 
 	author="Ascent";
 	displayName="OM-H Bench Pod";
-	editorSubcategory="RC_Heli_subcat";
+	editorSubcategory="RC_Heli_unarmed_subcat";
 	transportSoldier=1;	//1 required to show up in editor vehicle tab
 
 	class Turrets: Turrets
@@ -354,7 +354,7 @@ class RC_OMH_TransportPod_blk_Core: Land_Pod_Heli_Transport_04_covered_black_F
 
 	author="Ascent";
 	displayName="OM-H Transport Pod";
-	editorSubcategory="RC_Heli_subcat";
+	editorSubcategory="RC_Heli_unarmed_subcat";
 };
 class RC_OMH_TransportPod_blk: RC_OMH_TransportPod_blk_Core
 {
@@ -380,7 +380,7 @@ class RC_OMH_MedEvacPod_blk_Core: Land_Pod_Heli_Transport_04_medevac_black_F
 
 	author="Ascent";
 	displayName="OM-H MedEvac Pod";
-	editorSubcategory="RC_Heli_subcat";
+	editorSubcategory="RC_Heli_unarmed_subcat";
 };
 class RC_OMH_MedEvacPod_blk: RC_OMH_MedEvacPod_blk_Core
 {

@@ -6,6 +6,7 @@ class RC_MH80M_DAP_Core: B_Heli_Transport_01_pylons_F
 class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_main.hpp"
+	editorSubcategory="RC_Heli_armed_subcat";
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamBase.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFixed.hpp"
@@ -20,19 +21,13 @@ class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_components_4pylons.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_4pylons.hpp"
 	};
 	class Turrets: Turrets
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_copilotTurret.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_cargoTurrets.hpp"
 	};
-
-
-	//transportsoldier=0;		//removes default 1 left pylon seat, replaced with 4 bench seats
-	//cargoProxyIndexes[]={10};
-
-
 	class AnimationSources: AnimationSources
 	{
 		//DOOR
@@ -45,8 +40,8 @@ class RC_MH80M_DAP: RC_MH80M_DAP_Base
 {
 	displayName="MH-80M DAP"
 
-	scope=1;			//2
-	scopeCurator=0;		//2
+	scope=2;			//2
+	scopeCurator=2;		//2
 	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
@@ -74,8 +69,8 @@ class RC_OM_MH80M_DAP_UV: RC_MH80M_DAP_Base
 };
 class RC_OM_MH80M_DAP: RC_OM_MH80M_DAP_UV
 {
-	scope=1;			//2
-	scopeCurator=0;		//2
+	scope=2;			//2
+	scopeCurator=2;		//2
 	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"

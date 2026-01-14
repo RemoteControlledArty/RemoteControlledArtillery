@@ -4,10 +4,13 @@ class pilotCamera
 	pilotOpticsShowCursor=1;	//?
 	stabilizedInAxes=3;
 
+	//minElev=-90;
+	//maxElev=60;
+
 	minTurn=-360;
 	maxTurn=360;
 	initTurn=0;
-	minElev=-40;
+	minElev=-20;
 	maxElev=90;
 	initElev=0;
 	maxMouseXRotSpeed=0.25;		//0.5

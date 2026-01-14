@@ -27,9 +27,9 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 		//"RC_PylonM_300Rnd_20mm_Aegis",
 		"RC_PylonM_300Rnd_20mm",
 		"RC_PylonM_250Rnd_25mm",
-		"RC_PylonM_200Rnd_25mm",
+		//"RC_PylonM_200Rnd_25mm",
 		"RC_PylonM_200Rnd_30mm",
-		"RC_PylonM_150Rnd_30mm"
+		//"RC_PylonM_150Rnd_30mm"
 	};
 	modes[]=
 	{
@@ -40,6 +40,7 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 		displayName="Autocannon";
 		displayNameShort="Autocannon";
 		reloadTime=0.1;					//0.04
+		ballisticsComputer="8";				//4 + 8, test 1 more
 		
 		dispersion=0.0018;				//0.003		//0.018 Aegis
 		allowTabLock=1;
@@ -138,6 +139,7 @@ class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 	};
 	class Burst: Burst
 	{
+		ballisticsComputer=8;
 		reloadTime=0.15;
 	};
 

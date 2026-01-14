@@ -23,9 +23,9 @@ class RC_RHS_APKWS: M_PG_AT
 		enabled=1;
 		canVanillaLock=0;
 		seekerMinRange=1;
-		seekerMaxRange=4000;
+		seekerMaxRange=5000;	//4000
 		seekerAccuracy=1;
-		seekerAngle=45;
+		seekerAngle=60;			//45
 		incDeflection=0.0005;
 		minDeflection=0.0005;
 		maxDeflection=0.0025;

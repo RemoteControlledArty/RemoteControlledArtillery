@@ -16,9 +16,9 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 
 	class Components: Components
 	{
-		//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_components_sensors.hpp"
-		//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_components_panels.hpp"
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_components_4pylons.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_4pylons.hpp"
 	};
 	class Turrets: Turrets
 	{
@@ -27,6 +27,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 	};
 
 
+	editorSubcategory="RC_Heli_armed_subcat";
 	transportsoldier=0;		//removes default 1 left pylon seat, replaced with 4 bench seats
 	cargoProxyIndexes[]={10};
 
@@ -74,8 +75,8 @@ class RC_MELB_AH6M_DAP: RC_MELB_AH6M_Base
 {
 	displayName="AH-6M DAP"
 
-	scope=1;			//2
-	scopeCurator=0;		//2
+	scope=2;			//2
+	scopeCurator=2;		//2
 	forceInGarage=0;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
@@ -103,8 +104,8 @@ class RC_MELB_OM_AH6M_DAP_UV: RC_MELB_AH6M_Base
 };
 class RC_MELB_OM_AH6M_DAP: RC_MELB_OM_AH6M_DAP_UV
 {
-	scope=1;			//2
-	scopeCurator=0;		//2
+	scope=2;			//2
+	scopeCurator=2;		//2
 	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
@@ -153,9 +154,9 @@ class RC_MELB_MH6M_DAP_Base: RC_MELB_AH6M_Base
 	};
 	class Components: Components
 	{
-		//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_components_sensors.hpp"
-		//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_components_panels.hpp"
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_components_2pylons.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_2pylons.hpp"
 	};
 	class Turrets: Turrets
 	{
@@ -168,8 +169,8 @@ class RC_MELB_MH6M_DAP: RC_MELB_MH6M_DAP_Base
 {
 	displayName="MH-6M DAP"
 
-	scope=1;			//2
-	scopeCurator=0;		//2
+	scope=2;			//2
+	scopeCurator=2;		//2
 	forceInGarage=0;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
@@ -197,8 +198,8 @@ class RC_MELB_OM_MH6M_DAP_UV: RC_MELB_MH6M_DAP_Base
 };
 class RC_MELB_OM_MH6M_DAP: RC_MELB_OM_MH6M_DAP_UV
 {
-	scope=1;			//2
-	scopeCurator=0;		//2
+	scope=2;			//2
+	scopeCurator=2;		//2
 	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
@@ -236,9 +237,8 @@ class RC_MELB_MH6M_Base: RC_MELB_MH6M_Core
 
 	class Components: Components
 	{
-		//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_components_sensors.hpp"
-		//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_components_panels.hpp"
-		//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_components_pylons.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
 	};
 	class Turrets: Turrets
 	{
@@ -247,6 +247,7 @@ class RC_MELB_MH6M_Base: RC_MELB_MH6M_Core
 		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_cargoTurrets_middle.hpp"
 	};
 
+	editorSubcategory="RC_Heli_unarmed_subcat";
 	cargoProxyIndexes[]={9};
 };
 
@@ -256,8 +257,8 @@ class RC_MELB_MH6M: RC_MELB_MH6M_Base
 {
 	displayName="MH-6M"
 
-	scope=1;			//2
-	scopeCurator=0;		//2
+	scope=2;			//2
+	scopeCurator=2;		//2
 	forceInGarage=0;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
@@ -285,8 +286,8 @@ class RC_MELB_OM_MH6M_UV: RC_MELB_MH6M_Base
 };
 class RC_MELB_OM_MH6M: RC_MELB_OM_MH6M_UV
 {
-	scope=1;			//2
-	scopeCurator=0;		//2
+	scope=2;			//2
+	scopeCurator=2;		//2
 	forceInGarage=0;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
@@ -304,4 +305,4 @@ class RC_MELB_OM_MH6M_I: RC_MELB_OM_MH6M
 };
 
 
-//ADD RC CoPilot, manned Pilot, armored glass, multiple pylon versions
+//ADD RC CoPilot, manned Pilot, armored glass
