@@ -102,7 +102,7 @@ class RC_MELB_OM_AH6M_DAP_UV: RC_MELB_AH6M_Base
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
 
-	displayName="OM AH-6M DAP"
+	displayName="OM AH-6M DAP - Little Bird"
 };
 class RC_MELB_OM_AH6M_DAP: RC_MELB_OM_AH6M_DAP_UV
 {
@@ -196,7 +196,7 @@ class RC_MELB_OM_MH6M_DAP_UV: RC_MELB_MH6M_DAP_Base
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
 
-	displayName="OM MH-6M DAP"
+	displayName="OM MH-6M DAP - Little Bird"
 };
 class RC_MELB_OM_MH6M_DAP: RC_MELB_OM_MH6M_DAP_UV
 {

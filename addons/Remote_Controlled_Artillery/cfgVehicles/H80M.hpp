@@ -38,7 +38,7 @@ class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 //manned
 class RC_MH80M_DAP: RC_MH80M_DAP_Base
 {
-	displayName="MH-80M DAP - Ghosthawk"
+	displayName="MH-80M DAP - Ghost Hawk"
 
 	scope=2;			//2
 	scopeCurator=2;		//2
@@ -65,7 +65,7 @@ class RC_OM_MH80M_DAP_UV: RC_MH80M_DAP_Base
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_EHs_UV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_UV_conversion.hpp"
 
-	displayName="OM MH-80M DAP - Ghosthawk"
+	displayName="OM MH-80M DAP - Ghost Hawk"
 };
 class RC_OM_MH80M_DAP: RC_OM_MH80M_DAP_UV
 {
