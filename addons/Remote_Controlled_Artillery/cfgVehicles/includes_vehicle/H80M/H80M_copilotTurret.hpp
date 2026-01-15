@@ -1,5 +1,12 @@
 class CopilotTurret: CopilotTurret
 {
+	class Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
+	};
+
+	//memoryPointGunnerOptics="";
+
 	dontCreateAI=1;
 	gunnerCompartments="Compartment1";	//3
 	showAllTargets="2 + 4";
@@ -40,22 +47,11 @@ class CopilotTurret: CopilotTurret
 	class ViewGunner: ViewPilot
 	{
 	};
-	class Components
-	{
-		class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsTemplateLeftPilot
-		{
-		};
-		class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightPilot
-		{
-		};
-	};
 	class Hitpoints
 	{
 	};
 	*/
 	selectionFireAnim="";
-
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
 };
 
 

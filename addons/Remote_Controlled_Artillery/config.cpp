@@ -397,6 +397,14 @@ class CfgPatches
 			"RC_OMH_MedEvacPod_blk_O",
 			"RC_OMH_MedEvacPod_blk_I",
 
+			"RC_MH80M_DAP",
+			"RC_MH80M_DAP_O",
+			"RC_MH80M_DAP_I",
+
+			"RC_OM_MH80M_DAP",
+			"RC_OM_MH80M_DAP_O",
+			"RC_OM_MH80M_DAP_I",
+
 			"RC_RespawnTruck_A",
 			"RC_RespawnTruck_WD",
 			"RC_RespawnTruck_A_O",

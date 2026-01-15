@@ -38,11 +38,11 @@ class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 //manned
 class RC_MH80M_DAP: RC_MH80M_DAP_Base
 {
-	displayName="MH-80M DAP"
+	displayName="MH-80M DAP - Ghosthawk"
 
 	scope=2;			//2
 	scopeCurator=2;		//2
-	forceInGarage=0;	//1
+	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
@@ -65,13 +65,13 @@ class RC_OM_MH80M_DAP_UV: RC_MH80M_DAP_Base
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_EHs_UV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_UV_conversion.hpp"
 
-	displayName="OM MH-80M DAP"
+	displayName="OM MH-80M DAP - Ghosthawk"
 };
 class RC_OM_MH80M_DAP: RC_OM_MH80M_DAP_UV
 {
 	scope=2;			//2
 	scopeCurator=2;		//2
-	forceInGarage=0;	//1
+	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"

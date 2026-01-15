@@ -75,11 +75,11 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 //AH manned
 class RC_MELB_AH6M_DAP: RC_MELB_AH6M_Base
 {
-	displayName="AH-6M DAP"
+	displayName="AH-6M DAP - Little Bird"
 
 	scope=2;			//2
 	scopeCurator=2;		//2
-	forceInGarage=0;	//1
+	forceInGarage=1;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
@@ -108,7 +108,7 @@ class RC_MELB_OM_AH6M_DAP: RC_MELB_OM_AH6M_DAP_UV
 {
 	scope=2;			//2
 	scopeCurator=2;		//2
-	forceInGarage=0;	//1
+	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
@@ -169,11 +169,11 @@ class RC_MELB_MH6M_DAP_Base: RC_MELB_AH6M_Base
 };
 class RC_MELB_MH6M_DAP: RC_MELB_MH6M_DAP_Base
 {
-	displayName="MH-6M DAP"
+	displayName="MH-6M DAP - Little Bird"
 
 	scope=2;			//2
 	scopeCurator=2;		//2
-	forceInGarage=0;	//1
+	forceInGarage=1;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
@@ -202,7 +202,7 @@ class RC_MELB_OM_MH6M_DAP: RC_MELB_OM_MH6M_DAP_UV
 {
 	scope=2;			//2
 	scopeCurator=2;		//2
-	forceInGarage=0;	//1
+	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
@@ -259,11 +259,11 @@ class RC_MELB_MH6M_Base: RC_MELB_MH6M_Core
 //MH manned
 class RC_MELB_MH6M: RC_MELB_MH6M_Base
 {
-	displayName="MH-6M"
+	displayName="MH-6M - Little Bird"
 
 	scope=2;			//2
 	scopeCurator=2;		//2
-	forceInGarage=0;	//1
+	forceInGarage=1;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
@@ -286,13 +286,13 @@ class RC_MELB_OM_MH6M_UV: RC_MELB_MH6M_Base
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
 
-	displayName="OM MH-6M"
+	displayName="OM MH-6M - Little Bird"
 };
 class RC_MELB_OM_MH6M: RC_MELB_OM_MH6M_UV
 {
 	scope=2;			//2
 	scopeCurator=2;		//2
-	forceInGarage=0;	//1
+	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"

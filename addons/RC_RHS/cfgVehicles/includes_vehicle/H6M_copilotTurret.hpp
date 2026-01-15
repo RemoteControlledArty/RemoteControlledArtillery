@@ -1,5 +1,10 @@
 class CopilotTurret: CopilotTurret
 {
+	class Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
+	};
+	
 	dontCreateAI=1;
 	CanEject=1;
 
@@ -111,6 +116,8 @@ class CopilotTurret: CopilotTurret
 			thermalMode[]={0};
 			directionStabilized=1;
 			horizontallyStabilized=1;
+
+			gunnerOpticsModel="rhsusf\addons\rhsusf_melb\data\optics\melb_flir_m.p3d";
 
 			/*
 			opticsDisplayName="TRK COR";
