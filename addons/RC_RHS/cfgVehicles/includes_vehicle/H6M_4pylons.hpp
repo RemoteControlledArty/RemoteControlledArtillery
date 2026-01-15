@@ -9,7 +9,8 @@ class TransportPylonsComponent
 			hardpoints[]=
 			{
 				"OM_H",
-				"RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134"
+				"RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134",
+				"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGR","DAGRM"
 
 				/*
 				//"Pylon",
@@ -35,7 +36,7 @@ class TransportPylonsComponent
 			UIposition[]		= {0.625,0.2};
 			hitpoint			= "HitPylon1";
 			
-			attachment			= "rhsusf_mag_gau19_melb_left";
+			attachment			= "RC_RHS_PylonM_1300Rnd_GAU19A_left";
 		};
 		class pylon2 : pylon1
 		{
@@ -68,6 +69,18 @@ class TransportPylonsComponent
 
 	class Presets
 	{
+		class Default
+		{
+			attachment[] =
+			{
+				"RC_RHS_PylonM_1300Rnd_GAU19A_left",
+				"RC_PylonM_300Rnd_20mm",
+				"RC_RHS_PylonM_19Rnd_M229",
+				"RC_PylonM_7Rnd_APKWS"
+			};
+			displayname="Default";
+		};
+		/*
 		class Light
 		{
 			attachment[] =
@@ -101,5 +114,6 @@ class TransportPylonsComponent
 			};
 			displayname = "Heavy";
 		};
+		*/
 	};
 };

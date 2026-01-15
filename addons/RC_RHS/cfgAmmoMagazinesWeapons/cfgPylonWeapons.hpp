@@ -51,6 +51,8 @@ class RC_RHS_PylonW_DAGR: RHS_weap_DAGR_Launcher
 };
 
 
+/*
+//defunct guidance
 class RHS_weap_AGM114K_Launcher;
 class RC_RHS_PylonW_AGM114K: RHS_weap_AGM114K_Launcher
 {
@@ -62,10 +64,41 @@ class RC_RHS_PylonW_AGM114K: RHS_weap_AGM114K_Launcher
 		"RC_PylonM_2Rnd_AGM114K"
 	};
 };
+*/
 
 
-//ADD GAU, only high firerate, named left / right, also M134 .338NM
+class RHS_weap_gau19;
+class RC_RHS_PylonW_GAU19A: RHS_weap_gau19
+{
+	displayName="GAU-19/A";
+	displayNameShort="GAU-19/A";
+	ballisticsComputer=8;
+	magazines[]=
+	{
+		"RC_RHS_PylonM_1300Rnd_GAU19A"
+	};
+	modes[]=
+	{
+		"HighROF","close","short","medium","far"
+	};
+};
 
+
+class RHS_weap_m134_pylon;
+class RC_RHS_PylonW_338_Minigun: RHS_weap_m134_pylon
+{
+	displayName=".338NM Minigun";
+	displayNameShort=".338NM Minigun";
+	ballisticsComputer=8;
+	magazines[]=
+	{
+		"RC_RHS_PylonM_2600Rnd_338_SLAP"
+	};
+	modes[]=
+	{
+		"HighROF","close","short","medium","far"
+	};
+};
 
 /*
 class RC_PylonW_APKWS;

@@ -153,3 +153,36 @@ class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 	lockedTargetSound[]={"",0,1};
 };
 //EF_PylonMissile_Titan_NLOS_2Rnd  pylonWeapon = "EF_Weapon_Titan_NLOS";	 hardpoints[] = {"TITAN_NLOS_2RND"};	ammo = "EF_Ammo_Titan_NLOS";
+
+
+class RocketPods;
+class RC_PylonW_Hellfire: RocketPods
+{
+	// TEST WITHOUT ACE
+
+	displayName="Hellfire";
+	displayNameShort="Hellfire";
+	magazines[]={"RC_PylonM_2Rnd_AGM114K","RC_PylonM_1Rnd_AGM114K"};
+
+	ace_hellfire_enabled=1; // handle adding interactions and adding laser designator
+	ace_laser_canSelect=1; 	// allows switching laser code
+	ace_laser_showHud=1; 	// show attack profile / lock on hud
+	autoFire=0;
+	canLock=0;
+	weaponLockSystem=0;
+	lockingTargetSound[]={"",0,1};
+	lockedTargetSound[]={"",0,1};
+	soundFly[]={"A3\Sounds_F\weapons\Rockets\rocket_fly_1",1,1.1,700};
+	nameSound="MissileLauncher";
+	sounds[]={"StandardSound"};
+	cursor="EmptyCursor";
+	cursorAim="missile";
+	showAimCursorInternal=0;
+
+	class StandardSound
+	{
+		begin1[]={"A3\Sounds_F\weapons\Rockets\missile_1",1.12202,1.3,1000};
+		soundBegin[]={"begin1",1};
+		soundsetshot[]={"RocketsMedium_Shot_SoundSet"};
+	};
+};

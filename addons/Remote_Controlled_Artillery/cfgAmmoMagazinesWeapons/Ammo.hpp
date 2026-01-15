@@ -258,6 +258,19 @@ class RC_B_338_T_Y: RC_B_338_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_
 class RC_B_338_T_W: RC_B_338_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
 
 
+class RC_B_338_SLAP_T_R: RC_B_338_T_R
+{
+	hit=27;
+	typicalSpeed=1215;
+	caliber=2.35;
+	cost=10;
+	airFriction=-0.00023;
+};
+class RC_B_338_SLAP_T_G: RC_B_338_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_B_338_SLAP_T_Y: RC_B_338_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_338_SLAP_T_W: RC_B_338_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
+
+
 class B_93x64_Ball;
 class RC_B_93x64_T_G: B_93x64_Ball
 {
@@ -272,6 +285,20 @@ class RC_B_93x64_T_G: B_93x64_Ball
 };
 class RC_B_93x64_T_R: RC_B_93x64_T_G {model="\A3\Weapons_f\Data\bullettracer\tracer_red";};
 class RC_B_93x64_T_Y: RC_B_93x64_T_G {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_93x64_T_W: RC_B_93x64_T_G {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
+
+
+class RC_B_93x64_SLAP_T_G: RC_B_93x64_T_G
+{
+	hit=27;
+	typicalSpeed=1215;
+	caliber=2.35;
+	cost=10;
+	airFriction=-0.00023;
+};
+class RC_B_93x64_SLAP_T_R: RC_B_93x64_SLAP_T_G {model="\A3\Weapons_f\Data\bullettracer\tracer_red";};
+class RC_B_93x64_SLAP_T_Y: RC_B_93x64_SLAP_T_G {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_B_93x64_SLAP_T_W: RC_B_93x64_SLAP_T_G {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
 
 
 //HMG

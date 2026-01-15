@@ -129,23 +129,26 @@ class CfgPatches
 			"RC_M119_LC",
 			"RC_M119_LC_O",
 			"RC_M119_LC_I",
+
+			"RC_RHS_B_HeliPilot",
+			//"RC_RHS_O_HeliPilot",
+			//"RC_RHS_I_HeliPilot"
 			
-			/*
-			"RC_MELB_AH6M",
-			"RC_MELB_AH6M_O",
-			"RC_MELB_AH6M_I",
+			"RC_MELB_AH6M_DAP",
+			"RC_MELB_AH6M_DAP_O",
+			"RC_MELB_AH6M_DAP_I",
 
-			"RC_MELB_OM_AH6M",
-			"RC_MELB_OM_AH6M_O",
-			"RC_MELB_OM_AH6M_I",
+			"RC_MELB_OM_AH6M_DAP",
+			"RC_MELB_OM_AH6M_DAP_O",
+			"RC_MELB_OM_AH6M_DAP_I",
 
-			"RC_MELB_AH6M_T",
-			"RC_MELB_AH6M_T_O",
-			"RC_MELB_AH6M_T_I",
+			"RC_MELB_MH6M_DAP",
+			"RC_MELB_MH6M_DAP_O",
+			"RC_MELB_MH6M_DAP_I",
 
-			"RC_MELB_OM_AH6M_T",
-			"RC_MELB_OM_AH6M_T_O",
-			"RC_MELB_OM_AH6M_T_I",
+			"RC_MELB_OM_MH6M_DAP",
+			"RC_MELB_OM_MH6M_DAP_O",
+			"RC_MELB_OM_MH6M_DAP_I",
 
 			"RC_MELB_MH6M",
 			"RC_MELB_MH6M_O",
@@ -154,7 +157,6 @@ class CfgPatches
 			"RC_MELB_OM_MH6M",
 			"RC_MELB_OM_MH6M_O",
 			"RC_MELB_OM_MH6M_I",
-			*/
 			
 			/*
 			"RC_HIMARS_D",
@@ -191,11 +193,7 @@ class CfgPatches
 			"RC_FlatbedTruck_manned_A_O",
 			"RC_FlatbedTruck_manned_WD_O",
 			"RC_FlatbedTruck_manned_A_I",
-			"RC_FlatbedTruck_manned_WD_I",
-
-			"RC_RHS_B_HeliPilot"
-			//"RC_RHS_O_HeliPilot",
-			//"RC_RHS_I_HeliPilot"
+			"RC_FlatbedTruck_manned_WD_I"
 		};
 
 		weapons[]=

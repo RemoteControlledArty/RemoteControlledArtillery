@@ -72,6 +72,29 @@ class TransportPylonsComponent
 
 	class Presets
 	{
+		class Default
+		{
+			attachment[] =
+			{
+				"",
+				"RC_PylonM_300Rnd_20mm",
+				"RC_RHS_PylonM_19Rnd_M229",
+				""
+			};
+			displayname="Default";
+		};
+		class Guided
+		{
+			attachment[] =
+			{
+				"",
+				"RC_PylonM_300Rnd_20mm",
+				"RC_PylonM_12Rnd_APKWS",
+				""
+			};
+			displayname="Guided";
+		};
+		/*
 		class Light
 		{
 			attachment[] =
@@ -105,5 +128,6 @@ class TransportPylonsComponent
 			};
 			displayname = "Heavy";
 		};
+		*/
 	};
 };

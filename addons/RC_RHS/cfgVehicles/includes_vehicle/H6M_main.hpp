@@ -8,7 +8,7 @@ canUseScanner=1;
 
 allowTabLock=1;
 gunnerCanFire=1;
-enableManualFire=1;
+enableManualFire=1;					//only if copilot is primarygunner & pylons owned by copilot, but then lase is fixed and CCIP is gone
 
 
 bodyFrictionCoef=0.2;				//0.3
@@ -32,84 +32,3 @@ crewCrashProtection=0.1;			//0.2
 ejectDeadCargo=1;
 hullDamageCauseExplosion=1;			//1, maybe just bool?
 hullExplosionDelay[]={20,30};		//{10,20}
-
-
-memoryPointTaskMarker="TaskMarker_1_pos";
-memoryPointDriverOptics="pos pilot dir";	//pos pilot, pos rack, pos gunner, pos cargo 	//memsupply, slingLoad0		//IR_Position, Light_pos
-
-
-unitInfoType="RC_RscOptics_AV_Heli";
-unitInfoTypeRTD="RC_RscOptics_AV_Heli";
-//driverWeaponsInfoType="RscOptics_CAS_01_TGP";
-driverOpticsModel="rhsusf\addons\rhsusf_melb\data\optics\melb_flir_m.p3d";
-//driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-//driverOpticsModel="rhsusf\addons\rhsusf_melb\data\optics\melb_flir_wf.p3d";
-weapons[]+={"Laserdesignator_pilotCamera"};
-magazines[]+={"Laserbatteries"};
-
-
-//2.0
-/*
-memoryPointGunnerOptics="commanderview";
-memoryPointDriverOptics="commanderview";
-gunBeg="commanderview";
-gunEnd="laserstart";
-memoryPointGun="commanderview";
-body="obsTurret";
-gun="obsGun";
-animationSourceBody="obsTurret";
-animationSourceGun="obsGun";
-turretInfoType="Rsc_MELB_Turret_UnitInfo";
-*/
-
-class Viewoptics: ViewOptics
-{
-	initFov=1.5;	//1.25
-	maxFov=1.5;		//1.25
-	minFov=0.25;
-
-	initAngleX=0;
-	minAngleX=0;
-	maxAngleX=0;
-	initAngleY=0;
-	minAngleY=0;
-	maxAngleY=0;
-
-	/*
-	//cannot be changed?
-	minElev=0;
-	maxElev=0;
-	initElev=0;
-	*/
-
-	visionMode[]=
-	{
-		"Normal",
-		"NVG",
-		"Ti"
-	};
-	thermalMode[]={0};
-};
-/*
-class ViewPilot: ViewPilot
-{
-	initFov=1.25;
-	maxFov=1.25;
-	minFov=0.02;
-
-	initAngleX=0;
-	minAngleX=-65;
-	maxAngleX=85;
-	initAngleY=0;
-	minAngleY=-150;
-	maxAngleY=150;
-
-	visionMode[]=
-	{
-		"Normal",
-		"NVG",
-		"Ti"
-	};
-	thermalMode[]={0};
-};
-*/

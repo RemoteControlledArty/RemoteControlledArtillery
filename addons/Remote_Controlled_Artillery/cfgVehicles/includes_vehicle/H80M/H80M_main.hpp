@@ -8,7 +8,7 @@ canUseScanner=1;
 
 allowTabLock=1;
 gunnerCanFire=1;
-enableManualFire=1;
+enableManualFire=1;					//only if copilot is primarygunner & pylons owned by copilot, but then lase is fixed and CCIP is gone
 
 
 bodyFrictionCoef=0.75;				//1
@@ -33,8 +33,9 @@ maximumLoad=1500;					//1000
 
 
 driverCompartments="Compartment1";
+cargoCompartments[]={"Compartment1"};
 CanEject=1;
 crewCrashProtection=0.1;			//0.2
 ejectDeadCargo=1;
-hullDamageCauseExplosion=1;			//1, maybe just bool?
-hullExplosionDelay[]={20,30};		//{10,20}
+//hullDamageCauseExplosion=1;		//0 for vanilla (bool?)
+//hullExplosionDelay[]={20,30};		//undefined? like because bool is 0, hull also has 999 armor

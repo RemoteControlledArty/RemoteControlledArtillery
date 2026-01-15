@@ -32,7 +32,7 @@ class RC_PylonM_Autocannon_base: PylonWeapon_300Rnd_20mm_shells
 class RC_PylonM_300Rnd_20mm: RC_PylonM_Autocannon_base
 {
 	scope=2;
-	displayName="[20mm MP-QF 300x]";
+	displayName="> 20mm MP-QF 300x";
 	displayNameShort="20mm MP-QF";
 	descriptionShort="20mm Autocannon";
 	ammo="RC_Pylon_B_20mm_MP_QF_T_R";
@@ -45,7 +45,7 @@ class RC_PylonM_300Rnd_20mm: RC_PylonM_Autocannon_base
 };
 class RC_PylonM_250Rnd_25mm: RC_PylonM_300Rnd_20mm
 {
-	displayName="[25mm MP-QF x250]";
+	displayName="> 25mm MP-QF x250";
 	displayNameShort="25mm MP-QF";
 	descriptionShort="25mm Autocannon";
 	ammo="RC_Pylon_B_25mm_MP_QF_T_R";
@@ -59,10 +59,10 @@ class RC_PylonM_250Rnd_25mm: RC_PylonM_300Rnd_20mm
 //class RC_PylonM_200Rnd_25mm: RC_PylonM_250Rnd_25mm {count=200;};
 class RC_PylonM_200Rnd_30mm: RC_PylonM_300Rnd_20mm
 {
-	displayName="[30mm MP-QF x200]";
+	displayName="> 30mm MP-QF x200";
 	displayNameShort="30mm MP-QF";
 	descriptionShort="30mm Autocannon";
-	ammo="RC_Pylon_B_30mm_MP_QF_T_R";
+	ammo="RC_Pylon_B_30mm_MP_QF_T_R";	//RC_B_35mm_MPAB_DF_T_R
 	count=200;
 
 	hardpoints[]=
@@ -89,7 +89,7 @@ class RC_PylonM_12Rnd_70mm_Hydra_HE: PylonRack_12Rnd_missiles
 	//INCREASE REARM COST
 	
 	author="Ascent";
-	displayName="[Hydra HE 12x]";
+	displayName="> Hydra HE 12x";
 	displayNameShort="Hydra HE";
 	descriptionShort="Hydra HE 12x";
 	pylonWeapon="RC_PylonW_12Rnd_70mm_Hydra";
@@ -102,7 +102,7 @@ class RC_PylonM_12Rnd_70mm_Hydra_HE: PylonRack_12Rnd_missiles
 };
 class RC_PylonM_12Rnd_70mm_Hydra_MP: RC_PylonM_12Rnd_70mm_Hydra_HE
 {
-	displayName="[Hydra MP 12x]";
+	displayName="> Hydra MP 12x";
 	displayNameShort="Hydra MP";
 	descriptionShort="Hydra MP 12x";
 	ammo="RC_Hydra_MP";
@@ -112,7 +112,7 @@ class RC_PylonM_12Rnd_70mm_Hydra_MP: RC_PylonM_12Rnd_70mm_Hydra_HE
 class PylonRack_12Rnd_PG_missiles;
 class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
 {
-	displayName="[APKWS LG 12x]";
+	displayName="> APKWS LG 12x";
     displayNameShort="APKWS LG";
 	descriptionShort="APKWS LG 12x";
     pylonWeapon="RC_PylonW_APKWS";
@@ -125,12 +125,35 @@ class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
 };
 
 
-//fitting for MH-80M DAP
+class 12Rnd_PG_missiles;
+class RC_PylonM_1Rnd_AGM114K: 12Rnd_PG_missiles
+{
+	displayName="> AGM-114K Hellfire II 1x";
+	displayNameShort="AGM-114K";
+	descriptionShort="AGM-114K Hellfire II 1x";
+	pylonWeapon="RC_PylonW_Hellfire";
+	ammo="RC_AGM114K";
+	count=1;
+
+	model="\A3\Weapons_F\DynamicLoadout\PylonPod_1x_Missile_AA_04_F.p3d";
+	mass=85;
+	/*
+	model="\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_04_F.p3d";
+	mass=70;
+	*/
+
+	hardpoints[]=
+	{
+		"OM_H"
+	};
+};
+
+
 class PylonRack_19Rnd_Rocket_Skyfire;
 class RC_PylonM_19Rnd_70mm_Hydra_HE: PylonRack_19Rnd_Rocket_Skyfire
 {
 	author="Ascent";
-	displayName="[Hydra HE 19x Hex]";
+	displayName="> Hydra HE 19x Hex";
 	displayNameShort="Hydra HE";
 	descriptionShort="Hydra HE 19x";
 	pylonWeapon="RC_PylonW_19Rnd_70mm_Hydra";
@@ -143,7 +166,7 @@ class RC_PylonM_19Rnd_70mm_Hydra_HE: PylonRack_19Rnd_Rocket_Skyfire
 };
 class RC_PylonM_19Rnd_70mm_Hydra_MP: RC_PylonM_19Rnd_70mm_Hydra_HE
 {
-	displayName="[Hydra MP 19x Hex]";
+	displayName="> Hydra MP 19x Hex";
 	displayNameShort="Hydra MP";
 	descriptionShort="Hydra MP 19x";
 	ammo="RC_Hydra_MP";

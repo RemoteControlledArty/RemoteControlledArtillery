@@ -7,7 +7,9 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 {
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_main.hpp"
 
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCam.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamBase.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamFixed.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamFree.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_userActions.hpp"
 	//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_hitPoints.hpp"
 	//#include "\Remote_Controlled_Artillery\MFD\MFD_merged.hpp"
@@ -228,9 +230,11 @@ class RC_MELB_MH6M_Base: RC_MELB_MH6M_Core
 {
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_main.hpp"
 
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCam.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamBase.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamFixed.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamFree.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_userActions.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_hitPoints.hpp"
+	//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_hitPoints.hpp"
 	//#include "\Remote_Controlled_Artillery\MFD\MFD_merged.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 

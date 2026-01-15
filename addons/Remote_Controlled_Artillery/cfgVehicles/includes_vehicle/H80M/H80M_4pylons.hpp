@@ -9,7 +9,8 @@ class TransportPylonsComponent
 			hardpoints[]=
 			{
 				"OM_H",
-				"RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134"
+				"RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134",
+				"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGR","DAGRM"
 
 				/*
 				//"Pylon",
@@ -34,7 +35,7 @@ class TransportPylonsComponent
 			UIposition[] 		= {0.625,0.42};
 
 			//turret[]			= {};	//none = both?
-			attachment			= "RC_PylonM_12Rnd_70mm_Hydra_MP";
+			attachment			= "RC_PylonM_12Rnd_APKWS";
 		};
 		class pylon2: pylon1
 		{
@@ -46,20 +47,31 @@ class TransportPylonsComponent
 		{
 			//mirroredMissilePos= 2;
 			UIposition[] 		= {0.11,0.37};
-			attachment			= "RC_PylonM_12Rnd_APKWS";
+			attachment			= "RC_PylonM_19Rnd_70mm_Hydra_MP";
 		};
 		class pylon4: pylon1
 		{
 			//mirroredMissilePos= 1;
 			UIposition[] 		= {0.04,0.42};
-			attachment			= "RC_PylonM_12Rnd_70mm_Hydra_MP";
+			attachment			= "RC_PylonM_1Rnd_AGM114K";
 		};
 	};
 
 
-	/*
 	class Presets
 	{
+		class Default
+		{
+			attachment[] =
+			{
+				"RC_PylonM_12Rnd_APKWS",
+				"RC_PylonM_200Rnd_30mm",
+				"RC_PylonM_19Rnd_70mm_Hydra_MP",
+				"RC_PylonM_1Rnd_AGM114K"
+			};
+			displayname = "Default";
+		};
+		/*
 		class Light
 		{
 			attachment[] =
@@ -93,6 +105,6 @@ class TransportPylonsComponent
 			};
 			displayname = "Heavy";
 		};
+		*/
 	};
-	*/
 };
