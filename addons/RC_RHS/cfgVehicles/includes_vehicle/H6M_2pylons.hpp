@@ -57,7 +57,7 @@ class TransportPylonsComponent
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
 			//change to M261 19x Hyra MP
-			attachment			= "RC_RHS_PylonM_19Rnd_M229";
+			attachment			= "RC_RHS_PylonM_19Rnd_MP";
 		};
 		class pylon4 : pylon1
 		{

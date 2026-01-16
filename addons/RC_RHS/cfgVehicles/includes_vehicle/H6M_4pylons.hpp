@@ -54,7 +54,7 @@ class TransportPylonsComponent
 			hitpoint 			= "HitPylon3";
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
-			attachment			= "RC_RHS_PylonM_19Rnd_M229";
+			attachment			= "RC_RHS_PylonM_19Rnd_MP";
 		};
 		class pylon4 : pylon1
 		{
