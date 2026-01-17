@@ -20,11 +20,11 @@ cyclicForwardForceCoef=1;			//1
 backRotorForceCoef=1;				//1
 */
 startDuration=15;					//20
+slingLoadMaxCargoMass=13500;		//t 13500
 
 
 /*
 slingLoadMemoryPoint="slingLoad0";
-slingLoadMaxCargoMass=4000;			//900
 maximumLoad=1500;					//1000
 */
 //sensitivity=2.5;					//2.5

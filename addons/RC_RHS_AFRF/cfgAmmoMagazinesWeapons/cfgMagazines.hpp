@@ -129,10 +129,11 @@ class RC_RHS_AFRF_100Rnd_30mm_APFSDS_T_R: rhs_mag_3uof8_305
 {
 	author="Ascent";
 	ammo="RC_RHS_AFRF_B_30mm_APFSDS_T_R";
-	count=100;
 	displayName="30mm APFSDS-T";
 	displayNameShort="30mm APFSDS-T";
 	displayNameMFDFormat="APFSDS-T";
+	count=100;
+	tracersEvery=1;
 };
 class RC_RHS_AFRF_100Rnd_30mm_APFSDS_T_G: RC_RHS_AFRF_100Rnd_30mm_APFSDS_T_R {ammo="RC_RHS_AFRF_B_30mm_APFSDS_T_G";};
 class RC_RHS_AFRF_100Rnd_30mm_APFSDS_T_Y: RC_RHS_AFRF_100Rnd_30mm_APFSDS_T_R {ammo="RC_RHS_AFRF_B_30mm_APFSDS_T_Y";};
@@ -141,12 +142,13 @@ class RC_RHS_AFRF_100Rnd_30mm_APFSDS_T_Y: RC_RHS_AFRF_100Rnd_30mm_APFSDS_T_R {am
 class rhs_mag_3ubr11_195;
 class RC_RHS_AFRF_100Rnd_30mm_MP_Pen_T_R: rhs_mag_3ubr11_195
 {
+	author="Ascent";
 	ammo="RC_RHS_AFRF_B_30mm_MP_Pen_T_R";
 	displayName="30mm MP-T";
 	displayNameShort="30mm MP";
 	displayNameMFDFormat="MP";
-	author="Ascent";
 	count=100;
+	tracersEvery=1;
 };
 class RC_RHS_AFRF_100Rnd_30mm_MP_Pen_T_G: RC_RHS_AFRF_100Rnd_30mm_MP_Pen_T_R {ammo="RC_RHS_AFRF_B_30mm_MP_Pen_T_G";};
 class RC_RHS_AFRF_100Rnd_30mm_MP_Pen_T_Y: RC_RHS_AFRF_100Rnd_30mm_MP_Pen_T_R {ammo="RC_RHS_AFRF_B_30mm_MP_Pen_T_Y";};
