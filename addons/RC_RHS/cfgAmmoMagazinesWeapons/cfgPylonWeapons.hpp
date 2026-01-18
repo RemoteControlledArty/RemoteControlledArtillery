@@ -75,7 +75,8 @@ class RC_RHS_PylonW_GAU19A: RHS_weap_gau19
 	ballisticsComputer=8;
 	magazines[]=
 	{
-		"RC_RHS_PylonM_1300Rnd_GAU19A"
+		"RC_RHS_PylonM_1300Rnd_GAU19A_left",
+		"RC_RHS_PylonM_1300Rnd_GAU19A_right"
 	};
 	modes[]=
 	{
@@ -99,6 +100,7 @@ class RC_RHS_PylonW_338_Minigun: RHS_weap_m134_pylon
 		"HighROF","close","short","medium","far"
 	};
 };
+
 
 /*
 class RC_PylonW_APKWS;

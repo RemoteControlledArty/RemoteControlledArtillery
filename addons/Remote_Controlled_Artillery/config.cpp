@@ -825,6 +825,8 @@ class CfgFunctions
 
       		class preInit {preInit=1;};
       		class InitCBASettings {preInit=1;};
+			
+			class RC_cUAS_Beep_Arrays {preInit=1;};
 
 			class RC_CBRad_Arrays {preInit=1;};
 			class RC_CBRad_EntityCreated {preInit=1;};
@@ -837,6 +839,7 @@ class CfgFunctions
 			class RC_UAVBlur {postInit=1;};
 			class RC_LaserDatalink {postInit=1;};
 			class RC_cursorTargetIntoDatalink {postInit=1;};
+			class RC_cUAS_Beep_Loop {postInit=1;};
 			
 			class RC_AT_Warning_Arrays {preInit=1;};
 			class RC_AT_Warning {};
@@ -844,15 +847,15 @@ class CfgFunctions
 			class RC_AT_TurretOwner {};
 			class RC_AT_Turn {};
 			class RC_APS_Activate {};
+			class RC_AT_SourceIndicator {};
 
 			class RC_MinePlow {};
 
 			class RC_OrderTurretTurnKey {};
 			class RC_OrderTurretTurnOwner {};
 			class RC_OrderTurretTurn {};
+			class RC_cUAS_Beep_Call {};
 
-			class RC_AT_SourceIndicator {};
-			class RC_cUAS_Beep {};
 			class scrollSolutions {};
 		};
 		class RC_Immobilized

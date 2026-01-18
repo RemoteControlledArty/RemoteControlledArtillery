@@ -1,2 +1,2 @@
-init="params ['_vic'];  _beepDist=400;  [_vic, _beepDist] call RC_fnc_RC_cUAS_Beep;";
-//init="if (!isServer) exitWith {};  params ['_veh'];  _veh setVariable ['cUAS_BeepDist', 400];  RC_CUAS_VehArray pushBack _veh;";
+init="if (!isServer) exitWith {};  params ['_veh'];  _veh setVariable ['cUAS_BeepDist', 400];  RC_CUAS_VehArray pushBack _veh;";
+//init="params ['_vic'];  _beepDist=400;  [_vic, _beepDist] call RC_fnc_RC_cUAS_Beep;";

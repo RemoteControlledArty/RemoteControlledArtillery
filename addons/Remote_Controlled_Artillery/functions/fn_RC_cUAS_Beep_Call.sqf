@@ -16,45 +16,52 @@ private _validTargets = [];
 } forEach _targetsDL;
 
 
-if (_validTargets < 1) then {
+private _validTargetsCount = count _validTargets;
+if (_validTargetsCount > 0) then {
 	{
 		private _veh = _x;
 
 		//create a list of distances for this vehicle
-		private _distArr = _targets apply {_x distance _veh};
-		//find the smallest number in that list
+		private _distArr = _validTargets apply {_x distance _veh};
 		private _closestDist = selectMin _distArr;
+		private _beepDist = _veh getVariable ["cUAS_BeepDist", 400];
 
 
-		if (_closestDist < _veh getVariable ["cUAS_BeepDist", 500];) then {
+		if (_closestDist < _beepDist) then {
 			
-			_cycle = _cycle + 1;
-			if ((_cycle >= 4) or (_targetsCount > _oldTargetsCount)) then {
-				private _targetsDistances = [];
-				{
-					_targetsDistances pushBack (_x distance _vic);
-				} forEach _validTargets;
+			//_cycle = _cycle + 1;
+			//if ((_cycle >= 4) or (_validTargetsCount > (_veh getVariable ["cUAS_oldTargetsCount", 400]) )) then {
 
-				private _distance = selectMin _targetsDistances;
-				private _dNorm = (_distance / _beepDist) min 1;
-				private _vol   = (1 - _dNorm) * 0.11 + 0.04;
-				_vol = _vol max 0.04 min 0.15;
+			private _dNorm = (_closestDist / _beepDist) min 1;
+			private _vol   = (1 - _dNorm) * 0.11 + 0.04;
+			_vol = _vol max 0.04 min 0.15;
+			private _sound = ["a3\sounds_f\air\heli_light_01\warning.wss", _vol, 0.8];
 
-				private _sound = ["a3\sounds_f\air\heli_light_01\warning.wss", _vol, 0.8];
-				[_sound] remoteExec ["playSoundUI", crew _vic];
 
-				private _controller1 = _controllers select 0;
-				if (_controller1 isNotEqualTo objNull) then {
-					[_sound] remoteExec ["playSoundUI", crew _controller1];
+			private _crewPlayerCount = count ((crew _veh) select {isPlayer _x});
 
-					if (count _controllers > 2) then {
-						private _controller2 = _controllers select 3;
-						[_sound] remoteExec ["playSoundUI", crew _controller2];
-					};
-				};
-
-				_cycle = 0;
+			if (_crewPlayerCount > 0) then {
+				
+				[_sound] remoteExec ["playSoundUI", crew _veh];
 			};
+
+
+			private _controllers = (UAVControl _veh);
+			private _controller1 = _controllers select 0;
+	
+			if (_controller1 isNotEqualTo objNull) then {
+
+				[_sound] remoteExec ["playSoundUI", _controller1];
+
+				if (count _controllers > 2) then {
+
+					private _controller2 = _controllers select 2;
+					[_sound] remoteExec ["playSoundUI", _controller2];
+				};
+			};
+
+			//_cycle = 0;
+			//_veh setVariable ['cUAS_oldTargetsCount', _validTargetsCount]
 		};
 
 	} forEach _CUAS_VehArray;
