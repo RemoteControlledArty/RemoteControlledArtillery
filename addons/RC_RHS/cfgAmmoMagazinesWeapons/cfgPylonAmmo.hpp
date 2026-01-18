@@ -3,6 +3,17 @@ class RC_RHS_APKWS: M_PG_AT
 {
 	proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229";
 
+	/*
+	//maybe modify to increase accuracy while not fully aligned
+	maneuvrability=8;
+	airFriction=0.1;
+	sideAirFriction=0.16;
+	initTime=0;
+	*/
+
+	thrustTime=2.14;	//1.07 doubled to cancel thrust halving
+	thrust=412.5;		//825 halved to increase accuracy
+	
 	//indirectHit=40;
 	indirectHitRange=4.5;	//3.2
 	fuseDistance=20;
@@ -60,6 +71,7 @@ class RC_RHS_AGM114K: M_Scalpel_AT
 	laserLock=0;
 	manualControl=0;
 	
+	fuseDistance=50;
 	timeToLive=40;
 	maxSpeed=440;
 	thrust=250;
