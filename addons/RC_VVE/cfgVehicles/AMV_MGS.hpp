@@ -7,7 +7,7 @@ class RC_AMV_MGS_Core: APC_Wheeled_01_mgs_up_QAV
 };
 class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 {
-	displayName="AMV MGS-T"
+	displayName="AMV MGS-T";
 	scope=2;
 	scopeCurator=2;
 

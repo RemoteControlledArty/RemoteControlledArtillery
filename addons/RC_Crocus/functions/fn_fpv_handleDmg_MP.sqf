@@ -17,8 +17,10 @@ if (_damage > 0.1) exitWith {
 	if (_uavType in ["B_Crocus_PvP", "O_Crocus_PvP", "I_Crocus_PvP"]) then {_missileType = "FPV_RPG42_PvP";};
 	if (_uavType in ["B_Crocus_Training", "O_Crocus_Training", "I_Crocus_Training"]) then {_missileType = "FPV_RPG42_Training";};
 
-	private _missile = createVehicle [_missileType, [0,0,100]];
+	private _missile = createVehicle [_missileType, [0,0,500]];
     _missile setVectorDirAndUp [_vectorDir, _vectorUp];
+
+	//add instigator
     [_missile, [_killer, _killer]] remoteExec ["setShotParents", 2];
 
 	waitUntil { (getShotParents _missile) isEqualTo [_killer, _killer]; };

@@ -67,7 +67,7 @@ enginePower=500;	//326
 peakTorque=2500;	//1457.5
 
 canFloat=1;
-maxFordingDepth=0.5
+maxFordingDepth=0.5;
 rudderForceCoef=0.8;
 rudderForceCoefAtMaxSpeed=0.004;
 waterEffectSpeed=5;

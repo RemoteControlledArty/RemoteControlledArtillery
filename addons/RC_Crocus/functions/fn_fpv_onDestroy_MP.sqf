@@ -7,10 +7,9 @@ if !(_uavType in ["B_Crocus_MP", "B_Crocus_MP_Sens", "B_Crocus_MP_NV", "B_Crocus
 cutText ["", "PLAIN"];
 
 private _killer = driver _uav;
-private _instigator = (UAVControl _uav) # 0;
-private _missileType = "";
+private _instigator = (UAVControl _uav) #0;
+private _missileType = "FPV_RPG42_MP";
 
-_missileType = "FPV_RPG42_MP";
 if (_uavType in ["B_Crocus_PvP", "O_Crocus_PvP", "I_Crocus_PvP"]) then {_missileType = "FPV_RPG42_PvP";};
 if (_uavType in ["B_Crocus_Training", "O_Crocus_Training", "I_Crocus_Training"]) then {_missileType = "FPV_RPG42_Training";};
 
@@ -28,8 +27,8 @@ _missile setVectorDirAndUp [vectorDir _uav, vectorUp _uav];
 */
 
 private _pos = _uav modelToWorld [0, 0, 0];
-private _missile = createVehicle [_missileType, [0, 0, 100]];
-_uav setPosASL [0,0,100];
+private _missile = createVehicle [_missileType, [0, 0, 500]];
+_uav setPosASL [0,0,500];
 
 _missile setVectorDirAndUp [vectorDir _uav, vectorUp _uav];
 _missile setPosATL _pos;
@@ -52,3 +51,7 @@ deleteVehicle _uav;
 	}, 
 	[_missile, [_killer, _instigator]]
 ] call CBA_fnc_waitUntilAndExecute;
+
+
+//maybe remove killer, double use _instigator
+//((getShotParents _missile) select 1) isEqualTo (_shotParents select 1);

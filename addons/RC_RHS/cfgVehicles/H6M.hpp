@@ -75,7 +75,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 //AH manned
 class RC_MELB_AH6M_DAP: RC_MELB_AH6M_Base
 {
-	displayName="AH-6M DAP - Little Bird"
+	displayName="AH-6M DAP - Little Bird";
 
 	scope=2;			//2
 	scopeCurator=2;		//2
@@ -102,7 +102,7 @@ class RC_MELB_OM_AH6M_DAP_UV: RC_MELB_AH6M_Base
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
 
-	displayName="OM AH-6M DAP - Little Bird"
+	displayName="OM AH-6M DAP - Little Bird";
 };
 class RC_MELB_OM_AH6M_DAP: RC_MELB_OM_AH6M_DAP_UV
 {
@@ -169,7 +169,7 @@ class RC_MELB_MH6M_DAP_Base: RC_MELB_AH6M_Base
 };
 class RC_MELB_MH6M_DAP: RC_MELB_MH6M_DAP_Base
 {
-	displayName="MH-6M DAP - Little Bird"
+	displayName="MH-6M DAP - Little Bird";
 
 	scope=2;			//2
 	scopeCurator=2;		//2
@@ -196,7 +196,7 @@ class RC_MELB_OM_MH6M_DAP_UV: RC_MELB_MH6M_DAP_Base
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
 
-	displayName="OM MH-6M DAP - Little Bird"
+	displayName="OM MH-6M DAP - Little Bird";
 };
 class RC_MELB_OM_MH6M_DAP: RC_MELB_OM_MH6M_DAP_UV
 {
@@ -259,7 +259,7 @@ class RC_MELB_MH6M_Base: RC_MELB_MH6M_Core
 //MH manned
 class RC_MELB_MH6M: RC_MELB_MH6M_Base
 {
-	displayName="MH-6M - Little Bird"
+	displayName="MH-6M - Little Bird";
 
 	scope=2;			//2
 	scopeCurator=2;		//2
@@ -286,7 +286,7 @@ class RC_MELB_OM_MH6M_UV: RC_MELB_MH6M_Base
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
 
-	displayName="OM MH-6M - Little Bird"
+	displayName="OM MH-6M - Little Bird";
 };
 class RC_MELB_OM_MH6M: RC_MELB_OM_MH6M_UV
 {
