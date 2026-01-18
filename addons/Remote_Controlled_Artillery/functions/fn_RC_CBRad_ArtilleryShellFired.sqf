@@ -14,20 +14,16 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     //checks side of the vehicle that fired the shell
     private _vehSide = side _vehicle;
-    private _vehSide_B = _vehSide == west;
-    private _vehSide_O = _vehSide == east;
-    private _vehSide_I = _vehSide == resistance;
-
 
     //conciders potential prior CB firemission completed
     switch (true) do {
-        case(_vehSide_B): {
+        case(_vehSide == west): {
             RC_fireMissionArray_B deleteAt (RC_fireMissionArray_B find _vehicle);
         };
-        case(_vehSide_O): {
+        case(_vehSide == east): {
             RC_fireMissionArray_O deleteAt (RC_fireMissionArray_O find _vehicle);
         };
-        case(_vehSide_I): {
+        case(_vehSide == resistance): {
             RC_fireMissionArray_I deleteAt (RC_fireMissionArray_I find _vehicle);
         };
     };

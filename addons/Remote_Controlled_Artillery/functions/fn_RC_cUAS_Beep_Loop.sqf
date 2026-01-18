@@ -5,76 +5,61 @@
 	Beep for newly detected UAV in Datalink.
 */
 
+if (!isServer) exitWith {};
 
-[_vic, _beepDist] spawn {
-	
-	params ["_vic","_beepDist"];
-	private _cycle = 0;
+private _cycle = 0;
 
-	while {true} do {
+while {true} do {
 
-		sleep 1;
-		if (!alive _vic) exitwith {};
+	sleep 0.2;
 
-		//needs to be changed if only run on server
-		if (!local _vic) then {
-			continue;
-		};
+	RC_CUAS_VehArray pushBack _veh;
+	RC_CUAS_VehArray = RC_CUAS_VehArray select {!isNull _x && alive _x};
 
-		private _crewPlayers = (crew _vic) select {isPlayer _x};
-		private _controllers = (UAVControl _vic);
-		if (((count _crewPlayers) == 0) && ((_controllers select 0) isEqualTo objNull)) then {
-			continue;  
-		};
+	if (count RC_CUAS_VehArray < 1) then {
+		continue;
+	};
 
-		private _targetsDL = listRemoteTargets side _vic;
-		private _validTargets = [];
-		{
-			private _target = _x select 0;
-
-			if (!isNull _target && {_target isKindOf "Air"}) then {
-				if ((_target distance _vic <= _beepDist)) then {
-					if ([side _target, side _vic] call BIS_fnc_sideIsEnemy) then {
-						if (side _target != civilian) then {
-							_validTargets pushBack _target;
-						};
-					};
-				};
+	//seperates the alive vehicles by side, then counts each
+	private _CUAS_VehArray_B = [];
+	private _CUAS_VehArray_O = [];
+	private _CUAS_VehArray_I = [];
+	{
+		private _side = side _x;
+		
+		switch (true) do {
+			case(_side == west): {
+				_CUAS_VehArray_B pushback _x;
 			};
-		} forEach _targetsDL;
-
-		_oldTargetsCount = count _validTargets;	//?
-		_targetsCount = count _validTargets;	//?
-		if (_targetsCount > 0) then {
-			
-			_cycle = _cycle + 1;
-			if ((_cycle >= 4) or (_targetsCount > _oldTargetsCount)) then {
-				private _targetsDistances = [];
-				{
-					_targetsDistances pushBack (_x distance _vic);
-				} forEach _validTargets;
-
-				private _distance = selectMin _targetsDistances;
-				private _dNorm = (_distance / _beepDist) min 1;
-				private _vol   = (1 - _dNorm) * 0.11 + 0.04;
-				_vol = _vol max 0.04 min 0.15;
-
-				private _sound = ["a3\sounds_f\air\heli_light_01\warning.wss", _vol, 0.8];
-				[_sound] remoteExec ["playSoundUI", crew _vic];
-
-				private _controller1 = _controllers select 0;
-				if (_controller1 isNotEqualTo objNull) then {
-					[_sound] remoteExec ["playSoundUI", crew _controller1];
-
-					if (count _controllers > 2) then {
-						private _controller2 = _controllers select 3;
-						[_sound] remoteExec ["playSoundUI", crew _controller2];
-					};
-				};
-
-				_cycle = 0;
+			case(_side == east): {
+				_CUAS_VehArray_O pushback _x;
+			};
+			case(_side == resistance): {
+				_CUAS_VehArray_I pushback _x;
 			};
 		};
+	} forEach RC_CUAS_VehArray;
+
+
+	sleep 0.2;
+
+	if (count _CUAS_VehArray_B > 0) then {
+		
+		[_CUAS_VehArray_B, west] call RC_fnc_RC_cUAS_Beep_Call;
+	};
+
+	sleep 0.2;
+
+	if (count _CUAS_VehArray_O > 0) then {
+		
+		[_CUAS_VehArray_O, east] call RC_fnc_RC_cUAS_Beep_Call;
+	};
+
+	sleep 0.2;
+
+	if (count _CUAS_VehArray_I > 0) then {
+		
+		[_CUAS_VehArray_I, resistance] call RC_fnc_RC_cUAS_Beep_Call;
 	};
 };
 
