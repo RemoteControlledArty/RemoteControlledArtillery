@@ -51,6 +51,10 @@ fnc_Interceptor_version = {
 
 	private _ammo = "Interceptor_MP";
 	private _uav = [_pos, _dir, _ammo, sideEmpty] call BIS_fnc_spawnVehicle;
+	/*
+	private _ammo = "RC_Interceptor_O";
+	private _uav = [_pos, _dir, _ammo, east] call BIS_fnc_spawnVehicle;
+	*/
 	_uav = _uav select 0;
 
 	/*
@@ -134,6 +138,81 @@ fnc_Interceptor_mousesteer = {
 };
 
 
+//fake momentum, decent acceleration
+fnc_Interceptor_setVel = {
+	params ["_uav"];
+
+	private _dt = diag_deltaTime;
+	private _maxSpeedMS = 400 / 3.6;	   
+
+	// --- 1. TUNING PARAMETERS ---
+	private _accRate   = 40 * _dt;	// How fast W accelerates you
+	private _brakeRate = 40 * _dt;	// How fast Idle/S slows you down
+	private _fric	  = 0.995;		// High friction (keeps momentum during flight)
+	private _stopLimit = 0.3;		// ~1 km/h (Threshold to stop completely)
+
+	// --- 2. INPUTS (Using your KeyDown variables) ---
+	private _fwdInput   = (if (RC_FORWARD) then {1} else {0}) - (if (RC_BACKWARD) then {1} else {0});
+	private _sideInput = (if (RC_RIGHT) then {1} else {0}) - (if (RC_LEFT) then {1} else {0});
+	private _vertInput  = (if (RC_LIFT) then {1} else {0}) - (if (RC_DROP) then {1} else {0});
+
+	// --- 3. ORIENTATION ---
+	private _y = RC_X * RC_SENSIVITY; 
+	private _p = RC_Y * RC_SENSIVITY;
+	private _vDir = [sin _y * cos _p, cos _y * cos _p, sin _p];
+	private _vUp  = [[0, -sin _p, cos _p], -_y] call BIS_fnc_rotateVector2D;
+
+	// --- 4. LOCAL VELOCITY MATH ---
+	private _localVel = _uav vectorWorldToModel (velocity _uav);
+	private _vx = _localVel # 0; 
+	private _vy = _localVel # 1; 
+	private _vz = _localVel # 2; 
+
+	// --- 5. THE ACTIVE BRAKING LOGIC ---
+	// Forward/Back Logic
+	if (_fwdInput == 1) then {
+		_vy = _vy + _accRate; // Accelerating Forward
+	} else {
+		if (_fwdInput == -1) then {
+			_vy = _vy - _brakeRate; // Manual Braking / Reverse
+		} else {
+			// IDLE BRAKING: If no key, move _vy toward 0 using _brakeRate
+			if (_vy > _stopLimit) then { _vy = (_vy - _brakeRate) max 0; };
+			if (_vy < -_stopLimit) then { _vy = (_vy + _brakeRate) min 0; };
+		};
+	};
+
+	// Strafe/Vertical (Keeping these responsive)
+	_vx = _vx + (_sideInput * _accRate);
+	_vz = _vz + (_vertInput * _accRate);
+
+	// If no strafe input, snap to center (prevents sliding when aiming)
+	if (_sideInput == 0) then { _vx = _vx * 0.9; };
+	if (_vertInput == 0) then { _vz = _vz * 0.9; };
+
+	// Apply General Momentum Friction
+	_vy = _vy * _fric;
+	_vx = _vx * _fric;
+	_vz = _vz * _fric;
+
+	// --- 6. APPLY ---
+	private _newLocal = [_vx, _vy, _vz];
+	
+	// Clamp to 400 km/h
+	if (vectorMagnitude _newLocal > _maxSpeedMS) then {
+		_newLocal = vectorNormalized _newLocal vectorMultiply _maxSpeedMS;
+	};
+
+	private _finalVel = (_uav vectorModelToWorldVisual _newLocal) vectorAdd [0, 0, 0.18];
+
+	_uav setVelocity _finalVel;
+	_uav setVectorDirAndUp [_vDir, _vUp];
+};
+
+
+/*
+//no momentum, instant acceleration
+
 fnc_Interceptor_setVel = {
 	params ["_uav"];
 	
@@ -144,7 +223,7 @@ fnc_Interceptor_setVel = {
 
 	// 2. keypress = instant 350 , release = instant 0
 	private _curFwd  = (if (RC_FORWARD) then { 1 } else { 0 }) + (if (RC_BACKWARD)	then { -1 } else { 0 });
-	private _curSide = (if (RC_RIGHT) 	then { 1 } else { 0 }) + (if (RC_LEFT) 		then { -1 } else { 0 });
+	private _curSide = (if (RC_LEFT) 	then { 1 } else { 0 }) + (if (RC_RIGHT) 		then { -1 } else { 0 });
 	private _curVert = (if (RC_LIFT) 	then { 1 } else { 0 }) + (if (RC_DROP) 		then { -1 } else { 0 });
 
 
@@ -193,6 +272,7 @@ fnc_Interceptor_setVel = {
 	_uav setVelocity _finalVel;
 	_uav setVectorDirAndUp [_vDir, [[0, -sin _p, cos _p], -_y] call BIS_fnc_rotateVector2D];
 };
+*/
 
 
 //is this actually needed? isnt the camera attached to the projectile? or would it not self align?
@@ -218,8 +298,6 @@ fnc_Interceptor_updateCam = {
 fnc_Interceptor_destroy = {
 	params ["_uav", "_pos"];
 	
-	removeMissionEventHandler ["EachFrame", _EventHead];
-
 	private _controls = localNameSpace getVariable ["RC_Interceptor_controls", []];
 	_display closeDisplay 1;
 	private _PP_colorC = localNameSpace getVariable ["RC_Interceptor_PP_colorC",  -1];
@@ -231,7 +309,7 @@ fnc_Interceptor_destroy = {
 	ppEffectDestroy _PP_film;
 
 	removeMissionEventHandler ["EachFrame", _idEachFrame];
-	removeMissionEventHandler ["EachFrame", _EventHead];
+	removeMissionEventHandler ["EachFrame", _idEventHead];
 	_display displayRemoveEventHandler ["KeyDown", _idNvg];
 	_controls apply { ctrlDelete _x };
 
@@ -250,7 +328,6 @@ fnc_Interceptor_destroy = {
 };
 
 
-
 /*
 //full destroy version, reimplement whats needed later
 
@@ -264,7 +341,7 @@ fnc_Interceptor_destroy = {
 	private _PP_dynamic     = localNameSpace getVariable ["RC_Interceptor_PP_dynamic",  -1];
 	private _PP_film        = localNameSpace getVariable ["RC_Interceptor_PP_film",  -1];
 	private _idEachFrame    = localNameSpace getVariable ["RC_Interceptor_idEachFrame", -1];
-	private _idEventHead    = localNameSpace getVariable ["RC_Interceptor_EventHead", -1];
+	private _idEventHead    = localNameSpace getVariable ["RC_Interceptor_idEventHead", -1];
 	private _idMouse        = localNameSpace getVariable ["RC_Interceptor_idMouse", -1];
 	private _idNvg          = localNameSpace getVariable ["RC_Interceptor_idNvg", -1]; 
 	private _idSlowDown     = localNameSpace getVariable ["RC_Interceptor_idSlowDown", -1]; 

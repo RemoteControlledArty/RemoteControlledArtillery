@@ -55,6 +55,21 @@ class CfgFunctions
 #include "\RC_Interceptor\UI_RSC\UI_RSC.hpp"
 
 
+//later required sensors
+class SensorTemplateDataLink;
+class SensorTemplateLaser;
+class SensorTemplateIR;
+class SensorTemplateNV;
+class SensorTemplateVisual;
+class SensorTemplateMan;
+class SensorTemplatePassiveRadar;
+class SensorTemplateAntiRadiation;
+
+//later required sensor panels
+class DefaultVehicleSystemsDisplayManagerLeft;
+class DefaultVehicleSystemsDisplayManagerRight;
+
+
 class CfgAmmo
 {
 	#include "\RC_Interceptor\cfgAmmoMagazinesWeapons\Ammo.hpp"
@@ -68,9 +83,7 @@ class CfgWeapons
 {
 	#include "\RC_Interceptor\cfgAmmoMagazinesWeapons\Weapons.hpp"
 };
-/*
 class CfgVehicles
 {
 	#include "\RC_Interceptor\cfgVehicles\Interceptor.hpp"
 };
-*/

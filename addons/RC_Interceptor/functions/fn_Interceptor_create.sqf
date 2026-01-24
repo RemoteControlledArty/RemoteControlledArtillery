@@ -35,14 +35,15 @@ localNameSpace setVariable ["RC_Interceptor_camera", _camera];
 localNameSpace setVariable ["RC_Interceptor_uav", _uav];
 localNameSpace setVariable ["RC_Interceptor_AB", false];
 localNameSpace setVariable ["RC_Interceptor_maxSpeed", 1];
+localNameSpace setVariable ["RC_Interceptor_currentSpeed", 0];  //new
 localNameSpace setVariable ["RC_Interceptor_cameraZoom", 0.9];
 
 
 //hotkeys
-// e = 18
+// escape = 1, e = 18
 private _idAB = _display displayAddEventHandler ["KeyDown",  { 
     params ["", "_key"];
-    if (_key != 18) exitWith {};
+    if ((_key != 18) and (_key != 1)) exitWith {};
 
     localNameSpace setVariable ["RC_Interceptor_AB", true];
 }];
@@ -69,26 +70,26 @@ _display displayAddEventHandler ["KeyUp", {
     if (_key == 31) then { RC_BACKWARD = false; true }; 
 }];
 
-// a = 30
+// d = 32
 RC_RIGHT = false;
 _display displayAddEventHandler ["KeyDown", { 
     params ["", "_key"]; 
-    if (_key == 30) then { RC_RIGHT = true; true }; 
+    if (_key == 32) then { RC_RIGHT = true; true }; 
 }];
 _display displayAddEventHandler ["KeyUp", { 
     params ["", "_key"]; 
-    if (_key == 30) then { RC_RIGHT = false; true }; 
+    if (_key == 32) then { RC_RIGHT = false; true }; 
 }];
 
-// d = 32
+// a = 30
 RC_LEFT = false;
 _display displayAddEventHandler ["KeyDown", { 
     params ["", "_key"]; 
-    if (_key == 32) then { RC_LEFT = true; true }; 
+    if (_key == 30) then { RC_LEFT = true; true }; 
 }];
 _display displayAddEventHandler ["KeyUp", { 
     params ["", "_key"]; 
-    if (_key == 32) then { RC_LEFT = false; true }; 
+    if (_key == 30) then { RC_LEFT = false; true }; 
 }];
 
 // shift = 42
@@ -115,7 +116,7 @@ _display displayAddEventHandler ["KeyUp", {
 
 
 //main setVel logic
-private _EventHead = addMissionEventHandler ["EachFrame", {
+private _idEventHead = addMissionEventHandler ["EachFrame", {
     _thisArgs params ["_uav"];
     //params ["_uav"];
 
@@ -211,7 +212,7 @@ private _idZoom = _display displayAddEventHandler ["MouseZChanged", {
 
 localNameSpace setVariable ["RC_Interceptor_idEachFrame", _idEachFrame];
 localNameSpace setVariable ["RC_Interceptor_idNvg", _idNvg];
-localNameSpace setVariable ["RC_Interceptor_EventHead", _EventHead];
+localNameSpace setVariable ["RC_Interceptor_idEventHead", _idEventHead];
 
 
 //updateCam
