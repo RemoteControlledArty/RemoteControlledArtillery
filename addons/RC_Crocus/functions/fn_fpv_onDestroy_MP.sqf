@@ -55,3 +55,20 @@ deleteVehicle _uav;
 
 //maybe remove killer, double use _instigator
 //((getShotParents _missile) select 1) isEqualTo (_shotParents select 1);
+
+
+/*
+_this addEventHandler ["Killed", {
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
+
+	_car = _unit;
+	_pos = _car modelToWorld [0,0,0];
+	_VBIED = createVehicle ["RC_R_230mm_HE", [0,0,500]];
+	[_VBIED, true] remoteExec ["hideObjectGlobal", 2];
+
+	_VBIED setVectorDirAndUp [vectorDir _car, vectorUp _car];
+
+	_VBIED setPosATL _pos;
+	triggerAmmo _VBIED;
+}];
+*/
