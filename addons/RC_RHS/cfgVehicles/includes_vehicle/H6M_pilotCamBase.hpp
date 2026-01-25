@@ -8,9 +8,16 @@ driverWeaponsInfoType="RscOptics_CAS_01_TGP";
 //driverOpticsModel="rhsusf\addons\rhsusf_melb\data\optics\melb_flir_m.p3d";
 driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 
-weapons[]+={"Laserdesignator_pilotCamera"};
-magazines[]+={"Laserbatteries"};
-
+weapons[]=
+{
+	"Laserdesignator_pilotCamera",
+	"CMFlareLauncher"
+};
+magazines[]=
+{
+	"Laserbatteries",
+	"168Rnd_CMFlare_Chaff_Magazine"
+};
 
 //2.0
 /*

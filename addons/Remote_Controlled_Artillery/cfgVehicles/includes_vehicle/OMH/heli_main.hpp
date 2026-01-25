@@ -10,12 +10,14 @@ lockDetectionSystem="2+4+8";
 weapons[]=
 {
 	"RC_target_confirmer_datalink",
-	"RC_APS_W"
+	"RC_APS_W",
+	"CMFlareLauncher"
 };
 magazines[]=
 {
-	"RC_target_confirmer_mag"
+	"RC_target_confirmer_mag",
 	//"RC_1Rnd_APS_M"
+	"168Rnd_CMFlare_Chaff_Magazine"
 };
 
 /*
