@@ -702,7 +702,7 @@ class RC_ammo_Penetrator_MP_125mm: RC_ammo_Penetrator_MPAB
 
 
 class ammo_Penetrator_105mm;
-class RC_ammo_Penetrator_AB_100mm: ammo_Penetrator_105mm
+class RC_ammo_Penetrator_MP_100mm: ammo_Penetrator_105mm
 {
 	airFriction=-0.001;
 	warheadName="TandemHEAT";
