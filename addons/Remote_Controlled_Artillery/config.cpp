@@ -405,6 +405,14 @@ class CfgPatches
 			"RC_OM_MH80M_DAP_O",
 			"RC_OM_MH80M_DAP_I",
 
+			"RC_Ka60M",
+			"RC_Ka60M_O",
+			"RC_Ka60M_I",
+
+			"RC_OM_Ka60M",
+			"RC_OM_Ka60M_O",
+			"RC_OM_Ka60M_I",
+
 			"RC_RespawnTruck_A",
 			"RC_RespawnTruck_WD",
 			"RC_RespawnTruck_A_O",
@@ -1172,6 +1180,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\H80M.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Ka60M.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_1.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_2.hpp"
