@@ -8,6 +8,8 @@ class RC_RHS_PylonW_Hydra: RC_RHS_PylonW_Hydra_Core
 	displayName="Hydra Pod";
 	displayNameShort="Hydra Pod";
 	ballisticsComputer=8;
+	//canLock=2;
+
 	magazines[]=
 	{
 		//large pod
@@ -29,15 +31,18 @@ class RC_RHS_PylonW_Hydra: RC_RHS_PylonW_Hydra_Core
 	};
 	modes[]=
 	{
-		"Burst"
+		"Burst",
+		"Far_AI"
 	};
 	class Burst: Burst
 	{
 		reloadTime=0.15;
+		dispersion=0.006;	//0.12
 	};
 };
 
 
+//lacks submun
 class RHS_weap_DAGR_Launcher;
 class RC_RHS_PylonW_DAGR: RHS_weap_DAGR_Launcher
 {

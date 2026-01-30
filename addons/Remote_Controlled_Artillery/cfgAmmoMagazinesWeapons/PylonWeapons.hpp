@@ -70,6 +70,7 @@ class RC_PylonW_12Rnd_70mm_Hydra: RC_PylonW_12Rnd_70mm_Hydra_Core
 	displayName="70mm Hydra Pod";
 	displayNameShort="70mm Hydra Pod";
 	ballisticsComputer=8;
+	//canLock=2;
 
 	magazines[]=
 	{
@@ -78,11 +79,14 @@ class RC_PylonW_12Rnd_70mm_Hydra: RC_PylonW_12Rnd_70mm_Hydra_Core
 	};
 	modes[]=
 	{
-		"Burst"
+		"Burst",
+		"Far_AI",
+		"Medium_AI"
 	};
 	class Burst: Burst
 	{
 		reloadTime=0.15;
+		dispersion=0.006;	//0.015
 	};
 };
 

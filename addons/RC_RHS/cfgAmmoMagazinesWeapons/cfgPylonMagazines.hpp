@@ -130,6 +130,7 @@ class RC_PylonM_7Rnd_APKWS: RC_PylonM_12Rnd_APKWS
 };
 
 
+//lacks submun
 class rhs_mag_DAGR_8;
 class RC_PylonM_8Rnd_DAGR: rhs_mag_DAGR_8
 {

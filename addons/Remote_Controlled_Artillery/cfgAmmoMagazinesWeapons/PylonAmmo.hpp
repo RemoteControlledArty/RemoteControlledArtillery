@@ -120,9 +120,9 @@ class RC_Hydra_HE: M_AT
 {
 	fuseDistance=20;//50
 
-	airLock=0;		//0
-	irLock=0;		//0
-	laserLock=0;	//0
+	airLock=1;		//0
+	irLock=1;		//0
+	laserLock=1;	//0
 	nvLock=0;		//0
 };
 class RC_Hydra_MP: RC_Hydra_HE
@@ -133,6 +133,8 @@ class RC_Hydra_MP: RC_Hydra_HE
 	submunitionParentSpeedCoef=0;
 	submunitionInitialOffset[]={0,0,-0.2};
 	triggerOnImpact=1;
+
+	//simulation="shotMissile";
 
 	hit=95;
 	indirectHit=40;
