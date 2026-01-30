@@ -8,7 +8,7 @@ class RC_RHS_PylonW_Hydra: RC_RHS_PylonW_Hydra_Core
 	displayName="Hydra Pod";
 	displayNameShort="Hydra Pod";
 	ballisticsComputer=8;
-	//canLock=2;
+	canLock=2;
 
 	magazines[]=
 	{

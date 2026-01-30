@@ -1,6 +1,8 @@
 class M_PG_AT;
 class RC_APKWS: M_PG_AT
 {
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoDatalink_6km.hpp"
+
 	/*
 	//maybe modify to increase accuracy while not fully aligned
 	maneuvrability=8;
@@ -53,6 +55,8 @@ class RC_APKWS: M_PG_AT
 class M_Scalpel_AT;
 class RC_AGM114K: M_Scalpel_AT
 {
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoDatalink_6km.hpp"
+
 	displayName="AGM-114K";
 	displayNameShort="AGM-114K";
 	description="AGM-114K";
@@ -118,12 +122,15 @@ class RC_AGM114K: M_Scalpel_AT
 class M_AT;
 class RC_Hydra_HE: M_AT
 {
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoDatalink_6km.hpp"
 	fuseDistance=20;//50
 
+	/*
 	airLock=1;		//0
 	irLock=1;		//0
 	laserLock=1;	//0
 	nvLock=0;		//0
+	*/
 };
 class RC_Hydra_MP: RC_Hydra_HE
 {
@@ -133,8 +140,6 @@ class RC_Hydra_MP: RC_Hydra_HE
 	submunitionParentSpeedCoef=0;
 	submunitionInitialOffset[]={0,0,-0.2};
 	triggerOnImpact=1;
-
-	//simulation="shotMissile";
 
 	hit=95;
 	indirectHit=40;

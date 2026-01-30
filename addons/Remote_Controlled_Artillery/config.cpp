@@ -839,6 +839,7 @@ class CfgFunctions
 			class RC_UAVBlur {postInit=1;};
 			class RC_LaserDatalink {postInit=1;};
 			class RC_cursorTargetIntoDatalink {postInit=1;};
+			//class RC_cursorTargetIntoDatalink_Loop {postInit=1;};
 			class RC_cUAS_Beep_Loop {postInit=1;};
 			
 			class RC_AT_Warning_Arrays {preInit=1;};
