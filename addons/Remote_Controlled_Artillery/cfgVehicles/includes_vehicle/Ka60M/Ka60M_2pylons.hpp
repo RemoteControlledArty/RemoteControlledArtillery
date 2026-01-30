@@ -8,7 +8,7 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
-				"OM_H",
+				"OM_H_O",
 				"RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134",
 				"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGR","DAGRM"
 
@@ -35,13 +35,13 @@ class TransportPylonsComponent
 			UIposition[] 		= {0.625,0.42};
 
 			//turret[]			= {};	//none = both?
-			attachment			= "RC_PylonM_200Rnd_30mm";
+			attachment			= "RC_PylonM_200Rnd_30mm_O";
 		};
 		class pylon2: pylon1
 		{
 			//priority			= 1;
 			UIposition[] 		= {0.04,0.42};
-			attachment			= "RC_PylonM_19Rnd_70mm_Hydra_MP";
+			attachment			= "RC_PylonM_19Rnd_80mm_S8_MP";
 		};
 	};
 
@@ -52,19 +52,39 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_PylonM_19Rnd_70mm_Hydra_MP",
-				"RC_PylonM_200Rnd_30mm"
+				"RC_PylonM_19Rnd_80mm_S8_MP",
+				"RC_PylonM_200Rnd_30mm_O"
 			};
 			displayname="Unguided";
 		};
-		class Guided
+		class Guided_LG
 		{
 			attachment[] =
 			{
-				"RC_PylonM_12Rnd_APKWS",
-				"RC_PylonM_200Rnd_30mm"
+				"RC_PylonM_12Rnd_S8LG",
+				"RC_PylonM_200Rnd_30mm_O"
 			};
-			displayname="Guided";
+			displayname="Guided (LG)";
+		};
+		/*
+		class Guided_SACLOS
+		{
+			attachment[] =
+			{
+				"RC_PylonM_12Rnd_S8LG",
+				"RC_PylonM_200Rnd_30mm_Ru"
+			};
+			displayname="Guided (SACLOS)";
+		};
+		*/
+		class HeavyGuided_LG
+		{
+			attachment[] =
+			{
+				"RC_PylonM_3Rnd_Vikhr",
+				"RC_PylonM_200Rnd_30mm_O"
+			};
+			displayname="Heavy Guided (LG)";
 		};
 	};
 };

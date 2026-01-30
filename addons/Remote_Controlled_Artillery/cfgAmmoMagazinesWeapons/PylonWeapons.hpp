@@ -27,9 +27,7 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 		//"RC_PylonM_300Rnd_20mm_Aegis",
 		"RC_PylonM_300Rnd_20mm",
 		"RC_PylonM_250Rnd_25mm",
-		//"RC_PylonM_200Rnd_25mm",
-		"RC_PylonM_200Rnd_30mm",
-		//"RC_PylonM_150Rnd_30mm"
+		"RC_PylonM_200Rnd_30mm"
 	};
 	modes[]=
 	{
@@ -56,6 +54,23 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 		FCSMaxLeadSpeed=30.555599;
 		FCSZeroingDelay=0.5;
 		*/
+	};
+};
+class RC_PylonW_Avtopushka: RC_PylonW_TwinCannon
+{
+	displayName="Avtopushka";
+	displayNameShort="Avtopushka";
+
+	magazines[]=
+	{
+		"RC_PylonM_300Rnd_20mm_O",
+		"RC_PylonM_250Rnd_25mm_O",
+		"RC_PylonM_200Rnd_30mm_O"
+	};
+	class manual: manual
+	{
+		displayName="Avtopushka";
+		displayNameShort="Avtopushka";
 	};
 };
 
@@ -89,6 +104,16 @@ class RC_PylonW_12Rnd_70mm_Hydra: RC_PylonW_12Rnd_70mm_Hydra_Core
 		dispersion=0.006;	//0.015
 	};
 };
+class RC_PylonW_12Rnd_80mm_S8: RC_PylonW_12Rnd_70mm_Hydra
+{
+	displayName="80mm S-8 Ugroza";
+	displayNameShort="80mm S-8 Ugroza";
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_80mm_S8_HE",
+		"RC_PylonM_12Rnd_80mm_S8_MP"
+	};
+};
 
 
 //unify 70mm rocket pods?
@@ -115,6 +140,18 @@ class RC_PylonW_19Rnd_70mm_Hydra: RC_PylonW_19Rnd_70mm_Hydra_Core
 	class Burst: Burst
 	{
 		reloadTime=0.15;
+	};
+};
+
+
+class RC_PylonW_19Rnd_80mm_S8: RC_PylonW_19Rnd_70mm_Hydra
+{
+	displayName="80mm S-8 Ugroza";
+	displayNameShort="80mm S-8 Ugroza";
+	magazines[]=
+	{
+		"RC_PylonM_19Rnd_80mm_S8_HE",
+		"RC_PylonM_19Rnd_80mm_S8_MP"
 	};
 };
 
@@ -159,6 +196,17 @@ class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 //EF_PylonMissile_Titan_NLOS_2Rnd  pylonWeapon = "EF_Weapon_Titan_NLOS";	 hardpoints[] = {"TITAN_NLOS_2RND"};	ammo = "EF_Ammo_Titan_NLOS";
 
 
+class RC_PylonW_S8LG: RC_PylonW_APKWS
+{
+	displayName="S-8 LG Ugroza";
+	displayNameShort="S-8 LG Ugroza";
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_S8LG"
+	};
+};
+
+
 class RocketPods;
 class RC_PylonW_Hellfire: RocketPods
 {
@@ -188,5 +236,17 @@ class RC_PylonW_Hellfire: RocketPods
 		begin1[]={"A3\Sounds_F\weapons\Rockets\missile_1",1.12202,1.3,1000};
 		soundBegin[]={"begin1",1};
 		soundsetshot[]={"RocketsMedium_Shot_SoundSet"};
+	};
+};
+
+
+class RC_PylonW_Vikhr: RC_PylonW_Hellfire
+{
+	displayName="9K121 Vikhr";
+	displayNameShort="9K121 Vikhr";
+	magazines[]=
+	{
+		"RC_PylonM_3Rnd_Vikhr",
+		"RC_PylonM_1Rnd_Vikhr"
 	};
 };

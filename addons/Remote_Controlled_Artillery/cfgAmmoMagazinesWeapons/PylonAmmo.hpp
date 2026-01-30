@@ -145,3 +145,31 @@ class RC_Hydra_MP: RC_Hydra_HE
 	indirectHit=40;
 	indirectHitRange=8;
 };
+
+
+/*
+class R_80mm_HE;
+class RC_80mm_S8_HE: R_80mm_HE
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoDatalink_6km.hpp"
+	fuseDistance=20;//50
+
+	//airLock=1;		//0
+	//irLock=1;		//0
+	//laserLock=1;	//0
+	//nvLock=0;		//0
+};
+class RC_80mm_S8_MP: RC_80mm_S8_HE
+{
+	submunitionAmmo="ammo_Penetrator_PG_AT";
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	triggerOnImpact=1;
+
+	hit=95;
+	indirectHit=40;		//60
+	indirectHitRange=8;	//15
+};
+*/

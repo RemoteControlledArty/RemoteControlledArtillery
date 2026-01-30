@@ -140,7 +140,21 @@ class RC_PylonM_8Rnd_DAGR: rhs_mag_DAGR_8
 
 	hardpoints[]=
 	{
-		"OM_H"
+		"OM_H",
+		"OM_H_O"
+	};
+};
+class RC_PylonM_8Rnd_S8_SACLOS: RC_PylonM_8Rnd_DAGR
+{
+	displayName="> S-8 SACLOS 8x";
+	displayNameShort="S-8 SACLOS";
+	descriptionShort="S-8 SACLOS 8x";
+	pylonWeapon="RC_RHS_PylonW_S8_SACLOS";
+	//ammo="RHS_Ammo_DAGR";
+
+	hardpoints[]=
+	{
+		"OM_H_O"
 	};
 };
 
@@ -187,7 +201,8 @@ class RC_RHS_PylonM_1300Rnd_GAU19A_left: rhsusf_mag_gau19_melb_left
 
 	hardpoints[]=
 	{
-		"OM_H"
+		"OM_H",
+		"OM_H_O"
 	};
 };
 
@@ -203,7 +218,8 @@ class RC_RHS_PylonM_1300Rnd_GAU19A_right: rhsusf_mag_gau19_melb_right
 
 	hardpoints[]=
 	{
-		"OM_H"
+		"OM_H",
+		"OM_H_O"
 	};
 };
 
@@ -220,6 +236,7 @@ class RC_RHS_PylonM_2600Rnd_338_SLAP: rhs_mag_m134_pylon_3000
 
 	hardpoints[]=
 	{
-		"OM_H"
+		"OM_H",
+		"OM_H_O"
 	};
 };

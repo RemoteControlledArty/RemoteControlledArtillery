@@ -73,6 +73,41 @@ class RC_PylonM_200Rnd_30mm: RC_PylonM_300Rnd_20mm
 //class RC_PylonM_150Rnd_30mm: RC_PylonM_200Rnd_30mm {count=150;};
 
 
+class RC_PylonM_300Rnd_20mm_O: RC_PylonM_300Rnd_20mm
+{
+	descriptionShort="20mm Avtopushka";
+	pylonWeapon="RC_PylonW_Avtopushka";
+	ammo="RC_Pylon_B_20mm_MP_QF_T_G";
+
+	hardpoints[]=
+	{
+		"OM_H_O"
+	};
+};
+class RC_PylonM_250Rnd_25mm_O: RC_PylonM_250Rnd_25mm
+{
+	descriptionShort="25mm Avtopushka";
+	pylonWeapon="RC_PylonW_Avtopushka";
+	ammo="RC_Pylon_B_25mm_MP_QF_T_G";
+
+	hardpoints[]=
+	{
+		"OM_H_O"
+	};
+};
+class RC_PylonM_200Rnd_30mm_O: RC_PylonM_200Rnd_30mm
+{
+	descriptionShort="30mm Avtopushka";
+	pylonWeapon="RC_PylonW_Avtopushka";
+	ammo="RC_Pylon_B_30mm_MP_QF_T_G";
+
+	hardpoints[]=
+	{
+		"OM_H_O"
+	};
+};
+
+
 /*
 class RC_PylonWeapon_300Rnd_20mm_Aegis: RC_PylonWeapon_300Rnd_20mm
 {
@@ -109,6 +144,29 @@ class RC_PylonM_12Rnd_70mm_Hydra_MP: RC_PylonM_12Rnd_70mm_Hydra_HE
 };
 
 
+class RC_PylonM_12Rnd_80mm_S8_HE: RC_PylonM_12Rnd_70mm_Hydra_HE
+{
+	author="Ascent";
+	displayName="> S-8 HE 12x";
+	displayNameShort="S-8 HE";
+	descriptionShort="S-8 HE 12x";
+	pylonWeapon="RC_PylonW_12Rnd_80mm_S8";
+	ammo="RC_Hydra_HE";
+
+	hardpoints[]=
+	{
+		"OM_H_O"
+	};
+};
+class RC_PylonM_12Rnd_80mm_S8_MP: RC_PylonM_12Rnd_80mm_S8_HE
+{
+	displayName="> S-8 MP 12x";
+	displayNameShort="S-8 MP";
+	descriptionShort="S-8 MP 12x";
+	ammo="RC_Hydra_MP";
+};
+
+
 class PylonRack_12Rnd_PG_missiles;
 class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
 {
@@ -121,6 +179,18 @@ class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
 	hardpoints[]=
 	{
 		"OM_H"
+	};
+};
+class RC_PylonM_12Rnd_S8LG: RC_PylonM_12Rnd_APKWS
+{
+	displayName="> S-8 LG 12x";
+    displayNameShort="S-8 LG";
+	descriptionShort="S-8 LG 12x";
+    pylonWeapon="RC_PylonW_S8LG";
+
+	hardpoints[]=
+	{
+		"OM_H_O"
 	};
 };
 
@@ -149,6 +219,37 @@ class RC_PylonM_1Rnd_AGM114K: 12Rnd_PG_missiles
 };
 
 
+class RC_PylonM_1Rnd_Vikhr: RC_PylonM_1Rnd_AGM114K
+{
+	displayName="> 9K121 Vikhr 1x";
+	displayNameShort="9K121 Vikhr";
+	descriptionShort="9K121 Vikhr 1x";
+	pylonWeapon="RC_PylonW_Vikhr";
+	ammo="RC_AGM114K";
+
+	hardpoints[]=
+	{
+		"OM_H_O"
+	};
+};
+//PylonRack_3Rnd_LG_scalpel
+class RC_PylonM_3Rnd_Vikhr: RC_PylonM_1Rnd_Vikhr
+{
+	displayName="> 9K121 Vikhr 3x";
+	descriptionShort="9K121 Vikhr 3x";
+	ammo="RC_AGM114K";
+	count=3;
+
+	model="\A3\Weapons_F\DynamicLoadout\PylonPod_3x_Missile_LG_scalpel_F.p3d";
+	mass=300;
+
+	hardpoints[]=
+	{
+		"OM_H_O"
+	};
+};
+
+
 class PylonRack_19Rnd_Rocket_Skyfire;
 class RC_PylonM_19Rnd_70mm_Hydra_HE: PylonRack_19Rnd_Rocket_Skyfire
 {
@@ -171,3 +272,53 @@ class RC_PylonM_19Rnd_70mm_Hydra_MP: RC_PylonM_19Rnd_70mm_Hydra_HE
 	descriptionShort="Hydra MP 19x";
 	ammo="RC_Hydra_MP";
 };
+
+
+class RC_PylonM_19Rnd_80mm_S8_HE: RC_PylonM_19Rnd_70mm_Hydra_HE
+{
+	author="Ascent";
+	displayName="> S-8 HE 19x";
+	displayNameShort="S-8 HE";
+	descriptionShort="S-8 HE 19x";
+	pylonWeapon="RC_PylonW_19Rnd_80mm_S8";
+	ammo="RC_Hydra_HE";
+
+	hardpoints[]=
+	{
+		"OM_H"
+	};
+};
+class RC_PylonM_19Rnd_80mm_S8_MP: RC_PylonM_19Rnd_80mm_S8_HE
+{
+	displayName="> S-8 MP 19x";
+	displayNameShort="S-8 MP";
+	descriptionShort="S-8 MP 19x";
+	ammo="RC_Hydra_MP";
+};
+
+
+/*
+//add in RC_Aegis pbo
+class PylonRack_20Rnd_Rocket_80mm;
+class RC_PylonM_20Rnd_80mm_S8_HE: PylonRack_20Rnd_Rocket_80mm
+{
+	author="Ascent";
+	displayName="> S-8 HE 20x";
+	displayNameShort="S-8 HE";
+	descriptionShort="S-8 HE 20x";
+	pylonWeapon="RC_PylonW_19Rnd_70mm_Hydra";	//rockets_Skyfire
+	ammo="RC_Hydra_HE";
+
+	hardpoints[]=
+	{
+		"OM_H"
+	};
+};
+class RC_PylonM_20Rnd_80mm_S8_MP: RC_PylonM_20Rnd_80mm_S8_HE
+{
+	displayName="> S-8 MP 20x";
+	displayNameShort="S-8 MP";
+	descriptionShort="S-8 MP 20x";
+	ammo="RC_Hydra_MP";
+};
+*/

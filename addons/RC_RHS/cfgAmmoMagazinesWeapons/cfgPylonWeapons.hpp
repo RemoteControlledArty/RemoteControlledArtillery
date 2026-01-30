@@ -54,6 +54,15 @@ class RC_RHS_PylonW_DAGR: RHS_weap_DAGR_Launcher
 		"RC_PylonM_8Rnd_DAGR"
 	};
 };
+class RC_RHS_PylonW_S8_SACLOS: RC_RHS_PylonW_DAGR
+{
+	displayName="S-8 SACLOS";
+	displayNameShort="S-8 SACLOS";
+	magazines[]=
+	{
+		"RC_PylonM_8Rnd_S8_SACLOS"
+	};
+};
 
 
 /*

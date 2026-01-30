@@ -47,12 +47,13 @@ hiddenSelections[]=
 	//"camo1"
 };
 */
+//editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Heli_Light_02_dynamicLoadout_F.jpg";
+editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Heli_Light_02_unarmed_F.jpg";
 hiddenSelectionsTextures[]=
 {
 	"\A3\Air_F\Heli_Light_02\Data\Heli_Light_02_ext_CO.paa"
 };
 /*
 icon="\A3\Air_F\Heli_Light_02\Data\UI\Map_Heli_Light_02_rockets_CA.paa";
-editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Heli_Light_02_dynamicLoadout_F.jpg";
 picture="\A3\Air_F\Heli_Light_02\Data\UI\Heli_Light_02_rockets_CA.paa";
 */
