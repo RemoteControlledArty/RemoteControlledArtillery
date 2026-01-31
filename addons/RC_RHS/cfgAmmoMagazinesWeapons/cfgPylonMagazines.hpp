@@ -1,5 +1,6 @@
+/*
 class rhs_mag_M151_19;
-class RC_RHS_PylonM_19Rnd_M151: rhs_mag_M151_19
+class RC_RHS_PylonM_19Rnd_Hydra_M151: rhs_mag_M151_19
 {
 	//INCREASE REARM COST
 
@@ -14,13 +15,13 @@ class RC_RHS_PylonM_19Rnd_M151: rhs_mag_M151_19
 		"OM_H"
 	};
 };
-class RC_RHS_PylonM_12Rnd_M151: RC_RHS_PylonM_19Rnd_M151
+class RC_RHS_PylonM_12Rnd_Hydra_M151: RC_RHS_PylonM_19Rnd_Hydra_M151
 {
 	displayName="> Hydra M151 12x";
 	descriptionShort="Hydra M151 12x Pod";
 	count=12;
 };
-class RC_RHS_PylonM_9Rnd_M151: RC_RHS_PylonM_19Rnd_M151
+class RC_RHS_PylonM_9Rnd_Hydra_M151: RC_RHS_PylonM_19Rnd_Hydra_M151
 {
 	displayName="> Hydra M151 9x";
 	descriptionShort="Hydra M151 9x Pod";
@@ -29,7 +30,7 @@ class RC_RHS_PylonM_9Rnd_M151: RC_RHS_PylonM_19Rnd_M151
 
 
 class rhs_mag_M229_19;
-class RC_RHS_PylonM_19Rnd_M229: rhs_mag_M229_19
+class RC_RHS_PylonM_19Rnd_Hydra_M229: rhs_mag_M229_19
 {
 	displayName="> Hydra M229 19x";
 	displayNameShort="Hydra M229";
@@ -42,13 +43,13 @@ class RC_RHS_PylonM_19Rnd_M229: rhs_mag_M229_19
 		"OM_H"
 	};
 };
-class RC_RHS_PylonM_12Rnd_M229: RC_RHS_PylonM_19Rnd_M229
+class RC_RHS_PylonM_12Rnd_Hydra_M229: RC_RHS_PylonM_19Rnd_Hydra_M229
 {
 	displayName="> Hydra M229 12x";
 	descriptionShort="Hydra M229 12x Pod";
 	count=12;
 };
-class RC_RHS_PylonM_9Rnd_M229: RC_RHS_PylonM_19Rnd_M229
+class RC_RHS_PylonM_9Rnd_Hydra_M229: RC_RHS_PylonM_19Rnd_Hydra_M229
 {
 	displayName="> Hydra M229 9x";
 	descriptionShort="Hydra M229 9x Pod";
@@ -56,17 +57,42 @@ class RC_RHS_PylonM_9Rnd_M229: RC_RHS_PylonM_19Rnd_M229
 };
 
 
-class RC_RHS_PylonM_19Rnd_MP: RC_RHS_PylonM_19Rnd_M229
+class RC_RHS_PylonM_19Rnd_Hydra_MP: RC_RHS_PylonM_19Rnd_Hydra_M229
 {
 	displayName="> Hydra MP 19x";
 	displayNameShort="Hydra MP";
-	descriptionShort="Hydra MP 19x Pod";
+	descriptionShort="multi purpose unguided rockets";
+	ammo="RC_RHS_Hydra_MP";
+};
+*/
+
+
+class rhs_mag_M229_19;
+class RC_RHS_PylonM_19Rnd_Hydra_HE: rhs_mag_M229_19
+{
+	displayName="> Hydra HE 19x";
+	displayNameShort="Hydra HE";
+	descriptionShort="high explosive unguided rockets";
+	pylonWeapon="RC_RHS_PylonW_Hydra";
+	ammo="RC_RHS_Hydra_HE";
+
+	hardpoints[]=
+	{
+		"OM_H"
+	};
+};
+class RC_RHS_PylonM_19Rnd_Hydra_MP: RC_RHS_PylonM_19Rnd_Hydra_HE
+{
+	displayName="> Hydra MP 19x";
+	displayNameShort="Hydra MP";
+	descriptionShort="multi purpose unguided rockets";
 	ammo="RC_RHS_Hydra_MP";
 };
 
 
+/*
 class rhs_mag_M151_7;
-class RC_RHS_PylonM_7Rnd_M151: rhs_mag_M151_7
+class RC_RHS_PylonM_7Rnd_Hydra_M151: rhs_mag_M151_7
 {
 	//INCREASE REARM COST
 
@@ -83,7 +109,7 @@ class RC_RHS_PylonM_7Rnd_M151: rhs_mag_M151_7
 
 
 class rhs_mag_M229_7;
-class RC_RHS_PylonM_7Rnd_M229: rhs_mag_M229_7
+class RC_RHS_PylonM_7Rnd_Hydra_M229: rhs_mag_M229_7
 {
 	//INCREASE REARM COST
 
@@ -97,17 +123,41 @@ class RC_RHS_PylonM_7Rnd_M229: rhs_mag_M229_7
 		"OM_H"
 	};
 };
-class RC_RHS_PylonM_7Rnd_MP: RC_RHS_PylonM_7Rnd_M229
+class RC_RHS_PylonM_7Rnd_Hydra_MP: RC_RHS_PylonM_7Rnd_Hydra_M229
 {
 	displayName="> Hydra MP 7x";
 	displayNameShort="Hydra MP";
-	descriptionShort="Hydra MP 7x Pod";
+	descriptionShort="multi purpose unguided rockets";
+	ammo="RC_RHS_Hydra_MP";
+};
+*/
+
+
+class rhs_mag_M229_7;
+class RC_RHS_PylonM_7Rnd_Hydra_HE: rhs_mag_M229_7
+{
+	displayName="> Hydra HE 7x";
+	displayNameShort="Hydra HE";
+	descriptionShort="high explosive unguided rockets";
+	pylonWeapon="RC_RHS_PylonW_Hydra";
+	ammo="RC_RHS_Hydra_HE";
+
+	hardpoints[]=
+	{
+		"OM_H"
+	};
+};
+class RC_RHS_PylonM_7Rnd_Hydra_MP: RC_RHS_PylonM_7Rnd_Hydra_HE
+{
+	displayName="> Hydra MP 7x";
+	displayNameShort="Hydra MP";
+	descriptionShort="multi purpose unguided rockets";
 	ammo="RC_RHS_Hydra_MP";
 };
 
 
 /*
-class RC_RHS_PylonM_7Rnd_APKWS: RC_RHS_PylonM_7Rnd_M229
+class RC_RHS_PylonM_7Rnd_APKWS: RC_RHS_PylonM_7Rnd_Hydra_M229
 {
 	displayName="[7x APKWS LG]";
     displayNameShort="APKWS LG";
@@ -132,25 +182,25 @@ class RC_PylonM_7Rnd_APKWS: RC_PylonM_12Rnd_APKWS
 
 //lacks submun
 class rhs_mag_DAGR_8;
-class RC_PylonM_8Rnd_DAGR: rhs_mag_DAGR_8
+class RC_RHS_PylonM_8Rnd_DAGR: rhs_mag_DAGR_8
 {
 	displayName="> DAGR M310 8x";
+	descriptionShort="SACLOS guided missiles";
 	pylonWeapon="RC_RHS_PylonW_DAGR";
-	//ammo="RHS_Ammo_DAGR";
+	ammo="RC_RHS_DAGR_M310";
 
 	hardpoints[]=
 	{
-		"OM_H",
-		"OM_H_O"
+		"OM_H"
 	};
 };
-class RC_PylonM_8Rnd_S8_SACLOS: RC_PylonM_8Rnd_DAGR
+class RC_RHS_PylonM_8Rnd_S8_SACLOS: RC_RHS_PylonM_8Rnd_DAGR
 {
 	displayName="> S-8 SACLOS 8x";
 	displayNameShort="S-8 SACLOS";
-	descriptionShort="S-8 SACLOS 8x";
+	descriptionShort="SACLOS guided missiles";
 	pylonWeapon="RC_RHS_PylonW_S8_SACLOS";
-	//ammo="RHS_Ammo_DAGR";
+	ammo="RC_RHS_DAGR_M310";
 
 	hardpoints[]=
 	{
@@ -180,6 +230,7 @@ class rhs_mag_AGM114K_2;
 class RC_PylonM_2Rnd_AGM114K: rhs_mag_AGM114K_2
 {
 	displayName="> AGM-114K Hellfire II 2x";
+	descriptionShort="heavy laser guided missiles";
 	pylonWeapon="RC_PylonW_Hellfire";
 	ammo="RC_RHS_AGM114K";
 

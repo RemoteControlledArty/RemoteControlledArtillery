@@ -8,6 +8,7 @@ class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_main.hpp"
 	editorSubcategory="RC_Heli_armed_subcat";
 
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotView.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamBase.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFixed.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFree.hpp"
@@ -28,10 +29,12 @@ class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_copilotTurret.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_cargoTurrets.hpp"
 	};
+	/*
 	class AnimationSources: AnimationSources
 	{
 		//DOOR
 	};
+	*/
 };
 
 

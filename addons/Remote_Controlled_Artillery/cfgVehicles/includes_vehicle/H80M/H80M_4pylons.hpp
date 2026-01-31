@@ -47,7 +47,7 @@ class TransportPylonsComponent
 		{
 			//mirroredMissilePos= 2;
 			UIposition[] 		= {0.11,0.37};
-			attachment			= "RC_PylonM_19Rnd_70mm_Hydra_MP";
+			attachment			= "RC_PylonM_19Rnd_Hydra_MP";
 		};
 		class pylon4: pylon1
 		{
@@ -66,7 +66,7 @@ class TransportPylonsComponent
 			{
 				"RC_PylonM_12Rnd_APKWS",
 				"RC_PylonM_200Rnd_30mm",
-				"RC_PylonM_19Rnd_70mm_Hydra_MP",
+				"RC_PylonM_19Rnd_Hydra_MP",
 				"RC_PylonM_1Rnd_AGM114K"
 			};
 			displayname = "Default";

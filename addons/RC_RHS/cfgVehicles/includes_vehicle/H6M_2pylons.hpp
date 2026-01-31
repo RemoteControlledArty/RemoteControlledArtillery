@@ -57,7 +57,7 @@ class TransportPylonsComponent
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
 			//change to M261 19x Hyra MP
-			attachment			= "RC_RHS_PylonM_19Rnd_MP";
+			attachment			= "RC_RHS_PylonM_19Rnd_Hydra_MP";
 		};
 		class pylon4 : pylon1
 		{
@@ -72,62 +72,49 @@ class TransportPylonsComponent
 
 	class Presets
 	{
-		class Default
+		class Unguided
 		{
 			attachment[] =
 			{
 				"",
 				"RC_PylonM_300Rnd_20mm",
-				"RC_RHS_PylonM_19Rnd_M229",
+				"RC_RHS_PylonM_19Rnd_Hydra_MP",
 				""
 			};
-			displayname="Default";
+			displayname="Unguided";
 		};
-		class Guided
+		class LaserGuided
 		{
 			attachment[] =
 			{
 				"",
 				"RC_PylonM_300Rnd_20mm",
-				"RC_PylonM_12Rnd_APKWS",
+				"RC_PylonM_12Rnd_Hydra_APKWS",
 				""
 			};
-			displayname="Guided";
+			displayname="Laser Guided";
 		};
-		/*
-		class Light
+		class SaclosGuided
 		{
 			attachment[] =
 			{
-				"rhs_mag_M151_7",
-				"rhs_mag_m134_pylon_3000",
-				"rhs_mag_m134_pylon_3000",
-				"rhs_mag_M151_7"
+				"",
+				"RC_PylonM_300Rnd_20mm",
+				"RC_RHS_PylonM_8Rnd_DAGR",
+				""
 			};
-			displayname = "Light";
+			displayname="SACLOS Guided";
 		};
-		class Medium
+		class HeavyLaserGuided
 		{
 			attachment[] =
 			{
-				"rhsusf_mag_gau19_melb_left",
 				"",
-				"",
-				"rhs_mag_M151_19"
+				"RC_PylonM_300Rnd_20mm",
+				"RC_PylonM_2Rnd_AGM114K",
+				""
 			};
-			displayname = "Medium";
+			displayname="Heavy Laser Guided";
 		};
-		class Heavy
-		{
-			attachment[] =
-			{
-				"rhsusf_mag_gau19_melb_left",
-				"",
-				"",
-				"rhs_mag_AGM114K_2"
-			};
-			displayname = "Heavy";
-		};
-		*/
 	};
 };

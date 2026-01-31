@@ -35,13 +35,13 @@ class TransportPylonsComponent
 			UIposition[] 		= {0.625,0.42};
 
 			//turret[]			= {};	//none = both?
-			attachment			= "RC_PylonM_200Rnd_30mm_O";
+			attachment			= "RC_PylonM_250Rnd_25mm_O";
 		};
 		class pylon2: pylon1
 		{
 			//priority			= 1;
 			UIposition[] 		= {0.04,0.42};
-			attachment			= "RC_PylonM_19Rnd_80mm_S8_MP";
+			attachment			= "RC_PylonM_19Rnd_S5_MP";
 		};
 	};
 
@@ -52,39 +52,39 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_PylonM_19Rnd_80mm_S8_MP",
-				"RC_PylonM_200Rnd_30mm_O"
+				"RC_PylonM_250Rnd_25mm_O",
+				"RC_PylonM_19Rnd_S5_MP"
 			};
 			displayname="Unguided";
 		};
-		class Guided_LG
+		class LaserGuided
 		{
 			attachment[] =
 			{
-				"RC_PylonM_12Rnd_S8LG",
-				"RC_PylonM_200Rnd_30mm_O"
+				"RC_PylonM_250Rnd_25mm_O",
+				"RC_PylonM_12Rnd_S8_LG"
 			};
-			displayname="Guided (LG)";
+			displayname="Laser Guided";
 		};
 		/*
-		class Guided_SACLOS
+		class SaclosGuided
 		{
 			attachment[] =
 			{
-				"RC_PylonM_12Rnd_S8LG",
-				"RC_PylonM_200Rnd_30mm_Ru"
+				"RC_PylonM_250Rnd_25mm_Ru",
+				"RC_PylonM_12Rnd_S8_SACLOS"
 			};
-			displayname="Guided (SACLOS)";
+			displayname="SACLOS Guided";
 		};
 		*/
-		class HeavyGuided_LG
+		class HeavyLaserGuided
 		{
 			attachment[] =
 			{
-				"RC_PylonM_3Rnd_Vikhr",
-				"RC_PylonM_200Rnd_30mm_O"
+				"RC_PylonM_250Rnd_25mm_O",
+				"RC_PylonM_3Rnd_Vikhr"
 			};
-			displayname="Heavy Guided (LG)";
+			displayname="Heavy Laser Guided";
 		};
 	};
 };

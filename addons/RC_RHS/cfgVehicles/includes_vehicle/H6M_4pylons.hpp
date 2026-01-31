@@ -54,7 +54,7 @@ class TransportPylonsComponent
 			hitpoint 			= "HitPylon3";
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
-			attachment			= "RC_RHS_PylonM_19Rnd_MP";
+			attachment			= "RC_RHS_PylonM_19Rnd_Hydra_MP";
 		};
 		class pylon4 : pylon1
 		{
@@ -75,45 +75,10 @@ class TransportPylonsComponent
 			{
 				"RC_RHS_PylonM_1300Rnd_GAU19A_left",
 				"RC_PylonM_300Rnd_20mm",
-				"RC_RHS_PylonM_19Rnd_M229",
+				"RC_RHS_PylonM_19Rnd_Hydra_MP",
 				"RC_PylonM_7Rnd_APKWS"
 			};
 			displayname="Default";
 		};
-		/*
-		class Light
-		{
-			attachment[] =
-			{
-				"rhs_mag_M151_7",
-				"rhs_mag_m134_pylon_3000",
-				"rhs_mag_m134_pylon_3000",
-				"rhs_mag_M151_7"
-			};
-			displayname = "Light";
-		};
-		class Medium
-		{
-			attachment[] =
-			{
-				"rhsusf_mag_gau19_melb_left",
-				"",
-				"",
-				"rhs_mag_M151_19"
-			};
-			displayname = "Medium";
-		};
-		class Heavy
-		{
-			attachment[] =
-			{
-				"rhsusf_mag_gau19_melb_left",
-				"",
-				"",
-				"rhs_mag_AGM114K_2"
-			};
-			displayname = "Heavy";
-		};
-		*/
 	};
 };

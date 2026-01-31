@@ -19,10 +19,10 @@ class RC_APKWS: M_PG_AT
 	fuseDistance=20;
 
 	ace_rearm_caliber=70;
-	displayName="APKWS 4km";
-	displayNameShort="APKWS 4km";
-	description="APKWS 4km LG";
-	descriptionShort="APKWS 4km LG";
+	displayName="APKWS 5km";
+	displayNameShort="APKWS 5km";
+	description="APKWS 5km LG";
+	descriptionShort="APKWS 5km LG";
 	maxSpeed=290;
 
 	manualControl=0;	//try 1
@@ -149,7 +149,7 @@ class RC_Hydra_MP: RC_Hydra_HE
 
 /*
 class R_80mm_HE;
-class RC_80mm_S8_HE: R_80mm_HE
+class RC_S5_HE: R_80mm_HE
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoDatalink_6km.hpp"
 	fuseDistance=20;//50
@@ -159,7 +159,7 @@ class RC_80mm_S8_HE: R_80mm_HE
 	//laserLock=1;	//0
 	//nvLock=0;		//0
 };
-class RC_80mm_S8_MP: RC_80mm_S8_HE
+class RC_S5_MP: RC_S5_HE
 {
 	submunitionAmmo="ammo_Penetrator_PG_AT";
 	submunitionDirectionType="SubmunitionModelDirection";

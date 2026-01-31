@@ -16,7 +16,30 @@ class RC_Ka60M_Base: RC_Ka60M_Core
 	//#include "\Remote_Controlled_Artillery\MFD\MFD_merged.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 
-
+	//class ViewPilot: ViewPilot
+	/*
+	class ViewPilot
+	{
+		initAngleX = 0;
+		initAngleY = 0;
+		initFov = 0.9;
+		maxAngleX = 85;
+		maxAngleY = 150;
+		maxFov = 1.25;
+		maxMoveX = 0.2;
+		maxMoveY = 0.1;
+		maxMoveZ = 0.2;
+		minAngleX = -65;
+		minAngleY = -150;
+		minFov = 0.25;
+		minMoveX = -0.2;
+		minMoveY = -0.1;
+		minMoveZ = -0.1;
+		speedZoomMaxFOV = 0;
+		speedZoomMaxSpeed = 1e+10;
+	};
+	*/
+	
 	class Components: Components
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
@@ -36,9 +59,10 @@ class RC_Ka60M_Base: RC_Ka60M_Core
 	*/
 };
 
-//renamed pylons Hydra -> S-8, APKWS -> Ugroza S-8L / S-8K, AGM -> 9K121 Vikhr / 9M120 Ataka, DAGR M310 -> S-8L / LMUR / 9M120 Ataka
-//or descriptive: 70mm Rocket, 70mm LG, LG-AGM
-//use old 20r skyfire pod
+
+
+// ADD UNARMED version, same with ghosthawk
+
 
 
 //manned

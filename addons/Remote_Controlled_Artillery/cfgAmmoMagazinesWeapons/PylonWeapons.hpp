@@ -76,11 +76,11 @@ class RC_PylonW_Avtopushka: RC_PylonW_TwinCannon
 
 
 class missiles_DAR;
-class RC_PylonW_12Rnd_70mm_Hydra_Core: missiles_DAR
+class RC_PylonW_12Rnd_Hydra_Core: missiles_DAR
 {
 	class Burst;
 };
-class RC_PylonW_12Rnd_70mm_Hydra: RC_PylonW_12Rnd_70mm_Hydra_Core
+class RC_PylonW_12Rnd_Hydra: RC_PylonW_12Rnd_Hydra_Core
 {
 	displayName="70mm Hydra Pod";
 	displayNameShort="70mm Hydra Pod";
@@ -89,8 +89,8 @@ class RC_PylonW_12Rnd_70mm_Hydra: RC_PylonW_12Rnd_70mm_Hydra_Core
 
 	magazines[]=
 	{
-		"RC_PylonM_12Rnd_70mm_Hydra_HE",
-		"RC_PylonM_12Rnd_70mm_Hydra_MP"
+		"RC_PylonM_12Rnd_Hydra_HE",
+		"RC_PylonM_12Rnd_Hydra_MP"
 	};
 	modes[]=
 	{
@@ -104,25 +104,25 @@ class RC_PylonW_12Rnd_70mm_Hydra: RC_PylonW_12Rnd_70mm_Hydra_Core
 		dispersion=0.006;	//0.015
 	};
 };
-class RC_PylonW_12Rnd_80mm_S8: RC_PylonW_12Rnd_70mm_Hydra
+class RC_PylonW_12Rnd_S5: RC_PylonW_12Rnd_Hydra
 {
-	displayName="80mm S-8 Ugroza";
-	displayNameShort="80mm S-8 Ugroza";
+	displayName="55mm S-5 UB-12";
+	displayNameShort="55mm S-5 UB-12";
 	magazines[]=
 	{
-		"RC_PylonM_12Rnd_80mm_S8_HE",
-		"RC_PylonM_12Rnd_80mm_S8_MP"
+		"RC_PylonM_12Rnd_S5_HE",
+		"RC_PylonM_12Rnd_S5_MP"
 	};
 };
 
 
 //unify 70mm rocket pods?
 class rockets_Skyfire;
-class RC_PylonW_19Rnd_70mm_Hydra_Core: rockets_Skyfire
+class RC_PylonW_19Rnd_Hydra_Core: rockets_Skyfire
 {
 	class Burst;
 };
-class RC_PylonW_19Rnd_70mm_Hydra: RC_PylonW_19Rnd_70mm_Hydra_Core
+class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Core
 {
 	displayName="70mm Hydra Pod";
 	displayNameShort="70mm Hydra Pod";
@@ -130,8 +130,8 @@ class RC_PylonW_19Rnd_70mm_Hydra: RC_PylonW_19Rnd_70mm_Hydra_Core
 
 	magazines[]=
 	{
-		"RC_PylonM_19Rnd_70mm_Hydra_HE",
-		"RC_PylonM_19Rnd_70mm_Hydra_MP"
+		"RC_PylonM_19Rnd_Hydra_HE",
+		"RC_PylonM_19Rnd_Hydra_MP"
 	};
 	modes[]=
 	{
@@ -144,14 +144,14 @@ class RC_PylonW_19Rnd_70mm_Hydra: RC_PylonW_19Rnd_70mm_Hydra_Core
 };
 
 
-class RC_PylonW_19Rnd_80mm_S8: RC_PylonW_19Rnd_70mm_Hydra
+class RC_PylonW_19Rnd_S5: RC_PylonW_19Rnd_Hydra
 {
-	displayName="80mm S-8 Ugroza";
-	displayNameShort="80mm S-8 Ugroza";
+	displayName="55mm S-5 UB-19";
+	displayNameShort="55mm S-5 UB-19";
 	magazines[]=
 	{
-		"RC_PylonM_19Rnd_80mm_S8_HE",
-		"RC_PylonM_19Rnd_80mm_S8_MP"
+		"RC_PylonM_19Rnd_S5_HE",
+		"RC_PylonM_19Rnd_S5_MP"
 	};
 };
 
@@ -196,13 +196,13 @@ class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 //EF_PylonMissile_Titan_NLOS_2Rnd  pylonWeapon = "EF_Weapon_Titan_NLOS";	 hardpoints[] = {"TITAN_NLOS_2RND"};	ammo = "EF_Ammo_Titan_NLOS";
 
 
-class RC_PylonW_S8LG: RC_PylonW_APKWS
+class RC_PylonW_S8_LG: RC_PylonW_APKWS
 {
 	displayName="S-8 LG Ugroza";
 	displayNameShort="S-8 LG Ugroza";
 	magazines[]=
 	{
-		"RC_PylonM_12Rnd_S8LG"
+		"RC_PylonM_12Rnd_S8_LG"
 	};
 };
 

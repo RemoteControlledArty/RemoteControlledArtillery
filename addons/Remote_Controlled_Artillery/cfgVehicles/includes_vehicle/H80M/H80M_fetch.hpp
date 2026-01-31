@@ -1,4 +1,4 @@
-//class ViewPilot;
+class ViewPilot;
 class Viewoptics;
 
 class Turrets;

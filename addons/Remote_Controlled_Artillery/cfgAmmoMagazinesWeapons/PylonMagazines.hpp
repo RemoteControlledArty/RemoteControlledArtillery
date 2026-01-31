@@ -119,15 +119,15 @@ class RC_PylonWeapon_300Rnd_20mm_Aegis: RC_PylonWeapon_300Rnd_20mm
 
 
 class PylonRack_12Rnd_missiles;
-class RC_PylonM_12Rnd_70mm_Hydra_HE: PylonRack_12Rnd_missiles
+class RC_PylonM_12Rnd_Hydra_HE: PylonRack_12Rnd_missiles
 {
 	//INCREASE REARM COST
 	
 	author="Ascent";
 	displayName="> Hydra HE 12x";
 	displayNameShort="Hydra HE";
-	descriptionShort="Hydra HE 12x";
-	pylonWeapon="RC_PylonW_12Rnd_70mm_Hydra";
+	descriptionShort="high explosive unguided rockets";
+	pylonWeapon="RC_PylonW_12Rnd_Hydra";
 	ammo="RC_Hydra_HE";
 
 	hardpoints[]=
@@ -135,22 +135,22 @@ class RC_PylonM_12Rnd_70mm_Hydra_HE: PylonRack_12Rnd_missiles
 		"OM_H"
 	};
 };
-class RC_PylonM_12Rnd_70mm_Hydra_MP: RC_PylonM_12Rnd_70mm_Hydra_HE
+class RC_PylonM_12Rnd_Hydra_MP: RC_PylonM_12Rnd_Hydra_HE
 {
 	displayName="> Hydra MP 12x";
 	displayNameShort="Hydra MP";
-	descriptionShort="Hydra MP 12x";
+	descriptionShort="multi purpose unguided rockets";
 	ammo="RC_Hydra_MP";
 };
 
 
-class RC_PylonM_12Rnd_80mm_S8_HE: RC_PylonM_12Rnd_70mm_Hydra_HE
+class RC_PylonM_12Rnd_S5_HE: RC_PylonM_12Rnd_Hydra_HE
 {
 	author="Ascent";
-	displayName="> S-8 HE 12x";
-	displayNameShort="S-8 HE";
-	descriptionShort="S-8 HE 12x";
-	pylonWeapon="RC_PylonW_12Rnd_80mm_S8";
+	displayName="> S-5 HE 12x";
+	displayNameShort="S-5 HE";
+	descriptionShort="high explosive unguided rockets";
+	pylonWeapon="RC_PylonW_12Rnd_S5";
 	ammo="RC_Hydra_HE";
 
 	hardpoints[]=
@@ -158,11 +158,58 @@ class RC_PylonM_12Rnd_80mm_S8_HE: RC_PylonM_12Rnd_70mm_Hydra_HE
 		"OM_H_O"
 	};
 };
-class RC_PylonM_12Rnd_80mm_S8_MP: RC_PylonM_12Rnd_80mm_S8_HE
+class RC_PylonM_12Rnd_S5_MP: RC_PylonM_12Rnd_S5_HE
 {
-	displayName="> S-8 MP 12x";
-	displayNameShort="S-8 MP";
-	descriptionShort="S-8 MP 12x";
+	displayName="> S-5 MP 12x";
+	displayNameShort="S-5 MP";
+	descriptionShort="multi purpose unguided rockets";
+	ammo="RC_Hydra_MP";
+};
+
+
+class PylonRack_19Rnd_Rocket_Skyfire;
+class RC_PylonM_19Rnd_Hydra_HE: PylonRack_19Rnd_Rocket_Skyfire
+{
+	author="Ascent";
+	displayName="> Hydra HE 19x Hex";
+	displayNameShort="Hydra HE";
+	descriptionShort="high explosive unguided rockets";
+	pylonWeapon="RC_PylonW_19Rnd_Hydra";
+	ammo="RC_Hydra_HE";
+
+	hardpoints[]=
+	{
+		"OM_H"
+	};
+};
+class RC_PylonM_19Rnd_Hydra_MP: RC_PylonM_19Rnd_Hydra_HE
+{
+	displayName="> Hydra MP 19x Hex";
+	displayNameShort="Hydra MP";
+	descriptionShort="multi purpose unguided rockets";
+	ammo="RC_Hydra_MP";
+};
+
+
+class RC_PylonM_19Rnd_S5_HE: RC_PylonM_19Rnd_Hydra_HE
+{
+	author="Ascent";
+	displayName="> S-5 HE 19x";
+	displayNameShort="S-5 HE";
+	descriptionShort="high explosive unguided rockets";
+	pylonWeapon="RC_PylonW_19Rnd_S5";
+	ammo="RC_Hydra_HE";
+
+	hardpoints[]=
+	{
+		"OM_H_O"
+	};
+};
+class RC_PylonM_19Rnd_S5_MP: RC_PylonM_19Rnd_S5_HE
+{
+	displayName="> S-5 MP 19x";
+	displayNameShort="S-5 MP";
+	descriptionShort="multi purpose unguided rockets";
 	ammo="RC_Hydra_MP";
 };
 
@@ -172,7 +219,7 @@ class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
 {
 	displayName="> APKWS LG 12x";
     displayNameShort="APKWS LG";
-	descriptionShort="APKWS LG 12x";
+	descriptionShort="laser guided missiles";
     pylonWeapon="RC_PylonW_APKWS";
 	ammo="RC_APKWS";
 
@@ -181,12 +228,12 @@ class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
 		"OM_H"
 	};
 };
-class RC_PylonM_12Rnd_S8LG: RC_PylonM_12Rnd_APKWS
+class RC_PylonM_12Rnd_S8_LG: RC_PylonM_12Rnd_APKWS
 {
 	displayName="> S-8 LG 12x";
     displayNameShort="S-8 LG";
-	descriptionShort="S-8 LG 12x";
-    pylonWeapon="RC_PylonW_S8LG";
+	descriptionShort="laser guided missiles";
+    pylonWeapon="RC_PylonW_S8_LG";
 
 	hardpoints[]=
 	{
@@ -200,7 +247,7 @@ class RC_PylonM_1Rnd_AGM114K: 12Rnd_PG_missiles
 {
 	displayName="> AGM-114K Hellfire II 1x";
 	displayNameShort="AGM-114K";
-	descriptionShort="AGM-114K Hellfire II 1x";
+	descriptionShort="heavy laser guided missile";
 	pylonWeapon="RC_PylonW_Hellfire";
 	ammo="RC_AGM114K";
 	count=1;
@@ -223,7 +270,7 @@ class RC_PylonM_1Rnd_Vikhr: RC_PylonM_1Rnd_AGM114K
 {
 	displayName="> 9K121 Vikhr 1x";
 	displayNameShort="9K121 Vikhr";
-	descriptionShort="9K121 Vikhr 1x";
+	descriptionShort="heavy laser guided missile";
 	pylonWeapon="RC_PylonW_Vikhr";
 	ammo="RC_AGM114K";
 
@@ -236,7 +283,7 @@ class RC_PylonM_1Rnd_Vikhr: RC_PylonM_1Rnd_AGM114K
 class RC_PylonM_3Rnd_Vikhr: RC_PylonM_1Rnd_Vikhr
 {
 	displayName="> 9K121 Vikhr 3x";
-	descriptionShort="9K121 Vikhr 3x";
+	descriptionShort="heavy laser guided missiles";
 	ammo="RC_AGM114K";
 	count=3;
 
@@ -250,63 +297,16 @@ class RC_PylonM_3Rnd_Vikhr: RC_PylonM_1Rnd_Vikhr
 };
 
 
-class PylonRack_19Rnd_Rocket_Skyfire;
-class RC_PylonM_19Rnd_70mm_Hydra_HE: PylonRack_19Rnd_Rocket_Skyfire
-{
-	author="Ascent";
-	displayName="> Hydra HE 19x Hex";
-	displayNameShort="Hydra HE";
-	descriptionShort="Hydra HE 19x";
-	pylonWeapon="RC_PylonW_19Rnd_70mm_Hydra";
-	ammo="RC_Hydra_HE";
-
-	hardpoints[]=
-	{
-		"OM_H"
-	};
-};
-class RC_PylonM_19Rnd_70mm_Hydra_MP: RC_PylonM_19Rnd_70mm_Hydra_HE
-{
-	displayName="> Hydra MP 19x Hex";
-	displayNameShort="Hydra MP";
-	descriptionShort="Hydra MP 19x";
-	ammo="RC_Hydra_MP";
-};
-
-
-class RC_PylonM_19Rnd_80mm_S8_HE: RC_PylonM_19Rnd_70mm_Hydra_HE
-{
-	author="Ascent";
-	displayName="> S-8 HE 19x";
-	displayNameShort="S-8 HE";
-	descriptionShort="S-8 HE 19x";
-	pylonWeapon="RC_PylonW_19Rnd_80mm_S8";
-	ammo="RC_Hydra_HE";
-
-	hardpoints[]=
-	{
-		"OM_H"
-	};
-};
-class RC_PylonM_19Rnd_80mm_S8_MP: RC_PylonM_19Rnd_80mm_S8_HE
-{
-	displayName="> S-8 MP 19x";
-	displayNameShort="S-8 MP";
-	descriptionShort="S-8 MP 19x";
-	ammo="RC_Hydra_MP";
-};
-
-
 /*
 //add in RC_Aegis pbo
 class PylonRack_20Rnd_Rocket_80mm;
-class RC_PylonM_20Rnd_80mm_S8_HE: PylonRack_20Rnd_Rocket_80mm
+class RC_PylonM_20Rnd_S5_HE: PylonRack_20Rnd_Rocket
 {
 	author="Ascent";
-	displayName="> S-8 HE 20x";
-	displayNameShort="S-8 HE";
-	descriptionShort="S-8 HE 20x";
-	pylonWeapon="RC_PylonW_19Rnd_70mm_Hydra";	//rockets_Skyfire
+	displayName="> S-5 HE 20x";
+	displayNameShort="S-5 HE";
+	descriptionShort="high explosive unguided rockets";
+	pylonWeapon="RC_PylonW_19Rnd_Hydra";	//rockets_Skyfire
 	ammo="RC_Hydra_HE";
 
 	hardpoints[]=
@@ -314,11 +314,11 @@ class RC_PylonM_20Rnd_80mm_S8_HE: PylonRack_20Rnd_Rocket_80mm
 		"OM_H"
 	};
 };
-class RC_PylonM_20Rnd_80mm_S8_MP: RC_PylonM_20Rnd_80mm_S8_HE
+class RC_PylonM_20Rnd_S5_MP: RC_PylonM_20Rnd_S5_HE
 {
-	displayName="> S-8 MP 20x";
-	displayNameShort="S-8 MP";
-	descriptionShort="S-8 MP 20x";
+	displayName="> S-5 MP 20x";
+	displayNameShort="S-5 MP";
+	descriptionShort="multi purpose unguided rockets";
 	ammo="RC_Hydra_MP";
 };
 */

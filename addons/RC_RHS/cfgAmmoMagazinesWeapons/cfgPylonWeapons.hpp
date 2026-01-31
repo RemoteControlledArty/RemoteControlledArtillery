@@ -12,22 +12,29 @@ class RC_RHS_PylonW_Hydra: RC_RHS_PylonW_Hydra_Core
 
 	magazines[]=
 	{
+		/*
 		//large pod
-		"RC_RHS_PylonM_19Rnd_MP",
+		"RC_RHS_PylonM_19Rnd_Hydra_MP",
 		
-		"RC_RHS_PylonM_19Rnd_M151",
-		"RC_RHS_PylonM_12Rnd_M151",
-		"RC_RHS_PylonM_9Rnd_M151",
+		"RC_RHS_PylonM_19Rnd_Hydra_M151",
+		"RC_RHS_PylonM_12Rnd_Hydra_M151",
+		"RC_RHS_PylonM_9Rnd_Hydra_M151",
 
-		"RC_RHS_PylonM_19Rnd_M229",
-		"RC_RHS_PylonM_12Rnd_M229",
-		"RC_RHS_PylonM_9Rnd_M229",
+		"RC_RHS_PylonM_19Rnd_Hydra_M229",
+		"RC_RHS_PylonM_12Rnd_Hydra_M229",
+		"RC_RHS_PylonM_9Rnd_Hydra_M229",
 
 		//small pod
-		"RC_RHS_PylonM_7Rnd_M151",
+		"RC_RHS_PylonM_7Rnd_Hydra_M151",
 
-		"RC_RHS_PylonM_7Rnd_M229",
-		"RC_RHS_PylonM_7Rnd_MP"
+		"RC_RHS_PylonM_7Rnd_Hydra_M229",
+		*/
+
+		"RC_RHS_PylonM_19Rnd_Hydra_HE",
+		"RC_RHS_PylonM_7Rnd_Hydra_HE",
+
+		"RC_RHS_PylonM_19Rnd_Hydra_MP",
+		"RC_RHS_PylonM_7Rnd_Hydra_MP"
 	};
 	modes[]=
 	{
@@ -42,27 +49,16 @@ class RC_RHS_PylonW_Hydra: RC_RHS_PylonW_Hydra_Core
 };
 
 
-//lacks submun
-class RHS_weap_DAGR_Launcher;
-class RC_RHS_PylonW_DAGR: RHS_weap_DAGR_Launcher
+/*
+class RC_PylonW_APKWS;
+class RC_RHS_PylonW_APKWS: RC_PylonW_APKWS
 {
-	displayName="DAGR M310";
-	displayNameShort="DAGR M310";
-	ballisticsComputer=8;
 	magazines[]=
 	{
-		"RC_PylonM_8Rnd_DAGR"
+		"RC_RHS_PylonM_7Rnd_APKWS"
 	};
 };
-class RC_RHS_PylonW_S8_SACLOS: RC_RHS_PylonW_DAGR
-{
-	displayName="S-8 SACLOS";
-	displayNameShort="S-8 SACLOS";
-	magazines[]=
-	{
-		"RC_PylonM_8Rnd_S8_SACLOS"
-	};
-};
+*/
 
 
 /*
@@ -79,6 +75,29 @@ class RC_RHS_PylonW_AGM114K: RHS_weap_AGM114K_Launcher
 	};
 };
 */
+
+
+//lacks submun
+class RHS_weap_DAGR_Launcher;
+class RC_RHS_PylonW_DAGR: RHS_weap_DAGR_Launcher
+{
+	displayName="DAGR M310";
+	displayNameShort="DAGR M310";
+	ballisticsComputer=8;
+	magazines[]=
+	{
+		"RC_RHS_PylonM_8Rnd_DAGR"
+	};
+};
+class RC_RHS_PylonW_S8_SACLOS: RC_RHS_PylonW_DAGR
+{
+	displayName="S-8 SACLOS";
+	displayNameShort="S-8 SACLOS";
+	magazines[]=
+	{
+		"RC_RHS_PylonM_8Rnd_S8_SACLOS"
+	};
+};
 
 
 class RHS_weap_gau19;
@@ -114,15 +133,3 @@ class RC_RHS_PylonW_338_Minigun: RHS_weap_m134_pylon
 		"HighROF","close","short","medium","far"
 	};
 };
-
-
-/*
-class RC_PylonW_APKWS;
-class RC_RHS_PylonW_APKWS: RC_PylonW_APKWS
-{
-	magazines[]=
-	{
-		"RC_RHS_PylonM_7Rnd_APKWS"
-	};
-};
-*/
