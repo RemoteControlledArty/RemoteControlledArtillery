@@ -62,6 +62,12 @@ class RC_RHS_APKWS: RC_APKWS
 */
 
 
+class ammo_Penetrator_PG_AT;
+class RC_RHS_DAGR_M310_Penetrator: ammo_Penetrator_PG_AT
+{
+	caliber=20;
+	hit=300;	//reduced as lockon already is very strong
+};
 class RHS_Ammo_DAGR;
 class RC_RHS_DAGR_M310: RHS_Ammo_DAGR
 {
@@ -88,7 +94,7 @@ class RC_RHS_DAGR_M310: RHS_Ammo_DAGR
 	//maxSpeed=290;	//720
 
 	//added submun
-	submunitionAmmo="ammo_Penetrator_PG_AT";
+	submunitionAmmo="RC_RHS_DAGR_M310_Penetrator";
 	submunitionDirectionType="SubmunitionModelDirection";
 	submunitionInitSpeed=1000;
 	submunitionParentSpeedCoef=0;
