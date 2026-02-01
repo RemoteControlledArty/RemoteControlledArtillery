@@ -66,8 +66,13 @@ class RHS_Ammo_DAGR;
 class RC_RHS_DAGR_M310: RHS_Ammo_DAGR
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoDatalink_6km.hpp"
-	//thrustTime=3.14;	//1.57 doubled to cancel thrust halving
-	//thrust=412.5;		//825 halved to increase accuracy
+	thrustTime=3.14;	//1.57 doubled to cancel thrust halving
+	thrust=412.5;		//825 halved to increase accuracy at shorter distance
+
+	missileKeepLockedCone=60;		//27
+	missileLockCone=60;				//27
+	missileLockMaxDistance=5000;	//6000
+	missileLockMinDistance=300;		//1000
 	
 	warheadName="HE";
 	hit=95;

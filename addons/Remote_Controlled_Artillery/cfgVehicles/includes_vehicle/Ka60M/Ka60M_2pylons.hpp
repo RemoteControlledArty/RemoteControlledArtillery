@@ -67,14 +67,14 @@ class TransportPylonsComponent
 			displayname="Laser Guided";
 		};
 		/*
-		class SaclosGuided
+		class Guided
 		{
 			attachment[] =
 			{
 				"RC_PylonM_250Rnd_25mm_Ru",
-				"RC_PylonM_12Rnd_S8_SACLOS"
+				"RC_PylonM_12Rnd_S8_G"
 			};
-			displayname="SACLOS Guided";
+			displayname="SACLOS / Lock - Guided";
 		};
 		*/
 		class HeavyLaserGuided

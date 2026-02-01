@@ -47,7 +47,6 @@ hiddenSelections[]=
 	//"camo1"
 };
 */
-//editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Heli_Light_02_dynamicLoadout_F.jpg";
 editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_Heli_Light_02_unarmed_F.jpg";
 hiddenSelectionsTextures[]=
 {
