@@ -73,6 +73,7 @@ class rhs_mag_DAGR_8;
 class RC_RHS_PylonM_8Rnd_DAGR: rhs_mag_DAGR_8
 {
 	displayName="> DAGR M310 8x";
+	displayNameShort="DAGR M310";
 	descriptionShort="SACLOS guided missiles";
 	pylonWeapon="RC_RHS_PylonW_DAGR";
 	ammo="RC_RHS_DAGR_M310";
@@ -118,6 +119,7 @@ class rhs_mag_AGM114K_2;
 class RC_PylonM_2Rnd_AGM114K: rhs_mag_AGM114K_2
 {
 	displayName="> AGM-114K Hellfire II 2x";
+	displayNameShort="AGM-114K";
 	descriptionShort="heavy laser guided missiles";
 	pylonWeapon="RC_PylonW_Hellfire";
 	ammo="RC_RHS_AGM114K";

@@ -157,6 +157,14 @@ class CfgPatches
 			"RC_MELB_OM_MH6M",
 			"RC_MELB_OM_MH6M_O",
 			"RC_MELB_OM_MH6M_I",
+
+			"RC_Ka60M",
+			"RC_Ka60M_O",
+			"RC_Ka60M_I",
+
+			"RC_OM_Ka60M",
+			"RC_OM_Ka60M_O",
+			"RC_OM_Ka60M_I",
 			
 			/*
 			"RC_HIMARS_D",
@@ -292,6 +300,7 @@ class CfgVehicles
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
 	#include "\RC_RHS\cfgVehicles\HeliPilot.hpp"
 	#include "\RC_RHS\cfgVehicles\H6M.hpp"
+	#include "\RC_RHS\cfgVehicles\Ka60M.hpp"
 
 	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
 	//#include "\RC_RHS\cfgVehicles\ASV.hpp"

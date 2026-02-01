@@ -43,6 +43,8 @@ class RC_RHS_PylonW_Hydra: RC_RHS_PylonW_Hydra_Core
 	};
 	class Burst: Burst
 	{
+		displayName="Hydra";
+		displayNameShort="Hydra";
 		reloadTime=0.15;
 		dispersion=0.006;	//0.12
 	};
@@ -79,7 +81,12 @@ class RC_RHS_PylonW_AGM114K: RHS_weap_AGM114K_Launcher
 
 //lacks submun
 class RHS_weap_DAGR_Launcher;
-class RC_RHS_PylonW_DAGR: RHS_weap_DAGR_Launcher
+class RC_RHS_PylonW_DAGR_Base: RHS_weap_DAGR_Launcher
+{
+	class Direct;
+	class LoalDistance;
+};
+class RC_RHS_PylonW_DAGR: RC_RHS_PylonW_DAGR_Base
 {
 	displayName="DAGR M310";
 	displayNameShort="DAGR M310";
@@ -87,6 +94,21 @@ class RC_RHS_PylonW_DAGR: RHS_weap_DAGR_Launcher
 	magazines[]=
 	{
 		"RC_RHS_PylonM_8Rnd_DAGR"
+	};
+	modes[]=
+	{
+		"Direct",
+		"LoalDistance"
+	};
+	class Direct: Direct
+	{
+		displayName="DAGR M310 DIR";
+		displayNameShort="DAGR M310 DIR";
+	};
+	class LoalDistance: LoalDistance
+	{
+		displayName="DAGR M310 LOAL";
+		displayNameShort="DAGR M310 LOAL";
 	};
 };
 class RC_RHS_PylonW_S8_G: RC_RHS_PylonW_DAGR
@@ -97,11 +119,25 @@ class RC_RHS_PylonW_S8_G: RC_RHS_PylonW_DAGR
 	{
 		"RC_RHS_PylonM_8Rnd_S8_G"
 	};
+	class Direct: Direct
+	{
+		displayName="S-8 G DIR";
+		displayNameShort="S-8 G DIR";
+	};
+	class LoalDistance: LoalDistance
+	{
+		displayName="S-8 G LOAL";
+		displayNameShort="S-8 G LOAL";
+	};
 };
 
 
 class RHS_weap_gau19;
-class RC_RHS_PylonW_GAU19A: RHS_weap_gau19
+class RC_RHS_PylonW_GAU19A_Base: RHS_weap_gau19
+{
+	class HighROF;
+};
+class RC_RHS_PylonW_GAU19A: RC_RHS_PylonW_GAU19A_Base
 {
 	displayName="GAU-19/A";
 	displayNameShort="GAU-19/A";
@@ -115,11 +151,20 @@ class RC_RHS_PylonW_GAU19A: RHS_weap_gau19
 	{
 		"HighROF","close","short","medium","far"
 	};
+	class HighROF: HighROF
+	{
+		displayName="GAU-19/A";
+		displayNameShort="GAU-19/A";
+	};
 };
 
 
 class RHS_weap_m134_pylon;
-class RC_RHS_PylonW_338_Minigun: RHS_weap_m134_pylon
+class RC_RHS_PylonW_338_Minigun_Base: RHS_weap_m134_pylon
+{
+	class HighROF;
+};
+class RC_RHS_PylonW_338_Minigun: RC_RHS_PylonW_338_Minigun_Base
 {
 	displayName=".338NM Minigun";
 	displayNameShort=".338NM Minigun";
@@ -131,5 +176,10 @@ class RC_RHS_PylonW_338_Minigun: RHS_weap_m134_pylon
 	modes[]=
 	{
 		"HighROF","close","short","medium","far"
+	};
+	class HighROF: HighROF
+	{
+		displayName=".338NM";
+		displayNameShort=".338NM";
 	};
 };

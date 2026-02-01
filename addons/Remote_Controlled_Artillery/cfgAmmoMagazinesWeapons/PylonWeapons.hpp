@@ -100,6 +100,8 @@ class RC_PylonW_12Rnd_Hydra: RC_PylonW_12Rnd_Hydra_Core
 	};
 	class Burst: Burst
 	{
+		displayName="Hydra";
+		displayNameShort="Hydra";
 		reloadTime=0.15;
 		dispersion=0.006;	//0.015
 	};
@@ -112,6 +114,11 @@ class RC_PylonW_12Rnd_S5: RC_PylonW_12Rnd_Hydra
 	{
 		"RC_PylonM_12Rnd_S5_HE",
 		"RC_PylonM_12Rnd_S5_MP"
+	};
+	class Burst: Burst
+	{
+		displayName="S-5";
+		displayNameShort="S-5";
 	};
 };
 
@@ -139,6 +146,8 @@ class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Core
 	};
 	class Burst: Burst
 	{
+		displayName="Hydra";
+		displayNameShort="Hydra";
 		reloadTime=0.15;
 	};
 };
@@ -152,6 +161,11 @@ class RC_PylonW_19Rnd_S5: RC_PylonW_19Rnd_Hydra
 	{
 		"RC_PylonM_19Rnd_S5_HE",
 		"RC_PylonM_19Rnd_S5_MP"
+	};
+	class Burst: Burst
+	{
+		displayName="S-5";
+		displayNameShort="S-5";
 	};
 };
 
@@ -180,6 +194,8 @@ class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 	};
 	class Burst: Burst
 	{
+		displayName="APKWS";
+		displayNameShort="APKWS";
 		ballisticsComputer=8;
 		reloadTime=0.15;
 	};
