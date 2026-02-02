@@ -57,6 +57,7 @@ class TransportPylonsComponent
 			};
 			displayname="Unguided";
 		};
+		/*
 		class LaserGuided
 		{
 			attachment[] =
@@ -66,6 +67,7 @@ class TransportPylonsComponent
 			};
 			displayname="Laser Guided";
 		};
+		*/
 		/*
 		class Guided
 		{
@@ -77,6 +79,7 @@ class TransportPylonsComponent
 			displayname="SACLOS / Lock - Guided";
 		};
 		*/
+		/*
 		class HeavyLaserGuided
 		{
 			attachment[] =
@@ -86,5 +89,6 @@ class TransportPylonsComponent
 			};
 			displayname="Heavy Laser Guided";
 		};
+		*/
 	};
 };

@@ -237,7 +237,7 @@ class RC_PylonM_12Rnd_S8_LG: RC_PylonM_12Rnd_APKWS
 
 	hardpoints[]=
 	{
-		"OM_H_O"
+		"OM_H_O_REWORK"
 	};
 };
 
@@ -276,7 +276,7 @@ class RC_PylonM_1Rnd_Vikhr: RC_PylonM_1Rnd_AGM114K
 
 	hardpoints[]=
 	{
-		"OM_H_O"
+		"OM_H_O_REWORK"
 	};
 };
 //PylonRack_3Rnd_LG_scalpel
@@ -292,7 +292,7 @@ class RC_PylonM_3Rnd_Vikhr: RC_PylonM_1Rnd_Vikhr
 
 	hardpoints[]=
 	{
-		"OM_H_O"
+		"OM_H_O_REWORK"
 	};
 };
 
