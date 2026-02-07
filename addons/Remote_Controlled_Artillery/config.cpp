@@ -1180,6 +1180,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\GPSTarget.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Helicopter.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\H80M.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\AW159M.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Ka60M.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_1.hpp"
