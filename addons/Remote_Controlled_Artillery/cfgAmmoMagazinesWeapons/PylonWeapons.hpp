@@ -230,7 +230,7 @@ class RC_PylonW_Hellfire: RocketPods
 
 	displayName="Hellfire";
 	displayNameShort="Hellfire";
-	magazines[]={"RC_PylonM_2Rnd_AGM114K","RC_PylonM_1Rnd_AGM114K"};
+	magazines[]={"RC_PylonM_3Rnd_AGM114K","RC_PylonM_2Rnd_AGM114K","RC_PylonM_1Rnd_AGM114K"};
 
 	ace_hellfire_enabled=1; // handle adding interactions and adding laser designator
 	ace_laser_canSelect=1; 	// allows switching laser code
@@ -264,5 +264,31 @@ class RC_PylonW_Vikhr: RC_PylonW_Hellfire
 	{
 		"RC_PylonM_3Rnd_Vikhr",
 		"RC_PylonM_1Rnd_Vikhr"
+	};
+};
+
+
+class M134_minigun;
+class RC_PylonW_338_Minigun_Base: M134_minigun
+{
+	class HighROF;
+};
+class RC_PylonW_338_Minigun: RC_PylonW_338_Minigun_Base
+{
+	displayName=".338NM Minigun";
+	displayNameShort=".338NM Minigun";
+	ballisticsComputer=8;
+	magazines[]=
+	{
+		"RC_PylonM_3000Rnd_338_SLAP"
+	};
+	modes[]=
+	{
+		"HighROF","close","short","medium","far"
+	};
+	class HighROF: HighROF
+	{
+		displayName=".338NM";
+		displayNameShort=".338NM";
 	};
 };

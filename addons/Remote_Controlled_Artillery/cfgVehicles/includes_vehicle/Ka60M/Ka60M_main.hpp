@@ -12,7 +12,7 @@ enableManualFire=1;					//only if copilot is primarygunner & pylons owned by cop
 
 
 bodyFrictionCoef=0.7;				//0.7	reducing it futher makes it fly wierd
-maxSpeed=300;						//290
+maxSpeed=350;						//290
 /*
 liftForceCoef=1;					//1
 cyclicAsideForceCoef=1;				//1

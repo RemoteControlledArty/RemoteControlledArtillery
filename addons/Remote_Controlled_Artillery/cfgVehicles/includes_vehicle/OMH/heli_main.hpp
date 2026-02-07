@@ -42,7 +42,7 @@ slingLoadMaxCargoMass=25000;	//t 13500	//c
 maximumLoad=6000;				//t 4000	//c 6000
 maxSpeed=350;					//t 250		//c 300
 liftForceCoef=1.65;				//t 1.3		//c 1.65;
-//bodyFrictionCoef=2.8;	//2.8
+bodyFrictionCoef=2.24;			//2.8
 
 //ace_cargo_hasCargo=1;
 //ace_cargo_space=20;	//t8 c40

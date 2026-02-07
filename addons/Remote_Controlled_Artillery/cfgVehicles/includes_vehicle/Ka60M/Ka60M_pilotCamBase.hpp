@@ -44,5 +44,5 @@ body="obsTurret";
 gun="obsGun";
 animationSourceBody="obsTurret";
 animationSourceGun="obsGun";
-turretInfoType="Rsc_MELB_Turret_UnitInfo";
+turretInfoType="Rsc_Turret_UnitInfo";
 */

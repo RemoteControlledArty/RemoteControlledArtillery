@@ -1,17 +1,16 @@
 class I_Heli_light_03_dynamicLoadout_F;
 class RC_AW159M_Core: I_Heli_light_03_dynamicLoadout_F
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_fetch.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_fetch.hpp"
 };
 class RC_AW159M_Base: RC_AW159M_Core
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_main.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_main.hpp"
 	editorSubcategory="RC_Heli_armed_subcat";
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Main.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotView.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamBase.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_pilotCamBase.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFixed.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFree.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_userActions.hpp"
@@ -22,19 +21,13 @@ class RC_AW159M_Base: RC_AW159M_Core
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_4pylons.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_4pylons.hpp"
 	};
 	class Turrets: Turrets
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_copilotTurret.hpp"
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_cargoTurrets.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_mainTurret.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_cargoTurrets.hpp"
 	};
-	/*
-	class AnimationSources: AnimationSources
-	{
-		//DOOR
-	};
-	*/
 };
 
 

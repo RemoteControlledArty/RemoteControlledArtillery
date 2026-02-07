@@ -12,7 +12,7 @@ enableManualFire=1;					//only if copilot is primarygunner & pylons owned by cop
 
 
 bodyFrictionCoef=0.8;				//1
-maxSpeed=350;						//300
+maxSpeed=350;						//293
 /*
 liftForceCoef=1;					//1
 cyclicAsideForceCoef=1;				//1
@@ -39,3 +39,13 @@ crewCrashProtection=0.01;			//0.2
 ejectDeadCargo=1;
 //hullDamageCauseExplosion=1;		//0 for vanilla (bool?)
 //hullExplosionDelay[]={20,30};		//undefined? like because bool is 0, hull also has 999 armor
+
+
+//editorPreview="";
+//picture="";
+hiddenSelectionsTextures[]=
+{
+	"\A3\Air_F_EPB\Heli_Light_03\Data\Heli_Light_03_base_CO.paa",
+	"\A3\Weapons_F\Ammoboxes\Data\AmmoBox_HAF_CO.paa",
+	"\A3\Weapons_F\Ammoboxes\Data\AmmoBox_signs_HAF_CA.paa"
+};

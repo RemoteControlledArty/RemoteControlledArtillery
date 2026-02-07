@@ -264,6 +264,18 @@ class RC_PylonM_1Rnd_AGM114K: 12Rnd_PG_missiles
 		"OM_H"
 	};
 };
+class RC_PylonM_3Rnd_AGM114K: RC_PylonM_1Rnd_AGM114K
+{
+	displayName="> AGM-114K Hellfire II 3x";
+	count=3;
+	model="\A3\Weapons_F\DynamicLoadout\PylonPod_3x_Missile_LG_scalpel_F.p3d";
+	mass=300;
+
+	hardpoints[]=
+	{
+		"OM_H_I"
+	};
+};
 
 
 class RC_PylonM_1Rnd_Vikhr: RC_PylonM_1Rnd_AGM114K
@@ -293,6 +305,24 @@ class RC_PylonM_3Rnd_Vikhr: RC_PylonM_1Rnd_Vikhr
 	hardpoints[]=
 	{
 		"OM_H_O_REWORK"
+	};
+};
+
+
+class 5000Rnd_762x51_Yellow_Belt;
+class RC_PylonM_3000Rnd_338_SLAP: 5000Rnd_762x51_Yellow_Belt
+{
+	displayName="> .338NM SLAP 3000x";
+	displayNameShort=".338NM SLAP";
+	descriptionShort=".338NM Minigun";
+	pylonWeapon="RC_RHS_PylonW_338_Minigun";
+	ammo="RC_B_338_SLAP_T_R";
+	count=3000;
+
+	hardpoints[]=
+	{
+		"OM_H",
+		"OM_H_O"
 	};
 };
 
