@@ -13,15 +13,17 @@ class MainTurret: MainTurret
 	stabilizedInAxes=3;
 	canEject=1;	//0
 
-	minElev=-45;
-	maxElev=45;
-	minTurn=-130;
-	maxTurn=130;
+	minElev=-42.5;
+	maxElev=42.5;
+	minTurn=-125;
+	maxTurn=125;
 
 	class OpticsIn: OpticsIn
 	{
 		class Wide: Wide
 		{
+			directionStabilized=1;
+			//horizontallyStabilized=1;
 			initFov=1;	//0.9
 			minFov=0.02;
 			maxFov=1;	//0.9
@@ -32,8 +34,7 @@ class MainTurret: MainTurret
 				"Ti"
 			};
 			thermalMode[]={0};
-			directionStabilized=1;
-			horizontallyStabilized=1;
+			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
 		};
 	};
 };
