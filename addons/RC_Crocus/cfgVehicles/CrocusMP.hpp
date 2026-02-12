@@ -31,14 +31,18 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	laserScanner=1;
 	showAllTargets="2 + 4";
 
-	camouflage=0.1;	//0.5
-	audible=0.1;	//0.1
-	radarTargetSize=0.035;	//0.1
-	visualTargetSize=0.1;	//0.1
+	camouflage=0.1;	//0.5 -> 0.2
+	audible=0.1;	//0.1 -> 0.1
+	radarTargetSize=0.035;	//0.1 -> 0.02
+	visualTargetSize=0.1;	//0.1 -> 0.05
+	radarTarget=1;	//1 -> 0  why? wouldnt even be detectable at short range by radar
+	//threat[]={0.1,0.1,0.1}; -> threat[]={0,0,0}; why?
 	
-	liftForceCoef=1.5;	//1
-	//cyclicForwardForceCoef=3;	//1.2	//doesnt seem to work, only less stable vertical steering
-	maxSpeed=200;	//140
+	bodyFrictionCoef=0.25;	//0.3 -> 0.3
+	liftForceCoef=1.5;	//1 -> 1
+	cyclicForwardForceCoef=0.96;	//1.2 -> 1.2  vertical steering sensitivity
+	cyclicAsideForceCoef=1.6;		//horizontal seering sensitivity
+	maxSpeed=200;	//140 -> 190
 
 	//HUD
 	//disableInventory=0;
@@ -98,10 +102,10 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	{
 		class RC_Crocus
 		{
-			handleDamage = "if (local (_this select 0)) then {_this spawn RC_fnc_fpv_handleDmg_MP};";
-			fired="if (local (_this select 0)) then {_this call RC_fnc_fpv_handleAB_MP};";
-			//hit="_this call RC_fnc_fpv_onDestroy_MP";
 			init="(_this # 0) spawn RC_fnc_fpv_droneInit_MP;";
+			fired="params ['_unit'];  if (local _unit) then { _unit spawn RC_fnc_fpv_detonate_MP };";
+			handleDamage="params ['_unit', '_selection', '_damage'];  if (local _unit) then { if (_damage > 0.1) then {_unit spawn RC_fnc_fpv_detonate_MP }; };";
+			//hit="_this call RC_fnc_fpv_onDestroy_MP";
 		};
 		class ArmaFPV {};
 		//class ArmaFPV {hit="";};

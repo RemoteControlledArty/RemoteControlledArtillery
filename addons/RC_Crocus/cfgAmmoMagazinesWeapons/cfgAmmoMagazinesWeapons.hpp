@@ -271,7 +271,7 @@ class cfgMagazines
 		model="\ArmaFPV\drone.p3d";
 		picture="\ArmaFPV\data\krokus1.jpg";
 		descriptionShort="throwable FPV";
-		mass=50;
+		mass=60;
 	};
 	class Crocus_MP_Throw: Crocus_MP_Throw_Base
 	{
@@ -300,6 +300,44 @@ class cfgMagazines
 		ammo="Crocus_MP_NV_Sens_ThrowAmmo";
 		displayName="Crocus MP NV Sens";
 		displayNameShort="Crocus MP NV Sens";
+	};
+
+
+	//assemble if put on ground
+	class Item_Crocus_AT;
+	class Item_Crocus_MP: Item_Crocus_AT
+	{
+		scope=1;
+		mass=60;
+		count=1;
+		ammo=""
+		//model="\ArmaFPV\drone.p3d";
+
+		_generalMacro="Item_Crocus_MP";
+		displayName="Crocus MP";
+		displayNameShort="Crocus MP";
+		descriptionShort="Crocus MP";
+	};
+	class Item_Crocus_MP_Sens: Item_Crocus_MP
+	{
+		_generalMacro="Item_Crocus_MP_Sens";
+		displayName="Crocus MP Sens";
+		displayNameShort="Crocus MP Sens";
+		descriptionShort="Crocus MP Sens";
+	};
+	class Item_Crocus_MP_NV: Item_Crocus_MP
+	{
+		_generalMacro="Item_Crocus_MP_NV";
+		displayName="Crocus MP NV";
+		displayNameShort="Crocus MP NV";
+		descriptionShort="Crocus MP NV";
+	};
+	class Item_Crocus_MP_NV_Sens: Item_Crocus_MP
+	{
+		_generalMacro="Item_Crocus_MP_NV_Sens";
+		displayName="Crocus MP NV Sens";
+		displayNameShort="Crocus MP NV Sens";
+		descriptionShort="Crocus MP NV Sens";
 	};
 };
 

@@ -2,15 +2,15 @@
 	private _weakSignalDuration = 0;
 	private _specialEffectTime = 0;
 
-	while { missionNamespace getVariable ["ArmaFPV_isControl", false] } do {
+	while { missionNamespace getVariable ["RC_ArmaFPV_isControl", false] } do {
 		// UI
 		private _player = missionNamespace getVariable ["bis_fnc_moduleRemoteControl_unit", player];
 		private _uav = getConnectedUAV _player;
 		
 		private _signal = [_player, _uav] call RC_fnc_fpv_getSignal_MP;
 		private _altitude = getPos _uav select 2;
-		private _controlPicture = uiNameSpace getVariable ["ArmaFPV_SignalPicture", controlNull];
-		private _controlText = uiNameSpace getVariable ["ArmaFPV_SignalText", controlNull];
+		private _controlPicture = uiNameSpace getVariable ["RC_ArmaFPV_SignalPicture", controlNull];
+		private _controlText = uiNameSpace getVariable ["RC_ArmaFPV_SignalText", controlNull];
 		private _picture = "";
 
 		if (_signal < 0.05) then {
@@ -67,7 +67,7 @@
 		_controlText ctrlSetText str(round(_signal * 100));
 
 		// EFFECTS
-		private _ppEffect = missionNameSpace getVariable ["DB_fpv_ppEffect", []];
+		private _ppEffect = missionNameSpace getVariable ["RC_fpv_ppEffect", []];
 		private _adjust = linearConversion [1, 0, _signal, 0.1, 1.0];
 		
 		if (_ppEffect isNotEqualTo []) then {
@@ -92,7 +92,7 @@
 		_PP_film ppEffectCommit 0;
 
 
-		missionNameSpace setVariable ["DB_fpv_ppEffect", [_PP_colorC, _PP_dynamic, _PP_film]];
+		missionNameSpace setVariable ["RC_fpv_ppEffect", [_PP_colorC, _PP_dynamic, _PP_film]];
 
 		sleep 0.2;
 	};

@@ -1,13 +1,6 @@
 RC_INTERCEPTOR_SIGNAL=1;    //pre/re-define
 
-private _effect_1 = missionNameSpace getVariable ["RC_fpv_ppEffect", []];
 private _adjust = linearConversion [1, 0, RC_INTERCEPTOR_SIGNAL, 0.1, 1.0];
-
-if (_effect_1 isNotEqualTo []) then {
-	{
-		ppEffectDestroy _x;
-	} forEach _ppEffect;
-};
 
 private _PP_colorC = ppEffectCreate ["ColorCorrections", 1500];
 _PP_colorC ppEffectEnable true;

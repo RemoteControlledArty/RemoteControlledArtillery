@@ -8,11 +8,11 @@ addMissionEventHandler ["EachFrame", {
 		RC_FPV_Target_Hash set [_type, _FPV_Target];
 	};
 	
-	private _controlText = uiNameSpace getVariable ["ArmaFPV_Target", controlNull];
+	private _controlText = uiNameSpace getVariable ["RC_ArmaFPV_Target", controlNull];
 	
 	_controlText ctrlSetText _FPV_Target;
 
-	if !(missionNamespace getVariable ["ArmaFPV_isControl", false]) exitWith {
+	if !(missionNamespace getVariable ["RC_ArmaFPV_isControl", false]) exitWith {
     	removeMissionEventHandler ["EachFrame", _thisEventHandler];
 	};
 }];

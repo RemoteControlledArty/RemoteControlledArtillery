@@ -98,16 +98,19 @@ class CfgFunctions
 		{
             file="\RC_Crocus\functions";
 			class fpv_handleConnect_MP {postInit=1;};
+			class fpv_handleSettings_MP {};
 			class fpv_handleSignal_MP {};
-			class fpv_handleDmg_MP {};
-			class fpv_handleAB_MP {};
 			class fpv_handleTarget_MP {};
+			class fpv_handleBattery_MP {};
+			class fpv_handleTime_MP {};
 
 			class fpv_getSignal_MP {};
 			class fpv_createDialog_MP {};
 			class fpv_droneInit_MP {};
 			class fpv_onDestroy_MP {};
 			class fpv_onSignalLost_MP {};
+			class fpv_detonate_MP {};
+			class fpv_destroyUI_MP {};
 
 			class fpv_Throw {};
 			class fpv_CarrierDeploy {};
