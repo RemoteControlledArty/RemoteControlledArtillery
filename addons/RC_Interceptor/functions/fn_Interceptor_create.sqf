@@ -115,6 +115,7 @@ _display displayAddEventHandler ["KeyUp", {
 }];
 
 
+/*
 //main setVel logic
 private _idEventHead = addMissionEventHandler ["EachFrame", {
     _thisArgs params ["_uav"];
@@ -127,6 +128,22 @@ private _idEventHead = addMissionEventHandler ["EachFrame", {
 
     [_uav] call fnc_Interceptor_setVel;
 
+}, [_uav]];
+*/
+
+
+//main setVel + camera update logic
+private _idEventHead = addMissionEventHandler ["EachFrame", {
+    _thisArgs params ["_uav"];
+
+    private _AB = localNameSpace getVariable ["RC_Interceptor_AB", false];
+    if (_AB) then {
+        triggerAmmo _uav;
+    };
+
+    [_uav] call fnc_Interceptor_setVel;
+    [_uav] call fnc_Interceptor_updateCam;  // Clean!
+    
 }, [_uav]];
 
 
@@ -215,6 +232,7 @@ localNameSpace setVariable ["RC_Interceptor_idNvg", _idNvg];
 localNameSpace setVariable ["RC_Interceptor_idEventHead", _idEventHead];
 
 
+/*
 //updateCam
 while {
     !(isNull _uav)
@@ -222,14 +240,23 @@ while {
     [_uav, _lastpos] call fnc_Interceptor_UpdateCam;
 };
 
-
 //waitUntil
 waitUntil {
     !(canMove _uav) ||
     ((_uav distance _pos) > 10000) ||
     (isNull (localNameSpace getVariable ["RC_Interceptor_display", displayNull]))
 };
+*/
 
+waitUntil {
+    sleep 0.1;
+
+    (isNull _uav)
+    || ((_uav distance _pos) > 10000)
+    || (isNull (localNameSpace getVariable ["RC_Interceptor_display", displayNull]))
+};
+
+sleep 0.1;
 
 //destroy
 [_uav, _pos] call fnc_Interceptor_destroy;

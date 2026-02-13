@@ -89,6 +89,8 @@ fnc_Interceptor_interceptability = {
 };
 
 
+/*
+//old
 fnc_Interceptor_camera = {
 	params ["_uav", "_pos", "_dir", "_vel", "_dirVec"];
 	
@@ -108,6 +110,75 @@ fnc_Interceptor_camera = {
 
 	//output
 	[_camera, _lastpos, _dir]
+};
+*/
+
+
+fnc_Interceptor_camera = {
+	params ["_uav", "_pos", "_dir", "_vel", "_dirVec"];
+	
+	private _camera = "camera" camCreate getPosASL _uav;
+	_camera cameraEffect ["External", "BACK"];
+	showCinemaBorder false;
+	cameraEffectEnableHUD true;
+	
+	_camera attachTo [_uav, [0, 0.7, 0]];
+	
+	setMousePosition [0.5, 0.5];
+	_lastpos = getPosASL _uav;
+	_dir = getDir _uav;
+
+	[_camera, _lastpos, _dir]
+};
+
+
+/*
+//old
+fnc_Interceptor_updateCam = {
+	params ["_uav", "_lastpos"];
+
+	if (isNull (localNameSpace getVariable ["RC_Interceptor_display", displayNull])) exitWith {};
+	if !(_lastpos isEqualTo [0,0,0]) then {
+		_lastpos = getPosASL _uav;
+	};
+	
+	_lastTime = time;
+	_distancePOS = getPosASL _uav;
+	_S = getMousePosition;
+
+	_camera camSetTarget _uav;
+	_dir = getDir _uav;
+	_camera camSetRelPos [0,0,0];
+	_camera camcommit 5 * (time - _lastTime);
+};
+*/
+
+
+fnc_Interceptor_updateCam = {
+	params ["_uav"];
+
+	if (isNull (localNameSpace getVariable ["RC_Interceptor_display", displayNull])) exitWith {};
+	
+	private _camera = localNameSpace getVariable ["RC_Interceptor_camera", objNull];
+	
+	// === DEBUG: Ist das UAV stabil? ===
+	private _uavVel = velocity _uav;
+	private _uavPitch = (vectorDir _uav) select 2;  // Z-component of direction
+	systemChat format ["UAV Pitch: %1 | Z-Vel: %2", 
+		round (_uavPitch * 1000) / 1000, 
+		round ((_uavVel # 2) * 100) / 100
+	];
+	
+	// Rotation
+	private _y = RC_X * RC_SENSIVITY;
+	private _p = RC_Y * RC_SENSIVITY;
+	private _camDir = [sin _y * cos _p, cos _y * cos _p, sin _p];
+	
+	private _camPos = getPosASL _camera;
+	private _targetPoint = _camPos vectorAdd (_camDir vectorMultiply 1000);
+	
+	_camera camSetTarget _targetPoint;
+	_camera camCommit 0;
 };
 
 
@@ -138,160 +209,92 @@ fnc_Interceptor_mousesteer = {
 };
 
 
-//fake momentum, decent acceleration
-fnc_Interceptor_setVel = {
+//fine tune flight performance
+RC_ACC = 50;			//acceleration
+RC_MAXMS = 400 / 3.6;	//max speed
+
+RC_PREV_VEL = [0,0,0];
+RC_PREV_POS = [0,0,0];
+RC_DT = 0.01;
+RC_G = 9.81;			//gravity
+
+
+//functional velocity merging version with momentum and acceleration
+fnc_Interceptor_SetVel = {
 	params ["_uav"];
 
-	private _dt = diag_deltaTime;
-	private _maxSpeedMS = 400 / 3.6;	   
+	private _dt = diag_deltaTime * 0.25 + 0.75 * RC_DT;
+	RC_DT = _dt;
 
-	// --- 1. TUNING PARAMETERS ---
-	private _accRate   = 40 * _dt;	// How fast W accelerates you
-	private _brakeRate = 40 * _dt;	// How fast Idle/S slows you down
-	private _fric	  = 0.995;		// High friction (keeps momentum during flight)
-	private _stopLimit = 0.3;		// ~1 km/h (Threshold to stop completely)
+	// 1. DIRECT TARGET LOGIC (Your Coefficients)
+	private _curFwd  = (if (RC_FORWARD) then { 1 } else { 0 }) + (if (RC_BACKWARD) then { -1 } else { 0 });
+	private _curSide = (if (RC_LEFT)	then { 0.5 } else { 0 }) + (if (RC_RIGHT)	then { -0.5 } else { 0 });
+	private _curVert = (if (RC_LIFT)	then { 0.5 } else { 0 }) + (if (RC_DROP)	 then { -0.25 } else { 0 });
 
-	// --- 2. INPUTS (Using your KeyDown variables) ---
-	private _fwdInput   = (if (RC_FORWARD) then {1} else {0}) - (if (RC_BACKWARD) then {1} else {0});
-	private _sideInput = (if (RC_RIGHT) then {1} else {0}) - (if (RC_LEFT) then {1} else {0});
-	private _vertInput  = (if (RC_LIFT) then {1} else {0}) - (if (RC_DROP) then {1} else {0});
-
-	// --- 3. ORIENTATION ---
-	private _y = RC_X * RC_SENSIVITY; 
-	private _p = RC_Y * RC_SENSIVITY;
-	private _vDir = [sin _y * cos _p, cos _y * cos _p, sin _p];
-	private _vUp  = [[0, -sin _p, cos _p], -_y] call BIS_fnc_rotateVector2D;
-
-	// --- 4. LOCAL VELOCITY MATH ---
-	private _localVel = _uav vectorWorldToModel (velocity _uav);
-	private _vx = _localVel # 0; 
-	private _vy = _localVel # 1; 
-	private _vz = _localVel # 2; 
-
-	// --- 5. THE ACTIVE BRAKING LOGIC ---
-	// Forward/Back Logic
-	if (_fwdInput == 1) then {
-		_vy = _vy + _accRate; // Accelerating Forward
-	} else {
-		if (_fwdInput == -1) then {
-			_vy = _vy - _brakeRate; // Manual Braking / Reverse
-		} else {
-			// IDLE BRAKING: If no key, move _vy toward 0 using _brakeRate
-			if (_vy > _stopLimit) then { _vy = (_vy - _brakeRate) max 0; };
-			if (_vy < -_stopLimit) then { _vy = (_vy + _brakeRate) min 0; };
-		};
-	};
-
-	// Strafe/Vertical (Keeping these responsive)
-	_vx = _vx + (_sideInput * _accRate);
-	_vz = _vz + (_vertInput * _accRate);
-
-	// If no strafe input, snap to center (prevents sliding when aiming)
-	if (_sideInput == 0) then { _vx = _vx * 0.9; };
-	if (_vertInput == 0) then { _vz = _vz * 0.9; };
-
-	// Apply General Momentum Friction
-	_vy = _vy * _fric;
-	_vx = _vx * _fric;
-	_vz = _vz * _fric;
-
-	// --- 6. APPLY ---
-	private _newLocal = [_vx, _vy, _vz];
-	
-	// Clamp to 400 km/h
-	if (vectorMagnitude _newLocal > _maxSpeedMS) then {
-		_newLocal = vectorNormalized _newLocal vectorMultiply _maxSpeedMS;
-	};
-
-	private _finalVel = (_uav vectorModelToWorldVisual _newLocal) vectorAdd [0, 0, 0.18];
-
-	_uav setVelocity _finalVel;
-	_uav setVectorDirAndUp [_vDir, _vUp];
-};
-
-
-/*
-//no momentum, instant acceleration
-
-fnc_Interceptor_setVel = {
-	params ["_uav"];
-	
-	// 1. basics
-	private _dt = diag_deltaTime;
-	private _maxMS = 350 / 3.6;
-
-
-	// 2. keypress = instant 350 , release = instant 0
-	private _curFwd  = (if (RC_FORWARD) then { 1 } else { 0 }) + (if (RC_BACKWARD)	then { -1 } else { 0 });
-	private _curSide = (if (RC_LEFT) 	then { 1 } else { 0 }) + (if (RC_RIGHT) 		then { -1 } else { 0 });
-	private _curVert = (if (RC_LIFT) 	then { 1 } else { 0 }) + (if (RC_DROP) 		then { -1 } else { 0 });
-
-
-	// 3. orientation (aamera aim)
+	// 2. ORIENTATION
 	private _y = RC_X * RC_SENSIVITY;
 	private _p = RC_Y * RC_SENSIVITY;
 	private _vDir = [sin _y * cos _p, cos _y * cos _p, sin _p];
 
+	private _currentVel = velocity _uav;
+	private _currentPos = getPosASL _uav;
+	private _speed = vectorMagnitude _currentVel;
 
-	// 4. vector blending (hover logic)
-	private _weight = (linearConversion [0, 0.5, abs _curVert, 0, 1, true]);
-	
+	// 3. AXIS VECTORS
+	private _forward = _vDir;
 	private _vFlat = [_vDir # 0, _vDir # 1, 0];
 	private _magF = vectorMagnitude _vFlat;
 	if (_magF > 0) then { _vFlat = _vFlat vectorMultiply (1/_magF) };
-
-	private _blendedDir = [
-		(_vDir # 0) + _weight * ((_vFlat # 0) - (_vDir # 0)),
-		(_vDir # 1) + _weight * ((_vFlat # 1) - (_vDir # 1)),
-		(_vDir # 2) + _weight * ((_vFlat # 2) - (_vDir # 2))
-	];
-	
-	private _sideVec = [-(_blendedDir # 1), (_blendedDir # 0), 0];
+	private _sideVec = [-(_vFlat # 1), (_vFlat # 0), 0];
 	private _magS = vectorMagnitude _sideVec;
 	if (_magS > 0) then { _sideVec = _sideVec vectorMultiply (1/_magS) };
 
+	// 4. USER INTENT
+	private _pureInput = (_forward vectorMultiply (_curFwd * RC_ACC)) 
+	vectorAdd (_sideVec vectorMultiply (_curSide * RC_ACC)) 
+	vectorAdd ([0,0,1] vectorMultiply (_curVert * RC_ACC));
 
-	// 5. sum vel & gravity compensation
-	private _vF = _blendedDir vectorMultiply _curFwd;
-	private _vS = _sideVec vectorMultiply _curSide;
-	private _vV = [0, 0, _curVert];
-	
-	private _finalVel = ((_vF vectorAdd _vS) vectorAdd _vV) vectorMultiply _maxMS;
-
-	private _antiGravity = 0.18;
-	_finalVel = _finalVel vectorAdd [0, 0, _antiGravity];
-
-
-	// 6. speed cap
-	if (vectorMagnitude _finalVel > _maxMS) then {
-		_finalVel = (vectorNormalized _finalVel) vectorMultiply _maxMS;
+	// 5. SMART ANTI-DRIFT
+	private _antiDriftAcc = [0,0,0];
+	if (_curFwd != 0 || _curSide != 0 || _curVert != 0) then {
+		private _intendedDir = vectorNormalized _pureInput;
+		private _velAlongIntention = _intendedDir vectorMultiply (_currentVel vectorDotProduct _intendedDir);
+		private _driftVel = _currentVel vectorDiff _velAlongIntention;
+		_antiDriftAcc = _driftVel vectorMultiply (-RC_DRIFT_DAMPENING);
+	} else {
+		_antiDriftAcc = _currentVel vectorMultiply (-RC_DRIFT_DAMPENING);
 	};
 
+	// --- 6. ASL SAFETY FLOOR ---
+	private _minHeight = 0.5;
+	private _alt = _currentPos # 2;
+	private _safetyPush = 0;
+	if (_alt < _minHeight) then {
+		// 1. Calculate how much we are 'under' the floor
+		private _depth = _minHeight - _alt;
+		
+		// 2. Isolate downward velocity (if Z is -10, _fallingSpeed becomes 10)
+		private _fallingSpeed = 0 max (-(_currentVel # 2));
+	
+		// 3. Apply the force
+		_safetyPush = (_depth * 150) + (_fallingSpeed * 20);
+	};
 
-	// 7. apply vel and orientation
-	_uav setVelocity _finalVel;
+	// 7. DRAG & FINAL ACCEL
+	private _dragAcc = _currentVel vectorMultiply (-_speed * RC_ACC / (RC_MAXMS * RC_MAXMS));
+	
+	private _accel = _pureInput 
+	vectorAdd _antiDriftAcc 
+	vectorAdd _dragAcc 
+	vectorAdd [0, 0, RC_G + _safetyPush]; // Added to gravity cancel
+
+	// 8. APPLY
+	private _newVel = _currentVel vectorAdd (_accel vectorMultiply _dt);
+	_uav setVelocity _newVel;
 	_uav setVectorDirAndUp [_vDir, [[0, -sin _p, cos _p], -_y] call BIS_fnc_rotateVector2D];
-};
-*/
 
-
-//is this actually needed? isnt the camera attached to the projectile? or would it not self align?
-fnc_Interceptor_updateCam = {
-	params ["_uav", "_lastpos"];
-
-	if (isNull (localNameSpace getVariable ["RC_Interceptor_display", displayNull])) exitWith {};
-	if !(_lastpos isEqualTo [0,0,0]) then {
-		_lastpos = getPosASL _uav;
-	};
-	
-	_lastTime = time;
-	_distancePOS = getPosASL _uav;
-	_S = getMousePosition;
-
-	_camera camSetTarget _uav;
-	_dir = getDir _uav;
-	_camera camSetRelPos [0,0,0];
-	_camera camcommit 5 * (time - _lastTime);
+	RC_PREV_VEL = (_currentPos vectorDiff RC_PREV_POS) vectorMultiply (1/_dt);
+	RC_PREV_POS = _currentPos;
 };
 
 
