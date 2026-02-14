@@ -79,12 +79,23 @@ fnc_Interceptor_interceptability = {
 	if (_sidePlayer == east) then {_targetVersion = 'RC_Interceptor_Target_O';};
 	if (_sidePlayer == resistance) then {_targetVersion = 'RC_Interceptor_Target_I';};
 
-	private _target = [[0, 0, 500], _dir, _targetVersion, east] call BIS_fnc_spawnVehicle;
+	//somehow not spotted by C-UAS in multiplayer
+	private _target = [[0, 0, 500], _dir, _targetVersion, _sidePlayer] call BIS_fnc_spawnVehicle;
 	_target = _target select 0;
 	_target disableCollisionWith _uav;
 
+	_target addEventHandler ["Killed", {
+		params ["_unit"];
+
+		triggerAmmo attachedTo _unit;
+		deleteVehicle _unit;
+	}];
+
 	//hide projectile to only show targetable attached vehicle
-	hideObjectGlobal _uav;
+	//hideObjectGlobal _uav;
+	//hideObject unitName;
+	[_uav, true] remoteExec ["hideObjectGlobal", 2];
+
 	//sleep to prevent collision in MP
 	sleep 0.1;
 	//-1 offset to not block the shaped charge

@@ -75,14 +75,6 @@ class RC_Projectile_Target_Core: Helicopter
 };
 class RC_Projectile_Target_Base: RC_Projectile_Target_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			killed="if (!isserver) exitwith {};   params ['_unit'];   triggerAmmo attachedTo _unit;   deleteVehicle _unit;";
-		};
-	};
-
 	author="Ascent";
 	scope=0;
 	displayName="Projectile";
@@ -145,6 +137,15 @@ class RC_Projectile_Target_Base: RC_Projectile_Target_Core
 };
 class RC_Projectile_Target_B: RC_Projectile_Target_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			//MPKilled="if (!isServer) exitwith {};   params ['_unit'];   triggerAmmo attachedTo _unit;   deleteVehicle _unit;";
+			killed="params ['_unit'];   triggerAmmo attachedTo _unit;   deleteVehicle _unit;";
+		};
+	};
+	
 	scope=1;
 
 	side=1;

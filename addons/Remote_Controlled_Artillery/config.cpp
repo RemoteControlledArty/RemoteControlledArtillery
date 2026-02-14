@@ -405,13 +405,13 @@ class CfgPatches
 			"RC_OM_MH80M_DAP_O",
 			"RC_OM_MH80M_DAP_I",
 
-			"RC_AW159M_DAP",
-			"RC_AW159M_DAP_O",
-			"RC_AW159M_DAP_I",
+			"RC_AW159M",
+			"RC_AW159M_O",
+			"RC_AW159M_I",
 
-			"RC_OM_AW159M_DAP",
-			"RC_OM_AW159M_DAP_O",
-			"RC_OM_AW159M_DAP_I",
+			"RC_OM_AW159M",
+			"RC_OM_AW159M_O",
+			"RC_OM_AW159M_I",
 
 			"RC_Ka60M",
 			"RC_Ka60M_O",
