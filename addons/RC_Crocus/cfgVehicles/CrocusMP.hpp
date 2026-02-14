@@ -38,7 +38,7 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	radarTarget=1;	//1 -> 0  why? wouldnt even be detectable at short range by radar
 	//threat[]={0.1,0.1,0.1}; -> threat[]={0,0,0}; why?
 	
-	bodyFrictionCoef=0.25;	//0.3 -> 0.3
+	bodyFrictionCoef=0.3;	//0.3 -> 0.3, lowering increases speed but reduces control
 	liftForceCoef=1.5;	//1 -> 1
 	cyclicForwardForceCoef=0.96;	//1.2 -> 1.2  vertical steering sensitivity
 	cyclicAsideForceCoef=1.6;		//horizontal seering sensitivity
