@@ -21,7 +21,116 @@ RC_G = 9.81;
 
 
 
-//version 5
+//version 6
+//functional velocity merging version with momentum and acceleration, 1.5m sea & terrain skimming, 50% drift reduction, 3 axis differing acceleration
+RC_ACC_FWD  = 50;
+RC_ACC_SIDE = 25;
+RC_ACC_VERT = 25;
+
+RC_MAXMS = 400 / 3.6;
+RC_DRIFT_DAMPENING = 1;
+
+RC_PREV_VEL = [0, 0, 0];
+RC_PREV_POS = [0, 0, 0];
+RC_DT = 0.01;
+RC_G = 9.81;
+
+RC_MIN_HEIGHT = 1.5;   			// sea/terrain level skimming (meters)
+RC_SKIMMING_DROP_EXPONENT = 6;   	// factor for how much the drop input is reduced when flying close to the ground, higher factor = stronger reduction
+RC_SKIMMING_PUSH = 30;			// proportional force
+RC_SKIMMING_DAMP = 5;			// damping force
+
+//ADD SKIM logic above inputs, to reduce exess downward thrust when close to ground
+
+
+fnc_Interceptor_SetVel = {
+	params ["_uav"];
+
+	private _dt = diag_deltaTime * 0.25 + 0.75 * RC_DT;
+	RC_DT = _dt;
+
+	// 1. CAPTURE INPUTS
+	private _curFwd  = (if (RC_FORWARD) then { 1 } else { 0 }) + (if (RC_BACKWARD) then { -1 } else { 0 });
+	private _curSide = (if (RC_LEFT)	then { 1 } else { 0 }) + (if (RC_RIGHT)	then { -1 } else { 0 });
+	private _curVert = (if (RC_LIFT)	then { 1 } else { 0 }) + (if (RC_DROP)	 then { -0.5 } else { 0 });
+
+	private _currentPos = getPosASL _uav;
+	private _currentVel = velocity _uav;
+	
+	// 2. DUAL SKIMMING (ASL + AGL)
+	private _above = (_currentPos # 2) min ((getPosATL _uav) # 2);
+
+	//ADD DIRECTIONAL ATL to prevent crashing while flying towards hill
+
+	private _skimmingDrop = if (_above > 0) then {
+		((((_above - RC_MIN_HEIGHT) / _above) max 0) min 1) ^ RC_SKIMMING_DROP_EXPONENT;
+	} else {
+		0
+	};
+
+	private _curVert = (if (RC_LIFT)	then { 1 } else { 0 }) + (if (RC_DROP)	 then { -_skimmingDrop } else { 0 });
+
+	// height check
+	private _safetyPush = 0;
+	if (_above < RC_MIN_HEIGHT) then {
+		private _depth = RC_MIN_HEIGHT - _above;
+		private _fallingSpeed = 0 max (-(_currentVel # 2));
+		_safetyPush = (_depth * RC_SKIMMING_PUSH) + (_fallingSpeed * RC_SKIMMING_DAMP);
+	};
+
+	// 3. ORIENTATION
+	private _y = RC_X * RC_SENSIVITY;
+	private _p = RC_Y * RC_SENSIVITY;
+	private _vDir = [sin _y * cos _p, cos _y * cos _p, sin _p];
+	private _speed = vectorMagnitude _currentVel;
+
+	// 4. AXIS VECTORS
+	private _forward = _vDir;
+	private _vFlat = [_vDir # 0, _vDir # 1, 0];
+	private _magF = vectorMagnitude _vFlat;
+	if (_magF > 0) then { _vFlat = _vFlat vectorMultiply (1/_magF) };
+	private _sideVec = [-(_vFlat # 1), (_vFlat # 0), 0];
+	private _magS = vectorMagnitude _sideVec;
+	if (_magS > 0) then { _sideVec = _sideVec vectorMultiply (1/_magS) };
+
+	// 5. USER INTENT
+	private _fwdAcc  = _forward vectorMultiply (_curFwd * RC_ACC_FWD);
+	private _sideAcc = _sideVec vectorMultiply (_curSide * RC_ACC_SIDE);
+	private _vertAcc = [0,0,1] vectorMultiply (_curVert * RC_ACC_VERT);
+	private _pureInput = _fwdAcc vectorAdd _sideAcc vectorAdd _vertAcc;
+
+	// MAGNITUDE CLAMPING
+	private _inputMag = vectorMagnitude _pureInput;
+	if (_inputMag > RC_ACC_FWD) then {
+		_pureInput = (vectorNormalized _pureInput) vectorMultiply RC_ACC_FWD;
+	};
+
+	// 6. SMART ANTI-DRIFT
+	private _antiDriftAcc = [0,0,0];
+	if (_curFwd != 0 || _curSide != 0 || _curVert != 0) then {
+		private _intendedDir = vectorNormalized _pureInput;
+		private _velAlongIntention = _intendedDir vectorMultiply (_currentVel vectorDotProduct _intendedDir);
+		private _driftVel = _currentVel vectorDiff _velAlongIntention;
+		_antiDriftAcc = _driftVel vectorMultiply (-RC_DRIFT_DAMPENING);
+	} else {
+		_antiDriftAcc = _currentVel vectorMultiply (-RC_DRIFT_DAMPENING);
+	};
+
+	// 7. DRAG & PHYSICS
+	private _dragAcc = _currentVel vectorMultiply (-_speed * RC_ACC_FWD / (RC_MAXMS * RC_MAXMS));
+	private _accel = _pureInput vectorAdd _antiDriftAcc vectorAdd _dragAcc vectorAdd [0, 0, RC_G + _safetyPush];
+
+	// 8. APPLY
+	private _newVel = _currentVel vectorAdd (_accel vectorMultiply _dt);
+	_uav setVelocity _newVel;
+	_uav setVectorDirAndUp [_vDir, [[0, -sin _p, cos _p], -_y] call BIS_fnc_rotateVector2D];
+
+	RC_PREV_VEL = (_currentPos vectorDiff RC_PREV_POS) vectorMultiply (1/_dt);
+	RC_PREV_POS = _currentPos;
+};
+
+
+// version 5
 //functional velocity merging version with momentum and acceleration, 0.5m sea skimming, 1.5m terrain skimming, 50% drift reduction, 3 axis differing acceleration
 RC_ACC_FWD  = 50;
 RC_ACC_SIDE = 25;
@@ -40,9 +149,6 @@ RC_MIN_HEIGHT_AGL = 1.5; // terrain protection (meters)
 RC_SKIMMING_PUSH = 30;	 // proportional force
 RC_SKIMMING_DAMP = 5;	 // damping force
 
-//ADD SKIM logic above inputs, to reduce exess downward thrust when close to ground
-
-
 fnc_Interceptor_SetVel = {
 	params ["_uav"];
 
@@ -54,13 +160,22 @@ fnc_Interceptor_SetVel = {
 	private _curSide = (if (RC_LEFT)	then { 1 } else { 0 }) + (if (RC_RIGHT)	then { -1 } else { 0 });
 	private _curVert = (if (RC_LIFT)	then { 1 } else { 0 }) + (if (RC_DROP)	 then { -0.5 } else { 0 });
 
+	private _currentVel = velocity _uav;
+	private _currentPos = getPosASL _uav;
+
+	private _altASL = _currentPos # 2;	//move getposASL
+	private _altAGL = (getPosATL _uav) # 2;
+	private _alt = _altASL min _altAGL;
+	private _dropSkimModifier = (_alt - RC_MIN_HEIGHT) / _alt;
+
+	//if (_alt < RC_MIN_HEIGHT) then {
+		private _curVert = (if (RC_LIFT)	then { 1 } else { 0 }) + (if (RC_DROP)	 then { _dropSkimModifier } else { 0 });
+	//};
+
 	// 2. ORIENTATION
 	private _y = RC_X * RC_SENSIVITY;
 	private _p = RC_Y * RC_SENSIVITY;
 	private _vDir = [sin _y * cos _p, cos _y * cos _p, sin _p];
-
-	private _currentVel = velocity _uav;
-	private _currentPos = getPosASL _uav;
 	private _speed = vectorMagnitude _currentVel;
 
 	// 3. AXIS VECTORS
@@ -96,9 +211,6 @@ fnc_Interceptor_SetVel = {
 	};
 
 	// === 6. DUAL SKIMMING (ASL + AGL) ===
-	private _altASL = _currentPos # 2;
-	private _altAGL = (getPosATL _uav) # 2;
-	
 	private _safetyPushASL = 0;
 	private _safetyPushAGL = 0;
 	

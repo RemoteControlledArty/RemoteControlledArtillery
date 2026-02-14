@@ -14,7 +14,7 @@ _versionOutput params ["_uav", "_ammo"];
 
 
 //interceptability
-[_uav, _dir] call fnc_Interceptor_interceptability;
+[_uav, _dir] spawn fnc_Interceptor_interceptability;
 
 
 //camera

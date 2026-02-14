@@ -79,7 +79,7 @@ class RC_Projectile_Target_Base: RC_Projectile_Target_Core
 	{
 		class RC_Artillery
 		{
-			killed="if (!isserver) exitwith {}; triggerAmmo attachedTo (_this select 0);";
+			killed="if (!isserver) exitwith {};   params ['_unit'];   triggerAmmo attachedTo _unit;   deleteVehicle _unit;";
 		};
 	};
 
@@ -158,6 +158,30 @@ class RC_Projectile_Target_O: RC_Projectile_Target_B
 	typicalCargo[]={"O_UAV_AI"};
 };
 class RC_Projectile_Target_I: RC_Projectile_Target_B
+{
+	side=2;
+	crew="I_UAV_AI";
+	typicalCargo[]={"I_UAV_AI"};
+};
+
+
+class RC_Interceptor_Target_B: RC_Projectile_Target_Base
+{
+	scope=1;
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
+	proxyShape="\A3\Weapons_F_Sams\Ammo\Bomb_05_F_fly.p3d";
+
+	side=1;
+	crew="B_UAV_AI";
+	typicalCargo[]={"B_UAV_AI"};
+};
+class RC_Interceptor_Target_O: RC_Interceptor_Target_B
+{
+	side=0;
+	crew="O_UAV_AI";
+	typicalCargo[]={"O_UAV_AI"};
+};
+class RC_Interceptor_Target_I: RC_Interceptor_Target_B
 {
 	side=2;
 	crew="I_UAV_AI";
