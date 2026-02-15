@@ -97,86 +97,7 @@ RC_Artillery_UI = [] spawn {
 				RC_isAceLoadedHash set [_uavClass, _isAceLoaded];
 			};
 
-			if (shownArtilleryComputer) then {
-				if (_isAceLoaded) then {
-					switch (true) do {
-						case(_ArtyType == 1): {
-							if (!RC_allowPortableMortarComputer) then {
-								closeDialog 0;
-								hintSilent "vanilla artillery computer disabled by mod settings";
-								sleep 2;
-								hintSilent "";
-							};
-						};
-						case(_ArtyType == 2): {
-							if (!RC_allowVehicleMortarComputer) then {
-								closeDialog 0;
-								hintSilent "vanilla artillery computer disabled by mod settings";
-								sleep 2;
-								hintSilent "";
-							};
-						};
-						case(_ArtyType == 3): {
-							if (!RC_allowHowitzerComputer) then {
-								closeDialog 0;
-								hintSilent "vanilla artillery computer disabled by mod settings";
-								sleep 2;
-								hintSilent "";
-							};
-						};
-						case(_ArtyType == 4): {
-							if (!RC_allowMLRSComputer) then {
-								closeDialog 0;
-								hintSilent "vanilla artillery computer disabled by mod settings";
-								sleep 2;
-								hintSilent "";
-							};
-						};
-
-						//default {};
-					};
-				} else {
-					switch (true) do {
-						//mortars dont work correctly without ace
-						/*
-						case(_ArtyType == 1): {
-							if (RC_allowPortableMortarComputer) then {
-								closeDialog 0;
-								hintSilent "vanilla artillery computer disabled by mod settings";
-								sleep 2;
-								hintSilent "";
-							};
-						};
-						case(_ArtyType == 2): {
-							if (RC_allowVehicleMortarComputer) then {
-								closeDialog 0;
-								hintSilent "vanilla artillery computer disabled by mod settings";
-								sleep 2;
-								hintSilent "";
-							};
-						};
-						*/
-						case(_ArtyType == 3): {
-							if (!RC_allowHowitzerComputer) then {
-								closeDialog 0;
-								hintSilent "vanilla artillery computer disabled by mod settings";
-								sleep 2;
-								hintSilent "";
-							};
-						};
-						case(_ArtyType == 4): {
-							if (!RC_allowMLRSComputer) then {
-								closeDialog 0;
-								hintSilent "vanilla artillery computer disabled by mod settings";
-								sleep 2;
-								hintSilent "";
-							};
-						};
-
-						//default {};
-					};
-				};
-			};
+			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\disableVanillaComputer.sqf"
 
 			private _RCA_CurrentArtyDisplay = displayNull;
 			// if our one is null we use theirs
@@ -373,6 +294,8 @@ RC_Artillery_UI = [] spawn {
 
 				// precalculation
 				private _preSol = sqrt (_speed^2 * (_speed^2 - 2 * GRAVITY * _difference) - GRAVITY^2 * _distance^2);	//((_speed^4) - (GRAVITY * ((2 * (_speed^2) * _difference) + (GRAVITY * (_distance^2)))));
+				// clamp
+				_preSol = _preSol max 0;
 
 				// required launch angles to hit target (aka firing solution), in degrees
 				_highAngleSolDeg = atan(((_speed^2) + _preSol) / (GRAVITY * _distance));

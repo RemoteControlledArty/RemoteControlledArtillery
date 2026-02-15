@@ -32,5 +32,10 @@
 #define MAGIC_CONSTANT 57.30 // What is this constant?
 #define SLANT_ANGLE 17.7777778
 
+//#define MILS_PER_CIRCLE 6400
+#define AZ_COLOR_RANGE 20
+#define EL_COLOR_RANGE 10
+#define HEAB_MIN_ELEVATION 50
+
 #define COLOR_ON_TARGET [0.0, 1.0, 0.0, 1.0]
 #define COLOR_CLOSE_TARGET [1.0, 0.8, 0.5, 1.0]

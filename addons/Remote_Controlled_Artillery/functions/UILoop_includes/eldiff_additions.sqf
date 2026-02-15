@@ -22,4 +22,4 @@ if (isNil "_barrelLenght") then {
 private _weaponDirection = 0;
 private _muzzleHeight = 0;
 _weaponDirection = ((_uav weaponDirection currentWeapon _uav) select 2);
-_muzzleHeightEstimate = _barrelLenght * (sin (_weaponDirection * 90)) + _barrelAGL;
+private _muzzleHeightEstimate = _barrelLenght * (sin (_weaponDirection * 90)) + _barrelAGL;
