@@ -108,8 +108,6 @@ RC_Artillery_UI = [] spawn {
 
 			// look vector relative to the camera
 			private _lookVector = (AGLtoASL (positionCameraToWorld [0, 0, 0])) vectorFromTo (AGLtoASL (positionCameraToWorld [0, 0, 1]));
-			// weapon direction as a relative vector3
-			private _weaponDir = _uav weaponDirection (currentWeapon _uav);
 			
 			// fallback if we are using the Mortar and the display isn't working
 			if (isNull _RCA_CurrentArtyDisplay) then {
@@ -130,6 +128,8 @@ RC_Artillery_UI = [] spawn {
 			// weapon informations like charges and current charge
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"
 
+			// weapon direction as a relative vector3
+			private _weaponDir = _uav weaponDirection (currentWeapon _uav);
 			// get weapon elevation
 			private _realElevationDeg = asin (_weaponDir select 2);
 			// degree into MIL

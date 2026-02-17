@@ -256,10 +256,10 @@ class RC_Artillery_Base
 };
 class RC_Artillery: RC_Artillery_Base
 {
-	//onLoad = "uiNameSpace setVariable ['RC_Artillery', _this select 0]";
+	onLoad = "uiNameSpace setVariable ['RC_Artillery', _this select 0]";
 
-	onLoad = "_this call RC_fnc_RC_UI_OnLoad";
-	onUnload = "_this call RC_fnc_RC_UI_OnUnload";
+	//onLoad = "_this call RC_fnc_RC_UI_OnLoad";
+	//onUnload = "_this call RC_fnc_RC_UI_OnUnload";
 
 	controls[]=
 	{
