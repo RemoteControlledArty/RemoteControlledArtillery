@@ -848,7 +848,7 @@ class CfgFunctions
 			class RC_CBRad_EntityCreated {preInit=1;};
 			class RC_CBRad_ArtilleryShellFired {postInit=1;};
 			
-      		class RC_UI_Loop {postInit=1;};
+      		//class RC_UI_Loop {postInit=1;};
 			class RC_MarkerHandler {postInit=1;};
 
 			class RC_EngineOff {postInit=1;};
@@ -874,6 +874,21 @@ class CfgFunctions
 			class RC_cUAS_Beep_Call {};
 
 			class scrollSolutions {};
+		};
+		class RC_NewArtillery
+		{
+			file="\Remote_Controlled_Artillery\functions\NewArty";
+
+      		class RC_Watcher {postInit=1;};
+
+			class RC_UI_OnLoad {};
+            class RC_UI_OnUnload {};
+
+			class RC_UI_Init {};
+			class RC_UI_Loop {};
+
+			class RC_State_Init {};
+			class RC_State_Update {};
 		};
 		class RC_Immobilized
 		{
@@ -993,6 +1008,47 @@ class RscTitles
 {
 	// Simple Grid
 	#include "\Remote_Controlled_Artillery\ui\Artillery_UI.hpp"	
+
+	class RC_Artillery_UI {
+        idd = 5000;
+        movingEnable = 0;
+        enableSimulation = 1;
+
+        onLoad   = "_this call RC_fnc_RC_UI_OnLoad";
+        onUnload = "_this call RC_fnc_RC_UI_OnUnload";
+
+        controls[]=
+		{
+			RscText_1001,
+			RscText_1002,
+			RscText_1003,
+			RscText_1004,
+			RscText_1005,
+			RscText_1006,
+			RscText_1007,
+			RscText_1008,
+			RscText_1009,
+			RscText_1010,
+			RscText_1011,
+			RscText_1012,
+			RscText_1013,
+			RscText_1014,
+			RscText_1015,
+			RscText_1016,
+			RscText_1017,
+			RscText_1018,
+			RscText_1019,
+			RscText_1020,
+			RscText_1021,
+			RscText_1022,
+			RscText_1023,
+			RscText_1024,
+			RscText_1025,
+			RscText_1026,
+			RscText_1027,
+			RscText_1028
+		};
+    };
 };
 // Optional Include for when ACE isn't Detected
 #if __has_include("\z\ace\addons\main\script_component.hpp")
