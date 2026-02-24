@@ -327,7 +327,7 @@ class RscTitles
                     class Target : ctrlStructuredText
                     {
                         idc = -1;
-                        onLoad = "uiNameSpace setVariable [""ArmaFPV_Target"", _this # 0];";
+                        onLoad = "uiNameSpace setVariable ['RC_ArmaFPV_Target', _this # 0];";
 
                         class Attributes
                         {
