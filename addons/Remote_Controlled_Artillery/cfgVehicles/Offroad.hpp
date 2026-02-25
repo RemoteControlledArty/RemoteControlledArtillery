@@ -24,12 +24,7 @@ class RC_Offroad_Base: RC_Offroad_Core
 	{
 		class RC_Detection
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
 	};
 
@@ -38,7 +33,6 @@ class RC_Offroad_Base: RC_Offroad_Core
 	lockDetectionSystem="2+4+8";
 
 	faction="RemoteControlled_B";
-	editorSubcategory="RC_AntiDrone_subcat";
 	author="Ascent";
 	armor=40;
 	crewCrashProtection=0.01;
@@ -297,7 +291,96 @@ class RC_Offroad_Base: RC_Offroad_Core
 };
 
 
-class RC_Offroad_cUAS: RC_Offroad_Base
+class RC_Offroad_RCIMV_Base: RC_Offroad_Base
+{
+	editorSubcategory="RC_IMV";
+
+	isUav=1;
+	vehicleClass="Autonomous";
+
+	uavCameraDriverPos="Copilot_view_dir";
+	uavCameraDriverDir="Copilot_view_dir";
+	memoryPointTaskMarker="TaskMarker_1_pos";
+	memoryPointDriverOptics="Copilot_view_dir";
+
+	driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+	unitInfoType="RC_RscOptics_AV_Heli";
+	unitInfoTypeRTD="RC_RscOptics_AV_Heli";
+
+	driverForceOptics=1;
+	driverCompartments="Compartment1";
+};
+class RC_Offroad_RCIMV: RC_Offroad_RCIMV_Base
+{
+	displayName="RC Offroad";
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+	crew="B_UAV_AI";
+};
+class RC_Offroad_RCIMV_O: RC_Offroad_RCIMV
+{
+	side=0;
+	crew="O_UAV_AI";
+};
+class RC_Offroad_RCIMV_I: RC_Offroad_RCIMV
+{
+	side=2;
+	crew="I_UAV_AI";
+};
+
+
+class RC_Offroad_RCIMV_cUAS: RC_Offroad_RCIMV
+{
+	class EventHandlers: EventHandlers
+	{
+		init="if (!isServer) exitwith {};	\
+		(_this select 0) spawn {	\
+			private _static = ([[0,0,0], (getDir _this), 'RC_cUAS_Mounted_Static_HMG_manned', side _this] call BIS_fnc_spawnVehicle);	\
+			(_static #0) attachTo [_this, [0.16, -2.15, 1]];	\
+			_this addEventHandler ['Killed', {	\
+				params ['_unit'];	\
+    			((attachedObjects _unit)#0) setDamage 1;	\
+			}];	\
+		};";
+	};
+
+	displayName="RC Offroad + 12.7mm C-UAS";
+};
+class RC_Offroad_RCIMV_cUAS_O: RC_Offroad_RCIMV_cUAS
+{
+	side=0;
+	crew="O_UAV_AI";
+};
+class RC_Offroad_RCIMV_cUAS_I: RC_Offroad_RCIMV_cUAS
+{
+	side=2;
+	crew="I_UAV_AI";
+};
+
+
+class RC_Offroad_cUAS_Base: RC_Offroad_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
+	};
+
+	editorSubcategory="RC_AntiDrone_subcat";
+};
+
+
+class RC_Offroad_cUAS: RC_Offroad_cUAS_Base
 {
 	class EventHandlers: EventHandlers
 	{
