@@ -291,6 +291,7 @@ class RC_Offroad_Base: RC_Offroad_Core
 };
 
 
+/*
 class RC_Offroad_RCIMV_Base: RC_Offroad_Base
 {
 	editorSubcategory="RC_IMV";
@@ -359,6 +360,7 @@ class RC_Offroad_RCIMV_cUAS_I: RC_Offroad_RCIMV_cUAS
 	side=2;
 	crew="I_UAV_AI";
 };
+*/
 
 
 class RC_Offroad_cUAS_Base: RC_Offroad_Base

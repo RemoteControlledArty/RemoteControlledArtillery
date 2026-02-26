@@ -4748,7 +4748,7 @@ class RC_Sh_60mm_AMOS_submunition: RC_Sh_82mm_AMOS_submunition
 	ace_rearm_caliber=60;
 	craterEffects="RC_60mmAirburstDust";
 	hit=100;
-	indirectHit=40;
+	indirectHit=52;	//40
 	indirectHitRange=12;
 	cost=100;
 };
@@ -4756,7 +4756,7 @@ class RC_60mm_HEAB_Shell_Base: RC_82mm_HEAB_Shell_Base
 {
 	ace_rearm_caliber=60;
 	hit=100;
-	indirectHit=40;
+	indirectHit=52;	//40
 	indirectHitRange=12;
 	cost=100;
 };
