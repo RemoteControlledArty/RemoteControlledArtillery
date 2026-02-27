@@ -7,7 +7,7 @@ RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 
 weaponPoolAvailable=1;
 descriptionShort="for advanced 60mm Mortar";
-mass=9;	//5		//40mm=4, 40mm3GL=12
+mass=8;	//5		//40mm=4, 40mm3GL=12
 type=256;
 
 model="\twc_2inch\twc_2inch_shell_he.p3d";
