@@ -28,9 +28,11 @@ class RC_Offroad_Base: RC_Offroad_Core
 		};
 	};
 
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
+	memoryPointDriverOptics="light_l";
 
 	faction="RemoteControlled_B";
 	author="Ascent";
@@ -294,7 +296,7 @@ class RC_Offroad_Base: RC_Offroad_Core
 /*
 class RC_Offroad_RCIMV_Base: RC_Offroad_Base
 {
-	editorSubcategory="RC_IMV";
+	editorSubcategory="RC_Car_subcat";
 
 	isUav=1;
 	vehicleClass="Autonomous";

@@ -40,11 +40,17 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
 	};
-
+	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
+	memoryPointDriverOptics="light_l";
+	//light_l left front good, light_r
+	//PIP2_pos, PIP3_pos, mirrors, obstructed by bars
+	//PIP0_pos, PIP0_dir, moves with turret
+	//pos commander, pos commander dir
 	class Reflectors {};	//removed, otherwise they are automatically on at night
 	aggregateReflectors[]={{""}};
 
@@ -336,8 +342,9 @@ class RC_Fennek_A: RC_Fennek_A_Base
 	*/
 
 	displayName="RC Recon Fennek";
-	editorSubcategory="RC_ICV_subcat";
+	editorSubcategory="RC_Car_subcat";
 	isUav=1;
+	driverForceOptics=1;
 	vehicleClass="Autonomous";
 	textPlural="UGVs";
 	textSingular="UGV";
@@ -346,7 +353,7 @@ class RC_Fennek_A: RC_Fennek_A_Base
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	crew="B_UAV_AI";
-	
+
 	class Turrets: Turrets
 	{
 		class CommanderTurret: CommanderTurret

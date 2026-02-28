@@ -1086,6 +1086,7 @@ class CfgEditorSubcategories
 	class RC_Heli_armed_subcat {displayname="Helicopters - armed";};
 	class RC_ICV_armed_subcat {displayname="RCIVs (armed)";};
 	class RC_ICV_subcat {displayname="RCIVs (unarmed)";};
+	class RC_Car_subcat {displayname="Car's";};
 	class RC_APC_subcat {displayname="APCs";};
 	class RC_APC_ATGM_subcat {displayname="APCs (ATGM)";};
 	class RC_IFV_subcat {displayname="IFVs";};
