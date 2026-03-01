@@ -44,11 +44,9 @@ class RC_MRZR_Base: RC_MRZR_Core
 	lockDetectionSystem="2+4+8";
 	memoryPointDriverOptics="P svetlo";
 
-	faction="RemoteControlled_B";
 	author="Ascent";
 	armor=40;
 	crewCrashProtection=0.01;
-	side=1;
 
 	threat[]={0,0,0};
 	cost=0;
@@ -488,6 +486,7 @@ class RC_MRZR_D: RC_MRZR_Base
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 
 	displayName="RC MRZR";
+	faction="RemoteControlled_B";
 	editorSubcategory="RC_Car_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -504,15 +503,19 @@ class RC_MRZR_D: RC_MRZR_Base
 
 	uavCameraDriverPos="P svetlo";
 	uavCameraDriverDir="P svetlo";
+
+	//cost=0;
 };
 class RC_MRZR_D_O: RC_MRZR_D
 {
+	faction="RemoteControlled_O";
 	side=0;
 	crew="O_UAV_AI";
 	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
 };
 class RC_MRZR_D_I: RC_MRZR_D
 {
+	faction="RemoteControlled_I";
 	side=2;
 	crew="I_UAV_AI";
 	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
