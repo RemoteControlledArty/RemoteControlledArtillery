@@ -94,6 +94,13 @@ class CfgPatches
 			"RC_Stryker_M1127_M2_WD_O",
 			"RC_Stryker_M1127_M2_WD_I",
 
+			"RC_MRZR_D",
+			"RC_MRZR_WD",
+			"RC_MRZR_D_O",
+			"RC_MRZR_WD_O",
+			"RC_MRZR_D_I",
+			"RC_MRZR_WD_I",
+
 			"RC_M108_A",
 			"RC_M108_WD",
 			"RC_M108_A_O",
@@ -298,6 +305,7 @@ class CfgVehicles
 	#include "\RC_RHS\cfgVehicles\M119_105mm.hpp"
 	#include "\RC_RHS\cfgVehicles\oldBradley.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
+	#include "\RC_RHS\cfgVehicles\MRZR.hpp"
 	#include "\RC_RHS\cfgVehicles\HeliPilot.hpp"
 	#include "\RC_RHS\cfgVehicles\H6M.hpp"
 	#include "\RC_RHS\cfgVehicles\Ka60M.hpp"

@@ -4,6 +4,7 @@ class RC_Offroad_Core: B_G_Offroad_01_F
 {
 	class Components;
 	class EventHandlers;
+	class ViewOptics;
 	class HitPoints;
 	class HitHull;
 	class HitBody;
@@ -33,12 +34,14 @@ class RC_Offroad_Base: RC_Offroad_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 	memoryPointDriverOptics="light_l";
-
+	
 	faction="RemoteControlled_B";
 	author="Ascent";
 	armor=40;
 	crewCrashProtection=0.01;
 	side=1;
+
+	canUseScanners=1;
 
 	threat[]={0,0,0};
 	cost=0;
@@ -204,15 +207,15 @@ class RC_Offroad_Base: RC_Offroad_Core
 				{
 					class AirTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=3000;
-						maxRange=3000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -228,7 +231,7 @@ class RC_Offroad_Base: RC_Offroad_Core
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,600};
+					range[]={4000,2000,600};
 					resource="RscCustomInfoSensors";
 				};
 				class UAVFeedDisplay
@@ -255,7 +258,7 @@ class RC_Offroad_Base: RC_Offroad_Core
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={600,1500,3000};
+					range[]={600,2000,4000};
 					resource="RscCustomInfoSensors";
 				};
 				class UAVFeedDisplay
@@ -388,15 +391,18 @@ class RC_Offroad_cUAS: RC_Offroad_cUAS_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isServer) exitwith {};	\
-		(_this select 0) spawn {	\
-			private _static = ([[0,0,0], (getDir _this), 'RC_cUAS_Mounted_Static', west] call BIS_fnc_spawnVehicle);	\
-			(_static #0) attachTo [_this, [0.16, -2.15, 1]];	\
-			_this addEventHandler ['Killed', {	\
-				params ['_unit'];	\
-				((attachedObjects _unit)#0) setDamage 1;	\
-			}];	\
-		};";
+		class RC_cUAS
+		{
+			init="if (!isServer) exitwith {};	\
+			(_this select 0) spawn {	\
+				private _static = ([[0,0,0], (getDir _this), 'RC_cUAS_Mounted_Static', west] call BIS_fnc_spawnVehicle);	\
+				(_static #0) attachTo [_this, [0.16, -2.15, 1]];	\
+				_this addEventHandler ['Killed', {	\
+					params ['_unit'];	\
+					((attachedObjects _unit)#0) setDamage 1;	\
+				}];	\
+			};";
+		};
 	};
 
 	displayName="Offroad C-UAS/FS 20mm";
@@ -411,15 +417,18 @@ class RC_Offroad_cUAS_HMG: RC_Offroad_cUAS
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isServer) exitwith {};	\
-		(_this select 0) spawn {	\
-			private _static = ([[0,0,0], (getDir _this), 'RC_cUAS_Mounted_Static_HMG', west] call BIS_fnc_spawnVehicle);	\
-			(_static #0) attachTo [_this, [0.16, -2.15, 1]];	\
-			_this addEventHandler ['Killed', {	\
-				params ['_unit'];	\
-    			((attachedObjects _unit)#0) setDamage 1;	\
-			}];	\
-		};";
+		class RC_cUAS
+		{
+			init="if (!isServer) exitwith {};	\
+			(_this select 0) spawn {	\
+				private _static = ([[0,0,0], (getDir _this), 'RC_cUAS_Mounted_Static_HMG', west] call BIS_fnc_spawnVehicle);	\
+				(_static #0) attachTo [_this, [0.16, -2.15, 1]];	\
+				_this addEventHandler ['Killed', {	\
+					params ['_unit'];	\
+					((attachedObjects _unit)#0) setDamage 1;	\
+				}];	\
+			};";
+		};
 	};
 
 	displayName="Offroad C-UAS/FS 12.7mm";

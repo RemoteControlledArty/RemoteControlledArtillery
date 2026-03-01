@@ -56,12 +56,13 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 
 	faction="RemoteControlled_B";
 	author="Ascent";
-	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	//redRpm=1100;
 	//idleRpm=250;
+	
+	canUseScanners=1;
 
 	smokeLauncherVelocity=5;
 	smokeLauncherGrenadeCount=6;
@@ -345,6 +346,7 @@ class RC_Fennek_A: RC_Fennek_A_Base
 	editorSubcategory="RC_Car_subcat";
 	isUav=1;
 	driverForceOptics=1;
+	driverCompartments="Compartment1";
 	vehicleClass="Autonomous";
 	textPlural="UGVs";
 	textSingular="UGV";
