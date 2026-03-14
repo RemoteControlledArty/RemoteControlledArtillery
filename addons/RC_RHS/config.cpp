@@ -165,6 +165,14 @@ class CfgPatches
 			"RC_MELB_OM_MH6M_O",
 			"RC_MELB_OM_MH6M_I",
 
+			"RC_MH80M_DAP",
+			"RC_MH80M_DAP_O",
+			"RC_MH80M_DAP_I",
+
+			"RC_OM_MH80M_DAP",
+			"RC_OM_MH80M_DAP_O",
+			"RC_OM_MH80M_DAP_I",
+
 			"RC_Ka60M",
 			"RC_Ka60M_O",
 			"RC_Ka60M_I",
@@ -308,6 +316,7 @@ class CfgVehicles
 	#include "\RC_RHS\cfgVehicles\MRZR.hpp"
 	#include "\RC_RHS\cfgVehicles\HeliPilot.hpp"
 	#include "\RC_RHS\cfgVehicles\H6M.hpp"
+	#include "\RC_RHS\cfgVehicles\MH80M.hpp"
 	#include "\RC_RHS\cfgVehicles\Ka60M.hpp"
 
 	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"

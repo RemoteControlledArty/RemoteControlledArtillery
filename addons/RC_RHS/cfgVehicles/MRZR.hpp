@@ -79,7 +79,7 @@ class RC_MRZR_Base: RC_MRZR_Core
 	{
 		class CargoTurret_01: CargoTurret_01
 		{
-			primaryObserver=1;
+			//primaryObserver=1;
 			gunnerName="Front Right";
 			gunnerCompartments="Compartment1";
 
@@ -176,6 +176,23 @@ class RC_MRZR_Base: RC_MRZR_Core
 		};
 		class CargoTurret_05: CargoTurret_05
 		{
+			primaryObserver=1;
+			/*
+			gunnerName="Driver";
+
+			proxyIndex=0;
+			playerPosition=0;
+			memoryPointsGetInGunner="pos codriver";
+			memoryPointsGetInGunnerDir="pos codriver dir";
+
+			gunnerAction="rhs_mrzr_driver";
+			gunnerInAction="";
+			gunnerLeftHandAnimName="steeringwheel";
+			gunnerLeftLegAnimName="";
+			gunnerRightHandAnimName="steeringwheel";
+			gunnerRightLegAnimName="pedal_thrust";
+			*/
+
 			gunnerName="Rear Left";
 			gunnerCompartments="Compartment1";
 
@@ -183,6 +200,26 @@ class RC_MRZR_Base: RC_MRZR_Core
 			//canHideGunner=1;
 		};
 	};
+
+	/*
+	gunnerName="AI Driver";
+	memoryPointsGetInDriver="pos cargo R";
+	memoryPointsGetInDriverDir="pos cargo R dir";
+	memoryPointsGetInDriverPrecise="pos cargo R";
+	driverAction="passenger_flatground_4";
+	driverInAction="passenger_flatground_4";
+	proxyIndex=6;
+	playerPosition=6;
+	*/
+
+	/*
+	driverAction = "rhs_mrzr_driver";
+	driverInAction = "";
+	driverLeftHandAnimName = "steeringwheel";
+	driverLeftLegAnimName = "";
+	driverRightHandAnimName = "steeringwheel";
+	driverRightLegAnimName = "pedal_thrust";
+	*/
 
 	hiddenSelectionsTextures[]=
 	{
