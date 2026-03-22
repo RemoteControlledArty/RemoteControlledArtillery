@@ -582,7 +582,7 @@ class RC_70mm_AA_Missile_Launcher: missiles_SAAMI
 	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
 	displayName="70mm AA ML";
 	displayNameShort="70mm AA ML";
-	//magazineReloadTime=20;
+	magazineReloadTime=25;
 	magazines[]=
 	{
 		"RC_4Rnd_70mm_AA",

@@ -14,8 +14,8 @@ class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamBase.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFixed.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFree.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_hitPoints.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_userActions.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_hitPoints.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 
 	class Components: Components

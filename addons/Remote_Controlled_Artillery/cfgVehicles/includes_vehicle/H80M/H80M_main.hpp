@@ -11,6 +11,7 @@ gunnerCanFire=1;
 enableManualFire=1;					//only if copilot is primarygunner & pylons owned by copilot, but then lase is fixed and CCIP is gone
 
 
+radarTargetSize=0.8; 				//0.9-0.7
 bodyFrictionCoef=0.8;				//1
 maxSpeed=350;						//300
 /*
@@ -34,8 +35,5 @@ maximumLoad=1500;					//1000
 
 driverCompartments="Compartment1";
 cargoCompartments[]={"Compartment1"};
-CanEject=1;
-crewCrashProtection=0.01;			//0.2
+canEject=1;
 ejectDeadCargo=1;
-//hullDamageCauseExplosion=1;		//0 for vanilla (bool?)
-//hullExplosionDelay[]={20,30};		//undefined? like because bool is 0, hull also has 999 armor

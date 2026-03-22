@@ -11,8 +11,17 @@ class CopilotTurret: CopilotTurret
 	gunnerCompartments="Compartment1";	//3
 	showAllTargets="2 + 4";
 	canUseScanners=1;
+	canEject=1;	//0
 	allowTabLock=1;
-	//stabilizedInAxes=3;
+
+	weapons[]=
+	{
+		"Laserdesignator_pilotCamera"
+	};
+	magazines[]=
+	{
+		"Laserbatteries"
+	};
 
 	/*
 	gunnerCanFire=1;
@@ -22,36 +31,128 @@ class CopilotTurret: CopilotTurret
 	isCopilot=1;
 	*/
 
+	memoryPointGunnerOptics="commanderview";
+	gunBeg="commanderview";
+	gunEnd="laserstart";
+	memoryPointGun="laserstart";
+	body="obsTurret";
+	gun="obsGun";
+	animationSourceBody="obsTurret";
+	animationSourceGun="obsGun";
 
-	//vanilla
-	CanEject=1;	//0
-
-	/*
-	commanding=-3;
-	gunnerAction="pilot_Heli_Transport_01";
-	gunnerInAction="pilot_Heli_Transport_01";
-	memoryPointsGetInGunner="pos copilot";
-	memoryPointsGetInGunnerDir="pos copilot dir";
-	gunnerGetInAction="GetInHeli_Transport_01Cargo";
-	gunnerGetOutAction="GetOutLow";
-	preciseGetInOut=0;
-	GunnerDoor="";
+	turretInfoType="RscOptics_Heli_Attack_01_gunner";
+	stabilizedInAxes=3;
+	primaryGunner=0;
+	minElev=-60;
+	maxElev=20;
+	initElev=0;
+	minTurn=-120;
+	maxTurn=120;
+	initTurn=0;
+	gunnerName="$STR_A3_COPILOT";
+	isCopilot=1;
+	soundServo[]=
+	{
+		"",
+		0.0099999998,
+		1,
+		30
+	};
+	usePiP=1;
+	inGunnerMayFire=1;
+	gunnerAction="copilot_Heli_Light_03";
+	gunnerInAction="copilot_Heli_Light_03";
+	precisegetinout=1;
+	gunnerGetInAction="copilot_Heli_Light_03_Enter";
+	gunnerGetOutAction="copilot_Heli_Light_03_Exit";
+	gunnerOpticsEffect[]={};
+	gunnerOpticsModel="";
 	gunnerLeftHandAnimName="lever_copilot";
 	gunnerRightHandAnimName="stick_copilot";
-	gunnerLeftLegAnimName="PedalL";
-	gunnerRightLegAnimName="PedalR";
-	proxyIndex=3;
-	LODTurnedIn=1100;
-	LODTurnedOut=1100;
+	gunnerLeftLegAnimName="pedalL";
+	gunnerRightLegAnimName="pedalR";
 
+	class OpticsIn: OpticsIn
+	{
+		class Wide: Wide
+		{
+			initAngleX=0;
+			minAngleX=-30;
+			maxAngleX=30;
+			initAngleY=0;
+			minAngleY=-100;
+			maxAngleY=100;
+
+			initFov=1;	//0.9
+			minFov=0.02;
+			maxFov=1;	//0.9
+			visionMode[]=
+			{
+				"Normal",
+				"NVG",
+				"Ti"
+			};
+			thermalMode[]={0};
+			directionStabilized=1;
+			horizontallyStabilized=1;
+			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+		};
+	};
+
+	/*
+	class OpticsOut
+	{
+		class Monocular
+		{
+			initAngleX=0;
+			minAngleX=-30;
+			maxAngleX=30;
+			initAngleY=0;
+			minAngleY=-100;
+			maxAngleY=100;
+			minFov=0.25;
+			maxFov=1.25;
+			initFov=0.75;
+			visionMode[]=
+			{
+				"Normal",
+				"NVG"
+			};
+			gunnerOpticsModel="";
+			gunnerOpticsEffect[]={};
+		};
+	};
 	class ViewGunner: ViewPilot
 	{
+		initAngleX=-15;
 	};
-	class Hitpoints
+	startEngine=0;
+	gunnerHasFlares=0;
+	*/
+
+	/*
+	class HitPoints
 	{
+		class HitTurret
+		{
+			armor=1;
+			material=-1;
+			name="main_turret_hit";
+			visual="gun";
+			passThrough=0.2;
+			radius=0.25;
+		};
+		class HitGun
+		{
+			armor=1;
+			material=-1;
+			name="main_gun_hit";
+			visual="gun";
+			passThrough=0.2;
+			radius=0.25;
+		};
 	};
 	*/
-	selectionFireAnim="";
 };
 
 
