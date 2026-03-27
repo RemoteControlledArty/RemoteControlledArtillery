@@ -5,14 +5,17 @@ class CopilotTurret: CopilotTurret
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
 	};
 
-	//memoryPointGunnerOptics="";
-
 	dontCreateAI=1;
 	gunnerCompartments="Compartment1";	//3
 	showAllTargets="2 + 4";
 	canUseScanners=1;
 	canEject=1;	//0
 	allowTabLock=1;
+
+	isCopilot=1;
+	gunnerName="Copilot";
+	usePiP=1;
+	inGunnerMayFire=1;
 
 	weapons[]=
 	{
@@ -27,12 +30,10 @@ class CopilotTurret: CopilotTurret
 	gunnerCanFire=1;
 	enableManualFire=1;
 	vehicleWeaponAccess=1;
-	inGunnerMayFire=1;
-	isCopilot=1;
 	*/
 
-	memoryPointGunnerOptics="commanderview";
-	gunBeg="commanderview";
+	memoryPointGunnerOptics="pos pilot";
+	gunBeg="pos pilot";
 	gunEnd="laserstart";
 	memoryPointGun="laserstart";
 	body="obsTurret";
@@ -40,26 +41,6 @@ class CopilotTurret: CopilotTurret
 	animationSourceBody="obsTurret";
 	animationSourceGun="obsGun";
 
-	turretInfoType="RscOptics_Heli_Attack_01_gunner";
-	stabilizedInAxes=3;
-	primaryGunner=0;
-	minElev=-60;
-	maxElev=20;
-	initElev=0;
-	minTurn=-120;
-	maxTurn=120;
-	initTurn=0;
-	gunnerName="$STR_A3_COPILOT";
-	isCopilot=1;
-	soundServo[]=
-	{
-		"",
-		0.0099999998,
-		1,
-		30
-	};
-	usePiP=1;
-	inGunnerMayFire=1;
 	gunnerAction="copilot_Heli_Light_03";
 	gunnerInAction="copilot_Heli_Light_03";
 	precisegetinout=1;
@@ -71,6 +52,23 @@ class CopilotTurret: CopilotTurret
 	gunnerRightHandAnimName="stick_copilot";
 	gunnerLeftLegAnimName="pedalL";
 	gunnerRightLegAnimName="pedalR";
+
+	turretInfoType="RscOptics_Heli_Attack_01_gunner";
+	stabilizedInAxes=3;
+	primaryGunner=0;
+	minElev=-60;
+	maxElev=20;
+	initElev=0;
+	minTurn=-120;
+	maxTurn=120;
+	initTurn=0;
+	soundServo[]=
+	{
+		"",
+		0.0099999998,
+		1,
+		30
+	};
 
 	class OpticsIn: OpticsIn
 	{

@@ -5,10 +5,15 @@ class RC_AW159M_Core: I_Heli_light_03_dynamicLoadout_F
 };
 class RC_AW159M_Base: RC_AW159M_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+	};
+
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_main.hpp"
 	editorSubcategory="RC_Heli_armed_subcat";
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Main.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_pilotCamBase.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFixed.hpp"

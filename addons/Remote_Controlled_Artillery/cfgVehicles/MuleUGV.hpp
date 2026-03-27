@@ -270,6 +270,25 @@ class RC_Mule_UGV_WD_I: RC_Mule_UGV_WD
 
 
 //ReArmPairFuel
+class FlexibleTank_01_forest_F;
+class RC_PortableFuelTank: FlexibleTank_01_forest_F
+{
+	displayName="Portable Fuel Tank";
+	scope=2;
+	scopeCurator=2;
+	ace_cargo_canLoad=1;
+	ace_cargo_size=1;
+	ace_dragging_canCarry=1;
+	ace_dragging_canDrag=1;
+};
+class RC_FuelTank: RC_PortableFuelTank
+{
+	displayName="Fuel Tank";
+	scope=1;
+	scopeCurator=1;
+};
+
+
 class Land_WeldingTrolley_01_F;
 class RC_PortableRepairWelder: Land_WeldingTrolley_01_F
 {
@@ -292,6 +311,8 @@ class RC_RepairWelder: Land_WeldingTrolley_01_F
 	scope=1;
 	scopeCurator=1;
 };
+
+
 class RC_Mule_UGV_ReArmPairFuel_A: RC_Mule_UGV_A
 {
 	class EventHandlers: EventHandlers
@@ -302,7 +323,7 @@ class RC_Mule_UGV_ReArmPairFuel_A: RC_Mule_UGV_A
 			(_this select 0) spawn { \
 				('Box_NATO_AmmoVeh_F' createVehicle [0,0,0]) attachTo [_this, [0.425, -0.4, 0.1]]; \
 				('RC_RepairWelder' createVehicle [0,0,0]) attachTo [_this, [0.105, -1.44, -0.3]]; \
-				('FlexibleTank_01_forest_F' createVehicle [0,0,0]) attachTo [_this, [0.89, -1.45, -0.17]]; \
+				('RC_FuelTank' createVehicle [0,0,0]) attachTo [_this, [0.89, -1.45, -0.17]]; \
 			};";
 		};
 	};

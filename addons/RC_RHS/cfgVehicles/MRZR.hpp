@@ -572,12 +572,14 @@ class RC_MRZR_WD: RC_MRZR_D
 };
 class RC_MRZR_WD_O: RC_MRZR_WD
 {
+	faction="RemoteControlled_O";
 	side=0;
 	crew="O_UAV_AI";
 	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
 };
 class RC_MRZR_WD_I: RC_MRZR_WD
 {
+	faction="RemoteControlled_I";
 	side=2;
 	crew="I_UAV_AI";
 	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"

@@ -5,10 +5,15 @@ class RC_MH80M_DAP_Core: B_Heli_Transport_01_pylons_F
 };
 class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+	};
+
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_main.hpp"
 	editorSubcategory="RC_Heli_armed_subcat";
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Main.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotView.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamBase.hpp"

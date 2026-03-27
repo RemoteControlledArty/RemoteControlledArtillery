@@ -557,7 +557,9 @@ class CfgPatches
 			"RC_Mule_UGV_WD_O",
 			"RC_Mule_UGV_A_I",
 			"RC_Mule_UGV_WD_I",
-
+			
+			"RC_FuelTank",
+			"RC_PortableFuelTank",
 			"RC_RepairWelder",
 			"RC_PortableRepairWelder",
 			"RC_Mule_UGV_ReArmPairFuel_A",

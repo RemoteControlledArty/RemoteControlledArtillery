@@ -1,7 +1,7 @@
 //damage
-armor=40; 						//V 40, H 600, RC 40 (600 doesnt get engaged, so 40 with armoredstructural 4x15=60 used instead)
+armor=80; 						//V 40, H 600, RC 40 (600 doesnt get engaged, so 40 with armoredstructural 4x15=60 used instead)
 damageResistance=0.00555; 		//V 0.00555, H 0.00555
-armorStructural=60;				//V 4, H 4  <- there might be a solution here!, RC 4x15=60
+armorStructural=30;				//V 4, H 4  <- there might be a solution here!, RC 4x15=60
 explosionShielding=4;			//V 4, H 4
 fuelExplosionPower=1;			//V 1, H 1
 minTotalDamageThreshold=0.005;	//V 0.005, H 0.05, RC 0.005
@@ -46,10 +46,10 @@ class HitPoints: HitPoints
 	};
 	class HitFuel
 	{
-		armor=-56;				//V 0.7 = -28, H ?, RC -56
+		armor=-60;				//V 0.7 = -28, H ?, RC -60
 		radius=0.25;			//V 0.25
 		minimalHit=0.05;		//V 0.05
-		explosionShielding=1;	//V 2, RC 1
+		explosionShielding=0.5;	//V 2, RC 0.5
 		passThrough=0;			//V 1
 		material=51;
 
@@ -153,7 +153,7 @@ class HitPoints: HitPoints
 		armor=-414;					//V 2.6 = -104, H 10.35, 10.35 = -414, RC = -259
 		radius=0.4;					//V 0.4, H 0.47, RC 0.4
 		minimalHit=0.1;				//V 0.09, H 0.1, RC 0.1
-		explosionShielding=2.5;		//V 2.5, H 3000, RC ?
+		explosionShielding=2;		//V 2.5, H 3000, RC 2
 		passThrough=0;				//V 0.1, H 0, RC 0
 		material=51;				//V 51, H 51
 
@@ -165,8 +165,8 @@ class HitPoints: HitPoints
 	{
 		armor=-52;					//V 1.3 = -52, H 0.054, 0.81 = -32.4, RC -52
 		radius=0.06;				//V 0.06, H 0.24
-		minimalHit=0.075;			//V 0.05, H 0.1, RC 0.075
-		explosionShielding=1;		//V 6, H 0.27, RC 3.135
+		minimalHit=0.1;				//V 0.05, H 0.1, RC 0.1
+		explosionShielding=0.27;	//V 6, H 0.27, RC 0.3
 		passThrough=0;				//V 0.3, H 0, RC 0
 		material=51;				//V 51, H 51
 

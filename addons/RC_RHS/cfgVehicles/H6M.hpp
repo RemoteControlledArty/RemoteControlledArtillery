@@ -5,9 +5,14 @@ class RC_MELB_AH6M_Core: RHS_MELB_AH6M
 };
 class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+	};
+
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_main.hpp"
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Main.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamBase.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamFixed.hpp"
