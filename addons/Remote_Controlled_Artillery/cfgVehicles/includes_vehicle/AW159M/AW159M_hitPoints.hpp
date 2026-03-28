@@ -11,6 +11,23 @@ crewVulnerable=1;				//V 1, H 1
 hullDamageCauseExplosion=0;		//V 0, H 0
 //hullExplosionDelay[]={,};		//undefined because bool is 0, also hull armor is very high
 
+/*
+replaceDamaged = "";
+replaceDamagedHitpoints[] = {};
+replaceDamagedLimit = 0.9;		//V 0.9, H 0.9
+*/
+
+/*
+"armorStructural" value acts as a divisor to global damage.
+
+In theory, a hitpoint location receives damage.
+This damage is applied to global damage as well,
+but reduced via passthrough value on the hitlocation and the global armorStructural value.
+
+However, test results indicate that this is not true in every case,
+not matching any formula that has been floating around on various other damage related pages.
+*/
+
 
 class HitPoints: HitPoints
 {
@@ -25,14 +42,14 @@ class HitPoints: HitPoints
 
 		name="hull_hit";
 		convexComponent="hull_hit";
-		visual="zbytek";
+		visual="trup";
 	};
 	class HitFuel
 	{
-		armor=-60;				//V 1 = -40, H ?, RC -60
+		armor=-60;				//V 0.7 = -28, H ?, RC -60
 		radius=0.25;			//V 0.25
 		minimalHit=0.05;		//V 0.05
-		explosionShielding=0.5;	//V 1, RC 0.5
+		explosionShielding=0.5;	//V 2, RC 0.5
 		passThrough=0;			//V 1
 		material=51;
 
@@ -42,22 +59,22 @@ class HitPoints: HitPoints
 	};
 	class HitAvionics
 	{
-		armor=-80;					//V 2 = -80, H ?, RC -80
-		radius=0.4;					//V 0.4
-		minimalHit=0.1;				//V 0.1, RC 0.1
-		explosionShielding=1;		//V 1, RC 1
+		armor=-52;					//V 1.3 = -52, H ?, RC -52
+		radius=0.25;				//V 0.25
+		minimalHit=0.1;				//V 0.05, RC 0.1
+		explosionShielding=1;		//V 1.5, RC 1
 		passThrough=0;				//V 1, H ?
 		material=51;
 
 		name="avionics_hit";
 		convexComponent="avionics_hit";
-		visual="elektronika";
+		visual="podsvit pristroju";
 	};
 	class HitMissiles
 	{
-		armor=-40;					//V 1 = -40, H 0.036, 0.54 = -21.6, RC -40
-		radius=0.15;				//V 0.15, H 0.3, RC 0.15
-		minimalHit=0.05;			//V 0.05, H 0.1, RC 0.075
+		armor=-28;					//V 0.7 = -28, H 0.036, 0.54 = -21.6, RC -28
+		radius=0.25;				//V 0.25, H 0.3, RC 0.25
+		//minimalHit=0.05;			//V NA, H 0.1, RC 0.075
 		explosionShielding=0.65;	//V 1, H 0.3, RC 0.65
 		passThrough=0;				//V 0.5, H 0, RC 0
 		material=51;				//V 51, H 51
@@ -82,10 +99,10 @@ class HitPoints: HitPoints
 	};
 	class HitEngine1
 	{
-		armor=-43.2;				//V 1 = -40, H 0.072, 1.08 = -43.2, RC -40
-		radius=0.4;					//V 0.4, H 0.59, RC 0.4
+		armor=-40;					//V 1 = -40, H 0.072, 1.08 = -43.2, RC -40
+		radius=0.25;				//V 0.25, H 0.59, RC 0.25
 		explosionShielding=1.73;	//V 3, H 0.46, RC 1.73
-		minimalHit=0.2;				//V 0.2, H 0.1
+		minimalHit=0.1;				//V 0.1, H 0.1
 		passThrough=0;				//V 1, H 0, RC 0
 		material=51;				//V 51, H 51
 
@@ -133,8 +150,8 @@ class HitPoints: HitPoints
 	};
 	class HitHRotor
 	{
-		armor=-414;					//V 4.5 = -180, H 10.35, 10.35 = -414, RC = -414
-		radius=0.4;					//V 0.4, H 0.47, RC 0.4
+		armor=-414;					//V 2.6 = -104, H 10.35, 10.35 = -414, RC = -414
+		radius=0.45;				//V 0.45, H 0.47, RC 0.45
 		minimalHit=0.1;				//V 0.09, H 0.1, RC 0.1
 		explosionShielding=2;		//V 2.5, H 3000, RC 2
 		passThrough=0;				//V 0.1, H 0, RC 0
@@ -146,9 +163,9 @@ class HitPoints: HitPoints
 	};
 	class HitVRotor
 	{
-		armor=-120;					//V 3 = -120, H 0.054, 0.81 = -32.4, RC -120
-		radius=0.06;				//V 0.06, H 0.24
-		minimalHit=0.1;				//V 0.09, H 0.1, RC 0.1
+		armor=-60;					//V 1.5 = -60, H 0.054, 0.81 = -32.4, RC -60
+		radius=0.06;				//V 0.06, H 0.24, RC 0.06
+		minimalHit=0.1;				//V 0.05, H 0.1, RC 0.1
 		explosionShielding=0.27;	//V 6, H 0.27, RC 0.3
 		passThrough=0;				//V 0.3, H 0, RC 0
 		material=51;				//V 51, H 51
@@ -193,7 +210,7 @@ class HitPoints: HitPoints
 	};
 	class HitStaticPort
 	{
-		armor=-6;		//V 0.1 = -4, RC -6
+		armor=-6;		//V 0.1 = -3, RC -6
 		passThrough=0;	//V 1
 		material=-1;
 
@@ -225,8 +242,8 @@ class HitPoints: HitPoints
 	};
 	class HitWinch
 	{
-		armor=-60;		//V -4	0
-		radius=0.1;
+		armor=-60;		//V -40
+		radius=0.1;		//V 0.1
 		passThrough=0;	//V 0
 		material=51;
 
@@ -276,16 +293,17 @@ class HitPoints: HitPoints
 	};
 	class HitRGlass: HitLGlass
 	{
-		name="sklo predni P";
-		convexComponent="sklo predni P";
-		visual="sklo predni P";
+		name="sklo predni R";
+		convexComponent="sklo predni R";
+		visual="sklo predni R";
 	};
+
+
 	class HitGlass1
 	{
-		armor=-180;				//V 4.5 = -180, RC -180
+		armor=-40;				//V 1 = -40
 		radius=0.37;			//V 0.37
-		minimalHit=0.05;		//V 0.05
-		explosionShielding=2;	//V 2
+		explosionShielding=3;	//V 2
 		passThrough=0;
 		material=-1;
 
@@ -346,8 +364,7 @@ class HitPoints: HitPoints
 	};
 	class HitGlass2: HitGlass1
 	{
-		armor=-120;				//V 3 = -120, RC -120
-		explosionShielding=1.5;	//V 1.5
+		explosionShielding=1.5;
 
 		name="glass2";
 		visual="glass2";
@@ -398,7 +415,7 @@ class HitPoints: HitPoints
 	};
 	class HitGlass3: HitGlass2
 	{
-		radius=0.25;			//V 0.25
+		radius=0.25;
 
 		name="glass3";
 		visual="glass3";
@@ -451,7 +468,7 @@ class HitPoints: HitPoints
 	{
 		name="glass4";
 		visual="glass4";
-		
+
 		class DestructionEffects: DestructionEffects
 		{
 			class BrokenGlass1: BrokenGlass1
@@ -498,7 +515,7 @@ class HitPoints: HitPoints
 	};
 	class HitGlass5: HitGlass1
 	{
-		radius=0.34;			//V 0.34
+		radius=0.34;
 
 		name="glass5";
 		visual="glass5";
@@ -549,8 +566,7 @@ class HitPoints: HitPoints
 	};
 	class HitGlass6: HitGlass5
 	{
-		armor=-120;				//V 3 = -120, RC -120
-		explosionShielding=1.5;	//V 1.5
+		explosionShielding=1.5;
 
 		name="glass6";
 		visual="glass6";
@@ -599,10 +615,8 @@ class HitPoints: HitPoints
 			};
 		};
 	};
-	class HitGlass7: HitGlass6
+	class HitGlass7: HitGlass1
 	{
-		radius=0.2;
-
 		name="glass7";
 		visual="glass7";
 
@@ -701,9 +715,9 @@ class HitPoints: HitPoints
 	};
 	class HitGlass9: HitGlass1
 	{
-		armor=-32;				//V 0.8 = -32, RC -32
-		explosionShielding=1;	//V 1
+		armor=0.8;
 		radius=0.24;
+		explosionShielding=1;
 
 		name="glass9";
 		visual="glass9";
@@ -798,202 +812,6 @@ class HitPoints: HitPoints
 			class BrokenGlass5S: BrokenGlass5S
 			{
 				position="GlassEffects10";
-			};
-		};
-	};
-	class HitGlass11: HitGlass9
-	{
-		name="glass11";
-		visual="glass11";
-
-		class DestructionEffects: DestructionEffects
-		{
-			class BrokenGlass1: BrokenGlass1
-			{
-				position="GlassEffects11";
-			};
-			class BrokenGlass1S: BrokenGlass1S
-			{
-				position="GlassEffects11";
-			};
-			class BrokenGlass2: BrokenGlass2
-			{
-				position="GlassEffects11";
-			};
-			class BrokenGlass2S: BrokenGlass2S
-			{
-				position="GlassEffects11";
-			};
-			class BrokenGlass3: BrokenGlass3
-			{
-				position="GlassEffects11";
-			};
-			class BrokenGlass3S: BrokenGlass3S
-			{
-				position="GlassEffects11";
-			};
-			class BrokenGlass4: BrokenGlass4
-			{
-				position="GlassEffects11";
-			};
-			class BrokenGlass4S: BrokenGlass4S
-			{
-				position="GlassEffects11";
-			};
-			class BrokenGlass5: BrokenGlass5
-			{
-				position="GlassEffects11";
-			};
-			class BrokenGlass5S: BrokenGlass5S
-			{
-				position="GlassEffects11";
-			};
-		};
-	};
-	class HitGlass12: HitGlass9
-	{
-		name="glass12";
-		visual="glass12";
-
-		class DestructionEffects: DestructionEffects
-		{
-			class BrokenGlass1: BrokenGlass1
-			{
-				position="GlassEffects12";
-			};
-			class BrokenGlass1S: BrokenGlass1S
-			{
-				position="GlassEffects12";
-			};
-			class BrokenGlass2: BrokenGlass2
-			{
-				position="GlassEffects12";
-			};
-			class BrokenGlass2S: BrokenGlass2S
-			{
-				position="GlassEffects12";
-			};
-			class BrokenGlass3: BrokenGlass3
-			{
-				position="GlassEffects12";
-			};
-			class BrokenGlass3S: BrokenGlass3S
-			{
-				position="GlassEffects12";
-			};
-			class BrokenGlass4: BrokenGlass4
-			{
-				position="GlassEffects12";
-			};
-			class BrokenGlass4S: BrokenGlass4S
-			{
-				position="GlassEffects12";
-			};
-			class BrokenGlass5: BrokenGlass5
-			{
-				position="GlassEffects12";
-			};
-			class BrokenGlass5S: BrokenGlass5S
-			{
-				position="GlassEffects12";
-			};
-		};
-	};
-	class HitGlass13: HitGlass9
-	{
-		name="glass13";
-		visual="glass13";
-
-		class DestructionEffects: DestructionEffects
-		{
-			class BrokenGlass1: BrokenGlass1
-			{
-				position="GlassEffects13";
-			};
-			class BrokenGlass1S: BrokenGlass1S
-			{
-				position="GlassEffects13";
-			};
-			class BrokenGlass2: BrokenGlass2
-			{
-				position="GlassEffects13";
-			};
-			class BrokenGlass2S: BrokenGlass2S
-			{
-				position="GlassEffects13";
-			};
-			class BrokenGlass3: BrokenGlass3
-			{
-				position="GlassEffects13";
-			};
-			class BrokenGlass3S: BrokenGlass3S
-			{
-				position="GlassEffects13";
-			};
-			class BrokenGlass4: BrokenGlass4
-			{
-				position="GlassEffects13";
-			};
-			class BrokenGlass4S: BrokenGlass4S
-			{
-				position="GlassEffects13";
-			};
-			class BrokenGlass5: BrokenGlass5
-			{
-				position="GlassEffects13";
-			};
-			class BrokenGlass5S: BrokenGlass5S
-			{
-				position="GlassEffects13";
-			};
-		};
-	};
-	class HitGlass14: HitGlass9
-	{
-		name="glass14";
-		visual="glass14";
-
-		class DestructionEffects: DestructionEffects
-		{
-			class BrokenGlass1: BrokenGlass1
-			{
-				position="GlassEffects14";
-			};
-			class BrokenGlass1S: BrokenGlass1S
-			{
-				position="GlassEffects14";
-			};
-			class BrokenGlass2: BrokenGlass2
-			{
-				position="GlassEffects14";
-			};
-			class BrokenGlass2S: BrokenGlass2S
-			{
-				position="GlassEffects14";
-			};
-			class BrokenGlass3: BrokenGlass3
-			{
-				position="GlassEffects14";
-			};
-			class BrokenGlass3S: BrokenGlass3S
-			{
-				position="GlassEffects14";
-			};
-			class BrokenGlass4: BrokenGlass4
-			{
-				position="GlassEffects14";
-			};
-			class BrokenGlass4S: BrokenGlass4S
-			{
-				position="GlassEffects14";
-			};
-			class BrokenGlass5: BrokenGlass5
-			{
-				position="GlassEffects14";
-			};
-			class BrokenGlass5S: BrokenGlass5S
-			{
-				position="GlassEffects14";
 			};
 		};
 	};

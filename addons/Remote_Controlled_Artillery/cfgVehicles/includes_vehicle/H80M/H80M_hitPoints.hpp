@@ -150,7 +150,7 @@ class HitPoints: HitPoints
 	};
 	class HitHRotor
 	{
-		armor=-414;					//V 2.6 = -104, H 10.35, 10.35 = -414, RC = -259
+		armor=-414;					//V 2.6 = -104, H 10.35, 10.35 = -414, RC = -414
 		radius=0.4;					//V 0.4, H 0.47, RC 0.4
 		minimalHit=0.1;				//V 0.09, H 0.1, RC 0.1
 		explosionShielding=2;		//V 2.5, H 3000, RC 2
@@ -208,6 +208,14 @@ class HitPoints: HitPoints
 
 		name="pitot tube";
 	};
+	class HitStaticPort
+	{
+		armor=-6;		//V 0.1 = -3, RC -6
+		passThrough=0;	//V 1
+		material=-1;
+
+		name="static port";
+	};
 	class HitStarter1
 	{
 		armor=-6;		//V 0.1 = -4, RC -6
@@ -264,7 +272,7 @@ class HitPoints: HitPoints
 	};
 	class HitLight
 	{
-		armor=-4;		//V 1 = -4
+		armor=-4;		//V 0.1 = -4
 		passThrough=0;
 		material=-1;
 

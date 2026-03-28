@@ -276,6 +276,7 @@ class RC_PortableFuelTank: FlexibleTank_01_forest_F
 	displayName="Portable Fuel Tank";
 	scope=2;
 	scopeCurator=2;
+	ace_refuel_fuelCargo=600;
 	ace_cargo_canLoad=1;
 	ace_cargo_size=1;
 	ace_dragging_canCarry=1;
@@ -299,9 +300,10 @@ class RC_PortableRepairWelder: Land_WeldingTrolley_01_F
 	ace_cargo_canLoad=1;
 	ace_cargo_size=1;
 	ace_dragging_canCarry=1;
+	ace_dragging_carryDirection=90;
+	ace_dragging_carryPosition[]={0,1.2,0};
 	ace_dragging_canDrag=1;
-	ace_dragging_carryDirection=270;
-	ace_dragging_dragDirection=270;
+	ace_dragging_dragDirection=90;
 	ace_dragging_dragPosition[]={0,1.2,0};
 };
 class RC_RepairWelder: Land_WeldingTrolley_01_F
