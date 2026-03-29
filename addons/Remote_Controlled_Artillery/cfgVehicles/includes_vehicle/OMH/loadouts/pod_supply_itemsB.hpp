@@ -3,12 +3,12 @@ class TransportMagazines
 	class _xx_30Rnd_556x45_Stanag_Tracer_Red
 	{
 		magazine="30Rnd_556x45_Stanag_Tracer_Red";
-		count=5;
+		count=10;
 	};
 	class _xx_20Rnd_762x51_Mag
 	{
 		magazine="20Rnd_762x51_Mag";
-		count=5;
+		count=10;
 	};
 	class _xx_HandGrenade
 	{

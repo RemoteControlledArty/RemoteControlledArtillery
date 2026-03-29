@@ -310,7 +310,7 @@ class cfgMagazines
 		scope=1;
 		mass=60;
 		count=1;
-		ammo=""
+		ammo="";
 		//model="\ArmaFPV\drone.p3d";
 
 		_generalMacro="Item_Crocus_MP";
