@@ -1,0 +1,82 @@
+class TransportMagazines
+{
+	class _xx_HandGrenade
+	{
+		magazine="HandGrenade";
+		count=2;
+	};
+	class _xx_SmokeShell
+	{
+		magazine="SmokeShell";
+		count=2;
+	};
+	class _xx_RPG7_F
+	{
+		magazine="RPG7_F";
+		count=1;
+	};
+	class _xx_Laserbatteries
+	{
+		magazine="Laserbatteries";
+		count=1;
+	};
+	class _xx_DemoCharge_Remote_Mag
+	{
+		magazine="DemoCharge_Remote_Mag";
+		count=2;
+	};
+};
+class TransportItems
+{
+	class _xx_O_UavTerminal
+	{
+		name="O_UavTerminal";
+		count=2;
+	};
+	class _xx_Toolkit
+	{
+		name="Toolkit";
+		count=2;
+	};
+	class _xx_Medikit
+	{
+		name="Medikit";
+		count=1;
+	};
+	class _xx_FirstAidKit
+	{
+		name="FirstAidKit";
+		count=1;
+	};
+	class _xx_MineDetector
+	{
+		name="MineDetector";
+		count=1;
+	};
+};
+class TransportWeapons
+{
+	class _xx_launch_RPG7_F
+	{
+		weapon="launch_RPG7_F";
+		count=1;
+	};
+	class _xx_Improved_FOV_Laserdesignator_A
+	{
+		weapon="Improved_FOV_Laserdesignator_A";
+		count=1;
+	};
+};
+class TransportBackpacks
+{
+	class _xx_B_Kitbag_rgr
+	{
+		backpack="B_Kitbag_rgr";
+		count=2;
+	};
+	class _xx_B_Parachute
+	{
+		backpack="RC_LightParachute";
+		count=16;
+	};
+};
