@@ -27,8 +27,5 @@ maximumLoad=1500;					//1000
 
 
 driverCompartments="Compartment1";
-CanEject=1;
-crewCrashProtection=0.01;			//0.2
+canEject=1;
 ejectDeadCargo=1;
-hullDamageCauseExplosion=1;			//1, maybe just bool?
-hullExplosionDelay[]={20,30};		//{10,20}

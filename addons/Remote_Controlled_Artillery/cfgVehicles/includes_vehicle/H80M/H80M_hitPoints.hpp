@@ -1,7 +1,8 @@
 //damage
-armor=80; 						//V 40, H 600, RC 40 (600 doesnt get engaged, so 40 with armoredstructural 4x15=60 used instead)
+armor=100; 						//V 40, H 600, RC 80 (600 doesnt get engaged, so 40 with armoredstructural 4x15=60 used instead)
+armorStructural=25;				//V 4, H 4  <- there might be a solution here!, RC 4x15=60
 damageResistance=0.00555; 		//V 0.00555, H 0.00555
-armorStructural=30;				//V 4, H 4  <- there might be a solution here!, RC 4x15=60
+epeImpulseDamageCoef=0;			//V 50, H 0, RC 0
 explosionShielding=4;			//V 4, H 4
 fuelExplosionPower=1;			//V 1, H 1
 minTotalDamageThreshold=0.005;	//V 0.005, H 0.05, RC 0.005
@@ -46,10 +47,10 @@ class HitPoints: HitPoints
 	};
 	class HitFuel
 	{
-		armor=-60;				//V 0.7 = -28, H ?, RC -60
+		armor=-150;				//V 0.7 = -28, H ?, RC -150
 		radius=0.25;			//V 0.25
 		minimalHit=0.05;		//V 0.05
-		explosionShielding=0.5;	//V 2, RC 0.5
+		explosionShielding=1;	//V 2, RC 1
 		passThrough=0;			//V 1
 		material=51;
 
@@ -59,9 +60,9 @@ class HitPoints: HitPoints
 	};
 	class HitAvionics
 	{
-		armor=-78;					//V 1.3 = -52, H ?, RC -78
+		armor=-80;					//V 1.3 = -52, H ?, RC -80
 		radius=0.4;					//V 0.4
-		minimalHit=0.05;			//V 0.05
+		minimalHit=0.1;				//V 0.1, RC 0.1
 		explosionShielding=1;		//V 1.5, RC 1
 		passThrough=0;				//V 1, H ?
 		material=51;
@@ -70,18 +71,31 @@ class HitPoints: HitPoints
 		convexComponent="avionics_hit";
 		visual="elektronika";
 	};
-	class HitMissiles
+	class HitHRotor
 	{
-		armor=-28;					//V 0.7 = -28, H 0.036, 0.54 = -21.6, RC -28
-		radius=0.25;				//V 0.25, H 0.3, RC 0.25
-		minimalHit=0.05;			//V 0.05, H 0.1, RC 0.075
-		explosionShielding=0.65;	//V 1, H 0.3, RC 0.65
-		passThrough=0;				//V 0.5, H 0, RC 0
+		armor=-400;					//V 2.6 = -104, H 10.35, 10.35 = -414, RC = -400
+		radius=0.4;					//V 0.4, H 0.47, RC 0.4
+		minimalHit=0.1;				//V 0.09, H 0.1, RC 0.1
+		explosionShielding=1.75;	//V 2.5, H 3000, RC 1.75
+		passThrough=0;				//V 0.1, H 0, RC 0
 		material=51;				//V 51, H 51
 
-		name="ammo_hit";
-		convexComponent="ammo_hit";
-		visual="munice";
+		name="main_rotor_hit";
+		convexComponent="main_rotor_hit";
+		visual="main rotor static";
+	};
+	class HitVRotor
+	{
+		armor=-200;					//V 1.3 = -52, H 0.054, 0.81 = -32.4, RC -200
+		radius=0.06;				//V 0.06, H 0.24
+		minimalHit=0.1;				//V 0.05, H 0.1, RC 0.1
+		explosionShielding=1;		//V 6, H 0.27, RC 1
+		passThrough=0;				//V 0.3, H 0, RC 0
+		material=51;				//V 51, H 51
+
+		name="tail_rotor_hit";
+		convexComponent="tail_rotor_hit";
+		visual="tail rotor static";
 	};
 	class HitEngine
 	{
@@ -126,6 +140,59 @@ class HitPoints: HitPoints
 		convexComponent="engine_3_hit";
 		visual="motor";
 	};
+	class HitMissiles
+	{
+		armor=-28;					//V 0.7 = -28, H 0.036, 0.54 = -21.6, RC -28
+		radius=0.25;				//V 0.25, H 0.3, RC 0.25
+		minimalHit=0.05;			//V 0.05, H 0.1, RC 0.075
+		explosionShielding=0.65;	//V 1, H 0.3, RC 0.65
+		passThrough=0;				//V 0.5, H 0, RC 0
+		material=51;				//V 51, H 51
+
+		name="ammo_hit";
+		convexComponent="ammo_hit";
+		visual="munice";
+	};
+	class HitGear		//landing gear or rotor gearbox?
+	{
+		armor=-60;		//V 0.9 = -36, RC -60
+		passThrough=0;	//V 0
+		material=-1;
+
+		name="gear";
+	};
+	class HitWinch
+	{
+		armor=-120;		//V -60
+		radius=0.1;
+		passThrough=0;	//V 0
+		material=51;
+
+		name="slingLoad0";
+		visual="";
+
+		class DestructionEffects
+		{
+			ammoExplosionEffect = "";
+
+			class Explo
+			{
+				intensity=1;
+				interval=1;
+				lifeTime=0.06;
+				position="slingLoad0";
+				simulation="particles";
+				type="WinchDestructionExplo";
+			};
+			class Sparks: Explo
+			{
+				lifeTime=0.1;
+				type="WinchDestructionSparks";
+			};
+		};
+	};
+
+
 	class HitHydraulics
 	{
 		armor=-48;		//V 0.8 = -32, RC -48
@@ -147,32 +214,6 @@ class HitPoints: HitPoints
 		passThrough=0;	//V 0
 
 		name="HStabilizerR1";
-	};
-	class HitHRotor
-	{
-		armor=-414;					//V 2.6 = -104, H 10.35, 10.35 = -414, RC = -414
-		radius=0.4;					//V 0.4, H 0.47, RC 0.4
-		minimalHit=0.1;				//V 0.09, H 0.1, RC 0.1
-		explosionShielding=2;		//V 2.5, H 3000, RC 2
-		passThrough=0;				//V 0.1, H 0, RC 0
-		material=51;				//V 51, H 51
-
-		name="main_rotor_hit";
-		convexComponent="main_rotor_hit";
-		visual="main rotor static";
-	};
-	class HitVRotor
-	{
-		armor=-52;					//V 1.3 = -52, H 0.054, 0.81 = -32.4, RC -52
-		radius=0.06;				//V 0.06, H 0.24
-		minimalHit=0.1;				//V 0.05, H 0.1, RC 0.1
-		explosionShielding=0.27;	//V 6, H 0.27, RC 0.3
-		passThrough=0;				//V 0.3, H 0, RC 0
-		material=51;				//V 51, H 51
-
-		name="tail_rotor_hit";
-		convexComponent="tail_rotor_hit";
-		visual="tail rotor static";
 	};
 	class HitTail
 	{
@@ -198,8 +239,6 @@ class HitPoints: HitPoints
 
 		name="VStabilizer1";
 	};
-
-
 	class HitPitotTube
 	{
 		armor=-30;		//V 0.5 = -20, RC -30
@@ -232,44 +271,6 @@ class HitPoints: HitPoints
 	{
 		name="starter3";
 	};
-	class HitGear		//landing gear or rotor gearbox?
-	{
-		armor=-54;		//V 0.9 = -36, RC -54
-		passThrough=0;	//V 0
-		material=-1;
-
-		name="gear";
-	};
-	class HitWinch
-	{
-		armor=-60;		//V -60
-		radius=0.1;
-		passThrough=0;	//V 0
-		material=51;
-
-		name="slingLoad0";
-		visual="";
-
-		class DestructionEffects
-		{
-			ammoExplosionEffect = "";
-
-			class Explo
-			{
-				intensity=1;
-				interval=1;
-				lifeTime=0.06;
-				position="slingLoad0";
-				simulation="particles";
-				type="WinchDestructionExplo";
-			};
-			class Sparks: Explo
-			{
-				lifeTime=0.1;
-				type="WinchDestructionSparks";
-			};
-		};
-	};
 	class HitLight
 	{
 		armor=-4;		//V 0.1 = -4
@@ -293,10 +294,12 @@ class HitPoints: HitPoints
 	};
 	class HitRGlass: HitLGlass
 	{
-		name="sklo predni R";
-		convexComponent="sklo predni R";
-		visual="sklo predni R";
+		name="sklo predni P";
+		convexComponent="sklo predni P";
+		visual="sklo predni P";
 	};
+
+
 	class HitGlass1
 	{
 		armor=-52;				//V 1.3 = -52

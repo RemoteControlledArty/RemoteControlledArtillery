@@ -7,6 +7,7 @@ class CargoTurret;
 class OpticsIn;
 class Wide;
 class Components;
+class HitPoints;
 class AnimationSources;
 class UserActions;
 class EventHandlers;
