@@ -119,7 +119,8 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 						viewDistanceLimitCoef=-1;
 					};
 				};
-
+				
+				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
 		};
@@ -132,17 +133,23 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={16000,8000,4000,2000,1000};
+					range[]={16000,8000,4000,2000,1000,400};
 					resource="RscCustomInfoSensors";
 				};
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 		{
-			defaultDisplay="UAVFeedDisplay";
+			defaultDisplay="SensorDisplay";
 
 			class Components
 			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={400,1000,2000,4000,8000,16000};
+					resource="RscCustomInfoSensors";
+				};
 				class UAVFeedDisplay
 				{
 					componentType="UAVFeedDisplayComponent";

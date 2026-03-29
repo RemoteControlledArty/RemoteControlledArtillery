@@ -53,17 +53,17 @@ class RC_MH80M_DAP: RC_MH80M_DAP_Base
 	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MH80M\MH80M_itemsB.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsB.hpp"
 };
 class RC_MH80M_DAP_O: RC_MH80M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MH80M\MH80M_itemsO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsO.hpp"
 };
 class RC_MH80M_DAP_I: RC_MH80M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MH80M\MH80M_itemsI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
 };
 
 
@@ -82,15 +82,15 @@ class RC_OM_MH80M_DAP: RC_OM_MH80M_DAP_UV
 	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MH80M\MH80M_itemsB.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsB.hpp"
 };
 class RC_OM_MH80M_DAP_O: RC_OM_MH80M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MH80M\MH80M_itemsO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsO.hpp"
 };
 class RC_OM_MH80M_DAP_I: RC_OM_MH80M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MH80M\MH80M_itemsI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
 };

@@ -409,12 +409,12 @@ class RC_MRZR_Base: RC_MRZR_Core
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=600;
+					typeRecognitionDistance=400;
 
 					class AirTarget
 					{
-						minRange=600;
-						maxRange=600;
+						minRange=400;
+						maxRange=400;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};

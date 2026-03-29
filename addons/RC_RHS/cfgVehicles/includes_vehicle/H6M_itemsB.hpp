@@ -31,7 +31,7 @@ class TransportItems
 	class _xx_Toolkit
 	{
 		name="Toolkit";
-		count=1;
+		count=2;
 	};
 	class _xx_Medikit
 	{
@@ -67,11 +67,11 @@ class TransportBackpacks
 	class _xx_B_Kitbag_rgr
 	{
 		backpack="B_Kitbag_rgr";
-		count=1;
+		count=2;
 	};
 	class _xx_B_Parachute
 	{
 		backpack="RC_LightParachute";
-		count=8;
+		count=9;
 	};
 };

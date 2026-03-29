@@ -23,17 +23,17 @@ class RC_Ka60M: RC_RHS_Ka60M_Base
 	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"
 };
 class RC_Ka60M_O: RC_Ka60M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
 };
 class RC_Ka60M_I: RC_Ka60M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
 };
 
 
@@ -52,15 +52,15 @@ class RC_OM_Ka60M: RC_OM_Ka60M_UV
 	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"
 };
 class RC_OM_Ka60M_O: RC_OM_Ka60M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
 };
 class RC_OM_Ka60M_I: RC_OM_Ka60M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\TransportHeliitemsI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
 };

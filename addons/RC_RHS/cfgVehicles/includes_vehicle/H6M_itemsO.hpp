@@ -10,6 +10,11 @@ class TransportMagazines
 		magazine="SmokeShell";
 		count=2;
 	};
+	class _xx_RPG7_F
+	{
+		magazine="RPG7_F";
+		count=1;
+	};
 	class _xx_Laserbatteries
 	{
 		magazine="Laserbatteries";
@@ -23,15 +28,15 @@ class TransportMagazines
 };
 class TransportItems
 {
-	class _xx_B_UavTerminal
+	class _xx_O_UavTerminal
 	{
-		name="B_UavTerminal";
+		name="O_UavTerminal";
 		count=2;
 	};
 	class _xx_Toolkit
 	{
 		name="Toolkit";
-		count=1;
+		count=2;
 	};
 	class _xx_Medikit
 	{
@@ -51,9 +56,9 @@ class TransportItems
 };
 class TransportWeapons
 {
-	class _xx_launch_NLAW_F
+	class _xx_launch_RPG7_F
 	{
-		weapon="launch_NLAW_F";
+		weapon="launch_RPG7_F";
 		count=1;
 	};
 	class _xx_Improved_FOV_Laserdesignator_A
@@ -67,11 +72,11 @@ class TransportBackpacks
 	class _xx_B_Kitbag_rgr
 	{
 		backpack="B_Kitbag_rgr";
-		count=1;
+		count=2;
 	};
 	class _xx_B_Parachute
 	{
 		backpack="RC_LightParachute";
-		count=3;
+		count=9;
 	};
 };
