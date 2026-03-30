@@ -32,7 +32,6 @@ author="Ascent";
 ejectDeadGunner=0;
 ejectDeadDriver=0;
 ejectDeadCommander=0;
-crewCrashProtection=0.01;
 #include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 
 

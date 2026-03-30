@@ -4,6 +4,7 @@ class LoadmasterTurret;
 class ViewPilot;
 class ViewOptics;
 class Components;
+class HitPoints;
 class UserActions;
 class EventHandlers;
 scope=0;

@@ -38,6 +38,7 @@ class HitPoints: HitPoints
 		depends="Total";		//V "Total"
 		radius=0.01;			//V 0.01
 		minimalHit=0.05;		//V 0.05
+		explosionShielding=1;	//V 1, RC 1
 		passThrough=1;			//V 1, H ?, RC 1/0.5/0
 		material=51;
 

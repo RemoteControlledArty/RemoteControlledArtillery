@@ -12,6 +12,7 @@ class RC_OM_Heli_SkyCrane_Base: RC_OM_Heli_SkyCrane_Core
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\OMH\heli_main.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\OMH\heli_hitPoints.hpp"
 
 	//class CargoTurret;
 

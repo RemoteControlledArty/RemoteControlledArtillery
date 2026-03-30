@@ -1,7 +1,7 @@
 //damage
 armor=100; 						//V 40, H 600, RC 80 (600 doesnt get engaged, so 40 with armoredstructural 4x15=60 used instead)
 armorStructural=25;				//V 4, H 4  <- there might be a solution here!, RC 4x15=60
-damageResistance=0.00555; 		//V 0.00555, H 0.00555
+damageResistance=0.004; 		//V 0.004, H 0.004
 epeImpulseDamageCoef=0;			//V 50, H 0, RC 0
 explosionShielding=4;			//V 4, H 4
 fuelExplosionPower=1;			//V 1, H 1
@@ -36,34 +36,35 @@ class HitPoints: HitPoints
 	{
 		armor=-40000;			//V 999 = -400000, H ?, RC -400000
 		depends="Total";		//V "Total"
-		radius=0.01;			//V 0.01
-		minimalHit=0.05;		//V 0.05
+		radius=0.65;			//V 0.65
+		minimalHit=0.01;		//V 0.01
+		explosionShielding=1;	//1.5, RC 1
 		passThrough=1;			//V 1, H ?, RC 1/0.5/0
 		material=51;
 
 		name="hull_hit";
 		convexComponent="hull_hit";
-		visual="zbytek";
+		visual="DamT_1";
 	};
 	class HitFuel
 	{
-		armor=-150;				//V 0.7 = -28, H ?, RC -150
-		radius=0.25;			//V 0.25
-		minimalHit=0.05;		//V 0.05
-		explosionShielding=1;	//V 2, RC 1
+		armor=-150;				//V 1.5 = -60, H ?, RC -150
+		radius=0.85;			//V 0.85
+		minimalHit=0.1;			//V 0.1
+		explosionShielding=1;	//V 1, RC 1
 		passThrough=0;			//V 1
 		material=51;
 
 		name="fuel_hit";
 		convexComponent="fuel_hit";
-		visual="zbytek";
+		visual = "";
 	};
 	class HitAvionics
 	{
-		armor=-80;					//V 1.3 = -52, H ?, RC -80
-		radius=0.4;					//V 0.4
-		minimalHit=0.1;				//V 0.1, RC 0.1
-		explosionShielding=1;		//V 1.5, RC 1
+		armor=-80;					//V 0.15 = -6, H ?, RC -80
+		//radius=0.4;				//V NA
+		//minimalHit=0.1;			//V NA
+		explosionShielding=1;		//V 1, RC 1
 		passThrough=0;				//V 1, H ?
 		material=51;
 
@@ -76,7 +77,7 @@ class HitPoints: HitPoints
 		armor=-400;					//V 2.6 = -104, H 10.35, 10.35 = -414, RC = -400
 		radius=0.4;					//V 0.4, H 0.47, RC 0.4
 		minimalHit=0.1;				//V 0.09, H 0.1, RC 0.1
-		explosionShielding=1.75;	//V 2.5, H 3000, RC 1.75
+		explosionShielding=1.75;	//V 2, H 3000, RC 1.75
 		passThrough=0;				//V 0.1, H 0, RC 0
 		material=51;				//V 51, H 51
 
@@ -86,10 +87,10 @@ class HitPoints: HitPoints
 	};
 	class HitVRotor
 	{
-		armor=-200;					//V 1.3 = -52, H 0.054, 0.81 = -32.4, RC -200
-		radius=0.06;				//V 0.06, H 0.24
-		minimalHit=0.1;				//V 0.05, H 0.1, RC 0.1
-		explosionShielding=1;		//V 6, H 0.27, RC 1
+		armor=-400;					//V 2.6 = -104, H 0.054, 0.81 = -32.4, RC = -400
+		radius=0.4;					//V 0.4, H 0.47, RC 0.4
+		minimalHit=0.1;				//V 0.09, H 0.1, RC 0.1
+		explosionShielding=1.75;	//V 2, H 3000, RC 1.75
 		passThrough=0;				//V 0.3, H 0, RC 0
 		material=51;				//V 51, H 51
 
@@ -109,13 +110,13 @@ class HitPoints: HitPoints
 
 		name="engine_hit";
 		convexComponent="engine_hit";
-		visual="camo2";
+		visual="motor";
 	};
 	class HitEngine1
 	{
-		armor=-43.2;				//V 0.7 = -28, H 0.072, 1.08 = -43.2, RC -35.6
+		armor=-80;					//V 2 = -80, H 0.072, 1.08 = -43.2, RC -80
 		radius=0.35;				//V 0.35, H 0.59, RC 0.35
-		explosionShielding=1.73;	//V 3, H 0.46, RC 1.73
+		explosionShielding=1.5;		//V 2, H 0.46, RC 1.5
 		minimalHit=0.1;				//V 0.1, H 0.1
 		passThrough=0;				//V 1, H 0, RC 0
 		material=51;				//V 51, H 51
@@ -142,9 +143,9 @@ class HitPoints: HitPoints
 	};
 	class HitMissiles
 	{
-		armor=-28;					//V 0.7 = -28, H 0.036, 0.54 = -21.6, RC -28
-		radius=0.25;				//V 0.25, H 0.3, RC 0.25
-		minimalHit=0.05;			//V 0.05, H 0.1, RC 0.075
+		armor=-8;					//V 0.1 = -4, H 0.036, 0.54 = -21.6, RC -8
+		//radius=0.25;				//V NA
+		//minimalHit=0.05;			//V NA
 		explosionShielding=0.65;	//V 1, H 0.3, RC 0.65
 		passThrough=0;				//V 0.5, H 0, RC 0
 		material=51;				//V 51, H 51
@@ -155,7 +156,7 @@ class HitPoints: HitPoints
 	};
 	class HitGear		//landing gear or rotor gearbox?
 	{
-		armor=-60;		//V 0.9 = -36, RC -60
+		armor=-100;		//V 0.9 = -36, RC -100
 		passThrough=0;	//V 0
 		material=-1;
 
@@ -163,7 +164,7 @@ class HitPoints: HitPoints
 	};
 	class HitWinch
 	{
-		armor=-120;		//V -60
+		armor=-120;		//V -40
 		radius=0.1;
 		passThrough=0;	//V 0
 		material=51;
@@ -225,7 +226,7 @@ class HitPoints: HitPoints
 	};
 	class HitTransmission
 	{
-		armor=-48;		//V 0.8 = -32, RC -48
+		armor=-60;		//V 1.5 = -32, RC -60
 		passThrough=0;	//V 0.8
 		material=-1;
 
@@ -302,9 +303,9 @@ class HitPoints: HitPoints
 
 	class HitGlass1
 	{
-		armor=-52;				//V 1.3 = -52
-		radius=0.45;
-		explosionShielding=3;	//V 6
+		armor=-80;				//V 2 = -80
+		//radius=0.1;			//V NA
+		//explosionShielding=3;	//V NA
 		passThrough=0;
 		material=-1;
 
@@ -320,13 +321,11 @@ class HitPoints: HitPoints
 	};
 	class HitGlass3: HitGlass1
 	{
-		radius=0.35;
-
 		name="glass3";
 		convexComponent="glass3";
 		visual="glass3";
 	};
-	class HitGlass4: HitGlass3
+	class HitGlass4: HitGlass1
 	{
 		name="glass4";
 		convexComponent="glass4";
@@ -334,69 +333,144 @@ class HitPoints: HitPoints
 	};
 	class HitGlass5: HitGlass1
 	{
-		radius=0.46;
-
 		name="glass5";
 		convexComponent="glass5";
 		visual="glass5";
 	};
-	class HitGlass6: HitGlass5
+	class HitGlass6: HitGlass1
 	{
 		name="glass6";
 		convexComponent="glass6";
 		visual="glass6";
 	};
-	class HitGlass7: HitGlass1
-	{
-		radius=0.2;
 
-		name="glass7";
-		convexComponent="glass7";
-		visual="glass7";
-	};
-	class HitGlass8: HitGlass7
-	{
-		name="glass8";
-		convexComponent="glass8";
-		visual="glass8";
-	};
-	class HitGlass9: HitGlass1
-	{
-		radius=0.42;
 
-		name="glass9";
-		convexComponent="glass9";
-		visual="glass9";
-	};
-	class HitGlass10: HitGlass9
+	class Glass_1_hitpoint
 	{
-		name="glass10";
-		convexComponent="glass10";
-		visual="glass10";
+		armor=-80;				//V 2 = -80
+		radius=0.1;				//V 0.1
+		//explosionShielding=3;	//V NA
+		passThrough=0;
+		material=-1;
+
+		name="Glass_1";
+		convexComponent="Glass_1_hit";
+		visual="Glass_1";
+
+		class DestructionEffects {};
 	};
-	class HitGlass11: HitGlass9
+	class Glass_2_hitpoint: Glass_1_hitpoint
 	{
-		name="glass11";
-		convexComponent="glass11";
-		visual="glass11";
+		name="Glass_2";
+		convexComponent="Glass_2_hit";
+		visual="Glass_2";
 	};
-	class HitGlass12: HitGlass9
+	class Glass_3_hitpoint: Glass_1_hitpoint
 	{
-		name="glass12";
-		convexComponent="glass12";
-		visual="glass12";
+		name="Glass_3";
+		convexComponent="Glass_3_hit";
+		visual="Glass_3";
 	};
-	class HitGlass13: HitGlass6
+	class Glass_4_hitpoint: Glass_1_hitpoint
 	{
-		name="glass13";
-		convexComponent="glass13";
-		visual="glass13";
-		radius=0.33000001;
+		name="Glass_4";
+		convexComponent="Glass_4_hit";
+		visual="Glass_4";
 	};
-	class HitGlass14: HitGlass13
+	class Glass_5_hitpoint: Glass_1_hitpoint
 	{
-		name="glass14";
-		convexComponent="glass14";
-		visual="glass14";
+		name="Glass_5";
+		convexComponent="Glass_5_hit";
+		visual="Glass_5";
+	};
+	class Glass_6_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_6";
+		convexComponent="Glass_6_hit";
+		visual="Glass_6";
+	};
+	class Glass_7_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_7";
+		convexComponent="Glass_7_hit";
+		visual="Glass_7";
+	};
+	class Glass_8_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_8";
+		convexComponent="Glass_8_hit";
+		visual="Glass_8";
+	};
+	class Glass_9_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_9";
+		convexComponent="Glass_9_hit";
+		visual="Glass_9";
+	};
+	class Glass_10_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_10";
+		convexComponent="Glass_10_hit";
+		visual="Glass_10";
+	};
+	class Glass_11_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_11";
+		convexComponent="Glass_11_hit";
+		visual="Glass_11";
+	};
+	class Glass_12_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_12";
+		convexComponent="Glass_12_hit";
+		visual="Glass_12";
+	};
+	class Glass_13_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_13";
+		convexComponent="Glass_13_hit";
+		visual="Glass_13";
+	};
+	class Glass_14_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_14";
+		convexComponent="Glass_14_hit";
+		visual="Glass_14";
+	};
+	class Glass_15_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_15";
+		convexComponent="Glass_15_hit";
+		visual="Glass_15";
+	};
+	class Glass_16_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_16";
+		convexComponent="Glass_16_hit";
+		visual="Glass_16";
+	};
+	class Glass_17_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_17";
+		convexComponent="Glass_17_hit";
+		visual="Glass_17";
+	};
+	class Glass_18_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_18";
+		convexComponent="Glass_18_hit";
+		visual="Glass_18";
+	};
+	class Glass_19_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_19";
+		convexComponent="Glass_19_hit";
+		visual="Glass_19";
+	};
+	class Glass_20_hitpoint: Glass_1_hitpoint
+	{
+		name="Glass_20";
+		convexComponent="Glass_20_hit";
+		visual="Glass_20";
 	};
 };
