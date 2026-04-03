@@ -5,7 +5,7 @@
 #include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 lockDetectionSystem="2+4+8";
-//RC_ATrespondingTurret[] = {1};
+//RC_ATrespondingTurret[]={1};
 
 weapons[]=
 {
@@ -52,19 +52,36 @@ ace_refuel_flowRate=8;	//8
 ace_refuel_fuelCapacity=3000;	//t ?, ch 3914
 */
 
+//memoryPointDriverOptics="Supply_pos";
 //memoryPointDriverOptics="Driver_dir";
+//memoryPointDriverOptics="Driver_pos";
+//memoryPointDriverOptics="Slingload_cam";
 
 class Viewoptics: ViewOptics
 {
-	initAngleX=0;
-	minAngleX=0;
-	maxAngleX=0;
-	initAngleY=0;
-	minAngleY=0;
-	maxAngleY=0;
+	speedZoomMaxFOV=0;
+	speedZoomMaxSpeed=1e+10;
+
 	minFov=0.25;
-	maxFov=1.5;
-	initFov=1.5;
+	maxFov=2;	//1.5
+	initFov=2;	//1.5
+
+	initAngleX=0;
+	minAngleX=0; //-40
+	maxAngleX=0; //17
+
+	initAngleY=0;
+	minAngleY=0;	//-100
+	maxAngleY=0;	//100
+
+	minMoveZ=0;
+	minMoveY=0;
+	minMoveX=0;
+
+	maxMoveZ=0;
+	maxMoveY=0;
+	maxMoveX=0;
+
 	visionMode[]=
 	{
 		"Normal",
@@ -74,6 +91,7 @@ class Viewoptics: ViewOptics
 	thermalMode[]={0};
 };
 
+/*
 class ViewPilot: ViewPilot
 {
 	initAngleX=0;
@@ -93,6 +111,7 @@ class ViewPilot: ViewPilot
 	};
 	thermalMode[]={0};
 };
+*/
 
 class pilotCamera
 {
@@ -100,22 +119,41 @@ class pilotCamera
 	unitInfoType="RC_RscOptics_AV_Heli";
 	unitInfoTypeRTD="RC_RscOptics_AV_Heli";
 
+	controllable=0;	//test 1
+	pilotOpticsShowCursor=1;	//?
+	//stabilizedInAxes=3;
+	//directionStabilized=0;
+
+	minTurn=0;
+	maxTurn=0;
+	initTurn=0;
+
+	minElev=80;
+	maxElev=80;
+	initElev=80;
+
+	maxXRotSpeed=0.5;
+	maxYRotSpeed=0.5;
+
 	class OpticsIn
 	{
 		class Wide
 		{
-			opticsDisplayName="W";
+			opticsDisplayName="V";
+			//stabilizedInAxes=3;
+			//directionStabilized=1;
+
+			minFov=0.025;
+			maxFov=2;	//1.5
+			initFov=2;	//1.5
+
 			initAngleX=0;
 			minAngleX=0;
 			maxAngleX=0;
 			initAngleY=0;
 			minAngleY=0;
 			maxAngleY=0;
-			minFov=0.025;
-			maxFov=1.5;
-			initFov=1.5;
-			directionStabilized=0;
-			//directionStabilized=1;
+
 			visionMode[]=
 			{
 				"Normal",
@@ -129,16 +167,6 @@ class pilotCamera
 		showUAVViewpInOptics=0;
 		showSlingLoadManagerInOptics=1;
 	};
-	minTurn=0;
-	maxTurn=0;
-	initTurn=0;
-	minElev=80;
-	maxElev=80;
-	initElev=80;
-	maxXRotSpeed=0.5;
-	maxYRotSpeed=0.5;
-	pilotOpticsShowCursor=1;
-	controllable=0;	//test 1
 };
 
 //cargoCanControlUAV=1;

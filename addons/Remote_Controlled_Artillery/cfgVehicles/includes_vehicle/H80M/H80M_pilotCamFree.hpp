@@ -2,6 +2,7 @@ class pilotCamera
 {
 	controllable=1;				//can turn camera
 	pilotOpticsShowCursor=1;	//?
+	//directionStabilized=1;
 	stabilizedInAxes=3;
 
 	minTurn=-360;

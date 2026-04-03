@@ -22,6 +22,12 @@ class CopilotTurret: CopilotTurret
 	//minCamElev=-90;
 	//maxCamElev=90;
 
+	maxHorizontalRotSpeed=4;	//3
+	maxVerticalRotSpeed=4;		//3
+
+	memoryPointGunnerOptics="Copilot_view_dir";
+	memoryPointGun="Copilot_view_pos";
+	
 	gunnerAction="pilot_Heli_Transport_04";
 	proxyIndex=1;
 	hideWeaponsGunner=1;
@@ -37,9 +43,7 @@ class CopilotTurret: CopilotTurret
 	animationSourceGun="Optics_1_muzzle_source";
 	gunBeg="Copilot_view_dir";
 	gunEnd="Copilot_view_pos";
-	memoryPointGun="Copilot_view_pos";
-	memoryPointGunnerOptics="Copilot_view_dir";
-	gunnerName="$STR_A3_COPILOT";
+	gunnerName="Optional Pilot";
 	/*
 	minElev=-40;
 	maxElev=20;
@@ -77,10 +81,12 @@ class CopilotTurret: CopilotTurret
 	inGunnerMayFire=1;
 	gunnerOpticsEffect[]={};
 	gunnerOpticsModel="";
+
 	class ViewGunner: ViewPilot
 	{
 		initAngleX=-16;
 	};
+
 	class OpticsIn
 	{
 		class Wide
@@ -106,6 +112,7 @@ class CopilotTurret: CopilotTurret
 			//gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_wide_F";
 		};
 	};
+
 	class OpticsOut
 	{
 		class Monocular
@@ -130,6 +137,7 @@ class CopilotTurret: CopilotTurret
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 		};
 	};
+
 	/*
 	loadercamera attemt, didnt work as optics cannot be changed button wise, or other reason
 
