@@ -45,6 +45,41 @@ ejectDeadDriver=0;
 ejectDeadCommander=0;
 crewCrashProtection=0.01;
 
+//UAV Operator seat test
+hideWeaponsCargo=1;
+cargoIsCoDriver[]={0};
+transportSoldier=1;
+
+memoryPointsGetInCargo = "pos cargo";
+memoryPointsGetInCargoDir = "pos cargo dir";
+memoryPointsGetInCargoPrecise[] = {"pos cargo"};
+cargoCompartments[] = {"Compartment1"};
+cargoGetInAction[] = {"GetInLow"};
+cargoGetOutAction[] = {"GetOutLow"};
+//cargoProxyIndexes[] = {};
+cargoAction[] = {"passenger_flatground_leanleft","passenger_flatground_generic01","passenger_flatground_generic02","passenger_flatground_generic03","passenger_flatground_generic04","passenger_flatground_generic05"};
+
+/*
+//AMV not Abr: features="Randomization: No						<br />Camo selections: 3 - top of hull, bottom of hull, turret						<br />Script door sources: None						<br />Script animations: HideTurret						<br />Executed scripts: None 						<br />Firing from vehicles: No						<br />Slingload: No						<br />Cargo proxy indexes: 1 to 8";
+
+memoryPointsGetInGunner = "pos commander";
+memoryPointsGetInGunnerDir = "pos commander dir";
+memoryPointsGetInGunnerPrecise = "";
+
+cargoGetInAction[]=
+{
+	"GetInHigh"
+};
+cargoGetOutAction[]=
+{
+	"GetOutHigh"
+};
+
+memoryPointsGetInCoDriver = "pos codriver";
+memoryPointsGetInCoDriverDir = "pos codriver dir";
+*/
+
+
 //experimental values for testing, maybe removed later
 armor=800;
 //armorStructural=5;	//5
@@ -568,6 +603,66 @@ class Turrets: Turrets
 					};
 				};
 			};
+
+			/*
+			class CommanderOptics2
+			{
+				//#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander_600m_cUAS.hpp"
+				dontCreateAI=1;
+				canAccessMineDetector=1;
+				showAllTargets="2 + 4";
+				commanding=0;
+				maxElev=50;
+				turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+				gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+
+				gunnerName = "UAV Operator";
+				memoryPointGunnerOptics = "commanderview";
+				startEngine = 0;
+				gunnerForceOptics=1;
+				memoryPointsGetInGunner = "pos commander";
+				memoryPointsGetInGunnerDir = "pos commander dir";
+				memoryPointsGetInGunnerPrecise = "";
+				*/
+
+				/*
+				maxCamElev = 90;
+				maxTurn = 360;
+				minElev = -20;	
+				maxElev = 40;
+				maxTurn = 360;	
+				minTurn = -360;
+				maxHorizontalRotSpeed = 1;
+				maxVerticalRotSpeed = 1;
+				*/
+
+				/*
+				class OpticsIn
+				{
+					class Wide: RCWSOptics
+					{
+						initAngleX=0;
+						minAngleX=-30;
+						maxAngleX=30;
+						initAngleY=0;
+						minAngleY=-100;
+						maxAngleY=100;
+
+						initFov=0.9;
+						minFov=0.01;
+						maxFov=0.9;
+						visionMode[]=
+						{
+							"Normal",
+							"TI"
+						};
+						thermalMode[]={0};
+						gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+						gunnerOpticsEffect[]={};
+					};
+				};
+			};
+			*/
 		};
 
 		class Components: Components
