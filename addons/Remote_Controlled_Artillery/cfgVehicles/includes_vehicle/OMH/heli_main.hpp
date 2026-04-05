@@ -57,7 +57,7 @@ ace_refuel_fuelCapacity=3000;	//t ?, ch 3914
 //memoryPointDriverOptics="Driver_pos";
 //memoryPointDriverOptics="Slingload_cam";
 
-class Viewoptics: ViewOptics
+class Viewoptics
 {
 	speedZoomMaxFOV=0;
 	speedZoomMaxSpeed=1e+10;
