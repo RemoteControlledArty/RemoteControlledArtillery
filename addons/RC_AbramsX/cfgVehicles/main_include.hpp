@@ -45,6 +45,7 @@ ejectDeadDriver=0;
 ejectDeadCommander=0;
 crewCrashProtection=0.01;
 
+/*
 class CargoTurret
 {
     class TurnIn
@@ -54,6 +55,7 @@ class CargoTurret
     class ViewGunner
     class ViewOptics
 };
+*/
 
 /*
 //UAV Operator seat test
@@ -734,6 +736,11 @@ class Turrets: Turrets
 						};
 					};
 				};
+			};
+
+			class AdvisorOptics
+			{
+				#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
 			};
 
 			/*

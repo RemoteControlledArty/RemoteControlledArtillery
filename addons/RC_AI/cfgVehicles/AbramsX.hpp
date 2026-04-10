@@ -4,6 +4,7 @@ class RC_AI_B_AbramsX_WD_Core: RC_AbramsX_WD
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
+	class AdvisorOptics;
 	class AnimationSources;
 	class Components;
 	class UserActions;
@@ -81,6 +82,8 @@ class RC_AI_B_AbramsX_WD_Base: RC_AI_B_AbramsX_WD_Core
 						"qav_SmokeLauncher"
 					};
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -153,6 +156,8 @@ class RC_AI_B_AbramsX_WD: RC_AI_B_AbramsX_WD_Base
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_AbramsX_com_red.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -175,6 +180,8 @@ class RC_AI_O_AbramsX_WD: RC_AI_B_AbramsX_WD
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_AbramsX_com_green.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -197,6 +204,8 @@ class RC_AI_I_AbramsX_WD: RC_AI_B_AbramsX_WD
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_AbramsX_com_yellow.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -234,6 +243,8 @@ class RC_AI_O_AbramsX_A: RC_AI_B_AbramsX_A
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_AbramsX_com_green.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -256,6 +267,8 @@ class RC_AI_I_AbramsX_A: RC_AI_B_AbramsX_A
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_AbramsX_com_yellow.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};

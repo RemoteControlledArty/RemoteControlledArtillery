@@ -84,6 +84,8 @@ class RC_AbramsX_Twin_WD: RC_AbramsX_Twin_Base
 					};
 					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_comtwin_red.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -108,6 +110,8 @@ class RC_AbramsX_Twin_WD_O: RC_AbramsX_Twin_WD
 				{
 					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_comtwin_green.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -132,6 +136,8 @@ class RC_AbramsX_Twin_WD_I: RC_AbramsX_Twin_WD
 				{
 					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_comtwin_yellow.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -171,6 +177,8 @@ class RC_AbramsX_Twin_A_O: RC_AbramsX_Twin_A
 				{
 					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_comtwin_green.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -195,6 +203,8 @@ class RC_AbramsX_Twin_A_I: RC_AbramsX_Twin_A
 				{
 					#include "\RC_AbramsX\includes_vicmags\mags_AbramsX_comtwin_yellow.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
