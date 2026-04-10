@@ -2,6 +2,7 @@ class I_MBT_03_cannon_F;
 class RC_MBT_2_Base: I_MBT_03_cannon_F
 {
 	class Turrets;
+	class NewTurret; //test
 	class MainTurret;
 	class CommanderOptics;
 	class ViewOptics;
@@ -175,6 +176,157 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 						};
 					};
 				};
+
+				class ObserverTurret : NewTurret {
+					// --- 1. MANDATORY ENGINE LINK ---
+					// We use the Gunner's optics point but "lock" the turret
+					body = "";
+					gun = "";
+					animationSourceBody = "";
+					animationSourceGun = "";
+					
+					// --- 2. THE ACCESS FIX ---
+					gunnerName = "Observer Seat";
+					hasGunner = 1;
+					primaryGunner = 0;
+					primaryObserver = 0;
+					commanding = -1;
+					proxyIndex = 7; // High index to avoid Kuma's internal proxies
+					
+					// Use Commander's entry points (often more reliable for sub-turrets)
+					memoryPointsGetInGunner = "pos_commander";
+					memoryPointsGetInGunnerDir = "pos_commander_dir";
+
+					// --- 3. VISION & POSITION ---
+					gunnerAction = "driver_closed";
+					gunnerInAction = "driver_closed";
+					forceHideGunner = 1;
+					gunnerForceOptics = 1;
+					// Ties the camera to the main gunner's view
+					memoryPointGunnerOptics = "gunnerview"; 
+					gunnerOpticsModel = "\A3\Weapons_F\Reticle\optics_empty.p3d";
+
+					// --- 4. ENGINE STABILITY FLAGS ---
+					// These flags help the engine accept a turret with no 3D proxy
+					canHideGunner = -1;
+					isPersonTurret = 0;
+					showAsCargo = 0; 
+					allowTabLock = 0;
+					stopBinocular = 1;
+
+					class ViewOptics {
+						initAngleX = 0; minAngleX = 0; maxAngleX = 0;
+						initAngleY = 0; minAngleY = 0; maxAngleY = 0;
+						initFov = 0.7;  minFov = 0.25; maxFov = 1.25;
+						visionMode[] = {"Normal", "NVG", "Ti"};
+					};
+
+					// Ensure no weapons conflict
+					weapons[] = {};
+					magazines[] = {};
+				};
+				
+				/*
+				// Now we add your custom seat
+				class ObserverTurret : NewTurret {
+					// 1. ENGINE & HIERARCHY
+					body = "";
+					gun = "";
+					animationSourceBody = "";
+					animationSourceGun = "";
+					
+					// 2. IDENTITY
+					gunnerName = "Observer Seat"; 
+					hasGunner = 1;
+					primaryGunner = 0;
+					primaryObserver = 0; 
+					commanding = -1;
+					dontCreateAI = 1; // Prevents AI from stealing the seat
+					
+					// 3. THE ENTRY FIX
+					// These tell Arma to use the Gunner's "Get In" spots for this seat
+					memoryPointsGetInGunner = "pos_gunner";
+					memoryPointsGetInGunnerDir = "pos_gunner_dir";
+					gunnerGetInAction = "GetInAMV";
+					gunnerGetOutAction = "GetOutLow";
+
+					// 4. CHARACTER SETUP
+					proxyType = "CPGunner";
+					proxyIndex = 3; // Index 1 is Gunner, Index 2 is Commander
+					forceHideGunner = 1;
+					castGunnerShadow = 0;
+					viewGunnerInExternal = 0;
+					gunnerAction = "driver_closed"; 
+					gunnerInAction = "driver_closed";
+					
+					// 5. OPTICS (Fixed to Main Gun)
+					memoryPointGunnerOptics = "gunnerview"; 
+					gunnerOpticsModel = "\A3\Weapons_F\Reticle\optics_empty.p3d";
+					gunnerForceOptics = 1; 
+					usePip = 0;
+
+					class ViewOptics {
+						initAngleX = 0; minAngleX = 0; maxAngleX = 0;
+						initAngleY = 0; minAngleY = 0; maxAngleY = 0;
+						initFov = 0.7;  minFov = 0.25; maxFov = 1.25;
+						visionMode[] = {"Normal", "NVG", "Ti"};
+					};
+
+					weapons[] = {};
+					magazines[] = {};
+				};
+				*/
+
+				/*
+				// We keep the CommanderOptics (usually index 0 in sub-turrets)
+				// and add our Observer as a secondary sub-turret.
+				class ObserverTurret : NewTurret {
+					// 1. ENGINE & HIERARCHY
+					body = "";
+					gun = "";
+					animationSourceBody = "";
+					animationSourceGun = "";
+					
+					// 2. IDENTITY & ACCESS
+					gunnerName = "Observer Seat"; 
+					hasGunner = 1;
+					primaryGunner = 0;
+					primaryObserver = 0; // Set to 0 to avoid stealing Commander's spotting UI
+					commanding = -1;
+					
+					// 3. THE "PHANTOM" FIX
+					// Use a high proxyIndex so it doesn't try to sit in the Gunner's lap
+					proxyType = "CPGunner";
+					proxyIndex = 10; 
+					forceHideGunner = 1;
+					castGunnerShadow = 0;
+					viewGunnerInExternal = 0;
+					
+					// 4. OPTICS (Locked to Gunner)
+					memoryPointGunnerOptics = "gunnerview"; 
+					gunnerOpticsModel = "\A3\Weapons_F\Reticle\optics_empty.p3d";
+					gunnerForceOptics = 1; 
+					usePip = 0;
+
+					// 5. LIMITS (Prevents the camera from 'detaching' from the gunner's view)
+					minElev = -90; maxElev = 90;
+					minTurn = -360; maxTurn = 360;
+					initElev = 0; initTurn = 0;
+
+					class ViewOptics {
+						initAngleX = 0; minAngleX = 0; maxAngleX = 0;
+						initAngleY = 0; minAngleY = 0; maxAngleY = 0;
+						initFov = 0.7;  minFov = 0.25; maxFov = 1.25;
+						visionMode[] = {"Normal", "NVG", "Ti"};
+					};
+
+					// Empty Weapons
+					weapons[] = {};
+					magazines[] = {};
+				};
+				*/
+
+
 				/*
 				class AdvisorOptics: CommanderOptics
 				{

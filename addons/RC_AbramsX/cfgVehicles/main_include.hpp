@@ -45,6 +45,17 @@ ejectDeadDriver=0;
 ejectDeadCommander=0;
 crewCrashProtection=0.01;
 
+class CargoTurret
+{
+    class TurnIn
+    class TurnOut
+    class Turrets
+    class TurretSpec
+    class ViewGunner
+    class ViewOptics
+};
+
+/*
 //UAV Operator seat test
 hideWeaponsCargo=1;
 cargoIsCoDriver[]={0};
@@ -58,6 +69,7 @@ cargoGetInAction[] = {"GetInLow"};
 cargoGetOutAction[] = {"GetOutLow"};
 //cargoProxyIndexes[] = {};
 cargoAction[] = {"passenger_flatground_leanleft","passenger_flatground_generic01","passenger_flatground_generic02","passenger_flatground_generic03","passenger_flatground_generic04","passenger_flatground_generic05"};
+*/
 
 /*
 //AMV not Abr: features="Randomization: No						<br />Camo selections: 3 - top of hull, bottom of hull, turret						<br />Script door sources: None						<br />Script animations: HideTurret						<br />Executed scripts: None 						<br />Firing from vehicles: No						<br />Slingload: No						<br />Cargo proxy indexes: 1 to 8";
@@ -456,6 +468,126 @@ class Turrets: Turrets
 				gunnerOpticsEffect[]={};
 			};
 		};
+
+		/*
+		class ObserverTurret: NewTurret {
+			// 1. ENGINE STABILITY (No Physical Model Link)
+			body = "";
+			gun = "";
+			animationSourceBody = "";
+			animationSourceGun = "";
+			
+			// 2. VIEWPORT & CAMERA
+			// We bind it to a point that definitely exists on most models
+			memoryPointGunnerOptics = "gunnerview"; 
+			gunnerOpticsModel = "\A3\Weapons_F\Reticle\optics_empty.p3d";
+			gunnerForceOptics = 1; // Direct to optics, bypasses internal view
+			usePip = 0;            // Keeps it simple/performance friendly
+			
+			// 3. SEAT IDENTITY
+			gunnerName = "Observer"; // Name in action menu
+			primaryGunner = 0;                 // Not the main shooter
+			primaryObserver = 1;               // This seat can mark targets
+			commanding = -1;                   // Does not override commander
+			hasGunner = 1;
+			
+			// 4. CHARACTER POSITIONING (The "Phantom" setup)
+			// Since there's no proxy, we hide them to prevent clipping
+			proxyType = "CPGunner";
+			proxyIndex = 1;
+			forceHideGunner = 1;
+			castGunnerShadow = 0;
+			viewGunnerInExternal = 0;
+			gunnerAction = "driver_closed"; 
+			gunnerInAction = "driver_closed";
+			
+			// 5. WEAPONS (Empty)
+			weapons[] = {};
+			magazines[] = {};
+			
+			// 6. LOCKING THE OPTIC (No movement)
+			// These blocks ensure the camera is static and bound to the memory point
+			class ViewOptics {
+				initAngleX = 0; minAngleX = 0; maxAngleX = 0;
+				initAngleY = 0; minAngleY = 0; maxAngleY = 0;
+				initFov = 0.7;  minFov = 0.25; maxFov = 1.25;
+				visionMode[] = {"Normal", "NVG", "Ti"};
+			};
+
+			class OpticsIn {
+				class Wide {
+					opticsDisplayName = "W";
+					initAngleX = 0; minAngleX = 0; maxAngleX = 0;
+					initAngleY = 0; minAngleY = 0; maxAngleY = 0;
+					initFov = 0.466; minFov = 0.466; maxFov = 0.466;
+					visionMode[] = {"Normal", "NVG", "Ti"};
+					gunnerOpticsModel = "\A3\Weapons_F\Reticle\optics_empty.p3d";
+				};
+			};
+		};
+		*/
+
+		/*
+		class UavTurret: MainTurret
+		{
+			// 1. SEVER TIES TO THE 3D MODEL
+			// Leaving these empty tells the engine not to look for rotation bones
+			body = "";
+			gun = "";
+			animationSourceBody = "";
+			animationSourceGun = "";
+
+			// 2. OPTICS & VIEWPOINT
+			// Bind the camera to an existing memory point on the model
+			memoryPointGunnerOptics = "memoryPointGunnerView"; // Or any existing point like "pos_gunner_view"
+			gunnerForceOptics = 1;       // Forces them into the optic view immediately
+			forceHideGunner = 1;         // Prevents turning out
+			viewGunnerInExternal = 0;    // Disables 3rd person view for this seat
+			memoryPointGunnerOutOptics = ""; 
+
+			// 3. SEAT PROPERTIES
+			hasGunner = 1;
+			gunnerName = "Observer";     // What shows up in the action menu
+			primaryGunner = 0;
+			primaryObserver = 1;         // Good practice for non-weapon utility seats
+			commanding = -1;             // Low priority for vehicle command
+
+			// 4. HIDE THE PHYSICAL CHARACTER
+			// Since there is no proxy in the .p3d for this seat, the unit will spawn at [0,0,0].
+			// We use enclosed generic animations to bunch them up, and turn off their shadow/weapons.
+			proxyType = "CPCommander";   // Use CPCommander or CPGunner
+			proxyIndex = 1;              // Arbitrary, since it likely doesn't exist in the p3d
+			gunnerAction = "driver_closed"; 
+			gunnerInAction = "driver_closed";
+			castGunnerShadow = 0;
+			hideWeaponsGunner = 1;
+
+			// 5. WEAPONS (Optional)
+			weapons[] = {};
+			magazines[] = {};
+
+			// 6. OPTICS CONFIGURATION
+			class OpticsIn {
+				class FixedView {
+					// If you want the optic to be purely fixed (not user movable), lock the angles to 0
+					initAngleX = 0;
+					minAngleX = 0;
+					maxAngleX = 0;
+					initAngleY = 0;
+					minAngleY = 0;
+					maxAngleY = 0;
+					
+					initFov = 0.7;
+					minFov = 0.25;
+					maxFov = 1.25;
+					
+					visionMode[] = {"Normal", "NVG", "Ti"};
+					thermalMode[] = {0, 1};
+					gunnerOpticsModel = "\A3\weapons_f\reticle\optics_empty"; // Standard empty screen
+				};
+			};
+		};
+		*/
 		
 		class Turrets: Turrets
 		{
@@ -603,6 +735,24 @@ class Turrets: Turrets
 					};
 				};
 			};
+
+			/*
+			class CommanderOptics2: CommanderOptics
+			{
+				gunnerName = "UAV Operator";
+
+				memoryPointsGetInGunner = "pos cargo";
+				memoryPointsGetInGunnerDir = "pos cargo dir";
+				memoryPointsGetInGunnerPrecise = "pos cargo";
+				gunnerCompartments = "Compartment1";
+				gunnerGetInAction = "GetInLow";
+				gunnerGetOutAction = "GetOutLow";
+				//cargoProxyIndexes[] = {};
+				gunnerAction = "Commander_MBT_04_out";
+
+				//gunnerUsesPilotView = 0;
+			};
+			*/
 
 			/*
 			class CommanderOptics2
