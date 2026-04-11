@@ -2,8 +2,6 @@ class I_MBT_03_cannon_F;
 class RC_MBT_2_Base: I_MBT_03_cannon_F
 {
 	class Turrets;
-	class NewTurret; //test
-	class CargoTurret; //test
 	class MainTurret;
 	class CommanderOptics;
 	class ViewOptics;
@@ -85,107 +83,6 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
 	};
 
-	/*
-	class CargoTurret: CargoTurret
-	{
-		memoryPointGunnerOptics = "gunnerview";
-		gunnerCompartments="Compartment1";
-		turretInfoType = "";
-		dontCreateAI = 1;
-
-		gunnerForceOptics = 1;
-		isPersonTurret = 1;
-		playerPosition = 1;
-
-		primaryGunner = 0;
-		primaryObserver = 0;
-		showAsCargo = 1;
-		startEngine = 0;
-		
-		//class TurnIn
-		//class TurnOut
-		//class Turrets
-		//class TurretSpec
-
-		class ViewGunner
-		{
-			initAngleX = 0;
-			initAngleY = 0;
-			initFov = 0.3;
-			maxAngleX = 30;	
-			maxAngleY = 100;
-			maxFov = 0.35;		
-			maxMoveX = 0;
-			maxMoveY = 0;
-			maxMoveZ = 0;
-			minAngleX = -30;
-			minAngleY = -100;
-			minFov = 0.07;
-			minMoveX = 0;
-			minMoveY = 0;
-			minMoveZ = 0;
-			speedZoomMaxFOV = 0;
-			speedZoomMaxSpeed = 1e+10;
-
-			visionMode[]=
-			{
-				"Normal",
-				"TI"
-			};
-			thermalMode[]={0};
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-			gunnerOpticsEffect[]={};
-		};
-		class ViewOptics
-		{
-			initAngleX = 0;
-			initAngleY = 0;
-			initFov = 0.3;
-			maxAngleX = 30;	
-			maxAngleY = 100;
-			maxFov = 0.35;		
-			maxMoveX = 0;
-			maxMoveY = 0;
-			maxMoveZ = 0;
-			minAngleX = -30;
-			minAngleY = -100;
-			minFov = 0.07;
-			minMoveX = 0;
-			minMoveY = 0;
-			minMoveZ = 0;
-			speedZoomMaxFOV = 0;
-			speedZoomMaxSpeed = 1e+10;
-
-			visionMode[]=
-			{
-				"Normal",
-				"TI"
-			};
-			thermalMode[]={0};
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-			gunnerOpticsEffect[]={};
-		};
-	};
-	*/
-
-	/*
-	//UAV Operator seat test
-	hideWeaponsCargo=1;
-	cargoIsCoDriver[]={0};
-	transportSoldier=1;
-
-	memoryPointsGetInCargo = "pos cargo";
-	memoryPointsGetInCargoDir = "pos cargo dir";
-	memoryPointsGetInCargoPrecise[] = {"pos cargo"};
-	cargoCompartments[] = {"Compartment1"};
-	cargoGetInAction[] = {"GetInLow"};
-	cargoGetOutAction[] = {"GetOutLow"};
-	//cargoProxyIndexes[] = {};
-	cargoAction[] = {"passenger_flatground_leanleft"};
-	*/
-
-
-
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -208,28 +105,19 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+
 					minAngleX=-30;
 					maxAngleX=30;
-					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
 
 					initFov=0.4;
 					minFov=0.02;
 					maxFov=0.4;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_01_m_F.p3d";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_m_F.p3d";
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
 			
@@ -238,45 +126,64 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 				class AdvisorOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+
+					gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+
+					class OpticsIn
+					{
+						class Gun1
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+
+							minAngleX=-30;	//?
+							maxAngleX=30;	//?
+							minAngleY=-100;	//?
+							maxAngleY=100;	//?
+
+							initFov=0.4;
+							minFov=0.4;
+							maxFov=0.4;
+						};
+						class Gun2: Gun1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Gun3: Gun1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+
+						class Com1: Gun1
+						{
+							camPos="commanderview";
+							//camDir="commanderview_dir";
+							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_02_F";
+
+							initFov=0.9;
+							minFov=0.9;
+							maxFov=0.9;
+						};
+						class Com2: Com1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Com3: Com1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+					};
 				};
-
-				
-				/*
-				class UavTurret: MainTurret
-				{
-					proxyType = "CPCargo";	//proxyType = "CPGunner";	//proxyType = "CPCommander";
-					proxyIndex = 1;
-
-					// 1. Tell the engine this seat accepts a human
-					hasGunner = 1;
-					dontCreateAI = 1; // Prevents AI from taking the seat
-					//proxyIndex = 1;   // Links to 'proxy:cargo.001'
-					
-					// 2. This is the exact text that appears in the scroll wheel
-					gunnerName = "UAV Operator"; 
-					
-					// 3. Prevent conflicts with the actual tank crew
-					primaryGunner = 0;
-					primaryObserver = 0;
-					commanding = -1; // Stops this seat from taking control of AI
-					
-					// 4. Where does the player stand to see the action menu?
-					// You MUST use memory points that actually exist on the tank's .p3d model.
-					// If "pos gunner" is taken, try "pos cargo" or "pos driver".
-					memoryPointsGetInGunner = "pos cargo"; 
-					memoryPointsGetInGunnerDir = "pos cargo dir";
-
-					memoryPointsGetInGunnerPrecise = "pos cargo";
-					gunnerCompartments = "Compartment1";
-					
-					// 5. Interaction radius (how close you need to be)
-					radius = 10; //5
-					
-					// 6. Animation state when sitting
-					gunnerAction = "passenger_flatground_leanleft"; 
-					gunnerInAction = "passenger_flatground_leanleft";
-				};
-				*/
 
 				class CommanderOptics: CommanderOptics
 				{
@@ -299,355 +206,22 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 					{
 						class Wide: RCWSOptics
 						{
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_m_F.p3d";
-							gunnerOpticsEffect[]={};
-						};
-					};
-				};
 
-				/*
-				class ObserverTurret : NewTurret {
-					// --- 1. MANDATORY ENGINE LINK ---
-					// We use the Gunner's optics point but "lock" the turret
-					body = "";
-					gun = "";
-					animationSourceBody = "";
-					animationSourceGun = "";
-					
-					// --- 2. THE ACCESS FIX ---
-					gunnerName = "Observer Seat";
-					hasGunner = 1;
-					primaryGunner = 0;
-					primaryObserver = 0;
-					commanding = -1;
-					proxyIndex = 7; // High index to avoid Kuma's internal proxies
-					
-					// Use Commander's entry points (often more reliable for sub-turrets)
-					memoryPointsGetInGunner = "pos_commander";
-					memoryPointsGetInGunnerDir = "pos_commander_dir";
-
-					// --- 3. VISION & POSITION ---
-					gunnerAction = "driver_closed";
-					gunnerInAction = "driver_closed";
-					forceHideGunner = 1;
-					gunnerForceOptics = 1;
-					// Ties the camera to the main gunner's view
-					memoryPointGunnerOptics = "gunnerview"; 
-					gunnerOpticsModel = "\A3\Weapons_F\Reticle\optics_empty.p3d";
-
-					// --- 4. ENGINE STABILITY FLAGS ---
-					// These flags help the engine accept a turret with no 3D proxy
-					canHideGunner = -1;
-					isPersonTurret = 0;
-					showAsCargo = 0; 
-					allowTabLock = 0;
-					stopBinocular = 1;
-
-					class ViewOptics {
-						initAngleX = 0; minAngleX = 0; maxAngleX = 0;
-						initAngleY = 0; minAngleY = 0; maxAngleY = 0;
-						initFov = 0.7;  minFov = 0.25; maxFov = 1.25;
-						visionMode[] = {"Normal", "NVG", "Ti"};
-					};
-
-					// Ensure no weapons conflict
-					weapons[] = {};
-					magazines[] = {};
-				};
-				*/
-
-				/*
-				// Now we add your custom seat
-				class ObserverTurret : NewTurret {
-					// 1. ENGINE & HIERARCHY
-					body = "";
-					gun = "";
-					animationSourceBody = "";
-					animationSourceGun = "";
-					
-					// 2. IDENTITY
-					gunnerName = "Observer Seat"; 
-					hasGunner = 1;
-					primaryGunner = 0;
-					primaryObserver = 0; 
-					commanding = -1;
-					dontCreateAI = 1; // Prevents AI from stealing the seat
-					
-					// 3. THE ENTRY FIX
-					// These tell Arma to use the Gunner's "Get In" spots for this seat
-					memoryPointsGetInGunner = "pos_gunner";
-					memoryPointsGetInGunnerDir = "pos_gunner_dir";
-					gunnerGetInAction = "GetInAMV";
-					gunnerGetOutAction = "GetOutLow";
-
-					// 4. CHARACTER SETUP
-					proxyType = "CPGunner";
-					proxyIndex = 3; // Index 1 is Gunner, Index 2 is Commander
-					forceHideGunner = 1;
-					castGunnerShadow = 0;
-					viewGunnerInExternal = 0;
-					gunnerAction = "driver_closed"; 
-					gunnerInAction = "driver_closed";
-					
-					// 5. OPTICS (Fixed to Main Gun)
-					memoryPointGunnerOptics = "gunnerview"; 
-					gunnerOpticsModel = "\A3\Weapons_F\Reticle\optics_empty.p3d";
-					gunnerForceOptics = 1; 
-					usePip = 0;
-
-					class ViewOptics {
-						initAngleX = 0; minAngleX = 0; maxAngleX = 0;
-						initAngleY = 0; minAngleY = 0; maxAngleY = 0;
-						initFov = 0.7;  minFov = 0.25; maxFov = 1.25;
-						visionMode[] = {"Normal", "NVG", "Ti"};
-					};
-
-					weapons[] = {};
-					magazines[] = {};
-				};
-				*/
-
-				/*
-				// We keep the CommanderOptics (usually index 0 in sub-turrets)
-				// and add our Observer as a secondary sub-turret.
-				class ObserverTurret : NewTurret {
-					// 1. ENGINE & HIERARCHY
-					body = "";
-					gun = "";
-					animationSourceBody = "";
-					animationSourceGun = "";
-					
-					// 2. IDENTITY & ACCESS
-					gunnerName = "Observer Seat"; 
-					hasGunner = 1;
-					primaryGunner = 0;
-					primaryObserver = 0; // Set to 0 to avoid stealing Commander's spotting UI
-					commanding = -1;
-					
-					// 3. THE "PHANTOM" FIX
-					// Use a high proxyIndex so it doesn't try to sit in the Gunner's lap
-					proxyType = "CPGunner";
-					proxyIndex = 10; 
-					forceHideGunner = 1;
-					castGunnerShadow = 0;
-					viewGunnerInExternal = 0;
-					
-					// 4. OPTICS (Locked to Gunner)
-					memoryPointGunnerOptics = "gunnerview"; 
-					gunnerOpticsModel = "\A3\Weapons_F\Reticle\optics_empty.p3d";
-					gunnerForceOptics = 1; 
-					usePip = 0;
-
-					// 5. LIMITS (Prevents the camera from 'detaching' from the gunner's view)
-					minElev = -90; maxElev = 90;
-					minTurn = -360; maxTurn = 360;
-					initElev = 0; initTurn = 0;
-
-					class ViewOptics {
-						initAngleX = 0; minAngleX = 0; maxAngleX = 0;
-						initAngleY = 0; minAngleY = 0; maxAngleY = 0;
-						initFov = 0.7;  minFov = 0.25; maxFov = 1.25;
-						visionMode[] = {"Normal", "NVG", "Ti"};
-					};
-
-					// Empty Weapons
-					weapons[] = {};
-					magazines[] = {};
-				};
-				*/
-
-
-				/*
-				class AdvisorOptics: CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_advisor.hpp"
-					gunnername="UAV Operator";
-					primaryObserver=0;
-					commanding=-3;
-					dontCreateAI=1;
-					canUseScanners=1;
-
-					weapons[]=
-					{
-						"RC_target_confirmer_datalink"
-					};
-					magazines[]=
-					{
-						"RC_target_confirmer_mag"
-					};
-
-					class HitPoints
-					{
-						class Hit_Optic_LoaderPeriscope
-						{
-							armor=-40;
-							explosionShielding=0;
-							name="";
-							visual="vis_optic_LoaderPeriscope";
-							armorComponent="Hit_Optic_LoaderPeriscope";
-							passThrough=0;
-						};
-					};
-
-					minTurn=360;	//-140
-					maxTurn=360;	//140
-					stabilizedInAxes=0;
-
-					isPersonTurret=1;
-					lockWhenDriverOut=0;
-					lodTurnedOut=1200;
-					gunnerAction="RHS_M1A1_Loader_out";
-					gunnerInAction="RHS_M1A1_Loader_in";
-
-					gunnerForceOptics=1;
-					gunnerOutForceOptics=0;
-					gunnerOutOpticsModel="\A3\weapons_f\reticle\optics_empty";
-					inGunnerMayFire=1;
-					outGunnerMayFire=1;
-
-					memoryPointGun="usti hlavne5";
-					gunBeg="usti hlavne5";
-					gunEnd="konec hlavne5";
-					selectionFireAnim="";
-					soundAttenuationTurret="HeliAttenuationGunner";
-					disableSoundAttenuation=0;
-
-					animationSourceHatch="HatchGunner";
-					animationSourceBody="LoaderVisorTurret";
-					animationSourceGun="LoaderVisorGun";
-					body="LoaderVisorTurret";
-					gun="LoaderVisorGun";
-					animationSourceStickX="";
-					animationSourceStickY="";
-				
-					memoryPointsGetInGunner="pos gunner";
-					memoryPointsGetInGunnerDir="pos gunner dir";
-					memoryPointGunnerOptics="loadervisor_view";
-
-					gunnerDoor="hatchL";
-					proxyindex=2;
-
-					soundServo[]=
-					{
-						"A3\sounds_f\dummysound",
-						1e-006,
-						1
-					};
-
-					class OpticsIn: OpticsIn
-					{
-						class Medium_TI: RCWSOptics
-						{
-							//mainturret memoryPointGunnerOptics="CITV_view";
-							camPos="CITV_view";
-							camDir="CITV_view_dir";
-
-							initAngleX=0;
 							minAngleX=-30;
 							maxAngleX=30;
-							initAngleY=0;
 							minAngleY=-100;
 							maxAngleY=100;
 
 							initFov=0.9;
 							minFov=0.02;
 							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							//gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-							gunnerOpticsEffect[]={};
-							hitpoint="Hit_Optic_GPS_TI";
 						};
 					};
 				};
-				*/
 			};
 		};
-
-		/*
-		class UavTurret: MainTurret {
-			// Essential FFV / CargoTurret flags
-			isPersonTurret = 1; // Allows the "Internal" feel
-			dontCreateAI = 1;   // Stops an AI from spawning in your operator seat
-			proxyIndex = 1;     // Links to 'proxy:cargo.001' in the model
-			
-			// Viewpoint Fixes
-			memoryPointGunnerOptics ="gunnerview"; // Use an existing model point
-			gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_01_F"; // Adds a physical reticle
-			
-			// Disable weapon usage (so they don't fire the tank's main gun)
-			weapons[] = {};
-			magazines[] = {};
-
-			// Immersion
-			class ViewOptics {
-				initAngleX = 0; minAngleX = -30; maxAngleX = 30;
-				initAngleY = 0; minAngleY = -100; maxAngleY = 100;
-				initFov = 0.75; minFov = 0.25; maxFov = 1.25;
-				visionMode[] = {"Normal","NVG","Ti"};
-				thermalMode[] = {0};
-			};
-		};
-		*/
-
-		/*
-		class UavTurret: MainTurret
-		{
-			proxyType = "CPCargo";	//proxyType = "CPGunner";	//proxyType = "CPCommander";
-			proxyIndex = 1;
-
-			// 1. Tell the engine this seat accepts a human
-			hasGunner = 1;
-			dontCreateAI = 1; // Prevents AI from taking the seat
-			//proxyIndex = 1;   // Links to 'proxy:cargo.001'
-			
-			// 2. This is the exact text that appears in the scroll wheel
-			gunnerName = "UAV Operator"; 
-			
-			// 3. Prevent conflicts with the actual tank crew
-			primaryGunner = 0;
-			primaryObserver = 0;
-			commanding = -1; // Stops this seat from taking control of AI
-			
-			// 4. Where does the player stand to see the action menu?
-			// You MUST use memory points that actually exist on the tank's .p3d model.
-			// If "pos gunner" is taken, try "pos cargo" or "pos driver".
-			memoryPointsGetInGunner = "pos cargo"; 
-			memoryPointsGetInGunnerDir = "pos cargo dir";
-
-			memoryPointsGetInGunnerPrecise = "pos cargo";
-			gunnerCompartments = "Compartment1";
-			
-			// 5. Interaction radius (how close you need to be)
-			radius = 10; //5
-			
-			// 6. Animation state when sitting
-			gunnerAction = "passenger_flatground_leanleft"; 
-			gunnerInAction = "passenger_flatground_leanleft";
-		};
-		*/
 	};
 
 	class AnimationSources: AnimationSources
@@ -848,7 +422,6 @@ class RC_MBT_2_WD: RC_MBT_2_A
 		"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
 		"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
 		"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
-		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };

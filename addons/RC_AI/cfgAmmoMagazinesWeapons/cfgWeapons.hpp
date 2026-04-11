@@ -13,6 +13,20 @@ class RC_AI_MMG_762x51_FSV_coax: RC_AI_MMG_338_FSV_coax_Base
 	#include "\RC_AI\includes_weaponmags\mags_762x51.hpp"
 };
 
+class RC_MMG_338_MBT_coax;
+class RC_AI_MMG_338_MBT_coax_Base: RC_MMG_338_MBT_coax
+{
+	class manual;
+};
+class RC_AI_MMG_338_MBT_coax: RC_AI_MMG_338_MBT_coax_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_338.hpp"
+};
+class RC_AI_MMG_762x51_MBT_coax: RC_AI_MMG_338_MBT_coax_Base
+{
+	#include "\RC_AI\includes_weaponmags\mags_762x51.hpp"
+};
+
 
 class RC_MMG_338_coax_ext;
 class RC_AI_MMG_338_coax_ext_Base: RC_MMG_338_FSV_coax
@@ -76,6 +90,21 @@ class RC_AI_MMG_762x54_coax: RC_AI_MMG_93x64_coax_Base
 
 class RC_HMG_127x99_FSV;
 class RC_AI_HMG_127x99_FSV: RC_HMG_127x99_FSV
+{
+	magazines[]=
+	{
+		"RC_AI_200Rnd_127x99_T_R",
+		"RC_AI_200Rnd_127x99_T_G",
+		"RC_AI_200Rnd_127x99_T_Y",
+		"RC_AI_200Rnd_127x99_SLAP_T_R",
+		"RC_AI_200Rnd_127x99_SLAP_T_G",
+		"RC_AI_200Rnd_127x99_SLAP_T_Y",
+		"RC_200Rnd_127x99_cUAS"
+	};
+};
+
+class RC_HMG_127x99_MBT;
+class RC_AI_HMG_127x99_MBT: RC_HMG_127x99_MBT
 {
 	magazines[]=
 	{
@@ -540,6 +569,10 @@ class RC_AI_AbramsX_HMG_coax: RC_AbramsX_HMG_coax
 		"RC_AI_400Rnd_127x99_SLAP_T_R",
 		"RC_AI_400Rnd_127x99_SLAP_T_Y"
 	};
+};
+class RC_AI_AbramsX_MMG_coax: RC_AbramsX_HMG_coax
+{
+	#include "\RC_AI\includes_weaponmags\mags_338.hpp"
 };
 
 

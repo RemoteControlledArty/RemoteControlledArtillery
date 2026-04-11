@@ -63,7 +63,7 @@ class RC_AI_B_AbramsX_WD_Base: RC_AI_B_AbramsX_WD_Core
 			weapons[]=
 			{
 				"RC_AI_AbramsX_120mm_M360",
-				"RC_AI_AbramsX_HMG_coax",
+				"RC_AI_AbramsX_MMG_coax",		//RC_AI_AbramsX_HMG_coax, HMG instead of cannon engaged
 				"qav_SmokeLauncher"
 			};
 
@@ -123,12 +123,12 @@ class RC_AI_B_AbramsX_WD_Base: RC_AI_B_AbramsX_WD_Core
 		class zasleh2_rot
 		{
 			source="ammorandom";
-			weapon="RC_AI_AbramsX_HMG_coax";
+			weapon="RC_AI_AbramsX_MMG_coax";
 		};
 		class zasleh2_hide
 		{
 			source="reload";
-			weapon="RC_AI_AbramsX_HMG_coax";
+			weapon="RC_AI_AbramsX_MMG_coax";
 		};
 	};
 

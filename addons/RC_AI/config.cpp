@@ -287,6 +287,7 @@ class CfgVehicles
 
 	//WS Retex
 	#include "\RC_AI\cfgVehicles\BM_2T_A.hpp"
+	#include "\RC_AI\cfgVehicles\Leopard_2.hpp"
 
 	//Aegis
 	#include "\RC_AI\cfgVehicles\BTR_80A.hpp"

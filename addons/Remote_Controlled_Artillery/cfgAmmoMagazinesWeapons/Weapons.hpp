@@ -12,8 +12,8 @@ class RC_target_confirmer: Default
 };
 class RC_target_confirmer_datalink: RC_target_confirmer
 {
-	displayName="datalink";
-	displayNameShort="datalink";
+	displayName="Datalink";
+	displayNameShort="Datalink";
 };
 class RC_APS_W: RC_target_confirmer
 {

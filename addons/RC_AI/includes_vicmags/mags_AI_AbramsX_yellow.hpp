@@ -9,8 +9,13 @@ magazines[]=
 	"RC_2Rnd_120mm_DLG_LR_cannon_missiles",
 	*/
 
+	/*
 	"RC_AI_300Rnd_127x99_SLAP_T_Y",
 	"RC_AI_300Rnd_127x99_SLAP_T_Y",
+	*/
+
+	"RC_AI_300Rnd_338_T_Y",
+	"RC_AI_300Rnd_338_T_Y",
 
 	"qav_SmokeLauncherMag",
 	"qav_SmokeLauncherMag"
