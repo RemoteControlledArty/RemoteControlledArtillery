@@ -437,9 +437,9 @@ class Turrets: Turrets
 						minAngleY=-100;	//?
 						maxAngleY=100;	//?
 
-						initFov=0.4;
-						minFov=0.4;
-						maxFov=0.4;
+						initFov=0.5;
+						minFov=0.5;
+						maxFov=0.5;
 					};
 					class Gun2: Gun1
 					{
@@ -460,9 +460,9 @@ class Turrets: Turrets
 						//camDir="commanderview_dir";
 						gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_02_F";
 
-						initFov=0.9;
-						minFov=0.9;
-						maxFov=0.9;
+						initFov=0.5;
+						minFov=0.5;
+						maxFov=0.5;
 					};
 					class Com2: Com1
 					{

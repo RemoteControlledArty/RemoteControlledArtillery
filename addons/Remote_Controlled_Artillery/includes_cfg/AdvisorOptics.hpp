@@ -40,6 +40,7 @@ dontCreateAI = 1;								//1
 forceHideGunner = 1;							//1
 gunnerForceOptics = 1;							//1
 hasGunner = 1;
+//hasTerminal = 1;
 
 weapons[] = {"RC_target_confirmer_datalink"};
 magazines[] = {"RC_target_confirmer_mag"};

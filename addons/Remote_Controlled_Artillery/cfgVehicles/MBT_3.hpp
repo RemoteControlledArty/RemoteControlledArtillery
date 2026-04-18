@@ -71,6 +71,7 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 	peakTorque=6875;
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherAngle=180;
+	//hasTerminal=1;
 	//mineDetectorRange=50;	//doesnt work yet
 	//canAccessMineDetector=1;	//doesnt work yet
 	

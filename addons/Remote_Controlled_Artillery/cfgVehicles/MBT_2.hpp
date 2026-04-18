@@ -166,9 +166,9 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 							//camDir="commanderview_dir";
 							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_02_F";
 
-							initFov=0.9;
-							minFov=0.9;
-							maxFov=0.9;
+							initFov=0.5;
+							minFov=0.5;
+							maxFov=0.5;
 						};
 						class Com2: Com1
 						{
