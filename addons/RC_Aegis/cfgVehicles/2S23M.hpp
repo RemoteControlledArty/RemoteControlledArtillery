@@ -295,6 +295,7 @@ class RC_2S23M_WD: RC_2S23M
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+					gunnerName="UAV Operator";
 					commanding=2;
 					dontCreateAI=1;
 					gunnerCompartments="Compartment3";

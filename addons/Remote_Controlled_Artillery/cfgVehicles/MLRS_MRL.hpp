@@ -190,11 +190,41 @@ class RC_MLRS_A: RC_MLRS_base
 				{
 					initFov=0.125;
 					minFov=0.0125;
-					maxFov=0.89999998;
+					maxFov=0.9;
 					visionMode[]=
 					{
 						"Normal",
 						"NVG"
+					};
+				};
+			};
+
+			class Turrets: Turrets
+			{
+				class AdvisorOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+
+					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
+					turretInfoType="RscWeaponRangeArtilleryAuto";
+
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
+
+							minAngleX=-30;	//?
+							maxAngleX=30;	//?
+							minAngleY=-100;	//?
+							maxAngleY=100;	//?
+
+							initFov=0.9;
+							minFov=0.0125;
+							maxFov=0.9;
+						};
 					};
 				};
 			};
@@ -312,6 +342,11 @@ class RC_MLRS_ATACMS_A: RC_MLRS_A
 			{
 				"RC_1Rnd_604mm_rockets_ATACMS_HEAB",
 				"RC_1Rnd_604mm_rockets_ATACMS_DPICM"
+			};
+
+			class Turrets: Turrets
+			{
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};

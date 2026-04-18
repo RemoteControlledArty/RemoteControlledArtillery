@@ -4,6 +4,7 @@ class RC_AI_B_T100_WD_Core: RC_MBT_4_WD
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
+	class AdvisorOptics;
 	class AnimationSources;
 	class showCamonetCannon;
 	class showCamonetHull;
@@ -82,6 +83,8 @@ class RC_AI_B_T100_WD_Base: RC_AI_B_T100_WD_Core
 						"SmokeLauncher"
 					};
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -165,6 +168,8 @@ class RC_AI_B_T100_WD: RC_AI_B_T100_WD_Base
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_T100_com_red.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -187,6 +192,8 @@ class RC_AI_O_T100_WD: RC_AI_B_T100_WD
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_T100_com_green.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -209,6 +216,8 @@ class RC_AI_I_T100_WD: RC_AI_B_T100_WD
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_T100_com_yellow.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};

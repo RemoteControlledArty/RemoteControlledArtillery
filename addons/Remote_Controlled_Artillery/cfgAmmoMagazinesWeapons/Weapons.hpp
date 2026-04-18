@@ -4560,8 +4560,10 @@ class RC_indirect_40mm_GMG_V4: RC_vehiclemortar_60mm_V4
 
 	magazines[]=
 	{
+		"RC_100Rnd_40mm_vic_Mo_shells",
 		"RC_200Rnd_40mm_vic_Mo_shells",
-		"RC_200Rnd_40mm_vic_Mo_Smoke"
+		"RC_200Rnd_40mm_vic_Mo_Smoke",
+		"RC_100Rnd_40mm_vic_Mo_Smoke"
 	};
 	modes[]=
 	{

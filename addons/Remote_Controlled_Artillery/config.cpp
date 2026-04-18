@@ -871,6 +871,7 @@ class CfgFunctions
 			class RC_MinePlow {};
 
 			class RC_OrderTurretTurnKey {};
+			class RC_OrderTurretTurn2Key {};
 			class RC_OrderTurretTurnOwner {};
 			class RC_OrderTurretTurn {};
 			class RC_cUAS_Beep_Call {};

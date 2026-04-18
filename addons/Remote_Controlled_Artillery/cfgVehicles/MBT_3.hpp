@@ -104,31 +104,86 @@ class RC_MBT_3_G_Base: RC_MBT_3_Base
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+
 					minAngleX=-30;
 					maxAngleX=30;
-					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
 
 					initFov=0.9;
 					minFov=0.02;
 					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
 			
 			class Turrets: Turrets
 			{
+				class AdvisorOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+
+					gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+
+					class OpticsIn
+					{
+						class Gun1
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+
+							minAngleX=-30;	//?
+							maxAngleX=30;	//?
+							minAngleY=-100;	//?
+							maxAngleY=100;	//?
+
+							initFov=0.4;
+							minFov=0.4;
+							maxFov=0.4;
+						};
+						class Gun2: Gun1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Gun3: Gun1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+
+						class Com1: Gun1
+						{
+							camPos="commanderview";
+							//camDir="commanderview_dir";
+							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_02_F";
+
+							initFov=0.5;
+							minFov=0.5;
+							maxFov=0.5;
+						};
+						class Com2: Com1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Com3: Com1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+					};
+				};
+
 				class CommanderOptics: CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
@@ -344,6 +399,8 @@ class RC_MBT_3_G_O: RC_MBT_3_G
 				{
 					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_com_green.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -368,6 +425,8 @@ class RC_MBT_3_G_I: RC_MBT_3_G
 				{
 					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_com_yellow.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -431,6 +490,8 @@ class RC_MBT_3_WD_O: RC_MBT_3_WD
 				{
 					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_com_green.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -455,6 +516,8 @@ class RC_MBT_3_WD_I: RC_MBT_3_WD
 				{
 					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_T14_com_yellow.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};

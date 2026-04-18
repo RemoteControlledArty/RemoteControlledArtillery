@@ -423,6 +423,7 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+					gunnerName="UAV Operator";
 					gunnerCompartments="Compartment3";
 					dontCreateAI=1;
 					commanding=2;

@@ -77,13 +77,42 @@ class RC_MRZR_Base: RC_MRZR_Core
 
 	class Turrets: Turrets
 	{
-		class CargoTurret_01: CargoTurret_01
+		class DriverTurret
 		{
-			//primaryObserver=1;
-			gunnerName="Front Right";
-			gunnerCompartments="Compartment1";
+			#include "\Remote_Controlled_Artillery\includes_cfg\DriverTurret.hpp"
 
-			/*
+			primaryObserver = 1;
+			memoryPointGunnerOptics = "P svetlo";			//P svetlo
+
+			gunnerAction = "rhs_mrzr_driver";				//Driver_MBT_03_cannon_F_out
+			gunnerInAction = "";							//Driver_MBT_03_cannon_F_in
+			gunnerLeftHandAnimName = "steeringwheel";		//drivewheel
+			gunnerRightHandAnimName = "steeringwheel";		//drivewheel
+			gunnerLeftLegAnimName = "";						//pedal_brake
+			gunnerRightLegAnimName = "pedal_thrust";		//pedal_thrust
+
+			//gunnerCompartments="Compartment1";
+			//gunnerOpticsModel="";
+			//turretInfoType="";
+
+			class OpticsIn
+			{
+				class Driver
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+					minAngleX=-30;	//?
+					maxAngleX=30;	//?
+					minAngleY=-100;	//?
+					maxAngleY=100;	//?
+
+					initFov=1;
+					minFov=0.25;
+					maxFov=1;
+				};
+			};
+
 			weapons[]=
 			{
 				"RC_target_confirmer_datalink",
@@ -120,10 +149,6 @@ class RC_MRZR_Base: RC_MRZR_Core
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -147,14 +172,15 @@ class RC_MRZR_Base: RC_MRZR_Core
 							componentType="MinimapDisplayComponent";
 							resource="RscCustomInfoMiniMap";
 						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
 					};
 				};
 			};
-			*/
+		};
+
+		class CargoTurret_01: CargoTurret_01
+		{
+			gunnerName="Front Right";
+			gunnerCompartments="Compartment1";
 		};
 		class CargoTurret_02: CargoTurret_02
 		{
@@ -170,56 +196,17 @@ class RC_MRZR_Base: RC_MRZR_Core
 		{
 			gunnerName="Rear Right";
 			gunnerCompartments="Compartment1";
-
 			//allowLauncherOut=1;
 			//canHideGunner=1;
 		};
 		class CargoTurret_05: CargoTurret_05
 		{
-			primaryObserver=1;
-			/*
-			gunnerName="Driver";
-
-			proxyIndex=0;
-			playerPosition=0;
-			memoryPointsGetInGunner="pos codriver";
-			memoryPointsGetInGunnerDir="pos codriver dir";
-
-			gunnerAction="rhs_mrzr_driver";
-			gunnerInAction="";
-			gunnerLeftHandAnimName="steeringwheel";
-			gunnerLeftLegAnimName="";
-			gunnerRightHandAnimName="steeringwheel";
-			gunnerRightLegAnimName="pedal_thrust";
-			*/
-
 			gunnerName="Rear Left";
 			gunnerCompartments="Compartment1";
-
 			//allowLauncherOut=1;
 			//canHideGunner=1;
 		};
 	};
-
-	/*
-	gunnerName="AI Driver";
-	memoryPointsGetInDriver="pos cargo R";
-	memoryPointsGetInDriverDir="pos cargo R dir";
-	memoryPointsGetInDriverPrecise="pos cargo R";
-	driverAction="passenger_flatground_4";
-	driverInAction="passenger_flatground_4";
-	proxyIndex=6;
-	playerPosition=6;
-	*/
-
-	/*
-	driverAction = "rhs_mrzr_driver";
-	driverInAction = "";
-	driverLeftHandAnimName = "steeringwheel";
-	driverLeftLegAnimName = "";
-	driverRightHandAnimName = "steeringwheel";
-	driverRightLegAnimName = "pedal_thrust";
-	*/
 
 	hiddenSelectionsTextures[]=
 	{
@@ -471,10 +458,6 @@ class RC_MRZR_Base: RC_MRZR_Core
 					componentType="MinimapDisplayComponent";
 					resource="RscCustomInfoMiniMap";
 				};
-				class EmptyDisplay
-				{
-					componentType="EmptyDisplayComponent";
-				};
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -498,10 +481,6 @@ class RC_MRZR_Base: RC_MRZR_Core
 					componentType="MinimapDisplayComponent";
 					resource="RscCustomInfoMiniMap";
 				};
-				class EmptyDisplay
-				{
-					componentType="EmptyDisplayComponent";
-				};
 			};
 		};
 	};
@@ -516,7 +495,7 @@ class RC_MRZR_D: RC_MRZR_Base
 	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CommanderIsDriverEH.hpp"
 		};
 	};
 

@@ -4,6 +4,7 @@ class RC_AI_B_Rooikat_A_Core: RC_FSV_A
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
+	class AdvisorOptics;
 	class HitPoints;
 	class HitLFWheel;
 	class HitLF2Wheel;
@@ -88,6 +89,8 @@ class RC_AI_B_Rooikat_A_Base: RC_AI_B_Rooikat_A_Core
 						"SmokeLauncher"
 					};
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -150,6 +153,8 @@ class RC_AI_B_Rooikat_A: RC_AI_B_Rooikat_A_Base
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_FSV_MBT_com_red.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -194,6 +199,8 @@ class RC_AI_I_Rooikat_A: RC_AI_B_Rooikat_A
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_FSV_MBT_com_yellow.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -240,6 +247,8 @@ class RC_AI_O_Rooikat_WD: RC_AI_B_Rooikat_WD
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_FSV_MBT_com_green.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -262,6 +271,8 @@ class RC_AI_I_Rooikat_WD: RC_AI_B_Rooikat_WD
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_FSV_MBT_com_yellow.hpp"
 				};
+
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};

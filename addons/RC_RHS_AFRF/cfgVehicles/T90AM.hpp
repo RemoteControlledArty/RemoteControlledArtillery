@@ -102,10 +102,10 @@ class RC_T90AM_Base: RC_T90AM_Core
 			//turretInfoType="RC_RHS_RscWeaponSosnaU_FCS";
 			turretInfoType="RscOptics_MBT_02_gunner";
 
-			minElev=-10;	//-5
-			maxElev=14;	//14
+			minElev=-10;				//-5
+			maxElev=14;					//14
 			maxHorizontalRotSpeed=1;	//1.2	//1
-			maxVerticalRotSpeed=1;	//1.2	//0.07
+			maxVerticalRotSpeed=1;		//1.2	//0.07
 
 			weapons[]=
 			{
@@ -117,27 +117,95 @@ class RC_T90AM_Base: RC_T90AM_Core
 
 			class OpticsIn
 			{
-				class Medium: ViewOptics
+				class Medium
 				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_02_m_F.p3d";
+					//gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_sosnau.p3d";
+
 					camPos="gunnerview2";
 					hitpoint="Hit_Optic_SosnaU";
 					opticsDisplayName="TI";
+
+					minAngleX=-30;
+					minAngleY=-100;
+					maxAngleX=30;
+					maxAngleY=100;
+
 					initFov=0.9;
 					minFov=0.02;
 					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"Ti"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_02_m_F.p3d";
-					//gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_sosnau.p3d";
 				};
 			};
 			
 			class Turrets: Turrets
 			{
+				/*
+				class AdvisorOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+
+					gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+					turretInfoType="RscOptics_MBT_02_gunner";
+
+					class OpticsIn
+					{
+						class Gun1
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_02_m_F.p3d";
+
+							camPos="gunnerview2";
+
+							minAngleX=-30;	//?
+							maxAngleX=30;	//?
+							minAngleY=-100;	//?
+							maxAngleY=100;	//?
+
+							initFov=0.4;
+							minFov=0.4;
+							maxFov=0.4;
+						};
+						class Gun2: Gun1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Gun3: Gun1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+
+						class Com1: Gun1
+						{
+							camPos="commanderview";
+							//camDir="commanderview_dir";
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+
+							initFov=0.5;
+							minFov=0.5;
+							maxFov=0.5;
+						};
+						class Com2: Com1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Com3: Com1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+					};
+				};
+				*/
+
 				class CommanderOptics: CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
@@ -151,10 +219,10 @@ class RC_T90AM_Base: RC_T90AM_Core
 					//turretInfoType="RC_RHS_RscWeaponSosnaU_commander_FCS";
 					turretInfoType="RscOptics_MBT_02_gunner";
 
-					minElev=-10;	//-7
-					maxElev=35;		//50
+					minElev=-10;				//-7
+					maxElev=35;					//50
 					maxHorizontalRotSpeed=1;	//1.8	//0.9
-					maxVerticalRotSpeed=1;	//1.8	//0.47
+					maxVerticalRotSpeed=1;		//1.8	//0.47
 
 					weapons[]=
 					{
@@ -166,22 +234,24 @@ class RC_T90AM_Base: RC_T90AM_Core
 
 					class OpticsIn
 					{
-						class Medium: ViewOptics
+						class Medium
 						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+							//gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_sosnau.p3d";
+
 							camPos="commanderview";
 							hitpoint="Hit_Optic_SosnaU";
 							opticsDisplayName="TI";
+
+							minAngleX=-30;
+							minAngleY=-100;
+							maxAngleX=30;
+							maxAngleY=100;
+
 							initFov=0.9;
 							minFov=0.02;
 							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"Ti"
-							};
-							thermalMode[]={0};
-							//gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_sosnau.p3d";
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 						};
 					};
 				};
@@ -258,6 +328,20 @@ class RC_T90AM_WD_O: RC_T90AM_Base
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
 	crew="O_UAV_AI";
+
+	/*
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics {};
+				class AdvisorOptics: AdvisorOptics {};
+			};
+		};
+	};
+	*/
 };
 class RC_T90AM_WD: RC_T90AM_WD_O
 {
@@ -278,6 +362,8 @@ class RC_T90AM_WD: RC_T90AM_WD_O
 				{
 					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_yellow.hpp"
 				};
+
+				//class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -301,6 +387,8 @@ class RC_T90AM_WD_I: RC_T90AM_WD_O
 				{
 					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_yellow.hpp"
 				};
+
+				//class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -348,6 +436,8 @@ class RC_T90AM_A: RC_T90AM_A_O
 				{
 					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_yellow.hpp"
 				};
+
+				//class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -371,6 +461,8 @@ class RC_T90AM_A_I: RC_T90AM_A_O
 				{
 					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_yellow.hpp"
 				};
+
+				//class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};

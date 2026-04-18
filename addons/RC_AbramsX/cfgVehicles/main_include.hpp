@@ -422,7 +422,7 @@ class Turrets: Turrets
 				#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
 				#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
 
-				gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+				gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 				turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 				class OpticsIn

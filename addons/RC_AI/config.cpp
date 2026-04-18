@@ -119,7 +119,18 @@ class CfgPatches
 
 			"RC_AI_B_M1A2_SEPV2_WD",
 			"RC_AI_O_M1A2_SEPV2_WD",
-			"RC_AI_I_M1A2_SEPV2_WD"
+			"RC_AI_I_M1A2_SEPV2_WD",
+
+			//RHS AFRF
+			/*
+			"RC_AI_B_T90AM_A",
+			"RC_AI_O_T90AM_A",
+			"RC_AI_I_T90AM_A",
+			*/
+
+			"RC_AI_B_T90AM_WD",
+			"RC_AI_O_T90AM_WD",
+			"RC_AI_I_T90AM_WD"
 		};
 
 		weapons[]=

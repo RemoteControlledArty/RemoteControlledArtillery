@@ -228,10 +228,73 @@ class RC_Howitzer_A: RC_Howitzer_base
 			
 			class Turrets: Turrets
 			{
-				class CommanderOptics : CommanderOptics
+				class AdvisorOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+
+					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
+					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+
+					class OpticsIn
+					{
+						class Gun1
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
+
+							minAngleX=-30;	//?
+							maxAngleX=30;	//?
+							minAngleY=-100;	//?
+							maxAngleY=100;	//?
+
+							initFov=0.5;
+							minFov=0.5;
+							maxFov=0.5;
+						};
+						class Gun2: Gun1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Gun3: Gun1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+
+						class Com1: Gun1
+						{
+							camPos="commanderview";
+							//camDir="commanderview_dir";
+							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_02_F";
+
+							initFov=0.5;
+							minFov=0.5;
+							maxFov=0.5;
+						};
+						class Com2: Com1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Com3: Com1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+					};
+				};
+
+				class CommanderOptics: CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					gunnerCompartments="Compartment3";
+					dontCreateAI=0;
 					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;
@@ -305,6 +368,18 @@ class RC_Howitzer_WD: RC_Howitzer_A
 		//"A3\Armor_F\Data\camonet_NATO_Green_CO.paa"
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics {};
+				class AdvisorOptics: AdvisorOptics {};
+			};
+		};
+	};
 };
 class RC_Howitzer_A_O: RC_Howitzer_A
 {
@@ -356,6 +431,14 @@ class RC_Howitzer_LC_A: RC_Howitzer_A
 				"RC_4Rnd_155mm_Mo_mine",
 				"RC_6Rnd_155mm_Mo_Illum"
 			};
+			
+			/*
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics {};
+				class AdvisorOptics: AdvisorOptics {};
+			};
+			*/
 		};
 	};
 };
@@ -618,10 +701,73 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 			
 			class Turrets: Turrets
 			{
+				class AdvisorOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+
+					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
+					turretInfoType="RscWeaponRangeArtilleryAuto";
+
+					class OpticsIn
+					{
+						class Gun1
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
+
+							minAngleX=-30;	//?
+							maxAngleX=30;	//?
+							minAngleY=-100;	//?
+							maxAngleY=100;	//?
+
+							initFov=0.5;
+							minFov=0.5;
+							maxFov=0.5;
+						};
+						class Gun2: Gun1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Gun3: Gun1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+
+						class Com1: Gun1
+						{
+							camPos="commanderview";
+							//camDir="commanderview_dir";
+							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_02_F";
+
+							initFov=0.5;
+							minFov=0.5;
+							maxFov=0.5;
+						};
+						class Com2: Com1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Com3: Com1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+					};
+				};
+
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					gunnerCompartments="Compartment3";
+					dontCreateAI=0;
 					commanding=1;
 					hasGunner=-1;
 					hasCommander=-1;
@@ -699,6 +845,18 @@ class RC_Howitzer_HEX_WD_O: RC_Howitzer_HEX_A_O
 		"a3\Data_F_Exp\Vehicles\Turret_ghex_CO.paa",
 		"A3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa"
 	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics {};
+				class AdvisorOptics: AdvisorOptics {};
+			};
+		};
+	};
 };
 
 
@@ -722,6 +880,14 @@ class RC_Howitzer_HEX_LC_A_O: RC_Howitzer_HEX_A_O
 				"RC_4Rnd_155mm_Mo_mine",
 				"RC_6Rnd_155mm_Mo_Illum"
 			};
+
+			/*
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics {};
+				class AdvisorOptics: AdvisorOptics {};
+			};
+			*/
 		};
 	};
 };

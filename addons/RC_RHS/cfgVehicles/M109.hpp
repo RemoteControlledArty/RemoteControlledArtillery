@@ -196,6 +196,7 @@ class RC_M109_A: RC_M109_base
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+					gunnerName="UAV Operator";
 					gunnerCompartments="Compartment3";
 					commanding=1;
 					dontCreateAI=1;

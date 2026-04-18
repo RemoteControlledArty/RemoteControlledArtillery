@@ -152,10 +152,19 @@
 [
     "RC Modernized Vehicles",
     "RC_OrderTurnTurret",
-    "order turret turn",
+    "order gunner or commander turret turn",
     {call RC_fnc_RC_OrderTurretTurnKey},
     "",
 	[6, [false, false, false]]
+] call CBA_fnc_addKeybind;
+
+[
+    "RC Modernized Vehicles",
+    "RC_OrderTurnTurret2",
+    "order commander turret turn",
+    {call RC_fnc_RC_OrderTurretTurn2Key},
+    "",
+	[7, [false, false, false]]
 ] call CBA_fnc_addKeybind;
 
 [

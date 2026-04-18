@@ -213,7 +213,7 @@ class RC_2S1_WD: RC_2S1
 	};
 	*/
 
-	displayName="2S1";	//122 PSH 74
+	displayName="RC 2S1";	//122 PSH 74
 	editorSubcategory="RC_Howitzer_subcat";
 	scope=2;
 	scopeCurator=2;
@@ -318,6 +318,7 @@ class RC_2S1_WD: RC_2S1
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+					gunnerName="UAV Operator";
 					canUseScanners=1;
 					commanding=2;
 					dontCreateAI=1;
@@ -491,7 +492,7 @@ class RC_2S1_A_I: RC_2S1_A
 
 class RC_2S1_LC_WD: RC_2S1_WD
 {
-	displayName="2S1 LowCap";	//122 PSH 74 LowCap
+	displayName="RC 2S1 LowCap";	//122 PSH 74 LowCap
 	editorSubcategory="RC_ReducedAmmo_subcat";
 
 	class Turrets: Turrets

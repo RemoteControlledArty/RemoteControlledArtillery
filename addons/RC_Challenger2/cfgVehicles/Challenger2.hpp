@@ -164,29 +164,19 @@ class RC_Challenger2_A_Base: RC_Challenger2_Base
 
 			class OpticsIn
 			{
-				class Wide: ViewOptics
+				class Wide
 				{
-					initAngleX=0;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					gunnerOpticsModel="\QAV_Challenger\c2_com_op_n.p3d";
+
 					minAngleX=-30;
 					maxAngleX=30;
-					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
 
 					initFov=0.4;
 					minFov=0.02;
 					maxFov=0.4;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\QAV_Challenger\c2_com_op_n.p3d";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_01_m_F.p3d";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_m_F.p3d";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
 			
@@ -217,28 +207,19 @@ class RC_Challenger2_A_Base: RC_Challenger2_Base
 
 					class OpticsIn
 					{
-						class Wide: ViewOptics
+						class Wide
 						{
-							initAngleX=0;
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\QAV_Challenger\c2_com_op_n.p3d";
+
 							minAngleX=-30;
 							maxAngleX=30;
-							initAngleY=0;
 							minAngleY=-100;
 							maxAngleY=100;
 
 							initFov=0.9;
 							minFov=0.02;
 							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="\QAV_Challenger\c2_com_op_n.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_m_F.p3d";
-							gunnerOpticsEffect[]={};
 						};
 					};
 				};
@@ -247,9 +228,35 @@ class RC_Challenger2_A_Base: RC_Challenger2_Base
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
 					dontCreateAI=1;
 
+					gunnerName="UAV Operator";
+					memoryPointGunnerOptics="gunnerview";
+					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+					canUseScanners=1;
+					showAllTargets="2 + 4";
+					allowTabLock=1;
+
+					class OpticsIn
+					{
+						class Gun1
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\QAV_Challenger\c2_com_op_n.p3d";
+
+							minAngleX=-30;	//?
+							maxAngleX=30;	//?
+							minAngleY=-100;	//?
+							maxAngleY=100;	//?
+
+							initFov=0.4;
+							minFov=0.02;
+							maxFov=0.4;
+						};
+					};
+
 					weapons[]=
 					{
 						"qav_challenger_m2"
+						//"RC_target_confirmer_datalink"
 					};
 					magazines[]=
 					{
@@ -262,6 +269,7 @@ class RC_Challenger2_A_Base: RC_Challenger2_Base
 						"100Rnd_127x99_mag_Tracer_Red",
 						"100Rnd_127x99_mag_Tracer_Red",
 						"100Rnd_127x99_mag_Tracer_Red"
+						//"RC_target_confirmer_mag"
 					};
 				};
 			};
