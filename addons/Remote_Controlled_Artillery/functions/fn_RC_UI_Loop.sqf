@@ -43,12 +43,6 @@ RC_Artillery_UI = [] spawn {
 	while { true } do {
 		sleep 0.1;
 
-		/*
-		//manned
-		private _uav = vehicle player;
-		if (player isNotEqualTo (gunner _uav)) then {
-		*/	
-
 		if !(isRemoteControlling player) then {
 			// UI shouldn't be shown so we cut it
 			"RC_Artillery" cutFadeOut 0;
@@ -66,6 +60,12 @@ RC_Artillery_UI = [] spawn {
 			_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
 			RC_isRCArtyHash set [_uavClass, _isRCArty];
 		};
+
+		/*
+		//manned
+		private _uav = vehicle player;
+		if (player isNotEqualTo (gunner _uav)) then {
+		*/
 
 		// if it's of artillery or mortar type do da thing
 		if (_isRCArty) then {
@@ -301,7 +301,8 @@ RC_Artillery_UI = [] spawn {
 				// precalculation
 				private _preSol = sqrt (_speed^2 * (_speed^2 - 2 * GRAVITY * _difference) - GRAVITY^2 * _distance^2);	//((_speed^4) - (GRAVITY * ((2 * (_speed^2) * _difference) + (GRAVITY * (_distance^2)))));
 				// clamp
-				_preSol = _preSol max 0;
+				// maybe was needed for something but caused major bugs in firing solution
+				//_preSol = _preSol max 0;
 
 				// required launch angles to hit target (aka firing solution), in degrees
 				_highAngleSolDeg = atan(((_speed^2) + _preSol) / (GRAVITY * _distance));
