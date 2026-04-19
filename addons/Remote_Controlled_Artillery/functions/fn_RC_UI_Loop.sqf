@@ -43,6 +43,12 @@ RC_Artillery_UI = [] spawn {
 	while { true } do {
 		sleep 0.1;
 
+		/*
+		//manned
+		private _uav = vehicle player;
+		if (player isNotEqualTo (gunner _uav)) then {
+		*/	
+
 		if !(isRemoteControlling player) then {
 			// UI shouldn't be shown so we cut it
 			"RC_Artillery" cutFadeOut 0;
