@@ -1,8 +1,5 @@
 # Remote Controlled Artillery Repository
 
-If you want to play as forward observer using this mod, join the 56th RapidResponseBrigade, esp after the next massive update it will be awesome to use:
-https://discord.gg/F4YaTZUdmu
-
 (Its signed and multiplayer ready)
 
 Solving most ARMA Units biggest problem!
