@@ -270,6 +270,28 @@ class RC_Mule_UGV_WD_I: RC_Mule_UGV_WD
 
 
 //ReArmPairFuel
+class Land_CanisterFuel_F;
+class RC_FuelCanister_Core: Land_CanisterFuel_F
+{
+	class EventHandlers;
+};
+class RC_FuelCanister: RC_FuelCanister_Core
+{
+	displayName="Fuel Canister";
+	scope=2;
+	scopeCurator=2;
+	//ace_refuel_fuelCargo=300;	//bugs
+
+	class EventHandlers: EventHandlers
+	{
+		class FuelCanister
+		{
+			init="[_this select 0, 300] call ace_refuel_fnc_makeJerryCan;";
+		};
+	};
+};
+
+
 class FlexibleTank_01_forest_F;
 class RC_PortableFuelTank: FlexibleTank_01_forest_F
 {

@@ -36,6 +36,8 @@ class RC_MRZR_Base: RC_MRZR_Core
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
+
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargoFuel_EH.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam1x.hpp"
@@ -56,6 +58,11 @@ class RC_MRZR_Base: RC_MRZR_Core
 	canHideGunner=1;
 	camouflage=1;	//2
 	audible=2.5;	//5
+
+	maxSpeed=100;			//95
+	enginePower=80;			//66
+	engineStartSpeed=0.5;	//1.5
+	peakTorque=140;			//118.75
 
 	smokeLauncherOnTurret=0;
 	smokeLauncherVelocity=6;

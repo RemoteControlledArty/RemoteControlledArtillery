@@ -371,6 +371,9 @@ class Kimi_HMD_Common
     turret[]={};
     class Draw
     {
+        //visually highlights datalink targets
+        #include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Datalink.hpp"
+        
         color[]=
         {
             "user3",

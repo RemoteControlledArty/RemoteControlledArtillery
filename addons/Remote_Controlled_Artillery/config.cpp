@@ -1017,7 +1017,7 @@ class CfgFactionClasses
 {
 	class RemoteControlled_O
 	{
-		displayName="'Remote Controlled: Artillery / ATGM / AA'";
+		displayName="'RC Artillery & modernized Vehicles'";
 		side=0;
 		flag="\a3\Data_f\Flags\flag_CSAT_co.paa";
 		icon="\a3\Data_f\cfgFactionClasses_OPF_ca.paa";
@@ -1025,7 +1025,7 @@ class CfgFactionClasses
 	};
 	class RemoteControlled_B
 	{
-		displayName="'Remote Controlled: Artillery / ATGM / AA'";
+		displayName="'RC Artillery & modernized Vehicles'";
 		side=1;
 		flag="\a3\Data_f\Flags\flag_nato_co.paa";
 		icon="\a3\Data_f\cfgFactionClasses_BLU_ca.paa";
@@ -1033,7 +1033,7 @@ class CfgFactionClasses
 	};
 	class RemoteControlled_I
 	{
-		displayName="'Remote Controlled: Artillery / ATGM / AA'";
+		displayName="'RC Artillery & modernized Vehicles'";
 		side=2;
 		flag="\a3\Data_f\Flags\flag_AAF_CO.paa";
 		icon="\a3\Data_f\cfgFactionClasses_IND_ca.paa";
@@ -1043,7 +1043,7 @@ class CfgFactionClasses
 
 	class RemoteControlled_ReTex_O
 	{
-		displayName="'RCA: optional Phantom Hawk Retextures'";
+		displayName="'RC-A: optional Phantom Hawk Retextures'";
 		side=0;
 		flag="\a3\Data_f\Flags\flag_CSAT_co.paa";
 		icon="\a3\Data_f\cfgFactionClasses_OPF_ca.paa";
@@ -1051,7 +1051,7 @@ class CfgFactionClasses
 	};
 	class RemoteControlled_ReTex_B
 	{
-		displayName="'RCA: optional Phantom Hawk Retextures'";
+		displayName="'RC-A: optional Phantom Hawk Retextures'";
 		side=1;
 		flag="\a3\Data_f\Flags\flag_nato_co.paa";
 		icon="\a3\Data_f\cfgFactionClasses_BLU_ca.paa";
@@ -1059,7 +1059,7 @@ class CfgFactionClasses
 	};
 	class RemoteControlled_ReTex_I
 	{
-		displayName="'RCA: optional Phantom Hawk Retextures'";
+		displayName="'RC-A: optional Phantom Hawk Retextures'";
 		side=2;
 		flag="\a3\Data_f\Flags\flag_AAF_CO.paa";
 		icon="\a3\Data_f\cfgFactionClasses_IND_ca.paa";
