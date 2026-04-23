@@ -100,7 +100,7 @@ class RC_Static_AA_A: RC_Static_AA_A_base
 					
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=60;
-					angleRangeVertical=40;
+					angleRangeVertical=60;
 					animDirection="mainGun";
 					//aimDown=-0.5;
 				};

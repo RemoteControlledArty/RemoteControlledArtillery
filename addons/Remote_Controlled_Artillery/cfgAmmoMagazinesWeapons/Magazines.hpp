@@ -1494,6 +1494,9 @@ class RC_680Rnd_35mm_MPAB_AA_T_R: 680Rnd_35mm_AA_shells_Tracer_Red
 };
 class RC_680Rnd_35mm_MPAB_AA_T_G: RC_680Rnd_35mm_MPAB_AA_T_R {ammo="RC_B_35mm_MPAB_AA_T_G";};
 class RC_680Rnd_35mm_MPAB_AA_T_Y: RC_680Rnd_35mm_MPAB_AA_T_R {ammo="RC_B_35mm_MPAB_AA_T_Y";};
+class RC_600Rnd_35mm_MPAB_AA_T_R: RC_680Rnd_35mm_MPAB_AA_T_R {count=600;};
+class RC_600Rnd_35mm_MPAB_AA_T_G: RC_680Rnd_35mm_MPAB_AA_T_G {count=600;};
+class RC_600Rnd_35mm_MPAB_AA_T_Y: RC_680Rnd_35mm_MPAB_AA_T_Y {count=600;};
 class RC_680Rnd_35mm_HEAB_AA_T_R: 680Rnd_35mm_AA_shells_Tracer_Red
 {
 	ammo="RC_B_35mm_HEAB_AA_T_R";
@@ -1503,6 +1506,9 @@ class RC_680Rnd_35mm_HEAB_AA_T_R: 680Rnd_35mm_AA_shells_Tracer_Red
 };
 class RC_680Rnd_35mm_HEAB_AA_T_G: RC_680Rnd_35mm_HEAB_AA_T_R {ammo="RC_B_35mm_HEAB_AA_T_G";};
 class RC_680Rnd_35mm_HEAB_AA_T_Y: RC_680Rnd_35mm_HEAB_AA_T_R {ammo="RC_B_35mm_HEAB_AA_T_Y";};
+class RC_600Rnd_35mm_HEAB_AA_T_R: RC_680Rnd_35mm_HEAB_AA_T_R {count=600;};
+class RC_600Rnd_35mm_HEAB_AA_T_G: RC_680Rnd_35mm_HEAB_AA_T_G {count=600;};
+class RC_600Rnd_35mm_HEAB_AA_T_Y: RC_680Rnd_35mm_HEAB_AA_T_Y {count=600;};
 
 
 class RC_400Rnd_35mm_APFSDS_T_R: 60Rnd_30mm_APFSDS_shells_Tracer_Red

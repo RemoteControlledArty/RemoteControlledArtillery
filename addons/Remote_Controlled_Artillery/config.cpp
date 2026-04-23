@@ -1076,8 +1076,8 @@ class CfgEditorSubcategories
 	class RC_Rocket_subcat {displayname="'indirect :  Rocket Systems";};
 	class RC_ReducedAmmo_subcat {displayname="'reduced ammo :  Mortar's / Howitzer's";};
 
-	class RC_AntiAir_subcat {displayname="Anti-Air";};
-	class RC_AntiDrone_subcat {displayname="Anti-Drone";};
+	class RC_AntiAir_subcat {displayname="Anti - Air & Drone";};
+	class RC_AntiDrone_subcat {displayname="Anti - Drone";};
 	class RC_ATGM_subcat {displayname="ATGMs";};
 	class RC_Designator_subcat {displayname="Designators";};
 	class RC_Respawn_subcat {displayname="Respawn";};
