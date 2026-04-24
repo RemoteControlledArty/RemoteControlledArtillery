@@ -47,7 +47,7 @@ class RC_Single_autocannon_35mm_AA: RC_Single_autocannon_35mm_AA_base
 		ballisticsComputer="2 + 4";
 
 		displayName="35mm SHORAD";
-		reloadTime=0.175;
+		reloadTime=0.15;
 		dispersion=0.002;	//0.002
 	};
 	class AutoFast: AutoFast
@@ -77,21 +77,21 @@ class RC_Single_autocannon_35mm_AA: RC_Single_autocannon_35mm_AA_base
 	class close: close
 	{
 		magazineReloadTime=20;
-		reloadTime=0.175;
+		reloadTime=0.15;
 	};
 	class short: short
 	{
 		magazineReloadTime=20;
-		reloadTime=0.175;
+		reloadTime=0.15;
 	};
 	class medium: medium
 	{
 		magazineReloadTime=20;
-		reloadTime=0.175;
+		reloadTime=0.15;
 	};
 	class far: far
 	{
 		magazineReloadTime=20;
-		reloadTime=0.175;
+		reloadTime=0.15;
 	};
 };
