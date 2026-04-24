@@ -69,7 +69,7 @@ class CfgWeapons
 
 class CfgVehicles
 {
-	#include "\RC_VVE\cfgVehicles\AMV_MGS.hpp"
+	//#include "\RC_VVE\cfgVehicles\AMV_MGS.hpp"
 	#include "\RC_VVE\cfgVehicles\AMV_SHORAD.hpp"
 	//#include "\RC_VVE\cfgVehicles\AMV_APC.hpp"
 };
