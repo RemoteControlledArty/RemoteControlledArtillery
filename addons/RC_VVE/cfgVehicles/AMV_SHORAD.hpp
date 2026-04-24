@@ -63,9 +63,9 @@ class RC_AMV_SHORAD_Core: RC_AMV_SHORAD_Fetch
 	commanding=1;
 	crewCrashProtection=0.01;
 
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherVelocity=14;
-	smokeLauncherAngle=180;
+	smokeLauncherVelocity=5;
+	smokeLauncherGrenadeCount=8;
+	smokeLauncherAngle=360;
 
 	class HitPoints: HitPoints
 	{
@@ -111,11 +111,195 @@ class RC_AMV_SHORAD_Base: RC_AMV_SHORAD_Core
 		"SmokeLauncherMag"
 	};
 
+	class Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=12000;
+
+					class AirTarget
+					{
+						minRange=12000;
+						maxRange=12000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=12000;
+						maxRange=12000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=6000;
+
+					class AirTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=60;	//30
+					angleRangeVertical=60;		//30
+					animDirection="mainGun";
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=400;
+
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="";		//"" "mainGun" "obsGun"
+				};
+				class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+				{
+					typeRecognitionDistance=7500;
+
+					class AirTarget
+					{
+						minRange=10000;
+						maxRange=10000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=10000;
+						maxRange=10000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=120;
+					angleRangeVertical=120;
+					animDirection="mainGun";
+					aimDown=-0.5;
+					maxTrackableSpeed=1388.89;
+				};
+				class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+				{
+					typeRecognitionDistance=1;
+					
+					class AirTarget
+					{
+						minRange=10000;
+						maxRange=10000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					//allowsMarking=1;	//targeting would be great, problem is just it tells name which seems a bit op?
+				};
+			};
+		};
+
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={10000,6000,4000,600};
+					resource="RscCustomInfoSensors";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={600,4000,6000,10000};
+					resource="RscCustomInfoSensors";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+				class EmptyDisplay
+				{
+					componentType="EmptyDisplayComponent";
+				};
+			};
+		};
+	};
+
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+			#include "\RC_VVE\cfgVehicles\includes_vehicle\panels_AMV_SHORAD.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			commanding=3;
@@ -154,7 +338,7 @@ class RC_AMV_SHORAD_Base: RC_AMV_SHORAD_Core
 			{
 				class CommanderOptics : CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
+					#include "\RC_VVE\cfgVehicles\includes_vehicle\panels_AMV_SHORAD.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
 					commanding=2;
@@ -194,8 +378,8 @@ class RC_AMV_SHORAD_Base: RC_AMV_SHORAD_Core
 
 				class AdvisorOptics
 				{
+					#include "\RC_VVE\cfgVehicles\includes_vehicle\panels_AMV_SHORAD.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
 
 					class OpticsIn
 					{
@@ -351,7 +535,10 @@ class RC_AMV_SHORAD_Base: RC_AMV_SHORAD_Core
 		1
 	};
 };
-class RC_AMV_SHORAD_A_B: RC_AMV_SHORAD_Base
+
+
+/*
+class RC_AMV_SHORAD_manned_A_B: RC_AMV_SHORAD_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -373,7 +560,7 @@ class RC_AMV_SHORAD_A_B: RC_AMV_SHORAD_Base
 		};
 	};
 };
-class RC_AMV_SHORAD_A_O: RC_AMV_SHORAD_Base
+class RC_AMV_SHORAD_manned_A_O: RC_AMV_SHORAD_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -395,7 +582,7 @@ class RC_AMV_SHORAD_A_O: RC_AMV_SHORAD_Base
 		};
 	};
 };
-class RC_AMV_SHORAD_A_I: RC_AMV_SHORAD_Base
+class RC_AMV_SHORAD_manned_A_I: RC_AMV_SHORAD_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -418,62 +605,125 @@ class RC_AMV_SHORAD_A_I: RC_AMV_SHORAD_Base
 
 	};
 };
+class RC_AMV_SHORAD_manned_WD_B: RC_AMV_SHORAD_manned_A_B
+{
+	#include "\RC_VVE\textures\AMV_SHORAD_Texture_WD.hpp"
+};
+class RC_AMV_SHORAD_manned_WD_O: RC_AMV_SHORAD_manned_A_O
+{
+	#include "\RC_VVE\textures\AMV_SHORAD_Texture_WD.hpp"
+};
+class RC_AMV_SHORAD_manned_WD_I: RC_AMV_SHORAD_manned_A_I
+{
+	#include "\RC_VVE\textures\AMV_SHORAD_Texture_WD.hpp"
+};
+*/
 
 
+class RC_AMV_SHORAD_UV_Base: RC_AMV_SHORAD_Base
+{
+	displayName="RC Patria AMV SHORAD";
+	
+	textPlural="UGVs";
+	textSingular="UGV";
+	isUav=1;
+	vehicleClass="Autonomous";
+	driverForceOptics=1;
+	forceHideDriver=1;
+
+	uavCameraDriverPos="driverview";
+	uavCameraDriverDir="driverview";
+	uavCameraGunnerPos="pos_view_gunner_gun";
+	uavCameraGunnerDir="pos_view_gunner_gun_dir";
+	
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			//cannot yet be driven when RCing gunner from commander seat
+			gunnerCompartments="Compartment3";
+			dontCreateAI=0;
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+		};
+	};
+};
+class RC_AMV_SHORAD_A_B: RC_AMV_SHORAD_UV_Base
+{
+	scope=2;
+	scopeCurator=2;
+	//forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_600Rnd_35mm_HEAB_AA_T_R",
+				"RC_600Rnd_35mm_HEAB_AA_T_R",
+				"RC_600Rnd_35mm_HEAB_AA_T_R"
+			};
+		};
+	};
+};
+class RC_AMV_SHORAD_A_O: RC_AMV_SHORAD_UV_Base
+{
+	scope=2;
+	scopeCurator=2;
+	//forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_600Rnd_35mm_HEAB_AA_T_G",
+				"RC_600Rnd_35mm_HEAB_AA_T_G",
+				"RC_600Rnd_35mm_HEAB_AA_T_G"
+			};
+		};
+	};
+};
+class RC_AMV_SHORAD_A_I: RC_AMV_SHORAD_UV_Base
+{
+	scope=2;
+	scopeCurator=2;
+	//forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_600Rnd_35mm_HEAB_AA_T_Y",
+				"RC_600Rnd_35mm_HEAB_AA_T_Y",
+				"RC_600Rnd_35mm_HEAB_AA_T_Y"
+			};
+		};
+
+	};
+};
 class RC_AMV_SHORAD_WD_B: RC_AMV_SHORAD_A_B
 {
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
-		"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_co.paa",
-		"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_adds_co.paa",
-		"QAV_Marshall\data\textures\olive\apc_wheeled_01_apc_co.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"VVE_Core\data\AAA_system_01\apc_wheeled_01_shorad_olive_co.paa"
-	};
-	textureList[]=
-	{
-		"woodland",
-		1
-	};
+	#include "\RC_VVE\textures\AMV_SHORAD_Texture_WD.hpp"
 };
 class RC_AMV_SHORAD_WD_O: RC_AMV_SHORAD_A_O
 {
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
-		"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_co.paa",
-		"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_adds_co.paa",
-		"QAV_Marshall\data\textures\olive\apc_wheeled_01_apc_co.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"VVE_Core\data\AAA_system_01\apc_wheeled_01_shorad_olive_co.paa"
-	};
-	textureList[]=
-	{
-		"woodland",
-		1
-	};
+	#include "\RC_VVE\textures\AMV_SHORAD_Texture_WD.hpp"
 };
 class RC_AMV_SHORAD_WD_I: RC_AMV_SHORAD_A_I
 {
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
-		"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
-		"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_co.paa",
-		"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_adds_co.paa",
-		"QAV_Marshall\data\textures\olive\apc_wheeled_01_apc_co.paa",
-		"a3\armor_f\data\camonet_green_co.paa",
-		"VVE_Core\data\AAA_system_01\apc_wheeled_01_shorad_olive_co.paa"
-	};
-	textureList[]=
-	{
-		"woodland",
-		1
-	};
+	#include "\RC_VVE\textures\AMV_SHORAD_Texture_WD.hpp"
 };

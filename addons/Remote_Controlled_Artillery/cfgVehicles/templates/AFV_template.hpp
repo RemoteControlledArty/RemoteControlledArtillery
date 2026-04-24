@@ -152,7 +152,7 @@ class RC_AFV_Base: RC_AFV_Core
 					maxFov=0.9;
 				};
 			};
-			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+			turretInfoType="RscOptics_APC_Wheeled_01_gunner";	//red	with turret direction indicator
 			//turretinfotype="RscOptics_APC_Tracked_01_gunner";	//AA
 			//turretInfoType="RscOptics_APC_Wheeled_03_gunner";	//white with turret direction indicator
 			//turretInfoType="RscOptics_MBT_03_gunner";			//white with turret direction indicator
@@ -186,7 +186,8 @@ class RC_AFV_Base: RC_AFV_Core
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";		//cam
 							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";	//MG
-							//gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";		//MG better
+							//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";		//MG better
+							//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";				//Crows
 
 							minAngleX=-30;
 							maxAngleX=30;
@@ -200,6 +201,7 @@ class RC_AFV_Base: RC_AFV_Core
 					};
 					turretInfoType="RscOptics_MBT_03_gunner";			//white with turret direction indicator
 					//turretInfoType="RscOptics_APC_Wheeled_03_gunner";	//white with turret direction indicator
+					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";	//red	with turret direction indicator
 				};
 
 				/*
@@ -207,9 +209,6 @@ class RC_AFV_Base: RC_AFV_Core
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
-
-					gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 					class OpticsIn
 					{
@@ -263,6 +262,7 @@ class RC_AFV_Base: RC_AFV_Core
 							maxFov=0.02;
 						};
 					};
+					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 				};
 				*/
 			};
@@ -313,7 +313,7 @@ class RC_AFV_Base: RC_AFV_Core
 
 	class TextureSources: TextureSources
 	{
-		class woodland: woodland
+		class woodland
 		{
 			displayName="Woodland";
 			textures[]=
@@ -327,7 +327,7 @@ class RC_AFV_Base: RC_AFV_Core
 				"RemoteControlled_I"
 			};
 		};
-		class arid: arid
+		class arid
 		{
 			displayName="Arid";
 			textures[]=

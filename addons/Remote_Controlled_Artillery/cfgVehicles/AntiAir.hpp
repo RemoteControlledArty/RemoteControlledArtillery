@@ -240,8 +240,8 @@ class RC_AA_A_Base: RC_AA_Base
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=45;	//30
-					angleRangeVertical=45;		//30
+					angleRangeHorizontal=60;	//30
+					angleRangeVertical=60;		//30
 					animDirection="mainGun";
 				};
 				class VisualSensorComponent: SensorTemplateVisual
@@ -753,8 +753,8 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=45;	//30
-					angleRangeVertical=45;		//30
+					angleRangeHorizontal=60;	//30
+					angleRangeVertical=60;		//30
 					animDirection="mainGun";
 				};
 				class VisualSensorComponent: SensorTemplateVisual

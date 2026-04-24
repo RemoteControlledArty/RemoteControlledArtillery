@@ -1,5 +1,5 @@
-class B_?_Wheeled_?_F;
-class RC_AFV_Fetch: B_?_Wheeled_?_F
+class VVE_APC_Wheeled_01_apc_QAV;
+class RC_AMV_APC_Fetch: VVE_APC_Wheeled_01_apc_QAV
 {
 	class EventHandlers;
 	class UserActions;
@@ -8,13 +8,12 @@ class RC_AFV_Fetch: B_?_Wheeled_?_F
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
+	class ViewOptics;
 
 	class AnimationSources;
-	class showCamonetHull;
-	class showCamonetCannon;
-	class showCamonetTurret;
-	class showSLATHull;
-	class showSLATTurret;
+	//class nethull;
+	class armor_comp;
+	class TextureSources;
 
 	class HitPoints;
 	class HitLFWheel;
@@ -30,7 +29,7 @@ class RC_AFV_Fetch: B_?_Wheeled_?_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_AFV_Core: RC_AFV_Core
+class RC_AMV_APC_Core: RC_AMV_APC_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -75,7 +74,7 @@ class RC_AFV_Core: RC_AFV_Core
 };
 
 
-class RC_AFV_Base: RC_AFV_Core
+class RC_AMV_APC_Base: RC_AMV_APC_Core
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -90,8 +89,8 @@ class RC_AFV_Base: RC_AFV_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	RC_ATrespondingTurret[]={0,0};
 
-	displayName="Designation";
-	editorSubcategory="RC_IFV_subcat";
+	displayName="Patria AMV APC";
+	editorSubcategory="RC_APC_ATGM_subcat";
 
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
@@ -116,10 +115,7 @@ class RC_AFV_Base: RC_AFV_Core
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner_missile.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			commanding=3;
@@ -129,8 +125,8 @@ class RC_AFV_Base: RC_AFV_Core
 
 			weapons[]=
 			{
-				"RC_?0mm",
-				"RC_MMG_338_coax",
+				"vve_HMG_127_APC",
+				"vve_missiles_titan",
 				"SmokeLauncher"
 			};
 
@@ -139,8 +135,7 @@ class RC_AFV_Base: RC_AFV_Core
 				class Wide
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					//gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_m_F";	//AA
+					gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
 
 					minAngleX=-30;
 					maxAngleX=30;
@@ -152,17 +147,13 @@ class RC_AFV_Base: RC_AFV_Core
 					maxFov=0.9;
 				};
 			};
-			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
-			//turretinfotype="RscOptics_APC_Tracked_01_gunner";	//AA
-			//turretInfoType="RscOptics_APC_Wheeled_03_gunner";	//white with turret direction indicator
-			//turretInfoType="RscOptics_MBT_03_gunner";			//white with turret direction indicator
+			turretInfoType="RscOptics_MBT_03_gunner";
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics : CommanderOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
-					//#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
 					commanding=2;
@@ -184,9 +175,7 @@ class RC_AFV_Base: RC_AFV_Core
 						class Wide
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";		//cam
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";	//MG
-							//gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";		//MG better
+							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
 
 							minAngleX=-30;
 							maxAngleX=30;
@@ -198,114 +187,40 @@ class RC_AFV_Base: RC_AFV_Core
 							maxFov=0.9;
 						};
 					};
-					turretInfoType="RscOptics_MBT_03_gunner";			//white with turret direction indicator
-					//turretInfoType="RscOptics_APC_Wheeled_03_gunner";	//white with turret direction indicator
+					turretInfoType="RscOptics_MBT_03_gunner";
 				};
-
-				/*
-				class AdvisorOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
-
-					gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
-
-					class OpticsIn
-					{
-						class Gun1
-						{
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-							minAngleX=-30;	//?
-							maxAngleX=30;	//?
-							minAngleY=-100;	//?
-							maxAngleY=100;	//?
-
-							initFov=0.4;
-							minFov=0.4;
-							maxFov=0.4;
-						};
-						class Gun2: Gun1
-						{
-							initFov=0.1;
-							minFov=0.1;
-							maxFov=0.1;
-						};
-						class Gun3: Gun1
-						{
-							initFov=0.02;
-							minFov=0.02;
-							maxFov=0.02;
-						};
-
-						class Com1: Gun1
-						{
-							camPos="commanderview";
-							//camDir="commanderview_dir";
-							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_02_F";
-
-							initFov=0.5;
-							minFov=0.5;
-							maxFov=0.5;
-						};
-						class Com2: Com1
-						{
-							initFov=0.1;
-							minFov=0.1;
-							maxFov=0.1;
-						};
-						class Com3: Com1
-						{
-							initFov=0.02;
-							minFov=0.02;
-							maxFov=0.02;
-						};
-					};
-				};
-				*/
 			};
 		};
 	};
 
 	class AnimationSources: AnimationSources
 	{
-		class muzzle_rot
-		{
-			source="ammorandom";
-			weapon="RC_?0mm";
-		};
-		class muzzle_hide
+		class zasleh3_hide
 		{
 			source="reload";
-			weapon="RC_?0mm";
+			weapon="vve_HMG_127_APC";
 		};
-		class revolving_cannon
+		class zasleh3_rot
 		{
-			source="revolving";
-			weapon="RC_?0mm";
+			source="ammorandom";
+			weapon="vve_HMG_127_APC";
 		};
-		/*
 		class Missiles_revolving
 		{
 			source="revolving";
-			weapon="RC_IFV_Missile_Launcher";
+			weapon="vve_missiles_titan";
 		};
 		class Missiles_reloadMagazine: Missiles_revolving
 		{
 			source="reloadMagazine";
 		};
+		/*
+		class nethull: nethull
+		{
+			initPhase=1;
+		};
 		*/
-		class showCamonetCannon: showCamonetCannon
-		{
-			initPhase=1;
-		};
-		class showCamonetTurret: showCamonetTurret
-		{
-			initPhase=1;
-		};
-		class showSLATTurret: showSLATTurret
+		class armor_comp: armor_comp
 		{
 			initPhase=1;
 		};
@@ -313,12 +228,20 @@ class RC_AFV_Base: RC_AFV_Core
 
 	class TextureSources: TextureSources
 	{
-		class woodland: woodland
+		class arid
 		{
-			displayName="Woodland";
+			displayName="Arid";
 			textures[]=
 			{
-				"a3\armor_f\data\camonet_green_co.paa"
+				"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_base_co.paa",
+				"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_adds_co.paa",
+				"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_tows_co.paa",
+				"QAV_Marshall\data\textures\apc_wheeled_01_mgs_co.paa",
+				"QAV_Marshall\data\textures\apc_wheeled_01_mgs_adds_co.paa",
+				"QAV_Marshall\data\textures\apc_wheeled_01_apc_co.paa",
+				"QAV_Marshall\data\textures\eos_r400_co.paa",
+				"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
+				"a3\weapons_f_beta\launchers\titan\data\tubem_co.paa"
 			};
 			factions[]=
 			{
@@ -327,12 +250,20 @@ class RC_AFV_Base: RC_AFV_Core
 				"RemoteControlled_I"
 			};
 		};
-		class arid: arid
+		class woodland
 		{
-			displayName="Arid";
+			displayName="Woodland";
 			textures[]=
 			{
-				"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
+				"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
+				"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
+				"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
+				"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_co.paa",
+				"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_adds_co.paa",
+				"QAV_Marshall\data\textures\olive\apc_wheeled_01_apc_co.paa",
+				"QAV_Marshall\data\textures\olive\eos_r400_co.paa",
+				"a3\armor_f\data\camonet_green_co.paa",
+				"a3\weapons_f_exp\Launchers\Titan\Data\launch_B_Titan_short_tna_F_02_co.paa"
 			};
 			factions[]=
 			{
@@ -345,7 +276,15 @@ class RC_AFV_Base: RC_AFV_Core
 
 	hiddenSelectionsTextures[]=
 	{
+		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_base_co.paa",
+		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_adds_co.paa",
+		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_tows_co.paa",
+		"QAV_Marshall\data\textures\apc_wheeled_01_mgs_co.paa",
+		"QAV_Marshall\data\textures\apc_wheeled_01_mgs_adds_co.paa",
+		"QAV_Marshall\data\textures\apc_wheeled_01_apc_co.paa",
+		"QAV_Marshall\data\textures\eos_r400_co.paa",
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
+		"a3\weapons_f_beta\launchers\titan\data\tubem_co.paa"
 	};
 	textureList[]=
 	{
@@ -353,7 +292,9 @@ class RC_AFV_Base: RC_AFV_Core
 		1
 	};
 };
-class RC_AFV_A_B: RC_AFV_Base
+
+
+class RC_AMV_APC_A_B: RC_AMV_APC_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -366,21 +307,11 @@ class RC_AFV_A_B: RC_AFV_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_R.hpp"
-
-			/*
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_R.hpp"
-				};
-			};
-			*/
+			//#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_R.hpp"
 		};
 	};
 };
-class RC_AFV_A_O: RC_AFV_Base
+class RC_AMV_APC_A_O: RC_AMV_APC_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -393,21 +324,11 @@ class RC_AFV_A_O: RC_AFV_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_G.hpp"
-
-			/*
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_R.hpp"
-				};
-			};
-			*/
+			//#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_G.hpp"
 		};
 	};
 };
-class RC_AFV_A_I: RC_AFV_Base
+class RC_AMV_APC_A_I: RC_AMV_APC_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -420,61 +341,21 @@ class RC_AFV_A_I: RC_AFV_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_Y.hpp"
-
-			/*
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_R.hpp"
-				};
-			};
-			*/
+			//#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_Y.hpp"
 		};
 	};
 };
 
 
-class RC_AFV_WD_B: RC_AFV_A_B
+class RC_AMV_APC_WD_B: RC_AMV_APC_A_B
 {
-	DLC="Expansion";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"a3\armor_f\data\camonet_green_co.paa"
-	};
-	textureList[]=
-	{
-		"woodland",
-		1
-	};
+	#include "\RC_VVE\textures\AMV_APC_Texture_WD.hpp"
 };
-class RC_AFV_WD_O: RC_AFV_A_O
+class RC_AMV_APC_WD_O: RC_AMV_APC_A_O
 {
-	DLC="Expansion";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"a3\armor_f\data\camonet_green_co.paa"
-	};
-	textureList[]=
-	{
-		"woodland",
-		1
-	};
+	#include "\RC_VVE\textures\AMV_APC_Texture_WD.hpp"
 };
-class RC_AFV_WD_I: RC_AFV_A_I
+class RC_AMV_APC_WD_I: RC_AMV_APC_A_I
 {
-	DLC="Expansion";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"a3\armor_f\data\camonet_green_co.paa"
-	};
-	textureList[]=
-	{
-		"woodland",
-		1
-	};
+	#include "\RC_VVE\textures\AMV_APC_Texture_WD.hpp"
 };
