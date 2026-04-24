@@ -1,3 +1,182 @@
+class vve_cannon_105mm;
+class RC_MGS_cannon_105mm_Base: vve_cannon_105mm
+{
+	class player;
+
+	class close;
+	class short;
+	class medium;
+	class far;
+};
+class RC_MGS_cannon_105mm: RC_MGS_cannon_105mm_Base
+{
+	author="Ascent";
+	displayName="105mm";
+	include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+	canLock=2;
+	reloadTime=5;
+	magazineReloadTime=5;
+
+	magazines[]=
+	{
+		"RC_10Rnd_105mm_APFSDS_T_R",
+		"RC_15Rnd_105mm_APFSDS_T_R",
+		"RC_20Rnd_105mm_APFSDS_T_R",
+		"RC_10Rnd_105mm_APFSDS_T_G",
+		"RC_15Rnd_105mm_APFSDS_T_G",
+		"RC_20Rnd_105mm_APFSDS_T_G",
+		"RC_10Rnd_105mm_APFSDS_T_Y",
+		"RC_15Rnd_105mm_APFSDS_T_Y",
+		"RC_20Rnd_105mm_APFSDS_T_Y",
+
+		"RC_5Rnd_105mm_MP_T_R",
+		"RC_10Rnd_105mm_MP_T_R",
+		"RC_15Rnd_105mm_MP_T_R",
+		"RC_20Rnd_105mm_MP_T_R",
+		"RC_5Rnd_105mm_MP_T_G",
+		"RC_10Rnd_105mm_MP_T_G",
+		"RC_15Rnd_105mm_MP_T_G",
+		"RC_20Rnd_105mm_MP_T_G",
+		"RC_5Rnd_105mm_MP_T_Y",
+		"RC_10Rnd_105mm_MP_T_Y",
+		"RC_15Rnd_105mm_MP_T_Y",
+		"RC_20Rnd_105mm_MP_T_Y",
+
+		/*
+		"RC_5Rnd_105mm_MP_DF_T_R",
+		"RC_10Rnd_105mm_MP_DF_T_R",
+		"RC_15Rnd_105mm_MP_DF_T_R",
+		"RC_20Rnd_105mm_MP_DF_T_R",
+		"RC_5Rnd_105mm_MP_DF_T_G",
+		"RC_10Rnd_105mm_MP_DF_T_G",
+		"RC_15Rnd_105mm_MP_DF_T_G",
+		"RC_20Rnd_105mm_MP_DF_T_G",
+		"RC_5Rnd_105mm_MP_DF_T_Y",
+		"RC_10Rnd_105mm_MP_DF_T_Y",
+		"RC_15Rnd_105mm_MP_DF_T_Y",
+		"RC_20Rnd_105mm_MP_DF_T_Y",
+		*/
+
+		"RC_2Rnd_105mm_MPAB_DF_T_R",
+		"RC_3Rnd_105mm_MPAB_DF_T_R",
+		"RC_4Rnd_105mm_MPAB_DF_T_R",
+		"RC_5Rnd_105mm_MPAB_DF_T_R",
+		"RC_10Rnd_105mm_MPAB_DF_T_R",
+		"RC_15Rnd_105mm_MPAB_DF_T_R",
+		"RC_20Rnd_105mm_MPAB_DF_T_R",
+
+		"RC_2Rnd_105mm_MPAB_DF_T_G",
+		"RC_3Rnd_105mm_MPAB_DF_T_G",
+		"RC_4Rnd_105mm_MPAB_DF_T_G",
+		"RC_5Rnd_105mm_MPAB_DF_T_G",
+		"RC_10Rnd_105mm_MPAB_DF_T_G",
+		"RC_15Rnd_105mm_MPAB_DF_T_G",
+		"RC_20Rnd_105mm_MPAB_DF_T_G",
+
+		"RC_2Rnd_105mm_MPAB_DF_T_Y",
+		"RC_3Rnd_105mm_MPAB_DF_T_Y",
+		"RC_4Rnd_105mm_MPAB_DF_T_Y",
+		"RC_5Rnd_105mm_MPAB_DF_T_Y",
+		"RC_10Rnd_105mm_MPAB_DF_T_Y",
+		"RC_15Rnd_105mm_MPAB_DF_T_Y",
+		"RC_20Rnd_105mm_MPAB_DF_T_Y",
+
+		/*
+		"RC_5Rnd_105mm_Overfly_Missiles",
+		"RC_4Rnd_105mm_Overfly_Missiles",
+		"RC_3Rnd_105mm_Overfly_Missiles",
+		"RC_2Rnd_105mm_Overfly_Missiles",
+		"RC_1Rnd_105mm_Overfly_Missiles",
+		*/
+
+		"RC_5Rnd_105mm_NLOS_Missiles",
+		"RC_4Rnd_105mm_NLOS_Missiles",
+		"RC_3Rnd_105mm_NLOS_Missiles",
+		"RC_2Rnd_105mm_NLOS_Missiles",
+		"RC_1Rnd_105mm_NLOS_Missiles",
+
+		"RC_5Rnd_105mm_AA_Missiles",
+		"RC_4Rnd_105mm_AA_Missiles",
+		"RC_3Rnd_105mm_AA_Missiles",
+		"RC_2Rnd_105mm_AA_Missiles",
+		"RC_1Rnd_105mm_AA_Missiles",
+
+		"RC_5Rnd_105mm_DLG_HVKEM",
+		"RC_4Rnd_105mm_DLG_HVKEM",
+		"RC_3Rnd_105mm_DLG_HVKEM",
+		"RC_2Rnd_105mm_DLG_HVKEM",
+		"RC_1Rnd_105mm_DLG_HVKEM"
+	};
+	class player: player
+	{
+		reloadTime=5;
+	};
+	class cruise: player
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+		minRange=150;
+		minRangeProbab=0.4;
+		midRange=400;
+		midRangeProbab=0.95;
+		maxRange=4000;
+		maxRangeProbab=0.95;
+	};
+	class topDown: player
+	{
+		textureType="topDown";
+		displayName="$STR_A3_FireMode_TopDown0";
+		minRange=150;
+		minRangeProbab=0.4;
+		midRange=400;
+		midRangeProbab=0.95;
+		maxRange=4000;
+		maxRangeProbab=0.95;
+	};
+	modes[]=
+	{
+		"player",
+		"cruise",
+		"topDown",
+		"close",
+		"short",
+		"medium",
+		"far"
+	};
+};
+
+
+class vve_HMG_127_APC;
+class RC_MGS_HMG_Base: vve_HMG_127_APC
+{
+	class manual;
+};
+class RC_MGS_HMG: RC_MGS_HMG_Base
+{
+	author="Ascent";
+	displayName="HMG";
+	canLock=2;
+	maxZeroing=3000;
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
+	autoReload=1;
+	magazines[]=
+	{
+		"RC_200Rnd_127x99_T_R",
+		"RC_200Rnd_127x99_T_G",
+		"RC_200Rnd_127x99_T_Y",
+		"RC_200Rnd_127x99_SLAP_T_R",
+		"RC_200Rnd_127x99_SLAP_T_G",
+		"RC_200Rnd_127x99_SLAP_T_Y",
+		"RC_200Rnd_127x99_cUAS"
+	};
+	class manual: manual
+	{
+		displayName="12.7mm";
+		dispersion=0.001;
+	};
+};
+
+
 class vve_autocannon_35mm;
 class RC_Single_autocannon_35mm_AA_base: vve_autocannon_35mm
 {

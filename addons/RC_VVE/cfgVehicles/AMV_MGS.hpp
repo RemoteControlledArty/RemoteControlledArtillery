@@ -125,8 +125,7 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 
 			weapons[]=
 			{
-				//"vve_cannon_105mm"
-				"RC_cannon_120mm",
+				"RC_MGS_cannon_105mm"
 				"RC_MMG_338_coax",
 				"SmokeLauncher"
 			};
@@ -161,6 +160,7 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 
 					weapons[]=
 					{
+						"RC_MGS_HMG",
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
@@ -259,17 +259,17 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 		class maingun_recoil
 		{
 			source="reload";
-			weapon="vve_cannon_105mm";
+			weapon="RC_MGS_cannon_105mm";
 		};
 		class zasleh1_hide
 		{
 			source="reload";	
-			weapon="vve_cannon_105mm";
+			weapon="RC_MGS_cannon_105mm";
 		};
 		class zasleh1_rot
 		{
 			source="ammorandom";
-			weapon="vve_cannon_105mm";
+			weapon="RC_MGS_cannon_105mm";
 		};
 		class zasleh2_hide
 		{
@@ -284,12 +284,12 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 		class zasleh3_hide
 		{
 			source="reload";
-			weapon="vve_HMG_127_APC";
+			weapon="RC_MGS_HMG";
 		};
 		class zasleh3_rot
 		{
 			source="ammorandom";
-			weapon="vve_HMG_127_APC";
+			weapon="RC_MGS_HMG";
 		};
 		/*
 		class nethull: nethull
@@ -376,7 +376,7 @@ class RC_AMV_MGS_A_B: RC_AMV_MGS_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Rooikat_red.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_MGS_R.hpp"
 
 			class Turrets: Turrets
 			{
@@ -401,7 +401,7 @@ class RC_AMV_MGS_A_O: RC_AMV_MGS_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Rooikat_green.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_MGS_G.hpp"
 
 			class Turrets: Turrets
 			{
@@ -426,7 +426,7 @@ class RC_AMV_MGS_A_I: RC_AMV_MGS_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Rooikat_yellow.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_MGS_Y.hpp"
 
 			class Turrets: Turrets
 			{
