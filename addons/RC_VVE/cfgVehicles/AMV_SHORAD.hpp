@@ -1,38 +1,3 @@
-class APC_Wheeled_01_bmp_QAV;
-class VVE_APC_Wheeled_01_bmp_QAV: APC_Wheeled_01_bmp_QAV
-{
-	scope=2;
-	scopeCurator=2;
-	side=0;
-	faction="RemoteControlled_O";
-	textureList[]=
-	{
-		"Sand",
-		1
-	};
-	hiddenSelections[]=
-	{
-		"camo1",
-		"camo2",
-		"camo3",
-		"camo4",
-		"camo5",
-		"camobmp",
-		"camonet"
-	};
-	hiddenSelectionsTextures[]=
-	{
-		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_base_co.paa",
-		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_adds_co.paa",
-		"a3\armor_f_beta\APC_Wheeled_01\data\APC_Wheeled_01_tows_co.paa",
-		"QAV_Marshall\data\textures\apc_wheeled_01_mgs_co.paa",
-		"QAV_Marshall\data\textures\apc_wheeled_01_mgs_adds_co.paa",
-		"QAV_Marshall\data\textures\apc_wheeled_01_bmp3_co.paa",
-		"a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
-	};
-};
-	
-	
 class VVE_APC_Wheeled_01_shorad_QAV;
 class RC_AMV_SHORAD_Fetch: VVE_APC_Wheeled_01_shorad_QAV
 {
