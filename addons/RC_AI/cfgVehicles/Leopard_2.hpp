@@ -131,7 +131,7 @@ class RC_AI_B_Leopard_A: RC_AI_B_Leopard_A_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Rooikat_red.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Leopard_red.hpp"
 
 			class Turrets: Turrets
 			{
@@ -155,7 +155,7 @@ class RC_AI_O_Leopard_A: RC_AI_B_Leopard_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Rooikat_green.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Leopard_green.hpp"
 
 			class Turrets: Turrets
 			{
@@ -179,7 +179,7 @@ class RC_AI_I_Leopard_A: RC_AI_B_Leopard_A
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_AI\includes_vicmags\mags_AI_Rooikat_yellow.hpp"
+			#include "\RC_AI\includes_vicmags\mags_AI_Leopard_yellow.hpp"
 
 			class Turrets: Turrets
 			{

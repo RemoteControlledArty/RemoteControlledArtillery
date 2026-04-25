@@ -163,6 +163,11 @@ class RC_RHS_weap_m256: rhs_weap_m256_base
 		"RC_15Rnd_120mm_MP_T_R",
 		"RC_20Rnd_120mm_MP_T_R",
 
+		"RC_5Rnd_120mm_MP_DF_T_R",
+		"RC_10Rnd_120mm_MP_DF_T_R",
+		"RC_15Rnd_120mm_MP_DF_T_R",
+		"RC_20Rnd_120mm_MP_DF_T_R",
+
 		"RC_2Rnd_120mm_MPAB_DF_T_R",
 		"RC_3Rnd_120mm_MPAB_DF_T_R",
 		"RC_4Rnd_120mm_MPAB_DF_T_R",

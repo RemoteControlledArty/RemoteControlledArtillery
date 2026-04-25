@@ -12,7 +12,7 @@ class RC_MGS_cannon_105mm: RC_MGS_cannon_105mm_Base
 {
 	author="Ascent";
 	displayName="105mm";
-	include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	canLock=2;
 	reloadTime=5;
 	magazineReloadTime=5;
@@ -42,7 +42,6 @@ class RC_MGS_cannon_105mm: RC_MGS_cannon_105mm_Base
 		"RC_15Rnd_105mm_MP_T_Y",
 		"RC_20Rnd_105mm_MP_T_Y",
 
-		/*
 		"RC_5Rnd_105mm_MP_DF_T_R",
 		"RC_10Rnd_105mm_MP_DF_T_R",
 		"RC_15Rnd_105mm_MP_DF_T_R",
@@ -55,7 +54,6 @@ class RC_MGS_cannon_105mm: RC_MGS_cannon_105mm_Base
 		"RC_10Rnd_105mm_MP_DF_T_Y",
 		"RC_15Rnd_105mm_MP_DF_T_Y",
 		"RC_20Rnd_105mm_MP_DF_T_Y",
-		*/
 
 		"RC_2Rnd_105mm_MPAB_DF_T_R",
 		"RC_3Rnd_105mm_MPAB_DF_T_R",
@@ -81,31 +79,41 @@ class RC_MGS_cannon_105mm: RC_MGS_cannon_105mm_Base
 		"RC_15Rnd_105mm_MPAB_DF_T_Y",
 		"RC_20Rnd_105mm_MPAB_DF_T_Y",
 
-		/*
-		"RC_5Rnd_105mm_Overfly_Missiles",
-		"RC_4Rnd_105mm_Overfly_Missiles",
-		"RC_3Rnd_105mm_Overfly_Missiles",
-		"RC_2Rnd_105mm_Overfly_Missiles",
-		"RC_1Rnd_105mm_Overfly_Missiles",
-		*/
+		"RC_5Rnd_105mm_M_Overfly",
+		"RC_4Rnd_105mm_M_Overfly",
+		"RC_3Rnd_105mm_M_Overfly",
+		"RC_2Rnd_105mm_M_Overfly",
+		"RC_1Rnd_105mm_M_Overfly",
 
-		"RC_5Rnd_105mm_NLOS_Missiles",
-		"RC_4Rnd_105mm_NLOS_Missiles",
-		"RC_3Rnd_105mm_NLOS_Missiles",
-		"RC_2Rnd_105mm_NLOS_Missiles",
-		"RC_1Rnd_105mm_NLOS_Missiles",
+		"RC_5Rnd_105mm_M_SACLOS",
+		"RC_4Rnd_105mm_M_SACLOS",
+		"RC_3Rnd_105mm_M_SACLOS",
+		"RC_2Rnd_105mm_M_SACLOS",
+		"RC_1Rnd_105mm_M_SACLOS",
 
-		"RC_5Rnd_105mm_AA_Missiles",
-		"RC_4Rnd_105mm_AA_Missiles",
-		"RC_3Rnd_105mm_AA_Missiles",
-		"RC_2Rnd_105mm_AA_Missiles",
-		"RC_1Rnd_105mm_AA_Missiles",
+		"RC_5Rnd_105mm_M_LOS",
+		"RC_4Rnd_105mm_M_LOS",
+		"RC_3Rnd_105mm_M_LOS",
+		"RC_2Rnd_105mm_M_LOS",
+		"RC_1Rnd_105mm_M_LOS",
 
-		"RC_5Rnd_105mm_DLG_HVKEM",
-		"RC_4Rnd_105mm_DLG_HVKEM",
-		"RC_3Rnd_105mm_DLG_HVKEM",
-		"RC_2Rnd_105mm_DLG_HVKEM",
-		"RC_1Rnd_105mm_DLG_HVKEM"
+		"RC_5Rnd_105mm_M_NLOS",
+		"RC_4Rnd_105mm_M_NLOS",
+		"RC_3Rnd_105mm_M_NLOS",
+		"RC_2Rnd_105mm_M_NLOS",
+		"RC_1Rnd_105mm_M_NLOS",
+
+		"RC_5Rnd_105mm_M_AA",
+		"RC_4Rnd_105mm_M_AA",
+		"RC_3Rnd_105mm_M_AA",
+		"RC_2Rnd_105mm_M_AA",
+		"RC_1Rnd_105mm_M_AA",
+
+		"RC_5Rnd_105mm_M_HVKEM",
+		"RC_4Rnd_105mm_M_HVKEM",
+		"RC_3Rnd_105mm_M_HVKEM",
+		"RC_2Rnd_105mm_M_HVKEM",
+		"RC_1Rnd_105mm_M_HVKEM"
 	};
 	class player: player
 	{

@@ -1953,6 +1953,26 @@ class RC_20Rnd_105mm_MP_T_G: RC_10Rnd_105mm_MP_T_G {count=20;};
 class RC_20Rnd_105mm_MP_T_Y: RC_10Rnd_105mm_MP_T_Y {count=20;};
 
 
+class RC_5Rnd_105mm_MP_DF_T_R: RC_5Rnd_105mm_MP_T_R
+{
+	ammo="RC_Sh_105mm_MP_DF_T_R";
+	displayName="MP-DF-T";
+	displayNameShort="MP-DF-T";
+	displayNameMFDFormat="MP-DF-T";
+	count=5;
+};
+class RC_5Rnd_105mm_MP_DF_T_G: RC_5Rnd_105mm_MP_DF_T_R {ammo="RC_Sh_105mm_MP_DF_T_G";};
+class RC_5Rnd_105mm_MP_DF_T_Y: RC_5Rnd_105mm_MP_DF_T_R {ammo="RC_Sh_105mm_MP_DF_T_Y";};
+class RC_10Rnd_105mm_MP_DF_T_R: RC_5Rnd_105mm_MP_DF_T_R {count=10;};
+class RC_10Rnd_105mm_MP_DF_T_G: RC_5Rnd_105mm_MP_DF_T_G {count=10;};
+class RC_10Rnd_105mm_MP_DF_T_Y: RC_5Rnd_105mm_MP_DF_T_Y {count=10;};
+class RC_15Rnd_105mm_MP_DF_T_R: RC_10Rnd_105mm_MP_DF_T_R {count=15;};
+class RC_15Rnd_105mm_MP_DF_T_G: RC_10Rnd_105mm_MP_DF_T_G {count=15;};
+class RC_15Rnd_105mm_MP_DF_T_Y: RC_10Rnd_105mm_MP_DF_T_Y {count=15;};
+class RC_20Rnd_105mm_MP_DF_T_R: RC_10Rnd_105mm_MP_DF_T_R {count=20;};
+class RC_20Rnd_105mm_MP_DF_T_G: RC_10Rnd_105mm_MP_DF_T_G {count=20;};
+class RC_20Rnd_105mm_MP_DF_T_Y: RC_10Rnd_105mm_MP_DF_T_Y {count=20;};
+
 
 class RC_2Rnd_105mm_MPAB_DF_T_R: RC_10Rnd_105mm_MP_T_R
 {
@@ -2003,8 +2023,9 @@ class RC_20Rnd_105mm_APFSDS_T_G: RC_10Rnd_105mm_APFSDS_T_G {count=20;};
 class RC_20Rnd_105mm_APFSDS_T_Y: RC_10Rnd_105mm_APFSDS_T_Y {count=20;};
 
 
+//105mm cannon launched missiles
 class 4Rnd_120mm_LG_cannon_missiles;
-class RC_5Rnd_105mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
+class RC_5Rnd_105mm_M_NLOS: 4Rnd_120mm_LG_cannon_missiles
 {
 	displayName="4km NLOS ATGM";
 	displayNameShort="NLOS ATGM";
@@ -2013,60 +2034,75 @@ class RC_5Rnd_105mm_DLG_cannon_missiles: 4Rnd_120mm_LG_cannon_missiles
 	count=5;
 	//initSpeed=36;
 };
-class RC_4Rnd_105mm_DLG_cannon_missiles: RC_5Rnd_105mm_DLG_cannon_missiles {count=4;};
-class RC_3Rnd_105mm_DLG_cannon_missiles: RC_5Rnd_105mm_DLG_cannon_missiles {count=3;};
-class RC_2Rnd_105mm_DLG_cannon_missiles: RC_5Rnd_105mm_DLG_cannon_missiles {count=2;};
-class RC_1Rnd_105mm_DLG_cannon_missiles: RC_5Rnd_105mm_DLG_cannon_missiles {count=1;};
+class RC_4Rnd_105mm_M_NLOS: RC_5Rnd_105mm_M_NLOS {count=4;};
+class RC_3Rnd_105mm_M_NLOS: RC_5Rnd_105mm_M_NLOS {count=3;};
+class RC_2Rnd_105mm_M_NLOS: RC_5Rnd_105mm_M_NLOS {count=2;};
+class RC_1Rnd_105mm_M_NLOS: RC_5Rnd_105mm_M_NLOS {count=1;};
 
 
-class RC_5Rnd_105mm_cannon_missiles: RC_5Rnd_105mm_DLG_cannon_missiles
+class RC_5Rnd_105mm_M_Overfly: RC_5Rnd_105mm_M_NLOS
+{
+	displayName="4km Overfly ATGM";
+	displayNameShort="Overfly ATGM";
+	displayNameMFDFormat="Overfly ATGM";
+	ammo="RC_M_105mm_cannon_ATGM_Overfly";
+};
+class RC_4Rnd_105mm_M_Overfly: RC_5Rnd_105mm_M_Overfly {count=4;};
+class RC_3Rnd_105mm_M_Overfly: RC_5Rnd_105mm_M_Overfly {count=3;};
+class RC_2Rnd_105mm_M_Overfly: RC_5Rnd_105mm_M_Overfly {count=2;};
+class RC_1Rnd_105mm_M_Overfly: RC_5Rnd_105mm_M_Overfly {count=1;};
+
+
+class RC_5Rnd_105mm_M_LOS: RC_5Rnd_105mm_M_NLOS
 {
 	displayName="4km ATGM";
 	displayNameShort="ATGM";
 	displayNameMFDFormat="ATGM";
 	ammo="RC_M_105mm_cannon_ATGM";
 };
-class RC_4Rnd_105mm_cannon_missiles: RC_5Rnd_105mm_cannon_missiles {count=4;};
-class RC_3Rnd_105mm_cannon_missiles: RC_5Rnd_105mm_cannon_missiles {count=3;};
-class RC_2Rnd_105mm_cannon_missiles: RC_5Rnd_105mm_cannon_missiles {count=2;};
-class RC_1Rnd_105mm_cannon_missiles: RC_5Rnd_105mm_cannon_missiles {count=1;};
+class RC_4Rnd_105mm_M_LOS: RC_5Rnd_105mm_M_LOS {count=4;};
+class RC_3Rnd_105mm_M_LOS: RC_5Rnd_105mm_M_LOS {count=3;};
+class RC_2Rnd_105mm_M_LOS: RC_5Rnd_105mm_M_LOS {count=2;};
+class RC_1Rnd_105mm_M_LOS: RC_5Rnd_105mm_M_LOS {count=1;};
 
 
-class RC_5Rnd_105mm_AA_cannon_missiles: RC_5Rnd_105mm_DLG_cannon_missiles
+class RC_5Rnd_105mm_M_SACLOS: RC_5Rnd_105mm_M_NLOS
+{
+	displayName="4km SACLOS ATGM";
+	displayNameShort="SACLOS ATGM";
+	displayNameMFDFormat="SACLOS ATGM";
+	ammo="RC_M_105mm_cannon_ATGM_SACLOS";
+};
+class RC_4Rnd_105mm_M_SACLOS: RC_5Rnd_105mm_M_SACLOS {count=4;};
+class RC_3Rnd_105mm_M_SACLOS: RC_5Rnd_105mm_M_SACLOS {count=3;};
+class RC_2Rnd_105mm_M_SACLOS: RC_5Rnd_105mm_M_SACLOS {count=2;};
+class RC_1Rnd_105mm_M_SACLOS: RC_5Rnd_105mm_M_SACLOS {count=1;};
+
+
+class RC_5Rnd_105mm_M_AA: RC_5Rnd_105mm_M_NLOS
 {
 	displayName="5km AA";
 	displayNameShort="AA";
 	displayNameMFDFormat="AA";
 	ammo="RC_M_105mm_cannon_AA";
 };
-class RC_4Rnd_105mm_AA_cannon_missiles: RC_5Rnd_105mm_AA_cannon_missiles {count=4;};
-class RC_3Rnd_105mm_AA_cannon_missiles: RC_5Rnd_105mm_AA_cannon_missiles {count=3;};
-class RC_2Rnd_105mm_AA_cannon_missiles: RC_5Rnd_105mm_AA_cannon_missiles {count=2;};
-class RC_1Rnd_105mm_AA_cannon_missiles: RC_5Rnd_105mm_AA_cannon_missiles {count=1;};
+class RC_4Rnd_105mm_M_AA: RC_5Rnd_105mm_M_AA {count=4;};
+class RC_3Rnd_105mm_M_AA: RC_5Rnd_105mm_M_AA {count=3;};
+class RC_2Rnd_105mm_M_AA: RC_5Rnd_105mm_M_AA {count=2;};
+class RC_1Rnd_105mm_M_AA: RC_5Rnd_105mm_M_AA {count=1;};
 
 
-class RC_5Rnd_105mm_DLG_LR_cannon_missiles: RC_5Rnd_105mm_DLG_cannon_missiles
-{
-	displayName="6km NLOS ATGM";
-	ammo="RC_M_105mm_cannon_ATGM_DLG_LR";
-};
-class RC_4Rnd_105mm_DLG_LR_cannon_missiles: RC_5Rnd_105mm_DLG_LR_cannon_missiles {count=4;};
-class RC_3Rnd_105mm_DLG_LR_cannon_missiles: RC_5Rnd_105mm_DLG_LR_cannon_missiles {count=3;};
-class RC_2Rnd_105mm_DLG_LR_cannon_missiles: RC_5Rnd_105mm_DLG_LR_cannon_missiles {count=2;};
-class RC_1Rnd_105mm_DLG_LR_cannon_missiles: RC_5Rnd_105mm_DLG_LR_cannon_missiles {count=1;};
-
-
-class RC_5Rnd_105mm_DLG_HVKEM: RC_5Rnd_105mm_DLG_LR_cannon_missiles
+class RC_5Rnd_105mm_M_HVKEM: RC_5Rnd_105mm_M_NLOS
 {
 	displayName="HV-KE-M";
 	displayNameShort="HV-KE-M";
 	displayNameMFDFormat="HV-KE-M";
 	ammo="RC_M_105mm_DLG_HVKEM";
 };
-class RC_4Rnd_105mm_DLG_HVKEM: RC_5Rnd_105mm_DLG_HVKEM {count=4;};
-class RC_3Rnd_105mm_DLG_HVKEM: RC_5Rnd_105mm_DLG_HVKEM {count=3;};
-class RC_2Rnd_105mm_DLG_HVKEM: RC_5Rnd_105mm_DLG_HVKEM {count=2;};
-class RC_1Rnd_105mm_DLG_HVKEM: RC_5Rnd_105mm_DLG_HVKEM {count=1;};
+class RC_4Rnd_105mm_M_HVKEM: RC_5Rnd_105mm_M_HVKEM {count=4;};
+class RC_3Rnd_105mm_M_HVKEM: RC_5Rnd_105mm_M_HVKEM {count=3;};
+class RC_2Rnd_105mm_M_HVKEM: RC_5Rnd_105mm_M_HVKEM {count=2;};
+class RC_1Rnd_105mm_M_HVKEM: RC_5Rnd_105mm_M_HVKEM {count=1;};
 
 
 // 120mm direct fire
@@ -2091,6 +2127,25 @@ class RC_20Rnd_120mm_MP_T_R: RC_10Rnd_120mm_MP_T_R {count=20;};
 class RC_20Rnd_120mm_MP_T_G: RC_10Rnd_120mm_MP_T_G {count=20;};
 class RC_20Rnd_120mm_MP_T_Y: RC_10Rnd_120mm_MP_T_Y {count=20;};
 
+
+class RC_5Rnd_120mm_MP_DF_T_R: RC_5Rnd_120mm_MP_T_R
+{
+	ammo="RC_Sh_120mm_MP_DF_T_R";
+	displayName="MP-DF-T";
+	displayNameShort="MP-DF-T";
+	displayNameMFDFormat="MP-DF-T";
+};
+class RC_5Rnd_120mm_MP_DF_T_G: RC_5Rnd_120mm_MP_DF_T_R {ammo="RC_Sh_120mm_MP_DF_T_G";};
+class RC_5Rnd_120mm_MP_DF_T_Y: RC_5Rnd_120mm_MP_DF_T_R {ammo="RC_Sh_120mm_MP_DF_T_Y";};
+class RC_10Rnd_120mm_MP_DF_T_R: RC_5Rnd_120mm_MP_DF_T_R {count=10;};
+class RC_10Rnd_120mm_MP_DF_T_G: RC_5Rnd_120mm_MP_DF_T_G {count=10;};
+class RC_10Rnd_120mm_MP_DF_T_Y: RC_5Rnd_120mm_MP_DF_T_Y {count=10;};
+class RC_15Rnd_120mm_MP_DF_T_R: RC_10Rnd_120mm_MP_DF_T_R {count=15;};
+class RC_15Rnd_120mm_MP_DF_T_G: RC_10Rnd_120mm_MP_DF_T_G {count=15;};
+class RC_15Rnd_120mm_MP_DF_T_Y: RC_10Rnd_120mm_MP_DF_T_Y {count=15;};
+class RC_20Rnd_120mm_MP_DF_T_R: RC_10Rnd_120mm_MP_DF_T_R {count=20;};
+class RC_20Rnd_120mm_MP_DF_T_G: RC_10Rnd_120mm_MP_DF_T_G {count=20;};
+class RC_20Rnd_120mm_MP_DF_T_Y: RC_10Rnd_120mm_MP_DF_T_Y {count=20;};
 
 
 class RC_2Rnd_120mm_MPAB_DF_T_R: RC_10Rnd_120mm_MP_T_R
@@ -2314,6 +2369,26 @@ class RC_15Rnd_125mm_MP_T_Y: RC_10Rnd_125mm_MP_T_Y {count=15;};
 class RC_20Rnd_125mm_MP_T_R: RC_10Rnd_125mm_MP_T_R {count=20;};
 class RC_20Rnd_125mm_MP_T_G: RC_10Rnd_125mm_MP_T_G {count=20;};
 class RC_20Rnd_125mm_MP_T_Y: RC_10Rnd_125mm_MP_T_Y {count=20;};
+
+
+class RC_5Rnd_125mm_MP_DF_T_R: RC_5Rnd_125mm_MP_T_R
+{
+	ammo="RC_Sh_125mm_MP_DF_T_R";
+	displayName="MP-DF-T";
+	displayNameShort="MP-DF-T";
+	displayNameMFDFormat="MP-DF-T";
+};
+class RC_5Rnd_125mm_MP_DF_T_G: RC_5Rnd_125mm_MP_DF_T_R {ammo="RC_Sh_125mm_MP_DF_T_G";};
+class RC_5Rnd_125mm_MP_DF_T_Y: RC_5Rnd_125mm_MP_DF_T_R {ammo="RC_Sh_125mm_MP_DF_T_Y";};
+class RC_10Rnd_125mm_MP_DF_T_R: RC_5Rnd_125mm_MP_DF_T_R {count=10;};
+class RC_10Rnd_125mm_MP_DF_T_G: RC_5Rnd_125mm_MP_DF_T_G {count=10;};
+class RC_10Rnd_125mm_MP_DF_T_Y: RC_5Rnd_125mm_MP_DF_T_Y {count=10;};
+class RC_15Rnd_125mm_MP_DF_T_R: RC_10Rnd_125mm_MP_DF_T_R {count=15;};
+class RC_15Rnd_125mm_MP_DF_T_G: RC_10Rnd_125mm_MP_DF_T_G {count=15;};
+class RC_15Rnd_125mm_MP_DF_T_Y: RC_10Rnd_125mm_MP_DF_T_Y {count=15;};
+class RC_20Rnd_125mm_MP_DF_T_R: RC_10Rnd_125mm_MP_DF_T_R {count=20;};
+class RC_20Rnd_125mm_MP_DF_T_G: RC_10Rnd_125mm_MP_DF_T_G {count=20;};
+class RC_20Rnd_125mm_MP_DF_T_Y: RC_10Rnd_125mm_MP_DF_T_Y {count=20;};
 
 
 class RC_2Rnd_125mm_MPAB_DF_T_R: RC_10Rnd_125mm_MP_T_R

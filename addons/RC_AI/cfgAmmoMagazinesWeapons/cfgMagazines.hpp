@@ -319,6 +319,24 @@ class RC_AI_5Rnd_120mm_MP_T_G: RC_AI_20Rnd_120mm_MP_T_G {count=5;};
 class RC_AI_5Rnd_120mm_MP_T_Y: RC_AI_20Rnd_120mm_MP_T_Y {count=5;};
 
 
+class RC_20Rnd_120mm_MP_DF_T_R;
+class RC_AI_20Rnd_120mm_MP_DF_T_R: RC_20Rnd_120mm_MP_DF_T_R
+{
+	ammo="RC_AI_Sh_120mm_MP_DF_T_R";
+};
+class RC_AI_20Rnd_120mm_MP_DF_T_G: RC_AI_20Rnd_120mm_MP_DF_T_R {ammo="RC_AI_Sh_120mm_MP_DF_T_G";};
+class RC_AI_20Rnd_120mm_MP_DF_T_Y: RC_AI_20Rnd_120mm_MP_DF_T_R {ammo="RC_AI_Sh_120mm_MP_DF_T_Y";};
+class RC_AI_15Rnd_120mm_MP_DF_T_R: RC_AI_20Rnd_120mm_MP_DF_T_R {count=15;};
+class RC_AI_15Rnd_120mm_MP_DF_T_G: RC_AI_20Rnd_120mm_MP_DF_T_G {count=15;};
+class RC_AI_15Rnd_120mm_MP_DF_T_Y: RC_AI_20Rnd_120mm_MP_DF_T_Y {count=15;};
+class RC_AI_10Rnd_120mm_MP_DF_T_R: RC_AI_20Rnd_120mm_MP_DF_T_R {count=10;};
+class RC_AI_10Rnd_120mm_MP_DF_T_G: RC_AI_20Rnd_120mm_MP_DF_T_G {count=10;};
+class RC_AI_10Rnd_120mm_MP_DF_T_Y: RC_AI_20Rnd_120mm_MP_DF_T_Y {count=10;};
+class RC_AI_5Rnd_120mm_MP_DF_T_R: RC_AI_20Rnd_120mm_MP_DF_T_R {count=5;};
+class RC_AI_5Rnd_120mm_MP_DF_T_G: RC_AI_20Rnd_120mm_MP_DF_T_G {count=5;};
+class RC_AI_5Rnd_120mm_MP_DF_T_Y: RC_AI_20Rnd_120mm_MP_DF_T_Y {count=5;};
+
+
 class RC_3Rnd_120mm_MPAB_DF_T_R;
 class RC_AI_3Rnd_120mm_MPAB_DF_T_R: RC_3Rnd_120mm_MPAB_DF_T_R
 {
@@ -363,6 +381,24 @@ class RC_AI_15Rnd_125mm_MP_T_Y: RC_AI_20Rnd_125mm_MP_T_Y {count=15;};
 class RC_AI_10Rnd_125mm_MP_T_R: RC_AI_20Rnd_125mm_MP_T_R {count=10;};
 class RC_AI_10Rnd_125mm_MP_T_G: RC_AI_20Rnd_125mm_MP_T_G {count=10;};
 class RC_AI_10Rnd_125mm_MP_T_Y: RC_AI_20Rnd_125mm_MP_T_Y {count=10;};
+
+
+class RC_20Rnd_125mm_MP_DF_T_R;
+class RC_AI_20Rnd_125mm_MP_DF_T_R: RC_20Rnd_125mm_MP_DF_T_R
+{
+	ammo="RC_AI_Sh_125mm_MP_DF_T_R";
+};
+class RC_AI_20Rnd_125mm_MP_DF_T_G: RC_AI_20Rnd_125mm_MP_DF_T_R {ammo="RC_AI_Sh_125mm_MP_DF_T_G";};
+class RC_AI_20Rnd_125mm_MP_DF_T_Y: RC_AI_20Rnd_125mm_MP_DF_T_R {ammo="RC_AI_Sh_125mm_MP_DF_T_Y";};
+class RC_AI_15Rnd_125mm_MP_DF_T_R: RC_AI_20Rnd_125mm_MP_DF_T_R {count=15;};
+class RC_AI_15Rnd_125mm_MP_DF_T_G: RC_AI_20Rnd_125mm_MP_DF_T_G {count=15;};
+class RC_AI_15Rnd_125mm_MP_DF_T_Y: RC_AI_20Rnd_125mm_MP_DF_T_Y {count=15;};
+class RC_AI_10Rnd_125mm_MP_DF_T_R: RC_AI_20Rnd_125mm_MP_DF_T_R {count=10;};
+class RC_AI_10Rnd_125mm_MP_DF_T_G: RC_AI_20Rnd_125mm_MP_DF_T_G {count=10;};
+class RC_AI_10Rnd_125mm_MP_DF_T_Y: RC_AI_20Rnd_125mm_MP_DF_T_Y {count=10;};
+class RC_AI_5Rnd_125mm_MP_DF_T_R: RC_AI_20Rnd_125mm_MP_DF_T_R {count=5;};
+class RC_AI_5Rnd_125mm_MP_DF_T_G: RC_AI_20Rnd_125mm_MP_DF_T_G {count=5;};
+class RC_AI_5Rnd_125mm_MP_DF_T_Y: RC_AI_20Rnd_125mm_MP_DF_T_Y {count=5;};
 
 
 class RC_3Rnd_125mm_MPAB_DF_T_R;

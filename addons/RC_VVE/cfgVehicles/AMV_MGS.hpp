@@ -125,7 +125,7 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 
 			weapons[]=
 			{
-				"RC_MGS_cannon_105mm"
+				"RC_MGS_cannon_105mm",
 				"RC_MMG_338_coax",
 				"SmokeLauncher"
 			};
@@ -384,6 +384,7 @@ class RC_AMV_MGS_A_B: RC_AMV_MGS_Base
 				{
 					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_red.hpp"
 				};
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -409,6 +410,7 @@ class RC_AMV_MGS_A_O: RC_AMV_MGS_Base
 				{
 					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_green.hpp"
 				};
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
@@ -434,6 +436,7 @@ class RC_AMV_MGS_A_I: RC_AMV_MGS_Base
 				{
 					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_yellow.hpp"
 				};
+				class AdvisorOptics: AdvisorOptics {};
 			};
 		};
 	};
