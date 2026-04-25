@@ -1685,6 +1685,18 @@ class RC_20mm_mounted_cUAS: RC_20mm_cUAS
 
 
 //105mm of FSV/MBT
+class Sh_105mm_APFSDS_T_Red;
+class RC_Sh_105mm_APFSDS_T_R: Sh_105mm_APFSDS_T_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerEndTime=4;
+};
+class RC_Sh_105mm_APFSDS_T_G: RC_Sh_105mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_105mm_APFSDS_T_Y: RC_Sh_105mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 class ammo_Penetrator_105mm;
 class RC_ammo_Penetrator_105mm: ammo_Penetrator_105mm
 {
@@ -3376,28 +3388,28 @@ class RC_ammo_Penetrator_AB_105mm_missile: RC_ammo_Penetrator_AB_105mm
 	caliber=50;
 	hit=600;
 };
-class RC_M_120mm_cannon_ATGM_SACLOS: RC_M_120mm_cannon_ATGM_SACLOS
+class RC_M_105mm_cannon_ATGM_SACLOS: RC_M_120mm_cannon_ATGM_SACLOS
 {
 	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
 	hit=125;
 	indirectHit=40;
 	indirectHitRange=8;
 };
-class RC_M_120mm_cannon_ATGM: RC_M_120mm_cannon_ATGM
+class RC_M_105mm_cannon_ATGM: RC_M_120mm_cannon_ATGM
 {
 	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
 	hit=125;
 	indirectHit=40;
 	indirectHitRange=8;
 };
-class RC_M_120mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
+class RC_M_105mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
 {
 	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
 	hit=125;
 	indirectHit=40;
 	indirectHitRange=8;
 };
-class RC_M_120mm_cannon_AA: RC_M_120mm_cannon_ATGM_Base
+class RC_M_105mm_cannon_AA: RC_M_120mm_cannon_ATGM_Base
 {
 	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
 	hit=125;
@@ -3473,6 +3485,14 @@ class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
 	//autoSeekTarget=1;
 };
 class RC_M_125mm_DLG_HVKEM: RC_M_120mm_DLG_HVKEM {};
+
+
+class RC_M_105mm_DLG_HVKEM: RC_M_120mm_DLG_HVKEM
+{
+	hit=700;
+	indirectHit=25;
+	indirectHitRange=3;
+};
 
 
 class RC_M_100mm_cannon_ATGM_Overfly: RC_M_120mm_cannon_ATGM
