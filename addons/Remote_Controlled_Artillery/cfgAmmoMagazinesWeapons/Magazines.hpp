@@ -267,6 +267,9 @@ class RC_100Rnd_127x99_T_Y: RC_200Rnd_127x99_T_Y {count=100;};
 class RC_150Rnd_127x99_T_R: RC_200Rnd_127x99_T_R {count=150;};
 class RC_150Rnd_127x99_T_G: RC_200Rnd_127x99_T_G {count=150;};
 class RC_150Rnd_127x99_T_Y: RC_200Rnd_127x99_T_Y {count=150;};
+class RC_250Rnd_127x99_T_R: RC_200Rnd_127x99_T_R {count=250;};
+class RC_250Rnd_127x99_T_G: RC_200Rnd_127x99_T_G {count=250;};
+class RC_250Rnd_127x99_T_Y: RC_200Rnd_127x99_T_Y {count=250;};
 
 
 class RC_200Rnd_127x99_SLAP_T_R: 200Rnd_127x99_mag_Tracer_Red
@@ -291,6 +294,9 @@ class RC_150Rnd_127x99_SLAP_T_Y: RC_200Rnd_127x99_SLAP_T_Y {count=150;};
 class RC_300Rnd_127x99_SLAP_T_R: RC_200Rnd_127x99_SLAP_T_R {count=300;};
 class RC_300Rnd_127x99_SLAP_T_G: RC_200Rnd_127x99_SLAP_T_G {count=300;};
 class RC_300Rnd_127x99_SLAP_T_Y: RC_200Rnd_127x99_SLAP_T_Y {count=300;};
+class RC_250Rnd_127x99_SLAP_T_R: RC_200Rnd_127x99_SLAP_T_R {count=250;};
+class RC_250Rnd_127x99_SLAP_T_G: RC_200Rnd_127x99_SLAP_T_G {count=250;};
+class RC_250Rnd_127x99_SLAP_T_Y: RC_200Rnd_127x99_SLAP_T_Y {count=250;};
 class RC_400Rnd_127x99_SLAP_T_R: RC_200Rnd_127x99_SLAP_T_R {count=400;};
 class RC_400Rnd_127x99_SLAP_T_G: RC_200Rnd_127x99_SLAP_T_G {count=400;};
 class RC_400Rnd_127x99_SLAP_T_Y: RC_200Rnd_127x99_SLAP_T_Y {count=400;};
@@ -421,6 +427,7 @@ class RC_200Rnd_127x99_cUAS: 200Rnd_127x99_mag_Tracer_Red
 };
 class RC_150Rnd_127x99_cUAS: RC_200Rnd_127x99_cUAS {count=150;};
 class RC_100Rnd_127x99_cUAS: RC_200Rnd_127x99_cUAS {count=100;};
+class RC_250Rnd_127x99_cUAS: RC_200Rnd_127x99_cUAS {count=250;};
 class RC_200Rnd_127x108_cUAS: RC_200Rnd_127x99_cUAS {initSpeed=860;};
 class RC_150Rnd_127x108_cUAS: RC_200Rnd_127x108_cUAS {count=150;};
 class RC_100Rnd_127x108_cUAS: RC_200Rnd_127x108_cUAS {count=100;};
@@ -1883,15 +1890,17 @@ class RC_4Rnd_IFV_MP_SACLOS: RC_2Rnd_IFV_MP_SACLOS {count=4;};
 
 
 class 4Rnd_Titan_long_missiles;
-class RC_2Rnd_IFV_AA: 4Rnd_Titan_long_missiles
+class RC_1Rnd_IFV_AA: 4Rnd_Titan_long_missiles
 {
-	count=2;
+	count=1;
 	displayName="AA 5km";
 	displayNameShort="AA 5km";
 	displayNameMFDFormat="AA 5km";
 	ammo="RC_IFV_AA";
 };
-class RC_4Rnd_IFV_AA: RC_2Rnd_IFV_AA {count=4;};
+class RC_2Rnd_IFV_AA: RC_1Rnd_IFV_AA {count=2;};
+class RC_3Rnd_IFV_AA: RC_1Rnd_IFV_AA {count=3;};
+class RC_4Rnd_IFV_AA: RC_1Rnd_IFV_AA {count=4;};
 
 
 /*

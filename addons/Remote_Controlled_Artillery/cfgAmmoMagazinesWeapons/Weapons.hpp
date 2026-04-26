@@ -527,6 +527,36 @@ class RC_IFV_Missile_Launcher_4R: RC_IFV_Missile_Launcher
 		"RC_4Rnd_IFV_AA"
 	};
 };
+class RC_IFV_Missile_Launcher_Single: RC_IFV_Missile_Launcher
+{
+	magazines[]=
+	{
+		"RC_1Rnd_IFV_MP_SACLOS",
+		"RC_2Rnd_IFV_MP_SACLOS",
+		"RC_3Rnd_IFV_MP_SACLOS",
+		"RC_4Rnd_IFV_MP_SACLOS",
+
+		"RC_1Rnd_IFV_MP_LOS",
+		"RC_2Rnd_IFV_MP_LOS",
+		"RC_3Rnd_IFV_MP_LOS",
+		"RC_4Rnd_IFV_MP_LOS",
+		
+		"RC_1Rnd_IFV_MP_Overfly",
+		"RC_2Rnd_IFV_MP_Overfly",
+		"RC_3Rnd_IFV_MP_Overfly",
+		"RC_4Rnd_IFV_MP_Overfly",
+
+		"RC_1Rnd_IFV_MP_NLOS",
+		"RC_2Rnd_IFV_MP_NLOS",
+		"RC_3Rnd_IFV_MP_NLOS",
+		"RC_4Rnd_IFV_MP_NLOS",
+
+		"RC_1Rnd_IFV_AA",
+		"RC_2Rnd_IFV_AA",
+		"RC_3Rnd_IFV_AA",
+		"RC_4Rnd_IFV_AA"
+	};
+};
 
 
 class RC_AA_Missile_Launcher: RC_IFV_Missile_Launcher

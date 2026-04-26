@@ -125,8 +125,8 @@ class RC_AMV_APC_Base: RC_AMV_APC_Core
 
 			weapons[]=
 			{
-				"vve_HMG_127_APC",
-				"vve_missiles_titan",
+				"RC_AMV_HMG",
+				"RC_IFV_Missile_Launcher_Single",
 				"SmokeLauncher"
 			};
 
@@ -198,17 +198,17 @@ class RC_AMV_APC_Base: RC_AMV_APC_Core
 		class zasleh3_hide
 		{
 			source="reload";
-			weapon="vve_HMG_127_APC";
+			weapon="RC_AMV_HMG";
 		};
 		class zasleh3_rot
 		{
 			source="ammorandom";
-			weapon="vve_HMG_127_APC";
+			weapon="RC_AMV_HMG";
 		};
 		class Missiles_revolving
 		{
 			source="revolving";
-			weapon="vve_missiles_titan";
+			weapon="RC_IFV_Missile_Launcher_Single";
 		};
 		class Missiles_reloadMagazine: Missiles_revolving
 		{
@@ -307,7 +307,7 @@ class RC_AMV_APC_A_B: RC_AMV_APC_Base
 	{
 		class MainTurret: MainTurret
 		{
-			//#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_R.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_AMV_APC_R.hpp"
 		};
 	};
 };
@@ -324,7 +324,7 @@ class RC_AMV_APC_A_O: RC_AMV_APC_Base
 	{
 		class MainTurret: MainTurret
 		{
-			//#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_G.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_AMV_APC_G.hpp"
 		};
 	};
 };
@@ -341,7 +341,7 @@ class RC_AMV_APC_A_I: RC_AMV_APC_Base
 	{
 		class MainTurret: MainTurret
 		{
-			//#include "\Remote_Controlled_Artillery\includes_vicmags\mags_?_?mm_Y.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_AMV_APC_Y.hpp"
 		};
 	};
 };

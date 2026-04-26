@@ -80,7 +80,7 @@ class RC_AMV_SHORAD_Base: RC_AMV_SHORAD_Core
 	{	
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\GunnerOrCommanderIsDriverEH.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\GunnerOrCommanderIsDriverEH.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
@@ -540,6 +540,15 @@ class RC_AMV_SHORAD_Base: RC_AMV_SHORAD_Core
 /*
 class RC_AMV_SHORAD_manned_A_B: RC_AMV_SHORAD_Base
 {
+	class EventHandlers: EventHandlers
+	{	
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GunnerOrCommanderIsDriverEH.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		};
+	};
+
 	scope=2;
 	scopeCurator=2;
 	//forceInGarage=1;

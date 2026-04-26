@@ -3567,6 +3567,15 @@ class RC_M_105mm_cannon_ATGM_Overfly: RC_M_100mm_cannon_ATGM_Overfly
 	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
 	indirectHit=40;
 	indirectHitRange=10;
+
+	class Overfly
+	{
+		overflyElevation=10;
+	};
+	flightProfiles[]=
+	{
+		"Overfly"
+	};
 };
 
 

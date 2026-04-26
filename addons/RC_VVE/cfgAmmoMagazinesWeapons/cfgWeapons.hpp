@@ -1,3 +1,4 @@
+//AMV MGS
 class vve_cannon_105mm;
 class RC_MGS_cannon_105mm_Base: vve_cannon_105mm
 {
@@ -118,6 +119,7 @@ class RC_MGS_cannon_105mm: RC_MGS_cannon_105mm_Base
 	class player: player
 	{
 		reloadTime=5;
+		magazineReloadTime=20;
 	};
 	class cruise: player
 	{
@@ -141,11 +143,17 @@ class RC_MGS_cannon_105mm: RC_MGS_cannon_105mm_Base
 		maxRange=4000;
 		maxRangeProbab=0.95;
 	};
+	class overfly: cruise
+	{
+		displayName="Overfly Top Attack";
+		textureType="overfly";
+	};
 	modes[]=
 	{
 		"player",
 		"cruise",
 		"topDown",
+		"overfly",
 		"close",
 		"short",
 		"medium",
@@ -155,11 +163,11 @@ class RC_MGS_cannon_105mm: RC_MGS_cannon_105mm_Base
 
 
 class vve_HMG_127_APC;
-class RC_MGS_HMG_Base: vve_HMG_127_APC
+class RC_AMV_HMG_Base: vve_HMG_127_APC
 {
 	class manual;
 };
-class RC_MGS_HMG: RC_MGS_HMG_Base
+class RC_AMV_HMG: RC_AMV_HMG_Base
 {
 	author="Ascent";
 	displayName="HMG";
@@ -169,13 +177,13 @@ class RC_MGS_HMG: RC_MGS_HMG_Base
 	autoReload=1;
 	magazines[]=
 	{
-		"RC_200Rnd_127x99_T_R",
-		"RC_200Rnd_127x99_T_G",
-		"RC_200Rnd_127x99_T_Y",
-		"RC_200Rnd_127x99_SLAP_T_R",
-		"RC_200Rnd_127x99_SLAP_T_G",
-		"RC_200Rnd_127x99_SLAP_T_Y",
-		"RC_200Rnd_127x99_cUAS"
+		"RC_250Rnd_127x99_T_R",
+		"RC_250Rnd_127x99_T_G",
+		"RC_250Rnd_127x99_T_Y",
+		"RC_250Rnd_127x99_SLAP_T_R",
+		"RC_250Rnd_127x99_SLAP_T_G",
+		"RC_250Rnd_127x99_SLAP_T_Y",
+		"RC_250Rnd_127x99_cUAS"
 	};
 	class manual: manual
 	{
@@ -185,6 +193,11 @@ class RC_MGS_HMG: RC_MGS_HMG_Base
 };
 
 
+//AMV APC
+
+
+
+//AMV SHORAD
 class vve_autocannon_35mm;
 class RC_Single_autocannon_35mm_AA_base: vve_autocannon_35mm
 {

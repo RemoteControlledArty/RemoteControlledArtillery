@@ -160,7 +160,7 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 
 					weapons[]=
 					{
-						"RC_MGS_HMG",
+						"RC_AMV_HMG",
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
@@ -284,12 +284,12 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 		class zasleh3_hide
 		{
 			source="reload";
-			weapon="RC_MGS_HMG";
+			weapon="RC_AMV_HMG";
 		};
 		class zasleh3_rot
 		{
 			source="ammorandom";
-			weapon="RC_MGS_HMG";
+			weapon="RC_AMV_HMG";
 		};
 		/*
 		class nethull: nethull
@@ -376,7 +376,7 @@ class RC_AMV_MGS_A_B: RC_AMV_MGS_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_VVE\includes_vicmags\mags_MGS_R.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_R.hpp"
 
 			class Turrets: Turrets
 			{
@@ -402,7 +402,7 @@ class RC_AMV_MGS_A_O: RC_AMV_MGS_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_VVE\includes_vicmags\mags_MGS_G.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_G.hpp"
 
 			class Turrets: Turrets
 			{
@@ -428,7 +428,7 @@ class RC_AMV_MGS_A_I: RC_AMV_MGS_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_VVE\includes_vicmags\mags_MGS_Y.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_Y.hpp"
 
 			class Turrets: Turrets
 			{
