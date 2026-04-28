@@ -241,26 +241,24 @@ RC_Artillery_UI = [] spawn {
 				// ElDiff additions, like muzzle position, and rounds aim above value (airburst & topdown guided)
 				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\eldiff_additions.sqf"
 
+
 				// find if datalink target is selected
 				private _targetPos = [0, 0, 0];
-				private _hasTargetSelected = (_cursorTarget isNotEqualto objNull);
+				private _hasTargetSelected = _cursorTarget isNotEqualto objNull;
+				private _hasLockedTarget = playerTargetLock#0 isNotEqualto objNull;
 
-				/*
-				if (_hasTargetSelected) then {
-					private _selectedTargetName = RC_selectedTargetNameHash get _cursorTarget;
+				if (_hasLockedTarget) then {
+					private _cursorTargetClass = typeOf _cursorTarget;
+					_selectedTargetName = RC_selectedTargetNameHash get _cursorTargetClass;
 					if (isNil "_selectedTargetName") then {
-						_selectedTargetName = getText (configFile >> "CfgVehicles" >> (typeOf _cursorTarget) >> "displayName");
-						RC_selectedTargetNameHash set [_cursorTarget, _selectedTargetName];
+						_selectedTargetName = getText (configFile >> "CfgVehicles" >> _cursorTargetClass >> "displayName");
+						RC_selectedTargetNameHash set [_cursorTargetClass, _selectedTargetName];
 					};
+					_selectedTargetName = _selectedTargetName select [0, 9];
+				} else {
+					_selectedTargetName = "Object";
 				};
-				*/
 
-				//SPLIT STRING after given amount of letters!
-
-				//if ({_target isKindOf "Vehicle"}) then {
-				if (_hasTargetSelected) then {
-					_selectedTargetName = getText (configFile >> "CfgVehicles" >> (typeOf _cursorTarget) >> "displayName");
-				};
 
 				// target pos (above sea level)
 				if (_hasTargetSelected && !(_noTargetOrTargetTooClose)) then {

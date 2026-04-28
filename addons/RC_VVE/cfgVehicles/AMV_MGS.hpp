@@ -176,7 +176,7 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 						class Wide
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
-							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_02_F";
+							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
 
 							minAngleX=-30;
 							maxAngleX=30;
@@ -188,7 +188,7 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 							maxFov=0.9;
 						};
 					};
-					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+					turretInfoType="RscOptics_MBT_03_gunner";
 				};
 
 				class AdvisorOptics

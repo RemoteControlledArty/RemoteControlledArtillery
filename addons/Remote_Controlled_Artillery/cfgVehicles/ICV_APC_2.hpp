@@ -827,6 +827,25 @@ class RC_IFV_2_A_O: RC_APC_2_A_O
 				"SmokeLauncher"
 			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Arma_20mm_green.hpp"
+
+			class OpticsIn
+			{
+				class Wide
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+
+					minAngleX=-30;
+					maxAngleX=30;
+					minAngleY=-100;
+					maxAngleY=100;
+
+					initFov=0.9;
+					minFov=0.02;
+					maxFov=0.9;
+				};
+			};
+			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 		};
 
 		class CommanderOptics: CommanderOptics {};

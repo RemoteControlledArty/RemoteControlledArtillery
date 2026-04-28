@@ -44,18 +44,20 @@ class CfgPatches
 
 		weapons[]=
 		{
-			"RC_Single_autocannon_35mm_AA"
+			"RC_Single_autocannon_35mm_AA",
+			"RC_MGS_cannon_105mm",
+			"RC_AMV_HMG"
 		};
 
 		requiredAddons[]=
 		{
 			"cba_main",
 			"RC_Artillery",
-			"vve_core",
+			"vve_core",					//all credits to the VVE creators!
 			"qav_marshall"
 		};
 
-		skipWhenMissingDependencies=1;
+		skipWhenMissingDependencies=1;	//soft dependency
 	};
 };
 
