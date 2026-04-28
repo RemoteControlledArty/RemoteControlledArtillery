@@ -89,7 +89,7 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	RC_ATrespondingTurret[]={0,0};
 
-	displayName="Designation";
+	displayName="Patria AMV MGS";
 	editorSubcategory="RC_IFV_subcat";
 
 	maxSpeed=120;

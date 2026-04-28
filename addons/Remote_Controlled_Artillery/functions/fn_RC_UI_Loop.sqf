@@ -17,6 +17,7 @@ RC_GuidedTriggerTime=0;
 
 //general hashmaps
 RC_isAceLoadedHash = createHashMap;
+RC_selectedTargetNameHash = createHashMap;
 
 //vehicle hashmaps
 //RC_localizeHash = createHashMap;	//not yet used
@@ -184,8 +185,10 @@ RC_Artillery_UI = [] spawn {
 			private _artyPos = getPosASL _uav;
 			// checks if datalink target is too close (mortar attached to vehicle would not show target markers otherwise, and no lock requirement warning would show for guided)
 			private _selectedTargetDistance = 1;
-			if (cursorTarget isNotEqualto objNull) then { _selectedTargetDistance = (getPosASL cursorTarget) distance2d _artyPos };
-			private _noTargetOrTargetTooClose = (cursorTarget isEqualto objNull) || (_selectedTargetDistance <= MIN_SELECTED_TARGET_DISTANCE);
+
+			private _cursorTarget = cursorTarget;
+			if (_cursorTarget isNotEqualto objNull) then { _selectedTargetDistance = (getPosASL _cursorTarget) distance2d _artyPos };
+			private _noTargetOrTargetTooClose = (_cursorTarget isEqualto objNull) || (_selectedTargetDistance <= MIN_SELECTED_TARGET_DISTANCE);
 
 			// if we are looking into the sky
 			private _realAzimuth = 0;
@@ -214,9 +217,10 @@ RC_Artillery_UI = [] spawn {
 			private _travelTimeHigh = 0;
 			private _lowAngleSol = 0;
 			private _travelTimeLow = 0;
+			private _selectedTargetName = "NA";
 
 			// if we actually have a target (thats not too close)
-			if (((cursorTarget isNotEqualto objNull) && { _selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE }) || !(RC_Artillery_Markers isEqualTo [])) then {
+			if (((_cursorTarget isNotEqualto objNull) && { _selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE }) || !(RC_Artillery_Markers isEqualTo [])) then {
 				if !(RC_Artillery_Markers isEqualTo []) then {
 
 					RC_currentTargetMarker = RC_Artillery_Markers select RC_Current_Index;	//moved from scroll solution to here, to still update when marker name was edited
@@ -239,11 +243,28 @@ RC_Artillery_UI = [] spawn {
 
 				// find if datalink target is selected
 				private _targetPos = [0, 0, 0];
-				private _hasTargetSelected = (cursorTarget isNotEqualto objNull);
+				private _hasTargetSelected = (_cursorTarget isNotEqualto objNull);
+
+				/*
+				if (_hasTargetSelected) then {
+					private _selectedTargetName = RC_selectedTargetNameHash get _cursorTarget;
+					if (isNil "_selectedTargetName") then {
+						_selectedTargetName = getText (configFile >> "CfgVehicles" >> (typeOf _cursorTarget) >> "displayName");
+						RC_selectedTargetNameHash set [_cursorTarget, _selectedTargetName];
+					};
+				};
+				*/
+
+				//SPLIT STRING after given amount of letters!
+
+				//if ({_target isKindOf "Vehicle"}) then {
+				if (_hasTargetSelected) then {
+					_selectedTargetName = getText (configFile >> "CfgVehicles" >> (typeOf _cursorTarget) >> "displayName");
+				};
 
 				// target pos (above sea level)
 				if (_hasTargetSelected && !(_noTargetOrTargetTooClose)) then {
-					_targetPos = getposASL cursorTarget;
+					_targetPos = getposASL _cursorTarget;
 				} else {
     				_targetPos = AGLtoASL (markerPos [(RC_currentTargetMarker select 1), true]);
 					/*
@@ -290,7 +311,8 @@ RC_Artillery_UI = [] spawn {
 				// displayed target
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_distance, 4, 0] call CBA_fnc_formatNumber];
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
-					_ctrlTarget ctrlSetText "T: Datalink";
+					_ctrlTarget ctrlSetText "T: " + _selectedTargetName;
+					//_ctrlTarget ctrlSetText "T: Datalink";
 				} else {
 					_ctrlTarget ctrlSetText Format ["T: %1", [RC_currentTargetMarker select 0, 2, 0] call CBA_fnc_formatNumber];
 				};
