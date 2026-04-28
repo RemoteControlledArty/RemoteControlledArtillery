@@ -62,7 +62,7 @@ class TransportPylonsComponent
 			UIposition[]		= {0.04,0.20};
 			hitpoint 			= "HitPylon4";
 
-			attachment			= "RC_PylonM_7Rnd_APKWS";
+			attachment			= "RC_PylonM_12Rnd_APKWS";
 		};
 	};
 
@@ -76,7 +76,7 @@ class TransportPylonsComponent
 				"RC_RHS_PylonM_1300Rnd_GAU19A_left",
 				"RC_PylonM_300Rnd_20mm",
 				"RC_RHS_PylonM_19Rnd_Hydra_MP",
-				"RC_PylonM_7Rnd_APKWS"
+				"RC_PylonM_12Rnd_APKWS"
 			};
 			displayname="Default";
 		};

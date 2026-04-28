@@ -1684,6 +1684,79 @@ class RC_20mm_mounted_cUAS: RC_20mm_cUAS
 };
 
 
+//105mm of FSV/MBT
+class Sh_105mm_APFSDS_T_Red;
+class RC_Sh_105mm_APFSDS_T_R: Sh_105mm_APFSDS_T_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	tracerEndTime=4;
+};
+class RC_Sh_105mm_APFSDS_T_G: RC_Sh_105mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_105mm_APFSDS_T_Y: RC_Sh_105mm_APFSDS_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_ammo_Penetrator_105mm: ammo_Penetrator_105mm
+{
+	warheadName="TandemHEAT";
+};
+class Sh_105mm_HEAT_MP_T_Red;
+class RC_Sh_105mm_MP_T_R: Sh_105mm_HEAT_MP_T_Red
+{
+	laserLock=1;
+	irLock=1;
+	airLock=1;
+	aiAmmoUsageFlags="64 + 128 + 512";
+	warheadName="HE";
+	submunitionAmmo="RC_ammo_Penetrator_105mm";
+	hit=95;
+	indirectHit=40;
+	indirectHitRange=8;
+	deflecting=1;
+	tracerEndTime=6;
+	craterEffects="AAMissileCrater";
+};
+class RC_Sh_105mm_MP_T_G: RC_Sh_105mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_105mm_MP_T_Y: RC_Sh_105mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//105mm MPAB DF
+class RC_ammo_Penetrator_AB_105mm: RC_ammo_Penetrator_105mm
+{
+	airFriction=-0.001;
+};
+class RC_Sh_105mm_MP_DF_Sub: RC_Sh_105mm_MP_T_R
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
+	submunitionAmmo="RC_ammo_Penetrator_AB_105mm";
+};
+class RC_Sh_105mm_MP_DF_T_R: RC_Sh_105mm_MP_T_R
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_DF.hpp"
+	submunitionAmmo="RC_Sh_105mm_MP_DF_Sub";
+};
+class RC_Sh_105mm_MP_DF_T_G: RC_Sh_105mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_105mm_MP_DF_T_Y: RC_Sh_105mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_Sh_105mm_MPAB_DF_T_R: RC_Sh_105mm_MP_T_R
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
+	submunitionAmmo="RC_Sh_105mm_MP_DF_Sub";
+};
+class RC_Sh_105mm_MPAB_DF_T_G: RC_Sh_105mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_105mm_MPAB_DF_T_Y: RC_Sh_105mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+
+class RC_Sh_105mm_MP_HEAB_T_R: RC_Sh_105mm_MP_T_R
+{
+	submunitionAmmo="RC_ammo_Penetrator_AB_105mm";
+	aiAmmoUsageFlags="64 + 128 + 256 + 512";
+};
+class RC_Sh_105mm_MP_HEAB_T_G: RC_Sh_105mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_105mm_MP_HEAB_T_Y: RC_Sh_105mm_MP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 //120mm of FSV/MBT
 class ammo_Penetrator_120mm;
 class RC_ammo_Penetrator_120mm: ammo_Penetrator_120mm
@@ -1721,6 +1794,13 @@ class RC_Sh_120mm_MP_DF_Sub: RC_Sh_120mm_MP_T_R
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_AB_120mm";
 };
+class RC_Sh_120mm_MP_DF_T_R: RC_Sh_120mm_MP_T_R
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_DF.hpp"
+	submunitionAmmo="RC_Sh_120mm_MP_DF_Sub";
+};
+class RC_Sh_120mm_MP_DF_T_G: RC_Sh_120mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_120mm_MP_DF_T_Y: RC_Sh_120mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 class RC_Sh_120mm_MPAB_DF_T_R: RC_Sh_120mm_MP_T_R
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
@@ -2097,6 +2177,13 @@ class RC_Sh_125mm_MP_DF_Sub: RC_Sh_125mm_MP_T_R
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_AB_125mm";
 };
+class RC_Sh_125mm_MP_DF_T_R: RC_Sh_120mm_MP_T_R
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_DF.hpp"
+	submunitionAmmo="RC_Sh_125mm_MP_DF_Sub";
+};
+class RC_Sh_125mm_MP_DF_T_G: RC_Sh_125mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_Sh_125mm_MP_DF_T_Y: RC_Sh_125mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 class RC_Sh_125mm_MPAB_DF_T_R: RC_Sh_125mm_MP_T_R
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
@@ -3309,10 +3396,46 @@ class RC_M_120mm_cannon_AA: RC_M_120mm_cannon_ATGM_Base
 		};
 	};
 };
+class RC_M_125mm_cannon_ATGM_SACLOS: RC_M_120mm_cannon_ATGM_SACLOS {};
 class RC_M_125mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG {};
 class RC_M_125mm_cannon_AA: RC_M_120mm_cannon_AA {};
 class RC_M_125mm_cannon_ATGM: RC_M_120mm_cannon_ATGM {};
 class RC_M_125mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG_LR {};
+
+
+class RC_ammo_Penetrator_AB_105mm_missile: RC_ammo_Penetrator_AB_105mm
+{
+	caliber=50;
+	hit=600;
+};
+class RC_M_105mm_cannon_ATGM_SACLOS: RC_M_120mm_cannon_ATGM_SACLOS
+{
+	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
+	hit=125;
+	indirectHit=40;
+	indirectHitRange=8;
+};
+class RC_M_105mm_cannon_ATGM: RC_M_120mm_cannon_ATGM
+{
+	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
+	hit=125;
+	indirectHit=40;
+	indirectHitRange=8;
+};
+class RC_M_105mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
+{
+	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
+	hit=125;
+	indirectHit=40;
+	indirectHitRange=8;
+};
+class RC_M_105mm_cannon_AA: RC_M_120mm_cannon_ATGM_Base
+{
+	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
+	hit=125;
+	indirectHit=40;
+	indirectHitRange=8;
+};
 
 
 class Sh_120mm_APFSDS;
@@ -3384,6 +3507,14 @@ class RC_M_120mm_DLG_HVKEM: RC_M_120mm_cannon_ATGM_DLG
 class RC_M_125mm_DLG_HVKEM: RC_M_120mm_DLG_HVKEM {};
 
 
+class RC_M_105mm_DLG_HVKEM: RC_M_120mm_DLG_HVKEM
+{
+	hit=700;
+	indirectHit=25;
+	indirectHitRange=3;
+};
+
+
 class RC_M_100mm_cannon_ATGM_Overfly: RC_M_120mm_cannon_ATGM
 {
 	submunitionAmmo="RC_ammo_Penetrator_MP_100mm";
@@ -3430,6 +3561,21 @@ class RC_M_100mm_cannon_AA: RC_M_120mm_cannon_AA
 	triggerDistance=8;
 	indirectHitRange=8;
 	proximityExplosionDistance=10;
+};
+class RC_M_105mm_cannon_ATGM_Overfly: RC_M_100mm_cannon_ATGM_Overfly
+{
+	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
+	indirectHit=40;
+	indirectHitRange=10;
+
+	class Overfly
+	{
+		overflyElevation=10;
+	};
+	flightProfiles[]=
+	{
+		"Overfly"
+	};
 };
 
 

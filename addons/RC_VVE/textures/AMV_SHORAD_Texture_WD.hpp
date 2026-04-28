@@ -1,0 +1,16 @@
+hiddenSelectionsTextures[]=
+{
+	"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
+	"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
+	"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
+	"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_co.paa",
+	"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_adds_co.paa",
+	"QAV_Marshall\data\textures\olive\apc_wheeled_01_apc_co.paa",
+	"a3\armor_f\data\camonet_green_co.paa",
+	"VVE_Core\data\AAA_system_01\apc_wheeled_01_shorad_olive_co.paa"
+};
+textureList[]=
+{
+	"woodland",
+	1
+};

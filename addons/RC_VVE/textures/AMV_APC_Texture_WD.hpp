@@ -1,0 +1,17 @@
+hiddenSelectionsTextures[]=
+{
+	"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_base_olive_CO.paa",
+	"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_adds_olive_co.paa",
+	"A3\Armor_F_Exp\APC_Wheeled_01\data\APC_Wheeled_01_tows_olive_co.paa",
+	"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_co.paa",
+	"QAV_Marshall\data\textures\olive\apc_wheeled_01_mgs_adds_co.paa",
+	"QAV_Marshall\data\textures\olive\apc_wheeled_01_apc_co.paa",
+	"QAV_Marshall\data\textures\olive\eos_r400_co.paa",
+	"a3\armor_f\data\camonet_green_co.paa",
+	"a3\weapons_f_exp\Launchers\Titan\Data\launch_B_Titan_short_tna_F_02_co.paa"
+};
+textureList[]=
+{
+	"woodland",
+	1
+};

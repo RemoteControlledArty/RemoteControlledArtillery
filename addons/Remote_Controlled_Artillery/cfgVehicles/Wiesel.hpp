@@ -138,8 +138,8 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=51;
-					angleRangeVertical=37;
+					angleRangeHorizontal=60;	//51
+					angleRangeVertical=60;		//37
 					animDirection="mainGun";
 				};
 				class VisualSensorComponent: SensorTemplateVisual
@@ -490,25 +490,25 @@ class RC_Wiesel_Radar_WD_Base: RC_Wiesel_Radar_Base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=3000;
+					typeRecognitionDistance=4000;
 
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=6000;
+						maxRange=6000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=6000;
+						maxRange=6000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=45;
-					angleRangeVertical=35;
+					angleRangeHorizontal=60;	//45
+					angleRangeVertical=60;		//35
 					//animDirection="obsTurret";
 					animDirection="obsGun";
 				};
@@ -1136,8 +1136,8 @@ class RC_Wiesel_ATGM_WD_Base: RC_Wiesel_ATGM_Base
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=40;
-					angleRangeVertical=20;
+					angleRangeHorizontal=45;
+					angleRangeVertical=22.5;
 					animDirection="mainGun";
 				};
 				
@@ -1521,8 +1521,8 @@ class RC_Wiesel_AC_WD_Base: RC_Wiesel_AC_Base
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=40;
-					angleRangeVertical=20;
+					angleRangeHorizontal=45;
+					angleRangeVertical=22.5;
 					animDirection="mainGun";
 				};
 				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
@@ -1912,25 +1912,25 @@ class RC_Wiesel_cUAS_WD_Base: RC_Wiesel_AC_WD_Base
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=2000;
+					typeRecognitionDistance=3000;
 
 					class AirTarget
 					{
-						minRange=2000;
-						maxRange=2000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=0;
-						maxRange=0;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=1;
-					angleRangeVertical=1;
+					angleRangeHorizontal=60;
+					angleRangeVertical=60;
 					animDirection="mainGun";
 				};
 				class VisualSensorComponent: SensorTemplateVisual

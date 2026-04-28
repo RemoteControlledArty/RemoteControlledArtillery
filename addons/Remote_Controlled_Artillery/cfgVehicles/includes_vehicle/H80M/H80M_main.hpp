@@ -37,3 +37,20 @@ driverCompartments="Compartment1";
 cargoCompartments[]={"Compartment1"};
 canEject=1;
 ejectDeadCargo=1;
+
+
+/*
+//attempt forhosthawk to not look through the hull, but doesnt work and disables HMD
+LODDriverOpticsIn = 0;
+LODDriverTurnedOut = 0;
+LODDriverTurnedIn = 0;
+LODOpticsIn = 0;
+LODTurnedIn = 0;
+LODTurnedOut = 0;
+
+//not tested yet
+proxyIndex = 1;									//1, 2
+proxyType = "CPDriver";							//internal viewpoint: CPDriver  CPCargo  CPGunner  CPCommander
+playerPosition = 0;
+usePip = 2;										//2
+*/

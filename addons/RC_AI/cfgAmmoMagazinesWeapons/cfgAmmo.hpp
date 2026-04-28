@@ -273,6 +273,18 @@ class RC_AI_Sh_120mm_MP_DF_Sub: RC_Sh_120mm_MP_DF_Sub
 	indirectHit=30;			//50
 	indirectHitRange=7;		//10
 };
+class RC_Sh_120mm_MP_DF_T_R;
+class RC_AI_Sh_120mm_MP_DF_T_R: RC_Sh_120mm_MP_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	submunitionAmmo="RC_AI_Sh_120mm_MP_DF_Sub";
+	indirectHit=30;			//50
+	indirectHitRange=7;		//10
+};
+class RC_AI_Sh_120mm_MP_DF_T_G: RC_AI_Sh_120mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_Sh_120mm_MP_DF_T_Y: RC_AI_Sh_120mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 class RC_Sh_120mm_MPAB_DF_T_R;
 class RC_AI_Sh_120mm_MPAB_DF_T_R: RC_Sh_120mm_MPAB_DF_T_R
 {
@@ -333,6 +345,18 @@ class RC_AI_Sh_125mm_MP_DF_Sub: RC_Sh_125mm_MP_DF_Sub
 	indirectHit=30;			//50
 	indirectHitRange=7;		//10
 };
+class RC_Sh_125mm_MP_DF_T_R;
+class RC_AI_Sh_125mm_MP_DF_T_R: RC_Sh_125mm_MP_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	submunitionAmmo="RC_AI_Sh_125mm_MP_DF_Sub";
+	indirectHit=30;			//50
+	indirectHitRange=7;		//10
+};
+class RC_AI_Sh_125mm_MP_DF_T_G: RC_AI_Sh_125mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_Sh_125mm_MP_DF_T_Y: RC_AI_Sh_125mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 class RC_Sh_125mm_MPAB_DF_T_R;
 class RC_AI_Sh_125mm_MPAB_DF_T_R: RC_Sh_125mm_MPAB_DF_T_R
 {

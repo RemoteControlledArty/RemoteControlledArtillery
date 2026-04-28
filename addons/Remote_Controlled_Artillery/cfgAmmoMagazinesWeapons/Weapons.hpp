@@ -527,6 +527,36 @@ class RC_IFV_Missile_Launcher_4R: RC_IFV_Missile_Launcher
 		"RC_4Rnd_IFV_AA"
 	};
 };
+class RC_IFV_Missile_Launcher_Single: RC_IFV_Missile_Launcher
+{
+	magazines[]=
+	{
+		"RC_1Rnd_IFV_MP_SACLOS",
+		"RC_2Rnd_IFV_MP_SACLOS",
+		"RC_3Rnd_IFV_MP_SACLOS",
+		"RC_4Rnd_IFV_MP_SACLOS",
+
+		"RC_1Rnd_IFV_MP_LOS",
+		"RC_2Rnd_IFV_MP_LOS",
+		"RC_3Rnd_IFV_MP_LOS",
+		"RC_4Rnd_IFV_MP_LOS",
+		
+		"RC_1Rnd_IFV_MP_Overfly",
+		"RC_2Rnd_IFV_MP_Overfly",
+		"RC_3Rnd_IFV_MP_Overfly",
+		"RC_4Rnd_IFV_MP_Overfly",
+
+		"RC_1Rnd_IFV_MP_NLOS",
+		"RC_2Rnd_IFV_MP_NLOS",
+		"RC_3Rnd_IFV_MP_NLOS",
+		"RC_4Rnd_IFV_MP_NLOS",
+
+		"RC_1Rnd_IFV_AA",
+		"RC_2Rnd_IFV_AA",
+		"RC_3Rnd_IFV_AA",
+		"RC_4Rnd_IFV_AA"
+	};
+};
 
 
 class RC_AA_Missile_Launcher: RC_IFV_Missile_Launcher
@@ -2634,6 +2664,19 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"RC_15Rnd_120mm_MP_T_Y",
 		"RC_20Rnd_120mm_MP_T_Y",
 
+		"RC_5Rnd_120mm_MP_DF_T_R",
+		"RC_10Rnd_120mm_MP_DF_T_R",
+		"RC_15Rnd_120mm_MP_DF_T_R",
+		"RC_20Rnd_120mm_MP_DF_T_R",
+		"RC_5Rnd_120mm_MP_DF_T_G",
+		"RC_10Rnd_120mm_MP_DF_T_G",
+		"RC_15Rnd_120mm_MP_DF_T_G",
+		"RC_20Rnd_120mm_MP_DF_T_G",
+		"RC_5Rnd_120mm_MP_DF_T_Y",
+		"RC_10Rnd_120mm_MP_DF_T_Y",
+		"RC_15Rnd_120mm_MP_DF_T_Y",
+		"RC_20Rnd_120mm_MP_DF_T_Y",
+
 		"RC_2Rnd_120mm_MPAB_DF_T_R",
 		"RC_3Rnd_120mm_MPAB_DF_T_R",
 		"RC_4Rnd_120mm_MPAB_DF_T_R",
@@ -2768,6 +2811,19 @@ class RC_cannon_125mm_advanced: RC_cannon_125mm_advanced_base
 		"RC_10Rnd_125mm_MP_T_Y",
 		"RC_15Rnd_125mm_MP_T_Y",
 		"RC_20Rnd_125mm_MP_T_Y",
+
+		"RC_5Rnd_125mm_MP_DF_T_R",
+		"RC_10Rnd_125mm_MP_DF_T_R",
+		"RC_15Rnd_125mm_MP_DF_T_R",
+		"RC_20Rnd_125mm_MP_DF_T_R",
+		"RC_5Rnd_125mm_MP_DF_T_G",
+		"RC_10Rnd_125mm_MP_DF_T_G",
+		"RC_15Rnd_125mm_MP_DF_T_G",
+		"RC_20Rnd_125mm_MP_DF_T_G",
+		"RC_5Rnd_125mm_MP_DF_T_Y",
+		"RC_10Rnd_125mm_MP_DF_T_Y",
+		"RC_15Rnd_125mm_MP_DF_T_Y",
+		"RC_20Rnd_125mm_MP_DF_T_Y",
 
 		"RC_2Rnd_125mm_MPAB_DF_T_R",
 		"RC_3Rnd_125mm_MPAB_DF_T_R",

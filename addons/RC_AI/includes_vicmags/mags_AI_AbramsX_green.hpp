@@ -1,7 +1,8 @@
 magazines[]=
 {
 	"RC_AI_20Rnd_120mm_APFSDS_X_T_G",
-	"RC_AI_15Rnd_120mm_MP_T_G",
+	"RC_AI_10Rnd_120mm_MP_T_G",
+	"RC_AI_5Rnd_120mm_MP_DF_T_G",
 	"RC_AI_5Rnd_120mm_MPAB_DF_T_G",
 	
 	/*

@@ -944,7 +944,7 @@ class CfgFunctions
 		{
 			file="\Remote_Controlled_Artillery\functions\LocalityUV_functions";
 			
-			class RC_MEH_NameUV {preInit=1;};
+			class RC_MEH_addActionsUV {preInit=1;};
 			class RC_uavConnectionFix {postInit=1;};	//maybe not required anymore after recent arma update
 			class RC_LocalityUV {postInit=1;};
 
@@ -954,7 +954,12 @@ class CfgFunctions
 			class RC_addLocalName {};
 			class RC_addAction_NameUV {};
 			class RC_NameUV_Server {};
+
+			class RC_addAction_setPrimaryUV {};
+			class RC_connectToUV {};
+			class RC_isValidUV {};
 			class RC_swapUV {};
+			
 			class RC_OMH_Side {};
 			class RC_OMH_Disconnect {};
 		};
@@ -1076,8 +1081,8 @@ class CfgEditorSubcategories
 	class RC_Rocket_subcat {displayname="'indirect :  Rocket Systems";};
 	class RC_ReducedAmmo_subcat {displayname="'reduced ammo :  Mortar's / Howitzer's";};
 
-	class RC_AntiAir_subcat {displayname="Anti-Air";};
-	class RC_AntiDrone_subcat {displayname="Anti-Drone";};
+	class RC_AntiAir_subcat {displayname="Anti - Air & Drone";};
+	class RC_AntiDrone_subcat {displayname="Anti - Drone";};
 	class RC_ATGM_subcat {displayname="ATGMs";};
 	class RC_Designator_subcat {displayname="Designators";};
 	class RC_Respawn_subcat {displayname="Respawn";};
