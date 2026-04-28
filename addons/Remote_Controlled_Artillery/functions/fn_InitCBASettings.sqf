@@ -148,6 +148,17 @@
 ] call CBA_fnc_addSetting;
 
 
+//quickly swap UV
+[
+	"Remote Controlled Artillery",
+	"RC_SwapUV",
+	"swap UV (primary UV <-> previous UV)",
+	{call RC_fnc_RC_swapUV},
+	"",
+	[41, [false, false, false]]     //41 = ^ aka zirkumflex
+] call CBA_fnc_addKeybind;
+
+
 //RC Modernized Vehicles
 [
     "RC Modernized Vehicles",

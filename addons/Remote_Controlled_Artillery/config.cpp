@@ -944,7 +944,7 @@ class CfgFunctions
 		{
 			file="\Remote_Controlled_Artillery\functions\LocalityUV_functions";
 			
-			class RC_MEH_NameUV {preInit=1;};
+			class RC_MEH_addActionsUV {preInit=1;};
 			class RC_uavConnectionFix {postInit=1;};	//maybe not required anymore after recent arma update
 			class RC_LocalityUV {postInit=1;};
 
@@ -954,6 +954,11 @@ class CfgFunctions
 			class RC_addLocalName {};
 			class RC_addAction_NameUV {};
 			class RC_NameUV_Server {};
+
+			class RC_addAction_setPrimaryUV {};
+			class RC_connectToUV {};
+			class RC_isValidUV {};
+			class RC_swapUV {};
 			
 			class RC_OMH_Side {};
 			class RC_OMH_Disconnect {};
