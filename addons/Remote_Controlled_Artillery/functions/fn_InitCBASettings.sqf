@@ -132,6 +132,16 @@
 ] call CBA_fnc_addKeybind;
 
 [
+    "Remote Controlled Artillery",
+    "RC_SwapUV",
+    "swap UV (toggle between primary UV and previous UV)",
+    {call RC_fnc_RC_swapUV},
+    "",
+    [0, [false, false, false]]
+] call CBA_fnc_addKeybind;
+
+
+[
     "RC_Marker_Prefix",
     "EDITBOX",
     ["artillery marker prefix", "This is the Prefix (Case Insensitive) that the Target Markers need to have to be considered a valid Target."],
