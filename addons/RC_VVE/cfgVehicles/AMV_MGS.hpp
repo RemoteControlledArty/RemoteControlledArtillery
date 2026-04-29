@@ -176,7 +176,7 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 						class Wide
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
-							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
+							gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
 
 							minAngleX=-30;
 							maxAngleX=30;
@@ -376,13 +376,13 @@ class RC_AMV_MGS_A_B: RC_AMV_MGS_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_R.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_gun_R.hpp"
 
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_red.hpp"
+					#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_com_R.hpp"
 				};
 				class AdvisorOptics: AdvisorOptics {};
 			};
@@ -402,13 +402,13 @@ class RC_AMV_MGS_A_O: RC_AMV_MGS_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_G.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_gun_G.hpp"
 
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_green.hpp"
+					#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_com_G.hpp"
 				};
 				class AdvisorOptics: AdvisorOptics {};
 			};
@@ -428,13 +428,13 @@ class RC_AMV_MGS_A_I: RC_AMV_MGS_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_Y.hpp"
+			#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_gun_Y.hpp"
 
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_yellow.hpp"
+					#include "\RC_VVE\includes_vicmags\mags_AMV_MGS_com_Y.hpp"
 				};
 				class AdvisorOptics: AdvisorOptics {};
 			};

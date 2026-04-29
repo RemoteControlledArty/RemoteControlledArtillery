@@ -92,8 +92,6 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			commanding=2;
-			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
-			//turretInfoType="RscOptics_MBT_03_gunner";
 
 			weapons[]=
 			{
@@ -120,6 +118,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 					maxFov=0.4;
 				};
 			};
+			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 			
 			class Turrets: Turrets
 			{
@@ -192,7 +191,6 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
 					commanding=1;
-					turretInfoType="RscOptics_MBT_03_gunner";
 
 					weapons[]=
 					{
@@ -207,7 +205,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 						class Wide: RCWSOptics
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+							gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
 
 							minAngleX=-30;
 							maxAngleX=30;
@@ -219,6 +217,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 							maxFov=0.9;
 						};
 					};
+					turretInfoType="RscOptics_MBT_03_gunner";
 				};
 			};
 		};
