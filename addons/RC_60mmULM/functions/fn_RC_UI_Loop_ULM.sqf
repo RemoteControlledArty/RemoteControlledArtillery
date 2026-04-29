@@ -196,6 +196,7 @@ RC_ULM_UI = [] spawn {
 			private _adjustedVelocity = 0;
 			private _adjustedVelocityMedium = 0;
 			private _adjustedVelocityHigh = 0;
+			private _lockedTargetName = "NA";
 
 			// if we actually have a target (thats not too close)
 			if (((_lockedTarget isNotEqualto objNull) && { _selectedTargetDistance >= _ULM_minDist }) || !(RC_Artillery_Markers isEqualTo [])) then {
@@ -225,14 +226,28 @@ RC_ULM_UI = [] spawn {
 					RC_aimAboveHeightHash set [_currentMag, _aimAboveHeight];
 				};
 
+
 				// find if datalink target is selected
 				private _targetPos = [0,0,0];
-				private _hasTargetSelected = (_lockedTarget isNotEqualto objNull);
+				private _hasTargetLocked = _lockedTarget isNotEqualTo objNull;
+
+				if (_hasTargetLocked) then {
+					private _lockedTargetClass = typeOf _lockedTarget;
+					_lockedTargetName = RC_lockedTargetNameHash get _lockedTargetClass;
+					if (isNil "_lockedTargetName") then {
+						_lockedTargetName = getText (configFile >> "CfgVehicles" >> _lockedTargetClass >> "displayName");
+						RC_lockedTargetNameHash set [_lockedTargetClass, _lockedTargetName];
+					};
+					_lockedTargetName = _lockedTargetName select [0, 9];
+				} else {
+					_lockedTargetName = "Object";
+				};
+
 
 				// UV pos (above sea level)
 				private _artyPos = getPosASL _uav;
 				// target pos (above sea level)
-				if (_hasTargetSelected && !(_noTargetOrTargetTooClose)) then {
+				if (_hasTargetLocked && !(_noTargetOrTargetTooClose)) then {
 					_targetPos = getposASL _lockedTarget;
 				} else {
     				_targetPos = AGLtoASL (markerPos [(RC_currentTargetMarker select 1), true]);
@@ -274,8 +289,8 @@ RC_ULM_UI = [] spawn {
 
 				// displayed target
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_distance, 4, 0] call CBA_fnc_formatNumber];
-				if (_hasTargetSelected && (_selectedTargetDistance >= _ULM_minDist)) then {
-					_ctrlNewTarget ctrlSetText "T: Datalink";
+				if (_hasTargetLocked && (_selectedTargetDistance >= _ULM_minDist)) then {
+					_ctrlNewTarget ctrlSetText "T: " + _lockedTargetName;
 				} else {
 					_ctrlNewTarget ctrlSetText Format ["T: %1", [RC_currentTargetMarker select 0, 2, 0] call CBA_fnc_formatNumber];
 				};
@@ -411,7 +426,7 @@ RC_ULM_UI = [] spawn {
 
 				// set backup guided trigger timer, used in fired EH, calculated by actually used elevation not recommended one
 				private _lockedGuided = false;
-				_lockedGuided = _requiresLock && _hasTargetSelected && (!(_noTargetOrTargetTooClose));
+				_lockedGuided = _requiresLock && _hasTargetLocked && (!(_noTargetOrTargetTooClose));
 				//private _triggerDistance = 0;
 				
 				if (_lockedGuided) then {

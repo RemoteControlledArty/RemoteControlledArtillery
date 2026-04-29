@@ -17,7 +17,7 @@ RC_GuidedTriggerTime=0;
 
 //general hashmaps
 RC_isAceLoadedHash = createHashMap;
-RC_selectedTargetNameHash = createHashMap;
+RC_lockedTargetNameHash = createHashMap;
 
 //vehicle hashmaps
 //RC_localizeHash = createHashMap;	//not yet used
@@ -217,7 +217,7 @@ RC_Artillery_UI = [] spawn {
 			private _travelTimeHigh = 0;
 			private _lowAngleSol = 0;
 			private _travelTimeLow = 0;
-			private _selectedTargetName = "NA";
+			private _lockedTargetName = "NA";
 
 			// if we actually have a target (thats not too close)
 			if (((_cursorTarget isNotEqualto objNull) && { _selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE }) || !(RC_Artillery_Markers isEqualTo [])) then {
@@ -243,20 +243,21 @@ RC_Artillery_UI = [] spawn {
 
 
 				// find if datalink target is selected
-				private _targetPos = [0, 0, 0];
-				private _hasTargetSelected = _cursorTarget isNotEqualto objNull;
-				private _hasLockedTarget = playerTargetLock#0 isNotEqualto objNull;
+				private _targetPos = [0,0,0];
+				private _hasTargetSelected = _cursorTarget isNotEqualTo objNull;
+				private _lockedTarget = playerTargetLock#0;
+				private _hasTargetLocked = _lockedTarget isNotEqualTo objNull;
 
-				if (_hasLockedTarget) then {
-					private _cursorTargetClass = typeOf _cursorTarget;
-					_selectedTargetName = RC_selectedTargetNameHash get _cursorTargetClass;
-					if (isNil "_selectedTargetName") then {
-						_selectedTargetName = getText (configFile >> "CfgVehicles" >> _cursorTargetClass >> "displayName");
-						RC_selectedTargetNameHash set [_cursorTargetClass, _selectedTargetName];
+				if (_hasTargetLocked) then {
+					private _lockedTargetClass = typeOf _lockedTarget;
+					_lockedTargetName = RC_lockedTargetNameHash get _lockedTargetClass;
+					if (isNil "_lockedTargetName") then {
+						_lockedTargetName = getText (configFile >> "CfgVehicles" >> _lockedTargetClass >> "displayName");
+						RC_lockedTargetNameHash set [_lockedTargetClass, _lockedTargetName];
 					};
-					_selectedTargetName = _selectedTargetName select [0, 9];
+					_lockedTargetName = _lockedTargetName select [0, 9];
 				} else {
-					_selectedTargetName = "Object";
+					_lockedTargetName = "Object";
 				};
 
 
@@ -309,8 +310,7 @@ RC_Artillery_UI = [] spawn {
 				// displayed target
 				_ctrlDistance ctrlSetText Format ["DIST: %1", [_distance, 4, 0] call CBA_fnc_formatNumber];
 				if (_hasTargetSelected && (_selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE)) then {
-					_ctrlTarget ctrlSetText "T: " + _selectedTargetName;
-					//_ctrlTarget ctrlSetText "T: Datalink";
+					_ctrlTarget ctrlSetText "T: " + _lockedTargetName;
 				} else {
 					_ctrlTarget ctrlSetText Format ["T: %1", [RC_currentTargetMarker select 0, 2, 0] call CBA_fnc_formatNumber];
 				};

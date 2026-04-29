@@ -8,3 +8,5 @@ RC_Artillery_Markers = [];
 RC_Current_Target = [];
 RC_Current_Index = 0;
 RC_InUI = false;
+
+RC_SpawCount = 3;
