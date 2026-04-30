@@ -193,8 +193,116 @@ class RC_AMV_HMG: RC_AMV_HMG_Base
 };
 
 
-//AMV APC
+class vve_missiles_titan;
+class RC_AMV_APC_Missile_Launcher_Fetch: vve_missiles_titan
+{
+	class Player;
+	//class TopDown;
+};
+class RC_AMV_APC_Missile_Launcher: RC_AMV_APC_Missile_Launcher_Fetch
+{
+	scope=1;
+	canLock=2;
+	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
+	displayName="Launcher";
+	displayNameShort="Launcher";
+	magazineReloadTime=12;
+	cmImmunity=0.67;
+	//weaponLockDelay=3;	//3
 
+	/*
+	lockingTargetSound[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\NLAW\locking_NLAW",
+		0.31622776,
+		1
+	};
+	lockedTargetSound[]=
+	{
+		"A3\Sounds_F\arsenal\weapons\Launchers\NLAW\locked_NLAW",
+		0.31622776,
+		2.5
+	};
+	*/
+
+	magazines[]=
+	{
+		"RC_1Rnd_IFV_MP_SACLOS",
+		"RC_2Rnd_IFV_MP_SACLOS",
+		"RC_3Rnd_IFV_MP_SACLOS",
+		"RC_4Rnd_IFV_MP_SACLOS",
+
+		"RC_1Rnd_IFV_MP_LOS",
+		"RC_2Rnd_IFV_MP_LOS",
+		"RC_3Rnd_IFV_MP_LOS",
+		"RC_4Rnd_IFV_MP_LOS",
+		
+		"RC_1Rnd_IFV_MP_Overfly",
+		"RC_2Rnd_IFV_MP_Overfly",
+		"RC_3Rnd_IFV_MP_Overfly",
+		"RC_4Rnd_IFV_MP_Overfly",
+
+		"RC_1Rnd_IFV_MP_NLOS",
+		"RC_2Rnd_IFV_MP_NLOS",
+		"RC_3Rnd_IFV_MP_NLOS",
+		"RC_4Rnd_IFV_MP_NLOS",
+
+		"RC_1Rnd_IFV_AA",
+		"RC_2Rnd_IFV_AA",
+		"RC_3Rnd_IFV_AA",
+		"RC_4Rnd_IFV_AA"
+	};
+	
+	modes[]=
+	{
+		"Player",
+		"Overfly",
+		"Cruise"
+	};
+	class Player: Player
+	{
+		reloadTime=12;
+		magazineReloadTime=12;
+
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\Titan",
+				1.4125376,
+				1,
+				1100
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
+			soundSetShot[]=
+			{
+				"Launcher_Vorona_Shot_SoundSet",
+				"Launcher_Vorona_Tail_SoundSet"
+			};
+		};
+	};
+	class Cruise: Player
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+
+		minRange=200;
+		minRangeProbab=0.40000001;
+		midRange=1000;
+		midRangeProbab=0.89999998;
+		maxRange=5000;
+		maxRangeProbab=0.94999999;
+	};
+	class Overfly: Cruise
+	{
+		displayName="Overfly Top Attack";
+		textureType="overfly";
+	};
+};
 
 
 //AMV SHORAD

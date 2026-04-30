@@ -126,7 +126,7 @@ class RC_AMV_APC_Base: RC_AMV_APC_Core
 			weapons[]=
 			{
 				"RC_AMV_HMG",
-				"RC_IFV_Missile_Launcher_Single",
+				"RC_AMV_APC_Missile_Launcher",
 				"SmokeLauncher"
 			};
 
@@ -208,7 +208,7 @@ class RC_AMV_APC_Base: RC_AMV_APC_Core
 		class Missiles_revolving
 		{
 			source="revolving";
-			weapon="RC_IFV_Missile_Launcher_Single";
+			weapon="RC_AMV_APC_Missile_Launcher";
 		};
 		class Missiles_reloadMagazine: Missiles_revolving
 		{

@@ -395,7 +395,7 @@ class missiles_titan;
 class RC_IFV_Missile_Launcher_Base: missiles_titan
 {
 	class Player;
-	class TopDown;
+	//class TopDown;
 };
 class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 {
@@ -479,7 +479,6 @@ class RC_IFV_Missile_Launcher: RC_IFV_Missile_Launcher_Base
 	{
 		displayName="Overfly Top Attack";
 		textureType="overfly";
-		magazineReloadTime=20;
 	};
 	/*
 	modes[]=
@@ -529,6 +528,24 @@ class RC_IFV_Missile_Launcher_4R: RC_IFV_Missile_Launcher
 };
 class RC_IFV_Missile_Launcher_Single: RC_IFV_Missile_Launcher
 {
+	magazineReloadTime=12;
+	
+	class Player: Player
+	{
+		reloadTime=12;
+		magazineReloadTime=12;
+	};
+	class Cruise: Cruise
+	{
+		reloadTime=12;
+		magazineReloadTime=12;
+	};
+	class Overfly: Overfly
+	{
+		reloadTime=12;
+		magazineReloadTime=12;
+	};
+
 	magazines[]=
 	{
 		"RC_1Rnd_IFV_MP_SACLOS",
