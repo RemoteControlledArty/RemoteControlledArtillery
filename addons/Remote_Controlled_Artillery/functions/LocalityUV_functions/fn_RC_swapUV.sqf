@@ -103,6 +103,36 @@ if (isRemoteControlling player) then {
 };
 
 
+//logic breakdown
+if (isRCing) then {
+	back to player
+} else {
+	if ((currentUV != primaryUV) && (primaryUV is valid)) then {
+		setVariable previous_UV is _currentUV
+		control primaryUV
+	} else {
+
+		//somewhere here set previous
+
+		if (previousUV is valid) then {
+
+			[_previousUV, _previousUV_seat] call RC_fnc_RC_connectToUV;
+
+		} else {
+
+			if ([_primaryUV] call RC_fnc_RC_isValidUV) then {
+
+				[_primaryUV, _primaryUV_seat] call RC_fnc_RC_connectToUV;
+
+			} else {
+
+				hint "No primary/previous UV available to swap to. First set a primary UV or swap away per hokey from a UV.";
+			};
+		};
+	};
+};
+
+
 /*
 //If (_connected && primary is set && primary is valid && connected is primary)
 If (_connected && (_currentUV isEqualTo _primaryUV) && ([_primaryUV] call RC_fnc_RC_isValidUV))
