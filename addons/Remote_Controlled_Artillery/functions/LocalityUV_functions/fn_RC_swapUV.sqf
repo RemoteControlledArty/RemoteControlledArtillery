@@ -29,6 +29,8 @@ if (isRemoteControlling player) then {
 		};
 	} else {
 
+		//SOMEHOW BROKE
+
 		player setVariable ["RC_previous_UV", _currentUV];
 		player setVariable ["RC_previous_UV_seat", getConnectedUAVUnit player];	 //able to set seat for direct control
 
