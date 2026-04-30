@@ -8,6 +8,203 @@ private _connected = !isNull _currentUV;
 private _currentIsNotPrimaryUV = _currentUV isNotEqualTo _primaryUV;
 
 
+
+//if RCing
+if (isRemoteControlling player) then {
+
+	if (_currentUV isEqualTo _primaryUV) then {
+
+		//here to not close previous arty UI (closed when not RCing) when swapping to primary spotting UV
+		player remoteControl objNull;
+		player switchCamera "INTERNAL";
+
+		//close terminal if it opens
+		0 spawn {
+           	sleep 0.2;	//wait if terminal opens
+
+			private _uavDisplay = findDisplay 160;
+			if (!isNull _uavDisplay) then {
+				_uavDisplay closeDisplay 1;
+			};
+		};
+	} else {
+
+		player setVariable ["RC_previous_UV", _currentUV];
+		player setVariable ["RC_previous_UV_seat", getConnectedUAVUnit player];	 //able to set seat for direct control
+
+		if ([_primaryUV] call RC_fnc_RC_isValidUV) then {
+
+			[_primaryUV, _primaryUV_seat] call RC_fnc_RC_connectToUV;
+		} else {
+			
+			//here to not close previous arty UI (closed when not RCing) when swapping to primary spotting UV
+			player remoteControl objNull;
+			player switchCamera "INTERNAL";
+
+			//close terminal if open
+			private _uavDisplay = findDisplay 160;
+			if (!isNull _uavDisplay) then {
+				_uavDisplay closeDisplay 1;
+			};
+		};
+	};
+} else {
+
+	//if not RCing
+	if (_currentUV isEqualTo _primaryUV) then {
+		
+		if ([_previousUV] call RC_fnc_RC_isValidUV) then {
+
+			//only direct control if seat valid, otherwise open terminal
+			if (_previousUV isEqualTo (vehicle _previousUV_seat)) then {
+
+				[_previousUV, _previousUV_seat] call RC_fnc_RC_connectToUV;
+			} else {
+				[_previousUV, objNull] call RC_fnc_RC_connectToUV;
+			};
+		} else {
+
+			//fallback if previous invalid
+			if ([_primaryUV] call RC_fnc_RC_isValidUV) then {
+
+				[_primaryUV, _primaryUV_seat] call RC_fnc_RC_connectToUV;
+			} else {
+
+				hint "No primary/previous UV available to swap to. First set a primary UV or swap away per hokey from a UV.";
+			};
+		};
+
+	} else {
+		
+		player setVariable ["RC_previous_UV", _currentUV];	//unable to set seat due to no RCing, but still saves UV to atleast open terminal
+		_previousUV = _currentUV;							//overwrite required
+
+		if ([_primaryUV] call RC_fnc_RC_isValidUV) then {
+
+			[_primaryUV, _primaryUV_seat] call RC_fnc_RC_connectToUV;
+		} else {
+
+			//fallback if primary invalid
+			if ([_previousUV] call RC_fnc_RC_isValidUV) then {
+				
+				//only direct control if seat valid, otherwise open terminal
+				if (_previousUV isEqualTo (vehicle _previousUV_seat)) then {
+
+					[_previousUV, _previousUV_seat] call RC_fnc_RC_connectToUV;
+				} else {
+
+					[_previousUV, objNull] call RC_fnc_RC_connectToUV;	//if just defined previousUV is not equal to vehicle of stored seat
+				};
+			} else {
+
+				hint "No primary/previous UV available to swap to. First set a primary UV or swap away per hokey from a UV.";
+			};
+		};
+	};
+};
+
+
+/*
+//seems to fully work, but artillery UI is cut of due to the stop in RC'ing
+
+//if RCing
+if (isRemoteControlling player) then {
+
+	//able to set seat for direct control
+	if (_currentUV isNotEqualTo _primaryUV) then {
+		player setVariable ["RC_previous_UV", _currentUV];
+		player setVariable ["RC_previous_UV_seat", getConnectedUAVUnit player];	//cannot be set if not RC!
+	};
+
+	//player switchCamera "INTERNAL";
+	player remoteControl objNull;
+	player switchCamera "INTERNAL";
+	//closeDialog 0;
+
+} else {
+
+	//if not RCing
+	if (_currentUV isNotEqualTo _primaryUV) then {
+		
+		player setVariable ["RC_previous_UV", _currentUV];	//unable to set seat due to no RCing, but still saves UV to atleast open terminal
+		_previousUV = _currentUV;							//overwrite required
+
+		if ([_primaryUV] call RC_fnc_RC_isValidUV) then {
+
+			[_primaryUV, _primaryUV_seat] call RC_fnc_RC_connectToUV;
+		} else {
+
+			if ([_previousUV] call RC_fnc_RC_isValidUV) then {
+
+				if (_previousUV isEqualTo (vehicle _previousUV_seat)) then {
+
+					[_previousUV, _previousUV_seat] call RC_fnc_RC_connectToUV;
+
+				} else {
+
+					[_previousUV, objNull] call RC_fnc_RC_connectToUV;	//if just defined previousUV is not equal to vehicle of stored seat
+				};
+			} else {
+				hint "No primary/previous UV available to swap to. First set a primary UV or swap away per hokey from a UV.";
+			};
+		};
+
+	} else {
+
+		if ([_previousUV] call RC_fnc_RC_isValidUV) then {
+
+			if (_previousUV isEqualTo (vehicle _previousUV_seat)) then {
+
+				[_previousUV, _previousUV_seat] call RC_fnc_RC_connectToUV;
+
+			} else {
+
+				[_previousUV, objNull] call RC_fnc_RC_connectToUV;
+			};
+		} else {
+
+			if ([_primaryUV] call RC_fnc_RC_isValidUV) then {
+
+				[_primaryUV, _primaryUV_seat] call RC_fnc_RC_connectToUV;
+
+			} else {
+
+				hint "No primary/previous UV available to swap to. First set a primary UV or swap away per hokey from a UV.";
+			};
+		};
+	};
+};
+*/
+
+
+//logic breakdown, unfinished
+/*
+if (isRCing) then {
+	back to player
+} else {
+	if (currentUV != primaryUV) then {
+		
+		setVariable previous_UV is _currentUV;
+
+		if (primaryUV is valid) then {
+			control primaryUV;
+		};
+	} else {
+		if (previousUV is valid) then {
+			control previousUV;
+		} else {
+			if (primaryUV is valid) then {
+				control primaryUV
+			} else {
+				hint "message";
+			};
+		};
+	};
+};
+*/
+
+
+/*
 if (!([_primaryUV] call RC_fnc_RC_isValidUV)) exitWith {
 	// Primary UV not set or destroyed
 	if (isNull _primaryUV) then {
@@ -16,6 +213,7 @@ if (!([_primaryUV] call RC_fnc_RC_isValidUV)) exitWith {
 		hint "Primary UV is destroyed. Set a new primary UV.";
 	};
 };
+*/
 
 
 
@@ -62,75 +260,6 @@ switch (true) do {
 	};
 };
 */
-
-
-//If (_connected && primary is set && primary is valid && connected is primary)
-if (isRemoteControlling player) then {
-
-	//player switchCamera "INTERNAL";
-	player remoteControl objNull;
-	closeDialog 0;
-
-} else {
-
-	if ((_currentUV isNotEqualTo _primaryUV) && ([_primaryUV] call RC_fnc_RC_isValidUV)) then {
-
-		player setVariable ["RC_previous_UV", _currentUV];
-		player setVariable ["RC_previous_UV_seat", getConnectedUAVUnit player];	//cannot be set if not RC!
-
-		[_primaryUV, _primaryUV_seat] call RC_fnc_RC_connectToUV;
-
-	} else {
-
-		//somewhere here set previous
-
-		if ([_previousUV] call RC_fnc_RC_isValidUV) then {
-
-			[_previousUV, _previousUV_seat] call RC_fnc_RC_connectToUV;
-
-		} else {
-
-			if ([_primaryUV] call RC_fnc_RC_isValidUV) then {
-
-				[_primaryUV, _primaryUV_seat] call RC_fnc_RC_connectToUV;
-
-			} else {
-
-				hint "No primary/previous UV available to swap to. First set a primary UV or swap away per hokey from a UV.";
-			};
-		};
-	};
-};
-
-
-//logic breakdown
-if (isRCing) then {
-	back to player
-} else {
-	if ((currentUV != primaryUV) && (primaryUV is valid)) then {
-		setVariable previous_UV is _currentUV
-		control primaryUV
-	} else {
-
-		//somewhere here set previous
-
-		if (previousUV is valid) then {
-
-			[_previousUV, _previousUV_seat] call RC_fnc_RC_connectToUV;
-
-		} else {
-
-			if ([_primaryUV] call RC_fnc_RC_isValidUV) then {
-
-				[_primaryUV, _primaryUV_seat] call RC_fnc_RC_connectToUV;
-
-			} else {
-
-				hint "No primary/previous UV available to swap to. First set a primary UV or swap away per hokey from a UV.";
-			};
-		};
-	};
-};
 
 
 /*
