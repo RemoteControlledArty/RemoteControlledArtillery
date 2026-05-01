@@ -155,7 +155,7 @@ class RC_RHS_110Rnd_25mm_MP_QF_T_Y: RC_RHS_230Rnd_25mm_MP_QF_T_Y {count=110;};
 class RC_RHS_230Rnd_25mm_MPAB_DF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_MPAB_DF_T_R";
-	displayName="M792A1 MPAB-DF-T";
+	displayName="M792A1 MPAB-DF";
 	displayNameShort="M792A1 MPAB-DF";
 	displayNameMFDFormat="MPAB-DF";
 };
@@ -167,7 +167,7 @@ class RC_RHS_110Rnd_25mm_MPAB_DF_T_Y: RC_RHS_230Rnd_25mm_MPAB_DF_T_Y {count=110;
 class RC_RHS_230Rnd_25mm_MPAB_QF_T_R: rhs_mag_230Rnd_25mm_M242_HEI
 {
 	ammo="RC_RHS_B_25mm_MPAB_QF_T_R";
-	displayName="M792A1 MPAB-QF-T";
+	displayName="M792A1 MPAB-QF";
 	displayNameShort="M792A1 MPAB-QF";
 	displayNameMFDFormat="MPAB-QF";
 };

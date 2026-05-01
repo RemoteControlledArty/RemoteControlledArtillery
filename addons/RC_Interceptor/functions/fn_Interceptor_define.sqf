@@ -230,12 +230,12 @@ fnc_Interceptor_mousesteer = {
 //functional velocity merging version with momentum and acceleration, 1.5m sea & terrain skimming, 50% drift reduction, 3 axis differing acceleration
 
 //fine tune flight performance
-RC_ACC_FWD  = 50;
+RC_ACC_FWD  = 50;	//40/40/40 seems best for 0.25 drift correction
 RC_ACC_SIDE = 25;
 RC_ACC_VERT = 25;
 
 RC_MAXMS = 400 / 3.6;
-RC_DRIFT_DAMPENING = 1;
+RC_DRIFT_DAMPENING = 1;		//lower = much more skillbased, 0 makes it near unable to hit at speed
 
 RC_PREV_VEL = [0, 0, 0];
 RC_PREV_POS = [0, 0, 0];
@@ -243,7 +243,7 @@ RC_DT = 0.01;
 RC_G = 9.81;
 
 RC_MIN_HEIGHT = 1.5;   			// sea/terrain level skimming (meters)
-RC_SKIMMING_DROP_EXPONENT = 6;   // factor for how much the drop input is reduced when flying close to the ground, higher factor = stronger reduction
+RC_SKIMMING_DROP_EXPONENT = 6;  // factor for how much the drop input is reduced when flying close to the ground, higher factor = stronger reduction
 RC_SKIMMING_PUSH = 30;			// proportional force
 RC_SKIMMING_DAMP = 5;			// damping force
 

@@ -40,7 +40,7 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	
 	bodyFrictionCoef=0.3;	//0.3 -> 0.3, lowering increases speed but reduces control
 	liftForceCoef=1.5;	//1 -> 1
-	cyclicForwardForceCoef=0.96;	//1.2 -> 1.2  vertical steering sensitivity
+	cyclicForwardForceCoef=0.8;		//1.2 -> 0.96  vertical steering sensitivity, 0.8 is less oversensitive
 	cyclicAsideForceCoef=1.6;		//horizontal seering sensitivity
 	maxSpeed=200;	//140 -> 190
 

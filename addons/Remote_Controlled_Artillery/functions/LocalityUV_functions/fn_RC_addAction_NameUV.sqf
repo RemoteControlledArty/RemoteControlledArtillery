@@ -11,8 +11,8 @@ _entity addAction [
 	false,	// showWindow
 	true,	// hideOnUse
 	"",		// shortcut
-	"(isRemoteControlling player) && ((groupId group (getconnectedUAV player)) find (trim (((name player) splitString '. ') select ((count ((name player) splitString '. ')) - 1))) == -1)",	// condition
-	1		// radius
+	"(isRemoteControlling player) && (_target isEqualTo (getConnectedUAV player)) && ((groupId group _target) find (trim (((name player) splitString '. ') select ((count ((name player) splitString '. ')) - 1))) == -1)",	// condition
+	5		// radius, >4m requied for larger vehicles
 ];
 //"(isRemoteControlling player) && (((groupId group (getConnectedUAV player)) select [0, (groupId group (getConnectedUAV player)) find ',']) find (trim (((name player) splitString '. ') select ((count ((name player) splitString '. ')) - 1))) == -1)"
 //"(isRemoteControlling player) && ((groupId group (getconnectedUAV player)) find (trim (((name player) splitString '. ') select ((count ((name player) splitString '. ')) - 1))) == -1)"

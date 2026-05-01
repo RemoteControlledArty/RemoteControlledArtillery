@@ -44,9 +44,20 @@ class CfgPatches
 			//"I_Crocus_SignalBooster_Bag",
 
 			"RC_SignalBoosterLRR_blk",
+			"RC_SignalBoosterLRR_blk_O",
+			"RC_SignalBoosterLRR_blk_I",
+
 			"RC_SignalBoosterLRR_mtp",
+			"RC_SignalBoosterLRR_mtp_O",
+			"RC_SignalBoosterLRR_mtp_I",
+			
 			"RC_SignalBoosterLRR_wdl",
-			"RC_SignalBoosterLRR_tropic"
+			"RC_SignalBoosterLRR_wdl_O",
+			"RC_SignalBoosterLRR_wdl_I",
+
+			"RC_SignalBoosterLRR_tropic",
+			"RC_SignalBoosterLRR_tropic_O",
+			"RC_SignalBoosterLRR_tropic_I"
 		};
 		
 		ammo[]=

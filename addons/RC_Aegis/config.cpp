@@ -105,7 +105,12 @@ class CfgPatches
 			"RC_Howitzer_LC_WD2_I",
 
 			"RC_SignalBoosterLRR_a",
-			"RC_SignalBoosterLRR_g"
+			"RC_SignalBoosterLRR_a_O",
+			"RC_SignalBoosterLRR_a_I",
+
+			"RC_SignalBoosterLRR_g",
+			"RC_SignalBoosterLRR_g_O",
+			"RC_SignalBoosterLRR_g_I"
 		};
 
 		weapons[]=

@@ -956,8 +956,11 @@ class CfgFunctions
 			class RC_NameUV_Server {};
 
 			class RC_addAction_setPrimaryUV {};
+			class RC_addAction_removePrimaryUV {};
 			class RC_connectToUV {};
 			class RC_isValidUV {};
+			class RC_stopRC {};
+			class RC_choosePreviousUV {};
 			class RC_swapUV {};
 			
 			class RC_OMH_Side {};

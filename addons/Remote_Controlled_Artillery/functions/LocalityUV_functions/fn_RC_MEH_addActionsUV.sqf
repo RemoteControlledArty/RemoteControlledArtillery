@@ -7,7 +7,8 @@ addMissionEventHandler ["EntityCreated", {
 	
 		[[_entity], RC_fnc_RC_addAction_NameUV] remoteExec ["call", 0, true];
 
-		[[_entity], RC_fnc_RC_addAction_SetPrimaryUV] remoteExec ["call", 0, true];
+		[[_entity], RC_fnc_RC_addAction_setPrimaryUV] remoteExec ["call", 0, true];
+		[[_entity], RC_fnc_RC_addAction_removePrimaryUV] remoteExec ["call", 0, true];
 	};
 }];
 

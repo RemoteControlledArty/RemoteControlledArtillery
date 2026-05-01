@@ -383,7 +383,7 @@ class RC_cUAS_Static_HMG_manned_Bag_O: RC_cUAS_Static_HMG_manned_Bag
 };
 class RC_cUAS_Static_HMG_manned_Bag_I: RC_cUAS_Static_HMG_manned_Bag
 {
-	displayName="C-UAS Static [Ind]";
+	displayName="C-UAS Static 12.7mm [Ind]";
 
 	class assembleInfo: assembleInfo
 	{

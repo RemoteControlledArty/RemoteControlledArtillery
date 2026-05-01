@@ -10,8 +10,8 @@ class RC_FW_LM_MP_Fetch: GX_B_RQ11B_UAV
 class RC_FW_LM_MP_Core: RC_FW_LM_MP_Fetch
 {
 	author="Ascent";	//all credits to the original maker, this is only an edit and soft-depends on the original mod
-	faction="RemoteControlled_O";
 	displayName="RC Loitering Munition";
+	editorSubcategory="RC_UAV_Designator_subcat";
 
 	/*
 	airFrictionCoefs0[] = {0.1,0.05,0.1};		//{0.1,0.1,0.1}
@@ -27,6 +27,7 @@ class RC_FW_LM_MP_Core: RC_FW_LM_MP_Fetch
 	//thrustCoef[] = {4.6,10.6,11.6,11.6,11.6,11.6,11.9,12.2,12.4,11.8,7.4,0.2,0.2,0.2,0.2,0.2};
 	//thrustCoef[] = {2.3,5.3,5.8,5.8,5.8,5.8,5.95,6.1,6.2,5.9,3.7,0.1,0.1,0.1,0.1,0.1};
 	//rudderCoef[] = {0,0.6,1.5,1.6,1.7,1.7,1.7,1.7,1.7,1.7,1.7,0.9,0.9,0.9,0.7,0.5};
+	rudderCoef[] = {0,1.2,3,3.2,3.4,3.4,3.4,3.4,3.4,3.4,3.4,1.8,1.8,1.8,1.4,1};
 
 	//stallSpeed = ;		//
 	//stallWarningTreshold = ;	//
@@ -180,6 +181,7 @@ class RC_FW_LM_MP_Core: RC_FW_LM_MP_Fetch
 };
 class RC_FW_LM_MP_B: RC_FW_LM_MP_Core
 {
+	faction="RemoteControlled_B";
 	side=1;
 	crew="B_UAV_AI";
 
@@ -188,6 +190,7 @@ class RC_FW_LM_MP_B: RC_FW_LM_MP_Core
 };
 class RC_FW_LM_MP_O: RC_FW_LM_MP_Core
 {
+	faction="RemoteControlled_O";
 	side=0;
 	crew="O_UAV_AI";
 
@@ -196,6 +199,7 @@ class RC_FW_LM_MP_O: RC_FW_LM_MP_Core
 };
 class RC_FW_LM_MP_I: RC_FW_LM_MP_Core
 {
+	faction="RemoteControlled_I";
 	side=2;
 	crew="I_UAV_AI";
 

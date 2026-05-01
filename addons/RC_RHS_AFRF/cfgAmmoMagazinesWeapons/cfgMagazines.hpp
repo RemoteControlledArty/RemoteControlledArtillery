@@ -179,7 +179,7 @@ class RC_RHS_AFRF_100Rnd_30mm_MP_DF_T_Y: RC_RHS_AFRF_100Rnd_30mm_MP_DF_T_R {ammo
 class RC_RHS_AFRF_100Rnd_30mm_MPAB_DF_T_R: RC_RHS_AFRF_100Rnd_30mm_MP_Pen_T_R
 {
 	ammo="RC_RHS_AFRF_B_30mm_MPAB_DF_T_R";
-	displayName="30mm MPAB-DF-T";
+	displayName="30mm MPAB-DF";
 	displayNameShort="30mm MPAB";
 	displayNameMFDFormat="MPAB";
 };
