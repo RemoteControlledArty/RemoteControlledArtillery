@@ -1,5 +1,26 @@
 class B_Crocus_PvP: B_Crocus_MP_TI_Sens
 {
+	/*
+	class EventHandlers: EventHandlers
+	{
+		class RC_Crocus
+		{
+			init="(_this # 0) spawn RC_fnc_fpv_droneInit_MP;";
+			//fired="params ['_unit'];  if (local _unit) then { _unit spawn RC_fnc_fpv_detonate_MP };";
+			handleDamage="params ['_unit', '_selection', '_damage'];  if (local _unit) then { if (_damage > 0.1) then {_unit spawn RC_fnc_fpv_detonate_MP }; };";
+		};
+	};
+	
+	weapons[]=
+	{
+		"RC_target_confirmer_impact_weapon"
+	};
+	magazines[]=
+	{
+		"RC_target_confirmer_impact_mag"
+	};
+	*/
+
 	displayName="Crocus PvP";
 
 	class assembleInfo: assembleInfo

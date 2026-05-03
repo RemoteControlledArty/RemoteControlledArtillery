@@ -197,6 +197,15 @@ class CfgAmmo
 		maxSpeed=1000;
 		typicalSpeed=1000;
 	};
+	class RC_target_confirmer_impact_ammo: RC_target_confirmer_AB_ammo
+	{
+		/*
+		manualControl=1;
+		missileManualControlCone=0;
+		maxControlRange=4000;
+		*/
+	};
+
 
 	class RC_Crocus_Deployer_Ammo: RC_target_confirmer_AB_ammo
 	{
@@ -245,6 +254,10 @@ class cfgMagazines
 		initSpeed=1;
 		scope=1;
 		count=1;
+	};
+	class RC_target_confirmer_impact_mag: RC_target_confirmer_AB_mag
+	{
+		ammo="RC_target_confirmer_impact_ammo";
 	};
 	class RC_shapedcharge_reticle_AB_mag: RC_target_confirmer_AB_mag
 	{
@@ -346,28 +359,40 @@ class Mode_SemiAuto;
 class cfgWeapons
 {
 	class RC_target_confirmer;
-	class RC_target_confirmer_AB_weapon: RC_target_confirmer
+	class RC_target_confirmer_impact_weapon: RC_target_confirmer
 	{
-		displayName="MP airburst";
-		displayNameShort="MP airburst";
+		displayName="MP";
+		displayNameShort="MP";
+		
 		scope=1;
 		canLock=2;
 		weaponLockDelay=0;
-		//ballisticsComputer=8;	//8 reticle for shaped charge airburst; requires maxControlRange=0;
 		reloadTime=1;
 		magazineReloadTime=1;
+
 		magazines[]=
 		{
-			"RC_target_confirmer_AB_mag"
+			"RC_target_confirmer_impact_mag"
 		};
 		modes[]=
 		{
 			"player"
 		};
+
 		class player: Mode_SemiAuto
 		{
-			displayName="MP airburst";
-			//ballisticsComputer=8;	//8 reticle for shaped charge airburst, requires maxControlRange=0;
+			displayName="MP";
+			showToPlayer=0;
+
+			aiRateOfFire=100000;	//too not make AI fire itself when it flies in direction of laser target per waypoint
+			aiRateOfFireDispersion=0;
+			aiRateOfFireDistance=0;
+			aiDispersionCoefY=0;
+			aiDispersionCoefX=0;
+			minRangeProbab=0;
+			midRangeProbab=0;
+			maxRangeProbab=0;
+
 			sounds[]=
 			{
 				"StandardSound"
@@ -387,16 +412,22 @@ class cfgWeapons
 					1
 				};
 			};
-			showToPlayer=1;
+		};
+	};
+	class RC_target_confirmer_AB_weapon: RC_target_confirmer_impact_weapon
+	{
+		displayName="MP airburst";
+		displayNameShort="MP airburst";
 
-			aiRateOfFire=100000;	//too not make AI fire itself when it flies in direction of laser target per waypoint
-			aiRateOfFireDispersion=0;
-			aiRateOfFireDistance=0;
-			aiDispersionCoefY=0;
-			aiDispersionCoefX=0;
-			minRangeProbab=0;
-			midRangeProbab=0;
-			maxRangeProbab=0;
+		magazines[]=
+		{
+			"RC_target_confirmer_AB_mag"
+		};
+
+		class player: player
+		{
+			displayName="MP airburst";
+			showToPlayer=1;
 		};
 	};
 	class RC_shapedcharge_reticle_AB_weapon: RC_target_confirmer_AB_weapon

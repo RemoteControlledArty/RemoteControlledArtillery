@@ -76,13 +76,10 @@ class I_Crocus_MP_TI: B_Crocus_MP_TI
 };
 
 
-class RC_UAV_AR1_Bag;
-class B_Crocus_MP_TI_Bag: RC_UAV_AR1_Bag
+class B_Crocus_MP_Bag;
+class B_Crocus_MP_TI_Bag: B_Crocus_MP_Bag
 {
-	scope=2;
-	scopeCurator=2;
 	displayName="Crocus MP TI Bag";
-	mass=180;	//>8kg
 
 	class assembleInfo
 	{
