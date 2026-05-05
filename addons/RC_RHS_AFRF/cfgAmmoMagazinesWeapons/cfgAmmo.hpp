@@ -22,8 +22,12 @@ class RC_RHS_AFRF_Sh_100mm_MP_Base: rhs_ammo_3UOF191
 };
 class RC_RHS_AFRF_Sh_100mm_MP_DF_Sub: RC_RHS_AFRF_Sh_100mm_MP_Base
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_AB_100mm";
+};
+class RC_RHS_AFRF_Sh_100mm_MPAB_DF_Sub: RC_RHS_AFRF_Sh_100mm_MP_DF_Sub
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
 };
 
 
@@ -60,7 +64,7 @@ class RC_RHS_AFRF_Sh_100mm_MP_QF_T_Y: RC_RHS_AFRF_Sh_100mm_MP_QF_T_R {model="\A3
 class RC_RHS_AFRF_Sh_100mm_MPAB_DF_T_R: RC_RHS_AFRF_Sh_100mm_MP_Base
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
-	submunitionAmmo="RC_RHS_AFRF_Sh_100mm_MP_DF_Sub";
+	submunitionAmmo="RC_RHS_AFRF_Sh_100mm_MPAB_DF_Sub";
 };
 class RC_RHS_AFRF_Sh_100mm_MPAB_DF_T_G: RC_RHS_AFRF_Sh_100mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_RHS_AFRF_Sh_100mm_MPAB_DF_T_Y: RC_RHS_AFRF_Sh_100mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};

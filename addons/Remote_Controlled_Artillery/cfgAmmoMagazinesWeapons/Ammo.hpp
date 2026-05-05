@@ -1728,7 +1728,7 @@ class RC_ammo_Penetrator_AB_105mm: RC_ammo_Penetrator_105mm
 };
 class RC_Sh_105mm_MP_DF_Sub: RC_Sh_105mm_MP_T_R
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_AB_105mm";
 };
 class RC_Sh_105mm_MP_DF_T_R: RC_Sh_105mm_MP_T_R
@@ -1738,10 +1738,16 @@ class RC_Sh_105mm_MP_DF_T_R: RC_Sh_105mm_MP_T_R
 };
 class RC_Sh_105mm_MP_DF_T_G: RC_Sh_105mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_Sh_105mm_MP_DF_T_Y: RC_Sh_105mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_Sh_105mm_MPAB_DF_Sub: RC_Sh_105mm_MP_DF_Sub
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
+};
 class RC_Sh_105mm_MPAB_DF_T_R: RC_Sh_105mm_MP_T_R
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
-	submunitionAmmo="RC_Sh_105mm_MP_DF_Sub";
+	submunitionAmmo="RC_Sh_105mm_MPAB_DF_Sub";
 };
 class RC_Sh_105mm_MPAB_DF_T_G: RC_Sh_105mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_Sh_105mm_MPAB_DF_T_Y: RC_Sh_105mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -1791,7 +1797,7 @@ class RC_ammo_Penetrator_AB_120mm: RC_ammo_Penetrator_120mm
 };
 class RC_Sh_120mm_MP_DF_Sub: RC_Sh_120mm_MP_T_R
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_AB_120mm";
 };
 class RC_Sh_120mm_MP_DF_T_R: RC_Sh_120mm_MP_T_R
@@ -1801,10 +1807,17 @@ class RC_Sh_120mm_MP_DF_T_R: RC_Sh_120mm_MP_T_R
 };
 class RC_Sh_120mm_MP_DF_T_G: RC_Sh_120mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_Sh_120mm_MP_DF_T_Y: RC_Sh_120mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//requires a larger triggerdistance, to AB high enough above targets, but results in DF overpenetrating some buildings
+class RC_Sh_120mm_MPAB_DF_Sub: RC_Sh_120mm_MP_DF_Sub
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
+};
 class RC_Sh_120mm_MPAB_DF_T_R: RC_Sh_120mm_MP_T_R
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
-	submunitionAmmo="RC_Sh_120mm_MP_DF_Sub";
+	submunitionAmmo="RC_Sh_120mm_MPAB_DF_Sub";
 };
 class RC_Sh_120mm_MPAB_DF_T_G: RC_Sh_120mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_Sh_120mm_MPAB_DF_T_Y: RC_Sh_120mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
@@ -2174,7 +2187,7 @@ class RC_ammo_Penetrator_AB_125mm: ammo_Penetrator_125mm
 };
 class RC_Sh_125mm_MP_DF_Sub: RC_Sh_125mm_MP_T_R
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_AB_125mm";
 };
 class RC_Sh_125mm_MP_DF_T_R: RC_Sh_120mm_MP_T_R
@@ -2184,10 +2197,16 @@ class RC_Sh_125mm_MP_DF_T_R: RC_Sh_120mm_MP_T_R
 };
 class RC_Sh_125mm_MP_DF_T_G: RC_Sh_125mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_Sh_125mm_MP_DF_T_Y: RC_Sh_125mm_MP_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_Sh_125mm_MPAB_DF_Sub: RC_Sh_125mm_MP_DF_Sub
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_Sub_MP_DF.hpp"
+};
 class RC_Sh_125mm_MPAB_DF_T_R: RC_Sh_125mm_MP_T_R
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AA_MPAB_DF.hpp"
-	submunitionAmmo="RC_Sh_125mm_MP_DF_Sub";
+	submunitionAmmo="RC_Sh_125mm_MPAB_DF_Sub";
 };
 class RC_Sh_125mm_MPAB_DF_T_G: RC_Sh_125mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_Sh_125mm_MPAB_DF_T_Y: RC_Sh_125mm_MPAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
