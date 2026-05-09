@@ -1,4 +1,5 @@
-class RscInGameUI {
+class RscInGameUI
+{
 	class RscUnitInfo;
 	
 	class RscWeaponRangeArtillery {
@@ -10,4 +11,6 @@ class RscInGameUI {
     };
 
     class RC_RscWeaponRangeArtilleryAuto: RscWeaponRangeArtilleryAuto {};
+
+    #include "\Remote_Controlled_Artillery\ui\infoType_Heli.hpp"
 };

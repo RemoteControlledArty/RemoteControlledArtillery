@@ -7,4 +7,6 @@ class RscInGameUI
 
     class RscWeaponRangeArtilleryAuto;
     class RC_RscWeaponRangeArtilleryAuto: RscWeaponRangeArtilleryAuto {};
+
+    #include "\Remote_Controlled_Artillery\ui\infoType_Heli.hpp"
 };

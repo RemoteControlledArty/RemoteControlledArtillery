@@ -1015,13 +1015,6 @@ class RscTitles
 #endif
 
 
-class RscInGameUI
-{
-   	#include "\Remote_Controlled_Artillery\ui\infoType_Heli.hpp"
-	//#include "\Remote_Controlled_Artillery\ui\turretInfoType.hpp"
-};
-
-
 class CfgFactionClasses
 {
 	class RemoteControlled_O

@@ -168,6 +168,8 @@ class RC_Bohdana_Base: RC_Bohdana_Core
 
 			//minElev=-;
 			maxElev=87;
+			lockWhenVehicleSpeed=0;	//1 / -1
+			//elevationMode=3;
 
 			weapons[]=
 			{

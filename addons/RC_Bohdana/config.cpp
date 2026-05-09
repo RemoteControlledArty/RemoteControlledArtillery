@@ -23,7 +23,7 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
-			"vve_core"					//all credits to the Bohdana creators!
+			"frtz_2s22_bogdana_maz"		//all credits to the Bohdana creators!
 		};
 
 		skipWhenMissingDependencies=1;	//soft dependency

@@ -1803,7 +1803,7 @@ class RC_40Rnd_2S22_155mm_Mo_LG_DelayedFuse: RC_1Rnd_2S22_155mm_Mo_LG_DelayedFus
 };
 
 
-backup ammo used in script for when the barrel is pointed too low for airburst
+//backup ammo used in script for when the barrel is pointed too low for airburst
 class RC_1Rnd_155mm_Mo_backupHEAB;
 class RC_1Rnd_2S22_155mm_Mo_backupHEAB: RC_1Rnd_155mm_Mo_backupHEAB
 {
