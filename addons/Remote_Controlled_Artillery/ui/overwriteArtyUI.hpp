@@ -8,4 +8,6 @@ class RscInGameUI {
     class RscWeaponRangeArtilleryAuto {
         onLoad = "uiNamespace setVariable ['RCA_ArtyUI',_this select 0]";
     };
+
+    class RC_RscWeaponRangeArtilleryAuto: RscWeaponRangeArtilleryAuto {};
 };

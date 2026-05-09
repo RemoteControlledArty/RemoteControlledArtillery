@@ -9,14 +9,16 @@ class CfgPatches
 		{
 			"RC_Bohdana_B",
 			"RC_Bohdana_O",
-			"RC_Bohdana_I"
+			"RC_Bohdana_I",
+
+			"RC_Bohdana_manned_B",
+			"RC_Bohdana_manned_O",
+			"RC_Bohdana_manned_I"
 		};
-		/*
 		weapons[]=
 		{
-			""
+			"RC_2S22_155mm_V4"
 		};
-		*/
 		requiredAddons[]=
 		{
 			"cba_main",
@@ -44,6 +46,10 @@ class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
 
+class CfgMagazines
+{
+	#include "\RC_Bohdana\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+};
 class CfgWeapons
 {
 	#include "\RC_Bohdana\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
