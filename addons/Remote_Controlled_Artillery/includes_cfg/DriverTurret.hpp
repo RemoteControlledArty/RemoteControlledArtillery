@@ -1,5 +1,3 @@
-//class UavOptics
-
 //required classes
 class ViewGunner
 {

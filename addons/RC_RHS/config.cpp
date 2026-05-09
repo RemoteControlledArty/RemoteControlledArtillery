@@ -164,6 +164,12 @@ class CfgPatches
 			"RC_MELB_OM_MH6M",
 			"RC_MELB_OM_MH6M_O",
 			"RC_MELB_OM_MH6M_I",
+			
+			/*
+			"RC_UH1M",
+			"RC_UH1M_O",
+			"RC_UH1M_I",
+			*/
 
 			"RC_MH80M_DAP",
 			"RC_MH80M_DAP_O",
@@ -239,6 +245,7 @@ class CfgPatches
 			"cba_main",
 			"RC_Artillery",
 			"RHS_US_A2Port_Armor",
+			"RHS_US_A2_AirImport",
 			"rhsusf_c_m1a2",
 			"rhsusf_c_statics",
 			"rhsusf_c_stryker",
@@ -318,7 +325,9 @@ class CfgVehicles
 	#include "\RC_RHS\cfgVehicles\H6M.hpp"
 	#include "\RC_RHS\cfgVehicles\MH80M.hpp"
 	#include "\RC_RHS\cfgVehicles\Ka60M.hpp"
-	#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
+
+	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
+	//#include "\RC_RHS\cfgVehicles\H1M.hpp"
 	
 	//#include "\RC_RHS\cfgVehicles\ASV.hpp"
 	//#include "\RC_RHS\cfgVehicles\HIMARS.hpp"

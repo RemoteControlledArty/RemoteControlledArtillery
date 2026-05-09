@@ -38,7 +38,7 @@ class RC_Offroad_Base: RC_Offroad_Core
 	faction="RemoteControlled_B";
 	author="Ascent";
 	armor=40;
-	crewCrashProtection=0.01;
+	crewCrashProtection=0;
 	side=1;
 
 	canUseScanners=1;
@@ -377,10 +377,12 @@ class RC_Offroad_cUAS_Base: RC_Offroad_Base
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
 		};
+		/*
 		class RC_AT_Warning
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
+		*/
 	};
 
 	editorSubcategory="RC_AntiDrone_subcat";

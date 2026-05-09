@@ -32,10 +32,12 @@ class RC_MRZR_Base: RC_MRZR_Core
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		/*
 		class RC_AT_Warning
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
+		*/
 
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargoFuel_EH.hpp"
 	};
@@ -48,7 +50,7 @@ class RC_MRZR_Base: RC_MRZR_Core
 
 	author="Ascent";
 	armor=40;
-	crewCrashProtection=0.01;
+	crewCrashProtection=0;
 
 	threat[]={0,0,0};
 	cost=0;
@@ -86,6 +88,7 @@ class RC_MRZR_Base: RC_MRZR_Core
 	{
 		class DriverTurret
 		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_car.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\DriverTurret.hpp"
 
 			primaryObserver = 1;
@@ -131,56 +134,6 @@ class RC_MRZR_Base: RC_MRZR_Core
 				"RC_target_confirmer_mag",
 				"SmokeLauncherMag",
 				"SmokeLauncherMag"
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,400};
-							resource="RscCustomInfoSensors";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={400,2000,4000};
-							resource="RscCustomInfoSensors";
-						};
-						class UAVFeedDisplay
-						{
-							componentType="UAVFeedDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-					};
-				};
 			};
 		};
 

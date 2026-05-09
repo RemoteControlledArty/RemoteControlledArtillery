@@ -1632,6 +1632,16 @@ class RC_127x99mm_cUAS: B_127x99_Ball_Tracer_Red
 	};
 	//caliber=2.5999999;	//test relating vehicles
 };
+class RC_762_cUAS: B_762x51_Tracer_Red
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
+	submunitionConeAngle="0.272";		//7 0.272deg, for shorter range
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		7
+	};
+};
 class RC_338_cUAS: B_338_NM_Ball
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"

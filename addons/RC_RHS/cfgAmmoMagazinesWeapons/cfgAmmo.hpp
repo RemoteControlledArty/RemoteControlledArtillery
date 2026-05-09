@@ -66,6 +66,22 @@ class RC_RHS_ammo_M80A1EPR_T_R: rhs_ammo_762x51_M80A1EPR_Ball
 	caliber=1.1;	//giving it acceptable lethality
 	//airFriction=-0.00060999999;	//giving it acceptable range for vehicles
 };
+class RC_RHS_ammo_762x51_DroneLock_T_R: rhs_ammo_762x51_M80A1EPR_Ball
+{
+	laserLock=0;
+	irLock=0;
+	airLock=2;
+	tracerStartTime=0.04;
+	tracerEndTime=5;
+};
+class RC_RHS_ammo_762x51_DroneLock_T_G: RC_RHS_ammo_762x51_DroneLock_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_green";
+};
+class RC_RHS_ammo_762x51_DroneLock_T_Y: RC_RHS_ammo_762x51_DroneLock_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
+};
 /*
 class RC_RHS_ammo_M80A1EPR_T_Y: RC_RHS_ammo_M80A1EPR_T_R
 {

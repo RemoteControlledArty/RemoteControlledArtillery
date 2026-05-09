@@ -465,6 +465,7 @@ class RC_RHS_200rnd_127x99_cUAS: rhs_mag_200rnd_127x99_mag
 	displayNameShort="C-UAS";
 	displayNameMFDFormat="C-UAS";
 };
+class RC_RHS_100rnd_127x99_cUAS: RC_RHS_200rnd_127x99_cUAS {count=100;};
 class RC_RHS_300rnd_127x99_cUAS: RC_RHS_200rnd_127x99_cUAS {count=300;};
 class RC_RHS_400rnd_127x99_cUAS: RC_RHS_200rnd_127x99_cUAS {count=400;};
 
@@ -523,4 +524,30 @@ class RHS_96Rnd_40mm_MK19_M430A1;
 class RC_RHS_96Rnd_40mm_MK19_M430A1: RHS_96Rnd_40mm_MK19_M430A1
 {
 	ammo="RC_RHS_ammo_mk19m3_M430A1";
+};
+
+
+class rhs_mag_762x51_M240_200;
+class RC_RHS_200Rnd_762x51_M240_DroneLock_T_R: rhs_mag_762x51_M240_200
+{
+	ammo="RC_RHS_ammo_762x51_DroneLock_T_R";
+	displayName="7.62x51 Tracer";
+	displayNameShort="7.62x51 Tracer";
+	displayNameMFDFormat="7.62";
+	tracersEvery=1;
+};
+class RC_RHS_200Rnd_762x51_M240_DroneLock_T_G: RC_RHS_200Rnd_762x51_M240_DroneLock_T_R
+{
+	ammo="RC_RHS_ammo_762x51_DroneLock_T_G";
+};
+class RC_RHS_200Rnd_762x51_M240_DroneLock_T_Y: RC_RHS_200Rnd_762x51_M240_DroneLock_T_R
+{
+	ammo="RC_RHS_ammo_762x51_DroneLock_T_Y";
+};
+class RC_RHS_200Rnd_762x51_M240_cUAS: RC_RHS_200Rnd_762x51_M240_DroneLock_T_R
+{
+	ammo="RC_762_cUAS";
+	displayName="7.62x51 C-UAS";
+	displayNameShort="7.62x51 C-UAS";
+	displayNameMFDFormat="C-UAS";
 };

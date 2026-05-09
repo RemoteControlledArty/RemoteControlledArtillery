@@ -139,7 +139,7 @@ class HitPoints: HitPoints
 		armor=-200;					//V 1 = -35, H 0.054, 0.81 = -32.4, RC -200
 		radius=0.05;				//V 0.05, H 0.24
 		//minimalHit=0.1;			//V NA, H 0.1, RC 0.1
-		explosionShielding=1;		//V 0.8, H 0.27, RC 1
+		explosionShielding=1.5;		//V 0.8, H 0.27, RC 1.5
 		passThrough=0;				//V 0.3, H 0, RC 0
 		material=51;				//V 51, H 51
 

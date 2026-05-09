@@ -122,6 +122,42 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 			
 			class Turrets: Turrets
 			{
+				class CommanderOptics: CommanderOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+					dontCreateAI=1;
+					commanding=1;
+
+					weapons[]=
+					{
+						"RC_HMG_127_APC2",
+						"RC_Laserdesignator_vehicle",
+						"SmokeLauncher"
+					};
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_red.hpp"
+
+					class OpticsIn
+					{
+						class Wide: RCWSOptics
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
+
+							minAngleX=-30;
+							maxAngleX=30;
+							minAngleY=-100;
+							maxAngleY=100;
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+						};
+					};
+					turretInfoType="RscOptics_MBT_03_gunner";
+				};
+
 				class AdvisorOptics
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
@@ -182,42 +218,6 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 							maxFov=0.02;
 						};
 					};
-				};
-
-				class CommanderOptics: CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_commander.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-					dontCreateAI=1;
-					commanding=1;
-
-					weapons[]=
-					{
-						"RC_HMG_127_APC2",
-						"RC_Laserdesignator_vehicle",
-						"SmokeLauncher"
-					};
-					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_red.hpp"
-
-					class OpticsIn
-					{
-						class Wide: RCWSOptics
-						{
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
-							gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
-
-							minAngleX=-30;
-							maxAngleX=30;
-							minAngleY=-100;
-							maxAngleY=100;
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-						};
-					};
-					turretInfoType="RscOptics_MBT_03_gunner";
 				};
 			};
 		};

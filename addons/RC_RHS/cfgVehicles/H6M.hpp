@@ -1,7 +1,7 @@
 class RHS_MELB_AH6M;
 class RC_MELB_AH6M_Core: RHS_MELB_AH6M
 {
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_fetch.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_fetch.hpp"
 };
 class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 {
@@ -11,14 +11,14 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 	};
 
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_main.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_main.hpp"
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Main.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamBase.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamFixed.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamFree.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_userActions.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_hitPoints.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_pilotCamBase.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_pilotCamFixed.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_pilotCamFree.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_userActions.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_hitPoints.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 
 
@@ -26,12 +26,12 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_4pylons.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_4pylons.hpp"
 	};
 	class Turrets: Turrets
 	{
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_copilotTurret.hpp"
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_cargoTurrets_frontRear.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_copilotTurret.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_cargoTurrets_frontRear.hpp"
 	};
 
 
@@ -105,8 +105,8 @@ class RC_MELB_AH6M_DAP_I: RC_MELB_AH6M_DAP
 //AH optionally manned
 class RC_MELB_OM_AH6M_DAP_UV: RC_MELB_AH6M_Base
 {
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_EHs_UV.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_UV_conversion.hpp"
 
 	displayName="OM AH-6M DAP - Little Bird";
 };
@@ -164,13 +164,13 @@ class RC_MELB_MH6M_DAP_Base: RC_MELB_AH6M_Base
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_2pylons.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_2pylons.hpp"
 	};
 	class Turrets: Turrets
 	{
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_copilotTurret.hpp"
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_cargoTurrets_frontRear.hpp"
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_cargoTurrets_middle.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_copilotTurret.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_cargoTurrets_frontRear.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_cargoTurrets_middle.hpp"
 	};
 };
 class RC_MELB_MH6M_DAP: RC_MELB_MH6M_DAP_Base
@@ -199,8 +199,8 @@ class RC_MELB_MH6M_DAP_I: RC_MELB_MH6M_DAP
 //AH T optionally manned
 class RC_MELB_OM_MH6M_DAP_UV: RC_MELB_MH6M_DAP_Base
 {
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_EHs_UV.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_UV_conversion.hpp"
 
 	displayName="OM MH-6M DAP - Little Bird";
 };
@@ -230,17 +230,17 @@ class RC_MELB_OM_MH6M_DAP_I: RC_MELB_OM_MH6M_DAP
 class RHS_MELB_MH6M;
 class RC_MELB_MH6M_Core: RHS_MELB_MH6M
 {
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_fetch.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_fetch.hpp"
 };
 class RC_MELB_MH6M_Base: RC_MELB_MH6M_Core
 {
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_main.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_main.hpp"
 
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamBase.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamFixed.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_pilotCamFree.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_userActions.hpp"
-	//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_hitPoints.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_pilotCamBase.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_pilotCamFixed.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_pilotCamFree.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_userActions.hpp"
+	//#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_hitPoints.hpp"
 	//#include "\Remote_Controlled_Artillery\MFD\MFD_merged.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 
@@ -252,9 +252,9 @@ class RC_MELB_MH6M_Base: RC_MELB_MH6M_Core
 	};
 	class Turrets: Turrets
 	{
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_copilotTurret.hpp"
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_cargoTurrets_frontRear.hpp"
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_cargoTurrets_middle.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_copilotTurret.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_cargoTurrets_frontRear.hpp"
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_cargoTurrets_middle.hpp"
 	};
 
 	editorSubcategory="RC_Heli_unarmed_subcat";
@@ -289,8 +289,8 @@ class RC_MELB_MH6M_I: RC_MELB_MH6M
 //MH optionally manned
 class RC_MELB_OM_MH6M_UV: RC_MELB_MH6M_Base
 {
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_EHs_UV.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M_UV_conversion.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_EHs_UV.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_UV_conversion.hpp"
 
 	displayName="OM MH-6M - Little Bird";
 };

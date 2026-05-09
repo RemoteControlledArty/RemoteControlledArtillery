@@ -725,3 +725,45 @@ class RC_RHS_M2_DroneLock: RHS_M2
 		"RC_RHS_100rnd_127x99_SLAP_DroneLock_T_R"
 	};
 };
+
+
+class RC_RHS_M2: RHS_M2
+{
+	ballisticsComputer="1 + 2";
+	FCSMaxLeadSpeed=35;
+
+	magazines[]=
+	{
+		//"RC_RHS_100rnd_127x99_cUAS",
+		"RC_RHS_100rnd_127x99_SLAP_DroneLock_T_R",
+		"RC_RHS_100rnd_127x99_DroneLock_T_R"
+	};
+};
+class rhs_weap_m240_gmv_r;
+class RC_RHS_weap_m240_gmv_r: rhs_weap_m240_gmv_r
+{
+	ballisticsComputer="1 + 2";
+	FCSMaxLeadSpeed=35;
+
+	magazines[]=
+	{
+		//"RC_RHS_200Rnd_762x51_M240_cUAS",
+		"RC_RHS_200Rnd_762x51_M240_DroneLock_T_R",
+		"RC_RHS_200Rnd_762x51_M240_DroneLock_T_G",
+		"RC_RHS_200Rnd_762x51_M240_DroneLock_T_Y"
+	};
+};
+class rhs_weap_m240_gmv_l;
+class RC_RHS_weap_m240_gmv_l: rhs_weap_m240_gmv_l
+{
+	ballisticsComputer="1 + 2";
+	FCSMaxLeadSpeed=35;
+
+	magazines[]=
+	{
+		//"RC_RHS_200Rnd_762x51_M240_cUAS",
+		"RC_RHS_200Rnd_762x51_M240_DroneLock_T_R",
+		"RC_RHS_200Rnd_762x51_M240_DroneLock_T_G",
+		"RC_RHS_200Rnd_762x51_M240_DroneLock_T_Y"
+	};
+};
