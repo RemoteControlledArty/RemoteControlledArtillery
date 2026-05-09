@@ -1,170 +1,573 @@
 class rhsusf_m1165a1_gmv_m2_m240_socom_d;
-class RC_HMMWV_M2_Base: rhsusf_m1165a1_gmv_m2_m240_socom_d
+class RC_HMMWV_Core: rhsusf_m1165a1_gmv_m2_m240_socom_d
 {
+	class Components;
+	class HitPoints;
+	class ViewOptics;
+	class Turrets;
+	class MainTurret;
+	class CargoTurret_01;
+	class CargoTurret_02;
+	class CargoTurret_03;
+	class CargoTurret_04;
+	class CargoTurret_05;
+	class HitBody;
+	class HitFuel;
+	class HitEngine;
+	class HitLFWheel;
+	class HitLF2Wheel;
+	class HitRFWheel;
+	class HitRF2Wheel;
+	class TextureSources;
+	class UserActions;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
-	//class Components;
-	class EventHandlers;
-	class Turrets;
-	//class CargoTurret_01;
-	//class CargoTurret_02;
-	//class CargoTurret_03;
-	class MainTurret;
-	class ViewOptics;
-	//class AnimationSources;
 };
-class RC_HMMWV_M2: RC_HMMWV_M2_Base
+class RC_HMMWV_Base: RC_HMMWV_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_LightsOff
+		class RC_Detection
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
+
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargoFuel_EH.hpp"
 	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam1x.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+	memoryPointDriverOptics="P svetlo";
+
+	author="Ascent";
+	armor=40;
+	crewCrashProtection=0.01;
+
+	threat[]={0,0,0};
+	cost=0;
+	typicalCargo[]={""};
 	
-	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
+	maximumLoad=2500;
+	canHideGunner=1;
+	camouflage=1;	//2
+	audible=2.5;	//5
 
-	forceInGarage=1;
-	driverCompartments="Compartment3";
-	commanding=2;
-	ejectDeadGunner=0;
-	ejectDeadDriver=0;
-	ejectDeadCommander=0;
+	maxSpeed=100;			//95
+	enginePower=80;			//66
+	engineStartSpeed=0.5;	//1.5
+	peakTorque=140;			//118.75
 
-	class DriverOpticsIn
+	smokeLauncherOnTurret=0;
+	smokeLauncherVelocity=6;
+	smokeLauncherGrenadeCount=6;
+	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
+
+	weapons[]=
 	{
-		class DVE_Wide: ViewOptics
-		{
-			camPos="view_DVE";
-			opticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
-			visionMode[]=
-			{
-				"TI",
-				"Normal"
-			};
-			thermalMode[]={0};
-			initFov=1.07692;
-			minFov=1.07692;
-			maxFov=1.07692;
-			hitpoint="Hit_Optic_DVEA";
-		};
-		class DVS_Rear: DVE_Wide
-		{
-			camPos="view_rear";
-			camDir="view_rear_dir";
-			hitpoint="Hit_Optic_Driver_Rear";
-		};
+		"RC_target_confirmer_datalink",
+		"TruckHorn",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_target_confirmer_mag",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
 	};
 
-	/*
-	class AnimationSources: AnimationSources
-	{
-	};
-	*/
-
-	/*
 	class Turrets: Turrets
 	{
-		class CargoTurret_01: CargoTurret_01 {};
-		class CargoTurret_02: CargoTurret_02 {};
-		class CargoTurret_03: CargoTurret_03 {};
-
-		class MainTurret: MainTurret
+		class DriverTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			isCopilot=1; //allows to trigger EH that gives driving controls
-			*/
+			#include "\Remote_Controlled_Artillery\includes_cfg\DriverTurret.hpp"
 
-			/*
+			primaryObserver = 1;
+			memoryPointGunnerOptics = "P svetlo";			//P svetlo
+
+			gunnerAction = "rhs_mrzr_driver";				//Driver_MBT_03_cannon_F_out
+			gunnerInAction = "";							//Driver_MBT_03_cannon_F_in
+			gunnerLeftHandAnimName = "steeringwheel";		//drivewheel
+			gunnerRightHandAnimName = "steeringwheel";		//drivewheel
+			gunnerLeftLegAnimName = "";						//pedal_brake
+			gunnerRightLegAnimName = "pedal_thrust";		//pedal_thrust
+
+			//gunnerCompartments="Compartment1";
+			//gunnerOpticsModel="";
+			//turretInfoType="";
+
+			class OpticsIn
+			{
+				class Driver
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+					minAngleX=-30;	//?
+					maxAngleX=30;	//?
+					minAngleY=-100;	//?
+					maxAngleY=100;	//?
+
+					initFov=1;
+					minFov=0.25;
+					maxFov=1;
+				};
+			};
+
 			weapons[]=
 			{
+				"RC_target_confirmer_datalink",
+				"TruckHorn",
+				"SmokeLauncher"
 			};
 			magazines[]=
 			{
+				"RC_target_confirmer_mag",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
 			};
-			*/
 
-			/*
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={4000,2000,400};
+							resource="RscCustomInfoSensors";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={400,2000,4000};
+							resource="RscCustomInfoSensors";
+						};
+						class UAVFeedDisplay
+						{
+							componentType="UAVFeedDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+					};
+				};
+			};
+		};
+
+		class CargoTurret_01: CargoTurret_01
+		{
+			gunnerName="Front Right";
+			gunnerCompartments="Compartment1";
+		};
+		class CargoTurret_02: CargoTurret_02
+		{
+			gunnerName="Middle Left";
+			gunnerCompartments="Compartment1";
+		};
+		class CargoTurret_03: CargoTurret_03
+		{
+			gunnerName="Middle Right";
+			gunnerCompartments="Compartment1";
+		};
+		class CargoTurret_04: CargoTurret_04
+		{
+			gunnerName="Rear Right";
+			gunnerCompartments="Compartment1";
+			//allowLauncherOut=1;
+			//canHideGunner=1;
+		};
+		class CargoTurret_05: CargoTurret_05
+		{
+			gunnerName="Rear Left";
+			gunnerCompartments="Compartment1";
+			//allowLauncherOut=1;
+			//canHideGunner=1;
 		};
 	};
+
+	hiddenSelectionsTextures[]=
+	{
+		"\rhsusf\addons\rhsusf_mrzr\data\blue_tan_mud_co.paa",
+		"\rhsusf\addons\rhsusf_mrzr\data\yel_tan_mud_co.paa",
+		"\rhsusf\addons\rhsusf_mrzr\data\red_tan_mud_co.paa",
+		"\rhsusf\addons\rhsusf_mrzr\data\grn_tan_mud_co.paa",
+		"\rhsusf\addons\rhsusf_mrzr\data\merged\orng_tan_mud_co.paa"
+	};
+
+	class TextureSources: TextureSources
+	{
+		class standard
+		{
+			displayName="Tan";
+			textures[]=
+			{
+				"\rhsusf\addons\rhsusf_mrzr\data\blue_tan_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\yel_tan_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\red_tan_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\grn_tan_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\merged\orng_tan_co.paa"
+			};
+			materials[]=
+			{
+				"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_blue.rvmat",
+				"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_yel_metal.rvmat",
+				"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_red.rvmat",
+				"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_grn.rvmat"
+			};
+			factions[]=
+			{
+				"RemoteControlled_B",
+				"RemoteControlled_O",
+				"RemoteControlled_I"
+			};
+		};
+		class mud
+		{
+			displayName="Tan (Muddy)";
+			textures[]=
+			{
+				"\rhsusf\addons\rhsusf_mrzr\data\blue_tan_mud_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\yel_tan_mud_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\red_tan_mud_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\grn_tan_mud_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\merged\orng_tan_mud_co.paa"
+			};
+			materials[]=
+			{
+				"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_blue_mud.rvmat",
+				"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_yel_metal_mud.rvmat",
+				"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_red_mud.rvmat",
+				"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_grn_mud.rvmat"
+			};
+			factions[]=
+			{
+				"RemoteControlled_B",
+				"RemoteControlled_O",
+				"RemoteControlled_I"
+			};
+		};
+		class olive: standard
+		{
+			displayName="Olive";
+			textures[]=
+			{
+				"\rhsusf\addons\rhsusf_mrzr\data\blue_grn_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\yel_grn_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\red_grn_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\grn_grn_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\merged\orng_grn_co.paa"
+			};
+			factions[]=
+			{
+				"RemoteControlled_B",
+				"RemoteControlled_O",
+				"RemoteControlled_I"
+			};
+		};
+		class mud_olive: mud
+		{
+			displayName="Olive (Muddy)";
+			textures[]=
+			{
+				"\rhsusf\addons\rhsusf_mrzr\data\blue_grn_mud_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\yel_grn_mud_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\red_grn_mud_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\grn_grn_mud_co.paa",
+				"\rhsusf\addons\rhsusf_mrzr\data\merged\orng_grn_mud_co.paa"
+			};
+			factions[]=
+			{
+				"RemoteControlled_B",
+				"RemoteControlled_O",
+				"RemoteControlled_I"
+			};
+		};
+	};
+	/*
+	textureList[]=
+	{
+		"Green",
+		1
+	};
 	*/
+
+	class HitPoints: HitPoints
+	{
+		class HitBody: HitBody
+		{
+			explosionShielding=1;	//1.5
+		};
+		class HitFuel: HitFuel
+		{
+			armor=1;			//0.5
+			passThrough=0.15;	//0.2
+		};
+		class HitEngine: HitEngine
+		{
+			armor=1;			//0.5
+			passThrough=0.15;	//0.2
+		};
+		class HitLFWheel: HitLFWheel
+		{
+			armor=-300;
+			explosionShielding=1;
+		};
+		class HitLF2Wheel: HitLF2Wheel
+		{
+			armor=-300;
+			explosionShielding=1;
+		};
+		class HitRFWheel: HitRFWheel
+		{
+			armor=-300;
+			explosionShielding=1;
+		};
+		class HitRF2Wheel: HitRF2Wheel
+		{
+			armor=-300;
+			explosionShielding=1;
+		};
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=8000;
+
+					class AirTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=8000;
+						maxRange=8000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=400;
+
+					class AirTarget
+					{
+						minRange=400;
+						maxRange=400;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=0;
+						maxRange=0;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="";
+				};
+				class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={4000,2000,400};
+					resource="RscCustomInfoSensors";
+				};
+				class UAVFeedDisplay
+				{
+					componentType="UAVFeedDisplayComponent";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="SensorDisplay";
+
+			class Components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={400,2000,4000};
+					resource="RscCustomInfoSensors";
+				};
+				class UAVFeedDisplay
+				{
+					componentType="UAVFeedDisplayComponent";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoMiniMap";
+				};
+			};
+		};
+	};
+
+	#include "\RC_RHS\loadouts\FSVitemsB_RHS.hpp"
 };
 
 
-class RC_HMMWV_M2_D: RC_HMMWV_M2
+class RC_HMMWV_D: RC_HMMWV_Base
 {
 	class EventHandlers: EventHandlers
-	{	
+	{
 		class RC_Artillery
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\CommanderIsDriverEH.hpp"
 		};
 	};
 
-	displayName="SF HMMWV M2";
-	editorSubcategory="RC_RHS_D_subcat";
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+
+	displayName="RC HMMWV";
+	faction="RemoteControlled_B";
+	editorSubcategory="RC_Car_subcat";
 	scope=2;
 	scopeCurator=2;
-	forceInGarage=1;
-	faction="RemoteControlled_B";
 	side=1;
+	forceInGarage=1;
 
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
 	isUav=1;
+	driverForceOptics=1;
+	vehicleClass="Autonomous";
+	driverCompartments="Compartment2";
 	textPlural="UGVs";
 	textSingular="UGV";
 	crew="B_UAV_AI";
-	forceHideDriver=1;
-	driverForceOptics=1;
+
+	uavCameraDriverPos="P svetlo";
+	uavCameraDriverDir="P svetlo";
+
+	//cost=0;
 };
-/*
-class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
+class RC_HMMWV_D_O: RC_HMMWV_D
 {
-	editorSubcategory="RC_RHS_WD_subcat";
-	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
+	faction="RemoteControlled_O";
+	side=0;
+	crew="O_UAV_AI";
+	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
+};
+class RC_HMMWV_D_I: RC_HMMWV_D
+{
+	faction="RemoteControlled_I";
+	side=2;
+	crew="I_UAV_AI";
+	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
+};
+
+
+class RC_HMMWV_WD: RC_HMMWV_D
+{
 	hiddenSelectionsTextures[]=
 	{
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_hull_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_parts_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_slat_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_crows_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_wheels_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_co.paa",
-		"rhsusf\addons\rhsusf_stryker\data\rhsusf_m1126_acc_d_ca.paa",
-		"rhsusf\addons\rhsusf_m1a1\DUKE\data\duke_antennae_c_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMFC\data\rhsusf_mfc_d_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa",
-		"rhsusf\addons\rhsusf_props\jerrycans\scepterMWC\data\rhsusf_mwc_d_co.paa"
+		"\rhsusf\addons\rhsusf_mrzr\data\blue_grn_mud_co.paa",
+		"\rhsusf\addons\rhsusf_mrzr\data\yel_grn_mud_co.paa",
+		"\rhsusf\addons\rhsusf_mrzr\data\red_grn_mud_co.paa",
+		"\rhsusf\addons\rhsusf_mrzr\data\grn_grn_mud_co.paa",
+		"\rhsusf\addons\rhsusf_mrzr\data\merged\orng_grn_mud_co.paa"
 	};
 };
-*/
-
-
-/*
-class RC_Stryker_M1126_M2_WD_I: RC_Stryker_M1126_M2_WD_B
+class RC_HMMWV_WD_O: RC_HMMWV_WD
+{
+	faction="RemoteControlled_O";
+	side=0;
+	crew="O_UAV_AI";
+	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
+};
+class RC_HMMWV_WD_I: RC_HMMWV_WD
 {
 	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
 	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
-};
-class RC_Stryker_M1126_M2_D_I: RC_Stryker_M1126_M2_D_B
-{
-	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
+	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
 };
-class RC_Stryker_M1126_M2_A_I: RC_Stryker_M1126_M2_A_B
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
-};
-*/

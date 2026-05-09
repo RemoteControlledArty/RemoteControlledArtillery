@@ -2,14 +2,14 @@ class CfgPatches
 {
 	class RC_Hatchet
 	{
-		name="Remote Controlled Hatchet";
+		name="RC Hatchet";
 		author="Ascent";
 
 		units[]=
 		{
-			"RC_MH60M_DAP",
-			"RC_MH60M_DAP_O",
-			"RC_MH60M_DAP_I"
+			"RC_MH60M_DAP_MLASS",
+			"RC_MH60M_DAP_MLASS_O",
+			"RC_MH60M_DAP_MLASS_I"
 		};
 
 		weapons[]=
@@ -20,7 +20,8 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
-			"Hatchet"
+			"ace_main",
+			"vtx_main"
 		};
 
 		skipWhenMissingDependencies=1;
@@ -57,21 +58,21 @@ class DefaultVehicleSystemsDisplayManagerRight;
 
 class CfgAmmo
 {
-	//#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
-	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgPylonAmmo.hpp"
+	//#include "\RC_Hatchet\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
+	//#include "\RC_Hatchet\cfgAmmoMagazinesWeapons\cfgPylonAmmo.hpp"
 };
 class CfgMagazines
 {
-	//#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
-	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgPylonMagazines.hpp"
+	//#include "\RC_Hatchet\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+	//#include "\RC_Hatchet\cfgAmmoMagazinesWeapons\cfgPylonMagazines.hpp"
 };
 class CfgWeapons
 {
-	//#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
-	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgPylonWeapons.hpp"
+	//#include "\RC_Hatchet\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
+	//#include "\RC_Hatchet\cfgAmmoMagazinesWeapons\cfgPylonWeapons.hpp"
 };
 
 class CfgVehicles
 {
-	#include "\RC_RHS\cfgVehicles\MH60M.hpp"
+	#include "\RC_Hatchet\cfgVehicles\MH60M.hpp"
 };
