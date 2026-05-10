@@ -92,9 +92,13 @@ RC_Artillery_UI = [] spawn {
 			
 			if (_isRCArty) then {
 				_uav = _veh;
+				ace_artillerytables_advancedCorrections = false;	//somehow has no effect, remove postinit if it wont work
 
 				//systemchat "3";
 			};
+		} else {
+			//is skipped due to continue
+			ace_artillerytables_advancedCorrections = RC_PrevAirRes;
 		};
 		*/
 
@@ -105,7 +109,7 @@ RC_Artillery_UI = [] spawn {
 		};
 		*/
 
-
+		//*
 		if !(isRemoteControlling player) then {
 			// UI shouldn't be shown so we cut it
 			"RC_Artillery" cutFadeOut 0;
@@ -123,6 +127,7 @@ RC_Artillery_UI = [] spawn {
 			_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
 			RC_isRCArtyHash set [_uavClass, _isRCArty];
 		};
+		//*/
 
 
 		// if it's of artillery or mortar type do da thing

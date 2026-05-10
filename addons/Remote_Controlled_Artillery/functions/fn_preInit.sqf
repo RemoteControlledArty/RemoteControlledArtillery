@@ -1,5 +1,5 @@
 /*
- * Author: Eric
+ * Author: Eric & Ascent
  * Declare Global variables
 */
 
