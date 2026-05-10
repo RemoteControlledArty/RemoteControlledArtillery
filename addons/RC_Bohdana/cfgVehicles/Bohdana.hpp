@@ -168,7 +168,7 @@ class RC_Bohdana_Base: RC_Bohdana_Core
 
 			//minElev=-;
 			maxElev=87;
-			lockWhenVehicleSpeed=0;	//1 / -1
+			lockWhenVehicleSpeed=-1;
 			//elevationMode=3;
 
 			weapons[]=
@@ -205,7 +205,7 @@ class RC_Bohdana_Base: RC_Bohdana_Core
 					maxFov=0.9;
 				};
 			};
-			turretInfoType="RC_RscWeaponRangeArtilleryAuto";
+			turretInfoType="RC_RscArtyAuto";
 		};
 	};
 
@@ -238,12 +238,63 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_Bohdana\includes_cfg\panels_bohdana_manned.hpp"
-			driverCompartments="Compartment1";
+			class Components: Components
+			{
+				#include "\RC_Bohdana\includes_cfg\panels_bohdana_manned.hpp"
+			};
+
+			memoryPointGunnerOptics = "gunnerview";			//P svetlo
+
+			gunnerAction = "UA_Driver_BogdanaMAZ_In";		//UA_Driver_BogdanaMAZ_In
+			gunnerInAction = "";							//
+			gunnerLeftHandAnimName = "DrivingWheel";		//drivewheel
+			gunnerRightHandAnimName = "DrivingWheel";		//drivewheel
+			gunnerLeftLegAnimName = "pedal_brake";			//pedal_brake
+			gunnerRightLegAnimName = "pedal_thrust";		//pedal_thrust
+
+			//basics
+			gunnerName = "Driver";
+			gunnerCompartments = "Compartment1";
+			dontCreateAI = 1;								//1
+			commanding = 2;									//-1
+			//primaryGunner = 0;								//0
+			//primaryObserver = 1;							//1
+
+			//can
+			allowTabLock = 1;
+			canUseScanners = 1;
+			showAllTargets = "2 + 4";
+			startEngine = 0;
+			lockWhenVehicleSpeed = -1;
+			//isCopilot = 0;
+
+			//position
+			proxyIndex = 1;									//1, 2
+			proxyType = "CPDriver";							//internal viewpoint: CPDriver  CPCargo  CPGunner  CPCommander
+			playerPosition = 0;
+			usePip = 2;										//2
+
+			LODOpticsIn = 0;								//0 shows full hull
+			LODTurnedIn = -1;								//-1 hides hull
+			LODTurnedOut = -1;								//-1 hides hull
+
+
+			//actions (body animations?)
+			gunnerGetInAction = "GetInLow";					//GetInLow  GetInHigh
+			gunnerGetOutAction = "GetOutLow";				//GetOutLow  GetOutHigh
+
+			//personTurretAction = "vehicle_turnout_1";		//Leo NA
+			//cargoIsCoDriver[] = {0};						//?
+			//cargoPreciseGetInOut[]={0};					//?
+
+
+			memoryPointsGetInGunner = "pos driver";			//pos cargo
+			memoryPointsGetInGunnerDir = "pos driver dir";	//pos cargo dir
+			memoryPointsGetInGunnerPrecise = "pos driver";	//pos cargo
 		};
 	};
 
-	displayName="Bohdana";
+	displayName="2S22 Bohdana";
 	driverCompartments="Compartment1";
 };
 class RC_Bohdana_manned_B: RC_Bohdana_manned_Base
@@ -277,7 +328,7 @@ class RC_Bohdana_manned_I: RC_Bohdana_manned_Base
 
 class RC_Bohdana_UV_Base: RC_Bohdana_Base
 {
-	displayName="RC Bohdana";
+	displayName="RC 2S22 Bohdana";
 	
 	driverCompartments="Compartment2";
 	textPlural="UGVs";
@@ -300,13 +351,18 @@ class RC_Bohdana_UV_Base: RC_Bohdana_Base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_Bohdana\includes_cfg\panels_bohdana_UV.hpp"
+			class Components: Components
+			{
+				#include "\RC_Bohdana\includes_cfg\panels_bohdana_UV.hpp"
+			};
 
 			//cannot yet be driven when RCing gunner from commander seat
 			gunnerCompartments="Compartment3";
 			dontCreateAI=0;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
+			
+			lockWhenVehicleSpeed=-1;
 		};
 	};
 };

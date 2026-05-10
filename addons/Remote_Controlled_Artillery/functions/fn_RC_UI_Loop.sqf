@@ -44,6 +44,68 @@ RC_Artillery_UI = [] spawn {
 	while { true } do {
 		sleep 0.1;
 
+		/*
+		if !(RC_RscOn) then {
+			// UI shouldn't be shown so we cut it
+			"RC_Artillery" cutFadeOut 0;
+			RC_InUI = false;
+			continue;
+		};
+
+
+		// UV
+		private _uav = objNull;
+		// UV className
+		private _uavClass = "";
+		// see if the vehicle has the isRCArty property
+		private _isRCArty = false;
+
+
+		if (isRemoteControlling player) then {
+
+			_uav = getConnectedUAV player;
+			_uavClass = typeOf _uav;
+			_isRCArty = RC_isRCArtyHash get _uavClass;
+			if (isNil "_isRCArty") then {
+				_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
+				RC_isRCArtyHash set [_uavClass, _isRCArty];
+			};
+		};
+	
+
+		if (!_isRCArty) then {
+
+			//systemchat "1";
+
+			private _veh = vehicle player;
+			if (player isEqualTo (gunner _veh)) then {
+				
+				//systemchat "2";
+
+				_uavClass = typeOf _veh;
+				_isRCArty = RC_isRCArtyHash get _uavClass;
+				if (isNil "_isRCArty") then {
+					_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
+					RC_isRCArtyHash set [_uavClass, _isRCArty];
+				};
+			};
+			
+			if (_isRCArty) then {
+				_uav = _veh;
+
+				//systemchat "3";
+			};
+		};
+		*/
+
+
+		/*
+		if (cameraOn != player && {cameraOn isKindOf "AllVehicles"}) then {
+			_veh = cameraOn;
+		};
+		*/
+
+
 		if !(isRemoteControlling player) then {
 			// UI shouldn't be shown so we cut it
 			"RC_Artillery" cutFadeOut 0;
@@ -62,13 +124,9 @@ RC_Artillery_UI = [] spawn {
 			RC_isRCArtyHash set [_uavClass, _isRCArty];
 		};
 
-		/*
-		//manned
-		private _uav = vehicle player;
-		if (player isNotEqualTo (gunner _uav)) then {
-		*/
 
 		// if it's of artillery or mortar type do da thing
+		//if (RC_RscOn) then {
 		if (_isRCArty) then {
 			
 			// We are in the UI now
