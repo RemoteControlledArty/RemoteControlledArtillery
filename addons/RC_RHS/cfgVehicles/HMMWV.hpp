@@ -97,7 +97,7 @@ class RC_HMMWV_Core: RC_HMMWV_Fetch
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_car.hpp"
 			gunnerCompartments="Compartment1";
-			//primaryObserver=0;
+			primaryObserver=0;
 			primaryGunner=0;
 			/*
 			discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
@@ -124,7 +124,6 @@ class RC_HMMWV_Core: RC_HMMWV_Fetch
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_car.hpp"
 			gunnerCompartments="Compartment1";
 		};
-		/*
 		class SwingArm_L_Turret: SwingArm_L_Turret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_car.hpp"
@@ -147,7 +146,6 @@ class RC_HMMWV_Core: RC_HMMWV_Fetch
 				"RC_RHS_200Rnd_762x51_M240_DroneLock_T_R"
 			};
 		};
-		*/
 
 		class CargoTurret_01: CargoTurret_01 {};
 		class CargoTurret_02: CargoTurret_02 {};
@@ -220,10 +218,7 @@ class RC_HMMWV_Core: RC_HMMWV_Fetch
 			gunnerForceOptics = 0;							//1
 			hasGunner = 1;
 			//hasTerminal = 1;
-
 			commanding = -1;								//0
-			primaryGunner = 0;								//0
-			//primaryObserver = 1;							//1 can bug viewpoint!
 
 
 			//can
@@ -363,7 +358,8 @@ class RC_HMMWV_Core: RC_HMMWV_Fetch
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_car.hpp"
 			//#include "\Remote_Controlled_Artillery\includes_cfg\DriverTurret.hpp"
 
-			primaryObserver = 1;
+			primaryGunner = 0;								//0
+			primaryObserver = 1;							//1 can bug viewpoint!
 			memoryPointGunnerOptics = "Light_L";			//P svetlo
 
 			gunnerAction = "RHS_HMMWV_Driver";				//Driver_MBT_03_cannon_F_out
