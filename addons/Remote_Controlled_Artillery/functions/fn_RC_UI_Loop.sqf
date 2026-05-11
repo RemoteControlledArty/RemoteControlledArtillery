@@ -54,6 +54,7 @@ RC_Artillery_UI = [] spawn {
 
 
 		// UV
+		private _isUV = true;		//ACTIVATE BELOW IN SCRIPT
 		private _uav = objNull;
 		// UV className
 		private _uavClass = "";
@@ -79,6 +80,7 @@ RC_Artillery_UI = [] spawn {
 
 			private _veh = vehicle player;
 			if (player isEqualTo (gunner _veh)) then {
+			//if ((player isEqualTo (gunner _veh)) or (player isEqualTo (commander _veh))) then {
 				
 				//systemchat "2";
 
@@ -92,15 +94,18 @@ RC_Artillery_UI = [] spawn {
 			
 			if (_isRCArty) then {
 				_uav = _veh;
-				ace_artillerytables_advancedCorrections = false;	//somehow has no effect, remove postinit if it wont work
+				_isUV = false;
+				//ace_artillerytables_advancedCorrections = false;	//somehow has no effect, remove postinit if it wont work
 
 				//systemchat "3";
 			};
 		} else {
 			//is skipped due to continue
-			ace_artillerytables_advancedCorrections = RC_PrevAirRes;
+			//ace_artillerytables_advancedCorrections = RC_PrevAirRes;
+
+			//systemchat "4";
 		};
-		*/
+		/*/
 
 
 		/*
@@ -140,6 +145,12 @@ RC_Artillery_UI = [] spawn {
 			// if our UAV is autonomous we want to make it not for the barrel alignment not to reset when releasing control
 			// we need to remote exec it since setAutonomous is of local effect so it needs to be where the UAV is local
 			// isAutonomous check fixed my prior performance concerns
+			/*
+			if (_isUV) then {
+				if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
+			};
+			*/
+
 			if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
 			
 			// check if the Display for the UI Exists if not create it

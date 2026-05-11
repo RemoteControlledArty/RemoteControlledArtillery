@@ -15,7 +15,7 @@ class RscInGameUI
     {
         //onLoad = "RC_RscOn = true; uiNamespace setVariable ['ACE_dlgArtillery', _this select 0]; ['ace_infoDisplayChanged', [_this select 0, 'Artillery']] call CBA_fnc_localEvent;";
         onLoad="RC_RscOn = true;";
-        onUnload="RC_RscOn = false;";
+        onUnload="RC_RscOn = false;";   //onUnload="call RC_fnc_RC_RscOffM;";
     };
 
     #include "\Remote_Controlled_Artillery\ui\infoType_Heli.hpp"

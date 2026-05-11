@@ -28,6 +28,9 @@ class RC_Bohdana_Fetch: frtz_2S22_bogdana_maz
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+    ace_artillerytables_showGunLaying=0;
+    ace_artillerytables_applyCorrections=0;
+	//ace_artillerytables_showRangetable=1;
 
 	scope=0;
 	scopeCurator=0;

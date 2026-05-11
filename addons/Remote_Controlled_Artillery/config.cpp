@@ -849,8 +849,6 @@ class CfgFunctions
 			class RC_CBRad_Arrays {preInit=1;};
 			class RC_CBRad_EntityCreated {preInit=1;};
 			class RC_CBRad_ArtilleryShellFired {postInit=1;};
-
-			class postInit {postInit=1;};
 			
       		class RC_UI_Loop {postInit=1;};
 			class RC_MarkerHandler {postInit=1;};
@@ -861,6 +859,9 @@ class CfgFunctions
 			class RC_cursorTargetIntoDatalink {postInit=1;};
 			//class RC_cursorTargetIntoDatalink_Loop {postInit=1;};
 			class RC_cUAS_Beep_Loop {postInit=1;};
+			
+			//class postInit {postInit=1;};
+			//class RC_RscOff {};
 			
 			class RC_AT_Warning_Arrays {preInit=1;};
 			class RC_AT_Warning {};

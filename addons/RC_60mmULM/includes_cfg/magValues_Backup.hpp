@@ -2,6 +2,7 @@ author="Ascent";
 scope=1;
 scopeCurator=1;
 
+ace_artillerytables_airFriction=0;
 initSpeed=193;	//3.5km reach with 280m elev disadvantage (highest mountain on altis)
 RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 
