@@ -237,7 +237,6 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 
 	displayName="2S22 Bohdana";
 	
-	//adding UV broke gunner seat non optic view
 	driverCompartments="Compartment2";
 	textPlural="UGVs";
 	textSingular="UGV";
@@ -263,7 +262,7 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 			};
 
 			primaryGunner = 0;								//0
-			primaryObserver = 1;							//1
+			primaryObserver = 0;							//1 bugs viewpoint...?
 
 			memoryPointGunnerOptics = "gunnerview";			//P svetlo
 
@@ -312,6 +311,22 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 			memoryPointsGetInGunnerDir = "pos driver dir";	//pos cargo dir
 			memoryPointsGetInGunnerPrecise = "pos driver";	//pos cargo
 		};
+		/*
+		class AdvisorTurret: 
+		{
+			usePiP = 1;
+			turretInfoType = "";
+			memoryPointGunnerOutOptics = "";
+			memoryPointGunnerOptics = "Light_L";
+			memoryPointsGetInGunner = "Pos Gunner";
+			memoryPointsGetInGunnerDir = "Pos Gunner Dir";
+			memoryPointsGetInGunnerPrecise = "";
+			gunnerAction = "passenger_apc_narrow_generic01";
+			gunnerinAction = "passenger_apc_narrow_generic01";
+			gunnerName = "UAV Operator";
+			gunnerDoor = "door_2_1";
+		};
+		*/
 	};
 };
 class RC_Bohdana_manned_B: RC_Bohdana_manned_Base

@@ -97,7 +97,7 @@ class RC_HMMWV_Core: RC_HMMWV_Fetch
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_car.hpp"
 			gunnerCompartments="Compartment1";
-			primaryObserver=0;
+			//primaryObserver=0;
 			primaryGunner=0;
 			/*
 			discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
@@ -223,7 +223,7 @@ class RC_HMMWV_Core: RC_HMMWV_Fetch
 
 			commanding = -1;								//0
 			primaryGunner = 0;								//0
-			//primaryObserver = 1;							//1
+			//primaryObserver = 1;							//1 can bug viewpoint!
 
 
 			//can

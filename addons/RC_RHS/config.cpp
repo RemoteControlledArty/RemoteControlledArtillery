@@ -326,7 +326,7 @@ class CfgVehicles
 	#include "\RC_RHS\cfgVehicles\MH80M.hpp"
 	#include "\RC_RHS\cfgVehicles\Ka60M.hpp"
 
-	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
+	#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
 	//#include "\RC_RHS\cfgVehicles\H1M.hpp"
 	
 	//#include "\RC_RHS\cfgVehicles\ASV.hpp"
