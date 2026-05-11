@@ -51,8 +51,10 @@ RC_Artillery_UI = [] spawn {
 			RC_InUI = false;
 			continue;
 		};
+		*/
 
 
+		//*
 		// UV
 		private _isUV = true;		//ACTIVATE BELOW IN SCRIPT
 		private _uav = objNull;
@@ -79,8 +81,8 @@ RC_Artillery_UI = [] spawn {
 			//systemchat "1";
 
 			private _veh = vehicle player;
-			if (player isEqualTo (gunner _veh)) then {
-			//if ((player isEqualTo (gunner _veh)) or (player isEqualTo (commander _veh))) then {
+			//if (player isEqualTo (gunner _veh)) then {
+			if ((player isEqualTo (gunner _veh)) or (player isEqualTo (commander _veh))) then {
 				
 				//systemchat "2";
 
@@ -99,13 +101,22 @@ RC_Artillery_UI = [] spawn {
 
 				//systemchat "3";
 			};
-		} else {
+		};
+		//} else {
 			//is skipped due to continue
 			//ace_artillerytables_advancedCorrections = RC_PrevAirRes;
 
 			//systemchat "4";
+		//};
+
+
+		if !(_isRCArty) then {
+			// UI shouldn't be shown so we cut it
+			"RC_Artillery" cutFadeOut 0;
+			RC_InUI = false;
+			continue;
 		};
-		/*/
+		//*/
 
 
 		/*
@@ -114,7 +125,7 @@ RC_Artillery_UI = [] spawn {
 		};
 		*/
 
-		//*
+		/*
 		if !(isRemoteControlling player) then {
 			// UI shouldn't be shown so we cut it
 			"RC_Artillery" cutFadeOut 0;
@@ -132,7 +143,7 @@ RC_Artillery_UI = [] spawn {
 			_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
 			RC_isRCArtyHash set [_uavClass, _isRCArty];
 		};
-		//*/
+		*/
 
 
 		// if it's of artillery or mortar type do da thing

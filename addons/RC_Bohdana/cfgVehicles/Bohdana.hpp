@@ -60,6 +60,7 @@ class RC_Bohdana_Core: RC_Bohdana_Fetch
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	lockDetectionSystem="2+4+8";
+	showAllTargets="2 + 4";
 	memoryPointDriverOptics="Light_L";
 
 	author="Ascent";
@@ -233,6 +234,21 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
+
+	displayName="2S22 Bohdana";
+	
+	//adding UV broke gunner seat non optic view
+	driverCompartments="Compartment2";
+	textPlural="UGVs";
+	textSingular="UGV";
+	isUav=1;
+	vehicleClass="Autonomous";
+	driverForceOptics=1;
+	forceHideDriver=1;
+
+	uavCameraDriverPos="Light_L";
+	uavCameraDriverDir="Light_L";
+
 	class Components: Components
 	{
 		#include "\RC_Bohdana\includes_cfg\panels_bohdana_manned.hpp"
@@ -245,6 +261,9 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 			{
 				#include "\RC_Bohdana\includes_cfg\panels_bohdana_manned.hpp"
 			};
+
+			primaryGunner = 0;								//0
+			primaryObserver = 1;							//1
 
 			memoryPointGunnerOptics = "gunnerview";			//P svetlo
 
@@ -260,8 +279,6 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 			gunnerCompartments = "Compartment1";
 			dontCreateAI = 1;								//1
 			commanding = 2;									//-1
-			//primaryGunner = 0;								//0
-			//primaryObserver = 1;							//1
 
 			//can
 			allowTabLock = 1;
@@ -296,9 +313,6 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 			memoryPointsGetInGunnerPrecise = "pos driver";	//pos cargo
 		};
 	};
-
-	displayName="2S22 Bohdana";
-	driverCompartments="Compartment1";
 };
 class RC_Bohdana_manned_B: RC_Bohdana_manned_Base
 {
