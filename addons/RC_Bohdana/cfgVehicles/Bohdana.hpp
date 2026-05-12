@@ -170,10 +170,11 @@ class RC_Bohdana_Base: RC_Bohdana_Core
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
 			commanding=3;
-
+			
 			//minElev=-;
 			maxElev=87;
 			lockWhenVehicleSpeed=-1;
+			stabilizedInAxes=3;
 			//elevationMode=3;
 
 			weapons[]=
@@ -275,7 +276,7 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 			gunnerRightLegAnimName = "pedal_thrust";		//pedal_thrust
 
 			//basics
-			gunnerName = "Driver";
+			gunnerName = "Driver/Gunner";
 			gunnerCompartments = "Compartment1";
 			dontCreateAI = 1;								//1
 			commanding = 2;									//-1
@@ -287,6 +288,7 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 			startEngine = 0;
 			lockWhenVehicleSpeed = -1;
 			//isCopilot = 0;
+
 
 			//position
 			proxyIndex = 1;									//1, 2
@@ -311,23 +313,245 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 			memoryPointsGetInGunner = "pos driver";			//pos cargo
 			memoryPointsGetInGunnerDir = "pos driver dir";	//pos cargo dir
 			memoryPointsGetInGunnerPrecise = "pos driver";	//pos cargo
+
+
+			class ViewGunner
+			{
+				initAngleX = -10;
+				initAngleY = 0;
+				initFov = 0.9;
+				maxAngleX = 85;
+				maxAngleY = 150;
+				maxFov = 1.25;
+				maxMoveX = 0.075;
+				maxMoveY = 0.025;
+				maxMoveZ = 0.1;
+				minAngleX = -75;
+				minAngleY = -150;
+				minFov = 0.25;
+				minMoveX = 0;
+				minMoveY = 0;
+				minMoveZ = 0;
+				speedZoomMaxFOV = 0;
+				speedZoomMaxSpeed = 1e+10;
+			};
 		};
-		/*
-		class AdvisorTurret: 
+		class AdvisorTurret
 		{
-			usePiP = 1;
-			turretInfoType = "";
-			memoryPointGunnerOutOptics = "";
-			memoryPointGunnerOptics = "Light_L";
-			memoryPointsGetInGunner = "Pos Gunner";
-			memoryPointsGetInGunnerDir = "Pos Gunner Dir";
-			memoryPointsGetInGunnerPrecise = "";
-			gunnerAction = "passenger_apc_narrow_generic01";
-			gunnerinAction = "passenger_apc_narrow_generic01";
+			//required classes
+			class ViewGunner
+			{
+				initAngleX = -5;
+				initAngleY = 0;
+				initFov = 0.9;
+				maxAngleX = 85;
+				maxAngleY = 150;
+				maxFov = 1.25;
+				maxMoveX = 0.075;
+				maxMoveY = 0.025;
+				maxMoveZ = 0.1;
+				minAngleX = -65;
+				minAngleY = -150;
+				minFov = 0.25;
+				minMoveX = -0.075;
+				minMoveY = -0.075;
+				minMoveZ = -0.075;
+				speedZoomMaxFOV = 0;
+				speedZoomMaxSpeed = 1e+10;
+			};
+			class Reflectors {};
+			class Hitpoints {};
+			class Turrets {};
+			class TurretSpec {showHeadPhones = 0;};
+			class TurnIn {turnOffset = 0;};
+			class TurnOut {turnOffset = 0;};
+			//class dynamicViewLimits { MainTurret[] = {-135,75}; };
+			//class GunClouds {};
+			//class GunFire {};
+			//class MGunClouds {};
+
+			class Components: Components
+			{
+				#include "\RC_Bohdana\includes_cfg\panels_bohdana_manned.hpp"
+			};
+			class OpticsIn
+			{
+				class Driver
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+					minAngleX=-30;	//?
+					maxAngleX=30;	//?
+					minAngleY=-100;	//?
+					maxAngleY=100;	//?
+
+					initFov=1;
+					minFov=0.25;
+					maxFov=1;
+				};
+			};
+
 			gunnerName = "UAV Operator";
+			dontCreateAI = 1;
+			gunnerCompartments="Compartment1";
+			turretInfoType = "";
+			forceHideGunner = 1;
+			gunnerForceOptics = 0;
+
+			weapons[]=
+			{
+				"RC_target_confirmer_datalink",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_target_confirmer_mag",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+
+			commanding = -1;
+			primaryGunner = 0;
+			primaryObserver = 0;
+			hasGunner=1;
+
+
+			//can
+			allowLauncherIn = 0;
+			allowLauncherOut = 0;
+			allowTabLock = 1;
+			canEject = 1;
+			canHideGunner = -1;
+			canUseScanners = 1;
+			showAllTargets = "2 + 4";
+			turretCanSee = 0;
+			outGunnerMayFire = 0;
+			inGunnerMayFire = 1;
+
+
+			//behavior
+			startEngine = 0;
+			lockWhenVehicleSpeed = -1;
+			lockWhenDriverOut = 0;
+			castGunnerShadow = 0;
+			isCopilot = 0;
+			hideWeaponsGunner = 1;
+			slingLoadOperator = 0;
+			showHMD = 0;
+			showCrewAim = 0;
+			forceNVG = 0;
+			ejectDeadGunner = 0;	//?
+
+
+			//sound
+			soundElevation[] = {"",0.00316228,0.5};
+			soundServo[] = {"",0.00316228,0.5};
+			soundServoVertical[] = {"",0.00316228,0.5};
+
+
+			//rest
+			viewGunnerInExternal = 1;
+			viewGunnerShadow = 1;
+			viewGunnerShadowAmb = 0.5;
+			viewGunnerShadowDiff = 0.05;
+			primary = 1;
+			preciseGetInOut = 0;
+			gunnerUsesPilotView = 0;
+			gunnerType = "";
+			gunnerOutOpticsShowCursor = 0;
+			gunnerOutOpticsModel = "";
+			gunnerOutOpticsEffect[] = {};
+			gunnerOutOpticsColor[] = {0,0,0,1};
+			gunnerOutForceOptics = 0;
+			gunnerOutFireAlsoInInternalCamera = 1;
+			gunnerFireAlsoInInternalCamera = 1;
+			gunnerOpticsShowCursor = 0;
+			gunnerOpticsEffect[] = {};
+			gunnerOpticsColor[] = {0,0,0,1};
+			gunnerHasFlares = 1;
+			disableSoundAttenuation = 0;
+			armorLights = 0.4;
+			aggregateReflectors[] = {};
+
+
+			//camera
+			stabilizedInAxes = 3;
+			turretFollowFreeLook = 0;
+
+
+			//angles
+			initCamElev = 0;
+			initElev = 0;
+			initOutElev = 0;
+			initOutTurn = 0;
+			initTurn = 0;
+
+			maxHorizontalRotSpeed = 1.8;
+			maxVerticalRotSpeed = 1.8;
+
+			maxCamElev = 90;
+			maxElev = 60;
+			maxOutElev = 40;
+			maxOutTurn = 120;
+			maxTurn = 360;
+
+			minCamElev = -90;
+			minElev = -25;
+			minOutElev = -20;	
+			minOutTurn = -120;
+			minTurn = -360;
+
+
+			//position
+			proxyIndex = 1;
+			proxyType = "CPGunner";							//internal viewpoint: CPDriver  CPCargo  CPGunner  CPCommander
+			playerPosition = 0;
+			usePip = 1;
+
+			LODOpticsIn = 0;								//0 shows full hull, -1 hides hull
+			LODTurnedIn = 0;
+			LODTurnedOut = 0;
+
+
+			//memory points
+			//memoryPointGun = "kulas";						//gun_muzzle
+			memoryPointGunnerOptics = "Light_L";			//gunnerview
+			memoryPointGunnerOutOptics = "";				//
+			memoryPointsGetInGunner = "Pos Gunner";			//pos cargo
+			memoryPointsGetInGunnerDir = "Pos Gunner Dir";	//pos cargo dir
+			memoryPointsGetInGunnerPrecise = "";	//pos cargo
+
+
+			//actions (body animations?)
+			gunnerAction = "passenger_apc_narrow_generic01";
+			gunnerInAction = "passenger_apc_narrow_generic01";
 			gunnerDoor = "door_2_1";
+			gunnerLeftHandAnimName = "";
+			gunnerRightHandAnimName = "";
+			gunnerLeftLegAnimName = "";
+			gunnerRightLegAnimName = "";
+			gunnerGetInAction = "GetInLow";					//GetInLow  GetInHigh
+			gunnerGetOutAction = "GetOutLow";				//GetOutLow  GetOutHigh
+
+
+			//animation sources
+			animationSourceBody = "";						//crewmanTurret
+			animationSourceCamElev = "camElev";
+			animationSourceElevation = "";					//commanderelev
+			animationSourceGun = "";						//crewmanGun
+			animationSourceHatch = "";						//hatchDriver
+
+			selectionFireAnim = "zasleh";					//zasleh_1
+
+			body = "";										//crewmanTurret
+			gun = "";										//crewmanGun
+			gunBeg = "";
+			gunEnd = "";
+
+			missileEnd = "";
+			missileBeg = "";
 		};
-		*/
 	};
 };
 class RC_Bohdana_manned_B: RC_Bohdana_manned_Base
