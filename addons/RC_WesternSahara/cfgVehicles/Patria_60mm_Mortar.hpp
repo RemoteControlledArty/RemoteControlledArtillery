@@ -30,6 +30,7 @@ class RC_60mmMortarPatria_Base: B_APC_Wheeled_01_mortar_lxWS
 	scopeCurator=0;
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_validTurret[]={0}; //turret array pos in class turrets
 	RC_ArtyType=2; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	//ace_artillerytables_showGunLaying=2;	//otherwise wont work with ace
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
@@ -37,6 +38,9 @@ class RC_60mmMortarPatria_Base: B_APC_Wheeled_01_mortar_lxWS
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+	ace_artillerytables_showGunLaying=0;
+    ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
+	//ace_artillerytables_showRangetable=1;
 };
 class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 {

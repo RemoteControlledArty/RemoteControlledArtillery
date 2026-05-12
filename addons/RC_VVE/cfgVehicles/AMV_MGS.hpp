@@ -196,6 +196,8 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
 
+					gunnerCompartments="Compartment1";
+
 					class OpticsIn
 					{
 						class Gun1

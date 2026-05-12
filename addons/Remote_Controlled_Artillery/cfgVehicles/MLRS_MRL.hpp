@@ -18,11 +18,15 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
 	scopeCurator=0;
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_validTurret[]={0}; //turret array pos in class turrets
 	RC_ArtyType=4; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=1.75;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+	ace_artillerytables_showGunLaying=0;
+    ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
+	//ace_artillerytables_showRangetable=1;
 };
 class RC_MLRS_A: RC_MLRS_base
 {
@@ -206,6 +210,7 @@ class RC_MLRS_A: RC_MLRS_base
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
 
+					gunnerCompartments="Compartment4";
 					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 					turretInfoType="RscWeaponRangeArtilleryAuto";
 
@@ -409,11 +414,15 @@ class RC_MRL_base: I_Truck_02_MRL_F
 	scopeCurator=0;
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_validTurret[]={0}; //turret array pos in class turrets
 	RC_ArtyType=4; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=1.65;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+	ace_artillerytables_showGunLaying=0;
+    ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
+	//ace_artillerytables_showRangetable=1;
 };
 class RC_MRL_DIG_I: RC_MRL_base
 {

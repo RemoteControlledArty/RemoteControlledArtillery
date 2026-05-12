@@ -20,12 +20,16 @@ class RC_Howitzer_base: B_MBT_01_arty_F
 	scopeCurator=0;
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_validTurret[]={0}; //turret array pos in class turrets
 	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+	ace_artillerytables_showGunLaying=0;
+    ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
+	//ace_artillerytables_showRangetable=1;
 };
 class RC_Howitzer_A: RC_Howitzer_base
 {
@@ -233,6 +237,7 @@ class RC_Howitzer_A: RC_Howitzer_base
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
 
+					gunnerCompartments="Compartment4";
 					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
@@ -507,12 +512,16 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
 	scopeCurator=0;
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_validTurret[]={0}; //turret array pos in class turrets
 	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=7;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+	ace_artillerytables_showGunLaying=0;
+    ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
+	//ace_artillerytables_showRangetable=1;
 };
 class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 {
@@ -706,6 +715,7 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
 
+					gunnerCompartments="Compartment4";
 					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 					turretInfoType="RscWeaponRangeArtilleryAuto";
 

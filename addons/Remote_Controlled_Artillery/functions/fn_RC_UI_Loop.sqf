@@ -13,7 +13,7 @@
 if (!hasInterface) exitWith {};
 
 //backup if no target or target too close
-RC_GuidedTriggerTime=0;
+RC_GuidedTriggerTime = 0;
 
 //general hashmaps
 RC_isAceLoadedHash = createHashMap;
@@ -22,6 +22,7 @@ RC_lockedTargetNameHash = createHashMap;
 //vehicle hashmaps
 //RC_localizeHash = createHashMap;	//not yet used
 RC_isRCArtyHash = createHashMap;
+RC_validTurretHash = createHashMap;
 RC_artyTypeHash = createHashMap;
 RC_isAceMortarHash = createHashMap;
 RC_barrelAGLHash = createHashMap;
@@ -41,74 +42,70 @@ RC_terrainWarningHash = createHashMap;
 RC_aimAboveHeightHash = createHashMap;
 
 RC_Artillery_UI = [] spawn {
+
+	//predefines not requiring reset
+	private _uav = objNull;
+	private _uavClass = "";
+	private _currentFireMode = "";
+	private _validTurret = [];
+	private _turret = [];
+
 	while { true } do {
 		sleep 0.1;
 
-		/*
-		if !(RC_RscOn) then {
-			// UI shouldn't be shown so we cut it
-			"RC_Artillery" cutFadeOut 0;
-			RC_InUI = false;
-			continue;
-		};
-		*/
-
-
-		//*
-		// UV
-		private _isUV = true;		//ACTIVATE BELOW IN SCRIPT
-		private _uav = objNull;
-		// UV className
-		private _uavClass = "";
-		// see if the vehicle has the isRCArty property
+		//predefines requiring reset
+		private _isUV = true;
 		private _isRCArty = false;
 
-
+		//unmanned arty
 		if (isRemoteControlling player) then {
 
 			_uav = getConnectedUAV player;
-			_uavClass = typeOf _uav;
-			_isRCArty = RC_isRCArtyHash get _uavClass;
-			if (isNil "_isRCArty") then {
-				_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
-				RC_isRCArtyHash set [_uavClass, _isRCArty];
-			};
-		};
-	
 
-		if (!_isRCArty) then {
+			if ((getConnectedUAVUnit player) isEqualTo (gunner _uav)) then {
 
-			//systemchat "1";
-
-			private _veh = vehicle player;
-			//if (player isEqualTo (gunner _veh)) then {
-			if ((player isEqualTo (gunner _veh)) or (player isEqualTo (commander _veh))) then {
-				
-				//systemchat "2";
-
-				_uavClass = typeOf _veh;
+				_uavClass = typeOf _uav;
 				_isRCArty = RC_isRCArtyHash get _uavClass;
 				if (isNil "_isRCArty") then {
 					_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
 					RC_isRCArtyHash set [_uavClass, _isRCArty];
 				};
 			};
-			
+		};
+
+		//manned arty
+		if (!_isRCArty) then {
+
+			private _veh = vehicle player;
+			_uavClass = typeOf _veh;
+			_isRCArty = RC_isRCArtyHash get _uavClass;
+			if (isNil "_isRCArty") then {
+				_isRCArty = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "isRCArty") == 1;
+				RC_isRCArtyHash set [_uavClass, _isRCArty];
+			};
+
 			if (_isRCArty) then {
+
 				_uav = _veh;
 				_isUV = false;
 				//ace_artillerytables_advancedCorrections = false;	//somehow has no effect, remove postinit if it wont work
 
-				//systemchat "3";
+				_validTurret = RC_validTurretHash get _uavClass;
+				if (isNil "_validTurret") then {
+					_validTurret = getArray (configFile >> "CfgVehicles" >> _uavClass >> "RC_validTurret");
+					RC_validTurretHash set [_uavClass, _validTurret];
+				};
+
+				if ((_veh unitTurret player) isNotEqualTo _validTurret) then {
+					_isRCArty = false;
+				};
 			};
 		};
-		//} else {
-			//is skipped due to continue
-			//ace_artillerytables_advancedCorrections = RC_PrevAirRes;
-
-			//systemchat "4";
-		//};
-
+		/*
+		} else {
+			ace_artillerytables_advancedCorrections = RC_PrevAirRes;
+		};
+		*/
 
 		if !(_isRCArty) then {
 			// UI shouldn't be shown so we cut it
@@ -116,16 +113,10 @@ RC_Artillery_UI = [] spawn {
 			RC_InUI = false;
 			continue;
 		};
-		//*/
-
 
 		/*
-		if (cameraOn != player && {cameraOn isKindOf "AllVehicles"}) then {
-			_veh = cameraOn;
-		};
-		*/
+		//original unmanned only check, doesnt work for manned
 
-		/*
 		if !(isRemoteControlling player) then {
 			// UI shouldn't be shown so we cut it
 			"RC_Artillery" cutFadeOut 0;
@@ -145,24 +136,16 @@ RC_Artillery_UI = [] spawn {
 		};
 		*/
 
-
 		// if it's of artillery or mortar type do da thing
-		//if (RC_RscOn) then {
 		if (_isRCArty) then {
 			
-			// We are in the UI now
+			// we are in the UI now
 			RC_InUI = true;
-			
-			// if our UAV is autonomous we want to make it not for the barrel alignment not to reset when releasing control
-			// we need to remote exec it since setAutonomous is of local effect so it needs to be where the UAV is local
-			// isAutonomous check fixed my prior performance concerns
-			/*
+
+			// if its a UV, disable autonomous to prevent AI caused barrel Elev and AZ reset when releasing UV controls, requires remote exec where its local
 			if (_isUV) then {
 				if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
 			};
-			*/
-
-			if (isAutonomous _uav) then {[_uav, false] remoteExec ["setAutonomous", _uav];};
 			
 			// check if the Display for the UI Exists if not create it
 			if (isNull (uiNamespace getVariable ["RC_Artillery", displayNull])) then { "RC_Artillery" cutRsc ["RC_Artillery", "PLAIN", 0, false] };
@@ -175,7 +158,7 @@ RC_Artillery_UI = [] spawn {
 			private _RCAUI = uiNamespace getVariable ["RCA_ArtyUI", displayNull];
 			
 			// CBA Option for Allowing the Artillery Computer in RC Artillery UGVs, without ACE its stays on for Mortars (as they dont work manually without ACE atm)
-			// Remote Execute this to make it Multiplayer Compatible
+			// Remote Execute this to make it multiplayer compatible
 			private _ArtyType = RC_artyTypeHash get _uavClass;
 			if (isNil "_ArtyType") then {
 				_ArtyType = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RC_ArtyType");

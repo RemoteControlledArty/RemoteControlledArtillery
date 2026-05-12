@@ -35,7 +35,7 @@ class TurnOut {turnOffset = 0;};
 
 //basics
 gunnerName = "UAV Operator";
-gunnerCompartments = "Compartment1";
+//gunnerCompartments = "Compartment1";			//define in asset cfg instead
 dontCreateAI = 1;								//1
 forceHideGunner = 1;							//1
 gunnerForceOptics = 1;							//1

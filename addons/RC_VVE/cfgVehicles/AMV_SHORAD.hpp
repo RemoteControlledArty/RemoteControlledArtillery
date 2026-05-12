@@ -381,6 +381,8 @@ class RC_AMV_SHORAD_Base: RC_AMV_SHORAD_Core
 					#include "\RC_VVE\cfgVehicles\includes_vehicle\panels_AMV_SHORAD.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
 
+					gunnerCompartments="Compartment4";
+
 					class OpticsIn
 					{
 						class Gun1
@@ -565,6 +567,16 @@ class RC_AMV_SHORAD_manned_A_B: RC_AMV_SHORAD_Base
 				"RC_600Rnd_35mm_HEAB_AA_T_R",
 				"RC_600Rnd_35mm_HEAB_AA_T_R",
 				"RC_600Rnd_35mm_HEAB_AA_T_R"
+			};
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics : CommanderOptics {};
+
+				class AdvisorOptics
+				{
+					gunnerCompartments="Compartment1";
+				};
 			};
 		};
 	};

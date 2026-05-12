@@ -1,7 +1,16 @@
-// current turret of UAV gunner
-private _turret = _uav unitTurret gunner _uav;
-// current fire mode of the UAV gunner
-private _currentFireMode = currentWeaponMode (gunner _uav);
+if (_isUV) then {
+	// current turret of UAV gunner
+	_turret = _uav unitTurret (gunner _uav);
+	// current fire mode of the UAV gunner
+	_currentFireMode = currentWeaponMode (gunner _uav);
+} else {
+	// current turret of player
+	_turret = _uav unitTurret player;
+	// current fire mode of the player
+	_currentFireMode = currentWeaponMode player;
+};
+
+
 // weapon
 private _weapon = (_uav weaponsTurret _turret) param [0, ""];
 

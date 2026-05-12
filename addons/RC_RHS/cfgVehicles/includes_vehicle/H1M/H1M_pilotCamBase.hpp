@@ -1,5 +1,7 @@
 memoryPointTaskMarker="TaskMarker_1_pos";
-memoryPointDriverOptics="pos pilot dir";	//pos pilot, pos rack, pos gunner, pos cargo 	//memsupply, slingLoad0		//IR_Position, Light_pos
+memoryPointDriverOptics="";	//pos pilot, pos rack, pos gunner, pos cargo 	//memsupply, slingLoad0		//IR_Position, Light_pos
+//memoryPointLMissile = "l strela";
+//memoryPointGun = "kulas"; memoryPointsRightWaterEffect = "waterEffectR";
 
 unitInfoType="RC_RscOptics_AV_Heli";
 unitInfoTypeRTD="RC_RscOptics_AV_Heli";

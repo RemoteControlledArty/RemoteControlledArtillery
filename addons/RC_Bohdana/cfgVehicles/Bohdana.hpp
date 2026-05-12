@@ -22,6 +22,7 @@ class RC_Bohdana_Fetch: frtz_2S22_bogdana_maz
 	class HitRBWheel;
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_validTurret[]={0}; //turret array pos in class turrets
 	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_BarrelAGL=2.3;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
@@ -29,7 +30,7 @@ class RC_Bohdana_Fetch: frtz_2S22_bogdana_maz
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
     ace_artillerytables_showGunLaying=0;
-    ace_artillerytables_applyCorrections=0;
+    ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 
 	scope=0;
@@ -103,7 +104,7 @@ class RC_Bohdana_Base: RC_Bohdana_Core
 	weapons[]=
 	{
 		"RC_target_confirmer_datalink",
-		"RC_APS_W",
+		//"RC_APS_W",
 		"SmokeLauncher"
 	};
 	magazines[]=
@@ -209,7 +210,7 @@ class RC_Bohdana_Base: RC_Bohdana_Core
 					maxFov=0.9;
 				};
 			};
-			turretInfoType="RC_RscArtyAuto";
+			turretInfoType="RscWeaponRangeArtilleryAuto";
 		};
 	};
 

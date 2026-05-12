@@ -1,7 +1,7 @@
 class RscInGameUI
 {
 	//class RscUnitInfo;
-
+    /*
 	class RscWeaponRangeArtillery;
     class RC_RscArty: RscWeaponRangeArtillery
     {
@@ -9,7 +9,6 @@ class RscInGameUI
         onLoad="RC_RscOn = true;";
         onUnload="RC_RscOn = false;";
     };
-
     class RscWeaponRangeArtilleryAuto;
     class RC_RscArtyAuto: RscWeaponRangeArtilleryAuto
     {
@@ -17,6 +16,7 @@ class RscInGameUI
         onLoad="RC_RscOn = true;";
         onUnload="RC_RscOn = false;";   //onUnload="call RC_fnc_RC_RscOffM;";
     };
+    */
 
     #include "\Remote_Controlled_Artillery\ui\infoType_Heli.hpp"
 };

@@ -13,10 +13,14 @@ class RC_M119_base: RHS_M119_D
 	scopeCurator=0;
 
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_validTurret[]={0}; //turret array pos in class turrets
 	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL, 5 = not compatible with script that disables vanilla artillery computer
 	RC_BarrelAGL=0.8;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=3;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
+	ace_artillerytables_showGunLaying=0;
+    ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
+	//ace_artillerytables_showRangetable=1;
 };
 class RC_M119: RC_M119_base
 {
@@ -28,7 +32,7 @@ class RC_M119: RC_M119_base
 		};
 	};
 
-	displayName="RC M119 105mm 16km";
+	displayName="RC M119 105mm";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
 	scope=2;
@@ -213,7 +217,7 @@ class RC_M119_I: RC_M119
 
 class RC_M119_LC: RC_M119
 {
-	displayName="RC M119 105mm 16km LowCap";
+	displayName="RC M119 105mm LowCap";
 	editorSubcategory="RC_ReducedAmmo_subcat";
 
 	class Turrets: Turrets

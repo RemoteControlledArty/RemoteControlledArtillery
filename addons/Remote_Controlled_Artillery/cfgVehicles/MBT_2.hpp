@@ -163,6 +163,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
 
+					gunnerCompartments="Compartment1";
 					gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 

@@ -1,21 +1,40 @@
-// Current Turret of UAV Gunner
-_turret = _uav unitTurret gunner _uav;
-// Current Fire mode of the UAV Gunner
-_currentFireMode = currentWeaponMode (gunner _uav);
-// All of the Turrets Weapons
-_weaponsTurret = _uav weaponsTurret _turret;
-// Weapon
-_weapon = _weaponsTurret param [0, ""];
-// Weapon Config
-_weaponConfig = configFile >> "CfgWeapons" >> _weapon;
-// Get all Firemodes of the UAV Weapon
-_fireModes = getArray (configFile >> "CfgWeapons" >> _weapon >> "modes");
-// Get all the Firemodes the Players can use
-_fireModes = (_fireModes apply { configFile >> "CfgWeapons" >> _weapon >> _x }) select { 1 == getNumber (_x >> "showToPlayer") };
-// If the Firemodes have 'artilleryCharge' as a value
-_fireModes = _fireModes apply { [getNumber (_x >> "artilleryCharge"), configName _x] };
-_fireModes sort true; // Basic Sort in Ascending order
-// Grab only the names of the Firemodes 
+if (_isUV) then {
+	// current turret of UAV gunner
+	_turret = _uav unitTurret gunner _uav;
+	// current fire mode of the UAV gunner
+	_currentFireMode = currentWeaponMode (gunner _uav);
+} else {
+	// current turret of player
+	_turret = _uav unitTurret player;
+	// current fire mode of the player
+	_currentFireMode = currentWeaponMode player;
+};
+
+
+// weapon
+private _weapon = (_uav weaponsTurret _turret) param [0, ""];
+
+// weapon config
+private _weaponConfig = RC_weaponConfigHash get _weapon;
+if (isNil "_weaponConfig") then {
+	_weaponConfig = configFile >> "CfgWeapons" >> _weapon;
+	RC_weaponConfigHash set [_weapon, _weaponConfig];
+};
+
+// 1. get all firemodes of the weapon 2. the player can use 3. have 'artilleryCharge' as a value
+private _fireModes = RC_fireModesHash get _weapon;
+if (isNil "_fireModes") then {
+
+	_fireModes = getArray (configFile >> "CfgWeapons" >> _weapon >> "modes");
+	_fireModes = (_fireModes apply { configFile >> "CfgWeapons" >> _weapon >> _x }) select { 1 == getNumber (_x >> "showToPlayer") };
+	_fireModes = _fireModes apply { [getNumber (_x >> "artilleryCharge"), configName _x] };
+
+	RC_fireModesHash set [_weapon, _fireModes];
+};
+
+// basic sort in ascending order
+_fireModes sort true;
+// grab only the names of the firemodes
 _fireModes = _fireModes apply { _x select 1 };
-// Find the Current charge
-_realCharge = _fireModes find _currentFireMode;
+// find the current charge
+private _realCharge = _fireModes find _currentFireMode;
