@@ -24,7 +24,11 @@ if ((abs (RC_ETA_realElevation - RC_ETA_lowAngleSol)) < (abs (RC_ETA_realElevati
 
 
 private _magName = getText (configFile >> "CfgMagazines" >> _magazine >> "displayName");
+if (isNil _magName) then {
+	_magName = "?";
+};
 
+systemchat _magName;
 
 /*
 private _crew = (crew _unit) select {isPlayer _x};

@@ -3,6 +3,10 @@ params ["_targetName", "_magName", "_distance", "_charge", "_MIL", "_aligned", "
 //ETA and "splash in 3sec" notification for crew / UV controller
 [_targetName, _magName, _distance, _charge, _MIL, _aligned, _ETA] spawn {
 	params ["_targetName", "_magName", "_distance", "_charge", "_MIL", "_aligned", "_ETA"];
+
+	if (isNil _magName) then {
+		_magName = "?";
+	};
 	
 	if (_ETA > 0) then {
 
