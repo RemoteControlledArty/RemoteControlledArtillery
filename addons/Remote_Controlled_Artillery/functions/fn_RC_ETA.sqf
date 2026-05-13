@@ -1,9 +1,24 @@
-params ["_targetName", "_magName", "_distance", "_charge", "_MIL", "_aligned", "_ETA"];
+params ["_targetName", "_magazine", "_distance", "_charge", "_MIL", "_aligned", "_ETA"];
+
+//ETA and "splash in 3sec" notification for crew / UV controller
+[_targetName, _magazine, _distance, _charge, _MIL, _aligned, _ETA] spawn {
+	params ["_targetName", "_magazine", "_distance", "_charge", "_MIL", "_aligned", "_ETA"];
+
+/*
+params ["_targetName", "_magazine", "_distance", "_charge", "_MIL", "_aligned", "_ETA"];
 
 //ETA and "splash in 3sec" notification for crew / UV controller
 [_targetName, _magName, _distance, _charge, _MIL, _aligned, _ETA] spawn {
 	params ["_targetName", "_magName", "_distance", "_charge", "_MIL", "_aligned", "_ETA"];
+*/
 
+	/*
+	if (isNil _magName) then {
+		_magName = "?";
+	};
+	*/
+
+	private _magName = getText (configFile >> "CfgMagazines" >> _magazine >> "displayName");
 	if (isNil _magName) then {
 		_magName = "?";
 	};
