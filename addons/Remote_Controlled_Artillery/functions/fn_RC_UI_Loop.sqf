@@ -47,6 +47,7 @@ RC_Artillery_UI = [] spawn {
 	private _uav = objNull;
 	private _uavClass = "";
 	private _currentFireMode = "";
+	//private _weapon = "";
 	private _validTurret = [];
 	private _turret = [];
 
@@ -203,8 +204,18 @@ RC_Artillery_UI = [] spawn {
 			// weapon informations like charges and current charge
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\weapon_info.sqf"
 
+			/*
+			if (_isUV) then {
+				_weapon = currentWeapon _uav;
+			} else {
+				//works in console, not here somehow
+				_weapon = (_uav weaponsTurret _validTurret)#0;
+			};
+			*/
+
 			// weapon direction as a relative vector3
-			private _weaponDir = _uav weaponDirection (currentWeapon _uav);
+			private _weaponDir = _uav weaponDirection _weapon;
+
 			// get weapon elevation
 			private _realElevationDeg = asin (_weaponDir select 2);
 			// degree into MIL

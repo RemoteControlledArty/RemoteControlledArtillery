@@ -49,10 +49,6 @@ class RC_Bohdana_Core: RC_Bohdana_Fetch
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
 	};
 	
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam1x.hpp"
@@ -69,6 +65,11 @@ class RC_Bohdana_Core: RC_Bohdana_Fetch
 	commanding=1;
 	crewCrashProtection=0;
 
+	antiRollbarForceCoef=10;	//6
+	antiRollbarForceLimit=5;	//5
+	antiRollbarSpeedMax=100;	//60
+	antiRollbarSpeedMin=0;		//0
+
 	/*
 	smokeLauncherVelocity=5;
 	smokeLauncherGrenadeCount=8;
@@ -79,20 +80,31 @@ class RC_Bohdana_Core: RC_Bohdana_Fetch
 	{
 		#include "\Remote_Controlled_Artillery\includes_cfg\hitWheels.hpp"
 	};
+	class ViewPilot
+	{
+		initAngleX = -10;
+		initAngleY = 0;
+		initFov = 0.9;
+		maxAngleX = 85;
+		maxAngleY = 150;
+		maxFov = 1.25;
+		maxMoveX = 0.2;
+		maxMoveY = 0.1;
+		maxMoveZ = 0.2;
+		minAngleX = -65;
+		minAngleY = -150;
+		minFov = 0.25;
+		minMoveX = -0.2;
+		minMoveY = -0.1;
+		minMoveZ = -0.1;
+		speedZoomMaxFOV = 0;
+		speedZoomMaxSpeed = 1e+10;
+	};
 };
 
 
 class RC_Bohdana_Base: RC_Bohdana_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-	
 	editorSubcategory="RC_Howitzer_subcat";
 
 	maxSpeed=100;
@@ -168,14 +180,16 @@ class RC_Bohdana_Base: RC_Bohdana_Core
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-			dontCreateAI=1;
 			commanding=3;
+			allowTabLock=1;
+			canUseScanners=1;
 			
 			//minElev=-;
 			maxElev=87;
 			lockWhenVehicleSpeed=-1;
 			stabilizedInAxes=3;
 			//elevationMode=3;
+			startEngine=0;
 
 			weapons[]=
 			{
@@ -226,6 +240,82 @@ class RC_Bohdana_Base: RC_Bohdana_Core
 };
 
 
+class RC_Bohdana_UV_Base: RC_Bohdana_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
+	};
+
+	displayName="RC 2S22 Bohdana";
+	
+	driverCompartments="Compartment2";
+	textPlural="UGVs";
+	textSingular="UGV";
+	isUav=1;
+	vehicleClass="Autonomous";
+	driverForceOptics=1;
+	forceHideDriver=1;
+
+	uavCameraDriverPos="Light_L";
+	uavCameraDriverDir="Light_L";
+	uavCameraGunnerPos="gunnerview";
+	uavCameraGunnerDir="gunnerview";
+
+	class Components: Components
+	{
+		#include "\RC_Bohdana\includes_cfg\panels_bohdana_UV.hpp"
+	};
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			class Components: Components
+			{
+				#include "\RC_Bohdana\includes_cfg\panels_bohdana_UV.hpp"
+			};
+
+			//cannot yet be driven when RCing gunner from commander seat
+			gunnerCompartments="Compartment3";
+			dontCreateAI=0;
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+		};
+	};
+};
+class RC_Bohdana_B: RC_Bohdana_UV_Base
+{
+	scope=2;
+	scopeCurator=2;
+	//forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
+};
+class RC_Bohdana_O: RC_Bohdana_UV_Base
+{
+	scope=2;
+	scopeCurator=2;
+	//forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+};
+class RC_Bohdana_I: RC_Bohdana_UV_Base
+{
+	scope=2;
+	scopeCurator=2;
+	//forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+};
+
+
+//*
 class RC_Bohdana_manned_Base: RC_Bohdana_Base
 {
 	class EventHandlers: EventHandlers
@@ -233,7 +323,6 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 		class RC_Artillery
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
@@ -263,8 +352,8 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 				#include "\RC_Bohdana\includes_cfg\panels_bohdana_manned.hpp"
 			};
 
-			primaryGunner = 0;								//0
-			primaryObserver = 0;							//1 bugs viewpoint...?
+			primaryGunner = 0;								//0 results in currentWeapon not working in script so no elev and AZ, 1 results in gunner being RCable and buggable
+			primaryObserver = 0;							//1 bugs viewpoint to below the truck
 
 			memoryPointGunnerOptics = "gunnerview";			//P svetlo
 
@@ -504,7 +593,7 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 
 
 			//position
-			proxyIndex = 1;
+			proxyIndex=1;
 			proxyType = "CPGunner";							//internal viewpoint: CPDriver  CPCargo  CPGunner  CPCommander
 			playerPosition = 0;
 			usePip = 1;
@@ -554,6 +643,56 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 		};
 	};
 };
+//*/
+
+
+/*
+class RC_Bohdana_manned_Base: RC_Bohdana_Base
+{
+	displayName="2S22 Bohdana";
+	//dontCreateAI=1;
+
+	class Components: Components
+	{
+		#include "\RC_Bohdana\includes_cfg\panels_bohdana_manned.hpp"
+	};
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			//dontCreateAI=1;
+			gunnerCompartments="Compartment1";
+
+			class Components: Components
+			{
+				#include "\RC_Bohdana\includes_cfg\panels_bohdana_manned.hpp"
+			};
+			class ViewGunner
+			{
+				initAngleX = -5;
+				initAngleY = 0;
+				initFov = 0.9;
+				maxAngleX = 85;
+				maxAngleY = 150;
+				maxFov = 1.25;
+				maxMoveX = 0.075;
+				maxMoveY = 0.025;
+				maxMoveZ = 0.1;
+				minAngleX = -75;
+				minAngleY = -150;
+				minFov = 0.25;
+				minMoveX = 0;
+				minMoveY = 0;
+				minMoveZ = 0;
+				speedZoomMaxFOV = 0;
+				speedZoomMaxSpeed = 1e+10;
+			};
+		};
+	};
+};
+*/
+
+
 class RC_Bohdana_manned_B: RC_Bohdana_manned_Base
 {
 	scope=2;
@@ -570,78 +709,10 @@ class RC_Bohdana_manned_O: RC_Bohdana_manned_Base
 	//forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
 class RC_Bohdana_manned_I: RC_Bohdana_manned_Base
-{
-	scope=2;
-	scopeCurator=2;
-	//forceInGarage=1;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
-};
-
-
-class RC_Bohdana_UV_Base: RC_Bohdana_Base
-{
-	displayName="RC 2S22 Bohdana";
-	
-	driverCompartments="Compartment2";
-	textPlural="UGVs";
-	textSingular="UGV";
-	isUav=1;
-	vehicleClass="Autonomous";
-	driverForceOptics=1;
-	forceHideDriver=1;
-
-	uavCameraDriverPos="Light_L";
-	uavCameraDriverDir="Light_L";
-	uavCameraGunnerPos="gunnerview";
-	uavCameraGunnerDir="gunnerview";
-
-	class Components: Components
-	{
-		#include "\RC_Bohdana\includes_cfg\panels_bohdana_UV.hpp"
-	};
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			class Components: Components
-			{
-				#include "\RC_Bohdana\includes_cfg\panels_bohdana_UV.hpp"
-			};
-
-			//cannot yet be driven when RCing gunner from commander seat
-			gunnerCompartments="Compartment3";
-			dontCreateAI=0;
-			gunnerForceOptics=1;
-			forceHideGunner=1;
-			
-			lockWhenVehicleSpeed=-1;
-		};
-	};
-};
-class RC_Bohdana_B: RC_Bohdana_UV_Base
-{
-	scope=2;
-	scopeCurator=2;
-	//forceInGarage=1;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
-};
-class RC_Bohdana_O: RC_Bohdana_UV_Base
-{
-	scope=2;
-	scopeCurator=2;
-	//forceInGarage=1;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
-};
-class RC_Bohdana_I: RC_Bohdana_UV_Base
 {
 	scope=2;
 	scopeCurator=2;

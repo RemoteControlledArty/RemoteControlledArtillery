@@ -5,7 +5,7 @@ if (_isUV) then {
 	_currentFireMode = currentWeaponMode (gunner _uav);
 } else {
 	// current turret of player
-	_turret = _uav unitTurret player;
+	_turret = _validTurret;
 	// current fire mode of the player
 	_currentFireMode = currentWeaponMode player;
 };
