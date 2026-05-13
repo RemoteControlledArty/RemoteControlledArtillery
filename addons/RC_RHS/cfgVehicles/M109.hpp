@@ -34,6 +34,10 @@ class RC_M109_A: RC_M109_base
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
 		};
+		class RC_ETA
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
+		};
 		class RHSUSF_EventHandlers
 		{
 			postInit = "_this call rhs_fnc_reapplyTextures";

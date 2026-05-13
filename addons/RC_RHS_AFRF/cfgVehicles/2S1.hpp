@@ -42,6 +42,10 @@ class RC_2S1: RC_2S1_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
 		};
+		class RC_ETA
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
+		};
 		/*
 		class RC_Detection
 		{

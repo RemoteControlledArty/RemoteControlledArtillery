@@ -112,6 +112,7 @@ RC_Artillery_UI = [] spawn {
 			// UI shouldn't be shown so we cut it
 			"RC_Artillery" cutFadeOut 0;
 			RC_InUI = false;
+			RC_ETA = 0;
 			continue;
 		};
 
@@ -209,12 +210,13 @@ RC_Artillery_UI = [] spawn {
 				_weapon = currentWeapon _uav;
 			} else {
 				//works in console, not here somehow
-				_weapon = (_uav weaponsTurret _validTurret)#0;
+				_weapon = (_uav weaponsTurret _validTurret)#0;	//somehow doesnt work, so prev _weapon is used
 			};
 			*/
 
 			// weapon direction as a relative vector3
 			private _weaponDir = _uav weaponDirection _weapon;
+			//hintSilent format ["%1: %2", _weapon, _weaponDir];
 
 			// get weapon elevation
 			private _realElevationDeg = asin (_weaponDir select 2);
@@ -239,6 +241,8 @@ RC_Artillery_UI = [] spawn {
 				if (_realElevationDeg > 90) then { _realElevationDeg = 180 - _realElevationDeg };
 				_realElevation = (SLANT_ANGLE * _realElevationDeg);
 			};
+
+			RC_ETA_realElevation = _realElevation;
 
 			// changes magazine to backup airburst if EL is too low for conventional airburst
 			#include "\Remote_Controlled_Artillery\functions\UILoop_includes\AB_magchange.sqf"
@@ -290,6 +294,7 @@ RC_Artillery_UI = [] spawn {
 			// wrap around
 			_realAzimuth = [_realAzimuth mod 360, 360 + _realAzimuth] select (_realAzimuth < 0);
 			_realAzimuth = SLANT_ANGLE * _realAzimuth;
+			RC_ETA_realAzimuth = _realAzimuth;
 			
 			// declare vars
 			private _highAngleSol = 0;
@@ -297,6 +302,14 @@ RC_Artillery_UI = [] spawn {
 			private _lowAngleSol = 0;
 			private _travelTimeLow = 0;
 			private _lockedTargetName = "NA";
+
+			RC_ETA_targetName = "no target";
+			RC_ETA_aligned = "not aligned";
+			RC_ETA_travelTimeLow = 0;
+			RC_ETA_lowAngleSol = 0;
+			RC_ETA_travelTimeHigh = 0;
+			RC_ETA_highAngleSol = 0;
+			RC_ETA_distance = 0;
 
 			// if we actually have a target (thats not too close)
 			if (((_cursorTarget isNotEqualto objNull) && { _selectedTargetDistance >= MIN_SELECTED_TARGET_DISTANCE }) || !(RC_Artillery_Markers isEqualTo [])) then {
@@ -334,17 +347,27 @@ RC_Artillery_UI = [] spawn {
 						_lockedTargetName = getText (configFile >> "CfgVehicles" >> _lockedTargetClass >> "displayName");
 						RC_lockedTargetNameHash set [_lockedTargetClass, _lockedTargetName];
 					};
+
+					RC_ETA_targetName = _lockedTargetName;
 					_lockedTargetName = _lockedTargetName select [0, 9];
 				} else {
 					_lockedTargetName = "Object";
+
+					if (_hasTargetSelected) then {
+						RC_ETA_targetName = "cursor";
+					} else {
+						RC_ETA_targetName = "no target";
+					};
 				};
 
 
 				// target pos (above sea level)
 				if (_hasTargetSelected && !(_noTargetOrTargetTooClose)) then {
 					_targetPos = getposASL _cursorTarget;
+
 				} else {
-    				_targetPos = AGLtoASL (markerPos [(RC_currentTargetMarker select 1), true]);
+    				_targetPos = AGLtoASL (markerPos [(RC_currentTargetMarker select 1), true]);	//select 1 or 0?
+					RC_ETA_targetName = format ["%1%2", RC_Marker_Prefix, RC_currentTargetMarker select 0];	//select 1 or 0?
 					/*
 					_targetPos = markerPos (RC_currentTargetMarker select 1);
 					_newTargetASL = getTerrainHeightASL _targetPos;
@@ -364,6 +387,7 @@ RC_Artillery_UI = [] spawn {
 
 				// distance from of UV muzzle and target
 				private _distance = (round ((_targetPos distance2d _artyPos) - _muzzleFromCenterEstimate)) max 1;
+				RC_ETA_distance = _distance;
 
 				// height difference of UV muzzle to aimpoint
 				private _difference = 0;
@@ -471,6 +495,13 @@ RC_Artillery_UI = [] spawn {
 					_travelTimeHigh = 0;
 					_travelTimeLow = 0;
 				};
+
+				RC_ETA_travelTimeLow = _travelTimeLow;
+				RC_ETA_lowAngleSol = _lowAngleSol;
+
+				RC_ETA_travelTimeHigh = _travelTimeHigh;
+				RC_ETA_highAngleSol = _highAngleSol;
+				
 			} else {
 				// display if no target is available/selected
 				#include "\Remote_Controlled_Artillery\functions\UILoop_includes\notarget_display.sqf"

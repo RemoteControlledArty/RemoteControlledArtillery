@@ -4346,22 +4346,23 @@ class RC_Sh_AMOS_MP_LaserGuided_Base: SubmunitionBase
 	-> independant of vertical and horizontal misalignment, independant on terrain unevenness, but can only be used by players, so backup triggerDistance recommended
 	*/
 
+	canLock=2;	//supposedly only cfgweapons not ammo
+	laserLock=1;
+	artilleryLock=1;
+	autoSeekTarget=1;
+
 	submunitionCount=1;
 	submunitionConeAngle=0;
 	submunitionDirectionType="SubmunitionTargetDirection";	//required to not completly miss
 	submunitionParentSpeedCoef=0.1;	//required to not completly miss
 	aiAmmoUsageFlags="128 + 512";
 	timeToLive=180;
-	laserLock=1;
-	artilleryLock=1;
-	autoSeekTarget=1;
 	//simulation="shotMissile"; makes misslecam connect, but not for guided submunition, and likely creates other issues, testing still needed
 	//cameraViewAvailable=1;	//should be submun only
 	muzzleEffect="";
 	airFriction=0;
 	explosionEffects="RC_GuidedExplosion";
 	craterEffects="AAMissileCrater";
-	canLock=2;	//supposedly only cfgweapons not ammo
 	
 	soundHit1[]=
 	{
@@ -4406,6 +4407,7 @@ class RC_Sh_AMOS_MP_LaserGuided_Base: SubmunitionBase
 class RC_Sh_AMOS_MP_MultiGuided_Base: RC_Sh_AMOS_MP_LaserGuided_Base
 {
 	irLock=1;
+	airLock=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;	//would allow for sensor-recon shots, to then datalink lock with second shot, doesnt work yet, maybe cfgvic only
 };

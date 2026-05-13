@@ -22,6 +22,7 @@ switch (true) do {
 		_ctrlMessage ctrlSetTextColor [0,1,0,1];
 		_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
 		_ctrlMessage ctrlSetText "ALIGNED";
+		RC_ETA_aligned = "aligned";
 	};
 	case(
 		(_lockedGuided) and
@@ -33,6 +34,7 @@ switch (true) do {
 		_ctrlMessage ctrlSetTextColor [0,1,0,1];
 		_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
 		_ctrlMessage ctrlSetText "ALIGNED";
+		RC_ETA_aligned = "aligned";
 	};
 	
 	case(
@@ -44,6 +46,7 @@ switch (true) do {
 		_ctrlMessage ctrlSetTextColor [0,1,0,1];
 		_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
 		_ctrlMessage ctrlSetText "ALIGNED";
+		RC_ETA_aligned = "aligned";
 	};
 	case(
 		(_realElevation < (_lowAngleSol + 0.3)) and
@@ -54,6 +57,7 @@ switch (true) do {
 		_ctrlMessage ctrlSetTextColor [0,1,0,1];
 		_ctrlMessage ctrlSetPositionX (0.906267 * safezoneW + safezoneX);
 		_ctrlMessage ctrlSetText "ALIGNED";
+		RC_ETA_aligned = "aligned";
 	};
 
 	case(
@@ -66,6 +70,7 @@ switch (true) do {
 		_ctrlMessage ctrlSetTextColor [1,0.5,0,1];
 		_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
 		_ctrlMessage ctrlSetText "NOT ALIGNED";
+		RC_ETA_aligned = "almost aligned";
 	};
 	case(
 		(! _lockedGuided) and
@@ -77,11 +82,13 @@ switch (true) do {
 		_ctrlMessage ctrlSetTextColor [1,0.5,0,1];
 		_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
 		_ctrlMessage ctrlSetText "NOT ALIGNED";
+		RC_ETA_aligned = "almost aligned";
 	};
 
 	default {
 		_ctrlMessage ctrlSetTextColor [1,0,0,1];
 		_ctrlMessage ctrlSetPositionX (0.909967 * safezoneW + safezoneX);
 		_ctrlMessage ctrlSetText "NOT ALIGNED";
+		RC_ETA_aligned = "not aligned";
 	};
 };

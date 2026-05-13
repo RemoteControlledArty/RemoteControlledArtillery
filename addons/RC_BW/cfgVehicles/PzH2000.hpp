@@ -35,6 +35,10 @@ class RC_PzH2000_FT_Base: RC_PzH2000_Core
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
 		};
+		class RC_ETA
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"

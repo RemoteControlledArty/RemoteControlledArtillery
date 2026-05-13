@@ -40,6 +40,14 @@ class RC_Bohdana_Core: RC_Bohdana_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_GuidedTriggerTime
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
+		class RC_ETA
+		{
+			fired="params ['_unit']; [_unit] call RC_fnc_RC_ETA_EH;";
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
@@ -315,7 +323,7 @@ class RC_Bohdana_I: RC_Bohdana_UV_Base
 };
 
 
-//*
+/*
 class RC_Bohdana_manned_Base: RC_Bohdana_Base
 {
 	class EventHandlers: EventHandlers
@@ -352,7 +360,7 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 				#include "\RC_Bohdana\includes_cfg\panels_bohdana_manned.hpp"
 			};
 
-			primaryGunner = 0;								//0 results in currentWeapon not working in script so no elev and AZ, 1 results in gunner being RCable and buggable
+			primaryGunner = 0;								//0 results in elev being calculatable, 1 results in gunner being RCable and buggable
 			primaryObserver = 0;							//1 bugs viewpoint to below the truck
 
 			memoryPointGunnerOptics = "gunnerview";			//P svetlo
@@ -643,10 +651,9 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 		};
 	};
 };
-//*/
+/*/
 
 
-/*
 class RC_Bohdana_manned_Base: RC_Bohdana_Base
 {
 	displayName="2S22 Bohdana";
@@ -690,7 +697,6 @@ class RC_Bohdana_manned_Base: RC_Bohdana_Base
 		};
 	};
 };
-*/
 
 
 class RC_Bohdana_manned_B: RC_Bohdana_manned_Base
@@ -699,7 +705,7 @@ class RC_Bohdana_manned_B: RC_Bohdana_manned_Base
 	scopeCurator=2;
 	//forceInGarage=1;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
 };
 class RC_Bohdana_manned_O: RC_Bohdana_manned_Base
@@ -708,8 +714,8 @@ class RC_Bohdana_manned_O: RC_Bohdana_manned_Base
 	scopeCurator=2;
 	//forceInGarage=1;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
-	//#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
 class RC_Bohdana_manned_I: RC_Bohdana_manned_Base
@@ -718,6 +724,6 @@ class RC_Bohdana_manned_I: RC_Bohdana_manned_Base
 	scopeCurator=2;
 	//forceInGarage=1;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };

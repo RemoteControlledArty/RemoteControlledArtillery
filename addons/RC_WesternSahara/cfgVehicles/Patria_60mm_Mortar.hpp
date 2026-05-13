@@ -50,6 +50,10 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
 		};
+		class RC_ETA
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"

@@ -29,6 +29,10 @@ class RC_Mortar_Base: RC_Mortar_Core
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
 		};
+		class RC_ETA
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
+		};
 	};
 
 	displayName="RC Mortar 4km";

@@ -45,6 +45,10 @@ class NDS_M224_mortar: NDS_M224_mortar_core
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
 		};
+		//class RC_ETA
+		//{
+		//	#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
+		//};
 	};
 	*/
 
@@ -53,6 +57,9 @@ class NDS_M224_mortar: NDS_M224_mortar_core
 	RC_BarrelAGL=0;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=1;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy;
+	RC_validTurret[]={0}; //turret array pos in class turrets
+	ace_artillerytables_showGunLaying=0;
+    ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 
 	displayName="60mm advanced Mortar [long]";
 	faction="RemoteControlled_B";

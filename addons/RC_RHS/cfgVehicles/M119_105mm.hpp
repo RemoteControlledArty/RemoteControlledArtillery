@@ -30,6 +30,10 @@ class RC_M119: RC_M119_base
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
 		};
+		class RC_ETA
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
+		};
 	};
 
 	displayName="RC M119 105mm";

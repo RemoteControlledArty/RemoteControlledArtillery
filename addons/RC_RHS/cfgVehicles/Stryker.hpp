@@ -70,6 +70,62 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 			gunnerName="Commander";
 			primaryGunner=0;
 			primaryObserver=1;
+
+			/*
+			memoryPointGunnerOptics="gunnerview";
+
+			class OpticsIn
+			{
+				class Gun1
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					gunnerOpticsModel = "\rhsusf\addons\rhsusf_optics\data\rhsusf_CROWS_monitor";
+
+					camPos="View_CROWS";
+					hitpoint="Hit_Optic_CROWS_Day";
+
+					minAngleX=-30;	//?
+					maxAngleX=30;	//?
+					minAngleY=-100;	//?
+					maxAngleY=100;	//?
+
+					initFov=0.45;
+					minFov=0.45;
+					maxFov=0.45;
+				};
+				class Gun2: Gun1
+				{
+					initFov=0.1;
+					minFov=0.1;
+					maxFov=0.1;
+				};
+				class Gun3: Gun1
+				{
+					initFov=0.02;
+					minFov=0.02;
+					maxFov=0.02;
+				};
+
+				class DVE_Wide: Gun1
+				{
+					opticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
+					gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
+					
+					camPos="view_DVE";
+					hitpoint="Hit_Optic_DVEA";
+
+					initFov=0.9;
+					minFov=0.9;
+					maxFov=0.9;
+				};
+				class DVS_Rear: DVE_Wide
+				{
+					camPos="view_rear";
+					camDir="view_rear_dir";
+					hitpoint="Hit_Optic_Driver_Rear";
+				};
+			};
+			*/
 		};
 		class CargoTurret_02: CargoTurret_02 {};
 		class CargoTurret_03: CargoTurret_03 {};
@@ -1184,9 +1240,7 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 				"SmokeLauncherMag"
 			};
 
-			/*
-			memoryPointGunnerOptics[]={"driverview","pilot"};	// ""
-			//gunnerOpticsModel="";
+			memoryPointGunnerOptics="driverview";
 
 			class OpticsIn
 			{
@@ -1204,7 +1258,7 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 					thermalMode[]={0};
 					hitpoint="Hit_Optic_DVEA";
 					initFov=0.9;
-					minFov=0.02;
+					minFov=0.9;
 					maxFov=0.9;
 				};
 				class DVS_Rear: DVE_Wide
@@ -1214,24 +1268,6 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 					hitpoint="Hit_Optic_Driver_Rear";
 				};
 			};
-			class ViewOptics: ViewOptics
-			{
-				camPos="view_DVE";
-				opticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
-				gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
-				visionMode[]=
-				{
-					"Normal",
-					"NVG",
-					"TI"
-				};
-				thermalMode[]={0};
-				hitpoint="Hit_Optic_DVEA";
-				initFov=0.9;
-				minFov=0.02;
-				maxFov=0.9;
-			};
-			*/
 		};
 
 		class Turret_Weapon: Turret_Weapon

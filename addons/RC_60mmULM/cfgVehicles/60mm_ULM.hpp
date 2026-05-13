@@ -620,6 +620,12 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Vic_Pre
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
 		};
+		/*
+		class RC_ETA
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
+		};
+		*/
 		class RM_ULM
 		{
 			getout="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";
@@ -633,6 +639,9 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Vic_Pre
 	displayName="60mm advanced Mortar";
 	isULM=2; // 1 = display UI, 2 = display automatic gas vent UI, 45° always available
 	RC_ArtyType=5; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL, 5 = NA for vanilla computer
+	RC_validTurret[]={0}; //turret array pos in class turrets
+	ace_artillerytables_showGunLaying=0;
+    ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 
 	class Turrets: Turrets
 	{

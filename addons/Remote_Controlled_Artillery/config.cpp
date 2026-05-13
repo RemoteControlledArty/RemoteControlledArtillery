@@ -852,6 +852,9 @@ class CfgFunctions
 			
       		class RC_UI_Loop {postInit=1;};
 			class RC_MarkerHandler {postInit=1;};
+			
+			class RC_ETA_EH {};
+			class RC_ETA {};
 
 			class RC_EngineOff {postInit=1;};
 			class RC_UAVBlur {postInit=1;};

@@ -27,12 +27,16 @@ class RC_2S23M_Base: O_R_APC_Wheeled_04_cannon_v2_F
 
 	artilleryScanner=1;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
+	RC_validTurret[]={0}; //turret array pos in class turrets
 	RC_ArtyType=3; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL, 5 = not compatible with script that disables vanilla artillery computer
 	RC_BarrelAGL=2.3;	//AGL of barrel pivot point in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelLenght=5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+	ace_artillerytables_showGunLaying=0;
+    ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
+	//ace_artillerytables_showRangetable=1;
 };
 class RC_2S23M: RC_2S23M_Base
 {
@@ -41,6 +45,10 @@ class RC_2S23M: RC_2S23M_Base
 		class RC_GuidedTriggerTime
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
+		};
+		class RC_ETA
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
 		};
 		class RC_Detection
 		{
@@ -249,6 +257,7 @@ class RC_2S23M_WD: RC_2S23M
 			forceHideGunner=1;
 			maxElev=70;
 			minElev=-10;
+			elevationMode=3;
 
 			weapons[]=
 			{

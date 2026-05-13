@@ -10,9 +10,9 @@ if (_isUV) then {
 	_currentFireMode = currentWeaponMode player;
 };
 
-
 // weapon
 private _weapon = (_uav weaponsTurret _turret) param [0, ""];
+RC_ETA_weapon = _weapon;
 
 // weapon config
 private _weaponConfig = RC_weaponConfigHash get _weapon;
@@ -38,3 +38,4 @@ _fireModes sort true;
 _fireModes = _fireModes apply { _x select 1 };
 // find the current charge
 private _realCharge = _fireModes find _currentFireMode;
+RC_ETA_charge = _realCharge;
