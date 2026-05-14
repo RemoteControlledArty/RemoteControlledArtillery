@@ -112,7 +112,7 @@ RC_Artillery_UI = [] spawn {
 			// UI shouldn't be shown so we cut it
 			"RC_Artillery" cutFadeOut 0;
 			RC_InUI = false;
-			RC_ETA = 0;
+			RC_ETA_weapon = "";
 			continue;
 		};
 
