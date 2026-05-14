@@ -302,6 +302,7 @@ RC_Artillery_UI = [] spawn {
 			private _lowAngleSol = 0;
 			private _travelTimeLow = 0;
 			private _lockedTargetName = "NA";
+			private _airTarget = false;
 
 			RC_ETA_targetName = "no target";
 			RC_ETA_aligned = "not aligned";
@@ -350,6 +351,8 @@ RC_Artillery_UI = [] spawn {
 
 					RC_ETA_targetName = _lockedTargetName;
 					_lockedTargetName = _lockedTargetName select [0, 9];
+
+					_airTarget = _lockedTarget isKindOf "Air";	//if at certain height aim directly at it?
 				} else {
 					_lockedTargetName = "Object";
 
@@ -391,7 +394,18 @@ RC_Artillery_UI = [] spawn {
 
 				// height difference of UV muzzle to aimpoint
 				private _difference = 0;
-				_difference = (_targetPos select 2) + _aimAboveHeight - ((_artyPos select 2) + _muzzleHeightEstimate);
+
+				if (_airTarget) then {
+					//if target is higher than 300m AGL, aim directly at it
+					if (((getposASL _lockedTarget) #2) < 300) then {
+
+						_difference = 300 - ((_artyPos #2) + _muzzleHeightEstimate);
+					} else {
+						_difference = (_targetPos #2) - ((_artyPos #2) + _muzzleHeightEstimate);
+					};
+				} else {
+					_difference = (_targetPos #2) + _aimAboveHeight - ((_artyPos #2) + _muzzleHeightEstimate);
+				};
 
 				// how ElDiff is shown based on cba settings
 				private _shownDifference = [-_difference, _difference] select RC_Arty_EL_Diff;

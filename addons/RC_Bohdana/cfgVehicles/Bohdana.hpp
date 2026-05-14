@@ -46,7 +46,7 @@ class RC_Bohdana_Core: RC_Bohdana_Fetch
 		};
 		class RC_ETA
 		{
-			fired="params ['_unit']; [_unit] call RC_fnc_RC_ETA_EH;";
+			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
 		};
 		class RC_Detection
 		{

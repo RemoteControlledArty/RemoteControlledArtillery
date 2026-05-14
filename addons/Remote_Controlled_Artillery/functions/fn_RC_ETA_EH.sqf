@@ -16,20 +16,18 @@ if (isRemoteControlling player) then {
 
 
 private _ETA = 0;
-if ((abs (RC_ETA_realElevation - RC_ETA_lowAngleSol)) < (abs (RC_ETA_realElevation - RC_ETA_travelTimeLow))) then {
+if ((abs (RC_ETA_realElevation - RC_ETA_lowAngleSol)) < (abs (RC_ETA_realElevation - RC_ETA_highAngleSol))) then {
 	_ETA = RC_ETA_travelTimeLow;
 } else {
 	_ETA = RC_ETA_travelTimeHigh;
 };
 
 
-/*
 private _magName = getText (configFile >> "CfgMagazines" >> _magazine >> "displayName");
-if (isNil _magName) then {
+/*
+if (_magName isEqualTo "") then {
 	_magName = "?";
 };
-
-systemchat _magName;
 */
 
 
@@ -49,5 +47,4 @@ if (_controller1 isNotEqualTo objNull) then {
 
 
 private _crew = (crew (vehicle player)) select {isPlayer _x};
-//[RC_ETA_targetName, _magName, RC_ETA_distance, RC_ETA_charge, RC_ETA_realElevation, RC_ETA_aligned, _ETA] remoteExec ["RC_fnc_RC_ETA", _crew];
-[RC_ETA_targetName, _magazine, RC_ETA_distance, RC_ETA_charge, RC_ETA_realElevation, RC_ETA_aligned, _ETA] remoteExec ["RC_fnc_RC_ETA", _crew];
+[RC_ETA_targetName, _magName, RC_ETA_distance, RC_ETA_charge, RC_ETA_realElevation, RC_ETA_aligned, _ETA] remoteExec ["RC_fnc_RC_ETA", _crew];
