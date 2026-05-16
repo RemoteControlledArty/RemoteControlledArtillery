@@ -1,10 +1,7 @@
 magazines[]=
 {
-	"RC_200Rnd_30mm_APFSDS_T_R",
-	"RC_200Rnd_30mm_APFSDS_T_R",
-
-	"RC_100Rnd_30mm_MP_Pen_T_R",
-	"RC_100Rnd_30mm_MPAB_DF_T_R",
+	"RC_300Rnd_30mm_MPAB_AA_T_R",
+	//"RC_300Rnd_30mm_HEAB_AA_T_R",
 
 	"RC_200Rnd_762x51_T_R",
 	"RC_200Rnd_762x51_T_R",

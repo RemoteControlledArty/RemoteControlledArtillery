@@ -403,6 +403,7 @@ class RC_100Rnd_30mm_cUAS: RC_60Rnd_30mm_cUAS {count=100;};
 class RC_140Rnd_30mm_cUAS: RC_60Rnd_30mm_cUAS {count=140;};
 class RC_160Rnd_30mm_cUAS: RC_60Rnd_30mm_cUAS {count=160;};
 class RC_200Rnd_30mm_cUAS: RC_60Rnd_30mm_cUAS {count=200;};
+class RC_300Rnd_30mm_cUAS: RC_60Rnd_30mm_cUAS {count=300;};
 
 
 class RC_50Rnd_40mm_cUAS: RC_60Rnd_20mm_cUAS
@@ -1516,6 +1517,28 @@ class RC_680Rnd_35mm_HEAB_AA_T_Y: RC_680Rnd_35mm_HEAB_AA_T_R {ammo="RC_B_35mm_HE
 class RC_600Rnd_35mm_HEAB_AA_T_R: RC_680Rnd_35mm_HEAB_AA_T_R {count=600;};
 class RC_600Rnd_35mm_HEAB_AA_T_G: RC_680Rnd_35mm_HEAB_AA_T_G {count=600;};
 class RC_600Rnd_35mm_HEAB_AA_T_Y: RC_680Rnd_35mm_HEAB_AA_T_Y {count=600;};
+
+
+class RC_300Rnd_30mm_MPAB_AA_T_R: RC_680Rnd_35mm_MPAB_AA_T_R
+{
+	ammo="RC_B_30mm_MPAB_AA_T_R";
+	displayName="30mm MPAB";
+	displayNameShort="30mm MPAB";
+	displayNameMFDFormat="MPAB";
+	count=300;
+};
+class RC_300Rnd_30mm_MPAB_AA_T_G: RC_300Rnd_30mm_MPAB_AA_T_R {ammo="RC_B_35mm_MPAB_AA_T_G";};
+class RC_300Rnd_30mm_MPAB_AA_T_Y: RC_300Rnd_30mm_MPAB_AA_T_R {ammo="RC_B_35mm_MPAB_AA_T_Y";};
+class RC_300Rnd_30mm_HEAB_AA_T_R: RC_680Rnd_35mm_HEAB_AA_T_R
+{
+	ammo="RC_B_30mm_HEAB_AA_T_R";
+	displayName="30mm HEAB";
+	displayNameShort="30mm HEAB";
+	displayNameMFDFormat="HEAB";
+	count=300;
+};
+class RC_300Rnd_30mm_HEAB_AA_T_G: RC_300Rnd_30mm_HEAB_AA_T_R {ammo="RC_B_35mm_HEAB_AA_T_G";};
+class RC_300Rnd_30mm_HEAB_AA_T_Y: RC_300Rnd_30mm_HEAB_AA_T_R {ammo="RC_B_35mm_HEAB_AA_T_Y";};
 
 
 class RC_400Rnd_35mm_APFSDS_T_R: 60Rnd_30mm_APFSDS_shells_Tracer_Red

@@ -1,0 +1,15 @@
+hiddenSelectionsTextures[]=
+{
+	"QAV_Ripsaw\data\textures\nato\rshull_co.paa",
+	"QAV_Ripsaw\data\textures\nato\rshull2_co.paa",
+	"QAV_Ripsaw\data\textures\nato\rssusp_co.paa",
+	"QAV_Ripsaw\data\textures\nato\rsturret_co.paa",
+	"QAV_Ripsaw\data\textures\nato\rsturret2_co.paa",
+	"QAV_Ripsaw\data\textures\nato\rsacc1_co.paa",
+	"QAV_Ripsaw\data\textures\nato\rsacc2_co.paa"
+};
+textureList[]=
+{
+	"arid",
+	1
+};

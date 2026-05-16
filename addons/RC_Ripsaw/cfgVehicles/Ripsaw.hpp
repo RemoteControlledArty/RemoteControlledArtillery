@@ -38,7 +38,7 @@ class RC_Ripsaw_Core: RC_Ripsaw_Fetch
 	};
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSensLight.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\EjectDeadCrew.hpp"
@@ -79,47 +79,49 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	//RC_ATrespondingTurret[]={0,0};
 
-	displayName="RC Ripsaw";
-	editorSubcategory="RC_IFV_subcat";
+	displayName="RC Ripsaw U-FSV";
+	editorSubcategory="RC_FSV_subcat";
 
-	maxSpeed=120;
-	normalSpeedForwardCoef=0.64;
-	enginePower=600;
-	peakTorque=3000;
+	maxSpeed=110;		//110
+	//normalSpeedForwardCoef=0.64;
+	enginePower=750;	//550
+	peakTorque=1125;	//900
+
+	//armor=200;
+	//armorStructural=5;
 
 	weapons[]=
 	{
 		//"TruckHorn",
 		"RC_APS_W",
-		"SmokeLauncher"
+		"QAV_SmokeLauncher"
 	};
 	magazines[]=
 	{
 		//"RC_1Rnd_APS_M",
 		//"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
+		"QAV_SmokeLauncherMag",
+		"QAV_SmokeLauncherMag"
 	};
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile.hpp"
+			#include "\RC_Ripsaw\cfgVehicles\includes_vehicle\panels_ripsaw.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			//dontCreateAI=1;
 			commanding=3;
 
-			//minElev=-;	//50
+			//minElev=;		//50
 			//maxElev=;		//-10
 
-			/*
 			weapons[]=
 			{
-				"RC_AMV_HMG",
-				"SmokeLauncher"
+				"RC_Ripsaw_Mk30",
+				"RC_Ripsaw_coax",
+				"QAV_SmokeLauncher"
 			};
-			*/
 
 			class OpticsIn
 			{
@@ -151,53 +153,33 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 		class 30mm_recoil
 		{
 			source="reload";
-			weapon="QAV_ripsaw_mk30";
+			weapon="RC_Ripsaw_Mk30";
 		};
 		class zasleh_hide
 		{
 			source="reload";
-			weapon="QAV_ripsaw_mk30";
+			weapon="RC_Ripsaw_Mk30";
 		};
 		class zasleh_rot
 		{
 			source="ammorandom";
-			weapon="QAV_ripsaw_mk30";
+			weapon="RC_Ripsaw_Mk30";
 		};
 		class zasleh2_hide
 		{
 			source="reload";
-			weapon="lmg_coax";
+			weapon="RC_Ripsaw_coax";
 		};
 		class zasleh2_rot
 		{
 			source="ammorandom";
-			weapon="lmg_coax";
+			weapon="RC_Ripsaw_coax";
 		};
 	};
 
 	class TextureSources: TextureSources
 	{
-		class arid
-		{
-			displayName="Arid";
-			textures[]=
-			{
-				"QAV_Ripsaw\data\textures\nato\rshull_co.paa",
-				"QAV_Ripsaw\data\textures\nato\rshull2_co.paa",
-				"QAV_Ripsaw\data\textures\nato\rssusp_co.paa",
-				"QAV_Ripsaw\data\textures\nato\rsturret_co.paa",
-				"QAV_Ripsaw\data\textures\nato\rsturret2_co.paa",
-				"QAV_Ripsaw\data\textures\nato\rsacc1_co.paa",
-				"QAV_Ripsaw\data\textures\nato\rsacc2_co.paa"
-			};
-			factions[]=
-			{
-				"RemoteControlled_B",
-				"RemoteControlled_O",
-				"RemoteControlled_I"
-			};
-		};
-		class olive: arid
+		class olive
 		{
 			displayName="Olive";
 			textures[]=
@@ -210,8 +192,28 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 				"QAV_Ripsaw\data\textures\texgreen\rsacc1_co.paa",
 				"QAV_Ripsaw\data\textures\texgreen\rsacc2_co.paa"
 			};
+			factions[]=
+			{
+				"RemoteControlled_B",
+				"RemoteControlled_O",
+				"RemoteControlled_I"
+			};
 		};
-		class ion: arid
+		class arid: olive
+		{
+			displayName="Arid";
+			textures[]=
+			{
+				"QAV_Ripsaw\data\textures\nato\rshull_co.paa",
+				"QAV_Ripsaw\data\textures\nato\rshull2_co.paa",
+				"QAV_Ripsaw\data\textures\nato\rssusp_co.paa",
+				"QAV_Ripsaw\data\textures\nato\rsturret_co.paa",
+				"QAV_Ripsaw\data\textures\nato\rsturret2_co.paa",
+				"QAV_Ripsaw\data\textures\nato\rsacc1_co.paa",
+				"QAV_Ripsaw\data\textures\nato\rsacc2_co.paa"
+			};
+		};
+		class ion: olive
 		{
 			displayName="Ion";
 			textures[]=
@@ -225,7 +227,7 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 				"QAV_Ripsaw\data\textures\ion\rsacc2_co.paa"
 			};
 		};
-		class ldf: arid
+		class ldf: olive
 		{
 			displayName="LDF";
 			textures[]=
@@ -239,7 +241,7 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 				"QAV_Ripsaw\data\textures\ldf\rsacc2_co.paa"
 			};
 		};
-		class aaf: arid
+		class aaf: olive
 		{
 			displayName="AAF";
 			textures[]=
@@ -253,7 +255,7 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 				"QAV_Ripsaw\data\textures\aaf\rsacc2_co.paa"
 			};
 		};
-		class ctrg: arid
+		class ctrg: olive
 		{
 			displayName="CTRG";
 			textures[]=
@@ -267,9 +269,9 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 				"QAV_Ripsaw\data\textures\ctrg\rsacc2_co.paa"
 			};
 		};
-		class black: arid
+		class black: olive
 		{
-			displayName="CTRG";
+			displayName="Black";
 			textures[]={
 				"QAV_Ripsaw\data\textures\black\rshull_co.paa",
 				"QAV_Ripsaw\data\textures\black\rshull2_co.paa",
@@ -280,9 +282,9 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 				"QAV_Ripsaw\data\textures\black\rsacc2_co.paa"
 			};
 		};
-		class un: arid
+		class un: olive
 		{
-			displayName="CTRG";
+			displayName="UN";
 			textures[]={
 				"QAV_Ripsaw\data\textures\una\rshull_co.paa",
 				"QAV_Ripsaw\data\textures\un\rshull2_co.paa",
@@ -293,22 +295,6 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 				"QAV_Ripsaw\data\textures\una\rsacc2_co.paa"
 			};
 		};
-	};
-
-	hiddenSelectionsTextures[]=
-	{
-		"QAV_Ripsaw\data\textures\texgreen\rshull_co.paa",
-		"QAV_Ripsaw\data\textures\texgreen\rshull2_co.paa",
-		"QAV_Ripsaw\data\textures\texgreen\rssusp_co.paa",
-		"QAV_Ripsaw\data\textures\texgreen\rsturret_co.paa",
-		"QAV_Ripsaw\data\textures\texgreen\rsturret2_co.paa",
-		"QAV_Ripsaw\data\textures\texgreen\rsacc1_co.paa",
-		"QAV_Ripsaw\data\textures\texgreen\rsacc2_co.paa"
-	};
-	textureList[]=
-	{
-		"olive",
-		1
 	};
 };
 
@@ -326,7 +312,7 @@ class RC_Ripsaw_WD_B: RC_Ripsaw_Base
 	{
 		class MainTurret: MainTurret
 		{
-			//#include "\RC_Ripsaw\includes_vicmags\mags_Ripsaw_R.hpp"
+			#include "\RC_Ripsaw\includes_vicmags\mags_Ripsaw_R.hpp"
 		};
 	};
 };
@@ -343,7 +329,7 @@ class RC_Ripsaw_WD_O: RC_Ripsaw_Base
 	{
 		class MainTurret: MainTurret
 		{
-			//#include "\RC_Ripsaw\includes_vicmags\mags_Ripsaw_G.hpp"
+			#include "\RC_Ripsaw\includes_vicmags\mags_Ripsaw_G.hpp"
 		};
 	};
 };
@@ -360,23 +346,269 @@ class RC_Ripsaw_WD_I: RC_Ripsaw_Base
 	{
 		class MainTurret: MainTurret
 		{
-			//#include "\RC_Ripsaw\includes_vicmags\mags_Ripsaw_Y.hpp"
+			#include "\RC_Ripsaw\includes_vicmags\mags_Ripsaw_Y.hpp"
 		};
 	};
 };
 
 
-/*
 class RC_Ripsaw_A_B: RC_Ripsaw_WD_B
 {
-	#include "\RC_Ripsaw\textures\Ripsaw_Texture_WD.hpp"
+	#include "\RC_Ripsaw\textures\Ripsaw_Texture_A.hpp"
 };
 class RC_Ripsaw_A_O: RC_Ripsaw_WD_O
 {
-	#include "\RC_Ripsaw\textures\Ripsaw_Texture_WD.hpp"
+	#include "\RC_Ripsaw\textures\Ripsaw_Texture_A.hpp"
 };
 class RC_Ripsaw_A_I: RC_Ripsaw_WD_I
 {
-	#include "\RC_Ripsaw\textures\Ripsaw_Texture_WD.hpp"
+	#include "\RC_Ripsaw\textures\Ripsaw_Texture_A.hpp"
 };
-*/
+
+
+class RC_Ripsaw_cUAS_Base: RC_Ripsaw_Base
+{
+	displayName="RC Ripsaw C-UAS";
+	editorSubcategory="RC_AntiDrone_subcat";
+
+	smokeLauncherGrenadeCount=6;
+	smokeLauncherVelocity=4;
+	smokeLauncherAngle=360;
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_Ripsaw\cfgVehicles\includes_vehicle\panels_ripsaw_cUAS.hpp"
+
+			weapons[]=
+			{
+				"RC_Ripsaw_Mk30_cUAS",
+				"RC_Ripsaw_coax",
+				"QAV_SmokeLauncher"
+			};
+
+			class OpticsIn
+			{
+				class Wide
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_m_F";
+
+					minAngleX=-30;
+					maxAngleX=30;
+					minAngleY=-100;
+					maxAngleY=100;
+
+					initFov=0.9;
+					minFov=0.02;
+					maxFov=0.9;
+				};
+			};
+			turretInfoType="RscOptics_MBT_03_gunner";
+		};
+	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=4000;
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=3000;
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1500;
+						maxRange=1500;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=60;
+					angleRangeVertical=60;
+					animDirection="mainGun";
+				};
+				class ManSensorComponent: SensorTemplateMan
+				{
+					typeRecognitionDistance=300;
+
+					class AirTarget
+					{
+						minRange=300;
+						maxRange=300;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=300;
+						maxRange=300;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=15;
+					angleRangeHorizontal=22.5;
+					angleRangeVertical=22.5;
+					animDirection="mainGun";
+					aimDown=0;	//-0.5
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=600;
+
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					//animDirection="mainGun";	//"" , "obsGun"
+					animDirection="";
+				};
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
+			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class 30mm_recoil
+		{
+			source="reload";
+			weapon="RC_Ripsaw_Mk30_cUAS";
+		};
+		class zasleh_hide
+		{
+			source="reload";
+			weapon="RC_Ripsaw_Mk30_cUAS";
+		};
+		class zasleh_rot
+		{
+			source="ammorandom";
+			weapon="RC_Ripsaw_Mk30_cUAS";
+		};
+	};
+};
+class RC_Ripsaw_cUAS_WD_B: RC_Ripsaw_cUAS_Base
+{
+	scope=2;
+	scopeCurator=2;
+	//forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_Ripsaw\includes_vicmags\mags_Ripsaw_cUAS_R.hpp"
+		};
+	};
+};
+class RC_Ripsaw_cUAS_WD_O: RC_Ripsaw_cUAS_Base
+{
+	scope=2;
+	scopeCurator=2;
+	//forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_Ripsaw\includes_vicmags\mags_Ripsaw_cUAS_G.hpp"
+		};
+	};
+};
+class RC_Ripsaw_cUAS_WD_I: RC_Ripsaw_cUAS_Base
+{
+	scope=2;
+	scopeCurator=2;
+	//forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\RC_Ripsaw\includes_vicmags\mags_Ripsaw_cUAS_Y.hpp"
+		};
+	};
+};
+
+
+class RC_Ripsaw_cUAS_A_B: RC_Ripsaw_cUAS_WD_B
+{
+	#include "\RC_Ripsaw\textures\Ripsaw_Texture_A.hpp"
+};
+class RC_Ripsaw_cUAS_A_O: RC_Ripsaw_cUAS_WD_O
+{
+	#include "\RC_Ripsaw\textures\Ripsaw_Texture_A.hpp"
+};
+class RC_Ripsaw_cUAS_A_I: RC_Ripsaw_cUAS_WD_I
+{
+	#include "\RC_Ripsaw\textures\Ripsaw_Texture_A.hpp"
+};
