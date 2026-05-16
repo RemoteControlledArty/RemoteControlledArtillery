@@ -396,7 +396,8 @@ RC_Artillery_UI = [] spawn {
 				private _difference = 0;
 
 				if (_airTarget) then {
-					//if target is higher than 300m AGL, aim directly at it
+					//if target is higher than 300m ASL, aim directly at it
+					//rewrite to AGL for high maps
 					if (((getposASL _lockedTarget) #2) < 300) then {
 
 						_difference = 300 - ((_artyPos #2) + _muzzleHeightEstimate);
