@@ -1,3 +1,69 @@
+//M30, 30mm C-UAS / MPAB-DF / Slug / Shot
+class GL_XM25_F;
+class RC_M30_Fetch: GL_XM25_F
+{
+	class EventHandlers;
+	class Single;
+	//class OpticsModes;
+	//class optic;
+
+	scope = 0;
+	scopeCurator = 0;
+	scopeArsenal = 0;
+};
+class RC_M30: RC_M30_Fetch
+{
+	displayname = "M30 Bolter";
+
+	scope = 2;
+	scopeCurator = 2;
+	scopeArsenal = 2;
+
+	opticsZoomInit = 0.75;		//0.1875;
+	opticsZoomMax = 0.05;		//0.0625;
+	opticsZoomMin = 0.75;		//0.1875;
+
+	magazines[] =
+	{
+		"RC_6Rnd_30mm_MPAB_DF_T",
+		"5Rnd_25x40mm_HE",
+		"5Rnd_25x40mm_airburst"
+	};
+	magazineWell[] =
+	{
+		"XM25_25x40"
+	};
+
+	class OpticsModes
+	{
+		class optic
+		{
+			//defaults
+			cameraDir = "look";
+			distanceZoomMax = 100;
+			distanceZoomMin = 100;
+			memoryPointCamera = "eye";
+			opticsFlare = 1;
+			opticsID = 1;
+			opticsPPEffects[] = {"OpticsCHAbera1","OpticsBlur1"};
+			useModelOptics = 1;
+			visionMode[] = {"Normal","NVG","Ti"};
+
+			//edits
+			discretefov[] = {0.75,0.25,0.15,0.05};		//removed
+			discreteInitIndex = 0;
+			opticsDisablePeripherialVision = 1;		//1
+
+			opticsZoomInit = 0.75;		//0.1875;
+			opticsZoomMax = 0.05;		//0.0625;
+			opticsZoomMin = 0.75;		//0.1875;
+			
+			thermalMode[] = {0,6};		//2,3
+		};
+	};
+};
+
+
 class Aegis_NVG_IVAS_01_tan_F;
 class RC_SO_Goggles_tan_Base: Aegis_NVG_IVAS_01_tan_F
 {

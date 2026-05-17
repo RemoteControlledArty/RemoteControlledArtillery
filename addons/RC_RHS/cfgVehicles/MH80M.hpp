@@ -43,7 +43,7 @@ class RC_OM_MH80M_DAP_UV: RC_RHS_MH80M_DAP_Base
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_EHs_UV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_UV_conversion.hpp"
 
-	displayName="OM MH-80M DAP - Ghost Hawk"
+	displayName="RC MH-80M DAP - Ghost Hawk"
 };
 class RC_OM_MH80M_DAP: RC_OM_MH80M_DAP_UV
 {

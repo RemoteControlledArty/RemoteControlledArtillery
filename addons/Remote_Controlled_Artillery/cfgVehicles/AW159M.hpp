@@ -66,7 +66,7 @@ class RC_OM_AW159M_UV: RC_AW159M_Base
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_EHs_UV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_UV_conversion.hpp"
 
-	displayName="OM AW159M DAP - Wildcat"
+	displayName="RC AW159M DAP - Wildcat"
 };
 class RC_OM_AW159M: RC_OM_AW159M_UV
 {

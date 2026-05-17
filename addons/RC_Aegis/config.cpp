@@ -115,6 +115,8 @@ class CfgPatches
 
 		weapons[]=
 		{
+			"RC_M30",
+
 			"RC_autocannon_30mm_APC_Wheeled_04",
 			"RC_autocannon_30mm_Bu",
 
@@ -160,18 +162,14 @@ class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
 
-/*
 class CfgAmmo
 {
 	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
-*/
-/*
 class CfgMagazines
 {
 	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
-*/
 class CfgWeapons
 {
 	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"

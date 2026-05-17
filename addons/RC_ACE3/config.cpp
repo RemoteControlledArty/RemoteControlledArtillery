@@ -58,16 +58,16 @@ class CfgMagazines
 	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\PylonMagazines.hpp"
 	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Magazines.hpp"
 };
-*/
 class CfgWeapons
 {
-	//class Default;
-	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\PylonWeapons.hpp"
+	class Default;
+	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\PylonWeapons.hpp"
 	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Weapons.hpp"
 };
+*/
 
 
 class CfgVehicles
 {
-	//#include "\RC_ACE3\cfgVehicles\.hpp"
+	//#include "\RC_GX\cfgVehicles\.hpp"
 };
