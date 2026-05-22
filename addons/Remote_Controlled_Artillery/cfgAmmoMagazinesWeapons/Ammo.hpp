@@ -1578,7 +1578,7 @@ class RC_cUAS_Pellet: BulletBase
 class RC_20mm_cUAS: B_20mm_cUAS_Base
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
-	submunitionConeAngle="0.4";		//0.4deg = 600m 1/3 shots should hit with a spread of 4.16m, 500m 2/3 should hit with a spread of 3.4m
+	submunitionConeAngle=0.4;		//0.4deg = 600m 1/3 shots should hit with a spread of 4.16m, 500m 2/3 should hit with a spread of 3.4m
 	submunitionConeType[]=
 	{
 		"poissondisc",	//test randomcenter
@@ -1602,7 +1602,7 @@ class RC_25mm_cUAS: RC_20mm_cUAS
 };
 class RC_30mm_cUAS: RC_20mm_cUAS
 {
-	submunitionConeAngle="0.4";		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
+	submunitionConeAngle=0.4;		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
 	submunitionConeType[]=
 	{
 		"poissondisc",
@@ -1611,7 +1611,7 @@ class RC_30mm_cUAS: RC_20mm_cUAS
 };
 class RC_40mm_cUAS: RC_20mm_cUAS
 {
-	submunitionConeAngle="0.4";		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
+	submunitionConeAngle=0.4;		//0.4deg = 600m 2/3 shots should hit with a spread of 4.16m
 	submunitionConeType[]=
 	{
 		"poissondisc",
@@ -1621,10 +1621,10 @@ class RC_40mm_cUAS: RC_20mm_cUAS
 class RC_127x99mm_cUAS: B_127x99_Ball_Tracer_Red
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
-	submunitionConeAngle="0.344";		//16, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m
-	//submunitionConeAngle="0.384";		//20, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m	 //worked slightly too well
-	//submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
-	//submunitionConeAngle="0.362";		//10? 0.362deg = 300m 1/4 shots should hit with a spread of 1.9m
+	submunitionConeAngle=0.344;		//16, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m
+	//submunitionConeAngle=0.384;		//20, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m	 //worked slightly too well
+	//submunitionConeAngle=0.272;		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
+	//submunitionConeAngle=0.362;		//10? 0.362deg = 300m 1/4 shots should hit with a spread of 1.9m
 	submunitionConeType[]=
 	{
 		"poissondisc",	//test randomcenter
@@ -1635,7 +1635,7 @@ class RC_127x99mm_cUAS: B_127x99_Ball_Tracer_Red
 class RC_762_cUAS: B_762x51_Tracer_Red
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
-	submunitionConeAngle="0.272";		//7 0.272deg, for shorter range
+	submunitionConeAngle=0.272;		//7 0.272deg, for shorter range
 	submunitionConeType[]=
 	{
 		"poissondisc",
@@ -1645,8 +1645,8 @@ class RC_762_cUAS: B_762x51_Tracer_Red
 class RC_338_cUAS: B_338_NM_Ball
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
-	submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
-	//submunitionConeAngle="0.281";		//6, 0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
+	submunitionConeAngle=0.272;		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
+	//submunitionConeAngle=0.281;		//6, 0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
 	submunitionConeType[]=
 	{
 		"poissondisc",
@@ -1656,8 +1656,8 @@ class RC_338_cUAS: B_338_NM_Ball
 class RC_93x64_cUAS: B_93x64_Ball
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\cUAS_Pellets.hpp"
-	submunitionConeAngle="0.272";		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
-	//submunitionConeAngle="0.281";		//6, 0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
+	submunitionConeAngle=0.272;		//10 0.272deg = 400m 1/4 shots should hit with a spread of 1.9m
+	//submunitionConeAngle=0.281;		//6, 0.281deg = 300m 1/4 shots should hit with a spread of 1.47m
 	submunitionConeType[]=
 	{
 		"poissondisc",
@@ -1677,7 +1677,7 @@ class RC_127x99mm_mounted_cUAS: RC_127x99mm_cUAS
 	submunitionAmmo="RC_mounted_cUAS_Pellet";
 	airFriction=-0.0025;	//-0.005
 	airLock=1;	//2
-	submunitionConeAngle="0.344";		//16, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m
+	submunitionConeAngle=0.344;		//16, 0.384deg = 400m 1/4 shots should hit with a spread of 2.68m
 };
 class RC_B_127x99_mounted_SLAP_T_R: RC_B_127x99_SLAP_T_R
 {

@@ -27,7 +27,10 @@ class RC_M30: RC_M30_Fetch
 	{
 		"RC_6Rnd_30mm_MPAB_DF_T",
 		"RC_6Rnd_30mm_MPAB_QF_T",
-		"RC_6Rnd_30mm_Buckshot",
+		"RC_6Rnd_30mm_BuckshotClose",
+		"RC_6Rnd_30mm_BuckshotFar",
+
+		"RC_6Rnd_30mm_Seeking",
 		"5Rnd_25x40mm_HE",
 		"5Rnd_25x40mm_airburst"
 	};
@@ -42,9 +45,9 @@ class RC_M30: RC_M30_Fetch
 		{
 			//defaults
 			cameraDir = "look";
+			memoryPointCamera = "eye";
 			distanceZoomMax = 100;	//100
 			distanceZoomMin = 100;
-			memoryPointCamera = "eye";
 			opticsFlare = 1;
 			opticsID = 1;
 			opticsPPEffects[] = {"OpticsCHAbera1","OpticsBlur1"};
@@ -52,16 +55,16 @@ class RC_M30: RC_M30_Fetch
 			visionMode[] = {"Normal","Ti","NVG"};
 
 			//edits
-			discretefov[] = {0.5,0.2,0.05};		//removed
+			discretefov[] = {0.5,0.175,0.05};		//removed
 			discreteInitIndex = 0;
 			opticsDisablePeripherialVision = 1;		//1
 
 			//discreteDistance[] = {200};		//NA
 			//discreteDistanceInitIndex = 0;	//NA
 
-			opticsZoomInit = 0.75;		//0.1875;
+			opticsZoomInit = 0.5;		//0.1875;
 			opticsZoomMax = 0.05;		//0.0625;
-			opticsZoomMin = 0.75;		//0.1875;
+			opticsZoomMin = 0.5;		//0.1875;
 			
 			thermalMode[] = {6};		//0,6  /  2,3
 		};

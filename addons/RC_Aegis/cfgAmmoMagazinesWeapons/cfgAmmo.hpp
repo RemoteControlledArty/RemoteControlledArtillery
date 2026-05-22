@@ -53,7 +53,16 @@ class RC_M30_30mm_MPAB_QF_T: RC_M30_30mm_MPAB_DF_T
 
 
 class BulletBase;
-class RC_Buckshot_Pellet: BulletBase
+class RC_BuckshotClose_Pellet: BulletBase
+{
+	hit=6;	//4-8
+	indirectHit=0;
+	indirectHitRange=0;	//0.15-0.6
+	typicalSpeed=210;	//360
+	deflecting=15;	//30-50
+	airFriction=-0.005;
+};
+class RC_BuckshotFar_Pellet: BulletBase
 {
 	hit=6;	//4-8
 	indirectHit=0;
@@ -63,17 +72,17 @@ class RC_Buckshot_Pellet: BulletBase
 	airFriction=-0.005;
 };
 class B_20mm_cUAS_Base;
-class RC_M30_30mm_Buckshot: B_20mm_cUAS_Base
+class RC_M30_30mm_BuckshotClose: B_20mm_cUAS_Base
 {
 	simulation="shotSubmunitions";
-	submunitionAmmo="RC_Buckshot_Pellet";
+	submunitionAmmo="RC_BuckshotClose_Pellet";
 	aiAmmoUsageFlags="256";
 	deleteParentWhenTriggered=1;
 	triggerTime=0;
 	airFriction=-0.005;
 	airLock=2;
 
-	submunitionConeAngle="1";		//0.4deg =
+	submunitionConeAngle=1;		//0.4deg =
 	submunitionConeType[]=
 	{
 		"poissondisc",
@@ -85,4 +94,16 @@ class RC_M30_30mm_Buckshot: B_20mm_cUAS_Base
 	indirectHitRange=0;
 	cost=20;
 	//caliber=3.4000001;	//test if 1 doesnt engage helis
+};
+class RC_M30_30mm_BuckshotFar: RC_M30_30mm_BuckshotClose
+{
+	submunitionAmmo="RC_BuckshotFar_Pellet";
+	airFriction=-0.0025;
+
+	submunitionConeAngle=0.5;		//0.4deg =
+	submunitionConeType[]=
+	{
+		"poissondisc",
+		25
+	};
 };
