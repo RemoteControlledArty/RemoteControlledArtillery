@@ -7,7 +7,7 @@ submunitionConeAngle=0;
 submunitionDirectionType="SubmunitionModelDirection";
 
 //Trigger/ed
-deleteParentWhenTriggered=1;
+deleteParentWhenTriggered=0;	//important fix
 submunitionInitialOffset[]={0,0,-3.5};
 triggerDistance=7;
 
