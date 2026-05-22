@@ -19,3 +19,14 @@ class RC_6Rnd_30mm_MPAB_DF_T: 5Rnd_25x40mm_airburst
 	count = 6;
 	//initSpeed = 210;
 };
+class 5Rnd_25x40mm_HE;
+class RC_6Rnd_30mm_Buckshot: 5Rnd_25x40mm_HE
+{
+	ammo = "RC_30mm_Buckshot";
+	displayName = "6Rnd 30mm Buckshot";
+	displayNameShort = "30mm Buckshot";
+	descriptionShort = "Caliber: 30mm Buckshot<br />Rounds: 6 <br />Used in: M30 Bolter";
+
+	count = 6;
+	//initSpeed = 210;
+};
