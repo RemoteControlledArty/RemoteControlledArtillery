@@ -62,14 +62,11 @@ class RC_BuckshotClose_Pellet: BulletBase
 	deflecting=15;	//30-50
 	airFriction=-0.005;
 };
-class RC_BuckshotFar_Pellet: BulletBase
+class RC_BuckshotFar_Pellet: RC_BuckshotClose_Pellet
 {
-	hit=6;	//4-8
-	indirectHit=0;
-	indirectHitRange=0;	//0.15-0.6
-	typicalSpeed=210;	//360
-	deflecting=15;	//30-50
-	airFriction=-0.005;
+	hit=10;	//4-8
+	deflecting=10;	//30-50
+	airFriction=-0.0025;
 };
 class B_20mm_cUAS_Base;
 class RC_M30_30mm_BuckshotClose: B_20mm_cUAS_Base
