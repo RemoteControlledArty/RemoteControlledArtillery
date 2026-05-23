@@ -14,6 +14,7 @@ class RC_M30_Fetch: GL_XM25_F
 class RC_M30: RC_M30_Fetch
 {
 	displayname = "M30 Bolter";
+	baseWeapon = "RC_M30";
 
 	scope = 2;
 	scopeCurator = 2;
@@ -25,18 +26,22 @@ class RC_M30: RC_M30_Fetch
 
 	magazines[] =
 	{
+		"RC_6Rnd_30mm_MPAB_T",
 		"RC_6Rnd_30mm_MPAB_QF_T",
 		"RC_6Rnd_30mm_MPAB_DF_T",
-		"RC_6Rnd_30mm_BuckshotFar",
-		"RC_6Rnd_30mm_BuckshotClose",
+		"RC_8Rnd_30mm_Slug",
+		"RC_8Rnd_30mm_BuckshotFar",
+		"RC_8Rnd_30mm_BuckshotClose"
 
-		"RC_6Rnd_30mm_Seeking",
-		"5Rnd_25x40mm_HE",
-		"5Rnd_25x40mm_airburst"
+		//"RC_12Rnd_30mm_MetalStormSlug",
+		//"RC_6Rnd_30mm_DroneShot"
+		//"RC_6Rnd_30mm_Seeking",
+		//"5Rnd_25x40mm_HE",
+		//"5Rnd_25x40mm_airburst"
 	};
 	magazineWell[] =
 	{
-		"XM25_25x40"
+		"RC_M30_MagWell"
 	};
 
 	class OpticsModes
@@ -55,7 +60,7 @@ class RC_M30: RC_M30_Fetch
 			visionMode[] = {"Normal","Ti","NVG"};
 
 			//edits
-			discretefov[] = {0.5,0.175,0.05};		//removed
+			discretefov[] = {0.5,0.15,0.05};		//removed
 			discreteInitIndex = 0;
 			opticsDisablePeripherialVision = 1;		//1
 

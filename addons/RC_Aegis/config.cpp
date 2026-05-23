@@ -145,6 +145,20 @@ class CfgPatches
 	};
 };
 
+
+class CfgFunctions
+{
+	class RC
+	{
+		class RC_M30
+		{
+			file="\RC_Aegis\functions";
+      		class RC_M30 {postInit=1;};
+		};
+	};
+};
+
+
 //later required sensors
 class SensorTemplateDataLink;
 class SensorTemplateLaser;
@@ -169,6 +183,21 @@ class CfgAmmo
 class CfgMagazines
 {
 	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+};
+class CfgMagazineWells
+{
+	class RC_M30_MagWell
+	{
+		RC_Magazines[]=
+		{
+			"RC_6Rnd_30mm_MPAB_T",
+			"RC_6Rnd_30mm_MPAB_QF_T",
+			"RC_6Rnd_30mm_MPAB_DF_T",
+			"RC_8Rnd_30mm_Slug",
+			"RC_8Rnd_30mm_BuckshotFar",
+			"RC_8Rnd_30mm_BuckshotClose"
+		};
+	};
 };
 class CfgWeapons
 {
