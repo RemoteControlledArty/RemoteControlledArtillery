@@ -4,7 +4,7 @@ if (!local _p) exitwith {}; \
 	params ['_p']; \
 	sleep 0.024; \
 	while { alive _p } do { \
-		if ((nearestObjects [_p, ['Air','LaserTarget'], 5]) isNotEqualTo []) exitWith { \
+		if ((nearestObjects [_p, ['Air','LaserTarget','RC_GPSDatalinkTarget'], 5]) isNotEqualTo []) exitWith { \
 			triggerAmmo _p; \
 		}; \
 	}; \

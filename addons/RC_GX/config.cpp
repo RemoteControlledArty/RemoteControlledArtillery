@@ -58,4 +58,5 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\RC_GX\cfgVehicles\FW_LM.hpp"
+	#include "\RC_GX\cfgVehicles\Hunter_LM.hpp"
 };

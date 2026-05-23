@@ -64,7 +64,7 @@ class RC_BuckshotClose_Pellet: BulletBase
 };
 class RC_BuckshotFar_Pellet: RC_BuckshotClose_Pellet
 {
-	hit=10;	//4-8
+	hit=12;	//4-8
 	deflecting=10;	//30-50
 	airFriction=-0.0025;
 };
@@ -79,7 +79,7 @@ class RC_M30_30mm_BuckshotClose: B_20mm_cUAS_Base
 	airFriction=-0.005;
 	airLock=2;
 
-	submunitionConeAngle=1;		//0.4deg =
+	submunitionConeAngle=1;
 	submunitionConeType[]=
 	{
 		"poissondisc",
@@ -97,7 +97,7 @@ class RC_M30_30mm_BuckshotFar: RC_M30_30mm_BuckshotClose
 	submunitionAmmo="RC_BuckshotFar_Pellet";
 	airFriction=-0.0025;
 
-	submunitionConeAngle=0.5;		//0.4deg =
+	submunitionConeAngle=0.4;
 	submunitionConeType[]=
 	{
 		"poissondisc",
