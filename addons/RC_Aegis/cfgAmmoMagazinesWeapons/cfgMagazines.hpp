@@ -38,7 +38,7 @@ class RC_6Rnd_30mm_BuckshotClose: 5Rnd_25x40mm_HE
 	descriptionShort = "Caliber: 30mm Buckshot (close)<br />Rounds: 6 <br />Used in: M30 Bolter";
 
 	count = 6;
-	//initSpeed = 210;
+	initSpeed = 330;
 	tracersEvery = 0;
 };
 class RC_6Rnd_30mm_BuckshotFar: RC_6Rnd_30mm_BuckshotClose
@@ -58,6 +58,6 @@ class RC_6Rnd_30mm_Seeking: 5Rnd_25x40mm_HE
 	descriptionShort = "Caliber: 30mm Seeking<br />Rounds: 6 <br />Used in: M30 Bolter";
 
 	count = 6;
-	//initSpeed = 210;
+	initSpeed = 330;
 	tracersEvery = 0;
 };

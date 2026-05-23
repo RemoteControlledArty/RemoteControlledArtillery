@@ -10,7 +10,7 @@ class RC_M30_30mm_MPAB_DF_T: B_25x40mm_airburst
 	//Aegis_airburstFuseDistance = 3;
 	//Aegis_isAirburst = 1;
 	explosionAngle = 360;	//60
-	deflecting = 5;	
+	deflecting = 0;		//5
 	deflectionSlowDown = 0.8;
 	fuseDistance = 3;
 
@@ -58,7 +58,7 @@ class RC_BuckshotClose_Pellet: BulletBase
 	hit=6;	//4-8
 	indirectHit=0;
 	indirectHitRange=0;	//0.15-0.6
-	typicalSpeed=210;	//360
+	typicalSpeed=330;	//360
 	deflecting=15;	//30-50
 	airFriction=-0.005;
 };
@@ -77,7 +77,7 @@ class RC_M30_30mm_BuckshotClose: B_20mm_cUAS_Base
 	deleteParentWhenTriggered=1;
 	triggerTime=0;
 	airFriction=-0.005;
-	airLock=2;
+	//airLock=2;
 
 	submunitionConeAngle=1;
 	submunitionConeType[]=
@@ -97,7 +97,7 @@ class RC_M30_30mm_BuckshotFar: RC_M30_30mm_BuckshotClose
 	submunitionAmmo="RC_BuckshotFar_Pellet";
 	airFriction=-0.0025;
 
-	submunitionConeAngle=0.4;
+	submunitionConeAngle=0.3;
 	submunitionConeType[]=
 	{
 		"poissondisc",
