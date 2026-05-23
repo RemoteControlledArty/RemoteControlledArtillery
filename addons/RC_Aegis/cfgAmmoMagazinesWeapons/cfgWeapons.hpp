@@ -25,10 +25,10 @@ class RC_M30: RC_M30_Fetch
 
 	magazines[] =
 	{
-		"RC_6Rnd_30mm_MPAB_DF_T",
 		"RC_6Rnd_30mm_MPAB_QF_T",
-		"RC_6Rnd_30mm_BuckshotClose",
+		"RC_6Rnd_30mm_MPAB_DF_T",
 		"RC_6Rnd_30mm_BuckshotFar",
+		"RC_6Rnd_30mm_BuckshotClose",
 
 		"RC_6Rnd_30mm_Seeking",
 		"5Rnd_25x40mm_HE",

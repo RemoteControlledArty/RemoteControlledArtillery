@@ -18,7 +18,8 @@ class RC_6Rnd_30mm_MPAB_DF_T: 5Rnd_25x40mm_airburst
 	descriptionShort = "Caliber: 30mm MPAB-DF<br />Rounds: 6 <br />Used in: M30 Bolter";
 
 	count = 6;
-	//initSpeed = 210;
+	initSpeed = 250;	//210 but zeroing is off somehow
+	tracersEvery = 1;
 };
 class RC_6Rnd_30mm_MPAB_QF_T: RC_6Rnd_30mm_MPAB_DF_T
 {

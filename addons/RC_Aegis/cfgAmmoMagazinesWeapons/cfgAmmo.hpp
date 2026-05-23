@@ -7,12 +7,14 @@ class RC_M30_30mm_MPAB_DF_T: B_25x40mm_airburst
 	};
 
 	//airFriction = -0.0006;	//-0.0006
-	//Aegis_airburstFuseDistance = 3;
-	//Aegis_isAirburst = 1;
+	Aegis_airburstFuseDistance = 3;
+	Aegis_isAirburst = 1;
 	explosionAngle = 360;	//60
 	deflecting = 0;		//5
 	deflectionSlowDown = 0.8;
 	fuseDistance = 3;
+	//tracerStartTime = 0.04;
+	tracerEndTime = 6;
 
 	caliber=4.4;
 	hit=90;
@@ -37,7 +39,7 @@ class RC_M30_30mm_MPAB_DF_T: B_25x40mm_airburst
 	explosive=0.60000002;
 
 	//Simulation
-	simulation="shotShell";
+	//simulation="shotShell";	//wrecks zero function, submun and DF somehow works without this simulations
 
 	//Use
 	warheadName="HE";
@@ -78,6 +80,8 @@ class RC_M30_30mm_BuckshotClose: B_20mm_cUAS_Base
 	triggerTime=0;
 	airFriction=-0.005;
 	//airLock=2;
+	tracerStartTime = 1;
+	tracerEndTime = 1;
 
 	submunitionConeAngle=1;
 	submunitionConeType[]=
