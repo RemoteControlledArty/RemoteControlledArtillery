@@ -63,7 +63,7 @@ class RC_M30_30mm_Slug: B_30mm_AP
 {
 	typicalSpeed=1000;	//1120
 	tracerStartTime = 0.04;
-	tracerEndTime = 5;
+	tracerEndTime = 6;
 	cost=20;
 	aiAmmoUsageFlags="64 + 128";	//inf, veh
 
