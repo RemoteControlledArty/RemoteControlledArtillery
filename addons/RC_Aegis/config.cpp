@@ -176,6 +176,23 @@ class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
 
+/*
+    player addMagazine "RC_6Rnd_30mm_MPAB_T";
+	player addMagazine "RC_6Rnd_30mm_MPAB_T";
+	player addMagazine "RC_6Rnd_30mm_MPAB_QF_T";
+	player addMagazine "RC_6Rnd_30mm_MPAB_QF_T";
+	player addMagazine "RC_6Rnd_30mm_MPAB_DF_T";
+	player addMagazine "RC_6Rnd_30mm_MPAB_DF_T";
+	player addMagazine "RC_8Rnd_30mm_Slug";
+	player addMagazine "RC_8Rnd_30mm_Slug";
+	player addMagazine "RC_8Rnd_30mm_BuckshotFar";
+	player addMagazine "RC_8Rnd_30mm_BuckshotFar";
+	player addMagazine "RC_8Rnd_30mm_BuckshotClose";
+	player addMagazine "RC_8Rnd_30mm_BuckshotClose";
+    player addWeapon "RC_M30";
+*/
+
+
 class CfgAmmo
 {
 	#include "\RC_Aegis\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
