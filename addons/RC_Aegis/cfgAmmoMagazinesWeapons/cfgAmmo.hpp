@@ -6,15 +6,15 @@ class RC_M30_30mm_MPAB_T: B_25x40mm_airburst
 		#include "\Remote_Controlled_Artillery\includes_script\AB_EH.hpp"
 	};
 
-	//airFriction = -0.0006;	//-0.0006
-	Aegis_airburstFuseDistance = 3;
-	Aegis_isAirburst = 1;
-	explosionAngle = 360;	//60
-	deflecting = 0;		//5
-	deflectionSlowDown = 0.8;
-	fuseDistance = 4;
-	//tracerStartTime = 0.04;
-	tracerEndTime = 6;
+	//airFriction=-0.0006;	//-0.0006
+	Aegis_airburstFuseDistance=3;
+	Aegis_isAirburst=1;
+	explosionAngle=360;	//60
+	deflecting=0;		//5
+	deflectionSlowDown=0.8;
+	fuseDistance=4;
+	//tracerStartTime=0.04;
+	tracerEndTime=6;
 
 	caliber=4.4;
 	hit=90;
@@ -61,9 +61,10 @@ class RC_M30_30mm_MPAB_QF_T: RC_M30_30mm_MPAB_DF_T
 class B_30mm_AP;
 class RC_M30_30mm_Slug: B_30mm_AP
 {
+	airFriction=-0.0006;	//to match zeroing
 	typicalSpeed=1000;	//1120
-	tracerStartTime = 0.04;
-	tracerEndTime = 6;
+	tracerStartTime=0.04;
+	tracerEndTime=6;
 	cost=20;
 	aiAmmoUsageFlags="64 + 128";	//inf, veh
 
@@ -115,8 +116,8 @@ class RC_M30_30mm_BuckshotClose: B_20mm_cUAS_Base
 	triggerTime=0;
 	airFriction=-0.005;
 	//airLock=2;
-	tracerStartTime = 1;
-	tracerEndTime = 1;
+	tracerStartTime=1;
+	tracerEndTime=1;
 
 	submunitionConeAngle=1;
 	submunitionConeType[]=
