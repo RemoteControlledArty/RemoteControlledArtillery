@@ -1,5 +1,5 @@
-class ACV_30;
-class RC_ACV_30_Core: ACV_30
+class Peral_ACV_30;
+class RC_ACV_30_Core: Peral_ACV_30
 {
 	class Turrets;
 	class MainTurret;

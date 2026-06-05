@@ -33,7 +33,7 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
-			"ACV"
+			"Peral_ACV"
 		};
 
 		skipWhenMissingDependencies=1;
