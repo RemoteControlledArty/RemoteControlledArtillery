@@ -584,6 +584,13 @@ class CfgPatches
 			"RC_indirect_GMG_UGV_A_I",
 			"RC_indirect_GMG_UGV_WD_I",
 
+			"RC_Quadbike_A",
+			"RC_Quadbike_WD",
+			"RC_Quadbike_A_O",
+			"RC_Quadbike_WD_O",
+			"RC_Quadbike_A_I",
+			"RC_Quadbike_WD_I",
+
 			"RC_B_Crew",
 			"RC_O_Crew",
 			"RC_I_Crew",
@@ -1230,4 +1237,5 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UGV.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Velocity.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Wiesel.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Quad.hpp"
 };

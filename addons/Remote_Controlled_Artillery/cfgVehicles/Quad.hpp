@@ -1,11 +1,15 @@
-//Flatbed Truck with 105mm M119
-class B_G_Offroad_01_F;
-class RC_Offroad_Core: B_G_Offroad_01_F
+class B_Quadbike_01_F;
+class RC_Quadbike_Core: B_Quadbike_01_F
 {
 	class Components;
-	class EventHandlers;
-	class ViewOptics;
 	class HitPoints;
+	class ViewOptics;
+	class Turrets;
+	class CargoTurret_01;
+	class CargoTurret_02;
+	class CargoTurret_03;
+	class CargoTurret_04;
+	class CargoTurret_05;
 	class HitHull;
 	class HitBody;
 	class HitFuel;
@@ -15,41 +19,58 @@ class RC_Offroad_Core: B_G_Offroad_01_F
 	class HitRFWheel;
 	class HitRF2Wheel;
 	class TextureSources;
-	class Green;
+	class UserActions;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Offroad_Base: RC_Offroad_Core
+class RC_Quadbike_Base: RC_Quadbike_Core
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Detection
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
 		};
+		/*
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
+		*/
+
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargoFuel_EH.hpp"
 	};
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam1x.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-	memoryPointDriverOptics="light_l";
-	
-	faction="RemoteControlled_B";
-	author="Ascent";
-	armor=40;
-	crewCrashProtection=0;
-	side=1;
+	memoryPointDriverOptics="Light_L";
 
-	canUseScanners=1;
+	author="Ascent";
+	//armor=40;		//30
+	crewCrashProtection=0;
+	enableGPS=1;
 
 	threat[]={0,0,0};
 	cost=0;
 	typicalCargo[]={""};
+	
+	maximumLoad=1200;	//600
+	canHideGunner=1;
+	camouflage=1;	//2
+	audible=2.5;	//5
+
+	maxSpeed=100;			//80
+	enginePower=30;			//25
+	engineStartSpeed=0.5;	//1.5
+	peakTorque=300;			//280
 
 	smokeLauncherOnTurret=0;
-	smokeLauncherVelocity=5;
-	smokeLauncherGrenadeCount=6;
+	smokeLauncherVelocity=4;
+	smokeLauncherGrenadeCount=4;
 	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
 
 	weapons[]=
@@ -65,20 +86,89 @@ class RC_Offroad_Base: RC_Offroad_Core
 		"SmokeLauncherMag"
 	};
 
-	hiddenSelectionsTextures[]=
+	class PlayerSteeringCoefficients
 	{
-		"\a3\Soft_F_Enoch\Offroad_01\Data\offroad_01_ext_grn_CO.paa",
-		"\a3\Soft_F_Enoch\Offroad_01\Data\offroad_01_ext_grn_CO.paa"
+		turnIncreaseConst=0.8;	//0.8
+		turnIncreaseLinear=2;
+		turnIncreaseTime=1;
+
+		turnDecreaseConst=9;
+		turnDecreaseLinear=0;
+		turnDecreaseTime=0;
+
+		maxTurnHundred=0.5;	//0.8
 	};
+
+	class Turrets: Turrets
+	{
+		class DriverTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\panels_car.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\DriverTurret.hpp"
+
+			primaryObserver = 1;
+			memoryPointGunnerOptics = "Light_L";			//P svetlo
+
+			gunnerAction = "driver_quadbike";				//Driver_MBT_03_cannon_F_out
+			gunnerInAction = "";							//Driver_MBT_03_cannon_F_in
+			gunnerLeftHandAnimName = "drivewheel";			//drivewheel
+			gunnerRightHandAnimName = "drivewheel";		//drivewheel
+			gunnerLeftLegAnimName = "";						//pedal_brake
+			gunnerRightLegAnimName = "pedal_thrust";		//pedal_thrust
+
+			//gunnerCompartments="Compartment1";
+			//gunnerOpticsModel="";
+			//turretInfoType="";
+
+			class OpticsIn
+			{
+				class Driver
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+					minAngleX=-30;	//?
+					maxAngleX=30;	//?
+					minAngleY=-100;	//?
+					maxAngleY=100;	//?
+
+					initFov=1;
+					minFov=0.25;
+					maxFov=1;
+				};
+			};
+
+			weapons[]=
+			{
+				"RC_target_confirmer_datalink",
+				"TruckHorn",
+				"SmokeLauncher"
+			};
+			magazines[]=
+			{
+				"RC_target_confirmer_mag",
+				"SmokeLauncherMag",
+				"SmokeLauncherMag"
+			};
+		};
+		/*
+		class CargoTurret_01: CargoTurret_01
+		{
+			gunnerName="Front Right";
+			gunnerCompartments="Compartment1";
+		};
+		*/
+	};
+
 	class TextureSources: TextureSources
 	{
-		class Green: Green
+		class arid
 		{
-			displayName="Green";
+			displayName="Arid";
 			textures[]=
 			{
-				"\a3\Soft_F_Enoch\Offroad_01\Data\offroad_01_ext_grn_CO.paa",
-				"\a3\Soft_F_Enoch\Offroad_01\Data\offroad_01_ext_grn_CO.paa"
+				"\A3\Soft_F\Quadbike_01\Data\Quadbike_01_co.paa",
+				"\A3\Soft_F\Quadbike_01\Data\Quadbike_01_wheel_co.paa"
 			};
 			factions[]=
 			{
@@ -87,10 +177,37 @@ class RC_Offroad_Base: RC_Offroad_Core
 				"RemoteControlled_I"
 			};
 		};
+		class olive: arid
+		{
+			displayName="Olive";
+			textures[] =
+			{
+				"\A3\Soft_F_Exp\Quadbike_01\Data\Quadbike_01_olive_CO.paa",
+				"\A3\Soft_F_Exp\Quadbike_01\Data\Quadbike_01_wheel_olive_CO.paa"
+			};
+		};
+		class black: arid
+		{
+			displayName="Black";
+			textures[] =
+			{
+				"\A3\Soft_F_Beta\Quadbike_01\Data\Quadbike_01_CIV_BLACK_CO.paa",
+				"\A3\Soft_F_Beta\Quadbike_01\Data\Quadbike_01_wheel_CIVBLACK_CO.paa"
+			};
+		};
+		class white: arid
+		{
+			displayName="White";
+			textures[] =
+			{
+				"\A3\Soft_F_Beta\Quadbike_01\Data\Quadbike_01_CIV_WHITE_CO.paa",
+				"\A3\Soft_F_Beta\Quadbike_01\Data\Quadbike_01_wheel_CIVWHITE_CO.paa"
+			};
+		};
 	};
 	textureList[]=
 	{
-		"Green",
+		"arid",
 		1
 	};
 
@@ -98,44 +215,47 @@ class RC_Offroad_Base: RC_Offroad_Core
 	{
 		class HitHull: HitHull
 		{
-			explosionShielding=4;
+			armor=2;				//1.5
+			explosionShielding=4;	//8
+			passThrough=0.5;		//0.5
 		};
 		class HitBody: HitBody
 		{
-			explosionShielding=1;
+			armor=1.25;				//1
+			explosionShielding=1;	//1.5
+			passThrough=1;
 		};
 		class HitFuel: HitFuel
 		{
-			armor=4;
-			explosionShielding=1;
+			armor=3;			//2
+			passThrough=0;		//0
 		};
 		class HitEngine: HitEngine
 		{
-			armor=8;
-			passThrough=0.25;
+			armor=1.5;			//0.5
+			passThrough=0.15;	//0.2
 		};
 		class HitLFWheel: HitLFWheel
 		{
-			armor=-300;
-			explosionShielding=1;
+			armor=-120;				//-80
+			explosionShielding=1;	//4
 		};
 		class HitLF2Wheel: HitLF2Wheel
 		{
-			armor=-300;
+			armor=-120;
 			explosionShielding=1;
 		};
 		class HitRFWheel: HitRFWheel
 		{
-			armor=-300;
+			armor=-120;
 			explosionShielding=1;
 		};
 		class HitRF2Wheel: HitRF2Wheel
 		{
-			armor=-300;
+			armor=-120;
 			explosionShielding=1;
 		};
 	};
-			
 
 	class Components: Components
 	{
@@ -181,12 +301,12 @@ class RC_Offroad_Base: RC_Offroad_Core
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
-					typeRecognitionDistance=600;
+					typeRecognitionDistance=400;
 
 					class AirTarget
 					{
-						minRange=600;
-						maxRange=600;
+						minRange=400;
+						maxRange=400;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -231,7 +351,7 @@ class RC_Offroad_Base: RC_Offroad_Core
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={4000,2000,600};
+					range[]={4000,2000,400};
 					resource="RscCustomInfoSensors";
 				};
 				class UAVFeedDisplay
@@ -242,10 +362,6 @@ class RC_Offroad_Base: RC_Offroad_Core
 				{
 					componentType="MinimapDisplayComponent";
 					resource="RscCustomInfoMiniMap";
-				};
-				class EmptyDisplay
-				{
-					componentType="EmptyDisplayComponent";
 				};
 			};
 		};
@@ -258,7 +374,7 @@ class RC_Offroad_Base: RC_Offroad_Core
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={600,2000,4000};
+					range[]={400,2000,4000};
 					resource="RscCustomInfoSensors";
 				};
 				class UAVFeedDisplay
@@ -270,168 +386,87 @@ class RC_Offroad_Base: RC_Offroad_Core
 					componentType="MinimapDisplayComponent";
 					resource="RscCustomInfoMiniMap";
 				};
-				class EmptyDisplay
-				{
-					componentType="EmptyDisplayComponent";
-				};
 			};
 		};
 	};
 
-	animationList[]=
-	{
-		"HideBumper2",
-		1,
-		"HideBumper2",
-		0,
-		"HideDoor1",
-		0,
-		"HideDoor2",
-		0,
-		"HideDoor3",
-		0,
-	};
-
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
 };
 
 
-/*
-class RC_Offroad_RCIMV_Base: RC_Offroad_Base
+class RC_Quadbike_A: RC_Quadbike_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\CommanderIsDriverEH.hpp"
+		};
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+
+	displayName="RC Quadbike";
+	faction="RemoteControlled_B";
 	editorSubcategory="RC_Car_subcat";
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
 
 	isUav=1;
-	vehicleClass="Autonomous";
-
-	uavCameraDriverPos="Copilot_view_dir";
-	uavCameraDriverDir="Copilot_view_dir";
-	memoryPointTaskMarker="TaskMarker_1_pos";
-	memoryPointDriverOptics="Copilot_view_dir";
-
-	driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-	unitInfoType="RC_RscOptics_AV_Heli";
-	unitInfoTypeRTD="RC_RscOptics_AV_Heli";
-
 	driverForceOptics=1;
-	driverCompartments="Compartment1";
-};
-class RC_Offroad_RCIMV: RC_Offroad_RCIMV_Base
-{
-	displayName="RC Offroad";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
+	vehicleClass="Autonomous";
+	driverCompartments="Compartment2";
+	textPlural="UGVs";
+	textSingular="UGV";
 	crew="B_UAV_AI";
+
+	uavCameraDriverPos="Light_L";
+	uavCameraDriverDir="Light_L";
+
+	//cost=0;
 };
-class RC_Offroad_RCIMV_O: RC_Offroad_RCIMV
+class RC_Quadbike_A_O: RC_Quadbike_A
 {
+	faction="RemoteControlled_O";
 	side=0;
 	crew="O_UAV_AI";
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
-class RC_Offroad_RCIMV_I: RC_Offroad_RCIMV
+class RC_Quadbike_A_I: RC_Quadbike_A
 {
+	faction="RemoteControlled_I";
 	side=2;
 	crew="I_UAV_AI";
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };
 
 
-class RC_Offroad_RCIMV_cUAS: RC_Offroad_RCIMV
+class RC_Quadbike_WD: RC_Quadbike_A
 {
-	class EventHandlers: EventHandlers
+	hiddenSelectionsTextures[]=
 	{
-		init="if (!isServer) exitwith {};	\
-		(_this select 0) spawn {	\
-			private _static = ([[0,0,0], (getDir _this), 'RC_cUAS_Mounted_Static_HMG_manned', side _this] call BIS_fnc_spawnVehicle);	\
-			(_static #0) attachTo [_this, [0.16, -2.15, 1]];	\
-			_this addEventHandler ['Killed', {	\
-				params ['_unit'];	\
-    			((attachedObjects _unit)#0) setDamage 1;	\
-			}];	\
-		};";
+		"\A3\Soft_F_Exp\Quadbike_01\Data\Quadbike_01_olive_CO.paa",
+		"\A3\Soft_F_Exp\Quadbike_01\Data\Quadbike_01_wheel_olive_CO.paa"
 	};
-
-	displayName="RC Offroad + 12.7mm C-UAS";
+	textureList[]=
+	{
+		"olive",
+		1
+	};
 };
-class RC_Offroad_RCIMV_cUAS_O: RC_Offroad_RCIMV_cUAS
+class RC_Quadbike_WD_O: RC_Quadbike_WD
 {
+	faction="RemoteControlled_O";
 	side=0;
 	crew="O_UAV_AI";
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
-class RC_Offroad_RCIMV_cUAS_I: RC_Offroad_RCIMV_cUAS
+class RC_Quadbike_WD_I: RC_Quadbike_WD
 {
+	faction="RemoteControlled_I";
 	side=2;
 	crew="I_UAV_AI";
-};
-*/
-
-
-class RC_Offroad_cUAS_Base: RC_Offroad_Base
-{
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-		};
-		/*
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		*/
-	};
-
-	editorSubcategory="RC_AntiDrone_subcat";
-};
-
-
-class RC_Offroad_cUAS: RC_Offroad_cUAS_Base
-{
-	class EventHandlers: EventHandlers
-	{
-		class RC_cUAS
-		{
-			init="if (!isServer) exitwith {};	\
-			(_this select 0) spawn {	\
-				private _static = ([[0,0,0], (getDir _this), 'RC_cUAS_Mounted_Static', west] call BIS_fnc_spawnVehicle);	\
-				(_static #0) attachTo [_this, [0.16, -2.15, 1]];	\
-				_this addEventHandler ['Killed', {	\
-					params ['_unit'];	\
-					((attachedObjects _unit)#0) setDamage 1;	\
-				}];	\
-			};";
-		};
-	};
-
-	displayName="Offroad C-UAS/FS 20mm";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
-	crew="B_Soldier_UAV_F";		//crew="";	//dontCreateAI=1;	//doesnt fully work
-};
-class RC_Offroad_cUAS_HMG: RC_Offroad_cUAS
-{
-	class EventHandlers: EventHandlers
-	{
-		class RC_cUAS
-		{
-			init="if (!isServer) exitwith {};	\
-			(_this select 0) spawn {	\
-				private _static = ([[0,0,0], (getDir _this), 'RC_cUAS_Mounted_Static_HMG', west] call BIS_fnc_spawnVehicle);	\
-				(_static #0) attachTo [_this, [0.16, -2.15, 1]];	\
-				_this addEventHandler ['Killed', {	\
-					params ['_unit'];	\
-					((attachedObjects _unit)#0) setDamage 1;	\
-				}];	\
-			};";
-		};
-	};
-
-	displayName="Offroad C-UAS/FS 12.7mm";
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };
