@@ -38,6 +38,12 @@ class RC_UH1M_Base: RC_UH1M_Core
 	transportsoldier=0;		//removes default 1 left pylon seat, replaced with 4 bench seats
 	cargoProxyIndexes[]={10};
 
+	class ViewPilot: ViewPilot
+	{
+		initFov=0.9;
+		maxFov=1.25;
+		minFov=0.25;
+	};
 
 	class AnimationSources: AnimationSources
 	{

@@ -1,11 +1,18 @@
-//class ViewPilot;
-class Viewoptics;
+class ViewPilot;
+class ViewOptics;
 
 class Turrets;
+//class CargoTurret;
+class CargoTurret_01;
+class CargoTurret_02;
+class CargoTurret_03;
+class CargoTurret_04;
+class CargoTurret_05;
+class CargoTurret_06;
 class CopilotTurret;
-class CargoTurret;
-class OpticsIn;
-class Wide;
+class MainTurret;
+class RightDoorGun;
+
 class Components;
 class HitPoints;
 class AnimationSources;

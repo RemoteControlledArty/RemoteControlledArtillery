@@ -1,5 +1,6 @@
 class UserActions: UserActions
 {
+	/*
 	class ResetCameraDir
 	{
 		displayName="Reset Camera Dir";
@@ -12,6 +13,7 @@ class UserActions: UserActions
 		condition="(this isEqualTo vehicle player) && (currentPilot this isNotEqualTo player) && (commander this isEqualTo player) && (!isRemoteControlling player)";
 		statement="this lockCameraTo [this modelToWorld [0, 100, 70], [0], true]";
 	};
+	*/
 	/*
 	class MFD_Toggle
 	{
@@ -46,4 +48,19 @@ class UserActions: UserActions
 		hideOnUse=1;
 	};
 	//*/
+
+	class ToggleLight
+	{
+		displayName="removed";
+		condition = "false";
+		statement="if (true) exitwith {};";
+		position="";
+		showWindow=0;
+		radius=1;
+		priority=10.5;
+		onlyforplayer=1;
+	};
+	class TogglePIP: ToggleLight {};
+	class HUDon: ToggleLight {};
+	class HUDoff: ToggleLight {};
 };

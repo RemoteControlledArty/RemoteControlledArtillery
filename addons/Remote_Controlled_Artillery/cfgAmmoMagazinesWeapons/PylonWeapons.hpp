@@ -26,8 +26,11 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 	{
 		//"RC_PylonM_300Rnd_20mm_Aegis",
 		"RC_PylonM_300Rnd_20mm",
+		"RC_PylonM_400Rnd_20mm",
 		"RC_PylonM_250Rnd_25mm",
-		"RC_PylonM_200Rnd_30mm"
+		"RC_PylonM_350Rnd_25mm",
+		"RC_PylonM_200Rnd_30mm",
+		"RC_PylonM_300Rnd_30mm"
 	};
 	modes[]=
 	{
@@ -64,8 +67,11 @@ class RC_PylonW_Avtopushka: RC_PylonW_TwinCannon
 	magazines[]=
 	{
 		"RC_PylonM_300Rnd_20mm_O",
+		"RC_PylonM_400Rnd_20mm_O",
 		"RC_PylonM_250Rnd_25mm_O",
-		"RC_PylonM_200Rnd_30mm_O"
+		"RC_PylonM_350Rnd_25mm_O",
+		"RC_PylonM_200Rnd_30mm_O",
+		"RC_PylonM_300Rnd_30mm_O"
 	};
 	class manual: manual
 	{

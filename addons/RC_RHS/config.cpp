@@ -270,6 +270,17 @@ class CfgFunctions
 */
 
 
+class RscInGameUI
+{
+	class RHS_RscUH1Y_Observer;
+	class RC_RHS_RscUH1Y_Observer: RHS_RscUH1Y_Observer
+	{
+		onLoad = "['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');";
+		onUnload = "[""onUnload"",_this,""RscUnitInfo"",'IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay')";
+	};
+};
+
+
 class CfgEditorSubcategories
 {
 	//class RC_RHS_A_subcat {displayname="RHS Arid";};
@@ -325,9 +336,9 @@ class CfgVehicles
 	#include "\RC_RHS\cfgVehicles\H6M.hpp"
 	#include "\RC_RHS\cfgVehicles\MH80M.hpp"
 	#include "\RC_RHS\cfgVehicles\Ka60M.hpp"
+	#include "\RC_RHS\cfgVehicles\H1M.hpp"
 
 	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
-	#include "\RC_RHS\cfgVehicles\H1M.hpp"
 	
 	//#include "\RC_RHS\cfgVehicles\ASV.hpp"
 	//#include "\RC_RHS\cfgVehicles\HIMARS.hpp"

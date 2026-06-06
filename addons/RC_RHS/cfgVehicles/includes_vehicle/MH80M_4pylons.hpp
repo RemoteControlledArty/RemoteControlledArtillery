@@ -41,7 +41,7 @@ class TransportPylonsComponent
 		{
 			priority			= 1;
 			UIposition[] 		= {0.555,0.37};
-			attachment			= "RC_PylonM_200Rnd_30mm";
+			attachment			= "RC_PylonM_300Rnd_30mm";
 		};
 		class pylon3: pylon2
 		{
@@ -65,7 +65,7 @@ class TransportPylonsComponent
 			attachment[] =
 			{
 				"RC_PylonM_12Rnd_APKWS",
-				"RC_PylonM_200Rnd_30mm",
+				"RC_PylonM_300Rnd_30mm",
 				"RC_PylonM_19Rnd_Hydra_MP",
 				"RC_PylonM_2Rnd_AGM114K"
 			};
@@ -76,7 +76,7 @@ class TransportPylonsComponent
 			attachment[] =
 			{
 				"RC_RHS_PylonM_8Rnd_DAGR",
-				"RC_PylonM_200Rnd_30mm",
+				"RC_PylonM_300Rnd_30mm",
 				"RC_PylonM_19Rnd_Hydra_MP",
 				"RC_PylonM_2Rnd_AGM114K"
 			};

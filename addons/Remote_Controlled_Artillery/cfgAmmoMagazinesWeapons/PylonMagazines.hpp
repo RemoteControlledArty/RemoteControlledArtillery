@@ -43,6 +43,11 @@ class RC_PylonM_300Rnd_20mm: RC_PylonM_Autocannon_base
 		"OM_H"
 	};
 };
+class RC_PylonM_300Rnd_20mm: RC_PylonM_300Rnd_20mm
+{
+	displayName="> 20mm MP-QF 400x";
+	count=400;
+};
 class RC_PylonM_250Rnd_25mm: RC_PylonM_300Rnd_20mm
 {
 	displayName="> 25mm MP-QF 250x";
@@ -55,6 +60,11 @@ class RC_PylonM_250Rnd_25mm: RC_PylonM_300Rnd_20mm
 	{
 		"OM_H"
 	};
+};
+class RC_PylonM_350Rnd_25mm: RC_PylonM_250Rnd_25mm
+{
+	displayName="> 25mm MP-QF 350x";
+	count=350;
 };
 //class RC_PylonM_200Rnd_25mm: RC_PylonM_250Rnd_25mm {count=200;};
 class RC_PylonM_200Rnd_30mm: RC_PylonM_300Rnd_20mm
@@ -70,6 +80,11 @@ class RC_PylonM_200Rnd_30mm: RC_PylonM_300Rnd_20mm
 		"OM_H"
 	};
 };
+class RC_PylonM_300Rnd_30mm: RC_PylonM_200Rnd_30mm
+{
+	displayName="> 30mm MP-QF 300x";
+	count=300;
+};
 //class RC_PylonM_150Rnd_30mm: RC_PylonM_200Rnd_30mm {count=150;};
 
 
@@ -84,6 +99,11 @@ class RC_PylonM_300Rnd_20mm_O: RC_PylonM_300Rnd_20mm
 		"OM_H_O"
 	};
 };
+class RC_PylonM_300Rnd_20mm_O: RC_PylonM_300Rnd_20mm_O
+{
+	displayName="> 20mm MP-QF 400x";
+	count=400;
+};
 class RC_PylonM_250Rnd_25mm_O: RC_PylonM_250Rnd_25mm
 {
 	descriptionShort="25mm Avtopushka";
@@ -95,6 +115,11 @@ class RC_PylonM_250Rnd_25mm_O: RC_PylonM_250Rnd_25mm
 		"OM_H_O"
 	};
 };
+class RC_PylonM_350Rnd_25mm_O: RC_PylonM_250Rnd_25mm_O
+{
+	displayName="> 25mm MP-QF 350x";
+	count=350;
+};
 class RC_PylonM_200Rnd_30mm_O: RC_PylonM_200Rnd_30mm
 {
 	descriptionShort="30mm Avtopushka";
@@ -105,6 +130,11 @@ class RC_PylonM_200Rnd_30mm_O: RC_PylonM_200Rnd_30mm
 	{
 		"OM_H_O"
 	};
+};
+class RC_PylonM_300Rnd_30mm_O: RC_PylonM_200Rnd_30mm_O
+{
+	displayName="> 30mm MP-QF 300x";
+	count=300;
 };
 
 

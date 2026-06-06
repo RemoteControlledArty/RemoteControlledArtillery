@@ -12,7 +12,16 @@ class RC_Ripsaw_Fetch: qav_ripsaw_Mk44
 	class AnimationSources;
 	class TextureSources;
 
-	//class HitPoints;
+	class HitPoints;
+	class HitEngine;
+	class HitFuel;
+	class HitHull;
+	class HitLTrack;
+	class HitRTrack;
+
+	class steel_hull;
+	class skirts;
+	class steel_skirts;
 
 	scope=0;
 	scopeCurator=0;
@@ -45,6 +54,8 @@ class RC_Ripsaw_Core: RC_Ripsaw_Fetch
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	lockDetectionSystem="2+4+8";
+	class Reflectors {};	//removed, otherwise they are automatically on at night
+	aggregateReflectors[]={{""}};
 
 	author="Ascent";
 
@@ -56,11 +67,46 @@ class RC_Ripsaw_Core: RC_Ripsaw_Fetch
 	smokeLauncherVelocity=8;
 	smokeLauncherAngle=180;
 
-	/*
+	//armor=200;	//200 	//btr 280
+
 	class HitPoints: HitPoints
 	{
+		class HitHull: HitHull
+		{
+			armor = -400;	//2*200=-400		//btr 1.6*280=-448
+			explosionShielding = 0.2;
+			minimalHit = 0.2;
+			passThrough = 1;	//1
+		};
+		class HitEngine: HitEngine
+		{
+			armor = -105;	//-5	//btr 0.75*280=-210
+			explosionShielding = 0.2;
+			minimalHit = 0.1;
+			passThrough = 0;
+		};
+		class HitFuel: HitFuel
+		{
+			armor = -105;	//0.5	//btr 0.75*280=-210
+			explosionShielding = 0.6;
+			minimalHit = 0.1;
+			passThrough = 0;
+		};
+		class HitLTrack: HitLTrack
+		{
+			armor = -300;	//-250
+			explosionShielding = 0.4;
+			minimalHit = 0.08;
+			passThrough = 0;
+		};
+		class HitRTrack: HitRTrack
+		{
+			armor = -300;	//-250
+			explosionShielding = 0.4;
+			minimalHit = 0.08;
+			passThrough = 0;
+		};
 	};
-	*/
 };
 
 
@@ -148,6 +194,14 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 		};
 	};
 
+	animationList[]=
+	{
+		"bashbar", 1,
+		"steel_hull", 1,
+		"skirts", 1,
+		"steel_skirts", 1
+	};
+
 	class AnimationSources: AnimationSources
 	{
 		class 30mm_recoil
@@ -174,6 +228,23 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 		{
 			source="ammorandom";
 			weapon="RC_Ripsaw_coax";
+		};
+
+		class steel_hull: steel_hull
+		{
+			displayName = "Hull Armor [250kg]";
+			initPhase=1;
+			mass = 250;
+		};
+		class skirts: skirts
+		{
+			initPhase=1;
+		};
+		class steel_skirts: steel_skirts
+		{
+			displayName = "Skirt Armor [500kg]";
+			initPhase=1;
+			mass = 500;
 		};
 	};
 
