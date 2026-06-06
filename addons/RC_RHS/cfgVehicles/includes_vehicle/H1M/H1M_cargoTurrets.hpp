@@ -32,9 +32,11 @@ class MainTurret: MainTurret
 {
 	gunnerName="Left Door Gunner";
 	gunnerCompartments="Compartment1";
+	dontCreateAI=1;
 };
 class RightDoorGun: RightDoorGun
 {
 	gunnerName="Right Door Gunner";
 	gunnerCompartments="Compartment1";
+	dontCreateAI=1;
 };
