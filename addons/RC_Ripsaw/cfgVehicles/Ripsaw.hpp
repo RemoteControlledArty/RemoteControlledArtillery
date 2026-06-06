@@ -194,14 +194,6 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 		};
 	};
 
-	animationList[]=
-	{
-		"bashbar", 1,
-		"steel_hull", 1,
-		"skirts", 1,
-		"steel_skirts", 1
-	};
-
 	class AnimationSources: AnimationSources
 	{
 		class 30mm_recoil
@@ -232,9 +224,9 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 
 		class steel_hull: steel_hull
 		{
-			displayName = "Hull Armor [250kg]";
+			displayName="Hull Armor [250kg]";
+			mass=250;
 			initPhase=1;
-			mass = 250;
 		};
 		class skirts: skirts
 		{
@@ -242,10 +234,18 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 		};
 		class steel_skirts: steel_skirts
 		{
-			displayName = "Skirt Armor [500kg]";
+			displayName="Skirt Armor [500kg]";
+			mass=500;
 			initPhase=1;
-			mass = 500;
 		};
+	};
+
+	animationList[]=
+	{
+		"bashbar", 1,
+		"steel_hull", 1,
+		"skirts", 1,
+		"steel_skirts", 1
 	};
 
 	class TextureSources: TextureSources
