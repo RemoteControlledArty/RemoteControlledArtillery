@@ -39,6 +39,10 @@ class RC_Quadbike_Base: RC_Quadbike_Core
 			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
 		*/
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
 
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargoFuel_EH.hpp"
 	};
@@ -254,6 +258,26 @@ class RC_Quadbike_Base: RC_Quadbike_Core
 		{
 			armor=-120;
 			explosionShielding=1;
+		};
+	};
+
+	class Reflectors
+	{
+		class Left
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\reflectorsOff.hpp"
+			
+			direction = "Light_L_end";
+			hitpoint = "Light_L";
+			position = "Light_L";
+			selection = "Light_L";
+		};
+		class Right: Left
+		{
+			direction = "Light_R_end";
+			hitpoint = "Light_R";
+			position = "Light_R";
+			selection = "Light_R";
 		};
 	};
 

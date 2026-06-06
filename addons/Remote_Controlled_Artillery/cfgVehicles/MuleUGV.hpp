@@ -44,8 +44,6 @@ class RC_Mule_UGV_Base: RC_Mule_UGV_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	author="Ascent";
 	editorSubcategory="RC_Support_subcat";
@@ -139,6 +137,38 @@ class RC_Mule_UGV_Base: RC_Mule_UGV_Core
 			armor=-250;
 			minimalHit=-0.045;
 			explosionShielding=1;
+		};
+	};
+
+	class Reflectors
+	{
+		class Left
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\reflectorsOff.hpp"
+			
+			direction = "Light_L_end";
+			hitpoint = "Light_L";
+			position = "Light_L";
+			selection = "Light_L";
+		};
+		class Left2: Left
+		{
+			position = "Light_L_flare";
+		};
+		class Left3: Left
+		{
+			position = "light_L_flare2";
+		};
+		class Right: Left
+		{
+			direction = "Light_R_end";
+			hitpoint = "Light_R";
+			position = "Light_R";
+			selection = "Light_R";
+		};
+		class Right2: Right
+		{
+			position = "Light_R_flare";
 		};
 	};
 

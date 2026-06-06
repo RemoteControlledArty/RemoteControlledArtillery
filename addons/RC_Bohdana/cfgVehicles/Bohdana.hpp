@@ -108,6 +108,41 @@ class RC_Bohdana_Core: RC_Bohdana_Fetch
 		speedZoomMaxFOV = 0;
 		speedZoomMaxSpeed = 1e+10;
 	};
+
+	class Reflectors
+	{
+		class Left
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\reflectorsOff.hpp"
+			
+			direction = "Light_L_end";
+			hitpoint = "Light_L";
+			position = "Light_L";
+			selection = "Light_L";
+		};
+		class Left2: Left
+		{
+			position = "Light_L_flare";
+		};
+		class Right: Left
+		{
+			direction = "Light_R_end";
+			hitpoint = "Light_R";
+			position = "Light_R";
+			selection = "Light_R";
+		};
+		class Right2: Right
+		{
+			position = "Light_R_flare";
+		};
+		class Cabin: Left
+		{
+			direction = "cabin_light_dir";
+			hitpoint = "cabin_light";
+			position = "cabin_light";
+			selection = "cabin_light";
+		};
+	};
 };
 
 

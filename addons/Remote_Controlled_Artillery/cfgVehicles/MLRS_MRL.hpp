@@ -449,12 +449,10 @@ class RC_MRL_DIG_I: RC_MRL_base
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
-		/*
 		class RC_LightsOff
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
-		*/
 	};
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
@@ -485,8 +483,6 @@ class RC_MRL_DIG_I: RC_MRL_base
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
 	enableGPS=1;
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	class Components: Components
 	{
@@ -533,6 +529,34 @@ class RC_MRL_DIG_I: RC_MRL_base
 				#include "\Remote_Controlled_Artillery\includes_cfg\UAS_Sensor.hpp"
 				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 			};
+		};
+	};
+
+	class Reflectors
+	{
+		class Left
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\reflectorsOff.hpp"
+
+			direction = "Light_L_end";
+			hitpoint = "Light_L";
+			position = "Light_L";
+			selection = "Light_L";
+		};
+		class Left2: Left
+		{
+			position = "Light_L_flare";
+		};
+		class Right: Left
+		{
+			direction = "Light_R_end";
+			hitpoint = "Light_R";
+			position = "Light_R";
+			selection = "Light_R";
+		};
+		class Right2: Right
+		{
+			position = "Light_R_flare";
 		};
 	};
 

@@ -14,7 +14,14 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		class RC_Respawn
+		{
+			init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		};
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
 	};
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
@@ -170,7 +177,10 @@ class RC_RespawnTruck_A_O: RC_RespawnTruck_A
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		class RC_Respawn
+		{
+			init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		};
 	};
 };
 class RC_RespawnTruck_A_I: RC_RespawnTruck_A
@@ -180,7 +190,10 @@ class RC_RespawnTruck_A_I: RC_RespawnTruck_A
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		class RC_Respawn
+		{
+			init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		};
 	};
 };
 
@@ -209,7 +222,10 @@ class RC_RespawnTruck_WD_O: RC_RespawnTruck_WD
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		class RC_Respawn
+		{
+			init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		};
 	};
 };
 class RC_RespawnTruck_WD_I: RC_RespawnTruck_WD
@@ -219,7 +235,10 @@ class RC_RespawnTruck_WD_I: RC_RespawnTruck_WD
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		class RC_Respawn
+		{
+			init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition;";
+		};
 	};
 };
 
@@ -239,7 +258,14 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		class RC_Respawn
+		{
+			init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		};
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
 	};
 
 	displayName="RC Medical Transporter";
@@ -298,6 +324,34 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 		{
 			"Normal",
 			"NVG"
+		};
+	};
+
+	class Reflectors
+	{
+		class Left
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\reflectorsOff.hpp"
+
+			direction = "Light_L_end";
+			hitpoint = "Light_L";
+			position = "Light_L";
+			selection = "Light_L";
+		};
+		class Left2: Left
+		{
+			position = "Light_L_flare";
+		};
+		class Right: Left
+		{
+			direction = "Light_R_end";
+			hitpoint = "Light_R";
+			position = "Light_R";
+			selection = "Light_R";
+		};
+		class Right2: Right
+		{
+			position = "Light_R_flare";
 		};
 	};
 
@@ -393,7 +447,10 @@ class RC_RespawnTransporter_DIG_O: RC_RespawnTransporter_DIG
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		class RC_Respawn
+		{
+			init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		};
 	};
 };
 class RC_RespawnTransporter_DIG_I: RC_RespawnTransporter_DIG
@@ -403,7 +460,10 @@ class RC_RespawnTransporter_DIG_I: RC_RespawnTransporter_DIG
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		class RC_Respawn
+		{
+			init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		};
 	};
 };
 
@@ -432,7 +492,10 @@ class RC_RespawnTransporter_WD_O: RC_RespawnTransporter_WD
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		class RC_Respawn
+		{
+			init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		};
 	};
 };
 class RC_RespawnTransporter_WD_I: RC_RespawnTransporter_WD
@@ -442,7 +505,10 @@ class RC_RespawnTransporter_WD_I: RC_RespawnTransporter_WD
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		class RC_Respawn
+		{
+			init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		};
 	};
 };
 
@@ -482,7 +548,14 @@ class RC_RespawnVan_WD: RC_RespawnVan_WD_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		class RC_Respawn
+		{
+			init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		};
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
 	};
 
 	displayName="RC Medical Van";
@@ -636,7 +709,10 @@ class RC_RespawnVan_WD_O: RC_RespawnVan_WD
 	side=0;
 	class EventHandlers: EventHandlers
 	{
-		init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		class RC_Respawn
+		{
+			init="[east, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		};
 	};
 };
 class RC_RespawnVan_WD_I: RC_RespawnVan_WD
@@ -646,6 +722,9 @@ class RC_RespawnVan_WD_I: RC_RespawnVan_WD
 	side=2;
 	class EventHandlers: EventHandlers
 	{
-		init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		class RC_Respawn
+		{
+			init="[resistance, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
+		};
 	};
 };

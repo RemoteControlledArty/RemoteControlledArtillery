@@ -52,10 +52,7 @@ class RC_Ripsaw_Core: RC_Ripsaw_Fetch
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\EjectDeadCrew.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
-	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	lockDetectionSystem="2+4+8";
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	author="Ascent";
 
@@ -105,6 +102,40 @@ class RC_Ripsaw_Core: RC_Ripsaw_Fetch
 			explosionShielding = 0.4;
 			minimalHit = 0.08;
 			passThrough = 0;
+		};
+	};
+	
+	class Reflectors
+	{
+		class Left
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\reflectorsOff.hpp"
+			
+			direction = "Light_L_end";
+			hitpoint = "Light_L";
+			position = "Light_L_flare";
+			selection = "Light_L";
+		};
+		class Left2: Left
+		{
+			direction = "Light2_L_end";
+			hitpoint = "Light2_L";
+			position = "Light2_L_flare";
+			selection = "Light2_L";
+		};
+		class Right: Left
+		{
+			direction = "Light_R_end";
+			hitpoint = "Light_R";
+			position = "Light_R_flare";
+			selection = "Light_R";
+		};
+		class Right2: Left
+		{
+			direction = "Light2_R_end";
+			hitpoint = "Light2_R";
+			position = "Light2_R_flare";
+			selection = "Light2_R";
 		};
 	};
 };
@@ -234,8 +265,8 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 		};
 		class steel_skirts: steel_skirts
 		{
-			displayName="Skirt Armor [500kg]";
-			mass=500;
+			displayName="Skirt Armor [250kg]";
+			mass=250;
 			initPhase=1;
 		};
 	};

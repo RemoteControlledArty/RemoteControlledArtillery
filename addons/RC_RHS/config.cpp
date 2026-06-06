@@ -165,11 +165,13 @@ class CfgPatches
 			"RC_MELB_OM_MH6M_O",
 			"RC_MELB_OM_MH6M_I",
 			
-			/*
-			"RC_UH1M",
-			"RC_UH1M_O",
-			"RC_UH1M_I",
-			*/
+			"RC_UH1M_DAP",
+			"RC_UH1M_DAP_O",
+			"RC_UH1M_DAP_I",
+
+			"RC_OM_UH1M_DAP",
+			"RC_OM_UH1M_DAP_O",
+			"RC_OM_UH1M_DAP_I",
 
 			"RC_MH80M_DAP",
 			"RC_MH80M_DAP_O",

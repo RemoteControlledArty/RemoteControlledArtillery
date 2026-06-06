@@ -43,7 +43,7 @@ class RC_PylonM_300Rnd_20mm: RC_PylonM_Autocannon_base
 		"OM_H"
 	};
 };
-class RC_PylonM_300Rnd_20mm: RC_PylonM_300Rnd_20mm
+class RC_PylonM_400Rnd_20mm: RC_PylonM_300Rnd_20mm
 {
 	displayName="> 20mm MP-QF 400x";
 	count=400;
@@ -99,7 +99,7 @@ class RC_PylonM_300Rnd_20mm_O: RC_PylonM_300Rnd_20mm
 		"OM_H_O"
 	};
 };
-class RC_PylonM_300Rnd_20mm_O: RC_PylonM_300Rnd_20mm_O
+class RC_PylonM_400Rnd_20mm_O: RC_PylonM_300Rnd_20mm_O
 {
 	displayName="> 20mm MP-QF 400x";
 	count=400;

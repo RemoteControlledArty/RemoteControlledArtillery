@@ -107,32 +107,30 @@ class RC_UH1M_DAP_I: RC_UH1M_DAP
 };
 
 
-/*
-//AH optionally manned
-class RC_MELB_OM_AH1M_DAP_UV: RC_MELB_AH1M_Base
+//optionally manned
+class RC_OM_UH1M_DAP_UV: RC_UH1M_Base
 {
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_UV_conversion.hpp"
 
-	displayName="OM AH-6M DAP - Little Bird";
+	displayName="RC UH-1M DAP - Huey";
 };
-class RC_MELB_OM_AH1M_DAP: RC_MELB_OM_AH1M_DAP_UV
+class RC_OM_UH1M_DAP: RC_OM_UH1M_DAP_UV
 {
 	scope=2;			//2
 	scopeCurator=2;		//2
 	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsB.hpp"
 };
-class RC_MELB_OM_AH1M_DAP_O: RC_MELB_OM_AH1M_DAP
+class RC_OM_UH1M_DAP_O: RC_OM_UH1M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsO.hpp"
 };
-class RC_MELB_OM_AH1M_DAP_I: RC_MELB_OM_AH1M_DAP
+class RC_OM_UH1M_DAP_I: RC_OM_UH1M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsI.hpp"
 };
-*/

@@ -38,6 +38,10 @@ class RC_MRZR_Base: RC_MRZR_Core
 			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
 		*/
+		class RC_LightsOff
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		};
 
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargoFuel_EH.hpp"
 	};
@@ -309,6 +313,26 @@ class RC_MRZR_Base: RC_MRZR_Core
 		{
 			armor=-300;
 			explosionShielding=1;
+		};
+	};
+
+	class Reflectors
+	{
+		class LSvetla
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\reflectorsOff.hpp"
+			
+			direction = "konec L svetla";
+			hitpoint = "L svetlo";
+			position = "L svetlo";
+			selection = "L svetlo";
+		};
+		class RSvetla: LSvetla
+		{
+			direction = "konec P svetla";
+			hitpoint = "P svetlo";
+			position = "P svetlo";
+			selection = "P svetlo";
 		};
 	};
 

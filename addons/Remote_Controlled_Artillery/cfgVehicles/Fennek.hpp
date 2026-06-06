@@ -51,8 +51,6 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 	//PIP2_pos, PIP3_pos, mirrors, obstructed by bars
 	//PIP0_pos, PIP0_dir, moves with turret
 	//pos commander, pos commander dir
-	class Reflectors {};	//removed, otherwise they are automatically on at night
-	aggregateReflectors[]={{""}};
 
 	faction="RemoteControlled_B";
 	author="Ascent";
@@ -307,6 +305,36 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 		{
 			armor=-400;
 			explosionShielding=1;
+		};
+	};
+
+	class Reflectors
+	{
+		class Left
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\reflectorsOff.hpp"
+
+			direction = "Light_L_end";
+			hitpoint = "Light_L";
+			position = "Light_L";
+			selection = "Light_L";
+		};
+		class Left2: Left
+		{
+			direction = "Light_L_end2";
+			position = "Light_L2";
+		};
+		class Right: Left
+		{
+			direction = "Light_R_end";
+			hitpoint = "Light_R";
+			position = "Light_R";
+			selection = "Light_R";
+		};
+		class Right2: Right
+		{
+			direction = "Light_R_end2";
+			position = "Light_R2";
 		};
 	};
 
