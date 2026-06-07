@@ -44,7 +44,7 @@ class RC_8Rnd_30mm_Slug: 5Rnd_25x40mm_HE
 	displayNameShort = "30mm Slug";
 	descriptionShort = "Caliber: 30mm Slug<br />Rounds: 8 <br />Used in: M30 Bolter";
 	count = 8;
-	initSpeed = 500;
+	initSpeed = 800;
 	tracersEvery = 1;
 };
 /*
@@ -54,7 +54,7 @@ class RC_6Rnd_30mm_Slug: RC_8Rnd_30mm_Slug
 	displayNameShort = "30mm Slug HV";
 	descriptionShort = "Caliber: 30mm Slug (High Velocity)<br />Rounds: 6 <br />Used in: M30 Bolter";
 	count = 6;
-	initSpeed = 600;
+	initSpeed = 800;
 };
 class RC_12Rnd_30mm_MetalStormSlug: RC_8Rnd_30mm_Slug
 {
@@ -75,7 +75,7 @@ class RC_8Rnd_30mm_BuckshotClose: 5Rnd_25x40mm_HE
 	displayNameShort = "30mm BuckshotC";
 	descriptionShort = "Caliber: 30mm Buckshot (close)<br />Rounds: 8 <br />Used in: M30 Bolter";
 	count = 8;
-	initSpeed = 400;
+	initSpeed = 500;
 	tracersEvery = 0;
 };
 class RC_8Rnd_30mm_BuckshotFar: RC_8Rnd_30mm_BuckshotClose
