@@ -11,8 +11,7 @@ private _connected = !isNull _currentUV;
 if (isRemoteControlling player) then {	//systemchat "1 !RC";
 
 	if (_currentUV isEqualTo _primaryUV) then {	//systemchat "2";
-
-		//here to not close previous arty UI (closed when not RCing) when swapping to primary spotting UV
+		
 		call RC_fnc_RC_stopRC;
 	} else {	//systemchat "3";
 
@@ -23,14 +22,7 @@ if (isRemoteControlling player) then {	//systemchat "1 !RC";
 			player setVariable ["RC_previous_UV_seat", getConnectedUAVUnit player];	 //able to set seat for direct control
 		};
 
-		if ([_primaryUV] call RC_fnc_RC_isValidUV) then {	//systemchat "6";
-
-			[_primaryUV, _primaryUV_seat] call RC_fnc_RC_connectToUV;
-		} else {	//systemchat "7";
-			
-			//here to not close previous arty UI (closed when not RCing) when swapping to primary spotting UV
-			call RC_fnc_RC_stopRC;
-		};
+		call RC_fnc_RC_stopRC;
 	};
 } else {	//systemchat "8 RC";
 

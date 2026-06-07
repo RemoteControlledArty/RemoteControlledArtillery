@@ -92,15 +92,16 @@ class RC_Quadbike_Base: RC_Quadbike_Core
 
 	class PlayerSteeringCoefficients
 	{
-		turnIncreaseConst=0.8;	//0.8
-		turnIncreaseLinear=2;
-		turnIncreaseTime=1;
+		//nothing had desirable effect at higher speeds to smooth A/D tap-steering
+		turnIncreaseConst=0.8;	//0.8	//MRZR 1
+		turnIncreaseLinear=2;	//2?	//MRZR 1
+		turnIncreaseTime=1;		//1		//MRZR 0
 
-		turnDecreaseConst=9;
-		turnDecreaseLinear=0;
-		turnDecreaseTime=0;
+		turnDecreaseConst=9;	//9		//MRZR 5
+		turnDecreaseLinear=0;	//0		//MRZR 0
+		turnDecreaseTime=0;		//0		//MRZR 0
 
-		maxTurnHundred=0.5;	//0.8
+		maxTurnHundred=0.8;		//0.8	//MRZR 1
 	};
 
 	class Turrets: Turrets
@@ -116,7 +117,7 @@ class RC_Quadbike_Base: RC_Quadbike_Core
 			gunnerAction = "driver_quadbike";				//Driver_MBT_03_cannon_F_out
 			gunnerInAction = "";							//Driver_MBT_03_cannon_F_in
 			gunnerLeftHandAnimName = "drivewheel";			//drivewheel
-			gunnerRightHandAnimName = "drivewheel";		//drivewheel
+			gunnerRightHandAnimName = "drivewheel";			//drivewheel
 			gunnerLeftLegAnimName = "";						//pedal_brake
 			gunnerRightLegAnimName = "pedal_thrust";		//pedal_thrust
 
