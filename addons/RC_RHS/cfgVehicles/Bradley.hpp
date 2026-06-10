@@ -177,7 +177,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 						"Ti"
 					};
 					thermalMode[]={0};
-					gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
 					gunnerOpticsEffect[]={};
 					hitPoint="Hit_Optics_Gnr";
 				};
@@ -229,7 +229,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 								"Ti"
 							};
 							thermalMode[]={0};
-							gunnerOpticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
 							gunnerOpticsEffect[]={};
 							hitPoint="Hit_Optics_Cdr_CIV";
 						};
@@ -245,6 +245,64 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 						"Laserbatteries",
 						"rhsusf_mag_L8A3_8",
 						"rhsusf_mag_L8A3_8"
+					};
+				};
+				class SL_Seat
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+
+					gunnerName="SL";
+					proxyIndex=1;
+					gunnerCompartments="Compartment1";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
+					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
+
+							minAngleX=-30;	//?
+							maxAngleX=30;	//?
+							minAngleY=-100;	//?
+							maxAngleY=100;	//?
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+						};
+					};
+				};
+				class TL_Seat
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+
+					gunnerName="TL";
+					proxyIndex=2;
+					gunnerCompartments="Compartment1";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
+					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
+
+							minAngleX=-30;	//?
+							maxAngleX=30;	//?
+							minAngleY=-100;	//?
+							maxAngleY=100;	//?
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+						};
 					};
 				};
 			};
