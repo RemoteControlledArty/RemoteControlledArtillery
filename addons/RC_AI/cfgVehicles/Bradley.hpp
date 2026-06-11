@@ -7,6 +7,8 @@ class RC_M2A3_BUSKIII_NLOS_D_B_Core: RC_M2A3_BUSKIII_NLOS_D_B
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
+	class SL_Seat;
+	class TL_Seat;
 	class AnimationSources;
 	scope=0;
 	scopeCurator=0;
@@ -77,6 +79,8 @@ class RC_AI_B_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_NLOS_D_B_Core
 					dontCreateAI=0;	//1
 					commanding=2;	//2
 				};
+				class SL_Seat: SL_Seat {};
+				class TL_Seat: TL_Seat {};
 			};
 		};
 	};

@@ -397,6 +397,14 @@ class CfgPatches
 			"RC_OMH_MedEvacPod_blk_O",
 			"RC_OMH_MedEvacPod_blk_I",
 
+			"RC_UH80M",
+			"RC_UH80M_O",
+			"RC_UH80M_I",
+
+			"RC_OM_UH80M",
+			"RC_OM_UH80M_O",
+			"RC_OM_UH80M_I",
+
 			"RC_MH80M_DAP",
 			"RC_MH80M_DAP_O",
 			"RC_MH80M_DAP_I",

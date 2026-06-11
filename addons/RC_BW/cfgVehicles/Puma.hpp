@@ -208,10 +208,14 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 				class SL_Seat
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 
 					gunnerName="SL";
 					proxyIndex=1;
+					memoryPointsGetInGunner="pos cargo";
+					memoryPointsGetInGunnerDir="pos cargo dir";
+					memoryPointsGetInGunnerPrecise="pos cargo";
+					
 					gunnerCompartments="Compartment1";
 					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
 					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -237,10 +241,14 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 				class TL_Seat
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 
 					gunnerName="TL";
 					proxyIndex=2;
+					memoryPointsGetInGunner="pos cargo";
+					memoryPointsGetInGunnerDir="pos cargo dir";
+					memoryPointsGetInGunnerPrecise="pos cargo";
+
 					gunnerCompartments="Compartment1";
 					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
 					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";

@@ -49,3 +49,20 @@ class RC_I_HeliPilot: I_Helipilot_F
 	displayName="Heli Pilot";
 	#include "\Remote_Controlled_Artillery\includes_cfg\heliPilotChanges.hpp"
 };
+
+
+class RC_B_DoorGunner: RC_B_HeliPilot
+{
+	displayName="Door Gunner";
+	#include "\Remote_Controlled_Artillery\includes_cfg\doorGunnerChanges.hpp"
+};
+class RC_O_DoorGunner: RC_O_HeliPilot
+{
+	displayName="Door Gunner";
+	#include "\Remote_Controlled_Artillery\includes_cfg\doorGunnerChanges.hpp"
+};
+class RC_I_DoorGunner: RC_I_HeliPilot
+{
+	displayName="Door Gunner";
+	#include "\Remote_Controlled_Artillery\includes_cfg\doorGunnerChanges.hpp"
+};

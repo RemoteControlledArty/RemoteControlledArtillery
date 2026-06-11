@@ -206,9 +206,9 @@ memoryPointGun = "kulas";						//gun_muzzle
 memoryPointGunnerOptics = "gunnerview";			//gunnerview
 memoryPointGunnerOutOptics = "";				//
 
-memoryPointsGetInGunner = "pos driver";			//pos cargo
-memoryPointsGetInGunnerDir = "pos driver dir";	//pos cargo dir
-memoryPointsGetInGunnerPrecise = "pos driver";	//pos cargo
+//memoryPointsGetInGunner = "pos driver";			//pos cargo
+//memoryPointsGetInGunnerDir = "pos driver dir";	//pos cargo dir
+//memoryPointsGetInGunnerPrecise = "pos driver";	//pos cargo
 
 
 /*

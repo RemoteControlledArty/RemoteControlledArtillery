@@ -250,10 +250,14 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 				class SL_Seat
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 
 					gunnerName="SL";
 					proxyIndex=1;
+					memoryPointsGetInGunner="pos cargo";
+					memoryPointsGetInGunnerDir="pos cargo dir";
+					memoryPointsGetInGunnerPrecise="pos cargo";
+					
 					gunnerCompartments="Compartment1";
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
 					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
@@ -279,10 +283,14 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 				class TL_Seat
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_FSV_gunner.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner.hpp"
 
 					gunnerName="TL";
 					proxyIndex=2;
+					memoryPointsGetInGunner="pos cargo";
+					memoryPointsGetInGunnerDir="pos cargo dir";
+					memoryPointsGetInGunnerPrecise="pos cargo";
+
 					gunnerCompartments="Compartment1";
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
 					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";

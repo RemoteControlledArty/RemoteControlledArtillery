@@ -15,7 +15,7 @@ weapons[]=
 };
 magazines[]=
 {
-	"RC_PylonM_3000Rnd_338_SLAP",
+	"RC_PylonM_3000Rnd_338_SLAP_T_R",
 	"Laserbatteries",
 	"168Rnd_CMFlare_Chaff_Magazine"
 };

@@ -286,7 +286,9 @@ class RC_PylonW_338_Minigun: RC_PylonW_338_Minigun_Base
 	ballisticsComputer=8;
 	magazines[]=
 	{
-		"RC_PylonM_3000Rnd_338_SLAP"
+		"RC_PylonM_3000Rnd_338_SLAP_T_R",
+		"RC_PylonM_3000Rnd_338_SLAP_T_G",
+		"RC_PylonM_3000Rnd_338_SLAP_T_Y"
 	};
 	modes[]=
 	{

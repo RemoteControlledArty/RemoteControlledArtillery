@@ -2,6 +2,8 @@ class B_Heli_Transport_01_pylons_F;
 class RC_MH80M_DAP_Core: B_Heli_Transport_01_pylons_F
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_fetch.hpp"
+	class CargoTurret_01;
+	class CargoTurret_02;
 };
 class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 {
@@ -47,6 +49,7 @@ class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 class RC_MH80M_DAP: RC_MH80M_DAP_Base
 {
 	displayName="MH-80M DAP - Ghost Hawk"
+	author="Ascent";
 
 	scope=2;			//2
 	scopeCurator=2;		//2
@@ -91,6 +94,155 @@ class RC_OM_MH80M_DAP_O: RC_OM_MH80M_DAP
 };
 class RC_OM_MH80M_DAP_I: RC_OM_MH80M_DAP
 {
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
+};
+
+
+//unarmed
+class B_Heli_Transport_01_F;
+class RC_UH80M_Core: B_Heli_Transport_01_F
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_fetch.hpp"
+	class MainTurret;
+	class RightDoorGun;
+};
+class RC_UH80M_Base: RC_UH80M_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_main.hpp"
+	editorSubcategory="RC_Heli_unarmed_subcat";
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Main.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotView.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamBase.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFixed.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFree.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_hitPoints.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_userActions.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+
+	hiddenSelectionsTextures[]=
+	{
+		"\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_CO.paa",
+		"\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext02_CO.paa"
+	};
+	textureList[]=
+	{
+		"Black",
+		1
+	};
+
+	class Components: Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
+	};
+	class Turrets: Turrets
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_copilotTurret.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\UH80M_cargoTurrets.hpp"
+	};
+	/*
+	class AnimationSources: AnimationSources
+	{
+		//DOOR
+	};
+	*/
+};
+
+
+//manned
+class RC_UH80M: RC_UH80M_Base
+{
+	displayName="UH-80M - Ghost Hawk"
+	author="Ascent";
+
+	scope=2;			//2
+	scopeCurator=2;		//2
+	forceInGarage=1;	//1
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsB.hpp"
+};
+class RC_UH80M_O: RC_UH80M
+{
+	class Turrets: Turrets
+	{
+		gunnerType="RC_O_DoorGunner";
+		class CopilotTurret : CopilotTurret {};
+		class MainTurret: MainTurret {magazines[]={"RC_1500Rnd_338_SLAP_T_G"};};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_1500Rnd_338_SLAP_T_G"};};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsO.hpp"
+};
+class RC_UH80M_I: RC_UH80M
+{
+	class Turrets: Turrets
+	{
+		gunnerType="RC_I_DoorGunner";
+		class CopilotTurret : CopilotTurret {};
+		class MainTurret: MainTurret {magazines[]={"RC_1500Rnd_338_SLAP_T_Y"};};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_1500Rnd_338_SLAP_T_Y"};};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
+};
+
+
+//optionally manned
+class RC_OM_UH80M_UV: RC_UH80M_Base
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_EHs_UV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_UV_conversion.hpp"
+
+	class Turrets: Turrets
+	{
+		class CopilotTurret : CopilotTurret {dontCreateAI=1;};
+		class MainTurret: MainTurret {dontCreateAI=1;};
+		class RightDoorGun: RightDoorGun {dontCreateAI=1;};
+	};
+
+	displayName="RC UH-80M - Ghost Hawk"
+};
+class RC_OM_UH80M: RC_OM_UH80M_UV
+{
+	scope=2;			//2
+	scopeCurator=2;		//2
+	forceInGarage=1;	//1
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsB.hpp"
+};
+class RC_OM_UH80M_O: RC_OM_UH80M
+{
+	class Turrets: Turrets
+	{
+		class CopilotTurret : CopilotTurret {};
+		class MainTurret: MainTurret {magazines[]={"RC_1500Rnd_338_SLAP_T_G"};};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_1500Rnd_338_SLAP_T_G"};};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsO.hpp"
+};
+class RC_OM_UH80M_I: RC_OM_UH80M
+{
+	class Turrets: Turrets
+	{
+		class CopilotTurret : CopilotTurret {};
+		class MainTurret: MainTurret {magazines[]={"RC_1500Rnd_338_SLAP_T_Y"};};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_1500Rnd_338_SLAP_T_Y"};};
+	};
+
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
 };

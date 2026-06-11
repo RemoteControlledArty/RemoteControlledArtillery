@@ -50,11 +50,25 @@ class RC_AW159M: RC_AW159M_Base
 };
 class RC_AW159M_O: RC_AW159M
 {
+	magazines[]=
+	{
+		"RC_PylonM_3000Rnd_338_SLAP_T_G",
+		"Laserbatteries",
+		"168Rnd_CMFlare_Chaff_Magazine"
+	};
+
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
 };
 class RC_AW159M_I: RC_AW159M
 {
+	magazines[]=
+	{
+		"RC_PylonM_3000Rnd_338_SLAP_T_Y",
+		"Laserbatteries",
+		"168Rnd_CMFlare_Chaff_Magazine"
+	};
+
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
 };
@@ -79,11 +93,25 @@ class RC_OM_AW159M: RC_OM_AW159M_UV
 };
 class RC_OM_AW159M_O: RC_OM_AW159M
 {
+	magazines[]=
+	{
+		"RC_PylonM_3000Rnd_338_SLAP_T_G",
+		"Laserbatteries",
+		"168Rnd_CMFlare_Chaff_Magazine"
+	};
+
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
 };
 class RC_OM_AW159M_I: RC_OM_AW159M
 {
+	magazines[]=
+	{
+		"RC_PylonM_3000Rnd_338_SLAP_T_Y",
+		"Laserbatteries",
+		"168Rnd_CMFlare_Chaff_Magazine"
+	};
+
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
 };

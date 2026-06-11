@@ -1,0 +1,20 @@
+linkedItems[]=
+{
+	"V_TacVest_blk",
+	"H_CrewHelmetHeli_B",
+	"ItemMap",
+	"ItemCompass",
+	"ItemWatch",
+	"ItemRadio",
+	"NVGoggles_OPFOR"
+};
+respawnLinkedItems[]=
+{
+	"V_TacVest_blk",
+	"H_CrewHelmetHeli_B",
+	"ItemMap",
+	"ItemCompass",
+	"ItemWatch",
+	"ItemRadio",
+	"NVGoggles_OPFOR"
+};

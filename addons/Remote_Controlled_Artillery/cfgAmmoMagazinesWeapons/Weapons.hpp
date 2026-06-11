@@ -328,6 +328,60 @@ class Improved_FOV_Laserdesignator_Ti_WD: Improved_FOV_Laserdesignator_Ti_A
 };
 
 
+class LMG_Minigun_Transport;
+class RC_338_DoorMinigun_Base: LMG_Minigun_Transport
+{
+	class manual;
+};
+class RC_338_DoorMinigun: RC_338_DoorMinigun_Base
+{
+	displayName=".338NM Minigun";
+	displayNameShort=".338NM Minigun";
+	ballisticsComputer=8;
+	magazines[]=
+	{
+		"RC_1500Rnd_338_SLAP_T_R",
+		"RC_1500Rnd_338_SLAP_T_G",
+		"RC_1500Rnd_338_SLAP_T_Y"
+	};
+	modes[]=
+	{
+		"manual","close","short","medium","far"
+	};
+	class manual: manual
+	{
+		displayName=".338NM";
+		displayNameShort=".338NM";
+	};
+};
+class LMG_Minigun_Transport2;
+class RC_338_DoorMinigun2_Base: LMG_Minigun_Transport2
+{
+	class manual;
+};
+class RC_338_DoorMinigun2: RC_338_DoorMinigun2_Base
+{
+	displayName=".338NM Minigun";
+	displayNameShort=".338NM Minigun";
+	ballisticsComputer=8;
+	magazines[]=
+	{
+		"RC_1500Rnd_338_SLAP_T_R",
+		"RC_1500Rnd_338_SLAP_T_G",
+		"RC_1500Rnd_338_SLAP_T_Y"
+	};
+	modes[]=
+	{
+		"manual","close","short","medium","far"
+	};
+	class manual: manual
+	{
+		displayName=".338NM";
+		displayNameShort=".338NM";
+	};
+};
+
+
 class launch_Vorona_base_F;
 class RC_ATGM_SACLOS: launch_Vorona_base_F
 {
