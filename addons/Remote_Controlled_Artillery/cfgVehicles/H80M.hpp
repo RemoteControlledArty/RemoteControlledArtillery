@@ -25,6 +25,8 @@ class RC_MH80M_DAP_Base: RC_MH80M_DAP_Core
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_userActions.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 
+	radarTargetSize=0.8; 	//0.9-0.7
+
 	class Components: Components
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
@@ -126,6 +128,8 @@ class RC_UH80M_Base: RC_UH80M_Core
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_hitPoints.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_userActions.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+
+	radarTargetSize=0.7; 	//0.7
 
 	hiddenSelectionsTextures[]=
 	{

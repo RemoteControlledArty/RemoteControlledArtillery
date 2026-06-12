@@ -11,7 +11,6 @@ gunnerCanFire=1;
 enableManualFire=1;					//only if copilot is primarygunner & pylons owned by copilot, but then lase is fixed and CCIP is gone
 
 
-radarTargetSize=0.8; 				//0.9-0.7
 bodyFrictionCoef=0.8;				//1
 maxSpeed=350;						//300
 /*
