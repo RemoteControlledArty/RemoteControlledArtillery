@@ -129,7 +129,7 @@ class RC_UH80M_Base: RC_UH80M_Core
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_userActions.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 
-	radarTargetSize=0.7; 	//0.7
+	radarTargetSize=0.6; 	//0.7
 
 	hiddenSelectionsTextures[]=
 	{
