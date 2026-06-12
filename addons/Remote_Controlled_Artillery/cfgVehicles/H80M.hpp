@@ -178,10 +178,9 @@ class RC_UH80M_O: RC_UH80M
 {
 	class Turrets: Turrets
 	{
-		gunnerType="RC_O_DoorGunner";
 		class CopilotTurret : CopilotTurret {};
-		class MainTurret: MainTurret {magazines[]={"RC_1500Rnd_338_SLAP_T_G"};};
-		class RightDoorGun: RightDoorGun {magazines[]={"RC_1500Rnd_338_SLAP_T_G"};};
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
@@ -191,10 +190,9 @@ class RC_UH80M_I: RC_UH80M
 {
 	class Turrets: Turrets
 	{
-		gunnerType="RC_I_DoorGunner";
 		class CopilotTurret : CopilotTurret {};
-		class MainTurret: MainTurret {magazines[]={"RC_1500Rnd_338_SLAP_T_Y"};};
-		class RightDoorGun: RightDoorGun {magazines[]={"RC_1500Rnd_338_SLAP_T_Y"};};
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
@@ -231,8 +229,8 @@ class RC_OM_UH80M_O: RC_OM_UH80M
 	class Turrets: Turrets
 	{
 		class CopilotTurret : CopilotTurret {};
-		class MainTurret: MainTurret {magazines[]={"RC_1500Rnd_338_SLAP_T_G"};};
-		class RightDoorGun: RightDoorGun {magazines[]={"RC_1500Rnd_338_SLAP_T_G"};};
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
@@ -243,8 +241,8 @@ class RC_OM_UH80M_I: RC_OM_UH80M
 	class Turrets: Turrets
 	{
 		class CopilotTurret : CopilotTurret {};
-		class MainTurret: MainTurret {magazines[]={"RC_1500Rnd_338_SLAP_T_Y"};};
-		class RightDoorGun: RightDoorGun {magazines[]={"RC_1500Rnd_338_SLAP_T_Y"};};
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"

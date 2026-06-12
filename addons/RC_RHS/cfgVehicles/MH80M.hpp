@@ -22,7 +22,7 @@ class RC_MH80M_DAP: RC_RHS_MH80M_DAP_Base
 	scopeCurator=2;		//2
 	forceInGarage=1;	//1
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsB.hpp"
 };
 class RC_MH80M_DAP_O: RC_MH80M_DAP

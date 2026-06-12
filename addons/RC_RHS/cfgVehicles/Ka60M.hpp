@@ -22,7 +22,7 @@ class RC_Ka60M: RC_RHS_Ka60M_Base
 	scopeCurator=2;		//2
 	forceInGarage=1;	//1
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"
 };
 class RC_Ka60M_O: RC_Ka60M

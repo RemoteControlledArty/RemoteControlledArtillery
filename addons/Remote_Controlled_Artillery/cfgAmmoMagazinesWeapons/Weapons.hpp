@@ -340,9 +340,9 @@ class RC_338_DoorMinigun: RC_338_DoorMinigun_Base
 	ballisticsComputer=8;
 	magazines[]=
 	{
-		"RC_1500Rnd_338_SLAP_T_R",
-		"RC_1500Rnd_338_SLAP_T_G",
-		"RC_1500Rnd_338_SLAP_T_Y"
+		"RC_2000Rnd_338_SLAP_T_R",
+		"RC_2000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_Y"
 	};
 	modes[]=
 	{
@@ -366,9 +366,9 @@ class RC_338_DoorMinigun2: RC_338_DoorMinigun2_Base
 	ballisticsComputer=8;
 	magazines[]=
 	{
-		"RC_1500Rnd_338_SLAP_T_R",
-		"RC_1500Rnd_338_SLAP_T_G",
-		"RC_1500Rnd_338_SLAP_T_Y"
+		"RC_2000Rnd_338_SLAP_T_R",
+		"RC_2000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_Y"
 	};
 	modes[]=
 	{

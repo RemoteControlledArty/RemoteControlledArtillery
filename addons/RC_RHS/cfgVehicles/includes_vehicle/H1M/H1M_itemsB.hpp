@@ -72,6 +72,6 @@ class TransportBackpacks
 	class _xx_B_Parachute
 	{
 		backpack="RC_LightParachute";
-		count=11;
+		count=13;
 	};
 };

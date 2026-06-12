@@ -3,6 +3,11 @@ class RC_RHS_B_HeliPilot: RC_B_HeliPilot
 {
 	uniformClass="rhs_uniform_g3_blk";
 };
+class RC_B_DoorGunner;
+class RC_RHS_B_DoorGunner: RC_B_DoorGunner
+{
+	uniformClass="rhs_uniform_g3_blk";
+};
 /*
 class RC_O_HeliPilot;
 class RC_RHS_O_HeliPilot: RC_O_HeliPilot

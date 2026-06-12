@@ -28,23 +28,3 @@ class CargoTurret_06: CargoTurret_06
 	gunnerName="L3";
 	gunnerCompartments="Compartment1";
 };
-class MainTurret: MainTurret
-{
-	gunnerName="Left Door Gunner";
-	gunnerCompartments="Compartment1";
-	dontCreateAI=0;
-	
-	weapons[]={"RC_RHS_338_DoorMinigun_1"};
-	magazines[]={"RC_2000Rnd_338_SLAP_T_R"};
-	gunnerType="RC_RHS_B_DoorGunner";
-};
-class RightDoorGun: RightDoorGun
-{
-	gunnerName="Right Door Gunner";
-	gunnerCompartments="Compartment1";
-	dontCreateAI=0;
-
-	weapons[]={"RC_RHS_338_DoorMinigun_2"};
-	magazines[]={"RC_2000Rnd_338_SLAP_T_R"};
-	gunnerType="RC_RHS_B_DoorGunner";
-};

@@ -138,6 +138,73 @@ class RC_RHS_weap_m256_vanilla: rhs_weap_m256_vanilla_base
 */
 
 
+class rhs_weap_m134_minigun_1;
+class RC_RHS_338_DoorMinigun_1_Base: rhs_weap_m134_minigun_1
+{
+	class LowROF;
+	class HighROF;
+};
+class RC_RHS_338_DoorMinigun_1: RC_RHS_338_DoorMinigun_1_Base
+{
+	displayName=".338NM Minigun";
+	displayNameShort=".338NM Minigun";
+	//ballisticsComputer=8;
+	magazines[]=
+	{
+		"RC_2000Rnd_338_SLAP_T_R",
+		"RC_2000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_Y"
+	};
+	modes[]=
+	{
+		"LowROF","HighROF","close","short","medium","far"
+	};
+	class LowROF: LowROF
+	{
+		displayName=".338NM";
+		displayNameShort=".338NM";
+	};
+	class HighROF: HighROF
+	{
+		displayName=".338NM";
+		displayNameShort=".338NM";
+	};
+};
+class rhs_weap_m134_minigun_2;
+class RC_RHS_338_DoorMinigun_2_Base: rhs_weap_m134_minigun_2
+{
+	class LowROF;
+	class HighROF;
+};
+class RC_RHS_338_DoorMinigun_2: RC_RHS_338_DoorMinigun_2_Base
+{
+	displayName=".338NM Minigun";
+	displayNameShort=".338NM Minigun";
+	//ballisticsComputer=8;
+	magazines[]=
+	{
+		"RC_2000Rnd_338_SLAP_T_R",
+		"RC_2000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_Y"
+	};
+	modes[]=
+	{
+		"LowROF","HighROF","close","short","medium","far"
+	};
+	class LowROF: LowROF
+	{
+		displayName=".338NM";
+		displayNameShort=".338NM";
+	};
+	class HighROF: HighROF
+	{
+		displayName=".338NM";
+		displayNameShort=".338NM";
+	};
+};
+
+
+
 class rhs_weap_m256;
 class rhs_weap_m256_base: rhs_weap_m256
 {

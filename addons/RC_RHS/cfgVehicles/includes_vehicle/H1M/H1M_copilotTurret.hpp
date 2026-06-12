@@ -10,7 +10,7 @@ class CopilotTurret: CopilotTurret
 	dontCreateAI=1;
 	canEject=1;
 
-	gunnerName="CoPilot";
+	gunnerName="Copilot";
 	primaryGunner=0;
 	primaryObserver=1;	//test 0, but center cam uses if commander condition
 	gunnerCompartments="Compartment1";

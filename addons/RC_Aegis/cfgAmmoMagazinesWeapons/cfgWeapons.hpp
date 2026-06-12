@@ -24,6 +24,8 @@ class RC_M30: RC_M30_Fetch
 	opticsZoomMax = 0.05;		//0.0625;
 	opticsZoomMin = 0.5;		//0.1875;
 
+	//drySound[] = {"\A3_Aegis\Sounds_F_Aegis\arsenal\weapons\GrenadeLaunchers\XM25\XM25_dry","db-8",1,20};	//,"db-8",1,20
+
 	magazines[] =
 	{
 		"RC_6Rnd_30mm_MPAB_T",
