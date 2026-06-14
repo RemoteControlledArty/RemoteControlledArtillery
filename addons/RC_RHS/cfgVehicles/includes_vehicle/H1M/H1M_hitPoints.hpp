@@ -1,5 +1,5 @@
 //damage
-armor=100; 						//V 35, H 600, RC 70
+armor=100; 						//V 30, H 600
 armorStructural=25;				//V 20, H 4
 damageResistance=0.01039; 		//V 0.01039, H 0.01039
 epeImpulseDamageCoef=0;			//V 20, H 0, RC 0
@@ -35,7 +35,7 @@ class HitPoints: HitPoints
 	class HitHull
 	{
 		armor=-40000;			//V -120, H ?, RC -400000
-		depends="HitEngine";	//V "HitEngine"
+		depends="Total";		//V "Total", LB "HitEngine"
 		radius=0.02;			//V 0.02
 		minimalHit=-0.15;		//V -0.15
 		explosionShielding=1;	//V 1, RC 1
@@ -96,13 +96,15 @@ class HitPoints: HitPoints
 	};
 	class HitFuel
 	{
-		armor=-150;				//V -130, H ?, RC -150
-		radius=0.125;			//V 0.125
-		minimalHit=-0.04;		//V -0.04
-		explosionShielding=1;	//V 0.5, RC 1
-		passThrough=0;			//V 1
+		armor=-150;				//V 3 = -300, H ?, RC -150
+		radius=0.2;				//V 0.2
+		minimalHit=-0.05;		//V -0.05
+		explosionShielding=1;	//V 4, RC 1
+		passThrough=0;			//V 0.5
 		material=51;
 
+		simulation="RHS_Hull_Helicopter";
+		depends="Total";
 		armorComponent = "fuel_hit";
 		name="fuel_hit";
 		convexComponent="fuel_hit";
@@ -110,10 +112,10 @@ class HitPoints: HitPoints
 	};
 	class HitAvionics
 	{
-		armor=-80;					//V 2 = -80, H ?, RC -80
-		radius=0.05;				//V 0.05
-		minimalHit=0.1;				//V 0.1, RC 0.1
-		explosionShielding=1;		//V 0.5, RC 1
+		armor=-80;					//V 1.3 = -39, H ?, RC -80
+		radius=0.25;				//V 0.25
+		minimalHit=0.05;			//V 0.05, RC 0.1
+		explosionShielding=1;		//V 1.5, RC 1
 		passThrough=0;				//V 1, H ?
 		material=51;
 
@@ -123,55 +125,58 @@ class HitPoints: HitPoints
 	};
 	class HitHRotor
 	{
-		armor=-400;					//V 3 = -105, H 10.35, 10.35 = -414, RC = -400
-		radius=0.2;					//V 0.2, H 0.47, RC 0.2
+		armor=-400;					//V 4 = -120, H 10.35, 10.35 = -414, RC = -400
+		radius=0.28;				//V 0.28, H 0.47
 		//minimalHit=0.1;			//V NA, H 0.1, RC 0.1
-		explosionShielding=1.75;	//V 0.5, H 3000, RC 1.75
+		//explosionShielding=1.75;	//V NA, H 3000, RC 1.75
 		passThrough=0;				//V 0.1, H 0, RC 0
 		material=51;				//V 51, H 51
 
-		name="main_rotor_hit";
-		convexComponent="main_rotor_hit";
-		visual="main rotor static";
+		name="velka vrtule";
+		armorComponent="Hit_Rotor_Main";
+		visual="velka vrtule staticka";
 	};
 	class HitVRotor
 	{
-		armor=-200;					//V 1 = -35, H 0.054, 0.81 = -32.4, RC -200
-		radius=0.05;				//V 0.05, H 0.24
+		armor=-200;					//V 3 = -90, H 0.054, 0.81 = -32.4, RC -200
+		radius=0.18;				//V 0.18, H 0.24
 		//minimalHit=0.1;			//V NA, H 0.1, RC 0.1
-		explosionShielding=1.5;		//V 0.8, H 0.27, RC 1.5
-		passThrough=0;				//V 0.3, H 0, RC 0
+		//explosionShielding=1.5;	//V NA, H 0.27, RC 1.5
+		passThrough=0;				//V 0.5, H 0, RC 0
 		material=51;				//V 51, H 51
 
-		name="tail_rotor_hit";
-		convexComponent="tail_rotor_hit";
-		visual="tail rotor static";
+		depends="HitTail";
+		name="mala vrtule";
+		armorComponent="Hit_Rotor_Rear";
+		visual="mala vrtule staticka";
 	};
 	class HitEngine
 	{
-		armor=-40000;			//V 999 = -39960, H 66.6, 999 = -39960, RC -40000
+		armor=-40000;			//V 999 = -29970, H 66.6, 999 = -39960, RC -40000
 		depends="0.5 * (HitEngine1 + HitEngine2)";
-		radius=0.05;			//V 0.05, H 0.05
-		explosionShielding=1;	//V 1, H 1
-		minimalHit=1;			//V 1, H 1
+		radius=0.18;			//V 0.18, H 0.05
+		explosionShielding=1;	//V 0.7, H 1
+		minimalHit=-0.05;		//V -0.05, H 1
 		passThrough=0;			//V 1, H 0, RC 0
 		material=51;			//V 51, H 51
-
+	
 		name="engine_hit";
-		convexComponent="engine_hit";
-		visual="camo2";
+		convexComponent="engine_1_hit";
+		armorComponent="Hit_Engine_2";
+		visual="motor";
 	};
 	class HitEngine1
 	{
-		armor=-43.2;				//V 0.7 = -28, H 0.072, 1.08 = -43.2, RC -35.6
-		radius=0.35;				//V 0.35, H 0.59, RC 0.35
-		explosionShielding=1.73;	//V 3, H 0.46, RC 1.73
-		minimalHit=0.1;				//V 0.1, H 0.1
+		armor=-80;					//V -80, H 0.072, 1.08 = -43.2, RC -80
+		radius=0.18;				//V 0.18, H 0.59
+		explosionShielding=1.73;	//V 0.7, H 0.46, RC 1.73
+		minimalHit=-0.05;			//V -0.05, H 0.1
 		passThrough=0;				//V 1, H 0, RC 0
 		material=51;				//V 51, H 51
 
 		name="engine_1_hit";
 		convexComponent="engine_1_hit";
+		armorComponent = "Hit_Engine_1";
 		visual="motor";
 	};
 	class HitEngine2: HitEngine1
@@ -192,9 +197,9 @@ class HitPoints: HitPoints
 	};
 	class HitMissiles
 	{
-		armor=-28;					//V 0.1 = -3.5, H 0.036, 0.54 = -21.6, RC -28
-		//radius=0.25;				//V NA, H 0.3, RC 0.25
-		minimalHit=0.05;			//V 0.05, H 0.1, RC 0.075
+		armor=-28;					//V 0.1 = -3, H 0.036, 0.54 = -21.6, RC -28
+		//radius=0.25;				//V NA, H 0.3
+		//minimalHit=0.05;			//V NA, H 0.1
 		explosionShielding=0.65;	//V 1, H 0.3, RC 0.65
 		passThrough=0;				//V 0.5, H 0, RC 0
 		material=51;				//V 51, H 51
@@ -389,15 +394,21 @@ class HitPoints: HitPoints
 	};
 	class HitTail
 	{
-		armor=-42;		//V 0.8 = -28, RC -42
-		passThrough=0;	//V 1
+		armor=-80;				//V -80, RC -42
+		radius=0.3;				//0.3
+		minimalHit=-0.2;		//-0.2
+		explosionShielding=1.5;	//3
+		passThrough=0;			//V 0.5
 		material=-1;
 
-		name="tail boom";
+		name="tail_rotor_hit";
+		simulation="RHS_Hull_Helicopter";
+		armorComponent="Hit_Tail";
+		visual="Vis_Tail";
 	};
 	class HitTransmission
 	{
-		armor=-42;		//V 0.8 = -28, RC -42
+		armor=-42;		//V 0.8 = -24, RC -42
 		passThrough=0;	//V 0.8
 		material=-1;
 
@@ -405,7 +416,7 @@ class HitPoints: HitPoints
 	};
 	class HitVStabilizer1
 	{
-		armor=-42;		//V 0.8 = -28, RC -42
+		armor=-42;		//V 0.8 = -24, RC -42
 		passThrough=0;	//V 1
 		material=-1;
 
@@ -421,7 +432,7 @@ class HitPoints: HitPoints
 	};
 	class HitStaticPort
 	{
-		armor=-5.25;		//V 0.1 = -3.5, RC -5.25
+		armor=-5.25;	//V 0.1 = -3.5, RC -5.25
 		passThrough=0;	//V 1
 		material=-1;
 
@@ -429,7 +440,7 @@ class HitPoints: HitPoints
 	};
 	class HitStarter1
 	{
-		armor=-5.25;		//V 0.1 = -3.5, RC -5.25
+		armor=-5.25;	//V 0.1 = -3, RC -5.25
 		passThrough=0;	//V 0
 		material=-1;
 
