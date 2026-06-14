@@ -13,10 +13,10 @@ enableManualFire=1;					//only if copilot is primarygunner & pylons owned by cop
 
 bodyFrictionCoef=0.2;				//H1=1 H80=0.3
 maxSpeed=300;						//200
-liftForceCoef=1;					//1				//1.7
-cyclicAsideForceCoef=1.65;			//1.65			//2
+liftForceCoef=1;					//1
+cyclicAsideForceCoef=1.65;			//1  	//? 1.65
 cyclicForwardForceCoef=1;			//0.9
-backrotorforcecoef=0.89999998;		//0.89999998	//0.89999998	//1.35
+backrotorforcecoef=1;				//1
 startDuration=7.5;					//20
 slingLoadMemoryPoint="slingLoad0";
 slingLoadMaxCargoMass=4000;			//900

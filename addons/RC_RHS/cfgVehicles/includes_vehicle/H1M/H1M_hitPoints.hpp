@@ -13,9 +13,9 @@ hullDamageCauseExplosion=0;		//V 0, H 0
 //hullExplosionDelay[]={,};		//undefined because bool is 0, also hull armor is very high
 
 /*
-replaceDamaged = "";
-replaceDamagedHitpoints[] = {};
-replaceDamagedLimit = 0.9;		//V 0.9, H 0.9
+replaceDamaged="";
+replaceDamagedHitpoints[]={};
+replaceDamagedLimit=0.9;		//V 0.9, H 0.9
 */
 
 /*
@@ -210,7 +210,7 @@ class HitPoints: HitPoints
 	};
 	class HitGear		//landing gear or rotor gearbox?
 	{
-		armor=-60;		//V 0.9 = -31.5, RC -60
+		armor=-60;		//V 0.9 = -27, RC -60
 		passThrough=0;	//V 0
 		material=-1;
 
@@ -320,54 +320,6 @@ class HitPoints: HitPoints
 			};
 		};
 	};
-	class HitPylon3: HitPylon1
-	{
-		name="hit_pylon_3";
-
-		class DestructionEffects: DestructionEffects
-		{
-			class RHS_Pylon_Flash: RHS_Pylon_Flash
-			{
-				position="fx_pylon_3";
-			};
-			class RHS_Pylon_Shard: RHS_Pylon_Shard
-			{
-				position="fx_pylon_3";
-			};
-			class RHS_Pylon_Smoke: RHS_Pylon_Smoke
-			{
-				position="fx_pylon_3";
-			};
-			class RHS_Pylon_Sound: RHS_Pylon_Sound
-			{
-				position="fx_pylon_3";
-			};
-		};
-	};
-	class HitPylon4: HitPylon1
-	{
-		name="hit_pylon_4";
-
-		class DestructionEffects: DestructionEffects
-		{
-			class RHS_Pylon_Flash: RHS_Pylon_Flash
-			{
-				position="fx_pylon_4";
-			};
-			class RHS_Pylon_Shard: RHS_Pylon_Shard
-			{
-				position="fx_pylon_4";
-			};
-			class RHS_Pylon_Smoke: RHS_Pylon_Smoke
-			{
-				position="fx_pylon_4";
-			};
-			class RHS_Pylon_Sound: RHS_Pylon_Sound
-			{
-				position="fx_pylon_4";
-			};
-		};
-	};
 
 
 	class HitHydraulics
@@ -424,7 +376,7 @@ class HitPoints: HitPoints
 	};
 	class HitPitotTube
 	{
-		armor=-30;		//V 0.5 = -17.5, RC -30
+		armor=-30;		//V 0.5 = -15, RC -30
 		passThrough=0;	//V 0.2
 		material=-1;
 
@@ -432,7 +384,7 @@ class HitPoints: HitPoints
 	};
 	class HitStaticPort
 	{
-		armor=-5.25;	//V 0.1 = -3.5, RC -5.25
+		armor=-5.25;	//V 0.1 = -3, RC -5.25
 		passThrough=0;	//V 1
 		material=-1;
 
@@ -456,8 +408,8 @@ class HitPoints: HitPoints
 	};
 	class HitLight
 	{
-		armor=-3.5;		//V 0.1 = -3.5
-		passThrough=0;
+		armor=-3;		//V 0.1 = -3
+		passThrough=0;	//0
 		material=-1;
 
 		name="light";
@@ -466,7 +418,7 @@ class HitPoints: HitPoints
 
 	class HitLGlass
 	{
-		armor=-5.25;				//V 0.1 = -3.5, H ?, RC -5.25
+		armor=-5.25;			//V 0.1 = -3, H ?, RC -5.25
 		explosionShielding=1;	//V 1, H ?
 		passThrough=0;			//V 0, H ?
 		material=51;
@@ -485,52 +437,218 @@ class HitPoints: HitPoints
 
 	class HitGlass1
 	{
-		armor=-70;				//V 2 = -70
-		radius=0.15;			//V 0.15
+		armor=-30;				//V 1 = -30
+		radius=0.37;			//V 0.37
+		minimalHit=0.025;		//V 0.025
 		explosionShielding=2;	//V 2
 		passThrough=0;
 		material=-1;
 
 		name="glass1";
-		convexComponent="glass1";
 		visual="glass1";
+
+		class DestructionEffects
+		{
+			ammoExplosionEffect="";
+
+			class BrokenGlass1
+			{
+				intensity=0.15;
+				interval=1;
+				lifeTime=0.05;
+				simulation="particles";
+				position="GlassEffects1";
+				type="BrokenGlass1NS";
+			};
+			class BrokenGlass1S: BrokenGlass1 {type="BrokenGlass1SS";};
+			class BrokenGlass2: BrokenGlass1 {type="BrokenGlass2NS";};
+			class BrokenGlass2S: BrokenGlass1 {type="BrokenGlass2SS";};
+			class BrokenGlass3: BrokenGlass1 {type="BrokenGlass3NS";};
+			class BrokenGlass3S: BrokenGlass1 {type="BrokenGlass3SS";};
+			class BrokenGlass4: BrokenGlass1 {type="BrokenGlass4NS";};
+			class BrokenGlass4S: BrokenGlass1 {type="BrokenGlass4SS";};
+			class BrokenGlass5: BrokenGlass1 {type="BrokenGlass5NS";};
+			class BrokenGlass5S: BrokenGlass1 {type="BrokenGlass5SS";};
+		};
 	};
 	class HitGlass2: HitGlass1
 	{
 		name="glass2";
-		convexComponent="glass2";
 		visual="glass2";
+
+		class DestructionEffects: DestructionEffects
+		{
+			class BrokenGlass1: BrokenGlass1 {position="GlassEffects2";};
+			class BrokenGlass1S: BrokenGlass1 {position="GlassEffects2";};
+			class BrokenGlass2: BrokenGlass1 {position="GlassEffects2";};
+			class BrokenGlass2S: BrokenGlass1 {position="GlassEffects2";};
+			class BrokenGlass3: BrokenGlass1 {position="GlassEffects2";};
+			class BrokenGlass3S: BrokenGlass1 {position="GlassEffects2";};
+			class BrokenGlass4: BrokenGlass1 {position="GlassEffects2";};
+			class BrokenGlass4S: BrokenGlass1 {position="GlassEffects2";};
+			class BrokenGlass5: BrokenGlass1 {position="GlassEffects2";};
+			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects2";};
+		};
 	};
 	class HitGlass3: HitGlass1
 	{
-		radius=0.35;
+		radius=0.25;
 
 		name="glass3";
-		convexComponent="glass3";
 		visual="glass3";
+
+		class DestructionEffects: DestructionEffects
+		{
+			class BrokenGlass1: BrokenGlass1 {position="GlassEffects3";};
+			class BrokenGlass1S: BrokenGlass1 {position="GlassEffects3";};
+			class BrokenGlass2: BrokenGlass1 {position="GlassEffects3";};
+			class BrokenGlass2S: BrokenGlass1 {position="GlassEffects3";};
+			class BrokenGlass3: BrokenGlass1 {position="GlassEffects3";};
+			class BrokenGlass3S: BrokenGlass1 {position="GlassEffects3";};
+			class BrokenGlass4: BrokenGlass1 {position="GlassEffects3";};
+			class BrokenGlass4S: BrokenGlass1 {position="GlassEffects3";};
+			class BrokenGlass5: BrokenGlass1 {position="GlassEffects3";};
+			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects3";};
+		};
 	};
 	class HitGlass4: HitGlass3
 	{
 		name="glass4";
-		convexComponent="glass4";
 		visual="glass4";
+
+		class DestructionEffects: DestructionEffects
+		{
+			class BrokenGlass1: BrokenGlass1 {position="GlassEffects4";};
+			class BrokenGlass1S: BrokenGlass1 {position="GlassEffects4";};
+			class BrokenGlass2: BrokenGlass1 {position="GlassEffects4";};
+			class BrokenGlass2S: BrokenGlass1 {position="GlassEffects4";};
+			class BrokenGlass3: BrokenGlass1 {position="GlassEffects4";};
+			class BrokenGlass3S: BrokenGlass1 {position="GlassEffects4";};
+			class BrokenGlass4: BrokenGlass1 {position="GlassEffects4";};
+			class BrokenGlass4S: BrokenGlass1 {position="GlassEffects4";};
+			class BrokenGlass5: BrokenGlass1 {position="GlassEffects4";};
+			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects4";};
+		};
 	};
 	class HitGlass5
 	{
-		armor=-70;				//V 2 = -70
-		//radius=0.15;			//V NA
-		//explosionShielding=2;	//V NA
-		passThrough=0;
-		material=-1;
+		radius=0.34;
 
 		name="glass5";
-		convexComponent="glass5";
 		visual="glass5";
+
+		class DestructionEffects: DestructionEffects
+		{
+			class BrokenGlass1: BrokenGlass1 {position="GlassEffects5";};
+			class BrokenGlass1S: BrokenGlass1 {position="GlassEffects5";};
+			class BrokenGlass2: BrokenGlass1 {position="GlassEffects5";};
+			class BrokenGlass2S: BrokenGlass1 {position="GlassEffects5";};
+			class BrokenGlass3: BrokenGlass1 {position="GlassEffects5";};
+			class BrokenGlass3S: BrokenGlass1 {position="GlassEffects5";};
+			class BrokenGlass4: BrokenGlass1 {position="GlassEffects5";};
+			class BrokenGlass4S: BrokenGlass1 {position="GlassEffects5";};
+			class BrokenGlass5: BrokenGlass1 {position="GlassEffects5";};
+			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects5";};
+		};
 	};
 	class HitGlass6: HitGlass5
 	{
 		name="glass6";
-		convexComponent="glass6";
 		visual="glass6";
+
+		class DestructionEffects: DestructionEffects
+		{
+			class BrokenGlass1: BrokenGlass1 {position="GlassEffects6";};
+			class BrokenGlass1S: BrokenGlass1 {position="GlassEffects6";};
+			class BrokenGlass2: BrokenGlass1 {position="GlassEffects6";};
+			class BrokenGlass2S: BrokenGlass1 {position="GlassEffects6";};
+			class BrokenGlass3: BrokenGlass1 {position="GlassEffects6";};
+			class BrokenGlass3S: BrokenGlass1 {position="GlassEffects6";};
+			class BrokenGlass4: BrokenGlass1 {position="GlassEffects6";};
+			class BrokenGlass4S: BrokenGlass1 {position="GlassEffects6";};
+			class BrokenGlass5: BrokenGlass1 {position="GlassEffects6";};
+			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects6";};
+		};
+	};
+	class HitGlass7: HitGlass7
+	{
+		name="glass7";
+		visual="glass7";
+
+		class DestructionEffects: DestructionEffects
+		{
+			class BrokenGlass1: BrokenGlass1 {position="GlassEffects7";};
+			class BrokenGlass1S: BrokenGlass1 {position="GlassEffects7";};
+			class BrokenGlass2: BrokenGlass1 {position="GlassEffects7";};
+			class BrokenGlass2S: BrokenGlass1 {position="GlassEffects7";};
+			class BrokenGlass3: BrokenGlass1 {position="GlassEffects7";};
+			class BrokenGlass3S: BrokenGlass1 {position="GlassEffects7";};
+			class BrokenGlass4: BrokenGlass1 {position="GlassEffects7";};
+			class BrokenGlass4S: BrokenGlass1 {position="GlassEffects7";};
+			class BrokenGlass5: BrokenGlass1 {position="GlassEffects7";};
+			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects7";};
+		};
+	};
+	class HitGlass8: HitGlass7
+	{
+		name="glass8";
+		visual="glass8";
+
+		class DestructionEffects: DestructionEffects
+		{
+			class BrokenGlass1: BrokenGlass1 {position="GlassEffects8";};
+			class BrokenGlass1S: BrokenGlass1 {position="GlassEffects8";};
+			class BrokenGlass2: BrokenGlass1 {position="GlassEffects8";};
+			class BrokenGlass2S: BrokenGlass1 {position="GlassEffects8";};
+			class BrokenGlass3: BrokenGlass1 {position="GlassEffects8";};
+			class BrokenGlass3S: BrokenGlass1 {position="GlassEffects8";};
+			class BrokenGlass4: BrokenGlass1 {position="GlassEffects8";};
+			class BrokenGlass4S: BrokenGlass1 {position="GlassEffects8";};
+			class BrokenGlass5: BrokenGlass1 {position="GlassEffects8";};
+			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects8";};
+		};
+	};
+	class HitGlass9: HitGlass8
+	{
+		armor=0.8;
+		radius=0.24;
+
+		name="glass9";
+		visual="glass9";
+
+		class DestructionEffects: DestructionEffects
+		{
+			class BrokenGlass1: BrokenGlass1 {position="GlassEffects9";};
+			class BrokenGlass1S: BrokenGlass1 {position="GlassEffects9";};
+			class BrokenGlass2: BrokenGlass1 {position="GlassEffects9";};
+			class BrokenGlass2S: BrokenGlass1 {position="GlassEffects9";};
+			class BrokenGlass3: BrokenGlass1 {position="GlassEffects9";};
+			class BrokenGlass3S: BrokenGlass1 {position="GlassEffects9";};
+			class BrokenGlass4: BrokenGlass1 {position="GlassEffects9";};
+			class BrokenGlass4S: BrokenGlass1 {position="GlassEffects9";};
+			class BrokenGlass5: BrokenGlass1 {position="GlassEffects9";};
+			class BrokenGlass5S: Broken Glass1 {position="GlassEffects9";};
+		};
+	};
+	class HitGlass10: HitGlass9
+	{
+		armor=0.8;
+
+		name="glass10";
+		visual="glass10";
+
+		class DestructionEffects: DestructionEffects
+		{
+			class BrokenGlass1: BrokenGlass1 {position="GlassEffects10";};
+			class BrokenGlass1S: BrokenGlass1 {position="GlassEffects10";};
+			class BrokenGlass2: BrokenGlass1 {position="GlassEffects10";};
+			class BrokenGlass2S: BrokenGlass1 {position="GlassEffects10";};
+			class BrokenGlass3: BrokenGlass1 {position="GlassEffects10";};
+			class BrokenGlass3S: BrokenGlass1 {position="GlassEffects10";};
+			class BrokenGlass4: BrokenGlass1 {position="GlassEffects10";};
+			class BrokenGlass4S: BrokenGlass1 {position="GlassEffects10";};
+			class BrokenGlass5: BrokenGlass1 {position="GlassEffects10";};
+			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects10";};
+		};
 	};
 };
