@@ -334,10 +334,7 @@ class RC_M2A2_D: RC_M2A2_D_Base
 					memoryPointsGetInGunner="pos cargo";
 					memoryPointsGetInGunnerDir="pos cargo dir";
 					memoryPointsGetInGunnerPrecise="pos cargo";
-					
 					gunnerCompartments="Compartment1";
-					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
-					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 					class OpticsIn
 					{
@@ -353,6 +350,8 @@ class RC_M2A2_D: RC_M2A2_D_Base
 							maxFov=0.9;
 						};
 					};
+					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
 				};
 				class TL_Seat
 				{
@@ -363,10 +362,7 @@ class RC_M2A2_D: RC_M2A2_D_Base
 					memoryPointsGetInGunner="pos cargo";
 					memoryPointsGetInGunnerDir="pos cargo dir";
 					memoryPointsGetInGunnerPrecise="pos cargo";
-
 					gunnerCompartments="Compartment1";
-					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
-					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 					class OpticsIn
 					{
@@ -382,6 +378,8 @@ class RC_M2A2_D: RC_M2A2_D_Base
 							maxFov=0.9;
 						};
 					};
+					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
 				};
 			};
 
@@ -485,6 +483,20 @@ class RC_M2A2_D_B: RC_M2A2_D
 	//forceHideDriver=1;
 	//driverForceOptics=1;
 };
+class RC_M2A2_D_O: RC_M2A2_D_B
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS_old.hpp"
+};
+class RC_M2A2_D_I: RC_M2A2_D_B
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+	#include "\RC_RHS\loadouts\IFVitemsI_RHS_old.hpp"
+};
 
 
 class RC_M2A2_WD_B: RC_M2A2_D_B
@@ -500,14 +512,12 @@ class RC_M2A2_WD_B: RC_M2A2_D_B
 		"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa"
 	};
 };
-
-
-class RC_M2A2_D_I: RC_M2A2_D_B
+class RC_M2A2_WD_O: RC_M2A2_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\IFVitemsI_RHS_old.hpp"
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS_old.hpp"
 };
 class RC_M2A2_WD_I: RC_M2A2_WD_B
 {

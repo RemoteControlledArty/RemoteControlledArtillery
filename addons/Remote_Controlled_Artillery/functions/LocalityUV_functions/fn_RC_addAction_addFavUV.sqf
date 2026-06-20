@@ -1,7 +1,7 @@
 params ["_entity"];
 
 _entity addAction [
-	"add UV to fav's",
+	"Add UV to fav's",
 	{
 		params ["_target"];
 		_target setVariable ["RC_UV_seat", (getConnectedUAVUnit player)];

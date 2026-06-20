@@ -174,7 +174,6 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 			dontCreateAI=1;
 			commanding=3;
 			//forceHideGunner=1;
-			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 			weapons[]=
 			{
@@ -187,28 +186,18 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 
 					initFov=0.9;
 					minFov=0.02;
 					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
+			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 			
 			class Turrets: Turrets
 			{
@@ -220,7 +209,6 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 					dontCreateAI=1;
 					commanding=2;
 					//forceHideGunner=1;
-					turretInfoType="RscOptics_MBT_03_gunner";
 
 					weapons[]=
 					{
@@ -236,28 +224,18 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 
 					class OpticsIn
 					{
-						class Wide: RCWSOptics
+						class Wide
 						{
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 
 							initFov=0.9;
 							minFov=0.02;
 							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							gunnerOpticsEffect[]={};
 						};
 					};
+					turretInfoType="RscOptics_MBT_03_gunner";
 				};
 			};
 		};

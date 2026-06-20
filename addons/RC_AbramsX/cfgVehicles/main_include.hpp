@@ -402,12 +402,8 @@ class Turrets: Turrets
 			class Wide
 			{
 				#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+				#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 				gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-				minAngleX=-30;
-				maxAngleX=30;
-				minAngleY=-100;
-				maxAngleY=100;
 
 				initFov=0.9;
 				minFov=0.01;
@@ -433,12 +429,8 @@ class Turrets: Turrets
 					class Wide
 					{
 						#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+						#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 						gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-						minAngleX=-30;
-						maxAngleX=30;
-						minAngleY=-100;
-						maxAngleY=100;
 
 						initFov=0.9;
 						minFov=0.01;
@@ -569,12 +561,8 @@ class Turrets: Turrets
 					class Gun1
 					{
 						#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+						#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 						gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-						minAngleX=-30;	//?
-						maxAngleX=30;	//?
-						minAngleY=-100;	//?
-						maxAngleY=100;	//?
 
 						initFov=0.5;
 						minFov=0.5;

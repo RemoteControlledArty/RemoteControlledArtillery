@@ -99,24 +99,7 @@ class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 					memoryPointsGetInGunner="pos cargo";
 					memoryPointsGetInGunnerDir="pos cargo dir";
 					memoryPointsGetInGunnerPrecise="pos cargo";
-					
 					gunnerCompartments="Compartment1";
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-					class OpticsIn
-					{
-						class Wide
-						{
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-						};
-					};
-					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 				};
 				class TL_Seat
 				{
@@ -128,24 +111,7 @@ class RC_ICV_IFV_7_WD: RC_ICV_IFV_7_WD_Base
 					memoryPointsGetInGunner="pos cargo";
 					memoryPointsGetInGunnerDir="pos cargo dir";
 					memoryPointsGetInGunnerPrecise="pos cargo";
-
 					gunnerCompartments="Compartment1";
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-					class OpticsIn
-					{
-						class Wide
-						{
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-						};
-					};
-					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 				};
 			};
 		};
@@ -324,8 +290,42 @@ class RC_ICV_7_WD: RC_ICV_IFV_7_WD
 					*/
 				};
 
-				class SL_Seat: SL_Seat {};
-				class TL_Seat: TL_Seat {};
+				class SL_Seat: SL_Seat
+				{
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+							initFov=1;
+							minFov=0.125;
+							maxFov=1;
+						};
+					};
+					turretInfoType="";
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+				};
+				class TL_Seat: TL_Seat
+				{
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+							initFov=1;
+							minFov=0.125;
+							maxFov=1;
+						};
+					};
+					turretInfoType="";
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+				};
 			};
 		};
 	};
@@ -490,12 +490,44 @@ class RC_IFV_7_WD: RC_ICV_IFV_7_WD
 							minFov=0.02;
 							maxFov=0.9;
 						};
-						turretInfoType="RscOptics_MBT_03_gunner";
 					};
+					turretInfoType="RscOptics_MBT_03_gunner";
 				};
 
-				class SL_Seat: SL_Seat {};
-				class TL_Seat: TL_Seat {};
+				class SL_Seat: SL_Seat
+				{
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+						};
+					};
+					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+				};
+				class TL_Seat: TL_Seat
+				{
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+						};
+					};
+					turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+				};
 			};
 		};
 	};

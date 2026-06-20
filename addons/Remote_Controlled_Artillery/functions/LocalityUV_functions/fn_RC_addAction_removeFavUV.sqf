@@ -1,7 +1,7 @@
 params ["_entity"];
 
 _entity addAction [
-	"remove UV from fav's",
+	"Remove UV from fav's",
 	{
 		params ["_target"];
 		RC_UV_favs = RC_UV_favs - [_target];

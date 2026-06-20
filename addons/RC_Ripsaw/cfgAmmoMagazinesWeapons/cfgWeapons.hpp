@@ -110,7 +110,11 @@ class RC_Ripsaw_Mk30_cUAS_Fetch: autocannon_35mm
 	class player;
 };
 */
-class RC_Ripsaw_Mk30_cUAS: autocannon_35mm
+class RC_Ripsaw_Mk30_cUAS_Fetch: autocannon_35mm
+{
+	class manual;
+};
+class RC_Ripsaw_Mk30_cUAS: RC_Ripsaw_Mk30_cUAS_Fetch
 {
 	displayName="Mk44 Bushmaster II 30mm";
 	ballisticsComputer="2 + 4";
@@ -123,14 +127,31 @@ class RC_Ripsaw_Mk30_cUAS: autocannon_35mm
 
 	modes[]=
 	{
-		"AutoFast",
-		"AutoSlow",
+		"manual",
+		//"AutoFast",
+		//"AutoSlow",
 		"close",
 		"short",
 		"medium",
 		"far"
 	};
 
+	class manual: manual
+	{
+		displayName="Mk44 Bushmaster II 30mm";
+		textureType="fastAuto";
+		/*
+		canLock=2;
+		weaponLockSystem=0;
+		maxZeroing=4000;
+		autoReload=1;
+		magazineReloadTime=20;
+		#include "\Remote_controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+		*/
+
+		reloadTime=0.1;
+		dispersion=0.002;
+	};
 	class AutoFast: CannonCore
 	{
 		displayName="Mk44 Bushmaster II 30mm";
