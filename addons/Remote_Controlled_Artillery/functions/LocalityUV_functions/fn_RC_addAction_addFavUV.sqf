@@ -1,20 +1,24 @@
 params ["_entity"];
 
 _entity addAction [
-	"Set as primary UV",
+	"add UV to fav's",
 	{
 		params ["_target"];
-		player setVariable ["RC_primary_UV", _target];
-		player setVariable ["RC_primary_UV_seat", (getConnectedUAVUnit player)];
+		_target setVariable ["RC_UV_seat", (getConnectedUAVUnit player)];
+		RC_UV_favs pushBackUnique _target;
 	},
 	nil,	// arguments
 	1.5,	// priority
 	false,	// showWindow
 	true,	// hideOnUse
 	"",		// shortcut
-	"((isRemoteControlling player) && (_target isEqualTo (getConnectedUAV player)) && ((getConnectedUAVUnit player) isNotEqualTo (player getVariable ['RC_primary_UV_seat', objNull])))",	// condition
+	"((isRemoteControlling player) && (_target isEqualTo (getConnectedUAV player)) && (RC_UV_favs find _target == -1))",	// condition
 	5		// radius, >4m requied for larger vehicles
 ];
+
+
+//player setVariable ["RC_primary_UV", _target];
+//player setVariable ["RC_primary_UV_seat", (getConnectedUAVUnit player)];
 
 
 /*

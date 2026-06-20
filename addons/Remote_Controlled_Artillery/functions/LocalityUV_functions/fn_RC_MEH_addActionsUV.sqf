@@ -6,10 +6,10 @@ addMissionEventHandler ["EntityCreated", {
 	if ((getNumber (configFile >> "CfgVehicles" >> (typeOf _entity) >> "isUav") == 1)) then {
 	//if (unitIsUAV _entity) then {		//somehow triggers multiple times
 	
-		[[_entity], RC_fnc_RC_addAction_NameUV] remoteExec ["call", 0, true];
+		[[_entity], RC_fnc_RC_addAction_nameUV] remoteExec ["call", 0, true];
 
-		[[_entity], RC_fnc_RC_addAction_setPrimaryUV] remoteExec ["call", 0, true];
-		[[_entity], RC_fnc_RC_addAction_removePrimaryUV] remoteExec ["call", 0, true];
+		[[_entity], RC_fnc_RC_addAction_addFavUV] remoteExec ["call", 0, true];
+		[[_entity], RC_fnc_RC_addAction_removeFavUV] remoteExec ["call", 0, true];
 	};
 }];
 

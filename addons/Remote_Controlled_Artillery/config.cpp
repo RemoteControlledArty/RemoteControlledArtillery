@@ -973,11 +973,11 @@ class CfgFunctions
 			class RC_uavChangeLocality {};
 			class RC_getUniqueGroupName {};
 			class RC_addLocalName {};
-			class RC_addAction_NameUV {};
+			class RC_addAction_nameUV {};
 			class RC_NameUV_Server {};
 
-			class RC_addAction_setPrimaryUV {};
-			class RC_addAction_removePrimaryUV {};
+			class RC_addAction_addFavUV {};
+			class RC_addAction_removeFavUV {};
 			class RC_connectToUV {};
 			class RC_isValidUV {};
 			class RC_stopRC {};

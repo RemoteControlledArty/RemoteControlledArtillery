@@ -18,6 +18,7 @@ RC_ETA_highAngleSol = 0;
 activeGPSMarkers = [];
 RC_Artillery_Markers = [];
 RC_Current_Target = [];
+RC_UV_favs = [];
 RC_Current_Index = 0;
 RC_RscOn = false;		//in Rsc
 RC_InUI = false;
