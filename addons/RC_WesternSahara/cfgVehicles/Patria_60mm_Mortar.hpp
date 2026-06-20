@@ -368,25 +368,15 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 
 					initFov=0.125;
 					minFov=0.0125;
 					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
 
@@ -435,7 +425,6 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 					gunnerCompartments="Compartment3";
 					dontCreateAI=1;
 					commanding=2;
-					turretInfoType="RscOptics_MBT_03_gunner";
 
 					weapons[]=
 					{
@@ -448,31 +437,21 @@ class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
-
+					
 					class OpticsIn
 					{
-						class Wide: RCWSOptics
+						class Wide
 						{
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							gunnerOpticsEffect[]={};
+
+							initFov=0.125;
+							minFov=0.0125;
+							maxFov=0.9;
 						};
 					};
+					turretInfoType="RscOptics_MBT_03_gunner";
 
 					class Components: Components
 					{

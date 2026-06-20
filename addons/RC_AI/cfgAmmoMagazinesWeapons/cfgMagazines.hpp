@@ -423,7 +423,7 @@ class RC_AI_15Rnd_125mm_MPAB_DF_T_Y: RC_AI_3Rnd_125mm_MPAB_DF_T_Y {count=15;};
 class RC_2Rnd_IFV_MP_SACLOS;
 class RC_AI_2Rnd_IFV_MP_SACLOS: RC_2Rnd_IFV_MP_SACLOS
 {
-	ammo="RC_AI_IFV_MP_SACLOS";
+	ammo="RC_AI_M_ATGM_MP_SACLOS";
 };
 class RC_AI_4Rnd_IFV_MP_SACLOS: RC_AI_2Rnd_IFV_MP_SACLOS {count=4;};
 

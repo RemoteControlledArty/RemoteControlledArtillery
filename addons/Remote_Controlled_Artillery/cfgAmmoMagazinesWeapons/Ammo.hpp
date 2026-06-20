@@ -2273,8 +2273,13 @@ class M_Titan_AT_long_Base: M_Titan_AT_long
 {
 	class Components;
 };
-class RC_IFV_MP_LOS: M_Titan_AT_long_Base
+class RC_M_ATGM_MP_LOS: M_Titan_AT_long_Base
 {
+	flightProfiles[]=
+	{
+		"Direct"
+	};
+
 	craterEffects="AAMissileCrater";
 	indirectHit=80;
 	indirectHitRange=10;
@@ -2295,7 +2300,7 @@ class RC_IFV_MP_LOS: M_Titan_AT_long_Base
 	trackOversteer=1;	//1.4 CLBM, 1 default, missilecore, missilebase
 	trackLead=1;		//CLBM 0.94999999
 	maxSpeed=350;		//280 CLBM, 180 Titan AT, 350 125mm ATGM, 500 missilebase, 0 default & missilecore
-	
+
 	initTime=0;			//0 CLBM
 	thrustTime=6;		//5 CLMB & Titan, 6 cannon lg atgm, NLAW 0.80000001, too long thrust time seems to lead to misses
 	thrust=60;			//60 CLBM, 125mm ATGM, 40 cannon lg atgm, 45 Titan AT
@@ -2330,6 +2335,24 @@ class RC_IFV_MP_LOS: M_Titan_AT_long_Base
 		{
 			class Components
 			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=4000;
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
 				class LaserSensorComponent: SensorTemplateLaser
 				{
 					class AirTarget
@@ -2396,7 +2419,7 @@ class RC_IFV_MP_LOS: M_Titan_AT_long_Base
 		};
 	};
 };
-class RC_IFV_MP_Overfly: RC_IFV_MP_LOS
+class RC_M_ATGM_MP_Overfly: RC_M_ATGM_MP_LOS
 {
 	class Overfly	//: Direct
 	{
@@ -2425,99 +2448,11 @@ class RC_IFV_MP_Overfly: RC_IFV_MP_LOS
 	thrustTime=2.25;
 	thrust=380;
 	*/
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=4000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-				};
-				class IRSensorComponent: SensorTemplateIR
-				{
-					typeRecognitionDistance=2000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					angleRangeHorizontal=67.5;
-					angleRangeVertical=135;
-				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					class AirTarget
-					{
-						minRange=600;
-						maxRange=600;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=600;
-						maxRange=600;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					typeRecognitionDistance=400;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=67.5;
-					angleRangeVertical=135;
-				};
-			};
-		};
-	};
 };
-class RC_IFV_MP_NLOS: RC_IFV_MP_LOS
+class RC_M_ATGM_MP_NLOS: RC_M_ATGM_MP_LOS
 {
+	maxControlRange=4400;	//+400 for extra distance of up/down of terrain following cruise
+
 	flightProfiles[]=
 	{
 		"Cruise"
@@ -2527,105 +2462,35 @@ class RC_IFV_MP_NLOS: RC_IFV_MP_LOS
 		preferredFlightAltitude=100;
 		lockDistanceToTarget=160;	//~45°=142
 	};
+};
 
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=4000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=360;
-					angleRangeVertical=360;
-				};
-				class IRSensorComponent: SensorTemplateIR
-				{
-					typeRecognitionDistance=2000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					angleRangeHorizontal=67.5;
-					angleRangeVertical=135;
-				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					class AirTarget
-					{
-						minRange=600;
-						maxRange=600;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=600;
-						maxRange=600;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					typeRecognitionDistance=400;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=67.5;
-					angleRangeVertical=135;
-				};
-			};
-		};
-	};
+
+class M_Vorona_HEAT;
+class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
+{
+	weaponLockSystem="4 + 16";
+
+	submunitionAmmo="RC_ammo_Penetrator_MP";
+	//craterEffects="AAMissileCrater";
+	indirectHit=80;
+	indirectHitRange=10;
+	maxControlRange=4050;
+	trackOversteer=0.67;	//0.5
+	fuseDistance=15;
+	cameraViewAvailable=1;
+	
+	maxSpeed=350;
+	thrustTime=5;
+	initTime=0;
 };
 
 
 class M_Titan_AA_long;
-class RC_IFV_AA_Base: M_Titan_AA_long
+class M_Titan_AA_long_Base: M_Titan_AA_long
 {
 	class Components;
 };
-class RC_IFV_AA: RC_IFV_AA_Base
+class RC_M_AA: M_Titan_AA_long_Base
 {
 	indirectHitRange=12;
 	proximityExplosionDistance=12;
@@ -2744,7 +2609,7 @@ class ammo_Penetrator_Nano_MP: ammo_Penetrator_Base
 	hit=300;
 	airFriction=-0.01;	//to allow further submunitionoffset
 };
-class RC_MP_NLOS_Nano: RC_IFV_MP_NLOS
+class RC_MP_NLOS_Nano: RC_M_ATGM_MP_NLOS
 {
 	//model="";
 	//craterEffects="AAMissileCrater";
@@ -2803,7 +2668,7 @@ class RC_MP_Interceptor_Lock: RC_MP_NLOS_Nano
 
 
 /*
-class RC_AA_NLOS: RC_IFV_AA
+class RC_AA_NLOS: RC_M_AA
 {
 	indirectHitRange=12;
 	proximityExplosionDistance=12;
@@ -2838,7 +2703,7 @@ class RC_AA_NLOS: RC_IFV_AA
 */
 
 
-class RC_70mm_AA: RC_IFV_AA
+class RC_70mm_AA: RC_M_AA
 {
 	model="\A3\Weapons_F_Tank\Ammo\Missile_SAAMI_AA_01_fly_F.p3d";
 	hit=80;
@@ -2847,191 +2712,6 @@ class RC_70mm_AA: RC_IFV_AA
 	proximityExplosionDistance=10;
 };
 
-
-//ATGM
-class M_Vorona_HEAT;
-class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
-{
-	weaponLockSystem="4 + 16";
-
-	submunitionAmmo="RC_ammo_Penetrator_MP";
-	//craterEffects="AAMissileCrater";
-	indirectHit=40;
-	indirectHitRange=10;
-	maxControlRange=4050;
-	trackOversteer=0.67;	//0.5
-	fuseDistance=15;
-	cameraViewAvailable=1;
-	
-	maxSpeed=350;
-	thrustTime=5;
-	initTime=0;
-};
-class RC_IFV_MP_SACLOS: RC_M_ATGM_MP_SACLOS
-{
-	submunitionAmmo="RC_ammo_Penetrator_MP";
-	indirectHit=80;
-	indirectHitRange=10;
-};
-
-
-//ATGM
-class RC_M_ATGM_MP_LOS: M_Titan_AT_long_Base
-{
-	craterEffects="AAMissileCrater";
-	indirectHit=40;
-	indirectHitRange=10;
-	explosive=1;
-	timeToLive=20;
-
-	//lockType=0;	//?, 0 Titan AT & cannon lg atgm, 1 Titan AP & CLMB, 0 likely fire forget 1 likely beamriding
-	irLock=1;
-	airLock=1;
-	laserLock=1;
-	allowAgainstInfantry=1;
-	aiAmmoUsageFlags="64 + 128 + 256 + 512";
-
-	simulationStep=0.0020000001;
-	airFriction=0.085000001;
-	sideAirFriction=2;
-	maneuvrability=40;
-	trackOversteer=1;
-	trackLead=1;
-	maxSpeed=350;
-	
-	initTime=0;
-	thrustTime=5;
-	thrust=50;
-	fuseDistance=15;
-
-	submunitionAmmo="RC_ammo_Penetrator_MP_PD";
-	submunitionDirectionType="SubmunitionTargetDirection";
-	submunitionInitSpeed=1000;
-	submunitionParentSpeedCoef=0;
-	submunitionInitialOffset[]={0,0,-1};
-	triggerOnImpact=1;
-	triggerDistance=10;
-	proximityExplosionDistance=10;
-	deleteParentWhenTriggered=0;
-
-	//autoSeekTarget=1;	 //unlear if it works in this context
-	manualControl=1;
-	//manualControlOffset=100;	//??? CLMB
-	missileLockCone=180;	//for NLOS Datalink targeting, being able to shoot missle straight up, over barriers being in the way
-	missileKeepLockedCone=180;
-	maxControlRange=4200;	//+200 for ascent and descent
-	missileLockMaxDistance=4000;
-	missileLockMinDistance=20;
-	missileLockMaxSpeed=100;	//35
-	weaponLockSystem="1 + 2 + 16";
-	cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
-	cameraViewAvailable=1;
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=4000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				/*
-				//autonomous engages lasers spots without differentiating
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					angleRangeHorizontal=40;
-					angleRangeVertical=40;
-				};
-				*/
-				class IRSensorComponent: SensorTemplateIR
-				{
-					typeRecognitionDistance=2000;
-					class AirTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=4000;
-						maxRange=4000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					angleRangeHorizontal=45;
-					angleRangeVertical=45;
-				};
-				class VisualSensorComponent: SensorTemplateVisual
-				{
-					typeRecognitionDistance=1000;
-					class AirTarget
-					{
-						minRange=1500;
-						maxRange=1500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=1500;
-						maxRange=1500;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					maxTrackableSpeed=120;
-					nightRangeCoef=0.80000001;
-					angleRangeHorizontal=45;
-					angleRangeVertical=45;
-				};
-			};
-		};
-	};
-};
-class RC_M_ATGM_MP_NLOS: RC_M_ATGM_MP_LOS
-{
-	flightProfiles[]=
-	{
-		"Cruise"
-	};
-	class Cruise
-	{
-		preferredFlightAltitude=100;
-		lockDistanceToTarget=160;	//~45°=142
-	};
-};
 
 class ammo_Missile_CannonLaunchedBase;
 class RC_M_120mm_cannon_ATGM_Core: ammo_Missile_CannonLaunchedBase

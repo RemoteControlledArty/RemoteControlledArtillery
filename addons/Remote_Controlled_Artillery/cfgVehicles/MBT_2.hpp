@@ -106,12 +106,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 				class Wide
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-					minAngleX=-30;
-					maxAngleX=30;
-					minAngleY=-100;
-					maxAngleY=100;
 
 					initFov=0.4;
 					minFov=0.02;
@@ -143,12 +139,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 						class Wide: RCWSOptics
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
-
-							minAngleX=-30;
-							maxAngleX=30;
-							minAngleY=-100;
-							maxAngleY=100;
 
 							initFov=0.9;
 							minFov=0.02;
@@ -172,12 +164,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 						class Gun1
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-							minAngleX=-30;	//?
-							maxAngleX=30;	//?
-							minAngleY=-100;	//?
-							maxAngleY=100;	//?
 
 							initFov=0.4;
 							minFov=0.4;

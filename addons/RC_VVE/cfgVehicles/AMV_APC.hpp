@@ -135,12 +135,8 @@ class RC_AMV_APC_Base: RC_AMV_APC_Core
 				class Wide
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 					gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
-
-					minAngleX=-30;
-					maxAngleX=30;
-					minAngleY=-100;
-					maxAngleY=100;
 
 					initFov=0.9;
 					minFov=0.02;
@@ -175,12 +171,8 @@ class RC_AMV_APC_Base: RC_AMV_APC_Core
 						class Wide
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel = "\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
-
-							minAngleX=-30;
-							maxAngleX=30;
-							minAngleY=-100;
-							maxAngleY=100;
 
 							initFov=0.9;
 							minFov=0.02;

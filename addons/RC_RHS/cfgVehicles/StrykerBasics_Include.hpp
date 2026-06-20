@@ -105,8 +105,9 @@ class DriverOpticsIn
 		opticsModel="rhsusf\addons\rhsusf_optics\data\rhsusf_DVE_4x3";
 		visionMode[]=
 		{
-			"TI",
-			"Normal"
+			"Normal",
+			"NVG",
+			"TI"
 		};
 		thermalMode[]={0};
 		initFov=1.07692;

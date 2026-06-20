@@ -121,6 +121,16 @@ class RC_Ripsaw_Mk30_cUAS: autocannon_35mm
 	magazineReloadTime=20;
 	//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 
+	modes[]=
+	{
+		"AutoFast",
+		"AutoSlow",
+		"close",
+		"short",
+		"medium",
+		"far"
+	};
+
 	class AutoFast: CannonCore
 	{
 		displayName="Mk44 Bushmaster II 30mm";
@@ -165,6 +175,22 @@ class RC_Ripsaw_Mk30_cUAS: autocannon_35mm
 		"RC_300Rnd_30mm_HEAB_AA_T_Y",
 
 		"RC_300Rnd_30mm_cUAS"
+	};
+
+	class GunParticles
+	{
+		class Effect1
+		{
+			directionName="Konec hlavne";
+			effectName="AutoCannonFired";
+			positionName="Usti hlavne";
+		};
+		class Effect2
+		{
+			directionName="shell_eject_dir";
+			effectName="QAV_mk30_casingeject";
+			positionName="shell_eject_pos";
+		};
 	};
 };
 

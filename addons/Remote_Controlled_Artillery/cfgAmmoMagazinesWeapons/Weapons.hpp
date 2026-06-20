@@ -424,6 +424,7 @@ class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
 	modes[]=
 	{
 		"Player",
+		"Overfly",
 		"Cruise"
 	};
 	class Cruise: Player

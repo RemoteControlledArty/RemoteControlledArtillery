@@ -217,6 +217,7 @@ class RC_M2A2_D: RC_M2A2_D_Base
 					visionMode[]=
 					{
 						"Normal",
+						"NVG",
 						"Ti"
 					};
 					thermalMode[]={0};
@@ -321,6 +322,64 @@ class RC_M2A2_D: RC_M2A2_D_Base
 									componentType="EmptyDisplayComponent";
 								};
 							};
+						};
+					};
+				};
+				class SL_Seat
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
+
+					gunnerName="SL";
+					proxyIndex=1;
+					memoryPointsGetInGunner="pos cargo";
+					memoryPointsGetInGunnerDir="pos cargo dir";
+					memoryPointsGetInGunnerPrecise="pos cargo";
+					
+					gunnerCompartments="Compartment1";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
+					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_ISU";
+							hitPoint="Hit_Optics_Gnr";
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+						};
+					};
+				};
+				class TL_Seat
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
+
+					gunnerName="TL";
+					proxyIndex=2;
+					memoryPointsGetInGunner="pos cargo";
+					memoryPointsGetInGunnerDir="pos cargo dir";
+					memoryPointsGetInGunnerPrecise="pos cargo";
+
+					gunnerCompartments="Compartment1";
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
+					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
+
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_ISU";
+							hitPoint="Hit_Optics_Gnr";
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
 						};
 					};
 				};

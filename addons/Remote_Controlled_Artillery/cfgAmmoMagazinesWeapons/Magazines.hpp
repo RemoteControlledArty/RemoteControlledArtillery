@@ -17,7 +17,7 @@ class RC_1Rnd_APS_M: RC_target_confirmer_mag
 /*
 class RC_1Rnd_DroneInterceptor_shell: CA_Magazine
 {
-	ammo="RC_IFV_AA";
+	ammo="RC_M_AA";
 	displayName="Drone-Interceptor";
 	displayNameShort="Drone-Interceptor";
 	author="Ascent";
@@ -1540,6 +1540,7 @@ class RC_300Rnd_30mm_MPAB_AA_T_R: RC_680Rnd_35mm_MPAB_AA_T_R
 	displayNameShort="30mm MPAB";
 	displayNameMFDFormat="MPAB";
 	count=300;
+	muzzleImpulseFactor[]={0.5,2};
 };
 class RC_300Rnd_30mm_MPAB_AA_T_G: RC_300Rnd_30mm_MPAB_AA_T_R {ammo="RC_B_35mm_MPAB_AA_T_G";};
 class RC_300Rnd_30mm_MPAB_AA_T_Y: RC_300Rnd_30mm_MPAB_AA_T_R {ammo="RC_B_35mm_MPAB_AA_T_Y";};
@@ -1550,6 +1551,7 @@ class RC_300Rnd_30mm_HEAB_AA_T_R: RC_680Rnd_35mm_HEAB_AA_T_R
 	displayNameShort="30mm HEAB";
 	displayNameMFDFormat="HEAB";
 	count=300;
+	muzzleImpulseFactor[]={0.5,2};
 };
 class RC_300Rnd_30mm_HEAB_AA_T_G: RC_300Rnd_30mm_HEAB_AA_T_R {ammo="RC_B_35mm_HEAB_AA_T_G";};
 class RC_300Rnd_30mm_HEAB_AA_T_Y: RC_300Rnd_30mm_HEAB_AA_T_R {ammo="RC_B_35mm_HEAB_AA_T_Y";};
@@ -1890,8 +1892,8 @@ class RC_2Rnd_IFV_MP_LOS: 2Rnd_GAT_missiles
 {
 	displayName="4km ATGM";
 	displayNameShort="ATGM";
-	displayNameMFDFormat="ATGM";
-	ammo="RC_IFV_MP_LOS";
+	displayNameMFDFormat="LOS";
+	ammo="RC_M_ATGM_MP_LOS";
 	count=2;
 };
 class RC_4Rnd_IFV_MP_LOS: RC_2Rnd_IFV_MP_LOS {count=4;};
@@ -1899,16 +1901,16 @@ class RC_2Rnd_IFV_MP_NLOS: RC_2Rnd_IFV_MP_LOS
 {
 	displayName="4km NLOS ATGM";
 	displayNameShort="NLOS ATGM";
-	displayNameMFDFormat="NLOS ATGM";
-	ammo="RC_IFV_MP_NLOS";
+	displayNameMFDFormat="NLOS";
+	ammo="RC_M_ATGM_MP_NLOS";
 };
 class RC_4Rnd_IFV_MP_NLOS: RC_2Rnd_IFV_MP_NLOS {count=4;};
 class RC_2Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_LOS
 {
 	displayName="4km Overfly ATGM";
 	displayNameShort="Overfly ATGM";
-	displayNameMFDFormat="OvFly ATGM";
-	ammo="RC_IFV_MP_Overfly";
+	displayNameMFDFormat="OvFly";
+	ammo="RC_M_ATGM_MP_Overfly";
 	initSpeed=100;
 };
 class RC_4Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_Overfly {count=4;};
@@ -1916,8 +1918,8 @@ class RC_1Rnd_IFV_MP_SACLOS: RC_2Rnd_IFV_MP_LOS
 {
 	displayName="4km SACLOS ATGM";
 	displayNameShort="SACLOS ATGM";
-	displayNameMFDFormat="SACLOS ATGM";
-	ammo="RC_IFV_MP_SACLOS";
+	displayNameMFDFormat="SACLOS";
+	ammo="RC_M_ATGM_MP_SACLOS";
 	initSpeed=150;
 	count=1;
 };
@@ -1933,7 +1935,7 @@ class RC_1Rnd_IFV_AA: 4Rnd_Titan_long_missiles
 	displayName="AA 5km";
 	displayNameShort="AA 5km";
 	displayNameMFDFormat="AA 5km";
-	ammo="RC_IFV_AA";
+	ammo="RC_M_AA";
 };
 class RC_2Rnd_IFV_AA: RC_1Rnd_IFV_AA {count=2;};
 class RC_3Rnd_IFV_AA: RC_1Rnd_IFV_AA {count=3;};

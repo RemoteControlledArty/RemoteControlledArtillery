@@ -114,12 +114,8 @@ class RC_MRZR_Base: RC_MRZR_Core
 				class Driver
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-
-					minAngleX=-30;	//?
-					maxAngleX=30;	//?
-					minAngleY=-100;	//?
-					maxAngleY=100;	//?
 
 					initFov=1;
 					minFov=0.25;

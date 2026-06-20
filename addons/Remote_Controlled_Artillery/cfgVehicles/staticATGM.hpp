@@ -183,7 +183,7 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 					};
@@ -443,7 +443,7 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750,375};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 					};

@@ -191,8 +191,6 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_HMG.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			turretInfoType="RscWeaponRangeFinder";
 			gunnerCompartments="Compartment3";
 			forceHideGunner=1;
 			gunnerForceOptics=1;
@@ -213,27 +211,20 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 			
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 
 					initFov=1;
 					minFov=0.025;
 					maxFov=1;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
+			turretInfoType="RscWeaponRangeFinder";
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
 			class ViewOptics: ViewOptics
 			{
 				visionMode[]=
@@ -257,8 +248,6 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			//forceHideGunner=1;
 			//gunnerForceOptics=1;
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			turretInfoType="RscWeaponRangeFinder";
 			commanding=3;
 			dontCreateAI=1;
 
@@ -274,27 +263,20 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 			
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 
 					initFov=1;
 					minFov=0.025;
 					maxFov=1;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
+			turretInfoType="RscWeaponRangeFinder";
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
 			class ViewOptics: ViewOptics
 			{
 				visionMode[]=

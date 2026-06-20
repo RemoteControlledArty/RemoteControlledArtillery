@@ -174,6 +174,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 					visionMode[]=
 					{
 						"Normal",
+						"NVG",
 						"Ti"
 					};
 					thermalMode[]={0};
@@ -226,6 +227,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 							visionMode[]=
 							{
 								"Normal",
+								"NVG",
 								"Ti"
 							};
 							thermalMode[]={0};
@@ -267,12 +269,9 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 						class Wide
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
-
-							minAngleX=-30;	//?
-							maxAngleX=30;	//?
-							minAngleY=-100;	//?
-							maxAngleY=100;	//?
+							hitPoint="Hit_Optics_Gnr";
 
 							initFov=0.9;
 							minFov=0.02;
@@ -300,12 +299,9 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 						class Wide
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
-
-							minAngleX=-30;	//?
-							maxAngleX=30;	//?
-							minAngleY=-100;	//?
-							maxAngleY=100;	//?
+							hitPoint="Hit_Optics_Gnr";
 
 							initFov=0.9;
 							minFov=0.02;

@@ -181,27 +181,16 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 			//turretInfoType="RscOptics_MBT_01_commander";
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
+					hitpoint="Hit_Optic_GPS_TI";
 
 					initFov=0.53;
 					minFov=0.02;	//0.014
 					maxFov=0.53;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
-					gunnerOpticsEffect[]={};
-					hitpoint="Hit_Optic_GPS_TI";
 				};
 			};
 
@@ -253,6 +242,7 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 							visionMode[]=
 							{
 								"Normal",
+								"NVG",
 								"Ti"
 							};
 							thermalMode[]={0};
@@ -300,6 +290,7 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 							visionMode[]=
 							{
 								"Normal",
+								"NVG",
 								"TI"
 							};
 							thermalMode[]={0};

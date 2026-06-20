@@ -166,10 +166,25 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 			commanding=2;
 			gunnerForceOptics=1;
 			forceHideGunner=1;
+
+			class OpticsIn
+			{
+				class Wide
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+					initFov=1;
+					minFov=0.125;
+					maxFov=1;
+				};
+			};
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 			turretInfoType="";
 
+			/*
 			class ViewOptics: ViewOptics
 			{
 				visionMode[]=
@@ -181,6 +196,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 				minFov=0.125;
 				maxFov=1;
 			};
+			*/
 
 			weapons[]=
 			{
@@ -198,10 +214,6 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_ICV_commander_free.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
-			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			turretInfoType="RscWeaponRangeFinder";
-			//turretInfoType="";
 			commanding=3;
 
 			weapons[]=
@@ -216,6 +228,24 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 				"SmokeLauncherMag"
 			};
 
+			class OpticsIn
+			{
+				class Wide
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+					initFov=1;
+					minFov=0.125;
+					maxFov=1;
+				};
+			};
+			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+			turretInfoType="RscWeaponRangeFinder";
+
+			/*
 			class ViewOptics: ViewOptics
 			{
 				initFov=1;
@@ -227,6 +257,7 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 					"NVG"
 				};
 			};
+			*/
 		};
 	};
 };
@@ -337,8 +368,6 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			minElev=-19;
 			maxElev=40;	//30
 			commanding=3;
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-			turretInfoType="RscOptics_MBT_03_gunner";
 
 			weapons[]=
 			{
@@ -348,6 +377,24 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Namer_GMG_red.hpp"
 
+			class OpticsIn
+			{
+				class Wide
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
+
+					initFov=0.9;
+					minFov=0.02;
+					maxFov=0.9;
+				};
+			};
+			//gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_APC_02_m_F.p3d";
+			gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_w_F";
+			turretInfoType="RscOptics_MBT_03_gunner";
+
+			/*
 			class ViewOptics: RCWSOptics
 			{
 				initFov=0.9;
@@ -362,6 +409,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 				};
 				thermalMode[]={0};
 			};
+			*/
 		};
 		class CommanderOptics : CommanderOptics
 		{
@@ -369,9 +417,6 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			dontCreateAI=1;
-			turretInfoType="RscOptics_MBT_03_gunner";
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 			commanding=2;
 			maxElev=40;
 
@@ -387,6 +432,24 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 				"SmokeLauncherMag"
 			};
 
+			class OpticsIn
+			{
+				class Wide
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+					initFov=0.9;
+					minFov=0.02;
+					maxFov=0.9;
+				};
+			};
+			turretInfoType="RscOptics_MBT_03_gunner";
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
+
+			/*
 			class ViewOptics: ViewOptics
 			{
 				//directionStabilized=1;
@@ -400,6 +463,7 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 				};
 				thermalMode[]={0};
 			};
+			*/
 		};
 	};
 };
@@ -584,18 +648,14 @@ class RC_IFV_1_A: RC_APC_1_A
 				"SmokeLauncher"
 			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Namer_20mm_red.hpp"
-
+			
 			class OpticsIn
 			{
 				class Wide
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-					minAngleX=-30;
-					maxAngleX=30;
-					minAngleY=-100;
-					maxAngleY=100;
 
 					initFov=0.9;
 					minFov=0.02;

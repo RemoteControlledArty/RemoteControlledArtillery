@@ -53,6 +53,7 @@ class RC_GMG_UGV_A_base: RC_GMG_UGV_base
 	maxSpeed=80;
 	enginePower=120;
 	peakTorque=750;
+	engineStartSpeed=0.5;
 
 	waterLeakiness=2.5;
 	canFloat=1;
@@ -238,20 +239,17 @@ class RC_indirect_GMG_UGV_A: RC_GMG_UGV_A_base
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
+
 					initFov=0.9;
 					minFov=0.0125;
 					maxFov=0.9;
+
 					//directionStabilized=0;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 				};
 			};
 
@@ -532,20 +530,17 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_A_base
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initFov=0.9;
-					minFov=0.02;
-					maxFov=0.9;
-					//directionStabilized=0;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG",
-						"TI"
-					};
-					thermalMode[]={0};
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 					gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
+
+					initFov=0.9;
+					minFov=0.0125;
+					maxFov=0.9;
+
+					//directionStabilized=0;
 				};
 			};
 

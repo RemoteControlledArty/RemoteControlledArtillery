@@ -379,8 +379,8 @@ class RC_AI_ammo_Penetrator_MP_SACLOS: ammo_Penetrator_Base
 	caliber=40;
 	hit=400;
 };
-class RC_IFV_MP_SACLOS;
-class RC_AI_IFV_MP_SACLOS: RC_IFV_MP_SACLOS
+class RC_M_ATGM_MP_SACLOS;
+class RC_AI_M_ATGM_MP_SACLOS: RC_M_ATGM_MP_SACLOS
 {
 	submunitionAmmo="RC_AI_ammo_Penetrator_MP_SACLOS";
 	indirectHit=30;		//80

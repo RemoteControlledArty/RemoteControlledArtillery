@@ -120,17 +120,13 @@ class RC_T90AM_Base: RC_T90AM_Core
 				class Medium
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_02_m_F.p3d";
 					//gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_sosnau.p3d";
 
 					camPos="gunnerview2";
 					hitpoint="Hit_Optic_SosnaU";
 					opticsDisplayName="TI";
-
-					minAngleX=-30;
-					minAngleY=-100;
-					maxAngleX=30;
-					maxAngleY=100;
 
 					initFov=0.9;
 					minFov=0.02;
@@ -171,17 +167,13 @@ class RC_T90AM_Base: RC_T90AM_Core
 						class Medium
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
 							//gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_sosnau.p3d";
 
 							camPos="commanderview";
 							hitpoint="Hit_Optic_SosnaU";
 							opticsDisplayName="TI";
-
-							minAngleX=-30;
-							minAngleY=-100;
-							maxAngleX=30;
-							maxAngleY=100;
 
 							initFov=0.9;
 							minFov=0.02;
@@ -204,14 +196,10 @@ class RC_T90AM_Base: RC_T90AM_Core
 						class Gun1
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_02_m_F.p3d";
 
 							camPos="gunnerview2";
-
-							minAngleX=-30;	//?
-							maxAngleX=30;	//?
-							minAngleY=-100;	//?
-							maxAngleY=100;	//?
 
 							initFov=0.4;
 							minFov=0.4;

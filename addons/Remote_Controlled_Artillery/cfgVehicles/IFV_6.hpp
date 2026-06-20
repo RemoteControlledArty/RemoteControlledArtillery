@@ -126,7 +126,6 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 			commanding=3;
 			minElev=-14;
 			maxElev=40;
-			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 
 			weapons[]=
 			{
@@ -139,28 +138,18 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 
 					initFov=0.9;
 					minFov=0.02;
 					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
+			turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 			
 			class Turrets: Turrets
 			{
@@ -170,7 +159,6 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
-					turretInfoType="RscOptics_MBT_03_gunner";
 					commanding=2;
 
 					weapons[]=
@@ -187,49 +175,18 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 
 					class OpticsIn
 					{
-						class Wide: RCWSOptics
+						class Wide
 						{
-							//directionStabilized=1;	//unfortunately causes spinning camera bug
-
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 
 							initFov=0.9;
 							minFov=0.02;
 							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							gunnerOpticsEffect[]={};
 						};
 					};
-
-					/*
-					//no stabilization effect
-					class ViewOptics: ViewOptics
-					{
-						directionStabilized=1;
-						
-						initFov=0.9;
-						minFov=0.02;
-						maxFov=0.9;
-						visionMode[]=
-						{
-							"Normal",
-							"TI"
-						};
-						thermalMode[]={0};
-					};
-					*/
+					turretInfoType="RscOptics_MBT_03_gunner";
 				};
 				class SL_Seat
 				{
@@ -250,12 +207,8 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 						class Wide
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-
-							minAngleX=-30;	//?
-							maxAngleX=30;	//?
-							minAngleY=-100;	//?
-							maxAngleY=100;	//?
 
 							initFov=0.9;
 							minFov=0.02;

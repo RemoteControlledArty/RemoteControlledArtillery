@@ -64,6 +64,9 @@ class RC_Ripsaw_Core: RC_Ripsaw_Fetch
 	smokeLauncherVelocity=8;
 	smokeLauncherAngle=180;
 
+	uavCameraGunnerPos="gunnerview";
+	uavCameraGunnerDir="gunnerview";
+
 	//armor=200;	//200 	//btr 280
 
 	class HitPoints: HitPoints
@@ -205,16 +208,12 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 				class Wide
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 
 					//higher but cannot see hull orientation
 					//camPos = "gunnerview2";
 					//camDir = "gunnerview2_dir";
-
-					minAngleX=-30;
-					maxAngleX=30;
-					minAngleY=-100;
-					maxAngleY=100;
 
 					initFov=0.9;
 					minFov=0.02;
@@ -495,12 +494,8 @@ class RC_Ripsaw_cUAS_Base: RC_Ripsaw_Base
 				class Wide
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 					gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_AAA_01_m_F";
-
-					minAngleX=-30;
-					maxAngleX=30;
-					minAngleY=-100;
-					maxAngleY=100;
 
 					initFov=0.9;
 					minFov=0.02;

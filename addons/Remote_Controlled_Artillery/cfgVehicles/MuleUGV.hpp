@@ -52,6 +52,7 @@ class RC_Mule_UGV_Base: RC_Mule_UGV_Core
 	maxSpeed=80;
 	enginePower=120;
 	peakTorque=750;
+	engineStartSpeed=0.5;
 
 	waterLeakiness=2.5;
 	canFloat=1;

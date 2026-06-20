@@ -530,7 +530,7 @@ class HitPoints: HitPoints
 			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects4";};
 		};
 	};
-	class HitGlass5
+	class HitGlass5: HitGlass4
 	{
 		radius=0.34;
 
@@ -570,7 +570,7 @@ class HitPoints: HitPoints
 			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects6";};
 		};
 	};
-	class HitGlass7: HitGlass7
+	class HitGlass7: HitGlass6
 	{
 		name="glass7";
 		visual="glass7";
@@ -627,7 +627,7 @@ class HitPoints: HitPoints
 			class BrokenGlass4: BrokenGlass1 {position="GlassEffects9";};
 			class BrokenGlass4S: BrokenGlass1 {position="GlassEffects9";};
 			class BrokenGlass5: BrokenGlass1 {position="GlassEffects9";};
-			class BrokenGlass5S: Broken Glass1 {position="GlassEffects9";};
+			class BrokenGlass5S: BrokenGlass1 {position="GlassEffects9";};
 		};
 	};
 	class HitGlass10: HitGlass9

@@ -142,29 +142,29 @@ class RC_RHS_AFRF_B_30mm_MPAB_DF_T_Y: RC_RHS_AFRF_B_30mm_MPAB_DF_T_R {model="\A3
 
 
 /*
-class RC_IFV_MP_NLOS;
-class RC_TOW_MP_NLOS: RC_IFV_MP_NLOS
+class RC_M_ATGM_MP_NLOS;
+class RC_TOW_MP_NLOS: RC_M_ATGM_MP_NLOS
 {
 	effectsMissile="RHS_Missile2";
 	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
 	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
 };
-class RC_IFV_MP_Overfly;
-class RC_TOW_MP_Overfly: RC_IFV_MP_Overfly
+class RC_M_ATGM_MP_Overfly;
+class RC_TOW_MP_Overfly: RC_M_ATGM_MP_Overfly
 {
 	effectsMissile="RHS_Missile2";
 	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
 	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
 };
-class RC_IFV_MP_LOS;
-class RC_TOW_MP_LOS: RC_IFV_MP_LOS
+class RC_M_ATGM_MP_LOS;
+class RC_TOW_MP_LOS: RC_M_ATGM_MP_LOS
 {
 	effectsMissile="RHS_Missile2";
 	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
 	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
 };
-class RC_IFV_MP_SACLOS;
-class RC_TOW_MP_SACLOS: RC_IFV_MP_SACLOS
+class RC_M_ATGM_MP_SACLOS;
+class RC_TOW_MP_SACLOS: RC_M_ATGM_MP_SACLOS
 {
 	effectsMissile="RHS_Missile2";
 	//model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
@@ -172,28 +172,28 @@ class RC_TOW_MP_SACLOS: RC_IFV_MP_SACLOS
 };
 
 
-class RC_Javelin_MP_NLOS: RC_IFV_MP_NLOS
+class RC_Javelin_MP_NLOS: RC_M_ATGM_MP_NLOS
 {
 	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
 	effectsMissile="missile2";
 	effectsMissileInit="RocketBackEffectsRPG";
 	effectsSmoke="SmokeShellWhite";
 };
-class RC_Javelin_MP_Overfly: RC_IFV_MP_Overfly
+class RC_Javelin_MP_Overfly: RC_M_ATGM_MP_Overfly
 {
 	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
 	effectsMissile="missile2";
 	effectsMissileInit="RocketBackEffectsRPG";
 	effectsSmoke="SmokeShellWhite";
 };
-class RC_Javelin_MP_LOS: RC_IFV_MP_LOS
+class RC_Javelin_MP_LOS: RC_M_ATGM_MP_LOS
 {
 	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
 	effectsMissile="missile2";
 	effectsMissileInit="RocketBackEffectsRPG";
 	effectsSmoke="SmokeShellWhite";
 };
-class RC_Javelin_MP_SACLOS: RC_IFV_MP_SACLOS
+class RC_Javelin_MP_SACLOS: RC_M_ATGM_MP_SACLOS
 {
 	//model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
 	effectsMissile="missile2";
@@ -204,14 +204,14 @@ class RC_Javelin_MP_SACLOS: RC_IFV_MP_SACLOS
 
 
 /*
-class RC_IFV_AA;
-class RC_TOW_AA: RC_IFV_AA
+class RC_M_AA;
+class RC_TOW_AA: RC_M_AA
 {
 	effectsMissile="RHS_Missile2";
 	model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2A";
 	soundFly[]={"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",1.1,0.7,550};
 };
-class RC_Javelin_AA: RC_IFV_AA
+class RC_Javelin_AA: RC_M_AA
 {
 	model="\rhsusf\addons\rhsusf_weapons\FGM148\fgm148_missile";
 	effectsMissile="missile2";

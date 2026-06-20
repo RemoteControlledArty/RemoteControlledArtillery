@@ -161,6 +161,7 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 					visionMode[]=
 					{
 						"Normal",
+						"NVG",
 						"TI"
 					};
 					thermalMode[]={0};
@@ -506,6 +507,7 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 					visionMode[]=
 					{
 						"Normal",
+						"NVG",
 						"TI"
 					};
 					thermalMode[]={0};
@@ -889,6 +891,7 @@ class RC_Stryker_M1132_M2_WD: RC_Stryker_M1132_M2_WD_Base
 					visionMode[]=
 					{
 						"Normal",
+						"NVG",
 						"TI"
 					};
 					thermalMode[]={0};
@@ -1299,8 +1302,8 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 					visionMode[]=
 					{
 						"Normal",
-						"TI",
-						"NVG"
+						"NVG",
+						"TI"
 					};
 					thermalMode[]={0};
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CITV_w";
@@ -1337,8 +1340,8 @@ class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
 			visionMode[]=
 			{
 				"Normal",
-				"TI",
-				"NVG"
+				"NVG",
+				"TI"
 			};
 		};
 		class DVS_Rear: DVS_Rear
@@ -1346,8 +1349,8 @@ class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
 			visionMode[]=
 			{
 				"Normal",
-				"TI",
-				"NVG"
+				"NVG",
+				"TI"
 			};
 		};
 	};

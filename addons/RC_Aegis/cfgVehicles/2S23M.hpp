@@ -252,7 +252,6 @@ class RC_2S23M_WD: RC_2S23M
 
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			commanding=3;
-			turretInfoType="RscWeaponRangeArtilleryAuto";
 			gunnerForceOptics=1;
 			forceHideGunner=1;
 			maxElev=70;
@@ -277,26 +276,18 @@ class RC_2S23M_WD: RC_2S23M
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 
 					initFov=0.9;
 					minFov=0.0125;
 					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal"
-					};
-					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
+			turretInfoType="RscWeaponRangeArtilleryAuto";
 			
 			class Turrets: Turrets
 			{
@@ -308,7 +299,6 @@ class RC_2S23M_WD: RC_2S23M
 					commanding=2;
 					dontCreateAI=1;
 					gunnerCompartments="Compartment3";
-					turretInfoType="RscOptics_MBT_03_gunner";
 
 					weapons[]=
 					{
@@ -321,6 +311,21 @@ class RC_2S23M_WD: RC_2S23M
 						"SmokeLauncherMag",
 						"SmokeLauncherMag"
 					};
+
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+							initFov=0.9;
+							minFov=0.0125;
+							maxFov=0.9;
+						};
+					};
+					turretInfoType="RscOptics_MBT_03_gunner";
 
 					class Components: Components
 					{
@@ -358,31 +363,6 @@ class RC_2S23M_WD: RC_2S23M
 									resource="RscCustomInfoMiniMap";
 								};
 							};
-						};
-					};
-
-					class OpticsIn
-					{
-						class Wide: RCWSOptics
-						{
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							gunnerOpticsEffect[]={};
 						};
 					};
 				};
