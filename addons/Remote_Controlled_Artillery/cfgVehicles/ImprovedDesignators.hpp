@@ -5,7 +5,7 @@
 
 //Arid Designator
 class B_Static_Designator_01_F;
-class RC_Improved_FOV_Designator_A_base: B_Static_Designator_01_F
+class RC_Improved_FOV_Designator_base: B_Static_Designator_01_F
 {
 	class Turrets;
 	class MainTurret;
@@ -16,7 +16,7 @@ class RC_Improved_FOV_Designator_A_base: B_Static_Designator_01_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
+class RC_Improved_FOV_Designator: RC_Improved_FOV_Designator_base
 {
 	displayname="RC Improved Designator";
 	faction="RemoteControlled_B";
@@ -160,55 +160,75 @@ class RC_Improved_FOV_Designator_A: RC_Improved_FOV_Designator_A_base
 		};
 	};
 
+	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\B_W_Static_Designator_01_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"a3\Static_F_Enoch\Designator_01\Data\ld01_remote_khk_co.paa",
+		"a3\Weapons_F_Exp\Binocular\Data\Laserdesignator_01_khk_F_co.paa"
+	};
+
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Bag_A"
+			"RC_Improved_FOV_Designator_Bag"
 		};
 	};
 };
-class RC_Improved_FOV_Designator_A_O: RC_Improved_FOV_Designator_A
+class RC_Improved_FOV_Designator_O: RC_Improved_FOV_Designator
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator TI [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Bag_A_O"
+			"RC_Improved_FOV_Designator_Bag_O"
 		};
 	};
+	*/
 };
-class RC_Improved_FOV_Designator_A_I: RC_Improved_FOV_Designator_A
+class RC_Improved_FOV_Designator_I: RC_Improved_FOV_Designator
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator TI [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Improved_FOV_Designator_Bag_A_I"
+			"RC_Improved_FOV_Designator_Bag_I"
 		};
 	};
+	*/
 };
 
 
-//Arid Bags
+class RC_Improved_FOV_Designator_Assemble: RC_Improved_FOV_Designator
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+
+
 class B_Static_Designator_01_weapon_F;
-class RC_Improved_FOV_Designator_Bag_A_base: B_Static_Designator_01_weapon_F
+class RC_Improved_FOV_Designator_Bag_base: B_Static_Designator_01_weapon_F
 {
 	class assembleInfo;
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Improved_FOV_Designator_Bag_A: RC_Improved_FOV_Designator_Bag_A_base
+class RC_Improved_FOV_Designator_Bag: RC_Improved_FOV_Designator_Bag_base
 {
 	displayname="RC Improved Designator";
 	scope=2;
@@ -223,122 +243,15 @@ class RC_Improved_FOV_Designator_Bag_A: RC_Improved_FOV_Designator_Bag_A_base
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator";
-		assembleTo="RC_Improved_FOV_Designator_A";
-	};
-};
-class RC_Improved_FOV_Designator_Bag_A_O: RC_Improved_FOV_Designator_Bag_A
-{
-	displayname="RC Improved Designator [Opf]";
-	
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator [Opf]";
-		assembleTo="RC_Improved_FOV_Designator_A_O";
-	};
-};
-class RC_Improved_FOV_Designator_Bag_A_I: RC_Improved_FOV_Designator_Bag_A
-{
-	displayname="RC Improved Designator [Ind]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator [Ind]";
-		assembleTo="RC_Improved_FOV_Designator_A_I";
+		assembleTo="RC_Improved_FOV_Designator_Assemble";
 	};
 };
 
 
-//Woodland Designator
-class RC_Improved_FOV_Designator_WD: RC_Improved_FOV_Designator_A
-{
-	DLC="Enoch";
-	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\B_W_Static_Designator_01_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"a3\Static_F_Enoch\Designator_01\Data\ld01_remote_khk_co.paa",
-		"a3\Weapons_F_Exp\Binocular\Data\Laserdesignator_01_khk_F_co.paa"
-	};
-};
-class RC_Improved_FOV_Designator_WD_O: RC_Improved_FOV_Designator_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator TI [Opf]";
-		dissasembleTo[]=
-		{
-			"RC_Improved_FOV_Designator_Bag_WD_O"
-		};
-	};
-};
-class RC_Improved_FOV_Designator_WD_I: RC_Improved_FOV_Designator_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator TI [Ind]";
-		dissasembleTo[]=
-		{
-			"RC_Improved_FOV_Designator_Bag_WD_I"
-		};
-	};
-};
-
-
-//Woodland Bags
-class RC_Improved_FOV_Designator_Bag_WD: RC_Improved_FOV_Designator_Bag_A
-{
-	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_b_c_compact_sgg_ca.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\weapons_f\ammoboxes\bags\data\backpack_compact_sgg_co.paa"
-	};
-	
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator";
-		assembleTo="RC_Improved_FOV_Designator_WD";
-	};
-};
-class RC_Improved_FOV_Designator_Bag_WD_O: RC_Improved_FOV_Designator_Bag_WD
-{
-	displayname="RC Improved Designator [Opf]";
-	
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator [Opf]";
-		assembleTo="RC_Improved_FOV_Designator_WD_O";
-	};
-};
-class RC_Improved_FOV_Designator_Bag_WD_I: RC_Improved_FOV_Designator_Bag_WD
-{
-	displayname="RC Improved Designator [Ind]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator [Ind]";
-		assembleTo="RC_Improved_FOV_Designator_WD_I";
-	};
-};
-
-
-class RC_Improved_FOV_Designator_Ti_A: RC_Improved_FOV_Designator_A
+//thermal imaging
+class RC_Improved_FOV_Designator_Ti: RC_Improved_FOV_Designator
 {
 	displayname="RC Improved Designator TI";
-
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Improved_FOV_Designator_Ti_Bag_A"
-		};
-	};
 
 	class Components: Components
 	{
@@ -478,13 +391,22 @@ class RC_Improved_FOV_Designator_Ti_A: RC_Improved_FOV_Designator_A
 			};
 		};
 	};
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_Improved_FOV_Designator_Ti_Bag"
+		};
+	};
 };
-class RC_Improved_FOV_Designator_Ti_A_O: RC_Improved_FOV_Designator_Ti_A
+class RC_Improved_FOV_Designator_Ti_O: RC_Improved_FOV_Designator_Ti
 {
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator TI [Opf]";
@@ -493,13 +415,15 @@ class RC_Improved_FOV_Designator_Ti_A_O: RC_Improved_FOV_Designator_Ti_A
 			"RC_Improved_FOV_Designator_Bag_Ti_A_O"
 		};
 	};
+	*/
 };
-class RC_Improved_FOV_Designator_Ti_A_I: RC_Improved_FOV_Designator_Ti_A
+class RC_Improved_FOV_Designator_Ti_I: RC_Improved_FOV_Designator_Ti
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator TI [Ind]";
@@ -508,11 +432,19 @@ class RC_Improved_FOV_Designator_Ti_A_I: RC_Improved_FOV_Designator_Ti_A
 			"RC_Improved_FOV_Designator_Bag_Ti_A_I"
 		};
 	};
+	*/
 };
 
 
-//Arid Bags
-class RC_Improved_FOV_Designator_Bag_Ti_A: RC_Improved_FOV_Designator_Bag_A_base
+class RC_Improved_FOV_Designator_Ti_Assemble: RC_Improved_FOV_Designator_Ti
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+class RC_Improved_FOV_Designator_Ti_Bag: RC_Improved_FOV_Designator_Bag_base
 {
 	displayname="RC Improved Designator TI";
 	scope=2;
@@ -523,109 +455,9 @@ class RC_Improved_FOV_Designator_Bag_Ti_A: RC_Improved_FOV_Designator_Bag_A_base
 	{
 		"\A3\weapons_f\ammoboxes\bags\data\backpack_compact_rgr_co.paa"
 	};
-	
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Improved Designator TI";
-		assembleTo="RC_Improved_FOV_Designator_Ti_A";
-	};
-};
-class RC_Improved_FOV_Designator_Bag_Ti_A_O: RC_Improved_FOV_Designator_Bag_Ti_A
-{
-	displayname="RC Improved Designator TI [Opf]";
-	
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator TI [Opf]";
-		assembleTo="RC_Improved_FOV_Designator_Ti_A_O";
-	};
-};
-class RC_Improved_FOV_Designator_Bag_Ti_A_I: RC_Improved_FOV_Designator_Bag_Ti_A
-{
-	displayname="RC Improved Designator TI [Ind]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator TI [Ind]";
-		assembleTo="RC_Improved_FOV_Designator_Ti_A_I";
-	};
-};
-
-
-//Woodland Designator Ti
-class RC_Improved_FOV_Designator_Ti_WD: RC_Improved_FOV_Designator_Ti_A
-{
-	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\B_W_Static_Designator_01_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"a3\Static_F_Enoch\Designator_01\Data\ld01_remote_khk_co.paa",
-		"a3\Weapons_F_Exp\Binocular\Data\Laserdesignator_01_khk_F_co.paa"
-	};
-};
-class RC_Improved_FOV_Designator_Ti_WD_O: RC_Improved_FOV_Designator_Ti_WD
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator TI [Opf]";
-		dissasembleTo[]=
-		{
-			"RC_Improved_FOV_Designator_Bag_Ti_WD_O"
-		};
-	};
-};
-class RC_Improved_FOV_Designator_Ti_WD_I: RC_Improved_FOV_Designator_Ti_WD
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator TI [Ind]";
-		dissasembleTo[]=
-		{
-			"RC_Improved_FOV_Designator_Bag_Ti_WD_I"
-		};
-	};
-};
-
-
-//Woodland Bags Ti
-class RC_Improved_FOV_Designator_Bag_Ti_WD: RC_Improved_FOV_Designator_Bag_Ti_A
-{
-	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_b_c_compact_sgg_ca.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\weapons_f\ammoboxes\bags\data\backpack_compact_sgg_co.paa"
-	};
-	
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator TI";
-		assembleTo="RC_Improved_FOV_Designator_Ti_WD";
-	};
-};
-class RC_Improved_FOV_Designator_Bag_Ti_WD_O: RC_Improved_FOV_Designator_Bag_Ti_WD
-{
-	displayname="RC Improved Designator TI [Opf]";
-	
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator TI [Opf]";
-		assembleTo="RC_Improved_FOV_Designator_Ti_WD_O";
-	};
-};
-class RC_Improved_FOV_Designator_Bag_Ti_WD_I: RC_Improved_FOV_Designator_Bag_Ti_WD
-{
-	displayname="RC Improved Designator TI [Ind]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Improved Designator TI [Ind]";
-		assembleTo="RC_Improved_FOV_Designator_Ti_WD_I";
+		assembleTo="RC_Improved_FOV_Designator_Ti_Assemble";
 	};
 };

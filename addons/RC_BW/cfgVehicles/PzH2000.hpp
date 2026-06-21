@@ -174,25 +174,15 @@ class RC_PzH2000_FT_Base: RC_PzH2000_Core
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 
-					initFov=0.125;
+					initFov=0.9;
 					minFov=0.0125;
 					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
 			
@@ -238,25 +228,15 @@ class RC_PzH2000_FT_Base: RC_PzH2000_Core
 
 					class OpticsIn
 					{
-						class Wide: RCWSOptics
+						class Wide
 						{
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Optics_Commander_01_F.p3d";
 
 							initFov=0.9;
 							minFov=0.0125;
 							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"NVG"
-							};
-							gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Optics_Commander_01_F.p3d";
-							gunnerOpticsEffect[]={};
 						};
 					};
 				};

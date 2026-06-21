@@ -1,7 +1,3 @@
-//private _currentUV = getConnectedUAV player;
-//private _connected = !isNull _currentUV;
-
-//if RCing
 if (isRemoteControlling player) then {
 
 	call RC_fnc_RC_stopRC;

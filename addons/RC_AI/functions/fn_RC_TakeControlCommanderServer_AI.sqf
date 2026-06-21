@@ -9,9 +9,9 @@ if (isNull (driver _vic)) then {
 	private _side = side _com;
 	private _agentType = typeOf _com;
 	switch (true) do {
-		case((_side == west)): {_agentType = "RC_AI_B_Crew_Agent";};
-		case((_side == east)): {_agentType = "RC_AI_O_Crew_Agent";};
-		case((_side == resistance)): {_agentType = "RC_AI_I_Crew_Agent";};
+		case((_side == west)): {_agentType = "RC_B_CrewAgent";};
+		case((_side == east)): {_agentType = "RC_O_CrewAgent";};
+		case((_side == resistance)): {_agentType = "RC_I_CrewAgent";};
 	};
 
 	private _driver = createAgent [_agentType, [0,0,0], [], 0, "NONE"];

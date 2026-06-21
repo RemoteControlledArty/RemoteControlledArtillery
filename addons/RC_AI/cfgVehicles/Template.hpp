@@ -104,10 +104,8 @@ class RC_AI_B_name_A: RC_AI_B_name_A_Base
 {
 	scope=2;
 	scopeCurator=2;
-
-	faction="RC_AI_B";
-	crew="RC_AI_B_Crew";
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+	#include "\RC_AI\includes_cfg\sideB.hpp"
+	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -119,10 +117,8 @@ class RC_AI_B_name_A: RC_AI_B_name_A_Base
 };
 class RC_AI_O_name_A: RC_AI_B_name_A
 {
-	faction="RC_AI_O";
-	crew="RC_AI_O_Crew";
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+	#include "\RC_AI\includes_cfg\sideO.hpp"
+	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -134,10 +130,8 @@ class RC_AI_O_name_A: RC_AI_B_name_A
 };
 class RC_AI_I_name_A: RC_AI_B_name_A
 {
-	faction="RC_AI_I";
-	crew="RC_AI_I_Crew";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+	#include "\RC_AI\includes_cfg\sideI.hpp"
+	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{
@@ -158,10 +152,8 @@ class RC_AI_B_name_WD: RC_AI_B_name_A
 };
 class RC_AI_O_name_WD: RC_AI_B_name_WD
 {
-	faction="RC_AI_O";
-	crew="RC_AI_O_Crew";
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+	#include "\RC_AI\includes_cfg\sideO.hpp"
+	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -173,10 +165,8 @@ class RC_AI_O_name_WD: RC_AI_B_name_WD
 };
 class RC_AI_I_name_WD: RC_AI_B_name_WD
 {
-	faction="RC_AI_I";
-	crew="RC_AI_I_Crew";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
+	#include "\RC_AI\includes_cfg\sideI.hpp"
+	//#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
 	{

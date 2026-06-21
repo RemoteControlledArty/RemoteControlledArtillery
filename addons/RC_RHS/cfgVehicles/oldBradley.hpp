@@ -120,6 +120,25 @@ class RC_M2A2_D_Base: RC_M2A2_Base
 		*/
 	};
 
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics {};
+				class SL_Seat
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
+				};
+				class TL_Seat
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
+				};
+			};
+		};
+	};
+
 	class Components: Components
 	{
 		class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
@@ -325,9 +344,10 @@ class RC_M2A2_D: RC_M2A2_D_Base
 						};
 					};
 				};
-				class SL_Seat
+				class SL_Seat: SL_Seat
 				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
+					weapons[]={};
+					magazines[]={};
 
 					gunnerName="SL";
 					proxyIndex=1;
@@ -353,9 +373,10 @@ class RC_M2A2_D: RC_M2A2_D_Base
 					//turretInfoType="RscOptics_APC_Wheeled_01_gunner";
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
 				};
-				class TL_Seat
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\AdvisorOptics2.hpp"
+				class TL_Seat: TL_Seat
+				{	
+					weapons[]={};
+					magazines[]={};
 
 					gunnerName="TL";
 					proxyIndex=2;
@@ -488,7 +509,7 @@ class RC_M2A2_D_O: RC_M2A2_D_B
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-	#include "\RC_RHS\loadouts\IFVitemsO_RHS_old.hpp"
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M2A2_D_I: RC_M2A2_D_B
 {
@@ -517,7 +538,7 @@ class RC_M2A2_WD_O: RC_M2A2_WD_B
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-	#include "\RC_RHS\loadouts\IFVitemsO_RHS_old.hpp"
+	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M2A2_WD_I: RC_M2A2_WD_B
 {

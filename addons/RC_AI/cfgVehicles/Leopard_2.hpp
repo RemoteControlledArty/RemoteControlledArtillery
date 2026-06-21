@@ -123,9 +123,7 @@ class RC_AI_B_Leopard_A: RC_AI_B_Leopard_A_Base
 {
 	scope=2;
 	scopeCurator=2;
-
-	faction="RC_AI_B";
-	crew="RC_AI_B_Crew";	//B_UAV_AI
+	#include "\RC_AI\includes_cfg\sideB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -147,9 +145,7 @@ class RC_AI_B_Leopard_A: RC_AI_B_Leopard_A_Base
 };
 class RC_AI_O_Leopard_A: RC_AI_B_Leopard_A
 {
-	faction="RC_AI_O";
-	crew="RC_AI_O_Crew";	//O_UAV_AI
-	side=0;
+	#include "\RC_AI\includes_cfg\sideO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -171,9 +167,7 @@ class RC_AI_O_Leopard_A: RC_AI_B_Leopard_A
 };
 class RC_AI_I_Leopard_A: RC_AI_B_Leopard_A
 {
-	faction="RC_AI_I";
-	crew="RC_AI_I_Crew";	//I_UAV_AI
-	side=2;
+	#include "\RC_AI\includes_cfg\sideI.hpp"
 
 	class Turrets: Turrets
 	{

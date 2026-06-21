@@ -243,11 +243,6 @@ class RC_AAV9A1_A: RC_AAV9A1
 
 	class Turrets: Turrets
 	{
-		class CargoGunner_3: CargoGunner_3 {gunnerName="L1";};
-		class CargoGunner_4: CargoGunner_4 {gunnerName="R1";};
-		class CargoGunner_5: CargoGunner_5 {gunnerName="L2";};
-		class CargoGunner_6: CargoGunner_6 {gunnerName="R2";};
-
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
@@ -382,6 +377,10 @@ class RC_AAV9A1_A: RC_AAV9A1
 				};
 			};
 		};
+		class CargoGunner_3: CargoGunner_3 {gunnerName="L1";};
+		class CargoGunner_4: CargoGunner_4 {gunnerName="R1";};
+		class CargoGunner_5: CargoGunner_5 {gunnerName="L2";};
+		class CargoGunner_6: CargoGunner_6 {gunnerName="R2";};
 	};
 };
 class RC_AAV9A1_A_O: RC_AAV9A1_A
@@ -393,15 +392,14 @@ class RC_AAV9A1_A_O: RC_AAV9A1_A
 
 	class Turrets: Turrets
 	{
-		class CargoGunner_3: CargoGunner_3 {};
-		class CargoGunner_4: CargoGunner_4 {};
-		class CargoGunner_5: CargoGunner_5 {};
-		class CargoGunner_6: CargoGunner_6 {};
-
 		class MainTurret: MainTurret
 		{
 			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_green.hpp"
 		};
+		class CargoGunner_3: CargoGunner_3 {};
+		class CargoGunner_4: CargoGunner_4 {};
+		class CargoGunner_5: CargoGunner_5 {};
+		class CargoGunner_6: CargoGunner_6 {};
 	};
 };
 class RC_AAV9A1_A_I: RC_AAV9A1_A
@@ -413,15 +411,14 @@ class RC_AAV9A1_A_I: RC_AAV9A1_A
 
 	class Turrets: Turrets
 	{
-		class CargoGunner_3: CargoGunner_3 {};
-		class CargoGunner_4: CargoGunner_4 {};
-		class CargoGunner_5: CargoGunner_5 {};
-		class CargoGunner_6: CargoGunner_6 {};
-
 		class MainTurret: MainTurret
 		{
 			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_yellow.hpp"
 		};
+		class CargoGunner_3: CargoGunner_3 {};
+		class CargoGunner_4: CargoGunner_4 {};
+		class CargoGunner_5: CargoGunner_5 {};
+		class CargoGunner_6: CargoGunner_6 {};
 	};
 };
 
@@ -470,15 +467,14 @@ class RC_AAV9A1_WD_O: RC_AAV9A1_WD
 
 	class Turrets: Turrets
 	{
-		class CargoGunner_3: CargoGunner_3 {};
-		class CargoGunner_4: CargoGunner_4 {};
-		class CargoGunner_5: CargoGunner_5 {};
-		class CargoGunner_6: CargoGunner_6 {};
-
 		class MainTurret: MainTurret
 		{
 			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_green.hpp"
 		};
+		class CargoGunner_3: CargoGunner_3 {};
+		class CargoGunner_4: CargoGunner_4 {};
+		class CargoGunner_5: CargoGunner_5 {};
+		class CargoGunner_6: CargoGunner_6 {};
 	};
 };
 class RC_AAV9A1_WD_I: RC_AAV9A1_WD
@@ -490,15 +486,14 @@ class RC_AAV9A1_WD_I: RC_AAV9A1_WD
 
 	class Turrets: Turrets
 	{
-		class CargoGunner_3: CargoGunner_3 {};
-		class CargoGunner_4: CargoGunner_4 {};
-		class CargoGunner_5: CargoGunner_5 {};
-		class CargoGunner_6: CargoGunner_6 {};
-
 		class MainTurret: MainTurret
 		{
 			#include "\RC_ExpForces\includes_vicmags\mags_AAV_50mm_yellow.hpp"
 		};
+		class CargoGunner_3: CargoGunner_3 {};
+		class CargoGunner_4: CargoGunner_4 {};
+		class CargoGunner_5: CargoGunner_5 {};
+		class CargoGunner_6: CargoGunner_6 {};
 	};
 };
 
@@ -782,6 +777,55 @@ class RC_AAV9_A: RC_AAV9
 			
 			class Turrets: Turrets
 			{
+				class CommanderOptics : CommanderOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
+					dontCreateAI=1;
+					showAllTargets="2 + 4";
+					commanding=3;
+
+					weapons[]=
+					{
+						"RC_Laserdesignator_vehicle",
+						"SmokeLauncher"
+					};
+					magazines[]=
+					{
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+						};
+					};
+					turretInfoType="RscOptics_MBT_03_gunner";
+
+					class HitPoints: HitPoints
+					{
+						class HitComGun: HitComGun
+						{
+							armor=0.1;
+							passThrough=0;
+						};
+						class HitComTurret: HitComTurret
+						{
+							armor=0.25;
+							passThrough=0;
+						};
+					};
+				};
 				class CrewmanStation: CrewmanStation
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
@@ -828,56 +872,6 @@ class RC_AAV9_A: RC_AAV9
 						class HitCrewTurret: HitCrewTurret
 						{
 							armor=0.2;
-							passThrough=0;
-						};
-					};
-				};
-
-				class CommanderOptics : CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_commander.hpp"
-					dontCreateAI=1;
-					showAllTargets="2 + 4";
-					commanding=3;
-
-					weapons[]=
-					{
-						"RC_Laserdesignator_vehicle",
-						"SmokeLauncher"
-					};
-					magazines[]=
-					{
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
-
-					class OpticsIn
-					{
-						class Wide
-						{
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-						};
-					};
-					turretInfoType="RscOptics_MBT_03_gunner";
-
-					class HitPoints: HitPoints
-					{
-						class HitComGun: HitComGun
-						{
-							armor=0.1;
-							passThrough=0;
-						};
-						class HitComTurret: HitComTurret
-						{
-							armor=0.25;
 							passThrough=0;
 						};
 					};

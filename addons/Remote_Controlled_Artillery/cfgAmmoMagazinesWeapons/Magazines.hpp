@@ -114,6 +114,7 @@ class RC_1Rnd_ATGM_MP_SACLOS: Vorona_HEAT
 	displayNameShort="SACLOS ATGM";
 	displayNameMFDFormat="SACLOS ATGM";
 	ammo="RC_M_ATGM_MP_SACLOS";
+	initSpeed=150;
 };
 class 1Rnd_GAT_missiles;
 class RC_1Rnd_ATGM_MP_LOS: 1Rnd_GAT_missiles
@@ -129,6 +130,7 @@ class RC_1Rnd_ATGM_MP_Overfly: 1Rnd_GAT_missiles
 	displayNameShort="Overfly ATGM";
 	displayNameMFDFormat="OvFly ATGM";
 	ammo="RC_M_ATGM_MP_Overfly";
+	initSpeed=150;
 };
 class RC_1Rnd_ATGM_MP_NLOS: 1Rnd_GAT_missiles
 {
@@ -1911,7 +1913,7 @@ class RC_2Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_LOS
 	displayNameShort="Overfly ATGM";
 	displayNameMFDFormat="OvFly";
 	ammo="RC_M_ATGM_MP_Overfly";
-	initSpeed=100;
+	initSpeed=150;
 };
 class RC_4Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_Overfly {count=4;};
 class RC_1Rnd_IFV_MP_SACLOS: RC_2Rnd_IFV_MP_LOS

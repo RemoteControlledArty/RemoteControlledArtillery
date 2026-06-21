@@ -12,6 +12,9 @@ class RC_cUAS_Static_core: B_GMG_01_high_F
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
+
+	RC_assembleSideSwitch=1;
+	RC_assembleAutonomousOff=0;
 };
 class RC_cUAS_Static_base: RC_cUAS_Static_core
 {
@@ -234,6 +237,7 @@ class RC_cUAS_Static: RC_cUAS_Static_base
 	uavCameraGunnerPos="gunnerview";
 	uavCameraGunnerDir="gunnerview";
 	crew="B_UAV_AI";
+
 	//armor=30;	//30
 	armor=15;
 
@@ -250,9 +254,6 @@ class RC_cUAS_Static_O: RC_cUAS_Static
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
-	armor=15;
-
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -267,8 +268,6 @@ class RC_cUAS_Static_I: RC_cUAS_Static
 	crew="I_UAV_AI";
 	side=2;
 
-	armor=15;
-
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -279,6 +278,14 @@ class RC_cUAS_Static_I: RC_cUAS_Static
 };
 
 
+class RC_cUAS_Static_Assemble: RC_cUAS_Static
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
 class RC_cUAS_Static_Bag: RC_Mortar_Bag
 {
 	displayName="RC C-UAS Static 20mm AB";
@@ -295,28 +302,8 @@ class RC_cUAS_Static_Bag: RC_Mortar_Bag
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC C-UAS Static 20mm AB";
-		assembleTo="RC_cUAS_Static 20mm AB";
+		assembleTo="RC_cUAS_Static_Assemble";
 		base="";
-	};
-};
-class RC_cUAS_Static_Bag_O: RC_cUAS_Static_Bag
-{
-	displayName="RC C-UAS Static 20mm AB [Opf]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC C-UAS Static 20mm AB [Opf]";
-		assembleTo="RC_cUAS_Static_O";
-	};
-};	
-class RC_cUAS_Static_Bag_I: RC_cUAS_Static_Bag
-{
-	displayName="RC C-UAS Static 20mm AB [Ind]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC C-UAS Static 20mm AB [Ind]";
-		assembleTo="RC_cUAS_Static_I";
 	};
 };
 
@@ -327,6 +314,7 @@ class RC_cUAS_Static_manned: RC_cUAS_Static_base
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
+
 	//armor=30;	//30
 	armor=15;
 
@@ -341,7 +329,7 @@ class RC_cUAS_Static_manned: RC_cUAS_Static_base
 	{
 		dissasembleTo[]=
 		{
-			"RC_cUAS_Static_Bag"
+			"RC_cUAS_Static_manned_Bag"
 		};
 	};
 };
@@ -349,8 +337,6 @@ class RC_cUAS_Static_manned_O: RC_cUAS_Static_manned
 {
 	faction="RemoteControlled_O";
 	side=0;
-
-	armor=15;
 
 	class Turrets: Turrets
 	{
@@ -365,8 +351,6 @@ class RC_cUAS_Static_manned_I: RC_cUAS_Static_manned
 	faction="RemoteControlled_I";
 	side=2;
 
-	armor=15;
-
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -377,6 +361,14 @@ class RC_cUAS_Static_manned_I: RC_cUAS_Static_manned
 };
 
 
+class RC_cUAS_Static_manned_Assemble: RC_cUAS_Static_manned
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
 class RC_cUAS_Static_manned_Bag: RC_cUAS_Static_Bag
 {
 	displayName="C-UAS Static 20mm AB";
@@ -384,27 +376,7 @@ class RC_cUAS_Static_manned_Bag: RC_cUAS_Static_Bag
 	class assembleInfo: assembleInfo
 	{
 		displayName="C-UAS Static 20mm AB";
-		assembleTo="RC_cUAS_Static_manned";
-	};
-};
-class RC_cUAS_Static_manned_Bag_O: RC_cUAS_Static_manned_Bag
-{
-	displayName="C-UAS Static 20mm AB [Opf]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="C-UAS Static 20mm AB [Opf]";
-		assembleTo="RC_cUAS_Static_manned_O";
-	};
-};
-class RC_cUAS_Static_manned_Bag_I: RC_cUAS_Static_manned_Bag
-{
-	displayName="C-UAS Static 20mm AB [Ind]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="C-UAS Static 20mm AB [Ind]";
-		assembleTo="RC_cUAS_Static_manned_I";
+		assembleTo="RC_cUAS_Static_manned_Assemble";
 	};
 };
 

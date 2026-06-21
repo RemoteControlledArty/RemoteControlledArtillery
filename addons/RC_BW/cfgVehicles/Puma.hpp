@@ -129,27 +129,16 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_AAA_01_m_F.p3d";
 
 					initFov=0.9;
 					minFov=0.02;
 					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
-					//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_AAA_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
 			
@@ -179,29 +168,16 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 
 					class OpticsIn
 					{
-						class Wide: RCWSOptics
+						class Wide
 						{
-							//directionStabilized=1;	//unfortunately causes spinning camera bug
-
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_AAA_01_m_F.p3d";
 
 							initFov=0.9;
 							minFov=0.02;
 							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							gunnerOpticsEffect[]={};
 						};
 					};
 				};
@@ -225,12 +201,8 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 						class Wide
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
-
-							minAngleX=-30;	//?
-							maxAngleX=30;	//?
-							minAngleY=-100;	//?
-							maxAngleY=100;	//?
 
 							initFov=0.9;
 							minFov=0.02;
@@ -258,12 +230,8 @@ class RC_Puma_FT_Base: RC_Puma_FT_Core
 						class Wide
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
-
-							minAngleX=-30;	//?
-							maxAngleX=30;	//?
-							minAngleY=-100;	//?
-							maxAngleY=100;	//?
 
 							initFov=0.9;
 							minFov=0.02;

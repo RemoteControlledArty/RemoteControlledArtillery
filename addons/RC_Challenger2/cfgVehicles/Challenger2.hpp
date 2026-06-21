@@ -167,12 +167,8 @@ class RC_Challenger2_A_Base: RC_Challenger2_Base
 				class Wide
 				{
 					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 					gunnerOpticsModel="\QAV_Challenger\c2_com_op_n.p3d";
-
-					minAngleX=-30;
-					maxAngleX=30;
-					minAngleY=-100;
-					maxAngleY=100;
 
 					initFov=0.4;
 					minFov=0.02;
@@ -210,12 +206,8 @@ class RC_Challenger2_A_Base: RC_Challenger2_Base
 						class Wide
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\QAV_Challenger\c2_com_op_n.p3d";
-
-							minAngleX=-30;
-							maxAngleX=30;
-							minAngleY=-100;
-							maxAngleY=100;
 
 							initFov=0.9;
 							minFov=0.02;
@@ -240,12 +232,8 @@ class RC_Challenger2_A_Base: RC_Challenger2_Base
 						class Gun1
 						{
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\QAV_Challenger\c2_com_op_n.p3d";
-
-							minAngleX=-30;	//?
-							maxAngleX=30;	//?
-							minAngleY=-100;	//?
-							maxAngleY=100;	//?
 
 							initFov=0.4;
 							minFov=0.02;

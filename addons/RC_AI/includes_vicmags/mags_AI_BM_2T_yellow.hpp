@@ -21,6 +21,7 @@ magazines[]=
 
 	"RC_AI_2Rnd_IFV_MP_SACLOS",
 	"RC_AI_2Rnd_IFV_MP_SACLOS",
+	"RC_AI_2Rnd_IFV_MP_SACLOS",
 
 	/*
 	"RC_AI_2Rnd_IFV_MP_Overfly",

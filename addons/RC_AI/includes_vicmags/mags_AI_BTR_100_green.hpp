@@ -18,6 +18,7 @@ magazines[]=
 	"RC_AI_400Rnd_93x64_T_G",
 
 	"RC_AI_4Rnd_IFV_MP_SACLOS",
+	"RC_AI_4Rnd_IFV_MP_SACLOS",
 
 	/*
 	"RC_AI_2Rnd_IFV_MP_Overfly",

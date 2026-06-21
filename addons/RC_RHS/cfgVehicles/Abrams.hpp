@@ -219,35 +219,6 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 					commanding=2;
 					allowTabLock=1;
 					canUseScanners=1;
-					//turretInfoType="RscOptics_MBT_01_commander_RCWS";
-
-					class OpticsIn
-					{
-						class DaysightWFOV: DaysightWFOV
-						{
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-
-							opticsDisplayName="1-30x";
-							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CROWS_monitor";
-							hitpoint="Hit_Optic_CROWS_Day";
-							visionMode[]=
-							{
-								"Normal",
-								"NVG",
-								"Ti"
-							};
-							thermalMode[]={0};
-						};
-					};
 
 					weapons[]=
 					{
@@ -257,6 +228,24 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 						"rhsusf_weap_duke"
 					};
 					#include "\RC_RHS\includes_vicmags\mags_Abrams_com_red.hpp"
+
+					class OpticsIn
+					{
+						class DaysightWFOV
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CROWS_monitor";
+							hitpoint="Hit_Optic_CROWS_Day";
+							opticsDisplayName="1-12.5";
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+						};
+					};
+					turretInfoType="RHS_RscM153_CROWS_Abrams";
+					//turretInfoType="RscOptics_MBT_01_commander_RCWS";
 				};
 
 				class Loader: Loader
@@ -282,62 +271,62 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 
 					class OpticsIn
 					{
-						class Periscope: ViewOptics
+						class Periscope
 						{
-							initFov=0.9;
-							minFov=0.9;
-							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"NVG",
-								"TI"
-							};
-							thermalMode[]={0};
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 							//gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhs_periscope_BISType";
 							hitpoint="Hit_Optic_LoaderPeriscope";
-						};
-						//class Wide: RCWSOptics
-						class Medium_TI: RCWSOptics
-						{
-							//mainturret memoryPointGunnerOptics="CITV_view";
-							camPos="CITV_view";
-							camDir="CITV_view_dir";
-
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
 
 							initFov=0.9;
 							minFov=0.9;
 							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
-							gunnerOpticsEffect[]={};
-							hitpoint="Hit_Optic_GPS_TI";
 						};
-						class Medium2_TI: Medium_TI
+						
+						class Gun1: Periscope
 						{
-							initFov=0.35;
-							minFov=0.35;
-							maxFov=0.35;
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
+							hitpoint="Hit_Optic_GPS_TI";
+							camPos="CITV_view";
+							//camDir="CITV_view_dir";	//does CITV_view_dir even exist?
+
+							initFov=0.4;
+							minFov=0.4;
+							maxFov=0.4;
 						};
-						class Medium3_TI: Medium_TI
+						class Gun2: Gun1
 						{
 							initFov=0.1;
 							minFov=0.1;
 							maxFov=0.1;
 						};
-						class Narrow_TI: Medium_TI
+						class Gun3: Gun1
+						{
+							initFov=0.02;
+							minFov=0.02;
+							maxFov=0.02;
+						};
+
+						class Com1: Gun1
+						{
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CROWS_monitor";
+							hitpoint="Hit_Optic_CROWS_Day";
+							camPos="PIP0_dir";
+							//camPos="commanderview";
+							//camDir="commanderview_dir";
+
+							initFov=0.5;
+							minFov=0.5;
+							maxFov=0.5;
+						};
+						class Com2: Com1
+						{
+							initFov=0.1;
+							minFov=0.1;
+							maxFov=0.1;
+						};
+						class Com3: Com1
 						{
 							initFov=0.02;
 							minFov=0.02;

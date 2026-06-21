@@ -11,6 +11,9 @@ class RC_cUAS_Static_HMG_core: B_HMG_01_high_F
 	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
+
+	RC_assembleSideSwitch=1;
+	RC_assembleAutonomousOff=0;
 };
 class RC_cUAS_Static_HMG_base: RC_cUAS_Static_HMG_core
 {
@@ -250,6 +253,7 @@ class RC_cUAS_Static_HMG: RC_cUAS_Static_HMG_base
 	uavCameraGunnerPos="gunnerview";
 	uavCameraGunnerDir="gunnerview";
 	crew="B_UAV_AI";
+
 	//armor=30;	//30
 	armor=15;
 
@@ -266,57 +270,33 @@ class RC_cUAS_Static_HMG_O: RC_cUAS_Static_HMG
 	faction="RemoteControlled_O";
 	crew="O_UAV_AI";
 	side=0;
-
-	armor=15;
 };
 class RC_cUAS_Static_HMG_I: RC_cUAS_Static_HMG
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
-
-	armor=15;
 };
 
 
+class RC_cUAS_Static_HMG_Assemble: RC_cUAS_Static_HMG
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
 class RC_cUAS_Static_HMG_Bag: RC_Mortar_Bag
 {
 	displayName="RC C-UAS Static 12.7mm";
 	mass=400;	//~27kg
 
-	/*
-	picture="\a3\Supplies_F_Enoch\Bags\Data\UI\icon_B_Carryall_green_F_ca.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\Supplies_F_Enoch\bags\data\backpack_tortila_RUkhk_co.paa"
-	};
-	*/
-
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC C-UAS Static 12.7mm";
-		assembleTo="RC_cUAS_Static_HMG";
+		assembleTo="RC_cUAS_Static_HMG_Assemble";
 		base="";
-	};
-};
-class RC_cUAS_Static_HMG_Bag_O: RC_cUAS_Static_HMG_Bag
-{
-	displayName="RC C-UAS Static 12.7mm [Opf]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC C-UAS Static 12.7mm [Opf]";
-		assembleTo="RC_cUAS_Static_HMG_O";
-	};
-};	
-class RC_cUAS_Static_HMG_Bag_I: RC_cUAS_Static_HMG_Bag
-{
-	displayName="RC C-UAS Static 12.7mm [Ind]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC C-UAS Static 12.7mm [Ind]";
-		assembleTo="RC_cUAS_Static_HMG_I";
 	};
 };
 
@@ -327,6 +307,7 @@ class RC_cUAS_Static_HMG_manned: RC_cUAS_Static_HMG_base
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
+	
 	//armor=30;	//30
 	armor=15;
 
@@ -341,7 +322,7 @@ class RC_cUAS_Static_HMG_manned: RC_cUAS_Static_HMG_base
 	{
 		dissasembleTo[]=
 		{
-			"RC_cUAS_Static_HMG_Bag"
+			"RC_cUAS_Static_HMG_manned_Bag"
 		};
 	};
 };
@@ -349,18 +330,22 @@ class RC_cUAS_Static_HMG_manned_O: RC_cUAS_Static_HMG_manned
 {
 	faction="RemoteControlled_O";
 	side=0;
-
-	armor=15;
 };
 class RC_cUAS_Static_HMG_manned_I: RC_cUAS_Static_HMG_manned
 {
 	faction="RemoteControlled_I";
 	side=2;
-
-	armor=15;
 };
 
 
+class RC_cUAS_Static_HMG_manned_Assemble: RC_cUAS_Static_HMG_manned
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
 class RC_cUAS_Static_HMG_manned_Bag: RC_cUAS_Static_HMG_Bag
 {
 	displayName="C-UAS Static 12.7mm";
@@ -368,27 +353,7 @@ class RC_cUAS_Static_HMG_manned_Bag: RC_cUAS_Static_HMG_Bag
 	class assembleInfo: assembleInfo
 	{
 		displayName="C-UAS Static 12.7mm";
-		assembleTo="RC_cUAS_Static_HMG_manned";
-	};
-};
-class RC_cUAS_Static_HMG_manned_Bag_O: RC_cUAS_Static_HMG_manned_Bag
-{
-	displayName="C-UAS Static 12.7mm [Opf]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="C-UAS Static 12.7mm [Opf]";
-		assembleTo="RC_cUAS_Static_HMG_manned_O";
-	};
-};
-class RC_cUAS_Static_HMG_manned_Bag_I: RC_cUAS_Static_HMG_manned_Bag
-{
-	displayName="C-UAS Static 12.7mm [Ind]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="C-UAS Static 12.7mm [Ind]";
-		assembleTo="RC_cUAS_Static_HMG_manned_I";
+		assembleTo="RC_cUAS_Static_HMG_manned_Assemble";
 	};
 };
 

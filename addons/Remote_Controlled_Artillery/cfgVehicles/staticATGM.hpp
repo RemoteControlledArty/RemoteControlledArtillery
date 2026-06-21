@@ -1,7 +1,7 @@
 // Static AT Arid
 // Blufor
 class B_static_AT_F;
-class RC_Static_AT_A_base: B_static_AT_F
+class RC_Static_ATGM_base: B_static_AT_F
 {
 	class Turrets;
 	class MainTurret;
@@ -12,10 +12,13 @@ class RC_Static_AT_A_base: B_static_AT_F
 	class AnimationSources;
 	scope=0;
 	scopeCurator=0;
+	
+	RC_assembleSideSwitch=1;
+	RC_assembleAutonomousOff=1;
 };
-class RC_Static_AT_A: RC_Static_AT_A_base
+class RC_Static_ATGM_SACLOS: RC_Static_ATGM_base
 {
-	displayname="RC ATGM 4km SACLOS";
+	displayname="RC Static ATGM 4km SACLOS";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_ATGM_subcat";
 	scope=2;
@@ -128,15 +131,6 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 		};
 	};
 
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km SACLOS";
-		dissasembleTo[]=
-		{
-			"RC_Static_AT_A_Bag"
-		};
-	};
-
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -243,30 +237,6 @@ class RC_Static_AT_A: RC_Static_AT_A_base
 			weapon="RC_ATGM_SACLOS";
 		};
 	};
-};
-class RC_Static_AT_A_Bag: RC_Static_AA_A_Bag
-{
-	displayName="RC ATGM 4km SACLOS";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km SACLOS";
-		assembleTo="RC_Static_AT_A";
-	};
-};
-
-// Woodland
-class RC_Static_AT_WD: RC_Static_AT_A
-{
-	DLC="Expansion";
-
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Static_AT_WD_Bag"
-		};
-	};
 
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_static_AT_F.jpg";
 	hiddenSelectionsTextures[]=
@@ -274,141 +244,75 @@ class RC_Static_AT_WD: RC_Static_AT_A
 		"\a3\weapons_f_beta\launchers\titan\data\launcher_INDP_co.paa",
 		"\a3\weapons_f_beta\launchers\titan\data\tubem_INDP_co.paa"
 	};
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC Static ATGM 4km SACLOS";
+		dissasembleTo[]=
+		{
+			"RC_Static_ATGM_SACLOS_Bag"
+		};
+	};
 };
-class RC_Static_AT_WD_Bag: RC_Static_AA_WD_Bag
+class RC_Static_ATGM_SACLOS_O: RC_Static_ATGM_SACLOS
 {
-	displayName="RC ATGM 4km SACLOS";
+	faction="RemoteControlled_O";
+	side=0;
+	crew="O_UAV_AI";
+
+	/*
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC ATGM 4km SACLOS [Opf]";
+		dissasembleTo[]=
+		{
+			"RC_Static_AT_Bag_O"
+		};
+	};
+	*/
+};
+class RC_Static_ATGM_SACLOS_I: RC_Static_ATGM_SACLOS
+{
+	faction="RemoteControlled_I";
+	side=2;
+	crew="I_UAV_AI";
+
+	/*
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC ATGM 4km SACLOS [Opf]";
+		dissasembleTo[]=
+		{
+			"RC_Static_AT_Bag_O"
+		};
+	};
+	*/
+};
+
+
+class RC_Static_ATGM_SACLOS_Assemble: RC_Static_ATGM_SACLOS
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+class RC_Static_ATGM_SACLOS_Bag: RC_Static_AA_Bag
+{
+	displayName="RC Static ATGM 4km SACLOS";
 
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 4km SACLOS";
-		assembleTo="RC_Static_AT_WD";
+		assembleTo="RC_Static_ATGM_SACLOS_Assemble";
 	};
 };
 
-
-// Opfor
-// Arid
-class RC_Static_AT_A_O: RC_Static_AT_A
+//Overfly
+class RC_Static_ATGM_Overfly: RC_Static_ATGM_SACLOS
 {
-	faction="RemoteControlled_O";
-	side=0;
-	crew="O_UAV_AI";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km SACLOS [Opf]";
-		dissasembleTo[]=
-		{
-			"RC_Static_AT_A_Bag_O"
-		};
-	};
-};
-class RC_Static_AT_A_Bag_O: RC_Static_AT_A_Bag
-{
-	displayName="RC ATGM 4km SACLOS [Opf]";
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km SACLOS [Opf]";
-		assembleTo="RC_Static_AT_A_O";
-	};
-};
-
-// Woodland
-class RC_Static_AT_WD_O: RC_Static_AT_WD
-{
-	faction="RemoteControlled_O";
-	side=0;
-	crew="O_UAV_AI";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km SACLOS [Opf]";
-		dissasembleTo[]=
-		{
-			"RC_Static_AT_WD_Bag_O"
-		};
-	};
-};
-class RC_Static_AT_WD_Bag_O: RC_Static_AT_WD_Bag
-{
-	displayName="RC ATGM 4km SACLOS [Opf]";
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km SACLOS [Opf]";
-		assembleTo="RC_Static_AT_WD_O";
-	};
-};
-
-
-// Independent / Ind
-// Arid
-class RC_Static_AT_A_I: RC_Static_AT_A
-{
-	faction="RemoteControlled_I";
-	side=2;
-	crew="I_UAV_AI";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km SACLOS [Ind]";
-		dissasembleTo[]=
-		{
-			"RC_Static_AT_A_Bag_I"
-		};
-	};
-};
-class RC_Static_AT_A_Bag_I: RC_Static_AT_A_Bag
-{
-	displayName="RC ATGM 4km SACLOS [Ind]";
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km SACLOS [Ind]";
-		assembleTo="RC_Static_AT_A_I";
-	};
-};
-
-// Woodland
-class RC_Static_AT_WD_I: RC_Static_AT_WD
-{
-	faction="RemoteControlled_I";
-	side=2;
-	crew="I_UAV_AI";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km SACLOS [Ind]";
-		dissasembleTo[]=
-		{
-			"RC_Static_AT_WD_Bag_I"
-		};
-	};
-};
-class RC_Static_AT_WD_Bag_I: RC_Static_AT_WD_Bag
-{
-	displayName="RC ATGM 4km SACLOS [Ind]";
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km SACLOS [Ind]";
-		assembleTo="RC_Static_AT_WD_I";
-	};
-};
-
-
-// Blufor
-// Arid
-class RC_Static_ATGM_A: RC_Static_AT_A
-{
-	displayname="RC ATGM 4km NLOS";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km NLOS";
-		dissasembleTo[]=
-		{
-			"RC_Static_ATGM_A_Bag"
-		};
-	};
+	displayname="RC Static ATGM 4km Overfly";
 
 	class Turrets: Turrets
 	{
@@ -420,10 +324,10 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 			};
 			magazines[]=
 			{
-				"RC_1Rnd_ATGM_MP_NLOS",
-				"RC_1Rnd_ATGM_MP_NLOS",
-				"RC_1Rnd_ATGM_MP_NLOS",
-				"RC_1Rnd_ATGM_MP_NLOS"
+				"RC_1Rnd_ATGM_MP_Overfly",
+				"RC_1Rnd_ATGM_MP_Overfly",
+				"RC_1Rnd_ATGM_MP_Overfly",
+				"RC_1Rnd_ATGM_MP_Overfly"
 				/*
 				"RC_1Rnd_MP_Interceptor_Lock",
 				"RC_1Rnd_MP_Interceptor_Lock",
@@ -503,149 +407,155 @@ class RC_Static_ATGM_A: RC_Static_AT_A
 			weapon="RC_ATGM_NLOS";
 		};
 	};
-};
-class RC_Static_ATGM_A_Bag: RC_Static_AA_A_Bag
-{
-	displayName="RC ATGM 4km NLOS";
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km NLOS";
-		assembleTo="RC_Static_ATGM_A";
-	};
-};
-
-// Woodland
-class RC_Static_ATGM_WD: RC_Static_ATGM_A
-{
-	DLC="Expansion";
 
 	class assembleInfo: assembleInfo
 	{
+		displayName="RC ATGM 4km Overfly";
 		dissasembleTo[]=
 		{
-			"RC_Static_ATGM_WD_Bag"
+			"RC_Static_ATGM_Overfly_Bag"
 		};
 	};
-
-	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_static_AT_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"\a3\weapons_f_beta\launchers\titan\data\launcher_INDP_co.paa",
-		"\a3\weapons_f_beta\launchers\titan\data\tubem_INDP_co.paa"
-	};
 };
-class RC_Static_ATGM_WD_Bag: RC_Static_AA_WD_Bag
-{
-	displayName="RC ATGM 4km NLOS";
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km NLOS";
-		assembleTo="RC_Static_ATGM_WD";
-	};
-};
-
-// Opfor
-// Arid
-class RC_Static_ATGM_A_O: RC_Static_ATGM_A
+class RC_Static_ATGM_Overfly_O: RC_Static_ATGM_Overfly
 {
 	faction="RemoteControlled_O";
 	side=0;
 	crew="O_UAV_AI";
 
+	/*
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 4km NLOS [Opf]";
+		displayName="RC ATGM 4km Overfly [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Static_ATGM_A_Bag_O"
+			"RC_Static_ATGM_Overfly_Bag_O"
 		};
 	};
+	*/
 };
-class RC_Static_ATGM_A_Bag_O: RC_Static_ATGM_A_Bag
+class RC_Static_ATGM_Overfly_I: RC_Static_ATGM_Overfly
 {
-	displayName="RC ATGM 4km NLOS [Opf]";
+	faction="RemoteControlled_I";
+	side=2;
+	crew="I_UAV_AI";
+
+	/*
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 4km NLOS [Opf]";
-		assembleTo="RC_Static_AT_A_O";
+		displayName="RC ATGM 4km Overfly [Ind]";
+		dissasembleTo[]=
+		{
+			"RC_Static_ATGM_Overfly_Bag_I"
+		};
+	};
+	*/
+};
+
+
+class RC_Static_ATGM_Overfly_Assemble: RC_Static_ATGM_Overfly
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+class RC_Static_ATGM_Overfly_Bag: RC_Static_AA_Bag
+{
+	displayName="RC Static ATGM 4km Overfly";
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC Static ATGM 4km Overfly";
+		assembleTo="RC_Static_ATGM_Overfly_Assemble";
 	};
 };
 
-// Woodland
-class RC_Static_ATGM_WD_O: RC_Static_ATGM_WD
+
+//NLOS
+class RC_Static_ATGM_NLOS: RC_Static_ATGM_Overfly
+{
+	displayname="RC Static ATGM 4km NLOS";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_ATGM_NLOS"
+			};
+			magazines[]=
+			{
+				"RC_1Rnd_ATGM_MP_NLOS",
+				"RC_1Rnd_ATGM_MP_NLOS",
+				"RC_1Rnd_ATGM_MP_NLOS",
+				"RC_1Rnd_ATGM_MP_NLOS"
+			};
+		};
+	};
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="RC Static ATGM 4km NLOS";
+		dissasembleTo[]=
+		{
+			"RC_Static_ATGM_NLOS_Bag"
+		};
+	};
+};
+class RC_Static_ATGM_NLOS_O: RC_Static_ATGM_NLOS
 {
 	faction="RemoteControlled_O";
 	side=0;
 	crew="O_UAV_AI";
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 4km NLOS [Opf]";
 		dissasembleTo[]=
 		{
-			"RC_Static_ATGM_WD_Bag_O"
+			"RC_Static_ATGM_Bag_O"
 		};
 	};
+	*/
 };
-class RC_Static_ATGM_WD_Bag_O: RC_Static_ATGM_WD_Bag
+class RC_Static_ATGM_NLOS_I: RC_Static_ATGM_NLOS
 {
-	displayName="RC ATGM 4km NLOS [Opf]";
+	faction="RemoteControlled_I";
+	side=2;
+	crew="I_UAV_AI";
+
+	/*
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC ATGM 4km NLOS [Opf]";
-		assembleTo="RC_Static_ATGM_WD_O";
-	};
-};
-
-// Independent / Indi
-// Arid
-class RC_Static_ATGM_A_I: RC_Static_ATGM_A
-{
-	faction="RemoteControlled_I";
-	side=2;
-	crew="I_UAV_AI";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km NLOS [Ind]";
 		dissasembleTo[]=
 		{
-			"RC_Static_ATGM_A_Bag_I"
+			"RC_Static_ATGN_Bag_O"
 		};
 	};
-};
-class RC_Static_ATGM_A_Bag_I: RC_Static_ATGM_A_Bag
-{
-	displayName="RC ATGM 4km NLOS [Ind]";
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km NLOS [Ind]";
-		assembleTo="RC_Static_ATGM_A_I";
-	};
+	*/
 };
 
-// Woodland
-class RC_Static_ATGM_WD_I: RC_Static_ATGM_WD
+
+class RC_Static_ATGM_NLOS_Assemble: RC_Static_ATGM_NLOS
 {
-	faction="RemoteControlled_I";
-	side=2;
-	crew="I_UAV_AI";
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+class RC_Static_ATGM_NLOS_Bag: RC_Static_AA_Bag
+{
+	displayName="RC Static ATGM 4km NLOS";
 
 	class assembleInfo: assembleInfo
 	{
-		displayName="RC ATGM 4km NLOS [Ind]";
-		dissasembleTo[]=
-		{
-			"RC_Static_ATGM_WD_Bag_I"
-		};
-	};
-};
-class RC_Static_ATGM_WD_Bag_I: RC_Static_ATGM_WD_Bag
-{
-	displayName="RC ATGM 4km NLOS [Ind]";
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC ATGM 4km NLOS [Ind]";
-		assembleTo="RC_Static_ATGM_WD_I";
+		displayName="RC Static ATGM 4km NLOS";
+		assembleTo="RC_Static_ATGM_NLOS_Assemble";
 	};
 };

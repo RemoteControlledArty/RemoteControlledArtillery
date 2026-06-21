@@ -7,103 +7,68 @@ class CfgPatches
 
 		units[]=
 		{
-			"RC_Improved_FOV_Designator_A",
-			"RC_Improved_FOV_Designator_A_O",
-			"RC_Improved_FOV_Designator_A_I",
-			"RC_Improved_FOV_Designator_Ti_A",
-			"RC_Improved_FOV_Designator_Ti_A_O",
-			"RC_Improved_FOV_Designator_Ti_A_I",
+			//lockable datalinked map marker target
+			"RC_GPSDatalinkTarget",
 
-			"RC_Improved_FOV_Designator_Bag_A",
-			"RC_Improved_FOV_Designator_Bag_A_O",
-			"RC_Improved_FOV_Designator_Bag_A_I",
-			"RC_Improved_FOV_Designator_Ti_Bag_A",
-			"RC_Improved_FOV_Designator_Ti_Bag_A_O",
-			"RC_Improved_FOV_Designator_Ti_Bag_A_I",
+			//visually neutral crew/pilots
+			"RC_B_Crew",
+			"RC_O_Crew",
+			"RC_I_Crew",
+			"RC_B_CrewAgent",
+			"RC_O_CrewAgent",
+			"RC_I_CrewAgent",
+			"RC_B_HeliPilot",
+			"RC_O_HeliPilot",
+			"RC_I_Helipilot",
+			"RC_B_DoorGunner",
+			"RC_O_DoorGunner",
+			"RC_I_DoorGunner",
 
-			"RC_Improved_FOV_Designator_WD",
-			"RC_Improved_FOV_Designator_WD_O",
-			"RC_Improved_FOV_Designator_WD_I",
-			"RC_Improved_FOV_Designator_Ti_WD",
-			"RC_Improved_FOV_Designator_Ti_WD_O",
-			"RC_Improved_FOV_Designator_Ti_WD_I",
+			"RC_Improved_FOV_Designator",
+			"RC_Improved_FOV_Designator_Bag",
 
-			"RC_Improved_FOV_Designator_Bag_WD",
-			"RC_Improved_FOV_Designator_Bag_WD_O",
-			"RC_Improved_FOV_Designator_Bag_WD_I",
-			"RC_Improved_FOV_Designator_Ti_Bag_WD",
-			"RC_Improved_FOV_Designator_Ti_Bag_WD_O",
-			"RC_Improved_FOV_Designator_Ti_Bag_WD_I",
+			"RC_Improved_FOV_Designator_Ti",
+			"RC_Improved_FOV_Designator_Ti_Bag",
 
-			"RC_Static_AA_A",
-			"RC_Static_AA_WD",
-			"RC_Static_AA_A_O",
-			"RC_Static_AA_WD_O",
-			"RC_Static_AA_A_I",
-			"RC_Static_AA_WD_I",
+			"RC_Static_AA",
+			"RC_Static_AA_O",
+			"RC_Static_AA_I",
+			"RC_Static_AA_Bag",
 
-			"RC_Static_AA_A_Bag",
-			"RC_Static_AA_WD_Bag",
-			"RC_Static_AA_A_Bag_O",
-			"RC_Static_AA_WD_Bag_O",
-			"RC_Static_AA_A_Bag_I",
-			"RC_Static_AA_WD_Bag_I",
+			"RC_Static_ATGM_SACLOS",
+			"RC_Static_ATGM_SACLOS_O",
+			"RC_Static_ATGM_SACLOS_I",
+			"RC_Static_ATGM_SACLOS_Bag",
 
-			"RC_Static_AT_A",
-			"RC_Static_AT_WD",
-			"RC_Static_AT_A_O",
-			"RC_Static_AT_WD_O",
-			"RC_Static_AT_A_I",
-			"RC_Static_AT_WD_I",
+			"RC_Static_ATGM_Overfly",
+			"RC_Static_ATGM_Overfly_O",
+			"RC_Static_ATGM_Overfly_I",
+			"RC_Static_ATGM_Overfly_Bag",
 
-			"RC_Static_AT_A_Bag",
-			"RC_Static_AT_WD_Bag",
-			"RC_Static_AT_A_Bag_O",
-			"RC_Static_AT_WD_Bag_O",
-			"RC_Static_AT_A_Bag_I",
-			"RC_Static_AT_WD_Bag_I",
-
-			"RC_Static_ATGM_A",
-			"RC_Static_ATGM_WD",
-			"RC_Static_ATGM_A_O",
-			"RC_Static_ATGM_WD_O",
-			"RC_Static_ATGM_A_I",
-			"RC_Static_ATGM_WD_I",
-
-			"RC_Static_ATGM_A_Bag",
-			"RC_Static_ATGM_WD_Bag",
-			"RC_Static_ATGM_A_Bag_O",
-			"RC_Static_ATGM_WD_Bag_O",
-			"RC_Static_ATGM_A_Bag_I",
-			"RC_Static_ATGM_WD_Bag_I",
+			"RC_Static_ATGM_NLOS",
+			"RC_Static_ATGM_NLOS_O",
+			"RC_Static_ATGM_NLOS_I",
+			"RC_Static_ATGM_NLOS_Bag",
 
 			"RC_cUAS_Static",
 			"RC_cUAS_Static_O",
 			"RC_cUAS_Static_I",
+			"RC_cUAS_Static_Bag",
+
 			"RC_cUAS_Static_manned",
 			"RC_cUAS_Static_manned_O",
 			"RC_cUAS_Static_manned_I",
-
-			"RC_cUAS_Static_Bag",
-			"RC_cUAS_Static_Bag_O",
-			"RC_cUAS_Static_Bag_I",
 			"RC_cUAS_Static_manned_Bag",
-			"RC_cUAS_Static_manned_Bag_O",
-			"RC_cUAS_Static_manned_Bag_I",
 
 			"RC_cUAS_Static_HMG",
 			"RC_cUAS_Static_HMG_O",
 			"RC_cUAS_Static_HMG_I",
+			"RC_cUAS_Static_HMG_Bag",
+
 			"RC_cUAS_Static_HMG_manned",
 			"RC_cUAS_Static_HMG_manned_O",
 			"RC_cUAS_Static_HMG_manned_I",
-
-			"RC_cUAS_Static_HMG_Bag",
-			"RC_cUAS_Static_HMG_Bag_O",
-			"RC_cUAS_Static_HMG_Bag_I",
 			"RC_cUAS_Static_HMG_manned_Bag",
-			"RC_cUAS_Static_HMG_manned_Bag_O",
-			"RC_cUAS_Static_HMG_manned_Bag_I",
 
 			"RC_cUAS_UGV_A",
 			"RC_cUAS_UGV_WD",
@@ -225,13 +190,8 @@ class CfgPatches
 
 			"RC_Mortar",
 			"RC_Mortar_O",
-			"RC_Mortar_HEX_O",
 			"RC_Mortar_I",
-
 			"RC_Mortar_Bag",
-			"RC_Mortar_Bag_O",
-			"RC_Mortar_Bag_HEX_O",
-			"RC_Mortar_Bag_I",
 
 			"RC_VehicleMortar",
 			"RC_VehicleMortar_O",
@@ -598,15 +558,7 @@ class CfgPatches
 			"RC_Quadbike_WD_O",
 			"RC_Quadbike_A_I",
 			"RC_Quadbike_WD_I",
-
-			"RC_B_Crew",
-			"RC_O_Crew",
-			"RC_I_Crew",
-			"RC_B_HeliPilot",
-			"RC_O_HeliPilot",
-			"RC_I_Helipilot",
-
-			"RC_GPSDatalinkTarget",
+			
 
 			//optional retextures
 			"RC_Howitzer_ReTex_D",
@@ -966,6 +918,7 @@ class CfgFunctions
 			file="\Remote_Controlled_Artillery\functions\LocalityUV_functions";
 			
 			class RC_MEH_addActionsUV {preInit=1;};
+			class RC_MEH_assembleUV {postInit=1;};
 			class RC_uavConnectionFix {postInit=1;};	//maybe not required anymore after recent arma update
 			class RC_LocalityUV {postInit=1;};
 
@@ -1124,6 +1077,7 @@ class CfgEditorSubcategories
 	class RC_UAV_Designator_subcat {displayname="UAVs (Recon) / Designators";};
 	*/
 	//class RC_Test_subcat {displayname="Test";};
+	//class RC_Men_subcat {displayname="Men";};
 
 	class RC_ReTex_Arid_subcat {displayname="Arid";};
 	class RC_ReTex_Desert_subcat {displayname="Desert";};

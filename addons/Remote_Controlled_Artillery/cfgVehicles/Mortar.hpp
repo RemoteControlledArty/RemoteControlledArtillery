@@ -11,6 +11,9 @@ class RC_Mortar_Core: B_Mortar_01_F
 	scope=0;
 	scopeCurator=0;
 
+	RC_assembleSideSwitch=1;
+	RC_assembleAutonomousOff=0;
+
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
 	RC_validTurret[]={0}; //turret array pos in class turrets
 	RC_ArtyType=1; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
@@ -89,14 +92,6 @@ class RC_Mortar_Base: RC_Mortar_Core
 					};
 				};
 			};
-		};
-	};
-
-	class assembleInfo: assembleInfo
-	{
-		dissasembleTo[]=
-		{
-			"RC_Mortar_Bag"
 		};
 	};
 
@@ -180,6 +175,14 @@ class RC_Mortar_Base: RC_Mortar_Core
 			};
 		};
 	};
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_Mortar_Bag"
+		};
+	};
 };
 class RC_Mortar: RC_Mortar_Base
 {
@@ -204,6 +207,7 @@ class RC_Mortar_O: RC_Mortar
 	crew="O_UAV_AI";
 	side=0;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -211,7 +215,9 @@ class RC_Mortar_O: RC_Mortar
 			"RC_Mortar_Bag_O"
 		};
 	};
+	*/
 };
+/*
 class RC_Mortar_HEX_O: RC_Mortar_O
 {
 	class assembleInfo: assembleInfo
@@ -228,17 +234,39 @@ class RC_Mortar_HEX_O: RC_Mortar_O
 		"\A3\Static_f\Mortar_01\data\Mortar_01_OPFOR_CO.paa"
 	};
 };
+*/
 class RC_Mortar_I: RC_Mortar
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
 	side=2;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
 		{
 			"RC_Mortar_Bag_I"
+		};
+	};
+	*/
+};
+
+
+//neutral, AI side changed when assembled
+class RC_Mortar_Assemble: RC_Mortar
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+
+	class assembleInfo: assembleInfo
+	{
+		dissasembleTo[]=
+		{
+			"RC_Mortar_Bag"
 		};
 	};
 };
@@ -258,52 +286,25 @@ class RC_Mortar_Bag: RC_Mortar_Bag_base
 	scopeCurator=2;
 
 	mass=540;
-
 	model="\A3\Weapons_F\Ammoboxes\Bags\Backpack_Tortila.p3d";
-	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_cbr.paa";
+	/*
+	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_khk.paa";
 	hiddenSelectionsTextures[]=
 	{
-		"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_Tortila_cbr_co.paa"
+		"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_Tortila_khk_co.paa"
 	};
-
+	*/
+	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_khk.paa";
+	hiddenSelectionsTextures[]=
+	{
+		"\Remote_Controlled_Artillery\textures\carryall.paa"
+	};
 	class assembleInfo: assembleInfo
 	{
 		displayName="RC Mortar";
-		assembleTo="RC_Mortar";
+		assembleTo="RC_Mortar_Assemble";
+		//assembleTo="RC_Mortar";
 		base="";
-	};
-};
-class RC_Mortar_Bag_O: RC_Mortar_Bag
-{
-	displayName="RC Mortar [Opf]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Mortar [Opf]";
-		assembleTo="RC_Mortar_O";
-	};
-};
-class RC_Mortar_Bag_HEX_O: RC_Mortar_Bag_base
-{
-	picture="\A3\Weapons_F\Ammoboxes\Bags\data\UI\icon_B_C_Tortila_hex.paa";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_Tortila_hex_co.paa"
-	};
-
-	class assembleInfo: assembleInfo
-	{
-		assembleTo="RC_Mortar_HEX_O";
-	};
-};	
-class RC_Mortar_Bag_I: RC_Mortar_Bag
-{
-	displayName="RC Mortar [Ind]";
-
-	class assembleInfo: assembleInfo
-	{
-		displayName="RC Mortar [Ind]";
-		assembleTo="RC_Mortar_I";
 	};
 };
 

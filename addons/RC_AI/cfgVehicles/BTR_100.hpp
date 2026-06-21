@@ -4,6 +4,8 @@ class RC_AI_B_BTR100_A_Core: RC_IFV_7_WD
 	class Turrets;
 	class MainTurret;
 	class CommanderOptics;
+	class SL_Seat;
+	class TL_Seat;
 	class HitPoints;
 	class HitLFWheel;
 	class HitLF2Wheel;
@@ -84,6 +86,8 @@ class RC_AI_B_BTR100_A_Base: RC_AI_B_BTR100_A_Core
 					dontCreateAI=0;	//1
 					commanding=2;	//2
 				};
+				class SL_Seat: SL_Seat {};
+				class TL_Seat: TL_Seat {};
 			};
 		};
 	};
@@ -125,9 +129,7 @@ class RC_AI_B_BTR100_A: RC_AI_B_BTR100_A_Base
 {
 	scope=2;
 	scopeCurator=2;
-
-	faction="RC_AI_B";
-	crew="RC_AI_B_Crew";
+	#include "\RC_AI\includes_cfg\sideB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -139,9 +141,7 @@ class RC_AI_B_BTR100_A: RC_AI_B_BTR100_A_Base
 };
 class RC_AI_O_BTR100_A: RC_AI_B_BTR100_A
 {
-	faction="RC_AI_O";
-	crew="RC_AI_O_Crew";
-	side=0;
+	#include "\RC_AI\includes_cfg\sideO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -153,9 +153,7 @@ class RC_AI_O_BTR100_A: RC_AI_B_BTR100_A
 };
 class RC_AI_I_BTR100_A: RC_AI_B_BTR100_A
 {
-	faction="RC_AI_I";
-	crew="RC_AI_I_Crew";
-	side=2;
+	#include "\RC_AI\includes_cfg\sideI.hpp"
 
 	class Turrets: Turrets
 	{
@@ -190,9 +188,7 @@ class RC_AI_B_BTR100_WD: RC_AI_B_BTR100_A
 };
 class RC_AI_O_BTR100_WD: RC_AI_B_BTR100_WD
 {
-	faction="RC_AI_O";
-	crew="RC_AI_O_Crew";
-	side=0;
+	#include "\RC_AI\includes_cfg\sideO.hpp"
 
 	class Turrets: Turrets
 	{
@@ -204,9 +200,7 @@ class RC_AI_O_BTR100_WD: RC_AI_B_BTR100_WD
 };
 class RC_AI_I_BTR100_WD: RC_AI_B_BTR100_WD
 {
-	faction="RC_AI_I";
-	crew="RC_AI_I_Crew";
-	side=2;
+	#include "\RC_AI\includes_cfg\sideI.hpp"
 
 	class Turrets: Turrets
 	{

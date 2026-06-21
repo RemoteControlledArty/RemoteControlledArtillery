@@ -191,28 +191,18 @@ class RC_ACV_30: RC_ACV_30_Base
 
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
 
 					initFov=0.9;
 					minFov=0.02;
 					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MTB_01_m_F.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
+			turretInfoType="RscOptics_MBT_03_gunner";
 			
 			class Turrets: Turrets
 			{
@@ -223,8 +213,6 @@ class RC_ACV_30: RC_ACV_30_Base
 					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 					dontCreateAI=1;
 					commanding=2;
-					turretInfoType="RscOptics_MBT_03_gunner";
-					//turretInfoType="RscOptics_APC_Wheeled_03_commander";	//green
 
 					weapons[]=
 					{
@@ -240,32 +228,18 @@ class RC_ACV_30: RC_ACV_30_Base
 
 					class OpticsIn
 					{
-						class Wide: RCWSOptics
+						class Wide
 						{
-							//directionStabilized=1;	//unfortunately causes spinning camera bug
-
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 
 							initFov=0.9;
 							minFov=0.02;
 							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"TI"
-							};
-							thermalMode[]={0};
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Gunner_MBT_03_w_F.p3d";
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-							//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_01_w_F.p3d";	//green
-							gunnerOpticsEffect[]={};
 						};
 					};
+					turretInfoType="RscOptics_MBT_03_gunner";
 				};
 			};
 		};
@@ -374,30 +348,25 @@ class RC_ACV_30: RC_ACV_30_Base
 				gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 				gunnerOpticsEffect[]={};
 			};
+
+
 			class OpticsIn
 			{
-				class Wide: RCWSOptics
+				class Wide
 				{
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 
 					initFov=0.9;
 					minFov=0.02;
 					maxFov=0.9;
-					visionMode[]=
-					{
-						"Normal",
-						"TI"
-					};
-					thermalMode[]={0};
-					gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-					gunnerOpticsEffect[]={};
 				};
 			};
+			gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Commander_02_F";
+			turretInfoType="RscOptics_MBT_01_commander";
+
+
 			class HitPoints
 			{
 				class HitCommandercameraTurret
@@ -427,7 +396,6 @@ class RC_ACV_30: RC_ACV_30_Base
 			gunnerOutForceOptics=0;	//1
 			//gunnerAction="ACV_Commander";
 			//gunnerInAction="ACV_Commander";
-			gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Commander_02_F";
 			gunnerOutOpticsModel="";
 			gunnerOpticsEffect[]={};
 			body="commander_camera_y";
@@ -440,7 +408,6 @@ class RC_ACV_30: RC_ACV_30_Base
 			animationSourceGun="commander_camera_x";
 			memoryPointGunnerOutOptics="commander_pip_pov";
 			memoryPointGunnerOptics="commander_pip_pov";
-			turretInfoType="RscOptics_MBT_01_commander";
 
 			gunnerGetInAction="GetInAMV_cargo";
 			gunnerGetOutAction="GetOutLOW";

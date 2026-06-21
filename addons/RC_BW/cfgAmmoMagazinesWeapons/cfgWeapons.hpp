@@ -46,7 +46,8 @@ class RC_MK30: RC_MK30_Base
 	{
 		displayName="MK30";
 		maxZeroing=4000;
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"	//to make it more unique
+		//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 
 		magazines[]=
@@ -107,7 +108,8 @@ class RC_MK30: RC_MK30_Base
 	{
 		displayName="MK30";
 		maxZeroing=4000;
-		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+		#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"	//to make it more unique
+		//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 		//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 
 		magazines[]=

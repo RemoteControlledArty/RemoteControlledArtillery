@@ -5,7 +5,7 @@ class RC_2Rnd_SPz_Spike_LOS: RC_2Rnd_IFV_MP_LOS
 	displayName="4km Spike Direct";
 	displayNameShort="Spike Direct";
 	displayNameMFDFormat="Spike Dir";
-	ammo="RC_IFV_MP_LOS";
+	ammo="RC_M_ATGM_MP_LOS";
 };
 class RC_2Rnd_IFV_MP_Overfly;
 class RC_2Rnd_SPz_Spike_Overfly: RC_2Rnd_IFV_MP_Overfly
@@ -14,7 +14,7 @@ class RC_2Rnd_SPz_Spike_Overfly: RC_2Rnd_IFV_MP_Overfly
 	displayName="4km Spike Overfly";
 	displayNameShort="Spike Overfly";
 	displayNameMFDFormat="Spike OvFly";
-	ammo="RC_IFV_MP_Overfly";
+	ammo="RC_M_ATGM_MP_Overfly";
 };
 class RC_2Rnd_IFV_MP_NLOS;
 class RC_2Rnd_SPz_Spike_NLOS: RC_2Rnd_IFV_MP_NLOS
@@ -23,7 +23,7 @@ class RC_2Rnd_SPz_Spike_NLOS: RC_2Rnd_IFV_MP_NLOS
 	displayName="4km Spike NLOS";
 	displayNameShort="Spike NLOS";
 	displayNameMFDFormat="Spike NLOS";
-	ammo="RC_IFV_MP_NLOS";
+	ammo="RC_M_ATGM_MP_NLOS";
 };
 class RC_2Rnd_IFV_AA;
 class RC_2Rnd_SPz_Spike_AA: RC_2Rnd_IFV_AA
@@ -32,7 +32,7 @@ class RC_2Rnd_SPz_Spike_AA: RC_2Rnd_IFV_AA
 	displayName="5km Spike AA";
 	displayNameShort="Spike AA";
 	displayNameMFDFormat="Spike AA";
-	ammo="RC_IFV_AA";
+	ammo="RC_M_AA";
 };
 
 

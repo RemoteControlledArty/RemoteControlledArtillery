@@ -161,26 +161,15 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 			{
 				class Wide
 				{
-					opticsDisplayName="60HZ";
-					initAngleX=0;
-					minAngleX=-30;
-					maxAngleX=30;
-					initAngleY=0;
-					minAngleY=-100;
-					maxAngleY=100;
-					initFov=0.9;
-					minFov=0.02;	//realistic 12x magnification
-					maxFov=0.9;		//larger FOV for improved usability on servers without third person
-					visionMode[]=
-					{
-						"Normal",
-						"NVG",
-						"Ti"
-					};
-					thermalMode[]={0};
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
-					gunnerOpticsEffect[]={};
 					hitPoint="Hit_Optics_Gnr";
+					opticsDisplayName="60HZ";
+
+					initFov=0.9;
+					minFov=0.02;
+					maxFov=0.9;
 				};
 			};
 			
@@ -195,8 +184,24 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 					commanding=2;
 					allowTabLock=1;
 					
+					class OpticsIn
+					{
+						class Ultrawide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
+							hitPoint="Hit_Optics_Cdr_CIV";
+							opticsDisplayName="60HZ";
+
+							initFov=0.9;
+							minFov=0.02;
+							maxFov=0.9;
+						};
+					};
 					gunnerOpticsModel="\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\comTI_M2A2";
-					gunnerOpticsEffect[]={};
+
+					/*
 					class ViewOptics: ViewOptics
 					{
 						initFov=0.46599999;
@@ -210,32 +215,7 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 						};
 						thermalMode[]={0};
 					};
-					class OpticsIn
-					{
-						class Ultrawide
-						{
-							opticsDisplayName="60HZ";
-							initAngleX=0;
-							minAngleX=-30;
-							maxAngleX=30;
-							initAngleY=0;
-							minAngleY=-100;
-							maxAngleY=100;
-							initFov=0.9;
-							minFov=0.02;
-							maxFov=0.9;
-							visionMode[]=
-							{
-								"Normal",
-								"NVG",
-								"Ti"
-							};
-							thermalMode[]={0};
-							gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_IBAS_4x";
-							gunnerOpticsEffect[]={};
-							hitPoint="Hit_Optics_Cdr_CIV";
-						};
-					};
+					*/
 
 					weapons[]=
 					{

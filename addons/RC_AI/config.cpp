@@ -7,15 +7,6 @@ class CfgPatches
 		
 		units[]=
 		{
-			//visually neutral crew
-			"RC_AI_B_Crew",
-			"RC_AI_O_Crew",
-			"RC_AI_I_Crew",
-
-			"RC_AI_B_Crew_Agent",
-			"RC_AI_O_Crew_Agent",
-			"RC_AI_I_Crew_Agent",
-
 			//Basegame
 			"RC_AI_B_Pandur_A",
 			"RC_AI_O_Pandur_A",
@@ -291,7 +282,6 @@ class CfgWeapons
 class CfgVehicles
 {
 	//Basegame
-	#include "\RC_AI\cfgVehicles\Crew.hpp"
 	#include "\RC_AI\cfgVehicles\Pandur.hpp"
 	#include "\RC_AI\cfgVehicles\Patria.hpp"
 	#include "\RC_AI\cfgVehicles\Rooikat.hpp"

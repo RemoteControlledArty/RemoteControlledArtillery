@@ -115,9 +115,7 @@ class RC_AI_B_M1126_M2Jav_WD: RC_AI_B_M1126_M2Jav_WD_Base
 {
 	scope=2;
 	scopeCurator=2;
-
-	faction="RC_AI_B";
-	crew="RC_AI_B_Crew";
+	#include "\RC_AI\includes_cfg\sideB.hpp"
 
 	class Turrets: Turrets
 	{
@@ -129,9 +127,7 @@ class RC_AI_B_M1126_M2Jav_WD: RC_AI_B_M1126_M2Jav_WD_Base
 };
 class RC_AI_O_M1126_M2Jav_WD: RC_AI_B_M1126_M2Jav_WD
 {
-	faction="RC_AI_O";
-	crew="RC_AI_O_Crew";
-	side=0;
+	#include "\RC_AI\includes_cfg\sideO.hpp"
 
 	/*
 	class Turrets: Turrets
@@ -145,9 +141,7 @@ class RC_AI_O_M1126_M2Jav_WD: RC_AI_B_M1126_M2Jav_WD
 };
 class RC_AI_I_M1126_M2Jav_WD: RC_AI_B_M1126_M2Jav_WD
 {
-	faction="RC_AI_I";
-	crew="RC_AI_I_Crew";
-	side=2;
+	#include "\RC_AI\includes_cfg\sideI.hpp"
 
 	/*
 	class Turrets: Turrets
@@ -182,9 +176,7 @@ class RC_AI_B_M1126_M2Jav_A: RC_AI_B_M1126_M2Jav_WD
 };
 class RC_AI_O_M1126_M2Jav_A: RC_AI_B_M1126_M2Jav_A
 {
-	faction="RC_AI_O";
-	crew="RC_AI_O_Crew";
-	side=0;
+	#include "\RC_AI\includes_cfg\sideO.hpp"
 
 	/*
 	class Turrets: Turrets
@@ -198,9 +190,7 @@ class RC_AI_O_M1126_M2Jav_A: RC_AI_B_M1126_M2Jav_A
 };
 class RC_AI_I_M1126_M2Jav_A: RC_AI_B_M1126_M2Jav_A
 {
-	faction="RC_AI_I";
-	crew="RC_AI_I_Crew";
-	side=2;
+	#include "\RC_AI\includes_cfg\sideI.hpp"
 
 	/*
 	class Turrets: Turrets
