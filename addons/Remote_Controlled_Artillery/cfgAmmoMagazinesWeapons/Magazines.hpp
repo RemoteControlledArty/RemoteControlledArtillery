@@ -128,7 +128,7 @@ class RC_1Rnd_ATGM_MP_Overfly: 1Rnd_GAT_missiles
 {
 	displayName="MP Overfly ATGM";
 	displayNameShort="Overfly ATGM";
-	displayNameMFDFormat="OvFly ATGM";
+	displayNameMFDFormat="OverFly ATGM";
 	ammo="RC_M_ATGM_MP_Overfly";
 	initSpeed=150;
 };
@@ -1911,7 +1911,7 @@ class RC_2Rnd_IFV_MP_Overfly: RC_2Rnd_IFV_MP_LOS
 {
 	displayName="4km Overfly ATGM";
 	displayNameShort="Overfly ATGM";
-	displayNameMFDFormat="OvFly";
+	displayNameMFDFormat="OverFly";
 	ammo="RC_M_ATGM_MP_Overfly";
 	initSpeed=150;
 };

@@ -25,9 +25,13 @@ class CfgPatches
 			"RC_I_DoorGunner",
 
 			"RC_Improved_FOV_Designator",
+			"RC_Improved_FOV_Designator_O",
+			"RC_Improved_FOV_Designator_I",
 			"RC_Improved_FOV_Designator_Bag",
 
 			"RC_Improved_FOV_Designator_Ti",
+			"RC_Improved_FOV_Designator_Ti_O",
+			"RC_Improved_FOV_Designator_Ti_I",
 			"RC_Improved_FOV_Designator_Ti_Bag",
 
 			"RC_Static_AA",
