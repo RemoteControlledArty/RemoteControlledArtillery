@@ -438,7 +438,7 @@ class RC_IFV_3_A_Base: RC_ICV_IFV_3_A
 					{
 						class Wide
 						{
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
 							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
 							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 
