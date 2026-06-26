@@ -9,3 +9,5 @@ magazines[]=
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"
 };
+this addMagazineTurret ["Laserbatteries", [0,0], 1];
+_this addMagazineTurret ["Laserbatteries", [0,0], 1];
