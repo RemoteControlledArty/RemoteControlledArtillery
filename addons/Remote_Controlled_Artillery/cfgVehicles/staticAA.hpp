@@ -279,6 +279,33 @@ class RC_Static_AA_I: RC_Static_AA
 };
 
 
+class RC_Static_Interceptor: RC_Static_AA
+{
+	displayname="RC Interceptor Static";
+	editorSubcategory="RC_AntiDrone_subcat";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_InterceptorLauncher"
+			};
+			magazines[]=
+			{
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock"
+			};
+		};
+	};
+};
+
+
 class RC_Static_AA_Assemble: RC_Static_AA
 {
 	scope=1;

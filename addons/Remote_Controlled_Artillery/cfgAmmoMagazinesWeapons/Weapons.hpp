@@ -446,6 +446,30 @@ class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
 		magazineReloadTime=20;
 	};
 };
+
+
+class RC_InterceptorLauncher: RC_ATGM_NLOS
+{
+	displayName="Interceptor Launcher";
+	displayNameShort="Interceptor Launcher";
+
+	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
+	reloadTime=7;
+	magazineReloadTime=7;
+
+	magazines[]=
+	{
+		"RC_1Rnd_MP_Interceptor_Lock"
+	};
+	modes[]=
+	{
+		"Player",
+		"Overfly",
+		"Cruise"
+	};
+};
+
+
 class missiles_titan;
 class RC_IFV_Missile_Launcher_Base: missiles_titan
 {

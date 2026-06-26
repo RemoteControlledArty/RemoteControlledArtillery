@@ -2643,13 +2643,13 @@ class RC_MP_Interceptor_Lock: RC_MP_NLOS_Nano
 	manualControl=1;
 	maxControlRange=10000;
 	
-	maxSpeed=97.22;
-	thrustTime=180;
-	thrust=15;
+	maxSpeed=40;		//40m/s = 144km/h	//97.22
+	thrustTime=20;
+	thrust=30;
 
 	weaponLockSystem="2 + 16";
 	laserLock=0;
-	irLock=0;
+	irLock=0;	//1 for it to not lock FPV's
 	airLock=1;
 	cmImmunity=1;
 
