@@ -90,7 +90,7 @@ class RC_AMV_MGS_Base: RC_AMV_MGS_Core
 	RC_ATrespondingTurret[]={0,0};
 
 	displayName="Patria AMV MGS";
-	editorSubcategory="RC_IFV_subcat";
+	editorSubcategory="RC_FSV_subcat";
 
 	maxSpeed=120;
 	normalSpeedForwardCoef=0.64;
