@@ -2636,20 +2636,22 @@ class RC_MP_NLOS_Nano: RC_M_ATGM_MP_NLOS
 	//weaponLockSystem="1 + 2 + 16";
 	//cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 };
-class RC_MP_Interceptor_Lock: RC_MP_NLOS_Nano
+class RC_MP_Interceptor_Lock: RC_M_ATGM_MP_LOS
 {
 	//model="";
 	autoSeekTarget=0;	//0 for testing as it often prevents saclos
 	manualControl=1;
 	maxControlRange=10000;
 	
+	timeToLive=60;	//60 or 90
+	thrustTime=60;	//60 or 90
+	thrust=10;
 	maxSpeed=40;		//40m/s = 144km/h	//97.22
-	thrustTime=20;
-	thrust=30;
+	maneuvrability=20;
 
 	weaponLockSystem="2 + 16";
 	laserLock=0;
-	irLock=0;	//1 for it to not lock FPV's
+	irLock=0;			//1 for it to not lock FPV's
 	airLock=1;
 	cmImmunity=1;
 
@@ -2657,12 +2659,71 @@ class RC_MP_Interceptor_Lock: RC_MP_NLOS_Nano
 	missileLockCone=360;
 	missileKeepLockedCone=360;
 
+	indirectHit=20;
+	indirectHitRange=10;
+	submunitionAmmo="";
+	effectsMissile="missile2";
+	airFriction=0.35;	//0.085
+	sideAirFriction=1;	//1
+
 	soundFly[]=
 	{
-		"A3\Sounds_F\arsenal\weapons\Launchers\Titan\Fly_Titan",
-		0.63095737,
-		1.5,
-		300
+		"A3\Sounds_F\air\Uav_01\quad_engine_full_01",
+		10,		//volume
+		2,		//pitch
+		1000	//distance
+	};
+};
+class RC_MP_Interceptor_Cruise: RC_MP_Interceptor_Lock
+{
+	delete Direct;
+
+	flightProfiles[]=
+	{
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=500;	//50
+		lockDistanceToTarget=1000;		//100
+	};
+};
+class RC_MP_Interceptor_Overfly: RC_MP_Interceptor_Lock
+{
+	delete Direct;
+
+	class Overfly	//: Direct
+	{
+		overflyElevation=10;
+	};
+	flightProfiles[]=
+	{
+		//"Direct",
+		"Overfly"
+	};
+
+	submunitionDirectionType="SubmunitionTargetDirection";
+	submunitionInitialOffset[]={0,0,-1};
+	triggerDistance=12;
+	proximityExplosionDistance=14;
+	indirectHitRange=12;
+
+	//initTime=0.25;
+};
+class RC_MP_Interceptor_TopDown: RC_MP_Interceptor_Lock
+{
+	delete Direct;
+
+	flightProfiles[]=
+	{
+		"TopDown"
+	};
+	class TopDown
+	{
+		ascendHeight=500;
+		descendDistance=1000;
+		minDistance=1;
+		ascendAngle=45;
 	};
 };
 

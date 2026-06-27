@@ -146,7 +146,7 @@ class RC_1Rnd_MP_Interceptor_Lock: RC_1Rnd_ATGM_MP_NLOS
 	displayName="Interceptor Drone";
 	displayNameShort="Interceptor Drone";
 	displayNameMFDFormat="Interceptor";
-	ammo="RC_MP_Interceptor_Lock";
+	ammo="RC_MP_Interceptor_Overfly";
 };
 
 

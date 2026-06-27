@@ -465,6 +465,7 @@ class RC_InterceptorLauncher: RC_ATGM_NLOS
 	{
 		"Player",
 		"Overfly",
+		"TopDown",
 		"Cruise"
 	};
 };

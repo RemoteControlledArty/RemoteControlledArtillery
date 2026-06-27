@@ -20,6 +20,8 @@ backrotorforcecoef=1;				//1
 startDuration=7.5;					//20
 slingLoadMemoryPoint="slingLoad0";
 slingLoadMaxCargoMass=4000;			//900
+
+supplyRadius=-0.5;
 maximumLoad=1500;					//1000
 //sensitivity=2.5;					//2.5
 //mainBladeRadius=4.3200002;		//4.3200002
