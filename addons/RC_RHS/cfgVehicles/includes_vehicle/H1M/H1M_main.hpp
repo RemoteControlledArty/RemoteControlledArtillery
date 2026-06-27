@@ -22,7 +22,7 @@ slingLoadMemoryPoint="slingLoad0";
 slingLoadMaxCargoMass=4000;			//900
 
 supplyRadius=-0.5;
-maximumLoad=1500;					//1000
+maximumLoad=2000;					//2000
 //sensitivity=2.5;					//2.5
 //mainBladeRadius=4.3200002;		//4.3200002
 //tailBladeRadius=0.76999998;		//0.76999998
