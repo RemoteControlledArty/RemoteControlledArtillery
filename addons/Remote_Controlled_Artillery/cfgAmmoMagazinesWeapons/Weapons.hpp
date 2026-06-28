@@ -398,16 +398,18 @@ class RC_ATGM_SACLOS: launch_Vorona_base_F
 		"RC_1Rnd_ATGM_MP_SACLOS"
 	};
 };
+
+
 class missiles_titan_static;
-class RC_ATGM_NLOS_Base: missiles_titan_static
+class RC_ATGM_Lock_Base: missiles_titan_static
 {
 	class Player;
 };
-class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
+class RC_ATGM_Lock: RC_ATGM_Lock_Base
 {
 	scope=1;
-	displayName="NLOS ATGM";
-	displayNameShort="NLOS ATGM";
+	displayName="Lock ATGM";
+	displayNameShort="Lock ATGM";
 	canLock=2;
 	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
 	reloadTime=7;
@@ -417,8 +419,7 @@ class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
 	{
 		"RC_1Rnd_ATGM_MP_LOS",
 		"RC_1Rnd_ATGM_MP_Overfly",
-		"RC_1Rnd_ATGM_MP_NLOS",
-		"RC_1Rnd_MP_Interceptor_Lock"
+		"RC_1Rnd_ATGM_MP_NLOS"
 	};
 
 	modes[]=
@@ -443,23 +444,69 @@ class RC_ATGM_NLOS: RC_ATGM_NLOS_Base
 	{
 		displayName="Overfly Top Attack";
 		textureType="overfly";
-		magazineReloadTime=20;
 	};
 };
 
 
-class RC_InterceptorLauncher: RC_ATGM_NLOS
+class RC_InterceptorLauncher: RC_ATGM_Lock
 {
 	displayName="Interceptor Launcher";
 	displayNameShort="Interceptor Launcher";
 
 	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
-	reloadTime=7;
-	magazineReloadTime=7;
+	reloadTime=15;
+	magazineReloadTime=15;
+
+	//cmImmunity=;
+	//weaponLockDelay=3;
+	//weaponLockSystem=2;
+
+	class Player: Player
+	{
+		weaponLockSystem="1 + 2";
+		reloadTime=15;
+		magazineReloadTime=15;
+		sounds[]={};
+	};
+	class Overfly: Player
+	{
+		displayName="Overfly Top Attack";
+		textureType="overfly";
+
+		minRange=200;
+		minRangeProbab=0.40000001;
+		midRange=1000;
+		midRangeProbab=0.89999998;
+		maxRange=5000;
+		maxRangeProbab=0.94999999;
+	};
+	class Cruise: Overfly
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+	};
+	class TopDown: Overfly
+	{
+		textureType="topDown";
+		displayName="TopDown";
+	};
 
 	magazines[]=
 	{
-		"RC_1Rnd_MP_Interceptor_Lock"
+		"RC_1Rnd_Interceptor_Direct_10m",
+		"RC_1Rnd_Interceptor_Direct_5m",
+		"RC_1Rnd_Interceptor_Direct_1m",
+
+		"RC_1Rnd_Interceptor_Overfly_10m",
+		"RC_1Rnd_Interceptor_Overfly_5m",
+
+		"RC_1Rnd_Interceptor_TopDown_10m",
+		"RC_1Rnd_Interceptor_TopDown_5m",
+		"RC_1Rnd_Interceptor_TopDown_1m",
+
+		"RC_1Rnd_Interceptor_Cruise_10m",
+		"RC_1Rnd_Interceptor_Cruise_5m",
+		"RC_1Rnd_Interceptor_Cruise_1m"
 	};
 	modes[]=
 	{
@@ -467,6 +514,18 @@ class RC_InterceptorLauncher: RC_ATGM_NLOS
 		"Overfly",
 		"TopDown",
 		"Cruise"
+	};
+};
+class RC_InterceptorLauncher_SPG: RC_InterceptorLauncher
+{
+	class GunParticles
+	{
+		class effect1
+		{
+			directionName="usti hlavne";
+			effectName="RocketBackEffectsRPGNT";
+			positionName="konec hlavne";
+		};
 	};
 };
 

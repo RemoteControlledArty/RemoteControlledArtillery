@@ -90,6 +90,23 @@ fnc_Interceptor_interceptability = {
 		triggerAmmo attachedTo _unit;
 		deleteVehicle _unit;
 	}];
+	/*
+	_uav addEventHandler ["Killed", {
+		params ["_unit"];
+		
+		deleteVehicle ((attachedObjects _unit)#0);
+	}];
+	*/
+	_uav addEventHandler ["Deleted", {
+		params ["_projectile"];
+
+		deleteVehicle ((attachedObjects _projectile)#0);
+	}];
+	_uav addEventHandler ["Explode", {
+		params ["_projectile", "_position", "_velocity"];
+
+		deleteVehicle ((attachedObjects _projectile)#0);
+	}];
 
 	//hide projectile to only show targetable attached vehicle
 	//hideObjectGlobal _uav;

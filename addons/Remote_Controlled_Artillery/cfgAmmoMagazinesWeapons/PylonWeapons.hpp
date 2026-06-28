@@ -13,7 +13,7 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 	weaponLockDelay=0;
 	weaponLockSystem=0;
 	lockAcquire=0;						//manual
-	ballisticsComputer="8";				//4 + 8, test 1 more
+	ballisticsComputer="8";				//4+8, test 1 more
 	
 	/*
 	showAimCursorInternal=0;
@@ -41,7 +41,7 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 		displayName="Autocannon";
 		displayNameShort="Autocannon";
 		reloadTime=0.1;					//0.04
-		ballisticsComputer="8";				//4 + 8, test 1 more
+		ballisticsComputer="8";			//4+8, test 1 more
 		
 		dispersion=0.0018;				//0.003		//0.018 Aegis
 		allowTabLock=1;
@@ -50,6 +50,59 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 		burst=2;						//5
 		autoFire=1;
 		textureType="fullAuto";
+
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_01",
+				1.9952624,
+				1,
+				1500
+			};
+			begin2[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_02",
+				1.9952624,
+				1,
+				1500
+			};
+			begin3[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_03",
+				1.9952624,
+				1,
+				1500
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.33000001,
+				"begin2",
+				0.33000001,
+				"begin3",
+				0.34
+			};
+			/*
+			begin1[]=
+			{
+				"A3\Sounds_F\arsenal\weapons_vehicles\gatling_20mm\20mm_01_burst",
+				1.7782794,
+				1,
+				1300,
+				{2,35740}
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
+			*/
+		};
 
 		/*
 		ballisticsComputer="1 + 2 + 16";

@@ -69,7 +69,7 @@ class RC_M109_A: RC_M109_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
+	
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;

@@ -42,7 +42,20 @@ class CfgPatches
 
 			"RC_ZSU35_A",
 			"RC_ZSU35_A_O",
-			"RC_ZSU35_A_I"
+			"RC_ZSU35_A_I",
+
+			"RC_OffroadUp_Interceptor_Direct",
+			"RC_OffroadUp_Interceptor_Direct_O",
+			"RC_OffroadUp_Interceptor_Direct_I",
+			"RC_OffroadUp_Interceptor_Overfly",
+			"RC_OffroadUp_Interceptor_Overfly_O",
+			"RC_OffroadUp_Interceptor_Overfly_I",
+			"RC_OffroadUp_Interceptor_TopDown",
+			"RC_OffroadUp_Interceptor_TopDown_O",
+			"RC_OffroadUp_Interceptor_TopDown_I",
+			"RC_OffroadUp_Interceptor_Cruise",
+			"RC_OffroadUp_Interceptor_Cruise_O",
+			"RC_OffroadUp_Interceptor_Cruise_I"
 		};
 
 		weapons[]=
@@ -72,6 +85,7 @@ class SensorTemplateNV;
 class SensorTemplateVisual;
 class SensorTemplateMan;
 class SensorTemplatePassiveRadar;
+class SensorTemplateActiveRadar;
 
 //later required optics
 class RCWSOptics;
@@ -102,6 +116,7 @@ class CfgWeapons
 class CfgVehicles
 {
 	#include "\RC_WesternSahara\cfgVehicles\BM_2T_A.hpp"
+	#include "\RC_WesternSahara\cfgVehicles\OffroadUp_Interceptor.hpp"
 	#include "\RC_WesternSahara\cfgVehicles\Otokar_Arma_HMG.hpp"
 	#include "\RC_WesternSahara\cfgVehicles\Patria_60mm_Mortar.hpp"
 	#include "\RC_WesternSahara\cfgVehicles\Patria_AMV_ATGM.hpp"

@@ -4,7 +4,6 @@ class RC_cUAS_Static_core: B_GMG_01_high_F
 	class Turrets;
 	class MainTurret;
 	class assembleInfo;
-	class OpticsIn;
 	class ViewOptics;
 	class Components;
 	class AnimationSources;
@@ -56,21 +55,17 @@ class RC_cUAS_Static_base: RC_cUAS_Static_core
 			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_XM307_cUAS_red.hpp"
 
-			class OpticsIn: OpticsIn
+			class OpticsIn
 			{
-				class ViewOptics: ViewOptics
+				class Wide
 				{
-					gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Optics_Commander_01_F.p3d";	//"\A3\weapons_f\reticle\Optics_Gunner_02_F"
-					initFov=0.89999998;
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Optics_Commander_01_F.p3d";
+
+					initFov=0.9;
 					minFov=0.06;
-					maxFov=0.89999998;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-					//thermalMode[]={0};
-					//memoryPointGunnerOptics="gunnerview";
+					maxFov=0.9;
 				};
 			};
 
@@ -433,26 +428,11 @@ class RC_cUAS_Mounted_Static: RC_cUAS_Static
 
 			class OpticsIn: OpticsIn
 			{
-				class ViewOptics: ViewOptics
+				class Wide: Wide
 				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
 					minFov=0.04;
-					visionMode[]=
-					{
-						"Normal",
-						"NVG"
-					};
-					//thermalMode[]={0};
 				};
-			};
-			class ViewOptics: ViewOptics
-			{
-				minFov=0.04;
-				visionMode[]=
-				{
-					"Normal",
-					"NVG"
-				};
-				//thermalMode[]={0};
 			};
 
 			class Components: Components

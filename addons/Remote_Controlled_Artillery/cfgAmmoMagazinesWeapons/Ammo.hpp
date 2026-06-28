@@ -2636,22 +2636,34 @@ class RC_MP_NLOS_Nano: RC_M_ATGM_MP_NLOS
 	//weaponLockSystem="1 + 2 + 16";
 	//cmImmunity=0.85;	//higher to simulate topdown ignoring smokes around the vehicle
 };
-class RC_MP_Interceptor_Lock: RC_M_ATGM_MP_LOS
+
+
+class RC_Interceptor_Direct_10m: RC_M_ATGM_MP_LOS
 {
-	//model="";
+	class EventHandlers
+	{
+		class RC_DetectInterceptor
+		{
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile, _magazine] call RC_fnc_RC_DetectInterceptor;";
+		};
+	};
+
+	model="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
+	
 	autoSeekTarget=0;	//0 for testing as it often prevents saclos
 	manualControl=1;
 	maxControlRange=10000;
 	
+	initTime=0;
 	timeToLive=60;	//60 or 90
 	thrustTime=60;	//60 or 90
 	thrust=10;
 	maxSpeed=40;		//40m/s = 144km/h	//97.22
-	maneuvrability=20;
+	maneuvrability=10;	//20
 
 	weaponLockSystem="2 + 16";
 	laserLock=0;
-	irLock=0;			//1 for it to not lock FPV's
+	irLock=1;			//1 for it to not lock FPV's or infantry
 	airLock=1;
 	cmImmunity=1;
 
@@ -2662,9 +2674,16 @@ class RC_MP_Interceptor_Lock: RC_M_ATGM_MP_LOS
 	indirectHit=20;
 	indirectHitRange=10;
 	submunitionAmmo="";
-	effectsMissile="missile2";
 	airFriction=0.35;	//0.085
-	sideAirFriction=1;	//1
+	sideAirFriction=2;	//1
+
+	muzzleEffect="";
+	effectsMissileInit="";
+	effectsMissile="EmptyEffect";	//EmptyEffect
+	effectFly="";
+	//effectFlare = "FlareShell";
+	//effectsFire = "CannonFire";
+	//effectsSmoke = "SmokeShellWhite";
 
 	soundFly[]=
 	{
@@ -2673,28 +2692,114 @@ class RC_MP_Interceptor_Lock: RC_M_ATGM_MP_LOS
 		2,		//pitch
 		1000	//distance
 	};
-};
-class RC_MP_Interceptor_Cruise: RC_MP_Interceptor_Lock
-{
-	delete Direct;
 
-	flightProfiles[]=
+	class Components: Components
 	{
-		"Cruise"
-	};
-	class Cruise
-	{
-		preferredFlightAltitude=500;	//50
-		lockDistanceToTarget=1000;		//100
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=4000;
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=3000;
+					maxTrackableSpeed=120;
+					angleRangeHorizontal=180;
+					angleRangeVertical=180;
+				};
+				/*
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=600;
+						maxRange=600;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					maxTrackableSpeed=120;
+					typeRecognitionDistance=400;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=67.5;
+					angleRangeVertical=135;
+				};
+				*/
+			};
+		};
 	};
 };
-class RC_MP_Interceptor_Overfly: RC_MP_Interceptor_Lock
+class RC_Interceptor_Direct_5m: RC_Interceptor_Direct_10m
+{
+	triggerDistance=5;
+	proximityExplosionDistance=5;
+
+	/*
+	timeToLive=60;	//60 or 90
+	thrustTime=60;	//60 or 90
+	thrust=10;
+	maxSpeed=40;		//40m/s = 144km/h	//97.22
+	maneuvrability=10;	//20
+
+	airFriction=0.35;	//0.085
+	sideAirFriction=2;	//1
+	*/
+};
+class RC_Interceptor_Direct_1m: RC_Interceptor_Direct_10m
+{
+	triggerDistance=1;
+	proximityExplosionDistance=1;
+
+	timeToLive=90;	//60 or 90
+	thrustTime=90;	//60 or 90
+	maneuvrability=20;	//20
+};
+
+
+class RC_Interceptor_Overfly_10m: RC_Interceptor_Direct_10m
 {
 	delete Direct;
 
 	class Overfly	//: Direct
 	{
-		overflyElevation=10;
+		overflyElevation=8;
 	};
 	flightProfiles[]=
 	{
@@ -2704,13 +2809,36 @@ class RC_MP_Interceptor_Overfly: RC_MP_Interceptor_Lock
 
 	submunitionDirectionType="SubmunitionTargetDirection";
 	submunitionInitialOffset[]={0,0,-1};
-	triggerDistance=12;
-	proximityExplosionDistance=14;
-	indirectHitRange=12;
+	triggerDistance=10;
+	proximityExplosionDistance=10;
+	indirectHitRange=10;
 
 	//initTime=0.25;
 };
-class RC_MP_Interceptor_TopDown: RC_MP_Interceptor_Lock
+class RC_Interceptor_Overfly_5m: RC_Interceptor_Overfly_10m
+{
+	triggerDistance=5;
+	proximityExplosionDistance=5;
+
+	class Overfly	//: Direct
+	{
+		overflyElevation=3;
+	};
+
+	/*
+	timeToLive=60;	//60 or 90
+	thrustTime=60;	//60 or 90
+	thrust=10;
+	maxSpeed=40;		//40m/s = 144km/h	//97.22
+	maneuvrability=10;	//20
+
+	airFriction=0.35;	//0.085
+	sideAirFriction=2;	//1
+	*/
+};
+
+
+class RC_Interceptor_TopDown_10m: RC_Interceptor_Direct_10m
 {
 	delete Direct;
 
@@ -2723,8 +2851,72 @@ class RC_MP_Interceptor_TopDown: RC_MP_Interceptor_Lock
 		ascendHeight=500;
 		descendDistance=1000;
 		minDistance=1;
-		ascendAngle=45;
+		ascendAngle=30;
 	};
+};
+class RC_Interceptor_TopDown_5m: RC_Interceptor_TopDown_10m
+{
+	triggerDistance=5;
+	proximityExplosionDistance=5;
+
+	/*
+	timeToLive=60;	//60 or 90
+	thrustTime=60;	//60 or 90
+	thrust=10;
+	maxSpeed=40;		//40m/s = 144km/h	//97.22
+	maneuvrability=10;	//20
+
+	airFriction=0.35;	//0.085
+	sideAirFriction=2;	//1
+	*/
+};
+class RC_Interceptor_TopDown_1m: RC_Interceptor_TopDown_10m
+{
+	triggerDistance=1;
+	proximityExplosionDistance=1;
+
+	maneuvrability=15;	//20
+};
+
+
+class RC_Interceptor_Cruise_10m: RC_Interceptor_Direct_10m
+{
+	delete Direct;
+
+	flightProfiles[]=
+	{
+		"Cruise"
+	};
+	class Cruise
+	{
+		preferredFlightAltitude=200;	//60
+		lockDistanceToTarget=1000;		//100
+	};
+};
+class RC_Interceptor_Cruise_5m: RC_Interceptor_Cruise_10m
+{
+	triggerDistance=5;
+	proximityExplosionDistance=5;
+
+	/*
+	timeToLive=60;	//60 or 90
+	thrustTime=60;	//60 or 90
+	thrust=10;
+	maxSpeed=40;		//40m/s = 144km/h	//97.22
+	maneuvrability=10;	//20
+
+	airFriction=0.35;	//0.085
+	sideAirFriction=2;	//1
+	*/
+};
+class RC_Interceptor_Cruise_1m: RC_Interceptor_Cruise_10m
+{
+	triggerDistance=1;
+	proximityExplosionDistance=1;
+
+	timeToLive=90;	//60 or 90
+	thrustTime=90;	//60 or 90
+	maneuvrability=20;	//20
 };
 
 
@@ -3199,12 +3391,11 @@ class RC_M_105mm_cannon_ATGM_DLG: RC_M_120mm_cannon_ATGM_DLG
 	indirectHit=40;
 	indirectHitRange=8;
 };
-class RC_M_105mm_cannon_AA: RC_M_120mm_cannon_ATGM_Base
+class RC_M_105mm_cannon_AA: RC_M_120mm_cannon_AA
 {
-	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
 	hit=125;
-	indirectHit=40;
-	indirectHitRange=8;
+	indirectHit=55;
+	indirectHitRange=10;
 };
 
 

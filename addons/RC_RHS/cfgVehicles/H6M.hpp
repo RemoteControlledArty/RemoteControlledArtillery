@@ -9,6 +9,7 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
 	};
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_main.hpp"

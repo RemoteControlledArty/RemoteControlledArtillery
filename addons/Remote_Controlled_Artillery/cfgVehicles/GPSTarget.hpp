@@ -191,6 +191,114 @@ class RC_Interceptor_Target_I: RC_Interceptor_Target_B
 
 
 /*
+class B_UAV_AI;
+class RC_NoSide_UAV_AI: B_UAV_AI
+{
+	side=-1;	//-1 no side, 4 neutral, 5 enemy
+};
+class RC_InterceptorMissile_Target: RC_Projectile_Target_Base
+{
+	
+	scope=1;
+	displayName="Interceptor Drone";
+	model="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
+	proxyShape="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
+	side=-1;	//-1 no side, 4 neutral, 5 enemy
+	crew="RC_NoSide_UAV_AI";
+	typicalCargo[]={"RC_NoSide_UAV_AI"};
+
+	class Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=-1;
+						maxRange=-1;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=4000;
+					angleRangeHorizontal=360;
+					angleRangeVertical=100;
+					aimDown=-45;
+					maxTrackableSpeed=694.44397;
+				};
+			};
+		};
+	};
+};
+*/
+
+
+class RC_InterceptorMissile_Target_B: RC_Interceptor_Target_B
+{
+	displayName="Interceptor Drone";
+	model="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
+	proxyShape="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
+	
+	/*
+	canUseScanners=1;
+
+	class Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=4000;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					aimDown=0;
+					maxTrackableSpeed=694.44397;
+				};
+			};
+		};
+	};
+	*/
+};
+class RC_InterceptorMissile_Target_O: RC_InterceptorMissile_Target_B
+{
+	side=0;
+	crew="O_UAV_AI";
+	typicalCargo[]={"O_UAV_AI"};
+};
+class RC_InterceptorMissile_Target_I: RC_InterceptorMissile_Target_B
+{
+	side=2;
+	crew="I_UAV_AI";
+	typicalCargo[]={"I_UAV_AI"};
+};
+
+
+/*
 class AllVehicles: All
 {
 	icon="iconVehicle";

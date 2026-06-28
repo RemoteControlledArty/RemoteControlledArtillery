@@ -13,7 +13,7 @@ class RC_APKWS: M_PG_AT
 
 	thrustTime=2.14;	//1.07 doubled to cancel thrust halving
 	thrust=412.5;		//825 halved to increase accuracy
-		
+	
 	//indirectHit=40;
 	indirectHitRange=5;	//3.2
 	fuseDistance=20;
@@ -29,6 +29,12 @@ class RC_APKWS: M_PG_AT
 	//airlock=?;
 	laserLock=0;		//1?
 	irLock=0;
+
+	/*
+	//C-UAS capability, doesnt work atm
+	triggerDistance=12;
+	proximityExplosionDistance=12;
+	*/
 
 	class ace_missileguidance
 	{

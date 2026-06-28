@@ -45,7 +45,7 @@ class RC_HIMARS_D: RC_HIMARS_base
 	scopeCurator=2;
 	side=1;
 	forceInGarage=1;
-
+	
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;

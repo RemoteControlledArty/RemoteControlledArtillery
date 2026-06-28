@@ -9,6 +9,7 @@ class RC_MH1M_Base: RC_MH1M_Core
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
 	};
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_main.hpp"

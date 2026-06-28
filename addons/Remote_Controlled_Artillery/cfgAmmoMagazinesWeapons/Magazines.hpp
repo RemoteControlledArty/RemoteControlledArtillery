@@ -141,13 +141,44 @@ class RC_1Rnd_ATGM_MP_NLOS: 1Rnd_GAT_missiles
 };
 
 
-class RC_1Rnd_MP_Interceptor_Lock: RC_1Rnd_ATGM_MP_NLOS
+class RC_1Rnd_Interceptor_Direct_10m: RC_1Rnd_ATGM_MP_NLOS
 {
-	displayName="Interceptor Drone";
-	displayNameShort="Interceptor Drone";
+	displayName="Interceptor Drone (Direct)";
+	displayNameShort="Direct-Int";
 	displayNameMFDFormat="Interceptor";
-	ammo="RC_MP_Interceptor_Overfly";
+	ammo="RC_Interceptor_Direct_10m";
 };
+class RC_1Rnd_Interceptor_Direct_5m: RC_1Rnd_Interceptor_Direct_10m {ammo="RC_Interceptor_Direct_5m";};
+class RC_1Rnd_Interceptor_Direct_1m: RC_1Rnd_Interceptor_Direct_10m {ammo="RC_Interceptor_Direct_1m";};
+
+
+class RC_1Rnd_Interceptor_Overfly_10m: RC_1Rnd_Interceptor_Direct_10m
+{
+	displayName="Interceptor Drone (Overfly)";
+	displayNameShort="Overfly-Int";
+	ammo="RC_Interceptor_Overfly_10m";
+};
+class RC_1Rnd_Interceptor_Overfly_5m: RC_1Rnd_Interceptor_Overfly_10m {ammo="RC_Interceptor_Overfly_5m";};
+
+
+class RC_1Rnd_Interceptor_TopDown_10m: RC_1Rnd_Interceptor_Direct_10m
+{
+	displayName="Interceptor Drone (TopDown)";
+	displayNameShort="TopDown-Int";
+	ammo="RC_Interceptor_TopDown_10m";
+};
+class RC_1Rnd_Interceptor_TopDown_5m: RC_1Rnd_Interceptor_TopDown_10m {ammo="RC_Interceptor_TopDown_5m";};
+class RC_1Rnd_Interceptor_TopDown_1m: RC_1Rnd_Interceptor_TopDown_10m {ammo="RC_Interceptor_TopDown_1m"};
+
+
+class RC_1Rnd_Interceptor_Cruise_10m: RC_1Rnd_Interceptor_Direct_10m
+{
+	displayName="Interceptor Drone (Cruise)";
+	displayNameShort="Cruise-Int";
+	ammo="RC_Interceptor_Cruise_10m";
+};
+class RC_1Rnd_Interceptor_Cruise_5m: RC_1Rnd_Interceptor_Cruise_10m {ammo="RC_Interceptor_TopDown_5m";};
+class RC_1Rnd_Interceptor_Cruise_1m: RC_1Rnd_Interceptor_Cruise_10m {ammo="RC_Interceptor_TopDown_1m"};
 
 
 /*

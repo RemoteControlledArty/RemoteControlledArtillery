@@ -562,6 +562,23 @@ class CfgPatches
 			"RC_Quadbike_WD_O",
 			"RC_Quadbike_A_I",
 			"RC_Quadbike_WD_I",
+
+			"RC_Offroad_Interceptor_Direct",
+			"RC_Offroad_Interceptor_Direct_O",
+			"RC_Offroad_Interceptor_Direct_I",
+			"RC_Offroad_Interceptor_Overfly",
+			"RC_Offroad_Interceptor_Overfly_O",
+			"RC_Offroad_Interceptor_Overfly_I",
+			"RC_Offroad_Interceptor_TopDown",
+			"RC_Offroad_Interceptor_TopDown_O",
+			"RC_Offroad_Interceptor_TopDown_I",
+			"RC_Offroad_Interceptor_Cruise",
+			"RC_Offroad_Interceptor_Cruise_O",
+			"RC_Offroad_Interceptor_Cruise_I",
+
+			"RC_Interceptor_Mothership",
+			"RC_Interceptor_Mothership_O",
+			"RC_Interceptor_Mothership_I",
 			
 
 			//optional retextures
@@ -726,6 +743,9 @@ class CfgPatches
 			"Improved_FOV_Laserdesignator_Ti_A",
 			"Improved_FOV_Laserdesignator_Ti_WD",
 
+			"RC_InterceptorLauncher",
+			"RC_InterceptorLauncher_SPG",
+
 			"RC_MMG_338_APC",
 			"RC_MMG_338_FSV",
 			"RC_MMG_338_FSV_coax",
@@ -845,6 +865,11 @@ class CfgFunctions
 			class RC_APS_Activate {};
 			class RC_AT_SourceIndicator {};
 
+			class RC_DetectInterceptor_Arrays {preInit=1;};
+			class RC_DetectInterceptor {};
+			class RC_DetectInterceptor_Activate {};
+			
+			class RC_InterceptorAttach {};
 			class RC_MinePlow {};
 
 			class RC_OrderTurretTurnKey {};
@@ -1193,6 +1218,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\XM307.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\XM312.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Offroad.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Offroad_Interceptor.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\RepairTruck.hpp"	//needs repair script first
 	#include "\Remote_Controlled_Artillery\cfgVehicles\RespawnTruck.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticAA.hpp"

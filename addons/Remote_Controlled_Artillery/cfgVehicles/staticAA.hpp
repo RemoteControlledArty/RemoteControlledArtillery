@@ -279,10 +279,11 @@ class RC_Static_AA_I: RC_Static_AA
 };
 
 
-class RC_Static_Interceptor: RC_Static_AA
+/*
+class RC_Static_Interceptor_Direct: RC_Static_AA
 {
-	displayname="RC Interceptor Static";
-	editorSubcategory="RC_AntiDrone_subcat";
+	displayname="RC Direct Interceptor";
+	editorSubcategory="RC_AntiAir_subcat";
 
 	class Turrets: Turrets
 	{
@@ -304,6 +305,47 @@ class RC_Static_Interceptor: RC_Static_AA
 		};
 	};
 };
+class RC_Static_Interceptor_Overfly: RC_Static_Interceptor_Direct
+{
+	displayname="RC Overfly Interceptor";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock"
+			};
+		};
+	};
+};
+class RC_Static_Interceptor_NLOS: RC_Static_Interceptor_Direct
+{
+	displayname="RC NLOS Interceptor";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			magazines[]=
+			{
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock",
+				"RC_1Rnd_MP_Interceptor_Lock"
+			};
+		};
+	};
+};
+*/
 
 
 class RC_Static_AA_Assemble: RC_Static_AA

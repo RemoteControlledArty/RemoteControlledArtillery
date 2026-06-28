@@ -320,7 +320,7 @@ class RC_Static_ATGM_Overfly: RC_Static_ATGM_SACLOS
 		{
 			weapons[]=
 			{
-				"RC_ATGM_NLOS"
+				"RC_ATGM_Lock"
 			};
 			magazines[]=
 			{
@@ -384,27 +384,27 @@ class RC_Static_ATGM_Overfly: RC_Static_ATGM_SACLOS
 		class muzzle_source
 		{
 			source="reload";
-			weapon="RC_ATGM_NLOS";
+			weapon="RC_ATGM_Lock";
 		};
 		class muzzle_source_rot
 		{
 			source="ammorandom";
-			weapon="RC_ATGM_NLOS";
+			weapon="RC_ATGM_Lock";
 		};
 		class ReloadAnim
 		{
 			source="reload";
-			weapon="RC_ATGM_NLOS";
+			weapon="RC_ATGM_Lock";
 		};
 		class ReloadMagazine
 		{
 			source="reloadmagazine";
-			weapon="RC_ATGM_NLOS";
+			weapon="RC_ATGM_Lock";
 		};
 		class Revolving
 		{
 			source="revolving";
-			weapon="RC_ATGM_NLOS";
+			weapon="RC_ATGM_Lock";
 		};
 	};
 
@@ -484,7 +484,7 @@ class RC_Static_ATGM_NLOS: RC_Static_ATGM_Overfly
 		{
 			weapons[]=
 			{
-				"RC_ATGM_NLOS"
+				"RC_ATGM_Lock"
 			};
 			magazines[]=
 			{

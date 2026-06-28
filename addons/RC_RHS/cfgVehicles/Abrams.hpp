@@ -48,6 +48,7 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	allowTabLock=1;
 	canUseScanners=1;
 
+	//supplyRadius=-2;
 	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=2;

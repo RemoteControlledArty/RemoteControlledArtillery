@@ -212,6 +212,7 @@ class CfgVehicles
 	#include "\RC_Aegis\cfgVehicles\BTR_80A.hpp"
 	#include "\RC_Aegis\cfgVehicles\BTR_100.hpp"
 
+	//#include "\RC_Aegis\cfgVehicles\AW159M_G.hpp"	//sadly has red marker on tail
 	#include "\RC_Aegis\cfgVehicles\2S9_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\BM_2T_WD.hpp"
 	#include "\RC_Aegis\cfgVehicles\Otokar_Arma_WD.hpp"

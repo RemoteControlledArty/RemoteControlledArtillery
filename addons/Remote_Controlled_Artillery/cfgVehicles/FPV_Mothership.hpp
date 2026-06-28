@@ -25,6 +25,7 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -859,5 +860,210 @@ class RC_FPV_MothershipMQ_NoCam_I: RC_FPV_MothershipMQ_NoCam
 {
 	faction="RemoteControlled_I";
 	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_Interceptor_Mothership_Base: RC_FPV_Mothership_Base
+{
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=6000;
+
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=400;
+
+					class AirTarget
+					{
+						minRange=400;
+						maxRange=400;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=-1;
+						maxRange=-1;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="";
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=3000;
+
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=60;	//30
+					angleRangeVertical=60;		//30
+					animDirection="mainGun";
+				};
+				class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=4000;
+					angleRangeHorizontal=360;
+					angleRangeVertical=100;
+					aimDown=-45;
+					maxTrackableSpeed=694.44397;
+				};
+			};
+		};
+	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"Laserdesignator_mounted",
+				"RC_InterceptorLauncher"
+			};
+			magazines[]=
+			{
+				"Laserbatteries",
+				"RC_1Rnd_Interceptor_Direct_1m",
+				"RC_1Rnd_Interceptor_Direct_1m",
+				"RC_1Rnd_Interceptor_Direct_1m",
+				"RC_1Rnd_Interceptor_Direct_1m",
+				"RC_1Rnd_Interceptor_Direct_1m",
+				"RC_1Rnd_Interceptor_Direct_1m",
+				"RC_1Rnd_Interceptor_Direct_1m",
+				"RC_1Rnd_Interceptor_Direct_1m"
+			};
+		};
+	};
+
+	displayName="RC AA-Interceptor Mothership";
+	editorSubcategory="RC_AntiAir_subcat";
+};
+class RC_Interceptor_Mothership: RC_Interceptor_Mothership_Base
+{
+	faction="RemoteControlled_B";
+	crew="B_UAV_AI";
+	side=1;
+
+	scope=1;
+	scopeCurator=1;
+};
+class RC_Interceptor_Mothership_O: RC_Interceptor_Mothership
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+};
+class RC_Interceptor_Mothership_I: RC_Interceptor_Mothership
+{
+	faction="RemoteControlled_I";
+	crew="I_UAV_AI";
+	side=2;
+};
+
+
+class RC_AI_Interceptor_Mothership: RC_Interceptor_Mothership
+{
+	displayName="AA-Interceptor Mothership";
+	isUav=0;
+
+	crew="RC_B_HeliPilot";
+};
+class RC_AI_Interceptor_Mothership_O: RC_AI_Interceptor_Mothership
+{
+	faction="RemoteControlled_O";
+	crew="RC_B_HeliPilot";
+	side=0;
+};
+class RC_AI_Interceptor_Mothership_I: RC_AI_Interceptor_Mothership
+{
+	faction="RemoteControlled_I";
+	crew="RC_B_HeliPilot";
 	side=2;
 };
