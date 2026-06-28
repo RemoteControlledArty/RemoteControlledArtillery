@@ -2787,9 +2787,11 @@ class RC_Interceptor_Direct_1m: RC_Interceptor_Direct_10m
 	triggerDistance=1;
 	proximityExplosionDistance=1;
 
-	timeToLive=90;	//60 or 90
-	thrustTime=90;	//60 or 90
-	maneuvrability=20;	//20
+	//timeToLive=90;	//60 or 90
+	//thrustTime=90;	//60 or 90
+
+	thrust=10;
+	maneuvrability=12.5;	//20
 };
 
 

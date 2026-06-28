@@ -245,6 +245,7 @@ class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 	magazines[]=
 	{
 		"RC_PylonM_12Rnd_APKWS",
+		//"RC_PylonM_12Rnd_APKWS_cUAS",
 		"RC_PylonM_7Rnd_APKWS"
 	};
 	modes[]=
@@ -263,12 +264,11 @@ class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 	ace_laser_canSelect=1; 	// can ace_laser lock (allows switching laser code)
 	ace_laser_showHud=1; 	// show attack profile / lock on hud
 	autoFire=0;
-	canLock=0;
+	canLock=0;				//2 for missile locking
 	weaponLockSystem=0;
 	lockingTargetSound[]={"",0,1};
 	lockedTargetSound[]={"",0,1};
 };
-//EF_PylonMissile_Titan_NLOS_2Rnd  pylonWeapon = "EF_Weapon_Titan_NLOS";	 hardpoints[] = {"TITAN_NLOS_2RND"};	ammo = "EF_Ammo_Titan_NLOS";
 
 
 class RC_PylonW_S8_LG: RC_PylonW_APKWS

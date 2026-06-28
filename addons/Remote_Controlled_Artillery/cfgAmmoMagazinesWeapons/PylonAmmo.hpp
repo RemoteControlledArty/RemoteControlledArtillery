@@ -56,6 +56,42 @@ class RC_APKWS: M_PG_AT
 		seekerLockModes[]={"LOAL"};
 	};
 };
+class RC_APKWS_cUAS: M_PG_AT
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoDatalink_6km.hpp"
+
+	thrustTime=5;		//1.07
+	thrust=200;			//825
+
+	manualControl=0;	//try 1
+	airlock=1;
+	laserLock=0;		//1?
+	irLock=0;
+
+	//C-UAS capability
+	triggerDistance=12;
+	proximityExplosionDistance=12;
+
+	class ace_missileguidance
+	{
+		enabled=1;
+		canVanillaLock=1;		//0
+		seekerMinRange=1;
+		seekerMaxRange=5000;	//4000
+		seekerAccuracy=1;
+		seekerAngle=60;			//45
+		incDeflection=0.0005;
+		minDeflection=0.0005;
+		maxDeflection=0.0025;
+
+		defaultAttackProfile="LIN";
+		attackProfiles[]={"LIN"};
+		defaultSeekerType="SALH";
+		seekerTypes[]={"SALH"};
+		defaultSeekerLockMode="LOAL";
+		seekerLockModes[]={"LOAL"};
+	};
+};
 
 
 class M_Scalpel_AT;

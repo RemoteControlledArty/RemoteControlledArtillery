@@ -258,6 +258,16 @@ class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
 		"OM_H"
 	};
 };
+/*
+class RC_PylonM_12Rnd_APKWS_cUAS: RC_PylonM_12Rnd_APKWS
+{
+	displayName="> APKWS C-UAS 12x";
+    displayNameShort="APKWS C-UAS";
+	descriptionShort="anti drone guided missiles";
+    pylonWeapon="RC_PylonW_APKWS";
+	ammo="RC_APKWS_cUAS";
+};
+*/
 class RC_PylonM_12Rnd_S8_LG: RC_PylonM_12Rnd_APKWS
 {
 	displayName="> S-8 LG 12x";
