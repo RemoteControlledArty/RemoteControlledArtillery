@@ -211,7 +211,8 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 						"Ti"
 					};
 					thermalMode[]={0};
-					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+					//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
 				};
 			};
 
@@ -866,6 +867,14 @@ class RC_FPV_MothershipMQ_NoCam_I: RC_FPV_MothershipMQ_NoCam
 
 class RC_Interceptor_Mothership_Base: RC_FPV_Mothership_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_Interceptability
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\firedInterceptorEH.hpp"
+		};
+	};
+
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -1031,8 +1040,8 @@ class RC_Interceptor_Mothership: RC_Interceptor_Mothership_Base
 	crew="B_UAV_AI";
 	side=1;
 
-	scope=1;
-	scopeCurator=1;
+	scope=2;
+	scopeCurator=2;
 };
 class RC_Interceptor_Mothership_O: RC_Interceptor_Mothership
 {
@@ -1052,7 +1061,7 @@ class RC_AI_Interceptor_Mothership: RC_Interceptor_Mothership
 {
 	displayName="AA-Interceptor Mothership";
 	isUav=0;
-
+	
 	crew="RC_B_HeliPilot";
 };
 class RC_AI_Interceptor_Mothership_O: RC_AI_Interceptor_Mothership

@@ -47,7 +47,7 @@ class pilotCamera
 				"Ti"
 			};
 			thermalMode[]={0};
-			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
 		};
 		showMiniMapInOptics=1;			//alterative to cTab to follow path
 		showUAVViewpInOptics=1;			//remove for optionally manned version

@@ -89,17 +89,17 @@ class RC_MELB_AH6M_DAP: RC_MELB_AH6M_Base
 	forceInGarage=1;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
 };
 class RC_MELB_AH6M_DAP_O: RC_MELB_AH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
 };
 class RC_MELB_AH6M_DAP_I: RC_MELB_AH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
 };
 
 
@@ -118,17 +118,17 @@ class RC_MELB_OM_AH6M_DAP: RC_MELB_OM_AH6M_DAP_UV
 	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
 };
 class RC_MELB_OM_AH6M_DAP_O: RC_MELB_OM_AH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
 };
 class RC_MELB_OM_AH6M_DAP_I: RC_MELB_OM_AH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
 };
 
 
@@ -183,17 +183,17 @@ class RC_MELB_MH6M_DAP: RC_MELB_MH6M_DAP_Base
 	forceInGarage=1;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
 };
 class RC_MELB_MH6M_DAP_O: RC_MELB_MH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
 };
 class RC_MELB_MH6M_DAP_I: RC_MELB_MH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
 };
 
 
@@ -212,17 +212,17 @@ class RC_MELB_OM_MH6M_DAP: RC_MELB_OM_MH6M_DAP_UV
 	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
 };
 class RC_MELB_OM_MH6M_DAP_O: RC_MELB_OM_MH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
 };
 class RC_MELB_OM_MH6M_DAP_I: RC_MELB_OM_MH6M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
 };
 
 
@@ -235,6 +235,13 @@ class RC_MELB_MH6M_Core: RHS_MELB_MH6M
 };
 class RC_MELB_MH6M_Base: RC_MELB_MH6M_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+	};
+	
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_main.hpp"
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_pilotCamBase.hpp"
@@ -273,17 +280,17 @@ class RC_MELB_MH6M: RC_MELB_MH6M_Base
 	forceInGarage=1;	//1
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
 };
 class RC_MELB_MH6M_O: RC_MELB_MH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
 };
 class RC_MELB_MH6M_I: RC_MELB_MH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
 };
 
 
@@ -302,18 +309,18 @@ class RC_MELB_OM_MH6M: RC_MELB_OM_MH6M_UV
 	forceInGarage=1;	//1
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
 };
 class RC_MELB_OM_MH6M_O: RC_MELB_OM_MH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
 };
 class RC_MELB_OM_MH6M_I: RC_MELB_OM_MH6M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
 };
 
 
-//ADD RC CoPilot, manned Pilot, armored glass
+//ADD RC CoPilot, manned Pilot

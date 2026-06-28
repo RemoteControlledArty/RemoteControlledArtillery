@@ -576,9 +576,9 @@ class CfgPatches
 			"RC_Offroad_Interceptor_Cruise_O",
 			"RC_Offroad_Interceptor_Cruise_I",
 
-			"RC_Interceptor_Mothership",
-			"RC_Interceptor_Mothership_O",
-			"RC_Interceptor_Mothership_I",
+			"RC_AI_Interceptor_Mothership",
+			"RC_AI_Interceptor_Mothership_O",
+			"RC_AI_Interceptor_Mothership_I",
 			
 
 			//optional retextures

@@ -259,6 +259,7 @@ class RC_UAV_AR1: RC_UAV_base
 						"Normal",
 						"NVG"
 					};
+					//gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
 					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
 				};
 			};

@@ -360,6 +360,7 @@ class RC_OffroadUp_Interceptor_Base: RC_OffroadUp_Interceptor_Fetch
 			gunnerCompartments="Compartment1";
 			//discreteDistance[]={};
 			//discreteDistanceInitIndex=0;
+			maxElev=45;	//20
 
 			class OpticsIn
 			{

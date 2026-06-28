@@ -244,7 +244,8 @@ class RC_InterceptorMissile_Target: RC_Projectile_Target_Base
 
 class RC_InterceptorMissile_Target_B: RC_Interceptor_Target_B
 {
-	displayName="Interceptor Drone";
+	//displayName="Interceptor Drone";
+	displayName="unknown projectile";
 	model="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
 	proxyShape="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
 	

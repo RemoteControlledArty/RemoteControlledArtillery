@@ -47,4 +47,4 @@ _projectile addEventHandler ["Explode", {
 //sleep to prevent collision in MP
 sleep 0.1;
 //-1 offset to not block the shaped charge
-_target attachTo [_projectile, [0, 0, 0]];
+_target attachTo [_projectile, [0, -1, 0]];		//-1 to prevent ramming oneshot

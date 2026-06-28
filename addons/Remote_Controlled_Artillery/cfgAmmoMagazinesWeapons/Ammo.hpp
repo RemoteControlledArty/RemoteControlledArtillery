@@ -2784,14 +2784,16 @@ class RC_Interceptor_Direct_5m: RC_Interceptor_Direct_10m
 };
 class RC_Interceptor_Direct_1m: RC_Interceptor_Direct_10m
 {
-	triggerDistance=1;
-	proximityExplosionDistance=1;
+	triggerDistance=2;
+	proximityExplosionDistance=2;
 
-	//timeToLive=90;	//60 or 90
-	//thrustTime=90;	//60 or 90
+	timeToLive=90;	//time to crash
+	thrustTime=60;	//batterie life
 
+	airFriction=0.2;	//0.085
+	sideAirFriction=2;	//1
 	thrust=10;
-	maneuvrability=12.5;	//20
+	maneuvrability=10;	//20
 };
 
 
