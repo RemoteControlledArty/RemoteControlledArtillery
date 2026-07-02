@@ -2787,7 +2787,7 @@ class RC_Interceptor_Direct_1m: RC_Interceptor_Direct_10m
 	triggerDistance=2;
 	proximityExplosionDistance=2;
 
-	timeToLive=90;	//time to crash
+	timeToLive=60;	//time to crash
 	thrustTime=60;	//batterie life
 
 	airFriction=0.2;	//0.085

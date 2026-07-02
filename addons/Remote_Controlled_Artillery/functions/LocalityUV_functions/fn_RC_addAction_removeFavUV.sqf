@@ -5,6 +5,8 @@ _entity addAction [
 	{
 		params ["_target"];
 		RC_UV_favs = RC_UV_favs - [_target];
+
+		call RC_fnc_RC_listFavUV;
 	},
 	nil,	// arguments
 	1.5,	// priority

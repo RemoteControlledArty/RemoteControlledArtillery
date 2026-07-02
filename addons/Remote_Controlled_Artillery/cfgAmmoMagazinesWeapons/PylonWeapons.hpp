@@ -25,12 +25,9 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 	magazines[]=
 	{
 		//"RC_PylonM_300Rnd_20mm_Aegis",
-		"RC_PylonM_300Rnd_20mm",
-		"RC_PylonM_400Rnd_20mm",
-		"RC_PylonM_250Rnd_25mm",
-		"RC_PylonM_350Rnd_25mm",
-		"RC_PylonM_200Rnd_30mm",
-		"RC_PylonM_300Rnd_30mm"
+		"RC_PylonM_350Rnd_20mm",
+		"RC_PylonM_300Rnd_25mm",
+		"RC_PylonM_250Rnd_30mm"
 	};
 	modes[]=
 	{
@@ -119,12 +116,9 @@ class RC_PylonW_Avtopushka: RC_PylonW_TwinCannon
 
 	magazines[]=
 	{
-		"RC_PylonM_300Rnd_20mm_O",
-		"RC_PylonM_400Rnd_20mm_O",
-		"RC_PylonM_250Rnd_25mm_O",
-		"RC_PylonM_350Rnd_25mm_O",
-		"RC_PylonM_200Rnd_30mm_O",
-		"RC_PylonM_300Rnd_30mm_O"
+		"RC_PylonM_350Rnd_20mm_O",
+		"RC_PylonM_300Rnd_25mm_O",
+		"RC_PylonM_250Rnd_30mm_O"
 	};
 	class manual: manual
 	{
@@ -148,8 +142,8 @@ class RC_PylonW_12Rnd_Hydra: RC_PylonW_12Rnd_Hydra_Core
 
 	magazines[]=
 	{
-		"RC_PylonM_12Rnd_Hydra_HE",
 		"RC_PylonM_12Rnd_Hydra_MP"
+		//"RC_PylonM_12Rnd_Hydra_HE"
 	};
 	modes[]=
 	{
@@ -171,8 +165,8 @@ class RC_PylonW_12Rnd_S5: RC_PylonW_12Rnd_Hydra
 	displayNameShort="55mm S-5 UB-12";
 	magazines[]=
 	{
-		"RC_PylonM_12Rnd_S5_HE",
 		"RC_PylonM_12Rnd_S5_MP"
+		//"RC_PylonM_12Rnd_S5_HE"
 	};
 	class Burst: Burst
 	{
@@ -196,8 +190,8 @@ class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Core
 
 	magazines[]=
 	{
-		"RC_PylonM_19Rnd_Hydra_HE",
 		"RC_PylonM_19Rnd_Hydra_MP"
+		//"RC_PylonM_19Rnd_Hydra_HE"
 	};
 	modes[]=
 	{
@@ -218,8 +212,8 @@ class RC_PylonW_19Rnd_S5: RC_PylonW_19Rnd_Hydra
 	displayNameShort="55mm S-5 UB-19";
 	magazines[]=
 	{
-		"RC_PylonM_19Rnd_S5_HE",
 		"RC_PylonM_19Rnd_S5_MP"
+		//"RC_PylonM_19Rnd_S5_HE"
 	};
 	class Burst: Burst
 	{

@@ -1040,8 +1040,8 @@ class RC_Interceptor_Mothership: RC_Interceptor_Mothership_Base
 	crew="B_UAV_AI";
 	side=1;
 
-	scope=2;
-	scopeCurator=2;
+	scope=1;		//2
+	scopeCurator=0;	//2
 };
 class RC_Interceptor_Mothership_O: RC_Interceptor_Mothership
 {

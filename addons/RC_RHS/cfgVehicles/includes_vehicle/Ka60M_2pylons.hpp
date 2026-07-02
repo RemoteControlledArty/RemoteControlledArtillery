@@ -35,7 +35,7 @@ class TransportPylonsComponent
 			UIposition[] 		= {0.625,0.42};
 
 			//turret[]			= {};	//none = both?
-			attachment			= "RC_PylonM_350Rnd_25mm_O";
+			attachment			= "RC_PylonM_300Rnd_25mm_O";
 		};
 		class pylon2: pylon1
 		{
@@ -52,7 +52,7 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_PylonM_350Rnd_25mm_O",
+				"RC_PylonM_300Rnd_25mm_O",
 				"RC_PylonM_19Rnd_S5_MP"
 			};
 			displayname="Unguided";
@@ -62,7 +62,7 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_PylonM_350Rnd_25mm_O",
+				"RC_PylonM_300Rnd_25mm_O",
 				"RC_PylonM_12Rnd_S8_LG"
 			};
 			displayname="Laser Guided";
@@ -72,7 +72,7 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_PylonM_250Rnd_25mm_Ru",
+				"RC_PylonM_300Rnd_25mm_O",
 				"RC_RHS_PylonM_8Rnd_S8_G"
 			};
 			displayname="SACLOS / Lock - Guided";
@@ -82,7 +82,7 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_PylonM_350Rnd_25mm_O",
+				"RC_PylonM_300Rnd_25mm_O",
 				"RC_PylonM_3Rnd_Vikhr"
 			};
 			displayname="Heavy Laser Guided";

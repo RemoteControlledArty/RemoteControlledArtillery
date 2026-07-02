@@ -960,11 +960,12 @@ class CfgFunctions
 
 			class RC_addAction_addFavUV {};
 			class RC_addAction_removeFavUV {};
+			class RC_listFavUV {};
 			class RC_connectToUV {};
 			class RC_isValidUV {};
 			class RC_stopRC {};
-			class RC_choosePreviousUV {};
 			class RC_swapUV {};
+			class RC_openTerminal {};
 			
 			class RC_OMH_Side {};
 			class RC_OMH_Disconnect {};

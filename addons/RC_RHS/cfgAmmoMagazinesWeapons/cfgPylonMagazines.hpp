@@ -1,47 +1,51 @@
 class rhs_mag_M229_19;
-class RC_RHS_PylonM_19Rnd_Hydra_HE: rhs_mag_M229_19
-{
-	displayName="> Hydra HE 19x";
-	displayNameShort="Hydra HE";
-	descriptionShort="high explosive unguided rockets";
-	pylonWeapon="RC_RHS_PylonW_Hydra";
-	ammo="RC_RHS_Hydra_HE";
-
-	hardpoints[]=
-	{
-		"OM_H"
-	};
-};
-class RC_RHS_PylonM_19Rnd_Hydra_MP: RC_RHS_PylonM_19Rnd_Hydra_HE
+class RC_RHS_PylonM_19Rnd_Hydra_MP: rhs_mag_M229_19
 {
 	displayName="> Hydra MP 19x";
 	displayNameShort="Hydra MP";
 	descriptionShort="multi purpose unguided rockets";
-	ammo="RC_RHS_Hydra_MP";
-};
-
-
-class rhs_mag_M229_7;
-class RC_RHS_PylonM_7Rnd_Hydra_HE: rhs_mag_M229_7
-{
-	displayName="> Hydra HE 7x";
-	displayNameShort="Hydra HE";
-	descriptionShort="high explosive unguided rockets";
 	pylonWeapon="RC_RHS_PylonW_Hydra";
-	ammo="RC_RHS_Hydra_HE";
+	ammo="RC_RHS_Hydra_MP";
 
 	hardpoints[]=
 	{
 		"OM_H"
 	};
 };
-class RC_RHS_PylonM_7Rnd_Hydra_MP: RC_RHS_PylonM_7Rnd_Hydra_HE
+/*
+class RC_RHS_PylonM_19Rnd_Hydra_HE: RC_RHS_PylonM_19Rnd_Hydra_MP
+{
+	displayName="> Hydra HE 19x";
+	displayNameShort="Hydra HE";
+	descriptionShort="high explosive unguided rockets";
+	ammo="RC_RHS_Hydra_HE";
+};
+*/
+
+
+class rhs_mag_M229_7;
+class RC_RHS_PylonM_7Rnd_Hydra_MP: rhs_mag_M229_7
 {
 	displayName="> Hydra MP 7x";
 	displayNameShort="Hydra MP";
 	descriptionShort="multi purpose unguided rockets";
+	pylonWeapon="RC_RHS_PylonW_Hydra";
 	ammo="RC_RHS_Hydra_MP";
+
+	hardpoints[]=
+	{
+		"OM_H"
+	};
 };
+/*
+class RC_RHS_PylonM_7Rnd_Hydra_HE: RC_RHS_PylonM_7Rnd_Hydra_MP
+{
+	displayName="> Hydra HE 7x";
+	displayNameShort="Hydra HE";
+	descriptionShort="high explosive unguided rockets";
+	ammo="RC_RHS_Hydra_HE";
+};
+*/
 
 
 /*

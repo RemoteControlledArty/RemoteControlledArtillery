@@ -159,6 +159,17 @@
 ] call CBA_fnc_addKeybind;
 
 
+//open terminal
+[
+	"Remote Controlled Artillery",
+	"RC_OpenTerminal",
+	"open UV terminal",
+	{call RC_fnc_RC_openTerminal},
+	"",
+	[41, [false, false, true]]     //alt + 41 = ^ aka zirkumflex
+] call CBA_fnc_addKeybind;
+
+
 //RC Modernized Vehicles
 [
     "RC Modernized Vehicles",

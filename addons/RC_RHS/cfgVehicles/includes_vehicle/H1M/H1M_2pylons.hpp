@@ -36,7 +36,7 @@ class TransportPylonsComponent
 			//maxweight 		= 1200;	//1200
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
-			attachment			= "RC_PylonM_350Rnd_25mm";
+			attachment			= "RC_PylonM_300Rnd_25mm";
 		};
 		class pylon2: pylon1
 		{
@@ -63,7 +63,7 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_PylonM_350Rnd_25mm",
+				"RC_PylonM_300Rnd_25mm",
 				"RC_RHS_PylonM_19Rnd_Hydra_MP",
 				"rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4"
 			};
@@ -73,7 +73,7 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_PylonM_350Rnd_25mm",
+				"RC_PylonM_300Rnd_25mm",
 				"RC_PylonM_12Rnd_Hydra_APKWS",
 				"rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4"
 			};
@@ -83,7 +83,7 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_PylonM_350Rnd_25mm",
+				"RC_PylonM_300Rnd_25mm",
 				"RC_RHS_PylonM_8Rnd_DAGR",
 				"rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4"
 			};
@@ -93,7 +93,7 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_PylonM_350Rnd_25mm",
+				"RC_PylonM_300Rnd_25mm",
 				"RC_PylonM_2Rnd_AGM114K",
 				"rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4"
 			};

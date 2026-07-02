@@ -6,6 +6,8 @@ _entity addAction [
 		params ["_target"];
 		_target setVariable ["RC_UV_seat", (getConnectedUAVUnit player)];
 		RC_UV_favs pushBackUnique _target;
+
+		call RC_fnc_RC_listFavUV;
 	},
 	nil,	// arguments
 	1.5,	// priority

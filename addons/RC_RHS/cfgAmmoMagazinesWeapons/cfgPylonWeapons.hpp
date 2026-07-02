@@ -12,29 +12,10 @@ class RC_RHS_PylonW_Hydra: RC_RHS_PylonW_Hydra_Core
 
 	magazines[]=
 	{
-		/*
-		//large pod
-		"RC_RHS_PylonM_19Rnd_Hydra_MP",
-		
-		"RC_RHS_PylonM_19Rnd_Hydra_M151",
-		"RC_RHS_PylonM_12Rnd_Hydra_M151",
-		"RC_RHS_PylonM_9Rnd_Hydra_M151",
-
-		"RC_RHS_PylonM_19Rnd_Hydra_M229",
-		"RC_RHS_PylonM_12Rnd_Hydra_M229",
-		"RC_RHS_PylonM_9Rnd_Hydra_M229",
-
-		//small pod
-		"RC_RHS_PylonM_7Rnd_Hydra_M151",
-
-		"RC_RHS_PylonM_7Rnd_Hydra_M229",
-		*/
-
-		"RC_RHS_PylonM_19Rnd_Hydra_HE",
-		"RC_RHS_PylonM_7Rnd_Hydra_HE",
-
 		"RC_RHS_PylonM_19Rnd_Hydra_MP",
 		"RC_RHS_PylonM_7Rnd_Hydra_MP"
+		//"RC_RHS_PylonM_19Rnd_Hydra_HE",
+		//"RC_RHS_PylonM_7Rnd_Hydra_HE"
 	};
 	modes[]=
 	{

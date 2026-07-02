@@ -486,8 +486,8 @@ class RC_Offroad_Interceptor_Base: RC_Offroad_Interceptor_Fetch
 class RC_Offroad_Interceptor_Direct: RC_Offroad_Interceptor_Base
 {
 	displayname="Offroad AA-Interceptor (Direct)";
-	scope=2;
-	scopeCurator=2;
+	scope=1;		//2
+	scopeCurator=0;	//2
 
 	class Turrets: Turrets
 	{

@@ -29,13 +29,26 @@ class RC_PylonM_Autocannon_base: PylonWeapon_300Rnd_20mm_shells
 	muzzleEnd="muzzleEnd";
 	*/
 };
-class RC_PylonM_300Rnd_20mm: RC_PylonM_Autocannon_base
+class RC_PylonM_350Rnd_20mm: RC_PylonM_Autocannon_base
 {
 	scope=2;
-	displayName="> 20mm MP-QF 300x";
+	displayName="> 20mm MP-QF 350x";
 	displayNameShort="20mm MP-QF";
 	descriptionShort="20mm Autocannon";
 	ammo="RC_Pylon_B_20mm_MP_QF_T_R";
+	count=350;
+
+	hardpoints[]=
+	{
+		"OM_H"
+	};
+};
+class RC_PylonM_300Rnd_25mm: RC_PylonM_350Rnd_20mm
+{
+	displayName="> 25mm MP-QF 300x";
+	displayNameShort="25mm MP-QF";
+	descriptionShort="25mm Autocannon";
+	ammo="RC_Pylon_B_25mm_MP_QF_T_R";
 	count=300;
 
 	hardpoints[]=
@@ -43,17 +56,12 @@ class RC_PylonM_300Rnd_20mm: RC_PylonM_Autocannon_base
 		"OM_H"
 	};
 };
-class RC_PylonM_400Rnd_20mm: RC_PylonM_300Rnd_20mm
+class RC_PylonM_250Rnd_30mm: RC_PylonM_350Rnd_20mm
 {
-	displayName="> 20mm MP-QF 400x";
-	count=400;
-};
-class RC_PylonM_250Rnd_25mm: RC_PylonM_300Rnd_20mm
-{
-	displayName="> 25mm MP-QF 250x";
-	displayNameShort="25mm MP-QF";
-	descriptionShort="25mm Autocannon";
-	ammo="RC_Pylon_B_25mm_MP_QF_T_R";
+	displayName="> 30mm MP-QF 250x";
+	displayNameShort="30mm MP-QF";
+	descriptionShort="30mm Autocannon";
+	ammo="RC_Pylon_B_30mm_MP_QF_T_R";	//RC_B_35mm_MPAB_DF_T_R
 	count=250;
 
 	hardpoints[]=
@@ -61,34 +69,9 @@ class RC_PylonM_250Rnd_25mm: RC_PylonM_300Rnd_20mm
 		"OM_H"
 	};
 };
-class RC_PylonM_350Rnd_25mm: RC_PylonM_250Rnd_25mm
-{
-	displayName="> 25mm MP-QF 350x";
-	count=350;
-};
-//class RC_PylonM_200Rnd_25mm: RC_PylonM_250Rnd_25mm {count=200;};
-class RC_PylonM_200Rnd_30mm: RC_PylonM_300Rnd_20mm
-{
-	displayName="> 30mm MP-QF 200x";
-	displayNameShort="30mm MP-QF";
-	descriptionShort="30mm Autocannon";
-	ammo="RC_Pylon_B_30mm_MP_QF_T_R";	//RC_B_35mm_MPAB_DF_T_R
-	count=200;
-
-	hardpoints[]=
-	{
-		"OM_H"
-	};
-};
-class RC_PylonM_300Rnd_30mm: RC_PylonM_200Rnd_30mm
-{
-	displayName="> 30mm MP-QF 300x";
-	count=300;
-};
-//class RC_PylonM_150Rnd_30mm: RC_PylonM_200Rnd_30mm {count=150;};
 
 
-class RC_PylonM_300Rnd_20mm_O: RC_PylonM_300Rnd_20mm
+class RC_PylonM_350Rnd_20mm_O: RC_PylonM_350Rnd_20mm
 {
 	descriptionShort="20mm Avtopushka";
 	pylonWeapon="RC_PylonW_Avtopushka";
@@ -99,12 +82,7 @@ class RC_PylonM_300Rnd_20mm_O: RC_PylonM_300Rnd_20mm
 		"OM_H_O"
 	};
 };
-class RC_PylonM_400Rnd_20mm_O: RC_PylonM_300Rnd_20mm_O
-{
-	displayName="> 20mm MP-QF 400x";
-	count=400;
-};
-class RC_PylonM_250Rnd_25mm_O: RC_PylonM_250Rnd_25mm
+class RC_PylonM_300Rnd_25mm_O: RC_PylonM_300Rnd_25mm
 {
 	descriptionShort="25mm Avtopushka";
 	pylonWeapon="RC_PylonW_Avtopushka";
@@ -115,12 +93,7 @@ class RC_PylonM_250Rnd_25mm_O: RC_PylonM_250Rnd_25mm
 		"OM_H_O"
 	};
 };
-class RC_PylonM_350Rnd_25mm_O: RC_PylonM_250Rnd_25mm_O
-{
-	displayName="> 25mm MP-QF 350x";
-	count=350;
-};
-class RC_PylonM_200Rnd_30mm_O: RC_PylonM_200Rnd_30mm
+class RC_PylonM_250Rnd_30mm_O: RC_PylonM_250Rnd_30mm
 {
 	descriptionShort="30mm Avtopushka";
 	pylonWeapon="RC_PylonW_Avtopushka";
@@ -130,11 +103,6 @@ class RC_PylonM_200Rnd_30mm_O: RC_PylonM_200Rnd_30mm
 	{
 		"OM_H_O"
 	};
-};
-class RC_PylonM_300Rnd_30mm_O: RC_PylonM_200Rnd_30mm_O
-{
-	displayName="> 30mm MP-QF 300x";
-	count=300;
 };
 
 
@@ -198,50 +166,52 @@ class RC_PylonM_12Rnd_S5_MP: RC_PylonM_12Rnd_S5_HE
 
 
 class PylonRack_19Rnd_Rocket_Skyfire;
-class RC_PylonM_19Rnd_Hydra_HE: PylonRack_19Rnd_Rocket_Skyfire
+class RC_PylonM_19Rnd_Hydra_MP: PylonRack_19Rnd_Rocket_Skyfire
 {
 	author="Ascent";
-	displayName="> Hydra HE 19x Hex";
-	displayNameShort="Hydra HE";
-	descriptionShort="high explosive unguided rockets";
+	displayName="> Hydra MP 19x Hex";
+	displayNameShort="Hydra MP";
+	descriptionShort="multi purpose unguided rockets";
 	pylonWeapon="RC_PylonW_19Rnd_Hydra";
-	ammo="RC_Hydra_HE";
+	ammo="RC_Hydra_MP";
 
 	hardpoints[]=
 	{
 		"OM_H"
 	};
 };
-class RC_PylonM_19Rnd_Hydra_MP: RC_PylonM_19Rnd_Hydra_HE
+/*
+class RC_PylonM_19Rnd_Hydra_HE: RC_PylonM_19Rnd_Hydra_MP
 {
-	displayName="> Hydra MP 19x Hex";
-	displayNameShort="Hydra MP";
-	descriptionShort="multi purpose unguided rockets";
-	ammo="RC_Hydra_MP";
-};
-
-
-class RC_PylonM_19Rnd_S5_HE: RC_PylonM_19Rnd_Hydra_HE
-{
-	author="Ascent";
-	displayName="> S-5 HE 19x";
-	displayNameShort="S-5 HE";
+	displayName="> Hydra HE 19x Hex";
+	displayNameShort="Hydra HE";
 	descriptionShort="high explosive unguided rockets";
-	pylonWeapon="RC_PylonW_19Rnd_S5";
 	ammo="RC_Hydra_HE";
+};
+*/
+
+
+class RC_PylonM_19Rnd_S5_MP: RC_PylonM_19Rnd_Hydra_MP
+{
+	displayName="> S-5 MP 19x";
+	displayNameShort="S-5 MP";
+	pylonWeapon="RC_PylonW_19Rnd_S5";
+	ammo="RC_Hydra_MP";
 
 	hardpoints[]=
 	{
 		"OM_H_O"
 	};
 };
-class RC_PylonM_19Rnd_S5_MP: RC_PylonM_19Rnd_S5_HE
+/*
+class RC_PylonM_19Rnd_S5_HE: RC_PylonM_19Rnd_S5_MP
 {
-	displayName="> S-5 MP 19x";
-	displayNameShort="S-5 MP";
-	descriptionShort="multi purpose unguided rockets";
-	ammo="RC_Hydra_MP";
+	displayName="> S-5 HE 19x";
+	displayNameShort="S-5 HE";
+	descriptionShort="high explosive unguided rockets";
+	ammo="RC_Hydra_HE";
 };
+*/
 
 
 class PylonRack_12Rnd_PG_missiles;
