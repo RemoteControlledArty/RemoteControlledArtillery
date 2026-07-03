@@ -142,6 +142,10 @@ class RC_Projectile_Target_B: RC_Projectile_Target_Base
 		class RC_Artillery
 		{
 			//MPKilled="if (!isServer) exitwith {};   params ['_unit'];   triggerAmmo attachedTo _unit;   deleteVehicle _unit;";
+			
+			//to prevent oneshots due to collision
+			postInit="params ['_entity'];   _entity setMass 0.001";
+			//makes projectile interceptable
 			killed="params ['_unit'];   triggerAmmo attachedTo _unit;   deleteVehicle _unit;";
 		};
 	};
@@ -168,6 +172,19 @@ class RC_Projectile_Target_I: RC_Projectile_Target_B
 
 class RC_Interceptor_Target_B: RC_Projectile_Target_Base
 {
+	/*
+	class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			//to prevent oneshots due to collision
+			postInit="params ['_entity'];   _entity setMass 0.001";
+			//makes projectile interceptable
+			killed="params ['_unit'];   triggerAmmo attachedTo _unit;   deleteVehicle _unit;";
+		};
+	};
+	*/
+
 	scope=1;
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
 	proxyShape="\A3\Weapons_F_Sams\Ammo\Bomb_05_F_fly.p3d";

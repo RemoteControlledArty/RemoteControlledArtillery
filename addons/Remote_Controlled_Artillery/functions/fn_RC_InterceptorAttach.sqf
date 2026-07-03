@@ -16,7 +16,7 @@ _target disableCollisionWith _projectile;
 
 
 _target addEventHandler ["Killed", {
-    params ["_unit", "_killer", "_instigator", "_useEffects"];
+    params ["_unit", "_killer", "_instigator"];
     
 	//to prevent FF due to projectile explosion destroying the attached target
     if (!isNull _instigator) then {
@@ -34,17 +34,26 @@ _projectile addEventHandler ["Deleted", {
 	deleteVehicle ((attachedObjects _projectile)#0);
 }];
 _projectile addEventHandler ["Explode", {
-	params ["_projectile", "_position", "_velocity"];
+	params ["_projectile"];
 
 	deleteVehicle ((attachedObjects _projectile)#0);
 }];
 
 //hide projectile to only show targetable attached vehicle
-//hideObjectGlobal _projectile;
-//hideObject unitName;
+//might prevent non-airburst hitability (test suggests otherwise), but might also prevent oneshot collisions (test suggests otherwise)
 [_projectile, true] remoteExec ["hideObjectGlobal", 2];
 
 //sleep to prevent collision in MP
 sleep 0.1;
 //-1 offset to not block the shaped charge
-_target attachTo [_projectile, [0, -1, 0]];		//-1 to prevent ramming oneshot
+_target attachTo [_projectile, [0, 0, 0]];		//[0, -1, 0] to prevent ramming oneshot, atm not needed due to postInit mass change
+
+
+private _duration = getNumber (configFile >> "CfgAmmo" >> typeOf _projectile >> "timeToLive");
+[_target, _duration] spawn {
+	params ["_target", "_duration"];
+	sleep _duration;
+	if (!isNull _target) then {
+		deleteVehicle _target;
+	};
+};

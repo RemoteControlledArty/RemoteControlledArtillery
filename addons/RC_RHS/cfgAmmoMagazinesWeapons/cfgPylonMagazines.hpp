@@ -139,8 +139,8 @@ class rhsusf_mag_gau19_melb_left;
 class RC_RHS_PylonM_1300Rnd_GAU19A_left: rhsusf_mag_gau19_melb_left
 {
 	displayName="> GAU-19/A left 1300x";
-	displayNameShort="GAU-19/A";
-	descriptionShort="GAU-19/A Minigun";
+	displayNameShort=".50 SLAP";
+	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_RHS_PylonW_GAU19A";
 	ammo="RC_B_127x99_SLAP_T_R";
 
@@ -156,8 +156,8 @@ class rhsusf_mag_gau19_melb_right;
 class RC_RHS_PylonM_1300Rnd_GAU19A_right: rhsusf_mag_gau19_melb_right
 {
 	displayName="> GAU-19/A right 1300x";
-	displayNameShort="GAU-19/A";
-	descriptionShort="GAU-19/A Minigun";
+	displayNameShort=".50 SLAP";
+	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_RHS_PylonW_GAU19A";
 	ammo="RC_B_127x99_SLAP_T_R";
 

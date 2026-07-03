@@ -454,8 +454,8 @@ class RC_InterceptorLauncher: RC_ATGM_Lock
 	displayNameShort="Interceptor Launcher";
 
 	weaponLockSystem="1 + 2";	//"1 + 2 + 4 + 16"
-	reloadTime=15;
-	magazineReloadTime=15;
+	reloadTime=12;
+	magazineReloadTime=12;
 
 	//cmImmunity=;
 	//weaponLockDelay=3;
@@ -464,8 +464,8 @@ class RC_InterceptorLauncher: RC_ATGM_Lock
 	class Player: Player
 	{
 		weaponLockSystem="1 + 2";
-		reloadTime=15;
-		magazineReloadTime=15;
+		reloadTime=12;
+		magazineReloadTime=12;
 		sounds[]={};
 	};
 	class Overfly: Player
@@ -493,20 +493,17 @@ class RC_InterceptorLauncher: RC_ATGM_Lock
 
 	magazines[]=
 	{
-		"RC_1Rnd_Interceptor_Direct_10m",
-		"RC_1Rnd_Interceptor_Direct_5m",
-		"RC_1Rnd_Interceptor_Direct_1m",
+		"RC_1Rnd_InterceptorDrop_Direct_10m",
+		"RC_1Rnd_InterceptorDrop_Direct_5m",
+		"RC_1Rnd_InterceptorDrop_Direct_1m",
 
-		"RC_1Rnd_Interceptor_Overfly_10m",
-		"RC_1Rnd_Interceptor_Overfly_5m",
+		"RC_1Rnd_InterceptorDrop_TopDown_10m",
+		"RC_1Rnd_InterceptorDrop_TopDown_5m",
+		"RC_1Rnd_InterceptorDrop_TopDown_1m",
 
-		"RC_1Rnd_Interceptor_TopDown_10m",
-		"RC_1Rnd_Interceptor_TopDown_5m",
-		"RC_1Rnd_Interceptor_TopDown_1m",
-
-		"RC_1Rnd_Interceptor_Cruise_10m",
-		"RC_1Rnd_Interceptor_Cruise_5m",
-		"RC_1Rnd_Interceptor_Cruise_1m"
+		"RC_1Rnd_InterceptorDrop_Cruise_10m",
+		"RC_1Rnd_InterceptorDrop_Cruise_5m",
+		"RC_1Rnd_InterceptorDrop_Cruise_1m"
 	};
 	modes[]=
 	{
@@ -526,6 +523,24 @@ class RC_InterceptorLauncher_SPG: RC_InterceptorLauncher
 			effectName="RocketBackEffectsRPGNT";
 			positionName="konec hlavne";
 		};
+	};
+
+	magazines[]=
+	{
+		"RC_1Rnd_Interceptor_Direct_10m",
+		"RC_1Rnd_Interceptor_Direct_5m",
+		"RC_1Rnd_Interceptor_Direct_1m",
+
+		"RC_1Rnd_Interceptor_Overfly_10m",
+		"RC_1Rnd_Interceptor_Overfly_5m",
+
+		"RC_1Rnd_Interceptor_TopDown_10m",
+		"RC_1Rnd_Interceptor_TopDown_5m",
+		"RC_1Rnd_Interceptor_TopDown_1m",
+
+		"RC_1Rnd_Interceptor_Cruise_10m",
+		"RC_1Rnd_Interceptor_Cruise_5m",
+		"RC_1Rnd_Interceptor_Cruise_1m"
 	};
 };
 

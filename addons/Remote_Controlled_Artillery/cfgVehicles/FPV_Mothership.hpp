@@ -869,6 +869,10 @@ class RC_Interceptor_Mothership_Base: RC_FPV_Mothership_Base
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_DeleteOutCrew
+		{
+			GetOut="params ['_vehicle', '_role', '_unit'];	if (vehicle _unit isEqualTo _unit) then {deleteVehicle _unit;};";
+		};
 		class RC_Interceptability
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\firedInterceptorEH.hpp"
@@ -1019,14 +1023,18 @@ class RC_Interceptor_Mothership_Base: RC_FPV_Mothership_Base
 			magazines[]=
 			{
 				"Laserbatteries",
-				"RC_1Rnd_Interceptor_Direct_1m",
-				"RC_1Rnd_Interceptor_Direct_1m",
-				"RC_1Rnd_Interceptor_Direct_1m",
-				"RC_1Rnd_Interceptor_Direct_1m",
-				"RC_1Rnd_Interceptor_Direct_1m",
-				"RC_1Rnd_Interceptor_Direct_1m",
-				"RC_1Rnd_Interceptor_Direct_1m",
-				"RC_1Rnd_Interceptor_Direct_1m"
+				
+				"RC_1Rnd_InterceptorDrop_Direct_1m",
+				"RC_1Rnd_InterceptorDrop_Direct_1m",
+				"RC_1Rnd_InterceptorDrop_Direct_1m",
+				"RC_1Rnd_InterceptorDrop_Direct_1m",
+				"RC_1Rnd_InterceptorDrop_Direct_1m",
+
+				"RC_1Rnd_InterceptorDrop_Direct_1m",
+				"RC_1Rnd_InterceptorDrop_Direct_1m",
+				"RC_1Rnd_InterceptorDrop_Direct_1m",
+				"RC_1Rnd_InterceptorDrop_Direct_1m",
+				"RC_1Rnd_InterceptorDrop_Direct_1m"
 			};
 		};
 	};

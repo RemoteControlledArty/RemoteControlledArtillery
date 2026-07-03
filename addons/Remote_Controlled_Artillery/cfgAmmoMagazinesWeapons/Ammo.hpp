@@ -2794,7 +2794,7 @@ class RC_Interceptor_Direct_1m: RC_Interceptor_Direct_10m
 	airFriction=0.2;	//0.085
 	sideAirFriction=2;	//1
 	thrust=10;
-	maneuvrability=10;	//20
+	maneuvrability=12;	//20
 };
 
 

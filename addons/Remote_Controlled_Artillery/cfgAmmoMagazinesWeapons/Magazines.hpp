@@ -147,11 +147,14 @@ class RC_1Rnd_Interceptor_Direct_10m: RC_1Rnd_ATGM_MP_NLOS
 	displayNameShort="Direct-Int";
 	displayNameMFDFormat="Interceptor";
 	ammo="RC_Interceptor_Direct_10m";
-
-	initSpeed=1;	//36
+	//initSpeed=36;
 };
 class RC_1Rnd_Interceptor_Direct_5m: RC_1Rnd_Interceptor_Direct_10m {ammo="RC_Interceptor_Direct_5m";};
 class RC_1Rnd_Interceptor_Direct_1m: RC_1Rnd_Interceptor_Direct_10m {ammo="RC_Interceptor_Direct_1m";};
+
+class RC_1Rnd_InterceptorDrop_Direct_10m: RC_1Rnd_Interceptor_Direct_10m {initSpeed=1;};
+class RC_1Rnd_InterceptorDrop_Direct_5m: RC_1Rnd_InterceptorDrop_Direct_10m {ammo="RC_Interceptor_Direct_5m";};
+class RC_1Rnd_InterceptorDrop_Direct_1m: RC_1Rnd_InterceptorDrop_Direct_10m {ammo="RC_Interceptor_Direct_1m";};
 
 
 class RC_1Rnd_Interceptor_Overfly_10m: RC_1Rnd_Interceptor_Direct_10m
@@ -172,6 +175,10 @@ class RC_1Rnd_Interceptor_TopDown_10m: RC_1Rnd_Interceptor_Direct_10m
 class RC_1Rnd_Interceptor_TopDown_5m: RC_1Rnd_Interceptor_TopDown_10m {ammo="RC_Interceptor_TopDown_5m";};
 class RC_1Rnd_Interceptor_TopDown_1m: RC_1Rnd_Interceptor_TopDown_10m {ammo="RC_Interceptor_TopDown_1m"};
 
+class RC_1Rnd_InterceptorDrop_TopDown_10m: RC_1Rnd_Interceptor_TopDown_10m {initSpeed=1;};
+class RC_1Rnd_InterceptorDrop_TopDown_5m: RC_1Rnd_InterceptorDrop_TopDown_10m {ammo="RC_Interceptor_TopDown_5m";};
+class RC_1Rnd_InterceptorDrop_TopDown_1m: RC_1Rnd_InterceptorDrop_TopDown_10m {ammo="RC_Interceptor_TopDown_1m"};
+
 
 class RC_1Rnd_Interceptor_Cruise_10m: RC_1Rnd_Interceptor_Direct_10m
 {
@@ -181,6 +188,10 @@ class RC_1Rnd_Interceptor_Cruise_10m: RC_1Rnd_Interceptor_Direct_10m
 };
 class RC_1Rnd_Interceptor_Cruise_5m: RC_1Rnd_Interceptor_Cruise_10m {ammo="RC_Interceptor_TopDown_5m";};
 class RC_1Rnd_Interceptor_Cruise_1m: RC_1Rnd_Interceptor_Cruise_10m {ammo="RC_Interceptor_TopDown_1m"};
+
+class RC_1Rnd_InterceptorDrop_Cruise_10m: RC_1Rnd_Interceptor_Direct_10m {initSpeed=1;};
+class RC_1Rnd_InterceptorDrop_Cruise_5m: RC_1Rnd_InterceptorDrop_Cruise_10m {ammo="RC_Interceptor_TopDown_5m";};
+class RC_1Rnd_InterceptorDrop_Cruise_1m: RC_1Rnd_InterceptorDrop_Cruise_10m {ammo="RC_Interceptor_TopDown_1m"};
 
 
 /*
