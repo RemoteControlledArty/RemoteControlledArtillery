@@ -2671,7 +2671,8 @@ class RC_Interceptor_Direct_10m: RC_M_ATGM_MP_LOS
 	missileLockCone=360;
 	missileKeepLockedCone=360;
 
-	indirectHit=20;
+	hit=50;				//150 from titan, does lower still engage?
+	indirectHit=10;		//20
 	indirectHitRange=10;
 	submunitionAmmo="";
 	airFriction=0.35;	//0.085

@@ -147,6 +147,8 @@ class RC_1Rnd_Interceptor_Direct_10m: RC_1Rnd_ATGM_MP_NLOS
 	displayNameShort="Direct-Int";
 	displayNameMFDFormat="Interceptor";
 	ammo="RC_Interceptor_Direct_10m";
+
+	initSpeed=1;	//36
 };
 class RC_1Rnd_Interceptor_Direct_5m: RC_1Rnd_Interceptor_Direct_10m {ammo="RC_Interceptor_Direct_5m";};
 class RC_1Rnd_Interceptor_Direct_1m: RC_1Rnd_Interceptor_Direct_10m {ammo="RC_Interceptor_Direct_1m";};
