@@ -6,7 +6,10 @@ class B_Crocus_MP_Base: B_Crocus_AT
 	class EventHandlers;
 	class Components;
 	class UserActions;
-	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
+
+	RC_Local=1;		//1 = requires transfer of locality/ownership for full functionality
+	RC_assembleSideSwitch=1;	//neutral side backpack assembled into drone of the assembling players side
+	RC_assembleAutonomousOff=0;
 };
 class B_Crocus_MP: B_Crocus_MP_Base
 {
@@ -21,7 +24,7 @@ class B_Crocus_MP: B_Crocus_MP_Base
 
 	armor=2;	//needed for EH
 
-	fuelCapacity=14;	//8.5
+	fuelCapacity=20;	//8.5
 
 	enableGPS=1;
 	//radartype=2;
@@ -182,7 +185,8 @@ class B_Crocus_MP: B_Crocus_MP_Base
 		assembleTo="";
 		dissasembleTo[]=
 		{
-			"B_Crocus_MP_Bag"
+			"Crocus_MP_Bag"
+			//"B_Crocus_MP_Bag"
 		};
 		displayName="";
 	};
@@ -193,6 +197,7 @@ class O_Crocus_MP: B_Crocus_MP
 	crew="O_UAV_AI";
 	side=0;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -200,6 +205,7 @@ class O_Crocus_MP: B_Crocus_MP
 			"O_Crocus_MP_Bag"
 		};
 	};
+	*/
 };
 class I_Crocus_MP: B_Crocus_MP
 {
@@ -207,6 +213,7 @@ class I_Crocus_MP: B_Crocus_MP
 	crew="I_UAV_AI";
 	side=2;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -214,10 +221,38 @@ class I_Crocus_MP: B_Crocus_MP
 			"I_Crocus_MP_Bag"
 		};
 	};
+	*/
 };
 
 
+class Crocus_MP_Assemble: B_Crocus_MP
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
 class RC_UAV_AR1_Bag;
+class Crocus_MP_Bag: RC_UAV_AR1_Bag
+{
+	scope=2;
+	scopeCurator=2;
+	displayName="Crocus MP Bag";
+	mass=60;
+
+	class assembleInfo
+	{
+		assembleTo="Crocus_MP_Assemble";
+		base="";
+		displayName="Crocus MP";
+		dissasembleTo[]={};
+		primary=1;
+	};
+};
+
+
+/*
 class B_Crocus_MP_Bag: RC_UAV_AR1_Bag
 {
 	scope=2;
@@ -254,11 +289,12 @@ class I_Crocus_MP_Bag: B_Crocus_MP_Bag
 		displayName="Crocus MP [Ind]";
 	};
 };
+*/
 
 
 class B_Crocus_MP_Sens: B_Crocus_MP
 {
-	displayName="Crocus MP Sens";
+	displayName="Crocus MP Sensor";
 
 	class Components: Components
 	{
@@ -365,7 +401,8 @@ class B_Crocus_MP_Sens: B_Crocus_MP
 	{
 		dissasembleTo[]=
 		{
-			"B_Crocus_MP_Sens_Bag"
+			"Crocus_MP_Sens_Bag"
+			//"B_Crocus_MP_Sens_Bag"
 		};
 	};
 };
@@ -375,6 +412,7 @@ class O_Crocus_MP_Sens: B_Crocus_MP_Sens
 	crew="O_UAV_AI";
 	side=0;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -382,6 +420,7 @@ class O_Crocus_MP_Sens: B_Crocus_MP_Sens
 			"O_Crocus_MP_Sens_Bag"
 		};
 	};
+	*/
 };
 class I_Crocus_MP_Sens: B_Crocus_MP_Sens
 {
@@ -389,6 +428,7 @@ class I_Crocus_MP_Sens: B_Crocus_MP_Sens
 	crew="I_UAV_AI";
 	side=2;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -396,9 +436,31 @@ class I_Crocus_MP_Sens: B_Crocus_MP_Sens
 			"I_Crocus_MP_Sens_Bag"
 		};
 	};
+	*/
 };
 
 
+class Crocus_MP_Sens_Assemble: B_Crocus_MP_Sens
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+class Crocus_MP_Sens_Bag: Crocus_MP_Bag
+{
+	displayName="Crocus MP Sensor Bag";
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="Crocus MP Sensor";
+		assembleTo="Crocus_MP_Sens_Assemble";
+	};
+};
+
+
+/*
 class B_Crocus_MP_Sens_Bag: B_Crocus_MP_Bag
 {
 	displayName="Crocus MP Sens Bag";
@@ -429,3 +491,4 @@ class I_Crocus_MP_Sens_Bag: B_Crocus_MP_Sens_Bag
 		displayName="Crocus MP Sens [Ind]";
 	};
 };
+*/

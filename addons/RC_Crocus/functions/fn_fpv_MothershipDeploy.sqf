@@ -5,7 +5,7 @@ if (_weapon isNotEqualTo "RC_Crocus_Deployer") exitWith {};
 _uav selectWeaponTurret ["Laserdesignator_mounted", [0]];   //to prevent accidental trigger when trying to use laser designator
 
 private _pos = getPos _uav;
-private _posZ = (_pos select 2) - 15;
+private _posZ = (_pos select 2) - 15;	//somehow is min 50, doesnt bug into ground
 
 private _spawnPos = +_pos;
 _spawnPos set [2, _posZ];
@@ -22,6 +22,8 @@ if (side _uav == resistance) then {_version = 'I_Crocus_MP_TI_Sens';};
 //[_spawnArray, BIS_fnc_spawnVehicle] remoteExec ['call', 2];
 private _uavSpawn = [_spawnPos, direction _uav, _version, _side] call BIS_fnc_spawnVehicle;
 private _uavNew = _uavSpawn select 0;
+//SOP is 200m if no C-UAS near, but Mothership should have different higher dive gameplay, also doesnt have ascending delay
+_uavNew flyInHeight 500;
 
 [_uavNew] spawn {
 	params ["_uavNew"];

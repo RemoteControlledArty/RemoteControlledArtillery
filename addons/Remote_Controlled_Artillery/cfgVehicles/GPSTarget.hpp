@@ -259,12 +259,14 @@ class RC_InterceptorMissile_Target: RC_Projectile_Target_Base
 */
 
 
-class RC_InterceptorMissile_Target_B: RC_Interceptor_Target_B
+//pre = easier overwritable in other pbo's
+class RC_InterceptorMissile_Target_B_Pre: RC_Interceptor_Target_B
 {
+	scope=0;
 	//displayName="Interceptor Drone";
 	displayName="unknown projectile";
-	model="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
-	proxyShape="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
+	proxyShape="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
 	
 	/*
 	canUseScanners=1;
@@ -302,18 +304,23 @@ class RC_InterceptorMissile_Target_B: RC_Interceptor_Target_B
 	};
 	*/
 };
-class RC_InterceptorMissile_Target_O: RC_InterceptorMissile_Target_B
+class RC_InterceptorMissile_Target_O_Pre: RC_InterceptorMissile_Target_B_Pre
 {
 	side=0;
 	crew="O_UAV_AI";
 	typicalCargo[]={"O_UAV_AI"};
 };
-class RC_InterceptorMissile_Target_I: RC_InterceptorMissile_Target_B
+class RC_InterceptorMissile_Target_I_Pre: RC_InterceptorMissile_Target_B_Pre
 {
 	side=2;
 	crew="I_UAV_AI";
 	typicalCargo[]={"I_UAV_AI"};
 };
+
+
+class RC_InterceptorMissile_Target_B: RC_InterceptorMissile_Target_B_Pre {scope=1;};
+class RC_InterceptorMissile_Target_O: RC_InterceptorMissile_Target_O_Pre {scope=1;};
+class RC_InterceptorMissile_Target_I: RC_InterceptorMissile_Target_I_Pre {scope=1;};
 
 
 /*

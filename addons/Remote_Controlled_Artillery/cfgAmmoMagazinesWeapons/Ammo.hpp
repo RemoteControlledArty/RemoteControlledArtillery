@@ -2638,7 +2638,8 @@ class RC_MP_NLOS_Nano: RC_M_ATGM_MP_NLOS
 };
 
 
-class RC_Interceptor_Direct_10m: RC_M_ATGM_MP_LOS
+//pre = easier overwritable in other pbo's
+class RC_Interceptor_Direct_10m_Pre: RC_M_ATGM_MP_LOS
 {
 	class EventHandlers
 	{
@@ -2648,7 +2649,10 @@ class RC_Interceptor_Direct_10m: RC_M_ATGM_MP_LOS
 		};
 	};
 
-	model="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
+	scope=0;
+
+	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
+	//model="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
 	
 	autoSeekTarget=0;	//0 for testing as it often prevents saclos
 	manualControl=1;
@@ -2767,7 +2771,7 @@ class RC_Interceptor_Direct_10m: RC_M_ATGM_MP_LOS
 		};
 	};
 };
-class RC_Interceptor_Direct_5m: RC_Interceptor_Direct_10m
+class RC_Interceptor_Direct_5m_Pre: RC_Interceptor_Direct_10m_Pre
 {
 	triggerDistance=5;
 	proximityExplosionDistance=5;
@@ -2783,7 +2787,7 @@ class RC_Interceptor_Direct_5m: RC_Interceptor_Direct_10m
 	sideAirFriction=2;	//1
 	*/
 };
-class RC_Interceptor_Direct_1m: RC_Interceptor_Direct_10m
+class RC_Interceptor_Direct_1m_Pre: RC_Interceptor_Direct_10m_Pre
 {
 	triggerDistance=2;
 	proximityExplosionDistance=2;
@@ -2798,7 +2802,7 @@ class RC_Interceptor_Direct_1m: RC_Interceptor_Direct_10m
 };
 
 
-class RC_Interceptor_Overfly_10m: RC_Interceptor_Direct_10m
+class RC_Interceptor_Overfly_10m_Pre: RC_Interceptor_Direct_10m_Pre
 {
 	delete Direct;
 
@@ -2820,7 +2824,7 @@ class RC_Interceptor_Overfly_10m: RC_Interceptor_Direct_10m
 
 	//initTime=0.25;
 };
-class RC_Interceptor_Overfly_5m: RC_Interceptor_Overfly_10m
+class RC_Interceptor_Overfly_5m_Pre: RC_Interceptor_Overfly_10m_Pre
 {
 	triggerDistance=5;
 	proximityExplosionDistance=5;
@@ -2843,7 +2847,7 @@ class RC_Interceptor_Overfly_5m: RC_Interceptor_Overfly_10m
 };
 
 
-class RC_Interceptor_TopDown_10m: RC_Interceptor_Direct_10m
+class RC_Interceptor_TopDown_10m_Pre: RC_Interceptor_Direct_10m_Pre
 {
 	delete Direct;
 
@@ -2859,7 +2863,7 @@ class RC_Interceptor_TopDown_10m: RC_Interceptor_Direct_10m
 		ascendAngle=30;
 	};
 };
-class RC_Interceptor_TopDown_5m: RC_Interceptor_TopDown_10m
+class RC_Interceptor_TopDown_5m_Pre: RC_Interceptor_TopDown_10m_Pre
 {
 	triggerDistance=5;
 	proximityExplosionDistance=5;
@@ -2875,7 +2879,7 @@ class RC_Interceptor_TopDown_5m: RC_Interceptor_TopDown_10m
 	sideAirFriction=2;	//1
 	*/
 };
-class RC_Interceptor_TopDown_1m: RC_Interceptor_TopDown_10m
+class RC_Interceptor_TopDown_1m_Pre: RC_Interceptor_TopDown_10m_Pre
 {
 	triggerDistance=1;
 	proximityExplosionDistance=1;
@@ -2884,7 +2888,7 @@ class RC_Interceptor_TopDown_1m: RC_Interceptor_TopDown_10m
 };
 
 
-class RC_Interceptor_Cruise_10m: RC_Interceptor_Direct_10m
+class RC_Interceptor_Cruise_10m_Pre: RC_Interceptor_Direct_10m_Pre
 {
 	delete Direct;
 
@@ -2898,7 +2902,7 @@ class RC_Interceptor_Cruise_10m: RC_Interceptor_Direct_10m
 		lockDistanceToTarget=1000;		//100
 	};
 };
-class RC_Interceptor_Cruise_5m: RC_Interceptor_Cruise_10m
+class RC_Interceptor_Cruise_5m_Pre: RC_Interceptor_Cruise_10m_Pre
 {
 	triggerDistance=5;
 	proximityExplosionDistance=5;
@@ -2914,7 +2918,7 @@ class RC_Interceptor_Cruise_5m: RC_Interceptor_Cruise_10m
 	sideAirFriction=2;	//1
 	*/
 };
-class RC_Interceptor_Cruise_1m: RC_Interceptor_Cruise_10m
+class RC_Interceptor_Cruise_1m_Pre: RC_Interceptor_Cruise_10m_Pre
 {
 	triggerDistance=1;
 	proximityExplosionDistance=1;
@@ -2923,6 +2927,22 @@ class RC_Interceptor_Cruise_1m: RC_Interceptor_Cruise_10m
 	thrustTime=90;	//60 or 90
 	maneuvrability=20;	//20
 };
+
+
+class RC_Interceptor_Direct_10m: RC_Interceptor_Direct_10m_Pre {scope=1;};
+class RC_Interceptor_Direct_5m: RC_Interceptor_Direct_5m_Pre {scope=1;};
+class RC_Interceptor_Direct_1m: RC_Interceptor_Direct_1m_Pre {scope=1;};
+
+class RC_Interceptor_Overfly_10m: RC_Interceptor_Overfly_10m_Pre {scope=1;};
+class RC_Interceptor_Overfly_5m: RC_Interceptor_Overfly_5m_Pre {scope=1;};
+
+class RC_Interceptor_TopDown_10m: RC_Interceptor_TopDown_10m_Pre {scope=1;};
+class RC_Interceptor_TopDown_5m: RC_Interceptor_TopDown_5m_Pre {scope=1;};
+class RC_Interceptor_TopDown_1m: RC_Interceptor_TopDown_1m_Pre {scope=1;};
+
+class RC_Interceptor_Cruise_10m: RC_Interceptor_Cruise_10m_Pre {scope=1;};
+class RC_Interceptor_Cruise_5m: RC_Interceptor_Cruise_5m_Pre {scope=1;};
+class RC_Interceptor_Cruise_1m: RC_Interceptor_Cruise_1m_Pre {scope=1;};
 
 
 /*

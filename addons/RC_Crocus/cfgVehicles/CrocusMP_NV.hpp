@@ -37,7 +37,8 @@ class B_Crocus_MP_NV: B_Crocus_MP_NV_Base
 	{
 		dissasembleTo[]=
 		{
-			"B_Crocus_MP_NV_Bag"
+			"Crocus_MP_NV_Bag"
+			//"B_Crocus_MP_NV_Bag"
 		};
 	};
 };
@@ -47,6 +48,7 @@ class O_Crocus_MP_NV: B_Crocus_MP_NV
 	crew="O_UAV_AI";
 	side=0;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -54,6 +56,7 @@ class O_Crocus_MP_NV: B_Crocus_MP_NV
 			"O_Crocus_MP_NV_Bag"
 		};
 	};
+	*/
 };
 class I_Crocus_MP_NV: B_Crocus_MP_NV
 {
@@ -61,6 +64,7 @@ class I_Crocus_MP_NV: B_Crocus_MP_NV
 	crew="I_UAV_AI";
 	side=2;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -68,9 +72,31 @@ class I_Crocus_MP_NV: B_Crocus_MP_NV
 			"I_Crocus_MP_NV_Bag"
 		};
 	};
+	*/
 };
 
 
+class Crocus_MP_NV_Assemble: B_Crocus_MP_NV
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+class Crocus_MP_NV_Bag: Crocus_MP_Bag
+{
+	displayName="Crocus MP NV Bag";
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="Crocus MP NV";
+		assembleTo="Crocus_MP_NV_Assemble";
+	};
+};
+
+
+/*
 class B_Crocus_MP_NV_Bag: B_Crocus_MP_Bag
 {
 	scope=2;
@@ -103,11 +129,12 @@ class I_Crocus_MP_NV_Bag: B_Crocus_MP_NV_Bag
 		displayName="Crocus MP NV [Ind]";
 	};
 };
+*/
 
 
 class B_Crocus_MP_NV_Sens: B_Crocus_MP_NV
 {
-	displayName="Crocus MP NV Sens";
+	displayName="Crocus MP NV Sensor";
 
 	class Components: Components
 	{
@@ -238,7 +265,8 @@ class B_Crocus_MP_NV_Sens: B_Crocus_MP_NV
 	{
 		dissasembleTo[]=
 		{
-			"B_Crocus_MP_NV_Sens_Bag"
+			"Crocus_MP_NV_Sens_Bag"
+			//"B_Crocus_MP_NV_Sens_Bag"
 		};
 	};
 };
@@ -248,6 +276,7 @@ class O_Crocus_MP_NV_Sens: B_Crocus_MP_NV_Sens
 	crew="O_UAV_AI";
 	side=0;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -255,6 +284,7 @@ class O_Crocus_MP_NV_Sens: B_Crocus_MP_NV_Sens
 			"O_Crocus_MP_NV_Sens_Bag"
 		};
 	};
+	*/
 };
 class I_Crocus_MP_NV_Sens: B_Crocus_MP_NV_Sens
 {
@@ -262,6 +292,7 @@ class I_Crocus_MP_NV_Sens: B_Crocus_MP_NV_Sens
 	crew="I_UAV_AI";
 	side=2;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -269,9 +300,31 @@ class I_Crocus_MP_NV_Sens: B_Crocus_MP_NV_Sens
 			"I_Crocus_MP_NV_Sens_Bag"
 		};
 	};
+	*/
 };
 
 
+class Crocus_MP_NV_Sens_Assemble: B_Crocus_MP_NV_Sens
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+class Crocus_MP_NV_Sens_Bag: Crocus_MP_Bag
+{
+	displayName="Crocus MP NV Sensor Bag";
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="Crocus MP NV Sensor";
+		assembleTo="Crocus_MP_NV_Sens_Assemble";
+	};
+};
+
+
+/*
 class B_Crocus_MP_NV_Sens_Bag: B_Crocus_MP_NV_Bag
 {
 	displayName="Crocus MP NV Sens Bag";
@@ -302,3 +355,4 @@ class I_Crocus_MP_NV_Sens_Bag: B_Crocus_MP_NV_Sens_Bag
 		displayName="Crocus MP NV Sens [Ind]";
 	};
 };
+*/

@@ -5,7 +5,7 @@ if (_weapon isNotEqualTo "RC_Crocus_Deployer") exitWith {};
 //_uav selectWeaponTurret ["RC_target_confirmer_datalink", [0]];   //to prevent accidental trigger
 
 private _pos = getPos _uav;
-private _posZ = (_pos select 2) + 500;
+private _posZ = (_pos select 2) + 7;	//+500
 
 //private _spawnPos = _uav modelToWorld [0, -3, 0];
 private _spawnPos = +_pos;
@@ -17,8 +17,10 @@ if (side _uav == east) then {_version = 'O_Crocus_PvP';};
 if (side _uav == resistance) then {_version = 'I_Crocus_PvP';};
 
 //[_spawnArray, BIS_fnc_spawnVehicle] remoteExec ['call', 2];
-private _uavSpawn = [_spawnPos, direction _uav, _version, _side] call BIS_fnc_spawnVehicle;
+private _uavSpawn = [_spawnPos, direction _uav, _version, _side] call BIS_fnc_spawnVehicle;	//needs different script to spawn at +7m
 private _uavNew = _uavSpawn select 0;
+//SOP height if no C-UAS near
+_uavNew flyInHeight 200;
 
 [_uavNew] spawn {
 	params ["_uavNew"];

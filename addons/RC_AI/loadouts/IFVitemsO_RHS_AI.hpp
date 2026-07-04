@@ -134,9 +134,16 @@ class TransportBackpacks
 		backpack="B_Kitbag_cbr";
 		count=1;
 	};
+	/*
 	class _xx_I_Crocus_MP_TI_Bag
 	{
 		backpack="I_Crocus_MP_TI_Bag";
+		count=2;
+	};
+	*/
+	class _xx_Crocus_MP_TI_Bag
+	{
+		backpack="Crocus_MP_TI_Bag";
 		count=2;
 	};
 };

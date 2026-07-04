@@ -221,6 +221,8 @@ class RC_cUAS_Static_base: RC_cUAS_Static_core
 		};
 	};
 };
+
+
 class RC_cUAS_Static: RC_cUAS_Static_base
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"

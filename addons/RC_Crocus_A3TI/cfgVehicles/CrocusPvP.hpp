@@ -27,7 +27,8 @@ class B_Crocus_PvP: B_Crocus_MP_TI_Sens
 	{
 		dissasembleTo[]=
 		{
-			"B_Crocus_PvP_Bag"
+			"Crocus_PvP_Bag"
+			//"B_Crocus_PvP_Bag"
 		};
 	};
 };
@@ -37,6 +38,7 @@ class O_Crocus_PvP: B_Crocus_PvP
 	crew="O_UAV_AI";
 	side=0;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -44,6 +46,7 @@ class O_Crocus_PvP: B_Crocus_PvP
 			"O_Crocus_PvP_Bag"
 		};
 	};
+	*/
 };
 class I_Crocus_PvP: B_Crocus_PvP
 {
@@ -51,6 +54,7 @@ class I_Crocus_PvP: B_Crocus_PvP
 	crew="I_UAV_AI";
 	side=2;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -58,8 +62,31 @@ class I_Crocus_PvP: B_Crocus_PvP
 			"I_Crocus_PvP_Bag"
 		};
 	};
+	*/
 };
 
+
+class Crocus_PvP_Assemble: B_Crocus_PvP
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+class Crocus_PvP_Bag: Crocus_MP_TI_Bag
+{
+	displayName="Crocus PvP Bag";
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="Crocus PvP";
+		assembleTo="Crocus_PvP_Assemble";
+	};
+};
+
+
+/*
 class B_Crocus_PvP_Bag: B_Crocus_MP_TI_Bag
 {
 	displayName="Crocus PvP Bag";
@@ -90,3 +117,4 @@ class I_Crocus_PvP_Bag: B_Crocus_PvP_Bag
 		displayName="Crocus PvP [Ind]";
 	};
 };
+*/

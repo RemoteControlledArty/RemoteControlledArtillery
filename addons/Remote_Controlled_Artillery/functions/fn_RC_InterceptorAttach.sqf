@@ -39,12 +39,13 @@ _projectile addEventHandler ["Explode", {
 	deleteVehicle ((attachedObjects _projectile)#0);
 }];
 
+
 //hide projectile to only show targetable attached vehicle
-//might prevent non-airburst hitability (test suggests otherwise), but might also prevent oneshot collisions (test suggests otherwise)
-[_projectile, true] remoteExec ["hideObjectGlobal", 2];
+//[_projectile, true] remoteExec ["hideObjectGlobal", 2];	//likely causes vehicle-collisions but non-airburst interceptability
+//[_target, true] remoteExec ["hideObjectGlobal", 2];		//likely causes NO vehicle-collisions but NO non-airburst interceptability
 
 //sleep to prevent collision in MP
-sleep 0.1;
+sleep 0.2;
 //-1 offset to not block the shaped charge
 _target attachTo [_projectile, [0, 0, 0]];		//[0, -1, 0] to prevent ramming oneshot, atm not needed due to postInit mass change
 

@@ -24,6 +24,7 @@ class CfgPatches
 			"cba_main",
 			"RC_Artillery",
 			"RC_Crocus",
+			"gx_drones_uav_hunter",
 			"GX_DRONES_UAV_RQ11B"
 		};
 

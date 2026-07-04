@@ -41,7 +41,8 @@ class B_Crocus_MP_TI: B_Crocus_MP_TI_Base
 		assembleTo="";
 		dissasembleTo[]=
 		{
-			"B_Crocus_MP_TI_Bag"
+			"Crocus_MP_TI_Bag"
+			//"B_Crocus_MP_TI_Bag"
 		};
 		displayName="";
 	};
@@ -52,6 +53,7 @@ class O_Crocus_MP_TI: B_Crocus_MP_TI
 	crew="O_UAV_AI";
 	side=0;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -59,6 +61,7 @@ class O_Crocus_MP_TI: B_Crocus_MP_TI
 			"O_Crocus_MP_TI_Bag"
 		};
 	};
+	*/
 };
 class I_Crocus_MP_TI: B_Crocus_MP_TI
 {
@@ -66,6 +69,7 @@ class I_Crocus_MP_TI: B_Crocus_MP_TI
 	crew="I_UAV_AI";
 	side=2;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -73,9 +77,35 @@ class I_Crocus_MP_TI: B_Crocus_MP_TI
 			"I_Crocus_MP_TI_Bag"
 		};
 	};
+	*/
 };
 
 
+class Crocus_MP_TI_Assemble: B_Crocus_MP_TI
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+class Crocus_MP_Bag;
+class Crocus_MP_TI_Bag: Crocus_MP_Bag
+{
+	displayName="Crocus MP TI Bag";
+
+	class assembleInfo
+	{
+		displayName="Crocus MP TI";
+		base="";
+		assembleTo="Crocus_MP_TI_Assemble";
+		dissasembleTo[]={};
+		primary=1;
+	};
+};
+
+
+/*
 class B_Crocus_MP_Bag;
 class B_Crocus_MP_TI_Bag: B_Crocus_MP_Bag
 {
@@ -110,11 +140,12 @@ class I_Crocus_MP_TI_Bag: B_Crocus_MP_TI_Bag
 		displayName="Crocus MP TI [Ind]";
 	};
 };
+*/
 
 
 class B_Crocus_MP_TI_Sens: B_Crocus_MP_TI
 {
-	displayName="Crocus MP TI Sens";
+	displayName="Crocus MP TI Sensor";
 
 	class Components: Components
 	{
@@ -245,7 +276,8 @@ class B_Crocus_MP_TI_Sens: B_Crocus_MP_TI
 	{
 		dissasembleTo[]=
 		{
-			"B_Crocus_MP_TI_Sens_Bag"
+			"Crocus_MP_TI_Sens_Bag"
+			//"B_Crocus_MP_TI_Sens_Bag"
 		};
 	};
 };
@@ -255,6 +287,7 @@ class O_Crocus_MP_TI_Sens: B_Crocus_MP_TI_Sens
 	crew="O_UAV_AI";
 	side=0;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -262,6 +295,7 @@ class O_Crocus_MP_TI_Sens: B_Crocus_MP_TI_Sens
 			"O_Crocus_MP_TI_Sens_Bag"
 		};
 	};
+	*/
 };
 class I_Crocus_MP_TI_Sens: B_Crocus_MP_TI_Sens
 {
@@ -269,6 +303,7 @@ class I_Crocus_MP_TI_Sens: B_Crocus_MP_TI_Sens
 	crew="I_UAV_AI";
 	side=2;
 
+	/*
 	class assembleInfo: assembleInfo
 	{
 		dissasembleTo[]=
@@ -276,9 +311,31 @@ class I_Crocus_MP_TI_Sens: B_Crocus_MP_TI_Sens
 			"I_Crocus_MP_TI_Sens_Bag"
 		};
 	};
+	*/
 };
 
 
+class Crocus_MP_TI_Sens_Assemble: B_Crocus_MP_TI_Sens
+{
+	scope=1;
+	scopeCurator=1;
+	side=3;
+	crew="C_UAV_AI_F";
+	//faction="RemoteControlled_C";
+};
+class Crocus_MP_TI_Sens_Bag: Crocus_MP_TI_Bag
+{
+	displayName="Crocus MP TI Sensor Bag";
+
+	class assembleInfo: assembleInfo
+	{
+		displayName="Crocus MP TI Sensor";
+		assembleTo="Crocus_MP_TI_Sens_Assemble";
+	};
+};
+
+
+/*
 class B_Crocus_MP_TI_Sens_Bag: B_Crocus_MP_TI_Bag
 {
 	displayName="Crocus MP TI Sens Bag";
@@ -309,3 +366,4 @@ class I_Crocus_MP_TI_Sens_Bag: B_Crocus_MP_TI_Sens_Bag
 		displayName="Crocus MP TI Sens [Ind]";
 	};
 };
+*/

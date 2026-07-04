@@ -88,6 +88,7 @@ class RC_Crocus_Carrier_WD_I: RC_Crocus_Carrier_WD
 
 class RC_Crocus_Carrier_PvP_A: RC_Crocus_Carrier_A
 {
+	/*
 	class EventHandlers: EventHandlers
 	{
 		class RC_Crocus
@@ -95,6 +96,7 @@ class RC_Crocus_Carrier_PvP_A: RC_Crocus_Carrier_A
 			fired="params ['_uav', '_weapon'];  if (!Local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_CarrierDeployPvP";
 		};
 	};
+	*/
 
 	displayName="RC Crocus Carrier PvP";
 };
