@@ -24,7 +24,7 @@ fnc_checkAbove = {
 
 	private _coords = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1,-1]];
 	
-	while { ! _hasAbove  && _i < count _coords} do {
+	while {!_hasAbove && _i < count _coords} do {
 
 		private _x = _coords #_i;
 		private _startPos = [(_pos #0) + (_x #0), (_pos #1) + (_x #1), (_pos #2)];
@@ -33,7 +33,7 @@ fnc_checkAbove = {
 		_i = _i + 1;
 	};
 
-	if (_hasAbove) then{
+	if (_hasAbove) then {
 
 		private _posATL = getPosATL _veh;
 		private _str = "FPV request failed at y" + str (round (_posATL #0)) + " x" + str (round (_posATL #1)) + ", obstructed above, cannot start.";
