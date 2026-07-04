@@ -12,10 +12,11 @@ private _uavArray = [_pos, direction _veh, _classFPV, _sidePlayer];
 [_uavArray, _spawnPos] spawn {
 	params ["_uavArray", "_spawnPos"];
 
-	sleep 9.7;
+	sleep 4.7;
 	private _uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
 	private _uavNew = _uavSpawn select 0;
 	_uavNew setPos _spawnPos;
+	_uavNew flyInHeight 200;
 
 	player connectTerminalToUAV _uavNew;
 	[_uavNew] call RC_fnc_RC_uavChangeLocality;
