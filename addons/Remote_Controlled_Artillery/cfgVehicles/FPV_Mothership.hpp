@@ -17,6 +17,12 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 {
 	class EventHandlers: EventHandlers
 	{
+		//defines default flyInHeight, preventing major problems like UAV dropping to 50m when changing locality between players, or to server when player has a disconnect
+		class RC_FlyInHeight
+		{
+			//2000m = SOP for large fixed wing drones
+			postInit="params ['_entity'];  if (!isServer) exitwith {};  _entity flyInHeight 2000;";
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"

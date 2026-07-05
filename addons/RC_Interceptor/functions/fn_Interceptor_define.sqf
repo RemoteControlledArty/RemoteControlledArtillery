@@ -91,6 +91,7 @@ fnc_Interceptor_interceptability = {
 		deleteVehicle _unit;
 	}];
 	/*
+	//ammo cannot be "killed"
 	_uav addEventHandler ["Killed", {
 		params ["_unit"];
 		
@@ -196,13 +197,16 @@ fnc_Interceptor_updateCam = {
 	
 	private _camera = localNameSpace getVariable ["RC_Interceptor_camera", objNull];
 	
+	/*
 	// === DEBUG: Ist das UAV stabil? ===
 	private _uavVel = velocity _uav;
 	private _uavPitch = (vectorDir _uav) select 2;  // Z-component of direction
+	
 	systemChat format ["UAV Pitch: %1 | Z-Vel: %2", 
 		round (_uavPitch * 1000) / 1000, 
 		round ((_uavVel # 2) * 100) / 100
 	];
+	*/
 	
 	// Rotation
 	private _y = RC_X * RC_SENSIVITY;
@@ -247,9 +251,9 @@ fnc_Interceptor_mousesteer = {
 //functional velocity merging version with momentum and acceleration, 1.5m sea & terrain skimming, 50% drift reduction, 3 axis differing acceleration
 
 //fine tune flight performance
-RC_ACC_FWD  = 50;	//40/40/40 seems best for 0.25 drift correction
-RC_ACC_SIDE = 25;
-RC_ACC_VERT = 25;
+RC_ACC_FWD  = 30;	//40/40/40 seems best for 0.25 drift correction
+RC_ACC_SIDE = 30;
+RC_ACC_VERT = 30;
 
 RC_MAXMS = 400 / 3.6;
 RC_DRIFT_DAMPENING = 1;		//lower = much more skillbased, 0 makes it near unable to hit at speed

@@ -1,17 +1,15 @@
 RC_FPV_Target_Hash = createHashMap;
 
 [] spawn {
-	private _dronesArray = ["B_Crocus_MP", "B_Crocus_MP_Sens", "B_Crocus_MP_NV", "B_Crocus_MP_NV_Sens", "B_Crocus_MP_TI", "B_Crocus_MP_TI_Sens", "O_Crocus_MP", "O_Crocus_MP_Sens", "O_Crocus_MP_NV", "O_Crocus_MP_NV_Sens", "O_Crocus_MP_TI", "O_Crocus_MP_TI_Sens", "I_Crocus_MP", "I_Crocus_MP_Sens", "I_Crocus_MP_NV", "I_Crocus_MP_NV_Sens", "I_Crocus_MP_TI", "I_Crocus_MP_TI_Sens", "B_Crocus_PvP", "O_Crocus_PvP", "I_Crocus_PvP", "B_Crocus_Training", "O_Crocus_Training", "I_Crocus_Training"];
-	private _terminalsArray = ["B_UavTerminal", "O_UavTerminal", "I_UavTerminal"];
-
 	while { True } do {
 		private _player = missionNamespace getVariable ["bis_fnc_moduleRemoteControl_unit", player];
+		
 		/*
 		private _assignedItems = assignedItems _player;
 
-		if ({ _x in _assignedItems } count _terminalsArray > 0) then {
-			private _drones = vehicles select { (typeOf _x) in _dronesArray };
-			private _dronesNear = _player nearEntities [_dronesArray, 4000];
+		if ({ _x in _assignedItems } count RC_FPV_validTerminalsArr > 0) then {
+			private _drones = vehicles select { (typeOf _x) in RC_FPV_validDronesArr };
+			private _dronesNear = _player nearEntities [RC_FPV_validDronesArr, 4000];
 
 			{
 				_player disableUAVConnectability [_x, true];
@@ -26,7 +24,7 @@ RC_FPV_Target_Hash = createHashMap;
 		*/
 
 		//change to remote controlled UAV not connected, or make not connectable at double range of controllable
-		if (((typeOf (getConnectedUAV _player)) in _dronesArray) and (cameraView == "GUNNER") and ((typeOf cameraOn) in _dronesArray)) then {
+		if (((typeOf (getConnectedUAV _player)) in RC_FPV_validDronesArr) and (cameraView == "GUNNER") and ((typeOf cameraOn) in RC_FPV_validDronesArr)) then {
 
 			missionNamespace setVariable ["RC_ArmaFPV_isControl", true];
 
@@ -34,7 +32,7 @@ RC_FPV_Target_Hash = createHashMap;
 
 			call RC_fnc_fpv_createDialog_MP;
 
-			waitUntil {!((typeOf (getConnectedUAV _player)) in _dronesArray) or (cameraView != "GUNNER") or !((typeOf cameraOn) in _dronesArray)};
+			waitUntil {!((typeOf (getConnectedUAV _player)) in RC_FPV_validDronesArr) or (cameraView != "GUNNER") or !((typeOf cameraOn) in RC_FPV_validDronesArr)};
 
 			missionNamespace setVariable ["RC_ArmaFPV_isControl", false];
 
@@ -64,7 +62,6 @@ RC_FPV_Target_Hash = createHashMap;
 
 
 [] spawn {
-	private _dronesArray = ["B_Crocus_MP", "B_Crocus_MP_Sens", "B_Crocus_MP_NV", "B_Crocus_MP_NV_Sens", "B_Crocus_MP_TI", "B_Crocus_MP_TI_Sens", "O_Crocus_MP", "O_Crocus_MP_Sens", "O_Crocus_MP_NV", "O_Crocus_MP_NV_Sens", "O_Crocus_MP_TI", "O_Crocus_MP_TI_Sens", "I_Crocus_MP", "I_Crocus_MP_Sens", "I_Crocus_MP_NV", "I_Crocus_MP_NV_Sens", "I_Crocus_MP_TI", "I_Crocus_MP_TI_Sens", "B_Crocus_PvP", "O_Crocus_PvP", "I_Crocus_PvP", "B_Crocus_Training", "O_Crocus_Training", "I_Crocus_Training"];
 	private _signalDropTime = -1;
 
 	while {true} do {
@@ -72,7 +69,7 @@ RC_FPV_Target_Hash = createHashMap;
 		private _uav = getConnectedUAV _player;
 		private _connectedUAVType = typeOf _uav;
 
-		if (isRemoteControlling _player && _connectedUAVType in _dronesArray) then {
+		if (isRemoteControlling _player && _connectedUAVType in RC_FPV_validDronesArr) then {
 			private _uavSignal = [_player, _uav] call RC_fnc_fpv_getSignal_MP;
 
             if (_uavSignal < 0.05) then {

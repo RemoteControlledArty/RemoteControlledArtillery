@@ -1,5 +1,4 @@
-//required to define side of storage container, so neutral throwable FPV can be requested from container last opened from specific side
-
+//required to define side of storage container, so neutral-throable/backpack FPV's can be requested from container last opened from specific side
 player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"];
 
@@ -7,6 +6,7 @@ player addEventHandler ["InventoryClosed", {
 }];
 
 
+/*
 //temporary overwritable define of check above function
 fnc_checkAbove = {
 	params ["_veh"];
@@ -15,12 +15,6 @@ fnc_checkAbove = {
 	private _height = 50;
 	private _i = 0;
 	private _hasAbove = false;
-
-	/*
-	//reduced size version
-	private _endPos = [(_pos #0), (_pos #1), (_pos #2) + _height];
-	_hasAbove = lineIntersects [_pos, _endPos, _veh, objNull];
-	*/
 
 	private _coords = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1,-1]];
 	
@@ -45,5 +39,5 @@ fnc_checkAbove = {
 		_continue
 	};
 };
-
+*/
 

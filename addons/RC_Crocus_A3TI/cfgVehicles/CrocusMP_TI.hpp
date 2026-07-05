@@ -81,7 +81,7 @@ class I_Crocus_MP_TI: B_Crocus_MP_TI
 };
 
 
-class Crocus_MP_TI_Assemble: B_Crocus_MP_TI
+class Crocus_MP_TI: B_Crocus_MP_TI
 {
 	scope=1;
 	scopeCurator=1;
@@ -98,7 +98,7 @@ class Crocus_MP_TI_Bag: Crocus_MP_Bag
 	{
 		displayName="Crocus MP TI";
 		base="";
-		assembleTo="Crocus_MP_TI_Assemble";
+		assembleTo="Crocus_MP_TI";
 		dissasembleTo[]={};
 		primary=1;
 	};
@@ -315,7 +315,7 @@ class I_Crocus_MP_TI_Sens: B_Crocus_MP_TI_Sens
 };
 
 
-class Crocus_MP_TI_Sens_Assemble: B_Crocus_MP_TI_Sens
+class Crocus_MP_TI_Sens: B_Crocus_MP_TI_Sens
 {
 	scope=1;
 	scopeCurator=1;
@@ -330,7 +330,7 @@ class Crocus_MP_TI_Sens_Bag: Crocus_MP_TI_Bag
 	class assembleInfo: assembleInfo
 	{
 		displayName="Crocus MP TI Sensor";
-		assembleTo="Crocus_MP_TI_Sens_Assemble";
+		assembleTo="Crocus_MP_TI_Sens";
 	};
 };
 

@@ -76,7 +76,7 @@ class I_Crocus_MP_NV: B_Crocus_MP_NV
 };
 
 
-class Crocus_MP_NV_Assemble: B_Crocus_MP_NV
+class Crocus_MP_NV: B_Crocus_MP_NV
 {
 	scope=1;
 	scopeCurator=1;
@@ -91,7 +91,7 @@ class Crocus_MP_NV_Bag: Crocus_MP_Bag
 	class assembleInfo: assembleInfo
 	{
 		displayName="Crocus MP NV";
-		assembleTo="Crocus_MP_NV_Assemble";
+		assembleTo="Crocus_MP_NV";
 	};
 };
 
@@ -304,7 +304,7 @@ class I_Crocus_MP_NV_Sens: B_Crocus_MP_NV_Sens
 };
 
 
-class Crocus_MP_NV_Sens_Assemble: B_Crocus_MP_NV_Sens
+class Crocus_MP_NV_Sens: B_Crocus_MP_NV_Sens
 {
 	scope=1;
 	scopeCurator=1;
@@ -319,7 +319,7 @@ class Crocus_MP_NV_Sens_Bag: Crocus_MP_Bag
 	class assembleInfo: assembleInfo
 	{
 		displayName="Crocus MP NV Sensor";
-		assembleTo="Crocus_MP_NV_Sens_Assemble";
+		assembleTo="Crocus_MP_NV_Sens";
 	};
 };
 

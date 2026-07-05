@@ -23,10 +23,12 @@ createVehicleCrew _uav;
 _uav setPosASL _pos;
 _uav setDir getDir player;
 _uav setVelocity _vel;
-_uav flyInHeight 20;
 
-sleep 1;
+sleep 0.2;
+_uav flyInHeight 200;
+//_uav flyInHeight 20;	//ony partially worked, switched between 25-65 depending on objects below, but far higher than needed, so no point
 
+sleep 0.8;
 player connectTerminalToUAV _uav;
 //[_uav] call RC_fnc_RC_uavChangeLocality;
 player action ["UAVTerminalOpen", player];

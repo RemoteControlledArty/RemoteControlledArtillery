@@ -12,7 +12,7 @@ private _uavArray = [_pos, direction _veh, _classFPV, _sidePlayer];
 [_uavArray, _spawnPos] spawn {
 	params ["_uavArray", "_spawnPos"];
 
-	sleep 4.7;
+	sleep 3.7;
 	private _uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
 	private _uavNew = _uavSpawn select 0;
 	_uavNew setPos _spawnPos;

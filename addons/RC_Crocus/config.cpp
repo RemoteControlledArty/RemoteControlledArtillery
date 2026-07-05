@@ -7,37 +7,48 @@ class CfgPatches
 
 		units[]=
 		{
+			"Crocus_MP",
 			"B_Crocus_MP",
 			"O_Crocus_MP",
 			"I_Crocus_MP",
 
-			"B_Crocus_MP_Bag",
-			"O_Crocus_MP_Bag",
-			"I_Crocus_MP_Bag",
-
+			"Crocus_MP_Sens",
 			"B_Crocus_MP_Sens",
 			"O_Crocus_MP_Sens",
 			"I_Crocus_MP_Sens",
+
+			"Crocus_MP_NV",
+			"B_Crocus_MP_NV",
+			"O_Crocus_MP_NV",
+			"I_Crocus_MP_NV",
+
+			"Crocus_MP_NV_Sens",
+			"B_Crocus_MP_NV_Sens",
+			"O_Crocus_MP_NV_Sens",
+			"I_Crocus_MP_NV_Sens",
+
+			"Crocus_MP_Bag",
+			"B_Crocus_MP_Sens_Bag",
+			"Crocus_MP_NV_Bag",
+			"Crocus_MP_NV_Sens_Bag",
+
+			/*
+			"B_Crocus_MP_Bag",
+			"O_Crocus_MP_Bag",
+			"I_Crocus_MP_Bag",
 
 			"B_Crocus_MP_Sens_Bag",
 			"O_Crocus_MP_Sens_Bag",
 			"I_Crocus_MP_Sens_Bag",
 
-			"B_Crocus_MP_NV",
-			"O_Crocus_MP_NV",
-			"I_Crocus_MP_NV",
-
 			"B_Crocus_MP_NV_Bag",
 			"O_Crocus_MP_NV_Bag",
 			"I_Crocus_MP_NV_Bag",
 
-			"B_Crocus_MP_NV_Sens",
-			"O_Crocus_MP_NV_Sens",
-			"I_Crocus_MP_NV_Sens",
-
 			"B_Crocus_MP_NV_Sens_Bag",
 			"O_Crocus_MP_NV_Sens_Bag",
 			"I_Crocus_MP_NV_Sens_Bag",
+			*/
 
 			"B_Crocus_SignalBooster_Bag",
 			//"O_Crocus_SignalBooster_Bag",
@@ -108,6 +119,8 @@ class CfgFunctions
 		class RC_Crocus
 		{
             file="\RC_Crocus\functions";
+			class fpv_defineValid_MP {postInit=1;};
+
 			class fpv_handleConnect_MP {postInit=1;};
 			class fpv_handleSettings_MP {};
 			class fpv_handleSignal_MP {};

@@ -280,50 +280,58 @@ class CfgPatches
 			"RC_CBRad2_Player_A_O",
 
 			"RC_UAV_AR1",
+			"RC_UAV_AR1_B",
 			"RC_UAV_AR1_O",
 			"RC_UAV_AR1_I",
 
 			"RC_UAV_AR1_Bag",
-			"RC_UAV_AR1_Bag_O",
-			"RC_UAV_AR1_Bag_I",
+			//"RC_UAV_AR1_Bag_O",
+			//"RC_UAV_AR1_Bag_I",
 
 			"RC_UAV_AR1_5",
+			"RC_UAV_AR1_5_B",
 			"RC_UAV_AR1_5_O",
 			"RC_UAV_AR1_5_I",
 
 			"RC_UAV_AR1_5_Bag",
-			"RC_UAV_AR1_5_Bag_O",
-			"RC_UAV_AR1_5_Bag_I",
+			//"RC_UAV_AR1_5_Bag_O",
+			//"RC_UAV_AR1_5_Bag_I",
 
 			"RC_UAV_AR3",
+			"RC_UAV_AR3_B",
 			"RC_UAV_AR3_O",
 			"RC_UAV_AR3_I",
 
 			"RC_UAV_AR3_Bag",
-			"RC_UAV_AR3_Bag_O",
-			"RC_UAV_AR3_Bag_I",
+			//"RC_UAV_AR3_Bag_O",
+			//"RC_UAV_AR3_Bag_I",
 
 			"RC_GrenadeDropper",
+			"RC_GrenadeDropper_B",
 			"RC_GrenadeDropper_O",
 			"RC_GrenadeDropper_I",
+
+			"RC_GrenadeDropper_Bag",
+			//"RC_GrenadeDropper_Bag_O",
+			//"RC_GrenadeDropper_Bag_I",
+
 			"RC_GrenadeDropper_Sens",
+			"RC_GrenadeDropper_Sens_B",
 			"RC_GrenadeDropper_Sens_O",
 			"RC_GrenadeDropper_Sens_I",
 
-			"RC_GrenadeDropper_Bag",
-			"RC_GrenadeDropper_Bag_O",
-			"RC_GrenadeDropper_Bag_I",
 			"RC_GrenadeDropper_Sens_Bag",
-			"RC_GrenadeDropper_Sens_Bag_O",
-			"RC_GrenadeDropper_Sens_Bag_I",
+			//"RC_GrenadeDropper_Sens_Bag_O",
+			//"RC_GrenadeDropper_Sens_Bag_I",
 
 			"RC_UAV_FPV",
+			"RC_UAV_FPV_B",
 			"RC_UAV_FPV_O",
 			"RC_UAV_FPV_I",
 
 			"RC_UAV_FPV_Bag",
-			"RC_UAV_FPV_Bag_O",
-			"RC_UAV_FPV_Bag_I",
+			//"RC_UAV_FPV_Bag_O",
+			//"RC_UAV_FPV_Bag_I",
 
 			"RC_OM_Heli_SkyCrane_blk",
 			"RC_OM_Heli_SkyCrane_blk_O",
@@ -1189,6 +1197,7 @@ class CfgVehicles
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\AC_FSV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\CBRad.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\CRV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\DropperUAV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Fennek.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FakeTracers.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FSV.hpp"
@@ -1227,6 +1236,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\SystemsOperator.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UAV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\FPV.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Interceptor.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UGV.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Velocity.hpp"

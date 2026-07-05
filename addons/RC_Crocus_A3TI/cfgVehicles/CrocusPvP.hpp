@@ -66,7 +66,7 @@ class I_Crocus_PvP: B_Crocus_PvP
 };
 
 
-class Crocus_PvP_Assemble: B_Crocus_PvP
+class Crocus_PvP: B_Crocus_PvP
 {
 	scope=1;
 	scopeCurator=1;
@@ -81,7 +81,7 @@ class Crocus_PvP_Bag: Crocus_MP_TI_Bag
 	class assembleInfo: assembleInfo
 	{
 		displayName="Crocus PvP";
-		assembleTo="Crocus_PvP_Assemble";
+		assembleTo="Crocus_PvP";
 	};
 };
 

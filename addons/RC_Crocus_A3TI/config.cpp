@@ -7,22 +7,32 @@ class CfgPatches
 
 		units[]=
 		{
+			"Crocus_MP_TI",
 			"B_Crocus_MP_TI",
 			"O_Crocus_MP_TI",
 			"I_Crocus_MP_TI",
 
+			"Crocus_MP_TI_Sens",
 			"B_Crocus_MP_TI_Sens",
 			"O_Crocus_MP_TI_Sens",
 			"I_Crocus_MP_TI_Sens",
 
+			"Crocus_PvP",
 			"B_Crocus_PvP",
 			"O_Crocus_PvP",
 			"I_Crocus_PvP",
 
+			"Crocus_Training",
 			"B_Crocus_Training",
 			"O_Crocus_Training",
 			"I_Crocus_Training",
 
+			"Crocus_MP_TI_Bag",
+			"Crocus_MP_TI_Sens_Bag",
+			"Crocus_PvP_Bag",
+			"Crocus_Training_Bag",
+
+			/*
 			"B_Crocus_MP_TI_Bag",
 			"O_Crocus_MP_TI_Bag",
 			"I_Crocus_MP_TI_Bag",
@@ -38,6 +48,7 @@ class CfgPatches
 			"B_Crocus_Training_Bag",
 			"O_Crocus_Training_Bag",
 			"I_Crocus_Training_Bag",
+			*/
 
 			"RC_Crocus_Mothership",
 			"RC_Crocus_Mothership_O",

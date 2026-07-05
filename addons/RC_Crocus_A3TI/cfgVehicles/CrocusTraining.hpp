@@ -45,7 +45,7 @@ class I_Crocus_Training: B_Crocus_Training
 };
 
 
-class Crocus_Training_Assemble: B_Crocus_Training
+class Crocus_Training: B_Crocus_Training
 {
 	scope=1;
 	scopeCurator=1;
@@ -60,7 +60,7 @@ class Crocus_Training_Bag: Crocus_MP_TI_Bag
 	class assembleInfo: assembleInfo
 	{
 		displayName="Crocus Training";
-		assembleTo="Crocus_Training_Assemble";
+		assembleTo="Crocus_Training";
 	};
 };
 

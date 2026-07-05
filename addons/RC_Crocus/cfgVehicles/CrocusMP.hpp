@@ -225,7 +225,7 @@ class I_Crocus_MP: B_Crocus_MP
 };
 
 
-class Crocus_MP_Assemble: B_Crocus_MP
+class Crocus_MP: B_Crocus_MP
 {
 	scope=1;
 	scopeCurator=1;
@@ -243,7 +243,7 @@ class Crocus_MP_Bag: RC_UAV_AR1_Bag
 
 	class assembleInfo
 	{
-		assembleTo="Crocus_MP_Assemble";
+		assembleTo="Crocus_MP";
 		base="";
 		displayName="Crocus MP";
 		dissasembleTo[]={};
@@ -440,7 +440,7 @@ class I_Crocus_MP_Sens: B_Crocus_MP_Sens
 };
 
 
-class Crocus_MP_Sens_Assemble: B_Crocus_MP_Sens
+class Crocus_MP_Sens: B_Crocus_MP_Sens
 {
 	scope=1;
 	scopeCurator=1;
@@ -455,7 +455,7 @@ class Crocus_MP_Sens_Bag: Crocus_MP_Bag
 	class assembleInfo: assembleInfo
 	{
 		displayName="Crocus MP Sensor";
-		assembleTo="Crocus_MP_Sens_Assemble";
+		assembleTo="Crocus_MP_Sens";
 	};
 };
 

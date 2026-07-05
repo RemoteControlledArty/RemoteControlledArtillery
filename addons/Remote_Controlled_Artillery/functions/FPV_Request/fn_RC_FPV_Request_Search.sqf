@@ -25,9 +25,6 @@ switch (true) do {
 };
 */
 
-//neutral side bags, CONCIDER MAKING UNOPENED CRATES NON ACCESSABLE for MP
-private _validFPVs = ["Crocus_MP_Bag", "Crocus_MP_Sens_Bag", "Crocus_MP_NV_Bag", "Crocus_MP_NV_Sens_Bag", "Crocus_MP_TI_Bag", "Crocus_MP_TI_Sens_Bag", "Crocus_PvP_Bag", "Crocus_Training_Bag"];
-
 
 private _allVeh = vehicles;
 private _validVeh = [];
@@ -55,6 +52,12 @@ _validVeh = _validVeh apply {[round (_x distance player), _x]};
 _validVeh sort true;
 
 
+
+//neutral side bags & throwables, CONCIDER MAKING UNOPENED CRATES NON ACCESSABLE for MP
+private _validBags = ["Crocus_MP_Bag", "Crocus_MP_Sens_Bag", "Crocus_MP_NV_Bag", "Crocus_MP_NV_Sens_Bag", "Crocus_MP_TI_Bag", "Crocus_MP_TI_Sens_Bag", "Crocus_PvP_Bag", "Crocus_Training_Bag"];
+private _validMags = ["Crocus_MP_Throw", "Crocus_MP_Sens_Throw", "Crocus_MP_NV_Throw", "Crocus_MP_NV_Sens_Throw", "Crocus_MP_TI_Throw", "Crocus_MP_TI_Sens_Throw", "Crocus_PvP_Throw", "Crocus_Training_Throw"];
+
+
 private _foundFPV = false;
 {
     private _veh = _x #1;
@@ -63,32 +66,86 @@ private _foundFPV = false;
     //backpacks
     private _cargo = getBackpackCargo _veh;
     private _classes = _cargo #0;        //0 is classes, 1 is amount
-    private _idx = _classes findIf {(_x in _validFPVs)};
+    private _idx = _classes findIf {(_x in _validBags)};
 
     //throwable
     private _cargo2 = getMagazineCargo _veh;
     private _classes2 = _cargo2 #0;        //0 is classes, 1 is amount
-    private _idx2 = _classes2 findIf {(_x in ["Crocus_MP_Throw", "Crocus_MP_Sens_Throw", "Crocus_MP_NV_Throw", "Crocus_MP_NV_Sens_Throw", "Crocus_MP_TI_Throw", "Crocus_MP_TI_Sens_Throw", "Crocus_PvP_Throw", "Crocus_Training_Throw"])};
+    private _idx2 = _classes2 findIf {(_x in _validMags)};
 
-
+	private _pos = [0,0,0];
     private _continue = true;
     if (_idx > -1 || _idx2 > -1) then
     {
-		[_veh] call fnc_checkAbove;
+		//[_veh] call fnc_checkAbove;
+
+		_pos = getPosASL _veh;
+		private _height = 50;
+		private _i = 0;
+		private _hasAbove = false;
+
+		/*
+		//reduced size version
+		private _endPos = [(_pos #0), (_pos #1), (_pos #2) + _height];
+		_hasAbove = lineIntersects [_pos, _endPos, _veh, objNull];
+		*/
+
+		private _coords = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1,-1]];
+		while {!_hasAbove && _i < count _coords} do {
+
+			private _x = _coords #_i;
+			private _startPos = [(_pos #0) + (_x #0), (_pos #1) + (_x #1), (_pos #2)];
+			private _endPos = [(_startPos #0), (_startPos #1), (_pos #2) + _height];
+			_hasAbove = lineIntersects [_startPos, _endPos, _veh, objNull];
+			_i = _i + 1;
+		};
+
+		if (_hasAbove) then {
+
+			private _str = "FPV request failed at y" + str (round(_pos #0)) + " x" + str (round(_pos #1)) + ", obstructed above, cannot start.";
+
+			/*
+			//would be overwritten by next deploy, so systemchat is better atm
+			hint format [
+			"FPV request failed at:\ny%1 x%2\n%3m", 
+				round (_pos #0), 
+				round (_pos #1), 
+				round (player distance _veh)
+			];
+			0 spawn
+			{
+				sleep 2.5;
+				hint "";
+			};
+			*/
+
+			systemchat _str;
+			_continue = false;
+		};
     };
 
 
 	if (_idx > -1 && _continue) exitWith {
 
-        private _classBag = (_classes #_idx);
+		private _classBag = (_classes #_idx);
         private _stringSplit = _classBag splitString "_";
         private _stringCountNew = (count _stringSplit) - 1;
 
         _stringSplit deleteAt _stringCountNew;
         private _classFPV = _stringSplit joinString "_";
 
-        //systemchat _classFPV;
-        systemchat "Sending FPV, wait!";
+        //systemchat "Sending FPV, wait!";
+		hint format [
+			"sending FPV from:\ny%1 x%2\n%3m", 
+			round (_pos #0), 
+			round (_pos #1), 
+			round (player distance _veh)
+		];
+		0 spawn
+		{
+			sleep 4;
+			hint "";
+		};
 
         //find backpack index
         private _counts  = _cargo #1;
@@ -126,6 +183,7 @@ private _foundFPV = false;
         _stringSplit deleteAt _stringCountNew;
         private _classFPV = _stringSplit joinString "_";
 
+		/*
         switch (true) do {
             case(_sidePlayer == west): {
                 _classFPV = "B_" + _classFPV;
@@ -137,9 +195,20 @@ private _foundFPV = false;
                 _classFPV = "I_" + _classFPV;
             };
         };
+		*/
 
-        //systemchat _classFPV;
-        systemchat "Sending FPV, wait!";
+        //systemchat "Sending FPV, wait!";
+		hint format [
+			"sending FPV from:\ny%1 x%2\n%3m", 
+			round (_pos #0), 
+			round (_pos #1), 
+			round (player distance _veh)
+		];
+		0 spawn
+		{
+			sleep 4;
+			hint "";
+		};
 
         //find backpack index
         private _counts  = _cargo2 #1;
@@ -167,6 +236,7 @@ private _foundFPV = false;
         _foundFPV = true;
     };
 } forEach _validVeh;
+
 
 /*
 private _foundFPV = false;
