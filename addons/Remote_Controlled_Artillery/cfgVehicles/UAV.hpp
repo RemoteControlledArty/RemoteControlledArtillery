@@ -62,8 +62,26 @@ class RC_UAV_AR1_Base: RC_UAV_base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750};
+					range[]={4000,2000,1000,500};
 					resource="RscCustomInfoSensors";
+				};
+			};
+		};
+		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+		{
+			defaultDisplay="SensorDisplay";
+			class components
+			{
+				class SensorDisplay
+				{
+					componentType="SensorsDisplayComponent";
+					range[]={2000,4000,500,1000};
+					resource="RscCustomInfoSensors";
+				};
+				class MinimapDisplay
+				{
+					componentType="MinimapDisplayComponent";
+					resource="RscCustomInfoAirborneMiniMap";
 				};
 			};
 		};
@@ -218,19 +236,21 @@ class RC_UAV_AR1_Base: RC_UAV_base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 					class components
 					{
-						class EmptyDisplay
+						class SensorDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={2000,4000,500,1000};
+							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
 						{
@@ -630,19 +650,21 @@ class RC_UAV_AR3_Base: RC_UAV_AR1_Base
 				class SensorDisplay
 				{
 					componentType="SensorsDisplayComponent";
-					range[]={3000,1500,750};
+					range[]={4000,2000,1000,500};
 					resource="RscCustomInfoSensors";
 				};
 			};
 		};
 		class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 		{
-			defaultDisplay="EmptyDisplay";
+			defaultDisplay="SensorDisplay";
 			class components
 			{
-				class EmptyDisplay
+				class SensorDisplay
 				{
-					componentType="EmptyDisplayComponent";
+					componentType="SensorsDisplayComponent";
+					range[]={2000,4000,500,1000};
+					resource="RscCustomInfoSensors";
 				};
 				class MinimapDisplay
 				{
@@ -798,19 +820,21 @@ class RC_UAV_AR3_Base: RC_UAV_AR1_Base
 						class SensorDisplay
 						{
 							componentType="SensorsDisplayComponent";
-							range[]={3000,1500,750};
+							range[]={4000,2000,1000,500};
 							resource="RscCustomInfoSensors";
 						};
 					};
 				};
 				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
 				{
-					defaultDisplay="EmptyDisplay";
+					defaultDisplay="SensorDisplay";
 					class components
 					{
-						class EmptyDisplay
+						class SensorDisplay
 						{
-							componentType="EmptyDisplayComponent";
+							componentType="SensorsDisplayComponent";
+							range[]={2000,4000,500,1000};
+							resource="RscCustomInfoSensors";
 						};
 						class MinimapDisplay
 						{
