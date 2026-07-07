@@ -9,6 +9,38 @@ params ['_player'];
 
 private _sidePlayer = side player;
 
+
+/*
+//request from dedicated deployer vehicle
+private _validDeployerMags = ["RC_1Rnd_Crocus_Deployer_Mag", "RC_1Rnd_Crocus_Deployer_UGV_Mag"];
+
+//array cleanup
+RC_FPV_Deployers = RC_FPV_Deployers select {!isNull _x && alive _x};
+{
+	if ((_x distance player <= 15000)) then {
+		if ((count (crew _x)) > 0) then {
+			if (side _x isEqualTo _sidePlayer) then {
+
+				//check for if >0 ammo in valid magazines first
+				_validDeployer pushBack _x;
+			};
+		};
+	};
+} forEach RC_FPV_Deployers;
+
+
+_validDeployer = _validDeployer apply {[round (_x distance player), _x]};
+_validDeployer sort true;
+
+
+if ((count _validDeployer) > 0) exitWith {
+	//[_veh, _classFPV, _sidePlayer] call RC_fnc_RC_FPV_Request_Deploy;
+
+	//needs to be carrier & mothership suitable
+};
+*/
+
+
 /*
 //made side neutral bags
 private _validFPVs = [];
