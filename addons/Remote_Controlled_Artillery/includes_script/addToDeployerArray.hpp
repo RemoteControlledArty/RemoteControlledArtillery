@@ -1,0 +1,1 @@
+init="if (!isserver) exitwith {};  RC_FPV_Deployers pushback (_this select 0);";
