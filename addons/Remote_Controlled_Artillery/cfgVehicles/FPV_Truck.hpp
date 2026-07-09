@@ -14,6 +14,10 @@ class RC_FPV_Truck_Base: RC_FPV_Truck_Core
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_FPV_Deployer
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"

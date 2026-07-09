@@ -23,6 +23,10 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 			//2000m = SOP for large fixed wing drones
 			postInit="params ['_entity'];  if (!isServer) exitwith {};  _entity flyInHeight 2000;";
 		};
+		class RC_FPV_Deployer
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
