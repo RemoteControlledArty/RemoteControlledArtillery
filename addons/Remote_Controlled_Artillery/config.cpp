@@ -908,7 +908,7 @@ class CfgFunctions
 			file="\Remote_Controlled_Artillery\functions\FPV_Request";
 			
 			class RC_FPV_Request_ContainerSide {postInit=1;};
-			class RC_FPV_Request_define {postInit=1;};
+			class RC_FPV_Request_define {preInit=1;};
 			class RC_FPV_Request_Condition {};
 
 			/*
