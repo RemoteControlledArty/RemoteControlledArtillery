@@ -755,20 +755,6 @@ class RC_B_20mm_MP_QF_T_G: RC_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullet
 class RC_B_20mm_MP_QF_T_Y: RC_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-//helicopter ammo, reduced smoke effect
-class RC_Pylon_ammo_Penetrator_MP_20mm: RC_ammo_Penetrator_MP_20mm
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\hitEffectsMP_AC.hpp"
-};
-class RC_Pylon_B_20mm_MP_QF_T_R: RC_B_20mm_MP_QF_T_R
-{
-	submunitionAmmo="RC_Pylon_ammo_Penetrator_MP_20mm";
-	explosionEffects="RC_ExploAmmoExplosion_AC";
-};
-class RC_Pylon_B_20mm_MP_QF_T_G: RC_Pylon_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_Pylon_B_20mm_MP_QF_T_Y: RC_Pylon_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
 //20mm MPAB DF/QF
 class RC_B_20mm_MPAB_DF_T_R: B_20mm_Tracer_Red
 {
@@ -1030,20 +1016,6 @@ class RC_B_25mm_MP_QF_T_G: RC_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullet
 class RC_B_25mm_MP_QF_T_Y: RC_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
-//helicopter ammo, reduced smoke effect
-class RC_Pylon_ammo_Penetrator_MP_25mm: RC_ammo_Penetrator_MP_25mm
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\hitEffectsMP_AC.hpp"
-};
-class RC_Pylon_B_25mm_MP_QF_T_R: RC_B_25mm_MP_QF_T_R
-{
-	submunitionAmmo="RC_Pylon_ammo_Penetrator_MP_25mm";
-	explosionEffects="RC_ExploAmmoExplosion_AC";
-};
-class RC_Pylon_B_25mm_MP_QF_T_G: RC_Pylon_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_Pylon_B_25mm_MP_QF_T_Y: RC_Pylon_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
 //25mm MPAB DF/QF
 class RC_B_25mm_MPAB_DF_T_R: B_30mm_MP_Tracer_Red
 {
@@ -1160,20 +1132,6 @@ class RC_B_30mm_MP_QF_T_R: B_30mm_MP_Tracer_Red
 };
 class RC_B_30mm_MP_QF_T_G: RC_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_B_30mm_MP_QF_T_Y: RC_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
-
-
-//helicopter ammo, reduced smoke effect
-class RC_Pylon_ammo_Penetrator_MP_30mm: RC_ammo_Penetrator_MP_30mm
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\hitEffectsMP_AC.hpp"
-};
-class RC_Pylon_B_30mm_MP_QF_T_R: RC_B_30mm_MP_QF_T_R
-{
-	submunitionAmmo="RC_Pylon_ammo_Penetrator_MP_30mm";
-	explosionEffects="RC_ExploAmmoExplosion_AC";
-};
-class RC_Pylon_B_30mm_MP_QF_T_G: RC_Pylon_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
-class RC_Pylon_B_30mm_MP_QF_T_Y: RC_Pylon_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 //30mm MPAB DF/QF
@@ -2651,19 +2609,22 @@ class RC_Interceptor_Direct_10m_Pre: RC_M_ATGM_MP_LOS
 
 	scope=0;
 
+	timeToLive=60;		//time to crash
+	thrustTime=60;		//batterie life
+	thrust=10;			//acceleration
+	airFriction=0.2;	//0.085
+	sideAirFriction=0.25;//1
+	trackLead=0.25;		//lead accuracy
+	maneuvrability=4.5;	//20
+
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
 	//model="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
 	
 	autoSeekTarget=0;	//0 for testing as it often prevents saclos
 	manualControl=1;
 	maxControlRange=10000;
-	
 	initTime=0;
-	timeToLive=60;	//60 or 90
-	thrustTime=60;	//60 or 90
-	thrust=10;
 	maxSpeed=40;		//40m/s = 144km/h	//97.22
-	maneuvrability=10;	//20
 
 	weaponLockSystem="2 + 16";
 	laserLock=0;
@@ -2675,12 +2636,10 @@ class RC_Interceptor_Direct_10m_Pre: RC_M_ATGM_MP_LOS
 	missileLockCone=360;
 	missileKeepLockedCone=360;
 
-	hit=50;				//150 from titan, does lower still engage?
-	indirectHit=10;		//20
-	indirectHitRange=10;
+	hit=50;					//150 from titan, does lower still engage?
+	indirectHit=10;			//20
+	indirectHitRange=5;		//10
 	submunitionAmmo="";
-	airFriction=0.35;	//0.085
-	sideAirFriction=2;	//1
 
 	muzzleEffect="";
 	effectsMissileInit="";
@@ -2775,30 +2734,11 @@ class RC_Interceptor_Direct_5m_Pre: RC_Interceptor_Direct_10m_Pre
 {
 	triggerDistance=5;
 	proximityExplosionDistance=5;
-
-	/*
-	timeToLive=60;	//60 or 90
-	thrustTime=60;	//60 or 90
-	thrust=10;
-	maxSpeed=40;		//40m/s = 144km/h	//97.22
-	maneuvrability=10;	//20
-
-	airFriction=0.35;	//0.085
-	sideAirFriction=2;	//1
-	*/
 };
 class RC_Interceptor_Direct_1m_Pre: RC_Interceptor_Direct_10m_Pre
 {
-	triggerDistance=2;
-	proximityExplosionDistance=2;
-
-	timeToLive=60;	//time to crash
-	thrustTime=60;	//batterie life
-
-	airFriction=0.2;	//0.085
-	sideAirFriction=2;	//1
-	thrust=10;
-	maneuvrability=12;	//20
+	triggerDistance=1;
+	proximityExplosionDistance=1;
 };
 
 
@@ -2833,17 +2773,6 @@ class RC_Interceptor_Overfly_5m_Pre: RC_Interceptor_Overfly_10m_Pre
 	{
 		overflyElevation=3;
 	};
-
-	/*
-	timeToLive=60;	//60 or 90
-	thrustTime=60;	//60 or 90
-	thrust=10;
-	maxSpeed=40;		//40m/s = 144km/h	//97.22
-	maneuvrability=10;	//20
-
-	airFriction=0.35;	//0.085
-	sideAirFriction=2;	//1
-	*/
 };
 
 
@@ -2858,7 +2787,7 @@ class RC_Interceptor_TopDown_10m_Pre: RC_Interceptor_Direct_10m_Pre
 	class TopDown
 	{
 		ascendHeight=500;
-		descendDistance=1000;
+		descendDistance=708;	//707.106m = diagonal of 500m square
 		minDistance=1;
 		ascendAngle=30;
 	};
@@ -2867,24 +2796,11 @@ class RC_Interceptor_TopDown_5m_Pre: RC_Interceptor_TopDown_10m_Pre
 {
 	triggerDistance=5;
 	proximityExplosionDistance=5;
-
-	/*
-	timeToLive=60;	//60 or 90
-	thrustTime=60;	//60 or 90
-	thrust=10;
-	maxSpeed=40;		//40m/s = 144km/h	//97.22
-	maneuvrability=10;	//20
-
-	airFriction=0.35;	//0.085
-	sideAirFriction=2;	//1
-	*/
 };
 class RC_Interceptor_TopDown_1m_Pre: RC_Interceptor_TopDown_10m_Pre
 {
 	triggerDistance=1;
 	proximityExplosionDistance=1;
-
-	maneuvrability=15;	//20
 };
 
 
@@ -2906,26 +2822,11 @@ class RC_Interceptor_Cruise_5m_Pre: RC_Interceptor_Cruise_10m_Pre
 {
 	triggerDistance=5;
 	proximityExplosionDistance=5;
-
-	/*
-	timeToLive=60;	//60 or 90
-	thrustTime=60;	//60 or 90
-	thrust=10;
-	maxSpeed=40;		//40m/s = 144km/h	//97.22
-	maneuvrability=10;	//20
-
-	airFriction=0.35;	//0.085
-	sideAirFriction=2;	//1
-	*/
 };
 class RC_Interceptor_Cruise_1m_Pre: RC_Interceptor_Cruise_10m_Pre
 {
 	triggerDistance=1;
 	proximityExplosionDistance=1;
-
-	timeToLive=90;	//60 or 90
-	thrustTime=90;	//60 or 90
-	maneuvrability=20;	//20
 };
 
 

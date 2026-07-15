@@ -1,13 +1,14 @@
 class I_Heli_light_03_dynamicLoadout_F;
-class RC_AW159M_Core: I_Heli_light_03_dynamicLoadout_F
+class RC_AW159M_Fetch: I_Heli_light_03_dynamicLoadout_F
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_fetch.hpp"
 };
-class RC_AW159M_Base: RC_AW159M_Core
+class RC_AW159M_Core: RC_AW159M_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
 	};
@@ -20,7 +21,6 @@ class RC_AW159M_Base: RC_AW159M_Core
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFixed.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFree.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_userActions.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_hitPoints.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 
 	class Components: Components
@@ -34,6 +34,60 @@ class RC_AW159M_Base: RC_AW159M_Core
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_mainTurret.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_cargoTurrets.hpp"
 	};
+};
+class RC_AW159M_Base: RC_AW159M_Core
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_hitPoints.hpp"
+};
+
+
+class RC_AI_AW159M: RC_AW159M_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
+	};
+
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	displayName="AI AW159M DAP - Wildcat"
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
+};
+class RC_AI_AW159M_O: RC_AI_AW159M
+{
+	magazines[]=
+	{
+		"RC_PylonM_3000Rnd_338_SLAP_T_G",
+		"Laserbatteries",
+		"168Rnd_CMFlare_Chaff_Magazine"
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
+};
+class RC_AI_AW159M_I: RC_AI_AW159M
+{
+	magazines[]=
+	{
+		"RC_PylonM_3000Rnd_338_SLAP_T_Y",
+		"Laserbatteries",
+		"168Rnd_CMFlare_Chaff_Magazine"
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
 };
 
 
@@ -55,6 +109,9 @@ class RC_AW159M: RC_AW159M_X
 
 class RC_AW159M_O_X: RC_AW159M
 {
+	scope=0;
+	scopeCurator=0;
+
 	magazines[]=
 	{
 		"RC_PylonM_3000Rnd_338_SLAP_T_G",
@@ -75,6 +132,9 @@ class RC_AW159M_O: RC_AW159M_O_X
 
 class RC_AW159M_I_X: RC_AW159M
 {
+	scope=0;
+	scopeCurator=0;
+	
 	magazines[]=
 	{
 		"RC_PylonM_3000Rnd_338_SLAP_T_Y",

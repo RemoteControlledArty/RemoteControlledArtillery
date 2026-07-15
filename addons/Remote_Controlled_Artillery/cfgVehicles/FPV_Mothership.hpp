@@ -17,15 +17,11 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		//defines default flyInHeight, preventing major problems like UAV dropping to 50m when changing locality between players, or to server when player has a disconnect
 		class RC_FlyInHeight
 		{
+			//defines default flyInHeight, preventing major problems like UAV dropping to 50m when changing locality between players, or to server when player has a disconnect
 			//2000m = SOP for large fixed wing drones
 			postInit="params ['_entity'];  if (!isServer) exitwith {};  _entity flyInHeight 2000;";
-		};
-		class RC_FPV_Deployer
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
 		};
 		class RC_Detection
 		{
@@ -460,6 +456,12 @@ class RC_FPV_MothershipMQ_Base: RC_FPV_MothershipMQ_Core
 {
 	class EventHandlers: EventHandlers
 	{
+		class RC_FlyInHeight
+		{
+			//defines default flyInHeight, preventing major problems like UAV dropping to 50m when changing locality between players, or to server when player has a disconnect
+			//2000m = SOP for large fixed wing drones
+			postInit="params ['_entity'];  if (!isServer) exitwith {};  _entity flyInHeight 2000;";
+		};
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
@@ -468,6 +470,7 @@ class RC_FPV_MothershipMQ_Base: RC_FPV_MothershipMQ_Core
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		};
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -1049,7 +1052,8 @@ class RC_Interceptor_Mothership_Base: RC_FPV_Mothership_Base
 		};
 	};
 
-	displayName="RC AA-Interceptor Mothership";
+	//displayName="RC AA-Interceptor Mothership";
+	displayName="RC unknown FW-UAV";
 	editorSubcategory="RC_AntiAir_subcat";
 };
 class RC_Interceptor_Mothership: RC_Interceptor_Mothership_Base
@@ -1058,8 +1062,8 @@ class RC_Interceptor_Mothership: RC_Interceptor_Mothership_Base
 	crew="B_UAV_AI";
 	side=1;
 
-	scope=1;		//2
-	scopeCurator=0;	//2
+	scope=2;		//2
+	scopeCurator=2;	//2
 };
 class RC_Interceptor_Mothership_O: RC_Interceptor_Mothership
 {
@@ -1077,7 +1081,8 @@ class RC_Interceptor_Mothership_I: RC_Interceptor_Mothership
 
 class RC_AI_Interceptor_Mothership: RC_Interceptor_Mothership
 {
-	displayName="AA-Interceptor Mothership";
+	displayName="unknown FW-UAV";
+	//displayName="AA-Interceptor Mothership";
 	isUav=0;
 	
 	crew="RC_B_HeliPilot";

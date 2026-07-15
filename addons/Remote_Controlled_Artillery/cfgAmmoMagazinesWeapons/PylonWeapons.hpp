@@ -1,3 +1,33 @@
+//minigun
+class M134_minigun;
+class RC_PylonW_338_Minigun_Base: M134_minigun
+{
+	class HighROF;
+};
+class RC_PylonW_338_Minigun: RC_PylonW_338_Minigun_Base
+{
+	displayName=".338NM Minigun";
+	displayNameShort=".338NM Minigun";
+	ballisticsComputer=8;
+	magazines[]=
+	{
+		"RC_PylonM_3000Rnd_338_SLAP_T_R",
+		"RC_PylonM_3000Rnd_338_SLAP_T_G",
+		"RC_PylonM_3000Rnd_338_SLAP_T_Y"
+	};
+	modes[]=
+	{
+		"HighROF","close","short","medium","far"
+	};
+	class HighROF: HighROF
+	{
+		displayName=".338NM";
+		displayNameShort=".338NM";
+	};
+};
+
+
+//autocannon
 class Twin_Cannon_20mm_gunpod;
 class RC_PylonW_TwinCannon_20mm_Core: Twin_Cannon_20mm_gunpod
 {
@@ -27,7 +57,10 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 		//"RC_PylonM_300Rnd_20mm_Aegis",
 		"RC_PylonM_350Rnd_20mm",
 		"RC_PylonM_300Rnd_25mm",
-		"RC_PylonM_250Rnd_30mm"
+		"RC_PylonM_250Rnd_30mm",
+		"RC_PylonM_250Rnd_20mm_Proxy",
+		"RC_PylonM_250Rnd_25mm_Proxy",
+		"RC_PylonM_250Rnd_30mm_Proxy"
 	};
 	modes[]=
 	{
@@ -109,6 +142,23 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 		*/
 	};
 };
+class RC_PylonW_TwinCannon_Lead: RC_PylonW_TwinCannon
+{
+	displayName="Lead Autocannon";
+	displayNameShort="Lead Autocannon";
+	ballisticsComputer="4+8";	//projected reticle on ground if not locked & lead indicator if locked
+	magazines[]=
+	{
+		"RC_PylonM_350Rnd_20mm_Lead",
+		"RC_PylonM_300Rnd_25mm_Lead",
+		"RC_PylonM_250Rnd_30mm_Lead",
+		"RC_PylonM_250Rnd_20mm_Proxy_Lead",
+		"RC_PylonM_250Rnd_25mm_Proxy_Lead",
+		"RC_PylonM_250Rnd_30mm_Proxy_Lead"
+	};
+};
+
+
 class RC_PylonW_Avtopushka: RC_PylonW_TwinCannon
 {
 	displayName="Avtopushka";
@@ -118,7 +168,10 @@ class RC_PylonW_Avtopushka: RC_PylonW_TwinCannon
 	{
 		"RC_PylonM_350Rnd_20mm_O",
 		"RC_PylonM_300Rnd_25mm_O",
-		"RC_PylonM_250Rnd_30mm_O"
+		"RC_PylonM_250Rnd_30mm_O",
+		"RC_PylonM_350Rnd_20mm_Proxy_O",
+		"RC_PylonM_300Rnd_25mm_Proxy_O",
+		"RC_PylonM_250Rnd_30mm_Proxy_O"
 	};
 	class manual: manual
 	{
@@ -126,8 +179,24 @@ class RC_PylonW_Avtopushka: RC_PylonW_TwinCannon
 		displayNameShort="Avtopushka";
 	};
 };
+class RC_PylonW_Avtopushka_Lead: RC_PylonW_Avtopushka
+{
+	displayName="Lead Avtopushka";
+	displayNameShort="Lead Avtopushka";
+	ballisticsComputer="4+8";	//projected reticle on ground if not locked & lead indicator if locked
+	magazines[]=
+	{
+		"RC_PylonM_350Rnd_20mm_Lead_O",
+		"RC_PylonM_300Rnd_25mm_Lead_O",
+		"RC_PylonM_250Rnd_30mm_Lead_O",
+		"RC_PylonM_350Rnd_20mm_Proxy_Lead_O",
+		"RC_PylonM_300Rnd_25mm_Proxy_Lead_O",
+		"RC_PylonM_250Rnd_30mm_Proxy_Lead_O"
+	};
+};
 
 
+//unguided rockets
 class missiles_DAR;
 class RC_PylonW_12Rnd_Hydra_Core: missiles_DAR
 {
@@ -159,6 +228,14 @@ class RC_PylonW_12Rnd_Hydra: RC_PylonW_12Rnd_Hydra_Core
 		dispersion=0.006;	//0.015
 	};
 };
+class RC_PylonW_12Rnd_Hydra_Proxy: RC_PylonW_12Rnd_Hydra
+{
+	//ballisticsComputer="4+8";	//4 doesnt correctly predict for rocket acceleration
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_Hydra_MP_Proxy"
+	};
+};
 class RC_PylonW_12Rnd_S5: RC_PylonW_12Rnd_Hydra
 {
 	displayName="55mm S-5 UB-12";
@@ -172,6 +249,14 @@ class RC_PylonW_12Rnd_S5: RC_PylonW_12Rnd_Hydra
 	{
 		displayName="S-5";
 		displayNameShort="S-5";
+	};
+};
+class RC_PylonW_12Rnd_S5_Proxy: RC_PylonW_12Rnd_S5
+{
+	//ballisticsComputer="4+8";	//4 doesnt correctly predict for rocket acceleration
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_S5_MP_Proxy"
 	};
 };
 
@@ -191,7 +276,6 @@ class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Core
 	magazines[]=
 	{
 		"RC_PylonM_19Rnd_Hydra_MP"
-		//"RC_PylonM_19Rnd_Hydra_HE"
 	};
 	modes[]=
 	{
@@ -202,6 +286,14 @@ class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Core
 		displayName="Hydra";
 		displayNameShort="Hydra";
 		reloadTime=0.15;
+	};
+};
+class RC_PylonW_19Rnd_Hydra_Proxy: RC_PylonW_19Rnd_Hydra
+{
+	//ballisticsComputer="4+8";	//4 doesnt correctly predict for rocket acceleration
+	magazines[]=
+	{
+		"RC_PylonM_19Rnd_Hydra_MP_Proxy"
 	};
 };
 
@@ -221,8 +313,17 @@ class RC_PylonW_19Rnd_S5: RC_PylonW_19Rnd_Hydra
 		displayNameShort="S-5";
 	};
 };
+class RC_PylonW_19Rnd_S5_Proxy: RC_PylonW_19Rnd_S5
+{
+	//ballisticsComputer="4+8";	//4 doesnt correctly predict for rocket acceleration
+	magazines[]=
+	{
+		"RC_PylonM_19Rnd_S5_MP_Proxy"
+	};
+};
 
 
+//light guided
 class missiles_DAGR;
 class RC_PylonW_APKWS_Core: missiles_DAGR
 {
@@ -230,8 +331,7 @@ class RC_PylonW_APKWS_Core: missiles_DAGR
 };
 class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 {
-	// TEST WITHOUT ACE
-
+	// TEST effect WITHOUT ACE
 	displayName="APKWS LG Pod";
 	displayNameShort="APKWS LG Pod";
 	ballisticsComputer=8;
@@ -258,11 +358,22 @@ class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 	ace_laser_canSelect=1; 	// can ace_laser lock (allows switching laser code)
 	ace_laser_showHud=1; 	// show attack profile / lock on hud
 	autoFire=0;
-	canLock=0;				//2 for missile locking
+	canLock=0;				// 2 for missile locking
 	weaponLockSystem=0;
 	lockingTargetSound[]={"",0,1};
 	lockedTargetSound[]={"",0,1};
 };
+/*
+class RC_PylonW_APKWS_Proxy: RC_PylonW_APKWS
+{
+	//ballisticsComputer="4+8";	//doesnt work for missiles
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_APKWS_Proxy",
+		"RC_PylonM_7Rnd_APKWS_Proxy"
+	};
+};
+*/
 
 
 class RC_PylonW_S8_LG: RC_PylonW_APKWS
@@ -274,8 +385,19 @@ class RC_PylonW_S8_LG: RC_PylonW_APKWS
 		"RC_PylonM_12Rnd_S8_LG"
 	};
 };
+/*
+class RC_PylonW_S8_LG_Proxy: RC_PylonW_APKWS
+{
+	//ballisticsComputer="4+8";	//doesnt work for missiles
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_S8_LG_Proxy"
+	};
+};
+*/
 
 
+//heavy guided
 class RocketPods;
 class RC_PylonW_Hellfire: RocketPods
 {
@@ -283,7 +405,12 @@ class RC_PylonW_Hellfire: RocketPods
 
 	displayName="Hellfire";
 	displayNameShort="Hellfire";
-	magazines[]={"RC_PylonM_3Rnd_AGM114K","RC_PylonM_2Rnd_AGM114K","RC_PylonM_1Rnd_AGM114K"};
+	magazines[]=
+	{
+		"RC_PylonM_3Rnd_AGM114K",
+		"RC_PylonM_2Rnd_AGM114K",
+		"RC_PylonM_1Rnd_AGM114K"
+	};
 
 	ace_hellfire_enabled=1; // handle adding interactions and adding laser designator
 	ace_laser_canSelect=1; 	// allows switching laser code
@@ -307,6 +434,17 @@ class RC_PylonW_Hellfire: RocketPods
 		soundsetshot[]={"RocketsMedium_Shot_SoundSet"};
 	};
 };
+/*
+class RC_PylonW_Hellfire_Proxy: RC_PylonW_Hellfire
+{
+	magazines[]=
+	{
+		"RC_PylonM_3Rnd_AGM114K_Proxy",
+		"RC_PylonM_2Rnd_AGM114K_Proxy",
+		"RC_PylonM_1Rnd_AGM114K_Proxy"
+	};
+};
+*/
 
 
 class RC_PylonW_Vikhr: RC_PylonW_Hellfire
@@ -319,31 +457,13 @@ class RC_PylonW_Vikhr: RC_PylonW_Hellfire
 		"RC_PylonM_1Rnd_Vikhr"
 	};
 };
-
-
-class M134_minigun;
-class RC_PylonW_338_Minigun_Base: M134_minigun
+/*
+class RC_PylonW_Vikhr_Proxy: RC_PylonW_Vikhr
 {
-	class HighROF;
-};
-class RC_PylonW_338_Minigun: RC_PylonW_338_Minigun_Base
-{
-	displayName=".338NM Minigun";
-	displayNameShort=".338NM Minigun";
-	ballisticsComputer=8;
 	magazines[]=
 	{
-		"RC_PylonM_3000Rnd_338_SLAP_T_R",
-		"RC_PylonM_3000Rnd_338_SLAP_T_G",
-		"RC_PylonM_3000Rnd_338_SLAP_T_Y"
-	};
-	modes[]=
-	{
-		"HighROF","close","short","medium","far"
-	};
-	class HighROF: HighROF
-	{
-		displayName=".338NM";
-		displayNameShort=".338NM";
+		"RC_PylonM_3Rnd_Vikhr_Proxy",
+		"RC_PylonM_1Rnd_Vikhr_Proxy"
 	};
 };
+*/

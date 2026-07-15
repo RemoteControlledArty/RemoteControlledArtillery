@@ -1,12 +1,13 @@
 class O_Heli_Light_02_dynamicLoadout_F;
-class RC_Ka60M_Core: O_Heli_Light_02_dynamicLoadout_F
+class RC_Ka60M_Fetch: O_Heli_Light_02_dynamicLoadout_F
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_fetch.hpp"
 };
-class RC_Ka60M_Base: RC_Ka60M_Core
+class RC_Ka60M_Core: RC_Ka60M_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
 	};
@@ -18,7 +19,6 @@ class RC_Ka60M_Base: RC_Ka60M_Core
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFixed.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFree.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_userActions.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_hitPoints.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 
 	/*
@@ -62,7 +62,10 @@ class RC_Ka60M_Base: RC_Ka60M_Core
 	};
 	*/
 };
-
+class RC_Ka60M_Base: RC_Ka60M_Core
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_hitPoints.hpp"
+};
 
 
 // ADD UNARMED version, same with ghosthawk
@@ -87,6 +90,48 @@ class RC_Ka60M_O: RC_Ka60M
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
 };
 class RC_Ka60M_I: RC_Ka60M
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
+};
+
+
+//no hitpoint change
+class RC_AI_Ka60M: RC_Ka60M_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
+	};
+		
+	displayName="AI Ka-60M - Kasatka"
+
+	scope=2;			//2
+	scopeCurator=2;		//2
+	forceInGarage=1;	//1
+
+	class Components: Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_AI.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"
+};
+class RC_AI_Ka60M_O: RC_AI_Ka60M
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
+};
+class RC_AI_Ka60M_I: RC_AI_Ka60M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"

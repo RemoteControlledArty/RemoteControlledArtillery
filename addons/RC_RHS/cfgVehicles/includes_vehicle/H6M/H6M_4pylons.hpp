@@ -54,7 +54,7 @@ class TransportPylonsComponent
 			hitpoint 			= "HitPylon3";
 
 			//attachment		= "rhs_mag_m134_pylon_3000";
-			attachment			= "RC_RHS_PylonM_19Rnd_Hydra_MP";
+			attachment			= "RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy";
 		};
 		class pylon4 : pylon1
 		{
@@ -75,7 +75,7 @@ class TransportPylonsComponent
 			{
 				"RC_RHS_PylonM_1300Rnd_GAU19A_left",
 				"RC_PylonM_350Rnd_20mm",
-				"RC_RHS_PylonM_19Rnd_Hydra_MP",
+				"RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy",
 				"RC_PylonM_12Rnd_APKWS"
 			};
 			displayname="Default";

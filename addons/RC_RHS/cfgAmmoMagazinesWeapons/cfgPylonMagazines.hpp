@@ -6,11 +6,15 @@ class RC_RHS_PylonM_19Rnd_Hydra_MP: rhs_mag_M229_19
 	descriptionShort="multi purpose unguided rockets";
 	pylonWeapon="RC_RHS_PylonW_Hydra";
 	ammo="RC_RHS_Hydra_MP";
-
-	hardpoints[]=
-	{
-		"OM_H"
-	};
+	hardpoints[]={"OM_H"};
+};
+class RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy: RC_RHS_PylonM_19Rnd_Hydra_MP
+{
+	displayName="> Hydra MP Proxy 19x";
+	displayNameShort="Hydra MP Proxy";
+	descriptionShort="multi purpose proximity fuze unguided rockets";
+	pylonWeapon="RC_RHS_PylonW_Hydra_Proxy";
+	ammo="RC_RHS_Hydra_MP_Proxy";
 };
 /*
 class RC_RHS_PylonM_19Rnd_Hydra_HE: RC_RHS_PylonM_19Rnd_Hydra_MP
@@ -31,11 +35,15 @@ class RC_RHS_PylonM_7Rnd_Hydra_MP: rhs_mag_M229_7
 	descriptionShort="multi purpose unguided rockets";
 	pylonWeapon="RC_RHS_PylonW_Hydra";
 	ammo="RC_RHS_Hydra_MP";
-
-	hardpoints[]=
-	{
-		"OM_H"
-	};
+	hardpoints[]={"OM_H"};
+};
+class RC_RHS_PylonM_7Rnd_Hydra_MP_Proxy: RC_RHS_PylonM_7Rnd_Hydra_MP
+{
+	displayName="> Hydra MP Proxy 7x";
+	displayNameShort="Hydra MP Proxy";
+	descriptionShort="multi purpose proximity fuze unguided rockets";
+	pylonWeapon="RC_RHS_PylonW_Hydra_Proxy";
+	ammo="RC_RHS_Hydra_MP_Proxy";
 };
 /*
 class RC_RHS_PylonM_7Rnd_Hydra_HE: RC_RHS_PylonM_7Rnd_Hydra_MP
@@ -81,11 +89,7 @@ class RC_RHS_PylonM_8Rnd_DAGR: rhs_mag_DAGR_8
 	descriptionShort="SACLOS guided missiles";
 	pylonWeapon="RC_RHS_PylonW_DAGR";
 	ammo="RC_RHS_DAGR_M310";
-
-	hardpoints[]=
-	{
-		"OM_H"
-	};
+	hardpoints[]={"OM_H"};
 };
 class RC_RHS_PylonM_8Rnd_S8_G: RC_RHS_PylonM_8Rnd_DAGR
 {
@@ -94,11 +98,7 @@ class RC_RHS_PylonM_8Rnd_S8_G: RC_RHS_PylonM_8Rnd_DAGR
 	descriptionShort="SACLOS / lock - guided missiles";
 	pylonWeapon="RC_RHS_PylonW_S8_G";
 	ammo="RC_RHS_DAGR_M310";
-
-	hardpoints[]=
-	{
-		"OM_H_O"
-	};
+	hardpoints[]={"OM_H_O"};
 };
 
 
@@ -127,11 +127,7 @@ class RC_PylonM_2Rnd_AGM114K: rhs_mag_AGM114K_2
 	descriptionShort="heavy laser guided missiles";
 	pylonWeapon="RC_PylonW_Hellfire";
 	ammo="RC_RHS_AGM114K";
-
-	hardpoints[]=
-	{
-		"OM_H"
-	};
+	hardpoints[]={"OM_H"};
 };
 
 
@@ -143,12 +139,7 @@ class RC_RHS_PylonM_1300Rnd_GAU19A_left: rhsusf_mag_gau19_melb_left
 	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_RHS_PylonW_GAU19A";
 	ammo="RC_B_127x99_SLAP_T_R";
-
-	hardpoints[]=
-	{
-		"OM_H",
-		"OM_H_O"
-	};
+	hardpoints[]={"OM_H","OM_H_O"};
 };
 
 
@@ -160,12 +151,7 @@ class RC_RHS_PylonM_1300Rnd_GAU19A_right: rhsusf_mag_gau19_melb_right
 	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_RHS_PylonW_GAU19A";
 	ammo="RC_B_127x99_SLAP_T_R";
-
-	hardpoints[]=
-	{
-		"OM_H",
-		"OM_H_O"
-	};
+	hardpoints[]={"OM_H","OM_H_O"};
 };
 
 
@@ -178,10 +164,5 @@ class RC_RHS_PylonM_2600Rnd_338_SLAP: rhs_mag_m134_pylon_3000
 	pylonWeapon="RC_RHS_PylonW_338_Minigun";
 	ammo="RC_B_338_SLAP_T_R";
 	count=2600;
-
-	hardpoints[]=
-	{
-		"OM_H",
-		"OM_H_O"
-	};
+	hardpoints[]={"OM_H","OM_H_O"};
 };

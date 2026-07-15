@@ -47,7 +47,7 @@ class TransportPylonsComponent
 		{
 			//mirroredMissilePos= 2;
 			UIposition[] 		= {0.11,0.37};
-			attachment			= "RC_PylonM_19Rnd_Hydra_MP";
+			attachment			= "RC_PylonM_19Rnd_Hydra_MP_Proxy";
 		};
 		class pylon4: pylon1
 		{
@@ -66,7 +66,7 @@ class TransportPylonsComponent
 			{
 				"RC_PylonM_12Rnd_APKWS",
 				"RC_PylonM_250Rnd_30mm",
-				"RC_PylonM_19Rnd_Hydra_MP",
+				"RC_PylonM_19Rnd_Hydra_MP_Proxy",
 				"RC_PylonM_2Rnd_AGM114K"
 			};
 			displayname = "Laser Guided";
@@ -77,7 +77,7 @@ class TransportPylonsComponent
 			{
 				"RC_RHS_PylonM_8Rnd_DAGR",
 				"RC_PylonM_250Rnd_30mm",
-				"RC_PylonM_19Rnd_Hydra_MP",
+				"RC_PylonM_19Rnd_Hydra_MP_Proxy",
 				"RC_PylonM_2Rnd_AGM114K"
 			};
 			displayname="SACLOS / Guided";

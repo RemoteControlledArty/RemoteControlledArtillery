@@ -450,8 +450,8 @@ class cfgWeapons
 	{
 		displayName="deploy Crocus";
 		displayNameShort="deploy Crocus";
-		reloadTime=1;
-		magazineReloadTime=1;
+		reloadTime=1.2;
+		magazineReloadTime=1.2;
 		magazines[]=
 		{
 			"RC_1Rnd_Crocus_Deployer_Mag",
@@ -460,7 +460,7 @@ class cfgWeapons
 		class player: player
 		{
 			displayName="deploy Crocus";
-			reloadTime=1;
+			reloadTime=1.2;
 		};
 	};
 

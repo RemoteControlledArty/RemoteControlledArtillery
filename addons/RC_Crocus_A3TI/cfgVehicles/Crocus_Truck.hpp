@@ -15,6 +15,7 @@ class RC_Crocus_Truck_A: RC_Crocus_Truck_Base
 		{
 			fired="params ['_uav', '_weapon'];  if (!Local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_CarrierDeploy";
 		};
+		#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
 	};
 
 	weapons[]=

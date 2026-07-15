@@ -135,6 +135,8 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
+			"A3_Aegis_Weapons_F_Aegis",
+			"A3_Aegis_Weapons_F_Aegis_GrenadeLaunchers_XM25",
 			"A3_Aegis_Armor_F_Aegis_APC_Wheeled_01",
 			"A3_Aegis_Armor_F_Aegis_APC_Wheeled_04",
 			"A3_Aegis_Armor_F_Aegis_MBT_02",

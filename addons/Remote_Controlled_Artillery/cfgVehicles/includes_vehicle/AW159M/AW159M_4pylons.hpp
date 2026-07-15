@@ -41,7 +41,7 @@ class TransportPylonsComponent
 		{
 			priority			= 1;
 			UIposition[]		= {0.59,0.4};
-			attachment			= "RC_PylonM_19Rnd_Hydra_MP";
+			attachment			= "RC_PylonM_19Rnd_Hydra_MP_Proxy";
 		};
 	};
 
@@ -53,7 +53,7 @@ class TransportPylonsComponent
 			attachment[] =
 			{
 				"RC_PylonM_300Rnd_25mm",
-				"RC_PylonM_19Rnd_Hydra_MP"
+				"RC_PylonM_19Rnd_Hydra_MP_Proxy"
 			};
 			displayname="Unguided";
 		};

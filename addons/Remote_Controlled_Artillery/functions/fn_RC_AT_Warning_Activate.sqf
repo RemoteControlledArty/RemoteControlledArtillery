@@ -116,28 +116,32 @@ params ["_vic", "_source", "_proj", "_mag"];
 
 					
 					private _stringPrj = "missile: " + _magName;
+					private _m = "M";
 					if (_ammoType isEqualTo "shotRocket") then {
 						_stringPrj = "rocket: " + _magName;
+						_m = "R";
 
-						//Estimate launcher bearing & distance
+						//estimate launcher bearing & distance
 						private _projVel = velocity _proj;
 						private _projSpeed = vectorMagnitude _projVel;
-						// assume initial speed ~30% higher than current
+						//assume initial speed ~30% higher than current
 						private _estInitSpeed = _projSpeed * 1.3;
 
-						// rough guess: how far back along trajectory it started
-						// time since fired (guess) = currentDistance / avgSpeed
+						//rough guess: how far back along trajectory it started
+						//time since fired (guess) = currentDistance / avgSpeed
 						private _avgSpeed = (_projSpeed + _estInitSpeed) / 2;
 						private _timeGuess = _distNow / _avgSpeed;
 
-						// project backwards along velocity vector
+						//project backwards along velocity vector
 						private _estLaunchPos = _projFirstPos vectorDiff (_projVel vectorMultiply _timeGuess);
-						// bearing from vic to guessed launch pos
+						//bearing from vic to guessed launch pos
 						_maxSourceBearing = round ([_vic, _estLaunchPos] call BIS_fnc_dirTo);
 
 						//_stringRocket = "rocket: " + str _maxSourceBearing;
 						//[_stringRocket] remoteExec ["systemChat", _crew];
 					};
+					//add to array
+					RC_AR_projectile_arr pushback [_proj, _m];
 
 					//bearing of first detected projectile pos
 					private _bearing =  round ([_vic, _projFirstPos] call BIS_fnc_dirTo);

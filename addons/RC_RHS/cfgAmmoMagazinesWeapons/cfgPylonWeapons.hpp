@@ -30,6 +30,14 @@ class RC_RHS_PylonW_Hydra: RC_RHS_PylonW_Hydra_Core
 		dispersion=0.006;	//0.12
 	};
 };
+class RC_RHS_PylonW_Hydra_Proxy: RC_RHS_PylonW_Hydra
+{
+	magazines[]=
+	{
+		"RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy",
+		"RC_RHS_PylonM_7Rnd_Hydra_MP_Proxy"
+	};
+};
 
 
 /*
@@ -92,6 +100,17 @@ class RC_RHS_PylonW_DAGR: RC_RHS_PylonW_DAGR_Base
 		displayNameShort="DAGR M310 LOAL";
 	};
 };
+/*
+class RC_RHS_PylonW_DAGR_Proxy: RC_RHS_PylonW_DAGR_Base
+{
+	magazines[]=
+	{
+		"RC_RHS_PylonM_8Rnd_DAGR_Proxy"
+	};
+};
+*/
+
+
 class RC_RHS_PylonW_S8_G: RC_RHS_PylonW_DAGR
 {
 	displayName="S-8 G";
@@ -111,6 +130,15 @@ class RC_RHS_PylonW_S8_G: RC_RHS_PylonW_DAGR
 		displayNameShort="S-8 G LOAL";
 	};
 };
+/*
+class RC_RHS_PylonW_S8_G_Proxy: RC_RHS_PylonW_S8_G
+{
+	magazines[]=
+	{
+		"RC_RHS_PylonM_8Rnd_S8_G_Proxy"
+	};
+};
+*/
 
 
 class RHS_weap_gau19;

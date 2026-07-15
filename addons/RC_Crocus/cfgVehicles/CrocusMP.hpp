@@ -34,6 +34,8 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	laserScanner=1;
 	showAllTargets="2 + 4";
 
+	//add irTarget=0; for different base mods?
+	//add irTargetSize=0.01; for different base mods?
 	camouflage=0.1;	//0.5 -> 0.2
 	audible=0.1;	//0.1 -> 0.1
 	radarTargetSize=0.035;	//0.1 -> 0.02

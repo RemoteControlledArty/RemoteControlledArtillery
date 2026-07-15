@@ -8,7 +8,7 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
-				"OM_H_O",
+				"OM_H_O","OM_H","OM_H_O_REWORK",
 				"RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134",
 				"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGR","DAGRM"
 
@@ -41,7 +41,7 @@ class TransportPylonsComponent
 		{
 			//priority			= 1;
 			UIposition[] 		= {0.04,0.42};
-			attachment			= "RC_PylonM_19Rnd_S5_MP";
+			attachment			= "RC_PylonM_19Rnd_S5_MP_Proxy";
 		};
 	};
 
@@ -53,7 +53,7 @@ class TransportPylonsComponent
 			attachment[] =
 			{
 				"RC_PylonM_300Rnd_25mm_O",
-				"RC_PylonM_19Rnd_S5_MP"
+				"RC_PylonM_19Rnd_S5_MP_Proxy"
 			};
 			displayname="Unguided";
 		};

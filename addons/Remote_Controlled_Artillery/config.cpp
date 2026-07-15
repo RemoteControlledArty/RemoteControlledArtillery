@@ -389,6 +389,10 @@ class CfgPatches
 			"RC_AW159M_O",
 			"RC_AW159M_I",
 
+			"RC_AI_AW159M",
+			"RC_AI_AW159M_O",
+			"RC_AI_AW159M_I",
+
 			"RC_OM_AW159M",
 			"RC_OM_AW159M_O",
 			"RC_OM_AW159M_I",
@@ -396,6 +400,10 @@ class CfgPatches
 			"RC_Ka60M",
 			"RC_Ka60M_O",
 			"RC_Ka60M_I",
+
+			"RC_AI_Ka60M",
+			"RC_AI_Ka60M_O",
+			"RC_AI_Ka60M_I",
 
 			"RC_OM_Ka60M",
 			"RC_OM_Ka60M_O",
@@ -574,9 +582,9 @@ class CfgPatches
 			"RC_Offroad_Interceptor_Direct",
 			"RC_Offroad_Interceptor_Direct_O",
 			"RC_Offroad_Interceptor_Direct_I",
-			"RC_Offroad_Interceptor_Overfly",
-			"RC_Offroad_Interceptor_Overfly_O",
-			"RC_Offroad_Interceptor_Overfly_I",
+			//"RC_Offroad_Interceptor_Overfly",
+			//"RC_Offroad_Interceptor_Overfly_O",
+			//"RC_Offroad_Interceptor_Overfly_I",
 			"RC_Offroad_Interceptor_TopDown",
 			"RC_Offroad_Interceptor_TopDown_O",
 			"RC_Offroad_Interceptor_TopDown_I",
@@ -861,6 +869,7 @@ class CfgFunctions
 			class RC_cursorTargetIntoDatalink {postInit=1;};
 			//class RC_cursorTargetIntoDatalink_Loop {postInit=1;};
 			class RC_cUAS_Beep_Loop {postInit=1;};
+			class RC_Proxy {postInit=1;};
 			
 			//class postInit {postInit=1;};
 			//class RC_RscOff {};
@@ -899,9 +908,15 @@ class CfgFunctions
 			file="\Remote_Controlled_Artillery\functions\FPV_Request";
 			
 			class RC_FPV_Request_ContainerSide {postInit=1;};
+			class RC_FPV_Request_define {postInit=1;};
 			class RC_FPV_Request_Condition {};
+
+			/*
+			class RC_FPV_Request_findDeployers {};
 			class RC_FPV_Request_Search {};
 			class RC_FPV_Request_Deploy {};
+			class RC_FPV_Request_VehDeploy {};
+			*/
 		};
 		/*
 		class RC_Testing
@@ -1170,8 +1185,8 @@ class CfgMineTriggers
 };
 class CfgAmmo
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\PylonAmmo.hpp"
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\Ammo.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\PylonAmmo.hpp"
 };
 class CfgMagazines
 {

@@ -177,3 +177,4 @@ class RC_RHS_Hydra_MP: RC_Hydra_MP
 	model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229_fly";
 	proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229";
 };
+class RC_RHS_Hydra_MP_Proxy: RC_RHS_Hydra_MP {};

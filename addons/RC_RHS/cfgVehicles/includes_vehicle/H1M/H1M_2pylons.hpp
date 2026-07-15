@@ -44,7 +44,7 @@ class TransportPylonsComponent
 			UIposition[] 		= {0.1,0.44};
 			hitpoint 			= "HitPylon2";
 
-			attachment			= "RC_RHS_PylonM_19Rnd_Hydra_MP";
+			attachment			= "RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy";
 		};
 		class cmDispenser
 		{
@@ -64,7 +64,7 @@ class TransportPylonsComponent
 			attachment[] =
 			{
 				"RC_PylonM_300Rnd_25mm",
-				"RC_RHS_PylonM_19Rnd_Hydra_MP",
+				"RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy",
 				"rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4"
 			};
 			displayname="Unguided";

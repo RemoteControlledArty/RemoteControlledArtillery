@@ -44,7 +44,7 @@ class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayMan
 		class SensorDisplay
 		{
 			componentType="SensorsDisplayComponent";
-			range[]={2000,4000,6000,8000,1000};
+			range[]={1000,2000,4000,6000,8000};
 			resource="RscCustomInfoSensors";
 		};
 		class CrewDisplay

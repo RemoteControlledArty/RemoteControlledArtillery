@@ -485,9 +485,10 @@ class RC_Offroad_Interceptor_Base: RC_Offroad_Interceptor_Fetch
 
 class RC_Offroad_Interceptor_Direct: RC_Offroad_Interceptor_Base
 {
-	displayname="Offroad AA-Interceptor (Direct)";
-	scope=1;		//2
-	scopeCurator=0;	//2
+	displayname="unknown launcher Offroad (dir)";
+	//displayname="Offroad AA-Interceptor (Direct)";
+	scope=2;		//2
+	scopeCurator=2;	//2
 
 	class Turrets: Turrets
 	{
@@ -531,9 +532,11 @@ class RC_Offroad_Interceptor_Direct_I: RC_Offroad_Interceptor_Direct
 };
 
 
+/*
 class RC_Offroad_Interceptor_Overfly: RC_Offroad_Interceptor_Direct
 {
-	displayname="Offroad AA-Interceptor (Overfly)";
+	displayname="unknown launcher Offroad (OvFl)";
+	//displayname="Offroad AA-Interceptor (Overfly)";
 
 	class Turrets: Turrets
 	{
@@ -570,11 +573,13 @@ class RC_Offroad_Interceptor_Overfly_I: RC_Offroad_Interceptor_Overfly
 	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
+*/
 
 
 class RC_Offroad_Interceptor_TopDown: RC_Offroad_Interceptor_Direct
 {
-	displayname="Offroad AA-Interceptor (TopDown)";
+	displayname="unknown launcher Offroad (TD)";
+	//displayname="Offroad AA-Interceptor (TopDown)";
 
 	class Turrets: Turrets
 	{
@@ -615,7 +620,8 @@ class RC_Offroad_Interceptor_TopDown_I: RC_Offroad_Interceptor_TopDown
 
 class RC_Offroad_Interceptor_Cruise: RC_Offroad_Interceptor_Direct
 {
-	displayname="Offroad AA-Interceptor (Cruise)";
+	displayname="unknown launcher Offroad (Cr)";
+	//displayname="Offroad AA-Interceptor (Cruise)";
 
 	class Turrets: Turrets
 	{
