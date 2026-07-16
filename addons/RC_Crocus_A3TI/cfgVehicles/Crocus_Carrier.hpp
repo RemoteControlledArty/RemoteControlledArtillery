@@ -13,8 +13,8 @@ class RC_Crocus_Carrier_A: RC_Crocus_Carrier_Base
 	{
 		class RC_Crocus
 		{
-			//fired="params ['_uav', '_weapon'];  if (!Local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_CarrierDeploy";
-			fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_VehDeploy";
+			//fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_vehDeploy";
+			fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_CrocusDeploy";
 		};
 		#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
 	};

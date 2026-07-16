@@ -1052,8 +1052,8 @@ class RC_Interceptor_Mothership_Base: RC_FPV_Mothership_Base
 		};
 	};
 
-	//displayName="RC AA-Interceptor Mothership";
-	displayName="RC unknown FW-UAV";
+	displayName="RC AA-Interceptor Mothership";
+	//displayName="RC unknown FW-UAV";
 	editorSubcategory="RC_AntiAir_subcat";
 };
 class RC_Interceptor_Mothership: RC_Interceptor_Mothership_Base
@@ -1081,8 +1081,8 @@ class RC_Interceptor_Mothership_I: RC_Interceptor_Mothership
 
 class RC_AI_Interceptor_Mothership: RC_Interceptor_Mothership
 {
-	displayName="unknown FW-UAV";
-	//displayName="AA-Interceptor Mothership";
+	//displayName="unknown FW-UAV";
+	displayName="AA-Interceptor Mothership";
 	isUav=0;
 	
 	crew="RC_B_HeliPilot";

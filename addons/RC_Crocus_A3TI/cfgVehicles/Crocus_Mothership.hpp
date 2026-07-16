@@ -16,7 +16,8 @@ class RC_Crocus_Mothership: RC_Crocus_Mothership_Base
 		class RC_Crocus
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
-			fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_VehDeploy";
+			//fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_vehDeploy";
+			fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_CrocusDeploy";
 		};
 	};
 
@@ -80,7 +81,8 @@ class RC_Crocus_Mothership_NoCam: RC_Crocus_Mothership_NoCam_Base
 		class RC_Crocus
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
-			fired="params ['_uav', '_weapon'];  if (!Local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_VehDeploy";
+			//fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_vehDeploy";
+			fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_CrocusDeploy";
 		};
 	};
 
@@ -142,7 +144,8 @@ class RC_Crocus_MothershipMQ: RC_Crocus_MothershipMQ_Base
 		class RC_Crocus
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
-			fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_VehDeploy";
+			//fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_vehDeploy";
+			fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_CrocusDeploy";
 		};
 	};
 
@@ -206,7 +209,8 @@ class RC_Crocus_MothershipMQ_NoCam: RC_Crocus_MothershipMQ_NoCam_Base
 		class RC_Crocus
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
-			fired="params ['_uav', '_weapon'];  if (!Local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_VehDeploy";
+			//fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_vehDeploy";
+			fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_CrocusDeploy";
 		};
 	};
 

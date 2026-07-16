@@ -59,7 +59,7 @@ class RC_APS_Expl_Scripted: ClaymoreDirectionalMine_Remote_Ammo_Scripted
 class BulletBase;
 class RC_FPV_Deployer_Ammo: BulletBase
 {
-	ace_rearm_caliber=155;	//to cost supplies
+	ace_rearm_caliber=155;	//to cost supplies, reduce for one round mags
 	muzzleEffect="BIS_fnc_effectFiredSmokeLauncher";
 	effectsSmoke="EmptyEffect";
 	weaponLockSystem=0;

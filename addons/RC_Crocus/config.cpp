@@ -137,6 +137,8 @@ class CfgFunctions
 			class fpv_destroyUI_MP {};
 
 			class fpv_Throw {};
+			class fpv_CrocusDeploy {};
+
 			class fpv_CarrierDeploy {};
 			class fpv_CarrierDeployPvP {};
 			class fpv_MothershipDeploy {};

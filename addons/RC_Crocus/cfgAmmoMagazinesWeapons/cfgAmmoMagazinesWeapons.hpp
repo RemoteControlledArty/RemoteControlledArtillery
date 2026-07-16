@@ -210,6 +210,8 @@ class CfgAmmo
 	class RC_Crocus_Deployer_Ammo: RC_target_confirmer_AB_ammo
 	{
 		model="\ArmaFPV\drone.p3d";
+		ace_rearm_caliber=40;
+
 		timeToLive=3;
 		initTime=3;
 		thrustTime=3;

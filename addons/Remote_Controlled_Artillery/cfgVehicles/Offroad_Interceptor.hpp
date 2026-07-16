@@ -485,8 +485,8 @@ class RC_Offroad_Interceptor_Base: RC_Offroad_Interceptor_Fetch
 
 class RC_Offroad_Interceptor_Direct: RC_Offroad_Interceptor_Base
 {
-	displayname="unknown launcher Offroad (dir)";
-	//displayname="Offroad AA-Interceptor (Direct)";
+	//displayname="unknown launcher Offroad (dir)";
+	displayname="Offroad AA-Interceptor (Direct)";
 	scope=2;		//2
 	scopeCurator=2;	//2
 
@@ -578,8 +578,8 @@ class RC_Offroad_Interceptor_Overfly_I: RC_Offroad_Interceptor_Overfly
 
 class RC_Offroad_Interceptor_TopDown: RC_Offroad_Interceptor_Direct
 {
-	displayname="unknown launcher Offroad (TD)";
-	//displayname="Offroad AA-Interceptor (TopDown)";
+	//displayname="unknown launcher Offroad (TD)";
+	displayname="Offroad AA-Interceptor (TopDown)";
 
 	class Turrets: Turrets
 	{
@@ -620,8 +620,8 @@ class RC_Offroad_Interceptor_TopDown_I: RC_Offroad_Interceptor_TopDown
 
 class RC_Offroad_Interceptor_Cruise: RC_Offroad_Interceptor_Direct
 {
-	displayname="unknown launcher Offroad (Cr)";
-	//displayname="Offroad AA-Interceptor (Cruise)";
+	//displayname="unknown launcher Offroad (Cr)";
+	displayname="Offroad AA-Interceptor (Cruise)";
 
 	class Turrets: Turrets
 	{
