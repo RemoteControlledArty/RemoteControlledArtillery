@@ -2,17 +2,25 @@
 class 5000Rnd_762x51_Yellow_Belt;
 class RC_PylonM_3000Rnd_338_SLAP_T_R: 5000Rnd_762x51_Yellow_Belt
 {
-	displayName="> .338NM SLAP 3000x";
+	displayName="> .338NM SLAP 3000x red";
 	displayNameShort=".338NM SLAP";
 	descriptionShort=".338NM Minigun";
 	pylonWeapon="RC_PylonW_338_Minigun";
-	ammo="RC_B_338_SLAP_T_R";
+	ammo="RC_Pylon_B_338_SLAP_T_R";
 	count=3000;
 	tracersEvery=1;
 	hardpoints[]={"OM_H","OM_H_O"};
 };
-class RC_PylonM_3000Rnd_338_SLAP_T_G: RC_PylonM_3000Rnd_338_SLAP_T_R {ammo="RC_B_338_SLAP_T_G";};
-class RC_PylonM_3000Rnd_338_SLAP_T_Y: RC_PylonM_3000Rnd_338_SLAP_T_R {ammo="RC_B_338_SLAP_T_Y";};
+class RC_PylonM_3000Rnd_338_SLAP_T_G: RC_PylonM_3000Rnd_338_SLAP_T_R
+{
+	displayName="> .338NM SLAP 3000x green";
+	ammo="RC_Pylon_B_338_SLAP_T_G";
+};
+class RC_PylonM_3000Rnd_338_SLAP_T_Y: RC_PylonM_3000Rnd_338_SLAP_T_R
+{
+	displayName="> .338NM SLAP 3000x yellow";
+	ammo="RC_Pylon_B_338_SLAP_T_Y";
+};
 
 
 //autocannon

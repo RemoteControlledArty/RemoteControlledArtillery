@@ -92,18 +92,27 @@ class RC_Laserbatteries: Laserbatteries
 */
 
 
+//pylon version with slight indirect hit
 class 2000Rnd_762x51_Belt_T_Red;
 class RC_2000Rnd_338_SLAP_T_R: 2000Rnd_762x51_Belt_T_Red
 {
-	displayName=".338NM SLAP";
+	displayName=".338NM SLAP red";
 	displayNameShort=".338NM SLAP";
 	descriptionShort=".338NM Minigun";
-	ammo="RC_B_338_SLAP_T_R";
+	ammo="RC_Pylon_B_338_SLAP_T_R";
 	count=2000;
 	tracersEvery=1;
 };
-class RC_2000Rnd_338_SLAP_T_G: RC_2000Rnd_338_SLAP_T_R {ammo="RC_B_338_SLAP_T_G";};
-class RC_2000Rnd_338_SLAP_T_Y: RC_2000Rnd_338_SLAP_T_R {ammo="RC_B_338_SLAP_T_Y";};
+class RC_2000Rnd_338_SLAP_T_G: RC_2000Rnd_338_SLAP_T_R
+{
+	displayName=".338NM SLAP green";
+	ammo="RC_Pylon_B_338_SLAP_T_G";
+};
+class RC_2000Rnd_338_SLAP_T_Y: RC_2000Rnd_338_SLAP_T_R
+{
+	displayName=".338NM SLAP yellow";
+	ammo="RC_Pylon_B_338_SLAP_T_Y";
+};
 
 
 //RC ATGM
