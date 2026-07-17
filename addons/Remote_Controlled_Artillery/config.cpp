@@ -882,6 +882,9 @@ class CfgFunctions
 			class RC_AT_Warning_Activate {};
 			class RC_AT_TurretOwner {};
 			class RC_AT_Turn {};
+			class RC_APS_checkLOS {};
+			class RC_APS_lead {};
+			class RC_APS_interceptPos {};
 			class RC_APS_Activate {};
 			class RC_AT_SourceIndicator {};
 
