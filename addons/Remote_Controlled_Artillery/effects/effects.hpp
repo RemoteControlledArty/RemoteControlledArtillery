@@ -440,3 +440,88 @@ class ImpactMetalSabotBig_HVKEM: ImpactMetalSabotBig
 		lifeTime=1;
 	};
 };
+
+
+/*
+class RC_APS_ExplosionEffect
+{
+    class Sparks_Cone
+    {
+      	simulation = "particles";
+        type = "RC_ConeSparks";
+        position[] = {0,0,0};
+        intensity = 1;
+        interval = 0.01;
+        lifeTime = 0.6;
+        qualityLevel = -1;
+    };
+};
+*/
+class RC_APS_ExplosionEffect
+{
+	//custom sparks
+	class ImpactSparks1
+	{
+		simulation="particles";
+		type="RC_APS_Sparks1";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.5;
+	};
+	class ImpactSparks2
+	{
+		simulation="particles";
+		type="RC_APS_Sparks2";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+	};
+	//default of DirectionalMineExplosion
+	class Explosion1
+	{
+		intensity = 3;
+		interval = 1;
+		lifeTime = 0.25;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "MineExplosionParticles";
+	};
+	class FireSparksSmall1
+	{
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "FireSparksSmall2";
+	};
+	class LightExp
+	{
+		intensity = 0.001;
+		interval = 1;
+		lifeTime = 0.25;
+		position[] = {0,1.5,0};
+		simulation = "light";
+		type = "ExploLight";
+	};
+	class MissileCircleDust
+	{
+		intensity = 1;
+		interval = 1;
+		lifeTime = 0.2;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "MineCircleDust1";
+	};
+	class SmallSmoke1
+	{
+		intensity = 1;
+		interval = 1;
+		lifeTime = 1;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "CloudSmallLight2";
+	};
+};

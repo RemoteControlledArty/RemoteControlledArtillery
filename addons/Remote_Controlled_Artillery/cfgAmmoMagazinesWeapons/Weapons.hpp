@@ -352,6 +352,7 @@ class RC_338_DoorMinigun: RC_338_DoorMinigun_Base
 	{
 		displayName=".338NM";
 		displayNameShort=".338NM";
+		dispersion=0.003;	//0.00093
 	};
 };
 class LMG_Minigun_Transport2;
@@ -378,6 +379,7 @@ class RC_338_DoorMinigun2: RC_338_DoorMinigun2_Base
 	{
 		displayName=".338NM";
 		displayNameShort=".338NM";
+		dispersion=0.003;	//0.00093
 	};
 };
 

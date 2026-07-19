@@ -215,6 +215,9 @@ class RC_UH1M_I: RC_UH1M
 //optionally manned
 class RC_OM_UH1M_UV: RC_UH1M
 {
+	scope=0;
+	scopeCurator=0;
+
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_UV_conversion.hpp"
 

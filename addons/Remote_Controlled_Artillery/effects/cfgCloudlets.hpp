@@ -54,6 +54,36 @@ class RC_ExploAmmoSmoke_AC: ExploAmmoSmoke
 };
 
 
+/*
+class RC_ConeSparks: Default
+{
+	interval = 0.01;
+	circleRadius = 0.05;
+	circleVelocity[] = {0,0,0};
+	particleShape = "\A3\data_f\ParticleEffects\Universal\Universal";
+	particleFSNtieth = 16;
+	particleFSIndex = 3;
+	particleFSFrameCount = 4;
+	particleFSLoop = 0;
+	particleType = "Billboard";
+	timerPeriod = 0.05;
+	lifeTime = 0.6;
+	moveVelocity[] = {0,15,0};
+	MoveVelocityVar[] = {6,4,6};
+	rotationVelocity = 20;
+	weight = 3;
+	volume = 0.1;
+	rubbing = 0.05;
+	size[] = {0.03, 0.015, 0};
+	color[] = {{1,0.8,0.3,1},{1,0.5,0.1,0.6},{1,0.3,0,0}};
+	randomDirectionPeriod = 0.02;
+	randomDirectionIntensity = 0.15;
+	position[] = {0,0,0};
+	positionVar[] = {0.05,0,0.05};
+};
+*/
+
+
 class RC_MortarExp: Default
 {
 	interval=0.02;
@@ -405,6 +435,11 @@ class ImpactSparksSabot1_HVKEM: ImpactSparksSabot1
 	sizeCoef=1;	//1	//1
 	animationSpeed[]={1715};	//1000	//1000
 };
+class RC_APS_Sparks1: ImpactSparksSabot1_HVKEM
+{
+	colorVar[]={0.1,0.1,0,0};
+	color[]={{0.75, 0.5, 0, -50}};
+};
 
 class ImpactSparksSabot2;
 class ImpactSparksSabot2_HVKEM: ImpactSparksSabot2
@@ -415,4 +450,9 @@ class ImpactSparksSabot2_HVKEM: ImpactSparksSabot2
 	rubbing=0;	//0	//0.30000001
 	size[]={1.79999996,0.89999998,0};	//{0.89999998,0.44999999,0}	//{0.12,0}
 	animationSpeed[]={1715};	//1000	//1000
+};
+class RC_APS_Sparks2: ImpactSparksSabot2_HVKEM
+{
+	colorVar[]={0.1,0.1,0,0};
+	color[]={{0.75, 0.5, 0, -50}};
 };

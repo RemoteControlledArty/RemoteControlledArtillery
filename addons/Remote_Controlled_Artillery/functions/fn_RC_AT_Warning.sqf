@@ -20,7 +20,7 @@ publicVariable "RC_AT_Warning_Array";
 
 	if (_opposedTo) then {
 		if (_vic distance _source > 15) then {
-			[_vic, _projectile] call fnc_RC_APS_Activate;	//RC_fnc_RC_APS_Activate
+			[_vic, _projectile] call RC_fnc_RC_APS_Activate;	//RC_fnc_RC_APS_Activate
 		};
 
 		[_vic, _source, _proj, _mag] call RC_fnc_RC_AT_Warning_Activate;

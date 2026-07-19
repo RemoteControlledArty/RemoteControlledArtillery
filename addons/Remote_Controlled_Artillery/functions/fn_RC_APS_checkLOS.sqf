@@ -1,30 +1,20 @@
-params ["_vic", "_proj", "_projPos", "_vicCenter"];
+params ["_vic", "_proj", "_projPos", "_vicCenter", "_fwd", "_halfWidth", "_halfLength"];
 
-// vehicle pivot: mass center, raised to roughly turret height
-private _vicCenterAGL = _vic modelToWorldVisual (getCenterOfMass _vic);
-private _vicCenter = AGLToASL _vicCenterAGL;
-private _sensorsHeight = 1.4;	//above centerMass
-private _sensorCenterPos = _vicCenter vectorAdd [0,0,_sensorsHeight];
+// vehicle pivot: mass center, raised to height of sensors
+private _sensorsHeight = 1.4;
+private _centerPos = _vicCenter vectorAdd [0,0,_sensorsHeight];
 
 // horizontal approach direction and its perpendicular
-private _dirHoriz = [(_projPos#0)-(_sensorCenterPos#0), (_projPos#1)-(_sensorCenterPos#1), 0];
+private _dirHoriz = [(_projPos#0)-(_centerPos#0), (_projPos#1)-(_centerPos#1), 0];
 _dirHoriz = vectorNormalized _dirHoriz;
 private _perp = [-(_dirHoriz#1), (_dirHoriz#0), 0];
-
-// vehicle's own forward/right axes, flattened horizontally
-private _fwd = vectorDirVisual _vic;
-_fwd = vectorNormalized [_fwd#0, _fwd#1, 0];
-private _right = [(_fwd#1), -(_fwd#0), 0];
-
-// fixed generic armored vehicle size
-private _halfWidth  = 1.6;
-private _halfLength = 3.6;
 
 private _offsetDist = (_halfWidth  * abs(_right vectorDotProduct _perp))
 					+ (_halfLength * abs(_fwd   vectorDotProduct _perp));
 
-private _sensorLeftPos  = _sensorCenterPos vectorAdd (_perp vectorMultiply _offsetDist);
-private _sensorRightPos = _sensorCenterPos vectorAdd (_perp vectorMultiply (-_offsetDist));
+// side sensors if center sensor obstructed
+private _leftPos  = _centerPos vectorAdd (_perp vectorMultiply _offsetDist);
+private _rightPos = _centerPos vectorAdd (_perp vectorMultiply (-_offsetDist));
 
 // building/rock obstruction check from center, left, right sensors
 private _fnc_objClear = {
@@ -33,9 +23,9 @@ private _fnc_objClear = {
 	({_x isKindOf "Building" || {_x isKindOf "Rock"}} count _hits) == 0
 };
 
-private _objClear = ([_sensorCenterPos] call _fnc_objClear)
-				|| ([_sensorLeftPos]   call _fnc_objClear)
-				|| ([_sensorRightPos]  call _fnc_objClear);
+private _objClear = ([_centerPos] call _fnc_objClear)
+				|| ([_leftPos]   call _fnc_objClear)
+				|| ([_rightPos]  call _fnc_objClear);
 
-//output
+// output
 _objClear

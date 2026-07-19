@@ -44,12 +44,14 @@ class RC_target_confirmer_ammo: Default
 };
 class RC_APS_A: RC_target_confirmer_ammo
 {
-	ace_rearm_caliber=155;	//to cost supplies
+	//ace_rearm_caliber=155;	//to cost supplies
+	ace_rearm_caliber=82;	//to cost supplies
 };
 class ClaymoreDirectionalMine_Remote_Ammo_Scripted;
 class RC_APS_Expl_Scripted: ClaymoreDirectionalMine_Remote_Ammo_Scripted
 {
 	author="Ascent";
+	explosionEffects="RC_APS_ExplosionEffect";	//DirectionalMineExplosion
 	indirectHit=10;			//10	//default 40
 	indirectHitRange=5;		//5		//default 30
 	explosionAngle=200;				//default 60, 180 seems insufficient to damage source, but 360 endangers friendlies, but doesnt seem to actually work at all
@@ -59,7 +61,8 @@ class RC_APS_Expl_Scripted: ClaymoreDirectionalMine_Remote_Ammo_Scripted
 class BulletBase;
 class RC_FPV_Deployer_Ammo: BulletBase
 {
-	ace_rearm_caliber=155;	//to cost supplies, reduce for one round mags
+	//ace_rearm_caliber=155;	//to cost supplies, reduce for one round mags
+	ace_rearm_caliber=40;	//to cost supplies, reduce for one round mags
 	muzzleEffect="BIS_fnc_effectFiredSmokeLauncher";
 	effectsSmoke="EmptyEffect";
 	weaponLockSystem=0;

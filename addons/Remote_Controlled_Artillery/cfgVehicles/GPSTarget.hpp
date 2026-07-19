@@ -263,8 +263,8 @@ class RC_InterceptorMissile_Target: RC_Projectile_Target_Base
 class RC_InterceptorMissile_Target_B_Pre: RC_Interceptor_Target_B
 {
 	scope=0;
-	//displayName="Interceptor Drone";
-	displayName="unknown projectile";
+	displayName="Interceptor Drone";
+	//displayName="unknown projectile";
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
 	proxyShape="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
 	

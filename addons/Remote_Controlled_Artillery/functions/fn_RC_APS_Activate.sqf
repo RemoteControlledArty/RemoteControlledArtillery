@@ -5,485 +5,255 @@
 	APS
 */
 
-fnc_RC_APS_Activate = {
+//fnc_RC_APS_Activate = {
+
 params ["_vic", "_proj"];
 
-//systemchat "APS start";
+//systemchat "APS start";	//debug
 
 private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
 
-//systemchat "charges" + str _chargesAPS;
-
 if (_chargesAPS > 0) then {
 
-	//systemchat "_chargesAPS > 0";
+	//systemchat "_chargesAPS > 0";	//debug
 
-	private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
+	private _ammoType = typeOf _proj;
+	private _ammoConfig = configFile >> "CfgAmmo" >> _ammoType;
+	private _ammoSim = getText (_ammoConfig >> "simulation");
+	private _profiles = getArray (_ammoConfig >> "flightProfiles");
+	//private _submunDir = getText (_ammoConfig >> "submunitionDirectionType");
+	private _canOverfly = "Overfly" in _profiles;
+	//private _submunTargetDir = "SubmunitionTargetDirection" in _submunDir;
 
-	if (_ammoType isEqualTo "shotRocket") then {
-		[_vic, _proj] spawn
-		{
-			params ["_vic", "_proj"];
+	[_vic, _proj, _ammoSim, _canOverfly] spawn
+	{
+		params ["_vic", "_proj", "_ammoSim", "_canOverfly"];
 
-			scopeName "APS";	//still needed?
-			private _prevDist = 121;
-			private _interceptDist = 120;
+		scopeName "APS";
+		private _prevDist = 121;
+		private _interceptDist = 120;
 
-			while {alive _vic && alive _proj} do {
+		while {alive _vic && alive _proj} do {
 
-				private _curDist = _proj distance _vic;
-				if (_curDist < _interceptDist) then {
+			//systemchat "while alive";	//debug
 
-					//exit if already passed
-					if (_curDist > _prevDist) exitWith {};
+			private _curDist = _proj distance _vic;
+			if (_curDist < _interceptDist) then {
 
-					private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
-					if (_chargesAPS > 0) then {
-					
-						//proceed if terrain doesnt block missile / countermeasure
-						if !(terrainIntersectASL [((getPosASL _vic) vectorAdd [0, 0, 2.5]), getPosASL _proj]) then {
-							
-							//checks if buildings / rocks block the sensor and countermeasure, restart loop if blocked
-							private _projPos = getPosASL _proj;
-							private _vicCenter = AGLToASL (_vic modelToWorldVisual (getCenterOfMass _vic));
-							if !([_vic, _proj, _projPos, _vicCenter] call RC_fnc_RC_APS_checkLOS) then {continue};
-							/*
-							private _objClear = [_vic, proj] call RC_fnc_RC_APS_checkLOS;
-							if !(_objClear) then { continue };
-							*/
-
-							private _dist = _proj distance _vic;
-							private _projVel = velocity _proj;
-
-							private _leadArr = [_vic, _vicCenter, _projPos, _projVel, _curDist] call RC_fnc_RC_APS_lead;
-							private _vicFuture = _leadArr#0;
-							private _projFuture = _leadArr#1;
-
-							// vehicle local axes, flattened horizontally
-							private _fwd = vectorDirVisual _vic;
-							_fwd = vectorNormalized [_fwd#0, _fwd#1, 0];
-							private _right = [(_fwd#1), -(_fwd#0), 0];
-
-							private _missVec = _projFuture vectorDiff _vicFuture;
-
-							// decompose the miss into vehicle-relative local coordinates
-							private _localLat  = _missVec vectorDotProduct _right; // side-to-side
-							private _localLong = _missVec vectorDotProduct _fwd;   // front-to-back
-							private _localVert = _missVec#2;                       // up-down
-
-							// same footprint constants as the missile branch, plus a small margin
-							// for warhead/blast radius so it's not a pixel-perfect hitbox
-							private _halfWidth  = 1.6;
-							private _halfLength = 3.6;
-							private _halfHeight = 1.75;
-							private _margin = 0.5;
-
-							private _willHit = (abs(_localLat)  < (_halfWidth  + _margin))
-											&& {abs(_localLong) < (_halfLength + _margin)}
-											&& {abs(_localVert) < (_halfHeight + _margin)};
-
-
-							if (_willHit) exitWith {
-
-								private _projDir = (getDir _proj);
-								deleteVehicle _proj;
-
-								/*
-								_proj setVelocity [0,0,0];
-								_proj setDir ((getDir object) + 90);
-								_proj setPosATL _interceptPosATL;
-								triggerAmmo _proj;
-
-								//doesnt always trigger
-								*/
-
-								playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _vic, false, getPosASL _vic, 5, 0.8, 600];
-								
-								private _interceptPosATL = [_vicCenter, _projPos, _projVel] call RC_fnc_RC_APS_interceptPos;
-
-								//USE setVel,setPos,setDir on projectile to get actual explosion
-								_expl = "RC_APS_Expl_Scripted" createVehicle _interceptPosATL;
-								private _explDir = -_projDir;
-								[_expl, _explDir] remoteExec ["setDir", 0];
-								_expl setDamage 1;
-								
-								//_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
-								private _vicOwner = owner _vic;
-								private _removeMagArr = ["RC_1Rnd_APS_M", [-1]];
-								[_vic, _removeMagArr] remoteExec ["removeMagazineTurret", _vicOwner];
-								
-								private _nextChargesAPS = 0 max (_chargesAPS - 1);
-								private _string = "activated APS, " + str _nextChargesAPS + " remaining";
-								private _crew = (crew _vic) select {isPlayer _x};
-								[_string] remoteExec ["systemChat", _crew];
-
-								breakOut "APS";	//still needed?
-							};
-						};
-					};
+				// exit if projectile already passed
+				if (_curDist > _prevDist) exitWith {
+					//systemchat "passed";	//debug
 				};
 
-				_prevDist = _curDist;
-			};
-		};
-	} else {
-		[_vic, _proj] spawn
-		{
-			params ["_vic", "_proj"];
-
-			scopeName "APS";	//still needed?
-			private _prevDist = 121;
-			private _interceptDist = 120;
-
-			while {(alive _vic) and (alive _proj)} do {
-
-				private _curDist = _proj distance _vic;
-				if (_curDist < _interceptDist) then {
-
-					//exit if already passed
-					if (_curDist > _prevDist) exitWith {};
-
-					private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
-					if (_chargesAPS > 0) then {
+				private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
+				if (_chargesAPS > 0) then {
+				
+					// only proceed if terrain doesnt block missile / countermeasure
+					if (terrainIntersectASL [((getPosASL _vic) vectorAdd [0, 0, 2.5]), getPosASL _proj]) then {continue};
 					
-						//proceed if terrain doesnt block missile / countermeasure
-						if !(terrainIntersectASL [((getPosASL _vic) vectorAdd [0, 0, 2.5]), getPosASL _proj]) then {
-							
-							private _projPos = getPosASL _proj;
-							private _vicCenter = AGLToASL (_vic modelToWorldVisual (getCenterOfMass _vic));
-							if !([_vic, _proj, _projPos, _vicCenter] call RC_fnc_RC_APS_checkLOS) then {continue};
-							/*
-							private _objClear = [_vic, proj] call RC_fnc_RC_APS_checkLOS;
-							if !(_objClear) then { continue };
-							*/
 
-							// predictive intercept check
-							private _projVel = velocity _proj;
+					// basic values
+					private _projVel = velocity _proj;
+					private _projPos = getPosASL _proj;
+					private _projDir = getDir _proj;
 
-							private _leadArr = [_vic, _vicCenter, _projPos, _projVel, _curDist] call RC_fnc_RC_APS_lead;
-							private _vicFuture = _leadArr#0;
-							private _projFuture = _leadArr#1;
+					// average vehicle sizes
+					private _halfWidth  = 1.75;
+					private _halfLength = 3.75;
+					private _halfHeight = 1.75;
 
-							private _dx = (_vicFuture#0) - (_projFuture#0);
-							private _dy = (_vicFuture#1) - (_projFuture#1);
-							private _missHoriz = sqrt((_dx*_dx) + (_dy*_dy));
-							private _heightAboveVic = (_projFuture#2) - (_vicFuture#2);
+					// vehicle forward/right/up axes, flattened horizontally
+					private _fwd = vectorDirVisual _vic;
+					_fwd = vectorNormalized [_fwd#0, _fwd#1, 0];
+					private _right = [(_fwd#1), -(_fwd#0), 0];
 
-							private _baseThreshold = 5;
-							private _leadFactor    = 0.15;
-							private _maxThreshold  = 25;
-							private _horizThreshold = (_baseThreshold + (_curDist * _leadFactor)) min _maxThreshold;
-
-							private _lowMargin  = 3;
-							private _highMargin = 15;
-
-							if (_missHoriz > _horizThreshold) then { continue };
-							if (_heightAboveVic < -_lowMargin) then { continue };
-							if (_heightAboveVic > _highMargin) then { continue };
+					// vehicle center of mass
+					private _vicCenter = AGLToASL (_vic modelToWorldVisual (getCenterOfMass _vic));
 
 
-							// if not potential miss then activate APS
-							if (true) exitWith {
-								//systemchat "APS";	//debug
+					// checks if buildings / rocks block the sensor and countermeasure
+					private _sensorsHeight = 1.4;
+					private _centerPos = _vicCenter vectorAdd [0,0,_sensorsHeight];
 
-								private _projDir = getDir _proj;
-								deleteVehicle _proj;
-								//[_proj] remoteExec ["deleteVehicle", 0];
+					// horizontal approach direction and its perpendicular
+					private _dirHoriz = [(_projPos#0)-(_centerPos#0), (_projPos#1)-(_centerPos#1), 0];
+					_dirHoriz = vectorNormalized _dirHoriz;
+					private _perp = [-(_dirHoriz#1), (_dirHoriz#0), 0];
 
-								playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _vic, false, getPosASL _vic, 5, 0.8, 600];
-								
-								private _interceptPosATL = [_vicCenter, _projPos, _projVel] call RC_fnc_RC_APS_interceptPos;
-								
-								//USE setVel,setPos,setDir on projectile to get actual explosion
-								_expl = "RC_APS_Expl_Scripted" createVehicle _interceptPosATL;
-								private _explDir = -_projDir;
-								[_expl, _explDir] remoteExec ["setDir", 0];
-								_expl setDamage 1;
-								
-								//_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
-								private _vicOwner = owner _vic;
-								private _removeMagArr = ["RC_1Rnd_APS_M", [-1]];
-								[_vic, _removeMagArr] remoteExec ["removeMagazineTurret", _vicOwner];
-								
-								private _nextChargesAPS = 0 max (_chargesAPS - 1);
-								private _string = "activated APS, " + str _nextChargesAPS + " remaining";
-								private _crew = (crew _vic) select {isPlayer _x};
-								[_string] remoteExec ["systemChat", _crew];
+					private _offsetDist = (_halfWidth  * abs(_right vectorDotProduct _perp))
+										+ (_halfLength * abs(_fwd   vectorDotProduct _perp));
 
-								breakOut "APS";	//still needed?
+					// side sensors if center sensor obstructed
+					private _leftPos  = _centerPos vectorAdd (_perp vectorMultiply _offsetDist);
+					private _rightPos = _centerPos vectorAdd (_perp vectorMultiply (-_offsetDist));
+
+					// building/rock obstruction check from center, left, right sensors
+					private _fnc_objClear = {
+						params ["_from"];
+						private _hits = lineIntersectsObjs [_from, _projPos, _vic, _proj, false];
+						({_x isKindOf "Building" || {_x isKindOf "Rock"}} count _hits) == 0
+					};
+
+					private _objClear = ([_centerPos] call _fnc_objClear)
+									|| ([_leftPos]   call _fnc_objClear)
+									|| ([_rightPos]  call _fnc_objClear);
+
+					// restart if buildings / rocks block the sensor and countermeasure
+					if !(_objClear) then {continue};
+
+
+					// relative position/velocity of projectile vs vehicle
+					private _relPos = [
+						(_projPos#0) - (_vicCenter#0),
+						(_projPos#1) - (_vicCenter#1),
+						(_projPos#2) - (_vicCenter#2)
+					];
+					private _vicVel  = velocity _vic;
+					private _relVel = [
+						(_projVel#0) - (_vicVel#0),
+						(_projVel#1) - (_vicVel#1),
+						(_projVel#2) - (_vicVel#2)
+					];
+
+					// transform into vehicle-local axes (right, forward, up)
+					private _up = [0,0,1];
+					private _localPos = [
+						_relPos vectorDotProduct _right,
+						_relPos vectorDotProduct _fwd,
+						_relPos vectorDotProduct _up
+					];
+					private _localVel = [
+						_relVel vectorDotProduct _right,
+						_relVel vectorDotProduct _fwd,
+						_relVel vectorDotProduct _up
+					];
+
+					// for hit/miss calculation
+					private _tEnter = -1e6;
+					private _tExit  = 1e6;
+					private _possible = true;
+
+
+					// --- if UNGUIDED ROCKET ---
+					if (_ammoSim isEqualTo "shotRocket") then {
+						
+						private _bounds = [[-_halfWidth,_halfWidth], [-_halfLength,_halfLength], [-_halfHeight,_halfHeight]];
+
+						for "_i" from 0 to 2 do {
+							private _p = _localPos select _i;
+							private _v = _localVel select _i;
+							private _bound = _bounds select _i;
+							private _lo = _bound select 0;
+							private _hi = _bound select 1;
+
+							if (abs(_v) < 0.001) then {
+								if (_p < _lo || {_p > _hi}) then { _possible = false };
+							} else {
+								private _t1 = (_lo - _p) / _v;
+								private _t2 = (_hi - _p) / _v;
+								_tEnter = _tEnter max (_t1 min _t2);
+								_tExit  = _tExit  min (_t1 max _t2);
 							};
 						};
-					};
-				};
+						
+						private _willHit = _possible && {_tEnter <= _tExit} && {_tExit >= 0};
+						//systemchat str _willHit;	//debug
 
-				_prevDist = _curDist;
-			};
-		};
-	};
-};
-};
-
-
-/*
-//not needed atm due to simplified terrain check being enough, terrain isnt as suddendly steep
-
-// terrain LOS check from center, left, right
-private _fnc_terrainClear = {
-	params ["_from"];
-	!(terrainIntersectASL [_from, _projPos])
-};
-
-private _terrainClear = ([_vicCenter] call _fnc_terrainClear)
-					|| ([_leftPos]    call _fnc_terrainClear)
-					|| ([_rightPos]   call _fnc_terrainClear);
-
-if !(_terrainClear) exitWith {}; // terrain blocks all sample points - permanent
-*/
-
-
-/*
-//old rocket potential hit caluclation
-
-	private _dist = _proj distance _vic;
-	private _projPos = getPosASL _proj;
-	private _vicPos = getPosASL _vic;
-
-	private _projVel = velocity _proj;
-	private _vicVel  = velocity _vic;
-	private _projSpeed = vectorMagnitude _projVel;
-	if (_projSpeed < 1) exitWith {};
-
-	private _time = _dist / _projSpeed;
-	private _vicFuture = [
-		(_vicPos #0) + (_vicVel #0) * _time,
-		(_vicPos #1) + (_vicVel #1) * _time,
-		(_vicPos #2) + (_vicVel #2) * _time
-	];
-	private _projFuture = [
-		(_projPos #0) + (_projVel #0) * _time,
-		(_projPos #1) + (_projVel #1) * _time,
-		(_projPos #2) + (_projVel #2) * _time
-	];
-
-	private _timeOffset = ((_dist/2) min 15) / _projSpeed;
-	private _interceptPos = [
-		(_projPos #0) + (_projVel #0) * _timeOffset,
-		(_projPos #1) + (_projVel #1) * _timeOffset,
-		(_projPos #2) + (_projVel #2) * _timeOffset
-	];
-	_interceptPos = ASLToATL _interceptPos;
-
-	//if ((_vicFuture distance _projFuture) < 7) exitWith {
-*/
-
-/*
-//old missile interception, could account for misses
-
-	} else {
-		[_vic, _proj] spawn
-		{
-			params ["_vic", "_proj"];
-
-			scopeName "APS";	//main?
-			while {(alive _vic) and (alive _proj)} do
-			{
-				if ((_proj distance _vic) < 120) then {
-					
-					if !(terrainIntersectASL [((getPosASL _vic) vectorAdd [0, 0, 2.5]), getPosASL _proj]) exitwith {
-					
-						//systemchat "<150m";
-
-						private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count (_vic magazinesTurret [-1]);
-
-						if (_chargesAPS > 0) then {
-							private _projPos = getPosASL _proj;
-							private _projDir = getDir _proj;
-							private _projVel = velocity _proj;
+						if (_willHit) exitWith {
+							// global argument, global effect
 							deleteVehicle _proj;
-							//[_proj] remoteExec ["deleteVehicle", 0];
-
-							//systemchat "activated APS";
-
-							playSound3D ["a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss", _vic, false, getPosASL _vic, 5, 0.8, 600];
-
-							private _dist = _projPos distance (getPosASL _vic);
-							private _timeOffset = ((_dist/2) min 15) / (vectorMagnitude _projVel);
-							private _interceptPos = [
-								(_projPos #0) + (_projVel #0) * _timeOffset,
-								(_projPos #1) + (_projVel #1) * _timeOffset,
-								(_projPos #2) + (_projVel #2) * _timeOffset
-							];
-							_interceptPos = ASLToATL _interceptPos;
 
 							/*
-							private _vicPos = (getPosASL _vic);
-							//private _factor = 1 max ((_vicPos distance _projPos) / 50);		//choose distance
-							//systemchat str _factor;
+							if (_submunTargetDir) then {
+								deleteVehicle _proj;
+							} else {
+								private _dist = _projPos distance (getPosASL _vic);
+								private _timeOffset = ((_dist/2) min 15) / (vectorMagnitude _projVel);
+								private _interceptPosASL = [
+									(_projPos #0) + (_projVel #0) * _timeOffset,
+									(_projPos #1) + (_projVel #1) * _timeOffset,
+									(_projPos #2) + (_projVel #2) * _timeOffset
+								];
+								
+								_proj setVelocity [0,0,0];
+								_proj setDir (_projDir + 90);
+								_proj setPosASL _interceptPosASL;
+								triggerAmmo _proj;
+							};
+							*/
 							
-							//if bypassing vehicle suddenly get dragged closer, despite model being seen shortly before
-							//private _explPosASL = [
-							//	(_vicPos #0 + _projPos #0) / 2,
-							//	(_vicPos #1 + _projPos #1) / 2,
-							//	(_vicPos #2 + _projPos #2) / 2
-							//];
-							//_explPosATL = ASLToATL _explPosASL;
+							[_projPos, _projVel, _projDir, _vic, _vicCenter, _chargesAPS] call RC_fnc_RC_APS_intercept;
+							// needed to not multitrigger
+							breakOut "APS";
+						};
 
-							_expl = "RC_APS_Expl_Scripted" createVehicle _interceptPos;
-							private _explDir = -_projDir;
-							[_expl, _explDir] remoteExec ["setDir", 0];
-							_expl setDamage 1;
-							
-							//_vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
-							private _vicOwner = owner _vic;
-							private _removeMagArr = ["RC_1Rnd_APS_M", [-1]];
-							[_vic, _removeMagArr] remoteExec ["removeMagazineTurret", _vicOwner];
-							
-							private _nextChargesAPS = 0 max (_chargesAPS - 1);
-							private _string = "activated APS, " + str _nextChargesAPS + " remaining";
-							private _crew = (crew _vic) select {isPlayer _x};
-							[_string] remoteExec ["systemChat", _crew];
+					} else {
+						
+						// --- if GUIDED MISSILE ---
+						// margin for potential missile guidance
+						private _guidanceMargin = 1.5;
+						private _hw = _halfWidth  + _guidanceMargin;
+						private _hl = _halfLength + _guidanceMargin;
+						private _hu = _halfHeight + _guidanceMargin;
 
+						// taller margin NEEDED if missile is overfly capable
+						private _highMargin = if (_canOverfly) then {15} else {_halfHeight + _guidanceMargin};
+						private _bounds = [[-_hw,_hw], [-_hl,_hl], [-_hu,_highMargin]];
+
+						for "_i" from 0 to 2 do {
+							private _p = _localPos select _i;
+							private _v = _localVel select _i;
+							private _bound = _bounds select _i;
+							private _lo = _bound select 0;
+							private _hi = _bound select 1;
+
+							if (abs(_v) < 0.001) then {
+								if (_p < _lo || {_p > _hi}) then { _possible = false };
+							} else {
+								private _t1 = (_lo - _p) / _v;
+								private _t2 = (_hi - _p) / _v;
+								_tEnter = _tEnter max (_t1 min _t2);
+								_tExit  = _tExit  min (_t1 max _t2);
+							};
+						};
+
+						private _willHit = _possible && {_tEnter <= _tExit} && {_tExit >= 0};
+						//systemchat str _willHit;	//debug
+
+						if (_willHit) exitWith {
+							// global argument, global effect
+							deleteVehicle _proj;
+
+							/*
+							if (_submunTargetDir) then {
+								deleteVehicle _proj;
+							} else {
+								private _dist = _projPos distance (getPosASL _vic);
+								private _timeOffset = ((_dist/2) min 15) / (vectorMagnitude _projVel);
+								private _interceptPosASL = [
+									(_projPos #0) + (_projVel #0) * _timeOffset,
+									(_projPos #1) + (_projVel #1) * _timeOffset,
+									(_projPos #2) + (_projVel #2) * _timeOffset
+								];
+								
+								_proj setVelocity [0,0,0];
+								_proj setDir (_projDir + 90);
+								_proj setPosASL _interceptPosASL;
+								triggerAmmo _proj;
+							};
+							*/
+
+							[_projPos, _projVel, _projDir, _vic, _vicCenter, _chargesAPS] call RC_fnc_RC_APS_intercept;
+							// needed to not multitrigger
 							breakOut "APS";
 						};
 					};
 				};
 			};
+
+			_prevDist = _curDist;
 		};
 	};
-*/
-
-
-
-/*
-params ["_vic", "_proj"];
-
-// Count APS charges up front
-private _chargesAPS = { _x isEqualTo "RC_1Rnd_APS_M" } count (_vic magazinesTurret [-1]);
-
-if (_chargesAPS > 0) then {
-
-    private _ignoreRockets = getNumber (configFile >> "CfgVehicles" >> typeOf _vic >> "RC_ignoreRockets");
-    private _ammoType      = getText   (configFile >> "CfgAmmo"     >> typeOf _proj >> "simulation");
-
-    // Skip if rocket should be ignored
-    if ((_ignoreRockets != 0) && {_ammoType isEqualTo "shotRocket"}) exitWith {};
-
-    // Register EachFrame handler
-    addMissionEventHandler [
-        "EachFrame",
-        {
-            params ["_args"];
-            _args params ["_vic", "_proj"];
-
-            // Bail if one of them is gone
-            if (!alive _vic || {!alive _proj}) exitWith {
-                removeMissionEventHandler ["EachFrame", _thisEventHandler];
-            };
-
-            // Check distance threshold
-            if ((_proj distance _vic) < 150) exitWith {
-
-                private _chargesAPS = { _x isEqualTo "RC_1Rnd_APS_M" } count (_vic magazinesTurret [-1]);
-
-                if (_chargesAPS > 0) then {
-                    private _projPos = getPosATL _proj;
-                    deleteVehicle _proj;
-
-                    playSound3D [
-                        "a3\sounds_f_mod\arsenal\weapons\smg\adr_97\adr_97_closeshot_01.wss",
-                        _vic, false, getPosASL _vic, 10, 0.8, 600
-                    ];
-
-                    private _vicPos = getPosATL _vic;
-                    private _explPos = [
-                        (_vicPos # 0 + _projPos # 0) / 2,
-                        (_vicPos # 1 + _projPos # 1) / 2,
-                        (_vicPos # 2 + _projPos # 2) / 2
-                    ];
-                    private _explosion = "ClaymoreDirectionalMine_Remote_Ammo_Scripted" createVehicle _explPos;
-                    _explosion setDamage 1;
-
-                    private _nextChargesAPS = 0 max (_chargesAPS - 1);
-                    _vic removeMagazineTurret ["RC_1Rnd_APS_M", [-1]];
-
-                    [_vic, format ["activated APS, %1 remaining", _nextChargesAPS]]
-                        remoteExec ["vehicleChat", 0];
-                };
-
-                // Remove handler once action is taken
-                removeMissionEventHandler ["EachFrame", _thisEventHandler];
-            };
-        },
-        [_vic, _proj] // _thisArgs passed into EH
-    ];
-};
-*/
-
-
-
-/*
-if (_ammoType isEqualTo "shotRocket") then {
-
-	private _posProj = getPosASL _proj;
-	private _velProj = velocity _proj;
-
-	private _posVeh = getPosASL _vehicle;
-	private _velVeh = velocity _vehicle;
-
-	// Relative position & velocity
-	private _relPos = _posProj vectorDiff _posVeh;
-	private _relVel = _velProj vectorDiff _velVeh;
-
-	// Time to closest approach
-	private _tClosest = -((_relPos vectorDotProduct _relVel) / (_relVel vectorDotProduct _relVel));
-	if (_tClosest <= 0) exitWith { false }; // Already passed or moving away
-
-	// Predicted positions at closest point
-	private _futureProj = _posProj vectorAdd (_velProj vectorMultiply _tClosest);
-	private _futureVeh  = _posVeh vectorAdd (_velVeh vectorMultiply _tClosest);
-
-	// Distance at closest point
-	private _distClosest = _futureProj distance _futureVeh;
-
-	// Vehicle size / hit radius
-	private _hitRadius = 5; // adjust for vehicle model
-	if (_distClosest > _hitRadius) exitWith { false }; // Will miss
-};
-*/
-
-
-
-/*
-private _dist = (_proj distance _vic);
-
-if ((_dist < 500) && (_dist > 400)) then {
-	private _mags = _vic magazinesTurret [-1];
-	private _chargesAPS = {_x isEqualTo "RC_1Rnd_APS_M"} count _mags;
-
-	if (((speed _proj) / 3.6) > 600) exitwith {};		//decide on max interception speed
-
-	systemchat "<500m >400m";
-
-	if (((_proj distance _vic) < 100) && (_chargesAPS > 0)) exitwith {
 };
 
-if ((_dist < 400) && (_dist > 100)) then {
-
-	systemchat "<400m >100m";
-};
-*/
-
-
-/*
-private _dist = _proj distance _vic;
-private _frameTime = diag_deltaTime;
-
-private _hitNextFrame = false;
-private _projSpeed = (speed _proj) / 3.6;
-
-if (_projSpeed != 0) then {
-	private _hitNextFrame = (_frameTime * 2) >= ((_dist + 100) / _projSpeed);
-};
-
-if (((_dist <= 100) or _hitNextFrame) && (_chargesAPS > 0)) exitwith {
-*/
+//};

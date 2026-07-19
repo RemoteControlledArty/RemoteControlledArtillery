@@ -163,11 +163,13 @@ class RC_RHS_338_DoorMinigun_1: RC_RHS_338_DoorMinigun_1_Base
 	{
 		displayName=".338NM";
 		displayNameShort=".338NM";
+		dispersion=0.003;	//0.0064
 	};
 	class HighROF: HighROF
 	{
 		displayName=".338NM";
 		displayNameShort=".338NM";
+		dispersion=0.003;	//0.0064
 	};
 };
 class rhs_weap_m134_minigun_2;
@@ -195,11 +197,13 @@ class RC_RHS_338_DoorMinigun_2: RC_RHS_338_DoorMinigun_2_Base
 	{
 		displayName=".338NM";
 		displayNameShort=".338NM";
+		dispersion=0.003;	//0.0064
 	};
 	class HighROF: HighROF
 	{
 		displayName=".338NM";
 		displayNameShort=".338NM";
+		dispersion=0.003;	//0.0064
 	};
 };
 
