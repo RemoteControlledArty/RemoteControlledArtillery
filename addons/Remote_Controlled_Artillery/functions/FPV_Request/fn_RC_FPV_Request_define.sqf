@@ -501,3 +501,84 @@ fnc_RC_FPV_Request_vehDeploy = {
 		//player remoteControl driver _uavNew;
 	};
 };
+
+
+
+// --------------------------------------------------------
+
+
+
+fnc_RC_FPV_Request_deploy2 = {
+
+	params ["_veh", "_weapon", "_uavClass", "_sidePlayer", "_flyToPos"];
+
+
+	if (isNull _veh) exitWith {};
+	private _isDeployer = _weapon isNotEqualTo "RC_Crocus_Deployer";
+	private _isAir = _veh isKindOf "Air";
+
+
+	if (_uavClass isEqualTo "") then {
+
+		_uavClass = "Crocus_MP_TI_Sens";
+		if ((typeOf _veh) find "PvP" > -1) then {
+			_uavClass = "Crocus_PvP";
+		};
+	};
+
+
+	private _pos = getPos _veh;
+	private _spawnPos = +_pos;
+	private _posZ = 200;
+	if (_isAir) then 
+	{
+		//to prevent accidental trigger when trying to use laser designator, how is its locality?
+		//_veh selectWeaponTurret ["Laserdesignator_mounted", [0]];
+
+		if ((_pos select 2) > 1000) then {
+			_posZ = 1000;
+		} else {
+			_posZ = (_pos select 2) - 15;	//somehow is min 50, doesnt bug into ground
+		};
+	} else {
+		_posZ = (_pos select 2) + 7;
+	};
+	_spawnPos set [2, _posZ];	//fix to not be < AGL
+
+
+	private _uavArray = [_pos, direction _veh, _uavClass, _sidePlayer];
+
+
+	[_uavArray, _spawnPos, _isDeployer, _flyToPos] spawn {
+		params ["_uavArray", "_spawnPos", "_isDeployer", "_flyToPos"];
+
+
+		private _uavSpawn = [];
+		if (_isDeployer) then {
+
+			_uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
+			sleep 1;
+		} else {
+			sleep 3.7;
+			_uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
+		};
+
+
+		private _uav = _uavSpawn select 0;
+		//needs to be manually set, otherwise 50m minimum
+		_uav setPos _spawnPos;
+
+		player connectTerminalToUAV _uav;
+		[_uav] call RC_fnc_RC_uavChangeLocality;
+
+
+		//SOP height if no C-UAS in the area, after changeLocality due to it being local command global effect
+		_uav flyInHeight 200;
+		_flyToPos set [2, 200];
+    	(group _uav) addWaypoint [_flyToPos, -1, -1, ""];
+
+
+		sleep 0.3;
+		player action ["UAVTerminalOpen", player];
+	};
+};
