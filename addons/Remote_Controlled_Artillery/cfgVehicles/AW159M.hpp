@@ -48,7 +48,6 @@ class RC_AI_AW159M: RC_AW159M_Core
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
 		};
 		class RC_AT_Warning
 		{
