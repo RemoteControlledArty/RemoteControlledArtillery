@@ -205,8 +205,8 @@ fnc_RC_FPV_Request_deployShot = {
 	if (_weapon isNotEqualTo "RC_Crocus_Deployer") exitWith {};
 
 
+	private _flyToPos = getPosASL player;
 	private _pos = getPos _veh;
-	private _flyToPos = _pos;
 	private _spawnPos = +_pos;
 	private _posZ = _pos #2;
 	private _isAir = _veh isKindOf "Air";
