@@ -51,6 +51,9 @@ fnc_RC_FPV_Request_findDeployers = {
 			//};
 		} forEach RC_FPV_Deployers;
 	};
+
+	//backup output for the variable become any empty array instead of nothing, breaks without
+	[]
 };
 
 
@@ -193,6 +196,9 @@ fnc_RC_FPV_Request_checkCargo = {
 			//output
 			[_veh, 2, _uavClass, _cargo2, _idx2]
 		};
+
+		//backup output for the variable become any empty array instead of nothing, breaks without
+		[]	
 	} forEach _validVeh;
 };
 
@@ -428,231 +434,22 @@ fnc_RC_FPV_Request_deployFromCargo = {
 };
 
 
-/*
-fnc_RC_FPV_Request_deployFromDeployer = {
-
-	params ["_veh", "_sidePlayer", "_flyToPos", "_weapon"];
-	systemchat "deploying start";
-	if (isNull _veh) exitWith {systemchat "isNull exit";};
-
-
-	_uavClass = "Crocus_MP_TI_Sens";
-	if ((typeOf _veh) find "PvP" > -1) then {
-		_uavClass = "Crocus_PvP";
-	};
-
-
-	private _pos = getPos _veh;
-	private _spawnPos = +_pos;
-	private _posZ = _pos #2;
-	private _isAir = _veh isKindOf "Air";
-	if (_isAir) then 
-	{
-		if (_posZ > 15) then {
-
-			if (_posZ > 1003) then {
-				_posZ = 1000;
-			} else {
-				_posZ = _posZ - 3;
-			};
-		} else {
-			_posZ = _posZ + 3;
-		};
-	} else {
-		_posZ = _posZ + 5;
-	};
-	_spawnPos set [2, _posZ];
-
-
-	private _uavArray = [[0,0,200], direction _veh, _uavClass, _sidePlayer];
-
-	systemchat str _uavArray;
-
-	[_veh, _uavArray, _spawnPos, _flyToPos, _weapon] spawn {
-		params ["_veh", "_uavArray", "_spawnPos", "_flyToPos", "_weapon"];
-		
-		hint format [
-			"sending FPV from:\ny%1 x%2\n%3m\n%4",
-			round (_spawnPos #0),
-			round (_spawnPos #1),
-			round (player distance _veh),
-			(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName"))
-		];
-		sleep 0.5;
-
-
-		_uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
-		_veh setAmmo [_weapon, 0];
-		private _uav = _uavSpawn #0;
-		_uav setPos _spawnPos;
-		sleep 1;
-
-
-		player connectTerminalToUAV _uav;
-		[_uav] call RC_fnc_RC_uavChangeLocality;
-		_uav flyInHeight 200;
-		_flyToPos set [2, 200];
-    	(group _uav) addWaypoint [_flyToPos, 3, -1, ""];
-
-
-		sleep 0.3;
-		player action ["UAVTerminalOpen", player];
-		sleep 1.7;
-		hint "";
-	};
-};
-
-
-fnc_RC_FPV_Request_findDeployers = {
-
-	params ['_flyToPos','_sidePlayer'];
-	systemchat "deployer search";
-
-	scopeName "RC_FPV_Request_SearchScope";
-
-
-	private _validDeployerMags = ["RC_1Rnd_Crocus_Deployer_Mag", "RC_1Rnd_Crocus_Deployer_UGV_Mag"];
-	RC_FPV_Deployers = RC_FPV_Deployers select {!isNull _x && alive _x};
-	RC_FPV_Deployers = RC_FPV_Deployers apply {[round (_x distance2D _flyToPos), _x]};
-	RC_FPV_Deployers sort true;
-	RC_FPV_Deployers = RC_FPV_Deployers apply {_x#1};
-
-
-	if (count RC_FPV_Deployers > 0) then {
-		{
-			private _veh = _x;
-			
-			if ((count (crew _veh)) > 0) then {
-				if (side _veh isEqualTo _sidePlayer) then {
-					
-					{
-						_x params ["_magClass", "_turretPath", "_ammo"];
-
-						if ((_magClass in _validDeployerMags) && (_ammo > 0)) then {
-							{
-								if (_magClass in (getArray (configFile >> "CfgWeapons" >> _x >> "magazines"))) exitWith {
-
-									systemchat "found mag";
-									[_veh, _x]
-
-									breakOut "RC_FPV_Request_SearchScope";
-								};
-							} forEach (_veh weaponsTurret _turretPath);
-						};
-					} forEach (magazinesAllTurrets _veh);
-				};
-			};
-		} forEach RC_FPV_Deployers;
-	};
-};
-
 
 fnc_RC_FPV_Request_Search = {
 
 	params ['_flyToPos', '_sidePlayer'];
-
-	systemchat "search start 2";
-
-	private _deployerArr = [];
-	_deployerArr = [_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_findDeployers;
-	_deployerArr str _cargoArr;
-
-	private _validVehicles = [];
-	_validVehicles = [_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_validifyVehicles;
-
-	private _cargoArr = [];
-	_cargoArr = [_validVehicles] call fnc_RC_FPV_Request_checkCargo;
-	systemchat str _cargoArr;
-
-
-	private _vehDeployer = if (count _deployerArr > 0) then { _deployerArr #0 } else { objNull };
-	private _vehCargo = if (count _cargoArr > 0) then { _cargoArr #0 } else { objNull };
-
-
-	if (isNull _vehDeployer && isNull _vehCargo) then {
-
-		hint "no FPV's found";
-		0 spawn {
-			sleep 3;
-			hint "";
-		};
-
-	} else {
-
-		systemchat "found";
-
-		private _fromDeployer = false;
-		if (!isNull _vehDeployer && !isNull _vehCargo) then {
-			_fromDeployer = _vehDeployer distance2D _flyToPos <= _vehCargo distance2D _flyToPos;
-		} else {
-			_fromDeployer = !isNull _vehDeployer;
-		};
-
-
-		if (_fromDeployer) then {
-			systemchat "found deployer";
-			_deployerArr params ["_veh", "_weapon"];
-			[_veh, _sidePlayer, _flyToPos, _weapon] call fnc_RC_FPV_Request_deployFromDeployer;
-		} else {
-			_cargoArr params ["_veh", "_kind", "_uavClass", "_cargo", "_idx"];
-			[_veh, _sidePlayer, _flyToPos, _kind, _uavClass, _cargo, _idx] call fnc_RC_FPV_Request_deployFromCargo;
-		};
-	};
-
-	systemchat "search end 2";
-};
-
-
-fnc_RC_FPV_Request_Action = {
-
-	params ['_player'];
-
-	private _flyToPos = getPosATL player;
-	private _sidePlayer = side player;
-
-	if (visibleMap) then {
-		systemchat "map";
-		[_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_Search;
-	} else {
-		systemchat "no map";
-		[_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_Search;
-	};
-};
-*/
-
-
-/*
-fnc_RC_FPV_Request_SelectMapPos = {
-
-	params ['_player', '_sidePlayer'];
-
-
-	private _flyToPos = getPosATL player;	//change for mapInteraction action
-
-	
-	[_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_MapPos;
-};
-*/
-
-
-
-fnc_RC_FPV_Request_Search = {
-
-	params ['_flyToPos', '_sidePlayer'];
-
 
 	//search for nearest fpv deployers with ammo, output [_veh, _weapon]
-	private _deployerArr = [];
-	_deployerArr = [_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_findDeployers;
-
+	private _deployerArr = [_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_findDeployers;
+	
 	//search for valid vehicles sorted by distance, output [_veh1, _veh2, ...]
-	private _validVehicles = [];
-	_validVehicles = [_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_validifyVehicles;
+	private _validVehicles = [_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_validifyVehicles;
 
-	//search for nearest fpv in cargo, output [_veh, _kind, _uavClass, _cargo, _idx];
 	private _cargoArr = [];
-	_cargoArr = [_validVehicles] call fnc_RC_FPV_Request_checkCargo;
-
+	if (count _validVehicles > 0) then {
+		//search for nearest fpv in cargo, output [_veh, _kind, _uavClass, _cargo, _idx];
+		_cargoArr = [_validVehicles] call fnc_RC_FPV_Request_checkCargo;
+	};
 
 	//checks output
 	private _vehDeployer = if (count _deployerArr > 0) then { _deployerArr #0 } else { objNull };
