@@ -267,6 +267,16 @@ fnc_RC_FPV_Request_deployShot = {
 */
 
 
+
+fnc_RC_FPV_Request_removeAmmoRE = {
+	params ["_veh", "_weapon"];
+	//server side
+	[_veh, [_weapon, 0]] remoteExec ["setAmmo", owner _veh];	//doesnt work for mags with >1 ammo
+	//_veh setAmmo [_weapon, ((_ammo - 1) max 0)];				//better for mags with >1 ammo
+};
+
+
+
 fnc_RC_FPV_Request_deployFromDeployer = {
 
 	params ["_veh", "_sidePlayer", "_flyToPos", "_weapon"];
@@ -319,8 +329,14 @@ fnc_RC_FPV_Request_deployFromDeployer = {
 
 
 		_uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
-		_veh setAmmo [_weapon, 0];	//doesnt work for mags with >1 ammo
-		//_veh setAmmo [_weapon, ((_ammo - 1) max 0)];	//better for mags with >1 ammo, but atm bugs not always removing a mag
+
+		if (local _veh) then {
+			_veh setAmmo [_weapon, 0];	//doesnt work for mags with >1 ammo
+			//_veh setAmmo [_weapon, ((_ammo - 1) max 0)];	//better for mags with >1 ammo, but atm bugs not always removing a mag
+		} else {
+			[[_veh, _weapon], fnc_RC_FPV_Request_removeAmmoRE] remoteExec ['call', 2];
+		};
+	
 		private _uav = _uavSpawn #0;
 		//needs to be manually set, otherwise 50m minimum
 		_uav setPos _spawnPos;
