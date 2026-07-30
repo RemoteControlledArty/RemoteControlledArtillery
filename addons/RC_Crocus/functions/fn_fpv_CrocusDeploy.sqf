@@ -38,8 +38,8 @@ if ((typeOf _veh) find "PvP" > -1) then {
 private _uavArray = [[0,0,200], direction _veh, _uavClass, side _veh];
 
 
-[_veh, _uavArray, _spawnPos, _flyToPos, _weapon] spawn {
-	params ["_veh", "_uavArray", "_spawnPos", "_flyToPos", "_weapon"];
+[_veh, _uavArray, _spawnPos, _flyToPos] spawn {
+	params ["_veh", "_uavArray", "_spawnPos", "_flyToPos"];
 
 	sleep 0.2;
 	_uavSpawn = _uavArray call BIS_fnc_spawnVehicle;

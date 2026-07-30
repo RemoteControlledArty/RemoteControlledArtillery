@@ -267,16 +267,58 @@ fnc_RC_FPV_Request_deployShot = {
 */
 
 
+/*
+private _uvArray = [getPos _this, direction _this, "RC_Crocus_Carrier_A", west];
+[_uvArray, BIS_fnc_spawnVehicle] remoteExec ["call", 2];
+[_uvArray] remoteExec ["BIS_fnc_spawnVehicle", 2];
+*/
 
-fnc_RC_FPV_Request_removeAmmoRE = {
+
+
+fnc_RC_FPV_Request_fireRE = {
 	params ["_veh", "_weapon"];
-	//server side
-	[_veh, [_weapon, 0]] remoteExec ["setAmmo", owner _veh];	//doesnt work for mags with >1 ammo
-	//_veh setAmmo [_weapon, ((_ammo - 1) max 0)];				//better for mags with >1 ammo
+	private _ownerID = owner _veh;
+	[_veh, _weapon] remoteExec ["fire", _ownerID];
+};
+fnc_RC_FPV_Request_deployFromDeployer = {
+
+	params ["_veh", "_flyToPos", "_weapon"];
+	if (isNull _veh) exitWith {};
+
+	//how to insert flyToPos WP to fired fpv?
+
+	if (local _veh) then {
+		_veh fire _weapon;
+	} else {
+		[[_veh, _weapon], fnc_RC_FPV_Request_fireRE] remoteExec ['call', 2];
+	};
+	
+	[_veh] spawn {
+		params ["_veh"];
+		
+		hint format [
+			"sending FPV from:\ny%1 x%2\n%3m\n%4",
+			round ((getPos _veh) #0),
+			round ((getPos _veh) #1),
+			round (player distance _veh),
+			(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName"))
+		];
+		sleep 3;
+		hint "";
+	};
 };
 
 
 
+/*
+//old, would have removed with setammo 0, but this is buggy because automatic reload doesnt trigger, so it only works once
+fnc_RC_FPV_Request_fireRE = {
+	params ["_veh", "_weapon"];
+	//server side
+	//_veh setAmmo [_weapon, 0];	//doesnt work for mags with >1 ammo
+	private _ownerID = owner _veh;
+	[_veh, _weapon] remoteExec ["fire", _ownerID];
+};
 fnc_RC_FPV_Request_deployFromDeployer = {
 
 	params ["_veh", "_sidePlayer", "_flyToPos", "_weapon"];
@@ -313,10 +355,18 @@ fnc_RC_FPV_Request_deployFromDeployer = {
 	_spawnPos set [2, _posZ];
 
 
+	if (local _veh) then {
+		_veh fire _weapon;
+	} else {
+		[[_veh, _weapon], fnc_RC_FPV_Request_fireRE] remoteExec ['call', 2];
+		//[_veh, _weapon] remoteExec ['fnc_RC_FPV_Request_fireRE', 2];
+	};
+
+
 	private _uavArray = [[0,0,200], direction _veh, _uavClass, _sidePlayer];
 
-	[_veh, _uavArray, _spawnPos, _flyToPos, _weapon] spawn {
-		params ["_veh", "_uavArray", "_spawnPos", "_flyToPos", "_weapon"];
+	[_veh, _uavArray, _spawnPos, _flyToPos] spawn {
+		params ["_veh", "_uavArray", "_spawnPos", "_flyToPos"];
 		
 		hint format [
 			"sending FPV from:\ny%1 x%2\n%3m\n%4",
@@ -329,14 +379,6 @@ fnc_RC_FPV_Request_deployFromDeployer = {
 
 
 		_uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
-
-		if (local _veh) then {
-			_veh setAmmo [_weapon, 0];	//doesnt work for mags with >1 ammo
-			//_veh setAmmo [_weapon, ((_ammo - 1) max 0)];	//better for mags with >1 ammo, but atm bugs not always removing a mag
-		} else {
-			[[_veh, _weapon], fnc_RC_FPV_Request_removeAmmoRE] remoteExec ['call', 2];
-		};
-	
 		private _uav = _uavSpawn #0;
 		//needs to be manually set, otherwise 50m minimum
 		_uav setPos _spawnPos;
@@ -357,6 +399,7 @@ fnc_RC_FPV_Request_deployFromDeployer = {
 		hint "";
 	};
 };
+*/
 
 
 
@@ -494,7 +537,7 @@ fnc_RC_FPV_Request_Search = {
 
 		if (_fromDeployer) then {
 			_deployerArr params ["_veh", "_weapon"];
-			[_veh, _sidePlayer, _flyToPos, _weapon] call fnc_RC_FPV_Request_deployFromDeployer;
+			[_veh, _flyToPos, _weapon] call fnc_RC_FPV_Request_deployFromDeployer;
 		} else {
 			_cargoArr params ["_veh", "_kind", "_uavClass", "_cargo", "_idx"];
 			[_veh, _sidePlayer, _flyToPos, _kind, _uavClass, _cargo, _idx] call fnc_RC_FPV_Request_deployFromCargo;
