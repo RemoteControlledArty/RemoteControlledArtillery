@@ -286,6 +286,7 @@ fnc_RC_FPV_Request_deployFromDeployer = {
 	if (isNull _veh) exitWith {};
 
 	//how to insert flyToPos WP to fired fpv?
+	//per setvariable on fired would work, veh getvariable returning last deployed uv
 
 	if (local _veh) then {
 		_veh fire _weapon;
