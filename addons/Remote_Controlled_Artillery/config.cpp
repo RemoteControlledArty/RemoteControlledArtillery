@@ -1013,6 +1013,9 @@ class CfgFunctions
 
 			class RC_TakeControlCommanderServer {};
 			class RC_TakeControlGunnerServer {};
+			
+			class RC_TransferControlCommanderServer {};
+			class RC_TransferControlGunnerServer {};
 
 			//class RC_TakeControlPilotGlobal {};
 			//class RC_TakeControlCopilotGlobal {};
