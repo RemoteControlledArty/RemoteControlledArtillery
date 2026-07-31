@@ -1,6 +1,6 @@
 class UserActions: UserActions
 {
-	class DriveControlsCommander
+	class TakeDriveControlsCommander
 	{
 		displayName="Take Drive Controls";
 		position="pos commander";
@@ -9,10 +9,19 @@ class UserActions: UserActions
 		onlyforplayer=1;
 		shortcut="";
 
-		condition="player isEqualTo (commander this);";
+		condition="(player isEqualTo (commander this)) && (!local (driver this));";
 		statement="[this, RC_fnc_RC_TakeControlCommanderServer] remoteExec ['call', 2]";
 	};
-	class DriveControlsGunner
+	class TransferDriveControlsCommander: TakeDriveControlsCommander
+	{
+		displayName="Transfer Drive Controls";
+
+		condition="(player isEqualTo (commander this)) && (local (driver this)) && (isPlayer (gunner this));";
+		statement="[this, RC_fnc_RC_TransferControlCommanderServer] remoteExec ['call', 2]";
+	};
+
+
+	class TakeDriveControlsGunner
 	{
 		displayName="Take Drive Controls";
 		position="pos gunner";
@@ -21,7 +30,14 @@ class UserActions: UserActions
 		onlyforplayer=1;
 		shortcut="";
 
-		condition="player isEqualTo (gunner this);";
+		condition="(player isEqualTo (gunner this)) && (!local (driver this));";
 		statement="[this, RC_fnc_RC_TakeControlGunnerServer] remoteExec ['call', 2]";
+	};
+	class TransferDriveControlsGunner: TakeDriveControlsGunner
+	{
+		displayName="Transfer Drive Controls";
+
+		condition="(player isEqualTo (gunner this)) && (local (driver this)) && (isPlayer (commander this));";
+		statement="[this, RC_fnc_RC_TransferControlGunnerServer] remoteExec ['call', 2]";
 	};
 };

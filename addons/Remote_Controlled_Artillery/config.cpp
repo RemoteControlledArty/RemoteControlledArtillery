@@ -880,6 +880,7 @@ class CfgFunctions
 			class RC_AT_Warning_Arrays {preInit=1;};
 			class RC_AT_Warning {};
 			class RC_AT_Warning_Activate {};
+			class RC_AT_Warning_projArrRE {};
 			class RC_AT_TurretOwner {};
 			class RC_AT_Turn {};
 			class RC_AT_SourceIndicator {};
@@ -970,6 +971,8 @@ class CfgFunctions
 			class RC_Player_CBRad_Blufor {};
 			class RC_Player_CBRad_Opfor {};
 			class RC_Player_CBRad_Indfor {};
+
+			class RC_CBRad_projArrRE {};
 		};
 		class RC_LocalityUV_functions
 		{

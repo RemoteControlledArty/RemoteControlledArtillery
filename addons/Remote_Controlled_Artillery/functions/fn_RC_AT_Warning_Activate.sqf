@@ -20,6 +20,7 @@ params ["_vic", "_source", "_proj", "_mag"];
 
 				private _projFirstPos = getPosASL _proj;
 				private _vicPos = getPosASL _vic;
+				private _side = side _vic;
 				private _distNow = _projFirstPos distance _vicPos;
 				private _distSource = _source distance _vicPos;
 
@@ -58,7 +59,6 @@ params ["_vic", "_source", "_proj", "_mag"];
 					//if visible datalinks launcher
 					if (RC_AT_SourceIndicationStatic && RC_AT_SourceIndicationInf && RC_AT_SourceIndicationVic) then {
 						if ((_distSource) < 4000) then {
-							private _side = side _vic;
 							if (_source isKindOf 'StaticWeapon' && RC_AT_SourceIndicationStatic) then {
 								[_side, [_source, 300]] remoteExec ['reportRemoteTarget', _side];
 								[_source, [_side, true]] remoteExec ['confirmSensorTarget', _side];
@@ -98,10 +98,16 @@ params ["_vic", "_source", "_proj", "_mag"];
 				};
 
 
+				//check if rocket or missile
+				private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
+				private _isRocket= _ammoType isEqualTo "shotRocket";
+				//add to projectile array client side
+				[_proj, _isRocket, _projFirstPos] remoteExec ['RC_fnc_RC_AT_Warning_projArrRE', _side];
+				
+
 				//only runs if player inside / connected per terminal
 				if ((count _crew) > 0) then {
 					//warning message with information
-					private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
 					private _magName = getText (configFile >> "CfgMagazines" >> _mag >> "displayName");
 
 					// missile direction vector (normalized velocity)
@@ -116,10 +122,8 @@ params ["_vic", "_source", "_proj", "_mag"];
 
 					
 					private _stringPrj = "missile: " + _magName;
-					private _m = "M";
-					if (_ammoType isEqualTo "shotRocket") then {
+					if (_isRocket) then {
 						_stringPrj = "rocket: " + _magName;
-						_m = "R";
 
 						//estimate launcher bearing & distance
 						private _projVel = velocity _proj;
@@ -140,8 +144,6 @@ params ["_vic", "_source", "_proj", "_mag"];
 						//_stringRocket = "rocket: " + str _maxSourceBearing;
 						//[_stringRocket] remoteExec ["systemChat", _crew];
 					};
-					//add to array
-					RC_AR_projectile_arr pushback [_proj, _m];
 
 					//bearing of first detected projectile pos
 					private _bearing =  round ([_vic, _projFirstPos] call BIS_fnc_dirTo);

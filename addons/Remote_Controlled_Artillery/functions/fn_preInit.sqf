@@ -21,6 +21,7 @@ RC_Current_Target = [];
 RC_UV_favs = [];
 RC_FPV_Deployers = [];
 RC_AR_projectile_arr = [];
+RC_AR_CBRad_arr = [];
 
 RC_Current_Index = 0;
 RC_RscOn = false;		//in Rsc

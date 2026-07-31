@@ -1,9 +1,9 @@
-params ["_vehicle", "_targetPosition", "_timeSinceLast"];
+params ["_vehicle", "_targetPosition", "_timeSinceLast", "_proj"];
 
 private _ETA = _vehicle getArtilleryETA [_targetPosition, currentMagazine _vehicle];
 
-[_vehicle, _targetPosition, _timeSinceLast, _ETA] spawn {
-    params ["_vehicle", "_targetPosition", "_timeSinceLast", "_ETA"];
+[_vehicle, _targetPosition, _timeSinceLast, _ETA, _proj] spawn {
+    params ["_vehicle", "_targetPosition", "_timeSinceLast", "_ETA", "_proj"];
     private _artySourcePos = getPosASL _vehicle;
     private _firstUnit = (units west) select 0;
 
@@ -20,6 +20,8 @@ private _ETA = _vehicle getArtilleryETA [_targetPosition, currentMagazine _vehic
     private _shownETA = round (_ETA - RC_CBRad_DetectionTime_P);
 
     sleep RC_CBRad_DetectionTime_P;
+    //add to array client side
+    [_proj, _shownETA] remoteExec ['RC_fnc_RC_CBRad_projArrRE', west];
 
 
     //for testing

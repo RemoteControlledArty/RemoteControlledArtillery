@@ -73,15 +73,15 @@ addMissionEventHandler ["ArtilleryShellFired", {
 
     //Blufor Player
     if (_opposedTo_B and (_CBRad_Player_AliveAmount_B > 0)) then {
-        [_vehicle, _targetPosition, _timeSinceLast] call RC_fnc_RC_Player_CBRad_Blufor;
+        [_vehicle, _targetPosition, _timeSinceLast, _shell] call RC_fnc_RC_Player_CBRad_Blufor;
     };
     //Opfor Player
     if (_opposedTo_O and (_CBRad_Player_AliveAmount_O > 0)) then {
-        [_vehicle, _targetPosition, _timeSinceLast] call RC_fnc_RC_Player_CBRad_Opfor;
+        [_vehicle, _targetPosition, _timeSinceLast, _shell] call RC_fnc_RC_Player_CBRad_Opfor;
     };
     //Indfor Player
     if (_opposedTo_I and (_CBRad_Player_AliveAmount_I > 0)) then {
-        [_vehicle, _targetPosition, _timeSinceLast] call RC_fnc_RC_Player_CBRad_Indfor;
+        [_vehicle, _targetPosition, _timeSinceLast, _shell] call RC_fnc_RC_Player_CBRad_Indfor;
     };
 
 
