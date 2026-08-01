@@ -1,9 +1,15 @@
-params ["_proj", "_shownETA"];
+params ["_proj", "_shownETA", "_delay"];
 
-if (isNil {_proj getVariable "RC_AR_Prj"}) then {
-    _proj setVariable ["RC_AR_Prj", [_shownETA, diag_tickTime]];
+[_proj, _shownETA, _delay] spawn {
+    params ["_proj", "_shownETA", "_delay"];
+
+    sleep _delay;
+
+    if (isNil {_proj getVariable "RC_AR_Prj"}) then {
+        _proj setVariable ["RC_AR_Prj", [_shownETA, diag_tickTime]];
+    };
+    RC_AR_CBRad_arr pushbackUnique _proj;
 };
-RC_AR_CBRad_arr pushbackUnique _proj;
 
 
 /*

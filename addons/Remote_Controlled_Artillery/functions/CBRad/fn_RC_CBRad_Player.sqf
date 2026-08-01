@@ -1,12 +1,16 @@
 params ["_veh", "_targetPos", "_timeSinceLast", "_side", "_proj"];
 
+
 private _ETA = _veh getArtilleryETA [_targetPos, currentMagazine _veh];
+private _shownETA = round (_ETA - RC_CBRad_DetectionTime_P);
+//add to array client side
+[_proj, _shownETA, RC_CBRad_DetectionTime_P] remoteExec ['RC_fnc_RC_CBRad_projArrRE', _side];
 
-[_veh, _targetPos, _timeSinceLast, _ETA, _side, _proj] spawn {
-    params ["_veh", "_targetPos", "_timeSinceLast", "_ETA", "_side", "_proj"];
+
+[_veh, _targetPos, _timeSinceLast, _ETA, _shownETA, _side, _proj] spawn {
+    params ["_veh", "_targetPos", "_timeSinceLast", "_ETA", "_shownETA", "_side", "_proj"];
 
 
-    private _shownETA = round (_ETA - RC_CBRad_DetectionTime_P);
     private _artySourcePos = getPosASL _veh;
     private _firstUnit = (units _side) #0;
 
@@ -21,10 +25,7 @@ private _ETA = _veh getArtilleryETA [_targetPos, currentMagazine _veh];
     private _targetGridX = _targetGrid select [0, 3];
     private _targetGridY = _targetGrid select [3, 3]; 
 
-
     sleep RC_CBRad_DetectionTime_P;
-    //add to array client side
-    [_proj, _shownETA] remoteExec ['RC_fnc_RC_CBRad_projArrRE', _side];
 
 
     //for testing
