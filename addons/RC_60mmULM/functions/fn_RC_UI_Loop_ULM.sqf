@@ -12,6 +12,7 @@
 // need to exit early if we aren't a client
 if (!hasInterface) exitWith {};
 
+
 // predefine for fired EH if not yet calulated
 RC_ULM_Velocity= 0;
 RC_ULM_ETA = 0;

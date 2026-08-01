@@ -40,6 +40,30 @@ class Components: Components
 					viewDistanceLimitCoef=-1;
 				};
 			};
+			class VisualSensorComponent: SensorTemplateVisual
+			{
+				typeRecognitionDistance=40;
+
+				class AirTarget
+				{
+					minRange=40;
+					maxRange=40;
+					objectDistanceLimitCoef=-1;
+					viewDistanceLimitCoef=-1;
+				};
+				class GroundTarget
+				{
+					minRange=40;
+					maxRange=40;
+					objectDistanceLimitCoef=1;
+					viewDistanceLimitCoef=1;
+				};
+				maxTrackableSpeed=600;
+				nightRangeCoef=0.80000001;
+				angleRangeHorizontal=360;
+				angleRangeVertical=360;
+				animDirection="";
+			};
 
 			#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
 		};

@@ -2420,8 +2420,8 @@ class RC_M_ATGM_MP_NLOS: RC_M_ATGM_MP_LOS
 	};
 	class Cruise
 	{
-		preferredFlightAltitude=100;
-		lockDistanceToTarget=160;	//~45°=142
+		preferredFlightAltitude=50;		//100
+		lockDistanceToTarget=80;		//160 ~45°=142
 	};
 };
 
@@ -2608,30 +2608,34 @@ class RC_Interceptor_Direct_10m_Pre: RC_M_ATGM_MP_LOS
 		{
 			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile, _magazine] call RC_fnc_RC_DetectInterceptor;";
 		};
+		class AT_Warning
+		{
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile, _magazine] call RC_fnc_RC_AT_Warning;";
+		};
 	};
 
 	scope=0;
 
-	timeToLive=60;		//time to crash
-	thrustTime=60;		//batterie life
-	thrust=10;			//acceleration
-	airFriction=0.2;	//0.085
-	sideAirFriction=0.25;//1
-	trackLead=0.25;		//lead accuracy
-	maneuvrability=4.5;	//20
+	timeToLive=60;			//time to crash
+	thrustTime=60;			//batterie life
+	thrust=10;				//acceleration
+	airFriction=0.2;		//0.085
+	sideAirFriction=0.25;	//1
+	trackLead=0.25;			//lead accuracy
+	maneuvrability=4.5;		//20
 
 	model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_ap";
 	//model="\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
 	
-	autoSeekTarget=0;	//0 for testing as it often prevents saclos
+	autoSeekTarget=0;		//0 for testing as it often prevents saclos
 	manualControl=1;
 	maxControlRange=10000;
 	initTime=0;
-	maxSpeed=40;		//40m/s = 144km/h	//97.22
+	maxSpeed=40;			//40m/s = 144km/h	//97.22
 
 	weaponLockSystem="2 + 16";
 	laserLock=0;
-	irLock=1;			//1 for it to not lock FPV's or infantry
+	irLock=1;				//1 for it to not lock FPV's or infantry
 	airLock=1;
 	cmImmunity=1;
 
@@ -3441,8 +3445,8 @@ class RC_M_100mm_cannon_ATGM_NLOS: RC_M_100mm_cannon_ATGM_Overfly
 	};
 	class Cruise
 	{
-		preferredFlightAltitude=100;
-		lockDistanceToTarget=160;	//~45°=142
+		preferredFlightAltitude=50;		//100
+		lockDistanceToTarget=80;		//160 ~45°=142
 	};
 };
 class RC_M_100mm_cannon_AA: RC_M_120mm_cannon_AA

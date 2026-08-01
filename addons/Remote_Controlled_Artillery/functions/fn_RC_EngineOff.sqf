@@ -8,36 +8,38 @@
 // Need to exit early if we aren't a client
 if (!hasInterface) exitWith {};
 
-RCEngineOffHash = createHashMap;
+RC_engineOffHash = createHashMap;
 
 RC_EngineOff = [] spawn
 {
 	while {true} do
 	{
-		_uav = (getConnectedUAV player);
+		_uv = (getConnectedUAV player);
 
-		// If we don't have a UAV connected, Start at the top
-		if (_uav isEqualTo objNull) then {continue;};
+		// restart if no UV is connected
+		if (_uv isEqualTo objNull) then {continue;};
 
-		// UAV ClassName
-		_uavClass = typeOf _uav;
+		//engineOn only works where vehicle is local
+		if (local _uv) then {
 
-		// checks config value
-		private _EngineOff = RCEngineOffHash get _uavClass;
-		if (isNil "_EngineOff") then {
-			_EngineOff = getNumber (configFile >> "CfgVehicles" >> _uavClass >> "RCEngineOff");
-			RCEngineOffHash set [_uavClass, _EngineOff];
-		};
+			// checks config value
+			_uvClass = typeOf _uv;
+			private _engineOff = RC_engineOffHash get _uvClass;
+			if (isNil "_engineOff") then {
+				_engineOff = getNumber (configFile >> "CfgVehicles" >> _uvClass >> "RCEngineOff");
+				RC_engineOffHash set [_uvClass, _engineOff];
+			};
 
-		if (_EngineOff > 0) then {
-			// Turns off Engine when staying still
-			_speedCheck1 = false;
-			_speedCheck2 = false;
-			if ((speed _uav <= 0.1) and (speed _uav >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false};
-			sleep 1;
-			if (_EngineOff == 2) then {sleep 2};
-			if ((speed _uav <= 0.1) and (speed _uav >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false};
-			if ((_speedCheck1) and (_speedCheck2) and ((_EngineOff == 1) or (_EngineOff == 2))) then {_uav engineOn false};
+			if (_engineOff > 0) then {
+				// Turns off Engine when staying still
+				_speedCheck1 = false;
+				_speedCheck2 = false;
+				if ((speed _uv <= 0.1) and (speed _uv >= -0.1)) then {_speedCheck1 = true} else {_speedCheck1 = false};
+				sleep 1;
+				if (_engineOff == 2) then {sleep 2};
+				if ((speed _uv <= 0.1) and (speed _uv >= -0.1)) then {_speedCheck2 = true} else {_speedCheck2 = false};
+				if ((_speedCheck1) and (_speedCheck2) and ((_engineOff == 1) or (_engineOff == 2))) then {_uv engineOn false};
+			};
 		};
 
 		sleep 1;

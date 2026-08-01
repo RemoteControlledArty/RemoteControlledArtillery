@@ -36,13 +36,3 @@ class RC_SignalBoosterLRR_g_I: RC_SignalBoosterLRR_g
 	displayName="Crocus Signal Booster [DLC] [Ind]";
 	tf_encryptionCode="tf_independent_radio_code";
 };
-
-
-//for SP testing, add in crocus function array
-class RC_DeveloperBackpack: RC_SignalBoosterLRR_g
-{
-	displayName="Developer Backpack";
-	maximumLoad=2000;
-	scopeCurator=2;
-	scopeArsenal=2;
-};

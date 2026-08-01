@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 /*
 	This code is held together by duct tape and hope.
 
@@ -9,8 +9,9 @@
 	Public: No.
 */
 
-// need to exit early if we aren't a client
+//exit early if not a client
 if (!hasInterface) exitWith {};
+
 
 //backup if no target or target too close
 RC_GuidedTriggerTime = 0;

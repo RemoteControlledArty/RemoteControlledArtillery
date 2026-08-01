@@ -9,14 +9,18 @@ addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
     if (!isServer) exitwith {};
 
-    private _isArtillery = getNumber (configFile >> "CfgVehicles" >> (typeOf _entity) >> "artilleryScanner") == 1;
+    private _isArty = getNumber (configFile >> "CfgVehicles" >> (typeOf _entity) >> "artilleryScanner") == 1;
 
-    if (_isArtillery) then {
+    if (_isArty) then {
 
         _entity setVariable ["ArtySourceTime", 0, true];
         RC_ArtilleryArray pushback _entity;
+    };
+}];
 
-        /*
+
+
+/*
         _entity addMPEventHandler ["MPKilled", {
             if (!isServer) exitwith {};
             params ["_unit"];
@@ -30,10 +34,7 @@ addMissionEventHandler ["EntityCreated", {
 
             [_unit] call RC_fnc_RC_CBRad_Killed_RE;
         }];
-        */
-    };
-}];
-
+*/
 
 /*
 //checks if spawned vehicles are artillery, to add them in counter battery array

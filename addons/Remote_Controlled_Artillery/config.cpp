@@ -836,7 +836,8 @@ class CfgPatches
 			"A3_Data_F_Enoch_Loadorder",
 			"cba_main"
 		};
-		//cbocammon reqAdd
+
+		//cbocommon reqAdd
 		//"A3_Data_F_AoW_Loadorder",
 		//"A3_Data_F_Mod_Loadorder"
 	};
@@ -847,36 +848,59 @@ class CfgFunctions
 {
 	class RC
 	{
-		class RC_Artillery
+		class RC_Core
 		{
 			file="\Remote_Controlled_Artillery\functions";
 
       		class preInit {preInit=1;};
+			//class postInit {postInit=1;};
       		class InitCBASettings {preInit=1;};
-			
-			class RC_cUAS_Beep_Arrays {preInit=1;};
-
-			class RC_CBRad_Arrays {preInit=1;};
-			class RC_CBRad_EntityCreated {preInit=1;};
-			class RC_CBRad_ArtilleryShellFired {postInit=1;};
-			
-      		class RC_UI_Loop {postInit=1;};
-			class RC_MarkerHandler {postInit=1;};
-			
-			class RC_ETA_EH {};
-			class RC_ETA {};
 
 			class RC_EngineOff {postInit=1;};
 			class RC_UAVBlur {postInit=1;};
 			class RC_LaserDatalink {postInit=1;};
 			class RC_cursorTargetIntoDatalink {postInit=1;};
 			//class RC_cursorTargetIntoDatalink_Loop {postInit=1;};
-			class RC_cUAS_Beep_Loop {postInit=1;};
 			class RC_Proxy {postInit=1;};
+
+			class RC_MinePlow {};
+		};
+
+
+		class RC_Artillery
+		{
+			file="\Remote_Controlled_Artillery\functions\Artillery";
+
+      		class RC_UI_Loop {postInit=1;};
+			class RC_MarkerHandler {postInit=1;};
 			
-			//class postInit {postInit=1;};
+			class RC_ETA_EH {};
+			class RC_ETA {};
+
 			//class RC_RscOff {};
+			class scrollSolutions {};
+		};
+		class RC_CBRad
+		{
+			file="\Remote_Controlled_Artillery\functions\CBRad";
+
+			//class RC_CBRad_EntityCreated_RE {};
+			//class RC_CBRad_Killed_RE {};
+
+			class RC_CBRad_Arrays {preInit=1;};
+			class RC_CBRad_EntityCreated {preInit=1;};
+			class RC_CBRad_ArtilleryShellFired {postInit=1;};
 			
+			class RC_CBRad_projArrRE {};
+			class RC_CBRad_AI {};
+			class RC_CBRad_Player {};
+		};
+
+
+		class RC_Detection_AT
+		{
+			file="\Remote_Controlled_Artillery\functions\Detection_AT";
+
 			class RC_AT_Warning_Arrays {preInit=1;};
 			class RC_AT_Warning {};
 			class RC_AT_Warning_Activate {};
@@ -888,21 +912,30 @@ class CfgFunctions
 			class RC_APS_intercept {};
 			class RC_APS_Activate {};
 
-			class RC_DetectInterceptor_Arrays {preInit=1;};
-			class RC_DetectInterceptor {};
-			class RC_DetectInterceptor_Activate {};
-			
-			class RC_InterceptorAttach {};
-			class RC_MinePlow {};
-
 			class RC_OrderTurretTurnKey {};
 			class RC_OrderTurretTurn2Key {};
 			class RC_OrderTurretTurnOwner {};
 			class RC_OrderTurretTurn {};
-			class RC_cUAS_Beep_Call {};
-
-			class scrollSolutions {};
 		};
+		class RC_Detection_cUAS
+		{
+			file="\Remote_Controlled_Artillery\functions\Detection_cUAS";
+
+			class RC_cUAS_Beep_Arrays {preInit=1;};
+			class RC_cUAS_Beep_Loop {postInit=1;};
+			class RC_cUAS_Beep_Call {};
+		};
+		class RC_Detection_Interceptor
+		{
+			file="\Remote_Controlled_Artillery\functions\Detection_Interceptor";
+
+			class RC_DetectInterceptor_Arrays {preInit=1;};
+			class RC_DetectInterceptor {};
+			class RC_DetectInterceptor_Activate {};
+			class RC_InterceptorAttach {};
+		};
+
+
 		class RC_Immobilized
 		{
 			file="\Remote_Controlled_Artillery\functions\Immobilized";
@@ -924,6 +957,56 @@ class CfgFunctions
 			class RC_FPV_Request_VehDeploy {};
 			*/
 		};
+
+
+		class RC_LocalityUV
+		{
+			file="\Remote_Controlled_Artillery\functions\LocalityUV";
+			
+			class RC_MEH_addActionsUV {preInit=1;};
+			class RC_MEH_assembleUV {postInit=1;};
+			class RC_uavConnectionFix {postInit=1;};	//maybe not required anymore after recent arma update
+			class RC_LocalityUV {postInit=1;};
+
+			class RC_uavWaypoints {};
+			class RC_uavChangeLocality {};
+			class RC_getUniqueGroupName {};
+			class RC_addLocalName {};
+			class RC_addAction_nameUV {};
+			class RC_NameUV_Server {};
+
+			class RC_addAction_addFavUV {};
+			class RC_addAction_removeFavUV {};
+			class RC_listFavUV {};
+			class RC_connectToUV {};
+			class RC_isValidUV {};
+			class RC_stopRC {};
+			class RC_swapUV {};
+			class RC_openTerminal {};
+			
+			class RC_OMH_Side {};
+			class RC_OMH_Disconnect {};
+		};
+		class RC_LocalityVic
+		{
+			file="\Remote_Controlled_Artillery\functions\LocalityVic";
+			
+			class RC_CommanderIsDriverGlobal {};
+			class RC_GunnerIsDriverGlobal {};
+			class RC_CommanderOrGunnerIsDriverGlobal {};
+			class RC_GunnerOrCommanderIsDriverGlobal {};
+
+			class RC_TakeControlCommanderServer {};
+			class RC_TakeControlGunnerServer {};
+			
+			class RC_TransferControlCommanderServer {};
+			class RC_TransferControlGunnerServer {};
+
+			//class RC_TakeControlPilotGlobal {};
+			//class RC_TakeControlCopilotGlobal {};
+		};
+
+		
 		/*
 		class RC_Testing
 		{
@@ -957,69 +1040,6 @@ class CfgFunctions
 			class RC_weapon_info {};
 		};
 		*/
-		class RC_CBRad_functions
-		{
-			file="\Remote_Controlled_Artillery\functions\CBRad_functions";
-
-			//class RC_CBRad_EntityCreated_RE {};
-			//class RC_CBRad_Killed_RE {};
-
-			class RC_AI_CBRad_Blufor {};
-			class RC_AI_CBRad_Opfor {};
-			class RC_AI_CBRad_Indfor {};
-
-			class RC_Player_CBRad_Blufor {};
-			class RC_Player_CBRad_Opfor {};
-			class RC_Player_CBRad_Indfor {};
-
-			class RC_CBRad_projArrRE {};
-		};
-		class RC_LocalityUV_functions
-		{
-			file="\Remote_Controlled_Artillery\functions\LocalityUV_functions";
-			
-			class RC_MEH_addActionsUV {preInit=1;};
-			class RC_MEH_assembleUV {postInit=1;};
-			class RC_uavConnectionFix {postInit=1;};	//maybe not required anymore after recent arma update
-			class RC_LocalityUV {postInit=1;};
-
-			class RC_uavWaypoints {};
-			class RC_uavChangeLocality {};
-			class RC_getUniqueGroupName {};
-			class RC_addLocalName {};
-			class RC_addAction_nameUV {};
-			class RC_NameUV_Server {};
-
-			class RC_addAction_addFavUV {};
-			class RC_addAction_removeFavUV {};
-			class RC_listFavUV {};
-			class RC_connectToUV {};
-			class RC_isValidUV {};
-			class RC_stopRC {};
-			class RC_swapUV {};
-			class RC_openTerminal {};
-			
-			class RC_OMH_Side {};
-			class RC_OMH_Disconnect {};
-		};
-		class RC_LocalityVic_functions
-		{
-			file="\Remote_Controlled_Artillery\functions\LocalityVic_functions";
-			
-			class RC_CommanderIsDriverGlobal {};
-			class RC_GunnerIsDriverGlobal {};
-			class RC_CommanderOrGunnerIsDriverGlobal {};
-			class RC_GunnerOrCommanderIsDriverGlobal {};
-
-			class RC_TakeControlCommanderServer {};
-			class RC_TakeControlGunnerServer {};
-			
-			class RC_TransferControlCommanderServer {};
-			class RC_TransferControlGunnerServer {};
-
-			//class RC_TakeControlPilotGlobal {};
-			//class RC_TakeControlCopilotGlobal {};
-		};
 	};
 };
 
@@ -1044,12 +1064,12 @@ class RscTitles
 	// Simple Grid
 	#include "\Remote_Controlled_Artillery\ui\Artillery_UI.hpp"	
 };
-// Optional Include for when ACE isn't Detected
+// optional Include for when ACE isn't Detected
 #if __has_include("\z\ace\addons\main\script_component.hpp")
-	// If ACE exists we do nothing since we can use their UI variable Instead
+	// if ACE exists we do nothing since we can use their UI variable instead
 	#include "\Remote_Controlled_Artillery\ui\aceArtyUI.hpp"
 #else
-	// If not then We want to include our own overwrite
+	// if not then we want to include our own overwrite
 	#include "\Remote_Controlled_Artillery\ui\overwriteArtyUI.hpp"
 #endif
 

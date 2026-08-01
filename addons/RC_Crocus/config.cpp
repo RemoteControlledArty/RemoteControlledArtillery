@@ -49,7 +49,7 @@ class CfgPatches
 			"O_Crocus_MP_NV_Sens_Bag",
 			"I_Crocus_MP_NV_Sens_Bag",
 			*/
-
+		
 			"B_Crocus_SignalBooster_Bag",
 			//"O_Crocus_SignalBooster_Bag",
 			//"I_Crocus_SignalBooster_Bag",
