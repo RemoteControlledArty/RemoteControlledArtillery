@@ -106,7 +106,7 @@ class RC_AMV_SHORAD_Base: RC_AMV_SHORAD_Core
 	magazines[]=
 	{
 		//"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
+		//"RC_1Rnd_APS_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};

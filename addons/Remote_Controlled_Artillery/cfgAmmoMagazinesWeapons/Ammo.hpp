@@ -2420,8 +2420,8 @@ class RC_M_ATGM_MP_NLOS: RC_M_ATGM_MP_LOS
 	};
 	class Cruise
 	{
-		preferredFlightAltitude=50;		//100
-		lockDistanceToTarget=80;		//160 ~45°=142
+		preferredFlightAltitude=100;	//100
+		lockDistanceToTarget=160;		//160 ~45°=142
 	};
 };
 
@@ -2586,8 +2586,8 @@ class RC_MP_NLOS_Nano: RC_M_ATGM_MP_NLOS
 	};
 	class Cruise
 	{
-		preferredFlightAltitude=50;
-		lockDistanceToTarget=100;
+		preferredFlightAltitude=100;	//100
+		lockDistanceToTarget=160;		//160 ~45°=142
 	};
 
 	//initTime=8;
@@ -2608,10 +2608,13 @@ class RC_Interceptor_Direct_10m_Pre: RC_M_ATGM_MP_LOS
 		{
 			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile, _magazine] call RC_fnc_RC_DetectInterceptor;";
 		};
+		/*
+		//atm disabled because it would waste APS despite low dmg, and so that mainly air engages source instead of armor
 		class AT_Warning
 		{
 			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!isServer) exitwith {};  [_unit, _projectile, _magazine] call RC_fnc_RC_AT_Warning;";
 		};
+		*/
 	};
 
 	scope=0;

@@ -268,18 +268,15 @@ fnc_RC_FPV_Request_deployShot = {
 
 
 /*
-private _uvArray = [getPos _this, direction _this, "RC_Crocus_Carrier_A", west];
-[_uvArray, BIS_fnc_spawnVehicle] remoteExec ["call", 2];
-[_uvArray] remoteExec ["BIS_fnc_spawnVehicle", 2];
+private _array = [getPos _this, direction _this, "RC_Crocus_Carrier_A", west];
+[_array, BIS_fnc_spawnVehicle] remoteExec ["call", 2];
+[_array] remoteExec ["BIS_fnc_spawnVehicle", 2];
+
+[_this, RC_fnc_RC_uavChangeLocality] remoteExec ["call", 2];
+[_this] remoteExec ["RC_fnc_RC_uavChangeLocality", 2];
 */
 
 
-
-fnc_RC_FPV_Request_fireRE = {
-	params ["_veh", "_weapon"];
-	private _ownerID = owner _veh;
-	[_veh, _weapon] remoteExec ["fire", _ownerID];
-};
 fnc_RC_FPV_Request_deployFromDeployer = {
 
 	params ["_veh", "_flyToPos", "_weapon"];
@@ -287,15 +284,18 @@ fnc_RC_FPV_Request_deployFromDeployer = {
 
 	//how to insert flyToPos WP to fired fpv?
 	//per setvariable on fired would work, veh getvariable returning last deployed uv
-
-	if (local _veh) then {
-		_veh fire _weapon;
-	} else {
-		[[_veh, _weapon], fnc_RC_FPV_Request_fireRE] remoteExec ['call', 2];
-	};
 	
-	[_veh] spawn {
-		params ["_veh"];
+	[_veh, _weapon] spawn {
+		params ["_veh", "_weapon"];
+
+		//fire only works where local and crocus deployer fired eventhandler is gated for local only
+		if (local _veh) then {
+			_veh fire _weapon;
+		} else {
+			[_veh] call RC_fnc_RC_uavChangeLocality;
+			sleep 1;
+			_veh fire _weapon;
+		};
 		
 		hint format [
 			"sending FPV from:\ny%1 x%2\n%3m\n%4",
