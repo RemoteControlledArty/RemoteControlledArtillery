@@ -22,6 +22,7 @@ RC_UV_favs = [];
 RC_FPV_Deployers = [];
 RC_AR_projectile_arr = [];
 RC_AR_CBRad_arr = [];
+RC_FlyToPos = [0,0,0];
 
 RC_Current_Index = 0;
 RC_RscOn = false;		//in Rsc

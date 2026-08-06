@@ -547,18 +547,89 @@ fnc_RC_FPV_Request_Search = {
 };
 
 
-
+/*
 fnc_RC_FPV_Request_Action = {
 
 	params ['_player'];
 
-	private _flyToPos = getPosATL player;
 	private _sidePlayer = side player;
 
 	if (visibleMap) then {
 		//[_player, _sidePlayer] call fnc_RC_FPV_Request_SelectMapPos;
 		[_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_Search;
 	} else {
-		[_flyToPos, _sidePlayer] call fnc_RC_FPV_Request_Search;
+		[getPosATL player, _sidePlayer] call fnc_RC_FPV_Request_Search;
+	};
+};
+*/
+
+
+fnc_RC_FPV_Request_Action = {
+
+	params ['_player'];
+
+	if (visibleMap) then {
+		
+		
+		private _mapDisplay = findDisplay 12;
+		if (isNull _mapDisplay) exitWith {};
+		private _mapCtrl = _mapDisplay displayCtrl 51;
+		
+
+		hint "Leftclick the map to define FPV request position. Close the map to cancel.";
+		
+		createMarkerLocal ["fpv_preview", [0,0,0], 1];
+		"fpv_preview" setMarkerShapeLocal "ICON";
+		"fpv_preview" setMarkerTypeLocal "mil_destroy";
+		"fpv_preview" setMarkerColorLocal "ColorRed";
+		"fpv_preview" setMarkerTextLocal "request FPV";
+		
+
+		uiNamespace setVariable ["TAG_fpv_cleanup", {
+			private _mEH = uiNamespace getVariable ["TAG_fpv_moveEH", -1];
+			private _cEH = uiNamespace getVariable ["TAG_fpv_clickEH", -1];
+			private _ctrl = uiNamespace getVariable ["TAG_fpv_ctrl", controlNull];
+		
+			if (!isNull _ctrl) then {
+				if (_mEH != -1) then { _ctrl ctrlRemoveEventHandler ["MouseMoving", _mEH] };
+				if (_cEH != -1) then { _ctrl ctrlRemoveEventHandler ["MouseButtonDown", _cEH] };
+			};
+			deleteMarkerLocal "fpv_preview";
+			hint "";
+		}];
+		uiNamespace setVariable ["TAG_fpv_ctrl", _mapCtrl];
+		
+
+		private _moveEH = _mapCtrl ctrlAddEventHandler ["MouseMoving", {
+			params ["_control", "_xPos", "_yPos"];
+			"fpv_preview" setMarkerPosLocal (_control ctrlMapScreenToWorld [_xPos, _yPos]);
+		}];
+		uiNamespace setVariable ["TAG_fpv_moveEH", _moveEH];
+		
+
+		private _clickEH = _mapCtrl ctrlAddEventHandler ["MouseButtonDown", {
+			params ["_control", "_button", "_xPos", "_yPos"];
+			if (_button != 0) exitWith {};
+		
+			private _flyToPos = _control ctrlMapScreenToWorld [_xPos, _yPos];
+			(uiNamespace getVariable "TAG_fpv_cleanup") call {};
+			call (uiNamespace getVariable "TAG_fpv_cleanup");
+			
+			RC_FlyToPos = _flyToPos;
+			[_flyToPos, side player] call fnc_RC_FPV_Request_Search;
+		}];
+		uiNamespace setVariable ["TAG_fpv_clickEH", _clickEH];
+		
+
+		private _unloadEH = _mapDisplay displayAddEventHandler ["Unload", {
+			call (uiNamespace getVariable "TAG_fpv_cleanup");
+		}];
+		
+		
+	} else {
+
+		private _flyToPos = getPosATL player;
+		RC_FlyToPos = _flyToPos;
+		[_flyToPos, side player] call fnc_RC_FPV_Request_Search;
 	};
 };
