@@ -298,11 +298,12 @@ fnc_RC_FPV_Request_deployFromDeployer = {
 		};
 		
 		hint format [
-			"sending FPV from:\ny%1 x%2\n%3m\n%4",
-			round ((getPos _veh) #0),
-			round ((getPos _veh) #1),
-			round (player distance _veh),
-			(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName"))
+			"sending FPV from:\n%1\n%2° %3m\ny%4 x%5",
+			(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName")),
+			round (player getDir _veh),
+			round (player distance _veh), 
+			round ((getPos _veh) #0), 
+			round ((getPos _veh) #1)
 		];
 		sleep 3;
 		hint "";
@@ -370,11 +371,12 @@ fnc_RC_FPV_Request_deployFromDeployer = {
 		params ["_veh", "_uavArray", "_spawnPos", "_flyToPos"];
 		
 		hint format [
-			"sending FPV from:\ny%1 x%2\n%3m\n%4",
-			round (_spawnPos #0),
-			round (_spawnPos #1),
-			round (player distance _veh),
-			(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName"))
+			"sending FPV from:\n%1\n%2° %3m\ny%4 x%5",
+			(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName")),
+			round (player getDir _veh),
+			round (player distance _veh), 
+			round (_spawnPos #0), 
+			round (_spawnPos #1)
 		];
 		sleep 0.5;
 
@@ -463,13 +465,14 @@ fnc_RC_FPV_Request_deployFromCargo = {
 		params ["_veh", "_uavArray", "_spawnPos", "_flyToPos", "_cargo", "_idx"];
 
 		hint format [
-			"sending FPV from:\ny%1 x%2\n%3m\n%4", 
+			"sending FPV from:\n%1\n%2° %3m\ny%4 x%5",
+			(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName")),
+			round (player getDir _veh),
+			round (player distance _veh), 
 			round (_spawnPos #0), 
-			round (_spawnPos #1), 
-			round (player distance _veh),
-			(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName"))
+			round (_spawnPos #1)
 		];
-		sleep 3.7;
+		sleep 4.2;
 
 
 		_uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
@@ -570,66 +573,70 @@ fnc_RC_FPV_Request_Action = {
 
 	if (visibleMap) then {
 		
-		
 		private _mapDisplay = findDisplay 12;
 		if (isNull _mapDisplay) exitWith {};
 		private _mapCtrl = _mapDisplay displayCtrl 51;
-		
 
-		hint "Leftclick the map to define FPV request position. Close the map to cancel.";
-		
+
+		hint "LMB on map position to request FPV.\nClose map to cancel.";
 		createMarkerLocal ["fpv_preview", [0,0,0], 1];
 		"fpv_preview" setMarkerShapeLocal "ICON";
 		"fpv_preview" setMarkerTypeLocal "mil_destroy";
 		"fpv_preview" setMarkerColorLocal "ColorRed";
 		"fpv_preview" setMarkerTextLocal "request FPV";
-		
 
-		uiNamespace setVariable ["TAG_fpv_cleanup", {
-			private _mEH = uiNamespace getVariable ["TAG_fpv_moveEH", -1];
-			private _cEH = uiNamespace getVariable ["TAG_fpv_clickEH", -1];
-			private _ctrl = uiNamespace getVariable ["TAG_fpv_ctrl", controlNull];
-		
+
+		uiNamespace setVariable ["RC_FPV_cleanup", {
+			private _mEH = uiNamespace getVariable ["RC_FPV_moveEH", -1];
+			private _cEH = uiNamespace getVariable ["RC_FPV_clickEH", -1];
+			private _ctrl = uiNamespace getVariable ["RC_FPV_ctrl", controlNull];
+
 			if (!isNull _ctrl) then {
 				if (_mEH != -1) then { _ctrl ctrlRemoveEventHandler ["MouseMoving", _mEH] };
 				if (_cEH != -1) then { _ctrl ctrlRemoveEventHandler ["MouseButtonDown", _cEH] };
 			};
 			deleteMarkerLocal "fpv_preview";
 			hint "";
+
+			uiNamespace setVariable ["RC_FPV_moveEH", -1];
+			uiNamespace setVariable ["RC_FPV_clickEH", -1];
 		}];
-		uiNamespace setVariable ["TAG_fpv_ctrl", _mapCtrl];
-		
+		uiNamespace setVariable ["RC_FPV_ctrl", _mapCtrl];
+
 
 		private _moveEH = _mapCtrl ctrlAddEventHandler ["MouseMoving", {
 			params ["_control", "_xPos", "_yPos"];
 			"fpv_preview" setMarkerPosLocal (_control ctrlMapScreenToWorld [_xPos, _yPos]);
 		}];
-		uiNamespace setVariable ["TAG_fpv_moveEH", _moveEH];
-		
+		uiNamespace setVariable ["RC_FPV_moveEH", _moveEH];
+
 
 		private _clickEH = _mapCtrl ctrlAddEventHandler ["MouseButtonDown", {
 			params ["_control", "_button", "_xPos", "_yPos"];
 			if (_button != 0) exitWith {};
-		
+
 			private _flyToPos = _control ctrlMapScreenToWorld [_xPos, _yPos];
-			(uiNamespace getVariable "TAG_fpv_cleanup") call {};
-			call (uiNamespace getVariable "TAG_fpv_cleanup");
-			
-			RC_FlyToPos = _flyToPos;
+			call (uiNamespace getVariable "RC_FPV_cleanup");
+
+			RC_FPV_FlyToPos = _flyToPos;
 			[_flyToPos, side player] call fnc_RC_FPV_Request_Search;
 		}];
-		uiNamespace setVariable ["TAG_fpv_clickEH", _clickEH];
-		
+		uiNamespace setVariable ["RC_FPV_clickEH", _clickEH];
 
-		private _unloadEH = _mapDisplay displayAddEventHandler ["Unload", {
-			call (uiNamespace getVariable "TAG_fpv_cleanup");
-		}];
-		
+
+		/*_mapDisplay displayAddEventHandler ["Unload", {
+			systemChat "UNLOAD FIRED";
+			call (uiNamespace getVariable "RC_FPV_cleanup");
+		}];*/
+		[] spawn {
+			waitUntil { sleep 0.1; !visibleMap };
+			call (uiNamespace getVariable "RC_FPV_cleanup");
+		};
 		
 	} else {
 
 		private _flyToPos = getPosATL player;
-		RC_FlyToPos = _flyToPos;
+		RC_FPV_FlyToPos = _flyToPos;
 		[_flyToPos, side player] call fnc_RC_FPV_Request_Search;
 	};
 };

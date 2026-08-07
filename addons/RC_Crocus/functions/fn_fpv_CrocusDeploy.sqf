@@ -4,7 +4,7 @@ if (_weapon isNotEqualTo "RC_Crocus_Deployer") exitWith {};
 
 
 private _rc = (_veh isEqualTo (getConnectedUAV player)) && (isRemoteControlling player);
-private _flyToPos = RC_FlyToPos;
+private _flyToPos = RC_FPV_FlyToPos;
 if (_rc) then {
 	_flyToPos = getPosASL player;
 };
