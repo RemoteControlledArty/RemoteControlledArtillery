@@ -168,7 +168,7 @@ fnc_RC_FPV_Request_checkCargo = {
 				private _posY = str (round(_pos #0));
 				private _posX = str (round(_pos #1));
 				systemchat "FPV request failed, obstructed above, cannot start.";
-				systemchat ("y" + _posY + "  x" + _posX + "  " + _dir + "°  " + _dist + "m");
+				systemchat (_dir + "°  " + _dist + "m  y" + _posY + "  x" + _posX);
 
 				_continue = false;
 			};
