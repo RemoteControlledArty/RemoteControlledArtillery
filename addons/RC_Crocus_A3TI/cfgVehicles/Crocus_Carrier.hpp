@@ -13,8 +13,7 @@ class RC_Crocus_Carrier_A: RC_Crocus_Carrier_Base
 	{
 		class RC_Crocus
 		{
-			//fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_RC_FPV_Request_vehDeploy";
-			fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_CrocusDeploy";
+			#include "\RC_Crocus\includes_script\deployerFired.hpp"
 		};
 		#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
 	};
@@ -90,16 +89,6 @@ class RC_Crocus_Carrier_WD_I: RC_Crocus_Carrier_WD
 
 class RC_Crocus_Carrier_PvP_A: RC_Crocus_Carrier_A
 {
-	/*
-	class EventHandlers: EventHandlers
-	{
-		class RC_Crocus
-		{
-			fired="params ['_uav', '_weapon'];  if (!Local _uav) exitWith {};  [_uav, _weapon] call RC_fnc_fpv_CarrierDeployPvP";
-		};
-	};
-	*/
-
 	displayName="RC Crocus Carrier PvP";
 };
 class RC_Crocus_Carrier_PvP_A_O: RC_Crocus_Carrier_PvP_A

@@ -1,5 +1,8 @@
 class EventHandlers: EventHandlers
 {
+	//fixes smokes being local (not showing up in MP), removed "if local"
+	fired = "if ( (toLower (_this select 2)) == ""qav_smokelauncher"") then { [_this select 0] call qav_fnc_handleSmokeFired; }";
+
 	class RC_Artillery
 	{
 		#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
@@ -18,6 +21,10 @@ class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 	};
+	class RC_Immobilized
+	{
+        init="if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
+    };
 };
 
 #include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"

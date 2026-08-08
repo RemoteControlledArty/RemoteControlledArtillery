@@ -65,7 +65,8 @@ class RC_AI_B_T100_WD_Base: RC_AI_B_T100_WD_Core
 			weapons[]=
 			{
 				"RC_AI_cannon_125mm_advanced",
-				"RC_AI_MMG_93x64_coax",
+				//"RC_AI_MMG_93x64_coax",
+				"RC_AI_MMG_762x54_coax",
 				"SmokeLauncher"
 			};
 
@@ -99,12 +100,14 @@ class RC_AI_B_T100_WD_Base: RC_AI_B_T100_WD_Core
 		class muzzle_rot_coax
 		{
 			source="ammorandom";
-			weapon="RC_AI_MMG_93x64_coax";
+			//weapon="RC_AI_MMG_93x64_coax";
+			weapon="RC_AI_MMG_762x54_coax";
 		};
 		class muzzle_hide_coax
 		{
 			source="reload";
-			weapon="RC_AI_MMG_93x64_coax";
+			//weapon="RC_AI_MMG_93x64_coax";
+			weapon="RC_AI_MMG_762x54_coax";
 		};
 		class recoil_source
 		{

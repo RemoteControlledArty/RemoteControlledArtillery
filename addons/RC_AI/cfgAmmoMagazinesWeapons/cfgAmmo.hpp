@@ -13,6 +13,17 @@ class RC_AI_B_338_T_Y: RC_AI_B_338_T_R {model="\A3\Weapons_f\Data\bullettracer\t
 class RC_AI_B_338_T_W: RC_AI_B_338_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
 
 
+/*
+class RC_AI_B_338_X_T_R: RC_B_338_T_R
+{
+	//cost=12;
+};
+class RC_AI_B_338_X_T_G: RC_AI_B_338_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_338_X_T_Y: RC_AI_B_338_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_AI_B_338_X_T_W: RC_AI_B_338_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
+/*/
+
+
 class RC_B_93x64_T_G;
 class RC_AI_B_93x64_T_G: RC_B_93x64_T_G
 {
@@ -46,6 +57,19 @@ class RC_AI_B_127x99_SLAP_T_R: RC_B_127x99_SLAP_T_R
 };
 class RC_AI_B_127x99_SLAP_T_G: RC_AI_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_AI_B_127x99_SLAP_T_Y: RC_AI_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+//20mm HEAB
+class RC_B_20mm_HEAB_DF_T_R;
+class RC_AI_B_20mm_HEAB_DF_T_R: RC_B_20mm_HEAB_DF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+	//submunitionAmmo="RC_AI_B_30mm_HE_DF_Sub";
+};
+class RC_AI_B_20mm_HEAB_DF_T_G: RC_AI_B_20mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_20mm_HEAB_DF_T_Y: RC_AI_B_20mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 //30mm AP
@@ -94,6 +118,14 @@ class RC_AI_B_30mm_HEAB_DF_T_R: RC_B_30mm_HEAB_DF_T_R
 };
 class RC_AI_B_30mm_HEAB_DF_T_G: RC_AI_B_30mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
 class RC_AI_B_30mm_HEAB_DF_T_Y: RC_AI_B_30mm_HEAB_DF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_AI_B_30mm_HEAB_DF_X_T_R: RC_AI_B_30mm_HEAB_DF_T_R
+{
+	//cost=5;	//cost = 6 for 338 & 9.6
+};
+class RC_AI_B_30mm_HEAB_DF_X_T_G: RC_AI_B_30mm_HEAB_DF_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_B_30mm_HEAB_DF_X_T_Y: RC_AI_B_30mm_HEAB_DF_X_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
 //30mm MP

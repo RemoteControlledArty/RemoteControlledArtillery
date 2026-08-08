@@ -71,7 +71,8 @@ class RC_AI_B_Patria40_A_Base: RC_AI_B_Patria40_A_Core
 			weapons[]=
 			{
 				"RC_AI_autocannon_40mm_CTWS",
-				"RC_AI_MMG_338_coax",
+				//"RC_AI_MMG_338_coax",
+				"RC_AI_MMG_762x51_coax",
 				"SmokeLauncher"
 			};
 

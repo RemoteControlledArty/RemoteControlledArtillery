@@ -45,6 +45,19 @@ class CfgPatches
 	};
 };
 
+
+/*
+//doesnt work, but works in cfgVeh EH
+class Extended_Init_EventHandlers {
+    class qav_abramsx_base {
+        class RC_Immobilized {
+            init="if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
+        };
+    };
+};
+*/
+
+
 //later required sensors
 class SensorTemplateDataLink;
 class SensorTemplateLaser;

@@ -2158,7 +2158,7 @@ class RC_ammo_Penetrator_AB_125mm: ammo_Penetrator_125mm
 };
 class RC_Sh_125mm_MP_DF_Sub: RC_Sh_125mm_MP_T_R
 {
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\MP_DF.hpp"
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\Sub_MP_DF.hpp"
 	submunitionAmmo="RC_ammo_Penetrator_AB_125mm";
 };
 class RC_Sh_125mm_MP_DF_T_R: RC_Sh_120mm_MP_T_R
@@ -2453,6 +2453,8 @@ class M_Titan_AA_long_Base: M_Titan_AA_long
 };
 class RC_M_AA: M_Titan_AA_long_Base
 {
+	missileLockMaxDistance=5000;
+
 	indirectHitRange=12;
 	proximityExplosionDistance=12;
 	weaponLockSystem="2 + 16";
@@ -3175,6 +3177,10 @@ class RC_M_120mm_cannon_ATGM_DLG_LR: RC_M_120mm_cannon_ATGM_DLG
 };
 class RC_M_120mm_cannon_AA: RC_M_120mm_cannon_ATGM_Base
 {
+	lockType=0;
+	manualControl=0;
+	missileManualControlCone=0;
+
 	thrust=380;
 	airFriction=0.145;
 	sideAirFriction=0.1;
@@ -3198,7 +3204,7 @@ class RC_M_120mm_cannon_AA: RC_M_120mm_cannon_ATGM_Base
 	missileLockMinDistance=20;
 	missileLockCone=90;
 	missileKeepLockedCone=90;
-	thrustTime=4;
+	thrustTime=3;
 
 	//autoSeekTarget=1;	 //unlear if it works in this context
 	//lockSeekRadius=1500;

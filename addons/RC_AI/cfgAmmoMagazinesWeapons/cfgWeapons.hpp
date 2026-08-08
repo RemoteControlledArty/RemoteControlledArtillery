@@ -624,17 +624,133 @@ class RC_AI_AbramsX_MMG_coax: RC_AbramsX_HMG_coax
 };
 
 
-class RC_AbramsX_30mm_M914;
-class RC_AI_AbramsX_30mm_M914_Base: RC_AbramsX_30mm_M914
+class RC_AbramsX_20mm_coax;
+class RC_AI_AbramsX_20mm_coax_Base: RC_AbramsX_20mm_coax
 {
 	class HighROF;
+	/*
+	class close;
+	class medium;
+	class far;
+	*/
 };
-class RC_AI_AbramsX_30mm_M914: RC_AI_AbramsX_30mm_M914_Base
+class RC_AI_AbramsX_20mm_coax: RC_AI_AbramsX_20mm_coax_Base
 {
 	class HighROF: HighROF
 	{
 		magazines[]=
 		{
+			"RC_AI_200Rnd_20mm_HEAB_DF_T_R",
+			"RC_AI_200Rnd_20mm_HEAB_DF_T_G",
+			"RC_AI_200Rnd_20mm_HEAB_DF_T_Y",
+			/*
+			"RC_200Rnd_20mm_APFSDS_T_R",
+			"RC_200Rnd_20mm_APFSDS_T_G",
+			"RC_200Rnd_20mm_APFSDS_T_Y"
+			*/
+
+			/*
+			"RC_200Rnd_20mm_MP_Pen_T_R",
+			"RC_200Rnd_20mm_MP_Pen_T_G",
+			"RC_200Rnd_20mm_MP_Pen_T_Y",
+
+			"RC_200Rnd_20mm_HE_Pen_T_R",
+			"RC_200Rnd_20mm_HE_Pen_T_G",
+			"RC_200Rnd_20mm_HE_Pen_T_Y",
+
+			"RC_200Rnd_20mm_MP_DF_T_R",
+			"RC_200Rnd_20mm_MP_DF_T_G",
+			"RC_200Rnd_20mm_MP_DF_T_Y",
+
+			"RC_200Rnd_20mm_HE_DF_T_R",
+			"RC_200Rnd_20mm_HE_DF_T_G",
+			"RC_200Rnd_20mm_HE_DF_T_Y",
+
+			"RC_200Rnd_20mm_MP_QF_T_R",
+			"RC_200Rnd_20mm_MP_QF_T_G",
+			"RC_200Rnd_20mm_MP_QF_T_Y",
+
+			"RC_200Rnd_20mm_HE_QF_T_R",
+			"RC_200Rnd_20mm_HE_QF_T_G",
+			"RC_200Rnd_20mm_HE_QF_T_Y",
+
+			"RC_200Rnd_20mm_MPAB_DF_T_R",
+			"RC_200Rnd_20mm_MPAB_DF_T_G",
+			"RC_200Rnd_20mm_MPAB_DF_T_Y",
+
+			"RC_200Rnd_20mm_HEAB_DF_T_R",
+			"RC_200Rnd_20mm_HEAB_DF_T_G",
+			"RC_200Rnd_20mm_HEAB_DF_T_Y",
+
+			"RC_200Rnd_20mm_MPAB_QF_T_R",
+			"RC_200Rnd_20mm_MPAB_QF_T_G",
+			"RC_200Rnd_20mm_MPAB_QF_T_Y",
+
+			"RC_200Rnd_20mm_HEAB_QF_T_R",
+			"RC_200Rnd_20mm_HEAB_QF_T_G",
+			"RC_200Rnd_20mm_HEAB_QF_T_Y",
+			"RC_200Rnd_20mm_cUAS",
+			
+			"RC_200Rnd_20mm_HE_T_R",
+			"RC_200Rnd_20mm_HE_T_G",
+			"RC_200Rnd_20mm_HE_T_Y",
+
+			"RC_200Rnd_20mm_AP_T_R",
+			"RC_200Rnd_20mm_AP_T_G",
+			"RC_200Rnd_20mm_AP_T_Y",
+			"RC_200Rnd_20mm_APFSDS_T_R",
+			"RC_200Rnd_20mm_APFSDS_T_G",
+			"RC_200Rnd_20mm_APFSDS_T_Y"
+			*/
+		};
+	};
+};
+
+
+class RC_AbramsX_30mm_M914;
+class RC_AI_AbramsX_30mm_M914_Base: RC_AbramsX_30mm_M914
+{
+	class HighROF;
+	/*
+	class close;
+	class medium;
+	class far;
+	*/
+};
+class RC_AI_AbramsX_30mm_M914: RC_AI_AbramsX_30mm_M914_Base
+{
+	/*
+	class close: close
+	{
+		access=3;
+		burst=3;	//8
+		burstRangeMax=6;	//16
+		enableAttack=1;
+
+		aiBurstTerminable=1;
+		aiDispersionCoefX=1;
+		aimTransitionSpeed=1;
+		aiRateOfFire=0.5;
+		aiRateOfFireDispersion=2;
+		aiRateOfFireDistance=50;
+
+		maxRange=50;
+		midRange=20;
+		minRange=0;
+		maxRangeProbab=0.2;
+		midRangeProbab=0.7;
+		minRangeProbab=0.8;
+	};
+	*/
+	class HighROF: HighROF
+	{
+		magazines[]=
+		{
+			"RC_AI_140Rnd_30mm_HEAB_DF_X_T_R",
+			"RC_AI_140Rnd_30mm_HEAB_DF_X_T_G",
+			"RC_AI_140Rnd_30mm_HEAB_DF_X_T_Y",
+
+			//optional
 			"RC_AI_140Rnd_30mm_HE_Pen_T_R",
 			"RC_AI_140Rnd_30mm_HE_Pen_T_G",
 			"RC_AI_140Rnd_30mm_HE_Pen_T_Y",
@@ -782,6 +898,15 @@ class RC_AI_RHS_M2_CROWS_M151: RC_RHS_M2_CROWS_M151
 {
 	magazines[]=
 	{
+		/*
+		"RC_AI_200Rnd_127x99_T_R",
+		"RC_AI_200Rnd_127x99_T_G",
+		"RC_AI_200Rnd_127x99_T_Y",
+		"RC_AI_200Rnd_127x99_SLAP_T_R",
+		"RC_AI_200Rnd_127x99_SLAP_T_G",
+		"RC_AI_200Rnd_127x99_SLAP_T_Y",
+		"RC_200Rnd_127x99_cUAS"
+		*/
 		"RC_AI_RHS_200rnd_127x99_T_R",
 		"RC_AI_RHS_200rnd_127x99_SLAP_T_R"
 	};
@@ -793,6 +918,15 @@ class RC_AI_RHS_M2_CROWS_M153_Abrams: RC_RHS_M2_CROWS_M153_Abrams
 {
 	magazines[]=
 	{
+		/*
+		"RC_AI_300Rnd_127x99_T_R",
+		"RC_AI_300Rnd_127x99_T_G",
+		"RC_AI_300Rnd_127x99_T_Y",
+		"RC_AI_300Rnd_127x99_SLAP_T_R",
+		"RC_AI_300Rnd_127x99_SLAP_T_G",
+		"RC_AI_300Rnd_127x99_SLAP_T_Y",
+		"RC_300Rnd_127x99_cUAS"
+		*/
 		"RC_AI_RHS_300rnd_127x99_T_R",
 		"RC_AI_RHS_300rnd_127x99_SLAP_T_R"
 	};

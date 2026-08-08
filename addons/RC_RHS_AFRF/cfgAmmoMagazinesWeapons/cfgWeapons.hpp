@@ -6,7 +6,7 @@ class RC_RHS_weap_2a70_Base: rhs_weap_2a70
 class RC_RHS_weap_2a70: RC_RHS_weap_2a70_Base
 {
 	displayName="100mm";
-	reloadTime=6;	//6.5
+	reloadTime=5;	//6.5
 	magazineReloadTime=5;
 	autoReload=1;
 	canLock=2;
@@ -94,6 +94,8 @@ class RC_RHS_weap_2a70: RC_RHS_weap_2a70_Base
 		"RC_RHS_AFRF_2Rnd_100mm_ATGM_NLOS",
 		"RC_RHS_AFRF_1Rnd_100mm_ATGM_NLOS",
 
+		"rhs_mag_9m117m1_8",
+
 		"RC_RHS_AFRF_4Rnd_100mm_AA",
 		"RC_RHS_AFRF_3Rnd_100mm_AA",
 		"RC_RHS_AFRF_2Rnd_100mm_AA",
@@ -103,7 +105,7 @@ class RC_RHS_weap_2a70: RC_RHS_weap_2a70_Base
 	class player: player
 	{
 		dispersion=0.001;
-		reloadTime=6;
+		reloadTime=5;
 		magazineReloadTime=5;
 	};
 	class Cruise: Player

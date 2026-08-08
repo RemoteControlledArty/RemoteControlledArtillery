@@ -62,7 +62,8 @@ class RC_AI_B_Leopard_A_Base: RC_AI_B_Leopard_A_Core
 			weapons[]=
 			{
 				"RC_AI_cannon_120mm",
-				"RC_AI_MMG_338_MBT_coax",
+				//"RC_AI_MMG_338_MBT_coax",
+				"RC_AI_MMG_762x51_MBT_coax",
 				"SmokeLauncher"
 			};
 

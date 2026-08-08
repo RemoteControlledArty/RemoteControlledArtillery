@@ -48,6 +48,7 @@ class RC_AI_B_AbramsX_WD_Base: RC_AI_B_AbramsX_WD_Core
 	magazines[]=
 	{
 		"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
 		"qav_SmokeLauncherMag",
 		"qav_SmokeLauncherMag"
 	};
@@ -64,6 +65,8 @@ class RC_AI_B_AbramsX_WD_Base: RC_AI_B_AbramsX_WD_Core
 			{
 				"RC_AI_AbramsX_120mm_M360",
 				"RC_AI_AbramsX_MMG_coax",		//RC_AI_AbramsX_HMG_coax, HMG instead of cannon engaged
+				//"RC_AI_AbramsX_LMG_coax",
+				//"RC_AI_AbramsX_20mm_coax",
 				"qav_SmokeLauncher"
 			};
 

@@ -180,7 +180,7 @@ class RC_FSV_A_Base: RC_FSV_Base
 				"SmokeLauncher"
 			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Rooikat_red.hpp"
-		
+			
 			class OpticsIn
 			{
 				class Wide

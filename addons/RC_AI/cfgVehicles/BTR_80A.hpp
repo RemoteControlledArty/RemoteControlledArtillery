@@ -73,7 +73,8 @@ class RC_AI_B_BTR80A_WD_Base: RC_AI_B_BTR80A_WD_Core
 			weapons[]=
 			{
 				"RC_AI_autocannon_30mm_APC_Wheeled_04",
-				"RC_AI_MMG_93x64_coax_ext",
+				//"RC_AI_MMG_93x64_coax_ext",
+				"RC_AI_MMG_762x54_coax_ext",
 				"SmokeLauncher"
 			};
 		};

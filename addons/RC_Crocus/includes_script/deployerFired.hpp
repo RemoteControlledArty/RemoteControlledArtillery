@@ -1,0 +1,1 @@
+fired="params ['_uav', '_weapon'];  if (!local _uav) exitWith {};  [_uav, _weapon] spawn RC_fnc_fpv_CrocusDeploy";

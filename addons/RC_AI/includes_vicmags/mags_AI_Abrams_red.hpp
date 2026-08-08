@@ -9,6 +9,8 @@ magazines[]=
 
 	"RC_AI_RHS_300Rnd_762x51_T_R",
 	"RC_AI_RHS_300Rnd_762x51_T_R",
+	//"RC_AI_300Rnd_762x51_T_R",
+	//"RC_AI_300Rnd_762x51_T_R",
 
 	"rhsusf_mag_L8A3_12",
 	"rhsusf_mag_L8A3_12"

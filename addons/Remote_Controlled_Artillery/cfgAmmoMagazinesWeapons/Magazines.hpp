@@ -5008,7 +5008,7 @@ class RC_40Rnd_82mm_vic_Mo_Flare_white: RC_1Rnd_82mm_vic_Mo_Flare_white
 
 class RC_1Rnd_82mm_vic_Mo_Smoke_white: RC_1Rnd_82mm_Mo_Smoke_white
 {
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	initSpeed=242.58;	//6km reach
 };
 class RC_2Rnd_82mm_vic_Mo_Smoke_white: RC_1Rnd_82mm_vic_Mo_Smoke_white
@@ -8294,7 +8294,7 @@ class RC_40Rnd_60mm_vic_Mo_Flare_white: RC_1Rnd_60mm_vic_Mo_Flare_white
 
 class RC_1Rnd_60mm_vic_Mo_Smoke_white: RC_1Rnd_60mm_Mo_Smoke_white
 {
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=2;	//1low, 2high, 3both
 	initSpeed=242.58;	//6km reach
 };
 class RC_2Rnd_60mm_vic_Mo_Smoke_white: RC_1Rnd_60mm_vic_Mo_Smoke_white
@@ -10134,7 +10134,7 @@ class RC_1Rnd_105mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 	initSpeed=396.12;	//16km range
 	ammo="RC_Smoke_155mm_AMOS_White";
 	RC_TerrainWarning=1;
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	displayNameMFDFormat="Smoke";
@@ -12687,7 +12687,7 @@ class RC_1Rnd_120mm_Mo_smoke: magazine_ShipCannon_120mm_smoke_shells_x6
 {
 	ammo="RC_Smoke_155mm_AMOS_White";
 	RC_TerrainWarning=1;
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	displayNameMFDFormat="Smoke";
@@ -16675,7 +16675,7 @@ class RC_1Rnd_155mm_Mo_smoke: 6Rnd_155mm_Mo_smoke
 {
 	ammo="RC_Smoke_155mm_AMOS_White";
 	RC_TerrainWarning=1;
-	RC_AdvisedTrajectory=3;	//1low, 2high, 3both
+	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
 	displayName="Smoke";
 	displayNameShort="Smoke";
 	displayNameMFDFormat="Smoke";

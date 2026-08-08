@@ -162,9 +162,14 @@ fnc_RC_FPV_Request_checkCargo = {
 			private _hasAbove = [_veh] call fnc_RC_checkAbove;
 
 			if (_hasAbove) then {
-				
-				private _str = "FPV request failed at y" + str (round(_pos #0)) + " x" + str (round(_pos #1)) + ", obstructed above, cannot start.";
-				systemchat _str;
+
+				private _dir = str (round (player getDir _veh));
+				private _dist = str (round (player distance _veh));
+				private _posY = str (round(_pos #0));
+				private _posX = str (round(_pos #1));
+				systemchat "FPV request failed, obstructed above, cannot start.";
+				systemchat ("y" + _posY + "  x" + _posX + "  " + _dir + "°  " + _dist + "m");
+
 				_continue = false;
 			};
 		};
@@ -312,111 +317,10 @@ fnc_RC_FPV_Request_deployFromDeployer = {
 
 
 
-/*
-//old, would have removed with setammo 0, but this is buggy because automatic reload doesnt trigger, so it only works once
-fnc_RC_FPV_Request_fireRE = {
-	params ["_veh", "_weapon"];
-	//server side
-	//_veh setAmmo [_weapon, 0];	//doesnt work for mags with >1 ammo
-	private _ownerID = owner _veh;
-	[_veh, _weapon] remoteExec ["fire", _ownerID];
-};
-fnc_RC_FPV_Request_deployFromDeployer = {
-
-	params ["_veh", "_sidePlayer", "_flyToPos", "_weapon"];
-	if (isNull _veh) exitWith {};
-
-
-	_uavClass = "Crocus_MP_TI_Sens";
-	if ((typeOf _veh) find "PvP" > -1) then {
-		_uavClass = "Crocus_PvP";
-	};
-
-
-	private _pos = getPos _veh;
-	private _spawnPos = +_pos;
-	private _posZ = _pos #2;
-	private _isAir = _veh isKindOf "Air";
-	if (_isAir) then 
-	{
-		//to prevent accidental trigger when trying to use laser designator, how is its locality? what about camless?
-		//_veh selectWeaponTurret ["Laserdesignator_mounted", [0]];
-		if (_posZ > 15) then {
-
-			if (_posZ > 1003) then {
-				_posZ = 1000;
-			} else {
-				_posZ = _posZ - 3;
-			};
-		} else {
-			_posZ = _posZ + 3;
-		};
-	} else {
-		_posZ = _posZ + 5;
-	};
-	_spawnPos set [2, _posZ];
-
-
-	if (local _veh) then {
-		_veh fire _weapon;
-	} else {
-		[[_veh, _weapon], fnc_RC_FPV_Request_fireRE] remoteExec ['call', 2];
-		//[_veh, _weapon] remoteExec ['fnc_RC_FPV_Request_fireRE', 2];
-	};
-
-
-	private _uavArray = [[0,0,200], direction _veh, _uavClass, _sidePlayer];
-
-	[_veh, _uavArray, _spawnPos, _flyToPos] spawn {
-		params ["_veh", "_uavArray", "_spawnPos", "_flyToPos"];
-		
-		hint format [
-			"sending FPV from:\n%1\n%2° %3m\ny%4 x%5",
-			(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName")),
-			round (player getDir _veh),
-			round (player distance _veh), 
-			round (_spawnPos #0), 
-			round (_spawnPos #1)
-		];
-		sleep 0.5;
-
-
-		_uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
-		private _uav = _uavSpawn #0;
-		//needs to be manually set, otherwise 50m minimum
-		_uav setPos _spawnPos;
-		sleep 1;
-
-
-		player connectTerminalToUAV _uav;
-		[_uav] call RC_fnc_RC_uavChangeLocality;
-		//SOP height if no C-UAS in the area, after changeLocality due to it being local command global effect
-		_uav flyInHeight 200;
-		_flyToPos set [2, 200];
-    	(group _uav) addWaypoint [_flyToPos, 3, -1, ""];
-
-
-		sleep 0.3;
-		player action ["UAVTerminalOpen", player];
-		sleep 1.7;
-		hint "";
-	};
-};
-*/
-
-
-
 fnc_RC_FPV_Request_deployFromCargo = {
 
 	params ["_veh", "_sidePlayer", "_flyToPos", "_kind", "_uavClass", "_cargo", "_idx"];
 	if (isNull _veh) exitWith {};
-
-
-	private _pos = getPos _veh;
-	private _spawnPos = +_pos;
-	_posZ = (_pos #2) + 5;
-	_spawnPos set [2, _posZ];
-	private _uavArray = [[0,0,200], direction _veh, _uavClass, _sidePlayer];
 
 
 	//find backpack / mag index
@@ -461,39 +365,41 @@ fnc_RC_FPV_Request_deployFromCargo = {
 	};
 
 
-	[_veh, _uavArray, _spawnPos, _flyToPos, _cargo, _idx] spawn {
-		params ["_veh", "_uavArray", "_spawnPos", "_flyToPos", "_cargo", "_idx"];
-
-		hint format [
-			"sending FPV from:\n%1\n%2° %3m\ny%4 x%5",
-			(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName")),
-			round (player getDir _veh),
-			round (player distance _veh), 
-			round (_spawnPos #0), 
-			round (_spawnPos #1)
-		];
-		sleep 4.2;
+	private _pos = getPos _veh;
+	hint format [
+		"sending FPV from:\n%1\n%2° %3m\ny%4 x%5",
+		(getText (configFile >> "CfgVehicles" >> typeOf _veh >> "displayName")),
+		round (player getDir _veh),
+		round (player distance _veh), 
+		round (_pos #0), 
+		round (_pos #1)
+	];
+	sleep 4.1;
 
 
-		_uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
-		private _uav = _uavSpawn #0;
-		//needs to be manually set, otherwise 50m minimum
-		_uav setPos _spawnPos;
-
-		player connectTerminalToUAV _uav;
-		[_uav] call RC_fnc_RC_uavChangeLocality;
-
-
-		//SOP height if no C-UAS in the area, after changeLocality due to it being local command global effect
-		_uav flyInHeight 200;
-		_flyToPos set [2, 200];
-    	(group _uav) addWaypoint [_flyToPos, 3, -1, ""];
+	_pos = getPos _veh;
+	private _spawnPos = +_pos;
+	_posZ = (_pos #2) + 5;
+	_spawnPos set [2, _posZ];
+	private _uavArray = [[0,0,200], direction _veh, _uavClass, _sidePlayer];
+	_uavSpawn = _uavArray call BIS_fnc_spawnVehicle;
+	private _uav = _uavSpawn #0;
+	//needs to be manually set, otherwise 50m minimum
+	_uav setPos _spawnPos;
+	sleep 0.2;
 
 
-		sleep 0.3;
-		player action ["UAVTerminalOpen", player];
-		hint "";
-	};
+	player connectTerminalToUAV _uav;
+	[_uav] call RC_fnc_RC_uavChangeLocality;
+	//SOP height if no C-UAS in the area, after changeLocality due to it being local command global effect
+	_uav flyInHeight 200;
+	_flyToPos set [2, 200];
+	(group _uav) addWaypoint [_flyToPos, 3, -1, ""];
+	sleep 0.2;
+
+
+	player action ["UAVTerminalOpen", player];
+	hint "";
 };
 
 
@@ -540,11 +446,24 @@ fnc_RC_FPV_Request_Search = {
 
 
 		if (_fromDeployer) then {
+			
 			_deployerArr params ["_veh", "_weapon"];
-			[_veh, _flyToPos, _weapon] call fnc_RC_FPV_Request_deployFromDeployer;
+			[_veh, _flyToPos, _weapon] spawn fnc_RC_FPV_Request_deployFromDeployer;
+
+			if (visibleMap) then {
+				private _map = findDisplay 12 displayCtrl 51;
+				_map ctrlMapAnimAdd [0.2, 0.1, getPosASL _veh];
+				ctrlMapAnimCommit _map;
+			};
 		} else {
 			_cargoArr params ["_veh", "_kind", "_uavClass", "_cargo", "_idx"];
-			[_veh, _sidePlayer, _flyToPos, _kind, _uavClass, _cargo, _idx] call fnc_RC_FPV_Request_deployFromCargo;
+			[_veh, _sidePlayer, _flyToPos, _kind, _uavClass, _cargo, _idx] spawn fnc_RC_FPV_Request_deployFromCargo;
+
+			if (visibleMap) then {
+				private _map = findDisplay 12 displayCtrl 51;
+				_map ctrlMapAnimAdd [0.2, 0.1, getPosASL _veh];
+				ctrlMapAnimCommit _map;
+			};
 		};
 	};
 };

@@ -74,7 +74,8 @@ class RC_AI_B_Pandur_A_Base: RC_AI_B_Pandur_A_Core
 			weapons[]=
 			{
 				"RC_AI_autocannon_30mm_CTWS",
-				"RC_AI_MMG_338_coax_ext",
+				//"RC_AI_MMG_338_coax_ext",
+				"RC_AI_MMG_762x51_coax_ext",
 				"RC_AI_IFV_Missile_Launcher",
 				"SmokeLauncher"
 			};

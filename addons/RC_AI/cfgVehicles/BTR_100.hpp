@@ -74,7 +74,8 @@ class RC_AI_B_BTR100_A_Base: RC_AI_B_BTR100_A_Core
 			weapons[]=
 			{
 				"RC_AI_autocannon_30mm_Bu",
-				"RC_AI_MMG_93x64_coax_ext",
+				//"RC_AI_MMG_93x64_coax_ext",
+				"RC_AI_MMG_762x54_coax_ext",
 				"RC_AI_IFV_Missile_Launcher_4R",
 				"SmokeLauncher"
 			};

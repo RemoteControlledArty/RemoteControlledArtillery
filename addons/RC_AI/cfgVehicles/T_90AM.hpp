@@ -62,7 +62,8 @@ class RC_AI_B_T90AM_WD_Base: RC_AI_B_T90AM_WD_Core
 			weapons[]=
 			{
 				"RC_AI_cannon_125mm_advanced",
-				"RC_AI_MMG_93x64_coax",
+				//"RC_AI_MMG_93x64_coax",
+				"RC_AI_MMG_762x54_coax",
 				"SmokeLauncher"
 			};
 
@@ -95,7 +96,8 @@ class RC_AI_B_T90AM_WD_Base: RC_AI_B_T90AM_WD_Core
 		};
 		class muzzle_rot_mg1
 		{
-			weapon="RC_AI_MMG_93x64_coax";
+			//weapon="RC_AI_MMG_93x64_coax";
+			weapon="RC_AI_MMG_762x54_coax";
 			source="ammorandom";
 		};
 		class reload_magazine_source

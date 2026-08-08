@@ -62,7 +62,8 @@ class RC_AI_B_T14_WD_Base: RC_AI_B_T14_WD_Core
 			weapons[]=
 			{
 				"RC_AI_cannon_125mm_advanced",
-				"RC_AI_MMG_93x64_coax",
+				//"RC_AI_MMG_93x64_coax",
+				"RC_AI_MMG_762x54_coax",
 				"SmokeLauncher"
 			};
 
@@ -96,12 +97,14 @@ class RC_AI_B_T14_WD_Base: RC_AI_B_T14_WD_Core
 		class muzzle_rot_coax
 		{
 			source="ammorandom";
-			weapon="RC_AI_MMG_93x64_coax";
+			//weapon="RC_AI_MMG_93x64_coax";
+			weapon="RC_AI_MMG_762x54_coax";
 		};
 		class muzzle_hide_coax
 		{
 			source="reload";
-			weapon="RC_AI_MMG_93x64_coax";
+			//weapon="RC_AI_MMG_93x64_coax";
+			weapon="RC_AI_MMG_762x54_coax";
 		};
 		class recoil_source
 		{
@@ -172,7 +175,7 @@ class RC_AI_O_T14_WD: RC_AI_B_T14_WD
 };
 class RC_AI_I_T14_WD: RC_AI_B_T14_WD
 {
-	#include "\RC_AI\includes_cfg\sideB.hpp"
+	#include "\RC_AI\includes_cfg\sideI.hpp"
 
 	class Turrets: Turrets
 	{

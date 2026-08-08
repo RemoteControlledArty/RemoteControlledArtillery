@@ -5,12 +5,17 @@ magazines[]=
 	"RC_AI_5Rnd_125mm_MP_DF_T_G",
 	"RC_AI_3Rnd_125mm_MPAB_DF_T_G",
 	
-	"4Rnd_125mm_cannon_missiles",
+	//"4Rnd_125mm_cannon_missiles",
 	
+	/*
 	"RC_AI_400Rnd_93x64_T_G",
 	"RC_AI_400Rnd_93x64_T_G",
 	"RC_AI_400Rnd_93x64_T_G",
-	"RC_AI_400Rnd_93x64_T_G",
+	*/
+
+	"RC_AI_400Rnd_762x54_T_G",
+	"RC_AI_400Rnd_762x54_T_G",
+	"RC_AI_400Rnd_762x54_T_G",
 
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"

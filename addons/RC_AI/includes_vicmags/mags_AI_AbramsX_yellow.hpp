@@ -14,9 +14,12 @@ magazines[]=
 	"RC_AI_300Rnd_127x99_SLAP_T_Y",
 	"RC_AI_300Rnd_127x99_SLAP_T_Y",
 	*/
-
 	"RC_AI_300Rnd_338_T_Y",
 	"RC_AI_300Rnd_338_T_Y",
+	/*
+	"RC_AI_200Rnd_20mm_HEAB_DF_T_Y",
+	"RC_AI_200Rnd_20mm_HEAB_DF_T_Y",
+	*/
 
 	"qav_SmokeLauncherMag",
 	"qav_SmokeLauncherMag"

@@ -7,10 +7,15 @@ magazines[]=
 	
 	//"4Rnd_125mm_cannon_missiles",
 	
+	/*
 	"RC_AI_400Rnd_93x64_T_Y",
 	"RC_AI_400Rnd_93x64_T_Y",
 	"RC_AI_400Rnd_93x64_T_Y",
-	"RC_AI_400Rnd_93x64_T_Y",
+	*/
+
+	"RC_AI_400Rnd_762x54_T_Y",
+	"RC_AI_400Rnd_762x54_T_Y",
+	"RC_AI_400Rnd_762x54_T_Y",
 
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"

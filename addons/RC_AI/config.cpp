@@ -34,6 +34,22 @@ class CfgPatches
 			"RC_AI_O_Rooikat_WD",
 			"RC_AI_I_Rooikat_WD",
 
+			"RC_AI_B_Leopard_A",
+			"RC_AI_O_Leopard_A",
+			"RC_AI_I_Leopard_A",
+
+			"RC_AI_B_Leopard_WD",
+			"RC_AI_O_Leopard_WD",
+			"RC_AI_I_Leopard_WD",
+
+			"RC_AI_B_Leopard_ReTex_A",
+			"RC_AI_O_Leopard_ReTex_A",
+			"RC_AI_I_Leopard_ReTex_A",
+
+			"RC_AI_B_Leopard_ReTex_WD",
+			"RC_AI_O_Leopard_ReTex_WD",
+			"RC_AI_I_Leopard_ReTex_WD",
+
 			//WS Retex
 			"RC_AI_B_BM2T_A",
 			"RC_AI_O_BM2T_A",

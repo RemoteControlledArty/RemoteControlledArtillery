@@ -8,6 +8,12 @@ magazines[]=
 	"RC_AI_300Rnd_338_T_G",
 	"RC_AI_300Rnd_338_T_Y",
 
+	/*
+	"RC_AI_300Rnd_338_X_T_R",
+	"RC_AI_300Rnd_338_X_T_G",
+	"RC_AI_300Rnd_338_X_T_Y",
+	*/
+
 	"RC_AI_400Rnd_338_T_R",
 	"RC_AI_400Rnd_338_T_G",
 	"RC_AI_400Rnd_338_T_Y"

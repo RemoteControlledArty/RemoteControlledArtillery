@@ -71,7 +71,8 @@ class RC_AI_B_2S90M_WD_Base: RC_AI_B_2S90M_WD_Core
 			weapons[]=
 			{
 				"RC_AI_cannon_125mm",
-				"RC_AI_MMG_93x64_coax_ext",
+				//"RC_AI_MMG_93x64_coax_ext",
+				"RC_AI_MMG_762x54_coax_ext",
 				"SmokeLauncher"
 			};
 
