@@ -517,6 +517,7 @@ class RC_RHS_200rnd_127x99_SLAP_DroneLock_T_R: rhs_mag_200rnd_127x99_SLAP_mag_Tr
 };
 class RC_RHS_150rnd_127x99_SLAP_DroneLock_T_R: RC_RHS_200rnd_127x99_SLAP_DroneLock_T_R {count=150;};
 class RC_RHS_100rnd_127x99_SLAP_DroneLock_T_R: RC_RHS_200rnd_127x99_SLAP_DroneLock_T_R {count=100;};
+class RC_RHS_200rnd_127x99_SLAP_DroneLock_T_W: RC_RHS_200rnd_127x99_SLAP_DroneLock_T_R {ammo="RC_RHS_ammo_127x99_SLAP_DroneLock_T_W";};
 
 
 //40mm

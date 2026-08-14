@@ -791,6 +791,7 @@ class RC_RHS_M2_DroneLock: RHS_M2
 		"RC_RHS_150rnd_127x99_DroneLock_T_R",
 		"RC_RHS_100rnd_127x99_DroneLock_T_R",
 
+		"RC_RHS_200rnd_127x99_SLAP_DroneLock_T_W",
 		"RC_RHS_200rnd_127x99_SLAP_DroneLock_T_R",
 		"RC_RHS_150rnd_127x99_SLAP_DroneLock_T_R",
 		"RC_RHS_100rnd_127x99_SLAP_DroneLock_T_R"

@@ -47,6 +47,10 @@ class RC_APS_A: RC_target_confirmer_ammo
 	//ace_rearm_caliber=155;	//to cost supplies
 	ace_rearm_caliber=82;	//to cost supplies
 };
+class RC_Dazzler_A: RC_APS_A
+{
+	//?
+};
 class ClaymoreDirectionalMine_Remote_Ammo_Scripted;
 class RC_APS_Expl_Scripted: ClaymoreDirectionalMine_Remote_Ammo_Scripted
 {

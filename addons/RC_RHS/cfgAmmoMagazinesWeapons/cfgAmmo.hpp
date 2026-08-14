@@ -390,6 +390,10 @@ class RC_RHS_ammo_127x99_SLAP_DroneLock_T_R: RC_RHS_ammo_127x99_SLAP_T_R
 	irLock=0;
 	airLock=2;
 };
+class RC_RHS_ammo_127x99_SLAP_DroneLock_T_W: RC_RHS_ammo_127x99_SLAP_T_R
+{
+	model="\A3\Weapons_f\Data\bullettracer\tracer_white";
+};
 
 
 //40mm

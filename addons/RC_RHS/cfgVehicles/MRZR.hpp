@@ -67,7 +67,7 @@ class RC_MRZR_Base: RC_MRZR_Core
 
 	maxSpeed=100;			//95
 	enginePower=80;			//66
-	engineStartSpeed=0.5;	//1.5
+	engineStartSpeed=0;		//1.5
 	peakTorque=140;			//118.75
 
 	smokeLauncherOnTurret=0;

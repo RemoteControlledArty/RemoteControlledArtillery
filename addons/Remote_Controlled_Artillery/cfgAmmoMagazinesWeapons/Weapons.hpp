@@ -25,6 +25,16 @@ class RC_APS_W: RC_target_confirmer
 		"RC_1Rnd_APS_M"
 	};
 };
+class RC_Dazzler_W: RC_APS_W
+{
+	displayName="Dazzler";
+	displayNameShort="Dazzler";
+	autoReload=1;
+	magazines[]=
+	{
+		"RC_1Rnd_Dazzler_M"
+	};
+};
 
 
 /*
@@ -1175,6 +1185,7 @@ class RC_HMG_127_APC: HMG_127_APC_Base
 	maxZeroing=3000;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorMG.hpp"
 	autoReload=1;
+	magazineReloadTime=15;	//20
 	class manual: manual
 	{
 		displayName="12.7mm HMG";
@@ -2806,12 +2817,11 @@ class RC_cannon_120mm_base: cannon_120mm
 class RC_cannon_120mm: RC_cannon_120mm_base
 {
 	author="Ascent";
-	//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	displayName="120mm";
 	canLock=2;
-	reloadTime=5;
-	magazineReloadTime=5;
+	reloadTime=6;
+	magazineReloadTime=6;
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	magazines[]=
 	{
@@ -2946,6 +2956,12 @@ class RC_cannon_120mm: RC_cannon_120mm_base
 		"medium",
 		"far"
 	};
+};
+class RC_cannon_120mm_auto: RC_cannon_120mm
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+	reloadTime=5;
+	magazineReloadTime=5;
 };
 
 

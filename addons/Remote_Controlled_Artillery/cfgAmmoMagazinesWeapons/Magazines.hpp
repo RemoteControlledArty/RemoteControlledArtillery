@@ -12,6 +12,13 @@ class RC_1Rnd_APS_M: RC_target_confirmer_mag
 	displayNameShort="APS charges";
 	displayNameMFDFormat="APS";
 };
+class RC_1Rnd_Dazzler_M: RC_1Rnd_APS_M
+{
+	ammo="RC_Dazzler_A";
+	displayName="Dazzler";
+	displayNameShort="Dazzler";
+	displayNameMFDFormat="Dazzler";
+};
 
 
 /*
@@ -2320,6 +2327,10 @@ class RC_15Rnd_120mm_APFSDS_T_Y: RC_10Rnd_120mm_APFSDS_T_Y {count=15;};
 class RC_20Rnd_120mm_APFSDS_T_R: RC_10Rnd_120mm_APFSDS_T_R {count=20;};
 class RC_20Rnd_120mm_APFSDS_T_G: RC_10Rnd_120mm_APFSDS_T_G {count=20;};
 class RC_20Rnd_120mm_APFSDS_T_Y: RC_10Rnd_120mm_APFSDS_T_Y {count=20;};
+
+class RC_25Rnd_120mm_APFSDS_T_R: RC_10Rnd_120mm_APFSDS_T_R {count=25;};
+class RC_25Rnd_120mm_APFSDS_T_G: RC_10Rnd_120mm_APFSDS_T_G {count=25;};
+class RC_25Rnd_120mm_APFSDS_T_Y: RC_10Rnd_120mm_APFSDS_T_Y {count=25;};
 
 
 class RC_10Rnd_120mm_APFSDS_X_T_R: RC_10Rnd_120mm_APFSDS_T_R

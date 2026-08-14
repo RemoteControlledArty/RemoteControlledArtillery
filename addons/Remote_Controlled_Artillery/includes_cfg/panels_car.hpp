@@ -16,6 +16,10 @@ class Components: Components
 			{
 				componentType="UAVFeedDisplayComponent";
 			};
+			class CrewDisplay
+			{
+				componentType="CrewDisplayComponent";
+			};
 			class MinimapDisplay
 			{
 				componentType="MinimapDisplayComponent";
@@ -38,6 +42,10 @@ class Components: Components
 			class UAVFeedDisplay
 			{
 				componentType="UAVFeedDisplayComponent";
+			};
+			class CrewDisplay
+			{
+				componentType="CrewDisplayComponent";
 			};
 			class MinimapDisplay
 			{

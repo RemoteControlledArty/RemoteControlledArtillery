@@ -1,5 +1,5 @@
-class rhsusf_m113_usarmy_unarmed;
-class RC_M113_Core: rhsusf_m113_usarmy_unarmed
+class rhsusf_m113_usarmy;
+class RC_M113_M2_Core: rhsusf_m113_usarmy
 {
 	class Components;
 	//class HitPoints;
@@ -19,7 +19,7 @@ class RC_M113_Core: rhsusf_m113_usarmy_unarmed
 	scope=0;
 	scopeCurator=0;
 };
-class RC_M113_Base: RC_M113_Core
+class RC_M113_M2_Base: RC_M113_M2_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -117,7 +117,28 @@ class RC_M113_Base: RC_M113_Core
 
 	class Turrets: Turrets
 	{
-		//class MainTurret: MainTurret {};
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_RHS_M2_DroneLock",
+				"rhsusf_weap_M259"
+			};
+			magazines[]=
+			{
+				"RC_RHS_200rnd_127x99_SLAP_DroneLock_T_W",
+				"RC_RHS_200rnd_127x99_SLAP_DroneLock_T_W",
+				"RC_RHS_200rnd_127x99_SLAP_DroneLock_T_W",
+				"RC_RHS_200rnd_127x99_SLAP_DroneLock_T_W",
+				"RC_RHS_200rnd_127x99_SLAP_DroneLock_T_W",
+				"RC_RHS_200rnd_127x99_SLAP_DroneLock_T_W",
+				"RC_RHS_200rnd_127x99_SLAP_DroneLock_T_W",
+				"RC_RHS_200rnd_127x99_SLAP_DroneLock_T_W",
+				"rhsusf_mag_L8A3_8",
+				"rhsusf_mag_L8A3_8",
+				"rhsusf_mag_L8A3_8"
+			};
+		};
 		class MainTurret_In: MainTurret_In
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_car.hpp"
@@ -153,10 +174,12 @@ class RC_M113_Base: RC_M113_Core
 
 	hiddenSelectionsTextures[]=
 	{
-		"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_d_l_co.paa",
-		"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_d_l_co.paa",
+		"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_d_h_co.paa",
+		"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_d_h_co.paa",
 		"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_d_co.paa",
-		"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_d_co.paa"
+		"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_d_co.paa",
+		"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_d_co.paa",
+		"rhsusf\addons\rhsusf_m113\data_new\m113a3_shield_d_co.paa"
 	};
 
 	class TextureSources: TextureSources
@@ -166,10 +189,12 @@ class RC_M113_Base: RC_M113_Core
 			displayName="Olive";
 			textures[]=
 			{
-				"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_od_l_co.paa",
-				"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_od_l_co.paa",
+				"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_sup_wd_co.paa",
+				"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_sup_wd_co.paa",
 				"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_wd_co.paa",
-				"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa"
+				"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa",
+				"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_wd_co.paa",
+				"rhsusf\addons\rhsusf_m113\data_new\m113a3_shield_od_co.paa"
 			};
 			factions[]=
 			{
@@ -183,10 +208,12 @@ class RC_M113_Base: RC_M113_Core
 			displayName="Desert";
 			textures[]=
 			{
-				"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_d_l_co.paa",
-				"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_d_l_co.paa",
+				"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_d_h_co.paa",
+				"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_d_h_co.paa",
 				"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_d_co.paa",
-				"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_d_co.paa"
+				"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_d_co.paa",
+				"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_d_co.paa",
+				"rhsusf\addons\rhsusf_m113\data_new\m113a3_shield_d_co.paa"
 			};
 			factions[]=
 			{
@@ -379,6 +406,21 @@ class RC_M113_Base: RC_M113_Core
 
 	class AnimationSources: AnimationSources
 	{
+		class muzzle_rot_hmg
+		{
+			source = "ammorandom";
+			weapon = "RC_RHS_M2_DroneLock";
+		};
+		class ReloadAnim
+		{
+			source = "reload";
+			weapon = "RC_RHS_M2_DroneLock";
+		};
+		class ReloadMagazine
+		{
+			source = "reloadmagazine";
+			weapon = "RC_RHS_M2_DroneLock";
+		};
 		class HatchD
 		{
 			animPeriod = 1;
@@ -396,27 +438,27 @@ class RC_M113_Base: RC_M113_Core
 
 	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
 };
-class RC_M113_manned_D: RC_M113_Base
+class RC_M113_M2_manned_D: RC_M113_M2_Base
 {
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="M113";
+	displayName="M113 M2";
 	editorSubcategory="RC_APC_subcat";
 
 	faction="RemoteControlled_B";
 	side=1;
 	crew="RC_B_Crew";
 };
-class RC_M113_manned_D_O: RC_M113_manned_D
+class RC_M113_M2_manned_D_O: RC_M113_M2_manned_D
 {
 	faction="RemoteControlled_O";
 	side=0;
 	crew="RC_O_Crew";
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
-class RC_M113_manned_D_I: RC_M113_manned_D
+class RC_M113_M2_manned_D_I: RC_M113_M2_manned_D
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -425,24 +467,26 @@ class RC_M113_manned_D_I: RC_M113_manned_D
 };
 
 
-class RC_M113_manned_WD: RC_M113_manned_D
+class RC_M113_M2_manned_WD: RC_M113_M2_manned_D
 {
 	hiddenSelectionsTextures[]=
 	{
-		"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_od_l_co.paa",
-		"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_od_l_co.paa",
+		"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_sup_wd_co.paa",
+		"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_sup_wd_co.paa",
 		"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_wd_co.paa",
-		"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa"
+		"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa",
+		"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_wd_co.paa",
+		"rhsusf\addons\rhsusf_m113\data_new\m113a3_shield_od_co.paa"
 	};
 };
-class RC_M113_manned_WD_O: RC_M113_manned_WD
+class RC_M113_M2_manned_WD_O: RC_M113_M2_manned_WD
 {
 	faction="RemoteControlled_O";
 	side=0;
 	crew="RC_O_Crew";
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
-class RC_M113_manned_WD_I: RC_M113_manned_WD
+class RC_M113_M2_manned_WD_I: RC_M113_M2_manned_WD
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -452,7 +496,7 @@ class RC_M113_manned_WD_I: RC_M113_manned_WD
 
 
 /*
-class RC_M113_UV: RC_M113_Base
+class RC_M113_M2_UV: RC_M113_M2_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -464,7 +508,7 @@ class RC_M113_UV: RC_M113_Base
 
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 
-	displayName="RC M113";
+	displayName="RC M113 M2";
 	editorSubcategory="RC_ICV_subcat";
 
 	isUav=1;
@@ -546,7 +590,7 @@ class RC_M113_UV: RC_M113_Base
 		};
 	};
 };
-class RC_M113_D: RC_M113_UV
+class RC_M113_M2_D: RC_M113_M2_UV
 {
 	scope=2;
 	scopeCurator=2;
@@ -555,14 +599,14 @@ class RC_M113_D: RC_M113_UV
 	faction="RemoteControlled_B";
 	side=1;
 };
-class RC_M113_D_O: RC_M113_D
+class RC_M113_M2_D_O: RC_M113_M2_D
 {
 	faction="RemoteControlled_O";
 	side=0;
 	crew="O_UAV_AI";
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
-class RC_M113_D_I: RC_M113_D
+class RC_M113_M2_D_I: RC_M113_M2_D
 {
 	faction="RemoteControlled_I";
 	side=2;
@@ -571,7 +615,7 @@ class RC_M113_D_I: RC_M113_D
 };
 
 
-class RC_M113_WD: RC_M113_D
+class RC_M113_M2_WD: RC_M113_M2_D
 {
 	hiddenSelectionsTextures[]=
 	{
@@ -581,14 +625,14 @@ class RC_M113_WD: RC_M113_D
 		"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa"
 	};
 };
-class RC_M113_WD_O: RC_M113_WD
+class RC_M113_M2_WD_O: RC_M113_M2_WD
 {
 	faction="RemoteControlled_O";
 	side=0;
 	crew="O_UAV_AI";
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
-class RC_M113_WD_I: RC_M113_WD
+class RC_M113_M2_WD_I: RC_M113_M2_WD
 {
 	faction="RemoteControlled_I";
 	side=2;

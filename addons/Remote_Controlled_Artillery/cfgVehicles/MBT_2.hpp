@@ -36,6 +36,7 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		};
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 	};
 	
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
@@ -47,15 +48,20 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 	lockDetectionSystem="2+4+8";
 	RC_ATrespondingTurret[]={0,0};
 
+	ace_cargo_space=8;
+	ace_repair_spareTracks=2;
+
 	weapons[]=
 	{
 		"RC_APS_W",
+		"RC_Dazzler_W",
 		"SmokeLauncher"
 	};
 	magazines[]=
 	{
 		//"RC_1Rnd_APS_M",
 		//"RC_1Rnd_APS_M",
+		//"RC_1Rnd_Dazzler_M",
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
@@ -95,7 +101,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 
 			weapons[]=
 			{
-				"RC_cannon_120mm",
+				//"RC_cannon_120mm",
+				"RC_cannon_120mm_auto",
 				"RC_MMG_338_MBT_coax",
 				"SmokeLauncher"
 			};
@@ -217,7 +224,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		class muzzle_rot_cannon
 		{
 			source="ammorandom";
-			weapon="RC_cannon_120mm";
+			//weapon="RC_cannon_120mm";
+			weapon="RC_cannon_120mm_auto";
 		};
 		class muzzle_rot_coax
 		{
@@ -237,7 +245,8 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		class recoil_source
 		{
 			source="reload";
-			weapon="RC_cannon_120mm";
+			//weapon="RC_cannon_120mm";
+			weapon="RC_cannon_120mm_auto";
 		};
 		class showCamonetHull: showCamonetHull
 		{

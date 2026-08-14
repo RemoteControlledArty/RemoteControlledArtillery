@@ -912,6 +912,11 @@ class CfgFunctions
 			class RC_APS_intercept {};
 			class RC_APS_Activate {};
 
+			class RC_Dazzler_Activate {};
+			class RC_Dazzler_Server {};
+			class RC_DazzlerAdd_Server {};
+			class RC_Dazzler_Local {};
+
 			class RC_OrderTurretTurnKey {};
 			class RC_OrderTurretTurn2Key {};
 			class RC_OrderTurretTurnOwner {};
