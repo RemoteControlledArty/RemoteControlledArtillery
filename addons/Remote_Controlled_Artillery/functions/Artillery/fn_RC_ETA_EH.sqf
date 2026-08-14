@@ -46,5 +46,11 @@ if (_controller1 isNotEqualTo objNull) then {
 */
 
 
-private _crew = (crew (vehicle player)) select {isPlayer _x};
-[RC_ETA_targetName, _magName, RC_ETA_distance, RC_ETA_charge, RC_ETA_realElevation, RC_ETA_aligned, _ETA] remoteExec ["RC_fnc_RC_ETA", _crew];
+private _side = side player;
+private _playersCrew = (crew (vehicle player)) select {isPlayer _x};
+private _playersNearAll = allPlayers select {(_x distance player) <= 5};
+private _playersNear = _playersNearAll select {_side isEqualTo (side _x)};
+private _players = _playersCrew + _playersNear;
+
+_players = _players arrayIntersect _players;
+[RC_ETA_targetName, _magName, RC_ETA_distance, RC_ETA_charge, RC_ETA_realElevation, RC_ETA_aligned, _ETA] remoteExec ["RC_fnc_RC_ETA", _players];

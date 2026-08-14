@@ -456,8 +456,9 @@ class RC_PylonM_19Rnd_S5_HE: RC_PylonM_19Rnd_S5_MP
 
 
 //light guided
-class PylonRack_12Rnd_PG_missiles;
-class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PG_missiles
+//class PylonRack_12Rnd_PG_missiles;
+class PylonRack_12Rnd_PGM_missiles_black;
+class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PGM_missiles_black
 {
 	displayName="> APKWS LG 12x";
     displayNameShort="APKWS LG";

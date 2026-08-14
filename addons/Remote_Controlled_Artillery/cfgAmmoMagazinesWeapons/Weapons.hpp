@@ -2806,11 +2806,12 @@ class RC_cannon_120mm_base: cannon_120mm
 class RC_cannon_120mm: RC_cannon_120mm_base
 {
 	author="Ascent";
-	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+	//#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
 	displayName="120mm";
 	canLock=2;
-	reloadTime=6;
-	magazineReloadTime=6;
+	reloadTime=5;
+	magazineReloadTime=5;
 	//showAimCursorInternal=1; //which effect? maybe coordination improving?
 	magazines[]=
 	{

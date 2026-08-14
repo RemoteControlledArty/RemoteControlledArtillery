@@ -341,6 +341,7 @@ class CfgVehicles
 	#include "\RC_RHS\cfgVehicles\M119_105mm.hpp"
 	#include "\RC_RHS\cfgVehicles\oldBradley.hpp"
 	#include "\RC_RHS\cfgVehicles\Stryker.hpp"
+	#include "\RC_RHS\cfgVehicles\M113.hpp"
 	#include "\RC_RHS\cfgVehicles\MRZR.hpp"
 	#include "\RC_RHS\cfgVehicles\HeliPilot.hpp"
 	#include "\RC_RHS\cfgVehicles\H6M.hpp"
