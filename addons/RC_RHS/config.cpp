@@ -345,7 +345,6 @@ class CfgWeapons
 	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 	#include "\RC_RHS\cfgAmmoMagazinesWeapons\cfgPylonWeapons.hpp"
 };
-
 class CfgVehicles
 {
 	#include "\RC_RHS\cfgVehicles\Abrams.hpp"

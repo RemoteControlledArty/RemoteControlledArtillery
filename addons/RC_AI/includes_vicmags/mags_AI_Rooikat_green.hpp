@@ -5,6 +5,7 @@ magazines[]=
 	"RC_AI_5Rnd_120mm_MP_DF_T_G",
 	"RC_AI_3Rnd_120mm_MPAB_DF_T_G",
 	
+	"RC_4Rnd_120mm_AA_cannon_missiles",
 	//"RC_3Rnd_120mm_DLG_cannon_missiles",
 
 	/*

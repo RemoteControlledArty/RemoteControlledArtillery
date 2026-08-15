@@ -90,10 +90,11 @@ class Components: Components
 			{
 				typeRecognitionDistance=200;
 
+				//originally 40, but due to visualTargetSize of arma update 2.22, now 4000 to make small drones detectable at 200m
 				class AirTarget
 				{
-					minRange=200;
-					maxRange=200;
+					minRange=4000;
+					maxRange=4000;
 					objectDistanceLimitCoef=-1;
 					viewDistanceLimitCoef=-1;
 				};

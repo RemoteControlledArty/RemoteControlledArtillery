@@ -149,6 +149,6 @@ class TransportBackpacks
 	class _xx_Crocus_MP_TI_Bag
 	{
 		backpack="Crocus_MP_TI_Bag";
-		count=2;
+		count=8;
 	};
 };

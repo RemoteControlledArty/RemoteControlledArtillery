@@ -19,6 +19,8 @@ magazines[]=
 	"RC_AI_4Rnd_IFV_MP_SACLOS",
 	"RC_AI_4Rnd_IFV_MP_SACLOS",
 
+	"RC_4Rnd_IFV_AA",
+
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"
 };

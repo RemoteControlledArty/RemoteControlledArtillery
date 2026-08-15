@@ -39,7 +39,7 @@ class B_Crocus_MP: B_Crocus_MP_Base
 	camouflage=0.1;	//0.5 -> 0.2
 	audible=0.1;	//0.1 -> 0.1
 	radarTargetSize=0.035;	//0.1 -> 0.02
-	visualTargetSize=0.1;	//0.1 -> 0.05
+	visualTargetSize=0.05;	//0.1 -> 0.05	//find solution for arma update 2.22 activation of this value, atm uniform with other mods
 	radarTarget=1;	//1 -> 0  why? wouldnt even be detectable at short range by radar
 	//threat[]={0.1,0.1,0.1}; -> threat[]={0,0,0}; why?
 	

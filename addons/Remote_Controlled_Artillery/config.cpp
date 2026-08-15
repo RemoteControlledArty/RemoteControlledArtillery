@@ -929,6 +929,7 @@ class CfgFunctions
 			class RC_cUAS_Beep_Arrays {preInit=1;};
 			class RC_cUAS_Beep_Loop {postInit=1;};
 			class RC_cUAS_Beep_Call {};
+			class RC_cUAS_Detector {};
 		};
 		class RC_Detection_Interceptor
 		{
