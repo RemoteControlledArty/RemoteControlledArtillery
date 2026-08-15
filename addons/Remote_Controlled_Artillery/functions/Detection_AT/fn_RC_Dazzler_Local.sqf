@@ -15,6 +15,8 @@ params ["_vic", "_proj"];
 
 	while { (!(isNull _proj)) && (!(isNull _vic)) && (alive _vic)} do {
 
+		sleep 0.1;
+		
 		private _dist = _proj distance _vic;
 		if (_dist < 500) then {
 
@@ -37,7 +39,5 @@ params ["_vic", "_proj"];
 			
 			_proj setVelocity _vel;
 		};
-
-		sleep 0.1;
 	};
 };

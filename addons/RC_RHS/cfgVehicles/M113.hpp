@@ -148,7 +148,7 @@ class RC_M113_Base: RC_M113_Core
 			};
 		};
 		class CargoTurret_01: CargoTurret_01 {gunnerName="R Hatch";};
-		class CargoTurret_02: CargoTurret_01 {gunnerName="L Hatch";};
+		class CargoTurret_02: CargoTurret_02 {gunnerName="L Hatch";};
 	};
 
 	hiddenSelectionsTextures[]=
