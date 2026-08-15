@@ -543,7 +543,9 @@ class RC_AI_cannon_125mm_advanced: RC_cannon_125mm_advanced
 
 		"RC_AI_3Rnd_125mm_MPAB_DF_T_R",
 		"RC_AI_3Rnd_125mm_MPAB_DF_T_G",
-		"RC_AI_3Rnd_125mm_MPAB_DF_T_Y"
+		"RC_AI_3Rnd_125mm_MPAB_DF_T_Y",
+
+		"RC_4Rnd_125mm_AA_cannon_missiles"
 
 		/*
 		"RC_5Rnd_125mm_cannon_missiles",
@@ -717,6 +719,7 @@ class RC_AI_AbramsX_30mm_M914_Base: RC_AbramsX_30mm_M914
 	class HighROF;
 	/*
 	class close;
+	class short;
 	class medium;
 	class far;
 	*/
@@ -724,28 +727,97 @@ class RC_AI_AbramsX_30mm_M914_Base: RC_AbramsX_30mm_M914
 class RC_AI_AbramsX_30mm_M914: RC_AI_AbramsX_30mm_M914_Base
 {
 	/*
+	//trying to fix AI engagement rate
 	class close: close
 	{
-		access=3;
-		burst=3;	//8
-		burstRangeMax=6;	//16
-		enableAttack=1;
+		access=3;					//3, 3
+		burst=8;					//3, 8
+		burstRangeMax=16;			//?, 16
+		enableAttack=1;				//1, 1
 
-		aiBurstTerminable=1;
-		aiDispersionCoefX=1;
-		aimTransitionSpeed=1;
-		aiRateOfFire=0.5;
-		aiRateOfFireDispersion=2;
-		aiRateOfFireDistance=50;
+		aiBurstTerminable=1;		//?, 1
+		aiDispersionCoefX=1;		//?, 1
+		aimTransitionSpeed=1;		//?, 1
 
-		maxRange=50;
-		midRange=20;
-		minRange=0;
-		maxRangeProbab=0.2;
-		midRangeProbab=0.7;
-		minRangeProbab=0.8;
+		aiRateOfFire=0.5;			//?, 0.5
+		aiRateOfFireDispersion=1.5;	//?, 1.5
+		aiRateOfFireDistance=50;	//?, 50
+
+		maxRange=200;				//?, 200
+		midRange=100;				//?, 100
+		minRange=0;					//?, 0
+		maxRangeProbab=0.2;			//?, 0.2
+		midRangeProbab=0.7;			//?, 0.7
+		minRangeProbab=0.7;			//?, 0.7
+	};
+	class short: short
+	{
+		access=3;					//3, 3
+		burst=6;					//3, 6
+		burstRangeMax=16;			//?, 16
+		enableAttack=1;				//1, 1
+
+		aiBurstTerminable=1;		//?, 1
+		aiDispersionCoefX=1;		//?, 1
+		aimTransitionSpeed=1;		//?, 1
+		
+		aiRateOfFire=1;				//?, 1
+		aiRateOfFireDispersion=2;	//?, 2
+		aiRateOfFireDistance=150;	//?, 150
+
+		maxRange=800;				//?, 800
+		midRange=400;				//?, 400
+		minRange=100;				//?, 100
+		maxRangeProbab=0.2;			//?, 0.2
+		midRangeProbab=0.75;		//?, 0.75
+		minRangeProbab=0.7;			//?, 0.7
+	};
+	class medium: medium
+	{
+		access=3;					//3, 3
+		burst=4;					//3, 4
+		burstRangeMax=12;			//?, 12
+		enableAttack=1;				//1, 1
+
+		aiBurstTerminable=1;		//?, 1
+		aiDispersionCoefX=1;		//?, 1
+		aimTransitionSpeed=1;		//?, 1
+		
+		aiRateOfFire=2;				//?, 2
+		aiRateOfFireDispersion=2;	//?, 2
+		aiRateOfFireDistance=400;	//?, 400
+
+		maxRange=1500;				//?, 1500
+		midRange=800;				//?, 800
+		minRange=400;				//?, 400
+		maxRangeProbab=0.1;			//?, 0.1
+		midRangeProbab=0.7;			//?, 0.7
+		minRangeProbab=0.75;		//?, 0.75
+	};
+	class far: far
+	{
+		access=3;					//3, 3
+		burst=3;					//3, 3
+		burstRangeMax=12;			//?, 12
+		enableAttack=1;				//1, 1
+
+		aiBurstTerminable=1;		//?, 1
+		aiDispersionCoefX=1;		//?, 1
+		aimTransitionSpeed=1;		//?, 1
+		
+		aiRateOfFire=4;				//?, 4
+		aiRateOfFireDispersion=4;	//?, 4
+		aiRateOfFireDistance=800;	//?, 800
+
+		maxRange=2000;				//?, 2000
+		midRange=1500;				//?, 1500
+		minRange=800;				//?, 800
+		maxRangeProbab=0.05;		//?, 0.05
+		midRangeProbab=0.25;		//?, 0.25
+		minRangeProbab=0.6;			//?, 0.6
 	};
 	*/
+
 	class HighROF: HighROF
 	{
 		magazines[]=
@@ -1053,6 +1125,8 @@ class RC_AI_Stryker_Missile_Launcher: RC_Stryker_Missile_Launcher
 {
 	magazines[]=
 	{
+		"RC_AI_6Rnd_Javelin_MP_SACLOS",
+		"RC_AI_5Rnd_Javelin_MP_SACLOS",
 		"RC_AI_4Rnd_Javelin_MP_SACLOS",
 		"RC_AI_3Rnd_Javelin_MP_SACLOS",
 		"RC_AI_2Rnd_Javelin_MP_SACLOS",

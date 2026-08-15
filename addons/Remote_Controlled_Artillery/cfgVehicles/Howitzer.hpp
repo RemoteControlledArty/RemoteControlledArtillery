@@ -46,7 +46,8 @@ class RC_Howitzer_A: RC_Howitzer_base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
 		};
 		class RC_AT_Warning
 		{
@@ -542,7 +543,8 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
 		};
 		class RC_AT_Warning
 		{
@@ -962,7 +964,8 @@ class RC_Static_Arty: RC_Static_Arty_base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
 		};
 	};
 

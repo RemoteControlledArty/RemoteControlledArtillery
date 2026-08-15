@@ -286,7 +286,8 @@ class RC_ASV_WD: RC_ASV_Base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
 		};
 		class RC_Artillery
 		{

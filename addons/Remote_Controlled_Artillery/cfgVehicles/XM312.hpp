@@ -21,7 +21,8 @@ class RC_cUAS_Static_HMG_base: RC_cUAS_Static_HMG_core
 	{
 		class RC_Detection
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
 		};
 	};
 

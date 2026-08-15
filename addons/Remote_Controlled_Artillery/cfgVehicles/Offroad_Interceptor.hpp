@@ -31,7 +31,8 @@ class RC_Offroad_Interceptor_Base: RC_Offroad_Interceptor_Fetch
 		/*
 		class RC_Detection
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
 		};
 		*/
 		class RC_Interceptability

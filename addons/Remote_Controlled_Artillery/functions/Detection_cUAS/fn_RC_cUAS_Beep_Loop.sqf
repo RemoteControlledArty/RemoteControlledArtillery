@@ -30,19 +30,22 @@ if (!isServer) exitWith {};
 		private _CUAS_VehArray_O = [];
 		private _CUAS_VehArray_I = [];
 		{
-			private _side = side _x;
-			
-			switch (true) do {
-				case(_side == west): {
-					_CUAS_VehArray_B pushback _x;
+			//no crew = civ = same effect
+			//if ((count (crew _x)) > 0) then {
+
+				private _side = side _x;
+				switch (true) do {
+					case(_side == west): {
+						_CUAS_VehArray_B pushback _x;
+					};
+					case(_side == east): {
+						_CUAS_VehArray_O pushback _x;
+					};
+					case(_side == resistance): {
+						_CUAS_VehArray_I pushback _x;
+					};
 				};
-				case(_side == east): {
-					_CUAS_VehArray_O pushback _x;
-				};
-				case(_side == resistance): {
-					_CUAS_VehArray_I pushback _x;
-				};
-			};
+			//};
 		} forEach RC_CUAS_VehArray;
 
 

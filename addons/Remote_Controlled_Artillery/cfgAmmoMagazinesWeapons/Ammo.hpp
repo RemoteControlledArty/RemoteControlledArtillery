@@ -2388,7 +2388,7 @@ class RC_M_ATGM_MP_Overfly: RC_M_ATGM_MP_LOS
 {
 	class Overfly	//: Direct
 	{
-		overflyElevation=10;
+		overflyElevation=12;
 	};
 	flightProfiles[]=
 	{
@@ -2398,12 +2398,12 @@ class RC_M_ATGM_MP_Overfly: RC_M_ATGM_MP_LOS
 
 	submunitionDirectionType="SubmunitionTargetDirection";
 	submunitionInitialOffset[]={0,0,-1};
-	triggerDistance=12;
-	proximityExplosionDistance=14;
+	triggerDistance=14;
+	proximityExplosionDistance=16;
 	indirectHitRange=12;
 
 	maxSpeed=350;		//280 CLBM, 180 Titan AT, 350 125mm ATGM, 500 missilebase, 0 default & missilecore
-	initTime=0.25;		//0 CLBM
+	initTime=0.5;		//0 CLBM
 	thrustTime=10;		//5 CLMB & Titan, 6 cannon lg atgm, NLAW 0.80000001, too long thrust time seems to lead to misses
 	thrust=120;			//60 CLBM, 125mm ATGM, 40 cannon lg atgm, 45 Titan AT
 
@@ -2440,9 +2440,14 @@ class RC_M_ATGM_MP_SACLOS: M_Vorona_HEAT
 	indirectHit=80;
 	indirectHitRange=10;
 	maxControlRange=4050;
-	trackOversteer=0.67;	//0.5
 	fuseDistance=15;
 	cameraViewAvailable=1;
+
+	airFriction=0.06;		//0.06
+	sideAirFriction=0.2;	//vorona 0.09, RC ATGM 2
+	trackLead=1;			//0.85
+	trackOversteer=1;		//0.5
+	//maneuvrability=6;		//6
 	
 	maxSpeed=350;
 	thrustTime=5;
@@ -3433,7 +3438,7 @@ class RC_M_100mm_cannon_ATGM_Overfly: RC_M_120mm_cannon_ATGM
 
 	class Overfly	//: Direct
 	{
-		overflyElevation=10;
+		overflyElevation=12;
 	};
 	flightProfiles[]=
 	{
@@ -3441,12 +3446,12 @@ class RC_M_100mm_cannon_ATGM_Overfly: RC_M_120mm_cannon_ATGM
 		"Overfly"
 	};
 
-	triggerDistance=12;
-	proximityExplosionDistance=14;
+	triggerDistance=14;
+	proximityExplosionDistance=16;
 	indirectHitRange=12;
 
 	maxSpeed=350;
-	initTime=0.25;
+	initTime=0.5;
 	thrustTime=10;
 	thrust=120;
 };
@@ -3473,16 +3478,6 @@ class RC_M_105mm_cannon_ATGM_Overfly: RC_M_100mm_cannon_ATGM_Overfly
 {
 	submunitionAmmo="RC_ammo_Penetrator_AB_105mm_missile";
 	indirectHit=40;
-	indirectHitRange=10;
-
-	class Overfly
-	{
-		overflyElevation=10;
-	};
-	flightProfiles[]=
-	{
-		"Overfly"
-	};
 };
 
 

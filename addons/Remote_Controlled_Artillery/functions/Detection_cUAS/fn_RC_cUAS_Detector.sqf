@@ -13,24 +13,35 @@
 	_sASL = _sensorPositionASL;
 
 	_t = _target; (uav)
+
+	_b = _beep;
+	_pC = _playerCrew;
+	_c = _controllers;
+	_c1 = _controller1;
+	_c2 = _controller2;
 */
 
 //private _v = vehicle player;
 //_v setVariable ["RC_cUAS_SensorRange", 400];
 
 
+if (!isServer) exitWith {};
+
 params ["_v"];
+
 
 [_v] spawn {
 	params ["_v"];
-	
-	//private _sensorRange = getNumber (configFile >> "CfgVehicles" >> (typeOf _veh) >> "RC_cUAS_Range");
-	//if (_sensorRange < 10) then {_sensorRange = 400};  
+
 	
 	while {(!isNull _v) && (alive _v)} do {
 
-		sleep 1;
-		
+		sleep 2;
+
+		//if crewed check, otherwise no side to report to
+		if ((count (crew _v)) < 1) then {continue};
+
+
 		//get sensor range of vehicle, backup default 400m
 		private _sR = _v getVariable ["RC_cUAS_SensorRange", 400];
 		//square to make distance calculation cheaper for multiple drones, 400^2 = 160000
@@ -44,11 +55,47 @@ params ["_v"];
 			private _t = _x;
 			//systemChat "in dist";
 			
-			
+
 			//hostile check
 			private _vS = side _v;
 			if (!([side _t, _vS] call BIS_fnc_sideIsEnemy)) then {continue};
 			//systemChat "hostile";
+
+
+			//if in datalink check, including by other sensors
+			if (_t in ((listRemoteTargets _vS) apply {_x #0})) then {
+
+
+				//scale volume with distance
+				private _b = ["a3\sounds_f\air\heli_light_01\warning.wss", ( ((1 - (((_x distanceSqr _v) / _sR2) min 1)) * 0.11 + 0.04) max 0.04 min 0.15 ), 0.8];
+				/*
+				private _dNorm = (_closestDist / _beepDist) min 1;
+				private _vol   = (1 - _dNorm) * 0.11 + 0.04;
+				_vol = _vol max 0.04 min 0.15;
+				private _b = ["a3\sounds_f\air\heli_light_01\warning.wss", _vol, 0.8];
+				*/
+
+
+				private _pC = (crew _v) select {isPlayer _x};
+				if ((count _pC) > 0) then {
+					
+					[_b] remoteExec ["playSoundUI", _pC];
+				};
+
+
+				private _c = (UAVControl _v);
+				private _c1 = _c #0;
+				if (_c1 isNotEqualTo objNull) then {
+
+					[_b] remoteExec ["playSoundUI", _c1];
+
+					if (count _c > 2) then {
+
+						private _c2 = _c #2;
+						[_b] remoteExec ["playSoundUI", _c2];
+					};
+				};
+			};
 			
 
 			//visibility check
@@ -66,7 +113,8 @@ params ["_v"];
 
 
 			//add to array for orange mapmarker for inf, dot and "UAV"
-	  
+
+
 		} forEach allUnitsUAV;
 	};
 };

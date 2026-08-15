@@ -1,0 +1,1 @@
+postInit="if (!isServer) exitWith {};  params ['_v'];  _v setVariable ['RC_cUAS_SensorRange', 600];  [_v] call RC_fnc_RC_cUAS_Detector;";

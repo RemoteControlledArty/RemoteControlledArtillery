@@ -18,4 +18,4 @@ simulationStep=0.0020000001;
 
 //Use
 warheadName="HE";
-aiAmmoUsageFlags="64 + 128 + 256 + 512";
+aiAmmoUsageFlags="64 + 128 + 256";

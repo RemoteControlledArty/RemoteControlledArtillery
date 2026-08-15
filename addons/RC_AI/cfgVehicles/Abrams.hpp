@@ -4,6 +4,8 @@ class RC_AI_B_M1A2_SEPV2_D_Core: RC_M1A2_SEPV2_D_B
 	class Turrets;
 	class MainTurret;
 	class CROWS_Turret;
+	class Loader;
+	class LoaderMG;
 	class AnimationSources;
 	class Components;
 	class UserActions;
@@ -81,6 +83,8 @@ class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
 						"rhsusf_weap_duke"
 					};
 				};
+				class Loader: Loader {};
+				class LoaderMG: LoaderMG {};
 			};
 		};
 	};
@@ -142,6 +146,8 @@ class RC_AI_B_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D_Base
 				{
 					#include "\RC_AI\includes_vicmags\mags_AI_Abrams_com_red.hpp"
 				};
+				class Loader: Loader {};
+				class LoaderMG: LoaderMG {};
 			};
 		};
 	};
@@ -162,6 +168,8 @@ class RC_AI_O_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D
 				{
 					//#include "\RC_AI\includes_vicmags\mags_AI_Abrams_com_green.hpp"
 				};
+				class Loader: Loader {};
+				class LoaderMG: LoaderMG {};
 			};
 		};
 	};
@@ -182,6 +190,8 @@ class RC_AI_I_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D
 				{
 					//#include "\RC_AI\includes_vicmags\mags_AI_Abrams_com_red.hpp"
 				};
+				class Loader: Loader {};
+				class LoaderMG: LoaderMG {};
 			};
 		};
 	};
@@ -219,6 +229,8 @@ class RC_AI_O_M1A2_SEPV2_WD: RC_AI_B_M1A2_SEPV2_WD
 				{
 					//#include "\RC_AI\includes_vicmags\mags_AI_Abrams_com_red.hpp"
 				};
+				class Loader: Loader {};
+				class LoaderMG: LoaderMG {};
 			};
 		};
 	};
@@ -239,6 +251,8 @@ class RC_AI_I_M1A2_SEPV2_WD: RC_AI_B_M1A2_SEPV2_WD
 				{
 					//#include "\RC_AI\includes_vicmags\mags_AI_Abrams_com_red.hpp"
 				};
+				class Loader: Loader {};
+				class LoaderMG: LoaderMG {};
 			};
 		};
 	};

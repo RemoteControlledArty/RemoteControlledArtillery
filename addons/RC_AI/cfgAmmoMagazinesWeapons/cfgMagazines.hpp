@@ -551,3 +551,5 @@ class RC_AI_2Rnd_Javelin_MP_SACLOS: RC_2Rnd_Javelin_MP_SACLOS
 class RC_AI_1Rnd_Javelin_MP_SACLOS: RC_AI_2Rnd_Javelin_MP_SACLOS {count=1;};
 class RC_AI_3Rnd_Javelin_MP_SACLOS: RC_AI_2Rnd_Javelin_MP_SACLOS {count=3;};
 class RC_AI_4Rnd_Javelin_MP_SACLOS: RC_AI_2Rnd_Javelin_MP_SACLOS {count=4;};
+class RC_AI_5Rnd_Javelin_MP_SACLOS: RC_AI_2Rnd_Javelin_MP_SACLOS {count=5;};
+class RC_AI_6Rnd_Javelin_MP_SACLOS: RC_AI_2Rnd_Javelin_MP_SACLOS {count=6;};

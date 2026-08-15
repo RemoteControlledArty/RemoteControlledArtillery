@@ -34,6 +34,7 @@ class RC_HMMWV_Core: RC_HMMWV_Fetch
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
 		};
 		/*
 		class RC_AT_Warning
@@ -785,7 +786,8 @@ class RC_Offroad_cUAS_Base: RC_Offroad_Base
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
+			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
 		};
 		class RC_AT_Warning
 		{
