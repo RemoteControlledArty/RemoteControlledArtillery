@@ -1,6 +1,6 @@
 //minigun
-class 5000Rnd_762x51_Yellow_Belt;
-class RC_PylonM_3000Rnd_338_SLAP_T_R: 5000Rnd_762x51_Yellow_Belt
+class PylonWeapon_2000Rnd_65x39_belt;	//5000Rnd_762x51_Yellow_Belt
+class RC_PylonM_3000Rnd_338_SLAP_T_R: PylonWeapon_2000Rnd_65x39_belt
 {
 	displayName="> .338NM SLAP 3000x red";
 	displayNameShort=".338NM SLAP";

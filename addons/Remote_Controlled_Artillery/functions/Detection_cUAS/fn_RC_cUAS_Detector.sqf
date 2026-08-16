@@ -54,7 +54,11 @@ params ["_v"];
 			if ((_x distanceSqr _v) > _sR2) then {continue};
 			private _t = _x;
 			//systemChat "in dist";
-			
+
+
+			//not empty check
+			if ((count (crew _t)) < 1) then {continue};
+
 
 			//hostile check
 			private _vS = side _v;
@@ -67,7 +71,7 @@ params ["_v"];
 
 
 				//scale volume with distance
-				private _b = ["a3\sounds_f\air\heli_light_01\warning.wss", ( ((1 - (((_x distanceSqr _v) / _sR2) min 1)) * 0.11 + 0.04) max 0.04 min 0.15 ), 0.8];
+				private _b = ["a3\sounds_f\air\heli_light_01\warning.wss", ( ((1 - (((_t distanceSqr _v) / _sR2) min 1)) * 0.11 + 0.04) max 0.04 min 0.15 ), 0.8];
 				/*
 				private _dNorm = (_closestDist / _beepDist) min 1;
 				private _vol   = (1 - _dNorm) * 0.11 + 0.04;
