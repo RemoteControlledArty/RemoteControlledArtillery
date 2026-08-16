@@ -11,12 +11,14 @@ weapons[]=
 {
 	"RC_target_confirmer_datalink",
 	"RC_APS_W",
+	//"RC_Dazzler_W",
 	"CMFlareLauncher"
 };
 magazines[]=
 {
 	"RC_target_confirmer_mag",
-	//"RC_1Rnd_APS_M"
+	//"RC_1Rnd_APS_M",
+	//"RC_1Rnd_Dazzler_M",
 	"168Rnd_CMFlare_Chaff_Magazine"
 };
 
@@ -55,7 +57,7 @@ ace_refuel_fuelCapacity=3000;	//t ?, ch 3914
 //memoryPointDriverOptics="Supply_pos";
 //memoryPointDriverOptics="Driver_dir";
 //memoryPointDriverOptics="Driver_pos";
-//memoryPointDriverOptics="Slingload_cam";
+//memoryPointDriverOptics="Slingload_cam";	//atm used, likely default
 
 class Viewoptics
 {
@@ -139,7 +141,7 @@ class pilotCamera
 	{
 		class Wide
 		{
-			opticsDisplayName="V";
+			opticsDisplayName="Cam";
 			//stabilizedInAxes=3;
 			//directionStabilized=1;
 

@@ -2,31 +2,64 @@ class CopilotTurret: CopilotTurret
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\panels_Heli_Copilot.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-
-	dontCreateAI=1;
-	primaryGunner=0;
-	primaryObserver=0;
-	isCopilot=1;
-	//dontCreateAI=1;
-	//cargoCanControlUAV=1;
-	stabilizedInAxes=3;
+	
+	gunnerName="Optional Pilot";
 	gunnerCompartments="Compartment2";
-	//driverCompartments="Compartment2";
+	dontCreateAI=1;
+	primaryGunner=0;	//0
+	primaryObserver=0;	//0
+	isCopilot=1;		//1
+	//cargoCanControlUAV=1;
 
-	minElev=-90;
-	maxElev=20;
-	initElev=0;
-	minTurn=-360;
-	maxTurn=360;
-	initTurn=0;
+	stabilizedInAxes=3;	//3
+	minElev=-90;	//40
+	maxElev=20;		//20
+	initElev=0;		//0
+	minTurn=-360;	//-120
+	maxTurn=360;	//120
+	initTurn=0;		//0
 	//minCamElev=-90;
 	//maxCamElev=90;
-
 	maxHorizontalRotSpeed=4;	//3
 	maxVerticalRotSpeed=4;		//3
 
-	memoryPointGunnerOptics="Copilot_view_dir";
-	memoryPointGun="Copilot_view_pos";
+	weapons[]=
+	{
+		"RC_target_confirmer_datalink",
+		//"CMFlareLauncher"
+		//"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		"RC_target_confirmer_mag",
+		//"168Rnd_CMFlare_Chaff_Magazine"
+		//"SmokeLauncherMag"
+	};
+
+	class OpticsIn
+	{
+		class Wide
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+			opticsDisplayName="W";
+
+			initFov=1.25;
+			minFov=0.025;
+			maxFov=1.25;
+		};
+	};
+	//turretInfoType="RC_RscOptics_AV_Heli";
+	//turretInfoTypeRTD="RC_RscOptics_AV_Heli";
+	//turretInfoType="RscOptics_Heli_Attack_01_gunner";
+	//turretInfoType="RscOptics_MBT_03_gunner";
+
+
+	/*
+	//default
+	memoryPointGunnerOptics="Copilot_view_dir";	//Copilot_view_dir
+	memoryPointGun="Copilot_view_pos";			//Copilot_view_pos
 	
 	gunnerAction="pilot_Heli_Transport_04";
 	proxyIndex=1;
@@ -43,76 +76,25 @@ class CopilotTurret: CopilotTurret
 	animationSourceGun="Optics_1_muzzle_source";
 	gunBeg="Copilot_view_dir";
 	gunEnd="Copilot_view_pos";
-	gunnerName="Optional Pilot";
-	/*
-	minElev=-40;
-	maxElev=20;
-	initElev=0;
-	minTurn=-120;
-	maxTurn=120;
-	initTurn=0;
+	usePip=1;
+
+	inGunnerMayFire=1;			//1
+	gunnerOpticsEffect[]={};	//{}
+	gunnerOpticsModel="";		//""
+
+	soundServo[]={"",0.01,1,30};	//{"",0.01,1,30}
 	*/
-	usePip=1;	//needed?
-	//turretInfoType="RscOptics_Heli_Attack_01_gunner";
-	//turretInfoType="RscOptics_MBT_03_gunner";
-	unitInfoType="RC_RscOptics_AV_Heli";
-	unitInfoTypeRTD="RC_RscOptics_AV_Heli";
 
-	weapons[]=
-	{
-		"RC_target_confirmer_datalink",
-		//"CMFlareLauncher"
-		//"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"RC_target_confirmer_mag",
-		//"168Rnd_CMFlare_Chaff_Magazine"
-		//"SmokeLauncherMag"
-	};
-
-	soundServo[]=
-	{
-		"",
-		0.0099999998,
-		1,
-		30
-	};
-	inGunnerMayFire=1;
-	gunnerOpticsEffect[]={};
-	gunnerOpticsModel="";
-
+	/*
+	//what even was this for
 	class ViewGunner: ViewPilot
 	{
 		initAngleX=-16;
 	};
+	*/
 
-	class OpticsIn
-	{
-		class Wide
-		{
-			initAngleX=0;
-			minAngleX=-30;
-			maxAngleX=30;
-			initAngleY=0;
-			minAngleY=-100;
-			maxAngleY=100;
-			initFov=1.25;
-			minFov=0.025;
-			maxFov=1.25;
-			visionMode[]=
-			{
-				"Normal",
-				"NVG",
-				"Ti"
-			};
-			thermalMode[]={0};
-			opticsDisplayName="W";
-			gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-			//gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_wide_F";
-		};
-	};
-
+	/*
+	//what god damn use has this? its defined for the Mi-290, not inherited from mainTurret, but its completely obscure
 	class OpticsOut
 	{
 		class Monocular
@@ -137,6 +119,7 @@ class CopilotTurret: CopilotTurret
 			//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 		};
 	};
+	*/
 
 	/*
 	loadercamera attemt, didnt work as optics cannot be changed button wise, or other reason
