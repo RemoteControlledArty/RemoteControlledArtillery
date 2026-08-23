@@ -1,5 +1,5 @@
-class B_Heli_Transport_01_pylons_F;
-class RC_MH80M_DAP_Core: B_Heli_Transport_01_pylons_F
+class B_CTRG_Heli_Transport_01_DAP_F;
+class RC_MH80M_DAP_Core: B_CTRG_Heli_Transport_01_DAP_F
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_fetch.hpp"
 	class CargoTurret_01;

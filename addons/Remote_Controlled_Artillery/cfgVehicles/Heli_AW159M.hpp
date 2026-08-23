@@ -68,7 +68,7 @@ class RC_AI_AW159M_O: RC_AI_AW159M
 {
 	magazines[]=
 	{
-		"RC_PylonM_3000Rnd_338_SLAP_T_G",
+		"RC_5000Rnd_338_SLAP_T_G",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -80,7 +80,7 @@ class RC_AI_AW159M_I: RC_AI_AW159M
 {
 	magazines[]=
 	{
-		"RC_PylonM_3000Rnd_338_SLAP_T_Y",
+		"RC_5000Rnd_338_SLAP_T_Y",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -113,7 +113,7 @@ class RC_AW159M_O_X: RC_AW159M
 
 	magazines[]=
 	{
-		"RC_PylonM_3000Rnd_338_SLAP_T_G",
+		"RC_5000Rnd_338_SLAP_T_G",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -136,7 +136,7 @@ class RC_AW159M_I_X: RC_AW159M
 	
 	magazines[]=
 	{
-		"RC_PylonM_3000Rnd_338_SLAP_T_Y",
+		"RC_5000Rnd_338_SLAP_T_Y",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -177,7 +177,7 @@ class RC_OM_AW159M_O_X: RC_OM_AW159M
 {
 	magazines[]=
 	{
-		"RC_PylonM_3000Rnd_338_SLAP_T_G",
+		"RC_5000Rnd_338_SLAP_T_G",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -197,7 +197,7 @@ class RC_OM_AW159M_I_X: RC_OM_AW159M
 {
 	magazines[]=
 	{
-		"RC_PylonM_3000Rnd_338_SLAP_T_Y",
+		"RC_5000Rnd_338_SLAP_T_Y",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};

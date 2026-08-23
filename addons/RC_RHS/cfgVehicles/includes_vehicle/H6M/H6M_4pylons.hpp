@@ -36,7 +36,7 @@ class TransportPylonsComponent
 			UIposition[]		= {0.625,0.2};
 			hitpoint			= "HitPylon1";
 			
-			attachment			= "RC_RHS_PylonM_1300Rnd_GAU19A_left";
+			attachment			= "RC_RHS_PylonM_1250Rnd_GAU19A_left";
 		};
 		class pylon2 : pylon1
 		{
@@ -73,7 +73,7 @@ class TransportPylonsComponent
 		{
 			attachment[] =
 			{
-				"RC_RHS_PylonM_1300Rnd_GAU19A_left",
+				"RC_RHS_PylonM_1250Rnd_GAU19A_left",
 				"RC_PylonM_350Rnd_20mm",
 				"RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy",
 				"RC_PylonM_12Rnd_APKWS"

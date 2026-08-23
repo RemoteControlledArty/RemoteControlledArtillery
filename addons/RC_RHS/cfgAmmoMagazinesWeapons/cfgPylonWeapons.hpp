@@ -27,7 +27,7 @@ class RC_RHS_PylonW_Hydra: RC_RHS_PylonW_Hydra_Core
 		displayName="Hydra";
 		displayNameShort="Hydra";
 		reloadTime=0.15;
-		dispersion=0.006;	//0.12
+		dispersion=0.004;	//0.12 default, 0.004 to make more viable alternative to guided against vics that need direct hit
 	};
 };
 class RC_RHS_PylonW_Hydra_Proxy: RC_RHS_PylonW_Hydra
@@ -153,8 +153,8 @@ class RC_RHS_PylonW_GAU19A: RC_RHS_PylonW_GAU19A_Base
 	ballisticsComputer=8;
 	magazines[]=
 	{
-		"RC_RHS_PylonM_1300Rnd_GAU19A_left",
-		"RC_RHS_PylonM_1300Rnd_GAU19A_right"
+		"RC_RHS_PylonM_1250Rnd_GAU19A_left",
+		"RC_RHS_PylonM_1250Rnd_GAU19A_right"
 	};
 	modes[]=
 	{
@@ -164,6 +164,8 @@ class RC_RHS_PylonW_GAU19A: RC_RHS_PylonW_GAU19A_Base
 	{
 		displayName="GAU-19/A";
 		displayNameShort="GAU-19/A";
+		reloadTime=0.03;	//0.03, 2000RPM
+		dispersion=0.005;	//0.005
 	};
 };
 
@@ -180,7 +182,7 @@ class RC_RHS_PylonW_338_Minigun: RC_RHS_PylonW_338_Minigun_Base
 	ballisticsComputer=8;
 	magazines[]=
 	{
-		"RC_RHS_PylonM_2600Rnd_338_SLAP"
+		"RC_RHS_PylonM_2500Rnd_338_SLAP"
 	};
 	modes[]=
 	{
@@ -190,5 +192,8 @@ class RC_RHS_PylonW_338_Minigun: RC_RHS_PylonW_338_Minigun_Base
 	{
 		displayName=".338NM";
 		displayNameShort=".338NM";
+
+		reloadTime=0.015;	//0.015, 4000RPM
+		dispersion=0.005;	//0.0055
 	};
 };

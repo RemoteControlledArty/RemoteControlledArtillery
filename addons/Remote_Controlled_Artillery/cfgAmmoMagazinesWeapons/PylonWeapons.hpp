@@ -11,9 +11,9 @@ class RC_PylonW_338_Minigun: RC_PylonW_338_Minigun_Base
 	ballisticsComputer=8;
 	magazines[]=
 	{
-		"RC_PylonM_3000Rnd_338_SLAP_T_R",
-		"RC_PylonM_3000Rnd_338_SLAP_T_G",
-		"RC_PylonM_3000Rnd_338_SLAP_T_Y"
+		"RC_PylonM_2500Rnd_338_SLAP_T_R",
+		"RC_PylonM_2500Rnd_338_SLAP_T_G",
+		"RC_PylonM_2500Rnd_338_SLAP_T_Y"
 	};
 	modes[]=
 	{
@@ -23,6 +23,42 @@ class RC_PylonW_338_Minigun: RC_PylonW_338_Minigun_Base
 	{
 		displayName=".338NM";
 		displayNameShort=".338NM";
+		reloadTime=0.02;	//0.02, 3000RPM
+		dispersion=0.005;	//0.0064
+	};
+};
+
+
+class Gatling_127mm_HeliPylon_F;
+class RC_PylonW_127mm_Minigun_Base: Gatling_127mm_HeliPylon_F
+{
+	class LowROF;
+};
+class RC_PylonW_127mm_Minigun: RC_PylonW_127mm_Minigun_Base
+{
+	displayName="12.7mm Minigun";
+	displayNameShort="12.7mm Minigun";
+	ballisticsComputer=8;
+	magazines[]=
+	{
+		"RC_PylonM_1000Rnd_127mm_SLAP_T_R_left",
+		"RC_PylonM_1000Rnd_127mm_SLAP_T_G_left",
+		"RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left",
+
+		"RC_PylonM_1000Rnd_127mm_SLAP_T_R_right",
+		"RC_PylonM_1000Rnd_127mm_SLAP_T_G_right",
+		"RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right"
+	};
+	modes[]=
+	{
+		"LowROF","close","short","medium","far"
+	};
+	class LowROF: LowROF
+	{
+		displayName="12.7mm";
+		displayNameShort="12.7mm";
+		reloadTime=0.03;	//0.04 = 1500RPM, 0.03 = 2000RPM
+		dispersion=0.005;	//0.003
 	};
 };
 
@@ -225,7 +261,7 @@ class RC_PylonW_12Rnd_Hydra: RC_PylonW_12Rnd_Hydra_Core
 		displayName="Hydra";
 		displayNameShort="Hydra";
 		reloadTime=0.15;
-		dispersion=0.006;	//0.015
+		dispersion=0.004;	//0.015 default, 0.004 to make more viable alternative to guided against vics that need direct hit
 	};
 };
 class RC_PylonW_12Rnd_Hydra_Proxy: RC_PylonW_12Rnd_Hydra
@@ -286,6 +322,7 @@ class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Core
 		displayName="Hydra";
 		displayNameShort="Hydra";
 		reloadTime=0.15;
+		dispersion=0.004;	//0.015 default, 0.004 to make more viable alternative to guided against vics that need direct hit
 	};
 };
 class RC_PylonW_19Rnd_Hydra_Proxy: RC_PylonW_19Rnd_Hydra

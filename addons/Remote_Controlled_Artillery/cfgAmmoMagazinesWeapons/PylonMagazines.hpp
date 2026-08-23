@@ -1,25 +1,92 @@
 //minigun
-class PylonWeapon_2000Rnd_65x39_belt;	//5000Rnd_762x51_Yellow_Belt
-class RC_PylonM_3000Rnd_338_SLAP_T_R: PylonWeapon_2000Rnd_65x39_belt
+class PylonWeapon_2000Rnd_65x39_belt;
+class RC_PylonM_2500Rnd_338_SLAP_T_R: PylonWeapon_2000Rnd_65x39_belt
 {
-	displayName="> .338NM SLAP 3000x red";
+	displayName="> .338NM SLAP 2500x red";
 	displayNameShort=".338NM SLAP";
 	descriptionShort=".338NM Minigun";
 	pylonWeapon="RC_PylonW_338_Minigun";
 	ammo="RC_Pylon_B_338_SLAP_T_R";
-	count=3000;
+	count=2500;
 	tracersEvery=1;
-	hardpoints[]={"OM_H","OM_H_O"};
+	hardpoints[]={"OM_H_RightOnly","OM_H_O_RightOnly"};
 };
-class RC_PylonM_3000Rnd_338_SLAP_T_G: RC_PylonM_3000Rnd_338_SLAP_T_R
+class RC_PylonM_2500Rnd_338_SLAP_T_G: RC_PylonM_2500Rnd_338_SLAP_T_R
 {
-	displayName="> .338NM SLAP 3000x green";
+	displayName="> .338NM SLAP 2500x green";
 	ammo="RC_Pylon_B_338_SLAP_T_G";
 };
-class RC_PylonM_3000Rnd_338_SLAP_T_Y: RC_PylonM_3000Rnd_338_SLAP_T_R
+class RC_PylonM_2500Rnd_338_SLAP_T_Y: RC_PylonM_2500Rnd_338_SLAP_T_R
 {
-	displayName="> .338NM SLAP 3000x yellow";
+	displayName="> .338NM SLAP 2500x yellow";
 	ammo="RC_Pylon_B_338_SLAP_T_Y";
+};
+
+
+class PylonWeapon_500Rnd_127mm_HEIAP_belt_left;
+class RC_PylonM_1000Rnd_127mm_SLAP_T_R_left: PylonWeapon_500Rnd_127mm_HEIAP_belt_left
+{
+	displayName="> .50 SLAP 1000x red";
+	displayNameShort=".50 SLAP";
+	descriptionShort=".50 Minigun";
+	pylonWeapon="RC_PylonW_338_Minigun";
+	ammo="RC_Pylon_B_338_SLAP_T_R";
+	count=1000;
+	tracersEvery=1;
+	hardpoints[]={"OM_H_LeftOnly","OM_H_O_LeftOnly"};
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_G_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_left
+{
+	displayName="> .338NM SLAP 2500x green";
+	ammo="RC_Pylon_B_338_SLAP_T_G";
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_left
+{
+	displayName="> .338NM SLAP 2500x yellow";
+	ammo="RC_Pylon_B_338_SLAP_T_Y";
+};
+
+
+class PylonWeapon_500Rnd_127mm_HEIAP_belt_right;
+class RC_PylonM_1000Rnd_127mm_SLAP_T_R_right: PylonWeapon_500Rnd_127mm_HEIAP_belt_right
+{
+	displayName="> .50 SLAP 1000x red";
+	displayNameShort=".50 SLAP";
+	descriptionShort=".50 Minigun";
+	pylonWeapon="RC_PylonW_338_Minigun";
+	ammo="RC_Pylon_B_338_SLAP_T_R";
+	count=1000;
+	tracersEvery=1;
+	hardpoints[]={"OM_H_RightOnly","OM_H_O_RightOnly"};
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_G_right: RC_PylonM_1000Rnd_127mm_SLAP_T_R_right
+{
+	displayName="> .338NM SLAP 2500x green";
+	ammo="RC_Pylon_B_338_SLAP_T_G";
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right: RC_PylonM_1000Rnd_127mm_SLAP_T_R_right
+{
+	displayName="> .338NM SLAP 2500x yellow";
+	ammo="RC_Pylon_B_338_SLAP_T_Y";
+};
+
+
+//external fuel tank
+class PylonFuelTank_UH80;
+class RC_PylonFuelTank_HalfFull: PylonFuelTank_UH80
+{
+	class Components
+	{
+		class FuelTankComponent
+		{
+			fuelCapacity=230;	//454
+		};
+	};
+
+	descriptionShort="230L droppable external-fueltank";
+	displayName="> 230L External-Fueltank";
+	mass=250;	//500
+	hardpoints[]={"OM_H","OM_H_O"};
 };
 
 

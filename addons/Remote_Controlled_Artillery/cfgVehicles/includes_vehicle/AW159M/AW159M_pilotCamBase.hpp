@@ -9,13 +9,13 @@ driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 
 weapons[]=
 {
-	"RC_PylonW_338_Minigun",
+	"RC_Heli_338_Minigun",
 	"Laserdesignator_pilotCamera",
 	"CMFlareLauncher"
 };
 magazines[]=
 {
-	"RC_PylonM_3000Rnd_338_SLAP_T_R",
+	"RC_5000Rnd_338_SLAP_T_R",
 	"Laserbatteries",
 	"168Rnd_CMFlare_Chaff_Magazine"
 };

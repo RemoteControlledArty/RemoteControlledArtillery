@@ -122,6 +122,28 @@ class RC_2000Rnd_338_SLAP_T_Y: RC_2000Rnd_338_SLAP_T_R
 };
 
 
+class 5000Rnd_762x51_Belt;
+class RC_5000Rnd_338_SLAP_T_R: 5000Rnd_762x51_Belt
+{
+	displayName=".338NM SLAP red";
+	displayNameShort=".338NM SLAP";
+	descriptionShort=".338NM Minigun";
+	ammo="RC_Pylon_B_338_SLAP_T_R";
+	count=5000;
+	tracersEvery=1;
+};
+class RC_5000Rnd_338_SLAP_T_G: RC_5000Rnd_338_SLAP_T_R
+{
+	displayName=".338NM SLAP green";
+	ammo="RC_Pylon_B_338_SLAP_T_G";
+};
+class RC_5000Rnd_338_SLAP_T_Y: RC_5000Rnd_338_SLAP_T_R
+{
+	displayName=".338NM SLAP yellow";
+	ammo="RC_Pylon_B_338_SLAP_T_Y";
+};
+
+
 //RC ATGM
 class Vorona_HEAT;
 class RC_1Rnd_ATGM_MP_SACLOS: Vorona_HEAT

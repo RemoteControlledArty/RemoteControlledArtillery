@@ -394,6 +394,18 @@ class RC_338_DoorMinigun2: RC_338_DoorMinigun2_Base
 };
 
 
+//AW159 fixed, base defined in PylonWeapons
+class RC_Heli_338_Minigun: RC_PylonW_338_Minigun
+{
+	magazines[]=
+	{
+		"RC_PylonM_5000Rnd_338_SLAP_T_R",
+		"RC_PylonM_5000Rnd_338_SLAP_T_G",
+		"RC_PylonM_5000Rnd_338_SLAP_T_Y"
+	};
+};
+
+
 class launch_Vorona_base_F;
 class RC_ATGM_SACLOS: launch_Vorona_base_F
 {
