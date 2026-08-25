@@ -74,7 +74,7 @@ class TransportPylonsComponent
 			//mirroredMissilePos= 1;
 			priority			= 1;
 			UIposition[] 		= {0.04,0.42};
-			attachment			= "RC_PylonM_1Rnd_AGM114K";
+			attachment			= "RC_PylonM_2Rnd_AGM114K";
 		};
 
 		
