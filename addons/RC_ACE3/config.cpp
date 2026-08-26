@@ -5,12 +5,10 @@ class CfgPatches
 		name="RC ACE3";
 		author="Ascent";
 
-		/*
 		units[]=
 		{
-			"",
+			"RC_MH80M_DAP",
 		};
-		*/
 
 		/*
 		weapons[]=
@@ -46,28 +44,26 @@ class DefaultVehicleSystemsDisplayManagerLeft;
 class DefaultVehicleSystemsDisplayManagerRight;
 
 
-/*
 class CfgAmmo
 {
 	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\PylonAmmo.hpp"
-	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Ammo.hpp"
+	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Ammo.hpp"
 };
 class CfgMagazines
 {
 	class CA_Magazine;
 	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\PylonMagazines.hpp"
-	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Magazines.hpp"
+	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Magazines.hpp"
 };
 class CfgWeapons
 {
 	class Default;
 	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\PylonWeapons.hpp"
-	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Weapons.hpp"
+	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Weapons.hpp"
 };
-*/
 
 
 class CfgVehicles
 {
-	//#include "\RC_GX\cfgVehicles\.hpp"
+	#include "\RC_ACE3\cfgVehicles\H80M.hpp"
 };
