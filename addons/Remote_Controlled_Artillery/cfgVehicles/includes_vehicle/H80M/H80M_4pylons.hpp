@@ -9,6 +9,12 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
+				//V1 = .338, V2 = .50, V4 = lower capacity 20/25/30mm & rockets, V5 = full capacity 20/25/30mm & rockets
+				//V5 = small guided pods, V6 = large guided pods, V7 = most hardpoints
+
+				"RC_Hardpoint_V5",
+				"RC_Hardpoint_V5_Left",
+
 				"OM_H",
 				"OM_H_LeftOnly",
 				"B_GAU19_HELI_L",
@@ -56,6 +62,9 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
+				"RC_Hardpoint_V5",
+				"RC_Hardpoint_V5_Left",
+				
 				"OM_H",
 				"OM_H_RightOnly",
 				"B_GAU19_HELI_R",

@@ -18,7 +18,10 @@ driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 
 weapons[]+={"Laserdesignator_pilotCamera"};
 magazines[]+={"Laserbatteries"};
-
+/*
+weapons[]={"Laserdesignator_pilotCamera"};
+magazines[]={"Laserbatteries"};
+*/
 
 //2.0
 /*

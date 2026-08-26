@@ -11,7 +11,7 @@ gunnerCanFire=1;
 enableManualFire=1;					//only if copilot is primarygunner & pylons owned by copilot, but then lase is fixed and CCIP is gone
 
 
-bodyFrictionCoef=0.2;				//H1=1 H80=0.3
+bodyFrictionCoef=1;					//H1=1 H6=0.3
 maxSpeed=300;						//200
 liftForceCoef=1;					//1
 cyclicAsideForceCoef=1.65;			//1  	//? 1.65
