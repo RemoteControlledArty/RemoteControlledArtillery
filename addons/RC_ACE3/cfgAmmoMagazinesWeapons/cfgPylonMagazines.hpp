@@ -3,6 +3,7 @@ class RC_PylonM_12Rnd_APKWS;
 class RC_ACE_PylonM_12Rnd_APKWS: RC_PylonM_12Rnd_APKWS
 {
 	displayName="> APKWS LG 12x [ACE]";
+    descriptionShort="missiles with ACE laser guidance";
     pylonWeapon="RC_ACE_PylonW_APKWS";
 	ammo="RC_ACE_APKWS";
 };
@@ -40,6 +41,13 @@ class RC_PylonM_12Rnd_S8_LG: RC_PylonM_12Rnd_APKWS
     pylonWeapon="RC_PylonW_S8_LG";
 	hardpoints[]={"RC_Hardpoint_O_V6"};
 };
+class RC_PylonM_12Rnd_S8_LG;
+class RC_ACE_PylonM_12Rnd_S8_LG: RC_PylonM_12Rnd_S8_LG
+{
+	displayName="> S-8 LG 12x [ACE]";
+    descriptionShort="missiles with ACE laser guidance";
+    pylonWeapon="RC_PylonW_S8_LG";
+};
 /*
 class RC_PylonM_12Rnd_S8_LG_Proxy: RC_PylonM_12Rnd_S8_LG
 {
@@ -72,6 +80,14 @@ class RC_PylonM_1Rnd_AGM114K: 12Rnd_PG_missiles
 	mass=70;
 	*/
 	hardpoints[]={"RC_Hardpoint_V5"};
+};
+class RC_PylonM_1Rnd_AGM114K;
+class RC_ACE_PylonM_1Rnd_AGM114K: RC_PylonM_1Rnd_AGM114K
+{
+	displayName="> AGM-114K Hellfire II 1x [ACE]";
+	descriptionShort="heavy missile with ACE laser guidance";
+	pylonWeapon="RC_PylonW_Hellfire";
+	ammo="RC_ACE_AGM114K";
 };
 /*
 class RC_PylonM_1Rnd_AGM114K_Proxy: RC_PylonM_1Rnd_AGM114K
@@ -119,6 +135,14 @@ class RC_PylonM_1Rnd_Vikhr: RC_PylonM_1Rnd_AGM114K
 	pylonWeapon="RC_PylonW_Vikhr";
 	ammo="RC_AGM114K";
 	hardpoints[]={"RC_Hardpoint_O_V5"};
+};
+class RC_PylonM_1Rnd_Vikhr;
+class RC_ACE_PylonM_1Rnd_Vikhr: RC_PylonM_1Rnd_Vikhr
+{
+	displayName="> 9K121 Vikhr 1x [ACE]";
+	descriptionShort="heavy missile with ACE laser guidance";
+	pylonWeapon="RC_ACE_PylonW_Vikhr";
+	ammo="RC_ACE_AGM114K";
 };
 /*
 class RC_PylonM_1Rnd_Vikhr_Proxy: RC_PylonM_1Rnd_Vikhr
