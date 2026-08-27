@@ -69,8 +69,8 @@ RC_FPV_validDronesPvPArr =
 
 RC_FPV_validDronesTrainingArr =
 [
-	"Crocus_PvP",
-	"B_Crocus_PvP",
-	"O_Crocus_PvP",
-	"I_Crocus_PvP"
+	"Crocus_Training",
+	"B_Crocus_Training",
+	"O_Crocus_Training",
+	"I_Crocus_Training"
 ];
