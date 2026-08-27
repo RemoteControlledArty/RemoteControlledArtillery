@@ -1155,8 +1155,16 @@ class CfgEditorSubcategories
 	class RC_Support_subcat {displayname="Support";};
 	class RC_FSV_subcat {displayname="FSVs";};
 	class RC_MBT_subcat {displayname="MBTs";};
+
+	class RC_Heli_minigun_subcat {displayname="Helicopters - minigun";};
+	class RC_Heli_unguided_subcat {displayname="Helicopters - unguided";};
+	class RC_Heli_guidedLight_subcat {displayname="Helicopters - guided (light)";};
+	class RC_Heli_guidedHeavy_subcat {displayname="Helicopters - guided (heavy)";};
 	class RC_Heli_unarmed_subcat {displayname="Helicopters - unarmed";};
 	class RC_Heli_armed_subcat {displayname="Helicopters - armed";};
+
+	class RC_OM_Heli_unarmed_subcat {displayname="RC Helicopters - unarmed";};
+
 	class RC_ICV_armed_subcat {displayname="RCIVs (armed)";};
 	class RC_ICV_subcat {displayname="RCIVs (unarmed)";};
 	class RC_Car_subcat {displayname="Car's";};

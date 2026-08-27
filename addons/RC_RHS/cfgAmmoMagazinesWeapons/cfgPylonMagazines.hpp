@@ -6,7 +6,7 @@ class RC_RHS_PylonM_19Rnd_Hydra_MP: rhs_mag_M229_19
 	descriptionShort="multi purpose unguided rockets";
 	pylonWeapon="RC_RHS_PylonW_Hydra";
 	ammo="RC_RHS_Hydra_MP";
-	hardpoints[]={"OM_H"};
+	hardpoints[]={"OM_H_Base"};
 };
 class RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy: RC_RHS_PylonM_19Rnd_Hydra_MP
 {
@@ -15,6 +15,7 @@ class RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy: RC_RHS_PylonM_19Rnd_Hydra_MP
 	descriptionShort="multi purpose proximity fuze unguided rockets";
 	pylonWeapon="RC_RHS_PylonW_Hydra_Proxy";
 	ammo="RC_RHS_Hydra_MP_Proxy";
+	hardpoints[]={"OM_H"};
 };
 /*
 class RC_RHS_PylonM_19Rnd_Hydra_HE: RC_RHS_PylonM_19Rnd_Hydra_MP
@@ -35,7 +36,7 @@ class RC_RHS_PylonM_7Rnd_Hydra_MP: rhs_mag_M229_7
 	descriptionShort="multi purpose unguided rockets";
 	pylonWeapon="RC_RHS_PylonW_Hydra";
 	ammo="RC_RHS_Hydra_MP";
-	hardpoints[]={"OM_H"};
+	hardpoints[]={"OM_H_Base"};
 };
 class RC_RHS_PylonM_7Rnd_Hydra_MP_Proxy: RC_RHS_PylonM_7Rnd_Hydra_MP
 {
@@ -44,6 +45,7 @@ class RC_RHS_PylonM_7Rnd_Hydra_MP_Proxy: RC_RHS_PylonM_7Rnd_Hydra_MP
 	descriptionShort="multi purpose proximity fuze unguided rockets";
 	pylonWeapon="RC_RHS_PylonW_Hydra_Proxy";
 	ammo="RC_RHS_Hydra_MP_Proxy";
+	hardpoints[]={"OM_H"};
 };
 /*
 class RC_RHS_PylonM_7Rnd_Hydra_HE: RC_RHS_PylonM_7Rnd_Hydra_MP

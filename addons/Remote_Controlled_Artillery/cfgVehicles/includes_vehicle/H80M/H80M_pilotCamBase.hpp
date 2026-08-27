@@ -10,8 +10,8 @@ pos pilot = similar as pos pilot dir, but futher from hull, so worse
 Eye, pos gunner, pos gunner dir, slingLoad0 = not good
 */
 
-unitInfoType="RC_RscOptics_AV_Heli";
-unitInfoTypeRTD="RC_RscOptics_AV_Heli";
+unitInfoType="RC_RscOptics_AV_Heli";	//RC_RscOptics_AV_Heli
+unitInfoTypeRTD="RC_RscOptics_AV_Heli";	//RC_RscOptics_AV_Heli
 driverWeaponsInfoType="RscOptics_CAS_01_TGP";
 
 driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";

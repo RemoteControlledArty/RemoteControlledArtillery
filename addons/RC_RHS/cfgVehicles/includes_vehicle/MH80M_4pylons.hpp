@@ -9,6 +9,22 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
+				//V1 = .338, V2 = .50, V3 = lower capacity 20/25/30mm & rockets, V4 = full capacity 20/25/30mm & rockets
+				//V5 = small guided pods, V6 = large guided pods
+
+				"RC_Hardpoint_V1",
+				"RC_Hardpoint_V1_Left",
+				"RC_Hardpoint_V2",
+				"RC_Hardpoint_V2_Left",
+				"RC_Hardpoint_V3",
+				"RC_Hardpoint_V3_Left",
+				"RC_Hardpoint_V4",
+				"RC_Hardpoint_V4_Left",		
+				"RC_Hardpoint_V5",
+				"RC_Hardpoint_V5_Left",
+				"RC_Hardpoint_V6",
+				"RC_Hardpoint_V6_Left",
+
 				"OM_H",
 				"OM_H_LeftOnly",
 				"B_GAU19_HELI_L",
@@ -56,6 +72,19 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
+				"RC_Hardpoint_V1",
+				"RC_Hardpoint_V1_Right",
+				"RC_Hardpoint_V2",
+				"RC_Hardpoint_V2_Right",
+				"RC_Hardpoint_V3",
+				"RC_Hardpoint_V3_Right",
+				"RC_Hardpoint_V4",
+				"RC_Hardpoint_V4_Right",		
+				"RC_Hardpoint_V5",
+				"RC_Hardpoint_V5_Right",
+				"RC_Hardpoint_V6",
+				"RC_Hardpoint_V6_Right",
+
 				"OM_H",
 				"OM_H_RightOnly",
 				"B_GAU19_HELI_R",
@@ -83,12 +112,16 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
-				"B_CAMERA_HELI"
+				"RC_Hardpoint_Cam"
+				//"B_CAMERA_HELI"
 			};
 			UIposition[]={0.35,0.55};
-			attachment="PylonCameraPod_01_F";
+			attachment="RC_PylonM_Camera";
 			priority=3;
-			turretsAvailable[]={-1,0};	//change to mainturret
+			//only available for copilot, default {-1,0}
+			turretsAvailable[]={0};
+			//copilot by default, atm bugs camera to not be movable from copilot
+			//turret[]={0};
 		};
 
 

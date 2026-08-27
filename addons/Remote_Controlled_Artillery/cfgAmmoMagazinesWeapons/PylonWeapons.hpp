@@ -63,17 +63,14 @@ class RC_PylonW_127mm_Minigun: RC_PylonW_127mm_Minigun_Base
 };
 
 
-//autocannon
+//HMG
 class Twin_Cannon_20mm_gunpod;
-class RC_PylonW_TwinCannon_20mm_Core: Twin_Cannon_20mm_gunpod
+class RC_PylonW_Twin_Fetch: Twin_Cannon_20mm_gunpod
 {
 	class manual;
 };
-class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
+class RC_PylonW_Twin_Base: RC_PylonW_Twin_Fetch
 {
-	displayName="Autocannon";
-	displayNameShort="Autocannon";
-
 	allowTabLock=1;
 	canLock=2;
 	weaponLockDelay=0;
@@ -88,6 +85,60 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 	cursorAim="mg";
 	*/
 
+	modes[]=
+	{
+		"manual"
+	};
+	class manual: manual
+	{
+		ballisticsComputer="8";			//4+8, test 1 more
+
+		allowTabLock=1;
+		canLock=2;
+		weaponLockDelay=0;
+		burst=2;						//5
+		autoFire=1;
+		textureType="fullAuto";
+	};
+};
+class RC_PylonW_TwinHMG: RC_PylonW_Twin_Base
+{
+	displayName="Twin HMG";
+	displayNameShort="Twin HMG";
+
+	magazines[]=
+	{
+		"RC_PylonM_1000Rnd_127mm_T_R",
+		"RC_PylonM_1000Rnd_127mm_T_G",
+		"RC_PylonM_1000Rnd_127mm_T_Y"
+	};
+	class manual: manual
+	{
+		displayName="Twin HMG";
+		displayNameShort="Twin HMG";
+
+		reloadTime=0.03;	//0.04 = 1500RPM, 0.03 = 2000RPM
+		dispersion=0.005;	//0.003
+
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[] = {"A3\Sounds_F_epc\weapons\cas_02_cannon",1.77828,1,3800};
+			soundBegin[] = {"begin1",1};
+		};
+	};
+};
+
+
+//autocannon
+class RC_PylonW_TwinCannon: RC_PylonW_Twin_Base
+{
+	displayName="Autocannon";
+	displayNameShort="Autocannon";
+
 	magazines[]=
 	{
 		//"RC_PylonM_300Rnd_20mm_Aegis",
@@ -98,24 +149,13 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 		"RC_PylonM_250Rnd_25mm_Proxy",
 		"RC_PylonM_250Rnd_30mm_Proxy"
 	};
-	modes[]=
-	{
-		"manual"
-	};
 	class manual: manual
 	{
 		displayName="Autocannon";
 		displayNameShort="Autocannon";
 		reloadTime=0.1;					//0.04
-		ballisticsComputer="8";			//4+8, test 1 more
 		
 		dispersion=0.0018;				//0.003		//0.018 Aegis
-		allowTabLock=1;
-		canLock=2;
-		weaponLockDelay=0;
-		burst=2;						//5
-		autoFire=1;
-		textureType="fullAuto";
 
 		sounds[]=
 		{
@@ -169,13 +209,6 @@ class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_20mm_Core
 			};
 			*/
 		};
-
-		/*
-		ballisticsComputer="1 + 2 + 16";
-		maxZeroing=2500;				//2500
-		FCSMaxLeadSpeed=30.555599;
-		FCSZeroingDelay=0.5;
-		*/
 	};
 };
 class RC_PylonW_TwinCannon_Lead: RC_PylonW_TwinCannon

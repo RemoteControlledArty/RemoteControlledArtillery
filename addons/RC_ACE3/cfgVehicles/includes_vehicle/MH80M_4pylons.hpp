@@ -9,22 +9,6 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
-				//V1 = .338, V2 = .50, V3 = lower capacity 20/25/30mm & rockets, V4 = full capacity 20/25/30mm & rockets
-				//V5 = small guided pods, V6 = large guided pods
-
-				"RC_Hardpoint_V1",
-				"RC_Hardpoint_V1_Left",
-				"RC_Hardpoint_V2",
-				"RC_Hardpoint_V2_Left",
-				"RC_Hardpoint_V3",
-				"RC_Hardpoint_V3_Left",
-				"RC_Hardpoint_V4",
-				"RC_Hardpoint_V4_Left",		
-				"RC_Hardpoint_V5",
-				"RC_Hardpoint_V5_Left",
-				"RC_Hardpoint_V6",
-				"RC_Hardpoint_V6_Left",
-
 				"OM_H",
 				"OM_H_LeftOnly",
 				"B_GAU19_HELI_L",
@@ -72,19 +56,6 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
-				"RC_Hardpoint_V1",
-				"RC_Hardpoint_V1_Right",
-				"RC_Hardpoint_V2",
-				"RC_Hardpoint_V2_Right",
-				"RC_Hardpoint_V3",
-				"RC_Hardpoint_V3_Right",
-				"RC_Hardpoint_V4",
-				"RC_Hardpoint_V4_Right",		
-				"RC_Hardpoint_V5",
-				"RC_Hardpoint_V5_Right",
-				"RC_Hardpoint_V6",
-				"RC_Hardpoint_V6_Right",
-				
 				"OM_H",
 				"OM_H_RightOnly",
 				"B_GAU19_HELI_R",
@@ -103,10 +74,10 @@ class TransportPylonsComponent
 			//mirroredMissilePos= 1;
 			priority			= 1;
 			UIposition[] 		= {0.04,0.42};
-			attachment			= "RC_PylonM_1Rnd_AGM114K";
+			attachment			= "RC_PylonM_2Rnd_AGM114K";
 		};
 
-
+		
 		//center
 		class camera: pylon1
 		{
@@ -122,8 +93,6 @@ class TransportPylonsComponent
 			turretsAvailable[]={0};
 			//copilot by default, atm bugs camera to not be movable from copilot
 			//turret[]={0};
-
-			//what is MH80 config "groupCameraPosition[] = {0,5,-30};"?
 		};
 
 
@@ -151,8 +120,6 @@ class TransportPylonsComponent
 		};
 	};
 
-	//["PylonFuelTank_UH80","PylonWeapon_500Rnd_127mm_HEIAP_belt_left","PylonRack_12Rnd_PGM_missiles_black","PylonFuelTank_UH80","PylonRadarPod_01_F","PylonECMPod_01_Flare_R","PylonECMPod_01_Flare_L"]
-
 
 	class Presets
 	{
@@ -163,14 +130,30 @@ class TransportPylonsComponent
 				"RC_PylonM_12Rnd_APKWS",
 				"RC_PylonM_250Rnd_30mm",
 				"RC_PylonM_19Rnd_Hydra_MP_Proxy",
-				"RC_PylonM_1Rnd_AGM114K",
+				"RC_PylonM_2Rnd_AGM114K",
 
-				"RC_PylonM_Camera",
+				"PylonCameraPod_01_F",
 				
 				"PylonECMPod_01_DIRCM_R",
 				"PylonECMPod_01_DIRCM_L"
 			};
 			displayname="Default";
+		};
+		class SACLOS
+		{
+			attachment[] =
+			{
+				"RC_RHS_PylonM_8Rnd_DAGR",
+				"RC_PylonM_250Rnd_30mm",
+				"RC_PylonM_19Rnd_Hydra_MP_Proxy",
+				"RC_PylonM_2Rnd_AGM114K",
+
+				"PylonCameraPod_01_F",
+				
+				"PylonECMPod_01_DIRCM_R",
+				"PylonECMPod_01_DIRCM_L"
+			};
+			displayname="SACLOS / Guided";
 		};
 		class Unguided
 		{
@@ -181,7 +164,7 @@ class TransportPylonsComponent
 				"RC_PylonM_250Rnd_30mm",
 				"RC_PylonM_19Rnd_Hydra_MP_Proxy",
 
-				"RC_PylonM_Camera",
+				"PylonCameraPod_01_F",
 				
 				"PylonECMPod_01_DIRCM_R",
 				"PylonECMPod_01_DIRCM_L"
@@ -197,7 +180,7 @@ class TransportPylonsComponent
 				"RC_PylonM_1000Rnd_127mm_SLAP_T_R_right",
 				"RC_PylonFuelTank_HalfFull",
 
-				"RC_PylonM_Camera",
+				"PylonCameraPod_01_F",
 
 				"PylonECMPod_01_DIRCM_R",
 				"PylonECMPod_01_DIRCM_L"

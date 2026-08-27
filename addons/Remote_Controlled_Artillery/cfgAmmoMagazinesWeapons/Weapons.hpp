@@ -399,9 +399,9 @@ class RC_Heli_338_Minigun: RC_PylonW_338_Minigun
 {
 	magazines[]=
 	{
-		"RC_PylonM_5000Rnd_338_SLAP_T_R",
-		"RC_PylonM_5000Rnd_338_SLAP_T_G",
-		"RC_PylonM_5000Rnd_338_SLAP_T_Y"
+		"RC_5000Rnd_338_SLAP_T_R",
+		"RC_5000Rnd_338_SLAP_T_G",
+		"RC_5000Rnd_338_SLAP_T_Y"
 	};
 };
 

@@ -6,6 +6,8 @@ class OpticsIn;
 class Wide;
 class Components;
 class AnimationSources;
+class Hide_BenchesBack;
+class Hide_BenchesFront;
 class HitPoints;
 class UserActions;
 class EventHandlers;
