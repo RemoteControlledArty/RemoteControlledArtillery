@@ -92,10 +92,11 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
-				"B_CAMERA_HELI"
+				"RC_Hardpoint_Cam"
+				//"B_CAMERA_HELI"
 			};
 			UIposition[]={0.35,0.55};
-			attachment="PylonCameraPod_01_F";
+			attachment="RC_PylonM_Camera";
 			priority=3;
 			turretsAvailable[]={-1,0};
 		};
@@ -139,7 +140,7 @@ class TransportPylonsComponent
 				"RC_PylonM_19Rnd_Hydra_MP_Proxy",
 				"RC_PylonM_1Rnd_AGM114K",
 
-				"PylonCameraPod_01_F",
+				"RC_PylonM_Camera",
 				
 				"PylonECMPod_01_DIRCM_R",
 				"PylonECMPod_01_DIRCM_L"
@@ -155,7 +156,7 @@ class TransportPylonsComponent
 				"RC_PylonM_250Rnd_30mm",
 				"RC_PylonM_19Rnd_Hydra_MP_Proxy",
 
-				"PylonCameraPod_01_F",
+				"RC_PylonM_Camera",
 				
 				"PylonECMPod_01_DIRCM_R",
 				"PylonECMPod_01_DIRCM_L"
@@ -171,7 +172,7 @@ class TransportPylonsComponent
 				"RC_PylonM_1000Rnd_127mm_SLAP_T_R_right",
 				"RC_PylonFuelTank_HalfFull",
 
-				"PylonCameraPod_01_F",
+				"RC_PylonM_Camera",
 
 				"PylonECMPod_01_DIRCM_R",
 				"PylonECMPod_01_DIRCM_L"
