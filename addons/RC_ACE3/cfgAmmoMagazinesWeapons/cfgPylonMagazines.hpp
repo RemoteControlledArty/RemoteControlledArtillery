@@ -8,7 +8,7 @@ class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PGM_missiles_black
 	descriptionShort="laser guided missiles";
     pylonWeapon="RC_PylonW_APKWS";
 	ammo="RC_APKWS";
-	hardpoints[]={"OM_H"};
+	hardpoints[]={"RC_Hardpoint_V6"};
 };
 /*
 class RC_PylonM_12Rnd_APKWS_Proxy: PylonRack_12Rnd_PG_missiles
@@ -29,7 +29,7 @@ class RC_PylonM_12Rnd_S8_LG: RC_PylonM_12Rnd_APKWS
     displayNameShort="S-8 LG";
 	descriptionShort="laser guided missiles";
     pylonWeapon="RC_PylonW_S8_LG";
-	hardpoints[]={"OM_H_O_REWORK"};
+	hardpoints[]={"RC_Hardpoint_O_V6"};
 };
 /*
 class RC_PylonM_12Rnd_S8_LG_Proxy: RC_PylonM_12Rnd_S8_LG
@@ -62,7 +62,7 @@ class RC_PylonM_1Rnd_AGM114K: 12Rnd_PG_missiles
 	model="\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_04_F.p3d";
 	mass=70;
 	*/
-	hardpoints[]={"OM_H"};
+	hardpoints[]={"RC_Hardpoint_V5"};
 };
 /*
 class RC_PylonM_1Rnd_AGM114K_Proxy: RC_PylonM_1Rnd_AGM114K
@@ -85,7 +85,7 @@ class RC_PylonM_3Rnd_AGM114K: RC_PylonM_1Rnd_AGM114K
 	count=3;
 	model="\A3\Weapons_F\DynamicLoadout\PylonPod_3x_Missile_LG_scalpel_F.p3d";
 	mass=300;
-	hardpoints[]={"OM_H_I"};
+	hardpoints[]={"RC_Hardpoint_V6","OM_H_I"};
 };
 /*
 class RC_PylonM_3Rnd_AGM114K_Proxy: RC_PylonM_3Rnd_AGM114K
@@ -109,7 +109,7 @@ class RC_PylonM_1Rnd_Vikhr: RC_PylonM_1Rnd_AGM114K
 	descriptionShort="heavy laser guided missile";
 	pylonWeapon="RC_PylonW_Vikhr";
 	ammo="RC_AGM114K";
-	hardpoints[]={"OM_H_O_REWORK"};
+	hardpoints[]={"RC_Hardpoint_O_V5"};
 };
 /*
 class RC_PylonM_1Rnd_Vikhr_Proxy: RC_PylonM_1Rnd_Vikhr
@@ -137,7 +137,7 @@ class RC_PylonM_3Rnd_Vikhr: RC_PylonM_1Rnd_Vikhr
 	model="\A3\Weapons_F\DynamicLoadout\PylonPod_3x_Missile_LG_scalpel_F.p3d";
 	mass=300;
 
-	hardpoints[]={"OM_H_O_REWORK"};
+	hardpoints[]={"RC_Hardpoint_O_V6"};
 };
 /*
 class RC_PylonM_3Rnd_Vikhr_Proxy: RC_PylonM_1Rnd_Vikhr
