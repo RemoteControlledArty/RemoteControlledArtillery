@@ -1,4 +1,13 @@
 //light guided
+class RC_PylonM_12Rnd_APKWS;
+class RC_ACE_PylonM_12Rnd_APKWS: RC_PylonM_12Rnd_APKWS
+{
+	displayName="> APKWS LG 12x [ACE]";
+    pylonWeapon="RC_ACE_PylonW_APKWS";
+	ammo="RC_ACE_APKWS";
+};
+
+
 //class PylonRack_12Rnd_PG_missiles;
 class PylonRack_12Rnd_PGM_missiles_black;
 class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PGM_missiles_black
