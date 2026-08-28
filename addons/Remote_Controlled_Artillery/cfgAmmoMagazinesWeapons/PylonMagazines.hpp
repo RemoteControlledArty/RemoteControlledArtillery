@@ -75,8 +75,8 @@ class RC_PylonM_Camera: PylonCameraPod_01_F
 						gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
 
 						minFov=0.02;
-						maxFov=1.5;
-						initFov=1.5;
+						maxFov=1;		//1.5
+						initFov=1;	//1.5
 
 						initAngleX = 0;
 						initAngleY = 0;
@@ -107,7 +107,7 @@ class RC_PylonM_Camera: PylonCameraPod_01_F
 
 //minigun
 class PylonWeapon_2000Rnd_65x39_belt;
-class RC_PylonM_2500Rnd_338_SLAP_T_R: PylonWeapon_2000Rnd_65x39_belt
+class RC_PylonM_2500Rnd_338_SLAP_T_R_right: PylonWeapon_2000Rnd_65x39_belt
 {
 	displayName="> .338NM SLAP 2500x red";
 	displayNameShort=".338NM SLAP";
@@ -116,84 +116,104 @@ class RC_PylonM_2500Rnd_338_SLAP_T_R: PylonWeapon_2000Rnd_65x39_belt
 	ammo="RC_Pylon_B_338_SLAP_T_R";
 	count=2500;
 	tracersEvery=1;
-	hardpoints[]={"RC_Hardpoint_V1_Right","RC_Hardpoint_O_V1_Right","OM_H_RightOnly","OM_H_O_RightOnly"};
+	hardpoints[]={"RC_Hardpoint_V1_Right","RC_Hardpoint_O_V1_Right"};
 };
-class RC_PylonM_2500Rnd_338_SLAP_T_G: RC_PylonM_2500Rnd_338_SLAP_T_R
+class RC_PylonM_2500Rnd_338_SLAP_T_G_right: RC_PylonM_2500Rnd_338_SLAP_T_R_right
 {
 	displayName="> .338NM SLAP 2500x green";
 	ammo="RC_Pylon_B_338_SLAP_T_G";
+	hardpoints[]={"RC_Hardpoint_G_V1_Right","RC_Hardpoint_G_O_V1_Right"};
 };
-class RC_PylonM_2500Rnd_338_SLAP_T_Y: RC_PylonM_2500Rnd_338_SLAP_T_R
+class RC_PylonM_2500Rnd_338_SLAP_T_Y_right: RC_PylonM_2500Rnd_338_SLAP_T_R_right
 {
 	displayName="> .338NM SLAP 2500x yellow";
 	ammo="RC_Pylon_B_338_SLAP_T_Y";
+	hardpoints[]={"RC_Hardpoint_Y_V1_Right","RC_Hardpoint_Y_O_V1_Right"};
 };
 
 
 class PylonWeapon_500Rnd_127mm_HEIAP_belt_left;
 class RC_PylonM_1000Rnd_127mm_SLAP_T_R_left: PylonWeapon_500Rnd_127mm_HEIAP_belt_left
 {
-	displayName="> .50 SLAP 1000x red";
-	displayNameShort=".50 SLAP";
-	descriptionShort=".50 Minigun";
-	pylonWeapon="RC_PylonW_338_Minigun";
-	ammo="RC_Pylon_B_338_SLAP_T_R";
-	count=1000;
-	tracersEvery=1;
-	hardpoints[]={"RC_Hardpoint_V2_Left","RC_Hardpoint_O_V2_Left","OM_H_LeftOnly","OM_H_O_LeftOnly"};
-};
-class RC_PylonM_1000Rnd_127mm_SLAP_T_G_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_left
-{
-	displayName="> .338NM SLAP 2500x green";
-	ammo="RC_Pylon_B_338_SLAP_T_G";
-};
-class RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_left
-{
-	displayName="> .338NM SLAP 2500x yellow";
-	ammo="RC_Pylon_B_338_SLAP_T_Y";
-};
-
-
-class PylonWeapon_500Rnd_127mm_HEIAP_belt_right;
-class RC_PylonM_1000Rnd_127mm_SLAP_T_R_right: PylonWeapon_500Rnd_127mm_HEIAP_belt_right
-{
-	displayName="> .50 SLAP 1000x red";
+	displayName="> .50 SLAP 1000x red [GAU-19]";
 	displayNameShort=".50 SLAP";
 	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_PylonW_127mm_Minigun";
 	ammo="RC_Pylon_B_127x99_SLAP_T_R";
 	count=1000;
 	tracersEvery=1;
-	hardpoints[]={"RC_Hardpoint_V2_Right","RC_Hardpoint_O_V2_Right","OM_H_RightOnly","OM_H_O_RightOnly"};
+	hardpoints[]={"RC_Hardpoint_V2_Left","RC_Hardpoint_O_V2_Left"};
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_G_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_left
+{
+	displayName="> .50 SLAP 1000x green [GAU-19]";
+	ammo="RC_Pylon_B_127x99_SLAP_T_G";
+	hardpoints[]={"RC_Hardpoint_G_V2_Right","RC_Hardpoint_G_O_V2_Right"};
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_left
+{
+	displayName="> .50 SLAP 1000x yellow [GAU-19]";
+	ammo="RC_Pylon_B_127x99_SLAP_T_Y";
+	hardpoints[]={"RC_Hardpoint_Y_V2_Right","RC_Hardpoint_Y_O_V2_Right"};
+};
+
+
+class PylonWeapon_500Rnd_127mm_HEIAP_belt_right;
+class RC_PylonM_1000Rnd_127mm_SLAP_T_R_right: PylonWeapon_500Rnd_127mm_HEIAP_belt_right
+{
+	displayName="> .50 SLAP 1000x red [GAU-19]";
+	displayNameShort=".50 SLAP";
+	descriptionShort=".50 Minigun";
+	pylonWeapon="RC_PylonW_127mm_Minigun";
+	ammo="RC_Pylon_B_127x99_SLAP_T_R";
+	count=1000;
+	tracersEvery=1;
+	hardpoints[]={"RC_Hardpoint_V2_Right","RC_Hardpoint_O_V2_Right"};
 };
 class RC_PylonM_1000Rnd_127mm_SLAP_T_G_right: RC_PylonM_1000Rnd_127mm_SLAP_T_R_right
 {
-	displayName="> .50 SLAP 1000x green";
+	displayName="> .50 SLAP 1000x green [GAU-19]";
 	ammo="RC_Pylon_B_127x99_SLAP_T_G";
+	hardpoints[]={"RC_Hardpoint_G_V2_Right","RC_Hardpoint_G_O_V2_Right"};
 };
 class RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right: RC_PylonM_1000Rnd_127mm_SLAP_T_R_right
 {
-	displayName="> .50 SLAP 1000x yellow";
+	displayName="> .50 SLAP 1000x yellow [GAU-19]";
 	ammo="RC_Pylon_B_127x99_SLAP_T_Y";
+	hardpoints[]={"RC_Hardpoint_Y_V2_Right","RC_Hardpoint_Y_O_V2_Right"};
 };
 
 
 //external fuel tank
 class PylonFuelTank_UH80;
-class RC_PylonFuelTank_HalfFull: PylonFuelTank_UH80
+class RC_PylonFuelTank_Full: PylonFuelTank_UH80
 {
 	class Components
 	{
 		class FuelTankComponent
 		{
-			fuelCapacity=230;	//454
+			fuelCapacity=450;	//454
 		};
 	};
 
-	descriptionShort="230L droppable external-fueltank";
-	displayName="> 230L External-Fueltank";
-	mass=250;	//500
-	hardpoints[]={"OM_H","OM_H_O"};
+	descriptionShort="450L droppable external-fueltank";
+	displayName="> External-Fueltank 450L";
+	mass=470;	//500
+	hardpoints[]={"RC_Hardpoint_FuelTank"};
+};
+class RC_PylonFuelTank_HalfFull: RC_PylonFuelTank_Full
+{
+	class Components
+	{
+		class FuelTankComponent
+		{
+			fuelCapacity=225;	//454
+		};
+	};
+
+	descriptionShort="225L droppable external-fueltank";
+	displayName="> External-Fueltank 225L";
+	mass=255;	//500
 };
 
 
@@ -204,28 +224,30 @@ class RC_PylonM_TwinHMG_base: PylonWeapon_300Rnd_20mm_shells
 	scope=0;
 	author="Ascent";
 	pylonWeapon="RC_PylonW_TwinHMG";
-	hardpoints[]={"RC_Hardpoint_V2","RC_Hardpoint_O_V2","OM_H"};
 	muzzleImpulseFactor[]={0.0375,0.3};		//{0.1,0.8}		//(torque, force) 
 	tracersEvery=1;
 };
-class RC_PylonM_1000Rnd_127mm_T_R: RC_PylonM_TwinHMG_base
+class RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R: RC_PylonM_TwinHMG_base
 {
 	scope=2;
-	displayName="> .50 SLAP 1000x red";
+	displayName="> .50 SLAP 1000x red [Twin-HMG]";
 	displayNameShort=".50 SLAP";
 	descriptionShort=".50 SLAP Twin-HMG";
 	ammo="RC_Pylon_B_127x99_SLAP_T_R";
 	count=1000;
+	hardpoints[]={"RC_Hardpoint_V2","RC_Hardpoint_O_V2"};
 };
-class RC_PylonM_1000Rnd_127mm_T_G: RC_PylonM_1000Rnd_127mm_T_R
+class RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_G: RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R
 {
-	displayName="> .50 SLAP 1000x green";
+	displayName="> .50 SLAP 1000x green [Twin-HMG]";
 	ammo="RC_Pylon_B_20mm_MP_QF_T_G";
+	hardpoints[]={"RC_Hardpoint_G_V2","RC_Hardpoint_G_O_V2"};
 };
-class RC_PylonM_1000Rnd_127mm_T_Y: RC_PylonM_1000Rnd_127mm_T_R
+class RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y: RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R
 {
-	displayName="> .50 SLAP 1000x yellow";
+	displayName="> .50 SLAP 1000x yellow [Twin-HMG]";
 	ammo="RC_Pylon_B_20mm_MP_QF_T_Y";
+	hardpoints[]={"RC_Hardpoint_Y_V2","RC_Hardpoint_Y_O_V2"};
 };
 
 
@@ -236,7 +258,6 @@ class RC_PylonM_Autocannon_base: PylonWeapon_300Rnd_20mm_shells
 	scope=0;
 	author="Ascent";
 	pylonWeapon="RC_PylonW_TwinCannon";
-	hardpoints[]={"OM_H"};
 	muzzleImpulseFactor[]={0.0375,0.3};		//{0.1,0.8}		//(torque, force) 
 	tracersEvery=1;
 	/*
@@ -261,30 +282,37 @@ class RC_PylonM_Autocannon_base: PylonWeapon_300Rnd_20mm_shells
 class RC_PylonM_350Rnd_20mm: RC_PylonM_Autocannon_base
 {
 	scope=2;
-	displayName="> 20mm MP 350x";
-	displayNameShort="20mm MP";
+	displayName="> 20mm MP-QF 350x";
+	displayNameShort="20mm MP-QF";
 	descriptionShort="20mm Autocannon";
 	ammo="RC_Pylon_B_20mm_MP_QF_T_R";
 	count=350;
+	hardpoints[]={"RC_Hardpoint_V4"};
+};
+class RC_PylonM_175Rnd_20mm: RC_PylonM_350Rnd_20mm
+{
+	displayName="> 20mm MP-QF 175x";
+	count=175;
+	hardpoints[]={"RC_Hardpoint_V3"};
 };
 class RC_PylonM_350Rnd_20mm_Lead: RC_PylonM_350Rnd_20mm
 {
-	displayName="> Lead 20mm MP 350x";
-	displayNameShort="20mm MP";
+	displayName="> Lead 20mm MP-QF 350x";
+	displayNameShort="20mm MP-QF";
 	descriptionShort="20mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
 };
 class RC_PylonM_350Rnd_20mm_Proxy: RC_PylonM_350Rnd_20mm
 {
-	displayName="> Proxy 20mm MP 350x";
-	displayNameShort="20mm MP Proxy";
+	displayName="> Proxy 20mm MP-QF 350x";
+	displayNameShort="20mm MP-QF Proxy";
 	descriptionShort="30mm Autocannon with proximity fuze";
 	ammo="RC_Pylon_B_20mm_MP_QF_Proxy_T";
 	hardpoints[]={"OM_H_Proxy"};
 };
 class RC_PylonM_350Rnd_20mm_Proxy_Lead: RC_PylonM_350Rnd_20mm_Proxy
 {
-	displayName="> Lead Proxy 20mm MP 350x";
+	displayName="> Lead Proxy 20mm MP-QF 350x";
 	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
 };
@@ -292,30 +320,36 @@ class RC_PylonM_350Rnd_20mm_Proxy_Lead: RC_PylonM_350Rnd_20mm_Proxy
 
 class RC_PylonM_300Rnd_25mm: RC_PylonM_350Rnd_20mm
 {
-	displayName="> 25mm MP 300x";
-	displayNameShort="25mm MP";
+	displayName="> 25mm MP-QF 300x";
+	displayNameShort="25mm MP-QF";
 	descriptionShort="25mm Autocannon";
 	ammo="RC_Pylon_B_25mm_MP_QF_T_R";
 	count=300;
 };
+class RC_PylonM_150Rnd_25mm: RC_PylonM_300Rnd_25mm
+{
+	displayName="> 25mm MP-QF 150x";
+	count=150;
+	hardpoints[]={"RC_Hardpoint_V3"};
+};
 class RC_PylonM_300Rnd_25mm_Lead: RC_PylonM_300Rnd_25mm
 {
-	displayName="> Lead 25mm MP 300x";
-	displayNameShort="25mm MP";
+	displayName="> Lead 25mm MP-QF 300x";
+	displayNameShort="25mm MP-QF";
 	descriptionShort="25mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
 };
 class RC_PylonM_300Rnd_25mm_Proxy: RC_PylonM_300Rnd_25mm
 {
-	displayName="> Proxy 25mm MP 300x";
-	displayNameShort="25mm MP Proxy";
+	displayName="> Proxy 25mm MP-QF 300x";
+	displayNameShort="25mm MP-QF Proxy";
 	descriptionShort="30mm Autocannon with proximity fuze";
 	ammo="RC_Pylon_B_25mm_MP_QF_Proxy_T";
 	hardpoints[]={"OM_H_Proxy"};
 };
 class RC_PylonM_300Rnd_25mm_Proxy_Lead: RC_PylonM_300Rnd_25mm_Proxy
 {
-	displayName="> Lead Proxy 25mm MP 300x";
+	displayName="> Lead Proxy 25mm MP-QF 300x";
 	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
 };
@@ -323,30 +357,36 @@ class RC_PylonM_300Rnd_25mm_Proxy_Lead: RC_PylonM_300Rnd_25mm_Proxy
 
 class RC_PylonM_250Rnd_30mm: RC_PylonM_350Rnd_20mm
 {
-	displayName="> 30mm MP 250x";
-	displayNameShort="30mm MP";
+	displayName="> 30mm MP-QF 250x";
+	displayNameShort="30mm MP-QF";
 	descriptionShort="30mm Autocannon";
 	ammo="RC_Pylon_B_30mm_MP_QF_T_R";
 	count=250;
 };
+class RC_PylonM_125Rnd_30mm: RC_PylonM_250Rnd_30mm
+{
+	displayName="> 30mm MP-QF 125x";
+	count=125;
+	hardpoints[]={"RC_Hardpoint_V3"};
+};
 class RC_PylonM_250Rnd_30mm_Lead: RC_PylonM_250Rnd_30mm
 {
-	displayName="> Lead 30mm MP 250x";
-	displayNameShort="30mm MP";
+	displayName="> Lead 30mm MP-QF 250x";
+	displayNameShort="30mm MP-QF";
 	descriptionShort="30mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
 };
 class RC_PylonM_250Rnd_30mm_Proxy: RC_PylonM_250Rnd_30mm
 {
-	displayName="> Proxy 30mm MP 250x";
-	displayNameShort="30mm MP Proxy";
+	displayName="> Proxy 30mm MP-QF 250x";
+	displayNameShort="30mm MP-QF Proxy";
 	descriptionShort="30mm Autocannon with proximity fuze";
 	ammo="RC_Pylon_B_30mm_MP_QF_Proxy_T";	//RC_B_35mm_MPAB_DF_T_R
 	hardpoints[]={"OM_H_Proxy"};
 };
 class RC_PylonM_250Rnd_30mm_Proxy_Lead: RC_PylonM_250Rnd_30mm_Proxy
 {
-	displayName="> Lead Proxy 30mm MP 250x";
+	displayName="> Lead Proxy 30mm MP-QF 250x";
 	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
 };
@@ -354,32 +394,38 @@ class RC_PylonM_250Rnd_30mm_Proxy_Lead: RC_PylonM_250Rnd_30mm_Proxy
 
 class RC_PylonM_350Rnd_20mm_O: RC_PylonM_350Rnd_20mm
 {
-	displayName="> 20mm MP 350x";
-	displayNameShort="20mm MP";
+	displayName="> 20mm MP-QF 350x";
+	displayNameShort="20mm MP-QF";
 	descriptionShort="20mm Autocannon";
 	ammo="RC_Pylon_B_20mm_MP_QF_T_G";
 	pylonWeapon="RC_PylonW_Avtopushka";
 	count=350;
-	hardpoints[]={"OM_H_O"};
+	hardpoints[]={"RC_Hardpoint_O_V4"};
+};
+class RC_PylonM_175Rnd_20mm_O: RC_PylonM_350Rnd_20mm_O
+{
+	displayName="> 20mm MP-QF 175x";
+	count=175;
+	hardpoints[]={"RC_Hardpoint_O_V3"};
 };
 class RC_PylonM_350Rnd_20mm_Lead_O: RC_PylonM_350Rnd_20mm_O
 {
-	displayName="> Lead 20mm MP 350x";
-	displayNameShort="20mm MP";
+	displayName="> Lead 20mm MP-QF 350x";
+	displayNameShort="20mm MP-QF";
 	descriptionShort="20mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
 };
 class RC_PylonM_350Rnd_20mm_Proxy_O: RC_PylonM_350Rnd_20mm_O
 {
-	displayName="> Proxy 20mm MP 350x";
-	displayNameShort="20mm MP Proxy";
+	displayName="> Proxy 20mm MP-QF 350x";
+	displayNameShort="20mm MP-QF Proxy";
 	descriptionShort="30mm Autocannon with proximity fuze";
 	ammo="RC_Pylon_B_20mm_MP_QF_Proxy_T";
 	hardpoints[]={"OM_H_O_Proxy"};
 };
 class RC_PylonM_350Rnd_20mm_Proxy_Lead_O: RC_PylonM_350Rnd_20mm_Proxy_O
 {
-	displayName="> Lead Proxy 20mm MP 350x";
+	displayName="> Lead Proxy 20mm MP-QF 350x";
 	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
 };
@@ -387,30 +433,35 @@ class RC_PylonM_350Rnd_20mm_Proxy_Lead_O: RC_PylonM_350Rnd_20mm_Proxy_O
 
 class RC_PylonM_300Rnd_25mm_O: RC_PylonM_350Rnd_20mm_O
 {
-	displayName="> 25mm MP 300x";
-	displayNameShort="25mm MP";
+	displayName="> 25mm MP-QF 300x";
+	displayNameShort="25mm MP-QF";
 	descriptionShort="25mm Autocannon";
 	ammo="RC_Pylon_B_25mm_MP_QF_T_G";
 	count=300;
 };
+class RC_PylonM_150Rnd_25mm_O: RC_PylonM_300Rnd_25mm_O
+{
+	displayName="> 25mm MP-QF 150x";
+	count=150;
+};
 class RC_PylonM_300Rnd_25mm_Lead_O: RC_PylonM_300Rnd_25mm_O
 {
-	displayName="> Lead 25mm MP 300x";
-	displayNameShort="25mm MP";
+	displayName="> Lead 25mm MP-QF 300x";
+	displayNameShort="25mm MP-QF";
 	descriptionShort="25mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
 };
 class RC_PylonM_300Rnd_25mm_Proxy_O: RC_PylonM_300Rnd_25mm_O
 {
-	displayName="> Proxy 25mm MP 300x";
-	displayNameShort="25mm MP Proxy";
+	displayName="> Proxy 25mm MP-QF 300x";
+	displayNameShort="25mm MP-QF Proxy";
 	descriptionShort="30mm Autocannon with proximity fuze";
 	ammo="RC_Pylon_B_25mm_MP_QF_Proxy_T";
 	hardpoints[]={"OM_H_O_Proxy"};
 };
 class RC_PylonM_300Rnd_25mm_Proxy_Lead_O: RC_PylonM_300Rnd_25mm_Proxy_O
 {
-	displayName="> Lead Proxy 25mm MP 300x";
+	displayName="> Lead Proxy 25mm MP-QF 300x";
 	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
 };
@@ -418,30 +469,35 @@ class RC_PylonM_300Rnd_25mm_Proxy_Lead_O: RC_PylonM_300Rnd_25mm_Proxy_O
 
 class RC_PylonM_250Rnd_30mm_O: RC_PylonM_350Rnd_20mm_O
 {
-	displayName="> 30mm MP 250x";
-	displayNameShort="30mm MP";
+	displayName="> 30mm MP-QF 250x";
+	displayNameShort="30mm MP-QF";
 	descriptionShort="30mm Autocannon";
 	ammo="RC_Pylon_B_30mm_MP_QF_T_G";
 	count=250;
 };
+class RC_PylonM_125Rnd_30mm_O: RC_PylonM_250Rnd_30mm_O
+{
+	displayName="> 30mm MP-QF 125x";
+	count=125;
+};
 class RC_PylonM_250Rnd_30mm_Lead_O: RC_PylonM_250Rnd_30mm_O
 {
-	displayName="> Lead 30mm MP 250x";
-	displayNameShort="30mm MP";
+	displayName="> Lead 30mm MP-QF 250x";
+	displayNameShort="30mm MP-QF";
 	descriptionShort="30mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
 };
 class RC_PylonM_250Rnd_30mm_Proxy_O: RC_PylonM_250Rnd_30mm_O
 {
-	displayName="> Proxy 30mm MP 250x";
-	displayNameShort="30mm MP Proxy";
+	displayName="> Proxy 30mm MP-QF 250x";
+	displayNameShort="30mm MP-QF Proxy";
 	descriptionShort="30mm Autocannon with proximity fuze";
 	ammo="RC_Pylon_B_30mm_MP_QF_Proxy_T";	//RC_B_35mm_MPAB_DF_T_R
 	hardpoints[]={"OM_H_O_Proxy"};
 };
 class RC_PylonM_250Rnd_30mm_Proxy_Lead_O: RC_PylonM_250Rnd_30mm_Proxy_O
 {
-	displayName="> Lead Proxy 30mm MP 250x";
+	displayName="> Lead Proxy 30mm MP-QF 250x";
 	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
 };
@@ -556,9 +612,8 @@ class RC_PylonM_12Rnd_Hydra_MP_Proxy: RC_PylonM_12Rnd_Hydra_MP
 	displayName="> Hydra MP Proxy 12x";
 	displayNameShort="Hydra MP Proxy";
 	descriptionShort="multi purpose proximity fuze unguided rockets";
-	pylonWeapon="RC_PylonW_12Rnd_Hydra_Proxy";
 	ammo="RC_Hydra_MP_Proxy";
-	hardpoints[]={"RC_Hardpoint_V3","OM_H"};
+	hardpoints[]={"RC_Hardpoint_V3"};
 };
 /*
 class RC_PylonM_12Rnd_Hydra_HE: RC_PylonM_12Rnd_Hydra_MP
@@ -586,9 +641,8 @@ class RC_PylonM_12Rnd_S5_MP_Proxy: RC_PylonM_12Rnd_S5_MP
 	displayName="> S-5 MP Proxy 12x";
 	displayNameShort="S-5 MP Proxy";
 	descriptionShort="multi purpose proximity fuze unguided rockets";
-	pylonWeapon="RC_PylonW_12Rnd_S5_Proxy";
 	ammo="RC_Hydra_MP_Proxy";
-	hardpoints[]={"RC_Hardpoint_O_V3","OM_H_O"};
+	hardpoints[]={"RC_Hardpoint_O_V3"};
 };
 /*
 class RC_PylonM_12Rnd_S5_HE: RC_PylonM_12Rnd_S5_MP
@@ -617,9 +671,8 @@ class RC_PylonM_19Rnd_Hydra_MP_Proxy: RC_PylonM_19Rnd_Hydra_MP
 	displayName="> Hydra MP Proxy 19x Hex";
 	displayNameShort="Hydra MP Proxy";
 	descriptionShort="multi purpose proximity fuze unguided rockets";
-	pylonWeapon="RC_PylonW_19Rnd_Hydra_Proxy";
 	ammo="RC_Hydra_MP_Proxy";
-	hardpoints[]={"RC_Hardpoint_V4","OM_H"};
+	hardpoints[]={"RC_Hardpoint_V4"};
 	//initSpeed=700;	//44	//still doesnt lead correctly with 700 and no thrust
 };
 /*
@@ -645,9 +698,8 @@ class RC_PylonM_19Rnd_S5_MP_Proxy: RC_PylonM_19Rnd_S5_MP
 {
 	displayName="> S-5 MP Proxy 19x";
 	displayNameShort="S-5 MP Proxy";
-	pylonWeapon="RC_PylonW_19Rnd_S5_Proxy";
 	ammo="RC_Hydra_MP_Proxy";
-	hardpoints[]={"RC_Hardpoint_O_V4","OM_H_O"};
+	hardpoints[]={"RC_Hardpoint_O_V4"};
 };
 /*
 class RC_PylonM_19Rnd_S5_HE: RC_PylonM_19Rnd_S5_MP
@@ -662,7 +714,7 @@ class RC_PylonM_19Rnd_S5_HE: RC_PylonM_19Rnd_S5_MP
 
 //light guided
 //class PylonRack_12Rnd_PG_missiles;
-class PylonRack_12Rnd_PGM_missiles_black;
+class PylonRack_12Rnd_PGM_missiles_black;	//DAGRM, no SACLOS
 class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PGM_missiles_black
 {
 	displayName="> APKWS LG 12x";
@@ -670,18 +722,21 @@ class RC_PylonM_12Rnd_APKWS: PylonRack_12Rnd_PGM_missiles_black
 	descriptionShort="laser guided missiles";
     pylonWeapon="RC_PylonW_APKWS";
 	ammo="RC_APKWS";
-	hardpoints[]={"RC_Hardpoint_V5","OM_H"};
+	hardpoints[]={"RC_Hardpoint_V6"};
+};
+class RC_PylonM_7Rnd_APKWS: RC_PylonM_12Rnd_APKWS
+{
+	displayName="> APKWS LG 7x";
+	count=7;
+	hardpoints[]={"RC_Hardpoint_V5"};
 };
 /*
-class RC_PylonM_12Rnd_APKWS_Proxy: PylonRack_12Rnd_PG_missiles
+class RC_PylonM_12Rnd_APKWS_Proxy: RC_PylonM_12Rnd_APKWS
 {
-	scope=1;
 	displayName="> APKWS LG Proxy 12x";
     displayNameShort="APKWS LG Proxy";
 	descriptionShort="laser guided proximity fuze missiles";
-    pylonWeapon="RC_PylonW_APKWS_Proxy";
 	ammo="RC_APKWS_Proxy";
-
 	hardpoints[]={"OM_H_Proxy"};
 };
 */
@@ -691,7 +746,13 @@ class RC_PylonM_12Rnd_S8_LG: RC_PylonM_12Rnd_APKWS
     displayNameShort="S-8 LG";
 	descriptionShort="laser guided missiles";
     pylonWeapon="RC_PylonW_S8_LG";
-	hardpoints[]={"RC_Hardpoint_O_V5","OM_H_O_REWORK"};
+	hardpoints[]={"RC_Hardpoint_O_V6"};
+};
+class RC_PylonM_7Rnd_S8_LG: RC_PylonM_12Rnd_S8_LG
+{
+	displayName="> S-8 LG 7x";
+	count=7;
+	hardpoints[]={"RC_Hardpoint_O_V5"};
 };
 /*
 class RC_PylonM_12Rnd_S8_LG_Proxy: RC_PylonM_12Rnd_S8_LG
@@ -700,16 +761,38 @@ class RC_PylonM_12Rnd_S8_LG_Proxy: RC_PylonM_12Rnd_S8_LG
 	displayName="> S-8 LG Proxy 12x";
     displayNameShort="S-8 LG Proxy";
 	descriptionShort="laser guided proximity fuze missiles";
-    pylonWeapon="RC_PylonW_S8_LG_Proxy";
-
 	hardpoints[]={"OM_H_Proxy"};
 };
 */
 
 
+class PylonRack_12Rnd_PG_missiles_black;	//DAGR, has SACLOS
+class RC_PylonM_8Rnd_DAGR: PylonRack_12Rnd_PG_missiles_black
+{
+	displayName="> DAGR 8x";
+	displayNameShort="DAGR";
+	descriptionShort="SACLOS / lock - guided missiles";
+	pylonWeapon="RC_PylonW_DAGR";
+	ammo="RC_DAGR";
+	count=8;
+	hardpoints[]={"RC_Hardpoint_V5"};
+};
+class RC_PylonM_8Rnd_S8_G: RC_PylonM_8Rnd_DAGR
+{
+	displayName="> S-8 G 8x";
+	displayNameShort="S-8 G";
+	descriptionShort="SACLOS / lock - guided missiles";
+	pylonWeapon="RC_PylonW_S8_G";
+	ammo="RC_DAGR";
+	count=8;
+	hardpoints[]={"RC_Hardpoint_O_V5"};
+};
+
+
 //heavy guided
-class 12Rnd_PG_missiles;
-class RC_PylonM_1Rnd_AGM114K: 12Rnd_PG_missiles
+//class 12Rnd_PG_missiles
+class PylonRack_1Rnd_LG_scalpel;
+class RC_PylonM_1Rnd_AGM114K: PylonRack_1Rnd_LG_scalpel
 {
 	displayName="> AGM-114K Hellfire II 1x";
 	displayNameShort="AGM-114K";
@@ -719,12 +802,10 @@ class RC_PylonM_1Rnd_AGM114K: 12Rnd_PG_missiles
 	count=1;
 
 	model="\A3\Weapons_F\DynamicLoadout\PylonPod_1x_Missile_AA_04_F.p3d";
-	mass=85;
-	/*
-	model="\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_04_F.p3d";
-	mass=70;
-	*/
-	hardpoints[]={"RC_Hardpoint_V5","OM_H"};
+	//model="\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_04_F.p3d";
+	//mass=85;		//85
+	//weight=72;	//72
+	hardpoints[]={"RC_Hardpoint_V5"};
 };
 /*
 class RC_PylonM_1Rnd_AGM114K_Proxy: RC_PylonM_1Rnd_AGM114K
@@ -733,7 +814,6 @@ class RC_PylonM_1Rnd_AGM114K_Proxy: RC_PylonM_1Rnd_AGM114K
 	displayName="> AGM-114K Hellfire II Proxy 1x";
 	displayNameShort="AGM-114K Proxy";
 	descriptionShort="heavy laser guided proximity fuze missile";
-	pylonWeapon="RC_PylonW_Hellfire_Proxy";
 	ammo="RC_AGM114K_Proxy";
 
 	hardpoints[]={"OM_H_Proxy"};
@@ -741,13 +821,18 @@ class RC_PylonM_1Rnd_AGM114K_Proxy: RC_PylonM_1Rnd_AGM114K
 */
 
 
-class RC_PylonM_3Rnd_AGM114K: RC_PylonM_1Rnd_AGM114K
+class PylonRack_3Rnd_LG_scalpel;
+class RC_PylonM_3Rnd_AGM114K: PylonRack_3Rnd_LG_scalpel
 {
 	displayName="> AGM-114K Hellfire II 3x";
+	displayNameShort="AGM-114K";
+	descriptionShort="heavy laser guided missiles";
+	pylonWeapon="RC_PylonW_Hellfire";
+	ammo="RC_AGM114K";
 	count=3;
-	model="\A3\Weapons_F\DynamicLoadout\PylonPod_3x_Missile_LG_scalpel_F.p3d";
-	mass=300;
-	hardpoints[]={"RC_Hardpoint_V6","OM_H_I"};
+	mass=300;		//300
+	weight=400;	//400
+	hardpoints[]={"RC_Hardpoint_V6"};
 };
 /*
 class RC_PylonM_3Rnd_AGM114K_Proxy: RC_PylonM_3Rnd_AGM114K
@@ -756,7 +841,30 @@ class RC_PylonM_3Rnd_AGM114K_Proxy: RC_PylonM_3Rnd_AGM114K
 	displayName="> AGM-114K Hellfire II Proxy 3x";
 	displayNameShort="AGM-114K Proxy";
 	descriptionShort="heavy laser guided proximity fuze missile";
-	pylonWeapon="RC_PylonW_Hellfire_Proxy";
+	ammo="RC_AGM114K_Proxy";
+
+	hardpoints[]={"OM_H_Proxy"};
+};
+*/
+class PylonRack_4Rnd_LG_scalpel;
+class RC_PylonM_4Rnd_AGM114K: PylonRack_4Rnd_LG_scalpel
+{
+	displayName="> AGM-114K Hellfire II 4x";
+	displayNameShort="AGM-114K";
+	descriptionShort="heavy laser guided missile";
+	pylonWeapon="RC_PylonW_Hellfire";
+	ammo="RC_AGM114K";
+	mass=370;	//370
+	weight=400;	//400
+	hardpoints[]={"RC_Hardpoint_V6"};
+};
+/*
+class RC_PylonM_4Rnd_AGM114K_Proxy: RC_PylonM_4Rnd_AGM114K
+{
+	scope=1;
+	displayName="> AGM-114K Hellfire II Proxy 4x";
+	displayNameShort="AGM-114K Proxy";
+	descriptionShort="heavy laser guided proximity fuze missile";
 	ammo="RC_AGM114K_Proxy";
 
 	hardpoints[]={"OM_H_Proxy"};
@@ -771,7 +879,7 @@ class RC_PylonM_1Rnd_Vikhr: RC_PylonM_1Rnd_AGM114K
 	descriptionShort="heavy laser guided missile";
 	pylonWeapon="RC_PylonW_Vikhr";
 	ammo="RC_AGM114K";
-	hardpoints[]={"OM_H_O_REWORK"};
+	hardpoints[]={"RC_Hardpoint_O_V5"};
 };
 /*
 class RC_PylonM_1Rnd_Vikhr_Proxy: RC_PylonM_1Rnd_Vikhr
@@ -780,7 +888,6 @@ class RC_PylonM_1Rnd_Vikhr_Proxy: RC_PylonM_1Rnd_Vikhr
 	displayName="> 9K121 Vikhr Proxy 1x";
 	displayNameShort="9K121 Vikhr Proxy";
 	descriptionShort="heavy laser guided proximity fuze missile";
-	pylonWeapon="RC_PylonW_Vikhr_Proxy";
 	ammo="RC_AGM114K_Proxy";
 
 	hardpoints[]={"OM_H_Proxy"};
@@ -799,7 +906,12 @@ class RC_PylonM_3Rnd_Vikhr: RC_PylonM_1Rnd_Vikhr
 	model="\A3\Weapons_F\DynamicLoadout\PylonPod_3x_Missile_LG_scalpel_F.p3d";
 	mass=300;
 
-	hardpoints[]={"OM_H_O_REWORK"};
+	hardpoints[]={"RC_Hardpoint_O_V6"};
+};
+class RC_PylonM_4Rnd_Vikhr: RC_PylonM_4Rnd_AGM114K
+{
+	displayName="> 9K121 Vikhr 4x";
+	hardpoints[]={"RC_Hardpoint_O_V6"};
 };
 /*
 class RC_PylonM_3Rnd_Vikhr_Proxy: RC_PylonM_1Rnd_Vikhr
@@ -808,7 +920,6 @@ class RC_PylonM_3Rnd_Vikhr_Proxy: RC_PylonM_1Rnd_Vikhr
 	displayName="> 9K121 Vikhr Proxy 3x";
 	displayNameShort="9K121 Vikhr Proxy";
 	descriptionShort="heavy laser guided proximity fuze missile";
-	pylonWeapon="RC_PylonW_Vikhr_Proxy";
 	ammo="RC_AGM114K_Proxy";
 
 	hardpoints[]={"OM_H_Proxy"};

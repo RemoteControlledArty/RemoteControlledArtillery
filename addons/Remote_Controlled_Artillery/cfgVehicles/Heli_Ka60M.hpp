@@ -10,11 +10,22 @@ class RC_Ka60M_Core: RC_Ka60M_Fetch
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
+		class RC_EngineOff
+		{
+			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
+		};
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_main.hpp"
-	editorSubcategory="RC_Heli_armed_subcat";
-
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_pilotCamBase.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFixed.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFree.hpp"
@@ -75,11 +86,12 @@ class RC_Ka60M_Base: RC_Ka60M_Core
 //manned
 class RC_Ka60M: RC_Ka60M_Base
 {
-	displayName="Ka-60M - Kasatka"
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
 
-	scope=2;			//2
-	scopeCurator=2;		//2
-	forceInGarage=1;	//1
+	displayName="Ka-60M - Kasatka"
+	editorSubcategory="RC_Heli_outdated_subcat";
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"
@@ -99,19 +111,8 @@ class RC_Ka60M_I: RC_Ka60M
 //no hitpoint change
 class RC_AI_Ka60M: RC_Ka60M_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-	};
-		
 	displayName="AI Ka-60M - Kasatka"
+	editorSubcategory="RC_Heli_outdated_subcat";
 
 	scope=2;			//2
 	scopeCurator=2;		//2
@@ -137,6 +138,7 @@ class RC_AI_Ka60M_I: RC_AI_Ka60M
 };
 
 
+/*
 //optionally manned
 class RC_OM_Ka60M_UV: RC_Ka60M_Base
 {
@@ -164,3 +166,4 @@ class RC_OM_Ka60M_I: RC_OM_Ka60M
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
 };
+*/

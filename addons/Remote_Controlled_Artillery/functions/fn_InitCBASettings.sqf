@@ -322,6 +322,19 @@
 ] call CBA_fnc_addSetting;
 
 
+//RC Modernized Helicopters
+[
+    "RC_respawnAlertToPilots",
+    "CHECKBOX",
+    ["alert pilots about player respawns", "Ensure shorter reinsert time and thus less frustration, by alerting pilots about player respawns."],
+    ["RC Modernized Helicopters"],
+    true,
+    true,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
+
 /*
 [
     "RC_DetectionTime_F1",

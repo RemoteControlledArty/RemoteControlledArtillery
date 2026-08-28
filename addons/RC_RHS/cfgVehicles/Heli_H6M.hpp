@@ -11,6 +11,19 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
+		class RC_EngineOff
+		{
+			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
+		};
 	};
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_main.hpp"
@@ -37,7 +50,6 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 	};
 
 
-	editorSubcategory="RC_Heli_armed_subcat";
 	transportsoldier=0;		//removes default 1 left pylon seat, replaced with 4 bench seats
 	cargoProxyIndexes[]={10};
 
@@ -83,14 +95,13 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 //AH manned
 class RC_MELB_AH6M_DAP: RC_MELB_AH6M_Base
 {
-	displayName="AH-6M DAP - Little Bird";
+	displayName="AH-6M DAP - Little Bird  V6";
+	editorSubcategory="RC_Heli_outdated_subcat";
 
-	scope=2;			//2
-	scopeCurator=2;		//2
-	forceInGarage=1;	//1
-
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_4pylons_V6.hpp"
+	};
 };
 class RC_MELB_AH6M_DAP_O: RC_MELB_AH6M_DAP
 {
@@ -104,6 +115,110 @@ class RC_MELB_AH6M_DAP_I: RC_MELB_AH6M_DAP
 };
 
 
+class RC_MELB_AH6M_V3: RC_MELB_AH6M_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_EngineOff
+		{
+			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
+		};
+	};
+
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	displayName="AH-6M - Little Bird  V3";
+	editorSubcategory="RC_Heli_V3_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_4pylons_V3.hpp"
+	};
+
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
+};
+class RC_MELB_AH6M_V3_O: RC_MELB_AH6M_V3
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_MELB_AH6M_V3_I: RC_MELB_AH6M_V3
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
+class RC_MELB_AH6M_V4: RC_MELB_AH6M_V3
+{
+	displayName="AH-6M - Little Bird  V4";
+	editorSubcategory="RC_Heli_V4_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_4pylons_V4.hpp"
+	};
+};
+class RC_MELB_AH6M_V4_O: RC_MELB_AH6M_V4
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_MELB_AH6M_V4_I: RC_MELB_AH6M_V4
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
+class RC_MELB_AH6M_V5: RC_MELB_AH6M_V3
+{
+	displayName="AH-6M - Little Bird  V5";
+	editorSubcategory="RC_Heli_V5_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_4pylons_V5.hpp"
+	};
+};
+class RC_MELB_AH6M_V5_O: RC_MELB_AH6M_V5
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_MELB_AH6M_V5_I: RC_MELB_AH6M_V5
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
+class RC_MELB_AH6M_V6: RC_MELB_AH6M_V3
+{
+	displayName="AH-6M - Little Bird  V6";
+	editorSubcategory="RC_Heli_V6_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_4pylons_V6.hpp"
+	};
+};
+class RC_MELB_AH6M_V6_O: RC_MELB_AH6M_V6
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_MELB_AH6M_V6_I: RC_MELB_AH6M_V6
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
+/*
 //AH optionally manned
 class RC_MELB_OM_AH6M_DAP_UV: RC_MELB_AH6M_Base
 {
@@ -131,6 +246,7 @@ class RC_MELB_OM_AH6M_DAP_I: RC_MELB_OM_AH6M_DAP
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
 };
+*/
 
 
 //MH manned
@@ -175,13 +291,29 @@ class RC_MELB_MH6M_DAP_Base: RC_MELB_AH6M_Base
 		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_cargoTurrets_middle.hpp"
 	};
 };
+
+
 class RC_MELB_MH6M_DAP: RC_MELB_MH6M_DAP_Base
 {
-	displayName="MH-6M DAP - Little Bird";
+	class EventHandlers: EventHandlers
+	{
+		class RC_EngineOff
+		{
+			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
+		};
+	};
 
-	scope=2;			//2
-	scopeCurator=2;		//2
-	forceInGarage=1;	//1
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	displayName="MH-6M - Little Bird  V6";
+	editorSubcategory="RC_Heli_outdated_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_2pylons_V6.hpp"
+	};
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
@@ -198,6 +330,154 @@ class RC_MELB_MH6M_DAP_I: RC_MELB_MH6M_DAP
 };
 
 
+class RC_MELB_MH6M_V1: RC_MELB_MH6M_DAP_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_EngineOff
+		{
+			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
+		};
+	};
+
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	displayName="MH-6M - Little Bird  V1";
+	editorSubcategory="RC_Heli_V1_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_2pylons_V1.hpp"
+	};
+
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
+};
+class RC_MELB_MH6M_V1_O: RC_MELB_MH6M_V1
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_MELB_MH6M_V1_I: RC_MELB_MH6M_V1
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
+class RC_MELB_MH6M_V2: RC_MELB_MH6M_V1
+{
+	displayName="MH-6M - Little Bird  V2";
+	editorSubcategory="RC_Heli_V2_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_2pylons_V2.hpp"
+	};
+};
+class RC_MELB_MH6M_V2_O: RC_MELB_MH6M_V2
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_MELB_MH6M_V2_I: RC_MELB_MH6M_V2
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
+class RC_MELB_MH6M_V3: RC_MELB_MH6M_V1
+{
+	displayName="MH-6M - Little Bird  V3";
+	editorSubcategory="RC_Heli_V3_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_2pylons_V3.hpp"
+	};
+};
+class RC_MELB_MH6M_V3_O: RC_MELB_MH6M_V3
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_MELB_MH6M_V3_I: RC_MELB_MH6M_V3
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
+class RC_MELB_MH6M_V4: RC_MELB_MH6M_V1
+{
+	displayName="MH-6M - Little Bird  V4";
+	editorSubcategory="RC_Heli_V4_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_2pylons_V4.hpp"
+	};
+};
+class RC_MELB_MH6M_V4_O: RC_MELB_MH6M_V4
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_MELB_MH6M_V4_I: RC_MELB_MH6M_V4
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
+class RC_MELB_MH6M_V5: RC_MELB_MH6M_V1
+{
+	displayName="MH-6M - Little Bird  V5";
+	editorSubcategory="RC_Heli_V5_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_2pylons_V5.hpp"
+	};
+};
+class RC_MELB_MH6M_V5_O: RC_MELB_MH6M_V5
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_MELB_MH6M_V5_I: RC_MELB_MH6M_V5
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
+class RC_MELB_MH6M_V6: RC_MELB_MH6M_V1
+{
+	displayName="MH-6M - Little Bird  V6";
+	editorSubcategory="RC_Heli_V6_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_2pylons_V6.hpp"
+	};
+};
+class RC_MELB_MH6M_V6_O: RC_MELB_MH6M_V6
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_MELB_MH6M_V6_I: RC_MELB_MH6M_V6
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
+/*
 //AH T optionally manned
 class RC_MELB_OM_MH6M_DAP_UV: RC_MELB_MH6M_DAP_Base
 {
@@ -225,8 +505,7 @@ class RC_MELB_OM_MH6M_DAP_I: RC_MELB_OM_MH6M_DAP
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
 };
-
-
+*/
 
 
 class RHS_MELB_MH6M;
@@ -266,7 +545,7 @@ class RC_MELB_MH6M_Base: RC_MELB_MH6M_Core
 		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_cargoTurrets_middle.hpp"
 	};
 
-	editorSubcategory="RC_Heli_unarmed_subcat";
+	editorSubcategory="RC_Heli_outdated_subcat";
 	cargoProxyIndexes[]={9};
 };
 
@@ -274,6 +553,14 @@ class RC_MELB_MH6M_Base: RC_MELB_MH6M_Core
 //MH manned
 class RC_MELB_MH6M: RC_MELB_MH6M_Base
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_EngineOff
+		{
+			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
+		};
+	};
+	
 	displayName="MH-6M - Little Bird";
 
 	scope=2;			//2
@@ -295,6 +582,7 @@ class RC_MELB_MH6M_I: RC_MELB_MH6M
 };
 
 
+/*
 //MH optionally manned
 class RC_MELB_OM_MH6M_UV: RC_MELB_MH6M_Base
 {
@@ -322,6 +610,7 @@ class RC_MELB_OM_MH6M_I: RC_MELB_OM_MH6M
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
 };
+*/
 
 
 //ADD RC CoPilot, manned Pilot

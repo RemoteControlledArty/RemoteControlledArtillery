@@ -165,10 +165,15 @@ fnc_RC_FPV_Request_checkCargo = {
 
 				private _dir = str (round (player getDir _veh));
 				private _dist = str (round (player distance _veh));
-				private _posY = str (round(_pos #0));
-				private _posX = str (round(_pos #1));
+				//private _posY = str (round(_pos #0));
+				//private _posX = str (round(_pos #1));
+				private _grid = mapGridPosition _veh;
+				private _gridX = _grid select [0, 3];
+				private _gridY = _grid select [3, 3];
+
 				systemchat "FPV request failed, obstructed above, cannot start.";
-				systemchat (_dir + "°  " + _dist + "m  y" + _posY + "  x" + _posX);
+				//systemchat (_dir + "°  " + _dist + "m  y" + _posY + "  x" + _posX);
+				systemchat (_dir + "°  " + _dist + "m  x" + _gridX + "  x" + _gridY);
 
 				_continue = false;
 			};

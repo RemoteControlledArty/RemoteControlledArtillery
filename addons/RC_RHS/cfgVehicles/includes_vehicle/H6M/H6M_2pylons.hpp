@@ -21,7 +21,19 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
-				"OM_H",
+				"RC_Hardpoint_V1",
+				"RC_Hardpoint_V1_Left",
+				"RC_Hardpoint_V2",
+				"RC_Hardpoint_V2_Left",
+				"RC_Hardpoint_V3",
+				"RC_Hardpoint_V3_Left",
+				"RC_Hardpoint_V4",
+				"RC_Hardpoint_V4_Left",
+				"RC_Hardpoint_V5",
+				"RC_Hardpoint_V5_Left",
+				"RC_Hardpoint_V6",
+				"RC_Hardpoint_V6_Left",
+
 				"RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134",
 				"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGR","DAGRM"
 
@@ -51,6 +63,25 @@ class TransportPylonsComponent
 		};
 		class pylon3 : pylon2
 		{
+			hardpoints[]=
+			{
+				"RC_Hardpoint_V1",
+				"RC_Hardpoint_V1_Right",
+				"RC_Hardpoint_V2",
+				"RC_Hardpoint_V2_Right",
+				"RC_Hardpoint_V3",
+				"RC_Hardpoint_V3_Right",
+				"RC_Hardpoint_V4",
+				"RC_Hardpoint_V4_Right",		
+				"RC_Hardpoint_V5",
+				"RC_Hardpoint_V5_Right",
+				"RC_Hardpoint_V6",
+				"RC_Hardpoint_V6_Right",
+				
+				"RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134",
+				"B_BOMB_PYLON","B_FUELTANK_HELI","SCALPEL_1RND_EJECTOR","B_ASRRAM_EJECTOR","DAR","DAGR","DAGRM"
+			};
+
 			//mirroredMissilePos= 2;
 			UIposition[]		= {0.103,0.30};
 			hitpoint 			= "HitPylon3";

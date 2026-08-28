@@ -7,7 +7,7 @@ class CfgPatches
 
 		units[]=
 		{
-			"RC_MH80M_DAP",
+			//"RC_MH80M_DAP"
 		};
 
 		/*
@@ -21,7 +21,7 @@ class CfgPatches
 		{
 			"cba_main",
 			"RC_Artillery",
-			"ace3"	//?
+			"ace_missileguidance"
 		};
 
 		skipWhenMissingDependencies=1;
@@ -46,24 +46,26 @@ class DefaultVehicleSystemsDisplayManagerRight;
 
 class CfgAmmo
 {
-	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\PylonAmmo.hpp"
-	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Ammo.hpp"
+	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgPylonAmmo.hpp"
+	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 class CfgMagazines
 {
 	class CA_Magazine;
-	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\PylonMagazines.hpp"
-	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Magazines.hpp"
+	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgPylonMagazines.hpp"
+	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
 class CfgWeapons
 {
 	class Default;
-	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\PylonWeapons.hpp"
-	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\Weapons.hpp"
+	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgPylonWeapons.hpp"
+	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
 
 
+/*
 class CfgVehicles
 {
-	#include "\RC_ACE3\cfgVehicles\H80M.hpp"
+	#include "\RC_ACE3\cfgVehicles\Heli_H80M.hpp"
 };
+*/

@@ -381,21 +381,81 @@ class CfgPatches
 			"RC_MH80M_DAP_O",
 			"RC_MH80M_DAP_I",
 
+			"RC_MH80M_V3",
+			"RC_MH80M_V3_O",
+			"RC_MH80M_V3_I",
+
+			"RC_MH80M_V4",
+			"RC_MH80M_V4_O",
+			"RC_MH80M_V4_I",
+
+			"RC_MH80M_V5",
+			"RC_MH80M_V5_O",
+			"RC_MH80M_V5_I",
+
+			"RC_MH80M_V6",
+			"RC_MH80M_V6_O",
+			"RC_MH80M_V6_I",
+
+			"RC_MH80M_DAP_V3",
+			"RC_MH80M_DAP_V3_O",
+			"RC_MH80M_DAP_V3_I",
+
+			"RC_MH80M_DAP_V4",
+			"RC_MH80M_DAP_V4_O",
+			"RC_MH80M_DAP_V4_I",
+
+			"RC_MH80M_DAP_V5",
+			"RC_MH80M_DAP_V5_O",
+			"RC_MH80M_DAP_V5_I",
+
+			"RC_MH80M_DAP_V6",
+			"RC_MH80M_DAP_V6_O",
+			"RC_MH80M_DAP_V6_I",
+
+			/*
 			"RC_OM_MH80M_DAP",
 			"RC_OM_MH80M_DAP_O",
 			"RC_OM_MH80M_DAP_I",
+			*/
 
 			"RC_AW159M",
 			"RC_AW159M_O",
 			"RC_AW159M_I",
 
+			"RC_AW159M_V1",
+			"RC_AW159M_V1_O",
+			"RC_AW159M_V1_I",
+
+			"RC_AW159M_V2",
+			"RC_AW159M_V2_O",
+			"RC_AW159M_V2_I",
+
+			"RC_AW159M_V3",
+			"RC_AW159M_V3_O",
+			"RC_AW159M_V3_I",
+
+			"RC_AW159M_V4",
+			"RC_AW159M_V4_O",
+			"RC_AW159M_V4_I",
+
+			"RC_AW159M_V5",
+			"RC_AW159M_V5_O",
+			"RC_AW159M_V5_I",
+
+			"RC_AW159M_V6",
+			"RC_AW159M_V6_O",
+			"RC_AW159M_V6_I",
+
 			"RC_AI_AW159M",
 			"RC_AI_AW159M_O",
 			"RC_AI_AW159M_I",
-
+			
+			/*
 			"RC_OM_AW159M",
 			"RC_OM_AW159M_O",
 			"RC_OM_AW159M_I",
+			*/
 
 			"RC_Ka60M",
 			"RC_Ka60M_O",
@@ -405,9 +465,11 @@ class CfgPatches
 			"RC_AI_Ka60M_O",
 			"RC_AI_Ka60M_I",
 
+			/*
 			"RC_OM_Ka60M",
 			"RC_OM_Ka60M_O",
 			"RC_OM_Ka60M_I",
+			*/
 
 			"RC_RespawnTruck_A",
 			"RC_RespawnTruck_WD",
@@ -862,6 +924,7 @@ class CfgFunctions
 			class RC_cursorTargetIntoDatalink {postInit=1;};
 			//class RC_cursorTargetIntoDatalink_Loop {postInit=1;};
 			class RC_Proxy {postInit=1;};
+			class RC_respawnAlertToPilots {postInit=1;};
 
 			class RC_MinePlow {};
 		};
@@ -1156,14 +1219,14 @@ class CfgEditorSubcategories
 	class RC_FSV_subcat {displayname="FSVs";};
 	class RC_MBT_subcat {displayname="MBTs";};
 
-	class RC_Heli_minigun_subcat {displayname="Helicopters - minigun";};
-	class RC_Heli_unguided_subcat {displayname="Helicopters - unguided";};
-	class RC_Heli_guidedLight_subcat {displayname="Helicopters - guided (light)";};
-	class RC_Heli_guidedHeavy_subcat {displayname="Helicopters - guided (heavy)";};
-	class RC_Heli_unarmed_subcat {displayname="Helicopters - unarmed";};
-	class RC_Heli_armed_subcat {displayname="Helicopters - armed";};
-
-	class RC_OM_Heli_unarmed_subcat {displayname="RC Helicopters - unarmed";};
+	class RC_Heli_subcat {displayname="Helicopters";};
+	class RC_Heli_outdated_subcat {displayname="Helicopters - outdated";};
+	class RC_Heli_V1_subcat {displayname="Helicopters - V1 : .338";};
+	class RC_Heli_V2_subcat {displayname="Helicopters - V2 : .50";};
+	class RC_Heli_V3_subcat {displayname="Helicopters - V3 : AC & Rockets  low cap";};
+	class RC_Heli_V4_subcat {displayname="Helicopters - V4 : AC & Rockets";};
+	class RC_Heli_V5_subcat {displayname="Helicopters - V5 : AC & Missiles";};
+	class RC_Heli_V6_subcat {displayname="Helicopters - V6 : Missiles & Missiles";};
 
 	class RC_ICV_armed_subcat {displayname="RCIVs (armed)";};
 	class RC_ICV_subcat {displayname="RCIVs (unarmed)";};

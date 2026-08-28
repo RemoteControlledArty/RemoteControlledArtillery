@@ -11,11 +11,16 @@ class RC_APKWS: M_PG_AT
 	initTime=0;
 	*/
 
+	missileKeepLockedCone=60;		//60
+	missileLockCone=60;				//30
+	missileLockMaxDistance=4100;	//5000
+	missileLockMinDistance=300;		//100
+
 	thrustTime=2.14;	//1.07 doubled to cancel thrust halving
 	thrust=412.5;		//825 halved to increase accuracy
 	
-	//indirectHit=40;
-	indirectHitRange=5;	//3.2
+	indirectHit=40;
+	indirectHitRange=4.5;	//3.2
 	fuseDistance=20;
 
 	ace_rearm_caliber=70;
@@ -35,6 +40,14 @@ class RC_APKWS: M_PG_AT
 	triggerDistance=12;
 	proximityExplosionDistance=12;
 	*/
+
+	submunitionAmmo="ammo_Penetrator_PG_AT";	//RC_RHS_DAGR_M310_Penetrator
+	submunitionDirectionType="SubmunitionModelDirection";
+	submunitionInitSpeed=1000;
+	submunitionParentSpeedCoef=0;
+	submunitionInitialOffset[]={0,0,-0.2};
+	triggerOnImpact=1;
+	deleteParentWhenTriggered=0;
 
 	class ace_missileguidance
 	{
@@ -67,42 +80,6 @@ class RC_APKWS_Proxy: RC_APKWS
 
 	class ace_missileguidance: ace_missileguidance {};
 };
-class RC_APKWS_ProxyTest: RC_APKWS_Proxy
-{
-	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoDatalink_6km.hpp"
-
-	thrustTime=5;		//1.07
-	thrust=200;			//825
-
-	manualControl=0;	//try 1
-	airlock=1;
-	laserLock=0;		//1?
-	irLock=0;
-
-	//C-UAS capability
-	triggerDistance=12;
-	proximityExplosionDistance=12;
-
-	class ace_missileguidance
-	{
-		enabled=1;
-		canVanillaLock=1;		//0
-		seekerMinRange=1;
-		seekerMaxRange=5000;	//4000
-		seekerAccuracy=1;
-		seekerAngle=60;			//45
-		incDeflection=0.0005;
-		minDeflection=0.0005;
-		maxDeflection=0.0025;
-
-		defaultAttackProfile="LIN";
-		attackProfiles[]={"LIN"};
-		defaultSeekerType="SALH";
-		seekerTypes[]={"SALH"};
-		defaultSeekerLockMode="LOAL";
-		seekerLockModes[]={"LOAL"};
-	};
-};
 
 
 //heavy guided
@@ -122,8 +99,8 @@ class RC_AGM114K: M_Scalpel_AT
 
 	ace_rearm_caliber=178;
 
-	//indirectHit=50;		//50
-	//indirectHitRange=4;	//4
+	indirectHit=50;		//50
+	indirectHitRange=4;	//4
 
 	//airLock=0;
 	irLock=0;

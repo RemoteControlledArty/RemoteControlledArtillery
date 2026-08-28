@@ -29,7 +29,7 @@ smokeLauncherVelocity=14;
 smokeLauncherAngle=360;
 */
 
-editorSubcategory="RC_Heli_unarmed_subcat";
+editorSubcategory="RC_Heli_subcat";
 author="Ascent";
 ejectDeadGunner=0;
 ejectDeadDriver=0;

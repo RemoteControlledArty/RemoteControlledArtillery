@@ -11,6 +11,8 @@ class TransportPylonsComponent
 			{
 				//V1 = .338, V2 = .50, V3 = lower capacity 20/25/30mm & rockets, V4 = full capacity 20/25/30mm & rockets
 				//V5 = small guided pods, V6 = large guided pods
+				
+				"RC_Hardpoint_FuelTank",
 
 				"RC_Hardpoint_V1",
 				"RC_Hardpoint_V1_Left",
@@ -26,7 +28,6 @@ class TransportPylonsComponent
 				"RC_Hardpoint_V6_Left",
 
 				"OM_H",
-				"OM_H_LeftOnly",
 				"B_GAU19_HELI_L",
 
 				"RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134",
@@ -72,6 +73,8 @@ class TransportPylonsComponent
 		{
 			hardpoints[]=
 			{
+				"RC_Hardpoint_FuelTank",
+
 				"RC_Hardpoint_V1",
 				"RC_Hardpoint_V1_Right",
 				"RC_Hardpoint_V2",
@@ -86,7 +89,6 @@ class TransportPylonsComponent
 				"RC_Hardpoint_V6_Right",
 				
 				"OM_H",
-				"OM_H_RightOnly",
 				"B_GAU19_HELI_R",
 
 				"RHS_HP_MELB","RHS_HP_MELB_L","RHS_HP_MELB_R","RHS_HP_MELB_M134",

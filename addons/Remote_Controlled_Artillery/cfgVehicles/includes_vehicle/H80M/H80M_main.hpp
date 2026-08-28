@@ -1,3 +1,5 @@
+author="Ascent";
+
 lockDetectionSystem="2+4+8";		//4+8
 showAllTargets="2 + 4";
 receiveRemoteTargets=1;

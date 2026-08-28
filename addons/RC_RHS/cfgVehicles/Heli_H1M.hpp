@@ -8,8 +8,18 @@ class RC_MH1M_Base: RC_MH1M_Core
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+
+		class RC_Detection
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
+		};
+		class RC_AT_Warning
+		{
+			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		};
 	};
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_main.hpp"
@@ -21,8 +31,6 @@ class RC_MH1M_Base: RC_MH1M_Core
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_userActions.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_hitPoints.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
-
-	editorSubcategory="RC_Heli_armed_subcat";
 
 	class Components: Components
 	{
@@ -70,7 +78,16 @@ class RC_MH1M_Base: RC_MH1M_Core
 //manned
 class RC_MH1M_DAP: RC_MH1M_Base
 {
-	displayName="MH-1M DAP - Huey";
+	class EventHandlers: EventHandlers
+	{
+		class RC_EngineOff
+		{
+			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
+		};
+	};
+
+	displayName="MH-1M DAP - Huey  V7";
+	editorSubcategory="RC_Heli_outdated_subcat";
 
 	scope=2;			//2
 	scopeCurator=2;		//2
@@ -107,6 +124,7 @@ class RC_MH1M_DAP_I: RC_MH1M_DAP
 };
 
 
+/*
 //optionally manned
 class RC_OM_MH1M_DAP_UV: RC_MH1M_Base
 {
@@ -158,31 +176,51 @@ class RC_OM_MH1M_DAP_I: RC_OM_MH1M_DAP
 		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"};};
 	};
 };
+*/
 
 
-class RC_UH1M: RC_MH1M_DAP
+class RC_UH1M_Base: RC_MH1M_DAP
 {
-	displayName="UH-1M - Huey";
+	scope=0;
+	scopeCurator=0;
+	forceInGarage=0;
 	
 	class Components: Components
 	{
 		class TransportPylonsComponent
 		{
-			UIPicture = "\rhsusf\addons\rhsusf_a2port_air2\data\loadouts\RHS_UH1_EDEN_CA.paa";
+			UIPicture="\rhsusf\addons\rhsusf_a2port_air2\data\loadouts\RHS_UH1_EDEN_CA.paa";
 			
 			class pylons
 			{
 				class cmDispenser
 				{
-					attachment = "rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4";
-					hardpoints[] = {"RHSUSF_cm_ANALE39","RHSUSF_cm_ANALE39_x2","RHSUSF_cm_ANALE39_x4"};
-					maxweight = 800;
-					priority = 1;
-					UIposition[] = {0.33,0};
+					attachment="rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4";
+					hardpoints[]={"RHSUSF_cm_ANALE39","RHSUSF_cm_ANALE39_x2","RHSUSF_cm_ANALE39_x4"};
+					maxweight=800;
+					priority=1;
+					UIposition[]={0.33,0};
 				};
 			};
 		};
 	};
+};
+class RC_UH1M: RC_UH1M_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_EngineOff
+		{
+			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
+		};
+	};
+
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	displayName="UH-1M - Huey";
+	editorSubcategory="RC_Heli_subcat";
 };
 class RC_UH1M_O: RC_UH1M
 {
@@ -213,7 +251,7 @@ class RC_UH1M_I: RC_UH1M
 
 
 //optionally manned
-class RC_OM_UH1M_UV: RC_UH1M
+class RC_OM_UH1M_UV: RC_UH1M_Base
 {
 	scope=0;
 	scopeCurator=0;
@@ -222,6 +260,7 @@ class RC_OM_UH1M_UV: RC_UH1M
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_UV_conversion.hpp"
 
 	displayName="RC UH-1M - Huey";
+	editorSubcategory="RC_Heli_subcat";
 
 	class Turrets: Turrets
 	{

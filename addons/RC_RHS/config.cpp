@@ -159,33 +159,73 @@ class CfgPatches
 			"RC_MELB_AH6M_DAP_O",
 			"RC_MELB_AH6M_DAP_I",
 
+			/*
 			"RC_MELB_OM_AH6M_DAP",
 			"RC_MELB_OM_AH6M_DAP_O",
 			"RC_MELB_OM_AH6M_DAP_I",
+			*/
+
+			"RC_MELB_MH6M_V1",
+			"RC_MELB_MH6M_V1_O",
+			"RC_MELB_MH6M_V1_I",
+			"RC_MELB_MH6M_V2",
+			"RC_MELB_MH6M_V2_O",
+			"RC_MELB_MH6M_V2_I",
+			"RC_MELB_MH6M_V3",
+			"RC_MELB_MH6M_V3_O",
+			"RC_MELB_MH6M_V3_I",
+			"RC_MELB_MH6M_V4",
+			"RC_MELB_MH6M_V4_O",
+			"RC_MELB_MH6M_V4_I",
+			"RC_MELB_MH6M_V5",
+			"RC_MELB_MH6M_V5_O",
+			"RC_MELB_MH6M_V5_I",
+			"RC_MELB_MH6M_V6",
+			"RC_MELB_MH6M_V6_O",
+			"RC_MELB_MH6M_V6_I",
+
+			"RC_MELB_AH6M_V3",
+			"RC_MELB_AH6M_V3_O",
+			"RC_MELB_AH6M_V3_I",
+			"RC_MELB_AH6M_V4",
+			"RC_MELB_AH6M_V4_O",
+			"RC_MELB_AH6M_V4_I",
+			"RC_MELB_AH6M_V5",
+			"RC_MELB_AH6M_V5_O",
+			"RC_MELB_AH6M_V5_I",
+			"RC_MELB_AH6M_V6",
+			"RC_MELB_AH6M_V6_O",
+			"RC_MELB_AH6M_V6_I",
 
 			"RC_MELB_MH6M_DAP",
 			"RC_MELB_MH6M_DAP_O",
 			"RC_MELB_MH6M_DAP_I",
 
+			/*
 			"RC_MELB_OM_MH6M_DAP",
 			"RC_MELB_OM_MH6M_DAP_O",
 			"RC_MELB_OM_MH6M_DAP_I",
+			*/
 
 			"RC_MELB_MH6M",
 			"RC_MELB_MH6M_O",
 			"RC_MELB_MH6M_I",
-
+			
+			/*
 			"RC_MELB_OM_MH6M",
 			"RC_MELB_OM_MH6M_O",
 			"RC_MELB_OM_MH6M_I",
+			*/
 			
 			"RC_MH1M_DAP",
 			"RC_MH1M_DAP_O",
 			"RC_MH1M_DAP_I",
 
+			/*
 			"RC_OM_MH1M_DAP",
 			"RC_OM_MH1M_DAP_O",
 			"RC_OM_MH1M_DAP_I",
+			*/
 
 			"RC_UH1M",
 			"RC_UH1M_O",
@@ -195,21 +235,33 @@ class CfgPatches
 			"RC_OM_UH1M_O",
 			"RC_OM_UH1M_I",
 
+			/*
 			"RC_MH80M_DAP",
 			"RC_MH80M_DAP_O",
 			"RC_MH80M_DAP_I",
+			*/
 
+			"RC_MH80M_DAP_V5",
+			"RC_MH80M_DAP_V5_O",
+			"RC_MH80M_DAP_V5_I",
+
+			/*
 			"RC_OM_MH80M_DAP",
 			"RC_OM_MH80M_DAP_O",
 			"RC_OM_MH80M_DAP_I",
-
+			*/
+			
+			/*
 			"RC_Ka60M",
 			"RC_Ka60M_O",
 			"RC_Ka60M_I",
-
+			*/
+			
+			/*
 			"RC_OM_Ka60M",
 			"RC_OM_Ka60M_O",
 			"RC_OM_Ka60M_I",
+			*/
 			
 			/*
 			"RC_HIMARS_D",
@@ -358,10 +410,10 @@ class CfgVehicles
 	#include "\RC_RHS\cfgVehicles\M113_M2.hpp"
 	#include "\RC_RHS\cfgVehicles\MRZR.hpp"
 	#include "\RC_RHS\cfgVehicles\HeliPilot.hpp"
-	#include "\RC_RHS\cfgVehicles\H6M.hpp"
-	#include "\RC_RHS\cfgVehicles\MH80M.hpp"
-	#include "\RC_RHS\cfgVehicles\Ka60M.hpp"
-	#include "\RC_RHS\cfgVehicles\H1M.hpp"
+	#include "\RC_RHS\cfgVehicles\Heli_H1M.hpp"
+	#include "\RC_RHS\cfgVehicles\Heli_H6M.hpp"
+	#include "\RC_RHS\cfgVehicles\Heli_H80M.hpp"
+	//#include "\RC_RHS\cfgVehicles\Heli_Ka60M.hpp"
 
 	//#include "\RC_RHS\cfgVehicles\HMMWV.hpp"
 	

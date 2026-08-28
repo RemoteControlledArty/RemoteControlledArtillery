@@ -37,6 +37,7 @@ class RC_Ka60M_I: RC_Ka60M
 };
 
 
+/*
 //optionally manned
 class RC_OM_Ka60M_UV: RC_RHS_Ka60M_Base
 {
@@ -64,3 +65,4 @@ class RC_OM_Ka60M_I: RC_OM_Ka60M
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
 };
+*/
