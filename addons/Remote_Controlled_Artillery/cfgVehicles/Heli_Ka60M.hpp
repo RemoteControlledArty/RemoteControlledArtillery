@@ -7,22 +7,12 @@ class RC_Ka60M_Core: RC_Ka60M_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_EngineOff
-		{
-			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_main.hpp"
@@ -66,12 +56,6 @@ class RC_Ka60M_Core: RC_Ka60M_Fetch
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_copilotTurret.hpp"
 		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_cargoTurrets.hpp"
 	};
-	/*
-	class AnimationSources: AnimationSources
-	{
-		//DOOR
-	};
-	*/
 };
 class RC_Ka60M_Base: RC_Ka60M_Core
 {
@@ -79,40 +63,11 @@ class RC_Ka60M_Base: RC_Ka60M_Core
 };
 
 
-// ADD UNARMED version, same with ghosthawk
-
-
-
-//manned
-class RC_Ka60M: RC_Ka60M_Base
-{
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-
-	displayName="Ka-60M - Kasatka"
-	editorSubcategory="RC_Heli_outdated_subcat";
-
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"
-};
-class RC_Ka60M_O: RC_Ka60M
-{
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
-};
-class RC_Ka60M_I: RC_Ka60M
-{
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
-};
-
-
-//no hitpoint change
+//AI
 class RC_AI_Ka60M: RC_Ka60M_Core
 {
 	displayName="AI Ka-60M - Kasatka"
-	editorSubcategory="RC_Heli_outdated_subcat";
+	editorSubcategory="RC_Heli_subcat";
 
 	scope=2;			//2
 	scopeCurator=2;		//2
@@ -120,7 +75,7 @@ class RC_AI_Ka60M: RC_Ka60M_Core
 
 	class Components: Components
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_AI.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_V5.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
@@ -132,6 +87,146 @@ class RC_AI_Ka60M_O: RC_AI_Ka60M
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
 };
 class RC_AI_Ka60M_I: RC_AI_Ka60M
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
+};
+
+
+//manned
+class RC_Ka60M_V1: RC_Ka60M_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	displayName="Ka-60M - Kasatka - V1"
+	editorSubcategory="RC_Heli_V1_subcat";
+
+	class Components: Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_V1.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"
+};
+class RC_Ka60M_V1_O: RC_Ka60M_V1
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
+};
+class RC_Ka60M_V1_I: RC_Ka60M_V1
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
+};
+
+
+class RC_Ka60M_V2: RC_Ka60M_V1
+{
+	displayName="Ka-60M - Kasatka - V2"
+	editorSubcategory="RC_Heli_V2_subcat";
+
+	class Components: Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_V2.hpp"
+	};
+};
+class RC_Ka60M_V2_O: RC_Ka60M_V2
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
+};
+class RC_Ka60M_V2_I: RC_Ka60M_V2
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
+};
+
+
+class RC_Ka60M_V3: RC_Ka60M_V1
+{
+	displayName="Ka-60M - Kasatka - V3"
+	editorSubcategory="RC_Heli_V3_subcat";
+
+	class Components: Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_V3.hpp"
+	};
+};
+class RC_Ka60M_V3_O: RC_Ka60M_V3
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
+};
+class RC_Ka60M_V3_I: RC_Ka60M_V3
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
+};
+
+
+class RC_Ka60M_V4: RC_Ka60M_V1
+{
+	displayName="Ka-60M - Kasatka - V4"
+	editorSubcategory="RC_Heli_V4_subcat";
+
+	class Components: Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_V4.hpp"
+	};
+};
+class RC_Ka60M_V4_O: RC_Ka60M_V4
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
+};
+class RC_Ka60M_V4_I: RC_Ka60M_V4
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
+};
+
+
+class RC_Ka60M_V5: RC_Ka60M_V1
+{
+	displayName="Ka-60M - Kasatka - V5"
+	editorSubcategory="RC_Heli_V5_subcat";
+
+	class Components: Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_V5.hpp"
+	};
+};
+class RC_Ka60M_V5_O: RC_Ka60M_V5
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
+};
+class RC_Ka60M_V5_I: RC_Ka60M_V5
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
+};
+
+
+class RC_Ka60M_V6: RC_Ka60M_V1
+{
+	displayName="Ka-60M - Kasatka - V6"
+	editorSubcategory="RC_Heli_V6_subcat";
+
+	class Components: Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_V6.hpp"
+	};
+};
+class RC_Ka60M_V6_O: RC_Ka60M_V6
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
+};
+class RC_Ka60M_V6_I: RC_Ka60M_V6
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"

@@ -267,9 +267,9 @@ class RC_B_338_T_W: RC_B_338_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_
 
 class RC_B_338_SLAP_T_R: RC_B_338_T_R
 {
-	hit=27;
+	hit=30;
 	typicalSpeed=1215;
-	caliber=2.35;
+	caliber=2.5;	//2.36
 	cost=10;
 	airFriction=-0.00023;
 };
@@ -297,9 +297,9 @@ class RC_B_93x64_T_W: RC_B_93x64_T_G {model="\A3\Weapons_f\Data\bullettracer\tra
 
 class RC_B_93x64_SLAP_T_G: RC_B_93x64_T_G
 {
-	hit=27;
+	hit=30;
 	typicalSpeed=1215;
-	caliber=2.35;
+	caliber=2.5;	//2.36
 	cost=10;
 	airFriction=-0.00023;
 };
@@ -325,6 +325,7 @@ class RC_B_127x99_T_Y: RC_B_127x99_T_R {model="\A3\Weapons_f\Data\bullettracer\t
 class B_127x99_SLAP_Tracer_Red;
 class RC_B_127x99_SLAP_T_R: B_127x99_SLAP_Tracer_Red
 {
+	//hit=50;	//50
 	laserLock=1;
 	irLock=1;
 	airLock=1;

@@ -4,9 +4,6 @@ class TransportPylonsComponent: TransportPylonsComponent
 	{
 		class pylon1: pylon1
 		{
-		};
-		class pylon2: pylon2
-		{
 			hardpoints[]=
 			{
 				"RC_Hardpoint_FuelTank",
@@ -18,12 +15,16 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_V3",
 				"RC_Hardpoint_V3_Left",
 				"RC_Hardpoint_V4",
-				"RC_Hardpoint_V4_Left"
+				"RC_Hardpoint_V4_Left",
+				"RC_Hardpoint_V5",
+				"RC_Hardpoint_V5_Left",
+				"RC_Hardpoint_V6",
+				"RC_Hardpoint_V6_Left"
 			};
 
-			attachment="RC_PylonM_350Rnd_20mm";
+			attachment="RC_PylonM_4Rnd_AGM114K";
 		};
-		class pylon3: pylon3
+		class pylon2: pylon2
 		{
 			hardpoints[]=
 			{
@@ -36,8 +37,7 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_V3",
 				"RC_Hardpoint_V3_Right",
 				"RC_Hardpoint_V4",
-				"RC_Hardpoint_V4_Right",
-				
+				"RC_Hardpoint_V4_Right",		
 				"RC_Hardpoint_V5",
 				"RC_Hardpoint_V5_Right",
 				"RC_Hardpoint_V6",
@@ -46,7 +46,7 @@ class TransportPylonsComponent: TransportPylonsComponent
 
 			attachment="RC_PylonM_12Rnd_APKWS";
 		};
-		class pylon4: pylon4
+		class cmDispenser: cmDispenser
 		{
 		};
 	};

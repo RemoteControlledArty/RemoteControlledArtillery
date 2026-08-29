@@ -8,22 +8,12 @@ class RC_AW159M_Core: RC_AW159M_Fetch
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_EngineOff
-		{
-			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_main.hpp"
@@ -46,12 +36,9 @@ class RC_AW159M_Core: RC_AW159M_Fetch
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_cargoTurrets.hpp"
 	};
 };
-class RC_AW159M_Base: RC_AW159M_Core
-{
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_hitPoints.hpp"
-};
 
 
+//AI
 class RC_AI_AW159M: RC_AW159M_Core
 {
 	scope=2;
@@ -59,7 +46,12 @@ class RC_AI_AW159M: RC_AW159M_Core
 	forceInGarage=1;
 
 	displayName="AI AW159M - Wildcat"
-	editorSubcategory="RC_Heli_outdated_subcat";
+	editorSubcategory="RC_Heli_subcat";
+
+	class Components: Components
+	{
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_2pylons_V4.hpp"
+	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
@@ -91,80 +83,17 @@ class RC_AI_AW159M_I: RC_AI_AW159M
 
 
 //manned
-class RC_AW159M_X: RC_AW159M_Base
+class RC_AW159M_Base: RC_AW159M_Core
 {
-	displayName="AW159M DAP - Wildcat  V6"
-	editorSubcategory="RC_Heli_outdated_subcat";
-
-	class Components: Components
-	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_2pylons_V6.hpp"
-	};
-
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_hitPoints.hpp"
 };
-class RC_AW159M: RC_AW159M_X
-{
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-};
-
-
-class RC_AW159M_O_X: RC_AW159M
-{
-	scope=0;
-	scopeCurator=0;
-
-	magazines[]=
-	{
-		"RC_5000Rnd_338_SLAP_T_G",
-		"Laserbatteries",
-		"168Rnd_CMFlare_Chaff_Magazine"
-	};
-
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
-};
-class RC_AW159M_O: RC_AW159M_O_X
-{
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-};
-
-
-class RC_AW159M_I_X: RC_AW159M
-{
-	scope=0;
-	scopeCurator=0;
-	
-	magazines[]=
-	{
-		"RC_5000Rnd_338_SLAP_T_Y",
-		"Laserbatteries",
-		"168Rnd_CMFlare_Chaff_Magazine"
-	};
-
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
-};
-class RC_AW159M_I: RC_AW159M_I_X
-{
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-};
-
-
 class RC_AW159M_V1: RC_AW159M_Base
 {
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="AW159M - Wildcat  V1"
+	displayName="AW159M - Wildcat - V1"
 	editorSubcategory="RC_Heli_V1_subcat";
 	
 	class Components: Components
@@ -203,7 +132,7 @@ class RC_AW159M_V1_I: RC_AW159M_V1
 
 class RC_AW159M_V2: RC_AW159M_V1
 {
-	displayName="AW159M - Wildcat  V2"
+	displayName="AW159M - Wildcat - V2"
 	editorSubcategory="RC_Heli_V2_subcat";
 	
 	class Components: Components
@@ -239,7 +168,7 @@ class RC_AW159M_V2_I: RC_AW159M_V2
 
 class RC_AW159M_V3: RC_AW159M_V1
 {
-	displayName="AW159M - Wildcat  V3"
+	displayName="AW159M - Wildcat - V3"
 	editorSubcategory="RC_Heli_V3_subcat";
 	
 	class Components: Components
@@ -275,7 +204,7 @@ class RC_AW159M_V3_I: RC_AW159M_V3
 
 class RC_AW159M_V4: RC_AW159M_V1
 {
-	displayName="AW159M - Wildcat  V4"
+	displayName="AW159M - Wildcat - V4"
 	editorSubcategory="RC_Heli_V4_subcat";
 	
 	class Components: Components
@@ -311,7 +240,7 @@ class RC_AW159M_V4_I: RC_AW159M_V4
 
 class RC_AW159M_V5: RC_AW159M_V1
 {
-	displayName="AW159M - Wildcat  V5"
+	displayName="AW159M - Wildcat - V5"
 	editorSubcategory="RC_Heli_V5_subcat";
 	
 	class Components: Components
@@ -347,7 +276,7 @@ class RC_AW159M_V5_I: RC_AW159M_V5
 
 class RC_AW159M_V6: RC_AW159M_V1
 {
-	displayName="AW159M - Wildcat  V6"
+	displayName="AW159M - Wildcat - V6"
 	editorSubcategory="RC_Heli_V6_subcat";
 	
 	class Components: Components

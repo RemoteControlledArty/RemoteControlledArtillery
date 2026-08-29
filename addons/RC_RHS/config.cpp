@@ -155,16 +155,6 @@ class CfgPatches
 			//"RC_RHS_O_HeliPilot",
 			//"RC_RHS_I_HeliPilot"
 			
-			"RC_MELB_AH6M_DAP",
-			"RC_MELB_AH6M_DAP_O",
-			"RC_MELB_AH6M_DAP_I",
-
-			/*
-			"RC_MELB_OM_AH6M_DAP",
-			"RC_MELB_OM_AH6M_DAP_O",
-			"RC_MELB_OM_AH6M_DAP_I",
-			*/
-
 			"RC_MELB_MH6M_V1",
 			"RC_MELB_MH6M_V1_O",
 			"RC_MELB_MH6M_V1_I",
@@ -197,35 +187,24 @@ class CfgPatches
 			"RC_MELB_AH6M_V6_O",
 			"RC_MELB_AH6M_V6_I",
 
-			"RC_MELB_MH6M_DAP",
-			"RC_MELB_MH6M_DAP_O",
-			"RC_MELB_MH6M_DAP_I",
-
-			/*
-			"RC_MELB_OM_MH6M_DAP",
-			"RC_MELB_OM_MH6M_DAP_O",
-			"RC_MELB_OM_MH6M_DAP_I",
-			*/
-
-			"RC_MELB_MH6M",
-			"RC_MELB_MH6M_O",
-			"RC_MELB_MH6M_I",
-			
-			/*
-			"RC_MELB_OM_MH6M",
-			"RC_MELB_OM_MH6M_O",
-			"RC_MELB_OM_MH6M_I",
-			*/
-			
-			"RC_MH1M_DAP",
-			"RC_MH1M_DAP_O",
-			"RC_MH1M_DAP_I",
-
-			/*
-			"RC_OM_MH1M_DAP",
-			"RC_OM_MH1M_DAP_O",
-			"RC_OM_MH1M_DAP_I",
-			*/
+			"RC_MH1M_V1",
+			"RC_MH1M_V1_O",
+			"RC_MH1M_V1_I",
+			"RC_MH1M_V2",
+			"RC_MH1M_V2_O",
+			"RC_MH1M_V2_I",
+			"RC_MH1M_V3",
+			"RC_MH1M_V3_O",
+			"RC_MH1M_V3_I",
+			"RC_MH1M_V4",
+			"RC_MH1M_V4_O",
+			"RC_MH1M_V4_I",
+			"RC_MH1M_V5",
+			"RC_MH1M_V5_O",
+			"RC_MH1M_V5_I",
+			"RC_MH1M_V6",
+			"RC_MH1M_V6_O",
+			"RC_MH1M_V6_I",
 
 			"RC_UH1M",
 			"RC_UH1M_O",
@@ -235,22 +214,10 @@ class CfgPatches
 			"RC_OM_UH1M_O",
 			"RC_OM_UH1M_I",
 
-			/*
-			"RC_MH80M_DAP",
-			"RC_MH80M_DAP_O",
-			"RC_MH80M_DAP_I",
-			*/
-
 			"RC_MH80M_DAP_V5",
 			"RC_MH80M_DAP_V5_O",
 			"RC_MH80M_DAP_V5_I",
 
-			/*
-			"RC_OM_MH80M_DAP",
-			"RC_OM_MH80M_DAP_O",
-			"RC_OM_MH80M_DAP_I",
-			*/
-			
 			/*
 			"RC_Ka60M",
 			"RC_Ka60M_O",

@@ -6,6 +6,7 @@ class RC_RHS_PylonM_2500Rnd_338_SLAP_T_R: rhs_mag_m134_pylon_3000
 	descriptionShort=".338NM Minigun";
 	pylonWeapon="RC_RHS_PylonW_338_Minigun";
 	ammo="RC_Pylon_B_338_SLAP_T_R";
+	initSpeed=1200;
 	count=2500;
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V1","RC_Hardpoint_O_V1"};
@@ -32,6 +33,7 @@ class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left: rhsusf_mag_gau19_melb_left
 	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_RHS_PylonW_GAU19A";
 	ammo="RC_Pylon_B_127x99_SLAP_T_R";
+	initSpeed=1200;
 	count=1000;
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V2_Left","RC_Hardpoint_O_V2_Left"};
@@ -58,6 +60,7 @@ class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right: rhsusf_mag_gau19_melb_right
 	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_RHS_PylonW_GAU19A";
 	ammo="RC_Pylon_B_127x99_SLAP_T_R";
+	initSpeed=1200;
 	count=1000;
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V2_Right","RC_Hardpoint_O_V2_Right"};

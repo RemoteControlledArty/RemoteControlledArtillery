@@ -1,5 +1,4 @@
 author="Ascent";
-scope=2;
 role="Crewman";
 uniformClass="RC_CoverallsBlk";	//U_C_WorkerCoveralls
 

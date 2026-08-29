@@ -11,19 +11,11 @@ class RC_MH1M_Base: RC_MH1M_Core
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
+        #include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
 	};
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_main.hpp"
-
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Main.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_pilotCamBase.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_pilotCamFixed.hpp"
@@ -76,27 +68,29 @@ class RC_MH1M_Base: RC_MH1M_Core
 
 
 //manned
-class RC_MH1M_DAP: RC_MH1M_Base
+class RC_MH1M_V1: RC_MH1M_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_EngineOff
-		{
-			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 	};
 
-	displayName="MH-1M DAP - Huey  V7";
-	editorSubcategory="RC_Heli_outdated_subcat";
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
 
-	scope=2;			//2
-	scopeCurator=2;		//2
-	forceInGarage=1;	//1
+	displayName="MH-1M - Huey - V1";
+	editorSubcategory="RC_Heli_V1_subcat";
 
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_2pylons_V1.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsB.hpp"
 };
-class RC_MH1M_DAP_O: RC_MH1M_DAP
+class RC_MH1M_V1_O: RC_MH1M_V1
 {
 	class Turrets: Turrets
 	{
@@ -109,7 +103,197 @@ class RC_MH1M_DAP_O: RC_MH1M_DAP
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsO.hpp"
 };
-class RC_MH1M_DAP_I: RC_MH1M_DAP
+class RC_MH1M_V1_I: RC_MH1M_V1
+{
+	class Turrets: Turrets
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_turretsInherit.hpp"
+
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsI.hpp"
+};
+
+
+class RC_MH1M_V2: RC_MH1M_V1
+{
+	displayName="MH-1M - Huey - V2";
+	editorSubcategory="RC_Heli_V2_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_2pylons_V2.hpp"
+	};
+};
+class RC_MH1M_V2_O: RC_MH1M_V2
+{
+	class Turrets: Turrets
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_turretsInherit.hpp"
+
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsO.hpp"
+};
+class RC_MH1M_V2_I: RC_MH1M_V2
+{
+	class Turrets: Turrets
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_turretsInherit.hpp"
+
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsI.hpp"
+};
+
+
+class RC_MH1M_V3: RC_MH1M_V1
+{
+	displayName="MH-1M - Huey - V3";
+	editorSubcategory="RC_Heli_V3_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_2pylons_V3.hpp"
+	};
+};
+class RC_MH1M_V3_O: RC_MH1M_V3
+{
+	class Turrets: Turrets
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_turretsInherit.hpp"
+
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsO.hpp"
+};
+class RC_MH1M_V3_I: RC_MH1M_V3
+{
+	class Turrets: Turrets
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_turretsInherit.hpp"
+
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsI.hpp"
+};
+
+
+class RC_MH1M_V4: RC_MH1M_V1
+{
+	displayName="MH-1M - Huey - V4";
+	editorSubcategory="RC_Heli_V4_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_2pylons_V4.hpp"
+	};
+};
+class RC_MH1M_V4_O: RC_MH1M_V4
+{
+	class Turrets: Turrets
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_turretsInherit.hpp"
+
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsO.hpp"
+};
+class RC_MH1M_V4_I: RC_MH1M_V4
+{
+	class Turrets: Turrets
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_turretsInherit.hpp"
+
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsI.hpp"
+};
+
+
+class RC_MH1M_V5: RC_MH1M_V1
+{
+	displayName="MH-1M - Huey - V5";
+	editorSubcategory="RC_Heli_V5_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_2pylons_V5.hpp"
+	};
+};
+class RC_MH1M_V5_O: RC_MH1M_V5
+{
+	class Turrets: Turrets
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_turretsInherit.hpp"
+
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsO.hpp"
+};
+class RC_MH1M_V5_I: RC_MH1M_V5
+{
+	class Turrets: Turrets
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_turretsInherit.hpp"
+
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_Y"}; gunnerType="RC_I_DoorGunner";};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsI.hpp"
+};
+
+
+class RC_MH1M_V6: RC_MH1M_V1
+{
+	displayName="MH-1M - Huey - V6";
+	editorSubcategory="RC_Heli_V6_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_2pylons_V6.hpp"
+	};
+};
+class RC_MH1M_V6_O: RC_MH1M_V6
+{
+	class Turrets: Turrets
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_turretsInherit.hpp"
+
+		class MainTurret: MainTurret {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_G"}; gunnerType="RC_O_DoorGunner";};
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsO.hpp"
+};
+class RC_MH1M_V6_I: RC_MH1M_V6
 {
 	class Turrets: Turrets
 	{
@@ -126,12 +310,12 @@ class RC_MH1M_DAP_I: RC_MH1M_DAP
 
 /*
 //optionally manned
-class RC_OM_MH1M_DAP_UV: RC_MH1M_Base
+class RC_OM_MH1M_UV: RC_MH1M_Base
 {
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_EHs_UV.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_UV_conversion.hpp"
 
-	displayName="RC MH-1M DAP - Huey";
+	displayName="RC MH-1M - Huey";
 
 	class Turrets: Turrets
 	{
@@ -141,7 +325,7 @@ class RC_OM_MH1M_DAP_UV: RC_MH1M_Base
 		class RightDoorGun: RightDoorGun {dontCreateAI=1;};
 	};
 };
-class RC_OM_MH1M_DAP: RC_OM_MH1M_DAP_UV
+class RC_OM_MH1M: RC_OM_MH1M_UV
 {
 	scope=2;			//2
 	scopeCurator=2;		//2
@@ -150,7 +334,7 @@ class RC_OM_MH1M_DAP: RC_OM_MH1M_DAP_UV
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsB.hpp"
 };
-class RC_OM_MH1M_DAP_O: RC_OM_MH1M_DAP
+class RC_OM_MH1M_O: RC_OM_MH1M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsO.hpp"
@@ -163,7 +347,7 @@ class RC_OM_MH1M_DAP_O: RC_OM_MH1M_DAP
 		class RightDoorGun: RightDoorGun {magazines[]={"RC_2000Rnd_338_SLAP_T_G"};};
 	};
 };
-class RC_OM_MH1M_DAP_I: RC_OM_MH1M_DAP
+class RC_OM_MH1M_I: RC_OM_MH1M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsI.hpp"
@@ -179,7 +363,7 @@ class RC_OM_MH1M_DAP_I: RC_OM_MH1M_DAP
 */
 
 
-class RC_UH1M_Base: RC_MH1M_DAP
+class RC_UH1M_Base: RC_MH1M_Base
 {
 	scope=0;
 	scopeCurator=0;
@@ -209,10 +393,7 @@ class RC_UH1M: RC_UH1M_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_EngineOff
-		{
-			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 	};
 
 	scope=2;
@@ -221,6 +402,9 @@ class RC_UH1M: RC_UH1M_Base
 
 	displayName="UH-1M - Huey";
 	editorSubcategory="RC_Heli_subcat";
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsB.hpp"
 };
 class RC_UH1M_O: RC_UH1M
 {

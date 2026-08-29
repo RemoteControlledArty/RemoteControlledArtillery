@@ -40,40 +40,70 @@ class RC_I_CrewAgent: RC_I_Crew {scope=1;};
 
 
 class B_Helipilot_F;
-class RC_B_HeliPilot: B_Helipilot_F
+class RC_B_HeliPilot_Base: B_Helipilot_F
 {
+	scope=0;
 	displayName="Heli Pilot";
 	faction="RemoteControlled_B";
 	#include "\Remote_Controlled_Artillery\includes_cfg\heliPilotChanges.hpp"
 };
-class O_Helipilot_F;
-class RC_O_HeliPilot: O_Helipilot_F
+class RC_B_HeliPilot: RC_B_HeliPilot_Base
 {
+	scope=2;
+};
+class O_Helipilot_F;
+class RC_O_HeliPilot_Base: O_Helipilot_F
+{
+	scope=0;
 	displayName="Heli Pilot";
 	faction="RemoteControlled_O";
 	#include "\Remote_Controlled_Artillery\includes_cfg\heliPilotChanges.hpp"
 };
-class I_Helipilot_F;
-class RC_I_HeliPilot: I_Helipilot_F
+class RC_O_HeliPilot: RC_O_HeliPilot_Base
 {
+	scope=2;
+};
+class I_Helipilot_F;
+class RC_I_HeliPilot_Base: I_Helipilot_F
+{
+	scope=0;
 	displayName="Heli Pilot";
 	faction="RemoteControlled_I";
 	#include "\Remote_Controlled_Artillery\includes_cfg\heliPilotChanges.hpp"
 };
-
-
-class RC_B_DoorGunner: RC_B_HeliPilot
+class RC_I_HeliPilot: RC_I_HeliPilot_Base
 {
+	scope=2;
+};
+
+
+class RC_B_DoorGunner_Base: RC_B_HeliPilot
+{
+	scope=0;
 	displayName="Door Gunner";
 	#include "\Remote_Controlled_Artillery\includes_cfg\doorGunnerChanges.hpp"
 };
-class RC_O_DoorGunner: RC_O_HeliPilot
+class RC_B_DoorGunner: RC_B_DoorGunner_Base
 {
+	scope=2;
+};
+class RC_O_DoorGunner_Base: RC_O_HeliPilot
+{
+	scope=0;
 	displayName="Door Gunner";
 	#include "\Remote_Controlled_Artillery\includes_cfg\doorGunnerChanges.hpp"
 };
-class RC_I_DoorGunner: RC_I_HeliPilot
+class RC_O_DoorGunner: RC_O_DoorGunner_Base
 {
+	scope=2;
+};
+class RC_I_DoorGunner_Base: RC_I_HeliPilot
+{
+	scope=0;
 	displayName="Door Gunner";
 	#include "\Remote_Controlled_Artillery\includes_cfg\doorGunnerChanges.hpp"
+};
+class RC_I_DoorGunner: RC_I_DoorGunner_Base
+{
+	scope=2;
 };

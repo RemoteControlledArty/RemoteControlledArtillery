@@ -1,13 +1,19 @@
-class RC_B_HeliPilot;
-class RC_RHS_B_HeliPilot: RC_B_HeliPilot
+class RC_B_HeliPilot_Base;
+class RC_B_HeliPilot: RC_B_HeliPilot_Base
 {
+	scope=2;
 	uniformClass="rhs_uniform_g3_blk";
 };
-class RC_B_DoorGunner;
-class RC_RHS_B_DoorGunner: RC_B_DoorGunner
+
+
+class RC_B_DoorGunner_Base;
+class RC_B_DoorGunner: RC_B_DoorGunner_Base
 {
+	scope=2;
 	uniformClass="rhs_uniform_g3_blk";
 };
+
+
 /*
 class RC_O_HeliPilot;
 class RC_RHS_O_HeliPilot: RC_O_HeliPilot
