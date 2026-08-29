@@ -42,7 +42,7 @@ class RC_AI_B_2S90M_WD_Base: RC_AI_B_2S90M_WD_Core
 
 	displayName="[AI] 2S90M";
 	forceInGarage=1;	//1
-	driverCompartments="Compartment2";	//2
+	driverCompartments="Compartment1";	//2
 	commanding=1;			//1
 	ejectDeadGunner=1;		//0
 	ejectDeadDriver=1;		//0

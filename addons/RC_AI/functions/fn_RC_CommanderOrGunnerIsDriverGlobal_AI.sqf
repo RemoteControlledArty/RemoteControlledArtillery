@@ -22,6 +22,7 @@ if ((crew _vic) findIf {isPlayer _x} > -1) then {
 			//_driver hideObjectGlobal true;
 			_driver moveInDriver _vic;
 			//_driver setBehaviour "COMBAT";
+			[_driver] call RC_fnc_RC_seatSwitchCleanup;
 		};
 
 		(driver _vic) setOwner (owner _com);
@@ -45,6 +46,7 @@ if ((crew _vic) findIf {isPlayer _x} > -1) then {
 				//_driver hideObjectGlobal true;
 				_driver moveInDriver _vic;
 				//_driver setBehaviour "COMBAT";
+				[_driver] call RC_fnc_RC_seatSwitchCleanup;
 			};
 
 			(driver _vic) setOwner (owner _gun);

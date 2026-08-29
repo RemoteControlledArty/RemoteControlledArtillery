@@ -701,7 +701,9 @@ class RC_IFV_Missile_Launcher_4R: RC_IFV_Missile_Launcher
 		"RC_4Rnd_IFV_MP_LOS",
 		"RC_4Rnd_IFV_MP_Overfly",
 		"RC_4Rnd_IFV_MP_NLOS",
-		"RC_4Rnd_IFV_AA"
+		"RC_4Rnd_IFV_AA",
+		//2 for when needed for balancing
+		"RC_2Rnd_IFV_AA"
 	};
 };
 class RC_IFV_Missile_Launcher_Single: RC_IFV_Missile_Launcher

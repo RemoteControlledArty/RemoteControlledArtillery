@@ -1,10 +1,10 @@
 //minigun
 class M134_minigun;
-class RC_PylonW_338_Minigun_Base: M134_minigun
+class RC_PylonW_338_Minigun_Fetch: M134_minigun
 {
 	class HighROF;
 };
-class RC_PylonW_338_Minigun: RC_PylonW_338_Minigun_Base
+class RC_PylonW_338_Minigun_Base: RC_PylonW_338_Minigun_Fetch
 {
 	displayName=".338NM Minigun";
 	displayNameShort=".338NM Minigun";
@@ -16,7 +16,11 @@ class RC_PylonW_338_Minigun: RC_PylonW_338_Minigun_Base
 	{
 		"RC_PylonM_2500Rnd_338_SLAP_T_R_right",
 		"RC_PylonM_2500Rnd_338_SLAP_T_G_right",
-		"RC_PylonM_2500Rnd_338_SLAP_T_Y_right"
+		"RC_PylonM_2500Rnd_338_SLAP_T_Y_right",
+
+		"RC_PylonM_5000Rnd_338_SLAP_T_R_right",
+		"RC_PylonM_5000Rnd_338_SLAP_T_G_right",
+		"RC_PylonM_5000Rnd_338_SLAP_T_Y_right"
 	};
 	modes[]=
 	{
@@ -30,14 +34,17 @@ class RC_PylonW_338_Minigun: RC_PylonW_338_Minigun_Base
 		dispersion=0.005;	//0.0064
 	};
 };
+class RC_PylonW_338_Minigun: RC_PylonW_338_Minigun_Base
+{
+};
 
 
 class Gatling_127mm_HeliPylon_F;
-class RC_PylonW_127mm_Minigun_Base: Gatling_127mm_HeliPylon_F
+class RC_PylonW_127mm_Minigun_Fetch: Gatling_127mm_HeliPylon_F
 {
 	class LowROF;
 };
-class RC_PylonW_127mm_Minigun: RC_PylonW_127mm_Minigun_Base
+class RC_PylonW_127mm_Minigun_Base: RC_PylonW_127mm_Minigun_Fetch
 {
 	displayName="12.7mm Minigun";
 	displayNameShort="12.7mm Minigun";
@@ -69,6 +76,9 @@ class RC_PylonW_127mm_Minigun: RC_PylonW_127mm_Minigun_Base
 		burst=4;			//5
 	};
 };
+class RC_PylonW_127mm_Minigun: RC_PylonW_127mm_Minigun_Base
+{
+};
 
 
 //HMG
@@ -77,7 +87,7 @@ class RC_PylonW_Twin_Fetch: Twin_Cannon_20mm_gunpod
 {
 	class manual;
 };
-class RC_PylonW_Twin_Base: RC_PylonW_Twin_Fetch
+class RC_PylonW_Twin_Core: RC_PylonW_Twin_Fetch
 {
 	allowTabLock=1;
 	canLock=2;
@@ -109,7 +119,7 @@ class RC_PylonW_Twin_Base: RC_PylonW_Twin_Fetch
 		textureType="fullAuto";
 	};
 };
-class RC_PylonW_TwinHMG: RC_PylonW_Twin_Base
+class RC_PylonW_TwinHMG_Base: RC_PylonW_Twin_Core
 {
 	displayName="Twin HMG";
 	displayNameShort="Twin HMG";
@@ -140,10 +150,13 @@ class RC_PylonW_TwinHMG: RC_PylonW_Twin_Base
 		};
 	};
 };
+class RC_PylonW_TwinHMG: RC_PylonW_TwinHMG_Base
+{
+};
 
 
 //autocannon
-class RC_PylonW_TwinCannon: RC_PylonW_Twin_Base
+class RC_PylonW_TwinCannon_Base: RC_PylonW_Twin_Core
 {
 	displayName="Autocannon";
 	displayNameShort="Autocannon";
@@ -223,7 +236,10 @@ class RC_PylonW_TwinCannon: RC_PylonW_Twin_Base
 		};
 	};
 };
-class RC_PylonW_TwinCannon_Lead: RC_PylonW_TwinCannon
+class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_Base
+{
+};
+class RC_PylonW_TwinCannon_Lead_Base: RC_PylonW_TwinCannon_Base
 {
 	displayName="Lead Autocannon";
 	displayNameShort="Lead Autocannon";
@@ -238,9 +254,12 @@ class RC_PylonW_TwinCannon_Lead: RC_PylonW_TwinCannon
 		"RC_PylonM_250Rnd_30mm_Proxy_Lead"
 	};
 };
+class RC_PylonW_TwinCannon_Lead: RC_PylonW_TwinCannon_Lead_Base
+{
+};
 
 
-class RC_PylonW_Avtopushka: RC_PylonW_TwinCannon
+class RC_PylonW_Avtopushka_Base: RC_PylonW_TwinCannon_Base
 {
 	displayName="Avtopushka";
 	displayNameShort="Avtopushka";
@@ -263,7 +282,10 @@ class RC_PylonW_Avtopushka: RC_PylonW_TwinCannon
 		displayNameShort="Avtopushka";
 	};
 };
-class RC_PylonW_Avtopushka_Lead: RC_PylonW_Avtopushka
+class RC_PylonW_Avtopushka: RC_PylonW_Avtopushka_Base
+{
+};
+class RC_PylonW_Avtopushka_Lead_Base: RC_PylonW_Avtopushka_Base
 {
 	displayName="Lead Avtopushka";
 	displayNameShort="Lead Avtopushka";
@@ -278,15 +300,18 @@ class RC_PylonW_Avtopushka_Lead: RC_PylonW_Avtopushka
 		"RC_PylonM_250Rnd_30mm_Proxy_Lead_O"
 	};
 };
+class RC_PylonW_Avtopushka_Lead: RC_PylonW_Avtopushka_Lead_Base
+{
+};
 
 
 //unguided rockets
 class missiles_DAR;
-class RC_PylonW_12Rnd_Hydra_Core: missiles_DAR
+class RC_PylonW_12Rnd_Hydra_Fetch: missiles_DAR
 {
 	class Burst;
 };
-class RC_PylonW_12Rnd_Hydra: RC_PylonW_12Rnd_Hydra_Core
+class RC_PylonW_12Rnd_Hydra_Base: RC_PylonW_12Rnd_Hydra_Fetch
 {
 	displayName="70mm Hydra Pod";
 	displayNameShort="70mm Hydra Pod";
@@ -312,7 +337,10 @@ class RC_PylonW_12Rnd_Hydra: RC_PylonW_12Rnd_Hydra_Core
 		dispersion=0.004;	//0.015 default, 0.004 to make more viable alternative to guided against vics that need direct hit
 	};
 };
-class RC_PylonW_12Rnd_S5: RC_PylonW_12Rnd_Hydra
+class RC_PylonW_12Rnd_Hydra: RC_PylonW_12Rnd_Hydra_Base
+{
+};
+class RC_PylonW_12Rnd_S5_Base: RC_PylonW_12Rnd_Hydra_Base
 {
 	displayName="55mm S-5 UB-12";
 	displayNameShort="55mm S-5 UB-12";
@@ -327,15 +355,18 @@ class RC_PylonW_12Rnd_S5: RC_PylonW_12Rnd_Hydra
 		displayNameShort="S-5";
 	};
 };
+class RC_PylonW_12Rnd_S5: RC_PylonW_12Rnd_S5_Base
+{
+};
 
 
 //unify 70mm rocket pods?
 class rockets_Skyfire;
-class RC_PylonW_19Rnd_Hydra_Core: rockets_Skyfire
+class RC_PylonW_19Rnd_Hydra_Fetch: rockets_Skyfire
 {
 	class Burst;
 };
-class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Core
+class RC_PylonW_19Rnd_Hydra_Base: RC_PylonW_19Rnd_Hydra_Fetch
 {
 	displayName="70mm Hydra Pod";
 	displayNameShort="70mm Hydra Pod";
@@ -358,9 +389,12 @@ class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Core
 		dispersion=0.004;	//0.015 default, 0.004 to make more viable alternative to guided against vics that need direct hit
 	};
 };
+class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Base
+{
+};
 
 
-class RC_PylonW_19Rnd_S5: RC_PylonW_19Rnd_Hydra
+class RC_PylonW_19Rnd_S5_Base: RC_PylonW_19Rnd_Hydra_Base
 {
 	displayName="55mm S-5 UB-19";
 	displayNameShort="55mm S-5 UB-19";
@@ -375,15 +409,18 @@ class RC_PylonW_19Rnd_S5: RC_PylonW_19Rnd_Hydra
 		displayNameShort="S-5";
 	};
 };
+class RC_PylonW_19Rnd_S5: RC_PylonW_19Rnd_S5_Base
+{
+};
 
 
 //light guided
 class missiles_DAGRM;
-class RC_PylonW_APKWS_Core: missiles_DAGRM
+class RC_PylonW_APKWS_Fetch: missiles_DAGRM
 {
 	class Burst;
 };
-class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
+class RC_PylonW_APKWS_Base: RC_PylonW_APKWS_Fetch
 {
 	displayName="APKWS LG Pod";
 	displayNameShort="APKWS LG Pod";
@@ -410,9 +447,12 @@ class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 		reloadTime=0.15;
 	};
 };
+class RC_PylonW_APKWS: RC_PylonW_APKWS_Base
+{
+};
 
 
-class RC_PylonW_S8_LG: RC_PylonW_APKWS
+class RC_PylonW_S8_LG_Base: RC_PylonW_APKWS_Base
 {
 	displayName="S-8 LG Ugroza";
 	displayNameShort="S-8 LG Ugroza";
@@ -423,16 +463,19 @@ class RC_PylonW_S8_LG: RC_PylonW_APKWS
 		"RC_PylonM_12Rnd_S8_LG_Proxy"
 	};
 };
+class RC_PylonW_S8_LG: RC_PylonW_S8_LG_Base
+{
+};
 
 
 class missiles_DAGR;
-class RC_PylonW_DAGR_Base: missiles_DAGR
+class RC_PylonW_DAGR_Fetch: missiles_DAGR
 {
 	class Burst;
 	//class Direct;
 	//class LoalDistance;
 };
-class RC_PylonW_DAGR: RC_PylonW_DAGR_Base
+class RC_PylonW_DAGR_Base: RC_PylonW_DAGR_Fetch
 {
 	displayName="DAGR";
 	displayNameShort="DAGR";
@@ -471,7 +514,10 @@ class RC_PylonW_DAGR: RC_PylonW_DAGR_Base
 	};
 	*/
 };
-class RC_PylonW_S8_G: RC_PylonW_DAGR
+class RC_PylonW_DAGR: RC_PylonW_DAGR_Base
+{
+};
+class RC_PylonW_S8_G_Base: RC_PylonW_DAGR_Base
 {
 	displayName="S-8 G";
 	displayNameShort="S-8 G";
@@ -493,11 +539,14 @@ class RC_PylonW_S8_G: RC_PylonW_DAGR
 	};
 	*/
 };
+class RC_PylonW_S8_G: RC_PylonW_S8_G_Base
+{
+};
 
 
 //heavy guided
 class missiles_SCALPEL;
-class RC_PylonW_Hellfire: missiles_SCALPEL
+class RC_PylonW_Hellfire_Base: missiles_SCALPEL
 {
 	displayName="Hellfire";
 	displayNameShort="Hellfire";
@@ -513,9 +562,12 @@ class RC_PylonW_Hellfire: missiles_SCALPEL
 		"RC_PylonM_1Rnd_AGM114K_Proxy"
 	};
 };
+class RC_PylonW_Hellfire: RC_PylonW_Hellfire_Base
+{
+};
 
 
-class RC_PylonW_Vikhr: RC_PylonW_Hellfire
+class RC_PylonW_Vikhr_Base: RC_PylonW_Hellfire
 {
 	displayName="9K121 Vikhr";
 	displayNameShort="9K121 Vikhr";
@@ -530,4 +582,7 @@ class RC_PylonW_Vikhr: RC_PylonW_Hellfire
 		"RC_PylonM_2Rnd_Vikhr_Proxy",
 		"RC_PylonM_1Rnd_Vikhr_Proxy"
 	};
+};
+class RC_PylonW_Vikhr: RC_PylonW_Vikhr_Base
+{
 };

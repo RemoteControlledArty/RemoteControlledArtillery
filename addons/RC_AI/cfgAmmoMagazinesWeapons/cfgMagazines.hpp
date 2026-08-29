@@ -170,6 +170,14 @@ class RC_AI_60Rnd_30mm_HE_DF_T_G: RC_AI_100Rnd_30mm_HE_DF_T_G {count=60;};
 class RC_AI_60Rnd_30mm_HE_DF_T_Y: RC_AI_100Rnd_30mm_HE_DF_T_Y {count=60;};
 
 
+class RC_AI_140Rnd_30mm_HE_DF_X_T_R: RC_AI_100Rnd_30mm_HE_DF_T_R
+{
+	ammo="RC_AI_B_30mm_HE_DF_X_T_R";
+};
+class RC_AI_140Rnd_30mm_HE_DF_X_T_G: RC_AI_140Rnd_30mm_HE_DF_X_T_R {ammo="RC_AI_B_30mm_HE_DF_X_T_G";};
+class RC_AI_140Rnd_30mm_HE_DF_X_T_Y: RC_AI_140Rnd_30mm_HE_DF_X_T_R {ammo="RC_AI_B_30mm_HE_DF_X_T_Y";};
+
+
 class RC_100Rnd_30mm_HEAB_DF_T_R;
 class RC_AI_100Rnd_30mm_HEAB_DF_T_R: RC_100Rnd_30mm_HEAB_DF_T_R
 {

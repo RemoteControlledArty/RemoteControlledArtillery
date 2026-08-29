@@ -35,7 +35,7 @@ class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
 
 	displayName="[AI] M1A2 SEPv2 Abrams";
 	forceInGarage=1;	//1
-	driverCompartments="Compartment2";	//2
+	driverCompartments="Compartment1";	//2
 	commanding=1;			//1
 	ejectDeadGunner=1;		//0
 	ejectDeadDriver=1;		//0

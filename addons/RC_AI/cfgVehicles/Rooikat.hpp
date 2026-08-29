@@ -43,7 +43,7 @@ class RC_AI_B_Rooikat_A_Base: RC_AI_B_Rooikat_A_Core
 
 	displayName="[AI] Rooikat";
 	forceInGarage=1;	//1
-	driverCompartments="Compartment2";	//2
+	driverCompartments="Compartment1";	//2
 	commanding=1;			//1
 	ejectDeadGunner=1;		//0
 	ejectDeadDriver=1;		//0

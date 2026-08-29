@@ -34,7 +34,7 @@ class RC_AI_B_AbramsX_WD_Base: RC_AI_B_AbramsX_WD_Core
 
 	displayName="[AI] AbramsX";
 	forceInGarage=1;	//1
-	driverCompartments="Compartment2";	//2
+	driverCompartments="Compartment1";	//2
 	commanding=1;			//1
 	ejectDeadGunner=1;		//0
 	ejectDeadDriver=1;		//0

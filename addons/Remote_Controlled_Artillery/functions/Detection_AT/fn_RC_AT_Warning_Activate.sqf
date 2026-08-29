@@ -102,7 +102,7 @@ params ["_vic", "_source", "_proj", "_mag"];
 				private _ammoType = getText (configFile >> "CfgAmmo" >> typeOf _proj >> "simulation");
 				private _isRocket= _ammoType isEqualTo "shotRocket";
 				//add to projectile array client side
-				[_proj, _isRocket, _projFirstPos] remoteExec ['RC_fnc_RC_AT_Warning_projArrRE', _side];
+				[_proj, _isRocket, _projFirstPos, _sourceVisible] remoteExec ['RC_fnc_RC_AT_Warning_projArrRE', _side];
 				
 
 				//only runs if player inside / connected per terminal

@@ -2,7 +2,8 @@ magazines[]=
 {
 	"RC_AI_100Rnd_30mm_HE_Pen_T_G",
 	"RC_AI_100Rnd_30mm_HE_DF_T_G",
-	"RC_AI_100Rnd_30mm_HEAB_DF_T_G",
+	"RC_AI_100Rnd_30mm_HE_DF_T_G",
+	//"RC_AI_100Rnd_30mm_HEAB_DF_T_G",
 
 	"RC_AI_100Rnd_30mm_APFSDS_T_G",
 	"RC_AI_100Rnd_30mm_APFSDS_T_G",
@@ -24,7 +25,6 @@ magazines[]=
 	"RC_AI_2Rnd_IFV_MP_SACLOS",
 	"RC_AI_2Rnd_IFV_MP_SACLOS",
 
-	"RC_2Rnd_IFV_AA",
 	"RC_2Rnd_IFV_AA",
 
 	"SmokeLauncherMag",
