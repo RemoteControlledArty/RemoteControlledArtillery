@@ -467,6 +467,25 @@ class CfgPatches
 			"RC_AI_Ka60M_O",
 			"RC_AI_Ka60M_I",
 
+			"RC_MQ12M_V1",
+			"RC_MQ12M_V1_O",
+			"RC_MQ12M_V1_I",
+			"RC_MQ12M_V2",
+			"RC_MQ12M_V2_O",
+			"RC_MQ12M_V2_I",
+			"RC_MQ12M_V3",
+			"RC_MQ12M_V3_O",
+			"RC_MQ12M_V3_I",
+			"RC_MQ12M_V4",
+			"RC_MQ12M_V4_O",
+			"RC_MQ12M_V4_I",
+			"RC_MQ12M_V5",
+			"RC_MQ12M_V5_O",
+			"RC_MQ12M_V5_I",
+			"RC_MQ12M_V6",
+			"RC_MQ12M_V6_O",
+			"RC_MQ12M_V6_I",
+
 			/*
 			"RC_OM_Ka60M",
 			"RC_OM_Ka60M_O",
@@ -1338,6 +1357,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_AW159M.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_Ka60M.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_MH80M.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_MQ12M.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_OMH.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\ICV_APC_1.hpp"
