@@ -208,12 +208,12 @@ class RC_RHS_PylonW_APKWS: RC_PylonW_APKWS
 
 
 class RHS_weap_DAGR_Launcher;
-class RC_PylonW_DAGR_Base: RHS_weap_DAGR_Launcher
+class RC_PylonW_DAGR_Fetch: RHS_weap_DAGR_Launcher
 {
 	class Direct;
 	class LoalDistance;
 };
-class RC_PylonW_DAGR: RC_PylonW_DAGR_Base
+class RC_PylonW_DAGR_Base: RC_PylonW_DAGR_Fetch
 {
 	displayName="DAGR M310";
 	displayNameShort="DAGR M310";
@@ -238,6 +238,34 @@ class RC_PylonW_DAGR: RC_PylonW_DAGR_Base
 		displayName="DAGR M310 LOAL";
 		displayNameShort="DAGR M310 LOAL";
 	};
+};
+class RC_PylonW_DAGR: RC_PylonW_DAGR_Base
+{
+};
+class RC_PylonW_SRAM_Base: RC_PylonW_DAGR_Base
+{
+	displayName="SRAM M310";
+	displayNameShort="SRAM M310";
+	weaponLockDelay=0.25;
+
+	magazines[]=
+	{
+		"RC_PylonM_8Rnd_SRAM",
+		"RC_PylonM_8Rnd_SRAM_Proxy"
+	};
+	class Direct: Direct
+	{
+		displayName="SRAM M310 DIR";
+		displayNameShort="SRAM M310 DIR";
+	};
+	class LoalDistance: LoalDistance
+	{
+		displayName="SRAM M310 LOAL";
+		displayNameShort="SRAM M310 LOAL";
+	};
+};
+class RC_PylonW_SRAM: RC_PylonW_SRAM_Base
+{
 };
 
 

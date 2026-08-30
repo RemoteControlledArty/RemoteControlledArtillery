@@ -1,7 +1,7 @@
 class B_UAV_03_dynamicLoadout_F;
 class RC_MQ12M_Fetch: B_UAV_03_dynamicLoadout_F
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_fetch.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_fetch.hpp"
 };
 class RC_MQ12M_Core: RC_MQ12M_Fetch
 {
@@ -14,12 +14,11 @@ class RC_MQ12M_Core: RC_MQ12M_Fetch
 		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
 	};
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_main.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotView.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamBase.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFixed.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_pilotCamFree.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_hitPoints.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_main.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_pilotCamBase.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_pilotCamFixed.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_pilotCamFree.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_hitPoints.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_animationSources.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_userActions.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -29,12 +28,12 @@ class RC_MQ12M_Core: RC_MQ12M_Fetch
 	class Components: Components
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_sensors.hpp"
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_4pylons.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_panels.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_4pylons.hpp"
 	};
 	class Turrets: Turrets
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_copilotTurret.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_mainTurret.hpp"
 	};
 };
 class RC_MQ12M_Base: RC_MQ12M_Core
@@ -55,21 +54,21 @@ class RC_MQ12M_V2: RC_MQ12M_Base
 
 	class Components: Components
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_4pylons_V3.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_4pylons_V3.hpp"
 	};
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsB.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsB.hpp"
 };
 class RC_MQ12M_V2_O: RC_MQ12M_V2
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsO.hpp"
 };
 class RC_MQ12M_V2_I: RC_MQ12M_V2
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsI.hpp"
 };
 
 
@@ -80,18 +79,18 @@ class RC_MQ12M_V3: RC_MQ12M_V2
 
 	class Components: Components
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_4pylons_V3.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_4pylons_V3.hpp"
 	};
 };
 class RC_MQ12M_V3_O: RC_MQ12M_V3
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsO.hpp"
 };
 class RC_MQ12M_V3_I: RC_MQ12M_V3
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsI.hpp"
 };
 
 
@@ -102,18 +101,18 @@ class RC_MQ12M_V4: RC_MQ12M_V2
 
 	class Components: Components
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_4pylons_V4.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_4pylons_V4.hpp"
 	};
 };
 class RC_MQ12M_V4_O: RC_MQ12M_V4
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsO.hpp"
 };
 class RC_MQ12M_V4_I: RC_MQ12M_V4
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsI.hpp"
 };
 
 
@@ -124,18 +123,18 @@ class RC_MQ12M_V5: RC_MQ12M_V2
 
 	class Components: Components
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_4pylons_V5.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_4pylons_V5.hpp"
 	};
 };
 class RC_MQ12M_V5_O: RC_MQ12M_V5
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsO.hpp"
 };
 class RC_MQ12M_V5_I: RC_MQ12M_V5
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsI.hpp"
 };
 
 
@@ -146,16 +145,16 @@ class RC_MQ12M_V6: RC_MQ12M_V2
 
 	class Components: Components
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_4pylons_V6.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_4pylons_V6.hpp"
 	};
 };
 class RC_MQ12M_V6_O: RC_MQ12M_V6
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsO.hpp"
 };
 class RC_MQ12M_V6_I: RC_MQ12M_V6
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsI.hpp"
 };

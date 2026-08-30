@@ -78,6 +78,7 @@ class RC_DAGR: RHS_Ammo_DAGR
 	initTime=0;
 	*/
 
+	maxControlRange=4100;			//8000
 	missileKeepLockedCone=60;		//25
 	missileLockCone=60;				//25
 	missileLockMaxDistance=4100;	//6000
@@ -110,6 +111,133 @@ class RC_DAGR: RHS_Ammo_DAGR
 };
 class RC_DAGR_Proxy: RC_DAGR
 {
+};
+
+
+class RC_SRAM: RC_DAGR
+{
+	maneuvrability=80;	//8
+	airFriction=0.1;	//maybe increase and increase thrust, for post thrusttime slowdown
+	sideAirFriction=4;	//0.16
+	trackLead=1;
+	trackOversteer=1;
+
+	triggerDistance=10;
+	proximityExplosionDistance=10;
+	fuseDistance=15;
+	cameraViewAvailable=1;
+
+	irLock=1;
+	airLock=1;
+	laserLock=1;
+
+	maxControlRange=1100;
+	missileKeepLockedCone=360;
+	missileLockCone=180;
+	missileLockMaxDistance=1100;
+	missileLockMinDistance=20;
+	missileLockMaxSpeed=200;
+
+	thrustTime=2;	//adjust to match 1km
+	thrust=400;		//825
+
+	displayName="SRAM 1km";
+	displayNameShort="SRAM 1km";
+	description="SRAM 1km";
+	descriptionShort="SRAM 1km";
+
+	class Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=6000;
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=6000;
+						maxRange=6000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					angleRangeHorizontal=180;
+					angleRangeVertical=180;
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					class AirTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=1000;
+					maxTrackableSpeed=500;
+					angleRangeHorizontal=180;
+					angleRangeVertical=180;
+					groundNoiseDistanceCoef=0.2;
+					maxGroundNoiseDistance=50;
+				};
+				/*
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					class AirTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					typeRecognitionDistance=1000;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=180;
+					angleRangeVertical=180;
+				};
+				*/
+			};
+		};
+	};
 };
 
 

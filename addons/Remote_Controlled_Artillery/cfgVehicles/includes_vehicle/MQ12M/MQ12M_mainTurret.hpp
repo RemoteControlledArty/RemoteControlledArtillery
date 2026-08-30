@@ -2,7 +2,7 @@ class MainTurret: MainTurret
 {
 	class Components
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_panels.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_panels.hpp"
 	};
 
 	showAllTargets="2 + 4";

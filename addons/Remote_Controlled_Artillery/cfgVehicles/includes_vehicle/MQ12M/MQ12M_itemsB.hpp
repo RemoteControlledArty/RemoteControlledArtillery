@@ -1,15 +1,5 @@
 class TransportMagazines
 {
-	class _xx_HandGrenade
-	{
-		magazine="HandGrenade";
-		count=2;
-	};
-	class _xx_SmokeShell
-	{
-		magazine="SmokeShell";
-		count=2;
-	};
 	class _xx_Laserbatteries
 	{
 		magazine="Laserbatteries";
@@ -31,7 +21,7 @@ class TransportItems
 	class _xx_Toolkit
 	{
 		name="Toolkit";
-		count=2;
+		count=1;
 	};
 	class _xx_Medikit
 	{
@@ -67,11 +57,11 @@ class TransportBackpacks
 	class _xx_B_Kitbag_rgr
 	{
 		backpack="B_Kitbag_rgr";
-		count=2;
+		count=1;
 	};
 	class _xx_B_Parachute
 	{
 		backpack="RC_LightParachute";
-		count=8;
+		count=2;
 	};
 };

@@ -1,8 +1,8 @@
 class Viewoptics: ViewOptics
 {
-	initFov=1.5;	//1.25
-	maxFov=1.5;		//1.25
-	minFov=0.25;
+	initFov=1.5;
+	maxFov=1.5;
+	minFov=0.125;
 
 	initAngleX=0;
 	minAngleX=0;

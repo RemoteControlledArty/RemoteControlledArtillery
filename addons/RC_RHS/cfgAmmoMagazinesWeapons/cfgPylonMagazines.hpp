@@ -172,6 +172,14 @@ class RC_PylonM_8Rnd_DAGR: rhs_mag_DAGR_8
 	ammo="RC_DAGR";
 	hardpoints[]={"RC_Hardpoint_V5"};
 };
+class RC_PylonM_8Rnd_SRAM: RC_PylonM_8Rnd_DAGR
+{
+	displayName="> SRAM M310 8x [RHS]";
+	displayNameShort="SRAM";
+	descriptionShort="SACLOS / lock - 1km short range hyper agile guided missiles";
+	pylonWeapon="RC_PylonW_SRAM";
+	ammo="RC_SRAM";
+};
 class RC_PylonM_8Rnd_S8_G: RC_PylonM_8Rnd_DAGR
 {
 	displayName="> S-8 G 8x [RHS]";
