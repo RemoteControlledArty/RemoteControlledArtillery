@@ -24,7 +24,7 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_V6_Left"
 			};
 
-			attachment="RC_PylonM_12Rnd_APKWS";
+			attachment="RC_PylonM_8Rnd_DAGR";
 		};
 		//left inner
 		class pylon2: pylon2
@@ -86,7 +86,7 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_V6_Right"
 			};
 
-			attachment="RC_PylonM_4Rnd_AGM114K";
+			attachment="RC_PylonM_8Rnd_DAGR";
 		};
 	};
 };

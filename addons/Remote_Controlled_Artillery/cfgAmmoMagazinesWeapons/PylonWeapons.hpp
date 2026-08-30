@@ -544,6 +544,28 @@ class RC_PylonW_S8_G: RC_PylonW_S8_G_Base
 };
 
 
+class RC_PylonW_SRAM_Base: RC_PylonW_DAGR_Base
+{
+	displayName="SRAM";
+	displayNameShort="SRAM";
+	weaponLockDelay=0.25;
+
+	magazines[]=
+	{
+		"RC_PylonM_8Rnd_SRAM",
+		"RC_PylonM_8Rnd_SRAM_Proxy"
+	};
+	class Burst: Burst
+	{
+		displayName="SRAM";
+		displayNameShort="SRAM";
+	};
+};
+class RC_PylonW_SRAM: RC_PylonW_SRAM_Base
+{
+};
+
+
 //heavy guided
 class missiles_SCALPEL;
 class RC_PylonW_Hellfire_Base: missiles_SCALPEL

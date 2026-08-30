@@ -65,7 +65,11 @@ class RC_RHS_DAGR_M310_Penetrator: ammo_Penetrator_PG_AT
 };
 */
 class RHS_Ammo_DAGR;
-class RC_DAGR: RHS_Ammo_DAGR
+class RC_DAGR_Fetch: RHS_Ammo_DAGR
+{
+	class EventHandlers;
+};
+class RC_DAGR: RC_DAGR_Fetch
 {
 	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoDatalink_6km.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoLasersensor_6km.hpp"
@@ -116,7 +120,15 @@ class RC_DAGR_Proxy: RC_DAGR
 
 class RC_SRAM: RC_DAGR
 {
-	maneuvrability=80;	//8
+	class EventHandlers: EventHandlers
+	{
+		class SRAM
+		{
+			fired = "params ['_unit', '_weapon', '_muzzle', '_mode', '_ammo', '_magazine', '_projectile', '_gunner'];  if (!(local _projectile)) exitwith {};  [_unit, _projectile] call RC_fnc_RC_SRAM;";
+		};
+	};
+
+	maneuvrability=60;	//8
 	airFriction=0.1;	//maybe increase and increase thrust, for post thrusttime slowdown
 	sideAirFriction=4;	//0.16
 	trackLead=1;
@@ -131,6 +143,9 @@ class RC_SRAM: RC_DAGR
 	airLock=1;
 	laserLock=1;
 
+	indirectHit=60;
+	indirectHitRange=6;	//4.5
+
 	maxControlRange=1100;
 	missileKeepLockedCone=360;
 	missileLockCone=180;
@@ -138,7 +153,7 @@ class RC_SRAM: RC_DAGR
 	missileLockMinDistance=20;
 	missileLockMaxSpeed=200;
 
-	thrustTime=2;	//adjust to match 1km
+	thrustTime=4;	//adjust to match 1km
 	thrust=400;		//825
 
 	displayName="SRAM 1km";

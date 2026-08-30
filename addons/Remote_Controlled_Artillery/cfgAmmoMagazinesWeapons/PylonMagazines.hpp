@@ -816,6 +816,18 @@ class RC_PylonM_8Rnd_S8_G: RC_PylonM_8Rnd_DAGR
 };
 
 
+class RC_PylonM_8Rnd_SRAM: RC_PylonM_8Rnd_DAGR
+{
+	displayName="> SRAM 1km 8x";
+	displayNameShort="SRAM 1km";
+	descriptionShort="SACLOS / lock - 1km short range hyper agile guided missiles";
+	pylonWeapon="RC_PylonW_SRAM";
+	ammo="RC_SRAM";
+	count=8;
+	hardpoints[]={"RC_Hardpoint_V5"};
+};
+
+
 //heavy guided
 //class 12Rnd_PG_missiles
 class PylonRack_1Rnd_LG_scalpel;

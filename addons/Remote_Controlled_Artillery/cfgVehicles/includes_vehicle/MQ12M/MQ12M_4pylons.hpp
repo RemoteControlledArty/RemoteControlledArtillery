@@ -14,7 +14,7 @@ class TransportPylonsComponent
 			UIposition[] 		= {0.625,0.42};
 
 			//turret[]			= {};	//none = both?
-			attachment			= "RC_PylonM_12Rnd_APKWS";
+			attachment			= "RC_PylonM_19Rnd_Hydra_MP_Proxy";
 		};
 		//left inner
 		class pylon2: pylon1
@@ -23,14 +23,12 @@ class TransportPylonsComponent
 			UIposition[] 		= {0.555,0.37};
 			attachment			= "RC_PylonM_250Rnd_30mm";
 		};
-
-		
 		//right inner
 		class pylon3: pylon2
 		{
 			//mirroredMissilePos= 2;
 			UIposition[] 		= {0.11,0.37};
-			attachment			= "RC_PylonM_19Rnd_Hydra_MP_Proxy";
+			attachment			= "RC_PylonM_250Rnd_30mm";
 		};
 		//right outer
 		class pylon4: pylon3
@@ -38,7 +36,7 @@ class TransportPylonsComponent
 			//mirroredMissilePos= 1;
 			priority			= 1;
 			UIposition[] 		= {0.04,0.42};
-			attachment			= "RC_PylonM_1Rnd_AGM114K";
+			attachment			= "RC_PylonM_19Rnd_Hydra_MP_Proxy";
 		};
 	};
 
@@ -49,15 +47,10 @@ class TransportPylonsComponent
 		{
 			attachment[]=
 			{
-				"RC_PylonM_12Rnd_APKWS",
-				"RC_PylonM_250Rnd_30mm",
 				"RC_PylonM_19Rnd_Hydra_MP_Proxy",
-				"RC_PylonM_1Rnd_AGM114K",
-
-				"RC_PylonM_Camera",
-				
-				"PylonECMPod_01_DIRCM_R",
-				"PylonECMPod_01_DIRCM_L"
+				"RC_PylonM_250Rnd_30mm",
+				"RC_PylonM_250Rnd_30mm",
+				"RC_PylonM_19Rnd_Hydra_MP_Proxy"
 			};
 			displayname="Default";
 		};
@@ -68,30 +61,9 @@ class TransportPylonsComponent
 				"RC_PylonM_19Rnd_Hydra_MP_Proxy",
 				"RC_PylonM_250Rnd_30mm",
 				"RC_PylonM_250Rnd_30mm",
-				"RC_PylonM_19Rnd_Hydra_MP_Proxy",
-
-				"RC_PylonM_Camera",
-				
-				"PylonECMPod_01_DIRCM_R",
-				"PylonECMPod_01_DIRCM_L"
+				"RC_PylonM_19Rnd_Hydra_MP_Proxy"
 			};
 			displayname="Unguided";
-		};
-		class Miniguns
-		{
-			attachment[]=
-			{
-				"RC_PylonFuelTank_HalfFull",
-				"RC_PylonM_1000Rnd_127mm_SLAP_T_R_left",
-				"RC_PylonM_1000Rnd_127mm_SLAP_T_R_right",
-				"RC_PylonFuelTank_HalfFull",
-
-				"RC_PylonM_Camera",
-
-				"PylonECMPod_01_DIRCM_R",
-				"PylonECMPod_01_DIRCM_L"
-			};
-			displayname="Miniguns";
 		};
 	};
 };

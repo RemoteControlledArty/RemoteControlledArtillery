@@ -946,6 +946,7 @@ class CfgFunctions
 			//class RC_cursorTargetIntoDatalink_Loop {postInit=1;};
 			class RC_Proxy {postInit=1;};
 			class RC_respawnAlertToPilots {postInit=1;};
+			class RC_SRAM {};
 
 			class RC_MinePlow {};
 		};
