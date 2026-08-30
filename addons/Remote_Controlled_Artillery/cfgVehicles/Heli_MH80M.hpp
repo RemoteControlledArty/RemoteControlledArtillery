@@ -81,7 +81,7 @@ class RC_MH80M_V2_I: RC_MH80M_V2
 
 class RC_MH80M_V3: RC_MH80M_V2
 {
-	displayName="MH-80M - Ghost Hawk -- V3"
+	displayName="MH-80M - Ghost Hawk - V3"
 	editorSubcategory="RC_Heli_V3_subcat";
 
 	class Components: Components
@@ -103,7 +103,7 @@ class RC_MH80M_V3_I: RC_MH80M_V3
 
 class RC_MH80M_V4: RC_MH80M_V2
 {
-	displayName="MH-80M - Ghost Hawk -- V4"
+	displayName="MH-80M - Ghost Hawk - V4"
 	editorSubcategory="RC_Heli_V4_subcat";
 
 	class Components: Components
