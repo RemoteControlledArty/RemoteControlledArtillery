@@ -824,7 +824,8 @@ class RC_PylonM_8Rnd_SRAM: RC_PylonM_8Rnd_DAGR
 	pylonWeapon="RC_PylonW_SRAM";
 	ammo="RC_SRAM";
 	count=8;
-	hardpoints[]={"RC_Hardpoint_V5"};
+	//hardpoints[]={"RC_Hardpoint_V5"};
+	hardpoints[]={};
 };
 
 
