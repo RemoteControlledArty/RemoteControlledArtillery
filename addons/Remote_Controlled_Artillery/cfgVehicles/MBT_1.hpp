@@ -61,7 +61,8 @@ class RC_MBT_1_Core: RC_MBT_1_Fetch
 		"SmokeLauncherMag"
 	};
 
-    displayName="Merkava";
+    
+ displayName="Merkava";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_MBT_subcat";
 	author="Ascent";
