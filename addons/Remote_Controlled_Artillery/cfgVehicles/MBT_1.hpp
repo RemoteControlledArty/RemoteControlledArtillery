@@ -272,14 +272,14 @@ class RC_MBT_1_Core: RC_MBT_1_Fetch
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
-class RC_MBT_1_A_Base: RC_MBT_1_Core
+class RC_MBT_1_Base: RC_MBT_1_Core
 {
 };
 
 
 /*
 //removed as engine cant be turned off for repair
-class RC_MBT_1_A_Driverless: RC_MBT_1_A_Base
+class RC_MBT_1_A_Driverless: RC_MBT_1_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -345,7 +345,7 @@ class RC_MBT_1_WD_Driverless_I: RC_MBT_1_WD_Driverless
 */
 
 
-class RC_MBT_1_A: RC_MBT_1_A_Base
+class RC_MBT_1_A: RC_MBT_1_Base
 {
 	class EventHandlers: EventHandlers
 	{
