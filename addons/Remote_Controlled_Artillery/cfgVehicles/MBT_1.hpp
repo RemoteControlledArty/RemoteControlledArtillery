@@ -61,6 +61,7 @@ class RC_MBT_1_Core: RC_MBT_1_Fetch
 		"SmokeLauncherMag"
 	};
 
+    displayName="Merkava";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_MBT_subcat";
 	author="Ascent";
@@ -364,15 +365,12 @@ class RC_MBT_1_A: RC_MBT_1_Base
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
-	crew="B_UAV_AI";
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_MBT_1_A_O: RC_MBT_1_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	class Turrets: Turrets
 	{
