@@ -1,5 +1,5 @@
 class B_MBT_01_TUSK_F;
-class RC_MBT_1_Base: B_MBT_01_TUSK_F
+class RC_MBT_1_Fetch: B_MBT_01_TUSK_F
 {
 	class Turrets;
 	class MainTurret;
@@ -19,7 +19,7 @@ class RC_MBT_1_Base: B_MBT_01_TUSK_F
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_MBT_1_A_Base: RC_MBT_1_Base
+class RC_MBT_1_Core: RC_MBT_1_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -271,6 +271,9 @@ class RC_MBT_1_A_Base: RC_MBT_1_Base
 	};
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
+class RC_MBT_1_A_Base: RC_MBT_1_Core
+{
 };
 
 
