@@ -349,7 +349,6 @@ class RC_MBT_1_A: RC_MBT_1_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		
 		class RC_Artillery
 		{
 			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
