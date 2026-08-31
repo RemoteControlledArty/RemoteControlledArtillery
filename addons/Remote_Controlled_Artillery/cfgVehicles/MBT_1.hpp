@@ -61,11 +61,10 @@ class RC_MBT_1_Core: RC_MBT_1_Fetch
 		"SmokeLauncherMag"
 	};
 
-    
- displayName="Merkava";
-	faction="RemoteControlled_B";
+    author="Ascent";
+    displayName="Merkava";
 	editorSubcategory="RC_MBT_subcat";
-	author="Ascent";
+	
 	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -359,10 +358,8 @@ class RC_MBT_1_A: RC_MBT_1_Base
 		};
 	};
 
-	displayName="Merkava";
 	scope=2;
 	scopeCurator=2;
-	side=1;
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
