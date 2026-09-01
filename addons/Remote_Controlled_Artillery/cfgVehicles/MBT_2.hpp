@@ -1,5 +1,5 @@
 class I_MBT_03_cannon_F;
-class RC_MBT_2_Base: I_MBT_03_cannon_F
+class RC_MBT_2_Fetch: I_MBT_03_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -19,7 +19,7 @@ class RC_MBT_2_Base: I_MBT_03_cannon_F
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_MBT_2_A_Base: RC_MBT_2_Base
+class RC_MBT_2_Core: RC_MBT_2_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -67,9 +67,10 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 		"SmokeLauncherMag"
 	};
 
-	faction="RemoteControlled_B";
+    author="Ascent";
+    displayName="Leopard 2";
 	editorSubcategory="RC_MBT_subcat";
-	author="Ascent";
+	
 	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -269,6 +270,9 @@ class RC_MBT_2_A_Base: RC_MBT_2_Base
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
 };
+class RC_MBT_2_Base: RC_MBT_2_Core
+{
+};
 
 
 /*
@@ -338,7 +342,7 @@ class RC_MBT_2_WD_Driverless_I: RC_MBT_2_WD_Driverless
 
 
 
-class RC_MBT_2_A: RC_MBT_2_A_Base
+class RC_MBT_2_A: RC_MBT_2_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -350,22 +354,17 @@ class RC_MBT_2_A: RC_MBT_2_A_Base
 		};
 	};
 
-	displayName="Leopard 2";
 	scope=2;
 	scopeCurator=2;
-	side=1;
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
-	crew="B_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_MBT_2_A_O: RC_MBT_2_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -387,11 +386,8 @@ class RC_MBT_2_A_O: RC_MBT_2_A
 };
 class RC_MBT_2_A_I: RC_MBT_2_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -425,11 +421,8 @@ class RC_MBT_2_WD: RC_MBT_2_A
 };
 class RC_MBT_2_WD_O: RC_MBT_2_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -451,11 +444,8 @@ class RC_MBT_2_WD_O: RC_MBT_2_WD
 };
 class RC_MBT_2_WD_I: RC_MBT_2_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -492,11 +482,8 @@ class RC_MBT_2_ReTex_WD: RC_MBT_2_A
 };
 class RC_MBT_2_ReTex_WD_O: RC_MBT_2_ReTex_WD
 {
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -518,11 +505,8 @@ class RC_MBT_2_ReTex_WD_O: RC_MBT_2_ReTex_WD
 };
 class RC_MBT_2_ReTex_WD_I: RC_MBT_2_ReTex_WD
 {
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -558,11 +542,8 @@ class RC_MBT_2_ReTex_D: RC_MBT_2_A
 };
 class RC_MBT_2_ReTex_D_O: RC_MBT_2_ReTex_D
 {
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -584,11 +565,8 @@ class RC_MBT_2_ReTex_D_O: RC_MBT_2_ReTex_D
 };
 class RC_MBT_2_ReTex_D_I: RC_MBT_2_ReTex_D
 {
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -624,11 +602,8 @@ class RC_MBT_2_ReTex_A: RC_MBT_2_A
 };
 class RC_MBT_2_ReTex_A_O: RC_MBT_2_ReTex_A
 {
-	faction="RemoteControlled_ReTex_O";
-	crew="O_UAV_AI";
-	side=0;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -650,11 +625,8 @@ class RC_MBT_2_ReTex_A_O: RC_MBT_2_ReTex_A
 };
 class RC_MBT_2_ReTex_A_I: RC_MBT_2_ReTex_A
 {
-	faction="RemoteControlled_ReTex_I";
-	crew="I_UAV_AI";
-	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{

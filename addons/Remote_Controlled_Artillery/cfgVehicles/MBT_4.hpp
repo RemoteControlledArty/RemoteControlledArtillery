@@ -1,5 +1,5 @@
 class O_MBT_02_cannon_F;
-class RC_MBT_4_Base: O_MBT_02_cannon_F
+class RC_MBT_4_Fetch: O_MBT_02_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -18,7 +18,7 @@ class RC_MBT_4_Base: O_MBT_02_cannon_F
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_MBT_4_HEX_A_Base: RC_MBT_4_Base
+class RC_MBT_4_Core: RC_MBT_4_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -60,9 +60,10 @@ class RC_MBT_4_HEX_A_Base: RC_MBT_4_Base
 		"SmokeLauncherMag"
 	};
 
-	faction="RemoteControlled_O";
+    author="Ascent";
+    displayName="T-100";
 	editorSubcategory="RC_MBT_subcat";
-	author="Ascent";
+	
 	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -261,9 +262,12 @@ class RC_MBT_4_HEX_A_Base: RC_MBT_4_Base
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
+class RC_MBT_4_Base: RC_MBT_4_Core
+{
+};
 
 
-class RC_MBT_4_HEX_A_O: RC_MBT_4_HEX_A_Base
+class RC_MBT_4_HEX_A_O: RC_MBT_4_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -275,14 +279,12 @@ class RC_MBT_4_HEX_A_O: RC_MBT_4_HEX_A_Base
 		};
 	};
 
-	displayName="T-100";
 	scope=2;
 	scopeCurator=2;
-	side=0;
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
-	crew="O_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_MBT_4_HEX_WD_O: RC_MBT_4_HEX_A_O
 {

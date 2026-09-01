@@ -4,9 +4,18 @@ params ["_veh", "_p"];
 
 	params ["_veh", "_p"];
 
+    //sleep 1.5;
+
 	while {(!(isNull _p)) && (!(isNull _veh)) && (alive _veh)} do {
 
-		//inaccurate past 1000m, its for a hyper agile missile using most of its propellant for steering
+		/*
+        private _t = locked target or center of screen;
+        private _vel = velocity _p;
+        private _dir = dir bet
+        _p setDir _dir; //run once or constant?
+        */
+
+        //inaccurate past 1000m, its for a hyper agile missile using most of its propellant for steering
 		//past that eighter make inaccurate or detonate to prevent unintended casualties
 		if ((_p distance _veh) > 1000) then {
 			triggerAmmo _p;
