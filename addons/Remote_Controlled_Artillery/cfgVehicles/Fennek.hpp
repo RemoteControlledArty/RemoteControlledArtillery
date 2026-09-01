@@ -1,6 +1,6 @@
 //Strider / Fennek - Scout
 class I_MRAP_03_F;
-class RC_Fennek_Base: I_MRAP_03_F
+class RC_Fennek_Fetch: I_MRAP_03_F
 {
 	class AnimationSources;
 	class Turrets;
@@ -22,7 +22,7 @@ class RC_Fennek_Base: I_MRAP_03_F
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_Fennek_A_Base: RC_Fennek_Base
+class RC_Fennek_Core: RC_Fennek_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -53,8 +53,8 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 	//PIP0_pos, PIP0_dir, moves with turret
 	//pos commander, pos commander dir
 
-	faction="RemoteControlled_B";
 	author="Ascent";
+
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
@@ -343,7 +343,7 @@ class RC_Fennek_A_Base: RC_Fennek_Base
 };
 
 
-class RC_Fennek_A: RC_Fennek_A_Base
+class RC_Fennek_Base: RC_Fennek_Core
 {
 	weapons[]=
 	{
@@ -359,11 +359,6 @@ class RC_Fennek_A: RC_Fennek_A_Base
 		"SmokeLauncherMag"
 	};
 
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
 	camouflage=1.5;	//2
 	/*
 	radarTargetSize=0.7; //?
@@ -373,6 +368,7 @@ class RC_Fennek_A: RC_Fennek_A_Base
 
 	displayName="RC Recon Fennek";
 	editorSubcategory="RC_Car_subcat";
+
 	isUav=1;
 	driverForceOptics=1;
 	driverCompartments="Compartment1";
@@ -383,7 +379,6 @@ class RC_Fennek_A: RC_Fennek_A_Base
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
-	crew="B_UAV_AI";
 
 	class Turrets: Turrets
 	{
@@ -404,18 +399,23 @@ class RC_Fennek_A: RC_Fennek_A_Base
 		};
 	};
 };
+class RC_Fennek_A: RC_Fennek_Base
+{
+	scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_Fennek_A_O: RC_Fennek_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsO.hpp"
 };
 class RC_Fennek_A_I: RC_Fennek_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsI.hpp"
 };
 class RC_Fennek_DIG_I: RC_Fennek_A_I
@@ -429,16 +429,8 @@ class RC_Fennek_DIG_I: RC_Fennek_A_I
 
 
 //Fennek with Vehicle Mortar attached, for low power but mobile indirect fire support
-class RC_Mortar_Fennek_A: RC_Fennek_A
+class RC_Mortar_Fennek_Base: RC_Fennek_Base
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
-		};
-	};
-
 	weapons[]=
 	{
 		"RC_target_confirmer_datalink",
@@ -454,7 +446,6 @@ class RC_Mortar_Fennek_A: RC_Fennek_A
 
 	displayName="RC Mortar Fennek";
 	editorSubcategory="RC_Mortar_subcat";
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 	//camouflage=2;	//2
 
 	class Components: Components
@@ -556,6 +547,26 @@ class RC_Mortar_Fennek_A: RC_Fennek_A
 		};
 	};
 };
+class RC_Mortar_Fennek_A: RC_Mortar_Fennek_Base
+{
+    class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
+		};
+	};
+
+    scope=2;
+	scopeCurator=2;
+	side=1;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+    #include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+};
+
+
 class RC_Mortar_Fennek_A_O: RC_Mortar_Fennek_A
 {
 	class EventHandlers: EventHandlers
@@ -566,9 +577,7 @@ class RC_Mortar_Fennek_A_O: RC_Mortar_Fennek_A
 		};
 	};
 
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Mortar_Fennek_A_I: RC_Mortar_Fennek_A
@@ -581,9 +590,7 @@ class RC_Mortar_Fennek_A_I: RC_Mortar_Fennek_A
 		};
 	};
 
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_Mortar_Fennek_DIG_I: RC_Mortar_Fennek_A_I
@@ -620,9 +627,7 @@ class RC_Mortar_Fennek_LC_A_O: RC_Mortar_Fennek_LC_A
 		};
 	};
 
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Mortar_Fennek_LC_A_I: RC_Mortar_Fennek_LC_A
@@ -635,9 +640,7 @@ class RC_Mortar_Fennek_LC_A_I: RC_Mortar_Fennek_LC_A
 		};
 	};
 
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_Mortar_Fennek_LC_DIG_I: RC_Mortar_Fennek_LC_A_I
