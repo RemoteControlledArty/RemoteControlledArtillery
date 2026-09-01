@@ -1,6 +1,6 @@
 //class I_APC_tracked_03_cannon_F;
 class I_E_APC_tracked_03_cannon_F;
-class RC_ICV_IFV_6_A_Base: I_E_APC_tracked_03_cannon_F
+class RC_ICV_IFV_6_Fetch: I_E_APC_tracked_03_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -23,7 +23,7 @@ class RC_ICV_IFV_6_A_Base: I_E_APC_tracked_03_cannon_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_6_A: RC_ICV_IFV_6_A_Base
+class RC_ICV_IFV_6_Core: RC_ICV_IFV_6_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -65,11 +65,7 @@ class RC_ICV_IFV_6_A: RC_ICV_IFV_6_A_Base
 	};
 
 	author="Ascent";
-	faction="RemoteControlled_B";
-	scope=0;
-	scopeCurator=0;
-	side=1;
-	forceInGarage=1;
+	
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -90,9 +86,12 @@ class RC_ICV_IFV_6_A: RC_ICV_IFV_6_A_Base
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
+class RC_ICV_IFV_6_Base: RC_ICV_IFV_6_Core
+{
+};
 
 
-class RC_IFV_6_A: RC_ICV_IFV_6_A
+class RC_IFV_6_Core: RC_ICV_IFV_6_Base
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -106,12 +105,9 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 
 	displayName="Warrior";
 	editorSubcategory="RC_IFV_subcat";
-	scope=2;
-	scopeCurator=2;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	crew="B_UAV_AI";
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
@@ -257,12 +253,23 @@ class RC_IFV_6_A: RC_ICV_IFV_6_A
 		};
 	};
 };
+class RC_IFV_6_Base: RC_IFV_6_Core
+{
+};
+
+
+class RC_IFV_6_A: RC_IFV_6_Base
+{
+    scope=2;
+	scopeCurator=2;
+    scopeGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
 class RC_IFV_6_A_O: RC_IFV_6_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -275,10 +282,7 @@ class RC_IFV_6_A_O: RC_IFV_6_A
 };
 class RC_IFV_6_A_I: RC_IFV_6_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -314,10 +318,7 @@ class RC_IFV_6_WD: RC_IFV_6_A
 };
 class RC_IFV_6_WD_O: RC_IFV_6_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -330,10 +331,7 @@ class RC_IFV_6_WD_O: RC_IFV_6_WD
 };
 class RC_IFV_6_WD_I: RC_IFV_6_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
