@@ -1,6 +1,6 @@
 // AA
 class B_APC_Tracked_01_AA_F;
-class RC_AA_Base: B_APC_Tracked_01_AA_F
+class RC_AA_Fetch: B_APC_Tracked_01_AA_F
 {
 	class AnimationSources;
 	class Components;
@@ -19,7 +19,7 @@ class RC_AA_Base: B_APC_Tracked_01_AA_F
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_AA_A_Base: RC_AA_Base
+class RC_AA_Core: RC_AA_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -292,7 +292,12 @@ class RC_AA_A_Base: RC_AA_Base
 		};
 	};
 };
-class RC_AA_A: RC_AA_A_Base
+class RC_AA_Base: RC_AA_Core
+{
+};
+
+
+class RC_AA_A: RC_AA_Base
 {
 	displayName="RC Anti-Air / C-UAS";
 
@@ -478,7 +483,7 @@ class RC_AA_WD_I: RC_AA_WD
 
 
 class O_APC_Tracked_02_AA_F;
-class RC_AA_base_HEX_O: O_APC_Tracked_02_AA_F
+class RC_AA_HEX_Fetch: O_APC_Tracked_02_AA_F
 {
 	class AnimationSources;
 	class Components;
@@ -495,7 +500,7 @@ class RC_AA_base_HEX_O: O_APC_Tracked_02_AA_F
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_AA_HEX_A_O: RC_AA_base_HEX_O
+class RC_AA_HEX_Core: RC_AA_HEX_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -517,14 +522,10 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
+    author="Ascent";
 	displayName="RC Anti-Air / C-UAS";
-	faction="RemoteControlled_O";
 	editorSubcategory="RC_AntiAir_subcat";
-	author="Ascent";
-	scope=2;
-	scopeCurator=2;
-	side=0;
-	forceInGarage=1;
+
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -533,7 +534,7 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	uavCameraDriverDir="PiP1_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
-	crew="O_UAV_AI";
+	
 	driverForceOptics=1;
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
@@ -829,6 +830,14 @@ class RC_AA_HEX_A_O: RC_AA_base_HEX_O
 	class TransportWeapons
 	{
 	};
+};
+class RC_AA_HEX_Base: RC_AA_HEX_Core
+{
+};
+
+
+class RC_AA_HEX_A_O: RC_AA_HEX_Base
+{
 };
 class RC_AA_HEX_WD_O: RC_AA_HEX_A_O
 {
