@@ -28,15 +28,14 @@ class RC_MortarMATV_Core: RC_MortarMATV_Fetch
 		};
 	};
 
+    #include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+    lockDetectionSystem=4;
+
 	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
 
 	enableGPS=1;
-	radartype=2;
-	reportOwnPosition=1;
-	receiveRemoteTargets=1;
-	reportRemoteTargets=1;
-
     crewCrashProtection=0.01;
 	threat[]={0,0,0};
 	cost=0;
@@ -49,22 +48,6 @@ class RC_MortarMATV_Core: RC_MortarMATV_Fetch
 	smokeLauncherVelocity=5;
 	smokeLauncherGrenadeCount=6;
 	smokeLauncherAngle=360;	//360° instead of frontal against FPV's
-
-	laserScanner=1;
-	lockDetectionSystem=4;
-	incomingMissileDetectionSystem=16;
-	soundLocked[]=
-	{
-		"\A3\Sounds_F\weapons\Rockets\locked_1",
-		1,
-		1
-	};
-	soundIncommingMissile[]=
-	{
-		"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
-		0.39810717,
-		1
-	};
 	
 	weapons[]=
 	{
