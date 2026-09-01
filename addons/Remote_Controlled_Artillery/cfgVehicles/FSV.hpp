@@ -1,6 +1,6 @@
 //NLOS FSV
 class B_AFV_Wheeled_01_up_cannon_F;
-class RC_FSV_Base: B_AFV_Wheeled_01_up_cannon_F
+class RC_FSV_Fetch: B_AFV_Wheeled_01_up_cannon_F
 {
 	class AnimationSources;
 	/*
@@ -30,7 +30,7 @@ class RC_FSV_Base: B_AFV_Wheeled_01_up_cannon_F
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_FSV_A_Base: RC_FSV_Base
+class RC_FSV_Core: RC_FSV_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -72,9 +72,10 @@ class RC_FSV_A_Base: RC_FSV_Base
 		"SmokeLauncherMag"
 	};
 
-	faction="RemoteControlled_B";
+    author="Ascent";
+    displayName="Rooikat";
 	editorSubcategory="RC_FSV_subcat";
-	author="Ascent";
+	
 	driverCompartments="Compartment2";
 	//hideProxyInCombat=1;	//for later use
 	//canHideDriver=1;	//for later use
@@ -306,9 +307,12 @@ class RC_FSV_A_Base: RC_FSV_Base
 	
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
 };
+class RC_FSV_Base: RC_FSV_Core
+{
+};
 
 
-class RC_FSV_A: RC_FSV_A_Base
+class RC_FSV_A: RC_FSV_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -320,14 +324,11 @@ class RC_FSV_A: RC_FSV_A_Base
 		};
 	};
 
-	displayName="Rooikat";
 	scope=2;
 	scopeCurator=2;
-	side=1;
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
-	crew="B_UAV_AI";
 };
 class RC_FSV_A_O: RC_FSV_A
 {
