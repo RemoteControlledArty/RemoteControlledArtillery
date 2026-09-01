@@ -1,5 +1,5 @@
 class B_MBT_01_arty_F;
-class RC_Howitzer_base: B_MBT_01_arty_F
+class RC_Howitzer_Fetch: B_MBT_01_arty_F
 {
 	class AnimationSources;
 	class showCamonetTurret;
@@ -31,7 +31,7 @@ class RC_Howitzer_base: B_MBT_01_arty_F
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_Howitzer_A: RC_Howitzer_base
+class RC_Howitzer_Core: RC_Howitzer_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -68,17 +68,12 @@ class RC_Howitzer_A: RC_Howitzer_base
 
 	author="Ascent";
 	displayName="RC Howitzer";
-	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
+
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
-	crew="B_UAV_AI";
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -366,9 +361,34 @@ class RC_Howitzer_A: RC_Howitzer_base
 	//#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
+class RC_Howitzer_Base: RC_Howitzer_Core
+{
+};
+
+
+class RC_Howitzer_A: RC_Howitzer_Base
+{
+    scope=2;
+	scopeCurator=2;
+    forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+};
+class RC_Howitzer_A_O: RC_Howitzer_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_Howitzer_A_I: RC_Howitzer_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
 class RC_Howitzer_WD: RC_Howitzer_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_arty_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -391,32 +411,14 @@ class RC_Howitzer_WD: RC_Howitzer_A
 		};
 	};
 };
-class RC_Howitzer_A_O: RC_Howitzer_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-};
 class RC_Howitzer_WD_O: RC_Howitzer_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-};
-class RC_Howitzer_A_I: RC_Howitzer_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_Howitzer_WD_I: RC_Howitzer_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -452,9 +454,20 @@ class RC_Howitzer_LC_A: RC_Howitzer_A
 		};
 	};
 };
+class RC_Howitzer_LC_A_O: RC_Howitzer_LC_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_Howitzer_LC_A_I: RC_Howitzer_LC_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
 class RC_Howitzer_LC_WD: RC_Howitzer_LC_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_arty_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -465,39 +478,21 @@ class RC_Howitzer_LC_WD: RC_Howitzer_LC_A
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
-class RC_Howitzer_LC_A_O: RC_Howitzer_LC_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-};
 class RC_Howitzer_LC_WD_O: RC_Howitzer_LC_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-};
-class RC_Howitzer_LC_A_I: RC_Howitzer_LC_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_Howitzer_LC_WD_I: RC_Howitzer_LC_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
 //HEX Camo Howitzers (Opfor only)
 class O_MBT_02_arty_F;
-class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
+class RC_Howitzer_HEX_Fetch: O_MBT_02_arty_F
 {
 	class AnimationSources;
 	class showCamonetHull;
@@ -528,7 +523,7 @@ class RC_Howitzer_HEX_O_base: O_MBT_02_arty_F
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
+class RC_Howitzer_HEX_Core: RC_Howitzer_HEX_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -565,17 +560,12 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 
 	author="Ascent";
 	displayName="RC Howitzer";
-	faction="RemoteControlled_O";
 	editorSubcategory="RC_Howitzer_subcat";
-	scope=2;
-	scopeCurator=2;
-	side=0;
-	forceInGarage=1;
+
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
-	crew="O_UAV_AI";
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -848,9 +838,22 @@ class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_O_base
 	//#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
+class RC_Howitzer_HEX_Base: RC_Howitzer_HEX_Core
+{
+};
+
+
+class RC_Howitzer_HEX_A_O: RC_Howitzer_HEX_Base
+{
+    scope=2;
+	scopeCurator=2;
+    forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
 class RC_Howitzer_HEX_WD_O: RC_Howitzer_HEX_A_O
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_MBT_02_arty_ghex_F.jpg";
 	textureList[]=
 	{
@@ -913,7 +916,6 @@ class RC_Howitzer_HEX_LC_A_O: RC_Howitzer_HEX_A_O
 };
 class RC_Howitzer_HEX_LC_WD_O: RC_Howitzer_HEX_LC_A_O
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_MBT_02_arty_ghex_F.jpg";
 	textureList[]=
 	{
@@ -932,7 +934,7 @@ class RC_Howitzer_HEX_LC_WD_O: RC_Howitzer_HEX_LC_A_O
 
 
 class B_Ship_Gun_01_F;
-class RC_Static_Arty_base: B_Ship_Gun_01_F
+class RC_Static_Arty_Fetch: B_Ship_Gun_01_F
 {
 	class Turrets;
 	class MainTurret;
@@ -949,7 +951,7 @@ class RC_Static_Arty_base: B_Ship_Gun_01_F
 	RC_BarrelLenght=3.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 };
-class RC_Static_Arty: RC_Static_Arty_base
+class RC_Static_Arty_Core: RC_Static_Arty_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -971,12 +973,8 @@ class RC_Static_Arty: RC_Static_Arty_base
 
 	author="Ascent";
 	displayName="RC Naval Gun";
-	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
+
 	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
 
@@ -1118,17 +1116,26 @@ class RC_Static_Arty: RC_Static_Arty_base
 		};
 	};
 };
+class RC_Static_Arty_Base: RC_Static_Arty_Core
+{
+};
+
+
+class RC_Static_Arty: RC_Static_Arty_Base
+{
+    scope=2;
+	scopeCurator=2;
+    scopeGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_Static_Arty_O: RC_Static_Arty
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_Static_Arty_I: RC_Static_Arty
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
@@ -1157,15 +1164,11 @@ class RC_Static_Arty_LC: RC_Static_Arty
 };
 class RC_Static_Arty_LC_O: RC_Static_Arty_LC
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_Static_Arty_LC_I: RC_Static_Arty_LC
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
