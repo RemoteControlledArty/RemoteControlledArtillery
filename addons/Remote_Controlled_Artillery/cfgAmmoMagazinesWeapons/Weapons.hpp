@@ -1345,6 +1345,10 @@ class RC_GMG_40mm: GMG_40mm_Base
 		"RC_50Rnd_40mm_G_belt"
 	};
 };
+class RC_GMG_40mm_Auto: RC_GMG_40mm
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorAuto.hpp"
+};
 
 
 //Autocannons

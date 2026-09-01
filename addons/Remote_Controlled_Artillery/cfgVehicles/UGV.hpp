@@ -617,7 +617,6 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_A_base
 };
 class RC_cUAS_UGV_WD: RC_cUAS_UGV_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_rcws_olive_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -626,6 +625,7 @@ class RC_cUAS_UGV_WD: RC_cUAS_UGV_A
 		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
 	};
 };
+
 
 class RC_cUAS_UGV_A_O: RC_cUAS_UGV_A
 {
@@ -658,6 +658,7 @@ class RC_cUAS_UGV_WD_O: RC_cUAS_UGV_WD
 	};
 };
 
+
 class RC_cUAS_UGV_A_I: RC_cUAS_UGV_A
 {
 	faction="RemoteControlled_I";
@@ -685,6 +686,206 @@ class RC_cUAS_UGV_WD_I: RC_cUAS_UGV_WD
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_yellow.hpp"
+		};
+	};
+};
+
+
+class RC_FS_UGV_A: RC_cUAS_UGV_A
+{
+	displayName="RC U-FSV";
+	editorSubcategory="RC_FSV_subcat";
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=4000;
+
+					class AirTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=4000;
+						maxRange=4000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class IRSensorComponent: SensorTemplateIR
+				{
+					typeRecognitionDistance=1000;
+
+					class AirTarget
+					{
+						minRange=1000;
+						maxRange=1000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=0;
+						maxRange=0;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					angleRangeHorizontal=1;
+					angleRangeVertical=1;
+					animDirection="maingun";
+				};
+				class VisualSensorComponent: SensorTemplateVisual
+				{
+					typeRecognitionDistance=400;
+
+					class AirTarget
+					{
+						minRange=400;
+						maxRange=400;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=400;
+						maxRange=400;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=600;
+					nightRangeCoef=0.80000001;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="maingun";
+				};
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
+			};
+		};
+	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			weapons[]=
+			{
+				"RC_GMG_40mm_Auto",
+				"RC_HMG_127_APC",
+				"SmokeLauncher"
+			};
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_red.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class muzzle_rot_GMG
+		{
+			source="ammorandom";
+			weapon="RC_GMG_40mm_Auto";
+		};
+		class muzzle_hide_GMG
+		{
+			source="reload";
+			weapon="RC_GMG_40mm_Auto";
+		};
+	};
+};
+class RC_FS_UGV_WD: RC_FS_UGV_A
+{
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_rcws_olive_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"\A3\Soft_F_Exp\UGV_01\Data\UGV_01_ext_olive_CO.paa",
+		"\A3\Soft_F_Exp\UGV_01\Data\UGV_01_int_olive_CO.paa",
+		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
+	};
+};
+
+
+class RC_FS_UGV_A_O: RC_FS_UGV_A
+{
+	faction="RemoteControlled_O";
+	crew="O_UAV_AI";
+	side=0;
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_green.hpp"
+		};
+	};
+};
+class RC_FS_UGV_WD_O: RC_FS_UGV_WD
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_green.hpp"
+		};
+	};
+};
+
+
+class RC_FS_UGV_A_I: RC_FS_UGV_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_yellow.hpp"
+		};
+	};
+};
+class RC_FS_UGV_WD_I: RC_FS_UGV_WD
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_yellow.hpp"
 		};
 	};
 };
