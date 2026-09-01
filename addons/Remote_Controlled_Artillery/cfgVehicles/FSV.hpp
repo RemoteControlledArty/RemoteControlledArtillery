@@ -329,14 +329,13 @@ class RC_FSV_A: RC_FSV_Base
 	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_FSV_A_O: RC_FSV_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
 
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -358,10 +357,8 @@ class RC_FSV_A_O: RC_FSV_A
 };
 class RC_FSV_A_I: RC_FSV_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -407,10 +404,8 @@ class RC_FSV_WD: RC_FSV_A
 };
 class RC_FSV_WD_O: RC_FSV_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -432,11 +427,8 @@ class RC_FSV_WD_O: RC_FSV_WD
 };
 class RC_FSV_WD_I: RC_FSV_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{
