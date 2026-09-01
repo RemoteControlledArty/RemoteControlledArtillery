@@ -19,7 +19,7 @@ class RC_AA_Fetch: B_APC_Tracked_01_AA_F
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_AA_Core: RC_AA_Fetch
+class RC_AA_ACFSV_Core: RC_AA_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -46,10 +46,8 @@ class RC_AA_Core: RC_AA_Fetch
 	RC_ATrespondingTurret[]={0,0};
 
 	author="Ascent";
-	faction="RemoteControlled_B";
 	editorSubcategory="RC_AntiAir_subcat";
-	side=1;
-	crew="B_UAV_AI";
+	
 	driverForceOptics=1;
 	driverCompartments="Compartment1";
 	reportOwnPosition=1;
@@ -292,18 +290,15 @@ class RC_AA_Core: RC_AA_Fetch
 		};
 	};
 };
-class RC_AA_Base: RC_AA_Core
+class RC_AA_ACFSV_Base: RC_AA_ACFSV_Core
 {
 };
 
 
-class RC_AA_A: RC_AA_Base
+class RC_AA_Core: RC_AA_ACFSV_Base
 {
 	displayName="RC Anti-Air / C-UAS";
 
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -410,6 +405,18 @@ class RC_AA_A: RC_AA_Base
 	{
 	};
 };
+class RC_AA_Base: RC_AA_Core
+{
+};
+
+class RC_AA_A: RC_AA_Base
+{
+    scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_AA_WD: RC_AA_A
 {
 	DLC="Expansion";
@@ -425,9 +432,7 @@ class RC_AA_WD: RC_AA_A
 };
 class RC_AA_A_O: RC_AA_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -439,9 +444,7 @@ class RC_AA_A_O: RC_AA_A
 };
 class RC_AA_WD_O: RC_AA_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -453,9 +456,7 @@ class RC_AA_WD_O: RC_AA_WD
 };
 class RC_AA_A_I: RC_AA_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -467,9 +468,7 @@ class RC_AA_A_I: RC_AA_A
 };
 class RC_AA_WD_I: RC_AA_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -838,6 +837,10 @@ class RC_AA_HEX_Base: RC_AA_HEX_Core
 
 class RC_AA_HEX_A_O: RC_AA_HEX_Base
 {
+    scope=2;
+	scopeCurator=2;
+    scopeGarage=1;
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_AA_HEX_WD_O: RC_AA_HEX_A_O
 {
