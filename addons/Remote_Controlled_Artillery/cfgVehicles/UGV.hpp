@@ -740,26 +740,50 @@ class RC_FS_UGV_A: RC_cUAS_UGV_A
 				};
 				class IRSensorComponent: SensorTemplateIR
 				{
-					typeRecognitionDistance=1000;
+					typeRecognitionDistance=3000;
 
 					class AirTarget
 					{
-						minRange=1000;
-						maxRange=1000;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=0;
-						maxRange=0;
+						minRange=4000;
+						maxRange=4000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
 					angleRangeHorizontal=1;
-					angleRangeVertical=1;
-					animDirection="maingun";
+					angleRangeVertical=2;
+					animDirection="mainGun";
+				};
+				class ManSensorComponent: SensorTemplateMan
+				{
+					typeRecognitionDistance=300;
+
+					class AirTarget
+					{
+						minRange=300;
+						maxRange=300;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=300;
+						maxRange=300;
+						objectDistanceLimitCoef=1;
+						viewDistanceLimitCoef=1;
+					};
+					maxTrackableSpeed=15;
+					angleRangeHorizontal=360;
+					angleRangeVertical=360;
+					animDirection="mainGun";
+					aimDown=0;
 				};
 				class VisualSensorComponent: SensorTemplateVisual
 				{
