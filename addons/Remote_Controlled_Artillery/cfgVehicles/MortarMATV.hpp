@@ -1,6 +1,6 @@
 //Flatbed Truck with 105mm M119
 class B_MRAP_01_F;
-class RC_MortarMATV_base: B_MRAP_01_F
+class RC_MortarMATV_Fetch: B_MRAP_01_F
 {
 	class Components;
 	class EventHandlers;
@@ -12,12 +12,10 @@ class RC_MortarMATV_base: B_MRAP_01_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_MortarMATV: RC_MortarMATV_base
+class RC_MortarMATV_Core: RC_MortarMATV_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
-
 		class RC_Detection
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
@@ -30,9 +28,9 @@ class RC_MortarMATV: RC_MortarMATV_base
 		};
 	};
 
-	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
+
 	crewCrashProtection=0.01;
 	enableGPS=1;
 	radartype=2;
@@ -257,16 +255,30 @@ class RC_MortarMATV: RC_MortarMATV_base
 		};
 	};
 };
+class RC_MortarMATV_Base: RC_MortarMATV_Core
+{
+};
 
 
+class RC_MortarMATV: RC_MortarMATV_Base
+{
+	class EventHandlers: EventHandlers
+	{
+        class Mortar
+        {
+		     init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
+        };
+    };
+};
 class RC_MortarMATV_manned_A: RC_MortarMATV
 {
-	displayName="Mortar MATV 6km";
 	scope=2;
 	scopeCurator=2;
-	side=1;
 	forceInGarage=1;
 
+    displayName="Mortar MATV 6km";
+    faction="RemoteControlled_B";
+    side=1;
 	crew="";
 	//crew="B_UAV_AI";
 	//dontCreateAI=1;	//doesnt fully work
@@ -278,8 +290,11 @@ class RC_MortarMATV_manned_A_I: RC_MortarMATV_manned_A
 	//crew="I_UAV_AI";
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
-	};
+        class Mortar
+        {
+		     init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
+        };
+    };
 
 	class TransportItems
 	{
@@ -317,7 +332,6 @@ class RC_MortarMATV_manned_A_I: RC_MortarMATV_manned_A
 
 class RC_MortarMATV_manned_WD: RC_MortarMATV_manned_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MRAP_01_F.jpg";
 	textureList[]=
 	{
@@ -338,8 +352,11 @@ class RC_MortarMATV_manned_WD_I: RC_MortarMATV_manned_WD
 	//crew="I_UAV_AI";
 	class EventHandlers: EventHandlers
 	{
-		init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
-	};
+        class Mortar
+        {
+		    init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.05, -2.45, 1.27]];};";
+        };
+    };
 
 	class TransportItems
 	{
