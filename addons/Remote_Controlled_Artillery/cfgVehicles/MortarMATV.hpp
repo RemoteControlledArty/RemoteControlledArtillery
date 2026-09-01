@@ -31,12 +31,13 @@ class RC_MortarMATV_Core: RC_MortarMATV_Fetch
 	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
 
-	crewCrashProtection=0.01;
 	enableGPS=1;
 	radartype=2;
 	reportOwnPosition=1;
 	receiveRemoteTargets=1;
 	reportRemoteTargets=1;
+
+    crewCrashProtection=0.01;
 	threat[]={0,0,0};
 	cost=0;
 	typicalCargo[]=
