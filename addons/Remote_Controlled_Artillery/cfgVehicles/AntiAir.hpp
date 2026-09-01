@@ -409,6 +409,7 @@ class RC_AA_Base: RC_AA_Core
 {
 };
 
+
 class RC_AA_A: RC_AA_Base
 {
     scope=2;
@@ -417,32 +418,7 @@ class RC_AA_A: RC_AA_Base
 
     #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
-class RC_AA_WD: RC_AA_A
-{
-	DLC="Expansion";
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_AA_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"A3\Armor_F_exp\APC_Tracked_01\Data\apc_tracked_01_aa_body_olive_co.paa",
-		"A3\Armor_F_exp\APC_Tracked_01\Data\mbt_01_body_olive_co.paa",
-		"A3\Armor_F_exp\APC_Tracked_01\Data\apc_tracked_01_aa_tower_olive_co.paa",
-		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
-		"a3\armor_f\data\camonet_green_co.paa"
-	};
-};
 class RC_AA_A_O: RC_AA_A
-{
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_green.hpp"
-		};
-	};
-};
-class RC_AA_WD_O: RC_AA_WD
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
@@ -466,6 +442,33 @@ class RC_AA_A_I: RC_AA_A
 		};
 	};
 };
+
+
+class RC_AA_WD: RC_AA_A
+{
+	DLC="Expansion";
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_AA_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"A3\Armor_F_exp\APC_Tracked_01\Data\apc_tracked_01_aa_body_olive_co.paa",
+		"A3\Armor_F_exp\APC_Tracked_01\Data\mbt_01_body_olive_co.paa",
+		"A3\Armor_F_exp\APC_Tracked_01\Data\apc_tracked_01_aa_tower_olive_co.paa",
+		//"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+		"a3\armor_f\data\camonet_green_co.paa"
+	};
+};
+class RC_AA_WD_O: RC_AA_WD
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_AA_35mm_green.hpp"
+		};
+	};
+};
 class RC_AA_WD_I: RC_AA_WD
 {
     #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
@@ -478,7 +481,6 @@ class RC_AA_WD_I: RC_AA_WD
 		};
 	};
 };
-
 
 
 class O_APC_Tracked_02_AA_F;
