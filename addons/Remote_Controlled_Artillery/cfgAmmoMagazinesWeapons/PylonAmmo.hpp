@@ -350,6 +350,9 @@ class RC_SRAM: RC_DAGR
 		};
 	};
 };
+class RC_SRAM_Vanilla: RC_SRAM
+{
+};
 
 
 //heavy guided

@@ -4,6 +4,7 @@ class RC_GMG_UGV_base: B_UGV_01_rcws_F
 	class AnimationSources;
 	class HitPoints;
 	class HitHull;
+	class HitBody;
 	class HitEngine;
 	class HitFuel;
 	class HitLFWheel;
@@ -66,25 +67,32 @@ class RC_GMG_UGV_A_base: RC_GMG_UGV_base
 	{
 		class HitHull: HitHull
 		{
-			armor=1.05;
-			passThrough=1;
+			armor=1.05;				//1.05
+			passThrough=1;			//1
 			//minimalHit=0.2;
-			explosionShielding=0.4;
+			explosionShielding=0.4;	//0.4
 		};
 		class HitEngine: HitEngine
 		{
-			armor=3;
-			passThrough=0.25;
+			armor=3;				//3
+			passThrough=0.25;		//0.25
 			//minimalHit=0.2;
-			explosionShielding=0.4;
+			explosionShielding=0.4;	//0.4
 		};
 		class HitFuel: HitFuel
 		{
-			armor=2;
-			passThrough=0.15;
+			armor=2;				//2
+			passThrough=0.15;		//0.15
 			//minimalHit=0.1;
-			explosionShielding=1.2;
+			explosionShielding=1.2;	//1.2
 		};
+		class HitBody: HitBody
+		{
+			armor=1;				//1
+			passThrough=1;			//1
+			explosionShielding=1.5;	//1.5
+		};
+
 		class HitLFWheel: HitLFWheel
 		{
 			armor=-250;
@@ -122,6 +130,79 @@ class RC_GMG_UGV_A_base: RC_GMG_UGV_base
 			explosionShielding=1;
 		};
 	};
+
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			maxElev=47.5;
+			minElev=-14;
+
+			class OpticsIn
+			{
+				class Wide
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
+
+					initFov=0.9;
+					minFov=0.0125;
+					maxFov=0.9;
+
+					//directionStabilized=0;
+				};
+			};
+			turretInfoType="RscOptics_crows";
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={4000,2000,1000,400};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={400,1000,2000,4000};
+							resource="RscCustomInfoSensors";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+					};
+				};
+			};
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
+	};
+
 
 	class Reflectors
 	{
@@ -225,11 +306,8 @@ class RC_indirect_GMG_UGV_A: RC_GMG_UGV_A_base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 			turretInfoType="RscWeaponRangeArtilleryAuto";
-			//commanding=2;
 			maxElev=72;
-			minElev=-14;
 
 			weapons[]=
 			{
@@ -251,47 +329,6 @@ class RC_indirect_GMG_UGV_A: RC_GMG_UGV_A_base
 					maxFov=0.9;
 
 					//directionStabilized=0;
-				};
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,400};
-							resource="RscCustomInfoSensors";
-						};
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={400,1000,2000,4000};
-							resource="RscCustomInfoSensors";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-					};
 				};
 			};
 		};
@@ -349,6 +386,9 @@ class RC_indirect_GMG_UGV_A_O: RC_indirect_GMG_UGV_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_green.hpp"
 		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
 	};
 };
 class RC_indirect_GMG_UGV_WD_O: RC_indirect_GMG_UGV_WD
@@ -363,6 +403,9 @@ class RC_indirect_GMG_UGV_WD_O: RC_indirect_GMG_UGV_WD
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_green.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
 		};
 	};
 };
@@ -380,6 +423,9 @@ class RC_indirect_GMG_UGV_A_I: RC_indirect_GMG_UGV_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_yellow.hpp"
 		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
 	};
 };
 class RC_indirect_GMG_UGV_WD_I: RC_indirect_GMG_UGV_WD
@@ -394,6 +440,9 @@ class RC_indirect_GMG_UGV_WD_I: RC_indirect_GMG_UGV_WD
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_yellow.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
 		};
 	};
 };
@@ -516,11 +565,6 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_A_base
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-			//commanding=2;
-			maxElev=47.5;
-			minElev=-14;
-
 			weapons[]=
 			{
 				"RC_UGV_20mm_cUAS",
@@ -528,63 +572,6 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_A_base
 				"SmokeLauncher"
 			};
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_red.hpp"
-
-			class OpticsIn
-			{
-				class Wide
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
-					gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
-
-					initFov=0.9;
-					minFov=0.0125;
-					maxFov=0.9;
-
-					//directionStabilized=0;
-				};
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={4000,2000,1000,400};
-							resource="RscCustomInfoSensors";
-						};
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={400,1000,2000,4000};
-							resource="RscCustomInfoSensors";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-					};
-				};
-			};
 		};
 		class CargoTurret_01: CargoTurret_01
 		{
@@ -640,6 +627,9 @@ class RC_cUAS_UGV_A_O: RC_cUAS_UGV_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_green.hpp"
 		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
 	};
 };
 class RC_cUAS_UGV_WD_O: RC_cUAS_UGV_WD
@@ -654,6 +644,9 @@ class RC_cUAS_UGV_WD_O: RC_cUAS_UGV_WD
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_green.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
 		};
 	};
 };
@@ -672,6 +665,9 @@ class RC_cUAS_UGV_A_I: RC_cUAS_UGV_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_yellow.hpp"
 		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
 	};
 };
 class RC_cUAS_UGV_WD_I: RC_cUAS_UGV_WD
@@ -687,6 +683,9 @@ class RC_cUAS_UGV_WD_I: RC_cUAS_UGV_WD
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_yellow.hpp"
 		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
 	};
 };
 
@@ -695,6 +694,34 @@ class RC_FS_UGV_A: RC_cUAS_UGV_A
 {
 	displayName="RC U-FSV";
 	editorSubcategory="RC_FSV_subcat";
+
+	class HitPoints: HitPoints
+	{
+		class HitHull: HitHull
+		{
+			armor=2.1;				//1.05
+			passThrough=0.5;		//1
+			explosionShielding=0.2;	//0.4
+		};
+		class HitEngine: HitEngine
+		{
+			armor=6;				//3
+			passThrough=0.125;		//0.25
+			explosionShielding=0.2;	//0.4
+		};
+		class HitFuel: HitFuel
+		{
+			armor=4;				//2
+			passThrough=0.075;		//0.15
+			explosionShielding=1.2;	//1.2
+		};
+		class HitBody: HitBody
+		{
+			armor=2;				//1
+			passThrough=0.5;		//1
+			explosionShielding=0.75;//1.5
+		};
+	};
 
 	class Components: Components
 	{
@@ -744,21 +771,21 @@ class RC_FS_UGV_A: RC_cUAS_UGV_A
 
 					class AirTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=3000;
+						maxRange=3000;
 						objectDistanceLimitCoef=1;
 						viewDistanceLimitCoef=1;
 					};
 					maxTrackableSpeed=600;
-					angleRangeHorizontal=1;
-					angleRangeVertical=2;
+					angleRangeHorizontal=45;
+					angleRangeVertical=45;
 					animDirection="mainGun";
 				};
 				class ManSensorComponent: SensorTemplateMan
@@ -870,6 +897,9 @@ class RC_FS_UGV_A_O: RC_FS_UGV_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_green.hpp"
 		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
 	};
 };
 class RC_FS_UGV_WD_O: RC_FS_UGV_WD
@@ -882,6 +912,9 @@ class RC_FS_UGV_WD_O: RC_FS_UGV_WD
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_green.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
 		};
 	};
 };
@@ -898,6 +931,9 @@ class RC_FS_UGV_A_I: RC_FS_UGV_A
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_yellow.hpp"
 		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
 	};
 };
 class RC_FS_UGV_WD_I: RC_FS_UGV_WD
@@ -910,6 +946,9 @@ class RC_FS_UGV_WD_I: RC_FS_UGV_WD
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_yellow.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
 		};
 	};
 };

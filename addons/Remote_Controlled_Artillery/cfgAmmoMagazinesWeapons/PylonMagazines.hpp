@@ -653,6 +653,13 @@ class RC_PylonM_12Rnd_Hydra_HE: RC_PylonM_12Rnd_Hydra_MP
 */
 
 
+class RC_PylonM_12Rnd_Hydra_MP_Proxy_Green: RC_PylonM_12Rnd_Hydra_MP_Proxy
+{
+	model="\A3\Weapons_F\DynamicLoadout\PylonPod_12x_Rocket_DAR_F.p3d";
+	hardpoints[]={"RC_Hardpoint_V3_Green"};
+};
+
+
 class RC_PylonM_12Rnd_S5_MP: RC_PylonM_12Rnd_Hydra_MP
 {
 	author="Ascent";
@@ -826,6 +833,30 @@ class RC_PylonM_8Rnd_SRAM: RC_PylonM_8Rnd_DAGR
 	count=8;
 	//hardpoints[]={"RC_Hardpoint_V5"};
 	hardpoints[]={};
+};
+
+
+class PylonRack_12Rnd_PG_missiles;	//DAGR, has SACLOS
+/*
+class RC_PylonM_12Rnd_DAGR: PylonRack_12Rnd_PG_missiles
+{
+	displayName="> DAGR 8x";
+	displayNameShort="DAGR";
+	descriptionShort="SACLOS / lock - guided missiles";
+	pylonWeapon="RC_PylonW_DAGR";
+	ammo="RC_DAGR";
+	hardpoints[]={"RC_Hardpoint_V5_Green"};
+};
+*/
+class RC_PylonM_12Rnd_SRAM_Green: PylonRack_12Rnd_PG_missiles
+{
+	displayName="> SRAM 1km 12x";
+	displayNameShort="SRAM 1km";
+	descriptionShort="SACLOS / lock - 1km short range hyper agile guided missiles";
+	pylonWeapon="RC_PylonW_SRAM_Green";
+	ammo="RC_SRAM_Vanilla";
+	count=12;
+	hardpoints[]={"RC_Hardpoint_V5_Green"};
 };
 
 

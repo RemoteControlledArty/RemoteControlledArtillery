@@ -403,7 +403,6 @@ class RC_Fennek_A: RC_Fennek_Base
 {
 	scope=2;
 	scopeCurator=2;
-	side=1;
 	forceInGarage=1;
 
     #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
@@ -559,7 +558,6 @@ class RC_Mortar_Fennek_A: RC_Mortar_Fennek_Base
 
     scope=2;
 	scopeCurator=2;
-	side=1;
 	forceInGarage=1;
 
     #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"

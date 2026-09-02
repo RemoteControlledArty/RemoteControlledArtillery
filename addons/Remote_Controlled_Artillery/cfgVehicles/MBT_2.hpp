@@ -468,6 +468,74 @@ class RC_MBT_2_WD_I: RC_MBT_2_WD
 
 
 //optional Phantom Hawk Retextures (found in steam workshop)
+class RC_MBT_2_ReTex_A: RC_MBT_2_A
+{
+	faction="RemoteControlled_ReTex_B";
+	editorSubcategory="RC_ReTex_Arid_subcat";
+	hiddenSelectionsTextures[]=
+	{
+		"leopard2\data\leopard_ext01_e.paa",
+		"leopard2\data\leopard_ext02_e.paa",
+		"leopard2\data\leopard_rcws_e.paa",
+		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
+	};
+};
+class RC_MBT_2_ReTex_A_O: RC_MBT_2_ReTex_A
+{
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
+
+	side=0;
+	crew="O_UAV_AI";
+	typicalCargo[]={"O_UAV_AI"};
+	faction="RemoteControlled_ReTex_O";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Leopard_green.hpp"
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_green.hpp"
+				};
+
+				class AdvisorOptics: AdvisorOptics {};
+			};
+		};
+	};
+};
+class RC_MBT_2_ReTex_A_I: RC_MBT_2_ReTex_A
+{
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
+	
+	side=2;
+	crew="I_UAV_AI";
+	typicalCargo[]={"I_UAV_AI"};
+	faction="RemoteControlled_ReTex_I";
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Leopard_yellow.hpp"
+
+			class Turrets: Turrets
+			{
+				class CommanderOptics: CommanderOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_yellow.hpp"
+				};
+
+				class AdvisorOptics: AdvisorOptics {};
+			};
+		};
+	};
+};
+
+
 class RC_MBT_2_ReTex_WD: RC_MBT_2_A
 {
 	faction="RemoteControlled_ReTex_B";
@@ -483,7 +551,11 @@ class RC_MBT_2_ReTex_WD: RC_MBT_2_A
 class RC_MBT_2_ReTex_WD_O: RC_MBT_2_ReTex_WD
 {
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
-    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+
+	side=0;
+	crew="O_UAV_AI";
+	typicalCargo[]={"O_UAV_AI"};
+	faction="RemoteControlled_ReTex_O";
 
 	class Turrets: Turrets
 	{
@@ -506,7 +578,11 @@ class RC_MBT_2_ReTex_WD_O: RC_MBT_2_ReTex_WD
 class RC_MBT_2_ReTex_WD_I: RC_MBT_2_ReTex_WD
 {
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
-    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+
+	side=2;
+	crew="I_UAV_AI";
+	typicalCargo[]={"I_UAV_AI"};
+	faction="RemoteControlled_ReTex_I";
 
 	class Turrets: Turrets
 	{
@@ -543,7 +619,11 @@ class RC_MBT_2_ReTex_D: RC_MBT_2_A
 class RC_MBT_2_ReTex_D_O: RC_MBT_2_ReTex_D
 {
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
-    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	
+	side=0;
+	crew="O_UAV_AI";
+	typicalCargo[]={"O_UAV_AI"};
+	faction="RemoteControlled_ReTex_O";
 
 	class Turrets: Turrets
 	{
@@ -566,67 +646,11 @@ class RC_MBT_2_ReTex_D_O: RC_MBT_2_ReTex_D
 class RC_MBT_2_ReTex_D_I: RC_MBT_2_ReTex_D
 {
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
-    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Leopard_yellow.hpp"
-
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_yellow.hpp"
-				};
-
-				class AdvisorOptics: AdvisorOptics {};
-			};
-		};
-	};
-};
-
-
-class RC_MBT_2_ReTex_A: RC_MBT_2_A
-{
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Arid_subcat";
-	hiddenSelectionsTextures[]=
-	{
-		"leopard2\data\leopard_ext01_e.paa",
-		"leopard2\data\leopard_ext02_e.paa",
-		"leopard2\data\leopard_rcws_e.paa",
-		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa"
-	};
-};
-class RC_MBT_2_ReTex_A_O: RC_MBT_2_ReTex_A
-{
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
-    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_Leopard_green.hpp"
-
-			class Turrets: Turrets
-			{
-				class CommanderOptics: CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_vicmags\mags_FSV_MBT_com_green.hpp"
-				};
-
-				class AdvisorOptics: AdvisorOptics {};
-			};
-		};
-	};
-};
-class RC_MBT_2_ReTex_A_I: RC_MBT_2_ReTex_A
-{
-	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
-    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	side=2;
+	crew="I_UAV_AI";
+	typicalCargo[]={"I_UAV_AI"};
+	faction="RemoteControlled_ReTex_I";
 
 	class Turrets: Turrets
 	{

@@ -321,7 +321,8 @@ class RC_PylonW_12Rnd_Hydra_Base: RC_PylonW_12Rnd_Hydra_Fetch
 	magazines[]=
 	{
 		"RC_PylonM_12Rnd_Hydra_MP",
-		"RC_PylonM_12Rnd_Hydra_MP_Proxy"
+		"RC_PylonM_12Rnd_Hydra_MP_Proxy",
+		"RC_PylonM_12Rnd_Hydra_MP_Proxy_Green"
 	};
 	modes[]=
 	{
@@ -562,6 +563,21 @@ class RC_PylonW_SRAM_Base: RC_PylonW_DAGR_Base
 	};
 };
 class RC_PylonW_SRAM: RC_PylonW_SRAM_Base
+{
+};
+
+
+class RC_PylonW_SRAM_Green_Base: RC_PylonW_SRAM_Base
+{
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_SRAM",
+		"RC_PylonM_12Rnd_SRAM_Proxy",
+		"RC_PylonM_12Rnd_SRAM_Green",
+		"RC_PylonM_12Rnd_SRAM_Green_Proxy"
+	};
+};
+class RC_PylonW_SRAM_Green: RC_PylonW_SRAM_Green_Base
 {
 };
 

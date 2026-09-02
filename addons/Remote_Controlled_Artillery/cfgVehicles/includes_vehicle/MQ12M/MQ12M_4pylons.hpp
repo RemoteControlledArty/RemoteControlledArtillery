@@ -1,41 +1,41 @@
 class TransportPylonsComponent
 {
-	uiPicture="\A3\Air_F_Beta\Heli_Transport_01\Data\UI\Heli_Transport_01_pylons_EDEN_CA.paa";
+	uiPicture = "\A3\Air_F_Exp\UAV_03\Data\UI\Map_UAV_03_3DEN_CA.paa";
 	
 	class pylons
 	{
-		//left outer
+		//right outer
 		class pylon1
 		{
 			maxweight			= 1200;
-			bay					= -1;
+			//bay				= -1;	//NA
 
-			priority			= 2;
-			UIposition[] 		= {0.625,0.42};
+			priority			= 2;	//5
+			UIposition[] 		= {0.05,0.3};
 
 			//turret[]			= {};	//none = both?
 			attachment			= "RC_PylonM_19Rnd_Hydra_MP_Proxy";
 		};
-		//left inner
+		//right inner
 		class pylon2: pylon1
 		{
-			priority			= 1;
-			UIposition[] 		= {0.555,0.37};
+			priority			= 1;	//4
+			UIposition[] 		= {0.1,0.38};
 			attachment			= "RC_PylonM_250Rnd_30mm";
 		};
-		//right inner
+		//left inner
 		class pylon3: pylon2
 		{
 			//mirroredMissilePos= 2;
-			UIposition[] 		= {0.11,0.37};
+			UIposition[] 		= {0.53,0.38};
 			attachment			= "RC_PylonM_250Rnd_30mm";
 		};
-		//right outer
+		//left outer
 		class pylon4: pylon3
 		{
 			//mirroredMissilePos= 1;
-			priority			= 1;
-			UIposition[] 		= {0.04,0.42};
+			priority			= 1;	//5
+			UIposition[] 		= {0.58,0.3};
 			attachment			= "RC_PylonM_19Rnd_Hydra_MP_Proxy";
 		};
 	};

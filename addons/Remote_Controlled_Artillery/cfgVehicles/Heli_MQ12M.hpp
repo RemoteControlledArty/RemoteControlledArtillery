@@ -18,7 +18,6 @@ class RC_MQ12M_Core: RC_MQ12M_Fetch
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_pilotCamBase.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_pilotCamFixed.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_pilotCamFree.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_hitPoints.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_animationSources.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_userActions.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -38,19 +37,19 @@ class RC_MQ12M_Core: RC_MQ12M_Fetch
 };
 class RC_MQ12M_Base: RC_MQ12M_Core
 {
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_hitPoints.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_hitPoints.hpp"
 };
 
 
-//2 armed pylons
-class RC_MQ12M_V2: RC_MQ12M_Base
+//4 armed pylons
+class RC_MQ12M_V3: RC_MQ12M_Base
 {
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="MQ-12M - Mantis - V2"
-	editorSubcategory="RC_Heli_V2_subcat";
+	displayName="MQ-12M - Mantis - V3"
+	editorSubcategory="RC_Heli_V3_subcat";
 
 	class Components: Components
 	{
@@ -59,28 +58,6 @@ class RC_MQ12M_V2: RC_MQ12M_Base
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsB.hpp"
-};
-class RC_MQ12M_V2_O: RC_MQ12M_V2
-{
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsO.hpp"
-};
-class RC_MQ12M_V2_I: RC_MQ12M_V2
-{
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_itemsI.hpp"
-};
-
-
-class RC_MQ12M_V3: RC_MQ12M_V2
-{
-	displayName="MQ-12M - Mantis - V3"
-	editorSubcategory="RC_Heli_V3_subcat";
-
-	class Components: Components
-	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_4pylons_V3.hpp"
-	};
 };
 class RC_MQ12M_V3_O: RC_MQ12M_V3
 {
