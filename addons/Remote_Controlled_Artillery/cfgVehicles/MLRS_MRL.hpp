@@ -1,6 +1,6 @@
 //MLRS
 class B_MBT_01_mlrs_F;
-class RC_MLRS_base: B_MBT_01_mlrs_F
+class RC_MLRS_Fetch: B_MBT_01_mlrs_F
 {
 	class AnimationSources;
 	class showCamonetTurret;
@@ -28,7 +28,7 @@ class RC_MLRS_base: B_MBT_01_mlrs_F
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_MLRS_A: RC_MLRS_base
+class RC_MLRS_Core: RC_MLRS_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -63,12 +63,8 @@ class RC_MLRS_A: RC_MLRS_base
 
 	author="Ascent";
 	displayName="RC MLRS";
-	faction="RemoteControlled_B";
 	editorSubcategory="RC_Rocket_subcat";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
+	
 	vehicleClass="Autonomous";
 	isUav=1;
 	textPlural="UGVs";
@@ -293,9 +289,33 @@ class RC_MLRS_A: RC_MLRS_base
 	//#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
+class RC_MLRS_Base: RC_MLRS_Core
+{
+};
+
+
+class RC_MLRS_A: RC_MLRS_Base
+{
+    scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
+class RC_MLRS_A_O: RC_MLRS_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_MLRS_A_I: RC_MLRS_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
 class RC_MLRS_WD: RC_MLRS_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_mlrs_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -305,38 +325,20 @@ class RC_MLRS_WD: RC_MLRS_A
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
-class RC_MLRS_A_O: RC_MLRS_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-};
 class RC_MLRS_WD_O: RC_MLRS_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-};
-class RC_MLRS_A_I: RC_MLRS_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_MLRS_WD_I: RC_MLRS_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
 //MLRS ATACMS
-class RC_MLRS_ATACMS_A: RC_MLRS_A
+class RC_MLRS_ATACMS_Core: RC_MLRS_Core
 {
 	displayName="RC MLRS ATACMS";
 
@@ -361,9 +363,33 @@ class RC_MLRS_ATACMS_A: RC_MLRS_A
 		};
 	};
 };
+class RC_MLRS_ATACMS_Base: RC_MLRS_ATACMS_Core
+{
+};
+
+
+class RC_MLRS_ATACMS_A: RC_MLRS_ATACMS_Base
+{
+    scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
+class RC_MLRS_ATACMS_A_O: RC_MLRS_ATACMS_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+};
+class RC_MLRS_ATACMS_A_I: RC_MLRS_ATACMS_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+};
+
+
 class RC_MLRS_ATACMS_WD: RC_MLRS_ATACMS_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_mlrs_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -373,39 +399,21 @@ class RC_MLRS_ATACMS_WD: RC_MLRS_ATACMS_A
 		"a3\armor_f\data\camonet_green_co.paa"
 	};
 };
-class RC_MLRS_ATACMS_A_O: RC_MLRS_ATACMS_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-};
 class RC_MLRS_ATACMS_WD_O: RC_MLRS_ATACMS_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-};
-class RC_MLRS_ATACMS_A_I: RC_MLRS_ATACMS_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_MLRS_ATACMS_WD_I: RC_MLRS_ATACMS_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
 //MRL
 class I_Truck_02_MRL_F;
-class RC_MRL_base: I_Truck_02_MRL_F
+class RC_MRL_Fetch: I_Truck_02_MRL_F
 {
 	class AnimationSources;
 	class Turrets;
@@ -429,7 +437,7 @@ class RC_MRL_base: I_Truck_02_MRL_F
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_MRL_DIG_I: RC_MRL_base
+class RC_MRL_Core: RC_MRL_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -464,12 +472,8 @@ class RC_MRL_DIG_I: RC_MRL_base
 
 	author="Ascent";
 	displayName="RC MRL";
-	faction="RemoteControlled_I";
 	editorSubcategory="RC_Rocket_subcat";
-	scope=2;
-	scopeCurator=2;
-	side=2;
-	forceInGarage=1;
+	
 	textPlural="UGVs";
 	textSingular="UGV";
 	isUav=1;
@@ -478,7 +482,7 @@ class RC_MRL_DIG_I: RC_MRL_base
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";
-	crew="I_UAV_AI";
+
 	driverForceOptics=1;
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
@@ -659,9 +663,21 @@ class RC_MRL_DIG_I: RC_MRL_base
 	//#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
+class RC_MRL_Base: RC_MRL_Core
+{
+};
+
+
+class RC_MRL_DIG_I: RC_MRL_Base
+{
+    scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+};
 class RC_MRL_WD_I: RC_MRL_DIG_I
 {
-	DLC="Enoch";
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_Truck_02_MRL_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -673,23 +689,17 @@ class RC_MRL_WD_I: RC_MRL_DIG_I
 };
 class RC_MRL_WD: RC_MRL_WD_I
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_MRL_WD_O: RC_MRL_WD_I
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_MRL_HEX_O: RC_MRL_DIG_I
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	hiddenSelectionsTextures[]=
@@ -703,7 +713,7 @@ class RC_MRL_HEX_O: RC_MRL_DIG_I
 
 
 //MRL ATACMS
-class RC_MRL_ATACMS_DIG_I: RC_MRL_DIG_I
+class RC_MRL_ATACMS_Core: RC_MRL_Core
 {
 	displayName="RC MRL ATACMS";
 
@@ -723,9 +733,21 @@ class RC_MRL_ATACMS_DIG_I: RC_MRL_DIG_I
 		};
 	};
 };
+class RC_MRL_ATACMS_Base: RC_MRL_ATACMS_Core
+{
+};
+
+
+class RC_MRL_DIG_I: RC_MRL_ATACMS_Base
+{
+    scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+};
 class RC_MRL_ATACMS_WD_I: RC_MRL_ATACMS_DIG_I
 {
-	DLC="Enoch";
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\I_E_Truck_02_MRL_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -737,23 +759,17 @@ class RC_MRL_ATACMS_WD_I: RC_MRL_ATACMS_DIG_I
 };
 class RC_MRL_ATACMS_WD: RC_MRL_ATACMS_WD_I
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_MRL_ATACMS_WD_O: RC_MRL_ATACMS_WD_I
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_MRL_ATACMS_HEX_O: RC_MRL_ATACMS_DIG_I
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	hiddenSelectionsTextures[]=
