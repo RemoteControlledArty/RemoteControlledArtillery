@@ -1,5 +1,5 @@
 class B_UGV_01_rcws_F;
-class RC_GMG_UGV_base: B_UGV_01_rcws_F
+class RC_GMG_UGV_Fetch: B_UGV_01_rcws_F
 {
 	class AnimationSources;
 	class HitPoints;
@@ -27,7 +27,7 @@ class RC_GMG_UGV_base: B_UGV_01_rcws_F
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_GMG_UGV_A_base: RC_GMG_UGV_base
+class RC_GMG_UGV_Core: RC_GMG_UGV_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -48,9 +48,7 @@ class RC_GMG_UGV_A_base: RC_GMG_UGV_base
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
-	faction="RemoteControlled_B";
-	side=1;
-	forceInGarage=1;
+
 	crewCrashProtection=0.01;
 	maxSpeed=80;
 	enginePower=120;
@@ -238,7 +236,12 @@ class RC_GMG_UGV_A_base: RC_GMG_UGV_base
 
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
-class RC_indirect_GMG_UGV_A: RC_GMG_UGV_A_base
+class RC_GMG_UGV_Base: RC_GMG_UGV_Core
+{
+};
+
+
+class RC_indirect_GMG_UGV_Core: RC_GMG_UGV_Core
 {
 	artilleryScanner=1;
 	isRCArty=1; // 1 = is a Remote Controlled Artillery Piece and should display UI
@@ -247,10 +250,7 @@ class RC_indirect_GMG_UGV_A: RC_GMG_UGV_A_base
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 
-	scope=2;
-	scopeCurator=2;
 	displayName="RC indirect GMG-UGV";
-	editorSubcategory="RC_FSV_subcat";
 	unitInfoType="RscUnitInfoArtillery";
 
 	class Components: Components
@@ -361,9 +361,55 @@ class RC_indirect_GMG_UGV_A: RC_GMG_UGV_A_base
 		};
 	};
 };
+class RC_indirect_GMG_UGV_Base: RC_indirect_GMG_UGV_Core
+{
+};
+
+
+class RC_indirect_GMG_UGV_A: RC_indirect_GMG_UGV_Base
+{
+    scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
+class RC_indirect_GMG_UGV_A_O: RC_indirect_GMG_UGV_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_green.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
+	};
+};
+class RC_indirect_GMG_UGV_A_I: RC_indirect_GMG_UGV_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_yellow.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
+	};
+};
+
+
 class RC_indirect_GMG_UGV_WD: RC_indirect_GMG_UGV_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_rcws_olive_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -372,30 +418,9 @@ class RC_indirect_GMG_UGV_WD: RC_indirect_GMG_UGV_A
 		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
 	};
 };
-
-class RC_indirect_GMG_UGV_A_O: RC_indirect_GMG_UGV_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_green.hpp"
-		};
-		class CargoTurret_01: CargoTurret_01
-		{
-		};
-	};
-};
 class RC_indirect_GMG_UGV_WD_O: RC_indirect_GMG_UGV_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	class Turrets: Turrets
@@ -403,25 +428,6 @@ class RC_indirect_GMG_UGV_WD_O: RC_indirect_GMG_UGV_WD
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_green.hpp"
-		};
-		class CargoTurret_01: CargoTurret_01
-		{
-		};
-	};
-};
-
-class RC_indirect_GMG_UGV_A_I: RC_indirect_GMG_UGV_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_indirect_yellow.hpp"
 		};
 		class CargoTurret_01: CargoTurret_01
 		{
@@ -430,9 +436,7 @@ class RC_indirect_GMG_UGV_A_I: RC_indirect_GMG_UGV_A
 };
 class RC_indirect_GMG_UGV_WD_I: RC_indirect_GMG_UGV_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class Turrets: Turrets
@@ -448,7 +452,7 @@ class RC_indirect_GMG_UGV_WD_I: RC_indirect_GMG_UGV_WD
 };
 
 
-class RC_cUAS_UGV_A: RC_GMG_UGV_A_base
+class RC_cUAS_UGV_A: RC_GMG_UGV_Base
 {
 	class EventHandlers: EventHandlers
 	{
