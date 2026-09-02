@@ -376,7 +376,7 @@ class RC_indirect_GMG_UGV_A: RC_indirect_GMG_UGV_Base
 };
 class RC_indirect_GMG_UGV_A_O: RC_indirect_GMG_UGV_A
 {
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	class Turrets: Turrets
@@ -392,7 +392,7 @@ class RC_indirect_GMG_UGV_A_O: RC_indirect_GMG_UGV_A
 };
 class RC_indirect_GMG_UGV_A_I: RC_indirect_GMG_UGV_A
 {
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class Turrets: Turrets
@@ -420,7 +420,7 @@ class RC_indirect_GMG_UGV_WD: RC_indirect_GMG_UGV_A
 };
 class RC_indirect_GMG_UGV_WD_O: RC_indirect_GMG_UGV_WD
 {
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	class Turrets: Turrets
@@ -436,7 +436,7 @@ class RC_indirect_GMG_UGV_WD_O: RC_indirect_GMG_UGV_WD
 };
 class RC_indirect_GMG_UGV_WD_I: RC_indirect_GMG_UGV_WD
 {
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class Turrets: Turrets
@@ -462,8 +462,6 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_Base
 		};
 	};
 
-	scope=2;
-	scopeCurator=2;
 	displayName="RC C-UAS UGV";
 	editorSubcategory="RC_AntiDrone_subcat";
 
@@ -606,6 +604,53 @@ class RC_cUAS_UGV_A: RC_GMG_UGV_Base
 		};
 	};
 };
+class RC_cUAS_UGV_Base: RC_cUAS_UGV_Core
+{
+};
+
+
+class RC_cUAS_UGV_A: RC_cUAS_UGV_Base
+{
+	scope=2;
+	scopeCurator=2
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
+class RC_cUAS_UGV_A_O: RC_cUAS_UGV_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_green.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
+	};
+};
+class RC_cUAS_UGV_A_I: RC_cUAS_UGV_A
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_yellow.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
+	};
+};
+
+
 class RC_cUAS_UGV_WD: RC_cUAS_UGV_A
 {
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_rcws_olive_F.jpg";
@@ -616,31 +661,9 @@ class RC_cUAS_UGV_WD: RC_cUAS_UGV_A
 		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
 	};
 };
-
-
-class RC_cUAS_UGV_A_O: RC_cUAS_UGV_A
-{
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_green.hpp"
-		};
-		class CargoTurret_01: CargoTurret_01
-		{
-		};
-	};
-};
 class RC_cUAS_UGV_WD_O: RC_cUAS_UGV_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	class Turrets: Turrets
@@ -648,26 +671,6 @@ class RC_cUAS_UGV_WD_O: RC_cUAS_UGV_WD
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_green.hpp"
-		};
-		class CargoTurret_01: CargoTurret_01
-		{
-		};
-	};
-};
-
-
-class RC_cUAS_UGV_A_I: RC_cUAS_UGV_A
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_cUAS_yellow.hpp"
 		};
 		class CargoTurret_01: CargoTurret_01
 		{
@@ -676,9 +679,7 @@ class RC_cUAS_UGV_A_I: RC_cUAS_UGV_A
 };
 class RC_cUAS_UGV_WD_I: RC_cUAS_UGV_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class Turrets: Turrets
@@ -694,7 +695,7 @@ class RC_cUAS_UGV_WD_I: RC_cUAS_UGV_WD
 };
 
 
-class RC_FS_UGV_A: RC_cUAS_UGV_A
+class RC_FS_UGV_Core: RC_cUAS_UGV_Core
 {
 	displayName="RC U-FSV";
 	editorSubcategory="RC_FSV_subcat";
@@ -876,18 +877,19 @@ class RC_FS_UGV_A: RC_cUAS_UGV_A
 		};
 	};
 };
-class RC_FS_UGV_WD: RC_FS_UGV_A
+class RC_FS_UGV_Base: RC_FS_UGV_Core
 {
-	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_rcws_olive_F.jpg";
-	hiddenSelectionsTextures[]=
-	{
-		"\A3\Soft_F_Exp\UGV_01\Data\UGV_01_ext_olive_CO.paa",
-		"\A3\Soft_F_Exp\UGV_01\Data\UGV_01_int_olive_CO.paa",
-		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
-	};
 };
 
 
+class RC_FS_UGV_A: RC_FS_UGV_Base
+{
+	scope=2;
+	scopeCurator=2
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_FS_UGV_A_O: RC_FS_UGV_A
 {
 	faction="RemoteControlled_O";
@@ -906,24 +908,6 @@ class RC_FS_UGV_A_O: RC_FS_UGV_A
 		};
 	};
 };
-class RC_FS_UGV_WD_O: RC_FS_UGV_WD
-{
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_green.hpp"
-		};
-		class CargoTurret_01: CargoTurret_01
-		{
-		};
-	};
-};
-
-
 class RC_FS_UGV_A_I: RC_FS_UGV_A
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
@@ -934,6 +918,34 @@ class RC_FS_UGV_A_I: RC_FS_UGV_A
 		class MainTurret: MainTurret
 		{
 			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_yellow.hpp"
+		};
+		class CargoTurret_01: CargoTurret_01
+		{
+		};
+	};
+};
+
+
+class RC_FS_UGV_WD: RC_FS_UGV_A
+{
+	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_UGV_01_rcws_olive_F.jpg";
+	hiddenSelectionsTextures[]=
+	{
+		"\A3\Soft_F_Exp\UGV_01\Data\UGV_01_ext_olive_CO.paa",
+		"\A3\Soft_F_Exp\UGV_01\Data\UGV_01_int_olive_CO.paa",
+		"\A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa"
+	};
+};
+class RC_FS_UGV_WD_O: RC_FS_UGV_WD
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_vicmags\mags_UGV_FS_green.hpp"
 		};
 		class CargoTurret_01: CargoTurret_01
 		{

@@ -242,6 +242,8 @@ class RC_PylonW_DAGR_Base: RC_PylonW_DAGR_Fetch
 class RC_PylonW_DAGR: RC_PylonW_DAGR_Base
 {
 };
+
+
 class RC_PylonW_SRAM_Base: RC_PylonW_DAGR_Base
 {
 	displayName="SRAM M310";

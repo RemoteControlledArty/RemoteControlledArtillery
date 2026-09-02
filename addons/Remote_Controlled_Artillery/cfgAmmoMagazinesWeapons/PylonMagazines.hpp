@@ -2,39 +2,39 @@
 class PylonCameraPod_01_F;
 class RC_PylonM_Camera: PylonCameraPod_01_F
 {
-	author = "Ascent";
-	hardpoints[] = {"RC_Hardpoint_Cam"};
+	author="Ascent";
+	hardpoints[]={"RC_Hardpoint_Cam"};
 
-	displayName = "RC Camera Pod";
-	descriptionShort = "Camera targeting pod with day/night/thermal modes.";
-	pylonsMagazines[] = {"Laserbatteries"};
-	pylonWeapons[] = {"Laserdesignator_pilotCamera"};
+	displayName="RC Camera Pod";
+	descriptionShort="Camera targeting pod with day/night/thermal modes.";
+	pylonsMagazines[]={"Laserbatteries"};
+	pylonWeapons[]={"Laserdesignator_pilotCamera"};
 
-	ammo = "";
-	count = 1;
-	displayNameShort = "";
-	hiddenSelections[] = {"Camo1"};
-	hiddenSelectionsTextures[] = {"\a3\Weapons_F\DynamicLoadout\Data\PylonPod_Camera_01_CO.paa"};
-	initSpeed = 900;
-	mass = 50;
-	maxLeadSpeed = 100;
-	maxThrowHoldTime = 2;
-	maxThrowIntensityCoef = 1.4;
-	minThrowIntensityCoef = 0.3;
-	model = "a3\Weapons_F\DynamicLoadout\PylonPod_Camera_01_F.p3d";
-	modelSpecial = "";
-	nameSound = "magazine";
-	picture = "";
-	quickReload = 0;
-	reloadAction = "";
-	scope = 2;
-	selectionFireAnim = "zasleh";
-	simulation = "components";
-	type = 0;
-	useAction = 0;
-	useActionTitle = "";	
-	value = 1;
-	weaponPoolAvailable = 0;
+	ammo="";
+	count=1;
+	displayNameShort="";
+	hiddenSelections[]={"Camo1"};
+	hiddenSelectionsTextures[]={"\a3\Weapons_F\DynamicLoadout\Data\PylonPod_Camera_01_CO.paa"};
+	initSpeed=900;
+	mass=50;
+	maxLeadSpeed=100;
+	maxThrowHoldTime=2;
+	maxThrowIntensityCoef=1.4;
+	minThrowIntensityCoef=0.3;
+	model="a3\Weapons_F\DynamicLoadout\PylonPod_Camera_01_F.p3d";
+	modelSpecial="";
+	nameSound="magazine";
+	picture="";
+	quickReload=0;
+	reloadAction="";
+	scope=2;
+	selectionFireAnim="zasleh";
+	simulation="components";
+	type=0;
+	useAction=0;
+	useActionTitle="";	
+	value=1;
+	weaponPoolAvailable=0;
 
 	class Components
 	{
@@ -48,46 +48,46 @@ class RC_PylonM_Camera: PylonCameraPod_01_F
 
         class CameraComponent
 		{
-			cameraInfoType = "RscOptics_TGP_Camera_01";	//RC_RscOptics_TGP_Camera_01
-			memoryPointDriverOptics = "camera_pos";
+			cameraInfoType="RscOptics_TGP_Camera_01";	//RC_RscOptics_TGP_Camera_01
+			memoryPointDriverOptics="camera_pos";
 
 			class PilotCamera
 			{
-				controllable = 1;
-				initElev = 5;
-				initTurn = 0;
-				maxElev = 90;
-				maxMouseXRotSpeed = 0.5;
-				maxMouseYRotSpeed = 0.5;
-				maxTurn = 180;
-				maxXRotSpeed = 1;
-				maxYRotSpeed = 1;
-				minElev = -20;
-				minTurn = -180;
-				pilotOpticsShowCursor = 1;
+				controllable=1;
+				initElev=5;
+				initTurn=0;
+				maxElev=90;
+				maxMouseXRotSpeed=0.5;
+				maxMouseYRotSpeed=0.5;
+				maxTurn=180;
+				maxXRotSpeed=1;
+				maxYRotSpeed=1;
+				minElev=-20;
+				minTurn=-180;
+				pilotOpticsShowCursor=1;
 
 				class OpticsIn
 				{
 					class Wide
 					{
-						directionStabilized = 1;
-						//gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Generic_narrow_F.p3d";
+						directionStabilized=1;
+						//gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Generic_narrow_F.p3d";
 						gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
 
 						minFov=0.02;
 						maxFov=1;		//1.5
 						initFov=1;	//1.5
 
-						initAngleX = 0;
-						initAngleY = 0;
-						maxAngleX = 0;
-						maxAngleY = 0;
-						minAngleX = 0;
-						minAngleY = 0;
+						initAngleX=0;
+						initAngleY=0;
+						maxAngleX=0;
+						maxAngleY=0;
+						minAngleX=0;
+						minAngleY=0;
 
-						opticsDisplayName = "WFOV";
-						thermalMode[] = {0};
-						visionMode[] = {"Normal","NVG","Ti"};
+						opticsDisplayName="WFOV";
+						thermalMode[]={0};
+						visionMode[]={"Normal","NVG","Ti"};
 					};
 				};
 			};
@@ -98,8 +98,8 @@ class RC_PylonM_Camera: PylonCameraPod_01_F
 		class EventHandlers
 		{
 			//adds and removes laser des
-			//Added = "_this call BIS_fnc_pylon_addWeapon";
-			//Removed = "_this call BIS_fnc_pylon_removeWeapon";
+			//Added="_this call BIS_fnc_pylon_addWeapon";
+			//Removed="_this call BIS_fnc_pylon_removeWeapon";
 		};
 		*/
 	};
@@ -250,6 +250,7 @@ class RC_PylonM_TwinHMG_base: PylonWeapon_300Rnd_20mm_shells
 	pylonWeapon="RC_PylonW_TwinHMG";
 	muzzleImpulseFactor[]={0.025,0.2};		//{0.0375,0.3}   //{0.1,0.8}	//(torque, force) 
 	tracersEvery=1;
+	hardpoints[]={};
 };
 class RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R: RC_PylonM_TwinHMG_base
 {
@@ -285,6 +286,7 @@ class RC_PylonM_Autocannon_base: PylonWeapon_300Rnd_20mm_shells
 	pylonWeapon="RC_PylonW_TwinCannon";
 	muzzleImpulseFactor[]={0.025,0.2};		//{0.0375,0.3}   //{0.1,0.8}	//(torque, force) 
 	tracersEvery=1;
+	hardpoints[]={};
 	/*
 	hardpoints[]=
 	{
@@ -613,7 +615,7 @@ class RC_PylonM_250Rnd_30mm_Proxy_Lead_O: RC_PylonM_300Rnd_25mm_Proxy_Lead
 /*
 class RC_PylonWeapon_300Rnd_20mm_Aegis: RC_PylonWeapon_300Rnd_20mm
 {
-	//magazines[] = {"PylonWeapon_250Rnd_20mm_shells"};
+	//magazines[]={"PylonWeapon_250Rnd_20mm_shells"};
 	//model="\A3_Aegis\Weapons_F_Aegis\DynamicLoadout\PylonPod_Cannon_20mm.p3d";
 	//pylonWeapon="cannon_20mm_Heli_Light_03";
 };
