@@ -73,7 +73,7 @@ class RC_MLRS_Core: RC_MLRS_Fetch
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
 	uavCameraGunnerDir="PiP1_dir";	
-	crew="B_UAV_AI";
+	
 	driverForceOptics=1;
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
