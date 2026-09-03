@@ -56,6 +56,33 @@ class RC_AI_Pylon_B_30mm_MP_QF_T_G: RC_AI_Pylon_B_30mm_MP_QF_T_R {model="\A3\Wea
 class RC_AI_Pylon_B_30mm_MP_QF_T_Y: RC_AI_Pylon_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
 
 
+class RC_Hydra_MP_Proxy;
+class RC_AI_Hydra_MP_Proxy: RC_Hydra_MP_Proxy
+{
+    laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+
+
+class RC_DAGR;
+class RC_AI_DAGR: RC_DAGR
+{
+    laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+
+
+class RC_SRAM;
+class RC_AI_SRAM: RC_SRAM
+{
+    laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+
+
 //Basegame
 //MMG
 class RC_B_338_T_R;
