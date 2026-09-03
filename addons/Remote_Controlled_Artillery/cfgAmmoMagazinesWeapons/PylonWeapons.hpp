@@ -194,8 +194,8 @@ class RC_PylonW_TwinCannon_Base: RC_PylonW_Twin_Core
 		"RC_PylonM_150Rnd_25mm",
 		"RC_PylonM_125Rnd_30mm",
 
-        "RC_AI_PylonM_250Rnd_30mm"
-		//"RC_AI_PylonM_250Rnd_30mm_Proxy"
+        "RC_AI_PylonM_250Rnd_30mm",
+		"RC_AI_PylonM_250Rnd_30mm_Proxy"
 	};
 	class manual: manual
 	{
@@ -276,7 +276,7 @@ class RC_PylonW_TwinCannon_Lead_Base: RC_PylonW_TwinCannon_Base
 		"RC_PylonM_250Rnd_25mm_Proxy_Lead",
 		"RC_PylonM_250Rnd_30mm_Proxy_Lead",
 
-        //"RC_AI_PylonM_250Rnd_30mm_Lead",
+        "RC_AI_PylonM_250Rnd_30mm_Lead",
 		"RC_AI_PylonM_250Rnd_30mm_Proxy_Lead"
 	};
 };
@@ -300,7 +300,7 @@ class RC_PylonW_Avtopushka_Base: RC_PylonW_TwinCannon_Base
 		"RC_PylonM_250Rnd_30mm_Proxy_O",
 		"RC_PylonM_175Rnd_20mm_O",
 		"RC_PylonM_150Rnd_25mm_O",
-		"RC_PylonM_125Rnd_30mm_O",
+		"RC_PylonM_125Rnd_30mm_O"
 	};
 	class manual: manual
 	{
