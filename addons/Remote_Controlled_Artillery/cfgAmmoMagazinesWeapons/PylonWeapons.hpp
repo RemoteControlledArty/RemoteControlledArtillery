@@ -520,7 +520,8 @@ class RC_PylonW_DAGR_Base: RC_PylonW_DAGR_Fetch
 		"RC_PylonM_8Rnd_DAGR",
 		"RC_PylonM_8Rnd_DAGR_Proxy",
 
-        "RC_AI_PylonM_8Rnd_DAGR"
+        "RC_AI_PylonM_8Rnd_DAGR",
+        "RC_AI_PylonM_8Rnd_DAGR_Proxy"
 	};
 	modes[]=
 	{
@@ -564,7 +565,7 @@ class RC_PylonW_S8_G_Base: RC_PylonW_DAGR_Base
 		"RC_PylonM_8Rnd_S8_G_Proxy",
 
         "RC_AI_PylonM_8Rnd_S8_G",
-        "RC_AI_PylonM_8Rnd_SRAM_Proxy"
+        "RC_AI_PylonM_8Rnd_S8_G_Proxy"
 	};
 	/*
 	class Direct: Direct
