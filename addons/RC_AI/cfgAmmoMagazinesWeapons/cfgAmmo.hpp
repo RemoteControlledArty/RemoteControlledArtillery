@@ -1,3 +1,61 @@
+//Pylons
+//minigun
+class RC_Pylon_B_338_SLAP_T_R;
+class RC_AI_Pylon_B_338_SLAP_T_R: RC_Pylon_B_338_SLAP_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_Pylon_B_338_SLAP_T_G: RC_AI_Pylon_B_338_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_Pylon_B_338_SLAP_T_Y: RC_AI_Pylon_B_338_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+class RC_AI_Pylon_B_338_SLAP_T_W: RC_AI_Pylon_B_338_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
+
+
+class RC_Pylon_B_127x99_SLAP_T_R;
+class RC_AI_Pylon_B_127x99_SLAP_T_R: RC_Pylon_B_127x99_SLAP_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_Pylon_B_127x99_SLAP_T_G: RC_AI_Pylon_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_Pylon_B_127x99_SLAP_T_Y: RC_AI_Pylon_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_Pylon_B_20mm_MP_QF_T_R;
+class RC_AI_Pylon_B_20mm_MP_QF_T_R: RC_Pylon_B_20mm_MP_QF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_Pylon_B_20mm_MP_QF_T_G: RC_AI_Pylon_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_Pylon_B_20mm_MP_QF_T_Y: RC_AI_Pylon_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_Pylon_B_25mm_MP_QF_T_R;
+class RC_AI_Pylon_B_25mm_MP_QF_T_R: RC_Pylon_B_25mm_MP_QF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_Pylon_B_25mm_MP_QF_T_G: RC_AI_Pylon_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_Pylon_B_25mm_MP_QF_T_Y: RC_AI_Pylon_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
+class RC_Pylon_B_30mm_MP_QF_T_R;
+class RC_AI_Pylon_B_30mm_MP_QF_T_R: RC_Pylon_B_30mm_MP_QF_T_R
+{
+	laserLock=0;
+	irLock=0;
+	airLock=1;
+};
+class RC_AI_Pylon_B_30mm_MP_QF_T_G: RC_AI_Pylon_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
+class RC_AI_Pylon_B_30mm_MP_QF_T_Y: RC_AI_Pylon_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";};
+
+
 //Basegame
 //MMG
 class RC_B_338_T_R;
