@@ -251,6 +251,7 @@ class RC_indirect_GMG_UGV_Core: RC_GMG_UGV_Core
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 
 	displayName="RC indirect GMG-UGV";
+	editorSubcategory="RC_Mortar_subcat";
 	unitInfoType="RscUnitInfoArtillery";
 
 	class Components: Components
@@ -452,7 +453,7 @@ class RC_indirect_GMG_UGV_WD_I: RC_indirect_GMG_UGV_WD
 };
 
 
-class RC_cUAS_UGV_A: RC_GMG_UGV_Base
+class RC_cUAS_UGV_Core: RC_GMG_UGV_Core
 {
 	class EventHandlers: EventHandlers
 	{

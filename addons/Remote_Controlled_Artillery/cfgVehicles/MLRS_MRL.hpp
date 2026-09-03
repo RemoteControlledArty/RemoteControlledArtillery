@@ -699,7 +699,7 @@ class RC_MRL_WD_O: RC_MRL_WD_I
 };
 class RC_MRL_HEX_O: RC_MRL_DIG_I
 {
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	hiddenSelectionsTextures[]=
@@ -738,7 +738,7 @@ class RC_MRL_ATACMS_Base: RC_MRL_ATACMS_Core
 };
 
 
-class RC_MRL_DIG_I: RC_MRL_ATACMS_Base
+class RC_MRL_ATACMS_DIG_I: RC_MRL_ATACMS_Base
 {
     scope=2;
 	scopeCurator=2;
