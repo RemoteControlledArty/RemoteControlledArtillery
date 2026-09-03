@@ -350,7 +350,8 @@ class RC_PylonW_12Rnd_Hydra_Base: RC_PylonW_12Rnd_Hydra_Fetch
 		"RC_PylonM_12Rnd_Hydra_MP_Proxy",
 		"RC_PylonM_12Rnd_Hydra_MP_Proxy_Green",
 
-        "RC_AI_PylonM_12Rnd_Hydra_MP_Proxy"
+        "RC_AI_PylonM_12Rnd_Hydra_MP_Proxy",
+        "RC_AI_PylonM_12Rnd_Hydra_MP_Proxy_Green"
 	};
 	modes[]=
 	{
@@ -464,11 +465,13 @@ class RC_PylonW_APKWS_Base: RC_PylonW_APKWS_Fetch
 	magazines[]=
 	{
 		"RC_PylonM_12Rnd_APKWS",
-		//"RC_PylonM_12Rnd_APKWS_cUAS",
+        "RC_PylonM_12Rnd_APKWS_Proxy",
+
 		"RC_PylonM_7Rnd_APKWS",
+        "RC_PylonM_7Rnd_APKWS_Proxy",
+
 		"RC_RHS_PylonM_7Rnd_APKWS",
-		"RC_PylonM_12Rnd_APKWS_Proxy",
-		"RC_PylonM_7Rnd_APKWS_Proxy"
+        "RC_RHS_PylonM_7Rnd_APKWS_Proxy"
 	};
 	modes[]=
 	{
@@ -495,7 +498,9 @@ class RC_PylonW_S8_LG_Base: RC_PylonW_APKWS_Base
 	{
 		"RC_PylonM_12Rnd_S8_LG",
 		"RC_PylonM_7Rnd_S8_LG",
-		"RC_PylonM_12Rnd_S8_LG_Proxy"
+
+		"RC_PylonM_12Rnd_S8_LG_Proxy",
+        "RC_PylonM_7Rnd_S8_LG_Proxy"
 	};
 };
 class RC_PylonW_S8_LG: RC_PylonW_S8_LG_Base
