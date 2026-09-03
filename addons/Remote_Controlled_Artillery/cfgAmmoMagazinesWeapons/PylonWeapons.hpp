@@ -20,7 +20,15 @@ class RC_PylonW_338_Minigun_Base: RC_PylonW_338_Minigun_Fetch
 
 		"RC_PylonM_5000Rnd_338_SLAP_T_R_right",
 		"RC_PylonM_5000Rnd_338_SLAP_T_G_right",
-		"RC_PylonM_5000Rnd_338_SLAP_T_Y_right"
+		"RC_PylonM_5000Rnd_338_SLAP_T_Y_right",
+
+		"RC_AI_PylonM_2500Rnd_338_SLAP_T_R_right",
+		"RC_AI_PylonM_2500Rnd_338_SLAP_T_G_right",
+		"RC_AI_PylonM_2500Rnd_338_SLAP_T_Y_right",
+
+		"RC_AI_PylonM_5000Rnd_338_SLAP_T_R_right",
+		"RC_AI_PylonM_5000Rnd_338_SLAP_T_G_right",
+		"RC_AI_PylonM_5000Rnd_338_SLAP_T_Y_right"
 	};
 	modes[]=
 	{
@@ -60,7 +68,15 @@ class RC_PylonW_127mm_Minigun_Base: RC_PylonW_127mm_Minigun_Fetch
 
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_R_right",
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_G_right",
-		"RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right"
+		"RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right",
+
+        "RC_AI_PylonM_1000Rnd_127mm_SLAP_T_R_left",
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_G_left",
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_Y_left",
+
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_R_right",
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_G_right",
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_Y_right"
 	};
 	modes[]=
 	{
@@ -128,7 +144,11 @@ class RC_PylonW_TwinHMG_Base: RC_PylonW_Twin_Core
 	{
 		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R",
 		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_G",
-		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y"
+		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y",
+
+        "RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_R",
+		"RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_G",
+		"RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y"
 	};
 	class manual: manual
 	{
@@ -172,7 +192,10 @@ class RC_PylonW_TwinCannon_Base: RC_PylonW_Twin_Core
 		"RC_PylonM_250Rnd_30mm_Proxy",
 		"RC_PylonM_175Rnd_20mm",
 		"RC_PylonM_150Rnd_25mm",
-		"RC_PylonM_125Rnd_30mm"
+		"RC_PylonM_125Rnd_30mm",
+
+        "RC_AI_PylonM_250Rnd_30mm"
+		//"RC_AI_PylonM_250Rnd_30mm_Proxy"
 	};
 	class manual: manual
 	{
@@ -251,7 +274,10 @@ class RC_PylonW_TwinCannon_Lead_Base: RC_PylonW_TwinCannon_Base
 		"RC_PylonM_250Rnd_30mm_Lead",
 		"RC_PylonM_250Rnd_20mm_Proxy_Lead",
 		"RC_PylonM_250Rnd_25mm_Proxy_Lead",
-		"RC_PylonM_250Rnd_30mm_Proxy_Lead"
+		"RC_PylonM_250Rnd_30mm_Proxy_Lead",
+
+        //"RC_AI_PylonM_250Rnd_30mm_Lead",
+		"RC_AI_PylonM_250Rnd_30mm_Proxy_Lead"
 	};
 };
 class RC_PylonW_TwinCannon_Lead: RC_PylonW_TwinCannon_Lead_Base
@@ -322,7 +348,9 @@ class RC_PylonW_12Rnd_Hydra_Base: RC_PylonW_12Rnd_Hydra_Fetch
 	{
 		"RC_PylonM_12Rnd_Hydra_MP",
 		"RC_PylonM_12Rnd_Hydra_MP_Proxy",
-		"RC_PylonM_12Rnd_Hydra_MP_Proxy_Green"
+		"RC_PylonM_12Rnd_Hydra_MP_Proxy_Green",
+
+        "RC_AI_PylonM_12Rnd_Hydra_MP_Proxy"
 	};
 	modes[]=
 	{
@@ -348,7 +376,9 @@ class RC_PylonW_12Rnd_S5_Base: RC_PylonW_12Rnd_Hydra_Base
 	magazines[]=
 	{
 		"RC_PylonM_12Rnd_S5_MP",
-		"RC_PylonM_12Rnd_S5_MP_Proxy"
+		"RC_PylonM_12Rnd_S5_MP_Proxy",
+
+        "RC_AI_PylonM_12Rnd_S5_MP_Proxy"
 	};
 	class Burst: Burst
 	{
@@ -376,7 +406,9 @@ class RC_PylonW_19Rnd_Hydra_Base: RC_PylonW_19Rnd_Hydra_Fetch
 	magazines[]=
 	{
 		"RC_PylonM_19Rnd_Hydra_MP",
-		"RC_PylonM_19Rnd_Hydra_MP_Proxy"
+		"RC_PylonM_19Rnd_Hydra_MP_Proxy",
+
+        "RC_AI_PylonM_19Rnd_Hydra_MP_Proxy"
 	};
 	modes[]=
 	{
@@ -402,7 +434,9 @@ class RC_PylonW_19Rnd_S5_Base: RC_PylonW_19Rnd_Hydra_Base
 	magazines[]=
 	{
 		"RC_PylonM_19Rnd_S5_MP",
-		"RC_PylonM_19Rnd_S5_MP_Proxy"
+		"RC_PylonM_19Rnd_S5_MP_Proxy",
+
+        "RC_AI_PylonM_19Rnd_S5_MP_Proxy"
 	};
 	class Burst: Burst
 	{
@@ -484,7 +518,9 @@ class RC_PylonW_DAGR_Base: RC_PylonW_DAGR_Fetch
 	magazines[]=
 	{
 		"RC_PylonM_8Rnd_DAGR",
-		"RC_PylonM_8Rnd_DAGR_Proxy"
+		"RC_PylonM_8Rnd_DAGR_Proxy",
+
+        "RC_AI_PylonM_8Rnd_DAGR"
 	};
 	modes[]=
 	{
@@ -525,7 +561,10 @@ class RC_PylonW_S8_G_Base: RC_PylonW_DAGR_Base
 	magazines[]=
 	{
 		"RC_PylonM_8Rnd_S8_G",
-		"RC_PylonM_8Rnd_S8_G_Proxy"
+		"RC_PylonM_8Rnd_S8_G_Proxy",
+
+        "RC_AI_PylonM_8Rnd_S8_G",
+        "RC_AI_PylonM_8Rnd_SRAM_Proxy"
 	};
 	/*
 	class Direct: Direct
@@ -554,7 +593,10 @@ class RC_PylonW_SRAM_Base: RC_PylonW_DAGR_Base
 	magazines[]=
 	{
 		"RC_PylonM_8Rnd_SRAM",
-		"RC_PylonM_8Rnd_SRAM_Proxy"
+		"RC_PylonM_8Rnd_SRAM_Proxy",
+
+	    "RC_AI_PylonM_8Rnd_SRAM_Proxy",
+        "RC_AI_PylonM_8Rnd_SRAM"
 	};
 	class Burst: Burst
 	{
@@ -574,7 +616,12 @@ class RC_PylonW_SRAM_Green_Base: RC_PylonW_SRAM_Base
 		"RC_PylonM_12Rnd_SRAM",
 		"RC_PylonM_12Rnd_SRAM_Proxy",
 		"RC_PylonM_12Rnd_SRAM_Green",
-		"RC_PylonM_12Rnd_SRAM_Green_Proxy"
+		"RC_PylonM_12Rnd_SRAM_Green_Proxy",
+
+		"RC_AI_PylonM_12Rnd_SRAM",
+		"RC_AI_PylonM_12Rnd_SRAM_Proxy",
+		"RC_AI_PylonM_12Rnd_SRAM_Green",
+		"RC_AI_PylonM_12Rnd_SRAM_Green_Proxy"
 	};
 };
 class RC_PylonW_SRAM_Green: RC_PylonW_SRAM_Green_Base
