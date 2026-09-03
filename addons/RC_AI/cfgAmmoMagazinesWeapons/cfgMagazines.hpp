@@ -1,3 +1,87 @@
+//Pylon
+class RC_PylonM_2500Rnd_338_SLAP_T_R_right;
+class RC_AI_PylonM_2500Rnd_338_SLAP_T_R_right: RC_PylonM_2500Rnd_338_SLAP_T_R_right
+{
+	pylonWeapon="RC_PylonW_338_Minigun";
+	ammo="RC_AI_Pylon_B_338_SLAP_T_R";
+	hardpoints[]={"RC_AI_Hardpoint_V1_Right","RC_AI_Hardpoint_O_V1_Right"};
+};
+class RC_PylonM_2500Rnd_338_SLAP_T_G_right;
+class RC_AI_PylonM_2500Rnd_338_SLAP_T_G_right: RC_PylonM_2500Rnd_338_SLAP_T_G_right
+{
+	ammo="RC_AI_Pylon_B_338_SLAP_T_G";
+	hardpoints[]={"RC_AI_Hardpoint_G_V1_Right","RC_AI_Hardpoint_G_O_V1_Right"};
+};
+class RC_PylonM_2500Rnd_338_SLAP_T_Y_right;
+class RC_AI_PylonM_2500Rnd_338_SLAP_T_Y_right: RC_PylonM_2500Rnd_338_SLAP_T_Y_right
+{
+	ammo="RC_AI_Pylon_B_338_SLAP_T_Y";
+	hardpoints[]={"RC_AI_Hardpoint_Y_V1_Right","RC_AI_Hardpoint_Y_O_V1_Right"};
+};
+
+
+class RC_PylonM_5000Rnd_338_SLAP_T_R_right;
+class RC_AI_PylonM_5000Rnd_338_SLAP_T_R_right: RC_PylonM_5000Rnd_338_SLAP_T_R_right
+{
+    ammo="RC_AI_Pylon_B_338_SLAP_T_R";
+	hardpoints[]={"RC_AI_Hardpoint_Ka60M_Right"};
+};
+class RC_PylonM_5000Rnd_338_SLAP_T_G_right;
+class RC_AI_PylonM_5000Rnd_338_SLAP_T_G_right: RC_PylonM_5000Rnd_338_SLAP_T_G_right
+{
+    ammo="RC_AI_Pylon_B_338_SLAP_T_G";
+	hardpoints[]={"RC_AI_Hardpoint_Ka60M_Right"};
+};
+class RC_PylonM_5000Rnd_338_SLAP_T_Y_right
+class RC_AI_PylonM_5000Rnd_338_SLAP_T_Y_right: RC_PylonM_5000Rnd_338_SLAP_T_Y_right
+{
+	ammo="RC_AI_Pylon_B_338_SLAP_T_Y";
+	hardpoints[]={"RC_AI_Hardpoint_Ka60M_Right"};
+};
+
+
+class RC_PylonM_1000Rnd_127mm_SLAP_T_R_left;
+class RC_AI_PylonM_1000Rnd_127mm_SLAP_T_R_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_left
+{
+	pylonWeapon="RC_PylonW_127mm_Minigun";
+	ammo="RC_AI_Pylon_B_127x99_SLAP_T_R";
+	hardpoints[]={"RC_AI_Hardpoint_V2_Left","RC_AI_Hardpoint_O_V2_Left"};
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_G_left;
+class RC_AI_PylonM_1000Rnd_127mm_SLAP_T_G_left: RC_PylonM_1000Rnd_127mm_SLAP_T_G_left
+{
+	ammo="RC_AI_Pylon_B_127x99_SLAP_T_G";
+	hardpoints[]={"RC_AI_Hardpoint_G_V2_Right","RC_AI_Hardpoint_G_O_V2_Right"};
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left;
+class RC_AI_PylonM_1000Rnd_127mm_SLAP_T_Y_left: RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left
+{
+	ammo="RC_AI_Pylon_B_127x99_SLAP_T_Y";
+	hardpoints[]={"RC_AI_Hardpoint_Y_V2_Right","RC_AI_Hardpoint_Y_O_V2_Right"};
+};
+
+
+class RC_PylonM_1000Rnd_127mm_SLAP_T_R_right;
+class RC_AI_PylonM_1000Rnd_127mm_SLAP_T_R_right: RC_PylonM_1000Rnd_127mm_SLAP_T_R_right
+{
+	pylonWeapon="RC_PylonW_127mm_Minigun";
+	ammo="RC_AI_Pylon_B_127x99_SLAP_T_R";
+	hardpoints[]={"RC_AI_Hardpoint_V2_Right","RC_AI_Hardpoint_O_V2_Right"};
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_G_right;
+class RC_AI_PylonM_1000Rnd_127mm_SLAP_T_G_right: RC_PylonM_1000Rnd_127mm_SLAP_T_R_right
+{
+	ammo="RC_AI_Pylon_B_127x99_SLAP_T_G";
+	hardpoints[]={"RC_AI_Hardpoint_G_V2_Right","RC_AI_Hardpoint_G_O_V2_Right"};
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right;
+class RC_AI_PylonM_1000Rnd_127mm_SLAP_T_Y_right: RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right
+{
+	ammo="RC_AI_Pylon_B_127x99_SLAP_T_Y";
+	hardpoints[]={"RC_AI_Hardpoint_Y_V2_Right","RC_AI_Hardpoint_Y_O_V2_Right"};
+};
+
+
 //Basegame
 //7.62x51
 class RC_200Rnd_762x51_T_R;
