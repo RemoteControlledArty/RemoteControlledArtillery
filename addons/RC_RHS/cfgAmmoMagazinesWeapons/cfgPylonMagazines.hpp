@@ -205,3 +205,11 @@ class RC_PylonM_2Rnd_AGM114K: rhs_mag_AGM114K_2
 	ammo="RC_AGM114K";
 	hardpoints[]={"RC_Hardpoint_V5"};
 };
+class RC_PylonM_2Rnd_Vikhr: RC_PylonM_2Rnd_AGM114K
+{
+	displayName="> 9K121 Vikhr 2x";
+	displayNameShort="9K121 Vikhr";
+	pylonWeapon="RC_PylonW_Vikhr";
+	ammo="RC_Vikhr";
+	hardpoints[]={"RC_Hardpoint_O_V6"};
+};

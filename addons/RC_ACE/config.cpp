@@ -1,8 +1,8 @@
 class CfgPatches
 {
-	class RC_ACE3
+	class RC_ACE
 	{
-		name="RC ACE3";
+		name="RC ACE";
 		author="Ascent";
 
 		units[]=
@@ -46,26 +46,26 @@ class DefaultVehicleSystemsDisplayManagerRight;
 
 class CfgAmmo
 {
-	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgPylonAmmo.hpp"
-	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
+	#include "\RC_ACE\cfgAmmoMagazinesWeapons\cfgPylonAmmo.hpp"
+	//#include "\RC_ACE\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 class CfgMagazines
 {
 	class CA_Magazine;
-	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgPylonMagazines.hpp"
-	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
+	#include "\RC_ACE\cfgAmmoMagazinesWeapons\cfgPylonMagazines.hpp"
+	//#include "\RC_ACE\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
 class CfgWeapons
 {
 	class Default;
-	#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgPylonWeapons.hpp"
-	//#include "\RC_ACE3\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
+	#include "\RC_ACE\cfgAmmoMagazinesWeapons\cfgPylonWeapons.hpp"
+	//#include "\RC_ACE\cfgAmmoMagazinesWeapons\cfgWeapons.hpp"
 };
 
 
 /*
 class CfgVehicles
 {
-	#include "\RC_ACE3\cfgVehicles\Heli_H80M.hpp"
+	#include "\RC_ACE\cfgVehicles\Heli_H80M.hpp"
 };
 */

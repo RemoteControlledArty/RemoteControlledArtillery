@@ -102,6 +102,10 @@ class Twin_Cannon_20mm_gunpod;
 class RC_PylonW_Twin_Fetch: Twin_Cannon_20mm_gunpod
 {
 	class manual;
+	class close;
+	class short;
+	class medium;
+	class far;
 };
 class RC_PylonW_Twin_Core: RC_PylonW_Twin_Fetch
 {
@@ -121,7 +125,7 @@ class RC_PylonW_Twin_Core: RC_PylonW_Twin_Fetch
 
 	modes[]=
 	{
-		"manual"
+		"manual","close","short","medium","far"
 	};
 	class manual: manual
 	{
@@ -133,6 +137,26 @@ class RC_PylonW_Twin_Core: RC_PylonW_Twin_Fetch
 		burst=2;						//5
 		autoFire=1;
 		textureType="fullAuto";
+	};
+	class close: close
+	{
+		ballisticsComputer="8";
+		allowTabLock=1;
+	};
+	class short: short
+	{
+		ballisticsComputer="8";
+		allowTabLock=1;
+	};
+	class medium: medium
+	{
+		ballisticsComputer="8";
+		allowTabLock=1;
+	};
+	class far: far
+	{
+		ballisticsComputer="8";
+		allowTabLock=1;
 	};
 };
 class RC_PylonW_TwinHMG_Base: RC_PylonW_Twin_Core
@@ -152,22 +176,24 @@ class RC_PylonW_TwinHMG_Base: RC_PylonW_Twin_Core
 	};
 	class manual: manual
 	{
-		displayName="Twin HMG";
-		displayNameShort="Twin HMG";
-
-		reloadTime=0.03;	//0.04 = 1500RPM, 0.03 = 2000RPM
-		dispersion=0.005;	//0.003
-		burst=4;			//2
-
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			begin1[]={"A3\Sounds_F_epc\weapons\cas_02_cannon", 1.77828, 1, 3800};
-			soundBegin[]={"begin1", 1};
-		};
+		#include "\Remote_Controlled_Artillery\includes_cfg\PylonHMG.hpp"
+		burst=4;
+	};
+	class close: close
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\PylonHMG.hpp"
+	};
+	class short: short
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\PylonHMG.hpp"
+	};
+	class medium: medium
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\PylonHMG.hpp"
+	};
+	class far: far
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\PylonHMG.hpp"
 	};
 };
 class RC_PylonW_TwinHMG: RC_PylonW_TwinHMG_Base
@@ -199,64 +225,24 @@ class RC_PylonW_TwinCannon_Base: RC_PylonW_Twin_Core
 	};
 	class manual: manual
 	{
-		displayName="Autocannon";
-		displayNameShort="Autocannon";
-		reloadTime=0.1;					//0.04
-		
-		dispersion=0.0018;				//0.003		//0.018 Aegis
-
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			begin1[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_01",
-				1.9952624,
-				1,
-				1500
-			};
-			begin2[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_02",
-				1.9952624,
-				1,
-				1500
-			};
-			begin3[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_vehicles\cannon_30mm\autocannon_30mm_03",
-				1.9952624,
-				1,
-				1500
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				0.33000001,
-				"begin2",
-				0.33000001,
-				"begin3",
-				0.34
-			};
-			/*
-			begin1[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_vehicles\gatling_20mm\20mm_01_burst",
-				1.7782794,
-				1,
-				1300,
-				{2,35740}
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			*/
-		};
+		#include "\Remote_Controlled_Artillery\includes_cfg\PylonAutocannon.hpp"
+		burst=2;
+	};
+	class close: close
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\PylonAutocannon.hpp"
+	};
+	class short: short
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\PylonAutocannon.hpp"
+	};
+	class medium: medium
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\PylonAutocannon.hpp"
+	};
+	class far: far
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\PylonAutocannon.hpp"
 	};
 };
 class RC_PylonW_TwinCannon: RC_PylonW_TwinCannon_Base
@@ -336,6 +322,8 @@ class missiles_DAR;
 class RC_PylonW_12Rnd_Hydra_Fetch: missiles_DAR
 {
 	class Burst;
+	class Far_AI;
+	class Medium_AI;
 };
 class RC_PylonW_12Rnd_Hydra_Base: RC_PylonW_12Rnd_Hydra_Fetch
 {
@@ -356,8 +344,8 @@ class RC_PylonW_12Rnd_Hydra_Base: RC_PylonW_12Rnd_Hydra_Fetch
 	modes[]=
 	{
 		"Burst",
-		"Far_AI",
-		"Medium_AI"
+		"Medium_AI",
+		"Far_AI"
 	};
 	class Burst: Burst
 	{
@@ -365,6 +353,18 @@ class RC_PylonW_12Rnd_Hydra_Base: RC_PylonW_12Rnd_Hydra_Fetch
 		displayNameShort="Hydra";
 		reloadTime=0.15;
 		dispersion=0.004;	//0.015 default, 0.004 to make more viable alternative to guided against vics that need direct hit
+	};
+	class Medium_AI: Medium_AI
+	{
+		displayName="Hydra";
+		displayNameShort="Hydra";
+		reloadTime=0.15;
+	};
+	class Far_AI: Far_AI
+	{
+		displayName="Hydra";
+		displayNameShort="Hydra";
+		reloadTime=0.15;
 	};
 };
 class RC_PylonW_12Rnd_Hydra: RC_PylonW_12Rnd_Hydra_Base
@@ -386,6 +386,16 @@ class RC_PylonW_12Rnd_S5_Base: RC_PylonW_12Rnd_Hydra_Base
 		displayName="S-5";
 		displayNameShort="S-5";
 	};
+	class Medium_AI: Medium_AI
+	{
+		displayName="S-5";
+		displayNameShort="S-5";
+	};
+	class Far_AI: Far_AI
+	{
+		displayName="S-5";
+		displayNameShort="S-5";
+	};
 };
 class RC_PylonW_12Rnd_S5: RC_PylonW_12Rnd_S5_Base
 {
@@ -397,6 +407,11 @@ class rockets_Skyfire;
 class RC_PylonW_19Rnd_Hydra_Fetch: rockets_Skyfire
 {
 	class Burst;
+	/*
+	class Close_AI;
+	class Medium_AI;
+	class Far_AI;
+	*/
 };
 class RC_PylonW_19Rnd_Hydra_Base: RC_PylonW_19Rnd_Hydra_Fetch
 {
@@ -413,7 +428,10 @@ class RC_PylonW_19Rnd_Hydra_Base: RC_PylonW_19Rnd_Hydra_Fetch
 	};
 	modes[]=
 	{
-		"Burst"
+		"Burst",
+		"Close_AI",
+		"Medium_AI",
+		"Far_AI"
 	};
 	class Burst: Burst
 	{
@@ -422,6 +440,26 @@ class RC_PylonW_19Rnd_Hydra_Base: RC_PylonW_19Rnd_Hydra_Fetch
 		reloadTime=0.15;
 		dispersion=0.004;	//0.015 default, 0.004 to make more viable alternative to guided against vics that need direct hit
 	};
+	/*
+	class Close_AI: Close_AI
+	{
+		displayName="Hydra";
+		displayNameShort="Hydra";
+		reloadTime=0.15;
+	};
+	class Medium_AI: Medium_AI
+	{
+		displayName="Hydra";
+		displayNameShort="Hydra";
+		reloadTime=0.15;
+	};
+	class Far_AI: Far_AI
+	{
+		displayName="Hydra";
+		displayNameShort="Hydra";
+		reloadTime=0.15;
+	};
+	*/
 };
 class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Base
 {
@@ -430,8 +468,8 @@ class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Base
 
 class RC_PylonW_19Rnd_S5_Base: RC_PylonW_19Rnd_Hydra_Base
 {
-	displayName="55mm S-5 UB-19";
-	displayNameShort="55mm S-5 UB-19";
+	displayName="S-5 UB-19";
+	displayNameShort="S-5 UB-19";
 	magazines[]=
 	{
 		"RC_PylonM_19Rnd_S5_MP",
@@ -444,6 +482,23 @@ class RC_PylonW_19Rnd_S5_Base: RC_PylonW_19Rnd_Hydra_Base
 		displayName="S-5";
 		displayNameShort="S-5";
 	};
+	/*
+	class Close_AI: Close_AI
+	{
+		displayName="S-5";
+		displayNameShort="S-5";
+	};
+	class Medium_AI: Medium_AI
+	{
+		displayName="S-5";
+		displayNameShort="S-5";
+	};
+	class Far_AI: Far_AI
+	{
+		displayName="S-5";
+		displayNameShort="S-5";
+	};
+	*/
 };
 class RC_PylonW_19Rnd_S5: RC_PylonW_19Rnd_S5_Base
 {
@@ -512,6 +567,8 @@ class missiles_DAGR;
 class RC_PylonW_DAGR_Fetch: missiles_DAGR
 {
 	class Burst;
+	class Medium_AI;
+	class Far_AI;
 	//class Direct;
 	//class LoalDistance;
 };
@@ -530,9 +587,25 @@ class RC_PylonW_DAGR_Base: RC_PylonW_DAGR_Fetch
 	};
 	modes[]=
 	{
-		"Burst"
+		"Burst",
+		"Medium_AI",
+		"Far_AI"
 	};
 	class Burst: Burst
+	{
+		displayName="DAGR";
+		displayNameShort="DAGR";
+		ballisticsComputer=8;
+		reloadTime=0.15;
+	};
+	class Medium_AI: Medium_AI
+	{
+		displayName="DAGR";
+		displayNameShort="DAGR";
+		ballisticsComputer=8;
+		reloadTime=0.15;
+	};
+	class Far_AI: Far_AI
 	{
 		displayName="DAGR";
 		displayNameShort="DAGR";
@@ -571,6 +644,21 @@ class RC_PylonW_S8_G_Base: RC_PylonW_DAGR_Base
 
         "RC_AI_PylonM_8Rnd_S8_G",
         "RC_AI_PylonM_8Rnd_S8_G_Proxy"
+	};
+	class Burst: Burst
+	{
+		displayName="S8 G";
+		displayNameShort="S8 G";
+	};
+	class Medium_AI: Medium_AI
+	{
+		displayName="S8 G";
+		displayNameShort="S8 G";
+	};
+	class Far_AI: Far_AI
+	{
+		displayName="S8 G";
+		displayNameShort="S8 G";
 	};
 	/*
 	class Direct: Direct

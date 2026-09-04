@@ -3,6 +3,7 @@ showAllTargets="2 + 4";
 receiveRemoteTargets=1;
 reportRemoteTargets=1;
 reportOwnPosition=1;
+laserScanner=1;
 canUseScanner=1;
 
 

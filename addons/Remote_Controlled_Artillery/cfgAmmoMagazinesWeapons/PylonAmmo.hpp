@@ -108,10 +108,10 @@ class RC_APKWS: M_PGM_AT
 	*/
 
 	cameraViewAvailable=1;
-	missileKeepLockedCone=60;		//60
-	missileLockCone=60;				//30
+	missileLockCone=90;				//30
+	missileKeepLockedCone=90;		//60
 	missileLockMaxDistance=4100;	//5000
-	missileLockMinDistance=300;		//100
+	missileLockMinDistance=200;		//100
 
 	thrustTime=2.14;	//1.07 doubled to cancel thrust halving
 	thrust=412.5;		//825 halved to increase accuracy
@@ -169,10 +169,10 @@ class RC_DAGR: M_PG_AT_Fetch
 	*/
 
 	cameraViewAvailable=1;
-	missileKeepLockedCone=60;		//60
-	missileLockCone=60;				//30
+	missileLockCone=90;				//30
+	missileKeepLockedCone=90;		//60
 	missileLockMaxDistance=4100;	//6000
-	missileLockMinDistance=300;		//1000
+	missileLockMinDistance=200;		//1000
 
 	thrustTime=2.14;	//1.07 doubled to cancel thrust halving
 	thrust=412.5;		//825 halved to increase accuracy
@@ -370,6 +370,9 @@ class RC_AGM114K: M_Scalpel_AT
 	proxyShape="\A3\Weapons_F\Ammo\Missile_AT_03_F";
 	effectsMissile="missile2";
 
+	missileLockCone=90;				//30
+	missileKeepLockedCone=90;		//60
+
 	ace_rearm_caliber=178;
 	cameraViewAvailable=1;
 
@@ -393,6 +396,26 @@ class RC_AGM114K_Proxy: RC_AGM114K
 	displayNameShort="AGM-114K-PF";
 	description="AGM-114K-PF";
 	descriptionShort="AGM-114K-PF";
+
+	indirectHitRange=8;	//4
+};
+
+
+class RC_Vikhr: RC_AGM114K
+{
+	#include "\Remote_Controlled_Artillery\cfgAmmoMagazinesWeapons\includes_ammo\AmmoLasersensor_6km.hpp"
+
+	displayName="9K121 Vikhr";
+	displayNameShort="9K121 Vikhr";
+	description="9K121 Vikhr";
+	descriptionShort="9K121 Vikhr";
+};
+class RC_Vikhr_Proxy: RC_Vikhr
+{
+	displayName="9K121 Vikhr-PF";
+	displayNameShort="9K121 Vikhr-PF";
+	description="9K121 Vikhr-PF";
+	descriptionShort="9K121 Vikhr-PF";
 
 	indirectHitRange=8;	//4
 };

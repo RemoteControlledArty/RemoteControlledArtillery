@@ -8,7 +8,7 @@ class RC_ACE_MH80M_DAP_Base: RC_ACE_MH80M_DAP_Core
 {
 	class Components: Components
 	{
-		#include "\RC_ACE3\cfgVehicles\includes_vehicle\MH80M_4pylons.hpp"
+		#include "\RC_ACE\cfgVehicles\includes_vehicle\MH80M_4pylons.hpp"
 	};
 };
 

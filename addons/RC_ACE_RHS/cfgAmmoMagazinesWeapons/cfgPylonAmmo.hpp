@@ -18,6 +18,9 @@ class RC_AGM114K: M_Scalpel_AT
 	indirectHit=50;		//50
 	indirectHitRange=4;	//4
 
+	missileLockCone=90;				//30
+	missileKeepLockedCone=90;		//60
+
 	//airLock=0;
 	irLock=0;
 	laserLock=0;

@@ -13,12 +13,12 @@ class RC_PylonW_APKWS: RC_PylonW_APKWS_Core
 	magazines[]=
 	{
 		"RC_PylonM_12Rnd_APKWS",
-		//"RC_PylonM_12Rnd_APKWS_cUAS",
 		"RC_PylonM_7Rnd_APKWS",
 		"RC_RHS_PylonM_7Rnd_APKWS",
 
 		"RC_PylonM_12Rnd_APKWS_Proxy",
-		"RC_PylonM_7Rnd_APKWS_Proxy"
+		"RC_PylonM_7Rnd_APKWS_Proxy",
+		"RC_RHS_PylonM_7Rnd_APKWS_Proxy"
 	};
 	modes[]=
 	{
@@ -52,7 +52,8 @@ class RC_PylonW_S8_LG: RC_PylonW_APKWS
 		"RC_PylonM_12Rnd_S8_LG",
 		"RC_PylonM_7Rnd_S8_LG",
 
-		"RC_PylonM_12Rnd_S8_LG_Proxy"
+		"RC_PylonM_12Rnd_S8_LG_Proxy",
+		"RC_PylonM_7Rnd_S8_LG_Proxy"
 	};
 };
 
@@ -70,6 +71,7 @@ class RC_PylonW_Hellfire: RocketPods
 		"RC_PylonM_2Rnd_AGM114K",
 		"RC_PylonM_1Rnd_AGM114K",
 
+		"RC_PylonM_4Rnd_AGM114K_Proxy",
 		"RC_PylonM_3Rnd_AGM114K_Proxy",
 		"RC_PylonM_2Rnd_AGM114K_Proxy",
 		"RC_PylonM_1Rnd_AGM114K_Proxy"
@@ -105,10 +107,14 @@ class RC_PylonW_Vikhr: RC_PylonW_Hellfire
 	displayNameShort="9K121 Vikhr";
 	magazines[]=
 	{
+		"RC_PylonM_4Rnd_Vikhr",
 		"RC_PylonM_3Rnd_Vikhr",
+		"RC_PylonM_2Rnd_Vikhr",
 		"RC_PylonM_1Rnd_Vikhr",
 
+		"RC_PylonM_4Rnd_Vikhr_Proxy",
 		"RC_PylonM_3Rnd_Vikhr_Proxy",
+		"RC_PylonM_2Rnd_Vikhr_Proxy",
 		"RC_PylonM_1Rnd_Vikhr_Proxy"
 	};
 };

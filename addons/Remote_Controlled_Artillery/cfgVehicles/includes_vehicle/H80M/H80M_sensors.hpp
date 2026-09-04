@@ -9,15 +9,15 @@ class SensorsManagerComponent
 
 			class AirTarget
 			{
-				minRange=5000;
-				maxRange=5000;
+				minRange=6000;
+				maxRange=6000;
 				objectDistanceLimitCoef=-1;
 				viewDistanceLimitCoef=-1;
 			};
 			class GroundTarget
 			{
-				minRange=5000;
-				maxRange=5000;
+				minRange=6000;
+				maxRange=6000;
 				objectDistanceLimitCoef=-1;
 				viewDistanceLimitCoef=-1;
 			};

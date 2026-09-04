@@ -68,7 +68,8 @@ class RC_PylonM_2Rnd_Vikhr: RC_PylonM_2Rnd_AGM114K
 	displayName="> 9K121 Vikhr 2x [ACE RHS]";
 	displayNameShort="9K121 Vikhr";
 	pylonWeapon="RC_PylonW_Vikhr";
-	hardpoints[]={"RC_Hardpoint_O_V5"};
+	ammo="RC_Vikhr";
+	hardpoints[]={"RC_Hardpoint_O_V5_ACE"};
 };
 
 

@@ -22,7 +22,7 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_O_V6_Right"
 			};
 
-			attachment="RC_PylonM_12Rnd_S8_LG";
+			attachment="RC_PylonM_8Rnd_S8_G";	//RC_PylonM_12Rnd_S8_LG
 		};
 		class pylon2: pylon2
 		{
@@ -37,14 +37,14 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_O_V3",
 				"RC_Hardpoint_O_V3_Left",
 				"RC_Hardpoint_O_V4",
-				"RC_Hardpoint_O_V4_Left",		
+				"RC_Hardpoint_O_V4_Left",	
 				"RC_Hardpoint_O_V5",
 				"RC_Hardpoint_O_V5_Left",
 				"RC_Hardpoint_O_V6",
 				"RC_Hardpoint_O_V6_Left"
 			};
 
-			attachment="RC_PylonM_4Rnd_Vikhr";
+			attachment="RC_PylonM_8Rnd_S8_G";	//RC_PylonM_4Rnd_Vikhr
 		};
 	};
 };

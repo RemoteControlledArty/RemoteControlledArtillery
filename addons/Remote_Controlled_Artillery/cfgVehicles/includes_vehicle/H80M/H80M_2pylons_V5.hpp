@@ -48,7 +48,9 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_V4_Right",
 
 				"RC_Hardpoint_V5",
-				"RC_Hardpoint_V5_Right"
+				"RC_Hardpoint_V5_Right",
+				"RC_Hardpoint_V6",
+				"RC_Hardpoint_V6_Right"
 			};
 
 			attachment="RC_PylonM_12Rnd_APKWS";

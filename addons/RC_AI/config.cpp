@@ -284,10 +284,12 @@ class DefaultVehicleSystemsDisplayManagerRight;
 
 class CfgAmmo
 {
+	#include "\RC_AI\cfgAmmoMagazinesWeapons\cfgPylonAmmo.hpp"
 	#include "\RC_AI\cfgAmmoMagazinesWeapons\cfgAmmo.hpp"
 };
 class CfgMagazines
 {
+	#include "\RC_AI\cfgAmmoMagazinesWeapons\cfgPylonMagazines.hpp"
 	#include "\RC_AI\cfgAmmoMagazinesWeapons\cfgMagazines.hpp"
 };
 class CfgWeapons

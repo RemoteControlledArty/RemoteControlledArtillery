@@ -949,9 +949,8 @@ class RC_PylonM_1Rnd_Vikhr: RC_PylonM_1Rnd_AGM114K
 {
 	displayName="> 9K121 Vikhr 1x";
 	displayNameShort="9K121 Vikhr";
-	descriptionShort="heavy laser guided missile";
 	pylonWeapon="RC_PylonW_Vikhr";
-	ammo="RC_AGM114K";
+	ammo="RC_Vikhr";
 	hardpoints[]={"RC_Hardpoint_O_V5"};
 };
 /*
@@ -968,22 +967,28 @@ class RC_PylonM_1Rnd_Vikhr_Proxy: RC_PylonM_1Rnd_Vikhr
 */
 
 
+//placeholder
+class RC_PylonM_2Rnd_Vikhr: RC_PylonM_1Rnd_Vikhr
+{
+	hardpoints[]={};
+};
+
+
 //PylonRack_3Rnd_LG_scalpel
-class RC_PylonM_3Rnd_Vikhr: RC_PylonM_1Rnd_Vikhr
+class RC_PylonM_3Rnd_Vikhr: RC_PylonM_3Rnd_AGM114K
 {
 	displayName="> 9K121 Vikhr 3x";
-	descriptionShort="heavy laser guided missiles";
-	ammo="RC_AGM114K";
-	count=3;
-
-	model="\A3\Weapons_F\DynamicLoadout\PylonPod_3x_Missile_LG_scalpel_F.p3d";
-	mass=300;
-
+	displayNameShort="9K121 Vikhr";
+	pylonWeapon="RC_PylonW_Vikhr";
+	ammo="RC_Vikhr";
 	hardpoints[]={"RC_Hardpoint_O_V6"};
 };
 class RC_PylonM_4Rnd_Vikhr: RC_PylonM_4Rnd_AGM114K
 {
 	displayName="> 9K121 Vikhr 4x";
+	displayNameShort="9K121 Vikhr";
+	pylonWeapon="RC_PylonW_Vikhr";
+	ammo="RC_Vikhr";
 	hardpoints[]={"RC_Hardpoint_O_V6"};
 };
 /*
@@ -993,7 +998,7 @@ class RC_PylonM_3Rnd_Vikhr_Proxy: RC_PylonM_1Rnd_Vikhr
 	displayName="> 9K121 Vikhr Proxy 3x";
 	displayNameShort="9K121 Vikhr Proxy";
 	descriptionShort="heavy laser guided proximity fuze missile";
-	ammo="RC_AGM114K_Proxy";
+	ammo="RC_Vikhr_Proxy";
 
 	hardpoints[]={"OM_H_Proxy"};
 };

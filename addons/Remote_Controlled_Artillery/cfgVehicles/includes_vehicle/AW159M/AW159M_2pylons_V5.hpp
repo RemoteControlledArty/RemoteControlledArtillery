@@ -15,12 +15,7 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_V3",
 				"RC_Hardpoint_V3_Right",
 				"RC_Hardpoint_V4",
-				"RC_Hardpoint_V4_Right",		
-				"RC_Hardpoint_V5",
-				"RC_Hardpoint_V5_Right",
-
-				"RC_Hardpoint_V6",
-				"RC_Hardpoint_V6_Right"
+				"RC_Hardpoint_V4_Right"
 			};
 
 			attachment="RC_PylonM_300Rnd_25mm";
@@ -38,10 +33,10 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_V3",
 				"RC_Hardpoint_V3_Left",
 				"RC_Hardpoint_V4",
-				"RC_Hardpoint_V4_Left",		
+				"RC_Hardpoint_V4_Left",
+				
 				"RC_Hardpoint_V5",
 				"RC_Hardpoint_V5_Left",
-
 				"RC_Hardpoint_V6",
 				"RC_Hardpoint_V6_Left"
 			};
