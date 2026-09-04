@@ -36,9 +36,14 @@ class RC_AW159M_Core: RC_AW159M_Fetch
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_cargoTurrets.hpp"
 	};
 };
+class RC_AW159M_Base: RC_AW159M_Core
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_hitPoints.hpp"
+};
 
 
 //AI
+/*
 class RC_AI_AW159M: RC_AW159M_Core
 {
 	scope=2;
@@ -80,13 +85,10 @@ class RC_AI_AW159M_I: RC_AI_AW159M
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
 };
+*/
 
 
 //manned
-class RC_AW159M_Base: RC_AW159M_Core
-{
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_hitPoints.hpp"
-};
 class RC_AW159M_V1: RC_AW159M_Base
 {
 	scope=2;

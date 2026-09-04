@@ -65,19 +65,42 @@ class RC_Ka60M_Base: RC_Ka60M_Core
 
 //AI
 //class RC_AI_Ka60M: RC_Ka60M_Core
-class RC_AI_Ka60M: RC_Ka60M_Base
+class RC_AI_Ka60M_Base: RC_Ka60M_Base
 {
 	displayName="[AI] Ka-60M - Kasatka"
 	editorSubcategory="RC_Heli_subcat";
-
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
 
 	class Components: Components
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_AI.hpp"
 	};
+
+	class HitPoints: HitPoints
+	{
+		/*
+		class HitFuel: HitFuel
+		{
+			armor=-150;				//V 1 = -40, H ?, RC -150
+			explosionShielding=1;	//V 1, RC 1
+		};
+		class HitAvionics: HitAvionics
+		{
+			armor=-80;					//V 2 = -80, H ?, RC -80
+			explosionShielding=1;		//V 1, RC 1
+		};
+		*/
+		class HitVRotor: HitVRotor
+		{
+			//armor=-200;				//V 3 = -120, H 0.054, 0.81 = -32.4, RC -200
+			explosionShielding=3;		//V 6, H 0.27, RC 1.5
+		};
+	};
+};
+class RC_AI_Ka60M: RC_AI_Ka60M_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"

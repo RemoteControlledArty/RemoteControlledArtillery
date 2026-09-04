@@ -440,10 +440,12 @@ class CfgPatches
 			"RC_AW159M_V6",
 			"RC_AW159M_V6_O",
 			"RC_AW159M_V6_I",
-
+			
+			/*
 			"RC_AI_AW159M",
 			"RC_AI_AW159M_O",
 			"RC_AI_AW159M_I",
+			*/
 			
 			/*
 			"RC_OM_AW159M",
