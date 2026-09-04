@@ -437,6 +437,7 @@ class RC_50Rnd_40mm_G_belt: 96Rnd_40mm_G_belt
 	displayName="40mm HEDP";
 	displayNameShort="40mm HEDP";
 	displayNameMFDFormat="HEDP";
+	initSpeed=350;	//241
 	count=50;
 };
 class RC_75Rnd_40mm_G_belt: RC_50Rnd_40mm_G_belt {count=75;};
@@ -6349,7 +6350,7 @@ class RC_100Rnd_40mm_vic_Mo_shells: RC_1Rnd_82mm_Mo_shells
 {
 	ammo="RC_Sh_40mm_AMOS_HE";
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
-	initSpeed=200;	//4km reach
+	initSpeed=177.4;	//3km w 200m ElDif / 3.2km
 	count=100;
 	muzzleImpulseFactor[]={0.1,0.1};
 };
@@ -6359,7 +6360,7 @@ class RC_100Rnd_40mm_vic_Mo_Smoke: RC_1Rnd_82mm_Mo_Smoke_white
 	ammo="RC_Sh_40mm_AMOS_Smoke";
 	RC_TerrainWarning=0;
 	RC_AdvisedTrajectory=1;	//1low, 2high, 3both
-	initSpeed=200;	//4km reach
+	initSpeed=177.4;	//3km w 200m ElDif / 3.2km
 	count=100;
 	muzzleImpulseFactor[]={0.1,0.1};
 };

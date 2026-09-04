@@ -1334,8 +1334,11 @@ class RC_GMG_40mm: GMG_40mm_Base
 	canLock=2;
 	#include "\Remote_Controlled_Artillery\includes_cfg\BallisticsCalculatorCannon.hpp"
 	autoReload=1;
+	maxZeroing=2000;	//1500
+
 	class manual: manual
 	{
+		maxZeroing=2000;
 		dispersion=0.0025;
 	};
 	magazines[]=
@@ -4814,8 +4817,8 @@ class RC_vehiclemortar_60mm_V4: RC_vehiclemortar_82mm_V4
 //indirect 40mm GMG
 class RC_indirect_40mm_GMG_V4: RC_vehiclemortar_60mm_V4
 {
-	displayName="indirect 40mm GMG";
-	displayNameShort="indirect 40mm GMG";
+	displayName="indirect 40mm GMG 3km";
+	displayNameShort="indirect 40mm GMG 3km";
 	//ballisticsComputer=8;	//direct fire reticle for highest charge
 	
 	reloadTime=0.25;
@@ -4840,7 +4843,9 @@ class RC_indirect_40mm_GMG_V4: RC_vehiclemortar_60mm_V4
 	};
 	class auto1: Single1
 	{
-		displayName="CH1, 0.5km";
+		displayName="CH1, 750m";	//w 200m ElDif
+		artilleryCharge=0.484;
+
 		artilleryDispersion=1.5;
 		reloadTime=0.25;
 		magazineReloadTime=5;	//2.5
@@ -4891,19 +4896,19 @@ class RC_indirect_40mm_GMG_V4: RC_vehiclemortar_60mm_V4
 	};
 	class auto2: auto1
 	{
-		displayName="CH1, 2km";
-		artilleryCharge=0.7;
-		minRange=139;	//139	//230
-		midRange=1068.5;	//1068.5	1175
-		maxRange=1998;	//1998	//2660
+		displayName="CH1, 1500m";	//w 200m ElDif
+		artilleryCharge=0.731;
+		minRange=139;		//139		//230
+		midRange=1068.5;	//1068.5	//1175
+		maxRange=1700;		//1998		//2660
 	};
 	class auto3: auto1
 	{
-		displayName="CH2, 4km, reticle";
+		displayName="CH2, 3000m, reticle";	//w 200m ElDif
 		artilleryCharge=1;
-		minRange=284;	//284	//540
-		midRange=2181;	//2181	//2355
-		maxRange=4078;	//4078	//5500
+		minRange=284;		//284		//540
+		midRange=2181;		//2181		//2355
+		maxRange=3200;		//4078		//5500
 	};
 	class GunParticles
 	{

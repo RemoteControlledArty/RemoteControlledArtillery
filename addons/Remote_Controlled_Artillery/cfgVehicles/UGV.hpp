@@ -250,7 +250,7 @@ class RC_indirect_GMG_UGV_Core: RC_GMG_UGV_Core
 	RC_BarrelLenght=1.5;	//barrel lenght in meters, for estimating muzzle position, to increase accuracy
 	RC_BarrelExtends=1;	//1 = true, if the barrel extends far past the vehicle, for estimating muzzle position, to increase accuracy
 
-	displayName="RC indirect GMG-UGV";
+	displayName="RC indirect GMG-UGV 3km";
 	editorSubcategory="RC_Mortar_subcat";
 	unitInfoType="RscUnitInfoArtillery";
 
