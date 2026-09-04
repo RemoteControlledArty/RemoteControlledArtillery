@@ -64,14 +64,15 @@ class RC_Ka60M_Base: RC_Ka60M_Core
 
 
 //AI
-class RC_AI_Ka60M: RC_Ka60M_Core
+//class RC_AI_Ka60M: RC_Ka60M_Core
+class RC_AI_Ka60M: RC_Ka60M_Base
 {
-	displayName="AI Ka-60M - Kasatka"
+	displayName="[AI] Ka-60M - Kasatka"
 	editorSubcategory="RC_Heli_subcat";
 
-	scope=2;			//2
-	scopeCurator=2;		//2
-	forceInGarage=1;	//1
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
 
 	class Components: Components
 	{

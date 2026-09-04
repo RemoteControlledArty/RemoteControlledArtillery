@@ -10,7 +10,7 @@
 
 fnc_RC_proxyFuse =
 {
-	params ["_p"];
+	params ["_veh", "_p"];
 
 	private _fR = 12;
 	private _e = false;
@@ -21,7 +21,8 @@ fnc_RC_proxyFuse =
 		private _t = _p nearEntities ["Air", 30];
 		//private _t = nearestObjects [_p, ["Air"], 30];
 		_t = _t select {!isNull _x && alive _x};
-		_t = _t select {(side _x) != (side player)};
+		_t = _t select {(side _x) != (side _veh)};
+		//_t = _t select {_x isNotEqualTo _veh};
 		
 		{
 			if ((_p distance _x) < _fR) then {
