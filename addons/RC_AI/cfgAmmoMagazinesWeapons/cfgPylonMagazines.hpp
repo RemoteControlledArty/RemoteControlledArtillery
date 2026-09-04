@@ -2,7 +2,6 @@
 class RC_PylonM_2500Rnd_338_SLAP_T_R_right;
 class RC_AI_PylonM_2500Rnd_338_SLAP_T_R_right: RC_PylonM_2500Rnd_338_SLAP_T_R_right
 {
-	pylonWeapon="RC_PylonW_338_Minigun";
 	ammo="RC_AI_Pylon_B_338_SLAP_T_R";
 	hardpoints[]={"RC_AI_Hardpoint_V1_Right","RC_AI_Hardpoint_O_V1_Right"};
 };
@@ -43,7 +42,6 @@ class RC_AI_PylonM_5000Rnd_338_SLAP_T_Y_right: RC_PylonM_5000Rnd_338_SLAP_T_Y_ri
 class RC_PylonM_1000Rnd_127mm_SLAP_T_R_left;
 class RC_AI_PylonM_1000Rnd_127mm_SLAP_T_R_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_left
 {
-	pylonWeapon="RC_PylonW_127mm_Minigun";
 	ammo="RC_AI_Pylon_B_127x99_SLAP_T_R";
 	hardpoints[]={"RC_AI_Hardpoint_V2_Left","RC_AI_Hardpoint_O_V2_Left"};
 };
@@ -64,7 +62,6 @@ class RC_AI_PylonM_1000Rnd_127mm_SLAP_T_Y_left: RC_PylonM_1000Rnd_127mm_SLAP_T_Y
 class RC_PylonM_1000Rnd_127mm_SLAP_T_R_right;
 class RC_AI_PylonM_1000Rnd_127mm_SLAP_T_R_right: RC_PylonM_1000Rnd_127mm_SLAP_T_R_right
 {
-	pylonWeapon="RC_PylonW_127mm_Minigun";
 	ammo="RC_AI_Pylon_B_127x99_SLAP_T_R";
 	hardpoints[]={"RC_AI_Hardpoint_V2_Right","RC_AI_Hardpoint_O_V2_Right"};
 };
@@ -158,12 +155,28 @@ class RC_AI_PylonM_250Rnd_30mm: RC_PylonM_250Rnd_30mm
 	ammo="RC_AI_Pylon_B_30mm_MP_QF_T_R";
     hardpoints[]={"RC_AI_Hardpoint_V4"};
 };
+/*
 class RC_PylonM_125Rnd_30mm;
 class RC_AI_PylonM_125Rnd_30mm: RC_PylonM_125Rnd_30mm
 {
     ammo="RC_AI_Pylon_B_30mm_MP_QF_T_R"
 	hardpoints[]={"RC_AI_Hardpoint_V3"};
 };
+*/
+class RC_PylonM_250Rnd_30mm_Proxy;
+class RC_AI_PylonM_250Rnd_30mm_Proxy: RC_PylonM_250Rnd_30mm_Proxy
+{
+	ammo="RC_AI_Pylon_B_30mm_MP_QF_Proxy_T_R";
+	hardpoints[]={"RC_AI_Hardpoint_V4"};
+};
+/*
+class RC_PylonM_125Rnd_30mm_Proxy;
+class RC_AI_PylonM_125Rnd_30mm_Proxy: RC_PylonM_125Rnd_30mm_Proxy
+{
+	ammo="RC_AI_Pylon_B_30mm_MP_QF_Proxy_T_R";
+	hardpoints[]={"RC_AI_Hardpoint_V3"};
+};
+*/
 /*
 class RC_PylonM_250Rnd_30mm_Lead;
 class RC_AI_PylonM_250Rnd_30mm_Lead: RC_PylonM_250Rnd_30mm_Lead
@@ -171,13 +184,6 @@ class RC_AI_PylonM_250Rnd_30mm_Lead: RC_PylonM_250Rnd_30mm_Lead
     pylonWeapon="RC_PylonW_TwinCannon_Lead";
     ammo="RC_AI_Pylon_B_30mm_MP_QF_T_R"
 };
-class RC_PylonM_250Rnd_30mm_Proxy;
-class RC_AI_PylonM_250Rnd_30mm_Proxy: RC_PylonM_250Rnd_30mm_Proxy
-{
-	ammo="RC_AI_Pylon_B_30mm_MP_QF_Proxy_T";	//RC_B_35mm_MPAB_DF_T_R
-	hardpoints[]={"OM_H_Proxy"};
-};
-*/
 class RC_PylonM_250Rnd_30mm_Proxy_Lead;
 class RC_AI_PylonM_250Rnd_30mm_Proxy_Lead: RC_PylonM_250Rnd_30mm_Proxy_Lead
 {
@@ -185,6 +191,37 @@ class RC_AI_PylonM_250Rnd_30mm_Proxy_Lead: RC_PylonM_250Rnd_30mm_Proxy_Lead
     ammo="RC_AI_Pylon_B_30mm_MP_QF_Proxy_T";
     hardpoints[]={"RC_AI_Hardpoint_V4"};
 };
+*/
+
+
+class RC_PylonM_250Rnd_30mm_O;
+class RC_AI_PylonM_250Rnd_30mm_O: RC_PylonM_250Rnd_30mm_O
+{
+	ammo="RC_AI_Pylon_B_30mm_MP_QF_T_R";
+    hardpoints[]={"RC_AI_Hardpoint_O_V4"};
+};
+/*
+class RC_PylonM_125Rnd_30mm_O;
+class RC_AI_PylonM_125Rnd_30mm_O: RC_PylonM_125Rnd_30mm_O
+{
+    ammo="RC_AI_Pylon_B_30mm_MP_QF_T_R"
+	hardpoints[]={"RC_AI_Hardpoint_O_V3"};
+};
+*/
+class RC_PylonM_250Rnd_30mm_Proxy_O;
+class RC_AI_PylonM_250Rnd_30mm_Proxy_O: RC_PylonM_250Rnd_30mm_Proxy_O
+{
+	ammo="RC_AI_Pylon_B_30mm_MP_QF_Proxy_T_R";
+	hardpoints[]={"RC_AI_Hardpoint_O_V4"};
+};
+/*
+class RC_PylonM_125Rnd_30mm_Proxy_O;
+class RC_AI_PylonM_125Rnd_30mm_Proxy_O: RC_PylonM_125Rnd_30mm_Proxy_O
+{
+	ammo="RC_AI_Pylon_B_30mm_MP_QF_Proxy_T_R";
+	hardpoints[]={"RC_AI_Hardpoint_O_V3"};
+};
+*/
 
 
 /*
@@ -296,7 +333,7 @@ class RC_AI_PylonM_19Rnd_Hydra_MP_Proxy: RC_PylonM_19Rnd_Hydra_MP_Proxy
 class RC_PylonM_19Rnd_S5_MP_Proxy;
 class RC_AI_PylonM_19Rnd_S5_MP_Proxy: RC_PylonM_19Rnd_S5_MP_Proxy
 {
-	ammo="RC_AI_Hydra_MP_Proxy";
+	ammo="RC_AI_Hydra_MP_Proxy";	//RC_AI_Hydra_MP_Proxy
 	hardpoints[]={"RC_AI_Hardpoint_O_V4"};
 };
 

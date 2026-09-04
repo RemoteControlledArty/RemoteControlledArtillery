@@ -59,6 +59,10 @@ class RC_Pylon_B_30mm_MP_QF_T_Y: RC_Pylon_B_30mm_MP_QF_T_R {model="\A3\Weapons_f
 
 
 //proxy fuse (per script not cfg)
+class RC_Pylon_B_20mm_MP_QF_Proxy_T_R: RC_Pylon_B_20mm_MP_QF_T_R {};
+class RC_Pylon_B_25mm_MP_QF_Proxy_T_R: RC_Pylon_B_25mm_MP_QF_T_R {};
+class RC_Pylon_B_30mm_MP_QF_Proxy_T_R: RC_Pylon_B_30mm_MP_QF_T_R {};
+
 class RC_Pylon_B_20mm_MP_QF_Proxy_T: RC_Pylon_B_20mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
 class RC_Pylon_B_25mm_MP_QF_Proxy_T: RC_Pylon_B_25mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};
 class RC_Pylon_B_30mm_MP_QF_Proxy_T: RC_Pylon_B_30mm_MP_QF_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_white";};

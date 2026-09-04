@@ -211,17 +211,23 @@ class RC_PylonW_TwinCannon_Base: RC_PylonW_Twin_Core
 	{
 		//"RC_PylonM_300Rnd_20mm_Aegis",
 		"RC_PylonM_350Rnd_20mm",
+		"RC_PylonM_350Rnd_20mm_Proxy",
 		"RC_PylonM_300Rnd_25mm",
+		"RC_PylonM_300Rnd_25mm_Proxy",
 		"RC_PylonM_250Rnd_30mm",
-		"RC_PylonM_250Rnd_20mm_Proxy",
-		"RC_PylonM_250Rnd_25mm_Proxy",
 		"RC_PylonM_250Rnd_30mm_Proxy",
+
 		"RC_PylonM_175Rnd_20mm",
+		"RC_PylonM_175Rnd_20mm_Proxy",
 		"RC_PylonM_150Rnd_25mm",
+		"RC_PylonM_150Rnd_25mm_Proxy",
 		"RC_PylonM_125Rnd_30mm",
+		"RC_PylonM_125Rnd_30mm_Proxy",
 
         "RC_AI_PylonM_250Rnd_30mm",
-		"RC_AI_PylonM_250Rnd_30mm_Proxy"
+		"RC_AI_PylonM_250Rnd_30mm_Proxy",
+		"RC_AI_PylonM_125Rnd_30mm",
+		"RC_AI_PylonM_125Rnd_30mm_Proxy"
 	};
 	class manual: manual
 	{
@@ -256,14 +262,23 @@ class RC_PylonW_TwinCannon_Lead_Base: RC_PylonW_TwinCannon_Base
 	magazines[]=
 	{
 		"RC_PylonM_350Rnd_20mm_Lead",
-		"RC_PylonM_300Rnd_25mm_Lead",
-		"RC_PylonM_250Rnd_30mm_Lead",
 		"RC_PylonM_250Rnd_20mm_Proxy_Lead",
+		"RC_PylonM_300Rnd_25mm_Lead",
 		"RC_PylonM_250Rnd_25mm_Proxy_Lead",
+		"RC_PylonM_250Rnd_30mm_Lead",
 		"RC_PylonM_250Rnd_30mm_Proxy_Lead",
 
+		"RC_PylonM_175Rnd_20mm_Lead",
+		"RC_PylonM_175Rnd_20mm_Proxy_Lead",
+		"RC_PylonM_150Rnd_25mm_Lead",
+		"RC_PylonM_150Rnd_25mm_Proxy_Lead",
+		"RC_PylonM_125Rnd_30mm_Lead",
+		"RC_PylonM_125Rnd_30mm_Proxy_Lead",
+
         "RC_AI_PylonM_250Rnd_30mm_Lead",
-		"RC_AI_PylonM_250Rnd_30mm_Proxy_Lead"
+		"RC_AI_PylonM_250Rnd_30mm_Proxy_Lead",
+		"RC_AI_PylonM_125Rnd_30mm_Lead",
+		"RC_AI_PylonM_125Rnd_30mm_Proxy_Lead"
 	};
 };
 class RC_PylonW_TwinCannon_Lead: RC_PylonW_TwinCannon_Lead_Base
@@ -279,14 +294,23 @@ class RC_PylonW_Avtopushka_Base: RC_PylonW_TwinCannon_Base
 	magazines[]=
 	{
 		"RC_PylonM_350Rnd_20mm_O",
-		"RC_PylonM_300Rnd_25mm_O",
-		"RC_PylonM_250Rnd_30mm_O",
 		"RC_PylonM_350Rnd_20mm_Proxy_O",
+		"RC_PylonM_300Rnd_25mm_O",
 		"RC_PylonM_300Rnd_25mm_Proxy_O",
+		"RC_PylonM_250Rnd_30mm_O",
 		"RC_PylonM_250Rnd_30mm_Proxy_O",
+
 		"RC_PylonM_175Rnd_20mm_O",
+		"RC_PylonM_175Rnd_20mm_Proxy_O",
 		"RC_PylonM_150Rnd_25mm_O",
-		"RC_PylonM_125Rnd_30mm_O"
+		"RC_PylonM_150Rnd_25mm_Proxy_O",
+		"RC_PylonM_125Rnd_30mm_O",
+		"RC_PylonM_125Rnd_30mm_Proxy_O",
+		
+		"RC_AI_PylonM_250Rnd_30mm_O",
+		"RC_AI_PylonM_250Rnd_30mm_Proxy_O",
+		"RC_AI_PylonM_125Rnd_30mm_O",
+		"RC_AI_PylonM_125Rnd_30mm_Proxy_O"
 	};
 	class manual: manual
 	{
@@ -305,11 +329,18 @@ class RC_PylonW_Avtopushka_Lead_Base: RC_PylonW_Avtopushka_Base
 	magazines[]=
 	{
 		"RC_PylonM_350Rnd_20mm_Lead_O",
-		"RC_PylonM_300Rnd_25mm_Lead_O",
-		"RC_PylonM_250Rnd_30mm_Lead_O",
 		"RC_PylonM_350Rnd_20mm_Proxy_Lead_O",
+		"RC_PylonM_300Rnd_25mm_Lead_O",
 		"RC_PylonM_300Rnd_25mm_Proxy_Lead_O",
-		"RC_PylonM_250Rnd_30mm_Proxy_Lead_O"
+		"RC_PylonM_250Rnd_30mm_Lead_O",
+		"RC_PylonM_250Rnd_30mm_Proxy_Lead_O",
+
+		"RC_PylonM_175Rnd_20mm_Lead_O",
+		"RC_PylonM_175Rnd_20mm_Proxy_Lead_O",
+		"RC_PylonM_150Rnd_25mm_Lead_O",
+		"RC_PylonM_150Rnd_25mm_Proxy_Lead_O",
+		"RC_PylonM_125Rnd_30mm_Lead_O",
+		"RC_PylonM_125Rnd_30mm_Proxy_Lead_O"
 	};
 };
 class RC_PylonW_Avtopushka_Lead: RC_PylonW_Avtopushka_Lead_Base
@@ -372,8 +403,8 @@ class RC_PylonW_12Rnd_Hydra: RC_PylonW_12Rnd_Hydra_Base
 };
 class RC_PylonW_12Rnd_S5_Base: RC_PylonW_12Rnd_Hydra_Base
 {
-	displayName="55mm S-5 UB-12";
-	displayNameShort="55mm S-5 UB-12";
+	displayName="S-5 UB-12";
+	displayNameShort="S-5 UB-12";
 	magazines[]=
 	{
 		"RC_PylonM_12Rnd_S5_MP",
@@ -407,11 +438,9 @@ class rockets_Skyfire;
 class RC_PylonW_19Rnd_Hydra_Fetch: rockets_Skyfire
 {
 	class Burst;
-	/*
 	class Close_AI;
 	class Medium_AI;
 	class Far_AI;
-	*/
 };
 class RC_PylonW_19Rnd_Hydra_Base: RC_PylonW_19Rnd_Hydra_Fetch
 {
@@ -440,7 +469,6 @@ class RC_PylonW_19Rnd_Hydra_Base: RC_PylonW_19Rnd_Hydra_Fetch
 		reloadTime=0.15;
 		dispersion=0.004;	//0.015 default, 0.004 to make more viable alternative to guided against vics that need direct hit
 	};
-	/*
 	class Close_AI: Close_AI
 	{
 		displayName="Hydra";
@@ -459,7 +487,6 @@ class RC_PylonW_19Rnd_Hydra_Base: RC_PylonW_19Rnd_Hydra_Fetch
 		displayNameShort="Hydra";
 		reloadTime=0.15;
 	};
-	*/
 };
 class RC_PylonW_19Rnd_Hydra: RC_PylonW_19Rnd_Hydra_Base
 {
@@ -482,7 +509,6 @@ class RC_PylonW_19Rnd_S5_Base: RC_PylonW_19Rnd_Hydra_Base
 		displayName="S-5";
 		displayNameShort="S-5";
 	};
-	/*
 	class Close_AI: Close_AI
 	{
 		displayName="S-5";
@@ -498,7 +524,6 @@ class RC_PylonW_19Rnd_S5_Base: RC_PylonW_19Rnd_Hydra_Base
 		displayName="S-5";
 		displayNameShort="S-5";
 	};
-	*/
 };
 class RC_PylonW_19Rnd_S5: RC_PylonW_19Rnd_S5_Base
 {

@@ -306,6 +306,9 @@ class RC_PylonM_Autocannon_base: PylonWeapon_300Rnd_20mm_shells
 	muzzleEnd="muzzleEnd";
 	*/
 };
+
+
+//20mm
 class RC_PylonM_350Rnd_20mm: RC_PylonM_Autocannon_base
 {
 	scope=2;
@@ -322,29 +325,56 @@ class RC_PylonM_175Rnd_20mm: RC_PylonM_350Rnd_20mm
 	count=175;
 	hardpoints[]={"RC_Hardpoint_V3"};
 };
+
+
 class RC_PylonM_350Rnd_20mm_Lead: RC_PylonM_350Rnd_20mm
 {
 	displayName="> Lead 20mm MP-QF 350x";
 	displayNameShort="20mm MP-QF";
 	descriptionShort="20mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
+	hardpoints[]={"RC_Hardpoint_V4_Lead"};
 };
+class RC_PylonM_175Rnd_20mm_Lead: RC_PylonM_350Rnd_20mm_Lead
+{
+	displayName="> Lead 20mm MP-QF 175x";
+	count=175;
+	hardpoints[]={"RC_Hardpoint_V3_Lead"};
+};
+
+
 class RC_PylonM_350Rnd_20mm_Proxy: RC_PylonM_350Rnd_20mm
 {
 	displayName="> Proxy 20mm MP-QF 350x";
 	displayNameShort="20mm MP-QF Proxy";
-	descriptionShort="30mm Autocannon with proximity fuze";
-	ammo="RC_Pylon_B_20mm_MP_QF_Proxy_T";
-	hardpoints[]={"OM_H_Proxy"};
+	descriptionShort="20mm Autocannon with proximity fuze";
+	ammo="RC_Pylon_B_20mm_MP_QF_Proxy_T_R";
+	hardpoints[]={"RC_Hardpoint_V4"};
 };
+class RC_PylonM_175Rnd_20mm_Proxy: RC_PylonM_350Rnd_20mm_Proxy
+{
+	displayName="> Proxy 20mm MP-QF 175x";
+	count=175;
+	hardpoints[]={"RC_Hardpoint_V3"};
+};
+
+
 class RC_PylonM_350Rnd_20mm_Proxy_Lead: RC_PylonM_350Rnd_20mm_Proxy
 {
 	displayName="> Lead Proxy 20mm MP-QF 350x";
-	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
+	descriptionShort="20mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
+	hardpoints[]={"RC_Hardpoint_V4_Lead"};
+};
+class RC_PylonM_175Rnd_20mm_Proxy_Lead: RC_PylonM_350Rnd_20mm_Proxy_Lead
+{
+	displayName="> Lead Proxy 20mm MP-QF 175x";
+	count=175;
+	hardpoints[]={"RC_Hardpoint_V3_Lead"};
 };
 
 
+//25mm
 class RC_PylonM_300Rnd_25mm: RC_PylonM_350Rnd_20mm
 {
 	displayName="> 25mm MP-QF 300x";
@@ -359,29 +389,56 @@ class RC_PylonM_150Rnd_25mm: RC_PylonM_300Rnd_25mm
 	count=150;
 	hardpoints[]={"RC_Hardpoint_V3"};
 };
+
+
 class RC_PylonM_300Rnd_25mm_Lead: RC_PylonM_300Rnd_25mm
 {
 	displayName="> Lead 25mm MP-QF 300x";
 	displayNameShort="25mm MP-QF";
 	descriptionShort="25mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
+	hardpoints[]={"RC_Hardpoint_V4_Lead"};
 };
+class RC_PylonM_150Rnd_25mm_Lead: RC_PylonM_300Rnd_25mm_Lead
+{
+	displayName="> Lead 25mm MP-QF 150x";
+	count=150;
+	hardpoints[]={"RC_Hardpoint_V3_Lead"};
+};
+
+
 class RC_PylonM_300Rnd_25mm_Proxy: RC_PylonM_300Rnd_25mm
 {
 	displayName="> Proxy 25mm MP-QF 300x";
 	displayNameShort="25mm MP-QF Proxy";
-	descriptionShort="30mm Autocannon with proximity fuze";
-	ammo="RC_Pylon_B_25mm_MP_QF_Proxy_T";
-	hardpoints[]={"OM_H_Proxy"};
+	descriptionShort="25mm Autocannon with proximity fuze";
+	ammo="RC_Pylon_B_25mm_MP_QF_Proxy_T_R";
+	hardpoints[]={"RC_Hardpoint_V4"};
 };
+class RC_PylonM_150Rnd_25mm_Proxy: RC_PylonM_300Rnd_25mm_Proxy
+{
+	displayName="> Proxy 25mm MP-QF 150x";
+	count=150;
+	hardpoints[]={"RC_Hardpoint_V3"};
+};
+
+
 class RC_PylonM_300Rnd_25mm_Proxy_Lead: RC_PylonM_300Rnd_25mm_Proxy
 {
 	displayName="> Lead Proxy 25mm MP-QF 300x";
-	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
+	descriptionShort="25mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
+	hardpoints[]={"RC_Hardpoint_V4_Lead"};
+};
+class RC_PylonM_150Rnd_25mm_Proxy_Lead: RC_PylonM_300Rnd_25mm_Proxy_Lead
+{
+	displayName="> Lead Proxy 25mm MP-QF 150x";
+	count=150;
+	hardpoints[]={"RC_Hardpoint_V3_Lead"};
 };
 
 
+//30mm
 class RC_PylonM_250Rnd_30mm: RC_PylonM_350Rnd_20mm
 {
 	displayName="> 30mm MP-QF 250x";
@@ -396,29 +453,56 @@ class RC_PylonM_125Rnd_30mm: RC_PylonM_250Rnd_30mm
 	count=125;
 	hardpoints[]={"RC_Hardpoint_V3"};
 };
+
+
 class RC_PylonM_250Rnd_30mm_Lead: RC_PylonM_250Rnd_30mm
 {
 	displayName="> Lead 30mm MP-QF 250x";
 	displayNameShort="30mm MP-QF";
 	descriptionShort="30mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
+	hardpoints[]={"RC_Hardpoint_V4_Lead"};
 };
+class RC_PylonM_125Rnd_30mm_Lead: RC_PylonM_250Rnd_30mm_Lead
+{
+	displayName="> Lead 30mm MP-QF 125x";
+	count=125;
+	hardpoints[]={"RC_Hardpoint_V3_Lead"};
+};
+
+
 class RC_PylonM_250Rnd_30mm_Proxy: RC_PylonM_250Rnd_30mm
 {
 	displayName="> Proxy 30mm MP-QF 250x";
 	displayNameShort="30mm MP-QF Proxy";
 	descriptionShort="30mm Autocannon with proximity fuze";
-	ammo="RC_Pylon_B_30mm_MP_QF_Proxy_T";	//RC_B_35mm_MPAB_DF_T_R
-	hardpoints[]={"OM_H_Proxy"};
+	ammo="RC_Pylon_B_30mm_MP_QF_Proxy_T_R";	//RC_B_35mm_MPAB_DF_T_R
+	hardpoints[]={"RC_Hardpoint_V4"};
 };
+class RC_PylonM_125Rnd_30mm_Proxy: RC_PylonM_250Rnd_30mm_Proxy
+{
+	displayName="> Proxy 30mm MP-QF 125x";
+	count=125;
+	hardpoints[]={"RC_Hardpoint_V3"};
+};
+
+
 class RC_PylonM_250Rnd_30mm_Proxy_Lead: RC_PylonM_250Rnd_30mm_Proxy
 {
 	displayName="> Lead Proxy 30mm MP-QF 250x";
 	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_TwinCannon_Lead";
+	hardpoints[]={"RC_Hardpoint_V4_Lead"};
+};
+class RC_PylonM_125Rnd_30mm_Proxy_Lead: RC_PylonM_250Rnd_30mm_Proxy_Lead
+{
+	displayName="> Lead Proxy 30mm MP-QF 125x";
+	count=125;
+	hardpoints[]={"RC_Hardpoint_V3_Lead"};
 };
 
 
+//20mm O
 class RC_PylonM_350Rnd_20mm_O: RC_PylonM_350Rnd_20mm
 {
 	displayName="> 20mm MP-QF 350x";
@@ -435,29 +519,55 @@ class RC_PylonM_175Rnd_20mm_O: RC_PylonM_350Rnd_20mm_O
 	count=175;
 	hardpoints[]={"RC_Hardpoint_O_V3"};
 };
+
+
 class RC_PylonM_350Rnd_20mm_Lead_O: RC_PylonM_350Rnd_20mm_O
 {
 	displayName="> Lead 20mm MP-QF 350x";
 	displayNameShort="20mm MP-QF";
 	descriptionShort="20mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
+	hardpoints[]={"RC_Hardpoint_O_V4_Lead"};
 };
+class RC_PylonM_175Rnd_20mm_Lead_O: RC_PylonM_350Rnd_20mm_Lead_O
+{
+	displayName="> Lead 20mm MP-QF 175x";
+	count=175;
+	hardpoints[]={"RC_Hardpoint_O_V3_Lead"};
+};
+
+
 class RC_PylonM_350Rnd_20mm_Proxy_O: RC_PylonM_350Rnd_20mm_O
 {
 	displayName="> Proxy 20mm MP-QF 350x";
 	displayNameShort="20mm MP-QF Proxy";
-	descriptionShort="30mm Autocannon with proximity fuze";
-	ammo="RC_Pylon_B_20mm_MP_QF_Proxy_T";
-	hardpoints[]={"OM_H_O_Proxy"};
+	descriptionShort="20mm Autocannon with proximity fuze";
+	ammo="RC_Pylon_B_20mm_MP_QF_Proxy_T_R";
 };
+class RC_PylonM_175Rnd_20mm_Proxy_O: RC_PylonM_350Rnd_20mm_Proxy_O
+{
+	displayName="> Proxy 20mm MP-QF 175x";
+	count=175;
+	hardpoints[]={"RC_Hardpoint_O_V3"};
+};
+
+
 class RC_PylonM_350Rnd_20mm_Proxy_Lead_O: RC_PylonM_350Rnd_20mm_Proxy_O
 {
 	displayName="> Lead Proxy 20mm MP-QF 350x";
-	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
+	descriptionShort="20mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
+	hardpoints[]={"RC_Hardpoint_O_V3_Lead"};
+};
+class RC_PylonM_175Rnd_20mm_Proxy_Lead_O: RC_PylonM_350Rnd_20mm_Proxy_Lead_O
+{
+	displayName="> Lead Proxy 20mm MP-QF 175x";
+	count=175;
+	hardpoints[]={"RC_Hardpoint_O_V3_Lead"};
 };
 
 
+//25mm O
 class RC_PylonM_300Rnd_25mm_O: RC_PylonM_350Rnd_20mm_O
 {
 	displayName="> 25mm MP-QF 300x";
@@ -472,29 +582,55 @@ class RC_PylonM_150Rnd_25mm_O: RC_PylonM_300Rnd_25mm_O
 	count=150;
 	hardpoints[]={"RC_Hardpoint_O_V3"};
 };
+
+
 class RC_PylonM_300Rnd_25mm_Lead_O: RC_PylonM_300Rnd_25mm_O
 {
 	displayName="> Lead 25mm MP-QF 300x";
 	displayNameShort="25mm MP-QF";
 	descriptionShort="25mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
+	hardpoints[]={"RC_Hardpoint_O_V4_Lead"};
 };
+class RC_PylonM_175Rnd_25mm_Lead_O: RC_PylonM_300Rnd_25mm_Lead_O
+{
+	displayName="> Lead 25mm MP-QF 150x";
+	count=150;
+	hardpoints[]={"RC_Hardpoint_O_V3_Lead"};
+};
+
+
 class RC_PylonM_300Rnd_25mm_Proxy_O: RC_PylonM_300Rnd_25mm_O
 {
 	displayName="> Proxy 25mm MP-QF 300x";
 	displayNameShort="25mm MP-QF Proxy";
-	descriptionShort="30mm Autocannon with proximity fuze";
-	ammo="RC_Pylon_B_25mm_MP_QF_Proxy_T";
-	hardpoints[]={"OM_H_O_Proxy"};
+	descriptionShort="25mm Autocannon with proximity fuze";
+	ammo="RC_Pylon_B_25mm_MP_QF_Proxy_T_R";
 };
+class RC_PylonM_175Rnd_25mm_Proxy_O: RC_PylonM_300Rnd_25mm_Proxy_O
+{
+	displayName="> Proxy 25mm MP-QF 150x";
+	count=150;
+	hardpoints[]={"RC_Hardpoint_O_V3"};
+};
+
+
 class RC_PylonM_300Rnd_25mm_Proxy_Lead_O: RC_PylonM_300Rnd_25mm_Proxy_O
 {
 	displayName="> Lead Proxy 25mm MP-QF 300x";
-	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
+	descriptionShort="25mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
+	hardpoints[]={"RC_Hardpoint_O_V4_Lead"};
+};
+class RC_PylonM_150Rnd_25mm_Proxy_Lead_O: RC_PylonM_300Rnd_25mm_Proxy_Lead_O
+{
+	displayName="> Lead Proxy 25mm MP-QF 150x";
+	count=150;
+	hardpoints[]={"RC_Hardpoint_O_V3_Lead"};
 };
 
 
+//30mm O
 class RC_PylonM_250Rnd_30mm_O: RC_PylonM_350Rnd_20mm_O
 {
 	displayName="> 30mm MP-QF 250x";
@@ -509,26 +645,51 @@ class RC_PylonM_125Rnd_30mm_O: RC_PylonM_250Rnd_30mm_O
 	count=125;
 	hardpoints[]={"RC_Hardpoint_O_V3"};
 };
+
+
 class RC_PylonM_250Rnd_30mm_Lead_O: RC_PylonM_250Rnd_30mm_O
 {
 	displayName="> Lead 30mm MP-QF 250x";
 	displayNameShort="30mm MP-QF";
 	descriptionShort="30mm Autocannon with lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
+	hardpoints[]={"RC_Hardpoint_O_V4_Lead"};
 };
+class RC_PylonM_125Rnd_30mm_Lead_O: RC_PylonM_250Rnd_30mm_Lead_O
+{
+	displayName="> Lead 30mm MP-QF 125x";
+	count=125;
+	hardpoints[]={"RC_Hardpoint_O_V3_Lead"};
+};
+
+
 class RC_PylonM_250Rnd_30mm_Proxy_O: RC_PylonM_250Rnd_30mm_O
 {
 	displayName="> Proxy 30mm MP-QF 250x";
 	displayNameShort="30mm MP-QF Proxy";
 	descriptionShort="30mm Autocannon with proximity fuze";
-	ammo="RC_Pylon_B_30mm_MP_QF_Proxy_T";	//RC_B_35mm_MPAB_DF_T_R
-	hardpoints[]={"OM_H_O_Proxy"};
+	ammo="RC_Pylon_B_30mm_MP_QF_Proxy_T_R";	//RC_B_35mm_MPAB_DF_T_R
 };
+class RC_PylonM_125Rnd_30mm_Proxy_O: RC_PylonM_250Rnd_30mm_Proxy_O
+{
+	displayName="> Proxy 30mm MP-QF 125x";
+	count=125;
+	hardpoints[]={"RC_Hardpoint_O_V3"};
+};
+
+
 class RC_PylonM_250Rnd_30mm_Proxy_Lead_O: RC_PylonM_250Rnd_30mm_Proxy_O
 {
 	displayName="> Lead Proxy 30mm MP-QF 250x";
 	descriptionShort="30mm Autocannon with proximity fuze & lead indicator on locked target";
 	pylonWeapon="RC_PylonW_Avtopushka_Lead";
+	hardpoints[]={"RC_Hardpoint_O_V4_Lead"};
+};
+class RC_PylonM_125Rnd_30mm_Proxy_Lead_O: RC_PylonM_250Rnd_30mm_Proxy_Lead_O
+{
+	displayName="> Lead Proxy 30mm MP-QF 125x";
+	count=125;
+	hardpoints[]={"RC_Hardpoint_O_V3_Lead"};
 };
 
 

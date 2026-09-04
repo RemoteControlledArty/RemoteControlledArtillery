@@ -1361,7 +1361,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_AW159M.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_Ka60M.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_MH80M.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_Mi48M.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_Mi48M.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_MQ12M.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Heli_OMH.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\Howitzer.hpp"

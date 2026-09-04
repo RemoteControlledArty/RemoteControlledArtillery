@@ -47,6 +47,16 @@ class RC_RHS_PylonW_GAU19A: RC_RHS_PylonW_GAU19A_Base
 		"RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right",
 		"RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right",
 		"RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right"
+
+		/*
+		"RC_AI_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left",
+		"RC_AI_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left",
+		"RC_AI_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left",
+		
+		"RC_AI_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right",
+		"RC_AI_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right",
+		"RC_AI_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right"
+		*/
 	};
 	modes[]=
 	{
@@ -84,7 +94,15 @@ class RC_PylonW_127mm_Minigun: RC_PylonW_127mm_Minigun_Base
 
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_R_right",
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_G_right",
-		"RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right"
+		"RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right",
+
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_R_left",
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_G_left",
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_Y_left",
+	
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_R_right",
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_G_right",
+		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_Y_right"
 	};
 	modes[]=
 	{
@@ -129,7 +147,11 @@ class RC_PylonW_TwinHMG: RC_RHS_PylonW_TwinHMG_Fetch
 	{
 		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R",
 		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_G",
-		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y"
+		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y",
+
+		"RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_R",
+		"RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_G",
+		"RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y"
 	};
 	class manual: manual
 	{
