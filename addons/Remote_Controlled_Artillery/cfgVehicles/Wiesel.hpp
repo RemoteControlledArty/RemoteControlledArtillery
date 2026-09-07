@@ -1799,7 +1799,7 @@ class RC_Wiesel_AC_DIG_manned_I: RC_Wiesel_AC_WD_manned_I
 };
 
 
-class RC_Wiesel_cUAS_WD_Base: RC_Wiesel_AC_WD_Base
+class RC_Wiesel_cUAS_Base: RC_Wiesel_AC_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -1976,15 +1976,10 @@ class RC_Wiesel_cUAS_WD_Base: RC_Wiesel_AC_WD_Base
 };
 
 
-class RC_Wiesel_cUAS_WD: RC_Wiesel_cUAS_WD_Base
+class RC_Wiesel_cUAS_UV_Base: RC_Wiesel_cUAS_Base
 {
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	crew="B_UAV_AI";
+
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
@@ -1999,11 +1994,18 @@ class RC_Wiesel_cUAS_WD: RC_Wiesel_cUAS_WD_Base
 		};
 	};
 };
+class RC_Wiesel_cUAS_WD: RC_Wiesel_cUAS_UV_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+    #include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+};
 class RC_Wiesel_cUAS_WD_O: RC_Wiesel_cUAS_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	class Turrets: Turrets
@@ -2016,9 +2018,7 @@ class RC_Wiesel_cUAS_WD_O: RC_Wiesel_cUAS_WD
 };
 class RC_Wiesel_cUAS_WD_I: RC_Wiesel_cUAS_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class Turrets: Turrets
@@ -2042,7 +2042,7 @@ class RC_Wiesel_cUAS_DIG_I: RC_Wiesel_cUAS_WD_I
 
 
 //semi manned version
-class RC_Wiesel_cUAS_WD_manned: RC_Wiesel_cUAS_WD_Base
+class RC_Wiesel_cUAS_manned_Base: RC_Wiesel_cUAS_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -2053,15 +2053,8 @@ class RC_Wiesel_cUAS_WD_manned: RC_Wiesel_cUAS_WD_Base
 	};
 
 	displayName="Wiesel II C-UAS";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
-	crew="B_UAV_AI";
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	#include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsB.hpp"
-
+	
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -2120,11 +2113,20 @@ class RC_Wiesel_cUAS_WD_manned: RC_Wiesel_cUAS_WD_Base
 		};
 	};
 };
+
+
+class RC_Wiesel_cUAS_WD_manned: RC_Wiesel_cUAS_manned_Base
+{
+    scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+    #include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsB.hpp"
+};
 class RC_Wiesel_cUAS_WD_manned_O: RC_Wiesel_cUAS_WD_manned
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -2137,9 +2139,7 @@ class RC_Wiesel_cUAS_WD_manned_O: RC_Wiesel_cUAS_WD_manned
 };
 class RC_Wiesel_cUAS_WD_manned_I: RC_Wiesel_cUAS_WD_manned
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsI.hpp"
 
 	class Turrets: Turrets
