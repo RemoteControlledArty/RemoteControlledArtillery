@@ -737,6 +737,11 @@ class RC_PylonW_SRAM_Green_Base: RC_PylonW_SRAM_Base
 		"RC_PylonM_12Rnd_SRAM_Green",
 		"RC_PylonM_12Rnd_SRAM_Green_Proxy",
 
+		"RC_PylonM_12Rnd_SRAM1_Green",
+		"RC_PylonM_12Rnd_SRAM2_Green",
+		"RC_PylonM_12Rnd_SRAM3_Green",
+		"RC_PylonM_12Rnd_SRAM4_Green",
+
 		"RC_AI_PylonM_12Rnd_SRAM",
 		"RC_AI_PylonM_12Rnd_SRAM_Proxy",
 		"RC_AI_PylonM_12Rnd_SRAM_Green",
@@ -745,6 +750,71 @@ class RC_PylonW_SRAM_Green_Base: RC_PylonW_SRAM_Base
 };
 class RC_PylonW_SRAM_Green: RC_PylonW_SRAM_Green_Base
 {
+};
+
+
+class RC_PylonW_SRAM1_Green: RC_PylonW_SRAM_Green_Base
+{
+	canLock=2;
+	allowTabLock=1;
+
+	modes[]=
+	{
+		"Burst",
+		"Overfly",
+		//"TopDown",
+		"Cruise"
+	};
+	class Cruise: Burst
+	{
+		displayName="$STR_A3_firemode_terrain0";
+		textureType="terrain";
+
+		minRange=200;
+		minRangeProbab=0.40000001;
+		midRange=2000;
+		midRangeProbab=0.89999998;
+		maxRange=4000;
+		maxRangeProbab=0.94999999;
+	};
+	/*
+	class TopDown: Cruise
+	{
+		displayName="Overfly Top Attack";
+		textureType="overfly";
+	};
+	*/
+	class Overfly: Cruise
+	{
+		displayName="Overfly Top Attack";
+		textureType="overfly";
+	};
+
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_SRAM1_Green"
+	};
+};
+class RC_PylonW_SRAM2_Green: RC_PylonW_SRAM_Green_Base
+{
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_SRAM2_Green"
+	};
+};
+class RC_PylonW_SRAM3_Green: RC_PylonW_SRAM_Green_Base
+{
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_SRAM3_Green"
+	};
+};
+class RC_PylonW_SRAM4_Green: RC_PylonW_SRAM_Green_Base
+{
+	magazines[]=
+	{
+		"RC_PylonM_12Rnd_SRAM4_Green"
+	};
 };
 
 

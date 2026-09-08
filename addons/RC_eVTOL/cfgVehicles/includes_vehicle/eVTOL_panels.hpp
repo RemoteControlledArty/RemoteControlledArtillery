@@ -11,15 +11,13 @@ class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayMa
 			range[]={6000,4000,2000,1000,8000};
 			resource="RscCustomInfoSensors";
 		};
+		/*
 		class VehicleMissileDisplay
 		{
 			componentType="TransportFeedDisplayComponent";
 			source="Missile";
 		};
-		class CrewDisplay
-		{
-			componentType="CrewDisplayComponent";
-		};
+		*/
 		class SlingLoadDisplay
 		{
 			componentType="SlingLoadDisplayComponent";
@@ -52,15 +50,13 @@ class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayMan
 			range[]={1000,2000,4000,6000,8000};
 			resource="RscCustomInfoSensors";
 		};
+		/*
 		class VehicleMissileDisplay
 		{
 			componentType="TransportFeedDisplayComponent";
 			source="Missile";
 		};
-		class CrewDisplay
-		{
-			componentType="CrewDisplayComponent";
-		};
+		*/
 		class SlingLoadDisplay
 		{
 			componentType="SlingLoadDisplayComponent";

@@ -71,7 +71,7 @@ class RC_MQ12M_V3_I: RC_MQ12M_V3
 };
 
 
-class RC_MQ12M_V4: RC_MQ12M_V2
+class RC_MQ12M_V4: RC_MQ12M_V3
 {
 	displayName="MQ-12M - Mantis - V4"
 	editorSubcategory="RC_Heli_V4_subcat";
@@ -93,7 +93,7 @@ class RC_MQ12M_V4_I: RC_MQ12M_V4
 };
 
 
-class RC_MQ12M_V5: RC_MQ12M_V2
+class RC_MQ12M_V5: RC_MQ12M_V3
 {
 	displayName="MQ-12M - Mantis - V5"
 	editorSubcategory="RC_Heli_V5_subcat";
@@ -115,7 +115,7 @@ class RC_MQ12M_V5_I: RC_MQ12M_V5
 };
 
 
-class RC_MQ12M_V6: RC_MQ12M_V2
+class RC_MQ12M_V6: RC_MQ12M_V3
 {
 	displayName="MQ-12M - Mantis - V6"
 	editorSubcategory="RC_Heli_V6_subcat";

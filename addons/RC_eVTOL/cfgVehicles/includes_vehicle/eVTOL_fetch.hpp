@@ -1,0 +1,12 @@
+class ViewPilot;
+class Viewoptics;
+class Turrets;
+class OpticsIn;
+class Wide;
+class Components;
+class AnimationSources;
+class HitPoints;
+class UserActions;
+class EventHandlers;
+scope=0;
+scopeCurator=0;

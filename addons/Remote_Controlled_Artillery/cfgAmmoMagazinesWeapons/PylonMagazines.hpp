@@ -1023,6 +1023,45 @@ class RC_PylonM_12Rnd_SRAM_Green: PylonRack_12Rnd_PG_missiles
 };
 
 
+class RC_PylonM_12Rnd_SRAM1_Green: RC_PylonM_12Rnd_SRAM_Green
+{
+	displayName="> SRAM1";
+	displayNameShort="SRAM1";
+	pylonWeapon="RC_PylonW_SRAM1_Green";
+	ammo="RC_SRAM1";
+	//initSpeed=150;
+
+	count=48;
+};
+class RC_PylonM_12Rnd_SRAM2_Green: RC_PylonM_12Rnd_SRAM_Green
+{
+	displayName="> SRAM2";
+	displayNameShort="SRAM2";
+	pylonWeapon="RC_PylonW_SRAM2_Green";
+	ammo="RC_SRAM2";
+
+	count=48;
+};
+class RC_PylonM_12Rnd_SRAM3_Green: RC_PylonM_12Rnd_SRAM_Green
+{
+	displayName="> SRAM3";
+	displayNameShort="SRAM3";
+	pylonWeapon="RC_PylonW_SRAM3_Green";
+	ammo="RC_SRAM3";
+
+	count=48;
+};
+class RC_PylonM_12Rnd_SRAM4_Green: RC_PylonM_12Rnd_SRAM_Green
+{
+	displayName="> SRAM4";
+	displayNameShort="SRAM4";
+	pylonWeapon="RC_PylonW_SRAM4_Green";
+	ammo="RC_SRAM4";
+
+	count=48;
+};
+
+
 //heavy guided
 //class 12Rnd_PG_missiles
 class PylonRack_1Rnd_LG_scalpel;

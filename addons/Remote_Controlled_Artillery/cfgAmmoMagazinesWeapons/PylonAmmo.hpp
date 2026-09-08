@@ -359,6 +359,118 @@ class RC_SRAM_Vanilla: RC_SRAM
 };
 
 
+class RC_SRAM1: RC_SRAM_Vanilla
+{
+	flightProfiles[]=
+	{
+		"Overfly",
+		//"TopDown",
+		"Cruise"
+	};
+	
+	//initTime=1.5;
+
+	class Overfly
+	{
+		overflyElevation=1;
+	};
+	/*
+	class TopDown
+	{
+		ascendHeight=50;
+		descendDistance=200;
+		minDistance=200;
+		ascendAngle=45;
+	};
+	*/
+	class Cruise
+	{
+		preferredFlightAltitude=50;	//50
+		lockDistanceToTarget=200;
+		//overflyElevation=10;
+	};
+
+	submunitionDirectionType="SubmunitionTargetDirection";
+	submunitionInitialOffset[]={0,0,-0.5};
+
+
+	maneuvrability=60;	//8
+	airFriction=0.1;	//maybe increase and increase thrust, for post thrusttime slowdown
+	sideAirFriction=4;	//0.16
+
+	triggerDistance=10;
+	proximityExplosionDistance=10;
+
+	irLock=1;
+	airLock=1;
+	laserLock=1;
+
+	thrustTime=4;	//adjust to match 1km
+	thrust=200;		//825
+};
+class RC_SRAM2: RC_SRAM_Vanilla
+{
+	flightProfiles[]=
+	{
+		"Overfly"
+	};
+	class Overfly
+	{
+		overflyElevation=10;
+	};
+
+	submunitionDirectionType="SubmunitionTargetDirection";
+	submunitionInitialOffset[]={0,0,-0.5};
+
+
+	maneuvrability=60;	//8
+	airFriction=0.1;	//maybe increase and increase thrust, for post thrusttime slowdown
+	sideAirFriction=4;	//0.16
+
+	triggerDistance=10;
+	proximityExplosionDistance=10;
+
+	irLock=1;
+	airLock=1;
+	laserLock=1;
+
+	thrustTime=4;	//adjust to match 1km
+	thrust=400;		//825
+};
+class RC_SRAM3: RC_SRAM_Vanilla
+{
+	maneuvrability=60;	//8
+	airFriction=0.1;	//maybe increase and increase thrust, for post thrusttime slowdown
+	sideAirFriction=4;	//0.16
+
+	triggerDistance=10;
+	proximityExplosionDistance=10;
+
+	irLock=1;
+	airLock=1;
+	laserLock=1;
+
+	thrustTime=4;	//adjust to match 1km
+	thrust=400;		//825
+};
+class RC_SRAM4: RC_SRAM_Vanilla
+{
+	maneuvrability=60;	//8
+	airFriction=0.1;	//maybe increase and increase thrust, for post thrusttime slowdown
+	sideAirFriction=4;	//0.16
+
+	triggerDistance=10;
+	proximityExplosionDistance=10;
+
+	irLock=1;
+	airLock=1;
+	laserLock=1;
+
+	thrustTime=4;	//adjust to match 1km
+	thrust=400;		//825
+};
+
+
 //heavy guided
 class M_Scalpel_AT;
 class RC_AGM114K: M_Scalpel_AT

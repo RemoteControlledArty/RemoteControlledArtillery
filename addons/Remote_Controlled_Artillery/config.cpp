@@ -1246,6 +1246,7 @@ class CfgEditorSubcategories
 	class RC_FSV_subcat {displayname="FSVs";};
 	class RC_MBT_subcat {displayname="MBTs";};
 
+	class RC_eVTOL_subcat {displayname="eVTOL";};
 	class RC_Heli_subcat {displayname="Helis";};
 	class RC_Heli_outdated_subcat {displayname="Helis - outdated";};
 	class RC_Heli_V1_subcat {displayname="Helis - V1 : .338";};
