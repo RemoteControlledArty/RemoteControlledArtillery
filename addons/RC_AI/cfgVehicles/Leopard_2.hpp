@@ -225,8 +225,8 @@ class RC_AI_I_Leopard_WD: RC_AI_I_Leopard_A
 //ReTextures (optional, found in steam workshop)
 class RC_AI_B_Leopard_ReTex_WD: RC_AI_B_Leopard_A
 {
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Woodland_subcat";
+	//faction="RemoteControlled_ReTex_B";
+	//editorSubcategory="RC_ReTex_Woodland_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"leopard2\data\leopard_ext01_wd.paa",
@@ -237,8 +237,8 @@ class RC_AI_B_Leopard_ReTex_WD: RC_AI_B_Leopard_A
 };
 class RC_AI_O_Leopard_ReTex_WD: RC_AI_O_Leopard_A
 {
-	faction="RemoteControlled_ReTex_O";
-	editorSubcategory="RC_ReTex_Woodland_subcat";
+	//faction="RemoteControlled_ReTex_O";
+	//editorSubcategory="RC_ReTex_Woodland_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"leopard2\data\leopard_ext01_wd.paa",
@@ -249,8 +249,8 @@ class RC_AI_O_Leopard_ReTex_WD: RC_AI_O_Leopard_A
 };
 class RC_AI_I_Leopard_ReTex_WD: RC_AI_I_Leopard_A
 {
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Woodland_subcat";
+	//faction="RemoteControlled_ReTex_B";
+	//editorSubcategory="RC_ReTex_Woodland_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"leopard2\data\leopard_ext01_wd.paa",
@@ -263,8 +263,8 @@ class RC_AI_I_Leopard_ReTex_WD: RC_AI_I_Leopard_A
 
 class RC_AI_B_Leopard_ReTex_A: RC_AI_B_Leopard_A
 {
-	faction="RemoteControlled_ReTex_B";
-	editorSubcategory="RC_ReTex_Arid_subcat";
+	//faction="RemoteControlled_ReTex_B";
+	//editorSubcategory="RC_ReTex_Arid_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"leopard2\data\leopard_ext01_e.paa",
@@ -275,8 +275,8 @@ class RC_AI_B_Leopard_ReTex_A: RC_AI_B_Leopard_A
 };
 class RC_AI_O_Leopard_ReTex_A: RC_AI_O_Leopard_A
 {
-	faction="RemoteControlled_ReTex_O";
-	editorSubcategory="RC_ReTex_Arid_subcat";
+	//faction="RemoteControlled_ReTex_O";
+	//editorSubcategory="RC_ReTex_Arid_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"leopard2\data\leopard_ext01_e.paa",
@@ -287,8 +287,8 @@ class RC_AI_O_Leopard_ReTex_A: RC_AI_O_Leopard_A
 };
 class RC_AI_I_Leopard_ReTex_A: RC_AI_I_Leopard_A
 {
-	faction="RemoteControlled_ReTex_I";
-	editorSubcategory="RC_ReTex_Arid_subcat";
+	//faction="RemoteControlled_ReTex_I";
+	//editorSubcategory="RC_ReTex_Arid_subcat";
 	hiddenSelectionsTextures[]=
 	{
 		"leopard2\data\leopard_ext01_e.paa",
