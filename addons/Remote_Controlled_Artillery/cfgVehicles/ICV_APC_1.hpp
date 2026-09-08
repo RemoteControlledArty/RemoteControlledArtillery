@@ -1,5 +1,5 @@
 class B_APC_Tracked_01_rcws_F;
-class RC_ICV_APC_1_Base: B_APC_Tracked_01_rcws_F
+class RC_RCIV_APC_1_Fetch: B_APC_Tracked_01_rcws_F
 {
 	class Turrets;
 	class MainTurret;
@@ -22,7 +22,7 @@ class RC_ICV_APC_1_Base: B_APC_Tracked_01_rcws_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
+class RC_RCIV_APC_1_Core: RC_RCIV_APC_1_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -50,7 +50,7 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
-	faction="RemoteControlled_B";
+
 	forceHideDriver=1;
 	driverForceOptics=1;
 	driverCompartments="Compartment2";
@@ -113,7 +113,7 @@ class RC_ICV_APC_1_A: RC_ICV_APC_1_Base
 };
 
 
-class RC_ICV_1_A: RC_ICV_APC_1_A
+class RC_RCIV_1_A: RC_RCIV_APC_1_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -143,14 +143,11 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 	
 	displayName="RC Namer unarmed";
 	editorSubcategory="RC_ICV_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	crew="B_UAV_AI";
+	
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
@@ -262,25 +259,34 @@ class RC_ICV_1_A: RC_ICV_APC_1_A
 		};
 	};
 };
+class RC_RCIV_1_Base: RC_RCIV_1_Core
+{
+};
+
+
+class RC_ICV_1_A: RC_RCIV_1_Base
+{
+    scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+    #include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
 class RC_ICV_1_A_O: RC_ICV_1_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_ICV_1_A_I: RC_ICV_1_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
 class RC_ICV_1_WD: RC_ICV_1_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_rcws_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -293,16 +299,12 @@ class RC_ICV_1_WD: RC_ICV_1_A
 };
 class RC_ICV_1_WD_O: RC_ICV_1_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_ICV_1_WD_I: RC_ICV_1_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
@@ -336,9 +338,21 @@ class RC_ICV_1_ReTex_D_I: RC_ICV_1_ReTex_D
 };
 
 
-class RC_APC_1_A_Base: RC_ICV_APC_1_A
+class RC_APC_1_Core: RC_RCIV_APC_1_Core
 {
+    class EventHandlers: EventHandlers
+	{
+		class RC_Artillery
+		{
+			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
+			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+		};
+	};
+
 	RC_ATrespondingTurret[]={1};
+
+    displayName="Namer";
+    editorSubcategory="RC_APC_subcat";
 
 	weapons[]=
 	{
@@ -356,7 +370,6 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 	
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_APC.hpp"
-	editorSubcategory="RC_APC_subcat";
 
 	class Turrets: Turrets
 	{
@@ -468,32 +481,22 @@ class RC_APC_1_A_Base: RC_ICV_APC_1_A
 		};
 	};
 };
+class RC_APC_1_Base: RC_APC_1_Core
+{
+};
 
 
 class RC_APC_1_A: RC_APC_1_A_Base
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
-	};
-
-	displayName="Namer";
 	scope=2;
 	scopeCurator=2;
-	side=1;
 	forceInGarage=1;
 
-	crew="B_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_APC_1_A_O: RC_APC_1_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -508,9 +511,7 @@ class RC_APC_1_A_O: RC_APC_1_A
 };
 class RC_APC_1_A_I: RC_APC_1_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -527,7 +528,6 @@ class RC_APC_1_A_I: RC_APC_1_A
 
 class RC_APC_1_WD: RC_APC_1_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_rcws_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -540,9 +540,7 @@ class RC_APC_1_WD: RC_APC_1_A
 };
 class RC_APC_1_WD_O: RC_APC_1_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -557,9 +555,7 @@ class RC_APC_1_WD_O: RC_APC_1_WD
 };
 class RC_APC_1_WD_I: RC_APC_1_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -624,7 +620,7 @@ class RC_APC_1_ReTex_D_I: RC_APC_1_ReTex_D
 
 
 //20mm IFV variant
-class RC_IFV_1_A: RC_APC_1_A
+class RC_IFV_1_Core: RC_APC_1_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -688,11 +684,23 @@ class RC_IFV_1_A: RC_APC_1_A
 		};
 	};
 };
+class RC_IFV_1_Base: RC_IFV_1_Core
+{
+};
+
+
+class RC_IFV_1_A: RC_IFV_1_Base
+{
+    scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
 class RC_IFV_1_A_O: RC_IFV_1_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -722,9 +730,7 @@ class RC_IFV_1_A_O: RC_IFV_1_A
 };
 class RC_IFV_1_A_I: RC_IFV_1_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
