@@ -1,5 +1,5 @@
 class RC_MBT_2_A;
-class RC_AI_B_Leopard_A_Core: RC_MBT_2_A
+class RC_AI_B_Leopard_A_Fetch: RC_MBT_2_A
 {
 	class Turrets;
 	class MainTurret;
@@ -12,7 +12,7 @@ class RC_AI_B_Leopard_A_Core: RC_MBT_2_A
 	scope=0;
 	scopeCurator=0;
 };
-class RC_AI_B_Leopard_A_Base: RC_AI_B_Leopard_A_Core
+class RC_AI_B_Leopard_A_Core: RC_AI_B_Leopard_A_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -117,6 +117,9 @@ class RC_AI_B_Leopard_A_Base: RC_AI_B_Leopard_A_Core
 	};
 
 	#include "\RC_AI\loadouts\FSVitemsB_RHS_AI.hpp"
+};
+class RC_AI_B_Leopard_A_Base: RC_AI_B_Leopard_A_Core
+{
 };
 
 
