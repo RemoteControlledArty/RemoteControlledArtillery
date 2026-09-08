@@ -18,11 +18,13 @@ class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayMa
 			source="Missile";
 		};
 		*/
+        /*
 		class SlingLoadDisplay
 		{
 			componentType="SlingLoadDisplayComponent";
 			resource="RscCustomInfoSlingLoad";
 		};
+        */
 		class MinimapDisplay
 		{
 			componentType="MinimapDisplayComponent";
@@ -57,11 +59,13 @@ class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayMan
 			source="Missile";
 		};
 		*/
+        /*
 		class SlingLoadDisplay
 		{
 			componentType="SlingLoadDisplayComponent";
 			resource="RscCustomInfoSlingLoad";
 		};
+        */
 		class MinimapDisplay
 		{
 			componentType="MinimapDisplayComponent";
