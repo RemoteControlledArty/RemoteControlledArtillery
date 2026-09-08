@@ -271,7 +271,7 @@ class RC_ICV_1_A: RC_RCIV_1_Base
 	forceInGarage=1;
 
     #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
-    #include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+    #include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
 class RC_ICV_1_A_O: RC_ICV_1_A
 {
