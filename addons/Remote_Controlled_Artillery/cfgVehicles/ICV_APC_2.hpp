@@ -1,5 +1,5 @@
 class O_APC_Wheeled_02_rcws_F;
-class RC_ICV_APC_2_A_Base: O_APC_Wheeled_02_rcws_F
+class RC_RCIV_APC_2_Fetch: O_APC_Wheeled_02_rcws_F
 {
 	class Turrets;
 	class MainTurret;
@@ -25,7 +25,7 @@ class RC_ICV_APC_2_A_Base: O_APC_Wheeled_02_rcws_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
+class RC_RCIV_APC_2_Core: RC_RCIV_APC_2_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -54,10 +54,7 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
-	faction="RemoteControlled_O";
-	scope=0;
-	scopeCurator=0;
-	side=0;
+	
 	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=1;
@@ -95,9 +92,9 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 			"Normal",
 			"NVG"
 		};
-		initFov=0.40000001;
+		initFov=0.4;
 		minFov=0.23;
-		maxFov=0.40000001;
+		maxFov=0.4;
 	};
 
 	class HitPoints: HitPoints
@@ -287,7 +284,7 @@ class RC_ICV_APC_2_A: RC_ICV_APC_2_A_Base
 };
 
 
-class RC_ICV_2_A_O: RC_ICV_APC_2_A
+class RC_ICV_2_Core: RC_RCIV_APC_2_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -317,13 +314,11 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 	
 	displayName="RC Otokar Arma unarmed";
 	editorSubcategory="RC_ICV_subcat";
-	scope=2;
-	scopeCurator=2;
 
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	crew="O_UAV_AI";
+	
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
@@ -444,11 +439,21 @@ class RC_ICV_2_A_O: RC_ICV_APC_2_A
 		};
 	};
 };
+class RC_ICV_2_Base: RC_ICV_2_Core
+{
+};
 
 
+class RC_ICV_2_A_O: RC_ICV_2_Base
+{
+    scope=2;
+	scopeCurator=2;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+    #include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
 class RC_ICV_2_WD_O: RC_ICV_2_A_O
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
 	textureList[]=
 	{
@@ -536,7 +541,7 @@ class RC_ICV_2_ReTex_D_I: RC_ICV_2_ReTex_D_O
 };
 
 
-class RC_APC_2_A_O: RC_ICV_APC_2_A
+class RC_APC_2_A_Core: RC_RCIV_APC_2_Core
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -565,12 +570,10 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 
 	displayName="Otokar Arma";
 	editorSubcategory="RC_APC_subcat";
-	scope=2;
-	scopeCurator=2;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_APC.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	crew="O_UAV_AI";
+	
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
@@ -685,11 +688,21 @@ class RC_APC_2_A_O: RC_ICV_APC_2_A
 		};
 	};
 };
+class RC_APC_2_Base: RC_APC_2_Core
+{
+};
 
 
+class RC_APC_2_A_O: RC_APC_2_Base
+{
+    scope=2;
+	scopeCurator=2;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+    #include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
 class RC_APC_2_WD_O: RC_APC_2_A_O
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
 	textureList[]=
 	{
@@ -818,7 +831,7 @@ class RC_APC_2_ReTex_D_I: RC_APC_2_ReTex_D_O
 
 
 //20mm IFV variant
-class RC_IFV_2_A_O: RC_APC_2_A_O
+class RC_IFV_2_Core: RC_APC_2_Core
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -882,11 +895,21 @@ class RC_IFV_2_A_O: RC_APC_2_A_O
 		};
 	};
 };
+class RC_IFV_2_Base: RC_IFV_2_Core
+{
+};
 
 
+class RC_IFV_2_A_O: RC_IFV_2_Base
+{
+    scope=2;
+	scopeCurator=2;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+    #include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
 class RC_IFV_2_WD_O: RC_IFV_2_A_O
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Wheeled_02_rcws_v2_ghex_F.jpg";
 	textureList[]=
 	{
