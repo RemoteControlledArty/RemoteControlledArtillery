@@ -17,12 +17,12 @@ class RC_eVTOL_Core: RC_eVTOL_Fetch
 	};
 
 	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_main.hpp"
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Main.hpp"
+	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Main.hpp"
 	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_pilotCamBase.hpp"
 	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_pilotCamFixed.hpp"
 	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_pilotCamFree.hpp"
-	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_hitPoints.hpp"
-	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\eVTOL_animationSources.hpp"
+	//#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_hitPoints.hpp"
+	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_animationSources.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\eVTOL_userActions.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 

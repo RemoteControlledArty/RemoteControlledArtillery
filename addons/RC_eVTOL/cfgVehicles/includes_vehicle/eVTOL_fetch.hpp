@@ -1,11 +1,12 @@
 class ViewPilot;
 class Viewoptics;
-class Turrets;
 class OpticsIn;
 class Wide;
 class Components;
+class FoldArms;
+class RotorPark;
 class AnimationSources;
-class HitPoints;
+//class HitPoints;
 class UserActions;
 class EventHandlers;
 scope=0;

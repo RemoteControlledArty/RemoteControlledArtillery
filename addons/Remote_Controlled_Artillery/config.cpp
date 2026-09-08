@@ -226,10 +226,12 @@ class CfgPatches
 			"RC_Mortar_Carrier_LC_WD",
 			"RC_Mortar_Carrier_LC_WD_O",
 			"RC_Mortar_Carrier_LC_WD_I",
-
+			
+			/*
 			"RC_Mortar_Carrier_LC_manned_WD",
 			"RC_Mortar_Carrier_LC_manned_WD_O",
 			"RC_Mortar_Carrier_LC_manned_WD_I",
+			*/
 
 			"RC_Mortar_UGV_A",
 			"RC_Mortar_UGV_A_O",

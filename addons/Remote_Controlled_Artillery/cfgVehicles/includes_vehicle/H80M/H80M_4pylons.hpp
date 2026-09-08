@@ -73,10 +73,8 @@ class TransportPylonsComponent
 			UIposition[]={0.35,0.55};
 			attachment="RC_PylonM_Camera";
 			priority=3;
-			//only available for copilot, default {-1,0}
-			turretsAvailable[]={0};
-			//copilot by default, atm bugs camera to not be movable from copilot
-			turret[]={0};
+			turretsAvailable[]={-1,0};	//{-1,0}
+			turret[]={0};				//copilot by default
 
 			//what is MH80 config "groupCameraPosition[] = {0,5,-30};"?
 		};

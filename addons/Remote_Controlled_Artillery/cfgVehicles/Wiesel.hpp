@@ -343,18 +343,19 @@ class RC_Wiesel_AA_WD: RC_Wiesel_AA_Base
     scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_Wiesel_AA_WD_O: RC_Wiesel_AA_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Wiesel_AA_WD_I: RC_Wiesel_AA_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_Wiesel_AA_DIG_I: RC_Wiesel_AA_WD_I
 {
@@ -829,7 +830,7 @@ class RC_Mortar_Carrier_Base: RC_Wiesel_Radar_Base
 	displayName="RC Mortar Carrier";
 	editorSubcategory="RC_Mortar_subcat";
 };
-class RC_Mortar_Carrier_WD: RC_Wiesel_Radar_WD
+class RC_Mortar_Carrier_WD: RC_Mortar_Carrier_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -838,6 +839,10 @@ class RC_Mortar_Carrier_WD: RC_Wiesel_Radar_WD
 			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 		};
 	};
+
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
 
     #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
@@ -885,7 +890,7 @@ class RC_Mortar_Carrier_manned_Base: RC_Wiesel_Radar_manned_Base
 	displayName="Mortar Carrier";
 	editorSubcategory="RC_Mortar_subcat";
 };
-class RC_Mortar_Carrier_manned_WD: RC_Wiesel_Radar_manned_Base
+class RC_Mortar_Carrier_manned_WD: RC_Mortar_Carrier_manned_Base
 {
 	class EventHandlers: EventHandlers
 	{
@@ -894,6 +899,10 @@ class RC_Mortar_Carrier_manned_WD: RC_Wiesel_Radar_manned_Base
 			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 		};
 	};
+
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
 
     #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
@@ -951,6 +960,10 @@ class RC_Mortar_Carrier_LC_WD: RC_Mortar_Carrier_LC_Base
 		};
 	};
 
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
     #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_Mortar_Carrier_LC_WD_O: RC_Mortar_Carrier_LC_WD
@@ -981,6 +994,7 @@ class RC_Mortar_Carrier_LC_WD_I: RC_Mortar_Carrier_LC_WD
 };
 
 
+/*
 //semi manned variant
 class RC_Mortar_Carrier_LC_manned_Base: RC_Wiesel_Radar_manned_Base
 {
@@ -996,6 +1010,10 @@ class RC_Mortar_Carrier_LC_manned_WD: RC_Wiesel_Radar_manned_Base
 			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 		};
 	};
+
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
@@ -1025,6 +1043,7 @@ class RC_Mortar_Carrier_LC_manned_WD_I: RC_Mortar_Carrier_LC_manned_WD
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
+*/
 
 
 class I_LT_01_AT_F;
@@ -1434,7 +1453,7 @@ class RC_Wiesel_AC_Fetch: I_LT_01_cannon_F
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_Wiesel_AC_Fetch: RC_Wiesel_AC_Fetch
+class RC_Wiesel_AC_Core: RC_Wiesel_AC_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -1664,6 +1683,7 @@ class RC_Wiesel_AC_Base: RC_Wiesel_AC_Core
 {
 };
 
+
 class RC_Wiesel_AC_UV_Base: RC_Wiesel_AC_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
@@ -1682,7 +1702,7 @@ class RC_Wiesel_AC_UV_Base: RC_Wiesel_AC_Base
 		};
 	};
 };
-class RC_Wiesel_AC_WD: RC_Wiesel_AC_WD
+class RC_Wiesel_AC_WD: RC_Wiesel_AC_UV_Base
 {
     scope=2;
 	scopeCurator=2;
@@ -1758,7 +1778,7 @@ class RC_Wiesel_AC_WD_manned: RC_Wiesel_AC_manned_Base
 	scopeCurator=2;
 	forceInGarage=1;
 
-    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsB.hpp"
 };
 class RC_Wiesel_AC_WD_manned_O: RC_Wiesel_AC_WD_manned
@@ -2126,7 +2146,7 @@ class RC_Wiesel_cUAS_WD_manned: RC_Wiesel_cUAS_manned_Base
 };
 class RC_Wiesel_cUAS_WD_manned_O: RC_Wiesel_cUAS_WD_manned
 {
-	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\L_FSVitemsO.hpp"
 
 	class Turrets: Turrets

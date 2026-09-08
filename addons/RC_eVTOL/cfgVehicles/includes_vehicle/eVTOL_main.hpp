@@ -13,6 +13,7 @@ allowTabLock=1;
 
 
 startDuration=7.5;					//
+maximumLoad=800;
 /*
 bodyFrictionCoef=1;					//1
 maxSpeed=350;						//300
