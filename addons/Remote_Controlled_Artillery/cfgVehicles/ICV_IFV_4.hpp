@@ -1,5 +1,5 @@
 class B_APC_Wheeled_01_cannon_F;
-class RC_ICV_IFV_4_A_Base: B_APC_Wheeled_01_cannon_F
+class RC_RCIV_IFV_4_Fetch: B_APC_Wheeled_01_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -30,7 +30,7 @@ class RC_ICV_IFV_4_A_Base: B_APC_Wheeled_01_cannon_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
+class RC_RCIV_IFV_4_Core: RC_ICV_IFV_4_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -59,10 +59,7 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
-	faction="RemoteControlled_B";
-	scope=0;
-	scopeCurator=0;
-	side=1;
+	
 	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=1;
@@ -133,7 +130,7 @@ class RC_ICV_IFV_4_A: RC_ICV_IFV_4_A_Base
 };
 
 
-class RC_ICV_4_A: RC_ICV_IFV_4_A
+class RC_RCIV_4_Core: RC_ICV_IFV_4_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -147,12 +144,10 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 
 	displayName="RC Patria AMV unarmed";
 	editorSubcategory="RC_ICV_subcat";
-	scope=2;
-	scopeCurator=2;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	crew="B_UAV_AI";
+
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
@@ -303,25 +298,30 @@ class RC_ICV_4_A: RC_ICV_IFV_4_A
 		};
 	};
 };
+class RC_RCIV_4_Base: RC_RCIV_4_Core
+{
+};
+
+
+class RC_ICV_4_A: RC_RCIV_4_Base
+{
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
 class RC_ICV_4_A_O: RC_ICV_4_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_ICV_4_A_I: RC_ICV_4_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
 class RC_ICV_4_WD: RC_ICV_4_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -335,21 +335,17 @@ class RC_ICV_4_WD: RC_ICV_4_A
 };
 class RC_ICV_4_WD_O: RC_ICV_4_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_ICV_4_WD_I: RC_ICV_4_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
 
-class RC_IFV_4_A: RC_ICV_IFV_4_A
+class RC_IFV_4_Core: RC_RCIV_IFV_4_Core
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -379,13 +375,10 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 
 	displayName="Patria AMV40";
 	editorSubcategory="RC_IFV_subcat";
-	scope=2;
-	scopeCurator=2;
 
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	crew="B_UAV_AI";
 
 	class Turrets: Turrets
 	{
@@ -479,11 +472,19 @@ class RC_IFV_4_A: RC_ICV_IFV_4_A
 		};
 	};
 };
+class RC_IFV_4_Base: RC_IFV_4_Core
+{
+};
+
+
+class RC_IFV_4_A: RC_IFV_4_Base
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
 class RC_IFV_4_A_O: RC_IFV_4_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -496,9 +497,7 @@ class RC_IFV_4_A_O: RC_IFV_4_A
 };
 class RC_IFV_4_A_I: RC_IFV_4_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -513,7 +512,6 @@ class RC_IFV_4_A_I: RC_IFV_4_A
 
 class RC_IFV_4_WD: RC_IFV_4_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -526,9 +524,7 @@ class RC_IFV_4_WD: RC_IFV_4_A
 };
 class RC_IFV_4_WD_O: RC_IFV_4_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -541,9 +537,7 @@ class RC_IFV_4_WD_O: RC_IFV_4_WD
 };
 class RC_IFV_4_WD_I: RC_IFV_4_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
