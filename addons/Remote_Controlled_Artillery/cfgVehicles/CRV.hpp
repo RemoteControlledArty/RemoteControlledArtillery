@@ -1,5 +1,5 @@
 class B_APC_Tracked_01_CRV_F;
-class RC_CRV_Core: B_APC_Tracked_01_CRV_F
+class RC_CRV_Fetch: B_APC_Tracked_01_CRV_F
 {
 	class Turrets;
 	class MainTurret;
@@ -24,7 +24,7 @@ class RC_CRV_Core: B_APC_Tracked_01_CRV_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_CRV_Base: RC_CRV_Core
+class RC_CRV_Core: RC_CRV_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -54,9 +54,11 @@ class RC_CRV_Base: RC_CRV_Core
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
+
 	author="Ascent";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Support_subcat";
+
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -269,11 +271,9 @@ class RC_CRV_Base: RC_CRV_Core
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
-
-
-class RC_CRV_A: RC_CRV_Base
+class RC_CRV_Base: RC_CRV_Core
 {
-	class EventHandlers: EventHandlers
+    class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
@@ -310,19 +310,21 @@ class RC_CRV_A: RC_CRV_Base
 		};
 	};
 
-	displayName="RC Hercules U-CEV (Re-arm/pair/fuel/supply)";
+    displayName="RC Hercules U-CEV (Re-arm/pair/fuel/supply)";
+};
+
+
+class RC_CRV_A: RC_CRV_Base
+{
 	scope=2;
 	scopeCurator=2;
-	side=1;
 	forceInGarage=1;
 
-	crew="B_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_CRV_A_O: RC_CRV_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -337,9 +339,7 @@ class RC_CRV_A_O: RC_CRV_A
 };
 class RC_CRV_A_I: RC_CRV_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -356,7 +356,6 @@ class RC_CRV_A_I: RC_CRV_A
 
 class RC_CRV_WD: RC_CRV_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Tracked_01_CRV_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -369,9 +368,7 @@ class RC_CRV_WD: RC_CRV_A
 };
 class RC_CRV_WD_O: RC_CRV_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -386,9 +383,7 @@ class RC_CRV_WD_O: RC_CRV_WD
 };
 class RC_CRV_WD_I: RC_CRV_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
