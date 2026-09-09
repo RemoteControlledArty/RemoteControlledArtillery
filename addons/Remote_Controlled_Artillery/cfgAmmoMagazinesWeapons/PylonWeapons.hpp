@@ -737,11 +737,6 @@ class RC_PylonW_SRAM_Green_Base: RC_PylonW_SRAM_Base
 		"RC_PylonM_12Rnd_SRAM_Green",
 		"RC_PylonM_12Rnd_SRAM_Green_Proxy",
 
-		"RC_PylonM_12Rnd_SRAM1_Green",
-		"RC_PylonM_12Rnd_SRAM2_Green",
-		"RC_PylonM_12Rnd_SRAM3_Green",
-		"RC_PylonM_12Rnd_SRAM4_Green",
-
 		"RC_AI_PylonM_12Rnd_SRAM",
 		"RC_AI_PylonM_12Rnd_SRAM_Proxy",
 		"RC_AI_PylonM_12Rnd_SRAM_Green",

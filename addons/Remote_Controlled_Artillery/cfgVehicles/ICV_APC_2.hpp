@@ -284,7 +284,7 @@ class RC_RCIV_APC_2_Core: RC_RCIV_APC_2_Fetch
 };
 
 
-class RC_ICV_2_Core: RC_RCIV_APC_2_Core
+class RC_RCIV_2_Core: RC_RCIV_APC_2_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -439,12 +439,12 @@ class RC_ICV_2_Core: RC_RCIV_APC_2_Core
 		};
 	};
 };
-class RC_ICV_2_Base: RC_ICV_2_Core
+class RC_RCIV_2_Base: RC_RCIV_2_Core
 {
 };
 
 
-class RC_ICV_2_A_O: RC_ICV_2_Base
+class RC_ICV_2_A_O: RC_RCIV_2_Base
 {
     scope=2;
 	scopeCurator=2;
@@ -541,7 +541,7 @@ class RC_ICV_2_ReTex_D_I: RC_ICV_2_ReTex_D_O
 };
 
 
-class RC_APC_2_A_Core: RC_RCIV_APC_2_Core
+class RC_APC_2_Core: RC_RCIV_APC_2_Core
 {
 	class EventHandlers: EventHandlers
 	{	

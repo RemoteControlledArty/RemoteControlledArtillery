@@ -113,7 +113,7 @@ class RC_RCIV_APC_1_Core: RC_RCIV_APC_1_Fetch
 };
 
 
-class RC_RCIV_1_A: RC_RCIV_APC_1_Base
+class RC_RCIV_1_Core: RC_RCIV_APC_1_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -486,7 +486,7 @@ class RC_APC_1_Base: RC_APC_1_Core
 };
 
 
-class RC_APC_1_A: RC_APC_1_A_Base
+class RC_APC_1_A: RC_APC_1_Base
 {
 	scope=2;
 	scopeCurator=2;

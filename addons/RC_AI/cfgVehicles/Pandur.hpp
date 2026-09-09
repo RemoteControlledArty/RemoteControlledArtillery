@@ -1,6 +1,6 @@
 //class RC_IFV_3_A;
-class RC_IFV_3_A_Base;
-class RC_AI_B_Pandur_A_Core: RC_IFV_3_A_Base
+class RC_IFV_3_Base;
+class RC_AI_B_Pandur_A_Core: RC_IFV_3_Base
 {
 	class Turrets;
 	class MainTurret;

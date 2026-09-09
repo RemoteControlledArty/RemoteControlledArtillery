@@ -15,13 +15,16 @@ allowTabLock=1;
 startDuration=7.5;					//
 maximumLoad=800;
 /*
-bodyFrictionCoef=1;					//1
+bodyFrictionCoef=0.3;				//0.3
 maxSpeed=350;						//300
 slingLoadMaxCargoMass=13500;		//t 13500
+
+altFullForce=2000;                  //2000
+altNoForce=6000;                    //6000
 */
 
 /*
-liftForceCoef=1;					//1
+liftForceCoef=1.5;					//1.5
 cyclicAsideForceCoef=1;				//1
 cyclicForwardForceCoef=1;			//1
 backRotorForceCoef=1;				//1

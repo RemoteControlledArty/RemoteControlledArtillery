@@ -1,5 +1,5 @@
 class O_APC_Tracked_02_cannon_F;
-class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
+class RC_RCIV_IFV_5_Fetch: O_APC_Tracked_02_cannon_F
 {
 	class Turrets;
 	class MainTurret;
@@ -20,7 +20,7 @@ class RC_ICV_IFV_5_A_Base: O_APC_Tracked_02_cannon_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
+class RC_RCIV_IFV_5_Core: RC_RCIV_IFV_5_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -48,10 +48,7 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
-	faction="RemoteControlled_O";
-	scope=0;
-	scopeCurator=0;
-	side=0;
+
 	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=1;
@@ -108,7 +105,7 @@ class RC_ICV_IFV_5_A: RC_ICV_IFV_5_A_Base
 };
 
 
-class RC_ICV_5_A_O: RC_ICV_IFV_5_A
+class RC_RCIV_5_Core: RC_RCIV_IFV_5_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -134,13 +131,11 @@ class RC_ICV_5_A_O: RC_ICV_IFV_5_A
 
 	displayName="RC BM-2T unarmed";
 	editorSubcategory="RC_ICV_subcat";
-	scope=2;
-	scopeCurator=2;
 
 	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	crew="O_UAV_AI";
+
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP1_pos";
@@ -257,6 +252,18 @@ class RC_ICV_5_A_O: RC_ICV_IFV_5_A
 		};
 	};
 };
+class RC_RCIV_5_Base: RC_RCIV_5_Core
+{
+};
+
+
+class RC_ICV_5_A_O: RC_RCIV_5_Base
+{
+	scope=2;
+	scopeCurator=2;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+};
 class RC_ICV_5_WD_O: RC_ICV_5_A_O
 {
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\O_T_APC_Tracked_02_cannon_ghex_F.jpg";
@@ -276,7 +283,7 @@ class RC_ICV_5_WD_O: RC_ICV_5_A_O
 };
 
 
-class RC_IFV_5_A_O: RC_ICV_IFV_5_A
+class RC_IFV_5_Core: RC_RCIV_IFV_5_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -304,12 +311,10 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 
 	displayName="BM-2T";
 	editorSubcategory="RC_IFV_ATGM_subcat";
-	scope=2;
-	scopeCurator=2;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	crew="O_UAV_AI";
+
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
@@ -391,6 +396,18 @@ class RC_IFV_5_A_O: RC_ICV_IFV_5_A
 			};
 		};
 	};
+};
+class RC_IFV_5_Base: RC_IFV_5_Core
+{
+};
+
+
+class RC_IFV_5_A_O: RC_IFV_5_Base
+{
+	scope=2;
+	scopeCurator=2;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_IFV_5_WD_O: RC_IFV_5_A_O
 {

@@ -29,7 +29,7 @@ class pilotCamera
 			directionStabilized=1;
 			stabilizedInAxes=3;
 
-			minFov=0.02;
+			minFov=0.125;	//0.02
 			maxFov=1.5;
 			initFov=1.5;
 			
@@ -43,10 +43,10 @@ class pilotCamera
 			visionMode[]=
 			{
 				"Normal",
-				"NVG",
-				"Ti"
+				"NVG"
+				//"Ti"
 			};
-			thermalMode[]={0};
+			//thermalMode[]={0};
 			gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
 		};
 		showMiniMapInOptics=1;			//alterative to cTab to follow path

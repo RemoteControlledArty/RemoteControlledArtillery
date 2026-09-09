@@ -9,34 +9,34 @@ class SensorsManagerComponent
 
 			class AirTarget
 			{
-				minRange=6000;
-				maxRange=6000;
+				minRange=4000;
+				maxRange=4000;
 				objectDistanceLimitCoef=-1;
 				viewDistanceLimitCoef=-1;
 			};
 			class GroundTarget
 			{
-				minRange=6000;
-				maxRange=6000;
+				minRange=4000;
+				maxRange=4000;
 				objectDistanceLimitCoef=-1;
 				viewDistanceLimitCoef=-1;
 			};
 		};
 		class DataLinkSensorComponent: SensorTemplateDataLink
 		{
-			typeRecognitionDistance=16000;
+			typeRecognitionDistance=10000;
 
 			class AirTarget
 			{
-				minRange=16000;
-				maxRange=16000;
+				minRange=10000;
+				maxRange=10000;
 				objectDistanceLimitCoef=-1;
 				viewDistanceLimitCoef=-1;
 			};
 			class GroundTarget
 			{
-				minRange=16000;
-				maxRange=16000;
+				minRange=10000;
+				maxRange=10000;
 				objectDistanceLimitCoef=-1;
 				viewDistanceLimitCoef=-1;
 			};
@@ -49,15 +49,15 @@ class SensorsManagerComponent
 
 			class AirTarget
 			{
-				minRange=16000;
-				maxRange=16000;
+				minRange=6000;
+				maxRange=6000;
 				objectDistanceLimitCoef=-1;
 				viewDistanceLimitCoef=-1;
 			};
 			class GroundTarget
 			{
-				minRange=16000;
-				maxRange=16000;
+				minRange=6000;
+				maxRange=6000;
 				objectDistanceLimitCoef=-1;
 				viewDistanceLimitCoef=-1;
 			};

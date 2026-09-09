@@ -10,7 +10,24 @@ class CfgPatches
 			"RC_eVTOL_B",
 			"RC_eVTOL_O",
 			"RC_eVTOL_I",
-			"RC_eVTOL_C"
+			"RC_eVTOL_C",
+
+			"RC_eVTOL_TI_B",
+			"RC_eVTOL_TI_O",
+			"RC_eVTOL_TI_I",
+			"RC_eVTOL_TI_C"
+
+			/*
+			"RC_eVTOL_Zoom_B",
+			"RC_eVTOL_Zoom_O",
+			"RC_eVTOL_Zoom_I",
+			"RC_eVTOL_Zoom_C",
+
+			"RC_eVTOL_ZoomTI_B",
+			"RC_eVTOL_ZoomTI_O",
+			"RC_eVTOL_ZoomTI_I",
+			"RC_eVTOL_ZoomTI_C"
+			*/
 		};
 		requiredAddons[]=
 		{

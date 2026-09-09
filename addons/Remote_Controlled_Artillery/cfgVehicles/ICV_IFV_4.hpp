@@ -30,7 +30,7 @@ class RC_RCIV_IFV_4_Fetch: B_APC_Wheeled_01_cannon_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_RCIV_IFV_4_Core: RC_ICV_IFV_4_Fetch
+class RC_RCIV_IFV_4_Core: RC_RCIV_IFV_4_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -130,7 +130,7 @@ class RC_RCIV_IFV_4_Core: RC_ICV_IFV_4_Fetch
 };
 
 
-class RC_RCIV_4_Core: RC_ICV_IFV_4_Core
+class RC_RCIV_4_Core: RC_RCIV_IFV_4_Core
 {
 	class EventHandlers: EventHandlers
 	{
@@ -305,6 +305,9 @@ class RC_RCIV_4_Base: RC_RCIV_4_Core
 
 class RC_ICV_4_A: RC_RCIV_4_Base
 {
+	scope=2;
+	scopeCurator=2;
+	
     #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };

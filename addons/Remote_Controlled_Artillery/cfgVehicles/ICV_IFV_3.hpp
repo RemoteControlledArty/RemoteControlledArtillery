@@ -472,7 +472,7 @@ class RC_IFV_3_Base: RC_IFV_3_Core
 };
 
 
-class RC_IFV_3_A: RC_IFV_3_A_Base
+class RC_IFV_3_A: RC_IFV_3_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -731,7 +731,7 @@ class RC_IFV_3_ReTex_D_I: RC_IFV_3_ReTex_D
 
 //UserAction/EH Testing
 /*
-class RC_IFV_3_A_Test_Base: RC_IFV_3_A_Base
+class RC_IFV_3_A_Test_Base: RC_IFV_3_Base
 {
 	class EventHandlers: EventHandlers
 	{
