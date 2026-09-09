@@ -9,6 +9,8 @@ addMissionEventHandler ["entityRespawned", {
 
   if (!_isPilot) exitWith {};
 
+  if ((count (fullCrew [(vehicle player), "", true])) < 3) exitWith {};
+
   private _grid = mapGridPosition _entity;
   private _gridX = _grid select [0, 3];
   private _gridY = _grid select [3, 3];
