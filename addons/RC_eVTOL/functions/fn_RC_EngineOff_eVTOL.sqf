@@ -2,15 +2,11 @@
 	Author: Ascent
 */
 
-[] spawn
-{
-	while {true} do
-	{
-		_uv = (getConnectedUAV player);
+params ["_veh"];
 
-		// restart if no UV is connected
-		if (_uv isEqualTo objNull) then {continue;};
+//private _rpm = (rotorRpmRTD _veh)#0;
+_veh setWantedRPMRTD [0, 2, -1];
 
-		sleep 1;
-	};
-};
+sleep 2;
+
+_veh animate ["foldArms", 1, true];
