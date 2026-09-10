@@ -318,7 +318,6 @@ class RC_MBT_1_A_Driverless_I: RC_MBT_1_A_Driverless
 
 class RC_MBT_1_WD_Driverless: RC_MBT_1_A_Driverless
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_TUSK_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -415,7 +414,6 @@ class RC_MBT_1_A_I: RC_MBT_1_A
 
 class RC_MBT_1_WD: RC_MBT_1_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_MBT_01_TUSK_F.jpg";
 	hiddenSelectionsTextures[]=
 	{

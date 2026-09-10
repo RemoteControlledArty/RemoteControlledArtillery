@@ -15,7 +15,15 @@ class CfgPatches
 			"RC_eVTOL_TI_B",
 			"RC_eVTOL_TI_O",
 			"RC_eVTOL_TI_I",
-			"RC_eVTOL_TI_C"
+			"RC_eVTOL_TI_C",
+
+			"RC_InsertionMothership_B",
+			"RC_InsertionMothership_O",
+			"RC_InsertionMothership_I",
+
+			"RC_InsertionMothership_NoCam_B",
+			"RC_InsertionMothership_NoCam_O",
+			"RC_InsertionMothership_NoCam_I"
 
 			/*
 			"RC_eVTOL_Zoom_B",
@@ -59,4 +67,5 @@ class DefaultVehicleSystemsDisplayManagerRight;
 class CfgVehicles
 {
 	#include "\RC_eVTOL\cfgVehicles\eVTOL.hpp"
+	#include "\RC_eVTOL\cfgVehicles\Mothership.hpp"
 };

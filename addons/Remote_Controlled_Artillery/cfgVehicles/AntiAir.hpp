@@ -272,15 +272,15 @@ class RC_AA_ACFSV_Core: RC_AA_Fetch
 					typeRecognitionDistance=1;
 					class AirTarget
 					{
-						minRange=6000;
-						maxRange=6000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
@@ -789,15 +789,15 @@ class RC_AA_HEX_Core: RC_AA_HEX_Fetch
 					typeRecognitionDistance=1;
 					class AirTarget
 					{
-						minRange=6000;
-						maxRange=6000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};
 					class GroundTarget
 					{
-						minRange=4000;
-						maxRange=4000;
+						minRange=8000;
+						maxRange=8000;
 						objectDistanceLimitCoef=-1;
 						viewDistanceLimitCoef=-1;
 					};

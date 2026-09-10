@@ -7,6 +7,16 @@ class RC_eVTOL_Core: RC_eVTOL_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
+		/*
+		//stop rotors and fold
+		
+		class RC_EngineOff
+		{
+			getOut="params ['_vehicle','_role','_unit']; if ((local _vehicle) && (_unit isEqualTo player)) then {_vehicle engineOn false};"
+		};
+		*/
+
+
 		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"

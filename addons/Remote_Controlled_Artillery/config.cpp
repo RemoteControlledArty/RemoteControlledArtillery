@@ -1394,6 +1394,7 @@ class CfgVehicles
 	#include "\Remote_Controlled_Artillery\cfgVehicles\staticATGM.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\SystemsOperator.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UAV.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\UCAV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\FPV.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\Interceptor.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\UGV.hpp"
