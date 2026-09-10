@@ -68,10 +68,32 @@ class RC_InsertionMothership_B: RC_InsertionMothership_Base
 		{
 			init="if (!isServer) exitwith {}; \
 			(_this select 0) spawn { \
-				private _eVTOL1 = 'RC_eVTOL_B' createVehicle [0,0,500]; \
-				_eVTOL1 attachTo [_this, [-3.8, 1.3, -0.6], 'wing_fold_r', true];  \
-				private _eVTOL2 = 'RC_eVTOL_B' createVehicle [5,0,500]; \
-				_eVTOL2 attachTo [_this, [3.8, 1.3, -0.6], 'wing_fold_l', true];  \
+
+                _posArrL = [
+                [[0, 0, 1000], [3.8, 1.3, -0.6]],
+                [[0, 0, 1010], [5.3, 1.3, -0.6]],
+                [[0, 0, 1020], [6.8, 1.3, -0.6]],
+                [[0, 0, 1030], [8.3, 1.3, -0.6]],
+                [[0, 0, 1040], [9.8, 1.3, -0.6]],
+                ];
+
+                {
+                    private _eVTOL = 'RC_eVTOL_B' createVehicle x#0;
+				    _eVTOL attachTo [_this, x#1, 'wing_fold_l', true];
+				} foreach _posArrL;
+
+                _posArrR = [
+                [[0,0,0],[0,0,0]],
+                [[0,0,0],[0,0,0]],
+                [[0,0,0],[0,0,0]],
+                [[0,0,0],[0,0,0]],
+                [[0,0,0],[0,0,0]],
+                ];
+
+                {
+                    private _eVTOL = 'RC_eVTOL_B' createVehicle x#0;
+				    _eVTOL attachTo [_this, x#1, 'wing_fold_r', true];
+				} foreach _posArrR;
 			};";
 		};
 	};
