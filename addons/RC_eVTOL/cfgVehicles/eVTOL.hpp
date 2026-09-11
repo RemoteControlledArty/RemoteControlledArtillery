@@ -50,6 +50,13 @@ class RC_eVTOL_Core: RC_eVTOL_Fetch
 		#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_panels.hpp"
 		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\eVTOL_2pylons.hpp"
 	};
+
+    /*
+	class turrets: turrets
+    {
+	    coilot=1;
+    };
+    */
 };
 class RC_eVTOL_Base: RC_eVTOL_Core
 {
