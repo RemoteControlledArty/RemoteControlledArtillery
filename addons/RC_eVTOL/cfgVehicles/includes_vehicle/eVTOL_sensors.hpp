@@ -41,6 +41,30 @@ class SensorsManagerComponent
 				viewDistanceLimitCoef=-1;
 			};
 		};
+		class VisualSensorComponent: SensorTemplateVisual
+		{
+			typeRecognitionDistance=600;
+
+			class AirTarget
+			{
+				minRange=800;
+				maxRange=800;
+				objectDistanceLimitCoef=-1;
+				viewDistanceLimitCoef=-1;
+			};
+			class GroundTarget
+			{
+				minRange=0;
+				maxRange=0;
+				objectDistanceLimitCoef=-1;
+				viewDistanceLimitCoef=-1;
+			};
+			maxTrackableSpeed=600;
+			nightRangeCoef=0.8;
+			angleRangeHorizontal=360;
+			angleRangeVertical=360;
+			animDirection="";
+		};
 		class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
 		{
 			/*

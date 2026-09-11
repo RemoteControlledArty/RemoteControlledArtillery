@@ -7,18 +7,20 @@ class RC_eVTOL_Core: RC_eVTOL_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
-		/*
-		//stop rotors and fold
-		
-		class RC_EngineOff
+		class RC_getOut1
 		{
-			getOut="params ['_vehicle','_role','_unit']; if ((local _vehicle) && (_unit isEqualTo player)) then {_vehicle engineOn false};"
+			getOut="params ['_vehicle'];  if (!local _vehicle) exitWith {};  [_vehicle] spawn fnc_RC_eVTOL_EH_getOut;"
 		};
-		*/
-
+		class RC_engine1
+		{
+			engine="params ['_vehicle', '_engineState'];  if (!local _vehicle) exitWith {};  [_vehicle, _engineState] spawn fnc_RC_eVTOL_EH_engine;"
+		};
+		class RC_attached1
+		{
+			attached="params ['_attachedObj', '_parentObj', '_isReattach', '_offset', '_memoryPointIndex', '_followBoneRotation'];  if (!local _attachedObj) exitWith {};  [_attachedObj] spawn fnc_RC_eVTOL_EH_attached;"
+		};
 
 		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
@@ -36,8 +38,11 @@ class RC_eVTOL_Core: RC_eVTOL_Fetch
 	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_userActions.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 
-	//radarTargetSize=0.7;	//0.7
 	//liftForceCoef=3;		//1.5
+	//camouflage=?;			//100
+	radarTargetSize=0.5;	//0.7
+	visualTargetSize=0.5;	//0.8
+	irTargetSize=0.5;		//0.8
 
 	class Components: Components
 	{
@@ -58,7 +63,7 @@ class RC_eVTOL_B: RC_eVTOL_Base
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="eVTOL"
+	displayName="Mosquito - eVTOL"
 	editorSubcategory="RC_eVTOL_subcat";
 
 	/*
@@ -94,7 +99,7 @@ class RC_eVTOL_C: RC_eVTOL_B
 
 class RC_eVTOL_TI_B: RC_eVTOL_B
 {
-	displayName="eVTOL TI";
+	displayName="Mosquito TI - eVTOL";
 
 	class pilotCamera: pilotCamera
 	{
@@ -130,6 +135,35 @@ class RC_eVTOL_TI_C: RC_eVTOL_TI_B
 	crew="C_man_pilot_F";
 
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideC_manned.hpp"
+	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_itemsI.hpp"
+};
+
+
+class RC_eVTOL_Minigun_TI_B: RC_eVTOL_TI_B
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_init3
+		{
+			init="params ['_vehicle'];  if (!local _vehicle) exitWith {};  [_vehicle] spawn fnc_RC_eVTOL_minigun;"
+		};
+	};
+
+	displayName="Minigun Mosquito TI - eVTOL";
+
+	weapons[]={"RC_eVTOL_Minigun", "Laserdesignator_pilotCamera"};
+	magazines[]={"RC_eVTOL_1000Rnd_338_SLAP_T_W", "Laserbatteries"};
+	//weapons[]={"RC_eVTOL_Minigun", "Laserdesignator_pilotCamera", "SmokeLauncher"};
+	//magazines[]={"RC_eVTOL_1000Rnd_338_SLAP_T_W", "Laserbatteries","SmokeLauncherMag","SmokeLauncherMag"};
+};
+class RC_eVTOL_Minigun_TI_O: RC_eVTOL_Minigun_TI_B
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_itemsO.hpp"
+};
+class RC_eVTOL_Minigun_TI_I: RC_eVTOL_Minigun_TI_B
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
 	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_itemsI.hpp"
 };
 

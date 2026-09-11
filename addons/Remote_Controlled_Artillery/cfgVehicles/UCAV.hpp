@@ -36,12 +36,10 @@ class RC_UCAV_Core: RC_UCAV_Fetch
 	author="Ascent";
 	editorSubcategory="RC_UAV_Designator_subcat";
 
-	/*
-	camouflage=100;					//0.25 or 150
-	radarTargetSize=0.33;			//0.5
-	visualTargetSize=0.47;			//0.7
-	irTargetSize=0.33;				//0.5
-	*/
+	//camouflage=?;				//150
+	radarTargetSize=0.1;			//0.15
+	visualTargetSize=0.3;			//0.9
+	irTargetSize=0.3;				//0.8
 
 	unitInfoType="RC_RscOptics_AV_Heli";	//RC_RscOptics_AV_Heli
 	unitInfoTypeRTD="RC_RscOptics_AV_Heli";	//RC_RscOptics_AV_Heli

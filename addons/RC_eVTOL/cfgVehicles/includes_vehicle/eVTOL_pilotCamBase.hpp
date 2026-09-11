@@ -10,6 +10,15 @@ driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 weapons[]+={"Laserdesignator_pilotCamera"};
 magazines[]+={"Laserbatteries"};
 
+/*
+weapons[]+={"Laserdesignator_pilotCamera", "SmokeLauncher"};
+magazines[]+={"Laserbatteries","SmokeLauncherMag","SmokeLauncherMag"};
+
+smokeLauncherOnTurret=0;
+smokeLauncherVelocity=4;
+smokeLauncherGrenadeCount=4;
+smokeLauncherAngle=360;	//360° for LZ
+*/
 
 //2.0
 /*

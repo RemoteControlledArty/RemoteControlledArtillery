@@ -1,5 +1,5 @@
 class RC_UCAV_Base;
-class RC_InsertionMothership_Fetch: RC_UCAV_Base
+class RC_MosquitoMothership_Fetch: RC_UCAV_Base
 {
 	class EventHandlers;
 	class Components;
@@ -8,7 +8,7 @@ class RC_InsertionMothership_Fetch: RC_UCAV_Base
     class pylon1;
     class pylon2;
 };
-class RC_InsertionMothership_Core: RC_InsertionMothership_Fetch
+class RC_MosquitoMothership_Core: RC_MosquitoMothership_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -52,78 +52,23 @@ class RC_InsertionMothership_Core: RC_InsertionMothership_Fetch
 		};
 	};
 	
-	displayName="RC Insertion Mothership";
+	displayName="RC Mosquito Mothership";
 	editorSubcategory="RC_eVTOL_subcat";
 };
-class RC_InsertionMothership_Base: RC_InsertionMothership_Core
+class RC_MosquitoMothership_Base: RC_MosquitoMothership_Core
 {
 };
 
 
-class RC_InsertionMothership_B: RC_InsertionMothership_Base
+class RC_MosquitoMothership_B: RC_MosquitoMothership_Base
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Attach
 		{
-			init="if (!isServer) exitwith {}; \
-			(_this select 0) spawn { \
-
-                _posArrL = [
-                [[0, 0, 1000], [3.8, 1.3, -0.6]],
-                [[0, 0, 1010], [5.3, 1.3, -0.6]],
-                [[0, 0, 1020], [6.8, 1.3, -0.6]],
-                [[0, 0, 1030], [8.3, 1.3, -0.6]],
-                [[0, 0, 1040], [9.8, 1.3, -0.6]]
-                ];
-
-                {
-                    private _eVTOL = 'RC_eVTOL_B' createVehicle x#0;
-				    _eVTOL attachTo [_this, x#1, 'wing_fold_l', true];
-				} foreach _posArrL;
-
-                _posArrR = [
-                [[0, 0, 1050], [-3.8, 1.3, -0.6]],
-                [[0, 0, 1060], [-5.3, 1.3, -0.6]],
-                [[0, 0, 1070], [-6.8, 1.3, -0.6]],
-                [[0, 0, 1080], [-8.3, 1.3, -0.6]],
-                [[0, 0, 1090], [-9.8, 1.3, -0.6]]
-                ];
-
-                {
-                    private _eVTOL = 'RC_eVTOL_B' createVehicle x#0;
-				    _eVTOL attachTo [_this, x#1, 'wing_fold_r', true];
-				} foreach _posArrR;
-			};";
+			init="if (!isServer) exitwith {}; params ['_entity']; [_entity] spawn fnc_RC_eVTOL_attachToMothership";
 		};
 	};
-	/*
-	selectionNames (getConnectedUAV player);
-	(getConnectedUAV player) animate ["wing_fold_r",1];
-	(getConnectedUAV player) animate ["wing_fold_r_arm",1];
-
-	private _offset = (getConnectedUAV player) worldToModel (ASLToAGL (getPosASL (vehicle player)));
-	copyToClipboard str _offset;
-	hint str _offset;
-	[-5.14209,-2.40117,-1.09293]
-
-	private _obj1 = (vehicle player);
-	private _obj2 = (getConnectedUAV player);
-	private _offset = (_obj2 worldToModel (ASLToAGL (getPosASL _obj1))) vectorDiff (_obj2 selectionPosition "wing_fold_l");
-	copyToClipboard str _offset;
-	hint str _offset;
-
-	private _obj1 = (vehicle player);
-	private _obj2 = (getConnectedUAV player);
-	private _offset = (_obj2 worldToModel (getPos _obj1)) vectorDiff (_obj2 selectionPosition "wing_fold_l");
-	copyToClipboard str _offset;
-	hint str _offset;
-
-	[3.77412,1.27356,-1.48752]
-	(vehicle player) attachTo [(getConnectedUAV player), [-3.77412,1.27356,-0.6], 'wing_fold_r', true];
-
-	(getConnectedUAV player) animate ["wing_fold_l", 1];
-	*/
 
 	scope=2;
 	scopeCurator=2;
@@ -131,11 +76,33 @@ class RC_InsertionMothership_B: RC_InsertionMothership_Base
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
-class RC_InsertionMothership_O: RC_InsertionMothership_B
+class RC_MosquitoMothership_O: RC_MosquitoMothership_B
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
-class RC_InsertionMothership_I: RC_InsertionMothership_B
+class RC_MosquitoMothership_I: RC_MosquitoMothership_B
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+};
+
+
+class RC_MosquitoMothership_Minigun_B: RC_MosquitoMothership_B
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Attach
+		{
+			init="if (!isServer) exitwith {}; params ['_entity']; [_entity] spawn fnc_RC_eVTOL_attachToMothership_Minigun";
+		};
+	};
+
+	displayName="RC Minigun Mosquito Mothership [no camera]";
+};
+class RC_MosquitoMothership_Minigun_O: RC_MosquitoMothership_Minigun_B
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+};
+class RC_MosquitoMothership_Minigun_I: RC_MosquitoMothership_Minigun_B
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
@@ -143,7 +110,7 @@ class RC_InsertionMothership_I: RC_InsertionMothership_B
 
 //no turret freecam / ir sensors
 class RC_UCAV_NoCam_Base;
-class RC_InsertionMothership_NoCam_Fetch: RC_UCAV_NoCam_Base
+class RC_MosquitoMothership_NoCam_Fetch: RC_UCAV_NoCam_Base
 {
 	class EventHandlers;
 	class Components;
@@ -152,7 +119,7 @@ class RC_InsertionMothership_NoCam_Fetch: RC_UCAV_NoCam_Base
     class pylon1;
     class pylon2;
 };
-class RC_InsertionMothership_NoCam_Core: RC_InsertionMothership_NoCam_Fetch
+class RC_MosquitoMothership_NoCam_Core: RC_MosquitoMothership_NoCam_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -160,7 +127,6 @@ class RC_InsertionMothership_NoCam_Core: RC_InsertionMothership_NoCam_Fetch
 		{
 			postInit="params ['_entity'];  _entity flyInHeight 4000;";	//flyInHeight = where local argument, global effect
 		};
-		/*
 		class RC_Detach
 		{
 			deleted="if (!isserver) exitwith {}; \
@@ -177,7 +143,6 @@ class RC_InsertionMothership_NoCam_Core: RC_InsertionMothership_NoCam_Fetch
 				{_x disableCollisionWith _unit; detach _x} forEach _attObj; \
 			};";
 		};
-		*/
 	};
 
 	class Components: Components
@@ -198,31 +163,23 @@ class RC_InsertionMothership_NoCam_Core: RC_InsertionMothership_NoCam_Fetch
 		};
 	};
 	
-	displayName="RC Insertion Mothership [no camera]";
+	displayName="RC Mosquito Mothership [no camera]";
 	editorSubcategory="RC_eVTOL_subcat";
 };
-class RC_InsertionMothership_NoCam_Base: RC_InsertionMothership_NoCam_Core
+class RC_MosquitoMothership_NoCam_Base: RC_MosquitoMothership_NoCam_Core
 {
 };
 
 
-class RC_InsertionMothership_NoCam_B: RC_InsertionMothership_NoCam_Base
+class RC_MosquitoMothership_NoCam_B: RC_MosquitoMothership_NoCam_Base
 {
-	/*
 	class EventHandlers: EventHandlers
 	{
 		class RC_Attach
 		{
-			init="if (!isserver) exitwith {}; \
-			(_this select 0) spawn { \
-				private _eVTOL1 = 'RC_eVTOL_B' createVehicle [0,0,500]; \
-				_eVTOL1 attachTo [_this, [0.184,-0.23,0.125]];  \
-				private _eVTOL2 = 'RC_eVTOL_B' createVehicle [5,0,500]; \
-				_eVTOL2 attachTo [_this, [0.184,-0.23,0.125]];  \
-			};";
+			init="if (!isServer) exitwith {}; params ['_entity']; [_entity] spawn fnc_RC_eVTOL_attachToMothership";
 		};
 	};
-	*/
 
 	scope=2;
 	scopeCurator=2;
@@ -230,11 +187,33 @@ class RC_InsertionMothership_NoCam_B: RC_InsertionMothership_NoCam_Base
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
-class RC_InsertionMothership_NoCam_O: RC_InsertionMothership_NoCam_B
+class RC_MosquitoMothership_NoCam_O: RC_MosquitoMothership_NoCam_B
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
-class RC_InsertionMothership_NoCam_I: RC_InsertionMothership_NoCam_B
+class RC_MosquitoMothership_NoCam_I: RC_MosquitoMothership_NoCam_B
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+};
+
+
+class RC_MosquitoMothership_NoCam_Minigun_B: RC_MosquitoMothership_NoCam_B
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_Attach
+		{
+			init="if (!isServer) exitwith {}; params ['_entity']; [_entity] spawn fnc_RC_eVTOL_attachToMothership_Minigun";
+		};
+	};
+
+	displayName="RC Minigun Mosquito Mothership [no camera]";
+};
+class RC_MosquitoMothership_NoCam_Minigun_O: RC_MosquitoMothership_NoCam_Minigun_B
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+};
+class RC_MosquitoMothership_NoCam_Minigun_I: RC_MosquitoMothership_NoCam_Minigun_B
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
