@@ -11,6 +11,10 @@ fnc_RC_eVTOL_attachToMothership = {
 
     params ["_veh"];
 
+    private _type = typeOf _veh;
+    private _side = _type select (count _type - 1);
+    private _eVTOL_Str = "RC_eVTOL_TI_" + _side;
+
     _posArrL = [
         [[0, 0, 1010], [3.8, 1.3, -0.6]],
         [[0, 0, 1020], [2.8, 0.7375, -0.595]],
@@ -19,7 +23,7 @@ fnc_RC_eVTOL_attachToMothership = {
         [[0, 0, 1050], [-0.2, -0.95, -0.565]]
     ];
     {
-        private _eVTOL = 'RC_eVTOL_B' createVehicle _x#0;
+        private _eVTOL = _eVTOL_Str createVehicle _x#0;
         _eVTOL attachTo [_veh, _x#1, 'wing_fold_l', true];
     } foreach _posArrL;
 
@@ -32,7 +36,7 @@ fnc_RC_eVTOL_attachToMothership = {
         [[0, 0, 1100], [0.2, -0.95, -0.565]]
     ];
     {
-        private _eVTOL = 'RC_eVTOL_B' createVehicle _x#0;
+        private _eVTOL = _eVTOL_Str createVehicle _x#0;
         _eVTOL attachTo [_veh, _x#1, 'wing_fold_r', true];
     } foreach _posArrR;
 };
@@ -42,6 +46,10 @@ fnc_RC_eVTOL_attachToMothership_Minigun = {
 
     params ["_veh"];
 
+    private _type = typeOf _veh;
+    private _side = _type select (count _type - 1);
+    private _eVTOL_Str = "RC_eVTOL_Minigun_TI_" + _side;
+
     _posArrL = [
         [[0, 0, 1010], [3.8, 1.3, -0.6]],
         [[0, 0, 1020], [2.8, 0.7375, -0.595]],
@@ -50,7 +58,7 @@ fnc_RC_eVTOL_attachToMothership_Minigun = {
         [[0, 0, 1050], [-0.2, -0.95, -0.565]]
     ];
     {
-        private _eVTOL = 'RC_eVTOL_Minigun_TI_B' createVehicle _x#0;
+        private _eVTOL = _eVTOL_Str createVehicle _x#0;
         _eVTOL attachTo [_veh, _x#1, 'wing_fold_l', true];
     } foreach _posArrL;
 
@@ -63,7 +71,7 @@ fnc_RC_eVTOL_attachToMothership_Minigun = {
         [[0, 0, 1100], [0.2, -0.95, -0.565]]
     ];
     {
-        private _eVTOL = 'RC_eVTOL_Minigun_TI_B' createVehicle _x#0;
+        private _eVTOL = _eVTOL_Str createVehicle _x#0;
         _eVTOL attachTo [_veh, _x#1, 'wing_fold_r', true];
     } foreach _posArrR;
 };
