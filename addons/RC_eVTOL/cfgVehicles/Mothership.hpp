@@ -168,6 +168,12 @@ class RC_MosquitoMothership_NoCam_Core: RC_MosquitoMothership_NoCam_Fetch
 			};
 		};
 	};
+
+    camouflage=75;				//150
+    //audible=?;                //?  
+	radarTargetSize=0.1;		//0.15
+	visualTargetSize=0.3;		//0.9
+	irTargetSize=0.3;			//0.8
 	
 	displayName="RC Mosquito Mothership [no camera]";
 	editorSubcategory="RC_eVTOL_subcat";
