@@ -10,23 +10,9 @@ class RC_MosquitoMothership_Fetch: RC_UCAV_Base
 };
 class RC_MosquitoMothership_Core: RC_MosquitoMothership_Fetch
 {
-    class Components: Components
-	{
-		class TransportPylonsComponent: TransportPylonsComponent
-		{
-			class pylons: pylons
-			{
-				class pylon1: pylon1
-				{
-					attachment="";
-				};
-   				class pylon2: pylon2
-				{
-					attachment="";
-				};
-			};
-		};
-	};
+    #include "\RC_eVTOL\cfgVehicles\includes_vehicle\Mothership_EH.hpp"
+    #include "\RC_eVTOL\cfgVehicles\includes_vehicle\Mothership_main.hpp"
+    #include "\RC_eVTOL\cfgVehicles\includes_vehicle\Mothership_pylons.hpp"
 	
 	displayName="RC Mosquito Mothership";
 	editorSubcategory="RC_eVTOL_subcat";
@@ -97,23 +83,9 @@ class RC_MosquitoMothership_NoCam_Fetch: RC_UCAV_NoCam_Base
 };
 class RC_MosquitoMothership_NoCam_Core: RC_MosquitoMothership_NoCam_Fetch
 {
-    class Components: Components
-	{
-		class TransportPylonsComponent: TransportPylonsComponent
-		{
-			class pylons: pylons
-			{
-				class pylon1: pylon1
-				{
-					attachment="";
-				};
-   				class pylon2: pylon2
-				{
-					attachment="";
-				};
-			};
-		};
-	};
+    #include "\RC_eVTOL\cfgVehicles\includes_vehicle\Mothership_EH.hpp"
+    #include "\RC_eVTOL\cfgVehicles\includes_vehicle\Mothership_main.hpp"
+    #include "\RC_eVTOL\cfgVehicles\includes_vehicle\Mothership_pylons.hpp"
 
 	displayName="RC Mosquito Mothership [no camera]";
 	editorSubcategory="RC_eVTOL_subcat";
