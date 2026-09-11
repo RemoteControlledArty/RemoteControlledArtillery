@@ -10,30 +10,6 @@ class RC_MosquitoMothership_Fetch: RC_UCAV_Base
 };
 class RC_MosquitoMothership_Core: RC_MosquitoMothership_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_FlyInHeight
-		{
-			postInit="params ['_entity'];  _entity flyInHeight 4000;";	//flyInHeight = where local argument, global effect
-		};
-		class RC_Detach
-		{
-			deleted="if (!isserver) exitwith {}; \
-			params ['_entity']; \
-			private _attObj = (attachedObjects _entity); \
-			if (count _attObj > 0) then { \
-				{deleteVehicle _x} forEach _attObj; \
-			};";
-
-
-			killed="params ['_unit']; \
-			private _attObj = (attachedObjects _unit); \
-			if (count _attObj > 0) then { \
-				{_x disableCollisionWith _unit; detach _x} forEach _attObj; \
-			};";
-		};
-	};
-
     class Components: Components
 	{
 		class TransportPylonsComponent: TransportPylonsComponent
@@ -51,12 +27,6 @@ class RC_MosquitoMothership_Core: RC_MosquitoMothership_Fetch
 			};
 		};
 	};
-
-    camouflage=75;				//150
-    //audible=?;                //?  
-	radarTargetSize=0.1;		//0.15
-	visualTargetSize=0.3;		//0.9
-	irTargetSize=0.3;			//0.8
 	
 	displayName="RC Mosquito Mothership";
 	editorSubcategory="RC_eVTOL_subcat";
@@ -127,31 +97,7 @@ class RC_MosquitoMothership_NoCam_Fetch: RC_UCAV_NoCam_Base
 };
 class RC_MosquitoMothership_NoCam_Core: RC_MosquitoMothership_NoCam_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_FlyInHeight
-		{
-			postInit="params ['_entity'];  _entity flyInHeight 4000;";	//flyInHeight = where local argument, global effect
-		};
-		class RC_Detach
-		{
-			deleted="if (!isserver) exitwith {}; \
-			params ['_entity']; \
-			private _attObj = (attachedObjects _entity); \
-			if (count _attObj > 0) then { \
-				{deleteVehicle _x} forEach _attObj; \
-			};";
-
-
-			killed="params ['_unit']; \
-			private _attObj = (attachedObjects _unit); \
-			if (count _attObj > 0) then { \
-				{_x disableCollisionWith _unit; detach _x} forEach _attObj; \
-			};";
-		};
-	};
-
-	class Components: Components
+    class Components: Components
 	{
 		class TransportPylonsComponent: TransportPylonsComponent
 		{
@@ -169,12 +115,6 @@ class RC_MosquitoMothership_NoCam_Core: RC_MosquitoMothership_NoCam_Fetch
 		};
 	};
 
-    camouflage=75;				//150
-    //audible=?;                //?  
-	radarTargetSize=0.1;		//0.15
-	visualTargetSize=0.3;		//0.9
-	irTargetSize=0.3;			//0.8
-	
 	displayName="RC Mosquito Mothership [no camera]";
 	editorSubcategory="RC_eVTOL_subcat";
 };
