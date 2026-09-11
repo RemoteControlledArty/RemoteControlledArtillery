@@ -36,11 +36,6 @@ class RC_UCAV_Core: RC_UCAV_Fetch
 	author="Ascent";
 	editorSubcategory="RC_UAV_Designator_subcat";
 
-	//camouflage=?;				//150
-	radarTargetSize=0.1;			//0.15
-	visualTargetSize=0.3;			//0.9
-	irTargetSize=0.3;				//0.8
-
 	unitInfoType="RC_RscOptics_AV_Heli";	//RC_RscOptics_AV_Heli
 	unitInfoTypeRTD="RC_RscOptics_AV_Heli";	//RC_RscOptics_AV_Heli
 	driverWeaponsInfoType="RscOptics_CAS_01_TGP";
