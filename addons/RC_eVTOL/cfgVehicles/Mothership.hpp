@@ -58,7 +58,7 @@ class RC_MosquitoMothership_Minigun_B: RC_MosquitoMothership_B
 		};
 	};
 
-	displayName="RC Minigun Mosquito Mothership [no camera]";
+	displayName="RC Minigun Mosquito Mothership";
 };
 class RC_MosquitoMothership_Minigun_O: RC_MosquitoMothership_Minigun_B
 {
