@@ -12,7 +12,7 @@ fnc_RC_eVTOL_attachToMothership = {
     params ["_veh"];
 
     private _type = typeOf _veh;
-    private _side = _type select (count _type - 1);
+    private _side = _type select [count _type - 1];
     private _eVTOL_Str = "RC_eVTOL_TI_" + _side;
 
     _posArrL = [
@@ -47,7 +47,7 @@ fnc_RC_eVTOL_attachToMothership_Minigun = {
     params ["_veh"];
 
     private _type = typeOf _veh;
-    private _side = _type select (count _type - 1);
+    private _side = _type select [count _type - 1];
     private _eVTOL_Str = "RC_eVTOL_Minigun_TI_" + _side;
 
     _posArrL = [
@@ -89,6 +89,7 @@ fnc_RC_eVTOL_detach = {
     player allowDamage false;   //to prevent impulse damage
 
     detach _veh;
+    [_veh, 0, player] call GYGJetson_fnc_setFold;
     sleep 1;
 
     _veh allowDamage true;
@@ -122,6 +123,8 @@ fnc_RC_eVTOL_attach = {
     _veh allowDamage true; 
     _host allowDamage true;     //remoteExec where local!
     player allowDamage true;
+
+    systemchat "attached";
 };
 
 
@@ -129,11 +132,7 @@ fnc_RC_eVTOL_EH_attached = {
 
     params ["_veh"];
 
-    systemchat "attached";
-
-    //[_veh, true] call fnc_RC_eVTOL_EH_engine;
     _veh setTargetSize [0.1,0.1,0.1];
-    //systemchat str (_veh setTargetSize []);
 };
 
 
