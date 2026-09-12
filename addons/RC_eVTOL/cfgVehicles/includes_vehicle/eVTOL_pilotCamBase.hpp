@@ -4,6 +4,7 @@ memoryPointDriverOptics="jetson_light_c_pos";
 memoryPointGun="jetson_light_c_pos";
 gunBeg="jetson_light_c_pos";
 gunEnd="jetson_light_c_pos";
+//addrocketmempoint
 
 unitInfoType="RC_RscOptics_AV_Heli";
 unitInfoTypeRTD="RC_RscOptics_AV_Heli";
