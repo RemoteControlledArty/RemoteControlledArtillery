@@ -1,6 +1,10 @@
 memoryPointTaskMarker="TaskMarker_1_pos";
 memoryPointDriverOptics="jetson_light_c_pos";
 
+memoryPointGun="jetson_light_c_pos";
+gunBeg="jetson_light_c_pos";
+gunEnd="jetson_light_c_pos";
+
 unitInfoType="RC_RscOptics_AV_Heli";
 unitInfoTypeRTD="RC_RscOptics_AV_Heli";
 driverWeaponsInfoType="RscOptics_CAS_01_TGP";

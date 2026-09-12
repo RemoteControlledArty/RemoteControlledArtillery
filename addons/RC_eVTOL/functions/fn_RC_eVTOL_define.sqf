@@ -206,7 +206,8 @@ fnc_RC_eVTOL_minigun = {
         {deleteVehicle _x} forEach _attObj;
     };
 
-    _w = createSimpleObject ["\rhsusf\addons\rhsusf_airweapons\MELB\rhsusf_g_m134", _veh modelToWorldVisualWorld [0,0.87,-0.55], false];
+    //_w = createSimpleObject ["\rhsusf\addons\rhsusf_airweapons\MELB\rhsusf_g_m134", _veh modelToWorldVisualWorld [0,0.87,-0.55], false];
+    _w = createSimpleObject ["\A3\Weapons_F\DynamicLoadout\PylonPod_12x_Rocket_DAR_black_F.p3d", _veh modelToWorldVisualWorld [0,0.1,-0.65], false];
     _w allowdamage false;
     [_w, _veh, true] call BIS_fnc_attachToRelative;
     _yaw = 180;
@@ -218,10 +219,14 @@ fnc_RC_eVTOL_minigun = {
         [[sin _roll, -sin _pitch, cos _roll * cos _pitch], - _yaw] call BIS_fnc_rotateVector2D          
     ]; 
 
+    (vehicle player) addMagazineTurret ["6Rnd_HEDP_Grenade_shell", [-1]];
+    (vehicle player) addWeaponTurret ["GL_M32_F", [-1]];
 
-    (vehicle player) addMagazineTurret ["RC_60Rnd_20mm_HEAB_cUAS_T_G", [-1]];
-    (vehicle player) addMagazineTurret ["RC_60Rnd_20mm_cUAS", [-1]];
-    (vehicle player) addWeaponTurret ["RC_autocannon_20mm_cUAS", [-1]];
+    (vehicle player) addMagazineTurret ["RC_PylonM_12Rnd_Hydra_MP_Proxy", [-1]];
+    (vehicle player) addWeaponTurret ["RC_PylonW_12Rnd_Hydra", [-1]];
+
+    (vehicle player) addMagazineTurret ["RC_40Rnd_20mm_HEAB_cUAS_T_G", [-1]];
+    (vehicle player) addWeaponTurret ["RC_GMG_20mm_cUAS", [-1]];
 
     (vehicle player) addMagazineTurret ["RC_PylonM_1000Rnd_127mm_SLAP_T_G_left", [-1]];
     (vehicle player) addWeaponTurret ["RC_PylonW_127mm_Minigun", [-1]];
