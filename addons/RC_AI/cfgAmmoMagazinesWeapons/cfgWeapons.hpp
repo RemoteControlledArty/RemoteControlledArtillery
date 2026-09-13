@@ -824,6 +824,10 @@ class RC_AI_AbramsX_30mm_M914: RC_AI_AbramsX_30mm_M914_Base
 	{
 		magazines[]=
 		{
+			"RC_AI_100Rnd_30mm_HE_Pen_T_R",
+			"RC_AI_100Rnd_30mm_HE_DF_T_R"
+
+			/*
 			"RC_AI_140Rnd_30mm_HEAB_DF_X_T_R",
 			"RC_AI_140Rnd_30mm_HEAB_DF_X_T_G",
 			"RC_AI_140Rnd_30mm_HEAB_DF_X_T_Y",
@@ -862,6 +866,7 @@ class RC_AI_AbramsX_30mm_M914: RC_AI_AbramsX_30mm_M914_Base
 			"RC_AI_140Rnd_30mm_APFSDS_T_R",
 			"RC_AI_140Rnd_30mm_APFSDS_T_G",
 			"RC_AI_140Rnd_30mm_APFSDS_T_Y"
+			*/
 		};
 	};
 };
@@ -960,7 +965,9 @@ class RC_AI_RHS_weap_m240_abrams_coax: RC_RHS_weap_m240_abrams_coax
 {
 	magazines[]=
 	{
+		"RC_AI_RHS_400Rnd_762x51_T_R",
 		"RC_AI_RHS_300Rnd_762x51_T_R",
+		"RC_AI_RHS_200Rnd_762x51_T_R",
 		"RC_AI_RHS_300Rnd_762x51_M61_T_R"
 	};
 };
@@ -972,6 +979,8 @@ class RC_AI_RHS_weap_m240_bradley_coax: RC_RHS_weap_m240_bradley_coax
 	magazines[]=
 	{
 		"RC_AI_RHS_400Rnd_762x51_T_R",
+		"RC_AI_RHS_300Rnd_762x51_T_R",
+		"RC_AI_RHS_200Rnd_762x51_T_R",
 		"RC_AI_RHS_400Rnd_762x51_M61_T_R"
 	};
 };
@@ -1012,7 +1021,9 @@ class RC_AI_RHS_M2_CROWS_M153_Abrams: RC_RHS_M2_CROWS_M153_Abrams
 		"RC_300Rnd_127x99_cUAS"
 		*/
 		"RC_AI_RHS_300rnd_127x99_T_R",
-		"RC_AI_RHS_300rnd_127x99_SLAP_T_R"
+		"RC_AI_RHS_200rnd_127x99_T_R",
+		"RC_AI_RHS_300rnd_127x99_SLAP_T_R",
+		"RC_AI_RHS_200rnd_127x99_SLAP_T_R"
 	};
 };
 

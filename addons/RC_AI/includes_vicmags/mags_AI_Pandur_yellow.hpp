@@ -2,8 +2,7 @@ magazines[]=
 {
 	"RC_AI_100Rnd_30mm_HE_Pen_T_Y",
 	"RC_AI_100Rnd_30mm_HE_DF_T_Y",
-	"RC_AI_100Rnd_30mm_HE_DF_T_Y",
-	//"RC_AI_100Rnd_30mm_HEAB_DF_T_Y",
+	//"RC_AI_100Rnd_30mm_HE_DF_T_Y",
 
 	"RC_AI_100Rnd_30mm_APFSDS_T_Y",
 	"RC_AI_100Rnd_30mm_APFSDS_T_Y",
@@ -16,7 +15,6 @@ magazines[]=
 	"RC_AI_200Rnd_338_T_Y",
 	*/
 
-	"RC_AI_200Rnd_762x51_T_Y",
 	"RC_AI_200Rnd_762x51_T_Y",
 	"RC_AI_200Rnd_762x51_T_Y",
 	"RC_AI_200Rnd_762x51_T_Y",

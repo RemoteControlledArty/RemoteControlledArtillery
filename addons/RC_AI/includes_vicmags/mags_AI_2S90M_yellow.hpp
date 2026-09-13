@@ -5,7 +5,7 @@ magazines[]=
 	"RC_AI_5Rnd_125mm_MP_DF_T_Y",
 	"RC_AI_3Rnd_125mm_MPAB_DF_T_Y",
 	
-	"RC_2Rnd_125mm_AA_cannon_missiles",
+	//"RC_2Rnd_125mm_AA_cannon_missiles",
 	//"4Rnd_125mm_cannon_missiles",
 	
 	/*
@@ -14,9 +14,10 @@ magazines[]=
 	"RC_AI_400Rnd_93x64_T_Y",
 	*/
 
-	"RC_AI_400Rnd_762x54_T_Y",
-	"RC_AI_400Rnd_762x54_T_Y",
-	"RC_AI_400Rnd_762x54_T_Y",
+	"RC_AI_200Rnd_762x54_T_Y",
+	"RC_AI_200Rnd_762x54_T_Y",
+	"RC_AI_200Rnd_762x54_T_Y",
+	"RC_AI_200Rnd_762x54_T_Y",
 
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"

@@ -196,6 +196,7 @@ class RC_AI_60Rnd_30mm_HEAB_DF_T_Y: RC_AI_100Rnd_30mm_HEAB_DF_T_Y {count=60;};
 class RC_AI_140Rnd_30mm_HEAB_DF_X_T_R: RC_100Rnd_30mm_HEAB_DF_T_R
 {
 	ammo="RC_AI_B_30mm_HEAB_DF_X_T_R";
+	count=140;
 };
 class RC_AI_140Rnd_30mm_HEAB_DF_X_T_G: RC_AI_140Rnd_30mm_HEAB_DF_X_T_R {ammo="RC_AI_B_30mm_HEAB_DF_X_T_G";};
 class RC_AI_140Rnd_30mm_HEAB_DF_X_T_Y: RC_AI_140Rnd_30mm_HEAB_DF_X_T_R {ammo="RC_AI_B_30mm_HEAB_DF_X_T_Y";};
@@ -476,6 +477,7 @@ class RC_AI_RHS_400Rnd_762x51_T_R: RC_RHS_400Rnd_762x51_T_R
 	ammo="RC_AI_RHS_ammo_M80A1EPR_T_R";
 };
 class RC_AI_RHS_300Rnd_762x51_T_R: RC_AI_RHS_400Rnd_762x51_T_R {count=300;};
+class RC_AI_RHS_200Rnd_762x51_T_R: RC_AI_RHS_400Rnd_762x51_T_R {count=200;};
 
 
 class RC_RHS_200rnd_127x99_T_R;

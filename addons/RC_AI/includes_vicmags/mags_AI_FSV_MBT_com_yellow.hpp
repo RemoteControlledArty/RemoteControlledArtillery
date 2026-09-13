@@ -2,10 +2,10 @@ magazines[]=
 {
 	"RC_AI_200Rnd_127x99_T_Y",
 	"RC_AI_200Rnd_127x99_T_Y",
-	"RC_AI_200Rnd_127x99_T_Y",
+	//"RC_AI_200Rnd_127x99_T_Y",
 	//"RC_AI_200Rnd_127x99_SLAP_T_Y",
 
-	"RC_200Rnd_127x99_cUAS",
+	//"RC_200Rnd_127x99_cUAS",
 	
 	"Laserbatteries",
 	"SmokeLauncherMag",
