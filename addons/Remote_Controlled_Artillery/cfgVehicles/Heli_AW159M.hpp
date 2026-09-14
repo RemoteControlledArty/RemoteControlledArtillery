@@ -107,7 +107,6 @@ class RC_AI_AW159M_I: RC_AI_AW159M
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
 };
-*/
 
 
 //manned
