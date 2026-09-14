@@ -85,6 +85,58 @@ class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 };
 
 
+class RC_AI_MELB_AH6M: RC_MELB_AH6M_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
+	};
+
+	displayName="[AI] AH-6M - Little Bird";
+	editorSubcategory="RC_Heli_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_4pylons_AI.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
+};
+class RC_AI_MELB_AH6M: RC_MELB_AH6M_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
+	};
+
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	displayName="AH-6M - Little Bird - V3";
+	editorSubcategory="RC_Heli_V3_subcat";
+
+	class Components: Components
+	{
+		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_4pylons_V3.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
+};
+class RC_AU_MELB_AH6M_O: RC_AI_MELB_AH6M
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+};
+class RC_AI_MELB_AH6M_I: RC_AI_MELB_AH6M
+{
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+};
+
+
 //AH manned
 class RC_MELB_AH6M_V3: RC_MELB_AH6M_Base
 {
