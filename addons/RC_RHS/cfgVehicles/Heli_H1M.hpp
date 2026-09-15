@@ -1,9 +1,9 @@
 class RHS_UH1Y;
-class RC_MH1M_Core: RHS_UH1Y
+class RC_MH1M_Fetch: RHS_UH1Y
 {
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_fetch.hpp"
 };
-class RC_MH1M_Base: RC_MH1M_Core
+class RC_MH1M_Core: RC_MH1M_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -21,7 +21,6 @@ class RC_MH1M_Base: RC_MH1M_Core
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_pilotCamFixed.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_pilotCamFree.hpp"
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_userActions.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_hitPoints.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 
 	class Components: Components
@@ -65,63 +64,9 @@ class RC_MH1M_Base: RC_MH1M_Core
 		};
 	};
 };
-
-
-//AI
-class RC_AI_MH1M_Base: RC_MH1M_Base
+class RC_MH1M_Base: RC_MH1M_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
-	};
-
-	displayName="[AI] MH-1M - Huey";
-	editorSubcategory="RC_Heli_subcat";
-
-	class Components: Components
-	{
-		#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_2pylons_AI.hpp"
-	};
-
-    class HitPoints: HitPoints
-	{
-		/*
-		class HitFuel: HitFuel
-		{
-			armor=-150;				//V 1 = -40, H ?, RC -150
-			explosionShielding=1;	//V 1, RC 1
-		};
-		class HitAvionics: HitAvionics
-		{
-			armor=-80;					//V 2 = -80, H ?, RC -80
-			explosionShielding=1;		//V 1, RC 1
-		};
-		*/
-		class HitVRotor: HitVRotor
-		{
-			//armor=-200;				//V 3 = -120, H 0.054, 0.81 = -32.4, RC -200
-			explosionShielding=3;		//V 6, H 0.27, RC 1.5
-		};
-	};
-};
-class RC_AI_MH1M: RC_AI_MH1M_Base
-{
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsB.hpp"
-};
-class RC_AI_MH1M_O: RC_AI_MH1M
-{
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsO.hpp"
-};
-class RC_AI_MH1M_I: RC_AI_MH1M
-{
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsI.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_hitPoints.hpp"
 };
 
 
