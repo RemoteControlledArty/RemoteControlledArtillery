@@ -8,6 +8,18 @@ class CfgPatches
 		units[]=
 		{
 			//Basegame
+			"RC_AI_B_Ka60M",
+            "RC_AI_O_Ka60M",
+            "RC_AI_I_Ka60M",
+
+            "RC_AI_B_MH80M_DAP",
+            "RC_AI_O_MH80M_DAP",
+            "RC_AI_I_MH80M_DAP",
+
+            "RC_AI_B_AW159M",
+            "RC_AI_O_AW159M",
+            "RC_AI_I_AW159M",
+
 			"RC_AI_B_Pandur_A",
 			"RC_AI_O_Pandur_A",
 			"RC_AI_I_Pandur_A",
@@ -104,6 +116,14 @@ class CfgPatches
 			"RC_AI_I_AbramsX_WD",
 
 			//RHS
+			"RC_AI_B_MELB_AH6M",
+            "RC_AI_O_MELB_AH6M",
+            "RC_AI_I_MELB_AH6M",
+
+            "RC_AI_B_MH1M",
+            "RC_AI_O_MH1M",
+            "RC_AI_I_MH1M",
+
 			"RC_AI_B_M1127_M2Jav_D",
 			"RC_AI_O_M1127_M2Jav_D",
 			"RC_AI_I_M1127_M2Jav_D",
@@ -137,27 +157,7 @@ class CfgPatches
 
 			"RC_AI_B_T90AM_WD",
 			"RC_AI_O_T90AM_WD",
-			"RC_AI_I_T90AM_WD",
-
-            "RC_AI_B_Ka60M",
-            "RC_AI_O_Ka60M",
-            "RC_AI_I_Ka60M",
-
-            "RC_AI_B_MH80M_DAP",
-            "RC_AI_O_MH80M_DAP",
-            "RC_AI_I_MH80M_DAP",
-
-            "RC_AI_B_AW159M",
-            "RC_AI_O_AW159M",
-            "RC_AI_I_AW159M",
-
-            "RC_AI_B_MELB_AH6M",
-            "RC_AI_O_MELB_AH6M",
-            "RC_AI_I_MELB_AH6M",
-
-            "RC_AI_B_MH1M",
-            "RC_AI_O_MH1M",
-            "RC_AI_I_MH1M"
+			"RC_AI_I_T90AM_WD"
 		};
 
 		weapons[]=
@@ -325,6 +325,10 @@ class CfgVehicles
 	#include "\RC_AI\cfgVehicles\Patria.hpp"
 	#include "\RC_AI\cfgVehicles\Rooikat.hpp"
 
+	#include "\RC_AI\cfgVehicles\Heli_AW159M.hpp"
+	#include "\RC_AI\cfgVehicles\Heli_H80M.hpp"
+	#include "\RC_AI\cfgVehicles\Heli_Ka60M.hpp"
+
 	//WS Retex
 	#include "\RC_AI\cfgVehicles\BM_2T_A.hpp"
 	#include "\RC_AI\cfgVehicles\Leopard_2.hpp"
@@ -348,6 +352,9 @@ class CfgVehicles
 	#include "\RC_AI\cfgVehicles\Stryker.hpp"
 	#include "\RC_AI\cfgVehicles\Bradley.hpp"
 	#include "\RC_AI\cfgVehicles\Abrams.hpp"
+
+	#include "\RC_AI\cfgVehicles\Heli_H6M.hpp"
+	#include "\RC_AI\cfgVehicles\Heli_H1M.hpp"
 
 	//RHS AFRF
 	#include "\RC_AI\cfgVehicles\T_90AM.hpp"

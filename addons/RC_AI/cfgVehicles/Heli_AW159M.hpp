@@ -1,7 +1,13 @@
 class RC_AW159M_Base;
 class RC_AI_AW159M_Fetch: RC_AW159M_Base
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_fetch.hpp"
+	class Components;
+	class TransportPylonsComponent;
+	class pylons;
+	class PylonRight1;
+	class PylonLeft1;
+	class HitPoints;
+	class HitVRotor;
 };
 class RC_AI_AW159M_Core: RC_AI_AW159M_Fetch
 {
@@ -10,7 +16,48 @@ class RC_AI_AW159M_Core: RC_AI_AW159M_Fetch
 
 	class Components: Components
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_2pylons_AI.hpp"
+		class TransportPylonsComponent: TransportPylonsComponent
+		{
+			class pylons: pylons
+			{
+				class PylonRight1: PylonRight1
+				{
+					hardpoints[]=
+					{
+						"RC_Hardpoint_FuelTank",
+
+						"RC_AI_Hardpoint_V1",
+						"RC_AI_Hardpoint_V1_Right",
+						"RC_AI_Hardpoint_V2",
+						"RC_AI_Hardpoint_V2_Right",
+						"RC_AI_Hardpoint_V3",
+						"RC_AI_Hardpoint_V3_Right",
+						"RC_AI_Hardpoint_V4",
+						"RC_AI_Hardpoint_V4_Right"
+					};
+
+					attachment="RC_AI_PylonM_250Rnd_30mm_Proxy";
+				};
+				class PylonLeft1: PylonLeft1
+				{
+					hardpoints[]=
+					{
+						"RC_Hardpoint_FuelTank",
+						
+						"RC_AI_Hardpoint_V1",
+						"RC_AI_Hardpoint_V1_Left",
+						"RC_AI_Hardpoint_V2",
+						"RC_AI_Hardpoint_V2_Left",
+						"RC_AI_Hardpoint_V3",
+						"RC_AI_Hardpoint_V3_Left",
+						"RC_AI_Hardpoint_V4",
+						"RC_AI_Hardpoint_V4_Left"
+					};
+
+					attachment="RC_AI_PylonM_19Rnd_Hydra_MP_Proxy";
+				};
+			};
+		};
     };
 
 	class HitPoints: HitPoints

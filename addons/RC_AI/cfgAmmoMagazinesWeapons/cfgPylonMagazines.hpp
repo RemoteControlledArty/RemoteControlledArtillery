@@ -330,6 +330,14 @@ class RC_AI_PylonM_19Rnd_Hydra_MP_Proxy: RC_PylonM_19Rnd_Hydra_MP_Proxy
 };
 
 
+class RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy;
+class RC_AI_RHS_PylonM_19Rnd_Hydra_MP_Proxy: RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy
+{
+	ammo="RC_AI_RHS_Hydra_MP_Proxy";
+	hardpoints[]={"RC_AI_Hardpoint_V4"};
+};
+
+
 class RC_PylonM_19Rnd_S5_MP_Proxy;
 class RC_AI_PylonM_19Rnd_S5_MP_Proxy: RC_PylonM_19Rnd_S5_MP_Proxy
 {

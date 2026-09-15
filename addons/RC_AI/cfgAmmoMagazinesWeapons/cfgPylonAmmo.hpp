@@ -88,6 +88,11 @@ class RC_AI_Hydra_MP_Proxy: M_AT
 	indirectHit=40;
 	indirectHitRange=8;
 };
+class RC_AI_RHS_Hydra_MP_Proxy: RC_AI_Hydra_MP_Proxy
+{
+	model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229_fly";
+	proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229";
+};
 
 
 /*

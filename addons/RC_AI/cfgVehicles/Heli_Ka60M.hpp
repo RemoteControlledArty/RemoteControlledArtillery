@@ -1,7 +1,13 @@
 class RC_Ka60M_Base;
 class RC_AI_Ka60M_Fetch: RC_Ka60M_Base
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_fetch.hpp"
+	class Components;
+	class TransportPylonsComponent;
+	class pylons;
+	class pylon1;
+	class pylon2;
+	class HitPoints;
+	class HitVRotor;
 };
 class RC_AI_Ka60M_Core: RC_AI_Ka60M_Fetch
 {
@@ -10,7 +16,48 @@ class RC_AI_Ka60M_Core: RC_AI_Ka60M_Fetch
 
 	class Components: Components
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_2pylons_AI.hpp"
+		class TransportPylonsComponent: TransportPylonsComponent
+		{
+			class pylons: pylons
+			{
+				class pylon1: pylon1
+				{
+					hardpoints[]=
+					{
+						"RC_Hardpoint_FuelTank",
+
+						"RC_AI_Hardpoint_O_V1",
+						"RC_AI_Hardpoint_O_V1_Right",
+						"RC_AI_Hardpoint_O_V2",
+						"RC_AI_Hardpoint_O_V2_Right",
+						"RC_AI_Hardpoint_O_V3",
+						"RC_AI_Hardpoint_O_V3_Right",
+						"RC_AI_Hardpoint_O_V4",
+						"RC_AI_Hardpoint_O_V4_Right"
+					};
+
+					attachment="RC_AI_PylonM_250Rnd_30mm_Proxy_O";
+				};
+				class pylon2: pylon2
+				{
+					hardpoints[]=
+					{
+						"RC_Hardpoint_FuelTank",
+						
+						"RC_AI_Hardpoint_O_V1",
+						"RC_AI_Hardpoint_O_V1_Left",
+						"RC_AI_Hardpoint_O_V2",
+						"RC_AI_Hardpoint_O_V2_Left",
+						"RC_AI_Hardpoint_O_V3",
+						"RC_AI_Hardpoint_O_V3_Left",
+						"RC_AI_Hardpoint_O_V4",
+						"RC_AI_Hardpoint_O_V4_Left"
+					};
+
+					attachment="RC_AI_PylonM_19Rnd_S5_MP_Proxy";
+				};
+			};
+		};
 	};
 
 	class HitPoints: HitPoints
@@ -45,16 +92,16 @@ class RC_AI_B_Ka60M: RC_AI_Ka60M_Base
 	scopeCurator=2;
 	forceInGarage=1;
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\RC_AI\includes_cfg\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"
 };
 class RC_AI_O_Ka60M: RC_AI_B_Ka60M
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_AI\includes_cfg\heli_sideO_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
 };
 class RC_AI_I_Ka60M: RC_AI_B_Ka60M
 {
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_AI\includes_cfg\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
 };

@@ -1,20 +1,19 @@
-class RC_MELB_AH6M_Base;
-class RC_AI_MELB_AH6M_Fetch: RC_MELB_AH6M_Base
+class RC_MH1M_Base;
+class RC_AI_MH1M_Fetch: RC_MH1M_Base
 {
 	class Components;
 	class TransportPylonsComponent;
 	class pylons;
 	class pylon1;
 	class pylon2;
-	class pylon3;
-	class pylon4;
+	class cmDispenser;
 	class HitPoints;
 	class HitVRotor;
 	class EventHandlers;
 };
-class RC_AI_MELB_AH6M_Core: RC_AI_MELB_AH6M_Fetch
+class RC_AI_MH1M_Core: RC_AI_MH1M_Fetch
 {
-	displayName="[AI] AH-6M - Little Bird";
+	displayName="[AI] MH-1M - Huey";
 	editorSubcategory="RC_Heli_subcat";
 
 	class Components: Components
@@ -27,6 +26,8 @@ class RC_AI_MELB_AH6M_Core: RC_AI_MELB_AH6M_Fetch
 				{
 					hardpoints[]=
 					{
+						"RC_Hardpoint_FuelTank",
+						
 						"RC_AI_Hardpoint_V1",
 						"RC_AI_Hardpoint_V1_Left",
 						"RC_AI_Hardpoint_V2",
@@ -46,24 +47,6 @@ class RC_AI_MELB_AH6M_Core: RC_AI_MELB_AH6M_Fetch
 						"RC_Hardpoint_FuelTank",
 						
 						"RC_AI_Hardpoint_V1",
-						"RC_AI_Hardpoint_V1_Left",
-						"RC_AI_Hardpoint_V2",
-						"RC_AI_Hardpoint_V2_Left",
-						"RC_AI_Hardpoint_V3",
-						"RC_AI_Hardpoint_V3_Left",
-						"RC_AI_Hardpoint_V4",
-						"RC_AI_Hardpoint_V4_Left"
-					};
-
-					attachment="RC_AI_PylonM_250Rnd_30mm_Proxy";
-				};
-				class pylon3: pylon3
-				{
-					hardpoints[]=
-					{
-						"RC_Hardpoint_FuelTank",
-						
-						"RC_AI_Hardpoint_V1",
 						"RC_AI_Hardpoint_V1_Right",
 						"RC_AI_Hardpoint_V2",
 						"RC_AI_Hardpoint_V2_Right",
@@ -75,27 +58,14 @@ class RC_AI_MELB_AH6M_Core: RC_AI_MELB_AH6M_Fetch
 
 					attachment="RC_AI_PylonM_250Rnd_30mm_Proxy";
 				};
-				class pylon4: pylon4
+				class cmDispenser: cmDispenser
 				{
-					hardpoints[]=
-					{
-						"RC_AI_Hardpoint_V1",
-						"RC_AI_Hardpoint_V1_Right",
-						"RC_AI_Hardpoint_V2",
-						"RC_AI_Hardpoint_V2_Right",
-						"RC_AI_Hardpoint_V3",
-						"RC_AI_Hardpoint_V3_Right",
-						"RC_AI_Hardpoint_V4",
-						"RC_AI_Hardpoint_V4_Right"
-					};
-
-					attachment="RC_AI_RHS_PylonM_19Rnd_Hydra_MP_Proxy";
 				};
 			};
 		};
 	};
 
-    class HitPoints: HitPoints
+  	class HitPoints: HitPoints
 	{
 		/*
 		class HitFuel: HitFuel
@@ -116,31 +86,31 @@ class RC_AI_MELB_AH6M_Core: RC_AI_MELB_AH6M_Fetch
 		};
 	};
 };
-class RC_AI_MELB_AH6M_Base: RC_AI_MELB_AH6M_Core
+class RC_AI_MH1M_Base: RC_AI_MH1M_Core
 {
-    class EventHandlers: EventHandlers
+	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 	};
 };
 
 
-class RC_AI_B_MELB_AH6M: RC_AI_MELB_AH6M_Base
+class RC_AI_B_MH1M: RC_AI_MH1M_Base
 {
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
 
 	#include "\RC_AI\includes_cfg\heli_sideB_manned.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsB.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsB.hpp"
 };
-class RC_AI_O_MELB_AH6M: RC_AI_B_MELB_AH6M
+class RC_AI_O_MH1M: RC_AI_B_MH1M
 {
 	#include "\RC_AI\includes_cfg\heli_sideO_manned.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsO.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsO.hpp"
 };
-class RC_AI_I_MELB_AH6M: RC_AI_B_MELB_AH6M
+class RC_AI_I_MH1M: RC_AI_B_MH1M
 {
 	#include "\RC_AI\includes_cfg\heli_sideI_manned.hpp"
-	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_itemsI.hpp"
+	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_itemsI.hpp"
 };
