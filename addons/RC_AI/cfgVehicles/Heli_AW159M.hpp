@@ -45,7 +45,7 @@ class RC_AI_B_AW159M: RC_AI_AW159M_Base
 	scopeCurator=2;
 	forceInGarage=1;
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
+	#include "\RC_AI\includes_cfg\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsB.hpp"
 };
 class RC_AI_O_AW159M: RC_AI_B_AW159M
@@ -57,7 +57,7 @@ class RC_AI_O_AW159M: RC_AI_B_AW159M
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
+	#include "\RC_AI\includes_cfg\heli_sideO_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsO.hpp"
 };
 class RC_AI_I_AW159M: RC_AI_B_AW159M
@@ -69,6 +69,6 @@ class RC_AI_I_AW159M: RC_AI_B_AW159M
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
 
-	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
+	#include "\RC_AI\includes_cfg\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_itemsI.hpp"
 };
