@@ -36,7 +36,7 @@ class MainTurret: MainTurret
 	
 	weapons[]={"RC_RHS_338_DoorMinigun_1"};
 	magazines[]={"RC_2000Rnd_338_SLAP_T_R"};
-	gunnerType="RC_RHS_B_DoorGunner";
+	gunnerType="RC_B_DoorGunner";
 	stabilizedInAxes=3;
 
 	class Components: Components
@@ -52,7 +52,7 @@ class RightDoorGun: RightDoorGun
 
 	weapons[]={"RC_RHS_338_DoorMinigun_2"};
 	magazines[]={"RC_2000Rnd_338_SLAP_T_R"};
-	gunnerType="RC_RHS_B_DoorGunner";
+	gunnerType="RC_B_DoorGunner";
 	stabilizedInAxes=3;
 
 	class Components: Components
