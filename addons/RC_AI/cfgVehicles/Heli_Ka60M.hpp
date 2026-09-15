@@ -39,7 +39,7 @@ class RC_AI_Ka60M_Base: RC_AI_Ka60M_Core
 };
 
 
-class RC_AI_Ka60M: RC_AI_Ka60M_Base
+class RC_AI_B_Ka60M: RC_AI_Ka60M_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -48,12 +48,12 @@ class RC_AI_Ka60M: RC_AI_Ka60M_Base
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"
 };
-class RC_AI_Ka60M_O: RC_AI_Ka60M
+class RC_AI_O_Ka60M: RC_AI_B_Ka60M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
 };
-class RC_AI_Ka60M_I: RC_AI_Ka60M
+class RC_AI_I_Ka60M: RC_AI_B_Ka60M
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
