@@ -39,7 +39,7 @@ class RC_AI_MH80M_DAP_Base: RC_AI_MH80M_DAP_Core
 };
 
 
-class RC_AI_MH80M_DAP: RC_AI_MH80M_DAP_Base
+class RC_AI_B_MH80M_DAP: RC_AI_MH80M_DAP_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -48,12 +48,12 @@ class RC_AI_MH80M_DAP: RC_AI_MH80M_DAP_Base
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideB_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsB.hpp"
 };
-class RC_AI_MH80M_DAP_O: RC_AI_MH80M_DAP
+class RC_AI_O_MH80M_DAP: RC_AI_B_MH80M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideO_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsO.hpp"
 };
-class RC_AI_MH80M_DAP_I: RC_AI_MH80M_DAP
+class RC_AI_I_MH80M_DAP: RC_AI_B_MH80M_DAP
 {
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_itemsI.hpp"
