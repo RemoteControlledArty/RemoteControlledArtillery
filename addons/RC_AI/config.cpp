@@ -137,7 +137,27 @@ class CfgPatches
 
 			"RC_AI_B_T90AM_WD",
 			"RC_AI_O_T90AM_WD",
-			"RC_AI_I_T90AM_WD"
+			"RC_AI_I_T90AM_WD",
+
+            "RC_AI_B_Ka60M",
+            "RC_AI_O_Ka60M",
+            "RC_AI_I_Ka60M",
+
+            "RC_AI_B_MH80M_DAP",
+            "RC_AI_O_MH80M_DAP",
+            "RC_AI_I_MH80M_DAP",
+
+            "RC_AI_B_AW159M",
+            "RC_AI_O_AW159M",
+            "RC_AI_I_AW159M",
+
+            "RC_AI_B_MELB_AH6M",
+            "RC_AI_O_MELB_AH6M",
+            "RC_AI_I_MELB_AH6M",
+
+            "RC_AI_B_MH1M",
+            "RC_AI_O_MH1M",
+            "RC_AI_I_MH1M"
 		};
 
 		weapons[]=
