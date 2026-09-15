@@ -474,9 +474,11 @@ class CfgPatches
 			"RC_Ka60M_V6_O",
 			"RC_Ka60M_V6_I",
 
+            /*
 			"RC_AI_Ka60M",
 			"RC_AI_Ka60M_O",
 			"RC_AI_Ka60M_I",
+            */
 
 			/*
 			"RC_MQ12M_V3",
