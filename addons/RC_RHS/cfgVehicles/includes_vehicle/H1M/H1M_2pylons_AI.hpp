@@ -36,7 +36,7 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_V4_Right"
 			};
 
-			attachment="RC_PylonM_300Rnd_25mm_Proxy";
+			attachment="RC_PylonM_250Rnd_30mm_Proxy";
 		};
 		class cmDispenser: cmDispenser
 		{
