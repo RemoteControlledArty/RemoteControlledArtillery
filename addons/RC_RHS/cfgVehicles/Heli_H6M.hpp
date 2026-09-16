@@ -81,7 +81,7 @@ class RC_MELB_AH6M_Core: RC_MELB_AH6M_Fetch
 };
 class RC_MELB_AH6M_Base: RC_MELB_AH6M_Core
 {
-#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_hitPoints.hpp"
+    #include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_hitPoints.hpp"
 };
 
 
@@ -218,7 +218,7 @@ class RC_MELB_OM_AH6M_DAP_I: RC_MELB_OM_AH6M_DAP
 
 
 //MH manned
-class RC_MELB_MH6M_DAP_Base: RC_MELB_AH6M_Base
+class RC_MELB_MH6M_DAP_Core: RC_MELB_AH6M_Core
 {
 	transportsoldier=1;
 	cargoProxyIndexes[]={9};
@@ -258,6 +258,10 @@ class RC_MELB_MH6M_DAP_Base: RC_MELB_AH6M_Base
 		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_cargoTurrets_frontRear.hpp"
 		#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_cargoTurrets_middle.hpp"
 	};
+};
+class RC_MELB_MH6M_DAP_Base: RC_MELB_MH6M_DAP_Core
+{
+    #include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_hitPoints.hpp"
 };
 
 
