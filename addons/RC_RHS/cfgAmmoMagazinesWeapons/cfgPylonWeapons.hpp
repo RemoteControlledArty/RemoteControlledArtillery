@@ -198,7 +198,8 @@ class RC_RHS_PylonW_Hydra: RC_RHS_PylonW_Hydra_Core
 		"RC_RHS_PylonM_19Rnd_Hydra_MP",
 		"RC_RHS_PylonM_7Rnd_Hydra_MP",
 		"RC_RHS_PylonM_19Rnd_Hydra_MP_Proxy",
-		"RC_RHS_PylonM_7Rnd_Hydra_MP_Proxy"
+		"RC_RHS_PylonM_7Rnd_Hydra_MP_Proxy",
+		"RC_AI_RHS_PylonM_19Rnd_Hydra_MP_Proxy"
 		//"RC_RHS_PylonM_19Rnd_Hydra_HE",
 		//"RC_RHS_PylonM_7Rnd_Hydra_HE"
 	};
