@@ -22,25 +22,6 @@ class RC_RCIV_IFV_5_Fetch: O_APC_Tracked_02_cannon_F
 };
 class RC_RCIV_IFV_5_Core: RC_RCIV_IFV_5_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -107,14 +88,11 @@ class RC_RCIV_IFV_5_Core: RC_RCIV_IFV_5_Fetch
 
 class RC_RCIV_5_Core: RC_RCIV_IFV_5_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+
+	displayName="RC BM-2T unarmed";
+	editorSubcategory="RC_ICV_subcat";
 
 	weapons[]=
 	{
@@ -128,13 +106,6 @@ class RC_RCIV_5_Core: RC_RCIV_IFV_5_Core
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-
-	displayName="RC BM-2T unarmed";
-	editorSubcategory="RC_ICV_subcat";
-
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
@@ -254,6 +225,19 @@ class RC_RCIV_5_Core: RC_RCIV_IFV_5_Core
 };
 class RC_RCIV_5_Base: RC_RCIV_5_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_CommanderOrGunner.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 };
 
 
@@ -285,16 +269,12 @@ class RC_ICV_5_WD_O: RC_ICV_5_A_O
 
 class RC_IFV_5_Core: RC_RCIV_IFV_5_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	RC_ATrespondingTurret[]={0,0};
+
+	displayName="BM-2T";
+	editorSubcategory="RC_IFV_ATGM_subcat";
 
 	weapons[]=
 	{
@@ -308,12 +288,6 @@ class RC_IFV_5_Core: RC_RCIV_IFV_5_Core
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-
-	displayName="BM-2T";
-	editorSubcategory="RC_IFV_ATGM_subcat";
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
@@ -399,6 +373,19 @@ class RC_IFV_5_Core: RC_RCIV_IFV_5_Core
 };
 class RC_IFV_5_Base: RC_IFV_5_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 };
 
 

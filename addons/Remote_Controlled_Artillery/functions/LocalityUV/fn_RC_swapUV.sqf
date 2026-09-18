@@ -12,10 +12,13 @@ if (isRemoteControlling player) then {
 		private _UV_index = ((RC_UV_favs find (getConnectedUAV player)) + 1) % (count RC_UV_favs);
 		private _UV = RC_UV_favs select _UV_index;
 
-		if (player in _UV) exitwith {hint "Self in UV,\ncannot connect without causing bug."};
+		if (player in _UV) then {
 
-		private _UV_seat = _UV getVariable ["RC_UV_seat", objNull];
-		[_UV, _UV_seat] call RC_fnc_RC_connectToUV;
+			player connectTerminalToUAV _UV;
+			player action ["UAVTerminalOpen", player];
+		} else {
+			[_UV] call RC_fnc_RC_connectToUV;
+		};
 	} else {
 		
 		hint "No favorite UV's available to swap to.\nFirst add UV's to favorites.";

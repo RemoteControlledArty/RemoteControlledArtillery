@@ -24,25 +24,6 @@ class RC_RCIV_APC_1_Fetch: B_APC_Tracked_01_rcws_F
 };
 class RC_RCIV_APC_1_Core: RC_RCIV_APC_1_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -115,17 +96,12 @@ class RC_RCIV_APC_1_Core: RC_RCIV_APC_1_Fetch
 
 class RC_RCIV_1_Core: RC_RCIV_APC_1_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
-		};
-	};
-	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	//RC_ATrespondingTurret[]={1};
+
+	displayName="RC Namer unarmed";
+	editorSubcategory="RC_ICV_subcat";
 
 	weapons[]=
 	{
@@ -140,13 +116,6 @@ class RC_RCIV_1_Core: RC_RCIV_APC_1_Core
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-	
-	displayName="RC Namer unarmed";
-	editorSubcategory="RC_ICV_subcat";
-
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
@@ -261,6 +230,21 @@ class RC_RCIV_1_Core: RC_RCIV_APC_1_Core
 };
 class RC_RCIV_1_Base: RC_RCIV_1_Core
 {
+	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
+
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_CommanderOrGunner.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 };
 
 
@@ -340,15 +324,8 @@ class RC_ICV_1_ReTex_D_I: RC_ICV_1_ReTex_D
 
 class RC_APC_1_Core: RC_RCIV_APC_1_Core
 {
-    class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
-	};
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_APC.hpp"
 	RC_ATrespondingTurret[]={1};
 
     displayName="Namer";
@@ -367,9 +344,6 @@ class RC_APC_1_Core: RC_RCIV_APC_1_Core
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-	
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_APC.hpp"
 
 	class Turrets: Turrets
 	{
@@ -483,6 +457,18 @@ class RC_APC_1_Core: RC_RCIV_APC_1_Core
 };
 class RC_APC_1_Base: RC_APC_1_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 };
 
 
@@ -622,15 +608,6 @@ class RC_APC_1_ReTex_D_I: RC_APC_1_ReTex_D
 //20mm IFV variant
 class RC_IFV_1_Core: RC_APC_1_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-
 	displayName="Namer 20mm";
 	editorSubcategory="RC_IFV_subcat";
 
@@ -686,6 +663,19 @@ class RC_IFV_1_Core: RC_APC_1_Core
 };
 class RC_IFV_1_Base: RC_IFV_1_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 };
 
 

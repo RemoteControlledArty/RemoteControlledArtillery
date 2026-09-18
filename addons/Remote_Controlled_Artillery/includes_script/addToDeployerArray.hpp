@@ -1,2 +1,5 @@
-init="RC_FPV_Deployers pushback (_this select 0);";
-//init="if (!isServer) exitwith {};  RC_FPV_Deployers pushback (_this select 0);";
+class RC_FPV_Deployer
+{
+	init="RC_FPV_Deployers pushback (_this select 0);";
+	//init="if (!isServer) exitwith {};  RC_FPV_Deployers pushback (_this select 0);";
+};

@@ -179,19 +179,10 @@ class RC_AI_MH80M_Core: RC_AI_MH80M_DAP_Core
 				{
 					hardpoints[]=
 					{
-						"RC_Hardpoint_FuelTank",
-
-						"RC_AI_Hardpoint_V1",
-						"RC_AI_Hardpoint_V1_Left",
-						"RC_AI_Hardpoint_V2",
-						"RC_AI_Hardpoint_V2_Left",
-						"RC_AI_Hardpoint_V3",
-						"RC_AI_Hardpoint_V3_Left",
-						"RC_AI_Hardpoint_V4",
-						"RC_AI_Hardpoint_V4_Left"
+						"RC_Hardpoint_FuelTank"
 					};
 
-					attachment="RC_AI_PylonM_19Rnd_Hydra_MP_Proxy";
+					attachment="RC_PylonFuelTank_HalfFull";
 				};
 				//left inner
 				class pylon2: pylon2
@@ -229,26 +220,17 @@ class RC_AI_MH80M_Core: RC_AI_MH80M_DAP_Core
 						"RC_AI_Hardpoint_V4_Right"
 					};
 
-					attachment="RC_AI_PylonM_250Rnd_30mm_Proxy";
+					attachment="RC_AI_PylonM_19Rnd_Hydra_MP_Proxy";
 				};
 				//right outer
 				class pylon4: pylon4
 				{
 					hardpoints[]=
 					{
-						"RC_Hardpoint_FuelTank",
-
-						"RC_AI_Hardpoint_V1",
-						"RC_AI_Hardpoint_V1_Right",
-						"RC_AI_Hardpoint_V2",
-						"RC_AI_Hardpoint_V2_Right",
-						"RC_AI_Hardpoint_V3",
-						"RC_AI_Hardpoint_V3_Right",
-						"RC_AI_Hardpoint_V4",
-						"RC_AI_Hardpoint_V4_Right"
+						"RC_Hardpoint_FuelTank"
 					};
 
-					attachment="RC_AI_PylonM_19Rnd_Hydra_MP_Proxy";
+					attachment="RC_PylonFuelTank_HalfFull";
 				};
 				//center
 				class camera: camera

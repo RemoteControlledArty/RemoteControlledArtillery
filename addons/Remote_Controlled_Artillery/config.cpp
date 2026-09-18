@@ -955,6 +955,8 @@ class CfgFunctions
 			//class RC_cursorTargetIntoDatalink_Loop {postInit=1;};
 			class RC_Proxy {postInit=1;};
 			class RC_respawnAlertToPilots {postInit=1;};
+
+			class RC_fakeTracers {};
 			class RC_SRAM {};
 
 			class RC_MinePlow {};
@@ -1020,9 +1022,9 @@ class CfgFunctions
 		{
 			file="\Remote_Controlled_Artillery\functions\Detection_cUAS";
 			
-			class RC_cUAS_Detector {};
+			class RC_cUAS_Sensor {};
 			/*
-			//atm included in detector
+			//atm included in sensor
 			class RC_cUAS_Beep_Arrays {preInit=1;};
 			class RC_cUAS_Beep_Loop {postInit=1;};
 			class RC_cUAS_Beep_Call {};

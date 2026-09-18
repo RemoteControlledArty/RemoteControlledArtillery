@@ -32,25 +32,6 @@ class RC_RCIV_IFV_4_Fetch: B_APC_Wheeled_01_cannon_F
 };
 class RC_RCIV_IFV_4_Core: RC_RCIV_IFV_4_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -132,21 +113,11 @@ class RC_RCIV_IFV_4_Core: RC_RCIV_IFV_4_Fetch
 
 class RC_RCIV_4_Core: RC_RCIV_IFV_4_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
-		};
-	};
-	//(_this select 0) spawn {while {true} do {if (player in _this && (commander _this == player)) then {player action ["TurnIn", _this player];}; sleep 0.5;};};
-
-	displayName="RC Patria AMV unarmed";
-	editorSubcategory="RC_ICV_subcat";
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	
+	displayName="RC Patria AMV unarmed";
+	editorSubcategory="RC_ICV_subcat";
 
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
@@ -300,6 +271,19 @@ class RC_RCIV_4_Core: RC_RCIV_IFV_4_Core
 };
 class RC_RCIV_4_Base: RC_RCIV_4_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_CommanderOrGunner.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 };
 
 
@@ -350,17 +334,12 @@ class RC_ICV_4_WD_I: RC_ICV_4_WD
 
 class RC_IFV_4_Core: RC_RCIV_IFV_4_Core
 {
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	RC_ATrespondingTurret[]={0,0};
+
+	displayName="Patria AMV40";
+	editorSubcategory="RC_IFV_subcat";
 
 	weapons[]=
 	{
@@ -375,13 +354,6 @@ class RC_IFV_4_Core: RC_RCIV_IFV_4_Core
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-
-	displayName="Patria AMV40";
-	editorSubcategory="RC_IFV_subcat";
-
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 
 	class Turrets: Turrets
 	{
@@ -477,6 +449,19 @@ class RC_IFV_4_Core: RC_RCIV_IFV_4_Core
 };
 class RC_IFV_4_Base: RC_IFV_4_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 };
 
 
@@ -667,9 +652,7 @@ class RC_IFV_4_30mm_A: RC_IFV_4_A
 };
 class RC_IFV_4_30mm_A_O: RC_IFV_4_30mm_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -682,9 +665,7 @@ class RC_IFV_4_30mm_A_O: RC_IFV_4_30mm_A
 };
 class RC_IFV_4_30mm_A_I: RC_IFV_4_30mm_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -699,7 +680,6 @@ class RC_IFV_4_30mm_A_I: RC_IFV_4_30mm_A
 
 class RC_IFV_4_30mm_WD: RC_IFV_4_30mm_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
@@ -713,9 +693,7 @@ class RC_IFV_4_30mm_WD: RC_IFV_4_30mm_A
 };
 class RC_IFV_4_30mm_WD_O: RC_IFV_4_30mm_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -728,9 +706,7 @@ class RC_IFV_4_30mm_WD_O: RC_IFV_4_30mm_WD
 };
 class RC_IFV_4_30mm_WD_I: RC_IFV_4_30mm_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets

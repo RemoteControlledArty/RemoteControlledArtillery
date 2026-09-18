@@ -105,3 +105,80 @@ class RC_AI_I_Ka60M: RC_AI_B_Ka60M
 	#include "\RC_AI\includes_cfg\heli_sideI_manned.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
 };
+
+
+class RC_AI_Ka60M_Tr_Core: RC_AI_Ka60M_Core
+{
+	displayName="[AI] Ka-60M - Kasatka (Transport)"
+	editorSubcategory="RC_Heli_subcat";
+
+	class Components: Components
+	{
+		class TransportPylonsComponent: TransportPylonsComponent
+		{
+			class pylons: pylons
+			{
+				class pylon1: pylon1
+				{
+					hardpoints[]=
+					{
+						"RC_Hardpoint_FuelTank",
+
+						"RC_AI_Hardpoint_O_V1",
+						"RC_AI_Hardpoint_O_V1_Right",
+						"RC_AI_Hardpoint_O_V2",
+						"RC_AI_Hardpoint_O_V2_Right",
+						"RC_AI_Hardpoint_O_V3",
+						"RC_AI_Hardpoint_O_V3_Right",
+						"RC_AI_Hardpoint_O_V4",
+						"RC_AI_Hardpoint_O_V4_Right"
+					};
+
+					attachment="RC_PylonM_5000Rnd_338_SLAP_T_R_right";
+				};
+				class pylon2: pylon2
+				{
+					hardpoints[]=
+					{
+						"RC_Hardpoint_FuelTank",
+						
+						"RC_AI_Hardpoint_O_V1",
+						"RC_AI_Hardpoint_O_V1_Left",
+						"RC_AI_Hardpoint_O_V2",
+						"RC_AI_Hardpoint_O_V2_Left",
+						"RC_AI_Hardpoint_O_V3",
+						"RC_AI_Hardpoint_O_V3_Left",
+						"RC_AI_Hardpoint_O_V4",
+						"RC_AI_Hardpoint_O_V4_Left"
+					};
+
+					attachment="RC_AI_PylonM_12Rnd_S5_MP_Proxy";
+				};
+			};
+		};
+	};
+};
+class RC_AI_Ka60M_Tr_Base: RC_AI_Ka60M_Tr_Core
+{
+};
+
+
+class RC_AI_B_Ka60M_Tr: RC_AI_Ka60M_Tr_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\RC_AI\includes_cfg\heli_sideB_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsB.hpp"
+};
+class RC_AI_O_Ka60M_Tr: RC_AI_B_Ka60M_Tr
+{
+	#include "\RC_AI\includes_cfg\heli_sideO_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsO.hpp"
+};
+class RC_AI_I_Ka60M_Tr: RC_AI_B_Ka60M_Tr
+{
+	#include "\RC_AI\includes_cfg\heli_sideI_manned.hpp"
+	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_itemsI.hpp"
+};

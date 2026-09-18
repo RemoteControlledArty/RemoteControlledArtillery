@@ -25,31 +25,11 @@ class RC_ICV_IFV_6_Fetch: I_E_APC_tracked_03_cannon_F
 };
 class RC_ICV_IFV_6_Core: RC_ICV_IFV_6_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-	RC_ATrespondingTurret[]={0,0};
 
 	weapons[]=
 	{
@@ -86,28 +66,17 @@ class RC_ICV_IFV_6_Core: RC_ICV_IFV_6_Fetch
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
-class RC_ICV_IFV_6_Base: RC_ICV_IFV_6_Core
-{
-};
 
 
-class RC_IFV_6_Core: RC_ICV_IFV_6_Base
+class RC_IFV_6_Core: RC_ICV_IFV_6_Core
 {
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	RC_ATrespondingTurret[]={0,0};
 
 	displayName="Warrior";
 	editorSubcategory="RC_IFV_subcat";
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	smokeLauncherGrenadeCount=12;
 	smokeLauncherVelocity=14;
 	smokeLauncherAngle=180;
@@ -255,6 +224,19 @@ class RC_IFV_6_Core: RC_ICV_IFV_6_Base
 };
 class RC_IFV_6_Base: RC_IFV_6_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 };
 
 

@@ -1,9 +1,11 @@
 // --- Helper: connect player terminal to a UV (and attempt to open UAV terminal UI) ---
-params ["_uav", "_seat"];
+params ["_uav"];
 
 player connectTerminalToUAV _uav;
 
 // check if seat exists, prevents major bugs
+private _seat = _uav getVariable ["RC_UV_seat", objNull];
+
 if (_seat isNotEqualTo objNull) then {
 	// direct control of driver or gunner
 	player remoteControl _seat;

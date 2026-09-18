@@ -1,6 +1,6 @@
 // FPV Trucks
 class B_Truck_01_box_F;
-class RC_FPV_Truck_Core: B_Truck_01_box_F
+class RC_FPV_Truck_Fetch: B_Truck_01_box_F
 {
 	class Components;
 	class ViewOptics;
@@ -10,26 +10,8 @@ class RC_FPV_Truck_Core: B_Truck_01_box_F
 	scopeCurator=0;
 	RCEngineOff=2; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_FPV_Truck_Base: RC_FPV_Truck_Core
+class RC_FPV_Truck_Core: RC_FPV_Truck_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_FPV_Deployer
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	//#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -40,8 +22,6 @@ class RC_FPV_Truck_Base: RC_FPV_Truck_Core
 
 	author="Ascent";
 	editorSubcategory="RC_UAV_Deployers_subcat";
-	side=1;
-	forceInGarage=1;
 
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -140,12 +120,28 @@ class RC_FPV_Truck_Base: RC_FPV_Truck_Core
 		};
 	};
 };
+class RC_FPV_Truck_Base: RC_FPV_Truck_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
+
+
 class RC_FPV_Truck_A: RC_FPV_Truck_Base
 {
 	displayName="RC FPV Truck";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;
-	forceInGarage=1;
+	//forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	uavCameraDriverPos="PiP0_pos";
@@ -163,30 +159,23 @@ class RC_FPV_Truck_A: RC_FPV_Truck_Base
 		};
 	};
 
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_FPV_Truck_A_O: RC_FPV_Truck_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_FPV_Truck_A_I: RC_FPV_Truck_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
 class RC_FPV_Truck_WD: RC_FPV_Truck_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_Truck_01_box_F.jpg";
 	textureList[]=
 	{
@@ -203,16 +192,12 @@ class RC_FPV_Truck_WD: RC_FPV_Truck_A
 };
 class RC_FPV_Truck_WD_O: RC_FPV_Truck_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_FPV_Truck_WD_I: RC_FPV_Truck_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -222,7 +207,7 @@ class RC_FPV_Truck_manned_A: RC_FPV_Truck_Base
 	displayName="FPV Truck";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;
-	forceInGarage=1;
+	//forceInGarage=1;
 
 	faction="RemoteControlled_B";
 	crew="";
@@ -245,7 +230,6 @@ class RC_FPV_Truck_manned_A_I: RC_FPV_Truck_manned_A
 
 class RC_FPV_Truck_manned_WD: RC_FPV_Truck_manned_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_Truck_01_box_F.jpg";
 	textureList[]=
 	{

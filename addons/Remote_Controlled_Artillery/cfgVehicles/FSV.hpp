@@ -32,25 +32,6 @@ class RC_FSV_Fetch: B_AFV_Wheeled_01_up_cannon_F
 };
 class RC_FSV_Core: RC_FSV_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
@@ -58,6 +39,10 @@ class RC_FSV_Core: RC_FSV_Fetch
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 	RC_ATrespondingTurret[]={1};
+
+	author="Ascent";
+    displayName="Rooikat";
+	editorSubcategory="RC_FSV_subcat";
 
 	weapons[]=
 	{
@@ -71,10 +56,6 @@ class RC_FSV_Core: RC_FSV_Fetch
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-
-    author="Ascent";
-    displayName="Rooikat";
-	editorSubcategory="RC_FSV_subcat";
 	
 	driverCompartments="Compartment2";
 	//hideProxyInCombat=1;	//for later use
@@ -309,21 +290,24 @@ class RC_FSV_Core: RC_FSV_Fetch
 };
 class RC_FSV_Base: RC_FSV_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 };
 
 
 class RC_FSV_A: RC_FSV_Base
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;

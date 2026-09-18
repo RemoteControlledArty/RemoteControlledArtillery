@@ -172,7 +172,7 @@ class RC_AI_MELB_MH6M_Core: RC_AI_MELB_MH6M_Fetch
 		{
 			class pylons: pylons
 			{
-				class pylon1
+				class pylon1: pylon1
 				{
 				};
 				class pylon2: pylon2
@@ -211,7 +211,7 @@ class RC_AI_MELB_MH6M_Core: RC_AI_MELB_MH6M_Fetch
 
 					attachment="RC_AI_RHS_PylonM_19Rnd_Hydra_MP_Proxy";
 				};
-				class pylon4
+				class pylon4: pylon4
                 {
 				};
 			};

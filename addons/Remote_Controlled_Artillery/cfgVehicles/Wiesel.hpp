@@ -20,25 +20,6 @@ class RC_Wiesel_AA_Fetch: I_LT_01_AA_F
 };
 class RC_Wiesel_AA_Core: RC_Wiesel_AA_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	//#include "\Remote_Controlled_Artillery\includes_script\UserActions_NameUV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -335,6 +316,15 @@ class RC_Wiesel_AA_Core: RC_Wiesel_AA_Fetch
 };
 class RC_Wiesel_AA_Base: RC_Wiesel_AA_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 
@@ -393,24 +383,6 @@ class RC_Wiesel_Radar_Fetch: I_LT_01_scout_F
 };
 class RC_Wiesel_Radar_Core: RC_Wiesel_Radar_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -668,6 +640,15 @@ class RC_Wiesel_Radar_Core: RC_Wiesel_Radar_Fetch
 };
 class RC_Wiesel_Radar_Base: RC_Wiesel_Radar_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_600m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 
@@ -735,10 +716,7 @@ class RC_Wiesel_Radar_manned_Base: RC_Wiesel_Radar_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_Gunner.hpp"
 	};
 
 	displayName="Wiesel II Radar";
@@ -1068,24 +1046,6 @@ class RC_Wiesel_ATGM_Fetch: I_LT_01_AT_F
 };
 class RC_Wiesel_ATGM_Core: RC_Wiesel_ATGM_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -1294,6 +1254,15 @@ class RC_Wiesel_ATGM_Core: RC_Wiesel_ATGM_Fetch
 };
 class RC_Wiesel_ATGM_Base: RC_Wiesel_ATGM_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 
@@ -1366,11 +1335,7 @@ class RC_Wiesel_ATGM_manned_Base: RC_Wiesel_ATGM_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_Gunner.hpp"
 	};
 
 	displayName="Wiesel II ATGM 4km";
@@ -1455,24 +1420,6 @@ class RC_Wiesel_AC_Fetch: I_LT_01_cannon_F
 };
 class RC_Wiesel_AC_Core: RC_Wiesel_AC_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -1681,6 +1628,16 @@ class RC_Wiesel_AC_Core: RC_Wiesel_AC_Fetch
 };
 class RC_Wiesel_AC_Base: RC_Wiesel_AC_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 
@@ -1753,11 +1710,7 @@ class RC_Wiesel_AC_manned_Base: RC_Wiesel_AC_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_Gunner.hpp"
 	};
 
 	displayName="Wiesel II 20mm";
@@ -1821,24 +1774,6 @@ class RC_Wiesel_AC_DIG_manned_I: RC_Wiesel_AC_WD_manned_I
 
 class RC_Wiesel_cUAS_Base: RC_Wiesel_AC_Base
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-	
 	displayName="RC Wiesel II C-UAS";
 	editorSubcategory="RC_AntiDrone_subcat";
 
@@ -1994,6 +1929,19 @@ class RC_Wiesel_cUAS_Base: RC_Wiesel_AC_Base
 		};
 	};
 };
+class RC_Wiesel_cUAS_UV_Base: RC_Wiesel_cUAS_Base
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
 
 
 class RC_Wiesel_cUAS_UV_Base: RC_Wiesel_cUAS_Base
@@ -2066,10 +2014,7 @@ class RC_Wiesel_cUAS_manned_Base: RC_Wiesel_cUAS_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery: RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_Gunner.hpp"
 	};
 
 	displayName="Wiesel II C-UAS";
