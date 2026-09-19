@@ -309,7 +309,7 @@ class RC_Mortar_Bag: RC_Mortar_Bag_base
 
 
 //vehicle attached mortar, allowing for low trajectory, shortening TOF
-class RC_VehicleMortar: RC_Mortar
+class RC_VehicleMortar_Core: RC_Mortar_UV_Core
 {
 	/*
 	//didnt found a fitting script yet, as its a single texture
@@ -323,6 +323,7 @@ class RC_VehicleMortar: RC_Mortar
 	*/
 
 	RC_ArtyType=2; //1 = portable Mortar, 2 = vehicle Mortar, 3 = Howitzer, 4 = MLRS/MRL
+
 	displayName="RC Vehicle Mortar 6km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
@@ -448,6 +449,20 @@ class RC_VehicleMortar: RC_Mortar
 			};
 		};
 	};
+};
+class RC_VehicleMortar_Base: RC_VehicleMortar_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+	};
+};
+
+
+class RC_VehicleMortar: RC_VehicleMortar_Base
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_VehicleMortar_O: RC_VehicleMortar
 {
