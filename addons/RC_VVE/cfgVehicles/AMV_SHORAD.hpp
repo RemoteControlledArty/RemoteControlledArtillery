@@ -31,25 +31,6 @@ class RC_AMV_SHORAD_Fetch: VVE_APC_Wheeled_01_shorad_QAV
 };
 class RC_AMV_SHORAD_Core: RC_AMV_SHORAD_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -75,7 +56,7 @@ class RC_AMV_SHORAD_Core: RC_AMV_SHORAD_Fetch
 };
 
 
-class RC_AMV_SHORAD_Base: RC_AMV_SHORAD_Core
+class RC_AMV_SHORAD_Core2: RC_AMV_SHORAD_Core
 {
 	class EventHandlers: EventHandlers
 	{	
@@ -630,7 +611,7 @@ class RC_AMV_SHORAD_manned_WD_I: RC_AMV_SHORAD_manned_A_I
 */
 
 
-class RC_AMV_SHORAD_UV_Base: RC_AMV_SHORAD_Base
+class RC_AMV_SHORAD_UV_Core: RC_AMV_SHORAD_Core2
 {
 	displayName="RC Patria AMV SHORAD";
 	
@@ -658,11 +639,28 @@ class RC_AMV_SHORAD_UV_Base: RC_AMV_SHORAD_Base
 		};
 	};
 };
+class RC_AMV_SHORAD_UV_Base: RC_AMV_SHORAD_UV_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_600m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
 class RC_AMV_SHORAD_A_B: RC_AMV_SHORAD_UV_Base
 {
 	scope=2;
 	scopeCurator=2;
-	//forceInGarage=1;
+	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
@@ -680,12 +678,8 @@ class RC_AMV_SHORAD_A_B: RC_AMV_SHORAD_UV_Base
 		};
 	};
 };
-class RC_AMV_SHORAD_A_O: RC_AMV_SHORAD_UV_Base
+class RC_AMV_SHORAD_A_O: RC_AMV_SHORAD_A_B
 {
-	scope=2;
-	scopeCurator=2;
-	//forceInGarage=1;
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
@@ -702,12 +696,8 @@ class RC_AMV_SHORAD_A_O: RC_AMV_SHORAD_UV_Base
 		};
 	};
 };
-class RC_AMV_SHORAD_A_I: RC_AMV_SHORAD_UV_Base
+class RC_AMV_SHORAD_A_I: RC_AMV_SHORAD_A_B
 {
-	scope=2;
-	scopeCurator=2;
-	//forceInGarage=1;
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
@@ -725,6 +715,8 @@ class RC_AMV_SHORAD_A_I: RC_AMV_SHORAD_UV_Base
 
 	};
 };
+
+
 class RC_AMV_SHORAD_WD_B: RC_AMV_SHORAD_A_B
 {
 	#include "\RC_VVE\textures\AMV_SHORAD_Texture_WD.hpp"

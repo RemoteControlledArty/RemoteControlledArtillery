@@ -24,25 +24,6 @@ class RC_Fennek_Fetch: I_MRAP_03_F
 };
 class RC_Fennek_Core: RC_Fennek_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -345,6 +326,17 @@ class RC_Fennek_Core: RC_Fennek_Fetch
 
 class RC_Fennek_Base: RC_Fennek_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+	};
+	
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+
 	weapons[]=
 	{
 		"TruckHorn",

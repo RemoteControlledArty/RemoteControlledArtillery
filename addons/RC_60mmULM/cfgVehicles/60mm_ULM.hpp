@@ -616,16 +616,9 @@ class RC_60mm_ULM_Vic: RC_60mm_ULM_Vic_Pre
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		/*
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-		*/
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		//#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
 		class RM_ULM
 		{
 			getout="if (!local (_this select 0)) exitwith {}; _this call RC_ULM_fnc_getout";

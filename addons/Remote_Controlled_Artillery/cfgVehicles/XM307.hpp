@@ -1,5 +1,5 @@
 class B_GMG_01_high_F;
-class RC_cUAS_Static_core: B_GMG_01_high_F
+class RC_cUAS_Static_Fetch: B_GMG_01_high_F
 {
 	class Turrets;
 	class MainTurret;
@@ -15,21 +15,8 @@ class RC_cUAS_Static_core: B_GMG_01_high_F
 	RC_assembleSideSwitch=1;
 	RC_assembleAutonomousOff=0;
 };
-class RC_cUAS_Static_base: RC_cUAS_Static_core
+class RC_cUAS_Static_Core: RC_cUAS_Static_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
 	
@@ -222,9 +209,18 @@ class RC_cUAS_Static_base: RC_cUAS_Static_core
 		};
 	};
 };
+class RC_cUAS_Static_Base: RC_cUAS_Static_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+	};
+};
 
 
-class RC_cUAS_Static: RC_cUAS_Static_base
+class RC_cUAS_Static: RC_cUAS_Static_Base
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 

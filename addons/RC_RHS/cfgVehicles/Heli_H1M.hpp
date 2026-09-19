@@ -11,8 +11,9 @@ class RC_MH1M_Core: RC_MH1M_Fetch
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-        #include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
+
+       	#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H1M\H1M_main.hpp"
@@ -75,7 +76,7 @@ class RC_MH1M_V1: RC_MH1M_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 
 	scope=2;
@@ -396,7 +397,7 @@ class RC_UH1M: RC_UH1M_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 
 	scope=2;

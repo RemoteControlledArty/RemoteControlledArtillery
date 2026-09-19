@@ -1,5 +1,5 @@
 class rhsusf_m113_usarmy;
-class RC_M113_M2_Core: rhsusf_m113_usarmy
+class RC_M113_M2_Fetch: rhsusf_m113_usarmy
 {
 	class Components;
 	//class HitPoints;
@@ -19,7 +19,7 @@ class RC_M113_M2_Core: rhsusf_m113_usarmy
 	scope=0;
 	scopeCurator=0;
 };
-class RC_M113_M2_Base: RC_M113_M2_Core
+class RC_M113_M2_Core: RC_M113_M2_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -32,45 +32,6 @@ class RC_M113_M2_Base: RC_M113_M2_Core
 			turnIn="([0] + _this)  call rhsusf_fnc_turretAction;";
 			turnOut="([1] + _this) call rhsusf_fnc_turretAction;";
 		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_EngineOff
-		{
-			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-		class RC_CargoLightOn
-		{
-			postInit="params ['_vehicle']; [_vehicle,'cargolights_hide'] call rhs_fnc_toggleIntLight";
-		};
-
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargoFuel_EH.hpp"
-	};
-
-	class UserActions: UserActions
-	{
-		class ToggleLight
-		{
-			condition = "false";	//"player in this;"
-
-			displayName = "Toggle interior light";
-			onlyforplayer = 1;
-			position = "pos driver";
-			radius = 15;
-			showwindow = 0;
-			statement = "[this,'cargolights_hide'] call rhs_fnc_toggleIntLight";
-		};
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam1x.hpp"
@@ -81,6 +42,9 @@ class RC_M113_M2_Base: RC_M113_M2_Core
 	canUseScanner=1;
 
 	author="Ascent";
+	displayName="M113 M2";
+	editorSubcategory="RC_APC_subcat";
+
 	//armor=200;
 	crewCrashProtection=0;
 
@@ -439,31 +403,60 @@ class RC_M113_M2_Base: RC_M113_M2_Core
 
 	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
 };
+class RC_M113_M2_Base: RC_M113_M2_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_EngineOff
+		{
+			getOut="params ['_vehicle']; if (local _vehicle) then {_vehicle engineOn false};"
+		};
+		class RC_CargoLightOn
+		{
+			postInit="params ['_vehicle']; [_vehicle,'cargolights_hide'] call rhs_fnc_toggleIntLight";
+		};
+
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	class UserActions: UserActions
+	{
+		class ToggleLight
+		{
+			condition = "false";	//"player in this;"
+
+			displayName = "Toggle interior light";
+			onlyforplayer = 1;
+			position = "pos driver";
+			radius = 15;
+			showwindow = 0;
+			statement = "[this,'cargolights_hide'] call rhs_fnc_toggleIntLight";
+		};
+	};
+};
+
+
 class RC_M113_M2_manned_D: RC_M113_M2_Base
 {
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="M113 M2";
-	editorSubcategory="RC_APC_subcat";
-
-	faction="RemoteControlled_B";
-	side=1;
-	crew="RC_B_Crew";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB.hpp"
 };
 class RC_M113_M2_manned_D_O: RC_M113_M2_manned_D
 {
-	faction="RemoteControlled_O";
-	side=0;
-	crew="RC_O_Crew";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M113_M2_manned_D_I: RC_M113_M2_manned_D
 {
-	faction="RemoteControlled_I";
-	side=2;
-	crew="RC_I_Crew";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 
@@ -482,16 +475,12 @@ class RC_M113_M2_manned_WD: RC_M113_M2_manned_D
 };
 class RC_M113_M2_manned_WD_O: RC_M113_M2_manned_WD
 {
-	faction="RemoteControlled_O";
-	side=0;
-	crew="RC_O_Crew";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M113_M2_manned_WD_I: RC_M113_M2_manned_WD
 {
-	faction="RemoteControlled_I";
-	side=2;
-	crew="RC_I_Crew";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 

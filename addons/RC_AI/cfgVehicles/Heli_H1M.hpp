@@ -90,7 +90,7 @@ class RC_AI_MH1M_Base: RC_AI_MH1M_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 };
 

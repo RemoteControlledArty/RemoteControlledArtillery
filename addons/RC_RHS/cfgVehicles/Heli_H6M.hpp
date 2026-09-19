@@ -8,12 +8,12 @@ class RC_MELB_AH6M_Core: RC_MELB_AH6M_Fetch
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 
 	#include "\RC_RHS\cfgVehicles\includes_vehicle\H6M\H6M_main.hpp"
@@ -90,7 +90,7 @@ class RC_MELB_AH6M_V3: RC_MELB_AH6M_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 
 	scope=2;
@@ -269,7 +269,7 @@ class RC_MELB_MH6M_V1: RC_MELB_MH6M_DAP_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 
 	scope=2;
@@ -488,7 +488,7 @@ class RC_MELB_MH6M: RC_MELB_MH6M_Base
 {
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 	
 	displayName="MH-6M - Little Bird";

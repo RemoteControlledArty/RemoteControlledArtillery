@@ -467,6 +467,10 @@ class RC_IFV_4_Base: RC_IFV_4_Core
 
 class RC_IFV_4_A: RC_IFV_4_Base
 {
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };

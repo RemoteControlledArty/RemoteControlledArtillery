@@ -42,16 +42,12 @@ class RC_ICV_2_WD2_O: RC_ICV_2_WD_O_Base
 };
 class RC_ICV_2_WD2: RC_ICV_2_WD2_O
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
 class RC_ICV_2_WD2_I: RC_ICV_2_WD2_O
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 
@@ -103,9 +99,7 @@ class RC_APC_2_WD2_O: RC_APC_2_WD2_O_Base
 };
 class RC_APC_2_WD2: RC_APC_2_WD2_O
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
@@ -126,9 +120,7 @@ class RC_APC_2_WD2: RC_APC_2_WD2_O
 };
 class RC_APC_2_WD2_I: RC_APC_2_WD2_O
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -197,9 +189,7 @@ class RC_IFV_2_WD2_O: RC_IFV_2_WD_O_Base
 };
 class RC_IFV_2_WD2: RC_IFV_2_WD2_O
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
@@ -228,9 +218,7 @@ class RC_IFV_2_WD2: RC_IFV_2_WD2_O
 };
 class RC_IFV_2_WD2_I: RC_IFV_2_WD2
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets

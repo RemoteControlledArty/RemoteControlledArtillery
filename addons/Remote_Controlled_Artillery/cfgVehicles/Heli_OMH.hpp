@@ -8,9 +8,12 @@ class RC_OM_Heli_SkyCrane_Base: RC_OM_Heli_SkyCrane_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 	
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\OMH\heli_main.hpp"
@@ -72,6 +75,11 @@ class RC_OM_Heli_Bench_Base: RC_OM_Heli_Bench_Core
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\OMH\heli_main.hpp"
@@ -132,6 +140,11 @@ class RC_OM_Heli_Transport_Base: RC_OM_Heli_Transport_Core
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 	
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\OMH\heli_main.hpp"
@@ -183,6 +196,11 @@ class RC_OM_Heli_MedEvac_Base: RC_OM_Heli_MedEvac_Core
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 	
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\OMH\heli_main.hpp"
@@ -234,6 +252,11 @@ class RC_OM_Heli_MultiMission_Base: RC_OM_Heli_MultiMission_Core
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 	
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\OMH\heli_main.hpp"

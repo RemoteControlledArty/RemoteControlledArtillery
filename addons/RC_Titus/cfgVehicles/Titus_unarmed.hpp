@@ -1,5 +1,5 @@
 class QIN_Titus_DES;
-class RC_Titus_unarmed_D_base: QIN_Titus_DES
+class RC_Titus_unarmed_Fetch: QIN_Titus_DES
 {
 	class Turrets;
 	class ViewOptics;
@@ -31,38 +31,12 @@ class RC_Titus_unarmed_D_base: QIN_Titus_DES
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
 
-class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
+class RC_Titus_unarmed_Core: RC_Titus_unarmed_Fetch
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\RC_Titus\cfgVehicles\Titus_include.hpp"
-
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
 
 	displayName="RC Titus";
 	editorSubcategory="RC_Titus_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
 	
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
@@ -303,6 +277,31 @@ class RC_Titus_unarmed_D: RC_Titus_unarmed_D_base
 			};
 		};
 	};
+};
+class RC_Titus_unarmed_Base: RC_Titus_unarmed_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_CommanderOrGunner.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+	
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_Titus_unarmed_D: RC_Titus_unarmed_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_Titus_unarmed_WD: RC_Titus_unarmed_D
 {

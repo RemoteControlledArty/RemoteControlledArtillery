@@ -37,22 +37,19 @@ class RC_BMP3_Core: RC_BMP3_Fetch
 			init="_this call rhs_fnc_bmp3_init;";
 			postInit="_this call rhs_fnc_reapplyTextures";
 		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
+		
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 	};
 	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 
 	weapons[]={};
 	magazines[]={};
 
-	faction="RemoteControlled_O";
-	editorSubcategory="RC_IFV_ATGM_subcat";
 	author="Ascent";
+	editorSubcategory="RC_IFV_ATGM_subcat";
+	
 	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -254,7 +251,7 @@ class RC_BMP3_Core: RC_BMP3_Fetch
 			{
 				"RC_RHS_weap_pkt_bmd_bow1"
 			};
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_green.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_red.hpp"
 
 			maxVerticalRotSpeed=1.2;	//1.2
 			maxHorizontalRotSpeed=1.2;	//1.2
@@ -292,7 +289,7 @@ class RC_BMP3_Core: RC_BMP3_Fetch
 			{
 				"RC_RHS_weap_pkt_bmd_bow2"
 			};
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_green.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_red.hpp"
 
 			maxVerticalRotSpeed=1.2;	//1.2
 			maxHorizontalRotSpeed=1.2;	//1.2
@@ -374,29 +371,20 @@ class RC_BMP3_Core: RC_BMP3_Fetch
 		};
 	};
 
-	#include "\RC_RHS_AFRF\loadouts\FSVitemsO_RHS_AFRF.hpp"
+	#include "\RC_RHS_AFRF\loadouts\FSVitemsB_RHS_AFRF.hpp"
 };
-class RC_BMP3M_Base: RC_BMP3_Core
+
+
+class RC_BMP3M_Core: RC_BMP3_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-	};
-	
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 	RC_ATrespondingTurret[]={0,0};
+
+	displayName="BMP-3M";
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
 
 	weapons[]=
 	{
@@ -417,7 +405,7 @@ class RC_BMP3M_Base: RC_BMP3_Core
 		{
 			#include "\Remote_Controlled_Artillery\includes_cfg\panels_IFV_gunner_missile_noDriver.hpp"
 			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_green.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_red.hpp"
 
 			class Turrets: Turrets
 			{
@@ -440,57 +428,56 @@ class RC_BMP3M_Base: RC_BMP3_Core
 		};	
 	};
 };
-
-
-class RC_BMP3M_WD_O: RC_BMP3M_Base
+class RC_BMP3M_Base: RC_BMP3M_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
 	};
 
-	displayName="BMP-3M";
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_BMP3M_WD: RC_BMP3M_Base
+{
 	scope=2;
 	scopeCurator=2;
-	side=0;
 	forceInGarage=1;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
-	crew="O_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
-class RC_BMP3M_WD: RC_BMP3M_WD_O
+class RC_BMP3M_WD_O: RC_BMP3M_WD
 {
-	faction="RemoteControlled_B";
-	crew="I_UAV_AI";
-	side=1;
-	#include "\RC_RHS_AFRF\loadouts\FSVitemsB_RHS_AFRF.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\RC_RHS_AFRF\loadouts\FSVitemsO_RHS_AFRF.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_green.hpp"
 		};
 		class GPMGTurret1: GPMGTurret1
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_green.hpp"
 		};
 		class GPMGTurret2: GPMGTurret2
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_green.hpp"
 		};
 	};
 };
-class RC_BMP3M_WD_I: RC_BMP3M_WD_O
+class RC_BMP3M_WD_I: RC_BMP3M_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS_AFRF\loadouts\FSVitemsI_RHS_AFRF.hpp"
 
 	class Turrets: Turrets
@@ -511,7 +498,7 @@ class RC_BMP3M_WD_I: RC_BMP3M_WD_O
 };
 
 
-class RC_BMP3M_A_O: RC_BMP3M_WD_O
+class RC_BMP3M_A: RC_BMP3M_WD_O
 {
 	//editorPreview="";
 	hiddenSelectionsTextures[]=
@@ -528,34 +515,30 @@ class RC_BMP3M_A_O: RC_BMP3M_WD_O
 		1
 	};
 };
-class RC_BMP3M_A: RC_BMP3M_A_O
+class RC_BMP3M_A_O: RC_BMP3M_A
 {
-	faction="RemoteControlled_B";
-	crew="I_UAV_AI";
-	side=1;
-	#include "\RC_RHS_AFRF\loadouts\FSVitemsB_RHS_AFRF.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\RC_RHS_AFRF\loadouts\FSVitemsO_RHS_AFRF.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_green.hpp"
 		};
 		class GPMGTurret1: GPMGTurret1
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_green.hpp"
 		};
 		class GPMGTurret2: GPMGTurret2
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_red.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_BMP3M_side_green.hpp"
 		};
 	};
 };
-class RC_BMP3M_A_I: RC_BMP3M_A_O
+class RC_BMP3M_A_I: RC_BMP3M_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS_AFRF\loadouts\FSVitemsI_RHS_AFRF.hpp"
 
 	class Turrets: Turrets

@@ -30,32 +30,6 @@ class RC_MLRS_Fetch: B_MBT_01_mlrs_F
 };
 class RC_MLRS_Core: RC_MLRS_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -291,6 +265,18 @@ class RC_MLRS_Core: RC_MLRS_Fetch
 };
 class RC_MLRS_Base: RC_MLRS_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 
@@ -365,6 +351,18 @@ class RC_MLRS_ATACMS_Core: RC_MLRS_Core
 };
 class RC_MLRS_ATACMS_Base: RC_MLRS_ATACMS_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 
@@ -439,32 +437,6 @@ class RC_MRL_Fetch: I_Truck_02_MRL_F
 };
 class RC_MRL_Core: RC_MRL_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -665,6 +637,18 @@ class RC_MRL_Core: RC_MRL_Fetch
 };
 class RC_MRL_Base: RC_MRL_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 
@@ -735,6 +719,18 @@ class RC_MRL_ATACMS_Core: RC_MRL_Core
 };
 class RC_MRL_ATACMS_Base: RC_MRL_ATACMS_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 

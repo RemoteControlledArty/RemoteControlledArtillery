@@ -10,12 +10,14 @@ class RC_MH80M_DAP_Core: RC_MH80M_DAP_Fetch
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_main.hpp"
@@ -56,7 +58,7 @@ class RC_MH80M_V2: RC_MH80M_DAP_Base
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="MH-80M - Ghost Hawk - V2"
+	displayName="MH-80M - Ghost Hawk - V2";
 	editorSubcategory="RC_Heli_V2_subcat";
 
 	class Components: Components
@@ -81,7 +83,7 @@ class RC_MH80M_V2_I: RC_MH80M_V2
 
 class RC_MH80M_V3: RC_MH80M_V2
 {
-	displayName="MH-80M - Ghost Hawk - V3"
+	displayName="MH-80M - Ghost Hawk - V3";
 	editorSubcategory="RC_Heli_V3_subcat";
 
 	class Components: Components
@@ -103,7 +105,7 @@ class RC_MH80M_V3_I: RC_MH80M_V3
 
 class RC_MH80M_V4: RC_MH80M_V2
 {
-	displayName="MH-80M - Ghost Hawk - V4"
+	displayName="MH-80M - Ghost Hawk - V4";
 	editorSubcategory="RC_Heli_V4_subcat";
 
 	class Components: Components
@@ -125,7 +127,7 @@ class RC_MH80M_V4_I: RC_MH80M_V4
 
 class RC_MH80M_V5: RC_MH80M_V2
 {
-	displayName="MH-80M - Ghost Hawk - V5"
+	displayName="MH-80M - Ghost Hawk - V5";
 	editorSubcategory="RC_Heli_V5_subcat";
 
 	class Components: Components
@@ -147,7 +149,7 @@ class RC_MH80M_V5_I: RC_MH80M_V5
 
 class RC_MH80M_V6: RC_MH80M_V2
 {
-	displayName="MH-80M - Ghost Hawk - V6"
+	displayName="MH-80M - Ghost Hawk - V6";
 	editorSubcategory="RC_Heli_V6_subcat";
 
 	class Components: Components
@@ -170,7 +172,7 @@ class RC_MH80M_V6_I: RC_MH80M_V6
 //4 armed pylons
 class RC_MH80M_DAP_V3: RC_MH80M_V2
 {
-	displayName="MH-80M DAP - Ghost Hawk - V3"
+	displayName="MH-80M DAP - Ghost Hawk - V3";
 	editorSubcategory="RC_Heli_V3_subcat";
 
 	class Components: Components
@@ -192,7 +194,7 @@ class RC_MH80M_DAP_V3_I: RC_MH80M_DAP_V3
 
 class RC_MH80M_DAP_V4: RC_MH80M_DAP_V3
 {
-	displayName="MH-80M DAP - Ghost Hawk - V4"
+	displayName="MH-80M DAP - Ghost Hawk - V4";
 	editorSubcategory="RC_Heli_V4_subcat";
 
 	class Components: Components
@@ -214,7 +216,7 @@ class RC_MH80M_DAP_V4_I: RC_MH80M_DAP_V4
 
 class RC_MH80M_DAP_V5: RC_MH80M_DAP_V3
 {
-	displayName="MH-80M DAP - Ghost Hawk - V5"
+	displayName="MH-80M DAP - Ghost Hawk - V5";
 	editorSubcategory="RC_Heli_V5_subcat";
 
 	class Components: Components
@@ -236,7 +238,7 @@ class RC_MH80M_DAP_V5_I: RC_MH80M_DAP_V5
 
 class RC_MH80M_DAP_V6: RC_MH80M_DAP_V3
 {
-	displayName="MH-80M DAP - Ghost Hawk - V6"
+	displayName="MH-80M DAP - Ghost Hawk - V6";
 	editorSubcategory="RC_Heli_V6_subcat";
 
 	class Components: Components
@@ -263,7 +265,7 @@ class RC_OM_MH80M_DAP_UV: RC_MH80M_DAP_Base
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_EHs_UV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_UV_conversion.hpp"
 
-	displayName="RC MH-80M DAP - Ghost Hawk"
+	displayName="RC MH-80M DAP - Ghost Hawk";
 };
 class RC_OM_MH80M_DAP: RC_OM_MH80M_DAP_UV
 {
@@ -303,14 +305,8 @@ class RC_UH80M_Base: RC_UH80M_Core
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
 
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_main.hpp"
@@ -368,7 +364,7 @@ class RC_UH80M: RC_UH80M_Base
 		};
 	};
 
-	displayName="UH-80M - Ghost Hawk"
+	displayName="UH-80M - Ghost Hawk";
 	author="Ascent";
 
 	scope=2;			//2
@@ -417,7 +413,7 @@ class RC_OM_UH80M_UV: RC_UH80M_Base
 		class RightDoorGun: RightDoorGun {dontCreateAI=1;};
 	};
 
-	displayName="RC UH-80M - Ghost Hawk"
+	displayName="RC UH-80M - Ghost Hawk";
 };
 class RC_OM_UH80M: RC_OM_UH80M_UV
 {

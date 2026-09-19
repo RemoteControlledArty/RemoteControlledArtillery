@@ -1,5 +1,5 @@
 class rhs_2s1_tv;
-class RC_2S1_Base: rhs_2s1_tv
+class RC_2S1_Fetch: rhs_2s1_tv
 {
 	class Turrets;
 	class MainTurret;
@@ -34,28 +34,10 @@ class RC_2S1_Base: rhs_2s1_tv
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_2S1: RC_2S1_Base
+class RC_2S1_Core: RC_2S1_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
 		class RHS_EventHandlers
 		{
 			fired="_this call RHS_fnc_2s1_ejection;";
@@ -64,6 +46,16 @@ class RC_2S1: RC_2S1_Base
 			postInit="_this call rhs_fnc_reapplyTextures";
 		};
 	};
+	
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+	lockDetectionSystem="2+4+8";
+
+	author="Ascent";
+	displayName="RC 2S1";	//122 PSH 74
+	editorSubcategory="RC_Howitzer_subcat";
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	uavCameraDriverPos="driverview";
@@ -71,18 +63,6 @@ class RC_2S1: RC_2S1_Base
 	uavCameraGunnerPos="op5_pos";
 	uavCameraGunnerDir="op5_dir";
 	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
-	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
-	lockDetectionSystem="2+4+8";
-
-	author="Ascent";
-	faction="RemoteControlled_B";
-	scope=0;
-	scopeCurator=0;
-	side=1;
-	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -103,130 +83,6 @@ class RC_2S1: RC_2S1_Base
 	aggregateReflectors[]={{""}};
 
 	unitInfoType="RscUnitInfoArtillery";
-
-	class Components: Components
-	{
-		class SensorsManagerComponent
-		{
-			class Components
-			{
-				class LaserSensorComponent: SensorTemplateLaser
-				{
-					class AirTarget
-					{
-						minRange=3000;
-						maxRange=3000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=3000;
-						maxRange=3000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-				class DataLinkSensorComponent: SensorTemplateDataLink
-				{
-					typeRecognitionDistance=25000;
-
-					class AirTarget
-					{
-						minRange=25000;
-						maxRange=25000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-					class GroundTarget
-					{
-						minRange=25000;
-						maxRange=25000;
-						objectDistanceLimitCoef=-1;
-						viewDistanceLimitCoef=-1;
-					};
-				};
-
-				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
-			};
-		};
-	};
-
-	class AnimationSources: AnimationSources
-	{
-		class reload_magazine_source
-		{
-			source="reloadMagazine";
-			weapon="RC_122mm_AMOS_V4_2S1";
-		};
-		class reload_source
-		{
-			source="reload";
-			weapon="RC_122mm_AMOS_V4_2S1";
-		};
-	};
-
-	class textureSources: textureSources
-	{
-		class standard_dirty: standard_dirty
-		{
-			factions[]={};
-		};
-		class standard: standard
-		{
-			factions[]={};
-		};
-		class sand: sand
-		{
-			factions[]={};
-		};
-	};
-	/*
-	hiddenSelectionsTextures[]=
-	{
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_hull_co.paa",
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_turret_co.paa",
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
-		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa"
-	};
-	*/
-	textureList[]=
-	{
-		"standard_dirty",
-		1
-	};
-
-	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
-};
-
-
-class RC_2S1_WD: RC_2S1
-{
-	/*
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
-	};
-	*/
-
-	displayName="RC 2S1";	//122 PSH 74
-	editorSubcategory="RC_Howitzer_subcat";
-	scope=2;
-	scopeCurator=2;
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	crew="B_UAV_AI";
 
 	class Turrets: Turrets
 	{
@@ -451,21 +307,143 @@ class RC_2S1_WD: RC_2S1
 			};
 		};
 	};
+
+	class Components: Components
+	{
+		class SensorsManagerComponent
+		{
+			class Components
+			{
+				class LaserSensorComponent: SensorTemplateLaser
+				{
+					class AirTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=3000;
+						maxRange=3000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+				class DataLinkSensorComponent: SensorTemplateDataLink
+				{
+					typeRecognitionDistance=25000;
+
+					class AirTarget
+					{
+						minRange=25000;
+						maxRange=25000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+					class GroundTarget
+					{
+						minRange=25000;
+						maxRange=25000;
+						objectDistanceLimitCoef=-1;
+						viewDistanceLimitCoef=-1;
+					};
+				};
+
+				#include "\Remote_Controlled_Artillery\includes_cfg\passiveRadar.hpp"
+			};
+		};
+	};
+
+	class AnimationSources: AnimationSources
+	{
+		class reload_magazine_source
+		{
+			source="reloadMagazine";
+			weapon="RC_122mm_AMOS_V4_2S1";
+		};
+		class reload_source
+		{
+			source="reload";
+			weapon="RC_122mm_AMOS_V4_2S1";
+		};
+	};
+
+	class textureSources: textureSources
+	{
+		class standard_dirty: standard_dirty
+		{
+			factions[]={};
+		};
+		class standard: standard
+		{
+			factions[]={};
+		};
+		class sand: sand
+		{
+			factions[]={};
+		};
+	};
+	/*
+	hiddenSelectionsTextures[]=
+	{
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_hull_co.paa",
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_turret_co.paa",
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa",
+		"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_suspension_co.paa"
+	};
+	*/
+	textureList[]=
+	{
+		"standard_dirty",
+		1
+	};
+
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+};
+class RC_2S1_Base: RC_2S1_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_2S1_WD: RC_2S1_Base
+{
+	scope=2;
+	scopeCurator=2;
+ 	scopeGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_2S1_WD_O: RC_2S1_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_2S1_WD_I: RC_2S1_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -522,18 +500,12 @@ class RC_2S1_LC_WD: RC_2S1_WD
 };
 class RC_2S1_LC_WD_O: RC_2S1_LC_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_2S1_LC_WD_I: RC_2S1_LC_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 

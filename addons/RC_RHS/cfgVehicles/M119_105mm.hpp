@@ -1,5 +1,5 @@
 class RHS_M119_D;
-class RC_M119_base: RHS_M119_D
+class RC_M119_Fetch: RHS_M119_D
 {
 	class Turrets;
 	class MainTurret;
@@ -22,27 +22,10 @@ class RC_M119_base: RHS_M119_D
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_M119: RC_M119_base
+class RC_M119_Core: RC_M119_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-	};
-
 	displayName="RC M119 105mm";
-	faction="RemoteControlled_B";
 	editorSubcategory="RC_Howitzer_subcat";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
 	
 	textPlural="UGVs";
 	textSingular="UGV";
@@ -50,7 +33,7 @@ class RC_M119: RC_M119_base
 	vehicleClass="Autonomous";
 	uavCameraGunnerPos="pos_cargo_dir";
 	uavCameraGunnerDir="pos_cargo";
-	crew="B_UAV_AI";
+
 	driverForceOptics=1;
 	enableGPS=1;
 	radartype=2;
@@ -205,17 +188,31 @@ class RC_M119: RC_M119_base
 		};
 	};
 };
+class RC_M119_Base: RC_M119_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+	};
+};
+
+
+class RC_M119: RC_M119_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_M119_O: RC_M119
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_M119_I: RC_M119
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
@@ -248,13 +245,9 @@ class RC_M119_LC: RC_M119
 };
 class RC_M119_LC_O: RC_M119_LC
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_M119_LC_I: RC_M119_LC
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };

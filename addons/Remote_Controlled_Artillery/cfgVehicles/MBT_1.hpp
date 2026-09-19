@@ -472,7 +472,10 @@ class RC_MBT_1_ReTex_D: RC_MBT_1_A
 class RC_MBT_1_ReTex_D_O: RC_MBT_1_ReTex_D
 {
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
-    #include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	side=0;
+	crew="O_UAV_AI";
+	typicalCargo[]={"O_UAV_AI"};
+	faction="RemoteControlled_ReTex_O";
 
 	class Turrets: Turrets
 	{
@@ -495,7 +498,10 @@ class RC_MBT_1_ReTex_D_O: RC_MBT_1_ReTex_D
 class RC_MBT_1_ReTex_D_I: RC_MBT_1_ReTex_D
 {
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
-    #include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+    side=2;
+	crew="I_UAV_AI";
+	typicalCargo[]={"I_UAV_AI"};
+	faction="RemoteControlled_ReTex_I";
 
 	class Turrets: Turrets
 	{

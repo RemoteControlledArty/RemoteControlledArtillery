@@ -296,7 +296,7 @@ class RC_FSV_Base: RC_FSV_Core
 		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 
-		#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"

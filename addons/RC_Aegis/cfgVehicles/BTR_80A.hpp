@@ -1,5 +1,5 @@
 class Aegis_O_Raven_APC_Wheeled_04_export_F;
-class RC_BTR80A_Base: Aegis_O_Raven_APC_Wheeled_04_export_F
+class RC_BTR80A_Fetch: Aegis_O_Raven_APC_Wheeled_04_export_F
 {
 	class Turrets;
 	class MainTurret;
@@ -26,33 +26,18 @@ class RC_BTR80A_Base: Aegis_O_Raven_APC_Wheeled_04_export_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_BTR80A: RC_BTR80A_Base
+class RC_BTR80A_Core: RC_BTR80A_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 	RC_ATrespondingTurret[]={0};
+
+	author="Ascent";
+	displayName="BTR-80A";
+	editorSubcategory="RC_IFV_subcat";
 
 	weapons[]=
 	{
@@ -67,12 +52,6 @@ class RC_BTR80A: RC_BTR80A_Base
 		"SmokeLauncherMag"
 	};
 
-	author="Ascent";
-	faction="RemoteControlled_B";
-	scope=0;
-	scopeCurator=0;
-	side=1;
-	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -114,25 +93,10 @@ class RC_BTR80A: RC_BTR80A_Base
 };
 
 
-class RC_BTR80A_WD: RC_BTR80A
+class RC_BTR80A_Core2: RC_BTR80A_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
-	};
-
-	displayName="BTR-80A";
-	editorSubcategory="RC_IFV_subcat";
-	scope=2;
-	scopeCurator=2;
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	crew="B_UAV_AI";
 
 	class Turrets: Turrets
 	{
@@ -228,12 +192,36 @@ class RC_BTR80A_WD: RC_BTR80A
 		};
 	};
 };
+class RC_BTR80A_Base: RC_BTR80A_Core2
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_BTR80A_WD: RC_BTR80A_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
 class RC_BTR80A_WD_O: RC_BTR80A_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -248,10 +236,7 @@ class RC_BTR80A_WD_O: RC_BTR80A_WD
 };
 class RC_BTR80A_WD_I: RC_BTR80A_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -287,10 +272,7 @@ class RC_BTR80A_A: RC_BTR80A_WD
 };
 class RC_BTR80A_A_O: RC_BTR80A_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -305,10 +287,7 @@ class RC_BTR80A_A_O: RC_BTR80A_A
 };
 class RC_BTR80A_A_I: RC_BTR80A_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets

@@ -20,7 +20,7 @@ class RC_MH80M_DAP_V5: RC_RHS_MH80M_DAP_Base
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="MH-80M DAP - Ghost Hawk - V5"
+	displayName="MH-80M DAP - Ghost Hawk - V5";
 	editorSubcategory="RC_Heli_V5_subcat";
 
 	class Components: Components
@@ -56,7 +56,7 @@ class RC_OM_MH80M_DAP_V5: RC_OM_MH80M_DAP_V5_UV
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="RC MH-80M DAP - Ghost Hawk - V5"
+	displayName="RC MH-80M DAP - Ghost Hawk - V5";
 	editorSubcategory="RC_Heli_V5_subcat";
 
 	class Components: Components

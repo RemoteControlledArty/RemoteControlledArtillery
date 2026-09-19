@@ -8,12 +8,14 @@ class RC_AW159M_Core: RC_AW159M_Fetch
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\AW159M\AW159M_main.hpp"
@@ -49,7 +51,7 @@ class RC_AW159M_V1: RC_AW159M_Base
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="AW159M - Wildcat - V1"
+	displayName="AW159M - Wildcat - V1";
 	editorSubcategory="RC_Heli_V1_subcat";
 	
 	class Components: Components
@@ -88,7 +90,7 @@ class RC_AW159M_V1_I: RC_AW159M_V1
 
 class RC_AW159M_V2: RC_AW159M_V1
 {
-	displayName="AW159M - Wildcat - V2"
+	displayName="AW159M - Wildcat - V2";
 	editorSubcategory="RC_Heli_V2_subcat";
 	
 	class Components: Components
@@ -124,7 +126,7 @@ class RC_AW159M_V2_I: RC_AW159M_V2
 
 class RC_AW159M_V3: RC_AW159M_V1
 {
-	displayName="AW159M - Wildcat - V3"
+	displayName="AW159M - Wildcat - V3";
 	editorSubcategory="RC_Heli_V3_subcat";
 	
 	class Components: Components
@@ -160,7 +162,7 @@ class RC_AW159M_V3_I: RC_AW159M_V3
 
 class RC_AW159M_V4: RC_AW159M_V1
 {
-	displayName="AW159M - Wildcat - V4"
+	displayName="AW159M - Wildcat - V4";
 	editorSubcategory="RC_Heli_V4_subcat";
 	
 	class Components: Components
@@ -196,7 +198,7 @@ class RC_AW159M_V4_I: RC_AW159M_V4
 
 class RC_AW159M_V5: RC_AW159M_V1
 {
-	displayName="AW159M - Wildcat - V5"
+	displayName="AW159M - Wildcat - V5";
 	editorSubcategory="RC_Heli_V5_subcat";
 	
 	class Components: Components
@@ -232,7 +234,7 @@ class RC_AW159M_V5_I: RC_AW159M_V5
 
 class RC_AW159M_V6: RC_AW159M_V1
 {
-	displayName="AW159M - Wildcat - V6"
+	displayName="AW159M - Wildcat - V6";
 	editorSubcategory="RC_Heli_V6_subcat";
 	
 	class Components: Components
@@ -273,7 +275,7 @@ class RC_OM_AW159M_UV: RC_AW159M_Base
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_EHs_UV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_UV_conversion.hpp"
 
-	displayName="RC AW159M DAP - Wildcat"
+	displayName="RC AW159M DAP - Wildcat";
 };
 class RC_OM_AW159M_X: RC_OM_AW159M_UV
 {

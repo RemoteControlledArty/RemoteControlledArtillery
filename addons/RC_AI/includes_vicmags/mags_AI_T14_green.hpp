@@ -13,8 +13,9 @@ magazines[]=
 	"RC_AI_300Rnd_93x64_T_G",
 	*/
 
-	"RC_AI_300Rnd_762x54_T_G",
-	"RC_AI_300Rnd_762x54_T_G",
+	"RC_AI_200Rnd_762x54_T_G",
+	"RC_AI_200Rnd_762x54_T_G",
+	"RC_AI_200Rnd_762x54_T_G",
 
 	"SmokeLauncherMag",
 	"SmokeLauncherMag"

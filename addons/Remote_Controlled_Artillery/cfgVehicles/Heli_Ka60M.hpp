@@ -7,12 +7,14 @@ class RC_Ka60M_Core: RC_Ka60M_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\Ka60M\Ka60M_main.hpp"
@@ -70,7 +72,7 @@ class RC_Ka60M_V1: RC_Ka60M_Base
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="Ka-60M - Kasatka - V1"
+	displayName="Ka-60M - Kasatka - V1";
 	editorSubcategory="RC_Heli_V1_subcat";
 
 	class Components: Components
@@ -95,7 +97,7 @@ class RC_Ka60M_V1_I: RC_Ka60M_V1
 
 class RC_Ka60M_V2: RC_Ka60M_V1
 {
-	displayName="Ka-60M - Kasatka - V2"
+	displayName="Ka-60M - Kasatka - V2";
 	editorSubcategory="RC_Heli_V2_subcat";
 
 	class Components: Components
@@ -117,7 +119,7 @@ class RC_Ka60M_V2_I: RC_Ka60M_V2
 
 class RC_Ka60M_V3: RC_Ka60M_V1
 {
-	displayName="Ka-60M - Kasatka - V3"
+	displayName="Ka-60M - Kasatka - V3";
 	editorSubcategory="RC_Heli_V3_subcat";
 
 	class Components: Components
@@ -139,7 +141,7 @@ class RC_Ka60M_V3_I: RC_Ka60M_V3
 
 class RC_Ka60M_V4: RC_Ka60M_V1
 {
-	displayName="Ka-60M - Kasatka - V4"
+	displayName="Ka-60M - Kasatka - V4";
 	editorSubcategory="RC_Heli_V4_subcat";
 
 	class Components: Components
@@ -161,7 +163,7 @@ class RC_Ka60M_V4_I: RC_Ka60M_V4
 
 class RC_Ka60M_V5: RC_Ka60M_V1
 {
-	displayName="Ka-60M - Kasatka - V5"
+	displayName="Ka-60M - Kasatka - V5";
 	editorSubcategory="RC_Heli_V5_subcat";
 
 	class Components: Components
@@ -183,7 +185,7 @@ class RC_Ka60M_V5_I: RC_Ka60M_V5
 
 class RC_Ka60M_V6: RC_Ka60M_V1
 {
-	displayName="Ka-60M - Kasatka - V6"
+	displayName="Ka-60M - Kasatka - V6";
 	editorSubcategory="RC_Heli_V6_subcat";
 
 	class Components: Components
@@ -210,7 +212,7 @@ class RC_OM_Ka60M_UV: RC_Ka60M_Base
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_EHs_UV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_UV_conversion.hpp"
 
-	displayName="RC Ka-60M - Kasatka"
+	displayName="RC Ka-60M - Kasatka";
 };
 class RC_OM_Ka60M: RC_OM_Ka60M_UV
 {

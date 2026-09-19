@@ -120,7 +120,7 @@ class RC_AI_MELB_AH6M_Base: RC_AI_MELB_AH6M_Core
 {
     class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 };
 
@@ -243,7 +243,7 @@ class RC_AI_MELB_MH6M_Base: RC_AI_MELB_MH6M_Core
 {
     class EventHandlers: EventHandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOffEH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\getOutEngineOff.hpp"
 	};
 };
 

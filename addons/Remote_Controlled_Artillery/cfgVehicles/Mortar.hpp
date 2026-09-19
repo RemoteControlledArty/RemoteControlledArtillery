@@ -1,5 +1,5 @@
 class B_Mortar_01_F;
-class RC_Mortar_Core: B_Mortar_01_F
+class RC_Mortar_Fetch: B_Mortar_01_F
 {
 	class Turrets;
 	class MainTurret;
@@ -24,20 +24,8 @@ class RC_Mortar_Core: B_Mortar_01_F
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_Mortar_Base: RC_Mortar_Core
+class RC_Mortar_Core: RC_Mortar_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-	};
-
 	displayName="RC Mortar 4km";
 	faction="RemoteControlled_B";
 	editorSubcategory="RC_Mortar_subcat";
@@ -184,13 +172,11 @@ class RC_Mortar_Base: RC_Mortar_Core
 		};
 	};
 };
-class RC_Mortar: RC_Mortar_Base
+
+
+class RC_Mortar_UV_Core: RC_Mortar_Core
 {
 	displayName="RC Mortar 4km";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
 
 	textPlural="UGVs";
 	textSingular="UGV";
@@ -198,14 +184,25 @@ class RC_Mortar: RC_Mortar_Base
 	vehicleClass="Autonomous";
 	uavCameraGunnerPos="eye";
 	uavCameraGunnerDir="look";
-	crew="B_UAV_AI";
 	driverForceOptics=1;
+};
+class RC_Mortar_UV_Base: RC_Mortar_UV_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+	};
+};
+
+
+class RC_Mortar: RC_Mortar_UV_Base
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_Mortar_O: RC_Mortar
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 
 	/*
 	class assembleInfo: assembleInfo
@@ -237,9 +234,7 @@ class RC_Mortar_HEX_O: RC_Mortar_O
 */
 class RC_Mortar_I: RC_Mortar
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	/*
 	class assembleInfo: assembleInfo

@@ -33,32 +33,6 @@ class RC_Howitzer_Fetch: B_MBT_01_arty_F
 };
 class RC_Howitzer_Core: RC_Howitzer_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -363,6 +337,18 @@ class RC_Howitzer_Core: RC_Howitzer_Fetch
 };
 class RC_Howitzer_Base: RC_Howitzer_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 
@@ -525,32 +511,6 @@ class RC_Howitzer_HEX_Fetch: O_MBT_02_arty_F
 };
 class RC_Howitzer_HEX_Core: RC_Howitzer_HEX_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -840,6 +800,18 @@ class RC_Howitzer_HEX_Core: RC_Howitzer_HEX_Fetch
 };
 class RC_Howitzer_HEX_Base: RC_Howitzer_HEX_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 
@@ -953,24 +925,6 @@ class RC_Static_Arty_Fetch: B_Ship_Gun_01_F
 };
 class RC_Static_Arty_Core: RC_Static_Arty_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-	};
-
 	author="Ascent";
 	displayName="RC Naval Gun";
 	editorSubcategory="RC_Howitzer_subcat";
@@ -1118,6 +1072,15 @@ class RC_Static_Arty_Core: RC_Static_Arty_Fetch
 };
 class RC_Static_Arty_Base: RC_Static_Arty_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+	};
 };
 
 

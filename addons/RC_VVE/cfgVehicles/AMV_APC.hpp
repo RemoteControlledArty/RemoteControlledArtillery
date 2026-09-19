@@ -31,25 +31,6 @@ class RC_AMV_APC_Fetch: VVE_APC_Wheeled_01_apc_QAV
 };
 class RC_AMV_APC_Core: RC_AMV_APC_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -75,17 +56,8 @@ class RC_AMV_APC_Core: RC_AMV_APC_Fetch
 };
 
 
-class RC_AMV_APC_Base: RC_AMV_APC_Core
+class RC_AMV_APC_Core2: RC_AMV_APC_Core
 {
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-	
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	RC_ATrespondingTurret[]={0,0};
@@ -284,6 +256,21 @@ class RC_AMV_APC_Base: RC_AMV_APC_Core
 		"arid",
 		1
 	};
+};
+class RC_AMV_APC_Base: RC_AMV_APC_Core2
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 };
 
 

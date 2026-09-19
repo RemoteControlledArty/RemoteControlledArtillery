@@ -24,8 +24,9 @@ class RC_UCAV_Core: RC_UCAV_Fetch
 			postInit="params ['_entity'];  if (!isServer) exitwith {};  _entity flyInHeight 4000;";
 		};
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"

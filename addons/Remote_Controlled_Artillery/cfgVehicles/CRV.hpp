@@ -26,25 +26,6 @@ class RC_CRV_Fetch: B_APC_Tracked_01_CRV_F
 };
 class RC_CRV_Core: RC_CRV_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km_CRV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
@@ -56,7 +37,7 @@ class RC_CRV_Core: RC_CRV_Fetch
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_RCIV.hpp"
 
 	author="Ascent";
-	faction="RemoteControlled_B";
+	displayName="RC Hercules U-CEV (Re-arm/pair/fuel/supply)";
 	editorSubcategory="RC_Support_subcat";
 
 	driverCompartments="Compartment2";
@@ -273,23 +254,26 @@ class RC_CRV_Core: RC_CRV_Fetch
 };
 class RC_CRV_Base: RC_CRV_Core
 {
-    class EventHandlers: EventHandlers
+	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
-		};
-		/*
 		class RC_MinePlow
 		{
 			#include "\Remote_Controlled_Artillery\includes_script\initMinePlow.hpp"
 		};
-		*/
-	};
 
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_600m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_CommanderOrGunner.hpp"		
+		#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+	};
+	
 	class UserActions: UserActions
 	{
+		#include "\Remote_Controlled_Artillery\includes_script\TakeDriverControls.hpp"
+
 		class LowerMinePlow
 		{
 			displayName="Lower Mineplow";
@@ -309,8 +293,6 @@ class RC_CRV_Base: RC_CRV_Core
 			statement="this animateSource ['MovePlow', 0];";
 		};
 	};
-
-    displayName="RC Hercules U-CEV (Re-arm/pair/fuel/supply)";
 };
 
 

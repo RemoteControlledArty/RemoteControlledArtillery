@@ -18,10 +18,7 @@ class RC_RespawnTruck_A: RC_RespawnTruck_base
 		{
 			init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition;";
 		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
@@ -262,10 +259,7 @@ class RC_RespawnTransporter_DIG: RC_RespawnTransporter_base
 		{
 			init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 	};
 
 	displayName="RC Medical Transporter";
@@ -552,10 +546,7 @@ class RC_RespawnVan_WD: RC_RespawnVan_WD_Base
 		{
 			init="[west, (_this select 0)] call BIS_fnc_addRespawnPosition; if (!isserver) exitwith {}; (_this select 0) spawn {waitUntil {!isNull driver _this}; _this lockDriver true;};";
 		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 	};
 
 	displayName="RC Medical Van";

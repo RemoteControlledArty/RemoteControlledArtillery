@@ -1,5 +1,5 @@
 class B_ION_APC_Wheeled_02_hmg_lxWS;
-class RC_OtokarArma_RCIV_Base: B_ION_APC_Wheeled_02_hmg_lxWS
+class RC_OtokarArma_RCIV_Fetch: B_ION_APC_Wheeled_02_hmg_lxWS
 {
 	class Turrets;
 	class MainTurret;
@@ -34,27 +34,8 @@ class RC_OtokarArma_RCIV_Base: B_ION_APC_Wheeled_02_hmg_lxWS
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
+class RC_OtokarArma_RCIV_Core: RC_OtokarArma_RCIV_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -62,6 +43,16 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 	//#include "\Remote_Controlled_Artillery\includes_cfg\faster_amphibious.hpp"
 	lockDetectionSystem="2+4+8";
 	//RC_ATrespondingTurret[]={0};	//deactivated until lock isnt stuck as long
+
+	author="Ascent";
+	displayName="RC Otokar Arma HMG";
+	editorSubcategory="RC_ICV_armed_subcat";
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
+	uavCameraDriverPos="PiP0_pos";
+	uavCameraDriverDir="PiP0_dir";
+	uavCameraGunnerPos="PiP1_pos";
+	uavCameraGunnerDir="PiP1_dir";
 
 	weapons[]=
 	{
@@ -76,13 +67,6 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 		"SmokeLauncherMag",
 		"SmokeLauncherMag"
 	};
-
-	author="Ascent";
-	faction="RemoteControlled_B";
-	scope=0;
-	scopeCurator=0;
-	side=1;
-	forceInGarage=1;
 	
 	driverCompartments="Compartment2";
 	commanding=1;
@@ -369,36 +353,33 @@ class RC_OtokarArma_RCIV: RC_OtokarArma_RCIV_Base
 
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 };
-
-
-class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV
+class RC_OtokarArma_RCIV_Base: RC_OtokarArma_RCIV_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initICV_HMG.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV_HMG.hpp"
-		};
-	};
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 
-	displayName="RC Otokar Arma HMG";
-	editorSubcategory="RC_ICV_armed_subcat";
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_HMG_RCIV.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+	};
+	
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_OtokarArma_RCIV_A: RC_OtokarArma_RCIV_Base
+{
 	scope=2;
 	scopeCurator=2;
+	forceInGarage=1;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	crew="B_UAV_AI";
-	uavCameraDriverPos="PiP0_pos";
-	uavCameraDriverDir="PiP0_dir";
-	uavCameraGunnerPos="PiP1_pos";
-	uavCameraGunnerDir="PiP1_dir";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_OtokarArma_RCIV_A_O: RC_OtokarArma_RCIV_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -411,9 +392,7 @@ class RC_OtokarArma_RCIV_A_O: RC_OtokarArma_RCIV_A
 };
 class RC_OtokarArma_RCIV_A_I: RC_OtokarArma_RCIV_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -461,9 +440,7 @@ class RC_OtokarArma_RCIV_WD: RC_OtokarArma_RCIV_A
 };
 class RC_OtokarArma_RCIV_WD_O: RC_OtokarArma_RCIV_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -476,9 +453,7 @@ class RC_OtokarArma_RCIV_WD_O: RC_OtokarArma_RCIV_WD
 };
 class RC_OtokarArma_RCIV_WD_I: RC_OtokarArma_RCIV_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets

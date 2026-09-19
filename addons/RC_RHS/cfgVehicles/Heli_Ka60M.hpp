@@ -16,7 +16,7 @@ class RC_RHS_Ka60M_Base: RC_RHS_Ka60M_Core
 //manned
 class RC_Ka60M: RC_RHS_Ka60M_Base
 {
-	displayName="Ka-60M - Kasatka"
+	displayName="Ka-60M - Kasatka";
 
 	scope=2;			//2
 	scopeCurator=2;		//2
@@ -44,7 +44,7 @@ class RC_OM_Ka60M_UV: RC_RHS_Ka60M_Base
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_EHs_UV.hpp"
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\H80M\H80M_UV_conversion.hpp"
 
-	displayName="RC Ka-60M - Kasatka"
+	displayName="RC Ka-60M - Kasatka";
 };
 class RC_OM_Ka60M: RC_OM_Ka60M_UV
 {

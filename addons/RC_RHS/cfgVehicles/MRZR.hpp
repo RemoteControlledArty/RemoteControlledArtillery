@@ -25,28 +25,6 @@ class RC_MRZR_Core: rhsusf_mrzr4_d
 };
 class RC_MRZR_Base: RC_MRZR_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		/*
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		*/
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargoFuel_EH.hpp"
-	};
-
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam1x.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -54,6 +32,8 @@ class RC_MRZR_Base: RC_MRZR_Core
 	memoryPointDriverOptics="P svetlo";
 
 	author="Ascent";
+	editorSubcategory="RC_Car_subcat";
+
 	armor=40;
 	crewCrashProtection=0;
 
@@ -470,25 +450,9 @@ class RC_MRZR_Base: RC_MRZR_Core
 };
 
 
-class RC_MRZR_D: RC_MRZR_Base
+class RC_MRZR_UV_Core: RC_MRZR_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CommanderIsDriverEH.hpp"
-		};
-	};
-
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-
 	displayName="RC MRZR";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_Car_subcat";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
 
 	isUav=1;
 	driverForceOptics=1;
@@ -496,25 +460,43 @@ class RC_MRZR_D: RC_MRZR_Base
 	driverCompartments="Compartment2";
 	textPlural="UGVs";
 	textSingular="UGV";
-	crew="B_UAV_AI";
 
 	uavCameraDriverPos="P svetlo";
 	uavCameraDriverDir="P svetlo";
+};
+class RC_MRZR_UV_Base: RC_MRZR_UV_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 
-	//cost=0;
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_Commander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_MRZR_D: RC_MRZR_UV_Base
+{
+	scope=1;
+	scopeCurator=1;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_MRZR_D_O: RC_MRZR_D
 {
-	faction="RemoteControlled_O";
-	side=0;
-	crew="O_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
 };
 class RC_MRZR_D_I: RC_MRZR_D
 {
-	faction="RemoteControlled_I";
-	side=2;
-	crew="I_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
 };
 
@@ -532,16 +514,12 @@ class RC_MRZR_WD: RC_MRZR_D
 };
 class RC_MRZR_WD_O: RC_MRZR_WD
 {
-	faction="RemoteControlled_O";
-	side=0;
-	crew="O_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
 };
 class RC_MRZR_WD_I: RC_MRZR_WD
 {
-	faction="RemoteControlled_I";
-	side=2;
-	crew="I_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
 };
 

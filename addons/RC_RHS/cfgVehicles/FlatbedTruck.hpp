@@ -1,6 +1,6 @@
 //Flatbed Truck with 105mm M119
 class B_Truck_01_flatbed_F;
-class RC_FlatbedTruck_base: B_Truck_01_flatbed_F
+class RC_FlatbedTruck_Fetch: B_Truck_01_flatbed_F
 {
 	class Components;
 	class ViewOptics;
@@ -10,30 +10,14 @@ class RC_FlatbedTruck_base: B_Truck_01_flatbed_F
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_FlatbedTruck: RC_FlatbedTruck_base
+class RC_FlatbedTruck_Core: RC_FlatbedTruck_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
 		class RC_Artillery
 		{
 			init="if (!isserver) exitwith {}; (_this select 0) spawn {_How=(([[0,0,0], (getDir _this), 'RC_M119', west] call BIS_fnc_spawnVehicle) select 0); _How attachTo [_this, [0, -2.6, -0.775]]; _How setDir 180;};";
 		};
-		/*
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-		*/
 	};
 
 	faction="RemoteControlled_B";
@@ -195,33 +179,45 @@ class RC_FlatbedTruck: RC_FlatbedTruck_base
 };
 
 
-class RC_FlatbedTruck_A: RC_FlatbedTruck
+class RC_FlatbedTruck_UV_Core: RC_FlatbedTruck_Core
 {
 	displayName="RC 105mm Truck";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	crew="B_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
-
 	driverOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
 	//driverOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Driver_F.p3d";
 	memoryPointDriverOptics="driverview";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
 	ejectDeadCommander=0;
+};
+class RC_FlatbedTruck_UV_Base: RC_FlatbedTruck_UV_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
+
+
+class RC_FlatbedTruck_A: RC_FlatbedTruck_UV_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_FlatbedTruck_A_O: RC_FlatbedTruck_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	class EventHandlers: EventHandlers
@@ -234,9 +230,7 @@ class RC_FlatbedTruck_A_O: RC_FlatbedTruck_A
 };
 class RC_FlatbedTruck_A_I: RC_FlatbedTruck_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class EventHandlers: EventHandlers
@@ -251,7 +245,6 @@ class RC_FlatbedTruck_A_I: RC_FlatbedTruck_A
 
 class RC_FlatbedTruck_WD: RC_FlatbedTruck_A
 {
-	DLC="Enoch";
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\B_T_Truck_01_flatbed_F.jpg";
 	textureList[]=
 	{
@@ -268,9 +261,7 @@ class RC_FlatbedTruck_WD: RC_FlatbedTruck_A
 };
 class RC_FlatbedTruck_WD_O: RC_FlatbedTruck_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 	
 	class EventHandlers: EventHandlers
@@ -283,9 +274,7 @@ class RC_FlatbedTruck_WD_O: RC_FlatbedTruck_WD
 };
 class RC_FlatbedTruck_WD_I: RC_FlatbedTruck_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class EventHandlers: EventHandlers
@@ -298,7 +287,7 @@ class RC_FlatbedTruck_WD_I: RC_FlatbedTruck_WD
 };
 
 
-class RC_FlatbedTruck_LC_A: RC_FlatbedTruck_A
+class RC_FlatbedTruck_LC_A: RC_FlatbedTruck_Core
 {
 	displayName="RC 105mm Truck LowCap";
 	editorSubcategory="RC_ReducedAmmo_subcat";
@@ -313,9 +302,7 @@ class RC_FlatbedTruck_LC_A: RC_FlatbedTruck_A
 };
 class RC_FlatbedTruck_LC_A_O: RC_FlatbedTruck_LC_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 
 	class EventHandlers: EventHandlers
@@ -328,9 +315,7 @@ class RC_FlatbedTruck_LC_A_O: RC_FlatbedTruck_LC_A
 };
 class RC_FlatbedTruck_LC_A_I: RC_FlatbedTruck_LC_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class EventHandlers: EventHandlers
@@ -345,7 +330,6 @@ class RC_FlatbedTruck_LC_A_I: RC_FlatbedTruck_LC_A
 
 class RC_FlatbedTruck_LC_WD: RC_FlatbedTruck_LC_A
 {
-	DLC="Enoch";
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\B_T_Truck_01_flatbed_F.jpg";
 	textureList[]=
 	{
@@ -362,9 +346,7 @@ class RC_FlatbedTruck_LC_WD: RC_FlatbedTruck_LC_A
 };
 class RC_FlatbedTruck_LC_WD_O: RC_FlatbedTruck_LC_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 	
 	class EventHandlers: EventHandlers
@@ -377,9 +359,7 @@ class RC_FlatbedTruck_LC_WD_O: RC_FlatbedTruck_LC_WD
 };
 class RC_FlatbedTruck_LC_WD_I: RC_FlatbedTruck_LC_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 
 	class EventHandlers: EventHandlers
@@ -393,17 +373,31 @@ class RC_FlatbedTruck_LC_WD_I: RC_FlatbedTruck_LC_WD
 
 
 //manned variant, to allow both M119 gunner and AR-3 operator in truck front seats
-class RC_FlatbedTruck_manned_A: RC_FlatbedTruck
+class RC_FlatbedTruck_manned_Core: RC_FlatbedTruck_Core
 {
 	displayName="105mm Truck";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
 	crew="";
-	//crew="B_UAV_AI";
 	//dontCreateAI=1;	//doesnt fully work
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
+};
+class RC_FlatbedTruck_manned_Base: RC_FlatbedTruck_manned_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
+
+
+class RC_FlatbedTruck_manned_A: RC_FlatbedTruck_manned_Base
+{
+	faction="RemoteControlled_B";
+	side=1;
+	//crew="B_UAV_AI";
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
 };
 class RC_FlatbedTruck_manned_A_O: RC_FlatbedTruck_manned_A
@@ -440,7 +434,6 @@ class RC_FlatbedTruck_manned_A_I: RC_FlatbedTruck_manned_A
 
 class RC_FlatbedTruck_manned_WD: RC_FlatbedTruck_manned_A
 {
-	DLC="Enoch";
 	editorPreview="\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\B_T_Truck_01_flatbed_F.jpg";
 	textureList[]=
 	{

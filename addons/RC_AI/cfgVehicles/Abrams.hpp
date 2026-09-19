@@ -1,5 +1,5 @@
-class RC_M1A2_SEPV2_D_B;
-class RC_AI_B_M1A2_SEPV2_D_Core: RC_M1A2_SEPV2_D_B
+class RC_M1A2_SEPV2_Core;
+class RC_AI_B_M1A2_SEPV2_Fetch: RC_M1A2_SEPV2_Core
 {
 	class Turrets;
 	class MainTurret;
@@ -13,28 +13,12 @@ class RC_AI_B_M1A2_SEPV2_D_Core: RC_M1A2_SEPV2_D_B
 	scope=0;
 	scopeCurator=0;
 };
-class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
+class RC_AI_B_M1A2_SEPV2_Core: RC_AI_B_M1A2_SEPV2_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\RC_AI\includes_script\GunnerOrCommanderIsDriverEH_AI.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-		/*
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		};
-		*/
-	};
-	
-	#include "\RC_AI\includes_script\UserActions_TakeDriverControlsGlobalServer_AI.hpp"
 	#include "\RC_AI\includes_cfg\AI_DriverComponents4km.hpp"
 
 	displayName="[AI] M1A2 SEPv2 Abrams";
-	forceInGarage=1;	//1
+
 	driverCompartments="Compartment1";	//2
 	commanding=1;			//1
 	ejectDeadGunner=1;		//0
@@ -125,9 +109,25 @@ class RC_AI_B_M1A2_SEPV2_D_Base: RC_AI_B_M1A2_SEPV2_D_Core
 
 	#include "\RC_AI\loadouts\FSVitemsB_RHS_AI.hpp"
 };
+class RC_AI_B_M1A2_SEPV2_Base: RC_AI_B_M1A2_SEPV2_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		//#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		//#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\RC_AI\includes_script\GunnerOrCommanderIsDriverEH_AI.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\RC_AI\includes_script\UserActions_TakeDriverControlsGlobalServer_AI.hpp"
+};
 
 
-class RC_AI_B_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_D_Base
+class RC_AI_B_M1A2_SEPV2_D: RC_AI_B_M1A2_SEPV2_Base
 {
 	scope=2;
 	scopeCurator=2;

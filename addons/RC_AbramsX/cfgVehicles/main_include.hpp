@@ -3,32 +3,12 @@ class EventHandlers: EventHandlers
 	//fixes smokes being local (not showing up in MP), removed "if local"
 	fired = "if ( (toLower (_this select 2)) == ""qav_smokelauncher"") then { [_this select 0] call qav_fnc_handleSmokeFired; }";
 
-	class RC_Artillery
-	{
-		#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-	};
-	class RC_Detection
-	{
-		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
-	};
-	class RC_AT_Warning
-	{
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-	};
-	class RC_LightsOff
-	{
-		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-	};
 	class RC_Immobilized
 	{
         init="if (!isServer) exitwith {}; (_this select 0) call RC_fnc_RC_allowCrewInImmobile;";
     };
 };
 
-#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 #include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -44,9 +24,9 @@ weapons[]=
 canAccessMineDetector=1;
 mineDetectorRange=50;
 
-faction="RemoteControlled_B";
-editorSubcategory="RC_MBT_subcat";
 author="Ascent";
+editorSubcategory="RC_MBT_subcat";
+
 driverCompartments="Compartment2";
 ejectDeadGunner=0;
 ejectDeadDriver=0;
@@ -76,6 +56,7 @@ class HitPoints: HitPoints
 
 radarTargetSize=0.75;
 irTargetSize=0.75;
+
 fuelCapacity=1800;
 maxSpeed=110;
 peakTorque=6250;

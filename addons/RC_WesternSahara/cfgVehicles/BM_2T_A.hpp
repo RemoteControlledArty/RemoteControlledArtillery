@@ -76,21 +76,21 @@ class RC_ICV_5_A2_I: RC_ICV_5_A2_O
 
 
 //vanilla turret retexture
-class RC_IFV_5_A_O;
-class RC_IFV_5_A2_O_Base: RC_IFV_5_A_O
+class RC_IFV_5_Core;
+class RC_IFV_5_A2_Fetch: RC_IFV_5_Core
 {
 	class TextureSources;
 	class AnimationSources;
 	class showCamonetHull;
 	class Turrets;
 	class MainTurret;
+	class UserActions;
+	class EventHandlers;
 	scope=0;
 	scopeCurator=0;
 };
-class RC_IFV_5_A2_O: RC_IFV_5_A2_O_Base
+class RC_IFV_5_A2_Core: RC_IFV_5_A2_Fetch
 {
-	scope=2;
-	scopeCurator=2;
 	//editorPreview="";		//non available yet
 	textureList[]=
 	{
@@ -139,11 +139,36 @@ class RC_IFV_5_A2_O: RC_IFV_5_A2_O_Base
 		1
 	};
 };
+class RC_IFV_5_A2_Base: RC_IFV_5_A2_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_IFV_5_A2_O: RC_IFV_5_A2_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
+};
 class RC_IFV_5_A2: RC_IFV_5_A2_O
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
 
 	class Turrets: Turrets
@@ -156,9 +181,7 @@ class RC_IFV_5_A2: RC_IFV_5_A2_O
 };
 class RC_IFV_5_A2_I: RC_IFV_5_A2_O
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets

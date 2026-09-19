@@ -1,5 +1,5 @@
 class Aegis_O_R_APC_Tracked_02_30mm_lxWS;
-class RC_ICV_IFV_8_WD_Base: Aegis_O_R_APC_Tracked_02_30mm_lxWS
+class RC_ICV_IFV_8_Fetch: Aegis_O_R_APC_Tracked_02_30mm_lxWS
 {
 	class Turrets;
 	class MainTurret;
@@ -19,30 +19,10 @@ class RC_ICV_IFV_8_WD_Base: Aegis_O_R_APC_Tracked_02_30mm_lxWS
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
+class RC_ICV_IFV_8_Core: RC_ICV_IFV_8_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
@@ -64,11 +44,7 @@ class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 	};
 
 	author="Ascent";
-	faction="RemoteControlled_B";
-	scope=0;
-	scopeCurator=0;
-	side=1;
-	forceInGarage=1;
+
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -146,24 +122,10 @@ class RC_ICV_IFV_8_WD: RC_ICV_IFV_8_WD_Base
 };
 
 
-class RC_IFV_8_WD: RC_ICV_IFV_8_WD
+class RC_IFV_8_Core: RC_ICV_IFV_8_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-
 	displayName="BM-2T Bumerang";
 	editorSubcategory="RC_IFV_ATGM_subcat";
-	scope=2;
-	scopeCurator=2;
-
-	crew="B_UAV_AI";
 
 	class Turrets: Turrets
 	{
@@ -242,12 +204,35 @@ class RC_IFV_8_WD: RC_ICV_IFV_8_WD
 		};
 	};
 };
+class RC_IFV_8_Base: RC_IFV_8_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+	
+
+class RC_IFV_8_WD: RC_IFV_8_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
 class RC_IFV_8_WD_O: RC_IFV_8_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -260,10 +245,7 @@ class RC_IFV_8_WD_O: RC_IFV_8_WD
 };
 class RC_IFV_8_WD_I: RC_IFV_8_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets

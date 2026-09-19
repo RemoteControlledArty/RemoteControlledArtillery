@@ -47,18 +47,12 @@ class RC_Howitzer_WD2_O: RC_Howitzer_WD2_O_Base
 };
 class RC_Howitzer_WD2: RC_Howitzer_WD2_O
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_Howitzer_WD2_I: RC_Howitzer_WD2_O
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -88,17 +82,11 @@ class RC_Howitzer_LC_WD2_O: RC_Howitzer_WD2_O
 };
 class RC_Howitzer_LC_WD2: RC_Howitzer_LC_WD2_O
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_Howitzer_LC_WD2_I: RC_Howitzer_LC_WD2_O
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };

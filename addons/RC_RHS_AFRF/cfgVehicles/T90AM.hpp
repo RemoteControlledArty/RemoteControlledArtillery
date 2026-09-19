@@ -1,5 +1,5 @@
 class rhs_t90am_tv;
-class RC_T90AM_Core: rhs_t90am_tv
+class RC_T90AM_Fetch: rhs_t90am_tv
 {
 	class Turrets;
 	class MainTurret;
@@ -18,7 +18,7 @@ class RC_T90AM_Core: rhs_t90am_tv
 	scopeCurator=0;
 	RC_GunnerIsDriver=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_T90AM_Base: RC_T90AM_Core
+class RC_T90AM_Core: RC_T90AM_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
@@ -31,23 +31,8 @@ class RC_T90AM_Base: RC_T90AM_Core
 			getOut="_this call rhs_fnc_t72_hatch;_this call rhs_fnc_hatchAbandon";
 			killed="[_this select 0,'rhs_Wreck_T90am_turret_F'] call rhs_fnc_turretBlow";
 		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
 	};
 	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
@@ -55,6 +40,9 @@ class RC_T90AM_Base: RC_T90AM_Core
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 	RC_ATrespondingTurret[]={0,0};
+
+	displayName="T-90AM";
+	editorSubcategory="RC_MBT_subcat";
 
 	weapons[]=
 	{
@@ -69,9 +57,8 @@ class RC_T90AM_Base: RC_T90AM_Core
 		"SmokeLauncherMag"
 	};
 
-	faction="RemoteControlled_O";
-	editorSubcategory="RC_MBT_subcat";
-	author="Ascent";
+	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
+	
 	driverCompartments="Compartment2";
 	ejectDeadGunner=0;
 	ejectDeadDriver=0;
@@ -114,7 +101,7 @@ class RC_T90AM_Base: RC_T90AM_Core
 				"RC_MMG_93x64_coax",
 				"SmokeLauncher"
 			};
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_green.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_red.hpp"
 
 			class OpticsIn
 			{
@@ -161,7 +148,7 @@ class RC_T90AM_Base: RC_T90AM_Core
 						"RC_Laserdesignator_vehicle",
 						"SmokeLauncher"
 					};
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_green.hpp"
+					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_red.hpp"
 
 					class OpticsIn
 					{
@@ -295,29 +282,31 @@ class RC_T90AM_Base: RC_T90AM_Core
 
 	#include "\RC_RHS_AFRF\loadouts\FSVitemsO_RHS_AFRF.hpp"
 };
-
-
-class RC_T90AM_WD_O: RC_T90AM_Base
+class RC_T90AM_Base: RC_T90AM_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
 	};
 
-	displayName="T-90AM";
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_T90AM_WD: RC_T90AM_Base
+{
 	scope=2;
 	scopeCurator=2;
-	side=0;
 	forceInGarage=1;
 
-	#include "\Remote_Controlled_Artillery\includes_cfg\values_FSV.hpp"
-	crew="O_UAV_AI";
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	/*
 	class Turrets: Turrets
 	{
@@ -332,24 +321,22 @@ class RC_T90AM_WD_O: RC_T90AM_Base
 	};
 	*/
 };
-class RC_T90AM_WD: RC_T90AM_WD_O
+class RC_T90AM_WD_O: RC_T90AM_WD
 {
-	faction="RemoteControlled_B";
-	crew="I_UAV_AI";
-	side=1;
-	#include "\RC_RHS_AFRF\loadouts\FSVitemsB_RHS_AFRF.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\RC_RHS_AFRF\loadouts\FSVitemsO_RHS_AFRF.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_green.hpp"
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_yellow.hpp"
+					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_green.hpp"
 				};
 
 				//class AdvisorOptics: AdvisorOptics {};
@@ -357,11 +344,9 @@ class RC_T90AM_WD: RC_T90AM_WD_O
 		};
 	};
 };
-class RC_T90AM_WD_I: RC_T90AM_WD_O
+class RC_T90AM_WD_I: RC_T90AM_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS_AFRF\loadouts\FSVitemsI_RHS_AFRF.hpp"
 
 	class Turrets: Turrets
@@ -384,7 +369,7 @@ class RC_T90AM_WD_I: RC_T90AM_WD_O
 };
 
 
-class RC_T90AM_A_O: RC_T90AM_WD_O
+class RC_T90AM_A: RC_T90AM_WD
 {
 	//editorPreview="";
 	hiddenSelectionsTextures[]=
@@ -406,24 +391,22 @@ class RC_T90AM_A_O: RC_T90AM_WD_O
 		1
 	};
 };
-class RC_T90AM_A: RC_T90AM_A_O
+class RC_T90AM_A_O: RC_T90AM_A
 {
-	faction="RemoteControlled_B";
-	crew="I_UAV_AI";
-	side=1;
-	#include "\RC_RHS_AFRF\loadouts\FSVitemsB_RHS_AFRF.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+	#include "\RC_RHS_AFRF\loadouts\FSVitemsO_RHS_AFRF.hpp"
 
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
 		{
-			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_yellow.hpp"
+			#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_green.hpp"
 			
 			class Turrets: Turrets
 			{
 				class CommanderOptics: CommanderOptics
 				{
-					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_yellow.hpp"
+					#include "\RC_RHS_AFRF\includes_vicmags\mags_T90AM_com_green.hpp"
 				};
 
 				//class AdvisorOptics: AdvisorOptics {};
@@ -431,11 +414,9 @@ class RC_T90AM_A: RC_T90AM_A_O
 		};
 	};
 };
-class RC_T90AM_A_I: RC_T90AM_A_O
+class RC_T90AM_A_I: RC_T90AM_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS_AFRF\loadouts\FSVitemsI_RHS_AFRF.hpp"
 
 	class Turrets: Turrets

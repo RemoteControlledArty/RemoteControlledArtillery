@@ -1,6 +1,6 @@
 //Flatbed Truck with 105mm M119
 class B_G_Offroad_01_F;
-class RC_Offroad_Core: B_G_Offroad_01_F
+class RC_Offroad_Fetch: B_G_Offroad_01_F
 {
 	class Components;
 	class EventHandlers;
@@ -19,17 +19,8 @@ class RC_Offroad_Core: B_G_Offroad_01_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Offroad_Base: RC_Offroad_Core
+class RC_Offroad_Core: RC_Offroad_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -298,7 +289,7 @@ class RC_Offroad_Base: RC_Offroad_Core
 
 
 /*
-class RC_Offroad_RCIMV_Base: RC_Offroad_Base
+class RC_Offroad_RCIMV_Base: RC_Offroad_Core
 {
 	editorSubcategory="RC_Car_subcat";
 
@@ -369,22 +360,13 @@ class RC_Offroad_RCIMV_cUAS_I: RC_Offroad_RCIMV_cUAS
 */
 
 
-class RC_Offroad_cUAS_Base: RC_Offroad_Base
+class RC_Offroad_cUAS_Base: RC_Offroad_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
-		};
-		/*
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		*/
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_600m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 
 	editorSubcategory="RC_AntiDrone_subcat";

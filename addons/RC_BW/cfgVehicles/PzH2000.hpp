@@ -1,5 +1,5 @@
 class BWA3_Panzerhaubitze2000_Fleck;
-class RC_PzH2000_Core: BWA3_Panzerhaubitze2000_Fleck
+class RC_PzH2000_Fetch: BWA3_Panzerhaubitze2000_Fleck
 {
 	class AnimationSources;
 	class Turrets;
@@ -27,39 +27,17 @@ class RC_PzH2000_Core: BWA3_Panzerhaubitze2000_Fleck
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_PzH2000_FT_Base: RC_PzH2000_Core
+class RC_PzH2000_Core: RC_PzH2000_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
-	faction="RemoteControlled_B";
-	side=1;
-	forceInGarage=1;
+	displayName="RC PzH 2000";
+	editorSubcategory="RC_BW_subcat";
+
 	uavCameraDriverPos="driverview";
 	uavCameraDriverDir="driverview";
 	uavCameraGunnerPos="gunnerview";
@@ -280,28 +258,36 @@ class RC_PzH2000_FT_Base: RC_PzH2000_Core
 
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
-
-
-class RC_PzH2000_FT: RC_PzH2000_FT_Base
+class RC_PzH2000_Base: RC_PzH2000_Core
 {
-	displayName="RC PzH 2000";
-	editorSubcategory="RC_BW_subcat";
-	scope=2;
-	scopeCurator=2;
-	crew="B_UAV_AI";
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
+
+
+class RC_PzH2000_FT: RC_PzH2000_Base
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_PzH2000_FT_O: RC_PzH2000_FT
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_PzH2000_FT_I: RC_PzH2000_FT
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -330,16 +316,12 @@ class RC_PzH2000_LC_FT: RC_PzH2000_FT
 };
 class RC_PzH2000_LC_FT_O: RC_PzH2000_LC_FT
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_PzH2000_LC_FT_I: RC_PzH2000_LC_FT
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -355,16 +337,12 @@ class RC_PzH2000_TT: RC_PzH2000_FT
 };
 class RC_PzH2000_TT_O: RC_PzH2000_TT
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_PzH2000_TT_I: RC_PzH2000_TT
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -392,15 +370,11 @@ class RC_PzH2000_LC_TT: RC_PzH2000_TT
 };
 class RC_PzH2000_LC_TT_O: RC_PzH2000_LC_TT
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_PzH2000_LC_TT_I: RC_PzH2000_LC_TT
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };

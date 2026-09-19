@@ -14,20 +14,6 @@ class RC_MortarMATV_Fetch: B_MRAP_01_F
 };
 class RC_MortarMATV_Core: RC_MortarMATV_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-	};
-
     #include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
     #include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
     lockDetectionSystem=4;
@@ -241,6 +227,14 @@ class RC_MortarMATV_Core: RC_MortarMATV_Fetch
 };
 class RC_MortarMATV_Base: RC_MortarMATV_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+		
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
 };
 
 

@@ -1,5 +1,5 @@
 class RHS_M2A2;
-class RC_M2A2_Base: RHS_M2A2
+class RC_M2A2_Fetch: RHS_M2A2
 {
 	scope=0;
 	scopeCurator=0;
@@ -14,19 +14,24 @@ class RC_M2A2_Base: RHS_M2A2
 	class ramp;
 	class HatchC;
 };
-class RC_M2A2_D_Base: RC_M2A2_Base
+class RC_M2A2_Core: RC_M2A2_Fetch
 {
 	class EventHandlers: EventHandlers
-	{
-		class RC_LightsOff
+	{	
+		class RHSUSF_EventHandlers
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+			postInit="_this call rhs_fnc_reapplyTextures";
+			getIn="_this call rhs_fnc_m2_doors";
+			getOut="_this call rhs_fnc_m2_doors";
 		};
 	};
+
+	displayName="M2A2 Bradley";
+	editorSubcategory="RC_IFV_ATGM_subcat";
+
+	//forceHideDriver=1;
+	//driverForceOptics=1;
 	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-	
-	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=2;
 	ejectDeadGunner=0;
@@ -196,7 +201,8 @@ class RC_M2A2_D_Base: RC_M2A2_Base
 	#include "\RC_RHS\loadouts\IFVitemsB_RHS_old.hpp"
 };
 
-class RC_M2A2_D: RC_M2A2_D_Base
+
+class RC_M2A2_Core2: RC_M2A2_Core
 {
 	class Turrets: Turrets
 	{
@@ -472,57 +478,39 @@ class RC_M2A2_D: RC_M2A2_D_Base
 		};
 	};
 };
-
-
-class RC_M2A2_D_B: RC_M2A2_D
+class RC_M2A2_Base: RC_M2A2_Core2
 {
 	class EventHandlers: EventHandlers
-	{	
-		class RHSUSF_EventHandlers
-		{
-			postInit="_this call rhs_fnc_reapplyTextures";
-			getIn="_this call rhs_fnc_m2_doors";
-			getOut="_this call rhs_fnc_m2_doors";
-		};
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
 	};
 
-	displayName="M2A2 Bradley";
-	editorSubcategory="RC_IFV_ATGM_subcat";
-	//editorSubcategory="RC_RHS_D_subcat";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
 
-	crew="B_UAV_AI";
-	//forceHideDriver=1;
-	//driverForceOptics=1;
+
+class RC_M2A2_D_B: RC_M2A2_Base
+{
+	scope=1;
+	scopeCurator=1;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_M2A2_D_O: RC_M2A2_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M2A2_D_I: RC_M2A2_D_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS_old.hpp"
 };
 
 
 class RC_M2A2_WD_B: RC_M2A2_D_B
 {
-	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A2_wd.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -535,15 +523,11 @@ class RC_M2A2_WD_B: RC_M2A2_D_B
 };
 class RC_M2A2_WD_O: RC_M2A2_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M2A2_WD_I: RC_M2A2_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS_old.hpp"
 };

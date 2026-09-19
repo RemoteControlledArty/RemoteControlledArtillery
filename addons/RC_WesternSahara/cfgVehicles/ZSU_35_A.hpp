@@ -71,9 +71,7 @@ class RC_ZSU35_A_O: RC_ZSU35_WD_O_Base
 };
 class RC_ZSU35_A: RC_ZSU35_A_O
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -85,9 +83,7 @@ class RC_ZSU35_A: RC_ZSU35_A_O
 };
 class RC_ZSU35_A_I: RC_ZSU35_A_O
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{

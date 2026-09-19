@@ -29,25 +29,6 @@ class RC_Ripsaw_Fetch: qav_ripsaw_Mk44
 };
 class RC_Ripsaw_Core: RC_Ripsaw_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSensLight.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -145,17 +126,8 @@ class RC_Ripsaw_Core: RC_Ripsaw_Fetch
 };
 
 
-class RC_Ripsaw_Base: RC_Ripsaw_Core
+class RC_Ripsaw_Core2: RC_Ripsaw_Core
 {
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-	
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	//RC_ATrespondingTurret[]={0,0};
@@ -399,6 +371,19 @@ class RC_Ripsaw_Base: RC_Ripsaw_Core
 		};
 	};
 };
+class RC_Ripsaw_Base: RC_Ripsaw_Core2
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
 
 
 class RC_Ripsaw_WD_B: RC_Ripsaw_Base
@@ -418,12 +403,8 @@ class RC_Ripsaw_WD_B: RC_Ripsaw_Base
 		};
 	};
 };
-class RC_Ripsaw_WD_O: RC_Ripsaw_Base
+class RC_Ripsaw_WD_O: RC_Ripsaw_WD_B
 {
-	scope=2;
-	scopeCurator=2;
-	//forceInGarage=1;
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
@@ -435,12 +416,8 @@ class RC_Ripsaw_WD_O: RC_Ripsaw_Base
 		};
 	};
 };
-class RC_Ripsaw_WD_I: RC_Ripsaw_Base
+class RC_Ripsaw_WD_I: RC_Ripsaw_WD_B
 {
-	scope=2;
-	scopeCurator=2;
-	//forceInGarage=1;
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
@@ -468,7 +445,8 @@ class RC_Ripsaw_A_I: RC_Ripsaw_WD_I
 };
 
 
-class RC_Ripsaw_cUAS_Base: RC_Ripsaw_Base
+//cUAS
+class RC_Ripsaw_cUAS_Core: RC_Ripsaw_Core
 {
 	displayName="RC Ripsaw C-UAS";
 	editorSubcategory="RC_AntiDrone_subcat";
@@ -645,6 +623,21 @@ class RC_Ripsaw_cUAS_Base: RC_Ripsaw_Base
 		};
 	};
 };
+class RC_Ripsaw_cUAS_Base: RC_Ripsaw_cUAS_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+		
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
+
+
 class RC_Ripsaw_cUAS_WD_B: RC_Ripsaw_cUAS_Base
 {
 	scope=2;
@@ -662,12 +655,8 @@ class RC_Ripsaw_cUAS_WD_B: RC_Ripsaw_cUAS_Base
 		};
 	};
 };
-class RC_Ripsaw_cUAS_WD_O: RC_Ripsaw_cUAS_Base
+class RC_Ripsaw_cUAS_WD_O: RC_Ripsaw_cUAS_WD_B
 {
-	scope=2;
-	scopeCurator=2;
-	//forceInGarage=1;
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
@@ -679,12 +668,8 @@ class RC_Ripsaw_cUAS_WD_O: RC_Ripsaw_cUAS_Base
 		};
 	};
 };
-class RC_Ripsaw_cUAS_WD_I: RC_Ripsaw_cUAS_Base
+class RC_Ripsaw_cUAS_WD_I: RC_Ripsaw_cUAS_WD_B
 {
-	scope=2;
-	scopeCurator=2;
-	//forceInGarage=1;
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 

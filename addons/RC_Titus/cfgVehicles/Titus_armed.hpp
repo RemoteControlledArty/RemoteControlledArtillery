@@ -1,5 +1,5 @@
 class QIN_Titus_arx20_DES;
-class RC_Titus_AC_base: QIN_Titus_arx20_DES
+class RC_Titus_AC_Fetch: QIN_Titus_arx20_DES
 {
 	class ARX20Turret;
 	class Turrets;
@@ -31,35 +31,13 @@ class RC_Titus_AC_base: QIN_Titus_arx20_DES
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_Titus_AC: RC_Titus_AC_base
+class RC_Titus_AC_Core: RC_Titus_AC_Fetch
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\RC_Titus\cfgVehicles\Titus_include.hpp"
-	editorSubcategory="RC_Titus_subcat";
 
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		/*
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
-		*/
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
+	author="Ascent";
+	displayName="Titus 20mm";
+	editorSubcategory="RC_Titus_subcat";
 
 	//RC_ATrespondingTurret[]={1};	//deactivated until lock isnt stuck as long
 
@@ -356,21 +334,29 @@ class RC_Titus_AC: RC_Titus_AC_base
 		class CargoTurret_02: CargoTurret_02 {};
 	};
 };
-class RC_Titus_AC_D: RC_Titus_AC
+class RC_Titus_AC_Base: RC_Titus_AC_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
-	};
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 
-	displayName="Titus 20mm";
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
+
+
+class RC_Titus_AC_D: RC_Titus_AC_Base
+{
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_Titus_AC_WD: RC_Titus_AC_D
 {
@@ -384,9 +370,7 @@ class RC_Titus_AC_A: RC_Titus_AC_D
 
 class RC_Titus_AC_D_O: RC_Titus_AC_D
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -412,10 +396,7 @@ class RC_Titus_AC_A_O: RC_Titus_AC_D_O
 
 class RC_Titus_AC_D_I: RC_Titus_AC_D
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -439,7 +420,7 @@ class RC_Titus_AC_A_I: RC_Titus_AC_D_I
 };
 
 
-class RC_Titus_HMG_D: RC_Titus_AC_D
+class RC_Titus_HMG_Core: RC_Titus_AC_Core
 {
 	displayName="Titus HMG";
 
@@ -484,6 +465,29 @@ class RC_Titus_HMG_D: RC_Titus_AC_D
 		class CargoTurret_02: CargoTurret_02 {};
 	};
 };
+class RC_Titus_HMG_Base: RC_Titus_HMG_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
+
+
+class RC_Titus_HMG_D: RC_Titus_HMG_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_Titus_HMG_WD: RC_Titus_HMG_D
 {
 	#include "\RC_Titus\textures\tex_wd_armed.hpp"
@@ -496,9 +500,7 @@ class RC_Titus_HMG_A: RC_Titus_HMG_D
 
 class RC_Titus_HMG_D_O: RC_Titus_HMG_D
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -524,9 +526,7 @@ class RC_Titus_HMG_A_O: RC_Titus_HMG_D_O
 
 class RC_Titus_HMG_D_I: RC_Titus_HMG_D
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -550,22 +550,10 @@ class RC_Titus_HMG_A_I: RC_Titus_HMG_D_I
 };
 
 
-class RC_Titus_MMG_D: RC_Titus_AC
+class RC_Titus_MMG_Core: RC_Titus_AC_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initICV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
-		};
-	};
-
 	displayName="RC Titus MMG";
-	scope=2;
-	scopeCurator=2;
-	forceInGarage=1;
-	
+
 	vehicleClass="Autonomous";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
@@ -742,6 +730,29 @@ class RC_Titus_MMG_D: RC_Titus_AC
 		class CargoTurret_02: CargoTurret_02 {};
 	};
 };
+class RC_Titus_MMG_Base: RC_Titus_MMG_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_CommanderOrGunner.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
+
+
+class RC_Titus_MMG_D: RC_Titus_MMG_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_Titus_MMG_WD: RC_Titus_MMG_D
 {
 	#include "\RC_Titus\textures\tex_wd_armed.hpp"
@@ -754,9 +765,7 @@ class RC_Titus_MMG_A: RC_Titus_MMG_D
 
 class RC_Titus_MMG_D_O: RC_Titus_MMG_D
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -782,9 +791,7 @@ class RC_Titus_MMG_A_O: RC_Titus_MMG_D_O
 
 class RC_Titus_MMG_D_I: RC_Titus_MMG_D
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets

@@ -1,5 +1,5 @@
 class O_R_APC_Wheeled_04_cannon_v2_F;
-class RC_2S23M_Base: O_R_APC_Wheeled_04_cannon_v2_F
+class RC_2S23M_Fetch: O_R_APC_Wheeled_04_cannon_v2_F
 {
 	class Turrets;
 	class MainTurret;
@@ -38,48 +38,21 @@ class RC_2S23M_Base: O_R_APC_Wheeled_04_cannon_v2_F
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_2S23M: RC_2S23M_Base
+class RC_2S23M_Core: RC_2S23M_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
 	uavCameraGunnerDir="PiP0_dir";
 	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
-	faction="RemoteControlled_B";
-	scope=0;
-	scopeCurator=0;
-	side=1;
-	forceInGarage=1;
+
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -183,7 +156,7 @@ class RC_2S23M: RC_2S23M_Base
 };
 
 
-class RC_2S23M_WD: RC_2S23M
+class RC_2S23M_Core2: RC_2S23M_Core
 {
 	/*
 	class EventHandlers: EventHandlers
@@ -371,20 +344,42 @@ class RC_2S23M_WD: RC_2S23M
 		};
 	};
 };
+class RC_2S23M_Base: RC_2S23M_Core2
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_2S23M_WD: RC_2S23M_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
+};
 class RC_2S23M_WD_O: RC_2S23M_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_2S23M_WD_I: RC_2S23M_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -403,18 +398,12 @@ class RC_2S23M_A: RC_2S23M_WD
 };
 class RC_2S23M_A_O: RC_2S23M_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_2S23M_A_I: RC_2S23M_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -444,18 +433,12 @@ class RC_2S23M_LC_WD: RC_2S23M_WD
 };
 class RC_2S23M_LC_WD_O: RC_2S23M_LC_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_2S23M_LC_WD_I: RC_2S23M_LC_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -474,17 +457,11 @@ class RC_2S23M_LC_A: RC_2S23M_LC_WD
 };
 class RC_2S23M_LC_A_O: RC_2S23M_LC_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_2S23M_LC_A_I: RC_2S23M_LC_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };

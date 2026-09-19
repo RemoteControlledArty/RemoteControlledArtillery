@@ -1,5 +1,5 @@
-class RC_AbramsX_WD;
-class RC_AI_B_AbramsX_WD_Core: RC_AbramsX_WD
+class RC_AbramsX_Core;
+class RC_AI_B_AbramsX_Fetch: RC_AbramsX_Core
 {
 	class Turrets;
 	class MainTurret;
@@ -12,28 +12,12 @@ class RC_AI_B_AbramsX_WD_Core: RC_AbramsX_WD
 	scope=0;
 	scopeCurator=0;
 };
-class RC_AI_B_AbramsX_WD_Base: RC_AI_B_AbramsX_WD_Core
+class RC_AI_B_AbramsX_Core: RC_AI_B_AbramsX_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\RC_AI\includes_script\GunnerOrCommanderIsDriverEH_AI.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-		/*
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		};
-		*/
-	};
-	
-	#include "\RC_AI\includes_script\UserActions_TakeDriverControlsGlobalServer_AI.hpp"
 	#include "\RC_AI\includes_cfg\AI_DriverComponents4km_X.hpp"
 
 	displayName="[AI] AbramsX";
-	forceInGarage=1;	//1
+
 	driverCompartments="Compartment1";	//2
 	commanding=1;			//1
 	ejectDeadGunner=1;		//0
@@ -137,9 +121,24 @@ class RC_AI_B_AbramsX_WD_Base: RC_AI_B_AbramsX_WD_Core
 
 	#include "\RC_AI\loadouts\FSVitemsB_RHS_AI.hpp"
 };
+class RC_AI_B_AbramsX_Base: RC_AI_B_AbramsX_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_600m.hpp"
+		//#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		//#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\RC_AI\includes_script\GunnerOrCommanderIsDriverEH_AI.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+	};
+
+	#include "\RC_AI\includes_script\UserActions_TakeDriverControlsGlobalServer_AI.hpp"
+};
 
 
-class RC_AI_B_AbramsX_WD: RC_AI_B_AbramsX_WD_Base
+class RC_AI_B_AbramsX_WD: RC_AI_B_AbramsX_Base
 {
 	scope=2;
 	scopeCurator=2;

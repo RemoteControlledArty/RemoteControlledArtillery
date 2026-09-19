@@ -1,5 +1,5 @@
 class EF_B_AAV9_50mm_MJTF_Des;
-class RC_AAV9A1_Base: EF_B_AAV9_50mm_MJTF_Des
+class RC_AAV9A1_Fetch: EF_B_AAV9_50mm_MJTF_Des
 {
 	class Turrets;
 	class MainTurret;
@@ -31,36 +31,20 @@ class RC_AAV9A1_Base: EF_B_AAV9_50mm_MJTF_Des
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_AAV9A1: RC_AAV9A1_Base
+class RC_AAV9A1_Core: RC_AAV9A1_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSens.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 	RC_ATrespondingTurret[]={0,0};
+
+	author="Ascent";
+	displayName="AAV-9A1";
+	editorSubcategory="RC_IFV_subcat";
 
 	weapons[]=
 	{
@@ -75,12 +59,6 @@ class RC_AAV9A1: RC_AAV9A1_Base
 		"SmokeLauncherMag"
 	};
 
-	author="Ascent";
-	faction="RemoteControlled_B";
-	scope=0;
-	scopeCurator=0;
-	side=1;
-	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -224,24 +202,8 @@ class RC_AAV9A1: RC_AAV9A1_Base
 };
 
 
-class RC_AAV9A1_A: RC_AAV9A1
+class RC_AAV9A1_Core2: RC_AAV9A1_Core
 {
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-
-	displayName="AAV-9A1";
-	editorSubcategory="RC_IFV_subcat";
-	scope=2;
-	scopeCurator=2;
-	crew="B_UAV_AI";
-
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -384,11 +346,36 @@ class RC_AAV9A1_A: RC_AAV9A1
 		class CargoGunner_6: CargoGunner_6 {gunnerName="R2";};
 	};
 };
+class RC_AAV9A1_Base: RC_AAV9A1_Core2
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_AAV9A1_A: RC_AAV9A1_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
 class RC_AAV9A1_A_O: RC_AAV9A1_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -405,9 +392,7 @@ class RC_AAV9A1_A_O: RC_AAV9A1_A
 };
 class RC_AAV9A1_A_I: RC_AAV9A1_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -461,9 +446,7 @@ class RC_AAV9A1_WD: RC_AAV9A1_A
 };
 class RC_AAV9A1_WD_O: RC_AAV9A1_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -480,9 +463,7 @@ class RC_AAV9A1_WD_O: RC_AAV9A1_WD
 };
 class RC_AAV9A1_WD_I: RC_AAV9A1_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -501,7 +482,7 @@ class RC_AAV9A1_WD_I: RC_AAV9A1_WD
 
 //30mm AAV
 class EF_B_AAV9_MJTF_Des;
-class RC_AAV9_Base: EF_B_AAV9_MJTF_Des
+class RC_AAV9_Fetch: EF_B_AAV9_MJTF_Des
 {
 	class Turrets;
 	class MainTurret;
@@ -533,36 +514,20 @@ class RC_AAV9_Base: EF_B_AAV9_MJTF_Des
 	scopeCurator=0;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_AAV9: RC_AAV9_Base
+class RC_AAV9_Core: RC_AAV9_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\values_IFV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSensLight.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 	RC_ATrespondingTurret[]={0,0};
+
+	author="Ascent";
+	displayName="AAV-9";
+	editorSubcategory="RC_IFV_subcat";
 
 	weapons[]=
 	{
@@ -577,12 +542,6 @@ class RC_AAV9: RC_AAV9_Base
 		"SmokeLauncherMag"
 	};
 
-	author="Ascent";
-	faction="RemoteControlled_B";
-	scope=0;
-	scopeCurator=0;
-	side=1;
-	forceInGarage=1;
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -726,24 +685,8 @@ class RC_AAV9: RC_AAV9_Base
 };
 
 
-class RC_AAV9_A: RC_AAV9
+class RC_AAV9_Core2: RC_AAV9_Core
 {
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-
-	displayName="AAV-9";
-	editorSubcategory="RC_IFV_subcat";
-	scope=2;
-	scopeCurator=2;
-	crew="B_UAV_AI";
-
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -886,11 +829,36 @@ class RC_AAV9_A: RC_AAV9
 		class CargoGunner_6: CargoGunner_6 {gunnerName="R2";};
 	};
 };
+class RC_AAV9_Base: RC_AAV9_Core2
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_AAV9_A: RC_AAV9_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+	
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsB.hpp"
+};
 class RC_AAV9_A_O: RC_AAV9_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -907,9 +875,7 @@ class RC_AAV9_A_O: RC_AAV9_A
 };
 class RC_AAV9_A_I: RC_AAV9_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -963,9 +929,7 @@ class RC_AAV9_WD: RC_AAV9_A
 };
 class RC_AAV9_WD_O: RC_AAV9_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -982,9 +946,7 @@ class RC_AAV9_WD_O: RC_AAV9_WD
 };
 class RC_AAV9_WD_I: RC_AAV9_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 
 	class Turrets: Turrets

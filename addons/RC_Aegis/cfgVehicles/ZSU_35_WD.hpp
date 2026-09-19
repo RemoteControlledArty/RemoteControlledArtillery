@@ -15,7 +15,7 @@ class RC_ZSU35_WD_O: RC_ZSU35_WD_O_Base
 {
 	scope=2;
 	scopeCurator=2;
-	editorPreview = "\A3_Aegis\EditorPreviews_F_Aegis\Data\CfgVehicles\O_R_APC_Tracked_02_AA_F.jpg";
+	editorPreview="\A3_Aegis\EditorPreviews_F_Aegis\Data\CfgVehicles\O_R_APC_Tracked_02_AA_F.jpg";
 	textureList[]=
 	{
 		"Green",
@@ -71,9 +71,7 @@ class RC_ZSU35_WD_O: RC_ZSU35_WD_O_Base
 };
 class RC_ZSU35_WD: RC_ZSU35_WD_O
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 
 	class Turrets: Turrets
 	{
@@ -85,9 +83,7 @@ class RC_ZSU35_WD: RC_ZSU35_WD_O
 };
 class RC_ZSU35_WD_I: RC_ZSU35_WD_O
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 
 	class Turrets: Turrets
 	{

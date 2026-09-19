@@ -1,20 +1,15 @@
 class qav_abramsx_templar;
-class RC_AbramsX_Twin_Core: qav_abramsx_templar
+class RC_AbramsX_Twin_Fetch: qav_abramsx_templar
 {
 	#include "\RC_AbramsX\cfgVehicles\fetch_include.hpp"
 };
-class RC_AbramsX_Twin_Base: RC_AbramsX_Twin_Core
+class RC_AbramsX_Twin_Core: RC_AbramsX_Twin_Fetch
 {
 	#include "\RC_AbramsX\cfgVehicles\main_include.hpp"
 };
-class RC_AbramsX_Twin_WD: RC_AbramsX_Twin_Base
+class RC_AbramsX_Twin_Core2: RC_AbramsX_Twin_Core
 {
 	displayName="AbramsY";
-	crew="B_UAV_AI";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
 
 	magazines[]=
 	{
@@ -90,12 +85,35 @@ class RC_AbramsX_Twin_WD: RC_AbramsX_Twin_Base
 		};
 	};
 };
+class RC_AbramsX_Twin_Base: RC_AbramsX_Twin_Core2
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_AbramsX_Twin_WD: RC_AbramsX_Twin_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_AbramsX_Twin_WD_O: RC_AbramsX_Twin_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -118,10 +136,7 @@ class RC_AbramsX_Twin_WD_O: RC_AbramsX_Twin_WD
 };
 class RC_AbramsX_Twin_WD_I: RC_AbramsX_Twin_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
 	class Turrets: Turrets
@@ -159,10 +174,7 @@ class RC_AbramsX_Twin_A: RC_AbramsX_Twin_WD
 };
 class RC_AbramsX_Twin_A_O: RC_AbramsX_Twin_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 
 	class Turrets: Turrets
@@ -185,10 +197,7 @@ class RC_AbramsX_Twin_A_O: RC_AbramsX_Twin_A
 };
 class RC_AbramsX_Twin_A_I: RC_AbramsX_Twin_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 
 	class Turrets: Turrets

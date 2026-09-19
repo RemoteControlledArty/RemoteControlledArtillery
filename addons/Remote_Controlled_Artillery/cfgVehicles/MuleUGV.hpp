@@ -1,5 +1,5 @@
 class B_UGV_01_F;
-class RC_Mule_UGV_Core: B_UGV_01_F
+class RC_Mule_UGV_Fetch: B_UGV_01_F
 {
 	class HitPoints;
 	class HitHull;
@@ -22,26 +22,8 @@ class RC_Mule_UGV_Core: B_UGV_01_F
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 	RCEngineOff=1; //1 = turns off engine when stopping, 2 = same but with delay, required for slow accelerating vehicles
 };
-class RC_Mule_UGV_Base: RC_Mule_UGV_Core
+class RC_Mule_UGV_Core: RC_Mule_UGV_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_RemoveAttachedObj
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\removeAttachedObj_deletedEH.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -240,6 +222,17 @@ class RC_Mule_UGV_Base: RC_Mule_UGV_Core
 		};
 	};
 };
+class RC_Mule_UGV_Base: RC_Mule_UGV_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+		
+		#include "\Remote_Controlled_Artillery\includes_script\removeAttachedObj_deleted.hpp"
+	};
+};
 
 
 class RC_Mule_UGV_A: RC_Mule_UGV_Base
@@ -249,23 +242,17 @@ class RC_Mule_UGV_A: RC_Mule_UGV_Base
 	scopeCurator=2;
 	forceInGarage=1;
 	
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_Mule_UGV_A_O: RC_Mule_UGV_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Mule_UGV_A_I: RC_Mule_UGV_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -287,16 +274,12 @@ class RC_Mule_UGV_WD: RC_Mule_UGV_A
 };
 class RC_Mule_UGV_WD_O: RC_Mule_UGV_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_Mule_UGV_WD_I: RC_Mule_UGV_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 

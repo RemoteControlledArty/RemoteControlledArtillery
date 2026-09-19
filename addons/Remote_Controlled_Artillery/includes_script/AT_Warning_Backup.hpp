@@ -1,4 +1,4 @@
-class RC_AT_Detection
+class RC_AT_Warning_Backup
 {
 	IncomingMissile="params ['_target','_ammo','_vehicle','_instigator','_missile'];	\
 	if (!local _target) exitwith {};	\

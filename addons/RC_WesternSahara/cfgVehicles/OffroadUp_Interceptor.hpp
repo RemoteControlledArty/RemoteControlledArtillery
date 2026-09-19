@@ -24,26 +24,8 @@ class RC_OffroadUp_Interceptor_Fetch: I_G_Offroad_01_armor_AT_lxWS
 	scope=0;
 	scopeCurator=0;
 };
-class RC_OffroadUp_Interceptor_Base: RC_OffroadUp_Interceptor_Fetch
+class RC_OffroadUp_Interceptor_Core: RC_OffroadUp_Interceptor_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-	/*
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-		};
-		*/
-		class RC_Interceptability
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\firedInterceptorEH.hpp"
-		};
-		class RC_AttachRadar
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AttachRadar.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -466,6 +448,14 @@ class RC_OffroadUp_Interceptor_Base: RC_OffroadUp_Interceptor_Fetch
 			source="reloadmagazine";
 			weapon="RC_InterceptorLauncher_SPG";
 		};
+	};
+};
+class RC_OffroadUp_Interceptor_Base: RC_OffroadUp_Interceptor_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\firedInterceptor.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AttachRadar.hpp"
 	};
 };
 

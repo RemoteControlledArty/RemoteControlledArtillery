@@ -413,8 +413,8 @@ class RC_RCIV_2_Base: RC_RCIV_2_Core
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 
 		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_CommanderOrGunner.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\initHideTurret.hpp"
@@ -666,8 +666,8 @@ class RC_APC_2_Base: RC_APC_2_Core
 	class EventHandlers: EventHandlers
 	{
 		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 
 		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
 		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"

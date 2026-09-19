@@ -1,23 +1,6 @@
-class RC_FPV_Carrier_Base: RC_Mule_UGV_Base
+class RC_FPV_Carrier_Core: RC_Mule_UGV_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_FPV_Deployer
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
+	displayName="RC FPV Carrier";
 	editorSubcategory="RC_UAV_Deployers_subcat";
 	unitInfoType="RscOptics_AV_driver";
 
@@ -51,6 +34,20 @@ class RC_FPV_Carrier_Base: RC_Mule_UGV_Base
 		};
 	};
 };
+class RC_FPV_Carrier_Base: RC_FPV_Carrier_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\addToDeployerArray.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+	};
+};
+
 
 class RC_FPV_Carrier_A: RC_FPV_Carrier_Base
 {
@@ -67,27 +64,20 @@ class RC_FPV_Carrier_A: RC_FPV_Carrier_Base
 	};
 	*/
 
-	displayName="RC FPV Carrier";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;
 	
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
 class RC_FPV_Carrier_A_O: RC_FPV_Carrier_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_FPV_Carrier_A_I: RC_FPV_Carrier_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -110,15 +100,11 @@ class RC_FPV_Carrier_WD: RC_FPV_Carrier_A
 };
 class RC_FPV_Carrier_WD_O: RC_FPV_Carrier_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_FPV_Carrier_WD_I: RC_FPV_Carrier_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };

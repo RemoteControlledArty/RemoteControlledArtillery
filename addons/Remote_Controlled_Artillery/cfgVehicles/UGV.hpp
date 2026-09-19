@@ -29,20 +29,6 @@ class RC_GMG_UGV_Fetch: B_UGV_01_rcws_F
 };
 class RC_GMG_UGV_Core: RC_GMG_UGV_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -238,6 +224,14 @@ class RC_GMG_UGV_Core: RC_GMG_UGV_Fetch
 };
 class RC_GMG_UGV_Base: RC_GMG_UGV_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+	};
 };
 
 
@@ -364,6 +358,14 @@ class RC_indirect_GMG_UGV_Core: RC_GMG_UGV_Core
 };
 class RC_indirect_GMG_UGV_Base: RC_indirect_GMG_UGV_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+	};
 };
 
 
@@ -455,14 +457,6 @@ class RC_indirect_GMG_UGV_WD_I: RC_indirect_GMG_UGV_WD
 
 class RC_cUAS_UGV_Core: RC_GMG_UGV_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
-	};
-
 	displayName="RC C-UAS UGV";
 	editorSubcategory="RC_AntiDrone_subcat";
 
@@ -607,6 +601,15 @@ class RC_cUAS_UGV_Core: RC_GMG_UGV_Core
 };
 class RC_cUAS_UGV_Base: RC_cUAS_UGV_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+	};
 };
 
 
@@ -880,6 +883,15 @@ class RC_FS_UGV_Core: RC_cUAS_UGV_Core
 };
 class RC_FS_UGV_Base: RC_FS_UGV_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+	};
 };
 
 

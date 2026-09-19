@@ -1,5 +1,5 @@
 class rhsusf_m1a2sep2d_usarmy;
-class RC_M1A2_SEPV2_Base: rhsusf_m1a2sep2d_usarmy
+class RC_M1A2_SEPV2_Fetch: rhsusf_m1a2sep2d_usarmy
 {
 	scope=0;
 	scopeCurator=0;
@@ -20,9 +20,18 @@ class RC_M1A2_SEPV2_Base: rhsusf_m1a2sep2d_usarmy
 	class EventHandlers;
 	class UserActions;
 };
-class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
+class RC_M1A2_SEPV2_Core: RC_M1A2_SEPV2_Fetch
 {
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	class EventHandlers: EventHandlers
+	{
+		class RHSUSF_EventHandlers
+		{
+			getOut="_this call rhs_fnc_M1_hatch";
+			init="_this call RHS_fnc_M1_init";
+			postInit="_this call rhs_fnc_reapplyTextures";
+		};
+	};
+
 	//#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSensIR.hpp"
@@ -31,6 +40,10 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 	lockDetectionSystem="2+4+8";
 
 	RC_ATrespondingTurret[]={0,0};
+
+	author="Ascent";
+	displayName="M1A2 SEPV2 Abrams";
+	editorSubcategory="RC_MBT_subcat";
 
 	weapons[]=
 	{
@@ -153,7 +166,7 @@ class RC_M1A2_SEPV2_D_Base: RC_M1A2_SEPV2_Base
 };
 
 
-class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
+class RC_M1A2_SEPV2_Core2: RC_M1A2_SEPV2_Core
 {
 	class Turrets: Turrets
 	{
@@ -346,65 +359,46 @@ class RC_M1A2_SEPV2_D: RC_M1A2_SEPV2_D_Base
 		};
 	};
 };
-
-
-class RC_M1A2_SEPV2_D_B: RC_M1A2_SEPV2_D
+class RC_M1A2_SEPV2_Base: RC_M1A2_SEPV2_Core2
 {
 	class EventHandlers: EventHandlers
 	{
-		class RHSUSF_EventHandlers
-		{
-			getOut="_this call rhs_fnc_M1_hatch";
-			init="_this call RHS_fnc_M1_init";
-			postInit="_this call rhs_fnc_reapplyTextures";
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
 	};
 
-	displayName="M1A2 SEPV2 Abrams";
-	editorSubcategory="RC_MBT_subcat";
-	//editorSubcategory="RC_RHS_D_subcat";
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_M1A2_SEPV2_D_B: RC_M1A2_SEPV2_Base
+{
 	scope=1;
 	scopeCurator=1;
 	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
 
-	crew="B_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_M1A2_SEPV2_D_O: RC_M1A2_SEPV2_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
 };
 class RC_M1A2_SEPV2_D_I: RC_M1A2_SEPV2_D_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
 };
 
 
 class RC_M1A2_SEPV2_WD_B: RC_M1A2_SEPV2_D_B
 {
-	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep2wd_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -420,16 +414,12 @@ class RC_M1A2_SEPV2_WD_B: RC_M1A2_SEPV2_D_B
 };
 class RC_M1A2_SEPV2_WD_O: RC_M1A2_SEPV2_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
 };
 class RC_M1A2_SEPV2_WD_I: RC_M1A2_SEPV2_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
 };
 
@@ -437,9 +427,9 @@ class RC_M1A2_SEPV2_WD_I: RC_M1A2_SEPV2_WD_B
 class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 {
 	//displayName="M1A2 SEPV2 Abrams NLOS";
-	displayName="M1A2 SEPV2 Abrams";
 	scope=2;
 	scopeCurator=2;
+	forceInGarage=1;
 
 	class Turrets: Turrets
 	{
@@ -450,25 +440,20 @@ class RC_M1A2_SEPV2_NLOS_D_B: RC_M1A2_SEPV2_D_B
 		};
 	};
 };
-class RC_M1A2_SEPV2_NLOS_D_I: RC_M1A2_SEPV2_NLOS_D_B
-{
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
-	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
-};
 class RC_M1A2_SEPV2_NLOS_D_O: RC_M1A2_SEPV2_NLOS_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
+};
+class RC_M1A2_SEPV2_NLOS_D_I: RC_M1A2_SEPV2_NLOS_D_B
+{
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
+	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
 };
 
 
 class RC_M1A2_SEPV2_NLOS_WD_B: RC_M1A2_SEPV2_NLOS_D_B
 {
-	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep2wd_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -484,15 +469,11 @@ class RC_M1A2_SEPV2_NLOS_WD_B: RC_M1A2_SEPV2_NLOS_D_B
 };
 class RC_M1A2_SEPV2_NLOS_WD_O: RC_M1A2_SEPV2_NLOS_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsO_RHS.hpp"
 };
 class RC_M1A2_SEPV2_NLOS_WD_I: RC_M1A2_SEPV2_NLOS_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\FSVitemsI_RHS.hpp"
 };

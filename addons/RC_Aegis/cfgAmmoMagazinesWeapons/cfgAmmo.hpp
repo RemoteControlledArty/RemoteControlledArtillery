@@ -3,7 +3,7 @@ class RC_M30_30mm_MPAB_T: B_25x40mm_airburst
 {
 	class Eventhandlers
 	{
-		#include "\Remote_Controlled_Artillery\includes_script\AB_EH.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AB.hpp"
 	};
 
 	//airFriction=-0.0006;	//-0.0006

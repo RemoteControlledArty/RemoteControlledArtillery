@@ -1,6 +1,6 @@
 // Counter Battery Radar - Player & AI Versions
 class B_Radar_System_01_F;
-class RC_CBRad1_base: B_Radar_System_01_F
+class RC_CBRad1_Fetch: B_Radar_System_01_F
 {
 	class Components;
 	class Turrets;
@@ -14,18 +14,10 @@ class RC_CBRad1_base: B_Radar_System_01_F
 
 	RC_CBR=1;	//1 = is Counter Battery Radar
 };
-class RC_CBRad1_Player_A: RC_CBRad1_base
+class RC_CBRad1_Core: RC_CBRad1_Fetch
 {
-	displayName="Counter-Battery Radar (Player)";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_Radar_subcat";
 	author="Ascent";
-	//scope=1;
-	//scopeCurator=1;
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
+	editorSubcategory="RC_Radar_subcat";
 
 	/*
 	radarTargetSize=0.5;
@@ -36,14 +28,6 @@ class RC_CBRad1_Player_A: RC_CBRad1_base
 	threat[]={0.2,0.2,0.2};
 	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
-
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player.hpp"
-		};
-	};
 
 	class Components: Components
 	{
@@ -81,17 +65,37 @@ class RC_CBRad1_Player_A: RC_CBRad1_base
 		};
 	};
 };
+
+
+class RC_CBRad1_Player_Core: RC_CBRad1_Core
+{
+	displayName="Counter-Battery Radar (Player)";
+	armor=140;
+};
+class RC_CBRad1_Player_Base: RC_CBRad1_Player_Core
+{
+	class EventHandlers: EventHandlers
+	{	
+		#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player.hpp"
+	};
+};
+
+
+class RC_CBRad1_Player_A: RC_CBRad1_Player_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_CBRad1_Player_A_O: RC_CBRad1_Player_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_CBRad1_Player_A_I: RC_CBRad1_Player_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
@@ -106,28 +110,16 @@ class RC_CBRad1_Player_WD: RC_CBRad1_Player_A
 };
 class RC_CBRad1_Player_WD_O: RC_CBRad1_Player_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_CBRad1_Player_WD_I: RC_CBRad1_Player_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
-class RC_CBRad1_AI_A: RC_CBRad1_Player_A
+class RC_CBRad1_AI_Core: RC_CBRad1_Core
 {
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI.hpp"
-		};
-	};
-
 	displayName="Counter-Battery Radar (AI)";
 
 	armor=40;	//80
@@ -161,17 +153,30 @@ class RC_CBRad1_AI_A: RC_CBRad1_Player_A
 		};
 	};
 };
+class RC_CBRad1_AI_Base: RC_CBRad1_AI_Core
+{
+	class EventHandlers: EventHandlers
+	{	
+		#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI.hpp"
+	};
+};
+
+
+class RC_CBRad1_AI_A: RC_CBRad1_AI_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_CBRad1_AI_A_O: RC_CBRad1_AI_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_CBRad1_AI_A_I: RC_CBRad1_AI_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
@@ -186,21 +191,17 @@ class RC_CBRad1_AI_WD: RC_CBRad1_AI_A
 };
 class RC_CBRad1_AI_WD_O: RC_CBRad1_AI_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_CBRad1_AI_WD_I: RC_CBRad1_AI_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
 //Hex Camo Counter Battery Radar
 class O_Radar_System_02_F;
-class RC_CBRad2_base: O_Radar_System_02_F
+class RC_CBRad2_Fetch: O_Radar_System_02_F
 {
 	class Components;
 	class Turrets;
@@ -214,36 +215,21 @@ class RC_CBRad2_base: O_Radar_System_02_F
 
 	RC_CBR=1;	//1 = is Counter Battery Radar
 };
-class RC_CBRad2_Player_A_O: RC_CBRad2_base
+class RC_CBRad2_Core: RC_CBRad2_Fetch
 {
-	displayName="Counter-Battery Radar (Player)";
-	faction="RemoteControlled_O";
-	editorSubcategory="RC_Radar_subcat";
 	author="Ascent";
-	//scope=1;
-	//scopeCurator=1;
-	scope=2;
-	scopeCurator=2;
-	side=0;
-	forceInGarage=1;
+	editorSubcategory="RC_Radar_subcat";
 
-	armor=140;
+	/*
 	radarTargetSize=0.5;
 	visualTargetSize=0.6;
 	irTargetSize=0.25;
+	*/
 
 	threat[]={0.2,0.2,0.2};
 	//radarTargetSize=1;
 	lockDetectionSystem="2+4+8";
 	incomingMissileDetectionSystem=16;
-
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player.hpp"
-		};
-	};
 
 	class Components: Components
 	{
@@ -281,6 +267,28 @@ class RC_CBRad2_Player_A_O: RC_CBRad2_base
 		};
 	};
 };
+
+
+class RC_CBRad2_Player_Core: RC_CBRad2_Core
+{
+	displayName="Counter-Battery Radar (Player)";
+	armor=140;
+};
+class RC_CBRad2_Player_Base: RC_CBRad2_Player_Core
+{
+	class EventHandlers: EventHandlers
+	{	
+		#include "\Remote_Controlled_Artillery\includes_script\CBRad_Player.hpp"
+	};
+};
+class RC_CBRad2_Player_A_O: RC_CBRad2_Player_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
+};
 /*
 class RC_CBRad2_Player_WD_O: RC_CBRad2_Player_A_O
 {
@@ -294,17 +302,8 @@ class RC_CBRad2_Player_WD_O: RC_CBRad2_Player_A_O
 */
 
 
-
-class RC_CBRad2_AI_A_O: RC_CBRad2_Player_A_O
+class RC_CBRad2_AI_Core: RC_CBRad2_Core
 {
-	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI.hpp"
-		};
-	};
-
 	displayName="Counter-Battery Radar (AI)";
 
 	armor=40;	//80
@@ -337,6 +336,21 @@ class RC_CBRad2_AI_A_O: RC_CBRad2_Player_A_O
 			};
 		};
 	};
+};
+class RC_CBRad2_AI_Base: RC_CBRad2_AI_Core
+{
+	class EventHandlers: EventHandlers
+	{	
+		#include "\Remote_Controlled_Artillery\includes_script\CBRad_AI.hpp"
+	};
+};
+class RC_CBRad2_AI_A_O: RC_CBRad2_Core
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 /*
 class RC_CBRad2_AI_WD_O: RC_CBRad2_AI_A_O

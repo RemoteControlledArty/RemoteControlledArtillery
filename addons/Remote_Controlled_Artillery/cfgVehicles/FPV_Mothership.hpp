@@ -1,5 +1,5 @@
 class O_T_UAV_04_CAS_F;
-class RC_FPV_Mothership_Core: O_T_UAV_04_CAS_F
+class RC_FPV_Mothership_Fetch: O_T_UAV_04_CAS_F
 {
 	class Turrets;
 	class MainTurret;
@@ -13,27 +13,8 @@ class RC_FPV_Mothership_Core: O_T_UAV_04_CAS_F
 	//RC_UAVBlurRange=2000;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
+class RC_FPV_Mothership_Core: RC_FPV_Mothership_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_FlyInHeight
-		{
-			//defines default flyInHeight, preventing major problems like UAV dropping to 50m when changing locality between players, or to server when player has a disconnect
-			//2000m = SOP for large fixed wing drones
-			postInit="params ['_entity'];  if (!isServer) exitwith {};  _entity flyInHeight 2000;";
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
@@ -264,6 +245,23 @@ class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
 		};
 	};
 };
+class RC_FPV_Mothership_Base: RC_FPV_Mothership_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_FlyInHeight
+		{
+			//defines default flyInHeight, preventing major problems like UAV dropping to 50m when changing locality between players, or to server when player has a disconnect
+			//2000m = SOP for large fixed wing drones
+			postInit="params ['_entity'];  if (!isServer) exitwith {};  _entity flyInHeight 2000;";
+		};
+		
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+	};
+};
 
 
 class RC_FPV_Mothership: RC_FPV_Mothership_Base
@@ -292,21 +290,15 @@ class RC_FPV_Mothership: RC_FPV_Mothership_Base
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;
 	
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_FPV_Mothership_O: RC_FPV_Mothership
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_FPV_Mothership_I: RC_FPV_Mothership
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
@@ -426,20 +418,16 @@ class RC_FPV_Mothership_NoCam: RC_FPV_Mothership
 };
 class RC_FPV_Mothership_NoCam_O: RC_FPV_Mothership_NoCam
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_FPV_Mothership_NoCam_I: RC_FPV_Mothership_NoCam
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
 class B_UAV_02_CAS_F;
-class RC_FPV_MothershipMQ_Core: B_UAV_02_CAS_F
+class RC_FPV_MothershipMQ_Fetch: B_UAV_02_CAS_F
 {
 	class Turrets;
 	class MainTurret;
@@ -452,32 +440,16 @@ class RC_FPV_MothershipMQ_Core: B_UAV_02_CAS_F
 	//RC_UAVBlurRange=2000;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_FPV_MothershipMQ_Base: RC_FPV_MothershipMQ_Core
+class RC_FPV_MothershipMQ_Core: RC_FPV_MothershipMQ_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_FlyInHeight
-		{
-			//defines default flyInHeight, preventing major problems like UAV dropping to 50m when changing locality between players, or to server when player has a disconnect
-			//2000m = SOP for large fixed wing drones
-			postInit="params ['_entity'];  if (!isServer) exitwith {};  _entity flyInHeight 2000;";
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-	};
-
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
+	displayName="RC FPV Mothership";
+	editorSubcategory="RC_UAV_Deployers_subcat";
+	
 	editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_UAV_02_dynamicLoadout_F.jpg";
 
 	camouflage=100;					//0.25 or 150
@@ -703,6 +675,23 @@ class RC_FPV_MothershipMQ_Base: RC_FPV_MothershipMQ_Core
 		};
 	};
 };
+class RC_FPV_MothershipMQ_Base: RC_FPV_MothershipMQ_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_FlyInHeight
+		{
+			//defines default flyInHeight, preventing major problems like UAV dropping to 50m when changing locality between players, or to server when player has a disconnect
+			//2000m = SOP for large fixed wing drones
+			postInit="params ['_entity'];  if (!isServer) exitwith {};  _entity flyInHeight 2000;";
+		};
+		
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+	};
+};
 
 
 class RC_FPV_MothershipMQ: RC_FPV_MothershipMQ_Base
@@ -726,26 +715,18 @@ class RC_FPV_MothershipMQ: RC_FPV_MothershipMQ_Base
 	};
 	*/
 
-	displayName="RC FPV Mothership";
-	editorSubcategory="RC_UAV_Deployers_subcat";
 	//scope=2;	//until weapon in rc crocus config is put to main
 	//scopeCurator=2;
 	
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_FPV_MothershipMQ_O: RC_FPV_MothershipMQ
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_FPV_MothershipMQ_I: RC_FPV_MothershipMQ
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
@@ -866,32 +847,16 @@ class RC_FPV_MothershipMQ_NoCam: RC_FPV_MothershipMQ
 };
 class RC_FPV_MothershipMQ_NoCam_O: RC_FPV_MothershipMQ_NoCam
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_FPV_MothershipMQ_NoCam_I: RC_FPV_MothershipMQ_NoCam
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
-class RC_Interceptor_Mothership_Base: RC_FPV_Mothership_Base
+class RC_Interceptor_Mothership_Core: RC_FPV_Mothership_Base
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_DeleteOutCrew
-		{
-			GetOut="params ['_vehicle', '_role', '_unit'];	if (vehicle _unit isEqualTo _unit) then {deleteVehicle _unit;};";
-		};
-		class RC_Interceptability
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\firedInterceptorEH.hpp"
-		};
-	};
-
 	class Components: Components
 	{
 		class SensorsManagerComponent
@@ -1056,26 +1021,34 @@ class RC_Interceptor_Mothership_Base: RC_FPV_Mothership_Base
 	//displayName="RC unknown FW-UAV";
 	editorSubcategory="RC_AntiAir_subcat";
 };
+class RC_Interceptor_Mothership_Base: RC_Interceptor_Mothership_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		class RC_DeleteOutCrew
+		{
+			GetOut="params ['_vehicle', '_role', '_unit'];	if (vehicle _unit isEqualTo _unit) then {deleteVehicle _unit;};";
+		};
+		
+		#include "\Remote_Controlled_Artillery\includes_script\firedInterceptor.hpp"
+	};
+};
+
+
 class RC_Interceptor_Mothership: RC_Interceptor_Mothership_Base
 {
-	faction="RemoteControlled_B";
-	crew="B_UAV_AI";
-	side=1;
-
 	scope=2;		//2
 	scopeCurator=2;	//2
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_Interceptor_Mothership_O: RC_Interceptor_Mothership
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_Interceptor_Mothership_I: RC_Interceptor_Mothership
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 

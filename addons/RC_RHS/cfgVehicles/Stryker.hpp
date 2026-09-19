@@ -1,5 +1,5 @@
 class rhsusf_stryker_m1126_m2_wd;
-class RC_Stryker_M1126_M2_WD_Base: rhsusf_stryker_m1126_m2_wd
+class RC_Stryker_M1126_M2_Fetch: rhsusf_stryker_m1126_m2_wd
 {
 	scope=0;
 	scopeCurator=0;
@@ -27,9 +27,11 @@ class RC_Stryker_M1126_M2_WD_Base: rhsusf_stryker_m1126_m2_wd
 	class HitRMWheel;
 	class HitRBWheel;
 };
-class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
+class RC_Stryker_M1126_M2_Core: RC_Stryker_M1126_M2_Fetch
 {
 	#include "\RC_RHS\cfgVehicles\StrykerBasics_Include.hpp"
+
+	displayName="M1126 Stryker M2";
 
 	class AnimationSources: AnimationSources
 	{
@@ -171,26 +173,22 @@ class RC_Stryker_M1126_M2_WD: RC_Stryker_M1126_M2_WD_Base
 		};
 	};
 };
-class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_WD
+class RC_Stryker_M1126_M2_Base: RC_Stryker_M1126_M2_Core
 {
 	class EventHandlers: EventHandlers
 	{	
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
 	};
+};
 
-	displayName="M1126 Stryker M2";
-	//editorSubcategory="RC_RHS_WD_subcat";
+
+class RC_Stryker_M1126_M2_WD_B: RC_Stryker_M1126_M2_Base
+{
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
-	crew="B_UAV_AI";
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
 {
@@ -214,30 +212,22 @@ class RC_Stryker_M1126_M2_D_B: RC_Stryker_M1126_M2_WD_B
 };
 class RC_Stryker_M1126_M2_WD_O: RC_Stryker_M1126_M2_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1126_M2_D_O: RC_Stryker_M1126_M2_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1126_M2_WD_I: RC_Stryker_M1126_M2_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 class RC_Stryker_M1126_M2_D_I: RC_Stryker_M1126_M2_D_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 
@@ -326,7 +316,7 @@ class RC_Stryker_M1126_M2_Javelin_D_I: RC_Stryker_M1126_M2_Javelin_D_B
 
 
 class rhsusf_stryker_m1126_mk19_wd;
-class RC_Stryker_M1126_MK19_WD_Base: rhsusf_stryker_m1126_mk19_wd
+class RC_Stryker_M1126_MK19_Fetch: rhsusf_stryker_m1126_mk19_wd
 {
 	scope=0;
 	scopeCurator=0;
@@ -354,9 +344,11 @@ class RC_Stryker_M1126_MK19_WD_Base: rhsusf_stryker_m1126_mk19_wd
 	class HitRMWheel;
 	class HitRBWheel;
 };
-class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
+class RC_Stryker_M1126_MK19_Core: RC_Stryker_M1126_MK19_Fetch
 {
 	#include "\RC_RHS\cfgVehicles\StrykerBasics_Include.hpp"
+
+	displayName="M1126 Stryker Mk19";
 
 	class AnimationSources: AnimationSources
 	{
@@ -517,31 +509,25 @@ class RC_Stryker_M1126_MK19_WD: RC_Stryker_M1126_MK19_WD_Base
 		};
 	};
 };
-class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_WD
+class RC_Stryker_M1126_MK19_Base: RC_Stryker_M1126_MK19_Core
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
 	};
+};
 
-	displayName="M1126 Stryker Mk19";
-	//editorSubcategory="RC_RHS_WD_subcat";
+
+class RC_Stryker_M1126_MK19_WD_B: RC_Stryker_M1126_MK19_Base
+{
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
 
-	crew="B_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_Stryker_M1126_MK19_D_B: RC_Stryker_M1126_MK19_WD_B
 {
-	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -561,30 +547,22 @@ class RC_Stryker_M1126_MK19_D_B: RC_Stryker_M1126_MK19_WD_B
 };
 class RC_Stryker_M1126_MK19_WD_O: RC_Stryker_M1126_MK19_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1126_MK19_D_O: RC_Stryker_M1126_MK19_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1126_MK19_WD_I: RC_Stryker_M1126_MK19_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 class RC_Stryker_M1126_MK19_D_I: RC_Stryker_M1126_MK19_D_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 
@@ -593,11 +571,7 @@ class RC_Stryker_M1126_20mmAC_WD_B: RC_Stryker_M1126_MK19_WD_B
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 	};
 
 	displayName="M1126 Stryker 20mm AC";
@@ -649,7 +623,6 @@ class RC_Stryker_M1126_20mmAC_WD_B: RC_Stryker_M1126_MK19_WD_B
 };
 class RC_Stryker_M1126_20mmAC_D_B: RC_Stryker_M1126_20mmAC_WD_B
 {
-	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -669,30 +642,22 @@ class RC_Stryker_M1126_20mmAC_D_B: RC_Stryker_M1126_20mmAC_WD_B
 };
 class RC_Stryker_M1126_20mmAC_WD_O: RC_Stryker_M1126_20mmAC_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1126_20mmAC_D_O: RC_Stryker_M1126_20mmAC_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1126_20mmAC_WD_I: RC_Stryker_M1126_MK19_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 class RC_Stryker_M1126_20mmAC_D_I: RC_Stryker_M1126_20mmAC_D_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 
@@ -732,7 +697,6 @@ class RC_Stryker_M1126_20mmAC_Javelin_WD_B: RC_Stryker_M1126_20mmAC_WD_B
 };
 class RC_Stryker_M1126_20mmAC_Javelin_D_B: RC_Stryker_M1126_20mmAC_Javelin_WD_B
 {
-	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1126_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -752,36 +716,28 @@ class RC_Stryker_M1126_20mmAC_Javelin_D_B: RC_Stryker_M1126_20mmAC_Javelin_WD_B
 };
 class RC_Stryker_M1126_20mmAC_Javelin_WD_O: RC_Stryker_M1126_20mmAC_Javelin_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1126_20mmAC_Javelin_D_O: RC_Stryker_M1126_20mmAC_Javelin_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1126_20mmAC_Javelin_WD_I: RC_Stryker_M1126_20mmAC_Javelin_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 class RC_Stryker_M1126_20mmAC_Javelin_D_I: RC_Stryker_M1126_20mmAC_Javelin_D_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 
 
 class rhsusf_stryker_m1132_m2_wd;
-class RC_Stryker_M1132_M2_WD_Base: rhsusf_stryker_m1132_m2_wd
+class RC_Stryker_M1132_M2_Fetch: rhsusf_stryker_m1132_m2_wd
 {
 	scope=0;
 	scopeCurator=0;
@@ -809,9 +765,13 @@ class RC_Stryker_M1132_M2_WD_Base: rhsusf_stryker_m1132_m2_wd
 	class HitRMWheel;
 	class HitRBWheel;
 };
-class RC_Stryker_M1132_M2_WD: RC_Stryker_M1132_M2_WD_Base
+class RC_Stryker_M1132_M2_Core: RC_Stryker_M1132_M2_Fetch
 {
 	#include "\RC_RHS\cfgVehicles\StrykerBasics_Include.hpp"
+
+	displayName="M1132 Mineplow Stryker M2";
+	canAccessMineDetector=1;
+	mineDetectorRange=50;
 
 	class AnimationSources: AnimationSources
 	{
@@ -844,9 +804,6 @@ class RC_Stryker_M1132_M2_WD: RC_Stryker_M1132_M2_WD_Base
 			source="revolving";
 		};
 	};
-
-	canAccessMineDetector=1;
-	mineDetectorRange=50;
 
 	class Turrets: Turrets
 	{
@@ -901,16 +858,16 @@ class RC_Stryker_M1132_M2_WD: RC_Stryker_M1132_M2_WD_Base
 		};
 	};
 };
-class RC_Stryker_M1132_M2_WD_B: RC_Stryker_M1132_M2_WD
+class RC_Stryker_M1132_M2_Base: RC_Stryker_M1132_M2_Core
 {
 	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initAPC.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_APC.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+	};
+
+	class HitPoints: HitPoints
+	{
+		#include "\Remote_Controlled_Artillery\includes_cfg\hitWheelsRunflat.hpp"
 	};
 
 	class UserActions: UserActions
@@ -981,25 +938,19 @@ class RC_Stryker_M1132_M2_WD_B: RC_Stryker_M1132_M2_WD
 			statement="this animateSource ['SMP_R', abs((this animationSourcePhase 'SMP_R') - 1)]";
 		};
 	};
+};
 
-	class HitPoints: HitPoints
-	{
-		#include "\Remote_Controlled_Artillery\includes_cfg\hitWheelsRunflat.hpp"
-	};
 
-	displayName="M1132 Mineplow Stryker M2";
-	//editorSubcategory="RC_RHS_WD_subcat";
+class RC_Stryker_M1132_M2_WD_B: RC_Stryker_M1132_M2_Base
+{
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
 
-	crew="B_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_Stryker_M1132_M2_D_B: RC_Stryker_M1132_M2_WD_B
 {
-	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1132_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -1020,30 +971,22 @@ class RC_Stryker_M1132_M2_D_B: RC_Stryker_M1132_M2_WD_B
 };
 class RC_Stryker_M1132_M2_WD_O: RC_Stryker_M1132_M2_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1132_M2_D_O: RC_Stryker_M1132_M2_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1132_M2_WD_I: RC_Stryker_M1132_M2_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 class RC_Stryker_M1132_M2_D_I: RC_Stryker_M1132_M2_D_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 
@@ -1083,7 +1026,6 @@ class RC_Stryker_M1132_M2_Javelin_WD_B: RC_Stryker_M1132_M2_WD_B
 };
 class RC_Stryker_M1132_M2_Javelin_D_B: RC_Stryker_M1132_M2_Javelin_WD_B
 {
-	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1132_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -1104,30 +1046,22 @@ class RC_Stryker_M1132_M2_Javelin_D_B: RC_Stryker_M1132_M2_Javelin_WD_B
 };
 class RC_Stryker_M1132_M2_Javelin_WD_O: RC_Stryker_M1132_M2_Javelin_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1132_M2_Javelin_D_O: RC_Stryker_M1132_M2_Javelin_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_Stryker_M1132_M2_Javelin_WD_I: RC_Stryker_M1132_M2_Javelin_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 class RC_Stryker_M1132_M2_Javelin_D_I: RC_Stryker_M1132_M2_Javelin_D_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 
@@ -1146,7 +1080,7 @@ class RC_Stryker_M1132_M2_Javelin_D_I: RC_Stryker_M1132_M2_Javelin_D_B
 
 
 class rhsusf_stryker_m1127_m2_wd;
-class RC_Stryker_M1127_M2_WD_Base: rhsusf_stryker_m1127_m2_wd
+class RC_Stryker_M1127_M2_Fetch: rhsusf_stryker_m1127_m2_wd
 {
 	scope=0;
 	scopeCurator=0;
@@ -1180,7 +1114,7 @@ class RC_Stryker_M1127_M2_WD_Base: rhsusf_stryker_m1127_m2_wd
 	class HitRBWheel;
 	RC_Local=1; //1 = requires transfer of locality/ownership for full functionality
 };
-class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
+class RC_Stryker_M1127_M2_Core: RC_Stryker_M1127_M2_Fetch
 {
 	#include "\RC_RHS\cfgVehicles\StrykerBasics_Include.hpp"
 
@@ -1316,8 +1250,21 @@ class RC_Stryker_M1127_M2_WD: RC_Stryker_M1127_M2_WD_Base
 		class CargoTurret_03: CargoTurret_03 {};
 	};
 };
-class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
+
+
+class RC_Stryker_M1127_M2_FixedRC: RC_Stryker_M1127_M2_Core
 {
+	displayName="RC M1127 Stryker LRAS/M2";
+
+	vehicleClass="Autonomous";
+	uavCameraDriverPos="view_DVE";
+	uavCameraDriverDir="view_DVE";
+	isUav=1;
+	textPlural="UGVs";
+	textSingular="UGV";
+	forceHideDriver=1;
+	driverForceOptics=1;
+
 	weapons[]=
 	{
 		"RC_target_confirmer_datalink",
@@ -1425,16 +1372,11 @@ class RC_Stryker_M1127_M2_WD_FixedRC: RC_Stryker_M1127_M2_WD
 		class CargoTurret_03: CargoTurret_03 {};
 	};
 };
-
-
-class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD_FixedRC
+class RC_Stryker_M1127_M2_Base: RC_Stryker_M1127_M2_FixedRC
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
 	};
 	class UserActions: UserActions
 	{
@@ -1444,28 +1386,19 @@ class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_WD_FixedRC
 			condition="player isEqualTo (driver this);";
 		};
 	};
+};
 
-	displayName="RC M1127 Stryker LRAS/M2";
-	//editorSubcategory="RC_RHS_WD_subcat";
+
+class RC_Stryker_M1127_M2_WD_B: RC_Stryker_M1127_M2_Base
+{
 	scope=2;
 	scopeCurator=2;
 	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
 
-	vehicleClass="Autonomous";
-	uavCameraDriverPos="view_DVE";
-	uavCameraDriverDir="view_DVE";
-	isUav=1;
-	textPlural="UGVs";
-	textSingular="UGV";
-	crew="B_UAV_AI";
-	forceHideDriver=1;
-	driverForceOptics=1;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_Stryker_M1127_M2_D_B: RC_Stryker_M1127_M2_WD_B
 {
-	//editorSubcategory="RC_RHS_D_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_stryker_m1127_m2_d.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -1487,30 +1420,22 @@ class RC_Stryker_M1127_M2_D_B: RC_Stryker_M1127_M2_WD_B
 };
 class RC_Stryker_M1127_M2_WD_O: RC_Stryker_M1127_M2_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_Stryker_M1127_M2_D_O: RC_Stryker_M1127_M2_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsO.hpp"
 };
 class RC_Stryker_M1127_M2_WD_I: RC_Stryker_M1127_M2_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 class RC_Stryker_M1127_M2_D_I: RC_Stryker_M1127_M2_D_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\IFVitemsI.hpp"
 };
 

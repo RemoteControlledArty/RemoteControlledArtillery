@@ -1,5 +1,5 @@
 class rhsusf_M109d_usarmy;
-class RC_M109_base: rhsusf_M109d_usarmy
+class RC_M109_Fetch: rhsusf_M109d_usarmy
 {
 	class AnimationSources;
 	class Turrets;
@@ -26,51 +26,19 @@ class RC_M109_base: rhsusf_M109d_usarmy
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_M109_A: RC_M109_base
+class RC_M109_Core: RC_M109_Fetch
 {
 	class EventHandlers: EventHandlers
 	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
 		class RHSUSF_EventHandlers
 		{
 			postInit = "_this call rhs_fnc_reapplyTextures";
 		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		/*
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
-		};
-		*/
-		/*
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-		*/
 	};
 
 	author="Ascent";
 	displayName="RC M109 155mm";
-	faction="RemoteControlled_B";
-	//editorSubcategory="RC_RHS_D_subcat";
 	editorSubcategory="RC_Howitzer_subcat";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
 	
 	driverCompartments="Compartment1";
 	ejectDeadGunner=0;
@@ -78,12 +46,11 @@ class RC_M109_A: RC_M109_base
 	ejectDeadCommander=0;
 	crewCrashProtection=0.01;
 
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
 	lockDetectionSystem="2+4+8";
-	crew="B_UAV_AI";
+
 	uavCameraDriverPos="driverview";
 	uavCameraDriverDir="driverview";
 	uavCameraGunnerPos="gunnerview";
@@ -324,10 +291,36 @@ class RC_M109_A: RC_M109_base
 
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
+class RC_M109_Base: RC_M109_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		//#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_M109_A: RC_M109_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB.hpp"
+};
 class RC_M109_WD: RC_M109_A
 {
-	//editorSubcategory="RC_RHS_WD_subcat";
-	editorPreview = "rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
 		"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_01_wd_co.paa",
@@ -339,30 +332,22 @@ class RC_M109_WD: RC_M109_A
 };
 class RC_M109_A_O: RC_M109_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M109_WD_O: RC_M109_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M109_A_I: RC_M109_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_M109_WD_I: RC_M109_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -392,8 +377,7 @@ class RC_M109_LC_A: RC_M109_A
 };
 class RC_M109_LC_WD: RC_M109_LC_A
 {
-	//editorSubcategory="RC_RHS_WD_subcat";
-	editorPreview = "rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
 		"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_01_wd_co.paa",
@@ -405,35 +389,27 @@ class RC_M109_LC_WD: RC_M109_LC_A
 };
 class RC_M109_LC_A_O: RC_M109_LC_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M109_LC_WD_O: RC_M109_LC_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M109_LC_A_I: RC_M109_LC_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_M109_LC_WD_I: RC_M109_LC_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
 
-class RC_M108_A: RC_M109_A
+class RC_M108_Core: RC_M109_Core
 {
 	displayName="RC M108 105mm";
 
@@ -516,12 +492,36 @@ class RC_M108_A: RC_M109_A
 		};
 	};
 };
+class RC_M108_Base: RC_M108_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		//#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
 
 
+class RC_M108_A: RC_M108_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB.hpp"
+};
 class RC_M108_WD: RC_M108_A
 {
-	//editorSubcategory="RC_RHS_WD_subcat";
-	editorPreview = "rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
+	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
 		"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_01_wd_co.paa",
@@ -533,30 +533,22 @@ class RC_M108_WD: RC_M108_A
 };
 class RC_M108_A_O: RC_M108_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M108_WD_O: RC_M108_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M108_A_I: RC_M108_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_M108_WD_I: RC_M108_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -586,7 +578,6 @@ class RC_M108_LC_A: RC_M108_A
 };
 class RC_M108_LC_WD: RC_M108_LC_A
 {
-	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview = "rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m109_usarmy.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -599,29 +590,21 @@ class RC_M108_LC_WD: RC_M108_LC_A
 };
 class RC_M108_LC_A_O: RC_M108_LC_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M108_LC_WD_O: RC_M108_LC_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_M108_LC_A_I: RC_M108_LC_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 class RC_M108_LC_WD_I: RC_M108_LC_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };

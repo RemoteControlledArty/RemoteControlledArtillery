@@ -24,27 +24,8 @@ class RC_Offroad_Interceptor_Fetch: I_G_Offroad_01_AT_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Offroad_Interceptor_Base: RC_Offroad_Interceptor_Fetch
+class RC_Offroad_Interceptor_Core: RC_Offroad_Interceptor_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		/*
-		class RC_Detection
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_600m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_600m.hpp"
-		};
-		*/
-		class RC_Interceptability
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\firedInterceptorEH.hpp"
-		};
-		class RC_AttachRadar
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AttachRadar.hpp"
-		};
-	};
-
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -480,6 +461,14 @@ class RC_Offroad_Interceptor_Base: RC_Offroad_Interceptor_Fetch
 		0,
 		"HideDoor3",
 		0,
+	};
+};
+class RC_Offroad_Interceptor_Base: RC_Offroad_Interceptor_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\firedInterceptor.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AttachRadar.hpp"
 	};
 };
 

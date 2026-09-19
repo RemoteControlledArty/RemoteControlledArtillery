@@ -1,5 +1,5 @@
-class RC_IFV_3_Base;
-class RC_Test_B_Pandur_A_Core: RC_IFV_3_Base
+class RC_IFV_3_Core;
+class RC_Test_B_Pandur_Fetch: RC_IFV_3_Core
 {
 	class Turrets;
 	class MainTurret;
@@ -20,7 +20,7 @@ class RC_Test_B_Pandur_A_Core: RC_IFV_3_Base
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Test_B_Pandur_A_Base: RC_Test_B_Pandur_A_Core
+class RC_Test_B_Pandur_Core: RC_Test_B_Pandur_Fetch
 {
 	editorSubcategory="RC_Testing_subcat";
 	crew="RC_Test_B_Crew";	//B_UAV_AI
@@ -83,14 +83,13 @@ class RC_Test_B_Pandur_A_Base: RC_Test_B_Pandur_A_Core
 };
 
 
-class RC_Test_B_Pandur_Agent: RC_Test_B_Pandur_A_Base
+class RC_Test_B_Pandur_Agent: RC_Test_B_Pandur_Core
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
 			#include "\RC_Testing\includes_script\Agent\Test_Agent_GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
@@ -102,14 +101,13 @@ class RC_Test_B_Pandur_Agent: RC_Test_B_Pandur_A_Base
 };
 
 
-class RC_Test_B_Pandur_AgentDelayed: RC_Test_B_Pandur_A_Base
+class RC_Test_B_Pandur_AgentDelayed: RC_Test_B_Pandur_Core
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
 			#include "\RC_Testing\includes_script\AgentDelayed\Test_AgentDelayed_GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
@@ -122,14 +120,13 @@ class RC_Test_B_Pandur_AgentDelayed: RC_Test_B_Pandur_A_Base
 
 
 /*
-class RC_Test_B_Pandur_AgentMove: RC_Test_B_Pandur_A_Base
+class RC_Test_B_Pandur_AgentMove: RC_Test_B_Pandur_Core
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
 			#include "\RC_Testing\includes_script\AgentMove\Test_AgentMove_GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
@@ -141,14 +138,13 @@ class RC_Test_B_Pandur_AgentMove: RC_Test_B_Pandur_A_Base
 };
 
 
-class RC_Test_B_Pandur_AgentMoveDelayed: RC_Test_B_Pandur_A_Base
+class RC_Test_B_Pandur_AgentMoveDelayed: RC_Test_B_Pandur_Core
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
 			#include "\RC_Testing\includes_script\AgentMoveDelayed\Test_AgentMoveDelayed_GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
@@ -164,14 +160,13 @@ class RC_Test_B_Pandur_AgentMoveDelayed: RC_Test_B_Pandur_A_Base
 /*
 driver deletion non stop triggers EH
 
-class RC_Test_B_Pandur_AgentDelete: RC_Test_B_Pandur_A_Base
+class RC_Test_B_Pandur_AgentDelete: RC_Test_B_Pandur_Core
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
 			#include "\RC_Testing\includes_script\AgentDelete\Test_AgentDelete_GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
@@ -185,14 +180,13 @@ class RC_Test_B_Pandur_AgentDelete: RC_Test_B_Pandur_A_Base
 
 
 
-class RC_Test_B_Pandur_UGV: RC_Test_B_Pandur_A_Base
+class RC_Test_B_Pandur_UGV: RC_Test_B_Pandur_Core
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
 			#include "\RC_Testing\includes_script\UGV\Test_UGV_GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 
@@ -204,14 +198,13 @@ class RC_Test_B_Pandur_UGV: RC_Test_B_Pandur_A_Base
 };
 
 
-class RC_Test_B_Pandur_UGVDelayed: RC_Test_B_Pandur_A_Base
+class RC_Test_B_Pandur_UGVDelayed: RC_Test_B_Pandur_Core
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
 			#include "\RC_Testing\includes_script\UGVDelayed\Test_UGVDelayed_GunnerOrCommanderIsDriverEH.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
 		};
 	};
 

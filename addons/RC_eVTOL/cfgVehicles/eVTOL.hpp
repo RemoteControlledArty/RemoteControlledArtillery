@@ -5,29 +5,6 @@ class RC_eVTOL_Fetch: gyg_jetson_F
 };
 class RC_eVTOL_Core: RC_eVTOL_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_getOut1
-		{
-			getOut="params ['_vehicle'];  if (!local _vehicle) exitWith {};  [_vehicle] spawn fnc_RC_eVTOL_EH_getOut;"
-		};
-		class RC_engine1
-		{
-			engine="params ['_vehicle', '_engineState'];  if (!local _vehicle) exitWith {};  [_vehicle, _engineState] spawn fnc_RC_eVTOL_EH_engine;"
-		};
-		class RC_attached1
-		{
-			attached="params ['_attachedObj', '_parentObj', '_isReattach', '_offset', '_memoryPointIndex', '_followBoneRotation'];  if (!local _attachedObj) exitWith {};  [_attachedObj] spawn fnc_RC_eVTOL_EH_attached;"
-		};
-
-		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
-		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
-		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
-	};
-
 	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_main.hpp"
 	//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_Main.hpp"
 	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_pilotCamBase.hpp"
@@ -37,6 +14,8 @@ class RC_eVTOL_Core: RC_eVTOL_Fetch
 	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_animationSources.hpp"
 	#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_userActions.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
+
+	editorSubcategory="RC_eVTOL_subcat";
 
 	//liftForceCoef=3;		//1.5
 	//camouflage=?;			//100
@@ -60,6 +39,30 @@ class RC_eVTOL_Core: RC_eVTOL_Fetch
 };
 class RC_eVTOL_Base: RC_eVTOL_Core
 {
+	class EventHandlers: EventHandlers
+	{
+		class RC_getOut1
+		{
+			getOut="params ['_vehicle'];  if (!local _vehicle) exitWith {};  [_vehicle] spawn fnc_RC_eVTOL_EH_getOut;"
+		};
+		class RC_engine1
+		{
+			engine="params ['_vehicle', '_engineState'];  if (!local _vehicle) exitWith {};  [_vehicle, _engineState] spawn fnc_RC_eVTOL_EH_engine;"
+		};
+		class RC_attached1
+		{
+			attached="params ['_attachedObj', '_parentObj', '_isReattach', '_offset', '_memoryPointIndex', '_followBoneRotation'];  if (!local _attachedObj) exitWith {};  [_attachedObj] spawn fnc_RC_eVTOL_EH_attached;"
+		};
+
+		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\HMD\HMD_EH.hpp"
+		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
+		//#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
+		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+	};
+
 	//#include "\RC_eVTOL\cfgVehicles\includes_vehicle\eVTOL_hitPoints.hpp"
 };
 
@@ -71,7 +74,6 @@ class RC_eVTOL_B: RC_eVTOL_Base
 	forceInGarage=1;
 
 	displayName="Mosquito - eVTOL"
-	editorSubcategory="RC_eVTOL_subcat";
 
 	/*
 	class Components: Components

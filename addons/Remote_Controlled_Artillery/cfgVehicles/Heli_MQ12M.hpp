@@ -10,8 +10,9 @@ class RC_MQ12M_Core: RC_MQ12M_Fetch
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\firedProxy_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargo_EH.hpp"
 		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\DetectInterceptorEH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator_EH.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_EH.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 	};
 
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\MQ12M\MQ12M_main.hpp"
@@ -48,7 +49,7 @@ class RC_MQ12M_V3: RC_MQ12M_Base
 	scopeCurator=2;
 	forceInGarage=1;
 
-	displayName="MQ-12M - Mantis - V3"
+	displayName="MQ-12M - Mantis - V3";
 	editorSubcategory="RC_Heli_V3_subcat";
 
 	class Components: Components
@@ -73,7 +74,7 @@ class RC_MQ12M_V3_I: RC_MQ12M_V3
 
 class RC_MQ12M_V4: RC_MQ12M_V3
 {
-	displayName="MQ-12M - Mantis - V4"
+	displayName="MQ-12M - Mantis - V4";
 	editorSubcategory="RC_Heli_V4_subcat";
 
 	class Components: Components
@@ -95,7 +96,7 @@ class RC_MQ12M_V4_I: RC_MQ12M_V4
 
 class RC_MQ12M_V5: RC_MQ12M_V3
 {
-	displayName="MQ-12M - Mantis - V5"
+	displayName="MQ-12M - Mantis - V5";
 	editorSubcategory="RC_Heli_V5_subcat";
 
 	class Components: Components
@@ -117,7 +118,7 @@ class RC_MQ12M_V5_I: RC_MQ12M_V5
 
 class RC_MQ12M_V6: RC_MQ12M_V3
 {
-	displayName="MQ-12M - Mantis - V6"
+	displayName="MQ-12M - Mantis - V6";
 	editorSubcategory="RC_Heli_V6_subcat";
 
 	class Components: Components

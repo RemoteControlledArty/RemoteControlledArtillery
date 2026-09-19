@@ -1,5 +1,5 @@
 class B_APC_Wheeled_01_mortar_lxWS;
-class RC_60mmMortarPatria_Base: B_APC_Wheeled_01_mortar_lxWS
+class RC_60mmMortarPatria_Fetch: B_APC_Wheeled_01_mortar_lxWS
 {
 	class Turrets;
 	class MainTurret;
@@ -42,31 +42,9 @@ class RC_60mmMortarPatria_Base: B_APC_Wheeled_01_mortar_lxWS
     ace_artillerytables_applyCorrections=0; //prevents ace air resistance completely messing up the calculatable firing soltion
 	//ace_artillerytables_showRangetable=1;
 };
-class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
+class RC_60mmMortarPatria_Core: RC_60mmMortarPatria_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_GuidedTriggerTime
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTimeEH.hpp"
-		};
-		class RC_ETA
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\ETA_EH.hpp"
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\reflectors.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -74,11 +52,9 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 	lockDetectionSystem="2+4+8";
 
 	author="Ascent";
-	faction="RemoteControlled_B";
-	scope=0;
-	scopeCurator=0;
-	side=1;
-	forceInGarage=1;
+	displayName="RC 60mm Mortar Patria";
+	editorSubcategory="RC_Mortar_subcat";
+
 	driverCompartments="Compartment2";
 	commanding=1;
 	ejectDeadGunner=0;
@@ -91,7 +67,6 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 	peakTorque=3017.6;
 
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
-	crew="B_UAV_AI";
 	uavCameraDriverPos="PiP0_pos";
 	uavCameraDriverDir="PiP0_dir";
 	uavCameraGunnerPos="PiP0_pos";
@@ -105,6 +80,160 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 		"Remote_Controlled_Artillery\textures\camonet_tan_CO.paa",
 		"a3\Armor_F\Data\cage_sand_CO.paa",
 		"lxws\vehicles_f_lxws\data\APC_Wheeled_01\APC_Wheeled_01_lxws_CO.paa"
+	};
+
+	class Turrets: Turrets
+	{
+		class MainTurret: MainTurret
+		{
+			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+			commanding=3;
+			gunnerForceOptics=1;
+			forceHideGunner=1;
+
+			weapons[]=
+			{
+				"RC_vehiclemortar_60mm_V4_lxWS"
+			};
+			magazines[]=
+			{
+				"RC_15Rnd_60mm_vic_Mo_shells",
+				"RC_4Rnd_60mm_vic_Mo_HEAB",
+				"RC_5Rnd_60mm_vic_Mo_MultiGuided",
+				"RC_20Rnd_60mm_vic_Mo_Smoke_white",
+				"RC_9Rnd_60mm_vic_Mo_mine",
+				"RC_6Rnd_60mm_vic_Mo_Flare_white"
+			};
+
+			class OpticsIn
+			{
+				class Wide
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
+
+					initFov=0.125;
+					minFov=0.0125;
+					maxFov=0.9;
+				};
+			};
+
+			class Components: Components
+			{
+				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+				{
+					defaultDisplay="SensorDisplay";
+
+					class Components
+					{
+						class SensorDisplay
+						{
+							componentType="SensorsDisplayComponent";
+							range[]={6000,4000,2000,1000};
+							resource="RscCustomInfoSensors";
+						};
+					};
+				};
+				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+				{
+					defaultDisplay="EmptyDisplayComponent";
+
+					class Components
+					{
+						class EmptyDisplay
+						{
+							componentType="EmptyDisplayComponent";
+						};
+						class MinimapDisplay
+						{
+							componentType="MinimapDisplayComponent";
+							resource="RscCustomInfoMiniMap";
+						};
+					};
+				};
+			};
+			
+			class Turrets: Turrets
+			{
+				class CommanderOptics : CommanderOptics
+				{
+					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
+					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
+					gunnerName="UAV Operator";
+					gunnerCompartments="Compartment3";
+					dontCreateAI=1;
+					commanding=2;
+
+					weapons[]=
+					{
+						"RC_Laserdesignator_vehicle",
+						"SmokeLauncher"
+					};
+					magazines[]=
+					{
+						"Laserbatteries",
+						"SmokeLauncherMag",
+						"SmokeLauncherMag"
+					};
+					
+					class OpticsIn
+					{
+						class Wide
+						{
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
+							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
+							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
+
+							initFov=0.125;
+							minFov=0.0125;
+							maxFov=0.9;
+						};
+					};
+					turretInfoType="RscOptics_MBT_03_gunner";
+
+					class Components: Components
+					{
+						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
+						{
+							defaultDisplay="SensorDisplay";
+
+							class Components
+							{
+								class SensorDisplay
+								{
+									componentType="SensorsDisplayComponent";
+									range[]={6000,4000,2000,1000};
+									resource="RscCustomInfoSensors";
+								};
+							};
+						};
+						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
+						{
+							defaultDisplay="UAVFeedDisplay";
+
+							class Components
+							{
+								class UAVFeedDisplay
+								{
+									componentType="UAVFeedDisplayComponent";
+								};
+								class MinimapDisplay
+								{
+									componentType="MinimapDisplayComponent";
+									resource="RscCustomInfoMiniMap";
+								};
+								class EmptyDisplay
+								{
+									componentType="EmptyDisplayComponent";
+								};
+							};
+						};
+					};
+				};
+			};
+		};
 	};
 
 	class Components: Components
@@ -306,209 +435,42 @@ class RC_60mmMortarPatria_A_Base: RC_60mmMortarPatria_Base
 	//#include "\Remote_Controlled_Artillery\loadouts\Artyitems.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
-
-
-class RC_60mmMortarPatria_A: RC_60mmMortarPatria_A_Base
+class RC_60mmMortarPatria_Base: RC_60mmMortarPatria_Core
 {
-	/*
 	class EventHandlers: EventHandlers
-	{	
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_ICV.hpp"
-		};
-	};
-	*/
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 
-	displayName="RC 60mm Mortar Patria";
-	editorSubcategory="RC_Mortar_subcat";
+		#include "\Remote_Controlled_Artillery\includes_script\GuidedTriggerTime.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\ETA.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+	
+	//has it effect?
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_60mmMortarPatria_A: RC_60mmMortarPatria_Base
+{
 	scope=2;
 	scopeCurator=2;
-	/*
-	smokeLauncherGrenadeCount=12;
-	smokeLauncherVelocity=14;
-	smokeLauncherAngle=180;
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-	*/
-
-	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
-
-	class Turrets: Turrets
-	{
-		class MainTurret: MainTurret
-		{
-			#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-			#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-			commanding=3;
-			gunnerForceOptics=1;
-			forceHideGunner=1;
-
-			weapons[]=
-			{
-				"RC_vehiclemortar_60mm_V4_lxWS"
-			};
-			magazines[]=
-			{
-				"RC_15Rnd_60mm_vic_Mo_shells",
-				"RC_4Rnd_60mm_vic_Mo_HEAB",
-				"RC_5Rnd_60mm_vic_Mo_MultiGuided",
-				"RC_20Rnd_60mm_vic_Mo_Smoke_white",
-				"RC_9Rnd_60mm_vic_Mo_mine",
-				"RC_6Rnd_60mm_vic_Mo_Flare_white"
-			};
-
-			class OpticsIn
-			{
-				class Wide
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNV.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
-					gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
-
-					initFov=0.125;
-					minFov=0.0125;
-					maxFov=0.9;
-				};
-			};
-
-			class Components: Components
-			{
-				class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-				{
-					defaultDisplay="SensorDisplay";
-
-					class Components
-					{
-						class SensorDisplay
-						{
-							componentType="SensorsDisplayComponent";
-							range[]={6000,4000,2000,1000};
-							resource="RscCustomInfoSensors";
-						};
-					};
-				};
-				class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-				{
-					defaultDisplay="EmptyDisplayComponent";
-
-					class Components
-					{
-						class EmptyDisplay
-						{
-							componentType="EmptyDisplayComponent";
-						};
-						class MinimapDisplay
-						{
-							componentType="MinimapDisplayComponent";
-							resource="RscCustomInfoMiniMap";
-						};
-					};
-				};
-			};
-			
-			class Turrets: Turrets
-			{
-				class CommanderOptics : CommanderOptics
-				{
-					#include "\Remote_Controlled_Artillery\includes_cfg\cfgTakeControls.hpp"
-					#include "\Remote_Controlled_Artillery\includes_cfg\showTargets.hpp"
-					gunnerName="UAV Operator";
-					gunnerCompartments="Compartment3";
-					dontCreateAI=1;
-					commanding=2;
-
-					weapons[]=
-					{
-						"RC_Laserdesignator_vehicle",
-						"SmokeLauncher"
-					};
-					magazines[]=
-					{
-						"Laserbatteries",
-						"SmokeLauncherMag",
-						"SmokeLauncherMag"
-					};
-					
-					class OpticsIn
-					{
-						class Wide
-						{
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsBasicsNVTI.hpp"
-							#include "\Remote_Controlled_Artillery\includes_cfg\OpticsAngles_X30_Y100.hpp"
-							gunnerOpticsModel="\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-
-							initFov=0.125;
-							minFov=0.0125;
-							maxFov=0.9;
-						};
-					};
-					turretInfoType="RscOptics_MBT_03_gunner";
-
-					class Components: Components
-					{
-						class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight
-						{
-							defaultDisplay="SensorDisplay";
-
-							class Components
-							{
-								class SensorDisplay
-								{
-									componentType="SensorsDisplayComponent";
-									range[]={6000,4000,2000,1000};
-									resource="RscCustomInfoSensors";
-								};
-							};
-						};
-						class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
-						{
-							defaultDisplay="UAVFeedDisplay";
-
-							class Components
-							{
-								class UAVFeedDisplay
-								{
-									componentType="UAVFeedDisplayComponent";
-								};
-								class MinimapDisplay
-								{
-									componentType="MinimapDisplayComponent";
-									resource="RscCustomInfoMiniMap";
-								};
-								class EmptyDisplay
-								{
-									componentType="EmptyDisplayComponent";
-								};
-							};
-						};
-					};
-				};
-			};
-		};
-	};
+	forceInGarage=1;
+	
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_60mmMortarPatria_A_O: RC_60mmMortarPatria_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_60mmMortarPatria_A_I: RC_60mmMortarPatria_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -528,16 +490,12 @@ class RC_60mmMortarPatria_WD: RC_60mmMortarPatria_A
 };
 class RC_60mmMortarPatria_WD_O: RC_60mmMortarPatria_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_60mmMortarPatria_WD_I: RC_60mmMortarPatria_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -565,16 +523,12 @@ class RC_60mmMortarPatria_LC_A: RC_60mmMortarPatria_A
 };
 class RC_60mmMortarPatria_LC_A_O: RC_60mmMortarPatria_LC_A
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_60mmMortarPatria_LC_A_I: RC_60mmMortarPatria_LC_A
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };
 
@@ -594,15 +548,11 @@ class RC_60mmMortarPatria_LC_WD: RC_60mmMortarPatria_LC_A
 };
 class RC_60mmMortarPatria_LC_WD_O: RC_60mmMortarPatria_LC_WD
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsO.hpp"
 };
 class RC_60mmMortarPatria_LC_WD_I: RC_60mmMortarPatria_LC_WD
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\ArtyitemsI.hpp"
 };

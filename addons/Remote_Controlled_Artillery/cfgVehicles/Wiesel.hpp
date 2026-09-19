@@ -1772,7 +1772,7 @@ class RC_Wiesel_AC_DIG_manned_I: RC_Wiesel_AC_WD_manned_I
 };
 
 
-class RC_Wiesel_cUAS_Base: RC_Wiesel_AC_Base
+class RC_Wiesel_cUAS_Core: RC_Wiesel_AC_Base
 {
 	displayName="RC Wiesel II C-UAS";
 	editorSubcategory="RC_AntiDrone_subcat";
@@ -1929,22 +1929,7 @@ class RC_Wiesel_cUAS_Base: RC_Wiesel_AC_Base
 		};
 	};
 };
-class RC_Wiesel_cUAS_UV_Base: RC_Wiesel_cUAS_Base
-{
-	class EventHandlers: EventHandlers
-	{
-		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
-
-		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
-	};
-};
-
-
-class RC_Wiesel_cUAS_UV_Base: RC_Wiesel_cUAS_Base
+class RC_Wiesel_cUAS_UV_Core: RC_Wiesel_cUAS_Core
 {
 	#include "\Remote_Controlled_Artillery\includes_cfg\isUGV.hpp"
 
@@ -1962,6 +1947,21 @@ class RC_Wiesel_cUAS_UV_Base: RC_Wiesel_cUAS_Base
 		};
 	};
 };
+class RC_Wiesel_cUAS_UV_Base: RC_Wiesel_cUAS_UV_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\fakeTracers.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+};
+
+
 class RC_Wiesel_cUAS_WD: RC_Wiesel_cUAS_UV_Base
 {
 	scope=2;
@@ -2010,13 +2010,8 @@ class RC_Wiesel_cUAS_DIG_I: RC_Wiesel_cUAS_WD_I
 
 
 //semi manned version
-class RC_Wiesel_cUAS_manned_Base: RC_Wiesel_cUAS_Base
+class RC_Wiesel_cUAS_manned_Core: RC_Wiesel_cUAS_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_Gunner.hpp"
-	};
-
 	displayName="Wiesel II C-UAS";
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	
@@ -2076,6 +2071,13 @@ class RC_Wiesel_cUAS_manned_Base: RC_Wiesel_cUAS_Base
 				};
 			};
 		};
+	};
+};
+class RC_Wiesel_cUAS_manned_Base: RC_Wiesel_cUAS_manned_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_Gunner.hpp"
 	};
 };
 

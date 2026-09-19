@@ -1,5 +1,5 @@
 class B_Quadbike_01_F;
-class RC_Quadbike_Core: B_Quadbike_01_F
+class RC_Quadbike_Fetch: B_Quadbike_01_F
 {
 	class Components;
 	class HitPoints;
@@ -24,30 +24,8 @@ class RC_Quadbike_Core: B_Quadbike_01_F
 	scope=0;
 	scopeCurator=0;
 };
-class RC_Quadbike_Base: RC_Quadbike_Core
+class RC_Quadbike_Core: RC_Quadbike_Fetch
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Detection
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		/*
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		*/
-		class RC_LightsOff
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-		};
-
-		#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\cargoFuel_EH.hpp"
-	};
-
 	#include "\Remote_Controlled_Artillery\cfgVehicles\includes_vehicle\driverCam1x.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\Systems.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\MissleApproachWarning.hpp"
@@ -55,6 +33,8 @@ class RC_Quadbike_Base: RC_Quadbike_Core
 	memoryPointDriverOptics="Light_L";
 
 	author="Ascent";
+	editorSubcategory="RC_Car_subcat";
+
 	//armor=40;		//30
 	crewCrashProtection=0;
 	enableGPS=1;
@@ -420,51 +400,54 @@ class RC_Quadbike_Base: RC_Quadbike_Core
 };
 
 
-class RC_Quadbike_A: RC_Quadbike_Base
+class RC_Quadbike_UV_Core: RC_Quadbike_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		class RC_Artillery
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\CommanderIsDriverEH.hpp"
-		};
-	};
-
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-
 	displayName="RC Quadbike";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_Car_subcat";
-	scope=2;
-	scopeCurator=2;
-	side=1;
-	forceInGarage=1;
-
+	
 	isUav=1;
 	driverForceOptics=1;
 	vehicleClass="Autonomous";
 	driverCompartments="Compartment2";
 	textPlural="UGVs";
 	textSingular="UGV";
-	crew="B_UAV_AI";
 
 	uavCameraDriverPos="Light_L";
 	uavCameraDriverDir="Light_L";
 
 	//cost=0;
 };
+class RC_Quadbike_UV_Base: RC_Quadbike_UV_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_Commander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_Quadbike_A: RC_Quadbike_UV_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsB.hpp"
+};
 class RC_Quadbike_A_O: RC_Quadbike_A
 {
-	faction="RemoteControlled_O";
-	side=0;
-	crew="O_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsO.hpp"
 };
 class RC_Quadbike_A_I: RC_Quadbike_A
 {
-	faction="RemoteControlled_I";
-	side=2;
-	crew="I_UAV_AI";
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\Remote_Controlled_Artillery\loadouts\FSVitemsI.hpp"
 };
 

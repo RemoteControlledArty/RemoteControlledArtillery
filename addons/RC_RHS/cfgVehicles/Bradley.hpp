@@ -1,5 +1,5 @@
 class RHS_M2A3_BUSKIII;
-class RC_M2A3_BUSKIII_Base: RHS_M2A3_BUSKIII
+class RC_M2A3_BUSKIII_Fetch: RHS_M2A3_BUSKIII
 {
 	scope=0;
 	scopeCurator=0;
@@ -14,17 +14,18 @@ class RC_M2A3_BUSKIII_Base: RHS_M2A3_BUSKIII
 	class ramp;
 	class HatchC;
 };
-class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
+class RC_M2A3_BUSKIII_Core: RC_M2A3_BUSKIII_Fetch
 {
 	class EventHandlers: EventHandlers
-	{
-		class RC_LightsOff
+	{	
+		class RHSUSF_EventHandlers
 		{
-			#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+			postInit="_this call rhs_fnc_reapplyTextures";
+			getIn="_this call rhs_fnc_m2_doors";
+			getOut="_this call rhs_fnc_m2_doors";
 		};
 	};
 
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\DriverViewOptics.hpp"
 	//#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4kmSensIR.hpp"
 	#include "\Remote_Controlled_Artillery\includes_cfg\DriverComponents4km.hpp"
@@ -34,6 +35,11 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 
 	RC_ATrespondingTurret[]={0,0};
 	//RC_ignoreRockets=1;
+
+	displayName="M2A3 Bradley";
+	editorSubcategory="RC_IFV_ATGM_subcat";
+	//forceHideDriver=1;
+	//driverForceOptics=1;
 
 	weapons[]=
 	{
@@ -132,7 +138,8 @@ class RC_M2A3_BUSKIII_D_Base: RC_M2A3_BUSKIII_Base
 	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
 };
 
-class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
+
+class RC_M2A3_BUSKIII_Core2: RC_M2A3_BUSKIII_Core
 {
 	class Turrets: Turrets
 	{
@@ -295,32 +302,20 @@ class RC_M2A3_BUSKIII_D: RC_M2A3_BUSKIII_D_Base
 };
 
 
-class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
+class RC_M2A3_BUSKIII_Base: RC_M2A3_BUSKIII_Core2
 {
 	class EventHandlers: EventHandlers
-	{	
-		class RHSUSF_EventHandlers
-		{
-			postInit="_this call rhs_fnc_reapplyTextures";
-			getIn="_this call rhs_fnc_m2_doors";
-			getOut="_this call rhs_fnc_m2_doors";
-		};
-		class RC_Detection
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_SourceIndicator.hpp"
-			//#include "\Remote_Controlled_Artillery\includes_script\cUAS_Beep_400m.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\cUAS_Detector_400m.hpp"
-		};
-		class RC_AT_Warning
-		{
-			#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		};
-		class RC_Artillery
-		{
-			//#include "\Remote_Controlled_Artillery\includes_script\initIFV.hpp"
-			#include "\Remote_Controlled_Artillery\includes_script\DriverControlsEH_IFV.hpp"
-		};
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
 	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
 
 	/*
 	memoryPointsGetInCargo[]	= {"pos cargo","pos cargo 1","pos cargo 2","pos cargo 3"};
@@ -329,25 +324,21 @@ class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_D
 	getInProxyOrder[] = {1,2,3,4,5,6,7,8};
 	cargoAction[] = {"RHS_M113_Cargo03","RHS_M113_Cargo03","RHS_M113_Cargo03","RHS_M113_Cargo03","RHS_M113_Cargo02","RHS_M113_Cargo02","RHS_M113_Cargo02","RHS_M113_Cargo02"};
 	*/
+};
 
-	displayName="M2A3 Bradley";
-	editorSubcategory="RC_IFV_ATGM_subcat";
-	//editorSubcategory="RC_RHS_D_subcat";
-	scope=1;
-	scopeCurator=1;
+
+class RC_M2A3_BUSKIII_D_B: RC_M2A3_BUSKIII_Base
+{
+	scope=2;
+	scopeCurator=2;
 	forceInGarage=1;
-	faction="RemoteControlled_B";
-	side=1;
 
-	crew="B_UAV_AI";
-	//forceHideDriver=1;
-	//driverForceOptics=1;
+    #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+	#include "\RC_RHS\loadouts\IFVitemsB_RHS.hpp"
 };
 class RC_M2A3_BUSKIII_D_O: RC_M2A3_BUSKIII_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M2A3_BUSKIII_D_I: RC_M2A3_BUSKIII_D_B
@@ -359,7 +350,6 @@ class RC_M2A3_BUSKIII_D_I: RC_M2A3_BUSKIII_D_B
 };
 class RC_M2A3_BUSKIII_WD_B: RC_M2A3_BUSKIII_D_B
 {
-	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A3_BUSKIII_wd.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -386,13 +376,10 @@ class RC_M2A3_BUSKIII_WD_I: RC_M2A3_BUSKIII_WD_B
 };
 
 
-class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
+class RC_M2A3_BUSKIII_NLOS_Core: RC_M2A3_BUSKIII_Core2
 {
-	scope=2;
-	scopeCurator=2;
 	//displayName="M2A3 Bradley NLOS";
-	displayName="M2A3 Bradley";
-	
+
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -412,23 +399,51 @@ class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_D_B
 		};
 	};
 };
+class RC_M2A3_BUSKIII_NLOS_Base: RC_M2A3_BUSKIII_NLOS_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\DriveControls_GunnerOrCommander.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+	};
+
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+
+	/*
+	memoryPointsGetInCargo[]	= {"pos cargo","pos cargo 1","pos cargo 2","pos cargo 3"};
+	memoryPointsGetInCargoDir[]	= {"pos cargo dir","pos cargo 1 dir","pos cargo dir","pos cargo 2 dir","pos cargo 3 dir"};
+	cargoProxyIndexes[] = {1,2,3,4,5,6,7,8};
+	getInProxyOrder[] = {1,2,3,4,5,6,7,8};
+	cargoAction[] = {"RHS_M113_Cargo03","RHS_M113_Cargo03","RHS_M113_Cargo03","RHS_M113_Cargo03","RHS_M113_Cargo02","RHS_M113_Cargo02","RHS_M113_Cargo02","RHS_M113_Cargo02"};
+	*/
+};
+
+
+class RC_M2A3_BUSKIII_NLOS_D_B: RC_M2A3_BUSKIII_NLOS_Base
+{
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
+};
 class RC_M2A3_BUSKIII_NLOS_D_O: RC_M2A3_BUSKIII_NLOS_D_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M2A3_BUSKIII_NLOS_D_I: RC_M2A3_BUSKIII_NLOS_D_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };
 class RC_M2A3_BUSKIII_NLOS_WD_B: RC_M2A3_BUSKIII_NLOS_D_B
 {
-	//editorSubcategory="RC_RHS_WD_subcat";
 	editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\RHS_M2A3_BUSKIII_wd.paa";
 	hiddenSelectionsTextures[]=
 	{
@@ -441,15 +456,11 @@ class RC_M2A3_BUSKIII_NLOS_WD_B: RC_M2A3_BUSKIII_NLOS_D_B
 };
 class RC_M2A3_BUSKIII_NLOS_WD_O: RC_M2A3_BUSKIII_NLOS_WD_B
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsO_RHS.hpp"
 };
 class RC_M2A3_BUSKIII_NLOS_WD_I: RC_M2A3_BUSKIII_NLOS_WD_B
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 	#include "\RC_RHS\loadouts\IFVitemsI_RHS.hpp"
 };

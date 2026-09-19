@@ -1,4 +1,4 @@
-class RC_AC_FSV_A: RC_AA_A
+class RC_AC_FSV_A: RC_AA_ACFSV_Core
 {
 	/*
 	class EventHandlers: EventHandlers

@@ -370,4 +370,5 @@ class CfgVehicles
 
 	//RHS AFRF
 	#include "\RC_AI\cfgVehicles\T_90AM.hpp"
+	//#include "\RC_AI\cfgVehicles\BMP3M.hpp"
 };
