@@ -156,7 +156,6 @@ class RC_AI_I_Patria40_A: RC_AI_B_Patria40_A
 
 class RC_AI_B_Patria40_WD: RC_AI_B_Patria40_A
 {
-	DLC="Expansion";
 	editorPreview="\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_T_APC_Wheeled_01_cannon_F.jpg";
 	hiddenSelectionsTextures[]=
 	{
