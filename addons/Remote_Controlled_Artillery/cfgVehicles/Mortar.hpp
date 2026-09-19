@@ -26,10 +26,10 @@ class RC_Mortar_Fetch: B_Mortar_01_F
 };
 class RC_Mortar_Core: RC_Mortar_Fetch
 {
-	displayName="RC Mortar 4km";
-	faction="RemoteControlled_B";
-	editorSubcategory="RC_Mortar_subcat";
 	author="Ascent";
+	displayName="RC Mortar 4km";
+	editorSubcategory="RC_Mortar_subcat";
+
 	enableGPS=1;
 	radartype=2;
 	reportOwnPosition=1;
@@ -198,6 +198,10 @@ class RC_Mortar_UV_Base: RC_Mortar_UV_Core
 
 class RC_Mortar: RC_Mortar_UV_Base
 {
+	scope=2;
+	scopeCurator=2;
+	forceInGarage=1;
+
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_Mortar_O: RC_Mortar
@@ -447,9 +451,7 @@ class RC_VehicleMortar: RC_Mortar
 };
 class RC_VehicleMortar_O: RC_VehicleMortar
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_VehicleMortar_HEX_O: RC_VehicleMortar_O
 {
@@ -461,9 +463,7 @@ class RC_VehicleMortar_HEX_O: RC_VehicleMortar_O
 };
 class RC_VehicleMortar_I: RC_VehicleMortar
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
 
 
@@ -495,13 +495,9 @@ class RC_VehicleMortar_LC: RC_VehicleMortar
 };
 class RC_VehicleMortar_LC_O: RC_VehicleMortar_LC
 {
-	faction="RemoteControlled_O";
-	crew="O_UAV_AI";
-	side=0;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideO_UV.hpp"
 };
 class RC_VehicleMortar_LC_I: RC_VehicleMortar_LC
 {
-	faction="RemoteControlled_I";
-	crew="I_UAV_AI";
-	side=2;
+	#include "\Remote_Controlled_Artillery\includes_cfg\sideI_UV.hpp"
 };
