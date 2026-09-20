@@ -1,7 +1,7 @@
 //minigun
 class RC_Pylon_B_338_SLAP_T_R: RC_B_338_SLAP_T_R
 {
-	indirectHit=1.4;		//1 - 1.2 for minigun 6.5 & 7.62
+	indirectHit=1.2;		//1 - 1.2 for minigun 6.5 & 7.62
 	indirectHitRange=2;		//2 for minigun 6.5 & 7.62
 };
 class RC_Pylon_B_338_SLAP_T_G: RC_Pylon_B_338_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
@@ -11,7 +11,7 @@ class RC_Pylon_B_338_SLAP_T_W: RC_Pylon_B_338_SLAP_T_R {model="\A3\Weapons_f\Dat
 
 class RC_Pylon_B_127x99_SLAP_T_R: RC_B_127x99_SLAP_T_R
 {
-	indirectHit=1.7;		//1 - 1.2 for minigun 6.5 & 7.62
+	indirectHit=1.2;		//1 - 1.2 for minigun 6.5 & 7.62
 	indirectHitRange=2;		//2 for minigun 6.5 & 7.62
 };
 class RC_Pylon_B_127x99_SLAP_T_G: RC_Pylon_B_127x99_SLAP_T_R {model="\A3\Weapons_f\Data\bullettracer\tracer_green";};
