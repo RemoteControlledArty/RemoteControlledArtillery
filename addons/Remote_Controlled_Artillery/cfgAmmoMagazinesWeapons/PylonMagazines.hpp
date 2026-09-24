@@ -155,17 +155,23 @@ class RC_PylonM_5000Rnd_338_SLAP_T_Y_right: RC_PylonM_2500Rnd_338_SLAP_T_Y_right
 
 
 class PylonWeapon_500Rnd_127mm_HEIAP_belt_left;
-class RC_PylonM_1000Rnd_127mm_SLAP_T_R_left: PylonWeapon_500Rnd_127mm_HEIAP_belt_left
+class RC_PylonM_500Rnd_127mm_SLAP_T_R_left: PylonWeapon_500Rnd_127mm_HEIAP_belt_left
 {
-	displayName="> .50 SLAP 1000x red [GAU-19]";
+	displayName="> .50 SLAP 500x red [GAU-19]";
 	displayNameShort=".50 SLAP";
 	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_PylonW_127mm_Minigun";
 	ammo="RC_Pylon_B_127x99_SLAP_T_R";
 	initSpeed=1200;
-	count=1000;
+	count=500;
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V2_Left","RC_Hardpoint_O_V2_Left"};
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_R_left: RC_PylonM_500Rnd_127mm_SLAP_T_R_left
+{
+    displayName="> .50 SLAP 1000x red [GAU-19]";
+	count=1000;
+	hardpoints[]={"RC_Hardpoint_V4_Left","RC_Hardpoint_O_V4_Left"};
 };
 class RC_PylonM_1000Rnd_127mm_SLAP_T_G_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_left
 {
@@ -182,17 +188,23 @@ class RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_le
 
 
 class PylonWeapon_500Rnd_127mm_HEIAP_belt_right;
-class RC_PylonM_1000Rnd_127mm_SLAP_T_R_right: PylonWeapon_500Rnd_127mm_HEIAP_belt_right
+class RC_PylonM_500Rnd_127mm_SLAP_T_R_right: PylonWeapon_500Rnd_127mm_HEIAP_belt_right
 {
-	displayName="> .50 SLAP 1000x red [GAU-19]";
+	displayName="> .50 SLAP 500x red [GAU-19]";
 	displayNameShort=".50 SLAP";
 	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_PylonW_127mm_Minigun";
 	ammo="RC_Pylon_B_127x99_SLAP_T_R";
 	initSpeed=1200;
-	count=1000;
+	count=500;
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V2_Right","RC_Hardpoint_O_V2_Right"};
+};
+class RC_PylonM_1000Rnd_127mm_SLAP_T_R_right: RC_PylonM_500Rnd_127mm_SLAP_T_R_right
+{
+	displayName="> .50 SLAP 1000x red [GAU-19]";
+	count=1000;
+	hardpoints[]={"RC_Hardpoint_V4_Right","RC_Hardpoint_O_V4_Right"};
 };
 class RC_PylonM_1000Rnd_127mm_SLAP_T_G_right: RC_PylonM_1000Rnd_127mm_SLAP_T_R_right
 {
@@ -252,16 +264,22 @@ class RC_PylonM_TwinHMG_base: PylonWeapon_300Rnd_20mm_shells
 	tracersEvery=1;
 	hardpoints[]={};
 };
-class RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R: RC_PylonM_TwinHMG_base
+class RC_PylonM_Twin_500Rnd_127mm_SLAP_T_R: RC_PylonM_TwinHMG_base
 {
 	scope=2;
-	displayName="> .50 SLAP 1000x red [Twin-HMG]";
+	displayName="> .50 SLAP 500x red [Twin-HMG]";
 	displayNameShort=".50 SLAP";
 	descriptionShort=".50 SLAP Twin-HMG";
 	ammo="RC_Pylon_B_127x99_SLAP_T_R";
 	initSpeed=1200;
-	count=1000;
+	count=500;
 	hardpoints[]={"RC_Hardpoint_V2","RC_Hardpoint_O_V2"};
+};
+class RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R: RC_PylonM_Twin_500Rnd_127mm_SLAP_T_R
+{
+	displayName="> .50 SLAP 1000x red [Twin-HMG]";
+	count=1000;
+	hardpoints[]={"RC_Hardpoint_V4","RC_Hardpoint_O_V4"};
 };
 class RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_G: RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R
 {
