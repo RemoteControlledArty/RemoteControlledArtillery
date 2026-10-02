@@ -234,6 +234,7 @@ class RC_MortarMATV_Base: RC_MortarMATV_Core
 		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
 		
 		#include "\Remote_Controlled_Artillery\includes_script\cargo.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\removeAttachedObj_deleted.hpp"
 	};
 };
 

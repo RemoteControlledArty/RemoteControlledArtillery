@@ -462,6 +462,9 @@ class RC_VehicleMortar_Base: RC_VehicleMortar_Core
 
 class RC_VehicleMortar: RC_VehicleMortar_Base
 {
+	scope=2;
+	scopeCurator=2;
+	
 	#include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
 };
 class RC_VehicleMortar_O: RC_VehicleMortar

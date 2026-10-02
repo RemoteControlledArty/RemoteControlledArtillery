@@ -816,6 +816,7 @@ class RC_Mortar_Carrier_WD: RC_Mortar_Carrier_Base
 		{
 			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 		};
+		#include "\Remote_Controlled_Artillery\includes_script\removeAttachedObj_deleted.hpp"
 	};
 
 	scope=2;
@@ -876,6 +877,7 @@ class RC_Mortar_Carrier_manned_WD: RC_Mortar_Carrier_manned_Base
 		{
 			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [0.0151367, -0.959518, 0.6475]];};";
 		};
+		#include "\Remote_Controlled_Artillery\includes_script\removeAttachedObj_deleted.hpp"
 	};
 
 	scope=2;

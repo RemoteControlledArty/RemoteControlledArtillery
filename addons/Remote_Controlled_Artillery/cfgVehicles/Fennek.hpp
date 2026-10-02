@@ -324,42 +324,14 @@ class RC_Fennek_Core: RC_Fennek_Fetch
 };
 
 
-class RC_Fennek_Base: RC_Fennek_Core
+class RC_Fennek_UV_Core: RC_Fennek_Core
 {
-	class EventHandlers: EventHandlers
-	{
-		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
-		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
-
-		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
-	};
-	
-	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
-
-	weapons[]=
-	{
-		"TruckHorn",
-		"RC_APS_W",
-		"SmokeLauncher"
-	};
-	magazines[]=
-	{
-		//"RC_1Rnd_APS_M",
-		"RC_1Rnd_APS_M",
-		"SmokeLauncherMag",
-		"SmokeLauncherMag"
-	};
-
 	camouflage=1.5;	//2
 	/*
 	radarTargetSize=0.7; //?
 	irTargetSize=0.7; //?
 	visualTargetSize=0.7; //?
 	*/
-
-	displayName="RC Recon Fennek";
-	editorSubcategory="RC_Car_subcat";
 
 	isUav=1;
 	driverForceOptics=1;
@@ -391,7 +363,43 @@ class RC_Fennek_Base: RC_Fennek_Core
 		};
 	};
 };
-class RC_Fennek_A: RC_Fennek_Base
+
+
+class RC_Recon_Fennek_Core: RC_Fennek_UV_Core
+{
+	weapons[]=
+	{
+		"TruckHorn",
+		"RC_APS_W",
+		"SmokeLauncher"
+	};
+	magazines[]=
+	{
+		//"RC_1Rnd_APS_M",
+		"RC_1Rnd_APS_M",
+		"SmokeLauncherMag",
+		"SmokeLauncherMag"
+	};
+
+	displayName="RC Recon Fennek";
+	editorSubcategory="RC_Car_subcat";
+};
+class RC_Recon_Fennek_Base: RC_Recon_Fennek_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+	};
+	
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
+class RC_Fennek_A: RC_Recon_Fennek_Base
 {
 	scope=2;
 	scopeCurator=2;
@@ -420,7 +428,7 @@ class RC_Fennek_DIG_I: RC_Fennek_A_I
 
 
 //Fennek with Vehicle Mortar attached, for low power but mobile indirect fire support
-class RC_Mortar_Fennek_Base: RC_Fennek_Base
+class RC_Mortar_Fennek_Core: RC_Fennek_UV_Core
 {
 	weapons[]=
 	{
@@ -538,13 +546,29 @@ class RC_Mortar_Fennek_Base: RC_Fennek_Base
 		};
 	};
 };
+class RC_Mortar_Fennek_Base: RC_Mortar_Fennek_Core
+{
+	class EventHandlers: EventHandlers
+	{
+		#include "\Remote_Controlled_Artillery\includes_script\cUAS_Sensor_400m.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\AT_Warning_Backup.hpp"
+
+		#include "\Remote_Controlled_Artillery\includes_script\initLightsOff.hpp"
+		#include "\Remote_Controlled_Artillery\includes_script\removeAttachedObj_deleted.hpp"
+	};
+	
+	#include "\Remote_Controlled_Artillery\includes_script\UserActions_TakeDriverControls.hpp"
+};
+
+
 class RC_Mortar_Fennek_A: RC_Mortar_Fennek_Base
 {
     class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
-			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
+			init="if (!isServer) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
 		};
 	};
 
@@ -555,15 +579,13 @@ class RC_Mortar_Fennek_A: RC_Mortar_Fennek_Base
     #include "\Remote_Controlled_Artillery\includes_cfg\sideB_UV.hpp"
     #include "\Remote_Controlled_Artillery\loadouts\ArtyitemsB.hpp"
 };
-
-
 class RC_Mortar_Fennek_A_O: RC_Mortar_Fennek_A
 {
 	class EventHandlers: EventHandlers
 	{
 		class RC_Artillery
 		{
-			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
+			init="if (!isServer) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
 		};
 	};
 
@@ -576,7 +598,7 @@ class RC_Mortar_Fennek_A_I: RC_Mortar_Fennek_A
 	{
 		class RC_Artillery
 		{
-			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
+			init="if (!isServer) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
 		};
 	};
 
@@ -600,7 +622,7 @@ class RC_Mortar_Fennek_LC_A: RC_Mortar_Fennek_A
 	{
 		class RC_Artillery
 		{
-			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC', west] call BIS_fnc_spawnVehicle) select 0) attachTo [-0.08, -0.35, 1.17]];};";
+			init="if (!isServer) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC', west] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
 		};
 	};
 
@@ -613,7 +635,7 @@ class RC_Mortar_Fennek_LC_A_O: RC_Mortar_Fennek_LC_A
 	{
 		class RC_Artillery
 		{
-			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [-0.08, -0.35, 1.17]];};";
+			init="if (!isServer) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_O', east] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
 		};
 	};
 
@@ -626,7 +648,7 @@ class RC_Mortar_Fennek_LC_A_I: RC_Mortar_Fennek_LC_A
 	{
 		class RC_Artillery
 		{
-			init="if (!isserver) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [-0.08, -0.35, 1.17]];};";
+			init="if (!isServer) exitwith {}; (_this select 0) spawn {(([[0,0,0], (getDir _this), 'RC_VehicleMortar_LC_I', resistance] call BIS_fnc_spawnVehicle) select 0) attachTo [_this, [-0.08, -0.35, 1.17]];};";
 		};
 	};
 
