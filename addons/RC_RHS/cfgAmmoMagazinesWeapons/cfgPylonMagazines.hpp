@@ -26,17 +26,23 @@ class RC_RHS_PylonM_2500Rnd_338_SLAP_T_Y: RC_RHS_PylonM_2500Rnd_338_SLAP_T_R
 
 
 class rhsusf_mag_gau19_melb_left;
-class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left: rhsusf_mag_gau19_melb_left
+class RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_left: rhsusf_mag_gau19_melb_left
 {
-	displayName="> .50 SLAP 1000x red [GAU-19 RHS]";
+	displayName="> .50 SLAP 500x red [GAU-19 RHS]";
 	displayNameShort=".50 SLAP";
 	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_RHS_PylonW_GAU19A";
 	ammo="RC_Pylon_B_127x99_SLAP_T_R";
 	initSpeed=1200;
-	count=1000;
+	count=500;
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V2_Left","RC_Hardpoint_O_V2_Left"};
+};
+class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left: RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_left
+{
+	displayName="> .50 SLAP 1000x red [GAU-19 RHS]";
+	count=1000;
+	hardpoints[]={"RC_Hardpoint_V4_Left","RC_Hardpoint_O_V4_Left"};
 };
 class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_G_left: RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left
 {
@@ -53,7 +59,7 @@ class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_Y_left: RC_RHS_PylonM_1000Rnd_127mm_SLA
 
 
 class rhsusf_mag_gau19_melb_right;
-class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right: rhsusf_mag_gau19_melb_right
+class RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_right: rhsusf_mag_gau19_melb_right
 {
 	displayName="> .50 SLAP 1000x red [GAU-19 RHS]";
 	displayNameShort=".50 SLAP";
@@ -61,9 +67,15 @@ class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right: rhsusf_mag_gau19_melb_right
 	pylonWeapon="RC_RHS_PylonW_GAU19A";
 	ammo="RC_Pylon_B_127x99_SLAP_T_R";
 	initSpeed=1200;
-	count=1000;
+	count=500;
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V2_Right","RC_Hardpoint_O_V2_Right"};
+};
+class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right: RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_right
+{
+	displayName="> .50 SLAP 1000x red [GAU-19 RHS]";
+	count=1000;
+	hardpoints[]={"RC_Hardpoint_V4_Right","RC_Hardpoint_O_V4_Right"};
 };
 class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_G_right: RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right
 {

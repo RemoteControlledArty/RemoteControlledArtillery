@@ -62,6 +62,14 @@ class RC_PylonW_127mm_Minigun_Base: RC_PylonW_127mm_Minigun_Fetch
 
 	magazines[]=
 	{
+		"RC_PylonM_500Rnd_127mm_SLAP_T_R_left",
+		"RC_PylonM_500Rnd_127mm_SLAP_T_G_left",
+		"RC_PylonM_500Rnd_127mm_SLAP_T_Y_left",
+
+		"RC_PylonM_500Rnd_127mm_SLAP_T_R_right",
+		"RC_PylonM_500Rnd_127mm_SLAP_T_G_right",
+		"RC_PylonM_500Rnd_127mm_SLAP_T_Y_right",
+
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_R_left",
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_G_left",
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left",

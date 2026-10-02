@@ -40,6 +40,14 @@ class RC_RHS_PylonW_GAU19A: RC_RHS_PylonW_GAU19A_Base
 	ballisticsComputer=8;
 	magazines[]=
 	{
+		"RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_left",
+		"RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_left",
+		"RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_left",
+		
+		"RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_right",
+		"RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_right",
+		"RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_right",
+
 		"RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left",
 		"RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left",
 		"RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left",
@@ -88,6 +96,14 @@ class RC_PylonW_127mm_Minigun: RC_PylonW_127mm_Minigun_Base
 
 	magazines[]=
 	{
+		"RC_PylonM_500Rnd_127mm_SLAP_T_R_left",
+		"RC_PylonM_500Rnd_127mm_SLAP_T_G_left",
+		"RC_PylonM_500Rnd_127mm_SLAP_T_Y_left",
+
+		"RC_PylonM_500Rnd_127mm_SLAP_T_R_right",
+		"RC_PylonM_500Rnd_127mm_SLAP_T_G_right",
+		"RC_PylonM_500Rnd_127mm_SLAP_T_Y_right",
+
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_R_left",
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_G_left",
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left",

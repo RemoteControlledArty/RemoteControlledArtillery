@@ -15,7 +15,7 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_V2_Right"
 			};
 
-			attachment="RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R";
+			attachment="RC_PylonM_Twin_500Rnd_127mm_SLAP_T_R";
 		};
 		class PylonLeft1: PylonLeft1
 		{
@@ -30,7 +30,7 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_V2_Left"
 			};
 
-			attachment="RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R";
+			attachment="RC_PylonM_Twin_500Rnd_127mm_SLAP_T_R";
 		};
 	};
 };
