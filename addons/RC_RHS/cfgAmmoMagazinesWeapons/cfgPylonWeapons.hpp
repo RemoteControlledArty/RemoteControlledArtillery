@@ -161,6 +161,10 @@ class RC_PylonW_TwinHMG: RC_RHS_PylonW_TwinHMG_Fetch
 
 	magazines[]=
 	{
+		"RC_PylonM_Twin_500Rnd_127mm_SLAP_T_R",
+		"RC_PylonM_Twin_500Rnd_127mm_SLAP_T_G",
+		"RC_PylonM_Twin_500Rnd_127mm_SLAP_T_Y",
+
 		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R",
 		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_G",
 		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y",

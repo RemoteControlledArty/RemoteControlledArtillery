@@ -61,7 +61,7 @@ class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_Y_left: RC_RHS_PylonM_1000Rnd_127mm_SLA
 class rhsusf_mag_gau19_melb_right;
 class RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_right: rhsusf_mag_gau19_melb_right
 {
-	displayName="> .50 SLAP 1000x red [GAU-19 RHS]";
+	displayName="> .50 SLAP 500x red [GAU-19 RHS]";
 	displayNameShort=".50 SLAP";
 	descriptionShort=".50 Minigun";
 	pylonWeapon="RC_RHS_PylonW_GAU19A";
