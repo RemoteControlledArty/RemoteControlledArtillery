@@ -11,7 +11,7 @@ class TransportPylonsComponent: TransportPylonsComponent
 				"RC_Hardpoint_Ka60M_Right"
 			};
 
-			attachment="RC_PylonM_5000Rnd_338_SLAP_T_R_right";
+			attachment="RC_PylonM_2000Rnd_338_SLAP_T_R_right";
 		};
 		class pylon2: pylon2
 		{

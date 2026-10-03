@@ -14,13 +14,13 @@ class RC_PylonW_338_Minigun_Base: RC_PylonW_338_Minigun_Fetch
 
 	magazines[]=
 	{
-		"RC_PylonM_2500Rnd_338_SLAP_T_R_right",
-		"RC_PylonM_2500Rnd_338_SLAP_T_G_right",
-		"RC_PylonM_2500Rnd_338_SLAP_T_Y_right",
+		"RC_PylonM_1000Rnd_338_SLAP_T_R_right",
+		"RC_PylonM_1000Rnd_338_SLAP_T_G_right",
+		"RC_PylonM_1000Rnd_338_SLAP_T_Y_right",
 
-		"RC_PylonM_5000Rnd_338_SLAP_T_R_right",
-		"RC_PylonM_5000Rnd_338_SLAP_T_G_right",
-		"RC_PylonM_5000Rnd_338_SLAP_T_Y_right",
+		"RC_PylonM_2000Rnd_338_SLAP_T_R_right",
+		"RC_PylonM_2000Rnd_338_SLAP_T_G_right",
+		"RC_PylonM_2000Rnd_338_SLAP_T_Y_right",
 
 		"RC_AI_PylonM_2500Rnd_338_SLAP_T_R_right",
 		"RC_AI_PylonM_2500Rnd_338_SLAP_T_G_right",
@@ -70,6 +70,7 @@ class RC_PylonW_127mm_Minigun_Base: RC_PylonW_127mm_Minigun_Fetch
 		"RC_PylonM_500Rnd_127mm_SLAP_T_G_right",
 		"RC_PylonM_500Rnd_127mm_SLAP_T_Y_right",
 
+		/*
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_R_left",
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_G_left",
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left",
@@ -77,6 +78,7 @@ class RC_PylonW_127mm_Minigun_Base: RC_PylonW_127mm_Minigun_Fetch
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_R_right",
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_G_right",
 		"RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right",
+		*/
 
         "RC_AI_PylonM_1000Rnd_127mm_SLAP_T_R_left",
 		"RC_AI_PylonM_1000Rnd_127mm_SLAP_T_G_left",
@@ -178,9 +180,11 @@ class RC_PylonW_TwinHMG_Base: RC_PylonW_Twin_Core
 		"RC_PylonM_Twin_500Rnd_127mm_SLAP_T_G",
 		"RC_PylonM_Twin_500Rnd_127mm_SLAP_T_Y",
 
+		/*
 		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R",
 		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_G",
 		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y",
+		*/
 
         "RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_R",
 		"RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_G",

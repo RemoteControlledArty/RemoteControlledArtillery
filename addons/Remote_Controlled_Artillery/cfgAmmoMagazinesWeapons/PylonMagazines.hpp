@@ -108,48 +108,48 @@ class RC_PylonM_Camera: PylonCameraPod_01_F
 
 //minigun
 class PylonWeapon_2000Rnd_65x39_belt;
-class RC_PylonM_2500Rnd_338_SLAP_T_R_right: PylonWeapon_2000Rnd_65x39_belt
+class RC_PylonM_1000Rnd_338_SLAP_T_R_right: PylonWeapon_2000Rnd_65x39_belt
 {
-	displayName="> .338NM SLAP 2500x red";
+	displayName="> .338NM SLAP 1000x red";
 	displayNameShort=".338NM SLAP";
 	descriptionShort=".338NM Minigun";
 	pylonWeapon="RC_PylonW_338_Minigun";
 	ammo="RC_Pylon_B_338_SLAP_T_R";
 	initSpeed=1200;
-	count=2500;
+	count=1000;
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V1_Right","RC_Hardpoint_O_V1_Right"};
 };
-class RC_PylonM_2500Rnd_338_SLAP_T_G_right: RC_PylonM_2500Rnd_338_SLAP_T_R_right
+class RC_PylonM_1000Rnd_338_SLAP_T_G_right: RC_PylonM_1000Rnd_338_SLAP_T_R_right
 {
-	displayName="> .338NM SLAP 2500x green";
+	displayName="> .338NM SLAP 1000x green";
 	ammo="RC_Pylon_B_338_SLAP_T_G";
 	hardpoints[]={"RC_Hardpoint_G_V1_Right","RC_Hardpoint_G_O_V1_Right"};
 };
-class RC_PylonM_2500Rnd_338_SLAP_T_Y_right: RC_PylonM_2500Rnd_338_SLAP_T_R_right
+class RC_PylonM_1000Rnd_338_SLAP_T_Y_right: RC_PylonM_1000Rnd_338_SLAP_T_R_right
 {
-	displayName="> .338NM SLAP 2500x yellow";
+	displayName="> .338NM SLAP 1000x yellow";
 	ammo="RC_Pylon_B_338_SLAP_T_Y";
 	hardpoints[]={"RC_Hardpoint_Y_V1_Right","RC_Hardpoint_Y_O_V1_Right"};
 };
 
 
-class RC_PylonM_5000Rnd_338_SLAP_T_R_right: RC_PylonM_2500Rnd_338_SLAP_T_R_right
+class RC_PylonM_2000Rnd_338_SLAP_T_R_right: RC_PylonM_1000Rnd_338_SLAP_T_R_right
 {
-	displayName="> .338NM SLAP 5000x red";
-	count=5000;
+	displayName="> .338NM SLAP 2000x red";
+	count=2000;
 	hardpoints[]={"RC_Hardpoint_Ka60M_Right"};
 };
-class RC_PylonM_5000Rnd_338_SLAP_T_G_right: RC_PylonM_2500Rnd_338_SLAP_T_G_right
+class RC_PylonM_2000Rnd_338_SLAP_T_G_right: RC_PylonM_1000Rnd_338_SLAP_T_G_right
 {
-	displayName="> .338NM SLAP 5000x green";
-	count=5000;
+	displayName="> .338NM SLAP 2000x green";
+	count=2000;
 	hardpoints[]={"RC_Hardpoint_Ka60M_Right"};
 };
-class RC_PylonM_5000Rnd_338_SLAP_T_Y_right: RC_PylonM_2500Rnd_338_SLAP_T_Y_right
+class RC_PylonM_2000Rnd_338_SLAP_T_Y_right: RC_PylonM_1000Rnd_338_SLAP_T_Y_right
 {
-	displayName="> .338NM SLAP 5000x yellow";
-	count=5000;
+	displayName="> .338NM SLAP 2000x yellow";
+	count=2000;
 	hardpoints[]={"RC_Hardpoint_Ka60M_Right"};
 };
 
@@ -167,6 +167,7 @@ class RC_PylonM_500Rnd_127mm_SLAP_T_R_left: PylonWeapon_500Rnd_127mm_HEIAP_belt_
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V2_Left","RC_Hardpoint_O_V2_Left"};
 };
+/*
 class RC_PylonM_1000Rnd_127mm_SLAP_T_R_left: RC_PylonM_500Rnd_127mm_SLAP_T_R_left
 {
     displayName="> .50 SLAP 1000x red [GAU-19]";
@@ -185,6 +186,7 @@ class RC_PylonM_1000Rnd_127mm_SLAP_T_Y_left: RC_PylonM_1000Rnd_127mm_SLAP_T_R_le
 	ammo="RC_Pylon_B_127x99_SLAP_T_Y";
 	hardpoints[]={"RC_Hardpoint_Y_V2_Right","RC_Hardpoint_Y_O_V2_Right"};
 };
+*/
 
 
 class PylonWeapon_500Rnd_127mm_HEIAP_belt_right;
@@ -200,6 +202,7 @@ class RC_PylonM_500Rnd_127mm_SLAP_T_R_right: PylonWeapon_500Rnd_127mm_HEIAP_belt
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V2_Right","RC_Hardpoint_O_V2_Right"};
 };
+/*
 class RC_PylonM_1000Rnd_127mm_SLAP_T_R_right: RC_PylonM_500Rnd_127mm_SLAP_T_R_right
 {
 	displayName="> .50 SLAP 1000x red [GAU-19]";
@@ -218,6 +221,7 @@ class RC_PylonM_1000Rnd_127mm_SLAP_T_Y_right: RC_PylonM_1000Rnd_127mm_SLAP_T_R_r
 	ammo="RC_Pylon_B_127x99_SLAP_T_Y";
 	hardpoints[]={"RC_Hardpoint_Y_V2_Right","RC_Hardpoint_Y_O_V2_Right"};
 };
+*/
 
 
 //external fuel tank
@@ -275,6 +279,7 @@ class RC_PylonM_Twin_500Rnd_127mm_SLAP_T_R: RC_PylonM_TwinHMG_base
 	count=500;
 	hardpoints[]={"RC_Hardpoint_V2","RC_Hardpoint_O_V2"};
 };
+/*
 class RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R: RC_PylonM_Twin_500Rnd_127mm_SLAP_T_R
 {
 	displayName="> .50 SLAP 1000x red [Twin-HMG]";
@@ -293,6 +298,7 @@ class RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y: RC_PylonM_Twin_1000Rnd_127mm_SLAP_T
 	ammo="RC_Pylon_B_20mm_MP_QF_T_Y";
 	hardpoints[]={"RC_Hardpoint_Y_V2","RC_Hardpoint_Y_O_V2"};
 };
+*/
 
 
 //autocannon

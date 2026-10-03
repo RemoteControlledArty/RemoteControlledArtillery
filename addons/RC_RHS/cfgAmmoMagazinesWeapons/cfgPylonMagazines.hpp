@@ -1,25 +1,25 @@
 class rhs_mag_m134_pylon_3000;
-class RC_RHS_PylonM_2500Rnd_338_SLAP_T_R: rhs_mag_m134_pylon_3000
+class RC_RHS_PylonM_1000Rnd_338_SLAP_T_R: rhs_mag_m134_pylon_3000
 {
-	displayName="> .338NM SLAP 2500x red [RHS]";
+	displayName="> .338NM SLAP 1000x red [RHS]";
 	displayNameShort=".338NM SLAP";
 	descriptionShort=".338NM Minigun";
 	pylonWeapon="RC_RHS_PylonW_338_Minigun";
 	ammo="RC_Pylon_B_338_SLAP_T_R";
 	initSpeed=1200;
-	count=2500;
+	count=1000;
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V1","RC_Hardpoint_O_V1"};
 };
-class RC_RHS_PylonM_2500Rnd_338_SLAP_T_G: RC_RHS_PylonM_2500Rnd_338_SLAP_T_R
+class RC_RHS_PylonM_1000Rnd_338_SLAP_T_G: RC_RHS_PylonM_1000Rnd_338_SLAP_T_R
 {
-	displayName="> .338NM SLAP 2500x green [RHS]";
+	displayName="> .338NM SLAP 1000x green [RHS]";
 	ammo="RC_Pylon_B_338_SLAP_T_R";
 	hardpoints[]={"RC_Hardpoint_G_V1","RC_Hardpoint_G_O_V1"};
 };
-class RC_RHS_PylonM_2500Rnd_338_SLAP_T_Y: RC_RHS_PylonM_2500Rnd_338_SLAP_T_R
+class RC_RHS_PylonM_1000Rnd_338_SLAP_T_Y: RC_RHS_PylonM_1000Rnd_338_SLAP_T_R
 {
-	displayName="> .338NM SLAP 2500x yellow [RHS]";
+	displayName="> .338NM SLAP 1000x yellow [RHS]";
 	ammo="RC_Pylon_B_338_SLAP_T_R";
 	hardpoints[]={"RC_Hardpoint_Y_V1","RC_Hardpoint_Y_O_V1"};
 };
@@ -38,6 +38,7 @@ class RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_left: rhsusf_mag_gau19_melb_left
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V2_Left","RC_Hardpoint_O_V2_Left"};
 };
+/*
 class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_left: RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_left
 {
 	displayName="> .50 SLAP 1000x red [GAU-19 RHS]";
@@ -56,6 +57,7 @@ class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_Y_left: RC_RHS_PylonM_1000Rnd_127mm_SLA
 	ammo="RC_Pylon_B_127x99_SLAP_T_Y";
 	hardpoints[]={"RC_Hardpoint_Y_V2_Left","RC_Hardpoint_Y_O_V2_Left"};
 };
+*/
 
 
 class rhsusf_mag_gau19_melb_right;
@@ -71,6 +73,7 @@ class RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_right: rhsusf_mag_gau19_melb_right
 	tracersEvery=1;
 	hardpoints[]={"RC_Hardpoint_V2_Right","RC_Hardpoint_O_V2_Right"};
 };
+/*
 class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_R_right: RC_RHS_PylonM_500Rnd_127mm_SLAP_T_R_right
 {
 	displayName="> .50 SLAP 1000x red [GAU-19 RHS]";
@@ -89,6 +92,7 @@ class RC_RHS_PylonM_1000Rnd_127mm_SLAP_T_Y_right: RC_RHS_PylonM_1000Rnd_127mm_SL
 	ammo="RC_Pylon_B_127x99_SLAP_T_Y";
 	hardpoints[]={"RC_Hardpoint_Y_V2_Right","RC_Hardpoint_Y_O_V2_Right"};
 };
+*/
 
 
 class rhs_mag_M229_19;

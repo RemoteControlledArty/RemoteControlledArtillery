@@ -10,9 +10,9 @@ class RC_RHS_PylonW_338_Minigun: RC_RHS_PylonW_338_Minigun_Base
 	ballisticsComputer=8;
 	magazines[]=
 	{
-		"RC_RHS_PylonM_2500Rnd_338_SLAP_T_R",
-		"RC_RHS_PylonM_2500Rnd_338_SLAP_T_G",
-		"RC_RHS_PylonM_2500Rnd_338_SLAP_T_Y"
+		"RC_RHS_PylonM_1000Rnd_338_SLAP_T_R",
+		"RC_RHS_PylonM_1000Rnd_338_SLAP_T_G",
+		"RC_RHS_PylonM_1000Rnd_338_SLAP_T_Y"
 	};
 	modes[]=
 	{
@@ -148,6 +148,9 @@ class RC_PylonW_127mm_Minigun: RC_PylonW_127mm_Minigun_Base
 };
 
 
+/*
+//somehow empty, improper inheritance
+
 //redefine because default sound is awefull
 class RC_PylonW_Twin_Base;
 class RC_RHS_PylonW_TwinHMG_Fetch: RC_PylonW_Twin_Base
@@ -198,6 +201,105 @@ class RC_PylonW_TwinHMG: RC_RHS_PylonW_TwinHMG_Fetch
 			soundClosure[]={"closure1",0.5,"closure2",0.5};
 		};
 	};
+};
+*/
+
+
+//redefine because default sound is awefull
+class Twin_Cannon_20mm_gunpod;
+class RC_RHS_PylonW_Twin_Fetch: Twin_Cannon_20mm_gunpod
+{
+	class manual;
+	class close;
+	class short;
+	class medium;
+	class far;
+};
+class RC_RHS_PylonW_Twin_Base: RC_RHS_PylonW_Twin_Fetch
+{
+	displayName="Twin HMG";
+	displayNameShort="Twin HMG";
+
+	allowTabLock=1;
+	canLock=2;
+	weaponLockDelay=0;
+	weaponLockSystem=0;
+	lockAcquire=0;						//manual
+	ballisticsComputer="8";
+
+	magazines[]=
+	{
+		"RC_PylonM_Twin_500Rnd_127mm_SLAP_T_R",
+		"RC_PylonM_Twin_500Rnd_127mm_SLAP_T_G",
+		"RC_PylonM_Twin_500Rnd_127mm_SLAP_T_Y",
+
+		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_R",
+		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_G",
+		"RC_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y",
+
+        "RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_R",
+		"RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_G",
+		"RC_AI_PylonM_Twin_1000Rnd_127mm_SLAP_T_Y"
+	};
+	modes[]=
+	{
+		"manual","close","short","medium","far"
+	};
+	class manual: manual
+	{
+		displayName="Twin HMG";
+		displayNameShort="Twin HMG";
+
+		reloadTime=0.03;	//0.04 = 1500RPM, 0.03 = 2000RPM
+		dispersion=0.005;	//0.003
+		burst=4;
+
+		ballisticsComputer="8";			//4+8, test 1 more
+		allowTabLock=1;
+		canLock=2;
+		weaponLockDelay=0;
+		autoFire=1;
+		textureType="fullAuto";
+
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		//better sound
+    	class StandardSound
+		{
+			begin1[]={"rhsusf\addons\rhsusf_melb\Sound\Gau19\Gau19_1",2.5,1,2600};
+			begin2[]={"rhsusf\addons\rhsusf_melb\Sound\Gau19\Gau19_2",2.5,1,2600};
+			begin3[]={"rhsusf\addons\rhsusf_melb\Sound\Gau19\Gau19_3",2.5,1,2600};
+			closure1[]={"A3\sounds_f\weapons\gatling\gatling_rotation_short_2",0.316228,1,20};
+			closure2[]={"A3\sounds_f\weapons\gatling\gatling_rotation_short_3",0.316228,1,20};
+			soundBegin[]={"begin1",0.33,"begin2",0.33,"begin3",0.33};
+			soundClosure[]={"closure1",0.5,"closure2",0.5};
+		};
+	};
+	class close: close
+	{
+		reloadTime=0.03;	//0.04 = 1500RPM, 0.03 = 2000RPM
+		dispersion=0.005;	//0.003
+	};
+	class short: short
+	{
+		reloadTime=0.03;	//0.04 = 1500RPM, 0.03 = 2000RPM
+		dispersion=0.005;	//0.003
+	};
+	class medium: medium
+	{
+		reloadTime=0.03;	//0.04 = 1500RPM, 0.03 = 2000RPM
+		dispersion=0.005;	//0.003
+	};
+	class far: far
+	{
+		reloadTime=0.03;	//0.04 = 1500RPM, 0.03 = 2000RPM
+		dispersion=0.005;	//0.003
+	};
+};
+class RC_PylonW_TwinHMG: RC_RHS_PylonW_Twin_Base
+{
 };
 
 

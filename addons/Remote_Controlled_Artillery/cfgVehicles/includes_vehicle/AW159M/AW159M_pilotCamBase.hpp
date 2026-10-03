@@ -15,7 +15,7 @@ weapons[]=
 };
 magazines[]=
 {
-	"RC_5000Rnd_338_SLAP_T_R",
+	"RC_2000Rnd_338_SLAP_T_R",
 	"Laserbatteries",
 	"168Rnd_CMFlare_Chaff_Magazine"
 };

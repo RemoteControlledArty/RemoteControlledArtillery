@@ -66,7 +66,7 @@ class RC_AW159M_V1_O: RC_AW159M_V1
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_G",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -78,7 +78,7 @@ class RC_AW159M_V1_I: RC_AW159M_V1
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_Y",
+		"RC_2000Rnd_338_SLAP_T_Y",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -102,7 +102,7 @@ class RC_AW159M_V2_O: RC_AW159M_V2
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_G",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -114,7 +114,7 @@ class RC_AW159M_V2_I: RC_AW159M_V2
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_Y",
+		"RC_2000Rnd_338_SLAP_T_Y",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -138,7 +138,7 @@ class RC_AW159M_V3_O: RC_AW159M_V3
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_G",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -150,7 +150,7 @@ class RC_AW159M_V3_I: RC_AW159M_V3
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_Y",
+		"RC_2000Rnd_338_SLAP_T_Y",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -174,7 +174,7 @@ class RC_AW159M_V4_O: RC_AW159M_V4
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_G",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -186,7 +186,7 @@ class RC_AW159M_V4_I: RC_AW159M_V4
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_Y",
+		"RC_2000Rnd_338_SLAP_T_Y",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -210,7 +210,7 @@ class RC_AW159M_V5_O: RC_AW159M_V5
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_G",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -222,7 +222,7 @@ class RC_AW159M_V5_I: RC_AW159M_V5
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_Y",
+		"RC_2000Rnd_338_SLAP_T_Y",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -246,7 +246,7 @@ class RC_AW159M_V6_O: RC_AW159M_V6
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_G",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -258,7 +258,7 @@ class RC_AW159M_V6_I: RC_AW159M_V6
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_Y",
+		"RC_2000Rnd_338_SLAP_T_Y",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -294,7 +294,7 @@ class RC_OM_AW159M_O_X: RC_OM_AW159M
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_G",
+		"RC_2000Rnd_338_SLAP_T_G",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
@@ -314,7 +314,7 @@ class RC_OM_AW159M_I_X: RC_OM_AW159M
 {
 	magazines[]=
 	{
-		"RC_5000Rnd_338_SLAP_T_Y",
+		"RC_2000Rnd_338_SLAP_T_Y",
 		"Laserbatteries",
 		"168Rnd_CMFlare_Chaff_Magazine"
 	};
